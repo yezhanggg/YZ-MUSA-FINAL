@@ -1,0 +1,13 @@
+# Already in my conda env "geoai". For a new machine: pip install -r musa6950/requirements.txt
+torch
+torchvision
+rasterio
+geopandas
+fiona
+pystac-client
+planetary-computer
+scikit-learn
+scikit-image
+scipy
+matplotlib
+jupyterlab

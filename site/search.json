@@ -1,0 +1,303 @@
+[
+  {
+    "objectID": "musa6950/docs/results.html",
+    "href": "musa6950/docs/results.html",
+    "title": "MUSA 6950 Results",
+    "section": "",
+    "text": "All numbers below come from the executed notebooks in musa6950/notebooks/. Hand labels are not made yet, so the fit rule has no hand-label check so far."
+  },
+  {
+    "objectID": "musa6950/docs/results.html#data-check",
+    "href": "musa6950/docs/results.html#data-check",
+    "title": "MUSA 6950 Results",
+    "section": "Data check",
+    "text": "Data check\n\n\n\nNAIP image next to the Chesapeake label, 3 train boxes and 1 test box\n\n\n\n177 boxes were picked. 4 on the New York line have no 2022 PA image. 173 are used: 146 train, 27 test\nLabels sit on the image grid (same transform and size)\nThe test counties have less tree and more open ground than train\n\n\n\n\nShare of labeled pixels\nother\nbuilding\ntree\nopen\n\n\n\n\nTrain (146 boxes)\n0.143\n0.056\n0.410\n0.391\n\n\nTest, Cumberland + Centre (27 boxes)\n0.147\n0.068\n0.273\n0.512\n\n\n\n\n\n\nClass shares, train vs test"
+  },
+  {
+    "objectID": "musa6950/docs/results.html#model-accuracy",
+    "href": "musa6950/docs/results.html#model-accuracy",
+    "title": "MUSA 6950 Results",
+    "section": "Model accuracy",
+    "text": "Model accuracy\nTest = every labeled pixel in the 27 test boxes (109,183,195 pixels). Both models are scored on the same pixels.\n\n\n\nIoU on test counties\nRandom Forest\nU-Net\nGain\n\n\n\n\nother\n0.321\n0.601\n+0.280\n\n\nbuilding\n0.267\n0.543\n+0.277\n\n\ntree\n0.368\n0.672\n+0.304\n\n\nopen ground\n0.485\n0.775\n+0.290\n\n\nmean IoU\n0.360\n0.648\n+0.288\n\n\npixel accuracy\n0.571\n0.824\n+0.252\n\n\n\n\n\n\nMean IoU by group (test)\nRandom Forest\nU-Net\n\n\n\n\nurban\n0.322\n0.588\n\n\nsuburban\n0.358\n0.681\n\n\nrural\n0.388\n0.672\n\n\n\n\nRandom Forest: 290,219 training pixels (500 per class per box), R, G, B, NIR, NDVI. NDVI is the top feature (0.275)\nU-Net: 5,976 train tiles, 1,176 validation tiles (7 held-back counties). 10 epochs, 45 min on a Mac (MPS)\nBest validation mIoU 0.682 at epoch 10. Validation was still creeping up, so more epochs may help a little\nU-Net almost doubles the Random Forest on every class\nWeakest: buildings (0.543). Urban boxes score lowest (0.588)\nMain U-Net mix-up: 17% of tree pixels are called open ground. 12% of building pixels are called other (roofs vs paving)\nIn Assignment 6 bare soil got 0 IoU. Here it is inside “open ground”, which scores best\n\n\n\n\nU-Net training curve\n\n\n\n\n\nRandom Forest confusion matrix\n\n\n\n\n\nU-Net confusion matrix\n\n\n\n\n\nTest box in Cumberland: image, label, Random Forest, U-Net\n\n\n\nThe Random Forest is speckled pixel by pixel. The U-Net gives clean shapes but rounds off building corners"
+  },
+  {
+    "objectID": "musa6950/docs/results.html#garages-and-sheds",
+    "href": "musa6950/docs/results.html#garages-and-sheds",
+    "title": "MUSA 6950 Results",
+    "section": "Garages and sheds",
+    "text": "Garages and sheds\n\nOutline method only. YOLO is not done (no shed labels yet)\nSingle-family lots picked in notebook 04:\n\nPhiladelphia: 26,270 lots (detached house type, one main outline)\nCumberland: 57,664 lots (300-20,000 m2, one main outline)\n\n\n\n\n\n\nPhiladelphia\nCumberland\n\n\n\n\nMedian lot (m2)\n637\n1,425\n\n\nMedian house outline (m2)\n141\n187\n\n\nLots with a small outline (under 60 m2)\n8.2%\n8.8%\n\n\nSmall outlines found\n2,214\n5,320\n\n\n\n\n\n\nOutline sizes\n\n\n\nUnder 9% of lots have a garage or shed outline. That looks low. Microsoft outlines likely miss many small sheds, which is what YOLO was meant to test\nMissed sheds make the fit rule a bit too generous"
+  },
+  {
+    "objectID": "musa6950/docs/results.html#room-for-an-adu",
+    "href": "musa6950/docs/results.html#room-for-an-adu",
+    "title": "MUSA 6950 Results",
+    "section": "Room for an ADU",
+    "text": "Room for an ADU\nRule: lot minus 5 ft from lot lines, minus 10 ft around the house, minus other outlines. Then a 20 x 30 ft spot (10 x 15 pixels), both rotations.\n\n\n\nLots in a Cumberland test box, colored by the U-Net rule\n\n\n\n\n\n\n\n\n\n\n\n\nPilot county\nLots\nFits (trees may be cut)\nFits keeping trees\nOutline only\n\n\n\n\nPhiladelphia\n26,270\n46.8%\n21.1%\n57.4%\n\n\nCumberland\n57,664\n86.2%\n63.2%\n90.6%\n\n\n\n\n\n\nFit rates by rule\n\n\n\nMedian backyard left after setbacks: 223 m2 in Philadelphia, 797 m2 in Cumberland\nOutline-only says yes and U-Net says no on 2,792 Philadelphia lots and 2,562 Cumberland lots. These are yards covered by driveways, patios, or pools. The U-Net never says yes when outline-only says no\nTrees matter most in Philadelphia: keeping trees cuts the fit rate by more than half\n\nCheck against real labels (not hand labels). 3,030 Cumberland lots sit inside test boxes, where the Chesapeake label exists. The rule is run with the label map and with the U-Net map:\n\n\n\n\n\n\n\n\n\n\n\nLabel map = truth\nShare yes (label)\nShare yes (model)\nPrecision\nRecall\nAgreement\n\n\n\n\nfits, U-Net\n0.646\n0.621\n0.980\n0.942\n0.950\n\n\nfits keeping trees, U-Net\n0.419\n0.409\n0.835\n0.816\n0.855\n\n\nfits, outline only\n0.646\n0.728\n0.888\n1.000\n0.918\n\n\n\n\nThe U-Net map gives the same answer as the label map on 95% of lots. Keeping trees is harder (86%)\nOutline only over-counts: it says yes on 72.8% of lots vs 64.6% with the label map\nOpen ground per lot: label vs U-Net median 287 vs 258 m2, correlation 0.959\nTree area per lot: median 159 vs 106 m2, correlation 0.935. The U-Net under-calls trees, so fits_keep_trees is likely a bit high\nThis check is only Cumberland and only tests the land cover step. Hand labels would also test the rule itself"
+  },
+  {
+    "objectID": "musa6950/docs/results.html#statewide",
+    "href": "musa6950/docs/results.html#statewide",
+    "title": "MUSA 6950 Results",
+    "section": "Statewide",
+    "text": "Statewide\nFit rate by group from the pilot lots. Range = 95% bootstrap, resampling tracts 1,000 times.\n\n\n\n\n\n\n\n\n\n\n\nGroup\nPilot lots\nPilot tracts\nFit rate (range)\nKeep trees rate (range)\nTree cut per fitting lot (m2)\n\n\n\n\nUrban (RUCA 1)\n70,581\n342\n0.704 (0.655-0.751)\n0.437 (0.377-0.497)\n11.8\n\n\nSuburban (RUCA 2-3)\n9,826\n11\n0.964 (0.929-0.989)\n0.882 (0.817-0.944)\n2.2\n\n\nRural (RUCA 4-10)\n3,527\n4\n0.792 (0.503-0.925)\n0.696 (0.335-0.857)\n3.1\n\n\n\n\nUrban = 26,270 Philadelphia lots + 44,311 Cumberland urban lots. Philadelphia alone is 0.468, Cumberland urban is 0.845\nSuburban and rural come only from Cumberland, from 11 and 4 tracts. The rural range is wide for that reason\n\nApplied to ACS 2020-24 single-family detached homes in all 3,445 PA tracts:\n\n\n\n\n\n\n\n\n\n\n\n\nSingle-family homes\nLots with room\nRange\nLots with room, keep trees\nTree canopy cut (m2)\n\n\n\n\nUrban\n1,858,258\n1,308,828\n1,216,647-1,395,083\n812,383\n15,378,230\n\n\nSuburban\n646,067\n622,526\n600,262-639,144\n569,600\n1,370,858\n\n\nRural\n783,142\n620,163\n393,993-724,269\n545,115\n1,901,980\n\n\nPennsylvania\n3,287,467\n2,551,517\n2,210,902-2,758,496\n1,927,098\n18,651,068\n\n\n\n\nAbout 2.55 million single-family lots have room for a 20 x 30 ft ADU by this rule. About 1.93 million without cutting trees\nIf every fitting lot built one, about 18.65 km2 (4,609 acres) of tree canopy would be cut\nMost of the tree loss is in urban tracts, where yards are small and the spot often needs trees cut\nThis is room, not demand. Zoning, slope, septic, and owner choice are not in the rule\n\n\n\n\nLots with room per tract"
+  },
+  {
+    "objectID": "musa6950/docs/results.html#limits",
+    "href": "musa6950/docs/results.html#limits",
+    "title": "MUSA 6950 Results",
+    "section": "Limits",
+    "text": "Limits\n\nNo hand labels yet. The blank form is data/processed/hand_labels_template.csv (250 lots)\nLabels only cover the Chesapeake part of PA (central and east). Western PA has no labels. The model is applied there only through the statewide rates, never checked\nThe rates come from two counties. All rural PA rests on 4 Cumberland tracts. Western PA towns and Pittsburgh are not in the sample\nPhiladelphia rowhouses and twins are left out (Microsoft merges a row into one outline). ACS counts some twins as detached, so Philadelphia tracts may have more homes in lots_total than the lots tested\n“Backyard” includes the front yard. Many towns do not allow an ADU in front of the house\nMissed sheds and under-called trees both make the rule a bit generous\nImages and labels are from 2022\nLot rules (setbacks, minimum lot size) vary by town. One rule is used for all"
+  },
+  {
+    "objectID": "musa6950/docs/data.html",
+    "href": "musa6950/docs/data.html",
+    "title": "MUSA 6950 Data",
+    "section": "",
+    "text": "One script gets everything (geoai env):\nFiles go to data/raw/6950/. Nothing is committed to GitHub."
+  },
+  {
+    "objectID": "musa6950/docs/data.html#sources",
+    "href": "musa6950/docs/data.html#sources",
+    "title": "MUSA 6950 Data",
+    "section": "Sources",
+    "text": "Sources\n\n\n\n\n\n\n\n\n\n\n\nData\nSource\nYears\nDetail\nArea\nLicense\n\n\n\n\nAerial images (red, green, blue, near-infrared)\nNAIP via Microsoft Planetary Computer (STAC)\n2022\n0.6 m\n173 sample boxes, 1 km x 1 km\nPublic domain (USDA)\n\n\nTraining labels\nChesapeake Bay Program land use / land cover, 2024 edition (USGS ScienceBase)\n2022\n1 m\n43 PA counties in the Chesapeake watershed\nPublic (USGS)\n\n\nBuilding outlines\nMicrosoft Global ML Building Footprints\nRelease 2026-02\nPolygons\nSample boxes + pilot counties\nODbL. Download by script only\n\n\nLot lines\nPhiladelphia Water Dept parcels (ArcGIS)\nCurrent\nPolygons\nPhiladelphia, 547,425 lots\nCity of Philadelphia\n\n\nLot lines\nCumberland County parcels (PASDA)\nJan 2026\nPolygons\nCumberland County\nCounty terms\n\n\nUrban / suburban / rural\nUSDA RUCA codes by tract\n2020\nTract\nPA\nPublic\n\n\nSingle-family homes per tract\nACS 2020-24, table B25024 (from the 5500 data step)\n2020-24\nTract\nPA\nPublic"
+  },
+  {
+    "objectID": "musa6950/docs/data.html#sample-design",
+    "href": "musa6950/docs/data.html#sample-design",
+    "title": "MUSA 6950 Data",
+    "section": "Sample design",
+    "text": "Sample design\n\nTracts split into urban (RUCA 1), suburban (RUCA 2-3), rural (RUCA 4-10)\nOnly tracts in counties with Chesapeake labels\nTrain: 50 boxes per group = 150\nTest: Cumberland + Centre counties, held out. Never used for training. 27 boxes\nBox = 1 km x 1 km around the tract’s population center\nRandom seed 42"
+  },
+  {
+    "objectID": "musa6950/docs/data.html#label-classes",
+    "href": "musa6950/docs/data.html#label-classes",
+    "title": "MUSA 6950 Data",
+    "section": "Label classes",
+    "text": "Label classes\nChesapeake has 56 classes. They are grouped into 4.\n\n\n\n\n\n\n\nOurs\nChesapeake codes\n\n\n\n\n1 building\n21 Structures\n\n\n2 tree\n23-26 tree canopy over roads, structures, paving, turf. 40-41 forest. Forested wetlands\n\n\n3 open ground\n27 turf grass, 28 bare developed, natural succession, harvested forest, cropland, pasture\n\n\n0 other\nRoads, other paving, water, solar, extractive, wetlands without trees\n\n\n255 no data\nOutside the mapped area"
+  },
+  {
+    "objectID": "musa6950/docs/data.html#notes",
+    "href": "musa6950/docs/data.html#notes",
+    "title": "MUSA 6950 Data",
+    "section": "Notes",
+    "text": "Notes\n\nEastern PA images are in UTM 18N, western PA in UTM 17N. Each box keeps its own CRS\nLabels are 1 m. They are resampled (nearest) onto the 0.6 m image grid\nChesapeake labels are from the same 2022 images, so they match in time\nNo recent labels for western PA. The model is tested there only by eye, plus hand-labeled lots\nPhiladelphia also has a 0.5 ft land cover map (2018, PhiladelphiaLandCoverRaster2018.zip on PASDA, 521 MB). Optional extra test set\nMicrosoft outlines merge Philadelphia rowhouses into one shape per row (161k outlines vs 547k lots). Use lot lines to split them\nNo free statewide lot map in PA. That is why lot results are only for the pilot counties\nParcel owner names are not downloaded"
+  },
+  {
+    "objectID": "musa5500/docs/results.html",
+    "href": "musa5500/docs/results.html",
+    "title": "MUSA 5500 Results",
+    "section": "",
+    "text": "All numbers below come from the executed notebooks in musa5500/notebooks/. Notebook names are given with each part so every number can be traced."
+  },
+  {
+    "objectID": "musa5500/docs/results.html#introduction",
+    "href": "musa5500/docs/results.html#introduction",
+    "title": "MUSA 5500 Results",
+    "section": "Introduction",
+    "text": "Introduction\n\nHB 2186 would allow an ADU (backyard home) on every home lot in Pennsylvania\nLegal does not mean built. Philadelphia has allowed ADUs in parts of the city since 2012 and only about 10 were built legally\nThis half of the project asks four things\n\nWhere are people and jobs growing?\nDid that change after 2019?\nWhere would a new ADU pay for itself?\nHow many ADUs could be built by 2031, under today’s rules and under HB 2186?\n\nUnit: 2020 census tracts (3,445) and towns (2,572 county subdivisions)"
+  },
+  {
+    "objectID": "musa5500/docs/results.html#methods-short",
+    "href": "musa5500/docs/results.html#methods-short",
+    "title": "MUSA 5500 Results",
+    "section": "Methods (short)",
+    "text": "Methods (short)\nFull detail is in methods. In short:\n\n01: ACS 2010-14 and 2015-19 moved from 2010 to 2020 tracts with the block crosswalk. Counts by land-area share, medians from the biggest-overlap tract. Dollars in 2024 terms (CPI-U). Yearly growth before and after 2019 for people, homes, jobs, and real rent\n02: K-means on six growth rates (jobs, people, rent, before and after)\n03: developed share of land per tract from NLCD 2010, 2019, 2025 (zonal stats). Jobs within 30 minutes by car with OSMnx (Philadelphia. Harrisburg could not be downloaded)\n04: rent vs cost test for a 600 sq ft ADU. Random forest for housing growth 2010-2020 with spatial cross-validation. ADUs by 2031 per town, scaled from the Pew range of 26 to 81 ADU permits per 100,000 people per year"
+  },
+  {
+    "objectID": "musa5500/docs/results.html#results",
+    "href": "musa5500/docs/results.html#results",
+    "title": "MUSA 5500 Results",
+    "section": "Results",
+    "text": "Results\n\n1. Growth before and after 2019\nNotebook 01_trends. Statewide, from summed tract counts. Yearly rates in %.\n\n\n\nMeasure\nBefore 2019\nAfter 2019\nChange\n\n\n\n\nPopulation (ACS)\n0.05\n0.35\n+0.30\n\n\nHousing units (ACS)\n0.41\n0.39\n-0.01\n\n\nJobs (LODES)\n0.95\n0.31\n-0.64\n\n\nReal rent, median tract\n0.76\n0.41\n-0.35\n\n\n\n\nJob growth slowed the most. 2010-19 was 0.95% a year, 2019-24 was 0.31%\nPopulation looks like it sped up. Part of this is not real. The 2020-24 ACS is weighted to post-2020 census estimates, which came in higher than the 2010s estimates. So read the population change with care\nHousing growth held flat at about 0.4% a year\nReal rent kept rising, but slower. The median tract went from $1,087 (2010-14) to $1,125 (2015-19) to $1,149 (2020-24), all in 2024 dollars\nShare of tracts that sped up after 2019: population 54%, homes 48%, jobs 42%, rent 43%\nTract rates are noisy. ACS 5-year estimates have wide margins in small tracts\n\n\n\n\nYearly growth by tract, before vs after 2019\n\n\n\n\n\nChange in growth after 2019, jobs and population\n\n\n\n\n2. Trend groups\nNotebook 02_groups. 3,163 tracts have all six rates. 282 tracts do not (tiny bases or no rent data) and are labeled “Not enough data”.\n\nSilhouette scores were close for k = 4 to 7 (0.122 to 0.139). The elbow has no sharp bend\nk = 5 was picked because each group tells a different story\n\nMedian yearly growth in each group (%):\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup\nTracts\nJobs before\nJobs after\nPeople before\nPeople after\nRent before\nRent after\n\n\n\n\nJobs and rents cooling\n1,103\n0.73\n-0.77\n-0.55\n0.42\n1.94\n-1.62\n\n\nRents speeding up\n871\n0.82\n-0.20\n-0.36\n0.34\n-1.56\n3.16\n\n\nGrew before 2019, slowing now\n691\n3.05\n-0.44\n1.51\n-0.81\n1.13\n0.29\n\n\nJobs bounced back after 2019\n401\n-3.42\n6.13\n0.05\n-0.01\n1.27\n0.86\n\n\nPopulation jump after 2019\n97\n1.94\n0.40\n0.41\n15.03\n1.26\n0.68\n\n\n\n\nThe biggest group is “Jobs and rents cooling”. Jobs and real rent grew before 2019 and shrank after\n“Rents speeding up” is the group to watch for ADUs. Rent fell in real terms before 2019 and rose 3.2% a year after\n“Population jump after 2019” is small. Some of it is real new building. Some is likely the crosswalk. Land-area weights can put people in the wrong 2020 tract when an old tract was split\nThe groups are spread across the state, not in neat regions. Growth paths vary a lot even between next-door tracts\n\n\n\n\nTrend groups\n\n\n\n\n\nElbow and silhouette\n\n\n\n\n3. Land and job access\nNotebook 03_land_access.\nDeveloped land (NLCD, all 3,445 tracts):\n\n\n\nYear\nDeveloped km2\nShare of PA land\n\n\n\n\n2010\n16,745\n14.42%\n\n\n2019\n17,374\n14.97%\n\n\n2025\n17,812\n15.34%\n\n\n\n\nPA added about 1,070 km2 of developed land from 2010 to 2025\n72% of tracts had more developed land in 2025 than in 2010\nThe median tract changed only 0.4 points. Most change is in a few edge-of-suburb tracts. The top 10 gains (14 to 41 points) are in Cumberland, York, Northampton, Montgomery, Luzerne, Butler, and Dauphin counties. Three of the top five are in Cumberland County\nThe first 2019 mosaic had two empty tiles. They were downloaded again and pasted in. Details are in notebook 03\n\n\n\n\nDeveloped land\n\n\nJobs within 30 minutes by car (OSMnx, LODES 2024 jobs):\n\nPhiladelphia (408 tracts): the median tract reaches 1,407,502 jobs in 30 minutes. The range is 1,071,537 to 1,521,510\nThat is 90% of the jobs in the network area (Philadelphia plus 15 km, inside PA) for the median tract. The lowest tract reaches 69%\nCenter City and North Philadelphia reach the most. The far south and far northeast reach the least\nHarrisburg was planned too but the public Overpass server was down or full for hours on the run day. It was skipped. The notebook adds it when rerun\nThese are free-flow speeds and miss New Jersey jobs, so they are upper bounds inside PA and lower bounds overall\nJob access was not used in the forecast, because it only covers one city\n\n\n\n\nJob access, Philadelphia\n\n\n\n\n4. Where an ADU pays off\nNotebook 04_payoff_forecast. 600 sq ft ADU, 15% soft costs, all borrowed over 30 years at 6.53% (2026 PMMS average).\n\n\n\nBuild cost\nTotal\nMonthly payment\n\n\n\n\nLow, $175 / sq ft\n$120,750\n$766\n\n\nMid, $250 / sq ft\n$172,500\n$1,094\n\n\nHigh, $300 / sq ft\n$207,000\n$1,312\n\n\n\n\nAfter 30% for vacancy, repairs, tax, and insurance, an ADU needs $1,562 a month in rent to cover the mid cost. It needs $1,094 at the low cost\nRent = tract median gross rent (ACS 2020-24) x 1.0\n\nResult for 3,261 tracts with rent data (184 have none):\n\n\n\npays\nTracts\nShare of tracts\nShare of people\n\n\n\n\nyes\n663\n20%\n22%\n\n\nmaybe\n1,159\n36%\n36%\n\n\nno\n1,439\n44%\n38%\n\n\nno rent data\n184\n\n4%\n\n\n\n\nAn ADU pays at the mid cost in only one tract in five\nMost “yes” tracts are in Philadelphia and its suburbs. Philadelphia (124 yes tracts), Montgomery (121), Chester (70), Bucks (69), Delaware (48). Allegheny has 47\nIn Montgomery, Chester, and Bucks over 92% of tracts are yes or maybe. Median tract rent there is about $1,670 to $1,710\n\nHow much the answer moves (share of tracts that are “yes”):\n\n\n\nRent factor\nLow cost\nMid cost\nHigh cost\n\n\n\n\n0.9\n44%\n13%\n5%\n\n\n1.0\n56%\n20%\n9%\n\n\n1.1\n65%\n28%\n14%\n\n\n\n\nBuild cost matters more than the rent guess. Going from mid to low cost moves “yes” from 20% to 56%\nSo cheaper building (prefab, smaller units, lower fees) may matter as much as the zoning change\n\n\n\n\nPayoff map\n\n\n\n\n5. Random forest: where housing grew 2010-2020\n\nTarget: log of decennial homes 2020 / 2010, crosswalked to 2020 tracts. 3,394 tracts. Median tract grew 1.31% over the decade\nTwo checks: random 5-fold CV, and spatial CV that holds out whole counties\n\n\n\n\nModel\nR2 random CV\nR2 spatial CV\nMAE spatial (log pts)\n\n\n\n\nA: 2010 data only\n0.279\n0.202\n0.100\n\n\nB: + ACS 2010-14\n0.296\n0.213\n0.097\n\n\n\n\nA baseline that gives every tract the state median has R2 of -0.002\nSo the model has real but modest skill. It explains about a fifth of the tract-to-tract spread in places it has not seen\nR2 drops from random CV to spatial CV. Nearby tracts share a lot, so random CV is too hopeful\nModel B is only 0.011 better and uses ACS 2010-14, which overlaps the target years. Model A is used for the forecast\nMost important predictors (model A): workers living in the tract 2010 (0.484), homes 2010 (0.226), jobs per home (0.047), developed share 2010 (0.044), homes per km2 (0.041)\n\n\n\n\nRandom forest\n\n\n\n\n6. ADUs by 2031\n\nLots with room: from lots_tract.csv (MUSA 6950), all 3,445 tracts\nToday’s rules: only 9 towns are coded in shared/legal_status.csv (2 allowed, 7 limited). The other towns are treated as limited\nForecast covers 2,571 of 2,572 towns. Wheatland borough (Mercer) has no blocks in the LODES crosswalk and no population estimate after 2019, so it has no row\n\nStatewide totals, 2027-2031:\n\n\n\nRule\nLow\nMid\nHigh\n\n\n\n\nToday, by 2031\n197\n928\n2,693\n\n\nHB 2186, by 2031\n8,195\n16,861\n25,526\n\n\nHB 2186, per year\n1,639\n3,372\n5,105\n\n\nHB 2186, per 100k people per year\n12.6\n25.9\n39.2\n\n\n\n\nThe Pew range for all of PA would be 3,385 to 10,545 a year (13.0 million people). The HB 2186 mid case, 3,372 a year, sits just below the bottom of that range. This is expected, because most PA tracts do not pass the payoff test and many have few single-family lots\nHB 2186 mid is about 11.1% of the new homes PA permits each year now (24,810 to 28,149 a year in 2022-2025, 47,894 in 2021)\nUnder today’s rules the forecast is 18 times smaller (928 vs 16,861 in the mid case). Nearly all of the gap comes from the assumption that unlisted towns are “limited”\n\nTop towns under HB 2186 (mid):\n\n\n\nTown\nRule today\nPeople\nLow\nMid\nHigh\nToday, mid\n\n\n\n\nPhiladelphia city\nlimited\n1,579,706\n195\n401\n606\n20\n\n\nPittsburgh city\nlimited\n304,759\n114\n234\n353\n12\n\n\nLower Merion township\nlimited\n64,174\n67\n137\n208\n7\n\n\nHaverford township\nlimited\n50,874\n61\n126\n191\n6\n\n\nAbington township\nlimited\n58,664\n59\n121\n183\n6\n\n\nLower Paxton township\nlimited\n54,657\n58\n118\n179\n6\n\n\nNorthampton township\nlimited\n39,920\n55\n113\n172\n6\n\n\nBristol township\nlimited\n54,173\n55\n113\n171\n6\n\n\nMiddletown township\nlimited\n45,793\n51\n104\n158\n5\n\n\nManheim township\nlimited\n44,436\n48\n100\n151\n5\n\n\n\n\nPhiladelphia check. Today’s rule gives 4 to 61 ADUs by 2031 (20 mid), about 4 a year in the mid case. The real record is about 10 in 12+ years. So even the “limited” factor may be a bit high for Philadelphia\nAllentown and West Vincent already allow ADUs, so HB 2186 changes nothing there (76 and 29 mid)\n\n\n\n\nADUs by 2031 under HB 2186"
+  },
+  {
+    "objectID": "musa5500/docs/results.html#conclusion",
+    "href": "musa5500/docs/results.html#conclusion",
+    "title": "MUSA 5500 Results",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nDemand: job growth slowed after 2019 across most of PA. Rent growth also slowed in real terms, but one tract group (871 tracts) saw rents speed up\nPayoff: a new ADU pays for itself at today’s rates and a $250 / sq ft build cost in only about 20% of tracts, mostly in Philadelphia and its suburbs. Cost matters more than rent\nForecast: HB 2186 could mean about 16,900 ADUs by 2031 (8,200 to 25,500). That is about 3,400 a year, near the low end of what permissive cities see\nUnder today’s rules the number is much smaller, but that depends on how the ~2,560 uncoded towns are treated"
+  },
+  {
+    "objectID": "musa5500/docs/results.html#limits",
+    "href": "musa5500/docs/results.html#limits",
+    "title": "MUSA 5500 Results",
+    "section": "Limits",
+    "text": "Limits\n\nACS tract data is noisy, and the 2020-24 ACS uses a new population base. Population speed-up after 2019 is partly an artifact\nThe 2010 to 2020 crosswalk uses land area, not where people live\nThe payoff test uses median rent for all renters. A new ADU may rent for more. It ignores rising build costs, land, permits, and taxes on the new value\nThe forecast factors (payoff weights, rule factors, demand range) are judgment calls. They are written at the top of notebook 04 so they are easy to change\nThe town rule list has 9 towns. Coding more towns would change the “today” numbers the most\nLots with room come from MUSA 6950. Its suburban and rural fit rates rest on few pilot tracts, and the fit rule counts front yards"
+  },
+  {
+    "objectID": "musa5500/docs/data.html",
+    "href": "musa5500/docs/data.html",
+    "title": "MUSA 5500 Data",
+    "section": "",
+    "text": "All data is free and public. One script gets everything:\nRaw files go to data/raw/5500/. Clean tables go to data/processed/. Neither is committed to GitHub."
+  },
+  {
+    "objectID": "musa5500/docs/data.html#sources",
+    "href": "musa5500/docs/data.html#sources",
+    "title": "MUSA 5500 Data",
+    "section": "Sources",
+    "text": "Sources\n\n\n\n\n\n\n\n\n\n\n\nData\nSource\nHow it is collected\nYears\nLevel\nSaved as\n\n\n\n\nPopulation, rent, home value, income, renters\nACS 5-year, Census\nCensus API (free key)\n2010-14, 2015-19, 2020-24\nTract\nacs_tract.csv\n\n\nHousing units\nDecennial Census\nCensus API (free key)\n2010, 2020\nTract\ndecennial_units_tract.csv\n\n\nPopulation\nCensus Population Estimates\nScript download\n2010-2025\nTown\npop_town.csv\n\n\nJobs (where people work + where workers live)\nLEHD LODES8\nScript download\n2010, 2014, 2019, 2024\nBlock, summed to tract\njobs_tract.csv\n\n\nNew homes permitted\nCensus Building Permits Survey\nScript download\n2010-2025\nTown + county\npermits_town.csv, permits_county.csv\n\n\nPeople moving in and out\nIRS SOI migration\nScript download\n2010-11 to 2022-23\nCounty\nmigration_county.csv\n\n\n30-year mortgage rate\nFreddie Mac PMMS\nScript download\n1971-now, weekly\nState\nmortgage_rate_year.csv\n\n\nLand cover, 30 m\nAnnual NLCD (USGS)\nWeb service (WCS), 60 km tiles\n2010, 2019, 2025\nRaster\ndata/raw/5500/landcover/nlcd_&lt;year&gt;_pa.tif\n\n\nStreet network\nOpenStreetMap via OSMnx\nOSMnx in the notebook\nCurrent\nMetro area\nMade in notebook 03\n\n\nTracts, towns, counties, crosswalk\nCensus TIGER\nScript download (shared/get_boundaries.py)\n2010, 2020\nAll\ntracts_2020.gpkg, etc.\n\n\nLots with room for an ADU\nMy MUSA 6950 project\nRead from data/processed/lots_tract.csv\n2022 imagery\nTract\nlots_tract.csv"
+  },
+  {
+    "objectID": "musa5500/docs/data.html#notes",
+    "href": "musa5500/docs/data.html#notes",
+    "title": "MUSA 5500 Data",
+    "section": "Notes",
+    "text": "Notes\n\nLatest year is different for each source. ACS 2020-24, population 2025, jobs 2024, permits 2025, migration 2022-23, land cover 2025.\nTracts changed in 2020. ACS 2014 and 2019 use 2010 tracts. Move them to 2020 tracts with the block crosswalk (TAB2010_TAB2020_ST42.zip).\nLODES8 is already on 2020 blocks. No crosswalk needed.\nPermits are by town (township, borough, city), not tract. 99% of permit towns match the 2020 town map.\nPhiladelphia is both a city and a county. Population for Philadelphia comes from the county row.\nMigration is by county only and counts tax filers.\nACS rent = median gross rent of all renters, including long-time tenants. It is lower than the rent a new ADU would get.\nCensus uses -666666666 for “no data”. The script turns these into blanks.\nDollar values need inflation adjustment to 2024 dollars before comparing years. CPI-U yearly average: 2014 = 236.736, 2019 = 255.657, 2024 = 313.689."
+  },
+  {
+    "objectID": "tool.html",
+    "href": "tool.html",
+    "title": "The tool",
+    "section": "",
+    "text": "Search an address or click the map. The report shows if an ADU is allowed, if it fits (MUSA 6950), and if it pays off (MUSA 5500).\nOpen full screen"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Backyard Homes PA",
+    "section": "",
+    "text": "Ye Zhang · MUSA 5500 + MUSA 6950 · Fall 2026"
+  },
+  {
+    "objectID": "index.html#the-project",
+    "href": "index.html#the-project",
+    "title": "Backyard Homes PA",
+    "section": "The project",
+    "text": "The project\nA state bill, HB 2186, would allow one accessory dwelling unit (ADU) on every home lot in Pennsylvania. No one knows how many lots have room for one, or where one would pay off. This project answers both, for the whole state.\n\nIs it allowed? Town rules today vs HB 2186\nDoes it fit? MUSA 6950. AI on aerial images finds open yard space and trees\nDoes it pay off? MUSA 5500. Population, jobs, rent, and building trends since 2010\nHow many by 2031? Both halves together\n\nOpen the tool"
+  },
+  {
+    "objectID": "index.html#two-classes-one-tool",
+    "href": "index.html#two-classes-one-tool",
+    "title": "Backyard Homes PA",
+    "section": "Two classes, one tool",
+    "text": "Two classes, one tool\n\n\n\n\nMUSA 5500\nMUSA 6950\n\n\n\n\nQuestion\nIs there demand, and does an ADU pay off?\nIs there room on the lot?\n\n\nMethods\nAPIs, spatial joins, K-means, zonal stats, OSMnx, random forest\nU-Net, Random Forest, YOLO, a 600 sq ft fit rule\n\n\nCode\nmusa5500/\nmusa6950/\n\n\nDocs\nMUSA 5500 pages\nMUSA 6950 pages\n\n\n\nEach class has its own code and documentation. The tool reads results from both."
+  },
+  {
+    "objectID": "musa5500/docs/proposal.html",
+    "href": "musa5500/docs/proposal.html",
+    "title": "MUSA 5500 Proposal",
+    "section": "",
+    "text": "Sent by email, Nov 5, 2026.\nTo: Prof. Xiaojiang Li, cc TA Zhanchao Yang. Subject: [MUSA550] Final Project Proposal – Ye Zhang\nTopic: Housing Demand and ADU Potential Across Pennsylvania\nTeam: Ye Zhang\nBackground: A state bill, HB 2186, would allow a backyard home (ADU) on every home lot in Pennsylvania. But legal doesn’t mean built. Philadelphia has allowed ADUs in parts of the city since 2012, and only about 10 have been built legally. ADUs get built where demand is growing and the rent covers the cost.\nResearch question: Where are people and jobs growing, did that change after 2019, where would an ADU pay off, and how many could be built by 2031?\nStudy area: All of Pennsylvania, from 2010 to the latest year, by census tract.\nGoal: Planners can see where housing demand is growing and how many new homes ADUs could add in their town or county. Builders and homeowners can search an address and see whether an ADU would pay off there.\nData sources: Census population estimates and ACS through the Census API. IRS migration, LEHD jobs, the Building Permits Survey, and Freddie Mac mortgage rates through scripted downloads. NLCD land cover rasters, OpenStreetMap, and lot counts from my 6950 project (or a simpler estimate from lot sizes if those aren’t ready).\nMethods:\n\nJoin all the data to census tracts.\nCompare growth before and after 2019.\nGroup places by trend with K-means.\nMeasure developed land from the rasters and job access with OSMnx.\nTest where ADU rent covers the cost to build.\nUse a random forest to predict where housing grew from 2010 to 2020, then use it to estimate how many ADUs could be built by 2031, with a low and high range.\n\nExpected outcomes: A multi-page Quarto site on GitHub Pages with interactive maps, a time slider from 2010 to today, and a toggle between current rules and HB 2186. A short written report and a presentation.\nCourse requirements: API collection, 3+ data sources, spatial joins, OSMnx, K-means clustering, raster analysis, and a scikit-learn model, plus interactive visualizations.\nHow it splits from 6950: My 6950 project uses AI on aerial images to find which lots have room for an ADU. This project covers demand and payoff. The two will share one dashboard, but each has its own code and documentation pages."
+  },
+  {
+    "objectID": "musa5500/docs/methods.html",
+    "href": "musa5500/docs/methods.html",
+    "title": "MUSA 5500 Methods",
+    "section": "",
+    "text": "Six steps. Each step is one notebook in musa5500/notebooks/. Each notebook saves one table that the tool reads."
+  },
+  {
+    "objectID": "musa5500/docs/methods.html#put-everything-on-2020-tracts",
+    "href": "musa5500/docs/methods.html#put-everything-on-2020-tracts",
+    "title": "MUSA 5500 Methods",
+    "section": "1. Put everything on 2020 tracts",
+    "text": "1. Put everything on 2020 tracts\nNotebook 01_trends.ipynb\n\nCounts (people, housing units): move 2010-tract numbers to 2020 tracts by land-area share, using the block crosswalk\nMedians (rent, value, income): cannot add them up. Use the value from the 2010 tract with the biggest overlap\nTowns: tracts are split into towns with the LODES block crosswalk (block to tract and town), weighted by workers who live in each block (LODES 2024). This replaced the planned center-point join, because many small boroughs are smaller than a tract and would get no tract at all\nInflation: rent and value in 2024 dollars"
+  },
+  {
+    "objectID": "musa5500/docs/methods.html#growth-before-and-after-2019",
+    "href": "musa5500/docs/methods.html#growth-before-and-after-2019",
+    "title": "MUSA 5500 Methods",
+    "section": "2. Growth before and after 2019",
+    "text": "2. Growth before and after 2019\nNotebook 01_trends.ipynb\n\nBefore = 2010-14 to 2015-19 (ACS) or 2010 to 2019 (jobs)\nAfter = 2015-19 to 2020-24 (ACS) or 2019 to 2024 (jobs)\nYearly growth rate = (end / start)^(1 / years) - 1\nChange in trend = growth after - growth before\n\nPositive = sped up\nNegative = slowed down\n\nMeasures: population, housing units, jobs, rent\nA rate is blank if the start is under 200 people, 100 homes, or 50 jobs (tiny bases give wild rates)\ngrowth_before, growth_after, trend_change use population. Each measure also has its own columns (jobs_growth_before, etc.)\nOutput: data/processed/trends_tract.csv. Notebook 01 also saves tract_panel.csv (all years on 2020 tracts) for notebook 04"
+  },
+  {
+    "objectID": "musa5500/docs/methods.html#group-places-by-trend-k-means",
+    "href": "musa5500/docs/methods.html#group-places-by-trend-k-means",
+    "title": "MUSA 5500 Methods",
+    "section": "3. Group places by trend (K-means)",
+    "text": "3. Group places by trend (K-means)\nNotebook 02_groups.ipynb\n\nFeatures: growth before + growth after for jobs, population, and rent\nClip each feature to its 1st and 99th percentile, so a few tiny tracts do not get their own group\nScale with StandardScaler, then KMeans (n_init=10, random_state=42)\nPick k with the elbow method (try 3 to 8), plus silhouette scores. Chose k = 5\nGroup names are given by profile (highest population growth after 2019, highest job growth after, and so on), so they do not depend on cluster numbers\nName each group in plain words (e.g. “Growing faster”, “Steady”, “Shrinking”)\nOutput: adds trend_group to trends_tract.csv"
+  },
+  {
+    "objectID": "musa5500/docs/methods.html#land-and-job-access",
+    "href": "musa5500/docs/methods.html#land-and-job-access",
+    "title": "MUSA 5500 Methods",
+    "section": "4. Land and job access",
+    "text": "4. Land and job access\nNotebook 03_land_access.ipynb\n\nDeveloped land: share of each tract in NLCD classes 21-24, for 2010, 2019, 2025\n\nrasterstats.zonal_stats(tracts, tif, categorical=True)\n\nJob access: jobs reachable within 30 minutes by car, from each tract center\n\nOSMnx drive network per metro area, not the whole state (too big)\nScope cut to two areas that hold a MUSA 6950 pilot county: Philadelphia city and Harrisburg (Cumberland + Dauphin). The other metros were left out to keep run time and Overpass load bounded\nOn the Nov 10 2026 run the public Overpass server was full for hours. Philadelphia downloaded. Harrisburg did not and is skipped until the notebook is rerun\nOnly the largest strongly connected part of each network is used\nNetwork = metro counties plus a 15 km buffer, clipped to Pennsylvania. Jobs past the buffer or in New Jersey and Delaware are missed\nSpeeds are posted or default speeds. No traffic\nAdd speeds and travel times, then Dijkstra from each tract’s nearest node, cutoff 1800 s\nSum LODES 2024 block jobs (WAC) at reachable nodes. Block lat/lon from pa_xwalk.csv.gz\nUse networkx, not pandana (pandana is AGPL)\n\nOutput: data/processed/access_tract.csv (dev_2010, dev_2019, dev_2025, high-intensity shares, jobs_30min, metro)\nDeveloped share = developed pixels / land pixels (open water left out)"
+  },
+  {
+    "objectID": "musa5500/docs/methods.html#does-an-adu-pay-off",
+    "href": "musa5500/docs/methods.html#does-an-adu-pay-off",
+    "title": "MUSA 5500 Methods",
+    "section": "5. Does an ADU pay off?",
+    "text": "5. Does an ADU pay off?\nNotebook 04_payoff_forecast.ipynb\n\nUnit: 600 sq ft detached ADU\nCost to build: $175 / $250 / $300 per sq ft (low / mid / high), plus 15% soft costs\nLoan: 30 years at the latest Freddie Mac rate\nRent: ACS 2020-24 median gross rent for the tract (2024 dollars) x 1.0. 0.9x and 1.1x are tested\nNet rent = rent x (1 - 30%) for vacancy, repairs, tax, insurance\ncost_month = payment on the mid cost ($250 / sq ft), all borrowed\npays = yes if net rent &gt;= cost_month. maybe if net rent covers the payment at the low cost ($175 / sq ft) or is within 10% of cost_month. no if below that\nOutput: data/processed/payoff_tract.csv"
+  },
+  {
+    "objectID": "musa5500/docs/methods.html#how-many-adus-by-2031",
+    "href": "musa5500/docs/methods.html#how-many-adus-by-2031",
+    "title": "MUSA 5500 Methods",
+    "section": "6. How many ADUs by 2031?",
+    "text": "6. How many ADUs by 2031?\nNotebook 04_payoff_forecast.ipynb\n\nRandom forest: predict housing growth by tract, 2010 to 2020\n\nTarget: 2020 housing units / 2010 housing units (decennial)\nTarget is log(units 2020 / units 2010). Tracts with under 100 homes in 2010 are left out\nModel A: 2010 data only (decennial homes, LODES 2010 jobs and workers, NLCD 2010, land area, location)\nModel B: adds ACS 2010-14. Our data has no ACS 2006-10, so this is a small leak. Model B is used only if it beats A by more than 0.02 R2 in spatial CV\nCheck with random 5-fold CV and spatial CV (whole counties held out). Report R2 and feature importance\nThe fitted model is then fed 2020 values to rank tracts by expected growth\n\nADUs by 2031 = people x Pew rate x payoff x lots x demand x rule x 5 years\n\nPew rate: 26 (low), 53.5 (mid), 81 (high) ADU permits per 100,000 people per year, from cities that allow ADUs\nPayoff: yes 1.0, maybe 0.5, no 0.2 (some people build for family, not rent)\nLots: share of homes on a lot with room / state average, capped at 2. From lots_tract.csv (6950) when it exists, else single-family detached share (ACS 2020-24). The notebook switches by itself\nDemand: 0.5 to 1.5 from the random forest ranking\nCapped at lots with room (fallback: single-family detached homes)\n\nSanity check: for all of PA the Pew range is about 3,400 to 10,500 a year\nTwo rules: today (town list in shared/legal_status.csv) and HB 2186 (allowed everywhere)\n\nToday: allowed 1.0, limited 0.02 / 0.05 / 0.10 (low / mid / high), not allowed 0\nTowns not in the list are treated as limited. This is an assumption. Many PA towns allow some kind of in-law unit, but the rules are not coded yet\n\nOutput: data/processed/forecast_town.csv"
+  },
+  {
+    "objectID": "musa5500/docs/methods.html#course-requirements-met",
+    "href": "musa5500/docs/methods.html#course-requirements-met",
+    "title": "MUSA 5500 Methods",
+    "section": "Course requirements met",
+    "text": "Course requirements met\n\n\n\n\n\n\n\nRequirement\nWhere\n\n\n\n\nData from an API\nCensus API (ACS, decennial), USGS web service (land cover)\n\n\n3+ data sources\nCensus, LEHD, IRS, Freddie Mac, USGS, OpenStreetMap\n\n\nComplex analysis (joins, reshaping)\nSteps 1-2\n\n\nOSMnx network analysis\nStep 4\n\n\nK-means clustering\nStep 3\n\n\nRaster analysis\nStep 4 (zonal stats)\n\n\nscikit-learn model\nStep 6 (random forest)\n\n\nInteractive visualizations\nThe tool + maps on the Results page"
+  },
+  {
+    "objectID": "musa6950/docs/proposal.html",
+    "href": "musa6950/docs/proposal.html",
+    "title": "MUSA 6950 Proposal",
+    "section": "",
+    "text": "Submitted Nov 3, 2026.\nRoom for a Backyard Home: Measuring ADU Capacity Across Pennsylvania with GeoAI\nTeam: Ye Zhang\nBackground and Research Question: Pennsylvania needs more housing, but most towns make it hard to build an accessory dwelling unit (ADU), a small second home on a lot, like a backyard cottage. A state bill, HB 2186, would allow one on every home lot. But no one knows how many lots actually have room for one. Backyards also hold a lot of trees, so building there has an environmental cost.\nResearch question: How many home lots in Pennsylvania have room for a backyard ADU, how many could fit one without cutting down trees, and can AI on aerial images measure this better than building outlines alone?\nStudy Area: The whole state of Pennsylvania (all 67 counties), with results for every census tract, town, and county.\nGoal: Builders and homeowners can type in an address and see if an ADU fits and where. Planners can see how many new homes ADUs could add in their town or county.\nData Sources: Aerial images of the whole state (NAIP, 2022), building outlines (Microsoft), and property lines from counties that share them. For training, I will use land cover maps from Philadelphia and the Chesapeake Bay area, plus a few hundred lots I label by hand.\nProposed AI Methods: First, a U-Net sorts each image into buildings, trees, and open ground, since building outlines alone do not show trees or pavement. I will compare it with a simpler Random Forest model. Second, YOLO finds garages and sheds the outlines miss. Third, a simple rule checks if each lot has an open spot big enough for an ADU, with and without cutting trees. I will test accuracy on lots I labeled myself, then run it statewide.\nExpected Outcomes: A model that maps buildings, trees, and open ground; a map of how many lots can fit an ADU, with and without cutting trees; a check of how accurate the AI is; and a dashboard with an address search and a town and county view. I will share the results in a written report and a presentation.\nAbout the Larger Project: This is half of a bigger ADU project. This half asks whether an ADU fits. My MUSA 5500 project asks whether people need housing there and whether an ADU would pay off, using population, job, and rent trends since 2010. Together they show whether there is room for ADUs where people need housing. Both will share one dashboard, but each class will have its own code and documentation."
+  },
+  {
+    "objectID": "musa6950/docs/methods.html",
+    "href": "musa6950/docs/methods.html",
+    "title": "MUSA 6950 Methods",
+    "section": "",
+    "text": "Six steps. Each step is one notebook in musa6950/notebooks/."
+  },
+  {
+    "objectID": "musa6950/docs/methods.html#look-at-the-data-and-hand-label-lots",
+    "href": "musa6950/docs/methods.html#look-at-the-data-and-hand-label-lots",
+    "title": "MUSA 6950 Methods",
+    "section": "1. Look at the data and hand-label lots",
+    "text": "1. Look at the data and hand-label lots\nNotebook 01_look_and_label.ipynb\n\nPlot a few boxes: image next to label\nCheck class shares in train vs test\nPick 200-300 single-family lots in the test counties (Cumberland, Centre) and Philadelphia\nFor each lot, mark by eye: does a 20 x 30 ft (600 sq ft) spot fit in the backyard? With or without cutting trees?\nSave as data/processed/hand_labels.csv (lot_id, fits, fits_keep_trees)\nThis is the ground truth for the last check\nDone so far: plots and class shares. Hand labels are not made yet\n\nNotebook 05 writes a blank form, hand_labels_template.csv: 250 random lots (seed 42), Philadelphia + Cumberland\nCentre has no lot lines in this project, so it is not in the form\n\n4 of the 177 boxes (on the New York line) have no 2022 PA image. 173 boxes are used: 146 train, 27 test"
+  },
+  {
+    "objectID": "musa6950/docs/methods.html#random-forest-baseline",
+    "href": "musa6950/docs/methods.html#random-forest-baseline",
+    "title": "MUSA 6950 Methods",
+    "section": "2. Random Forest baseline",
+    "text": "2. Random Forest baseline\nNotebook 02_random_forest.ipynb (from Lab 6)\n\nEach pixel = 4 band values (R, G, B, NIR) + NDVI\n500 random pixels per class per box\nRandomForestClassifier(n_estimators=100)\nScore on the test counties: per-class IoU, mean IoU, confusion matrix\nEvery labeled pixel of the 27 test boxes is scored (about 109 million)"
+  },
+  {
+    "objectID": "musa6950/docs/methods.html#u-net",
+    "href": "musa6950/docs/methods.html#u-net",
+    "title": "MUSA 6950 Methods",
+    "section": "3. U-Net",
+    "text": "3. U-Net\nNotebook 03_unet.ipynb (from Lab 9 and my Assignment 6)\n\nCut boxes into 256 x 256 tiles\n4 input bands, 4 output classes (other, building, tree, open ground). 255 = ignore\nClass-weighted cross entropy, Adam lr 0.001, batch 8\nRandom flips, same flip on image and label\nValidation = a few train counties held back. Test = Cumberland + Centre\n\n7 counties held back (seed 42), 24 boxes. 122 boxes left for training\n\nWhat was run: plain U-Net written in torch (musa6950/unet.py), base width 32, 7.8 M parameters\n\nClass weights = 1 / sqrt(class share)\nCosine decay of the learning rate over 10 epochs. 45 min on a Mac (MPS)\nBest epoch by validation mIoU is kept\nTest boxes are predicted in 512 px windows with a 64 px margin\n\nSame scores as the Random Forest so they compare\nTrain on Mac (MPS) or Google Colab GPU\nNote from Assignment 6: bare soil scored 0 IoU. Here bare ground is part of “open ground”"
+  },
+  {
+    "objectID": "musa6950/docs/methods.html#garages-and-sheds-yolo",
+    "href": "musa6950/docs/methods.html#garages-and-sheds-yolo",
+    "title": "MUSA 6950 Methods",
+    "section": "4. Garages and sheds (YOLO)",
+    "text": "4. Garages and sheds (YOLO)\nNotebook 04_sheds.ipynb (from Lab 8 and my Assignment 5)\n\nSimple way first: inside each lot, the biggest building outline = the house. Other outlines under 60 m² = garage or shed\nThen YOLO: label 150-300 sheds in LabelMe, convert to YOLO format, fine-tune\nDoes YOLO find sheds that the outlines miss?\nYOLO (ultralytics) is AGPL. Keep it in this notebook only. The rest of the code never imports it\nWhat was run: only the outline method. YOLO is not done (no shed labels yet). Left as an optional section\nThis notebook also picks the single-family lots for step 5\n\nPhiladelphia: lot building type starts with DET (detached). Rowhouses and twins are dropped. Microsoft merges a row into one outline, so the house can not be found\nCumberland: no building type in the lot file. Lots of 300-20,000 m2\nBoth: biggest outline on the lot is 60-600 m2 and no other outline is over 100 m2"
+  },
+  {
+    "objectID": "musa6950/docs/methods.html#room-for-an-adu-the-fit-rule",
+    "href": "musa6950/docs/methods.html#room-for-an-adu-the-fit-rule",
+    "title": "MUSA 6950 Methods",
+    "section": "5. Room for an ADU (the fit rule)",
+    "text": "5. Room for an ADU (the fit rule)\nNotebook 05_room_rule.ipynb\n\nFor each single-family lot in the pilot counties:\n\nBackyard = lot minus house minus a setback buffer (try 5 ft from lot lines, 10 ft from the house)\nOpen = backyard pixels the model calls open ground\nFits = a 20 x 30 ft rectangle fits in the open area\n\nTest with morphological erosion: erode the open mask by the rectangle. Any pixel left = fits\nTry both rotations\n\nFits keeping trees = same test, but tree pixels are not allowed\nTree loss = tree area inside the spot when the only spot needs trees cut\n\nCheck against the hand labels from step 1: precision, recall\nCompare: rule using only building outlines vs rule using the U-Net map\nWhat was run, where it differs:\n\nWork is in UTM 18N meters (the NAIP grid), not EPSG:2272. Same setbacks in meters. The rectangle is 10 x 15 pixels (6.0 x 9.0 m)\n“Backyard” = the whole lot left after setbacks, front or back\nOther outlines (garages, sheds) are taken out with no buffer\nThe erosion test is done with a summed-area table. Same answer, faster\nNAIP for the pilot counties is read straight from Planetary Computer, only the 512 px blocks that touch a lot. Nothing is saved\nHand labels are not made yet, so there is no precision / recall against them\nInstead: Cumberland lots inside the test boxes are run twice, with the Chesapeake label map and with the U-Net map. Agreement shows how much U-Net errors change the answer\nopen_m2 and tree_m2 in lots_pilot.csv are for the whole lot"
+  },
+  {
+    "objectID": "musa6950/docs/methods.html#statewide-numbers",
+    "href": "musa6950/docs/methods.html#statewide-numbers",
+    "title": "MUSA 6950 Methods",
+    "section": "6. Statewide numbers",
+    "text": "6. Statewide numbers\nNotebook 06_statewide.ipynb\n\nFit rate = lots that fit / single-family lots, by urban / suburban / rural, from the pilot counties\nLots with room per tract = single-family detached homes (ACS B25024) x fit rate for that tract’s group\nRange from bootstrap (resample lots 1,000 times)\n\nWhat was run: resample whole tracts, not single lots, since lots next to each other are alike\n\nPilot lots by group: urban = Philadelphia + Cumberland urban tracts. Suburban and rural = Cumberland only\nThe group rate is used in every tract, the pilot counties too. The lot map has the per-lot answers\nTree loss per tract = lots_fit x mean tree area cut per fitting lot in the group\nOutput for the tool:\n\ndata/processed/lots_tract.csv (every tract)\ndata/processed/lots_pilot.csv (every lot in the pilot counties)"
+  },
+  {
+    "objectID": "musa6950/docs/methods.html#outputs-used-by-musa-5500",
+    "href": "musa6950/docs/methods.html#outputs-used-by-musa-5500",
+    "title": "MUSA 6950 Methods",
+    "section": "Outputs used by MUSA 5500",
+    "text": "Outputs used by MUSA 5500\nlots_tract.csv is the “lots with room” input for the 5500 forecast."
+  }
+]

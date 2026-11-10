@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /musa5500
+    schedule: {interval: monthly}
+  - package-ecosystem: pip
+    directory: /musa6950
+    schedule: {interval: monthly}
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: {interval: monthly}

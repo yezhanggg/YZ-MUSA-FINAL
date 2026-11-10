@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: site
+  render:
+    - index.qmd
+    - tool.qmd
+    - musa5500/docs/proposal.md
+    - musa5500/docs/data.md
+    - musa5500/docs/methods.md
+    - musa5500/docs/results.md
+    - musa6950/docs/proposal.md
+    - musa6950/docs/data.md
+    - musa6950/docs/methods.md
+    - musa6950/docs/results.md
+
+website:
+  title: "Backyard Homes PA"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: tool.qmd
+        text: Tool
+      - text: MUSA 5500 (demand)
+        menu:
+          - href: musa5500/docs/proposal.md
+            text: Proposal
+          - href: musa5500/docs/data.md
+            text: Data
+          - href: musa5500/docs/methods.md
+            text: Methods
+          - href: musa5500/docs/results.md
+            text: Results
+      - text: MUSA 6950 (room on the lot)
+        menu:
+          - href: musa6950/docs/proposal.md
+            text: Proposal
+          - href: musa6950/docs/data.md
+            text: Data
+          - href: musa6950/docs/methods.md
+            text: Methods
+          - href: musa6950/docs/results.md
+            text: Results
+    right:
+      - icon: github
+        href: https://github.com/yezhanggg/YZ-MUSA-FINAL
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+execute:
+  enabled: false

@@ -1,0 +1,14 @@
+# Already in my conda env "geospatial". For a new machine: pip install -r musa5500/requirements.txt
+pandas
+geopandas
+pyogrio
+rasterio
+rasterstats
+osmnx>=2.0
+networkx
+scikit-learn
+requests
+pyproj
+matplotlib
+folium
+jupyterlab

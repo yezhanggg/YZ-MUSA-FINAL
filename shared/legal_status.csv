@@ -1,0 +1,13 @@
+# ADU rules today, by town. Hand-coded. Every town not listed = unknown.
+# adu_rule: allowed (by right) | limited (special exception, family only, some zones) | not_allowed | unknown
+# Check each one against the town's zoning code before the final. Add towns as you find them.
+GEOID,name,adu_rule,source
+4202984160,West Vincent township (Chester),allowed,Township zoning code (by right). Verify.
+4202920864,East Brandywine township (Chester),limited,Special exception. Verify.
+4202946792,Malvern borough (Chester),limited,Special exception. Verify.
+4201719784,Doylestown borough (Bucks),limited,Special exception (2026). Verify.
+4202984104,Westtown township (Chester),limited,Family members only. Verify.
+4207702000,Allentown city (Lehigh),allowed,2026 zoning code includes ADUs. Verify details.
+4210160000,Philadelphia city,limited,Allowed in parts since 2012. Banned in some overlays (Bill 210078-A).
+4200361000,Pittsburgh city (Allegheny),limited,Council approved expansion Oct 27 2026 (Bill 2025-1545). Check if signed.
+4204332800,Harrisburg city (Dauphin),limited,Allowed with conditions. Not verified.

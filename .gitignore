@@ -1,0 +1,33 @@
+# Data is downloaded by script. Never commit it.
+/data/
+*.tif
+*.gpkg
+*.zip
+*.gz
+
+# Models and training runs
+*.pth
+*.pt
+runs/
+
+# Keys
+.env
+
+# Python / Jupyter / Quarto
+__pycache__/
+.ipynb_checkpoints/
+.quarto/
+_freeze/
+.DS_Store
+
+# Node / Vite / Vercel
+node_modules/
+dist/
+.vercel/
+
+/.quarto/
+**/*.quarto_ipynb
+
+# Private notes, drafts, reports. Never pushed (also blocked by .git/hooks)
+/no-push/
+.pytest_cache/

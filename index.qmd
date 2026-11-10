@@ -1,0 +1,31 @@
+---
+title: "Backyard Homes PA"
+subtitle: "Where could Pennsylvania add ADUs, and would they pay off?"
+toc: false
+---
+
+Ye Zhang · MUSA 5500 + MUSA 6950 · Fall 2026
+
+## The project
+
+A state bill, HB 2186, would allow one accessory dwelling unit (ADU) on every home lot in Pennsylvania.
+No one knows how many lots have room for one, or where one would pay off.
+This project answers both, for the whole state.
+
+- Is it allowed? Town rules today vs HB 2186
+- Does it fit? MUSA 6950. AI on aerial images finds open yard space and trees
+- Does it pay off? MUSA 5500. Population, jobs, rent, and building trends since 2010
+- How many by 2031? Both halves together
+
+[Open the tool](tool.qmd){.btn .btn-primary}
+
+## Two classes, one tool
+
+| | MUSA 5500 | MUSA 6950 |
+|---|---|---|
+| Question | Is there demand, and does an ADU pay off? | Is there room on the lot? |
+| Methods | APIs, spatial joins, K-means, zonal stats, OSMnx, random forest | U-Net, Random Forest, YOLO, a 600 sq ft fit rule |
+| Code | `musa5500/` | `musa6950/` |
+| Docs | [MUSA 5500 pages](musa5500/docs/data.md) | [MUSA 6950 pages](musa6950/docs/data.md) |
+
+Each class has its own code and documentation. The tool reads results from both.
