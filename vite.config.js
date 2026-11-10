@@ -10,6 +10,7 @@ export default defineConfig({
   root: resolve(ROOT, "app"),
   base: "/app/",
   publicDir: "public",
+  worker: { format: "es" },
   build: { outDir: resolve(ROOT, "dist/app"), emptyOutDir: true },
   plugins: [{
     name: "copy-quarto-site",
@@ -17,7 +18,9 @@ export default defineConfig({
     closeBundle() {
       const site = resolve(ROOT, "site");
       if (!existsSync(site)) throw new Error("site/ missing. Run `quarto render` first.");
-      cpSync(site, resolve(ROOT, "dist"), { recursive: true });
+      // Skip site/app: Quarto copies the raw tool page there. Vite's build of it is in dist/app.
+      const skip = resolve(site, "app");
+      cpSync(site, resolve(ROOT, "dist"), { recursive: true, filter: (src) => !src.startsWith(skip) });
     },
   }],
 });

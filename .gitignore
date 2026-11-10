@@ -31,3 +31,4 @@ dist/
 # Private notes, drafts, reports. Never pushed (also blocked by .git/hooks)
 /no-push/
 .pytest_cache/
+.vercel

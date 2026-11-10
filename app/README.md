@@ -1,29 +1,29 @@
 # The tool
 
-One page. Map + search on the left, report on the right. Plain HTML, CSS, and JavaScript. No build step.
+One page. Map + search on the left, report on the right. Plain HTML, CSS, and JavaScript, built with Vite.
 
 - `index.html` page layout
 - `style.css` look (based on the VisionPitts Place tab)
 - `app.js` map, search, report
 - `build_data.py` makes the files in `data/`
-- `data/` small files the page reads. These are committed
+- `public/data/` small files the page reads. These are committed
 
 ## Run it
 
 ```bash
 python app/build_data.py
-python -m http.server 8000
+npm run dev
 ```
 
-Then open http://localhost:8000/app/
+Then open http://localhost:5173/app/
 
 ## How it works
 
-- Map: MapLibre GL JS 4.7.1, OpenFreeMap Positron basemap (free, no key)
+- Map: MapLibre GL JS 6 (npm), OpenFreeMap Positron basemap (free, no key)
 - Search: Photon (komoot), free, no key, limited to Pennsylvania
 - Click the map = test that spot too
 - Point in polygon finds the tract and town in the browser
-- Lot results: loads `data/lots/<tract>.json` and takes the nearest lot within 40 m
+- Lot results: loads `public/data/lots/<tract>.json` and takes the nearest lot within 40 m
 - Rules switch: Today (from `shared/legal_status.csv`) or HB 2186 (allowed everywhere)
 - Anything missing shows "Not ready yet"
 

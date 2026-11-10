@@ -1,14 +1,16 @@
 // Backyard Homes PA: search a spot, see if an ADU is allowed, fits, and pays off.
 // Built with Vite. Data comes from app/public/data/ (made by app/build_data.py).
 
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import "./style.css";
 
 const PA_BBOX = [-80.52, 39.72, -74.69, 42.27];
 const state = { rule: "current", metric: "jobs_after", tracts: null, towns: null, marker: null };
 
 // ---------- Map ----------
+maplibregl.setWorkerUrl(workerUrl);
 const map = new maplibregl.Map({
   container: "map",
   style: "https://tiles.openfreemap.org/styles/positron",
@@ -17,6 +19,7 @@ const map = new maplibregl.Map({
   attributionControl: { compact: true },
 });
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+window.map = map; // handy in the browser console
 
 // Colors for each map metric: [break, color] pairs, lowest first
 const METRICS = {

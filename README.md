@@ -2,7 +2,7 @@
 
 Where can Pennsylvania add ADUs (backyard homes), and would they pay off?
 
-- Website + tool: https://yezhanggg.github.io/YZ-MUSA-FINAL/
+- Website + tool: https://yz-musa-final.vercel.app
 - Ye Zhang, MUSA 5500 + MUSA 6950, Fall 2026
 
 ## Two parts
@@ -17,11 +17,13 @@ Where can Pennsylvania add ADUs (backyard homes), and would they pay off?
 python shared/get_boundaries.py
 python musa5500/get_data.py      # conda env geospatial. Needs CENSUS_API_KEY in .env
 python musa6950/get_data.py      # conda env geoai
-python app/build_data.py
-python -m http.server 8000       # open localhost:8000/app/
+python app/build_data.py         # tool data -> app/public/data
+quarto render                    # docs pages -> site/
+npm install && npm run dev       # tool at localhost:5173/app/
 ```
 
-Then run the notebooks in order. Data is not in the repo.
+- Run the notebooks in order before `build_data.py`. Data is not in the repo
+- Vercel runs `npm run build` (Vite builds the tool, then copies `site/`). Commit `site/` after `quarto render`
 
 ## Notes
 

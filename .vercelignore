@@ -1,8 +1,8 @@
-data/
-no-push/
+/data/
+/no-push/
 .env
 node_modules/
-dist/
+/dist/
 .quarto/
 **/__pycache__/
 **/*.ipynb
