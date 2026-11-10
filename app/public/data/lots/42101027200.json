@@ -1,1 +1,1 @@
-[{"lot_id": "42101-452977", "lon": -75.11234, "lat": 40.045879, "lot_m2": 1729.0, "open_m2": 69.1, "tree_m2": 861.8, "fits": true, "fits_keep_trees": false}]
+[{"lot_id": "42101-452977", "lon": -75.11234, "lat": 40.045879, "lot_m2": 1729.0, "open_m2": 69.1, "tree_m2": 861.8, "fits": true, "fits_keep_trees": false, "rule_lot": "variance", "rule_why": "Council District 9 (needs 1, 2, 3, or 7); zoned RSA3 (needs RSA-5 or CMX-1); inside a screened overlay", "phl_zoning": "RSA3", "phl_council": 9.0}]

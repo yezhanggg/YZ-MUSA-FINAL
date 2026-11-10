@@ -86,10 +86,57 @@ body {
   background-clip: padding-box;
 }
 
-/* Soft dotted paper behind the landing page */
-.paper-dots {
-  background-image: radial-gradient(rgb(15 23 42 / 0.07) 1px, transparent 1px);
-  background-size: 22px 22px;
+/* ADU size slider: filled track up to the thumb */
+input[type='range'].weight {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type='range'].weight::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #7c3aed 0 var(--pct, 50%), #e7e5e4 var(--pct, 50%) 100%);
+}
+input[type='range'].weight::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: #e7e5e4;
+}
+input[type='range'].weight::-moz-range-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: #7c3aed;
+}
+input[type='range'].weight::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid #7c3aed;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.18);
+  transition: transform 0.15s;
+}
+input[type='range'].weight::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid #7c3aed;
+}
+input[type='range'].weight:active::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+input[type='range'].weight:focus-visible {
+  outline: none;
+}
+input[type='range'].weight:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgb(124 58 237 / 0.25);
 }
 
 /* Map chrome */
@@ -150,6 +197,33 @@ body {
   }
 }
 
+/* Lot hover tooltip */
+.bh-tip .maplibregl-popup-content {
+  padding: 8px 11px;
+  border-radius: 12px;
+  font: 13px/1.4 var(--font-sans);
+  color: #1e293b;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 10px 30px -10px rgb(15 23 42 / 0.35);
+}
+.bh-tip .maplibregl-popup-tip {
+  display: none;
+}
+.bh-tip-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.bh-tip-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+}
+.bh-tip-sub {
+  margin-top: 2px;
+  font-size: 12px;
+  color: #64748b;
+}
+
 /* Words with a slow light passing over them (loading states) */
 .shimmer-text {
   color: #64748b;
@@ -169,192 +243,11 @@ body {
   }
 }
 
-/* Slowly drifting colour behind the hero */
-.hero-aurora {
-  background:
-    radial-gradient(40% 50% at 20% 20%, rgb(196 181 253 / 0.45), transparent 70%),
-    radial-gradient(35% 45% at 85% 30%, rgb(167 243 208 / 0.35), transparent 70%),
-    radial-gradient(40% 50% at 60% 90%, rgb(253 230 138 / 0.25), transparent 70%);
-  animation: aurora 18s ease-in-out infinite alternate;
-}
-@keyframes aurora {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  to {
-    transform: translate3d(-3%, 2%, 0) scale(1.06);
-  }
-}
-
-/* ------------------------------------------------------------ docs typography */
-.prose-doc {
-  color: #334155;
-  font-size: 15.5px;
-  line-height: 1.7;
-}
-.prose-doc > * + * {
-  margin-top: 1em;
-}
-.prose-doc h2 {
-  font-family: var(--font-display);
-  font-size: 26px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: #0f172a;
-  margin-top: 2.4em;
-  padding-top: 0.2em;
-  scroll-margin-top: 96px;
-  letter-spacing: -0.01em;
-}
-.prose-doc h3 {
-  font-family: var(--font-display);
-  font-size: 19px;
-  font-weight: 600;
-  color: #0f172a;
-  margin-top: 2em;
-  scroll-margin-top: 96px;
-}
-.prose-doc h2:first-child,
-.prose-doc h3:first-child {
-  margin-top: 0;
-}
-.prose-doc a {
-  color: #6d28d9;
-  text-decoration: underline;
-  text-decoration-color: #c4b5fd;
-  text-underline-offset: 3px;
-}
-.prose-doc a:hover {
-  text-decoration-color: #6d28d9;
-}
-.prose-doc strong {
-  color: #0f172a;
-  font-weight: 600;
-}
-.prose-doc ul,
-.prose-doc ol {
-  padding-left: 1.3em;
-}
-.prose-doc ul {
-  list-style: none;
-  padding-left: 1.1em;
-}
-.prose-doc ul > li {
-  position: relative;
-}
-.prose-doc ul > li::before {
-  content: '';
-  position: absolute;
-  left: -1em;
-  top: 0.72em;
-  width: 6px;
-  height: 6px;
-  border-radius: 2px;
-  background: #c4b5fd;
-}
-.prose-doc ol {
-  list-style: decimal;
-}
-.prose-doc ol > li::marker {
-  color: #7c3aed;
-  font-weight: 600;
-}
-.prose-doc li + li {
-  margin-top: 0.35em;
-}
-.prose-doc li > ul {
-  margin-top: 0.35em;
-}
-.prose-doc code {
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-  font-size: 0.86em;
-  background: #f3efff;
-  color: #5b21b6;
-  padding: 0.12em 0.4em;
-  border-radius: 6px;
-}
-.prose-doc pre {
-  background: #0f172a;
-  color: #e2e8f0;
-  border-radius: 14px;
-  padding: 16px 18px;
-  overflow-x: auto;
-  font-size: 13px;
-  line-height: 1.6;
-}
-.prose-doc pre code {
-  background: none;
-  color: inherit;
-  padding: 0;
-}
-.prose-doc .table-wrap {
-  overflow-x: auto;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 0 0 1px rgb(231 229 228 / 0.9), 0 6px 24px -14px rgb(15 23 42 / 0.25);
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-}
-.prose-doc table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13.5px;
-  line-height: 1.45;
-  font-variant-numeric: tabular-nums;
-}
-.prose-doc thead tr {
-  background: #faf9f7;
-}
-.prose-doc th {
-  text-align: left;
-  font-weight: 600;
-  color: #475569;
-  font-size: 12.5px;
-  padding: 10px 14px;
-  border-bottom: 1px solid #e7e5e4;
-  white-space: nowrap;
-}
-.prose-doc td {
-  padding: 9px 14px;
-  border-top: 1px solid #f1efec;
-  color: #1e293b;
-  vertical-align: top;
-}
-.prose-doc tbody tr:first-child td {
-  border-top: 0;
-}
-.prose-doc tbody tr:hover td {
-  background: #faf8ff;
-}
-.prose-doc td:first-child {
-  font-weight: 500;
-  color: #0f172a;
-}
-.prose-doc figure {
-  margin: 1.8em 0;
-}
-.prose-doc figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 0 0 1px rgb(231 229 228 / 0.9), 0 10px 30px -18px rgb(15 23 42 / 0.35);
-  cursor: zoom-in;
-}
-.prose-doc figcaption {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #64748b;
-  text-align: center;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .bh-pin-ring,
-  .hero-aurora {
+  .bh-pin-ring {
     animation: none;
   }
   .shimmer-text {
@@ -367,7 +260,7 @@ body {
 /* Phones: map zoom buttons go to the top right, out of the bottom sheet's way */
 @media (max-width: 639px) {
   .bh-map .maplibregl-ctrl-bottom-right {
-    top: 8.5rem;
+    top: 14rem;
     bottom: auto;
   }
 }

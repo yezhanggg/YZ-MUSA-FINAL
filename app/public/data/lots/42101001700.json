@@ -1,1 +1,1 @@
-[{"lot_id": "42101-250211", "lon": -75.145198, "lat": 39.938241, "lot_m2": 495.7, "open_m2": 4.7, "tree_m2": 150.8, "fits": false, "fits_keep_trees": false}]
+[{"lot_id": "42101-250211", "lon": -75.145198, "lat": 39.938241, "lot_m2": 495.7, "open_m2": 4.7, "tree_m2": 150.8, "fits": false, "fits_keep_trees": false, "rule_lot": "conversion_only", "rule_why": "Meets 14-604(11): conversion only, max 800 sq ft, owner on site", "phl_zoning": "RSA5", "phl_council": 1.0}]

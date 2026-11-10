@@ -1,1 +1,1 @@
-[{"lot_id": "42101-404229", "lon": -75.15716, "lat": 39.943122, "lot_m2": 132.6, "open_m2": 33.5, "tree_m2": 0.0, "fits": false, "fits_keep_trees": false}]
+[{"lot_id": "42101-404229", "lon": -75.15716, "lat": 39.943122, "lot_m2": 132.6, "open_m2": 33.5, "tree_m2": 0.0, "fits": false, "fits_keep_trees": false, "rule_lot": "variance", "rule_why": "zoned RM1 (needs RSA-5 or CMX-1); lot under 1,600 sq ft", "phl_zoning": "RM1", "phl_council": 1.0}]

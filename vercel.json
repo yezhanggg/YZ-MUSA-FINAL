@@ -6,7 +6,7 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/app", "destination": "/#/tool", "permanent": false },
-    { "source": "/app/", "destination": "/#/tool", "permanent": false }
+    { "source": "/app", "destination": "/", "permanent": false },
+    { "source": "/app/", "destination": "/", "permanent": false }
   ]
 }

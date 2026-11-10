@@ -285,7 +285,59 @@ def landcover():
     print("  developed land = classes 21, 22, 23, 24")
 
 
-PARTS = {"acs": acs, "decennial": decennial, "pop": pop, "jobs": jobs, "permits": permits,
+RENT_BR_VARS = {"B25031_001E": "rent_all", "B25031_002E": "rent_b0", "B25031_003E": "rent_b1",
+                "B25031_004E": "rent_b2", "B25031_005E": "rent_b3"}
+
+
+def rent_bedrooms():
+    """Median gross rent by bedrooms (ACS 2020-24, table B25031), tract + county.
+
+    Used by the tool to test ADUs of different sizes (studio to 3 BR).
+    Tract values by bedroom are often based on few renters and are noisy.
+    So the tool uses: tract median rent (all units) x county ratio
+    (county rent for that size / county median rent). If the tract has no
+    median rent, it uses the county value for that size.
+    """
+    step("Rent by bedrooms, ACS 2020-24 (Census API)")
+    key = census_key()
+    if not key:
+        print("  skip: no CENSUS_API_KEY. See README.md (Census key).")
+        return
+    year = max(ACS_YEARS)
+    frames = {}
+    for geo, params in [("tract", {"for": "tract:*", "in": f"state:{STATE} county:*"}),
+                        ("county", {"for": "county:*", "in": f"state:{STATE}"})]:
+        dest = R / "acs" / f"acs5_{year}_rent_bedrooms_{geo}.csv"
+        if not dest.exists():
+            print(f"  get   B25031 by {geo}")
+            r = requests.get(f"https://api.census.gov/data/{year}/acs/acs5",
+                             params={"get": "NAME," + ",".join(RENT_BR_VARS), **params, "key": key},
+                             headers=HEADERS, timeout=120)
+            r.raise_for_status()
+            rows = r.json()
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            pd.DataFrame(rows[1:], columns=rows[0]).to_csv(dest, index=False)
+        df = pd.read_csv(dest, dtype=str)
+        df["GEOID"] = df.state + df.county + (df.tract if geo == "tract" else "")
+        df = df.rename(columns=RENT_BR_VARS)[["GEOID", *RENT_BR_VARS.values()]]
+        num = list(RENT_BR_VARS.values())
+        df[num] = df[num].astype(float)
+        df[num] = df[num].mask(df[num] < 0)
+        frames[geo] = df
+    t, c = frames["tract"].copy(), frames["county"].set_index("GEOID")
+    cty = t.GEOID.str[:5]
+    for col in ["rent_b0", "rent_b1", "rent_b2", "rent_b3"]:
+        t[f"{col}_tract"] = t[col]   # raw tract value, kept for reference
+        ratio = cty.map(c[col] / c["rent_all"])
+        t[col] = (t["rent_all"] * ratio).round().fillna(cty.map(c[col]))
+    print("  county ratio to median rent (PA median county):",
+          {k: round((c[k] / c.rent_all).median(), 2) for k in ["rent_b0", "rent_b1", "rent_b2", "rent_b3"]})
+    out = t.drop(columns=["rent_all"]).rename(columns=lambda x: x)
+    out.to_csv(OUT / "rent_bedrooms_tract.csv", index=False)
+    print(f"  saved rent_bedrooms_tract.csv ({len(out)} tracts, blanks: {int(out.rent_b1.isna().sum())})")
+
+
+PARTS = {"acs": acs, "rent_bedrooms": rent_bedrooms, "decennial": decennial, "pop": pop, "jobs": jobs, "permits": permits,
          "migration": migration, "rates": rates, "landcover": landcover}
 
 if __name__ == "__main__":

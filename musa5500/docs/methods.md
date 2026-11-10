@@ -95,6 +95,15 @@ Notebook `04_payoff_forecast.ipynb`
   - Towns not in the list are treated as limited. This is an assumption. Many PA towns allow some kind of in-law unit, but the rules are not coded yet
 - Output: `data/processed/forecast_town.csv`
 
+## 7. Test other ADU sizes (in the tool)
+
+- The report uses one base case: 600 sq ft, tract median rent
+- In the tool, users pick studio, 1, 2, or 3 BR, a size (250 to 1,500 sq ft), and 1 or 2 stories
+- Rent = ACS rent for that bedroom count (see data notes). Cost = size x $/sq ft x 1.15, same loan as step 5
+- Same yes / maybe / no rule as step 5, computed live in the browser
+- Room on the lot uses the largest footprint that fits each lot (MUSA 6950). Footprint = size / stories
+- The town forecast stays at the base case
+
 ## Course requirements met
 
 | Requirement | Where |

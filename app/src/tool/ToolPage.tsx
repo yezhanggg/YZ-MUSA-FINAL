@@ -4,17 +4,26 @@ import { MapNav } from '../components/SiteNav';
 import MapCanvas from './MapCanvas';
 import LeftPanel from './LeftPanel';
 import Report from './Report';
-import { useTool } from './store';
+import MapControls from './MapControls';
+import { useEffect } from 'react';
+import { aduFromHash, useTool } from './store';
 
 /** Full-screen map with floating panels: search and controls on the left, the report on the right. */
 export default function ToolPage() {
   const status = useTool((s) => s.status);
   const hasSpot = useTool((s) => !!s.spot || s.busy);
+  // A scenario link opened while the tool is already up (#/tool?bed=2&size=800&st=1)
+  useEffect(() => {
+    const on = () => window.location.hash.includes('?') && useTool.getState().set({ adu: aduFromHash(window.location.hash) });
+    window.addEventListener('hashchange', on);
+    return () => window.removeEventListener('hashchange', on);
+  }, []);
   return (
     <div className="relative h-dvh w-full overflow-hidden bg-[#eef0f2]">
       <MapCanvas />
       <MapNav />
       <LeftPanel />
+      <MapControls />
       <Report />
       <AnimatePresence>
         {(status === 'loading' || (status === 'ready' && !hasSpot)) && (

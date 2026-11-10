@@ -6,6 +6,7 @@ import { AlertTriangle, CheckCircle2, ChevronDown, CircleSlash, HelpCircle, X } 
 import { SPRING_PANEL, Tag, usePhone } from '../components/primitives';
 import { cx } from '../lib/cx';
 import { annual, fmt, isNum, money, pct, sqft } from '../lib/format';
+import { footprint, isBase, lotFit, rentNote, tractPayoff, tractRoom } from '../lib/adu';
 import { clearSpot } from './actions';
 import { useTool, type Spot } from './store';
 
@@ -79,14 +80,20 @@ function Skeleton() {
 function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMin: () => void }) {
   const ruleMode = useTool((s) => s.rule);
   const busy = useTool((s) => s.busy);
+  const adu = useTool((s) => s.adu);
+  const curves = useTool((s) => s.curves);
   const { label, tract: t, town: w, lot } = spot;
+  const fp = footprint(adu);
 
   // Allowed?
   const rule: RuleKey = ruleMode === 'hb2186' ? 'allowed' : ((w.adu_rule as RuleKey | null | undefined) ?? 'unknown');
   // Fits? (MUSA 6950)
-  const fits = lot ? (lot.fits ? (lot.fits_keep_trees ? 'yes' : 'trees') : 'no') : null;
-  // Pays? (MUSA 5500)
-  const pays = t.pays ?? null;
+  const fits = lot ? lotFit(lot, adu) : null;
+  const lotNotReady = !!lot && fits === null;
+  // Pays? (MUSA 5500), live for the ADU being tested
+  const pay = tractPayoff(t, adu);
+  const pays = pay?.pays ?? null;
+  const room = tractRoom(t, adu, curves);
 
   // Verdict
   let tone: Tone = 'none';
@@ -96,10 +103,13 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
     tone = 'bad';
     head = 'Not allowed here today';
     line = 'Switch to HB 2186 to see what the bill would change.';
+  } else if (lotNotReady) {
+    head = 'Not ready for this size';
+    line = 'Lot results for other footprints come with the next model run. Reset to 600 sq ft to check this lot.';
   } else if (fits === 'no') {
     tone = 'bad';
     head = 'No room on this lot';
-    line = 'No open spot big enough for a 600 sq ft ADU.';
+    line = `No open spot big enough for a ${fmt(fp)} sq ft footprint.`;
   } else if (fits && pays) {
     const ok = rule === 'allowed' && fits === 'yes' && pays === 'yes';
     tone = ok ? 'good' : 'warn';
@@ -107,11 +117,12 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
     line = ok ? 'Allowed, fits without cutting trees, and the rent covers the cost.' : 'Check the rule, the trees, or the rent below.';
   }
 
-  const fitShare = isNum(t.lots_total) && t.lots_total > 0 && isNum(t.lots_fit) ? `${Math.round((100 * t.lots_fit) / t.lots_total)}% of lots` : null;
+  const notReady = 'Not ready for this size';
+  const fitShare = room && room.total > 0 ? `${Math.round((100 * room.fit) / room.total)}% of lots` : isBase(adu) ? null : notReady;
   const tiles: { k: string; v: string | null; s: string; tone?: 'good' | 'warn' | 'bad' }[] = [
     { k: 'Allowed', v: RULE_TEXT[rule], s: ruleMode === 'hb2186' ? 'Under HB 2186' : "Today's rules", tone: rule === 'allowed' ? 'good' : rule === 'limited' ? 'warn' : rule === 'not_allowed' ? 'bad' : undefined },
-    { k: 'Room on lot', v: fits ? { yes: 'Fits', trees: 'Fits if trees cut', no: 'No room' }[fits] : fitShare, s: fits ? 'MUSA 6950' : 'Tract, MUSA 6950', tone: fits === 'yes' ? 'good' : fits === 'trees' ? 'warn' : fits === 'no' ? 'bad' : undefined },
-    { k: 'Pays off', v: pays ? { yes: 'Yes', maybe: 'Close', no: 'No' }[pays] : null, s: 'MUSA 5500', tone: pays === 'yes' ? 'good' : pays === 'maybe' ? 'warn' : pays === 'no' ? 'bad' : undefined },
+    { k: 'Room on lot', v: fits ? { yes: 'Fits', trees: 'Fits if trees cut', no: 'No room' }[fits] : lotNotReady ? notReady : fitShare, s: fits ? 'MUSA 6950' : 'Tract, MUSA 6950', tone: fits === 'yes' ? 'good' : fits === 'trees' ? 'warn' : fits === 'no' ? 'bad' : undefined },
+    { k: 'Pays off', v: pays ? { yes: 'Yes', maybe: 'Close', no: 'No' }[pays] : isBase(adu) ? null : notReady, s: 'MUSA 5500', tone: pays === 'yes' ? 'good' : pays === 'maybe' ? 'warn' : pays === 'no' ? 'bad' : undefined },
     { k: 'Jobs since 2019', v: pct(t.jobs_after), s: 'Tract, MUSA 5500' },
   ];
 
@@ -216,8 +227,12 @@ const GROW = { type: 'spring', stiffness: 140, damping: 22 } as const;
 
 function RoomCard({ spot }: { spot: Spot }) {
   const { lot, tract: t } = spot;
-  const share = isNum(t.lots_total) && t.lots_total > 0 && isNum(t.lots_fit) ? t.lots_fit / t.lots_total : null;
-  const keep = isNum(t.lots_total) && t.lots_total > 0 && isNum(t.lots_fit_keep_trees) ? t.lots_fit_keep_trees / t.lots_total : null;
+  const adu = useTool((s) => s.adu);
+  const curves = useTool((s) => s.curves);
+  const room = tractRoom(t, adu, curves);
+  const share = room && room.total > 0 ? room.fit / room.total : null;
+  const keep = room && room.total > 0 && room.keep != null ? room.keep / room.total : null;
+  const notReady = isBase(adu) ? null : 'Not ready for this size';
   const parts = lot
     ? [
         { k: 'Open ground', v: lot.open_m2, c: '#facc15' },
@@ -248,8 +263,14 @@ function RoomCard({ spot }: { spot: Spot }) {
       {lot && <KV k="Lot size" v={sqft(lot.lot_m2)} />}
       {lot && <KV k="Open ground" v={sqft(lot.open_m2)} />}
       {lot && <KV k="Tree cover" v={sqft(lot.tree_m2)} />}
-      <KV k="Lots with room in this tract" v={isNum(t.lots_fit) ? `${fmt(t.lots_fit)} of ${fmt(t.lots_total)}` : null} />
-      <KV k="Without cutting trees" v={fmt(t.lots_fit_keep_trees)} />
+      {lot && isNum(lot.max_fit_sqft) && (
+        <div className="my-1.5 rounded-lg bg-violet-50/70 px-3 py-2 text-small text-violet-950 ring-1 ring-violet-200/70">
+          Largest footprint that fits here: <b className="tnum">{fmt(lot.max_fit_sqft)} sq ft</b>
+          {isNum(lot.max_fit_keep_trees_sqft) && <> ({fmt(lot.max_fit_keep_trees_sqft)} keeping trees)</>}
+        </div>
+      )}
+      <KV k={`Lots with room for ${fmt(footprint(adu))} sq ft`} v={room ? `${fmt(room.fit)} of ${fmt(room.total)}` : notReady} />
+      <KV k="Without cutting trees" v={room?.keep != null ? fmt(room.keep) : notReady} />
       {share != null && (
         <div className="mt-2.5">
           <div className="relative h-2 overflow-hidden rounded-full bg-stone-100">
@@ -272,9 +293,9 @@ function DemandCard({ spot }: { spot: Spot }) {
   const maxJobs = Math.max(...years.map(([, v]) => v), 1);
   const popBefore = annual(w.pop_2010, w.pop_2019, 9);
   const popAfter = annual(w.pop_2019, w.pop_2025, 6);
-  const rent = isNum(t.rent_est) ? t.rent_est : null;
-  const cost = isNum(t.cost_month) ? t.cost_month : null;
-  const top = Math.max(rent ?? 0, cost ?? 0, 1);
+  const adu = useTool((s) => s.adu);
+  const pay = tractPayoff(t, adu);
+  const top = pay ? Math.max(pay.rent, pay.cost, 1) : 1;
   return (
     <Card title="Demand and payoff" tag="MUSA 5500">
       <div className="text-caption text-slate-500">Jobs located in this tract</div>
@@ -294,23 +315,38 @@ function DemandCard({ spot }: { spot: Spot }) {
         ))}
       </div>
 
-      {(rent != null || cost != null) && (
-        <div className="mt-3 rounded-xl bg-stone-50 p-3 ring-1 ring-stone-200/70">
-          <div className="mb-2 text-caption font-semibold text-slate-700">ADU rent vs monthly cost</div>
-          {[
-            { k: 'Rent', v: rent, c: t.pays === 'yes' ? 'bg-emerald-500' : t.pays === 'maybe' ? 'bg-amber-400' : 'bg-rose-400' },
-            { k: 'Cost', v: cost, c: 'bg-slate-400' },
-          ].map((r, i) => (
-            <div key={r.k} className="grid grid-cols-[40px_1fr_56px] items-center gap-2 text-small">
-              <span className="text-slate-600">{r.k}</span>
-              <div className="h-2 overflow-hidden rounded-full bg-white ring-1 ring-stone-200/70">
-                {r.v != null && <motion.div className={cx('h-full rounded-full', r.c)} initial={{ width: 0 }} animate={{ width: `${(r.v / top) * 100}%` }} transition={{ ...GROW, delay: 0.2 + i * 0.08 }} />}
-              </div>
-              <span className="text-right font-semibold text-slate-900 tnum">{money(r.v) ?? '–'}</span>
-            </div>
-          ))}
+      <div className="mt-3 rounded-xl bg-stone-50 p-3 ring-1 ring-stone-200/70">
+        <div className="mb-2 flex items-baseline justify-between gap-2 text-caption">
+          <span className="font-semibold text-slate-700">Rent vs monthly cost</span>
+          <span className="text-slate-500">{fmt(adu.size)} sq ft at $250 / sq ft</span>
         </div>
-      )}
+        {pay ? (
+          <>
+            {[
+              { k: 'Rent', v: pay.rent, c: pay.pays === 'yes' ? 'bg-emerald-500' : pay.pays === 'maybe' ? 'bg-amber-400' : 'bg-rose-400' },
+              { k: 'Cost', v: pay.cost, c: 'bg-slate-400' },
+            ].map((r, i) => (
+              <div key={r.k} className="grid grid-cols-[40px_1fr_56px] items-center gap-2 text-small">
+                <span className="text-slate-600">{r.k}</span>
+                <div className="h-2 overflow-hidden rounded-full bg-white ring-1 ring-stone-200/70">
+                  <motion.div className={cx('h-full rounded-full', r.c)} initial={false} animate={{ width: `${(r.v / top) * 100}%` }} transition={{ ...GROW, delay: 0.05 + i * 0.05 }} />
+                </div>
+                <span className="text-right font-semibold text-slate-900 tnum">{money(r.v)}</span>
+              </div>
+            ))}
+            <div className="mt-2 flex items-baseline justify-between border-t border-stone-200 pt-2 text-small">
+              <span className="text-slate-600">Gap after 30% for upkeep and vacancy</span>
+              <span className={cx('font-semibold tnum', pay.gap >= 0 ? 'text-emerald-700' : 'text-rose-700')}>
+                {pay.gap >= 0 ? '+' : '-'}
+                {money(Math.abs(pay.gap))} / mo
+              </span>
+            </div>
+            <p className="mt-1 text-caption text-slate-500">{rentNote(adu, pay)}</p>
+          </>
+        ) : (
+          <p className="text-small text-slate-500">{isBase(adu) ? 'No rent data for this tract.' : 'Not ready for this size.'}</p>
+        )}
+      </div>
 
       <div className="mt-2">
         <KV k="Town population growth, 2010-19" v={popBefore != null ? `${pct(popBefore, 2)} / yr` : null} />
@@ -334,6 +370,7 @@ function TownCard({ spot }: { spot: Spot }) {
   const top = Math.max(cur ?? 0, hb ?? 0, 1);
   return (
     <Card title={(w.NAMELSAD as string) || 'This town'} tag="Planner view">
+      <div className="-mt-1 mb-1 text-caption text-slate-500">Base case: 600 sq ft</div>
       <KV k="ADU rule today" v={RULE_TEXT[(w.adu_rule as RuleKey | null | undefined) ?? 'unknown']} />
       <KV k={`ADUs by 2031 (${ruleMode === 'hb2186' ? 'HB 2186' : "today's rules"})`} v={mid != null ? `${fmt(mid)} (range ${fmt(n(`adus_low_${ruleMode}`))} to ${fmt(n(`adus_high_${ruleMode}`))})` : null} />
       {(cur != null || hb != null) && (

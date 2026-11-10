@@ -8,6 +8,7 @@ Outputs (all in app/public/data/):
     tracts.geojson   one shape per tract with the numbers for the report panel
     towns.geojson    one shape per town with town totals
     lots/<tract>.json  lot results for pilot counties (from MUSA 6950), loaded on search
+    fit_curves.json  share of lots with room by ADU footprint and area type (MUSA 6950)
 """
 import json
 import sys
@@ -63,6 +64,12 @@ def main():
         df = read(name, dtype={"GEOID": str})
         if df is not None:
             tracts = tracts.merge(df, on="GEOID", how="left")
+    # Rent by bedrooms, for testing ADU sizes in the tool (studio to 3 BR)
+    rent = read("rent_bedrooms_tract.csv", dtype={"GEOID": str})
+    if rent is not None:
+        rent = rent[["GEOID", "rent_b0", "rent_b1", "rent_b2", "rent_b3"]].copy()
+        rent["rent_b0"] = rent.rent_b0.fillna(rent.rent_b1)   # a few counties have no studio rents
+        tracts = tracts.merge(rent, on="GEOID", how="left")
 
     print("Town data")
     pop = read("pop_town.csv", dtype={"GEOID": str})
@@ -78,7 +85,9 @@ def main():
     legal_file = ROOT / "shared" / "legal_status.csv"
     if legal_file.exists():
         legal = pd.read_csv(legal_file, dtype={"GEOID": str}, comment="#")
-        towns = towns.merge(legal[["GEOID", "adu_rule", "source"]], on="GEOID", how="left")
+        keep = [c for c in legal.columns if c not in ("name",)]
+        towns = towns.merge(legal[keep].rename(columns={"notes": "rule_notes", "as_of": "rule_as_of"}),
+                            on="GEOID", how="left")
     forecast = read("forecast_town.csv", dtype={"town_geoid": str})
     if forecast is not None:
         f = forecast.pivot_table(index="town_geoid", columns="rule",
@@ -97,17 +106,35 @@ def main():
     lots = OUT / "lots_pilot.csv"
     if lots.exists():
         df = pd.read_csv(lots, dtype={"GEOID": str, "lot_id": str})
+        rules = read("lot_rules_pilot.csv", dtype={"lot_id": str})   # Philadelphia lot rule check
+        if rules is not None:
+            df = df.merge(rules[["lot_id", "rule_lot", "rule_why", "phl_zoning", "phl_council"]],
+                          on="lot_id", how="left")
         folder = APP_DATA / "lots"
         folder.mkdir(exist_ok=True)
         for geoid, g in df.groupby("GEOID"):
-            (folder / f"{geoid}.json").write_text(json.dumps(g.drop(columns="GEOID").round(6).to_dict("records")))
+            recs = g.drop(columns="GEOID").round(6).to_dict("records")
+            recs = [{k: v for k, v in r.items() if not (isinstance(v, float) and pd.isna(v))} for r in recs]
+            (folder / f"{geoid}.json").write_text(json.dumps(recs))
         print(f"  wrote {df.GEOID.nunique()} tract files in app/public/data/lots/")
     else:
         print("  not ready: lots_pilot.csv")
 
+    print("Fit curves (share of lots with room, by footprint)")
+    curves = read("fit_curves.csv")
+    if curves is not None:
+        out = {}
+        for stratum, g in curves.sort_values("footprint_sqft").groupby("stratum"):
+            out[stratum] = [{"f": int(r.footprint_sqft), "fit": round(r.share_fit, 4),
+                             "keep": round(r.share_fit_keep_trees, 4),
+                             "lo": round(r.share_fit_low, 4), "hi": round(r.share_fit_high, 4)}
+                            for r in g.itertuples()]
+        (APP_DATA / "fit_curves.json").write_text(json.dumps(out))
+        print(f"  wrote app/public/data/fit_curves.json ({', '.join(out)})")
+
     stamp = {"built": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M")}
     (APP_DATA / "meta.json").write_text(json.dumps(stamp))
-    print("Done. Open the site with: python -m http.server 8000  then go to http://localhost:8000/app/")
+    print("Done. See the site with: npm run dev")
 
 
 if __name__ == "__main__":

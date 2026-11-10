@@ -1,5 +1,7 @@
 // Data for the tool (app/public/data, made by app/build_data.py) and the small geometry helpers that test a spot
 // in the browser: point in polygon for the tract and town, nearest lot within 40 m.
+import { HAS_FIT_CURVES, LOT_TRACTS } from 'virtual:lot-index';
+import type { FitCurves } from '../lib/adu';
 import { annual } from '../lib/format';
 
 export type LngLat = [number, number];
@@ -24,6 +26,13 @@ export interface TractProps {
   lots_total?: number | null;
   lots_fit?: number | null;
   lots_fit_keep_trees?: number | null;
+  /** urban / suburban / rural, for the fit curves */
+  stratum?: string | null;
+  /** monthly gross rent for a studio, 1, 2, 3 bedroom unit (2024 dollars) */
+  rent_b0?: number | null;
+  rent_b1?: number | null;
+  rent_b2?: number | null;
+  rent_b3?: number | null;
   // worked out in the browser
   jobs_after?: number | null;
   jobs_shift?: number | null;
@@ -62,6 +71,9 @@ export interface Lot {
   tree_m2: number;
   fits: boolean;
   fits_keep_trees: boolean;
+  /** Largest footprint (sq ft) that fits, and that fits keeping trees. Not in the data yet. */
+  max_fit_sqft?: number | null;
+  max_fit_keep_trees_sqft?: number | null;
 }
 
 const polys = (g: Geom): Ring[][] => (g.type === 'Polygon' ? [g.coordinates] : g.coordinates);
@@ -112,23 +124,29 @@ export async function loadData() {
     p.jobs_shift = before != null && after != null ? after - before : null;
   }
   for (const f of towns.features) f._bbox = bbox(f.geometry);
-  return { tracts, towns };
+  const curves = HAS_FIT_CURVES ? ((await fetch('data/fit_curves.json').then((r) => (r.ok ? r.json() : null)).catch(() => null)) as FitCurves | null) : null;
+  return { tracts, towns, curves };
 }
 
-const lotCache = new Map<string, Lot[] | null>();
+const lotCache = new Map<string, Promise<Lot[] | null>>();
+const lotTracts = new Set(LOT_TRACTS);
+
+/** All lots of one tract (pilot tracts only; others resolve to null without a request). */
+export function loadLots(geoid: string): Promise<Lot[] | null> {
+  if (!lotTracts.has(geoid)) return Promise.resolve(null);
+  let p = lotCache.get(geoid);
+  if (!p) {
+    p = fetch(`data/lots/${geoid}.json`)
+      .then((r) => (r.ok ? (r.json() as Promise<Lot[]>) : null))
+      .catch(() => null);
+    lotCache.set(geoid, p);
+  }
+  return p;
+}
 
 /** Nearest lot within 40 m (addresses land on the street, so the pin is often in front of the lot). */
 export async function findLot(geoid: string, pt: LngLat): Promise<Lot | null> {
-  let lots = lotCache.get(geoid);
-  if (lots === undefined) {
-    try {
-      const r = await fetch(`data/lots/${geoid}.json`);
-      lots = r.ok && (r.headers.get('content-type') ?? '').includes('json') ? ((await r.json()) as Lot[]) : null;
-    } catch {
-      lots = null;
-    }
-    lotCache.set(geoid, lots);
-  }
+  const lots = await loadLots(geoid);
   if (!lots) return null;
   let best: Lot | null = null;
   let bestD = 40;

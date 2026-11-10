@@ -6,13 +6,13 @@
     "dev": "vite",
     "build": "tsc --noEmit -p tsconfig.json && vite build",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^1.71.0",
     "maplibre-gl": "^6.17.0",
-    "marked": "^18.2.0",
     "motion": "^14.12.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
@@ -27,6 +27,7 @@
     "@vitejs/plugin-react": "^6.3.0",
     "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
-    "vite": "^8.3.7"
+    "vite": "^8.3.7",
+    "vitest": "^5.1.0"
   }
 }

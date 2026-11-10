@@ -1,1 +1,1 @@
-[{"lot_id": "42101-24669", "lon": -75.219794, "lat": 39.928821, "lot_m2": 935.9, "open_m2": 366.1, "tree_m2": 292.0, "fits": true, "fits_keep_trees": true}]
+[{"lot_id": "42101-24669", "lon": -75.219794, "lat": 39.928821, "lot_m2": 935.9, "open_m2": 366.1, "tree_m2": 292.0, "fits": true, "fits_keep_trees": true, "rule_lot": "variance", "rule_why": "zoned RSA3 (needs RSA-5 or CMX-1)", "phl_zoning": "RSA3", "phl_council": 2.0}]

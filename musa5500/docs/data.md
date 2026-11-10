@@ -15,6 +15,7 @@ Raw files go to `data/raw/5500/`. Clean tables go to `data/processed/`. Neither 
 | Data | Source | How it is collected | Years | Level | Saved as |
 |---|---|---|---|---|---|
 | Population, rent, home value, income, renters | ACS 5-year, Census | Census API (free key) | 2010-14, 2015-19, 2020-24 | Tract | `acs_tract.csv` |
+| Rent by bedrooms (studio to 3 BR) | ACS 5-year, table B25031 | Census API (free key) | 2020-24 | Tract + county | `rent_bedrooms_tract.csv` |
 | Housing units | Decennial Census | Census API (free key) | 2010, 2020 | Tract | `decennial_units_tract.csv` |
 | Population | Census Population Estimates | Script download | 2010-2025 | Town | `pop_town.csv` |
 | Jobs (where people work + where workers live) | LEHD LODES8 | Script download | 2010, 2014, 2019, 2024 | Block, summed to tract | `jobs_tract.csv` |
@@ -24,6 +25,8 @@ Raw files go to `data/raw/5500/`. Clean tables go to `data/processed/`. Neither 
 | Land cover, 30 m | Annual NLCD (USGS) | Web service (WCS), 60 km tiles | 2010, 2019, 2025 | Raster | `data/raw/5500/landcover/nlcd_<year>_pa.tif` |
 | Street network | OpenStreetMap via OSMnx | OSMnx in the notebook | Current | Metro area | Made in notebook 03 |
 | Tracts, towns, counties, crosswalk | Census TIGER | Script download (`shared/get_boundaries.py`) | 2010, 2020 | All | `tracts_2020.gpkg`, etc. |
+| Town ADU rules (12 towns) | Hand-coded from research, see `shared/adu_rules_pa.md` | By hand | As of Nov 10, 2026 | Town | `shared/legal_status.csv` |
+| Philadelphia zoning, Council Districts, overlays | City of Philadelphia (OpenDataPhilly, ArcGIS) | Script (`shared/lot_rules.py`) | Current | Lot | `lot_rules_pilot.csv` |
 | Lots with room for an ADU | My MUSA 6950 project | Read from `data/processed/lots_tract.csv` | 2022 imagery | Tract | `lots_tract.csv` |
 
 ## Notes
@@ -37,3 +40,4 @@ Raw files go to `data/raw/5500/`. Clean tables go to `data/processed/`. Neither 
 - ACS rent = median gross rent of all renters, including long-time tenants. It is lower than the rent a new ADU would get.
 - Census uses -666666666 for "no data". The script turns these into blanks.
 - Dollar values need inflation adjustment to 2024 dollars before comparing years. CPI-U yearly average: 2014 = 236.736, 2019 = 255.657, 2024 = 313.689.
+- Rent by bedrooms: tract values by size rest on few renters, so the tool uses tract median rent x the county ratio for that size (PA median county: studio 0.75, 1 BR 0.77, 2 BR 1.02, 3 BR 1.19). Raw tract values are kept in the file as `rent_b*_tract`

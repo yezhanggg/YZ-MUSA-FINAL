@@ -1,1 +1,1 @@
-[{"lot_id": "42101-460527", "lon": -75.12507, "lat": 39.976331, "lot_m2": 107.5, "open_m2": 0.0, "tree_m2": 0.0, "fits": false, "fits_keep_trees": false}]
+[{"lot_id": "42101-460527", "lon": -75.12507, "lat": 39.976331, "lot_m2": 107.5, "open_m2": 0.0, "tree_m2": 0.0, "fits": false, "fits_keep_trees": false, "rule_lot": "variance", "rule_why": "lot under 1,600 sq ft", "phl_zoning": "RSA5", "phl_council": 1.0}]

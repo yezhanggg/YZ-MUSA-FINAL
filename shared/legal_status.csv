@@ -1,13 +1,18 @@
-# ADU rules today, by town. Hand-coded. Every town not listed = unknown.
-# adu_rule: allowed (by right) | limited (special exception, family only, some zones) | not_allowed | unknown
-# Check each one against the town's zoning code before the final. Add towns as you find them.
-GEOID,name,adu_rule,source
-4202984160,West Vincent township (Chester),allowed,Township zoning code (by right). Verify.
-4202920864,East Brandywine township (Chester),limited,Special exception. Verify.
-4202946792,Malvern borough (Chester),limited,Special exception. Verify.
-4201719784,Doylestown borough (Bucks),limited,Special exception (2026). Verify.
-4202984104,Westtown township (Chester),limited,Family members only. Verify.
-4207702000,Allentown city (Lehigh),allowed,2026 zoning code includes ADUs. Verify details.
-4210160000,Philadelphia city,limited,Allowed in parts since 2012. Banned in some overlays (Bill 210078-A).
-4200361000,Pittsburgh city (Allegheny),limited,Council approved expansion Oct 27 2026 (Bill 2025-1545). Check if signed.
-4204332800,Harrisburg city (Dauphin),limited,Allowed with conditions. Not verified.
+# ADU rules today, by town. Hand-coded from shared/adu_rules_pa.md (research of Nov 10, 2026). Not legal advice.
+# adu_rule (used by the forecast): allowed = by right | limited = special exception, family only, conversion only, or narrow areas | not_allowed | unknown
+# approval: by_right | special_exception | conditional_use | variance | prohibited
+# detached_new: can you build a NEW detached backyard unit? yes | no | unknown
+# Every town not listed = unknown. Confirm each with the town's current zoning code.
+GEOID,name,adu_rule,approval,detached_new,max_sqft,owner_occupancy,max_units,notes,source,as_of
+4210160000,Philadelphia city,limited,by_right,no,800,yes,1,"Only Council Districts 1, 2, 3, 7. RSA-5 or CMX-1, lot 1,600 sq ft or more, detached or semi-detached. Inside the house or in an accessory building that existed in 2012. No new backyard cottages. Historic buildings: rowhouses OK and may exceed 800 sq ft. Otherwise a ZBA variance. Bill 250042 pending","Phila. Code 14-604(11), L&I checklist PZ_004",2026-11-10
+4200361000,Pittsburgh city,allowed,by_right,yes,,no,2,"Citywide by right under Bill 2025-1545 (passed Oct 27, signed Oct 29, 2026). Inside a home, detached, or in an existing garage or basement. No parking minimums. Confirm size, height, setbacks in the adopted text","Engage PGH, WPXI Oct 30 2026",2026-11-10
+4202984160,West Vincent township (Chester),allowed,by_right,unknown,,unknown,1,By right in most residential districts,Chester County Planning Commission ADU eTool,2026-11-10
+4202984104,Westtown township (Chester),limited,special_exception,unknown,,unknown,1,Family-occupied ADUs. Turning one into a rental is a separate special exception,Chester County Planning Commission ADU eTool,2026-11-10
+4202946792,Malvern borough (Chester),limited,special_exception,unknown,,unknown,1,Called supplemental dwelling units,Chester County Planning Commission ADU eTool,2026-11-10
+4202920864,East Brandywine township (Chester),limited,special_exception,unknown,,unknown,1,Mostly special exception. By right only in limited cases,Chester County Planning Commission ADU eTool,2026-11-10
+4202982704,West Chester borough (Chester),limited,by_right,no,,unknown,1,Adaptive reuse. Historic carriage houses can be converted,Chester County Planning Commission ADU eTool,2026-11-10
+4202715136,College township (Centre),allowed,by_right,yes,,yes,1,"Permitted with conditions. 1 bedroom, attached or detached. Owner lives on site. Max 25% of the main house living area",College Township zoning (eCode360),2026-11-10
+4207158840,Penn township (Lancaster),limited,special_exception,no,,yes,1,ADU for a relative only. Temporary. Must be removed or joined back to the house later,Penn Township zoning (Zoneomics),2026-11-10
+4207702000,Allentown city (Lehigh),allowed,by_right,unknown,,unknown,1,2026 zoning code includes ADUs. Not in the Nov 10 research. Verify,"Earlier research, not verified",
+4201719784,Doylestown borough (Bucks),limited,special_exception,unknown,,unknown,1,Special exception (2026). Not in the Nov 10 research. Verify,"Earlier research, not verified",
+4204332800,Harrisburg city (Dauphin),limited,unknown,unknown,,unknown,1,Allowed with conditions. Not in the Nov 10 research. Verify,"Earlier research, not verified",

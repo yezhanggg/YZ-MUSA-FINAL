@@ -1,1 +1,1 @@
-[{"lot_id": "42101-81291", "lon": -75.178817, "lat": 39.928582, "lot_m2": 104.7, "open_m2": 0.0, "tree_m2": 0.0, "fits": false, "fits_keep_trees": false}]
+[{"lot_id": "42101-81291", "lon": -75.178817, "lat": 39.928582, "lot_m2": 104.7, "open_m2": 0.0, "tree_m2": 0.0, "fits": false, "fits_keep_trees": false, "rule_lot": "variance", "rule_why": "zoned CMX2 (needs RSA-5 or CMX-1); lot under 1,600 sq ft", "phl_zoning": "CMX2", "phl_council": 2.0}]
