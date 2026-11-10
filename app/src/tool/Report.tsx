@@ -7,11 +7,11 @@ import { SPRING_PANEL, Tag, usePhone } from '../components/primitives';
 import { cx } from '../lib/cx';
 import { annual, fmt, isNum, money, pct, sqft } from '../lib/format';
 import { footprint, isBase, lotFit, rentNote, tractPayoff, tractRoom } from '../lib/adu';
+import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, isPittsburgh, ruleFor, ruleWarnings, type YesNo } from '../lib/rules';
 import { clearSpot } from './actions';
 import { useTool, type Spot } from './store';
 
-const RULE_TEXT = { allowed: 'Allowed', limited: 'Limited', not_allowed: 'Not allowed', unknown: 'Unknown' } as const;
-type RuleKey = keyof typeof RULE_TEXT;
+const YES_NO: Record<YesNo, string> = { yes: 'Yes', no: 'No', unknown: 'Unknown' };
 type Tone = 'good' | 'warn' | 'bad' | 'none';
 
 const TONE: Record<Tone, { box: string; icon: ReactNode; title: string; line: string }> = {
@@ -85,8 +85,9 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
   const { label, tract: t, town: w, lot } = spot;
   const fp = footprint(adu);
 
-  // Allowed?
-  const rule: RuleKey = ruleMode === 'hb2186' ? 'allowed' : ((w.adu_rule as RuleKey | null | undefined) ?? 'unknown');
+  // Allowed? Philadelphia lots use their own lot rule today, other places the town rule.
+  const rule = ruleFor(ruleMode, w, lot);
+  const warnings = ruleWarnings(ruleMode, w, lot, adu.size);
   // Fits? (MUSA 6950)
   const fits = lot ? lotFit(lot, adu) : null;
   const lotNotReady = !!lot && fits === null;
@@ -99,10 +100,10 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
   let tone: Tone = 'none';
   let head = 'No lot check for this spot';
   let line = 'Lot checks cover single-family homes in Philadelphia and Cumberland County. Tract numbers are below.';
-  if (rule === 'not_allowed') {
+  if (rule.blocked) {
     tone = 'bad';
-    head = 'Not allowed here today';
-    line = 'Switch to HB 2186 to see what the bill would change.';
+    head = rule.fromLot ? 'Needs a variance here today' : 'Not allowed here today';
+    line = `${rule.why ? `${rule.why[0].toUpperCase()}${rule.why.slice(1)}. ` : ''}Switch to HB 2186 to see what the bill would change.`;
   } else if (lotNotReady) {
     head = 'Not ready for this size';
     line = 'Lot results for other footprints come with the next model run. Reset to 600 sq ft to check this lot.';
@@ -111,7 +112,7 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
     head = 'No room on this lot';
     line = `No open spot big enough for a ${fmt(fp)} sq ft footprint.`;
   } else if (fits && pays) {
-    const ok = rule === 'allowed' && fits === 'yes' && pays === 'yes';
+    const ok = rule.ok && !warnings.length && fits === 'yes' && pays === 'yes';
     tone = ok ? 'good' : 'warn';
     head = ok ? 'Works' : 'Works with changes';
     line = ok ? 'Allowed, fits without cutting trees, and the rent covers the cost.' : 'Check the rule, the trees, or the rent below.';
@@ -120,7 +121,7 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
   const notReady = 'Not ready for this size';
   const fitShare = room && room.total > 0 ? `${Math.round((100 * room.fit) / room.total)}% of lots` : isBase(adu) ? null : notReady;
   const tiles: { k: string; v: string | null; s: string; tone?: 'good' | 'warn' | 'bad' }[] = [
-    { k: 'Allowed', v: RULE_TEXT[rule], s: ruleMode === 'hb2186' ? 'Under HB 2186' : "Today's rules", tone: rule === 'allowed' ? 'good' : rule === 'limited' ? 'warn' : rule === 'not_allowed' ? 'bad' : undefined },
+    { k: 'Allowed', v: rule.label, s: rule.sub, tone: rule.tone === 'none' ? undefined : rule.tone },
     { k: 'Room on lot', v: fits ? { yes: 'Fits', trees: 'Fits if trees cut', no: 'No room' }[fits] : lotNotReady ? notReady : fitShare, s: fits ? 'MUSA 6950' : 'Tract, MUSA 6950', tone: fits === 'yes' ? 'good' : fits === 'trees' ? 'warn' : fits === 'no' ? 'bad' : undefined },
     { k: 'Pays off', v: pays ? { yes: 'Yes', maybe: 'Close', no: 'No' }[pays] : isBase(adu) ? null : notReady, s: 'MUSA 5500', tone: pays === 'yes' ? 'good' : pays === 'maybe' ? 'warn' : pays === 'no' ? 'bad' : undefined },
     { k: 'Jobs since 2019', v: pct(t.jobs_after), s: 'Tract, MUSA 5500' },
@@ -184,6 +185,21 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
           ))}
         </motion.div>
 
+        {/* the ADU against today's rule */}
+        <AnimatePresence initial={false}>
+          {warnings.map((wn) => (
+            <motion.div key={wn} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
+              <div className="flex items-start gap-2 rounded-xl bg-amber-50 px-3 py-2 text-small text-amber-900 ring-1 ring-amber-200">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+                {wn}
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+
+        <motion.div variants={item}>
+          <RulesCard spot={spot} />
+        </motion.div>
         <motion.div variants={item}>
           <RoomCard spot={spot} />
         </motion.div>
@@ -207,7 +223,7 @@ function Card({ title, tag, children }: { title: string; tag: string; children: 
     <section className="rounded-2xl bg-white p-4 ring-1 ring-stone-200/80">
       <h3 className="mb-3 flex items-center justify-between gap-2 text-body font-semibold text-slate-900">
         {title}
-        <Tag tone={tag === 'Planner view' ? 'sky' : 'violet'}>{tag}</Tag>
+        <Tag tone={tag === 'Planner view' || tag === 'Rules' ? 'sky' : 'violet'}>{tag}</Tag>
       </h3>
       {children}
     </section>
@@ -360,6 +376,48 @@ function DemandCard({ spot }: { spot: Spot }) {
   );
 }
 
+/** Today's rule for this lot or town, or HB 2186. */
+function RulesCard({ spot }: { spot: Spot }) {
+  const ruleMode = useTool((s) => s.rule);
+  const { town: w, lot } = spot;
+  const coded = !!w.adu_rule;
+  return (
+    <Card title={ruleMode === 'hb2186' ? 'Rules under HB 2186' : `Rules today${w.NAMELSAD ? ` · ${w.NAMELSAD}` : ''}`} tag="Rules">
+      {ruleMode === 'hb2186' ? (
+        <div className="space-y-2 text-small leading-snug text-slate-700">
+          <p>{HB2186.rule}</p>
+          <p className="rounded-lg bg-stone-50 px-3 py-2 text-slate-600 ring-1 ring-stone-200/70">{HB2186.status}</p>
+          <p className="text-caption text-slate-500">{HB2186.sb1346}</p>
+        </div>
+      ) : (
+        <>
+          {lot?.rule_lot && (
+            <div className={cx('mb-2 rounded-lg px-3 py-2 text-small ring-1', lot.rule_lot === 'variance' ? 'bg-rose-50 text-rose-900 ring-rose-200' : 'bg-amber-50 text-amber-900 ring-amber-200')}>
+              <b>{lot.rule_lot === 'variance' ? 'This lot needs a variance' : 'This lot: conversion only'}</b>
+              {lot.rule_why && <span className="block text-caption opacity-80">{lot.rule_why[0].toUpperCase() + lot.rule_why.slice(1)}</span>}
+            </div>
+          )}
+          {isPittsburgh(w) && <p className="mb-2 rounded-lg bg-emerald-50 px-3 py-2 text-small text-emerald-900 ring-1 ring-emerald-200">{PITTSBURGH_NOTE}</p>}
+          {coded ? (
+            <>
+              <KV k="Approval" v={APPROVAL_TEXT[w.approval ?? 'unknown']} />
+              <KV k="New backyard unit" v={YES_NO[w.detached_new ?? 'unknown']} />
+              <KV k="Size cap" v={isNum(w.max_sqft) ? `${fmt(w.max_sqft)} sq ft` : 'None listed'} />
+              <KV k="Owner must live on site" v={YES_NO[w.owner_occupancy ?? 'unknown']} />
+              <KV k="ADUs per lot" v={fmt(w.max_units)} />
+              {w.rule_notes && <p className="mt-2 text-small leading-snug text-slate-600">{w.rule_notes}.</p>}
+            </>
+          ) : (
+            <p className="text-small text-slate-600">{NOT_CODED}</p>
+          )}
+          {w.source && <p className="mt-2 text-caption text-slate-500">Source: {w.source}</p>}
+        </>
+      )}
+      <p className="mt-1.5 text-caption text-slate-500">{RULES_AS_OF}</p>
+    </Card>
+  );
+}
+
 function TownCard({ spot }: { spot: Spot }) {
   const ruleMode = useTool((s) => s.rule);
   const w = spot.town;
@@ -371,7 +429,6 @@ function TownCard({ spot }: { spot: Spot }) {
   return (
     <Card title={(w.NAMELSAD as string) || 'This town'} tag="Planner view">
       <div className="-mt-1 mb-1 text-caption text-slate-500">Base case: 600 sq ft</div>
-      <KV k="ADU rule today" v={RULE_TEXT[(w.adu_rule as RuleKey | null | undefined) ?? 'unknown']} />
       <KV k={`ADUs by 2031 (${ruleMode === 'hb2186' ? 'HB 2186' : "today's rules"})`} v={mid != null ? `${fmt(mid)} (range ${fmt(n(`adus_low_${ruleMode}`))} to ${fmt(n(`adus_high_${ruleMode}`))})` : null} />
       {(cur != null || hb != null) && (
         <div className="mt-2 space-y-1.5">
@@ -389,7 +446,6 @@ function TownCard({ spot }: { spot: Spot }) {
           ))}
         </div>
       )}
-      {w.source ? <div className="mt-2 text-caption text-slate-500">Rule source: {String(w.source)}</div> : null}
     </Card>
   );
 }

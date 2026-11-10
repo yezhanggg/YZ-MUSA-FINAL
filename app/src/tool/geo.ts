@@ -2,6 +2,7 @@
 // in the browser: point in polygon for the tract and town, nearest lot within 40 m.
 import { HAS_FIT_CURVES, LOT_TRACTS } from 'virtual:lot-index';
 import type { FitCurves } from '../lib/adu';
+import type { LotRule, TownRule } from '../lib/rules';
 import { annual } from '../lib/format';
 
 export type LngLat = [number, number];
@@ -39,13 +40,11 @@ export interface TractProps {
   [k: string]: unknown;
 }
 
-export interface TownProps {
+export interface TownProps extends TownRule {
   GEOID?: string;
   NAME?: string;
   NAMELSAD?: string;
   county?: string;
-  adu_rule?: 'allowed' | 'limited' | 'not_allowed' | null;
-  source?: string | null;
   permits_yr_before?: number | null;
   permits_yr_after?: number | null;
   [k: string]: unknown;
@@ -62,7 +61,7 @@ export interface FC<P> {
   features: Feature<P>[];
 }
 
-export interface Lot {
+export interface Lot extends LotRule {
   lot_id: string;
   lon: number;
   lat: number;

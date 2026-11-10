@@ -16,6 +16,7 @@ React 19 + TypeScript + Tailwind 4 + motion, built with Vite. Same look as Visio
 - `src/pages/Research.tsx` the two Research pages
 - `src/lib/adu.ts` fit and payoff math for the ADU being tested (tests in `adu.test.ts`)
 - `src/lib/numbers.ts` cost, rate, model scores and totals in one place
+- `src/lib/rules.ts` today's rules, HB 2186 and SB 1346 text (tests in `rules.test.ts`)
 - `build_data.py` makes the files in `public/data/`
 - `public/data/` small files the tool reads. These are committed
 
@@ -39,7 +40,7 @@ npm run build      # typecheck + build to dist/ (needs site/ from quarto render)
 - Lot results: loads `public/data/lots/<tract>.json` and takes the nearest lot within 40 m
 - Lot outlines: from zoom 15 in pilot tracts, `public/data/lot_shapes/<tract>.geojson`, coloured Fits / Fits if trees cut / No room
 - Your ADU: bedrooms, size, stories. Footprint = size / stories. Fit, lots with room, and payoff follow it live
-- Rules switch: Today (from `shared/legal_status.csv`) or HB 2186 (allowed everywhere)
+- Rules switch: Today or HB 2186. Today uses the town fields in `towns.geojson` (approval, new backyard unit, size cap, owner occupancy, max units, notes), and for Philadelphia lots `rule_lot` / `rule_why`. Bill status text lives in `src/lib/rules.ts`. Research: `shared/adu_rules_pa.md`
 - No lot for the spot: the report shows the tract share of lots with room
 - Anything missing shows "Not ready yet". Sizes without data show "Not ready for this size"
 - Motion follows the system reduce-motion setting
@@ -63,6 +64,11 @@ Each notebook saves one table in `data/processed/`. `build_data.py` joins them. 
 |---|---|---|
 | `lots_tract.csv` | GEOID | lots_total, lots_fit, lots_fit_keep_trees, tree_loss_m2, stratum (urban / suburban / rural) |
 | `lots_pilot.csv` | GEOID + lot_id | lon, lat, lot_m2, open_m2, tree_m2, fits (true/false), fits_keep_trees (true/false), max_fit_sqft, max_fit_keep_trees_sqft (integers, 0 to 2000) |
+
+Rule fields (from `shared/legal_status.csv`, research in `shared/adu_rules_pa.md`):
+
+- towns: adu_rule, approval, detached_new, max_sqft, owner_occupancy, max_units, rule_notes, source, rule_as_of
+- Philadelphia lots: rule_lot (conversion_only / variance), rule_why, phl_zoning, phl_council
 
 Tool files from MUSA 6950:
 
