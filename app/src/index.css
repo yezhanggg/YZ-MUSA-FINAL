@@ -1,0 +1,373 @@
+@import 'tailwindcss';
+
+/* Theme (same language as VisionPitts): violet primary, warm off-white surfaces, stone hairlines. */
+:root {
+  --radius: 0.75rem;
+  --background: #fbfaf8;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --primary: rgb(124 58 237);
+  --primary-foreground: #ffffff;
+  --muted: #f1efec;
+  --muted-foreground: #475569;
+  --accent: #f3efff;
+  --accent-foreground: #4c1d95;
+  --border: #e7e5e4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+}
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --text-caption: 12px;
+  --text-caption--line-height: 1.4;
+  --text-small: 13px;
+  --text-small--line-height: 1.45;
+  --text-body: 14px;
+  --text-body--line-height: 1.5;
+  --text-lead: 16px;
+  --text-lead--line-height: 1.5;
+  --text-title: 20px;
+  --text-title--line-height: 1.25;
+  --text-display: 26px;
+  --text-display--line-height: 1.15;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html,
+body,
+#root {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: #1e293b;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11' 1;
+}
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+::selection {
+  background: #ddd6fe;
+}
+
+/* Quiet scrollbars for panels */
+.scroll-quiet {
+  scrollbar-width: thin;
+  scrollbar-color: #d6d3d1 transparent;
+}
+.scroll-quiet::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-quiet::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Soft dotted paper behind the landing page */
+.paper-dots {
+  background-image: radial-gradient(rgb(15 23 42 / 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Map chrome */
+.maplibregl-ctrl-group {
+  border-radius: 10px !important;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.06) !important;
+}
+.maplibregl-ctrl-attrib {
+  font-size: 11px;
+}
+
+/* Map pin: a violet dot with a ring that breathes, and a label above it */
+.bh-pin {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+.bh-pin-dot {
+  position: absolute;
+  inset: 3px;
+  border-radius: 999px;
+  background: #7c3aed;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgb(76 29 149 / 0.45);
+}
+.bh-pin-ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: 999px;
+  border: 2px solid rgb(124 58 237 / 0.5);
+  animation: bh-ring 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.bh-pin-label {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #fff;
+  color: #1e293b;
+  font: 600 12px/1.4 var(--font-sans);
+  padding: 3px 10px;
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.1), 0 4px 12px rgb(0 0 0 / 0.12);
+  pointer-events: none;
+}
+@keyframes bh-ring {
+  from {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Words with a slow light passing over them (loading states) */
+.shimmer-text {
+  color: #64748b;
+  background: linear-gradient(90deg, #64748b 0%, #64748b 35%, #7c3aed 50%, #64748b 65%, #64748b 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-pass 2.2s linear infinite;
+}
+@keyframes shimmer-pass {
+  from {
+    background-position: 110% 0;
+  }
+  to {
+    background-position: -110% 0;
+  }
+}
+
+/* Slowly drifting colour behind the hero */
+.hero-aurora {
+  background:
+    radial-gradient(40% 50% at 20% 20%, rgb(196 181 253 / 0.45), transparent 70%),
+    radial-gradient(35% 45% at 85% 30%, rgb(167 243 208 / 0.35), transparent 70%),
+    radial-gradient(40% 50% at 60% 90%, rgb(253 230 138 / 0.25), transparent 70%);
+  animation: aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-3%, 2%, 0) scale(1.06);
+  }
+}
+
+/* ------------------------------------------------------------ docs typography */
+.prose-doc {
+  color: #334155;
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+.prose-doc > * + * {
+  margin-top: 1em;
+}
+.prose-doc h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 2.4em;
+  padding-top: 0.2em;
+  scroll-margin-top: 96px;
+  letter-spacing: -0.01em;
+}
+.prose-doc h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-top: 2em;
+  scroll-margin-top: 96px;
+}
+.prose-doc h2:first-child,
+.prose-doc h3:first-child {
+  margin-top: 0;
+}
+.prose-doc a {
+  color: #6d28d9;
+  text-decoration: underline;
+  text-decoration-color: #c4b5fd;
+  text-underline-offset: 3px;
+}
+.prose-doc a:hover {
+  text-decoration-color: #6d28d9;
+}
+.prose-doc strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+.prose-doc ul,
+.prose-doc ol {
+  padding-left: 1.3em;
+}
+.prose-doc ul {
+  list-style: none;
+  padding-left: 1.1em;
+}
+.prose-doc ul > li {
+  position: relative;
+}
+.prose-doc ul > li::before {
+  content: '';
+  position: absolute;
+  left: -1em;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: #c4b5fd;
+}
+.prose-doc ol {
+  list-style: decimal;
+}
+.prose-doc ol > li::marker {
+  color: #7c3aed;
+  font-weight: 600;
+}
+.prose-doc li + li {
+  margin-top: 0.35em;
+}
+.prose-doc li > ul {
+  margin-top: 0.35em;
+}
+.prose-doc code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.86em;
+  background: #f3efff;
+  color: #5b21b6;
+  padding: 0.12em 0.4em;
+  border-radius: 6px;
+}
+.prose-doc pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.prose-doc pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+.prose-doc .table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(231 229 228 / 0.9), 0 6px 24px -14px rgb(15 23 42 / 0.25);
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.prose-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+.prose-doc thead tr {
+  background: #faf9f7;
+}
+.prose-doc th {
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  font-size: 12.5px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e7e5e4;
+  white-space: nowrap;
+}
+.prose-doc td {
+  padding: 9px 14px;
+  border-top: 1px solid #f1efec;
+  color: #1e293b;
+  vertical-align: top;
+}
+.prose-doc tbody tr:first-child td {
+  border-top: 0;
+}
+.prose-doc tbody tr:hover td {
+  background: #faf8ff;
+}
+.prose-doc td:first-child {
+  font-weight: 500;
+  color: #0f172a;
+}
+.prose-doc figure {
+  margin: 1.8em 0;
+}
+.prose-doc figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(231 229 228 / 0.9), 0 10px 30px -18px rgb(15 23 42 / 0.35);
+  cursor: zoom-in;
+}
+.prose-doc figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #64748b;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .bh-pin-ring,
+  .hero-aurora {
+    animation: none;
+  }
+  .shimmer-text {
+    animation: none;
+    -webkit-text-fill-color: currentColor;
+    background: none;
+  }
+}
+
+/* Phones: map zoom buttons go to the top right, out of the bottom sheet's way */
+@media (max-width: 639px) {
+  .bh-map .maplibregl-ctrl-bottom-right {
+    top: 8.5rem;
+    bottom: auto;
+  }
+}
