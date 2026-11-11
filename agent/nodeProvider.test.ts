@@ -4,7 +4,7 @@ import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { makeExecutors } from '../app/src/agent/executors';
+import { makeExecutors, runTool } from '../app/src/agent/executors';
 import { nodeProvider, nodeTractLots, tractsOnDisk } from './nodeProvider';
 
 const SMOKE = resolve(homedir(), 'musa-drive/smoke/lots/philadelphia');
@@ -25,7 +25,7 @@ describe.skipIf(!existsSync(SMOKE))('node provider on lot records', () => {
 
   it('get_lot_facts finds a lot by id that is not selected', async () => {
     const rec = await first();
-    const r = (await makeExecutors(nodeProvider()).get_lot_facts({ lot_id: rec.lot.id })) as J;
+    const r = (await runTool(makeExecutors(nodeProvider()), 'get_lot_facts', { lot_id: rec.lot.id })).result as J;
     expect(r.lot_id).toBe(rec.lot.id);
   });
 
