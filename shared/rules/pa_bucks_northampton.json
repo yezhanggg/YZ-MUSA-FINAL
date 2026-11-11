@@ -1,0 +1,258 @@
+{
+  "provenance": {
+    "jurisdiction": "Northampton township",
+    "instrument": "Code of the Township of Northampton (Bucks County), Chapter 27 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360: includes legislation through 05-27-2026. New Laws (3): Ord. 631 (Ch 15), Ord. 632 (Ch 24), Ordinance 633 Data Center Use. None is about dwellings. eCode360 is Cloudflare-walled for plain fetches. Text was read in a browser, mostly from the print view of the whole chapter.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/NO0896",
+      "https://ecode360.com/30784843",
+      "https://ecode360.com/print/NO0896?guid=30784843",
+      "https://ecode360.com/34428505",
+      "https://ecode360.com/34428757",
+      "https://ecode360.com/34428857",
+      "https://ecode360.com/34428895",
+      "https://ecode360.com/34428932",
+      "https://ecode360.com/34428969",
+      "https://ecode360.com/34429570",
+      "https://ecode360.com/34429573",
+      "https://ecode360.com/34429642",
+      "https://ecode360.com/34429715",
+      "https://ecode360.com/NO0896/laws",
+      "https://www.northamptontownship.com/departments/building-codes/",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201754688",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30784843",
+    "code_current_through": "2026-05-27",
+    "code_current_through_note": "Includes legislation through 05-27-2026. New Laws (3) not yet codified.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law or accessory apartment provision",
+      "AR, CR, R-1 and R-2 allow 'One single-family detached dwelling' by right (27-302, 27-404, 27-405, 27-406)",
+      "Detached garages, barns and similar buildings may not be used 'for habitation' (27-1105.2C). Gazebos, pool houses and similar structures may not be 'permanent living quarters' (27-1105.5E)",
+      "A dwelling unit is used by one family. Family means relatives, or not more than five unrelated persons, with single cooking facilities (27-201)",
+      "Two-family dwellings (twin house, duplex) are dwelling types in the R-3 Multi-Family Residential District (27-407). It is the closest two-unit option, not an ADU path",
+      "Detached accessory buildings on lots up to two acres: max 1,000 sq ft footprint, 15 ft high, 15 ft side and rear setbacks. One per lot (27-1105.2A, 2B)",
+      "The 27-1110 parking table has no single-family row. Ask the zoning office"
+    ],
+    "notes": "Zoning office: Building and Codes Department, https://www.northamptontownship.com/departments/building-codes/. Pending: a comprehensive plan update is listed on the township site. No ADU ordinance found. Not law. Searched the full printed Chapter 27 for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, accessory family, secondary dwelling, second dwelling, accessory living, kitchen. No ADU term."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "27-201 and full Chapter 27",
+      "url": "https://ecode360.com/34428505",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Searched the full printed Chapter 27 for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, accessory family, secondary dwelling, second dwelling, accessory living, kitchen. No ADU term."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-201, 27-405, 27-406, 27-1105",
+      "url": "https://ecode360.com/34428895",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text. 27-1105.2C bars habitation in detached garages and similar buildings. That rules out a detached ADU but does not name ADUs."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-405.1A, 27-406.1A, MPC 910.2",
+      "url": "https://ecode360.com/34428895",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: a second unit is not a listed use. R-1 and R-2 allow 'One single-family detached dwelling'. The path is a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-405, 27-1105.2C",
+      "url": "https://ecode360.com/34428895",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path. A detached unit also needs relief from 27-1105.2C, which bars habitation in detached accessory buildings."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Parts 3 and 4 use regulations",
+      "url": "https://ecode360.com/34428895",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30784843",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-405, 27-406, 27-1105.2C, 27-1105.5E",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. Detached accessory buildings may not be used for habitation."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "27-1105.1E, 27-1105.2A(1)",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The maximum height of any accessory building or structure shall be 15 feet unless otherwise indicated.' Lots over two acres: 20 ft for garages and barns."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "27-1105.1B",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The accessory building, structure or use shall not be located in the front yard.'"
+    },
+    "setback_side_ft": {
+      "value": 15,
+      "section": "27-1105.2A(1)",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Detached garages and similar, lots up to two acres: 'The required side and rear yard setbacks are both 15 feet each.' 20 ft for 2 to 5 acres, 30 ft above."
+    },
+    "setback_rear_ft": {
+      "value": 15,
+      "section": "27-1105.2A(1)",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "15 ft on lots up to two acres. 20 ft for 2 to 5 acres, 30 ft above."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 1000,
+      "section": "27-1105.2A(1)",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'A maximum of 1,000 square feet is permitted for properties up to two acres'. Never larger than the house footprint (2D)."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "27-1105",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No separation between buildings on one lot found in 27-1105."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "27-201 'Family'",
+      "url": "https://ecode360.com/34428505",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A dwelling unit is for one family."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "27-405.1A, 27-406.1A",
+      "url": "https://ecode360.com/34428895",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: no ADU is allowed by right."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-1110",
+      "url": "https://ecode360.com/34429642",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. No single-family row found in the 27-1110 table."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "27-405.2A(1)",
+        "url": "https://ecode360.com/34428895",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached. Principal yards: front 50 ft, each side 30 ft, rear 50 ft. Max impervious surface ratio 20%."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-405.2A(4)(a)",
+        "url": "https://ecode360.com/34428895",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "District front yard. Accessory buildings may not be in the front yard (27-1105.1B)."
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "27-405.2A(3)",
+        "url": "https://ecode360.com/34428895",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building area counts toward building coverage (27-1105.1C)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1116.1A",
+        "url": "https://ecode360.com/34429715",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum building height 35 ft, structure height 50 ft."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-406.2A(1)",
+        "url": "https://ecode360.com/34428932",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached. Principal yards: front 50 ft, side minimum 20 ft, total 45 ft, rear 50 ft. Max impervious surface ratio 20%."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-406.2A(4)(a)",
+        "url": "https://ecode360.com/34428932",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "District front yard. Accessory buildings may not be in the front yard (27-1105.1B)."
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-406.2A(3)",
+        "url": "https://ecode360.com/34428932",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building area counts toward building coverage (27-1105.1C)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1116.1A",
+        "url": "https://ecode360.com/34429715",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum building height 35 ft, structure height 50 ft."
+      }
+    }
+  }
+}
