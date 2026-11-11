@@ -103,7 +103,15 @@ def pick_centers(lots, n: int, seed: int) -> np.ndarray:
     xy = np.c_[lots.lon.values * np.cos(np.radians(lots.lat.mean())), lots.lat.values]
     cent, _ = kmeans2(xy, n, seed=seed, minit="++")
     idx = [int(np.argmin(((xy - c) ** 2).sum(1))) for c in cent]
-    return lots.iloc[sorted(set(idx))][["lon", "lat"]].to_numpy()
+    pts = lots.iloc[sorted(set(idx))][["lon", "lat"]].to_numpy()
+    # boxes must not overlap, or a test box can share ground with a train box
+    min_deg = BOX_M * 1.05 / 111_000
+    keep: list[np.ndarray] = []
+    for p in pts:
+        d = [max(abs(p[0] - q[0]) * np.cos(np.radians(p[1])), abs(p[1] - q[1])) for q in keep]
+        if not d or min(d) >= min_deg:
+            keep.append(p)
+    return np.array(keep)
 
 
 def assign_roles(centers: np.ndarray, seed: int, groups: int = 8) -> list[str]:
@@ -247,12 +255,40 @@ def city_boxes(city_name: str, role: str) -> list[str]:
     return [b["box_id"] for b in boxes if b.get("role") == role]
 
 
-def load_city_box(city_name: str, box_id: str) -> tuple[np.ndarray, np.ndarray]:
+def load_city_box(city_name: str, box_id: str, exclude_roles: tuple[str, ...] = ()) -> tuple[np.ndarray, np.ndarray]:
+    """Image and label. exclude_roles: label pixels that also fall in a box of these roles become no data.
+
+    The first box sets (built before boxes were kept apart) have test boxes that overlap
+    train boxes in Pittsburgh. Scoring with exclude_roles=("train", "val") keeps the test fair.
+    """
     import rasterio
 
     with rasterio.open(naip_dir(city_name) / f"{box_id}.tif") as s:
         img = s.read()
-    return img, np.load(city_dir(city_name) / "labels" / f"{box_id}.npy")
+        tr, crs, shape = s.transform, s.crs, (s.height, s.width)
+    lab = np.load(city_dir(city_name) / "labels" / f"{box_id}.npy")
+    if exclude_roles:
+        mask = _overlap_mask(city_name, box_id, exclude_roles, tr, crs, shape)
+        lab = np.where(mask, NODATA, lab).astype(np.uint8)
+    return img, lab
+
+
+def _overlap_mask(city_name: str, box_id: str, roles: tuple[str, ...], tr, crs, shape) -> np.ndarray:
+    import geopandas as gpd
+    import rasterio
+    from rasterio.features import geometry_mask
+    from shapely.geometry import box as sbox
+
+    shapes = []
+    for r in roles:
+        for b in city_boxes(city_name, r):
+            if b == box_id:
+                continue
+            with rasterio.open(naip_dir(city_name) / f"{b}.tif") as s:
+                shapes.append(gpd.GeoSeries([sbox(*s.bounds)], crs=s.crs).to_crs(crs).iloc[0])
+    if not shapes:
+        return np.zeros(shape, bool)
+    return ~geometry_mask(shapes, out_shape=shape, transform=tr)
 
 
 def main(argv: list[str] | None = None) -> int:

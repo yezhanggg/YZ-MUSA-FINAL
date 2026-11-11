@@ -45,7 +45,8 @@ def role_boxes(dataset: str, role: str, n: int):
 
         city = dataset.split(":", 1)[1]
         for b in city_boxes(city, role):
-            img, lab = load_city_box(city, b)
+            # test pixels that a train or val box also covers are left out
+            img, lab = load_city_box(city, b, ("train", "val") if role == "test" else ())
             yield b, city, img, (five_to_four(lab) if n == 4 else lab)
         return
     boxes = data.split_boxes()
