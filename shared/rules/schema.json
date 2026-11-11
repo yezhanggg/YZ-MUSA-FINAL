@@ -151,6 +151,14 @@
         },
         "term": {
           "$ref": "#/$defs/leaf_str"
+        },
+        "scope_districts": {
+          "$ref": "#/$defs/leaf_list",
+          "description": "The ADU rule reaches only these districts or overlays. Elsewhere status_outside applies."
+        },
+        "status_outside": {
+          "$ref": "#/$defs/leaf_adu_status",
+          "description": "Status outside scope_districts (often not_addressed)."
         }
       }
     },
@@ -173,6 +181,13 @@
         },
         "historic_path": {
           "$ref": "#/$defs/leaf_path"
+        },
+        "unlisted_use_path": {
+          "$ref": "#/$defs/leaf_path",
+          "description": "Path for a use the code does not list (for example a special exception for uses not provided for, Lancaster 300-17, Hempfield 87-186). Not where the code bars unlisted uses."
+        },
+        "alternatives": {
+          "$ref": "#/$defs/leaf_alternatives"
         }
       }
     },
@@ -204,6 +219,10 @@
         },
         "lot_area_per_unit_sqft": {
           "$ref": "#/$defs/leaf_num"
+        },
+        "min_lot_share_of_district": {
+          "$ref": "#/$defs/leaf_share",
+          "description": "The lot needs only this share of the district minimum lot (Manheim: 0.9)."
         }
       }
     },
@@ -237,6 +256,18 @@
         "max_share_internal": {
           "$ref": "#/$defs/leaf_share",
           "description": "Share cap for a unit inside or attached to the house, when it differs from max_share_of_house (which then holds for a unit in an accessory building)."
+        },
+        "max_sqft_internal": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Floor area cap for a unit inside or attached to the house, when it differs from max_sqft."
+        },
+        "max_sqft_accessory_building": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Floor area cap for a unit in a detached or accessory building (new, garage conversion, over a garage), when it differs from max_sqft."
+        },
+        "max_share_accessory_building": {
+          "$ref": "#/$defs/leaf_share",
+          "description": "Share cap for a unit in an accessory building, when it differs from max_share_of_house."
         }
       }
     },
@@ -277,6 +308,22 @@
         },
         "sprinklered_unrated_min_ft": {
           "$ref": "#/$defs/leaf_num"
+        },
+        "max_height_garage_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Height cap for a garage (garage conversion, unit over a garage) when it differs from max_height_ft."
+        },
+        "height_capped_at_house": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "true when an accessory building may not be taller than the house (Lower Paxton 203-313H)."
+        },
+        "accessory_height_applies": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "false when the file says no accessory height rule reaches an ADU, so the district height applies. Leave out when unknown."
+        },
+        "district_yards_bind_accessory": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "true when the code makes accessory buildings meet the district (principal) yards. Otherwise a detached unit takes the envelope yards and an attached unit the district yards."
         }
       }
     },
@@ -1021,6 +1068,10 @@
         },
         "lot_area_per_unit_sqft": {
           "$ref": "#/$defs/leaf_num"
+        },
+        "separation_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Minimum distance between dwellings on a lot in this district, when the code sets one."
         }
       }
     },
@@ -1196,7 +1247,7 @@
     },
     "leaf_gates": {
       "type": "object",
-      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides.",
+      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value.",
       "required": [
         "value",
         "section",
@@ -1301,8 +1352,135 @@
                 "enum": [
                   "has_alley",
                   "has_accessory_building",
+                  "lot_sqft_at_least",
+                  "lot_sqft_below",
                   null
                 ]
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "value": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Threshold for test lot_sqft_at_least (met when the lot is at least this) or lot_sqft_below (met when the lot is under this)."
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_alternatives": {
+      "type": "object",
+      "description": "Other ways to add a second unit that are not an ADU (two-family conversion, duplex, second principal dwelling). Never counted as the ADU being allowed.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "path",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "path": {
+                "enum": [
+                  "by_right",
+                  "administrator_exception",
+                  "special_exception",
+                  "conditional_use",
+                  "variance",
+                  "not_allowed"
+                ]
+              },
+              "districts": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                }
+              },
+              "conditions": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "min_lot_sqft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
               },
               "section": {
                 "type": "string",

@@ -86,6 +86,30 @@ How the resolver uses them:
 - A null in a district row no longer wipes a town-wide value.
 - Under the state bill, a town share cap under the state floor is raised to it, and a missing `max_adus` becomes the bill's 1.
 
+## More fields (pass 3)
+
+All optional. Older files stay valid.
+
+| Field | Use it for | Example |
+|---|---|---|
+| gate `test: lot_sqft_at_least` or `lot_sqft_below` with `value` | A gate that depends on lot size. `lot_sqft_at_least` is met when the lot is at least `value`. With `effect: bars` the listed types are barred when it is not met | Abington: detached and garage forms need 10,000 sq ft (`applies_to` detached_new, garage_conversion, over_garage, `test: lot_sqft_at_least`, `value: 10000`) |
+| `eligibility.min_lot_share_of_district` | The lot needs only a share of the district minimum | Manheim: 0.9 (2515.2.A(13)) |
+| `size.max_sqft_internal`, `size.max_sqft_accessory_building`, `size.max_share_accessory_building` | Size caps that differ by form. With `max_share_internal` already there. Use `max_sqft` and `max_share_of_house` only for a cap that applies to every form | Bristol: `max_share_internal` 0.3, `max_sqft_accessory_building` 650. Abington: `max_sqft_accessory_building` 625. Erie: 720 |
+| `envelope.max_height_garage_ft` | Height cap for a garage, when it differs from the accessory building cap | Bristol: 16 (12 in `max_height_ft`) |
+| `envelope.height_capped_at_house` | An accessory building may not be taller than the house | Lower Paxton 203-313H |
+| `envelope.accessory_height_applies` | Set `false` only when the code says no accessory height rule reaches an ADU. The resolver then uses the district height and says why | |
+| `envelope.district_yards_bind_accessory` | Set `true` when accessory buildings must meet the district yards. Otherwise a detached unit takes the `envelope` yards and an attached unit takes the district yards | Harrisburg 7-307.6A, Lower Merion 155-10.2C(6) |
+| `districts.<code>.separation_ft` | Distance between dwellings on a lot set by the district | Abington R1 40, R2 30, R3 24, R4 20 |
+| `adu.scope_districts`, `adu.status_outside` | The ADU rule reaches only some districts or an overlay | Hempfield: scope TC-R, TC-B (TND overlay), outside `not_addressed` |
+| `approval.unlisted_use_path` | A special exception for uses the code does not list, distinct from a variance. Leave out where the code bars unlisted uses | Hempfield 87-186, Lancaster 300-17. Not Wilkes-Barre R-1 (702.15) |
+| `approval.alternatives` | Other ways to add a unit that are not an ADU: `{name, path, districts, conditions, min_lot_sqft, section, url}`. Shown apart, never counted as the ADU being allowed | Middletown 500-2312 conversion, Haverford 182-1208, Penn Hills R-2 conversion, Wilkes-Barre R-2 and R-3, Lancaster 300-28A, Millcreek duplex, Manheim R-3 |
+
+Other rules:
+
+- `lot_area_per_unit_sqft` now bars a lot that is too small for the house and the ADU, when its confidence is `verified`. With `secondary` it is shown as a condition with "if". Store the true per-unit number (Harrisburg RM 1,500), not the doubled one, in `lot_area_per_unit_sqft`, and the district's own minimum in `min_lot_sqft`.
+- `accessory_structure_max_sqft` no longer needs a height next to it.
+- Parking: leave `spaces_required` null and fill `parking.reading` when the count for the ADU is open.
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:
