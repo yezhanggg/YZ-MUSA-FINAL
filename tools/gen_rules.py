@@ -132,7 +132,41 @@ def secondary():
                 v = val(leaf.get("value"), {**leaf, "_key": key})
                 out.append(f"| {n} | {LABEL.get(key,key)} | {v} | {clean(leaf.get('section'))} | {clean(leaf.get('note'))} |")
     return "\n".join(out)
+NAMES.update({"conditional_use":"conditional use","allowed_by_right":"by right","family_only":"family only",
+              "conversion_only":"conversion only","not_addressed":"not in the code","prohibited":"prohibited"})
+def _v(d, sec, key):
+    leaf = (d.get(sec) or {}).get(key) or {}
+    v = leaf.get("value")
+    if v is None: return "not confirmed" if leaf.get("confidence") == "unverified" or not leaf else "none set"
+    return val(v, leaf)
+def towns():
+    """docs/RULES_TOWNS.md: one row per town in shared/rules/towns_index.json."""
+    idx = json.loads((R/"towns_index.json").read_text())
+    out = ["# ADU rules by town", "",
+           "Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rules/towns_index.json` and the town files. "
+           "Not legal advice. A town without a file uses `pa_statewide.json` (the statewide baseline).", "",
+           "## Towns with a rule file", "",
+           "| Town | County | File status | Code calls it | ADU status | Approval path | Max size (sq ft) | Owner on site | ADUs per lot | Checked on |",
+           "|---|---|---|---|---|---|---|---|---|---|"]
+    todo = []
+    for t in idx["towns"]:
+        f = R/f"{t['file']}.json"
+        if not f.exists():
+            todo.append(t); continue
+        try: d = json.loads(f.read_text())
+        except ValueError:
+            out.append(f"| {t['name']} | {t['county']} | {t['status']} | file not readable (being edited) |  |  |  |  |  |  |"); continue
+        adu = d.get("adu") or {}
+        term = (adu.get("term") or {}).get("value") or ("not set" if t["file"] in ("philadelphia","pittsburgh") else "none")
+        status = val((adu.get("status") or {}).get("value")) if adu.get("status") else ""
+        out.append(f"| {t['name']} | {t['county']} | {t['status']} | {clean(term)} | {status} | {_v(d,'approval','path')} | "
+                   f"{_v(d,'size','max_sqft')} | {_v(d,'use','owner_occupancy')} | {_v(d,'use','max_adus')} | {d['provenance'].get('verified_on')} |")
+    out += ["", "## Towns still to write", "", "| Batch | Town | County | Status | Population 2020 | Code host |", "|---|---|---|---|---|---|"]
+    out += [f"| {t['batch']} | {t['name']} | {t['county']} | {t['status']} | {t['population']:,} | {t['code_host']} |" for t in todo]
+    out += ["", "## Population covered", "", "| Towns beyond Philadelphia and Pittsburgh | Share of PA (2020) |", "|---|---|"]
+    out += [f"| {c['towns_beyond_the_two_cities']} | {c['share_of_pa']:.1%} |" for c in idx["coverage"]]
+    return "\n".join(out)
 part = sys.argv[1]; arg = sys.argv[2] if len(sys.argv) > 2 else None
 print({"table": lambda: table(arg), "bill": lambda: table(arg, True), "notes": lambda: notes(arg), "prov": lambda: prov(arg),
        "districts": lambda: districts(arg), "dsec": lambda: district_sections(arg), "overlays": overlays,
-       "unverified": unverified, "secondary": secondary}[part]())
+       "unverified": unverified, "secondary": secondary, "towns": towns}[part]())

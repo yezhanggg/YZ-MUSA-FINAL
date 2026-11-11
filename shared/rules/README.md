@@ -14,6 +14,9 @@ These files hold the zoning rules for accessory dwelling units (ADUs) in Pennsyl
 | `hb2186.json` | State House Bill 2186. One ADU per lot by right in every town with zoning, Philadelphia and Pittsburgh included | Passed the House. Pending in the Senate |
 | `sb1346.json` | State Senate Bill 1346. ADUs by right through the Municipalities Planning Code. Does not reach Philadelphia or Pittsburgh | Pending in the Senate |
 | `default.json` | Building code defaults from the 2021 IRC (PA UCC) and a few labeled planning assumptions | Fallback only |
+| `pa_<county>_<town>.json` | One file per Pennsylvania town, written to the convention in `TOWNS.md`. Adds `adu.term` and `adu.status` | Per file |
+| `pa_statewide.json` | What applies in every town: MPC approval paths and timing, building code, sprinklers, sewage, bills by reference. The assistant uses it for a town with no file | In force (bills pending) |
+| `towns_index.json` | Ranked list of target towns (2020 Census population), code hosts, batches and status. Made by `tools/town_targets.py`. Not a rule file | |
 | `schema.json` | The format every file must follow | |
 
 The state session ends Nov 30, 2026. A bill that has not passed by then dies.
@@ -103,6 +106,8 @@ python -m pipeline.rules resolve --place philadelphia --scenario today \
 ```
 
 ## Add a town
+
+For a town outside Philadelphia and Pittsburgh, follow `TOWNS.md` instead. `pipeline.rules.list_places()` and `describe_place(name)` read the index. `resolve()` takes a town file name, a town name or a GEOID. A listed town without a file resolves on `default.json`, so every value is in `assumed`. The town table is in `docs/RULES_TOWNS.md` (`python tools/gen_rules.py towns > docs/RULES_TOWNS.md`).
 
 1. Copy `pittsburgh.json` to `<town>.json`. Use a short lower-case name.
 2. Read the town's zoning code. Find the ADU section, the accessory structure rules, and the district table.
