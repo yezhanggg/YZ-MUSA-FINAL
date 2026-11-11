@@ -304,7 +304,7 @@ def test_not_allowed_has_reasons_and_fallback():
         if out["allowed"]:
             continue
         assert out["reasons"], name
-        assert any(r.startswith("Not allowed as of right here") for r in out["reasons"]), name
+        assert any(r.startswith(("Not allowed as of right here", "The code has no ADU rule here")) for r in out["reasons"]), name
         assert out["fallback"]["path"] and out["fallback"]["section"], name
         for c in raw(name)["provenance"].get("checks", []):
             assert c in out["reasons"], name
@@ -646,3 +646,47 @@ def test_index_builder_keeps_status_note(tmp_path, monkeypatch):
             prov = json.loads(f.read_text())["provenance"]
             if prov.get("code_host"):
                 assert t["code_host"] == prov["code_host"], t["name"]
+
+
+def test_unlisted_use_path_is_not_an_adu_allowed(tmp_path, monkeypatch):
+    body = _base("not_addressed", "variance")
+    body["approval"]["unlisted_use_path"] = _leaf("special_exception", "87-186A")
+    name = _fixture(tmp_path, monkeypatch, "pa_test_unl", body)
+    out = rules.resolve(name, "today", {"zoning_district": "SR", "building_type": "detached", "lot_sqft": 12000})
+    assert out["allowed"] is False and out["types_allowed"] == []
+    assert out["path_to_ask"]["path"] == "special_exception" and out["path_to_ask"]["section"] == "87-186A"
+    assert any(r.startswith("The code has no ADU rule here. A use that is not listed may be authorized by special exception (87-186A)")
+               for r in out["reasons"])
+    st = rules.resolve(name, "state_reform", {"zoning_district": "SR", "building_type": "detached", "lot_sqft": 12000})
+    assert st["allowed"] is True and st["path_to_ask"] is None
+
+
+def test_accessory_cap_district_scope(tmp_path, monkeypatch):
+    body = _base("allowed_by_right", "by_right")
+    body["eligibility"] = {"zoning_districts": _leaf(["R-2"], "Table")}
+    body["envelope"] = {"accessory_structure_max_sqft": _leaf(1000, "203-313G"), "accessory_cap_districts": _leaf(["R-1", "R-2"], "203-313G")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_capd", body)
+    cg = rules.resolve(name, "today", {"zoning_district": "CG", "building_type": "detached", "lot_sqft": 6000})
+    assert not any("203-313G" in r for r in cg["reasons"])
+
+
+def test_state_size_floor_line_and_size_conditions(tmp_path, monkeypatch):
+    body = _base("family_only", "special_exception")
+    body["size"] = {"max_share_of_house": _leaf(0.35, "87-79")}
+    body["eligibility"] = {"gates": _leaf([{"kind": "size", "condition": "At most 35 percent of the house", "effect": "condition",
+                                            "section": "87-79", "url": "https://ecode360.com/1"}], "87-79")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_floor2", body)
+    st = rules.resolve(name, "state_reform", {"building_type": "detached", "lot_sqft": 9000, "house_sqft": 1600})
+    assert any(c["kind"] == "size" for c in st["conditions_overridden"])
+    assert not any(c["kind"] == "size" for c in st["conditions"])
+    assert any(r.startswith("Size under HB 2186 (not law): the town must allow at least 800 sq ft") for r in st["reasons"])
+    assert st["max_share_of_house"] == 0.5
+
+
+def test_missing_district_height_is_said(tmp_path, monkeypatch):
+    body = _base("not_addressed", "variance")
+    body["districts"] = {"R-2": {"min_lot_sqft": _leaf(5000, "Table")}}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_dh", body)
+    st = rules.resolve(name, "state_reform", {"zoning_district": "R-2", "building_type": "detached", "lot_sqft": 8000})
+    assert st["max_height_by_type"]["internal"] is None
+    assert any("District height for R-2 not on file" in r for r in st["reasons"])

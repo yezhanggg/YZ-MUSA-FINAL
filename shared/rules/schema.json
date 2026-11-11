@@ -328,6 +328,10 @@
         "district_yards_bind_accessory": {
           "$ref": "#/$defs/leaf_bool",
           "description": "true when the code makes accessory buildings meet the district (principal) yards. Otherwise a detached unit takes the envelope yards and an attached unit the district yards."
+        },
+        "accessory_cap_districts": {
+          "$ref": "#/$defs/leaf_list",
+          "description": "Districts where accessory_structure_max_sqft applies, when the code limits it (Lower Paxton: residential lots under 2 acres)."
         }
       }
     },
@@ -1294,6 +1298,7 @@
                   "historic",
                   "design",
                   "utilities",
+                  "size",
                   "parking",
                   "other"
                 ]

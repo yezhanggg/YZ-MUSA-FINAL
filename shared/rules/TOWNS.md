@@ -104,6 +104,7 @@ All optional. Older files stay valid.
 | `approval.unlisted_use_path` | A special exception for uses the code does not list, distinct from a variance. Leave out where the code bars unlisted uses | Hempfield 87-186, Lancaster 300-17. Not Wilkes-Barre R-1 (702.15) |
 | gate `not_districts` | A gate that applies everywhere except the listed districts or overlays | Hempfield: the town-wide rule outside the TND overlay (`not_districts` TC-R, TC-B) |
 | `eligibility.requires_conforming_lot` | Set `true`, with the section, only when the code ties the ADU to a lot that meets the district minimum. Without it, an existing lot below the district minimum is shown as possibly nonconforming, not barred. `min_lot_sqft`, `min_lot_share_of_district`, a lot-size gate and a verified per-unit lot area still bar | Altoona 800-31 (lot meets district minimum), if the text says so |
+| `envelope.accessory_cap_districts` | Districts where `accessory_structure_max_sqft` applies, when the code limits it | Lower Paxton: the residential districts (lots under 2 acres) |
 | `approval.alternatives` | Other ways to add a unit that are not an ADU: `{name, path, districts, conditions, min_lot_sqft, section, url}`. Shown apart, never counted as the ADU being allowed | Middletown 500-2312 conversion, Haverford 182-1208, Penn Hills R-2 conversion, Wilkes-Barre R-2 and R-3, Lancaster 300-28A, Millcreek duplex, Manheim R-3 |
 
 Other rules:
@@ -111,6 +112,7 @@ Other rules:
 - `lot_area_per_unit_sqft` now bars a lot that is too small for the house and the ADU, when its confidence is `verified`. With `secondary` it is shown as a condition with "if". Store the true per-unit number (Harrisburg RM 1,500), not the doubled one, in `lot_area_per_unit_sqft`, and the district's own minimum in `min_lot_sqft`.
 - `accessory_structure_max_sqft` no longer needs a height next to it.
 - A gate with a lot test (`has_alley`, `has_accessory_building`, lot size) bars only when the lot fact is known and fails. When it is unknown the form stays allowed with the condition shown.
+- A not-addressed town whose path is a special exception for unlisted uses reads as not allowed, with `path_to_ask`. It is a hearing, not an ADU rule.
 - Parking: leave `spaces_required` null and fill `parking.reading` when the count for the ADU is open.
 
 ## A town where the code does not mention ADUs
