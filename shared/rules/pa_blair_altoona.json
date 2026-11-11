@@ -1,0 +1,366 @@
+{
+  "provenance": {
+    "jurisdiction": "Altoona city",
+    "instrument": "Code of the City of Altoona, Chapter 800 Zoning (adopted 9-8-2025 by Ord. No. 5833), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 800 was adopted 9-8-2025 by Ord. No. 5833 and repealed the 2016 zoning chapter. eCode360 includes legislation through 04-13-2026 and lists New Laws (0). eCode360 is Cloudflare-walled for plain fetches. Text was read in a browser from the print view of the whole chapter.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/AL2257",
+      "https://ecode360.com/31994860",
+      "https://ecode360.com/print/AL2257?guid=31994860",
+      "https://ecode360.com/32046319",
+      "https://ecode360.com/32046320",
+      "https://ecode360.com/32046421",
+      "https://ecode360.com/48306218",
+      "https://ecode360.com/32046422",
+      "https://ecode360.com/32046427",
+      "https://ecode360.com/32047771",
+      "https://ecode360.com/48306710",
+      "https://www.altoonapa.gov/departments/codes-inspections/zoning",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Blair",
+    "municipality_type": "city",
+    "geoid": "4201302184",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/31994860",
+    "code_current_through": "2026-04-13",
+    "code_current_through_note": "Includes legislation through 04-13-2026. New Laws (0).",
+    "checks": [
+      "ADUs are permitted (P) only in RN-A and RN-B (800-29 Principal Use Table). Not listed in RN-C, RN-D or the mixed-use, commercial and industrial districts",
+      "The ADU must be attached to or inside the house, or attached to or inside an existing accessory structure such as a garage or carriage house. It must share at least one wall or be structurally connected (800-31D, 800-88 definition)",
+      "A new free-standing cottage is not allowed. A unit in a garage built for the purpose is not addressed, since the text says 'existing accessory structure'",
+      "Max 1,000 sq ft or 80% of the principal structure, whichever is smaller (800-31E)",
+      "The lot must meet the district minimum lot size: RN-A 6,000 sq ft, RN-B 2,725 sq ft (800-31B, 800-14, 800-15)",
+      "The owner must live in one of the units. The ADU may only be occupied as a principal residence (800-31G, K)",
+      "Separate address and mail receptacle for the ADU (800-31J). Same style and materials as the house or garage (800-31I)",
+      "Not allowed in cluster developments. No manufactured or movable homes (800-31F, H)",
+      "The 800-60 parking table has no ADU row. Single-unit residential needs 1 to 3 spaces per dwelling unit. Ask the zoning office how an ADU counts",
+      "Conversion of a single-family dwelling existing at the effective date into a multifamily dwelling is a separate use (800-36). It is SE in RN-C, RN-D, MX-N and MX-C per the use table (800-29)"
+    ],
+    "notes": "Zoning office: City of Altoona zoning, https://www.altoonapa.gov/departments/codes-inspections/zoning. Pending: none found on eCode360 (New Laws 0). The towns index URL 32046318 is a nearby section. The chapter root is 31994860."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "800-31, 800-88",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'§ 800-31. Accessory Dwelling Unit (ADU).' 800-31A also says 'accessory apartment (ADU)'."
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "800-29 Principal Use Table",
+      "url": "https://ecode360.com/32046421",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Accessory Dwelling Units (ADUs)' row: P in RN-A and RN-B, subject to 800-31. Owner occupancy required."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "800-29, 800-31",
+      "url": "https://ecode360.com/32046421",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "P means permitted use. A zoning permit when 800-31 is met. No hearing."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "800-29, MPC 910.2",
+      "url": "https://ecode360.com/32046421",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Other districts show no ADU use. A lot that fails 800-31 needs a variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RN-A",
+        "RN-B"
+      ],
+      "section": "800-29 Principal Use Table",
+      "url": "https://ecode360.com/32046421",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "ADU row: 'P / P' for RN-A and RN-B, blank for the other eight districts."
+    },
+    "building_types": {
+      "value": null,
+      "section": "800-31C, 800-88",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'a lot containing a single-unit or two-unit principal residential structure'. No detached or attached limit."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "800-31B",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'located on a lot which meets the requirement for the minimum lot size, as specified in the applicable zoning district'. RN-A 6,000 sq ft, RN-B 2,725 sq ft. See districts."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "800-31B, 800-31D",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'For the conversion or construction of an ADU'. An addition attached to the house is allowed. A garage unit must use an existing accessory structure."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "800-31",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No historic rule in 800-31."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "800-31D, 800-88",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'attached to or integrated within the existing principal residential structure or an existing accessory structure such as a garage or carriage house.' Reading: over a garage only when the garage exists. No new free-standing unit."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1000,
+      "section": "800-31E",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'An ADU shall not exceed 1,000 square feet or 80% of the size of the principal structure, whichever is smaller.'"
+    },
+    "max_share_of_house": {
+      "value": 0.8,
+      "section": "800-31E",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "80% of the size of the principal structure."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "800-31",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum size in 800-31."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "800-14D(1), 800-15D(1)",
+      "url": "https://ecode360.com/32046319",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Accessory building/structure [max] 25 ft' in RN-A and RN-B."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "800-14C, 800-15C",
+      "url": "https://ecode360.com/32046319",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No accessory front setback listed. The principal primary street setback is '20 ft or Average'."
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "800-14C(2), 800-15C(2)",
+      "url": "https://ecode360.com/32046319",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory structure: 3 ft on lots wider than 25 ft, 18 in on narrower lots."
+    },
+    "setback_rear_ft": {
+      "value": 7,
+      "section": "800-14C(2), 800-15C(2)",
+      "url": "https://ecode360.com/32046319",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory structure: 'Rear lot line 7 ft'."
+    },
+    "separation_ft": {
+      "value": 8,
+      "section": "800-14C(2)",
+      "url": "https://ecode360.com/32046319",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "RN-A accessory structure: 'Rear of principal structure 8 ft'. RN-B: 10 ft (800-15C(2)). A garage ADU must also be structurally connected to that garage."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "800-31A, 800-14D",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'shall comply with all minimum dimensional requirements'. An ADU in the house uses the 35 ft principal height."
+    }
+  },
+  "coverage": {
+    "max_impervious": {
+      "value": null,
+      "section": "800-14B(1), 800-15B(1)",
+      "url": "https://ecode360.com/32046319",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Lot coverage includes all impervious surfaces: RN-A 50%, RN-B 60%. No single number."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "800-31G",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The owner(s) of any lot containing an ADU shall permanently reside in at least one of the dwelling units on the premises.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "800-31",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No family or age limit in 800-31."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "800-31K",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'An ADU shall only be occupied as a principal place of residence.' Reading: rules out short-term rental of the ADU."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "800-31C, 800-14B(2)",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'One attached ADU shall be permitted on a lot'. District density: 'Accessory dwelling unit 1'."
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "800-31",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed. 800-31J requires separate addresses."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "800-60D",
+      "url": "https://ecode360.com/32047771",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Single-unit residential / 1 per dwelling unit / 3 per dwelling unit' (minimum and maximum)."
+    }
+  },
+  "districts": {
+    "RN-A": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "800-14B(1) Lot area [min]",
+        "url": "https://ecode360.com/32046319",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "RN-A lot area minimum. An ADU lot must meet the district minimum lot size (800-31B). Principal setbacks: side 10 ft, rear 30 ft. Lot coverage max 50% including all impervious surfaces."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "800-14C(1) Primary street setback",
+        "url": "https://ecode360.com/32046319",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "'20 ft or Average', the average of the four nearest lots if less. Applies to the principal structure, which an ADU must be attached to or within."
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "800-14C(2) Accessory structure setbacks",
+        "url": "https://ecode360.com/32046319",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory structure: 'Side lot line with lot width greater than 25 feet / 3 ft'. 18 in on lots 25 ft wide or less. An addition to the house uses the principal side setback (10 ft)."
+      },
+      "setback_rear_ft": {
+        "value": 7,
+        "section": "800-14C(2) Accessory structure setbacks",
+        "url": "https://ecode360.com/32046319",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory structure: 'Rear lot line / 7 ft'. An addition to the house uses the principal rear setback (30 ft). Accessory structures sit 8 ft from the rear of the principal structure."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "800-14D(1) Height",
+        "url": "https://ecode360.com/32046319",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Primary building height [max] 2.5/35 ft'. Accessory building 25 ft."
+      }
+    },
+    "RN-B": {
+      "min_lot_sqft": {
+        "value": 2725,
+        "section": "800-15B(1) Lot area [min]",
+        "url": "https://ecode360.com/32046320",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "RN-B lot area minimum. An ADU lot must meet the district minimum lot size (800-31B). Principal setbacks: side 3 ft, rear 25 ft. Lot coverage max 60% including all impervious surfaces."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "800-15C(1) Primary street setback",
+        "url": "https://ecode360.com/32046320",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "'20 ft or Average', the average of the four nearest lots if less. Applies to the principal structure, which an ADU must be attached to or within."
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "800-15C(2) Accessory structure setbacks",
+        "url": "https://ecode360.com/32046320",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory structure: 'Side lot line with lot width greater than 25 feet / 3 ft'. 18 in on lots 25 ft wide or less. An addition to the house uses the principal side setback (3 ft)."
+      },
+      "setback_rear_ft": {
+        "value": 7,
+        "section": "800-15C(2) Accessory structure setbacks",
+        "url": "https://ecode360.com/32046320",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory structure: 'Rear lot line / 7 ft'. An addition to the house uses the principal rear setback (25 ft). Accessory structures sit 10 ft from the rear of the principal structure."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "800-15D(1) Height",
+        "url": "https://ecode360.com/32046320",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Primary building height [max] 2.5/35 ft'. Accessory building 25 ft."
+      }
+    }
+  }
+}
