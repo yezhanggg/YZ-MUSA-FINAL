@@ -1,0 +1,421 @@
+{
+  "provenance": {
+    "jurisdiction": "Erie, PA",
+    "instrument": "City of Erie Zoning Ordinance, Codified Ordinances Part 13, Article 1303 (Ord. No. 80-2005 as amended). ADU added by Ord. 52-2024 (passed 9-18-2024): definition in § 601 and permitted use lists in § 204",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "ADU definition and permitted-use listings carry Ord. 52-2024, passed 9-18-2024. eCode360 lists one uncodified zoning law, Ord. No. 45-2026 (8-19-2026). Its PDF was read: it designates the Forman Block at 1013-1015 State Street as historic. It does not touch ADUs.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/33839105",
+      "https://ecode360.com/44158916",
+      "https://ecode360.com/44158850",
+      "https://ecode360.com/44157044",
+      "https://ecode360.com/44157094",
+      "https://ecode360.com/44157646",
+      "https://ecode360.com/44157695",
+      "https://ecode360.com/44158764",
+      "https://ecode360.com/ER3969/laws/LF2793123.pdf",
+      "https://www.erie.pa.us/?p=1513",
+      "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Erie",
+    "municipality_type": "city",
+    "geoid": "4204924000",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/33839105",
+    "code_current_through": "2025-10-01",
+    "code_current_through_note": "eCode360 header: Includes legislation through 10-01-2025. New Laws for Art 1303: Ord. No. 45-2026 only.",
+    "checks": [
+      "The code lists ADU as a permitted use but has no ADU standards section. No size cap, owner rule, number cap or parking rule written for ADUs",
+      "A detached ADU is read as a detached accessory building under 205.9: side or rear yard, 6 ft from any dwelling or alley, 3 ft from side and rear lines, 720 sq ft, 15 ft. The code does not say so for ADUs. Confirm with the Zoning Officer",
+      "Lot area is set per family (R-1 and R-1A 6,000 sq ft, R-2 2,000 sq ft). Whether an ADU counts as a second family for lot area is not stated. Ask the Zoning Officer",
+      "204 says only one principal use per lot in any R district, and listed uses are principal uses unless clearly noted. ADU is listed without a note. How the two rules fit is not stated",
+      "Parking: dwellings need 1 per family living unit (302). Half of that in RLB, C-1, C-4. None in C-3. Reading this as 1 space for an ADU is our inference",
+      "Short-term rental is a separate permitted use in R districts and needs a license (305 short-term rentals)",
+      "A dwelling unit holds one family. Family: relatives with up to two boarders, or not more than four unrelated persons (601)"
+    ],
+    "notes": "Zoning office: Bureau of Planning and Zoning, City of Erie (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb."
+  },
+  "adu": {
+    "status": {
+      "value": "allowed_by_right",
+      "section": "§ 204.1(a), 204.2(a), 204.3(a) and other district lists",
+      "url": "https://ecode360.com/44157044",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory dwelling unit (ADU) is listed under Permitted uses in R-1, R-1A, R-2, R-3, RLB, C-1, C-4, M-1 and W-R."
+    },
+    "term": {
+      "value": "accessory dwelling unit (ADU)",
+      "section": "§ 601 Definitions",
+      "url": "https://ecode360.com/44158916",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "A single dwelling unit with provisions for sleeping, cooking, and sanitation whose use is secondary to that of the principal dwelling."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "§ 204, § 402",
+      "url": "https://ecode360.com/44157044",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Listed as a permitted use. A zoning certificate from the Zoning Officer is needed (402)."
+    },
+    "fallback_path": {
+      "value": null,
+      "section": "Article 5",
+      "url": "https://ecode360.com/44158800",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not stated for ADUs. A lot that fails a standard would need a variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-1A",
+        "R-2",
+        "R-3",
+        "RLB",
+        "C-1",
+        "C-4",
+        "M-1",
+        "W-R"
+      ],
+      "section": "§ 204.1, 204.2, 204.3, 204.4, 204.5, 204.6, 204.9, 204.10, 204.17",
+      "url": "https://ecode360.com/44157044",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Not listed in C-2, C-3, M-2, W-C, W-C2, W-C3, W-M or IP."
+    },
+    "building_types": {
+      "value": null,
+      "section": "§ 601",
+      "url": "https://ecode360.com/44158916",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No building type limit in the text. The definition ties the ADU to a principal dwelling or building."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "§ 205",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU lot size. Lot area is per family. Whether an ADU adds a family for this test is not stated."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "§ 601",
+      "url": "https://ecode360.com/44158916",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "A detached ADU ... can be built as a stand-alone unit or added to an existing structure such as a detached garage."
+    },
+    "historic_bypass": {
+      "value": null,
+      "section": "§ 601, Article 7",
+      "url": "https://ecode360.com/44158916",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule tied to historic status."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "§ 601, ADU (a), (b), (c)",
+      "url": "https://ecode360.com/44158916",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Interior ADU (attic or basement), attached ADU (addition or above an attached garage), detached ADU (stand-alone or added to an existing structure such as a detached garage)."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "§ 601, § 204, § 205.9",
+      "url": "https://ecode360.com/44158916",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU size cap. A detached accessory building in an R district is capped at 720 square feet (205.9). See envelope."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "§ 601, § 204",
+      "url": "https://ecode360.com/44158916",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No share-of-house limit in the text."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "§ 205",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "The 205 intro mentions minimum floor area per dwelling, but no such row was found in the tables read."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "§ 205.9",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Detached accessory buildings shall be no larger than 720 square feet in size or 15 feet in height. Applies in R districts. ADU use not named."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 720,
+      "section": "§ 205.9",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "no larger than 720 square feet in size. R districts only."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "§ 205.9",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Detached accessory buildings shall be located in the side or rear yard of the principal building."
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "§ 205.9",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "at least three feet from any side and/or rear property line. R districts."
+    },
+    "setback_rear_ft": {
+      "value": 3,
+      "section": "§ 205.9",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "at least three feet from any side and/or rear property line. R districts."
+    },
+    "setback_rear_alley_ft": {
+      "value": 6,
+      "section": "§ 205.9",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "at least six feet from any dwelling or alley."
+    },
+    "separation_ft": {
+      "value": 6,
+      "section": "§ 205.9",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "at least six feet from any dwelling. Closer than six feet counts as attached and must meet principal setbacks."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "§ 205.8",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "All structures attached to the principal structure ... shall comply with all the required front, side and rear yards."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "§ 205 table",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Set by district. See districts."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "§ 205",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No impervious limit in the 205 tables."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "§ 204, § 601",
+      "url": "https://ecode360.com/44157044",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No owner occupancy rule found in the zoning text."
+    },
+    "family_only": {
+      "value": false,
+      "section": "§ 601",
+      "url": "https://ecode360.com/44158916",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No family tie required. Each dwelling unit holds one family as defined."
+    },
+    "short_term_rental_banned": {
+      "value": false,
+      "section": "§ 204.1(a), § 305 short-term rentals",
+      "url": "https://ecode360.com/44157044",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Short-term rental is a separate permitted use in R-1 and needs a license. No ADU-specific ban found."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "§ 204",
+      "url": "https://ecode360.com/44157044",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No number per lot stated."
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "§ 204",
+      "url": "https://ecode360.com/44157044",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "§ 302.4 and 302.6",
+      "url": "https://ecode360.com/44157646",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Dwellings: 1 per family living unit. Half in RLB, C-1, C-4. None in C-3. ADU not named, so this is a reading."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "Article 1303",
+      "url": "https://ecode360.com/33839105",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in zoning."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "§ 205 table, R-1",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot area per family (square feet). Principal yards: front 30 ft, rear 30 ft, sides 15 total, 5 least ft. A detached accessory building uses 205.9 instead (3 ft side and rear)."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "§ 205 table, R-1",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum lot coverage by buildings."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "§ 205 table, R-1",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height of structure (feet)."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "§ 302.4",
+        "url": "https://ecode360.com/44157646",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per family living unit."
+      }
+    },
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "§ 205 table, R-1A",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot area per family (square feet). Principal yards: front by 205.2 averaging, rear 20 ft, sides 6 total, 3 least ft. A detached accessory building uses 205.9 instead (3 ft side and rear)."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "§ 205 table, R-1A",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum lot coverage by buildings."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "§ 205 table, R-1A",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height of structure (feet)."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "§ 302.4",
+        "url": "https://ecode360.com/44157646",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per family living unit."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 2000,
+        "section": "§ 205 table, R-2",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot area per family (square feet). Principal yards: front by 205.2 averaging, rear 20 ft, sides 6 total, 3 least ft. A detached accessory building uses 205.9 instead (3 ft side and rear)."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "§ 205 table, R-2",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum lot coverage by buildings."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "§ 205 table, R-2",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height of structure (feet)."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "§ 302.4",
+        "url": "https://ecode360.com/44157646",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per family living unit."
+      }
+    }
+  }
+}
