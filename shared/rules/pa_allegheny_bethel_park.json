@@ -1,0 +1,542 @@
+{
+  "provenance": {
+    "jurisdiction": "Bethel Park municipality",
+    "instrument": "Code of the Municipality of Bethel Park, Chapter 69 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code BE0278): includes legislation through 09-08-2025. New Laws (13). The only Chapter 69 item is Ord. No. 4-13-26A (2026-04-13), which replaces 69.35.4.7 on chickens and ducks. It does not touch dwellings. Read in the eCode360 print view in a browser.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/BE0278",
+      "https://ecode360.com/BE0278/laws",
+      "https://ecode360.com/BE0278/laws/LF2762615.pdf",
+      "https://ecode360.com/print/BE0278?guid=29463304",
+      "https://ecode360.com/29463304",
+      "https://ecode360.com/29463327",
+      "https://ecode360.com/29463559",
+      "https://ecode360.com/29463561",
+      "https://ecode360.com/29463642",
+      "https://ecode360.com/29463685",
+      "https://ecode360.com/29463700",
+      "https://ecode360.com/29463741",
+      "https://ecode360.com/29463764",
+      "https://ecode360.com/29463775",
+      "https://ecode360.com/29464044",
+      "https://ecode360.com/29464399",
+      "https://ecode360.com/44278750",
+      "https://ecode360.com/29459868",
+      "https://www.bethelparkpa.gov/community-development/planning-and-zoning",
+      "https://www.bethelparkpa.gov/about/proposed-codes-and-ordinances",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Allegheny",
+    "municipality_type": "municipality",
+    "geoid": "4200306064",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/29463304",
+    "code_current_through": "2025-09-08",
+    "code_current_through_note": "eCode360: Includes legislation through 09-08-2025. New Laws (13). One Chapter 69 amendment (Ord. 4-13-26A, chickens and ducks).",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law rule. R-1, R-2 and R-3 permit one-family detached dwellings and listed accessory uses (69.23.1, 69.24.1, 69.25.1)",
+      "The accessory use list includes 'Servants' quarters or servants' house'. A unit for household employees is a permitted accessory use in R-1 to R-5. No size or other standards are given (69.8.2(8), 69.23.1.7.g)",
+      "A nonpaying guesthouse in an accessory building is allowed only for occasional guests, 'not for permanent occupancy by others as housekeeping units' (69.8.2(7))",
+      "No section sends unlisted uses to a special exception or conditional use. Every use must conform to the district rules (69.11.1). A second unit for a relative or tenant needs a use variance",
+      "Two-family dwellings are permitted in R-4 and R-5 at 4,350 sq ft per dwelling unit and 60 ft wide (69.26.1, 69.26.3, 69.27.1). Also permitted in R-T (69.28.1)",
+      "Accessory buildings: 20 ft high in R-1 to R-3. 10 ft from the side line, 5 ft from the rear line, behind the building line and the front face of the house (69.23.2, 69.25.2, 69.35.3.2)",
+      "Parking: one space per dwelling unit for a one-family dwelling, two per unit for a two-family dwelling (69.40.1)",
+      "Short-term rentals are a conditional use in R-1 to R-5, R-T, C-1 and C-2. Rooms must be in the principal building, not in an accessory structure (69.91)",
+      "Landlords file an occupancy report with the Municipal Secretary within 30 days of a lease (45.3.2)"
+    ],
+    "notes": "Zoning office: Planning and Zoning, https://www.bethelparkpa.gov/community-development/planning-and-zoning. Searched Chapter 69 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion. Pending: the township lists a proposed Adaptive Reuse Ordinance (new 69.92, conditional use for reuse of certain hotel, office and former civic buildings). Not adopted. It does not add ADUs (https://www.bethelparkpa.gov/about/proposed-codes-and-ordinances)."
+  },
+  "adu": {
+    "term": {
+      "value": "servants' quarters or servants' house",
+      "section": "69.8.2(8)",
+      "url": "https://ecode360.com/29463327",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU term. The nearest is an accessory use: 'Servants' quarters or servants' house.' It is limited to household servants, so it is not a general ADU."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "69.23.1, 69.24.1, 69.25.1, 69.11.1",
+      "url": "https://ecode360.com/29463642",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading of a silent code. No district lists an ADU. Only servants' quarters and occasional nonpaying guest rooms are listed accessory uses."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "69.11.1, 69.23.1, MPC 910.2",
+      "url": "https://ecode360.com/29463559",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No use 'except ... in conformity with the regulations herein specified for the district'. A second unit for a relative or tenant is not listed. A use variance is the path."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "69.11.1, MPC 910.2",
+      "url": "https://ecode360.com/29463559",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path. The code has no unlisted-use special exception."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Servants' quarters or servants' house (accessory use)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3",
+            "R-4",
+            "R-5"
+          ],
+          "conditions": "Only for household servants. No size, occupancy count or parking standard is given. Accessory building rules apply: 20 ft high, 10 ft side, 5 ft rear, behind the house.",
+          "min_lot_sqft": null,
+          "section": "69.8.2(8), 69.23.1.7.g, 69.24.1, 69.25.1.7.g, 69.26.1",
+          "url": "https://ecode360.com/29463327"
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-4",
+            "R-5"
+          ],
+          "conditions": "4,350 sq ft per dwelling unit, 60 ft wide at the building line. Side yards 10 ft. Two parking spaces per unit within 70 ft of the unit.",
+          "min_lot_sqft": 8700,
+          "section": "69.26.1, 69.26.3, 69.27.1, 69.40.1",
+          "url": "https://ecode360.com/29463741"
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-T"
+          ],
+          "conditions": "Permitted use in the townhouse district. Lot rules of 69.28 not recorded here.",
+          "min_lot_sqft": null,
+          "section": "69.28.1",
+          "url": "https://ecode360.com/29463775"
+        }
+      ],
+      "section": "69.8.2, 69.26, 69.28",
+      "url": "https://ecode360.com/29463741",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Servants' quarters is the code's only accessory living use. Two-family dwellings are listed only in R-4, R-5 and R-T."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "69.23.1, 69.24.1, 69.25.1",
+      "url": "https://ecode360.com/29463642",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 69",
+      "url": "https://ecode360.com/29463304",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "occupancy",
+          "condition": "Servants' quarters only for household servants. A nonpaying guesthouse only for 'occasional housing of guests', 'not for permanent occupancy by others as housekeeping units'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "69.8.2(7), (8)",
+          "url": "https://ecode360.com/29463327"
+        },
+        {
+          "kind": "other",
+          "condition": "'No accessory building shall be used for dwelling purposes unless the main building on the lot is also being used for dwelling purposes.'",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "69.35.2.1",
+          "url": "https://ecode360.com/29464044"
+        },
+        {
+          "kind": "other",
+          "condition": "'No accessory structure can be located in front of the front face of the principal building.'",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "69.23.1.7.g, 69.35.3.2",
+          "url": "https://ecode360.com/29463642"
+        },
+        {
+          "kind": "other",
+          "condition": "Short-term rental is a conditional use. Rooms must be in the principal building, not in an accessory structure.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "69.91.1, 69.91.3.7",
+          "url": "https://ecode360.com/44278750"
+        },
+        {
+          "kind": "other",
+          "condition": "Landlords file an occupancy report with the Municipal Secretary within 30 days of a lease.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "45.3.2",
+          "url": "https://ecode360.com/29459868"
+        }
+      ],
+      "section": "69.8.2, 69.35, 69.91, 45.3",
+      "url": "https://ecode360.com/29463327",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory living and rental rules that apply to any second unit."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "69.23.1, 69.8.2",
+      "url": "https://ecode360.com/29463642",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. Servants' quarters is a separate accessory use, recorded under alternatives."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "69.23.2.3, 69.24.2, 69.25.2.3",
+      "url": "https://ecode360.com/29463642",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule, not an ADU rule: 'Accessory building: 20 feet.' R-2 and R-4 take the R-1 heights."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "69.35.3.2",
+      "url": "https://ecode360.com/29464044",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No number. Accessory buildings 'must be located behind the building line' and behind the front face of the house."
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "69.35.3.2",
+      "url": "https://ecode360.com/29464044",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'at least 10 feet from the side lot line'."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "69.35.3.2",
+      "url": "https://ecode360.com/29464044",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'at least five feet from the rear lot line'."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "69.35",
+      "url": "https://ecode360.com/29464044",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No distance between buildings on one lot found."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "69.35.3.2, 69.35.3.3",
+      "url": "https://ecode360.com/29464044",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory buildings may stand in a rear yard ('except for accessory buildings in a rear yard') at 10 ft side and 5 ft rear."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "69.23.2.1",
+      "url": "https://ecode360.com/29463642",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A unit inside or attached to the house takes the 35 ft dwelling height."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 69",
+      "url": "https://ecode360.com/29463304",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "69.8.57 'Family'",
+      "url": "https://ecode360.com/29463327",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule. A family is related persons or up to four unrelated persons as one housekeeping unit."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "69.91.3.7",
+      "url": "https://ecode360.com/44278750",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Short-term rentals shall not occupy any accessory structure'. Reading: bars short-term rental of a detached unit. Inside the house it is a conditional use."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "69.23.1, 69.11.1",
+      "url": "https://ecode360.com/29463642",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU. Servants' quarters and two-family dwellings are recorded under alternatives."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "69.40.1.1",
+      "url": "https://ecode360.com/29464399",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "No ADU row. A one-family dwelling needs one space per dwelling unit. If the second unit counts as a dwelling unit, two in total. If the lot is treated as a two-family dwelling, two per unit, four in total.",
+      "section": "69.40.1.1.c, 69.40.1.1.d",
+      "url": "https://ecode360.com/29464399",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 21870,
+        "section": "69.23.3.1",
+        "url": "https://ecode360.com/29463642",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'1/2 acre (21, 870 square feet) and a width at the building of 100 feet'."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "69.23.4.1",
+        "url": "https://ecode360.com/29463642",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "69.23.4.2",
+        "url": "https://ecode360.com/29463642",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each side 20 ft. 20% of lot width, at least 12 ft, on lots of record under 100 ft wide."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "69.23.4.3",
+        "url": "https://ecode360.com/29463642",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "'not less than 50 feet or 20% of the depth of the lot, whichever is greater, but it need not exceed 90 feet'. Principal building."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "69.23.5",
+        "url": "https://ecode360.com/29463642",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "All buildings, including accessory uses."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "69.23.2.1",
+        "url": "https://ecode360.com/29463642",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 12450,
+        "section": "69.24.3.1",
+        "url": "https://ecode360.com/29463685",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "75 ft wide at the building line."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "69.24.4.1",
+        "url": "https://ecode360.com/29463685",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "40 ft. 35 ft on streets dedicated after August 1, 1994 with 60 ft from building line to road center."
+      },
+      "setback_side_ft": {
+        "value": 12.5,
+        "section": "69.24.4.2",
+        "url": "https://ecode360.com/29463685",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each side 12 1/2 ft. 20% of width, at least 10 ft, on lots under 75 ft wide."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "69.24.4.3",
+        "url": "https://ecode360.com/29463685",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "35 ft or 20% of lot depth, whichever is larger, up to 60 ft. Principal building."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "69.24.5",
+        "url": "https://ecode360.com/29463685",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "69.24.2, 69.23.2.1",
+        "url": "https://ecode360.com/29463685",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'as permitted or required in the R-1 District'."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 8710,
+        "section": "69.25.3.1",
+        "url": "https://ecode360.com/29463700",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "60 ft wide at the building line."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "69.25.4.1",
+        "url": "https://ecode360.com/29463700",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "69.25.4.2",
+        "url": "https://ecode360.com/29463700",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each side 10 ft. 15% of width, at least 6 ft, on lots under 60 ft wide."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "69.25.4.3",
+        "url": "https://ecode360.com/29463700",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "35 ft or 20% of lot depth, whichever is larger, up to 45 ft. Principal building."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "69.25.5",
+        "url": "https://ecode360.com/29463700",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "69.25.2.1",
+        "url": "https://ecode360.com/29463700",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 8710,
+        "section": "69.26.3.1",
+        "url": "https://ecode360.com/29463741",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One-family detached. Two-family 4,350 sq ft per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "69.26.4.1",
+        "url": "https://ecode360.com/29463741",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "69.26.4.2",
+        "url": "https://ecode360.com/29463741",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "69.26.4.3",
+        "url": "https://ecode360.com/29463741",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "69.26.5",
+        "url": "https://ecode360.com/29463741",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4350,
+        "section": "69.26.3.2",
+        "url": "https://ecode360.com/29463741",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Two-family dwelling: '4,350 square feet per dwelling unit'. Open whether a second unit on a one-family lot counts this way."
+      }
+    }
+  }
+}
