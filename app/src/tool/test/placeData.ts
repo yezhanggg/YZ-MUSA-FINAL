@@ -14,6 +14,7 @@ interface Paths {
   allowed: number;
   detached_by_right: number;
   internal_legal?: number;
+  detached_legal?: number;
   detached_fits: number;
 }
 export interface PlaceStats {

@@ -53,6 +53,13 @@ export function WhyNot({ lot, v }: { lot: LotRecord; v: UnitVerdict }) {
   );
 }
 
+function cottageToday(t: { detached_by_right: number; detached_legal?: number }): string {
+  const legal = t.detached_legal ?? t.detached_by_right;
+  if (legal <= 0) return 'No lot can add a new backyard cottage.';
+  if (t.detached_by_right <= 0) return `A new backyard cottage has a legal path on ${pct(legal)}, never by right: it needs an approval step.`;
+  return `A new backyard cottage has a legal path on ${pct(legal)}, by right on ${pct(t.detached_by_right)}.`;
+}
+
 /** The city-wide picture for the lot's place, from <lot data>/<place>/stats.json. */
 export function CityStory({ place }: { place: string | undefined }) {
   const stats = usePlaceStats(place);
@@ -60,7 +67,7 @@ export function CityStory({ place }: { place: string | undefined }) {
   if (!stats || !p?.today) return null;
   const name = PLACE_TITLE[stats.place] ?? stats.place;
   const lines: string[] = [
-    `Today ${pct(p.today.allowed)} of these lots have a legal path for any ADU. ${p.today.detached_by_right > 0 ? `A new backyard cottage is allowed by right on ${pct(p.today.detached_by_right)}.` : 'No lot can add a new backyard cottage by right.'}`,
+    `Today ${pct(p.today.allowed)} of these lots have a legal path for any ADU. ${cottageToday(p.today)}`,
   ];
   if (p.local_reform) lines.push(`Under the local bill (not law): ${pct(p.local_reform.allowed)} would have a path.`);
   if (p.state_reform) lines.push(`Under the state bill (not law): ${pct(p.state_reform.allowed)} would have a path, and a backyard cottage fits on ${pct(p.state_reform.detached_fits)}.`);
@@ -148,7 +155,7 @@ export function SpotCoverLine({ lot, v, u }: { lot: LotRecord; v: UnitVerdict; u
   const src = typeof sc.source === 'string' ? sc.source : null;
   return (
     <p className="text-small text-slate-700">
-      <b className="font-semibold">In the spot{u.at ? ' (estimate for the suggested spot)' : ''}: </b>
+      <b className="font-semibold">In the best spot the tool found{u.at ? ' (estimate for the suggested spot, not where you put it)' : ''}: </b>
       {sqftText(tree)} of tree canopy would go. About {sqftText(added)} of new hard surface.
       {src && <span className="block text-caption text-slate-500">{coverSource(src, src.startsWith('model:') ? lot.cover?.date : null)}.</span>}
     </p>
