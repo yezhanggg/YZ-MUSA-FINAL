@@ -1,0 +1,722 @@
+{
+  "provenance": {
+    "jurisdiction": "Warminster township",
+    "instrument": "Code of the Township of Warminster, Chapter 27 Zoning (Ord. No. 762 of 5/7/2020, as amended), as published on eCode360. ADU text in 27-1793 (Use 91, accessory in-law dwellings)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code WA2486) dated 2026-04-09. 27-1793 carries Ord. No. 762 (5/7/2020) and Ord. No. 777 (9/5/2024). New Laws lists Ord. 768 (debt) and Ord. 787 (Chapter 15 traffic). Neither touches Chapter 27.",
+    "effective_date": "2024-09-05",
+    "source_urls": [
+      "https://ecode360.com/14238962",
+      "https://ecode360.com/36207801",
+      "https://ecode360.com/36207961",
+      "https://ecode360.com/36207965",
+      "https://ecode360.com/36207983",
+      "https://ecode360.com/36207987",
+      "https://ecode360.com/36208038",
+      "https://ecode360.com/36208042",
+      "https://ecode360.com/36208056",
+      "https://ecode360.com/36208060",
+      "https://ecode360.com/36208094",
+      "https://ecode360.com/36208346",
+      "https://ecode360.com/36208387",
+      "https://ecode360.com/36208420",
+      "https://ecode360.com/36209475",
+      "https://ecode360.com/36209544",
+      "https://ecode360.com/36209710",
+      "https://ecode360.com/36209821",
+      "https://ecode360.com/36209829",
+      "https://ecode360.com/36210311",
+      "https://ecode360.com/print/WA2486?guid=14238962",
+      "https://ecode360.com/WA2486/laws"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201780952",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14238962",
+    "code_current_through": "2026-04-09",
+    "code_current_through_note": "eCode360 code date 2026-04-09. New Laws: Ord. 768 and 787, neither a zoning amendment.",
+    "checks": [
+      "Accessory in-law dwelling (Use 91) is a use by right in R-1, R-2, R-3 and R-4 (27-401, 27-501, 27-601, 27-701). Zoning permit, no hearing",
+      "Only relatives of the family living in the house may live there. It 'shall not be used as a rental unit' (27-1793.1.C, H)",
+      "Only in a single-family detached dwelling, on a lot of at least 9,000 sq ft. One per lot (27-1793.1, A, C)",
+      "The unit is part of the house or in an existing accessory structure such as a garage that sits inside the district building envelope, that is outside all required yards (27-1793.1.D, 27-2104)",
+      "A new separate building for the unit needs a lot 1.5 times the district minimum: R-1 30,000, R-2 18,750, R-3 and R-4 13,500 sq ft (27-1793.1.D)",
+      "No basement unit unless one wall is at grade with direct outside access. No exterior change that makes the house look like more than one dwelling (27-1793.1.E, F)",
+      "The accessory building may not be taller than the house (27-1793.1.G). Accessory structures are capped at 20 ft and 500 sq ft of ground floor area (27-1786.1.D, G)",
+      "A Bucks County Department of Health permit (public sewer or adequate septic) is needed before the zoning permit (27-1793.1.B)",
+      "27-1793 sets no floor area cap and no owner occupancy rule",
+      "Parking: two spaces per dwelling unit for residential uses, garage spaces do not count (27-2200.1.C). The code does not say whether the in-law dwelling counts as a dwelling unit",
+      "R-3 and R-4 allow a two-family (semidetached) dwelling by right (27-601, 27-701)"
+    ],
+    "notes": "Zoning office: Warminster Township, Department of Licenses and Inspections (named in 27-1786.1.B). Township site not opened. The Chapter 'Housing' of the Township code was not read."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory in-law dwelling",
+      "section": "27-1793",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Section heading 'Use 91, accessory in-law dwellings.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-1793.1.C, H",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "By right in R-1 to R-4. 'Occupancy of such use shall include only relatives of the family occupying the principal residence.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-401.1, 27-501.1, 27-601.1, 27-701.1, 27-1701.1",
+      "url": "https://ecode360.com/36207961",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The following uses are permitted by right: ... Use 91 Accessory in-law dwelling'. Zoning permit under Part 25."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Part 26",
+      "url": "https://ecode360.com/36210311",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A lot that fails a 27-1793 standard, or is outside R-1 to R-4, needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (semidetached, one shared wall)",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "10,000 sq ft for two dwellings (5,000 per dwelling), 50 ft width per dwelling. Front 35, rear 35, sides 10 ft. A new semidetached building, not a unit inside a detached house.",
+          "min_lot_sqft": 10000,
+          "section": "27-701.1, 27-702.1.A(2), 27-1707",
+          "url": "https://ecode360.com/36208060"
+        },
+        {
+          "name": "Two-family dwelling (semidetached, one shared wall)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Reading: R-3 sets 9,000 sq ft only for single-family dwellings and 20,000 sq ft for 'other principal uses'. Ask which applies.",
+          "min_lot_sqft": null,
+          "section": "27-601.1, 27-602.1.A, 27-1707",
+          "url": "https://ecode360.com/36208042"
+        }
+      ],
+      "section": "27-601, 27-701, 27-1707",
+      "url": "https://ecode360.com/36208420",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Not ADUs."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "27-401.1, 27-501.1, 27-601.1, 27-701.1",
+      "url": "https://ecode360.com/36207961",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Use 91 is listed by right in these four districts only."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-1793.1",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'permitted as accessory uses only for use in a single-family detached dwelling.'"
+    },
+    "min_lot_sqft": {
+      "value": 9000,
+      "section": "27-1793.1.A",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The minimum lot area of 9,000 square feet ... is required'."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-1793.1.D",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Inside the house or an existing accessory structure. A new separate structure only on a lot 1.5 times the district minimum."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "27-1793",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No historic rule in 27-1793."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Only relatives of the family living in the principal residence may occupy the unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-1793.1.H",
+          "url": "https://ecode360.com/36209544"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "Not to be used as a rental unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-1793.1.C",
+          "url": "https://ecode360.com/36209544"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Lot of at least 9,000 sq ft.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": "lot_sqft_at_least",
+          "section": "27-1793.1.A",
+          "url": "https://ecode360.com/36209544",
+          "value": 9000
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A unit outside the house must be in an existing accessory structure, such as a garage, inside the district building envelope (outside all required yards).",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": "has_accessory_building",
+          "section": "27-1793.1.D, 27-2104.2",
+          "url": "https://ecode360.com/36209544"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new separate structure for the unit needs a lot 1.5 times the R-1 minimum (30,000 sq ft).",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "lot_sqft_at_least",
+          "section": "27-1793.1.D, 27-402.1.A",
+          "url": "https://ecode360.com/36209544",
+          "value": 30000
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new separate structure for the unit needs a lot 1.5 times the R-2 minimum (18,750 sq ft).",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-2"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "lot_sqft_at_least",
+          "section": "27-1793.1.D, 27-502.1.A",
+          "url": "https://ecode360.com/36209544",
+          "value": 18750
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new separate structure for the unit needs a lot 1.5 times the R-3 single-family minimum (13,500 sq ft).",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-3"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "lot_sqft_at_least",
+          "section": "27-1793.1.D, 27-602.1.A",
+          "url": "https://ecode360.com/36209544",
+          "value": 13500
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new separate structure for the unit needs a lot 1.5 times the R-4 single-family minimum (13,500 sq ft).",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-4"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "lot_sqft_at_least",
+          "section": "27-1793.1.D, 27-702.1.A(1)",
+          "url": "https://ecode360.com/36209544",
+          "value": 13500
+        },
+        {
+          "kind": "design",
+          "condition": "No basement or cellar unit unless one wall is at grade with direct outside access.",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-1793.1.E",
+          "url": "https://ecode360.com/36209544"
+        },
+        {
+          "kind": "design",
+          "condition": "No exterior change that suggests the house is other than a single-family detached dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-1793.1.F",
+          "url": "https://ecode360.com/36209544"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Bucks County Department of Health permit showing public sewer or an adequate septic system, before the zoning permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-1793.1.B",
+          "url": "https://ecode360.com/36209544"
+        }
+      ],
+      "section": "27-1793",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Conditions of 27-1793."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage",
+        "detached_new"
+      ],
+      "section": "27-1793.1.D",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'part of the principal residence or ... contained in an existing accessory structure such as a garage'. New separate structures only on large lots. Reading: an addition is part of the residence. A unit above a garage must stay within the existing structure."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-1793",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "27-1793 sets no floor area cap."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "27-1793",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "27-1793 sets no share-of-house cap."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "27-1793",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum size in 27-1793."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "27-1786.1.D, 27-1793.1.G",
+      "url": "https://ecode360.com/36209475",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'No accessory building, structure, or use shall exceed 20 feet in height.' The in-law building also may not exceed the house height."
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "27-1793.1.G",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall not exceed the height of the principal dwelling.'"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "27-1793.1.D, 27-2104.2",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The structure must be 'located within the building envelope for the district'. 27-2104.2 describes the envelope as the lot minus required yards and setbacks."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "27-1793.1.D",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "District side yard applies (building envelope). Ordinary accessory structures need 5 ft (27-1786.1.C(1))."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "27-1793.1.D",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "District rear yard applies (building envelope). Ordinary accessory structures need 5 ft (27-1786.1.C(1))."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "27-1786.1.C(3)",
+      "url": "https://ecode360.com/36209475",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'a minimum of ten-foot offset between all structures'."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 500,
+      "section": "27-1786.1.G",
+      "url": "https://ecode360.com/36209475",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Detached garages, sheds and other accessory structures 'shall not exceed a total of 500 square feet of ground floor area.' Reading: reaches a new in-law building."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-2017",
+      "url": "https://ecode360.com/36209710",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A unit in the house takes the 35 ft building height."
+    }
+  },
+  "use": {
+    "occupancy": {
+      "value": "Only relatives of the family living in the house. Not a rental unit. One per lot.",
+      "section": "27-1793.1.C, H",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "27-1793",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "27-1793 has no owner occupancy rule."
+    },
+    "family_only": {
+      "value": true,
+      "section": "27-1793.1.H",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Occupancy of such use shall include only relatives of the family occupying the principal residence.'"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "27-1793.1.C",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall not be used as a rental unit.'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-1793.1.C",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Only one accessory in-law dwelling shall be allowed per lot.'"
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "27-1793",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-2200.1.C",
+      "url": "https://ecode360.com/36209829",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Residential uses: 'two spaces per dwelling unit. Garage spaces do not count'. Whether the in-law dwelling counts as a dwelling unit is open."
+    },
+    "reading": {
+      "value": "Two spaces for the house, not in a garage. Four if the in-law dwelling counts as a dwelling unit.",
+      "section": "27-2200.1.C, 27-201 'Dwelling unit'",
+      "url": "https://ecode360.com/36209829",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "27-1793 has no parking rule. A dwelling unit has facilities for living, sleeping, cooking and eating by one family."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "27-1793.1.B",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Only a Bucks County Department of Health permit for sewer or septic. Separate connections not addressed."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-402",
+        "url": "https://ecode360.com/36207965",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-402",
+        "url": "https://ecode360.com/36207965",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-402",
+        "url": "https://ecode360.com/36207965",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each side. Binds an in-law unit in an accessory structure (building envelope, 27-1793.1.D)."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-402",
+        "url": "https://ecode360.com/36207965",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Binds an in-law unit in an accessory structure (building envelope, 27-1793.1.D)."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-402",
+        "url": "https://ecode360.com/36207965",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2017",
+        "url": "https://ecode360.com/36209710",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 12500,
+        "section": "27-502",
+        "url": "https://ecode360.com/36207987",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-502",
+        "url": "https://ecode360.com/36207987",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-502",
+        "url": "https://ecode360.com/36207987",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each side. Binds an in-law unit in an accessory structure (building envelope, 27-1793.1.D)."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-502",
+        "url": "https://ecode360.com/36207987",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Binds an in-law unit in an accessory structure (building envelope, 27-1793.1.D)."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "27-502",
+        "url": "https://ecode360.com/36207987",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2017",
+        "url": "https://ecode360.com/36209710",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-602",
+        "url": "https://ecode360.com/36208042",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-602",
+        "url": "https://ecode360.com/36208042",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-602",
+        "url": "https://ecode360.com/36208042",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each side. Binds an in-law unit in an accessory structure (building envelope, 27-1793.1.D)."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-602",
+        "url": "https://ecode360.com/36208042",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Binds an in-law unit in an accessory structure (building envelope, 27-1793.1.D)."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-602",
+        "url": "https://ecode360.com/36208042",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2017",
+        "url": "https://ecode360.com/36209710",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-702",
+        "url": "https://ecode360.com/36208060",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-702",
+        "url": "https://ecode360.com/36208060",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-702",
+        "url": "https://ecode360.com/36208060",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each side. Binds an in-law unit in an accessory structure (building envelope, 27-1793.1.D)."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-702",
+        "url": "https://ecode360.com/36208060",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Binds an in-law unit in an accessory structure (building envelope, 27-1793.1.D)."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-702",
+        "url": "https://ecode360.com/36208060",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-705",
+        "url": "https://ecode360.com/36208094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft."
+      }
+    }
+  }
+}
