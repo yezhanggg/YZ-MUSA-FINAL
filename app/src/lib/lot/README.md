@@ -76,7 +76,7 @@ From the build worktree, with the main checkout's `node_modules`:
 
 ## Wiring into the app
 
-Nothing outside this folder was changed. These existing files (main checkout) need a small change:
+Done on Nov 11, 2026 (Testing mode, see app/README.md). The table below is what was wired:
 
 | File | Function or type | Change |
 |---|---|---|
