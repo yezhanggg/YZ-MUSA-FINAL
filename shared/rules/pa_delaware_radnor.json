@@ -39,7 +39,8 @@
       "https://ecode360.com/16249983",
       "https://ecode360.com/10973424",
       "https://www.radnor.com/government/departments/community-development",
-      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt",
+      "https://ecode360.com/51656767"
     ],
     "verified_on": "2026-11-11",
     "county": "Delaware",
@@ -52,89 +53,73 @@
     "checks": [
       "The zoning code has no accessory dwelling unit or accessory apartment rule for house lots. R-1 to R-4 list single-family detached dwellings, a few special exceptions and listed accessory uses (280-14, 280-17.2, 280-19, 280-24, 280-29)",
       "A dwelling unit may have 'not more than one kitchen' and a family is one housekeeping unit (280-4). A second kitchen unit is a second dwelling unit",
-      "Uses the code does not define go to R-6 or PA only, by conditional use, after a Zoning Officer determination (280-130.1). In R-1 to R-4 a second unit needs a use variance",
-      "AC district only: a tenant house is a listed accessory use on a lot of at least four acres. It houses tenant farmers or employees of a farm or estate (280-9H(3), 280-4)",
-      "Conversion of a house to two units is a special exception in AC, R-1 and R-2 (280-108), and in R-3 by reference (280-24B(1)). Each unit needs the district single-family lot area and at least 600 sq ft. No exterior extension",
+      "Uses the code does not define go to R-6 or PA only, by conditional use (280-130.1). A second unit is not such a use: conversions to two-family use and two-family dwellings are defined and listed (280-108, 280-34C). In R-1 to R-4 the path is a use variance",
+      "AC district only: a tenant house is a listed accessory use on a lot of at least four acres, for tenant farmers or employees of a farm or estate (280-9H(3), 280-4). It is not an ADU. It is recorded as an alternative",
+      "Conversion of a house to two units is a special exception in AC, R-1 and R-2 (280-108), and in R-3 by reference to 280-14B (280-24B(1)). R-1A and R-4 adopt only the uses 'permitted' in R-1 and R-3, so the conversion likely does not reach them (medium confidence, ask the township). Each unit needs the district single-family lot area (75% of it for dwellings of 10,000 sq ft or more) and at least 600 sq ft. No exterior extension",
       "Two-family detached dwellings are permitted in R-5. Lot area 5,445 sq ft per family, 80 ft wide (280-34C, 280-35A(1))",
       "Parking: two spaces per dwelling unit (280-103B(1))",
       "Rental units need an annual license from the township, with inspections (226-7)",
       "Accessory buildings: 20 ft high, 10 ft from the house. Side and rear 10 ft in R-1 to R-3, 3 ft in R-4, 20 ft in AC (280-12, 280-17, 280-22, 280-27, 280-32)",
-      "Garrett Hill GH-GA lists a 'Commercial structure containing one accessory dwelling unit' as a mixed use (280-49.7). That is a unit in a commercial building, not a backyard unit"
+      "Garrett Hill GH-GA lists a 'Commercial structure containing one accessory dwelling unit' as a mixed use (280-49.7). That is a unit in a commercial building, not a backyard unit",
+      "Nonconforming lots: a lot of record in single and separate ownership since before March 9, 1928 may get a single-family detached dwelling if it has at least 80% of the district minimum lot area. Nothing in 280-176 allows a second unit (280-176A, C)"
     ],
-    "notes": "Zoning office: Community Development Department, https://www.radnor.com/government/departments/community-development. Searched Chapter 280 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, kitchen, tenant house. Pending: no zoning amendment on the New Laws list."
+    "notes": "Zoning office: Community Development Department, https://www.radnor.com/government/departments/community-development. Searched Chapter 280 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, kitchen, tenant house. Review fixes 2026-11-11: tenant house moved to alternatives, R-6 and PA conditional-use path removed. Pending: no zoning amendment on the New Laws list."
   },
   "adu": {
     "term": {
-      "value": "tenant house",
-      "section": "280-4 'Tenant house', 280-9H(3)",
+      "value": null,
+      "section": "280-4, 280-9, 280-14, 280-19, 280-24, 280-29",
       "url": "https://ecode360.com/11078361",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "No ADU term for house lots. The nearest is 'TENANT HOUSE: An accessory building on a lot, used ... as a residence ... for ... tenant farmers or employees of a farm or estate.' AC only."
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, servant, caretaker, second dwelling. The AC 'tenant house' is housing for 'tenant farmers or employees of a farm or estate' (280-4). It is recorded as an alternative."
     },
     "status": {
       "value": "not_addressed",
-      "section": "280-14, 280-19, 280-24, 280-29, 280-130.1",
+      "section": "280-14, 280-19, 280-24, 280-29",
       "url": "https://ecode360.com/11078516",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Reading of a silent code. Residence districts list no second unit. The AC tenant house is for farm or estate employees on four acres or more, so it is a district path, not the town rule."
+      "confidence": "verified",
+      "note": "The code has no ADU text for house lots."
     }
   },
   "approval": {
     "path": {
       "value": "variance",
-      "section": "280-130.1C(1), 280-14, MPC 910.2",
-      "url": "https://ecode360.com/16249983",
+      "section": "280-14, 280-130.1, MPC 910.2",
+      "url": "https://ecode360.com/11078516",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "'Residential uses shall only be allowed in the R-6 or PA Districts.' A second unit is not listed in R-1 to R-4, so a use variance is the path there."
+      "note": "R-1 to R-4 list no second unit. 280-130.1 reaches only uses 'not specifically defined', and two-family use and conversions are defined. A use variance is the path. Where it reaches, the 280-108 conversion is a special exception (alternatives)."
     },
     "fallback_path": {
       "value": "variance",
-      "section": "280-130.1, MPC 910.2",
-      "url": "https://ecode360.com/16249983",
+      "section": "MPC 910.2",
+      "url": "https://ecode360.com/11078516",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "Same as path."
     },
-    "district_paths": {
+    "alternatives": {
       "value": [
         {
+          "name": "Tenant house (accessory building, AC only)",
+          "path": "by_right",
           "districts": [
             "AC"
           ],
-          "path": "by_right",
-          "section": "280-9H(3)",
-          "url": "https://ecode360.com/11078453",
-          "note": "Tenant house as an accessory use, 'provided that the lot is not less than four acres'. For tenant farmers or farm or estate employees only."
+          "conditions": "Only for 'tenant farmers or employees of a farm or estate' (280-4). Lot of at least four acres. Lot restricted against further subdivision unless the tenant house could meet Chapter 255. AC accessory buildings: 20 ft high, 20 ft from side and rear lines, 10 ft from the house.",
+          "min_lot_sqft": 174240,
+          "section": "280-9H(3), 280-4, 280-11, 280-12",
+          "url": "https://ecode360.com/11078453"
         },
-        {
-          "districts": [
-            "R-6",
-            "PA"
-          ],
-          "path": "conditional_use",
-          "section": "280-130.1C(1), D",
-          "url": "https://ecode360.com/16249983",
-          "note": "Undefined residential uses 'shall only be allowed in the R-6 or PA Districts' and 'only be approved as a conditional use'. Needs a Zoning Officer determination first. Reading."
-        }
-      ],
-      "section": "280-9H(3), 280-130.1",
-      "url": "https://ecode360.com/16249983",
-      "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "AC path is the tenant house rule. R-6 and PA path is the new or undefined use rule, read as reaching a second unit."
-    },
-    "alternatives": {
-      "value": [
         {
           "name": "Conversion of a house to two units",
           "path": "special_exception",
           "districts": [
             "AC"
           ],
-          "conditions": "Existing dwelling. Lot area per unit at least the district single-family lot area (2 acres). Each unit 600 sq ft or more, separate access, no exterior extension except for safety.",
+          "conditions": "Existing dwelling. Lot area per unit at least the district single-family lot area (2 acres). Each unit 600 sq ft or more, separate access, no exterior extension except for safety. Dwellings of 10,000 sq ft or more need 75% of that lot area per unit.",
           "min_lot_sqft": 174240,
           "section": "280-108",
           "url": "https://ecode360.com/11079606"
@@ -156,7 +141,7 @@
           "districts": [
             "R-2"
           ],
-          "conditions": "Existing dwelling. Lot area per unit at least 20,000 sq ft. Each unit 600 sq ft or more, separate access, no exterior extension except for safety.",
+          "conditions": "Existing dwelling. Lot area per unit at least 20,000 sq ft. Each unit 600 sq ft or more, separate access, no exterior extension except for safety. Dwellings of 10,000 sq ft or more need 75% of that lot area per unit.",
           "min_lot_sqft": 40000,
           "section": "280-108",
           "url": "https://ecode360.com/11079606"
@@ -167,7 +152,7 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "Listed by reference to 280-14B. 280-108 itself names only AC, R-1 and R-2. Lot area per unit at least 10,000 sq ft. Each unit 600 sq ft or more.",
+          "conditions": "Listed in R-3 by reference to 280-14B (280-24B(1)). 280-108 itself names AC, R-1 and R-2. Lot area per unit at least 10,000 sq ft, 75% of it for dwellings of 10,000 sq ft or more. Each unit 600 sq ft or more, separate access, no exterior extension.",
           "min_lot_sqft": 20000,
           "section": "280-24B(1), 280-108",
           "url": "https://ecode360.com/11078595"
@@ -184,23 +169,21 @@
           "url": "https://ecode360.com/11078660"
         }
       ],
-      "section": "280-108, 280-34C",
+      "section": "280-9H(3), 280-108, 280-24B(1), 280-34C",
       "url": "https://ecode360.com/11079606",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "Two-unit lot figures are twice the per-unit lot area. R-1A and R-4 adopt the uses 'permitted' in R-1 and R-3. Whether that carries the conversion special exception is open."
+      "note": "Two-unit lot figures are twice the per-unit lot area. The conversion likely does not reach R-1A or R-4: 280-17.2A and 280-29A adopt only uses 'permitted' in R-1 and R-3 (medium confidence)."
     }
   },
   "eligibility": {
     "zoning_districts": {
-      "value": [
-        "AC"
-      ],
-      "section": "280-9H(3)",
-      "url": "https://ecode360.com/11078453",
+      "value": [],
+      "section": "280-14, 280-19, 280-24, 280-29",
+      "url": "https://ecode360.com/11078516",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Only the AC tenant house. No district lists an ADU for a house lot."
+      "confidence": "verified",
+      "note": "No district lists an ADU."
     },
     "historic_bypass": {
       "value": false,
@@ -212,66 +195,6 @@
     },
     "gates": {
       "value": [
-        {
-          "kind": "lot_size",
-          "condition": "AC tenant house: 'provided that the lot is not less than four acres'.",
-          "effect": "bars",
-          "applies_to": null,
-          "districts": [
-            "AC"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": "lot_sqft_at_least",
-          "section": "280-9H(3)",
-          "url": "https://ecode360.com/11078453",
-          "value": 174240
-        },
-        {
-          "kind": "occupancy",
-          "condition": "AC tenant house: a residence 'for one or more tenant farmers or employees of a farm or estate'.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "AC"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "280-4 'Tenant house'",
-          "url": "https://ecode360.com/11078361"
-        },
-        {
-          "kind": "other",
-          "condition": "AC tenant house: the lot is restricted against further subdivision unless the tenant house could meet Chapter 255.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "AC"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "280-9H(3)",
-          "url": "https://ecode360.com/11078453"
-        },
-        {
-          "kind": "existing_structure",
-          "condition": "AC: a tenant house is 'an accessory building'. A unit inside or attached to the house is not a tenant house.",
-          "effect": "bars",
-          "applies_to": [
-            "internal",
-            "attached"
-          ],
-          "districts": [
-            "AC"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "280-4 'Tenant house'",
-          "url": "https://ecode360.com/11078361"
-        },
         {
           "kind": "other",
           "condition": "AC accessory structures: 20 ft from a side or rear property line and 10 ft from the house. 20 ft high.",
@@ -313,35 +236,21 @@
           "url": "https://ecode360.com/10973424"
         }
       ],
-      "section": "280-9H(3), 280-4, 226-7",
+      "section": "280-12C, 280-32C, 226-7",
       "url": "https://ecode360.com/11078453",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "Tenant house conditions in AC and rental licensing."
+      "note": "Accessory yards that differ by district (the schema has no district accessory yard field) and rental licensing."
     }
   },
   "form": {
     "types_allowed": {
-      "value": [
-        "detached_new",
-        "garage_conversion",
-        "over_garage"
-      ],
-      "section": "280-4 'Tenant house', 280-9H(3)",
-      "url": "https://ecode360.com/11078361",
-      "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "AC tenant house only: 'An accessory building on a lot'. No ADU form elsewhere."
-    }
-  },
-  "size": {
-    "max_sqft": {
-      "value": null,
-      "section": "280-9H(3)",
-      "url": "https://ecode360.com/11078453",
+      "value": [],
+      "section": "280-14, 280-19, 280-24, 280-29",
+      "url": "https://ecode360.com/11078516",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "No size cap for a tenant house."
+      "note": "No ADU form is listed. The tenant house is an alternative."
     }
   },
   "envelope": {
@@ -350,24 +259,24 @@
       "section": "280-16, 280-21, 280-26, 280-31, 280-11",
       "url": "https://ecode360.com/11078539",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'no accessory building ... shall exceed 20 feet in height' in AC and R-1 to R-4."
+      "confidence": "secondary",
+      "note": "Accessory rule, not an ADU rule: 'no accessory building ... shall exceed 20 feet in height' in AC, R-1 to R-5."
     },
     "setback_side_ft": {
       "value": 10,
       "section": "280-17C, 280-22C, 280-27C",
       "url": "https://ecode360.com/11078540",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'not ... closer than 10 feet from a side or rear property line' in R-1 to R-3. R-4 3 ft. AC 20 ft."
+      "confidence": "secondary",
+      "note": "Accessory rule: 'not ... closer than 10 feet from a side or rear property line' in R-1, R-1A, R-2, R-3. AC 20 ft (280-12C) and R-4 3 ft (280-32C) are in gates."
     },
     "setback_rear_ft": {
       "value": 10,
       "section": "280-17C, 280-22C, 280-27C",
       "url": "https://ecode360.com/11078540",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "Same rule as side. R-4 3 ft. AC 20 ft."
+      "confidence": "secondary",
+      "note": "Same rule as side. AC 20 ft, R-4 3 ft (gates)."
     },
     "separation_ft": {
       "value": 10,
@@ -412,12 +321,12 @@
       "note": "No ADU rule. A family is related persons plus foster children and 'one other individual'."
     },
     "max_adus": {
-      "value": null,
-      "section": "280-9H(3)",
-      "url": "https://ecode360.com/11078453",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "Code sets no count for a tenant house. No ADU elsewhere."
+      "value": 0,
+      "section": "280-14, 280-19, 280-24, 280-29",
+      "url": "https://ecode360.com/11078516",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU. The alternatives are separate routes."
     },
     "short_term_rental_banned": {
       "value": null,
@@ -771,6 +680,22 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "'Not more than 35% of the area of each lot may be occupied by buildings.'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "280-35A(5)",
+        "url": "https://ecode360.com/11078660",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'a rear yard ... not less than 20 feet in depth'. 280-35 amended 9-14-2026 by Ord. No. 2026-17."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "280-35A(6)",
+        "url": "https://ecode360.com/11078660",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'three stories or 35 feet in height'. Accessory buildings 20 ft."
       }
     }
   }
