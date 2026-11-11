@@ -1,0 +1,468 @@
+{
+  "provenance": {
+    "jurisdiction": "Cranberry township",
+    "instrument": "Code of the Township of Cranberry, Chapter 27 Zoning, as published on eCode360, with the Table of Authorized Accessory Uses (27 Attachment 3) and the Table of Authorized Principal Uses (27 Attachment 2)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code CR0448): includes legislation through 06-05-2025. New Laws (7). Three amend Chapter 27: Ord. 2026-531 (animal rescue), 2026-533 (automobile wash rows in the principal use table, signs) and 2026-535 (drive-thru). None touches the ADU rows. Ordinances adopted between June 2025 and the New Laws list were not checked one by one. Read in the eCode360 print view and attachment PDFs in a browser.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/CR0448",
+      "https://ecode360.com/CR0448/laws",
+      "https://ecode360.com/CR0448/laws/LF2802388.pdf",
+      "https://ecode360.com/print/CR0448?guid=34273101",
+      "https://ecode360.com/34273101",
+      "https://ecode360.com/14178551",
+      "https://ecode360.com/14179215",
+      "https://ecode360.com/14179221",
+      "https://ecode360.com/attachment/316002/CR0448-027c%20Table%20of%20Authorized%20Accessory%20Uses.pdf",
+      "https://ecode360.com/attachment/316002/CR0448-027b%20Table%20of%20Authorized%20Principal%20Uses,%20Zoning%20Districts.pdf",
+      "https://ecode360.com/14179224",
+      "https://ecode360.com/14179255",
+      "https://ecode360.com/14179284",
+      "https://ecode360.com/14179006",
+      "https://ecode360.com/14406559",
+      "https://ecode360.com/37916677",
+      "https://www.cranberrytownship.org/814/Planning-Development",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Butler",
+    "municipality_type": "township",
+    "geoid": "4201916920",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/34273101",
+    "code_current_through": "2025-06-05",
+    "code_current_through_note": "eCode360: Includes legislation through 06-05-2025. New Laws (7), three for Chapter 27, none about ADUs. Accessory use table marked Supp 14, May 2024.",
+    "checks": [
+      "Two accessory uses are permitted by right (R) in the Table of Authorized Accessory Uses: 'Accessory dwelling unit' in R-1, R-2, R-3, SU-1 and SP-1, and 'Accessory dwelling quarters' in the same districts plus RMU",
+      "Accessory dwelling quarters: living space inside the house, connected internally, or in an addition. Not in an unattached structure (27-202)",
+      "Accessory dwelling unit: living space joined to the house 'via a breezeway or the like that is no longer than 30 feet', with its own bathroom. 400 to 1,200 sq ft and at most 50% of the house floor area (27-202). A free-standing cottage is not allowed",
+      "Only one accessory dwelling unit or accessory dwelling quarters per lot (27-202)",
+      "The code sets no owner-occupancy, family or rental rule for either form",
+      "Accessory buildings over 200 sq ft must meet the principal building yards (27-403.6.E(3), 27-404.6.E)",
+      "Parking: single-family detached dwellings need four spaces per dwelling unit. No ADU row (27-312)",
+      "Two-family and quad dwellings are allowed in R-2 and R-3 only within a planned residential development (Table of Authorized Principal Uses)",
+      "Community Character Development overlays: no more than 10% of the single-family detached dwellings in a development may have an ADU (27-506)",
+      "The definitions also list 'Dwelling, carriage house', an apartment of up to 600 sq ft that may be in an outbuilding. No use table row names it"
+    ],
+    "notes": "Zoning office: Planning and Development, https://www.cranberrytownship.org/814/Planning-Development. Pending: no ADU amendment on the New Laws list."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "27-202 'Accessory dwelling unit', 'Granny flat'",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'ACCESSORY DWELLING UNIT: A residential accessory use'. 'GRANNY FLAT: See accessory dwelling unit.' Also 'accessory dwelling quarters' for a unit inside the house."
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "27 Attachment 3, Table of Authorized Accessory Uses",
+      "url": "https://ecode360.com/attachment/316002/CR0448-027c%20Table%20of%20Authorized%20Accessory%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Rows 'Accessory dwelling quarters' and 'Accessory dwelling unit': R (by right) in R-1, R-2, R-3, SU-1, SP-1."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-401.1, 27 Attachment 3",
+      "url": "https://ecode360.com/attachment/316002/CR0448-027c%20Table%20of%20Authorized%20Accessory%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Uses by right are those authorized uses for which a zoning approval will be issued by the Zoning Officer'. No hearing."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-401.5, MPC 910.2",
+      "url": "https://ecode360.com/14179215",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Other districts show N. Unlisted uses 'shall not be permitted' (27-401.5). A lot that fails the definition limits needs a variance."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "RMU"
+          ],
+          "path": "by_right",
+          "section": "27 Attachment 3",
+          "url": "https://ecode360.com/attachment/316002/CR0448-027c%20Table%20of%20Authorized%20Accessory%20Uses.pdf",
+          "note": "RMU: accessory dwelling quarters R, accessory dwelling unit N. Inside or an addition only."
+        }
+      ],
+      "section": "27 Attachment 3",
+      "url": "https://ecode360.com/attachment/316002/CR0448-027c%20Table%20of%20Authorized%20Accessory%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "RMU allows only the internal form."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "SU-1",
+        "SP-1",
+        "RMU"
+      ],
+      "section": "27 Attachment 3",
+      "url": "https://ecode360.com/attachment/316002/CR0448-027c%20Table%20of%20Authorized%20Accessory%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "ADU R in R-1, R-2, R-3, SU-1, SP-1. Accessory dwelling quarters R in those and RMU. N in C-1, C-2, C-3, BPK, I-L, PIC, TLI, MU."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-202 'Accessory dwelling quarters'",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Quarters are 'within a single-family structure'. Reading: a single-family detached house. Each listed district allows one single-family dwelling per lot."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-202",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'creating living space'. New construction is allowed."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "27-202",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No historic rule for ADUs."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "The accessory dwelling unit is joined to the house 'via a breezeway or the like that is no longer than 30 feet' and has its own bathroom. A free-standing unit is not allowed.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-202 'Accessory dwelling unit'",
+          "url": "https://ecode360.com/14178551"
+        },
+        {
+          "kind": "district",
+          "condition": "RMU: only accessory dwelling quarters (inside or an addition). The accessory dwelling unit row is N.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "RMU"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27 Attachment 3",
+          "url": "https://ecode360.com/attachment/316002/CR0448-027c%20Table%20of%20Authorized%20Accessory%20Uses.pdf"
+        },
+        {
+          "kind": "other",
+          "condition": "Accessory dwelling quarters 'shall not be by an unattached residential structure'.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-202 'Accessory dwelling quarters'",
+          "url": "https://ecode360.com/14178551"
+        },
+        {
+          "kind": "other",
+          "condition": "Accessory buildings over 200 sq ft meet the principal building yards.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-403.6.E(3), 27-404.6.E",
+          "url": "https://ecode360.com/14179255"
+        },
+        {
+          "kind": "other",
+          "condition": "CCD overlays: at most 10% of the single-family detached dwellings in the development may have an ADU.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "CCD-1",
+            "CCD-2",
+            "CCD Freedom A",
+            "CCD Freedom B",
+            "CCD Corridor"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-506",
+          "url": "https://ecode360.com/14406559"
+        }
+      ],
+      "section": "27-202, 27 Attachment 3, 27-403, 27-404, 27-506",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Form and district conditions."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new"
+      ],
+      "section": "27-202",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Quarters: inside the house or an addition. ADU: a unit joined to the house by a breezeway of 30 ft or less, recorded as detached_new with a gate. No garage form is named."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-202",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No cap for accessory dwelling quarters. The 1,200 sq ft cap is for the accessory dwelling unit."
+    },
+    "max_sqft_accessory_building": {
+      "value": 1200,
+      "section": "27-202 'Accessory dwelling unit'",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall not exceed 1,200 square gross feet for the accessory unit'. At least 400 sq ft."
+    },
+    "max_share_accessory_building": {
+      "value": 0.5,
+      "section": "27-202 'Accessory dwelling unit'",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'no more than 50% of the gross floor area of the principal structure'."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "27-202",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The accessory dwelling unit needs at least 400 sq ft. No minimum for quarters."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "27-403.6.G, 27-404.6.D",
+      "url": "https://ecode360.com/14179255",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No separate accessory building height found for R-1 and R-2. The 35 ft district height applies."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "27-403.6.E(3), 27-404.6.E",
+      "url": "https://ecode360.com/14179255",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'accessory buildings in excess of 200 square feet of building area must comply with the yard requirements for principal structures'. An ADU is at least 400 sq ft."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "27-403, 27-404",
+      "url": "https://ecode360.com/14179255",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No distance between buildings found. The breezeway may be at most 30 ft."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-403.6.G, 27-404.6.D",
+      "url": "https://ecode360.com/14179255",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Maximum building height: 35 feet'."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "27-202, 27 Attachment 3",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No owner-occupancy rule in the definitions or the use table."
+    },
+    "family_only": {
+      "value": false,
+      "section": "27-202",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Living space 'for individuals'. No family or age rule."
+    },
+    "occupancy": {
+      "value": "No rule on who may live there. One accessory dwelling unit or quarters per lot.",
+      "section": "27-202",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/34273101",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in Chapter 27."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-202",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Only one accessory dwelling unit or accessory dwelling quarters is allowed on any single lot'."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-312",
+      "url": "https://ecode360.com/14179006",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "Single-family detached dwellings need 4 spaces per dwelling unit. No ADU row. If the ADU is not a separate dwelling unit, the lot needs 4. If it counts as one, more, either 4 or 2.75 ('All other residential uses'). Ask the Zoning Officer.",
+      "section": "27-312",
+      "url": "https://ecode360.com/14179006",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 54450,
+        "section": "27-403.6.A(2)",
+        "url": "https://ecode360.com/14179224",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Where there is public sanitary sewer: 1.25 acres'. 1.5 acres without. Lot width 100 ft. One single-family dwelling per lot."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-403.6.D(1)",
+        "url": "https://ecode360.com/14179224",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-403.6.D(2)",
+        "url": "https://ecode360.com/14179224",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-403.6.D(3)",
+        "url": "https://ecode360.com/14179224",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-403.6.C",
+        "url": "https://ecode360.com/14179224",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot coverage 15% including accessory structures."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-403.6.G",
+        "url": "https://ecode360.com/14179224",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 32670,
+        "section": "27-404.6.A(2)(a)",
+        "url": "https://ecode360.com/14179255",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Minimum Net Lot Area: 3/4 acre' with public sewer. One acre without. 85 ft wide."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-404.6.C(1)",
+        "url": "https://ecode360.com/14179255",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-404.6.C(2)",
+        "url": "https://ecode360.com/14179255",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "5 ft in the Fernway Plan of Lots."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-404.6.C(3)",
+        "url": "https://ecode360.com/14179255",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-404.6.B",
+        "url": "https://ecode360.com/14179255",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-404.6.D",
+        "url": "https://ecode360.com/14179255",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    }
+  }
+}
