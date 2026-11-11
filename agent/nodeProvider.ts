@@ -1,13 +1,15 @@
 // The agent's data in Node (tests and the eval): the same files the tool reads, from app/public/data.
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { homedir } from 'node:os';
+import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs';
+import { homedir, tmpdir } from 'node:os';
+import { gunzipSync } from 'node:zlib';
 import { resolve } from 'node:path';
 import type { FitCurves } from '../app/src/lib/adu';
 import { BASE, type Adu } from '../app/src/lib/numbers';
-import { findFeature, prepare, type FC, type LngLat, type Lot, type TownProps, type TractProps } from '../app/src/tool/geo';
+import { findFeature, prepare, type CountyProps, type FC, type LngLat, type Lot, type TownProps, type TractProps } from '../app/src/tool/geo';
+import type { AddressEntry } from '../app/src/agent/areaTools';
 import type { DataProvider, SiteRecord } from '../app/src/agent/executors';
 import type { LotAgentProvider } from '../app/src/lib/lot/agentTools';
-import { PLACE_BY_COUNTY, findLoadedLot, loadLot, loadTractLots, type Fetcher } from '../app/src/lib/lot/load';
+import { PLACE_BY_COUNTY, loadLot, loadTractLots, lotByIdAnywhere, type Fetcher } from '../app/src/lib/lot/load';
 import type { LotRecord, Scenario } from '../app/src/lib/lot/types';
 import { DEFAULT_MONEY, moneyOptions, tractRents } from '../app/src/tool/testState';
 
@@ -92,16 +94,48 @@ export function tractOfLot(id: string): string | null {
 }
 
 /** A lot record by id: from memory, else from its tract file on disk. */
-async function recordById(id: string): Promise<LotRecord | null> {
-  const loaded = findLoadedLot(id);
-  if (loaded) return loaded;
-  const tract = tractOfLot(id);
-  if (!tract) return null;
-  try {
-    return await loadLot(id, tract, LOAD);
-  } catch {
-    return null;
+/** A lot record by id: from memory, else through lot_tract.json and its tract file on disk (same code as the browser). */
+const recordById = (id: string): Promise<LotRecord | null> => lotByIdAnywhere(id, LOAD);
+
+let counties: FC<CountyProps> | null | undefined;
+function countiesFc(): FC<CountyProps> | null {
+  if (counties === undefined) {
+    const f = resolve(DATA, 'counties.geojson');
+    counties = existsSync(f) ? (JSON.parse(readFileSync(f, 'utf8')) as FC<CountyProps>) : null;
   }
+  return counties;
+}
+
+/** Addresses of every lot record on disk, per place. Read once from the detail files and kept in a temp cache file
+ *  named by the build's data_version (a full city takes some seconds the first time). */
+const addressCache = new Map<string, AddressEntry[]>();
+function addressesOf(place: string): AddressEntry[] {
+  const hit = addressCache.get(place);
+  if (hit) return hit;
+  const version = lotDataVersion(place) ?? 'none';
+  const cacheFile = resolve(tmpdir(), `yz-musa-addresses-${version.replace(/[^\w.-]/g, '_')}.json`);
+  let entries: AddressEntry[] = [];
+  if (existsSync(cacheFile)) entries = JSON.parse(readFileSync(cacheFile, 'utf8')) as AddressEntry[];
+  else {
+    const dir = resolve(lotRoot(place), 'detail');
+    for (const tract of tractsOnDisk(place)) {
+      const read = (name: string) => JSON.parse(gunzipSync(readFileSync(resolve(dir, name))).toString('utf8')) as { lots: { lot: { id: string; address?: string | null } }[]; more?: string[] };
+      const head = read(`${tract}.json.gz`);
+      for (const part of [head, ...(head.more ?? []).map(read)])
+        for (const l of part.lots) if (l.lot.address) entries.push({ lot_id: l.lot.id, tract, place, address: l.lot.address });
+    }
+    if (version !== 'none') writeFileSync(cacheFile, JSON.stringify(entries));
+  }
+  addressCache.set(place, entries);
+  return entries;
+}
+
+/** Mean of the outer ring of a lot polygon, lon / lat. */
+function lotPoint(rec: LotRecord): LngLat | null {
+  const g = rec.lot.polygon;
+  const ring = g.type === 'Polygon' ? g.coordinates[0] : g.coordinates[0]?.[0];
+  if (!ring?.length) return null;
+  return [ring.reduce((a, p) => a + p[0], 0) / ring.length, ring.reduce((a, p) => a + p[1], 0) / ring.length];
 }
 
 /** Lot tools in Node: one selected record (lot id, tract optional), a scenario, the unit on screen (testing mode) and
@@ -124,8 +158,13 @@ function nodeLots(lot: { id: string; tract?: string } | undefined, scenario: Sce
 
 /** A provider with a fixed selection and ADU, as the browser would send. `lot` selects a lot record for the lot tools. */
 export function nodeProvider(
-  opts: { selectedLotId?: string | null; adu?: Adu; rule?: 'current' | 'hb2186'; lot?: { id: string; tract?: string }; scenario?: Scenario; unit?: LotUnit | null } = {},
+  opts: {
+    selectedLotId?: string | null; adu?: Adu; rule?: 'current' | 'hb2186'; lot?: { id: string; tract?: string }; scenario?: Scenario; unit?: LotUnit | null;
+    /** The town selected on the map (get_rules and get_area_stats without a geoid). */
+    townGeoid?: string | null;
+  } = {},
 ): DataProvider {
+  const townBy = (geoid: string) => data().towns.features.find((f) => f.properties.GEOID === geoid)?.properties ?? null;
   return {
     lots: nodeLots(opts.lot, opts.scenario ?? 'today', opts.unit ?? null),
     async lotById(id) {
@@ -134,11 +173,25 @@ export function nodeProvider(
     },
     async selected() {
       const lot = opts.selectedLotId ? byId(opts.selectedLotId) : null;
-      return lot ? siteOf(lot) : null;
+      if (lot) return siteOf(lot);
+      // A lot record selected (testing mode): its tract and town, as the browser's spot has them.
+      const rec = opts.lot ? await recordById(opts.lot.id) : null;
+      if (!rec) return opts.townGeoid ? { lot: null, tract: null, town: townBy(opts.townGeoid) } : null;
+      const pt = lotPoint(rec);
+      const tract = data().tracts.features.find((f) => f.properties.GEOID === rec.lot.tract)?.properties ?? null;
+      const town = opts.townGeoid ? townBy(opts.townGeoid) : pt ? (findFeature(data().towns, pt)?.properties ?? null) : null;
+      return { lot: null, tract, town };
     },
     async town(geoid) {
       if (!geoid) return (await this.selected())?.town ?? null;
-      return data().towns.features.find((f) => f.properties.GEOID === geoid)?.properties ?? null;
+      return townBy(geoid);
+    },
+    async addressBook() {
+      const places = Object.values(PLACE_BY_COUNTY).filter((pl) => existsSync(resolve(lotRoot(pl), 'detail')));
+      return { entries: places.flatMap(addressesOf), scope: `all lot records on disk (${places.join(', ')})` };
+    },
+    async areas() {
+      return { tracts: data().tracts, towns: data().towns, counties: countiesFc() };
     },
     async searchLots() {
       // Around the selected lot: its tract's lots (like the map zoomed in on it).

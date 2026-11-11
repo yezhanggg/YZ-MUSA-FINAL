@@ -56,6 +56,7 @@ export function providerFor(c: QuestionContext): DataProvider {
     lot: c.lot ? { id: c.lot.id, tract: c.lot.tract } : undefined,
     scenario: c.scenario ?? 'today',
     unit: c.unit,
+    townGeoid: c.town?.geoid ?? null,
   });
 }
 
