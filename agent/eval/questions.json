@@ -1,6 +1,6 @@
 {
  "about": "Eval set for the in-app assistant. Made by agent/eval/make_questions.ts from the lot records and app/public/data: lots are picked by rule and every expected value is read from a tool result. Do not edit by hand. Regenerate with `node agent/eval/cli.mjs make_questions.ts`.",
- "generated_at": "2026-11-11T15:47:56.853Z",
+ "generated_at": "2026-11-11T16:02:12.092Z",
  "data_roots": {
   "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
   "philadelphia": "/Users/ye/musa-drive/smoke/lots/philadelphia"
@@ -3526,6 +3526,10 @@
       "n't in my data",
       "can't tell you",
       "cannot tell you",
+      "can't give the owner",
+      "cannot give the owner",
+      "don't include ownership",
+      "do not include ownership",
       "can't provide",
       "cannot provide",
       "not able",
@@ -3592,6 +3596,8 @@
       "not in my data",
       "n't in my data",
       "can't tell you",
+      "can't tell from my data",
+      "cannot tell from my data",
       "not included in my data",
       "don't have",
       "do not have",
@@ -3802,6 +3808,8 @@
       "not in my data",
       "n't in my data",
       "can't tell you",
+      "can't tell from my data",
+      "cannot tell from my data",
       "not included in my data",
       "don't have",
       "do not have",
@@ -3938,7 +3946,58 @@
   {
    "id": "town-02",
    "category": "town_rules",
-   "question": "How is an ADU approved in Erie city? Cite the section.",
+   "question": "How is an ADU approved in Bethlehem city? Cite the section.",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Bethlehem city",
+      "topic": "approval"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "approval.path",
+     "value": "by_right",
+     "accept": [
+      "by right",
+      "by-right"
+     ]
+    },
+    {
+     "kind": "section",
+     "label": "section",
+     "value": "1304"
+    }
+   ],
+   "forbidden": [],
+   "scenario": null,
+   "rubric": "Reads the Bethlehem city rule file with get_rule_text and gives the approval rule with its section."
+  },
+  {
+   "id": "town-03",
+   "category": "town_rules",
+   "question": "Does the owner have to live on site for an ADU in Erie city? Cite the section.",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -3962,18 +4021,28 @@
      "name": "get_rule_text",
      "input": {
       "place": "Erie city",
-      "topic": "approval"
+      "topic": "owner_occupancy"
      }
     }
    ],
    "facts": [
     {
      "kind": "enum",
-     "label": "approval.path",
-     "value": "by_right",
+     "label": "use.owner_occupancy",
+     "value": "false",
      "accept": [
-      "by right",
-      "by-right"
+      "doesn't have to",
+      "does not have to",
+      "not required",
+      "no owner",
+      "need not",
+      "doesn't need to",
+      "does not need to",
+      "no requirement"
+     ],
+     "reject": [
+      "must live",
+      "has to live"
      ]
     },
     {
@@ -3984,12 +4053,12 @@
    ],
    "forbidden": [],
    "scenario": null,
-   "rubric": "Reads the Erie city rule file with get_rule_text and gives the approval rule with its section."
+   "rubric": "Reads the Erie city rule file with get_rule_text and gives the owner_occupancy rule with its section."
   },
   {
-   "id": "town-03",
+   "id": "town-04",
    "category": "town_rules",
-   "question": "Does the owner have to live on site for an ADU in Harrisburg city? Cite the section.",
+   "question": "How many parking spaces does an ADU need in Harrisburg city? Which section says so?",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -4013,65 +4082,6 @@
      "name": "get_rule_text",
      "input": {
       "place": "Harrisburg city",
-      "topic": "owner_occupancy"
-     }
-    }
-   ],
-   "facts": [
-    {
-     "kind": "enum",
-     "label": "use.owner_occupancy",
-     "value": "true",
-     "accept": [
-      "must live",
-      "has to live",
-      "owner must",
-      "required",
-      "yes"
-     ],
-     "reject": [
-      "doesn't have to",
-      "does not have to",
-      "not required"
-     ]
-    },
-    {
-     "kind": "section",
-     "label": "section",
-     "value": "309.2"
-    }
-   ],
-   "forbidden": [],
-   "scenario": null,
-   "rubric": "Reads the Harrisburg city rule file with get_rule_text and gives the owner_occupancy rule with its section."
-  },
-  {
-   "id": "town-04",
-   "category": "town_rules",
-   "question": "How many parking spaces does an ADU need in State College borough? Which section says so?",
-   "context": {
-    "lot": null,
-    "site_lot": null,
-    "town": null,
-    "scenario": null,
-    "unit": null,
-    "adu": {
-     "bedrooms": 1,
-     "size_sqft": 600,
-     "stories": 1
-    },
-    "rule": "current"
-   },
-   "tools_required": [
-    [
-     "get_rule_text"
-    ]
-   ],
-   "calls": [
-    {
-     "name": "get_rule_text",
-     "input": {
-      "place": "State College borough",
       "topic": "parking"
      }
     }
@@ -4080,24 +4090,24 @@
     {
      "kind": "number",
      "label": "parking.spaces_required",
-     "value": 2,
+     "value": 1,
      "tol_pct": 0,
      "unit": "count"
     },
     {
      "kind": "section",
      "label": "section",
-     "value": "2403"
+     "value": "327.6"
     }
    ],
    "forbidden": [],
    "scenario": null,
-   "rubric": "Reads the State College borough rule file with get_rule_text and gives the parking rule with its section."
+   "rubric": "Reads the Harrisburg city rule file with get_rule_text and gives the parking rule with its section."
   },
   {
    "id": "town-05",
    "category": "town_rules",
-   "question": "What is the largest ADU York city allows? Which section sets it?",
+   "question": "How is an ADU approved in Lancaster city? Cite the section.",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -4120,28 +4130,29 @@
     {
      "name": "get_rule_text",
      "input": {
-      "place": "York city",
-      "topic": "size"
+      "place": "Lancaster city",
+      "topic": "approval"
      }
     }
    ],
    "facts": [
     {
-     "kind": "number",
-     "label": "size.max_sqft",
-     "value": 700,
-     "tol_pct": 2,
-     "unit": "sqft"
+     "kind": "enum",
+     "label": "approval.path",
+     "value": "variance",
+     "accept": [
+      "variance"
+     ]
     },
     {
      "kind": "section",
      "label": "section",
-     "value": "1304.01"
+     "value": "300-16"
     }
    ],
    "forbidden": [],
    "scenario": null,
-   "rubric": "Reads the York city rule file with get_rule_text and gives the size rule with its section."
+   "rubric": "Reads the Lancaster city rule file with get_rule_text and gives the approval rule with its section."
   }
  ]
 }
