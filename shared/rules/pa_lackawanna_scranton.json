@@ -1,0 +1,589 @@
+{
+  "provenance": {
+    "jurisdiction": "Scranton, PA",
+    "instrument": "City of Scranton Zoning Ordinance, Chapter 445 (Ord. No. 54-2023, enacted 5-9-2023): § 445-8 'Dwelling: accessory (ADU)', § 445-12 District quick views, § 445-41W parking",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 445 adopted 5-9-2023 by Ord. No. 54-2023 (445-6). It repealed the 1993 zoning code. eCode360 New Laws list one uncodified zoning law, Ord. No. 8-2024 (3-12-2024). Its PDF was read: wireless communications facilities only. A search result says the 2023 ordinance took effect 12-20-2023. Not confirmed in the code text.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/45625788",
+      "https://ecode360.com/45088089",
+      "https://ecode360.com/45088424",
+      "https://ecode360.com/45088749",
+      "https://ecode360.com/45088792",
+      "https://ecode360.com/45089051",
+      "https://ecode360.com/45089052",
+      "https://ecode360.com/45089075",
+      "https://ecode360.com/45089086",
+      "https://ecode360.com/45089620",
+      "https://ecode360.com/45089916",
+      "https://ecode360.com/45088074",
+      "https://ecode360.com/SC1588/laws/LF2001968.pdf",
+      "https://scrantonpa.gov/your-government/oecd/code/",
+      "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Lackawanna",
+    "municipality_type": "city",
+    "geoid": "4206969000",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/45625788",
+    "code_current_through": "2025-12-16",
+    "code_current_through_note": "eCode360 header: Includes legislation through 12-16-2025. New Laws: Ord. No. 8-2024 (zoning, wireless facilities) not yet codified.",
+    "checks": [
+      "The ADU must be on the same lot as a single family dwelling unit (445-8). Districts that do not allow single-family homes (CIV, CI, LI) list ADU but have no lawful host house unless one already exists",
+      "The definition says ADUs follow the standards set forth in local code. The only ADU-specific standard found is one extra parking space (445-41W)",
+      "No ADU size cap, owner rule, or number cap found",
+      "A detached ADU is read as an accessory structure: not in the front yard (445-28B), accessory setbacks and 25 ft height from the district quick view",
+      "Short-term rental is a permitted accessory use in R-6. The STR dwelling must be the owner's permanent address, owner there at least six months a year (445-30A)",
+      "Not listed in D (City Downtown Mixed Use) or PC (Planned Commercial)"
+    ],
+    "notes": "Zoning office: City Planning and Zoning, Office of Economic and Community Development (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb."
+  },
+  "adu": {
+    "status": {
+      "value": "allowed_by_right",
+      "section": "§ 445-12 accessory use tables",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Dwelling: accessory (ADU) is P in CONSV, REC, R-6, R-8, R-9, R-10, R-11, N, HC, CI, LI. C in INST. SE in CIV."
+    },
+    "term": {
+      "value": "Dwelling: accessory (ADU)",
+      "section": "§ 445-8 Definitions",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "A residential dwelling unit, but not a mobile home, located on the same lot as a single family dwelling unit."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "§ 445-12, § 445-38",
+      "url": "https://ecode360.com/45089051",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Permitted by right (P). Zoning permit, use and occupancy certificate and building permit go to the Zoning Officer (445-38)."
+    },
+    "fallback_path": {
+      "value": null,
+      "section": "§ 445-67",
+      "url": "https://ecode360.com/45089868",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not stated for ADUs. A lot that fails a standard would need a variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "CONSV",
+        "REC",
+        "R-6",
+        "R-8",
+        "R-9",
+        "R-10",
+        "R-11",
+        "N",
+        "HC",
+        "CI",
+        "LI"
+      ],
+      "section": "§ 445-12C to Q accessory use tables",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "By right in these. Conditional use (City Council) in INST. Special exception (Zoning Hearing Board) in CIV. Not listed in D or PC."
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "§ 445-8",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Host must be a single family dwelling unit. R-8 and R-10 allow attached and detached single-family homes. Building type is not otherwise limited."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "§ 445-12",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU lot size. The district lot size applies."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "§ 445-8",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "either within the same building as the single family dwelling unit or in a detached building."
+    },
+    "historic_bypass": {
+      "value": null,
+      "section": "§ 445-8",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No historic rule for ADUs."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "§ 445-8",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Definition: within the same building as the single family dwelling unit or in a detached building. Attached addition, garage conversion and over garage are read from that wording. Not named."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "§ 445-8, § 445-41W",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU size cap in the text."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "§ 445-8, § 445-41W",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No share-of-house limit."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "§ 445-8",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not found."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "§ 445-12E to I, Lot dimensions standards, Height, Accessory structure",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory structure height 25 in R-6, R-8, R-9, R-10, R-11. Blank in other districts. ADU in a detached building read as an accessory structure."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "§ 445-28B",
+      "url": "https://ecode360.com/45088749",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No structure accessory to a principal use ... shall be located in the front yard setback. Quick views: accessory front yard N/A."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "§ 445-12E, F, G, Accessory Structure side yard",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "5 feet in R-6, R-8, R-9. 0 feet in R-10 and R-11. See districts."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "§ 445-12E to I, Accessory Structure rear yard",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory structure rear yard 5 feet in R-6, R-8, R-9, R-10, R-11."
+    },
+    "setback_rear_alley_ft": {
+      "value": null,
+      "section": "§ 445-12",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No alley rule in the quick views."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "§ 445-28",
+      "url": "https://ecode360.com/45088749",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No separation distance found."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "§ 445-12 Principal structure height",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A unit inside the house follows the principal structure height."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "§ 445-12",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Set by district. Only R-8 shows building coverage (60%). See districts."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "§ 445-12",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Set by district. See districts."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "§ 445-8, § 445-41W",
+      "url": "https://ecode360.com/45089086",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No owner occupancy rule for ADUs found."
+    },
+    "family_only": {
+      "value": false,
+      "section": "§ 445-8",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No family tie required."
+    },
+    "short_term_rental_banned": {
+      "value": false,
+      "section": "§ 445-30",
+      "url": "https://ecode360.com/45088792",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU-specific ban. STR use needs the owner's permanent address on site, six months a year."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "§ 445-8",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No number per lot stated. The definition speaks of a single unit."
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "§ 445-8",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "§ 445-41W(1)",
+      "url": "https://ecode360.com/45089086",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "In addition to off-street parking requirements for the principal use, each accessory dwelling unit will require one off-street parking space."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "Chapter 445",
+      "url": "https://ecode360.com/45625788",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "districts": {
+    "R-6": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "§ 445-12E(2) Lot Size",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "§ 445-12E(2) Accessory Structure front yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "N/A. Accessory structures may not sit in the front yard."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "§ 445-12E(2) Accessory Structure side yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "§ 445-12E(2) Accessory Structure rear yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "§ 445-12E(2) Coverage, Building",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage cell is blank. Impervious surface 45%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "§ 445-12E(2) Height, Principal structure",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "§ 445-41W(1)",
+        "url": "https://ecode360.com/45089086",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One space for the ADU in addition to the principal use."
+      }
+    },
+    "R-8": {
+      "min_lot_sqft": {
+        "value": 2500,
+        "section": "§ 445-12F(2) Lot Size",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "§ 445-12F(2) Accessory Structure front yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "N/A. Accessory structures may not sit in the front yard."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "§ 445-12F(2) Accessory Structure side yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "§ 445-12F(2) Accessory Structure rear yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "§ 445-12F(2) Coverage, Building",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "§ 445-12F(2) Height, Principal structure",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "§ 445-41W(1)",
+        "url": "https://ecode360.com/45089086",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One space for the ADU in addition to the principal use."
+      }
+    },
+    "R-9": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "§ 445-12G(2) Lot Size",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "§ 445-12G(2) Accessory Structure front yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "N/A. Accessory structures may not sit in the front yard."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "§ 445-12G(2) Accessory Structure side yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "§ 445-12G(2) Accessory Structure rear yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "§ 445-12G(2) Coverage, Building",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage cell is blank. Impervious surface 60%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "§ 445-12G(2) Height, Principal structure",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "§ 445-41W(1)",
+        "url": "https://ecode360.com/45089086",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One space for the ADU in addition to the principal use."
+      }
+    },
+    "R-10": {
+      "min_lot_sqft": {
+        "value": 2000,
+        "section": "§ 445-12H(2) Lot Size",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "§ 445-12H(2) Accessory Structure front yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "N/A. Accessory structures may not sit in the front yard."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "§ 445-12H(2) Accessory Structure side yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "§ 445-12H(2) Accessory Structure rear yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "§ 445-12H(2) Coverage, Building",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage cell is blank. Impervious surface 75%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "§ 445-12H(2) Height, Principal structure",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "§ 445-41W(1)",
+        "url": "https://ecode360.com/45089086",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One space for the ADU in addition to the principal use."
+      }
+    },
+    "R-11": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "§ 445-12I(2) Lot Size",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "§ 445-12I(2) Accessory Structure front yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "N/A. Accessory structures may not sit in the front yard."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "§ 445-12I(2) Accessory Structure side yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "§ 445-12I(2) Accessory Structure rear yard",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "§ 445-12I(2) Coverage, Building",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage cell is blank. Impervious surface 75%."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "§ 445-12I(2) Height, Principal structure",
+        "url": "https://ecode360.com/45088424",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "§ 445-41W(1)",
+        "url": "https://ecode360.com/45089086",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One space for the ADU in addition to the principal use."
+      }
+    }
+  }
+}
