@@ -228,6 +228,14 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "The 205 intro mentions minimum floor area per dwelling, but no such row was found in the tables read."
+    },
+    "max_sqft_accessory_building": {
+      "value": 720,
+      "section": "205.9",
+      "url": "https://ecode360.com/44157103",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Detached accessory buildings shall be no larger than 720 square feet in size'. R districts. The code does not name the ADU, so applying it to a detached ADU is a reading."
     }
   },
   "envelope": {
@@ -417,6 +425,30 @@
         "verified_on": "2026-11-11",
         "confidence": "secondary",
         "note": "1 per family living unit."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "205 table, Minimum width of least side yards",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal structure. Applies to an attached ADU (205.8). Total of both sides: 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "205 table, Minimum depth of rear yard",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal structure. Applies to an attached ADU (205.8). Notes (D) and (J) may adjust."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "205 table, Minimum depth of front yard",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal structure. Notes (B) and (G) may adjust."
       }
     },
     "R-1A": {
@@ -459,6 +491,30 @@
         "verified_on": "2026-11-11",
         "confidence": "secondary",
         "note": "1 per family living unit."
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "205 table, Minimum width of least side yards",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal structure. Applies to an attached ADU (205.8). Total of both sides: 6 ft."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "205 table, Minimum depth of rear yard",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal structure. Applies to an attached ADU (205.8). Notes (D) and (J) may adjust."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "205 table, Minimum depth of front yard",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "No number in the table. Set by notes (B) and (G), adjacent setbacks (205.2)."
       }
     },
     "R-2": {
@@ -501,6 +557,30 @@
         "verified_on": "2026-11-11",
         "confidence": "secondary",
         "note": "1 per family living unit."
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "205 table, Minimum width of least side yards",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal structure. Applies to an attached ADU (205.8). Total of both sides: 6 ft."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "205 table, Minimum depth of rear yard",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal structure. Applies to an attached ADU (205.8). Notes (D) and (J) may adjust."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "205 table, Minimum depth of front yard",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "No number in the table. Set by notes (B) and (G), adjacent setbacks (205.2)."
       }
     }
   }

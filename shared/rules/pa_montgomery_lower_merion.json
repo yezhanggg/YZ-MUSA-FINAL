@@ -80,7 +80,13 @@
         {
           "districts": [
             "IC",
-            "IH"
+            "IH",
+            "IC1",
+            "IC2",
+            "IC3",
+            "IH1",
+            "IH2",
+            "IH3"
           ],
           "path": "by_right",
           "section": "Table 5.2 Uses for Institutions",
@@ -114,13 +120,19 @@
         "MDR2",
         "MDR3",
         "IC",
-        "IH"
+        "IH",
+        "IC1",
+        "IC2",
+        "IC3",
+        "IH1",
+        "IH2",
+        "IH3"
       ],
       "section": "155-10.2C, Table 5.1",
       "url": "https://ecode360.com/35688058",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "'In LDR, MDR, IC, and IH Zoning Districts'. Table 5.1 marks S in LDR and MDR."
+      "note": "'In LDR, MDR, IC, and IH Zoning Districts'. Table 5.1 marks S in LDR and MDR. IC and IH are mapped as IC1 to IC3 and IH1 to IH3 (155-4.4)."
     },
     "building_types": {
       "value": [
@@ -353,6 +365,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "Principal building rear setback applies. See districts."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "155-10.2C(6)",
+      "url": "https://ecode360.com/35688064",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'the accessory structure shall comply with the principal building setbacks in the underlying zoning district'."
     }
   },
   "coverage": {
@@ -682,11 +702,11 @@
       },
       "lot_area_per_unit_sqft": {
         "value": 4000,
-        "section": "Table 4.2.1 MDR1 Dimensional Standards, Lot area, and 155-5.2D",
+        "section": "Table 4.2.1 MDR1 Dimensional Standards, Lot area, with 155-10.2C and 155-5.2D",
         "url": "https://ecode360.com/35686352",
         "verified_on": "2026-11-11",
-        "confidence": "secondary",
-        "note": "Per unit. Special exception uses follow district dimensions (155-5.2D). Reading: a house and an ADU need 8,000 sq ft."
+        "confidence": "verified",
+        "note": "'4,000 square feet minimum per unit'. 155-10.2C converts the house 'into two dwelling units', and special exception uses follow district dimensions (155-5.2D). A house and an ADU need 8,000 sq ft."
       }
     },
     "MDR2": {
@@ -787,6 +807,114 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "'2/unit + 1 space/ADU'"
+      }
+    },
+    "IC1": {
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "155-4.4 Table 4.4.2.A IC1 Dimensional Standards, Building Height, Principal",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'3 stories up to 40 feet'. More where setbacks increase (table note)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Table 8.1 'I' column not read for single-family with ADU."
+      }
+    },
+    "IC2": {
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "155-4.4 Table 4.4.2.B IC2 Dimensional Standards, Building Height, Principal",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'3 stories up to 40 feet'. More where setbacks increase (table note)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Table 8.1 'I' column not read for single-family with ADU."
+      }
+    },
+    "IC3": {
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "155-4.4 Table 4.4.2.C IC3 Dimensional Standards, Building Height, Principal",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'3 stories up to 40 feet'. More where setbacks increase (table note)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Table 8.1 'I' column not read for single-family with ADU."
+      }
+    },
+    "IH1": {
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "155-4.4 Table 4.4.4.A IH1 Dimensional Standards, Building Height, Principal",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'3 stories up to 45 feet'. More where setbacks increase (table note)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Table 8.1 'I' column not read for single-family with ADU."
+      }
+    },
+    "IH2": {
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "155-4.4 Table 4.4.4.B IH2 Dimensional Standards, Building Height, Principal",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'3 stories up to 45 feet'. More where setbacks increase (table note)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Table 8.1 'I' column not read for single-family with ADU."
+      }
+    },
+    "IH3": {
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "155-4.4 Table 4.4.4C IH3 Dimensional Standards, Building Height, Principal",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'3 stories up to 45 feet'. More where setbacks increase (table note)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Table 8.1 'I' column not read for single-family with ADU."
       }
     }
   }

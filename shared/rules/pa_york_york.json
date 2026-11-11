@@ -259,6 +259,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "No separation distance found."
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "1304.02 7.01, 1304.01 use 1.04.005(c)(4)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=184",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "7.01 sets no accessory height. An enlarged garage must meet 'all dimensional requirements for the Zoning District' (c)(4). Reading: the district height applies (35 or 40 ft)."
     }
   },
   "coverage": {

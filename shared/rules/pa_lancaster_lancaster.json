@@ -35,13 +35,10 @@
     "checks": [
       "No ADU, accessory apartment, in-law or similar term in the zoning chapter",
       "An accessory unit is a use not provided for. The Zoning Officer refers it to the Zoning Hearing Board as a special exception (300-17). The applicant shows it is similar to and compatible with permitted uses",
-      "Other path: a second residential unit in a separate building, as more than one principal building on the lot (300-28A). New single-family detached is by right in R1, R2, R3, R4, RO, MU. Needs a land development plan, no hearing. Yards are met for the whole lot. Whether the lot area must cover two dwellings is not stated. Ask the Bureau of Planning",
-      "300-44E names this case: parking for a second residential unit in a separate building may be reduced or waived by special exception with a parking study",
-      "Other path: conversion of an existing building of at least 2,000 gross sq ft to a two-family dwelling, by special exception in R3, R4, RO, MU, C1, C2 only. Not in R1 or R2 (300 Attachment 2)",
-      "For a conversion with no expansion of the building, lot area, yards, width, depth, height and coverage may be waived if lot coverage is not increased and parking is provided (300 Attachment 3, note (d))",
       "Accessory uses may not exceed 25% of the principal use floor area (300-16). A dwelling unit as an accessory use is not listed",
       "Each dwelling unit holds one family or one nonfamily unit. Family: relatives plus at most one unrelated person, or two unrelated persons (Art XVII)",
-      "Minimum habitable floor area: efficiency 400, one bedroom 550, two bedrooms 700 sq ft (300-30)"
+      "Minimum habitable floor area: efficiency 400, one bedroom 550, two bedrooms 700 sq ft (300-30)",
+      "Other ways to add a unit are listed in approval.alternatives: a second principal dwelling (300-28A) and a two-family conversion (R3, R4, RO, MU, C1, C2). Ask the Bureau of Planning whether lot area must cover two dwellings"
     ],
     "notes": "Zoning office: Bureau of Planning, Department of Community Planning and Economic Development (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb."
   },
@@ -79,6 +76,54 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "If the Board finds the unit not similar to permitted uses, a use variance from the Zoning Hearing Board is left."
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "300-17",
+      "url": "https://ecode360.com/8122699",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'a use is neither specifically permitted nor prohibited' goes to the Zoning Hearing Board 'to hear and decide such request as a special exception'."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Second dwelling in a separate building (more than one principal residential building on a lot)",
+          "path": "by_right",
+          "districts": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "RO",
+            "MU"
+          ],
+          "conditions": "Yard and other requirements met for the entire lot. Parking for the added unit may be reduced by special exception (300-44E). Whether lot area must cover both dwellings is not stated.",
+          "min_lot_sqft": null,
+          "section": "300-28A, 300-44E",
+          "url": "https://ecode360.com/27422569"
+        },
+        {
+          "name": "Conversion of an existing building of at least 2,000 gross sq ft to a two-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R3",
+            "R4",
+            "RO",
+            "MU",
+            "C1",
+            "C2"
+          ],
+          "conditions": "Not in R1 or R2. If the building is not enlarged, lot area, yards, width, depth, height and coverage may be waived when coverage does not increase and parking is provided (300 Attachment 3 note (d)).",
+          "min_lot_sqft": null,
+          "section": "300 Attachment 2, 300 Attachment 3 note (d)",
+          "url": "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf"
+        }
+      ],
+      "section": "300-28A, 300 Attachment 2",
+      "url": "https://ecode360.com/27422569",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
     }
   },
   "eligibility": {
@@ -89,41 +134,6 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "No ADU use in any district. Any district may hear it as a use not provided for (300-17). Two-family conversion by special exception in R3, R4, RO, MU, C1, C2."
-    },
-    "gates": {
-      "value": [
-        {
-          "kind": "other",
-          "condition": "Other path: a second dwelling in a separate building as a second principal building on the lot. Needs a land development plan, no hearing. Yards are met for the whole lot. Whether lot area must cover both dwellings is not stated. Parking for it may be reduced by special exception (300-44E).",
-          "effect": "condition",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": null,
-          "building_types": null,
-          "section": "300-28A, 300-44E",
-          "url": "https://ecode360.com/8122840"
-        },
-        {
-          "kind": "other",
-          "condition": "Other path for a unit inside the house: conversion to a two-family dwelling, by special exception for a building of at least 2,000 gross sq ft, in R3, R4, RO, MU, C1, C2 only. Lot area and yards may be waived if the building is not enlarged (bulk table note (d)).",
-          "effect": "condition",
-          "applies_to": [
-            "internal"
-          ],
-          "districts": null,
-          "building_types": null,
-          "section": "300 Attachment 2, 300 Attachment 3 note (d)",
-          "url": "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf"
-        }
-      ],
-      "section": "300-17, 300-28A, 300-44E",
-      "url": "https://ecode360.com/8122840",
-      "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "Paths outside an ADU use."
     },
     "min_lot_sqft": {
       "value": null,
