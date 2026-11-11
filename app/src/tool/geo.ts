@@ -111,8 +111,8 @@ export function meters([x1, y1]: LngLat, [x2, y2]: LngLat) {
   return Math.hypot((x2 - x1) * k * Math.cos((y1 * Math.PI) / 180), (y2 - y1) * k);
 }
 
-export async function loadData() {
-  const [tracts, towns] = (await Promise.all(['data/tracts.geojson', 'data/towns.geojson'].map((u) => fetch(u).then((r) => r.json())))) as [FC<TractProps>, FC<TownProps>];
+/** Add bounding boxes and the display numbers worked out from raw job counts (browser and Node). */
+export function prepare(tracts: FC<TractProps>, towns: FC<TownProps>) {
   for (const f of tracts.features) {
     const p = f.properties;
     f._bbox = bbox(f.geometry);
@@ -123,12 +123,20 @@ export async function loadData() {
     p.jobs_shift = before != null && after != null ? after - before : null;
   }
   for (const f of towns.features) f._bbox = bbox(f.geometry);
+}
+
+export async function loadData() {
+  const [tracts, towns] = (await Promise.all(['data/tracts.geojson', 'data/towns.geojson'].map((u) => fetch(u).then((r) => r.json())))) as [FC<TractProps>, FC<TownProps>];
+  prepare(tracts, towns);
   const curves = HAS_FIT_CURVES ? ((await fetch('data/fit_curves.json').then((r) => (r.ok ? r.json() : null)).catch(() => null)) as FitCurves | null) : null;
   return { tracts, towns, curves };
 }
 
 const lotCache = new Map<string, Promise<Lot[] | null>>();
 const lotTracts = new Set(LOT_TRACTS);
+/** Lot files already loaded, by tract (for looking a lot up by id). */
+export const lotsLoaded = new Map<string, Lot[]>();
+export const hasLots = (geoid: string) => lotTracts.has(geoid);
 
 /** All lots of one tract (pilot tracts only; others resolve to null without a request). */
 export function loadLots(geoid: string): Promise<Lot[] | null> {
@@ -137,6 +145,10 @@ export function loadLots(geoid: string): Promise<Lot[] | null> {
   if (!p) {
     p = fetch(`data/lots/${geoid}.json`)
       .then((r) => (r.ok ? (r.json() as Promise<Lot[]>) : null))
+      .then((lots) => {
+        if (lots) lotsLoaded.set(geoid, lots);
+        return lots;
+      })
       .catch(() => null);
     lotCache.set(geoid, p);
   }

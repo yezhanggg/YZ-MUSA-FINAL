@@ -1,0 +1,98 @@
+// Tablet and phone: one bottom sheet with three tabs. It peeks (tabs and the verdict line) and opens on tap,
+// or when a lot is selected.
+import { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
+import { MousePointerClick } from 'lucide-react';
+import { cx } from '../lib/cx';
+import { SPRING_PANEL, SPRING_TAB } from '../components/primitives';
+import { PANEL_BODY } from '../components/Panel';
+import AskBox from './AskBox';
+import { LotCardBody } from './LotCard';
+import { ReportStack, VerdictLine } from './RightPanel';
+import { reportTitle } from './Report';
+import { useTool } from './store';
+import { GUTTER, SHEET_PEEK, sheetOpenHeight } from './layout';
+
+type Tab = 'lot' | 'report' | 'ask';
+const TABS: { id: Tab; label: string }[] = [
+  { id: 'lot', label: 'This lot' },
+  { id: 'report', label: 'Report' },
+  { id: 'ask', label: 'Ask' },
+];
+
+export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
+  const spot = useTool((s) => s.spot);
+  const [tab, setTab] = useState<Tab>('report');
+  const open = useTool((s) => s.sheetOpen);
+  const set = useTool((s) => s.set);
+  const setOpen = (o: boolean) => set({ sheetOpen: o });
+  useEffect(() => {
+    if (spot) {
+      setTab((t) => (t === 'ask' ? t : 'lot'));
+      setOpen(true);
+    }
+  }, [spot?.n]);
+  const [vh, setVh] = useState(() => window.innerHeight);
+  useEffect(() => {
+    const on = () => setVh(window.innerHeight);
+    window.addEventListener('resize', on);
+    return () => window.removeEventListener('resize', on);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const head = spot ? reportTitle(spot) : null;
+  return (
+    <motion.section
+      aria-label="Site sheet"
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1, height: open ? sheetOpenHeight(vh) : SHEET_PEEK }}
+      transition={SPRING_PANEL}
+      className="absolute bottom-0 z-20 flex flex-col overflow-hidden rounded-t-3xl bg-white/95 shadow-[0_-10px_40px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur"
+      style={{ left: maxWidth ? `max(${GUTTER}px, calc(50% - ${maxWidth / 2}px))` : 0, right: maxWidth ? `max(${GUTTER}px, calc(50% - ${maxWidth / 2}px))` : 0 }}
+    >
+      <button type="button" onClick={() => setOpen(!open)} className="tap flex w-full shrink-0 justify-center pt-2" aria-label={open ? 'Shrink the sheet' : 'Open the sheet'} aria-expanded={open}>
+        <span className="h-1.5 w-10 rounded-full bg-stone-300" />
+      </button>
+      <div className="shrink-0 px-4">
+        <div role="tablist" aria-label="Sheet" className="relative grid grid-cols-3 rounded-xl bg-stone-100 p-1 ring-1 ring-stone-200/70">
+          {TABS.map((t) => {
+            const on = tab === t.id;
+            return (
+              <button key={t.id} type="button" role="tab" aria-selected={on} onClick={() => (setTab(t.id), setOpen(true))} className={cx('tap relative rounded-lg py-1.5 text-small font-semibold transition-colors', on ? 'text-slate-900' : 'text-slate-600')}>
+                {on && <motion.span layoutId="sheet-tab" className="absolute inset-0 rounded-lg bg-white shadow-sm ring-1 ring-black/5" transition={SPRING_TAB} />}
+                <span className="relative">{t.label}</span>
+              </button>
+            );
+          })}
+        </div>
+        {!open && spot && (
+          <div className="mt-2">
+            <VerdictLine spot={spot} />
+          </div>
+        )}
+      </div>
+      <div className={cx(PANEL_BODY, 'pt-3')}>
+        {tab === 'lot' &&
+          (spot ? (
+            <div className="space-y-3">
+              <div>
+                <div className="truncate font-display text-lead font-bold text-slate-900">{head?.label}</div>
+                <div className="truncate text-caption text-slate-600">{head?.sub}</div>
+              </div>
+              <VerdictLine spot={spot} />
+              {(spot.lot || spot.parcel) && (
+                <div className="rounded-xl bg-white p-3 ring-1 ring-violet-200">
+                  <LotCardBody spot={spot} />
+                </div>
+              )}
+            </div>
+          ) : (
+            <p className="flex items-center gap-2 rounded-xl bg-violet-50/70 px-3 py-2.5 text-small text-violet-900 ring-1 ring-violet-200/70">
+              <MousePointerClick className="h-4 w-4 shrink-0 text-violet-600" /> Tap a single-family lot on the map, or search an address.
+            </p>
+          ))}
+        {tab === 'report' && <ReportStack />}
+        {tab === 'ask' && <AskBox expanded />}
+      </div>
+    </motion.section>
+  );
+}

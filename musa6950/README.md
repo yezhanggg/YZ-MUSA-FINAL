@@ -21,10 +21,10 @@ Then work through the notebooks in order.
 |---|---|---|
 | `notebooks/01_look_and_label.ipynb` | Check images + labels. Hand-label 200-300 lots (not done yet) | figures, `hand_labels.csv` (by hand) |
 | `notebooks/02_random_forest.ipynb` | Pixel Random Forest baseline (Lab 6) | `6950_metrics_rf.json` |
-| `notebooks/03_unet.ipynb` | U-Net: building, tree, open ground (Lab 9, A6) | `6950_metrics_unet.json`, `data/models/unet.pt` |
+| `notebooks/03_unet.ipynb` | U-Net: building, tree, open ground (Lab 9, A6). Loads the weights from `train_unet.py`, checks leakage, scores the test once | `6950_metrics_unet.json`, `data/models/unet.pt` |
 | `notebooks/04_sheds.ipynb` | Garages and sheds. Outlines only, YOLO optional (Lab 8, A5). Picks the single-family lots | `sheds.csv`, `6950_lots_sf.gpkg` |
-| `notebooks/05_room_rule.ipynb` | Does a 20 x 30 ft spot fit? With and without cutting trees | `lots_pilot.csv` |
-| `notebooks/06_statewide.ipynb` | Scale to every tract | `lots_tract.csv` |
+| `notebooks/05_room_rule.ipynb` | Does a 20 x 30 ft spot fit? With and without cutting trees. Largest footprint that fits. Map layers | `lots_pilot.csv`, `6950_lot_open.gpkg`, `6950_lot_spot.gpkg` |
+| `notebooks/06_statewide.ipynb` | Scale to every tract. Fit curves by footprint size | `lots_tract.csv`, `fit_curves.csv` |
 
 After notebooks 05 and 06, run `python app/build_data.py` to see the results in the tool.
 
@@ -32,7 +32,8 @@ After notebooks 05 and 06, run `python app/build_data.py` to see the results in 
 
 - `get_data.py` downloads images, labels, building outlines, lot lines
 - `notebooks/` the AI work, one step per notebook
-- `unet.py` the U-Net model, used by notebooks 03 and 05
+- `unet.py` the U-Net models (v1 plain, v2 ResNet-34), used by notebooks 03 and 05
+- `train_unet.py` trains the U-Net (run before notebook 03, about 1.5 hours on a Mac). Writes `data/models/unet_<tag>.pt`. Copy the final one to `data/models/unet.pt`
 - `docs/` pages for the website: proposal, data, methods, results
 - `requirements.txt` main packages. `requirements-yolo.txt` only for notebook 04
 
@@ -56,4 +57,4 @@ YOLO (ultralytics) is AGPL-3.0. It is only used in notebook 04. The rest of the 
 
 The syllabus asks to keep AI use low for the model code. Claude Code helped set up the data download script, the website shell, and these docs.
 
-The notebooks (01-06), `unet.py`, and `docs/results.md` were written and run by Claude (Claude Code) at my request. The hand labels in notebook 01 are still mine to do.
+The notebooks (01-06), `unet.py`, `train_unet.py`, and `docs/results.md` were written and run by Claude (Claude Code) at my request. That includes the v2 U-Net (pretrained encoder, longer training, ablations, test checks). The hand labels in notebook 01 are still mine to do.

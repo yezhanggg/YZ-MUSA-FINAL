@@ -234,25 +234,16 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="u-net">3. U-Net</h2>
 <p>Notebook <code>03_unet.ipynb</code> (from Lab 9 and my Assignment 6)</p>
 <ul>
-<li>Cut boxes into 256 x 256 tiles</li>
 <li>4 input bands, 4 output classes (other, building, tree, open ground). 255 = ignore</li>
-<li>Class-weighted cross entropy, Adam lr 0.001, batch 8</li>
-<li>Random flips, same flip on image and label</li>
 <li>Validation = a few train counties held back. Test = Cumberland + Centre
 <ul>
 <li>7 counties held back (seed 42), 24 boxes. 122 boxes left for training</li>
 </ul></li>
-<li>What was run: plain U-Net written in torch (<code>musa6950/unet.py</code>), base width 32, 7.8 M parameters
-<ul>
-<li>Class weights = 1 / sqrt(class share)</li>
-<li>Cosine decay of the learning rate over 10 epochs. 45 min on a Mac (MPS)</li>
-<li>Best epoch by validation mIoU is kept</li>
-<li>Test boxes are predicted in 512 px windows with a 64 px margin</li>
-</ul></li>
 <li>Same scores as the Random Forest so they compare</li>
-<li>Train on Mac (MPS) or Google Colab GPU</li>
 <li>Note from Assignment 6: bare soil scored 0 IoU. Here bare ground is part of “open ground”</li>
 </ul>
+<p>First model (v1), kept for comparison: - Plain U-Net written in torch (<code>musa6950/unet.py</code>), base width 32, 7.8 M parameters - 256 x 256 tiles, random flips, class-weighted cross entropy, Adam lr 0.001, batch 8 - Cosine decay of the learning rate over 10 epochs. 45 min on a Mac (MPS). Validation was still going up</p>
+<p>Final model (v2): - U-Net with a ResNet-34 encoder trained on ImageNet (<code>segmentation-models-pytorch</code>), 24.4 M parameters - The first layer takes 4 bands. R, G, B keep the ImageNet weights. NIR starts as the mean of the RGB weights - Each band is scaled with the mean and spread of the train boxes - Training: <code>musa6950/train_unet.py</code>, run as a script in the background. Notebook 03 loads the weights and does all the checks - Random 384 x 384 crops from whole boxes, 400 steps of 12 crops per epoch - 1 crop in 3 is centered on a building pixel (buildings are the weak class) - Same random flip and 90 degree turn on image and label. Small brightness and contrast changes per band - Loss = class-weighted cross entropy (weights 1 / sqrt(class share)) + 0.5 x Dice - AdamW lr 0.0005, warmup, then cosine decay over 16 epochs. Stop early if validation does not improve for 5 epochs - Validation = every labeled pixel of the 24 validation boxes, predicted like the test. The best epoch is kept - Tried and dropped, judged on validation only: NDVI as a 5th band, cross entropy without Dice. A plain U-Net with the same recipe was also run, to see what the pretrained encoder adds - Test-time flips: each window is predicted 8 times (4 turns x flip) and the class chances are averaged. Kept only if it helps on validation - Tree offset: 0.5 is added to the tree log chance, picked on validation (0 to 1.5 tried). The model called a bit less tree than the label, and this was clear on the lots in notebook 05 - Test boxes are predicted in 512 px windows with a 64 px margin. The test counties are scored once, at the end - Checks in notebook 03: - Leakage: no test county in train or validation, no validation county in train, no overlap between boxes of different roles - Per class IoU, precision, recall. mIoU by urban / suburban / rural. Confusion matrix - Secondary score: mIoU with a 1 pixel band along every label edge left out. The label is 1 m, put on the 0.6 m grid, so edges are uncertain by about a pixel - Registration: shift the prediction 1-2 pixels against the label and see if the score goes up</p>
 </section>
 <section id="garages-and-sheds-yolo" class="level2">
 <h2 class="anchored" data-anchor-id="garages-and-sheds-yolo">4. Garages and sheds (YOLO)</h2>
@@ -269,6 +260,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Cumberland: no building type in the lot file. Lots of 300-20,000 m2</li>
 <li>Both: biggest outline on the lot is 60-600 m2 and no other outline is over 100 m2</li>
 </ul></li>
+<li>Small buildings with no outline: the fit test in step 5 only allows open ground (and trees), so any pixel the U-Net calls building already blocks a spot. Notebook 05 checks how often this matters, with the Chesapeake building class in the Cumberland test boxes</li>
+<li>What YOLO would need: about 300 sheds and garages drawn by hand on NAIP (LabelMe boxes), spread over urban, suburban, and rural lots, plus some lots with no shed. A shed is often 10-20 m2, only 30-60 NAIP pixels, so the boxes are small for YOLO. It would also add an AGPL package. Not done</li>
 </ul>
 </section>
 <section id="room-for-an-adu-the-fit-rule" class="level2">
@@ -296,9 +289,27 @@ ul.task-list li input[type="checkbox"] {
 <li>Other outlines (garages, sheds) are taken out with no buffer</li>
 <li>The erosion test is done with a summed-area table. Same answer, faster</li>
 <li>NAIP for the pilot counties is read straight from Planetary Computer, only the 512 px blocks that touch a lot. Nothing is saved</li>
+<li>The U-Net is v2 with the same 8 flips / turns and tree offset as the test</li>
 <li>Hand labels are not made yet, so there is no precision / recall against them</li>
 <li>Instead: Cumberland lots inside the test boxes are run twice, with the Chesapeake label map and with the U-Net map. Agreement shows how much U-Net errors change the answer</li>
 <li><code>open_m2</code> and <code>tree_m2</code> in <code>lots_pilot.csv</code> are for the whole lot</li>
+</ul></li>
+<li>Largest footprint that fits (for the tool’s size slider):
+<ul>
+<li>Ladder of footprint areas: 100 to 2,000 sq ft in steps of 50</li>
+<li>Each area is tried as 3 shapes (square, 2:3, 1:2), each in both turns. Size in pixels = ceil(feet x 0.3048 / 0.6)</li>
+<li>Same backyard mask and same summed-area test. A bigger area never fits where a smaller one does not, so a binary search on the ladder is enough</li>
+<li><code>max_fit_sqft</code> = largest area that fits (0 if not even 100 sq ft, 2,000 at the top). <code>max_fit_keep_trees_sqft</code> = same, tree pixels not allowed</li>
+<li>Pixel sizes are rounded up here, but the 20 x 30 ft rule rounds to 10 x 15 pixels (6.0 x 9.0 m). So <code>fits</code> and <code>max_fit_sqft &gt;= 600</code> can disagree on some lots</li>
+</ul></li>
+<li>Map layers:
+<ul>
+<li><code>6950_lot_open.gpkg</code>: per lot, buildable open ground after setbacks (<code>open</code>) and trees inside the setback area (<code>tree</code>). Pixel outlines simplified 0.3 m, bits under 4 m2 dropped</li>
+<li><code>6950_lot_spot.gpkg</code>: the rectangle the test found, at <code>max_fit_sqft</code> (<code>kind = max</code>) and at 600 sq ft if it fits (<code>kind = base600</code>)
+<ul>
+<li>Placed on open ground alone if it fits there (<code>keeps_trees = true</code>), else on open ground + trees</li>
+<li>Of all places that fit, the one farthest from the house center is kept. That is more often the backyard</li>
+</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -315,10 +326,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Pilot lots by group: urban = Philadelphia + Cumberland urban tracts. Suburban and rural = Cumberland only</li>
 <li>The group rate is used in every tract, the pilot counties too. The lot map has the per-lot answers</li>
 <li>Tree loss per tract = lots_fit x mean tree area cut per fitting lot in the group</li>
+<li>Fit curves: share of pilot lots in each group where a footprint of each ladder size fits (from <code>max_fit_sqft</code>). Same tract bootstrap for the range</li>
 <li>Output for the tool:
 <ul>
-<li><code>data/processed/lots_tract.csv</code> (every tract)</li>
+<li><code>data/processed/lots_tract.csv</code> (every tract, with its group in <code>stratum</code>)</li>
 <li><code>data/processed/lots_pilot.csv</code> (every lot in the pilot counties)</li>
+<li><code>data/processed/fit_curves.csv</code> (group x footprint size)</li>
 </ul></li>
 </ul>
 </section>

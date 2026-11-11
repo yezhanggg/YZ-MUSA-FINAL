@@ -129,7 +129,7 @@ def load_model(path, device):
     model.to(device).eval()
     meta = {k: v for k, v in ck.items() if k != "state"}
     meta.update(mean=np.asarray(ck["mean"], np.float32), std=np.asarray(ck["std"], np.float32),
-                ndvi=bool(ck.get("ndvi", False)), kind=kind)
+                ndvi=bool(ck.get("ndvi", False)), kind=kind, class_bias=ck.get("class_bias"))
     return model, meta
 
 
@@ -138,25 +138,31 @@ D4 = [(k, f) for f in (False, True) for k in range(4)]
 
 
 @torch.no_grad()
-def predict_proba(model, x, tta=False):
+def predict_proba(model, x, tta=False, bias=None):
     """x normalized (B, C, H, W) on device -> class probabilities (B, 4, H, W).
 
     tta=True averages the 8 flips / 90-degree rotations.
+    bias = per-class log offsets (set on validation in notebook 03), or None.
     """
     model.eval()
     if not tta:
-        return F.softmax(model(x), 1)
-    out = 0
-    for k, f in D4:
-        v = torch.flip(x, [3]) if f else x
-        v = torch.rot90(v, k, [2, 3])
-        p = torch.rot90(F.softmax(model(v), 1), -k, [2, 3])
-        out = out + (torch.flip(p, [3]) if f else p)
-    return out / len(D4)
+        out = F.softmax(model(x), 1)
+    else:
+        out = 0
+        for k, f in D4:
+            v = torch.flip(x, [3]) if f else x
+            v = torch.rot90(v, k, [2, 3])
+            p = torch.rot90(F.softmax(model(v), 1), -k, [2, 3])
+            out = out + (torch.flip(p, [3]) if f else p)
+        out = out / len(D4)
+    if bias is not None:
+        out = out * torch.exp(torch.as_tensor(bias, dtype=out.dtype, device=out.device)).view(1, -1, 1, 1)
+        out = out / out.sum(1, keepdim=True)
+    return out
 
 
 @torch.no_grad()
-def predict_array(model, img, mean, std, device, win=512, margin=64, batch=4, ndvi=False, tta=False, proba=False):
+def predict_array(model, img, mean, std, device, win=512, margin=64, batch=4, ndvi=False, tta=False, proba=False, bias=None):
     """Predict classes for a whole (4, H, W) uint8 image.
 
     Windows of win + 2*margin pixels, keep the center win x win (less edge effect).
@@ -173,7 +179,7 @@ def predict_array(model, img, mean, std, device, win=512, margin=64, batch=4, nd
     for k in range(0, len(spots), batch):
         part = spots[k:k + batch]
         raw = torch.stack([pad[:, i * win:i * win + full, j * win:j * win + full] for i, j in part]).to(device)
-        p = predict_proba(model, to_input(raw, mean, std, ndvi), tta)[:, :, margin:margin + win, margin:margin + win]
+        p = predict_proba(model, to_input(raw, mean, std, ndvi), tta, bias)[:, :, margin:margin + win, margin:margin + win]
         p = p.cpu().numpy()
         for (i, j), pj in zip(part, p):
             if proba:

@@ -169,9 +169,16 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#data-check" id="toc-data-check" class="nav-link active" data-scroll-target="#data-check">Data check</a></li>
-  <li><a href="#model-accuracy" id="toc-model-accuracy" class="nav-link" data-scroll-target="#model-accuracy">Model accuracy</a></li>
+  <li><a href="#model-accuracy" id="toc-model-accuracy" class="nav-link" data-scroll-target="#model-accuracy">Model accuracy</a>
+  <ul class="collapse">
+  <li><a href="#leakage-check" id="toc-leakage-check" class="nav-link" data-scroll-target="#leakage-check">Leakage check</a></li>
+  <li><a href="#how-high-can-it-go" id="toc-how-high-can-it-go" class="nav-link" data-scroll-target="#how-high-can-it-go">How high can it go?</a></li>
+  </ul></li>
   <li><a href="#garages-and-sheds" id="toc-garages-and-sheds" class="nav-link" data-scroll-target="#garages-and-sheds">Garages and sheds</a></li>
-  <li><a href="#room-for-an-adu" id="toc-room-for-an-adu" class="nav-link" data-scroll-target="#room-for-an-adu">Room for an ADU</a></li>
+  <li><a href="#room-for-an-adu" id="toc-room-for-an-adu" class="nav-link" data-scroll-target="#room-for-an-adu">Room for an ADU</a>
+  <ul class="collapse">
+  <li><a href="#largest-footprint-that-fits" id="toc-largest-footprint-that-fits" class="nav-link" data-scroll-target="#largest-footprint-that-fits">Largest footprint that fits</a></li>
+  </ul></li>
   <li><a href="#statewide" id="toc-statewide" class="nav-link" data-scroll-target="#statewide">Statewide</a></li>
   <li><a href="#limits" id="toc-limits" class="nav-link" data-scroll-target="#limits">Limits</a></li>
   </ul>
@@ -249,14 +256,23 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="model-accuracy" class="level2">
 <h2 class="anchored" data-anchor-id="model-accuracy">Model accuracy</h2>
-<p>Test = every labeled pixel in the 27 test boxes (109,183,195 pixels). Both models are scored on the same pixels.</p>
+<p>Test = every labeled pixel in the 27 test boxes (109,183,195 pixels). All models are scored on the same pixels. The test counties were scored once, after every choice was made on validation.</p>
+<p>Two U-Nets: - v1: the first run. Plain U-Net, 7.8 M parameters, 10 epochs, 45 min - v2: the final model. U-Net with an ImageNet ResNet-34 encoder, 24.4 M parameters, 14 epochs, 95 min. Predictions averaged over 8 flips and turns, plus a small tree offset set on validation</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>IoU on test counties</th>
 <th>Random Forest</th>
-<th>U-Net</th>
-<th>Gain</th>
+<th>U-Net v1</th>
+<th>U-Net v2</th>
+<th>Gain v1 to v2</th>
 </tr>
 </thead>
 <tbody>
@@ -264,37 +280,84 @@ ul.task-list li input[type="checkbox"] {
 <td>other</td>
 <td>0.321</td>
 <td>0.601</td>
-<td>+0.280</td>
+<td>0.650</td>
+<td>+0.049</td>
 </tr>
 <tr class="even">
 <td>building</td>
 <td>0.267</td>
 <td>0.543</td>
-<td>+0.277</td>
+<td>0.645</td>
+<td>+0.102</td>
 </tr>
 <tr class="odd">
 <td>tree</td>
 <td>0.368</td>
 <td>0.672</td>
-<td>+0.304</td>
+<td>0.706</td>
+<td>+0.034</td>
 </tr>
 <tr class="even">
 <td>open ground</td>
 <td>0.485</td>
 <td>0.775</td>
-<td>+0.290</td>
+<td>0.793</td>
+<td>+0.018</td>
 </tr>
 <tr class="odd">
 <td>mean IoU</td>
 <td>0.360</td>
 <td>0.648</td>
-<td>+0.288</td>
+<td>0.699</td>
+<td>+0.051</td>
 </tr>
 <tr class="even">
 <td>pixel accuracy</td>
 <td>0.571</td>
 <td>0.824</td>
-<td>+0.252</td>
+<td>0.847</td>
+<td>+0.024</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Test, U-Net v2</th>
+<th>other</th>
+<th>building</th>
+<th>tree</th>
+<th>open</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>precision</td>
+<td>0.771</td>
+<td>0.723</td>
+<td>0.838</td>
+<td>0.896</td>
+</tr>
+<tr class="even">
+<td>recall</td>
+<td>0.806</td>
+<td>0.857</td>
+<td>0.817</td>
+<td>0.874</td>
+</tr>
+<tr class="odd">
+<td>precision, v1</td>
+<td>0.741</td>
+<td>0.621</td>
+<td>0.837</td>
+<td>0.877</td>
+</tr>
+<tr class="even">
+<td>recall, v1</td>
+<td>0.761</td>
+<td>0.812</td>
+<td>0.773</td>
+<td>0.870</td>
 </tr>
 </tbody>
 </table>
@@ -303,7 +366,8 @@ ul.task-list li input[type="checkbox"] {
 <tr class="header">
 <th>Mean IoU by group (test)</th>
 <th>Random Forest</th>
-<th>U-Net</th>
+<th>U-Net v1</th>
+<th>U-Net v2</th>
 </tr>
 </thead>
 <tbody>
@@ -311,32 +375,119 @@ ul.task-list li input[type="checkbox"] {
 <td>urban</td>
 <td>0.322</td>
 <td>0.588</td>
+<td>0.644</td>
 </tr>
 <tr class="even">
 <td>suburban</td>
 <td>0.358</td>
 <td>0.681</td>
+<td>0.732</td>
 </tr>
 <tr class="odd">
 <td>rural</td>
 <td>0.388</td>
 <td>0.672</td>
+<td>0.718</td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>Random Forest: 290,219 training pixels (500 per class per box), R, G, B, NIR, NDVI. NDVI is the top feature (0.275)</li>
-<li>U-Net: 5,976 train tiles, 1,176 validation tiles (7 held-back counties). 10 epochs, 45 min on a Mac (MPS)</li>
-<li>Best validation mIoU 0.682 at epoch 10. Validation was still creeping up, so more epochs may help a little</li>
-<li>U-Net almost doubles the Random Forest on every class</li>
-<li>Weakest: buildings (0.543). Urban boxes score lowest (0.588)</li>
-<li>Main U-Net mix-up: 17% of tree pixels are called open ground. 12% of building pixels are called other (roofs vs paving)</li>
+<li>The biggest gain is buildings: +0.102 IoU. Fewer roofs are mixed up with paving. 7.4% of building pixels are called other (12.3% in v1)</li>
+<li>Every group gains about 0.05. Urban boxes still score lowest (0.644)</li>
+<li>Main mix-up left: 13.0% of tree pixels are called open ground (16.6% in v1), and 7.2% of open ground is called tree</li>
 <li>In Assignment 6 bare soil got 0 IoU. Here it is inside “open ground”, which scores best</li>
+</ul>
+<p>What helped (validation, 24 boxes in 7 held-back counties, every pixel):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Run</th>
+<th>Val mIoU at epoch 3</th>
+<th>Best val mIoU</th>
+<th>Epochs</th>
+<th>Minutes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>v1 plain U-Net, old recipe</td>
+<td></td>
+<td>0.689</td>
+<td>10</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>plain U-Net, new recipe</td>
+<td>0.669</td>
+<td>0.669</td>
+<td>3</td>
+<td>22</td>
+</tr>
+<tr class="odd">
+<td>ResNet-34, CE + Dice, new recipe</td>
+<td>0.711</td>
+<td>0.729</td>
+<td>9</td>
+<td>44</td>
+</tr>
+<tr class="even">
+<td>same + NDVI as a 5th band</td>
+<td>0.686</td>
+<td>0.704</td>
+<td>3</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<td>same, cross entropy only</td>
+<td>0.705</td>
+<td>0.709</td>
+<td>5</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>final: ResNet-34, 16 epoch schedule</td>
+<td>0.707</td>
+<td>0.736</td>
+<td>14</td>
+<td>95</td>
+</tr>
+<tr class="odd">
+<td>final + 8 flips and turns</td>
+<td></td>
+<td>0.740</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>final + flips + tree offset 0.5</td>
+<td></td>
+<td>0.742</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>New recipe = random 384 px crops from whole boxes, 1 in 3 centered on a building, flips, 90 degree turns, brightness and contrast jitter, AdamW with warmup and cosine decay</li>
+<li>Short runs were cut by a time cap, so they are compared at epoch 3, where the learning rate is the same</li>
+<li>Pretrained encoder: +0.04 at epoch 3 (0.711 vs 0.669 for a plain U-Net with the same recipe). The largest single gain</li>
+<li>Longer training: +0.007 (0.729 to 0.736). Validation was flat from epoch 12 on</li>
+<li>Dice loss: +0.006 at epoch 3, +0.014 at epoch 5. Kept</li>
+<li>NDVI: -0.024 at epoch 3. Dropped. The network already gets R and NIR, so NDVI adds little</li>
+<li>8 flips and turns at prediction: +0.004. Kept</li>
+<li>Tree offset: +0.002 on validation, and the share of pixels called tree goes from 94% to 100% of the label share. Kept
+<ul>
+<li>Why: the first test run of v2 (mIoU 0.692, no offset) looked fine, but on the Cumberland check lots in notebook 05 it called much less tree than the label (median 56 vs 159 m2 per lot). That made <code>fits_keep_trees</code> too high</li>
+<li>The offset (0.5 added to the tree log chance) was picked on validation only. The test was then scored once more with it</li>
+</ul></li>
+<li>The old v1 score of 0.682 was on 256 px tiles. On whole validation boxes it is 0.689, the number used here</li>
+<li>Total training time for all runs: about 3.5 hours on a Mac (MPS), with one 38 minute stall in the final run</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/03_training_curve.png" class="img-fluid figure-img"></p>
-<figcaption>U-Net training curve</figcaption>
+<figcaption>U-Net v2 training curve</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -348,18 +499,52 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/03_unet_confusion.png" class="img-fluid figure-img"></p>
-<figcaption>U-Net confusion matrix</figcaption>
+<figcaption>U-Net confusion matrices, v1 and v2</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/03_example_prediction.png" class="img-fluid figure-img"></p>
-<figcaption>Test box in Cumberland: image, label, Random Forest, U-Net</figcaption>
+<figcaption>Test box in Cumberland: image, label, Random Forest, U-Net v1, U-Net v2</figcaption>
 </figure>
 </div>
 <ul>
-<li>The Random Forest is speckled pixel by pixel. The U-Net gives clean shapes but rounds off building corners</li>
+<li>The Random Forest is speckled pixel by pixel. The U-Nets give clean shapes</li>
+<li>On this farm box v1 and v2 look alike. Both find a paved pad (bottom right) that the label does not have. The label and the image differ in date here</li>
+<li>In the urban figure below, v2 gives whole large roofs where v1 breaks them into pieces</li>
 </ul>
+<p>Test boxes per group, the median box and the worst box (image, label, v1, v2, v2 errors in red):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03_test_urban.png" class="img-fluid figure-img"></p>
+<figcaption>Urban test boxes</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03_test_suburban.png" class="img-fluid figure-img"></p>
+<figcaption>Suburban test boxes</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/03_test_rural.png" class="img-fluid figure-img"></p>
+<figcaption>Rural test boxes</figcaption>
+</figure>
+</div>
+<section id="leakage-check" class="level3">
+<h3 class="anchored" data-anchor-id="leakage-check">Leakage check</h3>
+<ul>
+<li>No test county (Cumberland, Centre) is in train or validation. No validation county is in train</li>
+<li>No two boxes of different roles touch on the ground (checked on the real image extents)</li>
+<li>Two pairs of boxes overlap inside one role: two train boxes in Dauphin (0.15 km2), and two Cumberland test boxes (0.09 km2). The test pair only counts about 0.2% of test pixels twice. It is not leakage</li>
+</ul>
+</section>
+<section id="how-high-can-it-go" class="level3">
+<h3 class="anchored" data-anchor-id="how-high-can-it-go">How high can it go?</h3>
+<p>The Chesapeake label is not perfect, so 1.0 is out of reach. Checks on the test boxes: - Edges: the label is 1 m, put on the 0.6 m grid. 9.9% of test pixels sit in a 1 pixel band along a label edge. 32.3% of v2 errors are in that band - Secondary score, edge band left out: mIoU 0.764 (v1: 0.703). This is not the main score. It shows how much is edge noise - Registration: moving the prediction 2 pixels up and 1 left scores 0.708 instead of 0.699. So the label and the image are off by about 1 m in places. That error can not be learned away - Dates: some test images do not match the label. The worst box (Centre, mIoU 0.51) was flown in fall, and a clearing the label calls tree is cut in the image. In Cumberland a new paved pad is in the image but not in the label - Box scores run from 0.51 to 0.77 (median 0.66) - Tree vs open ground is the biggest error left. The label splits them partly by height (from lidar), which a flat image can not always see</p>
+<p>Realistic ceiling: about 0.75-0.78 mIoU against this label on these counties. Edge noise alone is worth about 0.07 (0.764 with the edge band out), and the 1 m offset and image dates cost a bit more. Validation, in other counties, tops out at 0.742. v2 at 0.699 has closed about 40% of the gap from v1 to that ceiling. More gains would need better labels or images from the same date, not a bigger model.</p>
+</section>
 </section>
 <section id="garages-and-sheds" class="level2">
 <h2 class="anchored" data-anchor-id="garages-and-sheds">Garages and sheds</h2>
@@ -410,12 +595,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <ul>
 <li>Under 9% of lots have a garage or shed outline. That looks low. Microsoft outlines likely miss many small sheds, which is what YOLO was meant to test</li>
-<li>Missed sheds make the fit rule a bit too generous</li>
 </ul>
+<p>Is the outline method good enough? Check in notebook 05, Cumberland test boxes, where the Chesapeake label has its own building class: - 1,143 labeled building patches of 5-60 m2 sit in a backyard (median 18.4 m2) - Only 33.4% of them touch a Microsoft outline. So the outlines miss about 2 in 3 small structures - The U-Net calls at least half of the patch building for 35.5% of them. Of the patches with no outline, it catches 13.3% - 57.7% are missed by both. Most are small. A 10-20 m2 shed is only 30-60 NAIP pixels - The fit test only allows open ground (and trees). So a shed the U-Net sees already blocks the spot, outline or not. That is the cheap win, and it is already in the rule. <code>yard_bldg_m2</code> in <code>6950_lots_pilot_full.csv</code> gives the U-Net building area left in each backyard - Missed sheds still make the fit rule a bit too generous</p>
+<p>What YOLO would need: about 300 sheds and garages drawn by hand on NAIP in LabelMe, spread over urban, suburban, and rural lots, plus lots with no shed so it learns to say no. The objects are tiny at 0.6 m, so recall would be the hard part. Ultralytics is AGPL, so it would stay in notebook 04 only. With no hand labels yet, it is not done.</p>
 </section>
 <section id="room-for-an-adu" class="level2">
 <h2 class="anchored" data-anchor-id="room-for-an-adu">Room for an ADU</h2>
-<p>Rule: lot minus 5 ft from lot lines, minus 10 ft around the house, minus other outlines. Then a 20 x 30 ft spot (10 x 15 pixels), both rotations.</p>
+<p>Rule: lot minus 5 ft from lot lines, minus 10 ft around the house, minus other outlines. Then a 20 x 30 ft spot (10 x 15 pixels), both rotations. The land cover is U-Net v2.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/05_lot_example.png" class="img-fluid figure-img"></p>
@@ -443,15 +629,15 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>Philadelphia</td>
 <td>26,270</td>
-<td>46.8%</td>
-<td>21.1%</td>
+<td>48.7%</td>
+<td>22.3%</td>
 <td>57.4%</td>
 </tr>
 <tr class="even">
 <td>Cumberland</td>
 <td>57,664</td>
-<td>86.2%</td>
-<td>63.2%</td>
+<td>87.2%</td>
+<td>69.5%</td>
 <td>90.6%</td>
 </tr>
 </tbody>
@@ -464,7 +650,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <ul>
 <li>Median backyard left after setbacks: 223 m2 in Philadelphia, 797 m2 in Cumberland</li>
-<li>Outline-only says yes and U-Net says no on 2,792 Philadelphia lots and 2,562 Cumberland lots. These are yards covered by driveways, patios, or pools. The U-Net never says yes when outline-only says no</li>
+<li>Outline-only says yes and U-Net says no on 2,292 Philadelphia lots and 1,959 Cumberland lots. These are yards covered by driveways, patios, or pools. The U-Net never says yes when outline-only says no</li>
 <li>Trees matter most in Philadelphia: keeping trees cuts the fit rate by more than half</li>
 </ul>
 <p>Check against real labels (not hand labels). 3,030 Cumberland lots sit inside test boxes, where the Chesapeake label exists. The rule is run with the label map and with the U-Net map:</p>
@@ -489,7 +675,23 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>fits, U-Net</td>
+<td>fits, U-Net v2</td>
+<td>0.646</td>
+<td>0.641</td>
+<td>0.973</td>
+<td>0.966</td>
+<td>0.961</td>
+</tr>
+<tr class="even">
+<td>fits keeping trees, U-Net v2</td>
+<td>0.419</td>
+<td>0.464</td>
+<td>0.807</td>
+<td>0.895</td>
+<td>0.867</td>
+</tr>
+<tr class="odd">
+<td>fits, U-Net v1 (old)</td>
 <td>0.646</td>
 <td>0.621</td>
 <td>0.980</td>
@@ -497,7 +699,7 @@ ul.task-list li input[type="checkbox"] {
 <td>0.950</td>
 </tr>
 <tr class="even">
-<td>fits keeping trees, U-Net</td>
+<td>fits keeping trees, U-Net v1 (old)</td>
 <td>0.419</td>
 <td>0.409</td>
 <td>0.835</td>
@@ -515,12 +717,31 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <ul>
-<li>The U-Net map gives the same answer as the label map on 95% of lots. Keeping trees is harder (86%)</li>
+<li>The v2 map gives the same answer as the label map on 96.1% of lots (v1: 95.0%). Keeping trees is harder (86.7%, v1: 85.5%)</li>
 <li>Outline only over-counts: it says yes on 72.8% of lots vs 64.6% with the label map</li>
-<li>Open ground per lot: label vs U-Net median 287 vs 258 m2, correlation 0.959</li>
-<li>Tree area per lot: median 159 vs 106 m2, correlation 0.935. The U-Net under-calls trees, so <code>fits_keep_trees</code> is likely a bit high</li>
+<li>Open ground per lot: label vs v2 median 287 vs 290 m2, correlation 0.96 (v1: 258 m2)</li>
+<li>Tree area per lot: median 159 vs 92 m2, correlation 0.94 (v1: 106 m2). Both models call less tree in yards than the label. Yard trees are often small or hang over lawns and roofs, which is hard to see from above</li>
+<li>So <code>fits_keep_trees</code> is too high: 46.4% yes vs 41.9% with the label. The v2 tree offset (notebook 03) shrinks this gap but does not close it. Without the offset it was 50.8%</li>
 <li>This check is only Cumberland and only tests the land cover step. Hand labels would also test the rule itself</li>
 </ul>
+<section id="largest-footprint-that-fits" class="level3">
+<h3 class="anchored" data-anchor-id="largest-footprint-that-fits">Largest footprint that fits</h3>
+<ul>
+<li><code>max_fit_sqft</code> = largest footprint (100 to 2,000 sq ft, steps of 50) that fits as a square, 2:3, or 1:2 spot</li>
+<li>Median: 500 sq ft in Philadelphia, 2,000 (the top of the ladder) in Cumberland. Keeping trees: 200 and 1,100</li>
+<li><code>fits</code> and <code>max_fit_sqft &gt;= 600</code> agree on 98.2% of lots (keeping trees: 97.9%). The target was 99%
+<ul>
+<li>1,283 lots fit the 20 x 30 ft rule but no 600 sq ft shape on the ladder. 244 lots are the other way</li>
+<li>Why: the 20 x 30 ft rule rounds to 10 x 15 pixels (6.0 x 9.0 m, a bit under 600 sq ft). The ladder rounds up, so 600 sq ft at 2:3 is 11 x 16 pixels (6.6 x 9.6 m)</li>
+</ul></li>
+<li>Map layers for the tool (EPSG:4326):
+<ul>
+<li><code>data/processed/6950_lot_open.gpkg</code>, layer <code>open</code>: 77,513 <code>open</code> and 65,997 <code>tree</code> shapes. 430 MB</li>
+<li><code>data/processed/6950_lot_spot.gpkg</code>, layer <code>spot</code>: 79,348 <code>max</code> and 62,038 <code>base600</code> rectangles. 33 MB</li>
+<li>The spot is the place that fits farthest from the house center. On open ground alone if it fits there, else on open ground + trees</li>
+</ul></li>
+</ul>
+</section>
 </section>
 <section id="statewide" class="level2">
 <h2 class="anchored" data-anchor-id="statewide">Statewide</h2>
@@ -549,30 +770,30 @@ ul.task-list li input[type="checkbox"] {
 <td>Urban (RUCA 1)</td>
 <td>70,581</td>
 <td>342</td>
-<td>0.704 (0.655-0.751)</td>
-<td>0.437 (0.377-0.497)</td>
-<td>11.8</td>
+<td>0.719 (0.671-0.764)</td>
+<td>0.494 (0.432-0.551)</td>
+<td>10.3</td>
 </tr>
 <tr class="even">
 <td>Suburban (RUCA 2-3)</td>
 <td>9,826</td>
 <td>11</td>
-<td>0.964 (0.929-0.989)</td>
-<td>0.882 (0.817-0.944)</td>
-<td>2.2</td>
+<td>0.966 (0.934-0.990)</td>
+<td>0.873 (0.815-0.931)</td>
+<td>3.2</td>
 </tr>
 <tr class="odd">
 <td>Rural (RUCA 4-10)</td>
 <td>3,527</td>
 <td>4</td>
-<td>0.792 (0.503-0.925)</td>
-<td>0.696 (0.335-0.857)</td>
-<td>3.1</td>
+<td>0.800 (0.518-0.928)</td>
+<td>0.719 (0.376-0.870)</td>
+<td>2.8</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Urban = 26,270 Philadelphia lots + 44,311 Cumberland urban lots. Philadelphia alone is 0.468, Cumberland urban is 0.845</li>
+<li>Urban = 26,270 Philadelphia lots + 44,311 Cumberland urban lots. Philadelphia alone is 0.487, Cumberland urban is 0.857</li>
 <li>Suburban and rural come only from Cumberland, from 11 and 4 tracts. The rural range is wide for that reason</li>
 </ul>
 <p>Applied to ACS 2020-24 single-family detached homes in all 3,445 PA tracts:</p>
@@ -599,40 +820,41 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>Urban</td>
 <td>1,858,258</td>
-<td>1,308,828</td>
-<td>1,216,647-1,395,083</td>
-<td>812,383</td>
-<td>15,378,230</td>
+<td>1,336,641</td>
+<td>1,246,978-1,419,250</td>
+<td>917,162</td>
+<td>13,800,605</td>
 </tr>
 <tr class="even">
 <td>Suburban</td>
 <td>646,067</td>
-<td>622,526</td>
-<td>600,262-639,144</td>
-<td>569,600</td>
-<td>1,370,858</td>
+<td>623,836</td>
+<td>603,107-639,367</td>
+<td>564,335</td>
+<td>1,995,117</td>
 </tr>
 <tr class="odd">
 <td>Rural</td>
 <td>783,142</td>
-<td>620,163</td>
-<td>393,993-724,269</td>
-<td>545,115</td>
-<td>1,901,980</td>
+<td>626,160</td>
+<td>405,305-726,515</td>
+<td>563,105</td>
+<td>1,777,454</td>
 </tr>
 <tr class="even">
 <td>Pennsylvania</td>
 <td>3,287,467</td>
-<td>2,551,517</td>
-<td>2,210,902-2,758,496</td>
-<td>1,927,098</td>
-<td>18,651,068</td>
+<td>2,586,637</td>
+<td>2,255,390-2,785,132</td>
+<td>2,044,602</td>
+<td>17,573,176</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>About 2.55 million single-family lots have room for a 20 x 30 ft ADU by this rule. About 1.93 million without cutting trees</li>
-<li>If every fitting lot built one, about 18.65 km2 (4,609 acres) of tree canopy would be cut</li>
+<li>About 2.59 million single-family lots have room for a 20 x 30 ft ADU by this rule (v1: 2.55 million). About 2.04 million without cutting trees (v1: 1.93 million)</li>
+<li>If every fitting lot built one, about 17.57 km2 (4,342 acres) of tree canopy would be cut (v1: 18.65 km2)</li>
+<li>The keep-trees count is likely high, since the U-Net calls less yard tree than the label (see the check above)</li>
 <li>Most of the tree loss is in urban tracts, where yards are small and the spot often needs trees cut</li>
 <li>This is room, not demand. Zoning, slope, septic, and owner choice are not in the rule</li>
 </ul>
@@ -640,6 +862,86 @@ ul.task-list li input[type="checkbox"] {
 <figure class="figure">
 <p><img src="figures/06_lots_fit_map.png" class="img-fluid figure-img"></p>
 <figcaption>Lots with room per tract</figcaption>
+</figure>
+</div>
+<p>Fit curves: share of pilot lots where a footprint of each size fits (<code>data/processed/fit_curves.csv</code>, range = same tract bootstrap):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Footprint (sq ft)</th>
+<th>Urban</th>
+<th>Suburban</th>
+<th>Rural</th>
+<th>Urban, keep trees</th>
+<th>Suburban, keep trees</th>
+<th>Rural, keep trees</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>400</td>
+<td>0.784</td>
+<td>0.976</td>
+<td>0.844</td>
+<td>0.574</td>
+<td>0.897</td>
+<td>0.773</td>
+</tr>
+<tr class="even">
+<td>600</td>
+<td>0.705</td>
+<td>0.965</td>
+<td>0.791</td>
+<td>0.479</td>
+<td>0.869</td>
+<td>0.709</td>
+</tr>
+<tr class="odd">
+<td>800</td>
+<td>0.625</td>
+<td>0.949</td>
+<td>0.742</td>
+<td>0.391</td>
+<td>0.835</td>
+<td>0.654</td>
+</tr>
+<tr class="even">
+<td>1,000</td>
+<td>0.551</td>
+<td>0.932</td>
+<td>0.696</td>
+<td>0.324</td>
+<td>0.801</td>
+<td>0.595</td>
+</tr>
+<tr class="odd">
+<td>1,200</td>
+<td>0.503</td>
+<td>0.921</td>
+<td>0.665</td>
+<td>0.279</td>
+<td>0.773</td>
+<td>0.557</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>At 600 sq ft the curve is 0.1-1.4 points under the group rates above (urban 0.705 vs 0.719). The curve uses the ladder shapes, which round up</li>
+<li>Size matters most in urban tracts: going from 600 to 1,000 sq ft drops the share from 0.705 to 0.551</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/06_fit_curves.png" class="img-fluid figure-img"></p>
+<figcaption>Fit curves by footprint</figcaption>
 </figure>
 </div>
 </section>

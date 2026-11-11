@@ -264,6 +264,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><code>acs_tract.csv</code></td>
 </tr>
 <tr class="even">
+<td>Rent by bedrooms (studio to 3 BR)</td>
+<td>ACS 5-year, table B25031</td>
+<td>Census API (free key)</td>
+<td>2020-24</td>
+<td>Tract + county</td>
+<td><code>rent_bedrooms_tract.csv</code></td>
+</tr>
+<tr class="odd">
 <td>Housing units</td>
 <td>Decennial Census</td>
 <td>Census API (free key)</td>
@@ -271,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Tract</td>
 <td><code>decennial_units_tract.csv</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Population</td>
 <td>Census Population Estimates</td>
 <td>Script download</td>
@@ -279,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Town</td>
 <td><code>pop_town.csv</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Jobs (where people work + where workers live)</td>
 <td>LEHD LODES8</td>
 <td>Script download</td>
@@ -287,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Block, summed to tract</td>
 <td><code>jobs_tract.csv</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>New homes permitted</td>
 <td>Census Building Permits Survey</td>
 <td>Script download</td>
@@ -295,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Town + county</td>
 <td><code>permits_town.csv</code>, <code>permits_county.csv</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>People moving in and out</td>
 <td>IRS SOI migration</td>
 <td>Script download</td>
@@ -303,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>County</td>
 <td><code>migration_county.csv</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>30-year mortgage rate</td>
 <td>Freddie Mac PMMS</td>
 <td>Script download</td>
@@ -311,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>State</td>
 <td><code>mortgage_rate_year.csv</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Land cover, 30 m</td>
 <td>Annual NLCD (USGS)</td>
 <td>Web service (WCS), 60 km tiles</td>
@@ -319,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Raster</td>
 <td><code>data/raw/5500/landcover/nlcd_&lt;year&gt;_pa.tif</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Street network</td>
 <td>OpenStreetMap via OSMnx</td>
 <td>OSMnx in the notebook</td>
@@ -327,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Metro area</td>
 <td>Made in notebook 03</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Tracts, towns, counties, crosswalk</td>
 <td>Census TIGER</td>
 <td>Script download (<code>shared/get_boundaries.py</code>)</td>
@@ -335,7 +343,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>All</td>
 <td><code>tracts_2020.gpkg</code>, etc.</td>
 </tr>
+<tr class="even">
+<td>Town ADU rules (12 towns)</td>
+<td>Hand-coded from research, see <code>shared/adu_rules_pa.md</code></td>
+<td>By hand</td>
+<td>As of Nov 10, 2026</td>
+<td>Town</td>
+<td><code>shared/legal_status.csv</code></td>
+</tr>
 <tr class="odd">
+<td>Philadelphia zoning, Council Districts, overlays</td>
+<td>City of Philadelphia (OpenDataPhilly, ArcGIS)</td>
+<td>Script (<code>shared/lot_rules.py</code>)</td>
+<td>Current</td>
+<td>Lot</td>
+<td><code>lot_rules_pilot.csv</code></td>
+</tr>
+<tr class="even">
 <td>Lots with room for an ADU</td>
 <td>My MUSA 6950 project</td>
 <td>Read from <code>data/processed/lots_tract.csv</code></td>
@@ -358,6 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>ACS rent = median gross rent of all renters, including long-time tenants. It is lower than the rent a new ADU would get.</li>
 <li>Census uses -666666666 for “no data”. The script turns these into blanks.</li>
 <li>Dollar values need inflation adjustment to 2024 dollars before comparing years. CPI-U yearly average: 2014 = 236.736, 2019 = 255.657, 2024 = 313.689.</li>
+<li>Rent by bedrooms: tract values by size rest on few renters, so the tool uses tract median rent x the county ratio for that size (PA median county: studio 0.75, 1 BR 0.77, 2 BR 1.02, 3 BR 1.19). Raw tract values are kept in the file as <code>rent_b*_tract</code></li>
 </ul>
 
 

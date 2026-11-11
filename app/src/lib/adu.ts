@@ -135,3 +135,90 @@ export function tractRoom(t: TractLots, a: Adu, curves: FitCurves | null): { fit
   if (isBaseFootprint(a) && num(t.lots_fit)) return { fit: t.lots_fit, keep: num(t.lots_fit_keep_trees) ? t.lots_fit_keep_trees : null, total: t.lots_total };
   return null;
 }
+
+// ------------------------------------------------------------------ "Play with it": the result of adding this ADU
+export interface PlayLot {
+  lot_m2: number;
+  open_m2: number;
+  tree_m2: number;
+  /** House footprint, when the data has it. Otherwise estimated (lot minus open minus trees, so it includes paving). */
+  house_m2?: number | null;
+}
+
+export interface PlayInput {
+  lot: PlayLot | null;
+  fit: Fit | null;
+  adu: Adu;
+  rent: number;
+  costPsf: number;
+  rate: number;
+  cutTrees: boolean;
+}
+
+export interface PlayResult {
+  homesBefore: number;
+  homesAfter: number;
+  /** Fits with these settings: 'yes', 'trees' (only by cutting trees), 'no', or null (not ready for this size). */
+  fits: Fit | null;
+  footprintSqft: number;
+  openLeftSqft: number | null;
+  treeLossSqft: number | null;
+  houseSqft: number | null;
+  houseEstimated: boolean;
+  coverBefore: number | null;
+  coverAfter: number | null;
+  totalCost: number;
+  payment: number;
+  netRent: number;
+  monthlyGain: number;
+  /** Years to pay back the build cost from net rent, paying cash. null when net rent is 0 or less. */
+  paybackYears: number | null;
+  /** Yearly net rent / build cost, paying cash. */
+  cashOnCost: number;
+  pays: boolean;
+}
+
+const SQ = 10.764;
+
+/** What adding this ADU does to one lot, with the user's rent, cost and rate. */
+export function playAdu(i: PlayInput): PlayResult {
+  const fp = footprint(i.adu);
+  const fits: Fit | null = i.fit === 'trees' && !i.cutTrees ? 'no' : i.fit;
+  const ok = fits === 'yes' || fits === 'trees';
+  const lot = i.lot && num(i.lot.lot_m2) && i.lot.lot_m2 > 0 ? i.lot : null;
+  const lotSqft = lot ? lot.lot_m2 * SQ : null;
+  const openSqft = lot ? lot.open_m2 * SQ : null;
+  const houseEstimated = !!lot && !num(lot.house_m2);
+  const houseSqft = lot ? (num(lot.house_m2) ? lot.house_m2 : Math.max(0, lot.lot_m2 - lot.open_m2 - lot.tree_m2)) * SQ : null;
+  const totalCost = buildCost(i.adu.size, i.costPsf);
+  const pay = payment(totalCost, i.rate);
+  const netRent = i.rent * (1 - OPEX);
+  return {
+    homesBefore: 1,
+    homesAfter: ok ? 2 : 1,
+    fits,
+    footprintSqft: fp,
+    openLeftSqft: openSqft != null && ok ? Math.max(0, openSqft - fp) : openSqft,
+    treeLossSqft: openSqft != null && fits === 'trees' ? Math.max(0, fp - openSqft) : fits === 'yes' ? 0 : null,
+    houseSqft,
+    houseEstimated,
+    coverBefore: lotSqft && houseSqft != null ? houseSqft / lotSqft : null,
+    coverAfter: lotSqft && houseSqft != null ? (houseSqft + (ok ? fp : 0)) / lotSqft : null,
+    totalCost,
+    payment: pay,
+    netRent,
+    monthlyGain: netRent - pay,
+    paybackYears: netRent > 0 ? totalCost / (netRent * 12) : null,
+    cashOnCost: (netRent * 12) / totalCost,
+    pays: netRent >= pay,
+  };
+}
+
+/** The four sample ADUs on the "Pick an ADU" cards. */
+export const SAMPLES: { id: string; name: string; adu: Adu }[] = [
+  { id: 'studio', name: 'Studio cottage', adu: { bed: 0, size: 400, stories: 1 } },
+  { id: 'br1', name: '1 BR cottage', adu: { bed: 1, size: 600, stories: 1 } },
+  { id: 'br2', name: '2 BR cottage', adu: { bed: 2, size: 800, stories: 1 } },
+  { id: 'garage', name: 'Garage apartment', adu: { bed: 2, size: 800, stories: 2 } },
+];
+export const sampleOf = (a: Adu) => SAMPLES.find((s) => s.adu.bed === a.bed && s.adu.size === a.size && s.adu.stories === a.stories) ?? null;

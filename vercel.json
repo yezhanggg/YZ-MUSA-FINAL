@@ -6,7 +6,21 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/app", "destination": "/", "permanent": false },
-    { "source": "/app/", "destination": "/", "permanent": false }
-  ]
+    {
+      "source": "/app",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/app/",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "functions": {
+    "api/agent.ts": {
+      "maxDuration": 30,
+      "memory": 512
+    }
+  }
 }

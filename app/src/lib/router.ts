@@ -1,14 +1,18 @@
-// Hash routes, so the static build works on any host with no rewrite rules.
-// #/ and #/tool open the tool. #/research/6950 and #/research/5500 open the two Research pages.
+// One screen: the tool. Research opens as a panel over the map, kept in the hash query so links work:
+// #/?research=6950 (older #/research/6950 links still open it). The ADU scenario shares the same query.
 import { useSyncExternalStore } from 'react';
 
 export type Course = '5500' | '6950';
-export type Route = { page: 'tool' } | { page: 'research'; course: Course };
 
-export function parse(hash: string): Route {
-  const [page, course] = hash.replace(/^#\/?/, '').split('?')[0].split('/').filter(Boolean);
-  if (page === 'research') return { page: 'research', course: course === '5500' ? '5500' : '6950' };
-  return { page: 'tool' };
+const asCourse = (v: string | null | undefined): Course | null => (v === '5500' || v === '6950' ? v : null);
+
+/** Which Research page is open, if any. */
+export function researchOf(hash: string): Course | null {
+  const [path, query] = hash.replace(/^#\/?/, '').split('?');
+  const q = new URLSearchParams(query ?? '');
+  if (q.has('research')) return asCourse(q.get('research'));
+  const [page, course] = path.split('/').filter(Boolean);
+  return page === 'research' ? (asCourse(course) ?? '6950') : null;
 }
 
 const subscribe = (cb: () => void) => {
@@ -16,8 +20,17 @@ const subscribe = (cb: () => void) => {
   return () => window.removeEventListener('hashchange', cb);
 };
 
-export function useRoute(): Route {
-  return parse(useSyncExternalStore(subscribe, () => window.location.hash, () => ''));
+export function useResearch(): Course | null {
+  return researchOf(useSyncExternalStore(subscribe, () => window.location.hash, () => ''));
+}
+
+/** Open (or close, with null) a Research page, keeping the rest of the query. */
+export function openResearch(course: Course | null) {
+  const q = new URLSearchParams(window.location.hash.split('?')[1] ?? '');
+  if (course) q.set('research', course);
+  else q.delete('research');
+  const s = q.toString();
+  window.location.hash = s ? `#/?${s}` : '#/';
 }
 
 /** The Quarto class version, copied into dist/quarto/ at build time. */

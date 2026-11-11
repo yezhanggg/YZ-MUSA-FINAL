@@ -2,14 +2,20 @@
 // Same rules as the original tool. Missing numbers read "Not ready yet".
 import { useState, type ReactNode } from 'react';
 import { AnimatePresence, motion, type Variants } from 'motion/react';
-import { AlertTriangle, CheckCircle2, ChevronDown, CircleSlash, HelpCircle, X } from 'lucide-react';
-import { SPRING_PANEL, Tag, usePhone } from '../components/primitives';
+import { AlertTriangle, CheckCircle2, ChevronDown, CircleSlash, HelpCircle } from 'lucide-react';
+import { Tag } from '../components/primitives';
+import { useMode } from './layout';
 import { cx } from '../lib/cx';
 import { annual, fmt, isNum, money, pct, sqft } from '../lib/format';
 import { footprint, isBase, lotFit, rentNote, tractPayoff, tractRoom } from '../lib/adu';
 import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, isPittsburgh, ruleFor, ruleWarnings, type YesNo } from '../lib/rules';
-import { clearSpot } from './actions';
 import { useTool, type Spot } from './store';
+import { parcelRule, parcelType } from './parcels';
+
+const UNCHECKED_LINE = 'Not a single-family detached lot, so the backyard test was not run. Under HB 2186 an ADU would be by right on any residential lot.';
+/** The lot rule for a spot: the lot record, or the Philadelphia rule carried on the clicked parcel. */
+const lotRuleOf = (spot: Spot) => (spot.lot?.rule_lot ? spot.lot : spot.parcel ? parcelRule(spot.parcel) : spot.lot);
+const isUnchecked = (spot: Spot) => !!spot.parcel && spot.parcel.s !== 1;
 
 const YES_NO: Record<YesNo, string> = { yes: 'Yes', no: 'No', unknown: 'Unknown' };
 type Tone = 'good' | 'warn' | 'bad' | 'none';
@@ -27,46 +33,9 @@ const item: Variants = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0
 const NA = <span className="font-normal text-slate-400">Not ready yet</span>;
 const val = (v: ReactNode) => (v == null || v === '' ? NA : v);
 
-export default function Report() {
-  const spot = useTool((s) => s.spot);
-  const busy = useTool((s) => s.busy);
-  const phone = usePhone();
-  const [min, setMin] = useState(false);
-  const show = !!spot || busy;
-
+export function ReportSkeleton() {
   return (
-    <AnimatePresence>
-      {show && (
-        <motion.section
-          key="report"
-          aria-label="Report for this spot"
-          initial={phone ? { y: '100%' } : { opacity: 0, x: 24, scale: 0.96, filter: 'blur(6px)' }}
-          animate={phone ? { y: 0 } : { opacity: 1, x: 0, scale: 1, filter: 'blur(0px)' }}
-          exit={phone ? { y: '100%', transition: { duration: 0.22 } } : { opacity: 0, x: 24, scale: 0.97, filter: 'blur(6px)', transition: { duration: 0.18, ease: 'easeIn' } }}
-          transition={SPRING_PANEL}
-          style={{ transformOrigin: 'top right' }}
-          className={cx(
-            'absolute z-20 flex flex-col bg-white/95 shadow-[0_10px_40px_-10px_rgba(15,23,42,0.3)] ring-1 ring-black/5 backdrop-blur',
-            'right-3 top-[4.25rem] bottom-3 w-[420px] rounded-2xl max-[1099px]:w-[390px]',
-            'max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:w-auto max-sm:rounded-b-none max-sm:rounded-t-3xl',
-            phone && (min ? 'max-h-[9.5rem]' : 'max-h-[58dvh]'),
-          )}
-        >
-          {phone && (
-            <button onClick={() => setMin(!min)} className="flex w-full justify-center pb-1 pt-2.5" aria-label={min ? 'Expand report' : 'Shrink report'}>
-              <span className="h-1.5 w-10 rounded-full bg-stone-300" />
-            </button>
-          )}
-          {spot ? <Body spot={spot} min={phone && min} onToggleMin={() => setMin(!min)} /> : <Skeleton />}
-        </motion.section>
-      )}
-    </AnimatePresence>
-  );
-}
-
-function Skeleton() {
-  return (
-    <div className="p-5">
+    <div>
       <div className="shimmer-text text-small font-semibold">Checking this spot…</div>
       <div className="mt-4 space-y-3">
         {[64, 120, 180].map((h) => (
@@ -77,17 +46,25 @@ function Skeleton() {
   );
 }
 
-function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMin: () => void }) {
+/** Title line for the panel header. */
+export function reportTitle(spot: Spot) {
+  const { tract: t, town: w } = spot;
+  return { label: spot.label, sub: [t.NAMELSAD, w.NAMELSAD, t.county ? `${t.county} County` : null].filter(Boolean).join(' · ') };
+}
+
+/** The report body: verdict, tiles, warnings, then the cards. The panel around it scrolls. */
+export function ReportContent({ spot }: { spot: Spot }) {
   const ruleMode = useTool((s) => s.rule);
-  const busy = useTool((s) => s.busy);
   const adu = useTool((s) => s.adu);
   const curves = useTool((s) => s.curves);
-  const { label, tract: t, town: w, lot } = spot;
+  const { tract: t, town: w, lot } = spot;
   const fp = footprint(adu);
 
   // Allowed? Philadelphia lots use their own lot rule today, other places the town rule.
-  const rule = ruleFor(ruleMode, w, lot);
-  const warnings = ruleWarnings(ruleMode, w, lot, adu.size);
+  const lotRule = lotRuleOf(spot);
+  const unchecked = isUnchecked(spot);
+  const rule = ruleFor(ruleMode, w, lotRule);
+  const warnings = ruleWarnings(ruleMode, w, lotRule, adu.size);
   // Fits? (MUSA 6950)
   const fits = lot ? lotFit(lot, adu) : null;
   const lotNotReady = !!lot && fits === null;
@@ -100,7 +77,10 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
   let tone: Tone = 'none';
   let head = 'No lot check for this spot';
   let line = 'Lot checks cover single-family homes in Philadelphia and Cumberland County. Tract numbers are below.';
-  if (rule.blocked) {
+  if (unchecked) {
+    head = 'No backyard test for this parcel';
+    line = UNCHECKED_LINE;
+  } else if (rule.blocked) {
     tone = 'bad';
     head = rule.fromLot ? 'Needs a variance here today' : 'Not allowed here today';
     line = `${rule.why ? `${rule.why[0].toUpperCase()}${rule.why.slice(1)}. ` : ''}Switch to HB 2186 to see what the bill would change.`;
@@ -122,40 +102,16 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
   const fitShare = room && room.total > 0 ? `${Math.round((100 * room.fit) / room.total)}% of lots` : isBase(adu) ? null : notReady;
   const tiles: { k: string; v: string | null; s: string; tone?: 'good' | 'warn' | 'bad' }[] = [
     { k: 'Allowed', v: rule.label, s: rule.sub, tone: rule.tone === 'none' ? undefined : rule.tone },
-    { k: 'Room on lot', v: fits ? { yes: 'Fits', trees: 'Fits if trees cut', no: 'No room' }[fits] : lotNotReady ? notReady : fitShare, s: fits ? 'MUSA 6950' : 'Tract, MUSA 6950', tone: fits === 'yes' ? 'good' : fits === 'trees' ? 'warn' : fits === 'no' ? 'bad' : undefined },
+    unchecked ? { k: 'Room on lot', v: 'Not checked', s: `${parcelType(spot.parcel!)} · MUSA 6950` } : { k: 'Room on lot', v: fits ? { yes: 'Fits', trees: 'Fits if trees cut', no: 'No room' }[fits] : lotNotReady ? notReady : fitShare, s: fits ? 'MUSA 6950' : 'Tract, MUSA 6950', tone: fits === 'yes' ? 'good' : fits === 'trees' ? 'warn' : fits === 'no' ? 'bad' : undefined },
     { k: 'Pays off', v: pays ? { yes: 'Yes', maybe: 'Close', no: 'No' }[pays] : isBase(adu) ? null : notReady, s: 'MUSA 5500', tone: pays === 'yes' ? 'good' : pays === 'maybe' ? 'warn' : pays === 'no' ? 'bad' : undefined },
     { k: 'Jobs since 2019', v: pct(t.jobs_after), s: 'Tract, MUSA 5500' },
   ];
 
-  const sub = [t.NAMELSAD, w.NAMELSAD, t.county ? `${t.county} County` : null].filter(Boolean).join(' · ');
   const T = TONE[tone];
 
   return (
     <>
-      <header className="flex items-start justify-between gap-3 px-5 pb-3 pt-4 max-sm:pt-1">
-        <div className="min-w-0">
-          <div className="text-caption font-semibold uppercase tracking-[0.14em] text-violet-700">Your site</div>
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.h2 key={spot.n} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.18 }} className="mt-0.5 truncate font-display text-title font-bold text-slate-900">
-              {label}
-            </motion.h2>
-          </AnimatePresence>
-          <div className="truncate text-small text-slate-600">{sub}</div>
-        </div>
-        <div className="flex shrink-0 items-center gap-1">
-          {min && (
-            <button onClick={onToggleMin} className="grid h-8 w-8 place-items-center rounded-lg text-slate-500 hover:bg-stone-100" aria-label="Expand report">
-              <ChevronDown className="h-4 w-4 rotate-180" />
-            </button>
-          )}
-          <button onClick={clearSpot} className="grid h-8 w-8 place-items-center rounded-lg text-slate-500 hover:bg-stone-100 hover:text-slate-900" aria-label="Close report">
-            <X className="h-4 w-4" />
-          </button>
-        </div>
-      </header>
-      {busy && <div className="mx-5 -mt-1 mb-2 h-0.5 overflow-hidden rounded-full bg-violet-100"><motion.div className="h-full w-1/3 rounded-full bg-violet-500" animate={{ x: ['-100%', '300%'] }} transition={{ repeat: Infinity, duration: 1, ease: 'easeInOut' }} /></div>}
-
-      <motion.div key={spot.n} variants={stagger} initial="hidden" animate="show" className="scroll-quiet min-h-0 flex-1 space-y-3 overflow-y-auto px-5 pb-5">
+      <motion.div key={spot.n} variants={stagger} initial="hidden" animate="show" className="space-y-3">
         {/* verdict */}
         <motion.div variants={item} className={cx('flex gap-3 rounded-2xl px-4 py-3.5 ring-1', T.box)}>
           <span className="mt-0.5 shrink-0">{T.icon}</span>
@@ -218,14 +174,37 @@ function Body({ spot, min, onToggleMin }: { spot: Spot; min: boolean; onToggleMi
 }
 
 // ------------------------------------------------------------------ cards
-function Card({ title, tag, children }: { title: string; tag: string; children: ReactNode }) {
+/** A report card. `fold` cards are lower priority: below desktop width they start folded into an accordion. */
+function Card({ title, tag, children, fold }: { title: string; tag: string; children: ReactNode; fold?: boolean }) {
+  const mode = useMode();
+  const foldable = !!fold && mode !== 'desktop';
+  const [open, setOpen] = useState(!foldable);
+  const shown = !foldable || open;
+  const head = (
+    <>
+      <span className="flex min-w-0 items-center gap-1.5">
+        {foldable && <ChevronDown className={cx('h-4 w-4 shrink-0 text-slate-400 transition-transform', !open && '-rotate-90')} />}
+        <span className="truncate">{title}</span>
+      </span>
+      <Tag tone={tag === 'Planner view' || tag === 'Rules' ? 'sky' : 'violet'}>{tag}</Tag>
+    </>
+  );
   return (
     <section className="rounded-2xl bg-white p-4 ring-1 ring-stone-200/80">
-      <h3 className="mb-3 flex items-center justify-between gap-2 text-body font-semibold text-slate-900">
-        {title}
-        <Tag tone={tag === 'Planner view' || tag === 'Rules' ? 'sky' : 'violet'}>{tag}</Tag>
-      </h3>
-      {children}
+      {foldable ? (
+        <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className={cx('tap flex w-full items-center justify-between gap-2 text-left text-body font-semibold text-slate-900', shown && 'mb-3')}>
+          {head}
+        </button>
+      ) : (
+        <h3 className="mb-3 flex items-center justify-between gap-2 text-body font-semibold text-slate-900">{head}</h3>
+      )}
+      <AnimatePresence initial={false}>
+        {shown && (
+          <motion.div initial={foldable ? { height: 0, opacity: 0 } : false} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
@@ -249,7 +228,9 @@ function RoomCard({ spot }: { spot: Spot }) {
   const share = room && room.total > 0 ? room.fit / room.total : null;
   const keep = room && room.total > 0 && room.keep != null ? room.keep / room.total : null;
   const notReady = isBase(adu) ? null : 'Not ready for this size';
-  const parts = lot
+  const unchecked = isUnchecked(spot);
+  const hasArea = !!lot && isNum(lot.lot_m2) && lot.lot_m2 > 0;
+  const parts = lot && hasArea
     ? [
         { k: 'Open ground', v: lot.open_m2, c: '#facc15' },
         { k: 'Trees', v: lot.tree_m2, c: '#16a34a' },
@@ -258,7 +239,7 @@ function RoomCard({ spot }: { spot: Spot }) {
     : [];
   return (
     <Card title="Room for an ADU" tag="MUSA 6950">
-      {lot ? (
+      {lot && hasArea ? (
         <div className="mb-3">
           <div className="flex h-3 gap-0.5 overflow-hidden rounded-full">
             {parts.map((p, i) => (
@@ -273,12 +254,12 @@ function RoomCard({ spot }: { spot: Spot }) {
             ))}
           </div>
         </div>
-      ) : (
-        <p className="mb-2 rounded-lg bg-stone-50 px-3 py-2 text-small text-slate-600">Lot results only in pilot counties (Philadelphia, Cumberland). Tract numbers below.</p>
+      ) : lot ? null : (
+        <p className="mb-2 rounded-lg bg-stone-50 px-3 py-2 text-small text-slate-600">{unchecked ? `${parcelType(spot.parcel!)}. ${UNCHECKED_LINE}` : 'Lot results only in pilot counties (Philadelphia, Cumberland). Tract numbers below.'}</p>
       )}
-      {lot && <KV k="Lot size" v={sqft(lot.lot_m2)} />}
-      {lot && <KV k="Open ground" v={sqft(lot.open_m2)} />}
-      {lot && <KV k="Tree cover" v={sqft(lot.tree_m2)} />}
+      {hasArea && <KV k="Lot size" v={sqft(lot!.lot_m2)} />}
+      {hasArea && <KV k="Open ground" v={sqft(lot!.open_m2)} />}
+      {hasArea && <KV k="Tree cover" v={sqft(lot!.tree_m2)} />}
       {lot && isNum(lot.max_fit_sqft) && (
         <div className="my-1.5 rounded-lg bg-violet-50/70 px-3 py-2 text-small text-violet-950 ring-1 ring-violet-200/70">
           Largest footprint that fits here: <b className="tnum">{fmt(lot.max_fit_sqft)} sq ft</b>
@@ -313,7 +294,7 @@ function DemandCard({ spot }: { spot: Spot }) {
   const pay = tractPayoff(t, adu);
   const top = pay ? Math.max(pay.rent, pay.cost, 1) : 1;
   return (
-    <Card title="Demand and payoff" tag="MUSA 5500">
+    <Card title="Demand and payoff" tag="MUSA 5500" fold>
       <div className="text-caption text-slate-500">Jobs located in this tract</div>
       <div className="mt-2 flex h-20 items-end gap-2">
         {years.map(([y, v], i) => (
@@ -379,7 +360,8 @@ function DemandCard({ spot }: { spot: Spot }) {
 /** Today's rule for this lot or town, or HB 2186. */
 function RulesCard({ spot }: { spot: Spot }) {
   const ruleMode = useTool((s) => s.rule);
-  const { town: w, lot } = spot;
+  const w = spot.town;
+  const lot = lotRuleOf(spot);
   const coded = !!w.adu_rule;
   return (
     <Card title={ruleMode === 'hb2186' ? 'Rules under HB 2186' : `Rules today${w.NAMELSAD ? ` · ${w.NAMELSAD}` : ''}`} tag="Rules">
@@ -427,7 +409,7 @@ function TownCard({ spot }: { spot: Spot }) {
   const mid = n(`adus_mid_${ruleMode}`);
   const top = Math.max(cur ?? 0, hb ?? 0, 1);
   return (
-    <Card title={(w.NAMELSAD as string) || 'This town'} tag="Planner view">
+    <Card title={(w.NAMELSAD as string) || 'This town'} tag="Planner view" fold>
       <div className="-mt-1 mb-1 text-caption text-slate-500">Base case: 600 sq ft</div>
       <KV k={`ADUs by 2031 (${ruleMode === 'hb2186' ? 'HB 2186' : "today's rules"})`} v={mid != null ? `${fmt(mid)} (range ${fmt(n(`adus_low_${ruleMode}`))} to ${fmt(n(`adus_high_${ruleMode}`))})` : null} />
       {(cur != null || hb != null) && (

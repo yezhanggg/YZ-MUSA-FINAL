@@ -41,7 +41,7 @@ const PAGES: Record<Course, Page> = {
     methods: [
       { title: 'Sample and labels', body: 'Pick 1 km boxes in urban, suburban and rural tracts. Group the 56 Chesapeake classes into 4: building, tree, open ground, other. Cumberland and Centre counties are held out for testing.' },
       { title: 'Random Forest baseline', body: 'Classify each pixel from its 4 bands plus NDVI. This is the simple model to beat.' },
-      { title: 'U-Net', body: <>Train a U-Net on 256 x 256 tiles to label every pixel. On the held-out counties it scores a mean IoU of {NUMBERS.unetMiou}, against {NUMBERS.rfMiou} for the Random Forest.</> },
+      { title: 'U-Net', body: <>Train a U-Net with a pretrained ResNet-34 encoder on 384 x 384 crops to label every pixel. On the held-out counties it scores a mean IoU of {NUMBERS.unetMiou}, against {NUMBERS.rfMiou} for the Random Forest.</> },
       { title: 'Pick single-family lots', body: 'Keep lots with one main house outline. Smaller outlines count as garages or sheds.' },
       { title: 'Fit test', body: 'Take each lot, minus 5 ft from the lot lines and 10 ft around the house. A 20 x 30 ft spot has to fit in open ground, in either direction. Run it again with trees not allowed.' },
       { title: 'Statewide', body: <>Fit rates from the pilot lots are applied to single-family homes in every tract, by urban, suburban and rural. That gives about {NUMBERS.lotsWithRoom} lots with room.</> },
@@ -170,7 +170,7 @@ function Credits() {
   return (
     <footer className="mt-14 space-y-1.5 border-t border-stone-200 pt-5 text-caption leading-relaxed text-slate-500">
       <p>
-        Map data © <a className="underline hover:text-slate-800" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors (ODbL). Basemap <a className="underline hover:text-slate-800" href="https://openfreemap.org/" target="_blank" rel="noreferrer">OpenFreeMap</a>. Search <a className="underline hover:text-slate-800" href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a> by komoot. Building outlines © Microsoft (ODbL). Map by <a className="underline hover:text-slate-800" href="https://maplibre.org/" target="_blank" rel="noreferrer">MapLibre</a>.
+        Map data © <a className="underline hover:text-slate-800" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors (ODbL). Basemap <a className="underline hover:text-slate-800" href="https://openfreemap.org/" target="_blank" rel="noreferrer">OpenFreeMap</a>. Search <a className="underline hover:text-slate-800" href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a> by komoot. Building outlines © Microsoft (ODbL). Parcels: City of Philadelphia (PWD), Cumberland County GIS. Map by <a className="underline hover:text-slate-800" href="https://maplibre.org/" target="_blank" rel="noreferrer">MapLibre</a>.
       </p>
       <p>AI use: Claude Code wrote the scripts, tool, docs, and notebook code at my request. I set the question, design, and checks.</p>
       <p className="flex flex-wrap items-center gap-x-3 gap-y-1">

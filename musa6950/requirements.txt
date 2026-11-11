@@ -1,6 +1,8 @@
 # Already in my conda env "geoai". For a new machine: pip install -r musa6950/requirements.txt
 torch
 torchvision
+segmentation-models-pytorch   # U-Net v2 (ResNet-34 encoder)
+timm
 rasterio
 geopandas
 fiona

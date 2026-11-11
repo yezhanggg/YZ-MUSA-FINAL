@@ -3,16 +3,16 @@
 
 export const NUMBERS = {
   /** U-Net mean IoU on the held-out test counties (Cumberland + Centre). */
-  unetMiou: '0.65',
+  unetMiou: '0.70',
   /** Random Forest mean IoU on the same pixels. */
   rfMiou: '0.36',
   /** Single-family lots in PA with room for a 600 sq ft ADU. */
-  lotsWithRoom: '2.55 million',
+  lotsWithRoom: '2.59 million',
   /** Share of tracts where an ADU pays off at the mid build cost. */
   paysShare: '20%',
   /** ADUs by 2031, mid case. */
   adusHb2186: 'about 16,900',
-  adusToday: 'about 900',
+  adusToday: 'about 1,200',
 } as const;
 
 /** Build cost per sq ft, before soft costs. */
