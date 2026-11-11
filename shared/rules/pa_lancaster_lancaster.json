@@ -1,0 +1,422 @@
+{
+  "provenance": {
+    "jurisdiction": "Lancaster (city), PA",
+    "instrument": "City of Lancaster Zoning, Chapter 300 (Ord. No. 6-2013, adopted 7-23-2013), with 300 Attachment 2 Table of Permitted Uses and 300 Attachment 3 Table of Height, Area and Bulk Regulations",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "The zoning chapter has no accessory dwelling unit or similar term. Searched definitions (Art XVII), the Table of Permitted Uses, accessory uses (300-16), accessory structures (300-27), multiple principal buildings (300-28), conversions (300-31) and parking (300-41, 300-44). eCode360 New Laws for Ch 300: Ord. No. 07-2026 (7-14-2026, data centers). Not ADU related.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/8122408",
+      "https://ecode360.com/27422914",
+      "https://ecode360.com/8122697",
+      "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf",
+      "https://ecode360.com/8122698",
+      "https://ecode360.com/8122703",
+      "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+      "https://ecode360.com/8122834",
+      "https://ecode360.com/8122840",
+      "https://ecode360.com/8122844",
+      "https://ecode360.com/8122909",
+      "https://ecode360.com/8122940",
+      "https://ecode360.com/laws/LA1674",
+      "https://www.cityoflancasterpa.gov/departments/department-of-community-planning-economic-development/bureau-of-planning/",
+      "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Lancaster",
+    "municipality_type": "city",
+    "geoid": "4207141216",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/8122408",
+    "code_current_through": "2025-12-16",
+    "code_current_through_note": "eCode360 header: Includes legislation through 12-16-2025. Use table PDF marked Supp 39, Dec 2023. Bulk table PDF marked Supp 38, Feb 2023.",
+    "checks": [
+      "No ADU, accessory apartment, in-law or similar term in the zoning chapter",
+      "Closest path 1: a second residential unit in a separate building on a lot with a single-family dwelling, as more than one principal building (300-28A). Needs a land development plan. Yard and other requirements are met for the whole lot. Lot area for two units is not spelled out. Ask the Bureau of Planning",
+      "300-44E names this case: parking for a second residential unit in a separate building may be reduced or waived by special exception with a parking study",
+      "Closest path 2: conversion of an existing building of at least 2,000 gross sq ft to a two-family dwelling by special exception in R3, R4, RO, MU, C1, C2. Not listed in R1 or R2 (300 Attachment 2)",
+      "Accessory uses may not exceed 25% of the principal use floor area (300-16). A dwelling unit as an accessory use is not listed",
+      "Each dwelling unit holds one family or one nonfamily unit. Family: relatives plus at most one unrelated person, or two unrelated persons (Art XVII)",
+      "Minimum habitable floor area: efficiency 400, one bedroom 550, two bedrooms 700 sq ft (300-30)"
+    ],
+    "notes": "Zoning office: Bureau of Planning, Department of Community Planning and Economic Development (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb."
+  },
+  "adu": {
+    "status": {
+      "value": "not_addressed",
+      "section": "Art XVII Definitions, 300 Attachment 2, 300-16, 300-27, 300-28",
+      "url": "https://ecode360.com/27422914",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No accessory dwelling term or use in the zoning chapter."
+    },
+    "term": {
+      "value": null,
+      "section": "Art XVII Definitions",
+      "url": "https://ecode360.com/27422914",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No term. Nearest text: 'a second residential unit is proposed in a separate building as per § 300-28A' (300-44E)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "300-16, 300 Attachment 2, Art XI",
+      "url": "https://ecode360.com/8122698",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No accessory unit use exists, so an accessory unit would need a use variance from the Zoning Hearing Board. Alternatives: second principal dwelling under 300-28A, or two-family conversion by special exception."
+    },
+    "fallback_path": {
+      "value": "special_exception",
+      "section": "300 Attachment 2, Two-family dwelling (b)(i)",
+      "url": "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Conversion of an existing building, minimum 2,000 gross square feet, to two-family: S in R3, R4, RO, MU, C1, C2."
+    },
+    "detached_in_yard_path": {
+      "value": "by_right",
+      "section": "300-28A",
+      "url": "https://ecode360.com/8122840",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "more than one building housing a permitted principal residential use may be permitted on the lot. Needs a land development plan and full yard and lot rules."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": null,
+      "section": "300 Attachment 2",
+      "url": "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU use in any district. Two-family conversion by special exception in R3, R4, RO, MU, C1, C2."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "300 Attachment 3",
+      "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. District lot area per dwelling applies to a second principal dwelling. How it is counted is not stated."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": null,
+      "section": "300-16, 300-28A",
+      "url": "https://ecode360.com/8122698",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU forms. A separate building is a principal dwelling under 300-28A. A unit inside the house is a two-family conversion."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "300-16",
+      "url": "https://ecode360.com/8122698",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU cap. Accessory uses may not exceed 25% of the gross floor area of the principal use."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "300-16",
+      "url": "https://ecode360.com/8122698",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU share. The 25% accessory use cap applies to accessory uses in general."
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "300-30A(2)",
+      "url": "https://ecode360.com/8122844",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Efficiency unit: 400 square feet. One bedroom 550. Two bedrooms 700."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "300-27, 300 Attachment 3",
+      "url": "https://ecode360.com/8122834",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No separate accessory structure height cap found. District height applies."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "300-27A",
+      "url": "https://ecode360.com/8122834",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No accessory structure of any kind shall be erected or placed in any required front, secondary front, or side yard."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "300-27D, 300-28A",
+      "url": "https://ecode360.com/8122834",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory structures: three-foot setback from side or rear lot line, or less with a recorded easement. A dwelling in a separate building is a principal building and meets district yards. See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "300-27D, 300-28A",
+      "url": "https://ecode360.com/8122834",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory structures 3 ft. A separate dwelling building meets principal yards. See districts."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "300-27, 300-28",
+      "url": "https://ecode360.com/8122834",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No separation distance found."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "300 Attachment 3",
+      "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Set by district and use. See districts."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "300 Attachment 3",
+      "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Total coverage set by district and use. See districts notes."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/8122408",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule, so no owner occupancy rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/8122408",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/8122408",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "300-41A table, 300-44E",
+      "url": "https://ecode360.com/8122909",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "One or more dwelling and/or efficiency units: 1 per dwelling and/or efficiency unit. 300-44E allows a special exception to reduce it for a second unit in a separate building."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/8122408",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "districts": {
+    "R1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "300 Attachment 3, R1 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot area for one single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "300 Attachment 3, R1 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Front yard."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "300 Attachment 3, R1 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal side yard. Accessory structures: 3 ft (300-27D)."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "300 Attachment 3, R1 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal rear yard. Accessory structures may sit in it, 3 ft from lines (300-27D)."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "300 Attachment 3, R1 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage. Total 45%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300 Attachment 3, R1 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "300-41A",
+        "url": "https://ecode360.com/8122909",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1 per dwelling unit."
+      }
+    },
+    "R2": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "300 Attachment 3, R2 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot area for one single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "300 Attachment 3, R2 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Front yard. Note (b) build-to rules apply in R2 and R3."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "300 Attachment 3, R2 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal side yard. Accessory structures: 3 ft (300-27D)."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300 Attachment 3, R2 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal rear yard. Accessory structures may sit in it, 3 ft from lines (300-27D)."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "300 Attachment 3, R2 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage. Total 50%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300 Attachment 3, R2 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "300-41A",
+        "url": "https://ecode360.com/8122909",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1 per dwelling unit."
+      }
+    },
+    "R3": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "300 Attachment 3, R3 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot area for one single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "300 Attachment 3, R3 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Front yard. Note (b) build-to rules apply in R2 and R3."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "300 Attachment 3, R3 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal side yard. Accessory structures: 3 ft (300-27D)."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300 Attachment 3, R3 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal rear yard. Accessory structures may sit in it, 3 ft from lines (300-27D)."
+      },
+      "max_building_coverage": {
+        "value": 0.45,
+        "section": "300 Attachment 3, R3 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage. Total 60%."
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "300 Attachment 3, R3 Single-family detached dwelling",
+        "url": "https://ecode360.com/attachment/336308/LA1674-300c%20Table%20of%20Height%20Area%20and%20Bulk%20Regs.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "300-41A",
+        "url": "https://ecode360.com/8122909",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1 per dwelling unit."
+      }
+    }
+  }
+}
