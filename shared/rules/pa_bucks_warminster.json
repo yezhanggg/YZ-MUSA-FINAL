@@ -27,6 +27,7 @@
       "https://ecode360.com/36209821",
       "https://ecode360.com/36209829",
       "https://ecode360.com/36210311",
+      "https://ecode360.com/36210227",
       "https://ecode360.com/print/WA2486?guid=14238962",
       "https://ecode360.com/WA2486/laws"
     ],
@@ -45,11 +46,13 @@
       "The unit is part of the house or in an existing accessory structure such as a garage that sits inside the district building envelope, that is outside all required yards (27-1793.1.D, 27-2104)",
       "A new separate building for the unit needs a lot 1.5 times the district minimum: R-1 30,000, R-2 18,750, R-3 and R-4 13,500 sq ft (27-1793.1.D)",
       "No basement unit unless one wall is at grade with direct outside access. No exterior change that makes the house look like more than one dwelling (27-1793.1.E, F)",
-      "The accessory building may not be taller than the house (27-1793.1.G). Accessory structures are capped at 20 ft and 500 sq ft of ground floor area (27-1786.1.D, G)",
+      "The accessory building may not be taller than the house (27-1793.1.G). Accessory structures may not exceed 20 ft (27-1786.1.D) and 'a total of 500 square feet of ground floor area' on the lot, shared with any existing garage (27-1786.1.G)",
       "A Bucks County Department of Health permit (public sewer or adequate septic) is needed before the zoning permit (27-1793.1.B)",
-      "27-1793 sets no floor area cap and no owner occupancy rule",
+      "27-1793 sets no floor area cap for the unit and no owner occupancy rule. A new detached in-law building falls under the accessory limit of 'a total of 500 square feet of ground floor area' on the lot (27-1786.1.G, reading)",
+      "Weak reading: R-2 asks 12,500 sq ft 'for each dwelling' (27-502.1.A). If the in-law unit counted as a dwelling, R-2 would need 25,000 sq ft. 27-1793.1.A sets its own 9,000 sq ft test",
+      "Nonconforming lots 'are subject to the applicable dimensional regulations for the zoning district' (27-2401.2). 27-1793 asks only 9,000 sq ft and does not tie the unit to a conforming lot",
       "Parking: two spaces per dwelling unit for residential uses, garage spaces do not count (27-2200.1.C). The code does not say whether the in-law dwelling counts as a dwelling unit",
-      "R-3 and R-4 allow a two-family (semidetached) dwelling by right (27-601, 27-701)"
+      "R-3 and R-4 allow a two-family (semidetached) dwelling by right (27-601, 27-701). R-4 needs 10,000 sq ft for the pair. R-3 reads as 20,000 sq ft ('other principal uses', 27-602.1.A)"
     ],
     "notes": "Zoning office: Warminster Township, Department of Licenses and Inspections (named in 27-1786.1.B). Township site not opened. The Chapter 'Housing' of the Township code was not read."
   },
@@ -107,8 +110,8 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "Reading: R-3 sets 9,000 sq ft only for single-family dwellings and 20,000 sq ft for 'other principal uses'. Ask which applies.",
-          "min_lot_sqft": null,
+          "conditions": "Reading: R-3 sets 9,000 sq ft only 'for each single-family dwelling' and 20,000 sq ft for 'other principal uses', so a two-family dwelling takes 20,000 sq ft. Use 5 sets no lot area. 100 ft width at the building line.",
+          "min_lot_sqft": 20000,
           "section": "27-601.1, 27-602.1.A, 27-1707",
           "url": "https://ecode360.com/36208042"
         }
@@ -116,8 +119,8 @@
       "section": "27-601, 27-701, 27-1707",
       "url": "https://ecode360.com/36208420",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "Not ADUs."
+      "confidence": "secondary",
+      "note": "Not ADUs. R-4 figures verified (27-702.1.A(2)). The R-3 lot is a reading of 27-602.1.A."
     }
   },
   "eligibility": {
@@ -209,7 +212,7 @@
         },
         {
           "kind": "existing_structure",
-          "condition": "A unit outside the house must be in an existing accessory structure, such as a garage, inside the district building envelope (outside all required yards).",
+          "condition": "A unit outside the house must be in an existing accessory structure, such as a garage, inside the district building envelope (the lot minus all required yards). A garage that stands in a required side or rear yard does not qualify.",
           "effect": "bars",
           "applies_to": [
             "garage_conversion",
@@ -220,6 +223,20 @@
           "when": "always",
           "test": "has_accessory_building",
           "section": "27-1793.1.D, 27-2104.2",
+          "url": "https://ecode360.com/36209544"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "Above a garage only where the existing garage already has the upper floor space. Adding a story is not clearly 'contained in an existing accessory structure'.",
+          "effect": "condition",
+          "applies_to": [
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": "has_accessory_building",
+          "section": "27-1793.1.D",
           "url": "https://ecode360.com/36209544"
         },
         {
@@ -359,7 +376,15 @@
       "url": "https://ecode360.com/36209544",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "27-1793 sets no floor area cap."
+      "note": "27-1793 sets no floor area cap for the unit. A unit inside the house has no size limit."
+    },
+    "max_sqft_accessory_building": {
+      "value": 500,
+      "section": "27-1786.1.G",
+      "url": "https://ecode360.com/36209475",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory structures 'shall not exceed a total of 500 square feet of ground floor area.' Reading: one total for all accessory buildings on the lot, so an existing garage uses part of it. Reaches a new in-law building."
     },
     "max_share_of_house": {
       "value": null,
@@ -384,7 +409,7 @@
       "section": "27-1786.1.D, 27-1793.1.G",
       "url": "https://ecode360.com/36209475",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
+      "confidence": "verified",
       "note": "'No accessory building, structure, or use shall exceed 20 feet in height.' The in-law building also may not exceed the house height."
     },
     "height_capped_at_house": {
@@ -420,20 +445,20 @@
       "note": "District rear yard applies (building envelope). Ordinary accessory structures need 5 ft (27-1786.1.C(1))."
     },
     "separation_ft": {
-      "value": 10,
-      "section": "27-1786.1.C(3)",
-      "url": "https://ecode360.com/36209475",
+      "value": null,
+      "section": "27-1786.1.C(3), 27-1793.1.D",
+      "url": "https://ecode360.com/36209544",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "'a minimum of ten-foot offset between all structures'."
+      "confidence": "verified",
+      "note": "No separation rule reaches an in-law building. The 10 ft offset in 27-1786.1.C(3) is for accessory structures 'within required side and rear yard'. An in-law building must sit inside the building envelope."
     },
-    "accessory_structure_max_sqft": {
-      "value": 500,
-      "section": "27-1786.1.G",
-      "url": "https://ecode360.com/36209475",
+    "setback_rear_alley_ft": {
+      "value": null,
+      "section": "27-1793.1.D, 27-2104.2",
+      "url": "https://ecode360.com/36209544",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Detached garages, sheds and other accessory structures 'shall not exceed a total of 500 square feet of ground floor area.' Reading: reaches a new in-law building."
+      "confidence": "verified",
+      "note": "No alley rear yard. The in-law structure must be inside the building envelope, so the district rear yard applies."
     },
     "internal_uses_district_height": {
       "value": true,
