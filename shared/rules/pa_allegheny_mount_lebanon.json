@@ -4,7 +4,7 @@
     "instrument": "Mt. Lebanon Code, Chapter 20 Zoning (effective September 26, 2005, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 (code MO6716) dated 2026-02-10. Mt. Lebanon is a home rule municipality. The Census name is Mount Lebanon township. New Laws lists one Chapter 20 amendment: Ord. No. 3383 (2026-07-28), smoke shops as a conditional use in C-2. It was opened and does not touch residential uses. Its PDF shows 'Enacted: July 28, 2028', which looks like a typo.",
+    "status_detail": "eCode360 (code MO6716) dated 2026-02-10. Mt. Lebanon is a home rule municipality. The Census name is Mount Lebanon township. New Laws lists one Chapter 20 amendment: Ord. No. 3383 (2026-07-28), smoke shops as a conditional use in C-2. It was opened and does not touch residential uses. Its PDF header shows 'Enacted: July 28, 2028', a typo: the same PDF says introduced June 23, 2026 and passed in July 2026.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/42261300",
@@ -36,12 +36,13 @@
     "checks": [
       "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
       "R-1 and R-2 allow single-family detached dwellings and listed accessory uses. A second dwelling unit is not listed (20-202.2, 20-203.2)",
-      "In R-1 and R-2 'only one Principal Building may be built on each Lot' (20-104.5)",
+      "In R-1 and R-2 'only one Principal Building may be built on each Lot, except when such Lot is within an Overlay (Transitional) area of said district' (20-104.5)",
+      "One storage structure per residential lot (20-803.3.6)",
       "The catch-all special exception for unlisted uses applies only on land in the C-2 district (20-109)",
       "R-3 and R-4 allow two-family dwellings by right on a 6,000 sq ft lot, 50 ft wide (20-204, 20-205)",
       "A conversion that adds dwelling units must meet minimum unit sizes: 500 sq ft (0 BR), 650 (1 BR), 750 (2 BR), 850 (3 BR). 'No Basement shall contain a complete Dwelling Unit' (20-807)",
       "Accessory structures in R-1 to R-3: 14 ft high, 5 ft from side and rear lines. Not in the front yard (district tables, 20-803.1)",
-      "A rental or registration rule outside Chapter 20 was not checked"
+      "An eCode360 search of the Mt. Lebanon Code for rental registration found no rental license or registration chapter. Chapter 8 (licenses) has none"
     ],
     "notes": "Zoning office: Mt. Lebanon Inspection Office (Zoning Officer, 20-1104). Municipal site not opened. Searched Chapter 20 (full print view) for: accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, au pair, servant, cottage, garage apartment, conversion, kitchen. No ADU provision."
   },
@@ -60,7 +61,7 @@
       "url": "https://ecode360.com/42261383",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "The code has no ADU text. R-1 and R-2: 'only one Principal Building may be built on each Lot'."
+      "note": "The code has no ADU text. R-1 and R-2: 'only one Principal Building may be built on each Lot', except in an Overlay (Transitional) area."
     }
   },
   "approval": {
