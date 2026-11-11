@@ -251,6 +251,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "Form, setback, design and rental conditions."
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "800-31B",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'the building shall be located on a lot which meets the requirement for the minimum lot size, as specified in the applicable zoning district.'"
     }
   },
   "form": {

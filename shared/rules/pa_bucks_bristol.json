@@ -237,6 +237,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "No historic rule in G3."
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "205-16G(3)(c)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The lot must conform to the minimum lot area requirement for Use A1 Single-Family Detached Dwelling in the applicable zoning district.'"
     }
   },
   "form": {
