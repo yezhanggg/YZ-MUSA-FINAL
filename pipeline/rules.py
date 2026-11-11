@@ -977,6 +977,8 @@ def _town_heights(picked: Picked, status: Optional[str], state: bool, limits: di
         detached = principal
         notes.append(f"No accessory height cap in the code. The district height ({principal:g} ft) is used for a detached unit")
         citations["max_height_by_type.detached_new"] = _citation(*principal_hit)
+    if detached is None and not state:
+        notes.append("No height number on file for a detached unit. Ask the zoning officer")
     if state and "max_height_ft" in limits:
         lim = limits["max_height_ft"]
         floor = lim["for_this_lot"]
