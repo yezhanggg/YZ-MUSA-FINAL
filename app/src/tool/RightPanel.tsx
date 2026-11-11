@@ -2,7 +2,7 @@
 // card folded into "Details" at the bottom. On tablet and phone the same pieces fill the bottom sheet's tabs.
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { ChevronDown, MousePointerClick, X } from 'lucide-react';
+import { ChevronDown, MousePointerClick, PanelRightClose, X } from 'lucide-react';
 import { PANEL, PANEL_BODY, PanelHeader, IconButton } from '../components/Panel';
 import { SPRING_PANEL } from '../components/primitives';
 import { cx } from '../lib/cx';
@@ -92,13 +92,32 @@ export function ReportStack() {
   );
 }
 
-export default function RightPanel({ style }: { style: React.CSSProperties }) {
+/** Wide screens: a fixed column. Laptop: a wide drawer over the map (`drawer`), closed with the button. */
+export default function RightPanel({ style, drawer, onClose }: { style: React.CSSProperties; drawer?: boolean; onClose?: () => void }) {
   const spot = useTool((s) => s.spot);
   const busy = useTool((s) => s.busy);
   const head = spot ? reportTitle(spot) : null;
   return (
-    <motion.aside initial={{ opacity: 0, x: 16, filter: 'blur(6px)' }} animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }} transition={{ ...SPRING_PANEL, delay: 0.15 }} className={cx(PANEL, 'absolute z-20')} style={style} aria-label="Ask and report">
-      <PanelHeader eyebrow={spot ? 'Your site' : 'Ask about this site'} title={head?.label ?? 'Try a backyard home'} sub={head?.sub ?? 'Pick a sample, then click a lot on the map.'} actions={spot ? <IconButton label="Close this site" onClick={clearSpot}><X className="h-4 w-4" /></IconButton> : undefined}>
+    <motion.aside
+      initial={drawer ? { x: '105%' } : { opacity: 0, x: 16, filter: 'blur(6px)' }}
+      animate={drawer ? { x: 0 } : { opacity: 1, x: 0, filter: 'blur(0px)' }}
+      exit={drawer ? { x: '105%', transition: { duration: 0.2 } } : undefined}
+      transition={{ ...SPRING_PANEL, delay: drawer ? 0 : 0.15 }}
+      className={cx(PANEL, drawer ? 'absolute z-40' : 'absolute z-20')}
+      style={style}
+      aria-label="Ask and report"
+    >
+      <PanelHeader
+        eyebrow={spot ? 'Your site' : 'Ask about this site'}
+        title={head?.label ?? 'Try a backyard home'}
+        sub={head?.sub ?? 'Pick a sample, then click a lot on the map.'}
+        actions={
+          <>
+            {spot && <IconButton label="Close this site" onClick={clearSpot}><X className="h-4 w-4" /></IconButton>}
+            {drawer && onClose && <IconButton label="Hide results" onClick={onClose}><PanelRightClose className="h-4 w-4" /></IconButton>}
+          </>
+        }
+      >
         <AskBox />
         {busy && <div className="mt-2 h-0.5 overflow-hidden rounded-full bg-violet-100"><motion.div className="h-full w-1/3 rounded-full bg-violet-500" animate={{ x: ['-100%', '300%'] }} transition={{ repeat: Infinity, duration: 1, ease: 'easeInOut' }} /></div>}
       </PanelHeader>

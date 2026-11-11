@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react';
 import { openResearch, useResearch, type Course } from '../lib/router';
 import { cx } from '../lib/cx';
 import { SPRING_TAB } from './primitives';
-import { GUTTER, narrow, useMode, widths } from '../tool/layout';
+import { GUTTER, narrow, rightDrawer, useMode, widths } from '../tool/layout';
 
 export const RESEARCH: { course: Course; label: string; line: string }[] = [
   { course: '6950', label: 'MUSA 6950: Room on the lot', line: 'AI on aerial images and a 600 sq ft fit test' },
@@ -20,7 +20,8 @@ export default function TopBar() {
   const mode = useMode();
   const { lw, rw } = widths(mode);
   // Centred over the open map between the panels; on tablet and phone, right of the controls button.
-  const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: lw + GUTTER * 2, right: rw + GUTTER * 2 };
+  // Laptop: the results drawer sits under the bar, its open button top right (about 120 px).
+  const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: lw + GUTTER * 2, right: rightDrawer(mode) ? 120 + GUTTER * 2 : rw + GUTTER * 2 };
   const [open, setOpen] = useState(false);
   const shut = useRef<number | undefined>(undefined);
   const wrap = useRef<HTMLDivElement>(null);

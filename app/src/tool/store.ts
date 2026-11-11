@@ -42,6 +42,8 @@ interface ToolState {
   hideNoRoom: boolean;
   /** Tablet / phone bottom sheet: open or only peeking. */
   sheetOpen: boolean;
+  /** Laptop: the results drawer over the map is open. */
+  resultsOpen: boolean;
   set: (p: Partial<ToolState>) => void;
   setAdu: (p: Partial<Adu>) => void;
 }
@@ -83,6 +85,7 @@ export const useTool = create<ToolState>((set) => ({
   sfOnly: true,
   hideNoRoom: false,
   sheetOpen: false,
+  resultsOpen: false,
   adu: typeof window === 'undefined' ? BASE : aduFromHash(window.location.hash),
   set: (p) => set(p),
   setAdu: (p) =>

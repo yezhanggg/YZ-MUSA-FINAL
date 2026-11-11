@@ -3,29 +3,34 @@
 //   tablet / phone: controls in a drawer from the left, one bottom sheet with tabs
 import { useEffect, useState, type CSSProperties } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { Loader2, MousePointerClick, SlidersHorizontal } from 'lucide-react';
+import { Loader2, MousePointerClick, PanelRightOpen, SlidersHorizontal } from 'lucide-react';
 import MapCanvas from './MapCanvas';
 import LeftPanel from './LeftPanel';
 import RightPanel from './RightPanel';
 import BottomSheet from './BottomSheet';
 import MapControls from './MapControls';
 import { aduFromHash, useTool } from './store';
-import { CONTROLS_W, GUTTER, SHEET_MAX, SHEET_PEEK, TOP, narrow, sheetOpenHeight, useMode, widths } from './layout';
+import { CONTROLS_W, GUTTER, SHEET_MAX, SHEET_PEEK, TOP, drawerWidth, narrow, rightDrawer, sheetOpenHeight, useMode, widths } from './layout';
 
 export default function ToolPage() {
   const status = useTool((s) => s.status);
   const hasSpot = useTool((s) => !!s.spot || s.busy);
   const mode = useMode();
   const isNarrow = narrow(mode);
-  const { lw, rw } = widths(mode);
+  const isDrawer = rightDrawer(mode);
+  const resultsOpen = useTool((s) => s.resultsOpen);
+  const { lw } = widths(mode);
   const [drawer, setDrawer] = useState(false);
   const sheetOpen = useTool((s) => s.sheetOpen);
   const [vh, setVh] = useState(() => window.innerHeight);
+  const [vw, setVw] = useState(() => window.innerWidth);
   useEffect(() => {
-    const on = () => setVh(window.innerHeight);
+    const on = () => (setVh(window.innerHeight), setVw(window.innerWidth));
     window.addEventListener('resize', on);
     return () => window.removeEventListener('resize', on);
   }, []);
+  // Laptop: the results drawer takes this much of the map when open, nothing when closed.
+  const rw = isDrawer ? (resultsOpen ? drawerWidth(vw) : 0) : widths(mode).rw;
   // On tablet and phone, the map buttons and credits ride just above the sheet, open or peeking.
   const sheetH = sheetOpen ? sheetOpenHeight(vh) : SHEET_PEEK;
   // Room left for the map buttons between the top bar and the sheet: full set, 2D/3D only, or none.
@@ -47,12 +52,16 @@ export default function ToolPage() {
   }, [drawer]);
   const spotN = useTool((s) => s.spot?.n);
   useEffect(() => setDrawer(false), [spotN]);
+  // A new lot opens the results drawer.
+  useEffect(() => {
+    if (spotN) useTool.getState().set({ resultsOpen: true });
+  }, [spotN]);
   useEffect(() => {
     if (!isNarrow) setDrawer(false);
   }, [isNarrow]);
 
   const leftStyle: CSSProperties = isNarrow ? { left: GUTTER, top: TOP, bottom: GUTTER, width: `min(${lw || 360}px, calc(100% - ${GUTTER * 2}px))` } : { left: GUTTER, top: TOP, bottom: GUTTER, width: lw };
-  const rightStyle: CSSProperties = { right: GUTTER, top: TOP, bottom: GUTTER, width: rw };
+  const rightStyle: CSSProperties = { right: GUTTER, top: TOP, bottom: GUTTER, width: isDrawer ? drawerWidth(vw) : rw };
   // Map controls: bottom right of the open map area. Attribution: bottom left of it, out of their way.
   const controls: CSSProperties = isNarrow ? { right: GUTTER, bottom: sheetH + GUTTER, transition: 'bottom .35s cubic-bezier(.22,1,.36,1)' } : { right: rw + GUTTER * 2, bottom: GUTTER };
   const shellVars = { ['--attr-left' as string]: `${isNarrow ? GUTTER : lw + GUTTER * 2}px`, ['--attr-bottom' as string]: `${isNarrow ? sheetH + GUTTER : GUTTER}px` } as CSSProperties;
@@ -78,7 +87,19 @@ export default function ToolPage() {
       ) : (
         <>
           <LeftPanel style={leftStyle} />
-          <RightPanel style={rightStyle} />
+          {isDrawer ? (
+            <AnimatePresence>
+              {resultsOpen ? (
+                <RightPanel key="results" style={rightStyle} drawer onClose={() => useTool.getState().set({ resultsOpen: false })} />
+              ) : (
+                <motion.button key="open-results" type="button" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => useTool.getState().set({ resultsOpen: true })} className="tap absolute z-40 flex h-11 items-center gap-2 rounded-xl bg-white/95 px-3 text-small font-semibold text-slate-700 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur hover:text-slate-900" style={{ right: GUTTER, top: GUTTER }}>
+                  <PanelRightOpen className="h-5 w-5" /> Results
+                </motion.button>
+              )}
+            </AnimatePresence>
+          ) : (
+            <RightPanel style={rightStyle} />
+          )}
         </>
       )}
       {controlsSize !== 'none' && <MapControls style={controls} size={controlsSize} />}

@@ -3,8 +3,9 @@ import { defineConfig } from "vitest/config";
 import type { Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { cpSync, existsSync, readdirSync, readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { cpSync, createReadStream, existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { homedir } from "node:os";
+import { resolve, sep } from "node:path";
 
 const ROOT = import.meta.dirname;
 
@@ -78,11 +79,58 @@ function devApi(): Plugin {
   };
 }
 
+/**
+ * In `vite dev`, serve the lot records (built outside the repo) at /data/lots2/, the default VITE_LOT_DATA_URL.
+ * The folder is LOT_DATA_DIR, default ~/musa-drive/lots. Byte ranges are supported for the parcel PMTiles.
+ * .json.gz files go out as plain bytes: the browser decodes them (app/src/lib/lot/load.ts).
+ */
+function devLotData(): Plugin {
+  const MOUNT = "/data/lots2/";
+  const TYPES: Record<string, string> = { ".json": "application/json", ".gz": "application/octet-stream", ".pmtiles": "application/octet-stream" };
+  return {
+    name: "dev-lot-data",
+    apply: "serve",
+    configureServer(server) {
+      const root = resolve((process.env.LOT_DATA_DIR ?? "~/musa-drive/lots").replace(/^~(?=$|\/)/, homedir()));
+      server.middlewares.use((req, res, next) => {
+        const url = decodeURIComponent((req.url ?? "").split("?")[0]);
+        if (!url.startsWith(MOUNT)) return next();
+        const file = resolve(root, url.slice(MOUNT.length));
+        if (!file.startsWith(root + sep) || !existsSync(file) || !statSync(file).isFile()) {
+          res.statusCode = 404;
+          return res.end("not found");
+        }
+        const size = statSync(file).size;
+        const ext = Object.keys(TYPES).find((e) => file.endsWith(e));
+        res.setHeader("content-type", ext ? TYPES[ext] : "application/octet-stream");
+        res.setHeader("accept-ranges", "bytes");
+        res.setHeader("cache-control", "no-cache");
+        const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range ?? "");
+        if (m) {
+          const start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]));
+          const end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1;
+          if (start >= size || start > end) {
+            res.statusCode = 416;
+            res.setHeader("content-range", `bytes */${size}`);
+            return res.end();
+          }
+          res.statusCode = 206;
+          res.setHeader("content-range", `bytes ${start}-${end}/${size}`);
+          res.setHeader("content-length", String(end - start + 1));
+          return createReadStream(file, { start, end }).pipe(res);
+        }
+        res.setHeader("content-length", String(size));
+        createReadStream(file).pipe(res);
+      });
+    },
+  };
+}
+
 export default defineConfig({
   root: resolve(ROOT, "app"),
   base: "/",
   publicDir: "public",
-  plugins: [react(), tailwindcss(), lotIndex(), devApi(), copyQuarto()],
+  plugins: [react(), tailwindcss(), lotIndex(), devLotData(), devApi(), copyQuarto()],
   // The docs (musa*/docs/*.md) and figures live outside app/, so dev needs to read the repo root.
   server: { fs: { allow: [ROOT] } },
   build: { outDir: resolve(ROOT, "dist"), emptyOutDir: true, target: "es2022", chunkSizeWarningLimit: 1500 },
