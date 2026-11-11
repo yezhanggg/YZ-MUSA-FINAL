@@ -4,7 +4,7 @@
     "instrument": "Code of the Township of Ross, Chapter 27 Zoning, as published on eCode360, with the Table of Use Regulations (27 Attachment 1) and the Residential Use Dimensional Regulations Table (27 Attachment 2)",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 (code RO2521): includes legislation through 04-20-2026. The use table carries Ord. No. 2564 of 3/16/2026. New Laws (4): Ord. 2568 to 2571 (Ch 1, 13, 15). None amends Chapter 27. Read in the eCode360 print view and the attachment PDFs in a browser.",
+    "status_detail": "eCode360 (code RO2521): includes legislation through 04-20-2026. The use table carries Ord. No. 2564 of 3/16/2026. New Laws (4): Ord. 2568 to 2571 (Ch 1, 13, 15). None amends Chapter 27. Read in the eCode360 print view and the attachment PDFs in a browser. Currency gap: the code runs through 04-20-2026 and New Laws starts at Ord. No. 2568 (2026-09-21). Ordinances 2565 to 2567, if any, were not seen.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/RO2521",
@@ -24,7 +24,8 @@
       "https://ecode360.com/31085389",
       "https://ecode360.com/31080599",
       "https://www.ross.pa.us/35/Community-Development",
-      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt",
+      "https://ecode360.com/31085368"
     ],
     "verified_on": "2026-11-11",
     "county": "Allegheny",
@@ -36,51 +37,45 @@
     "code_current_through_note": "eCode360: Includes legislation through 04-20-2026. New Laws (4), none for Chapter 27.",
     "checks": [
       "The zoning code has no accessory dwelling unit or accessory apartment rule. The Table of Use Regulations has no ADU row. Land may be used only for uses permitted in 27-906 (27-901.1)",
-      "Uses similar to those in the Table of Use Regulations 'shall be permitted by conditional use' by the Board of Commissioners after Planning Commission review (27-904). Reading: a second unit may be heard this way. If not, a use variance",
+      "Uses similar to those in the Table of Use Regulations may be permitted by conditional use (27-904), judged against 'any use specifically listed in the zoning district'. A second unit is a two-family dwelling or a conversion, both listed. In R-1 and R-5 both are N, 'not permitted' (27-902.4). Reading: 27-904 does not reach a second unit. The path is a use variance",
       "R-1 allows 'Only one primary or main building' per lot (27-901.2)",
       "The accessory building definition includes 'guest houses, and domestic servant or caretaker living quarters for those employed on the premises'. Residential accessory structures are permitted in all residential districts (27-202, Table of Use Regulations)",
       "Residential accessory buildings: at most two per lot, 720 sq ft combined, 14 ft high to the peak. 5 ft from side lines, 15 ft from the rear line (100 to 720 sq ft). Not in the required front yard (27-906.6.D)",
       "Two-family dwellings are permitted in R-2, R-3 and R-4. Duplex lot area 5,000 sq ft per dwelling unit, 100 ft wide for two units (Table of Use Regulations, 27 Attachment 2)",
       "Conversion of an existing single-family detached dwelling into two or more apartments is a conditional use in R-2 and permitted in R-3 and R-4. 2,000 sq ft of lot per dwelling unit. 1.5 parking spaces per unit (27-202, 27-906.1.E)",
       "Parking for a single-family detached dwelling: two spaces per dwelling unit, one in a garage (27-906.1.A)",
-      "Owners of rental property report the names of their tenants to the Earned Income Tax Collector within 15 days of occupancy (11-101)"
+      "Owners of rental property report the names of their tenants to the Earned Income Tax Collector within 15 days of occupancy (11-101)",
+      "A single-family dwelling may be built on a lawful lot of record below the district minimum (27-1003.1). Nothing allows a second unit on such a lot",
+      "Lot area is stated per dwelling unit (SF/DU): R-1 10,000, R-2 and R-3 6,500 for single-family. Density R-1 4 per acre, R-2 and R-3 6 per acre (27 Attachment 2)"
     ],
-    "notes": "Zoning office: Community Development Department, https://www.ross.pa.us/35/Community-Development. Searched Chapter 27 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion, family suite. Pending: none on the New Laws list."
+    "notes": "Zoning office: Community Development Department, https://www.ross.pa.us/35/Community-Development. Searched Chapter 27 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion, family suite. Pending: none on the New Laws list. Review fixes 2026-11-11: term null, path variance, 27-904 not used as a path, lot area per unit, 27-1003."
   },
   "adu": {
     "term": {
-      "value": "domestic servant or caretaker living quarters",
-      "section": "27-202 'Building, accessory'",
+      "value": null,
+      "section": "27-202, 27-905",
       "url": "https://ecode360.com/31083989",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No ADU term. The accessory building definition includes 'domestic servant or caretaker living quarters for those employed on the premises'. Not a general ADU."
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, second dwelling. The accessory building definition names 'domestic servant or caretaker living quarters for those employed on the premises'. It is recorded as an alternative."
     },
     "status": {
       "value": "not_addressed",
       "section": "27-901.1, 27-905 Table of Use Regulations",
       "url": "https://ecode360.com/attachment/337943/RO2521-027a%20Table%20of%20Use%20Regulations.pdf",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Reading of a silent code. No ADU row in the use table. Only servant or caretaker quarters and guest houses are named, inside the accessory building definition."
+      "confidence": "verified",
+      "note": "The code has no ADU text. No ADU row in the use table."
     }
   },
   "approval": {
     "path": {
-      "value": "conditional_use",
-      "section": "27-904",
-      "url": "https://ecode360.com/31084626",
+      "value": "variance",
+      "section": "27-901.1, 27-902.4, MPC 910.2",
+      "url": "https://ecode360.com/31084617",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "'Uses similar to those set forth in the following Table of Use Regulations ... shall be permitted by conditional use'. Reading: a second unit may be heard as a similar use. Board of Commissioners hearing."
-    },
-    "unlisted_use_path": {
-      "value": "conditional_use",
-      "section": "27-904",
-      "url": "https://ecode360.com/31084626",
-      "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Similar uses by conditional use, after Planning Commission review. The use must have impact equal to or less than a listed use and meet the district area and bulk rules (27-904.1.A, B)."
+      "note": "No use except 'for the purposes permitted in § 27-906'. A second unit is a two-family dwelling or conversion. In R-1 and R-5 both are N. A use variance is the path. In R-2 to R-4 the two-family and conversion alternatives apply. 27-904 (similar uses) is at most a question to ask."
     },
     "fallback_path": {
       "value": "variance",
@@ -88,7 +83,7 @@
       "url": "https://ecode360.com/31084617",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "If the Board does not treat the unit as a similar use, or the lot fails a rule, a use variance from the Zoning Hearing Board."
+      "note": "Same as path."
     },
     "alternatives": {
       "value": [
@@ -102,7 +97,7 @@
             "R-4",
             "R-5"
           ],
-          "conditions": "Only for those employed on the premises. Residential accessory building rules: 720 sq ft combined, 14 ft high, 5 ft side, 15 ft rear.",
+          "conditions": "Only for those employed on the premises. Residential accessory building rules: 720 sq ft combined, 14 ft high, 5 ft side, 15 ft rear. In R-4 and R-5 single-family detached is N, so only beside an existing house.",
           "min_lot_sqft": null,
           "section": "27-202 'Building, accessory', 27-906.6.D, Table of Use Regulations",
           "url": "https://ecode360.com/31083989"
@@ -240,18 +235,12 @@
   },
   "form": {
     "types_allowed": {
-      "value": [
-        "internal",
-        "attached",
-        "detached_new",
-        "garage_conversion",
-        "over_garage"
-      ],
-      "section": "27-904, 27-905 Table of Use Regulations",
-      "url": "https://ecode360.com/31084626",
+      "value": [],
+      "section": "27-905 Table of Use Regulations",
+      "url": "https://ecode360.com/attachment/337943/RO2521-027a%20Table%20of%20Use%20Regulations.pdf",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Similar-use route: no form is written, so none is excluded. In R-1 a second main building is barred (27-901.2). A detached unit is bound by the 720 sq ft and 14 ft accessory caps."
+      "confidence": "verified",
+      "note": "No ADU form is listed."
     }
   },
   "envelope": {
@@ -346,12 +335,12 @@
       "note": "Not addressed in Chapter 27."
     },
     "max_adus": {
-      "value": null,
-      "section": "27-904",
-      "url": "https://ecode360.com/31084626",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "No count. The code lists no ADU."
+      "value": 0,
+      "section": "27-901.1, 27-905",
+      "url": "https://ecode360.com/attachment/337943/RO2521-027a%20Table%20of%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code lists no ADU."
     }
   },
   "parking": {
@@ -409,6 +398,14 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "'2-story/35 feet max.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10000,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Single-family 'Minimum Lot Area (SF/DU)' 10,000. Density 4 dwelling units per acre. Open whether a second unit counts as a dwelling unit."
       }
     },
     "R-2": {
@@ -448,6 +445,14 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "'2-story/35 feet max.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 6500,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Single-family 'Minimum Lot Area (SF/DU)' 6,500. Density 6 dwelling units per acre. Open whether a second unit counts as a dwelling unit."
       }
     },
     "R-3": {
@@ -487,6 +492,14 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "'2-story/35 feet max.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 6500,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Single-family 'Minimum Lot Area (SF/DU)' 6,500. Density 6 dwelling units per acre. Open whether a second unit counts as a dwelling unit."
       }
     }
   }
