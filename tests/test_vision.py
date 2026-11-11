@@ -145,3 +145,29 @@ def test_city_class_map_and_area_split():
     roles = assign_roles(centers, seed=1)
     assert set(roles) == {"train", "val", "test"}
     assert roles.count("test") >= 8 and roles.count("val") >= 6
+
+
+def test_raster_cover_columns_match_model_file():
+    from pipeline.vision.raster_cover import assemble
+
+    # one lot: 10 px no data, 50 tree, 20 grass, 10 bare, 0 water, 30 buildings, 20 roads, 10 other paved
+    counts = np.array([[10, 50, 20, 10, 0, 30, 20, 10]])
+    out = assemble(np.array(["L1"]), counts, 4.0, "philadelphia")
+    model_cols = ["lot_id", "other_sqft", "other_share", "building_sqft", "building_share", "tree_sqft", "tree_share",
+                  "open_sqft", "open_share", "hard_surface_sqft", "hard_surface_share", "pixels"]
+    assert list(out.columns[:len(model_cols)]) == model_cols
+    row = out.iloc[0]
+    assert row.pixels == 140 and row.tree_sqft == 200.0 and row.open_sqft == 120.0
+    assert row.hard_surface_share == round(30 / 140, 4) and row.impervious_share == round(60 / 140, 4)
+    assert row.raster_covered_share == round(140 / 150, 4) and row.cover_source == "landcover_2018"
+
+
+def test_lot_share_agreement():
+    from pipeline.vision.city_check import agreement, shares
+
+    lab = np.array([[2, 2, 3, 1], [4, 4, 3, 255]], np.uint8)
+    pred = np.array([[2, 3, 3, 1], [4, 1, 4, 0]], np.uint8)
+    s = shares(lab, pred, np.ones_like(lab, bool))
+    assert s["tree"] == (2 / 7, 1 / 7) and s["vegetation"] == (4 / 7, 3 / 7)
+    a = agreement([s, {k: (v[0], v[0]) for k, v in s.items()}, {k: (0.0, 0.1) for k in s}])
+    assert a["n"] == 3 and a["tree"]["mae_pp"] == round((1 / 7 + 0 + 0.1) / 3 * 100, 2)
