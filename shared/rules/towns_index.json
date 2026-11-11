@@ -353,12 +353,12 @@
       "pop_rank": 10,
       "file": "pa_montgomery_abington",
       "batch": 3,
-      "status": "todo",
+      "status": "drafted",
       "checked_on": null,
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/AB0569",
+      "code_url": "https://ecode360.com/9010529",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2025-09-11",
       "code_note": "Zoning: Chapter 162 Zoning. Code AB0569. 2017 comprehensive rezoning Ord. 2136 replaced Ch. 162. amendments through Ord. 2234 (8-14-2025) as ecode360 laws PDFs (e.g. https://ecode360.com/AB0569/laws/LF2693983.pdf). Chapter id not confirmed. ecode360 root/chapter pages return Cloudflare 'Just a moment' 403 to curl and WebFetch. chapter id taken from search-result page titles, not opened.",
       "why": [
         "top 60 by 2020 population"

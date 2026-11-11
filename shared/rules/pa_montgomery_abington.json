@@ -1,0 +1,500 @@
+{
+  "provenance": {
+    "jurisdiction": "Abington township",
+    "instrument": "Abington Township Zoning Ordinance 2017 (Ord. No. 2136, Chapter 162), published on eCode360 as an ordinance PDF with later amending ordinances",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 does not hold Chapter 162 as section text. The chapter page lists the 2017 Zoning Ordinance PDF and amending ordinances. The amendments listed through Ord. 2237 (adopted 2025-12-11) were read for ADU changes. None touches Use A-1. Ord. 2215 restated the R1 to R4 dimensional tables for life care and nursing home rows.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/9010529",
+      "https://ecode360.com/AB0569/laws/LF2031151.pdf",
+      "https://ecode360.com/AB0569/laws/LF2089698.pdf",
+      "https://ecode360.com/AB0569/laws/LF2397838.pdf",
+      "https://ecode360.com/AB0569/laws/LF2693989.pdf",
+      "https://ecode360.com/AB0569/laws/LF2517657.pdf",
+      "https://ecode360.com/AB0569/laws/LF2517655.pdf",
+      "https://ecode360.com/AB0569/laws/LF2554287.pdf",
+      "https://ecode360.com/AB0569/laws/LF2031152.pdf",
+      "https://ecode360.com/AB0569/laws/LF2031153.pdf",
+      "https://ecode360.com/AB0569/laws/LF2031154.pdf",
+      "https://ecode360.com/AB0569/laws/LF2031156.pdf",
+      "https://ecode360.com/AB0569/laws/LF2031157.pdf",
+      "https://ecode360.com/AB0569/laws/LF2031158.pdf",
+      "https://ecode360.com/AB0569/laws/LF2031159.pdf",
+      "https://ecode360.com/AB0569/laws/LF2031160.pdf",
+      "https://ecode360.com/AB0569/laws/LF2258357.pdf",
+      "https://abingtonpa.gov/landuse",
+      "https://abingtonpa.gov/departments/fire-and-emergency-management-services/code-enforcement-division",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209100156",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9010529",
+    "code_current_through": "2025-09-11",
+    "code_current_through_note": "eCode360: Includes legislation through 09-11-2025. The Chapter 162 page also lists Ord. 2237 (adopted 2025-12-11, nonconforming buildings).",
+    "checks": [
+      "ADU occupants must be relatives: a parent, grandparent, or a spouse, partner or sibling of one of them (2103.A Use A-1, 2.c(2))",
+      "The ADU may be occupied only while the lot owner's family lives in the main house (Use A-1, 2.c(1))",
+      "Only accessory to a single-family detached house. One ADU per property",
+      "On lots under 10,000 sq ft the ADU must be attached to the house (Use A-1, 2.d(3))",
+      "A detached ADU is capped at 625 sq ft with one bedroom, a kitchen and a full bath. The code sets no size cap for an attached unit",
+      "The ADU must be at least 10 ft from all lot lines, or the district setback if greater",
+      "Utilities must connect through the main house. No separate address or mailbox",
+      "Materials, window ratio and roof pitch must match the main house",
+      "The permit lasts one year at most. It needs yearly renewal with a Zoning Officer inspection and ends when occupancy changes",
+      "Use A-1 sets no height. A Residential Accessory Structure (Use A-22) is one story and 17 ft at most. Ask whether A-22 applies to a detached ADU",
+      "Separate path: as a special exception the Zoning Hearing Board may treat two related housekeeping units as one family, one unit with at most two people and one aged 60 or more, with a recorded removal agreement (Article II 'Family')"
+    ],
+    "notes": "Zoning office: Code Enforcement Division, https://abingtonpa.gov/departments/fire-and-emergency-management-services/code-enforcement-division. The land use page says there are no active zoning amendment applications and lists no township-requested amendments. No pending ADU ordinance found. The use matrix appendix is titled 'Abington Comprehensive Use Matrix Draft' in the adopted 2017 PDF."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "2103.A Use A-1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Use A-1 Accessory Dwelling Units (ADUs). A suite, either detached from or attached to the primary dwelling unit on the lot.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "2103.A Use A-1, 2.c, Use Matrix",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Relatives only, by special exception in R1 to R4. 'All ADU occupants must be one of the following: A parent, grandparent, or a spouse, partner or sibling'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "Use Matrix row A-1, Article XX, Article II 'Special Exception'",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=357",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Matrix marks A-1 'SE' in R1, R2, R3, R4 and the LP Overlay. Special exceptions are decided by the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Use Matrix row A-1, Article XX",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=357",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: an ADU outside the listed districts, or one that misses a Use A-1 standard, needs a variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "section": "Use Matrix row A-1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=357",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "SE in R1, R2, R3, R4 and LP Overlay. 'N' in BC Noble and BC Willow Grove Park. Blank in the other districts."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "2103.A Use A-1, 2.a",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'An ADU is only permitted when accessory to a single-family detached dwelling.'"
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "2103.A Use A-1, 2.d(3)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum lot for an ADU. 'ADUs on lots less than 10,000 square feet must be attached to the principal dwelling.'"
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "2103.A Use A-1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "A suite 'either detached from or attached to the primary dwelling unit'. New construction is not barred."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "2103.A Use A-1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No historic rule in Use A-1."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "2103.A Use A-1, 2.d and 3",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: a suite attached to or detached from the house. Section 3 speaks of 'Detached ADUs, and homes expanded to accommodate ADUs'. Above a garage is not addressed. Lots under 10,000 sq ft: attached only."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 625,
+      "section": "2103.A Use A-1, 2.d(1)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Maximum size of detached ADU: 625 s.f.' No cap is stated for an attached unit."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "2103.A Use A-1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No share-of-house limit."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "2103.A Use A-1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum size."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "2103.A Use A-1, Use A-22",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=150",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Use A-1 sets no height. Use A-22 Residential Accessory Structure: 'one story, but in no event shall it be greater than 17 feet'. Not confirmed that A-22 governs an ADU."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "2103.A Use A-1, 2.d(4)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'at least 10 feet from all lot lines, or the district setback, whichever is greater'. District front yards are larger. See districts."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "2103.A Use A-1, 2.d(4)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "10 ft or the district side yard, whichever is greater. All R district side yards are 10 ft or more. See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "2103.A Use A-1, 2.d(4)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "10 ft or the district rear yard, whichever is greater. See districts."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "Use A-22, 3",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=150",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Use A-1 sets no separation. A-22 keeps an accessory structure using the 4 ft yard 10 ft from the house. Not confirmed for an ADU."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "Figures 3.1, 4.1, 5.1, 6.1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=27",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district: R1 20%, R2 25%, R3 30%, R4 40%. See districts."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "Figures 3.1, 4.1, 5.1, 6.1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=27",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district: R1 25%, R2 35%, R3 40%, R4 55%."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "2103.A Use A-1, 2.c(1)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'An ADU may be occupied only when the lot owner's family is living in the principal dwelling on the lot.' Owner's family, not the owner by name."
+    },
+    "family_only": {
+      "value": true,
+      "section": "2103.A Use A-1, 2.c(2)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'All ADU occupants must be one of the following: A parent, grandparent, or a spouse, partner or sibling of one of the those relatives.'"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "2103.A Use A-1, 1.b and 2.c(2)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Intent: 'Prohibit the creation of rental units in Accessory Dwelling Units.' Occupants must be relatives."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "2103.A Use A-1, 2.b",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'No more than one (1) ADU will be permitted on any property.'"
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "2103.A Use A-1, 2.d(7)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=141",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Separate sale is not addressed. 'The ADU must not have a separate address or mailbox from the principal dwelling.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "2304.A.1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=240",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Use A-1: Accessory Dwelling Units (ADU). One (1) additional space is required.' Single-family detached needs 2 spaces not counting the garage (2304)."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "2103.A Use A-1, 2.d(6)",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "ADUs connect to the systems serving the main house. 'No separate utility systems or connections shall be constructed or used'."
+    }
+  },
+  "districts": {
+    "R1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "Figure 3.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=27",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1 acre. Width 200 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Figure 3.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=27",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Corner lots may reduce one front yard."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "Figure 3.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=27",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum side yard, two required. An ADU must also be 10 ft or more from every lot line (2103.A Use A-1, 2.d(4))."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Figure 3.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=27",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "Figure 3.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=27",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 25%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Figure 3.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=27",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft for all uses except life care and nursing homes."
+      }
+    },
+    "R2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "Figure 4.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=29",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "Figure 4.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=29",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Corner lots may reduce one front yard."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Figure 4.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=29",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum side yard, two required. An ADU must also be 10 ft or more from every lot line (2103.A Use A-1, 2.d(4))."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Figure 4.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=29",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "Figure 4.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=29",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Figure 4.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=29",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft for all uses except life care and nursing homes."
+      }
+    },
+    "R3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "Figure 5.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=31",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Width 75 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Figure 5.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=31",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Corner lots may reduce one front yard."
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "Figure 5.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=31",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum side yard, two required. An ADU must also be 10 ft or more from every lot line (2103.A Use A-1, 2.d(4))."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Figure 5.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=31",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "Figure 5.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=31",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 40%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Figure 5.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=32",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft for all uses except life care and nursing homes."
+      }
+    },
+    "R4": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "Figure 6.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=33",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Width 50 ft."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Figure 6.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=33",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Corner lots may reduce one front yard."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Figure 6.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=33",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum side yard, two required. An ADU must also be 10 ft or more from every lot line (2103.A Use A-1, 2.d(4))."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Figure 6.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=33",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "Figure 6.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=33",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 55%, 50% for existing nonconforming lots under 7,500 sq ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Figure 6.1",
+        "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=33",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft for all uses except life care and nursing homes."
+      }
+    }
+  }
+}
