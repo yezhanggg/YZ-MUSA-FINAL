@@ -68,6 +68,31 @@ test.describe('lot flow', () => {
   });
 });
 
+const PHL_ROW = '42101-011000034';
+const PHL_TRACT = '42101002702';
+const hasPhl = existsSync(resolve(LOTS, 'philadelphia/detail', `${PHL_TRACT}.json.gz`));
+
+test.describe('philadelphia lot flow', () => {
+  test.skip(!hasPhl, `no Philadelphia lot records at ${LOTS}`);
+
+  test('a rowhouse: no path today, with the reasons and what the bills would change', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/#/?view=test&lot=${PHL_ROW}&tract=${PHL_TRACT}`);
+    await expect(verdict(page)).toHaveAttribute('data-status', 'not_allowed');
+    const why = page.locator('section[aria-label="Why not, and what would change"]');
+    await expect(why).toContainText('Attached building');
+    await expect(why).toContainText('Lot is 726 sq ft. Needs 1,600 sq ft or more');
+    await expect(why).toContainText('14-604(11)');
+    await expect(why).toContainText('State reform (a bill, not law)');
+    await expect(page.getByText(/Today 1\.2% of these lots have a legal path for any ADU/)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'What is on this lot' })).toBeVisible();
+    await shot(page, 'phl-row-today-1440.png');
+    await page.getByRole('radio', { name: 'State reform' }).click();
+    await expect(page.getByRole('heading', { name: 'Zoning, state reform' })).toBeVisible();
+    await shot(page, 'phl-row-state-1440.png');
+  });
+});
+
 test.describe('projecting mode', () => {
   test('payoff controls, counties and the research explorer', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });

@@ -829,7 +829,9 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
   else if (first) limit = { code: first.key, text: first.text };
   else if (status === 'check_needed') limit = { code: 'unknown', text: unknown[0].text };
   else limit = { code: stored.limiting, text: limitText(stored.limiting, rules, stored) };
-  return { ...base, status, headline: headlineFor(status, unit, s, changes, placed), limit, changes };
+  // When no change can make it work (no room at all), listing size changes would mislead.
+  const shown = status === 'does_not_fit' ? [] : changes;
+  return { ...base, status, headline: headlineFor(status, unit, s, shown, placed), limit, changes: shown };
 }
 
 export interface ScenarioVerdict {

@@ -334,3 +334,12 @@ describe('garage unit on a lot without a garage', () => {
     expect(unitVerdict(lot, unit()).status).toBe('not_allowed');
   });
 });
+
+describe('a lot with no room at all', () => {
+  it('lists no change that would not help', () => {
+    const lot = fixture('phl_row_today');
+    const v = unitVerdict(lot, { type: 'detached_new', width_ft: 20, depth_ft: 30, position: 'best', scenario: 'state_reform' });
+    expect(v.status).toBe('does_not_fit');
+    expect(v.changes).toEqual([]);
+  });
+});
