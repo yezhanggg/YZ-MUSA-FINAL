@@ -57,22 +57,40 @@
       "note": "'§ 87-79. Accessory apartments.' The term sits only in Article XV, the TND overlay. 87-75 also says 'accessory dwelling units' for TND density counting."
     },
     "status": {
+      "value": "family_only",
+      "section": "87-79A, 87-71, Table 1",
+      "url": "https://ecode360.com/10770350",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Inside the TND overlay (TC-R): one apartment within a single-family dwelling by special exception, for a relative of the owner. Outside the TND the code has no ADU text."
+    },
+    "scope_districts": {
+      "value": [
+        "TC-R"
+      ],
+      "section": "87-71, 87-79, Table 1",
+      "url": "https://ecode360.com/10770350",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "87-79 is in Article XV, the TND overlay. Single-family dwellings are P in TC-R and N in TC-B (Table 1), so the rule reaches TC-R only."
+    },
+    "status_outside": {
       "value": "not_addressed",
-      "section": "Table 1, Table 2, 87-15B, 87-186A, Article XV",
+      "section": "Table 1, Table 2",
       "url": "https://ecode360.com/attachment/330310/HE0496-087a%20Table%201.pdf",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Outside the TND overlay the code has no ADU text. Table 1 and Table 2 have no ADU row. The 87-79 accessory apartment rule reaches only the TND overlay (six tax parcels, TND Exhibit A), in practice TC-R."
+      "confidence": "verified",
+      "note": "Outside the TND, Table 1 and Table 2 have no ADU row."
     }
   },
   "approval": {
     "path": {
       "value": "special_exception",
-      "section": "87-15B, 87-186A",
-      "url": "https://ecode360.com/10770990",
+      "section": "87-79A",
+      "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "'Any use not listed in Table 1 ... or Table 2 ... may be authorized by special exception' if the Board finds its impact equal to or less than a listed use. Reading: a second unit is unlisted. The Board may also treat it as a duplex, which is listed."
+      "confidence": "verified",
+      "note": "'A special exception is required to create a single apartment within a single-family dwelling'. TC-R only."
     },
     "fallback_path": {
       "value": "variance",
@@ -80,7 +98,7 @@
       "url": "https://ecode360.com/10770990",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "If the Zoning Hearing Board does not accept the unlisted-use route, or a lot fails a rule, the path is a variance."
+      "note": "If the Zoning Hearing Board does not accept the unlisted-use route, or a TC-R lot fails an 87-79 rule, the path is a variance."
     },
     "district_paths": {
       "value": [
@@ -99,24 +117,37 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "The accessory apartment rule applies in the TND overlay. Single-family dwellings are P in TC-R and N in TC-B (Table 1)."
-    }
-  },
-  "eligibility": {
-    "zoning_districts": {
-      "value": null,
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
       "section": "87-15B, 87-186A",
       "url": "https://ecode360.com/10770990",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "The unlisted-use special exception is open in every district. The 87-79 rule is TC-R only."
+      "note": "'Any use not listed in Table 1 ... or Table 2 ... may be authorized by special exception' if the Board finds the impact equal to or less than a listed use. Reading: a second unit outside the TND is unlisted."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "TC-R"
+      ],
+      "section": "87-79A, Table 1",
+      "url": "https://ecode360.com/attachment/330310/HE0496-087a%20Table%201.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Single-family dwellings are P in TC-R and N in TC-B. Outside the TND see approval.unlisted_use_path."
     },
     "building_types": {
-      "value": null,
-      "section": "87-186A, 87-79A",
+      "value": [
+        "detached",
+        "semi_detached"
+      ],
+      "section": "87-79A, Table 1",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No limit town-wide. In TC-R 87-79A needs 'a single-family dwelling' (detached or semidetached)."
+      "note": "'a single apartment within a single-family dwelling'. Reading: detached or semidetached single-family. Not townhouses or multifamily."
     },
     "existing_structure_only": {
       "value": null,
@@ -251,7 +282,10 @@
           "when": "always",
           "test": null,
           "section": "87-186A",
-          "url": "https://ecode360.com/10770990"
+          "url": "https://ecode360.com/10770990",
+          "not_districts": [
+            "TC-R"
+          ]
         }
       ],
       "section": "87-79, 87-17G, 87-186",
@@ -285,20 +319,20 @@
       "note": "No town-wide cap. TC-R: no square foot cap, only 35% (87-79A(4))."
     },
     "max_share_of_house": {
-      "value": null,
+      "value": 0.35,
       "section": "87-79A(4)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No town-wide cap. TC-R: 'shall not exceed 35% of the entire livable gross floor area'. See gates."
+      "confidence": "verified",
+      "note": "TC-R only. 'shall not exceed 35% of the entire livable gross floor area of the single-family dwelling'."
     },
     "min_sqft": {
-      "value": null,
+      "value": 400,
       "section": "87-79A(3)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No town-wide minimum. TC-R: 'greater than 400 square feet'."
+      "confidence": "verified",
+      "note": "TC-R only. 'shall be greater than 400 square feet'. Strictly more than 400."
     }
   },
   "envelope": {
@@ -353,20 +387,20 @@
   },
   "use": {
     "owner_occupancy": {
-      "value": null,
+      "value": true,
       "section": "87-79A(11)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No town-wide rule. TC-R: 'The owner(s) ... must occupy one of the two residential units'. See gates."
+      "confidence": "verified",
+      "note": "TC-R only (adu.scope_districts). 'The owner(s) ... must occupy one of the two residential units on the property.'"
     },
     "family_only": {
-      "value": null,
+      "value": true,
       "section": "87-79A(12)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No town-wide rule. TC-R: the non-owner unit only for a person 'related by blood or marriage'. See gates."
+      "confidence": "verified",
+      "note": "TC-R only. The other unit 'may only be occupied by a person who is related by blood or marriage to such owner(s).'"
     },
     "short_term_rental_banned": {
       "value": null,
@@ -377,12 +411,12 @@
       "note": "Not addressed."
     },
     "max_adus": {
-      "value": null,
-      "section": "87-79A(1), 87-186A",
+      "value": 1,
+      "section": "87-79A(1)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No town-wide number. TC-R: 'Only one apartment is allowed'."
+      "confidence": "verified",
+      "note": "TC-R only. 'Only one apartment is allowed'."
     },
     "sale_apart_allowed": {
       "value": null,
@@ -423,12 +457,12 @@
   "districts": {
     "TC-R": {
       "min_lot_sqft": {
-        "value": 6000,
+        "value": 5000,
         "section": "87-73, TND Schedule A",
         "url": "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
         "verified_on": "2026-11-11",
-        "confidence": "verified",
-        "note": "SL1 and SL2 lots: 6K. SL3 and SL4 5K, LL1 and LL2 10K, EL1 and EL2 20K. Rear yard (home) 40 ft for SL1 and SL2."
+        "confidence": "secondary",
+        "note": "TND Schedule A: single-family lot types SL3 and SL4 are 5K, SL1 and SL2 6K, LL 10K, EL 20K. The smallest single-family lot type (5,000 sq ft) is used here. Yards and height in this row are for SL1 and SL2."
       },
       "setback_front_ft": {
         "value": 15,

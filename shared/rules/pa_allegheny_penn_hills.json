@@ -80,35 +80,35 @@
       "confidence": "secondary",
       "note": "Same as path."
     },
-    "district_paths": {
+    "alternatives": {
       "value": [
         {
+          "name": "Conversion of a single-family residence to a two-family residence",
+          "path": "special_exception",
           "districts": [
             "R-2"
           ],
-          "path": "special_exception",
+          "conditions": "Lot at least 7,500 sq ft. House at least 1,600 sq ft gross floor area. Each unit at least 500 sq ft after conversion. At least four off-street spaces, not in a required front yard.",
+          "min_lot_sqft": 7500,
           "section": "1268.05(c)(1)",
-          "url": "https://ecode360.com/37691090",
-          "note": "Not an ADU. 'Conversion of a single-family residence to a two-family residence' is a special exception in R-2. Lot 7,500 sq ft, house 1,600 sq ft gross floor area, each unit 500 sq ft, four off-street spaces not in the front yard."
+          "url": "https://ecode360.com/37691090"
         }
       ],
       "section": "1268.05(c)(1)",
       "url": "https://ecode360.com/37691090",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "R-2 conversion to a two-family residence by special exception."
+      "note": "Not an ADU. 'The following uses are special exceptions in an R-2 District: (1) Conversion of a single-family residence to a two-family residence'."
     }
   },
   "eligibility": {
     "zoning_districts": {
-      "value": [
-        "R-2"
-      ],
+      "value": [],
       "section": "1268.05(c)(1)",
       "url": "https://ecode360.com/37691090",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No district lists an ADU. A second unit inside the house as a conversion to two-family: R-2 only, by special exception."
+      "note": "No district lists an ADU. Reading of a silent code. The R-2 conversion to two-family is in approval.alternatives."
     },
     "existing_structure_only": {
       "value": true,
@@ -128,34 +128,6 @@
     },
     "gates": {
       "value": [
-        {
-          "kind": "lot_size",
-          "condition": "R-2 conversion: lot at least 7,500 sq ft, house at least 1,600 sq ft gross floor area, each unit at least 500 sq ft after conversion.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-2"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "1268.05(c)(1)A to C",
-          "url": "https://ecode360.com/37691090"
-        },
-        {
-          "kind": "parking",
-          "condition": "R-2 conversion: 'A minimum of four off-street parking spaces', not in any required front yard.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-2"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "1268.05(c)(1)D",
-          "url": "https://ecode360.com/37691090"
-        },
         {
           "kind": "existing_structure",
           "condition": "'Only one principal residential structure shall be located on a zoning lot' outside planned developments and R-4 to R-7.",
@@ -253,17 +225,16 @@
       "value": null,
       "section": "1278.02",
       "url": "https://ecode360.com/37691444",
-      "verified_on": null,
-      "confidence": "unverified",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
       "note": "No ADU row. 'Single-family dwellings: two spaces per dwelling unit.'"
     },
-    "total_on_site": {
-      "value": 4,
-      "section": "1268.05(c)(1)D",
+    "reading": {
+      "value": "No ADU row. Single-family: 'two spaces per dwelling unit' (1278.02). An R-2 conversion to two units needs at least four spaces (1268.05(c)(1)D). A second unit would likely mean 4 in total.",
+      "section": "1278.02, 1268.05(c)(1)D",
       "url": "https://ecode360.com/37691090",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "R-2 conversion: 'A minimum of four off-street parking spaces shall be provided.'"
+      "confidence": "secondary"
     }
   },
   "districts": {

@@ -76,37 +76,36 @@
       "confidence": "secondary",
       "note": "Same as path. Section 324 (unlisted uses by special exception) is a weak argument here, because 501 lists dwelling types and 702.15 denies the R-1 conversion."
     },
-    "district_paths": {
+    "alternatives": {
       "value": [
         {
+          "name": "Two-family dwelling",
+          "path": "by_right",
           "districts": [
             "R-2",
             "R-3"
           ],
-          "path": "by_right",
+          "conditions": "Lot width 75 ft and 3,500 sq ft of lot per dwelling unit, 7,000 sq ft for two units (Section 508). A second unit in or added to the house is possible as a two-family dwelling.",
+          "min_lot_sqft": 7000,
           "section": "Section 501, Section 508",
-          "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
-          "note": "Not an ADU. 'Two Family Dwellings' are X (by right) in R-2 and R-3. A second unit in or added to the house is possible as a two-family dwelling on a lot with 3,500 sq ft per unit (7,000 total) and 75 ft width."
+          "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE"
         }
       ],
       "section": "Section 501",
       "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "Two-family dwelling by right in R-2 and R-3."
+      "note": "Not an ADU. 'Two Family Dwellings' are X (by right) in R-2 and R-3. Moved here from district_paths per TOWNS.md (alternatives hold non-ADU second units)."
     }
   },
   "eligibility": {
     "zoning_districts": {
-      "value": [
-        "R-2",
-        "R-3"
-      ],
+      "value": [],
       "section": "Section 501",
       "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No district lists an ADU. A second unit as a two-family dwelling: by right in R-2 and R-3 only."
+      "note": "No district lists an ADU. Reading of a silent code. Two-family dwellings in R-2 and R-3 are in approval.alternatives."
     },
     "historic_bypass": {
       "value": false,
@@ -131,21 +130,6 @@
           "test": null,
           "section": "702.15",
           "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART7SURE_S702USRE"
-        },
-        {
-          "kind": "lot_size",
-          "condition": "Two-family dwelling: lot width 75 ft and 3,500 sq ft of lot per dwelling unit (Section 508).",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-2",
-            "R-3"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "Section 508",
-          "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE"
         },
         {
           "kind": "existing_structure",
@@ -279,17 +263,16 @@
       "value": null,
       "section": "Section 1020",
       "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "No ADU row. Single-family detached and two-family: 'Two (2) spaces for each dwelling unit.'"
-    },
-    "total_on_site": {
-      "value": 4,
-      "section": "1020(2)",
-      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Two-family structure: 'Two (2) spaces for each dwelling unit.' 4 in total for the two units in R-2 or R-3."
+      "note": "No ADU row. Single-family detached and two-family: 'Two (2) spaces for each dwelling unit.'"
+    },
+    "reading": {
+      "value": "No ADU row. 'Two (2) spaces for each dwelling unit' for single-family and two-family (Section 1020). A two-family dwelling in R-2 or R-3 needs 4 in total.",
+      "section": "Section 1020",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
     }
   },
   "districts": {

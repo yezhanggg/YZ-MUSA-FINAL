@@ -232,9 +232,9 @@
       "value": null,
       "section": "27-1110.2A(1)",
       "url": "https://ecode360.com/34429642",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "No ADU row. The table row 'Residential / 2 per dwelling unit' applies to dwellings."
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU row. 'Residential / 2 per dwelling unit'. The count for a second unit is in parking.reading."
     },
     "reading": {
       "value": "Residential: 2 spaces per dwelling unit. A house needs 2. If a second unit were approved it would count as a dwelling unit, so 4 in total.",
@@ -277,6 +277,22 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "Maximum building height 35 ft, structure height 50 ft."
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "27-405.2A(4)(b)",
+        "url": "https://ecode360.com/34428895",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Side, each: 30 feet.' Single-family detached principal yard. Accessory buildings: 15 ft (envelope)."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-405.2A(4)(c)",
+        "url": "https://ecode360.com/34428895",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Rear: 50 feet.' Single-family detached principal yard."
       }
     },
     "R-2": {
@@ -317,8 +333,24 @@
         "section": "27-406.2A(1)",
         "url": "https://ecode360.com/34428932",
         "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "'Minimum lot area per dwelling unit: 20,000 square feet' under 'A. Single-family detached dwellings'. Reading: a second unit would also need 20,000 sq ft, so 40,000 in total. The code allows no ADU, so this is shown as a condition."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-406.2A(4)(b)",
+        "url": "https://ecode360.com/34428932",
+        "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "'Minimum lot area per dwelling unit: 20,000 square feet.' Public water and sewer required."
+        "note": "'Side, minimum 20 feet, total, 45 feet.' Single-family detached principal yard. Accessory buildings: 15 ft (envelope)."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-406.2A(4)(c)",
+        "url": "https://ecode360.com/34428932",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Rear: 50 feet.' Single-family detached principal yard."
       }
     }
   }

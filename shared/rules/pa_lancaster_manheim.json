@@ -76,6 +76,26 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "A lot that fails a 2515 criterion, or is in another district, needs a variance from the Zoning Hearing Board. A stand-alone ground floor cottage is not a listed form (2515.2.A(3))."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex dwelling (two units, not limited to family)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Public sewer and water required. 6,000 sq ft of lot per dwelling unit. Lot width 75 ft at the street line.",
+          "min_lot_sqft": 12000,
+          "section": "902.4, 905 D. Duplex dwellings",
+          "url": "https://manheimtownship.org/DocumentCenter/View/7176/12ARTICLE-9Residential-3"
+        }
+      ],
+      "section": "902.4",
+      "url": "https://manheimtownship.org/DocumentCenter/View/7176/12ARTICLE-9Residential-3",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Duplex dwellings' are a use by right in R-3 only (902.4 and the residential use table)."
     }
   },
   "eligibility": {
@@ -214,6 +234,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "Conditions of Section 2515."
+    },
+    "min_lot_share_of_district": {
+      "value": 0.9,
+      "section": "2515.2.A(13)",
+      "url": "https://manheimtownship.org/DocumentCenter/View/8079/28-ARTICLE-25Performance-Standards-",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units are permitted to be located on lots that are ninety (90) percent or more of the zoning district's required minimum lot size.'"
     }
   },
   "form": {
@@ -396,12 +424,12 @@
   "districts": {
     "R-1": {
       "min_lot_sqft": {
-        "value": 18000,
-        "section": "705.2.B(3)[a], 2515.2.A(13)",
-        "url": "https://manheimtownship.org/DocumentCenter/View/8079/28-ARTICLE-25Performance-Standards-",
+        "value": 20000,
+        "section": "705.2.B(3)[a]",
+        "url": "https://manheimtownship.org/DocumentCenter/View/3063/10ARTICLE-7-Residential-1",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "ADU figure: 90% of the 20,000 sq ft district minimum (705.2.B(3)[a], public water and sewer). 'lots that are ninety (90) percent or more of the zoning district's required minimum lot size'. Principal yards: front 30 ft, each side 15 ft, rear 35 ft. Minimum open area 50%."
+        "note": "District minimum where both public water and public sewer are provided: 'Minimum lot area: 20,000 square feet'. An ADU lot needs 90% of it, 18,000 sq ft (2515.2.A(13), eligibility.min_lot_share_of_district). Principal yards: front 30 ft, each side 15 ft, rear 35 ft."
       },
       "setback_front_ft": {
         "value": 30,
@@ -430,12 +458,12 @@
     },
     "R-2": {
       "min_lot_sqft": {
-        "value": 13500,
-        "section": "805.2.B(3)[a], 2515.2.A(13)",
-        "url": "https://manheimtownship.org/DocumentCenter/View/8079/28-ARTICLE-25Performance-Standards-",
+        "value": 15000,
+        "section": "805.2.B(3)[a]",
+        "url": "https://manheimtownship.org/DocumentCenter/View/8078/11ARTICLE-8Residential",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "ADU figure: 90% of the 15,000 sq ft district minimum (805.2.B(3)[a], public water and sewer). 'lots that are ninety (90) percent or more of the zoning district's required minimum lot size'. Principal yards: front 25 ft, each side 15 ft, rear 35 ft. Minimum open area 50%."
+        "note": "District minimum where both public water and public sewer are provided: 'Minimum lot area: 15,000 square feet'. An ADU lot needs 90% of it, 13,500 sq ft (2515.2.A(13), eligibility.min_lot_share_of_district). Principal yards: front 25 ft, each side 15 ft, rear 35 ft."
       },
       "setback_front_ft": {
         "value": 25,
@@ -464,12 +492,12 @@
     },
     "R-3": {
       "min_lot_sqft": {
-        "value": 6300,
-        "section": "905.2.B(3)[a], 2515.2.A(13)",
-        "url": "https://manheimtownship.org/DocumentCenter/View/8079/28-ARTICLE-25Performance-Standards-",
+        "value": 7000,
+        "section": "905.2.B(3)[a]",
+        "url": "https://manheimtownship.org/DocumentCenter/View/7176/12ARTICLE-9Residential-3",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "ADU figure: 90% of the 7,000 sq ft district minimum (905.2.B(3)[a], public water and sewer). 'lots that are ninety (90) percent or more of the zoning district's required minimum lot size'. Principal yards: front 25 ft, each side 10 ft, rear 35 ft. Minimum open area 50%."
+        "note": "District minimum where both public water and public sewer are provided: 'Minimum lot area: 7,000 square feet'. An ADU lot needs 90% of it, 6,300 sq ft (2515.2.A(13), eligibility.min_lot_share_of_district). Principal yards: front 25 ft, each side 10 ft, rear 35 ft."
       },
       "setback_front_ft": {
         "value": 25,

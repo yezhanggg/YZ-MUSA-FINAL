@@ -413,7 +413,7 @@
       "note": "No ADU row. 'Single-unit residential / 1 per dwelling unit / 3 per dwelling unit' (minimum and maximum)."
     },
     "reading": {
-      "value": "No ADU row. Single-unit residential needs at least 1 space per dwelling unit (max 3). If the ADU counts as a dwelling unit, the lot needs 2 in total. If it does not, 1.",
+      "value": "No ADU row. 'Single-unit residential' needs at least 1 space per dwelling unit (max 3). 1 in total if the ADU does not count as a unit, 2 if it does.",
       "section": "800-60D",
       "url": "https://ecode360.com/32047771",
       "verified_on": "2026-11-11",
@@ -439,20 +439,20 @@
         "note": "'20 ft or Average', the average of the four nearest lots if less. Applies to the principal structure, which an ADU must be attached to or within."
       },
       "setback_side_ft": {
-        "value": 3,
-        "section": "800-14C(2) Accessory structure setbacks",
+        "value": 10,
+        "section": "800-14C(1) Principal structure setbacks",
         "url": "https://ecode360.com/32046319",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "Accessory structure: 'Side lot line with lot width greater than 25 feet / 3 ft'. 18 in on lots 25 ft wide or less. An addition to the house uses the principal side setback (10 ft)."
+        "note": "Principal structure 'Side setback [min] 10 ft'. Applies to an ADU attached to the house. A detached ADU uses the accessory setbacks in envelope (3 ft side, 7 ft rear)."
       },
       "setback_rear_ft": {
-        "value": 7,
-        "section": "800-14C(2) Accessory structure setbacks",
+        "value": 30,
+        "section": "800-14C(1) Principal structure setbacks",
         "url": "https://ecode360.com/32046319",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "Accessory structure: 'Rear lot line / 7 ft'. An addition to the house uses the principal rear setback (30 ft). Accessory structures sit 8 ft from the rear of the principal structure."
+        "note": "Principal structure 'Rear setback [min] 30 ft'. Accessory structures: rear lot line 7 ft, 8 ft from the rear of the principal structure."
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -482,19 +482,19 @@
       },
       "setback_side_ft": {
         "value": 3,
-        "section": "800-15C(2) Accessory structure setbacks",
+        "section": "800-15C(1) Principal structure setbacks",
         "url": "https://ecode360.com/32046320",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "Accessory structure: 'Side lot line with lot width greater than 25 feet / 3 ft'. 18 in on lots 25 ft wide or less. An addition to the house uses the principal side setback (3 ft)."
+        "note": "Principal structure 'Side setback [min] 3 ft'. Applies to an ADU attached to the house. A detached ADU uses the accessory setbacks in envelope (3 ft side, 7 ft rear)."
       },
       "setback_rear_ft": {
-        "value": 7,
-        "section": "800-15C(2) Accessory structure setbacks",
+        "value": 25,
+        "section": "800-15C(1) Principal structure setbacks",
         "url": "https://ecode360.com/32046320",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "Accessory structure: 'Rear lot line / 7 ft'. An addition to the house uses the principal rear setback (25 ft). Accessory structures sit 10 ft from the rear of the principal structure."
+        "note": "Principal structure 'Rear setback [min] 25 ft'. Accessory structures: rear lot line 7 ft, 10 ft from the rear of the principal structure."
       },
       "principal_max_height_ft": {
         "value": 35,
