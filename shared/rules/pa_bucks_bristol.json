@@ -1,0 +1,444 @@
+{
+  "provenance": {
+    "jurisdiction": "Bristol township",
+    "instrument": "Code of the Township of Bristol, Chapter 205 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code BR1318): includes legislation through 08-20-2026. New Laws lists Ord. 2026-05, 2026-06 and 2026-07 (adopted 2026-10-15). None affects Chapter 205. 205-16 was last amended 12-18-2025 by Ord. No. 2025-05. The Table of Use Regulations is 'for reference purposes only and is not part of the ordinance regulations' (205-15). District use lists were read instead.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/BR1318",
+      "https://ecode360.com/9499446",
+      "https://ecode360.com/9499530",
+      "https://ecode360.com/9499712",
+      "https://ecode360.com/9499722",
+      "https://ecode360.com/9500307",
+      "https://ecode360.com/9500330",
+      "https://ecode360.com/9500401",
+      "https://ecode360.com/9500440",
+      "https://ecode360.com/9500454",
+      "https://ecode360.com/9500493",
+      "https://ecode360.com/9500507",
+      "https://ecode360.com/9500546",
+      "https://ecode360.com/9501666",
+      "https://ecode360.com/9502299",
+      "https://ecode360.com/BR1318/laws",
+      "https://www.bristoltwppa.gov/349/Building-Planning-Department",
+      "https://www.bristoltwppa.gov/346/Zoning-Hearing-Board",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201708768",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9499446",
+    "code_current_through": "2026-08-20",
+    "code_current_through_note": "eCode360: Includes legislation through 08-20-2026.",
+    "checks": [
+      "An accessory apartment needs a special exception from the Zoning Hearing Board in R-1, R-2 and R-3 (205-22B, 205-25B, 205-28B)",
+      "Only with a single-family detached house. One accessory apartment per lot",
+      "Inside the house: at most 30% of the house floor area. In an accessory building: at most 650 sq ft",
+      "The lot must meet the district minimum lot area for a single-family detached house (R-1 10,000, R-2 6,500, R-3 5,000 sq ft)",
+      "The house or accessory building with the apartment must meet the district yards for a single-family detached house",
+      "The house must keep one front entrance. Other entrances go on the side or rear. Exterior stairs go on the rear wall where possible",
+      "Parking: the house spaces plus one space per bedroom in the apartment (205-120)",
+      "Sewer authority certification of capacity is needed. A septic system needs Bucks County Department of Health approval",
+      "The code sets no owner-occupancy or family rule for an accessory apartment",
+      "No height is set for a building with an apartment. Sheds are capped at 12 ft and garages at 16 ft (205-16G(2)(h))",
+      "Separate option: Use A6 Residential Conversion turns an existing building into two or three units. It is also a special exception in R-1 to R-3"
+    ],
+    "notes": "Zoning office: Building and Planning Department, https://www.bristoltwppa.gov/349/Building-Planning-Department. Pending: none found on eCode360 New Laws for Chapter 205. Do not confuse with Bristol Borough."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment",
+      "section": "205-16G(3) Use G3",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'G3 Accessory Apartment. A separate dwelling unit subordinate in size to the principal single-family detached dwelling unit.'"
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "205-22B(12), 205-25B(12), 205-28B(12)",
+      "url": "https://ecode360.com/9500401",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Listed under 'Uses permitted by special exception' in R-1, R-2 and R-3. Not listed in other districts."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "205-22B, 205-187",
+      "url": "https://ecode360.com/9500401",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'may be permitted as authorized by the Zoning Hearing Board in accordance with the standards contained in 205-187'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "205-13, 205-187",
+      "url": "https://ecode360.com/9499712",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: outside R-1, R-2 and R-3, or when a G3 standard is not met, the path is a variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "205-22B, 205-25B, 205-28B",
+      "url": "https://ecode360.com/9500401",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "G3 Accessory Apartment appears only in the special exception lists of R-1, R-2 and R-3."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'subordinate in size to the principal single-family detached dwelling unit'"
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "205-16G(3)(c)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'The lot must conform to the minimum lot area requirement for Use A1' in the district. R-1 10,000, R-2 6,500, R-3 5,000 sq ft. See districts."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'may be contained in the principal residence or in an accessory building'. New buildings are not barred."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No historic rule in G3."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'may be contained in the principal residence or in an accessory building'. Reading: an addition is part of the residence. Garage heights may limit a unit above a garage."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 650,
+      "section": "205-16G(3)(a)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'If the apartment is located in an accessory building, the maximum floor area of the apartment shall be 650 square feet.'"
+    },
+    "max_share_of_house": {
+      "value": 0.3,
+      "section": "205-16G(3)(a)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Not more than 30% of the total floor area of the principal residence shall be occupied by the accessory apartment.'"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum size in G3."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "205-16G(2)(h), 205-16G(3)",
+      "url": "https://ecode360.com/9500307",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "G3 sets no height. G2: sheds 'shall not exceed 12 feet' and 'garages shall not exceed 16 feet'. Not confirmed which applies to an apartment building."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "205-16G(3)(d)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The building with the apartment 'shall meet the minimum yard requirements for Use A1' in the district. See districts."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "205-16G(3)(d)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "District yards for Use A1 apply, not the 3 ft shed rule. See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "205-16G(3)(d)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "District yards for Use A1 apply. See districts."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "205-16G(2), 205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No separation between buildings found in G2 or G3."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "205-23C, 205-26C, 205-29C",
+      "url": "https://ecode360.com/9500440",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district: R-1 20%, R-2 25%, R-3 30%. See districts."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "205-23D, 205-26D, 205-29D",
+      "url": "https://ecode360.com/9500440",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district: R-1 30%, R-2 35%, R-3 40%."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "G3 standards (a) to (h) contain no owner-occupancy rule."
+    },
+    "family_only": {
+      "value": false,
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "G3 sets no family, age or caregiver limit."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in G3. Other township rental rules not reviewed."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "205-16G(3)(b)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Not more than one accessory apartment shall be permitted per lot.'"
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "205-120(60)",
+      "url": "https://ecode360.com/9501666",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'The required parking for the principal dwelling, plus one additional off-street parking space per bedroom in the accessory apartment'. 1 assumes one bedroom."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "205-16G(3)(h)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Sewer authority must certify 'adequate service is available for the additional dwelling unit'. Separate connections not addressed."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "205-23A",
+        "url": "https://ecode360.com/9500440",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "205-23E(1)",
+        "url": "https://ecode360.com/9500440",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "205-23E(2)",
+        "url": "https://ecode360.com/9500440",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Two side yards, 30 ft aggregate, neither less than 12 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "205-23E(3)",
+        "url": "https://ecode360.com/9500440",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "205-23C",
+        "url": "https://ecode360.com/9500440",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious surface ratio max 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "205-23F",
+        "url": "https://ecode360.com/9500440",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height: 35 feet."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 6500,
+        "section": "205-26A",
+        "url": "https://ecode360.com/9500493",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "205-26E(1)",
+        "url": "https://ecode360.com/9500493",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "205-26E(2)",
+        "url": "https://ecode360.com/9500493",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Two side yards, 16 ft aggregate, neither less than 7 ft."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "205-26E(3)",
+        "url": "https://ecode360.com/9500493",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "205-26C",
+        "url": "https://ecode360.com/9500493",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious surface ratio max 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "205-26F",
+        "url": "https://ecode360.com/9500493",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height: 35 feet."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "205-29A",
+        "url": "https://ecode360.com/9500546",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "205-29E(1)",
+        "url": "https://ecode360.com/9500546",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "205-29E(2)",
+        "url": "https://ecode360.com/9500546",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Two side yards, 14 ft aggregate, neither less than 6 ft."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "205-29E(3)",
+        "url": "https://ecode360.com/9500546",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "205-29C",
+        "url": "https://ecode360.com/9500546",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious surface ratio max 40%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "205-29G",
+        "url": "https://ecode360.com/9500546",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height: 35 feet."
+      }
+    }
+  }
+}

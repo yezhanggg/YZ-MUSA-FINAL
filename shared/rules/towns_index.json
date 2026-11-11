@@ -374,12 +374,12 @@
       "pop_rank": 13,
       "file": "pa_bucks_bristol",
       "batch": 3,
-      "status": "todo",
+      "status": "drafted",
       "checked_on": null,
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/9499447",
+      "code_url": "https://ecode360.com/9499446",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-08-20",
       "code_note": "Zoning: Chapter 205 Zoning. 9499447 is a zoning-chapter page citing 'Bristol Township Zoning Ordinance' (may be section, not chapter root). Do not confuse with Bristol Borough (Ch. 27 Zoning). ecode360 root/chapter pages return Cloudflare 'Just a moment' 403 to curl and WebFetch. chapter id taken from search-result page titles, not opened.",
       "why": [
         "top 60 by 2020 population"
