@@ -24,7 +24,9 @@ export interface SiteData {
 }
 
 const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] };
-const SOURCES = ['site-lot', 'site-buildings', 'site-buildable', 'site-unit', 'site-best'] as const;
+const SOURCES = ['site-lot', 'site-party', 'site-buildings', 'site-buildable', 'site-unit', 'site-best'] as const;
+/** Lot line shared with an attached neighbor (twins, rows): no side yard there. */
+export const PARTY_COLOR = '#ea580c';
 
 const feature = (geometry: GeoJSON.Geometry, properties: Record<string, unknown> = {}): GeoJSON.Feature => ({ type: 'Feature', geometry, properties });
 const fc = (features: GeoJSON.Feature[]): GeoJSON.FeatureCollection => ({ type: 'FeatureCollection', features });
@@ -38,6 +40,7 @@ export function addSiteLayers(map: MLMap, full: boolean, before?: string) {
   add({ id: 'site-buildable-fill', type: 'fill', source: 'site-buildable', paint: { 'fill-color': '#22c55e', 'fill-opacity': full ? 0.28 : 0.2 } });
   add({ id: 'site-buildable-line', type: 'line', source: 'site-buildable', paint: { 'line-color': '#15803d', 'line-width': 1.6, 'line-dasharray': [2, 1.5] } });
   add({ id: 'site-lot-line', type: 'line', source: 'site-lot', paint: { 'line-color': full ? '#ffffff' : '#6d28d9', 'line-width': full ? 2.5 : 2.2 } });
+  add({ id: 'site-party-line', type: 'line', source: 'site-party', paint: { 'line-color': PARTY_COLOR, 'line-width': full ? 4 : 3 } });
   if (full) {
     add({
       id: 'site-buildings-3d',
@@ -71,6 +74,7 @@ export function updateSite(map: MLMap, d: SiteData | null, extrude: boolean) {
     return;
   }
   setData(map, 'site-lot', fc([feature(area(d.lot.lot.polygon))]));
+  setData(map, 'site-party', fc((d.lot.lot.edges ?? []).filter((e) => e.party_wall).map((e) => feature(e.line as unknown as GeoJSON.Geometry))));
   setData(
     map,
     'site-buildings',

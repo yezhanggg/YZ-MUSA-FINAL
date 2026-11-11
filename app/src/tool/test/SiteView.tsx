@@ -9,7 +9,7 @@ import { Crosshair, RotateCcw, RotateCw } from 'lucide-react';
 import { Segmented } from '../../components/primitives';
 import type { Pt } from '../../lib/fitBox';
 import { aerialSource, watchAerial } from '../aerial';
-import { addSiteLayers, lotBounds, setUnitBox, updateSite, FIT_COLOR, MISS_COLOR } from '../siteLayers';
+import { addSiteLayers, lotBounds, setUnitBox, updateSite, FIT_COLOR, MISS_COLOR, PARTY_COLOR } from '../siteLayers';
 import { useTool } from '../store';
 import { boxRing, fitsAt } from '../testState';
 import type { LotResult } from './useLotResult';
@@ -162,6 +162,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
         ) : (
           <Key color="#a78bfa" fill>{r.unit.type === 'internal' ? 'The house' : 'The garage'}</Key>
         )}
+        {record.lot.edges?.some((e) => e.party_wall) && <Key color={PARTY_COLOR}>Shared wall side, no side yard</Key>}
         <span>{cottage ? 'Drag the box to move it.' : ''} Buildings stand at their height on file.</span>
       </div>
     </section>

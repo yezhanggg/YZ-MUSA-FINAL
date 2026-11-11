@@ -54,8 +54,9 @@ function noRecordsHere(t: TractProps): string {
  * assistant) wins over the point. A searched address that lands on the street finds its lot by address.
  * Aborts quietly when a newer spot starts.
  */
-async function recordAt(pt: LngLat, tract: TractProps, signal: AbortSignal, label: string, lotId?: string): Promise<RecordResult | null> {
-  const geoid = tract.GEOID;
+async function recordAt(pt: LngLat, tract: TractProps, signal: AbortSignal, label: string, lotId?: string, recordTract?: string): Promise<RecordResult | null> {
+  // A clicked parcel tile and a link name the record's own tract, which can differ from the tract under the point.
+  const geoid = recordTract ?? tract.GEOID;
   const place = placeOfGeoid(geoid);
   if (!place) return { record: null, recordNote: noRecordsHere(tract), builtAt: null };
   try {
@@ -85,7 +86,7 @@ let pending: AbortController | null = null;
  * nearest-lot rule. A parcel that was not checked (s = 0) gets the short report. In testing mode the lot record
  * that contains the spot is loaded too.
  */
-export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps | null, opts: { lotId?: string; keepUnit?: boolean } = {}) {
+export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps | null, opts: { lotId?: string; tract?: string; keepUnit?: boolean } = {}) {
   const { tracts, towns, set, view3d, view } = useTool.getState();
   const map = mapRef.current;
   if (!tracts || !towns || !map) return;
@@ -109,7 +110,7 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   const geoid = tract.properties.GEOID;
   const [lot, rec] = await Promise.all([
     parcel ? (parcel.s === 1 ? lotForParcel(geoid, parcel, pt) : null) : view === 'project' ? findLot(geoid, pt) : null,
-    view === 'test' || opts.lotId ? recordAt(pt, tract.properties, ctrl.signal, label, opts.lotId) : { record: null, recordNote: null, builtAt: null },
+    view === 'test' || opts.lotId ? recordAt(pt, tract.properties, ctrl.signal, label, opts.lotId ?? (parcel?.tr ? parcel.id : undefined), opts.tract ?? parcel?.tr) : { record: null, recordNote: null, builtAt: null },
   ]);
   if (n !== counter || !rec) return; // a newer spot won
   const record = rec.record;
@@ -130,7 +131,7 @@ export async function openLot(lotId: string, geoid: string) {
     const f = frameOf(rec);
     // The lot's center. The lot id wins over the point, so an odd-shaped lot still opens.
     const pt = f.toLonLat(centroid(toFeet(rec.lot.polygon, f.origin)));
-    await testSpot(pt, 'Linked lot', null, { lotId, keepUnit });
+    await testSpot(pt, 'Linked lot', null, { lotId, tract: geoid, keepUnit });
   } catch (e) {
     useTool.getState().set({ msg: isLotLoadError(e) ? e.userMessage : 'That lot could not be opened.' });
   }

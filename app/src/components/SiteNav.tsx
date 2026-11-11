@@ -54,10 +54,12 @@ export default function TopBar() {
     <div className="pointer-events-none absolute z-50 flex justify-center" style={{ top: GUTTER, ...place }}>
       <nav aria-label="Sections" className="pointer-events-auto relative flex min-w-0 gap-0.5 rounded-xl bg-white/90 p-1 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur">
         <ModePick />
-        <button type="button" onClick={() => openResearch(null)} aria-current={!research ? 'page' : undefined} className={cx(TAB, !research ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900')}>
-          {!research && <motion.span layoutId="site-nav-pill" className="absolute inset-0 rounded-lg bg-stone-100 ring-1 ring-black/5" transition={SPRING_TAB} />}
-          <span className="relative">Tool</span>
-        </button>
+        {/* "Back to the tool" only while Research is open: the mode menu names the tool, and its full label needs the room. */}
+        {research && (
+          <button type="button" onClick={() => openResearch(null)} className={cx(TAB, 'text-slate-600 hover:text-slate-900')}>
+            <span className="relative">Tool</span>
+          </button>
+        )}
         <div ref={wrap} className="relative" onMouseEnter={show} onMouseLeave={hide}>
           <button type="button" aria-haspopup="menu" aria-expanded={open} aria-current={research ? 'page' : undefined} onClick={onClick} onFocus={show} className={cx(TAB, research ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900')}>
             {research && <motion.span layoutId="site-nav-pill" className="absolute inset-0 rounded-lg bg-stone-100 ring-1 ring-black/5" transition={SPRING_TAB} />}
@@ -91,7 +93,7 @@ function ModePick() {
   return (
     <label className="relative flex min-w-0 items-center">
       <span className="sr-only">Mode</span>
-      <select value={view} onChange={(e) => openView(e.target.value as ToolView)} className="tap min-w-0 max-w-[19rem] cursor-pointer appearance-none truncate rounded-lg bg-violet-50 py-1.5 pl-3 pr-8 text-body font-semibold text-violet-900 ring-1 ring-violet-200 outline-none hover:bg-violet-100 focus-visible:ring-2 focus-visible:ring-violet-500 max-sm:max-w-[11rem] max-sm:text-small">
+      <select value={view} onChange={(e) => openView(e.target.value as ToolView)} className="tap min-w-0 cursor-pointer appearance-none truncate rounded-lg bg-violet-50 py-1.5 pl-3 pr-8 text-small font-semibold text-violet-900 ring-1 ring-violet-200 outline-none hover:bg-violet-100 focus-visible:ring-2 focus-visible:ring-violet-500 max-sm:max-w-[11rem] max-sm:text-small">
         {(Object.keys(VIEW_LABEL) as ToolView[]).map((v) => (
           <option key={v} value={v}>
             {VIEW_LABEL[v]}

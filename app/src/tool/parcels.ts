@@ -23,6 +23,8 @@ export interface ParcelProps {
   mf?: number;
   mk?: number;
   r?: 'c' | 'v' | string;
+  /** Tract GEOID of the lot record (tiles made by app/build_lot_tiles.py). */
+  tr?: string;
 }
 
 const TYPE_LABEL: Record<string, string> = { row: 'Rowhouse', twin: 'Twin', detached: 'Detached house', other: 'Other parcel' };

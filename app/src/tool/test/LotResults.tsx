@@ -16,6 +16,7 @@ import { linkHash, useTool, type Spot } from '../store';
 import { BuildList, FactsCard, MoneyCard, ScenarioTable, VerdictCard, ZoningCard } from './cards';
 import LotReport from './LotReport';
 import SiteView from './SiteView';
+import { CityStory, CoverCard, SpotCoverLine, WhyNot } from './story';
 import { useLotResult } from './useLotResult';
 
 export type TestTab = 'results' | 'build' | 'ask';
@@ -74,11 +75,16 @@ function WithRecord({ record, builtAt, tab }: { record: LotRecord; builtAt: stri
   if (tab === 'build') return <BuildList b={r.build} />;
   return (
     <div className="space-y-4">
-      <VerdictCard v={r.verdict} />
+      <VerdictCard v={r.verdict}>
+        <SpotCoverLine lot={record} v={r.verdict} u={r.unit} />
+      </VerdictCard>
+      <WhyNot lot={record} v={r.verdict} />
+      <CityStory place={record.lot.place} />
       <SiteView record={record} r={r} />
       <ZoningCard lot={record} scenario={r.scenario} v={r.verdict} />
       <ScenarioTable lot={record} rows={r.rows} scenario={r.scenario} />
-      <MoneyCard m={r.money} />
+      <MoneyCard m={r.money} lot={record} />
+      <CoverCard lot={record} />
       <FactsCard lot={record} builtAt={builtAt} />
     </div>
   );

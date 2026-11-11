@@ -13,6 +13,7 @@ import { flyToPilot } from './actions';
 import { openResearch } from '../lib/router';
 import { useTool, type Rule } from './store';
 import TestControls from './test/TestControls';
+import { dataLine, useManifests } from './test/placeData';
 import { ForecastPick, Label, MapLevelPick, PayoffPick } from './ProjectControls';
 
 /**
@@ -51,6 +52,7 @@ export default function LeftPanel({ style, drawer, onClose }: { style: React.CSS
           <span>MUSA 5500 + MUSA 6950</span>
           <button type="button" onClick={() => openResearch(test ? '6950' : '5500')} className="tap font-semibold text-violet-700 hover:text-violet-900">How it works →</button>
         </div>
+        <DataLine />
       </div>
     </motion.aside>
   );
@@ -160,4 +162,10 @@ function Toggle({ on, onChange, label, hint }: { on: boolean; onChange: (v: bool
       </span>
     </button>
   );
+}
+
+/** Build date of the lot records per place, from each manifest. */
+function DataLine() {
+  const line = dataLine(useManifests());
+  return line ? <p className="mt-1 text-caption text-slate-400">{line}</p> : null;
 }

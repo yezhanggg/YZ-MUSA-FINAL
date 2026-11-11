@@ -55,7 +55,7 @@ export function Cite({ c }: { c: Citation | null | undefined }) {
 }
 
 // ------------------------------------------------------------------ (a) verdict
-export function VerdictCard({ v }: { v: UnitVerdict }) {
+export function VerdictCard({ v, children }: { v: UnitVerdict; children?: ReactNode }) {
   const tone = STATUS_TONE[v.status];
   const T = TONE_BOX[tone];
   const lawWarnings = v.warnings.filter((w) => w.code !== 'not_law');
@@ -83,6 +83,7 @@ export function VerdictCard({ v }: { v: UnitVerdict }) {
             <b className="font-semibold">Approval: </b>
             {v.approval.label}. {v.approval.text}
           </p>
+          {children}
         </div>
       </div>
       {(notLaw || lawWarnings.length > 0) && (
@@ -128,6 +129,7 @@ const RULE_ROWS: RuleRow[] = [
 export function ZoningCard({ lot, scenario, v }: { lot: LotRecord; scenario: Scenario; v: UnitVerdict }) {
   const rules = lot.rules[scenario];
   const z = lot.zoning;
+  const party = lot.lot.edges?.some((e) => e.party_wall) ?? false;
   return (
     <Card title={`Zoning, ${SCENARIO_TITLE[scenario].toLowerCase()}`} tag="Rules">
       <KV k="District" v={z.district ?? 'Not on file'} />
@@ -149,7 +151,10 @@ export function ZoningCard({ lot, scenario, v }: { lot: LotRecord; scenario: Sce
                 {rules.assumed.includes(row.key) && <span className="ml-1.5 rounded bg-amber-50 px-1 text-[11px] font-semibold text-amber-800 ring-1 ring-amber-200">assumed</span>}
                 <Cite c={rules.citations[row.key]} />
               </dt>
-              <dd className="text-right text-small font-medium text-slate-900 tnum">{row.value(rules)}</dd>
+              <dd className="text-right text-small font-medium text-slate-900 tnum">
+                {row.value(rules)}
+                {row.key === 'setback_side_ft' && party && <span className="block text-[11px] font-normal text-orange-700">Shared wall side, no side yard</span>}
+              </dd>
             </div>
           ))}
         </dl>
@@ -222,9 +227,15 @@ const RENT_SOURCE: Record<string, string> = {
 };
 export const ASSUMPTIONS_URL = 'https://github.com/yezhanggg/YZ-MUSA-FINAL/blob/main/shared/ASSUMPTIONS.md';
 
-export function MoneyCard({ m }: { m: MoneySummary }) {
+export function MoneyCard({ m, lot }: { m: MoneySummary; lot: LotRecord }) {
   const pf = m.pro_forma;
-  const rentSource = pf?.rent.source ? (RENT_SOURCE[pf.rent.source] ?? pf.rent.source) : null;
+  const own = lot.money;
+  // The record's ZIP rents (HUD SAFMR) win over the tract rents. Say which one this is.
+  const rentSource = pf?.rent.source
+    ? pf.rent.source === 'hud_safmr' && own?.zip
+      ? `HUD Small Area Fair Market Rent, ZIP ${own.zip}${own.rent_fiscal_year ? `, FY ${own.rent_fiscal_year}` : ''}`
+      : (RENT_SOURCE[pf.rent.source] ?? pf.rent.source)
+    : null;
   return (
     <Card title="Money" tag="MUSA 5500">
       {m.status === 'not_buildable' ? (
@@ -245,6 +256,7 @@ export function MoneyCard({ m }: { m: MoneySummary }) {
           {isNum(m.monthly_cash_flow) && <KV k="Cash flow" v={<span className={m.monthly_cash_flow >= 0 ? 'text-emerald-700' : 'text-rose-700'}>{`${signedUsd(m.monthly_cash_flow)} a month`}</span>} />}
           {pf && 'yield_on_cost' in pf && isNum(pf.yield_on_cost) && <KV k="Yield on cost" v={pctText(pf.yield_on_cost)} />}
           {isNum(m.cash_in) && <KV k="Cash you put in" v={usdText(m.cash_in)} />}
+          {isNum(own?.cost_index) && <KV k="Local build cost" v={`${own.cost_index.toFixed(2)} x the state average`} />}
           {isNum(m.break_even_rent) && <KV k="Rent that breaks even" v={usdText(m.break_even_rent)} />}
           <details className="mt-2 text-small text-slate-700">
             <summary className="tap cursor-pointer font-semibold text-violet-700">Assumptions used ({m.assumptions.length})</summary>
