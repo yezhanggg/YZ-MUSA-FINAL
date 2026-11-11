@@ -10,21 +10,22 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Pittsburgh city | Allegheny | verified | not set |  | by right | none on file | 1,000 | no | 2 | 2026-11-10 |
 | Allentown city | Lehigh | verified | accessory dwelling unit (ADU) | by right | by right | occupancy (660-42C(6)). owner on site (660-42C(10)). house type detached, semi_detached, attached. building type gate (660-24F, 660-25F, 660-27F). district gate (660-24F, 660-25F, 660-26F, 660-27F, 660-29F). building type gate (660-29F). abutting way gate (660-42C(1)(c)) | 800 | yes | 1 | 2026-11-11 |
 | Reading city | Berks | verified | accessory apartment | prohibited | variance | none on file | none set | none set | 0 | 2026-11-11 |
-| Erie city | Erie | drafted | accessory dwelling unit (ADU) | by right | by right | none on file | none set | no | not confirmed | 2026-11-11 |
+| Erie city | Erie | drafted | accessory dwelling unit (ADU) | by right | by right | R-1 6,000 sq ft per unit. R-1A 6,000 sq ft per unit. R-2 2,000 sq ft per unit | none set | no | not confirmed | 2026-11-11 |
 | Scranton city | Lackawanna | verified | Dwelling: accessory (ADU) | by right | by right (conditional use in INST. special exception in CIV. not allowed in D, PC) | house type detached, semi_detached, attached | none set | no | not confirmed | 2026-11-11 |
 | Bethlehem city | Northampton | drafted | Unit for Care of Relative | family only | by right | occupancy (1322.03(bbb)(2)). family only (1322.03(bbb)(2)) | none set | none set | not confirmed | 2026-11-11 |
 | Lancaster city | Lancaster | verified | none | not in the code | special exception | none on file | none set | none set | none set | 2026-11-11 |
-| Harrisburg city | Dauphin | verified | accessory dwelling unit | by right | by right | owner on site (7-309.2A(3)) | none set | yes | none set | 2026-11-11 |
-| York city | York | verified | accessory dwelling unit | conversion only | special exception | owner on site (1304.01 use 1.04.005(c)(1)) | 700 | yes | 1 | 2026-11-11 |
-| State College borough | Centre | drafted | single apartment unit | by right | by right | house type detached | 500 | no | 1 | 2026-11-11 |
-| Upper Darby township | Delaware | verified | accessory dwelling | family only | special exception | family only (550-17B(2)). house type detached, semi_detached | none set | no | none set | 2026-11-11 |
-| Lower Merion township | Montgomery | drafted | restricted accessory dwelling unit | family only | special exception | family only (155-10.2C(1)). house type detached | none set | no | 1 | 2026-11-11 |
-| Bensalem township | Bucks | verified | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
-| Abington township | Montgomery | drafted | accessory dwelling unit | family only | special exception | family only (2103.A Use A-1, 2.c(2)). owner on site (2103.A Use A-1, 2.c(1)). house type detached | 625 | yes | 1 | 2026-11-11 |
+| Harrisburg city | Dauphin | verified | accessory dwelling unit | by right | by right (special exception in CN) | owner on site (7-309.2A(3)). RM 1,500 sq ft per unit. CN 1,200 sq ft per unit | none set | yes | none set | 2026-11-11 |
+| York city | York | verified | accessory dwelling unit | conversion only | special exception | occupancy (1304.01 use 1.04.005(c)(6) and (7)). owner on site (1304.01 use 1.04.005(c)(1)). existing building only (1304.01 use 1.04.005(a)). existing structure gate (1304.01 use 1.04.005(a)). 3 parking spaces in total | 700 | yes | 1 | 2026-11-11 |
+| State College borough | Centre | drafted | single apartment unit | by right | by right | occupancy (19-501.l(3)(b)). house type detached. existing structure gate (19-501.l(2)(a) and 19-501.l(5)) | 500 | no | 1 | 2026-11-11 |
+| Upper Darby township | Delaware | verified | accessory dwelling | family only | special exception | occupancy (550-17B(2) and (5)). family only (550-17B(2)). house type detached, semi_detached. existing structure gate (550-17B(1)) | none set | no | none set | 2026-11-11 |
+| Lower Merion township | Montgomery | verified | restricted accessory dwelling unit | family only | special exception (by right in IC, IH. historic building: by right) | occupancy (155-10.2C(1) and (2)). family only (155-10.2C(1)). house type detached. MDR1 4,000 sq ft per unit | none set | no | 1 | 2026-11-11 |
+| Bensalem township | Bucks | verified | none | not in the code | variance | R-1 12,000 sq ft per unit | not confirmed | not confirmed | 0 | 2026-11-11 |
+| Abington township | Montgomery | drafted | accessory dwelling unit | family only | special exception | occupancy (2103.A Use A-1, 2.c). family only (2103.A Use A-1, 2.c(2)). owner on site (2103.A Use A-1, 2.c(1)). house type detached. 3 parking spaces in total | 625 | yes | 1 | 2026-11-11 |
 | Bristol township | Bucks | drafted | accessory apartment | special exception | special exception | house type detached | 650 | no | 1 | 2026-11-11 |
-| Millcreek township | Erie | drafted | in-law apartment | family only | special exception | family only (145-11, 145-58H). owner on site (145-58B). house type detached | 720 | yes | 1 | 2026-11-11 |
-| Lower Paxton township | Dauphin | drafted | accessory dwelling unit | by right | by right | none on file | none set | no | not confirmed | 2026-11-11 |
+| Millcreek township | Erie | drafted | in-law apartment | family only | special exception | occupancy (145-11, 145-58H). family only (145-11, 145-58H). owner on site (145-58B). house type detached | 720 | yes | 1 | 2026-11-11 |
+| Lower Paxton township | Dauphin | drafted | accessory dwelling unit | by right | by right | other gate (203-314C(2)) | none set | no | not confirmed | 2026-11-11 |
 | Haverford township | Delaware | drafted | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
+| Middletown township | Bucks | drafted | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
 | Wilkes-Barre city | Luzerne | drafted | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
 | Manheim township | Lancaster | drafted | accessory dwelling unit | family only | special exception | family only (2515.2.A(8)). owner on site (2515.2.A(7)). house type detached, semi_detached | 1,000 | yes | 1 | 2026-11-11 |
 | Altoona city | Blair | drafted | accessory dwelling unit | by right | by right | owner on site (800-31G) | 1,000 | yes | 1 | 2026-11-11 |
@@ -36,7 +37,6 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 | Batch | Town | County | Status | Population 2020 | Code host |
 |---|---|---|---|---|---|
-| 3 | Middletown township | Bucks | todo | 46,040 | ecode360 |
 | 5 | Cheltenham township | Montgomery | todo | 37,452 | ecode360 |
 | 5 | Norristown borough | Montgomery | todo | 35,748 | ecode360 |
 | 5 | Falls township | Bucks | todo | 34,716 | ecode360 |
