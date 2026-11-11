@@ -150,6 +150,9 @@ describe.skipIf(!existsSync(QUESTIONS_FILE))('widened phrasings still reject wro
     expect(pass('trap-09', 'says sewer is not on file', 'It is on public sewer.')).toBe(false);
     const bad = scoreQuestion(q('trap-09'), transcript(q('trap-09'), 'Yes, it is on public sewer.'));
     expect(bad.forbidden_hits.length).toBeGreaterThan(0);
+    const doubt = scoreQuestion(q('trap-09'), transcript(q('trap-09'), "It is not on file. I can't tell you whether it's on public sewer."));
+    expect(doubt.forbidden_hits).toEqual([]);
+    expect(scoreQuestion(q('trap-09'), transcript(q('trap-09'), "Yes, it's on public sewer.")).forbidden_hits.length).toBeGreaterThan(0);
   });
 
   it('missing section: "doesn\'t include" passes, inventing its text fails', () => {

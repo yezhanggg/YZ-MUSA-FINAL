@@ -1,6 +1,6 @@
 {
  "about": "Eval set for the in-app assistant. Made by agent/eval/make_questions.ts from the lot records and app/public/data: lots are picked by rule and every expected value is read from a tool result. Do not edit by hand. Regenerate with `node agent/eval/cli.mjs make_questions.ts`.",
- "generated_at": "2026-11-11T16:02:12.092Z",
+ "generated_at": "2026-11-11T16:02:52.703Z",
  "data_roots": {
   "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
   "philadelphia": "/Users/ye/musa-drive/smoke/lots/philadelphia"
@@ -3827,7 +3827,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "\\b(yes|it is|it's) (on|served by|connected to) (public )?sewer",
+     "pattern": "(?<!(whether|if) )\\b(yes|it is|it's) (on|served by|connected to) (public )?sewer",
      "why": "claims a sewer status the record does not have"
     }
    ],

@@ -656,7 +656,7 @@ async function build(): Promise<EvalQuestion[]> {
     id: 'trap-09', category: 'traps', question: 'Is this lot on public sewer?', context: onLot(pA),
     required: [['get_lot_facts']], calls: [{ name: 'get_lot_facts', input: {} }],
     facts: () => [how('says sewer is not on file', NOT_IN_DATA, '"public_sewer":"not on file"')],
-    forbidden: [{ pattern: '\\b(yes|it is|it\'s) (on|served by|connected to) (public )?sewer', why: 'claims a sewer status the record does not have' }], scenario: null,
+    forbidden: [{ pattern: '(?<!(whether|if) )\\b(yes|it is|it\'s) (on|served by|connected to) (public )?sewer', why: 'claims a sewer status the record does not have' }], scenario: null,
     rubric: 'Says the record has no sewer data. Suggests asking the sewer authority.',
   });
   Q.push({
