@@ -479,12 +479,12 @@
       "pop_rank": 20,
       "file": "pa_luzerne_wilkes_barre",
       "batch": 4,
-      "status": "todo",
+      "status": "drafted",
       "checked_on": null,
       "code_host": "zoneomics",
-      "code_url": "https://www.zoneomics.com/code/wilkes-barre-PA/chapter_1",
+      "code_url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR",
       "plain_fetch": true,
-      "code_current_through": null,
+      "code_current_through": "2025-12-04",
       "code_note": "Zoning: City of Wilkes-Barre Zoning Ordinance (File of Council No. 18 of 2012). No official online code confirmed. City page 'Zoning Ordinances & Zoning Map' (https://www.wilkes-barre.city/node/156) appears in search but returns 404 to curl. ecode360 hits for 'Wilkes-Barre' were other Luzerne municipalities (Kingston KI0963 etc). Zoneomics plain fetch 200 with zoning text. UNSURE - official source missing.",
       "why": [
         "top 60 by 2020 population"

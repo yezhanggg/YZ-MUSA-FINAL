@@ -1,0 +1,330 @@
+{
+  "provenance": {
+    "jurisdiction": "Wilkes-Barre city",
+    "instrument": "Code of Ordinances of the City of Wilkes-Barre, Appendix A Zoning Ordinance (File of Council No. 18 of 2012), as published on Municode (Supp. No. 20)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Municode: codified through Ordinance No. 8-2025, adopted December 4, 2025 (Supp. No. 20). Online content updated August 27, 2026. Municode is script-walled for plain fetches. Text was read in a browser. The towns index pointed to a Zoneomics mirror. The official online code is Municode Appendix A.",
+    "effective_date": null,
+    "source_urls": [
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART2DE",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART7SURE",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART7SURE_S702USRE",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
+      "https://www.wilkes-barre.city/node/31",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Luzerne",
+    "municipality_type": "city",
+    "geoid": "4207985152",
+    "code_host": "municode",
+    "code_url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR",
+    "code_current_through": "2025-12-04",
+    "code_current_through_note": "Codified through Ordinance No. 8-2025, adopted December 4, 2025. (Supp. No. 20). Online content updated on August 27, 2026.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law or accessory apartment provision",
+      "In R-1 no existing single family dwelling may be converted into two or more dwelling units (702.15)",
+      "Two-family dwellings are allowed by right in R-2 and R-3 (Section 501). A unit inside the house there may be possible as a conversion to a two-family dwelling, if the lot meets the two-family lot area and width",
+      "Two-family lots in R-2 and R-3 need 3,500 sq ft per dwelling unit and 75 ft of width (Section 508). Ask the zoning office how this applies to an existing lot",
+      "Permitted residential accessory structures are greenhouses, sheds, private garages or carports, pools and satellite dishes (Section 305). A dwelling is not on the list",
+      "A use neither permitted nor denied goes to the Zoning Hearing Board as a special exception (Section 324). Whether a second unit counts as such a use is for the Zoning Officer and the Board",
+      "More than one principal structure on a lot also needs land development approval (314.1)",
+      "A dwelling unit is for one family. More than four unrelated persons is not a family (Section 203)"
+    ],
+    "notes": "Zoning office: Office of Planning and Zoning, https://www.wilkes-barre.city/node/31. Pending: none found affecting Appendix A. Searched Article 2 definitions, the Article 5 use tables, Article 3 and Article 7 for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, second dwelling, accessory residential. No ADU term."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Section 203, Sections 501 to 507, Articles 3 and 7",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART2DE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Searched Article 2 definitions, the Article 5 use tables, Article 3 and Article 7 for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, second dwelling, accessory residential. No ADU term."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "Section 203, Section 501, Section 305, 702.15",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text. R-1 bars converting a single family dwelling into two or more units (702.15). Two-family dwellings are by right in R-2 and R-3."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "Section 501, 702.15, Section 1409, MPC 910.2",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: a second unit on a single family lot is not a listed use. In R-1 702.15 bars conversion to 'two or more dwelling units'. The path is a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Section 501, Section 324",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path. Section 324 sends a use 'neither specifically permitted nor denied' to the Board as a special exception. Applying it to a second unit is not settled by the text."
+    },
+    "detached_in_yard_path": {
+      "value": "variance",
+      "section": "Section 305, Section 501, 314.1",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A detached dwelling is not a listed residential accessory structure (305). Reading: a second dwelling building needs a use variance."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Sections 501 to 507",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code. Two-family dwellings: R-2 and R-3 by right."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Appendix A",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path. 703 adds HD Historic Overlay rules."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "Sections 305, 501, 702.15",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A conversion to a two-family dwelling in R-2 or R-3 is a separate path, not an ADU."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "302.3(a)",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Unattached accessory structures in R zones: 'one and one-half (1 1/2) stories or fifteen (15) feet, whichever is the lesser.'"
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "302.3",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Unattached accessory structures in any R zone 'shall be erected only within the rear or side yard'. Not in the front yard."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "302.3(b)",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'not less than five (5) feet from either side lot line'. Corner lots follow Section 304."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "302.3(c)",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'not less than five (5) feet from the rear lot line'."
+    },
+    "setback_rear_alley_ft": {
+      "value": 10,
+      "section": "302.3(c)",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'when the accessory structure abuts an alley, ten (10) feet shall be required.'"
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "Section 302",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No separation between buildings on the same lot found in Section 302."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "Section 508",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district: R-1 40%, R-2 50%, R-3 60%. See districts."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "Section 203 'Family'",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART2DE",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A dwelling unit is for one family. A group over four unrelated persons is not a family."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "Section 501, 702.15",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: no ADU is allowed by right."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "Section 1020",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. Single-family detached and two-family: 'Two (2) spaces for each dwelling unit.'"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit, single family: 5,000 sq ft. Principal yards: front 25 ft, rear 25 ft, one side 8 ft, both sides 20 ft. Accessory buildings use 302.3 (5 ft side and rear)."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "District front yard. Accessory buildings may stand only in the rear or side yard (302.3)."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum building coverage of lot."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Section 508",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2.5 stories, 35 ft."
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "Section 1020(1)",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached: 'Two (2) spaces for each dwelling unit.' This is per unit, not an ADU row."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit, single family: 5,000 sq ft. Principal yards: front 20 ft, rear 20 ft, one side 8 ft, both sides 20 ft. Accessory buildings use 302.3 (5 ft side and rear)."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "District front yard. Accessory buildings may stand only in the rear or side yard (302.3)."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum building coverage of lot."
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Table row lists 2.5 SF stories. The feet value for single family is not clear in the table text."
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "Section 1020(1)",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached: 'Two (2) spaces for each dwelling unit.' This is per unit, not an ADU row."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit, single family: 5,000 sq ft. Principal yards: front 20 ft, rear 20 ft, one side 8 ft, both sides 20 ft. Accessory buildings use 302.3 (5 ft side and rear)."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "District front yard. Accessory buildings may stand only in the rear or side yard (302.3)."
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum building coverage of lot."
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Table row lists 2.5 SF stories. The feet value for single family is not clear in the table text."
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "Section 1020(1)",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached: 'Two (2) spaces for each dwelling unit.' This is per unit, not an ADU row."
+      }
+    }
+  }
+}
