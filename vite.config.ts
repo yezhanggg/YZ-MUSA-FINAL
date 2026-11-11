@@ -138,7 +138,7 @@ export default defineConfig({
   test: {
     root: ROOT,
     environment: "node",
-    include: ["app/src/**/*.test.ts", "api/**/*.test.ts", ...(process.env.EVAL ? ["agent/**/*.eval.ts"] : [])],
+    include: ["app/src/**/*.test.ts", "api/**/*.test.ts", "agent/**/*.test.ts", ...(process.env.EVAL ? ["agent/**/*.eval.ts"] : [])],
     testTimeout: 30_000,
   },
 });

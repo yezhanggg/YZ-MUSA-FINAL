@@ -7,7 +7,7 @@ import { BASE, type Adu } from '../app/src/lib/numbers';
 import { findFeature, prepare, type FC, type LngLat, type Lot, type TownProps, type TractProps } from '../app/src/tool/geo';
 import type { DataProvider, SiteRecord } from '../app/src/agent/executors';
 import type { LotAgentProvider } from '../app/src/lib/lot/agentTools';
-import { PLACE_BY_COUNTY, findLoadedLot, loadLot, type Fetcher } from '../app/src/lib/lot/load';
+import { PLACE_BY_COUNTY, findLoadedLot, loadLot, loadTractLots, type Fetcher } from '../app/src/lib/lot/load';
 import type { LotRecord, Scenario } from '../app/src/lib/lot/types';
 import { DEFAULT_MONEY, moneyOptions, tractRents } from '../app/src/tool/testState';
 
@@ -61,6 +61,21 @@ const fileFetch: Fetcher = async (url) => {
   return path.startsWith(root) && existsSync(path) ? new Response(readFileSync(path)) : new Response('missing', { status: 404 });
 };
 const LOAD = { baseUrl: BASE_URL, fetch: fileFetch };
+
+/** Every lot record of one tract on disk. */
+export const nodeTractLots = (geoid: string) => loadTractLots(geoid, LOAD);
+
+/** Tract GEOIDs with a head file on disk for one place, sorted. */
+export function tractsOnDisk(place: string): string[] {
+  const dir = resolve(lotRoot(place), 'detail');
+  return existsSync(dir) ? readdirSync(dir).filter((f) => /^\d{11}\.json\.gz$/.test(f)).map((f) => f.slice(0, 11)).sort() : [];
+}
+
+/** data_version of one place's build, from its manifest. */
+export function lotDataVersion(place: string): string | null {
+  const f = resolve(lotRoot(place), 'manifest.json');
+  return existsSync(f) ? ((JSON.parse(readFileSync(f, 'utf8')) as { data_version?: string }).data_version ?? null) : null;
+}
 
 const lotTracts = new Map<string, Record<string, string>>();
 /** Tract GEOID of a lot id, from the build's lot_tract.json. null when the place or the lot is not on disk. */
