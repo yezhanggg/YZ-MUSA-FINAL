@@ -223,6 +223,10 @@
         "min_lot_share_of_district": {
           "$ref": "#/$defs/leaf_share",
           "description": "The lot needs only this share of the district minimum lot (Manheim: 0.9)."
+        },
+        "requires_conforming_lot": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "true when the code ties the ADU to a lot that meets the district minimum lot (a conforming lot). Without it, a lot below the district minimum is shown as a possible nonconforming lot, not barred."
         }
       }
     },

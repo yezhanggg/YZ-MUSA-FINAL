@@ -103,6 +103,7 @@ All optional. Older files stay valid.
 | `adu.scope_districts`, `adu.status_outside` | The ADU rule reaches only some districts or an overlay | Hempfield: scope TC-R, TC-B (TND overlay), outside `not_addressed` |
 | `approval.unlisted_use_path` | A special exception for uses the code does not list, distinct from a variance. Leave out where the code bars unlisted uses | Hempfield 87-186, Lancaster 300-17. Not Wilkes-Barre R-1 (702.15) |
 | gate `not_districts` | A gate that applies everywhere except the listed districts or overlays | Hempfield: the town-wide rule outside the TND overlay (`not_districts` TC-R, TC-B) |
+| `eligibility.requires_conforming_lot` | Set `true`, with the section, only when the code ties the ADU to a lot that meets the district minimum. Without it, an existing lot below the district minimum is shown as possibly nonconforming, not barred. `min_lot_sqft`, `min_lot_share_of_district`, a lot-size gate and a verified per-unit lot area still bar | Altoona 800-31 (lot meets district minimum), if the text says so |
 | `approval.alternatives` | Other ways to add a unit that are not an ADU: `{name, path, districts, conditions, min_lot_sqft, section, url}`. Shown apart, never counted as the ADU being allowed | Middletown 500-2312 conversion, Haverford 182-1208, Penn Hills R-2 conversion, Wilkes-Barre R-2 and R-3, Lancaster 300-28A, Millcreek duplex, Manheim R-3 |
 
 Other rules:
