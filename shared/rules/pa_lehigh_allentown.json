@@ -36,22 +36,9 @@
     "code_current_through": "2026-10-07",
     "code_current_through_note": "eCode360 header: Includes legislation through 10-07-2026.",
     "checks": [
-      "ADUs only on a lot with one dwelling unit (660-42C(1)(a))",
-      "Principal unit plus ADU must total at least 1,750 sq ft of floor area (660-42C(1)(b))",
-      "A detached ADU (in an outbuilding) needs a lot that abuts an alley or street on its rear or street side lot line (660-42C(1)(c))",
       "Whether an ADU is allowed depends on building type and zone. Rowhouses allow it only inside the house. Twin house, House A in N3 and N4, House B and House C allow it in the house or an outbuilding (Article 4 tables, part F)",
       "No ADU in House A in GX-C, GX-N, NX or N2, in Lane rowhouse, Small general, General, Storefront or Commercial center buildings (Article 4 tables, part F, dash means not allowed)",
-      "N1: only Urban rowhouse allows an ADU, inside the house. House A is not a building type in N1 (660-25F, 660-29)",
-      "N2: Town rowhouse allows an ADU inside the house only. House A and Lane rowhouse in N2 allow none (660-24F, 660-26F, 660-29F)",
-      "NX: Suburban rowhouse allows an ADU inside the house only. House A in NX allows none (660-27F, 660-29F)",
-      "Detached ADU gate: the lot must abut an alley or a street on its rear or street side lot line. An interior lot with no rear alley cannot have one (660-42C(1)(c))",
-      "An outbuilding with an ADU must be on a permanent foundation (660-42C(8)(a))",
-      "Accessory buildings of 250 sq ft or more seen from an A or B street must match the house roof type and building materials (660-41B(7))",
-      "Outbuilding height: two stories or the height of the house, whichever is less. Floor-to-floor rules of the house apply (660-49G). No feet number",
-      "Total parking: a house plus an ADU needs 3 off-street spaces in N3, N4, N5 (2 for the house, Table 660-10 in 660-84, plus 1 for the ADU). In N1 and N2 the house needs 1, so 2 in all",
-      "PA DEP must evaluate the sewer connection for every ADU (660-42C(2))",
-      "Owner must file an affidavit and record a deed restriction before the permit (660-42C(12))",
-      "Residents of both units combined: one household plus two adults. In the Student Residence Overlay, no more than two students (660-42C(6))",
+      "Outbuilding height: two stories or the height of the house, whichever is less. Floor-to-floor rules of the house apply (660-49G). No feet number. Ask the Zoning Officer for the height in feet",
       "Only one street-facing entrance on a house with an ADU, unless a second one existed before (660-42C(8)(b))",
       "Outbuildings on lots under 15,000 sq ft in an N zone: two at most (660-49E)",
       "Code slip: 660-86A points to 660-44B for ADU parking, but the ADU rule is 660-42C(7) and 660-44 is EV charging"
@@ -338,7 +325,7 @@
       "url": "https://ecode360.com/49641099",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Outbuildings may not exceed two stories in height or the height of the principal building, whichever is less. No feet number for outbuildings. The general 15 ft accessory cap applies unless otherwise specified."
+      "note": "Outbuildings may not exceed two stories in height or the height of the principal building, whichever is less. The code gives no feet number for an outbuilding. Ask the Zoning Officer for the height in feet."
     },
     "setback_front_ft": {
       "value": null,
@@ -464,6 +451,13 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "At least one off-street parking space is required for an accessory dwelling unit, in addition to the principal unit. 660-86A bars reductions but cites 660-44B by mistake."
+    },
+    "reading": {
+      "value": "House plus ADU: 3 spaces in total in N3, N4, N5 and GX zones (2 for the house under Table 660-10, plus 1 for the ADU). 2 in total in N1 and N2, where the house needs 1.",
+      "section": "660-84 Table 660-10, 660-42C(7)",
+      "url": "https://ecode360.com/49647204",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
     }
   },
   "utilities": {

@@ -90,6 +90,41 @@
       "confidence": "verified",
       "note": "No ADU use in any district. Any district may hear it as a use not provided for (300-17). Two-family conversion by special exception in R3, R4, RO, MU, C1, C2."
     },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "Other path: a second dwelling in a separate building as a second principal building on the lot. Needs a land development plan, no hearing. Yards are met for the whole lot. Whether lot area must cover both dwellings is not stated. Parking for it may be reduced by special exception (300-44E).",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "300-28A, 300-44E",
+          "url": "https://ecode360.com/8122840"
+        },
+        {
+          "kind": "other",
+          "condition": "Other path for a unit inside the house: conversion to a two-family dwelling, by special exception for a building of at least 2,000 gross sq ft, in R3, R4, RO, MU, C1, C2 only. Lot area and yards may be waived if the building is not enlarged (bulk table note (d)).",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "300 Attachment 2, 300 Attachment 3 note (d)",
+          "url": "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf"
+        }
+      ],
+      "section": "300-17, 300-28A, 300-44E",
+      "url": "https://ecode360.com/8122840",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Paths outside an ADU use."
+    },
     "min_lot_sqft": {
       "value": null,
       "section": "300 Attachment 3",

@@ -386,6 +386,14 @@
         "confidence": "verified",
         "note": "Minimum lot area per family (square feet). Principal yards: front 30 ft, rear 30 ft, sides 15 total, 5 least ft. A detached accessory building uses 205.9 instead (3 ft side and rear)."
       },
+      "lot_area_per_unit_sqft": {
+        "value": 6000,
+        "section": "§ 205 table, R-1, Minimum lot area per family",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum lot area per family. Open reading: the code does not say whether an ADU counts as a second family. If it does, a house plus ADU needs twice this."
+      },
       "max_building_coverage": {
         "value": 0.35,
         "section": "§ 205 table, R-1",
@@ -420,6 +428,14 @@
         "confidence": "verified",
         "note": "Minimum lot area per family (square feet). Principal yards: front by 205.2 averaging, rear 20 ft, sides 6 total, 3 least ft. A detached accessory building uses 205.9 instead (3 ft side and rear)."
       },
+      "lot_area_per_unit_sqft": {
+        "value": 6000,
+        "section": "§ 205 table, R-1A, Minimum lot area per family",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum lot area per family. Open reading: the code does not say whether an ADU counts as a second family. If it does, a house plus ADU needs twice this."
+      },
       "max_building_coverage": {
         "value": 0.5,
         "section": "§ 205 table, R-1A",
@@ -453,6 +469,14 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "Minimum lot area per family (square feet). Principal yards: front by 205.2 averaging, rear 20 ft, sides 6 total, 3 least ft. A detached accessory building uses 205.9 instead (3 ft side and rear)."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 2000,
+        "section": "§ 205 table, R-2, Minimum lot area per family",
+        "url": "https://ecode360.com/44157094",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum lot area per family. Open reading: the code does not say whether an ADU counts as a second family. If it does, a house plus ADU needs twice this."
       },
       "max_building_coverage": {
         "value": 0.5,
