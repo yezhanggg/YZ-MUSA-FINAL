@@ -72,9 +72,9 @@ const approvalLabel = (label: string, text: string) => {
 };
 
 const VERDICT: Record<string, { accept: string[]; reject: string[] }> = {
-  pays: { accept: ['pays', 'pay off', 'pays off', 'positive', 'makes money', 'cash flow positive'], reject: ["doesn't pay", 'does not pay', 'not pay', 'loses money'] },
+  pays: { accept: ['pays', 'pay off', 'pays off', 'positive', 'makes money', 'cash flow positive', 'yes'], reject: ["doesn't pay", 'does not pay', 'not pay', 'loses money', 'no, it', 'no, not'] },
   close: { accept: ['close', 'break even', 'breaks even', 'roughly even', 'about even', 'borderline', 'marginal'], reject: [] },
-  does_not_pay: { accept: ["doesn't pay", 'does not pay', "won't pay", 'will not pay', 'not pay', 'loses money', 'lose money', 'negative', 'falls short'], reject: [] },
+  does_not_pay: { accept: ["doesn't pay", 'does not pay', "won't pay", 'will not pay', 'not pay', 'loses money', 'lose money', 'negative', 'falls short', 'no, not', 'below the'], reject: ['yes, it pays', 'it pays off'] },
 };
 const verdict = (label: string, v: string) => en(label, v, VERDICT[v].accept, VERDICT[v].reject);
 const PAYS: Record<string, string[]> = {
@@ -264,7 +264,7 @@ async function build(): Promise<EvalQuestion[]> {
       const flags = at(f, 'flags') as string[];
       const out = [en('steep slope flag', 'steep_slope', ['steep slope', 'steep'])];
       if (flags.includes('landslide')) out.push(en('landslide flag', 'landslide', ['landslide']));
-      if (!flags.includes('flood')) out.push(how('no flood flag', ['no flood', 'not in a flood', 'not flagged for flood', 'no flag for flood', 'not a flood']));
+      if (!flags.includes('flood')) out.push(how('no flood flag', ['no flood', 'not in a flood', 'not flagged for flood', 'no flag for flood', 'not a flood', "doesn't flag flood", 'does not flag flood', 'not flood']));
       return out;
     },
     rubric: 'Lists the flags on the record (steep slope, and landslide when set) and does not claim a flood flag.',
@@ -606,7 +606,7 @@ async function build(): Promise<EvalQuestion[]> {
   Q.push({
     id: 'trap-02', category: 'traps', question: 'Can I build a backyard cottage on lot 42045-01-00-0000-000?', context: ctx(),
     required: [], calls: [{ name: 'get_lot_facts', input: { lot_id: '42045-01-00-0000-000' } }, { name: 'get_site', input: { lot_id: '42045-01-00-0000-000' } }],
-    facts: () => [how('says the lot is not in the data', ['not in', 'not loaded', 'no data', "don't have", 'do not have', 'select it', 'not find', "couldn't find", "can't find", 'not available', 'only covers', 'outside'], 'not loaded')],
+    facts: () => [how('says the lot is not in the data', ['not in', "n't in the data", "isn't loaded", "can't answer for that lot", 'not loaded', 'no data', "don't have", 'do not have', 'select it', 'not find', "couldn't find", "can't find", 'not available', 'only covers', 'outside'], 'not loaded')],
     forbidden: [noSqft, { pattern: '\\b(it|a cottage|one) (fits|would fit)\\b', why: 'a fit answer for a lot with no data' }], scenario: null, errorsOk: true,
     rubric: 'Says the lot is not in the loaded data (outside Pittsburgh and Philadelphia) and asks the user to select a lot. No made-up answer.',
   });

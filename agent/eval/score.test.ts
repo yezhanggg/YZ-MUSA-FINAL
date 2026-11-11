@@ -155,6 +155,26 @@ describe.skipIf(!existsSync(QUESTIONS_FILE))('widened phrasings still reject wro
     expect(scoreQuestion(q('trap-09'), transcript(q('trap-09'), "Yes, it's on public sewer.")).forbidden_hits.length).toBeGreaterThan(0);
   });
 
+  it('verdicts, flood and unknown lots: the wordings seen in the Haiku run pass, the opposite does not', () => {
+    const v4 = q('money-04').facts.find((f) => f.label === 'verdict')!;
+    const v10 = q('money-10').facts.find((f) => f.label === 'verdict')!;
+    const say = (f: typeof v4, a: string) => checkFact(f, a).pass;
+    const no = 'No, not with cash. It yields 4.6% a year, below the 7.18% rate.';
+    const yes = 'Would it pay? Yes, on these assumptions.';
+    if (v4.kind === 'enum' && v4.value === 'does_not_pay') {
+      expect(say(v4, no)).toBe(true);
+      expect(say(v4, 'Yes, it pays off.')).toBe(false);
+    }
+    if (v10.kind === 'enum' && v10.value === 'pays') {
+      expect(say(v10, yes)).toBe(true);
+      expect(say(v10, 'No, it does not pay.')).toBe(false);
+    }
+    expect(pass('lot-04', 'no flood flag', "The lot record doesn't flag flood.")).toBe(true);
+    expect(pass('lot-04', 'no flood flag', 'It is in a flood zone.')).toBe(false);
+    expect(pass('trap-02', 'says the lot is not in the data', "I can't answer for that lot yet. It isn't in the data loaded here.")).toBe(true);
+    expect(pass('trap-02', 'says the lot is not in the data', 'Yes, a 600 sq ft cottage fits there.')).toBe(false);
+  });
+
   it('missing section: "doesn\'t include" passes, inventing its text fails', () => {
     expect(pass('trap-08', 'says it has no such section', "My data doesn't include section 912.99.")).toBe(true);
     const bad = scoreQuestion(q('trap-08'), transcript(q('trap-08'), 'Section 912.99 sets a $200 fee for each ADU, see 912.98.'));

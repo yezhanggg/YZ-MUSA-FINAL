@@ -215,6 +215,7 @@ export function getLotRules(lot: LotRecord, scenario: Scenario) {
     defaults_not_town_rules: r.assumed,
     state_limits: r.state_limits ?? {},
     ...(scenario !== 'today' ? { changes_from_today: changesFromToday(lot, scenario) } : {}),
+    fit: 'Not tested here. Rules only. Call test_unit_on_lot to say whether a unit fits.',
     notice: NOTICE,
     sources: sourcesOf(Object.values(r.citations)).map(src),
   });
