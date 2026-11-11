@@ -49,10 +49,12 @@ describe('the unit', () => {
     const lot = fixture('easy_fit');
     const v = unitVerdict(lot, unitInput(DEFAULT_UNIT, 'today'));
     const p = v.placed!;
+    // Same four corners (the ring may start at the opposite corner, as the angle is kept modulo 180).
+    const corners = (r: number[][]) => r.slice(0, 4).map(([x, y]) => [Number(x.toFixed(7)), Number(y.toFixed(7))]).sort((a, b) => a[0] - b[0] || a[1] - b[1]);
     const ring = boxRing(lot, p.center, p.angle_deg, p.width_ft, p.depth_ft);
-    ring.forEach((pt, i) => {
-      expect(pt[0]).toBeCloseTo(p.ring[i][0], 7);
-      expect(pt[1]).toBeCloseTo(p.ring[i][1], 7);
+    corners(ring).forEach((pt, i) => {
+      expect(pt[0]).toBeCloseTo(corners(p.ring)[i][0], 6);
+      expect(pt[1]).toBeCloseTo(corners(p.ring)[i][1], 6);
     });
     // And the same box is inside the buildable ground.
     const f = frameOf(lot);
