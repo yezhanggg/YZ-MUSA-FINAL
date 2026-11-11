@@ -1,0 +1,240 @@
+{
+  "provenance": {
+    "jurisdiction": "Pennsylvania (statewide baseline)",
+    "instrument": "Municipalities Planning Code (Act 247 of 1968), PA Uniform Construction Code (2021 I-Codes), Construction Code Act 901(g), Sewage Facilities Act (Act 537) and 25 Pa. Code Chapter 71, with references to the pending state bills",
+    "kind": "statewide",
+    "status": "in_force",
+    "status_detail": "What applies in every Pennsylvania town. The assistant uses it for a town with no rule file. It holds no zoning numbers for any town.",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "https://www.pa.gov/agencies/dli/programs-services/labor-management-relations/bureau-of-occupational-and-industrial-safety/uniform-construction-code-home",
+      "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1999&ActNum=0045.&SessInd=0",
+      "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1965&ActNum=0537.&SessInd=0",
+      "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/025/chapter71/s71.51.html",
+      "https://up.codes/viewer/pennsylvania/irc-2021/chapter/3/building-planning",
+      "https://up.codes/viewer/pennsylvania/irc-2021/chapter/2/definitions",
+      "https://dced.pa.gov/download/housing-action-plan-2026/?wpdmdl=128767",
+      "shared/rules/hb2186.json",
+      "shared/rules/sb1346.json",
+      "shared/rules/default.json"
+    ],
+    "verified_on": "2026-11-11",
+    "checks": [
+      "Read the town's own zoning ordinance. ADU rules are local",
+      "Ask the municipal zoning officer which approval path applies",
+      "Check sewage capacity (Sewage Enforcement Officer for septic, tap fees for public sewer)",
+      "Check the deed and any HOA rules",
+      "Get a building permit and a certificate of occupancy",
+      "Before renting, ask about a local rental license"
+    ],
+    "notes": "Building code numbers the resolver uses stay in default.json. Bill values stay in hb2186.json and sb1346.json. This file only states them in words and points there."
+  },
+  "statewide": {
+    "who_zones": {
+      "value": "Each municipality's governing body may enact, amend and repeal its own zoning ordinance. There is no statewide zoning rule for ADUs today.",
+      "section": "MPC 601 (53 P.S. 10601)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "mpc_scope": {
+      "value": "The MPC covers every city of the second class A and third class, borough, incorporated town, township, county of the second through eighth class and home rule municipality. It does not list cities of the first class (Philadelphia) or second class (Pittsburgh). Those two cities zone under their own codes.",
+      "section": "MPC 107(a), definition of Municipality (53 P.S. 10107)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "So a bill that amends only the MPC (SB 1346) does not reach Philadelphia or Pittsburgh."
+    },
+    "zoning_officer": {
+      "value": "A zoning officer administers the ordinance by its literal terms and may not permit a use the ordinance does not allow. A use the ordinance does not list needs a hearing path or a code change.",
+      "section": "MPC 614 (53 P.S. 10614)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "path_special_exception": {
+      "value": "Special exception: the Zoning Hearing Board decides, under the express standards and criteria the ordinance states. The board may attach reasonable conditions.",
+      "section": "MPC 912.1 and 909.1(a)(6) (53 P.S. 10912.1, 10909.1)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "path_conditional_use": {
+      "value": "Conditional use: the governing body (council, commissioners or supervisors) holds the hearing and decides, under the express standards and criteria in the ordinance. It may attach reasonable conditions.",
+      "section": "MPC 913.2(a) and 909.1(b)(3) (53 P.S. 10913.2, 10909.1)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "path_variance": {
+      "value": "Variance: the Zoning Hearing Board may grant one only for unnecessary hardship from unique physical conditions of the lot, not created by the applicant, that will not alter the neighborhood, and only the minimum relief. A second home on a lot where the ordinance does not allow one usually needs a use variance, which is hard to get.",
+      "section": "MPC 910.2(a)(1) to (5) (53 P.S. 10910.2)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The standards are quoted from the statute. Calling a use variance hard to get is a plain reading, not a statistic."
+    },
+    "hearing_timing": {
+      "value": "The first Zoning Hearing Board hearing must start within 60 days of a complete application. Later hearings come within 45 days of the prior one. The board decides in writing within 45 days after the last hearing. If it misses these limits the decision is deemed in favor of the applicant, unless the applicant agreed to more time.",
+      "section": "MPC 908(1.2) and 908(9) (53 P.S. 10908)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "conditional_use_timing": {
+      "value": "The governing body decides a conditional use in writing within 45 days after its last hearing. If it misses the limit, the decision is deemed in favor of the applicant unless the applicant agreed to more time.",
+      "section": "MPC 913.2(b)(1) and (2) (53 P.S. 10913.2)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1968&ActNum=0247.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "building_code": {
+      "value": "The PA Uniform Construction Code moved to the 2021 International Codes effective January 1, 2026 (final-omitted rulemaking published in the Pennsylvania Bulletin November 8, 2025). One- and two-family homes follow the 2021 IRC with PA amendments. An ADU needs a building permit, inspections and a certificate of occupancy.",
+      "section": "PA UCC, 34 Pa. Code Chapters 401 to 405, Triennial Update",
+      "url": "https://www.pa.gov/agencies/dli/programs-services/labor-management-relations/bureau-of-occupational-and-industrial-safety/uniform-construction-code-home",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "L&I page states the IRRC approval (Oct 16, 2025), Bulletin date and effective date. Transition rules for projects designed before 2026 vary. Ask the code official."
+    },
+    "building_code_enforcement": {
+      "value": "Over 90 percent of the state's municipalities administer and enforce the UCC locally. In a town that opted out, residential work is inspected by a certified third-party agency the owner hires.",
+      "section": "PA L&I, Uniform Construction Code page",
+      "url": "https://www.pa.gov/agencies/dli/programs-services/labor-management-relations/bureau-of-occupational-and-industrial-safety/uniform-construction-code-home",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "irc_dwelling_unit": {
+      "value": "A dwelling unit is a single unit with complete independent living facilities for one or more persons, with permanent provisions for living, sleeping, eating, cooking and sanitation. An ADU with a kitchen is a dwelling unit under the building code.",
+      "section": "2021 IRC R202, Dwelling unit",
+      "url": "https://up.codes/viewer/pennsylvania/irc-2021/chapter/2/definitions",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Read on the UpCodes copy of the 2021 IRC as adopted in Pennsylvania. The ICC site refuses plain fetches."
+    },
+    "irc_fire_separation_lot_line": {
+      "value": "Exterior walls near a lot line follow Table R302.1(1), or R302.1(2) when the home is sprinklered. The distances the tool uses are in default.json (rated wall below 5 ft, no openings below 3 ft).",
+      "section": "2021 IRC R302.1, Tables R302.1(1) and R302.1(2)",
+      "url": "https://up.codes/viewer/pennsylvania/irc-2021/chapter/3/building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Read on the UpCodes copy of the 2021 IRC as adopted in Pennsylvania. The ICC site refuses plain fetches. Numbers are not repeated here. See default.json envelope values."
+    },
+    "irc_two_family_separation": {
+      "value": "A unit inside or attached to the house makes it a two-family dwelling. The two units need wall and floor assemblies with at least a 1-hour fire rating, from the foundation to the roof sheathing. A 1/2-hour rating is allowed when the whole building is sprinklered under P2904.",
+      "section": "2021 IRC R302.3 and its exceptions",
+      "url": "https://up.codes/viewer/pennsylvania/irc-2021/chapter/3/building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Read on the UpCodes copy of the 2021 IRC as adopted in Pennsylvania. The ICC site refuses plain fetches."
+    },
+    "irc_egress": {
+      "value": "Every sleeping room, basement and habitable attic needs an operable emergency escape and rescue opening. The net clear opening is at least 5.7 sq ft (5 sq ft at grade floor), at least 24 inches high.",
+      "section": "2021 IRC R310.1, R310.2.1, R310.2.2",
+      "url": "https://up.codes/viewer/pennsylvania/irc-2021/chapter/3/building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Read on the UpCodes copy of the 2021 IRC as adopted in Pennsylvania. The ICC site refuses plain fetches."
+    },
+    "irc_room_size": {
+      "value": "Habitable rooms are at least 70 sq ft and at least 7 ft in any horizontal dimension. Kitchens are exempt.",
+      "section": "2021 IRC R304.1, R304.2",
+      "url": "https://up.codes/viewer/pennsylvania/irc-2021/chapter/3/building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Read on the UpCodes copy of the 2021 IRC as adopted in Pennsylvania. The ICC site refuses plain fetches."
+    },
+    "irc_smoke_alarms": {
+      "value": "Smoke alarms go in each sleeping room, outside each sleeping area near the bedrooms, and on each story including basements.",
+      "section": "2021 IRC R314.3",
+      "url": "https://up.codes/viewer/pennsylvania/irc-2021/chapter/3/building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Read on the UpCodes copy of the 2021 IRC as adopted in Pennsylvania. The ICC site refuses plain fetches."
+    },
+    "irc_co_alarms": {
+      "value": "New construction needs carbon monoxide alarms in a dwelling unit that has a fuel-fired appliance or an attached garage that opens into the unit.",
+      "section": "2021 IRC R315.2.1",
+      "url": "https://up.codes/viewer/pennsylvania/irc-2021/chapter/3/building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Read on the UpCodes copy of the 2021 IRC as adopted in Pennsylvania. The ICC site refuses plain fetches."
+    },
+    "sprinklers": {
+      "value": "Sprinklers are not required in new one- and two-family dwellings in Pennsylvania. The IRC sprinkler section R313.2 is excluded from the UCC. A builder must offer the buyer a sprinkler system at the buyer's cost and give cost information.",
+      "section": "Pennsylvania Construction Code Act 901(g), added by Act 1 of 2011 (35 P.S. 7210.901(g))",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1999&ActNum=0045.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "sewage_planning": {
+      "value": "A municipality must revise its Act 537 official sewage plan for a new subdivision or when the plan cannot meet the sewage needs of new land development. An ADU on one lot is not a subdivision, but ask the municipality whether a planning module or exemption is needed. DEP decides the planning type.",
+      "section": "25 Pa. Code 71.51(a)",
+      "url": "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/025/chapter71/s71.51.html",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The rule text is verified. Whether an ADU without a subdivision triggers planning is a reading that varies by town and DEP region."
+    },
+    "onlot_septic": {
+      "value": "No one may install, alter or connect to an on-lot sewage system, or occupy a building served by a new one, without a permit. The municipality or county health department issues it through its Sewage Enforcement Officer, who checks that the system can take the new unit.",
+      "section": "Pennsylvania Sewage Facilities Act (Act 537) 7(a)(1) and 8(a) (35 P.S. 750.7, 750.8)",
+      "url": "https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=HTM&SessYr=1965&ActNum=0537.&SessInd=0",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "public_sewer": {
+      "value": "On public sewer, the sewer authority or municipality sets tap or connection fees. Check the local fee schedule.",
+      "section": "Local sewer authority rules",
+      "url": "shared/adu_rules_pa.md",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "From the project research notes (section 5). No statewide fee rule."
+    },
+    "rental_licensing": {
+      "value": "Renting an ADU is governed by local rental licensing, registration and inspection ordinances, where a town has them. There is no statewide rental license. Short-term rental limits are also local.",
+      "section": "Local ordinance",
+      "url": "shared/adu_rules_pa.md",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "From the project research notes (sections 3 and 11). Ask the municipality."
+    },
+    "private_restrictions": {
+      "value": "Zoning approval does not lift deed restrictions, covenants or HOA rules. These can still bar an ADU. Check the deed and the HOA documents.",
+      "section": "Private covenants, outside zoning",
+      "url": "shared/adu_rules_pa.md",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Research notes section 11. HB 2186 6302 would keep these in force too (see hb2186.json)."
+    },
+    "state_bill_hb2186": {
+      "value": "House Bill 2186 would require one ADU per lot by right in every town with zoning, Philadelphia and Pittsburgh included. It is a bill, not law. Values and status are in hb2186.json.",
+      "section": "HB 2186 (2025-26), see shared/rules/hb2186.json",
+      "url": "shared/rules/hb2186.json",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Do not copy values from here. Read hb2186.json for status and limits."
+    },
+    "state_bill_sb1346": {
+      "value": "Senate Bill 1346 would allow ADUs by right through the MPC, so it would not reach Philadelphia or Pittsburgh. It is a bill, not law. Values and status are in sb1346.json.",
+      "section": "SB 1346 (2025-26), see shared/rules/sb1346.json",
+      "url": "shared/rules/sb1346.json",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Do not copy values from here. Read sb1346.json for status and limits."
+    },
+    "session_end": {
+      "value": "The 2025-26 session ends November 30, 2026. A bill not passed by then dies and must be introduced again.",
+      "section": "See hb2186.json and sb1346.json status_detail",
+      "url": "shared/rules/hb2186.json",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
+    "housing_action_plan": {
+      "value": "The Governor's Housing Action Plan (February 2026) projects a shortfall of nearly 185,000 homes by 2035. It proposes updating the MPC and letting homeowners build or convert structures into ADUs. It is a plan, not law.",
+      "section": "Pennsylvania Housing Action Plan 2026, pages 31 and 32 (MPC section)",
+      "url": "https://dced.pa.gov/download/housing-action-plan-2026/?wpdmdl=128767",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    }
+  }
+}

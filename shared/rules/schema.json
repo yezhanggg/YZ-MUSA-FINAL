@@ -32,7 +32,8 @@
           "enum": [
             "place",
             "reform",
-            "default"
+            "default",
+            "statewide"
           ]
         },
         "status": {
@@ -83,6 +84,65 @@
         },
         "notes": {
           "type": "string"
+        },
+        "county": {
+          "type": "string",
+          "description": "County name without the word County, e.g. Lehigh. Town files only."
+        },
+        "municipality_type": {
+          "enum": [
+            "city",
+            "borough",
+            "township",
+            "town",
+            "municipality"
+          ],
+          "description": "As in the Census name. Home rule places keep their Census type (Bethel Park and Monroeville are municipality)."
+        },
+        "geoid": {
+          "type": "string",
+          "pattern": "^42\\d{8}$",
+          "description": "2020 Census county subdivision GEOID (state 42 + county 3 + cousub 5). Must exist in towns_index.json."
+        },
+        "code_host": {
+          "enum": [
+            "ecode360",
+            "municode",
+            "amlegal",
+            "general code",
+            "own site",
+            "other"
+          ],
+          "description": "Where the online code lives."
+        },
+        "code_url": {
+          "type": "string",
+          "description": "Link to the zoning chapter as published online."
+        },
+        "code_current_through": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "The date the online code says it is current to. null when the publisher shows none."
+        },
+        "code_current_through_note": {
+          "type": "string",
+          "description": "The currency line as the publisher shows it, e.g. 'Current through Ord. 2025-4, adopted 6-2-2025'."
+        }
+      }
+    },
+    "adu": {
+      "type": "object",
+      "description": "Town files: what the code calls an ADU and how it treats one, each cited. status not_addressed means the code has no ADU text. Then cite the nearest sections (accessory uses, family, two-family) in approval.path.",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/leaf_adu_status"
+        },
+        "term": {
+          "$ref": "#/$defs/leaf_str"
         }
       }
     },
@@ -261,6 +321,13 @@
         "connection_fee_allowed": {
           "$ref": "#/$defs/leaf_bool"
         }
+      }
+    },
+    "statewide": {
+      "type": "object",
+      "description": "pa_statewide.json only. What applies in every Pennsylvania town, one cited text item per key. value is a short plain statement.",
+      "additionalProperties": {
+        "$ref": "#/$defs/leaf_str"
       }
     },
     "districts": {
@@ -728,6 +795,7 @@
             "by_right",
             "administrator_exception",
             "special_exception",
+            "conditional_use",
             "variance",
             "not_allowed",
             null
@@ -912,6 +980,72 @@
         },
         "principal_max_height_ft": {
           "$ref": "#/$defs/leaf_num"
+        }
+      }
+    },
+    "leaf_adu_status": {
+      "type": "object",
+      "description": "How the town code treats an ADU. family_only: occupants must be family or caregivers. conversion_only: only inside an existing building. not_addressed: the code has no ADU text.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "enum": [
+            "allowed_by_right",
+            "special_exception",
+            "conditional_use",
+            "family_only",
+            "conversion_only",
+            "not_addressed",
+            "prohibited",
+            null
+          ]
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
         }
       }
     }

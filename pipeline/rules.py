@@ -39,8 +39,14 @@ ALL_TYPES = ["detached_new", "garage_conversion", "over_garage", "internal", "at
 NEW_STRUCTURE_TYPES = {"detached_new", "attached", "over_garage"}
 PRINCIPAL_TYPES = {"internal", "attached"}
 # From least to most demanding. An ADU type is "allowed" up to special_exception.
-PATH_ORDER = ["by_right", "administrator_exception", "special_exception", "variance", "not_allowed"]
-OK_PATHS = {"by_right", "administrator_exception", "special_exception"}
+# conditional_use (governing body hearing, MPC 913.2) is used by town files only.
+PATH_ORDER = ["by_right", "administrator_exception", "special_exception", "conditional_use", "variance", "not_allowed"]
+OK_PATHS = {"by_right", "administrator_exception", "special_exception", "conditional_use"}
+# Town files (pa_<county>_<town>.json) are listed in this index. The statewide file is the
+# baseline for a town without a file. Neither the index nor the schema is a rule file.
+TOWNS_INDEX = RULES_DIR / "towns_index.json"
+STATEWIDE = "pa_statewide"
+NOT_RULE_FILES = {"schema", "towns_index"}
 
 # Output key -> (section, field) in a rule file. The order is the output order.
 VALUE_KEYS: dict[str, tuple[str, str]] = {
@@ -101,7 +107,7 @@ def schema() -> dict[str, Any]:
 
 def rule_names() -> list[str]:
     """Every rule file name (without .json), schema excluded."""
-    return sorted(p.stem for p in RULES_DIR.glob("*.json") if p.stem != "schema")
+    return sorted(p.stem for p in RULES_DIR.glob("*.json") if p.stem not in NOT_RULE_FILES)
 
 
 def validate(data: dict[str, Any]) -> list[str]:
@@ -551,7 +557,13 @@ def _rear(out: dict[str, Any], lot: dict[str, Any]) -> tuple[Optional[float], st
 
 
 def resolve(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
-    """Rule values for one lot under one scenario. See module docstring and README for keys."""
+    """Rule values for one lot under one scenario. See module docstring and README for keys.
+
+    place is a rule file name (philadelphia, pittsburgh, pa_lehigh_allentown). A town in
+    towns_index.json may also be given by name or GEOID. A town without a file resolves
+    on default.json, so every value is in "assumed".
+    """
+    place = _place_file(place)
     reasons: list[str] = []
     limits: dict[str, Any] = {}
     layers_for(place, scenario)
@@ -609,6 +621,80 @@ def resolve(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
     out["fire_separation"] = fire
     out["historic_path"] = historic
     return {k: out[k] for k in OUTPUT_KEYS}
+
+
+# ------------------------------------------------------------------ towns
+
+def _town_key(text: Any) -> str:
+    """'Upper Darby Twp' and 'upper darby township' -> 'upperdarby'."""
+    words = re.sub(r"[^a-z0-9 ]", " ", str(text).lower().replace("-", " ")).split()
+    drop = {"city", "borough", "boro", "township", "twp", "town", "municipality", "of", "the", "pa", "pennsylvania"}
+    return "".join(w for w in words if w not in drop)
+
+
+@functools.lru_cache(maxsize=1)
+def _towns_index() -> dict[str, Any]:
+    if not TOWNS_INDEX.exists():
+        return {"towns": []}
+    return json.loads(TOWNS_INDEX.read_text())
+
+
+def list_places() -> list[dict[str, Any]]:
+    """Every place in towns_index.json: name, county, GEOID, rule file, status and check date."""
+    keys = ("name", "county", "type", "geoid", "file", "status", "checked_on", "population", "batch")
+    return [{k: t.get(k) for k in keys} | {"has_file": _has_file(t)} for t in _towns_index().get("towns", [])]
+
+
+def _has_file(town: dict[str, Any]) -> bool:
+    return bool(town.get("file")) and (RULES_DIR / f"{town['file']}.json").exists()
+
+
+def find_places(name: Any, county: Optional[str] = None) -> list[dict[str, Any]]:
+    """Index entries that match a name, 'County: name', 'name, County', a GEOID or a file name.
+
+    Largest population first. An exact Census name or a GEOID gives one entry.
+    """
+    towns = _towns_index().get("towns", [])
+    text = str(name or "").strip()
+    if re.fullmatch(r"42\d{8}", text):
+        return [t for t in towns if t["geoid"] == text]
+    if any(t.get("file") == text for t in towns):
+        return [t for t in towns if t.get("file") == text]
+    for sep in (",", ":", "/"):
+        if county is None and sep in text:
+            left, right = (s.strip() for s in text.split(sep, 1))
+            for c, n in ((right, left), (left, right)):
+                c = re.sub(r"(?i)\s*county$", "", c)
+                if any(_town_key(t["county"]) == _town_key(c) for t in towns):
+                    county, text = c, n
+                    break
+    hits = [t for t in towns if _town_key(t["name"]) == _town_key(text)]
+    if county:
+        c = _town_key(re.sub(r"(?i)\s*county$", "", county))
+        hits = [t for t in hits if _town_key(t["county"]) == c]
+    exact = [t for t in hits if t["name"].lower() == text.lower()]
+    return sorted(exact or hits, key=lambda t: -(t.get("population") or 0))
+
+
+def describe_place(name: Any, county: Optional[str] = None) -> Optional[dict[str, Any]]:
+    """One index entry with has_file and also_matches, or None when the town is not in the index."""
+    hits = find_places(name, county)
+    if not hits:
+        return None
+    out = dict(hits[0])
+    out["has_file"] = _has_file(out)
+    out["also_matches"] = [f"{t['name']} ({t['county']} County, {t['geoid']})" for t in hits[1:]]
+    return out
+
+
+def _place_file(place: str) -> str:
+    """A rule file name for resolve(). Index names and GEOIDs map to the town file, or to default."""
+    if (RULES_DIR / f"{place}.json").exists() and place not in NOT_RULE_FILES:
+        return place
+    town = describe_place(place)
+    if town is None:
+        return place  # load_rules raises a clear error
+    return town["file"] if town["has_file"] else DEFAULT
 
 
 # ------------------------------------------------------------------ CLI
