@@ -71,6 +71,29 @@ describe('citations', () => {
   });
 });
 
+describe('town section citations', () => {
+  it('finds town section strings in an answer', () => {
+    const found = citationsIn('See § 204, Section 600-608A, 660-42C, 155-10.2C(9), 7-309.2A, 445-12L(1) and 1322.03(bbb).');
+    expect(found).toEqual(expect.arrayContaining(['§ 204', 'Section 600-608A', '660-42C', '155-10.2C(9)', '7-309.2A', '445-12L(1)', '1322.03(bbb)']));
+  });
+
+  it('does not read plain numbers, ranges or dates as sections', () => {
+    expect(citationsIn('A 2-4 unit building, 1,500 sq ft, 33% share, checked 2026-11-11, 12.5 ft tall.')).toEqual([]);
+  });
+
+  it('knows sections that are in the town files', () => {
+    const corpus = rulesCorpus();
+    for (const c of ['660-42C', '1322.03(bbb)', '155-10.2C(9)', '7-309.2A', 'Section 600-608A']) expect(citationKnown(c, corpus), c).toBe(true);
+  });
+
+  it('flags a made-up town section', () => {
+    const corpus = rulesCorpus();
+    const answer = 'Allentown allows it under 660-99Z, and Bethlehem under § 1322.09(zzz) and 155-77.4Q(3).';
+    const made = citationsIn(answer).filter((c) => !citationKnown(c, corpus));
+    expect(made).toEqual(expect.arrayContaining(['660-99Z', '§ 1322.09(zzz)', '155-77.4Q(3)']));
+  });
+});
+
 describe('scoreQuestion', () => {
   it('passes a good answer', () => {
     const s = scoreQuestion(Q, transcript(Q, "You need an Administrator's Exception (925.06.G.1(i)). The cap is 1,000 sq ft."));

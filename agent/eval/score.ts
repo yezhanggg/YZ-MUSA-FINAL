@@ -65,6 +65,12 @@ const CITATION_RES: RegExp[] = [
   /\bBill(?: No\.)?\s*\d{4}-\d{3,4}\b/g,
   /\bBill\s*\d{6}\b/g,
   /\bOrd(?:inance|\.)?\s*No\.\s*\d+-\d{4}\b/g,
+  // Town code sections: "§ 204", "Section 600-608A", "660-42C", "155-10.2C(9)", "7-309.2A", "445-12L(1)", "1322.03(bbb)".
+  /(?:§|\bsection|\bsec\.)\s*\d{1,4}(?:[-.]\d{1,4})*[A-Za-z]{0,2}(?:\([a-z0-9]{1,4}\))*/gi,
+  /\b\d{1,4}-\d{1,4}(?:\.\d{1,3})+[A-Z]{0,2}(?:\([a-z0-9]{1,4}\))*/g,
+  /\b\d{1,4}-\d{1,4}[A-Z]{1,2}(?:\([a-z0-9]{1,4}\))*/g,
+  /\b\d{1,4}-\d{1,4}(?:\([a-z0-9]{1,4}\))+/g,
+  /\b\d{3,4}\.\d{1,2}[A-Z]?(?:\([a-z0-9]{1,4}\))+/g,
 ];
 
 /** Trims a trailing dot or an unmatched closing parenthesis. */
