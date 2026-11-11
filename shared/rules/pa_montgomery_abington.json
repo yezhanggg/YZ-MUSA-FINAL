@@ -88,6 +88,77 @@
     }
   },
   "eligibility": {
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_size",
+          "condition": "On lots under 10,000 sq ft the ADU must be attached to the house.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "2103.A Use A-1, 2.d(3)",
+          "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140"
+        },
+        {
+          "kind": "family",
+          "condition": "Occupants must be a parent, grandparent, or a spouse, partner or sibling of one of them.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "2103.A Use A-1, 2.c(2)",
+          "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The lot owner's family must live in the main house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "2103.A Use A-1, 2.c(1)",
+          "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140"
+        },
+        {
+          "kind": "design",
+          "condition": "Materials, window ratio and roof pitch must match the main house. No separate address or mailbox.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "2103.A Use A-1, 2.d(7) and 3",
+          "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=141"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Utilities must connect through the main house systems.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "2103.A Use A-1, 2.d(6)",
+          "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140"
+        }
+      ],
+      "section": "2103.A Use A-1",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "zoning_districts": {
       "value": [
         "R1",
@@ -238,6 +309,13 @@
     }
   },
   "use": {
+    "occupancy": {
+      "value": "Relatives only: a parent, grandparent, or a spouse, partner or sibling of one of them, while the owner's family lives in the main house.",
+      "section": "2103.A Use A-1, 2.c",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=140",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "owner_occupancy": {
       "value": true,
       "section": "2103.A Use A-1, 2.c(1)",
@@ -280,6 +358,14 @@
     }
   },
   "parking": {
+    "total_on_site": {
+      "value": 3,
+      "section": "2304.A.1, 2304 Use H-7",
+      "url": "https://ecode360.com/AB0569/laws/LF2031151.pdf#page=240",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "House 2 spaces not counting the garage, plus 1 for the ADU."
+    },
     "spaces_required": {
       "value": 1,
       "section": "2304.A.1",

@@ -78,6 +78,43 @@
     }
   },
   "eligibility": {
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "No part of an accessory garage may be occupied as a residential living area.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "203-314C(2)",
+          "url": "https://ecode360.com/47371156"
+        },
+        {
+          "kind": "other",
+          "condition": "Accessory structures may not be taller than the main house.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "203-313H",
+          "url": "https://ecode360.com/47371092"
+        }
+      ],
+      "section": "203-313, 203-314",
+      "url": "https://ecode360.com/47371156",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "zoning_districts": {
       "value": [
         "CO",

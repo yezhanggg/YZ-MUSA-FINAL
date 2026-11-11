@@ -87,6 +87,50 @@
     }
   },
   "eligibility": {
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_size",
+          "condition": "The lot must meet the district minimum lot area for a single-family detached house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "205-16G(3)(c)",
+          "url": "https://ecode360.com/9500330"
+        },
+        {
+          "kind": "design",
+          "condition": "The house keeps one front entrance. Other entrances on the side or rear.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "205-16G(3)(e)",
+          "url": "https://ecode360.com/9500330"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Sewer authority must certify capacity, or the county must approve the septic system.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "205-16G(3)(h)",
+          "url": "https://ecode360.com/9500330"
+        }
+      ],
+      "section": "205-16G(3)",
+      "url": "https://ecode360.com/9500330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "zoning_districts": {
       "value": [
         "R-1",
@@ -279,6 +323,13 @@
     }
   },
   "parking": {
+    "reading": {
+      "value": "The house spaces plus one space per bedroom in the apartment. A one-bedroom apartment adds 1.",
+      "section": "205-120(60)",
+      "url": "https://ecode360.com/9501666",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "spaces_required": {
       "value": 1,
       "section": "205-120(60)",

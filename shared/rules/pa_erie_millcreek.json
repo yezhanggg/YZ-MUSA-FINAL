@@ -81,6 +81,38 @@
     }
   },
   "eligibility": {
+    "gates": {
+      "value": [
+        {
+          "kind": "owner_occupancy",
+          "condition": "The house must be owner-occupied and the owner's unit over 70% of the living space.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "145-58B",
+          "url": "https://ecode360.com/43576236"
+        },
+        {
+          "kind": "family",
+          "condition": "Only an in-law or a family member may live in the unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "145-11, 145-58H",
+          "url": "https://ecode360.com/43576236"
+        }
+      ],
+      "section": "145-58",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "zoning_districts": {
       "value": [
         "CR",
@@ -228,6 +260,13 @@
     }
   },
   "use": {
+    "occupancy": {
+      "value": "An in-law or a member of the family living in the main house. Rental to others is prohibited.",
+      "section": "145-11, 145-58H",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "owner_occupancy": {
       "value": true,
       "section": "145-58B",
@@ -270,6 +309,13 @@
     }
   },
   "parking": {
+    "reading": {
+      "value": "No In-Law Apartment row. 2 spaces for the house. If the apartment counted as a dwelling unit it would need 2 more. The code does not say.",
+      "section": "145-92 Table VII-1",
+      "url": "https://ecode360.com/43576972",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
+    },
     "spaces_required": {
       "value": null,
       "section": "145-92 Table VII-1",
