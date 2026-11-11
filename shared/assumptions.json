@@ -513,6 +513,129 @@
       "note": "Covers the 10-year abatement and two years after.",
       "confidence": "assumption",
       "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.growth.cpi_u": {
+      "label": "CPI-U yearly average, used to put ACS dollars in 2024 dollars",
+      "unit": "index, 1982-84 = 100",
+      "table": {"2014": 236.736, "2019": 255.657, "2024": 313.689},
+      "note": "ACS 5-year dollars are in the last year of the window, so 2010-14 values are deflated with 2014, 2015-19 with 2019 and 2020-24 with 2024. Used by pipeline/tract/growth.py.",
+      "confidence": "published",
+      "sources": [{"title": "BLS CPI for All Urban Consumers, U.S. city average, all items (CUUR0000SA0), annual averages", "url": "https://data.bls.gov/timeseries/CUUR0000SA0", "date": "2025-01-15"}]
+    },
+    "tract.growth.min_start": {
+      "label": "Smallest starting value for a tract growth rate",
+      "unit": "people, homes, jobs, dollars",
+      "table": {"pop": 200, "units": 100, "jobs": 50, "rent": 1},
+      "note": "Tiny bases give wild yearly rates. A rate is left blank when the start is under these values. Set in the course notebooks, kept here so the modules and notebooks agree.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 notebook 01)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.payoff.size_sqft": {
+      "label": "Unit size in the tract payoff test",
+      "unit": "sq ft",
+      "value": 600,
+      "note": "One-bedroom backyard unit. The tool's base case (1 BR, 600 sq ft, one story) uses the same size.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.payoff.hard_psf": {
+      "label": "Build cost per sq ft in the tract payoff test",
+      "unit": "USD per sq ft",
+      "low": 175, "mid": 250, "high": 300,
+      "note": "A simple all-in rate for the statewide tract screen. The lot-level money model builds cost from parts instead (cost.hard_psf.detached_new plus site work, utilities, contingency and soft costs). The mid value matches the Terner Center median.",
+      "confidence": "assumption",
+      "sources": [
+        {"title": "Terner Center California ADU survey (median 250 per sq ft, 2020 prices)", "url": "https://ternercenter.berkeley.edu/blog/cci-adu-survey", "date": "2021-04-22"},
+        {"title": "Cost to Build House: ADU cost in Pennsylvania (600 sq ft: Philadelphia 313 to 363, Pittsburgh 297 per sq ft all-in)", "url": "https://www.costtobuildhouse.com/adu-cost-in-pennsylvania", "date": "2026-11-10"}
+      ]
+    },
+    "tract.payoff.soft_share": {
+      "label": "Soft costs in the tract payoff test",
+      "unit": "share of build cost",
+      "value": 0.15,
+      "note": "Design, permits and fees on top of the build cost.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.payoff.loan_years": {
+      "label": "Loan length in the tract payoff test",
+      "unit": "years",
+      "value": 30,
+      "note": "All of the cost is borrowed. The rate is financing.pmms30_2026_avg in the main run and financing.pmms30 in the sensitivity table.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.payoff.opex_share": {
+      "label": "Operating costs in the tract payoff test",
+      "unit": "share of gross rent",
+      "value": 0.30,
+      "note": "Vacancy, repairs, property tax and insurance as one share of rent. The lot-level model itemizes these instead.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.payoff.close_band": {
+      "label": "Band for a 'maybe' in the tract payoff test",
+      "unit": "share of the monthly payment",
+      "value": 0.10,
+      "note": "maybe = net rent covers the payment at the low build cost, or is within this share of the payment at the mid cost.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.payoff.rent_basis": {
+      "label": "Rent used in the tract payoff test",
+      "unit": "pointer",
+      "table": {"basis": "rent_b1", "file": "processed/rent_bedrooms_tract.csv", "cross_checks": ["rent_b1_tract", "safmr_1br", "median_rent_all"]},
+      "note": "rent_b1 = tract median gross rent (ACS 2020-24, B25064) times the county ratio of 1-bedroom to all-unit median rent (B25031). Where the tract has no median rent it is the county 1-bedroom median. It is the same column the tool uses. Cross-checks: raw tract B25031 1-bedroom median (often blank), HUD SAFMR 1-bedroom by ZIP joined to tracts through the LODES block crosswalk, and the all-unit median the first report used.",
+      "confidence": "assumption",
+      "sources": [{"title": "Census ACS table B25031", "url": "https://data.census.gov/table/ACSDT5Y2024.B25031", "date": "2025-12"}]
+    },
+    "tract.forecast.years": {
+      "label": "Years in the ADU forecast",
+      "unit": "years",
+      "value": 5,
+      "note": "2027 to 2031.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.forecast.permits_per_100k": {
+      "label": "ADU permits per 100,000 people per year in cities that allow ADUs by right",
+      "unit": "permits per 100,000 people per year",
+      "low": 26, "mid": 53.5, "high": 81,
+      "note": "Range from the project proposal, credited there to Pew research on permissive cities. The exact page was not recorded. Confirm the source before the report goes out.",
+      "confidence": "assumption",
+      "sources": [{"title": "Project proposal figure, credited to The Pew Charitable Trusts (page not recorded)", "url": "", "date": "2026-11-05"}]
+    },
+    "tract.forecast.pays_weight": {
+      "label": "Share of the permit rate by payoff class",
+      "unit": "multiplier",
+      "table": {"yes": 1.0, "maybe": 0.5, "no": 0.2},
+      "note": "No is not zero: some people build for family, not rent. Tracts with no rent data take the no weight.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.forecast.rule_factor": {
+      "label": "Share of the permit rate under each town rule",
+      "unit": "multiplier",
+      "table": {"allowed": {"low": 1.0, "mid": 1.0, "high": 1.0}, "limited": {"low": 0.02, "mid": 0.05, "high": 0.10}, "not_allowed": {"low": 0.0, "mid": 0.0, "high": 0.0}},
+      "note": "Rules come from shared/legal_status.csv. Under a state bill every town it reaches counts as allowed.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.forecast.unlisted_rule": {
+      "label": "Rule for towns not in legal_status.csv",
+      "unit": "rule",
+      "table": {"rule": "limited"},
+      "note": "Many PA towns allow some kind of in-law unit but are not coded yet. This choice drives most of the gap between today and a state bill.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.forecast.lots_index_cap": {
+      "label": "Cap on the lots-with-room index",
+      "unit": "multiple of the state average",
+      "value": 2,
+      "note": "Share of homes on a lot with room, divided by the state share, is capped here so a few tracts do not dominate.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
     }
   }
 }
