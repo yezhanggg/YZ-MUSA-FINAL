@@ -113,12 +113,14 @@ async function tractLots(geoid: string): Promise<LotRecord[]> {
   if (!hit) {
     hit = [...(await nodeTractLots(geoid)).lots].sort((a, b) => a.lot.id.localeCompare(b.lot.id));
     tractCache.set(geoid, hit);
+    // Keep a few tracts only: the full Philadelphia build does not fit in memory at once.
+    if (tractCache.size > 6) tractCache.delete(tractCache.keys().next().value as string);
   }
   return hit;
 }
 
 /** First lot (tract order, then id) that passes `pred` and then `check` (which may call tools). */
-async function pick(place: string, what: string, pred: (l: LotRecord) => boolean, check?: (l: LotRecord) => Promise<boolean>, maxTracts = 40): Promise<LotRecord> {
+async function pick(place: string, what: string, pred: (l: LotRecord) => boolean, check?: (l: LotRecord) => Promise<boolean>, maxTracts = 400): Promise<LotRecord> {
   for (const g of tractsOnDisk(place).slice(0, maxTracts))
     for (const l of await tractLots(g)) if (pred(l) && (!check || (await check(l)))) return l;
   throw new Error(`no ${place} lot for: ${what}`);
@@ -685,6 +687,13 @@ async function build(): Promise<EvalQuestion[]> {
       const r = (await getRuleText({ place: t.name, topic: tt.topic })) as Obj;
       const rule = rows(r, 'rules').find((x) => x.key === tt.key);
       if (!rule || rule.value === null || rule.value === undefined || typeof rule.section !== 'string' || !rule.section) continue;
+      // Some town sections have no short number to check for (a use matrix row, an article title): skip those.
+      let token: string;
+      try {
+        token = sectionToken(rule.section);
+      } catch {
+        continue;
+      }
       const v = rule.value;
       const fact = (): Fact => {
         if (typeof v === 'number') return n(tt.key, v, tt.topic === 'size' ? 'sqft' : tt.topic === 'height' ? 'ft' : 'count');
@@ -695,7 +704,7 @@ async function build(): Promise<EvalQuestion[]> {
       Q.push({
         id: `town-0${made}`, category: 'town_rules', question: tt.ask(t.name), context: ctx(),
         required: [['get_rule_text']], calls: [{ name: 'get_rule_text', input: { place: t.name, topic: tt.topic } }],
-        facts: () => [fact(), sec('section', sectionToken(String(rule.section)))],
+        facts: () => [fact(), sec('section', token)],
         scenario: null,
         rubric: `Reads the ${t.name} rule file with get_rule_text and gives the ${tt.topic} rule with its section.`,
       });
