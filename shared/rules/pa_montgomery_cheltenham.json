@@ -44,11 +44,11 @@
       "A single-family detached dwelling must be 'the only dwelling unit located on the parcel' and may have only one kitchen (295-405B(6) Use G-6(e))",
       "R1 to R4 allow the listed uses 'and no other'. Uses not listed are not permitted (295-403D). A lot may not be partitioned to add a principal use (295-402E)",
       "R3 and R4 allow a duplex (one unit above the other) by right on a lot of at least 7,500 sq ft (Use G-3). A duplex conversion of a house on a smaller nonconforming lot of 5,000 sq ft or more is a special exception",
-      "R4: the Zoning Hearing Board may allow conversion of an existing dwelling to up to three families, 2,000 sq ft of lot per family, only for a building of little use as a single-family house (295-805)",
+      "R4: the Zoning Hearing Board may allow conversion of a dwelling that existed when the chapter took effect (2017) to up to three families, 2,000 sq ft of lot per family, only for a building of little use as a single-family house (295-805)",
       "Accessory structures (Use A-1): no taller than the house or 25 ft. Over 250 sq ft or over 16 ft high, they must meet the principal yards and stay within 50% of the house's building area. 10 ft from other structures",
       "A pool house may have at most two of bedroom, bathroom and kitchen (Use A-9)",
       "Short-term transient lodging (Use B-40) is listed only in commercial and mixed-use districts. The definition of dwelling excludes short-term rentals",
-      "Renting any dwelling unit needs a township rental license and inspections every three years (227-2, 227-7)"
+      "No rental agreement may be signed until the township issues a rental license for the property. Rental property is inspected at least once every three years (227-2A, 227-7A)"
     ],
     "notes": "Zoning office: Building, Zoning and Codes department, Cheltenham Township, https://www.cheltenhamtownship.org/ (department pages linked from the home page). Searched Chapter 295 (full print view) for: accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, au pair, servant, accessory residential, conversion, kitchen. No ADU provision."
   },
@@ -119,7 +119,7 @@
           "districts": [
             "R4"
           ],
-          "conditions": "Existing dwelling only. At least 2,000 sq ft of lot per family. District yards and building area not reduced. No major exterior change. Only for a building of little economic value or use as a single-family house.",
+          "conditions": "Only a dwelling that stood in R4 at the effective date of the chapter (11-15-2017). At least 2,000 sq ft of lot per family. District yards and building area not reduced. No major exterior change. Only for a building of little economic value or use as a single-family house.",
           "min_lot_sqft": 4000,
           "section": "295-805",
           "url": "https://ecode360.com/33237042"
@@ -236,12 +236,12 @@
       "note": "Reading: 0 means the code allows no ADU. The house must be the only dwelling unit on the parcel."
     },
     "short_term_rental_banned": {
-      "value": null,
-      "section": "295-301 'Dwelling', 295-405B(40)",
+      "value": true,
+      "section": "295-405B(40), 295-501 to 295-801, 295-403D, 295-301 'Dwelling'",
       "url": "https://ecode360.com/33236133",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "No ADU rule. Use B-40 short-term lodging is not listed in R1 to R4."
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: Use B-40 short-term lodging is not listed in R1 to R4, and 'Any use not permitted ... is not permitted'. A dwelling 'shall not be construed to include short-term transient lodging'."
     }
   },
   "parking": {
@@ -405,12 +405,12 @@
     },
     "R4": {
       "min_lot_sqft": {
-        "value": 2500,
-        "section": "295-802",
-        "url": "https://ecode360.com/33237018",
+        "value": 5000,
+        "section": "295-802, 295-405B(6) Use G-6(b)",
+        "url": "https://ecode360.com/33236133",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "District minimum. The single-family detached use needs 5,000 sq ft (Use G-6(b)) and a duplex 7,500 sq ft (Use G-3(d)). The larger figure applies."
+        "note": "House lot. District table 2,500 sq ft, but Use G-6(b): 'minimum lot size for single-family detached dwellings shall be 5,000 square feet ... the larger of the two shall apply.' A duplex needs 7,500 sq ft (Use G-3(d))."
       },
       "setback_front_ft": {
         "value": 20,
