@@ -139,6 +139,34 @@ def _v(d, sec, key):
     v = leaf.get("value")
     if v is None: return "not confirmed" if leaf.get("confidence") == "unverified" or not leaf else "none set"
     return val(v, leaf)
+def _path_cell(d):
+    """The path, with any district or historic path after it."""
+    cell = _v(d, "approval", "path")
+    extra = []
+    for item in ((d.get("approval") or {}).get("district_paths") or {}).get("value") or []:
+        extra.append(f"{NAMES.get(item['path'], item['path'])} in {', '.join(item['districts'])}")
+    for code, row in (d.get("districts") or {}).items():
+        if (row.get("adu_path") or {}).get("value"): extra.append(f"{NAMES.get(row['adu_path']['value'], row['adu_path']['value'])} in {code}")
+    hist = ((d.get("approval") or {}).get("historic_path") or {}).get("value")
+    if hist: extra.append(f"historic building: {NAMES.get(hist, hist)}")
+    return cell + (" (" + ". ".join(extra) + ")" if extra else "")
+def _conditions_cell(d):
+    """Short list of what limits the ADU, with sections."""
+    out = []
+    use, el = d.get("use") or {}, d.get("eligibility") or {}
+    if (use.get("occupancy") or {}).get("value"): out.append(f"occupancy ({clean(use['occupancy']['section'])})")
+    if (use.get("family_only") or {}).get("value") is True: out.append(f"family only ({clean(use['family_only']['section'])})")
+    if (use.get("owner_occupancy") or {}).get("value") is True: out.append(f"owner on site ({clean(use['owner_occupancy']['section'])})")
+    if (el.get("existing_structure_only") or {}).get("value") is True: out.append(f"existing building only ({clean(el['existing_structure_only']['section'])})")
+    if (el.get("building_types") or {}).get("value"): out.append(f"house type {', '.join(el['building_types']['value'])}")
+    per = [f"{c} {r['lot_area_per_unit_sqft']['value']:,} sq ft per unit" for c, r in (d.get("districts") or {}).items() if (r.get("lot_area_per_unit_sqft") or {}).get("value")]
+    if (el.get("lot_area_per_unit_sqft") or {}).get("value"): per.insert(0, f"{el['lot_area_per_unit_sqft']['value']:,} sq ft per unit")
+    out += per
+    for g in (el.get("gates") or {}).get("value") or []:
+        if g["effect"] == "bars": out.append(f"{g['kind'].replace('_', ' ')} gate ({clean(g['section'])})")
+    tot = ((d.get("parking") or {}).get("total_on_site") or {}).get("value")
+    if tot: out.append(f"{tot} parking spaces in total")
+    return ". ".join(out) or "none on file"
 def towns():
     """docs/RULES_TOWNS.md: one row per town in shared/rules/towns_index.json."""
     idx = json.loads((R/"towns_index.json").read_text())
@@ -146,8 +174,8 @@ def towns():
            "Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rules/towns_index.json` and the town files. "
            "Not legal advice. A town without a file uses `pa_statewide.json` (the statewide baseline).", "",
            "## Towns with a rule file", "",
-           "| Town | County | File status | Code calls it | ADU status | Approval path | Max size (sq ft) | Owner on site | ADUs per lot | Checked on |",
-           "|---|---|---|---|---|---|---|---|---|---|"]
+           "| Town | County | File status | Code calls it | ADU status | Approval path | Conditions | Max size (sq ft) | Owner on site | ADUs per lot | Checked on |",
+           "|---|---|---|---|---|---|---|---|---|---|---|"]
     todo = []
     for t in idx["towns"]:
         f = R/f"{t['file']}.json"
@@ -155,11 +183,11 @@ def towns():
             todo.append(t); continue
         try: d = json.loads(f.read_text())
         except ValueError:
-            out.append(f"| {t['name']} | {t['county']} | {t['status']} | file not readable (being edited) |  |  |  |  |  |  |"); continue
+            out.append(f"| {t['name']} | {t['county']} | {t['status']} | file not readable (being edited) |  |  |  |  |  |  |  |"); continue
         adu = d.get("adu") or {}
         term = (adu.get("term") or {}).get("value") or ("not set" if t["file"] in ("philadelphia","pittsburgh") else "none")
         status = val((adu.get("status") or {}).get("value")) if adu.get("status") else ""
-        out.append(f"| {t['name']} | {t['county']} | {t['status']} | {clean(term)} | {status} | {_v(d,'approval','path')} | "
+        out.append(f"| {t['name']} | {t['county']} | {t['status']} | {clean(term)} | {status} | {_path_cell(d)} | {_conditions_cell(d)} | "
                    f"{_v(d,'size','max_sqft')} | {_v(d,'use','owner_occupancy')} | {_v(d,'use','max_adus')} | {d['provenance'].get('verified_on')} |")
     out += ["", "## Towns still to write", "", "| Batch | Town | County | Status | Population 2020 | Code host |", "|---|---|---|---|---|---|"]
     out += [f"| {t['batch']} | {t['name']} | {t['county']} | {t['status']} | {t['population']:,} | {t['code_host']} |" for t in todo]

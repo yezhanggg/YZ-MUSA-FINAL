@@ -4,39 +4,39 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Towns with a rule file
 
-| Town | County | File status | Code calls it | ADU status | Approval path | Max size (sq ft) | Owner on site | ADUs per lot | Checked on |
-|---|---|---|---|---|---|---|---|---|---|
-| Philadelphia city | Philadelphia | verified | not set |  | by right | 800 | yes | 1 | 2026-11-10 |
-| Pittsburgh city | Allegheny | verified | not set |  | by right | 1,000 | no | 2 | 2026-11-10 |
-| Allentown city | Lehigh | drafted | accessory dwelling unit (ADU) | by right | by right | 800 | yes | 1 | 2026-11-11 |
-| Erie city | Erie | drafted | accessory dwelling unit (ADU) | by right | by right | none set | no | not confirmed | 2026-11-11 |
-| Harrisburg city | Dauphin | drafted | accessory dwelling unit | by right | by right | none set | yes | none set | 2026-11-11 |
-| York city | York | drafted | accessory dwelling unit | conversion only | special exception | 700 | yes | 1 | 2026-11-11 |
-| State College borough | Centre | drafted | single apartment unit | by right | by right | 500 | no | 1 | 2026-11-11 |
+| Town | County | File status | Code calls it | ADU status | Approval path | Conditions | Max size (sq ft) | Owner on site | ADUs per lot | Checked on |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Philadelphia city | Philadelphia | verified | not set |  | by right | owner on site (14-604(11)(e)). existing building only (14-604(11)(c)). house type detached, semi_detached | 800 | yes | 1 | 2026-11-10 |
+| Pittsburgh city | Allegheny | verified | not set |  | by right | none on file | 1,000 | no | 2 | 2026-11-10 |
+| Allentown city | Lehigh | verified | accessory dwelling unit (ADU) | by right | by right | occupancy (660-42C(6)). owner on site (660-42C(10)). house type detached, semi_detached, attached. building type gate (660-24F, 660-25F, 660-27F). district gate (660-24F, 660-25F, 660-26F, 660-27F, 660-29F). building type gate (660-29F). abutting way gate (660-42C(1)(c)) | 800 | yes | 1 | 2026-11-11 |
+| Reading city | Berks | verified | accessory apartment | prohibited | variance | none on file | none set | none set | 0 | 2026-11-11 |
+| Erie city | Erie | drafted | accessory dwelling unit (ADU) | by right | by right | none on file | none set | no | not confirmed | 2026-11-11 |
+| Scranton city | Lackawanna | verified | Dwelling: accessory (ADU) | by right | by right (conditional use in INST. special exception in CIV. not allowed in D, PC) | house type detached, semi_detached, attached | none set | no | not confirmed | 2026-11-11 |
+| Bethlehem city | Northampton | drafted | Unit for Care of Relative | family only | by right | occupancy (1322.03(bbb)(2)). family only (1322.03(bbb)(2)) | none set | none set | not confirmed | 2026-11-11 |
+| Lancaster city | Lancaster | verified | none | not in the code | special exception | none on file | none set | none set | none set | 2026-11-11 |
+| Harrisburg city | Dauphin | verified | accessory dwelling unit | by right | by right | owner on site (7-309.2A(3)) | none set | yes | none set | 2026-11-11 |
+| York city | York | verified | accessory dwelling unit | conversion only | special exception | owner on site (1304.01 use 1.04.005(c)(1)) | 700 | yes | 1 | 2026-11-11 |
+| State College borough | Centre | drafted | single apartment unit | by right | by right | house type detached | 500 | no | 1 | 2026-11-11 |
+| Upper Darby township | Delaware | verified | accessory dwelling | family only | special exception | family only (550-17B(2)). house type detached, semi_detached | none set | no | none set | 2026-11-11 |
+| Lower Merion township | Montgomery | drafted | restricted accessory dwelling unit | family only | special exception | family only (155-10.2C(1)). house type detached | none set | no | 1 | 2026-11-11 |
+| Bensalem township | Bucks | verified | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
+| Abington township | Montgomery | drafted | accessory dwelling unit | family only | special exception | family only (2103.A Use A-1, 2.c(2)). owner on site (2103.A Use A-1, 2.c(1)). house type detached | 625 | yes | 1 | 2026-11-11 |
+| Bristol township | Bucks | drafted | accessory apartment | special exception | special exception | house type detached | 650 | no | 1 | 2026-11-11 |
+| Millcreek township | Erie | drafted | in-law apartment | family only | special exception | family only (145-11, 145-58H). owner on site (145-58B). house type detached | 720 | yes | 1 | 2026-11-11 |
+| Lower Paxton township | Dauphin | drafted | accessory dwelling unit | by right | by right | none on file | none set | no | not confirmed | 2026-11-11 |
+| Haverford township | Delaware | drafted | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
+| Wilkes-Barre city | Luzerne | drafted | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
+| Manheim township | Lancaster | drafted | accessory dwelling unit | family only | special exception | family only (2515.2.A(8)). owner on site (2515.2.A(7)). house type detached, semi_detached | 1,000 | yes | 1 | 2026-11-11 |
+| Altoona city | Blair | drafted | accessory dwelling unit | by right | by right | owner on site (800-31G) | 1,000 | yes | 1 | 2026-11-11 |
+| Hempfield township | Westmoreland | drafted | accessory apartment | family only | special exception | family only (87-79A(12)). owner on site (87-79A(11)). house type detached | none set | yes | 1 | 2026-11-11 |
+| Penn Hills township | Allegheny | drafted | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
+| Northampton township | Bucks | drafted | none | not in the code | variance | none on file | not confirmed | not confirmed | 0 | 2026-11-11 |
 
 ## Towns still to write
 
 | Batch | Town | County | Status | Population 2020 | Code host |
 |---|---|---|---|---|---|
-| 1 | Reading city | Berks | in_progress | 95,112 | amlegal |
-| 1 | Scranton city | Lackawanna | in_progress | 76,328 | ecode360 |
-| 1 | Bethlehem city | Northampton | in_progress | 56,009 | own site |
-| 1 | Lancaster city | Lancaster | in_progress | 58,039 | ecode360 |
-| 2 | Upper Darby township | Delaware | in_progress | 85,681 | ecode360 |
-| 2 | Lower Merion township | Montgomery | in_progress | 63,633 | ecode360 |
-| 2 | Bensalem township | Bucks | in_progress | 62,707 | municode |
-| 3 | Abington township | Montgomery | todo | 58,502 | ecode360 |
-| 3 | Bristol township | Bucks | todo | 54,291 | ecode360 |
-| 3 | Millcreek township | Erie | todo | 54,073 | ecode360 |
-| 3 | Lower Paxton township | Dauphin | todo | 53,501 | ecode360 |
-| 3 | Haverford township | Delaware | todo | 50,431 | ecode360 |
 | 3 | Middletown township | Bucks | todo | 46,040 | ecode360 |
-| 4 | Wilkes-Barre city | Luzerne | todo | 44,328 | zoneomics |
-| 4 | Manheim township | Lancaster | todo | 43,977 | own site |
-| 4 | Altoona city | Blair | todo | 43,963 | ecode360 |
-| 4 | Hempfield township | Westmoreland | todo | 41,466 | ecode360 |
-| 4 | Penn Hills township | Allegheny | todo | 41,059 | ecode360 |
-| 4 | Northampton township | Bucks | todo | 39,915 | ecode360 |
 | 5 | Cheltenham township | Montgomery | todo | 37,452 | ecode360 |
 | 5 | Norristown borough | Montgomery | todo | 35,748 | ecode360 |
 | 5 | Falls township | Bucks | todo | 34,716 | ecode360 |
@@ -95,9 +95,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Towns beyond Philadelphia and Pittsburgh | Share of PA (2020) |
 |---|---|
 | 0 | 14.7% |
-| 12 | 21.2% |
-| 24 | 25.6% |
-| 36 | 28.8% |
-| 48 | 31.6% |
-| 60 | 33.8% |
-| 76 | 35.0% |
+| 12 | 21.4% |
+| 24 | 25.8% |
+| 36 | 28.9% |
+| 48 | 31.7% |
+| 60 | 33.9% |
+| 76 | 35.1% |

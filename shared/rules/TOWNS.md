@@ -60,6 +60,32 @@ If two apply, pick the one that limits most and explain in `note` (for example a
 
 `approval.path` takes `by_right`, `administrator_exception`, `special_exception`, `conditional_use`, `variance` or `not_allowed`. `approval.fallback_path` is the path when the lot does not qualify, usually `variance`.
 
+## Conditions, district paths and other fields (added in pass 2)
+
+The resolver and the assistant read these. Put a rule here, not only in `checks`, when it changes who may build what. All are optional, so older files stay valid. Every item carries its own `section` and `url`.
+
+| Field | Use it for | Example |
+|---|---|---|
+| `approval.district_paths` | A path that differs by district. Value is a list of `{districts, path, section, url, note}` | Scranton: INST `conditional_use`, CIV `special_exception`. Lower Merion: IC and IH `by_right` |
+| `districts.<code>.adu_path` | The same, inside a district row. It wins over `district_paths` | |
+| `approval.historic_path` | The path for a designated historic building, when it differs. Put its conditions in `gates` with `when: historic` | Lower Merion: `by_right` (zoning permit), no family or age rule |
+| `eligibility.gates` | Conditions with scope: `kind`, `condition`, `effect` (`bars` or `condition`), `applies_to` (ADU types, null = all), `districts`, `building_types`, `when` (`always`, `historic`, `not_historic`), `test` (`has_alley`, `has_accessory_building`, or null) | Allentown: rowhouse allows only an internal unit (`bars`, building_types attached). Detached unit needs an alley or street (`bars`, test has_alley) |
+| `use.occupancy` | Who may live there, in plain words | Bethlehem: up to two relatives, one needing care |
+| `eligibility.lot_area_per_unit_sqft`, `districts.<code>.lot_area_per_unit_sqft` | Lot area per dwelling unit when the ADU counts. The tool states twice the number for a house and an ADU | Harrisburg RM 1,500. Lower Merion MDR1 4,000 |
+| `districts.<code>.min_lot_sqft` | The district lot minimum. Town files now gate on it. Store the house plus ADU figure only if the code says so, and say which in the note | Harrisburg RM 3,000 |
+| `size.max_share_internal` | Share cap for a unit inside or attached to the house when it differs from the cap for a unit in an accessory building (`max_share_of_house`) | Lower Merion: one third inside, one half in an accessory building |
+| `parking.total_on_site` | Total spaces the lot needs, house and ADU together | York: 3 |
+| `parking.reading` | When the parking rule has two readings, say both | State College: 2 in total, or 4 if the apartment counts as a unit |
+| `provenance.geoid_aliases` | Other Census GEOIDs of the same place | Bethlehem: Lehigh part 4207706088 |
+
+How the resolver uses them:
+
+- A unit inside or attached to the house takes the district height unless `envelope.internal_uses_district_height` is `false`. A detached unit takes `envelope.max_height_ft`, else the district height. A town with status `not_addressed` or `prohibited` shows no ADU height.
+- `existing_structure_only: true` no longer removes a unit above an existing garage. Keep `over_garage` in `form.types_allowed` and set the flag back to `true` if the code limits ADUs to existing buildings.
+- A lot that fails a district, type or lot size test gets a variance, even when `fallback_path` is a special exception. Use `district_paths` for a district that has its own path, not `fallback_path`.
+- A null in a district row no longer wipes a town-wide value.
+- Under the state bill, a town share cap under the state floor is raised to it, and a missing `max_adus` becomes the bill's 1.
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:
