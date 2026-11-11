@@ -1,0 +1,430 @@
+{
+  "provenance": {
+    "jurisdiction": "Millcreek township",
+    "instrument": "Millcreek Township Zoning Ordinance, Chapter 145 of the Millcreek Township Code (amended and restated by Ord. 2022-4), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code MI3114): includes legislation through 08-25-2026. New Laws lists Ord. 2026-10, Zoning Amendments, adopted 2026-09-22 and not yet codified. Its text was read. It changes R2 and R3 special exception lists (transitional dwelling), definitions and parking for other uses. It does not mention the In-Law Apartment.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/MI3114",
+      "https://ecode360.com/28902039",
+      "https://ecode360.com/43575002",
+      "https://ecode360.com/43575335",
+      "https://ecode360.com/43575378",
+      "https://ecode360.com/43575407",
+      "https://ecode360.com/43575440",
+      "https://ecode360.com/43575879",
+      "https://ecode360.com/43576236",
+      "https://ecode360.com/43576972",
+      "https://ecode360.com/43577108",
+      "https://ecode360.com/MI3114/laws",
+      "https://ecode360.com/MI3114/laws/LF2820537.pdf",
+      "https://millcreektownship.com/340/Zoning-Development-Division",
+      "https://millcreektownship.com/358/Zoning-Code-Update",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Erie",
+    "municipality_type": "township",
+    "geoid": "4204949548",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/28902039",
+    "code_current_through": "2026-08-25",
+    "code_current_through_note": "eCode360: Includes legislation through 08-25-2026. Ord. 2026-10 (adopted 2026-09-22) is listed under New Laws.",
+    "checks": [
+      "The In-Law Apartment is only for an in-law or a member of the family living in the main house. Rental to anyone else is prohibited (145-11, 145-58H)",
+      "It needs a special exception from the Zoning Hearing Board in CR, R1 and R2 only (145-14F, 145-15E, 145-16E)",
+      "It must be inside a single-family detached house. An addition must be architecturally integrated. No detached unit (145-58E, F)",
+      "The house must be owner-occupied. The owner's unit must be over 70% of the total living space (145-58B)",
+      "Size: 720 sq ft or 40% of the house total area including the garage, whichever is less. At most two bedrooms",
+      "One In-Law Apartment per house",
+      "An accessory structure may not be used for living space unless the chapter provides otherwise (145-27B)",
+      "The parking table has no In-Law Apartment row. A single-family detached house needs 2 spaces per dwelling unit (145-92)"
+    ],
+    "notes": "Zoning office: Zoning and Development Division, Planning and Development Department, https://millcreektownship.com/340/Zoning-Development-Division. Pending: Ord. 2026-10 adopted 2026-09-22, not yet in the online code. It does not touch 145-58. No pending ADU change found on the Zoning Code Update page."
+  },
+  "adu": {
+    "term": {
+      "value": "in-law apartment",
+      "section": "145-11 'In-Law Apartment', 145-58",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'A separate living space within a Single-Family Dwelling, Detached' for 'an in-law of, in-laws of or a member of the Family unit'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "145-11, 145-58, 145-14F, 145-15E, 145-16E",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Family-only unit inside the house, by special exception in CR, R1 and R2."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "145-15E",
+      "url": "https://ecode360.com/43575378",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The Zoning Hearing Board may approve a Use by Special Exception for the following Accessory Uses' including '(2) In-Law Apartment'. Same in CR (145-14F) and R2 (145-16E)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "145-17, 145-106",
+      "url": "https://ecode360.com/43575440",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: R3 and other districts do not list the In-Law Apartment. A use variance from the Zoning Hearing Board would be needed."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "CR",
+        "R1",
+        "R2"
+      ],
+      "section": "145-14F, 145-15E, 145-16E",
+      "url": "https://ecode360.com/43575378",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Listed as an accessory use by special exception only in CR, R1 and R2. Not in R3 or other districts."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "145-11, 145-58C",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'within a Single-Family Dwelling, Detached'"
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "145-58",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No lot size rule for the In-Law Apartment. District lot sizes apply to the house."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "145-58F",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Any addition or modification to the principal Dwelling to accommodate an In-Law Apartment shall be architecturally integrated'. Additions are allowed."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "145-58",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No historic rule in 145-58."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "145-58E, F, 145-27B",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The In-Law Apartment may be located only within a primary Dwelling.' An addition is allowed. 'no Accessory Structure shall be used for living space' (145-27B)."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 720,
+      "section": "145-58B",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall not exceed 720 square feet or 40% of the principal Dwelling's total area, whichever is less'"
+    },
+    "max_share_of_house": {
+      "value": 0.4,
+      "section": "145-58B",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "40% of total area, which includes the garage. The owner's unit must also exceed 70% of living space, which excludes the garage."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "145-58",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum size."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "145-58E",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The unit is inside the house, so the district building height applies (35 ft in CR, R1, R2). See districts."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "145-58E",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Inside the house or an addition. District setbacks apply. See districts."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "145-58E",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "District setbacks apply. See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "145-58E",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "District setbacks apply. See districts."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "145-58E",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No detached unit, so no separation rule applies."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "145-14H, 145-15G, 145-16G",
+      "url": "https://ecode360.com/43575378",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district: CR 25%, R1 32%, R2 32%. See districts."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "145-14H, 145-15G, 145-16G",
+      "url": "https://ecode360.com/43575378",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "The district tables set lot coverage only. No impervious limit was read."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "145-58B",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The Dwelling in which the In-Law Apartment is being created must be owner-occupied'"
+    },
+    "family_only": {
+      "value": true,
+      "section": "145-11, 145-58H",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The occupancy or rental of an In-Law Apartment by persons other than in-laws as defined in this Chapter is expressly prohibited.'"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "145-58H",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Rental to anyone other than in-laws is prohibited. Reading: this bars short-term rental."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "145-58C",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Only one In-Law Apartment is allowed within any Single-Family Dwelling, Detached.'"
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "145-58",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed. The unit is inside the owner-occupied house."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "145-92 Table VII-1",
+      "url": "https://ecode360.com/43576972",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No In-Law Apartment row. 'Dwelling, Single-Family Detached 2 per dwelling unit'. Whether the apartment counts as a unit is not stated."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "145-58",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in 145-58."
+    }
+  },
+  "districts": {
+    "CR": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "145-14H",
+        "url": "https://ecode360.com/43575335",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "145-14H",
+        "url": "https://ecode360.com/43575335",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "145-14H",
+        "url": "https://ecode360.com/43575335",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "145-14H",
+        "url": "https://ecode360.com/43575335",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "145-14H",
+        "url": "https://ecode360.com/43575335",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot coverage, defined as the area covered by principal and accessory buildings (145-11)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "145-14H",
+        "url": "https://ecode360.com/43575335",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R1": {
+      "min_lot_sqft": {
+        "value": 7200,
+        "section": "145-15G",
+        "url": "https://ecode360.com/43575378",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "145-15G",
+        "url": "https://ecode360.com/43575378",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "25 ft facing a collector or higher street, 15 ft facing any other street."
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "145-15G",
+        "url": "https://ecode360.com/43575378",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "145-15G",
+        "url": "https://ecode360.com/43575378",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.32,
+        "section": "145-15G",
+        "url": "https://ecode360.com/43575378",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot coverage, defined as the area covered by principal and accessory buildings (145-11)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "145-15G",
+        "url": "https://ecode360.com/43575378",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "145-16G",
+        "url": "https://ecode360.com/43575407",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "145-16G",
+        "url": "https://ecode360.com/43575407",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "145-16G",
+        "url": "https://ecode360.com/43575407",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "145-16G",
+        "url": "https://ecode360.com/43575407",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.32,
+        "section": "145-16G",
+        "url": "https://ecode360.com/43575407",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot coverage, defined as the area covered by principal and accessory buildings (145-11)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "145-16G",
+        "url": "https://ecode360.com/43575407",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    }
+  }
+}

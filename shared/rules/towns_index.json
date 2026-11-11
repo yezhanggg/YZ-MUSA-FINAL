@@ -395,12 +395,12 @@
       "pop_rank": 14,
       "file": "pa_erie_millcreek",
       "batch": 3,
-      "status": "todo",
+      "status": "drafted",
       "checked_on": null,
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/MI3114",
+      "code_url": "https://ecode360.com/28902039",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-08-25",
       "code_note": "Zoning: Chapter 145 Zoning. Code MI3114. Ch. 145 amended and restated 4-28-2022 by Ord. 2022-4. amended by Ord. 2024-6 (https://ecode360.com/MI3114/laws/LF2146675.pdf). Chapter id not confirmed. ecode360 root/chapter pages return Cloudflare 'Just a moment' 403 to curl and WebFetch. chapter id taken from search-result page titles, not opened.",
       "why": [
         "top 60 by 2020 population"
