@@ -110,14 +110,28 @@ def legal_geoids() -> list[str]:
     return [row["GEOID"] for row in csv.DictReader(lines)]
 
 
-def checked_on(file: str) -> str | None:
+def provenance(file: str) -> dict[str, Any]:
+    """The town file's provenance, or {} when there is no file or it is mid-edit."""
     path = RULES / f"{file}.json"
     if not path.exists():
-        return None
+        return {}
     try:
-        return json.loads(path.read_text())["provenance"].get("verified_on")
+        return json.loads(path.read_text())["provenance"]
     except (ValueError, KeyError):
-        return None  # a file mid-edit
+        return {}
+
+
+def checked_on(file: str) -> str | None:
+    return provenance(file).get("verified_on")
+
+
+def split_parts(rows: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    """Places split across counties: same name and county subdivision code in another county
+    (Bethlehem city has a Northampton and a Lehigh part). Keyed by each part's GEOID."""
+    groups: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for r in rows:
+        groups.setdefault((r["geoid"][5:], r["name"]), []).append(r)
+    return {r["geoid"]: [o for o in g if o is not r] for g in groups.values() if len(g) > 1 for r in g}
 
 
 def build(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -145,6 +159,7 @@ def build(rows: list[dict[str, Any]]) -> dict[str, Any]:
     order = list(CITY_FILES) + [g for b in sorted(ASSIGNED) for g in ASSIGNED[b]] + rest
 
     old = {t["geoid"]: t for t in (json.loads(INDEX.read_text())["towns"] if INDEX.exists() else [])}
+    parts = split_parts(rows)
     towns = []
     for g in order:
         r, prev, host = by[g], old.get(g, {}), HOSTS.get(g, {})
@@ -153,12 +168,19 @@ def build(rows: list[dict[str, Any]]) -> dict[str, Any]:
                                         "in_progress" if batch[g] in ASSIGNED else "todo")
         if (RULES / f"{file}.json").exists() and status in ("todo", "in_progress"):
             status = "drafted"
+        prov = provenance(file)
+        aliases = sorted({o["geoid"] for o in parts.get(g, [])} | set(prov.get("geoid_aliases") or []))
+        alias_pop = sum(by[a]["population"] for a in aliases if a in by)
+        # The town file is checked more recently than the host table, so its provenance wins.
         towns.append({
-            "geoid": g, "name": r["name"], "county": r["county"], "type": r["type"],
-            "population": r["population"], "housing_units": r["housing_units"], "pop_rank": rank[g],
-            "file": file, "batch": batch[g], "status": status, "checked_on": checked_on(file),
-            "code_host": host.get("code_host", "unknown"), "code_url": host.get("code_url"),
-            "plain_fetch": host.get("plain_fetch"), "code_current_through": host.get("current_through"),
+            "geoid": g, "geoid_aliases": aliases, "name": r["name"], "county": r["county"], "type": r["type"],
+            "population": r["population"], "population_with_aliases": r["population"] + alias_pop,
+            "housing_units": r["housing_units"], "pop_rank": rank[g],
+            "file": file, "batch": batch[g], "status": status, "checked_on": prov.get("verified_on"),
+            "code_host": prov.get("code_host") or host.get("code_host", "unknown"),
+            "code_url": prov.get("code_url") or host.get("code_url"),
+            "plain_fetch": host.get("plain_fetch") if not prov.get("code_url") or prov.get("code_url") == host.get("code_url") else None,
+            "code_current_through": prov.get("code_current_through") or host.get("current_through"),
             "code_note": host.get("note"), "why": why.get(g, ["already has a rule file"]),
         })
     return {
@@ -177,10 +199,10 @@ def coverage(towns: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Share of the 2020 PA population in Philadelphia, Pittsburgh and the first n batch towns."""
     cities = [t for t in towns if t["batch"] == 0]
     rest = [t for t in towns if t["batch"] > 0]
-    base = sum(t["population"] for t in cities)
+    base = sum(t["population_with_aliases"] for t in cities)
     out = []
     for n in (0, 12, 24, 36, 48, 60, len(rest)):
-        pop = base + sum(t["population"] for t in rest[:n])
+        pop = base + sum(t["population_with_aliases"] for t in rest[:n])
         out.append({"towns_beyond_the_two_cities": n, "population": pop, "share_of_pa": round(pop / PA_POP_2020, 4)})
     return out
 

@@ -130,6 +130,14 @@
         "code_current_through_note": {
           "type": "string",
           "description": "The currency line as the publisher shows it, e.g. 'Current through Ord. 2025-4, adopted 6-2-2025'."
+        },
+        "geoid_aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^42\\d{8}$"
+          },
+          "description": "Other Census county subdivision GEOIDs of the same place, e.g. the part of a city in a second county (Bethlehem, Lehigh part 4207706088). Lookups by these find this file."
         }
       }
     },
@@ -159,6 +167,12 @@
         },
         "detached_in_yard_path": {
           "$ref": "#/$defs/leaf_path"
+        },
+        "district_paths": {
+          "$ref": "#/$defs/leaf_district_paths"
+        },
+        "historic_path": {
+          "$ref": "#/$defs/leaf_path"
         }
       }
     },
@@ -184,6 +198,12 @@
         },
         "historic_bypass": {
           "$ref": "#/$defs/leaf_bool"
+        },
+        "gates": {
+          "$ref": "#/$defs/leaf_gates"
+        },
+        "lot_area_per_unit_sqft": {
+          "$ref": "#/$defs/leaf_num"
         }
       }
     },
@@ -213,6 +233,10 @@
         },
         "historic_exempt": {
           "$ref": "#/$defs/leaf_bool"
+        },
+        "max_share_internal": {
+          "$ref": "#/$defs/leaf_share",
+          "description": "Share cap for a unit inside or attached to the house, when it differs from max_share_of_house (which then holds for a unit in an accessory building)."
         }
       }
     },
@@ -297,6 +321,9 @@
         },
         "sale_apart_ban_allowed": {
           "$ref": "#/$defs/leaf_bool"
+        },
+        "occupancy": {
+          "$ref": "#/$defs/leaf_str"
         }
       }
     },
@@ -307,6 +334,14 @@
       "properties": {
         "spaces_required": {
           "$ref": "#/$defs/leaf_int"
+        },
+        "total_on_site": {
+          "$ref": "#/$defs/leaf_int",
+          "description": "Total off-street spaces the lot needs with the ADU (house plus ADU), when the code states it."
+        },
+        "reading": {
+          "$ref": "#/$defs/leaf_str",
+          "description": "When the parking rule has more than one reading, state them here in plain words (e.g. '2 in total, or 4 if the apartment counts as a unit')."
         }
       }
     },
@@ -980,6 +1015,12 @@
         },
         "principal_max_height_ft": {
           "$ref": "#/$defs/leaf_num"
+        },
+        "adu_path": {
+          "$ref": "#/$defs/leaf_path"
+        },
+        "lot_area_per_unit_sqft": {
+          "$ref": "#/$defs/leaf_num"
         }
       }
     },
@@ -1006,6 +1047,275 @@
             "prohibited",
             null
           ]
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_district_paths": {
+      "type": "object",
+      "description": "Approval path by zoning district, when it differs from approval.path. A district row's adu_path wins over this list.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "districts",
+              "path",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "districts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              "path": {
+                "enum": [
+                  "by_right",
+                  "administrator_exception",
+                  "special_exception",
+                  "conditional_use",
+                  "variance",
+                  "not_allowed"
+                ]
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_gates": {
+      "type": "object",
+      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "kind",
+              "condition",
+              "effect",
+              "section",
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "building_type",
+                  "district",
+                  "lot_size",
+                  "lot_area_per_unit",
+                  "abutting_way",
+                  "existing_structure",
+                  "occupancy",
+                  "family",
+                  "age",
+                  "care",
+                  "owner_occupancy",
+                  "sponsor",
+                  "historic",
+                  "design",
+                  "utilities",
+                  "parking",
+                  "other"
+                ]
+              },
+              "condition": {
+                "type": "string",
+                "minLength": 1
+              },
+              "effect": {
+                "enum": [
+                  "bars",
+                  "condition"
+                ]
+              },
+              "applies_to": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "enum": [
+                    "detached_new",
+                    "garage_conversion",
+                    "over_garage",
+                    "internal",
+                    "attached"
+                  ]
+                }
+              },
+              "districts": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                }
+              },
+              "building_types": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "enum": [
+                    "detached",
+                    "semi_detached",
+                    "attached"
+                  ]
+                }
+              },
+              "when": {
+                "enum": [
+                  "always",
+                  "historic",
+                  "not_historic"
+                ]
+              },
+              "test": {
+                "enum": [
+                  "has_alley",
+                  "has_accessory_building",
+                  null
+                ]
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         },
         "section": {
           "type": "string",

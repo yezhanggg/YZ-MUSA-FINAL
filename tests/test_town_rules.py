@@ -172,7 +172,7 @@ def test_resolve_town_without_file_uses_default():
     if town is None:
         pytest.skip("every town has a file")
     out = rules.resolve(town["geoid"], "today", {"building_type": "detached", "lot_sqft": 6000})
-    assert list(out) == rules.OUTPUT_KEYS
+    assert list(out) == rules.OUTPUT_KEYS + rules.TOWN_KEYS
     assert out["allowed"] is False
     assert "max_adus" in out["assumed"]
     assert any("No ADU rule on file" in r for r in out["reasons"])
@@ -183,6 +183,6 @@ def test_resolve_town_file(name):
     if rules.validate(raw(name)):
         pytest.skip(f"{name} is not valid yet")
     out = rules.resolve(name, "today", {"building_type": "detached", "lot_sqft": 6000, "house_sqft": 1500})
-    assert list(out) == rules.OUTPUT_KEYS
+    assert list(out) == rules.OUTPUT_KEYS + rules.TOWN_KEYS
     for key, cite in out["citations"].items():
         assert cite["section"], f"{name} {key}"
