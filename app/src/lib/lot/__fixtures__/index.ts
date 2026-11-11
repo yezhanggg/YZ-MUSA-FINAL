@@ -1,5 +1,5 @@
-// Real lot records for the tests: eight Pittsburgh lots from the full build and one Philadelphia lot
-// from the smoke run. Picked by ~/musa-drive/ops/scratch/vitest-lot/pick_fixtures.py. No owner data.
+// Real lot records for the tests: eight Pittsburgh lots and five Philadelphia lots from the final builds of
+// Nov 11, 2026. Picked by ~/musa-drive/ops/scratch/vitest-lot/pick_fixtures2.py. No owner data.
 import type { LotRecord } from '../types';
 import alleyRear from './alley_rear.json';
 import easyFit from './easy_fit.json';
@@ -7,6 +7,10 @@ import garage from './garage.json';
 import lowConfidence from './low_confidence.json';
 import noFit from './no_fit.json';
 import philadelphiaInternal from './philadelphia_internal.json';
+import phlHistoric from './phl_historic.json';
+import phlRowToday from './phl_row_today.json';
+import phlRsa5Internal from './phl_rsa5_internal.json';
+import phlTwinState from './phl_twin_state.json';
 import steepSlope from './steep_slope.json';
 import twinSplit from './twin_split.json';
 import twoUnits from './two_units.json';
@@ -21,6 +25,10 @@ const RAW = {
   garage,
   low_confidence: lowConfidence,
   philadelphia_internal: philadelphiaInternal,
+  phl_row_today: phlRowToday,
+  phl_rsa5_internal: phlRsa5Internal,
+  phl_historic: phlHistoric,
+  phl_twin_state: phlTwinState,
 };
 
 export type FixtureName = keyof typeof RAW;

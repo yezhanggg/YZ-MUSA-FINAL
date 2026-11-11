@@ -14,6 +14,13 @@ function centerOf(lot: LotRecord, what: 'spot' | 'house'): { lon: number; lat: n
   return { lon, lat };
 }
 
+/** Drop the per-type approvals newer records carry, to test how older records are read. */
+function asOldRecord(lot: LotRecord): LotRecord {
+  for (const rules of Object.values(lot.rules)) if (rules) delete rules.approval_by_type;
+  for (const types of Object.values(lot.fit)) for (const f of Object.values(types ?? {})) if (f) delete f.approval_path;
+  return lot;
+}
+
 describe('unitVerdict on real lots', () => {
   it('easy fit: a 600 sq ft cottage fits, with the Administrator Exception path and its section', () => {
     const v = unitVerdict(fixture('easy_fit'), cottage());
@@ -68,8 +75,8 @@ describe('unitVerdict on real lots', () => {
     expect(v.changes[0]).toBe('Make the footprint 378 sq ft or less.');
   });
 
-  it('alley rear: a unit over a garage on the alley is by right in the rule notes', () => {
-    const lot = fixture('alley_rear');
+  it('alley rear: a unit over a garage on the alley is by right in the rule notes (older records)', () => {
+    const lot = asOldRecord(fixture('alley_rear'));
     const a = approvalFor(lot, 'today', 'over_garage');
     expect(a.path).toBe('by_right');
     expect(a.from).toBe('rule_notes');
@@ -130,11 +137,12 @@ describe('unitVerdict on real lots', () => {
   });
 
   it('Philadelphia today: a new backyard cottage is not allowed, a unit inside the house is', () => {
-    const lot = fixture('philadelphia_internal');
+    const lot = fixture('phl_historic');
     const v = unitVerdict(lot, cottage());
     expect(v.status).toBe('not_allowed');
     expect(v.limit?.text).toMatch(/^Philadelphia allows a unit only inside the house or in an accessory building that already existed/);
-    expect(v.approval.path).toBe('not_allowed');
+    // The final build sends every type the code does not allow to a variance.
+    expect(v.approval.path).toBe('variance');
     const inside = unitVerdict(lot, { ...cottage(), type: 'internal', width_ft: 20, depth_ft: 25 });
     expect(inside.status).toBe('fits');
     expect(inside.approval.path).toBe('by_right');
@@ -224,13 +232,13 @@ describe('when the data cannot tell', () => {
   });
 
   it('an approval path the app does not know', () => {
-    const lot = fixture('easy_fit');
+    const lot = asOldRecord(fixture('easy_fit'));
     lot.rules.today!.approval_by_type = { internal: 'zoning_hearing_board_review' };
     expect(unitVerdict(lot, { ...cottage(), type: 'internal' }).status).toBe('check_needed');
   });
 
   it('a per-type approval in the rules wins over the notes', () => {
-    const lot = fixture('easy_fit');
+    const lot = asOldRecord(fixture('easy_fit'));
     lot.rules.today!.approval_by_type = { detached_new: 'by_right' };
     const a = unitVerdict(lot, cottage()).approval;
     expect(a).toMatchObject({ path: 'by_right', from: 'by_type' });
@@ -249,7 +257,7 @@ describe('records from the newer builder', () => {
   });
 
   it('a type the rules send to a variance reads as not allowed, with the variance path', () => {
-    const lot = fixture('easy_fit');
+    const lot = asOldRecord(fixture('easy_fit'));
     lot.rules.today!.types_allowed = ['internal', 'attached'];
     lot.rules.today!.approval_by_type = { detached_new: 'variance', internal: 'by_right' };
     const v = unitVerdict(lot, cottage());

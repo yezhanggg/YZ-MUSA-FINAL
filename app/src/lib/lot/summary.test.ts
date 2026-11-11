@@ -20,7 +20,7 @@ describe('lotSummary', () => {
     expect(s.checks.length).toBeGreaterThan(5);
     expect(s.sources[0].section).toBe('925.06.G.1(i)');
     expect(s.sources.some((x) => x.source === 'State bill HB 2186 (not law)')).toBe(true);
-    expect(s.data_dates).toEqual(expect.arrayContaining([{ label: 'Parcel lines', date: 'Nov 10, 2026' }, { label: 'Rules last checked', date: 'Nov 10, 2026' }, { label: 'Data built', date: 'Nov 11, 2026' }]));
+    expect(s.data_dates).toEqual(expect.arrayContaining([{ label: 'Parcel lines', date: 'Nov 11, 2026' }, { label: 'Rules last checked', date: 'Nov 10, 2026' }, { label: 'Data built', date: 'Nov 11, 2026' }]));
     expect(s.notice).toMatch(/^Not legal advice/);
   });
 
@@ -36,8 +36,10 @@ describe('lotSummary', () => {
   });
 
   it('says why there is no money check', () => {
-    expect(lotSummary({ lot: fixture('easy_fit'), unit }).money).toMatchObject({ status: 'no_rent', verdict: null });
-    expect(lotSummary({ lot: fixture('easy_fit'), unit }).money.cost).not.toBeNull();
+    const noRents = fixture('easy_fit');
+    delete noRents.money;
+    expect(lotSummary({ lot: noRents, unit }).money).toMatchObject({ status: 'no_rent', verdict: null });
+    expect(lotSummary({ lot: noRents, unit }).money.cost).not.toBeNull();
     const none = lotSummary({ lot: fixture('no_fit'), unit, rent_by_bedroom: RENTS }).money;
     expect(none.status).toBe('not_buildable');
     expect(none.cost).toBeNull();

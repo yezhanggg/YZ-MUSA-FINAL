@@ -105,7 +105,16 @@ export interface Cover {
   tree?: Share;
   open?: Share;
   hard?: Share;
+  /** Building plus hard surface, percent of the lot. */
+  impervious_pct?: number;
+  /** model:<name> (aerial model) or landcover_2018 (city raster). */
+  source?: string | null;
+  /** Imagery or raster year. */
+  date?: string | null;
 }
+
+/** Cover inside a spot, sq ft per class (tree, open, building, hard_surface, other) and its source. */
+export type SpotCover = Record<string, number | string>;
 
 export interface LotObject {
   class: string;
@@ -215,6 +224,8 @@ export interface FitResult {
   angle_deg: number | null;
   /** Long side of the spot, degrees clockwise from true north, 0 to 180. */
   bearing_deg?: number | null;
+  /** What lies inside the spot from the land cover map (records from late Nov 11, 2026 on). */
+  spot_cover?: SpotCover | null;
   /** Code of the one constraint that decides the answer. */
   limiting: string;
   note?: string;
@@ -300,7 +311,7 @@ export const LOT_KEYS = {
   ]),
   building: keysOf<Building>()(['id', 'polygon', 'height_ft', 'height_source', 'role', 'source', 'area_sqft']),
   share: keysOf<Share>()(['sqft', 'pct']),
-  cover: keysOf<Cover>()(['building', 'tree', 'open', 'hard']),
+  cover: keysOf<Cover>()(['building', 'tree', 'open', 'hard', 'impervious_pct', 'source', 'date']),
   object: keysOf<LotObject>()(['class', 'box', 'score']),
   zoning: keysOf<Zoning>()(['district', 'overlays', 'council_district', 'flags']),
   zoning_flags: keysOf<ZoningFlags>()(['flood', 'historic', 'steep_slope', 'landslide', 'sewer']),
@@ -315,7 +326,7 @@ export const LOT_KEYS = {
   check: keysOf<Check>()(['pass', 'value', 'limit', 'note']),
   fit_result: keysOf<FitResult>()([
     'adu_type', 'fits', 'largest_sqft', 'largest_if_cleared_sqft', 'spot', 'width_ft', 'depth_ft', 'angle_deg', 'bearing_deg',
-    'limiting', 'note', 'checks', 'warnings', 'assumed', 'approval_path', 'max_height_ft', 'second',
+    'limiting', 'note', 'checks', 'warnings', 'assumed', 'approval_path', 'max_height_ft', 'second', 'spot_cover',
   ]),
   fit_checks: CHECK_NAMES,
   facts: keysOf<Facts>()(['year_built', 'living_sqft', 'stories', 'assessed_value', 'last_sale_date', 'last_sale_price', 'zip']),

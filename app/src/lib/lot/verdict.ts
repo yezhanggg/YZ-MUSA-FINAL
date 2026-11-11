@@ -282,9 +282,13 @@ function frontAngle(lot: LotRecord, frame: Frame): number {
   return front ? lineAngle(lineFeet(front.line, frame)) : 0;
 }
 
-/** The user's angle, else the pipeline's spot (read off its outline), else along the front lot line. */
+/**
+ * The user's angle, else the pipeline's spot: its bearing_deg (clockwise from true north, records from Nov 11, 2026 on),
+ * or read off its outline for older records, else along the front lot line.
+ */
 function unitAngle(lot: LotRecord, unit: UnitInput, g: Ground, stored: FitResult | undefined): number {
   if (isNum(unit.angle_deg)) return unit.angle_deg;
+  if (isNum(stored?.bearing_deg)) return 90 - stored.bearing_deg;
   if (stored?.spot) return longSideAngle(areaFeet(stored.spot, g.frame)[0][0]);
   return frontAngle(lot, g.frame);
 }

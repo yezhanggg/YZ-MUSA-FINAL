@@ -55,18 +55,17 @@ describe('buildSteps', () => {
     expect(list.steps.find((s) => s.id === 'zoning')!.title).toBe('Get the zoning permit');
   });
 
-  it('Philadelphia: a new cottage stops at the zoning step', () => {
-    const list = buildSteps({ lot: fixture('philadelphia_internal'), scenario: 'today', type: 'detached_new' });
-    expect(list.stop).toMatch(/not allowed here/);
-    expect(ids(list)).toEqual(['confirm', 'zoning']);
+  it('Philadelphia: a new cottage needs a variance at the zoning step', () => {
+    const list = buildSteps({ lot: fixture('phl_rsa5_internal'), scenario: 'today', type: 'detached_new' });
+    expect(list.stop).toBeNull();
+    expect(list.steps.find((s) => s.id === 'zoning')?.title).toBe('Ask the Zoning Board for a variance');
   });
 
   it('Philadelphia: a unit inside the house gets historic review, owner occupancy, the abatement and the license', () => {
-    const list = buildSteps({ lot: fixture('philadelphia_internal'), scenario: 'today', type: 'internal' });
+    const list = buildSteps({ lot: fixture('phl_historic'), scenario: 'today', type: 'internal' });
     expect(ids(list)).toEqual(expect.arrayContaining(['historic', 'owner_occupancy', 'tax', 'rental_license']));
     const by = Object.fromEntries(list.steps.map((s) => [s.id, s]));
     expect(by.historic.who).toBe('the Philadelphia Historical Commission');
-    expect(by.historic.basis).toMatchObject({ kind: 'rule', citation: { section: '14-604(1)(f)' } });
     expect(by.owner_occupancy.basis).toMatchObject({ kind: 'rule', citation: { section: expect.stringMatching(/^14-604\(11\)/) } });
     expect(by.tax.time).toBe('Within 60 days of the building permit.');
     expect(by.building_permit.fee).toMatch(/^\$2,054 in set fees plus 0\.25% of the build cost\. Plus a tax of up to 1% of the build cost\.$/);

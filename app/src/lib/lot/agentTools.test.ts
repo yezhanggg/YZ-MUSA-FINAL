@@ -68,7 +68,7 @@ describe('results', () => {
   it('get_lot_facts', async () => {
     const r = await run(provider('garage'), 'get_lot_facts');
     expect(r).toMatchObject({ lot_id: '42003-0003M00391000000', address: '1116 SARAH ST', garage_sqft: 353.5, alley_behind: false, public_sewer: 'not on file' });
-    expect(r.sources).toEqual(expect.arrayContaining([{ data: 'lots', date: '2026-11-10' }]));
+    expect(r.sources).toEqual(expect.arrayContaining([{ data: 'lots', date: '2026-11-11' }]));
   });
 
   it('get_lot_rules lists values with their sources and the approval per type', async () => {
@@ -94,11 +94,12 @@ describe('results', () => {
     expect((r.rows as Json[]).map((x) => x.status)).toEqual(['not_allowed', 'not_allowed', 'does_not_fit']);
   });
 
-  it('lot_money uses the tract rents and a rent from the call', async () => {
+  it('lot_money uses the ZIP rents on the record, else the tract rents, and a rent from the call', async () => {
     const p = provider('easy_fit');
     const r = await run(p, 'lot_money');
     expect(r.status).toBe('ready');
-    expect(r.monthly_rent).toBe(1250);
+    // The record's HUD Small Area Fair Market Rent for the ZIP wins over the tract rents of the provider.
+    expect(r.monthly_rent).toBe(1340);
     expect((await run(p, 'lot_money', { rent: 2000 })).monthly_rent).toBe(2000);
     expect((r.sources as Json[]).map((s) => s.assumption)).toContain('cost.hard_psf.detached_new');
   });
