@@ -879,7 +879,7 @@
       "pop_rank": 35,
       "file": "pa_delaware_radnor",
       "batch": 6,
-      "status": "todo",
+      "status": "drafted",
       "checked_on": null,
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11078356",
@@ -889,7 +889,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "No ADU rule for house lots. Open: whether an AC tenant house counts as an ADU, and whether 280-130.1 reaches a second unit in R-6 and PA."
     },
     {
       "geoid": "4201744968",

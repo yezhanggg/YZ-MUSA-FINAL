@@ -1,0 +1,777 @@
+{
+  "provenance": {
+    "jurisdiction": "Radnor township",
+    "instrument": "Code of the Township of Radnor, Chapter 280 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code RA0484): includes legislation through 09-28-2026. New Laws lists two ordinances, for Chapter 250 and Chapter 270. Neither touches zoning. The chapter was read in the eCode360 print view in a browser.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/RA0484",
+      "https://ecode360.com/RA0484/laws",
+      "https://ecode360.com/print/RA0484?guid=11078356",
+      "https://ecode360.com/11078356",
+      "https://ecode360.com/11078361",
+      "https://ecode360.com/11078453",
+      "https://ecode360.com/11078498",
+      "https://ecode360.com/11078509",
+      "https://ecode360.com/11078510",
+      "https://ecode360.com/11078516",
+      "https://ecode360.com/11078529",
+      "https://ecode360.com/11078539",
+      "https://ecode360.com/11078540",
+      "https://ecode360.com/11078547",
+      "https://ecode360.com/11078553",
+      "https://ecode360.com/11078571",
+      "https://ecode360.com/11078577",
+      "https://ecode360.com/11078588",
+      "https://ecode360.com/11078595",
+      "https://ecode360.com/11078604",
+      "https://ecode360.com/11078615",
+      "https://ecode360.com/11078622",
+      "https://ecode360.com/11078628",
+      "https://ecode360.com/11078639",
+      "https://ecode360.com/11078646",
+      "https://ecode360.com/11078660",
+      "https://ecode360.com/13933193",
+      "https://ecode360.com/11079548",
+      "https://ecode360.com/11079606",
+      "https://ecode360.com/16249983",
+      "https://ecode360.com/10973424",
+      "https://www.radnor.com/government/departments/community-development",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204563264",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11078356",
+    "code_current_through": "2026-09-28",
+    "code_current_through_note": "eCode360: Includes legislation through 09-28-2026. New Laws (2), none for Chapter 280.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit or accessory apartment rule for house lots. R-1 to R-4 list single-family detached dwellings, a few special exceptions and listed accessory uses (280-14, 280-17.2, 280-19, 280-24, 280-29)",
+      "A dwelling unit may have 'not more than one kitchen' and a family is one housekeeping unit (280-4). A second kitchen unit is a second dwelling unit",
+      "Uses the code does not define go to R-6 or PA only, by conditional use, after a Zoning Officer determination (280-130.1). In R-1 to R-4 a second unit needs a use variance",
+      "AC district only: a tenant house is a listed accessory use on a lot of at least four acres. It houses tenant farmers or employees of a farm or estate (280-9H(3), 280-4)",
+      "Conversion of a house to two units is a special exception in AC, R-1 and R-2 (280-108), and in R-3 by reference (280-24B(1)). Each unit needs the district single-family lot area and at least 600 sq ft. No exterior extension",
+      "Two-family detached dwellings are permitted in R-5. Lot area 5,445 sq ft per family, 80 ft wide (280-34C, 280-35A(1))",
+      "Parking: two spaces per dwelling unit (280-103B(1))",
+      "Rental units need an annual license from the township, with inspections (226-7)",
+      "Accessory buildings: 20 ft high, 10 ft from the house. Side and rear 10 ft in R-1 to R-3, 3 ft in R-4, 20 ft in AC (280-12, 280-17, 280-22, 280-27, 280-32)",
+      "Garrett Hill GH-GA lists a 'Commercial structure containing one accessory dwelling unit' as a mixed use (280-49.7). That is a unit in a commercial building, not a backyard unit"
+    ],
+    "notes": "Zoning office: Community Development Department, https://www.radnor.com/government/departments/community-development. Searched Chapter 280 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, kitchen, tenant house. Pending: no zoning amendment on the New Laws list."
+  },
+  "adu": {
+    "term": {
+      "value": "tenant house",
+      "section": "280-4 'Tenant house', 280-9H(3)",
+      "url": "https://ecode360.com/11078361",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term for house lots. The nearest is 'TENANT HOUSE: An accessory building on a lot, used ... as a residence ... for ... tenant farmers or employees of a farm or estate.' AC only."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "280-14, 280-19, 280-24, 280-29, 280-130.1",
+      "url": "https://ecode360.com/11078516",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading of a silent code. Residence districts list no second unit. The AC tenant house is for farm or estate employees on four acres or more, so it is a district path, not the town rule."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "280-130.1C(1), 280-14, MPC 910.2",
+      "url": "https://ecode360.com/16249983",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Residential uses shall only be allowed in the R-6 or PA Districts.' A second unit is not listed in R-1 to R-4, so a use variance is the path there."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "280-130.1, MPC 910.2",
+      "url": "https://ecode360.com/16249983",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "AC"
+          ],
+          "path": "by_right",
+          "section": "280-9H(3)",
+          "url": "https://ecode360.com/11078453",
+          "note": "Tenant house as an accessory use, 'provided that the lot is not less than four acres'. For tenant farmers or farm or estate employees only."
+        },
+        {
+          "districts": [
+            "R-6",
+            "PA"
+          ],
+          "path": "conditional_use",
+          "section": "280-130.1C(1), D",
+          "url": "https://ecode360.com/16249983",
+          "note": "Undefined residential uses 'shall only be allowed in the R-6 or PA Districts' and 'only be approved as a conditional use'. Needs a Zoning Officer determination first. Reading."
+        }
+      ],
+      "section": "280-9H(3), 280-130.1",
+      "url": "https://ecode360.com/16249983",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "AC path is the tenant house rule. R-6 and PA path is the new or undefined use rule, read as reaching a second unit."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a house to two units",
+          "path": "special_exception",
+          "districts": [
+            "AC"
+          ],
+          "conditions": "Existing dwelling. Lot area per unit at least the district single-family lot area (2 acres). Each unit 600 sq ft or more, separate access, no exterior extension except for safety.",
+          "min_lot_sqft": 174240,
+          "section": "280-108",
+          "url": "https://ecode360.com/11079606"
+        },
+        {
+          "name": "Conversion of a house to two units",
+          "path": "special_exception",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "Existing dwelling. Lot area per unit at least 1 acre. Each unit 600 sq ft or more, separate access, no exterior extension except for safety. 75% of the lot area per unit for dwellings of 10,000 sq ft or more.",
+          "min_lot_sqft": 87120,
+          "section": "280-14B(1), 280-108",
+          "url": "https://ecode360.com/11079606"
+        },
+        {
+          "name": "Conversion of a house to two units",
+          "path": "special_exception",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Existing dwelling. Lot area per unit at least 20,000 sq ft. Each unit 600 sq ft or more, separate access, no exterior extension except for safety.",
+          "min_lot_sqft": 40000,
+          "section": "280-108",
+          "url": "https://ecode360.com/11079606"
+        },
+        {
+          "name": "Conversion of a house to two units",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Listed by reference to 280-14B. 280-108 itself names only AC, R-1 and R-2. Lot area per unit at least 10,000 sq ft. Each unit 600 sq ft or more.",
+          "min_lot_sqft": 20000,
+          "section": "280-24B(1), 280-108",
+          "url": "https://ecode360.com/11078595"
+        },
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-5"
+          ],
+          "conditions": "Lot area 5,445 sq ft per family and 80 ft lot width. Side yards 10 ft each.",
+          "min_lot_sqft": 10890,
+          "section": "280-34C, 280-35A(1)",
+          "url": "https://ecode360.com/11078660"
+        }
+      ],
+      "section": "280-108, 280-34C",
+      "url": "https://ecode360.com/11079606",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Two-unit lot figures are twice the per-unit lot area. R-1A and R-4 adopt the uses 'permitted' in R-1 and R-3. Whether that carries the conversion special exception is open."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "AC"
+      ],
+      "section": "280-9H(3)",
+      "url": "https://ecode360.com/11078453",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Only the AC tenant house. No district lists an ADU for a house lot."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 280",
+      "url": "https://ecode360.com/11078356",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_size",
+          "condition": "AC tenant house: 'provided that the lot is not less than four acres'.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "AC"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "lot_sqft_at_least",
+          "section": "280-9H(3)",
+          "url": "https://ecode360.com/11078453",
+          "value": 174240
+        },
+        {
+          "kind": "occupancy",
+          "condition": "AC tenant house: a residence 'for one or more tenant farmers or employees of a farm or estate'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "AC"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "280-4 'Tenant house'",
+          "url": "https://ecode360.com/11078361"
+        },
+        {
+          "kind": "other",
+          "condition": "AC tenant house: the lot is restricted against further subdivision unless the tenant house could meet Chapter 255.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "AC"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "280-9H(3)",
+          "url": "https://ecode360.com/11078453"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "AC: a tenant house is 'an accessory building'. A unit inside or attached to the house is not a tenant house.",
+          "effect": "bars",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": [
+            "AC"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "280-4 'Tenant house'",
+          "url": "https://ecode360.com/11078361"
+        },
+        {
+          "kind": "other",
+          "condition": "AC accessory structures: 20 ft from a side or rear property line and 10 ft from the house. 20 ft high.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "AC"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "280-11, 280-12C",
+          "url": "https://ecode360.com/11078510"
+        },
+        {
+          "kind": "other",
+          "condition": "R-4 accessory structures: 3 ft from a side or rear property line (10 ft in R-1 to R-3).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-4"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "280-32C",
+          "url": "https://ecode360.com/11078639"
+        },
+        {
+          "kind": "other",
+          "condition": "A rented unit needs an annual rental license from the township, with inspections.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "226-7A, 226-7H",
+          "url": "https://ecode360.com/10973424"
+        }
+      ],
+      "section": "280-9H(3), 280-4, 226-7",
+      "url": "https://ecode360.com/11078453",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Tenant house conditions in AC and rental licensing."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "280-4 'Tenant house', 280-9H(3)",
+      "url": "https://ecode360.com/11078361",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "AC tenant house only: 'An accessory building on a lot'. No ADU form elsewhere."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "280-9H(3)",
+      "url": "https://ecode360.com/11078453",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No size cap for a tenant house."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "280-16, 280-21, 280-26, 280-31, 280-11",
+      "url": "https://ecode360.com/11078539",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'no accessory building ... shall exceed 20 feet in height' in AC and R-1 to R-4."
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "280-17C, 280-22C, 280-27C",
+      "url": "https://ecode360.com/11078540",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'not ... closer than 10 feet from a side or rear property line' in R-1 to R-3. R-4 3 ft. AC 20 ft."
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "280-17C, 280-22C, 280-27C",
+      "url": "https://ecode360.com/11078540",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Same rule as side. R-4 3 ft. AC 20 ft."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "280-12B, 280-17B",
+      "url": "https://ecode360.com/11078540",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Detached accessory structures 'separated from the principal building by at least 10 feet'."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "280-17C",
+      "url": "https://ecode360.com/11078540",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory structures may stand in the rear and side yard, 10 ft from the lines."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "280-17A, 280-16",
+      "url": "https://ecode360.com/11078540",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Attached structures 'shall be part of the principal building'. District height 35 ft (AC 38 ft)."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 280",
+      "url": "https://ecode360.com/11078356",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "280-4 'Family'",
+      "url": "https://ecode360.com/11078361",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule. A family is related persons plus foster children and 'one other individual'."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "280-9H(3)",
+      "url": "https://ecode360.com/11078453",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Code sets no count for a tenant house. No ADU elsewhere."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 280",
+      "url": "https://ecode360.com/11078356",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed. Tourist house and bed-and-breakfast rules only."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "280-103B(1)",
+      "url": "https://ecode360.com/11079548",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "Dwellings need two spaces per dwelling unit. A second unit counted as a dwelling unit means four spaces on the lot.",
+      "section": "280-103B(1)",
+      "url": "https://ecode360.com/11079548",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "AC": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "280-10B(1) lot area",
+        "url": "https://ecode360.com/11078498",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not less than two acres'. Tenant house needs four acres."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "280-10B(3)",
+        "url": "https://ecode360.com/11078498",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "280-10B(4)",
+        "url": "https://ecode360.com/11078498",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Two side yards, each at least 50 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "280-10B(2)",
+        "url": "https://ecode360.com/11078498",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Not more than 15% of the area of each lot may be occupied by buildings.'"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "280-11",
+        "url": "https://ecode360.com/11078509",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'three stories or 38 feet in height'. Accessory buildings 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 60,
+        "section": "280-10B(5)",
+        "url": "https://ecode360.com/11078498",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building rear yard. An attached unit is part of the principal building."
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "280-15A lot area",
+        "url": "https://ecode360.com/11078529",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not less than one acre'. 120 ft width. Impervious 22%."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "280-15C",
+        "url": "https://ecode360.com/11078529",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "280-15D",
+        "url": "https://ecode360.com/11078529",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each at least 25 ft, 60 ft aggregate."
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "280-15B",
+        "url": "https://ecode360.com/11078529",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Not more than 15% of the area of each lot may be occupied by buildings.'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "280-16",
+        "url": "https://ecode360.com/11078539",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'three stories or 35 feet in height'. Accessory buildings 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "280-15E",
+        "url": "https://ecode360.com/11078529",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building rear yard. An attached unit is part of the principal building."
+      }
+    },
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "280-17.3A lot area",
+        "url": "https://ecode360.com/11078553",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not less than 30,000 square feet'. Impervious 30%."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "280-17.3C",
+        "url": "https://ecode360.com/11078553",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "280-17.3D",
+        "url": "https://ecode360.com/11078553",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each at least 20 ft, 45 ft aggregate."
+      },
+      "max_building_coverage": {
+        "value": 0.18,
+        "section": "280-17.3B",
+        "url": "https://ecode360.com/11078553",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Not more than 18% of the area of each lot may be occupied by buildings.'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "280-17.4",
+        "url": "https://ecode360.com/11078563",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'three stories or 35 feet in height'. Accessory buildings 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "280-17.3E",
+        "url": "https://ecode360.com/11078553",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building rear yard. An attached unit is part of the principal building."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "280-20A lot area",
+        "url": "https://ecode360.com/11078577",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not less than 20,000 square feet'. Impervious 30%."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "280-20C",
+        "url": "https://ecode360.com/11078577",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "280-20D",
+        "url": "https://ecode360.com/11078577",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each at least 20 ft, 45 ft aggregate."
+      },
+      "max_building_coverage": {
+        "value": 0.18,
+        "section": "280-20B",
+        "url": "https://ecode360.com/11078577",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Not more than 18% of the area of each lot may be occupied by buildings.'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "280-21",
+        "url": "https://ecode360.com/11078587",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'three stories or 35 feet in height'. Accessory buildings 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "280-20E",
+        "url": "https://ecode360.com/11078577",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building rear yard. An attached unit is part of the principal building."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "280-25A lot area",
+        "url": "https://ecode360.com/11078604",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not less than 10,000 square feet'. Impervious 35%."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "280-25C",
+        "url": "https://ecode360.com/11078604",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "280-25D",
+        "url": "https://ecode360.com/11078604",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each at least 15 ft, 35 ft aggregate."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "280-25B",
+        "url": "https://ecode360.com/11078604",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Not more than 25% of the area of each lot may be occupied by buildings.'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "280-26",
+        "url": "https://ecode360.com/11078614",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'three stories or 35 feet in height'. Accessory buildings 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "280-25E",
+        "url": "https://ecode360.com/11078604",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building rear yard. An attached unit is part of the principal building."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "280-30A lot area",
+        "url": "https://ecode360.com/11078628",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not less than 7,000 square feet'. Impervious 40%."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "280-30C",
+        "url": "https://ecode360.com/11078628",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "280-30D",
+        "url": "https://ecode360.com/11078628",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each at least 12 ft, 30 ft aggregate."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "280-30B",
+        "url": "https://ecode360.com/11078628",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Not more than 30% of the area of each lot may be occupied by buildings.'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "280-31",
+        "url": "https://ecode360.com/11078638",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'three stories or 35 feet in height'. Accessory buildings 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "280-30E",
+        "url": "https://ecode360.com/11078628",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building rear yard. An attached unit is part of the principal building."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 5500,
+        "section": "280-35A(1) lot area",
+        "url": "https://ecode360.com/11078660",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached 5,500 sq ft per family. Two-family detached 5,445 sq ft per family."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "280-35A(3)",
+        "url": "https://ecode360.com/11078660",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "280-35A(4)",
+        "url": "https://ecode360.com/11078660",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each at least 10 ft for single- or two-family detached."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "280-35A(2)",
+        "url": "https://ecode360.com/11078660",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Not more than 35% of the area of each lot may be occupied by buildings.'"
+      }
+    }
+  }
+}
