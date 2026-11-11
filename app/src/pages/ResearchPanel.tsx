@@ -14,7 +14,10 @@ export default function ResearchPanel({ course }: { course: Course }) {
     window.addEventListener('keydown', esc);
     return () => window.removeEventListener('keydown', esc);
   }, []);
-  useEffect(() => scroller.current?.scrollTo({ top: 0 }), [course]);
+  // Braces: newer browsers return a promise from scrollTo, and an effect may only return a clean-up function.
+  useEffect(() => {
+    scroller.current?.scrollTo({ top: 0 });
+  }, [course]);
 
   return (
     <>

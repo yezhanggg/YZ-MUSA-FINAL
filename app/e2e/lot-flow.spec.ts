@@ -67,3 +67,26 @@ test.describe('lot flow', () => {
     await shot(page, 'lot-phone.png');
   });
 });
+
+test.describe('projecting mode', () => {
+  test('payoff controls, counties and the research explorer', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/#/?view=project');
+    const share = page.locator('p[aria-live="polite"]', { hasText: 'pays off in' }).first();
+    await expect(share).toContainText('10%');
+    await page.getByRole('radio', { name: '$300' }).click();
+    await expect(share).toContainText('4%');
+    await page.getByRole('radio', { name: 'Counties' }).click();
+    await expect(page.getByRole('heading', { name: /Counties/ })).toBeVisible();
+    await page.getByRole('radio', { name: 'SB 1346' }).click();
+    await expect(page.getByText('Both bills die on Nov 30, 2026 if not enacted.').first()).toBeVisible();
+    await shot(page, 'proj-1440-e2e.png');
+
+    await page.goto('/#/?view=project&research=5500');
+    await expect(page.getByText('7 stable groups')).toBeVisible();
+    await page.getByRole('button', { name: 'Open the explorer here' }).click();
+    await expect(page.locator('iframe[title="Tract explorer"]')).toBeVisible();
+    const res = await page.request.get('/explorer/tract_explorer.html');
+    expect(res.ok()).toBe(true);
+  });
+});
