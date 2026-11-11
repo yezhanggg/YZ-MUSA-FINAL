@@ -634,7 +634,9 @@ def resolve(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
 TOWN_KEYS = ["adu_status", "adu_term", "conditions", "approval_by_district", "district_path", "fallback",
              "max_share_by_type", "parking_total_on_site", "parking_reading",
              # Added in pass 3.
-             "scope", "conditions_overridden", "max_size_by_type", "setbacks_by_type", "alternatives"]
+             "scope", "conditions_overridden", "max_size_by_type", "setbacks_by_type", "alternatives",
+             # Added in pass 4: "conditional_on_reading" when the path holds only under one reading of the code.
+             "approval_qualifier"]
 NO_ADU_STATUSES = {"not_addressed", "prohibited"}
 DETACHED_TYPES = ["detached_new", "garage_conversion", "over_garage"]
 GARAGE_TYPES = {"garage_conversion", "over_garage"}
@@ -863,9 +865,18 @@ def _town_conditions(data: dict[str, Any], picked: Picked, lot: dict[str, Any], 
     if dm and not historic:
         leaf, need, share = dm
         area = lot.get("lot_sqft")
-        text = (f"The district's minimum lot is {leaf['value']:,.0f} sq ft. This is a general lot rule, not an ADU rule"
-                + (f". The ADU rule needs {share:.0%} of it, {need:,.0f} sq ft" if share != 1 else ""))
-        out.append(_cond("lot_size", text, leaf, None if area is None else area >= need))
+        met = None if area is None else area >= need
+        if _district_min_binds(data):
+            rule = _leaf(data, ("eligibility", "requires_conforming_lot")) or _leaf(data, ("eligibility", "min_lot_share_of_district"))
+            text = (f"The ADU needs a lot of at least {need:,.0f} sq ft" + (f", {share:.0%} of the district minimum of {leaf['value']:,.0f}" if share != 1 else
+                    f", the district minimum") + f" ({rule['section']})")
+            out.append(_cond("lot_size", text, leaf, met, effect="bars"))
+        elif met is False:
+            out.append(_cond("lot_size", f"This lot is below the district minimum of {leaf['value']:,.0f} sq ft. It may be a nonconforming lot. "
+                                         f"Ask the zoning officer whether an ADU is allowed on it", leaf, False))
+        else:
+            out.append(_cond("lot_size", f"The district's minimum lot is {leaf['value']:,.0f} sq ft. A rule for creating lots, not an ADU rule",
+                             leaf, met))
     dens = _density(data, lot)
     if dens:
         per, need, binding = dens
@@ -893,6 +904,14 @@ def _district_min(data: dict[str, Any], lot: dict[str, Any]) -> Optional[tuple[d
         return None
     share = (_leaf(data, ("eligibility", "min_lot_share_of_district")) or {}).get("value") or 1
     return leaf, leaf["value"] * share, share
+
+
+def _district_min_binds(data: dict[str, Any]) -> bool:
+    """A district minimum lot bars an ADU only when the ADU rule ties to it: requires_conforming_lot,
+    or a share of the district minimum. Otherwise an existing smaller lot may be nonconforming."""
+    conf = (_leaf(data, ("eligibility", "requires_conforming_lot")) or {}).get("value") is True
+    share = (_leaf(data, ("eligibility", "min_lot_share_of_district")) or {}).get("value")
+    return conf or share is not None
 
 
 def _apply_gates(by_type: dict[str, str], conditions: list[dict[str, Any]], fallback: str, reasons: list[str]) -> None:
@@ -961,7 +980,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         fails = [f for f in fails if not f.startswith("Zoned ")]
     dm = _district_min(data, lot)
     area = lot.get("lot_sqft")
-    if dm and not historic and not state and area is not None and area < dm[1]:
+    dm_binds = _district_min_binds(data)
+    if dm and dm_binds and not historic and not state and area is not None and area < dm[1]:
         leaf, need, share = dm
         fails.append(f"The district's minimum lot is {leaf['value']:,.0f} sq ft ({leaf['section']})"
                      + (f". The ADU rule accepts {share:.0%} of it, {need:,.0f} sq ft" if share != 1 else "")
@@ -1039,7 +1059,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             value, hit = None, picked.get(("size", "historic_exempt"))
         if key == "min_lot_sqft" and historic:
             value, hit = None, picked.get(("eligibility", "historic_bypass"))
-        if key == "min_lot_sqft" and value is None and dm and not historic and not state:
+        if key == "min_lot_sqft" and value is None and dm and dm_binds and not historic and not state:
             value, hit = dm[1], (dm[0], f"{place}#districts")
         out[key] = int(value) if key in INTEGER_KEYS and value is not None else value
         if hit:
@@ -1048,6 +1068,13 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
                 assumed.append(key)
     if "max_adus" in assumed:
         out["reasons"].append(f"ADUs per lot: the code is silent, {out['max_adus']} assumed (default.json)")
+    qualifier = None
+    if allowed and dens and not dens[2] and not state and area is not None and area < dens[1]:
+        per, need, _ = dens
+        qualifier = "conditional_on_reading"
+        out["reasons"].insert(0, f"{approval.replace('_', ' ').capitalize()} only if the ADU does not count toward lot area per unit "
+                                 f"({per['section']}). If it counts, this lot needs relief: {need:,.0f} sq ft for the house and the ADU, "
+                                 f"this lot is {area:,.0f} sq ft")
     path_key = ("approval", "path") if allowed else ("approval", "fallback_path")
     for key, path in (("approval_path", path_key), ("types_allowed", ("form", "types_allowed"))):
         if picked.get(path):
@@ -1056,6 +1083,9 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     if state:
         _state_town_fixes(out, picked, lot, limits, citations, assumed, reasons)
     sizes, shares = _town_sizes(picked, out, limits, state, lot)
+    for t in ALL_TYPES:
+        if by_type[t] not in OK_PATHS:
+            sizes[t], shares[t] = None, None
 
     heights, notes = _town_heights(data, today, status if how not in ("district", "historic") else None, state, limits,
                                    citations, assumed, lot, by_type)
@@ -1089,6 +1119,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         "scope": {k: scope[k] for k in ("districts", "in_scope", "status_outside")},
         "conditions_overridden": overridden, "max_size_by_type": sizes, "setbacks_by_type": setbacks,
         "alternatives": _alternatives(file_data, lot),
+        "approval_qualifier": qualifier,
     })
     return {k: out[k] for k in OUTPUT_KEYS + TOWN_KEYS}
 

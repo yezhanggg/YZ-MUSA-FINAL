@@ -253,13 +253,48 @@ def test_district_paths_scranton():
 
 
 def test_district_min_lot_gates():
-    _have("pa_dauphin_harrisburg")
-    out = rules.resolve("pa_dauphin_harrisburg", "today", {"zoning_district": "RM", "building_type": "detached", "lot_sqft": 2400})
+    # A verified lot area per unit bars: Lower Merion MDR1 needs 8,000 sq ft for a house and an ADU.
+    _have("pa_montgomery_lower_merion")
+    out = rules.resolve("pa_montgomery_lower_merion", "today", {"zoning_district": "MDR1", "building_type": "detached", "lot_sqft": 6000})
     assert out["allowed"] is False and out["approval_path"] == "variance"
-    assert out["min_lot_sqft"] == raw("pa_dauphin_harrisburg")["districts"]["RM"]["min_lot_sqft"]["value"]
-    lot = next(c for c in out["conditions"] if c["kind"] == "lot_size")
-    assert lot["met"] is False and lot["section"]
+    c = next(c for c in out["conditions"] if c["kind"] == "lot_area_per_unit")
+    assert c["met"] is False and c["effect"] == "bars" and c["section"]
 
+
+def test_secondary_lot_area_gives_a_qualified_path():
+    _have("pa_dauphin_harrisburg")
+    row = raw("pa_dauphin_harrisburg")["districts"]["RM"]["lot_area_per_unit_sqft"]
+    if row["confidence"] == "verified":
+        pytest.skip("Harrisburg RM lot area per unit is verified now")
+    out = rules.resolve("pa_dauphin_harrisburg", "today", {"zoning_district": "RM", "building_type": "detached", "lot_sqft": 2400})
+    assert out["allowed"] is True and out["approval_qualifier"] == "conditional_on_reading"
+    assert out["reasons"][0].startswith("By right only if the ADU does not count toward lot area per unit")
+    assert "needs relief" in out["reasons"][0]
+    big = rules.resolve("pa_dauphin_harrisburg", "today", {"zoning_district": "RM", "building_type": "detached", "lot_sqft": 3500})
+    assert big["approval_qualifier"] is None
+
+
+def test_bare_district_minimum_does_not_bar(tmp_path, monkeypatch):
+    body = _base()
+    body["districts"] = {"RS": {"min_lot_sqft": _leaf(8000, "1306.01")}}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_nonconf", body)
+    out = rules.resolve(name, "today", {"zoning_district": "RS", "building_type": "detached", "lot_sqft": 7000})
+    assert out["allowed"] is True and out["min_lot_sqft"] is None
+    c = next(c for c in out["conditions"] if c["kind"] == "lot_size")
+    assert "nonconforming" in c["condition"] and c["section"] == "1306.01" and c["met"] is False
+    body["eligibility"] = {"requires_conforming_lot": _leaf(True, "800-31")}
+    name2 = _fixture(tmp_path, monkeypatch, "pa_test_conf", body)
+    barred = rules.resolve(name2, "today", {"zoning_district": "RS", "building_type": "detached", "lot_sqft": 7000})
+    assert barred["allowed"] is False and barred["min_lot_sqft"] == 8000
+
+
+def test_sizes_only_for_allowed_forms():
+    _have("pa_york_york")
+    out = rules.resolve("pa_york_york", "today", {"zoning_district": "RS2", "building_type": "detached", "lot_sqft": 4500,
+                                                 "has_accessory_building": True})
+    for t, path in out["approval_by_type"].items():
+        if path not in rules.OK_PATHS:
+            assert out["max_size_by_type"][t] is None, t
 
 def test_not_allowed_has_reasons_and_fallback():
     for name in ("pa_berks_reading", "pa_bucks_bensalem", "pa_lancaster_lancaster"):
@@ -431,8 +466,8 @@ def test_lot_size_gate_and_share_of_district_minimum(tmp_path, monkeypatch):
     assert ok["allowed"] is True and ok["min_lot_sqft"] == 18000
     short = rules.resolve(name, "today", {**lot, "lot_sqft": 17000})
     assert short["allowed"] is False
-    assert any("general lot rule" in c["condition"] for c in short["conditions"])
-    assert any("any new use needs relief" in r for r in short["reasons"])
+    assert any("90% of the district minimum" in c["condition"] and c["effect"] == "bars" for c in short["conditions"])
+    assert any("needs relief" in r for r in short["reasons"])
     body["districts"] = {}
     name2 = _fixture(tmp_path, monkeypatch, "pa_test_lotgate2", body)
     small = rules.resolve(name2, "today", {"building_type": "detached", "lot_sqft": 7500})
