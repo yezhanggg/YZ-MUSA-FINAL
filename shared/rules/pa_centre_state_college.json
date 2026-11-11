@@ -29,6 +29,10 @@
       "https://ecode360.com/32912666",
       "https://ecode360.com/32910001",
       "https://www.statecollegepa.us/225/New-Zoning-Ordinance",
+      "https://ecode360.com/42431303",
+      "https://ecode360.com/44379400",
+      "https://ecode360.com/38117504",
+      "https://ecode360.com/50686158",
       "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
     ],
     "verified_on": "2026-11-11",
@@ -42,10 +46,14 @@
     "checks": [
       "The unit must be inside the main building. A detached garage 'shall not include a dwelling' (19-501.l(5))",
       "Only one building for residential use per lot in R-1, R-2, R-3H, R-OA and UV (19-501.l(1))",
+      "The apartment may have 'not more than one bedroom' and may not exceed 500 sq ft (19-501.l(2)(b))",
+      "Family means persons 'related by blood (within and including the degree of first cousin), marriage or adoption' (19-201). Others count as unrelated",
       "Occupancy: at most three unrelated persons in the whole building, and at most two persons in the apartment (19-501.l(3)(b))",
       "Home occupations are not allowed in a one-family dwelling that contains a single apartment (19-501.l(4))",
       "A student home may be in a one-family dwelling with an apartment. In R-1, R-2 and R-3 student homes have spacing, floor area, parking and permit rules (19-501.l(6))",
-      "A rental housing permit may be needed. Chapter IV rental rules were not reviewed",
+      "Renting any dwelling unit needs a housing permit from the Code Official. In State College the threshold is 1 day (4-504b(3), amending Centre Region code 802.1)",
+      "Short-term rental: allowed with a license in all zones. The apartment may be rented short term only if the owner or tenant lives in the main dwelling. Limit 120 days a year (10-901b, 10-906a and c)",
+      "Parking is not settled. 19-2403.c: 'One- and Two-Family Dwellings, 2 spaces for each unit'. Read as two units: 4 spaces in total. Read as one one-family dwelling: 2 in total. 19-501.l(3) also needs parking for all residents' vehicles. Ask the Zoning Officer",
       "District permission for R-2 to UV comes through 'Any use permitted in' chains back to R-1. Confirm with the Planning Department"
     ],
     "notes": "Zoning office: Borough Planning Department. Rewrite page: https://www.statecollegepa.us/225/New-Zoning-Ordinance. Pending: a new comprehensive Zoning Ordinance and SALDO are in draft. A revised draft was posted for public review as of June 1, 2026, and Council meetings ran through Sep 9, 2026. A news report says Council may add ADU rules. Not adopted. Not law."
@@ -182,12 +190,12 @@
   },
   "envelope": {
     "max_height_ft": {
-      "value": null,
-      "section": "19-501.l(2)(a), 19-503.b",
-      "url": "https://ecode360.com/32910234",
+      "value": 15,
+      "section": "19-503.b, 19-603.b, 19-703.b, 19-803.b, 19-903.b",
+      "url": "https://ecode360.com/32910333",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No detached unit is allowed. Accessory buildings are capped at 15 ft and one story in R-1 (19-503.b)."
+      "confidence": "verified",
+      "note": "Accessory Building: '15 feet (not exceeding one story)'. No detached unit is allowed today, so this binds only if a detached form opens."
     },
     "internal_uses_district_height": {
       "value": true,
@@ -250,12 +258,12 @@
       "note": "No family rule. Caps: 'total number of persons occupying the single apartment unit within a one-family dwelling shall not exceed two'."
     },
     "short_term_rental_banned": {
-      "value": null,
-      "section": "19-501.l(2)",
-      "url": "https://ecode360.com/32910234",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "Not addressed in the apartment text. Chapter IV rental rules not reviewed."
+      "value": false,
+      "section": "10-901b and 10-906c",
+      "url": "https://ecode360.com/50686158",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Short-term rentals are permitted in all zones' with a license. The apartment may be used if the owner or tenant lives in the one-family dwelling. 120 days a year."
     },
     "max_adus": {
       "value": 1,
@@ -276,12 +284,12 @@
   },
   "parking": {
     "spaces_required": {
-      "value": 2,
-      "section": "19-2403.c",
+      "value": null,
+      "section": "19-2403.c, 19-501.l(3)",
       "url": "https://ecode360.com/32912666",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "'One- and Two-Family Dwellings: 2 spaces for each unit.' Reading: the apartment counts as a unit. 19-501.l(3) also requires parking for all residents' vehicles."
+      "note": "Open reading. 'One- and Two-Family Dwellings: 2 spaces for each unit.' If the apartment is a unit, 2 more (4 in total). If the use stays one one-family dwelling, 0 more (2 in total). Plus parking for all residents' vehicles (19-501.l(3))."
     }
   },
   "utilities": {
@@ -342,12 +350,12 @@
         "note": "25 ft, not exceeding two stories. Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": 2,
+        "value": null,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
       }
     },
     "R-2": {
@@ -398,12 +406,12 @@
         "note": "25 ft, not exceeding two stories. Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": 2,
+        "value": null,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
       }
     },
     "R-3": {
@@ -454,12 +462,12 @@
         "note": "Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": 2,
+        "value": null,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
       }
     },
     "R-3A": {
@@ -510,12 +518,12 @@
         "note": "Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": 2,
+        "value": null,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
       }
     },
     "R-3B": {
@@ -565,12 +573,12 @@
         "note": "Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": 2,
+        "value": null,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
       }
     }
   }

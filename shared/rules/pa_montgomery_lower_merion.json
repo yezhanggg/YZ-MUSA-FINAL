@@ -38,10 +38,13 @@
       "The owner records an agreement with the Township to remove the separate kitchen when no longer used this way. The permit expires six months after elderly occupancy ends (155-10.2C(3) and (7))",
       "An annual Township permit is required (155-10.2C(8))",
       "One unit must have at least twice the occupied floor area of the other (155-10.2C(9))",
-      "If not owner-occupied, a nonprofit housing sponsor is required (155-10.2C(10))",
-      "Reading: Table 5.1 lists 'Alternative housing for the elderly' (S in LDR and MDR), and 155-10.2 holds the restricted ADU rules. The table has no separate restricted ADU row",
-      "Historic path: on a Class 1 or Class 2 Historic Resource, 'Accessory dwelling unit' is a regulated use by zoning permit, if it is the only other single-family unit. Parking per Table 8.1. A conservation easement or covenant is needed first (155-7.1B(3), C, D, Tables 7.1.1 and 7.1.2)",
-      "155-7.1B(4) says a use not allowed by the underlying district needs conditional use and must be inside the historic buildings. How this fits with the regulated ADU in Table 7.1.1 is not clear. Ask the Zoning Officer"
+      "Owner-occupied, or sponsored by a nonprofit whose purpose is housing for the elderly (155-10.2C(10))",
+      "Path by district: special exception in LDR and MDR (Tables 5.1 and 5.3). By right in IC and IH, where Table 5.2 marks 'Alternative housing for the elderly' P. In a Class 1 Historic Resource in LDR, conditional use (Table 5.3 note (2))",
+      "Size: 'One dwelling unit shall have no less than two times the square footage of occupied space than the other' (155-10.2C(9)). For a unit carved out of the house, the ADU is at most about one third of the house. For a unit in an accessory structure, at most half of the house. The file stores the stricter one third",
+      "Lot area: MDR1 requires '4,000 square feet minimum per unit' and special exception uses follow district dimensions (155-5.2D). Reading: a house plus ADU in MDR1 needs 8,000 sq ft. Ask the Zoning Officer",
+      "155-2.1 defines ACCESSORY STRUCTURE as 'A nonhabitable structure' but 155-10.2C(6) places a unit 'in an accessory structure'. ACCESSORY BUILDING is defined as habitable. Read as an accessory building",
+      "Table 5.1 'Alternative housing for the elderly' covers all of 155-10.2, including C, the restricted ADU",
+      "Historic path (Class 1 or Class 2 Historic Resource): 'Accessory dwelling unit' is R in Table 7.1.1. Zoning permit from the Zoning Officer (155-7.1D(2), 7.1B(4)(d)). No family or age rule. Conditions: the only single-family unit besides the principal dwelling (Table 7.1.2), parking per Table 8.1, the unit 'contained within the historic buildings or structures unless otherwise specifically permitted' (7.1B(4)(a)), a Historical Commission or HARB recommendation if in a historic district (7.1B(4)(b)), a conservation easement or covenant first (7.1B(3)), and only one additional use on the property (7.1C(2)). The schema has no field for this path, so approval.path shows the general special exception. Confirm with the Zoning Officer"
     ],
     "notes": "Zoning office: Building and Planning Department, Zoning Officer. Pending: no ADU amendment found. Nothing in New Laws for Chapter 155."
   },
@@ -69,8 +72,8 @@
       "section": "Table 5.1, 155-5.1E, Table 5.3, 155-10.2C",
       "url": "https://ecode360.com/35686562",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "'Alternative housing for the elderly' is S in LDR and MDR. Special exception 'requires the approval of the Zoning Hearing Board' (155-5.1E(4)). In a Class 1 Historic Resource it is a conditional use."
+      "confidence": "verified",
+      "note": "'Alternative housing for the elderly' is S in LDR and MDR. 'A use permitted by special exception requires the approval of the Zoning Hearing Board' (155-5.1E(4)). By right in IC and IH (Table 5.2). Historic resources: zoning permit, see checks."
     },
     "fallback_path": {
       "value": "variance",
@@ -128,11 +131,11 @@
     },
     "historic_bypass": {
       "value": true,
-      "section": "155-7.1C and D, Tables 7.1.1 and 7.1.2",
+      "section": "155-7.1B(3), B(4)(a), (b), (d), C, D, Tables 7.1.1 and 7.1.2",
       "url": "https://ecode360.com/35687393",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Class 1 and Class 2 Historic Resources: 'Accessory dwelling unit' is R, by zoning permit, if 'the only single-family dwelling unit other than the principal dwelling'. No family or age rule there."
+      "note": "Class 1 and Class 2 Historic Resources: 'Accessory dwelling unit' is R, by zoning permit. Inside the historic buildings, HARB or Historical Commission recommendation, covenant first. No family or age rule. See checks."
     }
   },
   "form": {
@@ -158,12 +161,12 @@
       "note": "No square foot cap."
     },
     "max_share_of_house": {
-      "value": 0.5,
+      "value": 0.33,
       "section": "155-10.2C(9)",
       "url": "https://ecode360.com/35688067",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "'One dwelling unit shall have no less than two times the square footage of occupied space than the other.' Read as the smaller unit at most half of the larger."
+      "note": "'One dwelling unit shall have no less than two times the square footage of occupied space than the other.' A unit carved out of the house is at most about one third of it. A unit in an accessory structure may be up to half of the house."
     },
     "min_sqft": {
       "value": null,
@@ -182,6 +185,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "Accessory building: 2 stories up to 20 ft. Reading: a unit in an accessory structure meets principal setbacks, so the 20 ft cap applies, not the 15 ft cap for reduced setbacks (155-3.4F(2))."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "155-10.2C, 155-3.3, Tables 4.1.1 to 4.2.3",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A unit converted inside the house is in the principal building, so the principal height applies (35 ft in LDR)."
     },
     "setback_front_ft": {
       "value": null,
@@ -225,7 +236,7 @@
       "url": "https://ecode360.com/35688068",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Not strictly required. 'If the facility is not owner-occupied, its use shall be sponsored by a nonprofit organization'."
+      "note": "Owner-occupied or nonprofit-sponsored. 'If the facility is not owner-occupied, its use shall be sponsored by a nonprofit organization' for elderly housing."
     },
     "family_only": {
       "value": true,
@@ -479,12 +490,12 @@
     },
     "MDR1": {
       "min_lot_sqft": {
-        "value": 4000,
+        "value": 8000,
         "section": "Table 4.2.1 MDR1 Dimensional Standards, Lot area",
         "url": "https://ecode360.com/35686352",
         "verified_on": "2026-11-11",
-        "confidence": "verified",
-        "note": "4,000 sq ft minimum per unit."
+        "confidence": "secondary",
+        "note": "House plus ADU. Table: '4,000 square feet minimum per unit'. Reading: two units need 8,000 sq ft (155-5.2D)."
       },
       "setback_front_ft": {
         "value": null,

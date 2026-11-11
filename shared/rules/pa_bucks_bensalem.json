@@ -22,6 +22,7 @@
       "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV10R-REDI_S232-240USRE",
       "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
       "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE_DIV1GE_S232-586OREPA",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH123HOCO_S123-14PRLIINDW",
       "https://www.bensalempa.gov/building-and-planning",
       "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
     ],
@@ -37,7 +38,8 @@
       "The zoning code has no accessory dwelling unit, in-law or accessory apartment provision",
       "R-1, R-2, R-A-1 and R-11 allow 'One single-family detached dwelling' and list uses 'and no other' (232-124, 232-152, 232-166, 232-226)",
       "A dwelling unit is used 'by one family'. Family means relatives, or not more than five unrelated persons, with single cooking facilities (232-6)",
-      "Lot area and density rules count dwelling units. R-1 needs 12,000 sq ft per family and caps density at 2.5 units per acre (232-153)",
+      "A use variance would also have to clear lot area and density. R-1 needs '12,000 square feet per family' and allows 2.5 units per acre (232-153). R-2 allows 2.8 (232-167). R-11 allows 2 (232-227(h))",
+      "Renting any dwelling unit needs an annual premises license and inspection (123-14(a))",
       "The R-3A district allows duplex dwellings only. It is the closest two-unit option, not an ADU path (232-196)",
       "An accessory structure footprint in a residential district may not exceed 25% of the principal building footprint (232-6 'Accessory structure')",
       "Accessory buildings must be at least 10 ft from any other structure (232-583(a)(3))"
@@ -111,11 +113,19 @@
   "envelope": {
     "max_height_ft": {
       "value": null,
-      "section": "232-583",
+      "section": "232-583, 232-153(f), 232-167(f)",
       "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "No accessory building height cap read. District height is 35 ft in R-1 and R-2."
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No separate accessory height cap found. 'No building or structure' may exceed the district height, 35 ft in R-1, R-2 and R-11."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "232-153(f), 232-167(f), 232-227(f)",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The district height covers every building, so a unit in the house uses it."
     },
     "setback_front_ft": {
       "value": null,
@@ -305,6 +315,22 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "25% for 20,000 to 40,000 sq ft net lots. 20% above."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "232-227(e)(1)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV9R-REDI_S232-227ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "40 ft on net lots under 40,000 sq ft. 50 ft at 40,000 sq ft or more."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "232-227(f)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV9R-REDI_S232-227ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "May rise 1 ft per extra foot of side and front yard, up to 50 ft."
       }
     }
   }

@@ -8,6 +8,7 @@
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/HA1391",
+      "https://ecode360.com/26959105",
       "https://ecode360.com/32584413",
       "https://ecode360.com/32586549",
       "https://ecode360.com/attachment/333589/HA1391-007-305a%20Zoning%20Districts.pdf",
@@ -25,18 +26,18 @@
     "municipality_type": "city",
     "geoid": "4204332800",
     "code_host": "ecode360",
-    "code_url": "https://ecode360.com/HA1391",
+    "code_url": "https://ecode360.com/26959105",
     "code_current_through": "2026-04-14",
     "code_current_through_note": "eCode360: includes legislation through 04-14-2026. New Laws (0).",
     "checks": [
       "The definitions section uses the term 'accessory dwelling'. The use table and 7-309.2A say 'accessory dwelling unit'",
       "Size cap is a share only: no more than 33% of the square footage of the principal residential unit. No square foot number",
-      "RL and RM set density (4 to 8 and 8 to 20 dwelling units per acre) and lot area per unit. The code does not say whether an ADU counts. Ask the Zoning Officer",
-      "No accessory structure height cap was found. The district height applies",
+      "Density: an accessory dwelling is 'A separate dwelling unit' and density counts 'The total number of dwelling units' on a lot (7-333.2). Plain reading: the ADU counts. RM needs 1,500 sq ft per unit, so 3,000 sq ft for a house and an ADU. RL allows up to 8 units per acre, so about 10,890 sq ft for two units. CN needs 1,200 sq ft per unit. This may block many small RL and RM lots. Confirm with the Zoning Officer",
+      "No accessory structure height cap was found. A detached ADU may reach the district height (RL 36 ft, RM 45 ft). A unit inside or attached to the house also uses the district height",
       "Off-street parking rules do not apply in the CN and DC districts (7-327.2)",
       "A dwelling unit is occupied by only one family (7-333.2 'Dwelling unit')"
     ],
-    "notes": "Zoning office: Bureau of Planning, https://harrisburgpa.gov/services/planning/index.php. Pending changes: none found on eCode360 (New Laws 0). A city search hit mentioned a 2026 policy work session on zoning amendments. No ADU ordinance text was found. Not law."
+    "notes": "Zoning office: Bureau of Planning, https://harrisburgpa.gov/services/planning/index.php. A 2019 bill to drop RL and RM density limits was introduced and not passed (news report, not law). Pending changes: none found on eCode360 (New Laws 0). A city search hit mentioned a 2026 policy work session on zoning amendments. No ADU ordinance text was found. Not law."
   },
   "adu": {
     "term": {
@@ -98,11 +99,11 @@
     },
     "min_lot_sqft": {
       "value": null,
-      "section": "7-309.2A",
+      "section": "7-309.2A, 7-333.2 DENSITY",
       "url": "https://ecode360.com/32584413",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "No ADU-specific lot size. District lot area per dwelling unit may apply. See districts and checks."
+      "confidence": "secondary",
+      "note": "No ADU-specific lot size. Reading: the ADU counts toward district lot area per unit and density. See districts (house plus ADU)."
     },
     "existing_structure_only": {
       "value": false,
@@ -166,11 +167,11 @@
   "envelope": {
     "max_height_ft": {
       "value": null,
-      "section": "7-307.3A and Attachment 1, 7-307.8",
+      "section": "7-307.3A and Attachment 1, 7-307.6A",
       "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No accessory height cap found. Reading: the district principal height applies (RL 36 ft, RM 45 ft). See districts."
+      "note": "No accessory or detached ADU height cap found. 7-307.6A applies district setbacks to accessory buildings, and the only height rule is the district one (RL 36 ft, RM 45 ft). See districts."
     },
     "setback_front_ft": {
       "value": null,
@@ -195,6 +196,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "District rear setback applies to accessory buildings. See districts table."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "7-309.2A(1), 7-307.6C, 7-307.3A Attachment 1",
+      "url": "https://ecode360.com/37993958",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "A unit inside the principal unit is part of the principal building. The district principal height applies."
     },
     "separation_ft": {
       "value": null,
@@ -288,12 +297,12 @@
   "districts": {
     "RL": {
       "min_lot_sqft": {
-        "value": 5000,
-        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density",
+        "value": 10890,
+        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density, with 7-333.2 DENSITY",
         "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
         "verified_on": "2026-11-11",
-        "confidence": "verified",
-        "note": "5,000 sq ft for residential uses. 4 to 8 dwelling units per acre."
+        "confidence": "secondary",
+        "note": "House plus ADU. Table: 5,000 sq ft and '4-8 dwelling units per acre'. Two units at 8 per acre need 43,560 / 8 x 2 = 10,890 sq ft. Reading: the ADU counts as a dwelling unit (7-333.2 DENSITY)."
       },
       "setback_front_ft": {
         "value": 20,
@@ -337,12 +346,12 @@
     },
     "RM": {
       "min_lot_sqft": {
-        "value": 1500,
-        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density",
+        "value": 3000,
+        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density, with 7-333.2 DENSITY",
         "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
         "verified_on": "2026-11-11",
-        "confidence": "verified",
-        "note": "1,500 sq ft per dwelling unit. 8 to 20 dwelling units per acre."
+        "confidence": "secondary",
+        "note": "House plus ADU. Table: '1,500 square feet per dwelling unit', so 3,000 sq ft for two units. Reading: the ADU counts as a dwelling unit (7-333.2 DENSITY)."
       },
       "setback_front_ft": {
         "value": 5,
@@ -395,7 +404,7 @@
     "RF": {
       "min_lot_sqft": {
         "value": 2000,
-        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density",
+        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density, with 7-333.2 DENSITY",
         "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
         "verified_on": "2026-11-11",
         "confidence": "verified",
@@ -444,12 +453,12 @@
     },
     "CN": {
       "min_lot_sqft": {
-        "value": 1200,
-        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density",
+        "value": 2400,
+        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density, with 7-333.2 DENSITY",
         "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
         "verified_on": "2026-11-11",
-        "confidence": "verified",
-        "note": "1,200 sq ft per dwelling unit. ADU needs a special exception here."
+        "confidence": "secondary",
+        "note": "House plus ADU. Table: '1,200 square feet per dwelling unit', so 2,400 sq ft for two units. ADU needs a special exception here."
       },
       "setback_front_ft": {
         "value": null,
