@@ -1,0 +1,330 @@
+{
+  "provenance": {
+    "jurisdiction": "Middletown township",
+    "instrument": "Code of the Township of Middletown (Bucks County), Chapter 500 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code MI2390): includes legislation through 12-16-2024. New Laws lists five Chapter 500 amendments not yet codified: Ord. 25-01 (townhouses in P), 25-02 (CDT overlay), 25-03 (AQC district), 26-05 (logistics center overlay) and 26-06 (chickens). All five were read. None mentions accessory dwellings. The township zoning page links to this chapter, which confirms it is the Bucks County Middletown.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/MI2390",
+      "https://ecode360.com/13027681",
+      "https://ecode360.com/13027728",
+      "https://ecode360.com/13028099",
+      "https://ecode360.com/13028111",
+      "https://ecode360.com/13028134",
+      "https://ecode360.com/13028146",
+      "https://ecode360.com/13028158",
+      "https://ecode360.com/13028170",
+      "https://ecode360.com/13029310",
+      "https://ecode360.com/13029419",
+      "https://ecode360.com/MI2390/laws",
+      "https://ecode360.com/MI2390/laws/LF2280265.pdf",
+      "https://ecode360.com/MI2390/laws/LF2452635.pdf",
+      "https://ecode360.com/MI2390/laws/LF2452632.pdf",
+      "https://ecode360.com/MI2390/laws/LF2722019.pdf",
+      "https://ecode360.com/MI2390/laws/LF2786125.pdf",
+      "https://middletownbucks.org/Departments/Building-Zoning/Zoning-Information",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201749120",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/13027681",
+    "code_current_through": "2024-12-16",
+    "code_current_through_note": "eCode360: Includes legislation through 12-16-2024. Five later Chapter 500 ordinances (2025-02-18 to 2026-08-10) are listed under New Laws.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "R-1, R-2 and R-3 allow listed principal and accessory uses 'and no other'. Single-family detached is the only dwelling type listed (500-802, 500-902, 500-1002)",
+      "A residential conversion of an existing building into two or more units is a special exception in RA-1, RA-2, RA-3, R-1, R-2, R-3, MR and P (500-2312)",
+      "A conversion needs the single-family minimum lot area for each unit, so about twice the district minimum for two units (500-2312B)",
+      "A converted house keeps one front entrance and its exterior look. Each unit needs 200 sq ft of patio or recreation area. Minimum unit sizes apply, for example 500 sq ft for one bedroom",
+      "Garages and sheds: at most 3% of lot area and 500 sq ft, 14 ft high. Garages 5 ft and sheds 3 ft from lot lines, 10 ft behind the rear of the house (500-2402)"
+    ],
+    "notes": "Zoning office: Department of Building and Zoning, https://middletownbucks.org/Departments/Building-Zoning/Zoning-Information. Searched Chapter 500 and the five uncodified amendments for: accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage house, second dwelling, accessory residential, guest house, accessory living, kitchen. No ADU provision. Index note: MI2390 is the right code. The Ch. 275 and MI1283 lead was another Middletown."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "500-202, 500-802, 500-902, 500-1002, Article XXIV",
+      "url": "https://ecode360.com/13027728",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage house, second dwelling, guest house, kitchen."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "500-802, 500-902, 500-1002",
+      "url": "https://ecode360.com/13028134",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "500-902, MPC 910.2",
+      "url": "https://ecode360.com/13028134",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: R-2 allows uses 'and no other'. A second unit is not listed. A use variance is the path. A unit inside an existing house may fit a residential conversion by special exception if the lot is large enough (500-2312)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "500-902, MPC 910.2",
+      "url": "https://ecode360.com/13028134",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "500-802, 500-902, 500-1002",
+      "url": "https://ecode360.com/13028134",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 500",
+      "url": "https://ecode360.com/13027681",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "500-902, 500-2312",
+      "url": "https://ecode360.com/13028134",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. Conversion of an existing building is a separate two-unit use."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 14,
+      "section": "500-2402A(3)",
+      "url": "https://ecode360.com/13029419",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Not an ADU rule. Residential accessory structures: 'a maximum building height of 14 feet'."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "500-2402A(2)",
+      "url": "https://ecode360.com/13029419",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Garages and sheds must be 10 ft farther back from the street line than the rear of the house."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "500-2402A(1)",
+      "url": "https://ecode360.com/13029419",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule: garages 'not less than five feet from any property line'. Sheds 3 ft."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "500-2402A(1)",
+      "url": "https://ecode360.com/13029419",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule: garages 5 ft, sheds 3 ft."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "500-2402",
+      "url": "https://ecode360.com/13029419",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No separation between buildings found in 500-2402."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 500,
+      "section": "500-2402A(3)",
+      "url": "https://ecode360.com/13029419",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'limited to 3% of the lot area up to a maximum of 500 square feet'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "500-202 'Family'",
+      "url": "https://ecode360.com/13027728",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A family may include 'domestic servants or gratuitous guests'."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "500-802, 500-902, 500-1002",
+      "url": "https://ecode360.com/13028134",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: no ADU is allowed by right."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "Article XXVI parking",
+      "url": "https://ecode360.com/13027681",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "500-803A",
+        "url": "https://ecode360.com/13028111",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "500-803F",
+        "url": "https://ecode360.com/13028111",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "500-803G",
+        "url": "https://ecode360.com/13028111",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "10 ft min, 30 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "500-803H",
+        "url": "https://ecode360.com/13028111",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "500-803D",
+        "url": "https://ecode360.com/13028111",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious surface ratio max 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "500-803E",
+        "url": "https://ecode360.com/13028111",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "500-903A",
+        "url": "https://ecode360.com/13028146",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "500-903F",
+        "url": "https://ecode360.com/13028146",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "500-903G",
+        "url": "https://ecode360.com/13028146",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "10 ft min, 25 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "500-903H",
+        "url": "https://ecode360.com/13028146",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "500-903D",
+        "url": "https://ecode360.com/13028146",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious surface ratio max 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "500-903E",
+        "url": "https://ecode360.com/13028146",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "500-1003A",
+        "url": "https://ecode360.com/13028170",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "500-1003E",
+        "url": "https://ecode360.com/13028170",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "500-1003F",
+        "url": "https://ecode360.com/13028170",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "8 ft min, 18 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "500-1003G",
+        "url": "https://ecode360.com/13028170",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "500-1003C",
+        "url": "https://ecode360.com/13028170",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious surface ratio max 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "500-1003D",
+        "url": "https://ecode360.com/13028170",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    }
+  }
+}
