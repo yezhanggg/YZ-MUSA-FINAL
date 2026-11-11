@@ -255,6 +255,11 @@ export class TractCache {
     return undefined;
   }
 
+  /** Every lot of every tract in memory. */
+  allLots(): LotRecord[] {
+    return [...this.done.values()].flatMap((t) => t.lots);
+  }
+
   clear(): void {
     this.done.clear();
     this.pending.clear();
@@ -378,6 +383,39 @@ export async function loadLot(lotId: string, geoid: string, opts: LoadOptions = 
   const lot = tract.byId.get(lotId);
   if (!lot) throw new LotLoadError('not_found', `lot ${lotId} is not in tract ${geoid}`);
   return lot;
+}
+
+/** Every lot record in memory (the assistant's address search in the browser). */
+export const loadedLots = (cache: TractCache = sharedCache): LotRecord[] => cache.allLots();
+
+const tractIndex = new Map<string, Promise<Record<string, string> | null>>();
+/** Tract GEOID of a lot id from the build's lot_tract.json (lot id -> tract), fetched once per place. null when the
+ *  place has no index or the id is not in it. */
+export async function lotTractOf(lotId: string, opts: LoadOptions = {}): Promise<string | null> {
+  const place = PLACE_BY_COUNTY[lotId.slice(0, 5)];
+  if (!place) return null;
+  const { base, f } = settings(opts);
+  const url = `${base}${place}/lot_tract.json`;
+  let p = tractIndex.get(url);
+  if (!p) {
+    p = getJson(url, f, opts.signal).then((v) => (isObj(v) ? (v as Record<string, string>) : null)).catch(() => null);
+    tractIndex.set(url, p);
+  }
+  const table = await p;
+  return table?.[lotId] ?? null;
+}
+
+/** A lot by id: from memory, else through the lot_tract index and its tract file. null when not found. */
+export async function lotByIdAnywhere(lotId: string, opts: LoadOptions = {}): Promise<LotRecord | null> {
+  const hit = findLoadedLot(lotId, opts.cache);
+  if (hit) return hit;
+  const tract = await lotTractOf(lotId, opts);
+  if (!tract) return null;
+  try {
+    return await loadLot(lotId, tract, opts);
+  } catch {
+    return null;
+  }
 }
 
 /** A lot already in memory (the assistant asks by lot id only). */

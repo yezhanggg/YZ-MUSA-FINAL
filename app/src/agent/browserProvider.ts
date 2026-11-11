@@ -5,7 +5,7 @@ import { mapRef, useTool } from '../tool/store';
 import { openLot, testSpot } from '../tool/actions';
 import { BED_SIZE, SIZE_MAX, SIZE_MIN, type Bed, type Stories } from '../lib/numbers';
 import type { DataProvider, SetMapInput, SiteRecord } from './executors';
-import { findLoadedLot } from '../lib/lot/load';
+import { findLoadedLot, loadedLots, lotByIdAnywhere } from '../lib/lot/load';
 import type { LotAgentProvider } from '../lib/lot/agentTools';
 import type { LotRecord } from '../lib/lot/types';
 import { moneyOptions, tractRents } from '../tool/testState';
@@ -65,7 +65,8 @@ const tractOf = (lot: LotRecord) => useTool.getState().tracts?.features.find((f)
 export const lotProvider: LotAgentProvider = {
   async lotById(id) {
     const sel = useTool.getState().spot?.record;
-    return sel?.lot.id === id ? sel : (findLoadedLot(id) ?? null);
+    // In memory first, else through the build's lot_tract index (one request per place, then the tract file).
+    return sel?.lot.id === id ? sel : lotByIdAnywhere(id);
   },
   async selectedLot() {
     return useTool.getState().spot?.record ?? null;
@@ -105,6 +106,15 @@ export const browserProvider: DataProvider = {
     const spot = useTool.getState().spot;
     const center: LngLat | null = spot ? spot.pt : map ? [map.getCenter().lng, map.getCenter().lat] : null;
     return { lots, center, scope: ids.length ? `${ids.length} tract(s) on screen or around the selected site` : 'no pilot tracts on screen (zoom in on Philadelphia or Cumberland County)' };
+  },
+  async addressBook() {
+    const recs = loadedLots();
+    const entries = recs.filter((r) => r.lot.address).map((r) => ({ lot_id: r.lot.id, tract: r.lot.tract ?? '', place: r.lot.place ?? '', address: r.lot.address! }));
+    return { entries, scope: `lot records loaded on the map (${new Set(entries.map((e) => e.tract)).size} tracts). Search the address on the map to load more` };
+  },
+  async areas() {
+    const { tracts, towns, counties } = useTool.getState();
+    return { tracts, towns, counties };
   },
   curves: () => useTool.getState().curves,
   adu: () => useTool.getState().adu,

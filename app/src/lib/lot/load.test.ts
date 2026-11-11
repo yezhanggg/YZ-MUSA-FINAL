@@ -268,3 +268,26 @@ describe('loadLot', () => {
     expect((await failure(loadLot('42101-052174500', T1, o))).kind).toBe('not_found');
   });
 });
+
+describe('lot by id through the lot_tract index', () => {
+  it('finds a lot that is not in memory, with one index request per place', async () => {
+    const { lotByIdAnywhere, loadedLots } = await import('./load');
+    const lot = fixture('no_fit');
+    const files = { ...inlineFiles(), 'pittsburgh/lot_tract.json': { [lot.lot.id]: T2 } };
+    const { f, calls } = server(files);
+    const cache = new TractCache();
+    const base = `${BASE}`;
+    const opts = { baseUrl: base, fetch: f, cache };
+    expect((await lotByIdAnywhere(lot.lot.id, opts))?.lot.id).toBe(lot.lot.id);
+    expect(loadedLots(cache).map((l) => l.lot.id)).toContain(lot.lot.id);
+    expect(await lotByIdAnywhere('42003-NOT-A-LOT', opts)).toBeNull();
+    expect(calls.filter((c) => c.endsWith('lot_tract.json'))).toHaveLength(1);
+    expect(await lotByIdAnywhere('42999-1', opts)).toBeNull();
+  });
+
+  it('gives null, not an error, when the place has no index', async () => {
+    const { lotTractOf } = await import('./load');
+    const { f } = server(inlineFiles());
+    expect(await lotTractOf('42003-0000', { baseUrl: 'https://data.test/other/', fetch: f })).toBeNull();
+  });
+});
