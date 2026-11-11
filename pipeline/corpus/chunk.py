@@ -59,6 +59,10 @@ def _split(text: str) -> Iterator[str]:
         yield "\n".join(buf)
 
 
+def _root(seg: dict[str, Any]) -> str | None:
+    return seg.get("parent") or seg.get("section")
+
+
 def heading_path(seg: dict[str, Any]) -> str:
     parts = []
     if seg.get("article"):
@@ -77,14 +81,18 @@ def heading_path(seg: dict[str, Any]) -> str:
 def doc_chunks(doc: dict[str, Any]) -> list[dict[str, Any]]:
     base = {"geoid": doc["geoid"], "doc_id": doc["doc_id"], "url": doc.get("final_url") or doc["url"],
             "fetched_at": doc.get("fetched_at"), "doc_title": doc.get("link_text")}
-    # merge short neighbours
+    # keep a section with its subsections (660-42, 660-42.A, 660-42.C) while under MAX_TOKENS,
+    # and merge short neighbours
     groups: list[list[dict[str, Any]]] = []
     for seg in doc["segments"]:
-        if groups and sum(n_tokens(s["text"]) for s in groups[-1]) < MIN_TOKENS \
-                and sum(n_tokens(s["text"]) for s in groups[-1]) + n_tokens(seg["text"]) <= MAX_TOKENS:
-            groups[-1].append(seg)
-        else:
-            groups.append([seg])
+        if groups:
+            size = sum(n_tokens(s["text"]) for s in groups[-1])
+            fits = size + n_tokens(seg["text"]) <= MAX_TOKENS
+            same = _root(seg) is not None and _root(seg) == _root(groups[-1][0])
+            if fits and (same or size < MIN_TOKENS):
+                groups[-1].append(seg)
+                continue
+        groups.append([seg])
     out = []
     for g in groups:
         first = next((s for s in g if s.get("section")), g[0])
@@ -106,8 +114,8 @@ def run() -> list[dict[str, Any]]:
         d = json.loads(p.read_text())
         if d.get("scanned") or not d.get("segments"):
             continue
-        for c in doc_chunks(d):
-            c["chunk_id"] = f"{c['doc_id']}:{len(rows)}"
+        for k, c in enumerate(doc_chunks(d)):
+            c["chunk_id"] = f"{c['doc_id']}:{k}"  # stable when other documents are added
             rows.append(c)
     dest = sub("chunks") / "chunks.jsonl"
     with dest.open("w") as f:

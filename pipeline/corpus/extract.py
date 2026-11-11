@@ -46,6 +46,7 @@ RX_SECTION = [
     re.compile(r"^(\d{3,4}(?:\.\d+)+[A-Z]?)\.?\s+([A-Z(].*)$"),
     re.compile(r"^(\d{3,4})\.\s+([A-Z][A-Za-z].*)$"),
     re.compile(r"^(\d{1,3}-\d{1,4}(?:\.\d+)?[A-Z]?)\.\s+([A-Z][A-Za-z].*)$"),
+    re.compile(r"^(\d{2,3}-\d{1,3}(?:\.[A-Z0-9]{1,3})*)\.?\s+([A-Z][A-Za-z&].*)$"),  # 660-42 Accessory, 660-20.F. NUMBER
 ]
 RX_TOC = re.compile(r"(\.{4,}|…{2,}|\s{2,}\d+\s*$)")
 RX_PAGE_ONLY = re.compile(r"^(page\s*)?[\divxlc]{1,4}[a-z]?(\s*of\s*\d+)?$|^[-–\s]*\d{1,4}[-–\s]*$", re.I)

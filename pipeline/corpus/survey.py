@@ -51,6 +51,10 @@ def merged() -> dict[str, dict[str, Any]]:
             if g in rows and rows[g].get("_file") == f"result_{owner[g]}.csv" and p.name != rows[g]["_file"]:
                 continue  # keep the row from the owner's own file
             rows[g] = {**r, "_file": p.name}
+    over = d / "overrides.csv"  # rows checked by hand during the pilot, they win
+    if over.exists():
+        for r in csv.DictReader(over.open()):
+            rows[r["geoid"]] = {**rows.get(r["geoid"], {}), **{k: v for k, v in r.items() if v}, "_file": over.name}
     return rows
 
 

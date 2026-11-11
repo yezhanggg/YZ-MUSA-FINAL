@@ -16,6 +16,7 @@ Run:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import time
 from typing import Any
@@ -80,11 +81,13 @@ def build(keys: list[str], batch: int = 32) -> dict[str, Any]:
         vec_path = out / f"{key}.f16.npy"
         done: dict[str, int] = {}
         old = None
-        if ids_path.exists() and vec_path.exists():
-            old_ids = json.loads(ids_path.read_text())
+        keys_path = out / f"{key}.keys.json"
+        if ids_path.exists() and vec_path.exists() and keys_path.exists():
             old = np.load(vec_path)
-            done = {cid: i for i, cid in enumerate(old_ids)}
-        todo = [c for c in chunks if c["chunk_id"] not in done]
+            done = {k: i for i, k in enumerate(json.loads(keys_path.read_text()))}
+        # reuse a vector only when the embedded text is the same (key = hash of the text)
+        ckey = {c["chunk_id"]: hashlib.sha1(passage_text(c, key).encode()).hexdigest() for c in chunks}
+        todo = [c for c in chunks if ckey[c["chunk_id"]] not in done]
         t0 = time.time()
         new = encode_passages(key, [passage_text(c, key) for c in todo], batch) if todo else None
         dt = time.time() - t0
@@ -95,12 +98,13 @@ def build(keys: list[str], batch: int = 32) -> dict[str, Any]:
             cid = c["chunk_id"]
             if cid in new_i:
                 vecs.append(new[new_i[cid]])  # type: ignore[index]
-            elif old is not None and cid in done:
-                vecs.append(old[done[cid]])
+            else:
+                vecs.append(old[done[ckey[cid]]])  # type: ignore[index]
             ids.append(cid)
         arr = np.vstack(vecs).astype(np.float16) if vecs else np.zeros((0, dim), np.float16)
         np.save(vec_path, arr)
         ids_path.write_text(json.dumps(ids))
+        keys_path.write_text(json.dumps([ckey[i] for i in ids]))
         stats[key] = {"chunks": len(ids), "new": len(todo), "seconds": round(dt, 1),
                       "chunks_per_s": round(len(todo) / dt, 1) if todo and dt else None, "device": device(),
                       "bytes": vec_path.stat().st_size}

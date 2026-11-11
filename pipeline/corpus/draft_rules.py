@@ -60,6 +60,7 @@ STATUS = ["allowed_by_right", "special_exception", "conditional_use", "family_on
           "not_addressed", "prohibited"]
 PATHS = ["by_right", "administrator_exception", "special_exception", "conditional_use", "variance", "not_allowed",
          "unknown"]
+ABSENCE = ("not_addressed", "unknown")  # values that say the text was not found, not a rule
 FORMS = ["internal", "attached", "detached_new", "over_garage", "garage_conversion"]
 
 CLAIM = {"type": "object", "properties": {
@@ -203,6 +204,16 @@ def cost(usage: dict[str, int], batch: bool = False) -> float:
                 + usage.get("cache_read_input_tokens", 0) * PRICE_IN * 0.1)
 
 
+CLAIM_FIELDS = ("status", "term", "approval_path", "fallback_path", "unlisted_use_path", "districts", "forms",
+                "occupancy", "family_only", "owner_occupancy", "parking_spaces_for_adu")
+RETRY_NOTE = ("\n\nNote: in an earlier answer these fields were given as bare values: {}. Each of them must be an "
+              "object with value and support (quotes). Use null with empty support when the excerpts do not settle it.")
+
+
+def schema_slips(raw: dict[str, Any]) -> list[str]:
+    return [f for f in CLAIM_FIELDS if f in raw and not isinstance(raw[f], dict)]
+
+
 def call_model(geoid: str, name: str, ctx: str) -> tuple[dict[str, Any], dict[str, int], float]:
     import anthropic
 
@@ -254,12 +265,17 @@ def verify(draft: dict[str, Any], hits: list[dict[str, Any]]) -> tuple[dict[str,
     unsupported: list[dict[str, Any]] = []
     clean: dict[str, Any] = {}
 
-    def keep(field: str, item: dict[str, Any]) -> dict[str, Any] | None:
+    def keep(field: str, item: Any) -> dict[str, Any] | None:
+        if not isinstance(item, dict):  # the model gave a bare value: no quote, so it cannot stand
+            item = {"value": item, "support": [], "schema_slip": True}
         sup = _check_support(item.get("support", []), hits)
         item = {**item, "support": sup}
         empty = item.get("value") in (None, [], "") if "value" in item else False
         if empty:
             return item
+        if not sup and item.get("value") in ABSENCE:
+            # "no ADU text found" cannot be quoted. Kept, marked as an absence finding
+            return {**item, "absence": True}
         if any(s["check"] in ("ok", "other_chunk") for s in sup):
             return item
         unsupported.append({"field": field, "value": item.get("value", item.get("name", item.get("condition"))),
@@ -269,7 +285,7 @@ def verify(draft: dict[str, Any], hits: list[dict[str, Any]]) -> tuple[dict[str,
     for field, val in draft.items():
         if field == "could_not_find":
             clean[field] = val
-        elif isinstance(val, dict):
+        elif isinstance(val, (dict, str, bool, int, float)) or val is None:
             k = keep(field, val)
             clean[field] = k if k is not None else {"value": None, "support": [], "dropped": True}
         elif isinstance(val, list):
@@ -294,7 +310,16 @@ def draft(geoid: str, model: str = "bge", force: bool = False) -> dict[str, Any]
     t0 = time.time()
     hits = retrieve(geoid, model)
     t_ret = time.time() - t0
-    raw, usage, usd = call_model(geoid, place_name(geoid), context(hits))
+    ctx = context(hits)
+    raw, usage, usd = call_model(geoid, place_name(geoid), ctx)
+    slips = schema_slips(raw)
+    if slips:  # a claim given as a bare value has no quote: ask once more, then keep the better answer
+        raw2, usage2, usd2 = call_model(geoid, place_name(geoid), ctx + RETRY_NOTE.format(", ".join(slips)))
+        usd += usd2
+        usage = {k: usage.get(k, 0) + usage2.get(k, 0) if isinstance(usage.get(k), (int, float)) else usage.get(k)
+                 for k in usage} | {"retried_for": slips}
+        if len(schema_slips(raw2)) < len(slips):
+            raw = raw2
     clean, unsupported = verify(raw, hits)
     n_claims = sum(len(v.get("support", [])) if isinstance(v, dict) else
                    sum(len(x.get("support", [])) for x in v if isinstance(x, dict))
@@ -305,7 +330,7 @@ def draft(geoid: str, model: str = "bge", force: bool = False) -> dict[str, Any]
     out = {"geoid": geoid, "place": place_name(geoid), "label": "machine-read, not verified, read the quoted text",
            "model": MODEL, "made_on": date.today().isoformat(), "retrieval_model": model,
            "chunks": [{k: h[k] for k in ("chunk_id", "section", "heading_path", "page_start", "page_end", "url",
-                                          "retrieved_on")} for h in hits],
+                                          "retrieved_on", "text")} for h in hits],
            "draft": clean, "raw": raw, "unsupported": unsupported,
            "quote_checks": {"total": len(checks), "ok": checks.count("ok"),
                             "other_chunk": checks.count("other_chunk"), "missing": checks.count("missing"),

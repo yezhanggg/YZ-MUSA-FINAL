@@ -106,3 +106,13 @@ def test_labels_in_citation():
     assert EV.labels_in("2515.2 and 2515.2.A(8)") == ["2515.2", "2515.2"]
     assert "1303.08" in EV.labels_in("Table 1303.08(A)")
     assert EV._related("2515", "2515.2")
+
+
+def test_absence_kept_and_bare_value_dropped():
+    hits = [{"chunk_id": "a", "text": "Single-family detached dwelling. No other use."}]
+    draft = {"status": {"value": "not_addressed", "support": []}, "approval_path": "special_exception",
+             "could_not_find": ["ADU text"]}
+    clean, unsupported = D.verify(draft, hits)
+    assert clean["status"]["value"] == "not_addressed" and clean["status"]["absence"] is True
+    assert clean["approval_path"].get("dropped") is True
+    assert [u["field"] for u in unsupported] == ["approval_path"]

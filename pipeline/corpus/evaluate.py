@@ -85,7 +85,7 @@ def labels_in(section: str | None) -> list[str]:
     """Section labels inside a citation, e.g. '2515.2 and 2515.2.A(8)' -> ['2515.2', '2515.2']."""
     if not section:
         return []
-    found = RX_LABEL.findall(section)
+    found = [re.sub(r"(?<=\d)[A-Z]$", "", f) for f in RX_LABEL.findall(section)]  # 660-42C -> 660-42
     return [f for f in found if not re.fullmatch(r"(19|20)\d\d", f) and f not in ("910.2",)]
 
 
@@ -93,6 +93,16 @@ def _related(a: str, b: str) -> bool:
     """Same label, or one is an ancestor of the other (2515 and 2515.2)."""
     return a == b or b.startswith(a + ".") or a.startswith(b + ".") or b.startswith(a + "-") \
         or a.startswith(b + "(") or b.startswith(a + "(")
+
+
+def gold_quotes(item: dict[str, Any]) -> list[str]:
+    """Quoted words in the reviewer's note, normalised, first 60 characters, at least 4 words."""
+    out = []
+    for m in re.findall(r"[\'\"\u2018\u201c]([^\'\"\u2019\u201d]{20,})[\'\"\u2019\u201d]", item.get("note") or ""):
+        q = norm(m.replace("...", " ").split(" ... ")[0])[:60].strip()
+        if len(q.split()) >= 4:
+            out.append(q)
+    return out
 
 
 def chunk_has(c: dict[str, Any], label: str) -> bool:
@@ -124,24 +134,37 @@ def retrieval(models: tuple[str, ...] = ("bge", "e5"), ks: tuple[int, ...] = (5,
             if item.get("value") is None and item.get("confidence") == "unverified":
                 continue
             labels = [x for x in labels_in(item["section"]) if any(chunk_has(c, x) for c in by_place[geoid])]
-            if not labels:
-                rows.append({"geoid": geoid, "file": g["file"], "qtype": qtype, "scorable": False,
-                             "cited": item["section"]})
-                continue
+            target = "section"
+            if labels:
+                def ok(h: dict[str, Any], labels: list[str] = labels) -> bool:
+                    return any(chunk_has(h, x) for x in labels)
+            else:
+                # the copy we hold may number sections differently (ordinance vs codified chapter):
+                # fall back to the words the reviewer quoted in the note
+                quotes = [qq for qq in gold_quotes(item) if any(qq in norm(c["text"]) for c in by_place[geoid])]
+                if not quotes:
+                    rows.append({"geoid": geoid, "file": g["file"], "qtype": qtype, "scorable": False,
+                                 "cited": item["section"]})
+                    continue
+                target = "quote"
+
+                def ok(h: dict[str, Any], quotes: list[str] = quotes) -> bool:
+                    t = norm(h["text"])
+                    return any(qq in t for qq in quotes)
             q = question if not term or qtype == "adu_term" else question.replace("accessory dwelling unit", term)
             row = {"geoid": geoid, "file": g["file"], "qtype": qtype, "scorable": True, "cited": item["section"],
-                   "labels": labels, "query": q}
+                   "target": target, "labels": labels, "query": q}
             for model in models:
                 for mode in ("hybrid", "vector"):
                     hits = search(geoid, q, max(ks), model=model, mode=mode)
-                    first = next((i + 1 for i, h in enumerate(hits) if any(chunk_has(h, x) for x in labels)), None)
-                    row[f"{model}_{mode}_rank"] = first
+                    row[f"{model}_{mode}_rank"] = next((i + 1 for i, h in enumerate(hits) if ok(h)), None)
             hits = search(geoid, q, max(ks), mode="bm25")
-            row["bm25_rank"] = next((i + 1 for i, h in enumerate(hits) if any(chunk_has(h, x) for x in labels)), None)
+            row["bm25_rank"] = next((i + 1 for i, h in enumerate(hits) if ok(h)), None)
             rows.append(row)
     scored = [r for r in rows if r["scorable"]]
     systems = [f"{m}_{mode}" for m in models for mode in ("hybrid", "vector")] + ["bm25"]
     summary: dict[str, Any] = {"towns": sorted({r["file"] for r in scored}), "questions": len(scored),
+                               "by_quote": sum(1 for r in scored if r.get("target") == "quote"),
                                "unscorable": len(rows) - len(scored), "by_system": {}, "by_type": {}}
     for s in systems:
         summary["by_system"][s] = {f"top{k}": _rate(scored, s, k) for k in ks}
@@ -216,10 +239,12 @@ def machine_caps(d: dict[str, Any]) -> dict[str, float]:
     return out
 
 
-def extraction() -> dict[str, Any]:
+def extraction(drafts_dir: str | None = None, tag: str = "") -> dict[str, Any]:
+    from pathlib import Path
+
     gold = gold_files()
     rows = []
-    for p in sorted(sub("drafts").glob("*.json")):
+    for p in sorted((Path(drafts_dir) if drafts_dir else sub("drafts")).glob("*.json")):
         d = json.loads(p.read_text())
         g = gold.get(d["geoid"])
         if not g:
@@ -266,8 +291,8 @@ def extraction() -> dict[str, Any]:
         rows.append(row)
     summary = summarize(rows)
     out = sub("eval")
-    (out / "extraction_rows.json").write_text(json.dumps(rows, indent=1))
-    (out / "extraction_summary.json").write_text(json.dumps(summary, indent=1))
+    (out / f"extraction_rows{tag}.json").write_text(json.dumps(rows, indent=1))
+    (out / f"extraction_summary{tag}.json").write_text(json.dumps(summary, indent=1))
     return summary
 
 
@@ -325,6 +350,8 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("what", choices=["retrieval", "extraction"])
+    ap.add_argument("--drafts-dir")
+    ap.add_argument("--tag", default="")
     a = ap.parse_args()
-    res = retrieval() if a.what == "retrieval" else extraction()
+    res = retrieval() if a.what == "retrieval" else extraction(a.drafts_dir, a.tag)
     print(json.dumps(res, indent=1))
