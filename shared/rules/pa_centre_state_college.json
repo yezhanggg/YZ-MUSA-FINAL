@@ -1,0 +1,577 @@
+{
+  "provenance": {
+    "jurisdiction": "State College borough",
+    "instrument": "Borough of State College Code, Chapter XIX Zoning and Land Development, 19-501.f and 19-501.l(2) and (3) One-family dwelling with a single apartment unit, with the R district articles and 19-2403",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 says the code includes legislation through 05-04-2026. A full rewrite of the zoning ordinance is in draft (see notes).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/ST2624",
+      "https://ecode360.com/32909719",
+      "https://ecode360.com/32910213",
+      "https://ecode360.com/32910376",
+      "https://ecode360.com/32910554",
+      "https://ecode360.com/32910622",
+      "https://ecode360.com/32910638",
+      "https://ecode360.com/32910678",
+      "https://ecode360.com/32910798",
+      "https://ecode360.com/32910852",
+      "https://ecode360.com/32910915",
+      "https://ecode360.com/32912131",
+      "https://ecode360.com/32909812",
+      "https://ecode360.com/32913157",
+      "https://ecode360.com/32910220",
+      "https://ecode360.com/32910234",
+      "https://ecode360.com/32910239",
+      "https://ecode360.com/32910264",
+      "https://ecode360.com/32910227",
+      "https://ecode360.com/32912666",
+      "https://ecode360.com/32910001",
+      "https://www.statecollegepa.us/225/New-Zoning-Ordinance",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Centre",
+    "municipality_type": "borough",
+    "geoid": "4202773808",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/32909719",
+    "code_current_through": "2026-05-04",
+    "code_current_through_note": "eCode360: includes legislation through 05-04-2026.",
+    "checks": [
+      "The unit must be inside the main building. A detached garage 'shall not include a dwelling' (19-501.l(5))",
+      "Only one building for residential use per lot in R-1, R-2, R-3H, R-OA and UV (19-501.l(1))",
+      "Occupancy: at most three unrelated persons in the whole building, and at most two persons in the apartment (19-501.l(3)(b))",
+      "Home occupations are not allowed in a one-family dwelling that contains a single apartment (19-501.l(4))",
+      "A student home may be in a one-family dwelling with an apartment. In R-1, R-2 and R-3 student homes have spacing, floor area, parking and permit rules (19-501.l(6))",
+      "A rental housing permit may be needed. Chapter IV rental rules were not reviewed",
+      "District permission for R-2 to UV comes through 'Any use permitted in' chains back to R-1. Confirm with the Planning Department"
+    ],
+    "notes": "Zoning office: Borough Planning Department. Rewrite page: https://www.statecollegepa.us/225/New-Zoning-Ordinance. Pending: a new comprehensive Zoning Ordinance and SALDO are in draft. A revised draft was posted for public review as of June 1, 2026, and Council meetings ran through Sep 9, 2026. A news report says Council may add ADU rules. Not adopted. Not law."
+  },
+  "adu": {
+    "term": {
+      "value": "single apartment unit",
+      "section": "19-501.f and 19-501.l(2)",
+      "url": "https://ecode360.com/32910220",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Use: 'One-family dwelling with a single apartment unit'. The code has no 'accessory dwelling unit' term."
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "19-501.f and 19-501.l(2)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A listed permitted use in R-1, carried into other R districts. Only inside the main building, so no detached unit."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "19-501.f",
+      "url": "https://ecode360.com/32910220",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "R-1 permitted uses: 'One-family dwelling with a single apartment unit (as prescribed in Section 501.1 of this chapter)'. Zoning permit."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "19-501.l(1) and (5)",
+      "url": "https://ecode360.com/32910264",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A detached unit is not allowed: a detached garage 'shall not include a dwelling'. Reading: relief would be a variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-3A",
+        "R-3B",
+        "R-3H",
+        "R-4",
+        "R-O",
+        "R-OA",
+        "UV"
+      ],
+      "section": "19-501.f, 19-601.a, 19-701.a, 19-801.a, 19-901.a, R-3H, R-4, R-O, R-OA and UV use sections",
+      "url": "https://ecode360.com/32910220",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Listed in R-1. Each other district allows 'Any use permitted in' R-1, R-2, R-3 or R-O. Not found in the C or CID use lists read."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "19-201 'Dwelling (One-family)', 19-501.f",
+      "url": "https://ecode360.com/32909868",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Only a one-family dwelling: 'A detached building designed for and used exclusively for occupancy by one family.'"
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "19-501.l(2)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No apartment-specific lot size. District one-family lot area applies."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "19-501.l(2)(a)",
+      "url": "https://ecode360.com/32910235",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The apartment unit shall be contained within the main building'. The main building need not be existing."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "19-501.l(2)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No historic rule in the apartment text."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "19-501.l(2)(a) and 19-501.l(5)",
+      "url": "https://ecode360.com/32910235",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Inside the main building only. Reading: an addition that is part of the main building counts. Detached garages may not include a dwelling."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 500,
+      "section": "19-501.l(2)(b)",
+      "url": "https://ecode360.com/32910236",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'not more than one bedroom or exceed 500 square feet in total floor area'"
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "19-501.l(2)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No share-of-house limit."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "19-501.l(2)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "19-501.l(2)(a), 19-503.b",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No detached unit is allowed. Accessory buildings are capped at 15 ft and one story in R-1 (19-503.b)."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "19-501.l(2)(a), 19-503.a",
+      "url": "https://ecode360.com/32910235",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The unit is inside the main building, so the dwelling height applies (R-1 25 ft, two stories)."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "19-502",
+      "url": "https://ecode360.com/32910285",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Main building setbacks apply. See districts."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "19-502.d",
+      "url": "https://ecode360.com/32910289",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Main building setbacks apply. See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "19-502.e",
+      "url": "https://ecode360.com/32910290",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Main building setbacks apply. See districts."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "19-502.g(1), 19-602.f(1)",
+      "url": "https://ecode360.com/32910325",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "R-1 and R-2: 30% up to 15,000 sq ft lots, sliding to 20% over 25,000 sq ft. R-3, R-3A, R-3B: 30%."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "19-501.l(2) and (3)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No owner occupancy rule in the apartment text."
+    },
+    "family_only": {
+      "value": false,
+      "section": "19-501.l(3)(b)",
+      "url": "https://ecode360.com/32910239",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No family rule. Caps: 'total number of persons occupying the single apartment unit within a one-family dwelling shall not exceed two'."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "19-501.l(2)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in the apartment text. Chapter IV rental rules not reviewed."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "19-501.f",
+      "url": "https://ecode360.com/32910220",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'a single apartment unit'"
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "19-501.l(2)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed. The unit is inside the main building."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "19-2403.c",
+      "url": "https://ecode360.com/32912666",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'One- and Two-Family Dwellings: 2 spaces for each unit.' Reading: the apartment counts as a unit. 19-501.l(3) also requires parking for all residents' vehicles."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "19-501.l(2)",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "19-502.a Lot area, One-family dwelling",
+        "url": "https://ecode360.com/32910285",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "19-502.c Front yard depth",
+        "url": "https://ecode360.com/32910285",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "19-502.d Side yard width",
+        "url": "https://ecode360.com/32910285",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Dwelling and accessory building: 10 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "19-502.e Rear yard depth",
+        "url": "https://ecode360.com/32910285",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "19-502.g(1)",
+        "url": "https://ecode360.com/32910285",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "30% for lots of 15,000 sq ft or less. Less on larger lots, down to 20%."
+      },
+      "principal_max_height_ft": {
+        "value": 25,
+        "section": "19-503.a Dwelling height",
+        "url": "https://ecode360.com/32910331",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "25 ft, not exceeding two stories. Accessory building: 15 ft, one story."
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "19-2403.c",
+        "url": "https://ecode360.com/32912666",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "19-602.a Lot area, One-family dwelling",
+        "url": "https://ecode360.com/32910404",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "19-602.c Front yard depth",
+        "url": "https://ecode360.com/32910404",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "19-602.d Side yard width",
+        "url": "https://ecode360.com/32910404",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Dwelling and accessory building: eight feet."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "19-602.e Rear yard depth",
+        "url": "https://ecode360.com/32910404",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "20% of lot depth from the front building line, at least 15 ft. 15 is the floor."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "19-602.f(1)",
+        "url": "https://ecode360.com/32910404",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "30% for lots of 15,000 sq ft or less. Less on larger lots, down to 20%."
+      },
+      "principal_max_height_ft": {
+        "value": 25,
+        "section": "19-603.a Dwelling height",
+        "url": "https://ecode360.com/32910417",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "25 ft, not exceeding two stories. Accessory building: 15 ft, one story."
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "19-2403.c",
+        "url": "https://ecode360.com/32912666",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "19-702.a Lot area, One-family dwelling",
+        "url": "https://ecode360.com/32910568",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "19-702.c Front yard depth",
+        "url": "https://ecode360.com/32910568",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "19-702.d Side yard width",
+        "url": "https://ecode360.com/32910568",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One-family dwelling and accessory building: six feet."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "19-702.e Rear yard depth",
+        "url": "https://ecode360.com/32910568",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "20% of lot depth from the front building line, at least 15 ft. 15 is the floor."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "19-702.f",
+        "url": "https://ecode360.com/32910568",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One- and two-family dwellings and their accessory buildings: 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "19-703.a Dwelling height",
+        "url": "https://ecode360.com/32910576",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building: 15 ft, one story."
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "19-2403.c",
+        "url": "https://ecode360.com/32912666",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+      }
+    },
+    "R-3A": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "19-802.a Lot area, One-family dwelling",
+        "url": "https://ecode360.com/32910625",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "19-802.c Front yard depth",
+        "url": "https://ecode360.com/32910625",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "19-802.d Side yard width",
+        "url": "https://ecode360.com/32910625",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family dwelling and accessory buildings: eight feet."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "19-802.e Rear yard depth",
+        "url": "https://ecode360.com/32910625",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "20% of lot depth from the front building line, at least 15 ft. 15 is the floor."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "19-802.f",
+        "url": "https://ecode360.com/32910625",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One- and two-family dwellings and their accessory buildings: 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "19-803.a Dwelling height",
+        "url": "https://ecode360.com/32910632",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building: 15 ft, one story."
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "19-2403.c",
+        "url": "https://ecode360.com/32912666",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+      }
+    },
+    "R-3B": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "19-902.a Lot area, One-family dwelling",
+        "url": "https://ecode360.com/32910653",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "19-902.c Front yard depth",
+        "url": "https://ecode360.com/32910653",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "19-902.d Side yard width",
+        "url": "https://ecode360.com/32910653",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One-family dwelling and accessory building: eight feet."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "19-902.e Rear yard depth",
+        "url": "https://ecode360.com/32910653",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "19-902.g",
+        "url": "https://ecode360.com/32910653",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One- and two-family dwellings and their accessory buildings: 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "19-903.a Dwelling height",
+        "url": "https://ecode360.com/32910665",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building: 15 ft, one story."
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "19-2403.c",
+        "url": "https://ecode360.com/32912666",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "2 spaces for each unit. Reading: the apartment counts as a unit."
+      }
+    }
+  }
+}
