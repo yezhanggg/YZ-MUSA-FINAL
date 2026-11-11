@@ -39,9 +39,10 @@
       "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
       "R-1, R-2 and R-3 allow listed principal and accessory uses 'and no other'. Single-family detached is the only dwelling type listed (500-802, 500-902, 500-1002)",
       "A residential conversion of an existing building into two or more units is a special exception in RA-1, RA-2, RA-3, R-1, R-2, R-3, MR and P (500-2312)",
-      "A conversion needs the single-family minimum lot area for each unit, so about twice the district minimum for two units (500-2312B)",
+      "A conversion needs the single-family minimum lot area for each unit. Two units: R-1 30,000, R-2 20,000, R-3 14,000 sq ft (500-2312B)",
+      "Conversion parking: 2 spaces per unit with three bedrooms or fewer, at the side or rear of the building (500-2312J)",
       "A converted house keeps one front entrance and its exterior look. Each unit needs 200 sq ft of patio or recreation area. Minimum unit sizes apply, for example 500 sq ft for one bedroom",
-      "Garages and sheds: at most 3% of lot area and 500 sq ft, 14 ft high. Garages 5 ft and sheds 3 ft from lot lines, 10 ft behind the rear of the house (500-2402)"
+      "Accessory rules, not ADU rules: garages and sheds at most 3% of lot area and 500 sq ft, 14 ft high. Garages 5 ft and sheds 3 ft from lot lines, 10 ft behind the rear of the house (500-2402)"
     ],
     "notes": "Zoning office: Department of Building and Zoning, https://middletownbucks.org/Departments/Building-Zoning/Zoning-Information. Searched Chapter 500 and the five uncodified amendments for: accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage house, second dwelling, accessory residential, guest house, accessory living, kitchen. No ADU provision. Index note: MI2390 is the right code. The Ch. 275 and MI1283 lead was another Middletown."
   },
@@ -64,6 +65,63 @@
     }
   },
   "approval": {
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion of an existing house into two units",
+          "path": "special_exception",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "Existing building only, no major exterior change, single front entrance. Each unit needs the single-family minimum lot area. Units at least 400 (efficiency), 500 (1 BR), 650 (2 BR) sq ft. 200 sq ft patio per unit. 2 spaces per unit (3 or fewer bedrooms) at the side or rear.",
+          "min_lot_sqft": 30000,
+          "section": "500-2312",
+          "url": "https://ecode360.com/13029310"
+        },
+        {
+          "name": "Residential conversion of an existing house into two units",
+          "path": "special_exception",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Existing building only, no major exterior change, single front entrance. Each unit needs the single-family minimum lot area. Units at least 400 (efficiency), 500 (1 BR), 650 (2 BR) sq ft. 200 sq ft patio per unit. 2 spaces per unit (3 or fewer bedrooms) at the side or rear.",
+          "min_lot_sqft": 20000,
+          "section": "500-2312",
+          "url": "https://ecode360.com/13029310"
+        },
+        {
+          "name": "Residential conversion of an existing house into two units",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Existing building only, no major exterior change, single front entrance. Each unit needs the single-family minimum lot area. Units at least 400 (efficiency), 500 (1 BR), 650 (2 BR) sq ft. 200 sq ft patio per unit. 2 spaces per unit (3 or fewer bedrooms) at the side or rear.",
+          "min_lot_sqft": 14000,
+          "section": "500-2312",
+          "url": "https://ecode360.com/13029310"
+        },
+        {
+          "name": "Residential conversion of an existing building into two or more units",
+          "path": "special_exception",
+          "districts": [
+            "RA-1",
+            "RA-2",
+            "RA-3",
+            "MR",
+            "P"
+          ],
+          "conditions": "Existing building only, no major exterior change, single front entrance. Each unit needs the single-family minimum lot area. Units at least 400 (efficiency), 500 (1 BR), 650 (2 BR) sq ft. 200 sq ft patio per unit. 2 spaces per unit (3 or fewer bedrooms) at the side or rear. District minimum lot area per unit applies.",
+          "min_lot_sqft": null,
+          "section": "500-2312",
+          "url": "https://ecode360.com/13029310"
+        }
+      ],
+      "section": "500-2312",
+      "url": "https://ecode360.com/13029310",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Two-unit lot figures are twice the district single-family minimum (500-803A, 500-903A, 500-1003A)."
+    },
     "path": {
       "value": "variance",
       "section": "500-902, MPC 910.2",
@@ -116,7 +174,7 @@
       "url": "https://ecode360.com/13029419",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Not an ADU rule. Residential accessory structures: 'a maximum building height of 14 feet'."
+      "note": "Accessory rule for garages and sheds, not an ADU rule. The code allows no ADU. Residential accessory structures: 'a maximum building height of 14 feet'."
     },
     "setback_front_ft": {
       "value": null,
@@ -156,7 +214,7 @@
       "url": "https://ecode360.com/13029419",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "'limited to 3% of the lot area up to a maximum of 500 square feet'"
+      "note": "Accessory rule for garages and sheds, not an ADU rule. 'limited to 3% of the lot area up to a maximum of 500 square feet'"
     }
   },
   "use": {
@@ -174,7 +232,7 @@
       "url": "https://ecode360.com/13028134",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Reading: no ADU is allowed by right."
+      "note": "Reading: 0 means the code allows no ADU. A second unit needs a use variance or a residential conversion (500-2312)."
     }
   },
   "parking": {

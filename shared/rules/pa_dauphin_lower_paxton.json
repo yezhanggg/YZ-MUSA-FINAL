@@ -15,6 +15,8 @@
       "https://ecode360.com/47371086",
       "https://ecode360.com/47371092",
       "https://ecode360.com/47371156",
+      "https://ecode360.com/47373088",
+      "https://ecode360.com/47372856",
       "https://ecode360.com/LO1649/laws",
       "https://ecode360.com/LO1649/laws/LF2691565.pdf",
       "https://www.lowerpaxton-pa.gov/169/Community-Development",
@@ -32,7 +34,11 @@
     "checks": [
       "The code allows ADUs by right in many districts but sets almost no ADU standards. 203-314A asks only for a building permit, a certificate of use and occupancy, and Codes Department inspections",
       "No size cap, owner-occupancy rule, family rule, number limit or ADU parking rule was found. Ask the township before relying on that",
-      "Accessory structures may not exceed the height of the main house (203-313H)",
+      "A detached ADU is an accessory structure: no taller than the main house (203-313H), 5 ft from side and rear lines, not in the required front yard (203-313C)",
+      "Short-term rental is not permitted in R-1, R-2, R-3. It needs a special exception in CO, AR, V, NDD and TC (203-312 Table 2, 203-737)",
+      "Parking: Table 1 has no ADU row. 'Single-family 2 per dwelling unit'. So 2 in total, or 4 if the ADU counts as a unit (203-903)",
+      "Detached garages on lots of 1 acre or less are capped at 15 ft (Table 13)",
+      "Tiny house: a dwelling of 749 sq ft or less may be a principal or accessory dwelling unit, by right in R-1, R-2, R-3 and Village (203-202, Table 1)",
       "Accessory structures need 5 ft from side and rear lot lines and may not sit in the required front yard (203-313C). The district table may set larger yards for a unit attached to the house (203-313B)",
       "On residential lots under 2 acres, all accessory buildings together may not exceed 1,000 sq ft, with at most two buildings (203-313G)",
       "'No part of an accessory garage shall be occupied as a residential living area' (203-314C(2)). This may bar a unit in or over a detached garage",
@@ -60,6 +66,42 @@
     }
   },
   "approval": {
+    "alternatives": {
+      "value": [
+        {
+          "name": "Tiny house (749 sq ft or less) as a principal or accessory dwelling unit",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3",
+            "V"
+          ],
+          "conditions": "Habitable floor area 749 sq ft or less, on a foundation or on wheels.",
+          "min_lot_sqft": null,
+          "section": "203-202 'Tiny house', 203-305 Table 1",
+          "url": "https://ecode360.com/47370330"
+        },
+        {
+          "name": "Conversion dwelling (extra units in an existing house, for rental)",
+          "path": "special_exception",
+          "districts": [
+            "R-3",
+            "ON",
+            "CN",
+            "CG"
+          ],
+          "conditions": "Special exception in R-3, ON, CN and CG. Permitted by right in V. Defined as primarily intended to serve as rental units.",
+          "min_lot_sqft": null,
+          "section": "203-202, 203-305 Table 1",
+          "url": "https://ecode360.com/47370330"
+        }
+      ],
+      "section": "203-305 Table 1",
+      "url": "https://ecode360.com/47370330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "path": {
       "value": "by_right",
       "section": "203-312 Table 2, 203-314A",
@@ -82,7 +124,7 @@
       "value": [
         {
           "kind": "other",
-          "condition": "No part of an accessory garage may be occupied as a residential living area.",
+          "condition": "No part of an accessory garage may be occupied as a residential living area. Reading (secondary): this bars a unit in or above a garage. A full conversion that ends the garage use is arguable.",
           "effect": "bars",
           "applies_to": [
             "garage_conversion",
@@ -97,7 +139,7 @@
         },
         {
           "kind": "other",
-          "condition": "Accessory structures may not be taller than the main house.",
+          "condition": "A detached ADU is an accessory structure. It may not be taller than the main house, must be 5 ft from side and rear lot lines, and may not sit in the required front yard.",
           "effect": "condition",
           "applies_to": [
             "detached_new"
@@ -106,8 +148,71 @@
           "building_types": null,
           "when": "always",
           "test": null,
-          "section": "203-313H",
+          "section": "203-202, 203-313C, 203-313H",
           "url": "https://ecode360.com/47371092"
+        },
+        {
+          "kind": "other",
+          "condition": "An attached ADU is part of the principal structure and takes the district yards.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "203-313B",
+          "url": "https://ecode360.com/47371092"
+        },
+        {
+          "kind": "other",
+          "condition": "Residential lots under 2 acres: all accessory buildings together at most 1,000 sq ft, and at most two accessory buildings.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": "lot_sqft_below",
+          "section": "203-313G",
+          "url": "https://ecode360.com/47371092",
+          "value": 87120
+        },
+        {
+          "kind": "occupancy",
+          "condition": "Short-term rental is not permitted in R-1, R-2 and R-3 (blank in Table 2).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "203-312 Table 2",
+          "url": "https://ecode360.com/47371086"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "Short-term rental needs a special exception in CO, AR, V, NDD and TC.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "CO",
+            "AR",
+            "V",
+            "NDD",
+            "TC"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "203-312 Table 2, 203-737",
+          "url": "https://ecode360.com/47372856"
         }
       ],
       "section": "203-313, 203-314",
@@ -213,7 +318,39 @@
       "url": "https://ecode360.com/47371092",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "'Accessory structures shall not exceed the height of the principal structure'. No fixed number."
+      "note": "'Accessory structures shall not exceed the height of the principal structure'. No fixed number. Never more than the district 40 ft."
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "203-313H",
+      "url": "https://ecode360.com/47371092",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Accessory structures shall not exceed the height of the principal structure'"
+    },
+    "max_height_garage_ft": {
+      "value": 15,
+      "section": "203-314C, Table 13",
+      "url": "https://ecode360.com/47371156",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Detached private garages on lots of 1 acre or less: 15 ft. 20 ft on larger lots."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "203-313B, 203-313C(2)",
+      "url": "https://ecode360.com/47371092",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Detached accessory structures need 5 ft from side and rear lines. An attached structure is part of the principal structure and takes district yards."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 1000,
+      "section": "203-313G",
+      "url": "https://ecode360.com/47371092",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Residential lots under two acres: 'maximum total floor area of all accessory buildings: 1,000 square feet'. At most two accessory buildings."
     },
     "setback_front_ft": {
       "value": null,
@@ -228,16 +365,16 @@
       "section": "203-313C(2)",
       "url": "https://ecode360.com/47371092",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "'All accessory structures shall be set back a minimum of five feet from any side or rear property line'. The district row may apply instead to a dwelling unit."
+      "confidence": "verified",
+      "note": "Detached ADU: 'All accessory structures shall be set back a minimum of five feet from any side or rear property line'. An attached ADU takes the district yards."
     },
     "setback_rear_ft": {
       "value": 5,
       "section": "203-313C(2)",
       "url": "https://ecode360.com/47371092",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "5 ft for accessory structures. The district row may apply instead to a dwelling unit."
+      "confidence": "verified",
+      "note": "Detached ADU: 5 ft from the rear line. An attached ADU takes the district yards."
     },
     "separation_ft": {
       "value": null,
@@ -285,11 +422,11 @@
     },
     "short_term_rental_banned": {
       "value": null,
-      "section": "203-314A",
-      "url": "https://ecode360.com/47371156",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "Not addressed in the ADU text."
+      "section": "203-312 Table 2, 203-737",
+      "url": "https://ecode360.com/47371086",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district. Table 2 'Short-term rental' is blank (not permitted) in R-1, R-2, R-3 and SE in CO, AR, V, NDD, TC. See gates."
     },
     "max_adus": {
       "value": null,
@@ -311,11 +448,18 @@
   "parking": {
     "spaces_required": {
       "value": null,
-      "section": "Article VI parking",
-      "url": "https://ecode360.com/34198634",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "No ADU parking row found in a text search of Chapter 203."
+      "section": "203-903 Table 1",
+      "url": "https://ecode360.com/47373088",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU row. 'Single-family 2 per dwelling unit'. An ADU meets the dwelling unit definition, so the count is open."
+    },
+    "reading": {
+      "value": "2 in total, or 4 if the ADU counts as a dwelling unit under 'Single-family 2 per dwelling unit'.",
+      "section": "203-903 Table 1",
+      "url": "https://ecode360.com/47373088",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
     }
   },
   "utilities": {

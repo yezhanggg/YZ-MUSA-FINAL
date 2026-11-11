@@ -40,7 +40,10 @@
       "Size: 720 sq ft or 40% of the house total area including the garage, whichever is less. At most two bedrooms",
       "One In-Law Apartment per house",
       "An accessory structure may not be used for living space unless the chapter provides otherwise (145-27B)",
-      "The parking table has no In-Law Apartment row. A single-family detached house needs 2 spaces per dwelling unit (145-92)"
+      "The parking table has no In-Law Apartment row. A single-family detached house needs 2 spaces per dwelling unit. So 2 in total, or 4 if the apartment counts as a unit (145-92)",
+      "Size in practice: the owner's unit must be over 70% of living space, garage excluded. So the apartment is under 30% of living space. This usually binds before 720 sq ft or 40% of total area",
+      "Districts set a maximum density (CR 2.5, R1 4.25, R2 8.0, units not stated). The definition calls the apartment 'separate living space within a Single-Family Dwelling', so it likely does not count as a unit. Ask",
+      "For a second unit that is not for family: a duplex is a permitted use in CR and R2 (145-14B(2), 145-16B(1)). In R1 and R2 only one single-family house or duplex per lot (145-28A)"
     ],
     "notes": "Zoning office: Zoning and Development Division, Planning and Development Department, https://millcreektownship.com/340/Zoning-Development-Division. Pending: Ord. 2026-10 adopted 2026-09-22, not yet in the online code. It does not touch 145-58. No pending ADU change found on the Zoning Code Update page."
   },
@@ -63,6 +66,26 @@
     }
   },
   "approval": {
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex dwelling (two units, not limited to family)",
+          "path": "by_right",
+          "districts": [
+            "CR",
+            "R2"
+          ],
+          "conditions": "A permitted principal use in CR and R2. In R1 and R2 only one single-family detached dwelling or duplex per lot (145-28A). District lot and density rules apply.",
+          "min_lot_sqft": null,
+          "section": "145-14B(2), 145-16B(1), 145-28A",
+          "url": "https://ecode360.com/43575335"
+        }
+      ],
+      "section": "145-14B, 145-16B",
+      "url": "https://ecode360.com/43575335",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "path": {
       "value": "special_exception",
       "section": "145-15E",
@@ -183,12 +206,28 @@
       "note": "'shall not exceed 720 square feet or 40% of the principal Dwelling's total area, whichever is less'"
     },
     "max_share_of_house": {
-      "value": 0.4,
+      "value": 0.3,
+      "section": "145-58B",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The owner's unit must be 'greater than 70% of the total living space, including the In-Law Apartment', garage excluded. So the apartment is under 30% of living space. Also at most 40% of total area with garage, and 720 sq ft. The 30% rule usually binds."
+    },
+    "max_share_internal": {
+      "value": 0.3,
+      "section": "145-58B",
+      "url": "https://ecode360.com/43576236",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as max_share_of_house. The unit can only be inside the house. Strictly under 30% of living space."
+    },
+    "max_sqft_internal": {
+      "value": 720,
       "section": "145-58B",
       "url": "https://ecode360.com/43576236",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "40% of total area, which includes the garage. The owner's unit must also exceed 70% of living space, which excludes the garage."
+      "note": "'shall not exceed 720 square feet or 40% of the principal Dwelling's total area, whichever is less'"
     },
     "min_sqft": {
       "value": null,
@@ -310,7 +349,7 @@
   },
   "parking": {
     "reading": {
-      "value": "No In-Law Apartment row. 2 spaces for the house. If the apartment counted as a dwelling unit it would need 2 more. The code does not say.",
+      "value": "2 in total, or 4 if the apartment counts as a dwelling unit. Table VII-1 has no In-Law Apartment row and sets 'Dwelling, Single-Family Detached 2 per dwelling unit'.",
       "section": "145-92 Table VII-1",
       "url": "https://ecode360.com/43576972",
       "verified_on": "2026-11-11",

@@ -4,12 +4,13 @@
     "instrument": "Haverford Township Zoning, Chapter 182 as amended and replaced by Ord. No. 3048-2026 (enacted 2026-10-13), read from the ordinance PDF on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Ord. No. 3048-2026 'Further Amending and Replacing Chapter 182, Zoning' was enacted 2026-10-13 and is effective on adoption. Its recitals call it 'policy-neutral' reorganization. eCode360 still shows the old Chapter 182 text, current through 07-13-2026. Values here cite the new ordinance. The old codified text was also searched and gives the same answer on ADUs.",
+    "status_detail": "Ord. No. 3048-2026 'Further Amending and Replacing Chapter 182, Zoning' was enacted 2026-10-13 and is effective on adoption. Its recitals call it 'policy-neutral' reorganization. eCode360 still shows the old Chapter 182 text, current through 07-13-2026. Values here cite the new ordinance. The old codified text was also searched and gives the same answer on ADUs. The ordinance body (recitals, Section IV effective date, 'Enacted and adopted this 13th day of October, 2026') is in the township copy. The appendix cover reads 'ADOPTED October 12, 2026'.",
     "effective_date": "2026-10-13",
     "source_urls": [
       "https://ecode360.com/HA0527",
       "https://ecode360.com/12186661",
       "https://ecode360.com/HA0527/laws/LF2859866.pdf",
+      "https://haverfordtownship.com/Document_Library/Ordinances/Ordinance_No._3048_2026.pdf",
       "https://ecode360.com/12435231",
       "https://ecode360.com/12186881",
       "https://ecode360.com/12435358",
@@ -37,7 +38,8 @@
       "Pool houses may have an accessory kitchen, but 'Sleeping rooms are expressly prohibited' (182-1201.F)",
       "Accessory buildings: one story and 12 ft, garages 15 ft (18 ft if wide). 5 ft from side and rear lines, 10 ft from other buildings, 10 ft behind the rear of the house, not in a yard that abuts a street (182-1310)",
       "A garage over 18 ft needs a special exception and a finding it 'will not provide habitable space' (182-1310)",
-      "Closest options: two-family detached by conditional use in R-6, and conversion of a single-family house to two-family or multifamily by special exception in C-3 (182-1208)"
+      "Private garages may not be larger than 25 ft by 25 ft or more than 50% of the house area (182-1310(2)(c))",
+      "Closest options: two-family detached by conditional use in R-6, and conversion of a single-family house to two-family or multifamily by special exception in C-3 (182-1208: 3,000 sq ft of lot per family, 1.5 spaces per added unit, 600 sq ft per unit)"
     ],
     "notes": "Zoning office: Planning and Zoning Department, https://haverfordtownship.com/Planning_and_Zoning_Department.html. Searched both texts for: accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage house, second dwelling, accessory residential, guest house, kitchen, servant quarters. No ADU provision. Pending: no ADU ordinance found."
   },
@@ -60,6 +62,37 @@
     }
   },
   "approval": {
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family dwelling to two-family or multiple-family use",
+          "path": "special_exception",
+          "districts": [
+            "C-3"
+          ],
+          "conditions": "3,000 sq ft of lot per family. 1.5 off-street spaces per added unit. At least 600 sq ft of gross habitable floor area per unit.",
+          "min_lot_sqft": null,
+          "section": "182-1208",
+          "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=105"
+        },
+        {
+          "name": "Two-family detached dwelling",
+          "path": "conditional_use",
+          "districts": [
+            "R-6"
+          ],
+          "conditions": "Conditional use, with the standards in 182-406.D.",
+          "min_lot_sqft": null,
+          "section": "182-404 (R-6 table), 182-406.D",
+          "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=51"
+        }
+      ],
+      "section": "182-1208, commercial use table (page 63), 182-404",
+      "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=63",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "182-1208 is SE only in the C-3 column of the commercial use table (page 63). Two-family detached is CU in R-6 (page 51)."
+    },
     "path": {
       "value": "variance",
       "section": "182-404 Use Regulations, MPC 910.2",
@@ -108,11 +141,19 @@
   "envelope": {
     "max_height_ft": {
       "value": 12,
-      "section": "182-1310",
+      "section": "182-1310(1)",
       "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=128",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Not an ADU rule. 'No accessory building other than a private garage shall exceed one story or 12 feet'. Garages 15 ft, or 18 ft if wider than 18 ft."
+      "note": "Accessory building rule, not an ADU rule. 'No accessory building other than a private garage shall exceed one story or 12 feet'."
+    },
+    "max_height_garage_ft": {
+      "value": 15,
+      "section": "182-1310(1)",
+      "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=128",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule. Private garages one story and 15 ft, or up to 18 ft if wider than 18 ft. Taller needs a special exception and a finding of no habitable space."
     },
     "setback_front_ft": {
       "value": null,
@@ -145,6 +186,16 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "Accessory building rule: '10 feet from all other buildings'."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "Chapter 182",
+      "url": "https://ecode360.com/12186661",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU size rule. Accessory rule only: private garages at most 25 ft by 25 ft and 50% of the house area (182-1310(2)(c))."
     }
   },
   "use": {
@@ -318,6 +369,54 @@
         "note": "35 ft and 3 stories."
       }
     },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 8125,
+        "section": "182-407.A(1)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "182-407.B(1)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Interior lots. Corner lots 30 and 12."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "182-407.B(2)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each 8 ft, 20 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "182-407.B(3)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "182-407.C(3)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious surface ratio max 45%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "182-407.C(1)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft and 3 stories."
+      }
+    },
     "R-4": {
       "min_lot_sqft": {
         "value": 6000,
@@ -341,6 +440,54 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "Each 8 ft, 20 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "182-407.B(3)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "182-407.C(3)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious surface ratio max 45%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "182-407.C(1)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft and 3 stories."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 5500,
+        "section": "182-407.A(1)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "182-407.B(1)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Interior lots. Corner lots 30 and 12."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "182-407.B(2)",
+        "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=54",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Each 8 ft, 16 ft total."
       },
       "setback_rear_ft": {
         "value": 25,
