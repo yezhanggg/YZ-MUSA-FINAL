@@ -38,7 +38,8 @@
       "Accessory buildings are capped at 15 ft in height and must be at least 3 ft from the main building (550-40)",
       "Special exception uses 'must meet the development standards for the zoning district' (550-17A). The lot must meet the district lot size for the house type. Table 4-1 has no per-unit lot area for single-family uses. The Board also applies the general criteria in 550-54J",
       "Renting any dwelling unit needs an annual rental dwelling license (417-10, local IPMC 901.1). This applies if a relative pays rent",
-      "The definition in 550-56 says relatives by 'blood or adoption'. 550-17B(2), the operative standard, says 'blood, adoption or marriage', so in-laws most likely qualify. The Zoning Hearing Board decides"
+      "The definition in 550-56 says relatives by 'blood or adoption'. 550-17B(2), the operative standard, says 'blood, adoption or marriage', so in-laws most likely qualify. The Zoning Hearing Board decides",
+      "Undersized lot: the ADU is a special exception use, and 550-17A sends it to the district development standards, which include minimum lot size. 550-48D(2) allows additions on nonconforming lots without the lot area rule, but bars an increase in density. The tool treats the district minimum as binding. Ask the Zoning Officer"
     ],
     "notes": "Zoning office: Department of Licenses and Inspections, Zoning Officer, https://www.upperdarby.org/zoning. Pending changes: none found on eCode360 for Chapter 550."
   },
@@ -178,6 +179,14 @@
       "url": "https://ecode360.com/33162095",
       "verified_on": "2026-11-11",
       "confidence": "verified"
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "550-17A, 550-10 Table 4-1",
+      "url": "https://ecode360.com/33162094",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Special exception uses must meet the development standards for the zoning district within which they are located'. Table 4-1 includes 'Minimum lot size'. 550-48D(2) lets structures be added on nonconforming lots, but only for a use 'permitted in the zone' and with 'no increase in the permitted density'."
     }
   },
   "form": {

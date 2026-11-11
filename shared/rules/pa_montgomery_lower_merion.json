@@ -36,7 +36,8 @@
       "One unit must have at least twice the occupied floor area of the other (155-10.2C(9))",
       "Size: one unit must have at least twice the occupied floor area of the other (155-10.2C(9)). The tool uses one third of the house for a unit inside and one half for a unit in an accessory structure",
       "155-2.1 defines ACCESSORY STRUCTURE as 'A nonhabitable structure' but 155-10.2C(6) places a unit 'in an accessory structure'. ACCESSORY BUILDING is defined as habitable. Read as an accessory building",
-      "Historic resources take a zoning permit with no family or age rule, but the conditions in 155-7.1B and C apply. Confirm with the Zoning Officer"
+      "Historic resources take a zoning permit with no family or age rule, but the conditions in 155-7.1B and C apply. Confirm with the Zoning Officer",
+      "Undersized lot: special exception uses follow the district dimensional requirements, lot area included (155-5.2D). 155-10.12D(1) also limits new structures on dimensionally nonconforming lots. Ask the Zoning Officer"
     ],
     "notes": "Zoning office: Building and Planning Department, Zoning Officer. Pending: no ADU amendment found. Nothing in New Laws for Chapter 155."
   },
@@ -276,6 +277,14 @@
       "url": "https://ecode360.com/35688058",
       "verified_on": "2026-11-11",
       "confidence": "verified"
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "155-5.2D",
+      "url": "https://ecode360.com/35686587",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Any use permitted by special exception or conditional use shall be subject to the dimensional requirements of the zoning district'. Lot area is a dimensional standard. Applies to the special exception path in LDR and MDR, not to the by-right IC and IH or historic paths."
     }
   },
   "form": {

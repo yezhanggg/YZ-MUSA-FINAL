@@ -40,7 +40,7 @@
       "Detached garages on lots of 1 acre or less are capped at 15 ft (Table 13)",
       "Tiny house: a dwelling of 749 sq ft or less may be a principal or accessory dwelling unit, by right in R-1, R-2, R-3 and Village (203-202, Table 1)",
       "Accessory structures need 5 ft from side and rear lot lines and may not sit in the required front yard (203-313C). The district table may set larger yards for a unit attached to the house (203-313B)",
-      "On residential lots under 2 acres, all accessory buildings together may not exceed 1,000 sq ft, with at most two buildings (203-313G)",
+      "In AR, R-1, R-2 and R-3, on lots under 2 acres, all accessory buildings together may not exceed 1,000 sq ft, with at most two buildings (203-313G)",
       "'No part of an accessory garage shall be occupied as a residential living area' (203-314C(2)). This may bar a unit in or over a detached garage",
       "Carriage houses and flex flats (living space over a detached garage) are separate uses, permitted only in the Neighborhood Design District",
       "R-2 and R-3 set lot area per dwelling unit for some uses. The code does not say whether an ADU counts"
@@ -172,7 +172,12 @@
           "applies_to": [
             "detached_new"
           ],
-          "districts": null,
+          "districts": [
+            "AR",
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
           "building_types": null,
           "when": "always",
           "test": "lot_sqft_below",
@@ -383,6 +388,19 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "No separation between buildings found."
+    },
+    "accessory_cap_districts": {
+      "value": [
+        "AR",
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "203-313G, 203-303",
+      "url": "https://ecode360.com/47371110",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Accessory buildings in a residential district on a lot of less than two acres'. The code does not define residential district. Read as the districts named Residential in 203-303: AR, R-1, R-2, R-3. The 2-acre limit is not a lot test here."
     }
   },
   "coverage": {
