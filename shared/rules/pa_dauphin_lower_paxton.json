@@ -209,14 +209,6 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "No separation between buildings found."
-    },
-    "accessory_structure_max_sqft": {
-      "value": 1000,
-      "section": "203-313G",
-      "url": "https://ecode360.com/47371092",
-      "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "Residential lots under two acres: 'maximum total floor area of all accessory buildings: 1,000 square feet'. At most two accessory buildings."
     }
   },
   "coverage": {
