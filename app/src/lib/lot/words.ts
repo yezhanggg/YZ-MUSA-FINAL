@@ -48,9 +48,9 @@ export const TYPE_TITLE: Record<RuleType, string> = {
 };
 
 export const SCENARIO_TITLE: Record<Scenario, string> = {
-  today: 'Today',
-  local_reform: 'Local bill',
-  state_reform: 'State bill (HB 2186)',
+  today: "Today's law",
+  local_reform: 'Local reform',
+  state_reform: 'State reform',
 };
 
 /** "today", "under the local bill", "under the state bill". */

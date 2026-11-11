@@ -15,7 +15,7 @@ describe('lotSummary', () => {
     expect(s.facts.find((f) => f.label === 'Overlays')?.value).toMatch(/Squirrel Hill/);
     expect(s.scenarios.map((r) => r.scenario)).toEqual(['today', 'local_reform', 'state_reform']);
     expect(s.scenarios[0]).toMatchObject({ status: 'fits', approval: "Administrator's Exception", largest_cottage_sqft: 1000 });
-    expect(s.unit.title).toBe('Backyard cottage, today');
+    expect(s.unit.title).toBe("Backyard cottage, today's law");
     expect(s.unit.size).toBe('20 ft x 30 ft, 600 sq ft of floor area');
     expect(s.checks.length).toBeGreaterThan(5);
     expect(s.sources[0].section).toBe('925.06.G.1(i)');

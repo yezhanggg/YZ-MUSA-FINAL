@@ -175,7 +175,7 @@ export function ReportContent({ spot }: { spot: Spot }) {
 
 // ------------------------------------------------------------------ cards
 /** A report card. `fold` cards are lower priority: below desktop width they start folded into an accordion. */
-function Card({ title, tag, children, fold }: { title: string; tag: string; children: ReactNode; fold?: boolean }) {
+export function Card({ title, tag, children, fold }: { title: string; tag: string; children: ReactNode; fold?: boolean }) {
   const mode = useMode();
   const foldable = !!fold && mode !== 'desktop';
   const [open, setOpen] = useState(!foldable);
@@ -209,7 +209,7 @@ function Card({ title, tag, children, fold }: { title: string; tag: string; chil
   );
 }
 
-function KV({ k, v }: { k: ReactNode; v: ReactNode }) {
+export function KV({ k, v }: { k: ReactNode; v: ReactNode }) {
   return (
     <div className="flex items-baseline justify-between gap-3 border-t border-stone-100 py-1.5 text-small first:border-t-0">
       <span className="text-slate-600">{k}</span>

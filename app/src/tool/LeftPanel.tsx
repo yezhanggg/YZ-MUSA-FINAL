@@ -13,6 +13,7 @@ import { LOT_COLORS, LOT_LABEL, PILOTS, type LotStatus } from './parcels';
 import { flyToPilot } from './actions';
 import { openResearch } from '../lib/router';
 import { useTool, type Rule } from './store';
+import TestControls from './test/TestControls';
 
 /**
  * The left panel: search and the lot at a glance in the header, the controls below. Same shell as the right panel.
@@ -20,6 +21,7 @@ import { useTool, type Rule } from './store';
  */
 export default function LeftPanel({ style, drawer, onClose }: { style: React.CSSProperties; drawer?: boolean; onClose?: () => void }) {
   const status = useTool((s) => s.status);
+  const test = useTool((s) => s.view === 'test');
   return (
     <motion.aside
       initial={drawer ? { x: '-105%' } : { opacity: 0, x: -16, filter: 'blur(6px)' }}
@@ -30,18 +32,24 @@ export default function LeftPanel({ style, drawer, onClose }: { style: React.CSS
       style={style}
       aria-label="Search and map controls"
     >
-      <PanelHeader eyebrow="Backyard Homes PA" title="Test a spot" sub={<span className="inline-flex items-center gap-1.5"><MousePointerClick className="h-3.5 w-3.5 text-violet-600" /> Search an address or click the map.</span>} actions={drawer && onClose ? <IconButton label="Close controls" onClick={onClose}><X className="h-4 w-4" /></IconButton> : undefined}>
+      <PanelHeader eyebrow="Backyard Homes PA" title={test ? 'Test a lot' : 'Test a spot'} sub={<span className="inline-flex items-center gap-1.5"><MousePointerClick className="h-3.5 w-3.5 text-violet-600" /> Search an address or click the map.</span>} actions={drawer && onClose ? <IconButton label="Close controls" onClick={onClose}><X className="h-4 w-4" /></IconButton> : undefined}>
         <Search />
         {status === 'error' && <p className="mt-2 text-small text-rose-700">The map data did not load. Refresh the page to try again.</p>}
-        {!drawer && <LotCard />}
+        {!drawer && !test && <LotCard />}
       </PanelHeader>
       <div className={PANEL_BODY}>
-        <PilotChips />
-        <YourAdu />
-        <Controls />
+        {test ? (
+          <TestControls />
+        ) : (
+          <>
+            <PilotChips />
+            <YourAdu />
+            <Controls />
+          </>
+        )}
         <div className="mt-4 flex items-center justify-between border-t border-stone-100 pt-3 text-caption text-slate-500">
           <span>MUSA 5500 + MUSA 6950</span>
-          <button type="button" onClick={() => openResearch('6950')} className="tap font-semibold text-violet-700 hover:text-violet-900">How it works →</button>
+          <button type="button" onClick={() => openResearch(test ? '6950' : '5500')} className="tap font-semibold text-violet-700 hover:text-violet-900">How it works →</button>
         </div>
       </div>
     </motion.aside>

@@ -5,6 +5,8 @@ import { BASE, SIZE_MAX, SIZE_MIN, SIZE_STEP, type Adu, type Bed, type Stories }
 import type { FC, LngLat, Lot, TownProps, TractProps } from './geo';
 import type { MetricId } from './metrics';
 import type { ParcelProps } from './parcels';
+import type { LotRecord, Scenario } from '../lib/lot/types';
+import { DEFAULT_MONEY, testFromHash, testHash, type MoneyDraft, type ToolView, type UnitDraft } from './testState';
 
 export type Rule = 'current' | 'hb2186';
 
@@ -17,9 +19,23 @@ export interface Spot {
   lot: Lot | null;
   /** The parcel clicked on the map (vector tiles), if any. */
   parcel: ParcelProps | null;
+  /** Testing mode: the lot record that contains the spot, if the place has lot records. */
+  record: LotRecord | null;
+  /** Testing mode: why there is no record, in one plain sentence. */
+  recordNote: string | null;
+  /** Build date of the lot records (manifest). */
+  builtAt: string | null;
 }
 
 interface ToolState {
+  /** Testing (lot level) or projecting (tract and town level). Kept in the hash. */
+  view: ToolView;
+  /** Testing mode: the law scenario. */
+  scenario: Scenario;
+  /** Testing mode: the unit being tested. */
+  unit: UnitDraft;
+  /** Testing mode: cost, finish, financing and rent settings. */
+  money: MoneyDraft;
   rule: Rule;
   metric: MetricId;
   status: 'loading' | 'ready' | 'error';
@@ -44,8 +60,25 @@ interface ToolState {
   sheetOpen: boolean;
   /** Laptop: the results drawer over the map is open. */
   resultsOpen: boolean;
+  /** Aerial photo under the map. */
+  aerial: boolean;
   set: (p: Partial<ToolState>) => void;
   setAdu: (p: Partial<Adu>) => void;
+  /** Change the testing state and mirror it in the address (view, scenario, unit, lot). */
+  setTest: (p: Partial<Pick<ToolState, 'view' | 'scenario' | 'unit'>>) => void;
+  setUnit: (p: Partial<UnitDraft>) => void;
+  setMoney: (p: Partial<MoneyDraft>) => void;
+}
+
+/** The current state as a link: the lot, scenario and unit. */
+export function linkHash(s: Pick<ToolState, 'view' | 'scenario' | 'unit' | 'spot'>, hash = typeof window === 'undefined' ? '' : window.location.hash) {
+  const rec = s.spot?.record;
+  return testHash(hash, { view: s.view, scenario: s.scenario, unit: s.unit, lot: rec?.lot.tract ? { id: rec.lot.id, tract: rec.lot.tract } : null });
+}
+
+/** Write the testing state into the address. replaceState does not fire hashchange. */
+export function syncHash() {
+  if (typeof window !== 'undefined') history.replaceState(null, '', linkHash(useTool.getState()));
 }
 
 /** Read the ADU from the hash query (#/tool?bed=1&size=600&st=1). Anything missing or odd falls back to the base case. */
@@ -70,7 +103,13 @@ export function aduHash(a: Adu) {
   return `#/?${q.toString()}`;
 }
 
-export const useTool = create<ToolState>((set) => ({
+const start = testFromHash(typeof window === 'undefined' ? '' : window.location.hash);
+
+export const useTool = create<ToolState>((set, get) => ({
+  view: start.view,
+  scenario: start.scenario,
+  unit: start.unit,
+  money: DEFAULT_MONEY,
   rule: 'current',
   metric: 'jobs_after',
   status: 'loading',
@@ -86,6 +125,7 @@ export const useTool = create<ToolState>((set) => ({
   hideNoRoom: false,
   sheetOpen: false,
   resultsOpen: false,
+  aerial: false,
   adu: typeof window === 'undefined' ? BASE : aduFromHash(window.location.hash),
   set: (p) => set(p),
   setAdu: (p) =>
@@ -95,6 +135,12 @@ export const useTool = create<ToolState>((set) => ({
       if (typeof window !== 'undefined') history.replaceState(null, '', aduHash(adu));
       return { adu };
     }),
+  setTest: (p) => {
+    set(p);
+    syncHash();
+  },
+  setUnit: (p) => get().setTest({ unit: { ...get().unit, ...p } }),
+  setMoney: (p) => set({ money: { ...get().money, ...p } }),
 }));
 
 /** The live map, shared with the panels (not reactive). */

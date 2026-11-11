@@ -10,6 +10,8 @@ import RightPanel from './RightPanel';
 import BottomSheet from './BottomSheet';
 import MapControls from './MapControls';
 import { aduFromHash, useTool } from './store';
+import { openLot, testSpot } from './actions';
+import { testFromHash } from './testState';
 import { CONTROLS_W, GUTTER, SHEET_MAX, SHEET_PEEK, TOP, drawerWidth, narrow, rightDrawer, sheetOpenHeight, useMode, widths } from './layout';
 
 export default function ToolPage() {
@@ -37,12 +39,30 @@ export default function ToolPage() {
   const room = isNarrow ? vh - sheetH - TOP - GUTTER * 2 : Infinity;
   const controlsSize: 'full' | 'compact' | 'switch' | 'none' = room >= 160 ? (mode === 'phone' ? 'compact' : 'full') : room >= 104 ? 'compact' : room >= 52 ? 'switch' : 'none';
 
-  // A scenario link opened while the tool is already up (#/?bed=2&size=800&st=1)
+  // A scenario link opened while the tool is already up (#/?bed=2&size=800&st=1), or a lot link (#/?view=test&lot=...)
   useEffect(() => {
-    const on = () => /[?&](bed|size|st)=/.test(window.location.hash) && useTool.getState().set({ adu: aduFromHash(window.location.hash) });
+    const on = () => {
+      const hash = window.location.hash;
+      const st = useTool.getState();
+      if (/[?&](bed|size|st)=/.test(hash)) st.set({ adu: aduFromHash(hash) });
+      const link = testFromHash(hash);
+      st.set({ view: link.view, scenario: link.scenario, unit: link.unit });
+      if (link.lot && link.lot.id !== st.spot?.record?.lot.id) void openLot(link.lot.id, link.lot.tract);
+    };
     window.addEventListener('hashchange', on);
     return () => window.removeEventListener('hashchange', on);
   }, []);
+  // A lot link opened from outside: load the lot once the map is ready.
+  useEffect(() => {
+    const link = testFromHash(window.location.hash);
+    if (status === 'ready' && link.lot) void openLot(link.lot.id, link.lot.tract);
+  }, [status]);
+  // Switching between testing and projecting reloads the spot for the other view.
+  const view = useTool((s) => s.view);
+  useEffect(() => {
+    const spot = useTool.getState().spot;
+    if (spot) void testSpot(spot.pt, spot.label, spot.parcel, { keepUnit: true, lotId: spot.record?.lot.id });
+  }, [view]);
   // The drawer closes on Esc, and when a spot is picked from it (search).
   useEffect(() => {
     if (!drawer) return;

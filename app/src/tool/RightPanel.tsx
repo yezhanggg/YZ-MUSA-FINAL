@@ -15,6 +15,7 @@ import { ReportContent, ReportSkeleton, reportTitle } from './Report';
 import { clearSpot } from './actions';
 import { parcelRule } from './parcels';
 import { useTool, type Spot } from './store';
+import { TestActions, TestTabBody, TestTabs, type TestTab } from './test/LotResults';
 
 const FIT = { yes: 'Fits', trees: 'Fits if trees cut', no: 'No room' } as const;
 const PAYS = { yes: 'Yes', maybe: 'Close', no: 'No' } as const;
@@ -96,7 +97,10 @@ export function ReportStack() {
 export default function RightPanel({ style, drawer, onClose }: { style: React.CSSProperties; drawer?: boolean; onClose?: () => void }) {
   const spot = useTool((s) => s.spot);
   const busy = useTool((s) => s.busy);
+  const view = useTool((s) => s.view);
+  const [tab, setTab] = useState<TestTab>('results');
   const head = spot ? reportTitle(spot) : null;
+  const test = view === 'test';
   return (
     <motion.aside
       initial={drawer ? { x: '105%' } : { opacity: 0, x: 16, filter: 'blur(6px)' }}
@@ -108,22 +112,21 @@ export default function RightPanel({ style, drawer, onClose }: { style: React.CS
       aria-label="Ask and report"
     >
       <PanelHeader
-        eyebrow={spot ? 'Your site' : 'Ask about this site'}
-        title={head?.label ?? 'Try a backyard home'}
-        sub={head?.sub ?? 'Pick a sample, then click a lot on the map.'}
+        eyebrow={test ? 'Lot test' : spot ? 'Your site' : 'Ask about this site'}
+        title={head?.label ?? (test ? 'Test a lot' : 'Try a backyard home')}
+        sub={head?.sub ?? (test ? 'Click a lot on the map, or search an address.' : 'Pick a sample, then click a lot on the map.')}
         actions={
           <>
+            {test && <TestActions />}
             {spot && <IconButton label="Close this site" onClick={clearSpot}><X className="h-4 w-4" /></IconButton>}
             {drawer && onClose && <IconButton label="Hide results" onClick={onClose}><PanelRightClose className="h-4 w-4" /></IconButton>}
           </>
         }
       >
-        <AskBox />
+        {test ? <TestTabs tab={tab} onTab={setTab} layoutId="right-tab" /> : <AskBox />}
         {busy && <div className="mt-2 h-0.5 overflow-hidden rounded-full bg-violet-100"><motion.div className="h-full w-1/3 rounded-full bg-violet-500" animate={{ x: ['-100%', '300%'] }} transition={{ repeat: Infinity, duration: 1, ease: 'easeInOut' }} /></div>}
       </PanelHeader>
-      <div className={PANEL_BODY}>
-        <ReportStack />
-      </div>
+      <div className={PANEL_BODY}>{test ? <TestTabBody tab={tab} /> : <ReportStack />}</div>
     </motion.aside>
   );
 }

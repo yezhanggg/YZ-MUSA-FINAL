@@ -97,7 +97,7 @@ function inRing([x, y]: LngLat, ring: Ring) {
   return inside;
 }
 
-const inGeom = (pt: LngLat, g: Geom) => polys(g).some((p) => inRing(pt, p[0]) && !p.slice(1).some((hole) => inRing(pt, hole)));
+export const inGeom = (pt: LngLat, g: Geom) => polys(g).some((p) => inRing(pt, p[0]) && !p.slice(1).some((hole) => inRing(pt, hole)));
 
 export function findFeature<P>(fc: FC<P>, pt: LngLat): Feature<P> | undefined {
   return fc.features.find((f) => {

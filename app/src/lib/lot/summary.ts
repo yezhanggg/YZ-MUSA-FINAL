@@ -79,7 +79,7 @@ const FLAG_TEXT: Record<string, string> = {
 
 const CONFIDENCE_TEXT = { high: 'High', medium: 'Medium', low: 'Low' } as const;
 
-function lotFacts(lot: LotRecord): Fact[] {
+export function lotFacts(lot: LotRecord): Fact[] {
   const f = lot.facts ?? {};
   const facts: Fact[] = [
     { label: 'Lot size', value: sqftText(lot.lot.area_sqft) },
@@ -97,7 +97,7 @@ function lotFacts(lot: LotRecord): Fact[] {
   return facts;
 }
 
-const flagsOf = (lot: LotRecord) => Object.entries(lot.zoning.flags ?? {}).filter(([k, v]) => v === true && k in FLAG_TEXT).map(([k]) => FLAG_TEXT[k]);
+export const flagsOf = (lot: LotRecord) => Object.entries(lot.zoning.flags ?? {}).filter(([k, v]) => v === true && k in FLAG_TEXT).map(([k]) => FLAG_TEXT[k]);
 
 function unitSize(v: UnitVerdict): string {
   if (v.type === 'detached_new' && v.placed) return `${ftText(v.placed.width_ft)} x ${ftText(v.placed.depth_ft)}, ${sqftText(v.floor_sqft)} of floor area`;
@@ -112,6 +112,8 @@ export interface MoneyOptions {
   rent_source?: string;
   financing?: FinancingInput;
   money?: MoneyScenario;
+  /** Finish level: basic, standard or premium (cost.quality). */
+  quality?: string;
 }
 
 /** The money check for a unit that passed the lot test, from money.ts. Rents on the record win over the given ones. */
@@ -121,7 +123,7 @@ export function lotMoney(lot: LotRecord, v: UnitVerdict, input: MoneyOptions = {
   const rents = lot.money?.rent_by_bedroom ?? input.rent_by_bedroom ?? null;
   const pf = proForma(
     { place: lot.lot.place, zip: lot.facts?.zip ?? null, septic: lot.zoning.flags?.sewer === false, rent_by_bedroom: rents as MoneyRents | null, rent_source: input.rent_source ?? null },
-    { size_sqft: v.floor_sqft, adu_type: v.type },
+    { size_sqft: v.floor_sqft, adu_type: v.type, quality: input.quality },
     input.financing ?? {},
     input.money ?? {},
   );
@@ -143,7 +145,7 @@ export function lotMoney(lot: LotRecord, v: UnitVerdict, input: MoneyOptions = {
 
 const DATE_LABEL: Record<string, string> = { lots: 'Parcel lines', buildings: 'Building outlines', streets: 'Streets' };
 
-function dataDates(lot: LotRecord, builtAt: string | null | undefined): DataDate[] {
+export function dataDates(lot: LotRecord, builtAt: string | null | undefined): DataDate[] {
   const out: DataDate[] = [];
   const push = (label: string, iso: string | null | undefined) => {
     const d = dateText(iso);

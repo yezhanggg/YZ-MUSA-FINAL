@@ -12,6 +12,7 @@ import { ReportStack, VerdictLine } from './RightPanel';
 import { reportTitle } from './Report';
 import { useTool } from './store';
 import { GUTTER, SHEET_PEEK, sheetOpenHeight } from './layout';
+import { TestActions, TestTabBody, TestTabs, type TestTab } from './test/LotResults';
 
 type Tab = 'lot' | 'report' | 'ask';
 const TABS: { id: Tab; label: string }[] = [
@@ -22,7 +23,9 @@ const TABS: { id: Tab; label: string }[] = [
 
 export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
   const spot = useTool((s) => s.spot);
+  const test = useTool((s) => s.view === 'test');
   const [tab, setTab] = useState<Tab>('report');
+  const [testTab, setTestTab] = useState<TestTab>('results');
   const open = useTool((s) => s.sheetOpen);
   const set = useTool((s) => s.set);
   const setOpen = (o: boolean) => set({ sheetOpen: o });
@@ -53,6 +56,22 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
         <span className="h-1.5 w-10 rounded-full bg-stone-300" />
       </button>
       <div className="shrink-0 px-4">
+        {test ? (
+          <>
+            <TestTabs tab={testTab} onTab={(t) => (setTestTab(t), setOpen(true))} layoutId="sheet-test-tab" />
+            {spot && (
+              <div className="mt-2 flex items-center justify-between gap-2">
+                <div className="min-w-0">
+                  <div className="truncate font-display text-body font-bold text-slate-900">{head?.label}</div>
+                  <div className="truncate text-caption text-slate-600">{head?.sub}</div>
+                </div>
+                <div className="flex shrink-0 gap-1">
+                  <TestActions />
+                </div>
+              </div>
+            )}
+          </>
+        ) : (
         <div role="tablist" aria-label="Sheet" className="relative grid grid-cols-3 rounded-xl bg-stone-100 p-1 ring-1 ring-stone-200/70">
           {TABS.map((t) => {
             const on = tab === t.id;
@@ -64,14 +83,16 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
             );
           })}
         </div>
-        {!open && spot && (
+        )}
+        {!test && !open && spot && (
           <div className="mt-2">
             <VerdictLine spot={spot} />
           </div>
         )}
       </div>
       <div className={cx(PANEL_BODY, 'pt-3')}>
-        {tab === 'lot' &&
+        {test && <TestTabBody tab={testTab} />}
+        {!test && tab === 'lot' &&
           (spot ? (
             <div className="space-y-3">
               <div>
@@ -90,8 +111,8 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
               <MousePointerClick className="h-4 w-4 shrink-0 text-violet-600" /> Tap a single-family lot on the map, or search an address.
             </p>
           ))}
-        {tab === 'report' && <ReportStack />}
-        {tab === 'ask' && <AskBox expanded />}
+        {!test && tab === 'report' && <ReportStack />}
+        {!test && tab === 'ask' && <AskBox expanded />}
       </div>
     </motion.section>
   );

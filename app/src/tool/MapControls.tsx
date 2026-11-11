@@ -2,7 +2,7 @@
 // of the open map area: just left of the right panel on wide screens, above the sheet's peek on tablet and phone.
 import { useEffect, useState, type CSSProperties } from 'react';
 import { motion } from 'motion/react';
-import { Compass, Minus, Plus } from 'lucide-react';
+import { Compass, Image, Minus, Plus } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { SPRING_TAB } from '../components/primitives';
 import { reduced, setView3d } from './actions';
@@ -14,6 +14,7 @@ const BTN = 'tap grid h-9 w-10 place-items-center text-slate-700 transition-colo
 export default function MapControls({ style, size = 'full' }: { style: CSSProperties; size?: 'full' | 'compact' | 'switch' }) {
   const compact = size !== 'full';
   const view3d = useTool((s) => s.view3d);
+  const aerial = useTool((s) => s.aerial);
   const ready = useTool((s) => s.status === 'ready');
   const [bearing, setBearing] = useState(0);
 
@@ -41,6 +42,11 @@ export default function MapControls({ style, size = 'full' }: { style: CSSProper
           );
         })}
       </div>
+      {size !== 'switch' && (
+        <button type="button" aria-pressed={aerial} disabled={!ready} onClick={() => useTool.getState().set({ aerial: !aerial })} title="Aerial photo (PEMA, via PASDA)" className={cx('tap flex h-10 items-center gap-1.5 rounded-xl px-2.5 text-small font-bold transition-colors disabled:opacity-40', SHELL, aerial ? 'bg-violet-600 text-white hover:bg-violet-700' : 'text-slate-600 hover:text-slate-900')}>
+          <Image className="h-4 w-4" /> Aerial
+        </button>
+      )}
       {size !== 'switch' && (
       <div className={cx('flex flex-col overflow-hidden rounded-xl', SHELL)}>
         {!compact && (

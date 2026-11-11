@@ -310,3 +310,20 @@ input[type='range'].weight:focus-visible::-webkit-slider-thumb {
     min-width: 44px;
   }
 }
+
+/* Lot report: print only the report page (it sits next to #root) */
+@media print {
+  @page {
+    margin: 12mm;
+  }
+  #root {
+    display: none !important;
+  }
+  .bh-print {
+    position: static;
+    overflow: visible;
+  }
+  .bh-print .no-print {
+    display: none;
+  }
+}
