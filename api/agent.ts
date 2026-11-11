@@ -32,6 +32,21 @@ export function rateLimited(ip: string, now = Date.now()) {
   return list.length > MAX_REQUESTS;
 }
 
+// ------------------------------------------------------------------ daily cap (per instance, in memory)
+/** Model requests per UTC day before the agent says it is resting. AGENT_DAILY_CAP overrides. */
+export const DEFAULT_DAILY_CAP = 2000;
+let day = { key: '', count: 0 };
+
+export function overDailyCap(now = Date.now(), cap = Number(process.env.AGENT_DAILY_CAP) || DEFAULT_DAILY_CAP) {
+  const key = new Date(now).toISOString().slice(0, 10);
+  if (day.key !== key) day = { key, count: 0 };
+  day.count++;
+  return day.count > cap;
+}
+
+/** Longest answer, in tokens. Answers are 1 to 4 short sentences. */
+export const MAX_OUTPUT_TOKENS = 1024;
+
 /** Tool rounds since the user's last question (trailing tool_result turns). */
 export function roundsSoFar(messages: MessageParam[]) {
   let n = 0;
@@ -64,6 +79,7 @@ export function createHandler(makeClient: (key: string) => Client = (key) => new
     if (!key) return send(503, { type: 'error', error: 'not_configured', message: 'Agent not set up yet (needs ANTHROPIC_API_KEY on Vercel)' });
     const ip = String(req.headers['x-forwarded-for'] ?? req.socket?.remoteAddress ?? 'unknown').split(',')[0].trim();
     if (rateLimited(ip)) return send(429, { type: 'error', error: 'rate_limited', message: 'Too many questions. Try again in a few minutes.' });
+    if (overDailyCap()) return send(429, { type: 'error', error: 'rate_limited', message: 'The assistant has answered its share of questions for today. Try again tomorrow.' });
     const body = typeof req.body === 'string' ? safeJson(req.body) : req.body;
     if (!valid(body)) return send(400, { type: 'error', error: 'bad_request', message: 'Expected { messages, context }' });
 
@@ -72,7 +88,7 @@ export function createHandler(makeClient: (key: string) => Client = (key) => new
     try {
       const msg = await makeClient(key).messages.create({
         model: process.env.AGENT_MODEL || DEFAULT_MODEL,
-        max_tokens: 1024,
+        max_tokens: MAX_OUTPUT_TOKENS,
         system: [
           { type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } },
           { type: 'text', text: `Context (what the user sees now):\n${JSON.stringify(body.context)}${lastRound ? '\n\nTool limit reached. Answer now with the facts you have.' : ''}` },

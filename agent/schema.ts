@@ -5,7 +5,7 @@ import { RULE_TEXT_TOOL } from '../app/src/agent/ruleText';
 import type { Scenario } from '../app/src/lib/lot/types';
 
 export const MAX_ROUNDS = 6;
-export const DEFAULT_MODEL = 'claude-sonnet-5-5';
+export const DEFAULT_MODEL = 'claude-haiku-5-5';
 
 export const SYSTEM_PROMPT = `You are the assistant inside Backyard Homes PA, a map tool about backyard homes (ADUs) in Pennsylvania.
 You answer questions about one site at a time: a lot, its census tract and its town.

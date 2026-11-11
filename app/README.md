@@ -22,7 +22,7 @@ React 19 + TypeScript + Tailwind 4 + motion, built with Vite. Same look as Visio
 - `src/pages/` the Research panel and its two pages
 - `src/lib/adu.ts` fit and payoff math for the ADU being tested, and `playAdu` for "Play with it" (tests in `adu.test.ts`)
 - `src/agent/` the Ask agent in the browser: tool executors (same code as the report), browser data provider, the request loop
-- `../api/agent.ts` the Vercel function that calls Claude (`claude-sonnet-5-5`, or `AGENT_MODEL`). Key from `ANTHROPIC_API_KEY`, never in the bundle. Rate limit per IP, at most 6 tool rounds, prompt caching. `npm run dev` serves it too (reads the key from the repo-root `.env`)
+- `../api/agent.ts` the Vercel function that calls Claude (`claude-haiku-5-5`, or `AGENT_MODEL`). Key from `ANTHROPIC_API_KEY`, never in the bundle. At most 1,024 output tokens, a daily cap of 2,000 model requests (`AGENT_DAILY_CAP`), rate limit per IP, at most 6 tool rounds, prompt caching. `npm run dev` serves it too (reads the key from the repo-root `.env`)
 - `../agent/` tool schemas and system prompt, the Node data provider, `eval_questions.json` (15 questions) and `npm run eval:agent` (runs only with a key)
 - `src/lib/numbers.ts` cost, rate, model scores and totals in one place
 - `src/lib/rules.ts` today's rules, HB 2186 and SB 1346 text (tests in `rules.test.ts`)

@@ -1,7 +1,7 @@
 // One full agent round with the Anthropic client mocked: question -> tool_use -> tool_result (run in "the browser")
 // -> final answer.
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { createHandler, roundsSoFar } from './agent';
+import { DEFAULT_DAILY_CAP, MAX_OUTPUT_TOKENS, createHandler, overDailyCap, roundsSoFar } from './agent';
 import { ask } from '../app/src/agent/client';
 import { nodeProvider } from '../agent/nodeProvider';
 import { MAX_ROUNDS } from '../agent/schema';
@@ -70,7 +70,7 @@ describe('api/agent', () => {
     const first = create.mock.calls[0][0];
     expect(first.system[0].cache_control).toEqual({ type: 'ephemeral' });
     expect(first.tools[first.tools.length - 1].cache_control).toEqual({ type: 'ephemeral' });
-    expect(first.model).toBe('claude-sonnet-5-5');
+    expect(first.model).toBe('claude-haiku-5-5');
   });
 
   it('stops tools after MAX_ROUNDS', () => {
@@ -83,5 +83,25 @@ describe('api/agent', () => {
     const res = fakeRes();
     await handler({ method: 'POST', body: { nope: 1 }, headers: {} }, res);
     expect(res.code).toBe(400);
+  });
+
+  it('uses AGENT_MODEL when set, caps output and keeps the prompt cached', async () => {
+    process.env.AGENT_MODEL = 'claude-test-model';
+    create.mockResolvedValueOnce({ stop_reason: 'end_turn', content: [{ type: 'text', text: 'ok' }] });
+    await handler({ method: 'POST', body: { messages: [{ role: 'user', content: 'q' }], context }, headers: { 'x-forwarded-for': '10.0.0.9' } }, fakeRes());
+    delete process.env.AGENT_MODEL;
+    const req = create.mock.calls[0][0];
+    expect(req.model).toBe('claude-test-model');
+    expect(req.max_tokens).toBe(MAX_OUTPUT_TOKENS);
+    expect(req.system[0].cache_control).toEqual({ type: 'ephemeral' });
+  });
+
+  it('stops for the day after the daily cap', () => {
+    const t = Date.UTC(2030, 0, 1, 12);
+    expect(overDailyCap(t, 2)).toBe(false);
+    expect(overDailyCap(t, 2)).toBe(false);
+    expect(overDailyCap(t, 2)).toBe(true);
+    expect(overDailyCap(t + 86_400_000, 2)).toBe(false);
+    expect(DEFAULT_DAILY_CAP).toBeGreaterThan(0);
   });
 });
