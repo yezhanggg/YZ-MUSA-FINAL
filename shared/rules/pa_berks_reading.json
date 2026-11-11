@@ -1,0 +1,386 @@
+{
+  "provenance": {
+    "jurisdiction": "Reading city",
+    "instrument": "City of Reading Zoning Ordinance, Chapter 600 of the Code of Ordinances, as published on American Legal Publishing (2026 S-8)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "amlegal blocks plain fetches. The code was read in a browser. All 227 sections of Chapter 600 were scanned for accessory apartment, accessory dwelling, in-law, elder cottage, granny and ECHO. The only hit is the definition of accessory apartment in 600-2202. No district lists it as a use.",
+    "effective_date": null,
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-23598",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/overview",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-26731",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25153",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25252",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25260",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25265",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25569",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24322",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24348",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24376",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24415",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24492",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24556",
+      "https://www.readingpa.gov/zoning-and-planning",
+      "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Berks",
+    "municipality_type": "city",
+    "geoid": "4201163624",
+    "code_host": "amlegal",
+    "code_url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-23598",
+    "code_current_through": "2026-10-26",
+    "code_current_through_note": "amlegal overview: Current through October 26, 2026. Edition 2026 S-8 (current).",
+    "checks": [
+      "The code defines accessory apartment but no district permits it",
+      "A lot shall only be occupied by one dwelling unit unless the chapter specifically allows more (600-902C)",
+      "An accessory building shall not be converted into a dwelling unit unless specifically allowed (600-902D). Human habitation in accessory buildings is prohibited (600-1001F)",
+      "Conversion of an existing one-family detached, semidetached or attached dwelling into two or more units is prohibited (600-803C, 600-804C(4), 600-1203D)",
+      "A detached garage may have a second story for household storage only (600-1002B). Garages and carports: 600 sq ft max in R districts unless they meet principal setbacks",
+      "Closest allowed options: two-family detached dwellings and low-rise apartments are permitted by right in R-3 as new buildings. In C-C and C-R, existing building space may become dwelling units only on a lot with a street-level business (600-807, 600-808)",
+      "Each dwelling unit holds one household meeting the definition of family (600-902F)"
+    ],
+    "notes": "Zoning office: City of Reading Zoning and Planning (page in source_urls). Pending changes: none found. Census GEOID is the 2020 county subdivision code from TIGERweb."
+  },
+  "adu": {
+    "status": {
+      "value": "prohibited",
+      "section": "600-902C, 600-902D, 600-1001F, 600-803C, 600-804C(4), 600-1203D",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25153",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Defined but never listed as a use. A lot shall only be occupied by one dwelling unit unless ... specifically allow two or more. Read as barred."
+    },
+    "term": {
+      "value": "accessory apartment",
+      "section": "600-2202 Definitions",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-26731",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "One dwelling unit that is created within part of a principal dwelling or above a vehicle garage on a residential lot."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "600-902C, Part 4 Zoning Hearing Board",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25153",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists accessory apartment. A unit would need a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Part 4",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24043",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Use variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Part 8, 600-801 to 600-820",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24322",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory apartment is not a permitted, special exception or conditional use in any district."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "600-902D, 600-1001F, 600-803C, 600-804C(4)",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25153",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No form is allowed. Interior conversion of a one-family dwelling and dwelling units in accessory buildings are barred."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "600-2202",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-26731",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No size rule for accessory apartments."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "600-1002A",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25260",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Private garage: The garage structure shall not exceed 25 feet in height. Habitation in accessory buildings is barred (600-1001F)."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "600-1001B",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25252",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory buildings shall not be located between the principal building and any public street right-of-way."
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "600-1003",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25265",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Storage sheds, greenhouses and shelters in a required yard: three-foot minimum rear and side yard setback."
+    },
+    "setback_rear_ft": {
+      "value": 3,
+      "section": "600-1003",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25265",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "three-foot minimum rear and side yard setback. Garages may sit in the rear setback (600-1002)."
+    },
+    "setback_rear_alley_ft": {
+      "value": 3,
+      "section": "600-1002",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25260",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Garage door set back a minimum of three feet from an alley."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "600-2202",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-26731",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "600-902C",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25153",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "One dwelling unit per lot unless the chapter specifically allows more."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "Part 16",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25786",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not read for ADUs, since none are allowed."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "Chapter 600",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-23598",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "districts": {
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "600-801A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24322",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot size for a one-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "600-801A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24322",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "600-801A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24322",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal side yard each side. Sheds 3 ft (600-1003)."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "600-801A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24322",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal rear yard."
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "600-801A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24322",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage. Max impervious 25%."
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "600-801A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24322",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 6600,
+        "section": "600-802A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24348",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot size for a one-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "600-802A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24348",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "600-802A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24348",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal side yard each side. Sheds 3 ft (600-1003)."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "600-802A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24348",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal rear yard."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "600-802A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24348",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage. Max impervious 40%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "600-802A Allowed use",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24348",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "600-803A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24376",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot size for a one-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "600-803A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24376",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "600-803A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24376",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal side yard each side. Sheds 3 ft (600-1003)."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "600-803A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24376",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal rear yard."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "600-803A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24376",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage. Max impervious 50%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "600-803A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24376",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 2000,
+        "section": "600-804A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24415",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum lot size for a one-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "600-804A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24415",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "600-804A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24415",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "3 ft each. Not required where buildings were attached (note 2)."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "600-804A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24415",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal rear yard."
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "600-804A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24415",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Building coverage. Max impervious 75%. Side 3 ft each with note 2 exceptions."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "600-804A One-family detached dwelling",
+        "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24415",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    }
+  }
+}
