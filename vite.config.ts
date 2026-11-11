@@ -4,6 +4,7 @@ import type { Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { cpSync, createReadStream, existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import type { IncomingMessage, ServerResponse } from "node:http";
 import { homedir } from "node:os";
 import { resolve, sep } from "node:path";
 
@@ -115,41 +116,45 @@ function tractExplorer(): Plugin {
 function devLotData(): Plugin {
   const MOUNT = "/data/lots2/";
   const TYPES: Record<string, string> = { ".json": "application/json", ".gz": "application/octet-stream", ".pmtiles": "application/octet-stream" };
+  const root = resolve((process.env.LOT_DATA_DIR ?? "~/musa-drive/lots").replace(/^~(?=$|\/)/, homedir()));
+  const serve = (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+    const url = decodeURIComponent((req.url ?? "").split("?")[0]);
+    if (!url.startsWith(MOUNT)) return next();
+    const file = resolve(root, url.slice(MOUNT.length));
+    if (!file.startsWith(root + sep) || !existsSync(file) || !statSync(file).isFile()) {
+      res.statusCode = 404;
+      return res.end("not found");
+    }
+    const size = statSync(file).size;
+    const ext = Object.keys(TYPES).find((e) => file.endsWith(e));
+    res.setHeader("content-type", ext ? TYPES[ext] : "application/octet-stream");
+    res.setHeader("accept-ranges", "bytes");
+    res.setHeader("cache-control", "no-cache");
+    const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range ?? "");
+    if (m) {
+      const start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]));
+      const end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1;
+      if (start >= size || start > end) {
+        res.statusCode = 416;
+        res.setHeader("content-range", `bytes */${size}`);
+        return res.end();
+      }
+      res.statusCode = 206;
+      res.setHeader("content-range", `bytes ${start}-${end}/${size}`);
+      res.setHeader("content-length", String(end - start + 1));
+      return createReadStream(file, { start, end }).pipe(res);
+    }
+    res.setHeader("content-length", String(size));
+    createReadStream(file).pipe(res);
+  };
   return {
     name: "dev-lot-data",
-    apply: "serve",
     configureServer(server) {
-      const root = resolve((process.env.LOT_DATA_DIR ?? "~/musa-drive/lots").replace(/^~(?=$|\/)/, homedir()));
-      server.middlewares.use((req, res, next) => {
-        const url = decodeURIComponent((req.url ?? "").split("?")[0]);
-        if (!url.startsWith(MOUNT)) return next();
-        const file = resolve(root, url.slice(MOUNT.length));
-        if (!file.startsWith(root + sep) || !existsSync(file) || !statSync(file).isFile()) {
-          res.statusCode = 404;
-          return res.end("not found");
-        }
-        const size = statSync(file).size;
-        const ext = Object.keys(TYPES).find((e) => file.endsWith(e));
-        res.setHeader("content-type", ext ? TYPES[ext] : "application/octet-stream");
-        res.setHeader("accept-ranges", "bytes");
-        res.setHeader("cache-control", "no-cache");
-        const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range ?? "");
-        if (m) {
-          const start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]));
-          const end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1;
-          if (start >= size || start > end) {
-            res.statusCode = 416;
-            res.setHeader("content-range", `bytes */${size}`);
-            return res.end();
-          }
-          res.statusCode = 206;
-          res.setHeader("content-range", `bytes ${start}-${end}/${size}`);
-          res.setHeader("content-length", String(end - start + 1));
-          return createReadStream(file, { start, end }).pipe(res);
-        }
-        res.setHeader("content-length", String(size));
-        createReadStream(file).pipe(res);
-      });
+      server.middlewares.use(serve);
+    },
+    // `vite preview` too, so the production build can be checked against the same lot files.
+    configurePreviewServer(server) {
+      server.middlewares.use(serve);
     },
   };
 }
