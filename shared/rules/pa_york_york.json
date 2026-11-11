@@ -1,0 +1,562 @@
+{
+  "provenance": {
+    "jurisdiction": "York city",
+    "instrument": "Codified Ordinances of York, Part Thirteen Planning and Zoning Code, Zoning Ordinance of 2011, 1304.01 use 1.04.005 Accessory Dwelling Unit, with Table 1303.08(A) and the 1303.09 to 1303.16 district tables",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Read in the city-posted PDF 'Part-13-Planning-Zoning-Updated-6-23-26' (pages marked 2026 Replacement). The earlier city PDF from Jan 2026 (2021-2 Replacement, amending Bill No. 34, Ord. No. 1, Session 2025-2026) has the same ADU text. The American Legal online code (2024 code) was behind a script wall and was not read.",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf",
+      "https://www.yorkcity.org/wp-content/uploads/2026/01/H-Zoning.doc.pdf",
+      "https://www.yorkcity.org/government/authorities-boards-and-commissions/codified-ordinances/",
+      "https://www.yorkcity.org/wp-content/uploads/2026/06/Article-1761-Licensing-and-Inspection-of-Tenant-Occupied-Residential.pdf",
+      "https://www.yorkcity.org/decd/bureau-of-planning-and-zoning/",
+      "https://codelibrary.amlegal.com/codes/yorkpa/latest/york_pa",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "York",
+    "municipality_type": "city",
+    "geoid": "4213387048",
+    "code_host": "own site",
+    "code_url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf",
+    "code_current_through": "2026-06-23",
+    "code_current_through_note": "City PDF file name says 'Updated 6-23-26'. Pages are marked '2026 Replacement'. The city says to ask the City Clerk for later amendments.",
+    "checks": [
+      "Only an existing carriage house or garage may become an ADU. It may be enlarged, but then the district dimensional rules apply (1.04.005(c)(4))",
+      "Efficiency or one-bedroom unit only. At most two occupants (1.04.005(c)(6) and (7))",
+      "The principal house must be an owner-occupied single-family dwelling. The ADU must be removed or converted back when that ends (1.04.005(c)(1) and (2))",
+      "The ADU must be licensed under the city rental housing rules and tenants registered (1.04.005(c)(9)). Article 1761 lists an ADU as a tenant-occupied unit",
+      "Design must be consistent with the principal building. A unit added above a garage may not be larger than the garage footprint or hang over it (1.04.005(c)(10) and (11))",
+      "If the required off-street parking cannot be provided on site, the ADU may not be approved (1.04.005(c)(5))",
+      "An accessory building may not exceed 50% of the first floor building area of the principal structure (1304.02 7.01(b)(2))",
+      "1303.06(g)(2) also says a rear building that meets all use, height and area rules may be used as an ADU if the principal unit is owner-occupied. How this relates to 1.04.005 is not clear. Ask the Zoning Officer"
+    ],
+    "notes": "Zoning office: Bureau of Planning and Zoning, https://www.yorkcity.org/decd/bureau-of-planning-and-zoning/. Pending changes: no ADU ordinance found. A news aggregator mentioned a Planning Commission text amendment on the RS1 single-family definition. Not confirmed and not law."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "1302.02 and 1304.01 use 1.04.005",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Definition: 'An existing carriage house or garage which is converted or enlarged to create an additional residential dwelling unit'"
+    },
+    "status": {
+      "value": "conversion_only",
+      "section": "1304.01 use 1.04.005(a) and (c)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Only an existing carriage house or garage, by special exception from the Zoning Hearing Board. Conversion_only is the more limiting of the two."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "1304.01 use 1.04.005(c), Table 1303.08(A), 1311.11",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'A carriage house or garage may be converted to allow an accessory dwelling unit by special exception'. The Zoning Hearing Board decides after notice and hearing (1311.11)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Table 1303.08(A)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=49",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "ADU is blank (not permitted) in CBD, EC, OS and GW. A unit in a new building or inside the house is not listed. Reading: a use variance."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RS1",
+        "RS2",
+        "UN1",
+        "UN2",
+        "MUI1",
+        "MUI2"
+      ],
+      "section": "Table 1303.08(A), use 1.04.005",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=49",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "SE in RS1, RS2, UN1, UN2, MUI1, MUI2. Blank in CBD, EC, OS, GW. 'Use is not permitted if blank.'"
+    },
+    "building_types": {
+      "value": null,
+      "section": "1304.01 use 1.04.005(c)(1)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Needs 'an owner-occupied single-family dwelling'. The code lists detached, attached and semi-attached single-family dwellings. No type limit is stated."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "1304.01 use 1.04.005",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU lot size. District minimum lot area applies. See districts."
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "1304.01 use 1.04.005(a)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'An existing carriage house or garage which is converted or enlarged'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "1304.01 use 1.04.005",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No historic rule in the ADU text. HARB review may apply in historic districts."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "1304.01 use 1.04.005(a), (c)(4) and (c)(11)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Conversion or enlargement of an existing carriage house or garage, including a unit above it. No new detached building, no unit inside the house."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 700,
+      "section": "1304.01 use 1.04.005(c)(6)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'must be at least four-hundred (400) square feet and no larger than seven hundred (700) square feet'"
+    },
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "1304.01 use 1.04.005(c)(6)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=96",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'In no case shall the gross square footage of the accessory dwelling unit be more than fifty percent (50%)' of the house."
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "1304.01 use 1.04.005(c)(6)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "At least 400 sq ft."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "1304.01 use 1.04.005(c)(4), district tables",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU or accessory height cap found. An enlarged garage must meet the district rules. District maximum is 35 or 40 ft."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "1304.02 7.01(b)(1)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=184",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory structures go to the rear or side. 'In no case' closer to the front street right-of-way than the principal structure."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "1303.06(c)(1)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=42",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Side yards for accessory structures may be reduced to five (5) feet or may maintain the existing side yard setback'. The sentence follows a party wall rule. Reading needs care."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "1304.01 use 1.04.005(c)(4)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No accessory rear setback found. An enlarged garage meets the district rear setback. See districts."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "1304.02 7.01",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=184",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No separation distance found."
+    }
+  },
+  "coverage": {
+    "max_impervious": {
+      "value": null,
+      "section": "Tables 1303.09 to 1303.16",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=61",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district: RS1 40%, RS2 60%, UN1 and UN2 75%, MUI1 and MUI2 80%."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "1304.01 use 1.04.005(c)(1)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'may only be established at properties containing an owner-occupied single-family dwelling'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "1304.01 use 1.04.005(c)(9)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No family limit. The unit must be licensed under the rental housing rules and 'Tenants must be registered'."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "1304.01 use 1.04.005",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in the ADU text. Article 1761 rental licensing was not reviewed for short stays."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "1304.01 use 1.04.005(c)(3)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Only one accessory dwelling unit may be created at a property.'"
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "1304.01 use 1.04.005(c)(8)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'may not be subdivided off into its own parcel of land unless all requirements are met for it to be established as a separate parcel'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "1304.01 use 1.04.005(d)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Two spaces for the house and 'one additional off-street parking spaces' for the ADU."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "1304.01 use 1.04.005",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in the zoning text."
+    }
+  },
+  "districts": {
+    "RS1": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "Table 1303.09, Minimum Lot Area",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=61",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "Table 1303.09, Minimum Building Setback - Front",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=61",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1303.06(b) may require the block's existing setback."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 1303.09, Minimum Building Setback - Side",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=61",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "Table 1303.09, Minimum Building Setback - Rear",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=61",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 1303.09, Maximum Building Height",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=61",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "1304.01 use 1.04.005(d)",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One added space for the ADU."
+      }
+    },
+    "RS2": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "Table 1303.10, Minimum Lot Area",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=63",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "4,000 sq ft single-family detached. 2,000 sq ft single-family attached."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "Table 1303.10, Minimum Building Setback - Front",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=63",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1303.06(b) may require the block's existing setback."
+      },
+      "setback_side_ft": {
+        "value": null,
+        "section": "Table 1303.10, Minimum Building Setback - Side",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=63",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "10 ft end unit only for attached. 10 ft aggregate of both sides for other uses. No single number."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "Table 1303.10, Minimum Building Setback - Rear",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=63",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 1303.10, Maximum Building Height",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=63",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "1304.01 use 1.04.005(d)",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One added space for the ADU."
+      }
+    },
+    "UN1": {
+      "min_lot_sqft": {
+        "value": 2000,
+        "section": "Table 1303.11, Minimum Lot Area",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=65",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "Table 1303.11, Minimum Building Setback - Front",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=65",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1303.06(b) may require the block's existing setback."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "Table 1303.11, Minimum Building Setback - Side",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=65",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'None'"
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "Table 1303.11, Minimum Building Setback - Rear",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=65",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "Table 1303.11, Maximum Building Height",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=65",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Must match or be compatible with adjoining heights."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "1304.01 use 1.04.005(d)",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One added space for the ADU."
+      }
+    },
+    "UN2": {
+      "min_lot_sqft": {
+        "value": 2000,
+        "section": "Table 1303.12, Minimum Lot Area",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=68",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "Table 1303.12, Minimum Building Setback - Front",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=68",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1303.06(b) may require the block's existing setback."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "Table 1303.12, Minimum Building Setback - Side",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=68",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'None'"
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "Table 1303.12, Minimum Building Setback - Rear",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=68",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "Table 1303.12, Maximum Building Height",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=68",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Must match or be compatible with adjoining heights."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "1304.01 use 1.04.005(d)",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One added space for the ADU."
+      }
+    },
+    "MUI1": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "Table 1303.15, Minimum Lot Area",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=75",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "Table 1303.15, Minimum Building Setback - Front",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=75",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1303.06(b) may require the block's existing setback."
+      },
+      "setback_side_ft": {
+        "value": null,
+        "section": "Table 1303.15, Minimum Building Setback - Side",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=75",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "10 ft end unit only for attached. 10 ft aggregate of both sides for other uses. No single number."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "Table 1303.15, Minimum Building Setback - Rear",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=75",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 1303.15, Maximum Building Height",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=75",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "1304.01 use 1.04.005(d)",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One added space for the ADU."
+      }
+    },
+    "MUI2": {
+      "min_lot_sqft": {
+        "value": 2000,
+        "section": "Table 1303.16, Minimum Lot Area",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=77",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "Table 1303.16, Minimum Building Setback - Front",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=77",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1303.06(b) may require the block's existing setback."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "Table 1303.16, Minimum Building Setback - Side",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=77",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'None'"
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "Table 1303.16, Minimum Building Setback - Rear",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=77",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 1303.16, Maximum Building Height",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=77",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "1304.01 use 1.04.005(d)",
+        "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One added space for the ADU."
+      }
+    }
+  }
+}
