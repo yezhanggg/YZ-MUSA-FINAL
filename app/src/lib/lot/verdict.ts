@@ -590,7 +590,8 @@ function warningsFor(lot: LotRecord, rules: Rules, unit: UnitInput, stored: FitR
   if (flags.flood) add('flood', 'Part of the lot is in a flood zone. Extra permits and building rules apply.');
   if (flags.steep_slope) add('steep_slope', 'The lot is on a steep slope. Expect extra site work and an engineer.');
   if (flags.landslide) add('landslide', 'The lot is in a landslide-prone area. A soils report is likely needed.');
-  if (rules.historic_path) add('historic', 'The rule for historic buildings opens this unit. The historic review board must approve the design.');
+  if (rules.historic_path && (rules.types_allowed ?? []).includes(unit.type)) add('historic', 'The rule for historic buildings opens this unit. The historic review board must approve the design.');
+  else if (rules.historic_path) add('historic', 'The rule for historic buildings opens other kinds of unit on this lot, not this one. The historic review board must approve any design.');
   else if (flags.historic) add('historic', 'The lot is in a historic district. A design review is likely needed.');
   if (rules.assumed.length) add('assumed_rules', `Some limits here are building code defaults or planning assumptions, not the town's own rule: ${rules.assumed.map((k) => k.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')).join(', ')}.`);
   if (scenarioIsProposal(lot, unit.scenario)) add('not_law', `${SCENARIO_TITLE[unit.scenario]} is a proposal. It is not law.`);

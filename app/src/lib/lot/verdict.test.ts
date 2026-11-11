@@ -140,6 +140,14 @@ describe('unitVerdict on real lots', () => {
     expect(inside.approval.path).toBe('by_right');
     expect(inside.warnings.map((w) => w.code)).toContain('historic');
   });
+
+  it('the historic path warning says which unit it opens', () => {
+    const lot = structuredClone(fixture('philadelphia_internal'));
+    lot.rules.today!.historic_path = true;
+    const inside = unitVerdict(lot, { ...cottage(), type: 'internal', width_ft: 20, depth_ft: 25 });
+    expect(inside.warnings.find((w) => w.code === 'historic')?.text).toMatch(/opens this unit/);
+    expect(unitVerdict(lot, cottage()).warnings.find((w) => w.code === 'historic')?.text).toMatch(/not this one/);
+  });
 });
 
 describe('where the user puts it', () => {
