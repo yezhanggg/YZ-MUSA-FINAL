@@ -18,6 +18,9 @@ export interface ToolDef {
   input_schema: JsonSchema;
 }
 
+/** Financing preset keys in shared/assumptions.json, without the report-only test preset. */
+const FINANCING_PRESETS = Object.keys(ASSUMPTIONS.items['financing.presets'].table as Record<string, unknown>).filter((k) => k !== 'all_borrowed');
+
 const LOT_ID = { type: 'string', description: 'lot id, e.g. 42003-0086N00208000000. Without it, the selected lot.' };
 const SCENARIO = { type: 'string', enum: [...SCENARIOS], description: "today, local_reform or state_reform. Leave out to use the user's choice on screen." };
 const UNIT_PROPS = {
@@ -54,7 +57,13 @@ export const LOT_TOOLS: ToolDef[] = [
     description: 'Cost, rent and monthly cash flow of a unit on this lot, low / mid / high, with the assumption keys behind each number.',
     input_schema: {
       type: 'object',
-      properties: { lot_id: LOT_ID, scenario: SCENARIO, ...UNIT_PROPS, rent: { type: 'number', description: 'monthly rent to use instead of the market rent' } },
+      properties: {
+        lot_id: LOT_ID, scenario: SCENARIO, ...UNIT_PROPS,
+        rent: { type: 'number', description: 'monthly rent to use instead of the market rent' },
+        financing: { type: 'string', enum: FINANCING_PRESETS, description: "how the unit is paid for. Leave out to use the user's choice on screen" },
+        rate: { type: 'number', description: 'loan rate as a share, e.g. 0.07 for 7 percent. Leave out to use the rate of the financing' },
+        finish: { type: 'string', enum: ['basic', 'standard', 'premium'], description: "finish level. Leave out to use the user's choice on screen" },
+      },
     },
   },
   {
@@ -90,6 +99,9 @@ export interface ToolInput {
   height_ft?: unknown;
   units?: unknown;
   rent?: unknown;
+  financing?: unknown;
+  rate?: unknown;
+  finish?: unknown;
 }
 
 // ------------------------------------------------------------------ compact, clean output
@@ -251,6 +263,9 @@ export function lotMoneyTool(lot: LotRecord, unit: UnitInput, opts: MoneyOptions
     monthly_cash_flow: m.monthly_cash_flow ?? 'not on file',
     cash_in: m.cash_in ?? 'not on file',
     break_even_rent: m.break_even_rent ?? 'not on file',
+    rent_source: m.pro_forma?.rent.source ?? 'not on file',
+    financing: m.pro_forma ? { preset: m.pro_forma.financing.preset, label: m.pro_forma.financing.label, rate: m.pro_forma.financing.rate, loan_share: m.pro_forma.financing.ltc } : 'not on file',
+    finish: m.pro_forma?.adu.quality ?? 'not on file',
     sources: assumptionSources(m.assumptions),
   });
 }
@@ -292,8 +307,18 @@ export function makeLotExecutors(p: LotAgentProvider): Record<LotToolName, (inpu
     lot_money: withLot((lot, i) => {
       const scenario = scenarioFrom(i, p);
       const rent = posNum(i.rent, 1, 100_000);
+      const rate = typeof i.rate === 'number' && Number.isFinite(i.rate) && i.rate >= 0 && i.rate < 0.3 ? i.rate : null;
+      const preset = typeof i.financing === 'string' && FINANCING_PRESETS.includes(i.financing) ? i.financing : null;
+      const finish = i.finish === 'basic' || i.finish === 'standard' || i.finish === 'premium' ? i.finish : null;
       const screen = p.money?.(lot) ?? { rent_by_bedroom: p.rents?.(lot) ?? null };
-      return lotMoneyTool(lot, unitFrom(i, lot, scenario, p), { ...screen, money: { ...screen.money, ...(rent ? { rent } : {}) } });
+      // A stated financing replaces the screen's preset and its rate. A stated rate alone keeps the preset.
+      const financing = preset ? { preset, rate } : { ...screen.financing, ...(rate !== null ? { rate } : {}) };
+      return lotMoneyTool(lot, unitFrom(i, lot, scenario, p), {
+        ...screen,
+        financing,
+        ...(finish ? { quality: finish } : {}),
+        money: { ...screen.money, ...(rent ? { rent } : {}) },
+      });
     }),
     explain_limit: withLot((lot, i) => explainLimit(lot, unitFrom(i, lot, scenarioFrom(i, p), p))),
   };

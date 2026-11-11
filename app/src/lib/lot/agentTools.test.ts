@@ -103,6 +103,18 @@ describe('results', () => {
     expect((r.sources as Json[]).map((s) => s.assumption)).toContain('cost.hard_psf.detached_new');
   });
 
+  it('lot_money takes the financing, rate and finish stated in the call', async () => {
+    const p = provider('easy_fit');
+    const cash = await run(p, 'lot_money', { financing: 'cash' });
+    expect((cash.financing as Json).preset).toBe('cash');
+    expect(cash.cash_in).toBe((cash.total_cost as Json).mid);
+    const heloc = await run(p, 'lot_money', { financing: 'heloc', rate: 0.09 });
+    expect((heloc.financing as Json).rate).toBe(0.09);
+    expect(heloc.monthly_cash_flow).toBeLessThan(cash.monthly_cash_flow as number);
+    expect((await run(p, 'lot_money', { finish: 'premium' })).finish).toBe('premium');
+    expect((await run(p, 'lot_money', { financing: 'all_borrowed' })).financing).not.toEqual(expect.objectContaining({ preset: 'all_borrowed' }));
+  });
+
   it('explain_limit names the limit in words', async () => {
     const r = await run(provider('no_fit'), 'explain_limit', { type: 'detached_new' });
     expect(r.limit).toBe('There is no open space left in the yard after setbacks and the distance from the house.');

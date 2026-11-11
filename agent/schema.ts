@@ -1,6 +1,7 @@
 // "Ask about this site": the agent's contract, shared by the server (api/agent.ts) and the browser
 // (app/src/agent). Claude picks tools, the browser runs them with the same code as the report.
 import { LOT_TOOLS } from '../app/src/lib/lot/agentTools';
+import { RULE_TEXT_TOOL } from '../app/src/agent/ruleText';
 import type { Scenario } from '../app/src/lib/lot/types';
 
 export const MAX_ROUNDS = 6;
@@ -85,8 +86,8 @@ const SITE_TOOLS: ToolDef[] = [
   },
 ];
 
-/** The tract and town tools, then the lot record tools (app/src/lib/lot/agentTools.ts). */
-export const TOOLS: ToolDef[] = [...SITE_TOOLS, ...LOT_TOOLS];
+/** The tract and town tools, the rule file lookup (app/src/agent/ruleText.ts), then the lot record tools (app/src/lib/lot/agentTools.ts). */
+export const TOOLS: ToolDef[] = [...SITE_TOOLS, RULE_TEXT_TOOL, ...LOT_TOOLS];
 
 /** What the browser sends along with each question. */
 export interface AgentContext {

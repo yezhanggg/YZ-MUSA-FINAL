@@ -7,9 +7,12 @@ import { BASE, type Adu } from '../app/src/lib/numbers';
 import { findFeature, prepare, type FC, type LngLat, type Lot, type TownProps, type TractProps } from '../app/src/tool/geo';
 import type { DataProvider, SiteRecord } from '../app/src/agent/executors';
 import type { LotAgentProvider } from '../app/src/lib/lot/agentTools';
-import { findLoadedLot, loadLot, type Fetcher } from '../app/src/lib/lot/load';
-import type { Scenario } from '../app/src/lib/lot/types';
-import { tractRents } from '../app/src/tool/testState';
+import { PLACE_BY_COUNTY, findLoadedLot, loadLot, type Fetcher } from '../app/src/lib/lot/load';
+import type { LotRecord, Scenario } from '../app/src/lib/lot/types';
+import { DEFAULT_MONEY, moneyOptions, tractRents } from '../app/src/tool/testState';
+
+/** The unit drawn on screen in testing mode, as the lot tools take it. */
+export type LotUnit = ReturnType<LotAgentProvider['unit']>;
 
 const DATA = resolve(import.meta.dirname, '../app/public/data');
 
@@ -42,30 +45,74 @@ const byId = (id: string) => {
   return null;
 };
 
-/** The lot record tree on disk (LOT_DATA_DIR, default ~/musa-drive/lots), read through the browser loader. */
+/** The lot record tree on disk: LOT_DATA_DIR (default ~/musa-drive/lots) with one folder per place, read through the
+ * browser loader. LOT_DATA_DIR_<PLACE> (for example LOT_DATA_DIR_PHILADELPHIA) points one place somewhere else, such as a
+ * smoke build while the full build runs. */
 const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+export function lotRoot(place: string): string {
+  const own = process.env[`LOT_DATA_DIR_${place.toUpperCase()}`];
+  return resolve(own ?? resolve(LOTS, place));
+}
 const BASE_URL = 'file:///lots/';
 const fileFetch: Fetcher = async (url) => {
-  const path = resolve(LOTS, url.slice(BASE_URL.length));
-  return path.startsWith(LOTS) && existsSync(path) ? new Response(readFileSync(path)) : new Response('missing', { status: 404 });
+  const [place, ...rest] = url.slice(BASE_URL.length).split('/');
+  const root = lotRoot(place);
+  const path = resolve(root, ...rest);
+  return path.startsWith(root) && existsSync(path) ? new Response(readFileSync(path)) : new Response('missing', { status: 404 });
 };
+const LOAD = { baseUrl: BASE_URL, fetch: fileFetch };
 
-/** Lot tools in Node: one selected record (lot id and tract), a scenario and no unit drawn. */
-function nodeLots(lot: { id: string; tract: string } | undefined, scenario: Scenario): LotAgentProvider {
-  const tracts = () => data().tracts;
+const lotTracts = new Map<string, Record<string, string>>();
+/** Tract GEOID of a lot id, from the build's lot_tract.json. null when the place or the lot is not on disk. */
+export function tractOfLot(id: string): string | null {
+  const place = PLACE_BY_COUNTY[id.slice(0, 5)];
+  if (!place) return null;
+  let table = lotTracts.get(place);
+  if (!table) {
+    const f = resolve(lotRoot(place), 'lot_tract.json');
+    table = existsSync(f) ? (JSON.parse(readFileSync(f, 'utf8')) as Record<string, string>) : {};
+    lotTracts.set(place, table);
+  }
+  return table[id] ?? null;
+}
+
+/** A lot record by id: from memory, else from its tract file on disk. */
+async function recordById(id: string): Promise<LotRecord | null> {
+  const loaded = findLoadedLot(id);
+  if (loaded) return loaded;
+  const tract = tractOfLot(id);
+  if (!tract) return null;
+  try {
+    return await loadLot(id, tract, LOAD);
+  } catch {
+    return null;
+  }
+}
+
+/** Lot tools in Node: one selected record (lot id, tract optional), a scenario, the unit on screen (testing mode) and
+ * the default money settings, as the browser has them. */
+function nodeLots(lot: { id: string; tract?: string } | undefined, scenario: Scenario, unit: LotUnit | null): LotAgentProvider {
+  const tractProps = (rec: LotRecord) => data().tracts.features.find((f) => f.properties.GEOID === rec.lot.tract)?.properties;
   return {
-    lotById: async (id) => findLoadedLot(id) ?? null,
-    selectedLot: async () => (lot ? loadLot(lot.id, lot.tract, { baseUrl: BASE_URL, fetch: fileFetch }) : null),
+    lotById: recordById,
+    selectedLot: async () => {
+      if (!lot) return null;
+      const tract = lot.tract ?? tractOfLot(lot.id);
+      return tract ? loadLot(lot.id, tract, LOAD) : null;
+    },
     scenario: () => scenario,
-    unit: () => null,
-    rents: (rec) => tractRents(tracts().features.find((f) => f.properties.GEOID === rec.lot.tract)?.properties),
+    unit: () => unit,
+    rents: (rec) => tractRents(tractProps(rec)),
+    money: (rec) => moneyOptions(rec, DEFAULT_MONEY, tractProps(rec)),
   };
 }
 
 /** A provider with a fixed selection and ADU, as the browser would send. `lot` selects a lot record for the lot tools. */
-export function nodeProvider(opts: { selectedLotId?: string | null; adu?: Adu; rule?: 'current' | 'hb2186'; lot?: { id: string; tract: string }; scenario?: Scenario } = {}): DataProvider {
+export function nodeProvider(
+  opts: { selectedLotId?: string | null; adu?: Adu; rule?: 'current' | 'hb2186'; lot?: { id: string; tract?: string }; scenario?: Scenario; unit?: LotUnit | null } = {},
+): DataProvider {
   return {
-    lots: nodeLots(opts.lot, opts.scenario ?? 'today'),
+    lots: nodeLots(opts.lot, opts.scenario ?? 'today', opts.unit ?? null),
     async lotById(id) {
       const lot = byId(id);
       return lot ? siteOf(lot) : null;
