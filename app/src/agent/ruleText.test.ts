@@ -102,8 +102,47 @@ const FAKE_FILES: Record<string, unknown> = {
     approval: { path: { ...leaf('variance', '27-602 accessory uses, MPC 910.2'), confidence: 'secondary' } },
   },
 };
+const cityLike = (name: string, extra: Record<string, unknown>) => ({
+  provenance: { jurisdiction: name, kind: 'place', status: 'in_force', verified_on: '2026-11-11', checks: [`${name} check one`] },
+  ...extra,
+});
+FAKE_FILES.pa_testing_family = cityLike('Familyton', {
+  adu: { term: leaf('unit for care of relative', '13-02'), status: leaf('family_only', '13-22') },
+  approval: { path: leaf('by_right', '13-04 table'), fallback_path: leaf('variance', 'MPC 910.2') },
+  use: { family_only: { ...leaf(true, '13-22(1)'), note: 'Up to two relatives, one needing care' }, max_adus: { ...leaf(null, 'none'), confidence: 'unverified' } },
+  envelope: { separation_ft: { ...leaf(null, 'not found'), confidence: 'unverified' } },
+  eligibility: { gates: { ...leaf([{ kind: 'care', condition: 'One occupant needs care for illness, old age or disability', effect: 'condition', section: '13-22(2)', url: 'https://ecode360.com/2' }], '13-22') } },
+});
+FAKE_FILES.pa_testing_districts = cityLike('Districtville', {
+  adu: { term: leaf('accessory dwelling', '445-8'), status: leaf('allowed_by_right', '445-12') },
+  approval: {
+    path: leaf('by_right', '445-12'),
+    district_paths: leaf([{ districts: ['INST'], path: 'conditional_use', section: '445-12L' }, { districts: ['CIV'], path: 'special_exception', section: '445-12M' }], '445-12'),
+    historic_path: { ...leaf('by_right', '155-7.1D(2)'), note: 'Zoning permit, no family rule' },
+  },
+  eligibility: {
+    zoning_districts: leaf(['R-6', 'INST', 'CIV'], '445-12'),
+    gates: leaf([{ kind: 'historic', condition: 'Unit inside the historic building', effect: 'condition', when: 'historic', section: '155-7.1B(4)(a)', url: 'https://ecode360.com/3' }], '155-7.1'),
+  },
+  districts: { 'R-6': { min_lot_sqft: leaf(3000, '7-307 RM'), lot_area_per_unit_sqft: leaf(1500, '7-307 RM per unit') } },
+});
+FAKE_FILES.pa_testing_barred = cityLike('Barton', {
+  adu: { term: leaf('accessory apartment', '600-2202'), status: leaf('prohibited', '600-608A') },
+  approval: { path: { ...leaf('variance', '600-608A'), note: 'Unlisted uses are prohibited' }, fallback_path: { ...leaf('variance', '600-609'), note: 'Similar-use special exception is weak here' } },
+});
+TOWNS.push(
+  { geoid: '4299900005', name: 'Familyton borough', county: 'Testing', type: 'borough', population: 3000, file: 'pa_testing_family', status: 'drafted', checked_on: '2026-11-11' },
+  { geoid: '4299900006', name: 'Districtville city', county: 'Testing', type: 'city', population: 3000, file: 'pa_testing_districts', status: 'drafted', checked_on: '2026-11-11', geoid_aliases: ['4299900099'] },
+  { geoid: '4299900007', name: 'Barton city', county: 'Testing', type: 'city', population: 3000, file: 'pa_testing_barred', status: 'drafted', checked_on: '2026-11-11' },
+);
 const FAKE: TownSource = { index: async () => TOWNS, town: async (f) => (FAKE_FILES[f] as never) ?? null };
-type TownOut = Out & { place?: string; town?: { name: string; geoid: string }; adu?: Rule[]; baseline?: string; statewide?: Rule[]; also_matches?: string[] };
+type Cond = { kind: string; condition: string; section: string | null; district?: string; effect?: string };
+type TownOut = Out & {
+  place?: string; town?: { name: string; geoid: string }; baseline?: string; statewide?: Rule[]; also_matches?: string[]; summary?: string;
+  adu?: { status: Rule | null; term: Rule | null }; conditions?: Cond[]; checks?: string[];
+  approval?: { path: Rule; fallback?: Rule; by_district?: { district: string; path: string; section: string }[]; district_path?: { district: string; path: string; section: string | null }; historic_path?: Rule & { conditions: { condition: string; section: string }[] } };
+  not_allowed?: { reasons: string[]; fallback_path: Rule | null }; assumed_defaults?: (Rule & { label: string })[];
+};
 
 describe('get_rule_text for towns', () => {
   it('gives a known town its own values with citations', async () => {
@@ -115,7 +154,7 @@ describe('get_rule_text for towns', () => {
       expect(cap.value).toBe(700);
       expect(cap.section).toBe('27-405.C');
       expect(cap.url).toMatch(/^https:/);
-      expect(out.adu!.find((r) => r.key === 'adu.term')!.value).toBe('accessory apartment');
+      expect(out.adu!.term!.value).toBe('accessory apartment');
     }
   });
 
@@ -140,7 +179,7 @@ describe('get_rule_text for towns', () => {
   it('flags a town whose code does not address ADUs', async () => {
     const out = (await getRuleText({ place: 'Quiet', topic: 'approval' }, FAKE)) as TownOut;
     expect(out.rule_file).toBe(true);
-    expect(out.adu!.find((r) => r.key === 'adu.status')!.value).toBe('not_addressed');
+    expect(out.adu!.status!.value).toBe('not_addressed');
     expect(out.message).toMatch(/does not mention ADUs/);
     expect(out.rules!.find((r) => r.key === 'approval.path')!.value).toBe('variance');
   });
@@ -177,5 +216,78 @@ describe('get_rule_text for towns', () => {
     const out = (await listRulePlaces({ county: 'Allegheny' })) as { places: { county: string; status: string }[] };
     expect(out.places.length).toBeGreaterThan(0);
     expect(out.places.every((p) => p.county === 'Allegheny')).toBe(true);
+  });
+});
+
+describe('get_rule_text puts terms before numbers', () => {
+  it('never shows a family-only town as plain by right', async () => {
+    const out = (await getRuleText({ place: 'Familyton', topic: 'use' }, FAKE)) as TownOut;
+    const keys = Object.keys(out);
+    expect(keys.indexOf('adu')).toBeLessThan(keys.indexOf('rules'));
+    expect(keys.indexOf('conditions')).toBeLessThan(keys.indexOf('rules'));
+    expect(out.summary).toMatch(/family members only/);
+    expect(out.summary).not.toMatch(/^Allowed by right/);
+    expect(out.adu!.status!.value).toBe('family_only');
+    expect(out.conditions!.map((c) => c.kind)).toEqual(expect.arrayContaining(['adu_status', 'family', 'care']));
+    expect(out.checks).toEqual(['Familyton check one']);
+  });
+
+  it('keeps default.json values in a labelled block, apart from the town values', async () => {
+    const out = (await getRuleText({ place: 'Familyton', topic: 'use' }, FAKE)) as TownOut;
+    const mine = out.rules!.find((r) => r.key === 'use.max_adus')!;
+    expect(mine.value).toBeNull();
+    const assumed = out.assumed_defaults!.find((r) => r.key === 'use.max_adus')!;
+    expect(assumed.value).toBe(file('default').use.max_adus.value);
+    expect(assumed.label).toMatch(/Not this town's rule/);
+  });
+
+  it('gives the district path table and the path for one district', async () => {
+    const out = (await getRuleText({ place: 'Districtville', topic: 'approval', district: 'inst' }, FAKE)) as TownOut;
+    expect(out.approval!.by_district!.map((r) => [r.district, r.path])).toEqual([['INST', 'conditional_use'], ['CIV', 'special_exception']]);
+    expect(out.approval!.district_path).toMatchObject({ district: 'INST', path: 'conditional_use', section: '445-12L' });
+    const civ = (await getRuleText({ place: 'Districtville', topic: 'approval', district: 'CIV' }, FAKE)) as TownOut;
+    expect(civ.approval!.district_path!.path).toBe('special_exception');
+    expect(civ.summary).toMatch(/special exception in CIV/);
+  });
+
+  it('returns reasons and the fallback with its section when not allowed', async () => {
+    const out = (await getRuleText({ place: 'Barton', topic: 'size' }, FAKE)) as TownOut;
+    expect(out.not_allowed!.reasons.length).toBeGreaterThan(0);
+    expect(out.not_allowed!.reasons.join(' ')).toMatch(/prohibited/);
+    expect(out.not_allowed!.fallback_path!.section).toBe('600-609');
+  });
+
+  it('gives the historic path with its conditions', async () => {
+    const out = (await getRuleText({ place: 'Districtville', topic: 'approval' }, FAKE)) as TownOut;
+    expect(out.approval!.historic_path!.value).toBe('by_right');
+    expect(out.approval!.historic_path!.conditions[0].section).toBe('155-7.1B(4)(a)');
+  });
+
+  it('states lot area per unit as a condition with its section', async () => {
+    const out = (await getRuleText({ place: 'Districtville', topic: 'eligibility', district: 'R-6' }, FAKE)) as TownOut;
+    const per = out.conditions!.find((c) => c.kind === 'lot_area_per_unit')!;
+    expect(per.condition).toMatch(/3,000 sq ft for a house and an ADU/);
+    expect(per.section).toBe('7-307 RM per unit');
+  });
+
+  it('finds a town by an alias GEOID', async () => {
+    const out = (await getRuleText({ place: '4299900099', topic: 'size' }, FAKE)) as TownOut;
+    expect(out.place).toBe('pa_testing_districts');
+    const real = await townIndex();
+    const beth = findTown(real, '4207706088');
+    expect(beth[0]?.name).toBe('Bethlehem city');
+  });
+
+  it('reads the real family-only and prohibited town files the same way', async () => {
+    const towns = await townIndex();
+    for (const t of towns.filter((x) => x.file.startsWith('pa_') && existsSync(resolve(RULES, `${x.file}.json`)))) {
+      const f = file(t.file);
+      const out = (await getRuleText({ place: t.geoid, topic: 'approval' })) as TownOut;
+      expect(out.rule_file, t.file).toBe(true);
+      expect(out.adu!.status!.value, t.file).toBe(f.adu.status.value);
+      expect(out.checks, t.file).toEqual(f.provenance.checks ?? []);
+      if (f.adu.status.value === 'family_only') expect(out.summary, t.file).toMatch(/family members only/);
+      if (['not_addressed', 'prohibited'].includes(f.adu.status.value)) expect(out.not_allowed!.reasons.length, t.file).toBeGreaterThan(0);
+    }
   });
 });

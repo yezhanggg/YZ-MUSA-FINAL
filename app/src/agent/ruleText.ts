@@ -86,6 +86,8 @@ const isObj = (v: Json | undefined): v is Obj => !!v && typeof v === 'object' &&
 
 export interface TownEntry {
   geoid: string;
+  /** Other GEOIDs of the same place, e.g. the part of a city in a second county. */
+  geoid_aliases?: string[];
   name: string;
   county: string;
   type: string;
@@ -127,7 +129,7 @@ export async function townIndex(): Promise<TownEntry[]> {
 /** Index entries for a name, "name, county", "county: name", GEOID or file name. Largest town first. */
 export function findTown(towns: TownEntry[], place: string, county?: string | null): TownEntry[] {
   let text = place.trim();
-  if (/^42\d{8}$/.test(text)) return towns.filter((t) => t.geoid === text);
+  if (/^42\d{8}$/.test(text)) return towns.filter((t) => t.geoid === text || (t.geoid_aliases ?? []).includes(text));
   const byFile = towns.filter((t) => t.file === text);
   if (byFile.length) return byFile;
   if (!county) {
@@ -184,6 +186,167 @@ const townOut = (t: TownEntry) => ({
   name: t.name, county: t.county, geoid: t.geoid, status: t.status, checked_on: t.checked_on,
   code_host: t.code_host ?? null, code_url: t.code_url ?? null, code_current_through: t.code_current_through ?? null,
 });
+
+const label = (v: Json | undefined) => (typeof v === 'string' ? v.replace(/_/g, ' ') : v === null || v === undefined ? 'not set' : String(v));
+const dkey = (d: string) => d.toUpperCase().replace(/[\s-]/g, '');
+const districtIn = (list: string[], want: string) => list.find((d) => dkey(d) === dkey(want));
+const leafAt = (file: Obj, part: string, key: string): Obj | null => {
+  const block = file[part];
+  return isObj(block) && isObj(block[key]) ? block[key] : null;
+};
+const cite = (leaf: Obj | null): Obj => (leaf ? { section: leaf.section ?? null, url: leaf.url ?? null, checked_on: leaf.verified_on ?? null, confidence: leaf.confidence ?? null } : {});
+const cond = (kind: string, condition: string, leaf: Obj | null, extra: Obj = {}): Obj => ({ kind, condition, ...cite(leaf), ...extra });
+const NOT_OK = new Set(['variance', 'not_allowed']);
+const NO_ADU = new Set(['not_addressed', 'prohibited']);
+const LIMITED: Record<string, string> = {
+  family_only: 'Limited: family members only',
+  conversion_only: 'Limited: only inside an existing building',
+  special_exception: 'Needs a special exception (Zoning Hearing Board)',
+  conditional_use: 'Needs conditional use approval (governing body)',
+  not_addressed: 'The code does not mention ADUs',
+  prohibited: 'The code bars ADUs',
+  allowed_by_right: 'Allowed by right',
+};
+
+/** Who may live there and the other gates, each with its section. Never decides, only states. */
+function conditionsOf(file: Obj, district: string | null): Obj[] {
+  const out: Obj[] = [];
+  const st = leafAt(file, 'adu', 'status');
+  if (st && st.value && st.value !== 'allowed_by_right') out.push(cond('adu_status', `${LIMITED[st.value as string] ?? label(st.value)}. ${st.note ?? ''}`.trim(), st));
+  const occ = leafAt(file, 'use', 'occupancy');
+  if (occ && occ.value) out.push(cond('occupancy', String(occ.value), occ));
+  const fam = leafAt(file, 'use', 'family_only');
+  if (fam && fam.value === true) out.push(cond('family', String(fam.note ?? 'Occupants must be family members'), fam));
+  const own = leafAt(file, 'use', 'owner_occupancy');
+  if (own && own.value === true) out.push(cond('owner_occupancy', String(own.note ?? 'The owner must live on the lot'), own));
+  const ex = leafAt(file, 'eligibility', 'existing_structure_only');
+  if (ex && ex.value === true) out.push(cond('existing_structure', String(ex.note ?? 'Only inside an existing building'), ex));
+  const bt = leafAt(file, 'eligibility', 'building_types');
+  if (bt && Array.isArray(bt.value) && bt.value.length) out.push(cond('building_type', `House type must be ${bt.value.map(label).join(' or ')}`, bt));
+  const zd = leafAt(file, 'eligibility', 'zoning_districts');
+  if (zd && Array.isArray(zd.value) && zd.value.length) out.push(cond('district', `Zoning districts: ${zd.value.join(', ')}`, zd));
+  const ml = leafAt(file, 'eligibility', 'min_lot_sqft');
+  if (ml && typeof ml.value === 'number') out.push(cond('lot_size', `Lot of at least ${ml.value.toLocaleString('en-US')} sq ft`, ml));
+  const per = leafAt(file, 'eligibility', 'lot_area_per_unit_sqft');
+  if (per && typeof per.value === 'number')
+    out.push(cond('lot_area_per_unit', `${per.value.toLocaleString('en-US')} sq ft of lot per dwelling unit, so ${(2 * per.value).toLocaleString('en-US')} sq ft for a house and an ADU`, per));
+  const districts = isObj(file.districts) ? file.districts : {};
+  const rowKey = district ? districtIn(Object.keys(districts), district) : undefined;
+  for (const [code, row] of Object.entries(districts)) {
+    if (!isObj(row) || (rowKey && code !== rowKey)) continue;
+    const p = isObj(row.lot_area_per_unit_sqft) ? row.lot_area_per_unit_sqft : null;
+    if (p && typeof p.value === 'number')
+      out.push(cond('lot_area_per_unit', `${code}: ${p.value.toLocaleString('en-US')} sq ft of lot per dwelling unit, so ${(2 * p.value).toLocaleString('en-US')} sq ft for a house and an ADU`, p, { district: code }));
+    const m = isObj(row.min_lot_sqft) ? row.min_lot_sqft : null;
+    if (rowKey && m && typeof m.value === 'number')
+      out.push(cond('lot_size', `${code}: lot of at least ${m.value.toLocaleString('en-US')} sq ft${m.note ? `. ${m.note}` : ''}`, m, { district: code }));
+  }
+  const gates = leafAt(file, 'eligibility', 'gates');
+  for (const g of Array.isArray(gates?.value) ? gates!.value : []) {
+    if (!isObj(g)) continue;
+    if (rowKey && Array.isArray(g.districts) && !g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(rowKey))) continue;
+    const scope: Obj = {};
+    for (const k of ['applies_to', 'districts', 'building_types', 'when', 'effect']) if (g[k] !== undefined && g[k] !== null) scope[k] = g[k];
+    out.push({ kind: g.kind ?? 'other', condition: g.condition ?? '', section: g.section ?? null, url: g.url ?? gates!.url ?? null, checked_on: gates!.verified_on ?? null, confidence: gates!.confidence ?? null, ...scope });
+  }
+  const si = leafAt(file, 'size', 'max_share_internal');
+  if (si && typeof si.value === 'number') out.push(cond('size', `A unit inside or attached to the house: at most ${Math.round(si.value * 100)}% of the house`, si));
+  const pt = leafAt(file, 'parking', 'total_on_site');
+  if (pt && typeof pt.value === 'number') out.push(cond('parking', `${pt.value} off-street spaces in total on the lot, house and ADU together`, pt));
+  const pr = leafAt(file, 'parking', 'reading');
+  if (pr && pr.value) out.push(cond('parking', String(pr.value), pr));
+  return out;
+}
+
+/** The approval path with district paths, the historic path and the fallback. */
+function approvalOf(file: Obj, district: string | null) {
+  const path = leafAt(file, 'approval', 'path');
+  const fallback = leafAt(file, 'approval', 'fallback_path');
+  const byDistrict: Obj[] = [];
+  const dp = leafAt(file, 'approval', 'district_paths');
+  for (const item of Array.isArray(dp?.value) ? dp!.value : [])
+    if (isObj(item)) for (const d of Array.isArray(item.districts) ? item.districts : []) byDistrict.push({ district: d, path: item.path ?? null, section: item.section ?? null, url: item.url ?? dp!.url ?? null, note: item.note ?? null });
+  const districts = isObj(file.districts) ? file.districts : {};
+  for (const [code, row] of Object.entries(districts)) {
+    const a = isObj(row) && isObj(row.adu_path) ? row.adu_path : null;
+    if (a && a.value) {
+      const i = byDistrict.findIndex((r) => r.district === code);
+      const entry = { district: code, path: a.value, section: a.section ?? null, url: a.url ?? null, note: a.note ?? null };
+      if (i >= 0) byDistrict[i] = entry;
+      else byDistrict.push(entry);
+    }
+  }
+  const out: Obj = { path: ruleOut('approval.path', path ?? undefined) };
+  if (fallback) out.fallback = ruleOut('approval.fallback_path', fallback);
+  if (byDistrict.length) out.by_district = byDistrict;
+  if (district) {
+    const hit = byDistrict.find((r) => dkey(String(r.district)) === dkey(district));
+    const zd = leafAt(file, 'eligibility', 'zoning_districts');
+    const listed = Array.isArray(zd?.value) ? zd!.value.some((d) => typeof d === 'string' && dkey(d) === dkey(district)) : null;
+    out.district_path = hit
+      ? hit
+      : listed === false
+        ? { district, path: fallback?.value ?? 'variance', section: fallback?.section ?? zd?.section ?? null, url: fallback?.url ?? zd?.url ?? null, note: 'District not listed for ADUs' }
+        : { district, path: path?.value ?? null, section: path?.section ?? null, url: path?.url ?? null, note: listed ? null : 'No district-specific path in the file' };
+  }
+  const hist = leafAt(file, 'approval', 'historic_path');
+  if (hist && hist.value) {
+    const gates = leafAt(file, 'eligibility', 'gates');
+    const hc = (Array.isArray(gates?.value) ? gates!.value : []).filter((g) => isObj(g) && g.when === 'historic').map((g) => (isObj(g) ? { condition: g.condition ?? '', section: g.section ?? null } : null));
+    out.historic_path = { ...ruleOut('approval.historic_path', hist), conditions: hc };
+  }
+  return out;
+}
+
+/** adu, approval, conditions, checks and (when it is not allowed) the reasons and fallback. */
+function placeTerms(file: Obj, district: string | null, name: string): Obj {
+  const prov = isObj(file.provenance) ? file.provenance : {};
+  const st = leafAt(file, 'adu', 'status');
+  const term = leafAt(file, 'adu', 'term');
+  const approval = approvalOf(file, district);
+  const conditions = conditionsOf(file, district);
+  const path = leafAt(file, 'approval', 'path');
+  const fallback = leafAt(file, 'approval', 'fallback_path');
+  const dpath = isObj(approval.district_path) ? approval.district_path.path : undefined;
+  const status = st?.value as string | undefined;
+  const effective = (dpath ?? path?.value) as string | undefined;
+  const head = status === 'allowed_by_right' && effective && effective !== 'by_right' ? null : LIMITED[status ?? ''] ?? (status ? label(status) : null);
+  const parts = [head, effective ? `path: ${label(effective)}${district ? ` in ${district}` : ''}` : null];
+  if (conditions.length) parts.push(`${conditions.length} condition${conditions.length > 1 ? 's' : ''} below`);
+  const out: Obj = {
+    summary: parts.filter(Boolean).join('. '),
+    adu: { status: st ? ruleOut('adu.status', st) : null, term: term ? ruleOut('adu.term', term) : null },
+    approval,
+    conditions,
+    checks: (prov.checks as Json) ?? [],
+  };
+  if ((status && NO_ADU.has(status)) || (effective && NOT_OK.has(effective))) {
+    const reasons = [st?.note, path?.note, fallback?.note].filter((x): x is string => typeof x === 'string' && !!x);
+    const fb = fallback ?? path;
+    out.not_allowed = {
+      reasons: reasons.length ? reasons : [`${name}'s code gives no path for an ADU here`],
+      fallback_path: fb ? ruleOut(fallback ? 'approval.fallback_path' : 'approval.path', fb) : null,
+    };
+    if (status === 'not_addressed')
+      out.message = `${name}'s zoning code does not mention ADUs. The path shown is the nearest one the code supports, often a use variance. Ask the municipal zoning officer.`;
+  }
+  return out;
+}
+
+/** Values the town file leaves unconfirmed, filled from default.json and labelled as not the town's rule. */
+async function assumedDefaults(rules: Obj[]): Promise<Obj[]> {
+  const gaps = rules.filter((r) => r.value === null && r.confidence === 'unverified');
+  if (!gaps.length) return [];
+  const def = (await FILES.building_code()).default as unknown as Obj;
+  const out: Obj[] = [];
+  for (const r of gaps) {
+    const [part, key] = String(r.key).split('.');
+    const leaf = leafAt(def, part, key);
+    if (leaf && leaf.value !== null && leaf.value !== undefined)
+      out.push({ ...ruleOut(String(r.key), leaf), label: "Building code default or planning assumption from default.json. Not this town's rule." });
+  }
+  return out;
+}
 
 /** Where town data comes from. Tests pass their own. */
 export interface TownSource {
@@ -252,15 +415,19 @@ export async function getRuleText(input: { place?: unknown; county?: unknown; to
     if (key === '*') for (const [k, v] of Object.entries(block)) rules.push(ruleOut(`${part}.${k}`, v));
     else if (key in block) rules.push(ruleOut(`${part}.${key}`, block[key]));
   }
-  const out: Obj = { place, rule_file: true, topic, status, rules };
+  const isPlace = prov.kind === 'place';
+  const wantDistrict = typeof input.district === 'string' && input.district.trim() ? input.district.trim() : null;
+  const out: Obj = { place, rule_file: true };
   if (town && town.file === place && place.startsWith('pa_')) {
     out.town = { ...townOut(town), code_url: (prov.code_url as string) ?? town.code_url ?? null, code_current_through: (prov.code_current_through as string) ?? town.code_current_through ?? null };
-    const adu = isObj(file.adu) ? file.adu : {};
-    out.adu = Object.entries(adu).map(([k, v]) => ruleOut(`adu.${k}`, v));
-    const st = isObj(adu.status) ? adu.status.value : null;
-    if (st === 'not_addressed')
-      out.message = `${town.name}'s zoning code does not mention ADUs. The approval path shown is the nearest one the code supports, often a use variance. Ask the municipal zoning officer.`;
     if (alsoMatches.length) out.also_matches = alsoMatches;
+  }
+  // What the town allows and on what terms comes first, before any number.
+  if (isPlace) Object.assign(out, placeTerms(file, wantDistrict, town?.name ?? place));
+  Object.assign(out, { topic, status, rules });
+  if (isPlace) {
+    const defaults = await assumedDefaults(rules);
+    if (defaults.length) out.assumed_defaults = defaults;
   }
   if (topic === 'status') {
     out.checks = prov.checks ?? [];
@@ -270,12 +437,11 @@ export async function getRuleText(input: { place?: unknown; county?: unknown; to
     if (prov.does_not_reach) out.does_not_reach = prov.does_not_reach;
   }
   const districts = isObj(file.districts) ? file.districts : null;
-  if (typeof input.district === 'string' && input.district.trim()) {
-    const want = input.district.trim().toUpperCase().replace(/\s+/g, '');
-    const hit = districts ? Object.keys(districts).find((d) => d.toUpperCase().replace(/[\s-]/g, '') === want.replace(/-/g, '')) : undefined;
+  if (wantDistrict) {
+    const hit = districtIn(districts ? Object.keys(districts) : [], wantDistrict);
     const row = hit && districts ? districts[hit] : null;
-    out.district = hit ?? want;
-    out.district_rules = isObj(row) ? Object.entries(row).map(([k, v]) => ruleOut(k, v)) : `No row for district ${want} in the ${place} rule file.`;
+    out.district = hit ?? wantDistrict.toUpperCase();
+    out.district_rules = isObj(row) ? Object.entries(row).map(([k, v]) => ruleOut(k, v)) : `No row for district ${wantDistrict} in the ${place} rule file.`;
   }
   if (rules.length === 0 && topic !== 'status') out.message = [out.message, `The ${place} rule file has nothing on ${topic}.`].filter(Boolean).join(' ');
   out.notice = NOTICE;
