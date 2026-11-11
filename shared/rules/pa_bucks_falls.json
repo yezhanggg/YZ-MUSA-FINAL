@@ -1,0 +1,484 @@
+{
+  "provenance": {
+    "jurisdiction": "Falls township",
+    "instrument": "Code of the Township of Falls (Bucks County), Chapter 209 Zoning, with Tables 1 and 1A (209 Attachments 1 and 2), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code FA0549) dated 2021-08-16. New Laws lists 19 ordinances from 2021-10-18 to 2026-10-26. The only Chapter 209 items are two zoning map amendments (Ord. 2021-16 and 2026-3, not codified map changes). No zoning text amendment is listed. The code is old, so the township may hold text amendments that eCode360 has not received.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/7125081",
+      "https://ecode360.com/7125099",
+      "https://ecode360.com/7125294",
+      "https://ecode360.com/7125295",
+      "https://ecode360.com/7125354",
+      "https://ecode360.com/7125376",
+      "https://ecode360.com/7125442",
+      "https://ecode360.com/7125491",
+      "https://ecode360.com/7125680",
+      "https://ecode360.com/7126834",
+      "https://ecode360.com/7127007",
+      "https://ecode360.com/13123817",
+      "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+      "https://ecode360.com/attachment/264886/FA0549-209b%20Table%201A%20HR%20District.pdf",
+      "https://ecode360.com/print/FA0549?guid=7125081",
+      "https://ecode360.com/FA0549/laws",
+      "https://ecode360.com/FA0549"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201725112",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/7125081",
+    "code_current_through": "2021-08-16",
+    "code_current_through_note": "eCode360 code date 2021-08-16. New Laws (19), none a Chapter 209 text amendment. Map amendments Ord. 2021-16 (2021-12-20) and 2026-3 (2026-10-26).",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "A single-family detached dwelling has 'only one dwelling unit from ground to roof' (209-5). LR, LMR, MR, MHR and NCR list only the single-family detached dwelling as a housing type",
+      "HR allows a two-family (twin or duplex) dwelling by right on an 8,000 sq ft lot, 80 ft wide, with a density cap of 10 units per gross acre (209-16B(11), 209-16E, Table 1A)",
+      "Accessory buildings up to 500 sq ft and 16 ft high: 4 ft from side and rear lines and 10 ft from other buildings on the lot (Table 1). Larger ones 'shall meet the area and dimensional requirements for principal buildings' (209-12E(6))",
+      "Accessory buildings stand in the side or rear yard only (209-34E)",
+      "eCode360 text dates from 2021-08-16. Ask the township for any zoning text amendment adopted since then"
+    ],
+    "notes": "Zoning office: Falls Township Code Enforcement and Zoning. Township site not opened. Searched Chapter 209 (full print view) for: accessory dwelling, accessory apartment, in-law, mother-in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, au pair, servant, conversion, kitchen. No ADU provision. Tables are PDF attachments, read on screen."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "209-5, Articles IV and V",
+      "url": "https://ecode360.com/7125099",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, mother-in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, au pair, servant, conversion, kitchen."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "209-12B, 209-13B, 209-14, 209-15, 209-20",
+      "url": "https://ecode360.com/7125295",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text. A single-family detached dwelling has 'only one dwelling unit from ground to roof'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "209-11, 209-12B, 209-77",
+      "url": "https://ecode360.com/7125294",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: no land may be used 'in any manner other than in conformity with this chapter'. A second unit is not a listed use in the single-family districts. A use variance is the path."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "209-77",
+      "url": "https://ecode360.com/13123817",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path. No general similar-use special exception for residential districts was found."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (twin or duplex)",
+          "path": "by_right",
+          "districts": [
+            "HR"
+          ],
+          "conditions": "Lot 8,000 sq ft, 50 ft frontage, 80 ft width. Front 25, sides 10 each, rear 35 ft. Coverage 30%. Density cap 10 units per gross acre.",
+          "min_lot_sqft": 8000,
+          "section": "209-16B(11), 209-16E, Table 1A",
+          "url": "https://ecode360.com/attachment/264886/FA0549-209b%20Table%201A%20HR%20District.pdf"
+        }
+      ],
+      "section": "209-16, Table 1A",
+      "url": "https://ecode360.com/7125491",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Not an ADU. Table 1A: two-family dwelling lot area 8,000 sq ft."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "209-12 to 209-20",
+      "url": "https://ecode360.com/7125295",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 209",
+      "url": "https://ecode360.com/7125081",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "209-5, 209-12B",
+      "url": "https://ecode360.com/7125099",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 16,
+      "section": "209-12E(6), 209-13C(6)",
+      "url": "https://ecode360.com/7125295",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule, not an ADU rule. Accessory buildings 'do not exceed 500 square feet in floor area and 16 feet in height'. Larger ones follow the principal building rules (30 ft)."
+    },
+    "setback_side_ft": {
+      "value": 4,
+      "section": "Table 1",
+      "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory building 'Distance to side line' 4 ft in LR, LMR, OSP, MR, MHR, NCR. Only for buildings up to 500 sq ft and 16 ft."
+    },
+    "setback_rear_ft": {
+      "value": 4,
+      "section": "Table 1",
+      "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory building 'Distance to rear line' 4 ft. Only for buildings up to 500 sq ft and 16 ft."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "Table 1",
+      "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Distance between buildings on lot' 10 ft."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "209-5 'Family'",
+      "url": "https://ecode360.com/7125099",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A family has 'single cooking facilities' and may include up to five unrelated people."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "209-5, 209-12B",
+      "url": "https://ecode360.com/7125295",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "209-42H(1)",
+      "url": "https://ecode360.com/7127007",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Single-family detached houses ...: two adjacent, side-by-side spaces.'"
+    }
+  },
+  "districts": {
+    "LR": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building, each side. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "setback_rear_ft": {
+        "value": 80,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal and accessory buildings together."
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "209-12",
+        "url": "https://ecode360.com/7125295",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'No building and/or structure shall exceed 30 feet in height'"
+      },
+      "separation_ft": {
+        "value": 10,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Distance between buildings on lot."
+      }
+    },
+    "LMR": {
+      "min_lot_sqft": {
+        "value": 12500,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building, each side. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal and accessory buildings together."
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "209-13",
+        "url": "https://ecode360.com/7125354",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'No building and/or structure shall exceed 30 feet in height'"
+      },
+      "separation_ft": {
+        "value": 10,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Distance between buildings on lot."
+      }
+    },
+    "MR": {
+      "min_lot_sqft": {
+        "value": 12500,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building, each side. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal and accessory buildings together."
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "209-14",
+        "url": "https://ecode360.com/7125376",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'No building and/or structure shall exceed 30 feet in height'"
+      },
+      "separation_ft": {
+        "value": 10,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Distance between buildings on lot."
+      }
+    },
+    "MHR": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building, each side. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal and accessory buildings together."
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "209-15",
+        "url": "https://ecode360.com/7125442",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'No building and/or structure shall exceed 30 feet in height'"
+      },
+      "separation_ft": {
+        "value": 10,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Distance between buildings on lot."
+      }
+    },
+    "NCR": {
+      "min_lot_sqft": {
+        "value": 10500,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building, each side. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building. Accessory buildings up to 500 sq ft: 4 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal and accessory buildings together."
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "209-20",
+        "url": "https://ecode360.com/7125680",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'No building and/or structure shall exceed 30 feet in height'"
+      },
+      "separation_ft": {
+        "value": 10,
+        "section": "Table 1",
+        "url": "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Distance between buildings on lot."
+      }
+    }
+  }
+}
