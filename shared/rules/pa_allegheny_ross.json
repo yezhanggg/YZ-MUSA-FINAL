@@ -1,0 +1,493 @@
+{
+  "provenance": {
+    "jurisdiction": "Ross township",
+    "instrument": "Code of the Township of Ross, Chapter 27 Zoning, as published on eCode360, with the Table of Use Regulations (27 Attachment 1) and the Residential Use Dimensional Regulations Table (27 Attachment 2)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code RO2521): includes legislation through 04-20-2026. The use table carries Ord. No. 2564 of 3/16/2026. New Laws (4): Ord. 2568 to 2571 (Ch 1, 13, 15). None amends Chapter 27. Read in the eCode360 print view and the attachment PDFs in a browser.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/RO2521",
+      "https://ecode360.com/RO2521/laws",
+      "https://ecode360.com/print/RO2521?guid=30842452",
+      "https://ecode360.com/30842452",
+      "https://ecode360.com/31083989",
+      "https://ecode360.com/31084617",
+      "https://ecode360.com/31084620",
+      "https://ecode360.com/31084626",
+      "https://ecode360.com/31084637",
+      "https://ecode360.com/attachment/337943/RO2521-027a%20Table%20of%20Use%20Regulations.pdf",
+      "https://ecode360.com/31084638",
+      "https://ecode360.com/31085363",
+      "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+      "https://ecode360.com/31085383",
+      "https://ecode360.com/31085389",
+      "https://ecode360.com/31080599",
+      "https://www.ross.pa.us/35/Community-Development",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200366264",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30842452",
+    "code_current_through": "2026-04-20",
+    "code_current_through_note": "eCode360: Includes legislation through 04-20-2026. New Laws (4), none for Chapter 27.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit or accessory apartment rule. The Table of Use Regulations has no ADU row. Land may be used only for uses permitted in 27-906 (27-901.1)",
+      "Uses similar to those in the Table of Use Regulations 'shall be permitted by conditional use' by the Board of Commissioners after Planning Commission review (27-904). Reading: a second unit may be heard this way. If not, a use variance",
+      "R-1 allows 'Only one primary or main building' per lot (27-901.2)",
+      "The accessory building definition includes 'guest houses, and domestic servant or caretaker living quarters for those employed on the premises'. Residential accessory structures are permitted in all residential districts (27-202, Table of Use Regulations)",
+      "Residential accessory buildings: at most two per lot, 720 sq ft combined, 14 ft high to the peak. 5 ft from side lines, 15 ft from the rear line (100 to 720 sq ft). Not in the required front yard (27-906.6.D)",
+      "Two-family dwellings are permitted in R-2, R-3 and R-4. Duplex lot area 5,000 sq ft per dwelling unit, 100 ft wide for two units (Table of Use Regulations, 27 Attachment 2)",
+      "Conversion of an existing single-family detached dwelling into two or more apartments is a conditional use in R-2 and permitted in R-3 and R-4. 2,000 sq ft of lot per dwelling unit. 1.5 parking spaces per unit (27-202, 27-906.1.E)",
+      "Parking for a single-family detached dwelling: two spaces per dwelling unit, one in a garage (27-906.1.A)",
+      "Owners of rental property report the names of their tenants to the Earned Income Tax Collector within 15 days of occupancy (11-101)"
+    ],
+    "notes": "Zoning office: Community Development Department, https://www.ross.pa.us/35/Community-Development. Searched Chapter 27 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion, family suite. Pending: none on the New Laws list."
+  },
+  "adu": {
+    "term": {
+      "value": "domestic servant or caretaker living quarters",
+      "section": "27-202 'Building, accessory'",
+      "url": "https://ecode360.com/31083989",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU term. The accessory building definition includes 'domestic servant or caretaker living quarters for those employed on the premises'. Not a general ADU."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-901.1, 27-905 Table of Use Regulations",
+      "url": "https://ecode360.com/attachment/337943/RO2521-027a%20Table%20of%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading of a silent code. No ADU row in the use table. Only servant or caretaker quarters and guest houses are named, inside the accessory building definition."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "conditional_use",
+      "section": "27-904",
+      "url": "https://ecode360.com/31084626",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Uses similar to those set forth in the following Table of Use Regulations ... shall be permitted by conditional use'. Reading: a second unit may be heard as a similar use. Board of Commissioners hearing."
+    },
+    "unlisted_use_path": {
+      "value": "conditional_use",
+      "section": "27-904",
+      "url": "https://ecode360.com/31084626",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Similar uses by conditional use, after Planning Commission review. The use must have impact equal to or less than a listed use and meet the district area and bulk rules (27-904.1.A, B)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-901.1, MPC 910.2",
+      "url": "https://ecode360.com/31084617",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "If the Board does not treat the unit as a similar use, or the lot fails a rule, a use variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Domestic servant or caretaker living quarters (accessory building)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3",
+            "R-4",
+            "R-5"
+          ],
+          "conditions": "Only for those employed on the premises. Residential accessory building rules: 720 sq ft combined, 14 ft high, 5 ft side, 15 ft rear.",
+          "min_lot_sqft": null,
+          "section": "27-202 'Building, accessory', 27-906.6.D, Table of Use Regulations",
+          "url": "https://ecode360.com/31083989"
+        },
+        {
+          "name": "Two-family dwelling (duplex)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Duplex lot area 5,000 sq ft per dwelling unit, 100 ft wide for two units. Front 25, side 10, rear 30 ft. Two spaces per unit, one in a garage.",
+          "min_lot_sqft": 10000,
+          "section": "Table of Use Regulations, 27 Attachment 2, 27-906.1.B",
+          "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf"
+        },
+        {
+          "name": "Conversion of a single-family house into apartments",
+          "path": "conditional_use",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Existing single-family detached dwelling. 2,000 sq ft of lot per unit. Exterior changes need Board of Commissioners approval. Stairs not on the front wall. 1.5 spaces per unit.",
+          "min_lot_sqft": 4000,
+          "section": "27-202 'Conversion', 27-906.1.E, Table of Use Regulations",
+          "url": "https://ecode360.com/31084638"
+        },
+        {
+          "name": "Conversion of a single-family house into apartments",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Existing single-family detached dwelling. 2,000 sq ft of lot per unit. Exterior changes need Board of Commissioners approval. 1.5 spaces per unit.",
+          "min_lot_sqft": 4000,
+          "section": "27-202 'Conversion', 27-906.1.E, Table of Use Regulations",
+          "url": "https://ecode360.com/31084638"
+        }
+      ],
+      "section": "27-906.1, Table of Use Regulations",
+      "url": "https://ecode360.com/attachment/337943/RO2521-027a%20Table%20of%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Use table rows 'Two-Family' N P P P N and 'Conversion' N C P P N for R-1 to R-5."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "27-905 Table of Use Regulations",
+      "url": "https://ecode360.com/attachment/337943/RO2521-027a%20Table%20of%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30842452",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "district",
+          "condition": "R-1: 'Only one primary or main building may be erected on a single lot'. Reading: a detached unit is possible only as an accessory building, not as a second house.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-901.2",
+          "url": "https://ecode360.com/31084617"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "The accessory living quarters named in the code are for domestic servants or caretakers 'employed on the premises', or guest houses.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-202 'Building, accessory'",
+          "url": "https://ecode360.com/31083989"
+        },
+        {
+          "kind": "other",
+          "condition": "Residential accessory buildings: at most two per lot, 720 sq ft combined, 14 ft to the peak, not in the required front yard.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-906.6.D(1)",
+          "url": "https://ecode360.com/31084638"
+        },
+        {
+          "kind": "other",
+          "condition": "Owners of rental property report their tenants to the Earned Income Tax Collector within 15 days of occupancy.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "11-101",
+          "url": "https://ecode360.com/31080599"
+        }
+      ],
+      "section": "27-901.2, 27-202, 27-906.6.D, 11-101",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Rules that reach any second unit."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-904, 27-905 Table of Use Regulations",
+      "url": "https://ecode360.com/31084626",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Similar-use route: no form is written, so none is excluded. In R-1 a second main building is barred (27-901.2). A detached unit is bound by the 720 sq ft and 14 ft accessory caps."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 14,
+      "section": "27-906.6.D(1)(d)",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule, not an ADU rule: 'the height of each shall not exceed 14 feet as measured from the finished floor level to the peak'."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 720,
+      "section": "27-906.6.D(1)(d)",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'No more than two residential accessory buildings with a combined square footage of 720 square feet'."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "27-906.6.D(1)(a), 27-1006.3",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No number. Not in the required front yard."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "27-906.6.D(1)(b), 27-1007.5",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall not be located closer than five feet to any side property line'."
+    },
+    "setback_rear_ft": {
+      "value": 15,
+      "section": "27-906.6.D(1)(c), 27-1008.1.B",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "15 ft for buildings of 100 to 720 sq ft. 5 ft under 100 sq ft."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "27-906.6.D",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No distance between buildings found."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "27-1007.5, 27-1008.1.B",
+      "url": "https://ecode360.com/31085383",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Detached accessory buildings 'may occupy a required side yard' and a required rear yard."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27 Attachment 2",
+      "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A unit inside or attached to the house takes the 2-story, 35 ft district height."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30842452",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "27-202 'Family'",
+      "url": "https://ecode360.com/31083989",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule. A family may include 'domestic servants or gratuitous guests' with 'single cooking facilities'."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30842452",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in Chapter 27."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "27-904",
+      "url": "https://ecode360.com/31084626",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No count. The code lists no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-906.1.A",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "Single-family detached: two spaces per dwelling unit, at least one in a garage. If the second unit counts as a dwelling unit, four in total. A conversion needs 1.5 per unit.",
+      "section": "27-906.1.A(1), 27-906.1.E(4)",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "27 Attachment 2, R-1 single-family",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "10,000 sq ft per dwelling unit, 75 ft wide, 4 units per acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2-story/35 feet max.'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 6500,
+        "section": "27 Attachment 2, R-2 single-family",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "6,500 sq ft, 60 ft wide. Duplex 5,000 sq ft per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2-story/35 feet max.'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 6500,
+        "section": "27 Attachment 2, R-3 single-family",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "6,500 sq ft, 60 ft wide. Duplex 5,000 sq ft per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7.5,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27 Attachment 2",
+        "url": "https://ecode360.com/attachment/337943/RO2521-027b%20Residential%20Use%20Dimensional%20Regulations%20Table.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2-story/35 feet max.'"
+      }
+    }
+  }
+}
