@@ -27,7 +27,9 @@
       "https://ecode360.com/11228060",
       "https://ecode360.com/39692441",
       "https://www.lmt.org/departments/community-development/",
-      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt",
+      "https://ecode360.com/11226396",
+      "https://ecode360.com/11226398"
     ],
     "verified_on": "2026-11-11",
     "county": "Bucks",
@@ -42,12 +44,14 @@
       "R-1 and R-2 allow only single-family detached dwellings. A second unit on such a lot needs a use variance",
       "A dwelling unit is a unit with living, sleeping, cooking, bathing and eating facilities for one family (200-7)",
       "Two-family dwellings are a use by right in R-3 and R-4 (200-24A(4), 200-32A(5)). In R-3 they are a development type: 10-acre tract, 6,000 sq ft of net lot area per dwelling unit, 40% of the site in resource protection and open space (200-26A)",
-      "Boarding: up to two boarders in a single-family detached house by special exception in R-1, on 16,000 sq ft, with no added rooms (200-15B(10), 200-69A(3)). Boarders do not get a separate unit",
+      "Boarding: up to two boarders in a single-family detached house by special exception in R-1, on 16,000 sq ft, with no added rooms. 'No separate cooking facilities or dwelling may be created' (200-15B(10), 200-69A(3)(b), (d))",
       "Residential accessory buildings: behind the middle of the house depth, 15 ft high. 5 ft from side and rear lines under 200 sq ft, 10 ft from any line above 200 sq ft (200-69A(14)(a))",
       "Parking: two spaces per dwelling unit for a single-family detached dwelling, 2.5 per unit for other residential uses (200-79A)",
-      "Short-term lodging is barred except owner-occupied rental of up to two bedrooms, or rental of a whole unit for 7 to 30 days, with a township license (130-3, 130-4)"
+      "Short-term lodging is barred except owner-occupied rental of up to two bedrooms, or rental of a whole unit for 7 to 30 days. Each facility needs an annual license and may not be rented more than 120 days a year (130-3, 130-4)",
+      "Yards depend on the lot's size tier. R-1 (200-18): 1 acre and 40,000 sq ft lots 50/25/75 ft, 34,000 50/25/70, 25,000 and 22,000 40/20/70, 16,500 and 15,000 35/15/45. R-2 (200-22): 34,000 40/15/50, 16,000 and 15,000 35/15/45, 12,500 (cluster) 30/15/45. The district rows hold the smallest conventional tier",
+      "R-2 lots recorded before January 1, 1947 and 100 ft wide or less: two side yards of at least 10 ft each and 26 ft combined (200-22 note 3)"
     ],
-    "notes": "Zoning office: Community Development Department, https://www.lmt.org/departments/community-development/. Searched Chapter 200 for: accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion, family suite. Pending: none for dwellings on the New Laws list."
+    "notes": "Zoning office: Community Development Department, https://www.lmt.org/departments/community-development/. Searched Chapter 200 for: accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion, family suite. Pending: none for dwellings on the New Laws list. Review fixes 2026-11-11: R-2 minimum lot 15,000, lot tiers, boarding (d), short-term lodging license and 120 days."
   },
   "adu": {
     "term": {
@@ -137,14 +141,14 @@
       "value": [
         {
           "kind": "other",
-          "condition": "Short-term lodging is barred except owner-occupied rental of up to two bedrooms, or a whole unit for 7 to 30 days, with a township license.",
+          "condition": "Short-term lodging is barred except owner-occupied rental of up to two bedrooms, or a whole unit for 7 to 30 days. Annual license. At most 120 days a year.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
           "when": "always",
           "test": null,
-          "section": "130-3, 130-4",
+          "section": "130-3A to D, 130-4",
           "url": "https://ecode360.com/39692441"
         },
         {
@@ -262,7 +266,7 @@
       "url": "https://ecode360.com/39692441",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "No ADU rule. Short-term lodging is limited town-wide: two bedrooms in an owner-occupied house, or a whole unit for 7 to 30 days, with a license."
+      "note": "No ADU rule. Short-term lodging is limited town-wide: two bedrooms in an owner-occupied house, or a whole unit for 7 to 30 days, with an annual license and at most 120 days a year."
     },
     "max_adus": {
       "value": 0,
@@ -298,7 +302,7 @@
         "url": "https://ecode360.com/11226358",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "Lot size depends on resource protection land: 34,000 sq ft (0% to 24%), 22,000 (25% to 67%), 15,000 (68% and up). 34,000 with on-lot water or sewer. Yards here are for the 15,000 sq ft tier."
+        "note": "Lot size depends on resource protection land: 34,000 sq ft (0% to 24%), 22,000 (25% to 67%), 15,000 (68% and up) (200-16B). 34,000 with on-lot water or sewer. Yards depend on the lot tier (200-18). This row holds the 15,000 sq ft tier."
       },
       "setback_front_ft": {
         "value": 35,
@@ -306,7 +310,7 @@
         "url": "https://ecode360.com/11226358",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "15,000 sq ft lot: front 35. 34,000 sq ft lot: front 50."
+        "note": "Depends on lot tier. Front 35 ft for 15,000 and 16,500 sq ft lots. 40 ft for 22,000 and 25,000. 50 ft for 34,000 sq ft and up."
       },
       "setback_side_ft": {
         "value": 15,
@@ -314,7 +318,7 @@
         "url": "https://ecode360.com/11226358",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "15,000 sq ft lot: 15 ft each. 34,000 sq ft lot: 25 ft."
+        "note": "Depends on lot tier. Side 15 ft each for 15,000 and 16,500 sq ft lots. 20 ft for 22,000 and 25,000. 25 ft for 34,000 sq ft and up."
       },
       "setback_rear_ft": {
         "value": 45,
@@ -322,7 +326,7 @@
         "url": "https://ecode360.com/11226358",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "15,000 sq ft lot: 45 ft. 34,000 sq ft lot: 70 ft."
+        "note": "Depends on lot tier. Rear 45 ft for 15,000 and 16,500 sq ft lots. 70 ft for 22,000 to 34,000. 75 ft for 40,000 sq ft and 1 acre."
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -334,20 +338,20 @@
     },
     "R-2": {
       "min_lot_sqft": {
-        "value": 12500,
-        "section": "200-22",
-        "url": "https://ecode360.com/11226397",
+        "value": 15000,
+        "section": "200-21B, 200-22",
+        "url": "https://ecode360.com/11226396",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "Smallest lot tier in the R-2 table, 85 ft wide. Larger tiers to 34,000 sq ft. Yards here are for the 12,500 sq ft tier."
+        "note": "Conventional single-family lot: 34,000 sq ft (0% to 24% resource protection land), 16,000 (25% to 45%), 15,000 (46% and up). Open space cluster lots: 10,000 minimum and 12,500 average, only where resource protection land exceeds 51% (200-22.1)."
       },
       "setback_front_ft": {
-        "value": 30,
+        "value": 35,
         "section": "200-22",
         "url": "https://ecode360.com/11226397",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "12,500 sq ft lot."
+        "note": "Depends on lot tier. 35 ft for 15,000 and 16,000 sq ft lots. 40 ft for 34,000 and 16,500. 30 ft for the 12,500 sq ft cluster row."
       },
       "setback_side_ft": {
         "value": 15,
@@ -355,7 +359,7 @@
         "url": "https://ecode360.com/11226397",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "12,500 sq ft lot, each side."
+        "note": "15 ft each in every tier. Lots recorded before 1947 and 100 ft wide or less: 10 ft each, 26 ft combined."
       },
       "setback_rear_ft": {
         "value": 45,
@@ -363,7 +367,7 @@
         "url": "https://ecode360.com/11226397",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "12,500 sq ft lot."
+        "note": "Depends on lot tier. 45 ft for lots of 16,000 sq ft and under. 50 ft for 34,000 and 16,500."
       },
       "principal_max_height_ft": {
         "value": 35,
