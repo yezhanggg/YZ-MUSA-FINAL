@@ -36,6 +36,8 @@ const selFilter = (id: string | null): ExpressionSpecification => ['==', ['get',
 const PARCEL_SOURCES = [
   { id: 'parcels', url: () => `${window.location.origin}${PARCEL_URL}` },
   { id: 'parcels-pgh', url: () => new URL(`${lotDataUrl()}pittsburgh/tiles/parcels.pmtiles`, window.location.href).href },
+  // Philadelphia with the lot record ids (app/build_lot_tiles.py). Testing mode prefers it over the committed file.
+  { id: 'parcels-phl', url: () => new URL(`${lotDataUrl()}philadelphia/tiles/parcels.pmtiles`, window.location.href).href },
 ] as const;
 type ParcelSource = (typeof PARCEL_SOURCES)[number]['id'];
 const fillOf = (src: ParcelSource) => `${src}-fill`;
@@ -120,7 +122,8 @@ export default function MapCanvas() {
         if (!alive) return;
         const a = useTool.getState().adu;
         const pgh = PARCEL_SOURCES[1].url();
-        const hasPgh = await exists(pgh);
+        const phl = PARCEL_SOURCES[2].url();
+        const [hasPgh, hasPhl] = await Promise.all([exists(pgh), exists(phl)]);
         if (!alive) return;
         map.addSource('aerial', aerialSource());
         map.addSource('tracts', { type: 'geojson', data: tracts as unknown as GeoJSON.FeatureCollection, promoteId: 'GEOID' });
@@ -155,6 +158,7 @@ export default function MapCanvas() {
         map.addLayer({ id: 'town-line', type: 'line', source: 'towns', minzoom: 8, paint: { 'line-color': '#475569', 'line-width': 0.6, 'line-opacity': 0.45 } }, firstLabel);
         addParcels(map, 'parcels', PARCEL_SOURCES[0].url(), a, firstLabel);
         if (hasPgh) addParcels(map, 'parcels-pgh', pgh, a, firstLabel);
+        if (hasPhl) addParcels(map, 'parcels-phl', phl, a, firstLabel);
         // 3D buildings from the OpenFreeMap vector tiles. Shown in the 3D view.
         map.addLayer({
           id: 'buildings-3d',
@@ -298,9 +302,14 @@ export default function MapCanvas() {
     if (status !== 'ready' || !map) return;
     // Testing mode shows every parcel: the lot test does not depend on the projecting filters.
     const f = view === 'project' ? parcelFilter(adu, sfOnly, hideNoRoom) : null;
+    // With the new Philadelphia file, Testing mode draws it instead of the committed one (old ids), and
+    // Projecting mode keeps the committed one (it carries the 600 sq ft results).
+    const newPhl = !!map.getSource('parcels-phl');
     for (const src of present(map)) {
       map.setFilter(fillOf(src), f);
       map.setFilter(lineOf(src), f);
+      const hidden = newPhl && ((view === 'test' && src === 'parcels') || (view === 'project' && src === 'parcels-phl'));
+      for (const id of [fillOf(src), lineOf(src)]) map.setLayoutProperty(id, 'visibility', hidden ? 'none' : 'visible');
     }
   }, [adu, sfOnly, hideNoRoom, status, view]);
 
