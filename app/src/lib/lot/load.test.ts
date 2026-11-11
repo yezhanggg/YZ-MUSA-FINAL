@@ -132,6 +132,30 @@ describe('loadTractLots', () => {
     for (const r of recs) expect(t.byId.get(r.lot.id)).toEqual(r);
   });
 
+  it('puts shared citation tables back, in the head file and in each chunk', async () => {
+    const recs = [fixture('easy_fit'), fixture('garage')];
+    const pack = (lots: LotRecord[]) => {
+      const table: unknown[] = [];
+      const out = structuredClone(lots).map((l) => {
+        for (const r of Object.values(l.rules)) {
+          table.push(r!.citations);
+          (r as unknown as { citations: unknown }).citations = { $cite: table.length - 1 };
+        }
+        return l;
+      });
+      return { table, out };
+    };
+    const a = pack(recs.slice(0, 1));
+    const b = pack(recs.slice(1));
+    const files: Files = {
+      'pittsburgh/manifest.json': manifest(),
+      [`pittsburgh/detail/${T1}.json.gz`]: head(T1, a.out, { citations: a.table, more: [`${T1}.p2.json.gz`] }),
+      [`pittsburgh/detail/${T1}.p2.json.gz`]: head(T1, b.out, { citations: b.table }),
+    };
+    const t = await loadTractLots(T1, opts(server(files).f));
+    for (const r of recs) expect(t.byId.get(r.lot.id)).toEqual(r);
+  });
+
   it('flags a tract built before the manifest as stale, and throws when strict', async () => {
     const files = inlineFiles();
     files['pittsburgh/manifest.json'] = manifest('pittsburgh-20261112-bbbb');

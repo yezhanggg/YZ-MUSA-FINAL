@@ -56,6 +56,8 @@ export interface Edge {
   role: EdgeRole;
   line: LineStringGeom;
   length_ft?: number;
+  /** Side shared with an attached neighbor: no side yard there. */
+  party_wall?: boolean;
 }
 
 export interface LotPart {
@@ -209,6 +211,8 @@ export interface FitResult {
   width_ft: number | null;
   depth_ft: number | null;
   angle_deg: number | null;
+  /** Long side of the spot, degrees clockwise from true north, 0 to 180. */
+  bearing_deg?: number | null;
   /** Code of the one constraint that decides the answer. */
   limiting: string;
   note?: string;
@@ -242,6 +246,12 @@ export interface Money {
   rent_by_bedroom?: RentByBedroom;
   /** Local build cost relative to the state, 1.0 = average. */
   cost_index?: number | null;
+  zip?: string | null;
+  /** hud_safmr when the ZIP has Small Area Fair Market Rents. */
+  rent_source?: string | null;
+  rent_fiscal_year?: number | null;
+  /** Key in shared/assumptions.json the cost index comes from. */
+  cost_index_key?: string | null;
 }
 
 export interface Quality {
@@ -280,7 +290,7 @@ const keysOf =
 export const LOT_KEYS = {
   record: keysOf<LotRecord>()(['schema_version', 'lot', 'buildings', 'cover', 'objects', 'zoning', 'rules', 'buildable', 'fit', 'facts', 'money', 'quality']),
   citation: keysOf<Citation>()(['section', 'url', 'verified_on', 'confidence', 'source_file']),
-  edge: keysOf<Edge>()(['id', 'role', 'line', 'length_ft']),
+  edge: keysOf<Edge>()(['id', 'role', 'line', 'length_ft', 'party_wall']),
   lot: keysOf<LotPart>()([
     'id', 'parcel_id', 'address', 'place', 'county_fips', 'tract', 'crs_local', 'polygon', 'area_sqft', 'edges',
     'front_edges', 'rear_edges', 'side_edges', 'alley', 'corner', 'flag_lot', 'street_edge', 'shape_confidence', 'shape_notes',
@@ -301,12 +311,12 @@ export const LOT_KEYS = {
   buildable: keysOf<Buildable>()(['keep', 'keep_sqft', 'clear', 'clear_sqft', 'front_sqft']),
   check: keysOf<Check>()(['pass', 'value', 'limit', 'note']),
   fit_result: keysOf<FitResult>()([
-    'adu_type', 'fits', 'largest_sqft', 'largest_if_cleared_sqft', 'spot', 'width_ft', 'depth_ft', 'angle_deg',
+    'adu_type', 'fits', 'largest_sqft', 'largest_if_cleared_sqft', 'spot', 'width_ft', 'depth_ft', 'angle_deg', 'bearing_deg',
     'limiting', 'note', 'checks', 'warnings', 'assumed', 'approval_path', 'max_height_ft', 'second',
   ]),
   fit_checks: CHECK_NAMES,
   facts: keysOf<Facts>()(['year_built', 'living_sqft', 'stories', 'assessed_value', 'last_sale_date', 'last_sale_price', 'zip']),
-  money: keysOf<Money>()(['rent_by_bedroom', 'cost_index']),
+  money: keysOf<Money>()(['rent_by_bedroom', 'cost_index', 'zip', 'rent_source', 'rent_fiscal_year', 'cost_index_key']),
   rent_by_bedroom: keysOf<RentByBedroom>()(['b0', 'b1', 'b2', 'b3']),
   quality: keysOf<Quality>()(['imagery_date', 'data_dates', 'confidence', 'assumptions']),
 } as const;

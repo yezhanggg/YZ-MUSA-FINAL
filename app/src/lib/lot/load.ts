@@ -139,6 +139,8 @@ interface HeadFile {
   data_version: string;
   geometry?: string;
   more?: string[];
+  /** Citation table: a lot's rules.<scenario>.citations may be {"$cite": i}, meaning citations[i]. */
+  citations?: unknown[];
   lots: unknown[];
 }
 interface GeomEntry {
@@ -170,6 +172,20 @@ function asRecord(v: unknown, url: string): LotRecord {
     throw new LotLoadError('bad_data', `${url} holds a lot that is not a lot record`, { url });
   }
   return v as unknown as LotRecord;
+}
+
+/** Put the shared citation tables back into the rules. Same as unpack_citations in pipeline/build_lots.py. */
+export function unpackCitations(lots: unknown[], table: unknown[] | undefined): unknown[] {
+  if (!table) return lots;
+  for (const rec of lots) {
+    if (!isObj(rec) || !isObj(rec.rules)) continue;
+    for (const r of Object.values(rec.rules)) {
+      if (!isObj(r) || !isObj(r.citations)) continue;
+      const ref = r.citations.$cite;
+      if (typeof ref === 'number' && isObj(table[ref])) r.citations = structuredClone(table[ref]);
+    }
+  }
+  return lots;
 }
 
 /** Put split-out geometry back into the records. Same as join_geometry in pipeline/build_lots.py. */
@@ -323,7 +339,7 @@ async function readTract(geoid: string, place: string, base: string, f: Fetcher,
     return h;
   };
   const more = await Promise.all((head.more ?? []).map((name) => getJson(`${root}detail/${name}`, f, signal).then((v) => sameBuild(v, `${root}detail/${name}`))));
-  let lots = [...head.lots, ...more.flatMap((m) => m.lots)].map((r) => asRecord(r, headUrl));
+  let lots = [...unpackCitations(head.lots, head.citations), ...more.flatMap((m) => unpackCitations(m.lots, m.citations))].map((r) => asRecord(r, headUrl));
   if (head.geometry && head.geometry !== 'inline') {
     const geomUrl = `${root}detail/${head.geometry}`;
     const geom = sameBuild(await getJson(geomUrl, f, signal), geomUrl);
