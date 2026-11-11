@@ -182,10 +182,12 @@ def build(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "plain_fetch": host.get("plain_fetch") if not prov.get("code_url") or prov.get("code_url") == host.get("code_url") else None,
             "code_current_through": prov.get("code_current_through") or host.get("current_through"),
             "code_note": host.get("note"), "why": why.get(g, ["already has a rule file"]),
+            # Written by town workers, kept across rebuilds (for example the one open point on a drafted file).
+            "status_note": prev.get("status_note"),
         })
     return {
         "about": "Pennsylvania towns targeted for ADU rule files, ranked. Made by tools/town_targets.py. "
-                 "Town workers update only 'status'. See TOWNS.md.",
+                 "Town workers update only 'status' and 'status_note'. See TOWNS.md.",
         "generated_on": date.today().isoformat(),
         "population_source": {"title": "2020 Census Redistricting Data (PL 94-171), Pennsylvania, county subdivisions",
                               "url": PL_URL, "fields": "POP100 (total population), HU100 (housing units)",

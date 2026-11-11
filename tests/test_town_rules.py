@@ -587,3 +587,27 @@ def test_default_max_adus_reads_as_assumed(tmp_path, monkeypatch):
     out = rules.resolve(name, "today", {"building_type": "detached", "lot_sqft": 9000})
     assert "max_adus" in out["assumed"]
     assert any("the code is silent, 1 assumed" in r for r in out["reasons"])
+
+
+def test_index_builder_keeps_status_note(tmp_path, monkeypatch):
+    import importlib.util
+    cache = Path.home() / "musa-drive" / "cache" / "census" / "pa2020.pl.zip"
+    if not cache.exists():
+        pytest.skip("census cache not on this machine")
+    spec = importlib.util.spec_from_file_location("town_targets", RULES.parents[1] / "tools" / "town_targets.py")
+    tt = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tt)
+    idx = json.loads((RULES / "towns_index.json").read_text())
+    idx["towns"][2]["status_note"] = "parking reading is the only open point"
+    tmp = tmp_path / "towns_index.json"
+    tmp.write_text(json.dumps(idx))
+    monkeypatch.setattr(tt, "INDEX", tmp)
+    built = tt.build(tt.pl_geo_rows(cache.parent))
+    town = next(t for t in built["towns"] if t["geoid"] == idx["towns"][2]["geoid"])
+    assert town["status_note"] == "parking reading is the only open point"
+    for t in built["towns"]:
+        f = RULES / f"{t['file']}.json"
+        if t["file"].startswith("pa_") and f.exists():
+            prov = json.loads(f.read_text())["provenance"]
+            if prov.get("code_host"):
+                assert t["code_host"] == prov["code_host"], t["name"]

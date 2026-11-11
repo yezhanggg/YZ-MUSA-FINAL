@@ -164,6 +164,10 @@ def _conditions_cell(d):
     out += per
     for g in (el.get("gates") or {}).get("value") or []:
         if g["effect"] == "bars": out.append(f"{g['kind'].replace('_', ' ')} gate ({clean(g['section'])})")
+    scope = ((d.get("adu") or {}).get("scope_districts") or {}).get("value")
+    if scope: out.insert(0, f"ADU rule only in {', '.join(scope)}")
+    alts = ((d.get("approval") or {}).get("alternatives") or {}).get("value") or []
+    if alts: out.append("other ways (not ADUs): " + "; ".join(f"{a['name']} ({NAMES.get(a['path'], a['path'])}, {clean(a['section'])})" for a in alts).replace("; ", ". "))
     tot = ((d.get("parking") or {}).get("total_on_site") or {}).get("value")
     if tot: out.append(f"{tot} parking spaces in total")
     return ". ".join(out) or "none on file"

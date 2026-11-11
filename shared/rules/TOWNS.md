@@ -130,7 +130,7 @@ Still write the file. Then:
 
 ## Status in the index
 
-`towns_index.json` tracks each town: `todo`, `in_progress`, `drafted` (file written, not yet checked by a second person) or `verified` (a second person checked every value against the link). Update the town's `status` when you finish a file. Do not edit other fields in the index. `tools/town_targets.py` keeps the statuses when it rebuilds the index.
+`towns_index.json` keeps a free-text `status_note` per town across rebuilds (for example the one open point on a drafted file). It tracks each town: `todo`, `in_progress`, `drafted` (file written, not yet checked by a second person) or `verified` (a second person checked every value against the link). Update the town's `status` (and `status_note`) when you finish a file. Do not edit other fields in the index. Code host, link and current-through come from your file's provenance. `tools/town_targets.py` keeps the statuses when it rebuilds the index.
 
 ## Check your file
 
