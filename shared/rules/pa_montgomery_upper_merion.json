@@ -23,6 +23,8 @@
       "https://ecode360.com/45247978",
       "https://ecode360.com/42004483",
       "https://ecode360.com/11660256",
+      "https://ecode360.com/32851818",
+      "https://ecode360.com/11659869",
       "https://ecode360.com/print/UP0975?guid=11658450",
       "https://ecode360.com/UP0975/laws",
       "https://ecode360.com/UP0975"
@@ -43,7 +45,8 @@
       "AG, R-55A and R-55B still list 'Conversion of single-family detached dwelling, subject to ... § 165-212' as a permitted use. 165-212 was repealed 11-9-2023 by Ord. 2023-893. Ask the Zoning Officer how such a conversion is reviewed now",
       "Accessory buildings: 14 ft, one story, in the rear quarter of the lot. Side yard for accessory use R-1A and R-1 10 ft, R-2 4 ft, R-2A 7 ft. Rear 10 ft (165-23A)",
       "Short-term rentals are prohibited in all residential districts (165-219.9B(2))",
-      "Chapter 132 (Residential Rental Housing Licensing and Inspection) applies to rentals. Only its title was read",
+      "Rental units that are not owner-occupied are regulated rental units under Chapter 132: registration, monthly rent roll and inspection when vacant (132-3, 132-5). Exempt: 'One dwelling unit that is on the same lot as a second dwelling unit', if both are occupied only by the owner and blood relatives (132-5A(2)(d))",
+      "A dimensionally nonconforming lot may be built on only if it was held in single and separate ownership when it became nonconforming and all other district rules are met (165-199E)",
       "Parking for a house: two spaces plus one for each bedroom over three. The first garage space does not count (165-191A(1))"
     ],
     "notes": "Zoning office: Upper Merion Township, Department of Planning and Zoning. Township site not opened. Searched Chapter 165 (full print view) for: accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, au pair, servant, conversion, kitchen. No ADU provision."
@@ -91,8 +94,8 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "3,000 sq ft of lot per unit and 60 ft lot width. Side yards 10 ft min, 25 ft aggregate. Coverage 30%. 165-61F(2) caps density at six units per developable acre, which may reach a two-family lot.",
-          "min_lot_sqft": 6000,
+          "conditions": "Table: 3,000 sq ft of lot per unit, 60 ft width. But 165-61A(1) is 'Subject to the limitations of Subsection F' and F(2) caps density at 'six dwelling units per developable acre', which reads as about 14,520 sq ft of developable land for two units. Side yards 10 ft min, 25 ft aggregate. Coverage 30%.",
+          "min_lot_sqft": 14520,
           "section": "165-59C, 165-61",
           "url": "https://ecode360.com/11658820"
         },
@@ -104,17 +107,17 @@
             "R-55A",
             "R-55B"
           ],
-          "conditions": "Listed as a permitted use 'subject to the provisions of ... § 165-212'. 165-212 was repealed 11-9-2023 (Ord. 2023-893), so no standards remain in the code. Confirm with the Zoning Officer.",
+          "conditions": "Listed, but its standards were repealed. The use reads 'subject to the provisions of ... § 165-212', and 165-212 was repealed 11-9-2023 (Ord. 2023-893). Ask the Zoning Officer whether the listing still works. Not a settled by-right path.",
           "min_lot_sqft": null,
           "section": "165-10B, 165-80.3B, 165-80.9B, 165-212",
           "url": "https://ecode360.com/11658611"
         }
       ],
-      "section": "165-59, 165-10B, 165-212",
+      "section": "165-59, 165-61, 165-10B, 165-212",
       "url": "https://ecode360.com/11658808",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "Not ADUs. The R-3 two-unit lot is twice the 3,000 sq ft per unit figure."
+      "confidence": "secondary",
+      "note": "Not ADUs. Both are readings: the R-3 lot follows the 165-61F(2) density cap (two units at six per developable acre), and the AG, R-55A, R-55B conversion lost its standards in 2023."
     }
   },
   "eligibility": {
@@ -377,7 +380,7 @@
         "url": "https://ecode360.com/11658820",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "Single-family detached, 5,000 sq ft per unit. Two-family detached 3,000 sq ft per unit."
+        "note": "Table: single-family detached 5,000 sq ft per unit. 165-61F(2) caps density at six units per developable acre, which would ask about 7,260 sq ft of developable land for one house. Which governs a single lot is a question for the Zoning Officer."
       },
       "setback_side_ft": {
         "value": 4,
