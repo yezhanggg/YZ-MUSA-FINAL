@@ -27,7 +27,9 @@
       "https://ecode360.com/29459868",
       "https://www.bethelparkpa.gov/community-development/planning-and-zoning",
       "https://www.bethelparkpa.gov/about/proposed-codes-and-ordinances",
-      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt",
+      "https://ecode360.com/29463571",
+      "https://ecode360.com/29463575"
     ],
     "verified_on": "2026-11-11",
     "county": "Allegheny",
@@ -46,26 +48,29 @@
       "Accessory buildings: 20 ft high in R-1 to R-3. 10 ft from the side line, 5 ft from the rear line, behind the building line and the front face of the house (69.23.2, 69.25.2, 69.35.3.2)",
       "Parking: one space per dwelling unit for a one-family dwelling, two per unit for a two-family dwelling (69.40.1)",
       "Short-term rentals are a conditional use in R-1 to R-5, R-T, C-1 and C-2. Rooms must be in the principal building, not in an accessory structure (69.91)",
-      "Landlords file an occupancy report with the Municipal Secretary within 30 days of a lease (45.3.2)"
+      "Landlords file an occupancy report with the Municipal Secretary within 30 days of a lease (45.3.2)",
+      "A one-family dwelling may be built on a recorded lot below the district lot area if it meets the other district rules (69.17.1). Nothing allows a second unit on such a lot",
+      "Boardinghouses are prohibited in the whole municipality (69.19.1.8)",
+      "For side yards a two-family dwelling counts as one building on a single lot (69.35.3.5)"
     ],
-    "notes": "Zoning office: Planning and Zoning, https://www.bethelparkpa.gov/community-development/planning-and-zoning. Searched Chapter 69 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion. Pending: the township lists a proposed Adaptive Reuse Ordinance (new 69.92, conditional use for reuse of certain hotel, office and former civic buildings). Not adopted. It does not add ADUs (https://www.bethelparkpa.gov/about/proposed-codes-and-ordinances)."
+    "notes": "Zoning office: Planning and Zoning, https://www.bethelparkpa.gov/community-development/planning-and-zoning. Searched Chapter 69 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion. Pending: the township lists a proposed Adaptive Reuse Ordinance (new 69.92, conditional use for reuse of certain hotel, office and former civic buildings). Not adopted. It does not add ADUs (https://www.bethelparkpa.gov/about/proposed-codes-and-ordinances). Review fixes 2026-11-11: term null, short-term rental rule restated, 69.17.1, 69.19.1.8, R-5 and R-T rows."
   },
   "adu": {
     "term": {
-      "value": "servants' quarters or servants' house",
-      "section": "69.8.2(8)",
+      "value": null,
+      "section": "69.8.2, 69.23.1",
       "url": "https://ecode360.com/29463327",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No ADU term. The nearest is an accessory use: 'Servants' quarters or servants' house.' It is limited to household servants, so it is not a general ADU."
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, carriage, caretaker, second dwelling. The accessory use list has 'Servants' quarters or servants' house' (69.8.2(8)), a unit for household employees. It is recorded as an alternative."
     },
     "status": {
       "value": "not_addressed",
       "section": "69.23.1, 69.24.1, 69.25.1, 69.11.1",
       "url": "https://ecode360.com/29463642",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Reading of a silent code. No district lists an ADU. Only servants' quarters and occasional nonpaying guest rooms are listed accessory uses."
+      "confidence": "verified",
+      "note": "The code has no ADU text."
     }
   },
   "approval": {
@@ -120,9 +125,9 @@
           "districts": [
             "R-T"
           ],
-          "conditions": "Permitted use in the townhouse district. Lot rules of 69.28 not recorded here.",
-          "min_lot_sqft": null,
-          "section": "69.28.1",
+          "conditions": "14,520 sq ft per dwelling unit and 80 ft wide. Side yards 10 ft. Density at most eight units per acre.",
+          "min_lot_sqft": 29040,
+          "section": "69.28.1, 69.28.3.2, 69.28.7",
           "url": "https://ecode360.com/29463775"
         }
       ],
@@ -198,14 +203,14 @@
         },
         {
           "kind": "other",
-          "condition": "Short-term rental is a conditional use. Rooms must be in the principal building, not in an accessory structure.",
+          "condition": "Short-term rental is a conditional use, inside the principal building only. 'Short-term rentals shall not occupy any accessory structure.'",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
           "when": "always",
           "test": null,
-          "section": "69.91.1, 69.91.3.7",
+          "section": "69.91.1, 69.91.2, 69.91.3.7",
           "url": "https://ecode360.com/44278750"
         },
         {
@@ -219,6 +224,18 @@
           "test": null,
           "section": "45.3.2",
           "url": "https://ecode360.com/29459868"
+        },
+        {
+          "kind": "other",
+          "condition": "Boardinghouses are prohibited in the whole municipality.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "69.19.1.8",
+          "url": "https://ecode360.com/29463575"
         }
       ],
       "section": "69.8.2, 69.35, 69.91, 45.3",
@@ -314,12 +331,12 @@
       "note": "No ADU rule. A family is related persons or up to four unrelated persons as one housekeeping unit."
     },
     "short_term_rental_banned": {
-      "value": true,
-      "section": "69.91.3.7",
+      "value": null,
+      "section": "69.91.1, 69.91.3.7",
       "url": "https://ecode360.com/44278750",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "'Short-term rentals shall not occupy any accessory structure'. Reading: bars short-term rental of a detached unit. Inside the house it is a conditional use."
+      "note": "Not a flat ban. Short-term rental is a conditional use in R-1 to R-5, R-T, C-1 and C-2. 'Short-term rentals shall not occupy any accessory structure.' See gates."
     },
     "max_adus": {
       "value": 0,
@@ -536,6 +553,106 @@
         "verified_on": "2026-11-11",
         "confidence": "secondary",
         "note": "Two-family dwelling: '4,350 square feet per dwelling unit'. Open whether a second unit on a one-family lot counts this way."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 8710,
+        "section": "69.27.3, 69.26.3.1",
+        "url": "https://ecode360.com/29463764",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'As required in the R-4 District'. One-family detached 8,710 sq ft, 60 ft wide."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "69.27.4, 69.26.4.1",
+        "url": "https://ecode360.com/29463764",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'As required or permitted in the R-4 District'."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "69.27.4, 69.26.4.2",
+        "url": "https://ecode360.com/29463764",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "69.27.4, 69.26.4.3",
+        "url": "https://ecode360.com/29463764",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "69.27.5",
+        "url": "https://ecode360.com/29463764",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4350,
+        "section": "69.27.3, 69.26.3.2",
+        "url": "https://ecode360.com/29463764",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Two-family dwelling '4,350 square feet per dwelling unit' through R-4. Open whether a second unit on a one-family lot counts this way."
+      }
+    },
+    "R-T": {
+      "min_lot_sqft": {
+        "value": 8710,
+        "section": "69.28.3.1",
+        "url": "https://ecode360.com/29463775",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "One-family detached '8,710 square feet per dwelling unit', 60 ft wide. Two-family 14,520 per unit."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "69.28.4.1",
+        "url": "https://ecode360.com/29463775",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "69.28.4.2",
+        "url": "https://ecode360.com/29463775",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "69.28.4.3",
+        "url": "https://ecode360.com/29463775",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "69.28.5",
+        "url": "https://ecode360.com/29463775",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "69.28.2",
+        "url": "https://ecode360.com/29463775",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 14520,
+        "section": "69.28.3.2",
+        "url": "https://ecode360.com/29463775",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Two-family dwelling '14,520 square feet per dwelling unit'. Open whether a second unit counts this way. Density at most eight units per acre (69.28.7)."
       }
     }
   }
