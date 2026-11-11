@@ -3,12 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
-import { openResearch, useResearch, type Course } from '../lib/router';
+import { VIEW_LABEL, openResearch, openView, useResearch, useView, type Course, type ToolView } from '../lib/router';
 import { cx } from '../lib/cx';
 import { SPRING_TAB } from './primitives';
 import { GUTTER, narrow, rightDrawer, useMode, widths } from '../tool/layout';
-import { useTool } from '../tool/store';
-import { VIEW_LABEL, type ToolView } from '../tool/testState';
 
 export const RESEARCH: { course: Course; label: string; line: string }[] = [
   { course: '6950', label: 'MUSA 6950: Room on the lot', line: 'AI on aerial images and a 600 sq ft fit test' },
@@ -89,12 +87,11 @@ export default function TopBar() {
 
 /** Which tool: lot-level testing or tract and town projections. Same shell, different controls and cards. */
 function ModePick() {
-  const view = useTool((s) => s.view);
-  const setTest = useTool((s) => s.setTest);
+  const view = useView();
   return (
     <label className="relative flex min-w-0 items-center">
       <span className="sr-only">Mode</span>
-      <select value={view} onChange={(e) => setTest({ view: e.target.value as ToolView })} className="tap min-w-0 max-w-[19rem] cursor-pointer appearance-none truncate rounded-lg bg-violet-50 py-1.5 pl-3 pr-8 text-body font-semibold text-violet-900 ring-1 ring-violet-200 outline-none hover:bg-violet-100 focus-visible:ring-2 focus-visible:ring-violet-500 max-sm:max-w-[11rem] max-sm:text-small">
+      <select value={view} onChange={(e) => openView(e.target.value as ToolView)} className="tap min-w-0 max-w-[19rem] cursor-pointer appearance-none truncate rounded-lg bg-violet-50 py-1.5 pl-3 pr-8 text-body font-semibold text-violet-900 ring-1 ring-violet-200 outline-none hover:bg-violet-100 focus-visible:ring-2 focus-visible:ring-violet-500 max-sm:max-w-[11rem] max-sm:text-small">
         {(Object.keys(VIEW_LABEL) as ToolView[]).map((v) => (
           <option key={v} value={v}>
             {VIEW_LABEL[v]}

@@ -11,12 +11,7 @@ import type { RentByBedroom } from '../lib/lot/types';
 import type { TractProps } from './geo';
 import { fitBox, type Pt } from '../lib/fitBox';
 
-/** Which set of controls and cards the tool shows. */
-export type ToolView = 'test' | 'project';
-export const VIEW_LABEL: Record<ToolView, string> = {
-  test: 'ADU Testing (MUSA 6950)',
-  project: 'ADU projecting and analysis (MUSA 5500)',
-};
+import { viewOf, type ToolView } from '../lib/router';
 
 export interface UnitDraft {
   type: AduType;
@@ -97,7 +92,7 @@ export function testFromHash(hash: string): TestLink {
   const lot = q.get('lot');
   const tract = q.get('tract');
   return {
-    view: q.get('view') === 'project' ? 'project' : 'test',
+    view: viewOf(hash),
     scenario: isScenario(sc) ? sc : 'today',
     unit: {
       type: isAduType(ut) ? ut : DEFAULT_UNIT.type,

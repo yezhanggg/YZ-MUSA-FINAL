@@ -6,7 +6,8 @@ import type { FC, LngLat, Lot, TownProps, TractProps } from './geo';
 import type { MetricId } from './metrics';
 import type { ParcelProps } from './parcels';
 import type { LotRecord, Scenario } from '../lib/lot/types';
-import { DEFAULT_MONEY, testFromHash, testHash, type MoneyDraft, type ToolView, type UnitDraft } from './testState';
+import { DEFAULT_MONEY, testFromHash, testHash, type MoneyDraft, type UnitDraft } from './testState';
+import type { ToolView } from '../lib/router';
 
 export type Rule = 'current' | 'hb2186';
 
