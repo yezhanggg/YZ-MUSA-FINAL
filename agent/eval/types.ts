@@ -2,7 +2,8 @@
 import type { Scenario } from '../../app/src/lib/lot/types';
 import type { LotUnit } from '../nodeProvider';
 
-export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps'] as const;
+/** town_rules: questions on the town rule files (shared/rules/pa_*.json), 5 while there are few town files. */
+export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 /** Units a number fact is written in. pct is a percent (7.5 means 7.5 percent), the answer may also give 0.075. */

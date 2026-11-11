@@ -1,6 +1,6 @@
 {
  "about": "Eval set for the in-app assistant. Made by agent/eval/make_questions.ts from the lot records and app/public/data: lots are picked by rule and every expected value is read from a tool result. Do not edit by hand. Regenerate with `node agent/eval/cli.mjs make_questions.ts`.",
- "generated_at": "2026-11-11T15:11:11.658Z",
+ "generated_at": "2026-11-11T15:47:56.853Z",
  "data_roots": {
   "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
   "philadelphia": "/Users/ye/musa-drive/smoke/lots/philadelphia"
@@ -8,7 +8,7 @@
  "data_versions": {
   "pittsburgh": "pittsburgh-20261111-a1cc11fe5c",
   "philadelphia": "philadelphia-20261111-813101f987",
-  "public_data": "2026-11-11 10:10"
+  "public_data": "2026-11-11 10:14"
  },
  "questions": [
   {
@@ -357,19 +357,12 @@
   {
    "id": "lot-07",
    "category": "lot_facts",
-   "question": "How many stories is the house at 1204 SPRUCE ST, and how big is it?",
+   "question": "How many stories is the house at 1204 Spruce St, Philadelphia, and how big is it?",
    "context": {
-    "lot": {
-     "id": "42101-053005400",
-     "tract": "42101001101",
-     "label": "1204 SPRUCE ST"
-    },
+    "lot": null,
     "site_lot": null,
-    "town": {
-     "geoid": "4210160000",
-     "name": "Philadelphia city"
-    },
-    "scenario": "today",
+    "town": null,
+    "scenario": null,
     "unit": null,
     "adu": {
      "bedrooms": 1,
@@ -380,13 +373,24 @@
    },
    "tools_required": [
     [
+     "find_lot"
+    ],
+    [
      "get_lot_facts"
     ]
    ],
    "calls": [
     {
+     "name": "find_lot",
+     "input": {
+      "address": "1204 Spruce St"
+     }
+    },
+    {
      "name": "get_lot_facts",
-     "input": {}
+     "input": {
+      "lot_id": "42101-053005400"
+     }
     }
    ],
    "facts": [
@@ -406,8 +410,8 @@
     }
    ],
    "forbidden": [],
-   "scenario": "today",
-   "rubric": "Uses the selected lot (the address is its label) and gives stories and living area."
+   "scenario": null,
+   "rubric": "Nothing is selected: finds the lot by its address with find_lot, then gives stories and living area."
   },
   {
    "id": "lot-08",
@@ -829,6 +833,8 @@
      "value": "fits_with_changes",
      "accept": [
       "with changes",
+      "with a change",
+      "with one change",
       "if you",
       "move it",
       "smaller",
@@ -836,7 +842,11 @@
       "remove",
       "fits if",
       "would fit if",
-      "lower"
+      "lower",
+      "or less",
+      "if the footprint",
+      "cut it to",
+      "reduce"
      ]
     },
     {
@@ -948,9 +958,9 @@
    "question": "Does a unit inside the house work here?",
    "context": {
     "lot": {
-     "id": "42101-405008100",
-     "tract": "42101005600",
-     "label": "3109 S 82ND ST"
+     "id": "42101-053012710",
+     "tract": "42101001102",
+     "label": "702 DELANCEY ST"
     },
     "site_lot": null,
     "town": {
@@ -1147,6 +1157,8 @@
      "value": "fits_with_changes",
      "accept": [
       "with changes",
+      "with a change",
+      "with one change",
       "if you",
       "move it",
       "smaller",
@@ -1154,7 +1166,11 @@
       "remove",
       "fits if",
       "would fit if",
-      "lower"
+      "lower",
+      "or less",
+      "if the footprint",
+      "cut it to",
+      "reduce"
      ],
      "reject": [
       "not allowed"
@@ -1610,7 +1626,8 @@
     [
      "compare_scenarios",
      "test_unit_on_lot",
-     "get_lot_rules"
+     "get_lot_rules",
+     "explain_limit"
     ]
    ],
    "calls": [
@@ -1619,10 +1636,6 @@
      "input": {
       "type": "internal"
      }
-    },
-    {
-     "name": "get_lot_rules",
-     "input": {}
     }
    ],
    "facts": [
@@ -1641,17 +1654,6 @@
      "accept": [
       "by right",
       "by-right"
-     ]
-    },
-    {
-     "kind": "enum",
-     "label": "attached building",
-     "value": "Attached building. Needs a detached or semi-detached house",
-     "accept": [
-      "attached",
-      "rowhouse",
-      "row house",
-      "detached or semi-detached"
      ]
     },
     {
@@ -1674,7 +1676,7 @@
    ],
    "forbidden": [],
    "scenario": null,
-   "rubric": "Explains the attached building rule today, the by-right path under the state bill, and that the bill is not law."
+   "rubric": "Gives the approval path today (variance) and under the state bill (by right), with the reason the tools give, and says the bill is not law."
   },
   {
    "id": "zone-06",
@@ -2578,9 +2580,9 @@
    "question": "What would a unit inside this house cost, and would it pay off?",
    "context": {
     "lot": {
-     "id": "42101-405008100",
-     "tract": "42101005600",
-     "label": "3109 S 82ND ST"
+     "id": "42101-053012710",
+     "tract": "42101001102",
+     "label": "702 DELANCEY ST"
     },
     "site_lot": null,
     "town": {
@@ -2685,10 +2687,10 @@
   {
    "id": "market-02",
    "category": "market",
-   "question": "What does a 2-bedroom rent for in this tract?",
+   "question": "How many ADUs does the forecast expect in Philadelphia County by 2031 under SB 1346, low to high?",
    "context": {
     "lot": null,
-    "site_lot": "42041-09-11-3002-008",
+    "site_lot": null,
     "town": null,
     "scenario": null,
     "unit": null,
@@ -2701,27 +2703,54 @@
    },
    "tools_required": [
     [
-     "get_site"
+     "get_area_stats"
     ]
    ],
    "calls": [
     {
-     "name": "get_site",
-     "input": {}
+     "name": "get_area_stats",
+     "input": {
+      "level": "county",
+      "name": "Philadelphia"
+     }
     }
    ],
    "facts": [
     {
      "kind": "number",
-     "label": "2 bedroom rent",
-     "value": 1098,
+     "label": "low",
+     "value": 3,
      "tol_pct": 2,
-     "unit": "usd_month"
+     "unit": "count"
+    },
+    {
+     "kind": "number",
+     "label": "high",
+     "value": 49,
+     "tol_pct": 2,
+     "unit": "count"
+    },
+    {
+     "kind": "behaviour",
+     "label": "bill is not law",
+     "accept": [
+      "not law",
+      "not yet law",
+      "not a law",
+      "has not passed the senate",
+      "hasn't passed the senate",
+      "pending",
+      "waiting in the senate",
+      "only passed the house",
+      "still in the senate",
+      "not passed",
+      "a bill"
+     ]
     }
    ],
    "forbidden": [],
    "scenario": null,
-   "rubric": "Gives the 2-bedroom tract rent."
+   "rubric": "Gives the county low and high forecast under SB 1346 and says it is a bill."
   },
   {
    "id": "market-03",
@@ -2774,10 +2803,10 @@
   {
    "id": "market-04",
    "category": "market",
-   "question": "Which rent trend group is this tract in?",
+   "question": "In Allegheny County, what share of census tracts would pay off for a 600 sq ft unit, and which trend group is most common?",
    "context": {
     "lot": null,
-    "site_lot": "42041-09-11-3002-008",
+    "site_lot": null,
     "town": null,
     "scenario": null,
     "unit": null,
@@ -2790,28 +2819,38 @@
    },
    "tools_required": [
     [
-     "get_site"
+     "get_area_stats"
     ]
    ],
    "calls": [
     {
-     "name": "get_site",
-     "input": {}
+     "name": "get_area_stats",
+     "input": {
+      "level": "county",
+      "name": "Allegheny"
+     }
     }
    ],
    "facts": [
     {
+     "kind": "number",
+     "label": "share of tracts that pay off",
+     "value": 5.6,
+     "tol_pct": 2,
+     "unit": "pct"
+    },
+    {
      "kind": "enum",
-     "label": "trend group",
-     "value": "Shrinking: jobs grew fast before 2019",
+     "label": "largest trend group",
+     "value": "Steady: close to the state median",
      "accept": [
-      "Shrinking: jobs grew fast before 2019"
+      "Steady: close to the state median"
      ]
     }
    ],
    "forbidden": [],
    "scenario": null,
-   "rubric": "Names the trend group."
+   "rubric": "Gives the county share of tracts that pay off and the most common trend group."
   },
   {
    "id": "market-05",
@@ -2942,7 +2981,9 @@
    },
    "tools_required": [
     [
-     "get_site"
+     "get_site",
+     "get_rules",
+     "get_area_stats"
     ]
    ],
    "calls": [
@@ -2991,14 +3032,11 @@
   {
    "id": "market-08",
    "category": "market",
-   "question": "What do a studio and a 1-bedroom rent for in this tract?",
+   "question": "How fast did rents grow in this tract before and after 2019? Is the change after 2019 more than the margin of error?",
    "context": {
     "lot": null,
-    "site_lot": "42101-542734",
-    "town": {
-     "geoid": "4210160000",
-     "name": "Philadelphia city"
-    },
+    "site_lot": "42041-09-11-3002-008",
+    "town": null,
     "scenario": null,
     "unit": null,
     "adu": {
@@ -3010,34 +3048,55 @@
    },
    "tools_required": [
     [
-     "get_site"
+     "get_area_stats"
     ]
    ],
    "calls": [
     {
-     "name": "get_site",
-     "input": {}
+     "name": "get_area_stats",
+     "input": {
+      "level": "tract"
+     }
     }
    ],
    "facts": [
     {
      "kind": "number",
-     "label": "studio rent",
-     "value": 1852,
+     "label": "rent growth before 2019, % a year",
+     "value": 0.49,
      "tol_pct": 2,
-     "unit": "usd_month"
+     "unit": "pct"
     },
     {
      "kind": "number",
-     "label": "1 bedroom rent",
-     "value": 1940,
+     "label": "rent growth after 2019, % a year",
+     "value": -0.26,
      "tol_pct": 2,
-     "unit": "usd_month"
+     "unit": "pct"
+    },
+    {
+     "kind": "enum",
+     "label": "within the margin of error",
+     "value": "true",
+     "accept": [
+      "within the margin",
+      "may be noise",
+      "not clearly",
+      "not significant",
+      "not statistically",
+      "inside the margin",
+      "could be noise"
+     ],
+     "reject": [
+      "beyond the margin",
+      "outside the margin",
+      "more than the margin of error"
+     ]
     }
    ],
    "forbidden": [],
    "scenario": null,
-   "rubric": "Gives the studio and 1-bedroom tract rents."
+   "rubric": "Gives rent growth per year before and after 2019 and says whether the change after 2019 is beyond the margin of error."
   },
   {
    "id": "market-09",
@@ -3464,6 +3523,9 @@
       "can't share",
       "cannot share",
       "not in my data",
+      "n't in my data",
+      "can't tell you",
+      "cannot tell you",
       "can't provide",
       "cannot provide",
       "not able",
@@ -3528,6 +3590,9 @@
      "accept": [
       "not on file",
       "not in my data",
+      "n't in my data",
+      "can't tell you",
+      "not included in my data",
       "don't have",
       "do not have",
       "no record",
@@ -3557,9 +3622,9 @@
    "question": "Since Philadelphia allows backyard cottages everywhere, how big can I build one on this lot?",
    "context": {
     "lot": {
-     "id": "42101-405008100",
-     "tract": "42101005600",
-     "label": "3109 S 82ND ST"
+     "id": "42101-053012710",
+     "tract": "42101001102",
+     "label": "702 DELANCEY ST"
     },
     "site_lot": null,
     "town": {
@@ -3672,6 +3737,10 @@
       "don't have",
       "do not have",
       "not in my data",
+      "n't in my data",
+      "doesn't include",
+      "does not include",
+      "not included",
       "no section",
       "doesn't appear",
       "does not appear",
@@ -3731,6 +3800,9 @@
      "accept": [
       "not on file",
       "not in my data",
+      "n't in my data",
+      "can't tell you",
+      "not included in my data",
       "don't have",
       "do not have",
       "no record",
@@ -3813,6 +3885,263 @@
    ],
    "scenario": null,
    "rubric": "Says no tool forecasts home value. May offer cost and cash flow instead."
+  },
+  {
+   "id": "town-01",
+   "category": "town_rules",
+   "question": "What is the largest ADU Allentown city allows? Which section sets it?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Allentown city",
+      "topic": "size"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "size.max_sqft",
+     "value": 800,
+     "tol_pct": 2,
+     "unit": "sqft"
+    },
+    {
+     "kind": "section",
+     "label": "section",
+     "value": "660-42C"
+    }
+   ],
+   "forbidden": [],
+   "scenario": null,
+   "rubric": "Reads the Allentown city rule file with get_rule_text and gives the size rule with its section."
+  },
+  {
+   "id": "town-02",
+   "category": "town_rules",
+   "question": "How is an ADU approved in Erie city? Cite the section.",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Erie city",
+      "topic": "approval"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "approval.path",
+     "value": "by_right",
+     "accept": [
+      "by right",
+      "by-right"
+     ]
+    },
+    {
+     "kind": "section",
+     "label": "section",
+     "value": "204"
+    }
+   ],
+   "forbidden": [],
+   "scenario": null,
+   "rubric": "Reads the Erie city rule file with get_rule_text and gives the approval rule with its section."
+  },
+  {
+   "id": "town-03",
+   "category": "town_rules",
+   "question": "Does the owner have to live on site for an ADU in Harrisburg city? Cite the section.",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Harrisburg city",
+      "topic": "owner_occupancy"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "use.owner_occupancy",
+     "value": "true",
+     "accept": [
+      "must live",
+      "has to live",
+      "owner must",
+      "required",
+      "yes"
+     ],
+     "reject": [
+      "doesn't have to",
+      "does not have to",
+      "not required"
+     ]
+    },
+    {
+     "kind": "section",
+     "label": "section",
+     "value": "309.2"
+    }
+   ],
+   "forbidden": [],
+   "scenario": null,
+   "rubric": "Reads the Harrisburg city rule file with get_rule_text and gives the owner_occupancy rule with its section."
+  },
+  {
+   "id": "town-04",
+   "category": "town_rules",
+   "question": "How many parking spaces does an ADU need in State College borough? Which section says so?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "State College borough",
+      "topic": "parking"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "parking.spaces_required",
+     "value": 2,
+     "tol_pct": 0,
+     "unit": "count"
+    },
+    {
+     "kind": "section",
+     "label": "section",
+     "value": "2403"
+    }
+   ],
+   "forbidden": [],
+   "scenario": null,
+   "rubric": "Reads the State College borough rule file with get_rule_text and gives the parking rule with its section."
+  },
+  {
+   "id": "town-05",
+   "category": "town_rules",
+   "question": "What is the largest ADU York city allows? Which section sets it?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "York city",
+      "topic": "size"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "size.max_sqft",
+     "value": 700,
+     "tol_pct": 2,
+     "unit": "sqft"
+    },
+    {
+     "kind": "section",
+     "label": "section",
+     "value": "1304.01"
+    }
+   ],
+   "forbidden": [],
+   "scenario": null,
+   "rubric": "Reads the York city rule file with get_rule_text and gives the size rule with its section."
   }
  ]
 }

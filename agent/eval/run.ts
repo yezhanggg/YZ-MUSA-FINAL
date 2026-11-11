@@ -66,17 +66,23 @@ export function selectQuestions(all: EvalQuestion[], f: Flags): EvalQuestion[] {
 }
 
 // ------------------------------------------------------------------ cost
-/** Dollars per million tokens. Assumed list prices by model family. EVAL_PRICE_IN / EVAL_PRICE_OUT override. */
-const PRICES: [RegExp, { input: number; output: number }][] = [
-  [/opus/, { input: 5, output: 25 }],
-  [/sonnet/, { input: 3, output: 15 }],
-  [/haiku/, { input: 1, output: 5 }],
+/** Dollars per million tokens, from the Anthropic pricing page (read Nov 11, 2026): base input, output, and the cache
+ *  read share of the input price. 5-minute cache writes cost 1.25 times input. Haiku 5.5 is the price for prompts up to
+ *  100,000 tokens. EVAL_PRICE_IN / EVAL_PRICE_OUT override input and output. */
+const PRICES: [RegExp, { input: number; output: number; read: number }][] = [
+  [/haiku-5-5/, { input: 0.1, output: 0.5, read: 0.1 }],
+  [/sonnet-5-5/, { input: 2, output: 10, read: 0.05 }],
+  [/opus-5-5/, { input: 4, output: 20, read: 0.05 }],
+  [/haiku-4-5/, { input: 1, output: 5, read: 0.1 }],
+  [/sonnet-5\b|sonnet-5$/, { input: 2, output: 10, read: 0.1 }],
+  [/opus-5\b|opus-5$/, { input: 5, output: 25, read: 0.1 }],
 ];
 export function priceOf(model: string) {
-  const base = PRICES.find(([re]) => re.test(model))?.[1] ?? { input: 3, output: 15 };
+  const base = PRICES.find(([re]) => re.test(model))?.[1] ?? { input: 2, output: 10, read: 0.1 };
   const input = Number(process.env.EVAL_PRICE_IN) || base.input;
   const output = Number(process.env.EVAL_PRICE_OUT) || base.output;
-  return { input, output, cache_write: Math.round(input * 125) / 100, cache_read: Math.round(input * 10) / 100 };
+  const r = (x: number) => Math.round(x * 10000) / 10000;
+  return { input, output, cache_write: r(input * 1.25), cache_read: r(input * base.read) };
 }
 export function costOf(u: Usage, model: string): number {
   const p = priceOf(model);
@@ -137,6 +143,7 @@ function fakeClient(q: EvalQuestion, tally: Tally): Client {
 // ------------------------------------------------------------------ the real client, with retries and a tally
 interface Tally {
   usage: Usage;
+  stopReasons: string[];
   requests: number;
   retries: number;
   cacheWarm: boolean;
@@ -169,6 +176,7 @@ function counted(c: Client, tally: Tally): Client {
   const create = async (params: MessageCreateParamsNonStreaming): Promise<Message> => {
     tally.requests++;
     const msg = (await c.messages.create(params)) as Message;
+    tally.stopReasons.push(String(msg.stop_reason));
     const u = msg.usage;
     tally.usage.input_tokens += u.input_tokens ?? 0;
     tally.usage.output_tokens += u.output_tokens ?? 0;
@@ -208,7 +216,7 @@ export function toolEvents(messages: unknown[]): ToolEvent[] {
 }
 
 async function runOne(q: EvalQuestion, model: string, key: string | null, dry: boolean, timeoutS: number): Promise<Transcript> {
-  const tally: Tally = { usage: zeroUsage(), requests: 0, retries: 0, cacheWarm: sharedCache.warm };
+  const tally: Tally = { usage: zeroUsage(), stopReasons: [], requests: 0, retries: 0, cacheWarm: sharedCache.warm };
   const handler = createHandler(() => counted(dry || !key ? fakeClient(q, tally) : realClient(key, tally), tally));
   let lastMessages: unknown[] = [];
   let lastContent: unknown[] = [];
@@ -247,7 +255,7 @@ async function runOne(q: EvalQuestion, model: string, key: string | null, dry: b
   const messages = [...lastMessages, ...(lastContent.length ? [{ role: 'assistant', content: lastContent }] : [])];
   return {
     id: q.id, category: q.category, model, dry_run: dry, question: q.question, answer, ok, error,
-    tool_calls: toolEvents(messages), requests: tally.requests, retries: tally.retries, usage: tally.usage,
+    tool_calls: toolEvents(messages), requests: tally.requests, retries: tally.retries, stop_reasons: tally.stopReasons, usage: tally.usage,
     cost_usd: Math.round(costOf(tally.usage, model) * 1e5) / 1e5, usage_estimated: dry, latency_ms: Date.now() - t0, messages,
   };
 }
@@ -315,4 +323,8 @@ async function main() {
   console.log(`transcripts and report: ${dir}`);
 }
 
-if (process.argv[1]?.endsWith('run.ts')) await main();
+if (process.argv[1]?.endsWith('run.ts')) {
+  await main();
+  // Lazy rule-file chunks can keep the event loop open: end the script when its work is done.
+  process.exit(0);
+}

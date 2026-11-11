@@ -38,6 +38,8 @@ export interface Transcript {
   tool_calls: ToolEvent[];
   requests: number;
   retries: number;
+  /** stop_reason of each model reply ("max_tokens" means an answer was cut). Older runs lack it. */
+  stop_reasons?: string[];
   usage: Usage;
   cost_usd: number;
   /** True when the token counts are estimates (dry run), not counts from the API. */
@@ -121,7 +123,8 @@ export function numbersIn(text: string): number[] {
 }
 
 function numberMatches(f: Extract<Fact, { kind: 'number' }>, found: number[]): boolean {
-  const tol = Math.max(Math.abs(f.value) * (f.tol_pct / 100), f.tol_pct === 0 ? 0 : 0.5);
+  // Rounding allowance: half a unit for whole numbers, 0.05 for a percent such as 2.49.
+  const tol = Math.max(Math.abs(f.value) * (f.tol_pct / 100), f.tol_pct === 0 ? 0 : f.unit === 'pct' ? 0.05 : 0.5);
   const want = f.unit === 'pct' ? [f.value, f.value / 100] : [f.value];
   // A loss may be written in words ("loses $797 a month"), so a negative value also matches its size.
   if (f.value < 0) want.push(-f.value);
@@ -162,6 +165,8 @@ export interface QuestionScore {
   forbidden_hits: string[];
   scenario_ok: boolean;
   scenario_why: string | null;
+  /** The model hit max_tokens: the answer may be cut. */
+  truncated: boolean;
   tool_calls: number;
   latency_ms: number;
   cost_usd: number;
@@ -198,6 +203,7 @@ export function scoreQuestion(q: EvalQuestion, t: Transcript): QuestionScore {
   const correct = t.ok && facts.every((f) => f.pass) && tools_missing.length === 0 && made_up_citations.length === 0 && forbidden_hits.length === 0 && scenario_ok;
   return {
     id: q.id, category: q.category, correct, ok: t.ok, facts, tools_missing, made_up_citations, forbidden_hits, scenario_ok, scenario_why,
+    truncated: (t.stop_reasons ?? []).includes('max_tokens'),
     tool_calls: t.tool_calls.length, latency_ms: t.latency_ms, cost_usd: t.cost_usd, usage: t.usage,
   };
 }
@@ -296,6 +302,7 @@ export function markdown(s: RunSummary, scores: QuestionScore[]): string {
   for (const m of misses) {
     const why = [
       !m.ok ? 'run failed' : null,
+      m.truncated ? 'answer cut at max_tokens' : null,
       ...m.facts.filter((f) => !f.pass).map((f) => `fact "${f.label}" missing (${f.why ?? ''})`),
       ...m.tools_missing.map((g) => `no call to ${g.join(' or ')}`),
       ...m.made_up_citations.map((c) => `made-up citation ${c}`),

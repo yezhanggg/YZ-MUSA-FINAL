@@ -19,7 +19,9 @@ function backed(f: Fact, text: string, nums: number[]): boolean {
   switch (f.kind) {
     case 'number': {
       const tol = Math.abs(f.value) * (f.tol_pct / 100) + 1e-9;
-      return nums.some((x) => Math.abs(x - f.value) <= tol);
+      // A percent may sit in the results as a share (12.3 percent as 0.123).
+      const want = f.unit === 'pct' ? [f.value, f.value / 100] : [f.value];
+      return nums.some((x) => want.some((w) => Math.abs(x - w) <= tol * (Math.abs(w) / Math.abs(f.value || 1)) + 1e-9));
     }
     case 'enum':
       return text.toLowerCase().includes(f.value.toLowerCase());
@@ -34,10 +36,10 @@ function backed(f: Fact, text: string, nums: number[]): boolean {
 const jsonNumbers = (text: string) => [...text.matchAll(/-?\d+(?:\.\d+)?/g)].map((m) => Number(m[0])).concat(numbersIn(text));
 
 describe('eval set shape', () => {
-  it.skipIf(!set)('has 60 questions, 10 per category, unique ids', () => {
-    expect(set!.questions).toHaveLength(60);
-    for (const c of CATEGORIES) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
-    expect(new Set(set!.questions.map((q) => q.id)).size).toBe(60);
+  it.skipIf(!set)('has 10 questions in each main category, up to 5 on town rule files, unique ids', () => {
+    for (const c of CATEGORIES.filter((c) => c !== 'town_rules')) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
+    expect(set!.questions.filter((q) => q.category === 'town_rules').length).toBeLessThanOrEqual(5);
+    expect(new Set(set!.questions.map((q) => q.id)).size).toBe(set!.questions.length);
   });
 
   it.skipIf(!set)('names only real tools, and every question has a check', () => {

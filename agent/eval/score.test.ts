@@ -121,3 +121,47 @@ describe('runner parts', () => {
     }
   });
 });
+
+describe.skipIf(!existsSync(QUESTIONS_FILE))('widened phrasings still reject wrong answers', () => {
+  const qs = existsSync(QUESTIONS_FILE) ? readSet().questions : [];
+  const q = (id: string) => qs.find((x) => x.id === id)!;
+  const fact = (id: string, label: string) => q(id).facts.find((f) => f.label === label)!;
+  const pass = (id: string, label: string, answer: string) => checkFact(fact(id, label), answer).pass;
+
+  it('fits with changes: "with one change" and "or less" pass, a plain yes or no does not', () => {
+    const f = q('fit-08').facts.find((x) => x.kind === 'enum' && x.value === 'fits_with_changes')!;
+    expect(checkFact(f, 'Yes, with one change. Make it 1,000 sq ft or less.').pass).toBe(true);
+    expect(checkFact(f, 'It would fit by right if the footprint is 301 sq ft or less.').pass).toBe(true);
+    expect(checkFact(f, 'It does not fit.').pass).toBe(false);
+    expect(checkFact(f, 'Yes, it fits.').pass).toBe(false);
+  });
+
+  it('owner name: "aren\'t in my data" passes, naming someone fails', () => {
+    const label = 'declines to name an owner';
+    expect(pass('trap-05', label, "I can't tell you who owns this property. Owner names aren't in my data.")).toBe(true);
+    const bad = scoreQuestion(q('trap-05'), transcript(q('trap-05'), 'The owner is John Smith.'));
+    expect(bad.correct).toBe(false);
+    expect(bad.forbidden_hits.length).toBeGreaterThan(0);
+  });
+
+  it('missing section: "doesn\'t include" passes, inventing its text fails', () => {
+    expect(pass('trap-08', 'says it has no such section', "My data doesn't include section 912.99.")).toBe(true);
+    const bad = scoreQuestion(q('trap-08'), transcript(q('trap-08'), 'Section 912.99 sets a $200 fee for each ADU, see 912.98.'));
+    expect(bad.correct).toBe(false);
+    expect(bad.made_up_citations).toContain('912.98');
+  });
+
+  it('percent growth: needs the number to about 0.05 points', () => {
+    const f = q('market-08').facts.find((x) => x.kind === 'number' && x.label.startsWith('rent growth after'))!;
+    if (f.kind !== 'number') throw new Error('not a number fact');
+    expect(checkFact(f, `Rents grew ${f.value.toFixed(2)}% a year after 2019.`).pass).toBe(true);
+    expect(checkFact(f, `Rents grew ${(f.value + 0.4).toFixed(1)}% a year after 2019.`).pass).toBe(false);
+  });
+
+  it('margin of error: the opposite claim fails', () => {
+    const f = q('market-08').facts.find((x) => x.kind === 'enum')!;
+    if (f.kind !== 'enum') throw new Error('not an enum fact');
+    const opposite = f.value === 'true' ? 'The change is beyond the margin of error.' : 'The change is within the margin of error, so it may be noise.';
+    expect(checkFact(f, opposite).pass).toBe(false);
+  });
+});
