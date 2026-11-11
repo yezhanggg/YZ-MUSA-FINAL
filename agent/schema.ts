@@ -1,7 +1,7 @@
 // "Ask about this site": the agent's contract, shared by the server (api/agent.ts) and the browser
 // (app/src/agent). Claude picks tools, the browser runs them with the same code as the report.
 import { LOT_TOOLS } from '../app/src/lib/lot/agentTools';
-import { RULE_TEXT_TOOL } from '../app/src/agent/ruleText';
+import { LIST_PLACES_TOOL, RULE_TEXT_TOOL } from '../app/src/agent/ruleText';
 import type { Scenario } from '../app/src/lib/lot/types';
 
 export const MAX_ROUNDS = 6;
@@ -14,7 +14,8 @@ Rules:
 - Every number you give must come from a tool result in this conversation. Never estimate or recall numbers.
 - If no tool can answer the question, say so plainly.
 - When a tool returns null, "not on file", "not coded" or an error, say it is not in your data. Never fill the gap.
-- Cite only code sections and links that a tool returned in this conversation. Never cite from memory. For a town's rule text use get_rule_text (Philadelphia, Pittsburgh and the bills) or get_rules (town summary).
+- Cite only code sections and links that a tool returned in this conversation. Never cite from memory. For a town's rule text use get_rule_text (Philadelphia, Pittsburgh, the towns in list_rule_places, and the bills) or get_rules (town summary).
+- For a zoning question about a named Pennsylvania town, call get_rule_text first. Cite only what it returns. When it returns the statewide baseline, say the answer is the statewide baseline, not the town's own code, and suggest asking the municipal zoning officer.
 - HB 2186, SB 1346 and Bill 250042 are bills, not law. Say so whenever you use one, and correct a user who says one passed.
 - If the question rests on a wrong premise, correct it first, then answer.
 - Never give owner names or other personal details. The tools do not have them.
@@ -92,7 +93,7 @@ const SITE_TOOLS: ToolDef[] = [
 ];
 
 /** The tract and town tools, the rule file lookup (app/src/agent/ruleText.ts), then the lot record tools (app/src/lib/lot/agentTools.ts). */
-export const TOOLS: ToolDef[] = [...SITE_TOOLS, RULE_TEXT_TOOL, ...LOT_TOOLS];
+export const TOOLS: ToolDef[] = [...SITE_TOOLS, RULE_TEXT_TOOL, LIST_PLACES_TOOL, ...LOT_TOOLS];
 
 /** What the browser sends along with each question. */
 export interface AgentContext {

@@ -1,0 +1,1481 @@
+{
+  "about": "Pennsylvania towns targeted for ADU rule files, ranked. Made by tools/town_targets.py. Town workers update only 'status'. See TOWNS.md.",
+  "generated_on": "2026-11-11",
+  "population_source": {
+    "title": "2020 Census Redistricting Data (PL 94-171), Pennsylvania, county subdivisions",
+    "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Pennsylvania/pa2020.pl.zip",
+    "fields": "POP100 (total population), HU100 (housing units)",
+    "pa_population_2020": 13002700
+  },
+  "coverage": [
+    {
+      "towns_beyond_the_two_cities": 0,
+      "population": 1906768,
+      "share_of_pa": 0.1466
+    },
+    {
+      "towns_beyond_the_two_cities": 12,
+      "population": 2760353,
+      "share_of_pa": 0.2123
+    },
+    {
+      "towns_beyond_the_two_cities": 24,
+      "population": 3331899,
+      "share_of_pa": 0.2562
+    },
+    {
+      "towns_beyond_the_two_cities": 36,
+      "population": 3740515,
+      "share_of_pa": 0.2877
+    },
+    {
+      "towns_beyond_the_two_cities": 48,
+      "population": 4104138,
+      "share_of_pa": 0.3156
+    },
+    {
+      "towns_beyond_the_two_cities": 60,
+      "population": 4393886,
+      "share_of_pa": 0.3379
+    },
+    {
+      "towns_beyond_the_two_cities": 66,
+      "population": 4454986,
+      "share_of_pa": 0.3426
+    }
+  ],
+  "towns": [
+    {
+      "geoid": "4210160000",
+      "name": "Philadelphia city",
+      "county": "Philadelphia",
+      "type": "city",
+      "population": 1603797,
+      "housing_units": 726797,
+      "pop_rank": 1,
+      "file": "philadelphia",
+      "batch": 0,
+      "status": "verified",
+      "checked_on": "2026-11-10",
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population",
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4200361000",
+      "name": "Pittsburgh city",
+      "county": "Allegheny",
+      "type": "city",
+      "population": 302971,
+      "housing_units": 157695,
+      "pop_rank": 2,
+      "file": "pittsburgh",
+      "batch": 0,
+      "status": "verified",
+      "checked_on": "2026-11-10",
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population",
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4207702000",
+      "name": "Allentown city",
+      "county": "Lehigh",
+      "type": "city",
+      "population": 125845,
+      "housing_units": 48533,
+      "pop_rank": 3,
+      "file": "pa_lehigh_allentown",
+      "batch": 1,
+      "status": "drafted",
+      "checked_on": "2026-11-11",
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population",
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4201163624",
+      "name": "Reading city",
+      "county": "Berks",
+      "type": "city",
+      "population": 95112,
+      "housing_units": 35617,
+      "pop_rank": 4,
+      "file": "pa_berks_reading",
+      "batch": 1,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204924000",
+      "name": "Erie city",
+      "county": "Erie",
+      "type": "city",
+      "population": 94831,
+      "housing_units": 43625,
+      "pop_rank": 5,
+      "file": "pa_erie_erie",
+      "batch": 1,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4206969000",
+      "name": "Scranton city",
+      "county": "Lackawanna",
+      "type": "city",
+      "population": 76328,
+      "housing_units": 34723,
+      "pop_rank": 7,
+      "file": "pa_lackawanna_scranton",
+      "batch": 1,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209506088",
+      "name": "Bethlehem city",
+      "county": "Northampton",
+      "type": "city",
+      "population": 56009,
+      "housing_units": 23099,
+      "pop_rank": 12,
+      "file": "pa_northampton_bethlehem",
+      "batch": 1,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4207141216",
+      "name": "Lancaster city",
+      "county": "Lancaster",
+      "type": "city",
+      "population": 58039,
+      "housing_units": 23769,
+      "pop_rank": 11,
+      "file": "pa_lancaster_lancaster",
+      "batch": 1,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204332800",
+      "name": "Harrisburg city",
+      "county": "Dauphin",
+      "type": "city",
+      "population": 50099,
+      "housing_units": 24727,
+      "pop_rank": 17,
+      "file": "pa_dauphin_harrisburg",
+      "batch": 2,
+      "status": "drafted",
+      "checked_on": "2026-11-11",
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population",
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4213387048",
+      "name": "York city",
+      "county": "York",
+      "type": "city",
+      "population": 44800,
+      "housing_units": 19017,
+      "pop_rank": 19,
+      "file": "pa_york_york",
+      "batch": 2,
+      "status": "drafted",
+      "checked_on": "2026-11-11",
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4202773808",
+      "name": "State College borough",
+      "county": "Centre",
+      "type": "borough",
+      "population": 40501,
+      "housing_units": 13407,
+      "pop_rank": 25,
+      "file": "pa_centre_state_college",
+      "batch": 2,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204579000",
+      "name": "Upper Darby township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 85681,
+      "housing_units": 34508,
+      "pop_rank": 6,
+      "file": "pa_delaware_upper_darby",
+      "batch": 2,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209144976",
+      "name": "Lower Merion township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 63633,
+      "housing_units": 25796,
+      "pop_rank": 8,
+      "file": "pa_montgomery_lower_merion",
+      "batch": 2,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201705616",
+      "name": "Bensalem township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 62707,
+      "housing_units": 25751,
+      "pop_rank": 9,
+      "file": "pa_bucks_bensalem",
+      "batch": 2,
+      "status": "in_progress",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209100156",
+      "name": "Abington township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 58502,
+      "housing_units": 23055,
+      "pop_rank": 10,
+      "file": "pa_montgomery_abington",
+      "batch": 3,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201708768",
+      "name": "Bristol township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 54291,
+      "housing_units": 20904,
+      "pop_rank": 13,
+      "file": "pa_bucks_bristol",
+      "batch": 3,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204949548",
+      "name": "Millcreek township",
+      "county": "Erie",
+      "type": "township",
+      "population": 54073,
+      "housing_units": 25224,
+      "pop_rank": 14,
+      "file": "pa_erie_millcreek",
+      "batch": 3,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204345056",
+      "name": "Lower Paxton township",
+      "county": "Dauphin",
+      "type": "township",
+      "population": 53501,
+      "housing_units": 22793,
+      "pop_rank": 15,
+      "file": "pa_dauphin_lower_paxton",
+      "batch": 3,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204533144",
+      "name": "Haverford township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 50431,
+      "housing_units": 18600,
+      "pop_rank": 16,
+      "file": "pa_delaware_haverford",
+      "batch": 3,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201749120",
+      "name": "Middletown township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 46040,
+      "housing_units": 17865,
+      "pop_rank": 18,
+      "file": "pa_bucks_middletown",
+      "batch": 3,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4207985152",
+      "name": "Wilkes-Barre city",
+      "county": "Luzerne",
+      "type": "city",
+      "population": 44328,
+      "housing_units": 19861,
+      "pop_rank": 20,
+      "file": "pa_luzerne_wilkes_barre",
+      "batch": 4,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4207146896",
+      "name": "Manheim township",
+      "county": "Lancaster",
+      "type": "township",
+      "population": 43977,
+      "housing_units": 17262,
+      "pop_rank": 21,
+      "file": "pa_lancaster_manheim",
+      "batch": 4,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201302184",
+      "name": "Altoona city",
+      "county": "Blair",
+      "type": "city",
+      "population": 43963,
+      "housing_units": 20672,
+      "pop_rank": 22,
+      "file": "pa_blair_altoona",
+      "batch": 4,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4212933792",
+      "name": "Hempfield township",
+      "county": "Westmoreland",
+      "type": "township",
+      "population": 41466,
+      "housing_units": 18545,
+      "pop_rank": 23,
+      "file": "pa_westmoreland_hempfield",
+      "batch": 4,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200359032",
+      "name": "Penn Hills township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 41059,
+      "housing_units": 20178,
+      "pop_rank": 24,
+      "file": "pa_allegheny_penn_hills",
+      "batch": 4,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201754688",
+      "name": "Northampton township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 39915,
+      "housing_units": 14308,
+      "pop_rank": 26,
+      "file": "pa_bucks_northampton",
+      "batch": 4,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209112968",
+      "name": "Cheltenham township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 37452,
+      "housing_units": 15922,
+      "pop_rank": 27,
+      "file": "pa_montgomery_cheltenham",
+      "batch": 5,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209154656",
+      "name": "Norristown borough",
+      "county": "Montgomery",
+      "type": "borough",
+      "population": 35748,
+      "housing_units": 13974,
+      "pop_rank": 28,
+      "file": "pa_montgomery_norristown",
+      "batch": 5,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201725112",
+      "name": "Falls township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 34716,
+      "housing_units": 13808,
+      "pop_rank": 29,
+      "file": "pa_bucks_falls",
+      "batch": 5,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200351696",
+      "name": "Mount Lebanon township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 34075,
+      "housing_units": 14885,
+      "pop_rank": 30,
+      "file": "pa_allegheny_mount_lebanon",
+      "batch": 5,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209179136",
+      "name": "Upper Merion township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 33613,
+      "housing_units": 15991,
+      "pop_rank": 31,
+      "file": "pa_montgomery_upper_merion",
+      "batch": 5,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201780952",
+      "name": "Warminster township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 33603,
+      "housing_units": 14216,
+      "pop_rank": 32,
+      "file": "pa_bucks_warminster",
+      "batch": 5,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200306064",
+      "name": "Bethel Park municipality",
+      "county": "Allegheny",
+      "type": "municipality",
+      "population": 33577,
+      "housing_units": 15125,
+      "pop_rank": 33,
+      "file": "pa_allegheny_bethel_park",
+      "batch": 6,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200366264",
+      "name": "Ross township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 33567,
+      "housing_units": 15888,
+      "pop_rank": 34,
+      "file": "pa_allegheny_ross",
+      "batch": 6,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204563264",
+      "name": "Radnor township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 33228,
+      "housing_units": 10923,
+      "pop_rank": 35,
+      "file": "pa_delaware_radnor",
+      "batch": 6,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201744968",
+      "name": "Lower Makefield township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 33180,
+      "housing_units": 12723,
+      "pop_rank": 36,
+      "file": "pa_bucks_lower_makefield",
+      "batch": 6,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201916920",
+      "name": "Cranberry township",
+      "county": "Butler",
+      "type": "township",
+      "population": 33096,
+      "housing_units": 13326,
+      "pop_rank": 37,
+      "file": "pa_butler_cranberry",
+      "batch": 6,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204132296",
+      "name": "Hampden township",
+      "county": "Cumberland",
+      "type": "township",
+      "population": 32761,
+      "housing_units": 13607,
+      "pop_rank": 38,
+      "file": "pa_cumberland_hampden",
+      "batch": 6,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204513208",
+      "name": "Chester city",
+      "county": "Delaware",
+      "type": "city",
+      "population": 32605,
+      "housing_units": 14023,
+      "pop_rank": 39,
+      "file": "pa_delaware_chester",
+      "batch": 7,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4207744952",
+      "name": "Lower Macungie township",
+      "county": "Lehigh",
+      "type": "township",
+      "population": 32426,
+      "housing_units": 12516,
+      "pop_rank": 40,
+      "file": "pa_lehigh_lower_macungie",
+      "batch": 7,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4202977344",
+      "name": "Tredyffrin township",
+      "county": "Chester",
+      "type": "township",
+      "population": 31927,
+      "housing_units": 13225,
+      "pop_rank": 41,
+      "file": "pa_chester_tredyffrin",
+      "batch": 7,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4212955128",
+      "name": "North Huntingdon township",
+      "county": "Westmoreland",
+      "type": "township",
+      "population": 31880,
+      "housing_units": 13576,
+      "pop_rank": 42,
+      "file": "pa_westmoreland_north_huntingdon",
+      "batch": 7,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204564800",
+      "name": "Ridley township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 31053,
+      "housing_units": 12838,
+      "pop_rank": 43,
+      "file": "pa_delaware_ridley",
+      "batch": 7,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4207933408",
+      "name": "Hazleton city",
+      "county": "Luzerne",
+      "type": "city",
+      "population": 29963,
+      "housing_units": 11860,
+      "pop_rank": 44,
+      "file": "pa_luzerne_hazleton",
+      "batch": 7,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4213387056",
+      "name": "York township",
+      "county": "York",
+      "type": "township",
+      "population": 29719,
+      "housing_units": 12699,
+      "pop_rank": 45,
+      "file": "pa_york_york_township",
+      "batch": 8,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200345900",
+      "name": "McCandless township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 29698,
+      "housing_units": 12720,
+      "pop_rank": 46,
+      "file": "pa_allegheny_mccandless",
+      "batch": 8,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4207784528",
+      "name": "Whitehall township",
+      "county": "Lehigh",
+      "type": "township",
+      "population": 29173,
+      "housing_units": 12005,
+      "pop_rank": 47,
+      "file": "pa_lehigh_whitehall",
+      "batch": 8,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200350528",
+      "name": "Monroeville municipality",
+      "county": "Allegheny",
+      "type": "municipality",
+      "population": 28640,
+      "housing_units": 13609,
+      "pop_rank": 48,
+      "file": "pa_allegheny_monroeville",
+      "batch": 8,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4201172824",
+      "name": "Spring township",
+      "county": "Berks",
+      "type": "township",
+      "population": 28407,
+      "housing_units": 11387,
+      "pop_rank": 49,
+      "file": "pa_berks_spring",
+      "batch": 8,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200369584",
+      "name": "Shaler township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 28132,
+      "housing_units": 12686,
+      "pop_rank": 50,
+      "file": "pa_allegheny_shaler",
+      "batch": 8,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209521648",
+      "name": "Easton city",
+      "county": "Northampton",
+      "type": "city",
+      "population": 28127,
+      "housing_units": 10899,
+      "pop_rank": 51,
+      "file": "pa_northampton_easton",
+      "batch": 9,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204375672",
+      "name": "Swatara township",
+      "county": "Dauphin",
+      "type": "township",
+      "population": 27824,
+      "housing_units": 11002,
+      "pop_rank": 52,
+      "file": "pa_dauphin_swatara",
+      "batch": 9,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4208185312",
+      "name": "Williamsport city",
+      "county": "Lycoming",
+      "type": "city",
+      "population": 27754,
+      "housing_units": 12928,
+      "pop_rank": 53,
+      "file": "pa_lycoming_williamsport",
+      "batch": 9,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200350784",
+      "name": "Moon township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 27240,
+      "housing_units": 11056,
+      "pop_rank": 54,
+      "file": "pa_allegheny_moon",
+      "batch": 9,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4200361536",
+      "name": "Plum borough",
+      "county": "Allegheny",
+      "type": "borough",
+      "population": 27144,
+      "housing_units": 11869,
+      "pop_rank": 55,
+      "file": "pa_allegheny_plum",
+      "batch": 9,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4213372992",
+      "name": "Springettsbury township",
+      "county": "York",
+      "type": "township",
+      "population": 27058,
+      "housing_units": 10641,
+      "pop_rank": 56,
+      "file": "pa_york_springettsbury",
+      "batch": 9,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4207542168",
+      "name": "Lebanon city",
+      "county": "Lebanon",
+      "type": "city",
+      "population": 26814,
+      "housing_units": 11426,
+      "pop_rank": 57,
+      "file": "pa_lebanon_lebanon",
+      "batch": 10,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4204375528",
+      "name": "Susquehanna township",
+      "county": "Dauphin",
+      "type": "township",
+      "population": 26736,
+      "housing_units": 12250,
+      "pop_rank": 58,
+      "file": "pa_dauphin_susquehanna",
+      "batch": 10,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209179008",
+      "name": "Upper Dublin township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 26665,
+      "housing_units": 10088,
+      "pop_rank": 59,
+      "file": "pa_montgomery_upper_dublin",
+      "batch": 10,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4209135808",
+      "name": "Horsham township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 26564,
+      "housing_units": 10284,
+      "pop_rank": 60,
+      "file": "pa_montgomery_horsham",
+      "batch": 10,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "top 60 by 2020 population"
+      ]
+    },
+    {
+      "geoid": "4202984160",
+      "name": "West Vincent township",
+      "county": "Chester",
+      "type": "township",
+      "population": 6668,
+      "housing_units": 2496,
+      "pop_rank": 431,
+      "file": "pa_chester_west_vincent",
+      "batch": 10,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4202984104",
+      "name": "Westtown township",
+      "county": "Chester",
+      "type": "township",
+      "population": 11154,
+      "housing_units": 4136,
+      "pop_rank": 229,
+      "file": "pa_chester_westtown",
+      "batch": 10,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4202946792",
+      "name": "Malvern borough",
+      "county": "Chester",
+      "type": "borough",
+      "population": 3419,
+      "housing_units": 1657,
+      "pop_rank": 811,
+      "file": "pa_chester_malvern",
+      "batch": 11,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4202920864",
+      "name": "East Brandywine township",
+      "county": "Chester",
+      "type": "township",
+      "population": 9738,
+      "housing_units": 3346,
+      "pop_rank": 272,
+      "file": "pa_chester_east_brandywine",
+      "batch": 11,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4202982704",
+      "name": "West Chester borough",
+      "county": "Chester",
+      "type": "borough",
+      "population": 18671,
+      "housing_units": 7513,
+      "pop_rank": 111,
+      "file": "pa_chester_west_chester",
+      "batch": 11,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4202715136",
+      "name": "College township",
+      "county": "Centre",
+      "type": "township",
+      "population": 10762,
+      "housing_units": 4362,
+      "pop_rank": 243,
+      "file": "pa_centre_college",
+      "batch": 11,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4207158840",
+      "name": "Penn township",
+      "county": "Lancaster",
+      "type": "township",
+      "population": 10210,
+      "housing_units": 4279,
+      "pop_rank": 256,
+      "file": "pa_lancaster_penn",
+      "batch": 11,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "in shared/legal_status.csv"
+      ]
+    },
+    {
+      "geoid": "4201719784",
+      "name": "Doylestown borough",
+      "county": "Bucks",
+      "type": "borough",
+      "population": 8300,
+      "housing_units": 4302,
+      "pop_rank": 337,
+      "file": "pa_bucks_doylestown_borough",
+      "batch": 11,
+      "status": "todo",
+      "checked_on": null,
+      "code_host": "unknown",
+      "code_url": null,
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "in shared/legal_status.csv"
+      ]
+    }
+  ]
+}

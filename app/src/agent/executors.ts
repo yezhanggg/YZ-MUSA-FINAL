@@ -4,7 +4,7 @@ import { footprint, lotFit, rentNote, tractPayoff, tractRoom, type FitCurves } f
 import { BED_SIZE, RATE, YEARS, COST_PSF, SOFT, OPEX, type Adu, type Bed, type Stories } from '../lib/numbers';
 import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, cleanWhy, isPittsburgh, ruleFor, ruleWarnings, type LotRule } from '../lib/rules';
 import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
-import { getRuleText } from './ruleText';
+import { getRuleText, listRulePlaces } from './ruleText';
 import { meters, type LngLat, type Lot, type TownProps, type TractProps } from '../tool/geo';
 
 export interface SiteRecord {
@@ -171,8 +171,11 @@ export function makeExecutors(p: DataProvider) {
     async get_rules(input: { town_geoid?: string }) {
       return rulesOf(await p.town(input.town_geoid));
     },
-    async get_rule_text(input: { place?: unknown; topic?: unknown; district?: unknown }) {
+    async get_rule_text(input: { place?: unknown; county?: unknown; topic?: unknown; district?: unknown }) {
       return getRuleText(input);
+    },
+    async list_rule_places(input: { county?: unknown; with_file_only?: unknown }) {
+      return listRulePlaces(input);
     },
     async find_lots(input: { size_sqft?: number; stories?: number; bedrooms?: number; keeps_trees?: boolean; pays?: boolean; allowed_today?: boolean; limit?: number }) {
       const a = aduFrom(input, p.adu());
