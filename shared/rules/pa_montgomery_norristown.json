@@ -1,0 +1,302 @@
+{
+  "provenance": {
+    "jurisdiction": "Norristown borough",
+    "instrument": "General Laws of the Municipality of Norristown, Chapter 320 Zoning (Ord. No. 16-08 of 4-19-2016, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code NO0820) dated 2026-01-03. Norristown is a home rule municipality. The Census name is Norristown borough. New Laws lists three uncodified Chapter 320 amendments: Ord. 26-01 (amusement devices and arcades), 26-03 (significant tobacco retailers in CR) and 26-04 (data centers in HI). All three were opened. None touches residential districts or accessory dwellings. The Mixed-Use Overlay of Ord. 25-03 is codified as Article XXXIII and has no ADU text.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11552876",
+      "https://ecode360.com/33562947",
+      "https://ecode360.com/33563169",
+      "https://ecode360.com/33563179",
+      "https://ecode360.com/33563202",
+      "https://ecode360.com/33563233",
+      "https://ecode360.com/33563257",
+      "https://ecode360.com/33563399",
+      "https://ecode360.com/33564100",
+      "https://ecode360.com/33564508",
+      "https://ecode360.com/33564517",
+      "https://ecode360.com/33564518",
+      "https://ecode360.com/33564541",
+      "https://ecode360.com/33569949",
+      "https://ecode360.com/11550738",
+      "https://ecode360.com/print/NO0820?guid=11552876",
+      "https://ecode360.com/NO0820/laws",
+      "https://ecode360.com/NO0820/laws/LF2667226.pdf",
+      "https://ecode360.com/NO0820/laws/LF2667227.pdf",
+      "https://ecode360.com/NO0820/laws/LF2802619.pdf",
+      "https://www.norristown.org/",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Montgomery",
+    "municipality_type": "borough",
+    "geoid": "4209154656",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11552876",
+    "code_current_through": "2026-01-03",
+    "code_current_through_note": "eCode360 code date 2026-01-03. New Laws: Ord. 26-01, 26-03 (2026-04-21) and 26-04 (2026-08-18), all Chapter 320, none residential.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "R-1 allows a single-family detached dwelling 'and for no other' principal use (320-26A). R-2 allows listed housing types 'and no other' (320-41A)",
+      "R-2 housing types are allowed only where three buildings of the same type already stand on the block. A duplex is allowed only if 'designed and originally constructed as such' (320-41A(3)). Converting a house to a duplex is not a listed use",
+      "Accessory buildings: rear yard only, at most 20% of the rear yard, 15 ft high, 5 ft from side and rear lines and from the house (320-230A, 320-231)",
+      "A freestanding accessory building over 600 sq ft or over 12 ft high needs a special exception and must meet the principal building setbacks (320-232A(2))",
+      "No structure on an alley lot (alley access only, no street frontage) may be built or converted for human habitation (320-238)",
+      "A family may be up to five unrelated people (320-11 'Family')",
+      "Renting a dwelling needs an annual rental license permit (Chapter 245, 245-2)"
+    ],
+    "notes": "Zoning office: Municipality of Norristown, code enforcement and zoning, https://www.norristown.org/. Searched Chapter 320 (full print view) for: accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, conversion, kitchen. No ADU provision. A general 'use not expressly permitted elsewhere' special exception exists only in the HI district (320-161B(1))."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "320-11, Articles IV, V, XXII",
+      "url": "https://ecode360.com/33562947",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, conversion, kitchen."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "320-26, 320-41, Article XXII",
+      "url": "https://ecode360.com/33563169",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text. R-1: 'Single-family detached dwelling' and 'for no other' principal use."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "320-26A, 320-41A, 320-357",
+      "url": "https://ecode360.com/33563169",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: R-1 and R-2 list permitted uses 'and no other'. A second unit is not listed. A use variance is the path."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "320-357",
+      "url": "https://ecode360.com/33565842",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path. The only catch-all special exception for unlisted uses is in the HI district (320-161B(1))."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "320-26, 320-41, 320-66",
+      "url": "https://ecode360.com/33563169",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 320",
+      "url": "https://ecode360.com/11552876",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "abutting_way",
+          "condition": "No structure on an alley lot (access only on an alley, no street frontage) may be built or converted for human habitation.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "320-238",
+          "url": "https://ecode360.com/33564541"
+        }
+      ],
+      "section": "320-238",
+      "url": "https://ecode360.com/33564541",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'No structure shall be erected ... for human habitation on an alley lot.'"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "320-26, 320-41",
+      "url": "https://ecode360.com/33563169",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "320-230A(2), 320-232A(2)",
+      "url": "https://ecode360.com/33564508",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule, not an ADU rule. Accessory buildings 'shall not exceed 15 feet in height'. Over 12 ft needs a special exception (320-232A(2))."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "320-231",
+      "url": "https://ecode360.com/33564517",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule: not 'closer than five feet to a rear or side lot line'. Buildings over 600 sq ft or 12 ft take the principal setbacks (320-232A(2)(a))."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "320-231",
+      "url": "https://ecode360.com/33564517",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule: 5 ft. Rear yard only (320-230A(1))."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "320-230A(1), 320-231",
+      "url": "https://ecode360.com/33564508",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Detached accessory structures are permitted 'in the rear yard only'."
+    },
+    "separation_ft": {
+      "value": 5,
+      "section": "320-230A(2)",
+      "url": "https://ecode360.com/33564508",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'no closer than five feet from the permitted principal structure'"
+    },
+    "accessory_structure_max_sqft": {
+      "value": 600,
+      "section": "320-232A(2)",
+      "url": "https://ecode360.com/33564518",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Not an ADU rule. A freestanding accessory building over 600 sq ft or 12 ft 'shall be a special exception'. Also at most 20% of the rear yard (320-230A(1))."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "320-11 'Family'",
+      "url": "https://ecode360.com/33562947",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A family may include up to five unrelated people."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "320-26, 320-41",
+      "url": "https://ecode360.com/33563169",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "320-304A",
+      "url": "https://ecode360.com/33569949",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. Single-family detached: 'Two parking spaces exclusive of garage space.' Duplex: one per unit."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "320-27B(1)",
+        "url": "https://ecode360.com/33563179",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Median of single-family lots on the block, 'but in no case shall be less than 5,000 square feet'."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "320-27B(3)",
+        "url": "https://ecode360.com/33563179",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Set by the adjacent houses. 'In no case ... less than 10 feet.' 20 ft if both sides are vacant. Principal yard."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "320-27B(4)",
+        "url": "https://ecode360.com/33563179",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Set by the adjacent houses. 'In no case ... less than 20 feet.' Principal yard."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "320-27B(7)",
+        "url": "https://ecode360.com/33563179",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 40%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "320-27B(5)",
+        "url": "https://ecode360.com/33563179",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Building height: 35 feet.'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "320-42B(1)",
+        "url": "https://ecode360.com/33563233",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Median of the same housing type on the block, not less than 3,000 sq ft per single-family detached dwelling."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "320-42B(3)",
+        "url": "https://ecode360.com/33563233",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Set by the adjacent houses. Not less than 5 ft. 15 ft if both sides are vacant. Principal yard."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "320-42B(4)",
+        "url": "https://ecode360.com/33563233",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Set by the adjacent houses. Not less than 15 ft. Principal yard."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "320-42B(7)",
+        "url": "https://ecode360.com/33563233",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached on a 5,001 to 10,000 sq ft lot. 30% for 3,000 to 5,000 sq ft and 20% above 10,000 sq ft."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "320-42B(5)",
+        "url": "https://ecode360.com/33563233",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Median height on the block, 'in no case shall exceed 40 feet'."
+      }
+    }
+  }
+}
