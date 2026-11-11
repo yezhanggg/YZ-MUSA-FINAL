@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import warnings
 
 import altair as alt
 import geopandas as gpd
@@ -43,7 +44,9 @@ def tract_table() -> pd.DataFrame:
 
 def county_shapes(tracts: pd.DataFrame) -> gpd.GeoDataFrame:
     c = gpd.read_file(PROCESSED / "counties_2020.gpkg")[["GEOID", "NAME", "geometry"]].to_crs(4326)
-    c["geometry"] = c.geometry.simplify(0.01, preserve_topology=True)
+    with warnings.catch_warnings():   # one county ring has a repeated point. Simplify still returns a valid shape
+        warnings.simplefilter("ignore", RuntimeWarning)
+        c["geometry"] = c.geometry.simplify(0.01, preserve_topology=True)
     share = tracts.groupby("county_name").pays.apply(lambda s: float((s == "yes").mean()))
     c["share_yes"] = c.NAME.map(share).round(3)
     return c.rename(columns={"NAME": "county_name"})[["county_name", "share_yes", "geometry"]]
