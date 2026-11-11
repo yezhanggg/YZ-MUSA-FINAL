@@ -1,0 +1,323 @@
+{
+  "provenance": {
+    "jurisdiction": "Mount Lebanon township",
+    "instrument": "Mt. Lebanon Code, Chapter 20 Zoning (effective September 26, 2005, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code MO6716) dated 2026-02-10. Mt. Lebanon is a home rule municipality. The Census name is Mount Lebanon township. New Laws lists one Chapter 20 amendment: Ord. No. 3383 (2026-07-28), smoke shops as a conditional use in C-2. It was opened and does not touch residential uses. Its PDF shows 'Enacted: July 28, 2028', which looks like a typo.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/42261300",
+      "https://ecode360.com/42261347",
+      "https://ecode360.com/42261369",
+      "https://ecode360.com/42261383",
+      "https://ecode360.com/42261448",
+      "https://ecode360.com/42261513",
+      "https://ecode360.com/42261598",
+      "https://ecode360.com/42263053",
+      "https://ecode360.com/42263224",
+      "https://ecode360.com/42263315",
+      "https://ecode360.com/42263924",
+      "https://ecode360.com/42263933",
+      "https://ecode360.com/42264063",
+      "https://ecode360.com/print/MO6716?guid=42261300",
+      "https://ecode360.com/MO6716/laws",
+      "https://ecode360.com/MO6716/laws/LF2759675.pdf",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200351696",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/42261300",
+    "code_current_through": "2026-02-10",
+    "code_current_through_note": "eCode360 code date 2026-02-10. New Laws: Ord. 3383 (smoke shops, C-2) not yet codified.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "R-1 and R-2 allow single-family detached dwellings and listed accessory uses. A second dwelling unit is not listed (20-202.2, 20-203.2)",
+      "In R-1 and R-2 'only one Principal Building may be built on each Lot' (20-104.5)",
+      "The catch-all special exception for unlisted uses applies only on land in the C-2 district (20-109)",
+      "R-3 and R-4 allow two-family dwellings by right on a 6,000 sq ft lot, 50 ft wide (20-204, 20-205)",
+      "A conversion that adds dwelling units must meet minimum unit sizes: 500 sq ft (0 BR), 650 (1 BR), 750 (2 BR), 850 (3 BR). 'No Basement shall contain a complete Dwelling Unit' (20-807)",
+      "Accessory structures in R-1 to R-3: 14 ft high, 5 ft from side and rear lines. Not in the front yard (district tables, 20-803.1)",
+      "A rental or registration rule outside Chapter 20 was not checked"
+    ],
+    "notes": "Zoning office: Mt. Lebanon Inspection Office (Zoning Officer, 20-1104). Municipal site not opened. Searched Chapter 20 (full print view) for: accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, au pair, servant, cottage, garage apartment, conversion, kitchen. No ADU provision."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "20-1402, Part 2, 20-803",
+      "url": "https://ecode360.com/42264063",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, au pair, servant, cottage, garage apartment, conversion, kitchen."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "20-202.2, 20-203.2, 20-104.5",
+      "url": "https://ecode360.com/42261383",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text. R-1 and R-2: 'only one Principal Building may be built on each Lot'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "20-202.2, 20-104.5, 20-1005.1",
+      "url": "https://ecode360.com/42261383",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: a second dwelling unit is not a listed use in R-1 or R-2. A use variance is 'for a purpose that is otherwise not allowed'."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "20-1005",
+      "url": "https://ecode360.com/42263933",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path. The unlisted-use special exception of 20-109 applies only to land in C-2."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Lot 6,000 sq ft, 50 ft wide. Side yards total 20 ft in R-3 (none under 5 ft). Rear 30 ft. Coverage 40%. A converted house must meet the 20-807 minimum unit sizes and may not have a full unit in the basement.",
+          "min_lot_sqft": 6000,
+          "section": "20-204.2.4, 20-204.6, 20-205.2.4, 20-807",
+          "url": "https://ecode360.com/42261513"
+        }
+      ],
+      "section": "20-204, 20-205",
+      "url": "https://ecode360.com/42261513",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Not an ADU. 'Two-family. Minimum Lot Area: 6,000 square feet.'"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Part 2",
+      "url": "https://ecode360.com/42261383",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 20",
+      "url": "https://ecode360.com/42261300",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "20-202.2, 20-104.5",
+      "url": "https://ecode360.com/42261383",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 14,
+      "section": "20-202.5.4.1.2, 20-203.6, 20-204.6.4.1.3",
+      "url": "https://ecode360.com/42261383",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule, not an ADU rule. 'Maximum Building Height — Accessory Use or Structure: 14 feet.'"
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "20-202.5.3.1.2.2",
+      "url": "https://ecode360.com/42261383",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule in R-1 and R-2: 'Accessory Use or Structure: five feet.'"
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "20-202.5.3.1.3.2",
+      "url": "https://ecode360.com/42261383",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule in R-1 to R-3: five feet."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "20-803.1, 20-202.5.3.1.1.1",
+      "url": "https://ecode360.com/42263053",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Front yard as shown on the recorded plat or the average of the adjacent lots. Accessory structures not in required yards except as provided."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "20-1402 'Family'",
+      "url": "https://ecode360.com/42264063",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "20-202.2, 20-104.5",
+      "url": "https://ecode360.com/42261383",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "20-817.5",
+      "url": "https://ecode360.com/42263315",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. Single-family detached, attached and two-family: '2 per Dwelling Unit'."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "20-202.5.2.1.1",
+        "url": "https://ecode360.com/42261383",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Residential, single-family detached."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "20-202.5",
+        "url": "https://ecode360.com/42261383",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Two side yards totaling 15 ft, none under 5 ft. Accessory 5 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "20-202.5",
+        "url": "https://ecode360.com/42261383",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal 30 ft. Accessory 5 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "20-202.5",
+        "url": "https://ecode360.com/42261383",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Main building and accessory structures together."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "20-202.5",
+        "url": "https://ecode360.com/42261383",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal 35 ft. Accessory 14 ft."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "20-203.6",
+        "url": "https://ecode360.com/42261448",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Residential, single-family detached."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "20-203.6",
+        "url": "https://ecode360.com/42261448",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Two side yards totaling 15 ft, none under 5 ft. Accessory 5 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "20-203.6",
+        "url": "https://ecode360.com/42261448",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal 30 ft. Accessory 5 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "20-203.6",
+        "url": "https://ecode360.com/42261448",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Main building and accessory structures together."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "20-203.6",
+        "url": "https://ecode360.com/42261448",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal 35 ft. Accessory 14 ft."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "20-204.6.2.1.1",
+        "url": "https://ecode360.com/42261513",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Residential, single-family detached."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "20-204.6",
+        "url": "https://ecode360.com/42261513",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached house and accessory: two side yards totaling 15 ft, none under 5 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "20-204.6",
+        "url": "https://ecode360.com/42261513",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal 30 ft. Accessory 5 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "20-204.6",
+        "url": "https://ecode360.com/42261513",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Main building and accessory structures together."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "20-204.6",
+        "url": "https://ecode360.com/42261513",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal 35 ft. Accessory 14 ft."
+      }
+    }
+  }
+}
