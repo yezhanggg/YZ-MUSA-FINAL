@@ -249,8 +249,14 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     const p = isObj(row.lot_area_per_unit_sqft) ? row.lot_area_per_unit_sqft : null;
     if (p && typeof p.value === 'number') out.push(cond('lot_area_per_unit', perText(p, code), p, { district: code, effect: p.confidence === 'verified' ? 'bars' : 'condition' }));
     const m = isObj(row.min_lot_sqft) ? row.min_lot_sqft : null;
-    if (rowKey && m && typeof m.value === 'number')
-      out.push(cond('lot_size', `${code}: the district's minimum lot is ${num(m.value)} sq ft. This is a general lot rule, not an ADU rule. A smaller lot needs relief for any new use${m.note ? `. ${m.note}` : ''}`, m, { district: code }));
+    if (rowKey && m && typeof m.value === 'number') {
+      const conf = leafAt(file, 'eligibility', 'requires_conforming_lot');
+      out.push(
+        conf && conf.value === true
+          ? cond('lot_size', `${code}: the ADU needs a lot that meets the district minimum of ${num(m.value)} sq ft (${conf.section ?? ''})`, m, { district: code, effect: 'bars' })
+          : cond('lot_size', `${code}: the district's minimum lot is ${num(m.value)} sq ft, a rule for creating lots. A smaller existing lot may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it`, m, { district: code }),
+      );
+    }
   }
   const gates = leafAt(file, 'eligibility', 'gates');
   for (const g of Array.isArray(gates?.value) ? gates!.value : []) {
@@ -292,13 +298,19 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const accApplies = leafAt(file, 'envelope', 'accessory_height_applies');
   const atHouse = leafAt(file, 'envelope', 'height_capped_at_house');
   const accHeight = pick('envelope', 'max_height_ft');
-  const districtHeight = fromRow('principal_max_height_ft') ?? (district ? `District row for ${district} not on file` : 'District height: give a district to see it');
+  const districtHeight =
+    fromRow('principal_max_height_ft') ?? (district ? (row ? `District height for ${district} not on file in feet` : `District row for ${district} not on file`) : 'District height: give a district to see it');
   const detachedHeight = noAdu
     ? 'The code allows no ADU. An accessory building cap is not an ADU height'
     : accHeight ?? (accApplies && accApplies.value === false ? { ...(isObj(districtHeight) ? districtHeight : { value: districtHeight }), note: 'No accessory height rule reaches an ADU here' } : 'No height number on file. Ask the zoning officer');
   const yards = (k: string, attached: boolean) => (attached ? fromRow(k) ?? pick('envelope', k) : pick('envelope', k) ?? fromRow(k));
+  const types = leafAt(file, 'form', 'types_allowed');
+  const list = Array.isArray(types?.value) ? (types!.value as string[]) : null;
+  const notAllowed = { allowed: false, note: 'This form is not allowed here (form.types_allowed)', ...cite(types) };
+  const inside = !list || list.some((x) => x === 'internal' || x === 'attached');
+  const accessory = !list || list.some((x) => x === 'detached_new' || x === 'garage_conversion' || x === 'over_garage');
   return {
-    inside_or_attached: {
+    inside_or_attached: !inside ? notAllowed : {
       max_sqft: pick('size', 'max_sqft_internal', 'max_sqft'),
       max_share_of_house: pick('size', 'max_share_internal', 'max_share_of_house'),
       max_height_ft: internalFlag && internalFlag.value === false ? accHeight : districtHeight,
@@ -312,6 +324,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
       not_taller_than_house: atHouse && atHouse.value === true ? ruleOut('envelope.height_capped_at_house', atHouse) : null,
       yards: { front: yards('setback_front_ft', false), side: yards('setback_side_ft', false), rear: yards('setback_rear_ft', false) },
     },
+    ...(accessory ? {} : { accessory_building: notAllowed }),
   };
 }
 
@@ -383,9 +396,22 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   } else if (status && NO_ADU.has(status) && !dpath && unlisted?.value) effective = unlisted.value as string;
   const head = status === 'allowed_by_right' && effective && effective !== 'by_right' ? null : LIMITED[status ?? ''] ?? (status ? label(status) : null);
   const parts = [head, effective ? `path: ${label(effective)}${district ? ` in ${district}` : ''}` : null];
-  if (scopeList && inScope === null) parts.unshift(`ADU rule only in ${scopeList.join(', ')}, otherwise ${label(outside)}`);
+  const askLeaf = unlisted?.value ? unlisted : null;
+  if (scopeList && inScope === null)
+    parts.unshift(`ADU rule only in ${scopeList.join(', ')}, otherwise ${label(outside)}${askLeaf ? `. Outside: a use not listed may be authorized by ${label(askLeaf.value)} (${askLeaf.section ?? ''})` : ''}`);
   if (conditions.length) parts.push(`${conditions.length} condition${conditions.length > 1 ? 's' : ''} below`);
   const noAdu = !!status && NO_ADU.has(status) && !dpath;
+  // A lot area per unit that holds only under one reading: the path is qualified, never a plain by right.
+  const dRows = isObj(file.districts) ? file.districts : {};
+  const dKey = district ? districtIn(Object.keys(dRows), district) : undefined;
+  const rowPer = dKey && isObj(dRows[dKey]) && isObj((dRows[dKey] as Obj).lot_area_per_unit_sqft) ? ((dRows[dKey] as Obj).lot_area_per_unit_sqft as Obj) : null;
+  const per = rowPer ?? leafAt(file, 'eligibility', 'lot_area_per_unit_sqft');
+  if (per && typeof per.value === 'number' && per.confidence !== 'verified' && effective && !NOT_OK.has(effective) && inScope !== false) {
+    const text = `${label(effective)} only if the ADU does not count toward lot area per unit (${per.section ?? ''}). If it counts, a lot under ${num(2 * per.value)} sq ft needs relief`;
+    approval.qualifier = 'conditional_on_reading';
+    approval.qualifier_text = text.charAt(0).toUpperCase() + text.slice(1);
+    parts.splice(1, 1, approval.qualifier_text as string);
+  }
   const out: Obj = {
     summary: parts.filter(Boolean).join('. '),
     adu: { status: st ? ruleOut('adu.status', st) : null, term: term ? ruleOut('adu.term', term) : null },
@@ -398,13 +424,23 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   if (inScope === false) out.lot_status = { value: outside, note: `This district is outside ${scopeList!.join(', ')}. The town's ADU numbers do not apply here` };
   const overridden = (out.conditions as Obj[]).filter((c) => c.bill_would_override);
   if (overridden.length)
-    out.under_hb2186 = { note: 'HB 2186 (not law) would make one ADU by right and would remove these town conditions', conditions: overridden.map((c) => ({ kind: c.kind, section: c.section ?? null })) };
+    out.under_hb2186 = {
+      note: 'HB 2186 (not law) would make one ADU by right and would remove these town conditions. Town size caps would give way to the bill floor: at least the lesser of 50 percent of the house or 850 sq ft',
+      conditions: overridden.map((c) => ({ kind: c.kind, section: c.section ?? null })),
+    };
   const alts = leafAt(file, 'approval', 'alternatives');
   if (Array.isArray(alts?.value) && alts!.value.length)
     out.other_ways_to_add_a_unit = {
       label: 'Other ways to add a unit here. These are not ADUs and do not mean an ADU is allowed',
       options: alts!.value.filter(isObj).map((a) => ({ ...a, url: a.url ?? alts!.url ?? null })),
     };
+  // No ADU rule here and a hearing path for a use the code does not list: a path to ask for, not an ADU allowed.
+  if (((status && NO_ADU.has(status) && !dpath) || inScope === false) && effective && !NOT_OK.has(effective)) {
+    const ask = (inScope === false || askLeaf ? askLeaf : null) ?? path;
+    const text = `The code has no ADU rule here. A use that is not listed may be authorized by ${label(effective)} (${ask?.section ?? ''}). That is a hearing with no set standards for an ADU`;
+    out.path_to_ask = { path: effective, section: ask?.section ?? null, url: ask?.url ?? null, note: text };
+    out.summary = `${text}.${scopeList && inScope === null ? ` ${parts[0]}.` : ''}`;
+  }
   if ((status && NO_ADU.has(status) && !dpath) || (effective && NOT_OK.has(effective))) {
     const reasons = [st?.note, path?.note, fallback?.note].filter((x): x is string => typeof x === 'string' && !!x);
     const fb = (unlisted?.value ? unlisted : null) ?? fallback ?? path;

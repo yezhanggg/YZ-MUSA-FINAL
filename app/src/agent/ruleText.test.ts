@@ -364,8 +364,54 @@ describe('get_rule_text pass 3', () => {
     for (const t of (await townIndex()).filter((x) => x.file.startsWith('pa_') && existsSync(resolve(RULES, `${x.file}.json`)))) {
       const out = (await getRuleText({ place: t.geoid, topic: 'size' })) as P3;
       expect(out.forms, t.file).toBeTruthy();
-      if (['not_addressed', 'prohibited'].includes(file(t.file).adu.status.value) && !file(t.file).approval?.district_paths)
+      if (['not_addressed', 'prohibited'].includes(file(t.file).adu.status.value) && !file(t.file).approval?.district_paths && out.forms!.accessory_building.allowed !== false)
         expect(out.forms!.accessory_building.max_height_ft, t.file).toMatch(/not an ADU height/);
     }
+  });
+});
+
+// Pass 4: honest readings, nonconforming lots, allowed forms only, a path to ask.
+FAKE_FILES.pa_testing_reading = cityLike('Readington', {
+  adu: { term: leaf('accessory dwelling unit', '7-309'), status: leaf('allowed_by_right', '7-309.2A') },
+  approval: { path: leaf('by_right', '7-309.2A') },
+  form: { types_allowed: leaf(['garage_conversion', 'over_garage'], '1.04.005') },
+  districts: { RM: { min_lot_sqft: leaf(1500, '7-307 RM'), lot_area_per_unit_sqft: { ...leaf(1500, '7-307 RM per unit'), confidence: 'secondary' } } },
+});
+FAKE_FILES.pa_testing_unlisted = cityLike('Unlistville', {
+  adu: { term: { ...leaf(null, 'searched'), note: 'No ADU text' }, status: leaf('not_addressed', 'Table 1') },
+  approval: { path: leaf('variance', 'MPC 910.2'), fallback_path: leaf('variance', 'MPC 910.2'), unlisted_use_path: leaf('special_exception', '87-186A') },
+});
+TOWNS.push(
+  { geoid: '4299900009', name: 'Readington borough', county: 'Testing', type: 'borough', population: 3000, file: 'pa_testing_reading', status: 'drafted', checked_on: '2026-11-11' },
+  { geoid: '4299900010', name: 'Unlistville township', county: 'Testing', type: 'township', population: 3000, file: 'pa_testing_unlisted', status: 'drafted', checked_on: '2026-11-11' },
+);
+type P4 = P3 & { path_to_ask?: { path: string; section: string; note: string }; approval?: P3['approval'] & { qualifier?: string; qualifier_text?: string } };
+
+describe('get_rule_text pass 4', () => {
+  it('qualifies a by-right path that holds only under one reading of lot area per unit', async () => {
+    const out = (await getRuleText({ place: 'Readington', topic: 'approval', district: 'RM' }, FAKE)) as P4;
+    expect(out.approval!.qualifier).toBe('conditional_on_reading');
+    expect(out.approval!.qualifier_text).toMatch(/^By right only if the ADU does not count toward lot area per unit .*a lot under 3,000 sq ft needs relief/);
+    expect(out.summary).toMatch(/only if the ADU does not count/);
+  });
+
+  it('shows a bare district minimum as a possible nonconforming lot', async () => {
+    const out = (await getRuleText({ place: 'Readington', topic: 'eligibility', district: 'RM' }, FAKE)) as P4;
+    const c = out.conditions!.find((x) => x.kind === 'lot_size')!;
+    expect(c.condition).toMatch(/nonconforming lot/);
+    expect(c.effect).toBeUndefined();
+  });
+
+  it('lists sizes only for allowed forms', async () => {
+    const out = (await getRuleText({ place: 'Readington', topic: 'size' }, FAKE)) as P4;
+    expect(out.forms!.inside_or_attached.allowed).toBe(false);
+  });
+
+  it('gives a path to ask, not an allowed ADU, where the code has no ADU rule', async () => {
+    const out = (await getRuleText({ place: 'Unlistville', topic: 'approval' }, FAKE)) as P4;
+    expect(out.path_to_ask).toMatchObject({ path: 'special_exception', section: '87-186A' });
+    expect(out.summary).toMatch(/^The code has no ADU rule here. A use that is not listed may be authorized by special exception \(87-186A\)/);
+    const scoped = (await getRuleText({ place: 'Scopeton', topic: 'approval' }, FAKE)) as P4;
+    expect(scoped.summary).toMatch(/Outside: a use not listed may be authorized by special exception \(87-186A\)/);
   });
 });
