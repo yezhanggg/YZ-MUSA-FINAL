@@ -187,3 +187,25 @@ To refresh the mortgage rate: read the last row of the Freddie Mac PMMS history 
 | Key | What | Value (mid) | Range low to high | Unit | Confidence | Source and date |
 |---|---|---|---|---|---|---|
 | `pro_forma.schedule_years` | Years shown in the tax schedule | 12 |  | years | assumption | Owner setting 2026-11-10 |
+
+## Tract analysis (MUSA 5500)
+
+The statewide tract screen in `pipeline/tract/` reads these keys. It is simpler than the lot-level model above: one cost per sq ft, one share of rent for running costs, all borrowed. It uses `financing.pmms30_2026_avg` (main run) and `financing.pmms30` (sensitivity).
+
+| Key | What | Value (mid) | Range low to high | Unit | Confidence | Source and date |
+|---|---|---|---|---|---|---|
+| `tract.growth.cpi_u` | CPI-U yearly average for 2024 dollars | 2014: 236.736, 2019: 255.657, 2024: 313.689 |  | index | published | [BLS CUUR0000SA0](https://data.bls.gov/timeseries/CUUR0000SA0) 2025-01-15 |
+| `tract.growth.min_start` | Smallest start for a growth rate | pop 200, units 100, jobs 50, rent 1 |  | count | assumption | Owner setting 2026-11-10 |
+| `tract.payoff.size_sqft` | Unit size | 600 |  | sq ft | assumption | Owner setting 2026-11-10 |
+| `tract.payoff.hard_psf` | Build cost per sq ft | 250 | 175 to 300 | USD per sq ft | assumption | [Terner Center](https://ternercenter.berkeley.edu/blog/cci-adu-survey) 2021-04-22 |
+| `tract.payoff.soft_share` | Soft costs | 0.15 |  | share of build cost | assumption | Owner setting 2026-11-10 |
+| `tract.payoff.loan_years` | Loan length | 30 |  | years | assumption | Owner setting 2026-11-10 |
+| `tract.payoff.opex_share` | Running costs | 0.30 |  | share of rent | assumption | Owner setting 2026-11-10 |
+| `tract.payoff.close_band` | Band for "maybe" | 0.10 |  | share of payment | assumption | Owner setting 2026-11-10 |
+| `tract.payoff.rent_basis` | Rent column | `rent_b1` (1 bedroom, same as the tool) |  | pointer | assumption | [Census B25031](https://data.census.gov/table/ACSDT5Y2024.B25031) 2025-12 |
+| `tract.forecast.years` | Forecast years | 5 (2027 to 2031) |  | years | assumption | Owner setting 2026-11-10 |
+| `tract.forecast.permits_per_100k` | ADU permits per 100,000 people a year | 53.5 | 26 to 81 | rate | assumption | Proposal, credited to Pew, page not recorded |
+| `tract.forecast.pays_weight` | Share of the rate by payoff | yes 1.0, maybe 0.5, no 0.2 |  | multiplier | assumption | Owner setting 2026-11-10 |
+| `tract.forecast.rule_factor` | Share of the rate by town rule | limited 0.05 | limited 0.02 to 0.10 | multiplier | assumption | Owner setting 2026-11-10 |
+| `tract.forecast.unlisted_rule` | Rule for uncoded towns | limited |  | rule | assumption | Owner setting 2026-11-10 |
+| `tract.forecast.lots_index_cap` | Cap on the lots index | 2 |  | multiple | assumption | Owner setting 2026-11-10 |

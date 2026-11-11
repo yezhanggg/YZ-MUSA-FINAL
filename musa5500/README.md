@@ -13,14 +13,14 @@ python shared/get_boundaries.py
 python musa5500/get_data.py
 ```
 
-Then work through the notebooks in order.
+Then work through the notebooks in order. The logic is in `pipeline/tract/` (one module per step, each with a command line). The notebooks load, call and show.
 
 | Notebook | What it does | Saves |
 |---|---|---|
-| `notebooks/01_trends.ipynb` | Everything on 2020 tracts. Growth before vs after 2019 | `trends_tract.csv` |
-| `notebooks/02_groups.ipynb` | K-means trend groups | `trend_group` column |
+| `notebooks/01_trends.ipynb` | Everything on 2020 tracts. Growth before vs after 2019, inflation, margins of error | `trends_tract.csv`, `tract_panel.csv` |
+| `notebooks/02_groups.ipynb` | Trend groups: k from 2 to 10, stability, K-means vs Gaussian mixture vs Ward | `trend_group` column |
 | `notebooks/03_land_access.ipynb` | Developed land (zonal stats) + jobs within 30 min (OSMnx) | `access_tract.csv` |
-| `notebooks/04_payoff_forecast.ipynb` | Rent vs cost test. Random forest. ADUs by 2031 | `payoff_tract.csv`, `forecast_town.csv` |
+| `notebooks/04_payoff_forecast.ipynb` | Rent vs cost test (1-bedroom rent). Housing growth model with spatial CV and a backtest. ADUs by 2031. County roll-up. Linked view | `payoff_tract.csv`, `forecast_town.csv`, `county_rollup.csv`, `figures/tract_explorer.html` |
 
 After each notebook, run `python app/build_data.py` to see the result in the tool.
 
@@ -38,7 +38,7 @@ After each notebook, run `python app/build_data.py` to see the result in the too
 
 ## Course requirements met
 
-API data, 3+ sources, complex joins, OSMnx, K-means, raster zonal stats, random forest, interactive maps. Details in `docs/methods.md`.
+API data, 3+ sources, complex joins, OSMnx, clustering (K-means, Gaussian mixture, Ward), raster zonal stats, models with spatial cross-validation, a linked interactive view. Details in `docs/methods.md`.
 
 ## AI use
 
