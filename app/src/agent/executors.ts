@@ -2,7 +2,8 @@
 // the data comes from: the loaded map in the browser (browserProvider.ts) or the files on disk (agent/nodeProvider.ts).
 import { footprint, lotFit, rentNote, tractPayoff, tractRoom, type FitCurves } from '../lib/adu';
 import { BED_SIZE, RATE, YEARS, COST_PSF, SOFT, OPEX, type Adu, type Bed, type Stories } from '../lib/numbers';
-import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, isPittsburgh, ruleFor, ruleWarnings, type LotRule } from '../lib/rules';
+import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, cleanWhy, isPittsburgh, ruleFor, ruleWarnings, type LotRule } from '../lib/rules';
+import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
 import { meters, type LngLat, type Lot, type TownProps, type TractProps } from '../tool/geo';
 
 export interface SiteRecord {
@@ -23,6 +24,8 @@ export interface DataProvider {
   curves(): FitCurves | null;
   adu(): Adu;
   rule(): 'current' | 'hb2186';
+  /** Lot records (testing mode): the lot tools read them through this. */
+  lots?: LotAgentProvider;
   /** Browser only: change the map. */
   setMap?(input: SetMapInput): Promise<string>;
 }
@@ -65,7 +68,7 @@ function siteFacts(s: SiteRecord) {
           largest_footprint_sqft: r0(lot.max_fit_sqft),
           largest_footprint_keeping_trees_sqft: r0(lot.max_fit_keep_trees_sqft),
           philadelphia_rule: lot.rule_lot ?? null,
-          philadelphia_rule_why: lot.rule_why ?? null,
+          philadelphia_rule_why: cleanWhy(lot.rule_why),
         }
       : null,
     tract: t
@@ -87,8 +90,8 @@ function siteFacts(s: SiteRecord) {
   };
 }
 
-/** test_adu: the report's logic for one ADU on one site. */
-export function testAduOn(s: SiteRecord, a: Adu, curves: FitCurves | null) {
+/** test_adu: the report's logic for one ADU on one site, under the rule the user chose (today or HB 2186). */
+export function testAduOn(s: SiteRecord, a: Adu, curves: FitCurves | null, rule: 'current' | 'hb2186' = 'current') {
   const t = s.tract ?? ({} as TractProps);
   const w = s.town ?? ({} as TownProps);
   const lotRule: LotRule | null = s.lot ?? null;
@@ -96,8 +99,10 @@ export function testAduOn(s: SiteRecord, a: Adu, curves: FitCurves | null) {
   const pay = s.tract ? tractPayoff(t, a) : null;
   const room = s.tract ? tractRoom(t, a, curves) : null;
   const today = ruleFor('current', w, lotRule);
+  const chosen = ruleFor(rule, w, lotRule);
   return {
     lot_id: s.lot?.lot_id ?? null,
+    rule_chosen: { rule: rule === 'hb2186' ? 'HB 2186 (a bill, not law)' : 'today', result: chosen.label, detail: chosen.why ?? chosen.sub, blocked: chosen.blocked, warnings: ruleWarnings(rule, w, lotRule, a.size) },
     adu: { bedrooms: a.bed, size_sqft: a.size, stories: a.stories, footprint_sqft: footprint(a) },
     room_on_lot: s.lot ? (fit ? FIT_TEXT[fit] : 'not ready for this size (model results for this footprint come after the next run)') : 'no lot record here',
     tract_lots_with_room: room ? { lots: room.fit, keeping_trees: room.keep, of_single_family_lots: room.total } : 'not ready for this size',
@@ -136,7 +141,9 @@ const notFound = (id: string) => ({ error: `Lot ${id} is not in the loaded data.
 
 export function makeExecutors(p: DataProvider) {
   const site = async (id?: string) => (id ? await p.lotById(id) : await p.selected());
+  const lots = p.lots ? makeLotExecutors(p.lots) : {};
   return {
+    ...lots,
     async get_site(input: { lot_id?: string }) {
       const s = await site(input.lot_id);
       if (!s) return input.lot_id ? notFound(input.lot_id) : { error: 'Nothing is selected. Ask the user to click a lot or search an address.' };
@@ -145,7 +152,7 @@ export function makeExecutors(p: DataProvider) {
     async test_adu(input: { lot_id: string; size_sqft?: number; stories?: number; bedrooms?: number }) {
       const s = await site(input.lot_id);
       if (!s) return notFound(input.lot_id);
-      return testAduOn(s, aduFrom(input, p.adu()), p.curves());
+      return testAduOn(s, aduFrom(input, p.adu()), p.curves(), p.rule());
     },
     async compare_sizes(input: { lot_id: string; sizes: number[]; stories?: number; bedrooms?: number }) {
       const s = await site(input.lot_id);
@@ -155,8 +162,8 @@ export function makeExecutors(p: DataProvider) {
         lot_id: input.lot_id,
         results: sizes.map((size) => {
           const bed = input.bedrooms ?? (size <= 450 ? 0 : size <= 700 ? 1 : size <= 900 ? 2 : 3);
-          const r = testAduOn(s, aduFrom({ size_sqft: size, stories: input.stories, bedrooms: bed }, p.adu()), p.curves());
-          return { size_sqft: size, bedrooms: bed, footprint_sqft: r.adu.footprint_sqft, room_on_lot: r.room_on_lot, payoff: typeof r.payoff === 'string' ? r.payoff : r.payoff.pays, warnings_today: r.rule_today.warnings };
+          const r = testAduOn(s, aduFrom({ size_sqft: size, stories: input.stories, bedrooms: bed }, p.adu()), p.curves(), p.rule());
+          return { size_sqft: size, bedrooms: bed, footprint_sqft: r.adu.footprint_sqft, room_on_lot: r.room_on_lot, payoff: typeof r.payoff === 'string' ? r.payoff : r.payoff.pays, rule_chosen: r.rule_chosen.result, warnings: r.rule_chosen.warnings };
         }),
       };
     },

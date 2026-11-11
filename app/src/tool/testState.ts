@@ -6,6 +6,9 @@ import { APPROVAL_LABEL, suggestedUnit, unitVerdict, type UnitInput, type UnitVe
 import { areaFeet, centroid, frameOf } from '../lib/lot/geometry';
 import type { SiteData } from './siteLayers';
 import { SCENARIO_PHRASE } from '../lib/lot/words';
+import type { MoneyOptions } from '../lib/lot/summary';
+import type { RentByBedroom } from '../lib/lot/types';
+import type { TractProps } from './geo';
 import { fitBox, type Pt } from '../lib/fitBox';
 
 /** Which set of controls and cards the tool shows. */
@@ -243,4 +246,23 @@ export function fitsAt(lot: LotRecord, scenario: Scenario, center: Pt, angleDeg:
   const [x, y] = f.toFeet(center);
   const slack = 2 * OUTLINE_SLACK_FT;
   return fitBox(areaFeet(keep, f), { x, y, width: Math.min(width, depth) - slack, depth: Math.max(width, depth) - slack, angle: angleDeg }).fits;
+}
+
+/** Market rents for a record that has none: the tract's ACS rents by bedrooms. */
+export function tractRents(t: TractProps | null | undefined): RentByBedroom | null {
+  if (!t) return null;
+  const r = { b0: t.rent_b0 ?? null, b1: t.rent_b1 ?? null, b2: t.rent_b2 ?? null, b3: t.rent_b3 ?? null };
+  return Object.values(r).some((v) => typeof v === 'number') ? r : null;
+}
+
+/** Money options for lotMoney from the screen settings. */
+export function moneyOptions(lot: LotRecord, m: MoneyDraft, tract: TractProps | null | undefined): MoneyOptions {
+  const own = lot.money?.rent_by_bedroom;
+  return {
+    rent_by_bedroom: own ? null : tractRents(tract),
+    rent_source: own ? (lot.money?.rent_source ?? 'hud_safmr') : 'acs_tract',
+    financing: { preset: m.preset, rate: m.rate },
+    money: { rent: m.rent, hard_psf: m.psf },
+    quality: m.finish,
+  };
 }

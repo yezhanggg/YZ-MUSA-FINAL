@@ -1,5 +1,7 @@
 // "Ask about this site": the agent's contract, shared by the server (api/agent.ts) and the browser
 // (app/src/agent). Claude picks tools, the browser runs them with the same code as the report.
+import { LOT_TOOLS } from '../app/src/lib/lot/agentTools';
+import type { Scenario } from '../app/src/lib/lot/types';
 
 export const MAX_ROUNDS = 6;
 export const DEFAULT_MODEL = 'claude-sonnet-5-5';
@@ -15,7 +17,8 @@ Rules:
 - Short, plain answers: 1 to 4 short sentences or a few bullets. No jargon.
 - When you mention a lot, link it as [lot <lot_id>](lot:<lot_id>) so the user can click it.
 - Lot results come from a model on 2022 aerial images. Sizes other than a 600 sq ft footprint may say "not ready" until the next model run. Report that honestly.
-- The context block tells you what the user has selected and which ADU they are testing. Use it, and call tools to get facts.`;
+- The context block tells you what the user has selected and which ADU they are testing. Use it, and call tools to get facts.
+- When the context has a scenario and a unit (testing mode), answer for that scenario and unit unless the user names others, use the lot tools (get_lot_facts, get_lot_rules, test_unit_on_lot, compare_scenarios, lot_money, explain_limit), cite the code section and its check date for each rule, and say that bills are not law.`;
 
 type JsonSchema = Record<string, unknown>;
 export interface ToolDef {
@@ -30,7 +33,7 @@ const ADU_PROPS = {
   bedrooms: { type: 'integer', enum: [0, 1, 2, 3], description: '0 = studio, 1, 2 or 3 bedrooms (sets the rent used for payoff)' },
 };
 
-export const TOOLS: ToolDef[] = [
+const SITE_TOOLS: ToolDef[] = [
   {
     name: 'get_site',
     description: 'Facts about a lot, its tract and its town: lot size, open ground, trees, model fit at 600 sq ft, largest footprint if known, tract rent and jobs, town rules. Without lot_id, uses the selected site.',
@@ -82,11 +85,18 @@ export const TOOLS: ToolDef[] = [
   },
 ];
 
+/** The tract and town tools, then the lot record tools (app/src/lib/lot/agentTools.ts). */
+export const TOOLS: ToolDef[] = [...SITE_TOOLS, ...LOT_TOOLS];
+
 /** What the browser sends along with each question. */
 export interface AgentContext {
   selected?: { lot_id?: string | null; tract_geoid?: string | null; town_geoid?: string | null; town?: string | null; label?: string | null } | null;
   adu: { bedrooms: number; size_sqft: number; stories: number };
   rule: 'current' | 'hb2186';
+  /** Testing mode: the scenario on screen. */
+  scenario?: Scenario | null;
+  /** Testing mode: the unit on screen. */
+  unit?: { type: string; width_ft: number; depth_ft: number; stories: number; height_ft: number | null; units: number } | null;
   map?: { center: [number, number]; zoom: number } | null;
 }
 

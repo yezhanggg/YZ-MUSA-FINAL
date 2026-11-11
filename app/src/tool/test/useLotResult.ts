@@ -1,31 +1,11 @@
 // Everything the testing cards show, worked out once per change of lot, scenario, unit or money settings.
 import { useMemo } from 'react';
 import { compareScenarios, unitVerdict } from '../../lib/lot/verdict';
-import { lotMoney, type MoneyOptions } from '../../lib/lot/summary';
-import type { LotRecord, RentByBedroom } from '../../lib/lot/types';
+import { lotMoney } from '../../lib/lot/summary';
+import type { LotRecord } from '../../lib/lot/types';
 import { buildSteps } from '../../lib/lot/buildSteps';
-import { siteData, typeOptions, unitInput, type MoneyDraft } from '../testState';
-import type { TractProps } from '../geo';
+import { moneyOptions, siteData, typeOptions, unitInput } from '../testState';
 import { useTool } from '../store';
-
-/** Market rents for a record that has none: the tract's ACS rents by bedrooms. */
-export function tractRents(t: TractProps | null | undefined): RentByBedroom | null {
-  if (!t) return null;
-  const r = { b0: t.rent_b0 ?? null, b1: t.rent_b1 ?? null, b2: t.rent_b2 ?? null, b3: t.rent_b3 ?? null };
-  return Object.values(r).some((v) => typeof v === 'number') ? r : null;
-}
-
-/** Money options for lotMoney from the screen settings. */
-export function moneyOptions(lot: LotRecord, m: MoneyDraft, tract: TractProps | null | undefined): MoneyOptions {
-  const own = lot.money?.rent_by_bedroom;
-  return {
-    rent_by_bedroom: own ? null : tractRents(tract),
-    rent_source: own ? (lot.money?.rent_source ?? 'hud_safmr') : 'acs_tract',
-    financing: { preset: m.preset, rate: m.rate },
-    money: { rent: m.rent, hard_psf: m.psf },
-    quality: m.finish,
-  };
-}
 
 export function useLotResult(record: LotRecord) {
   const scenario = useTool((s) => s.scenario);

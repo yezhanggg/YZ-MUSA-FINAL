@@ -2,9 +2,13 @@
 import type { ExpressionSpecification } from 'maplibre-gl';
 import { findFeature, hasLots, loadLots, lotsLoaded, type LngLat, type Lot, type TownProps } from '../tool/geo';
 import { mapRef, useTool } from '../tool/store';
-import { testSpot } from '../tool/actions';
+import { openLot, testSpot } from '../tool/actions';
 import { BED_SIZE, SIZE_MAX, SIZE_MIN, type Bed, type Stories } from '../lib/numbers';
 import type { DataProvider, SetMapInput, SiteRecord } from './executors';
+import { findLoadedLot } from '../lib/lot/load';
+import type { LotAgentProvider } from '../lib/lot/agentTools';
+import type { LotRecord } from '../lib/lot/types';
+import { moneyOptions, tractRents } from '../tool/testState';
 
 function siteOfLot(lot: Lot): SiteRecord {
   const { tracts, towns } = useTool.getState();
@@ -54,7 +58,32 @@ function highlight(ids: string[]) {
   else map.setFilter('agent-highlight', filter);
 }
 
+/** The tract of a lot record, from the loaded tracts. */
+const tractOf = (lot: LotRecord) => useTool.getState().tracts?.features.find((f) => f.properties.GEOID === lot.lot.tract)?.properties ?? null;
+
+/** Lot records for the lot tools: the selected record, the scenario and unit on screen, and the money settings. */
+export const lotProvider: LotAgentProvider = {
+  async lotById(id) {
+    const sel = useTool.getState().spot?.record;
+    return sel?.lot.id === id ? sel : (findLoadedLot(id) ?? null);
+  },
+  async selectedLot() {
+    return useTool.getState().spot?.record ?? null;
+  },
+  scenario() {
+    const st = useTool.getState();
+    return st.view === 'test' ? st.scenario : st.rule === 'hb2186' ? 'state_reform' : 'today';
+  },
+  unit() {
+    const { view, unit: u } = useTool.getState();
+    return view === 'test' ? { type: u.type, width_ft: u.width, depth_ft: u.depth, stories: u.stories, height_ft: u.height, angle_deg: u.angle, units: u.units } : null;
+  },
+  rents: (lot) => tractRents(tractOf(lot)),
+  money: (lot) => moneyOptions(lot, useTool.getState().money, tractOf(lot)),
+};
+
 export const browserProvider: DataProvider = {
+  lots: lotProvider,
   async lotById(id) {
     const lot = await lotById(id);
     return lot ? siteOfLot(lot) : null;
@@ -112,6 +141,11 @@ export async function selectLot(lot: Lot) {
 }
 
 export async function selectLotById(id: string) {
+  const rec = findLoadedLot(id);
+  if (rec?.lot.tract) {
+    await openLot(id, rec.lot.tract);
+    return true;
+  }
   const lot = await lotById(id);
   if (lot) await selectLot(lot);
   return !!lot;

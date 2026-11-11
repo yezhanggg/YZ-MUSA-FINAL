@@ -1,10 +1,15 @@
 // The agent's data in Node (tests and the eval): the same files the tool reads, from app/public/data.
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import type { FitCurves } from '../app/src/lib/adu';
 import { BASE, type Adu } from '../app/src/lib/numbers';
 import { findFeature, prepare, type FC, type LngLat, type Lot, type TownProps, type TractProps } from '../app/src/tool/geo';
 import type { DataProvider, SiteRecord } from '../app/src/agent/executors';
+import type { LotAgentProvider } from '../app/src/lib/lot/agentTools';
+import { findLoadedLot, loadLot, type Fetcher } from '../app/src/lib/lot/load';
+import type { Scenario } from '../app/src/lib/lot/types';
+import { tractRents } from '../app/src/tool/testState';
 
 const DATA = resolve(import.meta.dirname, '../app/public/data');
 
@@ -37,9 +42,30 @@ const byId = (id: string) => {
   return null;
 };
 
-/** A provider with a fixed selection and ADU, as the browser would send. */
-export function nodeProvider(opts: { selectedLotId?: string | null; adu?: Adu; rule?: 'current' | 'hb2186' } = {}): DataProvider {
+/** The lot record tree on disk (LOT_DATA_DIR, default ~/musa-drive/lots), read through the browser loader. */
+const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const BASE_URL = 'file:///lots/';
+const fileFetch: Fetcher = async (url) => {
+  const path = resolve(LOTS, url.slice(BASE_URL.length));
+  return path.startsWith(LOTS) && existsSync(path) ? new Response(readFileSync(path)) : new Response('missing', { status: 404 });
+};
+
+/** Lot tools in Node: one selected record (lot id and tract), a scenario and no unit drawn. */
+function nodeLots(lot: { id: string; tract: string } | undefined, scenario: Scenario): LotAgentProvider {
+  const tracts = () => data().tracts;
   return {
+    lotById: async (id) => findLoadedLot(id) ?? null,
+    selectedLot: async () => (lot ? loadLot(lot.id, lot.tract, { baseUrl: BASE_URL, fetch: fileFetch }) : null),
+    scenario: () => scenario,
+    unit: () => null,
+    rents: (rec) => tractRents(tracts().features.find((f) => f.properties.GEOID === rec.lot.tract)?.properties),
+  };
+}
+
+/** A provider with a fixed selection and ADU, as the browser would send. `lot` selects a lot record for the lot tools. */
+export function nodeProvider(opts: { selectedLotId?: string | null; adu?: Adu; rule?: 'current' | 'hb2186'; lot?: { id: string; tract: string }; scenario?: Scenario } = {}): DataProvider {
+  return {
+    lots: nodeLots(opts.lot, opts.scenario ?? 'today'),
     async lotById(id) {
       const lot = byId(id);
       return lot ? siteOf(lot) : null;

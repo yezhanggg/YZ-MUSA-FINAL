@@ -151,13 +151,15 @@ export function dataDates(lot: LotRecord, builtAt: string | null | undefined): D
     const d = dateText(iso);
     if (d) out.push({ label, date: d });
   };
+  const newest = (prefix: string) => Object.entries(lot.quality.data_dates ?? {}).filter(([k]) => k.startsWith(prefix)).map(([, v]) => v).filter((v): v is string => !!v).sort().pop();
   for (const [k, v] of Object.entries(lot.quality.data_dates ?? {})) {
-    if (k.startsWith('rules_')) continue;
+    if (k.startsWith('rules_') || k.startsWith('source_')) continue;
     push(DATE_LABEL[k] ?? k.replace(/_/g, ' '), v);
   }
+  // Records from Nov 11, 2026 on list each source file: one line for the newest is enough.
+  push('Source files downloaded', newest('source_'));
   push('Aerial image', lot.quality.imagery_date);
-  const ruleDates = Object.entries(lot.quality.data_dates ?? {}).filter(([k]) => k.startsWith('rules_')).map(([, v]) => v).filter((v): v is string => !!v).sort();
-  push('Rules last checked', ruleDates[ruleDates.length - 1]);
+  push('Rules last checked', newest('rules_'));
   push('Data built', builtAt ?? null);
   return out;
 }

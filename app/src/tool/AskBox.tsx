@@ -4,12 +4,27 @@ import { AnimatePresence, motion } from 'motion/react';
 import { ArrowUp, Loader2, MessageCircle, X } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { BED_LABEL } from '../lib/numbers';
+import { SCENARIO_TITLE, TYPE_TITLE } from '../lib/lot/words';
 import { ask, splitLinks, type Turn } from '../agent/client';
 import { browserProvider, selectLotById } from '../agent/browserProvider';
 import { mapRef, useTool } from './store';
 
 const SUGGESTED = ["Could I build a 2 BR here?", "What's the biggest ADU that fits?", 'Is it legal here today?', 'Which lots near here fit a 1 BR without cutting trees?'];
-const TOOL_TEXT: Record<string, string> = { get_site: 'Reading the site', test_adu: 'Testing the ADU', compare_sizes: 'Comparing sizes', get_rules: 'Checking the rules', find_lots: 'Searching nearby lots', set_map: 'Updating the map' };
+const TOOL_TEXT: Record<string, string> = {
+  get_site: 'Reading the site',
+  test_adu: 'Testing the ADU',
+  compare_sizes: 'Comparing sizes',
+  get_rules: 'Checking the rules',
+  find_lots: 'Searching nearby lots',
+  set_map: 'Updating the map',
+  get_lot_facts: 'Reading the lot',
+  get_lot_rules: 'Checking the lot rules',
+  test_unit_on_lot: 'Testing the unit',
+  compare_scenarios: 'Comparing scenarios',
+  lot_money: 'Working out the money',
+  explain_limit: 'Finding the limit',
+};
+const TEST_SUGGESTED = ['Does this unit fit here?', 'What limits it on this lot?', 'How do the three scenarios compare?', 'Does it pay off?'];
 
 interface Msg {
   role: 'user' | 'assistant';
@@ -22,13 +37,24 @@ function useContext() {
   const spot = useTool((s) => s.spot);
   const adu = useTool((s) => s.adu);
   const rule = useTool((s) => s.rule);
+  const view = useTool((s) => s.view);
+  const scenario = useTool((s) => s.scenario);
+  const unit = useTool((s) => s.unit);
   const map = mapRef.current;
+  const test = view === 'test';
+  const lotId = spot?.record?.lot.id ?? spot?.lot?.lot_id ?? spot?.parcel?.id ?? null;
+  const where = spot ? (lotId ? `Lot ${lotId}` : (spot.tract.NAMELSAD ?? 'Tract')) : 'No lot selected';
   return {
-    chips: [spot ? (spot.lot ? `Lot ${spot.lot.lot_id}` : spot.parcel ? `Parcel ${spot.parcel.id}` : spot.tract.NAMELSAD ?? 'Tract') : 'No lot selected', `${BED_LABEL[adu.bed]} · ${adu.size.toLocaleString('en-US')} sq ft · ${adu.stories} ${adu.stories === 2 ? 'stories' : 'story'}`, rule === 'hb2186' ? 'HB 2186' : "Today's rules"],
+    test,
+    chips: test
+      ? [where, `${TYPE_TITLE[unit.type]} · ${unit.width} x ${unit.depth} ft · ${unit.stories} ${unit.stories === 2 ? 'stories' : 'story'}`, SCENARIO_TITLE[scenario]]
+      : [where, `${BED_LABEL[adu.bed]} · ${adu.size.toLocaleString('en-US')} sq ft · ${adu.stories} ${adu.stories === 2 ? 'stories' : 'story'}`, rule === 'hb2186' ? 'HB 2186' : "Today's rules"],
     context: {
-      selected: spot ? { lot_id: spot.lot?.lot_id ?? spot.parcel?.id ?? null, tract_geoid: spot.tract.GEOID, town_geoid: (spot.town.GEOID as string | undefined) ?? null, town: (spot.town.NAMELSAD as string | undefined) ?? null, label: spot.label } : null,
+      selected: spot ? { lot_id: lotId, tract_geoid: spot.tract.GEOID, town_geoid: (spot.town.GEOID as string | undefined) ?? null, town: (spot.town.NAMELSAD as string | undefined) ?? null, label: spot.label } : null,
       adu: { bedrooms: adu.bed, size_sqft: adu.size, stories: adu.stories },
       rule,
+      scenario: test ? scenario : null,
+      unit: test ? { type: unit.type, width_ft: unit.width, depth_ft: unit.depth, stories: unit.stories, height_ft: unit.height, units: unit.units } : null,
       map: map ? { center: [map.getCenter().lng, map.getCenter().lat] as [number, number], zoom: map.getZoom() } : null,
     },
   };
@@ -40,7 +66,7 @@ export default function AskBox({ expanded: forceOpen }: { expanded?: boolean }) 
   const [history, setHistory] = useState<Turn[]>([]);
   const [busy, setBusy] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
-  const { chips, context } = useContext();
+  const { chips, context, test } = useContext();
   const input = useRef<HTMLInputElement>(null);
   const showConvo = forceOpen || open || msgs.length > 0;
 
@@ -85,7 +111,7 @@ export default function AskBox({ expanded: forceOpen }: { expanded?: boolean }) 
             <div className="mt-2 space-y-2">
               {msgs.length === 0 && (
                 <div className="flex flex-wrap gap-1.5">
-                  {SUGGESTED.map((s) => (
+                  {(test ? TEST_SUGGESTED : SUGGESTED).map((s) => (
                     <button key={s} type="button" onClick={() => void send(s)} className="tap rounded-lg bg-white px-2.5 py-1.5 text-left text-caption font-medium text-slate-700 ring-1 ring-stone-200 transition hover:bg-violet-50 hover:text-violet-800 hover:ring-violet-200">
                       {s}
                     </button>

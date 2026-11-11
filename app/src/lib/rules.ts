@@ -61,11 +61,25 @@ export interface RuleResult {
 
 export const isPittsburgh = (w: TownRule) => w.NAMELSAD === 'Pittsburgh city';
 
+/**
+ * A Philadelphia lot rule reason, without the placeholders the old lot files carry ("zoned nan",
+ * "Council District ?"). A missing value reads "not on file". Empty text is null.
+ */
+export function cleanWhy(why: string | null | undefined): string | null {
+  if (!why) return null;
+  const out = why
+    .replace(/\bzoned (nan|none|null|undefined)\b/gi, 'zoning not on file')
+    .replace(/\bCouncil District (\?|nan|none)(?=\s|$|[;,)])/gi, 'council district not on file')
+    .replace(/\b(nan|undefined)\b/gi, 'not on file')
+    .trim();
+  return out || null;
+}
+
 /** The rule for one spot. Philadelphia lots use their own lot rule today; everything else uses the town. */
 export function ruleFor(mode: 'current' | 'hb2186', w: TownRule, lot: LotRule | null): RuleResult {
   if (mode === 'hb2186') return { label: 'Allowed', sub: 'By right under HB 2186', tone: 'good', ok: true, blocked: false, why: null, fromLot: false };
-  if (lot?.rule_lot === 'variance') return { label: 'Needs a variance', sub: 'This lot, Philadelphia code', tone: 'bad', ok: false, blocked: true, why: lot.rule_why ?? null, fromLot: true };
-  if (lot?.rule_lot === 'conversion_only') return { label: 'Conversion only', sub: 'This lot, Philadelphia code', tone: 'warn', ok: false, blocked: false, why: lot.rule_why ?? 'Convert the house or a pre-2012 garage. No new backyard cottage', fromLot: true };
+  if (lot?.rule_lot === 'variance') return { label: 'Needs a variance', sub: 'This lot, Philadelphia code', tone: 'bad', ok: false, blocked: true, why: cleanWhy(lot.rule_why), fromLot: true };
+  if (lot?.rule_lot === 'conversion_only') return { label: 'Conversion only', sub: 'This lot, Philadelphia code', tone: 'warn', ok: false, blocked: false, why: cleanWhy(lot.rule_why) ?? 'Convert the house or a pre-2012 garage. No new backyard cottage', fromLot: true };
   const approval = w.approval && w.approval !== 'unknown' ? APPROVAL_TEXT[w.approval] : null;
   switch (w.adu_rule) {
     case 'allowed':

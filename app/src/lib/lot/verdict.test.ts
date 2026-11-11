@@ -264,3 +264,14 @@ describe('wording', () => {
     }
   });
 });
+
+describe('exception section in newer rule notes', () => {
+  it('keeps the closing bracket of the subsection', () => {
+    const lot = fixture('easy_fit');
+    const today = lot.rules.today!;
+    today.reasons = ["A new detached ADU in a side or rear yard needs an Administrator's Exception (925.06.G.1(i), G.2 and G.3 as amended by Bill 2025-1545 Section 47). Not needed above an existing garage that abuts a way"];
+    delete today.approval_by_type;
+    for (const f of Object.values(lot.fit.today ?? {})) if (f) delete f.approval_path;
+    expect(approvalFor(lot, 'today', 'detached_new').citation?.section).toBe('925.06.G.1(i)');
+  });
+});

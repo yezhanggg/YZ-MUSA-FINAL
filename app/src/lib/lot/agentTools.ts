@@ -76,6 +76,8 @@ export interface LotAgentProvider {
   unit(): Omit<UnitInput, 'scenario' | 'position'> | null;
   /** Market rents for a lot whose record has none (from its tract). */
   rents?(lot: LotRecord): RentByBedroom | null;
+  /** The money settings on screen (cost, finish, financing, rent), so answers match the money card. */
+  money?(lot: LotRecord): MoneyOptions;
 }
 
 export interface ToolInput {
@@ -290,7 +292,8 @@ export function makeLotExecutors(p: LotAgentProvider): Record<LotToolName, (inpu
     lot_money: withLot((lot, i) => {
       const scenario = scenarioFrom(i, p);
       const rent = posNum(i.rent, 1, 100_000);
-      return lotMoneyTool(lot, unitFrom(i, lot, scenario, p), { rent_by_bedroom: p.rents?.(lot) ?? null, money: rent ? { rent } : {} });
+      const screen = p.money?.(lot) ?? { rent_by_bedroom: p.rents?.(lot) ?? null };
+      return lotMoneyTool(lot, unitFrom(i, lot, scenario, p), { ...screen, money: { ...screen.money, ...(rent ? { rent } : {}) } });
     }),
     explain_limit: withLot((lot, i) => explainLimit(lot, unitFrom(i, lot, scenarioFrom(i, p), p))),
   };

@@ -39,9 +39,11 @@ export default function PlayModel({ spot }: { spot: Spot }) {
     () => playAdu({ lot: lot && Number.isFinite(lot.lot_m2) ? lot : null, fit: lot ? lotFit(lot, inputs.adu) : null, adu: inputs.adu, rent: inputs.rent, costPsf: inputs.psf, rate: inputs.rate, cutTrees: inputs.cutTrees }),
     [lot, inputs],
   );
+  // The rule the user picked on the left (today or HB 2186), the same one the report shows.
+  const mode = useTool((s) => s.rule);
   const lotRule = spot.lot?.rule_lot ? spot.lot : spot.parcel ? parcelRule(spot.parcel) : spot.lot;
-  const today = ruleFor('current', spot.town, lotRule);
-  const warn = ruleWarnings('current', spot.town, lotRule, adu.size);
+  const chosen = ruleFor(mode, spot.town, lotRule);
+  const warn = ruleWarnings(mode, spot.town, lotRule, adu.size);
 
   return (
     <section aria-label="Play with it" className="space-y-3">
@@ -81,7 +83,7 @@ export default function PlayModel({ spot }: { spot: Spot }) {
         <Row k="Build cost · payment" v={`${money(r.totalCost)} · ${money(r.payment)}/mo`} />
         <Row k="Net rent after 30% costs" v={`${money(r.netRent)}/mo · ${r.monthlyGain >= 0 ? '+' : '-'}${money(Math.abs(r.monthlyGain))}/mo`} tone={r.pays ? 'good' : 'bad'} />
         <Row k="Payback" v={r.pays ? `${r.paybackYears?.toFixed(1)} yrs · ${(r.cashOnCost * 100).toFixed(1)}% cash on cost` : 'Does not pay at these settings'} tone={r.pays ? undefined : 'bad'} />
-        <Row k="Rule check" v={`Today: ${today.label} · HB 2186: allowed${warn.length ? ` · ${warn[0]}` : ''}`} tone={today.blocked ? 'bad' : today.ok && !warn.length ? 'good' : 'warn'} />
+        <Row k="Rule check" v={`${mode === 'hb2186' ? 'HB 2186 (a bill, not law)' : 'Today'}: ${chosen.label}${warn.length ? ` · ${warn[0]}` : ''}`} tone={chosen.blocked ? 'bad' : chosen.ok && !warn.length ? 'good' : 'warn'} />
       </dl>
     </section>
   );

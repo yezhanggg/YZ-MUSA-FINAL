@@ -168,7 +168,7 @@ function approvalInfo(path: string | null, from: ApprovalInfo['from'], citation:
 /** Pittsburgh's rule notes name the Administrator's Exception for a detached unit in a side or rear yard. */
 const EXCEPTION_NOTE = /Administrator's Exception/;
 /** "(925.06.G.1(i))," -> "925.06.G.1(i)" */
-const EXCEPTION_SECTION = /\((925\.06[^\s,;]*?)\)(?=[,.;\s]|$)/;
+const EXCEPTION_SECTION = /\((925\.06[^\s,;()]*(?:\([^()\s,;]*\))?)/;
 
 /** The section that names the Administrator's Exception, read off the rule notes, with the ordinance link. */
 function exceptionCitation(rules: Rules): Citation | null {

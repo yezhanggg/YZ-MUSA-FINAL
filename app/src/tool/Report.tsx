@@ -8,7 +8,9 @@ import { useMode } from './layout';
 import { cx } from '../lib/cx';
 import { annual, fmt, isNum, money, pct, sqft } from '../lib/format';
 import { footprint, isBase, lotFit, rentNote, tractPayoff, tractRoom } from '../lib/adu';
-import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, isPittsburgh, ruleFor, ruleWarnings, type YesNo } from '../lib/rules';
+import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, cleanWhy, isPittsburgh, ruleFor, ruleWarnings, type YesNo } from '../lib/rules';
+
+const upperFirst = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 import { useTool, type Spot } from './store';
 import { parcelRule, parcelType } from './parcels';
 
@@ -376,7 +378,7 @@ function RulesCard({ spot }: { spot: Spot }) {
           {lot?.rule_lot && (
             <div className={cx('mb-2 rounded-lg px-3 py-2 text-small ring-1', lot.rule_lot === 'variance' ? 'bg-rose-50 text-rose-900 ring-rose-200' : 'bg-amber-50 text-amber-900 ring-amber-200')}>
               <b>{lot.rule_lot === 'variance' ? 'This lot needs a variance' : 'This lot: conversion only'}</b>
-              {lot.rule_why && <span className="block text-caption opacity-80">{lot.rule_why[0].toUpperCase() + lot.rule_why.slice(1)}</span>}
+              {cleanWhy(lot.rule_why) && <span className="block text-caption opacity-80">{upperFirst(cleanWhy(lot.rule_why) ?? '')}</span>}
             </div>
           )}
           {isPittsburgh(w) && <p className="mb-2 rounded-lg bg-emerald-50 px-3 py-2 text-small text-emerald-900 ring-1 ring-emerald-200">{PITTSBURGH_NOTE}</p>}

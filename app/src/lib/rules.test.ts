@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ruleFor, ruleWarnings } from './rules';
+import { cleanWhy, ruleFor, ruleWarnings } from './rules';
 
 const phl = { NAMELSAD: 'Philadelphia city', adu_rule: 'limited' as const, approval: 'by_right' as const, detached_new: 'no' as const, max_sqft: 800 };
 
@@ -18,5 +18,11 @@ describe('ADU rules', () => {
     expect(ruleWarnings('current', phl, null, 1000)).toHaveLength(2);
     expect(ruleWarnings('current', phl, null, 600)).toEqual(['This town only allows conversions.']);
     expect(ruleWarnings('hb2186', phl, null, 1000)).toEqual([]);
+  });
+  it('rule reasons drop the nan and ? placeholders of old lot files', () => {
+    expect(cleanWhy('Council District ? (needs 1, 2, 3, or 7); zoned nan (needs RSA-5 or CMX-1)')).toBe('council district not on file (needs 1, 2, 3, or 7); zoning not on file (needs RSA-5 or CMX-1)');
+    expect(cleanWhy('zoned CMX4')).toBe('zoned CMX4');
+    expect(cleanWhy('')).toBeNull();
+    expect(ruleFor('current', phl, { rule_lot: 'variance', rule_why: 'zoned nan (needs RSA-5 or CMX-1)' }).why).toBe('zoning not on file (needs RSA-5 or CMX-1)');
   });
 });
