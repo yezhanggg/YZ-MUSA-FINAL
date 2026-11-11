@@ -6,7 +6,8 @@ import { Printer, X } from 'lucide-react';
 import { lotSummary } from '../../lib/lot/summary';
 import type { LotRecord } from '../../lib/lot/types';
 import { usdText } from '../../lib/lot/words';
-import { STATUS_TEXT } from './cards';
+import { titleCase } from '../actions';
+import { STATUS_TEXT, signedUsd } from './cards';
 import type { LotResult } from './useLotResult';
 
 export default function LotReport({ record, r, builtAt, onClose }: { record: LotRecord; r: LotResult; builtAt: string | null; onClose: () => void }) {
@@ -30,7 +31,7 @@ export default function LotReport({ record, r, builtAt, onClose }: { record: Lot
       <article className="mx-auto mb-8 max-w-[800px] bg-white px-8 py-6 text-[12.5px] leading-snug text-slate-800 shadow-sm ring-1 ring-stone-200 print:m-0 print:max-w-none print:px-0 print:py-0 print:shadow-none print:ring-0">
         <header className="border-b border-stone-200 pb-2">
           <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-violet-700">Backyard Homes PA · Lot report</div>
-          <h1 className="font-display text-[22px] font-bold text-slate-900">{s.title}</h1>
+          <h1 className="font-display text-[22px] font-bold text-slate-900">{s.address ? titleCase(s.address) : s.title}</h1>
           <div className="text-[11px] text-slate-500">
             Lot {s.lot_id} · Parcel {s.parcel_id}
             {s.tract ? ` · Tract ${s.tract}` : ''}
@@ -84,7 +85,7 @@ export default function LotReport({ record, r, builtAt, onClose }: { record: Lot
             <h2 className="mt-2 text-[13px] font-bold text-slate-900">Money</h2>
             {m.status === 'ready' && m.cost ? (
               <p>
-                Cost {usdText(m.cost.low)} to {usdText(m.cost.high)}. Rent {usdText(m.monthly_rent)} a month. Cash flow {usdText(m.monthly_cash_flow)} a month. {m.reason}
+                Cost {usdText(m.cost.low)} to {usdText(m.cost.high)}. Rent {usdText(m.monthly_rent)} a month. Cash flow {signedUsd(m.monthly_cash_flow)} a month. {m.reason}
               </p>
             ) : (
               <p>{m.reason}</p>

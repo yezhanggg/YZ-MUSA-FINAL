@@ -232,14 +232,18 @@ export default function MapCanvas() {
         const pay = tractPayoff(p, adu);
         map.setFeatureState({ source: 'tracts', id: p.GEOID }, { room: tractRoom(p, adu, curves)?.fit ?? null, pays: pay ? PAYS_CODE[pay.pays] : null });
       }
+      // Testing mode: plain outlines, since the colours are the projecting model's 600 sq ft result. Over the
+      // aerial photo the fills go, so the photo shows through.
+      const test = view === 'test';
+      const hover = (on: number, off: number) => ['case', ['boolean', ['feature-state', 'hover'], false], on, off];
       for (const src of present(map)) {
-        map.setPaintProperty(fillOf(src), 'fill-color', parcelFillColor(adu));
-        map.setPaintProperty(fillOf(src), 'fill-opacity', ['interpolate', ['linear'], ['zoom'], 14, 0, 14.6, parcelFillOpacity(adu)] as unknown as ExpressionSpecification);
-        map.setPaintProperty(lineOf(src), 'line-color', parcelLineColor(adu));
+        map.setPaintProperty(fillOf(src), 'fill-color', test ? '#a78bfa' : parcelFillColor(adu));
+        map.setPaintProperty(fillOf(src), 'fill-opacity', ['interpolate', ['linear'], ['zoom'], 14, 0, 14.6, aerial ? hover(0.2, 0) : test ? hover(0.3, 0.08) : parcelFillOpacity(adu)] as unknown as ExpressionSpecification);
+        map.setPaintProperty(lineOf(src), 'line-color', test ? '#7c3aed' : parcelLineColor(adu));
       }
     }, 150);
     return () => window.clearTimeout(t);
-  }, [adu, curves, status]);
+  }, [adu, curves, status, view, aerial]);
 
   useEffect(() => {
     const map = mapRef.current;

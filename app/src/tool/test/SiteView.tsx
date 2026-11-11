@@ -34,7 +34,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
       container,
       style: { version: 8, sources: { aerial: aerialSource() }, layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#e7e5e4' } }, { id: 'aerial', type: 'raster', source: 'aerial' }] },
       bounds: lotBounds(live.current.record),
-      fitBoundsOptions: { padding: 36 },
+      fitBoundsOptions: { padding: 16 },
       pitch: PITCH_3D,
       maxPitch: 70,
       attributionControl: { compact: true },
@@ -100,7 +100,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
   // A new lot: frame it.
   useEffect(() => {
     const map = mapR.current;
-    if (map && ready) map.fitBounds(lotBounds(record), { padding: 36, pitch: threeD ? PITCH_3D : 0, duration: 0 });
+    if (map && ready) map.fitBounds(lotBounds(record), { padding: 16, pitch: threeD ? PITCH_3D : 0, duration: 0 });
   }, [record, ready]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {

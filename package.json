@@ -8,7 +8,8 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "preview": "vite preview",
     "test": "vitest run",
-    "eval:agent": "EVAL=1 vitest run agent/"
+    "eval:agent": "EVAL=1 vitest run agent/",
+    "e2e": "playwright test"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",

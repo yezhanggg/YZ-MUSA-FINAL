@@ -30,6 +30,9 @@ const TONE_BOX: Record<Tone, { box: string; icon: ReactNode; title: string; line
   none: { box: 'bg-stone-50 ring-stone-200', icon: <HelpCircle className="h-5 w-5 text-slate-500" />, title: 'text-slate-900', line: 'text-slate-700' },
 };
 
+/** -$2,257 for a loss, $1,340 otherwise. */
+export const signedUsd = (v: number | null | undefined) => (isNum(v) && v < 0 ? `-${usdText(-v)}` : usdText(v));
+
 /** The standing notice, under every place that shows rules. */
 export const Notice = ({ className }: { className?: string }) => <p className={cx('text-caption leading-snug text-slate-500', className)}>{NOTICE}</p>;
 
@@ -239,7 +242,7 @@ export function MoneyCard({ m }: { m: MoneySummary }) {
           {m.cost && <KV k="Middle estimate" v={usdText(m.cost.mid)} />}
           {isNum(m.monthly_rent) && <KV k="Monthly rent" v={<span>{usdText(m.monthly_rent)}{rentSource && <span className="block text-[11px] font-normal text-slate-500">{rentSource}</span>}</span>} />}
           {pf && 'monthly' in pf && <KV k={`Loan payment (${pf.financing.label.toLowerCase()})`} v={`${usdText(pf.monthly.loan_payment)} a month at ${(pf.financing.rate * 100).toFixed(2)}%`} />}
-          {isNum(m.monthly_cash_flow) && <KV k="Cash flow" v={<span className={m.monthly_cash_flow >= 0 ? 'text-emerald-700' : 'text-rose-700'}>{`${m.monthly_cash_flow < 0 ? '-' : ''}${usdText(Math.abs(m.monthly_cash_flow))} a month`}</span>} />}
+          {isNum(m.monthly_cash_flow) && <KV k="Cash flow" v={<span className={m.monthly_cash_flow >= 0 ? 'text-emerald-700' : 'text-rose-700'}>{`${signedUsd(m.monthly_cash_flow)} a month`}</span>} />}
           {pf && 'yield_on_cost' in pf && isNum(pf.yield_on_cost) && <KV k="Yield on cost" v={pctText(pf.yield_on_cost)} />}
           {isNum(m.cash_in) && <KV k="Cash you put in" v={usdText(m.cash_in)} />}
           {isNum(m.break_even_rent) && <KV k="Rent that breaks even" v={usdText(m.break_even_rent)} />}

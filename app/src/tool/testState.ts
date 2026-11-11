@@ -220,7 +220,7 @@ export function boxRing(lot: LotRecord, center: Pt, angleDeg: number, width: num
  */
 export function siteData(lot: LotRecord, u: UnitDraft, v: UnitVerdict): SiteData {
   const host = u.type === 'internal' ? 'main' : u.type === 'detached_new' ? null : 'garage';
-  if (u.type !== 'detached_new') return { lot, scenario: v.scenario, unit: null, best: null, host };
+  if (u.type !== 'detached_new' || v.status === 'not_allowed') return { lot, scenario: v.scenario, unit: null, best: null, host };
   const p = v.placed;
   const heightFt = v.height_ft ?? 15;
   if (p && (p.where === 'asked' || !u.at)) return { lot, scenario: v.scenario, unit: { ring: p.ring, fits: !p.needs_clearing, heightFt }, best: null, host };

@@ -121,14 +121,15 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
 /** "5459 BEACON ST" -> "5459 Beacon St" */
 export const titleCase = (s: string) => s.toLowerCase().replace(/\b([a-z])/g, (m) => m.toUpperCase());
 
-/** Open a lot from a link: load its record, then test the spot at its center. Keeps the unit from the link. */
+/** Open a lot from a link: load its record, then test the spot at its center. A link with a unit keeps it. */
 export async function openLot(lotId: string, geoid: string) {
+  const keepUnit = /[?&]ut=/.test(window.location.hash);
   try {
     const rec = await loadLot(lotId, geoid);
     const f = frameOf(rec);
     // The lot's center. The lot id wins over the point, so an odd-shaped lot still opens.
     const pt = f.toLonLat(centroid(toFeet(rec.lot.polygon, f.origin)));
-    await testSpot(pt, 'Linked lot', null, { lotId, keepUnit: true });
+    await testSpot(pt, 'Linked lot', null, { lotId, keepUnit });
   } catch (e) {
     useTool.getState().set({ msg: isLotLoadError(e) ? e.userMessage : 'That lot could not be opened.' });
   }
