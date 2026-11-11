@@ -9,6 +9,13 @@
     "source_urls": [
       "https://ecode360.com/HE0496",
       "https://ecode360.com/10769959",
+      "https://ecode360.com/10769996",
+      "https://ecode360.com/10770990",
+      "https://ecode360.com/10771193",
+      "https://ecode360.com/10770249",
+      "https://ecode360.com/10770343",
+      "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
+      "https://ecode360.com/attachment/330310/HE0496-087d%20TND%20Exhibit%20A.pdf",
       "https://ecode360.com/print/HE0496?guid=10769959",
       "https://ecode360.com/10770001",
       "https://ecode360.com/10770003",
@@ -29,15 +36,16 @@
     "code_current_through": "2026-03-23",
     "code_current_through_note": "Includes legislation through 03-23-2026. New Laws (2) not yet codified.",
     "checks": [
-      "The accessory apartment rule (87-79) sits in Article XV, the TND Traditional Neighborhood Development Overlay (TC-R and TC-B). The Table of Uses has no accessory apartment row. Outside the TND overlay no ADU path is written",
-      "Special exception from the Zoning Hearing Board. One apartment within a single-family dwelling, one bedroom, more than 400 sq ft, at most 35% of the livable floor area (87-79A)",
-      "The owner must live in one of the two units. The other unit may only be occupied by a person related by blood or marriage to the owner (87-79A(11), (12))",
+      "Outside the TND overlay the code has no ADU rule. A second unit may be sought as an unlisted use by special exception from the Zoning Hearing Board (87-15B, 87-186A). The Board must find its impact no greater than a listed use",
+      "The accessory apartment rule (87-79) is in Article XV, the TND overlay. The overlay covers six tax parcels (87-71, TND Exhibit A). Single-family dwellings are P in TC-R and N in TC-B (Table 1)",
+      "TC-R: one apartment within a single-family dwelling by special exception. One bedroom, more than 400 sq ft, at most 35% of the livable floor area. Owner lives in one unit. The other unit only for a relative by blood or marriage (87-79A)",
       "No garage or portion of a garage may be used for or converted to a residential use (87-17G(1))",
-      "Table 2 lists 'Quarters separate from the principal dwelling (caretaker's quarters)' as a permitted accessory use in A, RR, TC-R, NC and BT. The code text gives no standards or definition for it. Ask the Zoning Officer whether it can serve as a second dwelling",
-      "Sewage and water adequacy must be certified, and the Municipal Authority must accept the added sewage demand (87-79A(6) to (8))",
-      "Exterior stairs may not face a street (87-79A(9))"
+      "A nonpaying guest house in an accessory building is only for occasional guests, 'not for permanent occupancy by others as housekeeping units' (87-210 'Accessory building')",
+      "Nearest by-right alternative: a duplex is P in SR, CR and VR (Table 1). SR duplex lots need 8,000 sq ft per dwelling unit and 100 ft width (Table 3)",
+      "Table 2 lists 'Quarters separate from the principal dwelling (caretaker's quarters)' as P in A, RR, TC-R, NC and BT. No standards or definition. It is tied to a caretaker, not a general ADU path. Ask the Zoning Officer",
+      "TND parking: 2 spaces per dwelling unit, garages excluded (87-75, Table 5)"
     ],
-    "notes": "Zoning office: Planning and Zoning, https://www.hempfieldtwp.com/162/Planning-Zoning. Pending: New Laws (2) on eCode360 were not opened. A March 2026 news headline mentions proposed zoning changes. Not checked against an ordinance. Not law."
+    "notes": "Zoning office: Planning and Zoning, https://www.hempfieldtwp.com/162/Planning-Zoning. Pending: New Laws (2) on eCode360 are Ord. 2026-05 (Development Authority) and 2026-06 (stray cats), per the review. Neither is about dwellings. A March 2026 news headline mentions proposed zoning changes. Not checked against an ordinance. Not law."
   },
   "adu": {
     "term": {
@@ -46,56 +54,69 @@
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "'§ 87-79. Accessory apartments.' 87-75 also uses 'accessory dwelling units' for TND density counting."
+      "note": "'§ 87-79. Accessory apartments.' The term sits only in Article XV, the TND overlay. 87-75 also says 'accessory dwelling units' for TND density counting."
     },
     "status": {
-      "value": "family_only",
-      "section": "87-79A(11), (12)",
-      "url": "https://ecode360.com/10770350",
+      "value": "not_addressed",
+      "section": "Table 1, Table 2, 87-15B, 87-186A, Article XV",
+      "url": "https://ecode360.com/attachment/330310/HE0496-087a%20Table%201.pdf",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "Special exception. The non-owner unit 'may only be occupied by a person who is related by blood or marriage to such owner(s).'"
+      "confidence": "secondary",
+      "note": "Outside the TND overlay the code has no ADU text. Table 1 and Table 2 have no ADU row. The 87-79 accessory apartment rule reaches only the TND overlay (six tax parcels, TND Exhibit A), in practice TC-R."
     }
   },
   "approval": {
     "path": {
       "value": "special_exception",
-      "section": "87-79A",
-      "url": "https://ecode360.com/10770350",
+      "section": "87-15B, 87-186A",
+      "url": "https://ecode360.com/10770990",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'A special exception is required to create a single apartment within a single-family dwelling'. Zoning Hearing Board."
+      "confidence": "secondary",
+      "note": "'Any use not listed in Table 1 ... or Table 2 ... may be authorized by special exception' if the Board finds its impact equal to or less than a listed use. Reading: a second unit is unlisted. The Board may also treat it as a duplex, which is listed."
     },
     "fallback_path": {
       "value": "variance",
-      "section": "Table 1, 87-79, MPC 910.2",
-      "url": "https://ecode360.com/attachment/330310/HE0496-087a%20Table%201.pdf",
+      "section": "87-186A, MPC 910.2",
+      "url": "https://ecode360.com/10770990",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Reading: outside the TND overlay, or for a detached unit, a second dwelling is not a listed use. The path is a use variance."
+      "note": "If the Zoning Hearing Board does not accept the unlisted-use route, or a lot fails a rule, the path is a variance."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "TC-R"
+          ],
+          "path": "special_exception",
+          "section": "87-79A",
+          "url": "https://ecode360.com/10770350",
+          "note": "'A special exception is required to create a single apartment within a single-family dwelling'. Family only, owner-occupied (87-79A(11), (12))."
+        }
+      ],
+      "section": "87-79A, 87-71, Table 1",
+      "url": "https://ecode360.com/10770350",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The accessory apartment rule applies in the TND overlay. Single-family dwellings are P in TC-R and N in TC-B (Table 1)."
     }
   },
   "eligibility": {
     "zoning_districts": {
-      "value": [
-        "TC-R",
-        "TC-B"
-      ],
-      "section": "Article XV, 87-71, 87-79",
-      "url": "https://ecode360.com/10770350",
+      "value": null,
+      "section": "87-15B, 87-186A",
+      "url": "https://ecode360.com/10770990",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "87-79 is in Article XV, the TND overlay (TC-R and TC-B). The overlay covers parcels listed in TND Exhibit A (87-71). Reading: the rule applies only there."
+      "note": "The unlisted-use special exception is open in every district. The 87-79 rule is TC-R only."
     },
     "building_types": {
-      "value": [
-        "detached"
-      ],
-      "section": "87-79A, 87-75",
+      "value": null,
+      "section": "87-186A, 87-79A",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Text says 'within a single-family dwelling'. 87-75 speaks of a single-family detached dwelling unit."
+      "note": "No limit town-wide. In TC-R 87-79A needs 'a single-family dwelling' (detached or semidetached)."
     },
     "existing_structure_only": {
       "value": null,
@@ -107,49 +128,177 @@
     },
     "historic_bypass": {
       "value": false,
-      "section": "87-79",
+      "section": "87-79, 87-186",
+      "url": "https://ecode360.com/10770350",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No historic rule."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "district",
+          "condition": "Accessory apartment in TC-R (87-79): one apartment inside a single-family dwelling, one bedroom, more than 400 sq ft, at most 35% of the livable floor area. Exterior stairs not on a street wall.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "TC-R"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "87-79A(1) to (4), (9)",
+          "url": "https://ecode360.com/10770350"
+        },
+        {
+          "kind": "family",
+          "condition": "TC-R: the owner lives in one unit. The other unit 'may only be occupied by a person who is related by blood or marriage to such owner(s).'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "TC-R"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "87-79A(11), (12)",
+          "url": "https://ecode360.com/10770350"
+        },
+        {
+          "kind": "building_type",
+          "condition": "TC-R: 87-79 needs a single-family dwelling. Townhouses and multifamily buildings do not qualify.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "TC-R"
+          ],
+          "building_types": [
+            "attached"
+          ],
+          "when": "always",
+          "test": null,
+          "section": "87-79A",
+          "url": "https://ecode360.com/10770350"
+        },
+        {
+          "kind": "district",
+          "condition": "TC-R: the accessory apartment must be within the dwelling. No detached unit.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "TC-R"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "87-79A",
+          "url": "https://ecode360.com/10770350"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "'No garage or portion of any garage shall be used for or converted to a residential use.'",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "87-17G(1)",
+          "url": "https://ecode360.com/10770003"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "An accessory building may hold a nonpaying guest house only 'for the occasional housing of guests' and 'not for permanent occupancy by others as housekeeping units'. Servants' quarters are listed. A detached rental unit is not.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "87-210 'Accessory building' (1)(g), (h)",
+          "url": "https://ecode360.com/10771193"
+        },
+        {
+          "kind": "utilities",
+          "condition": "TC-R: water and sewage must be certified adequate for two units, and the Municipal Authority must accept the added sewage demand.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "TC-R"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "87-79A(6) to (8)",
+          "url": "https://ecode360.com/10770350"
+        },
+        {
+          "kind": "other",
+          "condition": "Outside the TND, a special exception for an unlisted use needs a Board finding that its impact is equal to or less than a listed use (87-186A). Not an ADU rule. Nothing sets size or occupancy.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "87-186A",
+          "url": "https://ecode360.com/10770990"
+        }
+      ],
+      "section": "87-79, 87-17G, 87-186",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "No historic rule in 87-79."
+      "note": "TC-R rules and town-wide bars."
     }
   },
   "form": {
     "types_allowed": {
       "value": [
-        "internal"
+        "internal",
+        "attached",
+        "detached_new"
       ],
-      "section": "87-79A, 87-17G(1)",
-      "url": "https://ecode360.com/10770350",
+      "section": "87-186A, 87-79A, 87-17G(1)",
+      "url": "https://ecode360.com/10770990",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'a single apartment within a single-family dwelling'. Garages may not be used for or converted to residential use (87-17G(1))."
+      "confidence": "secondary",
+      "note": "Unlisted-use route: no form is written. Garages may not hold a residence (87-17G(1)). In TC-R only inside the dwelling (gates)."
     }
   },
   "size": {
     "max_sqft": {
       "value": null,
-      "section": "87-79A(4)",
+      "section": "87-79A",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "No square foot cap in 87-79. Only the 35% share. 87-75 exempts ADUs of 400 to 1,200 sq ft from TND density counts."
+      "confidence": "secondary",
+      "note": "No town-wide cap. TC-R: no square foot cap, only 35% (87-79A(4))."
     },
     "max_share_of_house": {
-      "value": 0.35,
+      "value": null,
       "section": "87-79A(4)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'shall not exceed 35% of the entire livable gross floor area of the single-family dwelling.'"
+      "confidence": "secondary",
+      "note": "No town-wide cap. TC-R: 'shall not exceed 35% of the entire livable gross floor area'. See gates."
     },
     "min_sqft": {
-      "value": 400,
+      "value": null,
       "section": "87-79A(3)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'The gross floor area of the apartment shall be greater than 400 square feet.'"
+      "confidence": "secondary",
+      "note": "No town-wide minimum. TC-R: 'greater than 400 square feet'."
     }
   },
   "envelope": {
@@ -204,36 +353,36 @@
   },
   "use": {
     "owner_occupancy": {
-      "value": true,
+      "value": null,
       "section": "87-79A(11)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'The owner(s) of a property on which there is an accessory apartment must occupy one of the two residential units on the property.'"
+      "confidence": "secondary",
+      "note": "No town-wide rule. TC-R: 'The owner(s) ... must occupy one of the two residential units'. See gates."
     },
     "family_only": {
-      "value": true,
+      "value": null,
       "section": "87-79A(12)",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'may only be occupied by a person who is related by blood or marriage to such owner(s).'"
+      "confidence": "secondary",
+      "note": "No town-wide rule. TC-R: the non-owner unit only for a person 'related by blood or marriage'. See gates."
     },
     "short_term_rental_banned": {
       "value": null,
-      "section": "87-79",
+      "section": "87-79, 87-186",
       "url": "https://ecode360.com/10770350",
       "verified_on": null,
       "confidence": "unverified",
-      "note": "Not addressed in 87-79."
+      "note": "Not addressed."
     },
     "max_adus": {
-      "value": 1,
-      "section": "87-79A(1)",
+      "value": null,
+      "section": "87-79A(1), 87-186A",
       "url": "https://ecode360.com/10770350",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'Only one apartment is allowed and it shall be clearly subordinate to the single-family dwelling.'"
+      "confidence": "secondary",
+      "note": "No town-wide number. TC-R: 'Only one apartment is allowed'."
     },
     "sale_apart_allowed": {
       "value": null,
@@ -247,11 +396,18 @@
   "parking": {
     "spaces_required": {
       "value": null,
-      "section": "87-79A(10), Article XXI",
-      "url": "https://ecode360.com/10770350",
+      "section": "87-75 Table 5, 87-79A(10), Article XXI",
+      "url": "https://ecode360.com/10770343",
       "verified_on": null,
       "confidence": "unverified",
-      "note": "'Off-street parking shall be on the parcel on which the accessory apartment is located.' No number in 87-79. Article XXI table not read."
+      "note": "No ADU row. TND Table 5: 'Single-family dwellings / 2 for each dwelling unit (garages excluded)'. Article XXI table outside the TND not read."
+    },
+    "reading": {
+      "value": "TC-R: 2 spaces per dwelling unit, garages excluded. If the apartment counts as a unit, house and apartment need 4 off-garage spaces. If not, 2. Parking must be on the same parcel (87-79A(10)). Outside the TND the Article XXI table was not read.",
+      "section": "87-75 Table 5, 87-79A(10)",
+      "url": "https://ecode360.com/10770343",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
     }
   },
   "utilities": {
@@ -261,10 +417,60 @@
       "url": "https://ecode360.com/10770350",
       "verified_on": null,
       "confidence": "unverified",
-      "note": "Water and sewage must be certified adequate for two units. Separate connections not addressed."
+      "note": "TC-R: water and sewage must be certified adequate for two units. Separate connections not addressed."
     }
   },
   "districts": {
+    "TC-R": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "87-73, TND Schedule A",
+        "url": "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "SL1 and SL2 lots: 6K. SL3 and SL4 5K, LL1 and LL2 10K, EL1 and EL2 20K. Rear yard (home) 40 ft for SL1 and SL2."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "87-73, TND Schedule A",
+        "url": "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Front yard (exc. porch)' 15 ft for SL1 to SL4."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "87-73, TND Schedule A",
+        "url": "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Side yard, minimum' 5 ft, aggregate 15 ft for SL1 to SL4."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "87-73, TND Schedule A",
+        "url": "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Rear yard (home)' 40 ft for SL1 and SL2, 20 ft for SL3 and SL4. The apartment must be inside the house, so the home rear yard applies."
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "87-73, TND Schedule A",
+        "url": "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Maximum height (feet)' 38 for SL1 to SL4. 45 for larger lot types."
+      },
+      "adu_path": {
+        "value": "special_exception",
+        "section": "87-79A",
+        "url": "https://ecode360.com/10770350",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'A special exception is required to create a single apartment within a single-family dwelling'."
+      }
+    },
     "SR": {
       "min_lot_sqft": {
         "value": 10000,

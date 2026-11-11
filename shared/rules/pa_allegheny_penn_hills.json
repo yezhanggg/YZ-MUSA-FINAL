@@ -39,7 +39,9 @@
       "Two-family residences are permitted in R-4 (1268.02(e))",
       "A dwelling unit is living quarters for one family (1260.07)",
       "No accessory building setback or height rules were found. Accessory buildings are not permitted obstructions in required yards (1278.06(e)). Ask the zoning office",
-      "Single-family dwellings need two parking spaces per dwelling unit (1278.02)"
+      "Single-family dwellings need two parking spaces per dwelling unit (1278.02)",
+      "Table I caps density: R-1 5, R-1A 4, R-2 8, R-3 3 dwelling units per acre (1268.06). An R-2 conversion on a 7,500 sq ft lot is about 11.6 units per acre. Table I adds: 'Bulk and area regulations for uses permitted as special exceptions shall be established by the Zoning Hearing Board'",
+      "No permanent accessory building may be built before the principal structure (1278.05)"
     ],
     "notes": "Zoning office: Planning Department, https://pennhillspa.gov/planning-department/. Pending: none found affecting Part Twelve. The towns index pointed to ecode360 37763696, which was not confirmed. Part Twelve root is 37763757. Searched the full printed Part Twelve (Planning and Zoning Code) for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, accessory family, secondary dwelling, second dwelling, accessory living, guest house. No ADU term."
   },
@@ -68,25 +70,53 @@
       "url": "https://ecode360.com/37690975",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Reading: a second unit is not a listed use. 'Structures and uses not clearly permitted in an R-1 District are prohibited.' The path is a use variance from the Zoning Hearing Board."
+      "note": "'Structures and uses not clearly permitted in an R-1 District are prohibited.' The code has no unlisted-use clause. The path is a use variance from the Zoning Hearing Board."
     },
     "fallback_path": {
       "value": "variance",
-      "section": "1268.02, 1268.05(c)(1)",
-      "url": "https://ecode360.com/37691090",
+      "section": "1268.02, MPC 910.2",
+      "url": "https://ecode360.com/37690975",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Same as path. In R-2, a unit inside the house may be possible as a conversion to a two-family residence by special exception (1268.05(c)(1))."
+      "note": "Same as path."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "R-2"
+          ],
+          "path": "special_exception",
+          "section": "1268.05(c)(1)",
+          "url": "https://ecode360.com/37691090",
+          "note": "Not an ADU. 'Conversion of a single-family residence to a two-family residence' is a special exception in R-2. Lot 7,500 sq ft, house 1,600 sq ft gross floor area, each unit 500 sq ft, four off-street spaces not in the front yard."
+        }
+      ],
+      "section": "1268.05(c)(1)",
+      "url": "https://ecode360.com/37691090",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "R-2 conversion to a two-family residence by special exception."
     }
   },
   "eligibility": {
     "zoning_districts": {
-      "value": [],
-      "section": "1268.02",
-      "url": "https://ecode360.com/37690975",
+      "value": [
+        "R-2"
+      ],
+      "section": "1268.05(c)(1)",
+      "url": "https://ecode360.com/37691090",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No district lists an ADU. Reading of a silent code. R-2 conversion to two-family by special exception."
+      "note": "No district lists an ADU. A second unit inside the house as a conversion to two-family: R-2 only, by special exception."
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "1268.05(c)(1)",
+      "url": "https://ecode360.com/37691090",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Conversion of a single-family residence'. Reading: an existing house."
     },
     "historic_bypass": {
       "value": false,
@@ -95,16 +125,83 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "No ADU text, so no historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_size",
+          "condition": "R-2 conversion: lot at least 7,500 sq ft, house at least 1,600 sq ft gross floor area, each unit at least 500 sq ft after conversion.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-2"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "1268.05(c)(1)A to C",
+          "url": "https://ecode360.com/37691090"
+        },
+        {
+          "kind": "parking",
+          "condition": "R-2 conversion: 'A minimum of four off-street parking spaces', not in any required front yard.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-2"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "1268.05(c)(1)D",
+          "url": "https://ecode360.com/37691090"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "'Only one principal residential structure shall be located on a zoning lot' outside planned developments and R-4 to R-7.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "1278.04",
+          "url": "https://ecode360.com/37691504"
+        },
+        {
+          "kind": "other",
+          "condition": "No permanent accessory building may be built before the principal structure.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "1278.05",
+          "url": "https://ecode360.com/37691505"
+        }
+      ],
+      "section": "1268.05, 1278.04, 1278.05",
+      "url": "https://ecode360.com/37691090",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Conversion and lot limits."
     }
   },
   "form": {
     "types_allowed": {
-      "value": [],
-      "section": "1268.02, 1278.04",
-      "url": "https://ecode360.com/37690975",
+      "value": [
+        "internal"
+      ],
+      "section": "1268.05(c)(1)",
+      "url": "https://ecode360.com/37691090",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No ADU form is listed. A second principal residential structure on a lot is barred outside R-4 to R-7 (1278.04)."
+      "note": "Not an ADU form. In R-2 a second unit inside the existing house as a two-family conversion. Elsewhere none."
     }
   },
   "envelope": {
@@ -143,12 +240,12 @@
       "note": "No ADU rule. A dwelling unit is living quarters for one family."
     },
     "max_adus": {
-      "value": 0,
-      "section": "1268.02, 1278.04",
+      "value": null,
+      "section": "1268.02, 1268.05(c)(1)",
       "url": "https://ecode360.com/37690975",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Reading: no ADU is allowed by right."
+      "note": "No ADU. An R-2 conversion makes a two-family residence."
     }
   },
   "parking": {
@@ -158,11 +255,27 @@
       "url": "https://ecode360.com/37691444",
       "verified_on": null,
       "confidence": "unverified",
-      "note": "No ADU row. 'Single-family dwellings: two spaces per dwelling unit.' R-2 conversion needs four spaces in total (1268.05(c)(1)D)."
+      "note": "No ADU row. 'Single-family dwellings: two spaces per dwelling unit.'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "1268.05(c)(1)D",
+      "url": "https://ecode360.com/37691090",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "R-2 conversion: 'A minimum of four off-street parking spaces shall be provided.'"
     }
   },
   "districts": {
     "R-1": {
+      "lot_area_per_unit_sqft": {
+        "value": 8712,
+        "section": "1268.06(a) Table I Maximum Density",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Maximum density 5 dwelling units per acre. 43,560 / 5 = 8,712 sq ft per unit. Derived, not a number in the table."
+      },
       "min_lot_sqft": {
         "value": 8400,
         "section": "1268.06(a) Table I",
@@ -205,6 +318,14 @@
       }
     },
     "R-1A": {
+      "lot_area_per_unit_sqft": {
+        "value": 10890,
+        "section": "1268.06(a) Table I Maximum Density",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Maximum density 4 dwelling units per acre. 43,560 / 4 = 10,890 sq ft per unit. Derived, not a number in the table."
+      },
       "min_lot_sqft": {
         "value": 10000,
         "section": "1268.06(a) Table I",
@@ -247,6 +368,14 @@
       }
     },
     "R-2": {
+      "lot_area_per_unit_sqft": {
+        "value": 5445,
+        "section": "1268.06(a) Table I Maximum Density",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Maximum density 8 dwelling units per acre. 43,560 / 8 = 5,445 sq ft per unit. Derived, not a number in the table."
+      },
       "min_lot_sqft": {
         "value": 5000,
         "section": "1268.06(a) Table I",
@@ -289,6 +418,14 @@
       }
     },
     "R-3": {
+      "lot_area_per_unit_sqft": {
+        "value": 14520,
+        "section": "1268.06(a) Table I Maximum Density",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Maximum density 3 dwelling units per acre. 43,560 / 3 = 14,520 sq ft per unit. Derived, not a number in the table."
+      },
       "min_lot_sqft": {
         "value": 20000,
         "section": "1268.06(a) Table I",

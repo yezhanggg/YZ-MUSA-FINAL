@@ -22,6 +22,7 @@
       "https://ecode360.com/34429715",
       "https://ecode360.com/NO0896/laws",
       "https://www.northamptontownship.com/departments/building-codes/",
+      "https://ecode360.com/6623163",
       "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
     ],
     "verified_on": "2026-11-11",
@@ -38,8 +39,10 @@
       "Detached garages, barns and similar buildings may not be used 'for habitation' (27-1105.2C). Gazebos, pool houses and similar structures may not be 'permanent living quarters' (27-1105.5E)",
       "A dwelling unit is used by one family. Family means relatives, or not more than five unrelated persons, with single cooking facilities (27-201)",
       "Two-family dwellings (twin house, duplex) are dwelling types in the R-3 Multi-Family Residential District (27-407). It is the closest two-unit option, not an ADU path",
-      "Detached accessory buildings on lots up to two acres: max 1,000 sq ft footprint, 15 ft high, 15 ft side and rear setbacks. One per lot (27-1105.2A, 2B)",
-      "The 27-1110 parking table has no single-family row. Ask the zoning office"
+      "Detached accessory buildings on lots up to two acres: max 1,000 sq ft footprint and never larger than the house footprint, 15 ft high, 15 ft side and rear setbacks (10 ft side in an R-2 cluster subdivision). One detached garage, barn or similar per lot, two above two acres (27-1105.2A, 2B, 2D)",
+      "R-2 lot area is per dwelling unit: 20,000 sq ft (27-406.2A(1))",
+      "Parking: 'Residential / 2 per dwelling unit' (27-1110.2A(1))",
+      "A leased dwelling needs a tenant registration from the Township before occupancy. Owners report tenants each year (Chapter 11, 11-302)"
     ],
     "notes": "Zoning office: Building and Codes Department, https://www.northamptontownship.com/departments/building-codes/. Pending: a comprehensive plan update is listed on the township site. No ADU ordinance found. Not law. Searched the full printed Chapter 27 for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, accessory family, secondary dwelling, second dwelling, accessory living, kitchen. No ADU term."
   },
@@ -95,6 +98,55 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "No ADU text, so no historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "Detached garages, barns and similar may not be used 'for habitation'. Gazebos, pool houses and similar may not be 'permanent living quarters'.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-1105.2C, 27-1105.5E",
+          "url": "https://ecode360.com/34429573"
+        },
+        {
+          "kind": "other",
+          "condition": "One detached residential garage, barn, carport or similar per lot (two above two acres). Footprint never larger than the house or 1,000 sq ft up to two acres.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "27-1105.2A, 2B, 2D",
+          "url": "https://ecode360.com/34429573"
+        },
+        {
+          "kind": "other",
+          "condition": "A leased dwelling needs a tenant registration from the Township. Owners report tenants each year.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "11-302",
+          "url": "https://ecode360.com/6623163"
+        }
+      ],
+      "section": "27-1105, 11-302",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory building and rental rules."
     }
   },
   "form": {
@@ -178,11 +230,18 @@
   "parking": {
     "spaces_required": {
       "value": null,
-      "section": "27-1110",
+      "section": "27-1110.2A(1)",
       "url": "https://ecode360.com/34429642",
       "verified_on": null,
       "confidence": "unverified",
-      "note": "No ADU row. No single-family row found in the 27-1110 table."
+      "note": "No ADU row. The table row 'Residential / 2 per dwelling unit' applies to dwellings."
+    },
+    "reading": {
+      "value": "Residential: 2 spaces per dwelling unit. A house needs 2. If a second unit were approved it would count as a dwelling unit, so 4 in total.",
+      "section": "27-1110.2A(1)",
+      "url": "https://ecode360.com/34429642",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
     }
   },
   "districts": {
@@ -252,6 +311,14 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "Maximum building height 35 ft, structure height 50 ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 20000,
+        "section": "27-406.2A(1)",
+        "url": "https://ecode360.com/34428932",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Minimum lot area per dwelling unit: 20,000 square feet.' Public water and sewer required."
       }
     }
   }

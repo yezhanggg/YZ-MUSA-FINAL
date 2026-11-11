@@ -9,6 +9,7 @@
     "source_urls": [
       "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances",
       "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR",
+      "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_CH7BUBURE_ARTVIIREDWRENOTERE",
       "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART2DE",
       "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
       "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
@@ -30,11 +31,12 @@
     "checks": [
       "The zoning code has no accessory dwelling unit, in-law or accessory apartment provision",
       "In R-1 no existing single family dwelling may be converted into two or more dwelling units (702.15)",
-      "Two-family dwellings are allowed by right in R-2 and R-3 (Section 501). A unit inside the house there may be possible as a conversion to a two-family dwelling, if the lot meets the two-family lot area and width",
-      "Two-family lots in R-2 and R-3 need 3,500 sq ft per dwelling unit and 75 ft of width (Section 508). Ask the zoning office how this applies to an existing lot",
+      "Two-family dwellings are allowed by right in R-2 and R-3 (Section 501). A second unit inside or added to the house is possible as a two-family dwelling, not as an ADU",
+      "Two-family lots in R-2 and R-3 need 3,500 sq ft per dwelling unit (7,000 sq ft for two) and 75 ft of width (Section 508). Single family needs 5,000 sq ft",
+      "Section 501 lists 'Accessory Residential Uses' as permitted in R-1, R-2 and R-3. Article 2 does not define it. Ask the zoning office whether it covers anything beyond garages and sheds",
       "Permitted residential accessory structures are greenhouses, sheds, private garages or carports, pools and satellite dishes (Section 305). A dwelling is not on the list",
-      "A use neither permitted nor denied goes to the Zoning Hearing Board as a special exception (Section 324). Whether a second unit counts as such a use is for the Zoning Officer and the Board",
-      "More than one principal structure on a lot also needs land development approval (314.1)",
+      "More than one principal structure on a lot needs land development approval (314.1)",
+      "A rented unit needs registration, a rental inspection report and an occupancy license (Chapter 7, Article VII, 7-218 to 7-226)",
       "A dwelling unit is for one family. More than four unrelated persons is not a family (Section 203)"
     ],
     "notes": "Zoning office: Office of Planning and Zoning, https://www.wilkes-barre.city/node/31. Pending: none found affecting Appendix A. Searched Article 2 definitions, the Article 5 use tables, Article 3 and Article 7 for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, second dwelling, accessory residential. No ADU term."
@@ -54,43 +56,57 @@
       "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "The code has no ADU text. R-1 bars converting a single family dwelling into two or more units (702.15). Two-family dwellings are by right in R-2 and R-3."
+      "note": "The code has no ADU text. R-1 bars converting a single family dwelling into two or more units (702.15). Two-family dwellings are by right in R-2 and R-3, which is the nearest path."
     }
   },
   "approval": {
     "path": {
       "value": "variance",
-      "section": "Section 501, 702.15, Section 1409, MPC 910.2",
-      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+      "section": "702.15, Section 501, Section 1409, MPC 910.2",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART7SURE_S702USRE",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Reading: a second unit on a single family lot is not a listed use. In R-1 702.15 bars conversion to 'two or more dwelling units'. The path is a use variance from the Zoning Hearing Board."
+      "note": "'No existing single family dwelling unit shall be converted into two or more dwelling units ... in an R-1' district. Two-family is not listed in R-1 (501). The path is a use variance from the Zoning Hearing Board."
     },
     "fallback_path": {
       "value": "variance",
-      "section": "Section 501, Section 324",
-      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "section": "702.15, Section 501",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART7SURE_S702USRE",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Same as path. Section 324 sends a use 'neither specifically permitted nor denied' to the Board as a special exception. Applying it to a second unit is not settled by the text."
+      "note": "Same as path. Section 324 (unlisted uses by special exception) is a weak argument here, because 501 lists dwelling types and 702.15 denies the R-1 conversion."
     },
-    "detached_in_yard_path": {
-      "value": "variance",
-      "section": "Section 305, Section 501, 314.1",
-      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "path": "by_right",
+          "section": "Section 501, Section 508",
+          "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+          "note": "Not an ADU. 'Two Family Dwellings' are X (by right) in R-2 and R-3. A second unit in or added to the house is possible as a two-family dwelling on a lot with 3,500 sq ft per unit (7,000 total) and 75 ft width."
+        }
+      ],
+      "section": "Section 501",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "A detached dwelling is not a listed residential accessory structure (305). Reading: a second dwelling building needs a use variance."
+      "confidence": "verified",
+      "note": "Two-family dwelling by right in R-2 and R-3."
     }
   },
   "eligibility": {
     "zoning_districts": {
-      "value": [],
-      "section": "Sections 501 to 507",
+      "value": [
+        "R-2",
+        "R-3"
+      ],
+      "section": "Section 501",
       "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No district lists an ADU. Reading of a silent code. Two-family dwellings: R-2 and R-3 by right."
+      "note": "No district lists an ADU. A second unit as a two-family dwelling: by right in R-2 and R-3 only."
     },
     "historic_bypass": {
       "value": false,
@@ -99,16 +115,85 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "No ADU text, so no historic path. 703 adds HD Historic Overlay rules."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "district",
+          "condition": "R-1: 'No existing single family dwelling unit shall be converted into two or more dwelling units.'",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "702.15",
+          "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART7SURE_S702USRE"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Two-family dwelling: lot width 75 ft and 3,500 sq ft of lot per dwelling unit (Section 508).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "Section 508",
+          "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A detached second dwelling is not a listed residential accessory structure (305), and a second principal structure needs land development approval (314.1).",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "Section 305, 314.1",
+          "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE"
+        },
+        {
+          "kind": "other",
+          "condition": "A rented unit needs registration, a rental inspection report and an occupancy license from the code enforcement officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "Chapter 7, Article VII, 7-218 to 7-226",
+          "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_CH7BUBURE_ARTVIIREDWRENOTERE"
+        }
+      ],
+      "section": "702.15, 305, 314.1, 508, Chapter 7 Art. VII",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART7SURE_S702USRE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "District and form limits."
     }
   },
   "form": {
     "types_allowed": {
-      "value": [],
-      "section": "Sections 305, 501, 702.15",
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "Section 501, 702.15",
       "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No ADU form is listed. A conversion to a two-family dwelling in R-2 or R-3 is a separate path, not an ADU."
+      "note": "Not an ADU form. In R-2 and R-3 a second unit inside or added to the house as a two-family dwelling. Barred in R-1 (702.15)."
     }
   },
   "envelope": {
@@ -181,12 +266,12 @@
       "note": "No ADU rule. A dwelling unit is for one family. A group over four unrelated persons is not a family."
     },
     "max_adus": {
-      "value": 0,
+      "value": null,
       "section": "Section 501, 702.15",
       "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Reading: no ADU is allowed by right."
+      "note": "No ADU. A two-family dwelling holds two units in R-2 and R-3. None added in R-1."
     }
   },
   "parking": {
@@ -197,6 +282,14 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "No ADU row. Single-family detached and two-family: 'Two (2) spaces for each dwelling unit.'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "1020(2)",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART10OREPALO_S1020TAOREPARE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Two-family structure: 'Two (2) spaces for each dwelling unit.' 4 in total for the two units in R-2 or R-3."
     }
   },
   "districts": {
@@ -235,6 +328,14 @@
       }
     },
     "R-2": {
+      "lot_area_per_unit_sqft": {
+        "value": 3500,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Minimum Lot Area per dwelling unit': 3,500 TF (two-family). Single family 5,000."
+      },
       "min_lot_sqft": {
         "value": 5000,
         "section": "Section 508 Residential uses: Table of area and bulk regulations",
@@ -269,6 +370,14 @@
       }
     },
     "R-3": {
+      "lot_area_per_unit_sqft": {
+        "value": 3500,
+        "section": "Section 508 Residential uses: Table of area and bulk regulations",
+        "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Minimum Lot Area per dwelling unit': 3,500 TF (two-family). Single family 5,000."
+      },
       "min_lot_sqft": {
         "value": 5000,
         "section": "Section 508 Residential uses: Table of area and bulk regulations",

@@ -10,6 +10,8 @@
       "https://ecode360.com/AL2257",
       "https://ecode360.com/31994860",
       "https://ecode360.com/print/AL2257?guid=31994860",
+      "https://ecode360.com/32046309",
+      "https://ecode360.com/33866027",
       "https://ecode360.com/32046319",
       "https://ecode360.com/32046320",
       "https://ecode360.com/32046421",
@@ -32,13 +34,16 @@
     "checks": [
       "ADUs are permitted (P) only in RN-A and RN-B (800-29 Principal Use Table). Not listed in RN-C, RN-D or the mixed-use, commercial and industrial districts",
       "The ADU must be attached to or inside the house, or attached to or inside an existing accessory structure such as a garage or carriage house. It must share at least one wall or be structurally connected (800-31D, 800-88 definition)",
-      "A new free-standing cottage is not allowed. A unit in a garage built for the purpose is not addressed, since the text says 'existing accessory structure'",
+      "A new free-standing cottage is not allowed. A garage unit needs an existing accessory structure ('an existing accessory structure such as a garage or carriage house'). A garage built new for the unit is excluded",
+      "An addition to the house must meet the principal setbacks: RN-A side 10 ft and rear 30 ft, RN-B side 3 ft and rear 25 ft (800-14C(1), 800-15C(1)). The 3 ft and 7 ft accessory setbacks apply only to a unit in an existing accessory structure",
+      "No accessory structure may be erected or enlarged in front of the main structure (800-10G(1))",
+      "A rented ADU needs a residential rental unit license from the Code Official, with inspection. Applications are due by July 31 each year. A family exemption may be granted for a parent, adult child, grandparent or sibling of the owner (570-1, 570-3)",
       "Max 1,000 sq ft or 80% of the principal structure, whichever is smaller (800-31E)",
       "The lot must meet the district minimum lot size: RN-A 6,000 sq ft, RN-B 2,725 sq ft (800-31B, 800-14, 800-15)",
       "The owner must live in one of the units. The ADU may only be occupied as a principal residence (800-31G, K)",
       "Separate address and mail receptacle for the ADU (800-31J). Same style and materials as the house or garage (800-31I)",
       "Not allowed in cluster developments. No manufactured or movable homes (800-31F, H)",
-      "The 800-60 parking table has no ADU row. Single-unit residential needs 1 to 3 spaces per dwelling unit. Ask the zoning office how an ADU counts",
+      "The 800-60 parking table has no ADU row. Single-unit residential needs 1 to 3 spaces per dwelling unit. If the ADU counts as a dwelling unit, the lot needs 2 spaces in total. Ask the zoning office",
       "Conversion of a single-family dwelling existing at the effective date into a multifamily dwelling is a separate use (800-36). It is SE in RN-C, RN-D, MX-N and MX-C per the use table (800-29)"
     ],
     "notes": "Zoning office: City of Altoona zoning, https://www.altoonapa.gov/departments/codes-inspections/zoning. Pending: none found on eCode360 (New Laws 0). The towns index URL 32046318 is a nearby section. The chapter root is 31994860."
@@ -122,6 +127,130 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "No historic rule in 800-31."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "A unit outside the house must be attached to or inside an existing accessory structure such as a garage or carriage house. A new free-standing building, or a garage built for the unit, does not qualify.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": "has_accessory_building",
+          "section": "800-31D, 800-88 'Accessory dwelling unit (ADU)'",
+          "url": "https://ecode360.com/32046422"
+        },
+        {
+          "kind": "other",
+          "condition": "An addition to the house meets the principal setbacks: side 10 ft, rear 30 ft (RN-A). Not the 3 ft and 7 ft accessory setbacks.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "RN-A"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "800-14C(1), 800-31A",
+          "url": "https://ecode360.com/32046319"
+        },
+        {
+          "kind": "other",
+          "condition": "An addition to the house meets the principal setbacks: side 3 ft, rear 25 ft (RN-B).",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "RN-B"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "800-15C(1), 800-31A",
+          "url": "https://ecode360.com/32046320"
+        },
+        {
+          "kind": "other",
+          "condition": "RN-B: accessory structures sit 10 ft from the rear of the principal structure (RN-A 8 ft).",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "RN-B"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "800-15C(2)",
+          "url": "https://ecode360.com/32046320"
+        },
+        {
+          "kind": "other",
+          "condition": "No accessory structure may be erected, or enlarged, in front of the main structure.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "800-10G(1)",
+          "url": "https://ecode360.com/32046309"
+        },
+        {
+          "kind": "design",
+          "condition": "Same architectural style and materials as the house or existing accessory structure. Separate address and mail receptacle. Permanent foundation, not a manufactured or movable home.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "800-31H, I, J",
+          "url": "https://ecode360.com/32046422"
+        },
+        {
+          "kind": "other",
+          "condition": "Not permitted in cluster developments.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "800-31F",
+          "url": "https://ecode360.com/32046422"
+        },
+        {
+          "kind": "other",
+          "condition": "A rented ADU needs a residential rental unit license, with inspection. Applications by July 31 each year. Family exemption for a parent, adult child, grandparent or sibling of the owner.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "570-1, 570-3",
+          "url": "https://ecode360.com/33866027"
+        }
+      ],
+      "section": "800-31, 800-10G, 800-14, 800-15, 570-1",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Form, setback, design and rental conditions."
     }
   },
   "form": {
@@ -204,7 +333,7 @@
       "url": "https://ecode360.com/32046319",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "RN-A accessory structure: 'Rear of principal structure 8 ft'. RN-B: 10 ft (800-15C(2)). A garage ADU must also be structurally connected to that garage."
+      "note": "RN-A accessory structure: 'Rear of principal structure 8 ft'. RN-B: 10 ft (800-15C(2)), shown as a gate. A garage ADU must also be structurally connected to that garage."
     },
     "internal_uses_district_height": {
       "value": true,
@@ -242,13 +371,20 @@
       "confidence": "verified",
       "note": "No family or age limit in 800-31."
     },
+    "occupancy": {
+      "value": "The owner lives in one of the units. The ADU is occupied only as someone's principal place of residence.",
+      "section": "800-31G, 800-31K",
+      "url": "https://ecode360.com/32046422",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "short_term_rental_banned": {
       "value": true,
       "section": "800-31K",
       "url": "https://ecode360.com/32046422",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "'An ADU shall only be occupied as a principal place of residence.' Reading: rules out short-term rental of the ADU."
+      "note": "'An ADU shall only be occupied as a principal place of residence.' Reading: bars short-term rental of the ADU only. The house is not covered by 800-31K."
     },
     "max_adus": {
       "value": 1,
@@ -275,6 +411,13 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "No ADU row. 'Single-unit residential / 1 per dwelling unit / 3 per dwelling unit' (minimum and maximum)."
+    },
+    "reading": {
+      "value": "No ADU row. Single-unit residential needs at least 1 space per dwelling unit (max 3). If the ADU counts as a dwelling unit, the lot needs 2 in total. If it does not, 1.",
+      "section": "800-60D",
+      "url": "https://ecode360.com/32047771",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
     }
   },
   "districts": {
