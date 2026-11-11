@@ -9,6 +9,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Philadelphia city | Philadelphia | verified | not set |  | by right | 800 | yes | 1 | 2026-11-10 |
 | Pittsburgh city | Allegheny | verified | not set |  | by right | 1,000 | no | 2 | 2026-11-10 |
 | Allentown city | Lehigh | drafted | accessory dwelling unit (ADU) | by right | by right | 800 | yes | 1 | 2026-11-11 |
+| Erie city | Erie | drafted | accessory dwelling unit (ADU) | by right | by right | none set | no | not confirmed | 2026-11-11 |
 | Harrisburg city | Dauphin | drafted | accessory dwelling unit | by right | by right | none set | yes | none set | 2026-11-11 |
 | York city | York | drafted | accessory dwelling unit | conversion only | special exception | 700 | yes | 1 | 2026-11-11 |
 | State College borough | Centre | drafted | single apartment unit | by right | by right | 500 | no | 1 | 2026-11-11 |
@@ -18,7 +19,6 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Batch | Town | County | Status | Population 2020 | Code host |
 |---|---|---|---|---|---|
 | 1 | Reading city | Berks | in_progress | 95,112 | amlegal |
-| 1 | Erie city | Erie | in_progress | 94,831 | ecode360 |
 | 1 | Scranton city | Lackawanna | in_progress | 76,328 | ecode360 |
 | 1 | Bethlehem city | Northampton | in_progress | 56,009 | own site |
 | 1 | Lancaster city | Lancaster | in_progress | 58,039 | ecode360 |
