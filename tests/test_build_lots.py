@@ -37,6 +37,11 @@ def built(tmp_path_factory: pytest.TempPathFactory) -> Path:
     proc.mkdir(parents=True)
     for name in ("lots", "buildings", "streets"):
         gpd.read_file(FIXTURE / f"{name}.geojson").to_parquet(proc / f"{name}.parquet")
+    # Land cover for one lot only, in the Pittsburgh model's columns.
+    gpd.pd.DataFrame([{"lot_id": "pgh-T01", "building_sqft": 800.0, "building_share": 0.2, "tree_sqft": 1200.0,
+                       "tree_share": 0.3, "open_sqft": 1600.0, "open_share": 0.4, "hard_surface_sqft": 400.0,
+                       "hard_surface_share": 0.1, "cover_source": "model:test", "cover_date": "2022"}]
+                     ).to_parquet(proc / "cover.parquet")
     assert bl.main(["run", "--place", "pittsburgh", "--workers", "1"]) == 0
     yield root / "lots" / "pittsburgh"
     mp.undo()
@@ -57,7 +62,7 @@ def test_every_record_valid(built: Path) -> None:
     for rec in recs.values():
         assert lotmod.validate(rec) == []
         assert set(rec["rules"]) == set(bl.SCENARIOS)
-        assert rec["cover"] == {}
+        assert rec["cover"] == {} or rec["lot"]["parcel_id"] == "T01"
         assert any("land cover" in a for a in rec["quality"]["assumptions"])
         assert isinstance(rec["rules"]["today"]["citations"], dict)
 
@@ -313,6 +318,70 @@ def test_strict_garage_test() -> None:
     assert "touches the house" in bl.garage_test(touching, house, edges, near)
     far = bl.Near(None, None, None)
     assert any("within" in w for w in bl.garage_test(behind, house, edges, far))
+
+
+def test_type_path_is_not_the_lot_fact(built: Path) -> None:
+    rec = records(built)["T01"]   # no garage on this lot
+    r = rec["rules"]["today"]
+    assert r["approval_by_type"]["garage_conversion"] == "by_right"
+    assert rec["fit"]["today"]["garage_conversion"]["limiting"] == "no_garage"
+    assert "925.06" in r["citations"]["approval_by_type.detached_new"]["section"]
+    assert r["citations"]["approval_by_type.internal"]["section"]
+    idx = gpd.pd.read_parquet(built / "index.parquet").set_index("parcel_id")
+    assert idx.loc["T01", "rule_lot"] is None
+    man = json.loads((built / "manifest.json").read_text())
+    assert man["stale_tracts"] == []
+
+
+def test_height_from_stories() -> None:
+    from shapely.geometry import box
+    rows = [{"geometry": box(0, 0, 20, 30), "role": "main", "height_ft": None, "area_sqft": 600},
+            {"geometry": box(0, 50, 10, 60), "role": "accessory", "height_ft": None, "area_sqft": 100}]
+    out = bl.to_buildings(rows, stories=2.0)
+    assert out[0][1].height_ft == 20.0 and out[0][0]["height_source"] == "stories"
+    assert out[1][1].height_ft is None
+    rec = bl.building_rec(out[0][0], out[0][1], 2271)
+    assert rec["height_source"] == "stories"
+
+
+def test_broken_town_rule_file_is_never_read(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    import shutil
+    from pipeline import rules as rulesmod
+
+    for f in rulesmod.RULES_DIR.glob("*.json"):
+        shutil.copy(f, tmp_path / f.name)
+    (tmp_path / "pa_half_written_town.json").write_text('{"provenance": {"oops": 1}, "adu": {}}')
+    monkeypatch.setattr(rulesmod, "RULES_DIR", tmp_path)
+    dates = bl.rule_dates("pittsburgh")
+    assert "pittsburgh" in dates and "pa_half_written_town" not in dates
+    assert bl.data_version("pittsburgh", {}).startswith("pittsburgh-")
+
+
+def test_cover_block(built: Path) -> None:
+    c = records(built)["T01"]["cover"]
+    assert c["tree"] == {"sqft": 1200.0, "pct": 30.0} and c["impervious_pct"] == 30.0
+    assert c["source"] == "model:test" and c["date"] == "2022"
+    idx = gpd.pd.read_parquet(built / "index.parquet").set_index("parcel_id")
+    assert idx.loc["T01", "tree_m2"] == round(1200 * 0.09290304, 1)
+    assert gpd.pd.isna(idx.loc["T02", "tree_m2"])
+
+
+def test_cover_refresh_without_rerun(built: Path) -> None:
+    proc = built.parents[1] / "processed" / "pittsburgh"
+    old = gpd.pd.read_parquet(proc / "cover.parquet")
+    new = gpd.pd.concat([old, old.assign(lot_id="pgh-T02", cover_source="model:new")], ignore_index=True)
+    new.to_parquet(proc / "cover.parquet")
+    try:
+        assert bl.main(["cover", "--place", "pittsburgh", "--workers", "1"]) == 0
+        recs = records(built)
+        assert recs["T02"]["cover"]["source"] == "model:new"
+        assert recs["T03"]["cover"] == {}
+        assert sum("land cover" in a for a in recs["T02"]["quality"]["assumptions"]) >= 1
+        assert bl.main(["validate", "--place", "pittsburgh"]) == 0
+        man = json.loads((built / "manifest.json").read_text())
+        assert man["stale_tracts"] == []
+    finally:
+        old.to_parquet(proc / "cover.parquet")
 
 
 def test_street_groups() -> None:

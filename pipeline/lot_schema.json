@@ -111,6 +111,7 @@
         "id": {"type": "string"},
         "polygon": {"$ref": "#/$defs/area_geom"},
         "height_ft": {"$ref": "#/$defs/num_or_null"},
+        "height_source": {"$ref": "#/$defs/str_or_null", "description": "Where height_ft comes from, e.g. city_elevation, city_approx_hgt, stories (assessor stories x 10 ft)"},
         "role": {"enum": ["main", "garage", "shed", "other"]},
         "source": {"enum": ["city", "msft", "unet", "yolo"]},
         "area_sqft": {"type": "number", "minimum": 0}
@@ -126,7 +127,10 @@
         "building": {"$ref": "#/$defs/share"},
         "tree": {"$ref": "#/$defs/share"},
         "open": {"$ref": "#/$defs/share"},
-        "hard": {"$ref": "#/$defs/share"}
+        "hard": {"$ref": "#/$defs/share"},
+        "impervious_pct": {"type": "number", "minimum": 0, "maximum": 100},
+        "source": {"$ref": "#/$defs/str_or_null", "description": "model:<name> (aerial model) or landcover_2018 (city raster)"},
+        "date": {"$ref": "#/$defs/date_or_null", "description": "Imagery or raster year"}
       }
     },
     "object": {
@@ -262,6 +266,10 @@
         "assumed": {"type": "array", "items": {"type": "string"}},
         "approval_path": {"$ref": "#/$defs/approval_or_null", "description": "Approval path for this ADU type"},
         "max_height_ft": {"$ref": "#/$defs/num_or_null", "description": "Height limit used for this ADU type"},
+        "spot_cover": {"oneOf": [{"type": "null"}, {"type": "object",
+                        "description": "Cover inside the spot from the cover map: sq ft of tree, open, building, hard_surface, other, and its source",
+                        "properties": {"source": {"type": "string"}},
+                        "additionalProperties": {"type": ["number", "string"]}}]},
         "bearing_deg": {"$ref": "#/$defs/num_or_null",
                         "description": "Direction of the spot's long side, degrees clockwise from true north, 0 to 180. angle_deg is the same in the local grid, counterclockwise from grid east"},
         "second": {"oneOf": [{"$ref": "#/$defs/fit_result"}, {"type": "null"}]}
@@ -306,7 +314,10 @@
       "type": "object", "required": ["confidence", "assumptions"], "additionalProperties": false,
       "properties": {
         "imagery_date": {"$ref": "#/$defs/date_or_null"},
-        "data_dates": {"type": "object", "additionalProperties": {"$ref": "#/$defs/date_or_null"}},
+        "data_dates": {"type": "object",
+                       "properties": {"sources": {"type": "object", "description": "Date each raw source was pulled",
+                                                  "additionalProperties": {"$ref": "#/$defs/date_or_null"}}},
+                       "additionalProperties": {"$ref": "#/$defs/date_or_null"}},
         "confidence": {"$ref": "#/$defs/confidence"},
         "assumptions": {"type": "array", "items": {"type": "string"}}
       }

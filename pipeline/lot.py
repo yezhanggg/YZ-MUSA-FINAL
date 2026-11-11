@@ -62,6 +62,7 @@ class BuildingRec(TypedDict, total=False):
     id: str
     polygon: GeoJSON
     height_ft: Optional[float]
+    height_source: Optional[str]
     role: Literal["main", "garage", "shed", "other"]
     source: Literal["city", "msft", "unet", "yolo"]
     area_sqft: float
@@ -77,6 +78,9 @@ class Cover(TypedDict, total=False):
     tree: Share
     open: Share
     hard: Share
+    impervious_pct: float
+    source: Optional[str]
+    date: Optional[str]
 
 
 ObjectRec = TypedDict("ObjectRec", {"class": str, "box": list[float], "score": float})
@@ -155,7 +159,7 @@ class Money(TypedDict, total=False):
 
 class Quality(TypedDict, total=False):
     imagery_date: Optional[str]
-    data_dates: dict[str, Optional[str]]
+    data_dates: dict[str, Any]   # name -> date, and "sources": {source -> date pulled}
     confidence: Confidence
     assumptions: list[str]
 

@@ -83,6 +83,8 @@ OPA_DETACHED_GARAGE = "2"        # OPA garage_type code read as a detached garag
 # Spot outlines are stored this much smaller than computed, so after rounding to 7 decimals they
 # still sit inside the stored buildable outline (which is grown by SIMPLIFY_FT before simplifying).
 SPOT_SHRINK_FT = 0.1
+# Height per story when a building has no measured height (only the assessor's story count).
+STORY_FT = 10.0
 # Streets within this distance of a lot are used to find its front.
 STREET_SEARCH_FT = 200.0
 # Used only when the rules give no number for a setback (a district outside the rule table).
@@ -104,8 +106,25 @@ SCENARIOS = lotmod.SCENARIOS
 FIT_TYPES = fit.ADU_TYPES
 HOUSING_TO_BUILDING = {"single_family_detached": "detached", "semi_detached": "semi_detached",
                        "rowhouse": "attached"}
+# Land cover per lot, from processed/<place>/cover.parquet (else cover_raster.parquet). Columns
+# read and the names they take in the lot rows.
+COVER_FILES = ("cover.parquet", "cover_raster.parquet")
+COVER_COLUMNS = {f"{k}_{u}": f"cv_{k}_{u}" for k in ("building", "tree", "open", "hard_surface")
+                 for u in ("sqft", "share")}
+COVER_COLUMNS.update({"impervious_share": "cv_impervious_share", "cover_source": "cv_source",
+                      "cover_date": "cv_date", "built_after_cover": "cv_built_after"})
+# Pittsburgh cover: the zero-shot model file wins when present (cleaner on held-out pixels).
+COVER_FILES_BY_PLACE = {"pittsburgh": ("cover_model_r34_c5_s0.parquet", "cover.parquet")}
+# Known accuracy of each cover source, carried into quality.assumptions.
+COVER_NOTES = {
+    "pittsburgh": "land cover from an aerial model: per-lot tree share is off by about 8 points on average "
+                  "against the 2019 raster (n=128), building share reads about 9 points high",
+    "philadelphia": "land cover from the city's 2018 raster: changes since 2018 are not seen",
+}
+# Cover inside the best spot is read from the cover map (pipeline.vision.cover_lookup), about 7 ms a spot.
+SPOT_COVER = True
 BASE_ASSUMPTIONS = (
-    "no land cover yet: cover is empty and trees are not counted",
+"land cover is per lot, plus what lies inside the best spot (spot_cover). The fit itself does not steer around trees",
     f"accessory buildings of {GARAGE_MIN_SQFT:.0f} sq ft or more are garages, smaller ones are sheds that could go",
     "a new unit goes behind the front of the house when there is room",
     f"a unit is at least {fit.MIN_SIDE_FT:.0f} ft on its short side and at most {fit.MAX_ASPECT:.0f}:1",
@@ -164,8 +183,9 @@ LOT_COLUMNS = (
     "year_built", "value_total", "sale_date", "sale_price", "n_accessory", "building_sane",
     "main_bldg_split", "tax_year", "tract", "parcel_id", "market_value", "historic_individual",
     "historic_contributing", "historic_status", "ward", "main_bldg_height_ft", "legacy_id", "garage_type",
+    *COVER_COLUMNS.values(),
 )
-BUILDING_COLUMNS = ("building_id", "lot_id", "role", "fit_role", "source", "area_sqft", "height_ft", "split",
+BUILDING_COLUMNS = ("building_id", "lot_id", "role", "fit_role", "source", "area_sqft", "height_ft", "height_source", "split",
                     "geometry")
 STREET_COLUMNS = ("kind", "st_type", "geometry")
 
@@ -198,6 +218,61 @@ def load_streets(place: str, path: Path) -> Any:
         streets["st_type"] = ""
     streets = streets[streets.geometry.notna() & ~streets.geometry.is_empty].reset_index(drop=True)
     return streets
+
+
+def cover_map_ok(place: str) -> bool:
+    """True when the cover map for spots can be opened here (checked once, in the parent)."""
+    try:
+        from pipeline.vision.cover_lookup import source_for
+        return Path(source_for(place)[0]).exists()
+    except Exception:  # noqa: BLE001
+        return False
+
+
+def cover_path(place: str) -> Optional[Path]:
+    for name in COVER_FILES_BY_PLACE.get(place, COVER_FILES):
+        path = processed_dir(place) / name
+        if path.exists():
+            return path
+    return None
+
+
+def add_cover(place: str, lots: Any) -> Any:
+    """Join per-lot land cover by lot id. Lots without a cover row keep an empty cover block."""
+    path = cover_path(place)
+    if path is None:
+        return lots
+    import pyarrow.parquet as pq
+
+    have = set(pq.read_schema(path).names)
+    cols = ["lot_id"] + [c for c in COVER_COLUMNS if c in have]
+    cov = pd.read_parquet(path, columns=cols).drop_duplicates("lot_id").rename(columns=COVER_COLUMNS)
+    return lots.merge(cov, on="lot_id", how="left")
+
+
+def cover_of(r: dict[str, Any], area_sqft: float) -> dict[str, Any]:
+    """The cover block: building, tree, open and hard surface (sq ft and percent of the lot),
+    impervious percent, source and date. Empty when the lot has no cover row."""
+    out: dict[str, Any] = {}
+    for key, col in (("building", "building"), ("tree", "tree"), ("open", "open"), ("hard", "hard_surface")):
+        sq, sh = _num(r.get(f"cv_{col}_sqft")), _num(r.get(f"cv_{col}_share"))
+        if sq is None and sh is None:
+            continue
+        if sh is None:
+            sh = sq / area_sqft if area_sqft else 0.0
+        if sq is None:
+            sq = sh * area_sqft
+        out[key] = {"sqft": round(max(sq, 0.0), 1), "pct": round(min(max(sh * 100, 0.0), 100.0), 1)}
+    if not out:
+        return {}
+    imp = _num(r.get("cv_impervious_share"))
+    if imp is None:   # buildings plus paving
+        imp = ((out.get("building") or {}).get("pct", 0.0) + (out.get("hard") or {}).get("pct", 0.0)) / 100
+    out["impervious_pct"] = round(min(max(imp * 100, 0.0), 100.0), 1)
+    out["source"] = str(r["cv_source"]) if _present(r.get("cv_source")) else None
+    d = str(r.get("cv_date") or "").strip()
+    out["date"] = d[:10] if d[:4].isdigit() else None
+    return out
 
 
 def file_date(path: Path) -> Optional[str]:
@@ -238,12 +313,13 @@ class Ctx:
     county_fips: str
     crs: int
     data_version: str
-    data_dates: dict[str, Optional[str]]
+    data_dates: dict[str, Any]
     way_types: tuple[str, ...] = ()
     front_when_null: str = "fixed"
     strict_garage: bool = False
     imagery_date: Optional[str] = None
     money: dict[str, Any] = field(default_factory=dict)   # cost index and its key, same for every lot
+    spot_cover: bool = False                               # a cover map exists for this place
 
 
 def _union(geoms: Iterable[BaseGeometry]) -> Optional[BaseGeometry]:
@@ -271,7 +347,10 @@ def building_role(row: dict[str, Any]) -> str:
     return "garage" if float(row.get("area_sqft") or 0.0) >= GARAGE_MIN_SQFT else "shed"
 
 
-def to_buildings(rows: Sequence[dict[str, Any]]) -> list[tuple[dict[str, Any], fit.Building]]:
+def to_buildings(rows: Sequence[dict[str, Any]], stories: Optional[float] = None
+                 ) -> list[tuple[dict[str, Any], fit.Building]]:
+    """Fit buildings. A main building with no height takes the assessor's stories x STORY_FT
+    (height_source 'stories'). Stories describe the house only, so outbuildings stay unknown."""
     out = []
     for r in rows:
         g = r["geometry"]
@@ -281,8 +360,10 @@ def to_buildings(rows: Sequence[dict[str, Any]]) -> list[tuple[dict[str, Any], f
             g = fit._polygons_only(shapely.make_valid(g))
             if g.is_empty:
                 continue
-        h = r.get("height_ft")
-        h = None if h is None or not math.isfinite(float(h)) else float(h)
+        h = _num(r.get("height_ft"))
+        if h is None and r.get("role") == "main" and stories:
+            h = float(stories) * STORY_FT
+            r = {**r, "height_source": "stories"}
         src = "msft" if r.get("source") == "msft" else "city"
         out.append((r, fit.Building(g, building_role(r), h, src)))  # type: ignore[arg-type]
     return out
@@ -392,7 +473,7 @@ def house_height(r: dict[str, Any], blds: Sequence[fit.Building]) -> Optional[fl
     return max(hs) if hs else _num(r.get("main_bldg_height_ft"))
 
 
-def resolver_lot(r: dict[str, Any], flags: dict[str, Optional[bool]], alley: bool, has_accessory: bool,
+def resolver_lot(r: dict[str, Any], flags: dict[str, Optional[bool]], alley: bool, has_accessory: Optional[bool],
                  lot_sqft: float, height_ft: Optional[float]) -> dict[str, Any]:
     """Map the lot's facts into the resolver's lot dict. `alley` is the rear-on-a-way test from the
     lot lines (alleys, and Ways in Pittsburgh), so the resolver's effective rear setback matches the fit."""
@@ -436,6 +517,26 @@ def fill_rules(raw: dict[str, Any], district: Optional[str], contextual_front: O
         r["citations"][key] = {"section": section, "url": None, "verified_on": None, "confidence": "unverified",
                                "source_file": "build_lots"}
     return r, notes
+
+
+def cite_type_paths(rules: dict[str, Any], place: str, scenario: str) -> None:
+    """citations["approval_by_type.<type>"] for each type's path, so the app need not parse notes.
+    The resolver cites only the overall path. A type on the place's yard-exception path cites that
+    rule leaf, the others the overall path's citation. Rule files are read, not changed."""
+    by_type = rules.get("approval_by_type") or {}
+    cites = rules["citations"]
+    base = cites.get("approval_path")
+    local, state = rulesmod.layers_for(place, scenario)
+    yard = None
+    for name in local:
+        leaf = (rulesmod.load_rules(name).get("approval") or {}).get("detached_in_yard_path")
+        if leaf and leaf.get("value") is not None:
+            yard = (leaf, name)
+    for t, path in by_type.items():
+        if yard and path == yard[0]["value"] and not state:
+            cites[f"approval_by_type.{t}"] = rulesmod._citation(*yard)
+        elif base:
+            cites[f"approval_by_type.{t}"] = dict(base)
 
 
 def house_front_setback(edges: fit.EdgeInfo, house: Optional[BaseGeometry]) -> Optional[float]:
@@ -573,6 +674,37 @@ def bearing_deg(spot: BaseGeometry, angle_deg: float, epsg: int) -> float:
     return round(az % 180.0, 1)
 
 
+@functools.lru_cache(maxsize=4096)
+def _spot_cover_cached(place: str, wkb: bytes) -> Optional[tuple[tuple[str, Any], ...]]:
+    from pipeline.vision.cover_lookup import cover_in_polygon
+
+    try:
+        out = cover_in_polygon(place, shapely.from_wkb(wkb))
+    except Exception:  # noqa: BLE001  no cover map here: leave the spot without cover
+        return None
+    return tuple(sorted(out.items()))
+
+
+def spot_cover(place: str, spot: BaseGeometry, epsg: int) -> Optional[dict[str, Any]]:
+    """Tree, open, building and hard surface (sq ft) inside a spot, from the cover map: canopy a
+    new unit would remove and ground it would cover."""
+    if not SPOT_COVER or spot is None or spot.is_empty:
+        return None
+    t = lotmod._to_wgs84(epsg)
+    g = shapely.transform(spot, lambda xy: np.column_stack(t.transform(xy[:, 0], xy[:, 1])))
+    hit = _spot_cover_cached(place, shapely.to_wkb(g))
+    return None if hit is None else dict(hit)
+
+
+def add_spot_cover(d: Optional[dict[str, Any]], res: Optional[fit.FitResult], ctx: Ctx) -> None:
+    """spot_cover on the detached fit and its second unit, when there is a spot and a cover map."""
+    if d is None or res is None or not ctx.spot_cover:
+        return
+    for part, r in ((d, res), (d.get("second"), res.second)):
+        if part is not None and r is not None and r.spot is not None and "spot_cover" not in part:
+            part["spot_cover"] = spot_cover(ctx.place, r.spot, ctx.crs)
+
+
 def fit_record(res: fit.FitResult, epsg: int, shrink: bool) -> dict[str, Any]:
     """The fit as stored. New-unit spots are drawn a hair smaller (SPOT_SHRINK_FT) so they stay
     inside the stored buildable outline. Sizes are the computed ones."""
@@ -677,6 +809,10 @@ def quality_of(r: dict[str, Any], edges: fit.EdgeInfo, notes: list[str], has_mai
         extra.append("lot crosses a zoning district line: the larger district is used")
     if not has_main:
         extra.append("no house outline on this lot")
+    if r.get("cv_source") is not None and ctx.place in COVER_NOTES:
+        extra.append(COVER_NOTES[ctx.place])
+    if _bool(r.get("cv_built_after")):
+        extra.append("built after the land cover was mapped: cover shows the lot before the house")
     return {"imagery_date": ctx.imagery_date, "data_dates": dict(ctx.data_dates), "confidence": conf,
             "assumptions": list(BASE_ASSUMPTIONS) + extra + notes}
 
@@ -687,7 +823,7 @@ def build_lot(r: dict[str, Any], brows: Sequence[dict[str, Any]], near: Near, ct
     epsg = ctx.crs
     notes: list[str] = []
     poly = lot_polygon(r["geometry"], notes)
-    pairs = to_buildings(brows)
+    pairs = to_buildings(brows, _num(r.get("stories")))
     house = _union(b.polygon for _, b in pairs if b.role == "main")
     edges = classify(poly, house if house is not None else shapely.Polygon(), near, notes)
     if ctx.strict_garage:
@@ -696,10 +832,15 @@ def build_lot(r: dict[str, Any], brows: Sequence[dict[str, Any]], near: Near, ct
     walls = mark_party_walls(edges, house, r.get("housing_type"))
     if walls:
         notes.append(f"party wall on {len(walls)} side lot line(s): no side yard there")
-    shape = fit.LotShape(poly, edges, living_sqft=_num(r.get("living_area")))
+    hard = _num(r.get("cv_hard_surface_sqft"))
+    shape = fit.LotShape(poly, edges, living_sqft=_num(r.get("living_area")), hard_surface_sqft=hard)
     ctx_front = house_front_setback(edges, house) if ctx.front_when_null == "contextual" else None
     flags = flags_for(r)
-    has_acc = any(b.role in ("garage", "shed") for b in blds)
+    # The resolver turns has_accessory_building=False into "garage conversion not allowed", which
+    # mixes the rule up with this lot's facts. Pass True when there is a structure (it decides the
+    # Pittsburgh way exception for a unit over a garage) and unknown otherwise. Whether the lot has a
+    # garage shows in the fit (limiting no_garage) and in the index (garage_present).
+    has_acc = True if any(b.role in ("garage", "shed") for b in blds) else None
     rlot = resolver_lot(r, flags, edges.alley, has_acc, float(poly.area), house_height(r, blds))
 
     rules_out: dict[str, Any] = {}
@@ -715,7 +856,9 @@ def build_lot(r: dict[str, Any], brows: Sequence[dict[str, Any]], near: Near, ct
         if key not in cache:   # scenarios with the same rules (Pittsburgh local reform) share a fit
             cache[key] = run_scenario(shape, blds, filled, epsg)
         buildable[s], fits[s], raw_res[s] = cache[key]
+        cite_type_paths(filled, ctx.place, s)
         rules_out[s] = filled
+        add_spot_cover(fits[s].get("detached_new"), raw_res[s].get("detached_new"), ctx)
 
     if any(t == "attached" for s in SCENARIOS for t in rules_out[s]["types_allowed"] or []):
         notes.append("attached ADUs are allowed but not modeled: the internal fit stands in for them")
@@ -725,7 +868,7 @@ def build_lot(r: dict[str, Any], brows: Sequence[dict[str, Any]], near: Near, ct
         "schema_version": lotmod.SCHEMA_VERSION,
         "lot": lot_part(r, poly, edges, ctx, notes),
         "buildings": [building_rec(row, b, epsg) for row, b in pairs],
-        "cover": {},
+        "cover": cover_of(r, float(poly.area)),
         "objects": [],
         "zoning": {"district": rlot["zoning_district"], "overlays": rlot["overlays"],
                    "council_district": None if rlot["council_district"] is None else str(rlot["council_district"]),
@@ -743,9 +886,7 @@ def build_lot(r: dict[str, Any], brows: Sequence[dict[str, Any]], near: Near, ct
 def lot_part(r: dict[str, Any], poly: shapely.Polygon, edges: fit.EdgeInfo, ctx: Ctx, notes: list[str]
              ) -> dict[str, Any]:
     pin = str(r.get("pin") or r.get("parcel_id") or r["lot_id"])
-    lid = str(r["lot_id"])
-    # Tables now carry <county FIPS>-<parcel id> ids. Older Pittsburgh tables used pgh-<pin>.
-    lot_id = lid if lid.startswith(ctx.county_fips + "-") else f"{ctx.county_fips}-{pin}"
+    lot_id = record_id(r["lot_id"], pin, ctx.county_fips)
     part = {"id": lot_id, "parcel_id": pin,
             "address": str(r["address"]) if _present(r.get("address")) else None,
             "place": ctx.place, "county_fips": ctx.county_fips, "tract": str(r["tract"]),
@@ -755,13 +896,36 @@ def lot_part(r: dict[str, Any], poly: shapely.Polygon, edges: fit.EdgeInfo, ctx:
     return part
 
 
+def record_id(table_id: Any, pin: Any, county_fips: str) -> str:
+    """Record lot id. Tables now carry <county FIPS>-<parcel id>. Older Pittsburgh tables used pgh-<pin>."""
+    lid = str(table_id)
+    return lid if lid.startswith(county_fips + "-") else f"{county_fips}-{pin or lid}"
+
+
 def building_rec(row: dict[str, Any], b: fit.Building, epsg: int) -> dict[str, Any]:
     return {"id": str(row.get("building_id") or ""), "polygon": geo(b.polygon, epsg),
             "height_ft": None if b.height_ft is None else round(b.height_ft, 1),
+            "height_source": (str(row["height_source"]) if _present(row.get("height_source"))
+                              and b.height_ft is not None else None),
             "role": b.role, "source": b.source, "area_sqft": round(b.area_sqft, 1)}
 
 
 # ---------------------------------------------------------------- index row
+
+def _m2(sqft: Optional[float]) -> Optional[float]:
+    return None if sqft is None else round(sqft * 0.09290304, 1)
+
+
+def old_rule_fields(place: str, rules: dict[str, Any]) -> dict[str, Optional[str]]:
+    """rule_lot / rule_why in the old app meaning: Philadelphia only, conversion_only where a unit
+    inside the house or a conversion has a legal path today, variance otherwise. Null elsewhere."""
+    if place != "philadelphia":
+        return {"rule_lot": None, "rule_why": None}
+    by_type = rules.get("approval_by_type") or {}
+    ok = any(by_type.get(t) in OK_PATHS for t in ("internal", "garage_conversion", "attached"))
+    reasons = [x for x in rules.get("reasons") or [] if x]
+    return {"rule_lot": "conversion_only" if ok else "variance", "rule_why": reasons[0] if reasons else None}
+
 
 def _room(res: fit.FitResult) -> float:
     c = res.checks.get("room")
@@ -786,12 +950,16 @@ def index_row(r: dict[str, Any], rec: dict[str, Any], res: dict[str, dict[str, f
         "zoning": rec["zoning"]["district"], "council_district": rec["zoning"]["council_district"],
         # Old app contract. No land cover yet, so open and tree areas are unknown and
         # "keep trees" means keeping sheds only.
-        "lot_m2": round(lot["area_sqft"] * 0.09290304, 1), "open_m2": None, "tree_m2": None,
-        "fits": allowed and room_clear >= APP_FIT_SQFT - 1e-6,
-        "fits_keep_trees": allowed and room_keep >= APP_FIT_SQFT - 1e-6,
+        "lot_m2": round(lot["area_sqft"] * 0.09290304, 1),
+        "open_m2": _m2((rec["cover"].get("open") or {}).get("sqft")),
+        "tree_m2": _m2((rec["cover"].get("tree") or {}).get("sqft")),
+        # Physical fit of the 600 sq ft box, as in the old raster contract. Legality is in rule_lot
+        # and the approval_* columns.
+        "fits": room_clear >= APP_FIT_SQFT - 1e-6,
+        "fits_keep_trees": room_keep >= APP_FIT_SQFT - 1e-6,
         "max_fit_sqft": int(min(round(room_clear), APP_MAX_FIT_SQFT)),
         "max_fit_keep_trees_sqft": int(min(round(room_keep), APP_MAX_FIT_SQFT)),
-        "rule_lot": rules_today["approval_path"], "rule_why": today.note,
+        **old_rule_fields(ctx.place, rules_today),
         "lot_sqft": lot["area_sqft"], "room_sqft": round(room_keep),
     }
     for s in SCENARIOS:
@@ -825,6 +993,11 @@ def index_row(r: dict[str, Any], rec: dict[str, Any], res: dict[str, dict[str, f
         "building_split": bool(r.get("main_bldg_split")) if _present(r.get("main_bldg_split")) else False,
         "n_buildings": len(blds), "confidence": rec["quality"]["confidence"],
         "party_walls": sum(1 for e in rec["lot"].get("edges", []) if e.get("party_wall")),
+        "tree_pct": (rec["cover"].get("tree") or {}).get("pct"),
+        "spot_tree_sqft_today": ((rec["fit"]["today"]["detached_new"].get("spot_cover") or {}).get("tree_sqft")),
+        "spot_tree_sqft_state_reform": ((rec["fit"]["state_reform"]["detached_new"].get("spot_cover") or {}).get("tree_sqft")),
+        "impervious_pct": rec["cover"].get("impervious_pct"),
+        "cover_source": rec["cover"].get("source"),
         "rent_b1": rec["money"]["rent_by_bedroom"].get("b1"), "rent_b2": rec["money"]["rent_by_bedroom"].get("b2"),
     })
     return row
@@ -1030,16 +1203,20 @@ def data_version(place: str, paths: dict[str, Path]) -> str:
         if p.exists():
             st = p.stat()
             h.update(f"{p.name}:{st.st_size}:{int(st.st_mtime)}".encode())
-    for name in rulesmod.rule_names():
+    # Only the rule files this place uses. Town files keep arriving in the same folder and must
+    # not change this place's version or stop its build.
+    for name in _rule_files(place):
         h.update((rulesmod.RULES_DIR / f"{name}.json").read_bytes())
-    for mod in (Path(__file__), Path(fit.__file__), Path(lotmod.__file__), lotmod.SCHEMA_PATH):
+    for mod in (Path(__file__), Path(fit.__file__), Path(lotmod.__file__), lotmod.SCHEMA_PATH,
+                Path(rulesmod.__file__), rulesmod.SCHEMA_PATH):
         h.update(mod.read_bytes())
     return f"{place}-{dt.date.today():%Y%m%d}-{h.hexdigest()[:10]}"
 
 
-def rule_dates() -> dict[str, Optional[str]]:
+def rule_dates(place: str) -> dict[str, Optional[str]]:
+    """verified_on of the rule files this place uses. Never loads the other files in the folder."""
     out = {}
-    for name in rulesmod.rule_names():
+    for name in _rule_files(place):
         prov = rulesmod.load_rules(name).get("provenance") or {}
         out[name] = prov.get("verified_on")
     return out
@@ -1108,6 +1285,18 @@ def progress_note(out: Path, place: str, text: str) -> None:
         f.write(f"- {stamp} [{place}] {text}\n")
 
 
+def make_ctx(place: Place, paths: dict[str, Path]) -> Ctx:
+    """What every lot of a run shares. The version covers the inputs, the cover file, the rule
+    files of this place and the code."""
+    cov = cover_path(place.name)
+    vpaths = {**paths, **({"cover": cov} if cov else {})}
+    return Ctx(place.name, place.county_fips, place.crs, data_version(place.name, vpaths),
+              {**{k: file_date(p) for k, p in paths.items()}, **source_dates(place.name),
+               **{f"rules_{k}": v for k, v in rule_dates(place.name).items()}},
+              place.way_types, place.front_when_null, place.strict_garage, imagery_date(place),
+              cost_index(place), SPOT_COVER and cover_map_ok(place.name))
+
+
 def cmd_run(args: argparse.Namespace) -> int:
     place = get_place(args.place)
     out = out_dir(place.name, create=True)
@@ -1115,6 +1304,7 @@ def cmd_run(args: argparse.Namespace) -> int:
     t_start = time.perf_counter()
     print("loading inputs", flush=True)
     lots = _read(paths["lots"], LOT_COLUMNS)
+    lots = add_cover(place.name, lots)
     if "tract" in lots.columns and lots["tract"].notna().all():
         lots["tract"] = lots["tract"].astype(str)   # the place table already carries tracts
     else:
@@ -1131,11 +1321,7 @@ def cmd_run(args: argparse.Namespace) -> int:
     todo = [t for t in tracts if args.force or not is_complete(out, done.get(t), counts[t])]
     print(f"{len(lots):,} lots in {len(counts)} tracts. {len(tracts) - len(todo)} tracts already done, "
           f"{len(todo)} to build", flush=True)
-    ctx = Ctx(place.name, place.county_fips, place.crs, data_version(place.name, paths),
-              {**{k: file_date(p) for k, p in paths.items()}, **source_dates(place.name),
-               **{f"rules_{k}": v for k, v in rule_dates().items() if k in _rule_files(place.name)}},
-              place.way_types, place.front_when_null, place.strict_garage, imagery_date(place),
-              cost_index(place))
+    ctx = make_ctx(place, paths)
     drop_errors(out, set(todo))
     progress_note(out, place.name, f"run start: {len(todo)} tracts to build, limit {args.limit}, "
                                    f"workers {args.workers}, version {ctx.data_version}")
@@ -1169,14 +1355,14 @@ def _sources(place: str) -> dict[str, Any]:
         return {}
 
 
-def source_dates(place: str) -> dict[str, str]:
-    """Date each raw source was pulled, from raw/<place>/SOURCES.json."""
+def source_dates(place: str) -> dict[str, dict[str, str]]:
+    """Date each raw source was pulled, from raw/<place>/SOURCES.json, grouped under 'sources'."""
     out = {}
     for k, v in _sources(place).items():
         d = v.get("pulled") if isinstance(v, dict) else None
         if isinstance(d, str) and len(d) >= 4 and d[:4].isdigit():
-            out[f"source_{k}"] = d[:10]
-    return out
+            out[k] = d[:10]
+    return {"sources": out} if out else {}
 
 
 def imagery_date(place: Place) -> Optional[str]:
@@ -1189,9 +1375,14 @@ def imagery_date(place: Place) -> Optional[str]:
     return None
 
 
+OTHER_STATE_BILLS = ("sb1346",)
+
+
 def _rule_files(place: str) -> list[str]:
-    names = {place, rulesmod.DEFAULT, rulesmod.STATE_REFORM, *rulesmod.LOCAL_REFORM.get(place, [])}
-    return sorted(n for n in names if n in rulesmod.rule_names())
+    """The place file, its local bill, the defaults and the state bills. Checked by file name only,
+    so a half-written town file elsewhere in the folder is never read."""
+    names = {place, rulesmod.DEFAULT, rulesmod.STATE_REFORM, *rulesmod.LOCAL_REFORM.get(place, []), *OTHER_STATE_BILLS}
+    return sorted(n for n in names if (rulesmod.RULES_DIR / f"{n}.json").exists())
 
 
 def run_jobs(jobs: Iterator[TractJob], ctx: Ctx, out: Path, workers: int) -> Iterator[TractResult]:
@@ -1317,7 +1508,7 @@ def write_manifest(place: Place, out: Path, ctx: Ctx, paths: dict[str, Path], in
         "data_version": ctx.data_version, "schema_version": lotmod.SCHEMA_VERSION,
         "built_at": dt.datetime.now().isoformat(timespec="seconds"),
         "inputs": {k: {"file": str(p), "modified": file_date(p)} for k, p in paths.items()},
-        "rule_files_verified_on": {k: v for k, v in rule_dates().items() if k in _rule_files(place.name)},
+        "rule_files_verified_on": rule_dates(place.name),
         "counts": {"lots": int(len(index)), "tracts": int(index["tract"].nunique()), "errors": errors,
                    "tracts_in_progress_log": len(progress),
                    **{f"allowed_{s}": int(index[f"allowed_{s}"].sum()) for s in SCENARIOS},
@@ -1338,6 +1529,8 @@ def write_manifest(place: Place, out: Path, ctx: Ctx, paths: dict[str, Path], in
                        "lots": e.get("ok"), "errors": e.get("errors"), "built_at": e.get("at")}
                    for t, e in sorted(progress.items())},
         "lot_tract": "lot_tract.parquet and lot_tract.json (lot id -> tract GEOID)",
+        # Tracts built by an earlier version (a partial rebuild). Empty after a full run.
+        "stale_tracts": sorted(t for t, e in progress.items() if e.get("data_version") != ctx.data_version),
         "assumptions": {"steep_slope_min_share": STEEP_SLOPE_MIN_SHARE, "landslide_min_share": LANDSLIDE_MIN_SHARE,
                         "flood_min_share": FLOOD_MIN_SHARE, "historic_min_share": HISTORIC_MIN_SHARE,
                         "garage_min_sqft": GARAGE_MIN_SQFT, "fallback_setbacks_ft": FALLBACK_SETBACKS_FT,
@@ -1611,6 +1804,91 @@ def describe(rec: dict[str, Any]) -> str:
             f"notes={'; '.join(lot.get('shape_notes') or [])}")
 
 
+# ---------------------------------------------------------------- cover refresh
+
+COVER_NOTE_PREFIXES = ("land cover", "built after the land cover")
+
+
+def refresh_cover_tract(tract: str, out: str, ctx: Ctx, cover: dict[str, dict[str, Any]]) -> TractResult:
+    """Swap in new land cover for one built tract: cover block, spot cover, cover notes and the
+    index columns that follow cover. Geometry, rules and fits are left as built."""
+    t0 = time.perf_counter()
+    warnings.filterwarnings("ignore", "invalid value encountered", RuntimeWarning)
+    o = Path(out)
+    records = read_tract(o, tract)
+    rows = pd.read_parquet(o / "parts" / f"{tract}.parquet").set_index("lot_id")
+    for rec in records:
+        r = cover.get(rec["lot"]["id"], {})
+        rec["cover"] = cover_of(r, float(rec["lot"]["area_sqft"]))
+        q = rec["quality"]
+        q["assumptions"] = [a for a in q["assumptions"] if not a.startswith(COVER_NOTE_PREFIXES)
+                            and a not in COVER_NOTES.values()]
+        q["assumptions"].insert(0, BASE_ASSUMPTIONS[0])
+        if r.get("cv_source") is not None and ctx.place in COVER_NOTES:
+            q["assumptions"].append(COVER_NOTES[ctx.place])
+        if _bool(r.get("cv_built_after")):
+            q["assumptions"].append("built after the land cover was mapped: cover shows the lot before the house")
+        for types in rec["fit"].values():
+            d = types.get("detached_new")
+            for part in (d, (d or {}).get("second")):
+                if part is not None and part.get("spot") and ctx.spot_cover:
+                    hit = _spot_cover_cached(ctx.place, shapely.to_wkb(shapely.geometry.shape(part["spot"])))
+                    part["spot_cover"] = None if hit is None else dict(hit)
+        lid = rec["lot"]["id"]
+        if lid in rows.index:
+            c = rec["cover"]
+            rows.loc[lid, "open_m2"] = _m2((c.get("open") or {}).get("sqft"))
+            rows.loc[lid, "tree_m2"] = _m2((c.get("tree") or {}).get("sqft"))
+            rows.loc[lid, "tree_pct"] = (c.get("tree") or {}).get("pct")
+            rows.loc[lid, "impervious_pct"] = c.get("impervious_pct")
+            rows.loc[lid, "cover_source"] = c.get("source")
+            for s in ("today", "state_reform"):
+                sc = rec["fit"][s]["detached_new"].get("spot_cover") or {}
+                rows.loc[lid, f"spot_tree_sqft_{s}"] = sc.get("tree_sqft")
+    size, split, files = write_tract(o, tract, records, rows.reset_index().to_dict("records"), ctx)
+    return TractResult(tract, len(records), len(records), [], time.perf_counter() - t0, size, split, files,
+                       ctx.data_version)
+
+
+def cmd_cover(args: argparse.Namespace) -> int:
+    """Refresh land cover in built tracts from the current cover file, without a fit rerun."""
+    place = get_place(args.place)
+    out = out_dir(place.name)
+    paths = input_paths(place.name)
+    path = cover_path(place.name)
+    if path is None:
+        print("no cover file")
+        return 1
+    ctx = make_ctx(place, paths)
+    import pyarrow.parquet as pq
+
+    have = set(pq.read_schema(paths["lots"]).names)
+    lots = pd.read_parquet(paths["lots"], columns=[c for c in ("lot_id", "pin", "parcel_id") if c in have])
+    cov = add_cover(place.name, lots)
+    pins = cov["pin"] if "pin" in cov else cov.get("parcel_id", cov["lot_id"])
+    cov["lot_id"] = [record_id(a, b, place.county_fips) for a, b in zip(cov["lot_id"], pins)]
+    cov = cov.drop(columns=[c for c in ("pin", "parcel_id") if c in cov]).set_index("lot_id")
+    cov = cov.astype(object).where(pd.notna(cov), None)
+    cover = cov.to_dict("index")
+    tracts = sorted(read_progress(out))
+    print(f"cover from {path.name} into {len(tracts)} tracts, version {ctx.data_version}", flush=True)
+    progress_note(out, place.name, f"cover refresh start from {path.name}, {len(tracts)} tracts")
+    import multiprocessing as mp
+
+    with cf.ProcessPoolExecutor(max_workers=args.workers, mp_context=mp.get_context("spawn")) as pool:
+        futs = []
+        for t in tracts:
+            ids = [i for i in pd.read_parquet(out / "parts" / f"{t}.parquet", columns=["lot_id"])["lot_id"]]
+            futs.append(pool.submit(refresh_cover_tract, t, str(out), ctx, {i: cover.get(i, {}) for i in ids}))
+        for f in cf.as_completed(futs):
+            res = f.result()
+            record_result(out, res)
+            print(f"  {res.tract}: {res.ok} lots, {res.seconds:.1f} s", flush=True)
+    finish(place, out, ctx, paths)
+    progress_note(out, place.name, f"cover refresh done from {path.name}")
+    return 0
+
+
 # ---------------------------------------------------------------- CLI
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
@@ -1633,10 +1911,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     q.add_argument("--place", required=True)
     q.add_argument("--n", type=int, default=20)
     q.add_argument("--seed", type=int, default=7)
+    c = sub.add_parser("cover", help="refresh land cover in built tracts (no fit rerun)")
+    c.add_argument("--place", required=True)
+    c.add_argument("--workers", type=int, default=4)
     args = p.parse_args(argv)
     if args.cmd == "run" and args.workers > 4:
         print("note: other jobs share this machine. Using 4 workers at most is advised")
-    return {"run": cmd_run, "validate": cmd_validate, "stats": cmd_stats, "qa": cmd_qa}[args.cmd](args)
+    return {"run": cmd_run, "validate": cmd_validate, "stats": cmd_stats, "qa": cmd_qa,
+            "cover": cmd_cover}[args.cmd](args)
 
 
 if __name__ == "__main__":

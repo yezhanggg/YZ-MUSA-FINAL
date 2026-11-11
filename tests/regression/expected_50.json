@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-11-11",
-  "code_hash": "32b285bff061",
+  "code_hash": "03b7a8894258",
   "n": 50,
   "tolerance": {
    "area_rel": 0.01,
@@ -464,11 +464,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -507,11 +507,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -550,11 +550,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -605,11 +605,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -648,11 +648,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -691,11 +691,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -746,11 +746,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -789,11 +789,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -832,11 +832,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -887,11 +887,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -930,11 +930,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -973,11 +973,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1028,11 +1028,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1071,11 +1071,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1114,11 +1114,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1169,11 +1169,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1212,11 +1212,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1255,11 +1255,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1310,11 +1310,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1353,11 +1353,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1396,11 +1396,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1451,11 +1451,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1494,11 +1494,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1537,11 +1537,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1592,11 +1592,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1635,11 +1635,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1678,11 +1678,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1874,11 +1874,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1917,11 +1917,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -1960,11 +1960,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2015,11 +2015,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2058,11 +2058,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2101,11 +2101,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2156,11 +2156,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2199,11 +2199,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2242,11 +2242,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2297,11 +2297,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2340,11 +2340,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2383,11 +2383,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2438,11 +2438,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2481,11 +2481,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2524,11 +2524,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2579,11 +2579,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2622,11 +2622,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2665,11 +2665,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2720,11 +2720,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2763,11 +2763,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -2806,11 +2806,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3002,11 +3002,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3045,11 +3045,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3088,11 +3088,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3143,11 +3143,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3186,11 +3186,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3229,11 +3229,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3284,11 +3284,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3327,11 +3327,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3370,11 +3370,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3425,11 +3425,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3468,11 +3468,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3511,11 +3511,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "not_allowed",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3891,11 +3891,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -3934,11 +3934,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4032,11 +4032,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4075,11 +4075,11 @@
        "limiting": "building_coverage"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4173,11 +4173,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4216,11 +4216,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4314,11 +4314,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4357,11 +4357,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4498,11 +4498,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4596,11 +4596,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4639,11 +4639,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4737,11 +4737,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4780,11 +4780,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4878,11 +4878,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -4921,11 +4921,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5019,11 +5019,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5062,11 +5062,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5117,11 +5117,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5160,11 +5160,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5203,11 +5203,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5442,11 +5442,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5485,11 +5485,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5583,11 +5583,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5626,11 +5626,11 @@
        "limiting": "size_cap"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5681,11 +5681,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5724,11 +5724,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -5767,11 +5767,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6006,11 +6006,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6049,11 +6049,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6147,11 +6147,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6190,11 +6190,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6288,11 +6288,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6331,11 +6331,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6429,11 +6429,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6472,11 +6472,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6613,11 +6613,11 @@
        "limiting": "yard_space"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6711,11 +6711,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6754,11 +6754,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6895,11 +6895,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -6993,11 +6993,11 @@
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
@@ -7036,11 +7036,11 @@
        "limiting": "no_room"
       },
       "garage_conversion": {
-       "allowed": false,
-       "approval": "variance",
-       "fits": null,
-       "largest_sqft": null,
-       "limiting": null
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
       },
       "internal": {
        "allowed": true,
