@@ -43,10 +43,13 @@
       "R-1 allows a single-family detached dwelling 'and for no other' principal use (320-26A). R-2 allows listed housing types 'and no other' (320-41A)",
       "R-2 housing types are allowed only where three buildings of the same type already stand on the block. A duplex is allowed only if 'designed and originally constructed as such' (320-41A(3)). Converting a house to a duplex is not a listed use",
       "Accessory buildings: rear yard only, at most 20% of the rear yard, 15 ft high, 5 ft from side and rear lines and from the house (320-230A, 320-231)",
-      "A freestanding accessory building over 600 sq ft or over 12 ft high needs a special exception and must meet the principal building setbacks (320-232A(2))",
-      "No structure on an alley lot (alley access only, no street frontage) may be built or converted for human habitation (320-238)",
+      "Accessory buildings by right up to 600 sq ft and 12 ft. A freestanding accessory building over 600 sq ft or over 12 ft needs a special exception and must meet the principal building setbacks. No building over 15 ft (320-232A(2), 320-230A(2))",
+      "A garden shed, greenhouse or pet shelter over 150 sq ft or 12 ft needs a special exception (320-232A(1))",
+      "At most one accessory building on a lot in a residential district if the house has an attached garage, two if it does not (320-230A(4))",
+      "R-2: off-street parking may drop by one space per unit where on-street parking covers half or more of the need (320-42B(6))",
+      "No structure on an alley lot (access only on an alley and no public street frontage) may be built or converted for human habitation (320-238). A lot with street frontage is not an alley lot",
       "A family may be up to five unrelated people (320-11 'Family')",
-      "Renting a dwelling needs an annual rental license permit (Chapter 245, 245-2)"
+      "Owners renting a dwelling or a portion of it to nonfamily members must apply for a rental license every year, file a tenant list and may be inspected (245-2A, B, H)"
     ],
     "notes": "Zoning office: Municipality of Norristown, code enforcement and zoning, https://www.norristown.org/. Searched Chapter 320 (full print view) for: accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, conversion, kitchen. No ADU provision. A general 'use not expressly permitted elsewhere' special exception exists only in the HI district (320-161B(1))."
   },
@@ -107,8 +110,8 @@
       "value": [
         {
           "kind": "abutting_way",
-          "condition": "No structure on an alley lot (access only on an alley, no street frontage) may be built or converted for human habitation.",
-          "effect": "bars",
+          "condition": "Only on an alley lot (access only on an alley, no street frontage): no structure may be built or converted for human habitation. A lot with street frontage and a rear alley is not an alley lot.",
+          "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
@@ -142,7 +145,7 @@
       "url": "https://ecode360.com/33564508",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Accessory rule, not an ADU rule. Accessory buildings 'shall not exceed 15 feet in height'. Over 12 ft needs a special exception (320-232A(2))."
+      "note": "Accessory rule, not an ADU rule. Hard cap: accessory buildings 'shall not exceed 15 feet in height' (320-230A(2)). By right up to 12 ft. Over 12 ft needs a special exception (320-232A(2))."
     },
     "setback_side_ft": {
       "value": 5,
@@ -175,14 +178,6 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "'no closer than five feet from the permitted principal structure'"
-    },
-    "accessory_structure_max_sqft": {
-      "value": 600,
-      "section": "320-232A(2)",
-      "url": "https://ecode360.com/33564518",
-      "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Not an ADU rule. A freestanding accessory building over 600 sq ft or 12 ft 'shall be a special exception'. Also at most 20% of the rear yard (320-230A(1))."
     }
   },
   "use": {
