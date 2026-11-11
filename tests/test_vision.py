@@ -131,3 +131,17 @@ def test_edge_band_marks_one_pixel_each_side():
     band = edge_band(lab)
     assert band[:, 2].all() and band[:, 3].all()
     assert not band[:, [0, 1, 4, 5]].any()
+
+
+def test_city_class_map_and_area_split():
+    from pipeline.vision.city import assign_roles, uvm_lookup
+
+    lut = uvm_lookup((0, 15))
+    # UVM 1 tree, 2 grass, 3 bare, 4 water, 5 buildings, 6 roads, 7 other paved
+    assert lut[[1, 2, 3, 4, 5, 6, 7]].tolist() == [2, 3, 3, 0, 1, 4, 4]
+    assert lut[0] == 255 and lut[15] == 255 and lut[9] == 255
+    rng = np.random.default_rng(0)
+    centers = np.c_[rng.uniform(-80.1, -79.9, 40), rng.uniform(40.35, 40.5, 40)]
+    roles = assign_roles(centers, seed=1)
+    assert set(roles) == {"train", "val", "test"}
+    assert roles.count("test") >= 8 and roles.count("val") >= 6

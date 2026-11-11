@@ -69,6 +69,7 @@ class Config:
     jitter: float = 0.1
     seed: int = 0
     init_from: str = ""            # start from these weights (e.g. a longer run at a lower LR)
+    data: str = "chesapeake"       # or "city:philadelphia", "city:pittsburgh" (5 classes)
     val_win: int = 512
     val_margin: int = 64
     extra: dict = field(default_factory=dict)
@@ -80,6 +81,19 @@ class Config:
 
 # ---------------------------------------------------------------- data and batches
 def load_real_data(cfg: Config) -> dict[str, Boxes]:
+    if cfg.data.startswith("city:"):
+        return load_city_data(cfg.data.split(":", 1)[1])
+    return load_chesapeake(cfg)
+
+
+def load_city_data(city: str) -> dict[str, Boxes]:
+    """City boxes (600 m) with their 5-class labels, in memory."""
+    from pipeline.vision.city import city_boxes, load_city_box
+
+    return {r: [load_city_box(city, b) for b in city_boxes(city, r)] for r in ["train", "val"]}
+
+
+def load_chesapeake(cfg: Config) -> dict[str, Boxes]:
     """Train and val boxes in memory (about 3 GB).
 
     The cache sits on a USB hard disk. Random 384 px crops from memory maps there
@@ -290,7 +304,12 @@ def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
         mean, std = np.asarray(init["mean"], np.float32), np.asarray(init["std"], np.float32)
     else:
         mean, std = band_stats(d["train"], cfg.ndvi)
-    cw = class_weights(d["train"], n)
+    if init is not None and len(init.get("class_weights", [])) == n:
+        # keep the loss of the starting model. A small city set can have almost no
+        # pixels of one class (water), and 1 / sqrt(share) would then swamp the rest
+        cw = np.asarray(init["class_weights"], np.float32)
+    else:
+        cw = class_weights(d["train"], n)
     bld_px = building_pixels(d["train"])
     log(f"mean {mean.round(2)} std {std.round(2)} class weights {cw.round(3)}")
 
@@ -411,6 +430,7 @@ def parse(argv: list[str] | None) -> argparse.Namespace:
     ap.add_argument("--jitter", type=float, default=0.1)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--init-from", default="", help="start from the weights of this checkpoint")
+    ap.add_argument("--data", default="chesapeake", help='"chesapeake" or "city:<name>"')
     return ap.parse_args(argv)
 
 
@@ -418,7 +438,7 @@ def config_from_args(a: argparse.Namespace) -> Config:
     return Config(run=a.run, classes=a.classes, kind=a.kind, encoder=a.encoder, pretrained=not a.no_pretrained,
                   ndvi=a.ndvi, crop=a.crop, batch=a.batch, steps=a.steps, epochs=a.epochs, stop_epoch=a.stop_epoch,
                   patience=a.patience, lr=a.lr, warmup=a.warmup, dice=a.dice, bld_frac=a.bld_frac, jitter=a.jitter,
-                  seed=a.seed, init_from=a.init_from)
+                  seed=a.seed, init_from=a.init_from, data=a.data)
 
 
 def main(argv: list[str] | None = None) -> int:
