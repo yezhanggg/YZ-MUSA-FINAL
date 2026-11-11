@@ -25,11 +25,8 @@
     "code_current_through_note": "City PDF file name says 'Updated 6-23-26'. Pages are marked '2026 Replacement'. The city says to ask the City Clerk for later amendments.",
     "checks": [
       "Only an existing carriage house or garage may become an ADU. It may be enlarged, but then the district dimensional rules apply (1.04.005(c)(4))",
-      "Efficiency or one-bedroom unit only. At most two occupants (1.04.005(c)(6) and (7))",
       "The principal house must be an owner-occupied single-family dwelling. The ADU must be removed or converted back when that ends (1.04.005(c)(1) and (2))",
       "The ADU must be licensed under the city rental housing rules and tenants registered (1.04.005(c)(9)). Article 1761 lists an ADU as a tenant-occupied unit",
-      "Design must be consistent with the principal building. A unit added above a garage may not be larger than the garage footprint or hang over it (1.04.005(c)(10) and (11))",
-      "Parking on site: 3 spaces in total, two for the house and one for the ADU (1.04.005(d)). If they cannot be provided on site, the ADU may not be approved (1.04.005(c)(5))",
       "RS2, UN1, UN2, MUI1 and MUI2 tables set a 20 ft minimum building height for 'All' uses. Whether it reaches an enlarged garage is not stated",
       "Article 1761 counts 'a short-term lodging accommodation' and 'an accessory dwelling unit' as tenant-occupied units that need a rental license (1761.03(k)). No zoning ban on short-term rental was found",
       "An accessory building may not exceed 50% of the first floor building area of the principal structure (1304.02 7.01(b)(2))",
@@ -106,12 +103,12 @@
       "note": "No ADU lot size. District minimum lot area applies. See districts."
     },
     "existing_structure_only": {
-      "value": false,
-      "section": "1304.01 use 1.04.005(a), (c)(4) and (c)(11)",
+      "value": true,
+      "section": "1304.01 use 1.04.005(a)",
       "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Set false because the garage may be enlarged or built above (c)(11). The unit must still be in 'An existing carriage house or garage'. form.types_allowed carries that limit."
+      "confidence": "verified",
+      "note": "'An existing carriage house or garage which is converted or enlarged'. A unit above the existing garage is allowed (c)(11)."
     },
     "historic_bypass": {
       "value": false,
@@ -120,6 +117,67 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "No historic rule in the ADU text. HARB review may apply in historic districts."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "A unit above the garage may not be larger than the garage footprint and may not 'hang over' the building below",
+          "effect": "condition",
+          "applies_to": [
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "1304.01 use 1.04.005(c)(11)",
+          "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97"
+        },
+        {
+          "kind": "design",
+          "condition": "Design must be consistent with the principal building",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "1304.01 use 1.04.005(c)(10)",
+          "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "Only an existing carriage house or garage may become the ADU",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": "has_accessory_building",
+          "section": "1304.01 use 1.04.005(a)",
+          "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "Removed or converted back when the house is no longer an owner-occupied single-family dwelling",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "1304.01 use 1.04.005(c)(2)",
+          "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95"
+        }
+      ],
+      "section": "1304.01 use 1.04.005",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
     }
   },
   "form": {
@@ -253,6 +311,13 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "'may not be subdivided off into its own parcel of land unless all requirements are met for it to be established as a separate parcel'"
+    },
+    "occupancy": {
+      "value": "At most two occupants. Efficiency or one-bedroom unit.",
+      "section": "1304.01 use 1.04.005(c)(6) and (7)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=95",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
     }
   },
   "parking": {
@@ -263,6 +328,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "One added space for the ADU. Total on site is 3: 'Two (2) off-street parking spaces' for the house and 'one additional' for the ADU. No ADU without them (c)(5)."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "1304.01 use 1.04.005(d) and (c)(5)",
+      "url": "https://www.yorkcity.org/wp-content/uploads/2026/06/Part-13-Planning-Zoning-Updated-6-23-26.pdf#page=97",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Two (2) off-street parking spaces' for the house and 'one additional' for the ADU. If they cannot be provided on site, the ADU may not be approved."
     }
   },
   "utilities": {

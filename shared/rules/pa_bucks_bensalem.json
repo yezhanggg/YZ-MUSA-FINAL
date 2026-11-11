@@ -235,6 +235,14 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "May rise 1 ft per extra foot of side yard, up to 50 ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 12000,
+        "section": "232-153(a)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'An R-1 lot of not less than 12,000 square feet per family shall be provided for every building hereafter erected or used in whole or in part as a dwelling.' Density cap 2.5 units per acre (232-153(g))."
       }
     },
     "R-2": {

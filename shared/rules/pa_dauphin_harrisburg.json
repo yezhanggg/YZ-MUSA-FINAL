@@ -32,7 +32,7 @@
     "checks": [
       "The definitions section uses the term 'accessory dwelling'. The use table and 7-309.2A say 'accessory dwelling unit'",
       "Size cap is a share only: no more than 33% of the square footage of the principal residential unit. No square foot number",
-      "Density: an accessory dwelling is 'A separate dwelling unit' and density counts 'The total number of dwelling units' on a lot (7-333.2). Plain reading: the ADU counts. RM needs 1,500 sq ft per unit, so 3,000 sq ft for a house and an ADU. RL allows up to 8 units per acre, so about 10,890 sq ft for two units. CN needs 1,200 sq ft per unit. This may block many small RL and RM lots. Confirm with the Zoning Officer",
+      "Density: the plain reading counts the ADU as a dwelling unit (7-333.2). RL's per-acre cap gives about 10,890 sq ft for two units. This may block many small RL and RM lots. Confirm with the Zoning Officer",
       "No accessory structure height cap was found. A detached ADU may reach the district height (RL 36 ft, RM 45 ft). A unit inside or attached to the house also uses the district height",
       "Off-street parking rules do not apply in the CN and DC districts (7-327.2)",
       "A dwelling unit is occupied by only one family (7-333.2 'Dwelling unit')"
@@ -67,12 +67,29 @@
       "note": "'permitted by right in the RL, RM, and RF Zoning Districts and by special exception in the CN Zoning District'. Zoning permit from the city."
     },
     "fallback_path": {
-      "value": "special_exception",
-      "section": "7-309.2A, 7-323.2A",
-      "url": "https://ecode360.com/32586324",
+      "value": "variance",
+      "section": "7-305 Use Table, 7-307.2",
+      "url": "https://ecode360.com/attachment/333589/HA1391-007-305a%20Zoning%20Districts.pdf",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "CN lots need a special exception. 'All applications for special exceptions and variances require review and final action by the Zoning Hearing Board.' Other districts: N in the use table, so a use variance."
+      "note": "'N' in OSR, CG, DC, INS and IND. Reading: a use variance. Relief from development standards also needs a variance (7-307.2)."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "CN"
+          ],
+          "path": "special_exception",
+          "section": "7-309.2A, 7-305 Use Table, 7-323.2A",
+          "url": "https://ecode360.com/32584413",
+          "note": "'by special exception in the CN Zoning District'. The Zoning Hearing Board decides."
+        }
+      ],
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
     }
   },
   "eligibility": {
@@ -302,7 +319,7 @@
         "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "House plus ADU. Table: 5,000 sq ft and '4-8 dwelling units per acre'. Two units at 8 per acre need 43,560 / 8 x 2 = 10,890 sq ft. Reading: the ADU counts as a dwelling unit (7-333.2 DENSITY)."
+        "note": "House plus ADU, from density. Table: 5,000 sq ft and '4-8 dwelling units per acre'. Two units at 8 per acre need 43,560 / 8 x 2 = 10,890 sq ft. The code gives no per-unit lot area in RL. Reading: the ADU counts as a dwelling unit (7-333.2 DENSITY)."
       },
       "setback_front_ft": {
         "value": 20,
@@ -351,7 +368,7 @@
         "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "House plus ADU. Table: '1,500 square feet per dwelling unit', so 3,000 sq ft for two units. Reading: the ADU counts as a dwelling unit (7-333.2 DENSITY)."
+        "note": "House plus ADU. Table: '1,500 square feet per dwelling unit', so 3,000 sq ft for two units. Reading: the ADU counts as a dwelling unit. A house alone needs 1,500 sq ft."
       },
       "setback_front_ft": {
         "value": 5,
@@ -399,6 +416,14 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "'0 feet at the shared lot line of lawfully attached dwellings'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 1500,
+        "section": "7-307.3A Attachment 1 and 7-333.2 DENSITY",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Per dwelling unit. An accessory dwelling is 'A separate dwelling unit' and density counts 'The total number of dwelling units'. Reading: the ADU counts."
       }
     },
     "RF": {
@@ -458,7 +483,7 @@
         "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
         "verified_on": "2026-11-11",
         "confidence": "secondary",
-        "note": "House plus ADU. Table: '1,200 square feet per dwelling unit', so 2,400 sq ft for two units. ADU needs a special exception here."
+        "note": "House plus ADU. Table: '1,200 square feet per dwelling unit', so 2,400 sq ft for two units. Reading: the ADU counts as a dwelling unit. A house alone needs 1,200 sq ft."
       },
       "setback_front_ft": {
         "value": null,
@@ -506,6 +531,14 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "'0 feet at the shared lot line of lawfully attached dwellings'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 1200,
+        "section": "7-307.3A Attachment 1 and 7-333.2 DENSITY",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Per dwelling unit. An accessory dwelling is 'A separate dwelling unit' and density counts 'The total number of dwelling units'. Reading: the ADU counts."
       }
     }
   }

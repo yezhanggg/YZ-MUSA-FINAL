@@ -34,11 +34,7 @@
     "code_current_through": "2025-09-17",
     "code_current_through_note": "eCode360: includes legislation through 09-17-2025. New Laws (38), none affecting Chapter 550.",
     "checks": [
-      "Occupants must be related by blood, adoption or marriage to the occupants of the main house (550-17B(2))",
-      "At most two people may live in the accessory dwelling (550-17B(5))",
       "Only in a single-family detached or semidetached dwelling (550-17B(3))",
-      "It must share the sewage disposal and water supply of the main house (550-17B(4))",
-      "A detached unit must be an existing building converted on the same footprint, and must use the existing driveway. No new driveway (550-17B(1) and (7))",
       "Accessory buildings are capped at 15 ft in height and must be at least 3 ft from the main building (550-40)",
       "Special exception uses 'must meet the development standards for the zoning district' (550-17A). The lot must meet the district lot size for the house type. Table 4-1 has no per-unit lot area for single-family uses. The Board also applies the general criteria in 550-54J",
       "Renting any dwelling unit needs an annual rental dwelling license (417-10, local IPMC 901.1). This applies if a relative pays rent",
@@ -132,6 +128,56 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "No historic rule in 550-17B."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "A detached unit must be 'a converted existing detached building which maintains the same footprint'",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage",
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": "has_accessory_building",
+          "section": "550-17B(1)",
+          "url": "https://ecode360.com/33162096"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Shares the sewage disposal and water supply of the main house",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "550-17B(4)",
+          "url": "https://ecode360.com/33162099"
+        },
+        {
+          "kind": "parking",
+          "condition": "A detached unit must use the existing driveway. No new driveway",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "550-17B(7)",
+          "url": "https://ecode360.com/33162102"
+        }
+      ],
+      "section": "550-17B",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
     }
   },
   "form": {
@@ -274,6 +320,14 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "Not addressed."
+    },
+    "occupancy": {
+      "value": "Only persons related by blood, adoption or marriage to the occupants of the main house. At most two people.",
+      "section": "550-17B(2) and (5)",
+      "url": "https://ecode360.com/33162097",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "550-56 says 'blood or adoption'. 550-17B(2), the operative standard, adds marriage."
     }
   },
   "parking": {
@@ -284,6 +338,13 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "No ADU row. 'One- and two-family dwellings: 2 spaces per dwelling unit', and the ADU is defined as 'A dwelling unit'. Reading: 2 more spaces. A detached unit must use the existing driveway (550-17B(7)). Confirm with the Zoning Officer."
+    },
+    "reading": {
+      "value": "Table 8-1 asks 2 spaces per dwelling unit for one- and two-family dwellings. The ADU is defined as a dwelling unit, so likely 2 more (4 in total). There is no ADU row.",
+      "section": "550-33A Table 8-1, 550-56",
+      "url": "https://ecode360.com/33162493",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
     }
   },
   "utilities": {

@@ -46,15 +46,12 @@
     "checks": [
       "The unit must be inside the main building. A detached garage 'shall not include a dwelling' (19-501.l(5))",
       "Only one building for residential use per lot in R-1, R-2, R-3H, R-OA and UV (19-501.l(1))",
-      "The apartment may have 'not more than one bedroom' and may not exceed 500 sq ft (19-501.l(2)(b))",
       "Family means persons 'related by blood (within and including the degree of first cousin), marriage or adoption' (19-201). Others count as unrelated",
-      "Occupancy: at most three unrelated persons in the whole building, and at most two persons in the apartment (19-501.l(3)(b))",
-      "Home occupations are not allowed in a one-family dwelling that contains a single apartment (19-501.l(4))",
       "A student home may be in a one-family dwelling with an apartment. In R-1, R-2 and R-3 student homes have spacing, floor area, parking and permit rules (19-501.l(6))",
       "Renting any dwelling unit needs a housing permit from the Code Official. In State College the threshold is 1 day (4-504b(3), amending Centre Region code 802.1)",
       "Short-term rental: allowed with a license in all zones. The apartment may be rented short term only if the owner or tenant lives in the main dwelling. Limit 120 days a year (10-901b, 10-906a and c)",
-      "Parking is not settled. 19-2403.c: 'One- and Two-Family Dwellings, 2 spaces for each unit'. Read as two units: 4 spaces in total. Read as one one-family dwelling: 2 in total. 19-501.l(3) also needs parking for all residents' vehicles. Ask the Zoning Officer",
-      "District permission for R-2 to UV comes through 'Any use permitted in' chains back to R-1. Confirm with the Planning Department"
+      "District permission for R-2 to UV comes through 'Any use permitted in' chains back to R-1. Confirm with the Planning Department",
+      "Parking is the one open reading: 2 or 4 spaces in total. Ask the Zoning Officer"
     ],
     "notes": "Zoning office: Borough Planning Department. Rewrite page: https://www.statecollegepa.us/225/New-Zoning-Ordinance. Pending: a new comprehensive Zoning Ordinance and SALDO are in draft. A revised draft was posted for public review as of June 1, 2026, and Council meetings ran through Sep 9, 2026. A news report says Council may add ADU rules. Not adopted. Not law."
   },
@@ -147,6 +144,54 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "No historic rule in the apartment text."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The apartment may have 'not more than one bedroom' and may not exceed 500 square feet",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "19-501.l(2)(b)",
+          "url": "https://ecode360.com/32910236"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "The apartment 'shall be contained within the main building'. A detached garage 'shall not include a dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "19-501.l(2)(a) and 19-501.l(5)",
+          "url": "https://ecode360.com/32910235"
+        },
+        {
+          "kind": "other",
+          "condition": "No home occupation in a one-family dwelling that contains a single apartment",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "19-501.l(4)",
+          "url": "https://ecode360.com/32910240"
+        }
+      ],
+      "section": "19-501.l",
+      "url": "https://ecode360.com/32910234",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
     }
   },
   "form": {
@@ -280,6 +325,13 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "Not addressed. The unit is inside the main building."
+    },
+    "occupancy": {
+      "value": "At most two persons in the apartment, and at most three unrelated persons in the whole building.",
+      "section": "19-501.l(3)(b)",
+      "url": "https://ecode360.com/32910239",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
     }
   },
   "parking": {
@@ -290,6 +342,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "Open reading. 'One- and Two-Family Dwellings: 2 spaces for each unit.' If the apartment is a unit, 2 more (4 in total). If the use stays one one-family dwelling, 0 more (2 in total). Plus parking for all residents' vehicles (19-501.l(3))."
+    },
+    "reading": {
+      "value": "2 spaces in total if the use stays one one-family dwelling, or 4 in total if the apartment counts as a second unit. Plus room for all residents' vehicles.",
+      "section": "19-2403.c and 19-501.l(3)",
+      "url": "https://ecode360.com/32912666",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "19-2403.c: 'One- and Two-Family Dwellings, 2 spaces for each unit'. No row for the apartment use. Ask the Zoning Officer."
     }
   },
   "utilities": {
