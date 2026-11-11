@@ -4,12 +4,13 @@
     "instrument": "City of Bethlehem Zoning Ordinance, Part 13 of the Codified Ordinances (effective June 15, 2012, last revised August 21, 2023): 1302.146 and 1322.03(bbb) Unit for Care of Relative, 1304 and 1305 use tables, 1306 dimensional rules",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Read from the PDF linked on the city Zoning Office page (cover: Last Revised August 21, 2023, Effective Date June 15, 2012). The link points to host k12.bethlehem-pa.gov. The same path on www returns 404. Pending: Bill No. 22-2026 (council packet PDF) adds 1318.26(e): no more than one single-family detached dwelling may be located on a lot. Final passage not confirmed. Not law here.",
+    "status_detail": "Read from the PDF linked on the city Zoning Office page (cover: Last Revised August 21, 2023, Effective Date June 15, 2012). The link points to host k12.bethlehem-pa.gov. The same path on www returns 404. Pending: Bill No. 22-2026 (council packet PDF) adds 1318.26(e): no more than one single-family detached dwelling may be located on a lot. Listed for final passage on the 8-4-2026 council agenda (item 8A). No minutes, vote or ordinance number found on 2026-11-11. Treated as pending, not law.",
     "effective_date": "2012-06-15",
     "source_urls": [
       "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
       "https://www.bethlehem-pa.gov/community-economic-development/planning-zoning/zoning-office/",
       "https://www.bethlehem-pa.gov/getmedia/25aeead7-b20e-461d-9519-47d39c9bc5dd/09a-Bill-22-2026-%e2%80%93-Amendments-to-Zoning-Ordinance.pdf",
+      "https://www.bethlehem-pa.gov/getattachment/f796d7a6-8ce6-47bc-ac36-a077f720632c/00-Agenda-080426.pdf",
       "https://www.bethlehem-pa.gov/ordinances/",
       "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22"
     ],
@@ -17,10 +18,13 @@
     "county": "Northampton",
     "municipality_type": "city",
     "geoid": "4209506088",
+    "geoid_aliases": [
+      "4207706088"
+    ],
     "code_host": "own site",
     "code_url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
     "code_current_through": "2023-08-21",
-    "code_current_through_note": "PDF cover: Last Revised: August 21, 2023. Amendment list ends with Ordinance 2023-32 (08/15/23).",
+    "code_current_through_note": "PDF cover: Last Revised: August 21, 2023. Amendment list ends with Ordinance 2023-32 (08/15/23). Later amendments are not in this copy.",
     "checks": [
       "The code has no general ADU. The only accessory unit is a Unit for Care of Relative: up to two persons, relatives of the residents of the main unit, at least one needing care for illness, old age or disability (1322.03(bbb)(2))",
       "The unit must be built to be reconverted into the main house, or be a modular cottage removed when the relative leaves. A lawful detached garage may be converted and later reconverted (1322.03(bbb)(3))",
@@ -29,7 +33,10 @@
       "Attached unit: internal doorway to the main unit. Only one entry door facing a public street (1322.03(bbb)(8), (9))",
       "A general rental ADU has no path in the use tables. Closest options: conversion of an existing one-family dwelling into two or more units by special exception in RG and RT, only for a pre-existing detached or semi-detached building over 3,000 sq ft (1304 table, 1322.03(o)(6)). Otherwise a use variance from the Zoning Hearing Board",
       "A new second kitchen is barred unless it serves a relative who needs care because of age or disability (1302 Dwelling Unit)",
-      "Bethlehem spans Northampton and Lehigh counties. Lehigh part county subdivision GEOID is 4207706088"
+      "Relative means spouse, brother, sister, parent, child, grandparent, great-grandparent, grandchild, great-grandchild, uncle, aunt, niece, nephew, cousin, sister-in-law, brother-in-law or parent-in-law. Not second or more distant cousins (1302.112)",
+      "Parking: 2 spaces for the unit as a dwelling unit (1319.01(a)(1)(i)), waived if the relative will not routinely drive (1322.03(bbb)(7))",
+      "This copy of the ordinance ends at Ordinance 2023-32 (8-15-2023). Amendments from 2024 to 2026 are not in it. Ask the Zoning Office for later changes",
+      "Bethlehem spans Northampton and Lehigh counties. Lehigh part county subdivision GEOID is 4207706088. The same rules apply there"
     ],
     "notes": "Zoning office: City of Bethlehem Zoning Office (page in source_urls). Census GEOID is the 2020 county subdivision code for the Northampton County part, from TIGERweb."
   },
@@ -104,6 +111,74 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "No minimum lot size for the unit."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "care",
+          "condition": "Up to two occupants, relatives of the permanent residents of the main unit. At least one needs the unit because of illness, old age or disability.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1322.03(bbb)(2), 1302.112",
+          "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A detached unit is allowed only as a modular cottage that will be completely removed, or in a lawful detached garage that can be reconverted.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1322.03(bbb)(3)",
+          "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US"
+        },
+        {
+          "kind": "other",
+          "condition": "A binding mechanism bars use as a separate dwelling after the relative leaves. The permit is renewed every year.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1322.03(bbb)(4), (5)",
+          "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US"
+        },
+        {
+          "kind": "design",
+          "condition": "Attached unit: internal doorway to the main unit. Only one entry door facing a public street. Keep the look of a one family dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1322.03(bbb)(6), (8), (9)",
+          "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US"
+        },
+        {
+          "kind": "district",
+          "condition": "In CL, CG, CS, CB and IR only on the lot of an existing dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "CL",
+            "CG",
+            "CS",
+            "CB",
+            "IR"
+          ],
+          "building_types": null,
+          "section": "1305 table f",
+          "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US"
+        }
+      ],
+      "section": "1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Unit for Care of Relative conditions."
     },
     "existing_structure_only": {
       "value": false,
@@ -272,6 +347,13 @@
       "confidence": "secondary",
       "note": "Occupancy is limited to care-needing relatives, so short-term rental is not possible."
     },
+    "occupancy": {
+      "value": "At most two persons, relatives of the main unit residents, one needing care for illness, old age or disability.",
+      "section": "1322.03(bbb)(2)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified"
+    },
     "max_adus": {
       "value": null,
       "section": "1322.03(bbb)",
@@ -291,12 +373,12 @@
   },
   "parking": {
     "spaces_required": {
-      "value": null,
-      "section": "1322.03(bbb)(7), 1319.01(a)(1)",
+      "value": 2,
+      "section": "1319.01(a)(1)(i), 1322.03(bbb)(7)",
       "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Additional parking for the accessory unit is not required if the applicant proves that the resident(s) ... will not routinely operate a vehicle. Otherwise the count is not stated (dwelling units need two)."
+      "confidence": "verified",
+      "note": "Dwelling units: two parking spaces for each dwelling unit. Not required if the applicant proves the resident(s) of the accessory unit will not routinely operate a vehicle."
     }
   },
   "utilities": {
@@ -417,12 +499,12 @@
         "confidence": "verified"
       },
       "max_building_coverage": {
-        "value": null,
+        "value": 0.7,
         "section": "1306.01(a) RG, Single Family Detached Dwelling",
         "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
-        "verified_on": null,
-        "confidence": "unverified",
-        "note": "The table shows one 70% value. Text extraction does not show whether it is building or impervious coverage. Check the PDF."
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "70% building, PDF page 47. The impervious column is blank, though the table note says RR and RG impervious limits were added by Ordinance 2015-27."
       },
       "principal_max_height_ft": {
         "value": 35,

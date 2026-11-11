@@ -9,6 +9,8 @@
     "source_urls": [
       "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-23598",
       "https://codelibrary.amlegal.com/codes/readingpa/latest/overview",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24258",
+      "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24265",
       "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-26731",
       "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25153",
       "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25252",
@@ -33,7 +35,9 @@
     "code_current_through": "2026-10-26",
     "code_current_through_note": "amlegal overview: Current through October 26, 2026. Edition 2026 S-8 (current).",
     "checks": [
-      "The code defines accessory apartment but no district permits it",
+      "The code defines accessory apartment but no district permits it. Uses not listed in a district schedule are prohibited (600-608A)",
+      "600-609 similar-use special exception applies only to a use not listed as prohibited. Weak path given 600-608A and the bars below",
+      "R-3 lists Conversions as a conditional use, but 600-804C(4) bars converting a one-family dwelling",
       "A lot shall only be occupied by one dwelling unit unless the chapter specifically allows more (600-902C)",
       "An accessory building shall not be converted into a dwelling unit unless specifically allowed (600-902D). Human habitation in accessory buildings is prohibited (600-1001F)",
       "Conversion of an existing one-family detached, semidetached or attached dwelling into two or more units is prohibited (600-803C, 600-804C(4), 600-1203D)",
@@ -46,11 +50,11 @@
   "adu": {
     "status": {
       "value": "prohibited",
-      "section": "600-902C, 600-902D, 600-1001F, 600-803C, 600-804C(4), 600-1203D",
-      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25153",
+      "section": "600-608A, with 600-902C, 600-902D, 600-1001F, 600-803C, 600-804C(4)",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24258",
       "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Defined but never listed as a use. A lot shall only be occupied by one dwelling unit unless ... specifically allow two or more. Read as barred."
+      "confidence": "verified",
+      "note": "Those uses that are not listed in a zoning district schedule shall be prohibited in that zoning district. Accessory apartment is listed in no district."
     },
     "term": {
       "value": "accessory apartment",
@@ -64,19 +68,19 @@
   "approval": {
     "path": {
       "value": "variance",
-      "section": "600-902C, Part 4 Zoning Hearing Board",
-      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25153",
+      "section": "600-608A, Part 4 Zoning Hearing Board",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24258",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No district lists accessory apartment. A unit would need a use variance from the Zoning Hearing Board."
+      "note": "Unlisted uses are prohibited (600-608A). A unit would need a use variance from the Zoning Hearing Board."
     },
     "fallback_path": {
       "value": "variance",
-      "section": "Part 4",
+      "section": "Part 4, 600-609",
       "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-24043",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Use variance from the Zoning Hearing Board."
+      "note": "Use variance from the Zoning Hearing Board. 600-609 lets the Board treat a use as similar to a listed one by special exception, but only for a use not listed as prohibited, so it is a weak path here."
     }
   },
   "eligibility": {
@@ -111,12 +115,12 @@
   },
   "envelope": {
     "max_height_ft": {
-      "value": 25,
-      "section": "600-1002A",
-      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25260",
+      "value": null,
+      "section": "600-1001F, 600-1002A",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25252",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "Private garage: The garage structure shall not exceed 25 feet in height. Habitation in accessory buildings is barred (600-1001F)."
+      "note": "No ADU height, since dwellings in accessory buildings are barred. The 25 ft cap in 600-1002A is for private garages only."
     },
     "setback_front_ft": {
       "value": null,

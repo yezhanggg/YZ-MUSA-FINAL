@@ -32,11 +32,13 @@
     "code_current_through": "2025-12-16",
     "code_current_through_note": "eCode360 header: Includes legislation through 12-16-2025. New Laws: Ord. No. 8-2024 (zoning, wireless facilities) not yet codified.",
     "checks": [
-      "The ADU must be on the same lot as a single family dwelling unit (445-8). Districts that do not allow single-family homes (CIV, CI, LI) list ADU but have no lawful host house unless one already exists",
-      "The definition says ADUs follow the standards set forth in local code. The only ADU-specific standard found is one extra parking space (445-41W)",
+      "The ADU must be on the same lot as a single family dwelling unit (445-8). D, CIV, PC, CI and LI do not list a single-family dwelling, so CIV, CI and LI list ADUs with no lawful host house unless one already exists",
+      "In N and HC the host single-family detached dwelling itself needs a special exception. In HC it may only be in a structure that existed before the application (445-41X)",
+      "District paths: by right in CONSV, REC, R-6, R-8, R-9, R-10, R-11, N, HC, CI, LI. Conditional use decided by City Council in INST (445-39). Special exception decided by the Zoning Hearing Board in CIV (445-40). Not listed in D or PC",
+      "The definition says ADUs follow the standards set forth in local code. The only ADU-specific standard found is one extra parking space (445-41W). 445-41 holds criteria for conditional uses and special exceptions. 445-38 applies all supplementary regulations to by-right uses, which is how 445-41W reaches a by-right ADU",
       "No ADU size cap, owner rule, or number cap found",
       "A detached ADU is read as an accessory structure: not in the front yard (445-28B), accessory setbacks and 25 ft height from the district quick view",
-      "Short-term rental is a permitted accessory use in R-6. The STR dwelling must be the owner's permanent address, owner there at least six months a year (445-30A)",
+      "Short-term rental is by right in R-6, R-11, N, D and HC, and a special exception in CONSV, REC, R-8, R-9 and R-10 (445-12). The STR dwelling must be the owner's permanent address, owner there at least six months a year (445-30A)",
       "Not listed in D (City Downtown Mixed Use) or PC (Planned Commercial)"
     ],
     "notes": "Zoning office: City Planning and Zoning, Office of Economic and Community Development (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb."
@@ -66,7 +68,44 @@
       "url": "https://ecode360.com/45089051",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "Permitted by right (P). Zoning permit, use and occupancy certificate and building permit go to the Zoning Officer (445-38)."
+      "note": "Permitted by right (P) in most districts. Zoning permit, use and occupancy certificate and building permit go to the Zoning Officer (445-38). INST: conditional use (City Council). CIV: special exception (Zoning Hearing Board)."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "INST"
+          ],
+          "path": "conditional_use",
+          "section": "§ 445-12L(1), § 445-39",
+          "url": "https://ecode360.com/45089052",
+          "note": "C in the accessory use table. City Council decides."
+        },
+        {
+          "districts": [
+            "CIV"
+          ],
+          "path": "special_exception",
+          "section": "§ 445-12M(1), § 445-40",
+          "url": "https://ecode360.com/45089075",
+          "note": "SE in the accessory use table. Zoning Hearing Board decides."
+        },
+        {
+          "districts": [
+            "D",
+            "PC"
+          ],
+          "path": "not_allowed",
+          "section": "§ 445-12K(1), § 445-12O(1)",
+          "url": "https://ecode360.com/45088424",
+          "note": "Dwelling: accessory (ADU) is not listed."
+        }
+      ],
+      "section": "§ 445-12",
+      "url": "https://ecode360.com/45088424",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "District paths that differ from by right."
     },
     "fallback_path": {
       "value": null,
@@ -116,7 +155,53 @@
       "url": "https://ecode360.com/45088424",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "No ADU lot size. The district lot size applies."
+      "note": "No ADU lot size. The district lot size applies, for example R-6 5,000 sq ft. See districts."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The ADU must be on the same lot as a single family dwelling unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "§ 445-8",
+          "url": "https://ecode360.com/45088089"
+        },
+        {
+          "kind": "other",
+          "condition": "In N and HC the host single-family detached dwelling itself needs a special exception. In HC only in a structure that existed before the application.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "N",
+            "HC"
+          ],
+          "building_types": null,
+          "section": "§ 445-12J(1), § 445-12N(1), § 445-41X",
+          "url": "https://ecode360.com/45089086"
+        },
+        {
+          "kind": "district",
+          "condition": "CIV, CI and LI do not list a single-family dwelling. An ADU there needs an existing lawful host house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "CIV",
+            "CI",
+            "LI"
+          ],
+          "building_types": null,
+          "section": "§ 445-12M, P, Q",
+          "url": "https://ecode360.com/45088424"
+        }
+      ],
+      "section": "§ 445-8, § 445-12, § 445-41X",
+      "url": "https://ecode360.com/45088089",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Host house rules."
     },
     "existing_structure_only": {
       "value": false,
@@ -272,11 +357,11 @@
     },
     "short_term_rental_banned": {
       "value": false,
-      "section": "§ 445-30",
+      "section": "§ 445-30, § 445-12",
       "url": "https://ecode360.com/45088792",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No ADU-specific ban. STR use needs the owner's permanent address on site, six months a year."
+      "note": "No ADU-specific ban. STR is by right in R-6 and R-11, a special exception in R-8, R-9, R-10. The owner must live on site six months a year."
     },
     "max_adus": {
       "value": null,
@@ -298,11 +383,11 @@
   "parking": {
     "spaces_required": {
       "value": 1,
-      "section": "§ 445-41W(1)",
+      "section": "§ 445-41W(1), § 445-38",
       "url": "https://ecode360.com/45089086",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "In addition to off-street parking requirements for the principal use, each accessory dwelling unit will require one off-street parking space."
+      "note": "each accessory dwelling unit will require one off-street parking space. 445-41W sits under conditional use and special exception criteria. It reaches by-right ADUs through 445-38."
     }
   },
   "utilities": {

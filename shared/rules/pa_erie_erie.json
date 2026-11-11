@@ -33,7 +33,10 @@
       "Lot area is set per family (R-1 and R-1A 6,000 sq ft, R-2 2,000 sq ft). Whether an ADU counts as a second family for lot area is not stated. Ask the Zoning Officer",
       "204 says only one principal use per lot in any R district, and listed uses are principal uses unless clearly noted. ADU is listed without a note. How the two rules fit is not stated",
       "Parking: dwellings need 1 per family living unit (302). Half of that in RLB, C-1, C-4. None in C-3. Reading this as 1 space for an ADU is our inference",
-      "Short-term rental is a separate permitted use in R districts and needs a license (305 short-term rentals)",
+      "Short-term rental is a separate permitted use in R districts and needs a license. R-1 and R-1A add parking, screening and one-family occupancy rules (305.49)",
+      "An attached ADU (addition or above an attached garage) is part of the principal structure and must meet principal yards: R-1 front 30, rear 30, side 5 least and 15 total (205.8, 205 table)",
+      "Detached ADU size: a detached accessory building in an R district may be no larger than 720 sq ft (205.9)",
+      "Rental licensing: Ord. No. 40-2026 (7-1-2026) amends Article 330, Landlord and Rental, with new registration and inspection rules. An ADU rented to a tenant falls under it. Not zoning, not codified yet",
       "A dwelling unit holds one family. Family: relatives with up to two boarders, or not more than four unrelated persons (601)"
     ],
     "notes": "Zoning office: Bureau of Planning and Zoning, City of Erie (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb."
@@ -44,8 +47,8 @@
       "section": "§ 204.1(a), 204.2(a), 204.3(a) and other district lists",
       "url": "https://ecode360.com/44157044",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "Accessory dwelling unit (ADU) is listed under Permitted uses in R-1, R-1A, R-2, R-3, RLB, C-1, C-4, M-1 and W-R."
+      "confidence": "secondary",
+      "note": "Accessory dwelling unit (ADU) is listed under Permitted uses in R-1, R-1A, R-2, R-3, RLB, C-1, C-4, M-1 and W-R. Secondary because 204 also allows only one principal use per lot in R districts."
     },
     "term": {
       "value": "accessory dwelling unit (ADU)",
@@ -62,8 +65,8 @@
       "section": "§ 204, § 402",
       "url": "https://ecode360.com/44157044",
       "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "Listed as a permitted use. A zoning certificate from the Zoning Officer is needed (402)."
+      "confidence": "secondary",
+      "note": "Listed as a permitted use. Read as an accessory use, since 204 allows one principal use per lot in R districts. A zoning certificate from the Zoning Officer is needed (402)."
     },
     "fallback_path": {
       "value": null,
@@ -108,6 +111,65 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "No ADU lot size. Lot area is per family. Whether an ADU adds a family for this test is not stated."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "Lot area is set per family (R-1 and R-1A 6,000 sq ft, R-2 2,000 sq ft). If the ADU counts as a second family, R-1 and R-1A need 12,000 sq ft and R-2 4,000. Not stated. Ask the Zoning Officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1",
+            "R-1A",
+            "R-2"
+          ],
+          "building_types": null,
+          "section": "§ 205 table",
+          "url": "https://ecode360.com/44157094"
+        },
+        {
+          "kind": "other",
+          "condition": "Only one principal use per lot in any R district. The ADU is read as an accessory use.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "§ 204",
+          "url": "https://ecode360.com/44157044"
+        },
+        {
+          "kind": "other",
+          "condition": "An attached ADU must meet the principal front, side and rear yards.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "§ 205.8",
+          "url": "https://ecode360.com/44157094"
+        },
+        {
+          "kind": "other",
+          "condition": "A detached accessory building in an R district: side or rear yard only, 6 ft from any dwelling or alley, 3 ft from side and rear lines, no larger than 720 sq ft, 15 ft high.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "§ 205.9",
+          "url": "https://ecode360.com/44157094"
+        }
+      ],
+      "section": "§ 204, § 205, § 205.8, § 205.9",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Open questions and conditions. None decides on its own."
     },
     "existing_structure_only": {
       "value": false,
@@ -227,11 +289,11 @@
     },
     "internal_uses_district_height": {
       "value": true,
-      "section": "§ 205.8",
+      "section": "§ 205 table, Maximum height of structure",
       "url": "https://ecode360.com/44157094",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "All structures attached to the principal structure ... shall comply with all the required front, side and rear yards."
+      "note": "An interior or attached ADU is part of the principal structure, so the district height applies (R-1 and R-1A 35 ft, R-2 45 ft). Attached additions also meet principal yards (205.8)."
     }
   },
   "coverage": {
@@ -271,11 +333,11 @@
     },
     "short_term_rental_banned": {
       "value": false,
-      "section": "§ 204.1(a), § 305 short-term rentals",
-      "url": "https://ecode360.com/44157044",
+      "section": "§ 204.1(a), § 305.49",
+      "url": "https://ecode360.com/44157695",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Short-term rental is a separate permitted use in R-1 and needs a license. No ADU-specific ban found."
+      "note": "Short-term rental is a separate permitted use in R-1 and needs a license (305.49). Extra rules in R-1 and R-1A. No ADU-specific ban found."
     },
     "max_adus": {
       "value": null,

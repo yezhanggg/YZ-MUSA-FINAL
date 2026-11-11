@@ -10,6 +10,7 @@
       "https://ecode360.com/8122408",
       "https://ecode360.com/27422914",
       "https://ecode360.com/8122697",
+      "https://ecode360.com/8122699",
       "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf",
       "https://ecode360.com/8122698",
       "https://ecode360.com/8122703",
@@ -33,9 +34,11 @@
     "code_current_through_note": "eCode360 header: Includes legislation through 12-16-2025. Use table PDF marked Supp 39, Dec 2023. Bulk table PDF marked Supp 38, Feb 2023.",
     "checks": [
       "No ADU, accessory apartment, in-law or similar term in the zoning chapter",
-      "Closest path 1: a second residential unit in a separate building on a lot with a single-family dwelling, as more than one principal building (300-28A). Needs a land development plan. Yard and other requirements are met for the whole lot. Lot area for two units is not spelled out. Ask the Bureau of Planning",
+      "An accessory unit is a use not provided for. The Zoning Officer refers it to the Zoning Hearing Board as a special exception (300-17). The applicant shows it is similar to and compatible with permitted uses",
+      "Other path: a second residential unit in a separate building, as more than one principal building on the lot (300-28A). New single-family detached is by right in R1, R2, R3, R4, RO, MU. Needs a land development plan, no hearing. Yards are met for the whole lot. Whether the lot area must cover two dwellings is not stated. Ask the Bureau of Planning",
       "300-44E names this case: parking for a second residential unit in a separate building may be reduced or waived by special exception with a parking study",
-      "Closest path 2: conversion of an existing building of at least 2,000 gross sq ft to a two-family dwelling by special exception in R3, R4, RO, MU, C1, C2. Not listed in R1 or R2 (300 Attachment 2)",
+      "Other path: conversion of an existing building of at least 2,000 gross sq ft to a two-family dwelling, by special exception in R3, R4, RO, MU, C1, C2 only. Not in R1 or R2 (300 Attachment 2)",
+      "For a conversion with no expansion of the building, lot area, yards, width, depth, height and coverage may be waived if lot coverage is not increased and parking is provided (300 Attachment 3, note (d))",
       "Accessory uses may not exceed 25% of the principal use floor area (300-16). A dwelling unit as an accessory use is not listed",
       "Each dwelling unit holds one family or one nonfamily unit. Family: relatives plus at most one unrelated person, or two unrelated persons (Art XVII)",
       "Minimum habitable floor area: efficiency 400, one bedroom 550, two bedrooms 700 sq ft (300-30)"
@@ -62,20 +65,20 @@
   },
   "approval": {
     "path": {
-      "value": "variance",
-      "section": "300-16, 300 Attachment 2, Art XI",
-      "url": "https://ecode360.com/8122698",
-      "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "No accessory unit use exists, so an accessory unit would need a use variance from the Zoning Hearing Board. Alternatives: second principal dwelling under 300-28A, or two-family conversion by special exception."
-    },
-    "fallback_path": {
       "value": "special_exception",
-      "section": "300 Attachment 2, Two-family dwelling (b)(i)",
-      "url": "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf",
+      "section": "300-17",
+      "url": "https://ecode360.com/8122699",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "Conversion of an existing building, minimum 2,000 gross square feet, to two-family: S in R3, R4, RO, MU, C1, C2."
+      "note": "A use neither specifically permitted nor prohibited goes to the Zoning Hearing Board as a special exception. It may be permitted if similar to and compatible with permitted uses in the district."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "300-17, Art XI",
+      "url": "https://ecode360.com/8122699",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "If the Board finds the unit not similar to permitted uses, a use variance from the Zoning Hearing Board is left."
     }
   },
   "eligibility": {
@@ -85,7 +88,7 @@
       "url": "https://ecode360.com/attachment/336308/LA1674-300b%20Table%20of%20Permitted%20Uses.pdf",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "No ADU use in any district. Two-family conversion by special exception in R3, R4, RO, MU, C1, C2."
+      "note": "No ADU use in any district. Any district may hear it as a use not provided for (300-17). Two-family conversion by special exception in R3, R4, RO, MU, C1, C2."
     },
     "min_lot_sqft": {
       "value": null,
@@ -103,7 +106,7 @@
       "url": "https://ecode360.com/8122698",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "No ADU forms. A separate building is a principal dwelling under 300-28A. A unit inside the house is a two-family conversion."
+      "note": "No ADU forms. The form would be set by the Zoning Hearing Board under 300-17. A separate building can be a second principal dwelling under 300-28A. A unit inside the house can be a two-family conversion."
     }
   },
   "size": {
