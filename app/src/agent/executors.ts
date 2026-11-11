@@ -5,6 +5,7 @@ import { BED_SIZE, RATE, YEARS, COST_PSF, SOFT, OPEX, type Adu, type Bed, type S
 import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, cleanWhy, isPittsburgh, ruleFor, ruleWarnings, type LotRule } from '../lib/rules';
 import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
 import { getRuleText, listRulePlaces } from './ruleText';
+import { areaStats, findLotResult, forecast, type AddressEntry, type AreaData } from './areaTools';
 import { meters, type LngLat, type Lot, type TownProps, type TractProps } from '../tool/geo';
 
 export interface SiteRecord {
@@ -29,6 +30,10 @@ export interface DataProvider {
   lots?: LotAgentProvider;
   /** Browser only: change the map. */
   setMap?(input: SetMapInput): Promise<string>;
+  /** find_lot: the lot addresses this side can search, and what they cover. */
+  addressBook?(): Promise<{ entries: AddressEntry[]; scope: string }>;
+  /** get_area_stats: tracts, towns and counties. */
+  areas?(): Promise<AreaData | null>;
 }
 
 export interface SetMapInput {
@@ -117,7 +122,8 @@ export function testAduOn(s: SiteRecord, a: Adu, curves: FitCurves | null, rule:
 }
 
 function rulesOf(w: TownProps | null) {
-  const coded = !!w?.adu_rule;
+  if (!w) return { error: 'No town found. Pass town_geoid (the context has the selected town), or ask the user to pick a place.' };
+  const coded = !!w.adu_rule;
   return {
     town: w?.NAMELSAD ?? null,
     today: coded
@@ -134,6 +140,7 @@ function rulesOf(w: TownProps | null) {
         }
       : NOT_CODED,
     hb2186: { rule: HB2186.rule, status: HB2186.status, sb1346: HB2186.sb1346 },
+    adus_by_2031: forecast(w),
     rules_as_of: RULES_AS_OF,
   };
 }
@@ -167,6 +174,15 @@ export function makeExecutors(p: DataProvider) {
           return { size_sqft: size, bedrooms: bed, footprint_sqft: r.adu.footprint_sqft, room_on_lot: r.room_on_lot, payoff: typeof r.payoff === 'string' ? r.payoff : r.payoff.pays, rule_chosen: r.rule_chosen.result, warnings: r.rule_chosen.warnings };
         }),
       };
+    },
+    async find_lot(input: { address?: unknown }) {
+      if (!p.addressBook) return { error: 'Address search is not available here.' };
+      return findLotResult(input.address, await p.addressBook());
+    },
+    async get_area_stats(input: { level?: unknown; geoid?: unknown; name?: unknown }) {
+      const s = await p.selected();
+      const rec = await p.lots?.selectedLot();
+      return areaStats(input, p.areas ? await p.areas() : null, { tract: s?.tract?.GEOID ?? rec?.lot.tract ?? null, town: (s?.town?.GEOID as string | undefined) ?? null });
     },
     async get_rules(input: { town_geoid?: string }) {
       return rulesOf(await p.town(input.town_geoid));

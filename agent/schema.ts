@@ -2,6 +2,7 @@
 // (app/src/agent). Claude picks tools, the browser runs them with the same code as the report.
 import { LOT_TOOLS } from '../app/src/lib/lot/agentTools';
 import { LIST_PLACES_TOOL, RULE_TEXT_TOOL } from '../app/src/agent/ruleText';
+import { AREA_STATS_TOOL, FIND_LOT_TOOL } from '../app/src/agent/areaTools';
 import type { Scenario } from '../app/src/lib/lot/types';
 
 export const MAX_ROUNDS = 6;
@@ -93,7 +94,7 @@ const SITE_TOOLS: ToolDef[] = [
 ];
 
 /** The tract and town tools, the rule file lookup (app/src/agent/ruleText.ts), then the lot record tools (app/src/lib/lot/agentTools.ts). */
-export const TOOLS: ToolDef[] = [...SITE_TOOLS, RULE_TEXT_TOOL, LIST_PLACES_TOOL, ...LOT_TOOLS];
+export const TOOLS: ToolDef[] = [...SITE_TOOLS, RULE_TEXT_TOOL, LIST_PLACES_TOOL, FIND_LOT_TOOL, AREA_STATS_TOOL, ...LOT_TOOLS];
 
 /** What the browser sends along with each question. */
 export interface AgentContext {
