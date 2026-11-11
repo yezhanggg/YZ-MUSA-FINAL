@@ -44,8 +44,9 @@ export function overDailyCap(now = Date.now(), cap = Number(process.env.AGENT_DA
   return day.count > cap;
 }
 
-/** Longest answer, in tokens. Answers are 1 to 4 short sentences. */
-export const MAX_OUTPUT_TOKENS = 1024;
+/** Longest reply, in tokens. Answers are 1 to 4 short sentences, but the model's thinking counts too: at 1024 one
+ *  eval answer was cut off mid-list. Only tokens used are billed. */
+export const MAX_OUTPUT_TOKENS = 2048;
 
 /** Tool rounds since the user's last question (trailing tool_result turns). */
 export function roundsSoFar(messages: MessageParam[]) {
