@@ -528,14 +528,19 @@ function sizeChecks(lot: LotRecord, rules: Rules, s: Sizes, height: { limit: num
   const area = lot.lot.area_sqft;
   const covered = coverSqft(lot) + s.footprint;
   const cov = rules.max_building_coverage;
+  // A unit with no new footprint (inside the house, in a garage) does not change coverage, so an existing
+  // building over the limit does not block it.
+  const noNewFootprint = !(s.footprint > 0);
   out.push(check(rules, {
-    key: 'building_coverage', label: 'Lot coverage', pass: !isNum(cov) || covered / area <= cov + 1e-6, value: covered / area, limit: cov, unit: 'share', rule_key: 'max_building_coverage',
-    text: isNum(cov) ? `Buildings would cover ${pctText(covered / area)} of the lot. The limit is ${pctText(cov)}.` : `Buildings would cover ${pctText(covered / area)} of the lot. No coverage limit.`,
+    key: 'building_coverage', label: 'Lot coverage', pass: !isNum(cov) || noNewFootprint || covered / area <= cov + 1e-6, value: covered / area, limit: cov, unit: 'share', rule_key: 'max_building_coverage',
+    text: noNewFootprint
+      ? `No new building, so lot coverage does not change (${pctText(covered / area)} now${isNum(cov) ? `, limit ${pctText(cov)}` : ''}).`
+      : isNum(cov) ? `Buildings would cover ${pctText(covered / area)} of the lot. The limit is ${pctText(cov)}.` : `Buildings would cover ${pctText(covered / area)} of the lot. No coverage limit.`,
   }));
   const imp = rules.max_impervious;
   if (isNum(imp)) {
     out.push(check(rules, {
-      key: 'impervious', label: 'Paved and built area', pass: covered / area <= imp + 1e-6, value: covered / area, limit: imp, unit: 'share', rule_key: 'max_impervious',
+      key: 'impervious', label: 'Paved and built area', pass: noNewFootprint || covered / area <= imp + 1e-6, value: covered / area, limit: imp, unit: 'share', rule_key: 'max_impervious',
       text: `Buildings alone cover ${pctText(covered / area)}. Paving is not counted yet. The limit is ${pctText(imp)}.`,
     }));
   }

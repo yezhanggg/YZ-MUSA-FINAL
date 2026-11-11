@@ -8,7 +8,7 @@ import { NOTICE, collectSources, sourcesOf, verdictCitations, type CitationView 
 import { lotMoney, type MoneyOptions } from './summary';
 import { ADU_TYPES, SCENARIOS, isAduType, isScenario, type AduType, type LotRecord, type RentByBedroom, type Scenario } from './types';
 import { approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from './verdict';
-import { SCENARIO_TITLE, TYPE_TITLE, isNum } from './words';
+import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_TITLE, isNum } from './words';
 
 type JsonSchema = Record<string, unknown>;
 /** Same as ToolDef in agent/schema.ts. */
@@ -39,7 +39,7 @@ export const LOT_TOOLS: ToolDef[] = [
   },
   {
     name: 'get_lot_rules',
-    description: 'The ADU rules that apply to this lot under one scenario, with the code section, link and date behind each value.',
+    description: 'The ADU rules that apply to this lot under one scenario, with the code section, link and date behind each value. Under a bill, changes_from_today lists what differs. Rules only: to know if a unit fits, use test_unit_on_lot.',
     input_schema: { type: 'object', properties: { lot_id: LOT_ID, scenario: SCENARIO } },
   },
   {
@@ -151,6 +151,13 @@ const unitOut = (v: UnitVerdict) => ({
   width_ft: v.placed?.width_ft ?? null, depth_ft: v.placed?.depth_ft ?? null,
 });
 
+const STATUS_WORD: Record<string, string> = { fits: 'fits', fits_with_changes: 'fits with changes', does_not_fit: 'does not fit', not_allowed: 'not allowed', check_needed: 'check needed' };
+/** One plain sentence with the status word, the scenario and whether it is law, for a small model to repeat. */
+export function statusText(lot: LotRecord, v: Pick<UnitVerdict, 'status' | 'scenario' | 'type' | 'headline'>): string {
+  const law = isLaw(lot, v.scenario) ? '' : ' (a bill, not law)';
+  return `${TYPE_TITLE[v.type]} ${SCENARIO_PHRASE[v.scenario]}${law}: ${STATUS_WORD[v.status] ?? v.status}. ${v.headline}`;
+}
+
 const isLaw = (lot: LotRecord, s: Scenario) => s === 'today' || JSON.stringify(lot.rules[s]) === JSON.stringify(lot.rules.today);
 
 // ------------------------------------------------------------------ the tools, as pure functions
@@ -207,9 +214,29 @@ export function getLotRules(lot: LotRecord, scenario: Scenario) {
     notes: r.reasons,
     defaults_not_town_rules: r.assumed,
     state_limits: r.state_limits ?? {},
+    ...(scenario !== 'today' ? { changes_from_today: changesFromToday(lot, scenario) } : {}),
     notice: NOTICE,
     sources: sourcesOf(Object.values(r.citations)).map(src),
   });
+}
+
+const DIFF_KEYS = [
+  'allowed', 'max_adus', 'max_size_sqft', 'min_size_sqft', 'max_height_ft', 'setback_side_ft', 'setback_rear_ft', 'setback_rear_effective_ft',
+  'separation_ft', 'owner_occupancy', 'parking_spaces', 'min_lot_sqft', 'max_building_coverage',
+] as const;
+/** Rule values that differ from today, as { key: { today, <scenario> } }, plus approval per unit type. */
+export function changesFromToday(lot: LotRecord, scenario: Scenario): Record<string, { today: unknown; [k: string]: unknown }> {
+  const t = lot.rules.today;
+  const r = lot.rules[scenario];
+  const out: Record<string, { today: unknown; [k: string]: unknown }> = {};
+  if (!t || !r) return out;
+  for (const k of DIFF_KEYS) if (JSON.stringify(t[k] ?? null) !== JSON.stringify(r[k] ?? null)) out[k] = { today: t[k] ?? null, [scenario]: r[k] ?? null };
+  for (const type of ADU_TYPES) {
+    const a = approvalFor(lot, 'today', type).label;
+    const b = approvalFor(lot, scenario, type).label;
+    if (a !== b) out[`approval_${type}`] = { today: a, [scenario]: b };
+  }
+  return out;
 }
 
 function verdictOut(lot: LotRecord, v: UnitVerdict) {
@@ -219,6 +246,7 @@ function verdictOut(lot: LotRecord, v: UnitVerdict) {
     is_law: isLaw(lot, v.scenario),
     unit: unitOut(v),
     status: v.status,
+    status_text: statusText(lot, v),
     headline: v.headline,
     limit: v.limit?.text ?? null,
     changes: v.changes,
@@ -238,7 +266,7 @@ export function compareScenariosTool(lot: LotRecord, unit: UnitInput) {
   return compact({
     lot_id: lot.lot.id,
     unit: unitOut(rows[0].verdict),
-    rows: rows.map((r) => ({ scenario: r.scenario, title: r.title, is_law: isLaw(lot, r.scenario), same_as_today: r.same_as_today, status: r.verdict.status, headline: r.verdict.headline, approval: r.verdict.approval.label })),
+    rows: rows.map((r) => ({ scenario: r.scenario, title: r.title, is_law: isLaw(lot, r.scenario), same_as_today: r.same_as_today, status: r.verdict.status, status_text: statusText(lot, r.verdict), approval: r.verdict.approval.label })),
     notice: NOTICE,
     sources: sourcesOf(rows.flatMap((r) => verdictCitations(r.verdict))).map(src),
   });
@@ -281,6 +309,7 @@ export function explainLimit(lot: LotRecord, unit: UnitInput) {
     type: v.type,
     kind: TYPE_TITLE[v.type],
     status: v.status,
+    status_text: statusText(lot, v),
     limit: v.limit?.text ?? 'The data does not say what limits the unit here.',
     what_would_help: v.changes,
     largest_footprint_sqft: v.largest_sqft ?? 'not on file',

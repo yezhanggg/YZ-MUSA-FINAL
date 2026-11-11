@@ -141,6 +141,17 @@ describe('unitVerdict on real lots', () => {
     expect(inside.warnings.map((w) => w.code)).toContain('historic');
   });
 
+  it('an existing building over the coverage limit does not block a unit inside the house', () => {
+    const lot = structuredClone(fixture('philadelphia_internal'));
+    lot.rules.today!.max_building_coverage = 0.01;
+    const inside = unitVerdict(lot, { ...cottage(), type: 'internal', width_ft: 20, depth_ft: 25 });
+    expect(inside.checks.find((c) => c.key === 'building_coverage')?.pass).toBe(true);
+    expect(inside.status).toBe('fits');
+    // A new backyard building on the same lot is still held to the limit.
+    const out = unitVerdict({ ...lot, rules: { ...lot.rules, today: { ...lot.rules.today!, types_allowed: ['detached_new', 'internal'] } } }, cottage());
+    expect(out.checks.find((c) => c.key === 'building_coverage')?.pass).toBe(false);
+  });
+
   it('the historic path warning says which unit it opens', () => {
     const lot = structuredClone(fixture('philadelphia_internal'));
     lot.rules.today!.historic_path = true;

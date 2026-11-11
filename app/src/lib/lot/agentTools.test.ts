@@ -103,6 +103,28 @@ describe('results', () => {
     expect((r.sources as Json[]).map((s) => s.assumption)).toContain('cost.hard_psf.detached_new');
   });
 
+  it('unit results carry a status sentence with the status word, the scenario and the law status', async () => {
+    const today = await run(provider('easy_fit'), 'test_unit_on_lot');
+    expect(today.status_text).toMatch(new RegExp(`^Backyard cottage today: ${String(today.status).replace(/_/g, ' ')}\\.`));
+    const state = await run(provider('easy_fit', 'state_reform'), 'explain_limit', { type: 'detached_new' });
+    expect(state.status_text).toMatch(/under the state bill \(a bill, not law\): /);
+    const rows = (await run(provider('easy_fit'), 'compare_scenarios')).rows as Json[];
+    expect(rows.every((r) => typeof r.status_text === 'string')).toBe(true);
+  });
+
+  it('get_lot_rules under a bill lists what changes from today, and nothing for today', async () => {
+    const lot = fixture('easy_fit');
+    const state = await run(provider('easy_fit'), 'get_lot_rules', { scenario: 'state_reform' });
+    const ch = state.changes_from_today as Record<string, Json>;
+    expect(Object.keys(ch).length).toBeGreaterThan(0);
+    for (const [k, v] of Object.entries(ch).filter(([k]) => !k.startsWith('approval_'))) {
+      expect(v.today).toEqual((lot.rules.today as unknown as Json)[k] ?? null);
+      expect(v.state_reform).toEqual((lot.rules.state_reform as unknown as Json)[k] ?? null);
+      expect(v.today).not.toEqual(v.state_reform);
+    }
+    expect('changes_from_today' in (await run(provider('easy_fit'), 'get_lot_rules'))).toBe(false);
+  });
+
   it('lot_money takes the financing, rate and finish stated in the call', async () => {
     const p = provider('easy_fit');
     const cash = await run(p, 'lot_money', { financing: 'cash' });
