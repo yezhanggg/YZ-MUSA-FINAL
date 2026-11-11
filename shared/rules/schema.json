@@ -1374,6 +1374,16 @@
                 ],
                 "minimum": 0,
                 "description": "Threshold for test lot_sqft_at_least (met when the lot is at least this) or lot_sqft_below (met when the lot is under this)."
+              },
+              "not_districts": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "The gate applies everywhere except these districts or overlays."
               }
             }
           }
