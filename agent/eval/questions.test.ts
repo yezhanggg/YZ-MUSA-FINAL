@@ -71,7 +71,7 @@ describe.skipIf(!haveData)('ground truth is reproducible from the tools', () => 
       const text = JSON.stringify(results);
       const nums = jsonNumbers(text);
       const missing = q.facts.filter((f) => !backed(f, text, nums)).map((f) => `${f.label} (${f.kind === 'number' ? f.value : f.kind === 'behaviour' ? f.evidence : f.value})`);
-      expect(missing, 'facts not in the tool results').toEqual([]);
+      expect(missing, 'facts not in the tool results. If the data changed, run npm run eval:agent:make').toEqual([]);
     });
   }
 });

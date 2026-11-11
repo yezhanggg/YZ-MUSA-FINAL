@@ -57,6 +57,7 @@ const CITATION_RES: RegExp[] = [
   /\b9\d{2}\.\d{2}(?:\.[A-Z0-9]{1,3})*(?:\([a-z0-9]{1,4}\))*/g,
   /\b14-\d{3,4}(?:\([0-9a-z.]{1,4}\))*/g,
   /(?:§|\bsection|\bsec\.|Pa\.\s?C\.\s?S\.)\s*\d{4}(?:\(\d+\))*/gi,
+  /\b63\d{2}(?:\(\d+\))+/g,
   /\bR\d{3}\.\d+(?:\(\d+\))?/g,
   /\b(?:HB|SB|House Bill|Senate Bill)\s*\d{3,4}\b/g,
   /\bBill(?: No\.)?\s*\d{4}-\d{3,4}\b/g,

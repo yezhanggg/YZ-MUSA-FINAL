@@ -662,7 +662,10 @@ async function main() {
       'Eval set for the in-app assistant. Made by agent/eval/make_questions.ts from the lot records and app/public/data: lots are picked by rule and every expected value is read from a tool result. Do not edit by hand. Regenerate with `node agent/eval/cli.mjs make_questions.ts`.',
     generated_at: new Date().toISOString(),
     data_roots: roots,
-    data_versions: Object.fromEntries(Object.keys(roots).map((p) => [p, lotDataVersion(p) ?? 'unknown'])),
+    data_versions: {
+      ...Object.fromEntries(Object.keys(roots).map((p) => [p, lotDataVersion(p) ?? 'unknown'])),
+      public_data: (JSON.parse(readFileSync(resolve(DATA, 'meta.json'), 'utf8')) as { built?: string }).built ?? 'unknown',
+    },
     questions,
   };
   writeFileSync(QUESTIONS_FILE, `${JSON.stringify(set, null, 1)}\n`);

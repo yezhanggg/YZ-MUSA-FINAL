@@ -8,7 +8,9 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "preview": "vite preview",
     "test": "vitest run",
-    "eval:agent": "EVAL=1 vitest run agent/",
+    "eval:agent": "node agent/eval/cli.mjs run.ts",
+    "eval:agent:make": "node agent/eval/cli.mjs make_questions.ts",
+    "eval:agent:score": "node agent/eval/cli.mjs score.ts",
     "e2e": "playwright test"
   },
   "dependencies": {

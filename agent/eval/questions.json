@@ -1,13 +1,14 @@
 {
  "about": "Eval set for the in-app assistant. Made by agent/eval/make_questions.ts from the lot records and app/public/data: lots are picked by rule and every expected value is read from a tool result. Do not edit by hand. Regenerate with `node agent/eval/cli.mjs make_questions.ts`.",
- "generated_at": "2026-11-11T15:07:52.940Z",
+ "generated_at": "2026-11-11T15:11:11.658Z",
  "data_roots": {
   "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
   "philadelphia": "/Users/ye/musa-drive/smoke/lots/philadelphia"
  },
  "data_versions": {
   "pittsburgh": "pittsburgh-20261111-a1cc11fe5c",
-  "philadelphia": "philadelphia-20261111-813101f987"
+  "philadelphia": "philadelphia-20261111-813101f987",
+  "public_data": "2026-11-11 10:10"
  },
  "questions": [
   {
@@ -2802,9 +2803,9 @@
     {
      "kind": "enum",
      "label": "trend group",
-     "value": "Grew before 2019, slowing now",
+     "value": "Shrinking: jobs grew fast before 2019",
      "accept": [
-      "Grew before 2019, slowing now"
+      "Shrinking: jobs grew fast before 2019"
      ]
     }
    ],
@@ -2954,14 +2955,14 @@
     {
      "kind": "number",
      "label": "ADUs by 2031 today",
-     "value": 20,
+     "value": 16,
      "tol_pct": 2,
      "unit": "count"
     },
     {
      "kind": "number",
      "label": "ADUs by 2031 under HB 2186",
-     "value": 404,
+     "value": 321,
      "tol_pct": 2,
      "unit": "count"
     },
