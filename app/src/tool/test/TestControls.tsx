@@ -38,7 +38,7 @@ export default function TestControls() {
   );
 }
 
-export function Label({ children, htmlFor }: { children: ReactNode; htmlFor?: string }) {
+function Label({ children, htmlFor }: { children: ReactNode; htmlFor?: string }) {
   const cls = 'mb-1.5 block text-caption font-semibold uppercase tracking-[0.12em] text-slate-500';
   return htmlFor ? <label htmlFor={htmlFor} className={cls}>{children}</label> : <div className={cls}>{children}</div>;
 }

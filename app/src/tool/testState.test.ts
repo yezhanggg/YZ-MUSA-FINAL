@@ -3,7 +3,7 @@ import { fixture } from '../lib/lot/__fixtures__';
 import { fitBox } from '../lib/fitBox';
 import { areaFeet, frameOf } from '../lib/lot/geometry';
 import { unitVerdict } from '../lib/lot/verdict';
-import { DEFAULT_UNIT, PRESETS, boxRing, fitsAt, siteData, sidesFromArea, testFromHash, testHash, typeFor, typeOptions, unitInput } from './testState';
+import { DEFAULT_UNIT, PRESETS, boxRing, fitsAt, lotByAddress, normAddress, siteData, sidesFromArea, testFromHash, testHash, typeFor, typeOptions, unitInput } from './testState';
 
 describe('the address', () => {
   it('defaults to testing mode, today and a 20 x 30 ft cottage', () => {
@@ -105,5 +105,17 @@ describe('unit types', () => {
   it('financing presets leave out the report-only one', () => {
     expect(PRESETS.map((p) => p.key)).not.toContain('all_borrowed');
     expect(PRESETS.length).toBeGreaterThan(2);
+  });
+});
+
+describe('search by address', () => {
+  it('matches the searched address to one lot, and nothing else', () => {
+    expect(normAddress('5459 Beacon Street')).toBe(normAddress('5459 BEACON ST'));
+    expect(normAddress('2110 North 21st Street')).toBe('2110 n 21st st');
+    const lots = [fixture('easy_fit'), fixture('no_fit'), fixture('garage')];
+    expect(lotByAddress('5459 Beacon Street', lots)?.lot.id).toBe('42003-0086N00208000000');
+    expect(lotByAddress('Beacon Street', lots)).toBeNull();
+    expect(lotByAddress('9999 Beacon Street', lots)).toBeNull();
+    expect(lotByAddress('5459 Beacon Street', [...lots, fixture('easy_fit')])).toBeNull();
   });
 });

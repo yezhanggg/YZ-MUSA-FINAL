@@ -72,17 +72,17 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
             )}
           </>
         ) : (
-        <div role="tablist" aria-label="Sheet" className="relative grid grid-cols-3 rounded-xl bg-stone-100 p-1 ring-1 ring-stone-200/70">
-          {TABS.map((t) => {
-            const on = tab === t.id;
-            return (
-              <button key={t.id} type="button" role="tab" aria-selected={on} onClick={() => (setTab(t.id), setOpen(true))} className={cx('tap relative rounded-lg py-1.5 text-small font-semibold transition-colors', on ? 'text-slate-900' : 'text-slate-600')}>
-                {on && <motion.span layoutId="sheet-tab" className="absolute inset-0 rounded-lg bg-white shadow-sm ring-1 ring-black/5" transition={SPRING_TAB} />}
-                <span className="relative">{t.label}</span>
-              </button>
-            );
-          })}
-        </div>
+          <div role="tablist" aria-label="Sheet" className="relative grid grid-cols-3 rounded-xl bg-stone-100 p-1 ring-1 ring-stone-200/70">
+            {TABS.map((t) => {
+              const on = tab === t.id;
+              return (
+                <button key={t.id} type="button" role="tab" aria-selected={on} onClick={() => (setTab(t.id), setOpen(true))} className={cx('tap relative rounded-lg py-1.5 text-small font-semibold transition-colors', on ? 'text-slate-900' : 'text-slate-600')}>
+                  {on && <motion.span layoutId="sheet-tab" className="absolute inset-0 rounded-lg bg-white shadow-sm ring-1 ring-black/5" transition={SPRING_TAB} />}
+                  <span className="relative">{t.label}</span>
+                </button>
+              );
+            })}
+          </div>
         )}
         {!test && !open && spot && (
           <div className="mt-2">

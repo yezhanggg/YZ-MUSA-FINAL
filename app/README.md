@@ -4,8 +4,11 @@ React 19 + TypeScript + Tailwind 4 + motion, built with Vite. Same look as Visio
 
 ## Screens (hash state)
 
-- `#/` the tool: full-screen map with two panels on one grid. Left: search, "This lot", your ADU, rules, map colour, filters. Right: Ask, a one-line verdict, sample ADUs, "Play with it", and Details. The top bar (Tool / Research) stays on screen
-- Layout (`src/tool/layout.ts`): desktop 1280+ both panels; laptop 1024-1279 narrower panels, long cards fold; tablet 768-1023 and phone: controls in a drawer, one bottom sheet with tabs (This lot / Report / Ask)
+- `#/` the tool: full-screen map with two panels on one grid. The top bar has a mode menu with two entries:
+  - "ADU Testing (MUSA 6950)" (`view=test`, the default): lot level. Left: every control (place, scenario, ADU type, size, height, units, cost, finish, financing, rent). Right: results only, in tabs Results (verdict, aerial site view with a draggable unit box, zoning with sections, the three scenarios, money, lot facts and flags), Build and Ask. "Lot report" prints one page, "Copy link" keeps the lot, scenario and unit
+  - "ADU projecting and analysis (MUSA 5500)" (`view=project`): the tract and town views as before. Left: search, "This lot", your ADU, rules, map colour, filters. Right: Ask, a one-line verdict, sample ADUs, "Play with it", and Details
+- Layout (`src/tool/layout.ts`): desktop 1440+ left 300 and right 630; laptop 1024-1439 left 300 and the results as a wide drawer over the map; tablet 768-1023 and phone: controls in a drawer, one bottom sheet with tabs
+- `#/?view=test&lot=42003-0086N00208000000&tract=42003141300&sc=state_reform&ut=detached_new&uw=20&ud=30` a lot with a scenario and a unit (shareable)
 - `#/?bed=1&size=600&st=1` the tool with an ADU scenario (shareable)
 - `#/?research=6950` and `#/?research=5500` the Research page for one class (Purpose, Data, Methods) in a panel over the map. Esc closes it
 - `/quarto/` the Quarto class site (copied from `site/` at build)
@@ -14,6 +17,8 @@ React 19 + TypeScript + Tailwind 4 + motion, built with Vite. Same look as Visio
 
 - `index.html` page shell
 - `src/tool/` map (`MapCanvas`), map buttons (`MapControls`), search (`Search`), controls (`LeftPanel`), report (`Report`), spot test (`actions`, `geo`), parcel colours and labels (`parcels`)
+- `src/tool/test/` Testing mode: controls (`TestControls`), result cards (`cards`, `LotResults`), the site view (`SiteView`, a second MapLibre map with the aerial photo and fill-extrusion buildings), the printable report (`LotReport`). Pure state and helpers in `src/tool/testState.ts`, map layers for a lot record in `src/tool/siteLayers.ts`
+- `src/lib/lot/` lot records: loading, verdict, citations, build steps, report data, assistant tools (see its README)
 - `src/pages/` the Research panel and its two pages
 - `src/lib/adu.ts` fit and payoff math for the ADU being tested, and `playAdu` for "Play with it" (tests in `adu.test.ts`)
 - `src/agent/` the Ask agent in the browser: tool executors (same code as the report), browser data provider, the request loop
@@ -32,8 +37,16 @@ npm install
 npm run dev        # http://localhost:5173
 npm test           # payoff and fit math (vitest)
 npm run build      # typecheck + build to dist/ (needs site/ from quarto render)
+npm run e2e        # Playwright: the lot flow on the dev server (skips without the lot records)
 npx vite preview   # serve dist/ (supports the range requests the parcel tiles need)
 ```
+
+## Lot records (Testing mode)
+
+- Built outside the repo by `pipeline/build_lots.py` into `~/musa-drive/lots/<place>/`. `npm run dev` serves that folder at `/data/lots2/` (set `LOT_DATA_DIR` to use another folder). In production set `VITE_LOT_DATA_URL` to where the tree is hosted. When a place or tract has no file, the panel says what is missing and shows the tract and town report
+- A click or a search loads the lot record whose outline contains the point (no snapping to a nearby lot). A searched address that lands on the street matches its lot by address
+- Pittsburgh parcel tiles: `python app/build_lot_tiles.py --place pittsburgh` (needs tippecanoe) writes `<lot data>/pittsburgh/tiles/parcels.pmtiles`, read from the same base URL. The map skips it when it is missing
+- Aerial photo: the PEMA 2021 to 2023 half-foot cache, credit "PEMA, via PASDA", in the site view and as the map's Aerial button
 
 ## How the tool works
 
@@ -90,4 +103,5 @@ Tool files from MUSA 6950:
 - Map data © OpenStreetMap contributors, basemap by OpenFreeMap
 - Search by Photon (komoot), OpenStreetMap data
 - Building outlines © Microsoft (ODbL). Map by MapLibre
+- Aerial imagery: PEMA, via PASDA
 - Parcels: City of Philadelphia (PWD), Cumberland County GIS

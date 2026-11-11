@@ -261,3 +261,29 @@ export function moneyOptions(lot: LotRecord, m: MoneyDraft, tract: TractProps | 
     quality: m.finish,
   };
 }
+
+const WORD: Record<string, string> = {
+  street: 'st', avenue: 'ave', road: 'rd', drive: 'dr', place: 'pl', boulevard: 'blvd', lane: 'ln', court: 'ct', terrace: 'ter',
+  square: 'sq', parkway: 'pkwy', highway: 'hwy', circle: 'cir', north: 'n', south: 's', east: 'e', west: 'w',
+};
+
+/** "5459 Beacon Street" and "5459 BEACON ST" -> "5459 beacon st". */
+export const normAddress = (a: string) =>
+  a
+    .toLowerCase()
+    .replace(/[.,#]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => WORD[w] ?? w)
+    .join(' ');
+
+/**
+ * The lot with this street address, when exactly one lot in the list has it. A search result often lands on the
+ * street in front of the lot, so a searched address finds its lot by address when no lot outline contains the point.
+ */
+export function lotByAddress(label: string, lots: LotRecord[]): LotRecord | null {
+  if (!/^\d+[a-z]?\s+\S/i.test(label.trim())) return null;
+  const want = normAddress(label);
+  const hits = lots.filter((l) => l.lot.address && normAddress(l.lot.address) === want);
+  return hits.length === 1 ? hits[0] : null;
+}

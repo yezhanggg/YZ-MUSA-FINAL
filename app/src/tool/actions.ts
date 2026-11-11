@@ -7,7 +7,7 @@ import { isLotLoadError, loadLot, loadTractLots, placeOfGeoid } from '../lib/lot
 import { centroid, frameOf } from '../lib/lot/geometry';
 import { toFeet } from '../lib/fitBox';
 import type { LotRecord } from '../lib/lot/types';
-import { startUnit, typeFor } from './testState';
+import { lotByAddress, startUnit, typeFor } from './testState';
 
 export { mapPadding };
 
@@ -51,15 +51,16 @@ function noRecordsHere(t: TractProps): string {
 
 /**
  * The lot record whose lot outline contains the point (no snapping to a nearby lot). `lotId` (a link, or the
- * assistant) wins over the point. Aborts quietly when a newer spot starts.
+ * assistant) wins over the point. A searched address that lands on the street finds its lot by address.
+ * Aborts quietly when a newer spot starts.
  */
-async function recordAt(pt: LngLat, tract: TractProps, signal: AbortSignal, lotId?: string): Promise<RecordResult | null> {
+async function recordAt(pt: LngLat, tract: TractProps, signal: AbortSignal, label: string, lotId?: string): Promise<RecordResult | null> {
   const geoid = tract.GEOID;
   const place = placeOfGeoid(geoid);
   if (!place) return { record: null, recordNote: noRecordsHere(tract), builtAt: null };
   try {
     const t = await loadTractLots(geoid, { signal });
-    const record = (lotId ? t.byId.get(lotId) : undefined) ?? t.lots.find((l) => inGeom(pt, l.lot.polygon as Parameters<typeof inGeom>[1])) ?? null;
+    const record = (lotId ? t.byId.get(lotId) : undefined) ?? t.lots.find((l) => inGeom(pt, l.lot.polygon as Parameters<typeof inGeom>[1])) ?? lotByAddress(label, t.lots);
     const recordNote = record ? null : 'No lot record contains this spot. Lot records cover home lots. Click inside a lot outline.';
     return { record, recordNote, builtAt: t.builtAt };
   } catch (e) {
@@ -108,7 +109,7 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   const geoid = tract.properties.GEOID;
   const [lot, rec] = await Promise.all([
     parcel ? (parcel.s === 1 ? lotForParcel(geoid, parcel, pt) : null) : view === 'project' ? findLot(geoid, pt) : null,
-    view === 'test' || opts.lotId ? recordAt(pt, tract.properties, ctrl.signal, opts.lotId) : { record: null, recordNote: null, builtAt: null },
+    view === 'test' || opts.lotId ? recordAt(pt, tract.properties, ctrl.signal, label, opts.lotId) : { record: null, recordNote: null, builtAt: null },
   ]);
   if (n !== counter || !rec) return; // a newer spot won
   const record = rec.record;
