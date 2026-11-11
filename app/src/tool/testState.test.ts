@@ -98,7 +98,7 @@ describe('unit types', () => {
 
   it('a lot without a garage turns the garage types off', () => {
     const opts = typeOptions(fixture('easy_fit'), 'today');
-    expect(opts.find((o) => o.type === 'over_garage')).toMatchObject({ enabled: false, why: 'No garage was found on this lot.' });
+    expect(opts.find((o) => o.type === 'over_garage')).toMatchObject({ enabled: false, why: 'No garage or outbuilding was found on this lot.' });
     expect(opts.find((o) => o.type === 'detached_new')?.enabled).toBe(true);
   });
 

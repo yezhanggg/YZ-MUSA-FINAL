@@ -2,7 +2,7 @@
 // address so a link opens the same lot, scenario and unit. Pure functions, tested in testState.test.ts.
 import { ASSUMPTIONS } from '../lib/money';
 import { ADU_TYPES, isAduType, isScenario, type AduType, type LotRecord, type RuleType, type Scenario } from '../lib/lot/types';
-import { APPROVAL_LABEL, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from '../lib/lot/verdict';
+import { APPROVAL_LABEL, NO_GARAGE, garageMissing, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from '../lib/lot/verdict';
 import { areaFeet, centroid, frameOf } from '../lib/lot/geometry';
 import type { SiteData } from './siteLayers';
 import { SCENARIO_PHRASE } from '../lib/lot/words';
@@ -169,9 +169,10 @@ const GARAGE_TYPES: ReadonlySet<RuleType> = new Set(['garage_conversion', 'over_
 export function typeOptions(lot: LotRecord, scenario: Scenario): TypeOption[] {
   const hasGarage = lot.buildings.some((b) => b.role === 'garage');
   const out: TypeOption[] = ADU_TYPES.map((type) => {
+    if (garageMissing(lot, scenario, type)) return { type, enabled: false, why: NO_GARAGE };
     const v = unitVerdict(lot, suggestedUnit(lot, type, scenario));
     if (v.status === 'not_allowed') return { type, enabled: false, why: v.limit?.text ?? 'Not allowed here.' };
-    if (GARAGE_TYPES.has(type) && !hasGarage) return { type, enabled: false, why: 'No garage was found on this lot.' };
+    if (GARAGE_TYPES.has(type) && !hasGarage) return { type, enabled: false, why: NO_GARAGE };
     return { type, enabled: true, why: null };
   });
   const rules = lot.rules[scenario];

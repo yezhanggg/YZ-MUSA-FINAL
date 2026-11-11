@@ -8,15 +8,25 @@ import { Map as MLMap, type MapLayerMouseEvent, type MapLayerTouchEvent } from '
 import { Crosshair, RotateCcw, RotateCw } from 'lucide-react';
 import { Segmented } from '../../components/primitives';
 import type { Pt } from '../../lib/fitBox';
-import { aerialSource } from '../aerial';
+import { aerialSource, watchAerial } from '../aerial';
 import { addSiteLayers, lotBounds, setUnitBox, updateSite, FIT_COLOR, MISS_COLOR } from '../siteLayers';
 import { useTool } from '../store';
 import { boxRing, fitsAt } from '../testState';
 import type { LotResult } from './useLotResult';
 import type { LotRecord } from '../../lib/lot/types';
+import { areaFeet, frameOf, longSideAngle } from '../../lib/lot/geometry';
 import { SCENARIO_TITLE } from '../../lib/lot/words';
 
 const PITCH_3D = 50;
+
+/** Turn the view so the lot's long side runs across the wide card, then fit the lot with some room around it. */
+function frameLot(map: MLMap, lot: LotRecord, pitch: number, duration = 0) {
+  const f = frameOf(lot);
+  const bearing = -longSideAngle(areaFeet(lot.lot.polygon, f)[0][0]);
+  const cam = map.cameraForBounds(lotBounds(lot), { padding: 28, bearing });
+  if (cam) map.jumpTo({ ...cam, bearing, pitch });
+  if (duration) map.easeTo({ pitch, duration });
+}
 
 export default function SiteView({ record, r }: { record: LotRecord; r: LotResult }) {
   const el = useRef<HTMLDivElement>(null);
@@ -33,14 +43,15 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
     const map = new MLMap({
       container,
       style: { version: 8, sources: { aerial: aerialSource() }, layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#e7e5e4' } }, { id: 'aerial', type: 'raster', source: 'aerial' }] },
-      bounds: lotBounds(live.current.record),
-      fitBoundsOptions: { padding: 16 },
-      pitch: PITCH_3D,
+      center: [0, 0],
+      zoom: 17,
       maxPitch: 70,
       attributionControl: { compact: true },
       scrollZoom: false,
     });
     mapR.current = map;
+    frameLot(map, live.current.record, PITCH_3D);
+    const unwatch = watchAerial(map);
     map.on('load', () => {
       addSiteLayers(map, true);
       setReady(true);
@@ -91,6 +102,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
       map.on('mouseleave', layer, () => !drag && (map.getCanvas().style.cursor = ''));
     }
     return () => {
+      unwatch();
       map.remove();
       mapR.current = null;
       setReady(false);
@@ -100,7 +112,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
   // A new lot: frame it.
   useEffect(() => {
     const map = mapR.current;
-    if (map && ready) map.fitBounds(lotBounds(record), { padding: 16, pitch: threeD ? PITCH_3D : 0, duration: 0 });
+    if (map && ready) frameLot(map, record, threeD ? PITCH_3D : 0);
   }, [record, ready]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {

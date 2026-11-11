@@ -76,7 +76,7 @@ export const lotProvider: LotAgentProvider = {
   },
   unit() {
     const { view, unit: u } = useTool.getState();
-    return view === 'test' ? { type: u.type, width_ft: u.width, depth_ft: u.depth, stories: u.stories, height_ft: u.height, angle_deg: u.angle, units: u.units } : null;
+    return view === 'test' ? { type: u.type, width_ft: u.width, depth_ft: u.depth, stories: u.stories, height_ft: u.height, angle_deg: u.angle, units: u.units, position: u.at ?? 'best' } : null;
   },
   rents: (lot) => tractRents(tractOf(lot)),
   money: (lot) => moneyOptions(lot, useTool.getState().money, tractOf(lot)),

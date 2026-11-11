@@ -10,7 +10,7 @@ import { LOT_COLORS, PARCEL_LAYER, PARCEL_URL, parcelFillColor, parcelFillOpacit
 import { addDetailLayers, pattern, updateDetail } from './detailLayers';
 import { mapRef, useTool } from './store';
 import { mapPadding, testSpot } from './actions';
-import { aerialSource } from './aerial';
+import { aerialSource, watchAerial } from './aerial';
 import { addSiteLayers, updateSite } from './siteLayers';
 import { siteData, unitInput } from './testState';
 import { lotDataUrl } from '../lib/lot/load';
@@ -129,6 +129,7 @@ export default function MapCanvas() {
         const firstLabel = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
         // Aerial photo under the data layers and the labels, off until the Aerial button turns it on.
         map.addLayer({ id: 'aerial', type: 'raster', source: 'aerial', layout: { visibility: useTool.getState().aerial ? 'visible' : 'none' } }, firstLabel);
+        watchAerial(map);
         // Tracts fade out between z12.5 and z14, where the parcels take over.
         map.addLayer({ id: 'tract-fill', type: 'fill', source: 'tracts', paint: { 'fill-color': colorExpr(useTool.getState().metric), 'fill-opacity': ['interpolate', ['linear'], ['zoom'], 7, 0.62, 12.5, 0.4, 14, 0] } }, firstLabel);
         map.addLayer({ id: 'tract-line', type: 'line', source: 'tracts', minzoom: 9, paint: { 'line-color': '#ffffff', 'line-width': 0.5, 'line-opacity': 0.7 } }, firstLabel);

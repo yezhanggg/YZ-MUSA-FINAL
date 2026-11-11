@@ -141,3 +141,23 @@ describe('lot records on disk', () => {
     expect(r.lot_id).toBe('42003-0086N00208000000');
   });
 });
+
+describe('the dragged spot', () => {
+  it('test_unit_on_lot tests the unit where the user put it, and a new size looks for a spot', async () => {
+    const lot = fixture('easy_fit');
+    const corner = lot.lot.polygon.coordinates[0][0] as number[];
+    const at = { lon: corner[0], lat: corner[1] };
+    const lots: LotAgentProvider = {
+      lotById: async () => lot,
+      selectedLot: async () => lot,
+      scenario: () => 'today',
+      unit: () => ({ type: 'detached_new', width_ft: 20, depth_ft: 30, stories: 1, height_ft: null, units: 1, position: at }),
+    };
+    const ex = makeExecutors({ ...nodeProvider(), lots });
+    const asDrawn = (await runTool(ex, 'test_unit_on_lot', {})).result as { status: string };
+    expect(asDrawn.status).toBe(unitVerdict(lot, { type: 'detached_new', width_ft: 20, depth_ft: 30, stories: 1, height_ft: null, units: 1, position: at, scenario: 'today' }).status);
+    expect(asDrawn.status).toBe('fits_with_changes');
+    const resized = (await runTool(ex, 'test_unit_on_lot', { width_ft: 20, depth_ft: 30 })).result as { status: string };
+    expect(resized.status).toBe('fits');
+  });
+});

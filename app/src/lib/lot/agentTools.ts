@@ -82,7 +82,8 @@ export interface LotAgentProvider {
   /** The scenario chosen on screen. */
   scenario(): Scenario;
   /** The unit drawn on screen, if any. */
-  unit(): Omit<UnitInput, 'scenario' | 'position'> | null;
+  /** The unit drawn on screen, if any, with the spot the user dragged it to (or 'best'). */
+  unit(): (Omit<UnitInput, 'scenario' | 'position'> & { position?: UnitInput['position'] }) | null;
   /** Market rents for a lot whose record has none (from its tract). */
   rents?(lot: LotRecord): RentByBedroom | null;
   /** The money settings on screen (cost, finish, financing, rent), so answers match the money card. */
@@ -131,6 +132,7 @@ export function unitFrom(input: ToolInput, lot: LotRecord, scenario: Scenario, p
   const type: AduType = isAduType(input.type) ? input.type : screen?.type ?? 'detached_new';
   const fallback = screen && screen.type === type ? screen : suggestedUnit(lot, type, scenario);
   const stories = input.stories === 2 ? 2 : input.stories === 1 ? 1 : fallback.stories;
+  const sameSize = posNum(input.width_ft, 8, 100) === null && posNum(input.depth_ft, 8, 100) === null;
   return {
     type,
     width_ft: posNum(input.width_ft, 8, 100) ?? fallback.width_ft,
@@ -138,7 +140,8 @@ export function unitFrom(input: ToolInput, lot: LotRecord, scenario: Scenario, p
     stories,
     height_ft: posNum(input.height_ft, 8, 60) ?? fallback.height_ft ?? null,
     units: posNum(input.units, 1, 10) ?? 1,
-    position: 'best',
+    // The user's own spot when the call is about the unit on screen as drawn. A new size or type looks for a spot.
+    position: screen && fallback === screen && sameSize ? (screen.position ?? 'best') : 'best',
     scenario,
   };
 }

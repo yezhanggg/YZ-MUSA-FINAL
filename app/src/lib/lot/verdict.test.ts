@@ -283,3 +283,35 @@ describe('exception section in newer rule notes', () => {
     expect(approvalFor(lot, 'today', 'detached_new').citation?.section).toBe('925.06.G.1(i)');
   });
 });
+
+describe('garage unit on a lot without a garage', () => {
+  const unit = (sc: 'today' = 'today'): UnitInput => ({ type: 'garage_conversion', width_ft: 20, depth_ft: 20, position: 'best', scenario: sc });
+  const noGarage = () => {
+    const lot = fixture('easy_fit');
+    lot.buildings = lot.buildings.filter((b) => b.role !== 'garage');
+    return lot;
+  };
+  it('old records (type off, note says by right): no garage, not "not allowed"', () => {
+    const lot = noGarage();
+    const r = lot.rules.today!;
+    r.types_allowed = ['detached_new', 'over_garage', 'internal', 'attached'];
+    r.reasons = [...r.reasons, 'Inside the house, attached, or a garage conversion is by right'];
+    r.approval_by_type = { ...r.approval_by_type, garage_conversion: 'not_allowed' };
+    const v = unitVerdict(lot, unit());
+    expect(v.status).toBe('does_not_fit');
+    expect(v.limit?.text).toBe('No garage or outbuilding was found on this lot.');
+    expect(v.approval.path).toBe('by_right');
+  });
+  it('new records (type on): the same answer', () => {
+    const lot = noGarage();
+    lot.rules.today!.types_allowed = null;
+    expect(unitVerdict(lot, unit()).limit?.text).toBe('No garage or outbuilding was found on this lot.');
+  });
+  it('a rule that does not allow conversions still says not allowed', () => {
+    const lot = noGarage();
+    const r = lot.rules.today!;
+    r.types_allowed = ['detached_new'];
+    r.reasons = [];
+    expect(unitVerdict(lot, unit()).status).toBe('not_allowed');
+  });
+});

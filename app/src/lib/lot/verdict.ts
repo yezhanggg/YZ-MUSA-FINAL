@@ -236,6 +236,22 @@ export function houseSqft(lot: LotRecord): { sqft: number | null; estimated: boo
   return foot > 0 ? { sqft: foot, estimated: true } : { sqft: null, estimated: true };
 }
 
+export const NO_GARAGE = 'No garage or outbuilding was found on this lot.';
+const GARAGE_TYPES: ReadonlySet<AduType> = new Set(['garage_conversion', 'over_garage']);
+/** Rule notes that allow a garage conversion, in records that list the type as off when the lot has no garage. */
+const CONVERSION_ALLOWED = /garage conversion is by right|converting an existing garage/i;
+
+/**
+ * A garage unit on a lot with no garage, where the rules themselves allow it. Records built before the fix mark the
+ * type as not allowed in that case; newer ones allow it. Either way the answer is "no garage", not "not allowed".
+ */
+export function garageMissing(lot: LotRecord, scenario: Scenario, type: AduType): boolean {
+  const rules = lot.rules[scenario];
+  if (!rules?.allowed || !GARAGE_TYPES.has(type) || garages(lot).length > 0) return false;
+  if (rules.types_allowed === null || rules.types_allowed.includes(type)) return true;
+  return type === 'garage_conversion' && rules.reasons.some((r) => CONVERSION_ALLOWED.test(r));
+}
+
 const coverSqft = (lot: LotRecord) => lot.buildings.reduce((s, b) => s + b.area_sqft, 0);
 
 // ------------------------------------------------------------------ placing the box
@@ -473,7 +489,7 @@ function garageRoomCheck(rules: Rules, stored: FitResult | undefined): VerdictCh
   return check(rules, {
     key: 'room', label: 'Garage found', unit: 'sqft', rule_key: null, value: room?.value ?? null, limit: null,
     pass: stored ? (room?.pass ?? false) : null,
-    text: !stored ? 'No result on file for this kind of unit.' : room?.pass ? `A ${sqftText(room.value)} garage was found on the lot.` : 'No garage was found on this lot.',
+    text: !stored ? 'No result on file for this kind of unit.' : room?.pass ? `A ${sqftText(room.value)} garage was found on the lot.` : NO_GARAGE,
   });
 }
 
@@ -612,7 +628,7 @@ const LIMIT_TEXT: Record<string, (r: Rules, f: FitResult | undefined) => string>
   not_allowed: () => 'Units are not allowed on this lot.',
   type_not_allowed: () => 'This kind of unit is not allowed here.',
   min_lot_size: (r) => `The lot is under the ${sqftText(r.min_lot_sqft)} smallest lot size.`,
-  no_garage: () => 'No garage was found on this lot.',
+  no_garage: () => NO_GARAGE,
   no_house: () => 'No house was found on this lot.',
 };
 
@@ -758,6 +774,12 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
   const placed = ground?.placed ?? null;
   const base = { ...shell, checks, warnings, approval, placed, assumed };
 
+  if (garageMissing(lot, unit.scenario, unit.type)) {
+    const room: VerdictCheck = { key: 'room', label: 'Garage on the lot', pass: false, value: null, limit: null, unit: null, text: NO_GARAGE, rule_key: null, citation: null, assumed: false };
+    const kept = checks.filter((c) => c.key !== 'type_allowed' && c.key !== 'room');
+    const own = approval.path === 'not_allowed' ? approvalInfo('by_right', 'rule_notes', rules.citations.approval_path ?? null) : approval;
+    return { ...base, approval: own, checks: [...kept, room], status: 'does_not_fit', headline: headlineFor('does_not_fit', unit, s, [], placed), limit: { code: 'no_garage', text: NO_GARAGE }, changes: [] };
+  }
   const failed = checks.filter((c) => c.pass === false);
   const blocker = failed.find((c) => BLOCKERS.has(c.key));
   if (blocker) {

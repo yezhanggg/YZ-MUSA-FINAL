@@ -17,6 +17,9 @@ export const LOT_PLACES = [
   { name: 'Philadelphia', center: [-75.0126, 40.0618] as [number, number] },
 ];
 
+/** Short labels that fit the 300 px panel. The full title is in the hover text and the line under it. */
+const SCENARIO_SHORT: Record<Scenario, string> = { today: 'Today', local_reform: 'Local reform', state_reform: 'State reform' };
+
 const SCENARIO_HINT: Record<Scenario, string> = {
   today: 'The rules in force today.',
   local_reform: 'A city bill that is not law yet. Where there is none, it matches today.',
@@ -79,8 +82,10 @@ function ScenarioPick() {
   return (
     <div>
       <Label>Scenario</Label>
-      <Segmented<Scenario> full label="Scenario" value={scenario} onChange={(v) => setTest({ scenario: v })} options={SCENARIOS.map((s) => ({ value: s, label: SCENARIO_TITLE[s], hint: SCENARIO_HINT[s] }))} className="[&_button]:px-1.5" />
-      <p className="mt-1.5 text-caption text-slate-500">{SCENARIO_HINT[scenario]}</p>
+      <Segmented<Scenario> full label="Scenario" value={scenario} onChange={(v) => setTest({ scenario: v })} options={SCENARIOS.map((s) => ({ value: s, label: SCENARIO_SHORT[s], hint: `${SCENARIO_TITLE[s]}. ${SCENARIO_HINT[s]}` }))} className="[&_button]:px-1 [&_button]:whitespace-nowrap [&_button]:text-caption" />
+      <p className="mt-1.5 text-caption text-slate-500">
+        <b className="font-semibold text-slate-700">{SCENARIO_TITLE[scenario]}.</b> {SCENARIO_HINT[scenario]}
+      </p>
     </div>
   );
 }
