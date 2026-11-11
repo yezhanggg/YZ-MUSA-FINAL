@@ -1,0 +1,311 @@
+{
+  "provenance": {
+    "jurisdiction": "Bensalem township",
+    "instrument": "Code of the Township of Bensalem, Chapter 232 Zoning, as published on Municode (Supp. No. 26)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Municode: codified through Ordinance No. 2025-06, adopted November 25, 2025 (Supp. No. 26), online content updated June 26, 2026. Adopted but not yet codified: Ord. 2026-05 (Ch. 225) and 2026-06 (Ch. 210). Neither touches Chapter 232. Municode is behind a script wall for plain fetches. Text was read in a browser.",
+    "effective_date": null,
+    "source_urls": [
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTIGEPR_S232-6DE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV1RUDI_S232-110USRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV21REDI_S232-124USRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-152USRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV5REDI_S232-166USRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV5REDI_S232-167ARRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV7REDI_S232-196USRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV9R-REDI_S232-226USRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV9R-REDI_S232-227ARRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV10R-REDI_S232-240USRE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
+      "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE_DIV1GE_S232-586OREPA",
+      "https://www.bensalempa.gov/building-and-planning",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201705616",
+    "code_host": "municode",
+    "code_url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO",
+    "code_current_through": "2025-11-25",
+    "code_current_through_note": "Codified through Ordinance No. 2025-06, adopted November 25, 2025. (Supp. No. 26). Online content updated on June 26, 2026.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law or accessory apartment provision",
+      "R-1, R-2, R-A-1 and R-11 allow 'One single-family detached dwelling' and list uses 'and no other' (232-124, 232-152, 232-166, 232-226)",
+      "A dwelling unit is used 'by one family'. Family means relatives, or not more than five unrelated persons, with single cooking facilities (232-6)",
+      "Lot area and density rules count dwelling units. R-1 needs 12,000 sq ft per family and caps density at 2.5 units per acre (232-153)",
+      "The R-3A district allows duplex dwellings only. It is the closest two-unit option, not an ADU path (232-196)",
+      "An accessory structure footprint in a residential district may not exceed 25% of the principal building footprint (232-6 'Accessory structure')",
+      "Accessory buildings must be at least 10 ft from any other structure (232-583(a)(3))"
+    ],
+    "notes": "Zoning office: Building and Planning Department, https://www.bensalempa.gov/building-and-planning. Pending: none found affecting Chapter 232. Searched the definitions (232-6), the use regulations of R-A, R-A-1, R-1, R-2, R-3A, R-11, R-22 and all of Article XIII for: accessory dwelling, in-law, accessory apartment, elder cottage, ECHO, granny, second dwelling or unit, kitchen. No match."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "232-6 and Article V and XIII",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTIGEPR_S232-6DE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term. Searched the definitions (232-6), the use regulations of R-A, R-A-1, R-1, R-2, R-3A, R-11, R-22 and all of Article XIII for: accessory dwelling, in-law, accessory apartment, elder cottage, ECHO, granny, second dwelling or unit, kitchen. No match."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "232-6, 232-124, 232-152, 232-166, 232-226, Article XIII",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-152USRE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "232-152 and 232-166 Use regulations, MPC 910.2",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-152USRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: a second dwelling on a single-family lot is not a listed use. R-1 allows 'One single-family detached dwelling' 'and no other'. The path is a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "232-152, MPC 910.2",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-152USRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Article V use regulations",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-152USRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 232",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "Article V use regulations",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-152USRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "232-583",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No accessory building height cap read. District height is 35 ft in R-1 and R-2."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "232-583(a)(1)",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory building: no closer than the district front yard and 'no closer to the street line than the principal building'."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "232-583(a)(2)",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "One and two-family uses: 'no closer than five feet from the rear and/or side property line' if behind the rear of the house. Otherwise the district side yard."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "232-583(a)(2)",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "5 ft, if behind the rear-facing part of the principal building."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "232-583(a)(3)",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'In no case shall a garage or other accessory building be closer than ten feet to any other structure.'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "232-6 'Family'",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTIGEPR_S232-6DE",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. The family definition limits one dwelling unit."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "232-152, 232-166",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-152USRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: no ADU is allowed by right."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "232-586",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE_DIV1GE_S232-586OREPA",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. Single-family detached: 'Not less than two off street, paved, parking spaces'. Duplex: two per dwelling unit."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "232-153(a)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "12,000 sq ft per family."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "232-153(e)(1)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "232-153(e)(2)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "30 ft aggregate, neither less than 12 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "232-153(e)(3)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "232-153(c)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious cover max 40% of net lot area."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "232-153(f)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV4REDI_S232-153ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "May rise 1 ft per extra foot of side yard, up to 50 ft."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "232-167(a)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV5REDI_S232-167ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "232-167(e)(1)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV5REDI_S232-167ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 9,
+        "section": "232-167(e)(2)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV5REDI_S232-167ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "20 ft aggregate, neither less than 9 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "232-167(e)(3)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV5REDI_S232-167ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "232-167(c)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV5REDI_S232-167ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious cover max 45% of net lot area."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "232-167(f)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV5REDI_S232-167ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "May rise 1 ft per extra foot of side yard, up to 50 ft."
+      }
+    },
+    "R-11": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "232-227(a)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV9R-REDI_S232-227ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Net lot area."
+      },
+      "setback_side_ft": {
+        "value": 17,
+        "section": "232-227(e)(2)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV9R-REDI_S232-227ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lots under 40,000 sq ft: 40 ft aggregate, neither less than 17 ft. Larger lots: 50 and 20."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "232-227(e)(3)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV9R-REDI_S232-227ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "232-227(c)(1)",
+        "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTVREDI_DIV9R-REDI_S232-227ARRE",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "25% for 20,000 to 40,000 sq ft net lots. 20% above."
+      }
+    }
+  }
+}
