@@ -1,0 +1,457 @@
+{
+  "provenance": {
+    "jurisdiction": "Cheltenham township",
+    "instrument": "Code of the Township of Cheltenham, Chapter 295 Zoning (Cheltenham Township Zoning Ordinance of 2017, Ord. No. 2358-17), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code CH1316) dated 2025-09-17. Chapter 295 history includes Ord. No. 2492-25 (7-16-2025). New Laws lists two uncodified Chapter 295 amendments: Ord. 2502-25 (MU3 Class 3 special exception standards) and Ord. 2503-25 (medical marijuana dispensaries in MU1). Both were opened. Neither touches residential districts or accessory dwellings.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/6448532",
+      "https://ecode360.com/33235886",
+      "https://ecode360.com/33236111",
+      "https://ecode360.com/33236117",
+      "https://ecode360.com/33236133",
+      "https://ecode360.com/33236776",
+      "https://ecode360.com/33236801",
+      "https://ecode360.com/33236815",
+      "https://ecode360.com/33236840",
+      "https://ecode360.com/33236860",
+      "https://ecode360.com/33236964",
+      "https://ecode360.com/33236994",
+      "https://ecode360.com/33237018",
+      "https://ecode360.com/33237042",
+      "https://ecode360.com/33238668",
+      "https://ecode360.com/33238949",
+      "https://ecode360.com/33238954",
+      "https://ecode360.com/42600397",
+      "https://ecode360.com/print/CH1316?guid=6448532",
+      "https://ecode360.com/CH1316/laws",
+      "https://ecode360.com/CH1316/laws/LF2835213.pdf",
+      "https://ecode360.com/CH1316/laws/LF2835214.pdf",
+      "https://www.cheltenhamtownship.org/"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209112968",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/6448532",
+    "code_current_through": "2025-09-17",
+    "code_current_through_note": "eCode360 code date 2025-09-17. New Laws: 11 items, two of them Chapter 295 amendments adopted 2025-11-19 (Ord. 2502-25, 2503-25).",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "A single-family detached dwelling must be 'the only dwelling unit located on the parcel' and may have only one kitchen (295-405B(6) Use G-6(e))",
+      "R1 to R4 allow the listed uses 'and no other'. Uses not listed are not permitted (295-403D). A lot may not be partitioned to add a principal use (295-402E)",
+      "R3 and R4 allow a duplex (one unit above the other) by right on a lot of at least 7,500 sq ft (Use G-3). A duplex conversion of a house on a smaller nonconforming lot of 5,000 sq ft or more is a special exception",
+      "R4: the Zoning Hearing Board may allow conversion of an existing dwelling to up to three families, 2,000 sq ft of lot per family, only for a building of little use as a single-family house (295-805)",
+      "Accessory structures (Use A-1): no taller than the house or 25 ft. Over 250 sq ft or over 16 ft high, they must meet the principal yards and stay within 50% of the house's building area. 10 ft from other structures",
+      "A pool house may have at most two of bedroom, bathroom and kitchen (Use A-9)",
+      "Short-term transient lodging (Use B-40) is listed only in commercial and mixed-use districts. The definition of dwelling excludes short-term rentals",
+      "Renting any dwelling unit needs a township rental license and inspections every three years (227-2, 227-7)"
+    ],
+    "notes": "Zoning office: Building, Zoning and Codes department, Cheltenham Township, https://www.cheltenhamtownship.org/ (department pages linked from the home page). Searched Chapter 295 (full print view) for: accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, au pair, servant, accessory residential, conversion, kitchen. No ADU provision."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "295-301, 295-405",
+      "url": "https://ecode360.com/33235886",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, au pair, servant, accessory residential, conversion, kitchen."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "295-405B(6) Use G-6, 295-501, 295-601, 295-701, 295-801",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text. A single-family detached dwelling 'is the only dwelling unit located on the parcel'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "295-403D, 295-403E, 295-405B(6) Use G-6",
+      "url": "https://ecode360.com/33236117",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Any use not permitted ... is not permitted in the district in question.' A second unit on a house lot needs a use variance (295-403E)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "295-403E, 295-2804",
+      "url": "https://ecode360.com/33236117",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex (two-family, one unit above the other)",
+          "path": "by_right",
+          "districts": [
+            "R3",
+            "R4"
+          ],
+          "conditions": "One unit above the other (duplex), each with its own outside entrance. Lot at least 7,500 sq ft. Public water and sewer. Three bedrooms at most per unit. 2 parking spaces per unit. District yards apply.",
+          "min_lot_sqft": 7500,
+          "section": "295-701C, 295-801D, 295-405B(3) Use G-3",
+          "url": "https://ecode360.com/33236133"
+        },
+        {
+          "name": "Duplex conversion of a single-family house on a nonconforming lot",
+          "path": "special_exception",
+          "districts": [
+            "R3",
+            "R4"
+          ],
+          "conditions": "Lot of at least 5,000 sq ft that is below the 7,500 sq ft duplex minimum. Other duplex rules apply.",
+          "min_lot_sqft": 5000,
+          "section": "295-405B(3) Use G-3(d)",
+          "url": "https://ecode360.com/33236133"
+        },
+        {
+          "name": "Conversion of an existing dwelling for up to three families",
+          "path": "special_exception",
+          "districts": [
+            "R4"
+          ],
+          "conditions": "Existing dwelling only. At least 2,000 sq ft of lot per family. District yards and building area not reduced. No major exterior change. Only for a building of little economic value or use as a single-family house.",
+          "min_lot_sqft": 4000,
+          "section": "295-805",
+          "url": "https://ecode360.com/33237042"
+        }
+      ],
+      "section": "295-405B(3), 295-805",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Not ADUs. Two units in R4 conversion need 4,000 sq ft (2,000 per family). G-3: 'minimum lot size for duplex dwellings shall be 7,500 square feet.'"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "295-501, 295-601, 295-701, 295-801",
+      "url": "https://ecode360.com/33236776",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 295",
+      "url": "https://ecode360.com/6448532",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "295-405B(6) Use G-6",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A house may have only one kitchen."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "295-405A(1)(b)",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory structure rule, not an ADU rule. 'shall not exceed the height of the principal building on the lot or 25 feet, whichever is less.'"
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "295-405A(1)(b)",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall not exceed the height of the principal building'"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "295-405A(1)(d)[1]",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Applies to accessory structures over 250 sq ft or over 16 ft high: 'shall comply with the principal yard setbacks'. Smaller ones need 4 ft from side and rear lines."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "295-405A(1)(c), (d)",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "4 ft only for structures under 250 sq ft and under 16 ft. Larger structures take the district side yard."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "295-405A(1)(c), (d)",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "4 ft only for structures under 250 sq ft and under 16 ft. Larger structures take the district rear yard."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "295-405A(1)(e)",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'A detached accessory structure shall not be erected within the front yard area'."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "295-405A(1)(c), (d)[1]",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall not be constructed closer than 10 feet from any other structures'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "295-301 'Family'",
+      "url": "https://ecode360.com/33235886",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A family allows at most one person unrelated to the others."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "295-405B(6) Use G-6",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU. The house must be the only dwelling unit on the parcel."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "295-301 'Dwelling', 295-405B(40)",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. Use B-40 short-term lodging is not listed in R1 to R4."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "295-2301",
+      "url": "https://ecode360.com/33238668",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. Single-family detached: 2 per unit. Duplex: 2 per unit."
+    }
+  },
+  "districts": {
+    "R1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "295-502",
+        "url": "https://ecode360.com/33236801",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "295-502",
+        "url": "https://ecode360.com/33236801",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "50 ft or the average of the 2 closest adjacent structures."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "295-502",
+        "url": "https://ecode360.com/33236801",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "15 ft min, 40 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "295-502",
+        "url": "https://ecode360.com/33236801",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal yard. Accessory structures over 250 sq ft or 16 ft also meet it (295-405A(1)(d))."
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "295-502",
+        "url": "https://ecode360.com/33236801",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "295-502",
+        "url": "https://ecode360.com/33236801",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'The lesser of 3 stories or 40 feet'"
+      }
+    },
+    "R2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "295-602",
+        "url": "https://ecode360.com/33236840",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "295-602",
+        "url": "https://ecode360.com/33236840",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "40 ft or the average of the 2 closest adjacent structures."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "295-602",
+        "url": "https://ecode360.com/33236840",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "10 ft min, 30 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "295-602",
+        "url": "https://ecode360.com/33236840",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal yard. Accessory structures over 250 sq ft or 16 ft also meet it (295-405A(1)(d))."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "295-602",
+        "url": "https://ecode360.com/33236840",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 40%."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "295-602",
+        "url": "https://ecode360.com/33236840",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'The lesser of 3 stories or 40 feet'"
+      }
+    },
+    "R3": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "295-702",
+        "url": "https://ecode360.com/33236964",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached. Two-family dwellings 3,000 sq ft per unit, but the duplex use needs 7,500 sq ft (Use G-3(d))."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "295-702",
+        "url": "https://ecode360.com/33236964",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "40 ft or the average of the 2 closest adjacent structures."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "295-702",
+        "url": "https://ecode360.com/33236964",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached and two-family: 8 ft min, 20 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "295-702",
+        "url": "https://ecode360.com/33236964",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal yard. Accessory structures over 250 sq ft or 16 ft also meet it (295-405A(1)(d))."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "295-702",
+        "url": "https://ecode360.com/33236964",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 50%."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "295-702",
+        "url": "https://ecode360.com/33236964",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'The lesser of 3 stories or 40 feet'"
+      }
+    },
+    "R4": {
+      "min_lot_sqft": {
+        "value": 2500,
+        "section": "295-802",
+        "url": "https://ecode360.com/33237018",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "District minimum. The single-family detached use needs 5,000 sq ft (Use G-6(b)) and a duplex 7,500 sq ft (Use G-3(d)). The larger figure applies."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "295-802",
+        "url": "https://ecode360.com/33237018",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "20 ft or the average of the 2 closest adjacent structures."
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "295-802",
+        "url": "https://ecode360.com/33237018",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached and two-family: 7 ft min, 15 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "295-802",
+        "url": "https://ecode360.com/33237018",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal yard. Accessory structures over 250 sq ft or 16 ft also meet it (295-405A(1)(d))."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "295-802",
+        "url": "https://ecode360.com/33237018",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Impervious max 55%."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "295-802",
+        "url": "https://ecode360.com/33237018",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'The lesser of 3 stories or 40 feet'"
+      }
+    }
+  }
+}

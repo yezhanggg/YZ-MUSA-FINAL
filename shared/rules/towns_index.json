@@ -687,12 +687,12 @@
       "pop_rank": 27,
       "file": "pa_montgomery_cheltenham",
       "batch": 5,
-      "status": "todo",
+      "status": "drafted",
       "checked_on": null,
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/33235830",
+      "code_url": "https://ecode360.com/6448532",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2025-09-17",
       "code_note": "Zoning: Chapter 295 Zoning (Cheltenham Township Zoning Ordinance of 2017). Code CH1316. 33235830 precedes 33235831 (title section 'Cheltenham Township Zoning Ordinance'), likely chapter/article root but not confirmed. ecode360 pages return Cloudflare 403 to curl and WebFetch. id from search-result titles, not opened.",
       "why": [
         "top 60 by 2020 population"
