@@ -1,0 +1,578 @@
+{
+  "provenance": {
+    "jurisdiction": "Upper Darby township",
+    "instrument": "Upper Darby Township Code, Chapter 550 Zoning, 550-17B Accessory dwellings, with Table 3-1 Table of Permitted Uses, 550-10 and 550-15 development standards and 550-40 accessory buildings",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 says the code includes legislation through 09-17-2025. The New Laws list (38 items, read 2026-11-11) shows nothing that amends Chapter 550. Table 3-1 amended 12-1-2021 by Ord. No. 3106 and 7-10-2024 by Ord. No. 3155.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/33161971",
+      "https://ecode360.com/33162095",
+      "https://ecode360.com/attachment/323044/UP3641-550a%20Table%20of%20Permitted%20Uses.pdf",
+      "https://ecode360.com/33163080",
+      "https://ecode360.com/33163049",
+      "https://ecode360.com/33162029",
+      "https://ecode360.com/33162073",
+      "https://ecode360.com/33162843",
+      "https://ecode360.com/33162493",
+      "https://ecode360.com/33163003",
+      "https://ecode360.com/33162027",
+      "https://ecode360.com/33162775",
+      "https://ecode360.com/33162490",
+      "https://ecode360.com/UP3641/laws",
+      "https://www.upperdarby.org/zoning",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204579000",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/33161971",
+    "code_current_through": "2025-09-17",
+    "code_current_through_note": "eCode360: includes legislation through 09-17-2025. New Laws (38), none affecting Chapter 550.",
+    "checks": [
+      "Occupants must be related by blood, adoption or marriage to the occupants of the main house (550-17B(2))",
+      "At most two people may live in the accessory dwelling (550-17B(5))",
+      "Only in a single-family detached or semidetached dwelling (550-17B(3))",
+      "It must share the sewage disposal and water supply of the main house (550-17B(4))",
+      "A detached unit must be an existing building converted on the same footprint, and must use the existing driveway. No new driveway (550-17B(1) and (7))",
+      "Accessory buildings are capped at 15 ft in height and must be at least 3 ft from the main building (550-40)",
+      "Special exceptions also meet the general criteria in 550-54J and the district development standards (550-17A)",
+      "The definition in Article XIII says relatives by 'blood or adoption'. 550-17B(2) adds marriage"
+    ],
+    "notes": "Zoning office: Department of Licenses and Inspections, Zoning Officer, https://www.upperdarby.org/zoning. Pending changes: none found on eCode360 for Chapter 550."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling",
+      "section": "550-56 Definition of terms, Table 3-1, 550-17B",
+      "url": "https://ecode360.com/33163080",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Defined term 'ACCESSORY DWELLING'. 550-17B also says 'accessory dwelling unit'."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "550-17B(2), Table 3-1",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Special exception in R-C, RC-1, R-1, R-2, R-3, R-4. Occupants must be relatives of the main house occupants. Family_only is the more limiting status."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "Table 3-1, 550-17B",
+      "url": "https://ecode360.com/attachment/323044/UP3641-550a%20Table%20of%20Permitted%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Accessory dwelling' is S in R-C, RC-1, R-1, R-2, R-3, R-4. 'S = Special exception use, a use that is permitted only by approval by the Zoning Hearing Board.'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Table 3-1 key",
+      "url": "https://ecode360.com/attachment/323044/UP3641-550a%20Table%20of%20Permitted%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Where no classification of use is shown (a blank cell), that use is prohibited'. Reading: a non-family or new detached unit needs a use variance."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-C",
+        "R-C-1",
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "Table 3-1",
+      "url": "https://ecode360.com/attachment/323044/UP3641-550a%20Table%20of%20Permitted%20Uses.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "S in R-C, RC-1, R-1, R-2, R-3, R-4. Blank in C-1 to C-4 and REC. The table writes RC-1, Article IV writes R-C-1."
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached"
+      ],
+      "section": "550-17B(3)",
+      "url": "https://ecode360.com/33162098",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'may be located in a single-family detached dwelling or a single-family semidetached dwelling only'"
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "550-17A",
+      "url": "https://ecode360.com/33162094",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU lot size. District standards apply."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "550-17B(1)",
+      "url": "https://ecode360.com/33162096",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'physically connected to the principal dwelling unit or shall be a converted existing detached building which maintains the same footprint'. Only the detached form must be existing."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "550-17B",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No historic rule in 550-17B."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion"
+      ],
+      "section": "550-17B(1)",
+      "url": "https://ecode360.com/33162096",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Connected to the main house, or a converted existing detached building on the same footprint. Reading: no new detached building. A unit over a garage is not addressed."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "550-17B",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No size cap."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "550-17B",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No share limit."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "550-17B(6)",
+      "url": "https://ecode360.com/33162101",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Must meet the 'minimum space and habitable living area requirements' of housing or building codes. No zoning number."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "550-40A",
+      "url": "https://ecode360.com/33162844",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'No accessory building shall exceed 15 feet in height.' Applies to a detached unit."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "550-40B(1)",
+      "url": "https://ecode360.com/33162846",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory structures may not be in the required front yard."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "550-40B(1)",
+      "url": "https://ecode360.com/33162846",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Not 'closer to any side or rear lot line than permitted by the Building Code'. No zoning number."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "550-40B(1)",
+      "url": "https://ecode360.com/33162846",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same rule: the Building Code sets the distance. No zoning number."
+    },
+    "separation_ft": {
+      "value": 3,
+      "section": "550-40B(2)",
+      "url": "https://ecode360.com/33162850",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'No accessory building shall be constructed within three feet of the main or primary building.'"
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "550-10 Table 4-1, 550-15 Table 4-2",
+      "url": "https://ecode360.com/33162029",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district. See districts."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "550-17B",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No owner occupancy rule. Occupants must be relatives of the main house occupants."
+    },
+    "family_only": {
+      "value": true,
+      "section": "550-17B(2)",
+      "url": "https://ecode360.com/33162097",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'limited to persons who are related by blood, adoption or marriage to the occupants of the principal dwelling unit'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "550-17B",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed. Family-only occupancy makes rental to others not allowed."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "550-17B",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Text speaks of 'the accessory dwelling unit'. No number per lot."
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "550-17B",
+      "url": "https://ecode360.com/33162095",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "550-33A Table 8-1",
+      "url": "https://ecode360.com/33162493",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'One- and two-family dwellings: 2 spaces per dwelling unit.' Whether an accessory dwelling counts is not stated. A detached unit must use the existing driveway (550-17B(7))."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "550-17B(4)",
+      "url": "https://ecode360.com/33162099",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall share the same sewage disposal and water supply systems as the principal dwelling unit'"
+    }
+  },
+  "districts": {
+    "R-C": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "550-10 Table 4-1, Minimum lot size, R-C",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "15,000 sq ft with public sewer. 20,000 sq ft without."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "550-10 Table 4-1, Minimum front yard, R-C",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Or the established building line if deeper."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "550-10 Table 4-1, Minimum side yard, R-C",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft aggregate, 15 ft minimum."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "550-10 Table 4-1, Minimum rear yard, R-C",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "550-10 Table 4-1, Maximum building coverage, R-C",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "25% for a 15,000 sq ft lot, 20% for a 20,000 sq ft lot."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "550-10 Table 4-1, Maximum building height, R-C",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building: 15 ft (550-40A)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "550-33A Table 8-1",
+        "url": "https://ecode360.com/33162493",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "No ADU row. See parking."
+      }
+    },
+    "R-C-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "550-10 Table 4-1, Minimum lot size, R-C-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "10,000 sq ft with public sewer. 20,000 sq ft without."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "550-10 Table 4-1, Minimum front yard, R-C-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Or the established building line if deeper."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "550-10 Table 4-1, Minimum side yard, R-C-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "35 ft aggregate, 15 ft minimum."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "550-10 Table 4-1, Minimum rear yard, R-C-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "550-10 Table 4-1, Maximum building coverage, R-C-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "550-10 Table 4-1, Maximum building height, R-C-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building: 15 ft (550-40A)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "550-33A Table 8-1",
+        "url": "https://ecode360.com/33162493",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "No ADU row. See parking."
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 6500,
+        "section": "550-10 Table 4-1, Minimum lot size, R-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "550-10 Table 4-1, Minimum front yard, R-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Or the established building line if deeper."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "550-10 Table 4-1, Minimum side yard, R-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "25 ft aggregate, 10 ft minimum."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "550-10 Table 4-1, Minimum rear yard, R-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "550-10 Table 4-1, Maximum building coverage, R-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "550-10 Table 4-1, Maximum building height, R-1",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building: 15 ft (550-40A)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "550-33A Table 8-1",
+        "url": "https://ecode360.com/33162493",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "No ADU row. See parking."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "550-10 Table 4-1, Minimum lot size, R-2",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "550-10 Table 4-1, Minimum front yard, R-2",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Or the established building line if deeper."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "550-10 Table 4-1, Minimum side yard, R-2",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "22 ft aggregate, 10 ft minimum."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "550-10 Table 4-1, Minimum rear yard, R-2",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "550-10 Table 4-1, Maximum building coverage, R-2",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "550-10 Table 4-1, Maximum building height, R-2",
+        "url": "https://ecode360.com/33162029",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building: 15 ft (550-40A)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "550-33A Table 8-1",
+        "url": "https://ecode360.com/33162493",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "No ADU row. See parking."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "550-15D Table 4-2, Minimum lot size, Single-Family Detached Dwelling",
+        "url": "https://ecode360.com/33162073",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached. Semidetached: 3,000 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "550-15D Table 4-2, Minimum front yard, Single-Family Detached Dwelling",
+        "url": "https://ecode360.com/33162073",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Or the established building line if deeper."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "550-15D Table 4-2, Minimum side yard, Single-Family Detached Dwelling",
+        "url": "https://ecode360.com/33162073",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached: 22 ft aggregate, 10 ft minimum. Semidetached: 10 ft."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "550-15D Table 4-2, Minimum rear yard, Single-Family Detached Dwelling",
+        "url": "https://ecode360.com/33162073",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "550-15D Table 4-2, Maximum building coverage, Single-Family Detached Dwelling",
+        "url": "https://ecode360.com/33162073",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached 30%. Semidetached 40%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "550-15D Table 4-2, Maximum building height, Single-Family Detached Dwelling",
+        "url": "https://ecode360.com/33162073",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Accessory building: 15 ft (550-40A)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "550-33A Table 8-1",
+        "url": "https://ecode360.com/33162493",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "No ADU row. See parking."
+      },
+      "setback_side_semi_ft": {
+        "value": 10,
+        "section": "550-15D Table 4-2, Single-Family Semidetached Dwelling, Minimum side yard",
+        "url": "https://ecode360.com/33162073",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    }
+  }
+}
