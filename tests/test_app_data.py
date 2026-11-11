@@ -4,10 +4,14 @@ from pathlib import Path
 
 APP = Path(__file__).resolve().parents[1] / "app" / "public" / "data"
 
-TRACT_COLS = {"GEOID", "growth_before", "growth_after", "trend_change", "trend_group",
-              "rent_est", "cost_month", "pays",
-              "lots_total", "lots_fit", "lots_fit_keep_trees", "tree_loss_m2"}
-TOWN_COLS = {"GEOID", "adu_rule"} | {f"adus_{k}_{r}" for k in ("low", "mid", "high") for r in ("current", "hb2186")}
+# The columns the site reads (app/build_data.py TRACT_KEEP). The growth rates themselves stay in
+# data/processed/trends_tract.csv: the site maps growth after 2019 (pop_after ...) with margin-of-error flags.
+TRACT_COLS = {"GEOID", "trend_group", "rent_est", "cost_month", "pays", "rent_b1",
+              "lots_total", "lots_fit", "lots_fit_keep_trees",
+              "pop_after", "units_after", "rent_after", "pop_after_moe", "units_after_moe", "rent_after_moe",
+              "pop_24", "homes_24", "rent_24"}
+TOWN_COLS = {"GEOID", "adu_rule"} | {f"adus_{k}_{r}" for k in ("low", "mid", "high") for r in ("current", "hb2186", "sb1346")}
+COUNTY_COLS = {"GEOID", "NAME", "tracts", "tracts_pays_yes", "adus_mid_hb2186"}
 LOT_COLS = {"lot_id", "lon", "lat", "lot_m2", "open_m2", "tree_m2", "fits", "fits_keep_trees"}
 
 
@@ -22,6 +26,12 @@ def test_tracts():
     assert TRACT_COLS <= set(p), TRACT_COLS - set(p)
     assert all(f["properties"]["GEOID"].startswith("42") for f in feats)
     assert {f["properties"].get("pays") for f in feats} <= {"yes", "maybe", "no", None}
+
+
+def test_counties():
+    feats = load("counties.geojson")["features"]
+    assert len(feats) == 67
+    assert COUNTY_COLS <= set(feats[0]["properties"])
 
 
 def test_towns():
