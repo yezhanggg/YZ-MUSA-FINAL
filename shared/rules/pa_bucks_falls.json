@@ -4,7 +4,7 @@
     "instrument": "Code of the Township of Falls (Bucks County), Chapter 209 Zoning, with Tables 1 and 1A (209 Attachments 1 and 2), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 (code FA0549) dated 2021-08-16. New Laws lists 19 ordinances from 2021-10-18 to 2026-10-26. The only Chapter 209 items are two zoning map amendments (Ord. 2021-16 and 2026-3, not codified map changes). No zoning text amendment is listed. The code is old, so the township may hold text amendments that eCode360 has not received.",
+    "status_detail": "eCode360 (code FA0549) dated 2021-08-16. New Laws lists 19 ordinances from 2021-10-18 to 2026-10-26. The only Chapter 209 items are two zoning map amendments (Ord. 2021-16 and 2026-3, not codified map changes). No zoning text amendment is listed. The code is old, so the township may hold text amendments that eCode360 has not received. On 2026-07-27 the Supervisors adopted a resolution declaring part of the zoning ordinance substantively invalid to start a municipal curative amendment on data centers, with amendments due within 180 days, about late January 2027 (township news, 2026-07-28). It targets data centers, not residential districts. Check for the curative ordinance.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/7125081",
@@ -21,6 +21,7 @@
       "https://ecode360.com/13123817",
       "https://ecode360.com/attachment/264886/FA0549-209a%20Table%201%20Single-Family.pdf",
       "https://ecode360.com/attachment/264886/FA0549-209b%20Table%201A%20HR%20District.pdf",
+      "https://fallstwp.com/resources/news/article/?id=11671",
       "https://ecode360.com/print/FA0549?guid=7125081",
       "https://ecode360.com/FA0549/laws",
       "https://ecode360.com/FA0549"
@@ -38,7 +39,10 @@
       "A single-family detached dwelling has 'only one dwelling unit from ground to roof' (209-5). LR, LMR, MR, MHR and NCR list only the single-family detached dwelling as a housing type",
       "HR allows a two-family (twin or duplex) dwelling by right on an 8,000 sq ft lot, 80 ft wide, with a density cap of 10 units per gross acre (209-16B(11), 209-16E, Table 1A)",
       "Accessory buildings up to 500 sq ft and 16 ft high: 4 ft from side and rear lines and 10 ft from other buildings on the lot (Table 1). Larger ones 'shall meet the area and dimensional requirements for principal buildings' (209-12E(6))",
-      "Accessory buildings stand in the side or rear yard only (209-34E)",
+      "Accessory buildings stand in the side or rear yard only (209-34E). An accessory building attached to the house is part of the principal building and meets its yards (209-34A). No permit for an accessory building before the house (209-34B)",
+      "HR accessory buildings: 5 ft from side and rear lines and 20 ft between buildings (Table 1A)",
+      "OSP lists 'Other uses of the same general nature' (209-12.1B). No such clause in LR, LMR, MR, MHR or NCR",
+      "500 sq ft and 16 ft are thresholds, not caps. A larger accessory building meets the principal building rules, up to 30 ft",
       "eCode360 text dates from 2021-08-16. Ask the township for any zoning text amendment adopted since then"
     ],
     "notes": "Zoning office: Falls Township Code Enforcement and Zoning. Township site not opened. Searched Chapter 209 (full print view) for: accessory dwelling, accessory apartment, in-law, mother-in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, secondary dwelling, second dwelling, accessory family, accessory residential, accessory unit, au pair, servant, conversion, kitchen. No ADU provision. Tables are PDF attachments, read on screen."
@@ -86,7 +90,7 @@
           "districts": [
             "HR"
           ],
-          "conditions": "Lot 8,000 sq ft, 50 ft frontage, 80 ft width. Front 25, sides 10 each, rear 35 ft. Coverage 30%. Density cap 10 units per gross acre.",
+          "conditions": "Lot 8,000 sq ft (Table 1A), 50 ft frontage, 80 ft width. The 209-16E cap of 10 units per gross acre would ask 8,712 sq ft for two units if read per lot. Front 25, sides 10 each, rear 35 ft. Coverage 30%. HR accessory buildings 5 ft from side and rear lines and 20 ft from other buildings.",
           "min_lot_sqft": 8000,
           "section": "209-16B(11), 209-16E, Table 1A",
           "url": "https://ecode360.com/attachment/264886/FA0549-209b%20Table%201A%20HR%20District.pdf"
