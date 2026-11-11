@@ -951,7 +951,7 @@
       "pop_rank": 38,
       "file": "pa_cumberland_hampden",
       "batch": 6,
-      "status": "todo",
+      "status": "drafted",
       "checked_on": null,
       "code_host": "municode",
       "code_url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO",
@@ -961,7 +961,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "No ADU rule. Open: whether 1726 (uses not permitted anywhere, conditional use) reaches a second unit, since two-family is listed in R-T. Parts 9 to 16-A not read in full."
     },
     {
       "geoid": "4204513208",

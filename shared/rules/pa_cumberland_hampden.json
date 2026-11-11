@@ -1,0 +1,371 @@
+{
+  "provenance": {
+    "jurisdiction": "Hampden township",
+    "instrument": "Code of Ordinances of Hampden Township, Chapter 27 Zoning, as published on Municode",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Municode shows 'VERSION: SEP 8, 2026 (CURRENT)'. Read in a browser, part by part: Parts 2, 6, 7, 8, 17, 18, 19 and 20. Parts 9 to 16-A (office, commercial, industrial, PRD, mixed-use overlay) were not read in full. Ordinances adopted after the Municode version were not checked.",
+    "effective_date": null,
+    "source_urls": [
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT2DE_S202DE",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT6REUN",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU_S702PEUS",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT8RETO",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT8RETO_S802PEUS",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE_S1726USNOSPRE",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE_S1729NUPRUSPELO",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT18SPST",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT19COUS",
+      "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT20OREPALOUN",
+      "https://www.hampdentownship.us/township_departments/community_development/index.php",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Cumberland",
+    "municipality_type": "township",
+    "geoid": "4204132296",
+    "code_host": "municode",
+    "code_url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO",
+    "code_current_through": "2026-09-08",
+    "code_current_through_note": "Municode: VERSION: SEP 8, 2026 (CURRENT).",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law rule. R-C and R-S list single-family detached dwellings and accessory uses 'and no other' (602, 702)",
+      "Only one principal use is allowed on a lot in R-C, R-S and R-T (1729)",
+      "A use 'clearly not permitted by this Chapter in any zoning district' may be permitted as a conditional use by the Board of Commissioners (1726). Reading: a second unit may be heard this way. Two-family dwellings are listed in R-T, so the Board may find the use is listed elsewhere. Then a use variance",
+      "Two-family detached dwellings are permitted in R-T at 6,000 sq ft per dwelling unit with public water and sewer (802, 805)",
+      "A conversion apartment is defined (202) but the district parts read list none for R-C, R-S or R-T. Section 1801 applies only 'If otherwise allowed as a permitted use'",
+      "Accessory buildings may not be in a required yard except the rear yard, 10 ft from the rear lot line (1810.5)",
+      "Parking: two spaces for each family unit in a one- or two-family dwelling (2002.A(1))"
+    ],
+    "notes": "Zoning office: Community Development Department, https://www.hampdentownship.us/township_departments/community_development/index.php. Searched Parts 2, 6, 7, 8, 17, 18 and 19 for: accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, guest house, servant, caretaker, second dwelling, living quarters, conversion, short-term. Only hits: the conversion apartment definition and a caretaker's residence inside a conditional use standard in Part 19."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "202, 602, 702, 802",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT2DE_S202DE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, elder, ECHO, guest house, servant, caretaker, second dwelling."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "602, 702, 802",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU_S702PEUS",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "conditional_use",
+      "section": "1726",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE_S1726USNOSPRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Any use that is clearly not permitted by this Chapter in any zoning district ... may be permitted as a conditional use'. Reading: may reach a second unit. Board of Commissioners hearing."
+    },
+    "unlisted_use_path": {
+      "value": "conditional_use",
+      "section": "1726",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE_S1726USNOSPRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Unlisted uses by conditional use after Planning Commission review, under the Part 19 standards."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "702, 1729, MPC 910.2",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU_S702PEUS",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "If the Board finds the use is listed elsewhere (two-family in R-T) or the lot fails a rule, a use variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-T"
+          ],
+          "conditions": "6,000 sq ft of lot per dwelling unit with public water and sewer (7,000 with sewer only). 60 ft frontage on an interior lot. Two parking spaces per family unit.",
+          "min_lot_sqft": 12000,
+          "section": "802D, 805",
+          "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT8RETO"
+        }
+      ],
+      "section": "802, 805",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT8RETO",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No two-family or conversion use is listed in R-C or R-S."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "602, 702, 802",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU_S702PEUS",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "'only one principal use shall be allowed on a lot of land' in R-C, R-S and R-T. A second house as a principal use is barred.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-C",
+            "R-S",
+            "R-T"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "1729",
+          "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE_S1729NUPRUSPELO"
+        }
+      ],
+      "section": "1729",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE_S1729NUPRUSPELO",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "One principal use per lot."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "1726",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE_S1726USNOSPRE",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Unlisted-use route: no form is written, so none is excluded."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "704, 1810",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No separate accessory building height found in Parts 7 or 18. The 35 ft building height applies."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "1810.5.A",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT18SPST",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory buildings may not be in a required side yard. The district side yard applies."
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "1810.5.A",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT18SPST",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'shall not be located within any required yard area with the exception of the rear yard, in which case it shall be not less than ten feet from the rear lot line'."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "1810",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT18SPST",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No distance between buildings found."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "1810.5.A",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT18SPST",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Front and side district yards bind accessory buildings. The rear yard does not, 10 ft from the line."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "704",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'No building shall be erected to a height in excess of 35 feet'."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "202 'Family'",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT2DE_S202DE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule. A family lives in one dwelling unit and 'may include domestic servants and gratuitous guests'."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not found in the parts read."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "1726",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT17GERE_S1726USNOSPRE",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No count. The code lists no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "2002.A(1)",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT20OREPALOUN",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "One- or two-family dwelling: two spaces for each family unit. If the second unit counts as a family unit, four in total.",
+      "section": "2002.A(1)",
+      "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT20OREPALOUN",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-S": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "705.A",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "With public water and sewer, 90 ft at the street, 100 ft at the building line. 12,500 with sewer only."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "707.A",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "707.B",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Ten feet minimum and a total of 30 feet for the two side yards'. Accessory buildings may not be in it (1810.5)."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "707.C",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Principal building. Accessory buildings 10 ft from the rear line (1810.5)."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "706",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "'maximum lot coverage ... 30 percent of the total area of said lot' less stormwater areas."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "704",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT7REBU",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-C": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "605.A",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT6REUN",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "With public sewer. 40,000 without."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "606",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT6REUN",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "'maximum lot coverage ... 20 percent'."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "604",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT6REUN",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-T": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "805.1",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT8RETO",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. Two-family detached 6,000 per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "808.A",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT8RETO",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "May drop to 15 ft with rear garages and other conditions."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "804",
+        "url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO_PT8RETO",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    }
+  }
+}
