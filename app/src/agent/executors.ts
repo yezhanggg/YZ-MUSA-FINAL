@@ -145,10 +145,14 @@ function rulesOf(w: TownProps | null) {
   };
 }
 
-const notFound = (id: string) => ({ error: `Lot ${id} is not in the loaded data. Select it on the map or search near it first.` });
+const notLoaded = (id: string) => ({ error: `Lot ${id} is not in the loaded data. Select it on the map or search near it first.` });
+
+/** A lot id the old pilot tools do not know may be a lot record: then say which tools read it. */
+const RECORD_HINT = 'This is a lot record. Use get_lot_facts, test_unit_on_lot, explain_limit or lot_money for it, and get_area_stats for its tract.';
 
 export function makeExecutors(p: DataProvider) {
   const site = async (id?: string) => (id ? await p.lotById(id) : await p.selected());
+  const notFound = async (id: string) => ((await p.lots?.lotById(id)) ? { error: `Lot ${id} is not in the older pilot lot files. ${RECORD_HINT}` } : notLoaded(id));
   const lots = p.lots ? makeLotExecutors(p.lots) : {};
   return {
     ...lots,

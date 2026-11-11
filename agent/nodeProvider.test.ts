@@ -39,6 +39,13 @@ describe.skipIf(!existsSync(SMOKE))('node provider on lot records', () => {
     expect(((await ex.get_area_stats({ level: 'county' })) as J).geoid).toBe('42101');
   });
 
+  it('the older site tools point a lot record id to the lot tools', async () => {
+    const rec = await first();
+    const r = (await makeExecutors(nodeProvider()).get_site({ lot_id: rec.lot.id })) as J;
+    expect(String(r.error)).toMatch(/lot record\. Use get_lot_facts/);
+    expect(String(((await makeExecutors(nodeProvider()).get_site({ lot_id: '42045-0' })) as J).error)).toMatch(/not in the loaded data/);
+  });
+
   it('get_rules uses the selected town, and errors when there is none', async () => {
     const town = (await makeExecutors(nodeProvider({ townGeoid: '4210160000' })).get_rules({})) as J;
     expect(town.town).toBe('Philadelphia city');
