@@ -136,8 +136,34 @@ def assemble(lot_ids, counts: np.ndarray, px_sqft: float, city: str):
 
 
 # ---------------------------------------------------------------- model vs raster
-def compare(city: str, model_file: Path, min_covered: float = 0.9) -> dict:
-    """Per-lot agreement of the model file with the raster file: MAE in points and r, overall and by lot type."""
+def lots_in_boxes(city: str, roles: tuple[str, ...]) -> set[str]:
+    """Lot ids whose center falls in a city box of these roles (the model saw those labels in training)."""
+    import geopandas as gpd
+    import rasterio
+    from shapely.geometry import box as sbox
+    from shapely.ops import unary_union
+
+    from pipeline.vision.city import city_boxes, naip_dir
+
+    shapes = []
+    for r in roles:
+        for b in city_boxes(city, r):
+            with rasterio.open(naip_dir(city) / f"{b}.tif") as s:
+                shapes.append(gpd.GeoSeries([sbox(*s.bounds)], crs=s.crs).to_crs(4326).iloc[0])
+    if not shapes:
+        return set()
+    import pandas as pd
+
+    lots = pd.read_parquet(data.data_root() / "processed" / city / "lots.parquet", columns=["lot_id", "lon", "lat"]).dropna()
+    pts = gpd.GeoSeries(gpd.points_from_xy(lots.lon, lots.lat), crs=4326)
+    return set(lots.lot_id[pts.within(unary_union(shapes)).values])
+
+
+def compare(city: str, model_file: Path, min_covered: float = 0.9, out_name: str = "cover_compare.json") -> dict:
+    """Per-lot agreement of the model file with the raster file: MAE in points and r, overall and by lot type.
+
+    Lots inside the city train and val boxes are left out: the model was tuned on those labels.
+    """
     import pandas as pd
 
     root = data.data_root() / "processed" / city
@@ -146,6 +172,9 @@ def compare(city: str, model_file: Path, min_covered: float = 0.9) -> dict:
     lots = pd.read_parquet(root / "lots.parquet", columns=["lot_id", "housing_type"])
     m = ras.merge(mod, on="lot_id", suffixes=("_r", "_m")).merge(lots, on="lot_id", how="left")
     m = m[(m.raster_covered_share >= min_covered) & (m.pixels_m >= 20)]
+    seen = lots_in_boxes(city, ("train", "val"))
+    n_seen = int(m.lot_id.isin(seen).sum())
+    m = m[~m.lot_id.isin(seen)]
     m["imperv_m"] = m.building_share_m + m.hard_surface_share_m
     m["veg_m"] = m.tree_share_m + m.open_share_m
     m["veg_r"] = m.tree_share_r + m.open_share_r
@@ -164,7 +193,8 @@ def compare(city: str, model_file: Path, min_covered: float = 0.9) -> dict:
 
     out = {"city": city, "model_file": str(model_file), "min_raster_covered": min_covered, "all": stats(m),
            "by_housing_type": {t: stats(g) for t, g in m.groupby("housing_type") if len(g) >= 50}}
-    (root / "cover_compare.json").write_text(json.dumps(out, indent=1))
+    out["left_out_in_train_val_boxes"] = n_seen
+    (root / out_name).write_text(json.dumps(out, indent=1))
     return out
 
 
@@ -209,6 +239,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("city", choices=sorted(CITIES))
     ap.add_argument("--model", type=Path, help="model-based cover file for compare")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--out-name", default="cover_compare.json")
     a = ap.parse_args(argv)
     if a.action == "build":
         print(build(a.city, a.workers))
@@ -216,7 +247,7 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(finalize(a.city), indent=1))
     else:
         model = a.model.expanduser() if a.model else data.data_root() / "processed" / a.city / "cover.parquet"
-        print(json.dumps(compare(a.city, model), indent=1))
+        print(json.dumps(compare(a.city, model, out_name=a.out_name), indent=1))
     return 0
 
 
