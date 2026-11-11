@@ -185,6 +185,19 @@ Detector support data:
 
 Test boxes are in Cumberland and Centre counties. Validation boxes are in 7 other counties. No county is in two roles. The images and labels are read from the course checkout, not downloaded by this pipeline.
 
+### City land cover rasters
+
+Philadelphia and Allegheny County are outside the Chesapeake counties. `pipeline/vision/city.py` builds city label sets from two 2 ft, 7 class rasters made by the University of Vermont Spatial Analysis Lab (tree canopy, grass and shrub, bare earth, water, buildings, roads, other paved). The label sets were being built on 2026-11-11 and are not scored yet.
+
+<!-- source: pipeline/vision/city.py docstring, file listing of ~/musa-drive/raw/landcover/ on 2026-11-11 -->
+
+| City | Raster | File on the drive | Coverage |
+|---|---|---|---|
+| Philadelphia | Philadelphia Land Cover 2018 | `raw/landcover/philadelphia/landcover_2018.tif` | Whole city |
+| Pittsburgh | High resolution land cover for Pittsburgh watersheds 2019 (2019 NAIP, 2015 lidar) | `raw/landcover/pittsburgh/Allegheny3riversPA_2019.zip`, `meta_2019.xml` | About the south and central part of the city |
+
+The license or terms of both rasters are not recorded in the pipeline. NAIP 2022 tiles for these boxes are read from the Microsoft Planetary Computer into `raw/naip/<city>/`.
+
 Known limits:
 
 - Labels are 1 m and are put on the 0.6 m image grid, so class edges are uncertain by about one pixel.

@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 from jsonschema import Draft202012Validator
 
@@ -21,8 +22,9 @@ sys.path.insert(0, str(ROOT))
 from pipeline import rules  # noqa: E402
 
 
-def load(rel: str) -> dict:
-    return json.loads((ROOT / rel).read_text())
+def load(rel: str) -> dict[str, Any]:
+    data: dict[str, Any] = json.loads((ROOT / rel).read_text())
+    return data
 
 
 def schema_errors(rel: str) -> list[str]:
@@ -45,8 +47,10 @@ def main() -> int:
 
     sch = load("shared/assumptions.schema.json")
     data = load("shared/assumptions.json")
-    problems += [f"shared/assumptions.json: {'/'.join(map(str, e.absolute_path)) or '(root)'}: {e.message}"
-                 for e in Draft202012Validator(sch).iter_errors(data)]
+    problems += [
+        f"shared/assumptions.json: {'/'.join(map(str, e.absolute_path)) or '(root)'}: {e.message}"
+        for e in Draft202012Validator(sch).iter_errors(data)
+    ]
 
     for p in problems:
         print(p)

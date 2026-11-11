@@ -1,0 +1,34 @@
+# Checks run on the files in each commit. Install once with: pre-commit install
+# Run on everything with: pre-commit run --all-files
+exclude: ^(site/|node_modules/|dist/|_freeze/)
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.4
+    hooks:
+      - id: ruff
+        # Report only. Run `ruff check --fix` by hand when the tree is quiet.
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=5120]
+      - id: check-json
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
+
+  - repo: local
+    hooks:
+      - id: push-guard
+        name: no .env, no-push/ or files over 5 MB
+        entry: python .github/scripts/guard.py --files
+        language: system
+        pass_filenames: true

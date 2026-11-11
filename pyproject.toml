@@ -76,10 +76,6 @@ pretty = false
 module = ["pipeline", "pipeline.*"]
 strict = true
 
-[[tool.mypy.overrides]]
-module = ["shapely.*", "geopandas.*", "pyproj.*", "pyarrow.*", "rasterio.*", "torch.*", "torchvision.*"]
-ignore_missing_imports = true
-
 # ---------------------------------------------------------------- pytest
 
 [tool.pytest.ini_options]

@@ -176,7 +176,7 @@ Where the front setback is not confirmed (the code uses a contextual front, "mat
 
 ## Philadelphia local reform: Bill 250042
 
-- Instrument: Bill No. 250042, amending 14-604(11) (Councilmember Gauthier)
+- Instrument: Bill No. 250042, amending 14-604(11)
 - Status: pending. Legistar status IN COMMITTEE, in control of the Committee on Rules. Only action: introduced and referred 1/30/2025. Checked 2026-11-10.
 - Effective date: none recorded
 - File checked on: 2026-11-10

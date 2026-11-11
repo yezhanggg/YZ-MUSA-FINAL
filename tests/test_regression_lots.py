@@ -50,14 +50,23 @@ def test_lot_matches_expected(case: dict[str, Any]) -> None:
     if lines:
         head = f"{case['id']} ({case['lot'].get('address')}; {', '.join(case['tags'][:5])})"
         detail = "\n    ".join(lines)
-        pytest.fail(f"{head} moved:\n    {detail}\n"
-                    "If the change is intended: python tests/regression/make_cases.py --update-expected",
-                    pytrace=False)
+        pytest.fail(
+            f"{head} moved:\n    {detail}\n"
+            "If the change is intended: python tests/regression/make_cases.py --update-expected",
+            pytrace=False,
+        )
 
 
 def test_compare_tolerance() -> None:
-    exp = {"scenarios": {"today": {"buildable_keep_sqft": 1000.0, "allowed": True,
-                                   "types": {"detached_new": {"approval": "by_right", "limiting": None}}}}}
+    exp = {
+        "scenarios": {
+            "today": {
+                "buildable_keep_sqft": 1000.0,
+                "allowed": True,
+                "types": {"detached_new": {"approval": "by_right", "limiting": None}},
+            }
+        }
+    }
     near = json.loads(json.dumps(exp))
     near["scenarios"]["today"]["buildable_keep_sqft"] = 1009.0
     assert mc.compare(exp, near) == []

@@ -36,8 +36,8 @@ EXPECTED_PATH = HERE / "expected_50.json"
 SEED = 6950
 PER_PLACE = 25
 PLACES = ("pittsburgh", "philadelphia")
-AREA_REL_TOL = 0.01      # areas within 1 percent
-AREA_ABS_TOL = 1.0       # and never closer than 1 sq ft (rounding)
+AREA_REL_TOL = 0.01  # areas within 1 percent
+AREA_ABS_TOL = 1.0  # and never closer than 1 sq ft (rounding)
 # Columns never stored, even if a table carries them. Sale and value columns are not needed by the
 # rules or the fit, so they stay out too.
 BANNED_PARTS = ("owner", "mailing", "mail_", "taxpayer")
@@ -46,14 +46,32 @@ TINY_SQFT = {"pittsburgh": 1200.0, "philadelphia": 700.0}
 LARGE_SQFT = {"pittsburgh": 15000.0, "philadelphia": 8000.0}
 MAX_POOL_SQFT = 80000.0  # very large parcels are slow and not typical homes
 # Tags the set must cover where the data has them. Weight 3 in the greedy pick, other tags 1.
-KEY_TAGS = ("alley_rear", "corner", "twin_split", "steep_slope", "overlay", "historic", "tiny", "large",
-            "flag_lot", "garage", "no_house", "flood", "landslide", "not_allowed_today",
-            "fits_today", "fits_local_reform", "fits_state_reform", "two_units_state_reform")
+KEY_TAGS = (
+    "alley_rear",
+    "corner",
+    "twin_split",
+    "steep_slope",
+    "overlay",
+    "historic",
+    "tiny",
+    "large",
+    "flag_lot",
+    "garage",
+    "no_house",
+    "flood",
+    "landslide",
+    "not_allowed_today",
+    "fits_today",
+    "fits_local_reform",
+    "fits_state_reform",
+    "two_units_state_reform",
+)
 # Smaller weights for tags that have many values, so they do not crowd out the key tags.
 PREFIX_WEIGHT = {"zone:": 0.5, "overlay:": 0.25, "type:": 1.5, "limiting:": 1.5, "path:": 1.0}
 
 
 # ---------------------------------------------------------------- json helpers
+
 
 def _safe(v: Any) -> Any:
     """Plain JSON value: numpy scalars to Python, NaN to None, bytes (WKB) to hex, dates to text."""
@@ -99,13 +117,19 @@ def _write_json(path: Path, obj: Any) -> None:
 
 # ---------------------------------------------------------------- running one case
 
+
 def ctx_for(place_name: str) -> Any:
     """The builder's Ctx for a place, with fixed dates so outputs do not depend on the drive."""
     from pipeline import build_lots as bl
 
     place = bl.get_place(place_name)
-    kw: dict[str, Any] = {"place": place.name, "county_fips": place.county_fips, "crs": place.crs,
-                          "data_version": "regression", "data_dates": {}}
+    kw: dict[str, Any] = {
+        "place": place.name,
+        "county_fips": place.county_fips,
+        "crs": place.crs,
+        "data_version": "regression",
+        "data_dates": {},
+    }
     for f in dataclasses.fields(bl.Ctx):
         if f.name not in kw and hasattr(place, f.name):
             kw[f.name] = getattr(place, f.name)
@@ -127,7 +151,7 @@ def run_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
     streets = bl.StreetIndex(srows, ctx.way_types)
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore", "invalid value encountered", RuntimeWarning)
-        return bl.build_lot(r, brows, streets.near(r["geometry"]), ctx)  # type: ignore[no-any-return]
+        return bl.build_lot(r, brows, streets.near(r["geometry"]), ctx)
 
 
 def summarize(rec: dict[str, Any]) -> dict[str, Any]:
@@ -150,16 +174,25 @@ def summarize(rec: dict[str, Any]) -> dict[str, Any]:
         types = {}
         for t in sorted(set(by_type) | set(fits)):
             f = fits.get(t) or {}
-            types[t] = {"allowed": t in allowed_types, "approval": by_type.get(t),
-                        "fits": f.get("fits"), "largest_sqft": f.get("largest_sqft"),
-                        "limiting": f.get("limiting")}
-        out["scenarios"][s] = {"allowed": bool(rules.get("allowed")), "approval_path": rules.get("approval_path"),
-                               "buildable_keep_sqft": b.get("keep_sqft"), "buildable_clear_sqft": b.get("clear_sqft"),
-                               "types": types}
+            types[t] = {
+                "allowed": t in allowed_types,
+                "approval": by_type.get(t),
+                "fits": f.get("fits"),
+                "largest_sqft": f.get("largest_sqft"),
+                "limiting": f.get("limiting"),
+            }
+        out["scenarios"][s] = {
+            "allowed": bool(rules.get("allowed")),
+            "approval_path": rules.get("approval_path"),
+            "buildable_keep_sqft": b.get("keep_sqft"),
+            "buildable_clear_sqft": b.get("clear_sqft"),
+            "types": types,
+        }
     return out
 
 
 # ---------------------------------------------------------------- comparing
+
 
 def _is_area(key: str) -> bool:
     return key.endswith("_sqft")
@@ -227,12 +260,19 @@ def update_expected() -> int:
     cases = load_cases()
     got = run_all(cases)
     errors = [k for k, v in got.items() if "error" in v]
-    _write_json(EXPECTED_PATH, {
-        "meta": {"generated": dt.date.today().isoformat(), "code_hash": code_hash(), "n": len(got),
-                 "tolerance": {"area_rel": AREA_REL_TOL, "area_abs_sqft": AREA_ABS_TOL},
-                 "note": "Refresh with: python tests/regression/make_cases.py --update-expected"},
-        "lots": got,
-    })
+    _write_json(
+        EXPECTED_PATH,
+        {
+            "meta": {
+                "generated": dt.date.today().isoformat(),
+                "code_hash": code_hash(),
+                "n": len(got),
+                "tolerance": {"area_rel": AREA_REL_TOL, "area_abs_sqft": AREA_ABS_TOL},
+                "note": "Refresh with: python tests/regression/make_cases.py --update-expected",
+            },
+            "lots": got,
+        },
+    )
     print(f"wrote {EXPECTED_PATH.relative_to(ROOT)}: {len(got)} lots, {len(errors)} errors")
     for k in errors:
         print(f"  {k}: {got[k]['error']}")
@@ -257,28 +297,40 @@ def show_diff() -> int:
 
 # ---------------------------------------------------------------- picking lots (needs the drive)
 
-def _tags(place: str, r: dict[str, Any], rec: dict[str, Any], row: dict[str, Any], rare_overlay: set[str]
-          ) -> list[str]:
+
+def _tags(place: str, r: dict[str, Any], rec: dict[str, Any], row: dict[str, Any], rare_overlay: set[str]) -> list[str]:
     from pipeline import build_lots as bl
 
     lot = rec["lot"]
     tags = [f"type:{r.get('housing_type')}", f"zone:{rec['zoning']['district']}"]
     area = float(lot["area_sqft"])
     flags = rec["zoning"]["flags"]
-    tags += [t for t, on in (
-        ("alley_rear", lot.get("alley")), ("corner", lot.get("corner")), ("flag_lot", lot.get("flag_lot")),
-        ("no_street_edge", not lot.get("street_edge")),
-        ("twin_split", bool(r.get("main_bldg_split"))),
-        ("steep_slope", flags.get("steep_slope")), ("landslide", flags.get("landslide")),
-        ("flood", flags.get("flood")), ("historic", flags.get("historic")),
-        ("overlay", any(o in rare_overlay for o in bl.overlays_of(r))),
-        ("tiny", area < TINY_SQFT[place]), ("large", area > LARGE_SQFT[place]),
-        ("garage", row.get("garage_present")), ("no_house", row.get("n_buildings", 0) == 0
-                                                 or "no house outline on this lot" in rec["quality"]["assumptions"]),
-        ("not_allowed_today", not row.get("allowed_today")),
-        ("reform_changes", row.get("approval_detached_today") != row.get("approval_detached_state_reform")),
-        ("assumed_setback", bool(rec["rules"]["today"].get("assumed"))),
-    ) if on]
+    tags += [
+        t
+        for t, on in (
+            ("alley_rear", lot.get("alley")),
+            ("corner", lot.get("corner")),
+            ("flag_lot", lot.get("flag_lot")),
+            ("no_street_edge", not lot.get("street_edge")),
+            ("twin_split", bool(r.get("main_bldg_split"))),
+            ("steep_slope", flags.get("steep_slope")),
+            ("landslide", flags.get("landslide")),
+            ("flood", flags.get("flood")),
+            ("historic", flags.get("historic")),
+            ("overlay", any(o in rare_overlay for o in bl.overlays_of(r))),
+            ("tiny", area < TINY_SQFT[place]),
+            ("large", area > LARGE_SQFT[place]),
+            ("garage", row.get("garage_present")),
+            (
+                "no_house",
+                row.get("n_buildings", 0) == 0 or "no house outline on this lot" in rec["quality"]["assumptions"],
+            ),
+            ("not_allowed_today", not row.get("allowed_today")),
+            ("reform_changes", row.get("approval_detached_today") != row.get("approval_detached_state_reform")),
+            ("assumed_setback", bool(rec["rules"]["today"].get("assumed"))),
+        )
+        if on
+    ]
     tags += [f"overlay:{o}" for o in bl.overlays_of(r) if o in rare_overlay]
     for s in bl.SCENARIOS:
         if row.get(f"detached_fits_{s}"):
@@ -307,13 +359,16 @@ def _pool_ids(place: str, attrs: Any, rng: Any) -> list[str]:
     zc = a["zoning"].value_counts()
     for z in zc[zc >= 30].index:
         take(a["zoning"] == z, 4)
-    num = lambda c: a[c].astype(float) if c in a else pd_zero(a)  # noqa: E731
-    take(a.get("main_bldg_split", False).fillna(False).astype(bool), 15)
+
+    def num(c: str) -> Any:
+        return a[c].astype(float) if c in a else pd_zero(a)
+
+    take(a["main_bldg_split"].fillna(False).astype(bool) if "main_bldg_split" in a else pd_zero(a) > 0, 15)
     take(num("steep_slope_share") >= 0.25, 15)
     take(num("landslide_share") >= 0.25, 8)
     take(num("flood_share") >= 0.10, 10)
-    hist = a["historic_district"].astype(str).str.lower().isin(["true", "1"]) | (
-        a["historic_district"].notna() & ~a["historic_district"].astype(str).str.lower().isin(["false", "0", "", "none", "nan"]))
+    hd = a["historic_district"].astype(str).str.lower()
+    hist = hd.isin(["true", "1"]) | (a["historic_district"].notna() & ~hd.isin(["false", "0", "", "none", "nan"]))
     if "historic_individual" in a:
         hist |= a["historic_individual"].astype(str).str.lower().isin(["true", "1"])
     take(hist, 15)
@@ -346,10 +401,28 @@ def pick_place(place_name: str, rng: Any) -> list[dict[str, Any]]:
     paths = bl.input_paths(place_name)
     have = set(pq.read_schema(paths["lots"]).names)
     lot_cols = [c for c in bl.LOT_COLUMNS if c in have and not _banned(c) and c not in DROP_COLUMNS]
-    attr_cols = [c for c in dict.fromkeys(["lot_id", "housing_type", "zoning", "overlays", "historic_district",
-                                           "historic_individual", "main_bldg_split", "steep_slope_share",
-                                           "landslide_share", "flood_share", "lot_area_sqft", "n_accessory",
-                                           "has_alley", "corner"]) if c in have]
+    attr_cols = [
+        c
+        for c in dict.fromkeys(
+            [
+                "lot_id",
+                "housing_type",
+                "zoning",
+                "overlays",
+                "historic_district",
+                "historic_individual",
+                "main_bldg_split",
+                "steep_slope_share",
+                "landslide_share",
+                "flood_share",
+                "lot_area_sqft",
+                "n_accessory",
+                "has_alley",
+                "corner",
+            ]
+        )
+        if c in have
+    ]
     attrs = pd.read_parquet(paths["lots"], columns=attr_cols)
     tracts = pd.read_parquet(processed_dir(place_name) / "lot_tracts.parquet").set_index("lot_id")["tract"]
     attrs["tract"] = attrs["lot_id"].map(tracts)
@@ -373,19 +446,26 @@ def pick_place(place_name: str, rng: Any) -> list[dict[str, Any]]:
     for b in brows_all:
         by_lot.setdefault(str(b["lot_id"]), []).append(b)
 
-    ctx = ctx_for(place_name)
-    built = []
+    built: list[dict[str, Any]] = []
     for r in lot_rows:
         geom = shapely.from_wkb(r["geometry"])
         sidx = stree.query(geom, predicate="dwithin", distance=bl.STREET_SEARCH_FT)
         s = streets.iloc[sorted(sidx)]
-        srows = [[str(k), str(t or ""), w.hex()] for k, t, w in zip(
-            s["kind"].astype(str), s["st_type"].fillna("").astype(str), shapely.to_wkb(s.geometry.to_numpy()),
-            strict=True)]
-        case = {"place": place_name,
-                "lot": {k: _safe(v) for k, v in r.items()},
-                "buildings": [{k: _safe(v) for k, v in b.items()} for b in by_lot.get(str(r["lot_id"]), [])],
-                "streets": srows}
+        srows = [
+            [str(k), str(t or ""), w.hex()]
+            for k, t, w in zip(
+                s["kind"].astype(str),
+                s["st_type"].fillna("").astype(str),
+                shapely.to_wkb(s.geometry.to_numpy()),
+                strict=True,
+            )
+        ]
+        case: dict[str, Any] = {
+            "place": place_name,
+            "lot": {k: _safe(v) for k, v in r.items()},
+            "buildings": [{k: _safe(v) for k, v in b.items()} for b in by_lot.get(str(r["lot_id"]), [])],
+            "streets": srows,
+        }
         try:
             rec, row = run_case(case)
         except Exception as e:  # noqa: BLE001
@@ -429,15 +509,31 @@ def pick() -> int:
     bad = sorted({k for k in _keys(cases) if _banned(k)})
     if bad:
         raise SystemExit(f"owner-like keys in the cases: {bad}")
-    cases = [{"id": c["id"], "place": c["place"], "tags": c["tags"], "lot": c["lot"], "buildings": c["buildings"],
-              "streets": c["streets"]} for c in cases]
-    _write_json(CASES_PATH, {
-        "meta": {"picked": dt.date.today().isoformat(), "seed": SEED, "per_place": PER_PLACE,
-                 "geometry": "WKB hex in the place's local feet CRS (Pittsburgh EPSG:2271, Philadelphia EPSG:2272)",
-                 "note": "Real lots. No owner, mailing, sale or value columns. Rebuild with: "
-                         "python tests/regression/make_cases.py --pick"},
-        "cases": cases,
-    })
+    cases = [
+        {
+            "id": c["id"],
+            "place": c["place"],
+            "tags": c["tags"],
+            "lot": c["lot"],
+            "buildings": c["buildings"],
+            "streets": c["streets"],
+        }
+        for c in cases
+    ]
+    _write_json(
+        CASES_PATH,
+        {
+            "meta": {
+                "picked": dt.date.today().isoformat(),
+                "seed": SEED,
+                "per_place": PER_PLACE,
+                "geometry": "WKB hex in the place's local feet CRS (Pittsburgh EPSG:2271, Philadelphia EPSG:2272)",
+                "note": "Real lots. No owner, mailing, sale or value columns. Rebuild with: "
+                "python tests/regression/make_cases.py --pick",
+            },
+            "cases": cases,
+        },
+    )
     size = CASES_PATH.stat().st_size
     print(f"wrote {CASES_PATH.relative_to(ROOT)}: {len(cases)} lots, {size / 1e6:.2f} MB")
     return 0

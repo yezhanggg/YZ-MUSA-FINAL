@@ -77,9 +77,10 @@ Two image models sit beside this flow. Their outputs are not in the lot records 
 | `pipeline/build_lots.py` | Lot file builder: `run`, `validate`, `stats`, `qa` |
 | `pipeline/market.py` | HUD Small Area Fair Market Rents for Pennsylvania ZIP codes |
 | `pipeline/money.py`, `shared/assumptions.json` | Cost, rent and pay-off model. Every number lives in the assumptions file |
-| `pipeline/vision/` | Land cover U-Net: labels, training, scoring |
+| `pipeline/vision/` | Land cover U-Net: labels, training, scoring, error analysis, city label sets (`city.py`) and land cover per lot (`infer_lots.py`, writes `processed/<city>/cover.parquet`) |
+| `pipeline/validation/` | Hand-label check of the lot answers: draw a sample, make labeling sheets, score hand labels against the product |
 | `musa6950/yolo/` | Object detector. Uses an AGPL library and is kept in its own folder. Only data files leave it |
-| `app/src/lib/lot/` | Browser side: load lot files, verdict, citations, build steps, report data, assistant tools |
+| `app/src/lib/lot/` | Browser side: load lot files, verdict, citations, build steps, report data, lot tools for the in-app help |
 | `app/src/lib/fitBox.ts` | Does a box fit inside the saved buildable outline (browser) |
 | `app/src/lib/money.ts` | Same money model as `pipeline/money.py`, line for line |
 | `tests/` | Python tests. Browser tests sit beside each TypeScript file |
@@ -104,6 +105,8 @@ ADU_DATA_DIR   default ~/musa-drive
 | `processed/yolo/` | Detector dataset, review pack, detections per lot |
 | `lots/<place>/` | Lot files: `detail/`, `parts/`, `index.parquet`, `app/`, `manifest.json`, `progress.jsonl`, `errors.jsonl`, `stats.json`, `qa/` |
 | `models/` | Land cover runs (one folder per run) and detector runs |
+| `raw/landcover/<city>/`, `raw/naip/<city>/` | City land cover rasters and NAIP tiles for the city label sets |
+| `validation/` | Hand-label sample, sheets, labeling pages and results |
 | `ops/logs/` | Run notes |
 
 Some exceptions read other paths:

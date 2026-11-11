@@ -21,12 +21,27 @@ MAX_BYTES = 5 * 1024 * 1024
 # Files that were committed before the 5 MB rule. Each needs a plan, not a quiet pass.
 KNOWN_LARGE = {
     "app/public/data/tracts.geojson": "tract shapes for the app, to be simplified or served from the data host",
+    "app/public/data/parcels.pmtiles": "map tiles, committed on main (c7e3dba), to move to the data host",
+    "app/public/data/lot_detail.pmtiles": "map tiles, committed on main (c7e3dba), to move to the data host",
 }
-SKIP_DIRS = {".git", "node_modules", "dist", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache",
-             ".quarto", "_freeze", ".vercel", "data", "runs", "no-push"}
+SKIP_DIRS = {
+    ".git",
+    "node_modules",
+    "dist",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".quarto",
+    "_freeze",
+    ".vercel",
+    "data",
+    "runs",
+    "no-push",
+}
 PROSE = (".md", ".qmd")
 PROSE_SKIP = ("site/", "node_modules/")
-LONG_DASH = "—"
+LONG_DASH = chr(0x2014)  # the long dash
 # Keys that name owners or their mail. owner_occupancy is a rule (must the owner live there), not owner data.
 OWNER_PARTS = ("owner", "mailing")
 OWNER_OK = {"owner_occupancy"}
@@ -34,8 +49,13 @@ OWNER_OK = {"owner_occupancy"}
 
 def repo_files() -> list[str]:
     try:
-        out = subprocess.run(["git", "ls-files", "-co", "--exclude-standard", "-z"], cwd=ROOT, check=True,
-                             capture_output=True, timeout=60).stdout.decode()
+        out = subprocess.run(
+            ["git", "ls-files", "-co", "--exclude-standard", "-z"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            timeout=60,
+        ).stdout.decode()
         files = [f for f in out.split("\0") if f]
         if files:
             return [f for f in files if (ROOT / f).is_file()]
@@ -53,8 +73,11 @@ FILES = repo_files()
 
 
 def test_no_env_files() -> None:
-    bad = [f for f in FILES if Path(f).name == ".env" or (Path(f).name.startswith(".env.")
-                                                           and Path(f).name != ".env.example")]
+    bad = [
+        f
+        for f in FILES
+        if Path(f).name == ".env" or (Path(f).name.startswith(".env.") and Path(f).name != ".env.example")
+    ]
     assert not bad, f"key files would be committed: {bad}"
 
 
@@ -62,7 +85,8 @@ def test_no_large_files() -> None:
     big = {f: (ROOT / f).stat().st_size for f in FILES}
     bad = {f: s for f, s in big.items() if s > MAX_BYTES and f not in KNOWN_LARGE}
     assert not bad, "files over 5 MB (keep data on the drive): " + ", ".join(
-        f"{f} ({s / 1e6:.1f} MB)" for f, s in sorted(bad.items()))
+        f"{f} ({s / 1e6:.1f} MB)" for f, s in sorted(bad.items())
+    )
 
 
 def test_known_large_list_is_current() -> None:
@@ -94,8 +118,9 @@ def _keys(obj: Any) -> set[str]:
 
 
 def _fixture_files() -> list[str]:
-    return [f for f in FILES if f.endswith(".json")
-            and (f.startswith("tests/") or "__fixtures__" in f or "/fixtures/" in f)]
+    return [
+        f for f in FILES if f.endswith(".json") and (f.startswith("tests/") or "__fixtures__" in f or "/fixtures/" in f)
+    ]
 
 
 def test_fixture_list_not_empty() -> None:
@@ -112,8 +137,11 @@ def test_no_owner_columns_in_fixtures(path: str) -> None:
 @pytest.mark.parametrize("name", rules.rule_names())
 def test_rule_values_have_section_and_date(name: str) -> None:
     data = rules.load_rules(name)
-    bad = [where for where, leaf in rules.iter_leaves(data)
-           if leaf.get("value") is not None and not (leaf.get("section") and leaf.get("verified_on"))]
+    bad = [
+        where
+        for where, leaf in rules.iter_leaves(data)
+        if leaf.get("value") is not None and not (leaf.get("section") and leaf.get("verified_on"))
+    ]
     assert not bad, f"{name}.json values without section or verified_on: {bad[:20]}"
 
 
