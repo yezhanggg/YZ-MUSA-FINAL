@@ -1,0 +1,377 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Makefield township",
+    "instrument": "Code of the Township of Lower Makefield, Chapter 200 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code LO1561): includes legislation through 12-17-2025. New Laws (21). Two amend Chapter 200: Ord. No. 474 (2026-08-19, conditional uses in C-2) and Ord. No. 476 (2026-09-16, definition of 'structure'). Neither adds ADUs. Read in the eCode360 print view in a browser.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/LO1561",
+      "https://ecode360.com/LO1561/laws",
+      "https://ecode360.com/LO1561/laws/LF2789555.pdf",
+      "https://ecode360.com/LO1561/laws/LF2815902.pdf",
+      "https://ecode360.com/print/LO1561?guid=11226088",
+      "https://ecode360.com/11226088",
+      "https://ecode360.com/11226104",
+      "https://ecode360.com/11226316",
+      "https://ecode360.com/11226352",
+      "https://ecode360.com/11226358",
+      "https://ecode360.com/11226363",
+      "https://ecode360.com/11226397",
+      "https://ecode360.com/11226404",
+      "https://ecode360.com/11226440",
+      "https://ecode360.com/11226497",
+      "https://ecode360.com/11227407",
+      "https://ecode360.com/11227742",
+      "https://ecode360.com/11228060",
+      "https://ecode360.com/39692441",
+      "https://www.lmt.org/departments/community-development/",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201744968",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11226088",
+    "code_current_through": "2025-12-17",
+    "code_current_through_note": "eCode360: Includes legislation through 12-17-2025. New Laws (21), two for Chapter 200 (Ord. 474 and 476), neither about dwellings.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law rule. Each residential district lists its uses 'and no other' (200-15, 200-20, 200-24, 200-28, 200-32)",
+      "R-1 and R-2 allow only single-family detached dwellings. A second unit on such a lot needs a use variance",
+      "A dwelling unit is a unit with living, sleeping, cooking, bathing and eating facilities for one family (200-7)",
+      "Two-family dwellings are a use by right in R-3 and R-4 (200-24A(4), 200-32A(5)). In R-3 they are a development type: 10-acre tract, 6,000 sq ft of net lot area per dwelling unit, 40% of the site in resource protection and open space (200-26A)",
+      "Boarding: up to two boarders in a single-family detached house by special exception in R-1, on 16,000 sq ft, with no added rooms (200-15B(10), 200-69A(3)). Boarders do not get a separate unit",
+      "Residential accessory buildings: behind the middle of the house depth, 15 ft high. 5 ft from side and rear lines under 200 sq ft, 10 ft from any line above 200 sq ft (200-69A(14)(a))",
+      "Parking: two spaces per dwelling unit for a single-family detached dwelling, 2.5 per unit for other residential uses (200-79A)",
+      "Short-term lodging is barred except owner-occupied rental of up to two bedrooms, or rental of a whole unit for 7 to 30 days, with a township license (130-3, 130-4)"
+    ],
+    "notes": "Zoning office: Community Development Department, https://www.lmt.org/departments/community-development/. Searched Chapter 200 for: accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage, guest house, servant, caretaker, secondary dwelling, accessory living, second dwelling, accessory residential, living quarters, conversion, family suite. Pending: none for dwellings on the New Laws list."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "200-7, 200-15, 200-69",
+      "url": "https://ecode360.com/11226104",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage, guest house, servant, caretaker, second dwelling, conversion."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "200-15, 200-20, 200-69",
+      "url": "https://ecode360.com/11226316",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "200-15, 200-20, MPC 910.2",
+      "url": "https://ecode360.com/11226316",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "R-1 lists uses 'and no other'. A second unit is not listed, so a use variance is the path. The code has no unlisted-use special exception."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "200-15, MPC 910.2",
+      "url": "https://ecode360.com/11226316",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (development)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Two-family dwellings as a development: minimum tract 10 acres, 6,000 sq ft of net lot area per dwelling unit, 4.5 units per acre, 40% of the site in resource protection and open space. Not a lot-by-lot option for an existing house.",
+          "min_lot_sqft": 12000,
+          "section": "200-24A(4), 200-26A",
+          "url": "https://ecode360.com/11226440"
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Use by right. Lot and tract standards of 200-34 not recorded here.",
+          "min_lot_sqft": null,
+          "section": "200-32A(5), 200-34",
+          "url": "https://ecode360.com/11226497"
+        }
+      ],
+      "section": "200-24, 200-26, 200-32",
+      "url": "https://ecode360.com/11226440",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No conversion of an existing house is listed."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "200-15, 200-20",
+      "url": "https://ecode360.com/11226316",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 200",
+      "url": "https://ecode360.com/11226088",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "Short-term lodging is barred except owner-occupied rental of up to two bedrooms, or a whole unit for 7 to 30 days, with a township license.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "130-3, 130-4",
+          "url": "https://ecode360.com/39692441"
+        },
+        {
+          "kind": "other",
+          "condition": "Residential accessory buildings stand only in side or rear yards 'behind the median line of the residential dwelling'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "200-69A(14)(a)[1]",
+          "url": "https://ecode360.com/11227742"
+        }
+      ],
+      "section": "130-3, 200-69A(14)",
+      "url": "https://ecode360.com/11227742",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Rules that reach any second unit."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "200-15, 200-20",
+      "url": "https://ecode360.com/11226316",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "200-69A(14)(a)[4]",
+      "url": "https://ecode360.com/11227742",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory rule, not an ADU rule: 'No accessory building or structure shall exceed 15 feet in height.'"
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "200-69A(14)(a)[1]",
+      "url": "https://ecode360.com/11227742",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No number. Not in front yards, and behind the median line of the house."
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "200-69A(14)(a)[3]",
+      "url": "https://ecode360.com/11227742",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Buildings over 200 sq ft 'not less than 10 feet from any property line'. 5 ft under 200 sq ft."
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "200-69A(14)(a)[3]",
+      "url": "https://ecode360.com/11227742",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as side. 5 ft under 200 sq ft."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "200-69",
+      "url": "https://ecode360.com/11227742",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No distance between buildings found."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "200-69A(14)(a)[3], 200-69A(14)(b)",
+      "url": "https://ecode360.com/11227742",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Detached accessory buildings use the 5 and 10 ft rules. A garage joined by a breezeway is part of the principal building and meets district yards."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "200-18, 200-22",
+      "url": "https://ecode360.com/11226358",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A unit inside or attached to the house takes the 35 ft district height."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 200",
+      "url": "https://ecode360.com/11226088",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "200-7 'Family'",
+      "url": "https://ecode360.com/11226104",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule. A family is related persons or up to five unrelated persons, excluding servants, with single cooking facilities."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "130-3",
+      "url": "https://ecode360.com/39692441",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU rule. Short-term lodging is limited town-wide: two bedrooms in an owner-occupied house, or a whole unit for 7 to 30 days, with a license."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "200-15, 200-20",
+      "url": "https://ecode360.com/11226316",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "200-79A",
+      "url": "https://ecode360.com/11228060",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "No ADU row. Single-family detached: two spaces per dwelling unit. If the second unit counts as a dwelling unit, four. Other residential uses need 2.5 per unit.",
+      "section": "200-79A(1), (2)",
+      "url": "https://ecode360.com/11228060",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "200-16B, 200-18",
+        "url": "https://ecode360.com/11226358",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Lot size depends on resource protection land: 34,000 sq ft (0% to 24%), 22,000 (25% to 67%), 15,000 (68% and up). 34,000 with on-lot water or sewer. Yards here are for the 15,000 sq ft tier."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "200-18",
+        "url": "https://ecode360.com/11226358",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "15,000 sq ft lot: front 35. 34,000 sq ft lot: front 50."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "200-18",
+        "url": "https://ecode360.com/11226358",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "15,000 sq ft lot: 15 ft each. 34,000 sq ft lot: 25 ft."
+      },
+      "setback_rear_ft": {
+        "value": 45,
+        "section": "200-18",
+        "url": "https://ecode360.com/11226358",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "15,000 sq ft lot: 45 ft. 34,000 sq ft lot: 70 ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-18",
+        "url": "https://ecode360.com/11226358",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 12500,
+        "section": "200-22",
+        "url": "https://ecode360.com/11226397",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Smallest lot tier in the R-2 table, 85 ft wide. Larger tiers to 34,000 sq ft. Yards here are for the 12,500 sq ft tier."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "200-22",
+        "url": "https://ecode360.com/11226397",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "12,500 sq ft lot."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "200-22",
+        "url": "https://ecode360.com/11226397",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "12,500 sq ft lot, each side."
+      },
+      "setback_rear_ft": {
+        "value": 45,
+        "section": "200-22",
+        "url": "https://ecode360.com/11226397",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "12,500 sq ft lot."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-22",
+        "url": "https://ecode360.com/11226397",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      }
+    }
+  }
+}
