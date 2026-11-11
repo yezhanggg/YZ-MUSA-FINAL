@@ -1,5 +1,7 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { buildCost, curveAt, footprint, lotFit, payment, payoff, playAdu, sampleOf, sides, tractPayoff, tractRoom } from './adu';
+import { buildCost, curveAt, footprint, lotFit, payShare, payment, payoff, playAdu, sampleOf, sides, tractPayoff, tractRoom, type CostLevel, type TractRent } from './adu';
 import { BASE, COST_PSF } from './numbers';
 
 describe('payoff math (MUSA 5500 notebook 04)', () => {
@@ -80,5 +82,22 @@ describe('playAdu: the result of adding this ADU', () => {
     expect(playAdu({ ...base, rent: 900 }).pays).toBe(false);
     expect(sampleOf({ bed: 2, size: 800, stories: 2 })?.id).toBe('garage');
     expect(sampleOf({ bed: 2, size: 850, stories: 1 })).toBeNull();
+  });
+});
+
+describe('payoff sensitivity matches pipeline/tract/payoff.py', () => {
+  // processed/5500/payoff_sensitivity.csv, rent basis rent_b1, 3,445 tracts
+  const tracts = (JSON.parse(readFileSync(resolve(import.meta.dirname, '../../public/data/tracts.geojson'), 'utf8')) as { features: { properties: TractRent }[] }).features.map((f) => f.properties);
+  const cases: [CostLevel, number, number][] = [
+    ['low', 0.0653, 0.3637],
+    ['mid', 0.0653, 0.1033],
+    ['high', 0.0653, 0.0401],
+    ['mid', 0.0718, 0.0734],
+    ['high', 0.0718, 0.0276],
+  ];
+  it.each(cases)('%s cost at %f: share yes %f', (level, rate, want) => {
+    const s = payShare(tracts, BASE, level, rate);
+    expect(s.tracts).toBe(3445);
+    expect(s.yes).toBeCloseTo(want, 3);
   });
 });

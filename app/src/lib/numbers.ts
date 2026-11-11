@@ -1,5 +1,16 @@
-// Numbers in one place. Model scores and statewide totals (Research pages) change after a retrain.
-// The payoff constants match MUSA 5500 notebook 04.
+// Numbers in one place. The MUSA 5500 headline values come from app/src/lib/headline.json, which
+// app/build_data.py writes from the tract outputs (pipeline/tract/*.py), so the text cannot drift from them.
+// The payoff constants are shared/assumptions.json tract.payoff.* (pipeline/tract/payoff.py reads the same).
+import ASSUMPTIONS_JSON from '../../../shared/assumptions.json';
+import HEADLINE from './headline.json';
+
+const items = ASSUMPTIONS_JSON.items as Record<string, { value?: number | null; low?: number | null; mid?: number | null; high?: number | null }>;
+const val = (k: string) => items[k].value as number;
+
+/** "about 13,100": a count rounded to the nearest hundred. */
+const about = (n: number) => `about ${(Math.round(n / 100) * 100).toLocaleString('en-US')}`;
+
+export { HEADLINE };
 
 export const NUMBERS = {
   /** U-Net mean IoU on the held-out test counties (Cumberland + Centre). */
@@ -8,22 +19,30 @@ export const NUMBERS = {
   rfMiou: '0.36',
   /** Single-family lots in PA with room for a 600 sq ft ADU. */
   lotsWithRoom: '2.59 million',
-  /** Share of tracts where an ADU pays off at the mid build cost. */
-  paysShare: '20%',
+  /** Share of tracts where a 600 sq ft 1-bedroom ADU pays off at the mid build cost. */
+  paysShare: `${Math.round(HEADLINE.pays_share * 100)}%`,
   /** ADUs by 2031, mid case. */
-  adusHb2186: 'about 16,900',
-  adusToday: 'about 1,200',
+  adusHb2186: about(HEADLINE.adus_by_2031.hb2186.mid),
+  adusSb1346: about(HEADLINE.adus_by_2031.sb1346.mid),
+  adusToday: about(HEADLINE.adus_by_2031.current.mid),
+  /** Trend groups (K-means) and how clear they are. */
+  groups: String(HEADLINE.groups_k),
+  groupsSilhouette: HEADLINE.groups_silhouette.toFixed(2),
+  /** Forecast model fit on held-out counties. */
+  forecastR2: HEADLINE.forecast_r2_county_cv === null ? 'not computed' : HEADLINE.forecast_r2_county_cv.toFixed(1),
 } as const;
 
 /** Build cost per sq ft, before soft costs. */
-export const COST_PSF = { low: 175, mid: 250, high: 300 } as const;
+export const COST_PSF = { low: items['tract.payoff.hard_psf'].low as number, mid: items['tract.payoff.hard_psf'].mid as number, high: items['tract.payoff.hard_psf'].high as number } as const;
 /** Soft costs (design, permits, fees) on top of the build cost. */
-export const SOFT = 0.15;
+export const SOFT = val('tract.payoff.soft_share');
 /** 30-year mortgage rate (2026 Freddie Mac PMMS average) and loan length. */
-export const RATE = 0.0653;
-export const YEARS = 30;
+export const RATE = val('financing.pmms30_2026_avg');
+export const YEARS = val('tract.payoff.loan_years');
 /** Share of rent lost to vacancy, repairs, tax and insurance. */
-export const OPEX = 0.3;
+export const OPEX = val('tract.payoff.opex_share');
+/** "Close" when the rent covers at least this share less than the payment. */
+export const CLOSE_BAND = val('tract.payoff.close_band');
 
 export type Bed = 0 | 1 | 2 | 3;
 export type Stories = 1 | 2;

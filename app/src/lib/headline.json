@@ -1,0 +1,27 @@
+{
+  "pays_share": 0.1033,
+  "pays_tracts": 356,
+  "tracts": 3445,
+  "rate": 0.0653,
+  "adus_by_2031": {
+    "current": {
+      "low": 248,
+      "mid": 896,
+      "high": 2332
+    },
+    "hb2186": {
+      "low": 6389,
+      "mid": 13144,
+      "high": 19898
+    },
+    "sb1346": {
+      "low": 6236,
+      "mid": 12839,
+      "high": 19461
+    }
+  },
+  "groups_k": 7,
+  "groups_silhouette": 0.136,
+  "forecast_model": "gradient_boosting",
+  "forecast_r2_county_cv": 0.202
+}

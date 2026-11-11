@@ -1,6 +1,6 @@
 // The ADU being tested: does it fit on a lot, how many tract lots have room, and does it pay off.
 // Pure functions, so they are easy to test (adu.test.ts).
-import { BASE, BED_LABEL, COST_PSF, OPEX, RATE, SOFT, YEARS, type Adu } from './numbers';
+import { BASE, BED_LABEL, CLOSE_BAND, COST_PSF, OPEX, RATE, SOFT, YEARS, type Adu } from './numbers';
 
 export type Pays = 'yes' | 'maybe' | 'no';
 export type Fit = 'yes' | 'trees' | 'no';
@@ -37,12 +37,18 @@ export interface Payoff {
   legacy: boolean;
 }
 
-/** The payoff test of MUSA 5500 notebook 04 for one monthly rent and one size. */
-export function payoff(rent: number, size: number): Payoff {
+export type CostLevel = keyof typeof COST_PSF;
+
+/**
+ * The payoff test of pipeline/tract/payoff.py for one monthly rent and one size: yes when the rent after running
+ * costs covers the payment at the chosen cost level, close when it covers the low-cost payment or comes within the
+ * close band, else no. The map's cost and rate controls change `level` and `rate`.
+ */
+export function payoff(rent: number, size: number, level: CostLevel = 'mid', rate = RATE): Payoff {
   const net = rent * (1 - OPEX);
-  const cost = payment(buildCost(size, COST_PSF.mid));
-  const costLow = payment(buildCost(size, COST_PSF.low));
-  const pays: Pays = net >= cost ? 'yes' : net >= costLow || net >= 0.9 * cost ? 'maybe' : 'no';
+  const cost = payment(buildCost(size, COST_PSF[level]), rate);
+  const costLow = payment(buildCost(size, COST_PSF.low), rate);
+  const pays: Pays = net >= cost ? 'yes' : net >= costLow || net >= (1 - CLOSE_BAND) * cost ? 'maybe' : 'no';
   return { rent, net, cost, costLow, gap: net - cost, pays, legacy: false };
 }
 
@@ -59,17 +65,28 @@ export interface TractRent {
 const num = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v);
 
 /** Live payoff for a tract. Without per-bedroom rents, the old tract result is used for the base case only. */
-export function tractPayoff(t: TractRent, a: Adu): Payoff | null {
+export function tractPayoff(t: TractRent, a: Adu, level: CostLevel = 'mid', rate = RATE): Payoff | null {
   const rent = t[`rent_b${a.bed}` as keyof TractRent];
-  if (num(rent)) return payoff(rent, a.size);
-  if (isBase(a) && t.pays && num(t.rent_est) && num(t.cost_month)) {
+  if (num(rent)) return payoff(rent, a.size, level, rate);
+  if (isBase(a) && level === 'mid' && rate === RATE && t.pays && num(t.rent_est) && num(t.cost_month)) {
     const net = t.rent_est * (1 - OPEX);
     return { rent: t.rent_est, net, cost: t.cost_month, costLow: NaN, gap: net - t.cost_month, pays: t.pays, legacy: true };
   }
   return null;
 }
 
-export const rentNote = (a: Adu, p: Payoff) => (p.legacy ? 'Tract median rent, ACS 2020-24 (base case)' : `Rent for a ${a.bed === 0 ? 'studio' : `${BED_LABEL[a.bed]}`} unit in this tract, ACS 2020-24`);
+export const rentNote = (a: Adu, p: Payoff) => (p.legacy ? '1-bedroom rent, ACS 2020-24 (base case)' : `Rent for a ${a.bed === 0 ? 'studio' : `${BED_LABEL[a.bed]}`} unit in this tract, ACS 2020-24`);
+
+/** Share of tracts (with a rent) where the ADU pays off, and how many, at one cost level and rate. */
+export function payShare(tracts: TractRent[], a: Adu, level: CostLevel = 'mid', rate = RATE): { yes: number; maybe: number; no: number; tracts: number } {
+  const n = { yes: 0, maybe: 0, no: 0 };
+  for (const t of tracts) {
+    const p = tractPayoff(t, a, level, rate);
+    if (p) n[p.pays]++;
+  }
+  const total = n.yes + n.maybe + n.no;
+  return total ? { yes: n.yes / total, maybe: n.maybe / total, no: n.no / total, tracts: total } : { yes: 0, maybe: 0, no: 0, tracts: 0 };
+}
 
 export interface LotFitFields {
   fits: boolean;

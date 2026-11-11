@@ -80,6 +80,34 @@ function devApi(): Plugin {
 }
 
 /**
+ * The MUSA 5500 tract explorer (musa5500/figures/tract_explorer.html, made by pipeline/tract/viz.py) at
+ * /explorer/tract_explorer.html: served from its folder in dev, copied into dist/explorer/ at build.
+ */
+function tractExplorer(): Plugin {
+  const src = resolve(ROOT, "musa5500/figures/tract_explorer.html");
+  let outDir = resolve(ROOT, "dist");
+  return {
+    name: "tract-explorer",
+    configResolved(c) {
+      outDir = c.build.outDir;
+    },
+    configureServer(server) {
+      server.middlewares.use("/explorer/tract_explorer.html", (_req, res) => {
+        if (!existsSync(src)) {
+          res.statusCode = 404;
+          return res.end("not built: run python -m pipeline.tract.viz");
+        }
+        res.setHeader("content-type", "text/html; charset=utf-8");
+        createReadStream(src).pipe(res);
+      });
+    },
+    closeBundle() {
+      if (existsSync(src)) cpSync(src, resolve(outDir, "explorer/tract_explorer.html"));
+    },
+  };
+}
+
+/**
  * In `vite dev`, serve the lot records (built outside the repo) at /data/lots2/, the default VITE_LOT_DATA_URL.
  * The folder is LOT_DATA_DIR, default ~/musa-drive/lots. Byte ranges are supported for the parcel PMTiles.
  * .json.gz files go out as plain bytes: the browser decodes them (app/src/lib/lot/load.ts).
@@ -130,7 +158,7 @@ export default defineConfig({
   root: resolve(ROOT, "app"),
   base: "/",
   publicDir: "public",
-  plugins: [react(), tailwindcss(), lotIndex(), devLotData(), devApi(), copyQuarto()],
+  plugins: [react(), tailwindcss(), lotIndex(), devLotData(), tractExplorer(), devApi(), copyQuarto()],
   // The docs (musa*/docs/*.md) and figures live outside app/, so dev needs to read the repo root.
   server: { fs: { allow: [ROOT] } },
   build: { outDir: resolve(ROOT, "dist"), emptyOutDir: true, target: "es2022", chunkSizeWarningLimit: 1500 },

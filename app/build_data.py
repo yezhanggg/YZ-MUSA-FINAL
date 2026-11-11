@@ -5,8 +5,11 @@ Run from the repo root after the get_data scripts (geospatial env):
 
 It uses whatever is ready. Missing results show up as "Not ready yet" on the site.
 Outputs (all in app/public/data/):
-    tracts.geojson   one shape per tract with the numbers for the report panel
+    tracts.geojson   one shape per tract with the numbers for the report panel (only the columns the site reads)
     towns.geojson    one shape per town with town totals
+    counties.geojson one shape per county with the county roll-up of tract results (MUSA 5500)
+Also app/src/lib/headline.json: the statewide headline numbers the Research page and the tool quote,
+taken from the MUSA 5500 outputs (<data>/processed/5500/*.json, *.csv), so the text cannot drift from them.
     lots/<tract>.json  lot results for pilot counties (from MUSA 6950), loaded on search
     fit_curves.json  share of lots with room by ADU footprint and area type (MUSA 6950)
 """
@@ -22,6 +25,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "shared"))
 from common import ROOT, OUT, APP_DATA  # noqa: E402
 
 APP_DATA.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(ROOT))
+from pipeline.paths import processed_dir  # noqa: E402
+
+# MUSA 5500 summaries (pipeline/tract/*.py write them here)
+RESULTS_5500 = processed_dir("5500")
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 SIMPLIFY = 0.0003  # degrees, about 30 m. Keeps the files small.
 
@@ -42,6 +50,68 @@ def wide(df, key, col, prefix):
     return w.reset_index()
 
 
+# Tract columns the site reads. Everything else in the joined tables stays out, to keep tracts.geojson small.
+TRACT_KEEP = [
+    "GEOID", "NAMELSAD", "county", "jobs_2010", "jobs_2019", "jobs_2024", "pop", "median_rent",
+    "trend_group", "rent_est", "cost_month", "pays", "lots_total", "lots_fit", "lots_fit_keep_trees", "stratum",
+    "rent_b0", "rent_b1", "rent_b2", "rent_b3",
+    # Growth after 2019 in % per year, and 1 when the 2019 to 2024 change is inside its margin of error
+    "pop_after", "units_after", "rent_after", "pop_after_moe", "units_after_moe", "rent_after_moe",
+    # Levels in the three ACS 5-year windows (2010-14, 2015-19, 2020-24). Rent in 2024 dollars.
+    "pop_14", "pop_19", "pop_24", "homes_14", "homes_19", "homes_24", "rent_14", "rent_19", "rent_24",
+]
+TOWN_KEEP_DROP = [f"pop_{y}" for y in range(2010, 2026) if y not in (2010, 2019, 2025)]
+COUNTY_KEEP = [
+    "GEOID", "NAME", "tracts", "pop_2024", "tracts_pays_yes", "tracts_pays_maybe", "tracts_pays_no", "share_tracts_yes",
+    "median_tract_rent_1br", "largest_trend_group", "lots_total", "lots_fit",
+    *[f"adus_{c}_{r}" for r in ("current", "hb2186", "sb1346") for c in ("low", "mid", "high")],
+]
+
+
+def trend_columns(t):
+    """Growth after 2019 (% per year) and margin-of-error flags, from trends_tract.csv."""
+    out = t[["GEOID", "trend_group"]].copy()
+    for m in ("pop", "units", "rent"):
+        out[f"{m}_after"] = (t[f"{m}_growth_after"] * 100).round(2)
+        flag = t[f"{m}_after_within_moe"]
+        out[f"{m}_after_moe"] = flag.map({True: 1, False: 0, "True": 1, "False": 0}).astype("Int64")
+    return out
+
+
+def window_columns(panel):
+    """Population, homes and rent (2024 dollars) in the three ACS windows, from tract_panel.csv."""
+    out = panel[["GEOID"]].copy()
+    for src, dst in [("pop", "pop"), ("housing_units", "homes"), ("median_rent", "rent")]:
+        for y in (2014, 2019, 2024):
+            out[f"{dst}_{str(y)[2:]}"] = panel[f"{src}_{y}"].round(0).astype("Int64")
+    return out
+
+
+def headline():
+    """Statewide numbers for the site text, from the MUSA 5500 outputs."""
+    d = RESULTS_5500
+    pay = json.loads((d / "payoff_summary.json").read_text())
+    fc = json.loads((d / "forecast_summary.json").read_text())
+    groups = json.loads((d / "groups_summary.json").read_text())
+    cv = pd.read_csv(d / "forecast_cv.csv") if (d / "forecast_cv.csv").exists() else None
+    r2 = None
+    if cv is not None:
+        row = cv[(cv.model == fc["model"]) & (cv.scheme == "county_blocks")]
+        r2 = round(float(row.r2_pooled.iloc[0]), 3) if len(row) else None
+    adus = {r: {k.split(".")[1]: round(v) for k, v in vals.items() if k.startswith("by_2031.")} for r, vals in fc["totals"].items()}
+    return {
+        "pays_share": round(pay["share_yes"], 4),
+        "pays_tracts": pay["count"]["yes"],
+        "tracts": pay["tracts"],
+        "rate": pay["rate"],
+        "adus_by_2031": adus,
+        "groups_k": groups["k"],
+        "groups_silhouette": round(groups["silhouette"], 3),
+        "forecast_model": fc["model"],
+        "forecast_r2_county_cv": r2,
+    }
+
+
 def main():
     tracts = gpd.read_file(OUT / "tracts_2020.gpkg")
     towns = gpd.read_file(OUT / "towns_2020.gpkg")
@@ -60,7 +130,13 @@ def main():
         tracts = tracts.merge(latest[["GEOID", "pop", "median_rent", "median_value", "renter_units"]],
                               on="GEOID", how="left")
     # Results from the notebooks (see docs/data-contract.md)
-    for name in ["trends_tract.csv", "payoff_tract.csv", "lots_tract.csv"]:
+    trends = read("trends_tract.csv", dtype={"GEOID": str})
+    if trends is not None:
+        tracts = tracts.merge(trend_columns(trends), on="GEOID", how="left")
+    panel = read("tract_panel.csv", dtype={"GEOID": str})
+    if panel is not None:
+        tracts = tracts.merge(window_columns(panel), on="GEOID", how="left")
+    for name in ["payoff_tract.csv", "lots_tract.csv"]:
         df = read(name, dtype={"GEOID": str})
         if df is not None:
             tracts = tracts.merge(df, on="GEOID", how="left")
@@ -95,7 +171,20 @@ def main():
         f.columns = [f"{v}_{r}" for v, r in f.columns]
         towns = towns.merge(f.rename_axis("GEOID").reset_index(), on="GEOID", how="left")
 
-    for gdf, name in [(tracts, "tracts"), (towns, "towns")]:
+    tracts = tracts[[c for c in TRACT_KEEP if c in tracts.columns] + ["geometry"]]
+    towns = towns.drop(columns=[c for c in TOWN_KEEP_DROP if c in towns.columns])
+
+    print("County data")
+    rollup = read("county_rollup.csv", dtype={"county_geoid": str})
+    if rollup is not None:
+        counties = counties[["GEOID", "geometry"]].merge(rollup.rename(columns={"county_geoid": "GEOID", "name": "NAME"}), on="GEOID", how="left")
+        counties = counties[[c for c in COUNTY_KEEP if c in counties.columns] + ["geometry"]]
+        for c in counties.columns:
+            if c.startswith("adus_"):
+                counties[c] = counties[c].round(0)
+    out_files = [(tracts, "tracts"), (towns, "towns")] + ([(counties, "counties")] if rollup is not None else [])
+
+    for gdf, name in out_files:
         gdf = gdf.copy()
         gdf["geometry"] = gdf.geometry.simplify(SIMPLIFY, preserve_topology=True)
         path = APP_DATA / f"{name}.geojson"
@@ -131,6 +220,15 @@ def main():
                             for r in g.itertuples()]
         (APP_DATA / "fit_curves.json").write_text(json.dumps(out))
         print(f"  wrote app/public/data/fit_curves.json ({', '.join(out)})")
+
+    print("Headline numbers (MUSA 5500)")
+    if (RESULTS_5500 / "payoff_summary.json").exists():
+        h = headline()
+        path = ROOT / "app" / "src" / "lib" / "headline.json"
+        path.write_text(json.dumps(h, indent=2) + "\n")
+        print(f"  wrote app/src/lib/headline.json: pays {h['pays_share']:.1%}, ADUs mid {h['adus_by_2031']}")
+    else:
+        print("  not ready: processed/5500/payoff_summary.json")
 
     stamp = {"built": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M")}
     (APP_DATA / "meta.json").write_text(json.dumps(stamp))

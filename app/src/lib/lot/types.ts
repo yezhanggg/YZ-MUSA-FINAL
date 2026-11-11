@@ -89,6 +89,8 @@ export interface Building {
   id?: string;
   polygon: AreaGeom;
   height_ft?: number | null;
+  /** Where height_ft comes from: city_elevation, city_approx_hgt, stories (assessor stories x 10 ft). */
+  height_source?: string | null;
   role: BuildingRole;
   source: 'city' | 'msft' | 'unet' | 'yolo';
   area_sqft: number;
@@ -256,7 +258,8 @@ export interface Money {
 
 export interface Quality {
   imagery_date?: string | null;
-  data_dates?: Record<string, string | null>;
+  /** Date per input. Records from late Nov 11, 2026 on group the raw source dates under `sources`. */
+  data_dates?: Record<string, string | null | Record<string, string | null>>;
   confidence: Confidence;
   assumptions: string[];
 }
@@ -295,7 +298,7 @@ export const LOT_KEYS = {
     'id', 'parcel_id', 'address', 'place', 'county_fips', 'tract', 'crs_local', 'polygon', 'area_sqft', 'edges',
     'front_edges', 'rear_edges', 'side_edges', 'alley', 'corner', 'flag_lot', 'street_edge', 'shape_confidence', 'shape_notes',
   ]),
-  building: keysOf<Building>()(['id', 'polygon', 'height_ft', 'role', 'source', 'area_sqft']),
+  building: keysOf<Building>()(['id', 'polygon', 'height_ft', 'height_source', 'role', 'source', 'area_sqft']),
   share: keysOf<Share>()(['sqft', 'pct']),
   cover: keysOf<Cover>()(['building', 'tree', 'open', 'hard']),
   object: keysOf<LotObject>()(['class', 'box', 'score']),

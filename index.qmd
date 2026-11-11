@@ -24,7 +24,7 @@ This project answers both, for the whole state.
 | | MUSA 5500 | MUSA 6950 |
 |---|---|---|
 | Question | Is there demand, and does an ADU pay off? | Is there room on the lot? |
-| Methods | APIs, spatial joins, K-means, zonal stats, OSMnx, random forest | U-Net, Random Forest, YOLO, a 600 sq ft fit rule |
+| Methods | APIs, spatial joins, clustering (K-means vs GMM vs Ward), zonal stats, OSMnx, gradient boosting with spatial CV | U-Net, Random Forest, YOLO, a 600 sq ft fit rule |
 | Code | `musa5500/` | `musa6950/` |
 | Docs | [MUSA 5500 pages](musa5500/docs/data.md) | [MUSA 6950 pages](musa6950/docs/data.md) |
 

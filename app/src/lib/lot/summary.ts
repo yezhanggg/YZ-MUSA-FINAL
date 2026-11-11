@@ -151,15 +151,18 @@ export function dataDates(lot: LotRecord, builtAt: string | null | undefined): D
     const d = dateText(iso);
     if (d) out.push({ label, date: d });
   };
-  const newest = (prefix: string) => Object.entries(lot.quality.data_dates ?? {}).filter(([k]) => k.startsWith(prefix)).map(([, v]) => v).filter((v): v is string => !!v).sort().pop();
-  for (const [k, v] of Object.entries(lot.quality.data_dates ?? {})) {
+  const dates = lot.quality.data_dates ?? {};
+  const flat = Object.entries(dates).filter((e): e is [string, string | null] => typeof e[1] !== 'object' || e[1] === null);
+  const nested = dates.sources && typeof dates.sources === 'object' ? Object.values(dates.sources) : [];
+  const newest = (vals: (string | null)[]) => vals.filter((v): v is string => !!v).sort().pop();
+  for (const [k, v] of flat) {
     if (k.startsWith('rules_') || k.startsWith('source_')) continue;
     push(DATE_LABEL[k] ?? k.replace(/_/g, ' '), v);
   }
-  // Records from Nov 11, 2026 on list each source file: one line for the newest is enough.
-  push('Source files downloaded', newest('source_'));
+  // Records list each source file (source_* keys, or a `sources` block): one line for the newest is enough.
+  push('Source files downloaded', newest([...flat.filter(([k]) => k.startsWith('source_')).map(([, v]) => v), ...nested]));
   push('Aerial image', lot.quality.imagery_date);
-  push('Rules last checked', newest('rules_'));
+  push('Rules last checked', newest(flat.filter(([k]) => k.startsWith('rules_')).map(([, v]) => v)));
   push('Data built', builtAt ?? null);
   return out;
 }
