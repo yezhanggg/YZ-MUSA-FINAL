@@ -164,39 +164,41 @@ How much the answer moves (share of tracts that are "yes"):
 ### 6. ADUs by 2031
 
 - Lots with room: from `lots_tract.csv` (MUSA 6950), all 3,445 tracts
-- Today's rules: only 9 towns are coded in `shared/legal_status.csv` (2 allowed, 7 limited). The other towns are treated as limited
+- Today's rules: only 12 towns are coded in `shared/legal_status.csv` (4 allowed, 8 limited). The other towns are treated as limited
+- Pittsburgh is now coded "allowed". It made ADUs legal citywide on Oct 29, 2026 (see `shared/adu_rules_pa.md`)
 - Forecast covers 2,571 of 2,572 towns. Wheatland borough (Mercer) has no blocks in the LODES crosswalk and no population estimate after 2019, so it has no row
 
 Statewide totals, 2027-2031:
 
 | Rule | Low | Mid | High |
 |---|---|---|---|
-| Today, by 2031 | 197 | 928 | 2,693 |
-| HB 2186, by 2031 | 8,195 | 16,861 | 25,526 |
-| HB 2186, per year | 1,639 | 3,372 | 5,105 |
-| HB 2186, per 100k people per year | 12.6 | 25.9 | 39.2 |
+| Today, by 2031 | 316 | 1,168 | 3,040 |
+| HB 2186, by 2031 | 8,219 | 16,912 | 25,600 |
+| HB 2186, per year | 1,644 | 3,382 | 5,120 |
+| HB 2186, per 100k people per year | 12.6 | 26.0 | 39.3 |
 
-- The Pew range for all of PA would be 3,385 to 10,545 a year (13.0 million people). The HB 2186 mid case, 3,372 a year, sits just below the bottom of that range. This is expected, because most PA tracts do not pass the payoff test and many have few single-family lots
+- The Pew range for all of PA would be 3,385 to 10,545 a year (13.0 million people). The HB 2186 mid case, 3,382 a year, sits just below the bottom of that range. This is expected, because most PA tracts do not pass the payoff test and many have few single-family lots
 - HB 2186 mid is about 11.1% of the new homes PA permits each year now (24,810 to 28,149 a year in 2022-2025, 47,894 in 2021)
-- Under today's rules the forecast is 18 times smaller (928 vs 16,861 in the mid case). Nearly all of the gap comes from the assumption that unlisted towns are "limited"
+- Under today's rules the forecast is about 14 times smaller (1,168 vs 16,912 in the mid case). Nearly all of the gap comes from the assumption that unlisted towns are "limited"
+- Pittsburgh alone is 236 of the 1,168 "today" mid case now that it is allowed. When it was coded limited it gave 12
 
 Top towns under HB 2186 (mid):
 
 | Town | Rule today | People | Low | Mid | High | Today, mid |
 |---|---|---|---|---|---|---|
-| Philadelphia city | limited | 1,579,706 | 195 | 401 | 606 | 20 |
-| Pittsburgh city | limited | 304,759 | 114 | 234 | 353 | 12 |
-| Lower Merion township | limited | 64,174 | 67 | 137 | 208 | 7 |
-| Haverford township | limited | 50,874 | 61 | 126 | 191 | 6 |
-| Abington township | limited | 58,664 | 59 | 121 | 183 | 6 |
-| Lower Paxton township | limited | 54,657 | 58 | 118 | 179 | 6 |
-| Northampton township | limited | 39,920 | 55 | 113 | 172 | 6 |
-| Bristol township | limited | 54,173 | 55 | 113 | 171 | 6 |
-| Middletown township | limited | 45,793 | 51 | 104 | 158 | 5 |
-| Manheim township | limited | 44,436 | 48 | 100 | 151 | 5 |
+| Philadelphia city | limited | 1,579,706 | 196 | 404 | 611 | 20 |
+| Pittsburgh city | allowed | 304,759 | 115 | 236 | 356 | 236 |
+| Lower Merion township | limited | 64,174 | 67 | 138 | 210 | 7 |
+| Haverford township | limited | 50,874 | 62 | 127 | 193 | 6 |
+| Abington township | limited | 58,664 | 59 | 122 | 184 | 6 |
+| Lower Paxton township | limited | 54,657 | 58 | 119 | 180 | 6 |
+| Northampton township | limited | 39,920 | 56 | 114 | 173 | 6 |
+| Bristol township | limited | 54,173 | 55 | 114 | 172 | 6 |
+| Middletown township | limited | 45,793 | 51 | 105 | 159 | 5 |
+| Manheim township | limited | 44,436 | 49 | 100 | 152 | 5 |
 
 - Philadelphia check. Today's rule gives 4 to 61 ADUs by 2031 (20 mid), about 4 a year in the mid case. The real record is about 10 in 12+ years. So even the "limited" factor may be a bit high for Philadelphia
-- Allentown and West Vincent already allow ADUs, so HB 2186 changes nothing there (76 and 29 mid)
+- Pittsburgh, Allentown, West Vincent, and College township already allow ADUs, so HB 2186 changes nothing there (236, 77, 29, and 14 mid)
 
 ![ADUs by 2031 under HB 2186](figures/04_forecast_map.png)
 
@@ -204,7 +206,7 @@ Top towns under HB 2186 (mid):
 
 - Demand: job growth slowed after 2019 across most of PA. Rent growth also slowed in real terms, but one tract group (871 tracts) saw rents speed up
 - Payoff: a new ADU pays for itself at today's rates and a $250 / sq ft build cost in only about 20% of tracts, mostly in Philadelphia and its suburbs. Cost matters more than rent
-- Forecast: HB 2186 could mean about 16,900 ADUs by 2031 (8,200 to 25,500). That is about 3,400 a year, near the low end of what permissive cities see
+- Forecast: HB 2186 could mean about 16,900 ADUs by 2031 (8,200 to 25,600). That is about 3,400 a year, near the low end of what permissive cities see
 - Under today's rules the number is much smaller, but that depends on how the ~2,560 uncoded towns are treated
 
 ## Limits
@@ -213,5 +215,5 @@ Top towns under HB 2186 (mid):
 - The 2010 to 2020 crosswalk uses land area, not where people live
 - The payoff test uses median rent for all renters. A new ADU may rent for more. It ignores rising build costs, land, permits, and taxes on the new value
 - The forecast factors (payoff weights, rule factors, demand range) are judgment calls. They are written at the top of notebook 04 so they are easy to change
-- The town rule list has 9 towns. Coding more towns would change the "today" numbers the most
+- The town rule list has 12 towns. Coding more towns would change the "today" numbers the most. Pittsburgh's move to "allowed" shows how much one big city can shift them
 - Lots with room come from MUSA 6950. Its suburban and rural fit rates rest on few pilot tracts, and the fit rule counts front yards

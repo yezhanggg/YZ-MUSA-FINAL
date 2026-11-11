@@ -1,0 +1,20 @@
+{
+  "about": "Questions for the Ask agent. Each has the selected lot (as the browser would send it), the ADU in the controls, and facts the answer must contain (case-insensitive, any of the alternatives in a list). Lot facts come from app/public/data (lots files, towns.geojson). Run with `npm run eval:agent` (needs ANTHROPIC_API_KEY).",
+  "questions": [
+    { "id": "q01", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Could I build a 1 BR here?", "expect": [["fits", "it fits"], ["1,094", "1094"]], "tools": ["test_adu"] },
+    { "id": "q02", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Could I build a 2 BR here?", "expect": [["not ready", "next model run"]], "tools": ["test_adu"] },
+    { "id": "q03", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "What's the biggest ADU that fits?", "expect": [["not ready", "not available", "600"]], "tools": ["get_site"] },
+    { "id": "q04", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Would a 1 BR here fit without cutting any trees?", "expect": [["without cutting", "keeping trees", "keeps the trees", "no trees"]], "tools": ["test_adu"] },
+    { "id": "q05", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "How big is this lot and how much of it is trees?", "expect": [["21,410", "21410"], ["5,875", "5875"]], "tools": ["get_site"] },
+    { "id": "q06", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Which lots near here fit a 1 BR without cutting trees?", "expect": [["lot:42041-"]], "tools": ["find_lots"] },
+    { "id": "q07", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Is it legal here today?", "expect": [["not coded", "hearing", "variance"], ["Nov 10, 2026"]], "tools": ["get_rules"] },
+    { "id": "q08", "selected": "42101-542734", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Is it legal here today?", "expect": [["variance"], ["CMX4", "CMX-4"]], "tools": ["test_adu", "get_rules"] },
+    { "id": "q09", "selected": "42101-211862", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Can I build a new backyard cottage on this lot?", "expect": [["conversion"]], "tools": ["test_adu", "get_rules"] },
+    { "id": "q10", "selected": "42101-211862", "adu": { "bedrooms": 3, "size_sqft": 1000, "stories": 1 }, "question": "Is a 1,000 sq ft unit OK here under today's rules?", "expect": [["800"]], "tools": ["test_adu"] },
+    { "id": "q11", "selected": "42101-542734", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "What would HB 2186 change here, and where is the bill now?", "expect": [["by right"], ["139-62", "Senate"]], "tools": ["get_rules"] },
+    { "id": "q12", "selected": "42041-10-13-0995-011A", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Does a 600 sq ft ADU fit on this lot?", "expect": [["trees"]], "tools": ["test_adu"] },
+    { "id": "q13", "selected": "42041-10-13-0995-114U3C-2", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Is there room for a backyard home here?", "expect": [["no room", "not enough", "doesn't fit", "does not fit"]], "tools": ["test_adu"] },
+    { "id": "q14", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "Compare 400, 600 and 1,200 sq ft on two stories for this lot.", "expect": [["600"], ["not ready"]], "tools": ["compare_sizes"] },
+    { "id": "q15", "selected": "42041-09-12-2995-100", "adu": { "bedrooms": 1, "size_sqft": 600, "stories": 1 }, "question": "What's the best pizza place nearby?", "expect": [["ADU", "backyard", "can't help", "cannot help", "only"]], "tools": [] }
+  ]
+}

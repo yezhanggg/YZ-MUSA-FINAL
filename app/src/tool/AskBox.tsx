@@ -1,0 +1,130 @@
+// "Ask about this site": a compact input that grows into a conversation. Tools run here in the browser.
+import { useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+import { ArrowUp, Loader2, MessageCircle, X } from 'lucide-react';
+import { cx } from '../lib/cx';
+import { BED_LABEL } from '../lib/numbers';
+import { ask, splitLinks, type Turn } from '../agent/client';
+import { browserProvider, selectLotById } from '../agent/browserProvider';
+import { mapRef, useTool } from './store';
+
+const SUGGESTED = ["Could I build a 2 BR here?", "What's the biggest ADU that fits?", 'Is it legal here today?', 'Which lots near here fit a 1 BR without cutting trees?'];
+const TOOL_TEXT: Record<string, string> = { get_site: 'Reading the site', test_adu: 'Testing the ADU', compare_sizes: 'Comparing sizes', get_rules: 'Checking the rules', find_lots: 'Searching nearby lots', set_map: 'Updating the map' };
+
+interface Msg {
+  role: 'user' | 'assistant';
+  text: string;
+  tools?: string[];
+  error?: boolean;
+}
+
+function useContext() {
+  const spot = useTool((s) => s.spot);
+  const adu = useTool((s) => s.adu);
+  const rule = useTool((s) => s.rule);
+  const map = mapRef.current;
+  return {
+    chips: [spot ? (spot.lot ? `Lot ${spot.lot.lot_id}` : spot.parcel ? `Parcel ${spot.parcel.id}` : spot.tract.NAMELSAD ?? 'Tract') : 'No lot selected', `${BED_LABEL[adu.bed]} · ${adu.size.toLocaleString('en-US')} sq ft · ${adu.stories} ${adu.stories === 2 ? 'stories' : 'story'}`, rule === 'hb2186' ? 'HB 2186' : "Today's rules"],
+    context: {
+      selected: spot ? { lot_id: spot.lot?.lot_id ?? spot.parcel?.id ?? null, tract_geoid: spot.tract.GEOID, town_geoid: (spot.town.GEOID as string | undefined) ?? null, town: (spot.town.NAMELSAD as string | undefined) ?? null, label: spot.label } : null,
+      adu: { bedrooms: adu.bed, size_sqft: adu.size, stories: adu.stories },
+      rule,
+      map: map ? { center: [map.getCenter().lng, map.getCenter().lat] as [number, number], zoom: map.getZoom() } : null,
+    },
+  };
+}
+
+export default function AskBox({ expanded: forceOpen }: { expanded?: boolean }) {
+  const [q, setQ] = useState('');
+  const [msgs, setMsgs] = useState<Msg[]>([]);
+  const [history, setHistory] = useState<Turn[]>([]);
+  const [busy, setBusy] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
+  const { chips, context } = useContext();
+  const input = useRef<HTMLInputElement>(null);
+  const showConvo = forceOpen || open || msgs.length > 0;
+
+  const send = async (text: string) => {
+    const question = text.trim();
+    if (!question || busy) return;
+    setQ('');
+    setOpen(true);
+    setMsgs((m) => [...m, { role: 'user', text: question }]);
+    setBusy('Thinking');
+    const out = await ask(question, history, context, browserProvider, { onTool: (n) => setBusy(TOOL_TEXT[n] ?? 'Working') });
+    setBusy(null);
+    if (out.ok) setHistory(out.history);
+    setMsgs((m) => [...m, { role: 'assistant', text: out.text, tools: out.tools, error: !out.ok }]);
+  };
+
+  return (
+    <section aria-label="Ask about this site" className="rounded-xl bg-stone-50 p-2.5 ring-1 ring-stone-200/80">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          void send(q);
+        }}
+        className="flex items-center gap-2 rounded-lg bg-white pl-2.5 pr-1 ring-1 ring-stone-300 focus-within:ring-violet-400 focus-within:shadow-[0_0_0_4px_rgba(124,58,237,0.12)]"
+      >
+        <MessageCircle className="h-4 w-4 shrink-0 text-violet-600" />
+        <input ref={input} value={q} onChange={(e) => setQ(e.target.value)} onFocus={() => setOpen(true)} placeholder="Ask about this site" aria-label="Ask about this site" className="h-10 min-w-0 flex-1 bg-transparent text-body text-slate-900 outline-none placeholder:text-slate-500" />
+        <button type="submit" disabled={!q.trim() || !!busy} aria-label="Send" className="tap grid h-8 w-8 shrink-0 place-items-center rounded-md bg-violet-600 text-white transition hover:bg-violet-700 disabled:bg-stone-200 disabled:text-slate-400">
+          {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowUp className="h-4 w-4" />}
+        </button>
+      </form>
+      <div className="mt-2 flex flex-wrap gap-1">
+        {chips.map((c) => (
+          <span key={c} className="max-w-full truncate rounded-full bg-white px-2 py-0.5 text-[11px] font-medium text-slate-600 ring-1 ring-stone-200">
+            {c}
+          </span>
+        ))}
+      </div>
+      <AnimatePresence initial={false}>
+        {showConvo && (
+          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+            <div className="mt-2 space-y-2">
+              {msgs.length === 0 && (
+                <div className="flex flex-wrap gap-1.5">
+                  {SUGGESTED.map((s) => (
+                    <button key={s} type="button" onClick={() => void send(s)} className="tap rounded-lg bg-white px-2.5 py-1.5 text-left text-caption font-medium text-slate-700 ring-1 ring-stone-200 transition hover:bg-violet-50 hover:text-violet-800 hover:ring-violet-200">
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              )}
+              {msgs.map((m, i) => (
+                <div key={i} className={cx('rounded-lg px-3 py-2 text-small leading-snug', m.role === 'user' ? 'ml-6 bg-violet-600 text-white' : m.error ? 'bg-amber-50 text-amber-900 ring-1 ring-amber-200' : 'bg-white text-slate-800 ring-1 ring-stone-200')}>
+                  {m.role === 'assistant' ? <Answer text={m.text} /> : m.text}
+                  {m.tools && m.tools.length > 0 && <div className="mt-1 text-[11px] text-slate-400">From: {[...new Set(m.tools)].join(', ')}</div>}
+                </div>
+              ))}
+              {busy && <div className="shimmer-text px-1 text-caption font-medium">{busy}…</div>}
+              {msgs.length > 0 && !busy && !forceOpen && (
+                <button type="button" onClick={() => (setMsgs([]), setHistory([]), setOpen(false))} className="inline-flex items-center gap-1 px-1 text-caption font-semibold text-slate-500 hover:text-slate-800">
+                  <X className="h-3 w-3" /> Clear
+                </button>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+}
+
+/** An answer with lot links that select the lot on the map. */
+function Answer({ text }: { text: string }) {
+  return (
+    <span className="whitespace-pre-line">
+      {splitLinks(text).map((p, i) =>
+        p.t === 'text' ? (
+          <span key={i}>{p.v}</span>
+        ) : (
+          <button key={i} type="button" onClick={() => void selectLotById(p.id)} className="font-semibold text-violet-700 underline decoration-violet-300 underline-offset-2 hover:decoration-violet-700">
+            {p.label}
+          </button>
+        ),
+      )}
+    </span>
+  );
+}

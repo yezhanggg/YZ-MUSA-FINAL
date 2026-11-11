@@ -1,27 +1,29 @@
 import { useEffect, useRef } from 'react';
-import { Map as MLMap, Popup, setWorkerUrl, type ExpressionSpecification, type MapGeoJSONFeature } from 'maplibre-gl';
+import { Map as MLMap, Popup, addProtocol, setWorkerUrl, type ExpressionSpecification, type MapGeoJSONFeature } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import { fmt, isNum } from '../lib/format';
+import { Protocol } from 'pmtiles';
 import { tractPayoff, tractRoom } from '../lib/adu';
 import { PA_BBOX, loadData } from './geo';
 import { PAYS_CODE, colorExpr } from './metrics';
-import { LOT_COLORS, LOT_LABEL, loadInView, lotById, paintLots, type LotStatus } from './lotShapes';
+import { LOT_COLORS, PARCEL_LAYER, PARCEL_URL, parcelFillColor, parcelFillOpacity, parcelFilter, parcelLineColor, parcelStatus, parcelTip, type ParcelProps } from './parcels';
+import { addDetailLayers, updateDetail } from './detailLayers';
 import { mapRef, useTool } from './store';
 import { mapPadding, testSpot } from './actions';
 
 setWorkerUrl(workerUrl);
+// Parcels are one PMTiles file, read by byte range.
+addProtocol('pmtiles', new Protocol().tile);
 
 /** Credits shown in the map's (i) box, next to the basemap's own OpenFreeMap / OpenMapTiles / OpenStreetMap line. */
 const CREDITS = [
   '<a href="https://maplibre.org/" target="_blank" rel="noreferrer">MapLibre</a>',
   'Search <a href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a> (OSM data, ODbL)',
   'Building outlines <a href="https://github.com/microsoft/GlobalMLBuildingFootprints" target="_blank" rel="noreferrer">Microsoft</a> (ODbL)',
+  'Parcels: City of Philadelphia (PWD), Cumberland County GIS',
 ];
 
-const lotColor: ExpressionSpecification = ['match', ['coalesce', ['feature-state', 'st'], 'unknown'], 'yes', LOT_COLORS.yes, 'trees', LOT_COLORS.trees, 'no', LOT_COLORS.no, LOT_COLORS.unknown];
-const selFilter = (id: string | null): ExpressionSpecification => ['==', ['get', 'lot_id'], id ?? '__none__'];
-const hover = (on: unknown, off: unknown) => ['case', ['boolean', ['feature-state', 'hover'], false], on, off] as unknown as ExpressionSpecification;
+const selFilter = (id: string | null): ExpressionSpecification => ['==', ['get', 'id'], id ?? '__none__'];
 
 export default function MapCanvas() {
   const el = useRef<HTMLDivElement>(null);
@@ -31,6 +33,8 @@ export default function MapCanvas() {
   const view3d = useTool((s) => s.view3d);
   const adu = useTool((s) => s.adu);
   const curves = useTool((s) => s.curves);
+  const sfOnly = useTool((s) => s.sfOnly);
+  const hideNoRoom = useTool((s) => s.hideNoRoom);
 
   useEffect(() => {
     const container = el.current;
@@ -60,17 +64,19 @@ export default function MapCanvas() {
       try {
         const { tracts, towns, curves } = await data;
         if (!alive) return;
+        const a = useTool.getState().adu;
         map.addSource('tracts', { type: 'geojson', data: tracts as unknown as GeoJSON.FeatureCollection, promoteId: 'GEOID' });
         map.addSource('towns', { type: 'geojson', data: towns as unknown as GeoJSON.FeatureCollection });
         map.addSource('pick', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
-        map.addSource('lots', { type: 'geojson', data: { type: 'FeatureCollection', features: [] }, promoteId: 'lot_id' });
+        map.addSource('parcels', { type: 'vector', url: `pmtiles://${window.location.origin}${PARCEL_URL}`, minzoom: 14, maxzoom: 15, promoteId: { [PARCEL_LAYER]: 'id' } });
         const firstLabel = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
-        map.addLayer({ id: 'tract-fill', type: 'fill', source: 'tracts', paint: { 'fill-color': colorExpr(useTool.getState().metric), 'fill-opacity': ['interpolate', ['linear'], ['zoom'], 7, 0.62, 14, 0.22, 15.5, 0.06] } }, firstLabel);
+        // Tracts fade out between z12.5 and z14, where the parcels take over.
+        map.addLayer({ id: 'tract-fill', type: 'fill', source: 'tracts', paint: { 'fill-color': colorExpr(useTool.getState().metric), 'fill-opacity': ['interpolate', ['linear'], ['zoom'], 7, 0.62, 12.5, 0.4, 14, 0] } }, firstLabel);
         map.addLayer({ id: 'tract-line', type: 'line', source: 'tracts', minzoom: 9, paint: { 'line-color': '#ffffff', 'line-width': 0.5, 'line-opacity': 0.7 } }, firstLabel);
         map.addLayer({ id: 'town-line', type: 'line', source: 'towns', minzoom: 8, paint: { 'line-color': '#475569', 'line-width': 0.6, 'line-opacity': 0.45 } }, firstLabel);
-        // Lots, coloured by result. The outline gets stronger on hover.
-        map.addLayer({ id: 'lot-fill', type: 'fill', source: 'lots', minzoom: 14, paint: { 'fill-color': lotColor, 'fill-opacity': hover(0.55, 0.32) } }, firstLabel);
-        map.addLayer({ id: 'lot-line', type: 'line', source: 'lots', minzoom: 14, paint: { 'line-color': lotColor, 'line-width': ['interpolate', ['linear'], ['zoom'], 14, hover(2.6, 0.3), 18, hover(2.8, 1)], 'line-opacity': hover(1, 0.8) } }, firstLabel);
+        // Parcels, coloured by result for the ADU being tested. The outline gets stronger on hover.
+        map.addLayer({ id: 'parcel-fill', type: 'fill', source: 'parcels', 'source-layer': PARCEL_LAYER, minzoom: 14, paint: { 'fill-color': parcelFillColor(a), 'fill-opacity': ['interpolate', ['linear'], ['zoom'], 14, 0, 14.6, parcelFillOpacity(a)] as unknown as ExpressionSpecification } }, firstLabel);
+        map.addLayer({ id: 'parcel-line', type: 'line', source: 'parcels', 'source-layer': PARCEL_LAYER, minzoom: 14, paint: { 'line-color': parcelLineColor(a), 'line-width': ['interpolate', ['linear'], ['zoom'], 14, ['case', ['boolean', ['feature-state', 'hover'], false], 2.2, 0.2], 18, ['case', ['boolean', ['feature-state', 'hover'], false], 2.8, 0.9]], 'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0.7] } }, firstLabel);
         // 3D buildings from the OpenFreeMap vector tiles. Shown in the 3D view.
         map.addLayer({
           id: 'buildings-3d',
@@ -86,15 +92,14 @@ export default function MapCanvas() {
             'fill-extrusion-opacity': 0.85,
           },
         });
-        map.addLayer({ id: 'pick-fill', type: 'fill', source: 'pick', paint: { 'fill-color': '#7c3aed', 'fill-opacity': 0.04 } });
-        map.addLayer({ id: 'pick-glow', type: 'line', source: 'pick', paint: { 'line-color': '#a78bfa', 'line-width': 8, 'line-opacity': 0.35, 'line-blur': 4 } });
-        map.addLayer({ id: 'pick-line', type: 'line', source: 'pick', paint: { 'line-color': '#7c3aed', 'line-width': 2.5 } });
-        // The selected lot glows.
-        map.addLayer({ id: 'lot-sel-glow', type: 'line', source: 'lots', filter: selFilter(null), paint: { 'line-color': '#8b5cf6', 'line-width': 14, 'line-opacity': 0.45, 'line-blur': 7 } });
-        map.addLayer({ id: 'lot-sel-line', type: 'line', source: 'lots', filter: selFilter(null), paint: { 'line-color': '#ffffff', 'line-width': 4.5 } });
-        map.addLayer({ id: 'lot-sel-core', type: 'line', source: 'lots', filter: selFilter(null), paint: { 'line-color': '#6d28d9', 'line-width': 2.2 } });
+        map.addLayer({ id: 'pick-glow', type: 'line', source: 'pick', paint: { 'line-color': '#a78bfa', 'line-width': 8, 'line-opacity': ['interpolate', ['linear'], ['zoom'], 13, 0.35, 15, 0.12], 'line-blur': 4 } });
+        map.addLayer({ id: 'pick-line', type: 'line', source: 'pick', paint: { 'line-color': '#7c3aed', 'line-width': ['interpolate', ['linear'], ['zoom'], 13, 2.5, 15, 1.2] } });
+        // The selected parcel glows.
+        map.addLayer({ id: 'lot-sel-glow', type: 'line', source: 'parcels', 'source-layer': PARCEL_LAYER, filter: selFilter(null), paint: { 'line-color': '#8b5cf6', 'line-width': 14, 'line-opacity': 0.45, 'line-blur': 7 } });
+        map.addLayer({ id: 'lot-sel-line', type: 'line', source: 'parcels', 'source-layer': PARCEL_LAYER, filter: selFilter(null), paint: { 'line-color': '#ffffff', 'line-width': 4.5 } });
+        map.addLayer({ id: 'lot-sel-core', type: 'line', source: 'parcels', 'source-layer': PARCEL_LAYER, filter: selFilter(null), paint: { 'line-color': '#6d28d9', 'line-width': 2.2 } });
+        addDetailLayers(map);
         set({ status: 'ready', tracts, towns, curves });
-        loadInView(map, tracts);
         // Start with the credits folded (MapLibre opens them on small screens). The (i) button opens them.
         container.querySelector('.maplibregl-compact-show')?.classList.remove('maplibregl-compact-show');
       } catch {
@@ -102,45 +107,47 @@ export default function MapCanvas() {
       }
     });
 
-    map.on('moveend', () => {
-      const t = useTool.getState().tracts;
-      if (t) loadInView(map, t);
-    });
     map.on('pitchend', () => {
       const on = map.getPitch() > 8;
       if (on !== useTool.getState().view3d) set({ view3d: on });
     });
 
-    // A click on a lot outline selects that exact lot. Anywhere else tests the spot (nearest lot within 40 m).
+    // A click on a parcel selects that exact parcel. Anywhere else tests the spot (nearest lot within 40 m).
     map.on('click', (e) => {
-      const hit = map.getLayer('lot-fill') ? map.queryRenderedFeatures(e.point, { layers: ['lot-fill'] })[0] : undefined;
-      const lot = hit ? lotById.get(String(hit.properties.lot_id)) : undefined;
-      void testSpot([e.lngLat.lng, e.lngLat.lat], lot ? 'Selected lot' : 'Dropped pin', lot ?? null);
+      const hit = map.getLayer('parcel-fill') && map.getZoom() >= 14 ? map.queryRenderedFeatures(e.point, { layers: ['parcel-fill'] })[0] : undefined;
+      const parcel = hit ? (hit.properties as ParcelProps) : null;
+      void testSpot([e.lngLat.lng, e.lngLat.lat], parcel ? (parcel.s === 1 ? 'Selected lot' : 'Selected parcel') : 'Dropped pin', parcel);
     });
 
     const unhover = () => {
-      if (hovered !== undefined) map.setFeatureState({ source: 'lots', id: hovered }, { hover: false });
+      if (hovered !== undefined) map.setFeatureState({ source: 'parcels', sourceLayer: PARCEL_LAYER, id: hovered }, { hover: false });
       hovered = undefined;
       tip.remove();
     };
-    map.on('mousemove', 'lot-fill', (e) => {
+    // Hover tooltips only where there is a real pointer (a tap would leave one hanging on touch screens).
+    const canHover = window.matchMedia('(hover: hover)').matches;
+    map.on('mousemove', 'parcel-fill', (e) => {
+      if (!canHover) return;
       const f = e.features?.[0] as MapGeoJSONFeature | undefined;
       if (!f || f.id === undefined) return;
       map.getCanvas().style.cursor = 'pointer';
       if (hovered !== f.id) {
         unhover();
         hovered = f.id;
-        map.setFeatureState({ source: 'lots', id: hovered }, { hover: true });
+        map.setFeatureState({ source: 'parcels', sourceLayer: PARCEL_LAYER, id: hovered }, { hover: true });
       }
-      const st = (map.getFeatureState({ source: 'lots', id: f.id }).st ?? 'unknown') as LotStatus;
-      const m2 = f.properties.lot_m2;
-      const size = isNum(m2) ? fmt(m2 * 10.764) : null;
+      const p = f.properties as ParcelProps;
+      const a = useTool.getState().adu;
+      const text = parcelTip(p, a);
+      const dot = LOT_COLORS[parcelStatus(p, a)];
       tip
         .setLngLat(e.lngLat)
-        .setHTML(`<div class="bh-tip-row"><span class="bh-tip-dot" style="background:${LOT_COLORS[st]}"></span><b>${LOT_LABEL[st]}</b></div><div class="bh-tip-sub">${size ? `${size} sq ft lot · ` : ''}click to select</div>`)
+        .setHTML(`<div class="bh-tip-row"><span class="bh-tip-dot" style="background:${dot}"></span><b></b></div><div class="bh-tip-sub">Click to select</div>`)
         .addTo(map);
+      const b = tip.getElement()?.querySelector('b');
+      if (b) b.textContent = text;
     });
-    map.on('mouseleave', 'lot-fill', () => {
+    map.on('mouseleave', 'parcel-fill', () => {
       map.getCanvas().style.cursor = '';
       unhover();
     });
@@ -159,7 +166,7 @@ export default function MapCanvas() {
     if (status === 'ready' && map?.getLayer('tract-fill')) map.setPaintProperty('tract-fill', 'fill-color', colorExpr(metric));
   }, [metric, status]);
 
-  // Room and Pays off for every tract, and every lot colour, follow the ADU controls (debounced for the slider).
+  // Room and Pays off for every tract, and the parcel colours, follow the ADU controls (debounced for the slider).
   useEffect(() => {
     const map = mapRef.current;
     const tracts = useTool.getState().tracts;
@@ -170,7 +177,11 @@ export default function MapCanvas() {
         const pay = tractPayoff(p, adu);
         map.setFeatureState({ source: 'tracts', id: p.GEOID }, { room: tractRoom(p, adu, curves)?.fit ?? null, pays: pay ? PAYS_CODE[pay.pays] : null });
       }
-      paintLots(map, adu);
+      if (map.getLayer('parcel-fill')) {
+        map.setPaintProperty('parcel-fill', 'fill-color', parcelFillColor(adu));
+        map.setPaintProperty('parcel-fill', 'fill-opacity', ['interpolate', ['linear'], ['zoom'], 14, 0, 14.6, parcelFillOpacity(adu)] as unknown as ExpressionSpecification);
+        map.setPaintProperty('parcel-line', 'line-color', parcelLineColor(adu));
+      }
     }, 150);
     return () => window.clearTimeout(t);
   }, [adu, curves, status]);
@@ -180,6 +191,21 @@ export default function MapCanvas() {
     if (status !== 'ready' || !map) return;
     for (const id of ['lot-sel-glow', 'lot-sel-line', 'lot-sel-core']) if (map.getLayer(id)) map.setFilter(id, selFilter(selectedLot));
   }, [selectedLot, status]);
+
+  // The "Show" toggles: layer filters only, no reload.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (status !== 'ready' || !map?.getLayer('parcel-fill')) return;
+    const f = parcelFilter(adu, sfOnly, hideNoRoom);
+    map.setFilter('parcel-fill', f);
+    map.setFilter('parcel-line', f);
+  }, [adu, sfOnly, hideNoRoom, status]);
+
+  // The selected lot's backyard room and ADU box (lot_detail.pmtiles, when it exists).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (status === 'ready' && map) updateDetail(map, selectedLot, adu, view3d);
+  }, [selectedLot, adu, view3d, status]);
 
   useEffect(() => {
     const map = mapRef.current;

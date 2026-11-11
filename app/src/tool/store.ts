@@ -4,6 +4,7 @@ import type { FitCurves } from '../lib/adu';
 import { BASE, SIZE_MAX, SIZE_MIN, SIZE_STEP, type Adu, type Bed, type Stories } from '../lib/numbers';
 import type { FC, LngLat, Lot, TownProps, TractProps } from './geo';
 import type { MetricId } from './metrics';
+import type { ParcelProps } from './parcels';
 
 export type Rule = 'current' | 'hb2186';
 
@@ -14,6 +15,8 @@ export interface Spot {
   tract: TractProps;
   town: TownProps;
   lot: Lot | null;
+  /** The parcel clicked on the map (vector tiles), if any. */
+  parcel: ParcelProps | null;
 }
 
 interface ToolState {
@@ -34,6 +37,11 @@ interface ToolState {
   selectedLot: string | null;
   /** The ADU being tested. */
   adu: Adu;
+  /** Parcel filters: hide parcels that were not checked (rowhouses, twins, other), hide lots with no room. */
+  sfOnly: boolean;
+  hideNoRoom: boolean;
+  /** Tablet / phone bottom sheet: open or only peeking. */
+  sheetOpen: boolean;
   set: (p: Partial<ToolState>) => void;
   setAdu: (p: Partial<Adu>) => void;
 }
@@ -51,7 +59,14 @@ export function aduFromHash(hash: string): Adu {
   };
 }
 
-export const aduHash = (a: Adu) => `#/tool?bed=${a.bed}&size=${a.size}&st=${a.stories}`;
+/** The current hash with the ADU written into its query (other keys, like research, are kept). */
+export function aduHash(a: Adu) {
+  const q = new URLSearchParams(window.location.hash.split('?')[1] ?? '');
+  q.set('bed', String(a.bed));
+  q.set('size', String(a.size));
+  q.set('st', String(a.stories));
+  return `#/?${q.toString()}`;
+}
 
 export const useTool = create<ToolState>((set) => ({
   rule: 'current',
@@ -65,6 +80,9 @@ export const useTool = create<ToolState>((set) => ({
   msg: null,
   view3d: false,
   selectedLot: null,
+  sfOnly: true,
+  hideNoRoom: false,
+  sheetOpen: false,
   adu: typeof window === 'undefined' ? BASE : aduFromHash(window.location.hash),
   set: (p) => set(p),
   setAdu: (p) =>

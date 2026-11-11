@@ -130,7 +130,7 @@ export default function Search() {
               set({ msg: null });
               clearSpot();
             }}
-            className="grid h-8 w-8 shrink-0 place-items-center rounded-lg text-slate-500 hover:bg-stone-100 hover:text-slate-900"
+            className="tap grid h-8 w-8 shrink-0 place-items-center rounded-lg text-slate-500 hover:bg-stone-100 hover:text-slate-900"
             aria-label="Clear search and pin"
           >
             <X className="h-4 w-4" />

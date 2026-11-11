@@ -20,7 +20,7 @@ export function Segmented<T extends string>({ value, options, onChange, label, f
       {options.map((o) => {
         const on = value === o.value;
         return (
-          <button key={o.value} type="button" role="radio" aria-checked={on} title={o.hint} onClick={() => onChange(o.value)} className={cx('relative rounded-lg px-3 py-1.5 text-small font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-violet-500', on ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900')}>
+          <button key={o.value} type="button" role="radio" aria-checked={on} title={o.hint} onClick={() => onChange(o.value)} className={cx('tap relative rounded-lg px-3 py-1.5 text-small font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-violet-500', on ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900')}>
             {on && <motion.span layoutId={`seg-${id}`} className="absolute inset-0 rounded-lg bg-white shadow-sm ring-1 ring-black/5" transition={SPRING_TAB} />}
             <span className="relative">{o.label}</span>
           </button>

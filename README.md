@@ -11,6 +11,7 @@ Where can Pennsylvania add ADUs (backyard homes), and would they pay off?
 - `musa5500/` demand + payoff: growth before vs after 2019, K-means, land cover, payoff test, ADUs by 2031
 - `musa6950/` room on the lot: U-Net on 2022 aerial images, fit test for a 600 sq ft unit
 - `app/` the website and tool (React + Vite). Search an address, see the lot, tract, and town
+- `api/agent.ts` + `agent/` the "Ask about this site" agent (Claude, tools run in the browser). Needs `ANTHROPIC_API_KEY` on Vercel
 
 ## Run it
 
@@ -21,6 +22,7 @@ python musa6950/get_data.py      # conda env geoai
 python app/build_data.py         # tool data -> app/public/data
 quarto render                    # class site -> site/
 npm install && npm run dev       # website at localhost:5173
+npm test                         # unit tests (payoff, rules, agent tools)
 ```
 
 - Run the notebooks in order before `build_data.py`. Data is not in the repo

@@ -2,19 +2,23 @@
 
 React 19 + TypeScript + Tailwind 4 + motion, built with Vite. Same look as VisionPitts. Static, no server.
 
-## Pages (hash routes)
+## Screens (hash state)
 
-- `#/` the tool: full-screen map, search and controls on the left, report on the right (bottom sheet on phones)
-- `#/tool?bed=1&size=600&st=1` the tool with an ADU scenario (shareable)
-- `#/research/6950` and `#/research/5500` one short page per class: Purpose, Data, Methods
+- `#/` the tool: full-screen map with two panels on one grid. Left: search, "This lot", your ADU, rules, map colour, filters. Right: Ask, a one-line verdict, sample ADUs, "Play with it", and Details. The top bar (Tool / Research) stays on screen
+- Layout (`src/tool/layout.ts`): desktop 1280+ both panels; laptop 1024-1279 narrower panels, long cards fold; tablet 768-1023 and phone: controls in a drawer, one bottom sheet with tabs (This lot / Report / Ask)
+- `#/?bed=1&size=600&st=1` the tool with an ADU scenario (shareable)
+- `#/?research=6950` and `#/?research=5500` the Research page for one class (Purpose, Data, Methods) in a panel over the map. Esc closes it
 - `/quarto/` the Quarto class site (copied from `site/` at build)
 
 ## Files
 
 - `index.html` page shell
-- `src/tool/` map (`MapCanvas`), map buttons (`MapControls`), search (`Search`), controls (`LeftPanel`), report (`Report`), spot test (`actions`, `geo`), lot outlines (`lotShapes`)
-- `src/pages/Research.tsx` the two Research pages
-- `src/lib/adu.ts` fit and payoff math for the ADU being tested (tests in `adu.test.ts`)
+- `src/tool/` map (`MapCanvas`), map buttons (`MapControls`), search (`Search`), controls (`LeftPanel`), report (`Report`), spot test (`actions`, `geo`), parcel colours and labels (`parcels`)
+- `src/pages/` the Research panel and its two pages
+- `src/lib/adu.ts` fit and payoff math for the ADU being tested, and `playAdu` for "Play with it" (tests in `adu.test.ts`)
+- `src/agent/` the Ask agent in the browser: tool executors (same code as the report), browser data provider, the request loop
+- `../api/agent.ts` the Vercel function that calls Claude (`claude-sonnet-5-5`, or `AGENT_MODEL`). Key from `ANTHROPIC_API_KEY`, never in the bundle. Rate limit per IP, at most 6 tool rounds, prompt caching. `npm run dev` serves it too (reads the key from the repo-root `.env`)
+- `../agent/` tool schemas and system prompt, the Node data provider, `eval_questions.json` (15 questions) and `npm run eval:agent` (runs only with a key)
 - `src/lib/numbers.ts` cost, rate, model scores and totals in one place
 - `src/lib/rules.ts` today's rules, HB 2186 and SB 1346 text (tests in `rules.test.ts`)
 - `build_data.py` makes the files in `public/data/`
@@ -28,6 +32,7 @@ npm install
 npm run dev        # http://localhost:5173
 npm test           # payoff and fit math (vitest)
 npm run build      # typecheck + build to dist/ (needs site/ from quarto render)
+npx vite preview   # serve dist/ (supports the range requests the parcel tiles need)
 ```
 
 ## How the tool works
@@ -35,10 +40,12 @@ npm run build      # typecheck + build to dist/ (needs site/ from quarto render)
 - Map: MapLibre GL JS (npm), OpenFreeMap Positron basemap (free, no key). Loaded only on the tool page
 - 2D / 3D button: 3D tilts to 55 degrees and shows 3D buildings (OpenFreeMap `building` layer). Right-drag or ctrl-drag to rotate and tilt
 - Search: Photon (komoot), free, no key, limited to Pennsylvania
-- Click the map = test that spot too. Click a lot outline = test that exact lot
+- Click the map = test that spot too (a short ripple, no marker). Click a parcel = test that exact parcel (its glowing outline is the only mark)
+- Show: "Single-family lots only" (on) and "Hide lots with no room" (off) are layer filters
+- Backyard room per lot (`public/data/lot_detail.pmtiles`, layers `open` and `spot`): drawn for the selected lot from zoom 17 when the file exists. The ADU box extrudes 3.5 m per story in 3D
 - Point in polygon finds the tract and town in the browser
 - Lot results: loads `public/data/lots/<tract>.json` and takes the nearest lot within 40 m
-- Lot outlines: from zoom 15 in pilot tracts, `public/data/lot_shapes/<tract>.geojson`, coloured Fits / Fits if trees cut / No room
+- Parcels: every parcel in Philadelphia and Cumberland County from `public/data/parcels.pmtiles` (vector tiles, layer `parcels`, z14-15, overzoomed), read with the `pmtiles` MapLibre protocol. Shown from zoom 14, where the tract colours fade out. Fits (green), Fits if trees cut (amber), No room (red), Not checked (light grey: rowhouses, twins, other parcels). The colour follows the ADU footprint (`mf` / `mk` when present, else `f` / `k` at 600 sq ft only). The server must support HTTP range requests (Vercel and `vite preview` do, `python -m http.server` does not)
 - Your ADU: bedrooms, size, stories. Footprint = size / stories. Fit, lots with room, and payoff follow it live
 - Rules switch: Today or HB 2186. Today uses the town fields in `towns.geojson` (approval, new backyard unit, size cap, owner occupancy, max units, notes), and for Philadelphia lots `rule_lot` / `rule_why`. Bill status text lives in `src/lib/rules.ts`. Research: `shared/adu_rules_pa.md`
 - No lot for the spot: the report shows the tract share of lots with room
@@ -72,7 +79,8 @@ Rule fields (from `shared/legal_status.csv`, research in `shared/adu_rules_pa.md
 
 Tool files from MUSA 6950:
 
-- `public/data/lot_shapes/<GEOID>.geojson`: lot outlines, EPSG:4326, property `lot_id` (matches `lots/<GEOID>.json`)
+- `public/data/parcels.pmtiles`: every parcel in the pilot counties (made by `app/build_tiles.py`). Properties: `id` (lot_id), `s` (1 = checked single-family lot), `t` (detached / row / twin / other), `f`, `k` (fits, fits keeping trees at 600 sq ft, 0/1), `mf`, `mk` (largest footprint, sq ft), `r` (Philadelphia rule: c = conversion only, v = variance)
+- `public/data/lot_detail.pmtiles` (coming): layer `open` (id, cls = open / tree, a = sq ft) and layer `spot` (id, fp = footprint sq ft, kt = keeps trees 0/1, kind = max / base600)
 - `public/data/fit_curves.json`: share of lots with room by footprint, per stratum. `{ "urban": [{ "f": 100, "fit": 0.95, "keep": 0.8, "lo": 0.93, "hi": 0.97 }, ...], "suburban": [...], "rural": [...] }`. Lots with room = lots_total x curve(stratum, footprint), linear between steps
 
 `lots_pilot.csv` is only for pilot counties (Philadelphia, Cumberland). One row per lot. lon/lat = center of the lot.
@@ -81,3 +89,5 @@ Tool files from MUSA 6950:
 
 - Map data © OpenStreetMap contributors, basemap by OpenFreeMap
 - Search by Photon (komoot), OpenStreetMap data
+- Building outlines © Microsoft (ODbL). Map by MapLibre
+- Parcels: City of Philadelphia (PWD), Cumberland County GIS

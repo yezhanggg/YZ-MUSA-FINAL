@@ -620,7 +620,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="adus-by-2031">6. ADUs by 2031</h3>
 <ul>
 <li>Lots with room: from <code>lots_tract.csv</code> (MUSA 6950), all 3,445 tracts</li>
-<li>Today’s rules: only 9 towns are coded in <code>shared/legal_status.csv</code> (2 allowed, 7 limited). The other towns are treated as limited</li>
+<li>Today’s rules: only 12 towns are coded in <code>shared/legal_status.csv</code> (4 allowed, 8 limited). The other towns are treated as limited</li>
+<li>Pittsburgh is now coded “allowed”. It made ADUs legal citywide on Oct 29, 2026 (see <code>shared/adu_rules_pa.md</code>)</li>
 <li>Forecast covers 2,571 of 2,572 towns. Wheatland borough (Mercer) has no blocks in the LODES crosswalk and no population estimate after 2019, so it has no row</li>
 </ul>
 <p>Statewide totals, 2027-2031:</p>
@@ -636,34 +637,35 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>Today, by 2031</td>
-<td>197</td>
-<td>928</td>
-<td>2,693</td>
+<td>316</td>
+<td>1,168</td>
+<td>3,040</td>
 </tr>
 <tr class="even">
 <td>HB 2186, by 2031</td>
-<td>8,195</td>
-<td>16,861</td>
-<td>25,526</td>
+<td>8,219</td>
+<td>16,912</td>
+<td>25,600</td>
 </tr>
 <tr class="odd">
 <td>HB 2186, per year</td>
-<td>1,639</td>
-<td>3,372</td>
-<td>5,105</td>
+<td>1,644</td>
+<td>3,382</td>
+<td>5,120</td>
 </tr>
 <tr class="even">
 <td>HB 2186, per 100k people per year</td>
 <td>12.6</td>
-<td>25.9</td>
-<td>39.2</td>
+<td>26.0</td>
+<td>39.3</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>The Pew range for all of PA would be 3,385 to 10,545 a year (13.0 million people). The HB 2186 mid case, 3,372 a year, sits just below the bottom of that range. This is expected, because most PA tracts do not pass the payoff test and many have few single-family lots</li>
+<li>The Pew range for all of PA would be 3,385 to 10,545 a year (13.0 million people). The HB 2186 mid case, 3,382 a year, sits just below the bottom of that range. This is expected, because most PA tracts do not pass the payoff test and many have few single-family lots</li>
 <li>HB 2186 mid is about 11.1% of the new homes PA permits each year now (24,810 to 28,149 a year in 2022-2025, 47,894 in 2021)</li>
-<li>Under today’s rules the forecast is 18 times smaller (928 vs 16,861 in the mid case). Nearly all of the gap comes from the assumption that unlisted towns are “limited”</li>
+<li>Under today’s rules the forecast is about 14 times smaller (1,168 vs 16,912 in the mid case). Nearly all of the gap comes from the assumption that unlisted towns are “limited”</li>
+<li>Pittsburgh alone is 236 of the 1,168 “today” mid case now that it is allowed. When it was coded limited it gave 12</li>
 </ul>
 <p>Top towns under HB 2186 (mid):</p>
 <table class="caption-top table">
@@ -683,36 +685,36 @@ ul.task-list li input[type="checkbox"] {
 <td>Philadelphia city</td>
 <td>limited</td>
 <td>1,579,706</td>
-<td>195</td>
-<td>401</td>
-<td>606</td>
+<td>196</td>
+<td>404</td>
+<td>611</td>
 <td>20</td>
 </tr>
 <tr class="even">
 <td>Pittsburgh city</td>
-<td>limited</td>
+<td>allowed</td>
 <td>304,759</td>
-<td>114</td>
-<td>234</td>
-<td>353</td>
-<td>12</td>
+<td>115</td>
+<td>236</td>
+<td>356</td>
+<td>236</td>
 </tr>
 <tr class="odd">
 <td>Lower Merion township</td>
 <td>limited</td>
 <td>64,174</td>
 <td>67</td>
-<td>137</td>
-<td>208</td>
+<td>138</td>
+<td>210</td>
 <td>7</td>
 </tr>
 <tr class="even">
 <td>Haverford township</td>
 <td>limited</td>
 <td>50,874</td>
-<td>61</td>
-<td>126</td>
-<td>191</td>
+<td>62</td>
+<td>127</td>
+<td>193</td>
 <td>6</td>
 </tr>
 <tr class="odd">
@@ -720,8 +722,8 @@ ul.task-list li input[type="checkbox"] {
 <td>limited</td>
 <td>58,664</td>
 <td>59</td>
-<td>121</td>
-<td>183</td>
+<td>122</td>
+<td>184</td>
 <td>6</td>
 </tr>
 <tr class="even">
@@ -729,17 +731,17 @@ ul.task-list li input[type="checkbox"] {
 <td>limited</td>
 <td>54,657</td>
 <td>58</td>
-<td>118</td>
-<td>179</td>
+<td>119</td>
+<td>180</td>
 <td>6</td>
 </tr>
 <tr class="odd">
 <td>Northampton township</td>
 <td>limited</td>
 <td>39,920</td>
-<td>55</td>
-<td>113</td>
-<td>172</td>
+<td>56</td>
+<td>114</td>
+<td>173</td>
 <td>6</td>
 </tr>
 <tr class="even">
@@ -747,8 +749,8 @@ ul.task-list li input[type="checkbox"] {
 <td>limited</td>
 <td>54,173</td>
 <td>55</td>
-<td>113</td>
-<td>171</td>
+<td>114</td>
+<td>172</td>
 <td>6</td>
 </tr>
 <tr class="odd">
@@ -756,24 +758,24 @@ ul.task-list li input[type="checkbox"] {
 <td>limited</td>
 <td>45,793</td>
 <td>51</td>
-<td>104</td>
-<td>158</td>
+<td>105</td>
+<td>159</td>
 <td>5</td>
 </tr>
 <tr class="even">
 <td>Manheim township</td>
 <td>limited</td>
 <td>44,436</td>
-<td>48</td>
+<td>49</td>
 <td>100</td>
-<td>151</td>
+<td>152</td>
 <td>5</td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>Philadelphia check. Today’s rule gives 4 to 61 ADUs by 2031 (20 mid), about 4 a year in the mid case. The real record is about 10 in 12+ years. So even the “limited” factor may be a bit high for Philadelphia</li>
-<li>Allentown and West Vincent already allow ADUs, so HB 2186 changes nothing there (76 and 29 mid)</li>
+<li>Pittsburgh, Allentown, West Vincent, and College township already allow ADUs, so HB 2186 changes nothing there (236, 77, 29, and 14 mid)</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -788,7 +790,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Demand: job growth slowed after 2019 across most of PA. Rent growth also slowed in real terms, but one tract group (871 tracts) saw rents speed up</li>
 <li>Payoff: a new ADU pays for itself at today’s rates and a $250 / sq ft build cost in only about 20% of tracts, mostly in Philadelphia and its suburbs. Cost matters more than rent</li>
-<li>Forecast: HB 2186 could mean about 16,900 ADUs by 2031 (8,200 to 25,500). That is about 3,400 a year, near the low end of what permissive cities see</li>
+<li>Forecast: HB 2186 could mean about 16,900 ADUs by 2031 (8,200 to 25,600). That is about 3,400 a year, near the low end of what permissive cities see</li>
 <li>Under today’s rules the number is much smaller, but that depends on how the ~2,560 uncoded towns are treated</li>
 </ul>
 </section>
@@ -799,7 +801,7 @@ ul.task-list li input[type="checkbox"] {
 <li>The 2010 to 2020 crosswalk uses land area, not where people live</li>
 <li>The payoff test uses median rent for all renters. A new ADU may rent for more. It ignores rising build costs, land, permits, and taxes on the new value</li>
 <li>The forecast factors (payoff weights, rule factors, demand range) are judgment calls. They are written at the top of notebook 04 so they are easy to change</li>
-<li>The town rule list has 9 towns. Coding more towns would change the “today” numbers the most</li>
+<li>The town rule list has 12 towns. Coding more towns would change the “today” numbers the most. Pittsburgh’s move to “allowed” shows how much one big city can shift them</li>
 <li>Lots with room come from MUSA 6950. Its suburban and rural fit rates rest on few pilot tracts, and the fit rule counts front yards</li>
 </ul>
 
