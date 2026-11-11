@@ -1,0 +1,631 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Merion township",
+    "instrument": "Lower Merion Township Code, Chapter 155 Zoning (amended in its entirety 2-26-2020 by Ord. No. 4181), 155-10.2C Restricted accessory dwelling units, Table 5.1 and 5.3, 155-7.1 Tables 7.1.1 and 7.1.2, 155-4.1 and 155-4.2 form standards, Table 8.1 parking",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 says the code includes legislation through 06-17-2026. New Laws (3) are all Chapter 145 traffic amendments. Table 5.1 last amended 9-17-2025 by Ord. No. 4316.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/35907405",
+      "https://ecode360.com/35688058",
+      "https://ecode360.com/35688044",
+      "https://ecode360.com/35686562",
+      "https://ecode360.com/35685500",
+      "https://ecode360.com/35687393",
+      "https://ecode360.com/35686330",
+      "https://ecode360.com/35686352",
+      "https://ecode360.com/35686053",
+      "https://ecode360.com/35687674",
+      "https://ecode360.com/35685499",
+      "https://ecode360.com/35686329",
+      "https://ecode360.com/35687673",
+      "https://ecode360.com/35748018",
+      "https://ecode360.com/LO0641/laws",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209144976",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/35907405",
+    "code_current_through": "2026-06-17",
+    "code_current_through_note": "eCode360: includes legislation through 06-17-2026. New Laws (3), all Chapter 145.",
+    "checks": [
+      "Restricted ADU: everyone in both units must be related by blood, marriage or legal adoption, or be domestic partners (155-10.2C(1))",
+      "One unit holds at most two persons, one of them 62 or older (155-10.2C(2))",
+      "The owner records an agreement with the Township to remove the separate kitchen when no longer used this way. The permit expires six months after elderly occupancy ends (155-10.2C(3) and (7))",
+      "An annual Township permit is required (155-10.2C(8))",
+      "One unit must have at least twice the occupied floor area of the other (155-10.2C(9))",
+      "If not owner-occupied, a nonprofit housing sponsor is required (155-10.2C(10))",
+      "Reading: Table 5.1 lists 'Alternative housing for the elderly' (S in LDR and MDR), and 155-10.2 holds the restricted ADU rules. The table has no separate restricted ADU row",
+      "Historic path: on a Class 1 or Class 2 Historic Resource, 'Accessory dwelling unit' is a regulated use by zoning permit, if it is the only other single-family unit. Parking per Table 8.1. A conservation easement or covenant is needed first (155-7.1B(3), C, D, Tables 7.1.1 and 7.1.2)",
+      "155-7.1B(4) says a use not allowed by the underlying district needs conditional use and must be inside the historic buildings. How this fits with the regulated ADU in Table 7.1.1 is not clear. Ask the Zoning Officer"
+    ],
+    "notes": "Zoning office: Building and Planning Department, Zoning Officer. Pending: no ADU amendment found. Nothing in New Laws for Chapter 155."
+  },
+  "adu": {
+    "term": {
+      "value": "restricted accessory dwelling unit",
+      "section": "155-10.2C, 155-2.1",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "155-10.2C 'Restricted accessory dwelling units'. 155-2.1 also defines 'accessory dwelling unit', used in the historic resource tables."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "155-10.2C(1) and (2)",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Relatives only, with one person 62 or older, by special exception in LDR and MDR. Historic resources have a separate by-permit path."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "Table 5.1, 155-5.1E, Table 5.3, 155-10.2C",
+      "url": "https://ecode360.com/35686562",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'Alternative housing for the elderly' is S in LDR and MDR. Special exception 'requires the approval of the Zoning Hearing Board' (155-5.1E(4)). In a Class 1 Historic Resource it is a conditional use."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Table 5.1",
+      "url": "https://ecode360.com/35686562",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A unit for non-relatives is not a listed use outside historic resources. Reading: a use variance."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "LDR1",
+        "LDR2",
+        "LDR3",
+        "LDR4",
+        "MDR1",
+        "MDR2",
+        "MDR3",
+        "IC",
+        "IH"
+      ],
+      "section": "155-10.2C, Table 5.1",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'In LDR, MDR, IC, and IH Zoning Districts'. Table 5.1 marks S in LDR and MDR."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "155-10.2C",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'a single-family dwelling or an existing institutional building may be converted into two dwelling units'. Single-family detached is the single-family type in LDR."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "155-10.2C",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU lot size. District lot area applies."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "155-10.2C and C(6)",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A single-family dwelling 'may be converted'. C(6) allows the unit in an accessory structure. New construction is not addressed."
+    },
+    "historic_bypass": {
+      "value": true,
+      "section": "155-7.1C and D, Tables 7.1.1 and 7.1.2",
+      "url": "https://ecode360.com/35687393",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Class 1 and Class 2 Historic Resources: 'Accessory dwelling unit' is R, by zoning permit, if 'the only single-family dwelling unit other than the principal dwelling'. No family or age rule there."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "garage_conversion"
+      ],
+      "section": "155-10.2C and C(6)",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Conversion of the house into two units, or a unit 'located in an accessory structure'. A new detached building or an addition is not addressed."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "155-10.2C",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No square foot cap."
+    },
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "155-10.2C(9)",
+      "url": "https://ecode360.com/35688067",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "'One dwelling unit shall have no less than two times the square footage of occupied space than the other.' Read as the smaller unit at most half of the larger."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "155-10.2C",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "155-3.4F(1), Tables 4.1.1 to 4.2.3",
+      "url": "https://ecode360.com/35686053",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory building: 2 stories up to 20 ft. Reading: a unit in an accessory structure meets principal setbacks, so the 20 ft cap applies, not the 15 ft cap for reduced setbacks (155-3.4F(2))."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "155-3.4F",
+      "url": "https://ecode360.com/35686053",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory buildings 'shall be erected to the rear of the principal building'."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "155-10.2C(6)",
+      "url": "https://ecode360.com/35688064",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'the accessory structure shall comply with the principal building setbacks in the underlying zoning district'. See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "155-10.2C(6)",
+      "url": "https://ecode360.com/35688064",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Principal building rear setback applies. See districts."
+    }
+  },
+  "coverage": {
+    "max_impervious": {
+      "value": null,
+      "section": "Tables 4.1.1 to 4.2.3",
+      "url": "https://ecode360.com/35686330",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "LDR1 20%, LDR2 21%, LDR3 28%, LDR4 45%, MDR1 to MDR3 50% for single-family."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "155-10.2C(10)",
+      "url": "https://ecode360.com/35688068",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Not strictly required. 'If the facility is not owner-occupied, its use shall be sponsored by a nonprofit organization'."
+    },
+    "family_only": {
+      "value": true,
+      "section": "155-10.2C(1)",
+      "url": "https://ecode360.com/35688059",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'All individuals living in the dwelling units are related by blood, marriage or legal adoption or are domestic partners.'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "155-10.2C",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed. Family-only occupancy rules out renting to others."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "155-10.2C",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'converted into two dwelling units', so one ADU."
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "155-10.2C",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "155-8.1, Table 8.1",
+      "url": "https://ecode360.com/35687674",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Single-family housing (detached), LDR and MDR: '2/unit + 1 space/ADU'. 155-8.1B(3) counts ADUs."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "155-10.2C",
+      "url": "https://ecode360.com/35688058",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "districts": {
+    "LDR1": {
+      "min_lot_sqft": {
+        "value": 90000,
+        "section": "Table 4.1.1 LDR1 Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "Table 4.1.1 LDR1 Dimensional Standards, Principal Building Front",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "Table 4.1.1 LDR1 Dimensional Standards, Principal Building Side",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 4.1.1 LDR1 Dimensional Standards, Principal Building Rear",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 4.1.1 LDR1 Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2 to 3 stories up to 35 ft."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2/unit + 1 space/ADU'"
+      }
+    },
+    "LDR2": {
+      "min_lot_sqft": {
+        "value": 45000,
+        "section": "Table 4.1.2 LDR2 Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Table 4.1.2 LDR2 Dimensional Standards, Principal Building Front",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "Table 4.1.2 LDR2 Dimensional Standards, Principal Building Side",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 4.1.2 LDR2 Dimensional Standards, Principal Building Rear",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 4.1.2 LDR2 Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2 to 3 stories up to 35 ft."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2/unit + 1 space/ADU'"
+      }
+    },
+    "LDR3": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "Table 4.1.3 LDR3 Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "Table 4.1.3 LDR3 Dimensional Standards, Principal Building Front",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Table 4.1.3 LDR3 Dimensional Standards, Principal Building Side",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 4.1.3 LDR3 Dimensional Standards, Principal Building Rear",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 4.1.3 LDR3 Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2 to 3 stories up to 35 ft."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2/unit + 1 space/ADU'"
+      }
+    },
+    "LDR4": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "Table 4.1.4 LDR4 Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "Table 4.1.4 LDR4 Dimensional Standards, Principal Building Front",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Predominant setback'. No single number."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 4.1.4 LDR4 Dimensional Standards, Principal Building Side",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 4.1.4 LDR4 Dimensional Standards, Principal Building Rear",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 4.1.4 LDR4 Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686330",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2 to 3 stories up to 35 ft."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2/unit + 1 space/ADU'"
+      }
+    },
+    "MDR1": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "Table 4.2.1 MDR1 Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "4,000 sq ft minimum per unit."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "Table 4.2.1 MDR1 Dimensional Standards, Principal Building Front",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Predominant setback'. No single number."
+      },
+      "setback_side_ft": {
+        "value": null,
+        "section": "Table 4.2.1 MDR1 Dimensional Standards, Principal Building Side",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'0 or 10 minimum'. No single number."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 4.2.1 MDR1 Dimensional Standards, Principal Building Rear",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 4.2.1 MDR1 Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2 to 3 stories up to 35 ft."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2/unit + 1 space/ADU'"
+      }
+    },
+    "MDR2": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "Table 4.2.2 MDR2 Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "3,000 sq ft minimum for single-family."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "Table 4.2.2 MDR2 Dimensional Standards, Principal Building Front",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Predominant setback'. No single number."
+      },
+      "setback_side_ft": {
+        "value": null,
+        "section": "Table 4.2.2 MDR2 Dimensional Standards, Principal Building Side",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'0 or 10 minimum'. No single number."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 4.2.2 MDR2 Dimensional Standards, Principal Building Rear",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "Table 4.2.2 MDR2 Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "3 stories up to 40 ft."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2/unit + 1 space/ADU'"
+      }
+    },
+    "MDR3": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "Table 4.2.3 MDR3 Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "3,000 sq ft minimum for single-family."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "Table 4.2.3 MDR3 Dimensional Standards, Principal Building Front",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Predominant setback'. No single number."
+      },
+      "setback_side_ft": {
+        "value": null,
+        "section": "Table 4.2.3 MDR3 Dimensional Standards, Principal Building Side",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'0 or 10 minimum'. No single number."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 4.2.3 MDR3 Dimensional Standards, Principal Building Rear",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "155-10.2C(6): an ADU in an accessory structure meets principal setbacks."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "Table 4.2.3 MDR3 Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686352",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "3 stories up to 40 ft."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "Table 8.1",
+        "url": "https://ecode360.com/35687674",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'2/unit + 1 space/ADU'"
+      }
+    }
+  }
+}
