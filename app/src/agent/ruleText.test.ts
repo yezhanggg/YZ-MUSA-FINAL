@@ -291,3 +291,81 @@ describe('get_rule_text puts terms before numbers', () => {
     }
   });
 });
+
+// Pass 3: what resolve() now separates must also show in the tool.
+FAKE_FILES.pa_testing_scope = cityLike('Scopeton', {
+  adu: { term: leaf('accessory apartment', '87-79'), status: leaf('family_only', '87-79'), scope_districts: leaf(['TC-R', 'TC-B'], 'Article XV'), status_outside: leaf('not_addressed', '87-186') },
+  approval: { path: leaf('special_exception', '87-79A'), fallback_path: leaf('variance', 'MPC 910.2'), unlisted_use_path: leaf('special_exception', '87-186A'),
+    alternatives: leaf([{ name: 'Two-family conversion', path: 'special_exception', districts: ['R-2'], min_lot_sqft: 20000, section: '500-2312' }], '500-2312') },
+  use: { family_only: leaf(true, '87-79B'), owner_occupancy: leaf(true, '87-79C') },
+  size: { max_share_internal: leaf(0.3, 'G3(a)'), max_sqft_accessory_building: leaf(650, 'G3(b)') },
+  envelope: { max_height_ft: leaf(12, 'G2(h)'), max_height_garage_ft: leaf(16, 'G2(h) garages'), setback_side_ft: leaf(5, 'accessory yard') },
+  eligibility: { gates: leaf([
+    { kind: 'lot_size', condition: 'Detached forms need a large lot', effect: 'bars', applies_to: ['detached_new'], test: 'lot_sqft_at_least', value: 10000, section: '2103.A', url: 'https://ecode360.com/4' },
+    { kind: 'other', condition: 'Outside the TND overlay', effect: 'condition', not_districts: ['TC-R', 'TC-B'], section: '87-186', url: 'https://ecode360.com/5' },
+  ], '2103') },
+  districts: { 'TC-R': { principal_max_height_ft: leaf(38, 'Schedule A'), setback_side_ft: leaf(5, 'Schedule A side') } },
+});
+TOWNS.push({ geoid: '4299900008', name: 'Scopeton township', county: 'Testing', type: 'township', population: 3000, file: 'pa_testing_scope', status: 'drafted', checked_on: '2026-11-11' });
+type Forms = { inside_or_attached: Record<string, unknown>; accessory_building: Record<string, unknown> };
+type P3 = TownOut & { forms?: Forms; scope?: { in_scope: boolean | null }; lot_status?: { value: string }; under_hb2186?: { conditions: { kind: string }[] }; other_ways_to_add_a_unit?: { label: string; options: { name: string; section: string }[] } };
+
+describe('get_rule_text pass 3', () => {
+  it('says where a district-scoped ADU rule reaches, and follows the district', async () => {
+    const none = (await getRuleText({ place: 'Scopeton', topic: 'approval' }, FAKE)) as P3;
+    expect(none.summary).toMatch(/^ADU rule only in TC-R, TC-B, otherwise not addressed/);
+    const inside = (await getRuleText({ place: 'Scopeton', topic: 'approval', district: 'TC-R' }, FAKE)) as P3;
+    expect(inside.scope!.in_scope).toBe(true);
+    expect(inside.summary).toMatch(/family members only/);
+    const out = (await getRuleText({ place: 'Scopeton', topic: 'approval', district: 'SR' }, FAKE)) as P3;
+    expect(out.scope!.in_scope).toBe(false);
+    expect(out.lot_status!.value).toBe('not_addressed');
+    expect(out.approval!.district_path).toMatchObject({ path: 'special_exception', section: '87-186A' });
+    expect(out.conditions!.some((c) => c.kind === 'family')).toBe(false);
+  });
+
+  it('gives sizes, heights and yards per form with citations', async () => {
+    const out = (await getRuleText({ place: 'Scopeton', topic: 'size', district: 'TC-R' }, FAKE)) as P3;
+    const f = out.forms!;
+    expect((f.inside_or_attached.max_share_of_house as Rule).value).toBe(0.3);
+    expect((f.accessory_building.max_sqft as Rule).value).toBe(650);
+    expect((f.accessory_building.max_height_ft as Rule).value).toBe(12);
+    expect((f.accessory_building.garage_max_height_ft as Rule).value).toBe(16);
+    expect((f.inside_or_attached.max_height_ft as Rule).value).toBe(38);
+    expect(((f.inside_or_attached.attached_yards as Record<string, Rule>).side).section).toBe('Schedule A side');
+    expect(((f.accessory_building.yards as Record<string, Rule>).side).section).toBe('accessory yard');
+  });
+
+  it('presents lot-fact gates as allowed-only-if and honours not_districts', async () => {
+    const out = (await getRuleText({ place: 'Scopeton', topic: 'eligibility', district: 'TC-R' }, FAKE)) as P3;
+    const gate = out.conditions!.find((c) => c.kind === 'lot_size')!;
+    expect(gate.condition).toMatch(/Allowed only if the lot is at least 10,000 sq ft/);
+    expect(out.conditions!.some((c) => /TND/.test(c.condition))).toBe(false);
+    const sr = (await getRuleText({ place: 'Scopeton', topic: 'eligibility' }, FAKE)) as P3;
+    expect(sr.conditions!.some((c) => /TND/.test(c.condition))).toBe(true);
+  });
+
+  it('lists the conditions the bill would override and other ways to add a unit', async () => {
+    const out = (await getRuleText({ place: 'Scopeton', topic: 'use', district: 'TC-R' }, FAKE)) as P3;
+    expect(out.under_hb2186!.conditions.map((c) => c.kind)).toEqual(expect.arrayContaining(['family', 'owner_occupancy']));
+    expect(out.other_ways_to_add_a_unit!.label).toMatch(/not ADUs/);
+    expect(out.other_ways_to_add_a_unit!.options[0].section).toBe('500-2312');
+  });
+
+  it('marks a secondary lot area per unit as an if', async () => {
+    const f = file('pa_erie_erie');
+    const has = Object.values(f.districts ?? {}).some((r) => (r as { lot_area_per_unit_sqft?: { confidence: string } }).lot_area_per_unit_sqft?.confidence === 'secondary');
+    if (!has) return;
+    const out = (await getRuleText({ place: 'Erie city', topic: 'eligibility' })) as P3;
+    expect(out.conditions!.some((c) => c.kind === 'lot_area_per_unit' && c.condition.startsWith('If '))).toBe(true);
+  });
+
+  it('gives every real town file a forms block', async () => {
+    for (const t of (await townIndex()).filter((x) => x.file.startsWith('pa_') && existsSync(resolve(RULES, `${x.file}.json`)))) {
+      const out = (await getRuleText({ place: t.geoid, topic: 'size' })) as P3;
+      expect(out.forms, t.file).toBeTruthy();
+      if (['not_addressed', 'prohibited'].includes(file(t.file).adu.status.value) && !file(t.file).approval?.district_paths)
+        expect(out.forms!.accessory_building.max_height_ft, t.file).toMatch(/not an ADU height/);
+    }
+  });
+});
