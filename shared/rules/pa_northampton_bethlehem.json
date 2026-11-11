@@ -1,0 +1,478 @@
+{
+  "provenance": {
+    "jurisdiction": "Bethlehem, PA",
+    "instrument": "City of Bethlehem Zoning Ordinance, Part 13 of the Codified Ordinances (effective June 15, 2012, last revised August 21, 2023): 1302.146 and 1322.03(bbb) Unit for Care of Relative, 1304 and 1305 use tables, 1306 dimensional rules",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Read from the PDF linked on the city Zoning Office page (cover: Last Revised August 21, 2023, Effective Date June 15, 2012). The link points to host k12.bethlehem-pa.gov. The same path on www returns 404. Pending: Bill No. 22-2026 (council packet PDF) adds 1318.26(e): no more than one single-family detached dwelling may be located on a lot. Final passage not confirmed. Not law here.",
+    "effective_date": "2012-06-15",
+    "source_urls": [
+      "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "https://www.bethlehem-pa.gov/community-economic-development/planning-zoning/zoning-office/",
+      "https://www.bethlehem-pa.gov/getmedia/25aeead7-b20e-461d-9519-47d39c9bc5dd/09a-Bill-22-2026-%e2%80%93-Amendments-to-Zoning-Ordinance.pdf",
+      "https://www.bethlehem-pa.gov/ordinances/",
+      "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Northampton",
+    "municipality_type": "city",
+    "geoid": "4209506088",
+    "code_host": "own site",
+    "code_url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+    "code_current_through": "2023-08-21",
+    "code_current_through_note": "PDF cover: Last Revised: August 21, 2023. Amendment list ends with Ordinance 2023-32 (08/15/23).",
+    "checks": [
+      "The code has no general ADU. The only accessory unit is a Unit for Care of Relative: up to two persons, relatives of the residents of the main unit, at least one needing care for illness, old age or disability (1322.03(bbb)(2))",
+      "The unit must be built to be reconverted into the main house, or be a modular cottage removed when the relative leaves. A lawful detached garage may be converted and later reconverted (1322.03(bbb)(3))",
+      "A legally binding mechanism must bar use as a separate dwelling after the relative leaves, binding on future owners (1322.03(bbb)(4))",
+      "Permit renews every year with a written statement that the relative still lives there (1322.03(bbb)(5))",
+      "Attached unit: internal doorway to the main unit. Only one entry door facing a public street (1322.03(bbb)(8), (9))",
+      "A general rental ADU has no path in the use tables. Closest options: conversion of an existing one-family dwelling into two or more units by special exception in RG and RT, only for a pre-existing detached or semi-detached building over 3,000 sq ft (1304 table, 1322.03(o)(6)). Otherwise a use variance from the Zoning Hearing Board",
+      "A new second kitchen is barred unless it serves a relative who needs care because of age or disability (1302 Dwelling Unit)",
+      "Bethlehem spans Northampton and Lehigh counties. Lehigh part county subdivision GEOID is 4207706088"
+    ],
+    "notes": "Zoning office: City of Bethlehem Zoning Office (page in source_urls). Census GEOID is the 2020 county subdivision code for the Northampton County part, from TIGERweb."
+  },
+  "adu": {
+    "status": {
+      "value": "family_only",
+      "section": "1302.146, 1322.03(bbb), 1304.01 table (5) Accessory Uses",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Unit for Care of Relative: limited to occupancy by a close relative of the permanent residents of the principal dwelling unit."
+    },
+    "term": {
+      "value": "Unit for Care of Relative",
+      "section": "1302.146",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No 'accessory dwelling unit' term in the code."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "1304 table (5) Accessory Uses, 1305 table f, 1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Unit for Care of Relative is P in RR, RS, RG, RT, RRC, and P in CL, CG and CS, CB, IR on the lot of an existing dwelling. Zoning Officer issues and renews the permit."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1325, 1302.147",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A unit not for a relative needing care has no listed path. It would need a variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RR",
+        "RS",
+        "RG",
+        "RT",
+        "RRC",
+        "CL",
+        "CG",
+        "CS",
+        "CB",
+        "IR"
+      ],
+      "section": "1304 table (5), 1305 table f",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Not allowed in LI, IN, PI, CM, I, CMU, IR-R, OMU."
+    },
+    "building_types": {
+      "value": null,
+      "section": "1322.03(bbb)(6)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The unit shall not decrease the residential appearance of a one family dwelling. No other building type limit."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum lot size for the unit."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "1322.03(bbb)(3)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "A modular cottage that will be completely removed is allowed. A lawful detached garage may be converted."
+    },
+    "historic_bypass": {
+      "value": null,
+      "section": "1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No historic rule."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "1322.03(bbb)(3), (8)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Inside or attached if it can be easily reconverted. Detached only as a removable modular cottage. A lawful detached garage may be converted. Over a garage is not named."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "1322.03(bbb), 1306.03(d)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No unit size cap. An accessory building in a residential district may not exceed 1,000 square feet of floor area."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No share-of-house limit."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "1306.02(a)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Any structure that is accessory to a dwelling shall have a maximum height of 20 feet. Read as applying to a detached unit."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 1000,
+      "section": "1306.03(d)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "In no case shall the floor area of an accessory building exceed 1,000 square feet in a residential district."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "1306.03(c)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No accessory building ... shall be allowed between the principal building and the front lot line."
+    },
+    "setback_side_ft": {
+      "value": 2,
+      "section": "1306.03(b)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "minimum side and rear yard setback for a permitted detached structure that is accessory to a dwelling shall be 2 feet."
+    },
+    "setback_rear_ft": {
+      "value": 2,
+      "section": "1306.03(b)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "2 feet. A garage door must be 5 feet from an alley line."
+    },
+    "setback_rear_alley_ft": {
+      "value": 2,
+      "section": "1306.03(b)1",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "2 ft for the structure. A vehicle garage door shall be setback a minimum of 5 feet from an alley."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "1306.03",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No separation distance in 1306.03."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "1302.02",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "An accessory building attached to the main building shall be deemed part of the main building."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "1306.01(a)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Set by district. See districts."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "1306.01(a)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Set by district. RR 50%, RS 75%."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No owner rule. Occupants must be relatives of the permanent residents of the main unit."
+    },
+    "family_only": {
+      "value": true,
+      "section": "1322.03(bbb)(2)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "occupied by a maximum of two persons, who shall be relatives of the permanent residents of the principal dwelling unit."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "1322.03(bbb)(2)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Occupancy is limited to care-needing relatives, so short-term rental is not possible."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No number per lot stated."
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "1322.03(bbb)(4)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "A binding mechanism must prohibit use as a separate dwelling unit after the relative leaves."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1322.03(bbb)(7), 1319.01(a)(1)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Additional parking for the accessory unit is not required if the applicant proves that the resident(s) ... will not routinely operate a vehicle. Otherwise the count is not stated (dwelling units need two)."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "1322.03(bbb)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    }
+  },
+  "districts": {
+    "RR": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "1306.01(a) RR, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit for a single family detached dwelling."
+      },
+      "setback_side_ft": {
+        "value": 2,
+        "section": "1306.03(b)",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached accessory structure side and rear setback 2 feet."
+      },
+      "setback_rear_ft": {
+        "value": 2,
+        "section": "1306.03(b)",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "1306.01(a) RR, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "15% building, 50% impervious."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1306.01(a) RR, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 feet, whichever is more restrictive."
+      }
+    },
+    "RS": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "1306.01(a) RS, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit for a single family detached dwelling."
+      },
+      "setback_side_ft": {
+        "value": 2,
+        "section": "1306.03(b)",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached accessory structure side and rear setback 2 feet."
+      },
+      "setback_rear_ft": {
+        "value": 2,
+        "section": "1306.03(b)",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "1306.01(a) RS, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "25% building, 75% impervious."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1306.01(a) RS, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 feet, whichever is more restrictive."
+      }
+    },
+    "RG": {
+      "min_lot_sqft": {
+        "value": 6500,
+        "section": "1306.01(a) RG, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit for a single family detached dwelling."
+      },
+      "setback_side_ft": {
+        "value": 2,
+        "section": "1306.03(b)",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached accessory structure side and rear setback 2 feet."
+      },
+      "setback_rear_ft": {
+        "value": 2,
+        "section": "1306.03(b)",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "1306.01(a) RG, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The table shows one 70% value. Text extraction does not show whether it is building or impervious coverage. Check the PDF."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1306.01(a) RG, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 feet, whichever is more restrictive."
+      }
+    },
+    "RT": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "1306.01(a) RT, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit for a single family detached dwelling."
+      },
+      "setback_side_ft": {
+        "value": 2,
+        "section": "1306.03(b)",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Detached accessory structure side and rear setback 2 feet."
+      },
+      "setback_rear_ft": {
+        "value": 2,
+        "section": "1306.03(b)",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.8,
+        "section": "1306.01(a) RT, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "80% building. Impervious shown as a dash."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1306.01(a) RT, Single Family Detached Dwelling",
+        "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 feet, whichever is more restrictive."
+      }
+    }
+  }
+}
