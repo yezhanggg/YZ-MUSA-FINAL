@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lot labels: __CITY__</title>
+<style>
+  :root { --bg:#151515; --panel:#202020; --ink:#eee; --mute:#9a9a9a; --hi:#ffd400; --ok:#3fb950; --line:#333; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.35 -apple-system, Helvetica, Arial, sans-serif; }
+  #wrap { display:flex; gap:14px; padding:10px; height:100vh; }
+  #view { flex:0 0 auto; display:flex; flex-direction:column; align-items:center; }
+  #big { max-height:calc(100vh - 20px); max-width:62vw; display:block; border:1px solid var(--line); }
+  #side { flex:1 1 auto; min-width:360px; display:flex; flex-direction:column; gap:8px; overflow:auto; }
+  #top { display:flex; justify-content:space-between; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  #lotname { font-size:18px; font-weight:600; }
+  #prog { color:var(--mute); }
+  #ctxbox img { width:100%; max-width:300px; display:block; border:1px solid var(--line); cursor:pointer; }
+  .q { background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:5px 9px; }
+  .q.active { border-color:var(--hi); box-shadow:0 0 0 1px var(--hi) inset; }
+  .q.skipped { opacity:.45; }
+  .q h3 { margin:0 0 4px; font-size:15px; font-weight:600; }
+  .opts { display:flex; flex-wrap:wrap; gap:6px; }
+  .opt { border:1px solid #555; border-radius:5px; padding:3px 8px; cursor:pointer; user-select:none; }
+  .opt kbd { display:inline-block; min-width:1.3em; text-align:center; background:#333; border-radius:3px; margin-right:5px; font:13px monospace; padding:1px 3px; }
+  .opt.on { background:var(--hi); color:#111; border-color:var(--hi); }
+  .opt.on kbd { background:#111; color:var(--hi); }
+  textarea { width:100%; height:48px; background:#111; color:var(--ink); border:1px solid #555; border-radius:5px; font:15px sans-serif; padding:5px; }
+  #help { color:var(--mute); font-size:13px; }
+  #help kbd { background:#333; border-radius:3px; padding:0 4px; font:12px monospace; color:var(--ink); }
+  #bar { display:flex; gap:6px; flex-wrap:wrap; }
+  button { background:#2d2d2d; color:var(--ink); border:1px solid #555; border-radius:5px; padding:5px 10px; cursor:pointer; font-size:14px; }
+  #done { color:var(--ok); font-weight:600; }
+  #nag { display:none; background:#5a4500; padding:6px 10px; border-radius:5px; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="view"><img id="big" alt="aerial sheet"></div>
+  <div id="side">
+    <div id="top"><span id="lotname"></span><span id="prog"></span></div>
+    <div id="ctxbox"><img id="ctx" alt="context" title="Click or press C to swap with the big view"></div>
+    <div id="nag">Many new answers since the last download. Press <b>D</b> to save a CSV copy.</div>
+    <div id="qs"></div>
+    <div id="done"></div>
+    <div id="bar">
+      <button id="prevb">&larr; Prev</button><button id="nextb">Next &rarr;</button>
+      <button id="todob">First unlabeled (U)</button><button id="dlb">Download CSV (D)</button>
+      <label><button id="impb">Load CSV</button><input id="impf" type="file" accept=".csv" style="display:none"></label>
+      <input id="who" placeholder="initials" size="6" title="labeler initials, saved with each row">
+    </div>
+    <div id="help">
+      Keys: <kbd>1</kbd>-<kbd>5</kbd> answer the yellow question. <kbd>Enter</kbd> confirm or next lot.
+      <kbd>Backspace</kbd> or <kbd>&uarr;</kbd> previous question. <kbd>&larr;</kbd> <kbd>&rarr;</kbd> previous or next lot.
+      <kbd>C</kbd> swap big and context view. <kbd>N</kbd> write a note. <kbd>U</kbd> first unlabeled lot. <kbd>D</kbd> download CSV.
+      Answers are saved in this browser as you go. Download the CSV at the end and put it in validation/labels/.
+    </div>
+  </div>
+</div>
+<script>
+"use strict";
+const CITY = "__CITY__";
+const STORE = "__STORE__";
+const LOTS = __LOTS__;
+const Q = [
+  {k:"outbuilding", t:"Detached building in the yard besides the house?",
+   o:[["none","None"],["garage","Garage"],["shed","Shed"],["other","Other"],["several","Several kinds (garage and shed)"]]},
+  {k:"outbuilding_count", t:"How many detached buildings?",
+   o:[["1","1"],["2","2"],["3","3"],["4","4 or more"]], skip:a => a.outbuilding === "none", auto:a => a.outbuilding === "none" ? "0" : null},
+  {k:"fit600", t:"Could a 20 x 30 ft (600 sq ft) unit fit in the rear or side yard, 5 ft from lot lines and 10 ft from the house, without removing a building?",
+   o:[["yes","Yes"],["no","No"],["if_removed","Only if a shed or garage goes"],["cannot_tell","Cannot tell"]]},
+  {k:"fit400", t:"Same for 16 x 25 ft (400 sq ft).",
+   o:[["yes","Yes"],["no","No"],["if_removed","Only if a shed or garage goes"],["cannot_tell","Cannot tell"]],
+   skip:a => a.fit600 === "yes", auto:a => a.fit600 === "yes" ? "yes" : null},
+  {k:"trees", t:"Would the unit need tree removal?",
+   o:[["no","No"],["some","Some"],["mostly","Mostly trees"]],
+   skip:a => a.fit400 === "no" || a.fit400 === "cannot_tell", auto:a => (a.fit400 === "no" || a.fit400 === "cannot_tell") ? "na" : null},
+  {k:"alley", t:"Is the rear on an alley or shared drive?",
+   o:[["yes","Yes"],["no","No"],["cannot_tell","Cannot tell"]]},
+  {k:"problems", t:"Image problems? Toggle, then Enter (Enter alone = none).", multi:true,
+   o:[["shadow","Shadow"],["leaf","Leaf cover"],["construction","Construction"],["lotline","Lot line looks wrong"]]},
+  {k:"note", t:"Note (optional). Enter saves and goes to the next lot. Esc leaves the box.", text:true}
+];
+const COLS = ["lot_id","city","outbuilding","outbuilding_count","fit600","fit400","trees","alley",
+  "img_shadow","img_leaf","img_construction","img_lotline","note","labeler","labeled_at","seconds"];
+
+let S = load();
+let cur = 0, qi = 0, swapped = false, shownAt = Date.now();
+if (typeof S.cur === "number" && S.cur >= 0 && S.cur < LOTS.length) cur = S.cur;
+const $ = id => document.getElementById(id);
+$("who").value = S.who || "";
+
+function load() {
+  try { const v = JSON.parse(localStorage.getItem(STORE) || "{}"); v.ans = v.ans || {}; return v; }
+  catch (e) { return {ans:{}}; }
+}
+function save() {
+  S.cur = cur; S.who = $("who").value.trim();
+  try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) { /* storage full or blocked */ }
+}
+function ans(id) { if (!S.ans[id]) S.ans[id] = {problems:[]}; return S.ans[id]; }
+function complete(a) {
+  return !!a && ["outbuilding","fit600","fit400","alley"].every(k => a[k]) && a.done;
+}
+function nDone() { return LOTS.filter(l => complete(S.ans[l.id])).length; }
+function isSkipped(q, a) { return q.skip ? q.skip(a) : false; }
+
+function show() {
+  const l = LOTS[cur], a = ans(l.id);
+  setSrc($("big"), swapped ? l.ctx : l.sheet);
+  setSrc($("ctx"), swapped ? l.sheet : l.ctx);
+  $("lotname").textContent = "#" + l.n + "  " + l.id + (l.addr ? "  " + l.addr : "");
+  $("prog").textContent = nDone() + " / " + LOTS.length + " labeled";
+  $("done").textContent = complete(a) ? "Saved. Enter or → for the next lot." : "";
+  const box = $("qs"); box.innerHTML = "";
+  Q.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q" + (i === qi ? " active" : "") + (isSkipped(q, a) ? " skipped" : "");
+    const h = document.createElement("h3"); h.textContent = (i + 1) + ". " + q.t; d.appendChild(h);
+    if (q.text) {
+      const ta = document.createElement("textarea"); ta.id = "note"; ta.value = a.note || "";
+      ta.addEventListener("input", () => { a.note = ta.value; save(); });
+      ta.addEventListener("keydown", e => {
+        if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); a.note = ta.value; finish(); }
+        if (e.key === "Escape") { ta.blur(); }
+        e.stopPropagation();
+      });
+      ta.addEventListener("focus", () => { qi = i; markActive(); });
+      d.appendChild(ta);
+    } else {
+      const os = document.createElement("div"); os.className = "opts";
+      q.o.forEach((o, j) => {
+        const b = document.createElement("span");
+        const on = q.multi ? (a.problems || []).includes(o[0]) : a[q.k] === o[0];
+        b.className = "opt" + (on ? " on" : "");
+        const kb = document.createElement("kbd"); kb.textContent = String(j + 1);
+        b.appendChild(kb); b.appendChild(document.createTextNode(o[1]));
+        b.addEventListener("click", () => { qi = i; pick(j); });
+        os.appendChild(b);
+      });
+      d.appendChild(os);
+    }
+    box.appendChild(d);
+  });
+  const act = box.children[qi]; if (act && act.scrollIntoView) act.scrollIntoView({block:"nearest"});
+  $("nag").style.display = (S.sinceDl || 0) >= 25 ? "block" : "none";
+  save();
+}
+// Dim a picture until the new one has loaded, so an old sheet is never labeled by mistake.
+function setSrc(img, src) {
+  if (img.getAttribute("src") === src) return;
+  img.style.opacity = "0.1";
+  img.onload = () => { img.style.opacity = "1"; };
+  img.onerror = () => { img.style.opacity = "1"; img.alt = "missing picture: " + src; };
+  img.setAttribute("src", src);
+}
+function markActive() {
+  document.querySelectorAll(".q").forEach((d, i) => d.classList.toggle("active", i === qi));
+}
+function applyAuto(a) {
+  Q.forEach(q => { if (q.auto) { const v = q.auto(a); if (v !== null) a[q.k] = v; } });
+}
+function nextQ(from) {
+  const a = ans(LOTS[cur].id);
+  let i = from + 1;
+  while (i < Q.length && isSkipped(Q[i], a)) i++;
+  return i;
+}
+function pick(j) {
+  const l = LOTS[cur], a = ans(l.id), q = Q[qi];
+  if (!q || q.text || j >= q.o.length) return;
+  if (q.multi) {
+    const v = q.o[j][0], p = a.problems || [];
+    a.problems = p.includes(v) ? p.filter(x => x !== v) : p.concat([v]);
+    save(); show(); return;
+  }
+  const prev = a[q.k];
+  a[q.k] = q.o[j][0];
+  // undo answers that were filled in automatically by an earlier choice
+  if (q.k === "outbuilding" && prev === "none" && a.outbuilding !== "none") a.outbuilding_count = "";
+  if (q.k === "fit600" && prev === "yes" && a.fit600 !== "yes") a.fit400 = "";
+  if (q.k === "fit400" && (prev === "no" || prev === "cannot_tell") && a.trees === "na") a.trees = "";
+  applyAuto(a);
+  qi = Math.min(nextQ(qi), Q.length - 1);
+  save(); show();
+}
+function finish() {
+  const l = LOTS[cur], a = ans(l.id);
+  applyAuto(a);
+  const missing = Q.filter(q => !q.text && !q.multi && !isSkipped(q, a) && !a[q.k]);
+  if (missing.length) { qi = Q.indexOf(missing[0]); show(); return; }
+  a.done = true;
+  a.labeler = $("who").value.trim();
+  a.labeled_at = new Date().toISOString();
+  a.seconds = Math.round((Date.now() - shownAt) / 1000) + (a.seconds_prev || 0);
+  a.seconds_prev = a.seconds;
+  S.sinceDl = (S.sinceDl || 0) + 1;
+  save();
+  go(cur + 1);
+}
+function go(i) {
+  if (i < 0 || i >= LOTS.length) { show(); return; }
+  cur = i; qi = 0; swapped = false; shownAt = Date.now();
+  const a = ans(LOTS[cur].id);
+  if (complete(a)) qi = Q.length - 2;
+  show();
+}
+function firstTodo() {
+  const i = LOTS.findIndex(l => !complete(S.ans[l.id]));
+  go(i < 0 ? cur : i);
+}
+function csvCell(v) {
+  const s = v === undefined || v === null ? "" : String(v);
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+function toCSV() {
+  const rows = [COLS.join(",")];
+  LOTS.forEach(l => {
+    const a = S.ans[l.id];
+    if (!a || !a.done) return;
+    const p = a.problems || [];
+    const r = {lot_id:l.id, city:CITY, outbuilding:a.outbuilding, outbuilding_count:a.outbuilding_count,
+      fit600:a.fit600, fit400:a.fit400, trees:a.trees, alley:a.alley,
+      img_shadow:+p.includes("shadow"), img_leaf:+p.includes("leaf"), img_construction:+p.includes("construction"),
+      img_lotline:+p.includes("lotline"), note:a.note || "", labeler:a.labeler || "", labeled_at:a.labeled_at || "", seconds:(a.seconds ?? "")};
+    rows.push(COLS.map(c => csvCell(r[c])).join(","));
+  });
+  return rows.join("\n") + "\n";
+}
+function download() {
+  const blob = new Blob([toCSV()], {type:"text/csv"});
+  const a = document.createElement("a");
+  const d = new Date(), pad = n => String(n).padStart(2, "0");
+  a.download = "labels_" + CITY + "_" + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + "_" + pad(d.getHours()) + pad(d.getMinutes()) + ".csv";
+  a.href = URL.createObjectURL(blob);
+  document.body.appendChild(a); a.click(); a.remove();
+  S.sinceDl = 0; save(); show();
+}
+function parseCSV(text) {
+  const out = []; let row = [], f = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true;
+    else if (c === ",") { row.push(f); f = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); out.push(row); row = []; f = ""; }
+    else f += c;
+  }
+  if (f !== "" || row.length) { row.push(f); out.push(row); }
+  return out;
+}
+function importCSV(text) {
+  const rows = parseCSV(text); if (!rows.length) return 0;
+  const h = rows[0]; let n = 0;
+  rows.slice(1).forEach(r => {
+    const o = {}; h.forEach((k, i) => o[k] = r[i] === undefined ? "" : r[i]);
+    if (!o.lot_id || !LOTS.some(l => l.id === o.lot_id)) return;
+    const p = [];
+    if (o.img_shadow === "1") p.push("shadow"); if (o.img_leaf === "1") p.push("leaf");
+    if (o.img_construction === "1") p.push("construction"); if (o.img_lotline === "1") p.push("lotline");
+    S.ans[o.lot_id] = {outbuilding:o.outbuilding, outbuilding_count:o.outbuilding_count, fit600:o.fit600, fit400:o.fit400,
+      trees:o.trees, alley:o.alley, problems:p, note:o.note, labeler:o.labeler, labeled_at:o.labeled_at,
+      seconds:+o.seconds || 0, seconds_prev:+o.seconds || 0, done:true};
+    n++;
+  });
+  save(); show(); return n;
+}
+
+document.addEventListener("keydown", e => {
+  if (e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key;
+  if (k >= "1" && k <= "9") { pick(+k - 1); e.preventDefault(); return; }
+  if (k === "Enter") {
+    e.preventDefault();
+    const q = Q[qi];
+    if (q && q.multi) { qi = nextQ(qi); if (qi >= Q.length) qi = Q.length - 1; finish(); return; }
+    finish(); return;
+  }
+  if (k === "Backspace" || k === "ArrowUp") { e.preventDefault(); let i = qi - 1; const a = ans(LOTS[cur].id); while (i > 0 && isSkipped(Q[i], a)) i--; qi = Math.max(0, i); show(); return; }
+  if (k === "ArrowDown") { e.preventDefault(); qi = Math.min(Q.length - 1, nextQ(qi)); show(); return; }
+  if (k === "ArrowRight") { e.preventDefault(); go(cur + 1); return; }
+  if (k === "ArrowLeft") { e.preventDefault(); go(cur - 1); return; }
+  if (k === "c" || k === "C") { swapped = !swapped; show(); return; }
+  if (k === "d" || k === "D") { download(); return; }
+  if (k === "u" || k === "U") { firstTodo(); return; }
+  if (k === "n" || k === "N") { e.preventDefault(); qi = Q.length - 1; show(); const t = $("note"); if (t) t.focus(); return; }
+});
+$("ctx").addEventListener("click", () => { swapped = !swapped; show(); });
+$("prevb").addEventListener("click", () => go(cur - 1));
+$("nextb").addEventListener("click", () => go(cur + 1));
+$("todob").addEventListener("click", firstTodo);
+$("dlb").addEventListener("click", download);
+$("impb").addEventListener("click", e => { e.preventDefault(); $("impf").click(); });
+$("impf").addEventListener("change", e => {
+  const f = e.target.files[0]; if (!f) return;
+  const r = new FileReader(); r.onload = () => { const n = importCSV(String(r.result)); alert(n + " rows loaded"); };
+  r.readAsText(f);
+});
+$("who").addEventListener("change", save);
+// preload the next sheets so the page feels instant
+function preload() { for (let i = 1; i <= 3; i++) { const l = LOTS[cur + i]; if (l) { new Image().src = l.sheet; new Image().src = l.ctx; } } }
+go(cur); preload();
+document.addEventListener("keyup", preload);
+</script>
+</body>
+</html>
