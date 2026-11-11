@@ -384,6 +384,17 @@ def test_cover_refresh_without_rerun(built: Path) -> None:
         old.to_parquet(proc / "cover.parquet")
 
 
+def test_cover_source_from_model_columns(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("ADU_DATA_DIR", str(tmp_path))
+    proc = tmp_path / "processed" / "pittsburgh"
+    proc.mkdir(parents=True)
+    gpd.pd.DataFrame([{"lot_id": "a", "tree_sqft": 10.0, "tree_share": 0.1, "model": "r34_c5_s0",
+                       "imagery": "NAIP 2022, 0.6 m"}]).to_parquet(proc / "cover_model_r34_c5_s0.parquet")
+    out = bl.add_cover("pittsburgh", gpd.pd.DataFrame({"lot_id": ["a"]}))
+    c = bl.cover_of(out.iloc[0].to_dict(), 100.0)
+    assert c["source"] == "model:r34_c5_s0" and c["date"] == "2022"
+
+
 def test_street_groups() -> None:
     assert bl.street_group("alley", "ALY") == "way"
     assert bl.street_group("street", "WAY") == "way"

@@ -245,8 +245,14 @@ def add_cover(place: str, lots: Any) -> Any:
     import pyarrow.parquet as pq
 
     have = set(pq.read_schema(path).names)
-    cols = ["lot_id"] + [c for c in COVER_COLUMNS if c in have]
+    cols = ["lot_id"] + [c for c in COVER_COLUMNS if c in have] + [c for c in ("model", "imagery") if c in have]
     cov = pd.read_parquet(path, columns=cols).drop_duplicates("lot_id").rename(columns=COVER_COLUMNS)
+    # A model file may carry only its model and imagery names: source and year come from those.
+    if "cv_source" not in cov and "model" in cov:
+        cov["cv_source"] = "model:" + cov["model"].astype(str)
+    if "cv_date" not in cov and "imagery" in cov:
+        cov["cv_date"] = cov["imagery"].astype(str).str.extract(r"((?:19|20)\d\d)", expand=False)
+    cov = cov.drop(columns=[c for c in ("model", "imagery") if c in cov])
     return lots.merge(cov, on="lot_id", how="left")
 
 
@@ -1817,6 +1823,10 @@ def refresh_cover_tract(tract: str, out: str, ctx: Ctx, cover: dict[str, dict[st
     o = Path(out)
     records = read_tract(o, tract)
     rows = pd.read_parquet(o / "parts" / f"{tract}.parquet").set_index("lot_id")
+    # Cover columns may be all null (float) from the first build: allow text and numbers.
+    for col in ("open_m2", "tree_m2", "tree_pct", "impervious_pct", "cover_source",
+                "spot_tree_sqft_today", "spot_tree_sqft_state_reform"):
+        rows[col] = rows[col].astype(object) if col in rows else None
     for rec in records:
         r = cover.get(rec["lot"]["id"], {})
         rec["cover"] = cover_of(r, float(rec["lot"]["area_sqft"]))
