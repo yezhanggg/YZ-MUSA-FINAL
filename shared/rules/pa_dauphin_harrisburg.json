@@ -1,0 +1,503 @@
+{
+  "provenance": {
+    "jurisdiction": "Harrisburg, PA",
+    "instrument": "Harrisburg Codified Ordinances, Title 7 Part 3 Zoning Code, 7-309.2A Accessory dwelling unit (Ord. No. 6-2021), with the 7-305 Use Table, 7-307 Development Standards and 7-327 parking",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "ADU criteria amended 4-13-2021 by Ord. No. 6-2021. eCode360 says the code includes legislation through 04-14-2026 and lists New Laws (0). Zoning Code adopted 7-8-2014 by Ord. No. 5-2014.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/HA1391",
+      "https://ecode360.com/32584413",
+      "https://ecode360.com/32586549",
+      "https://ecode360.com/attachment/333589/HA1391-007-305a%20Zoning%20Districts.pdf",
+      "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+      "https://ecode360.com/32584132",
+      "https://ecode360.com/32584142",
+      "https://ecode360.com/32586125",
+      "https://ecode360.com/32586104",
+      "https://ecode360.com/32586324",
+      "https://harrisburgpa.gov/services/planning/index.php",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Dauphin",
+    "municipality_type": "city",
+    "geoid": "4204332800",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/HA1391",
+    "code_current_through": "2026-04-14",
+    "code_current_through_note": "eCode360: includes legislation through 04-14-2026. New Laws (0).",
+    "checks": [
+      "The definitions section uses the term 'accessory dwelling'. The use table and 7-309.2A say 'accessory dwelling unit'",
+      "Size cap is a share only: no more than 33% of the square footage of the principal residential unit. No square foot number",
+      "RL and RM set density (4 to 8 and 8 to 20 dwelling units per acre) and lot area per unit. The code does not say whether an ADU counts. Ask the Zoning Officer",
+      "No accessory structure height cap was found. The district height applies",
+      "Off-street parking rules do not apply in the CN and DC districts (7-327.2)",
+      "A dwelling unit is occupied by only one family (7-333.2 'Dwelling unit')"
+    ],
+    "notes": "Zoning office: Bureau of Planning, https://harrisburgpa.gov/services/planning/index.php. Pending changes: none found on eCode360 (New Laws 0). A city search hit mentioned a 2026 policy work session on zoning amendments. No ADU ordinance text was found. Not law."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "7-309.2A, 7-333.2",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "7-309.2A and the use table say 'accessory dwelling unit'. The definition in 7-333.2 is 'ACCESSORY DWELLING'."
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "By right in RL, RM, RF. Special exception in CN. Owner occupancy of the principal structure is required."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "7-309.2A and 7-305 Use Table, Section C",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'permitted by right in the RL, RM, and RF Zoning Districts and by special exception in the CN Zoning District'. Zoning permit from the city."
+    },
+    "fallback_path": {
+      "value": "special_exception",
+      "section": "7-309.2A, 7-323.2A",
+      "url": "https://ecode360.com/32586324",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "CN lots need a special exception. 'All applications for special exceptions and variances require review and final action by the Zoning Hearing Board.' Other districts: N in the use table, so a use variance."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RL",
+        "RM",
+        "RF",
+        "CN"
+      ],
+      "section": "7-309.2A and 7-305 Attachment 1 Use Table, Section C",
+      "url": "https://ecode360.com/attachment/333589/HA1391-007-305a%20Zoning%20Districts.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "By right in RL, RM, RF. Special exception in CN. Use table row 'Accessory dwelling unit (7-309)' is N in OSR, CG, DC, INS, IND."
+    },
+    "building_types": {
+      "value": null,
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No building type limit. The principal residential structure must be owner-occupied."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No ADU-specific lot size. District lot area per dwelling unit may apply. See districts and checks."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "7-309.2A(1)",
+      "url": "https://ecode360.com/37993958",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'may be created within the principal residential unit or may be located as a detached unit on the same lot'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No historic rule in the ADU criteria. Historic overlay review (7-317) still applies to exterior work."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "7-309.2A(1) and 7-307.6C",
+      "url": "https://ecode360.com/37993958",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Text allows a unit 'within the principal residential unit' or 'a detached unit on the same lot'. Reading: an addition is part of the principal building (7-307.6C). A detached unit may be new or in an existing garage."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "7-309.2A(2)",
+      "url": "https://ecode360.com/37993959",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No square foot cap. Only the 33% share limit."
+    },
+    "max_share_of_house": {
+      "value": 0.33,
+      "section": "7-309.2A(2)",
+      "url": "https://ecode360.com/37993959",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'may not be larger than 33% of the square footage of the principal residential unit'"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No minimum size in the ADU criteria."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "7-307.3A and Attachment 1, 7-307.8",
+      "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No accessory height cap found. Reading: the district principal height applies (RL 36 ft, RM 45 ft). See districts."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "7-307.6B",
+      "url": "https://ecode360.com/32584142",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'No accessory structure, use, or building shall be permitted in a required front yard in any district'"
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "7-307.6A",
+      "url": "https://ecode360.com/32584142",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The setback requirements of the applicable district shall apply to every accessory building'. See districts table."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "7-307.6A",
+      "url": "https://ecode360.com/32584142",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "District rear setback applies to accessory buildings. See districts table."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "7-307.6, 7-307.10A(3)",
+      "url": "https://ecode360.com/32584142",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No separation between buildings on the same lot found. 7-307.10A(3) keeps buildings 3 ft from a parallel door or window on another lot."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "7-307.3A Attachment 1",
+      "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The table sets impervious lot coverage, not building coverage."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "7-307.3A Attachment 1",
+      "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Varies by district: RL 50%, RM 70%, CN 95%, RF 75%."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "7-309.2A(3)",
+      "url": "https://ecode360.com/37993960",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The principal residential structure shall be owner-occupied.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No family or age limit in the ADU criteria."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in the ADU criteria. Other city rental rules not reviewed."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Text speaks of 'an accessory dwelling unit'. No explicit number per lot."
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "7-309.2A",
+      "url": "https://ecode360.com/32584413",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed. Owner occupancy of the principal structure suggests one owner, but the text does not say."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "7-327.6A Off-Street Parking Requirements, C",
+      "url": "https://ecode360.com/32586125",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Accessory dwelling unit (7-309)': '1 space per unit'. Not required in CN or DC (7-327.2)."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "7-307.15",
+      "url": "https://ecode360.com/32584221",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "7-307.15 requires public water and sewer for every principal building. An ADU is accessory. Separate meters not addressed."
+    }
+  },
+  "districts": {
+    "RL": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "5,000 sq ft for residential uses. 4 to 8 dwelling units per acre."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "7-307.3A Attachment 1, Front Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "'Minimum of 20 feet or shall conform to existing prevailing setback'. Accessory buildings may not sit in the required front yard."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "7-307.3A Attachment 1, Minimum Side Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "5 feet each side."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "7-307.3A Attachment 1, Minimum Rear Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 36,
+        "section": "7-307.3A Attachment 1, Principal Building Height",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "36 ft maximum."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "7-327.6A C and 7-327.2",
+        "url": "https://ecode360.com/32586125",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1 space per ADU."
+      }
+    },
+    "RM": {
+      "min_lot_sqft": {
+        "value": 1500,
+        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1,500 sq ft per dwelling unit. 8 to 20 dwelling units per acre."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "7-307.3A Attachment 1, Front Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Conform to the prevailing setback in the block, or 5 ft minimum where none prevails."
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "7-307.3A Attachment 1, Minimum Side Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "4 feet each side."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "7-307.3A Attachment 1, Minimum Rear Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "7-307.3A Attachment 1, Principal Building Height",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "45 ft maximum."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "7-327.6A C and 7-327.2",
+        "url": "https://ecode360.com/32586125",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1 space per ADU."
+      },
+      "setback_side_semi_ft": {
+        "value": 0,
+        "section": "7-307.3A Attachment 1, Minimum Side Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'0 feet at the shared lot line of lawfully attached dwellings'"
+      }
+    },
+    "RF": {
+      "min_lot_sqft": {
+        "value": 2000,
+        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "2,000 sq ft."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "7-307.3A Attachment 1, Front Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Varies by street: 50 ft or 15 ft on Front Street, or existing setbacks. No single number."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "7-307.3A Attachment 1, Minimum Side Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "10 feet each side."
+      },
+      "setback_rear_ft": {
+        "value": null,
+        "section": "7-307.3A Attachment 1, Minimum Rear Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "15 ft for parcels along Front Street, 5 ft along State Street. No single number."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "7-307.3A Attachment 1, Principal Building Height",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "36 ft minimum, 45 ft maximum."
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "7-327.6A C and 7-327.2",
+        "url": "https://ecode360.com/32586125",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1 space per ADU."
+      }
+    },
+    "CN": {
+      "min_lot_sqft": {
+        "value": 1200,
+        "section": "7-307.3A Attachment 1, Minimum Lot Area and Density",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "1,200 sq ft per dwelling unit. ADU needs a special exception here."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "7-307.3A Attachment 1, Front Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Conform to the prevailing setback, with a maximum of 5 ft where none prevails. This is a cap, not a minimum."
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "7-307.3A Attachment 1, Minimum Side Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "4 feet each side."
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "7-307.3A Attachment 1, Minimum Rear Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 75,
+        "section": "7-307.3A Attachment 1, Principal Building Height",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "75 ft maximum."
+      },
+      "parking_spaces": {
+        "value": 0,
+        "section": "7-327.6A C and 7-327.2",
+        "url": "https://ecode360.com/32586125",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'The off-street parking requirements in this chapter do not apply to uses within the Downtown Center or Commercial Neighborhood Zoning Districts.'"
+      },
+      "setback_side_semi_ft": {
+        "value": 0,
+        "section": "7-307.3A Attachment 1, Minimum Side Yard Setback",
+        "url": "https://ecode360.com/attachment/333589/HA1391-007-307a%20Development%20Standards.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'0 feet at the shared lot line of lawfully attached dwellings'"
+      }
+    }
+  }
+}
