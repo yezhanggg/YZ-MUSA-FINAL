@@ -50,6 +50,21 @@ export interface TownProps extends TownRule {
   [k: string]: unknown;
 }
 
+/** County roll-up of tract results (counties.geojson, from county_rollup.csv). */
+export interface CountyProps {
+  GEOID: string;
+  NAME?: string;
+  tracts?: number | null;
+  pop_2024?: number | null;
+  tracts_pays_yes?: number | null;
+  tracts_pays_maybe?: number | null;
+  tracts_pays_no?: number | null;
+  share_tracts_yes?: number | null;
+  median_tract_rent_1br?: number | null;
+  largest_trend_group?: string | null;
+  [k: string]: unknown;
+}
+
 export interface Feature<P> {
   type: 'Feature';
   properties: P;
@@ -129,7 +144,8 @@ export async function loadData() {
   const [tracts, towns] = (await Promise.all(['data/tracts.geojson', 'data/towns.geojson'].map((u) => fetch(u).then((r) => r.json())))) as [FC<TractProps>, FC<TownProps>];
   prepare(tracts, towns);
   const curves = HAS_FIT_CURVES ? ((await fetch('data/fit_curves.json').then((r) => (r.ok ? r.json() : null)).catch(() => null)) as FitCurves | null) : null;
-  return { tracts, towns, curves };
+  const counties = (await fetch('data/counties.geojson').then((r) => (r.ok ? r.json() : null)).catch(() => null)) as FC<CountyProps> | null;
+  return { tracts, towns, curves, counties };
 }
 
 const lotCache = new Map<string, Promise<Lot[] | null>>();

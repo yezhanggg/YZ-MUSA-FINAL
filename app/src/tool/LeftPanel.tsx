@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { MousePointerClick, RotateCcw, X } from 'lucide-react';
 import { Segmented, SPRING_FOLD, SPRING_PANEL } from '../components/primitives';
 import { PANEL, PANEL_BODY, PanelHeader, IconButton } from '../components/Panel';
@@ -8,12 +8,12 @@ import { fmt } from '../lib/format';
 import { BASE, BED_LABEL, BED_SIZE, SIZE_MAX, SIZE_MIN, SIZE_STEP, type Bed, type Stories } from '../lib/numbers';
 import Search from './Search';
 import LotCard from './LotCard';
-import { METRICS, NO_DATA, type MetricId } from './metrics';
 import { LOT_COLORS, LOT_LABEL, PILOTS, type LotStatus } from './parcels';
 import { flyToPilot } from './actions';
 import { openResearch } from '../lib/router';
 import { useTool, type Rule } from './store';
 import TestControls from './test/TestControls';
+import { ForecastPick, Label, MapLevelPick, PayoffPick } from './ProjectControls';
 
 /**
  * The left panel: search and the lot at a glance in the header, the controls below. Same shell as the right panel.
@@ -107,9 +107,7 @@ function YourAdu() {
 
 function Controls() {
   const rule = useTool((s) => s.rule);
-  const metric = useTool((s) => s.metric);
   const set = useTool((s) => s.set);
-  const m = METRICS[metric];
   return (
     <div className="space-y-4 pt-4">
       <div>
@@ -117,34 +115,9 @@ function Controls() {
         <Segmented<Rule> full label="Rules" value={rule} onChange={(v) => set({ rule: v })} options={[{ value: 'current', label: 'Today', hint: "Each town's rule today" }, { value: 'hb2186', label: 'HB 2186', hint: 'One ADU allowed on every home lot' }]} />
         <p className="mt-1.5 text-caption text-slate-500">{rule === 'hb2186' ? 'HB 2186 would allow one ADU on every home lot.' : "Each town's rule today. Unlisted towns count as limited."}</p>
       </div>
-      <div>
-        <Label>Map colour</Label>
-        <Segmented<MetricId> full label="Map colour" value={metric} onChange={(v) => set({ metric: v })} options={(Object.keys(METRICS) as MetricId[]).map((k) => ({ value: k, label: METRICS[k].short, hint: METRICS[k].label }))} />
-      </div>
-      <div className="rounded-xl bg-stone-50 p-3 ring-1 ring-stone-200/70">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div key={metric} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.16 }}>
-            <div className="text-caption font-semibold text-slate-700">{m.label}</div>
-            <div className="mt-2 flex h-2.5 overflow-hidden rounded-full ring-1 ring-black/5">
-              {m.steps.map(([, c]) => (
-                <span key={c} className="flex-1" style={{ background: c }} />
-              ))}
-            </div>
-            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1">
-              {m.names.map((n, i) => (
-                <span key={n} className="flex items-center gap-1.5 text-caption text-slate-600">
-                  <span className="h-2.5 w-2.5 shrink-0 rounded-[3px] ring-1 ring-black/10" style={{ background: m.steps[i][1] }} />
-                  {n}
-                </span>
-              ))}
-              <span className="flex items-center gap-1.5 text-caption text-slate-600">
-                <span className="h-2.5 w-2.5 shrink-0 rounded-[3px] ring-1 ring-black/10" style={{ background: NO_DATA }} />
-                No data yet
-              </span>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      <MapLevelPick />
+      <PayoffPick />
+      <ForecastPick />
       <div>
         <Label>Parcels</Label>
         <div className="flex flex-wrap gap-x-3 gap-y-1.5">
@@ -187,8 +160,4 @@ function Toggle({ on, onChange, label, hint }: { on: boolean; onChange: (v: bool
       </span>
     </button>
   );
-}
-
-function Label({ children }: { children: React.ReactNode }) {
-  return <div className="mb-1.5 text-caption font-semibold uppercase tracking-[0.12em] text-slate-500">{children}</div>;
 }

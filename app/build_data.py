@@ -107,6 +107,7 @@ def headline():
         "adus_by_2031": adus,
         "groups_k": groups["k"],
         "groups_silhouette": round(groups["silhouette"], 3),
+        "groups_counts": dict(sorted(groups["counts"].items(), key=lambda kv: -kv[1])),
         "forecast_model": fc["model"],
         "forecast_r2_county_cv": r2,
     }

@@ -5,6 +5,8 @@ import { AnimatePresence, motion, type Variants } from 'motion/react';
 import { AlertTriangle, CheckCircle2, ChevronDown, CircleSlash, HelpCircle } from 'lucide-react';
 import { Tag } from '../components/primitives';
 import { useMode } from './layout';
+import { FORECAST_LABEL, WINDOW_LABEL } from './metrics';
+import { COST_PSF } from '../lib/numbers';
 import { cx } from '../lib/cx';
 import { annual, fmt, isNum, money, pct, sqft } from '../lib/format';
 import { footprint, isBase, lotFit, rentNote, tractPayoff, tractRoom } from '../lib/adu';
@@ -71,7 +73,9 @@ export function ReportContent({ spot }: { spot: Spot }) {
   const fits = lot ? lotFit(lot, adu) : null;
   const lotNotReady = !!lot && fits === null;
   // Pays? (MUSA 5500), live for the ADU being tested
-  const pay = tractPayoff(t, adu);
+  const costLevel = useTool((s) => s.costLevel);
+  const payRate = useTool((s) => s.payRate);
+  const pay = tractPayoff(t, adu, costLevel, payRate);
   const pays = pay?.pays ?? null;
   const room = tractRoom(t, adu, curves);
 
@@ -293,7 +297,9 @@ function DemandCard({ spot }: { spot: Spot }) {
   const popBefore = annual(w.pop_2010, w.pop_2019, 9);
   const popAfter = annual(w.pop_2019, w.pop_2025, 6);
   const adu = useTool((s) => s.adu);
-  const pay = tractPayoff(t, adu);
+  const costLevel = useTool((s) => s.costLevel);
+  const payRate = useTool((s) => s.payRate);
+  const pay = tractPayoff(t, adu, costLevel, payRate);
   const top = pay ? Math.max(pay.rent, pay.cost, 1) : 1;
   return (
     <Card title="Demand and payoff" tag="MUSA 5500" fold>
@@ -317,7 +323,7 @@ function DemandCard({ spot }: { spot: Spot }) {
       <div className="mt-3 rounded-xl bg-stone-50 p-3 ring-1 ring-stone-200/70">
         <div className="mb-2 flex items-baseline justify-between gap-2 text-caption">
           <span className="font-semibold text-slate-700">Rent vs monthly cost</span>
-          <span className="text-slate-500">{fmt(adu.size)} sq ft at $250 / sq ft</span>
+          <span className="text-slate-500">{fmt(adu.size)} sq ft at ${COST_PSF[costLevel]} / sq ft, {(payRate * 100).toFixed(2)}%</span>
         </div>
         {pay ? (
           <>
@@ -353,8 +359,9 @@ function DemandCard({ spot }: { spot: Spot }) {
         <KV k="New homes permitted / yr, 2010-19" v={fmt(w.permits_yr_before, 1)} />
         <KV k="New homes permitted / yr, 2020-25" v={fmt(w.permits_yr_after, 1)} />
         <KV k="Median rent" v={money(t.median_rent)} />
-        <KV k="Trend group" v={t.trend_group ?? null} />
+        <KV k="Trend group (descriptive)" v={t.trend_group ?? null} />
       </div>
+      <TractWindows t={t} />
     </Card>
   );
 }
@@ -403,33 +410,81 @@ function RulesCard({ spot }: { spot: Spot }) {
 }
 
 function TownCard({ spot }: { spot: Spot }) {
-  const ruleMode = useTool((s) => s.rule);
+  const forecast = useTool((s) => s.forecast);
   const w = spot.town;
   const n = (k: string) => (isNum(w[k]) ? (w[k] as number) : null);
-  const cur = n('adus_mid_current');
-  const hb = n('adus_mid_hb2186');
-  const mid = n(`adus_mid_${ruleMode}`);
-  const top = Math.max(cur ?? 0, hb ?? 0, 1);
+  const rows = (['current', 'hb2186', 'sb1346'] as const).map((f) => ({ f, mid: n(`adus_mid_${f}`), low: n(`adus_low_${f}`), high: n(`adus_high_${f}`) }));
+  const top = Math.max(...rows.map((r) => r.high ?? r.mid ?? 0), 1);
   return (
     <Card title={(w.NAMELSAD as string) || 'This town'} tag="Planner view" fold>
-      <div className="-mt-1 mb-1 text-caption text-slate-500">Base case: 600 sq ft</div>
-      <KV k={`ADUs by 2031 (${ruleMode === 'hb2186' ? 'HB 2186' : "today's rules"})`} v={mid != null ? `${fmt(mid)} (range ${fmt(n(`adus_low_${ruleMode}`))} to ${fmt(n(`adus_high_${ruleMode}`))})` : null} />
-      {(cur != null || hb != null) && (
-        <div className="mt-2 space-y-1.5">
-          {[
-            { k: 'Today', v: cur, on: ruleMode === 'current', c: 'bg-slate-400' },
-            { k: 'HB 2186', v: hb, on: ruleMode === 'hb2186', c: 'bg-violet-600' },
-          ].map((r, i) => (
-            <div key={r.k} className={cx('grid grid-cols-[56px_1fr_48px] items-center gap-2 rounded-lg px-1.5 py-1 text-small transition-colors', r.on && 'bg-violet-50')}>
-              <span className={cx(r.on ? 'font-semibold text-slate-900' : 'text-slate-600')}>{r.k}</span>
-              <div className="h-2 overflow-hidden rounded-full bg-stone-100">
-                {r.v != null && <motion.div className={cx('h-full rounded-full', r.c)} initial={{ width: 0 }} animate={{ width: `${Math.max(2, (r.v / top) * 100)}%` }} transition={{ ...GROW, delay: 0.2 + i * 0.08 }} />}
-              </div>
-              <span className="text-right font-semibold text-slate-900 tnum">{fmt(r.v, r.v != null && r.v < 10 ? 1 : 0) ?? '–'}</span>
+      <div className="-mt-1 mb-1 text-caption text-slate-500">ADUs by 2031, mid case with the low to high range. Base case: 600 sq ft</div>
+      <div className="space-y-1.5">
+        {rows.map((r, i) => (
+          <div key={r.f} className={cx('grid grid-cols-[64px_1fr_96px] items-center gap-2 rounded-lg px-1.5 py-1 text-small transition-colors', r.f === forecast && 'bg-violet-50')}>
+            <span className={cx(r.f === forecast ? 'font-semibold text-slate-900' : 'text-slate-600')}>{FORECAST_LABEL[r.f]}</span>
+            <div className="relative h-2 overflow-hidden rounded-full bg-stone-100">
+              {r.high != null && <span className="absolute inset-y-0 rounded-full bg-violet-200" style={{ left: `${((r.low ?? 0) / top) * 100}%`, width: `${Math.max(1, ((r.high - (r.low ?? 0)) / top) * 100)}%` }} />}
+              {r.mid != null && <motion.div className={cx('absolute inset-y-0 w-1 rounded-full', r.f === 'current' ? 'bg-slate-500' : 'bg-violet-600')} initial={{ left: 0 }} animate={{ left: `${(r.mid / top) * 100}%` }} transition={{ ...GROW, delay: 0.2 + i * 0.08 }} />}
             </div>
-          ))}
-        </div>
-      )}
+            <span className="text-right font-semibold text-slate-900 tnum">{r.mid != null ? `${fmt(r.mid, r.mid < 10 ? 1 : 0)} (${fmt(r.low, 1)} to ${fmt(r.high, 1)})` : '–'}</span>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-caption leading-snug text-slate-500">Scenario arithmetic, not a fitted forecast. HB 2186 and SB 1346 are bills. Both die on Nov 30, 2026 if not enacted. SB 1346 would not cover Philadelphia or Pittsburgh.</p>
     </Card>
+  );
+}
+
+const WIN_KEYS = ['14', '19', '24'] as const;
+
+/** People, homes and rent in the three ACS windows, with the 2019 to 2024 growth and its margin-of-error note. */
+function TractWindows({ t }: { t: Spot['tract'] }) {
+  const v = (k: string) => (isNum(t[k]) ? (t[k] as number) : null);
+  const rows: { k: string; p: string; money?: boolean }[] = [
+    { k: 'People', p: 'pop' },
+    { k: 'Homes', p: 'homes' },
+    { k: 'Rent (2024 $)', p: 'rent', money: true },
+  ];
+  const growth: [string, string][] = [['People', 'pop'], ['Homes', 'units'], ['Rent', 'rent']];
+  if (!WIN_KEYS.some((w) => v(`pop_${w}`) != null)) return null;
+  return (
+    <div className="mt-3 rounded-xl bg-stone-50 p-3 ring-1 ring-stone-200/70">
+      <div className="text-caption font-semibold text-slate-700">This tract in three ACS windows</div>
+      <table className="mt-1.5 w-full text-small">
+        <thead>
+          <tr className="text-caption text-slate-500">
+            <th className="py-0.5 text-left font-normal" />
+            {WIN_KEYS.map((w) => (
+              <th key={w} className="py-0.5 text-right font-normal">{WINDOW_LABEL[w]}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.p} className="border-t border-stone-200/70">
+              <td className="py-0.5 text-slate-600">{r.k}</td>
+              {WIN_KEYS.map((w) => (
+                <td key={w} className="py-0.5 text-right font-medium text-slate-900 tnum">{r.money ? money(v(`${r.p}_${w}`)) : fmt(v(`${r.p}_${w}`))}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="mt-2 space-y-0.5">
+        {growth.map(([label, p]) => {
+          const g = v(`${p}_after`);
+          const inside = v(`${p}_after_moe`) === 1;
+          return (
+            <div key={p} className="flex items-baseline justify-between gap-2 text-caption">
+              <span className="text-slate-600">{label}, growth per year since 2015-19</span>
+              <span className={cx('tnum', inside ? 'text-slate-400' : 'font-semibold text-slate-800')}>
+                {g == null ? 'No data' : `${g > 0 ? '+' : ''}${g.toFixed(1)}%`}
+                {inside && ' (inside the margin of error)'}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }

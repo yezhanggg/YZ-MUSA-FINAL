@@ -10,6 +10,7 @@ import { lotFit, tractPayoff } from '../lib/adu';
 import { ruleFor } from '../lib/rules';
 import AskBox from './AskBox';
 import AduSamples from './AduSamples';
+import CountyTable from './CountyTable';
 import PlayModel from './PlayModel';
 import { ReportContent, ReportSkeleton, reportTitle } from './Report';
 import { clearSpot } from './actions';
@@ -26,7 +27,9 @@ export function VerdictLine({ spot }: { spot: Spot }) {
   const mode = useTool((s) => s.rule);
   const unchecked = !!spot.parcel && spot.parcel.s !== 1;
   const fit = spot.lot ? lotFit(spot.lot, adu) : null;
-  const pay = tractPayoff(spot.tract, adu);
+  const costLevel = useTool((s) => s.costLevel);
+  const payRate = useTool((s) => s.payRate);
+  const pay = tractPayoff(spot.tract, adu, costLevel, payRate);
   const lotRule = spot.lot?.rule_lot ? spot.lot : spot.parcel ? parcelRule(spot.parcel) : spot.lot;
   const rule = ruleFor(mode, spot.town, lotRule);
   const parts: { t: string; tone: 'good' | 'warn' | 'bad' | 'none' }[] = [
@@ -80,10 +83,13 @@ const Hint = () => (
 /** Verdict, samples, play model, details. Shared by the right panel and the sheet's Report tab. */
 export function ReportStack() {
   const spot = useTool((s) => s.spot);
+  const level = useTool((s) => s.level);
+  const view = useTool((s) => s.view);
   const busy = useTool((s) => s.busy);
   if (busy && !spot) return <ReportSkeleton />;
   return (
     <div className="space-y-4">
+      {level === 'county' && view === 'project' && <CountyTable />}
       {spot && <VerdictLine spot={spot} />}
       {!spot?.lot && <Hint />}
       <AduSamples />

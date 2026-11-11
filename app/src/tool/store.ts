@@ -2,8 +2,10 @@ import { create } from 'zustand';
 import type { Map as MLMap } from 'maplibre-gl';
 import type { FitCurves } from '../lib/adu';
 import { BASE, SIZE_MAX, SIZE_MIN, SIZE_STEP, type Adu, type Bed, type Stories } from '../lib/numbers';
-import type { FC, LngLat, Lot, TownProps, TractProps } from './geo';
-import type { MetricId } from './metrics';
+import type { CountyProps, FC, LngLat, Lot, TownProps, TractProps } from './geo';
+import type { Forecast, MapLevel, MetricId, Window, WindowVar } from './metrics';
+import type { CostLevel } from '../lib/adu';
+import { RATE } from '../lib/numbers';
 import type { ParcelProps } from './parcels';
 import type { LotRecord, Scenario } from '../lib/lot/types';
 import { DEFAULT_MONEY, testFromHash, testHash, type MoneyDraft, type UnitDraft } from './testState';
@@ -39,6 +41,17 @@ interface ToolState {
   money: MoneyDraft;
   rule: Rule;
   metric: MetricId;
+  /** Projecting mode: map by tract, town or county. */
+  level: MapLevel;
+  /** Projecting mode: the forecast scenario for ADUs by 2031. */
+  forecast: Forecast;
+  /** Projecting mode: payoff cost level and loan rate (the Pays map and the share that pays). */
+  costLevel: CostLevel;
+  payRate: number;
+  /** Projecting mode: the ACS window and measure for the "By window" map. */
+  winVar: WindowVar;
+  win: Window;
+  counties: FC<CountyProps> | null;
   status: 'loading' | 'ready' | 'error';
   tracts: FC<TractProps> | null;
   towns: FC<TownProps> | null;
@@ -113,6 +126,13 @@ export const useTool = create<ToolState>((set, get) => ({
   money: DEFAULT_MONEY,
   rule: 'current',
   metric: 'jobs_after',
+  level: 'tract',
+  forecast: 'current',
+  costLevel: 'mid',
+  payRate: RATE,
+  winVar: 'rent',
+  win: '24',
+  counties: null,
   status: 'loading',
   tracts: null,
   towns: null,

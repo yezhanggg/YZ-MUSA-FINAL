@@ -12,7 +12,7 @@ export const DETAIL_URL = '/data/lot_detail.pmtiles';
 const MINZOOM = 17;
 
 /** A small repeating pattern drawn on a canvas, for fill-pattern. */
-function pattern(draw: (c: CanvasRenderingContext2D) => void, size = 12) {
+export function pattern(draw: (c: CanvasRenderingContext2D) => void, size = 12) {
   const cv = document.createElement('canvas');
   cv.width = cv.height = size;
   const c = cv.getContext('2d')!;

@@ -5,9 +5,9 @@ import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import { Protocol } from 'pmtiles';
 import { tractPayoff, tractRoom } from '../lib/adu';
 import { PA_BBOX, loadData } from './geo';
-import { PAYS_CODE, colorExpr } from './metrics';
+import { METRICS, PAYS_CODE, areaColorExpr, colorExpr } from './metrics';
 import { LOT_COLORS, PARCEL_LAYER, PARCEL_URL, parcelFillColor, parcelFillOpacity, parcelFilter, parcelLineColor, parcelStatus, parcelTip, type ParcelProps } from './parcels';
-import { addDetailLayers, updateDetail } from './detailLayers';
+import { addDetailLayers, pattern, updateDetail } from './detailLayers';
 import { mapRef, useTool } from './store';
 import { mapPadding, testSpot } from './actions';
 import { aerialSource } from './aerial';
@@ -27,6 +27,8 @@ const CREDITS = [
   'Building outlines <a href="https://github.com/microsoft/GlobalMLBuildingFootprints" target="_blank" rel="noreferrer">Microsoft</a> (ODbL)',
   'Parcels: City of Philadelphia (PWD), Cumberland County GIS, Allegheny County',
 ];
+
+const MOE_NONE: ExpressionSpecification = ['==', ['get', 'GEOID'], '__none__'];
 
 const selFilter = (id: string | null): ExpressionSpecification => ['==', ['get', 'id'], id ?? '__none__'];
 
@@ -70,6 +72,12 @@ const present = (map: MLMap) => PARCEL_SOURCES.map((p) => p.id).filter((id) => !
 export default function MapCanvas() {
   const el = useRef<HTMLDivElement>(null);
   const metric = useTool((s) => s.metric);
+  const level = useTool((s) => s.level);
+  const forecast = useTool((s) => s.forecast);
+  const costLevel = useTool((s) => s.costLevel);
+  const payRate = useTool((s) => s.payRate);
+  const winVar = useTool((s) => s.winVar);
+  const win = useTool((s) => s.win);
   const status = useTool((s) => s.status);
   const selectedLot = useTool((s) => s.selectedLot);
   const view3d = useTool((s) => s.view3d);
@@ -108,7 +116,7 @@ export default function MapCanvas() {
 
     map.on('load', async () => {
       try {
-        const { tracts, towns, curves } = await data;
+        const { tracts, towns, curves, counties } = await data;
         if (!alive) return;
         const a = useTool.getState().adu;
         const pgh = PARCEL_SOURCES[1].url();
@@ -124,6 +132,25 @@ export default function MapCanvas() {
         // Tracts fade out between z12.5 and z14, where the parcels take over.
         map.addLayer({ id: 'tract-fill', type: 'fill', source: 'tracts', paint: { 'fill-color': colorExpr(useTool.getState().metric), 'fill-opacity': ['interpolate', ['linear'], ['zoom'], 7, 0.62, 12.5, 0.4, 14, 0] } }, firstLabel);
         map.addLayer({ id: 'tract-line', type: 'line', source: 'tracts', minzoom: 9, paint: { 'line-color': '#ffffff', 'line-width': 0.5, 'line-opacity': 0.7 } }, firstLabel);
+        // Margin of error: tracts whose change is inside it are hatched (Projecting, People / Homes / Rent).
+        map.addImage('bh-moe', pattern((c) => {
+          c.strokeStyle = 'rgba(71,85,105,0.75)';
+          c.lineWidth = 1.2;
+          c.beginPath();
+          c.moveTo(0, 8);
+          c.lineTo(8, 0);
+          c.stroke();
+        }, 8));
+        map.addLayer({ id: 'tract-moe', type: 'fill', source: 'tracts', maxzoom: 14, layout: { visibility: 'none' }, filter: MOE_NONE, paint: { 'fill-pattern': 'bh-moe', 'fill-opacity': 0.8 } }, firstLabel);
+        // Towns and counties: ADUs by 2031 per 1,000 people, under the forecast scenario (Projecting, by level).
+        const { forecast, level } = useTool.getState();
+        const fade = ['interpolate', ['linear'], ['zoom'], 7, 0.62, 12.5, 0.4, 14, 0] as unknown as ExpressionSpecification;
+        map.addLayer({ id: 'town-fill', type: 'fill', source: 'towns', layout: { visibility: level === 'town' ? 'visible' : 'none' }, paint: { 'fill-color': areaColorExpr(forecast, 'pop_2025'), 'fill-opacity': fade } }, firstLabel);
+        if (counties) {
+          map.addSource('counties', { type: 'geojson', data: counties as unknown as GeoJSON.FeatureCollection });
+          map.addLayer({ id: 'county-fill', type: 'fill', source: 'counties', layout: { visibility: level === 'county' ? 'visible' : 'none' }, paint: { 'fill-color': areaColorExpr(forecast, 'pop_2024'), 'fill-opacity': fade } }, firstLabel);
+          map.addLayer({ id: 'county-line', type: 'line', source: 'counties', layout: { visibility: level === 'county' ? 'visible' : 'none' }, paint: { 'line-color': '#334155', 'line-width': 1, 'line-opacity': 0.6 } }, firstLabel);
+        }
         map.addLayer({ id: 'town-line', type: 'line', source: 'towns', minzoom: 8, paint: { 'line-color': '#475569', 'line-width': 0.6, 'line-opacity': 0.45 } }, firstLabel);
         addParcels(map, 'parcels', PARCEL_SOURCES[0].url(), a, firstLabel);
         if (hasPgh) addParcels(map, 'parcels-pgh', pgh, a, firstLabel);
@@ -148,7 +175,7 @@ export default function MapCanvas() {
         addDetailLayers(map);
         // The tested lot from its record: outline, buildable ground, the unit box.
         addSiteLayers(map, false);
-        set({ status: 'ready', tracts, towns, curves });
+        set({ status: 'ready', tracts, towns, curves, counties });
         // Start with the credits folded (MapLibre opens them on small screens). The (i) button opens them.
         container.querySelector('.maplibregl-compact-show')?.classList.remove('maplibregl-compact-show');
       } catch {
@@ -216,10 +243,23 @@ export default function MapCanvas() {
     };
   }, []);
 
+  // Projecting mode: tract metric, map level, forecast scenario and the margin-of-error hatch.
   useEffect(() => {
     const map = mapRef.current;
-    if (status === 'ready' && map?.getLayer('tract-fill')) map.setPaintProperty('tract-fill', 'fill-color', colorExpr(metric));
-  }, [metric, status]);
+    if (status !== 'ready' || !map?.getLayer('tract-fill')) return;
+    map.setPaintProperty('tract-fill', 'fill-color', colorExpr(metric, { v: winVar, w: win }));
+    const project = view === 'project';
+    const show = (id: string, on: boolean) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
+    show('tract-fill', !project || level === 'tract');
+    show('town-fill', project && level === 'town');
+    show('county-fill', project && level === 'county');
+    show('county-line', project && level === 'county');
+    const moe = METRICS[metric].moe;
+    show('tract-moe', project && level === 'tract' && !!moe);
+    map.setFilter('tract-moe', moe ? (['==', ['get', moe], 1] as unknown as ExpressionSpecification) : MOE_NONE);
+    map.setPaintProperty('town-fill', 'fill-color', areaColorExpr(forecast, 'pop_2025'));
+    if (map.getLayer('county-fill')) map.setPaintProperty('county-fill', 'fill-color', areaColorExpr(forecast, 'pop_2024'));
+  }, [metric, winVar, win, level, forecast, view, status]);
 
   // Room and Pays off for every tract, and the parcel colours, follow the ADU controls (debounced for the slider).
   useEffect(() => {
@@ -229,7 +269,7 @@ export default function MapCanvas() {
     const t = window.setTimeout(() => {
       for (const f of tracts.features) {
         const p = f.properties;
-        const pay = tractPayoff(p, adu);
+        const pay = tractPayoff(p, adu, costLevel, payRate);
         map.setFeatureState({ source: 'tracts', id: p.GEOID }, { room: tractRoom(p, adu, curves)?.fit ?? null, pays: pay ? PAYS_CODE[pay.pays] : null });
       }
       // Testing mode: plain outlines, since the colours are the projecting model's 600 sq ft result. Over the
@@ -243,7 +283,7 @@ export default function MapCanvas() {
       }
     }, 150);
     return () => window.clearTimeout(t);
-  }, [adu, curves, status, view, aerial]);
+  }, [adu, curves, status, view, aerial, costLevel, payRate]);
 
   useEffect(() => {
     const map = mapRef.current;

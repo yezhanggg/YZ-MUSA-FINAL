@@ -22,6 +22,16 @@
   },
   "groups_k": 7,
   "groups_silhouette": 0.136,
+  "groups_counts": {
+    "Steady: close to the state median": 1001,
+    "Steady: people grew fast before 2019": 490,
+    "Steady: rents rose fast after 2019": 478,
+    "Shrinking: jobs grew fast before 2019": 433,
+    "Steady: rents rose fast before 2019": 404,
+    "Not enough data": 282,
+    "Growing: jobs jumped after 2019": 265,
+    "Growing: population jump after 2019": 92
+  },
   "forecast_model": "gradient_boosting",
   "forecast_r2_county_cv": 0.202
 }
