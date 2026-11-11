@@ -615,12 +615,12 @@
       "pop_rank": 24,
       "file": "pa_allegheny_penn_hills",
       "batch": 4,
-      "status": "todo",
+      "status": "drafted",
       "checked_on": null,
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/37763696",
+      "code_url": "https://ecode360.com/37763757",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-07-20",
       "code_note": "Zoning: Part 12 Planning and Zoning Code, Title 6 Zoning (Chapters 1260-1288). Penn Hills codified ordinances are on ecode360 (code id not seen). 37763696 is a Penn Hills ecode360 page from search, not confirmed as zoning root. Zoning amended 10-21-2024 (Ord. 2024-2705) and 11-18-2024 (Ord. 2024-2707) per Zoneomics mirror https://www.zoneomics.com/code/penn-hills-township-PA. UNSURE of URL. ecode360 pages return Cloudflare 403 to curl and WebFetch. id from search-result titles, not opened.",
       "why": [
         "top 60 by 2020 population"

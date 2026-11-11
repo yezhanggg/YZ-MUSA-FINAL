@@ -1,0 +1,334 @@
+{
+  "provenance": {
+    "jurisdiction": "Penn Hills township",
+    "instrument": "Codified Ordinances of the Municipality of Penn Hills, Part Twelve Planning and Zoning Code, Title Six Zoning (Chapters 1260 to 1288), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code PE4297): includes legislation through 07-20-2026. New Laws (2): Ord. 2026-2714 (Charter) and Ord. 2026-2715 (Shade Tree Commission). Neither touches zoning. eCode360 is Cloudflare-walled for plain fetches. Text was read in a browser from the print view of Part Twelve. Census name is Penn Hills township. The municipality calls itself Municipality of Penn Hills.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/PE4297",
+      "https://ecode360.com/37763757",
+      "https://ecode360.com/print/PE4297?guid=37763757",
+      "https://ecode360.com/37690438",
+      "https://ecode360.com/37690973",
+      "https://ecode360.com/37690975",
+      "https://ecode360.com/37691090",
+      "https://ecode360.com/37691113",
+      "https://ecode360.com/37691444",
+      "https://ecode360.com/37691504",
+      "https://ecode360.com/37691505",
+      "https://ecode360.com/37691506",
+      "https://ecode360.com/PE4297/laws",
+      "https://pennhillspa.gov/planning-department/",
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+    ],
+    "verified_on": "2026-11-11",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200359032",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/37763757",
+    "code_current_through": "2026-07-20",
+    "code_current_through_note": "Includes legislation through 07-20-2026. New Laws (2) not yet codified, neither about zoning.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law or accessory apartment provision",
+      "R-1, R-1A, R-2, R-3 and C permit single-family residences and accessory uses. 'Structures and uses not clearly permitted ... are prohibited' (1268.02)",
+      "'Only one principal residential structure shall be located on a zoning lot' except in planned developments and R-4 to R-7 (1278.04)",
+      "In R-2, converting a single-family residence to a two-family residence is a special exception: lot at least 7,500 sq ft, house at least 1,600 sq ft, each unit at least 500 sq ft, four off-street spaces not in the front yard (1268.05(c)(1))",
+      "Two-family residences are permitted in R-4 (1268.02(e))",
+      "A dwelling unit is living quarters for one family (1260.07)",
+      "No accessory building setback or height rules were found. Accessory buildings are not permitted obstructions in required yards (1278.06(e)). Ask the zoning office",
+      "Single-family dwellings need two parking spaces per dwelling unit (1278.02)"
+    ],
+    "notes": "Zoning office: Planning Department, https://pennhillspa.gov/planning-department/. Pending: none found affecting Part Twelve. The towns index pointed to ecode360 37763696, which was not confirmed. Part Twelve root is 37763757. Searched the full printed Part Twelve (Planning and Zoning Code) for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, accessory family, secondary dwelling, second dwelling, accessory living, guest house. No ADU term."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "1260.07 and Part Twelve Title Six",
+      "url": "https://ecode360.com/37690438",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Searched the full printed Part Twelve (Planning and Zoning Code) for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, accessory family, secondary dwelling, second dwelling, accessory living, guest house. No ADU term."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "1260.07, 1268.02, 1278.04",
+      "url": "https://ecode360.com/37690975",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The code has no ADU text. R-2 allows conversion of a single-family residence to a two-family residence by special exception. That is a two-family use, not an ADU."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "1268.02(a), 1278.04, MPC 910.2",
+      "url": "https://ecode360.com/37690975",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: a second unit is not a listed use. 'Structures and uses not clearly permitted in an R-1 District are prohibited.' The path is a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1268.02, 1268.05(c)(1)",
+      "url": "https://ecode360.com/37691090",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Same as path. In R-2, a unit inside the house may be possible as a conversion to a two-family residence by special exception (1268.05(c)(1))."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "1268.02",
+      "url": "https://ecode360.com/37690975",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code. R-2 conversion to two-family by special exception."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Part Twelve Title Six",
+      "url": "https://ecode360.com/37763757",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "1268.02, 1278.04",
+      "url": "https://ecode360.com/37690975",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A second principal residential structure on a lot is barred outside R-4 to R-7 (1278.04)."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "1268.06, 1278.05",
+      "url": "https://ecode360.com/37691113",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No accessory building height cap found. District height is 35 ft in R-1 and R-2."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "1278.06(e)",
+      "url": "https://ecode360.com/37691506",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory buildings are not permitted obstructions in a required front yard. See districts."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "1278.05, 1278.06",
+      "url": "https://ecode360.com/37691505",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No separation rule found."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "1260.07 'Family'",
+      "url": "https://ecode360.com/37690438",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A dwelling unit is living quarters for one family."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "1268.02, 1278.04",
+      "url": "https://ecode360.com/37690975",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: no ADU is allowed by right."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1278.02",
+      "url": "https://ecode360.com/37691444",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Single-family dwellings: two spaces per dwelling unit.' R-2 conversion needs four spaces in total (1268.05(c)(1)D)."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 8400,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "R-1 minimum lot area."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum front yard depth."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum side yard. Accessory buildings are not listed as permitted obstructions in required yards (1278.06(e)). Reading: they meet district yards. Sum of both side yards at least 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum rear yard. Same reading for accessory buildings."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height 35 ft."
+      }
+    },
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "R-1A minimum lot area."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum front yard depth."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum side yard. Accessory buildings are not listed as permitted obstructions in required yards (1278.06(e)). Reading: they meet district yards."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum rear yard. Same reading for accessory buildings."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height 35 ft."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "R-2 minimum lot area."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum front yard depth."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum side yard. Accessory buildings are not listed as permitted obstructions in required yards (1278.06(e)). Reading: they meet district yards."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum rear yard. Same reading for accessory buildings."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height 35 ft."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "R-3 minimum lot area."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Minimum front yard depth."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum side yard. Accessory buildings are not listed as permitted obstructions in required yards (1278.06(e)). Reading: they meet district yards."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Minimum rear yard. Same reading for accessory buildings."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1268.06(a) Table I",
+        "url": "https://ecode360.com/37691113",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "Maximum height 45 ft."
+      }
+    }
+  }
+}
