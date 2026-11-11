@@ -1,0 +1,1127 @@
+{
+  "provenance": {
+    "jurisdiction": "Philadelphia, PA",
+    "instrument": "Philadelphia Zoning Code, Title 14, 14-604(11) Accessory Dwelling Units, with 14-604(1) and 14-701",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "14-604(11) as amended by Bills 190612, 210075 and 210078-A. American Legal 2026 code. L&I checklist PZ_004 Rev 3.2022.",
+    "effective_date": null,
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-309487",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292995",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292909",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291330",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291358",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291661",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291738",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291854",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-305382",
+      "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-308864",
+      "https://www.phila.gov/media/20220308130807/PZ_004_INF_Accessory-Dwelling-Unit-Checklist-rev-3.8.2022.pdf"
+    ],
+    "verified_on": "2026-11-10",
+    "checks": [
+      "Owner must live in the house or the ADU and record an affidavit and deed restriction before final occupancy (14-604(11)(e))",
+      "Only one street-facing entrance unless a second already existed (14-604(11)(h))",
+      "ADU must be inside the house or inside a detached accessory building that existed when the 2012 Zoning Code took effect (14-604(11)(c))",
+      "The district must not otherwise permit more than one dwelling unit (14-604(11)(d)(.2)(.b))",
+      "Historic properties also need Historical Commission review (14-604(1)(f))"
+    ],
+    "notes": "The code limits ADUs by overlay, not by council district. Seven overlays carry ADU text (see eligibility.overlay_bars). Most follow council district or ward lines, so the tool can place a lot by overlay list, or by council district and ward when the overlay map is missing."
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "14-604(11)(c)-(d)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Allowed when the lot meets 14-604(11). Zoning permit from L&I."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "14-604(11) and L&I checklist PZ_004 flowchart",
+      "url": "https://www.phila.gov/media/20220308130807/PZ_004_INF_Accessory-Dwelling-Unit-Checklist-rev-3.8.2022.pdf",
+      "verified_on": "2026-11-10",
+      "confidence": "secondary",
+      "note": "Checklist says an ADU is not permitted when the tests fail. Relief would be a Zoning Board variance. The variance section itself was not read."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RSA-5",
+        "CMX-1"
+      ],
+      "section": "14-604(11)(d)(.2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached"
+      ],
+      "section": "14-604(11)(c)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Single-family use in a detached or semi-detached building. Attached only in historic structures."
+    },
+    "overlay_bars": {
+      "value": [
+        {
+          "overlay": "/FNE",
+          "districts": null,
+          "historic_ok": false,
+          "section": "14-514(6)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291330",
+          "wards": [
+            56,
+            58,
+            63,
+            66
+          ],
+          "applies_section": "14-514(1)"
+        },
+        {
+          "overlay": "/NE",
+          "districts": null,
+          "historic_ok": false,
+          "section": "14-515(2)(d)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291358",
+          "wards": [
+            56,
+            58,
+            63,
+            66
+          ],
+          "applies_section": "14-515(1)"
+        },
+        {
+          "overlay": "/NDO",
+          "districts": [
+            "RSA-5",
+            "CMX-1"
+          ],
+          "historic_ok": true,
+          "section": "14-520(3)(a)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291661",
+          "council_districts": [
+            9
+          ],
+          "applies_section": "14-520(2)(a)(.1)"
+        },
+        {
+          "overlay": "/FDO",
+          "districts": [
+            "RSA-5",
+            "CMX-1"
+          ],
+          "historic_ok": true,
+          "section": "14-524(2)(b)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291738",
+          "council_districts": [
+            4
+          ],
+          "applies_section": "14-524(1)(a)"
+        },
+        {
+          "overlay": "/VDO",
+          "districts": [
+            "RSA-5",
+            "CMX-1"
+          ],
+          "historic_ok": true,
+          "section": "14-529(3)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-291854",
+          "council_districts": [
+            5
+          ],
+          "applies_section": "14-529(1)"
+        },
+        {
+          "overlay": "/EDO",
+          "districts": [
+            "RSA-5",
+            "CMX-1"
+          ],
+          "historic_ok": true,
+          "section": "14-530(3)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-305382",
+          "council_districts": [
+            8
+          ],
+          "applies_section": "14-530(1)"
+        },
+        {
+          "overlay": "/SIX",
+          "districts": null,
+          "historic_ok": false,
+          "section": "14-548(2)(c)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-308864",
+          "council_districts": [
+            6
+          ],
+          "applies_section": "14-548(1)"
+        }
+      ],
+      "section": "14-514(6), 14-515(2)(d), 14-520(3)(a), 14-524(2)(b), 14-529(3), 14-530(3), 14-548(2)(c)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-308864",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Each overlay section read on amlegal. /FNE and /NE cover Wards 56, 58, 63, 66 and bar all ADUs. /NDO, /FDO, /VDO, /EDO cover Council Districts 9, 4, 5, 8 and bar ADUs in RSA-5 and CMX-1 except historic structures. /SIX (Bill 260074, approved March 30, 2026) covers District 6 and bars all ADUs. /SEV (14-545) has no ADU text. The 2022 L&I checklist predates /SIX."
+    },
+    "min_lot_sqft": {
+      "value": 1600,
+      "section": "14-604(11)(d)(.2)(.a)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified"
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "14-604(11)(c)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Inside the principal building or inside a detached accessory building, such as a garage, existing when the 2012 Zoning Code took effect."
+    },
+    "historic_bypass": {
+      "value": true,
+      "section": "14-604(11)(c), (d)(.1)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Designated or contributing historic buildings qualify in any district and in attached buildings, with no lot size test. The use must still be single-family."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "garage_conversion"
+      ],
+      "section": "14-604(11)(c)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Interior of the house or of an existing detached accessory building. No new structure."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 800,
+      "section": "14-604(11)(i)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified"
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "14-604(11)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "No share-of-house limit in the section."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "14-604(11)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "No minimum in the section."
+    },
+    "historic_exempt": {
+      "value": true,
+      "section": "14-604(11)(i)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Historic structures may exceed 800 sq ft."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "14-604(1)(d)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-309487",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Every accessory structure for a residential use: max 130 sq ft and 15 ft unless the code says otherwise. Applies to a detached or garage ADU building. An internal ADU follows the district height."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 130,
+      "section": "14-604(1)(d)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-309487",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Applies to every residential accessory structure, so a new detached building could not hold an ADU by right."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "14-604(1)(d), 14-701(2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-309487",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The 15 ft cap is for accessory structures. A unit inside the principal building uses the district height."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "14-701(2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Set per district. See districts table."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "14-701(2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Set per district. See districts table."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "14-701(2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Set per district. See districts table."
+    },
+    "setback_rear_alley_ft": {
+      "value": null,
+      "section": "14-701(2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292995",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No alley rule found for accessory structures. 14-701(6) lists yard projections but no accessory building exception."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "14-604",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-309487",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No zoning separation rule found. Building code governs."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "14-701(2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Max occupied area is set per district. See districts table."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "14-701",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not reviewed."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "14-604(11)(e)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified"
+    },
+    "family_only": {
+      "value": false,
+      "section": "14-604(11)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "No family relationship test in the section."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "14-604(11)(f)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": "2026-11-10",
+      "confidence": "verified"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "14-604(13)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Limited lodging rules apply to the dwelling. Not mapped to ADUs."
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "14-604(11)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in the section."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "14-802(2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Set per district. See districts table (Table 14-802-1)."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "Title 13",
+      "url": null,
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not reviewed."
+    }
+  },
+  "districts": {
+    "RSD-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_semi_ft": {
+        "value": null,
+        "section": "14-701(2), Table 14-701-1, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "No semi-detached side yard in this district."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSD-1/2/3, RSA-1/2/3, RTA-1, RMX-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per unit for single-family and two-family. The code does not say whether an ADU counts as a unit. Read as 1 more space."
+      }
+    },
+    "RSD-2": {
+      "min_lot_sqft": {
+        "value": 7800,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_semi_ft": {
+        "value": null,
+        "section": "14-701(2), Table 14-701-1, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "No semi-detached side yard in this district."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSD-1/2/3, RSA-1/2/3, RTA-1, RMX-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per unit for single-family and two-family. The code does not say whether an ADU counts as a unit. Read as 1 more space."
+      }
+    },
+    "RSD-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Table reads 2/10 each, 25 total."
+      },
+      "setback_side_semi_ft": {
+        "value": null,
+        "section": "14-701(2), Table 14-701-1, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "No semi-detached side yard in this district."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSD-1/2/3, RSA-1/2/3, RTA-1, RMX-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per unit for single-family and two-family. The code does not say whether an ADU counts as a unit. Read as 1 more space."
+      }
+    },
+    "RSA-1": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Table reads 2/10 each, 25 total, with notes [8][9]."
+      },
+      "setback_side_semi_ft": {
+        "value": 25,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "25 with note [8]."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSD-1/2/3, RSA-1/2/3, RTA-1, RMX-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per unit for single-family and two-family. The code does not say whether an ADU counts as a unit. Read as 1 more space."
+      }
+    },
+    "RSA-2": {
+      "min_lot_sqft": {
+        "value": 3150,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Notes [8][9] apply."
+      },
+      "setback_side_semi_ft": {
+        "value": 16,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "16 with note [8]."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSD-1/2/3, RSA-1/2/3, RTA-1, RMX-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per unit for single-family and two-family. The code does not say whether an ADU counts as a unit. Read as 1 more space."
+      }
+    },
+    "RSA-3": {
+      "min_lot_sqft": {
+        "value": 2250,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Notes [8][9] apply."
+      },
+      "setback_side_semi_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "8 with note [8]."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Single-family 15. Other uses 20."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSD-1/2/3, RSA-1/2/3, RTA-1, RMX-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per unit for single-family and two-family. The code does not say whether an ADU counts as a unit. Read as 1 more space."
+      }
+    },
+    "RSA-4": {
+      "min_lot_sqft": {
+        "value": 1620,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Note [1] applies to end-of-group semi-detached lots."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_semi_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "8 with note [1]: end-of-group lots average 12 ft, not under 8 ft."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Single-family 20. Other uses 25."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 0,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSA-4/5/6, RTA-2, RM-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "0 for single-family and two-family, so an ADU adds none."
+      }
+    },
+    "RSA-5": {
+      "min_lot_sqft": {
+        "value": 960,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Note [2] allows 800 sq ft lots in some subdivisions."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Contextual front facade rule (table notes [4][5]). Match the neighbors."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_semi_ft": {
+        "value": 5,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 9,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Note [7]: 7 ft when the lot is 45 ft deep or less."
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Intermediate lot 75%, corner lot 80%. Note [3]: lots 45 ft deep or less are exempt."
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 0,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSA-4/5/6, RTA-2, RM-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "0 for single-family and two-family, so an ADU adds none."
+      }
+    },
+    "RSA-6": {
+      "min_lot_sqft": {
+        "value": 700,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Contextual front facade rule (table notes [4][5]). Match the neighbors."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_semi_ft": {
+        "value": 5,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 7,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.8,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "secondary",
+        "note": "Read from the text version of the table as 80 with note [3]. Confirm against the printable table."
+      },
+      "principal_max_height_ft": {
+        "value": 25,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "secondary",
+        "note": "Table shows 25 with note [10]. Note [10] raises it to 35 or 38 ft under listed conditions. Confirm against the printable table."
+      },
+      "parking_spaces": {
+        "value": 0,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSA-4/5/6, RTA-2, RM-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "0 for single-family and two-family, so an ADU adds none."
+      }
+    },
+    "RTA-1": {
+      "min_lot_sqft": {
+        "value": 2250,
+        "section": "14-701(2), Table 14-701-1, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_semi_ft": {
+        "value": 8,
+        "section": "14-701(2), Table 14-701-1, Min. Side Yard Width, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "14-701(2), Table 14-701-1, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Single-family 15. Other uses 20."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "14-701(2), Table 14-701-1, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-1, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 1,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSD-1/2/3, RSA-1/2/3, RTA-1, RMX-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "1 per unit for single-family and two-family. The code does not say whether an ADU counts as a unit. Read as 1 more space."
+      }
+    },
+    "RM-1": {
+      "min_lot_sqft": {
+        "value": 1440,
+        "section": "14-701(2), Table 14-701-2, Min. Lot Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "14-701(2), Table 14-701-2, Front Yard Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Contextual front facade rule (table notes [5][6])."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "14-701(2), Table 14-701-2, Min. Side Yard Width, Detached, Intermediate Lot (each)",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "setback_side_semi_ft": {
+        "value": 5,
+        "section": "14-701(2), Table 14-701-2, Min. Side Yard Width, Semi-Detached",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-11",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 9,
+        "section": "14-701(2), Table 14-701-2, Rear Yard Min. Depth",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Note [9]: lots under 45 ft deep need only 7 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "14-701(2), Table 14-701-2, Max. Occupied Area",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified",
+        "note": "Intermediate lot 75%, corner lot 80%. Note [2]: lots under 45 ft deep are exempt."
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "14-701(2), Table 14-701-2, Height Maximum",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": "2026-11-10",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 0,
+        "section": "14-802(2), Table 14-802-1, Household Living, column RSA-4/5/6, RTA-2, RM-1",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "0 for single-family and two-family, so an ADU adds none."
+      }
+    },
+    "CMX-1": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "14-701(3), Table 14-701-3, note [1]",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "CMX-1 uses the standards of the most restrictive adjacent district. Look up the neighbor district."
+      },
+      "setback_side_ft": {
+        "value": null,
+        "section": "14-701(3), Table 14-701-3, note [1]",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "CMX-1 uses the standards of the most restrictive adjacent district. Look up the neighbor district."
+      },
+      "setback_rear_ft": {
+        "value": null,
+        "section": "14-701(3), Table 14-701-3, note [1]",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "CMX-1 uses the standards of the most restrictive adjacent district. Look up the neighbor district."
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "14-701(3), Table 14-701-3, note [1]",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "CMX-1 uses the standards of the most restrictive adjacent district. Look up the neighbor district."
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "14-701(3), Table 14-701-3, note [1]",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "CMX-1 uses the standards of the most restrictive adjacent district. Look up the neighbor district."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "14-701(3), Table 14-701-3, note [3]",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Note [1] excludes front yards. Note [3]: front yard depth falls between the two neighbors' depths (contextual)."
+      },
+      "parking_spaces": {
+        "value": null,
+        "section": "14-802",
+        "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293733",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Commercial district parking (Table 14-802-2) not read."
+      }
+    }
+  }
+}

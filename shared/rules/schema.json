@@ -1,0 +1,919 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yz-musa-final/shared/rules/schema.json",
+  "title": "ADU rule file",
+  "description": "One file per place or per bill. Every rule value is a leaf: {value, section, url, verified_on, confidence, note, mode}. null with confidence unverified means not confirmed, so the resolver falls back. null with verified or secondary means the source sets no single number. mode tells a reform layer how to combine with the place: set replaces, at_least is a floor the town may not go under, at_most is a cap the town may not go over. Feet and square feet.",
+  "type": "object",
+  "required": [
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "provenance": {
+      "type": "object",
+      "required": [
+        "jurisdiction",
+        "instrument",
+        "kind",
+        "status",
+        "effective_date",
+        "source_urls",
+        "verified_on"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "jurisdiction": {
+          "type": "string"
+        },
+        "instrument": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "place",
+            "reform",
+            "default"
+          ]
+        },
+        "status": {
+          "enum": [
+            "in_force",
+            "pending",
+            "died"
+          ]
+        },
+        "status_detail": {
+          "type": "string"
+        },
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "source_urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "verified_on": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "reaches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "does_not_reach": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "description": "How a qualifying ADU is approved, and the path when the lot does not qualify.",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/leaf_path"
+        },
+        "fallback_path": {
+          "$ref": "#/$defs/leaf_path"
+        },
+        "detached_in_yard_path": {
+          "$ref": "#/$defs/leaf_path"
+        }
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "description": "Which lots qualify. building_types uses detached, semi_detached, attached.",
+      "additionalProperties": false,
+      "properties": {
+        "zoning_districts": {
+          "$ref": "#/$defs/leaf_list"
+        },
+        "building_types": {
+          "$ref": "#/$defs/leaf_list"
+        },
+        "overlay_bars": {
+          "$ref": "#/$defs/leaf_overlay_bars"
+        },
+        "min_lot_sqft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "existing_structure_only": {
+          "$ref": "#/$defs/leaf_bool"
+        },
+        "historic_bypass": {
+          "$ref": "#/$defs/leaf_bool"
+        }
+      }
+    },
+    "form": {
+      "type": "object",
+      "description": "Which ADU forms are allowed.",
+      "additionalProperties": false,
+      "properties": {
+        "types_allowed": {
+          "$ref": "#/$defs/leaf_types"
+        }
+      }
+    },
+    "size": {
+      "type": "object",
+      "description": "Floor area of the ADU. When a reform layer gives both max_sqft and max_share_of_house as at_least, the floor is the lesser of the two.",
+      "additionalProperties": false,
+      "properties": {
+        "max_sqft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "max_share_of_house": {
+          "$ref": "#/$defs/leaf_share"
+        },
+        "min_sqft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "historic_exempt": {
+          "$ref": "#/$defs/leaf_bool"
+        }
+      }
+    },
+    "envelope": {
+      "type": "object",
+      "description": "Height and distances for a new ADU structure. max_height_ft is the limit for a detached or garage ADU. The last three are building code distances to a lot line or to the line between two buildings.",
+      "additionalProperties": false,
+      "properties": {
+        "max_height_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "setback_front_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "setback_side_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "setback_rear_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "setback_rear_alley_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "separation_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "accessory_structure_max_sqft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "internal_uses_district_height": {
+          "$ref": "#/$defs/leaf_bool"
+        },
+        "rated_wall_below_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "no_openings_below_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "sprinklered_unrated_min_ft": {
+          "$ref": "#/$defs/leaf_num"
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "description": "Lot coverage limits.",
+      "additionalProperties": false,
+      "properties": {
+        "max_building_coverage": {
+          "$ref": "#/$defs/leaf_share"
+        },
+        "max_impervious": {
+          "$ref": "#/$defs/leaf_share"
+        },
+        "min_allowance_sqft": {
+          "$ref": "#/$defs/leaf_num"
+        }
+      }
+    },
+    "use": {
+      "type": "object",
+      "description": "Who may live there and how many units.",
+      "additionalProperties": false,
+      "properties": {
+        "owner_occupancy": {
+          "$ref": "#/$defs/leaf_bool"
+        },
+        "family_only": {
+          "$ref": "#/$defs/leaf_bool"
+        },
+        "short_term_rental_ban_allowed": {
+          "$ref": "#/$defs/leaf_bool"
+        },
+        "short_term_rental_banned": {
+          "$ref": "#/$defs/leaf_bool"
+        },
+        "max_adus": {
+          "$ref": "#/$defs/leaf_int"
+        },
+        "sale_apart_allowed": {
+          "$ref": "#/$defs/leaf_bool"
+        },
+        "sale_apart_ban_allowed": {
+          "$ref": "#/$defs/leaf_bool"
+        }
+      }
+    },
+    "parking": {
+      "type": "object",
+      "description": "Extra off-street spaces for the ADU.",
+      "additionalProperties": false,
+      "properties": {
+        "spaces_required": {
+          "$ref": "#/$defs/leaf_int"
+        }
+      }
+    },
+    "utilities": {
+      "type": "object",
+      "description": "Water and sewer.",
+      "additionalProperties": false,
+      "properties": {
+        "new_connection_required": {
+          "$ref": "#/$defs/leaf_bool"
+        },
+        "connection_fee_allowed": {
+          "$ref": "#/$defs/leaf_bool"
+        }
+      }
+    },
+    "districts": {
+      "type": "object",
+      "description": "Per base district standards. Keys are district codes as mapped (e.g. RSA-5, R1D-L).",
+      "additionalProperties": {
+        "$ref": "#/$defs/district"
+      }
+    }
+  },
+  "$defs": {
+    "leaf_num": {
+      "type": "object",
+      "description": "A number in feet or square feet. null means no single number. See confidence.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_share": {
+      "type": "object",
+      "description": "A share from 0 to 1.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_int": {
+      "type": "object",
+      "description": "A whole number.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_bool": {
+      "type": "object",
+      "description": "Yes or no.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_str": {
+      "type": "object",
+      "description": "A short text value.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_list": {
+      "type": "object",
+      "description": "A list. null means any.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "integer"
+            ]
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_types": {
+      "type": "object",
+      "description": "ADU forms.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "enum": [
+              "detached_new",
+              "garage_conversion",
+              "over_garage",
+              "internal",
+              "attached"
+            ]
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_path": {
+      "type": "object",
+      "description": "Approval path.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "enum": [
+            "by_right",
+            "administrator_exception",
+            "special_exception",
+            "variance",
+            "not_allowed",
+            null
+          ]
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_overlay_bars": {
+      "type": "object",
+      "description": "Overlays that bar ADUs. districts null means every base district. council_districts and wards say where the overlay applies, so a lot can be placed by council district or ward when no overlay map is at hand.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "overlay",
+              "districts",
+              "historic_ok",
+              "section",
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "overlay": {
+                "type": "string"
+              },
+              "districts": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                }
+              },
+              "historic_ok": {
+                "type": "boolean"
+              },
+              "section": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "council_districts": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "wards": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "applies_section": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "district": {
+      "type": "object",
+      "description": "Base district standards that bind an accessory structure.",
+      "additionalProperties": false,
+      "properties": {
+        "min_lot_sqft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "setback_front_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "setback_side_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "setback_side_semi_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "setback_rear_ft": {
+          "$ref": "#/$defs/leaf_num"
+        },
+        "max_building_coverage": {
+          "$ref": "#/$defs/leaf_share"
+        },
+        "parking_spaces": {
+          "$ref": "#/$defs/leaf_int"
+        },
+        "principal_max_height_ft": {
+          "$ref": "#/$defs/leaf_num"
+        }
+      }
+    }
+  }
+}

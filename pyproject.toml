@@ -1,0 +1,94 @@
+[project]
+name = "yz-musa-final"
+version = "0.1.0"
+description = "Lot-level ADU feasibility for Pennsylvania: rules, buildable area and fit for every residential lot."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "geopandas>=1.0",
+    "shapely>=2.0",
+    "pyproj>=3.6",
+    "pyarrow>=15",
+    "jsonschema>=4.20",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+vision = ["torch>=2.2", "torchvision>=0.17"]
+
+# ---------------------------------------------------------------- ruff
+
+[tool.ruff]
+# Measured on the code as it stands: median line 41 chars, p99 114, max 163.
+# 120 keeps the later format diff small (48 lines over today).
+line-length = 120
+target-version = "py312"
+extend-exclude = [
+    "node_modules",
+    "dist",
+    "site",
+    "_freeze",
+    ".quarto",
+    "no-push",
+    "*.ipynb",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = [
+    "E731",   # small named lambdas are used on purpose in a few places
+    "SIM108", # ternaries are not always clearer
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["E402"]   # tests import after pytest.importorskip
+"musa6950/**" = ["E402"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pipeline", "shared"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = false
+
+# ---------------------------------------------------------------- mypy
+
+[tool.mypy]
+python_version = "3.12"
+files = ["pipeline"]
+exclude = [
+    '\.ipynb$',
+    '^musa6950/yolo/',
+    '^no-push/',
+    '^site/',
+]
+ignore_missing_imports = true
+warn_unused_configs = true
+show_error_codes = true
+pretty = false
+
+[[tool.mypy.overrides]]
+module = ["pipeline", "pipeline.*"]
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["shapely.*", "geopandas.*", "pyproj.*", "pyarrow.*", "rasterio.*", "torch.*", "torchvision.*"]
+ignore_missing_imports = true
+
+# ---------------------------------------------------------------- pytest
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "needs_data: reads the data drive (ADU_DATA_DIR or ~/musa-drive). Skipped when it is not attached.",
+    "needs_torch: needs torch and the vision environment.",
+]
+filterwarnings = [
+    "ignore:invalid value encountered:RuntimeWarning",
+]

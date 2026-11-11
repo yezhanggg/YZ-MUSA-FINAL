@@ -1,0 +1,7064 @@
+{
+ "meta": {
+  "generated": "2026-11-11",
+  "code_hash": "32b285bff061",
+  "n": 50,
+  "tolerance": {
+   "area_rel": 0.01,
+   "area_abs_sqft": 1.0
+  },
+  "note": "Refresh with: python tests/regression/make_cases.py --update-expected"
+ },
+ "lots": {
+  "pit-01-42003-0114F00213000000": {
+   "area_sqft": 8482.8,
+   "edges": {
+    "alley": true,
+    "corner": true,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R1D-M",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2222.2,
+     "buildable_clear_sqft": 2222.2,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 327,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 327,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2222.2,
+     "buildable_clear_sqft": 2222.2,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 327,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 327,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2307.6,
+     "buildable_clear_sqft": 2307.6,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 327,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 327,
+       "limiting": "garage_size"
+      }
+     }
+    }
+   }
+  },
+  "pit-02-42003-0119S00235000000": {
+   "area_sqft": 2060.6,
+   "edges": {
+    "alley": true,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RIV-MU",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 432.9,
+     "buildable_clear_sqft": 432.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 230,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 346,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 346,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 432.9,
+     "buildable_clear_sqft": 432.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 230,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 346,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 346,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 461.5,
+     "buildable_clear_sqft": 461.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 245,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 346,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 346,
+       "limiting": "garage_size"
+      }
+     }
+    }
+   }
+  },
+  "pit-03-42003-0026H00310000000": {
+   "area_sqft": 1948.8,
+   "edges": {
+    "alley": false,
+    "corner": true,
+    "flag_lot": true,
+    "street_edge": true
+   },
+   "district": "R2-VH",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 567,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 567,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 567,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 567,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 567,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 567,
+       "limiting": "garage_size"
+      }
+     }
+    }
+   }
+  },
+  "pit-04-42003-0050N00276000000": {
+   "area_sqft": 1161.6,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": true,
+    "street_edge": true
+   },
+   "district": "R1A-H",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 376.9,
+     "buildable_clear_sqft": 376.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 376.9,
+     "buildable_clear_sqft": 376.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 463.3,
+     "buildable_clear_sqft": 463.3,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-05-42003-0120K00145000000": {
+   "area_sqft": 17282.8,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "UI",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 6449.6,
+     "buildable_clear_sqft": 6449.6,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 6449.6,
+     "buildable_clear_sqft": 6449.6,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 9076.0,
+     "buildable_clear_sqft": 9076.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-06-42003-0005R00036000000": {
+   "area_sqft": 26592.7,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": false
+   },
+   "district": "H",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 20797.9,
+     "buildable_clear_sqft": 20797.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 20797.9,
+     "buildable_clear_sqft": 20797.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 20908.6,
+     "buildable_clear_sqft": 20908.6,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-07-42003-0023K00237000000": {
+   "area_sqft": 1094.8,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R1A-VH",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-08-42003-0028M00121000000": {
+   "area_sqft": 3170.2,
+   "edges": {
+    "alley": true,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R1A-H",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 521.5,
+     "buildable_clear_sqft": 521.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 515,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 521.5,
+     "buildable_clear_sqft": 521.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 515,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 544.4,
+     "buildable_clear_sqft": 544.4,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 538,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-09-42003-0139M00076000000": {
+   "area_sqft": 4140.4,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": true,
+    "street_edge": true
+   },
+   "district": "HC",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 664.8,
+     "buildable_clear_sqft": 664.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 559,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 664.8,
+     "buildable_clear_sqft": 664.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 559,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 694.2,
+     "buildable_clear_sqft": 694.2,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 591,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-10-42003-0025A00212000000": {
+   "area_sqft": 2602.2,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RIV-RM",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 203.4,
+     "buildable_clear_sqft": 203.4,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 203.4,
+     "buildable_clear_sqft": 203.4,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 238.0,
+     "buildable_clear_sqft": 238.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-11-42003-0054M00267000000": {
+   "area_sqft": 3425.6,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R1A-M",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 437.5,
+     "buildable_clear_sqft": 437.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 392,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 972,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 437.5,
+     "buildable_clear_sqft": 437.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 392,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 972,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 482.8,
+     "buildable_clear_sqft": 482.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 433,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 972,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-12-42003-0001P00040000000": {
+   "area_sqft": 2151.3,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": true,
+    "street_edge": true
+   },
+   "district": "GPRA",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 190.1,
+     "buildable_clear_sqft": 190.1,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 190.1,
+     "buildable_clear_sqft": 190.1,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 219.0,
+     "buildable_clear_sqft": 219.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-13-42003-0124R00302000000": {
+   "area_sqft": 2570.1,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RM-M",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 226,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 946,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 226,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 226,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 946,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 226,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 227.8,
+     "buildable_clear_sqft": 227.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 212,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 226,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 946,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 226,
+       "limiting": "garage_size"
+      }
+     }
+    }
+   }
+  },
+  "pit-14-42003-0025D00155000900": {
+   "area_sqft": 717.0,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RIV-IMU",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-15-42003-0087L00122000000": {
+   "area_sqft": 2815.8,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R2-L",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 3.5,
+     "buildable_clear_sqft": 3.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 3.5,
+     "buildable_clear_sqft": 3.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 9.1,
+     "buildable_clear_sqft": 9.1,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-16-42003-0083E00060000000": {
+   "area_sqft": 3717.6,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R3-M",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 658.3,
+     "buildable_clear_sqft": 658.3,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 639,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 658.3,
+     "buildable_clear_sqft": 658.3,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 639,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 744.3,
+     "buildable_clear_sqft": 744.3,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 720,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-17-42003-0010M00189000000": {
+   "area_sqft": 1702.6,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "EMI",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 440.9,
+     "buildable_clear_sqft": 440.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 440.9,
+     "buildable_clear_sqft": 440.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 490.6,
+     "buildable_clear_sqft": 490.6,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 479,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-18-42003-0028L00057000000": {
+   "area_sqft": 2505.0,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R-MU",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 729.5,
+     "buildable_clear_sqft": 729.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 714,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 729.5,
+     "buildable_clear_sqft": 729.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 714,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 745.9,
+     "buildable_clear_sqft": 745.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 730,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-19-42003-0034K00306000000": {
+   "area_sqft": 6652.7,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R1D-L",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2253.4,
+     "buildable_clear_sqft": 2253.4,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2253.4,
+     "buildable_clear_sqft": 2253.4,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2415.2,
+     "buildable_clear_sqft": 2415.2,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-20-42003-0050P00122000000": {
+   "area_sqft": 3458.8,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R2-M",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-21-42003-0082N00211000000": {
+   "area_sqft": 6469.5,
+   "edges": {
+    "alley": true,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R3-L",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 453.5,
+     "buildable_clear_sqft": 453.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 418,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 793,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 793,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 453.5,
+     "buildable_clear_sqft": 453.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 418,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 793,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 793,
+       "limiting": "garage_size"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 489.8,
+     "buildable_clear_sqft": 489.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 446,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 793,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 793,
+       "limiting": "garage_size"
+      }
+     }
+    }
+   }
+  },
+  "pit-22-42003-0013H00070000000": {
+   "area_sqft": 6097.4,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "R1D-H",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 856.5,
+     "buildable_clear_sqft": 856.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 687,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 856.5,
+     "buildable_clear_sqft": 856.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 687,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 964.1,
+     "buildable_clear_sqft": 964.1,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 762,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-23-42003-0026R00099000000": {
+   "area_sqft": 4875.2,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "P",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 1980.4,
+     "buildable_clear_sqft": 1980.4,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 752,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 1980.4,
+     "buildable_clear_sqft": 1980.4,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 752,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2150.3,
+     "buildable_clear_sqft": 2150.3,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 752,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-24-42003-0011G00016000000": {
+   "area_sqft": 1148.3,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "UPR-B",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "pit-25-42003-0026F00221000000": {
+   "area_sqft": 2418.0,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "UNC",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 891.8,
+     "buildable_clear_sqft": 891.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 881,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 891.8,
+     "buildable_clear_sqft": 891.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": true,
+       "largest_sqft": 881,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "administrator_exception",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 891.8,
+     "buildable_clear_sqft": 891.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 881,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "not_allowed",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1000,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-01-42101-561007900": {
+   "area_sqft": 5116.7,
+   "edges": {
+    "alley": false,
+    "corner": true,
+    "flag_lot": true,
+    "street_edge": true
+   },
+   "district": "RSA3",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 843.8,
+     "buildable_clear_sqft": 843.8,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 387,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 843.8,
+     "buildable_clear_sqft": 843.8,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 387,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 1536.5,
+     "buildable_clear_sqft": 1536.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 533,
+       "limiting": "garage_size"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 533,
+       "limiting": "garage_size"
+      }
+     }
+    }
+   }
+  },
+  "phi-02-42101-234020700": {
+   "area_sqft": 2059.2,
+   "edges": {
+    "alley": false,
+    "corner": true,
+    "flag_lot": true,
+    "street_edge": true
+   },
+   "district": "RSA5",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 554,
+       "limiting": "building_coverage"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 2520,
+       "limiting": "building_coverage"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 554,
+       "limiting": "building_coverage"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 850,
+       "limiting": "building_coverage"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 554,
+       "limiting": "building_coverage"
+      }
+     }
+    }
+   }
+  },
+  "phi-03-42101-344147700": {
+   "area_sqft": 11618.9,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RSD1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 2462.5,
+     "buildable_clear_sqft": 2462.5,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 800,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2462.5,
+     "buildable_clear_sqft": 2462.5,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 1525,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2153,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 5291.8,
+     "buildable_clear_sqft": 5291.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-04-42101-223018400": {
+   "area_sqft": 13306.4,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RSD3",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 1495.0,
+     "buildable_clear_sqft": 1495.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 233,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 1495.0,
+     "buildable_clear_sqft": 1495.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 233,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 4350,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 2706.5,
+     "buildable_clear_sqft": 2706.5,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 233,
+       "limiting": "building_coverage"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-05-42101-881000809": {
+   "area_sqft": 2012.6,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RM1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 4089,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-06-42101-011315214": {
+   "area_sqft": 640.0,
+   "edges": {
+    "alley": true,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RMX2",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2104,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-07-42101-652187615": {
+   "area_sqft": 7319.9,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RSA1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 92.6,
+     "buildable_clear_sqft": 92.6,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 92.6,
+     "buildable_clear_sqft": 92.6,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 1788.1,
+     "buildable_clear_sqft": 1788.1,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 565,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-08-42101-302326008": {
+   "area_sqft": 902.1,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "IRMX",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 159.8,
+     "buildable_clear_sqft": 159.8,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 159.8,
+     "buildable_clear_sqft": 159.8,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1985,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 210.8,
+     "buildable_clear_sqft": 210.8,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-09-42101-021540800": {
+   "area_sqft": 692.9,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "CA1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1541,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-10-42101-055107610": {
+   "area_sqft": 754.3,
+   "edges": {
+    "alley": true,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RM1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 2225,
+       "limiting": "building_coverage"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 850,
+       "limiting": "building_coverage"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-11-42101-011054840": {
+   "area_sqft": 850.0,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "I2",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 140.0,
+     "buildable_clear_sqft": 140.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 140.0,
+     "buildable_clear_sqft": 140.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2085,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 189.0,
+     "buildable_clear_sqft": 189.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-12-42101-271048700": {
+   "area_sqft": 1190.7,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "SPINS",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2175,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2175,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2175,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-13-42101-582521396": {
+   "area_sqft": 2404.6,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": false
+   },
+   "district": "I1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 1048.9,
+     "buildable_clear_sqft": 1048.9,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 537,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 1048.9,
+     "buildable_clear_sqft": 1048.9,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 537,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 1139.9,
+     "buildable_clear_sqft": 1139.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 624,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-14-42101-084138600": {
+   "area_sqft": 900.0,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RMX3",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1485,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 1.7,
+     "buildable_clear_sqft": 1.7,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-15-42101-501228191": {
+   "area_sqft": 5985.1,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "CMX2",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 901.5,
+     "buildable_clear_sqft": 901.5,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 800,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 901.5,
+     "buildable_clear_sqft": 901.5,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 880,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 3360,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 994.2,
+     "buildable_clear_sqft": 994.2,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-16-42101-054008800": {
+   "area_sqft": 789.8,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "CMX3",
+   "scenarios": {
+    "today": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 42.3,
+     "buildable_clear_sqft": 42.3,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 829,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 42.3,
+     "buildable_clear_sqft": 42.3,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 829,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 56.9,
+     "buildable_clear_sqft": 56.9,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 829,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-17-42101-581349801": {
+   "area_sqft": 8522.4,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RSD2",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 266.2,
+     "buildable_clear_sqft": 266.2,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 266.2,
+     "buildable_clear_sqft": 266.2,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 1505.4,
+     "buildable_clear_sqft": 1932.1,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 712,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-18-42101-121073410": {
+   "area_sqft": 2731.7,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RM2",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 247.1,
+     "buildable_clear_sqft": 247.1,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 247.1,
+     "buildable_clear_sqft": 247.1,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1485,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 288.4,
+     "buildable_clear_sqft": 288.4,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-19-42101-111140000": {
+   "area_sqft": 1290.7,
+   "edges": {
+    "alley": false,
+    "corner": true,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RM4",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2234,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-20-42101-482356710": {
+   "area_sqft": 1489.3,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "I3",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2212,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-21-42101-124085400": {
+   "area_sqft": 3607.9,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "CMX2.5",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 480.5,
+     "buildable_clear_sqft": 480.5,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 480.5,
+     "buildable_clear_sqft": 480.5,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2852,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 569.3,
+     "buildable_clear_sqft": 569.3,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-22-42101-582489900": {
+   "area_sqft": 3951.9,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RTA1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 267.7,
+     "buildable_clear_sqft": 267.7,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 187,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 267.7,
+     "buildable_clear_sqft": 267.7,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 187,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 539.0,
+     "buildable_clear_sqft": 539.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 203,
+       "limiting": "yard_space"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-23-42101-212381415": {
+   "area_sqft": 760.0,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "RMX1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 1504,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 800,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-24-42101-451005600": {
+   "area_sqft": 930.9,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "CMX1",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 846,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  },
+  "phi-25-42101-151293530": {
+   "area_sqft": 1075.1,
+   "edges": {
+    "alley": false,
+    "corner": false,
+    "flag_lot": false,
+    "street_edge": true
+   },
+   "district": "ICMX",
+   "scenarios": {
+    "today": {
+     "allowed": false,
+     "approval_path": "variance",
+     "buildable_keep_sqft": 15.7,
+     "buildable_clear_sqft": 15.7,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "local_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 15.7,
+     "buildable_clear_sqft": 15.7,
+     "types": {
+      "attached": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "type_not_allowed"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 2160,
+       "limiting": "house_size"
+      },
+      "over_garage": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      }
+     }
+    },
+    "state_reform": {
+     "allowed": true,
+     "approval_path": "by_right",
+     "buildable_keep_sqft": 31.0,
+     "buildable_clear_sqft": 31.0,
+     "types": {
+      "attached": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "detached_new": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
+      },
+      "garage_conversion": {
+       "allowed": false,
+       "approval": "variance",
+       "fits": null,
+       "largest_sqft": null,
+       "limiting": null
+      },
+      "internal": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": true,
+       "largest_sqft": 850,
+       "limiting": "size_cap"
+      },
+      "over_garage": {
+       "allowed": true,
+       "approval": "by_right",
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_garage"
+      }
+     }
+    }
+   }
+  }
+ }
+}

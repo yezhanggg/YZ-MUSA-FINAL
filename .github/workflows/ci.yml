@@ -1,0 +1,124 @@
+# Lint, type checks, tests, schema checks and a push guard for every push and pull request.
+# Runs beside codeql.yml. It covers what tests.yml did (pytest), so tests.yml can go once this lands.
+name: ci
+
+on:
+  push:
+    branches: [main, "build/**"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.12"
+  NODE_VERSION: "22"
+  # Lint and type steps report but do not fail until the one-time cleanup lands. Then set "true".
+  LINT_STRICT: "false"
+
+jobs:
+  guard:
+    name: guard (big files, keys, no-push)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Check changed files
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: python .github/scripts/guard.py "$BASE" "$HEAD"
+
+  python:
+    name: python (ruff, mypy, pytest)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            requirements-dev.txt
+      - name: Install
+        run: |
+          python - <<'PY' > runtime-requirements.txt
+          import tomllib
+          print("\n".join(tomllib.load(open("pyproject.toml", "rb"))["project"]["dependencies"]))
+          PY
+          python -m pip install --upgrade pip
+          python -m pip install -r runtime-requirements.txt -r requirements-dev.txt
+      - name: ruff check
+        continue-on-error: ${{ env.LINT_STRICT != 'true' }}
+        run: ruff check --output-format=github .
+      - name: ruff format --check
+        continue-on-error: ${{ env.LINT_STRICT != 'true' }}
+        run: ruff format --check .
+      - name: mypy
+        continue-on-error: ${{ env.LINT_STRICT != 'true' }}
+        run: mypy pipeline
+      - name: pytest (no data drive, no torch)
+        env:
+          # An empty data root: tests that need the drive skip themselves.
+          ADU_DATA_DIR: ${{ runner.temp }}/no-data
+        run: python -m pytest tests -q -m "not needs_data and not needs_torch"
+
+  schema:
+    name: schema (rules, assumptions, lot schema)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: python -m pip install "jsonschema>=4.20"
+      - name: Validate JSON files against their schemas
+        run: python .github/scripts/check_schemas.py
+
+  node:
+    name: node (tsc, eslint, vitest, vite build)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - name: tsc --noEmit
+        run: npx tsc --noEmit -p tsconfig.json
+      - name: eslint (when configured)
+        run: |
+          if ls eslint.config.* .eslintrc* >/dev/null 2>&1; then
+            npx eslint .
+          else
+            echo "no eslint config in the repo: skipped"
+          fi
+      - name: vitest
+        run: npx vitest run
+      - name: vite build
+        run: npx vite build

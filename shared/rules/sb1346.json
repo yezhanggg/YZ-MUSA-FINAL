@@ -1,0 +1,202 @@
+{
+  "provenance": {
+    "jurisdiction": "Pennsylvania",
+    "instrument": "Senate Bill 1346 (2025-26), Printer's No. 1747, amends the Municipalities Planning Code (adds section 603.2)",
+    "kind": "reform",
+    "status": "pending",
+    "status_detail": "Referred to Senate Urban Affairs & Housing May 26, 2026. Reported as committed 10-1 and first consideration July 12, 2026 (dates as listed on palegis.us). No later action as of 2026-11-10. The session ends Nov 30, 2026.",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.palegis.us/legislation/bills/2025/sb1346",
+      "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747"
+    ],
+    "verified_on": "2026-11-10",
+    "reaches": [
+      "municipalities under the MPC"
+    ],
+    "does_not_reach": [
+      "philadelphia",
+      "pittsburgh"
+    ],
+    "checks": [
+      "Permit decided ministerially within 14 days or deemed approved (603.2(b))",
+      "Single-family detached lots only (603.2(a), (d))"
+    ],
+    "notes": "The MPC does not govern Philadelphia or Pittsburgh (research notes section 2), so the resolver does not layer this bill on those cities."
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "SB 1346 PN 1747, proposed MPC 603(m) and 603.2(b)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Permitted use by right. Ministerial review, no hearing.",
+      "mode": "set"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": null,
+      "section": "SB 1346 PN 1747, proposed MPC 603(m)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "All zoning districts where single-family dwellings are permitted.",
+      "mode": "set"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(a)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "At least one ADU for each single-family detached dwelling.",
+      "mode": "set"
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(d)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage",
+        "internal",
+        "attached"
+      ],
+      "section": "SB 1346 PN 1747, proposed MPC 107(a) definition and 603.2(d)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1250,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(f)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Town max may not be under 50% of the house or 1,250 sq ft, whichever is less.",
+      "mode": "at_least"
+    },
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(f)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "at_least"
+    },
+    "min_sqft": {
+      "value": 150,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(e)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "at_most"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(g)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Or the house height, whichever is less.",
+      "mode": "at_least"
+    },
+    "setback_side_ft": {
+      "value": 4,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(h)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "at_most"
+    },
+    "setback_rear_ft": {
+      "value": 4,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(h)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "at_most"
+    },
+    "setback_rear_alley_ft": {
+      "value": 4,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(h)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "at_most"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(l)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(a)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "at_least"
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(m)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "May be rented, may not be sold apart.",
+      "mode": "set"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 0,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(n)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(k)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    },
+    "connection_fee_allowed": {
+      "value": false,
+      "section": "SB 1346 PN 1747, proposed MPC 603.2(k)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB1346/PN1747",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Unless built with a new single-family house on the same lot.",
+      "mode": "set"
+    }
+  }
+}

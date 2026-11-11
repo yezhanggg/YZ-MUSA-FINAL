@@ -1,0 +1,156 @@
+{
+  "provenance": {
+    "jurisdiction": "Pennsylvania (fallback)",
+    "instrument": "2021 International Residential Code as adopted by the PA Uniform Construction Code, plus labeled planning assumptions",
+    "kind": "default",
+    "status": "in_force",
+    "status_detail": "PA UCC moved to the 2021 I-Codes effective Jan 1, 2026 (research notes, secondary). IRC text read on codes.iccsafe.org.",
+    "effective_date": "2026-01-01",
+    "source_urls": [
+      "https://codes.iccsafe.org/content/IRC2021P2/chapter-3-building-planning",
+      "https://codes.iccsafe.org/content/IRC2021P2/chapter-2-definitions",
+      "shared/adu_rules_pa.md"
+    ],
+    "verified_on": "2026-11-10",
+    "checks": [
+      "This value is a building code default or a planning assumption, not the town's zoning rule",
+      "Walls under 5 ft from a lot line need a 1-hour rating. No openings under 3 ft (IRC Table R302.1(1))",
+      "An internal or attached ADU makes the house a two-family dwelling (IRC R302.3 separation)"
+    ],
+    "notes": "Used only for keys a place file leaves unconfirmed. The resolver marks them in 'assumed'."
+  },
+  "approval": {
+    "path": {
+      "value": "not_allowed",
+      "section": "Planning assumption",
+      "url": "shared/adu_rules_pa.md",
+      "verified_on": "2026-11-10",
+      "confidence": "unverified",
+      "note": "No ADU rule on file for this place. Treat as not allowed until checked.",
+      "assumption": true
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 5,
+      "section": "2021 IRC R302.1, Table R302.1(1)",
+      "url": "https://codes.iccsafe.org/content/IRC2021P2/chapter-3-building-planning",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Building code, not zoning: a wall at 5 ft or more from the lot line needs no fire rating. Closer needs a 1-hour wall."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "2021 IRC R302.1, Table R302.1(1)",
+      "url": "https://codes.iccsafe.org/content/IRC2021P2/chapter-3-building-planning",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Same building code rule as the side lot line."
+    },
+    "setback_rear_alley_ft": {
+      "value": 5,
+      "section": "2021 IRC R302.1, Table R302.1(1) and R202 fire separation distance",
+      "url": "https://codes.iccsafe.org/content/IRC2021P2/chapter-2-definitions",
+      "verified_on": "2026-11-10",
+      "confidence": "secondary",
+      "note": "R202 measures to the centerline of an alley, so this is conservative. With a wide alley the wall can sit closer.",
+      "assumption": true
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "Planning assumption",
+      "url": null,
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Zoning sets the front setback. No building code default."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "2021 IRC R302.1, Table R302.1(1) and R202 fire separation distance",
+      "url": "https://codes.iccsafe.org/content/IRC2021P2/chapter-2-definitions",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Planning default. R202 measures to an imaginary line between two buildings on the lot, and the line need not be midway. 5 ft each side gives 10 ft with no rated walls and unlimited openings. Closer is possible: a 1-hour rated wall can sit at 0 ft from the line, openings are barred under 3 ft and limited to 25% of the wall from 3 to 5 ft, and with sprinklers (Table R302.1(2)) an unrated wall with unlimited openings needs only 3 ft. R302.1 Exception 2 exempts 'walls of individual dwelling units and their accessory structures located on the same lot'. It may remove the line for a second dwelling. Ask the code official.",
+      "assumption": true
+    },
+    "rated_wall_below_ft": {
+      "value": 5,
+      "section": "2021 IRC R302.1, Table R302.1(1), Walls",
+      "url": "https://codes.iccsafe.org/content/IRC2021P2/chapter-3-building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Without sprinklers, a wall under 5 ft from the lot line or the line between buildings needs a 1-hour rating (exposure from both sides)."
+    },
+    "no_openings_below_ft": {
+      "value": 3,
+      "section": "2021 IRC R302.1, Table R302.1(1), Openings in walls",
+      "url": "https://codes.iccsafe.org/content/IRC2021P2/chapter-3-building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No openings under 3 ft. From 3 ft to under 5 ft, openings up to 25% of the wall area."
+    },
+    "sprinklered_unrated_min_ft": {
+      "value": 3,
+      "section": "2021 IRC R302.1, Table R302.1(2)",
+      "url": "https://codes.iccsafe.org/content/IRC2021P2/chapter-3-building-planning",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "With an automatic sprinkler system (P2904), an unrated wall with unlimited openings may sit at 3 ft."
+    },
+    "max_height_ft": {
+      "value": null,
+      "section": "Planning assumption",
+      "url": null,
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No building code height default."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 1,
+      "section": "Planning assumption",
+      "url": "shared/adu_rules_pa.md",
+      "verified_on": "2026-11-10",
+      "confidence": "unverified",
+      "note": "Most common PA approach per research notes section 3.",
+      "assumption": true
+    },
+    "owner_occupancy": {
+      "value": null,
+      "section": "Planning assumption",
+      "url": null,
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Varies by town."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "Planning assumption",
+      "url": "shared/adu_rules_pa.md",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Varies by town. Often 800 sq ft per research notes, not used as a default."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "2021 IRC R304",
+      "url": "https://codes.iccsafe.org/content/IRC2021P2/chapter-3-building-planning",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No dwelling minimum used."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "Planning assumption",
+      "url": null,
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Varies by town."
+    }
+  }
+}

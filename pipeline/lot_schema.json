@@ -1,0 +1,315 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yz-musa-final/pipeline/lot_schema.json",
+  "title": "Lot record",
+  "description": "One record per lot. Geometry is GeoJSON in WGS84 (lon, lat) for the app. It is computed in a local feet CRS named in lot.crs_local (EPSG:2272 Philadelphia, EPSG:2271 Pittsburgh). Areas are sq ft, lengths ft, shares 0 to 1, percents 0 to 100. No owner names anywhere.",
+  "type": "object",
+  "required": ["schema_version", "lot", "buildings", "zoning", "rules", "buildable", "fit", "quality"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "lot": {"$ref": "#/$defs/lot"},
+    "buildings": {"type": "array", "items": {"$ref": "#/$defs/building"}},
+    "cover": {"$ref": "#/$defs/cover"},
+    "objects": {"type": "array", "items": {"$ref": "#/$defs/object"}},
+    "zoning": {"$ref": "#/$defs/zoning"},
+    "rules": {"$ref": "#/$defs/per_scenario_rules"},
+    "buildable": {"$ref": "#/$defs/per_scenario_buildable"},
+    "fit": {"$ref": "#/$defs/per_scenario_fit"},
+    "facts": {"$ref": "#/$defs/facts"},
+    "money": {"$ref": "#/$defs/money"},
+    "quality": {"$ref": "#/$defs/quality"}
+  },
+  "$defs": {
+    "num_or_null": {"type": ["number", "null"]},
+    "int_or_null": {"type": ["integer", "null"]},
+    "str_or_null": {"type": ["string", "null"]},
+    "date_or_null": {"type": ["string", "null"], "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"},
+    "position": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "number"}},
+    "ring": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/position"}},
+    "polygon": {
+      "type": "object", "required": ["type", "coordinates"],
+      "properties": {
+        "type": {"const": "Polygon"},
+        "coordinates": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/ring"}}
+      }
+    },
+    "multipolygon": {
+      "type": "object", "required": ["type", "coordinates"],
+      "properties": {
+        "type": {"const": "MultiPolygon"},
+        "coordinates": {"type": "array", "items": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/ring"}}}
+      }
+    },
+    "area_geom": {"oneOf": [{"$ref": "#/$defs/polygon"}, {"$ref": "#/$defs/multipolygon"}]},
+    "area_geom_or_null": {"oneOf": [{"$ref": "#/$defs/polygon"}, {"$ref": "#/$defs/multipolygon"}, {"type": "null"}]},
+    "linestring": {
+      "type": "object", "required": ["type", "coordinates"],
+      "properties": {
+        "type": {"const": "LineString"},
+        "coordinates": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/position"}}
+      }
+    },
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "scenario": {"enum": ["today", "local_reform", "state_reform"]},
+    "adu_type": {"enum": ["detached_new", "garage_conversion", "over_garage", "internal"]},
+    "rule_type": {"enum": ["detached_new", "garage_conversion", "over_garage", "internal", "attached"],
+                  "description": "ADU types a rule may allow. attached is allowed by some codes but has no fit model yet"},
+    "approval": {"enum": ["by_right", "administrator_exception", "special_exception", "variance", "not_allowed"],
+                 "description": "Approval path, least demanding first"},
+    "approval_or_null": {"oneOf": [{"$ref": "#/$defs/approval"}, {"type": "null"}]},
+    "citation": {
+      "type": "object", "required": ["section", "confidence"], "additionalProperties": false,
+      "properties": {
+        "section": {"type": "string"},
+        "url": {"$ref": "#/$defs/str_or_null"},
+        "verified_on": {"$ref": "#/$defs/date_or_null"},
+        "confidence": {"enum": ["verified", "secondary", "unverified"]},
+        "source_file": {"type": "string", "description": "Rule file the value came from, or the step that filled it"}
+      }
+    },
+
+    "edge": {
+      "type": "object", "required": ["id", "role", "line"], "additionalProperties": false,
+      "properties": {
+        "id": {"type": "integer", "minimum": 0},
+        "role": {"enum": ["front", "rear", "side"]},
+        "line": {"$ref": "#/$defs/linestring"},
+        "length_ft": {"type": "number"},
+        "party_wall": {"type": "boolean", "description": "Side shared with an attached neighbor: no side yard there"}
+      }
+    },
+    "lot": {
+      "type": "object",
+      "required": ["id", "parcel_id", "polygon", "area_sqft", "crs_local", "front_edges", "rear_edges", "side_edges", "alley", "shape_confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "description": "Stable lot id: <county FIPS>-<city parcel id>"},
+        "parcel_id": {"type": "string", "description": "The city or county parcel id"},
+        "address": {"$ref": "#/$defs/str_or_null"},
+        "place": {"type": "string", "description": "philadelphia, pittsburgh, ..."},
+        "county_fips": {"type": "string", "pattern": "^42\\d{3}$"},
+        "tract": {"type": "string"},
+        "crs_local": {"enum": [2272, 2271]},
+        "polygon": {"$ref": "#/$defs/area_geom"},
+        "area_sqft": {"type": "number", "exclusiveMinimum": 0},
+        "edges": {"type": "array", "items": {"$ref": "#/$defs/edge"}},
+        "front_edges": {"type": "array", "items": {"type": "integer"}},
+        "rear_edges": {"type": "array", "items": {"type": "integer"}},
+        "side_edges": {"type": "array", "items": {"type": "integer"}},
+        "alley": {"type": "boolean"},
+        "corner": {"type": "boolean"},
+        "flag_lot": {"type": "boolean"},
+        "street_edge": {"type": "boolean", "description": "False when no street was found near any lot line"},
+        "shape_confidence": {"$ref": "#/$defs/confidence"},
+        "shape_notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "building": {
+      "type": "object", "required": ["polygon", "role", "source", "area_sqft"], "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string"},
+        "polygon": {"$ref": "#/$defs/area_geom"},
+        "height_ft": {"$ref": "#/$defs/num_or_null"},
+        "role": {"enum": ["main", "garage", "shed", "other"]},
+        "source": {"enum": ["city", "msft", "unet", "yolo"]},
+        "area_sqft": {"type": "number", "minimum": 0}
+      }
+    },
+    "share": {
+      "type": "object", "required": ["sqft", "pct"], "additionalProperties": false,
+      "properties": {"sqft": {"type": "number", "minimum": 0}, "pct": {"type": "number", "minimum": 0, "maximum": 100}}
+    },
+    "cover": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "building": {"$ref": "#/$defs/share"},
+        "tree": {"$ref": "#/$defs/share"},
+        "open": {"$ref": "#/$defs/share"},
+        "hard": {"$ref": "#/$defs/share"}
+      }
+    },
+    "object": {
+      "type": "object", "required": ["class", "box", "score"], "additionalProperties": false,
+      "properties": {
+        "class": {"type": "string", "description": "pool, shed, car, trampoline, ..."},
+        "box": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number"},
+                "description": "[min lon, min lat, max lon, max lat]"},
+        "score": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "zoning": {
+      "type": "object", "required": ["district"], "additionalProperties": false,
+      "properties": {
+        "district": {"$ref": "#/$defs/str_or_null"},
+        "overlays": {"type": "array", "items": {"type": "string"}},
+        "council_district": {"$ref": "#/$defs/str_or_null"},
+        "flags": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "flood": {"type": ["boolean", "null"]},
+            "historic": {"type": ["boolean", "null"]},
+            "steep_slope": {"type": ["boolean", "null"]},
+            "landslide": {"type": ["boolean", "null"]},
+            "sewer": {"type": ["boolean", "null"], "description": "True when public sewer serves the lot"}
+          }
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "required": ["allowed", "approval_path", "reasons", "types_allowed", "max_adus", "max_size_sqft", "min_size_sqft",
+                   "max_share_of_house", "min_lot_sqft", "max_height_ft", "setback_front_ft", "setback_side_ft",
+                   "setback_rear_ft", "setback_rear_alley_ft", "separation_ft", "max_building_coverage",
+                   "max_impervious", "owner_occupancy", "parking_spaces", "citations", "assumed"],
+      "additionalProperties": false,
+      "properties": {
+        "allowed": {"type": "boolean"},
+        "approval_path": {"$ref": "#/$defs/approval_or_null", "description": "Least demanding path among the ADU types"},
+        "reasons": {"type": "array", "items": {"type": "string"}},
+        "types_allowed": {"type": ["array", "null"], "items": {"$ref": "#/$defs/rule_type"}},
+        "max_adus": {"$ref": "#/$defs/int_or_null"},
+        "max_size_sqft": {"$ref": "#/$defs/num_or_null"},
+        "min_size_sqft": {"$ref": "#/$defs/num_or_null"},
+        "max_share_of_house": {"$ref": "#/$defs/num_or_null"},
+        "min_lot_sqft": {"$ref": "#/$defs/num_or_null"},
+        "max_height_ft": {"$ref": "#/$defs/num_or_null"},
+        "setback_front_ft": {"$ref": "#/$defs/num_or_null"},
+        "setback_side_ft": {"$ref": "#/$defs/num_or_null"},
+        "setback_rear_ft": {"$ref": "#/$defs/num_or_null"},
+        "setback_rear_alley_ft": {"$ref": "#/$defs/num_or_null"},
+        "separation_ft": {"$ref": "#/$defs/num_or_null"},
+        "max_building_coverage": {"$ref": "#/$defs/num_or_null"},
+        "max_impervious": {"$ref": "#/$defs/num_or_null"},
+        "owner_occupancy": {"type": ["boolean", "null"]},
+        "parking_spaces": {"$ref": "#/$defs/int_or_null"},
+        "citations": {"type": "object", "description": "Rule key -> where its value comes from",
+                      "additionalProperties": {"$ref": "#/$defs/citation"}},
+        "assumed": {"type": "array", "items": {"type": "string"}},
+        "approval_by_type": {"type": "object", "propertyNames": {"$ref": "#/$defs/rule_type"},
+                             "additionalProperties": {"$ref": "#/$defs/approval"}},
+        "max_height_by_type": {"type": "object", "propertyNames": {"$ref": "#/$defs/rule_type"},
+                               "additionalProperties": {"$ref": "#/$defs/num_or_null"}},
+        "setback_rear_effective_ft": {"$ref": "#/$defs/num_or_null", "description": "Rear setback that applies to this lot"},
+        "rear_setback_rule": {"type": "string", "description": "alley, no_alley, or how an unknown alley was handled"},
+        "state_limits": {"type": "object", "description": "Under state reform: each floor or cap of the state bill and its value for this lot",
+                         "additionalProperties": {"type": "object"}},
+        "fire_separation": {"type": "object", "description": "Building code distances in ft",
+                            "additionalProperties": {"$ref": "#/$defs/num_or_null"}},
+        "historic_path": {"type": "boolean", "description": "True when the historic path opened the ADU"}
+      }
+    },
+    "per_scenario_rules": {
+      "type": "object", "propertyNames": {"$ref": "#/$defs/scenario"},
+      "additionalProperties": {"$ref": "#/$defs/rules"}
+    },
+    "buildable": {
+      "type": "object", "required": ["keep", "keep_sqft"], "additionalProperties": false,
+      "properties": {
+        "keep": {"$ref": "#/$defs/area_geom_or_null", "description": "Where a new building may go, keeping sheds and trees"},
+        "keep_sqft": {"type": "number", "minimum": 0},
+        "clear": {"$ref": "#/$defs/area_geom_or_null", "description": "Same, if sheds and trees go"},
+        "clear_sqft": {"type": "number", "minimum": 0},
+        "front_sqft": {"type": "number", "minimum": 0,
+                       "description": "Buildable ground in front of the house, left out of keep and clear because the unit fits behind"}
+      }
+    },
+    "per_scenario_buildable": {
+      "type": "object", "propertyNames": {"$ref": "#/$defs/scenario"},
+      "additionalProperties": {"$ref": "#/$defs/buildable"}
+    },
+    "check": {
+      "type": "object", "required": ["pass"], "additionalProperties": false,
+      "properties": {
+        "pass": {"type": "boolean"},
+        "value": {"$ref": "#/$defs/num_or_null"},
+        "limit": {"$ref": "#/$defs/num_or_null"},
+        "note": {"type": "string"}
+      }
+    },
+    "fit_result": {
+      "type": "object",
+      "required": ["adu_type", "fits", "largest_sqft", "spot", "width_ft", "depth_ft", "angle_deg", "limiting", "checks"],
+      "additionalProperties": false,
+      "properties": {
+        "adu_type": {"$ref": "#/$defs/adu_type"},
+        "fits": {"type": "boolean"},
+        "largest_sqft": {"type": "number", "minimum": 0},
+        "largest_if_cleared_sqft": {"$ref": "#/$defs/num_or_null"},
+        "spot": {"$ref": "#/$defs/area_geom_or_null"},
+        "width_ft": {"$ref": "#/$defs/num_or_null"},
+        "depth_ft": {"$ref": "#/$defs/num_or_null"},
+        "angle_deg": {"$ref": "#/$defs/num_or_null"},
+        "limiting": {"type": "string", "description": "Code of the one constraint that decides the answer"},
+        "note": {"type": "string"},
+        "checks": {
+          "type": "object",
+          "properties": {
+            "allowed": {"$ref": "#/$defs/check"},
+            "type_allowed": {"$ref": "#/$defs/check"},
+            "min_lot_size": {"$ref": "#/$defs/check"},
+            "room": {"$ref": "#/$defs/check"},
+            "size_cap": {"$ref": "#/$defs/check"},
+            "min_size": {"$ref": "#/$defs/check"},
+            "share_of_house": {"$ref": "#/$defs/check"},
+            "height": {"$ref": "#/$defs/check"},
+            "building_coverage": {"$ref": "#/$defs/check"},
+            "impervious": {"$ref": "#/$defs/check"}
+          },
+          "additionalProperties": {"$ref": "#/$defs/check"}
+        },
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "assumed": {"type": "array", "items": {"type": "string"}},
+        "approval_path": {"$ref": "#/$defs/approval_or_null", "description": "Approval path for this ADU type"},
+        "max_height_ft": {"$ref": "#/$defs/num_or_null", "description": "Height limit used for this ADU type"},
+        "bearing_deg": {"$ref": "#/$defs/num_or_null",
+                        "description": "Direction of the spot's long side, degrees clockwise from true north, 0 to 180. angle_deg is the same in the local grid, counterclockwise from grid east"},
+        "second": {"oneOf": [{"$ref": "#/$defs/fit_result"}, {"type": "null"}]}
+      }
+    },
+    "per_scenario_fit": {
+      "type": "object", "propertyNames": {"$ref": "#/$defs/scenario"},
+      "additionalProperties": {
+        "type": "object", "propertyNames": {"$ref": "#/$defs/adu_type"},
+        "additionalProperties": {"$ref": "#/$defs/fit_result"}
+      }
+    },
+    "facts": {
+      "type": "object", "additionalProperties": false,
+      "description": "Assessor facts. Owner names are never stored.",
+      "properties": {
+        "year_built": {"$ref": "#/$defs/int_or_null"},
+        "living_sqft": {"$ref": "#/$defs/num_or_null"},
+        "stories": {"$ref": "#/$defs/num_or_null"},
+        "assessed_value": {"$ref": "#/$defs/num_or_null"},
+        "last_sale_date": {"$ref": "#/$defs/date_or_null"},
+        "last_sale_price": {"$ref": "#/$defs/num_or_null"},
+        "zip": {"type": ["string", "null"], "pattern": "^\\d{5}$"}
+      }
+    },
+    "money": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "rent_by_bedroom": {
+          "type": "object", "additionalProperties": false,
+          "properties": {"b0": {"$ref": "#/$defs/num_or_null"}, "b1": {"$ref": "#/$defs/num_or_null"},
+                         "b2": {"$ref": "#/$defs/num_or_null"}, "b3": {"$ref": "#/$defs/num_or_null"}}
+        },
+        "cost_index": {"$ref": "#/$defs/num_or_null", "description": "Local build cost relative to the state, 1.0 = average"},
+        "zip": {"type": ["string", "null"], "pattern": "^\\d{5}$"},
+        "rent_source": {"$ref": "#/$defs/str_or_null", "description": "hud_safmr when the ZIP has Small Area Fair Market Rents"},
+        "rent_fiscal_year": {"$ref": "#/$defs/int_or_null"},
+        "cost_index_key": {"$ref": "#/$defs/str_or_null", "description": "Key in shared/assumptions.json the cost index comes from"}
+      }
+    },
+    "quality": {
+      "type": "object", "required": ["confidence", "assumptions"], "additionalProperties": false,
+      "properties": {
+        "imagery_date": {"$ref": "#/$defs/date_or_null"},
+        "data_dates": {"type": "object", "additionalProperties": {"$ref": "#/$defs/date_or_null"}},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "assumptions": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+# Tools for lint, type checks and tests. Runtime packages are in pyproject.toml.
+ruff==0.17.4
+mypy==2.4.1
+pandas-stubs
+types-PyYAML
+types-jsonschema
+pytest>=9.0
+pyyaml>=6.0
+jsonschema>=4.20
+pre-commit>=4.0

@@ -1,0 +1,518 @@
+{
+  "version": "2026-11-10",
+  "currency": "USD, 2026 dollars",
+  "places": ["philadelphia", "pittsburgh", "rest_of_pa"],
+  "adu_types": ["detached_new", "garage_conversion", "over_garage", "internal", "attached"],
+  "items": {
+    "cost.hard_psf.detached_new": {
+      "label": "Build cost per sq ft, new detached backyard home",
+      "unit": "USD per sq ft",
+      "low": 190, "mid": 220, "high": 260,
+      "note": "Building only, standard finish, 600 sq ft, in the Pennsylvania default cost area (area cost factor 1.09). Site work, utilities, contingency and soft costs are added separately. Set so that the all-in mid for 600 sq ft lands near 330 per sq ft in Philadelphia and 310 in Pittsburgh, the middle of what the sources below report for small Northeast units. No Pennsylvania survey of ADU costs exists.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Block Renovation: ADU construction costs (500 sq ft about 350 per sq ft all-in, 800 sq ft about 275, national 150 to 400)", "url": "https://www.blockrenovation.com/guides/a-deep-dive-into-adu-construction-costs-what-the-per-square-foot-numbers-dont-tell-you", "date": "2026-06-19"},
+        {"title": "MassCEC ADU budgeting guide (250 to 500 per sq ft placeholder, hard cost about 85 percent of budget)", "url": "https://goclean.masscec.com/adu/budgeting/", "date": "2026-11-10"},
+        {"title": "Cost to Build House: ADU cost in Pennsylvania (600 sq ft: Philadelphia 313 to 363, Pittsburgh 297 per sq ft all-in)", "url": "https://www.costtobuildhouse.com/adu-cost-in-pennsylvania", "date": "2026-11-10"},
+        {"title": "NAHB Cost of Constructing a Home 2024 (about 162 per sq ft construction cost for a large house, a floor)", "url": "https://eyeonhousing.org/2025/01/cost-of-constructing-a-home-in-2024/", "date": "2025-01"},
+        {"title": "Terner Center California ADU survey (median 250 per sq ft, 2020 prices)", "url": "https://ternercenter.berkeley.edu/blog/cci-adu-survey", "date": "2021-04-22"}
+      ]
+    },
+    "cost.hard_psf.attached": {
+      "label": "Build cost per sq ft, attached addition",
+      "unit": "USD per sq ft",
+      "low": 180, "mid": 210, "high": 250,
+      "note": "Shares a wall and often a foundation edge with the house. Sources say savings over detached are small.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "MassCEC ADU budgeting guide (2 bedroom attached 235k to 360k vs detached 250k to 450k)", "url": "https://goclean.masscec.com/adu/budgeting/", "date": "2026-11-10"},
+        {"title": "Maxable: what does an ADU cost (attached about 200k, minimal savings vs detached)", "url": "https://maxablespace.com/what-does-an-adu-cost-in-2024/", "date": "2024"}
+      ]
+    },
+    "cost.hard_psf.over_garage": {
+      "label": "Build cost per sq ft, unit over a garage",
+      "unit": "USD per sq ft",
+      "low": 210, "mid": 250, "high": 300,
+      "note": "Second story on an existing garage. Structure, stairs and fire separation make it the costliest type per sq ft.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Maxable: what does an ADU cost (above garage about 300k, most expensive type)", "url": "https://maxablespace.com/what-does-an-adu-cost-in-2024/", "date": "2024"},
+        {"title": "Angi: adding a room above a garage (80k to 210k)", "url": "https://www.angi.com/articles/adding-room-above-garage.htm", "date": "2026-11-10"}
+      ]
+    },
+    "cost.hard_psf.garage_conversion": {
+      "label": "Build cost per sq ft, garage conversion",
+      "unit": "USD per sq ft",
+      "low": 120, "mid": 160, "high": 210,
+      "note": "Reuses the shell. Older Pennsylvania garages often need a new slab, insulation and roof work, so the high end is close to new construction.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Angi: cost to convert a garage to an ADU (58k to 173k)", "url": "https://www.angi.com/articles/cost-to-convert-garage-to-adu.htm", "date": "2025"},
+        {"title": "MassCEC ADU budgeting guide (garage conversions not much less than new construction)", "url": "https://goclean.masscec.com/adu/budgeting/", "date": "2026-11-10"}
+      ]
+    },
+    "cost.hard_psf.internal": {
+      "label": "Build cost per sq ft, conversion inside the house (basement, attic, floor)",
+      "unit": "USD per sq ft",
+      "low": 100, "mid": 140, "high": 190,
+      "note": "Adds a kitchen, bath, separate entry and fire separation inside existing space.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Angi: how much does an ADU cost (basement or attic 60k to 150k)", "url": "https://www.angi.com/articles/how-much-do-adu-costs.htm", "date": "2026-11-10"},
+        {"title": "MassCEC ADU budgeting guide (interior conversion 120k to 270k)", "url": "https://goclean.masscec.com/adu/budgeting/", "date": "2026-11-10"}
+      ]
+    },
+    "cost.size_curve": {
+      "label": "Size effect on build cost per sq ft",
+      "unit": "multiplier on cost.hard_psf, by unit size in sq ft",
+      "table": {"points": [[300, 1.25], [450, 1.10], [600, 1.00], [800, 0.90], [1000, 0.84], [1200, 0.80]]},
+      "note": "Kitchen, bath, heating and the panel cost about the same in any size, so small units cost more per sq ft. Linear between points, flat beyond the ends. Calibrated so all-in cost per sq ft (with the fixed site, utility and fee items) falls about 25 percent from 500 to 800 sq ft, as Block Renovation reports.",
+      "confidence": "assumption",
+      "sources": [
+        {"title": "Block Renovation: 500 sq ft about 350 per sq ft vs 800 sq ft about 275", "url": "https://www.blockrenovation.com/guides/a-deep-dive-into-adu-construction-costs-what-the-per-square-foot-numbers-dont-tell-you", "date": "2026-06-19"}
+      ]
+    },
+    "cost.area_cost_factor": {
+      "label": "Area cost factor by place",
+      "unit": "index, 96-city average = 1.00",
+      "table": {"philadelphia": 1.17, "pittsburgh": 1.09, "rest_of_pa": 1.09, "reference": 1.09},
+      "note": "Build cost per sq ft is set for the reference area (Pennsylvania default 1.09). A place is scaled by its factor over the reference. Philadelphia is 7.3 percent above. Allegheny County and almost every other county use the state default. Harrisburg, Carlisle and Lebanon are 1.00 to 1.01, so the rest-of-state value is a little high there. RSMeans city indexes are paywalled.",
+      "confidence": "published",
+      "sources": [
+        {"title": "DoD UFS 3-701-01 Area Cost Factors 2026, Table 4-1 CONUS", "url": "https://legacy.wbdg.org/FFC/DOD/UFC/ufs_3_701_01_2026_Data_Tables.xlsx", "date": "2026-02-02"}
+      ]
+    },
+    "cost.quality": {
+      "label": "Finish level",
+      "unit": "multiplier on build cost",
+      "table": {"basic": 0.9, "standard": 1.0, "premium": 1.25},
+      "note": "No source splits ADU cost by finish. Owner judgement.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "cost.site_work": {
+      "label": "Site work (grading, foundation prep, access, tree removal)",
+      "unit": "USD per project",
+      "table": {
+        "detached_new": {"low": 5000, "mid": 10000, "high": 20000},
+        "attached": {"low": 3000, "mid": 7000, "high": 15000},
+        "over_garage": {"low": 2000, "mid": 5000, "high": 10000},
+        "garage_conversion": {"low": 1000, "mid": 3000, "high": 8000},
+        "internal": {"low": 0, "mid": 1000, "high": 3000}
+      },
+      "note": "Detached from Block Renovation (slope or access 5k to 15k, soil 5k to 15k, tree 2k to 4k). Other types scaled down by judgement.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Block Renovation: ADU construction costs", "url": "https://www.blockrenovation.com/guides/a-deep-dive-into-adu-construction-costs-what-the-per-square-foot-numbers-dont-tell-you", "date": "2026-06-19"}
+      ]
+    },
+    "cost.utility_connection": {
+      "label": "Utility runs (water, sewer lateral, electric service or panel upgrade)",
+      "unit": "USD per project",
+      "table": {
+        "detached_new": {"low": 8000, "mid": 15000, "high": 30000},
+        "over_garage": {"low": 5000, "mid": 10000, "high": 20000},
+        "garage_conversion": {"low": 5000, "mid": 10000, "high": 20000},
+        "attached": {"low": 3000, "mid": 6000, "high": 12000},
+        "internal": {"low": 2000, "mid": 4000, "high": 8000}
+      },
+      "note": "Detached: Block Renovation 15k to 30k for all utilities. Low end from HomeAdvisor sewer line average 3,319 plus a 100 to 200 amp panel upgrade 1,300 to 2,000 plus trenching. Shorter runs for the other types (judgement).",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Block Renovation: ADU construction costs", "url": "https://www.blockrenovation.com/guides/a-deep-dive-into-adu-construction-costs-what-the-per-square-foot-numbers-dont-tell-you", "date": "2026-06-19"},
+        {"title": "HomeAdvisor: sewer line cost", "url": "https://www.homeadvisor.com/cost/plumbing/repair-a-sewer-main/", "date": "2025"},
+        {"title": "HomeAdvisor: electrical panel upgrade cost", "url": "https://www.homeadvisor.com/cost/electrical/upgrade-an-electrical-panel/", "date": "2025"}
+      ]
+    },
+    "cost.septic_upgrade": {
+      "label": "Septic upgrade where the lot is not on public sewer",
+      "unit": "USD per project",
+      "low": 7000, "mid": 18000, "high": 40000,
+      "note": "Only added when the lot has no public sewer (flag septic). Low is a conventional system, high a sand mound. Penn State Extension says these costs have not been quantified.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Septic and Well: septic installation cost in Pennsylvania", "url": "https://septicandwell.com/articles/septic-installation-cost-pennsylvania", "date": "2026-11-10"}
+      ]
+    },
+    "cost.contingency": {
+      "label": "Contingency",
+      "unit": "share of build, site and utility cost",
+      "low": 0.05, "mid": 0.10, "high": 0.15,
+      "note": "Builders advise 10 to 20 percent. Use the high end for old garages and rowhouse basements.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Case Design: contingency budget for residential construction (5 to 15 percent)", "url": "https://www.casedesign.com/inspiration/do-i-need-a-contingency-budget-for-my-residential-construction-project/", "date": "2026-11-10"}
+      ]
+    },
+    "soft.design": {
+      "label": "Design and engineering",
+      "unit": "share of build cost",
+      "low": 0.08, "mid": 0.10, "high": 0.15,
+      "note": "Lower with a pre-approved or prefab plan.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "HomeAdvisor: architect fees (8 to 15 percent of construction)", "url": "https://homeadvisor.com/cost/architects-and-engineers/hire-an-architect", "date": "2025"},
+        {"title": "MassCEC ADU budgeting guide (design 10 to 20 percent)", "url": "https://goclean.masscec.com/adu/budgeting/", "date": "2026-11-10"}
+      ]
+    },
+    "soft.survey": {
+      "label": "Boundary survey",
+      "unit": "USD per project",
+      "low": 700, "mid": 1200, "high": 2000,
+      "note": "Added for types that put a new footprint on the lot (cost.survey_types).",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Find Land Surveyor: land survey cost in Philadelphia County", "url": "https://findlandsurveyor.com/guides/land-survey-cost-philadelphia-county-pa", "date": "2026-11-10"}
+      ]
+    },
+    "cost.survey_types": {
+      "label": "ADU types that need a boundary survey",
+      "unit": "list",
+      "table": {"types": ["detached_new", "attached"]},
+      "note": "Setbacks are checked against lot lines only for a new footprint.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "soft.permits.philadelphia": {
+      "label": "Philadelphia permit fees",
+      "unit": "USD fixed plus share of build cost",
+      "table": {"fixed": 2054, "per_value": 0.0025, "min": 0, "max": 1000000},
+      "note": "Fixed: building permit for a new 1 to 2 family dwelling 1,328 + plumbing 284 + underground service 253 + zoning permit 189. Electrical permit is 25 per 1,000 of electrical work. Electrical work is taken as 10 percent of build cost (assumption), so 0.25 percent. A zoning board appeal adds 265 plus legal costs, not included.",
+      "confidence": "published",
+      "sources": [
+        {"title": "Philadelphia L&I PG_012 summary of construction permit fees, effective 2026-10-01", "url": "https://www.phila.gov/media/20260729134349/PG_012_INF_Summary-of-construction-permit-fees-Eff-1.1.2025-Rev-7.2026.pdf", "date": "2026-07-29"},
+        {"title": "Philadelphia PZ_008 summary of zoning permit fees", "url": "https://www.phila.gov/media/20260720085858/PZ_008_INF_Summary-of-zoning-permit-fees-Rev-7.2026.pdf", "date": "2026-07-20"}
+      ]
+    },
+    "soft.permits.pittsburgh": {
+      "label": "Pittsburgh permit fees",
+      "unit": "USD fixed plus share of build cost",
+      "table": {"fixed": 0, "per_value": 0.006, "min": 130, "max": 8000},
+      "note": "PLI residential base permit 6.00 per 1,000 of construction value, minimum 130, maximum 8,000. The zoning review fee was not found and is not included.",
+      "confidence": "published",
+      "sources": [
+        {"title": "City of Pittsburgh PLI 2026 fee schedule, effective 2026-01-01", "url": "https://www.pittsburghpa.gov/files/assets/city/v/1/pli/documents/fees/2026-fee-schedule-final-2.pdf", "date": "2026-01-01"}
+      ]
+    },
+    "soft.permits.rest_of_pa": {
+      "label": "Permit fees elsewhere in Pennsylvania",
+      "unit": "USD fixed plus share of build cost",
+      "table": {"fixed": 0, "per_value": 0.006, "min": 130, "max": 8000},
+      "note": "Each town sets its own Uniform Construction Code fees. The Pittsburgh schedule is used as a stand-in.",
+      "confidence": "assumption",
+      "sources": [
+        {"title": "City of Pittsburgh PLI 2026 fee schedule (stand-in)", "url": "https://www.pittsburghpa.gov/files/assets/city/v/1/pli/documents/fees/2026-fee-schedule-final-2.pdf", "date": "2026-01-01"}
+      ]
+    },
+    "soft.tap_fees": {
+      "label": "Water and sewer connection and tap fees",
+      "unit": "USD per project",
+      "table": {
+        "philadelphia": {"low": 605, "mid": 605, "high": 605},
+        "pittsburgh": {"low": 610, "mid": 610, "high": 610},
+        "rest_of_pa": {"low": 0, "mid": 3000, "high": 6000}
+      },
+      "note": "Philadelphia Water: 3/4 inch ferrule tap 245 + 5/8 inch meter set 360 (FY27). No capacity fee found. Pittsburgh Water: permit 40 + 1 inch service and meter 570. Tapping fees ended in 2022. Elsewhere the local sewer authority sets a tap-in fee (North Huntingdon charges 5,500). Only added for types that get a new service (cost.new_service_types).",
+      "confidence": "published",
+      "sources": [
+        {"title": "Philadelphia Water Department FY26 and FY27 connection charges", "url": "https://www.phila.gov/media/20250812093312/FY-26-and-FY-27-Final-Charges.pdf", "date": "2025-08-12"},
+        {"title": "Pittsburgh Water permits", "url": "https://www.pgh2o.com/developers-contractors-vendors/permits", "date": "2026-11-10"}
+      ]
+    },
+    "cost.new_service_types": {
+      "label": "ADU types that need a new water and sewer service",
+      "unit": "list",
+      "table": {"types": ["detached_new", "over_garage", "garage_conversion"]},
+      "note": "Attached and internal units usually branch off the house service.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "soft.construction_tax.philadelphia": {
+      "label": "Philadelphia tax on residential construction",
+      "unit": "share of build cost",
+      "low": 0.0, "mid": 0.01, "high": 0.01,
+      "note": "Bill 200556 (2020) set a 1 percent tax on residential construction from 2022. The enacted rate and whether it reaches a small accessory unit were not verified. Kept in mid and high to stay on the safe side.",
+      "confidence": "assumption",
+      "sources": [
+        {"title": "Ballard Spahr: Philadelphia zoning, land use and construction update", "url": "https://www.ballardspahr.com/Insights/Alerts-and-Articles/2020/12/Philadelphia-Zoning-Land-Use-and-Construction-COVID-19-Update", "date": "2020-12-04"}
+      ]
+    },
+    "rents.source": {
+      "label": "Market rent source",
+      "unit": "pointer",
+      "table": {"dataset": "HUD Small Area Fair Market Rents", "fiscal_year": 2026, "file": "processed/market/safmr_pa.parquet", "builder": "python -m pipeline.market download"},
+      "note": "ZIP level, 0 to 4 bedrooms, gross rent (rent plus tenant utilities) at the 40th percentile of recent movers. A ZIP in two FMR areas takes the lower rent. FY2026 applies 2025-10-01 to 2026-09-30. The open service still held FY2026 when read on 2026-11-10.",
+      "confidence": "published",
+      "sources": [
+        {"title": "HUD PDR Small Area Fair Market Rents, open feature service", "url": "https://services.arcgis.com/VTyQ9soqVukalItT/ArcGIS/rest/services/HUD_PDR_Small_Area_Fair_Market_Rents/FeatureServer/1", "date": "2025-10-01"},
+        {"title": "HUD Small Area FMRs", "url": "https://www.huduser.gov/portal/datasets/fmr/smallarea/index.html", "date": "2025-10-01"}
+      ]
+    },
+    "rents.fallback": {
+      "label": "Rent fallback where a ZIP has no SAFMR",
+      "unit": "pointer",
+      "table": {"dataset": "ACS 2020-24 table B25031 median gross rent by bedrooms, tract", "fields": "rent_b0 to rent_b3"},
+      "note": "Used for tract-level results and for PO box or new ZIPs without a SAFMR. Tract medians cover all renters (old and new leases) and are noisy for small bedroom groups.",
+      "confidence": "published",
+      "sources": [
+        {"title": "Census ACS table B25031", "url": "https://data.census.gov/table/ACSDT5Y2024.B25031", "date": "2025-12"}
+      ]
+    },
+    "rents.bedroom_cuts_sqft": {
+      "label": "Unit size to bedroom count",
+      "unit": "sq ft",
+      "table": {"studio_max": 450, "one_bed_max": 750},
+      "note": "Under 450 sq ft rents as a studio, 450 to under 750 as 1 bedroom, 750 and up as 2 bedrooms.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "rents.rent_factor": {
+      "label": "ADU rent as a share of the SAFMR",
+      "unit": "multiplier",
+      "value": 1.0,
+      "note": "A new unit rents above the 40th percentile, but the SAFMR includes tenant utilities. The two are taken to cancel.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "financing.pmms30": {
+      "label": "30-year fixed mortgage rate, latest week",
+      "unit": "annual rate",
+      "value": 0.0718,
+      "note": "Week of 2026-11-05. The 2026 average to date is 6.53 percent (financing.pmms30_2026_avg).",
+      "confidence": "published",
+      "sources": [
+        {"title": "Freddie Mac PMMS history", "url": "https://www.freddiemac.com/pmms/docs/PMMS_history.csv", "date": "2026-11-05"}
+      ]
+    },
+    "financing.pmms30_2026_avg": {
+      "label": "30-year fixed mortgage rate, 2026 average",
+      "unit": "annual rate",
+      "value": 0.0653,
+      "note": "Mean of the 44 weekly values from 2026-01-08 to 2026-11-05. This is the rate the tract-level report uses.",
+      "confidence": "measured",
+      "sources": [
+        {"title": "Freddie Mac PMMS history", "url": "https://www.freddiemac.com/pmms/docs/PMMS_history.csv", "date": "2026-11-05"}
+      ]
+    },
+    "financing.pmms15": {
+      "label": "15-year fixed mortgage rate, latest week",
+      "unit": "annual rate",
+      "value": 0.0657,
+      "note": "Week of 2026-11-05.",
+      "confidence": "published",
+      "sources": [
+        {"title": "Freddie Mac PMMS history", "url": "https://www.freddiemac.com/pmms/docs/PMMS_history.csv", "date": "2026-11-05"}
+      ]
+    },
+    "financing.heloc_rate": {
+      "label": "Home equity line of credit rate, national average",
+      "unit": "annual rate",
+      "value": 0.0749,
+      "note": "Variable, moves with the prime rate (7.00 percent since 2026-09-16).",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Bankrate HELOC rates", "url": "https://www.bankrate.com/home-equity/heloc-rates/", "date": "2026-11-04"}
+      ]
+    },
+    "financing.fha_mip": {
+      "label": "FHA annual mortgage insurance premium",
+      "unit": "share of loan per year",
+      "value": 0.0055,
+      "note": "Most 30-year FHA loans, including 203(k), since 2023-03-20.",
+      "confidence": "published",
+      "sources": [
+        {"title": "HUD Mortgagee Letter 2023-05", "url": "https://www.hud.gov/sites/dfiles/OCHCO/documents/2023-05hsgml.pdf", "date": "2023-02-22"}
+      ]
+    },
+    "financing.presets": {
+      "label": "Ways to pay",
+      "unit": "preset",
+      "table": {
+        "cash": {"label": "Cash", "ltc": 0.0, "rate_key": null, "spread": 0.0, "years": 0, "mip_key": null},
+        "heloc": {"label": "Home equity line", "ltc": 1.0, "rate_key": "financing.heloc_rate", "spread": 0.0, "years": 20, "mip_key": null},
+        "construction_to_perm": {"label": "Construction-to-permanent loan", "ltc": 0.8, "rate_key": "financing.pmms30", "spread": 0.005, "years": 30, "mip_key": null},
+        "fha_203k": {"label": "FHA 203(k) renovation loan", "ltc": 0.965, "rate_key": "financing.pmms30", "spread": 0.0, "years": 30, "mip_key": "financing.fha_mip"},
+        "all_borrowed": {"label": "All borrowed at the 2026 average rate (report test)", "ltc": 1.0, "rate_key": "financing.pmms30_2026_avg", "spread": 0.0, "years": 30, "mip_key": null}
+      },
+      "note": "ltc is loan to cost. The rest is cash. HELOC is shown as a 20-year amortizing loan and assumes enough home equity. Construction-to-perm spread of 0.5 point and 80 percent loan to cost are typical lender terms, not a published figure. FHA 203(k) needs an owner-occupied house and lender approval of the ADU.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "financing.default_preset": {
+      "label": "Default way to pay",
+      "unit": "preset name",
+      "table": {"preset": "construction_to_perm"},
+      "note": "",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "operating.vacancy": {
+      "label": "Rental vacancy",
+      "unit": "share of gross rent",
+      "table": {"philadelphia": 0.083, "pittsburgh": 0.059, "rest_of_pa": 0.074},
+      "note": "Census Housing Vacancy Survey, Q3 2026. Metro values have wide margins (Philadelphia plus or minus 2.7 points, Pittsburgh plus or minus 3.6).",
+      "confidence": "published",
+      "sources": [
+        {"title": "Census HVS rental vacancy by metro, 2026", "url": "https://www.census.gov/housing/hvs/data/rates/tab4_msa_26_rvr.xlsx", "date": "2026-10-28"},
+        {"title": "Census HVS rental vacancy by state, 2026", "url": "https://www.census.gov/housing/hvs/data/rates/tab1_state05_2026_rvr.xlsx", "date": "2026-10-28"}
+      ]
+    },
+    "operating.management": {
+      "label": "Property management fee",
+      "unit": "share of collected rent",
+      "value": 0.08,
+      "note": "Only charged when the owner does not manage the unit (scenario self_managed false). Managers charge 8 to 12 percent plus a leasing fee.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Baselane: how much do property managers charge", "url": "https://www.baselane.com/resources/how-much-do-property-managers-charge", "date": "2026-11-07"}
+      ]
+    },
+    "operating.maintenance": {
+      "label": "Maintenance and repairs reserve",
+      "unit": "share of collected rent",
+      "value": 0.10,
+      "note": "Common rule of thumb. A brand-new unit may need less in the first years.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "DoorLoop: property maintenance budget", "url": "https://www.doorloop.com/hub/property-maintenance", "date": "2026-11-10"}
+      ]
+    },
+    "operating.insurance": {
+      "label": "Landlord insurance",
+      "unit": "USD per year",
+      "value": 1180,
+      "note": "Median Pennsylvania landlord policy. Adding an ADU to the house policy may cost less. No source gives that increment.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Steadily: Pennsylvania landlord insurance", "url": "https://www.steadily.com/states/pennsylvania", "date": "2026-11-10"}
+      ]
+    },
+    "operating.rental_license": {
+      "label": "Rental license or registration",
+      "unit": "USD per year",
+      "table": {"philadelphia": 69, "pittsburgh": 35.5, "rest_of_pa": 0},
+      "note": "Philadelphia rental license 69 per unit per year. Pittsburgh rental registry 16 per property + 5.50 permit inspection + 14 per unit. Elsewhere set by each town, taken as 0.",
+      "confidence": "published",
+      "sources": [
+        {"title": "Philadelphia: get a rental license", "url": "https://www.phila.gov/services/permits-violations-licenses/get-a-license/business-licenses/rental-and-property/get-a-rental-license/", "date": "2026-11-10"},
+        {"title": "City of Pittsburgh PLI 2026 fee schedule", "url": "https://www.pittsburghpa.gov/files/assets/city/v/1/pli/documents/fees/2026-fee-schedule-final-2.pdf", "date": "2026-01-01"}
+      ]
+    },
+    "tax.assessed_share_of_build_cost": {
+      "label": "Added market value the assessor puts on the unit",
+      "unit": "share of build cost (mid hard cost, before soft costs)",
+      "value": 1.0,
+      "note": "Assessors value new construction mostly by cost. Soft costs, site work and contingency are left out. Owner judgement.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "tax.philadelphia.rate": {
+      "label": "Philadelphia real estate tax rate",
+      "unit": "share of assessed market value per year",
+      "value": 0.013998,
+      "note": "City 0.6159 percent + School District 0.7839 percent. Unchanged since 2016 and kept for 2027.",
+      "confidence": "published",
+      "sources": [
+        {"title": "City of Philadelphia: lower your property tax bill ahead of 2027 valuations", "url": "https://www.phila.gov/2026-07-20-learn-how-to-lower-your-property-tax-bill-ahead-of-the-2027-valuations/", "date": "2026-07-20"}
+      ]
+    },
+    "tax.philadelphia.abatement": {
+      "label": "Philadelphia 10-year abatement for new residential construction",
+      "unit": "share of added value not taxed, by year",
+      "table": {"schedule": [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1], "apply_within_days": 60},
+      "note": "Code 19-1303.4. For applications after 2021-12-31 the abated share falls 10 points a year. Apply within 60 days of the building permit. No change found in the 2026 or 2027 budgets. Whether an ADU counts as a new dwelling unit (this rule) or an improvement (Code 19-1303(2): 100 percent for 10 years, owner-occupied or for sale only) is decided by the Office of Property Assessment. Taken to cover both City and School tax (inferred from the 2018 city study, not stated in current rules).",
+      "confidence": "published",
+      "sources": [
+        {"title": "OPA application: abatement for new residential construction", "url": "https://www.phila.gov/media/20250826121006/opa-application-abatement-new-construction-residential-2025.pdf", "date": "2025-08-26"},
+        {"title": "Ballard Spahr on Bill 200366 (phase-down from 2022)", "url": "https://www.ballardspahr.com/Insights/Alerts-and-Articles/2020/12/Philadelphia-Zoning-Land-Use-and-Construction-COVID-19-Update", "date": "2020-12-04"},
+        {"title": "OPA application: abatement for residential improvements", "url": "https://www.phila.gov/media/20250826121004/opa-application-abatement-rehab-residential-2025.pdf", "date": "2025-08-26"}
+      ]
+    },
+    "tax.pittsburgh.millage": {
+      "label": "Pittsburgh property tax millage, 2026",
+      "unit": "mills (USD per 1,000 of assessed value)",
+      "table": {"county": 6.43, "city": 9.67, "school": 10.457},
+      "note": "Allegheny County 6.43 (up from 4.73 in 2025), City of Pittsburgh 9.67 (up from 8.06 for 2026), Pittsburgh Public Schools 10.457. Total 26.557 mills. Whether the city figure includes the 0.25 mill library and 0.50 mill parks levies was not confirmed.",
+      "confidence": "published",
+      "sources": [
+        {"title": "Allegheny County municipal millage profile, Pittsburgh", "url": "https://apps.alleghenycounty.us/website/MuniPgh.asp", "date": "2026-11-10"},
+        {"title": "Allegheny Institute: Pittsburgh 2026 budget", "url": "https://www.alleghenyinstitute.org/pittsburghs-2026-budget-ends-its-tumultuous-journey/", "date": "2025-12"}
+      ]
+    },
+    "tax.pittsburgh.assessment_ratio": {
+      "label": "Allegheny County assessed value as a share of market value",
+      "unit": "ratio",
+      "value": 0.493,
+      "note": "Allegheny still assesses at 2012 base-year values. A new unit is valued as if built in 2012, so its assessed value is about the common level ratio times today's value. 2025 common level ratio approved by the State Tax Equalization Board on 2026-05-20.",
+      "confidence": "published",
+      "sources": [
+        {"title": "Allegheny Institute: Allegheny County's CLR continues its decline", "url": "https://www.alleghenyinstitute.org/allegheny-countys-clr-continues-its-decline/", "date": "2026-05-28"},
+        {"title": "WPRDC Allegheny County property assessment user guide (2012 base year)", "url": "https://wiki.wprdc.org/wiki/Allegheny_County_Property_Assessment_Data_User_Guide", "date": "2026-11-10"}
+      ]
+    },
+    "tax.pittsburgh.reassessment": {
+      "label": "When Allegheny County adds a new unit to the tax roll",
+      "unit": "rule",
+      "table": {"trigger": "building or occupancy permit", "timing": "interim assessment for the year the unit is finished"},
+      "note": "53 Pa.C.S. 8817 lets assessors change a value when improvements are made. The county reviews building, demolition and occupancy permits. Interim valuations are for major improvements, filed within 12 months of completion, valued as if the work stood on January 1. The model taxes the unit from year 1.",
+      "confidence": "published",
+      "sources": [
+        {"title": "53 Pa.C.S. 8817", "url": "https://www.palegis.us/statutes/consolidated/view-statute?txtType=HTM&ttl=53&div=0&chapter=88&section=17", "date": "2022-07-07"},
+        {"title": "Allegheny County: building permits and assessments", "url": "https://www.alleghenycounty.us/Services/Property-Assessments-and-Real-Estate/Property-Assessments/Building-Permits", "date": "2026-11-10"},
+        {"title": "Allegheny County: interim valuation", "url": "https://www.alleghenycounty.us/Services/Property-Assessments-and-Real-Estate/Property-Assessments/Interim-Valuation", "date": "2026-11-10"}
+      ]
+    },
+    "tax.pittsburgh.abatement": {
+      "label": "Pittsburgh abatement for a new rental unit",
+      "unit": "share of added value not taxed, by year",
+      "table": {"schedule": []},
+      "note": "City Code Chapters 265, 267 and 268 replaced Act 42 and LERTA in 2020 (apply within 180 days of the permit, 60 dollar fee). Chapter 267 reportedly gives a 3-year credit for rental property, but the terms were not verified in the primary text, so no abatement is applied.",
+      "confidence": "assumption",
+      "sources": [
+        {"title": "City of Pittsburgh real estate tax abatement application (Chapters 265 and 267)", "url": "https://www.pittsburghpa.gov/files/assets/city/v/1/finance/documents/real-estate-forms/265-267-re-tax-abatement-application.pdf", "date": "2026-08-17"}
+      ]
+    },
+    "tax.rest_of_pa.effective_rate": {
+      "label": "Pennsylvania median effective property tax rate",
+      "unit": "share of market value per year",
+      "value": 0.0126,
+      "note": "Statewide 2024. Counties vary a lot. Replace with a county rate when one is available.",
+      "confidence": "published",
+      "sources": [
+        {"title": "Tax Foundation: property taxes by state and county, 2026", "url": "https://taxfoundation.org/data/all/state/property-taxes-by-state-county/", "date": "2026-03-16"}
+      ]
+    },
+    "value.cap_rate": {
+      "label": "Capitalization rate for the added value estimate",
+      "unit": "annual net income over value",
+      "low": 0.0525, "mid": 0.0614, "high": 0.0677,
+      "note": "Mid is the Philadelphia multifamily average for Q3 2026. Low and high are the suburban class A and value-add rates from a lender survey. Used for Pittsburgh and the rest of the state too. A backyard unit does not sell on its own, so an appraiser may give it less.",
+      "confidence": "vendor",
+      "sources": [
+        {"title": "Matthews: Philadelphia multifamily market report Q3 2026", "url": "https://www.matthews.com/insights/philadelphia-pa-multifamily-market-report-q3-2026", "date": "2026-11-10"},
+        {"title": "Apartment Loan Store: Philadelphia cap rates", "url": "https://apartmentloanstore.com/philadelphia/pennsylvania/cap-loan-rates", "date": "2026-07-20"}
+      ]
+    },
+    "verdict.rules": {
+      "label": "Verdict rules",
+      "unit": "rule",
+      "table": {
+        "tax_basis": "avg10",
+        "dscr_pays": 1.2,
+        "close_band": 0.10,
+        "cash_hurdle_key": "financing.pmms30"
+      },
+      "note": "With a loan: pays when monthly cash flow at the mid cost is 0 or more and debt service coverage is at least dscr_pays. Close when it does not pay but cash flow at the low cost is 0 or more, or the mid-cost shortfall is within close_band of the monthly rent. Otherwise does not pay. Paid in cash: pays when yield on cost is at least the 30-year mortgage rate (what the money could save by not borrowing). Close when the yield is within close_band of that rate or the low-cost yield clears it. Taxes in the test are the average of the first 10 years (avg10), so the Philadelphia abatement counts but does not dominate. Other options: year1, full. The 1.20 coverage is a common lender minimum. The 10 percent band matches the tract report.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    },
+    "pro_forma.schedule_years": {
+      "label": "Years shown in the tax schedule",
+      "unit": "years",
+      "value": 12,
+      "note": "Covers the 10-year abatement and two years after.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting", "url": "", "date": "2026-11-10"}]
+    }
+  }
+}

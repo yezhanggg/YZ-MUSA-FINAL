@@ -1,0 +1,244 @@
+{
+  "provenance": {
+    "jurisdiction": "Pennsylvania",
+    "instrument": "House Bill 2186 (2025-26), Printer's No. 3373, adds 53 Pa.C.S. Chapter 63",
+    "kind": "reform",
+    "status": "pending",
+    "status_detail": "Passed House 139-62 on June 1, 2026. Referred to Senate Urban Affairs & Housing June 5, 2026. No later action on palegis.us as of 2026-11-10. The session ends Nov 30, 2026. If not enacted by then it dies.",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.palegis.us/legislation/bills/2025/hb2186",
+      "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373"
+    ],
+    "verified_on": "2026-11-10",
+    "reaches": [
+      "philadelphia",
+      "pittsburgh",
+      "all municipalities with zoning"
+    ],
+    "checks": [
+      "Deed restrictions, covenants and HOA documents can still bar an ADU (6302)",
+      "Town may ban rentals under 30 consecutive days (6305(14))",
+      "Town may cap height at the main house height if that is under 25 ft (6305(3))",
+      "Town may not require a passageway between units or fixes to nonconformities (6305(8), (9))",
+      "Building cover allowance for the ADU may not be under 200 sq ft (6305(4))",
+      "Town may bar selling the ADU apart from the house (6305(12))",
+      "Local rules the bill does not override, such as front setbacks and coverage, still apply",
+      "This bill passed the House but not the Senate. It is not law"
+    ],
+    "notes": "Amends Title 53, so it reaches Philadelphia and Pittsburgh. Takes effect 60 days after enactment. Values are limits on what a town may impose, so the resolver uses mode at_least or at_most."
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6302",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "One ADU per lot or parcel, by right, where a residential building is a permitted use.",
+      "mode": "set"
+    },
+    "detached_in_yard_path": {
+      "value": "by_right",
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6302, 6305(6)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Reading: by right per lot, and a town may not require more than 4 ft from side and rear lot lines, so a local exception for side or rear yards would not hold past 4 ft.",
+      "mode": "set"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": null,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6302",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Every district where a residential building is permitted.",
+      "mode": "set"
+    },
+    "building_types": {
+      "value": null,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6301, 6304",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Any residential building.",
+      "mode": "set"
+    },
+    "overlay_bars": {
+      "value": [],
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6302",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "secondary",
+      "note": "Reading: the by-right rule covers every lot where a residential building is permitted, so local overlay bans would not hold. Not tested in court.",
+      "mode": "set"
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6302",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "secondary",
+      "note": "No lot size test in the bill. By right per lot or parcel.",
+      "mode": "set"
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6304",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage",
+        "internal",
+        "attached"
+      ],
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6301, 6304",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Attached, within, or detached on the same lot. Includes units in a detached garage.",
+      "mode": "set"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 850,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(2)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Town max may not be under 50% of the house or 850 sq ft, whichever is less, or a whole basement or attic floor.",
+      "mode": "at_least"
+    },
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(2)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "at_least"
+    },
+    "min_sqft": {
+      "value": 200,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(1)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Town minimum may not be more than 200 sq ft.",
+      "mode": "at_most"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(3)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Town limit may not be under 25 ft or the main house height, whichever is less.",
+      "mode": "at_least"
+    },
+    "setback_side_ft": {
+      "value": 4,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(6)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "No more than 4 ft for a new structure. None for a conversion of an existing structure.",
+      "mode": "at_most"
+    },
+    "setback_rear_ft": {
+      "value": 4,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(6)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "at_most"
+    },
+    "setback_rear_alley_ft": {
+      "value": 4,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(6)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "The rear lot line cap applies on an alley too.",
+      "mode": "at_most"
+    }
+  },
+  "coverage": {
+    "min_allowance_sqft": {
+      "value": 200,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(4)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(10)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    },
+    "family_only": {
+      "value": false,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(11)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    },
+    "short_term_rental_ban_allowed": {
+      "value": true,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(14)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "mode": "set"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6302",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "At least one per lot. A town may allow more.",
+      "mode": "at_least"
+    },
+    "sale_apart_ban_allowed": {
+      "value": true,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(12)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "A town may prohibit separate sale or conveyance. It is a town option, not a ban. Separate rental must be allowed.",
+      "mode": "set"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 0,
+      "section": "HB 2186 PN 3373, proposed 53 Pa.C.S. 6305(13)",
+      "url": "https://www.palegis.us/legislation/bills/text/PDF/2025/0/HB2186/PN3373",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "No additional off-street parking. Lost garage spaces need not be replaced.",
+      "mode": "set"
+    }
+  }
+}

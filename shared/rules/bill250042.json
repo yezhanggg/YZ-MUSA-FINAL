@@ -1,0 +1,72 @@
+{
+  "provenance": {
+    "jurisdiction": "Philadelphia, PA",
+    "instrument": "Bill No. 250042, amending 14-604(11) (Councilmember Gauthier)",
+    "kind": "reform",
+    "status": "pending",
+    "status_detail": "Legistar status IN COMMITTEE, in control of the Committee on Rules. Only action: introduced and referred 1/30/2025. Checked 2026-11-10.",
+    "effective_date": null,
+    "source_urls": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7114074&GUID=7F77F4AC-EAE7-4EE9-9EFD-F7CC7C2DB05F",
+      "https://phila.legistar.com/View.ashx?M=F&ID=13769020&GUID=CBC6E189-F994-4D6D-8EF6-8166D02343D9"
+    ],
+    "verified_on": "2026-11-10",
+    "reaches": [
+      "philadelphia"
+    ],
+    "checks": [
+      "Owner must live in the house or the ADU and record an affidavit and deed restriction before final occupancy (14-604(11)(e), not changed)",
+      "Only one street-facing entrance unless a second already existed (14-604(11)(h), not changed)",
+      "ADU must be inside the house or inside a detached accessory building that existed when the 2012 Zoning Code took effect (14-604(11)(c) as amended)",
+      "District rules apply only where they limit growth of the structure to no more than 10% (14-604(11)(b) as amended)",
+      "Overlay bans in Chapter 14-500 are not changed by the bill",
+      "Historic properties also need Historical Commission review (14-604(1)(f))",
+      "This bill is pending in committee. It is not law"
+    ],
+    "notes": "Layer on top of philadelphia. Removes the detached or semi-detached test, the RSA-5 or CMX-1 test, the 1,600 sq ft lot test and the 800 sq ft cap. New (b): ADUs are subject only to district rules that limit growth of the structure to no more than 10%."
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": null,
+      "section": "Bill 250042, 14-604(11)(c) and deletion of (d)(.2)",
+      "url": "https://phila.legistar.com/View.ashx?M=F&ID=13769020&GUID=CBC6E189-F994-4D6D-8EF6-8166D02343D9",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Any lot occupied by a single-family use. Overlay bars still apply."
+    },
+    "building_types": {
+      "value": null,
+      "section": "Bill 250042, 14-604(11)(c)",
+      "url": "https://phila.legistar.com/View.ashx?M=F&ID=13769020&GUID=CBC6E189-F994-4D6D-8EF6-8166D02343D9",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Deletes the detached or semi-detached test. Rowhouses qualify."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "Bill 250042, deletion of 14-604(11)(d)(.2)(.a)",
+      "url": "https://phila.legistar.com/View.ashx?M=F&ID=13769020&GUID=CBC6E189-F994-4D6D-8EF6-8166D02343D9",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "1,600 sq ft test deleted."
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "Bill 250042, 14-604(11)(c)",
+      "url": "https://phila.legistar.com/View.ashx?M=F&ID=13769020&GUID=CBC6E189-F994-4D6D-8EF6-8166D02343D9",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "Kept. Adds 'including Historic structures'."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "Bill 250042, deletion of 14-604(11)(i)",
+      "url": "https://phila.legistar.com/View.ashx?M=F&ID=13769020&GUID=CBC6E189-F994-4D6D-8EF6-8166D02343D9",
+      "verified_on": "2026-11-10",
+      "confidence": "verified",
+      "note": "800 sq ft cap deleted."
+    }
+  }
+}

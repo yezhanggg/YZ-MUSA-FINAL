@@ -1,0 +1,15 @@
+# Backyard structure detector. This folder is AGPL-3.0 territory because of ultralytics.
+# Nothing outside this folder imports it. Only data files (Parquet, CSV) leave it.
+#
+# Model steps (train.py, evaluate.py, detect_lots.py predict):
+ultralytics==8.4.170
+torch>=2.4
+pillow>=10
+pyyaml>=6
+requests>=2.31
+# Geo steps (sample_areas.py, fetch_imagery.py, osm_pools.py, build_labels.py, review_pack.py, detect_lots.py join):
+geopandas>=1.0
+shapely>=2.0
+pyarrow>=14
+pandas>=2.0
+numpy>=1.26
