@@ -84,7 +84,7 @@
       "url": "https://ecode360.com/11660256",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Same as path. Residential district use lists have no similar-use special exception. Only commercial, NMU and KPMU districts have one."
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board. Residential district use lists have no similar-use special exception. Only commercial, NMU and KPMU districts have one."
     },
     "alternatives": {
       "value": [
@@ -110,7 +110,9 @@
           "conditions": "Listed, but its standards were repealed. The use reads 'subject to the provisions of ... § 165-212', and 165-212 was repealed 11-9-2023 (Ord. 2023-893). Ask the Zoning Officer whether the listing still works. Not a settled by-right path.",
           "min_lot_sqft": null,
           "section": "165-10B, 165-80.3B, 165-80.9B, 165-212",
-          "url": "https://ecode360.com/11658611"
+          "url": "https://ecode360.com/11658611",
+          "confidence": "secondary",
+          "note": "Listed in AG, R-55A and R-55B 'subject to the provisions of Article XXXI, § 165-212', but 165-212 is now '(Reserved)': 'repealed 11-9-2023 by Ord. No. 2023-893'. Ask the Zoning Officer whether the listing still works."
         }
       ],
       "section": "165-59, 165-61, 165-10B, 165-212",

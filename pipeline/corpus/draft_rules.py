@@ -30,7 +30,7 @@ import time
 from datetime import date
 from typing import Any
 
-from pipeline.corpus.chunk import load_chunks
+from pipeline.corpus.chunk import load_chunks, place_aliases
 from pipeline.corpus.paths import sub
 
 MODEL = "claude-haiku-5-5"
@@ -350,7 +350,8 @@ def main() -> None:
     a = ap.parse_args()
     geoids = a.geoids
     if a.all:
-        geoids = sorted({c["geoid"] for c in load_chunks()})
+        have = {c["geoid"] for c in load_chunks()}
+        geoids = sorted(have | {g for g, src in place_aliases().items() if src in have})
     for g in geoids:
         try:
             d = draft(g, a.model, a.force)

@@ -116,3 +116,12 @@ def test_absence_kept_and_bare_value_dropped():
     assert clean["status"]["value"] == "not_addressed" and clean["status"]["absence"] is True
     assert clean["approval_path"].get("dropped") is True
     assert [u["field"] for u in unsupported] == ["approval_path"]
+
+
+def test_pdf_link_served_as_html_is_skipped():
+    rec = {"url": "https://www.example.gov/Documents/Zoning%20Ordinance.pdf", "geoid": "4200000000",
+           "path": "/nonexistent/x.html", "fetched_at": "2026-11-11T00:00:00+00:00"}
+    assert E.served_page_not_doc(rec, "html")
+    assert not E.served_page_not_doc({**rec, "url": "https://www.example.gov/zoning/"}, "html")
+    d = E.extract_doc(rec)
+    assert d["segments"] == [] and "redirect" in d["skipped"]

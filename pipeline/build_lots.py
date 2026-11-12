@@ -153,7 +153,7 @@ class Place:
 
 
 PLACES = {
-    "pittsburgh": Place("pittsburgh", "42003", 2271, ("WAY",), cost_key="pittsburgh",
+    "pittsburgh": Place("pittsburgh", "42003", 2272, ("WAY",), cost_key="pittsburgh",
                         imagery_key="pema_2022_half_foot"),
     "philadelphia": Place("philadelphia", "42101", 2272, front_when_null="contextual", strict_garage=True,
                           cost_key="philadelphia", imagery_key="city_2025_3in"),
@@ -525,24 +525,32 @@ def fill_rules(raw: dict[str, Any], district: Optional[str], contextual_front: O
     return r, notes
 
 
-def cite_type_paths(rules: dict[str, Any], place: str, scenario: str) -> None:
-    """citations["approval_by_type.<type>"] for each type's path, so the app need not parse notes.
-    The resolver cites only the overall path. A type on the place's yard-exception path cites that
-    rule leaf, the others the overall path's citation. Rule files are read, not changed."""
-    by_type = rules.get("approval_by_type") or {}
-    cites = rules["citations"]
-    base = cites.get("approval_path")
-    local, state = rulesmod.layers_for(place, scenario)
-    yard = None
-    for name in local:
-        leaf = (rulesmod.load_rules(name).get("approval") or {}).get("detached_in_yard_path")
-        if leaf and leaf.get("value") is not None:
-            yard = (leaf, name)
-    for t, path in by_type.items():
-        if yard and path == yard[0]["value"] and not state:
-            cites[f"approval_by_type.{t}"] = rulesmod._citation(*yard)
-        elif base:
-            cites[f"approval_by_type.{t}"] = dict(base)
+def cite_type_paths(rules: dict[str, Any]) -> None:
+    """citations["approval_by_type.<type>"], where the app reads each type's section, filled from
+    the resolver's citations_by_type."""
+    for t, c in (rules.get("citations_by_type") or {}).items():
+        if c:
+            rules["citations"][f"approval_by_type.{t}"] = dict(c)
+
+
+def type_paths(rules: dict[str, Any]) -> dict[str, str]:
+    """Approval path per ADU type as the app shows it: the rule's own path where the only reason it
+    differs is a lot condition (no garage or outbuilding), the lot's path otherwise. Whether the lot
+    has the structure shows in the fit (limiting no_garage), not as 'not allowed'."""
+    by_lot = rules.get("approval_by_type") or {}
+    by_rule = rules.get("rule_path_by_type") or {}
+    cond = rules.get("lot_conditions_by_type") or {}
+    return {t: (by_rule.get(t, p) if t in cond else p) for t, p in by_lot.items()}
+
+
+def fit_rules(rules: dict[str, Any]) -> dict[str, Any]:
+    """Rules as the fit reads them: a type whose path is held back only by a lot condition stays
+    in types_allowed, so the fit says why (no_garage) instead of type_not_allowed."""
+    paths = type_paths(rules)
+    if not paths:
+        return rules
+    ok = [t for t in rulesmod.ALL_TYPES if paths.get(t) in OK_PATHS]
+    return {**rules, "types_allowed": ok, "allowed": bool(rules.get("allowed")) or bool(ok)}
 
 
 def house_front_setback(edges: fit.EdgeInfo, house: Optional[BaseGeometry]) -> Optional[float]:
@@ -730,10 +738,11 @@ def run_scenario(shape: fit.LotShape, blds: list[fit.Building], rules: dict[str,
                  ) -> tuple[dict[str, Any], dict[str, dict[str, Any]], dict[str, fit.FitResult]]:
     """Buildable ground and one fit per type: detached always (it carries the limiting reason even
     where ADUs are not allowed), the other types when the scenario gives them a legal path."""
+    by_type = type_paths(rules)
+    rules = fit_rules(rules)
     shape = with_clearance(shape, blds, rules)
     b = fit.buildable_area(shape, blds, rules)
     allowed = set(rules.get("types_allowed") or [])
-    by_type = rules.get("approval_by_type") or {}
     types = [t for t in FIT_TYPES if t == "detached_new" or t in allowed]
     results = {t: fit.fit_adu(shape, blds, rules_for_type(rules, t), t) for t in types}
     house = _union(x.polygon for x in blds if x.role == "main")
@@ -842,11 +851,9 @@ def build_lot(r: dict[str, Any], brows: Sequence[dict[str, Any]], near: Near, ct
     shape = fit.LotShape(poly, edges, living_sqft=_num(r.get("living_area")), hard_surface_sqft=hard)
     ctx_front = house_front_setback(edges, house) if ctx.front_when_null == "contextual" else None
     flags = flags_for(r)
-    # The resolver turns has_accessory_building=False into "garage conversion not allowed", which
-    # mixes the rule up with this lot's facts. Pass True when there is a structure (it decides the
-    # Pittsburgh way exception for a unit over a garage) and unknown otherwise. Whether the lot has a
-    # garage shows in the fit (limiting no_garage) and in the index (garage_present).
-    has_acc = True if any(b.role in ("garage", "shed") for b in blds) else None
+    # The real fact goes to the resolver. Its extra keys keep the rule's own path per type apart
+    # from this lot's facts (rule_path_by_type, lot_conditions_by_type).
+    has_acc = any(b.role in ("garage", "shed") for b in blds)
     rlot = resolver_lot(r, flags, edges.alley, has_acc, float(poly.area), house_height(r, blds))
 
     rules_out: dict[str, Any] = {}
@@ -855,14 +862,14 @@ def build_lot(r: dict[str, Any], brows: Sequence[dict[str, Any]], near: Near, ct
     raw_res: dict[str, dict[str, fit.FitResult]] = {}
     cache: dict[str, tuple[Any, Any, Any]] = {}
     for s in SCENARIOS:
-        resolved = rulesmod.resolve(ctx.place, s, rlot)
+        resolved = rulesmod.resolve(ctx.place, s, rlot, extra=True)
         filled, fill_notes = fill_rules(resolved, rlot["zoning_district"], ctx_front)
         notes += [n for n in fill_notes if n not in notes]
         key = _rules_key(filled)
         if key not in cache:   # scenarios with the same rules (Pittsburgh local reform) share a fit
             cache[key] = run_scenario(shape, blds, filled, epsg)
         buildable[s], fits[s], raw_res[s] = cache[key]
-        cite_type_paths(filled, ctx.place, s)
+        cite_type_paths(filled)
         rules_out[s] = filled
         add_spot_cover(fits[s].get("detached_new"), raw_res[s].get("detached_new"), ctx)
 
@@ -927,7 +934,7 @@ def old_rule_fields(place: str, rules: dict[str, Any]) -> dict[str, Optional[str
     inside the house or a conversion has a legal path today, variance otherwise. Null elsewhere."""
     if place != "philadelphia":
         return {"rule_lot": None, "rule_why": None}
-    by_type = rules.get("approval_by_type") or {}
+    by_type = type_paths(rules)
     ok = any(by_type.get(t) in OK_PATHS for t in ("internal", "garage_conversion", "attached"))
     reasons = [x for x in rules.get("reasons") or [] if x]
     return {"rule_lot": "conversion_only" if ok else "variance", "rule_why": reasons[0] if reasons else None}
@@ -973,7 +980,7 @@ def index_row(r: dict[str, Any], rec: dict[str, Any], res: dict[str, dict[str, f
         second = d.second
         row[f"allowed_{s}"] = bool(rec["rules"][s]["allowed"])
         row[f"approval_{s}"] = rec["rules"][s]["approval_path"]
-        by_type = rec["rules"][s].get("approval_by_type") or {}
+        by_type = type_paths(rec["rules"][s])
         row[f"approval_detached_{s}"] = by_type.get("detached_new")
         row[f"approval_internal_{s}"] = by_type.get("internal")
         row[f"approval_garage_{s}"] = by_type.get("garage_conversion")

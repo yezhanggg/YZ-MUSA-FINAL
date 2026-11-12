@@ -525,7 +525,7 @@ def _checks(place: str, scenario: str) -> list[str]:
 def _type_reasons(picked: Picked, by_type: dict[str, str]) -> list[str]:
     out = []
     cap = picked.get(("envelope", "accessory_structure_max_sqft"))
-    if cap and by_type["detached_new"] not in OK_PATHS:
+    if cap and cap[0].get("value") is not None and by_type["detached_new"] not in OK_PATHS:
         height = _value(picked, "envelope", "max_height_ft")
         line = (f"No new detached ADU by right here. Every residential accessory structure is capped at "
                 f"{cap[0]['value']:,.0f} sq ft" + (f" and {height:,.0f} ft" if height is not None else "")
@@ -557,17 +557,56 @@ def _rear(out: dict[str, Any], lot: dict[str, Any]) -> tuple[Optional[float], st
     return out["setback_rear_ft"], "no_alley"
 
 
-def resolve(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
+EXTRA_KEYS = ["rule_path_by_type", "lot_conditions_by_type", "citations_by_type"]
+NO_OUTBUILDING = "No garage or outbuilding on this lot"
+
+
+def resolve(place: str, scenario: str, lot: dict[str, Any], extra: bool = False) -> dict[str, Any]:
     """Rule values for one lot under one scenario. See module docstring and README for keys.
 
     place is a rule file name (philadelphia, pittsburgh, pa_lehigh_allentown). A town in
     towns_index.json may also be given by name or GEOID. A town without a file resolves
     on default.json, so every value is in "assumed".
+
+    extra=True adds EXTRA_KEYS after the usual keys (the usual keys are unchanged):
+    rule_path_by_type (the path per ADU type from the rules alone, before the lot's own facts such
+    as having no garage), lot_conditions_by_type (the lot fact that changes a type's path) and
+    citations_by_type (the section behind each type's path).
     """
     asked = place
     place = _place_file(place)
     if place.startswith("pa_") or (place == DEFAULT and asked != DEFAULT):
-        return _resolve_town(place, scenario, lot)
+        out = _resolve_town(place, scenario, lot)
+        return _with_extra(out, place, scenario, lot) if extra else out
+    out = _resolve_city(place, scenario, lot)
+    return _with_extra(out, place, scenario, lot) if extra else out
+
+
+def _path_citation(place: str, scenario: str, lot: dict[str, Any], path: str) -> Optional[dict[str, Any]]:
+    """The rule leaf behind an approval path value: path, yard path, then fallback."""
+    data = load_rules(place)
+    local, state = layers_for(place, scenario)
+    for name in reversed(local + state):
+        layer = load_rules(name) if name != place else data
+        for key in ("path", "detached_in_yard_path", "historic_path", "fallback_path", "unlisted_use_path"):
+            leaf = _leaf(layer, ("approval", key))
+            if _usable(leaf) and leaf.get("value") == path:
+                return _citation(leaf, name)
+    return None
+
+
+def _with_extra(out: dict[str, Any], place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
+    """Adds EXTRA_KEYS. The rule path per type ignores has_accessory_building, which is a lot fact."""
+    bare = {**lot, "has_accessory_building": None}
+    base = _resolve_town(place, scenario, bare) if place.startswith("pa_") or place == DEFAULT else _resolve_city(place, scenario, bare)
+    rule_paths = base["approval_by_type"]
+    lot_cond = {t: NO_OUTBUILDING for t in ALL_TYPES
+                if lot.get("has_accessory_building") is False and out["approval_by_type"][t] != rule_paths[t]}
+    cites = {t: _path_citation(place, scenario, lot, rule_paths[t]) for t in ALL_TYPES}
+    return {**out, "rule_path_by_type": rule_paths, "lot_conditions_by_type": lot_cond, "citations_by_type": cites}
+
+
+def _resolve_city(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
     reasons: list[str] = []
     limits: dict[str, Any] = {}
     layers_for(place, scenario)
@@ -638,14 +677,16 @@ TOWN_KEYS = ["adu_status", "adu_term", "conditions", "approval_by_district", "di
              # Added in pass 4: "conditional_on_reading" when the path holds only under one reading of the code.
              "approval_qualifier",
              # Added in pass 4: the path to ask for when the code has no ADU rule (a use not listed).
-             "path_to_ask"]
+             "path_to_ask",
+             # Added in pass 5.
+             "form_labels", "yard_tiers"]
 NO_ADU_STATUSES = {"not_addressed", "prohibited"}
 DETACHED_TYPES = ["detached_new", "garage_conversion", "over_garage"]
 GARAGE_TYPES = {"garage_conversion", "over_garage"}
 YARDS = ("setback_front_ft", "setback_side_ft", "setback_rear_ft")
 # Town conditions HB 2186 would override (6305: no owner occupancy or family rule, ADUs do not count
 # toward density, one ADU per residential lot by right).
-BILL_OVERRIDES = {"adu_status", "family", "age", "care", "owner_occupancy", "sponsor", "lot_area_per_unit",
+BILL_OVERRIDES = {"adu_status", "family", "age", "care", "owner_occupancy", "sponsor", "lot_area_per_unit", "occupancy", "lot_size",
                   "existing_structure", "district", "building_type", "scope"}
 BILL_NOTE = "Would no longer apply under HB 2186. The bill is not law"
 
@@ -711,6 +752,10 @@ def _apply_district_town(picked: Picked, place: dict[str, Any], source: str, lot
     bind = (_leaf(place, ("envelope", "district_yards_bind_accessory")) or {}).get("value") is True
     semi = entry.get("setback_side_semi_ft")
     use_semi = _building_type(lot.get("building_type")) == "semi_detached" and _usable(semi) and semi.get("value") is not None
+    for k in YARDS:  # accessory yards set for this district win for a detached unit
+        acc = entry.get(f"accessory_{k}")
+        if _usable(acc) and acc.get("value") is not None:
+            picked[("envelope", k)] = (acc, f"{where}.accessory_{k}")
     for field, path in {**DISTRICT_FIELDS, "principal_max_height_ft": DISTRICT_HEIGHT,
                         "separation_ft": ("envelope", "separation_ft")}.items():
         leaf = semi if (field == "setback_side_ft" and use_semi) else entry.get(field)
@@ -719,7 +764,7 @@ def _apply_district_town(picked: Picked, place: dict[str, Any], source: str, lot
         if field in YARDS and leaf.get("value") is not None:
             principal[field] = (leaf, where)
             own = picked.get(path)
-            if own and own[0].get("value") is not None and not bind:
+            if own and own[0].get("value") is not None and (not bind or "accessory_" in own[1]):
                 continue  # an accessory yard in the file wins for a detached unit
         if leaf.get("value") is None and (picked.get(path) or ({}, ""))[0].get("value") is not None:
             continue
@@ -887,11 +932,25 @@ def _town_conditions(data: dict[str, Any], picked: Picked, lot: dict[str, Any], 
         out.append(_cond("lot_area_per_unit", f"{lead}{per['value']:,.0f} sq ft of lot per dwelling unit. The house and the ADU need "
                                               f"{need:,.0f} sq ft" + (f". {per['note']}" if per.get("note") else ""),
                          per, None if area is None else area >= need, effect="bars" if binding else "condition"))
+    thr = picked.get(("envelope", "accessory_structure_threshold_sqft"))
+    if thr and thr[0].get("value") is not None:
+        out.append(_cond("size", f"An accessory building over {thr[0]['value']:,.0f} sq ft needs a further approval"
+                                 + (f". {thr[0]['note']}" if thr[0].get("note") else ""), thr[0], applies_to=DETACHED_TYPES))
+    tot = picked.get(("envelope", "accessory_floor_area_total_sqft"))
+    if tot and tot[0].get("value") is not None:
+        out.append(_cond("size", f"All accessory buildings on the lot together may have at most {tot[0]['value']:,.0f} sq ft "
+                                 f"of ground floor area, an existing garage included", tot[0], applies_to=DETACHED_TYPES))
     gates = _leaf(data, ("eligibility", "gates"))
     for g in (gates or {}).get("value") or []:
         if _gate_scope(g, lot, historic):
-            c = _cond(g["kind"], g["condition"], _leaf_from(g, gates, None), _gate_met(g, lot), g.get("applies_to"), g["effect"])
+            effect = g["effect"]
+            scoped = g.get("test") or g.get("districts") or g.get("not_districts") or g.get("building_types") or g.get("when") in ("historic", "not_historic")
+            c = _cond(g["kind"], g["condition"], _leaf_from(g, gates, None), _gate_met(g, lot), g.get("applies_to"),
+                      effect if (effect != "bars" or scoped) else "condition")
+            if effect == "bars" and not scoped:
+                c["warning"] = "A bar with no lot test and no scope is shown as a condition. Add a test or a scope to the gate"
             c["test"] = g.get("test")
+            c["bill_overrides"] = bool(g.get("bill_overrides"))
             if c["test"] and c["met"] is None:
                 c["condition"] += ". Allowed only if this holds. The lot fact is not known"
             out.append(c)
@@ -956,8 +1015,12 @@ def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, A
         lot_ok = None if a.get("min_lot_sqft") is None or area is None else area >= a["min_lot_sqft"]
         applies = False if (in_d is False or lot_ok is False) else (True if in_d and lot_ok is not False and
                                                                     (a.get("min_lot_sqft") is None or lot_ok) else None)
-        out.append({**a, "url": a.get("url") or leaf.get("url"), "applies": applies,
-                    "note": "Not an ADU. A second unit by another path"})
+        conf = a.get("confidence") or leaf.get("confidence")
+        settled = conf == "verified"
+        out.append({**a, "url": a.get("url") or leaf.get("url"), "applies": applies, "confidence": conf,
+                    "display_path": a["path"].replace("_", " ") if settled else f"listed as {a['path'].replace('_', ' ')}, but ask the zoning officer",
+                    "note": "Not an ADU. A second unit by another path" + (f". {a['note']}" if a.get("note") else "")
+                            + ("" if settled else ". The reading is not settled")})
     return out
 
 
@@ -973,6 +1036,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         historic = _historic(lot, reasons)
     picked, today, how, principal = _pick_town(data, place, scenario, lot, historic, limits, reasons)
     state = scenario == "state_reform"
+    tiers_out = _apply_yard_tiers(data, picked, principal, lot, reasons)
     status_leaf = _leaf(data, ("adu", "status")) or {}
     status = status_leaf.get("value")
     term = (_leaf(file_data, ("adu", "term")) or {}).get("value")
@@ -980,6 +1044,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     fails = _overlay_fails(picked, lot, historic, reasons) + ([] if historic else _base_fails(picked, lot))
     if how in ("district", "historic"):
         fails = [f for f in fails if not f.startswith("Zoned ")]
+    fails = [_reword_zoned(f) for f in fails]
     dm = _district_min(data, lot)
     area = lot.get("lot_sqft")
     dm_binds = _district_min_binds(data)
@@ -1012,7 +1077,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     if state:  # under the bill the town's gates show as conditions only, and some no longer apply
         live = []
         for c in conditions:
-            (overridden if c["kind"] in BILL_OVERRIDES else live).append(c)
+            (overridden if (c["kind"] in BILL_OVERRIDES or c.get("bill_overrides")) else live).append(c)
         for c in overridden:
             c["note"] = BILL_NOTE
         size_floor = limits.get("max_size_sqft")
@@ -1033,12 +1098,24 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     approval = min(by_type.values(), key=PATH_ORDER.index)
     # No ADU rule here. A hearing path for a use the code does not list is a path to ask for, not an ADU allowed.
     path_to_ask = None
-    if not state and status in NO_ADU_STATUSES and how not in ("district", "historic") and allowed:
+    no_rule_here = not state and status in NO_ADU_STATUSES and how not in ("district", "historic")
+    if no_rule_here and allowed:
         hit = picked[("approval", "path")]
-        path_to_ask = {"path": hit[0]["value"], "section": hit[0]["section"], "url": hit[0].get("url"),
-                       "note": f"The code has no ADU rule here. A use that is not listed may be authorized by "
-                               f"{hit[0]['value'].replace('_', ' ')} ({hit[0]['section']}). That is a hearing with no set standards for an ADU"}
+        if how == "unlisted":
+            note = (f"The code has no ADU rule here. A use that is not listed may be authorized by "
+                    f"{hit[0]['value'].replace('_', ' ')} ({hit[0]['section']}). That is a hearing with no set standards for an ADU")
+        else:
+            note = (f"The code has no ADU rule here. The rule file gives {hit[0]['value'].replace('_', ' ')} "
+                    f"({hit[0]['section']}) as the path to ask about. Ask the zoning officer")
+        path_to_ask = {"path": hit[0]["value"], "section": hit[0]["section"], "url": hit[0].get("url"), "note": note}
         allowed, types_allowed = False, []
+    elif no_rule_here and not allowed and approval in ("variance", "not_allowed"):
+        hit = picked.get(("approval", "fallback_path")) or picked.get(("approval", "path"))
+        sec = (hit[0]["section"] if hit else "") or ""
+        sec = sec if "910.2" in sec else (f"{sec}, MPC 910.2" if sec else "MPC 910.2")
+        path_to_ask = {"path": "variance", "section": sec, "url": hit[0].get("url") if hit else None,
+                       "note": f"The code has no ADU rule here. The path is a use variance from the Zoning Hearing Board ({sec}). "
+                               f"The owner must show unnecessary hardship"}
     if not allowed and picked.get(("approval", "path"), ({}, ""))[1] == DEFAULT:
         fails.append("No ADU rule on file for this place")
 
@@ -1047,7 +1124,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
           "url": fb_hit[0].get("url") if fb_hit else None, "note": fb_hit[0].get("note") if fb_hit else None}
     checks = list(file_data["provenance"].get("checks", []))
     if state:
-        checks += _checks(place, scenario)
+        checks = [f"Today, before the bill: {c}" for c in checks] + _checks(place, scenario)
     head = []
     if status and status != "allowed_by_right" and status_leaf.get("section"):
         when = "Today the" if state else "The"
@@ -1064,6 +1141,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     tail = []
     if path_to_ask:
         tail.append(path_to_ask["note"])
+        if fb["note"] and path_to_ask["path"] == "variance":
+            tail.append(fb["note"])
     elif not allowed:
         sec = fb["section"] or ""
         if fallback == "variance" and "910.2" not in sec:
@@ -1071,7 +1150,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         tail.append(f"Not allowed as of right here. Path: {fallback.replace('_', ' ')}" + (f" ({sec})" if sec else "")
                     + (f". {fb['note']}" if fb["note"] else ""))
     out: dict[str, Any] = {"allowed": allowed, "approval_path": approval,
-                           "reasons": head + reasons + fails + tail + _type_reasons(_cap_in_scope(data, picked, lot), by_type) + checks,
+                           "reasons": head + reasons + fails + tail + _town_type_reasons(_cap_in_scope(data, picked, lot), by_type) + checks,
                            "types_allowed": types_allowed}
     citations, assumed = {}, []
     for key, path in VALUE_KEYS.items():
@@ -1090,6 +1169,13 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
                 assumed.append(key)
     if "max_adus" in assumed:
         out["reasons"].append(f"ADUs per lot: the code is silent, {out['max_adus']} assumed (default.json)")
+    inside = picked.get(("envelope", "unit_within_building_envelope"))
+    if inside and inside[0].get("value"):
+        out["setback_rear_alley_ft"] = out["setback_rear_ft"]
+        if "setback_rear_alley_ft" in assumed:
+            assumed.remove("setback_rear_alley_ft")
+        if picked.get(("envelope", "setback_rear_ft")):
+            citations["setback_rear_alley_ft"] = _citation(*picked[("envelope", "setback_rear_ft")])
     qualifier = None
     if allowed and dens and not dens[2] and not state and area is not None and area < dens[1]:
         per, need, _ = dens
@@ -1104,7 +1190,15 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
 
     if state:
         _state_town_fixes(out, picked, lot, limits, citations, assumed, reasons)
+        if _value(today, "size", "max_sqft") is None and _value(today, "size", "max_share_of_house") is None:
+            out["max_size_sqft"] = None  # the bill's size is a floor the town must allow, not a maximum
+            citations.pop("max_size_sqft", None)
     sizes, shares = _town_sizes(picked, out, limits, state, lot)
+    total_area = _value(picked, "envelope", "accessory_floor_area_total_sqft")
+    if total_area is not None:
+        for t in DETACHED_TYPES:
+            if sizes[t] is None:
+                sizes[t] = total_area
     for t in ALL_TYPES:
         if by_type[t] not in OK_PATHS:
             sizes[t], shares[t] = None, None
@@ -1143,8 +1237,61 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         "alternatives": _alternatives(file_data, lot),
         "approval_qualifier": qualifier,
         "path_to_ask": path_to_ask,
+        "form_labels": (_leaf(file_data, ("form", "labels")) or {}).get("value"),
+        "yard_tiers": tiers_out,
     })
     return {k: out[k] for k in OUTPUT_KEYS + TOWN_KEYS}
+
+
+def _reword_zoned(text: str) -> str:
+    """'Zoned X. Needs A or B' reads like a call to rezone. Say where the ADU rule applies instead."""
+    m = re.match(r"^Zoned (.+?)\. Needs (.+)$", text)
+    if not m:
+        return text
+    return f"The ADU rule applies only in {m.group(2).replace(' or ', ', ')}. This lot is zoned {m.group(1)}"
+
+
+def _town_type_reasons(picked: Picked, by_type: dict[str, str]) -> list[str]:
+    """The accessory building cap, said as a cap and only when the file stores one. Never as the reason."""
+    cap = picked.get(("envelope", "accessory_structure_max_sqft"))
+    if not (cap and cap[0].get("value") is not None):
+        return []
+    height = _value(picked, "envelope", "max_height_ft")
+    return [f"Accessory buildings are capped at {cap[0]['value']:,.0f} sq ft"
+            + (f" and {height:,.0f} ft" if height is not None else "") + f" ({cap[0]['section']})"]
+
+
+def _apply_yard_tiers(data: dict[str, Any], picked: Picked, principal: dict[str, tuple[dict[str, Any], str]],
+                      lot: dict[str, Any], reasons: list[str]) -> Optional[list[dict[str, Any]]]:
+    """Yards that depend on lot size. With the lot size known, the tier's yards apply. Without it,
+    the yards are left out and the tiers are returned."""
+    _, row = _district_row(data, lot)
+    leaf = row.get("yard_tiers") if _usable(row.get("yard_tiers")) else _leaf(data, ("envelope", "yard_tiers"))
+    tiers = (leaf or {}).get("value") or []
+    if not tiers:
+        return None
+    area = lot.get("lot_sqft")
+    pick = None
+    if area is not None:
+        pick = next((x for x in tiers if (x.get("min_lot_sqft") or 0) <= area < (x.get("max_lot_sqft") or float("inf"))), None)
+    for x in tiers:
+        if pick is not None and x is not pick:
+            continue
+        for k in YARDS:
+            if k not in x:
+                continue
+            tier_leaf = _leaf_from(x, leaf, x[k] if pick is not None else None)
+            tier_leaf["confidence"] = leaf["confidence"] if pick is not None else "secondary"
+            if x.get("applies_to", "accessory") == "principal":
+                if pick is not None:
+                    principal[k] = (tier_leaf, "#yard_tiers")
+                else:
+                    principal.pop(k, None)
+            else:
+                picked[("envelope", k)] = (tier_leaf, "#yard_tiers")
+    if pick is None:
+        reasons.append(f"Yards depend on the lot size tier ({leaf['section']}). Give the lot size to get them")
+    return [{**x, "chosen": x is pick} for x in tiers]
 
 
 def _cap_in_scope(data: dict[str, Any], picked: Picked, lot: dict[str, Any]) -> Picked:
@@ -1213,6 +1360,8 @@ def _town_heights(data: dict[str, Any], today: Picked, status: Optional[str], st
     at_house = _value(today, "envelope", "height_capped_at_house")
     applies = _value(today, "envelope", "accessory_height_applies")
     house = lot.get("house_height_ft")
+    if status in NO_ADU_STATUSES and state:
+        at_house = None  # no ADU rule: neither the accessory cap nor the house rule is an ADU height
     principal_hit = today.get(DISTRICT_HEIGHT)
     principal = principal_hit[0]["value"] if principal_hit else None
     no_adu = status in NO_ADU_STATUSES
@@ -1382,6 +1531,16 @@ def _place_file(place: str) -> str:
 
 # ------------------------------------------------------------------ CLI
 
+def lint(data: dict[str, Any]) -> list[str]:
+    """Warnings that do not make a file invalid: a gate that bars with no lot test and no scope."""
+    out = []
+    for i, g in enumerate(((data.get("eligibility") or {}).get("gates") or {}).get("value") or []):
+        scoped = g.get("test") or g.get("districts") or g.get("not_districts") or g.get("building_types") or g.get("when") in ("historic", "not_historic")
+        if g.get("effect") == "bars" and not scoped:
+            out.append(f"eligibility.gates[{i}] ({g.get('section')}): effect bars with no test and no scope. It is shown as a condition")
+    return out
+
+
 def _cmd_validate() -> int:
     bad = 0
     for name in rule_names():
@@ -1390,6 +1549,8 @@ def _cmd_validate() -> int:
         for e in errs[:20]:
             print("  ", e)
         bad += bool(errs)
+        for w in lint(json.loads((RULES_DIR / f"{name}.json").read_text())):
+            print("   warning:", w)
     return 1 if bad else 0
 
 

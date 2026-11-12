@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://yz-musa-final/pipeline/lot_schema.json",
   "title": "Lot record",
-  "description": "One record per lot. Geometry is GeoJSON in WGS84 (lon, lat) for the app. It is computed in a local feet CRS named in lot.crs_local (EPSG:2272 Philadelphia, EPSG:2271 Pittsburgh). Areas are sq ft, lengths ft, shares 0 to 1, percents 0 to 100. No owner names anywhere.",
+  "description": "One record per lot. Geometry is GeoJSON in WGS84 (lon, lat) for the app. It is computed in a local feet CRS named in lot.crs_local (EPSG:2272, Pennsylvania South, for Philadelphia and Pittsburgh). Areas are sq ft, lengths ft, shares 0 to 1, percents 0 to 100. No owner names anywhere.",
   "type": "object",
   "required": ["schema_version", "lot", "buildings", "zoning", "rules", "buildable", "fit", "quality"],
   "additionalProperties": false,
@@ -90,7 +90,7 @@
         "place": {"type": "string", "description": "philadelphia, pittsburgh, ..."},
         "county_fips": {"type": "string", "pattern": "^42\\d{3}$"},
         "tract": {"type": "string"},
-        "crs_local": {"enum": [2272, 2271]},
+        "crs_local": {"enum": [2272]},
         "polygon": {"$ref": "#/$defs/area_geom"},
         "area_sqft": {"type": "number", "exclusiveMinimum": 0},
         "edges": {"type": "array", "items": {"$ref": "#/$defs/edge"}},
@@ -200,7 +200,16 @@
                          "additionalProperties": {"type": "object"}},
         "fire_separation": {"type": "object", "description": "Building code distances in ft",
                             "additionalProperties": {"$ref": "#/$defs/num_or_null"}},
-        "historic_path": {"type": "boolean", "description": "True when the historic path opened the ADU"}
+        "historic_path": {"type": "boolean", "description": "True when the historic path opened the ADU"},
+        "rule_path_by_type": {"type": "object", "propertyNames": {"$ref": "#/$defs/rule_type"},
+                              "additionalProperties": {"$ref": "#/$defs/approval"},
+                              "description": "Path per ADU type from the rules alone, before this lot's own facts (such as having no garage)"},
+        "lot_conditions_by_type": {"type": "object", "propertyNames": {"$ref": "#/$defs/rule_type"},
+                                   "additionalProperties": {"type": "string"},
+                                   "description": "The lot fact that changes a type's path, e.g. No garage or outbuilding on this lot"},
+        "citations_by_type": {"type": "object", "propertyNames": {"$ref": "#/$defs/rule_type"},
+                              "additionalProperties": {"oneOf": [{"$ref": "#/$defs/citation"}, {"type": "null"}]},
+                              "description": "Rule section behind each type's path"}
       }
     },
     "per_scenario_rules": {

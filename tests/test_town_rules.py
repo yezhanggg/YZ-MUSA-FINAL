@@ -690,3 +690,146 @@ def test_missing_district_height_is_said(tmp_path, monkeypatch):
     st = rules.resolve(name, "state_reform", {"zoning_district": "R-2", "building_type": "detached", "lot_sqft": 8000})
     assert st["max_height_by_type"]["internal"] is None
     assert any("District height for R-2 not on file" in r for r in st["reasons"])
+
+
+# ------------------------------------------------------------------ pass 5
+
+def test_null_accessory_cap_does_not_crash():
+    picked = {("envelope", "accessory_structure_max_sqft"): (_leaf(None, "320-232A", "secondary"), "x")}
+    by_type = {t: "variance" for t in rules.ALL_TYPES}
+    assert rules._type_reasons(picked, by_type) == []
+
+
+def test_cap_line_only_for_a_cap_and_after_the_real_reason(tmp_path, monkeypatch):
+    body = _base()
+    body["envelope"] = {"accessory_structure_threshold_sqft": _leaf(600, "320-232A(2)", note="Special exception above it"),
+                        "accessory_floor_area_total_sqft": _leaf(500, "27-1786.1.G")}
+    body["form"] = {"types_allowed": _leaf(["detached_new", "internal"], "1")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_thr", body)
+    out = rules.resolve(name, "today", {"building_type": "detached", "lot_sqft": 9000})
+    assert not any("capped at" in r for r in out["reasons"])
+    sizes = [c["condition"] for c in out["conditions"] if c["kind"] == "size"]
+    assert any("over 600 sq ft needs a further approval" in s for s in sizes)
+    assert any("at most 500 sq ft of ground floor area, an existing garage included" in s for s in sizes)
+    assert out["max_size_by_type"]["detached_new"] == 500
+
+
+def test_district_accessory_yards_and_tiers(tmp_path, monkeypatch):
+    body = _base()
+    body["envelope"] = {"setback_side_ft": _leaf(10, "280-4"), "setback_rear_ft": _leaf(10, "280-4")}
+    body["districts"] = {
+        "AC": {"accessory_setback_side_ft": _leaf(20, "280-4 AC"), "accessory_setback_rear_ft": _leaf(20, "280-4 AC"),
+               "setback_side_ft": _leaf(50, "Table")},
+        "R-2": {"yard_tiers": _leaf([{"max_lot_sqft": 20000, "applies_to": "accessory", "setback_side_ft": 10, "section": "200-23 small"},
+                                     {"min_lot_sqft": 20000, "applies_to": "accessory", "setback_side_ft": 20, "section": "200-23 large"}], "200-23")}}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_yards", body)
+    ac = rules.resolve(name, "today", {"zoning_district": "AC", "building_type": "detached", "lot_sqft": 90000})
+    assert ac["setbacks_by_type"]["detached_new"]["setback_side_ft"] == 20
+    assert ac["setbacks_by_type"]["attached"]["setback_side_ft"] == 50
+    big = rules.resolve(name, "today", {"zoning_district": "R-2", "building_type": "detached", "lot_sqft": 25000})
+    assert big["setbacks_by_type"]["detached_new"]["setback_side_ft"] == 20
+    unknown = rules.resolve(name, "today", {"zoning_district": "R-2", "building_type": "detached"})
+    assert unknown["setbacks_by_type"]["detached_new"]["setback_side_ft"] is None
+    assert len(unknown["yard_tiers"]) == 2 and any("lot size tier" in r for r in unknown["reasons"])
+
+
+def test_form_labels(tmp_path, monkeypatch):
+    body = _base()
+    body["form"] = {"labels": _leaf({"detached_new": "unit joined to the house by a breezeway"}, "27-202")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_labels", body)
+    out = rules.resolve(name, "today", {"building_type": "detached", "lot_sqft": 9000})
+    assert out["form_labels"]["detached_new"].startswith("unit joined")
+
+
+def test_path_to_ask_follows_the_file(tmp_path, monkeypatch):
+    name = _fixture(tmp_path, monkeypatch, "pa_test_ask", _base("not_addressed", "variance"))
+    out = rules.resolve(name, "today", {"building_type": "detached", "lot_sqft": 9000})
+    assert out["path_to_ask"]["path"] == "variance" and "MPC 910.2" in out["path_to_ask"]["section"]
+    assert "use variance from the Zoning Hearing Board" in out["path_to_ask"]["note"]
+    assert "may be authorized" not in out["path_to_ask"]["note"]
+    body = _base("not_addressed", "special_exception")
+    name2 = _fixture(tmp_path, monkeypatch, "pa_test_ask2", body)
+    out2 = rules.resolve(name2, "today", {"building_type": "detached", "lot_sqft": 9000})
+    assert out2["allowed"] is False and "may be authorized" not in out2["path_to_ask"]["note"]
+    monkeypatch.undo()
+    for real in ("pa_allegheny_ross", "pa_cumberland_hampden", "pa_delaware_radnor", "pa_allegheny_bethel_park", "pa_bucks_lower_makefield"):
+        if not (RULES / f"{real}.json").exists():
+            continue
+        r = rules.resolve(real, "today", {"zoning_district": "R-2", "building_type": "detached", "lot_sqft": 20000})
+        assert r["path_to_ask"] is not None, real
+        if not (raw(real).get("approval") or {}).get("unlisted_use_path"):
+            assert "may be authorized" not in r["path_to_ask"]["note"], real
+
+
+def test_bill_floor_is_not_a_maximum_and_today_lines_are_labelled(tmp_path, monkeypatch):
+    body = _base("family_only", "by_right")
+    body["eligibility"] = {"gates": _leaf([{"kind": "design", "condition": "Joined by a breezeway", "effect": "condition",
+                                            "bill_overrides": True, "section": "27-202", "url": "https://ecode360.com/1"}], "27")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_bill2", body)
+    st = rules.resolve(name, "state_reform", {"building_type": "detached", "lot_sqft": 9000, "house_sqft": 1600})
+    assert st["max_size_sqft"] is None and set(st["max_size_by_type"].values()) == {None}
+    assert any(c["kind"] == "design" for c in st["conditions_overridden"])
+    assert any(r.startswith("Today, before the bill: ") for r in st["reasons"])
+
+
+def test_no_adu_town_under_bill_drops_both_accessory_height_rules(tmp_path, monkeypatch):
+    body = _base("not_addressed", "variance")
+    body["envelope"] = {"max_height_ft": _leaf(25, "295-405A(1)(b)"), "height_capped_at_house": _leaf(True, "295-405A(1)(b)")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_cht", body)
+    st = rules.resolve(name, "state_reform", {"building_type": "detached", "lot_sqft": 9000, "house_height_ft": 40})
+    assert st["max_height_by_type"]["detached_new"] == 25
+
+
+def test_detached_height_uses_district_when_no_accessory_rule(tmp_path, monkeypatch):
+    body = _base()
+    body["envelope"] = {"accessory_height_applies": _leaf(False, "27-202"), "separation_ft": _leaf(None, "none set")}
+    body["districts"] = {"R-2": {"principal_max_height_ft": _leaf(35, "Table")}}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_cran", body)
+    out = rules.resolve(name, "today", {"zoning_district": "R-2", "building_type": "detached", "lot_sqft": 40000})
+    assert out["max_height_by_type"]["detached_new"] == 35
+    assert out["separation_ft"] is None and "separation_ft" not in out["assumed"]
+
+
+def test_scopeless_bar_is_a_condition_with_a_lint_warning(tmp_path, monkeypatch):
+    body = _base()
+    body["eligibility"] = {"gates": _leaf([{"kind": "other", "condition": "No habitation on alley lots", "effect": "bars",
+                                            "section": "320-238", "url": "https://ecode360.com/1"}], "320")}
+    body["envelope"] = {"unit_within_building_envelope": _leaf(True, "27-1793"), "setback_rear_ft": _leaf(35, "Table")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_lint", body)
+    out = rules.resolve(name, "today", {"building_type": "detached", "lot_sqft": 9000})
+    assert out["allowed"] and "detached_new" in out["types_allowed"]
+    c = next(c for c in out["conditions"] if c["section"] == "320-238")
+    assert c["effect"] == "condition" and c["warning"]
+    assert rules.lint(json.loads((tmp_path / f"{name}.json").read_text()))
+    assert out["setback_rear_alley_ft"] == 35 and "setback_rear_alley_ft" not in out["assumed"]
+
+
+def test_unsettled_alternative(tmp_path, monkeypatch):
+    body = _base("not_addressed", "variance")
+    body["approval"]["alternatives"] = _leaf([{"name": "Conversion", "path": "by_right", "section": "165-212",
+                                               "confidence": "secondary", "note": "165-212 was repealed in 2023"}], "165")
+    name = _fixture(tmp_path, monkeypatch, "pa_test_alt2", body)
+    a = rules.resolve(name, "today", {"building_type": "detached", "lot_sqft": 9000})["alternatives"][0]
+    assert a["display_path"] == "listed as by right, but ask the zoning officer" and "repealed" in a["note"]
+
+
+def test_zoned_reason_does_not_suggest_rezoning(tmp_path, monkeypatch):
+    body = _base()
+    body["eligibility"] = {"zoning_districts": _leaf(["AC"], "Table")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_zoned", body)
+    out = rules.resolve(name, "today", {"zoning_district": "R-2", "building_type": "detached", "lot_sqft": 9000})
+    assert "The ADU rule applies only in AC. This lot is zoned R-2" in out["reasons"]
+    assert not any(r.startswith("Zoned ") for r in out["reasons"])
+
+
+def test_extra_keys_for_the_lot_builder():
+    lot = {"zoning_district": "R1D-L", "overlays": [], "building_type": "detached", "lot_sqft": 4500,
+           "has_alley": True, "has_accessory_building": False}
+    plain = rules.resolve("pittsburgh", "today", lot)
+    extra = rules.resolve("pittsburgh", "today", lot, extra=True)
+    assert {k: extra[k] for k in rules.OUTPUT_KEYS} == plain
+    assert list(extra)[len(rules.OUTPUT_KEYS):] == rules.EXTRA_KEYS
+    assert extra["rule_path_by_type"]["garage_conversion"] == "by_right"
+    assert plain["approval_by_type"]["garage_conversion"] == "not_allowed"
+    assert extra["lot_conditions_by_type"]["garage_conversion"] == rules.NO_OUTBUILDING
+    assert extra["citations_by_type"]["internal"]["section"]

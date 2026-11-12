@@ -1,7 +1,8 @@
 """Score retrieval and machine extraction against the hand-checked town rule files.
 
 Gold: shared/rules/pa_*.json as committed (read with `git show HEAD:...`, so a file being
-edited by someone else does not change the score). Only towns with corpus text are scored.
+edited by someone else does not change the score), or the working tree with --gold worktree.
+--verified-only drops towns whose index status is "drafted". Only towns with corpus text are scored.
 
 Retrieval: each hand-checked fact becomes a question. A question is scorable when the
 section the town file cites can be found somewhere in that town's corpus text (else the
@@ -63,13 +64,26 @@ def git_json(path: str) -> Any:
     return json.loads(out.stdout)
 
 
+GOLD_SOURCE = "head"  # "head": committed files, "worktree": files on disk
+GOLD_STATUSES = ("verified", "drafted")
+
+
+def read_gold(path: str) -> Any:
+    if GOLD_SOURCE == "worktree":
+        p = REPO / path
+        if not p.exists() or not p.read_text().strip():
+            return None
+        return json.loads(p.read_text())
+    return git_json(path)
+
+
 def gold_files() -> dict[str, dict[str, Any]]:
-    idx = git_json("shared/rules/towns_index.json") or {"towns": []}
+    idx = read_gold("shared/rules/towns_index.json") or {"towns": []}
     out = {}
     for t in idx["towns"]:
-        if t.get("status") not in ("verified", "drafted") or not t.get("file", "").startswith("pa_"):
+        if t.get("status") not in GOLD_STATUSES or not t.get("file", "").startswith("pa_"):
             continue
-        d = git_json(f"shared/rules/{t['file']}.json")
+        d = read_gold(f"shared/rules/{t['file']}.json")
         if d:
             out[t["geoid"]] = {"file": t["file"], "status": t["status"], "rules": d}
     return out
@@ -114,7 +128,7 @@ def chunk_has(c: dict[str, Any], label: str) -> bool:
 
 
 # ---------------------------------------------------------------- retrieval
-def retrieval(models: tuple[str, ...] = ("bge", "e5"), ks: tuple[int, ...] = (5, 10)) -> dict[str, Any]:
+def retrieval(models: tuple[str, ...] = ("bge", "e5"), ks: tuple[int, ...] = (5, 10), tag: str = "") -> dict[str, Any]:
     from pipeline.corpus.search import search
 
     gold = gold_files()
@@ -174,8 +188,8 @@ def retrieval(models: tuple[str, ...] = ("bge", "e5"), ks: tuple[int, ...] = (5,
             summary["by_type"][qtype] = {"n": len(sub_rows), **{f"{s}@{k}": _rate(sub_rows, s, k)
                                                                  for s in systems for k in ks}}
     out = sub("eval")
-    (out / "retrieval_rows.json").write_text(json.dumps(rows, indent=1))
-    (out / "retrieval_summary.json").write_text(json.dumps(summary, indent=1))
+    (out / f"retrieval_rows{tag}.json").write_text(json.dumps(rows, indent=1))
+    (out / f"retrieval_summary{tag}.json").write_text(json.dumps(summary, indent=1))
     return summary
 
 
@@ -352,6 +366,12 @@ if __name__ == "__main__":
     ap.add_argument("what", choices=["retrieval", "extraction"])
     ap.add_argument("--drafts-dir")
     ap.add_argument("--tag", default="")
+    ap.add_argument("--gold", choices=["head", "worktree"], default="head",
+                    help="read the town files from the last commit or from the working tree")
+    ap.add_argument("--verified-only", action="store_true", help="score against verified towns only")
     a = ap.parse_args()
-    res = retrieval() if a.what == "retrieval" else extraction(a.drafts_dir, a.tag)
+    GOLD_SOURCE = a.gold
+    if a.verified_only:
+        GOLD_STATUSES = ("verified",)
+    res = retrieval(tag=a.tag) if a.what == "retrieval" else extraction(a.drafts_dir, a.tag)
     print(json.dumps(res, indent=1))

@@ -86,7 +86,7 @@
       "url": "https://ecode360.com/11226316",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Same as path."
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board."
     },
     "alternatives": {
       "value": [
@@ -334,6 +334,54 @@
         "url": "https://ecode360.com/11226358",
         "verified_on": "2026-11-11",
         "confidence": "verified"
+      },
+      "yard_tiers": {
+        "value": [
+          {
+            "min_lot_sqft": 40000,
+            "max_lot_sqft": null,
+            "applies_to": "principal",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 75,
+            "section": "200-18",
+            "note": "1 acre and 40,000 sq ft rows."
+          },
+          {
+            "min_lot_sqft": 34000,
+            "max_lot_sqft": 39999,
+            "applies_to": "principal",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 70,
+            "section": "200-18"
+          },
+          {
+            "min_lot_sqft": 22000,
+            "max_lot_sqft": 33999,
+            "applies_to": "principal",
+            "setback_front_ft": 40,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 70,
+            "section": "200-18",
+            "note": "25,000 and 22,000 sq ft rows."
+          },
+          {
+            "min_lot_sqft": 15000,
+            "max_lot_sqft": 21999,
+            "applies_to": "principal",
+            "setback_front_ft": 35,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 45,
+            "section": "200-18",
+            "note": "16,500 and 15,000 sq ft rows."
+          }
+        ],
+        "section": "200-18",
+        "url": "https://ecode360.com/11226358",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Rows by 'Minimum Net Lot Area'. Reading: a lot takes the row of the largest tier it meets. A yard on a collector or arterial road is 80 or 100 ft (note 1)."
       }
     },
     "R-2": {
@@ -375,6 +423,45 @@
         "url": "https://ecode360.com/11226397",
         "verified_on": "2026-11-11",
         "confidence": "verified"
+      },
+      "yard_tiers": {
+        "value": [
+          {
+            "min_lot_sqft": 16500,
+            "max_lot_sqft": null,
+            "applies_to": "principal",
+            "setback_front_ft": 40,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 50,
+            "section": "200-22",
+            "note": "34,000 and 16,500 sq ft rows."
+          },
+          {
+            "min_lot_sqft": 15000,
+            "max_lot_sqft": 16499,
+            "applies_to": "principal",
+            "setback_front_ft": 35,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 45,
+            "section": "200-22",
+            "note": "16,000 and 15,000 sq ft rows."
+          },
+          {
+            "min_lot_sqft": 12500,
+            "max_lot_sqft": 14999,
+            "applies_to": "principal",
+            "setback_front_ft": 30,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 45,
+            "section": "200-22, 200-22.1",
+            "note": "12,500 sq ft row, open space cluster lots only."
+          }
+        ],
+        "section": "200-22",
+        "url": "https://ecode360.com/11226397",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Rows by 'Minimum Net Lot Area'. Reading: a lot takes the row of the largest tier it meets. Lots recorded before 1947 and 100 ft wide or less: side yards 10 ft each, 26 ft combined (note 3)."
       }
     }
   }

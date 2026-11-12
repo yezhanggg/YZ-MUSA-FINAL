@@ -86,7 +86,7 @@
       "url": "https://ecode360.com/33565842",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Same as path. The only catch-all special exception for unlisted uses is in the HI district (320-161B(1))."
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board. The only catch-all special exception for unlisted uses is in the HI district (320-161B(1))."
     }
   },
   "eligibility": {
@@ -119,6 +119,22 @@
           "test": null,
           "section": "320-238",
           "url": "https://ecode360.com/33564541"
+        },
+        {
+          "kind": "other",
+          "condition": "An accessory building over 12 ft high needs a special exception, and then the principal building setbacks apply. 15 ft is the hard cap.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "320-232A(2), 320-230A(2)",
+          "url": "https://ecode360.com/33564518"
         }
       ],
       "section": "320-238",
@@ -145,7 +161,7 @@
       "url": "https://ecode360.com/33564508",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Accessory rule, not an ADU rule. Hard cap: accessory buildings 'shall not exceed 15 feet in height' (320-230A(2)). By right up to 12 ft. Over 12 ft needs a special exception (320-232A(2))."
+      "note": "Accessory rule, not an ADU rule. Hard cap: accessory buildings 'shall not exceed 15 feet in height' (320-230A(2)). By right only up to 12 ft. Over 12 ft needs a special exception (320-232A(2)). The schema has no field for the 12 ft by-right height, so it is in a gate."
     },
     "setback_side_ft": {
       "value": 5,
@@ -178,6 +194,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "'no closer than five feet from the permitted principal structure'"
+    },
+    "accessory_structure_threshold_sqft": {
+      "value": 600,
+      "section": "320-232A(2)",
+      "url": "https://ecode360.com/33564518",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'Any other freestanding accessory use building which exceeds 600 square feet in area or 12 feet in height shall be a special exception'. Principal setbacks then apply. Not a cap."
     }
   },
   "use": {

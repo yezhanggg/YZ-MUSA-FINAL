@@ -19,7 +19,7 @@ from typing import Any
 
 import numpy as np
 
-from pipeline.corpus.chunk import load_chunks
+from pipeline.corpus.chunk import load_chunks, place_aliases
 from pipeline.corpus.paths import sub
 
 RRF_K = 60
@@ -38,6 +38,9 @@ def _chunks() -> tuple[list[dict[str, Any]], dict[str, list[int]]]:
     by_place: dict[str, list[int]] = {}
     for i, c in enumerate(rows):
         by_place.setdefault(c["geoid"], []).append(i)
+    for geoid, src in place_aliases().items():  # a county ordinance that covers this place too
+        if src in by_place and geoid not in by_place:
+            by_place[geoid] = by_place[src]
     return rows, by_place
 
 

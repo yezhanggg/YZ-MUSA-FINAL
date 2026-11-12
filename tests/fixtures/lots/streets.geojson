@@ -1,10 +1,10 @@
 {
 "type": "FeatureCollection",
 "name": "streets",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::2271" } },
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::2272" } },
 "features": [
-{ "type": "Feature", "properties": { "kind": "alley", "st_type": "ALY" }, "geometry": { "type": "LineString", "coordinates": [ [ 1340190.0, 107108.0 ], [ 1340250.0, 107108.0 ] ] } },
-{ "type": "Feature", "properties": { "kind": "street", "st_type": "WAY" }, "geometry": { "type": "LineString", "coordinates": [ [ 1341090.0, 107108.0 ], [ 1341150.0, 107108.0 ] ] } },
-{ "type": "Feature", "properties": { "kind": "street", "st_type": "ST" }, "geometry": { "type": "LineString", "coordinates": [ [ 1340000.0, 106980.0 ], [ 1341400.0, 106980.0 ] ] } }
+{ "type": "Feature", "properties": { "kind": "alley", "st_type": "ALY" }, "geometry": { "type": "LineString", "coordinates": [ [ 1340190.0, 411108.0 ], [ 1340250.0, 411108.0 ] ] } },
+{ "type": "Feature", "properties": { "kind": "street", "st_type": "WAY" }, "geometry": { "type": "LineString", "coordinates": [ [ 1341090.0, 411108.0 ], [ 1341150.0, 411108.0 ] ] } },
+{ "type": "Feature", "properties": { "kind": "street", "st_type": "ST" }, "geometry": { "type": "LineString", "coordinates": [ [ 1340000.0, 410980.0 ], [ 1341400.0, 410980.0 ] ] } }
 ]
 }

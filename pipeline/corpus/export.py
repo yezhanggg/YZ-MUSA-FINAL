@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 from collections import defaultdict
 
-from pipeline.corpus.chunk import load_chunks
+from pipeline.corpus.chunk import load_chunks, place_aliases
 from pipeline.corpus.evaluate import consistent_status
 from pipeline.corpus.paths import sub
 
@@ -27,6 +27,9 @@ def run() -> dict[str, int]:
     by: dict[str, list[dict]] = defaultdict(list)
     for c in load_chunks():
         by[c["geoid"]].append({k: c.get(k) for k in KEEP})
+    for geoid, src in place_aliases().items():  # a county ordinance shared by several places
+        if src in by and geoid not in by:
+            by[geoid] = by[src]
     out = sub("serve")
     sizes = {}
     index = []

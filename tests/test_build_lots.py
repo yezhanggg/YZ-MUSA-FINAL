@@ -1,6 +1,6 @@
 """Lot file builder end to end on made-up lots. No network and no data drive needed.
 
-The fixture (tests/fixtures/lots/) holds 12 lots in Pittsburgh feet (EPSG:2271): a standard lot,
+The fixture (tests/fixtures/lots/) holds 12 lots in Pittsburgh feet (EPSG:2272): a standard lot,
 the same lot with an alley behind, a twin cut from one outline, a rowhouse, a garage lot, a shed
 lot, a vacant steep lot, a district outside the rule table, a two-part parcel, a lot with a street
 named Way behind it, and one broken parcel that must be recorded as an error.
@@ -175,7 +175,7 @@ def test_split_geometry_round_trip() -> None:
 
 def test_big_tract_splits_and_reads_back(built: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     full = bl.read_tract(built, TRACTS[1])
-    ctx = bl.Ctx("pittsburgh", "42003", 2271, "test", {})
+    ctx = bl.Ctx("pittsburgh", "42003", 2272, "test", {})
     # A tiny size limit forces both the geometry split and the attribute chunks.
     monkeypatch.setattr(bl, "MAX_TRACT_BYTES", 2_000)
     size, split, files = bl.write_tract(built, "42003999900", json.loads(json.dumps(full)), [{"lot_id": "x"}], ctx)
@@ -194,7 +194,7 @@ def _feet(g: dict) -> "shapely.Geometry":
     import shapely
     from pyproj import Transformer
 
-    tr = Transformer.from_crs(4326, 2271, always_xy=True)
+    tr = Transformer.from_crs(4326, 2272, always_xy=True)
     return shapely.transform(shapely.geometry.shape(g), lambda xy: np.column_stack(tr.transform(xy[:, 0], xy[:, 1])))
 
 
@@ -323,12 +323,19 @@ def test_strict_garage_test() -> None:
 def test_type_path_is_not_the_lot_fact(built: Path) -> None:
     rec = records(built)["T01"]   # no garage on this lot
     r = rec["rules"]["today"]
-    assert r["approval_by_type"]["garage_conversion"] == "by_right"
+    # The resolver's own split: the rule says by right, this lot has no structure to convert.
+    assert r["approval_by_type"]["garage_conversion"] == "not_allowed"
+    assert r["rule_path_by_type"]["garage_conversion"] == "by_right"
+    assert "garage" in r["lot_conditions_by_type"]["garage_conversion"].lower()
+    # What the app shows: the rule's path, and the fit says why it does not work here.
+    assert rec["fit"]["today"]["garage_conversion"]["approval_path"] == "by_right"
     assert rec["fit"]["today"]["garage_conversion"]["limiting"] == "no_garage"
+    assert r["citations"]["approval_by_type.garage_conversion"]["section"]
     assert "925.06" in r["citations"]["approval_by_type.detached_new"]["section"]
     assert r["citations"]["approval_by_type.internal"]["section"]
     idx = gpd.pd.read_parquet(built / "index.parquet").set_index("parcel_id")
     assert idx.loc["T01", "rule_lot"] is None
+    assert idx.loc["T01", "approval_garage_today"] == "by_right"
     man = json.loads((built / "manifest.json").read_text())
     assert man["stale_tracts"] == []
 
@@ -340,7 +347,7 @@ def test_height_from_stories() -> None:
     out = bl.to_buildings(rows, stories=2.0)
     assert out[0][1].height_ft == 20.0 and out[0][0]["height_source"] == "stories"
     assert out[1][1].height_ft is None
-    rec = bl.building_rec(out[0][0], out[0][1], 2271)
+    rec = bl.building_rec(out[0][0], out[0][1], 2272)
     assert rec["height_source"] == "stories"
 
 

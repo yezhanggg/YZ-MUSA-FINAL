@@ -98,7 +98,7 @@
       "url": "https://ecode360.com/11078516",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Same as path."
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board."
     },
     "alternatives": {
       "value": [
@@ -197,34 +197,6 @@
       "value": [
         {
           "kind": "other",
-          "condition": "AC accessory structures: 20 ft from a side or rear property line and 10 ft from the house. 20 ft high.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "AC"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "280-11, 280-12C",
-          "url": "https://ecode360.com/11078510"
-        },
-        {
-          "kind": "other",
-          "condition": "R-4 accessory structures: 3 ft from a side or rear property line (10 ft in R-1 to R-3).",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-4"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "280-32C",
-          "url": "https://ecode360.com/11078639"
-        },
-        {
-          "kind": "other",
           "condition": "A rented unit needs an annual rental license from the township, with inspections.",
           "effect": "condition",
           "applies_to": null,
@@ -236,11 +208,11 @@
           "url": "https://ecode360.com/10973424"
         }
       ],
-      "section": "280-12C, 280-32C, 226-7",
+      "section": "226-7",
       "url": "https://ecode360.com/11078453",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "Accessory yards that differ by district (the schema has no district accessory yard field) and rental licensing."
+      "note": "Rental licensing."
     }
   },
   "form": {
@@ -268,7 +240,7 @@
       "url": "https://ecode360.com/11078540",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Accessory rule: 'not ... closer than 10 feet from a side or rear property line' in R-1, R-1A, R-2, R-3. AC 20 ft (280-12C) and R-4 3 ft (280-32C) are in gates."
+      "note": "Accessory rule: 'not ... closer than 10 feet from a side or rear property line' in R-1, R-1A, R-2, R-3. AC 20 ft and R-4 3 ft are in the district rows."
     },
     "setback_rear_ft": {
       "value": 10,
@@ -276,7 +248,7 @@
       "url": "https://ecode360.com/11078540",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Same rule as side. AC 20 ft, R-4 3 ft (gates)."
+      "note": "Same rule as side. AC 20 ft, R-4 3 ft in the district rows."
     },
     "separation_ft": {
       "value": 10,
@@ -402,6 +374,22 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "Principal building rear yard. An attached unit is part of the principal building."
+      },
+      "accessory_setback_side_ft": {
+        "value": 20,
+        "section": "280-12C",
+        "url": "https://ecode360.com/11078510",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not closer than 20 feet from a side or rear property line'. 10 ft from the house."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "280-12C",
+        "url": "https://ecode360.com/11078510",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not closer than 20 feet from a side or rear property line'. 10 ft from the house."
       }
     },
     "R-1": {
@@ -647,6 +635,22 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "Principal building rear yard. An attached unit is part of the principal building."
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "280-32C",
+        "url": "https://ecode360.com/11078639",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not be closer than three feet from a side or rear property line'."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "280-32C",
+        "url": "https://ecode360.com/11078639",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'not be closer than three feet from a side or rear property line'."
       }
     },
     "R-5": {

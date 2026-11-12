@@ -126,6 +126,18 @@ def run() -> list[dict[str, Any]]:
     return rows
 
 
+def place_aliases() -> dict[str, str]:
+    """Places that use another place's text: corpus/sources/shared_text.csv with columns
+    geoid, source_geoid, note. Used for a county zoning ordinance that covers several sample places
+    (the manifest keeps one GEOID per URL)."""
+    import csv
+
+    p = sub("sources") / "shared_text.csv"
+    if not p.exists():
+        return {}
+    return {r["geoid"]: r["source_geoid"] for r in csv.DictReader(p.open()) if r.get("geoid")}
+
+
 def load_chunks(path: Path | None = None) -> list[dict[str, Any]]:
     p = path or sub("chunks") / "chunks.jsonl"
     return [json.loads(x) for x in p.read_text().splitlines() if x.strip()]

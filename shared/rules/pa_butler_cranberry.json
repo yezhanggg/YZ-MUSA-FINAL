@@ -155,7 +155,7 @@
       "value": [
         {
           "kind": "design",
-          "condition": "The form shown as detached_new is the breezeway unit: the code treats it as attached 'via a breezeway or the like that is no longer than 30 feet', with its own bathroom. A free-standing cottage is not allowed.",
+          "condition": "The unit outside the house must be 'attached to the principal structure via a breezeway or the like that is no longer than 30 feet', with its own bathroom. A free-standing cottage is not allowed.",
           "effect": "condition",
           "applies_to": [
             "detached_new"
@@ -165,7 +165,8 @@
           "when": "always",
           "test": null,
           "section": "27-202 'Accessory dwelling unit'",
-          "url": "https://ecode360.com/14178551"
+          "url": "https://ecode360.com/14178551",
+          "bill_overrides": true
         },
         {
           "kind": "district",
@@ -226,22 +227,6 @@
           "test": null,
           "section": "27-506.7.B(3), 27-506.9.1",
           "url": "https://ecode360.com/14406559"
-        },
-        {
-          "kind": "other",
-          "condition": "RMU: accessory structure or building setbacks are 2 ft from any property line.",
-          "effect": "condition",
-          "applies_to": [
-            "detached_new"
-          ],
-          "districts": [
-            "RMU"
-          ],
-          "building_types": null,
-          "when": "always",
-          "test": null,
-          "section": "27-414.6.C",
-          "url": "https://ecode360.com/14179504"
         }
       ],
       "section": "27-202, 27 Attachment 3, 27-403, 27-404, 27-506",
@@ -263,6 +248,18 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "Quarters: inside the house or an addition (internal, attached). ADU: the code calls it attached, 'attached to the principal structure via a breezeway or the like that is no longer than 30 feet'. It is recorded as detached_new only as a labelled proxy, so the 1,200 sq ft and 50% caps land on it and not on the quarters. A free-standing cottage is not allowed."
+    },
+    "labels": {
+      "value": {
+        "detached_new": "attached by a breezeway (30 ft or less)",
+        "internal": "accessory dwelling quarters inside the house",
+        "attached": "accessory dwelling quarters in an addition"
+      },
+      "section": "27-202 'Accessory dwelling unit', 'Accessory dwelling quarters'",
+      "url": "https://ecode360.com/14178551",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "The ADU is 'attached to the principal structure via a breezeway or the like that is no longer than 30 feet'. Quarters are 'connected internally' or 'via an addition'."
     }
   },
   "size": {
@@ -617,6 +614,30 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "45 ft for any building or structure. 75 ft perimeter setback. Lot area by PRD rules (Part 9)."
+      },
+      "accessory_setback_front_ft": {
+        "value": 2,
+        "section": "27-414.6.C",
+        "url": "https://ecode360.com/14179504",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Accessory Structure or Building. Setbacks shall be two feet from any property line.'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 2,
+        "section": "27-414.6.C",
+        "url": "https://ecode360.com/14179504",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Accessory Structure or Building. Setbacks shall be two feet from any property line.'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 2,
+        "section": "27-414.6.C",
+        "url": "https://ecode360.com/14179504",
+        "verified_on": "2026-11-11",
+        "confidence": "verified",
+        "note": "'Accessory Structure or Building. Setbacks shall be two feet from any property line.'"
       }
     }
   }

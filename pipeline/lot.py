@@ -2,7 +2,7 @@
 
 The JSON Schema is `pipeline/lot_schema.json`. The TypedDicts below mirror it for type checkers.
 Geometry is stored as GeoJSON in WGS84. It is computed in a local feet CRS
-(EPSG:2272 Philadelphia, EPSG:2271 Pittsburgh) and converted here on the way out.
+(EPSG:2272, NAD83 Pennsylvania South, for both Philadelphia and Pittsburgh) and converted here on the way out.
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from shapely.geometry.base import BaseGeometry
 SCHEMA_PATH = Path(__file__).with_name("lot_schema.json")
 SCHEMA_VERSION = "1.0"
 SCENARIOS = ("today", "local_reform", "state_reform")
-LOCAL_CRS = {"philadelphia": 2272, "pittsburgh": 2271}
+LOCAL_CRS = {"philadelphia": 2272, "pittsburgh": 2272}
 PA_BOX = (-80.6, 39.6, -74.6, 42.4)   # lon / lat around Pennsylvania with a margin
 # Keys that would carry a person's name. The schema already forbids unknown keys in facts,
 # this catches them anywhere else in the record too.
@@ -136,6 +136,9 @@ class RulesRec(TypedDict, total=False):
     state_limits: dict[str, dict[str, Any]]
     fire_separation: dict[str, Optional[float]]
     historic_path: bool
+    rule_path_by_type: dict[str, Approval]           # path from the rules alone, before the lot's facts
+    lot_conditions_by_type: dict[str, str]           # lot fact that changes a type's path
+    citations_by_type: dict[str, Optional[Citation]]  # section behind each type's path
 
 
 class Facts(TypedDict, total=False):

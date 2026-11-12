@@ -1,7 +1,7 @@
 """Vector fit engine: does a backyard home fit on a lot, where, and how big can it be.
 
 All geometry is in a local projected CRS measured in feet
-(EPSG:2272 for Philadelphia, EPSG:2271 for Pittsburgh).
+(EPSG:2272, NAD83 Pennsylvania South, for both Philadelphia and Pittsburgh).
 The core functions are pure. They take shapely geometry and a rules dict and return results.
 File reading and writing only happens in the `demo` command at the bottom.
 
@@ -1111,7 +1111,7 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     d.add_argument("--n", type=int, default=200)
     d.add_argument("--out", required=True)
     d.add_argument("--county", default="42101", help="county FIPS prefix of lot_id, empty for all")
-    d.add_argument("--crs", default="EPSG:2272", help="local feet CRS: 2272 Philadelphia, 2271 Pittsburgh")
+    d.add_argument("--crs", default="EPSG:2272", help="local feet CRS: 2272 (Pennsylvania South) for Philadelphia and Pittsburgh")
     d.add_argument("--streets", default=None, help="OSM drive graph (.graphml)")
     d.add_argument("--raster", default=None, help="raster rule results CSV to compare against")
     d.add_argument("--seed", type=int, default=0)

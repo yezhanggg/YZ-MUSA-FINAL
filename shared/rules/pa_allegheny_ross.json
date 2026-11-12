@@ -83,7 +83,7 @@
       "url": "https://ecode360.com/31084617",
       "verified_on": "2026-11-11",
       "confidence": "secondary",
-      "note": "Same as path."
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board."
     },
     "alternatives": {
       "value": [
@@ -252,14 +252,6 @@
       "confidence": "secondary",
       "note": "Accessory rule, not an ADU rule: 'the height of each shall not exceed 14 feet as measured from the finished floor level to the peak'."
     },
-    "accessory_structure_max_sqft": {
-      "value": 720,
-      "section": "27-906.6.D(1)(d)",
-      "url": "https://ecode360.com/31084638",
-      "verified_on": "2026-11-11",
-      "confidence": "verified",
-      "note": "'No more than two residential accessory buildings with a combined square footage of 720 square feet'."
-    },
     "setback_front_ft": {
       "value": null,
       "section": "27-906.6.D(1)(a), 27-1006.3",
@@ -307,6 +299,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "A unit inside or attached to the house takes the 2-story, 35 ft district height."
+    },
+    "accessory_floor_area_total_sqft": {
+      "value": 720,
+      "section": "27-906.6.D(1)(d)",
+      "url": "https://ecode360.com/31084638",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'No more than two residential accessory buildings with a combined square footage of 720 square feet shall be permitted per zoned lot'. One total for the lot, an existing garage included. Not a cap on one unit."
     }
   },
   "use": {

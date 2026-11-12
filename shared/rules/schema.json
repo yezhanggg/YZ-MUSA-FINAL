@@ -237,6 +237,9 @@
       "properties": {
         "types_allowed": {
           "$ref": "#/$defs/leaf_types"
+        },
+        "labels": {
+          "$ref": "#/$defs/leaf_labels"
         }
       }
     },
@@ -332,6 +335,21 @@
         "accessory_cap_districts": {
           "$ref": "#/$defs/leaf_list",
           "description": "Districts where accessory_structure_max_sqft applies, when the code limits it (Lower Paxton: residential lots under 2 acres)."
+        },
+        "accessory_floor_area_total_sqft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Lot-wide total floor area of all accessory buildings, an existing garage included (Warminster 27-1786.1.G, 500 sq ft of ground floor area). Not a per-building cap."
+        },
+        "accessory_structure_threshold_sqft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Above this floor area an accessory building needs a special exception or other approval (Norristown 320-232A(2), 600 sq ft). Not a cap. Use accessory_structure_max_sqft only for a hard cap."
+        },
+        "unit_within_building_envelope": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "true when the unit must sit inside the building envelope (outside the district yards), so no alley rear default applies (Warminster 27-1793)."
+        },
+        "yard_tiers": {
+          "$ref": "#/$defs/leaf_yard_tiers"
         }
       }
     },
@@ -1080,6 +1098,21 @@
         "separation_ft": {
           "$ref": "#/$defs/leaf_num",
           "description": "Minimum distance between dwellings on a lot in this district, when the code sets one."
+        },
+        "accessory_setback_front_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Accessory building yard in this district, when it differs from the town-wide envelope value."
+        },
+        "accessory_setback_side_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Accessory building yard in this district, when it differs from the town-wide envelope value."
+        },
+        "accessory_setback_rear_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Accessory building yard in this district, when it differs from the town-wide envelope value."
+        },
+        "yard_tiers": {
+          "$ref": "#/$defs/leaf_yard_tiers"
         }
       }
     },
@@ -1393,6 +1426,10 @@
                   "type": "string"
                 },
                 "description": "The gate applies everywhere except these districts or overlays."
+              },
+              "bill_overrides": {
+                "type": "boolean",
+                "description": "true when HB 2186 would remove this condition (for example a connection or employee-only rule). Family, owner and lot rules are already treated so."
               }
             }
           }
@@ -1510,7 +1547,218 @@
                   "string",
                   "null"
                 ]
+              },
+              "confidence": {
+                "enum": [
+                  "verified",
+                  "secondary",
+                  "unverified"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
               }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_yard_tiers": {
+      "type": "object",
+      "description": "Yards that depend on lot size. Each tier: lot size range and the yards. The resolver picks the tier for the lot, or says the yards depend on the lot tier.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "min_lot_sqft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "max_lot_sqft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "applies_to": {
+                "enum": [
+                  "principal",
+                  "accessory"
+                ]
+              },
+              "setback_front_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "setback_side_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "setback_rear_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_labels": {
+      "type": "object",
+      "description": "Display names for ADU forms, keyed by type, e.g. {\"detached_new\": \"unit joined to the house by a breezeway\"}.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "detached_new": {
+              "type": "string"
+            },
+            "garage_conversion": {
+              "type": "string"
+            },
+            "over_garage": {
+              "type": "string"
+            },
+            "internal": {
+              "type": "string"
+            },
+            "attached": {
+              "type": "string"
             }
           }
         },

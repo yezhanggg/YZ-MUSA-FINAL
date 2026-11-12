@@ -216,7 +216,7 @@ def _built() -> bool:
 @pytest.mark.skipif(not _built(), reason="processed Pittsburgh data not found")
 def test_built_lots_shape():
     lots = gpd.read_parquet(paths.processed_dir("pittsburgh") / "lots.parquet")
-    assert lots.crs.to_epsg() == 2271
+    assert lots.crs.to_epsg() == 2272
     assert lots["lot_id"].is_unique
     assert set(lots["housing_type"]) <= set(pgh.HOUSING_TYPES)
     assert lots["lon"].between(-80.2, -79.8).all() and lots["lat"].between(40.3, 40.6).all()

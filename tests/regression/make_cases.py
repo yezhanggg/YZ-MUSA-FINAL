@@ -527,7 +527,7 @@ def pick() -> int:
                 "picked": dt.date.today().isoformat(),
                 "seed": SEED,
                 "per_place": PER_PLACE,
-                "geometry": "WKB hex in the place's local feet CRS (Pittsburgh EPSG:2271, Philadelphia EPSG:2272)",
+                "geometry": "WKB hex in the place's local feet CRS (EPSG:2272 for both places)",
                 "note": "Real lots. No owner, mailing, sale or value columns. Rebuild with: "
                 "python tests/regression/make_cases.py --pick",
             },

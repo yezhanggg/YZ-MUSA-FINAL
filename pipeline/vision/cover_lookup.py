@@ -23,7 +23,7 @@ SQFT_PER_M2 = 10.7639
 # map value -> output class, per source
 RASTER_CLASSES = {1: "tree", 2: "open", 3: "open", 4: "other", 5: "building", 6: "hard_surface", 7: "hard_surface"}
 MODEL_CLASSES = {0: "other", 1: "building", 2: "tree", 3: "open", 4: "hard_surface"}
-PITTSBURGH_RUN = "ft_c5_pittsburgh"
+PITTSBURGH_RUN = "r34_c5_s0"  # zero-shot run: the same model as the lot-level cover (cover_model_r34_c5_s0.parquet)
 
 
 @lru_cache(maxsize=4)

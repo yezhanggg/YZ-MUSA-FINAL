@@ -378,14 +378,6 @@
       "confidence": "verified",
       "note": "27-1793 sets no floor area cap for the unit. A unit inside the house has no size limit."
     },
-    "max_sqft_accessory_building": {
-      "value": 500,
-      "section": "27-1786.1.G",
-      "url": "https://ecode360.com/36209475",
-      "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "Accessory structures 'shall not exceed a total of 500 square feet of ground floor area.' Reading: one total for all accessory buildings on the lot, so an existing garage uses part of it. Reaches a new in-law building."
-    },
     "max_share_of_house": {
       "value": null,
       "section": "27-1793",
@@ -467,6 +459,22 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "A unit in the house takes the 35 ft building height."
+    },
+    "accessory_floor_area_total_sqft": {
+      "value": 500,
+      "section": "27-1786.1.G",
+      "url": "https://ecode360.com/36209475",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Accessory structures 'shall not exceed a total of 500 square feet of ground floor area.' Reading: one total for all accessory buildings on the lot, so an existing garage uses part of it. Not a cap on the unit alone."
+    },
+    "unit_within_building_envelope": {
+      "value": true,
+      "section": "27-1793.1.D, 27-2104.2",
+      "url": "https://ecode360.com/36209544",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'located within the building envelope for the district'. 27-2104.2: 'the area of the lot excluding all required yard areas, setbacks, and easements'."
     }
   },
   "use": {

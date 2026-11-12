@@ -415,3 +415,46 @@ describe('get_rule_text pass 4', () => {
     expect(scoped.summary).toMatch(/Outside: a use not listed may be authorized by special exception \(87-186A\)/);
   });
 });
+
+// Pass 5.
+FAKE_FILES.pa_testing_five = cityLike('Fiveton', {
+  adu: { term: leaf('accessory dwelling unit', '27-202'), status: leaf('allowed_by_right', '27-202') },
+  approval: { path: leaf('by_right', '27-202'), alternatives: leaf([{ name: 'Conversion', path: 'by_right', section: '165-212', confidence: 'secondary', note: 'Repealed in 2023' }], '165') },
+  form: { labels: leaf({ detached_new: 'unit joined to the house by a breezeway' }, '27-202') },
+  envelope: { setback_side_ft: leaf(10, 'acc yard'), accessory_structure_threshold_sqft: leaf(600, '320-232A(2)'), accessory_floor_area_total_sqft: leaf(500, '27-1786.1.G') },
+  eligibility: { gates: leaf([{ kind: 'other', condition: 'No habitation on alley lots', effect: 'bars', section: '320-238', url: 'https://ecode360.com/9' }], '320') },
+  districts: {
+    AC: { accessory_setback_side_ft: leaf(20, '280-4 AC'), setback_side_ft: leaf(50, 'Table AC') },
+    'R-2': { yard_tiers: leaf([{ max_lot_sqft: 20000, applies_to: 'accessory', setback_side_ft: 10, section: 'small' }, { min_lot_sqft: 20000, applies_to: 'accessory', setback_side_ft: 20, section: 'large' }], '200-23') },
+  },
+});
+TOWNS.push({ geoid: '4299900011', name: 'Fiveton township', county: 'Testing', type: 'township', population: 3000, file: 'pa_testing_five', status: 'drafted', checked_on: '2026-11-11' });
+type P5 = P4 & { forms?: Forms & { labels?: Record<string, string> }; other_ways_to_add_a_unit?: { options: { display_path: string }[] } };
+
+describe('get_rule_text pass 5', () => {
+  it('gives a use variance path to ask where a not-addressed town has no unlisted-use path', async () => {
+    const out = (await getRuleText({ place: 'Barton', topic: 'approval' }, FAKE)) as P5;
+    expect(out.path_to_ask!.path).toBe('variance');
+    expect(out.path_to_ask!.note).toMatch(/use variance from the Zoning Hearing Board/);
+    expect(out.path_to_ask!.section).toMatch(/MPC 910.2/);
+  });
+
+  it('shows form labels, district accessory yards, lot tiers, thresholds and totals', async () => {
+    const ac = (await getRuleText({ place: 'Fiveton', topic: 'size', district: 'AC' }, FAKE)) as P5;
+    expect(ac.forms!.labels!.detached_new).toMatch(/breezeway/);
+    expect(((ac.forms!.accessory_building.yards as Record<string, Rule>).side).value).toBe(20);
+    expect(((ac.forms!.inside_or_attached.attached_yards as Record<string, Rule>).side).value).toBe(50);
+    const r2 = (await getRuleText({ place: 'Fiveton', topic: 'size', district: 'R-2' }, FAKE)) as P5;
+    expect((r2.forms!.accessory_building.yards as Record<string, { depends_on_lot_tier?: boolean }>).side.depends_on_lot_tier).toBe(true);
+    const sizes = ac.conditions!.filter((c) => c.kind === 'size').map((c) => c.condition);
+    expect(sizes.some((s) => /over 600 sq ft needs a further approval/.test(s))).toBe(true);
+    expect(sizes.some((s) => /at most 500 sq ft of ground floor area/.test(s))).toBe(true);
+  });
+
+  it('shows a scope-less bar as a condition and an unsettled alternative as ask the zoning officer', async () => {
+    const out = (await getRuleText({ place: 'Fiveton', topic: 'eligibility' }, FAKE)) as P5;
+    const bar = out.conditions!.find((c) => c.section === '320-238')!;
+    expect(bar.effect).toBe('condition');
+    expect(out.other_ways_to_add_a_unit!.options[0].display_path).toBe('listed as by right, but ask the zoning officer');
+  });
+});

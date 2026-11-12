@@ -12,6 +12,9 @@ A segment starts at a line that looks like a section heading. Patterns (start of
   "280-108. Title"                chapter-section numbers followed by a title
   "ARTICLE XXV", "PART 3", "CHAPTER 27"  kept as the article heading
 
+Word files (.doc, .docx) are read with the macOS textutil tool, as one page. A PDF or Word link
+that came back as an HTML page (a redirect to a home page) is skipped.
+
 Repeated page headers and footers are dropped (a line pattern in the first or last four lines of
 more than 15% of pages).
 A PDF is flagged scanned when more than half of its pages have under 50 characters of text.
@@ -184,15 +187,39 @@ def segment(lines_by_page: list[list[str]]) -> list[dict[str, Any]]:
     return out
 
 
+def doc_pages(path: Path) -> list[str]:
+    """Old Word files (.doc, .docx) through the macOS textutil tool. One page: Word files carry no
+    fixed pages."""
+    import subprocess
+
+    out = subprocess.run(["textutil", "-convert", "txt", "-stdout", str(path)], capture_output=True, text=True,
+                         timeout=120)
+    if out.returncode != 0:
+        raise RuntimeError(f"textutil failed: {out.stderr[:200]}")
+    return [out.stdout]
+
+
+def served_page_not_doc(rec: dict[str, Any], kind: str) -> bool:
+    """A link to a PDF or Word file that came back as an HTML page (a redirect to a home page or a
+    login page) is not the document."""
+    return kind == "html" and bool(re.search(r"\.(pdf|docx?)($|\?)", rec["url"], re.I))
+
+
 def extract_doc(rec: dict[str, Any]) -> dict[str, Any]:
     path = Path(rec["path"])
     doc_id = f"{rec['geoid']}_{path.stem}"
     kind = path.suffix.lstrip(".")
     pages: list[str]
+    if served_page_not_doc(rec, kind):
+        return {"doc_id": doc_id, "geoid": rec["geoid"], "url": rec["url"], "final_url": rec.get("final_url"),
+                "kind": kind, "pages": 0, "scanned": None, "segments": [],
+                "skipped": "document link served an HTML page (redirect), not the document"}
     if kind == "pdf":
         pages = pdf_pages(path)
     elif kind == "html":
         pages = html_pages(path)
+    elif kind in ("doc", "docx"):
+        pages = doc_pages(path)
     else:
         return {"doc_id": doc_id, "geoid": rec["geoid"], "url": rec["url"], "kind": kind, "pages": 0,
                 "scanned": None, "segments": [], "skipped": f"no extractor for {kind}"}

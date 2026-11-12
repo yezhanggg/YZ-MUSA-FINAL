@@ -68,7 +68,7 @@ export interface LotPart {
   place?: string;
   county_fips?: string;
   tract?: string;
-  crs_local: 2272 | 2271;
+  crs_local: 2272;
   polygon: AreaGeom;
   area_sqft: number;
   edges?: Edge[];
@@ -185,6 +185,13 @@ export interface Rules {
   fire_separation?: Record<string, number | null>;
   /** True when the historic path opened the unit. */
   historic_path?: boolean;
+  // Added in the rebuild of the evening of Nov 11, 2026.
+  /** Path per unit type from the rules alone, before this lot's own facts (such as having no garage). */
+  rule_path_by_type?: Partial<Record<RuleType, string>>;
+  /** The lot fact that changes a type's path, e.g. "No garage or outbuilding on this lot". */
+  lot_conditions_by_type?: Partial<Record<RuleType, string>>;
+  /** The rule section behind each type's path. */
+  citations_by_type?: Partial<Record<RuleType, Citation | null>>;
 }
 
 export interface Buildable {
@@ -320,7 +327,8 @@ export const LOT_KEYS = {
     'max_share_of_house', 'min_lot_sqft', 'max_height_ft', 'setback_front_ft', 'setback_side_ft', 'setback_rear_ft',
     'setback_rear_alley_ft', 'separation_ft', 'max_building_coverage', 'max_impervious', 'owner_occupancy',
     'parking_spaces', 'citations', 'assumed', 'approval_by_type', 'max_height_by_type', 'setback_rear_effective_ft',
-    'rear_setback_rule', 'state_limits', 'fire_separation', 'historic_path',
+    'rear_setback_rule', 'state_limits', 'fire_separation', 'historic_path', 'rule_path_by_type',
+    'lot_conditions_by_type', 'citations_by_type',
   ]),
   buildable: keysOf<Buildable>()(['keep', 'keep_sqft', 'clear', 'clear_sqft', 'front_sqft']),
   check: keysOf<Check>()(['pass', 'value', 'limit', 'note']),

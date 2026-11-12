@@ -36,7 +36,7 @@ from pipeline.places.common import cut_buildings_to_lots as assign_buildings
 
 PLACE = "pittsburgh"
 COUNTY_FIPS = "42003"  # Allegheny County
-WORK_CRS = "EPSG:2271"  # NAD83 / Pennsylvania South (ftUS). Lengths and areas in feet
+WORK_CRS = "EPSG:2272"  # NAD83 / Pennsylvania South (ftUS), the zone of Allegheny County. Lengths and areas in feet
 CITY_WARDS = "MUNICODE >= 101 AND MUNICODE <= 132"
 # Loose lon/lat box around the city. Used for services that cannot filter by ward.
 CITY_BBOX = (-80.0955, 40.3615, -79.8657, 40.5012)

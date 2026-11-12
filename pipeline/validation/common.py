@@ -36,7 +36,7 @@ CITIES: dict[str, dict[str, Any]] = {
     },
     "pittsburgh": {
         "fips": "42003",
-        "epsg": 2271,
+        "epsg": 2272,
         "export": "https://imagery.pasda.psu.edu/arcgis/rest/services/pasda/PEMAImagery2022/MapServer/export",
         "layers": "show:3",
         "imagery": "PEMA orthoimagery 2022 (West), 0.5 ft, via PASDA",

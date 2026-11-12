@@ -115,6 +115,25 @@ Other rules:
 - A not-addressed town whose path is a special exception for unlisted uses reads as not allowed, with `path_to_ask`. It is a hearing, not an ADU rule.
 - Parking: leave `spaces_required` null and fill `parking.reading` when the count for the ADU is open.
 
+## More fields (pass 5)
+
+| Field | Use it for | Example |
+|---|---|---|
+| `envelope.accessory_floor_area_total_sqft` | A lot-wide total for all accessory buildings, an existing garage included. Not a per-building cap | Warminster 27-1786.1.G, 500 |
+| `envelope.accessory_structure_threshold_sqft` | A size above which an accessory building needs a further approval. Not a cap | Norristown 320-232A(2), 600 |
+| `envelope.accessory_structure_max_sqft` | Only a hard cap. Leave the leaf out when there is no number | |
+| `districts.<code>.accessory_setback_front_ft`, `_side_ft`, `_rear_ft` | Accessory yards that differ by district. They win for a detached unit | Radnor AC 20, R-4 3. Cranberry RMU 2 |
+| `envelope.yard_tiers`, `districts.<code>.yard_tiers` | Yards that depend on lot size: `{min_lot_sqft, max_lot_sqft, applies_to (principal or accessory), setback_*_ft, section}` | Lower Makefield R-1 and R-2 |
+| `form.labels` | A display name per form | Cranberry: `detached_new` is the unit joined by a breezeway |
+| gate `bill_overrides: true` | A condition HB 2186 would remove that is not a family, owner or lot rule | Cranberry breezeway, employee-only units |
+| `envelope.unit_within_building_envelope` | The unit must sit inside the building envelope, so no alley rear default | Warminster 27-1793 |
+| alternative `confidence`, `note` | An alternative whose reading is not settled. Shown as "listed, but ask the zoning officer" | Upper Merion conversion (165-212 repealed) |
+
+Other rules:
+
+- A gate with `effect: bars` needs a `test` or a scope (`districts`, `not_districts`, `building_types`, `when`). Without one it is shown as a condition, and `python -m pipeline.rules validate` prints a warning. To bar a form everywhere, leave it out of `form.types_allowed`.
+- `path_to_ask` says "may be authorized" only when the file sets `approval.unlisted_use_path`. A not-addressed town with a variance path gets a Zoning Hearing Board use variance with MPC 910.2.
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

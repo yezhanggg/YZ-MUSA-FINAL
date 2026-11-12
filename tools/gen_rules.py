@@ -1,7 +1,7 @@
 """Generate the per-file tables of docs/RULES.md from shared/rules/*.json."""
 import json, re, sys
 from pathlib import Path
-R = Path.home()/"Developer/yz-musa-build/shared/rules"
+R = Path(__file__).resolve().parents[1]/"shared/rules"
 def load(n): return json.loads((R/f"{n}.json").read_text())
 def clean(t):
     if t is None: return ""
