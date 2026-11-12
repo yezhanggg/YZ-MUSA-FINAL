@@ -4,7 +4,7 @@ geopandas
 pyogrio
 rasterio
 rasterstats
-osmnx>=2.0
+osmnx>=2.1.1
 networkx
 scikit-learn
 requests
