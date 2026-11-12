@@ -9,5 +9,3 @@ const list = (dir: string, ext: string) => {
 };
 
 export const LOT_TRACTS: string[] = list('lots', '.json');
-export const HAS_FIT_CURVES: boolean = existsSync(resolve(DATA, 'fit_curves.json'));
-export const HAS_LOT_DETAIL: boolean = existsSync(resolve(DATA, 'lot_detail.pmtiles'));

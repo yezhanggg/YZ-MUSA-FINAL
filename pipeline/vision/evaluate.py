@@ -10,6 +10,7 @@ the published v2 score (test mIoU 0.6985):
 
     python -m pipeline.vision.evaluate ~/musa-drive/models/<run>/best.pt --tta
 """
+
 from __future__ import annotations
 
 import argparse
@@ -17,6 +18,7 @@ import json
 import sys
 import time
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import torch
@@ -34,7 +36,7 @@ def pick_device() -> str:
     return "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
 
 
-def role_boxes(dataset: str, role: str, n: int):
+def role_boxes(dataset: str, role: str, n: int) -> Any:
     """(box id, group, image, label with n classes) for one role.
 
     dataset "chesapeake" = the course boxes (group = urban / suburban / rural).
@@ -55,28 +57,39 @@ def role_boxes(dataset: str, role: str, n: int):
         yield b.GEOID, b.stratum, img, lab
 
 
-def tree_offset_on_val(model, meta: dict, device: str, tta: bool, log=print,
-                       dataset: str = "chesapeake") -> tuple[float, list[dict], dict]:
+def tree_offset_on_val(
+    model: Any, meta: dict[str, Any], device: str, tta: bool, log: Any = print, dataset: str = "chesapeake"
+) -> tuple[float, list[dict[str, Any]], dict[str, Any]]:
     """Try each tree offset on the validation boxes and keep the best one (notebook 03, cell 8)."""
     n = meta["n_classes"]
     classes = classes_for(n)
     cms = {b: np.zeros((n, n), np.int64) for b in OFFSETS}
     for _, _, img, lab in role_boxes(dataset, "val", n):
-        p = predict_array(model, img, meta["mean"], meta["std"], device, n_classes=n, ndvi=meta["ndvi"],
-                          proba=True, tta=tta)
+        p = predict_array(
+            model, img, meta["mean"], meta["std"], device, n_classes=n, ndvi=meta["ndvi"], proba=True, tta=tta
+        )
         lp = np.log(p.astype(np.float32) + 1e-6)
         for b in OFFSETS:
             q = lp.copy()
             q[TREE] += b
             cms[b] += confusion(q.argmax(0).astype(np.uint8), lab, n)
-    grid = [{"tree_offset": b, "val_miou": scores(c, classes)["miou"], "tree_iou": scores(c, classes)["iou"]["tree"],
-             "pred_tree / label_tree": round(float(c[:, TREE].sum() / c[TREE].sum()), 3)} for b, c in cms.items()]
+    grid = [
+        {
+            "tree_offset": b,
+            "val_miou": scores(c, classes)["miou"],
+            "tree_iou": scores(c, classes)["iou"]["tree"],
+            "pred_tree / label_tree": round(float(c[:, TREE].sum() / c[TREE].sum()), 3),
+        }
+        for b, c in cms.items()
+    ]
     best = max(grid, key=lambda r: r["val_miou"])
     log(f"  tree offset grid on val: {[(r['tree_offset'], r['val_miou']) for r in grid]} -> {best['tree_offset']}")
     return float(best["tree_offset"]), grid, scores(cms[best["tree_offset"]], classes)
 
 
-def score_test(model, meta: dict, device: str, tta: bool, bias, log=print, dataset: str = "chesapeake") -> dict:
+def score_test(
+    model: Any, meta: dict[str, Any], device: str, tta: bool, bias: Any, log: Any = print, dataset: str = "chesapeake"
+) -> dict[str, Any]:
     """Confusion matrices on the test boxes: all pixels, by group, and with the edge band left out."""
     n = meta["n_classes"]
     classes = classes_for(n)
@@ -85,8 +98,9 @@ def score_test(model, meta: dict, device: str, tta: bool, bias, log=print, datas
     cm_by: dict[str, np.ndarray] = {}
     per_box = []
     for box_id, group, img, lab in role_boxes(dataset, "test", n):
-        pred = predict_array(model, img, meta["mean"], meta["std"], device, n_classes=n, ndvi=meta["ndvi"],
-                             tta=tta, bias=bias)
+        pred = predict_array(
+            model, img, meta["mean"], meta["std"], device, n_classes=n, ndvi=meta["ndvi"], tta=tta, bias=bias
+        )
         c = confusion(pred, lab, n)
         cm += c
         cm_by[group] = cm_by.get(group, np.zeros((n, n), np.int64)) + c
@@ -107,18 +121,29 @@ def score_test(model, meta: dict, device: str, tta: bool, bias, log=print, datas
         # merge hard surface into other, to compare with the 4-class model on equal terms
         groups = [[0, 4], [1], [2], [3]]
         out["as_4_classes"] = scores(merge_classes(cm, groups), classes_for(4))
-        out["as_4_classes"]["secondary_miou_edge_band_ignored"] = scores(merge_classes(cm_core, groups), classes_for(4))["miou"]
+        out["as_4_classes"]["secondary_miou_edge_band_ignored"] = scores(
+            merge_classes(cm_core, groups), classes_for(4)
+        )["miou"]
     return out
 
 
-def evaluate(ckpt: Path, tta: bool, bias_mode: str, device: str | None = None, log=print,
-             dataset: str = "chesapeake") -> dict:
+def evaluate(
+    ckpt: Path, tta: bool, bias_mode: str, device: str | None = None, log: Any = print, dataset: str = "chesapeake"
+) -> dict[str, Any]:
     device = device or pick_device()
     t0 = time.time()
     model, meta = load_model(ckpt, device)
     n = meta["n_classes"]
-    res: dict = {"checkpoint": str(ckpt), "dataset": dataset, "n_classes": n, "classes": classes_for(n), "tta": tta, "bias_mode": bias_mode,
-                 "best_epoch": meta.get("epoch"), "val_miou_at_save": meta.get("val_miou")}
+    res: dict[str, Any] = {
+        "checkpoint": str(ckpt),
+        "dataset": dataset,
+        "n_classes": n,
+        "classes": classes_for(n),
+        "tta": tta,
+        "bias_mode": bias_mode,
+        "best_epoch": meta.get("epoch"),
+        "val_miou_at_save": meta.get("val_miou"),
+    }
     bias = None
     if bias_mode == "auto":
         off, grid, val_final = tree_offset_on_val(model, meta, device, tta, log, dataset)
@@ -146,21 +171,29 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Score a land cover checkpoint on the test counties")
     ap.add_argument("checkpoint", type=Path)
     ap.add_argument("--tta", action="store_true", help="average 8 flips and turns")
-    ap.add_argument("--bias", default="auto", choices=["auto", "checkpoint", "none"],
-                    help="auto = pick the tree offset on validation, like notebook 03")
+    ap.add_argument(
+        "--bias",
+        default="auto",
+        choices=["auto", "checkpoint", "none"],
+        help="auto = pick the tree offset on validation, like notebook 03",
+    )
     ap.add_argument("--out", type=Path, help="default: test_scores.json next to the checkpoint")
     ap.add_argument("--device")
-    ap.add_argument("--data", default="chesapeake", help='"chesapeake" or "city:<name>" (bias is then picked on city val)')
+    ap.add_argument(
+        "--data", default="chesapeake", help='"chesapeake" or "city:<name>" (bias is then picked on city val)'
+    )
     a = ap.parse_args(argv)
     ckpt = a.checkpoint.expanduser()
     if a.data != "chesapeake" and not a.out:
         ap.error("--out is needed with --data city:<name>, so a city score never replaces test_scores.json")
     res = evaluate(ckpt, a.tta, a.bias, a.device, dataset=a.data)
-    out = (a.out.expanduser() if a.out else default_out(ckpt))
+    out = a.out.expanduser() if a.out else default_out(ckpt)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(res, indent=1, default=float))
-    print(f"test mIoU {res['miou']} | building IoU {res['iou']['building']} | edge band ignored "
-          f"{res['secondary_miou_edge_band_ignored']} | {res['minutes']} min -> {out}")
+    print(
+        f"test mIoU {res['miou']} | building IoU {res['iou']['building']} | edge band ignored "
+        f"{res['secondary_miou_edge_band_ignored']} | {res['minutes']} min -> {out}"
+    )
     return 0
 
 

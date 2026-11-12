@@ -217,6 +217,23 @@ const LIMITED: Record<string, string> = {
   allowed_by_right: 'Allowed by right',
 };
 
+/** Town lot rules HB 2186 does not address (pipeline/rules.py _bill_keeps): the district minimum lot, building coverage
+ * and the front yard, the district row first. Only when the district is known for the district minimum. */
+function billKeeps(file: Obj, district: string | null): string[] {
+  const rows = isObj(file.districts) ? file.districts : {};
+  const key = district ? districtIn(Object.keys(rows), district) : undefined;
+  const row = key && isObj(rows[key]) ? (rows[key] as Obj) : {};
+  const pick = (rowKey: string, block: string, leaf: string) => (isObj(row[rowKey]) ? (row[rowKey] as Obj) : leafAt(file, block, leaf));
+  const out: string[] = [];
+  const m = isObj(row.min_lot_sqft) ? (row.min_lot_sqft as Obj) : null;
+  if (m && typeof m.value === 'number' && m.value) out.push(`district minimum lot ${num(m.value)} sq ft for creating lots (${m.section ?? ''})`);
+  const cov = pick('max_building_coverage', 'coverage', 'max_building_coverage');
+  if (cov && typeof cov.value === 'number') out.push(`building coverage ${Math.round(cov.value * 100)}% (${cov.section ?? ''})`);
+  const front = pick('setback_front_ft', 'envelope', 'setback_front_ft');
+  if (front && typeof front.value === 'number') out.push(`front yard ${num(front.value)} ft (${front.section ?? ''})`);
+  return out;
+}
+
 /** Who may live there and the other gates, each with its section. Never decides, only states. */
 function conditionsOf(file: Obj, district: string | null): Obj[] {
   const out: Obj[] = [];
@@ -254,7 +271,9 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
       out.push(
         conf && conf.value === true
           ? cond('lot_size', `${code}: the ADU needs a lot that meets the district minimum of ${num(m.value)} sq ft (${conf.section ?? ''})`, m, { district: code, effect: 'bars' })
-          : cond('lot_size', `${code}: the district's minimum lot is ${num(m.value)} sq ft, a rule for creating lots. A smaller existing lot may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it`, m, { district: code }),
+          : // A bare district minimum is a rule for creating lots, not an ADU rule: the bill does not touch it
+            // (pipeline/rules.py kind district_lot_rule, not in BILL_OVERRIDES).
+            cond('district_lot_rule', `${code}: the district's minimum lot is ${num(m.value)} sq ft, a rule for creating lots, not an ADU rule. A smaller existing lot may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it`, m, { district: code }),
       );
     }
   }
@@ -442,10 +461,12 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   if (scopeList) out.scope = { districts: scopeList, in_scope: inScope, status_outside: outside, section: scopeLeaf?.section ?? null };
   if (inScope === false) out.lot_status = { value: outside, note: `This district is outside ${scopeList!.join(', ')}. The town's ADU numbers do not apply here` };
   const overridden = (out.conditions as Obj[]).filter((c) => c.bill_would_override);
-  if (overridden.length)
+  const kept = billKeeps(file, district);
+  if (overridden.length || kept.length)
     out.under_hb2186 = {
       note: 'HB 2186 (not law) would make one ADU by right and would remove these town conditions. Town size caps would give way to the bill floor: at least the lesser of 50 percent of the house or 850 sq ft',
       conditions: overridden.map((c) => ({ kind: c.kind, section: c.section ?? null })),
+      ...(kept.length ? { still_applies: `Town lot rules the bill does not address still apply: ${kept.join('. ')}` } : {}),
     };
   const alts = leafAt(file, 'approval', 'alternatives');
   if (Array.isArray(alts?.value) && alts!.value.length)

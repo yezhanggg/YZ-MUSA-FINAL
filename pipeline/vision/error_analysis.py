@@ -12,20 +12,22 @@ numbers and small figures:
 
     python -m pipeline.vision.error_analysis ~/Documents/YZ-MUSA-FINAL/data/models/unet_v2_r34.pt
 """
+
 from __future__ import annotations
 
 import argparse
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 
 from pipeline.vision import data
 from pipeline.vision.labels import CHESAPEAKE_CODES, CLASSES_4
-from pipeline.vision.metrics import confusion, edge_band, iou_per_class, scores
+from pipeline.vision.metrics import confusion, edge_band, scores
 
-PIXEL_M2 = 0.36                    # NAIP 2022 is 0.6 m
+PIXEL_M2 = 0.36  # NAIP 2022 is 0.6 m
 SIZE_BINS = [0, 50, 100, 200, 500, 1e9]
 SIZE_NAMES = ["<50 m2", "50-100", "100-200", "200-500", ">500"]
 TILE = 512
@@ -55,8 +57,17 @@ def predict_test(ckpt: Path, tta: bool = True) -> dict[str, np.ndarray]:
     for g in geoids:
         f = cache / f"{g}.npy"
         if not f.exists():
-            p = predict_array(model, data.read_image(g), meta["mean"], meta["std"], device, n_classes=meta["n_classes"],
-                              ndvi=meta["ndvi"], tta=tta, bias=bias)
+            p = predict_array(
+                model,
+                data.read_image(g),
+                meta["mean"],
+                meta["std"],
+                device,
+                n_classes=meta["n_classes"],
+                ndvi=meta["ndvi"],
+                tta=tta,
+                bias=bias,
+            )
             np.save(f, p)
         out[g] = np.load(f)
     del model
@@ -85,22 +96,29 @@ def size_bin_iou(lab: np.ndarray, pred: np.ndarray, acc: np.ndarray) -> None:
         acc[k, 2] += np.count_nonzero(fp & (pbin[pb] == k) & (pb > 0))
 
 
-def tile_errors(geoid: str, lab: np.ndarray, pred: np.ndarray) -> list[dict]:
+def tile_errors(geoid: str, lab: np.ndarray, pred: np.ndarray) -> list[dict[str, Any]]:
     rows = []
     for r in range(0, lab.shape[0] - TILE + 1, TILE):
         for c in range(0, lab.shape[1] - TILE + 1, TILE):
-            y, p = lab[r:r + TILE, c:c + TILE], pred[r:r + TILE, c:c + TILE]
+            y, p = lab[r : r + TILE, c : c + TILE], pred[r : r + TILE, c : c + TILE]
             ok = y != 255
             if ok.mean() < 0.5:
                 continue
             cm = confusion(p, y, 4)
-            rows.append({"GEOID": geoid, "r": r, "c": c, "error_rate": round(float(1 - np.trace(cm) / cm.sum()), 4),
-                         "label_share": (np.bincount(y[ok], minlength=4)[:4] / ok.sum()).round(3).tolist(),
-                         "pred_share": (np.bincount(p[ok], minlength=4)[:4] / ok.sum()).round(3).tolist()})
+            rows.append(
+                {
+                    "GEOID": geoid,
+                    "r": r,
+                    "c": c,
+                    "error_rate": round(float(1 - np.trace(cm) / cm.sum()), 4),
+                    "label_share": (np.bincount(y[ok], minlength=4)[:4] / ok.sum()).round(3).tolist(),
+                    "pred_share": (np.bincount(p[ok], minlength=4)[:4] / ok.sum()).round(3).tolist(),
+                }
+            )
     return rows
 
 
-def analyse(preds: dict[str, np.ndarray]) -> dict:
+def analyse(preds: dict[str, np.ndarray]) -> dict[str, Any]:
     boxes = data.split_boxes().set_index("GEOID")
     code_dir = data.vision_dir() / "codes"
     cm = np.zeros((4, 4), np.int64)
@@ -129,35 +147,65 @@ def analyse(preds: dict[str, np.ndarray]) -> dict:
         tiles += tile_errors(g, lab, pred)
 
     errors = cm.sum() - np.trace(cm)
-    pairs = [{"label": CLASSES_4[i], "predicted": CLASSES_4[j], "pixels": int(cm[i, j]),
-              "share_of_errors": round(float(cm[i, j] / errors), 4)}
-             for i in range(4) for j in range(4) if i != j]
+    pairs: list[dict[str, Any]] = [
+        {
+            "label": CLASSES_4[i],
+            "predicted": CLASSES_4[j],
+            "pixels": int(cm[i, j]),
+            "share_of_errors": round(float(cm[i, j] / errors), 4),
+        }
+        for i in range(4)
+        for j in range(4)
+        if i != j
+    ]
     pairs.sort(key=lambda r: -r["pixels"])
-    sizes = [{"bin": n, "label_pixels": int(a[0] + a[1]), "recall": round(float(a[0] / max(1, a[0] + a[1])), 4),
-              "iou": round(float(a[0] / max(1, a.sum())), 4), "fp_pixels": int(a[2])} for n, a in zip(SIZE_NAMES, size_acc)]
-    by_code = [{"code": int(k), "name": CHESAPEAKE_CODES[int(k)], "pixels": int(code_n[k]),
-                "share_of_test": round(float(code_n[k] / code_n.sum()), 4),
-                "error_rate": round(float(code_err[k] / code_n[k]), 4),
-                "share_of_errors": round(float(code_err[k] / code_err.sum()), 4),
-                "predicted_as": dict(zip(CLASSES_4, (code_pred[k] / code_n[k]).round(3).tolist()))}
-               for k in np.flatnonzero(code_n) if k in CHESAPEAKE_CODES]
+    sizes = [
+        {
+            "bin": n,
+            "label_pixels": int(a[0] + a[1]),
+            "recall": round(float(a[0] / max(1, a[0] + a[1])), 4),
+            "iou": round(float(a[0] / max(1, a.sum())), 4),
+            "fp_pixels": int(a[2]),
+        }
+        for n, a in zip(SIZE_NAMES, size_acc, strict=True)
+    ]
+    by_code: list[dict[str, Any]] = [
+        {
+            "code": int(k),
+            "name": CHESAPEAKE_CODES[int(k)],
+            "pixels": int(code_n[k]),
+            "share_of_test": round(float(code_n[k] / code_n.sum()), 4),
+            "error_rate": round(float(code_err[k] / code_n[k]), 4),
+            "share_of_errors": round(float(code_err[k] / code_err.sum()), 4),
+            "predicted_as": dict(zip(CLASSES_4, (code_pred[k] / code_n[k]).round(3).tolist(), strict=True)),
+        }
+        for k in np.flatnonzero(code_n)
+        if k in CHESAPEAKE_CODES
+    ]
     by_code.sort(key=lambda r: -r["share_of_errors"])
     tiles.sort(key=lambda r: -r["error_rate"])
     return {
-        "test": scores(cm, CLASSES_4), "confusion": cm.tolist(),
+        "test": scores(cm, CLASSES_4),
+        "confusion": cm.tolist(),
         "confusion_row_share": (cm / cm.sum(1, keepdims=True)).round(4).tolist(),
-        "error_pairs": pairs, "by_group": {s: scores(m, CLASSES_4) for s, m in by_group.items()},
-        "edge_band": {"pixel_share": round(float(cm_edge.sum() / cm.sum()), 4),
-                      "error_share": round(float((cm_edge.sum() - np.trace(cm_edge)) / errors), 4),
-                      "error_rate_edge": round(float(1 - np.trace(cm_edge) / cm_edge.sum()), 4),
-                      "error_rate_interior": round(float(1 - np.trace(cm_core) / cm_core.sum()), 4),
-                      "interior": scores(cm_core, CLASSES_4)},
-        "building_size": sizes, "by_code": by_code[:20], "worst_tiles": tiles[:20], "n_tiles": len(tiles),
+        "error_pairs": pairs,
+        "by_group": {s: scores(m, CLASSES_4) for s, m in by_group.items()},
+        "edge_band": {
+            "pixel_share": round(float(cm_edge.sum() / cm.sum()), 4),
+            "error_share": round(float((cm_edge.sum() - np.trace(cm_edge)) / errors), 4),
+            "error_rate_edge": round(float(1 - np.trace(cm_edge) / cm_edge.sum()), 4),
+            "error_rate_interior": round(float(1 - np.trace(cm_core) / cm_core.sum()), 4),
+            "interior": scores(cm_core, CLASSES_4),
+        },
+        "building_size": sizes,
+        "by_code": by_code[:20],
+        "worst_tiles": tiles[:20],
+        "n_tiles": len(tiles),
         "median_tile_error": round(float(np.median([t["error_rate"] for t in tiles])), 4),
     }
 
 
-def figures(res: dict, preds: dict[str, np.ndarray], folder: Path) -> list[str]:
+def figures(res: dict[str, Any], preds: dict[str, np.ndarray], folder: Path) -> list[str]:
     import matplotlib
 
     matplotlib.use("Agg")
@@ -171,12 +219,24 @@ def figures(res: dict, preds: dict[str, np.ndarray], folder: Path) -> list[str]:
     ax[0].imshow(m, cmap="Blues", vmin=0, vmax=1)
     for i in range(4):
         for j in range(4):
-            ax[0].text(j, i, f"{m[i, j]:.2f}", ha="center", va="center", color="white" if m[i, j] > 0.5 else "black", fontsize=8)
-    ax[0].set_xticks(range(4), CLASSES_4); ax[0].set_yticks(range(4), CLASSES_4)
-    ax[0].set_xlabel("predicted"); ax[0].set_ylabel("label"); ax[0].set_title("Test confusion, row share", fontsize=9)
+            ax[0].text(
+                j,
+                i,
+                f"{m[i, j]:.2f}",
+                ha="center",
+                va="center",
+                color="white" if m[i, j] > 0.5 else "black",
+                fontsize=8,
+            )
+    ax[0].set_xticks(range(4), CLASSES_4)
+    ax[0].set_yticks(range(4), CLASSES_4)
+    ax[0].set_xlabel("predicted")
+    ax[0].set_ylabel("label")
+    ax[0].set_title("Test confusion, row share", fontsize=9)
     s = res["building_size"]
     ax[1].bar([r["bin"] for r in s], [r["iou"] for r in s], color="#d7301f")
-    ax[1].set_ylabel("building IoU"); ax[1].set_title("Building IoU by label building size", fontsize=9)
+    ax[1].set_ylabel("building IoU")
+    ax[1].set_title("Building IoU by label building size", fontsize=9)
     for a in ax:
         a.spines[["top", "right"]].set_visible(False)
     plt.tight_layout()
@@ -186,9 +246,9 @@ def figures(res: dict, preds: dict[str, np.ndarray], folder: Path) -> list[str]:
 
     worst = res["worst_tiles"]
     for part in range(2):
-        rows = worst[part * 10:(part + 1) * 10]
+        rows = worst[part * 10 : (part + 1) * 10]
         fig, axes = plt.subplots(len(rows), 3, figsize=(6.6, 2.2 * len(rows)))
-        for ax_row, t in zip(axes, rows):
+        for ax_row, t in zip(axes, rows, strict=True):
             sl = (slice(t["r"], t["r"] + TILE), slice(t["c"], t["c"] + TILE))
             img = data.read_image(t["GEOID"])[:3][(slice(None),) + sl]
             rgb = np.moveaxis(img, 0, -1).astype(float)
@@ -198,8 +258,10 @@ def figures(res: dict, preds: dict[str, np.ndarray], folder: Path) -> list[str]:
             ax_row[1].imshow(np.ma.masked_equal(lab, 255), cmap=cmap, vmin=0, vmax=3, interpolation="nearest")
             ax_row[2].imshow(preds[t["GEOID"]][sl], cmap=cmap, vmin=0, vmax=3, interpolation="nearest")
             ax_row[0].set_ylabel(f"{t['GEOID']}\n{t['r']},{t['c']} err {t['error_rate']:.2f}", fontsize=7)
-            for a, title in zip(ax_row, ["NAIP 2022", "label", "prediction"]):
-                a.set_xticks([]); a.set_yticks([]); a.set_title(title, fontsize=7)
+            for a, title in zip(ax_row, ["NAIP 2022", "label", "prediction"], strict=True):
+                a.set_xticks([])
+                a.set_yticks([])
+                a.set_title(title, fontsize=7)
         plt.tight_layout()
         name = f"worst_tiles_{part + 1}.png"
         plt.savefig(folder / name, dpi=55)

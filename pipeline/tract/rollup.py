@@ -4,6 +4,7 @@ Run:  python -m pipeline.tract.rollup     (after payoff, groups and forecast)
 Saves data/processed/county_rollup.csv and a copy in <data root>/processed/5500.
 One row per county. Counts and ADUs are sums of tracts, so they add up to the state totals.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -16,28 +17,41 @@ from pipeline.tract import migration
 from pipeline.tract.io import PROCESSED, out_dir
 
 
-def rollup(panel: pd.DataFrame, payoff: pd.DataFrame, trends: pd.DataFrame, adus: pd.DataFrame,
-           lots: pd.DataFrame | None, names: pd.Series, mig: pd.DataFrame | None = None) -> pd.DataFrame:
-    t = panel[["GEOID", "county", "pop_2024", "housing_units_2024"]].merge(
-        payoff[["GEOID", "pays", "rent_est", "pred_growth"]], on="GEOID", how="left").merge(
-        trends[["GEOID", "trend_group"]], on="GEOID", how="left").merge(adus, on="GEOID", how="left")
+def rollup(
+    panel: pd.DataFrame,
+    payoff: pd.DataFrame,
+    trends: pd.DataFrame,
+    adus: pd.DataFrame,
+    lots: pd.DataFrame | None,
+    names: pd.Series,
+    mig: pd.DataFrame | None = None,
+    room: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    t = (
+        panel[["GEOID", "county", "pop_2024", "housing_units_2024"]]
+        .merge(payoff[["GEOID", "pays", "rent_est", "pred_growth"]], on="GEOID", how="left")
+        .merge(trends[["GEOID", "trend_group"]], on="GEOID", how="left")
+        .merge(adus, on="GEOID", how="left")
+    )
     if lots is not None:
         t = t.merge(lots[["GEOID", "lots_total", "lots_fit"]], on="GEOID", how="left")
     g = t.groupby("county")
-    out = pd.DataFrame({
-        "name": names,
-        "tracts": g.size(),
-        "pop_2024": g.pop_2024.sum(),
-        "housing_units_2024": g.housing_units_2024.sum(),
-        "tracts_pays_yes": g.pays.apply(lambda s: int((s == "yes").sum())),
-        "tracts_pays_maybe": g.pays.apply(lambda s: int((s == "maybe").sum())),
-        "tracts_pays_no": g.pays.apply(lambda s: int((s == "no").sum())),
-        "pop_in_yes_tracts": t[t.pays == "yes"].groupby("county").pop_2024.sum(),
-        "median_tract_rent_1br": g.rent_est.median(),
-        "pred_growth_10y": (t.pred_growth * t.housing_units_2024).groupby(t.county).sum()
-        / g.housing_units_2024.sum(),
-        "largest_trend_group": g.trend_group.agg(lambda s: s.value_counts().index[0]),
-    })
+    out = pd.DataFrame(
+        {
+            "name": names,
+            "tracts": g.size(),
+            "pop_2024": g.pop_2024.sum(),
+            "housing_units_2024": g.housing_units_2024.sum(),
+            "tracts_pays_yes": g.pays.apply(lambda s: int((s == "yes").sum())),
+            "tracts_pays_maybe": g.pays.apply(lambda s: int((s == "maybe").sum())),
+            "tracts_pays_no": g.pays.apply(lambda s: int((s == "no").sum())),
+            "pop_in_yes_tracts": t[t.pays == "yes"].groupby("county").pop_2024.sum(),
+            "median_tract_rent_1br": g.rent_est.median(),
+            "pred_growth_10y": (t.pred_growth * t.housing_units_2024).groupby(t.county).sum()
+            / g.housing_units_2024.sum(),
+            "largest_trend_group": g.trend_group.agg(lambda s: s.value_counts().index[0]),
+        }
+    )
     out = out.dropna(subset=["tracts"])
     out["pop_in_yes_tracts"] = out.pop_in_yes_tracts.fillna(0)
     out["share_tracts_yes"] = out.tracts_pays_yes / out.tracts
@@ -48,6 +62,13 @@ def rollup(panel: pd.DataFrame, payoff: pd.DataFrame, trends: pd.DataFrame, adus
         out["lots_fit"] = g.lots_fit.sum()
     if mig is not None:
         out = out.join(mig.set_index("county").add_prefix("net_mig_per_1000_"))
+    if room is not None:  # new room estimate (room.py), added after the old columns
+        r = room.assign(county=room.GEOID.str[:5])
+        rg = r.groupby("county")
+        for c in ["lots_est", "lots_room_low", "lots_room_mid", "lots_room_high"]:
+            out[c] = rg[c].sum()
+        out["tracts_room_measured"] = rg.source.apply(lambda s: int((s == "measured").sum()))
+        out["tracts_outside_training_range"] = rg.outside_training_range.sum().astype(int)
     return out.rename_axis("county_geoid").reset_index()
 
 
@@ -60,7 +81,9 @@ def run(save: bool = True) -> pd.DataFrame:
     lots = pd.read_csv(lots_file, dtype={"GEOID": str}) if lots_file.exists() else None
     names = gpd.read_file(PROCESSED / "counties_2020.gpkg", ignore_geometry=True).set_index("GEOID").NAME
     mig = migration.periods(migration.load(), panel)
-    out = rollup(panel, payoff, trends, adus, lots, names, mig)
+    room_file = PROCESSED / "room_tract.csv"
+    room = pd.read_csv(room_file, dtype={"GEOID": str}) if room_file.exists() else None
+    out = rollup(panel, payoff, trends, adus, lots, names, mig, room)
     if save:
         path = PROCESSED / "county_rollup.csv"
         out.round(4).to_csv(path, index=False)
@@ -73,8 +96,10 @@ def main() -> None:
     out = run()
     cols = ["name", "tracts", "tracts_pays_yes", "adus_mid_current", "adus_mid_hb2186", "adus_mid_sb1346"]
     print(out.sort_values("adus_mid_hb2186", ascending=False)[cols].head(10).round(1).to_string(index=False))
-    print("state totals:", out[["tracts", "tracts_pays_yes", "adus_mid_current", "adus_mid_hb2186"]].sum().round(1)
-          .to_dict())
+    print(
+        "state totals:",
+        out[["tracts", "tracts_pays_yes", "adus_mid_current", "adus_mid_hb2186"]].sum().round(1).to_dict(),
+    )
 
 
 if __name__ == "__main__":

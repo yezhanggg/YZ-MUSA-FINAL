@@ -2,13 +2,13 @@
 title: "MUSA 5500 Proposal"
 ---
 
-Sent by email, Nov 5, 2026.
+Sent by email to the course staff, Nov 5, 2026. The text below is the proposal as sent.
 
-To: Prof. Xiaojiang Li, cc TA Zhanchao Yang. Subject: [MUSA550] Final Project Proposal – Ye Zhang
+What changed since: the housing growth model is gradient boosting, picked from four models under county-held-out cross-validation (the proposal named a random forest). The payoff test uses a 1-bedroom rent. The lot tool shows three rule scenarios on each lot in Philadelphia and Pittsburgh: today's law, local reform and state reform. See [Results](results.md).
 
 **Topic:** Housing Demand and ADU Potential Across Pennsylvania
 
-**Team:** Ye Zhang
+**Team:** one student
 
 **Background:** A state bill, HB 2186, would allow a backyard home (ADU) on every home lot in Pennsylvania. But legal doesn't mean built. Philadelphia has allowed ADUs in parts of the city since 2012, and only about 10 have been built legally. ADUs get built where demand is growing and the rent covers the cost.
 

@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import { Printer, X } from 'lucide-react';
 import { lotSummary } from '../../lib/lot/summary';
 import type { LotRecord } from '../../lib/lot/types';
-import { usdText } from '../../lib/lot/words';
+import { SCENARIO_NAME, usdText } from '../../lib/lot/words';
 import { titleCase } from '../actions';
 import { STATUS_TEXT, signedUsd } from './cards';
 import type { LotResult } from './useLotResult';
@@ -73,7 +73,7 @@ export default function LotReport({ record, r, builtAt, onClose }: { record: Lot
                 {s.scenarios.map((row) => (
                   <tr key={row.scenario} className="border-t border-stone-100 align-top">
                     <td className="py-0.5 pr-2 font-semibold">
-                      {row.title}
+                      {SCENARIO_NAME[row.scenario]}
                       {row.scenario !== 'today' && <span className="block text-[10.5px] font-normal text-slate-500">{row.same_as_today ? 'Same as today' : 'A bill. Not law.'}</span>}
                     </td>
                     <td className="py-0.5 pr-2">{STATUS_TEXT[row.status]}</td>

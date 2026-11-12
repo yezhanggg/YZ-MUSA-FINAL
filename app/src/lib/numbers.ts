@@ -7,7 +7,13 @@ import HEADLINE from './headline.json';
 const items = ASSUMPTIONS_JSON.items as Record<string, { value?: number | null; low?: number | null; mid?: number | null; high?: number | null }>;
 const val = (k: string) => items[k].value as number;
 
-/** "about 13,100": a count rounded to the nearest hundred. */
+/** 2880242 -> "2.9" */
+const millions = (n: number) => (n / 1e6).toFixed(1);
+
+/** 0.658 -> "65.8%", 0.012 -> "1.2%" */
+const share = (v: number) => `${Number((v * 100).toFixed(1))}%`;
+
+/** 13455 -> "about 13,500": a count rounded to the nearest hundred. */
 const about = (n: number) => `about ${(Math.round(n / 100) * 100).toLocaleString('en-US')}`;
 
 export { HEADLINE };
@@ -17,8 +23,15 @@ export const NUMBERS = {
   unetMiou: '0.70',
   /** Random Forest mean IoU on the same pixels. */
   rfMiou: '0.36',
-  /** Single-family lots in PA with room for a 600 sq ft ADU. */
-  lotsWithRoom: '2.59 million',
+  /** The lot builds, from <lot data>/<city>/stats.json (app/build_data.py). */
+  lotsPittsburgh: (() => {
+    const p = HEADLINE.lots.pittsburgh;
+    return `Pittsburgh, ${p.lots.toLocaleString('en-US')} lots: every lot has a legal path today, a detached unit needs an Administrator's Exception, and one fits on ${share(p.today.detached_fits)} of lots (a 600 sq ft unit on ${share(p.today.fit_600)}). Under the state bill one fits on ${share(p.state_reform.detached_fits)}.`;
+  })(),
+  lotsPhiladelphia: (() => {
+    const p = HEADLINE.lots.philadelphia;
+    return `Philadelphia, ${p.lots.toLocaleString('en-US')} lots: ${share(p.today.any_path)} have any legal ADU path today and none can add a new detached unit by right. Under the local bill ${share(p.local_reform.any_path)} would have a path. Under the state bill a detached unit fits on ${share(p.state_reform.detached_fits)}.`;
+  })(),
   /** Share of tracts where a 600 sq ft 1-bedroom ADU pays off at the mid build cost. */
   paysShare: `${Math.round(HEADLINE.pays_share * 100)}%`,
   /** ADUs by 2031, mid case. */
@@ -30,7 +43,12 @@ export const NUMBERS = {
   groupsSilhouette: HEADLINE.groups_silhouette.toFixed(2),
   /** Forecast model fit on held-out counties. */
   forecastR2: HEADLINE.forecast_r2_county_cv === null ? 'not computed' : HEADLINE.forecast_r2_county_cv.toFixed(1),
+  /** Statewide lots with room for a 600 sq ft unit (state-reform setbacks), mid and range: "about 2.9 million (1.5 to 3.6 million)". */
+  roomState: `about ${millions(HEADLINE.room.mid)} million (${millions(HEADLINE.room.low)} to ${millions(HEADLINE.room.high)} million)`,
 } as const;
+
+/** What the room estimate measures and what it models, in one sentence. */
+export const ROOM_SENTENCE = `Measured from every lot record in Philadelphia and Pittsburgh (${HEADLINE.room.measured_tracts} tracts). Modelled for the other ${HEADLINE.room.modelled_tracts.toLocaleString('en-US')} tracts from housing mix and density, learned on those two cities.`;
 
 /** Build cost per sq ft, before soft costs. */
 export const COST_PSF = { low: items['tract.payoff.hard_psf'].low as number, mid: items['tract.payoff.hard_psf'].mid as number, high: items['tract.payoff.hard_psf'].high as number } as const;

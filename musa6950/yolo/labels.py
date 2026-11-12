@@ -3,11 +3,12 @@
 No file access and no model code here, so the rules can be tested on their own.
 Map units are feet of the city's state plane system. Pixel rows grow downward.
 """
+
 from __future__ import annotations
 
 import random
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
-from typing import Iterable, Mapping, Sequence
 
 from shapely.geometry.base import BaseGeometry
 
@@ -61,8 +62,14 @@ def pixel_to_map(col: float, row: float, bounds: Bounds, pixel: float) -> tuple[
 
 def world_file_lines(bounds: Bounds, pixel: float) -> list[str]:
     """Six lines of an ESRI world file. The origin is the center of the top left pixel."""
-    return [f"{pixel:.6f}", "0.0", "0.0", f"{-pixel:.6f}",
-            f"{bounds.x0 + pixel / 2:.4f}", f"{bounds.y1 - pixel / 2:.4f}"]
+    return [
+        f"{pixel:.6f}",
+        "0.0",
+        "0.0",
+        f"{-pixel:.6f}",
+        f"{bounds.x0 + pixel / 2:.4f}",
+        f"{bounds.y1 - pixel / 2:.4f}",
+    ]
 
 
 def chip_grid(x0: float, y0: float, chip_ft: float, per_side: int) -> list[tuple[int, int, Bounds]]:
@@ -71,14 +78,20 @@ def chip_grid(x0: float, y0: float, chip_ft: float, per_side: int) -> list[tuple
     out = []
     for r in range(per_side):
         for c in range(per_side):
-            out.append((r, c, Bounds(x0 + c * chip_ft, top - (r + 1) * chip_ft,
-                                     x0 + (c + 1) * chip_ft, top - r * chip_ft)))
+            out.append(
+                (r, c, Bounds(x0 + c * chip_ft, top - (r + 1) * chip_ft, x0 + (c + 1) * chip_ft, top - r * chip_ft))
+            )
     return out
 
 
-def box_from_polygon(geom: BaseGeometry, bounds: Bounds, pixel: float, size: int,
-                     min_visible: float = config.MIN_VISIBLE,
-                     min_px: float = config.MIN_BOX_PX) -> PixelBox | None:
+def box_from_polygon(
+    geom: BaseGeometry,
+    bounds: Bounds,
+    pixel: float,
+    size: int,
+    min_visible: float = config.MIN_VISIBLE,
+    min_px: float = config.MIN_BOX_PX,
+) -> PixelBox | None:
     """Pixel box around a map polygon, clipped to the chip.
 
     Returns None when too little of the box is inside the chip or the clipped box is a sliver.
@@ -148,8 +161,8 @@ def split_by_area(area_ids: Iterable[str], fractions: Mapping[str, float], seed:
     counts[0] = len(ids) - sum(counts[1:])
     out: dict[str, str] = {}
     start = 0
-    for n, k in zip(names, counts):
-        for a in ids[start:start + k]:
+    for n, k in zip(names, counts, strict=True):
+        for a in ids[start : start + k]:
             out[a] = n
         start += k
     return out
@@ -157,9 +170,14 @@ def split_by_area(area_ids: Iterable[str], fractions: Mapping[str, float], seed:
 
 def labelme_shape(label: str, box: PixelBox) -> dict:
     """A LabelMe rectangle shape."""
-    return {"label": label, "points": [[round(box.left, 1), round(box.top, 1)],
-                                       [round(box.right, 1), round(box.bottom, 1)]],
-            "group_id": None, "description": "", "shape_type": "rectangle", "flags": {}}
+    return {
+        "label": label,
+        "points": [[round(box.left, 1), round(box.top, 1)], [round(box.right, 1), round(box.bottom, 1)]],
+        "group_id": None,
+        "description": "",
+        "shape_type": "rectangle",
+        "flags": {},
+    }
 
 
 def box_from_labelme_points(points: Sequence[Sequence[float]], size: int) -> PixelBox | None:
@@ -167,8 +185,9 @@ def box_from_labelme_points(points: Sequence[Sequence[float]], size: int) -> Pix
     if len(points) != 2:
         return None
     (ax, ay), (bx, by) = points
-    box = PixelBox(max(min(ax, bx), 0.0), max(min(ay, by), 0.0),
-                   min(max(ax, bx), float(size)), min(max(ay, by), float(size)))
+    box = PixelBox(
+        max(min(ax, bx), 0.0), max(min(ay, by), 0.0), min(max(ax, bx), float(size)), min(max(ay, by), float(size))
+    )
     if box.width <= 1 or box.height <= 1:
         return None
     return box

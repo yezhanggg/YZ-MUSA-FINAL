@@ -8,6 +8,7 @@ Run with any Python that has Pillow (geospatial or geoai env):
     python labelme_to_yolo.py            # dry run, prints what would change
     python labelme_to_yolo.py --write
 """
+
 from __future__ import annotations
 
 import argparse

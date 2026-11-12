@@ -142,7 +142,13 @@
           "when": "always",
           "test": null,
           "section": "1278.04",
-          "url": "https://ecode360.com/37691504"
+          "url": "https://ecode360.com/37691504",
+          "not_districts": [
+            "R-4",
+            "R-5",
+            "R-6",
+            "R-7"
+          ]
         },
         {
           "kind": "other",

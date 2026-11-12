@@ -152,18 +152,44 @@ Known limits:
 
 ACS table B25031 (median rent by bedrooms, tract) is named as the rent fallback for ZIPs without a SAFMR. The downloader for it is not built yet. Lots in those ZIPs get no rent.
 
+## Lot files
+
+The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARCHITECTURE.md](ARCHITECTURE.md) lists the files.
+
+<!-- source: ~/musa-drive/lots/pittsburgh/manifest.json (data_version pittsburgh-20261111-bdeb5697ae, built_at 2026-11-11T20:30:22) and ~/musa-drive/lots/philadelphia/manifest.json (data_version philadelphia-20261111-b7fa7bda07, built_at 2026-11-11T21:41:43), "counts" and "sizes" -->
+
+| Place | Data version | Built | Lots | Tracts | Errors | Detail files |
+|---|---|---|---|---|---|---|
+| Pittsburgh | `pittsburgh-20261111-bdeb5697ae` | 2026-11-11 20:30 | 92,081 | 128 | 0 | 108,915,795 bytes, 37 tracts split into chunks |
+| Philadelphia | `philadelphia-20261111-b7fa7bda07` | 2026-11-11 21:41 | 459,998 | 385 | 0 | 314,906,136 bytes, 22 tracts split into chunks |
+
+Rule files used by both builds were checked on 2026-11-10. Lots without a cover row (42 in Pittsburgh) keep an empty `cover` block.
+
+## Elevation (ground slope)
+
+USGS 3DEP standard 1 m DEM, bare earth from lidar, project PA_17County_D24 (flown 2024-04-14 to 2025-04-02, published 2026-10-23). Public domain ("All 3DEP products are public domain"). Downloaded tile by tile from the USGS staged products bucket listed by the TNM Access API. `build_lots terrain` reads it through `dem.vrt` (see [METHODS.md](METHODS.md) section 1.10).
+
+<!-- source: ~/musa-drive/raw/elevation/<city>/SOURCES.json, tile metadata begdate/enddate -->
+
+| City | Tiles | CRS | Folder | Size |
+|---|---|---|---|---|
+| Pittsburgh | 9 (x57 to x59, y447 to y449) | UTM 17N, metres, NAVD88 | `raw/elevation/pittsburgh/` | about 3.0 GB |
+| Philadelphia | 13 (x47 to x50, y442 to y445) | UTM 18N, metres, NAVD88 | `raw/elevation/philadelphia/` | about 4.3 GB |
+
+An older 1 m project also covers each city (Pittsburgh PA_WesternPA_2019_D20, flown 2019 to 2020; Philadelphia a 2015 project). They are not used.
+
 ## Imagery
 
-<!-- source: ~/musa-drive/raw/philadelphia/SOURCES.json and raw/pittsburgh/SOURCES.json "imagery", musa6950/yolo/config.py SOURCES, raw/imagery/<city>/chips.csv (540 rows each) -->
+<!-- source: ~/musa-drive/raw/philadelphia/SOURCES.json and raw/pittsburgh/SOURCES.json "imagery", musa6950/yolo/config.py SOURCES, raw/imagery/<city>/chips.csv (540 rows each), NAIP flight dates from processed/vision/city/philadelphia/diagnosis/diagnosis.md -->
 
 | Imagery | Pixel | Flown | Where it is used | Terms as recorded |
 |---|---|---|---|---|
 | PEMA Orthoimagery Cycle 2, West mosaic (2022) | 0.5 ft | 2022-03-16 to 2022-04-12, leaf off | Detector chips for Pittsburgh (540 chips of 640 px) | No access or use constraints. Credit requested: Pennsylvania Emergency Management Agency (PEMA), via PASDA |
 | PEMA Orthoimagery Cycle 2, Eastern PA (2020 to 2021) | 0.5 ft | 2020-12-11 to 2021-03-22 | Detector chips for Philadelphia (540 chips of 640 px) | Same PEMA terms. This service is named in the detector config, not in `SOURCES.json` |
-| PEMA imagery service `PEMAImagery2021_2023` on PASDA | not recorded | not recorded | Garage check chips made by `python -m pipeline.places.philadelphia garage-qa` | PEMA terms, as above |
+| PEMA imagery service `PEMAImagery2021_2023` on PASDA, and its tile cache `PEMAImagery2021_2023cache` | about 0.5 ft | 2021 to 2023 | Garage check chips (`python -m pipeline.places.philadelphia garage-qa`), hand-label sheets (`pipeline.validation.sheets`), and the aerial layer in the app. When PASDA does not answer, the app falls back to Esri World Imagery under Esri's terms | PEMA terms, as above |
 | Philadelphia City Imagery 2025, 3 inch | about 0.037 m at level 22 | 2025 | Recorded only. Not downloaded. Its year is written to `quality.imagery_date` in Philadelphia lot records | No license text in the service. City keeps all rights, as is. No statement about machine learning use |
 | Allegheny County Imagery 2017, 3 inch | 3 inch | 2017 | Recorded only. Not used | Access: call for details. Informational purposes only, as is. No open license stated |
-| NAIP 2022 (red, green, blue, near infrared) | 0.6 m | 2022 | Land cover model training and test (173 boxes of 1 km) | Public domain (USDA), as listed in the course data notes |
+| NAIP 2022 (red, green, blue, near infrared) | 0.6 m | 2022. Philadelphia flown 2022-04-30 to 05-17, Pittsburgh 2022-05-09 | Land cover model training and test (173 boxes of 1 km), the city boxes, and Pittsburgh lot cover | Public domain (USDA), as listed in the course data notes |
 
 Detector support data:
 
@@ -187,18 +213,44 @@ Test boxes are in Cumberland and Centre counties. Validation boxes are in 7 othe
 
 ### City land cover rasters
 
-Philadelphia and Allegheny County are outside the Chesapeake counties. `pipeline/vision/city.py` builds city label sets from two 2 ft, 7 class rasters made by the University of Vermont Spatial Analysis Lab (tree canopy, grass and shrub, bare earth, water, buildings, roads, other paved). The label sets were being built on 2026-11-11 and are not scored yet.
+Philadelphia and Allegheny County are outside the Chesapeake counties. Two 2 ft, 7 class rasters made by the University of Vermont Spatial Analysis Lab cover the two cities (tree canopy, grass and shrub, bare earth, water, buildings, roads, other paved). They have two jobs:
 
-<!-- source: pipeline/vision/city.py docstring, file listing of ~/musa-drive/raw/landcover/ on 2026-11-11 -->
+- `pipeline/vision/city.py` builds city label sets from them, to score the land cover model in each city (40 boxes of 600 m per city).
+- `pipeline/vision/raster_cover.py` counts each class inside each lot. In Philadelphia this count is the lot's land cover. In Pittsburgh it is a check on the model.
 
-| City | Raster | File on the drive | Coverage |
-|---|---|---|---|
-| Philadelphia | Philadelphia Land Cover 2018 | `raw/landcover/philadelphia/landcover_2018.tif` | Whole city |
-| Pittsburgh | High resolution land cover for Pittsburgh watersheds 2019 (2019 NAIP, 2015 lidar) | `raw/landcover/pittsburgh/Allegheny3riversPA_2019.zip`, `meta_2019.xml` | About the south and central part of the city |
+<!-- source: ~/musa-drive/raw/landcover/<city>/SOURCES.json, processed/vision/city/<city>/summary.json -->
 
-The license or terms of both rasters are not recorded in the pipeline. NAIP 2022 tiles for these boxes are read from the Microsoft Planetary Computer into `raw/naip/<city>/`.
+| City | Raster | Inputs | File on the drive | Coverage | Terms as recorded |
+|---|---|---|---|---|---|
+| Philadelphia | Philadelphia Land Cover 2018 | 2018 lidar and 2017 NAIP | `raw/landcover/philadelphia/landcover_2018.tif` | Whole city | City of Philadelphia License as listed on OpenDataPhilly: public use, free. See the city terms before redistribution |
+| Pittsburgh | High resolution land cover for Pittsburgh watersheds 2019 | 2015 lidar and 2019 NAIP | `raw/landcover/pittsburgh/uvm2019/landcover_2019_allegheny3rivers.tif` (from `Allegheny3riversPA_2019.zip`) | About the south and central part of the city | Use and access constraints: none. A citation is requested |
+
+City label boxes:
+
+<!-- source: ~/musa-drive/processed/vision/city/philadelphia/summary.json and pittsburgh/summary.json "boxes" and "roles" -->
+
+| City | Boxes | Train | Validation | Test |
+|---|---|---|---|---|
+| Philadelphia | 40 | 22 | 6 | 12 |
+| Pittsburgh | 40 | 25 | 6 | 9 |
+
+In Pittsburgh, 34.8 percent of the test box area also sat inside train or validation boxes. City test scores leave out those pixels. Philadelphia had no overlap. NAIP 2022 tiles for these boxes are read from the Microsoft Planetary Computer into `raw/naip/<city>/`.
+
+### Land cover per lot
+
+<!-- source: pipeline/build_lots.py COVER_FILES and COVER_FILES_BY_PLACE, row counts of ~/musa-drive/processed/<city>/cover*.parquet read on 2026-11-11 -->
+
+| City | File the lot builder reads | Source | Date of the picture | Lots with a row |
+|---|---|---|---|---|
+| Philadelphia | `processed/philadelphia/cover.parquet` | The 2018 city raster | 2017 photos, 2018 lidar | 459,998 |
+| Pittsburgh | `processed/pittsburgh/cover_model_r34_c5_s0.parquet` | The 5-class U-Net `r34_c5_s0` on NAIP 2022, not fine-tuned | 2022 | 92,039 |
+
+- Philadelphia does not use the model. On NAIP 2022 (flown April 30 to May 17, early leaf, deep rowhouse shadow) the model misses most trees and open ground. The model's numbers stay beside the raster in `cover_model.parquet` for comparison.
+- 3,007 Philadelphia lots have a house built in 2018 or later. They carry `built_after_cover`, because the raster may still show the old use of the lot.
+- Pittsburgh keeps the fine-tuned model's numbers in `cover.parquet`, but the builder reads the model that was not fine-tuned. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
 
 Known limits:
 
 - Labels are 1 m and are put on the 0.6 m image grid, so class edges are uncertain by about one pixel.
-- There are no Chesapeake labels for western Pennsylvania. Pittsburgh has no labeled test box.
+- There are no Chesapeake labels for western Pennsylvania. The Pittsburgh raster covers only part of the city.
+- The city rasters are older than the photos the model sees (2017 and 2019 against 2022). Lots that changed since show up as disagreement.

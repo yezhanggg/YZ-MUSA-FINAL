@@ -1,4 +1,5 @@
 """Offline tests for the machine-read corpus pipeline (no network, no model, no API)."""
+
 from __future__ import annotations
 
 import pytest
@@ -12,25 +13,31 @@ from pipeline.corpus import extract as E  # noqa: E402
 from pipeline.corpus import fetch as F  # noqa: E402
 
 
-@pytest.mark.parametrize("line,label", [
-    ("§ 27-1793. Accessory dwelling units.", "27-1793"),
-    ("§ 155-10.2 Alternative housing options for elderly", "155-10.2"),
-    ("SECTION 2515. ACCESSORY DWELLING UNITS", "2515"),
-    ("SECTION 2001. COMPLIANCE REQUIRED", "2001"),
-    ("Section 7-309 Accessory dwelling unit", "7-309"),
-    ("1303.06 SETBACKS, BUILDING AREA", "1303.06"),
-    ("280-108. Accessory uses.", "280-108"),
-])
+@pytest.mark.parametrize(
+    "line,label",
+    [
+        ("§ 27-1793. Accessory dwelling units.", "27-1793"),
+        ("§ 155-10.2 Alternative housing options for elderly", "155-10.2"),
+        ("SECTION 2515. ACCESSORY DWELLING UNITS", "2515"),
+        ("SECTION 2001. COMPLIANCE REQUIRED", "2001"),
+        ("Section 7-309 Accessory dwelling unit", "7-309"),
+        ("1303.06 SETBACKS, BUILDING AREA", "1303.06"),
+        ("280-108. Accessory uses.", "280-108"),
+    ],
+)
 def test_heading_detected(line, label):
     h = E.detect_heading(line)
     assert h is not None and h[0] == label
 
 
-@pytest.mark.parametrize("line", [
-    "2023 Amendments were adopted.",
-    "2515 Accessory Dwelling Units .................. 25-30",
-    "The lot shall be 2,000 square feet.",
-])
+@pytest.mark.parametrize(
+    "line",
+    [
+        "2023 Amendments were adopted.",
+        "2515 Accessory Dwelling Units .................. 25-30",
+        "The lot shall be 2,000 square feet.",
+    ],
+)
 def test_not_heading(line):
     assert E.detect_heading(line) is None
 
@@ -76,15 +83,23 @@ def test_blocked_hosts():
 
 
 def test_quote_check():
-    hits = [{"chunk_id": "a", "text": "Accessory dwelling units shall be permitted\nas a use by special exception."},
-            {"chunk_id": "b", "text": "One (1) additional off-street parking space shall be provided."}]
+    hits = [
+        {"chunk_id": "a", "text": "Accessory dwelling units shall be permitted\nas a use by special exception."},
+        {"chunk_id": "b", "text": "One (1) additional off-street parking space shall be provided."},
+    ]
     draft = {
-        "status": {"value": "special_exception", "support": [
-            {"quote": "permitted as a use by special exception", "chunk": "C1", "section": "2515"}]},
-        "parking_spaces_for_adu": {"value": 1, "support": [
-            {"quote": "One (1) additional off-street parking space", "chunk": "C1", "section": "2515"}]},
-        "owner_occupancy": {"value": True, "support": [
-            {"quote": "the owner must live in the house", "chunk": "C1", "section": "2515"}]},
+        "status": {
+            "value": "special_exception",
+            "support": [{"quote": "permitted as a use by special exception", "chunk": "C1", "section": "2515"}],
+        },
+        "parking_spaces_for_adu": {
+            "value": 1,
+            "support": [{"quote": "One (1) additional off-street parking space", "chunk": "C1", "section": "2515"}],
+        },
+        "owner_occupancy": {
+            "value": True,
+            "support": [{"quote": "the owner must live in the house", "chunk": "C1", "section": "2515"}],
+        },
         "could_not_find": [],
     }
     clean, unsupported = D.verify(draft, hits)
@@ -97,8 +112,11 @@ def test_quote_check():
 def test_consistent_status():
     d = {"status": {"value": "special_exception"}, "family_only": {"value": True}, "forms": {"value": ["internal"]}}
     assert EV.consistent_status(d) == "family_only"
-    d = {"status": {"value": "special_exception"}, "family_only": {"value": None},
-         "forms": {"value": ["garage_conversion"]}}
+    d = {
+        "status": {"value": "special_exception"},
+        "family_only": {"value": None},
+        "forms": {"value": ["garage_conversion"]},
+    }
     assert EV.consistent_status(d) == "conversion_only"
 
 
@@ -110,8 +128,11 @@ def test_labels_in_citation():
 
 def test_absence_kept_and_bare_value_dropped():
     hits = [{"chunk_id": "a", "text": "Single-family detached dwelling. No other use."}]
-    draft = {"status": {"value": "not_addressed", "support": []}, "approval_path": "special_exception",
-             "could_not_find": ["ADU text"]}
+    draft = {
+        "status": {"value": "not_addressed", "support": []},
+        "approval_path": "special_exception",
+        "could_not_find": ["ADU text"],
+    }
     clean, unsupported = D.verify(draft, hits)
     assert clean["status"]["value"] == "not_addressed" and clean["status"]["absence"] is True
     assert clean["approval_path"].get("dropped") is True
@@ -119,8 +140,12 @@ def test_absence_kept_and_bare_value_dropped():
 
 
 def test_pdf_link_served_as_html_is_skipped():
-    rec = {"url": "https://www.example.gov/Documents/Zoning%20Ordinance.pdf", "geoid": "4200000000",
-           "path": "/nonexistent/x.html", "fetched_at": "2026-11-11T00:00:00+00:00"}
+    rec = {
+        "url": "https://www.example.gov/Documents/Zoning%20Ordinance.pdf",
+        "geoid": "4200000000",
+        "path": "/nonexistent/x.html",
+        "fetched_at": "2026-11-11T00:00:00+00:00",
+    }
     assert E.served_page_not_doc(rec, "html")
     assert not E.served_page_not_doc({**rec, "url": "https://www.example.gov/zoning/"}, "html")
     d = E.extract_doc(rec)

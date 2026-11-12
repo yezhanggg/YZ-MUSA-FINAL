@@ -4,6 +4,7 @@ Inputs live in <repo>/data (a link to the data drive, never committed).
 Tables the tool reads go to <repo>/data/processed, as before.
 Extra outputs (metrics, sensitivity tables, roll-ups) go to <data root>/processed/5500.
 """
+
 from __future__ import annotations
 
 import json

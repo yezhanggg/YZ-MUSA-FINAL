@@ -100,10 +100,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MUSA 5500 (demand and payoff)</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
@@ -119,6 +119,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/results.html">
  <span class="dropdown-text">Results</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
+ <span class="dropdown-text">Tract explorer</span></a>
   </li>  
     </ul>
   </li>
@@ -169,6 +173,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-changed-since-the-first-draft" id="toc-what-changed-since-the-first-draft" class="nav-link" data-scroll-target="#what-changed-since-the-first-draft">What changed since the first draft</a></li>
   <li><a href="#methods-short" id="toc-methods-short" class="nav-link" data-scroll-target="#methods-short">Methods (short)</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
@@ -176,8 +181,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#trend-groups" id="toc-trend-groups" class="nav-link" data-scroll-target="#trend-groups">2. Trend groups</a></li>
   <li><a href="#land-and-job-access" id="toc-land-and-job-access" class="nav-link" data-scroll-target="#land-and-job-access">3. Land and job access</a></li>
   <li><a href="#where-an-adu-pays-off" id="toc-where-an-adu-pays-off" class="nav-link" data-scroll-target="#where-an-adu-pays-off">4. Where an ADU pays off</a></li>
-  <li><a href="#random-forest-where-housing-grew-2010-2020" id="toc-random-forest-where-housing-grew-2010-2020" class="nav-link" data-scroll-target="#random-forest-where-housing-grew-2010-2020">5. Random forest: where housing grew 2010-2020</a></li>
+  <li><a href="#where-did-housing-grow-the-model" id="toc-where-did-housing-grow-the-model" class="nav-link" data-scroll-target="#where-did-housing-grow-the-model">5. Where did housing grow? The model</a></li>
   <li><a href="#adus-by-2031" id="toc-adus-by-2031" class="nav-link" data-scroll-target="#adus-by-2031">6. ADUs by 2031</a></li>
+  <li><a href="#explore-the-results" id="toc-explore-the-results" class="nav-link" data-scroll-target="#explore-the-results">7. Explore the results</a></li>
+  <li><a href="#why-not-today-law-yard-space-and-missing-town-rules" id="toc-why-not-today-law-yard-space-and-missing-town-rules" class="nav-link" data-scroll-target="#why-not-today-law-yard-space-and-missing-town-rules">8. Why not today: law, yard space and missing town rules</a></li>
+  <li><a href="#lots-with-room-measured-in-two-cities-modelled-elsewhere" id="toc-lots-with-room-measured-in-two-cities-modelled-elsewhere" class="nav-link" data-scroll-target="#lots-with-room-measured-in-two-cities-modelled-elsewhere">9. Lots with room: measured in two cities, modelled elsewhere</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#limits" id="toc-limits" class="nav-link" data-scroll-target="#limits">Limits</a></li>
@@ -206,30 +214,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>All numbers below come from the executed notebooks in <code>musa5500/notebooks/</code>. Notebook names are given with each part so every number can be traced.</p>
+<p>Every number below comes from the modules in <code>pipeline/tract/</code> as run by the executed notebooks in <code>musa5500/notebooks/</code>. The tables they write are in <code>data/processed/</code> and <code>processed/5500/</code> on the data drive.</p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <ul>
-<li>HB 2186 would allow an ADU (backyard home) on every home lot in Pennsylvania</li>
+<li>HB 2186 would allow an ADU (backyard home) on every home lot in Pennsylvania. SB 1346 would do the same outside Philadelphia and Pittsburgh. Both die on Nov 30, 2026 if not enacted</li>
 <li>Legal does not mean built. Philadelphia has allowed ADUs in parts of the city since 2012 and only about 10 were built legally</li>
 <li>This half of the project asks four things
 <ul>
 <li>Where are people and jobs growing?</li>
 <li>Did that change after 2019?</li>
 <li>Where would a new ADU pay for itself?</li>
-<li>How many ADUs could be built by 2031, under today’s rules and under HB 2186?</li>
+<li>How many ADUs could be built by 2031, under today’s rules and under the state bills?</li>
 </ul></li>
 <li>Unit: 2020 census tracts (3,445) and towns (2,572 county subdivisions)</li>
+</ul>
+</section>
+<section id="what-changed-since-the-first-draft" class="level2">
+<h2 class="anchored" data-anchor-id="what-changed-since-the-first-draft">What changed since the first draft</h2>
+<ul>
+<li><strong>One payoff number.</strong> The first draft priced a 600 sq ft unit with the all-unit tract median rent and found 20.3% of tracts pay. The tool used a 1-bedroom rent and showed 10.3%. A 600 sq ft unit is a 1-bedroom, so the 1-bedroom rent is the honest basis. The report now uses the tool’s column. The answer is 10.3% of tracts. The all-unit number is kept as a cross-check</li>
+<li><strong>Trend groups.</strong> The first draft used K-means with k = 5. Rerun with 20 seeds, k = 5 gives different groups each time (adjusted Rand 0.38). The new rule picks k = 7, which is stable (0.95). All k have weak structure, so the groups are now called a description, not a finding</li>
+<li><strong>Forecast.</strong> The model is compared with a baseline, ridge and gradient boosting, under county and grid block cross-validation, with a temporal backtest and 90% intervals. Gradient boosting has the lowest held-out error and replaces the random forest. The ADU totals fall because fewer tracts pass the payoff test</li>
+<li><strong>ACS windows.</strong> “Before” and “after” now say which 5-year windows they compare. Tract changes smaller than their margin of error are flagged</li>
+<li><strong>IRS migration</strong> was downloaded but unused. It is now tested as a model feature (no gain, so not kept) and shown as a context map</li>
+<li><strong>Lots with room.</strong> The forecast used the retired raster pilot: one fit rate per area type times ACS single-family homes. It now uses the lot tool’s vector results in Philadelphia and Pittsburgh (measured, every 1 to 4 unit lot) and a model trained on them everywhere else, with a range (section 9)</li>
+<li><strong>Town rules.</strong> The 12-town list is replaced by the town rule files: 38 municipalities with a rule file, each mapped to a legal class. Every other town is “unknown” (section 9)</li>
 </ul>
 </section>
 <section id="methods-short" class="level2">
 <h2 class="anchored" data-anchor-id="methods-short">Methods (short)</h2>
 <p>Full detail is in <a href="../../musa5500/docs/methods.html">methods</a>. In short:</p>
 <ul>
-<li>01: ACS 2010-14 and 2015-19 moved from 2010 to 2020 tracts with the block crosswalk. Counts by land-area share, medians from the biggest-overlap tract. Dollars in 2024 terms (CPI-U). Yearly growth before and after 2019 for people, homes, jobs, and real rent</li>
-<li>02: K-means on six growth rates (jobs, people, rent, before and after)</li>
-<li>03: developed share of land per tract from NLCD 2010, 2019, 2025 (zonal stats). Jobs within 30 minutes by car with OSMnx (Philadelphia. Harrisburg could not be downloaded)</li>
-<li>04: rent vs cost test for a 600 sq ft ADU. Random forest for housing growth 2010-2020 with spatial cross-validation. ADUs by 2031 per town, scaled from the Pew range of 26 to 81 ADU permits per 100,000 people per year</li>
+<li>Growth: ACS 2010-14, 2015-19 and 2020-24 on 2020 tracts (block crosswalk), dollars in 2024 terms (CPI-U), margins of error from the Census summary files. Jobs from LODES</li>
+<li>Groups: six growth rates, standardized. k from 2 to 10 scored by silhouette, Davies-Bouldin, gap and stability. K-means vs Gaussian mixture vs Ward</li>
+<li>Payoff: 600 sq ft 1-bedroom unit, $175 / $250 / $300 per sq ft plus 15%, all borrowed for 30 years at 6.53%, 30% of rent to running costs</li>
+<li>Forecast: housing growth 2010-20 by tract, models scored with spatial block CV and a temporal backtest. ADUs by 2031 = people x permit rate x payoff x lots x demand x town rule</li>
 </ul>
 </section>
 <section id="results" class="level2">
@@ -237,12 +257,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="growth-before-and-after-2019" class="level3">
 <h3 class="anchored" data-anchor-id="growth-before-and-after-2019">1. Growth before and after 2019</h3>
 <p>Notebook <code>01_trends</code>. Statewide, from summed tract counts. Yearly rates in %.</p>
+<ul>
+<li>ACS before = 2010-14 to 2015-19 (midpoints 2012 to 2017). ACS after = 2015-19 to 2020-24 (midpoints 2017 to 2022). The “after” step starts two years before 2019</li>
+<li>Jobs before = 2010 to 2019. Jobs after = 2019 to 2024</li>
+</ul>
+<!-- source: ~/musa-drive/processed/5500/growth_summary.json -->
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Measure</th>
-<th>Before 2019</th>
-<th>After 2019</th>
+<th>Before</th>
+<th>After</th>
 <th>Change</th>
 </tr>
 </thead>
@@ -274,34 +299,275 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <ul>
-<li>Job growth slowed the most. 2010-19 was 0.95% a year, 2019-24 was 0.31%</li>
-<li>Population looks like it sped up. Part of this is not real. The 2020-24 ACS is weighted to post-2020 census estimates, which came in higher than the 2010s estimates. So read the population change with care</li>
+<li>Job growth slowed the most</li>
+<li>Population looks like it sped up. Part of this is not real. The 2020-24 ACS is weighted to post-2020 census estimates, which came in higher than the 2010s estimates</li>
 <li>Housing growth held flat at about 0.4% a year</li>
-<li>Real rent kept rising, but slower. The median tract went from $1,087 (2010-14) to $1,125 (2015-19) to $1,149 (2020-24), all in 2024 dollars</li>
-<li>Share of tracts that sped up after 2019: population 54%, homes 48%, jobs 42%, rent 43%</li>
-<li>Tract rates are noisy. ACS 5-year estimates have wide margins in small tracts</li>
+<li>Share of tracts that sped up: population 54%, homes 48%, jobs 42%, rent 43%</li>
+</ul>
+<p>Inflation. Median tract values, nominal and in 2024 dollars:</p>
+<!-- source: musa5500/notebooks/01_trends.ipynb (executed) -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>2010-14 nominal</th>
+<th>2015-19 nominal</th>
+<th>2020-24 nominal</th>
+<th>2010-14 real</th>
+<th>2015-19 real</th>
+<th>2020-24 real</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gross rent</td>
+<td>$820</td>
+<td>$917</td>
+<td>$1,149</td>
+<td>$1,087</td>
+<td>$1,125</td>
+<td>$1,149</td>
+</tr>
+<tr class="even">
+<td>Home value</td>
+<td>$153,000</td>
+<td>$163,400</td>
+<td>$230,200</td>
+<td>$202,734</td>
+<td>$200,490</td>
+<td>$230,200</td>
+</tr>
+<tr class="odd">
+<td>Household income</td>
+<td>$52,083</td>
+<td>$60,016</td>
+<td>$74,844</td>
+<td>$69,013</td>
+<td>$73,639</td>
+<td>$74,844</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Nominal rent rose 40% from the first window to the last. Real rent rose 6%</li>
+</ul>
+<p>Margins of error. Share of tracts whose change is smaller than its 90% margin:</p>
+<!-- source: ~/musa-drive/processed/5500/growth_summary.json (moe) -->
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Before</th>
+<th>After</th>
+<th>Change in trend</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Population</td>
+<td>72.0%</td>
+<td>68.6%</td>
+<td>71.4%</td>
+</tr>
+<tr class="even">
+<td>Housing units</td>
+<td>78.5%</td>
+<td>71.6%</td>
+<td>75.4%</td>
+</tr>
+<tr class="odd">
+<td>Median rent</td>
+<td>80.9%</td>
+<td>80.1%</td>
+<td>84.9%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Most single-tract changes cannot be told apart from no change. Statewide sums and group medians are much firmer than any one tract</li>
+<li>The flags are in <code>trends_tract.csv</code> so the tool can say when a tract number is within the noise</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
+<p><img src="figures/01_moe.png" class="img-fluid figure-img"></p>
+<figcaption>Share of tract changes inside the margin of error</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="figures/01_growth_hist.png" class="img-fluid figure-img"></p>
-<figcaption>Yearly growth by tract, before vs after 2019</figcaption>
+<figcaption>Yearly growth by tract, before vs after</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/01_trend_change_map.png" class="img-fluid figure-img"></p>
-<figcaption>Change in growth after 2019, jobs and population</figcaption>
+<figcaption>Change in growth, jobs and population</figcaption>
 </figure>
 </div>
 </section>
 <section id="trend-groups" class="level3">
 <h3 class="anchored" data-anchor-id="trend-groups">2. Trend groups</h3>
-<p>Notebook <code>02_groups</code>. 3,163 tracts have all six rates. 282 tracts do not (tiny bases or no rent data) and are labeled “Not enough data”.</p>
+<p>Notebook <code>02_groups</code>. 3,163 tracts have all six rates. 282 do not (tiny bases or no rent data) and are labeled “Not enough data”.</p>
+<p>How many groups? K-means for k = 2 to 10:</p>
+<!-- source: ~/musa-drive/processed/5500/groups_k_metrics.csv -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>k</th>
+<th>Silhouette</th>
+<th>Davies-Bouldin</th>
+<th>Gap</th>
+<th>ARI across seeds</th>
+<th>ARI on 80% subsamples</th>
+<th>Smallest group</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>0.131</td>
+<td>2.33</td>
+<td>1.159</td>
+<td>0.88</td>
+<td>0.85</td>
+<td>46.7%</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.117</td>
+<td>2.14</td>
+<td>1.146</td>
+<td>0.39</td>
+<td>0.50</td>
+<td>30.5%</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.134</td>
+<td>1.81</td>
+<td>1.153</td>
+<td>0.42</td>
+<td>0.63</td>
+<td>3.2%</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.133</td>
+<td>1.72</td>
+<td>1.172</td>
+<td>0.38</td>
+<td>0.78</td>
+<td>3.1%</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0.121</td>
+<td>1.71</td>
+<td>1.182</td>
+<td>0.55</td>
+<td>0.44</td>
+<td>2.9%</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>0.136</td>
+<td>1.58</td>
+<td>1.202</td>
+<td>0.95</td>
+<td>0.91</td>
+<td>2.9%</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>0.110</td>
+<td>1.65</td>
+<td>1.200</td>
+<td>0.63</td>
+<td>0.69</td>
+<td>2.9%</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>0.118</td>
+<td>1.58</td>
+<td>1.204</td>
+<td>0.60</td>
+<td>0.82</td>
+<td>2.7%</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>0.119</td>
+<td>1.53</td>
+<td>1.204</td>
+<td>0.55</td>
+<td>0.79</td>
+<td>2.7%</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>Silhouette scores were close for k = 4 to 7 (0.122 to 0.139). The elbow has no sharp bend</li>
-<li>k = 5 was picked because each group tells a different story</li>
+<li>Silhouette stays between 0.11 and 0.14 for every k. Values this low mean the groups overlap a lot. The elbow has no bend and the gap statistic has no clear peak</li>
+<li>Only k = 2, 7 and 9 are stable (subsample ARI at least 0.8). The rule then takes the best silhouette: k = 7. It also has the second lowest Davies-Bouldin</li>
+<li>The first draft’s k = 5 was not stable: K-means runs with different seeds agree only 0.38 on average (ARI)</li>
+</ul>
+<p>Three methods at k = 7:</p>
+<!-- source: ~/musa-drive/processed/5500/groups_methods.csv -->
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Silhouette</th>
+<th>Davies-Bouldin</th>
+<th>ARI with K-means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>K-means</td>
+<td>0.136</td>
+<td>1.58</td>
+<td>1.00</td>
+</tr>
+<tr class="even">
+<td>Gaussian mixture</td>
+<td>0.059</td>
+<td>3.24</td>
+<td>0.24</td>
+</tr>
+<tr class="odd">
+<td>Ward</td>
+<td>0.085</td>
+<td>1.88</td>
+<td>0.20</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The three methods split the tracts very differently (ARI 0.16 to 0.24). If the data had real clusters, they would agree</li>
+<li>K-means is kept because it scores best and is stable. But the honest reading is that Pennsylvania tracts form a smooth spread of growth paths. The groups below summarize that spread. They are not a discovery</li>
 </ul>
 <p>Median yearly growth in each group (%):</p>
+<!-- source: ~/musa-drive/processed/5500/groups_profile.csv -->
 <table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
@@ -327,73 +593,93 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Jobs and rents cooling</td>
-<td>1,103</td>
-<td>0.73</td>
-<td>-0.77</td>
-<td>-0.55</td>
-<td>0.42</td>
-<td>1.94</td>
-<td>-1.62</td>
+<td>Steady: close to the state median</td>
+<td>1,001</td>
+<td>-0.40</td>
+<td>-0.76</td>
+<td>-0.63</td>
+<td>0.31</td>
+<td>0.47</td>
+<td>-0.02</td>
 </tr>
 <tr class="even">
-<td>Rents speeding up</td>
-<td>871</td>
+<td>Steady: people grew fast before 2019</td>
+<td>490</td>
+<td>0.65</td>
+<td>-0.15</td>
+<td>2.04</td>
+<td>-0.84</td>
+<td>1.49</td>
+<td>0.81</td>
+</tr>
+<tr class="odd">
+<td>Steady: rents rose fast after 2019</td>
+<td>478</td>
+<td>1.11</td>
+<td>0.54</td>
+<td>-0.11</td>
+<td>0.45</td>
+<td>-2.27</td>
+<td>4.78</td>
+</tr>
+<tr class="even">
+<td>Shrinking: jobs grew fast before 2019</td>
+<td>433</td>
+<td>6.83</td>
+<td>-0.99</td>
+<td>0.07</td>
+<td>-0.15</td>
+<td>0.57</td>
+<td>-0.03</td>
+</tr>
+<tr class="odd">
+<td>Steady: rents rose fast before 2019</td>
+<td>404</td>
+<td>1.11</td>
+<td>0.28</td>
+<td>-0.04</td>
+<td>0.28</td>
+<td>4.34</td>
+<td>-3.68</td>
+</tr>
+<tr class="even">
+<td>Growing: jobs jumped after 2019</td>
+<td>265</td>
+<td>-1.35</td>
+<td>8.50</td>
+<td>-0.27</td>
+<td>0.10</td>
 <td>0.82</td>
-<td>-0.20</td>
-<td>-0.36</td>
-<td>0.34</td>
-<td>-1.56</td>
-<td>3.16</td>
+<td>1.02</td>
 </tr>
 <tr class="odd">
-<td>Grew before 2019, slowing now</td>
-<td>691</td>
-<td>3.05</td>
-<td>-0.44</td>
-<td>1.51</td>
-<td>-0.81</td>
-<td>1.13</td>
-<td>0.29</td>
-</tr>
-<tr class="even">
-<td>Jobs bounced back after 2019</td>
-<td>401</td>
-<td>-3.42</td>
-<td>6.13</td>
-<td>0.05</td>
-<td>-0.01</td>
-<td>1.27</td>
-<td>0.86</td>
-</tr>
-<tr class="odd">
-<td>Population jump after 2019</td>
-<td>97</td>
-<td>1.94</td>
-<td>0.40</td>
+<td>Growing: population jump after 2019</td>
+<td>92</td>
+<td>1.93</td>
+<td>0.65</td>
 <td>0.41</td>
-<td>15.03</td>
-<td>1.26</td>
-<td>0.68</td>
+<td>15.72</td>
+<td>1.27</td>
+<td>0.72</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>The biggest group is “Jobs and rents cooling”. Jobs and real rent grew before 2019 and shrank after</li>
-<li>“Rents speeding up” is the group to watch for ADUs. Rent fell in real terms before 2019 and rose 3.2% a year after</li>
-<li>“Population jump after 2019” is small. Some of it is real new building. Some is likely the crosswalk. Land-area weights can put people in the wrong 2020 tract when an old tract was split</li>
-<li>The groups are spread across the state, not in neat regions. Growth paths vary a lot even between next-door tracts</li>
+<li>Most groups are defined by one measure that stands out. The largest group is the middle of the spread</li>
+<li>“Steady: rents rose fast after 2019” (478 tracts) is the group to watch for ADUs. Real rent fell before and rose 4.8% a year after. But only 41% of its tracts have a rent change bigger than the margin of error</li>
+<li>“Growing: population jump after 2019” is small. All 92 tracts have a population change bigger than the margin of error, so the jump is measured. Some of it may still come from the crosswalk, which can put people in the wrong 2020 tract when an old tract was split</li>
+<li>The groups are spread across the state, not in neat regions</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/02_groups_map.png" class="img-fluid figure-img"></p>
-<figcaption>Trend groups</figcaption>
+<p><img src="figures/02_k_metrics.png" class="img-fluid figure-img"></p>
+<figcaption>Choosing k</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/02_elbow.png" class="img-fluid figure-img"></p>
-<figcaption>Elbow and silhouette</figcaption>
+<p><img src="figures/02_groups_map.png" class="img-fluid figure-img"></p>
+<figcaption>Trend groups</figcaption>
 </figure>
 </div>
 </section>
@@ -401,6 +687,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="land-and-job-access">3. Land and job access</h3>
 <p>Notebook <code>03_land_access</code>.</p>
 <p>Developed land (NLCD, all 3,445 tracts):</p>
+<!-- source: musa5500/notebooks/03_land_access.ipynb (executed) -->
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -457,13 +744,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="where-an-adu-pays-off" class="level3">
 <h3 class="anchored" data-anchor-id="where-an-adu-pays-off">4. Where an ADU pays off</h3>
-<p>Notebook <code>04_payoff_forecast</code>. 600 sq ft ADU, 15% soft costs, all borrowed over 30 years at 6.53% (2026 PMMS average).</p>
+<p>Notebook <code>04_payoff_forecast</code>. 600 sq ft 1-bedroom unit, 15% soft costs, all borrowed over 30 years at 6.53% (2026 PMMS average).</p>
+<!-- source: ~/musa-drive/processed/5500/payoff_summary.json -->
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Build cost</th>
 <th>Total</th>
 <th>Monthly payment</th>
+<th>Rent needed</th>
 </tr>
 </thead>
 <tbody>
@@ -471,28 +760,32 @@ ul.task-list li input[type="checkbox"] {
 <td>Low, $175 / sq ft</td>
 <td>$120,750</td>
 <td>$766</td>
+<td>$1,094</td>
 </tr>
 <tr class="even">
 <td>Mid, $250 / sq ft</td>
 <td>$172,500</td>
 <td>$1,094</td>
+<td>$1,562</td>
 </tr>
 <tr class="odd">
 <td>High, $300 / sq ft</td>
 <td>$207,000</td>
 <td>$1,312</td>
+<td>$1,875</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>After 30% for vacancy, repairs, tax, and insurance, an ADU needs $1,562 a month in rent to cover the mid cost. It needs $1,094 at the low cost</li>
-<li>Rent = tract median gross rent (ACS 2020-24) x 1.0</li>
+<li>“Rent needed” covers the payment after 30% for vacancy, repairs, tax and insurance</li>
+<li>Rent = 1-bedroom rent for the tract (ACS 2020-24, B25031 county ratio applied to the tract median). Every tract has one</li>
 </ul>
-<p>Result for 3,261 tracts with rent data (184 have none):</p>
+<p>Result for all 3,445 tracts:</p>
+<!-- source: ~/musa-drive/processed/5500/payoff_summary.json -->
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>pays</th>
+<th>Pays</th>
 <th>Tracts</th>
 <th>Share of tracts</th>
 <th>Share of people</th>
@@ -501,69 +794,157 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>yes</td>
-<td>663</td>
-<td>20%</td>
-<td>22%</td>
+<td>356</td>
+<td>10.3%</td>
+<td>11.6%</td>
 </tr>
 <tr class="even">
 <td>maybe</td>
-<td>1,159</td>
-<td>36%</td>
-<td>36%</td>
+<td>897</td>
+<td>26.0%</td>
+<td>28.5%</td>
 </tr>
 <tr class="odd">
 <td>no</td>
-<td>1,439</td>
-<td>44%</td>
-<td>38%</td>
-</tr>
-<tr class="even">
-<td>no rent data</td>
-<td>184</td>
-<td></td>
-<td>4%</td>
+<td>2,192</td>
+<td>63.6%</td>
+<td>59.9%</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>An ADU pays at the mid cost in only one tract in five</li>
-<li>Most “yes” tracts are in Philadelphia and its suburbs. Philadelphia (124 yes tracts), Montgomery (121), Chester (70), Bucks (69), Delaware (48). Allegheny has 47</li>
-<li>In Montgomery, Chester, and Bucks over 92% of tracts are yes or maybe. Median tract rent there is about $1,670 to $1,710</li>
+<li><strong>An ADU pays at the mid cost in about one tract in ten.</strong> This is the number the tool shows</li>
+<li>The tracts that pay are in the Philadelphia suburbs and parts of the city. Chester has the highest share (67 of 124 tracts). Montgomery has the most (76 of 219), then Philadelphia (73 of 408), Bucks (48 of 147) and Delaware (29 of 152). Allegheny has 22 of 394</li>
 </ul>
-<p>How much the answer moves (share of tracts that are “yes”):</p>
+<p>Rent bases compared:</p>
+<!-- source: ~/musa-drive/processed/5500/payoff_bases.csv -->
 <table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Rent factor</th>
-<th>Low cost</th>
-<th>Mid cost</th>
-<th>High cost</th>
+<th>Rent basis</th>
+<th>Tracts</th>
+<th>Median</th>
+<th>vs headline (median ratio)</th>
+<th>Correlation with headline</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0.9</td>
-<td>44%</td>
-<td>13%</td>
-<td>5%</td>
+<td>1-bedroom, tract x county ratio (headline, the tool)</td>
+<td>3,445</td>
+<td>$956</td>
+<td>1.00</td>
+<td>1.00</td>
 </tr>
 <tr class="even">
-<td>1.0</td>
-<td>56%</td>
-<td>20%</td>
-<td>9%</td>
+<td>1-bedroom, raw tract B25031</td>
+<td>2,146</td>
+<td>$906</td>
+<td>1.04</td>
+<td>0.88</td>
 </tr>
 <tr class="odd">
-<td>1.1</td>
-<td>65%</td>
-<td>28%</td>
-<td>14%</td>
+<td>1-bedroom, HUD SAFMR FY2026 by ZIP</td>
+<td>3,445</td>
+<td>$1,178</td>
+<td>1.25</td>
+<td>0.78</td>
+</tr>
+<tr class="even">
+<td>All units, tract B25064 (first draft)</td>
+<td>3,261</td>
+<td>$1,149</td>
+<td>1.22</td>
+<td>0.99</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Build cost matters more than the rent guess. Going from mid to low cost moves “yes” from 20% to 56%</li>
-<li>So cheaper building (prefab, smaller units, lower fees) may matter as much as the zoning change</li>
+<li>The all-unit median is about 18% above the 1-bedroom rent. That is the whole gap between 20.3% and 10.3%</li>
+<li>HUD SAFMRs are higher because they track recent movers, while ACS medians include long-time tenants. A new unit would rent to a new tenant, so the SAFMR answer (16.5%) is a fair upper check on the headline</li>
+</ul>
+<p>Sensitivity. Share of tracts where the unit pays (yes), in %:</p>
+<!-- source: ~/musa-drive/processed/5500/payoff_sensitivity.csv -->
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Rent basis</th>
+<th>Rate</th>
+<th>$175</th>
+<th>$250</th>
+<th>$300</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1-bedroom (headline)</td>
+<td>6.53%</td>
+<td>36.4</td>
+<td><strong>10.3</strong></td>
+<td>4.0</td>
+</tr>
+<tr class="even">
+<td>1-bedroom (headline)</td>
+<td>7.18%</td>
+<td>30.6</td>
+<td>7.3</td>
+<td>2.8</td>
+</tr>
+<tr class="odd">
+<td>1-bedroom, raw tract</td>
+<td>6.53%</td>
+<td>33.7</td>
+<td>11.8</td>
+<td>4.3</td>
+</tr>
+<tr class="even">
+<td>1-bedroom, raw tract</td>
+<td>7.18%</td>
+<td>27.7</td>
+<td>9.0</td>
+<td>3.4</td>
+</tr>
+<tr class="odd">
+<td>1-bedroom, SAFMR</td>
+<td>6.53%</td>
+<td>60.8</td>
+<td>16.5</td>
+<td>6.6</td>
+</tr>
+<tr class="even">
+<td>1-bedroom, SAFMR</td>
+<td>7.18%</td>
+<td>50.8</td>
+<td>11.7</td>
+<td>4.1</td>
+</tr>
+<tr class="odd">
+<td>All units</td>
+<td>6.53%</td>
+<td>55.9</td>
+<td>20.3</td>
+<td>9.2</td>
+</tr>
+<tr class="even">
+<td>All units</td>
+<td>7.18%</td>
+<td>48.1</td>
+<td>15.8</td>
+<td>6.8</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Build cost moves the answer the most. Going from $250 to $175 per sq ft takes the headline from 10.3% to 36.4%</li>
+<li>The rate matters less. At the latest weekly rate (7.18%) the headline falls to 7.3%</li>
+<li>Cheaper building (prefab, smaller units, lower fees) may matter as much as the zoning change</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -571,108 +952,428 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Payoff map</figcaption>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/04_payoff_sensitivity.png" class="img-fluid figure-img"></p>
+<figcaption>Sensitivity</figcaption>
+</figure>
+</div>
 </section>
-<section id="random-forest-where-housing-grew-2010-2020" class="level3">
-<h3 class="anchored" data-anchor-id="random-forest-where-housing-grew-2010-2020">5. Random forest: where housing grew 2010-2020</h3>
+<section id="where-did-housing-grow-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="where-did-housing-grow-the-model">5. Where did housing grow? The model</h3>
 <ul>
-<li>Target: log of decennial homes 2020 / 2010, crosswalked to 2020 tracts. 3,394 tracts. Median tract grew 1.31% over the decade</li>
-<li>Two checks: random 5-fold CV, and spatial CV that holds out whole counties</li>
+<li>Target: log of decennial homes 2020 / 2010, crosswalked. 3,394 tracts. The median tract grew 1.31% over the decade</li>
+<li>Features from 2010 only. Five folds in each scheme</li>
 </ul>
+<!-- source: ~/musa-drive/processed/5500/forecast_cv.csv -->
 <table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
 <thead>
 <tr class="header">
+<th>CV scheme</th>
 <th>Model</th>
-<th>R2 random CV</th>
-<th>R2 spatial CV</th>
-<th>MAE spatial (log pts)</th>
+<th>R2</th>
+<th>MAE (log points)</th>
+<th>R2, mean of folds</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>A: 2010 data only</td>
-<td>0.279</td>
-<td>0.202</td>
-<td>0.100</td>
+<td>Random 5-fold</td>
+<td>random forest</td>
+<td>0.225</td>
+<td>0.093</td>
+<td></td>
 </tr>
 <tr class="even">
-<td>B: + ACS 2010-14</td>
-<td>0.296</td>
-<td>0.213</td>
+<td>Random 5-fold</td>
+<td>gradient boosting</td>
+<td>0.164</td>
+<td>0.088</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Counties held out</td>
+<td>median baseline</td>
+<td>-0.003</td>
+<td>0.107</td>
+<td>-0.008</td>
+</tr>
+<tr class="even">
+<td>Counties held out</td>
+<td>ridge</td>
+<td>0.194</td>
+<td>0.120</td>
+<td>0.214</td>
+</tr>
+<tr class="odd">
+<td>Counties held out</td>
+<td>random forest</td>
+<td>0.216</td>
+<td>0.100</td>
+<td>0.202</td>
+</tr>
+<tr class="even">
+<td>Counties held out</td>
+<td><strong>gradient boosting</strong></td>
+<td>0.202</td>
+<td><strong>0.092</strong></td>
+<td>0.256</td>
+</tr>
+<tr class="odd">
+<td>40 km blocks held out</td>
+<td>median baseline</td>
+<td>-0.002</td>
+<td>0.107</td>
+<td>-0.007</td>
+</tr>
+<tr class="even">
+<td>40 km blocks held out</td>
+<td>ridge</td>
+<td>0.197</td>
+<td>0.116</td>
+<td>0.205</td>
+</tr>
+<tr class="odd">
+<td>40 km blocks held out</td>
+<td>random forest</td>
+<td>0.212</td>
 <td>0.097</td>
+<td>0.202</td>
+</tr>
+<tr class="even">
+<td>40 km blocks held out</td>
+<td>gradient boosting</td>
+<td>0.194</td>
+<td>0.091</td>
+<td>0.233</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>A baseline that gives every tract the state median has R2 of -0.002</li>
-<li>So the model has real but modest skill. It explains about a fifth of the tract-to-tract spread in places it has not seen</li>
-<li>R2 drops from random CV to spatial CV. Nearby tracts share a lot, so random CV is too hopeful</li>
-<li>Model B is only 0.011 better and uses ACS 2010-14, which overlaps the target years. Model A is used for the forecast</li>
-<li>Most important predictors (model A): workers living in the tract 2010 (0.484), homes 2010 (0.226), jobs per home (0.047), developed share 2010 (0.044), homes per km2 (0.041)</li>
+<li>All three models beat the baseline by about 0.2 R2 in places they have not seen. That is real but modest skill. Four fifths of the tract-to-tract spread is left unexplained</li>
+<li>Gradient boosting has the lowest held-out error (MAE 0.092) and is used. The random forest has a slightly higher pooled R2. The ranking of tracts is close either way</li>
+<li>Random CV flatters the random forest (0.225 vs 0.216 with counties held out). Grid blocks give the same picture as counties</li>
+</ul>
+<p>Temporal backtest. Trained on the change from 2010-14 to 2015-19, scored on the change from 2015-19 to 2020-24 (ACS homes, 3,385 tracts with at least 100 homes):</p>
+<!-- source: ~/musa-drive/processed/5500/forecast_backtest.csv -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>R2</th>
+<th>MAE</th>
+<th>Correlation</th>
+<th>R2 where the change beats its margin (958 tracts)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Earlier median</td>
+<td>-0.002</td>
+<td>0.120</td>
+<td>0.00</td>
+<td>-0.009</td>
+</tr>
+<tr class="even">
+<td>Last-period rate</td>
+<td>-0.086</td>
+<td>0.133</td>
+<td>0.01</td>
+<td>-0.043</td>
+</tr>
+<tr class="odd">
+<td>Ridge</td>
+<td>0.025</td>
+<td>0.117</td>
+<td>0.19</td>
+<td>0.020</td>
+</tr>
+<tr class="even">
+<td>Random forest</td>
+<td>0.019</td>
+<td>0.118</td>
+<td>0.14</td>
+<td>0.019</td>
+</tr>
+<tr class="odd">
+<td>Gradient boosting</td>
+<td>0.021</td>
+<td>0.118</td>
+<td>0.15</td>
+<td>0.020</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Five years ahead, nothing predicts the ACS tract change well.</strong> A tract’s own earlier change says nothing about its next one (correlation 0.01)</li>
+<li>Models add a little (correlation 0.15 to 0.19) but explain only about 2% of the spread</li>
+<li>Part of this is noise: 72% of tract changes in homes are inside the ACS margin of error. The 10-year decennial target above is much cleaner, which is why the model trains on it</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/04_rf.png" class="img-fluid figure-img"></p>
-<figcaption>Random forest</figcaption>
+<p><img src="figures/04_model_compare.png" class="img-fluid figure-img"></p>
+<figcaption>Model comparison</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/04_backtest.png" class="img-fluid figure-img"></p>
+<figcaption>Temporal backtest</figcaption>
+</figure>
+</div>
+<p>Prediction intervals (90%, split conformal on county-held-out errors, <code>forecast_conformal.csv</code> and <code>forecast_summary.json</code>):</p>
+<ul>
+<li>Half-width 0.204 log points. A tract predicted to grow 5% over ten years gets an interval of about -14% to +29%</li>
+<li>Coverage by held-out county fold: 0.85, 0.93, 0.95, 0.86, 0.92 (mean 0.90)</li>
+<li>Quantile gradient boosting gives narrower bands but covers only 76% of held-out tracts. The conformal bands are honest, and wide</li>
+</ul>
+<p>What drives the prediction (permutation importance on held-out counties, drop in R2):</p>
+<!-- source: ~/musa-drive/processed/5500/forecast_importance.csv -->
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Importance</th>
+<th>Spread across folds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Homes in 2010 (log)</td>
+<td>0.691</td>
+<td>0.364</td>
+</tr>
+<tr class="even">
+<td>Workers living in the tract 2010 (log)</td>
+<td>0.522</td>
+<td>0.231</td>
+</tr>
+<tr class="odd">
+<td>Homes per km2</td>
+<td>0.041</td>
+<td>0.009</td>
+</tr>
+<tr class="even">
+<td>Developed share of land</td>
+<td>0.028</td>
+<td>0.023</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Small tracts are predicted to grow faster, and tracts with more workers per home grow faster. Growth is low in tracts with little developed land</li>
+<li>The size effect is partly real (new subdivisions start small) and partly the land-area crosswalk, which is roughest in small tracts</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/04_importance_pdp.png" class="img-fluid figure-img"></p>
+<figcaption>Importance and partial dependence</figcaption>
+</figure>
+</div>
+<p>IRS migration:</p>
+<ul>
+<li>Net movers per 1,000 residents a year: the median county went from -1.3 (2012-19) to +1.1 (2020-23). Counties gaining movers went from 22 to 47 of 67</li>
+<li>As a model feature it adds 0.006 to the held-out R2 (rule: at least 0.02), so it is left out. It stays as context</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/04_migration_map.png" class="img-fluid figure-img"></p>
+<figcaption>IRS county net migration</figcaption>
 </figure>
 </div>
 </section>
 <section id="adus-by-2031" class="level3">
 <h3 class="anchored" data-anchor-id="adus-by-2031">6. ADUs by 2031</h3>
 <ul>
-<li>Lots with room: from <code>lots_tract.csv</code> (MUSA 6950), all 3,445 tracts</li>
-<li>Today’s rules: only 12 towns are coded in <code>shared/legal_status.csv</code> (4 allowed, 8 limited). The other towns are treated as limited</li>
-<li>Pittsburgh is now coded “allowed”. It made ADUs legal citywide on Oct 29, 2026 (see <code>shared/adu_rules_pa.md</code>)</li>
-<li>Forecast covers 2,571 of 2,572 towns. Wheatland borough (Mercer) has no blocks in the LODES crosswalk and no population estimate after 2019, so it has no row</li>
+<li>Lots with room: <code>room_tract.csv</code>, all 3,445 tracts. Measured lot by lot in Philadelphia and Pittsburgh (76,970 lots with room), modelled elsewhere (section 9). The old pilot estimate (2,586,637 lots) is kept beside it</li>
+<li>Today’s rules: legal classes from the town rule files (section 9). 38 municipalities have a rule file. The other towns count as “unknown” and keep the old “limited” factor</li>
+<li>Forecast covers 2,571 of 2,572 towns. Wheatland borough (Mercer) has no blocks in the LODES crosswalk and no population estimate after 2019</li>
 </ul>
-<p>Statewide totals, 2027-2031:</p>
+<p>Statewide ADUs, 2027 to 2031:</p>
+<!-- source: ~/musa-drive/processed/5500/forecast_summary.json, forecast_totals.csv -->
 <table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Rule</th>
+<th>Scenario</th>
 <th>Low</th>
 <th>Mid</th>
 <th>High</th>
+<th>Mid per year</th>
+<th>Mid per 100k people per year</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Today, by 2031</td>
-<td>316</td>
-<td>1,168</td>
-<td>3,040</td>
+<td>Today’s rules</td>
+<td>314</td>
+<td>1,012</td>
+<td>2,451</td>
+<td>202</td>
+<td>1.6</td>
 </tr>
 <tr class="even">
-<td>HB 2186, by 2031</td>
-<td>8,219</td>
-<td>16,912</td>
-<td>25,600</td>
+<td>HB 2186</td>
+<td>6,540</td>
+<td>13,455</td>
+<td>20,367</td>
+<td>2,691</td>
+<td>20.7</td>
 </tr>
 <tr class="odd">
-<td>HB 2186, per year</td>
-<td>1,644</td>
-<td>3,382</td>
-<td>5,120</td>
+<td>SB 1346</td>
+<td>6,431</td>
+<td>13,238</td>
+<td>20,056</td>
+<td>2,648</td>
+<td>20.3</td>
+</tr>
+</tbody>
+</table>
+<p>Old vs new inputs (mid, by 2031):</p>
+<!-- source: ~/musa-drive/processed/5500/forecast_old_vs_new.csv -->
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Inputs</th>
+<th>Today</th>
+<th>HB 2186</th>
+<th>SB 1346</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Old: pilot room, 12-town list</td>
+<td>896</td>
+<td>13,144</td>
+<td>12,839</td>
 </tr>
 <tr class="even">
-<td>HB 2186, per 100k people per year</td>
-<td>12.6</td>
-<td>26.0</td>
-<td>39.3</td>
+<td>New room, 12-town list</td>
+<td>868</td>
+<td>13,455</td>
+<td>13,238</td>
+</tr>
+<tr class="odd">
+<td>Pilot room, rule-file classes</td>
+<td>1,046</td>
+<td>13,144</td>
+<td>12,839</td>
+</tr>
+<tr class="even">
+<td>New: new room, rule-file classes</td>
+<td>1,012</td>
+<td>13,455</td>
+<td>13,238</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>The Pew range for all of PA would be 3,385 to 10,545 a year (13.0 million people). The HB 2186 mid case, 3,382 a year, sits just below the bottom of that range. This is expected, because most PA tracts do not pass the payoff test and many have few single-family lots</li>
-<li>HB 2186 mid is about 11.1% of the new homes PA permits each year now (24,810 to 28,149 a year in 2022-2025, 47,894 in 2021)</li>
-<li>Under today’s rules the forecast is about 14 times smaller (1,168 vs 16,912 in the mid case). Nearly all of the gap comes from the assumption that unlisted towns are “limited”</li>
-<li>Pittsburgh alone is 236 of the 1,168 “today” mid case now that it is allowed. When it was coded limited it gave 12</li>
+<li><strong>New room</strong> adds about 310 under HB 2186 and 400 under SB 1346, and takes about 30 from today. The lots index is relative to the state ratio, so better room data moves ADUs between places more than it changes the total. The two cities fall (Philadelphia 321 to 228 under HB 2186, Pittsburgh 166 to 124), because their measured room is far below the old pilot rate. Suburban and rural tracts gain a little weight</li>
+<li><strong>Rule-file classes</strong> add about 150 today and change nothing under the bills, where every town is by right. Seven by-right towns gain (Lower Paxton 81, Cranberry 55, Erie 31, Scranton 26, Altoona 17, State College 14, Harrisburg 10 mid). The 18 towns with no ADU text or a ban drop to near zero. West Vincent and College township were “allowed” in the old list but have no rule file yet, so they are now “unknown”</li>
+<li>The low to high range comes from the permit rate (26 to 81 per 100,000) and the rule factors. It shows the assumptions, not statistical error. The room range (section 9) is not carried into these totals. They use the mid room estimate</li>
+<li><strong>This is scenario arithmetic, not a fitted forecast. ADU permit data is thin.</strong> The Census permit survey does not count ADUs on their own, and Pennsylvania has no ADU permit series. So the scenario cannot be fit or tested against real ADU counts. The model in section 5 only ranks where housing grows. Treat the totals as “what the stated assumptions imply”</li>
+<li>The cities the permit rate comes from would give PA 3,385 to 10,545 a year (26 and 81 per 100,000 times 13,018,639 people, <code>forecast_summary.json</code>). The HB 2186 mid case (2,691 a year) is below that range, because most tracts fail the payoff test and many have few lots with room</li>
+<li>HB 2186 mid is about 8.9% of the new homes PA permits each year now (24,810 to 47,894 a year in 2021-2025)</li>
+<li>Under today’s rules the mid case is about 13 times smaller. 11,297 of the 13,455 HB 2186 mid comes from the towns with no rule file. Reading more town codes would change “today” the most</li>
+<li>SB 1346 is close to HB 2186 because it reaches every town but the two big cities. Philadelphia stays at 11 mid under SB 1346 vs 228 under HB 2186</li>
 </ul>
-<p>Top towns under HB 2186 (mid):</p>
+<p>Mid ADUs by 2031, by the town’s legal class today:</p>
+<!-- source: ~/musa-drive/processed/5500/forecast_by_rule_today.csv -->
 <table class="caption-top table">
 <thead>
 <tr class="header">
+<th>Legal class</th>
+<th>Rule file?</th>
+<th>Today</th>
+<th>HB 2186</th>
+<th>SB 1346</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>by right</td>
+<td>yes</td>
+<td>404</td>
+<td>404</td>
+<td>404</td>
+</tr>
+<tr class="even">
+<td>conversion only</td>
+<td>yes</td>
+<td>12</td>
+<td>237</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>discretionary</td>
+<td>yes</td>
+<td>3</td>
+<td>69</td>
+<td>69</td>
+</tr>
+<tr class="even">
+<td>family only</td>
+<td>yes</td>
+<td>23</td>
+<td>465</td>
+<td>465</td>
+</tr>
+<tr class="odd">
+<td>none</td>
+<td>yes</td>
+<td>5</td>
+<td>983</td>
+<td>983</td>
+</tr>
+<tr class="even">
+<td>unknown</td>
+<td>no</td>
+<td>565</td>
+<td>11,297</td>
+<td>11,297</td>
+</tr>
+</tbody>
+</table>
+<p>Top towns under HB 2186 (mid):</p>
+<!-- source: data/processed/forecast_town.csv -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
 <th>Town</th>
-<th>Rule today</th>
+<th>Class today</th>
+<th>Rule file</th>
 <th>People</th>
 <th>Low</th>
 <th>Mid</th>
@@ -683,99 +1384,110 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>Philadelphia city</td>
-<td>limited</td>
+<td>conversion only</td>
+<td>verified</td>
 <td>1,579,706</td>
-<td>196</td>
-<td>404</td>
-<td>611</td>
-<td>20</td>
+<td>110.6</td>
+<td>227.7</td>
+<td>344.7</td>
+<td>11.4</td>
 </tr>
 <tr class="even">
-<td>Pittsburgh city</td>
-<td>allowed</td>
-<td>304,759</td>
-<td>115</td>
-<td>236</td>
-<td>356</td>
-<td>236</td>
-</tr>
-<tr class="odd">
-<td>Lower Merion township</td>
-<td>limited</td>
-<td>64,174</td>
-<td>67</td>
-<td>138</td>
-<td>210</td>
-<td>7</td>
-</tr>
-<tr class="even">
-<td>Haverford township</td>
-<td>limited</td>
-<td>50,874</td>
-<td>62</td>
-<td>127</td>
-<td>193</td>
-<td>6</td>
-</tr>
-<tr class="odd">
-<td>Abington township</td>
-<td>limited</td>
-<td>58,664</td>
-<td>59</td>
-<td>122</td>
-<td>184</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td>Lower Paxton township</td>
-<td>limited</td>
-<td>54,657</td>
-<td>58</td>
-<td>119</td>
-<td>180</td>
-<td>6</td>
-</tr>
-<tr class="odd">
 <td>Northampton township</td>
-<td>limited</td>
+<td>none</td>
+<td>verified</td>
 <td>39,920</td>
-<td>56</td>
-<td>114</td>
-<td>173</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td>Bristol township</td>
-<td>limited</td>
-<td>54,173</td>
-<td>55</td>
-<td>114</td>
-<td>172</td>
-<td>6</td>
+<td>64.5</td>
+<td>132.8</td>
+<td>201.1</td>
+<td>0.7</td>
 </tr>
 <tr class="odd">
-<td>Middletown township</td>
-<td>limited</td>
-<td>45,793</td>
-<td>51</td>
-<td>105</td>
-<td>159</td>
-<td>5</td>
+<td>Pittsburgh city</td>
+<td>by right</td>
+<td>verified</td>
+<td>304,759</td>
+<td>60.2</td>
+<td>123.5</td>
+<td>185.9</td>
+<td>123.5</td>
 </tr>
 <tr class="even">
-<td>Manheim township</td>
-<td>limited</td>
-<td>44,436</td>
-<td>49</td>
-<td>100</td>
-<td>152</td>
-<td>5</td>
+<td>Lower Merion township</td>
+<td>family only</td>
+<td>verified</td>
+<td>64,174</td>
+<td>55.0</td>
+<td>113.2</td>
+<td>171.3</td>
+<td>5.7</td>
+</tr>
+<tr class="odd">
+<td>Haverford township</td>
+<td>none</td>
+<td>verified</td>
+<td>50,874</td>
+<td>49.0</td>
+<td>100.8</td>
+<td>152.6</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>Radnor township</td>
+<td>none</td>
+<td>drafted</td>
+<td>33,718</td>
+<td>47.6</td>
+<td>98.0</td>
+<td>148.3</td>
+<td>0.5</td>
+</tr>
+<tr class="odd">
+<td>Upper Providence township</td>
+<td>unknown</td>
+<td>none</td>
+<td>24,666</td>
+<td>44.5</td>
+<td>91.5</td>
+<td>138.5</td>
+<td>4.6</td>
+</tr>
+<tr class="even">
+<td>Middletown township (Bucks)</td>
+<td>none</td>
+<td>verified</td>
+<td>45,793</td>
+<td>43.9</td>
+<td>90.3</td>
+<td>136.7</td>
+<td>0.5</td>
+</tr>
+<tr class="odd">
+<td>Lower Makefield township</td>
+<td>none</td>
+<td>verified</td>
+<td>33,485</td>
+<td>43.7</td>
+<td>89.9</td>
+<td>136.1</td>
+<td>0.4</td>
+</tr>
+<tr class="even">
+<td>Tredyffrin township</td>
+<td>unknown</td>
+<td>none</td>
+<td>31,922</td>
+<td>42.1</td>
+<td>86.6</td>
+<td>131.1</td>
+<td>4.3</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Philadelphia check. Today’s rule gives 4 to 61 ADUs by 2031 (20 mid), about 4 a year in the mid case. The real record is about 10 in 12+ years. So even the “limited” factor may be a bit high for Philadelphia</li>
-<li>Pittsburgh, Allentown, West Vincent, and College township already allow ADUs, so HB 2186 changes nothing there (236, 77, 29, and 14 mid)</li>
+<li>Philadelphia check. Today’s class gives 2 to 35 ADUs by 2031 (11 mid), about 2 a year. The real record is about 10 in 12+ years</li>
+<li>Pittsburgh is 124 of the 1,012 “today” mid case. The bills change nothing there or in the other by-right towns</li>
+<li>Five of the top ten towns under HB 2186 have no ADU text in their code today. The bill would open them</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -783,26 +1495,583 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>ADUs by 2031 under HB 2186</figcaption>
 </figure>
 </div>
+<p>County totals are in <code>data/processed/county_rollup.csv</code> (one row per county, sums of tracts).</p>
+</section>
+<section id="explore-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="explore-the-results">7. Explore the results</h3>
+<p><a href="../figures/tract_explorer.html">Open the linked view</a>. Click counties on the map and drag a box on the scatter. The trend groups, the margin histogram and the table of the best tracts follow the selection.</p>
+</section>
+<section id="why-not-today-law-yard-space-and-missing-town-rules" class="level3">
+<h3 class="anchored" data-anchor-id="why-not-today-law-yard-space-and-missing-town-rules">8. Why not today: law, yard space and missing town rules</h3>
+<p>The tract results say where demand and payoff are. They do not say why so few ADUs get built where both look good. The lot tool and the town rule files give the rest of the answer. The limit is different in each place.</p>
+<p><strong>Philadelphia: the law is the limit.</strong></p>
+<!-- source: ~/musa-drive/lots/philadelphia/stats.json all.paths, data version philadelphia-20261111-b7fa7bda07, stats.json written 2026-11-11 22:50 -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Philadelphia, 459,998 lots</th>
+<th>Today</th>
+<th>Local reform (Bill 250042)</th>
+<th>State reform (HB 2186)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Any legal ADU path</td>
+<td>1.2% (5,469 lots)</td>
+<td>53.3% (245,114 lots)</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<td>Legal path for a new detached unit</td>
+<td>0%</td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<td>A detached unit fits the yard</td>
+<td>0%</td>
+<td>0%</td>
+<td>26.0% (119,401 lots)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Today almost no lot has a legal path, and no lot can add a new detached unit by right. The bars come from zoning overlays in the code, not from any test of the yard</li>
+<li>73 of Philadelphia’s 408 tracts pass the payoff test (section 4). So demand and payoff exist in the city, and the law stops them first</li>
+<li>Bill 250042 is in committee. It is not law</li>
+</ul>
+<p><strong>Pittsburgh: yard space is the limit.</strong></p>
+<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (all, all.paths) and manifest.json counts, data version pittsburgh-20261111-bdeb5697ae, built 2026-11-11T20:30:22 -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pittsburgh, 92,081 lots</th>
+<th>Today</th>
+<th>Local reform</th>
+<th>State reform (HB 2186)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Any legal ADU path</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<td>New detached unit by right</td>
+<td>0%</td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<td>A detached unit fits the yard (any legal path)</td>
+<td>65.8% (60,559 lots)</td>
+<td>65.8%</td>
+<td>70.0% (64,432 lots)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Ordinance 31-2026, signed Oct 29, 2026, allows internal and attached units by right on every lot. A detached unit in a side or rear yard needs an Administrator’s Exception. Local reform equals today in Pittsburgh</li>
+<li>So the law opens every lot. What stops a detached unit is the yard. The top reason a detached unit does not fit, or cannot grow, today:</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Top limit today</th>
+<th>Share of lots</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Room in the yard after setbacks (<code>yard_space</code>)</td>
+<td>41.4%</td>
+</tr>
+<tr class="even">
+<td>No room for any unit (<code>no_room</code>)</td>
+<td>34.2%</td>
+</tr>
+<tr class="odd">
+<td>The 1,000 sq ft size cap (<code>size_cap</code>)</td>
+<td>24.4%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Only 22 of Allegheny County’s 394 tracts pass the payoff test. In Pittsburgh the yard and the rent both limit what gets built, not the law</li>
+</ul>
+<p><strong>The rest of the state: most large towns have no ADU rule.</strong></p>
+<!-- source: shared/rules/towns_index.json (status, population, pop_rank) and adu.status.value in each shared/rules/pa_*.json, computed -->
+<p>The rule files cover the 36 largest municipalities after the two cities (population ranks 3 to 38, 2020 Census). 21 files are verified. 15 are drafted, each with a stated open point. A statewide baseline file covers what applies in every town.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>ADU status in the town code</th>
+<th>Towns</th>
+<th>Verified</th>
+<th>Drafted</th>
+<th>People (2020)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not addressed (no ADU text)</td>
+<td>17</td>
+<td>11</td>
+<td>6</td>
+<td>684,436</td>
+</tr>
+<tr class="even">
+<td>Allowed by right</td>
+<td>8</td>
+<td>4</td>
+<td>4</td>
+<td>518,164</td>
+</tr>
+<tr class="odd">
+<td>Family members only</td>
+<td>8</td>
+<td>3</td>
+<td>5</td>
+<td>436,944</td>
+</tr>
+<tr class="even">
+<td>Prohibited (Reading)</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>95,112</td>
+</tr>
+<tr class="odd">
+<td>Special exception (Bristol township)</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>54,291</td>
+</tr>
+<tr class="even">
+<td>Conversion only (York)</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>44,800</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>36</strong></td>
+<td><strong>21</strong></td>
+<td><strong>15</strong></td>
+<td><strong>1,833,747</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>17 of the 36 have no ADU text at all, and Reading bans ADUs. So 18 of 36 offer no ADU path in their own code. Another 8 allow a unit only for family</li>
+<li>A town with no ADU text gives no direct path. The usual routes are a variance or a code change (the statewide baseline file cites the Municipalities Planning Code sections). There is no statewide ADU zoning rule today. HB 2186 and SB 1346 would add one. Both bills are pending and not law. The session ends Nov 30, 2026</li>
+<li>The tract forecast (section 6) now reads these files. Towns with no ADU text or a ban count as “none” (near zero today), by-right towns count fully</li>
+</ul>
+<p>Not legal advice. Not a zoning determination. Parcel lines are not a survey. Check with the town before you plan a unit.</p>
+</section>
+<section id="lots-with-room-measured-in-two-cities-modelled-elsewhere" class="level3">
+<h3 class="anchored" data-anchor-id="lots-with-room-measured-in-two-cities-modelled-elsewhere">9. Lots with room: measured in two cities, modelled elsewhere</h3>
+<p><strong>Measured (lot tool, every 1 to 4 unit lot).</strong></p>
+<!-- source: data/processed/lots_city_v2.csv (pipeline/tract/lot_rollup.py) -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Philadelphia</th>
+<th>Pittsburgh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lots</td>
+<td>459,998</td>
+<td>92,081</td>
+</tr>
+<tr class="even">
+<td>Any legal path today</td>
+<td>5,469 (1.2%)</td>
+<td>92,081 (100%)</td>
+</tr>
+<tr class="odd">
+<td>Any legal path, local reform</td>
+<td>245,114 (53.3%)</td>
+<td>92,081 (100%)</td>
+</tr>
+<tr class="even">
+<td>By right today</td>
+<td>5,469 (1.2%)</td>
+<td>92,081 (100%)</td>
+</tr>
+<tr class="odd">
+<td>Detached unit fits today: 400 / 600 / 800 / 1,000 sq ft</td>
+<td>0 / 0 / 0 / 0</td>
+<td>50,012 / 37,923 / 28,892 / 22,448</td>
+</tr>
+<tr class="even">
+<td>Detached unit fits, state reform: 400 / 600 / 800 / 1,000 sq ft</td>
+<td>59,460 / 34,741 / 22,553 / 202</td>
+<td>54,245 / 42,229 / 32,363 / 25,065</td>
+</tr>
+<tr class="odd">
+<td>Share with room for 600 sq ft (state-reform setbacks)</td>
+<td>7.6%</td>
+<td>45.9%</td>
+</tr>
+<tr class="even">
+<td>Garage-size accessory building</td>
+<td>6,874 (1.5%)</td>
+<td>20,958 (22.8%)</td>
+</tr>
+<tr class="odd">
+<td>Garage conversion fits today</td>
+<td>108</td>
+<td>20,448</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Philadelphia has 0 detached fits today because the law bars new detached units, not because no yard has room. Under state reform 7.6% of lots have room for 600 sq ft. Only 202 for 1,000 sq ft, because few rowhouse yards are that big</li>
+<li>Tract and county files: <code>lots_tract_v2.csv</code>, <code>lots_county_v2.csv</code></li>
+</ul>
+<p><strong>Old pilot vs new lot results (Philadelphia).</strong></p>
+<!-- source: ~/musa-drive/processed/5500/lots_compare_pilot.json -->
+<ul>
+<li>Lot by lot: 25,367 of the 26,269 pilot lots match a new lot (same parcel, area within 20%). 96% are single-family detached. The raster said a 600 sq ft box fits on 48.6% of them, the vector test on 40.0%. They agree on 79.2%. 14.7% are “yes” in the old test and “no” in the new one, 6.1% the other way</li>
+<li>By tract (385 tracts): the old counts and the new counts of lots with room correlate 0.72, but the new count is lower by 28 lots per tract on average. The old estimate sums to 45,469 lots with room. The new one finds 34,741 among all 1 to 4 unit lots, 14,453 of them single-family</li>
+<li>The shares do not correlate at all (0.04 across 303 tracts with single-family lots). The old share is the same 0.72 almost everywhere (standard deviation 0.005), the new share runs from 0 to 1 (standard deviation 0.32, mean 0.35)</li>
+<li>Why they differ:
+<ul>
+<li>The old estimate used one fit rate per area type, so it could not tell one Philadelphia tract from another. Its counts track the new ones only because both grow with the number of homes</li>
+<li>It counted ACS single-family detached homes (63,206 in these tracts). The parcel data calls only 26,949 lots single-family detached. The new count covers every 1 to 4 unit lot</li>
+<li>The tests differ. The raster test looked for open land in a land cover image. The vector test uses lot lines, setbacks, 10 ft from the house and 5 ft from garages</li>
+<li>The urban rate (0.72) was higher than the raster’s own answer on the matched Philadelphia pilot lots (48.6%)</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/05_lots_old_vs_new.png" class="img-fluid figure-img"></p>
+<figcaption>Old pilot vs new lot results</figcaption>
+</figure>
+</div>
+<p><strong>Modelled (every other tract).</strong></p>
+<!-- source: ~/musa-drive/processed/5500/room_cross_city.csv, room_block_cv.csv, room_summary.json -->
+<p>Share of lots with room for 600 sq ft, predicted for a city the model never saw:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Held-out city</th>
+<th>Model</th>
+<th>R2</th>
+<th>MAE</th>
+<th>Pooled share, true</th>
+<th>Pooled share, predicted</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Philadelphia</td>
+<td>lot-weighted mean</td>
+<td>-6.23</td>
+<td>0.376</td>
+<td>0.076</td>
+<td>0.459</td>
+</tr>
+<tr class="even">
+<td>Philadelphia</td>
+<td>old pilot rate</td>
+<td>-18.24</td>
+<td>0.627</td>
+<td>0.076</td>
+<td>0.719</td>
+</tr>
+<tr class="odd">
+<td>Philadelphia</td>
+<td>ridge</td>
+<td>0.486</td>
+<td>0.068</td>
+<td>0.076</td>
+<td>0.049</td>
+</tr>
+<tr class="even">
+<td>Philadelphia</td>
+<td>gradient boosting</td>
+<td>0.004</td>
+<td>0.122</td>
+<td>0.076</td>
+<td>0.150</td>
+</tr>
+<tr class="odd">
+<td>Pittsburgh</td>
+<td>lot-weighted mean</td>
+<td>-2.59</td>
+<td>0.353</td>
+<td>0.459</td>
+<td>0.076</td>
+</tr>
+<tr class="even">
+<td>Pittsburgh</td>
+<td>old pilot rate</td>
+<td>-1.83</td>
+<td>0.310</td>
+<td>0.459</td>
+<td>0.719</td>
+</tr>
+<tr class="odd">
+<td>Pittsburgh</td>
+<td>ridge</td>
+<td>0.458</td>
+<td>0.126</td>
+<td>0.459</td>
+<td>0.499</td>
+</tr>
+<tr class="even">
+<td>Pittsburgh</td>
+<td>gradient boosting</td>
+<td>0.382</td>
+<td>0.138</td>
+<td>0.459</td>
+<td>0.406</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Ridge is used. Trained on Pittsburgh alone it gets Philadelphia’s overall share about right (4.9% vs 7.6%), and the other way round (49.9% vs 45.9%). Gradient boosting does worse across cities</li>
+<li>Within the cities, 2 km block cross-validation gives ridge R2 0.757 (MAE 0.076) and gradient boosting 0.749 (0.070). The cross-city numbers are the honest ones for the rest of the state</li>
+<li>The old pilot rate (0.72) is far off in both cities</li>
+<li>What drives it: the share of detached single-family homes raises room, the share of attached homes and housing density lower it</li>
+<li>90% band: plus or minus 0.218 from the cross-city errors, doubled to 0.436 where a tract is outside the two cities’ range</li>
+</ul>
+<p>Statewide estimate of 1 to 4 unit lots with room for a 600 sq ft unit:</p>
+<!-- source: ~/musa-drive/processed/5500/room_summary.json -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Low</th>
+<th>Mid</th>
+<th>High</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All PA (4,482,651 small-building lots)</td>
+<td>1,491,667</td>
+<td>2,880,242</td>
+<td>3,550,530</td>
+</tr>
+<tr class="even">
+<td>Of which measured (513 city tracts)</td>
+<td>76,970</td>
+<td>76,970</td>
+<td>76,970</td>
+</tr>
+<tr class="odd">
+<td>Old pilot estimate, for comparison</td>
+<td></td>
+<td>2,586,637</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Old area type (modelled tracts)</th>
+<th>Tracts</th>
+<th>Outside training range</th>
+<th>Share with room, low</th>
+<th>Mid</th>
+<th>High</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Urban</td>
+<td>1,804</td>
+<td>789</td>
+<td>0.28</td>
+<td>0.59</td>
+<td>0.83</td>
+</tr>
+<tr class="even">
+<td>Suburban</td>
+<td>491</td>
+<td>457</td>
+<td>0.50</td>
+<td>0.93</td>
+<td>0.99</td>
+</tr>
+<tr class="odd">
+<td>Rural</td>
+<td>637</td>
+<td>534</td>
+<td>0.46</td>
+<td>0.87</td>
+<td>0.96</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Measured:</strong> the 513 tracts in Philadelphia and Pittsburgh. <strong>Modelled:</strong> the other 2,932 tracts</li>
+<li>1,780 of the 2,932 modelled tracts (61%) are outside the range of the two cities, almost all suburban and rural ones. Two cities are a thin basis for the state. The model has never seen a rural lot, so the suburban and rural shares are an extrapolation from city neighborhoods with many detached homes. 459 modelled tracts hit the ceiling of 1.0</li>
+<li>The lot count outside the cities is an ACS building count, not a parcel count. In the two cities it runs 9 to 13% above the real count (median tract)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/05_room_model.png" class="img-fluid figure-img"></p>
+<figcaption>Room model</figcaption>
+</figure>
+</div>
+<p><strong>Legal classes from the town rule files.</strong></p>
+<!-- source: data/processed/town_legal_class.csv, ~/musa-drive/processed/5500/legal_class_coverage.csv. People = ACS 2020-24, split to towns -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Legal class</th>
+<th>County subdivisions</th>
+<th>Of which drafted</th>
+<th>People</th>
+<th>Share of PA</th>
+<th>People in drafted towns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unknown (no rule file)</td>
+<td>2,533</td>
+<td></td>
+<td>9,274,759</td>
+<td>71.2%</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Conversion only (Philadelphia, York)</td>
+<td>2</td>
+<td>0</td>
+<td>1,624,644</td>
+<td>12.5%</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>By right</td>
+<td>9</td>
+<td>4</td>
+<td>823,799</td>
+<td>6.3%</td>
+<td>223,655</td>
+</tr>
+<tr class="even">
+<td>None (no ADU text, or a ban)</td>
+<td>18</td>
+<td>6</td>
+<td>781,464</td>
+<td>6.0%</td>
+<td>214,612</td>
+</tr>
+<tr class="odd">
+<td>Family only</td>
+<td>9</td>
+<td>6</td>
+<td>459,800</td>
+<td>3.5%</td>
+<td>265,347</td>
+</tr>
+<tr class="even">
+<td>Discretionary (Bristol township)</td>
+<td>1</td>
+<td>0</td>
+<td>54,173</td>
+<td>0.4%</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The rule files cover 3,743,880 people, 28.8% of PA. Bethlehem spans two counties, so its 38 municipalities are 39 county subdivisions here</li>
+<li>Drafted files hold 703,614 people. Their class may still change</li>
+</ul>
 </section>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <ul>
-<li>Demand: job growth slowed after 2019 across most of PA. Rent growth also slowed in real terms, but one tract group (871 tracts) saw rents speed up</li>
-<li>Payoff: a new ADU pays for itself at today’s rates and a $250 / sq ft build cost in only about 20% of tracts, mostly in Philadelphia and its suburbs. Cost matters more than rent</li>
-<li>Forecast: HB 2186 could mean about 16,900 ADUs by 2031 (8,200 to 25,600). That is about 3,400 a year, near the low end of what permissive cities see</li>
-<li>Under today’s rules the number is much smaller, but that depends on how the ~2,560 uncoded towns are treated</li>
+<li>Demand: job growth slowed after 2019 across most of PA. Real rent growth slowed too. Most single-tract changes are inside the ACS margin of error, so tract stories need care</li>
+<li>Groups: tracts do not fall into natural clusters. Seven stable K-means groups summarize the spread. One (478 tracts) saw real rents rise fast in the latest five years</li>
+<li>Payoff: a new 600 sq ft 1-bedroom unit pays for itself at $250 / sq ft and 6.53% in about 10% of tracts, mostly around Philadelphia. Build cost matters more than the rent guess or the rate</li>
+<li>Why not today: in Philadelphia the law is the binding limit. In Pittsburgh every lot has a legal path and the yard is the limit. 17 of the 36 largest other towns have no ADU text</li>
+<li>Room: measured lot by lot, 7.6% of Philadelphia lots and 45.9% of Pittsburgh lots have room for a 600 sq ft unit under state-reform setbacks. Elsewhere the model gives about 2.9 million lots with room (1.5 to 3.6 million), and most of that is extrapolation beyond the two cities</li>
+<li>Forecast: housing growth is only modestly predictable (held-out R2 about 0.2 over ten years, about 0.02 over five). Under HB 2186 the stated assumptions give about 13,500 ADUs by 2031 (6,500 to 20,400). Under today’s rules, about 1,000, and that number rests on the 71% of people in towns whose code has not been read</li>
 </ul>
 </section>
 <section id="limits" class="level2">
 <h2 class="anchored" data-anchor-id="limits">Limits</h2>
 <ul>
-<li>ACS tract data is noisy, and the 2020-24 ACS uses a new population base. Population speed-up after 2019 is partly an artifact</li>
+<li>ACS tract data is noisy, and the 2020-24 ACS uses a new population base. The population speed-up is partly an artifact</li>
 <li>The 2010 to 2020 crosswalk uses land area, not where people live</li>
-<li>The payoff test uses median rent for all renters. A new ADU may rent for more. It ignores rising build costs, land, permits, and taxes on the new value</li>
-<li>The forecast factors (payoff weights, rule factors, demand range) are judgment calls. They are written at the top of notebook 04 so they are easy to change</li>
-<li>The town rule list has 12 towns. Coding more towns would change the “today” numbers the most. Pittsburgh’s move to “allowed” shows how much one big city can shift them</li>
-<li>Lots with room come from MUSA 6950. Its suburban and rural fit rates rest on few pilot tracts, and the fit rule counts front yards</li>
+<li>The payoff test is a screen. It uses one cost per sq ft and one share for running costs. The lot-level money model in the tool itemizes cost, rent, taxes and financing</li>
+<li>ACS gross rent is top-coded at $3,501, so the richest tracts tie</li>
+<li>The forecast factors (payoff weights, rule factors, demand range, permit rate) are judgment calls. They are in <code>shared/assumptions.json</code> under <code>tract.forecast</code>. The permit rate source page still needs to be recorded</li>
+<li>The forecast’s legal classes come from 38 municipalities with rule files, 15 of them drafted. 71% of people live in towns that count as “unknown”. Reading more town codes would change the “today” numbers the most</li>
+<li>Lots with room are measured only in Philadelphia and Pittsburgh. Everywhere else they come from a model trained on those two cities, and 61% of the other tracts are outside their range. The forecast uses the mid room estimate. The room range is not carried into the ADU totals</li>
 </ul>
 
 

@@ -162,6 +162,8 @@ const isLaw = (lot: LotRecord, s: Scenario) => s === 'today' || JSON.stringify(l
 
 // ------------------------------------------------------------------ the tools, as pure functions
 const CONFIDENCE = { high: 'high', medium: 'medium', low: 'low' } as const;
+/** Assessed value and the last sale (date and price): kept on the drive, not in the public data. */
+export const NOT_PUBLIC = 'not in the public data';
 
 export function getLotFacts(lot: LotRecord) {
   const f = lot.facts ?? {};
@@ -183,6 +185,9 @@ export function getLotFacts(lot: LotRecord) {
     corner: lot.lot.corner ?? false,
     flags,
     public_sewer: lot.zoning.flags?.sewer ?? 'not on file',
+    // Left out of the published lot files (tools/publish_lots.sh), so never read here, even from a local build.
+    assessed_value: NOT_PUBLIC,
+    last_sale: NOT_PUBLIC,
     lot_shape_confidence: CONFIDENCE[lot.lot.shape_confidence],
     data_confidence: CONFIDENCE[lot.quality.confidence],
     sources: Object.entries(lot.quality.data_dates ?? {}).map(([name, date]) => ({ data: name, date: date ?? 'not on file' })),

@@ -2,6 +2,7 @@
 
 Tests that need the downloaded data skip when the data folder is missing.
 """
+
 from __future__ import annotations
 
 import json
@@ -52,35 +53,45 @@ def test_msft_local_name():
     assert pgh.msft_local_name(url) == "msft_032001110.csv.gz"
 
 
-@pytest.mark.parametrize("use, style, expected", [
-    ("SINGLE FAMILY", "COLONIAL", "single_family_detached"),
-    ("SINGLE FAMILY", "SEMI DETACHED", "semi_detached"),
-    ("SINGLE FAMILY", "ROW END", "rowhouse"),
-    ("SINGLE FAMILY", None, "single_family_detached"),
-    ("ROWHOUSE", "OLD STYLE", "rowhouse"),
-    ("TOWNHOUSE", None, "rowhouse"),
-    ("TWO FAMILY", "OLD STYLE", "two_family"),
-    ("THREE FAMILY", None, "three_family"),
-    ("FOUR FAMILY", None, "four_family"),
-    ("APART:5-19 UNITS", None, None),
-    ("VACANT LAND", None, None),
-    (None, None, None),
-])
+@pytest.mark.parametrize(
+    "use, style, expected",
+    [
+        ("SINGLE FAMILY", "COLONIAL", "single_family_detached"),
+        ("SINGLE FAMILY", "SEMI DETACHED", "semi_detached"),
+        ("SINGLE FAMILY", "ROW END", "rowhouse"),
+        ("SINGLE FAMILY", None, "single_family_detached"),
+        ("ROWHOUSE", "OLD STYLE", "rowhouse"),
+        ("TOWNHOUSE", None, "rowhouse"),
+        ("TWO FAMILY", "OLD STYLE", "two_family"),
+        ("THREE FAMILY", None, "three_family"),
+        ("FOUR FAMILY", None, "four_family"),
+        ("APART:5-19 UNITS", None, None),
+        ("VACANT LAND", None, None),
+        (None, None, None),
+    ],
+)
 def test_classify_housing(use, style, expected):
     assert pgh.classify_housing(use, style) == expected
 
 
 def test_clean_assessments_drops_owner_and_mailing():
-    raw = pd.DataFrame({
-        "PARID": ["0001A00001000000", "0900X00001000000"],
-        "PROPERTYHOUSENUM": ["12", "5"], "PROPERTYFRACTION": [" ", " "],
-        "PROPERTYADDRESS": ["MAIN ST", "OAK AVE"], "PROPERTYUNIT": [" ", "2"],
-        "MUNICODE": ["101", "901"], "OWNERDESC": ["REGULAR", "REGULAR"],
-        "OWNERNAME": ["A PERSON", "B PERSON"],
-        "CHANGENOTICEADDRESS1": ["1 ELSEWHERE", "2 ELSEWHERE"],
-        "USEDESC": ["SINGLE FAMILY", "SINGLE FAMILY"], "SALEDATE": ["06-12-2024", None],
-        "SALEPRICE": ["150000", "1"], "LOTAREA": ["2400", "5000"],
-    })
+    raw = pd.DataFrame(
+        {
+            "PARID": ["0001A00001000000", "0900X00001000000"],
+            "PROPERTYHOUSENUM": ["12", "5"],
+            "PROPERTYFRACTION": [" ", " "],
+            "PROPERTYADDRESS": ["MAIN ST", "OAK AVE"],
+            "PROPERTYUNIT": [" ", "2"],
+            "MUNICODE": ["101", "901"],
+            "OWNERDESC": ["REGULAR", "REGULAR"],
+            "OWNERNAME": ["A PERSON", "B PERSON"],
+            "CHANGENOTICEADDRESS1": ["1 ELSEWHERE", "2 ELSEWHERE"],
+            "USEDESC": ["SINGLE FAMILY", "SINGLE FAMILY"],
+            "SALEDATE": ["06-12-2024", None],
+            "SALEPRICE": ["150000", "1"],
+            "LOTAREA": ["2400", "5000"],
+        }
+    )
     out = pgh.clean_assessments(raw)
     assert len(out) == 1  # ward 901 is not in the city
     assert not any("OWNERNAME" in c.upper() or "CHANGENOTICE" in c.upper() for c in out.columns)
@@ -90,10 +101,17 @@ def test_clean_assessments_drops_owner_and_mailing():
     assert out.loc[0, "sale_date"] == pd.Timestamp("2024-06-12")
 
 
-@pytest.mark.parametrize("fcc, st_type, expected", [
-    ("A73", "WAY", "alley"), ("A41", "ALY", "alley"), ("A41", "WAY", "street"),
-    ("A74", "DR", "private"), ("A11", "", "highway"), ("H10", "RIV", "other"),
-])
+@pytest.mark.parametrize(
+    "fcc, st_type, expected",
+    [
+        ("A73", "WAY", "alley"),
+        ("A41", "ALY", "alley"),
+        ("A41", "WAY", "street"),
+        ("A74", "DR", "private"),
+        ("A11", "", "highway"),
+        ("H10", "RIV", "other"),
+    ],
+)
 def test_street_kind(fcc, st_type, expected):
     assert pgh.street_kind(fcc, st_type) == expected
 
@@ -111,16 +129,14 @@ def test_lot_id_from_pin():
 
 def test_largest_overlap_picks_bigger_piece():
     lots = frame([{"lot_id": "a", "geometry": box(0, 0, 10, 10)}])
-    zones = frame([{"zone": "R1D-M", "geometry": box(0, 0, 7, 10)},
-                   {"zone": "R2-L", "geometry": box(7, 0, 20, 10)}])
+    zones = frame([{"zone": "R1D-M", "geometry": box(0, 0, 7, 10)}, {"zone": "R2-L", "geometry": box(7, 0, 20, 10)}])
     out = pgh.largest_overlap(lots, zones, "lot_id", ["zone"])
     assert out.loc[0, "zone"] == "R1D-M"
     assert out.loc[0, "share"] == pytest.approx(0.7)
 
 
 def test_coverage_share_counts_overlaps_once():
-    lots = frame([{"lot_id": "a", "geometry": box(0, 0, 10, 10)},
-                  {"lot_id": "b", "geometry": box(20, 0, 30, 10)}])
+    lots = frame([{"lot_id": "a", "geometry": box(0, 0, 10, 10)}, {"lot_id": "b", "geometry": box(20, 0, 30, 10)}])
     flood = frame([{"geometry": box(0, 0, 5, 10)}, {"geometry": box(0, 0, 5, 10)}])
     share = pgh.coverage_share(lots, flood, "lot_id")
     assert share["a"] == pytest.approx(0.5)
@@ -135,10 +151,13 @@ def test_grid_pieces_keep_area():
 
 
 def test_names_at_points_joins_all_hits():
-    lots = frame([{"lot_id": "a", "geometry": box(0, 0, 10, 10)},
-                  {"lot_id": "b", "geometry": box(50, 50, 60, 60)}])
-    over = frame([{"overlay": "Riverfront", "geometry": box(-5, -5, 15, 15)},
-                  {"overlay": "Baum Centre", "geometry": box(-5, -5, 15, 15)}])
+    lots = frame([{"lot_id": "a", "geometry": box(0, 0, 10, 10)}, {"lot_id": "b", "geometry": box(50, 50, 60, 60)}])
+    over = frame(
+        [
+            {"overlay": "Riverfront", "geometry": box(-5, -5, 15, 15)},
+            {"overlay": "Baum Centre", "geometry": box(-5, -5, 15, 15)},
+        ]
+    )
     out = pgh.names_at_points(lots, over, "lot_id", "overlay")
     assert out.iloc[0] == "Baum Centre; Riverfront"
     assert pd.isna(out.iloc[1])
@@ -146,19 +165,26 @@ def test_names_at_points_joins_all_hits():
 
 def test_new_buildings_only_keeps_missed_sheds():
     county = frame([{"geometry": box(0, 0, 30, 30)}])
-    msft = frame([{"geometry": box(1, 1, 29, 29)},   # same house, drop
-                  {"geometry": box(50, 50, 58, 56)}])  # shed the county missed, keep
+    msft = frame(
+        [
+            {"geometry": box(1, 1, 29, 29)},  # same house, drop
+            {"geometry": box(50, 50, 58, 56)},
+        ]
+    )  # shed the county missed, keep
     out = pgh.new_buildings_only(county, msft)
     assert len(out) == 1
     assert out.geometry.iloc[0].bounds == (50, 50, 58, 56)
 
 
 def test_assign_buildings_and_roles():
-    lots = frame([{"lot_id": "a", "geometry": box(0, 0, 50, 100)},
-                  {"lot_id": "b", "geometry": box(50, 0, 100, 100)}])
-    bldgs = frame([{"geometry": box(5, 5, 45, 40)},     # house on a
-                   {"geometry": box(10, 80, 25, 95)},   # garage on a
-                   {"geometry": box(40, 50, 90, 60)}])  # mostly on b
+    lots = frame([{"lot_id": "a", "geometry": box(0, 0, 50, 100)}, {"lot_id": "b", "geometry": box(50, 0, 100, 100)}])
+    bldgs = frame(
+        [
+            {"geometry": box(5, 5, 45, 40)},  # house on a
+            {"geometry": box(10, 80, 25, 95)},  # garage on a
+            {"geometry": box(40, 50, 90, 60)},
+        ]
+    )  # mostly on b
     out = pgh.add_roles(pgh.assign_buildings(bldgs, lots))
     a = out[out["lot_id"] == "a"].set_index("role")
     assert list(out["lot_id"].value_counts().sort_index()) == [2, 1]
@@ -169,8 +195,7 @@ def test_assign_buildings_and_roles():
 
 
 def test_shared_outline_is_cut_by_lot_lines():
-    lots = frame([{"lot_id": "a", "geometry": box(0, 0, 20, 100)},
-                  {"lot_id": "b", "geometry": box(20, 0, 40, 100)}])
+    lots = frame([{"lot_id": "a", "geometry": box(0, 0, 20, 100)}, {"lot_id": "b", "geometry": box(20, 0, 40, 100)}])
     twin = frame([{"geometry": box(2, 10, 38, 50)}])  # one outline over both halves
     out = pgh.assign_buildings(twin, lots).set_index("lot_id")
     assert set(out.index) == {"a", "b"}
@@ -188,13 +213,40 @@ def test_sane_overlap():
 
 
 def test_summarize_and_match_rates():
-    lots = frame([{"lot_id": "a", "lot_area_sqft": 5000.0, "zoning": "R1D-M", "zoning_split": False,
-                   "has_assessment": True, "geometry": box(0, 0, 50, 100)},
-                  {"lot_id": "b", "lot_area_sqft": 5000.0, "zoning": None, "zoning_split": False,
-                   "has_assessment": False, "geometry": box(50, 0, 100, 100)}])
-    bldgs = pgh.add_roles(frame([
-        {"lot_id": "a", "share_in_lot": 1.0, "height_ft": 25.0, "split": False,
-         "orig_area_sqft": 1400.0, "geometry": box(5, 5, 45, 40)}]))
+    lots = frame(
+        [
+            {
+                "lot_id": "a",
+                "lot_area_sqft": 5000.0,
+                "zoning": "R1D-M",
+                "zoning_split": False,
+                "has_assessment": True,
+                "geometry": box(0, 0, 50, 100),
+            },
+            {
+                "lot_id": "b",
+                "lot_area_sqft": 5000.0,
+                "zoning": None,
+                "zoning_split": False,
+                "has_assessment": False,
+                "geometry": box(50, 0, 100, 100),
+            },
+        ]
+    )
+    bldgs = pgh.add_roles(
+        frame(
+            [
+                {
+                    "lot_id": "a",
+                    "share_in_lot": 1.0,
+                    "height_ft": 25.0,
+                    "split": False,
+                    "orig_area_sqft": 1400.0,
+                    "geometry": box(5, 5, 45, 40),
+                }
+            ]
+        )
+    )
     out = pgh.summarize_buildings(lots, bldgs)
     assert out["n_buildings"].tolist() == [1, 0]
     assert out["building_ids"].iloc[0] == ["a-b1"]
@@ -235,8 +287,7 @@ def test_built_buildings_keyed_to_lots():
     assert (bldgs.groupby("lot_id")["role"].apply(lambda r: (r == "main").sum()) == 1).all()
 
 
-@pytest.mark.skipif(not (paths.raw_dir("pittsburgh") / "SOURCES.json").exists(),
-                    reason="raw Pittsburgh data not found")
+@pytest.mark.skipif(not (paths.raw_dir("pittsburgh") / "SOURCES.json").exists(), reason="raw Pittsburgh data not found")
 def test_sources_have_license_and_count():
     src = json.loads((paths.raw_dir("pittsburgh") / "SOURCES.json").read_text())
     for key, entry in src.items():

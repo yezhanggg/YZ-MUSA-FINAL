@@ -11,10 +11,12 @@ so it runs in Node or a browser with no model.
 Run:
     python -m pipeline.corpus.export
 """
+
 from __future__ import annotations
 
 import json
 from collections import defaultdict
+from typing import Any
 
 from pipeline.corpus.chunk import load_chunks, place_aliases
 from pipeline.corpus.evaluate import consistent_status
@@ -24,7 +26,7 @@ KEEP = ("chunk_id", "section", "heading_path", "page_start", "page_end", "url", 
 
 
 def run() -> dict[str, int]:
-    by: dict[str, list[dict]] = defaultdict(list)
+    by: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for c in load_chunks():
         by[c["geoid"]].append({k: c.get(k) for k in KEEP})
     for geoid, src in place_aliases().items():  # a county ordinance shared by several places
@@ -38,9 +40,15 @@ def run() -> dict[str, int]:
         p = sub("drafts") / f"{geoid}.json"
         if p.exists():
             d = json.loads(p.read_text())
-            summary = {"label": d["label"], "model": d["model"], "made_on": d["made_on"],
-                       "status_consistent": consistent_status(d["draft"]), "draft": d["draft"],
-                       "unsupported": d["unsupported"], "quote_checks": d["quote_checks"]}
+            summary = {
+                "label": d["label"],
+                "model": d["model"],
+                "made_on": d["made_on"],
+                "status_consistent": consistent_status(d["draft"]),
+                "draft": d["draft"],
+                "unsupported": d["unsupported"],
+                "quote_checks": d["quote_checks"],
+            }
         doc = {"geoid": geoid, "tier": "B", "chunks": chunks, "summary": summary}
         f = out / f"{geoid}.json"
         f.write_text(json.dumps(doc, separators=(",", ":")))
@@ -53,4 +61,6 @@ def run() -> dict[str, int]:
 if __name__ == "__main__":
     s = run()
     v = sorted(s.values())
-    print(f"{len(v)} places, total {sum(v)/1e6:.1f} MB, median {v[len(v)//2]/1e3:.0f} kB, max {v[-1]/1e6:.2f} MB")
+    print(
+        f"{len(v)} places, total {sum(v) / 1e6:.1f} MB, median {v[len(v) // 2] / 1e3:.0f} kB, max {v[-1] / 1e6:.2f} MB"
+    )

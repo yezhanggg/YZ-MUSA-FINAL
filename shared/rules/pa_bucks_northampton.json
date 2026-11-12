@@ -103,8 +103,8 @@
       "value": [
         {
           "kind": "existing_structure",
-          "condition": "Detached garages, barns and similar may not be used 'for habitation'. Gazebos, pool houses and similar may not be 'permanent living quarters'.",
-          "effect": "bars",
+          "condition": "Detached garages, barns and similar may not be used 'for habitation'. Gazebos, pool houses and similar may not be 'permanent living quarters'. No form of ADU is allowed in the code, so this is shown as a condition.",
+          "effect": "condition",
           "applies_to": [
             "detached_new",
             "garage_conversion",

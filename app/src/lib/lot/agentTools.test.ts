@@ -67,8 +67,20 @@ describe('scenario is the one the user chose', () => {
 describe('results', () => {
   it('get_lot_facts', async () => {
     const r = await run(provider('garage'), 'get_lot_facts');
-    expect(r).toMatchObject({ lot_id: '42003-0003M00391000000', address: '1116 SARAH ST', garage_sqft: 353.5, alley_behind: false, public_sewer: 'not on file' });
+    expect(r).toMatchObject({ lot_id: '42003-0003M00391000000', address: '1116 SARAH ST', garage_sqft: 353.4, alley_behind: false, public_sewer: 'not on file' });
     expect(r.sources).toEqual(expect.arrayContaining([{ data: 'lots', date: '2026-11-11' }]));
+  });
+
+  it('get_lot_facts says the sale and assessment facts are not in the public data, never null', async () => {
+    const withFacts = provider('garage');
+    const r = await run(withFacts, 'get_lot_facts');
+    expect(r).toMatchObject({ assessed_value: 'not in the public data', last_sale: 'not in the public data' });
+    // A published record has no such facts at all: same answer, and the other facts still read.
+    const rec = fixture('garage');
+    const bare = { ...rec, facts: { year_built: rec.facts?.year_built ?? null, living_sqft: rec.facts?.living_sqft ?? null } };
+    const r2 = (await run({ ...withFacts, selectedLot: async () => bare }, 'get_lot_facts')) as Json;
+    expect(r2).toMatchObject({ assessed_value: 'not in the public data', last_sale: 'not in the public data' });
+    expect(JSON.stringify(r2)).not.toMatch(/null/);
   });
 
   it('get_lot_rules lists values with their sources and the approval per type', async () => {

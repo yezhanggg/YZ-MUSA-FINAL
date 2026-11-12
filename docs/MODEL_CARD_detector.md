@@ -19,7 +19,7 @@ An object detector that draws boxes around detached garages, sheds, other access
 - Flag likely detached garages and other accessory buildings that building outline layers miss, so the fit test can treat them as blocks or as garage conversion candidates.
 - A first pass for hand review in LabelMe.
 
-**Its detections are not in the lot records yet.** The records carry an empty `objects` list.
+**Its detections are not in the lot records.** `pipeline/build_lots.py` writes an empty `objects` list for every lot. Garages and sheds in the lot tool come from building footprints instead: an accessory building of 180 sq ft or more is a garage, a smaller one is a shed. The detections file is read in one place only, the hand-label scoring (`pipeline/validation/score.py`), to compare against hand labels once they exist.
 
 ## Training data
 
@@ -82,6 +82,7 @@ These cover the sample area chips only, not whole cities.
 - OpenStreetMap pools are sparse and mostly public or club pools.
 - Accessory buildings on lots that are not residential are not labeled.
 - Chips do not overlap, so an object on a chip edge can give two partial detections.
+- Pittsburgh chips are in EPSG:2271 (`musa6950/yolo/config.py`), while the Pittsburgh lot build uses EPSG:2272. `detect_lots.py` reprojects the boxes to the lot layer's CRS before the join, so the detections file is consistent. The chip world files stay in EPSG:2271.
 
 ## What not to use it for
 

@@ -23,6 +23,7 @@ load.ts ──> LotRecord (types.ts)
 | `geometry.ts` | Local feet frame per lot, distances from a unit to lot lines and buildings, centroid |
 | `words.ts` | Number, date and label text. A missing value reads "unknown", never "NaN" |
 | `verdict.ts` | The right panel answer for the unit the user drew: status, headline, the one limiting reason, checks with their rule and citation, warnings, approval path, where the unit sits |
+| `answer.ts` | The right panel's plain answer and rule checklist, read off one verdict: `answerOf` (Yes, Yes with approval, No, or Not sure, and a line of 8 words or fewer) and `ruleRows` (4 to 6 rows grouped from the verdict's checks plus the approval path, each pass, fail, needs approval or not checked, with yours against the limit and the sources). No rule logic of its own |
 | `citations.ts` | Citation display (section, link, "Checked on" date, confidence label) and the standing notice |
 | `buildSteps.ts` | The Build checklist, from "confirm the rules" to "rental license" |
 | `summary.ts` | Data for the one-page lot report, and the "lots in view" CSV with a fixed column order |

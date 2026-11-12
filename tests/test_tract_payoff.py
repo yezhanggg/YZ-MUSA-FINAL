@@ -1,4 +1,5 @@
 """Tract payoff test: payment formula, thresholds, rent cross-walk, sensitivity table."""
+
 import math
 
 import numpy as np
@@ -8,8 +9,9 @@ import pytest
 from pipeline.money import loan_payment
 from pipeline.tract import payoff as P
 
-T = P.Terms(size_sqft=600, psf={"low": 175, "mid": 250, "high": 300}, soft=0.15, years=30, opex=0.30,
-            band=0.10, rate=0.0653)
+T = P.Terms(
+    size_sqft=600, psf={"low": 175, "mid": 250, "high": 300}, soft=0.15, years=30, opex=0.30, band=0.10, rate=0.0653
+)
 
 
 def test_build_cost_by_hand():
@@ -49,14 +51,20 @@ def test_classify_uses_mid_and_low_payments():
 
 
 def test_safmr_by_tract_weights_and_lowest_metro():
-    zips = pd.DataFrame({"zip": ["10001", "10001", "10002", "10003"], "bedrooms": [1, 1, 1, 2],
-                         "rent": [1200.0, 1000.0, 1500.0, 9999.0]})
-    xw = pd.DataFrame({"trct": ["A", "A", "B", "C"], "zcta": ["10001", "10002", "10002", "10003"],
-                       "wt": [3.0, 1.0, 1.0, 1.0]})
+    zips = pd.DataFrame(
+        {
+            "zip": ["10001", "10001", "10002", "10003"],
+            "bedrooms": [1, 1, 1, 2],
+            "rent": [1200.0, 1000.0, 1500.0, 9999.0],
+        }
+    )
+    xw = pd.DataFrame(
+        {"trct": ["A", "A", "B", "C"], "zcta": ["10001", "10002", "10002", "10003"], "wt": [3.0, 1.0, 1.0, 1.0]}
+    )
     s = P.safmr_by_tract(zips, xw, bedrooms=1)
-    assert s["A"] == pytest.approx((3 * 1000 + 1 * 1500) / 4)   # 10001 takes the lower of two metros
+    assert s["A"] == pytest.approx((3 * 1000 + 1 * 1500) / 4)  # 10001 takes the lower of two metros
     assert s["B"] == 1500
-    assert "C" not in s.index   # no 1-bedroom rent for that ZIP
+    assert "C" not in s.index  # no 1-bedroom rent for that ZIP
 
 
 def test_sensitivity_shares_add_up():

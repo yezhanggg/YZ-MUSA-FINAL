@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { ArrowUp, Loader2, MessageCircle, X } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { BED_LABEL } from '../lib/numbers';
-import { SCENARIO_TITLE, TYPE_TITLE } from '../lib/lot/words';
+import { SCENARIO_NAME, TYPE_TITLE } from '../lib/lot/words';
 import { ask, splitLinks, type Turn } from '../agent/client';
 import { browserProvider, selectLotById } from '../agent/browserProvider';
 import { mapRef, useTool } from './store';
@@ -42,13 +42,13 @@ function useContext() {
   const unit = useTool((s) => s.unit);
   const map = mapRef.current;
   const test = view === 'test';
-  const lotId = spot?.record?.lot.id ?? spot?.lot?.lot_id ?? spot?.parcel?.id ?? null;
+  const lotId = spot?.record?.lot.id ?? spot?.parcel?.id ?? null;
   const where = spot ? (lotId ? `Lot ${lotId}` : (spot.tract.NAMELSAD ?? 'Tract')) : 'No lot selected';
   return {
     test,
     chips: test
-      ? [where, `${TYPE_TITLE[unit.type]} · ${unit.width} x ${unit.depth} ft · ${unit.stories} ${unit.stories === 2 ? 'stories' : 'story'}`, SCENARIO_TITLE[scenario]]
-      : [where, `${BED_LABEL[adu.bed]} · ${adu.size.toLocaleString('en-US')} sq ft · ${adu.stories} ${adu.stories === 2 ? 'stories' : 'story'}`, rule === 'hb2186' ? 'HB 2186' : "Today's rules"],
+      ? [where, `${TYPE_TITLE[unit.type]} · ${unit.width} x ${unit.depth} ft · ${unit.stories} ${unit.stories === 2 ? 'stories' : 'story'}`, SCENARIO_NAME[scenario]]
+      : [where, `${BED_LABEL[adu.bed]} · ${adu.size.toLocaleString('en-US')} sq ft · ${adu.stories} ${adu.stories === 2 ? 'stories' : 'story'}`, rule === 'hb2186' ? 'State bill' : 'Today'],
     context: {
       selected: spot ? { lot_id: lotId, tract_geoid: spot.tract.GEOID, town_geoid: (spot.town.GEOID as string | undefined) ?? null, town: (spot.town.NAMELSAD as string | undefined) ?? null, label: spot.label } : null,
       adu: { bedrooms: adu.bed, size_sqft: adu.size, stories: adu.stories },
@@ -60,7 +60,8 @@ function useContext() {
   };
 }
 
-export default function AskBox({ expanded: forceOpen }: { expanded?: boolean }) {
+/** `flat`: no box of its own, when it already sits in one (the right panel's chat box). */
+export default function AskBox({ expanded: forceOpen, flat }: { expanded?: boolean; flat?: boolean }) {
   const [q, setQ] = useState('');
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [history, setHistory] = useState<Turn[]>([]);
@@ -84,7 +85,7 @@ export default function AskBox({ expanded: forceOpen }: { expanded?: boolean }) 
   };
 
   return (
-    <section aria-label="Ask about this site" className="rounded-xl bg-stone-50 p-2.5 ring-1 ring-stone-200/80">
+    <section aria-label="Ask about this site" className={cx(!flat && 'rounded-xl bg-stone-50 p-2.5 ring-1 ring-stone-200/80')}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -98,13 +99,16 @@ export default function AskBox({ expanded: forceOpen }: { expanded?: boolean }) 
           {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowUp className="h-4 w-4" />}
         </button>
       </form>
-      <div className="mt-2 flex flex-wrap gap-1">
-        {chips.map((c) => (
-          <span key={c} className="max-w-full truncate rounded-full bg-white px-2 py-0.5 text-[11px] font-medium text-slate-600 ring-1 ring-stone-200">
-            {c}
-          </span>
-        ))}
-      </div>
+      {/* What the assistant will read, shown once the box is in use. */}
+      {showConvo && (
+        <div className="mt-2 flex flex-wrap gap-1">
+          {chips.map((c) => (
+            <span key={c} className="max-w-full truncate rounded-full bg-white px-2 py-0.5 text-[11px] font-medium text-slate-600 ring-1 ring-stone-200">
+              {c}
+            </span>
+          ))}
+        </div>
+      )}
       <AnimatePresence initial={false}>
         {showConvo && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">

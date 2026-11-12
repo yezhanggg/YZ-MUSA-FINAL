@@ -100,10 +100,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MUSA 5500 (demand and payoff)</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
@@ -119,6 +119,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/results.html">
  <span class="dropdown-text">Results</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
+ <span class="dropdown-text">Tract explorer</span></a>
   </li>  
     </ul>
   </li>
@@ -190,14 +194,14 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Submitted Nov 3, 2026.</p>
 <p><strong>Room for a Backyard Home: Measuring ADU Capacity Across Pennsylvania with GeoAI</strong></p>
-<p>Team: Ye Zhang</p>
+<p>Team: one student</p>
 <p><strong>Background and Research Question:</strong> Pennsylvania needs more housing, but most towns make it hard to build an accessory dwelling unit (ADU), a small second home on a lot, like a backyard cottage. A state bill, HB 2186, would allow one on every home lot. But no one knows how many lots actually have room for one. Backyards also hold a lot of trees, so building there has an environmental cost.</p>
 <p><strong>Research question:</strong> How many home lots in Pennsylvania have room for a backyard ADU, how many could fit one without cutting down trees, and can AI on aerial images measure this better than building outlines alone?</p>
 <p><strong>Study Area:</strong> The whole state of Pennsylvania (all 67 counties), with results for every census tract, town, and county.</p>
 <p><strong>Goal:</strong> Builders and homeowners can type in an address and see if an ADU fits and where. Planners can see how many new homes ADUs could add in their town or county.</p>
 <p><strong>Data Sources:</strong> Aerial images of the whole state (NAIP, 2022), building outlines (Microsoft), and property lines from counties that share them. For training, I will use land cover maps from Philadelphia and the Chesapeake Bay area, plus a few hundred lots I label by hand.</p>
 <p><strong>Proposed AI Methods:</strong> First, a U-Net sorts each image into buildings, trees, and open ground, since building outlines alone do not show trees or pavement. I will compare it with a simpler Random Forest model. Second, YOLO finds garages and sheds the outlines miss. Third, a simple rule checks if each lot has an open spot big enough for an ADU, with and without cutting trees. I will test accuracy on lots I labeled myself, then run it statewide.</p>
-<p><strong>Expected Outcomes:</strong> A model that maps buildings, trees, and open ground; a map of how many lots can fit an ADU, with and without cutting trees; a check of how accurate the AI is; and a dashboard with an address search and a town and county view. I will share the results in a written report and a presentation.</p>
+<p><strong>Expected Outcomes:</strong> A model that maps buildings, trees, and open ground, a map of how many lots can fit an ADU, with and without cutting trees, a check of how accurate the AI is, and a dashboard with an address search and a town and county view. I will share the results in a written report and a presentation.</p>
 <p><strong>About the Larger Project:</strong> This is half of a bigger ADU project. This half asks whether an ADU fits. My MUSA 5500 project asks whether people need housing there and whether an ADU would pay off, using population, job, and rent trends since 2010. Together they show whether there is room for ADUs where people need housing. Both will share one dashboard, but each class will have its own code and documentation.</p>
 
 

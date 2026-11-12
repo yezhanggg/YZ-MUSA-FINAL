@@ -1,4 +1,5 @@
 """Hand-label check: sampling, intervals, scoring, labeling page."""
+
 from __future__ import annotations
 
 import math
@@ -17,20 +18,33 @@ from pipeline.validation import sheets as SH
 def fake_lots(n: int = 3000, seed: int = 1) -> pd.DataFrame:
     rng = np.random.default_rng(seed)
     types = rng.choice(list(C.TYPES), size=n, p=[0.5, 0.3, 0.2])
-    return pd.DataFrame({
-        "lot_id": [f"42999-{i:06d}" for i in range(n)],
-        "city": "testcity",
-        "housing_type": types,
-        "lot_area_sqft": rng.lognormal(8, 0.6, n).round(1),
-        "lon": -75 + rng.uniform(0, 0.1, n), "lat": 40 + rng.uniform(0, 0.1, n),
-        "address": "", "corner": rng.random(n) < 0.1, "flag_lot": rng.random(n) < 0.03,
-        "edge_confidence": rng.choice(["high", "medium", "low"], size=n, p=[0.85, 0.05, 0.10]),
-    })
+    return pd.DataFrame(
+        {
+            "lot_id": [f"42999-{i:06d}" for i in range(n)],
+            "city": "testcity",
+            "housing_type": types,
+            "lot_area_sqft": rng.lognormal(8, 0.6, n).round(1),
+            "lon": -75 + rng.uniform(0, 0.1, n),
+            "lat": 40 + rng.uniform(0, 0.1, n),
+            "address": "",
+            "corner": rng.random(n) < 0.1,
+            "flag_lot": rng.random(n) < 0.03,
+            "edge_confidence": rng.choice(["high", "medium", "low"], size=n, p=[0.85, 0.05, 0.10]),
+        }
+    )
 
 
-TARGETS = {("detached", "regular"): 20, ("detached", "corner"): 6, ("detached", "irregular"): 6,
-           ("semi", "regular"): 12, ("semi", "corner"): 4, ("semi", "irregular"): 4,
-           ("row", "regular"): 6, ("row", "corner"): 2, ("row", "irregular"): 2}
+TARGETS = {
+    ("detached", "regular"): 20,
+    ("detached", "corner"): 6,
+    ("detached", "irregular"): 6,
+    ("semi", "regular"): 12,
+    ("semi", "corner"): 4,
+    ("semi", "irregular"): 4,
+    ("row", "regular"): 6,
+    ("row", "corner"): 2,
+    ("row", "irregular"): 2,
+}
 
 
 @pytest.fixture(scope="module")
@@ -75,7 +89,9 @@ def test_systematic_draw_spreads_lot_size(frame: pd.DataFrame) -> None:
 def test_restratify_tops_up_borderline_and_keeps_labeled(frame: pd.DataFrame) -> None:
     a = S.draw(frame, TARGETS, seed=7)
     rng = np.random.default_rng(0)
-    index = pd.DataFrame({"lot_id": frame["lot_id"], "room_sqft": rng.choice([100.0, 580.0, 1500.0], len(frame), p=[0.5, 0.1, 0.4])})
+    index = pd.DataFrame(
+        {"lot_id": frame["lot_id"], "room_sqft": rng.choice([100.0, 580.0, 1500.0], len(frame), p=[0.5, 0.1, 0.4])}
+    )
     index["max_fit_sqft"] = index["room_sqft"]
     labeled = set(a["lot_id"].iloc[:10])
     b, swaps = S.restratify(a, frame, index, seed=7, labeled=labeled, source="test")
@@ -84,7 +100,7 @@ def test_restratify_tops_up_borderline_and_keeps_labeled(frame: pd.DataFrame) ->
     assert len(b) == len(a)
     assert labeled <= set(b["lot_id"])
     assert b.groupby(["type_stratum", "shape_stratum"]).size().to_dict() == TARGETS
-    for t, g in b.groupby("type_stratum"):
+    for _, g in b.groupby("type_stratum"):
         assert (g["answer_stratum"] == "borderline").sum() >= math.ceil(S.BORDER_TARGET_SHARE * len(g))
     assert len(swaps) == int(b["added_in_restratify"].sum())
     assert b["weight"].sum() == pytest.approx(len(frame))
@@ -113,24 +129,38 @@ def test_wilson_matches_hand_computation() -> None:
 
 
 def _tiny():
-    sample = pd.DataFrame({
-        "lot_id": ["a", "b", "c", "d", "e", "f"], "city": "testcity",
-        "stratum": ["x", "x", "y", "y", "y", "x"], "type_stratum": ["detached"] * 3 + ["semi"] * 3,
-        "shape_stratum": "regular", "weight": [1.0, 1.0, 2.0, 2.0, 2.0, 1.0],
-        "lon": -75.0, "lat": 40.0,
-    })
-    index = pd.DataFrame({"lot_id": ["a", "b", "c", "d", "e", "f"],
-                          "room_sqft": [800.0, 800.0, 200.0, 200.0, 700.0, 800.0],
-                          "max_fit_sqft": [800.0, 800.0, 650.0, 200.0, 700.0, 800.0],
-                          "alley": [True, False, False, True, False, False],
-                          "garage_present": [False] * 6})
+    sample = pd.DataFrame(
+        {
+            "lot_id": ["a", "b", "c", "d", "e", "f"],
+            "city": "testcity",
+            "stratum": ["x", "x", "y", "y", "y", "x"],
+            "type_stratum": ["detached"] * 3 + ["semi"] * 3,
+            "shape_stratum": "regular",
+            "weight": [1.0, 1.0, 2.0, 2.0, 2.0, 1.0],
+            "lon": -75.0,
+            "lat": 40.0,
+        }
+    )
+    index = pd.DataFrame(
+        {
+            "lot_id": ["a", "b", "c", "d", "e", "f"],
+            "room_sqft": [800.0, 800.0, 200.0, 200.0, 700.0, 800.0],
+            "max_fit_sqft": [800.0, 800.0, 650.0, 200.0, 700.0, 800.0],
+            "alley": [True, False, False, True, False, False],
+            "garage_present": [False] * 6,
+        }
+    )
     # f has no label row (missing), e is cannot tell
-    labels = pd.DataFrame({"lot_id": ["a", "b", "c", "d", "e"],
-                           "fit600": ["yes", "no", "if_removed", "no", "cannot_tell"],
-                           "fit400": ["yes", "yes", "yes", "no", "cannot_tell"],
-                           "outbuilding": ["none", "garage", "shed", "none", "several"],
-                           "alley": ["yes", "no", "cannot_tell", "no", "no"],
-                           "labeled_at": "2026-11-11T10:00:00"})
+    labels = pd.DataFrame(
+        {
+            "lot_id": ["a", "b", "c", "d", "e"],
+            "fit600": ["yes", "no", "if_removed", "no", "cannot_tell"],
+            "fit400": ["yes", "yes", "yes", "no", "cannot_tell"],
+            "outbuilding": ["none", "garage", "shed", "none", "several"],
+            "alley": ["yes", "no", "cannot_tell", "no", "no"],
+            "labeled_at": "2026-11-11T10:00:00",
+        }
+    )
     return sample, index, labels
 
 
@@ -139,8 +169,10 @@ def test_score_confusion_cannot_tell_and_missing() -> None:
     r = SC.score_city("testcity", sample, labels, index)
     m = r["fit600"]["sheds_kept"]
     # product yes: a, b, e (cannot tell), f (missing). product no: c, d
-    assert m["confusion"] == {"product_yes": {"hand_yes": 1, "hand_no": 1, "hand_cannot_tell": 1},
-                              "product_no": {"hand_yes": 0, "hand_no": 2, "hand_cannot_tell": 0}}
+    assert m["confusion"] == {
+        "product_yes": {"hand_yes": 1, "hand_no": 1, "hand_cannot_tell": 1},
+        "product_no": {"hand_yes": 0, "hand_no": 2, "hand_cannot_tell": 0},
+    }
     assert m["n_labeled"] == 5 and m["n_compared"] == 4 and m["n_cannot_tell"] == 1
     assert m["agreement"]["k"] == 3 and m["agreement"]["n"] == 4
     # weighted: agree a(1) c(2) d(2), disagree b(1) -> 5/6
@@ -180,8 +212,14 @@ def test_read_labels_keeps_newest_and_partial(tmp_path) -> None:
 
 
 def test_outbuildings_vs_table() -> None:
-    b = pd.DataFrame({"lot_id": ["a", "b", "b", "c"], "role": ["main", "accessory", "main", "accessory"],
-                      "area_sqft": [900, 300, 1000, 80], "share_in_lot": [1, 1, 1, 1]})
+    b = pd.DataFrame(
+        {
+            "lot_id": ["a", "b", "b", "c"],
+            "role": ["main", "accessory", "main", "accessory"],
+            "area_sqft": [900, 300, 1000, 80],
+            "share_in_lot": [1, 1, 1, 1],
+        }
+    )
     t = SC.summarize_buildings(b, ["a", "b", "c", "d", "e"]).set_index("lot_id")
     assert t.loc["b", "table_garage"] and not t.loc["b", "table_shed"]
     assert t.loc["c", "table_shed"] and not t.loc["a", "table_any"] and not t.loc["d", "table_any"]
@@ -193,8 +231,15 @@ def test_outbuildings_vs_table() -> None:
 
 
 def test_html_page_has_no_external_urls() -> None:
-    lots = [{"id": "42101-000001", "n": 1, "addr": "1 MAIN ST", "sheet": "sheets/42101-000001.png",
-             "ctx": "sheets/42101-000001_context.png"}]
+    lots = [
+        {
+            "id": "42101-000001",
+            "n": 1,
+            "addr": "1 MAIN ST",
+            "sheet": "sheets/42101-000001.png",
+            "ctx": "sheets/42101-000001_context.png",
+        }
+    ]
     html = SH.build_html("philadelphia", lots)
     assert not re.search(r"(https?:)?//[a-z0-9.-]+\.[a-z]{2,}", html, re.I)
     assert "<script src" not in html and "<link" not in html and "@import" not in html

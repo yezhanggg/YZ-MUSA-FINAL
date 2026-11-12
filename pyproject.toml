@@ -22,8 +22,7 @@ vision = ["torch>=2.2", "torchvision>=0.17"]
 # ---------------------------------------------------------------- ruff
 
 [tool.ruff]
-# Measured on the code as it stands: median line 41 chars, p99 114, max 163.
-# 120 keeps the later format diff small (48 lines over today).
+# Measured on the code before formatting: median line 41 chars, p99 114. 120 keeps the format diff small.
 line-length = 120
 target-version = "py312"
 extend-exclude = [
@@ -41,6 +40,7 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 ignore = [
     "E731",   # small named lambdas are used on purpose in a few places
     "SIM108", # ternaries are not always clearer
+    "E501",   # ruff format sets the line length. What it leaves long is text: prompts, notes, table rows
 ]
 
 [tool.ruff.lint.per-file-ignores]
@@ -75,6 +75,15 @@ pretty = false
 [[tool.mypy.overrides]]
 module = ["pipeline", "pipeline.*"]
 strict = true
+# geopandas, shapely, rasterio and most of pandas and numpy return Any. A cast on every such
+# return adds noise and no safety, so returning Any is allowed.
+warn_return_any = false
+
+[[tool.mypy.overrides]]
+# torch is not installed where mypy runs, so nn.Module and torch.no_grad are Any.
+module = ["pipeline.vision.model", "pipeline.vision.train", "pipeline.vision.evaluate"]
+disallow_subclassing_any = false
+disallow_untyped_decorators = false
 
 # ---------------------------------------------------------------- pytest
 

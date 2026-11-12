@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { buildCost, curveAt, footprint, lotFit, payShare, payment, payoff, playAdu, sampleOf, sides, tractPayoff, tractRoom, type CostLevel, type TractRent } from './adu';
+import { buildCost, footprint, lotFit, payShare, payment, payoff, sampleOf, sides, tractPayoff, tractRoom, type CostLevel, type TractRent } from './adu';
 import { BASE, COST_PSF } from './numbers';
 
 describe('payoff math (MUSA 5500 notebook 04)', () => {
@@ -28,7 +28,7 @@ describe('payoff math (MUSA 5500 notebook 04)', () => {
 });
 
 describe('fallbacks for the current data', () => {
-  const tract = { rent_est: 1700, cost_month: 1094, pays: 'yes' as const, lots_total: 100, lots_fit: 70, lots_fit_keep_trees: 40 };
+  const tract = { rent_est: 1700, cost_month: 1094, pays: 'yes' as const };
   it('uses the old tract result only for the base case', () => {
     expect(tractPayoff(tract, BASE)?.pays).toBe('yes');
     expect(tractPayoff(tract, { ...BASE, size: 800 })).toBeNull();
@@ -42,12 +42,10 @@ describe('fallbacks for the current data', () => {
     expect(lotFit({ ...lot, max_fit_sqft: 900, max_fit_keep_trees_sqft: 500 }, { ...BASE, size: 800 })).toBe('trees');
     expect(lotFit({ ...lot, max_fit_sqft: 700, max_fit_keep_trees_sqft: 500 }, { ...BASE, size: 800 })).toBe('no');
   });
-  it('tract room: lots_fit at 600, curves otherwise', () => {
-    expect(tractRoom(tract, BASE, null)?.fit).toBe(70);
-    expect(tractRoom(tract, { ...BASE, size: 800 }, null)).toBeNull();
-    const curves = { urban: [{ f: 400, fit: 0.9, keep: 0.6 }, { f: 800, fit: 0.5, keep: 0.2 }] };
-    expect(tractRoom({ ...tract, stratum: 'urban' }, BASE, curves)?.fit).toBe(70);
-    expect(curveAt(curves.urban, 1500)).toEqual({ fit: 0.5, keep: 0.2 });
+  it('tract room: the 600 sq ft estimate with its range, measured or modelled', () => {
+    expect(tractRoom({ lots_est: 1000, room_lo: 400, room_mid: 700, room_hi: 900, room_measured: 0, room_out: 1 })).toEqual({ lots: 1000, low: 400, mid: 700, high: 900, measured: false, outside: true });
+    expect(tractRoom({ lots_est: 1000, room_lo: 700, room_mid: 700, room_hi: 700, room_measured: 1, room_out: 0 })?.measured).toBe(true);
+    expect(tractRoom({ lots_est: 1000 })).toBeNull();
   });
   it('footprint and example sides', () => {
     expect(footprint({ bed: 3, size: 1000, stories: 2 })).toBe(500);
@@ -55,31 +53,8 @@ describe('fallbacks for the current data', () => {
   });
 });
 
-describe('playAdu: the result of adding this ADU', () => {
-  const lot = { lot_m2: 1000, open_m2: 300, tree_m2: 200 }; // 10,764 / 3,229 / 2,153 sq ft
-  const base = { lot, fit: 'yes' as const, adu: { bed: 1 as const, size: 600, stories: 1 as const }, rent: 1700, costPsf: 250, rate: 0.0653, cutTrees: true };
-  it('base case numbers match the report', () => {
-    const r = playAdu(base);
-    expect(r.homesAfter).toBe(2);
-    expect(r.totalCost).toBeCloseTo(172_500, 6);
-    expect(r.payment).toBeCloseTo(1094, 0);
-    expect(r.netRent).toBeCloseTo(1190, 6);
-    expect(r.pays).toBe(true);
-    expect(r.openLeftSqft).toBeCloseTo(300 * 10.764 - 600, 6);
-    expect(r.houseEstimated).toBe(true);
-    expect(r.houseSqft).toBeCloseTo(500 * 10.764, 6);
-    expect(r.coverAfter! - r.coverBefore!).toBeCloseTo(600 / (1000 * 10.764), 9);
-    expect(r.paybackYears).toBeCloseTo(172_500 / (1190 * 12), 6);
-  });
-  it('needs trees cut: blocked when the toggle is off', () => {
-    expect(playAdu({ ...base, fit: 'trees', cutTrees: false })).toMatchObject({ fits: 'no', homesAfter: 1 });
-    expect(playAdu({ ...base, fit: 'trees', cutTrees: true })).toMatchObject({ fits: 'trees', homesAfter: 2 });
-  });
-  it('uses the house area when the data has it', () => {
-    expect(playAdu({ ...base, lot: { ...lot, house_m2: 150 } })).toMatchObject({ houseEstimated: false });
-  });
-  it('low rent does not pay, and sample cards are found by value', () => {
-    expect(playAdu({ ...base, rent: 900 }).pays).toBe(false);
+describe('sample ADUs', () => {
+  it('sample cards are found by value', () => {
     expect(sampleOf({ bed: 2, size: 800, stories: 2 })?.id).toBe('garage');
     expect(sampleOf({ bed: 2, size: 850, stories: 1 })).toBeNull();
   });

@@ -1,4 +1,5 @@
 """Forecast checks on made-up frames: block folds do not leak, scores, conformal intervals, scenarios."""
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -9,8 +10,13 @@ from pipeline.tract import forecast as F
 
 def points(n: int = 400, seed: int = 0) -> pd.DataFrame:
     rng = np.random.default_rng(seed)
-    return pd.DataFrame({"x": rng.uniform(0, 400, n), "y": rng.uniform(0, 300, n),
-                         "county": rng.choice([f"420{i:02d}" for i in range(12)], n)})
+    return pd.DataFrame(
+        {
+            "x": rng.uniform(0, 400, n),
+            "y": rng.uniform(0, 300, n),
+            "county": rng.choice([f"420{i:02d}" for i in range(12)], n),
+        }
+    )
 
 
 def test_grid_blocks_are_squares():
@@ -24,8 +30,8 @@ def test_block_folds_do_not_leak(by):
     groups = F.grid_blocks(p.x, p.y) if by == "grid" else p.county
     seen = set()
     for tr, te in GroupKFold(F.FOLDS).split(p, p.x, groups):
-        assert not set(groups.iloc[tr]) & set(groups.iloc[te])   # no block on both sides
-        assert not seen & set(te)                                 # every row is tested once
+        assert not set(groups.iloc[tr]) & set(groups.iloc[te])  # no block on both sides
+        assert not seen & set(te)  # every row is tested once
         seen |= set(te)
     assert seen == set(range(len(p)))
 
@@ -37,6 +43,7 @@ def test_oof_predictions_never_see_their_fold():
     y = pd.Series(np.arange(len(p), dtype=float))
     X = pd.DataFrame({"g": groups.astype("category").cat.codes})
     from sklearn.dummy import DummyRegressor
+
     pred = F.oof_predict(DummyRegressor(strategy="mean"), X, y, groups)
     for tr, te in GroupKFold(F.FOLDS).split(X, y, groups):
         assert np.allclose(pred[te], y.iloc[tr].mean())
@@ -55,7 +62,7 @@ def test_backtest_score_table_on_a_toy_case():
 
 
 def test_conformal_halfwidth_finite_sample_rule():
-    r = np.arange(1, 11, dtype=float)       # n = 10, alpha 0.1 -> ceil(11 * 0.9) = 10th smallest
+    r = np.arange(1, 11, dtype=float)  # n = 10, alpha 0.1 -> ceil(11 * 0.9) = 10th smallest
     assert F.conformal_halfwidth(r, 0.1) == 10.0
     assert F.conformal_halfwidth(np.r_[r, np.nan], 0.1) == 10.0
     assert F.conformal_halfwidth(np.arange(1, 101, dtype=float), 0.2) == 81.0
@@ -80,14 +87,16 @@ def test_rule_factor_by_scenario():
 
 
 def test_adus_are_capped_at_lots_with_room():
-    tract = pd.DataFrame({"GEOID": ["t1", "t2"], "pop_2024": [1e6, 1e3], "factor": [3.0, 1.0],
-                          "lots_cap": [10.0, 100.0]})
+    tract = pd.DataFrame(
+        {"GEOID": ["t1", "t2"], "pop_2024": [1e6, 1e3], "factor": [3.0, 1.0], "lots_cap": [10.0, 100.0]}
+    )
     split = pd.DataFrame({"GEOID": ["t1", "t2"], "town_geoid": ["a", "b"], "share": [1.0, 1.0]})
-    rules = pd.DataFrame({"town_geoid": ["a", "b"], "name": ["A", "B"], "adu_rule": ["allowed", "limited"],
-                          "listed": [True, False]})
-    p = F.adu_pieces(tract, split, rules)
+    rules = pd.DataFrame(
+        {"town_geoid": ["a", "b"], "name": ["A", "B"], "adu_rule": ["allowed", "limited"], "listed": [True, False]}
+    )
+    p = F.adu_pieces(tract, split, rules, "list")
     hb = p[p.rule == "hb2186"].set_index("GEOID")
-    assert hb.loc["t1", "adus_high"] == 10.0                  # capped
+    assert hb.loc["t1", "adus_high"] == 10.0  # capped
     assert hb.loc["t2", "adus_low"] < hb.loc["t2", "adus_mid"] < hb.loc["t2", "adus_high"]
     cur = p[p.rule == "current"].set_index("GEOID")
     assert cur.loc["t2", "adus_mid"] < hb.loc["t2", "adus_mid"]

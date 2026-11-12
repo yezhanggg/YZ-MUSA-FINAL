@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -135,10 +100,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MUSA 5500 (demand and payoff)</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
@@ -154,6 +119,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/results.html">
  <span class="dropdown-text">Results</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
+ <span class="dropdown-text">Tract explorer</span></a>
   </li>  
     </ul>
   </li>
@@ -203,9 +172,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sources" id="toc-sources" class="nav-link active" data-scroll-target="#sources">Sources</a></li>
+  <li><a href="#images-and-labels-for-the-land-cover-model" id="toc-images-and-labels-for-the-land-cover-model" class="nav-link active" data-scroll-target="#images-and-labels-for-the-land-cover-model">Images and labels for the land cover model</a>
+  <ul class="collapse">
   <li><a href="#sample-design" id="toc-sample-design" class="nav-link" data-scroll-target="#sample-design">Sample design</a></li>
   <li><a href="#label-classes" id="toc-label-classes" class="nav-link" data-scroll-target="#label-classes">Label classes</a></li>
+  </ul></li>
+  <li><a href="#images-and-labels-for-the-structure-detector" id="toc-images-and-labels-for-the-structure-detector" class="nav-link" data-scroll-target="#images-and-labels-for-the-structure-detector">Images and labels for the structure detector</a></li>
+  <li><a href="#lot-building-and-street-data-for-the-lot-tool" id="toc-lot-building-and-street-data-for-the-lot-tool" class="nav-link" data-scroll-target="#lot-building-and-street-data-for-the-lot-tool">Lot, building and street data for the lot tool</a></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul>
 </nav>
@@ -232,104 +205,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>One script gets everything (geoai env):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> musa6950/get_data.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Files go to <code>data/raw/6950/</code>. Nothing is committed to GitHub.</p>
-<section id="sources" class="level2">
-<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<p>Two kinds of data feed this half of the project. Aerial images with land cover labels train and test the models. Lot, building and street layers from the two cities feed the lot tool. Large files live on an external data drive (<code>ADU_DATA_DIR</code>, default <code>~/musa-drive</code>). Nothing large is in the repository. The full source list with record counts and licenses is in <code>docs/DATA.md</code> in the repository.</p>
+<section id="images-and-labels-for-the-land-cover-model" class="level2">
+<h2 class="anchored" data-anchor-id="images-and-labels-for-the-land-cover-model">Images and labels for the land cover model</h2>
+<!-- sources: ~/musa-drive/processed/vision/class_shares.json, ~/musa-drive/processed/vision/city/<city>/summary.json -->
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Data</th>
 <th>Source</th>
-<th>Years</th>
-<th>Detail</th>
-<th>Area</th>
-<th>License</th>
+<th>Date</th>
+<th>Pixel</th>
+<th>Used for</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Aerial images (red, green, blue, near-infrared)</td>
-<td>NAIP via Microsoft Planetary Computer (STAC)</td>
+<td>Aerial images, red, green, blue, near infrared</td>
+<td>NAIP via Microsoft Planetary Computer</td>
 <td>2022</td>
 <td>0.6 m</td>
-<td>173 sample boxes, 1 km x 1 km</td>
-<td>Public domain (USDA)</td>
+<td>Model input</td>
 </tr>
 <tr class="even">
-<td>Training labels</td>
-<td>Chesapeake Bay Program land use / land cover, 2024 edition (USGS ScienceBase)</td>
-<td>2022</td>
+<td>Training and test labels</td>
+<td>Chesapeake Bay Program land use and land cover, 2024 edition, “2022” epoch</td>
+<td>2021 to 2022</td>
 <td>1 m</td>
-<td>43 PA counties in the Chesapeake watershed</td>
-<td>Public (USGS)</td>
+<td>Training, validation, county test</td>
 </tr>
 <tr class="odd">
-<td>Building outlines</td>
-<td>Microsoft Global ML Building Footprints</td>
-<td>Release 2026-02</td>
-<td>Polygons</td>
-<td>Sample boxes + pilot counties</td>
-<td>ODbL. Download by script only</td>
+<td>Philadelphia city labels</td>
+<td>Philadelphia Land Cover 2018, University of Vermont Spatial Analysis Lab for the city, 7 classes</td>
+<td>2018 (2017 NAIP, 2018 lidar)</td>
+<td>2 ft</td>
+<td>City test, city fine-tune, Philadelphia lot cover</td>
 </tr>
 <tr class="even">
-<td>Lot lines</td>
-<td>Philadelphia Water Dept parcels (ArcGIS)</td>
-<td>Current</td>
-<td>Polygons</td>
-<td>Philadelphia, 547,425 lots</td>
-<td>City of Philadelphia</td>
-</tr>
-<tr class="odd">
-<td>Lot lines</td>
-<td>Cumberland County parcels (PASDA)</td>
-<td>Jan 2026</td>
-<td>Polygons</td>
-<td>Cumberland County</td>
-<td>County terms</td>
-</tr>
-<tr class="even">
-<td>Urban / suburban / rural</td>
-<td>USDA RUCA codes by tract</td>
-<td>2020</td>
-<td>Tract</td>
-<td>PA</td>
-<td>Public</td>
-</tr>
-<tr class="odd">
-<td>Single-family homes per tract</td>
-<td>ACS 2020-24, table B25024 (from the 5500 data step)</td>
-<td>2020-24</td>
-<td>Tract</td>
-<td>PA</td>
-<td>Public</td>
+<td>Pittsburgh city labels</td>
+<td>High resolution land cover for Pittsburgh watersheds, University of Vermont Spatial Analysis Lab, USDA Forest Service archive</td>
+<td>2019 (2019 NAIP, 2015 lidar)</td>
+<td>2 ft</td>
+<td>City test, city fine-tune, per-lot check</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="sample-design" class="level2">
-<h2 class="anchored" data-anchor-id="sample-design">Sample design</h2>
+<section id="sample-design" class="level3">
+<h3 class="anchored" data-anchor-id="sample-design">Sample design</h3>
 <ul>
-<li>Tracts split into urban (RUCA 1), suburban (RUCA 2-3), rural (RUCA 4-10)</li>
-<li>Only tracts in counties with Chesapeake labels</li>
-<li>Train: 50 boxes per group = 150</li>
-<li>Test: Cumberland + Centre counties, held out. Never used for training. 27 boxes</li>
-<li>Box = 1 km x 1 km around the tract’s population center</li>
-<li>Random seed 42</li>
+<li>173 boxes of 1 km x 1 km around tract population centers in the Chesapeake Bay counties of Pennsylvania. Four more boxes on the New York line had no 2022 Pennsylvania image and were dropped.</li>
+<li>Split by county so no county is in two roles: 122 train boxes (27 counties), 24 validation boxes (7 counties), 27 test boxes (Cumberland and Centre).</li>
+<li>Labeled pixels: 488,290,379 train, 96,124,030 validation, 109,183,195 test.</li>
+<li>City boxes: 40 per city. Philadelphia 22 train, 6 validation, 12 test. Pittsburgh 25 train, 6 validation, 9 test.</li>
+<li>In Pittsburgh 34.8 % of the test box area was also inside train or validation boxes. City test scores now leave those pixels out. See the results page.</li>
 </ul>
 </section>
-<section id="label-classes" class="level2">
-<h2 class="anchored" data-anchor-id="label-classes">Label classes</h2>
-<p>Chesapeake has 56 classes. They are grouped into 4.</p>
+<section id="label-classes" class="level3">
+<h3 class="anchored" data-anchor-id="label-classes">Label classes</h3>
+<p>The Chesapeake codes are grouped into 4 classes, or 5 with hard surface split out.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -337,45 +277,201 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </colgroup>
 <thead>
 <tr class="header">
-<th>Ours</th>
+<th>Class</th>
 <th>Chesapeake codes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1 building</td>
-<td>21 Structures</td>
+<td>building</td>
+<td>21 structures</td>
 </tr>
 <tr class="even">
-<td>2 tree</td>
-<td>23-26 tree canopy over roads, structures, paving, turf. 40-41 forest. Forested wetlands</td>
+<td>tree</td>
+<td>23 to 26 tree canopy over roads, structures, paving and turf. 40 and 41 forest. Forested wetlands</td>
 </tr>
 <tr class="odd">
-<td>3 open ground</td>
-<td>27 turf grass, 28 bare developed, natural succession, harvested forest, cropland, pasture</td>
+<td>open ground</td>
+<td>27 turf grass, 28 bare developed, succession, harvested forest, cropland, pasture</td>
 </tr>
 <tr class="even">
-<td>0 other</td>
-<td>Roads, other paving, water, solar, extractive, wetlands without trees</td>
+<td>hard surface (5-class only)</td>
+<td>20 roads, 22 other impervious, 31 extractive impervious</td>
 </tr>
 <tr class="odd">
-<td>255 no data</td>
-<td>Outside the mapped area</td>
+<td>other</td>
+<td>water, wetlands without trees, barren, solar fields. In the 4-class set roads and paving are here too</td>
+</tr>
+</tbody>
+</table>
+<!-- source: ~/musa-drive/processed/vision/class_shares.json -->
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Share of labeled pixels</th>
+<th>other</th>
+<th>building</th>
+<th>tree</th>
+<th>open</th>
+<th>hard</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Train, 4 classes</td>
+<td>0.1458</td>
+<td>0.0583</td>
+<td>0.4076</td>
+<td>0.3882</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Test, 4 classes</td>
+<td>0.1473</td>
+<td>0.0684</td>
+<td>0.2726</td>
+<td>0.5118</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Train, 5 classes</td>
+<td>0.0189</td>
+<td>0.0583</td>
+<td>0.4076</td>
+<td>0.3882</td>
+<td>0.1269</td>
+</tr>
+<tr class="even">
+<td>Test, 5 classes</td>
+<td>0.0095</td>
+<td>0.0684</td>
+<td>0.2726</td>
+<td>0.5118</td>
+<td>0.1378</td>
+</tr>
+</tbody>
+</table>
+<p>The test counties have less tree and more open ground than the training counties.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/01_class_shares.png" class="img-fluid figure-img"></p>
+<figcaption>Class shares, train against test (4 classes)</figcaption>
+</figure>
+</div>
+<p>The city rasters have 7 classes. They are grouped the same way, and “other” is water only.</p>
+<!-- source: ~/musa-drive/processed/vision/city/<city>/summary.json -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>City test boxes, share</th>
+<th>other (water)</th>
+<th>building</th>
+<th>tree</th>
+<th>open</th>
+<th>hard</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Philadelphia (12 boxes)</td>
+<td>0.0</td>
+<td>0.3793</td>
+<td>0.0888</td>
+<td>0.1272</td>
+<td>0.4047</td>
+</tr>
+<tr class="even">
+<td>Pittsburgh (9 boxes)</td>
+<td>0.0082</td>
+<td>0.1102</td>
+<td>0.4861</td>
+<td>0.1645</td>
+<td>0.231</td>
 </tr>
 </tbody>
 </table>
 </section>
+</section>
+<section id="images-and-labels-for-the-structure-detector" class="level2">
+<h2 class="anchored" data-anchor-id="images-and-labels-for-the-structure-detector">Images and labels for the structure detector</h2>
+<ul>
+<li>PEMA Orthoimagery Cycle 2, 0.5 ft pixels, leaf off, from PASDA. Pittsburgh: flown 2022-03-16 to 2022-04-12. Philadelphia: flown 2020-12-11 to 2021-03-22.</li>
+<li>60 sample areas per city, 540 chips of 640 px per city.</li>
+<li>Labels are first pass. They come from building footprints and OpenStreetMap pools, not from looking at the image. No chip has been checked by hand yet.</li>
+</ul>
+</section>
+<section id="lot-building-and-street-data-for-the-lot-tool" class="level2">
+<h2 class="anchored" data-anchor-id="lot-building-and-street-data-for-the-lot-tool">Lot, building and street data for the lot tool</h2>
+<!-- sources: docs/DATA.md built tables, ~/musa-drive/lots/<city>/manifest.json -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Philadelphia</th>
+<th>Pittsburgh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lot outlines</td>
+<td>Water Department parcels joined to Office of Property Assessment records</td>
+<td>Allegheny County parcels joined to county assessments</td>
+</tr>
+<tr class="even">
+<td>Lots kept (1 to 4 unit homes)</td>
+<td>459,998</td>
+<td>92,081</td>
+</tr>
+<tr class="odd">
+<td>Building outlines</td>
+<td>City L&amp;I footprints with height</td>
+<td>County roof outlines, Microsoft outlines where the county has none, city heights</td>
+</tr>
+<tr class="even">
+<td>Streets and alleys</td>
+<td>City street centerlines, OpenStreetMap service ways</td>
+<td>County street centerlines (alley code A73)</td>
+</tr>
+<tr class="odd">
+<td>Zoning</td>
+<td>Base districts and overlays</td>
+<td>Districts and overlays, steep slope, landslide, historic, flood</td>
+</tr>
+<tr class="even">
+<td>Land cover per lot</td>
+<td>City 2018 raster</td>
+<td>U-Net <code>r34_c5_s0</code> on NAIP 2022</td>
+</tr>
+<tr class="odd">
+<td>Local projection</td>
+<td>EPSG:2272 (feet)</td>
+<td>EPSG:2272 (feet)</td>
+</tr>
+</tbody>
+</table>
+<p>Both cities are measured in feet in EPSG:2272, NAD83 Pennsylvania South (<code>pipeline/places/pittsburgh.py</code>, <code>pipeline/fit.py</code>).</p>
+</section>
 <section id="notes" class="level2">
 <h2 class="anchored" data-anchor-id="notes">Notes</h2>
 <ul>
-<li>Eastern PA images are in UTM 18N, western PA in UTM 17N. Each box keeps its own CRS</li>
-<li>Labels are 1 m. They are resampled (nearest) onto the 0.6 m image grid</li>
-<li>Chesapeake labels are from the same 2022 images, so they match in time</li>
-<li>No recent labels for western PA. The model is tested there only by eye, plus hand-labeled lots</li>
-<li>Philadelphia also has a 0.5 ft land cover map (2018, <code>PhiladelphiaLandCoverRaster2018.zip</code> on PASDA, 521 MB). Optional extra test set</li>
-<li>Microsoft outlines merge Philadelphia rowhouses into one shape per row (161k outlines vs 547k lots). Use lot lines to split them</li>
-<li>No free statewide lot map in PA. That is why lot results are only for the pilot counties</li>
-<li>Parcel owner names are not downloaded</li>
+<li>Eastern Pennsylvania NAIP is in UTM 18N, western in UTM 17N. Each box keeps its own projection.</li>
+<li>The Chesapeake labels and NAIP 2022 are at most about a year apart. The labels also use older lidar for tree height.</li>
+<li>NAIP 2022 over Philadelphia was flown on 2022-04-30, 05-10 and 05-17, early in the leaf season. Over Pittsburgh it was flown on 2022-05-09.</li>
+<li>No Chesapeake labels exist for western Pennsylvania. Pittsburgh is tested only against the 2019 city raster.</li>
+<li>Parcel owner names are not downloaded.</li>
 </ul>
 
 

@@ -12,21 +12,21 @@ for both cities and a count table.
 Run with the geospatial env:
     python build_labels.py
 """
+
 from __future__ import annotations
 
 import argparse
 import shutil
 from collections import Counter
 
+import config
 import geopandas as gpd
 import numpy as np
 import pandas as pd
+from labels import Bounds, box_from_polygon, classify_footprint, yolo_line
 from shapely import STRtree
 from shapely.geometry import box as sbox
 from shapely.ops import unary_union
-
-import config
-from labels import Bounds, box_from_polygon, classify_footprint, yolo_line
 
 ACCESS_KINDS_EXCLUDED = {"highway"}
 
@@ -51,8 +51,9 @@ def load_access_lines(city: str, areas: gpd.GeoDataFrame) -> gpd.GeoSeries:
     alleys = config.PROCESSED / city / "alleys.parquet"
     if alleys.exists():
         parts.append(gpd.read_parquet(alleys))
-    lines = pd.concat([p[~p.get("kind", pd.Series("", index=p.index)).isin(ACCESS_KINDS_EXCLUDED)][["geometry"]]
-                       for p in parts])
+    lines = pd.concat(
+        [p[~p.get("kind", pd.Series("", index=p.index)).isin(ACCESS_KINDS_EXCLUDED)][["geometry"]] for p in parts]
+    )
     lines = gpd.GeoDataFrame(lines, geometry="geometry", crs=parts[0].crs)
     return lines[lines.intersects(areas.buffer(500).union_all())].geometry
 
@@ -64,15 +65,22 @@ def accessory_objects(b: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     main building and is dropped. Other groups are joined into one shape.
     """
     b = b[b["housing_type"].notna()].copy()
-    b["group"] = np.where(b["split"].astype(bool), "o" + b["orig_area_sqft"].round(1).astype(str),
-                          "b" + b["building_id"].astype(str))
+    b["group"] = np.where(
+        b["split"].astype(bool), "o" + b["orig_area_sqft"].round(1).astype(str), "b" + b["building_id"].astype(str)
+    )
     has_main = b.groupby("group")["role"].apply(lambda r: (r == "main").any())
     acc = b[(b["role"] != "main") & ~b["group"].map(has_main)]
     rows = []
-    for g, part in acc.groupby("group"):
+    for _, part in acc.groupby("group"):
         lot = part.sort_values("area_sqft", ascending=False)["lot_id"].iat[0]
-        rows.append({"lot_id": lot, "n_pieces": len(part), "geometry": unary_union(part.geometry.values),
-                     "source_role": ",".join(sorted(set(part["role"])))})
+        rows.append(
+            {
+                "lot_id": lot,
+                "n_pieces": len(part),
+                "geometry": unary_union(part.geometry.values),
+                "source_role": ",".join(sorted(set(part["role"]))),
+            }
+        )
     objs = gpd.GeoDataFrame(rows, geometry="geometry", crs=b.crs)
     return drop_overlaps(objs, b[b["role"] == "main"].geometry)
 
@@ -110,7 +118,7 @@ def classify(objs: gpd.GeoDataFrame, lines: gpd.GeoSeries) -> gpd.GeoDataFrame:
     tree = STRtree(lines.values)
     _, dist = tree.query_nearest(objs.geometry.values, return_distance=True, all_matches=False)
     objs["access_dist_ft"] = dist
-    objs["cls"] = [classify_footprint(a, d) for a, d in zip(objs["area_sqft"], objs["access_dist_ft"])]
+    objs["cls"] = [classify_footprint(a, d) for a, d in zip(objs["area_sqft"], objs["access_dist_ft"], strict=True)]
     return objs[objs["cls"].notna()]
 
 
@@ -175,7 +183,8 @@ def write_yaml() -> None:
     names = "\n".join(f"  {i}: {n}" for i, n in enumerate(config.CLASSES))
     (config.WORK / "data.yaml").write_text(
         f"# First pass labels from footprints and OSM pools. Split by sample area.\n"
-        f"path: {config.DATASET}\ntrain: images/train\nval: images/val\ntest: images/test\nnames:\n{names}\n")
+        f"path: {config.DATASET}\ntrain: images/train\nval: images/val\ntest: images/test\nnames:\n{names}\n"
+    )
 
 
 def write_counts(all_counts: dict[str, Counter]) -> pd.DataFrame:

@@ -37,6 +37,9 @@ const SCHEMA_BLOCKS: Record<LotBlock, string[]> = {
   money: props(defs.money),
   rent_by_bedroom: props(defs.money.properties?.rent_by_bedroom),
   quality: props(defs.quality),
+  terrain: props(defs.terrain),
+  slope_stats: props(defs.slope_stats),
+  gentle_fit: props(defs.gentle_fit),
 };
 
 describe('types match pipeline/lot_schema.json', () => {
@@ -77,6 +80,11 @@ describe('fixtures use only known keys', () => {
         ...Object.values(r.fit).flatMap((types) => Object.values(types ?? {}).flatMap((f) => unknown(f, 'fit_result'))),
         ...unknown(r.facts, 'facts'),
         ...unknown(r.quality, 'quality'),
+        ...unknown(r.terrain, 'terrain'),
+        ...[r.terrain?.lot, ...Object.values(r.terrain?.buildable ?? {}), ...Object.values(r.terrain?.spot ?? {})].flatMap((x) =>
+          unknown(x, 'slope_stats'),
+        ),
+        ...Object.values(r.terrain?.gentle_fit ?? {}).flatMap((x) => unknown(x, 'gentle_fit')),
       ];
       expect(extra).toEqual([]);
     });

@@ -8,16 +8,16 @@ and areas never overlap. Fixed seed.
 Run with the geospatial env:
     python sample_areas.py --city pittsburgh
 """
+
 from __future__ import annotations
 
 import argparse
 
+import config
 import geopandas as gpd
 import numpy as np
-from shapely.geometry import box
-
-import config
 from labels import split_by_area
+from shapely.geometry import box
 
 DISTRICT_COLUMN = {"pittsburgh": "neighborhood", "philadelphia": "ward"}
 
@@ -60,8 +60,16 @@ def pick_areas(lots: gpd.GeoDataFrame, n: int, seed: int) -> list[dict]:
             continue
         taken.append(sq)
         per_district[district] = per_district.get(district, 0) + 1
-        out.append({"center_lot": lots["lot_id"].iat[i], "center_type": lots["housing_type"].iat[i],
-                    "district": district, "x0": float(x0), "y0": float(y0), "geometry": sq})
+        out.append(
+            {
+                "center_lot": lots["lot_id"].iat[i],
+                "center_type": lots["housing_type"].iat[i],
+                "district": district,
+                "x0": float(x0),
+                "y0": float(y0),
+                "geometry": sq,
+            }
+        )
     return out
 
 
@@ -74,12 +82,16 @@ def build(city: str, n: int, seed: int) -> gpd.GeoDataFrame:
     split = split_by_area(areas["area_id"], config.SPLIT_FRACTIONS, seed)
     areas["split"] = areas["area_id"].map(split)
     areas["city"] = city
-    in_area = gpd.sjoin(lots[["housing_type", "geometry"]].set_geometry(lots.geometry.representative_point()),
-                        areas[["area_id", "geometry"]], predicate="within")
+    in_area = gpd.sjoin(
+        lots[["housing_type", "geometry"]].set_geometry(lots.geometry.representative_point()),
+        areas[["area_id", "geometry"]],
+        predicate="within",
+    )
     counts = in_area.groupby("area_id").size()
     areas["n_lots"] = areas["area_id"].map(counts).fillna(0).astype(int)
-    return areas[["area_id", "city", "split", "center_lot", "center_type", "district", "n_lots", "x0", "y0",
-                  "geometry"]]
+    return areas[
+        ["area_id", "city", "split", "center_lot", "center_type", "district", "n_lots", "x0", "y0", "geometry"]
+    ]
 
 
 def main() -> None:

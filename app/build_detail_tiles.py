@@ -7,6 +7,7 @@ Output: app/public/data/lot_detail.pmtiles
   layer open: id (lot_id), cls (open | tree), a (area sq ft)
   layer spot: id, fp (footprint sq ft), kt (keeps trees 0/1), kind (max | base600)
 """
+
 import subprocess
 import sys
 import tempfile
@@ -15,9 +16,9 @@ from pathlib import Path
 import geopandas as gpd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "shared"))
-from common import OUT, APP_DATA  # noqa: E402
+from common import APP_DATA, OUT  # noqa: E402
 
-SIMPLIFY_M = 0.6   # one image pixel. Removes pixel staircases, keeps shapes
+SIMPLIFY_M = 0.6  # one image pixel. Removes pixel staircases, keeps shapes
 
 
 def main():
@@ -39,9 +40,25 @@ def main():
         fo, fs = Path(tmp) / "open.geojsonl", Path(tmp) / "spot.geojsonl"
         o.to_file(fo, driver="GeoJSONSeq")
         s.to_file(fs, driver="GeoJSONSeq")
-        subprocess.run(["tippecanoe", "-o", str(dest), "--force", "-Z16", "-z16",
-                        "--no-tile-size-limit", "--no-feature-limit", "--no-simplification-of-shared-nodes",
-                        "-L", f"open:{fo}", "-L", f"spot:{fs}", "-q"], check=True)
+        subprocess.run(
+            [
+                "tippecanoe",
+                "-o",
+                str(dest),
+                "--force",
+                "-Z16",
+                "-z16",
+                "--no-tile-size-limit",
+                "--no-feature-limit",
+                "--no-simplification-of-shared-nodes",
+                "-L",
+                f"open:{fo}",
+                "-L",
+                f"spot:{fs}",
+                "-q",
+            ],
+            check=True,
+        )
     print(f"  wrote app/public/data/lot_detail.pmtiles ({dest.stat().st_size / 1e6:.1f} MB)")
     print(f"  open/tree shapes: {len(o):,}  spots: {len(s):,}")
 

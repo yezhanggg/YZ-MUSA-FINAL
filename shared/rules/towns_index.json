@@ -166,7 +166,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "ADU by right. Open: whether the ADU counts toward lot area per family (205), and the one-principal-use rule in R districts (204). Reading the ADU as an accessory use is secondary."
     },
     {
       "geoid": "4206969000",
@@ -216,7 +216,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Unit for Care of Relative by right, family only. Open: final passage of Bill 22-2026 is not confirmed, and the public PDF ends at Ord. 2023-32, so 2024 to 2026 amendments may be missing."
     },
     {
       "geoid": "4207141216",
@@ -409,7 +409,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Family-only ADU by special exception. Open: detached height (35 ft district vs 17 ft by analogy to A-22), and whether the district dwelling separation (20 to 40 ft) applies between the house and a detached ADU."
     },
     {
       "geoid": "4201708768",
@@ -457,7 +457,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "In-law apartment by special exception, family only. Open: parking (2 or 4 spaces) and whether the apartment counts toward district density."
     },
     {
       "geoid": "4204345056",
@@ -481,7 +481,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "ADU by right with almost no ADU standards. Open: whether a full garage conversion that ends the garage use escapes 203-314C(2), and parking (2 or 4 under 203-903)."
     },
     {
       "geoid": "4204533144",
@@ -553,7 +553,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "No ADU rule. Open: the undefined 'Accessory Residential Uses' row in Section 501, and the R-2 single-family height in feet."
     },
     {
       "geoid": "4207146896",
@@ -625,7 +625,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Re-reviewed 2026-11-11 against 87-79, 87-15B, 87-186A, Tables 1 and 2, TND Exhibit A and Schedule A, 87-17G(1), 87-210. Accessory apartment by special exception, family only, TC-R in the TND overlay (six parcels). Open: whether a second unit outside the TND is an 'unlisted use' under 87-186A (a reading), and Schedule A bulk rules go by lot type, mapped to lot area here."
     },
     {
       "geoid": "4200359032",

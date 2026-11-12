@@ -18,6 +18,7 @@ Run:
     python -m pipeline.corpus.evaluate retrieval
     python -m pipeline.corpus.evaluate extraction
 """
+
 from __future__ import annotations
 
 import argparse
@@ -34,24 +35,41 @@ from pipeline.corpus.paths import REPO, sub
 RX_LABEL = re.compile(r"\d+[A-Z]?-\d+(?:\.\d+)*[A-Z]?|\d\.\d{2}\.\d{3}|\d{3,4}(?:\.\d+)*")
 
 QUESTIONS = {  # type -> (gold getter path, question text)
-    "adu_term": (("adu", "term"), "What does the zoning ordinance call an accessory dwelling unit or in-law apartment?"),
+    "adu_term": (
+        ("adu", "term"),
+        "What does the zoning ordinance call an accessory dwelling unit or in-law apartment?",
+    ),
     "status": (("adu", "status"), "Are accessory dwelling units allowed?"),
-    "approval_path": (("approval", "path"), "What approval is needed for an accessory dwelling unit: permit, special "
-                      "exception or conditional use?"),
-    "districts": (("eligibility", "zoning_districts"), "In which zoning districts is an accessory dwelling unit "
-                  "allowed?"),
+    "approval_path": (
+        ("approval", "path"),
+        "What approval is needed for an accessory dwelling unit: permit, special exception or conditional use?",
+    ),
+    "districts": (
+        ("eligibility", "zoning_districts"),
+        "In which zoning districts is an accessory dwelling unit allowed?",
+    ),
     "size_cap": (("size", "max_sqft"), "What is the maximum floor area of an accessory dwelling unit?"),
-    "size_share": (("size", "max_share_of_house"), "What share of the principal dwelling floor area may an "
-                   "accessory unit use?"),
-    "owner_occupancy": (("use", "owner_occupancy"), "Must the property owner live on the lot with an accessory "
-                        "dwelling unit?"),
+    "size_share": (
+        ("size", "max_share_of_house"),
+        "What share of the principal dwelling floor area may an accessory unit use?",
+    ),
+    "owner_occupancy": (
+        ("use", "owner_occupancy"),
+        "Must the property owner live on the lot with an accessory dwelling unit?",
+    ),
     "family": (("use", "family_only"), "Is the accessory unit limited to relatives or family members?"),
-    "parking": (("parking", "spaces_required"), "How many off-street parking spaces does an accessory dwelling "
-                "unit need?"),
-    "unlisted_use": (("approval", "unlisted_use_path"), "How are uses not listed or not provided for in the "
-                     "ordinance handled?"),
-    "alternatives": (("approval", "alternatives"), "Can a single-family house be converted to a two-family "
-                     "dwelling or duplex?"),
+    "parking": (
+        ("parking", "spaces_required"),
+        "How many off-street parking spaces does an accessory dwelling unit need?",
+    ),
+    "unlisted_use": (
+        ("approval", "unlisted_use_path"),
+        "How are uses not listed or not provided for in the ordinance handled?",
+    ),
+    "alternatives": (
+        ("approval", "alternatives"),
+        "Can a single-family house be converted to a two-family dwelling or duplex?",
+    ),
     "fallback": (("approval", "fallback_path"), "What if a use is not permitted in the district: variance?"),
 }
 
@@ -65,7 +83,7 @@ def git_json(path: str) -> Any:
 
 
 GOLD_SOURCE = "head"  # "head": committed files, "worktree": files on disk
-GOLD_STATUSES = ("verified", "drafted")
+GOLD_STATUSES: tuple[str, ...] = ("verified", "drafted")
 
 
 def read_gold(path: str) -> Any:
@@ -90,9 +108,10 @@ def gold_files() -> dict[str, dict[str, Any]]:
 
 
 def get(d: dict[str, Any], path: tuple[str, ...]) -> Any:
+    cur: Any = d
     for p in path:
-        d = d.get(p) if isinstance(d, dict) else None
-    return d
+        cur = cur.get(p) if isinstance(cur, dict) else None
+    return cur
 
 
 def labels_in(section: str | None) -> list[str]:
@@ -105,8 +124,14 @@ def labels_in(section: str | None) -> list[str]:
 
 def _related(a: str, b: str) -> bool:
     """Same label, or one is an ancestor of the other (2515 and 2515.2)."""
-    return a == b or b.startswith(a + ".") or a.startswith(b + ".") or b.startswith(a + "-") \
-        or a.startswith(b + "(") or b.startswith(a + "(")
+    return (
+        a == b
+        or b.startswith(a + ".")
+        or a.startswith(b + ".")
+        or b.startswith(a + "-")
+        or a.startswith(b + "(")
+        or b.startswith(a + "(")
+    )
 
 
 def gold_quotes(item: dict[str, Any]) -> list[str]:
@@ -150,24 +175,35 @@ def retrieval(models: tuple[str, ...] = ("bge", "e5"), ks: tuple[int, ...] = (5,
             labels = [x for x in labels_in(item["section"]) if any(chunk_has(c, x) for c in by_place[geoid])]
             target = "section"
             if labels:
-                def ok(h: dict[str, Any], labels: list[str] = labels) -> bool:
-                    return any(chunk_has(h, x) for x in labels)
+
+                def ok(h: dict[str, Any], want: list[str] = labels) -> bool:
+                    return any(chunk_has(h, x) for x in want)
             else:
                 # the copy we hold may number sections differently (ordinance vs codified chapter):
                 # fall back to the words the reviewer quoted in the note
                 quotes = [qq for qq in gold_quotes(item) if any(qq in norm(c["text"]) for c in by_place[geoid])]
                 if not quotes:
-                    rows.append({"geoid": geoid, "file": g["file"], "qtype": qtype, "scorable": False,
-                                 "cited": item["section"]})
+                    rows.append(
+                        {"geoid": geoid, "file": g["file"], "qtype": qtype, "scorable": False, "cited": item["section"]}
+                    )
                     continue
                 target = "quote"
 
-                def ok(h: dict[str, Any], quotes: list[str] = quotes) -> bool:
+                def ok(h: dict[str, Any], want: list[str] = quotes) -> bool:
                     t = norm(h["text"])
-                    return any(qq in t for qq in quotes)
+                    return any(qq in t for qq in want)
+
             q = question if not term or qtype == "adu_term" else question.replace("accessory dwelling unit", term)
-            row = {"geoid": geoid, "file": g["file"], "qtype": qtype, "scorable": True, "cited": item["section"],
-                   "target": target, "labels": labels, "query": q}
+            row = {
+                "geoid": geoid,
+                "file": g["file"],
+                "qtype": qtype,
+                "scorable": True,
+                "cited": item["section"],
+                "target": target,
+                "labels": labels,
+                "query": q,
+            }
             for model in models:
                 for mode in ("hybrid", "vector"):
                     hits = search(geoid, q, max(ks), model=model, mode=mode)
@@ -177,16 +213,23 @@ def retrieval(models: tuple[str, ...] = ("bge", "e5"), ks: tuple[int, ...] = (5,
             rows.append(row)
     scored = [r for r in rows if r["scorable"]]
     systems = [f"{m}_{mode}" for m in models for mode in ("hybrid", "vector")] + ["bm25"]
-    summary: dict[str, Any] = {"towns": sorted({r["file"] for r in scored}), "questions": len(scored),
-                               "by_quote": sum(1 for r in scored if r.get("target") == "quote"),
-                               "unscorable": len(rows) - len(scored), "by_system": {}, "by_type": {}}
+    summary: dict[str, Any] = {
+        "towns": sorted({r["file"] for r in scored}),
+        "questions": len(scored),
+        "by_quote": sum(1 for r in scored if r.get("target") == "quote"),
+        "unscorable": len(rows) - len(scored),
+        "by_system": {},
+        "by_type": {},
+    }
     for s in systems:
         summary["by_system"][s] = {f"top{k}": _rate(scored, s, k) for k in ks}
     for qtype in QUESTIONS:
         sub_rows = [r for r in scored if r["qtype"] == qtype]
         if sub_rows:
-            summary["by_type"][qtype] = {"n": len(sub_rows), **{f"{s}@{k}": _rate(sub_rows, s, k)
-                                                                 for s in systems for k in ks}}
+            summary["by_type"][qtype] = {
+                "n": len(sub_rows),
+                **{f"{s}@{k}": _rate(sub_rows, s, k) for s in systems for k in ks},
+            }
     out = sub("eval")
     (out / f"retrieval_rows{tag}.json").write_text(json.dumps(rows, indent=1))
     (out / f"retrieval_summary{tag}.json").write_text(json.dumps(summary, indent=1))
@@ -228,8 +271,15 @@ def _dists(xs: Any) -> set[str]:
 def gold_caps(r: dict[str, Any]) -> dict[str, float]:
     size = r.get("size", {})
     out = {}
-    for k in ("max_sqft", "max_share_of_house", "max_sqft_internal", "max_sqft_accessory_building",
-              "max_share_internal", "max_share_accessory_building", "min_sqft"):
+    for k in (
+        "max_sqft",
+        "max_share_of_house",
+        "max_sqft_internal",
+        "max_sqft_accessory_building",
+        "max_share_internal",
+        "max_share_accessory_building",
+        "min_sqft",
+    ):
         v = _val(size.get(k))
         if isinstance(v, (int, float)):
             out[k] = float(v)
@@ -265,14 +315,23 @@ def extraction(drafts_dir: str | None = None, tag: str = "") -> dict[str, Any]:
             continue
         r, m = g["rules"], d["draft"]
         gs = _val(get(r, ("adu", "status")))
-        row: dict[str, Any] = {"geoid": d["geoid"], "file": g["file"], "gold_status_of_file": g["status"],
-                               "status_gold": gs, "status_raw": _val(m.get("status")),
-                               "status_consistent": consistent_status(m)}
+        row: dict[str, Any] = {
+            "geoid": d["geoid"],
+            "file": g["file"],
+            "gold_status_of_file": g["status"],
+            "status_gold": gs,
+            "status_raw": _val(m.get("status")),
+            "status_consistent": consistent_status(m),
+        }
         row["path_gold"], row["path_machine"] = _val(get(r, ("approval", "path"))), _val(m.get("approval_path"))
-        row["fallback_gold"], row["fallback_machine"] = (_val(get(r, ("approval", "fallback_path"))),
-                                                         _val(m.get("fallback_path")))
-        row["unlisted_gold"], row["unlisted_machine"] = (_val(get(r, ("approval", "unlisted_use_path"))),
-                                                         _val(m.get("unlisted_use_path")))
+        row["fallback_gold"], row["fallback_machine"] = (
+            _val(get(r, ("approval", "fallback_path"))),
+            _val(m.get("fallback_path")),
+        )
+        row["unlisted_gold"], row["unlisted_machine"] = (
+            _val(get(r, ("approval", "unlisted_use_path"))),
+            _val(m.get("unlisted_use_path")),
+        )
         gd = _dists(_val(get(r, ("eligibility", "zoning_districts"))))
         md = _dists(_val(m.get("districts")))
         row["districts_gold"], row["districts_machine"] = sorted(gd), sorted(md)
@@ -282,16 +341,28 @@ def extraction(drafts_dir: str | None = None, tag: str = "") -> dict[str, Any]:
         caps = {}
         for k in set(gc) | set(mc):
             a, b = gc.get(k), mc.get(k)
-            caps[k] = {"gold": a, "machine": b,
-                       "match": (a is not None and b is not None and abs(a - b) <= 0.05 * max(abs(a), 1e-9))}
+            caps[k] = {
+                "gold": a,
+                "machine": b,
+                "match": (a is not None and b is not None and abs(a - b) <= 0.05 * max(abs(a), 1e-9)),
+            }
         row["caps"] = caps
-        for fld, gp in (("owner_occupancy", ("use", "owner_occupancy")), ("family_only", ("use", "family_only")),
-                        ("parking", ("parking", "spaces_required"))):
+        for fld, gp in (
+            ("owner_occupancy", ("use", "owner_occupancy")),
+            ("family_only", ("use", "family_only")),
+            ("parking", ("parking", "spaces_required")),
+        ):
             mk = "parking_spaces_for_adu" if fld == "parking" else fld
             row[f"{fld}_gold"], row[f"{fld}_machine"] = _val(get(r, gp)), _val(m.get(mk))
-        msecs = {lab for v in m.values() if isinstance(v, (dict, list))
-                 for it in (v if isinstance(v, list) else [v]) if isinstance(it, dict)
-                 for s in it.get("support", []) for lab in labels_in(s.get("section")) + labels_in(s.get("chunk_section"))}
+        msecs = {
+            lab
+            for v in m.values()
+            if isinstance(v, (dict, list))
+            for it in (v if isinstance(v, list) else [v])
+            if isinstance(it, dict)
+            for s in it.get("support", [])
+            for lab in labels_in(s.get("section")) + labels_in(s.get("chunk_section"))
+        }
         gates = _val(get(r, ("eligibility", "gates"))) or []
         gate_found = [any(_related(a, b) for a in labels_in(gt.get("section")) for b in msecs) for gt in gates]
         row["conditions_gold"], row["conditions_found_by_section"] = len(gates), sum(gate_found)
@@ -315,7 +386,7 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
     if not n:
         return {"towns": 0}
 
-    def rate(pred) -> float:
+    def rate(pred: Any) -> float:
         xs = [pred(r) for r in rows]
         xs = [x for x in xs if x is not None]
         return round(sum(xs) / len(xs), 3) if xs else None  # type: ignore[return-value]
@@ -335,23 +406,35 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "confusion_raw": {k: dict(v) for k, v in conf.items()},
         "confusion_consistent": {k: dict(v) for k, v in conf2.items()},
         "path_match": rate(lambda r: r["path_machine"] == r["path_gold"]),
-        "fallback_match": rate(lambda r: None if r["fallback_gold"] is None else r["fallback_machine"] == r["fallback_gold"]),
-        "unlisted_found": rate(lambda r: None if not r["unlisted_gold"] else r["unlisted_machine"] == r["unlisted_gold"]),
+        "fallback_match": rate(
+            lambda r: None if r["fallback_gold"] is None else r["fallback_machine"] == r["fallback_gold"]
+        ),
+        "unlisted_found": rate(
+            lambda r: None if not r["unlisted_gold"] else r["unlisted_machine"] == r["unlisted_gold"]
+        ),
         "districts_mean_jaccard": rate(lambda r: r["districts_jaccard"]),
         "districts_exact": rate(lambda r: None if r["districts_jaccard"] is None else r["districts_jaccard"] == 1.0),
-        "caps_gold": len(cap_pairs), "caps_matched": sum(1 for c in cap_pairs if c["match"]),
+        "caps_gold": len(cap_pairs),
+        "caps_matched": sum(1 for c in cap_pairs if c["match"]),
         "caps_extra_machine_only": len(cap_extra),
-        "owner_occupancy_match": rate(lambda r: None if r["owner_occupancy_gold"] is None else
-                                      r["owner_occupancy_machine"] == r["owner_occupancy_gold"]),
-        "family_only_match": rate(lambda r: None if r["family_only_gold"] is None else
-                                  r["family_only_machine"] == r["family_only_gold"]),
-        "parking_match": rate(lambda r: None if r["parking_gold"] is None else r["parking_machine"] == r["parking_gold"]),
+        "owner_occupancy_match": rate(
+            lambda r: (
+                None if r["owner_occupancy_gold"] is None else r["owner_occupancy_machine"] == r["owner_occupancy_gold"]
+            )
+        ),
+        "family_only_match": rate(
+            lambda r: None if r["family_only_gold"] is None else r["family_only_machine"] == r["family_only_gold"]
+        ),
+        "parking_match": rate(
+            lambda r: None if r["parking_gold"] is None else r["parking_machine"] == r["parking_gold"]
+        ),
         "conditions_gold": sum(r["conditions_gold"] for r in rows),
         "conditions_found_by_section": sum(r["conditions_found_by_section"] for r in rows),
         "alternatives_gold": sum(r["alternatives_gold"] for r in rows),
         "alternatives_machine": sum(r["alternatives_machine"] for r in rows),
         "unsupported_claims": sum(r["unsupported"] for r in rows),
-        "quotes": q_total, "quotes_ok": sum(r["quote_checks"]["ok"] for r in rows),
+        "quotes": q_total,
+        "quotes_ok": sum(r["quote_checks"]["ok"] for r in rows),
         "quotes_other_chunk": sum(r["quote_checks"]["other_chunk"] for r in rows),
         "usd_total": round(sum(r["usd"] for r in rows), 4),
         "usd_mean": round(sum(r["usd"] for r in rows) / n, 5),
@@ -366,8 +449,12 @@ if __name__ == "__main__":
     ap.add_argument("what", choices=["retrieval", "extraction"])
     ap.add_argument("--drafts-dir")
     ap.add_argument("--tag", default="")
-    ap.add_argument("--gold", choices=["head", "worktree"], default="head",
-                    help="read the town files from the last commit or from the working tree")
+    ap.add_argument(
+        "--gold",
+        choices=["head", "worktree"],
+        default="head",
+        help="read the town files from the last commit or from the working tree",
+    )
     ap.add_argument("--verified-only", action="store_true", help="score against verified towns only")
     a = ap.parse_args()
     GOLD_SOURCE = a.gold

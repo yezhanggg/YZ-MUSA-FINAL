@@ -2,6 +2,7 @@
 
 Only shapely is needed. Nothing here loads the detector or ultralytics.
 """
+
 import sys
 from pathlib import Path
 
@@ -12,17 +13,28 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "musa6950" / "yolo"
 
 import config  # noqa: E402
 from labels import (  # noqa: E402
-    Bounds, PixelBox, box_from_labelme_points, box_from_polygon, chip_grid, classify_footprint, map_to_pixel,
-    parse_yolo_line, pixel_to_map, split_by_area, world_file_lines, yolo_line)
+    Bounds,
+    PixelBox,
+    box_from_labelme_points,
+    box_from_polygon,
+    chip_grid,
+    classify_footprint,
+    map_to_pixel,
+    parse_yolo_line,
+    pixel_to_map,
+    split_by_area,
+    world_file_lines,
+    yolo_line,
+)
 
-CHIP = Bounds(1000.0, 2000.0, 1320.0, 2320.0)   # 320 ft square, 640 px at 0.5 ft
+CHIP = Bounds(1000.0, 2000.0, 1320.0, 2320.0)  # 320 ft square, 640 px at 0.5 ft
 PX = 0.5
 SIZE = 640
 
 
 def test_map_to_pixel_corners():
-    assert map_to_pixel(1000.0, 2320.0, CHIP, PX) == (0.0, 0.0)          # top left
-    assert map_to_pixel(1320.0, 2000.0, CHIP, PX) == (640.0, 640.0)      # bottom right
+    assert map_to_pixel(1000.0, 2320.0, CHIP, PX) == (0.0, 0.0)  # top left
+    assert map_to_pixel(1320.0, 2000.0, CHIP, PX) == (640.0, 640.0)  # bottom right
     assert map_to_pixel(1010.0, 2310.0, CHIP, PX) == (20.0, 20.0)
 
 
@@ -60,8 +72,8 @@ def test_box_from_rotated_polygon_uses_bounds():
 
 
 def test_box_cut_by_edge_kept_or_dropped():
-    mostly_in = box(990.0, 2200.0, 1030.0, 2220.0)    # 3/4 inside
-    mostly_out = box(970.0, 2200.0, 1005.0, 2220.0)   # 1/7 inside
+    mostly_in = box(990.0, 2200.0, 1030.0, 2220.0)  # 3/4 inside
+    mostly_out = box(970.0, 2200.0, 1005.0, 2220.0)  # 1/7 inside
     pb = box_from_polygon(mostly_in, CHIP, PX, SIZE)
     assert pb is not None and pb.left == 0.0 and pb.right == 60.0
     assert box_from_polygon(mostly_out, CHIP, PX, SIZE) is None
@@ -72,17 +84,20 @@ def test_box_outside_or_sliver_dropped():
     assert box_from_polygon(box(1100, 2200, 1101, 2230), CHIP, PX, SIZE) is None  # 2 px wide
 
 
-@pytest.mark.parametrize("area,dist,expected", [
-    (20.0, 10.0, None),                     # sliver
-    (120.0, 5.0, "shed"),
-    (179.9, 200.0, "shed"),
-    (180.0, 30.0, "garage"),
-    (400.0, 75.0, "garage"),
-    (400.0, 75.1, "other_accessory"),       # garage size but far from any street or alley
-    (400.0, None, "other_accessory"),
-    (700.0, 10.0, "garage"),
-    (701.0, 10.0, "other_accessory"),       # too big for a garage
-])
+@pytest.mark.parametrize(
+    "area,dist,expected",
+    [
+        (20.0, 10.0, None),  # sliver
+        (120.0, 5.0, "shed"),
+        (179.9, 200.0, "shed"),
+        (180.0, 30.0, "garage"),
+        (400.0, 75.0, "garage"),
+        (400.0, 75.1, "other_accessory"),  # garage size but far from any street or alley
+        (400.0, None, "other_accessory"),
+        (700.0, 10.0, "garage"),
+        (701.0, 10.0, "other_accessory"),  # too big for a garage
+    ],
+)
 def test_class_rule(area, dist, expected):
     assert classify_footprint(area, dist) == expected
 
@@ -117,7 +132,9 @@ def test_split_by_area_no_area_in_two_splits():
 
 def test_split_by_area_fixed_seed():
     ids = [f"a{i}" for i in range(20)]
-    assert split_by_area(ids, config.SPLIT_FRACTIONS, 3) == split_by_area(list(reversed(ids)), config.SPLIT_FRACTIONS, 3)
+    assert split_by_area(ids, config.SPLIT_FRACTIONS, 3) == split_by_area(
+        list(reversed(ids)), config.SPLIT_FRACTIONS, 3
+    )
     assert split_by_area(ids, config.SPLIT_FRACTIONS, 3) != split_by_area(ids, config.SPLIT_FRACTIONS, 4)
 
 
@@ -130,3 +147,35 @@ def test_labelme_points_any_corner_order():
     pb = box_from_labelme_points([[50, 80], [10, 20]], SIZE)
     assert pb == PixelBox(10.0, 20.0, 50.0, 80.0)
     assert box_from_labelme_points([[700, 700], [650, 650]], SIZE) is None
+
+
+def test_pseudo_box_rules():
+    from labels import PixelBox
+    from pseudo_labels import accept
+
+    lab = [PixelBox(100, 100, 140, 140)]
+    assert accept(PixelBox(300, 300, 340, 340), 0.5, lab, [], 0.3) is None
+    assert accept(PixelBox(300, 300, 340, 340), 0.2, lab, [], 0.3) == "score"
+    assert accept(PixelBox(102, 102, 138, 138), 0.9, lab, [], 0.3) == "labeled"  # same object
+    assert accept(PixelBox(115, 115, 145, 145), 0.9, lab, [], 0.3) == "labeled"  # mostly inside a label
+    assert accept(PixelBox(300, 300, 303, 340), 0.9, lab, [], 0.3) == "small"
+    assert accept(PixelBox(0, 0, 200, 200), 0.9, [], [], 0.3) == "large"  # 10,000 sq ft
+    kept = [PixelBox(300, 300, 340, 340)]
+    assert accept(PixelBox(302, 300, 342, 340), 0.9, lab, kept, 0.3) == "duplicate"
+
+
+def test_merged_ap_counts_one_building_once():
+    from boxeval import MERGES, ap_table, merge
+
+    labels = {"a": [("garage", 10, 10, 50, 50), ("other_accessory", 100, 100, 160, 160)]}
+    preds = {
+        "a": [
+            ("garage", 0.9, 11, 11, 50, 50),
+            ("other_accessory", 0.6, 11, 11, 50, 50),
+            ("garage", 0.8, 100, 100, 160, 160),
+        ]
+    }
+    by_class = ap_table(preds, labels)
+    assert by_class["garage"]["ap50"] < 1 and by_class["other_accessory"]["ap50"] == 0
+    merged = ap_table(*merge(preds, labels, MERGES["accessory"]))
+    assert merged["accessory"]["ap50"] > 0.99  # both found, the duplicate is suppressed

@@ -7,6 +7,7 @@ At most MAX_PARALLEL requests at once, with retries and backoff.
 Run with the geospatial env:
     python fetch_imagery.py --city pittsburgh
 """
+
 from __future__ import annotations
 
 import argparse
@@ -16,15 +17,29 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+import config
 import geopandas as gpd
 import requests
+from labels import Bounds, chip_grid, world_file_lines
 from PIL import Image
 
-import config
-from labels import Bounds, chip_grid, world_file_lines
-
-MANIFEST_FIELDS = ["chip_id", "city", "area_id", "split", "row", "col", "x0", "y0", "x1", "y1", "crs",
-                   "pixel_ft", "imagery_date", "source", "file"]
+MANIFEST_FIELDS = [
+    "chip_id",
+    "city",
+    "area_id",
+    "split",
+    "row",
+    "col",
+    "x0",
+    "y0",
+    "x1",
+    "y1",
+    "crs",
+    "pixel_ft",
+    "imagery_date",
+    "source",
+    "file",
+]
 
 
 def chip_id(area_id: str, row: int, col: int) -> str:
@@ -34,9 +49,11 @@ def chip_id(area_id: str, row: int, col: int) -> str:
 def export_url(city: str, b: Bounds) -> str:
     src = config.SOURCES[city]
     epsg = src["crs"].split(":")[1]
-    return (f"{src['export']}?bbox={b.x0},{b.y0},{b.x1},{b.y1}&bboxSR={epsg}&imageSR={epsg}"
-            f"&size={config.CHIP_PX},{config.CHIP_PX}&format=jpg&compressionQuality=92"
-            f"&layers={src['layers']}&transparent=false&f=image")
+    return (
+        f"{src['export']}?bbox={b.x0},{b.y0},{b.x1},{b.y1}&bboxSR={epsg}&imageSR={epsg}"
+        f"&size={config.CHIP_PX},{config.CHIP_PX}&format=jpg&compressionQuality=92"
+        f"&layers={src['layers']}&transparent=false&f=image"
+    )
 
 
 def is_complete(path: Path) -> bool:
@@ -80,10 +97,25 @@ def plan(city: str) -> list[dict]:
     for a in areas.itertuples():
         for r, c, b in chip_grid(a.x0, a.y0, chip_ft, config.CHIPS_PER_SIDE):
             cid = chip_id(a.area_id, r, c)
-            rows.append({"chip_id": cid, "city": city, "area_id": a.area_id, "split": a.split, "row": r, "col": c,
-                         "x0": b.x0, "y0": b.y0, "x1": b.x1, "y1": b.y1, "crs": src["crs"],
-                         "pixel_ft": config.PIXEL_FT, "imagery_date": src["date"], "source": src["name"],
-                         "file": f"chips/{cid}.jpg"})
+            rows.append(
+                {
+                    "chip_id": cid,
+                    "city": city,
+                    "area_id": a.area_id,
+                    "split": a.split,
+                    "row": r,
+                    "col": c,
+                    "x0": b.x0,
+                    "y0": b.y0,
+                    "x1": b.x1,
+                    "y1": b.y1,
+                    "crs": src["crs"],
+                    "pixel_ft": config.PIXEL_FT,
+                    "imagery_date": src["date"],
+                    "source": src["name"],
+                    "file": f"chips/{cid}.jpg",
+                }
+            )
     return rows
 
 

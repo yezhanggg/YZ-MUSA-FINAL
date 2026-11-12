@@ -11,14 +11,14 @@ describe('lotSummary', () => {
   it('collects the report for a Pittsburgh lot', () => {
     const s = lotSummary({ lot: fixture('easy_fit'), unit, rent_by_bedroom: RENTS, built_at: '2026-11-11T01:04:42' });
     expect(s.title).toBe('5459 BEACON ST');
-    expect(s.facts.find((f) => f.label === 'Lot size')?.value).toBe('5,210 sq ft');
+    expect(s.facts.find((f) => f.label === 'Lot size')?.value).toBe('5,209 sq ft');
     expect(s.facts.find((f) => f.label === 'Overlays')?.value).toMatch(/Squirrel Hill/);
     expect(s.scenarios.map((r) => r.scenario)).toEqual(['today', 'local_reform', 'state_reform']);
     expect(s.scenarios[0]).toMatchObject({ status: 'fits', approval: "Administrator's Exception", largest_cottage_sqft: 1000 });
     expect(s.unit.title).toBe("Backyard cottage, today's law");
     expect(s.unit.size).toBe('20 ft x 30 ft, 600 sq ft of floor area');
     expect(s.checks.length).toBeGreaterThan(5);
-    expect(s.sources[0].section).toBe('925.06.G.1(i)');
+    expect(s.sources[0].section).toMatch(/^925\.06\.G\.1\(i\)/);
     expect(s.sources.some((x) => x.source === 'State bill HB 2186 (not law)')).toBe(true);
     expect(s.data_dates).toEqual(expect.arrayContaining([{ label: 'Parcel lines', date: 'Nov 11, 2026' }, { label: 'Rules last checked', date: 'Nov 10, 2026' }, { label: 'Data built', date: 'Nov 11, 2026' }]));
     expect(s.notice).toMatch(/^Not legal advice/);

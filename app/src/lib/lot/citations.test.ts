@@ -43,7 +43,7 @@ describe('sources behind a verdict', () => {
   it('lists each source once, approval first', () => {
     const v = unitVerdict(fixture('easy_fit'), { type: 'detached_new', width_ft: 20, depth_ft: 30, position: 'best', scenario: 'today' });
     const s = collectSources(v);
-    expect(s[0].section).toBe('925.06.G.1(i)');
+    expect(s[0].section).toMatch(/^925\.06\.G\.1\(i\)/);
     const keys = s.map((x) => `${x.section}|${x.url}`);
     expect(new Set(keys).size).toBe(keys.length);
     expect(s.map((x) => x.section)).toEqual(expect.arrayContaining(['912.08.B.1', '912.08.C.3', '912.08.C.8']));

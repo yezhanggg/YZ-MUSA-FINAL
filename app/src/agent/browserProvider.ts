@@ -91,7 +91,8 @@ export const browserProvider: DataProvider = {
   },
   async selected() {
     const spot = useTool.getState().spot;
-    return spot ? { lot: spot.lot, tract: spot.tract, town: spot.town } : null;
+    // The tool's spot has no pilot lot: one lot is a lot record (the lot tools read it).
+    return spot ? { lot: null, tract: spot.tract, town: spot.town } : null;
   },
   async town(geoid) {
     const { towns, spot } = useTool.getState();
@@ -105,7 +106,7 @@ export const browserProvider: DataProvider = {
     const map = mapRef.current;
     const spot = useTool.getState().spot;
     const center: LngLat | null = spot ? spot.pt : map ? [map.getCenter().lng, map.getCenter().lat] : null;
-    return { lots, center, scope: ids.length ? `${ids.length} tract(s) on screen or around the selected site` : 'no pilot tracts on screen (zoom in on Philadelphia or Cumberland County)' };
+    return { lots, center, scope: ids.length ? `${ids.length} tract(s) on screen or around the selected site` : 'no tracts with older pilot lots on screen. For one lot in Philadelphia or Pittsburgh use the lot record tools' };
   },
   async addressBook() {
     const recs = loadedLots();
@@ -116,7 +117,6 @@ export const browserProvider: DataProvider = {
     const { tracts, towns, counties } = useTool.getState();
     return { tracts, towns, counties };
   },
-  curves: () => useTool.getState().curves,
   adu: () => useTool.getState().adu,
   rule: () => useTool.getState().rule,
   async setMap(input: SetMapInput) {
@@ -145,9 +145,9 @@ export const browserProvider: DataProvider = {
   },
 };
 
-/** Select a lot from a link in an answer or from set_map. */
+/** Go to a pilot lot from a link in an answer or from set_map: the map shows its tract (pilot lots are not lot records). */
 export async function selectLot(lot: Lot) {
-  await testSpot([lot.lon, lot.lat], 'Selected lot', { id: lot.lot_id, s: 1, f: lot.fits ? 1 : 0, k: lot.fits_keep_trees ? 1 : 0 });
+  await testSpot([lot.lon, lot.lat], 'Selected spot');
 }
 
 export async function selectLotById(id: string) {

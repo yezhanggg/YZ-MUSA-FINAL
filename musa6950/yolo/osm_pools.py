@@ -7,19 +7,18 @@ OSM data is ODbL, (c) OpenStreetMap contributors.
 Run with the geospatial env:
     python osm_pools.py --city pittsburgh
 """
+
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 import time
 from pathlib import Path
 
+import config
 import geopandas as gpd
 import requests
 from shapely.geometry import Polygon
-
-import config
 
 # Overpass answers 406 to browser-like agents, so it gets a plain tool name.
 OSM_USER_AGENT = "osm-research-client/1.0"
@@ -32,15 +31,17 @@ def pools_path(city: str) -> Path:
 
 def query(south: float, west: float, north: float, east: float) -> str:
     bbox = f"{south},{west},{north},{east}"
-    return (f"[out:json][timeout:120];(way[\"leisure\"=\"swimming_pool\"]({bbox});"
-            f"relation[\"leisure\"=\"swimming_pool\"]({bbox}););out geom;")
+    return (
+        f'[out:json][timeout:120];(way["leisure"="swimming_pool"]({bbox});'
+        f'relation["leisure"="swimming_pool"]({bbox}););out geom;'
+    )
 
 
 def fetch(q: str, tries: int = 4) -> dict | None:
     headers = {"User-Agent": OSM_USER_AGENT}
     for url in ENDPOINTS:
         wait = 10.0
-        for attempt in range(tries):
+        for _ in range(tries):
             try:
                 r = requests.post(url, data={"data": q}, headers=headers, timeout=180)
                 if r.status_code == 200:
@@ -78,8 +79,11 @@ def run(city: str) -> int:
         print(f"{city}: Overpass unavailable, no pool labels written", flush=True)
         return 1
     rows = to_polygons(data)
-    pools = gpd.GeoDataFrame(rows, geometry="geometry", crs=4326) if rows else \
-        gpd.GeoDataFrame({"osm_id": []}, geometry=gpd.GeoSeries([], crs=4326))
+    pools = (
+        gpd.GeoDataFrame(rows, geometry="geometry", crs=4326)
+        if rows
+        else gpd.GeoDataFrame({"osm_id": []}, geometry=gpd.GeoSeries([], crs=4326))
+    )
     pools = pools.to_crs(areas.crs)
     pools = pools[pools.intersects(areas.union_all() if hasattr(areas, "union_all") else areas.unary_union)]
     pools["area_sqft"] = pools.area

@@ -36,8 +36,8 @@ export function openResearch(course: Course | null) {
 /** Which tool the top bar has picked: lot-level testing (default) or tract and town projections. */
 export type ToolView = 'test' | 'project';
 export const VIEW_LABEL: Record<ToolView, string> = {
-  test: 'ADU Testing (MUSA 6950)',
-  project: 'ADU projecting and analysis (MUSA 5500)',
+  test: 'Test Project',
+  project: 'Explore',
 };
 
 export const viewOf = (hash: string): ToolView => (new URLSearchParams(hash.split('?')[1] ?? '').get('view') === 'project' ? 'project' : 'test');
@@ -50,6 +50,7 @@ export function useView(): ToolView {
 export function openView(v: ToolView) {
   const q = new URLSearchParams(window.location.hash.split('?')[1] ?? '');
   q.set('view', v);
+  q.delete('research'); // picking a mode also closes a Research page
   window.location.hash = `#/?${q.toString()}`;
 }
 

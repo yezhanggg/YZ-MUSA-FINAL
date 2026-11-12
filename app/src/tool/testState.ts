@@ -2,7 +2,7 @@
 // address so a link opens the same lot, scenario and unit. Pure functions, tested in testState.test.ts.
 import { ASSUMPTIONS } from '../lib/money';
 import { ADU_TYPES, isAduType, isScenario, type AduType, type LotRecord, type RuleType, type Scenario } from '../lib/lot/types';
-import { APPROVAL_LABEL, NO_GARAGE, garageMissing, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from '../lib/lot/verdict';
+import { NO_GARAGE, garageMissing, lotCondition, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from '../lib/lot/verdict';
 import { areaFeet, centroid, frameOf } from '../lib/lot/geometry';
 import type { SiteData } from './siteLayers';
 import { SCENARIO_PHRASE } from '../lib/lot/words';
@@ -161,6 +161,24 @@ export interface TypeOption {
   enabled: boolean;
   /** Why it is off, in one sentence. */
   why: string | null;
+  /** The same in one or two words, for the picker ("No garage", "Not allowed"). */
+  tag: string | null;
+}
+
+/** The approval paths that count as allowed, in plain words. A variance is not one: it asks the board to set the rule aside. */
+const ALLOWED_PATH: Record<string, string> = {
+  by_right: 'by right (no hearing)',
+  administrator_exception: "with an Administrator's Exception (the Zoning Administrator decides)",
+  special_exception: 'with a special exception (zoning board hearing)',
+  conditional_use: 'with conditional use approval (governing body hearing)',
+};
+export const VARIANCE_TEXT = 'Needs a variance (zoning board hearing).';
+
+/** "Allowed here by right (no hearing)." for a rule path, the variance line for a variance. */
+export function allowedPhrase(path: string | null): string {
+  if (path === 'variance') return VARIANCE_TEXT;
+  if (path && path in ALLOWED_PATH) return `Allowed here ${ALLOWED_PATH[path]}.`;
+  return 'The rules allow it here.';
 }
 
 const GARAGE_TYPES: ReadonlySet<RuleType> = new Set(['garage_conversion', 'over_garage']);
@@ -169,21 +187,25 @@ const GARAGE_TYPES: ReadonlySet<RuleType> = new Set(['garage_conversion', 'over_
 export function typeOptions(lot: LotRecord, scenario: Scenario): TypeOption[] {
   const hasGarage = lot.buildings.some((b) => b.role === 'garage');
   const out: TypeOption[] = ADU_TYPES.map((type) => {
-    if (garageMissing(lot, scenario, type)) return { type, enabled: false, why: NO_GARAGE };
+    const condition = lotCondition(lot, scenario, type);
+    if (condition) return { type, enabled: false, why: `${allowedPhrase(condition.approval.path)} ${condition.text}`, tag: condition.text === NO_GARAGE ? 'No garage' : 'Not on this lot' };
+    if (garageMissing(lot, scenario, type)) return { type, enabled: false, why: NO_GARAGE, tag: 'No garage' };
     const v = unitVerdict(lot, suggestedUnit(lot, type, scenario));
-    if (v.status === 'not_allowed') return { type, enabled: false, why: v.limit?.text ?? 'Not allowed here.' };
-    if (GARAGE_TYPES.has(type) && !hasGarage) return { type, enabled: false, why: NO_GARAGE };
-    return { type, enabled: true, why: null };
+    if (v.status === 'not_allowed') return { type, enabled: false, why: v.limit?.text ?? 'Not allowed here.', tag: 'Not allowed' };
+    if (GARAGE_TYPES.has(type) && !hasGarage) return { type, enabled: false, why: NO_GARAGE, tag: 'No garage' };
+    return { type, enabled: true, why: null, tag: null };
   });
   const rules = lot.rules[scenario];
   const path = rules?.approval_by_type?.attached ?? (rules?.types_allowed?.includes('attached') ? rules.approval_path : null);
-  const allowed = !!rules?.allowed && !!path && path !== 'not_allowed';
-  const label = path && path in APPROVAL_LABEL ? APPROVAL_LABEL[path as keyof typeof APPROVAL_LABEL].toLowerCase() : null;
-  out.push({
-    type: 'attached',
-    enabled: false,
-    why: allowed ? `Allowed${label ? ` (${label})` : ''}. The tool has no fit test for an attached addition yet.` : `Not allowed here ${SCENARIO_PHRASE[scenario]}.`,
-  });
+  // Only by right, an Administrator's Exception, a special exception or conditional use count as allowed.
+  const allowed = !!rules?.allowed && !!path && path in ALLOWED_PATH;
+  const why = allowed
+    ? `${allowedPhrase(path)} The tool has no fit test for an attached addition yet.`
+    : rules?.allowed && path === 'variance'
+      ? `${VARIANCE_TEXT} The tool has no fit test for an attached addition yet.`
+      : `Not allowed here ${SCENARIO_PHRASE[scenario]}.`;
+  const tag = allowed ? 'No fit test' : rules?.allowed && path === 'variance' ? 'Variance only' : 'Not allowed';
+  out.push({ type: 'attached', enabled: false, why, tag });
   return out;
 }
 

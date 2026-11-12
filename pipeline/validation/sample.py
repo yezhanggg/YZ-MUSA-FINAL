@@ -17,6 +17,7 @@ If the city's index is current at draw time, step 2 runs right away.
     python -m pipeline.validation.sample restratify [--city pittsburgh] [--force-index]
     python -m pipeline.validation.sample show
 """
+
 from __future__ import annotations
 
 import argparse
@@ -24,7 +25,7 @@ import hashlib
 import json
 import math
 from datetime import datetime
-from typing import Any, Optional
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -34,14 +35,26 @@ from pipeline.validation import common as C
 # Lots per (type, shape) stratum. 125 per city.
 TARGETS: dict[str, dict[tuple[str, str], int]] = {
     "philadelphia": {
-        ("detached", "regular"): 48, ("detached", "corner"): 13, ("detached", "irregular"): 8,
-        ("semi", "regular"): 26, ("semi", "corner"): 8, ("semi", "irregular"): 7,
-        ("row", "regular"): 9, ("row", "corner"): 3, ("row", "irregular"): 3,
+        ("detached", "regular"): 48,
+        ("detached", "corner"): 13,
+        ("detached", "irregular"): 8,
+        ("semi", "regular"): 26,
+        ("semi", "corner"): 8,
+        ("semi", "irregular"): 7,
+        ("row", "regular"): 9,
+        ("row", "corner"): 3,
+        ("row", "irregular"): 3,
     },
     "pittsburgh": {
-        ("detached", "regular"): 46, ("detached", "corner"): 12, ("detached", "irregular"): 12,
-        ("semi", "regular"): 22, ("semi", "corner"): 6, ("semi", "irregular"): 7,
-        ("row", "regular"): 12, ("row", "corner"): 4, ("row", "irregular"): 4,
+        ("detached", "regular"): 46,
+        ("detached", "corner"): 12,
+        ("detached", "irregular"): 12,
+        ("semi", "regular"): 22,
+        ("semi", "corner"): 6,
+        ("semi", "irregular"): 7,
+        ("row", "regular"): 12,
+        ("row", "corner"): 4,
+        ("row", "irregular"): 4,
     },
 }
 # After restratify each type should have at least this share of borderline lots.
@@ -51,19 +64,44 @@ TYPE_ORDER = ("detached", "semi", "row")
 CITY_CODE = {"philadelphia": 1, "pittsburgh": 2}
 OLD_TEMPLATE = "~/Documents/YZ-MUSA-FINAL/data/processed/hand_labels_template.csv"
 
-SAMPLE_COLUMNS = ["lot_id", "city", "housing_type", "type_stratum", "shape_stratum", "size_band",
-                  "answer_stratum", "stratum", "weight", "pop_n", "sample_n", "carried_over", "old_lot_id",
-                  "added_in_restratify", "room_sqft", "max_fit_sqft", "answer_source", "label_order",
-                  "lot_area_sqft", "lon", "lat", "address", "corner", "flag_lot", "edge_confidence", "seed"]
+SAMPLE_COLUMNS = [
+    "lot_id",
+    "city",
+    "housing_type",
+    "type_stratum",
+    "shape_stratum",
+    "size_band",
+    "answer_stratum",
+    "stratum",
+    "weight",
+    "pop_n",
+    "sample_n",
+    "carried_over",
+    "old_lot_id",
+    "added_in_restratify",
+    "room_sqft",
+    "max_fit_sqft",
+    "answer_source",
+    "label_order",
+    "lot_area_sqft",
+    "lon",
+    "lat",
+    "address",
+    "corner",
+    "flag_lot",
+    "edge_confidence",
+    "seed",
+]
 
 
 # ---------------------------------------------------------------- frame
 
+
 def load_frame(city: str) -> pd.DataFrame:
     """All lots of the three sampled types with the fields the strata need."""
-    want = ["lot_id", "housing_type", "lot_area_sqft", "lon", "lat", "address", "corner", "flag_lot",
-            "edge_confidence"]
+    want = ["lot_id", "housing_type", "lot_area_sqft", "lon", "lat", "address", "corner", "flag_lot", "edge_confidence"]
     import pyarrow.parquet as pq
+
     have = set(pq.read_schema(C.lots_path(city)).names)
     lots = pd.read_parquet(C.lots_path(city), columns=[c for c in want if c in have])
     lots = lots[lots["housing_type"].isin(C.TYPES) & (lots["lot_area_sqft"] > 0)].copy()
@@ -86,12 +124,15 @@ def prepare_frame(lots: pd.DataFrame) -> pd.DataFrame:
     """Add stratum columns to a lot table (used by load_frame and by the tests)."""
     f = lots.copy()
     f["type_stratum"] = f["housing_type"].map(C.TYPES)
-    f["shape_stratum"] = [C.shape_class(a, b, c) for a, b, c in zip(f["corner"], f["flag_lot"], f["edge_confidence"])]
+    f["shape_stratum"] = [
+        C.shape_class(a, b, c) for a, b, c in zip(f["corner"], f["flag_lot"], f["edge_confidence"], strict=True)
+    ]
     f["size_band"] = ""
-    for t, g in f.groupby("type_stratum"):
+    for _, g in f.groupby("type_stratum"):
         q = g["lot_area_sqft"].quantile([1 / 3, 2 / 3]).to_numpy()
-        f.loc[g.index, "size_band"] = np.where(g["lot_area_sqft"] <= q[0], "small",
-                                               np.where(g["lot_area_sqft"] <= q[1], "mid", "large"))
+        f.loc[g.index, "size_band"] = np.where(
+            g["lot_area_sqft"] <= q[0], "small", np.where(g["lot_area_sqft"] <= q[1], "mid", "large")
+        )
     if "address" not in f.columns:
         f["address"] = None
     return f.sort_values("lot_id").reset_index(drop=True)
@@ -102,15 +143,18 @@ def carried_from_template(city: str) -> pd.DataFrame:
     if city != "philadelphia":
         return pd.DataFrame(columns=["old_lot_id", "lot_id"])
     from pathlib import Path
+
     t = pd.read_csv(Path(OLD_TEMPLATE).expanduser(), dtype={"lot_id": str})
     t = t[t["county"] == "Philadelphia"]
-    cw = pd.read_parquet(C.data_root() / "processed" / "philadelphia" / "crosswalk_6950.parquet",
-                         columns=["old_lot_id", "new_lot_id"])
+    cw = pd.read_parquet(
+        C.data_root() / "processed" / "philadelphia" / "crosswalk_6950.parquet", columns=["old_lot_id", "new_lot_id"]
+    )
     m = t[["lot_id"]].rename(columns={"lot_id": "old_lot_id"}).merge(cw, on="old_lot_id", how="inner")
     return m.rename(columns={"new_lot_id": "lot_id"})[["old_lot_id", "lot_id"]].dropna()
 
 
 # ---------------------------------------------------------------- draw
+
 
 def _rng(seed: int, *keys: int) -> np.random.Generator:
     return np.random.default_rng([seed, *keys])
@@ -134,13 +178,14 @@ def label_order(seed: int, lot_id: str) -> int:
     return int(hashlib.sha1(f"{seed}:{lot_id}".encode()).hexdigest()[:12], 16)
 
 
-def draw(frame: pd.DataFrame, targets: dict[tuple[str, str], int], seed: int = C.SEED,
-         carried: Optional[pd.DataFrame] = None) -> pd.DataFrame:
+def draw(
+    frame: pd.DataFrame, targets: dict[tuple[str, str], int], seed: int = C.SEED, carried: pd.DataFrame | None = None
+) -> pd.DataFrame:
     """Phase one sample of one city. Carried lots count toward their stratum."""
     city = str(frame["city"].iloc[0])
     carried = carried if carried is not None else pd.DataFrame(columns=["old_lot_id", "lot_id"])
     keep = carried[carried["lot_id"].isin(set(frame["lot_id"]))]
-    old_of = dict(zip(keep["lot_id"], keep["old_lot_id"]))
+    old_of = dict(zip(keep["lot_id"], keep["old_lot_id"], strict=True))
     parts = []
     for ti, t in enumerate(TYPE_ORDER):
         for si, s in enumerate(C.SHAPES):
@@ -163,13 +208,12 @@ def draw(frame: pd.DataFrame, targets: dict[tuple[str, str], int], seed: int = C
     return finish(out, frame, seed)
 
 
-def finish(s: pd.DataFrame, frame: pd.DataFrame, seed: int,
-           index: Optional[pd.DataFrame] = None) -> pd.DataFrame:
+def finish(s: pd.DataFrame, frame: pd.DataFrame, seed: int, index: pd.DataFrame | None = None) -> pd.DataFrame:
     """Weights, stratum names, labeling order, column order."""
     s = s.copy()
     s["sample_n"] = s.groupby(["type_stratum", "shape_stratum"])["lot_id"].transform("size")
     pop_ts = frame.groupby(["type_stratum", "shape_stratum"]).size()
-    s["pop_n"] = [int(pop_ts.get((a, b), 0)) for a, b in zip(s["type_stratum"], s["shape_stratum"])]
+    s["pop_n"] = [int(pop_ts.get((a, b), 0)) for a, b in zip(s["type_stratum"], s["shape_stratum"], strict=True)]
     s["weight"] = s["pop_n"] / s["sample_n"]
     if index is not None and (s["answer_stratum"] != C.TO_ASSIGN).all():
         s = _post_stratify(s, frame, index)
@@ -191,7 +235,8 @@ def _post_stratify(s: pd.DataFrame, frame: pd.DataFrame, index: pd.DataFrame) ->
     spread over the other answer cells of the same type x shape.
     """
     f = frame[["lot_id", "type_stratum", "shape_stratum"]].merge(
-        index[["lot_id", "room_sqft"]], on="lot_id", how="left")
+        index[["lot_id", "room_sqft"]], on="lot_id", how="left"
+    )
     f["answer"] = [C.answer_stratum(x) for x in f["room_sqft"]]
     out = s.copy()
     for (t, sh), g in out.groupby(["type_stratum", "shape_stratum"]):
@@ -211,7 +256,8 @@ def _post_stratify(s: pd.DataFrame, frame: pd.DataFrame, index: pd.DataFrame) ->
 
 # ---------------------------------------------------------------- restratify
 
-def assign_answers(s: pd.DataFrame, index: pd.DataFrame, source: Optional[str]) -> pd.DataFrame:
+
+def assign_answers(s: pd.DataFrame, index: pd.DataFrame, source: str | None) -> pd.DataFrame:
     """Attach the product answer to each sampled lot (room_sqft, max_fit_sqft)."""
     s = s.drop(columns=["room_sqft", "max_fit_sqft"], errors="ignore")
     cols = [c for c in ("lot_id", "room_sqft", "max_fit_sqft") if c in index.columns]
@@ -221,9 +267,15 @@ def assign_answers(s: pd.DataFrame, index: pd.DataFrame, source: Optional[str]) 
     return s
 
 
-def restratify(s: pd.DataFrame, frame: pd.DataFrame, index: pd.DataFrame, seed: int = C.SEED,
-               labeled: Optional[set[str]] = None, source: Optional[str] = None,
-               border_share: float = BORDER_TARGET_SHARE) -> tuple[pd.DataFrame, list[dict[str, Any]]]:
+def restratify(
+    s: pd.DataFrame,
+    frame: pd.DataFrame,
+    index: pd.DataFrame,
+    seed: int = C.SEED,
+    labeled: set[str] | None = None,
+    source: str | None = None,
+    border_share: float = BORDER_TARGET_SHARE,
+) -> tuple[pd.DataFrame, list[dict[str, Any]]]:
     """Answer strata for one city's sample, with borderline top-up swaps."""
     labeled = labeled or set()
     city = str(s["city"].iloc[0])
@@ -237,28 +289,52 @@ def restratify(s: pd.DataFrame, frame: pd.DataFrame, index: pd.DataFrame, seed: 
         need = math.ceil(border_share * int(in_t.sum())) - int((in_t & (s["answer_stratum"] == "borderline")).sum())
         if need <= 0:
             continue
-        cand = s[in_t & (s["answer_stratum"].isin(["fits", "no"])) & ~s["carried_over"].astype(bool)
-                 & ~s["lot_id"].isin(labeled)]
+        cand = s[
+            in_t
+            & (s["answer_stratum"].isin(["fits", "no"]))
+            & ~s["carried_over"].astype(bool)
+            & ~s["lot_id"].isin(labeled)
+        ]
         # take from the bigger answer group first, random order inside it
         big = cand["answer_stratum"].value_counts()
-        cand = cand.assign(_g=cand["answer_stratum"].map(lambda a: -big.get(a, 0)),
-                           _r=rng.permutation(len(cand)))
+        cand = cand.assign(
+            _g=cand["answer_stratum"].map(lambda a, big=big: -big.get(a, 0)), _r=rng.permutation(len(cand))
+        )
         cand = cand.sort_values(["_g", "_r"])
         for i, row in cand.iterrows():
             if need <= 0:
                 break
-            pool = fidx[(fidx["type_stratum"] == t) & (fidx["shape_stratum"] == row["shape_stratum"])
-                        & (fidx["answer"] == "borderline") & ~fidx["lot_id"].isin(set(s["lot_id"]))]
+            pool = fidx[
+                (fidx["type_stratum"] == t)
+                & (fidx["shape_stratum"] == row["shape_stratum"])
+                & (fidx["answer"] == "borderline")
+                & ~fidx["lot_id"].isin(set(s["lot_id"]))
+            ]
             if pool.empty:
                 continue
             pick = pool.sort_values("lot_id").iloc[int(rng.integers(len(pool)))]
             new = {c: pick.get(c) for c in frame.columns}
-            new.update(carried_over=False, old_lot_id=None, added_in_restratify=True, seed=seed,
-                       room_sqft=pick["room_sqft"], answer_stratum="borderline", answer_source=source)
+            new.update(
+                carried_over=False,
+                old_lot_id=None,
+                added_in_restratify=True,
+                seed=seed,
+                room_sqft=pick["room_sqft"],
+                answer_stratum="borderline",
+                answer_source=source,
+            )
             if "max_fit_sqft" in index.columns:
                 new["max_fit_sqft"] = index.loc[index["lot_id"] == pick["lot_id"], "max_fit_sqft"].iloc[0]
-            swaps.append({"city": city, "out": row["lot_id"], "out_answer": row["answer_stratum"],
-                          "in": pick["lot_id"], "type": t, "shape": row["shape_stratum"]})
+            swaps.append(
+                {
+                    "city": city,
+                    "out": row["lot_id"],
+                    "out_answer": row["answer_stratum"],
+                    "in": pick["lot_id"],
+                    "type": t,
+                    "shape": row["shape_stratum"],
+                }
+            )
             s = pd.concat([s.drop(index=i), pd.DataFrame([new])], ignore_index=False)
             need -= 1
     s = s.reset_index(drop=True)
@@ -267,18 +343,25 @@ def restratify(s: pd.DataFrame, frame: pd.DataFrame, index: pd.DataFrame, seed: 
 
 # ---------------------------------------------------------------- precision
 
+
 def precision_table(sample: pd.DataFrame, p: float = 0.85) -> pd.DataFrame:
     """Expected 95 percent Wilson half width at agreement p for each group size in the sample."""
     rows = []
 
     def add(level: str, name: str, n: int) -> None:
         _, lo, hi = C.wilson(p * n, n)
-        rows.append({"level": level, "group": name, "n": n,
-                     "half_width_pts": None if lo is None else round(100 * (hi - lo) / 2, 1)})
+        rows.append(
+            {
+                "level": level,
+                "group": name,
+                "n": n,
+                "half_width_pts": None if lo is None or hi is None else round(100 * (hi - lo) / 2, 1),
+            }
+        )
 
     add("all", "both cities", len(sample))
     for c, g in sample.groupby("city"):
-        add("city", c, len(g))
+        add("city", str(c), len(g))
         for t, gt in g.groupby("type_stratum"):
             add("city x type", f"{c} {t}", len(gt))
         for sh, gs in g.groupby("shape_stratum"):
@@ -289,6 +372,7 @@ def precision_table(sample: pd.DataFrame, p: float = 0.85) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------- CLI
+
 
 def _write(sample: pd.DataFrame, meta: dict[str, Any]) -> None:
     p = C.sample_path()
@@ -302,6 +386,13 @@ def _write(sample: pd.DataFrame, meta: dict[str, Any]) -> None:
     mp.write_text(json.dumps(old, indent=2, default=str))
 
 
+def _index(city: str) -> pd.DataFrame:
+    idx = C.load_index(city, ["lot_id", "room_sqft", "max_fit_sqft"])
+    if idx is None:
+        raise SystemExit(f"{city}: no lot index at {C.index_path(city)}")
+    return idx
+
+
 def _existing() -> pd.DataFrame:
     p = C.sample_path()
     return pd.read_parquet(p) if p.exists() else pd.DataFrame(columns=SAMPLE_COLUMNS)
@@ -310,8 +401,10 @@ def _existing() -> pd.DataFrame:
 def cmd_draw(cities: list[str], seed: int, force_index: bool) -> pd.DataFrame:
     old = _existing()
     out = [old[~old["city"].isin(cities)]] if len(old) else []
-    meta: dict[str, Any] = {"seed": seed, "targets": {c: {f"{k[0]}|{k[1]}": v for k, v in TARGETS[c].items()}
-                                                     for c in cities}}
+    meta: dict[str, Any] = {
+        "seed": seed,
+        "targets": {c: {f"{k[0]}|{k[1]}": v for k, v in TARGETS[c].items()} for c in cities},
+    }
     for city in cities:
         frame = load_frame(city)
         carried = carried_from_template(city)
@@ -319,17 +412,26 @@ def cmd_draw(cities: list[str], seed: int, force_index: bool) -> pd.DataFrame:
         st = C.index_status(city, frame["lot_id"])
         swaps: list[dict[str, Any]] = []
         if st["current"] or force_index:
-            idx = C.load_index(city, ["lot_id", "room_sqft", "max_fit_sqft"])
+            idx = _index(city)
             s, swaps = restratify(s, frame, idx, seed, set(), st.get("data_version"))
-        meta[city] = {"drawn_at": datetime.now().isoformat(timespec="seconds"), "frame_n": int(len(frame)),
-                      "frame_by_cell": {f"{a}|{b}": int(n) for (a, b), n in
-                                        frame.groupby(["type_stratum", "shape_stratum"]).size().items()},
-                      "carried_mapped": int(len(carried)),
-                      "carried_in_sample": int(s["carried_over"].sum()),
-                      "index": st, "swaps": swaps}
+        cells = frame.groupby(["type_stratum", "shape_stratum"]).size()
+        meta[city] = {
+            "drawn_at": datetime.now().isoformat(timespec="seconds"),
+            "frame_n": int(len(frame)),
+            "frame_by_cell": {
+                f"{a}|{b}": int(n)
+                for a, b, n in zip(cells.index.get_level_values(0), cells.index.get_level_values(1), cells, strict=True)
+            },
+            "carried_mapped": int(len(carried)),
+            "carried_in_sample": int(s["carried_over"].sum()),
+            "index": st,
+            "swaps": swaps,
+        }
         out.append(s)
-        C.log_note(f"[{city}] sample drawn: {len(s)} lots, {int(s['carried_over'].sum())} carried over, "
-                   f"answer stratum {'set' if swaps or st['current'] else 'to assign'} ({st.get('reason', 'current')})")
+        C.log_note(
+            f"[{city}] sample drawn: {len(s)} lots, {int(s['carried_over'].sum())} carried over, "
+            f"answer stratum {'set' if swaps or st['current'] else 'to assign'} ({st.get('reason', 'current')})"
+        )
     sample = pd.concat(out, ignore_index=True)
     _write(sample, meta)
     return sample
@@ -347,23 +449,31 @@ def cmd_restratify(cities: list[str], seed: int, force_index: bool) -> pd.DataFr
         st = C.index_status(city, frame["lot_id"])
         s = old[old["city"] == city]
         if not (st["current"] or force_index):
-            print(f"{city}: index not current ({st.get('reason')}). Nothing changed. Use --force-index to use it anyway.")
+            print(
+                f"{city}: index not current ({st.get('reason')}). Nothing changed. Use --force-index to use it anyway."
+            )
             out.append(s)
             continue
-        idx = C.load_index(city, ["lot_id", "room_sqft", "max_fit_sqft"])
+        idx = _index(city)
         s2, swaps = restratify(s, frame, idx, seed, labeled, st.get("data_version"))
-        meta[city] = {"restratified_at": datetime.now().isoformat(timespec="seconds"), "index": st,
-                      "swaps": swaps, "labeled_kept": int(s["lot_id"].isin(labeled).sum())}
+        meta[city] = {
+            "restratified_at": datetime.now().isoformat(timespec="seconds"),
+            "index": st,
+            "swaps": swaps,
+            "labeled_kept": int(s["lot_id"].isin(labeled).sum()),
+        }
         out.append(s2)
-        C.log_note(f"[{city}] restratified on {st.get('data_version')}: {len(swaps)} swaps, "
-                   f"answers {s2['answer_stratum'].value_counts().to_dict()}")
+        C.log_note(
+            f"[{city}] restratified on {st.get('data_version')}: {len(swaps)} swaps, "
+            f"answers {s2['answer_stratum'].value_counts().to_dict()}"
+        )
         print(f"{city}: {len(swaps)} lots swapped for borderline lots. Rerun sheets for the new lots.")
     sample = pd.concat(out, ignore_index=True)
     _write(sample, meta)
     return sample
 
 
-def main(argv: Optional[list[str]] = None) -> None:
+def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("command", choices=["draw", "restratify", "show"])
     ap.add_argument("--city", choices=list(C.CITIES), action="append")

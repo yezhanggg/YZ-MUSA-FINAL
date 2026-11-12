@@ -6,7 +6,11 @@ continues from there with a new time cap. All outputs go to the external drive.
 Run with the geoai env:
     python train.py --smoke                 # small CPU check on a quarter of the train chips
     python train.py --run real --device mps --minutes 90
+    python train.py --run long640 --epochs 80 --patience 0 --cos-lr --minutes 75   # patience 0 = no early stop
+    python train.py --run px960 --imgsz 960 --batch 8 --epochs 40 --patience 0 --cos-lr
+    python train.py --run pseudo1 --data ~/musa-drive/processed/yolo/data_pseudo1.yaml --epochs 80 --patience 0 --cos-lr
 """
+
 from __future__ import annotations
 
 import argparse
@@ -97,14 +101,39 @@ def train(a: argparse.Namespace) -> int:
         print(f"{a.run}: start from {weights.name}, cap {a.minutes} min, {a.epochs} epochs", flush=True)
         model = YOLO(str(weights))
         model.add_callback("on_fit_epoch_end", time_cap(a.minutes, info))
-        model.train(data=str(config.WORK / "data.yaml"), epochs=a.epochs, patience=a.patience,
-                    imgsz=config.CHIP_PX, batch=a.batch, device=a.device, workers=a.workers, seed=config.SEED,
-                    fraction=a.fraction, project=str(RUNS), name=a.run, exist_ok=True, plots=True,
-                    flipud=0.5, fliplr=0.5, degrees=0.0, mosaic=1.0, close_mosaic=5, cache=a.cache, verbose=True)
+        model.train(
+            data=str(a.data),
+            epochs=a.epochs,
+            patience=a.patience,
+            imgsz=a.imgsz,
+            cos_lr=a.cos_lr,
+            batch=a.batch,
+            device=a.device,
+            workers=a.workers,
+            seed=config.SEED,
+            fraction=a.fraction,
+            project=str(RUNS),
+            name=a.run,
+            exist_ok=True,
+            plots=True,
+            flipud=0.5,
+            fliplr=0.5,
+            degrees=0.0,
+            mosaic=1.0,
+            close_mosaic=a.close_mosaic,
+            cache=a.cache,
+            verbose=True,
+        )
     best = RUNS / a.run / "weights" / "best.pt"
-    write_state(a.run, state="done" if best.exists() else "failed", minutes=round((time.time() - t0) / 60, 1),
-                epochs_done=info.get("epochs_done"), time_capped=bool(info.get("capped")),
-                best=str(best), finished=time.strftime("%Y-%m-%d %H:%M"))
+    write_state(
+        a.run,
+        state="done" if best.exists() else "failed",
+        minutes=round((time.time() - t0) / 60, 1),
+        epochs_done=info.get("epochs_done"),
+        time_capped=bool(info.get("capped")),
+        best=str(best),
+        finished=time.strftime("%Y-%m-%d %H:%M"),
+    )
     print(f"{a.run}: finished in {(time.time() - t0) / 60:.1f} min", flush=True)
     return 0
 
@@ -117,7 +146,11 @@ def main() -> None:
     ap.add_argument("--size", choices=BASE_MODELS, default="s", help="model size: n (nano) or s (small)")
     ap.add_argument("--epochs", type=int, default=50)
     ap.add_argument("--minutes", type=float, default=90)
-    ap.add_argument("--patience", type=int, default=10)
+    ap.add_argument("--patience", type=int, default=10, help="0 = no early stop")
+    ap.add_argument("--imgsz", type=int, default=config.CHIP_PX, help="training size (chips are 640 px)")
+    ap.add_argument("--cos-lr", action="store_true", help="cosine learning rate decay")
+    ap.add_argument("--close-mosaic", type=int, default=5, help="last epochs without mosaic")
+    ap.add_argument("--data", type=Path, default=config.WORK / "data.yaml", help="dataset yaml")
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--fraction", type=float, default=1.0)

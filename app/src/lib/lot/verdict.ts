@@ -189,10 +189,12 @@ export function approvalFor(lot: LotRecord, scenario: Scenario, type: AduType): 
   const rules = lot.rules[scenario];
   if (!rules) return approvalInfo(null, 'none', null);
   const base = rules.citations.approval_path ?? null;
+  // Records from the Nov 11, 2026 night build carry the section behind each type's path.
+  const typeCite = rules.citations_by_type?.[type] ?? null;
   const stored = lot.fit[scenario]?.[type];
   const own = stored && 'approval_path' in stored ? stored.approval_path ?? null : rules.approval_by_type?.[type];
   if (own !== undefined) {
-    const cite = own === 'administrator_exception' ? exceptionCitation(rules) ?? base : base;
+    const cite = typeCite ?? (own === 'administrator_exception' ? exceptionCitation(rules) ?? base : base);
     return approvalInfo(own, 'by_type', cite);
   }
   if (!rules.allowed) return approvalInfo(rules.approval_path === 'by_right' ? 'not_allowed' : rules.approval_path, 'rule', base);
@@ -247,9 +249,31 @@ const CONVERSION_ALLOWED = /garage conversion is by right|converting an existing
  */
 export function garageMissing(lot: LotRecord, scenario: Scenario, type: AduType): boolean {
   const rules = lot.rules[scenario];
+  // Newer records say it themselves (lotCondition). This reads the older ones.
+  if (rules?.rule_path_by_type) return false;
   if (!rules?.allowed || !GARAGE_TYPES.has(type) || garages(lot).length > 0) return false;
   if (rules.types_allowed === null || rules.types_allowed.includes(type)) return true;
   return type === 'garage_conversion' && rules.reasons.some((r) => CONVERSION_ALLOWED.test(r));
+}
+
+export interface LotCondition {
+  /** The path from the rules alone (rule_path_by_type). */
+  approval: ApprovalInfo;
+  /** The lot fact that stops the type here, as a sentence. */
+  text: string;
+}
+
+/**
+ * A type the rules allow but this lot cannot host (newer records: rule_path_by_type plus lot_conditions_by_type),
+ * such as a garage conversion on a lot with no garage. The answer is "allowed, but not on this lot".
+ */
+export function lotCondition(lot: LotRecord, scenario: Scenario, type: AduType): LotCondition | null {
+  const rules = lot.rules[scenario];
+  const fact = rules?.lot_conditions_by_type?.[type];
+  const path = rules?.rule_path_by_type?.[type];
+  if (!rules || !fact || !path || path === 'not_allowed') return null;
+  const text = /garage or outbuilding/i.test(fact) ? NO_GARAGE : fact.replace(/\.?$/, '.');
+  return { approval: approvalInfo(path, 'by_type', rules.citations_by_type?.[type] ?? rules.citations.approval_path ?? null), text };
 }
 
 const coverSqft = (lot: LotRecord) => lot.buildings.reduce((s, b) => s + b.area_sqft, 0);
@@ -783,6 +807,12 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
   const placed = ground?.placed ?? null;
   const base = { ...shell, checks, warnings, approval, placed, assumed };
 
+  const condition = lotCondition(lot, unit.scenario, unit.type);
+  if (condition) {
+    const room: VerdictCheck = { key: 'room', label: 'This lot', pass: false, value: null, limit: null, unit: null, text: condition.text, rule_key: null, citation: null, assumed: false };
+    const kept = checks.filter((c) => c.key !== 'type_allowed' && c.key !== 'room');
+    return { ...base, approval: condition.approval, checks: [...kept, room], status: 'does_not_fit', headline: headlineFor('does_not_fit', unit, s, [], placed), limit: { code: 'lot_condition', text: condition.text }, changes: [] };
+  }
   if (garageMissing(lot, unit.scenario, unit.type)) {
     const room: VerdictCheck = { key: 'room', label: 'Garage on the lot', pass: false, value: null, limit: null, unit: null, text: NO_GARAGE, rule_key: null, citation: null, assumed: false };
     const kept = checks.filter((c) => c.key !== 'type_allowed' && c.key !== 'room');

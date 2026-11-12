@@ -10,10 +10,12 @@ Reads the best cover map per city:
     cover_in_polygon("philadelphia", shapely_polygon_in_wgs84)
     -> {"tree_sqft": ..., "open_sqft": ..., "building_sqft": ..., "hard_surface_sqft": ..., "other_sqft": ..., "source": ...}
 """
+
 from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 
@@ -27,13 +29,17 @@ PITTSBURGH_RUN = "r34_c5_s0"  # zero-shot run: the same model as the lot-level c
 
 
 @lru_cache(maxsize=4)
-def source_for(city: str) -> tuple[str, dict, str]:
+def source_for(city: str) -> tuple[str, dict[int, str], str]:
     """(raster path, value map, source name)."""
     root = data.data_root()
     if city == "philadelphia":
         return str(root / "raw/landcover/philadelphia/landcover_2018.tif"), RASTER_CLASSES, "landcover_2018"
     if city == "pittsburgh":
-        return str(model_vrt(root / "processed/pittsburgh/cover_work" / PITTSBURGH_RUN)), MODEL_CLASSES, f"model:{PITTSBURGH_RUN}"
+        return (
+            str(model_vrt(root / "processed/pittsburgh/cover_work" / PITTSBURGH_RUN)),
+            MODEL_CLASSES,
+            f"model:{PITTSBURGH_RUN}",
+        )
     raise ValueError(city)
 
 
@@ -52,7 +58,7 @@ def _vrt_count(vrt: Path) -> int:
     return vrt.read_text().count("<SourceFilename") if vrt.exists() else -1
 
 
-def cover_in_polygon(city: str, polygon_wgs84) -> dict:
+def cover_in_polygon(city: str, polygon_wgs84: Any) -> dict[str, Any]:
     """Square feet of each class inside the polygon (pixel centers inside). No data pixels are left out."""
     import rasterio
     from rasterio.features import geometry_mask
@@ -71,11 +77,11 @@ def cover_in_polygon(city: str, polygon_wgs84) -> dict:
         win = win.intersection(rasterio.windows.Window(0, 0, s.width, s.height))
         arr = s.read(1, window=win, boundless=False)
         tr = s.window_transform(win)
-        px_m2 = abs(tr.a * tr.e) * (0.3048006096 ** 2 if s.crs.linear_units.lower().startswith("us survey") else 1.0)
+        px_m2 = abs(tr.a * tr.e) * (0.3048006096**2 if s.crs.linear_units.lower().startswith("us survey") else 1.0)
     inside = ~geometry_mask([geom], out_shape=arr.shape, transform=tr)
-    out = {f"{k}_sqft": 0.0 for k in sorted(set(classes.values()))}
+    out: dict[str, Any] = {f"{k}_sqft": 0.0 for k in sorted(set(classes.values()))}
     vals, counts = np.unique(arr[inside], return_counts=True)
-    for v, n in zip(vals.tolist(), counts.tolist()):
+    for v, n in zip(vals.tolist(), counts.tolist(), strict=True):
         if v in classes:
             out[f"{classes[v]}_sqft"] += round(n * px_m2 * SQFT_PER_M2, 1)
     out["source"] = source

@@ -284,6 +284,56 @@ export interface Quality {
 
 export type PerScenario<T> = Partial<Record<Scenario, T>>;
 
+/** Ground slope over a polygon (percent = 100 x rise / run). From `build_lots terrain` (Nov 12, 2026 on). */
+export type SlopeClass = 'ordinary' | 'moderate' | 'steep';
+export interface SlopeStats {
+  mean_pct: number;
+  p90_pct: number;
+  max_pct?: number;
+  /** Share (0 to 1) of the area at 15 percent or steeper. */
+  share_over_15: number;
+  /** Share (0 to 1) of the area at 25 percent or steeper. */
+  share_over_25: number;
+  /** Ground height, ft above NAVD88 (lot and spot only). */
+  elev_min_ft?: number;
+  elev_max_ft?: number;
+  /** Highest minus lowest ground inside the polygon, ft (lot and spot only). */
+  drop_ft?: number;
+  /** Area of buildable ground measured (buildable only). */
+  sqft?: number;
+  /** From mean_pct and thresholds_pct (spot only). */
+  class?: SlopeClass;
+}
+/** The detached fit with the best spot searched only on buildable ground under the steep threshold. */
+export interface GentleFit {
+  /** Never true where fit.<scenario>.detached_new.fits is false. */
+  fits: boolean;
+  largest_sqft: number;
+  /** Largest rectangle on gentle ground; null when no steep ground was cut out. */
+  room_sqft?: number | null;
+  steep_cut_sqft?: number | null;
+}
+/** Ground slope next to the fit. The fit itself is a flat-ground test and does not change. */
+export interface Terrain {
+  /** e.g. usgs_3dep_1m:PA_17County_D24 */
+  source: string | null;
+  flown_from?: string | null;
+  flown_to?: string | null;
+  resolution_ft: number;
+  thresholds_pct: { moderate: number; steep: number };
+  lot: SlopeStats | null;
+  /** Over buildable.<scenario>.keep */
+  buildable: PerScenario<SlopeStats | null>;
+  /** Under fit.<scenario>.detached_new.spot */
+  spot: PerScenario<SlopeStats | null>;
+  gentle_fit: PerScenario<GentleFit>;
+  /** Which mean slope sets slope_class: spot_today, buildable_today or lot. */
+  basis?: 'spot_today' | 'buildable_today' | 'lot' | null;
+  slope_class: SlopeClass | null;
+  /** slope_class is steep. */
+  steep_site: boolean | null;
+}
+
 export interface LotRecord {
   schema_version: typeof SCHEMA_VERSION;
   lot: LotPart;
@@ -296,6 +346,8 @@ export interface LotRecord {
   fit: PerScenario<Partial<Record<AduType, FitResult>>>;
   facts?: Facts;
   money?: Money;
+  /** Ground slope, present once `build_lots terrain` has run for the place. */
+  terrain?: Terrain;
   quality: Quality;
 }
 
@@ -309,7 +361,7 @@ const keysOf =
     keys;
 
 export const LOT_KEYS = {
-  record: keysOf<LotRecord>()(['schema_version', 'lot', 'buildings', 'cover', 'objects', 'zoning', 'rules', 'buildable', 'fit', 'facts', 'money', 'quality']),
+  record: keysOf<LotRecord>()(['schema_version', 'lot', 'buildings', 'cover', 'objects', 'zoning', 'rules', 'buildable', 'fit', 'facts', 'money', 'terrain', 'quality']),
   citation: keysOf<Citation>()(['section', 'url', 'verified_on', 'confidence', 'source_file']),
   edge: keysOf<Edge>()(['id', 'role', 'line', 'length_ft', 'party_wall']),
   lot: keysOf<LotPart>()([
@@ -341,6 +393,14 @@ export const LOT_KEYS = {
   money: keysOf<Money>()(['rent_by_bedroom', 'cost_index', 'zip', 'rent_source', 'rent_fiscal_year', 'cost_index_key']),
   rent_by_bedroom: keysOf<RentByBedroom>()(['b0', 'b1', 'b2', 'b3']),
   quality: keysOf<Quality>()(['imagery_date', 'data_dates', 'confidence', 'assumptions']),
+  terrain: keysOf<Terrain>()([
+    'source', 'flown_from', 'flown_to', 'resolution_ft', 'thresholds_pct', 'lot', 'buildable', 'spot', 'gentle_fit',
+    'basis', 'slope_class', 'steep_site',
+  ]),
+  slope_stats: keysOf<SlopeStats>()([
+    'mean_pct', 'p90_pct', 'max_pct', 'share_over_15', 'share_over_25', 'elev_min_ft', 'elev_max_ft', 'drop_ft', 'sqft', 'class',
+  ]),
+  gentle_fit: keysOf<GentleFit>()(['fits', 'largest_sqft', 'room_sqft', 'steep_cut_sqft']),
 } as const;
 
 export type LotBlock = keyof typeof LOT_KEYS;

@@ -8,6 +8,7 @@ vector rank. mode="vector" or mode="bm25" uses one of them alone.
 Run:
     python -m pipeline.corpus.search "Manheim township" "accessory dwelling unit special exception" -k 5
 """
+
 from __future__ import annotations
 
 import argparse
@@ -24,8 +25,43 @@ from pipeline.corpus.paths import sub
 
 RRF_K = 60
 TOKEN = re.compile(r"[a-z0-9]+(?:[.-][a-z0-9]+)*")
-STOP = set("the a an of to and or in on for by with be is are shall may any as at from this that which such "
-           "than not no its it all each per".split())
+STOP = set(
+    [
+        "the",
+        "a",
+        "an",
+        "of",
+        "to",
+        "and",
+        "or",
+        "in",
+        "on",
+        "for",
+        "by",
+        "with",
+        "be",
+        "is",
+        "are",
+        "shall",
+        "may",
+        "any",
+        "as",
+        "at",
+        "from",
+        "this",
+        "that",
+        "which",
+        "such",
+        "than",
+        "not",
+        "no",
+        "its",
+        "it",
+        "all",
+        "each",
+        "per",
+    ]
+)
 
 
 def tokens(text: str) -> list[str]:
@@ -55,7 +91,7 @@ def _vectors(model: str) -> np.ndarray:
 
 
 @lru_cache(maxsize=256)
-def _bm25(geoid: str):
+def _bm25(geoid: str) -> Any:
     from rank_bm25 import BM25Okapi
 
     rows, by_place = _chunks()
@@ -70,8 +106,12 @@ def _names() -> dict[str, str]:
     for r in csv.DictReader(p.open()):
         g = r["geoid"]
         # rows are in population order: a shared name goes to the larger place
-        for key in [g, r["name"].lower(), f"{r['name']}, {r['county']}".lower(),
-                    *[a for a in (r.get("geoid_aliases") or "").split(";") if a]]:
+        for key in [
+            g,
+            r["name"].lower(),
+            f"{r['name']}, {r['county']}".lower(),
+            *[a for a in (r.get("geoid_aliases") or "").split(";") if a],
+        ]:
             out.setdefault(key, g)
     return out
 
@@ -110,10 +150,21 @@ def search(place: str, query: str, k: int = 10, model: str = "bge", mode: str = 
     out = []
     for i, score in top:
         c = rows[i]
-        out.append({"chunk_id": c["chunk_id"], "geoid": geoid, "section": c.get("section"),
-                    "sections": c.get("sections"), "heading_path": c.get("heading_path"),
-                    "page_start": c.get("page_start"), "page_end": c.get("page_end"), "url": c.get("url"),
-                    "retrieved_on": (c.get("fetched_at") or "")[:10], "score": round(score, 5), "text": c["text"]})
+        out.append(
+            {
+                "chunk_id": c["chunk_id"],
+                "geoid": geoid,
+                "section": c.get("section"),
+                "sections": c.get("sections"),
+                "heading_path": c.get("heading_path"),
+                "page_start": c.get("page_start"),
+                "page_end": c.get("page_end"),
+                "url": c.get("url"),
+                "retrieved_on": (c.get("fetched_at") or "")[:10],
+                "score": round(score, 5),
+                "text": c["text"],
+            }
+        )
     return out
 
 

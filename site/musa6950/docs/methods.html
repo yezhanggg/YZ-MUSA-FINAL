@@ -100,10 +100,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MUSA 5500 (demand and payoff)</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
@@ -119,6 +119,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/results.html">
  <span class="dropdown-text">Results</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
+ <span class="dropdown-text">Tract explorer</span></a>
   </li>  
     </ul>
   </li>
@@ -168,13 +172,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#look-at-the-data-and-hand-label-lots" id="toc-look-at-the-data-and-hand-label-lots" class="nav-link active" data-scroll-target="#look-at-the-data-and-hand-label-lots">1. Look at the data and hand-label lots</a></li>
-  <li><a href="#random-forest-baseline" id="toc-random-forest-baseline" class="nav-link" data-scroll-target="#random-forest-baseline">2. Random Forest baseline</a></li>
-  <li><a href="#u-net" id="toc-u-net" class="nav-link" data-scroll-target="#u-net">3. U-Net</a></li>
-  <li><a href="#garages-and-sheds-yolo" id="toc-garages-and-sheds-yolo" class="nav-link" data-scroll-target="#garages-and-sheds-yolo">4. Garages and sheds (YOLO)</a></li>
-  <li><a href="#room-for-an-adu-the-fit-rule" id="toc-room-for-an-adu-the-fit-rule" class="nav-link" data-scroll-target="#room-for-an-adu-the-fit-rule">5. Room for an ADU (the fit rule)</a></li>
-  <li><a href="#statewide-numbers" id="toc-statewide-numbers" class="nav-link" data-scroll-target="#statewide-numbers">6. Statewide numbers</a></li>
-  <li><a href="#outputs-used-by-musa-5500" id="toc-outputs-used-by-musa-5500" class="nav-link" data-scroll-target="#outputs-used-by-musa-5500">Outputs used by MUSA 5500</a></li>
+  <li><a href="#labels-and-preparation" id="toc-labels-and-preparation" class="nav-link active" data-scroll-target="#labels-and-preparation">1. Labels and preparation</a></li>
+  <li><a href="#baselines" id="toc-baselines" class="nav-link" data-scroll-target="#baselines">2. Baselines</a></li>
+  <li><a href="#u-net-variants-and-a-fair-comparison" id="toc-u-net-variants-and-a-fair-comparison" class="nav-link" data-scroll-target="#u-net-variants-and-a-fair-comparison">3. U-Net variants and a fair comparison</a></li>
+  <li><a href="#error-analysis" id="toc-error-analysis" class="nav-link" data-scroll-target="#error-analysis">4. Error analysis</a></li>
+  <li><a href="#transfer-to-the-two-cities" id="toc-transfer-to-the-two-cities" class="nav-link" data-scroll-target="#transfer-to-the-two-cities">5. Transfer to the two cities</a></li>
+  <li><a href="#land-cover-per-lot" id="toc-land-cover-per-lot" class="nav-link" data-scroll-target="#land-cover-per-lot">6. Land cover per lot</a></li>
+  <li><a href="#structure-detector" id="toc-structure-detector" class="nav-link" data-scroll-target="#structure-detector">7. Structure detector</a></li>
+  <li><a href="#the-fit-test-in-the-lot-tool" id="toc-the-fit-test-in-the-lot-tool" class="nav-link" data-scroll-target="#the-fit-test-in-the-lot-tool">8. The fit test in the lot tool</a></li>
+  <li><a href="#lot-build" id="toc-lot-build" class="nav-link" data-scroll-target="#lot-build">9. Lot build</a></li>
+  <li><a href="#hand-label-check" id="toc-hand-label-check" class="nav-link" data-scroll-target="#hand-label-check">10. Hand-label check</a></li>
   </ul>
 </nav>
     </div>
@@ -200,144 +207,148 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Six steps. Each step is one notebook in <code>musa6950/notebooks/</code>.</p>
-<section id="look-at-the-data-and-hand-label-lots" class="level2">
-<h2 class="anchored" data-anchor-id="look-at-the-data-and-hand-label-lots">1. Look at the data and hand-label lots</h2>
-<p>Notebook <code>01_look_and_label.ipynb</code></p>
+<p>The question: on a given lot in Philadelphia or Pittsburgh, can a backyard home go up, where, and how big? Aerial images answer part of it (trees, open ground, paving, small buildings). Lot lines, building outlines and zoning answer the rest. This page covers how the land cover model was trained and tested, how it was moved to the two cities, the structure detector, and the vector fit test that the lot tool runs.</p>
+<p>Code: <code>pipeline/vision/</code> (land cover), <code>musa6950/yolo/</code> (detector), <code>pipeline/fit.py</code> (fit test), <code>pipeline/build_lots.py</code> (lot records). The course notebooks in <code>musa6950/notebooks/</code> hold the first experiments (Random Forest, first U-Net, the old raster fit rule).</p>
+<section id="labels-and-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="labels-and-preparation">1. Labels and preparation</h2>
 <ul>
-<li>Plot a few boxes: image next to label</li>
-<li>Check class shares in train vs test</li>
-<li>Pick 200-300 single-family lots in the test counties (Cumberland, Centre) and Philadelphia</li>
-<li>For each lot, mark by eye: does a 20 x 30 ft (600 sq ft) spot fit in the backyard? With or without cutting trees?</li>
-<li>Save as <code>data/processed/hand_labels.csv</code> (lot_id, fits, fits_keep_trees)</li>
-<li>This is the ground truth for the last check</li>
-<li>Done so far: plots and class shares. Hand labels are not made yet
-<ul>
-<li>Notebook 05 writes a blank form, <code>hand_labels_template.csv</code>: 250 random lots (seed 42), Philadelphia + Cumberland</li>
-<li>Centre has no lot lines in this project, so it is not in the form</li>
-</ul></li>
-<li>4 of the 177 boxes (on the New York line) have no 2022 PA image. 173 boxes are used: 146 train, 27 test</li>
+<li>173 boxes of 1 km around tract population centers, NAIP 2022 at 0.6 m, 4 bands.</li>
+<li>Chesapeake Bay land cover labels (1 m) put on the 0.6 m grid with nearest neighbour. Codes grouped to 4 classes (other, building, tree, open) or 5 (hard surface split from other). See the data page.</li>
+<li>Split by county: 122 train, 24 validation, 27 test boxes. The test counties (Cumberland and Centre) were scored only after every choice was made on validation.</li>
+<li>Each band is scaled with the mean and spread of the train boxes.</li>
 </ul>
 </section>
-<section id="random-forest-baseline" class="level2">
-<h2 class="anchored" data-anchor-id="random-forest-baseline">2. Random Forest baseline</h2>
-<p>Notebook <code>02_random_forest.ipynb</code> (from Lab 6)</p>
+<section id="baselines" class="level2">
+<h2 class="anchored" data-anchor-id="baselines">2. Baselines</h2>
 <ul>
-<li>Each pixel = 4 band values (R, G, B, NIR) + NDVI</li>
-<li>500 random pixels per class per box</li>
-<li><code>RandomForestClassifier(n_estimators=100)</code></li>
-<li>Score on the test counties: per-class IoU, mean IoU, confusion matrix</li>
-<li>Every labeled pixel of the 27 test boxes is scored (about 109 million)</li>
+<li>Random Forest (course lab 6): R, G, B, NIR and NDVI per pixel, 500 random pixels per class per box, 100 trees. <code>musa6950/notebooks/02_random_forest.ipynb</code>.</li>
+<li>First U-Net (v1): a plain U-Net written in torch (<code>musa6950/unet.py</code>), 256 px tiles, 10 epochs. <code>musa6950/notebooks/03_unet.ipynb</code>.</li>
 </ul>
 </section>
-<section id="u-net" class="level2">
-<h2 class="anchored" data-anchor-id="u-net">3. U-Net</h2>
-<p>Notebook <code>03_unet.ipynb</code> (from Lab 9 and my Assignment 6)</p>
+<section id="u-net-variants-and-a-fair-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="u-net-variants-and-a-fair-comparison">3. U-Net variants and a fair comparison</h2>
+<p>All runs below share one recipe and one test. Only the named change differs.</p>
 <ul>
-<li>4 input bands, 4 output classes (other, building, tree, open ground). 255 = ignore</li>
-<li>Validation = a few train counties held back. Test = Cumberland + Centre
-<ul>
-<li>7 counties held back (seed 42), 24 boxes. 122 boxes left for training</li>
-</ul></li>
-<li>Same scores as the Random Forest so they compare</li>
-<li>Note from Assignment 6: bare soil scored 0 IoU. Here bare ground is part of “open ground”</li>
+<li>U-Net with an ImageNet ResNet-34 encoder (<code>segmentation_models_pytorch</code>). The first layer takes 4 bands. R, G and B keep the ImageNet weights. NIR starts as the mean of the RGB weights.</li>
+<li>Random 384 px crops, 1 in 3 centered on a building pixel. Flips, 90 degree turns, brightness and contrast jitter.</li>
+<li>Loss: class-weighted cross entropy plus 0.5 x Dice. AdamW, learning rate 0.0005, warmup, cosine decay over 16 planned epochs, stopped at epoch 14. Batch 12, 400 steps per epoch.</li>
+<li>Validation: every labeled pixel of the 24 validation boxes. The best epoch is kept.</li>
+<li>Test: every labeled pixel of the 27 test boxes, predicted in 512 px windows with a 64 px margin. Main score with 8 flips and turns averaged and a tree offset picked on validation. A single-pass score is kept too where it was run.</li>
 </ul>
-<p>First model (v1), kept for comparison: - Plain U-Net written in torch (<code>musa6950/unet.py</code>), base width 32, 7.8 M parameters - 256 x 256 tiles, random flips, class-weighted cross entropy, Adam lr 0.001, batch 8 - Cosine decay of the learning rate over 10 epochs. 45 min on a Mac (MPS). Validation was still going up</p>
-<p>Final model (v2): - U-Net with a ResNet-34 encoder trained on ImageNet (<code>segmentation-models-pytorch</code>), 24.4 M parameters - The first layer takes 4 bands. R, G, B keep the ImageNet weights. NIR starts as the mean of the RGB weights - Each band is scaled with the mean and spread of the train boxes - Training: <code>musa6950/train_unet.py</code>, run as a script in the background. Notebook 03 loads the weights and does all the checks - Random 384 x 384 crops from whole boxes, 400 steps of 12 crops per epoch - 1 crop in 3 is centered on a building pixel (buildings are the weak class) - Same random flip and 90 degree turn on image and label. Small brightness and contrast changes per band - Loss = class-weighted cross entropy (weights 1 / sqrt(class share)) + 0.5 x Dice - AdamW lr 0.0005, warmup, then cosine decay over 16 epochs. Stop early if validation does not improve for 5 epochs - Validation = every labeled pixel of the 24 validation boxes, predicted like the test. The best epoch is kept - Tried and dropped, judged on validation only: NDVI as a 5th band, cross entropy without Dice. A plain U-Net with the same recipe was also run, to see what the pretrained encoder adds - Test-time flips: each window is predicted 8 times (4 turns x flip) and the class chances are averaged. Kept only if it helps on validation - Tree offset: 0.5 is added to the tree log chance, picked on validation (0 to 1.5 tried). The model called a bit less tree than the label, and this was clear on the lots in notebook 05 - Test boxes are predicted in 512 px windows with a 64 px margin. The test counties are scored once, at the end - Checks in notebook 03: - Leakage: no test county in train or validation, no validation county in train, no overlap between boxes of different roles - Per class IoU, precision, recall. mIoU by urban / suburban / rural. Confusion matrix - Secondary score: mIoU with a 1 pixel band along every label edge left out. The label is 1 m, put on the 0.6 m grid, so edges are uncertain by about a pixel - Registration: shift the prediction 1-2 pixels against the label and see if the score goes up</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Run</th>
+<th>What changes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>r34_c4_s1</code></td>
+<td>the base recipe, seed 1</td>
+</tr>
+<tr class="even">
+<td><code>r34_c4_s2</code></td>
+<td>seed 2</td>
+</tr>
+<tr class="odd">
+<td><code>r34ndvi_c4_s1</code></td>
+<td>NDVI as a fifth input band</td>
+</tr>
+<tr class="even">
+<td><code>r34ce_c4_s1</code></td>
+<td>cross entropy only, no Dice</td>
+</tr>
+<tr class="odd">
+<td><code>plain_c4_s1</code></td>
+<td>no pretrained encoder (learning rate 0.001)</td>
+</tr>
+<tr class="even">
+<td><code>r34_c4_s1_lowlr</code></td>
+<td>4 more epochs from <code>r34_c4_s1</code> at learning rate 0.0001</td>
+</tr>
+<tr class="odd">
+<td><code>r34_c5_s0</code></td>
+<td>5 classes, hard surface split out</td>
+</tr>
+<tr class="even">
+<td><code>unet_v2_r34</code></td>
+<td>the earlier published model, scored again with the same code</td>
+</tr>
+</tbody>
+</table>
+<p>Scores reported: IoU per class, mean IoU (mIoU), pixel accuracy, mIoU by urban, suburban and rural box, and a secondary mIoU with a 1 pixel band along label edges left out.</p>
 </section>
-<section id="garages-and-sheds-yolo" class="level2">
-<h2 class="anchored" data-anchor-id="garages-and-sheds-yolo">4. Garages and sheds (YOLO)</h2>
-<p>Notebook <code>04_sheds.ipynb</code> (from Lab 8 and my Assignment 5)</p>
+<section id="error-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="error-analysis">4. Error analysis</h2>
+<p><code>pipeline/vision/error_analysis.py</code> on the reference model:</p>
 <ul>
-<li>Simple way first: inside each lot, the biggest building outline = the house. Other outlines under 60 m² = garage or shed</li>
-<li>Then YOLO: label 150-300 sheds in LabelMe, convert to YOLO format, fine-tune</li>
-<li>Does YOLO find sheds that the outlines miss?</li>
-<li>YOLO (ultralytics) is AGPL. Keep it in this notebook only. The rest of the code never imports it</li>
-<li>What was run: only the outline method. YOLO is not done (no shed labels yet). Left as an optional section</li>
-<li>This notebook also picks the single-family lots for step 5
-<ul>
-<li>Philadelphia: lot building type starts with <code>DET</code> (detached). Rowhouses and twins are dropped. Microsoft merges a row into one outline, so the house can not be found</li>
-<li>Cumberland: no building type in the lot file. Lots of 300-20,000 m2</li>
-<li>Both: biggest outline on the lot is 60-600 m2 and no other outline is over 100 m2</li>
-</ul></li>
-<li>Small buildings with no outline: the fit test in step 5 only allows open ground (and trees), so any pixel the U-Net calls building already blocks a spot. Notebook 05 checks how often this matters, with the Chesapeake building class in the Cumberland test boxes</li>
-<li>What YOLO would need: about 300 sheds and garages drawn by hand on NAIP (LabelMe boxes), spread over urban, suburban, and rural lots, plus some lots with no shed. A shed is often 10-20 m2, only 30-60 NAIP pixels, so the boxes are small for YOLO. It would also add an AGPL package. Not done</li>
-</ul>
-</section>
-<section id="room-for-an-adu-the-fit-rule" class="level2">
-<h2 class="anchored" data-anchor-id="room-for-an-adu-the-fit-rule">5. Room for an ADU (the fit rule)</h2>
-<p>Notebook <code>05_room_rule.ipynb</code></p>
-<ul>
-<li>For each single-family lot in the pilot counties:
-<ul>
-<li>Backyard = lot minus house minus a setback buffer (try 5 ft from lot lines, 10 ft from the house)</li>
-<li>Open = backyard pixels the model calls open ground</li>
-<li>Fits = a 20 x 30 ft rectangle fits in the open area
-<ul>
-<li>Test with morphological erosion: erode the open mask by the rectangle. Any pixel left = fits</li>
-<li>Try both rotations</li>
-</ul></li>
-<li>Fits keeping trees = same test, but tree pixels are not allowed</li>
-<li>Tree loss = tree area inside the spot when the only spot needs trees cut</li>
-</ul></li>
-<li>Check against the hand labels from step 1: precision, recall</li>
-<li>Compare: rule using only building outlines vs rule using the U-Net map</li>
-<li>What was run, where it differs:
-<ul>
-<li>Work is in UTM 18N meters (the NAIP grid), not EPSG:2272. Same setbacks in meters. The rectangle is 10 x 15 pixels (6.0 x 9.0 m)</li>
-<li>“Backyard” = the whole lot left after setbacks, front or back</li>
-<li>Other outlines (garages, sheds) are taken out with no buffer</li>
-<li>The erosion test is done with a summed-area table. Same answer, faster</li>
-<li>NAIP for the pilot counties is read straight from Planetary Computer, only the 512 px blocks that touch a lot. Nothing is saved</li>
-<li>The U-Net is v2 with the same 8 flips / turns and tree offset as the test</li>
-<li>Hand labels are not made yet, so there is no precision / recall against them</li>
-<li>Instead: Cumberland lots inside the test boxes are run twice, with the Chesapeake label map and with the U-Net map. Agreement shows how much U-Net errors change the answer</li>
-<li><code>open_m2</code> and <code>tree_m2</code> in <code>lots_pilot.csv</code> are for the whole lot</li>
-</ul></li>
-<li>Largest footprint that fits (for the tool’s size slider):
-<ul>
-<li>Ladder of footprint areas: 100 to 2,000 sq ft in steps of 50</li>
-<li>Each area is tried as 3 shapes (square, 2:3, 1:2), each in both turns. Size in pixels = ceil(feet x 0.3048 / 0.6)</li>
-<li>Same backyard mask and same summed-area test. A bigger area never fits where a smaller one does not, so a binary search on the ladder is enough</li>
-<li><code>max_fit_sqft</code> = largest area that fits (0 if not even 100 sq ft, 2,000 at the top). <code>max_fit_keep_trees_sqft</code> = same, tree pixels not allowed</li>
-<li>Pixel sizes are rounded up here, but the 20 x 30 ft rule rounds to 10 x 15 pixels (6.0 x 9.0 m). So <code>fits</code> and <code>max_fit_sqft &gt;= 600</code> can disagree on some lots</li>
-</ul></li>
-<li>Map layers:
-<ul>
-<li><code>6950_lot_open.gpkg</code>: per lot, buildable open ground after setbacks (<code>open</code>) and trees inside the setback area (<code>tree</code>). Pixel outlines simplified 0.3 m, bits under 4 m2 dropped</li>
-<li><code>6950_lot_spot.gpkg</code>: the rectangle the test found, at <code>max_fit_sqft</code> (<code>kind = max</code>) and at 600 sq ft if it fits (<code>kind = base600</code>)
-<ul>
-<li>Placed on open ground alone if it fits there (<code>keeps_trees = true</code>), else on open ground + trees</li>
-<li>Of all places that fit, the one farthest from the house center is kept. That is more often the backyard</li>
-</ul></li>
-</ul></li>
+<li>confusion matrix and the share of all errors by label pair</li>
+<li>errors inside and outside the 1 pixel label edge band</li>
+<li>building IoU by building size</li>
+<li>errors by original Chesapeake code</li>
+<li>per-tile error and the 20 worst tiles, looked at by eye</li>
+<li>a registration check: shift the prediction by up to 2 pixels and score again</li>
 </ul>
 </section>
-<section id="statewide-numbers" class="level2">
-<h2 class="anchored" data-anchor-id="statewide-numbers">6. Statewide numbers</h2>
-<p>Notebook <code>06_statewide.ipynb</code></p>
+<section id="transfer-to-the-two-cities" class="level2">
+<h2 class="anchored" data-anchor-id="transfer-to-the-two-cities">5. Transfer to the two cities</h2>
 <ul>
-<li>Fit rate = lots that fit / single-family lots, by urban / suburban / rural, from the pilot counties</li>
-<li>Lots with room per tract = single-family detached homes (ACS B25024) x fit rate for that tract’s group</li>
-<li>Range from bootstrap (resample lots 1,000 times)
-<ul>
-<li>What was run: resample whole tracts, not single lots, since lots next to each other are alike</li>
-</ul></li>
-<li>Pilot lots by group: urban = Philadelphia + Cumberland urban tracts. Suburban and rural = Cumberland only</li>
-<li>The group rate is used in every tract, the pilot counties too. The lot map has the per-lot answers</li>
-<li>Tree loss per tract = lots_fit x mean tree area cut per fitting lot in the group</li>
-<li>Fit curves: share of pilot lots in each group where a footprint of each ladder size fits (from <code>max_fit_sqft</code>). Same tract bootstrap for the range</li>
-<li>Output for the tool:
-<ul>
-<li><code>data/processed/lots_tract.csv</code> (every tract, with its group in <code>stratum</code>)</li>
-<li><code>data/processed/lots_pilot.csv</code> (every lot in the pilot counties)</li>
-<li><code>data/processed/fit_curves.csv</code> (group x footprint size)</li>
-</ul></li>
+<li>City labels: the 2 ft University of Vermont land cover rasters (Philadelphia 2018, Pittsburgh 2019), 7 classes grouped to the 5-class set. “Other” is water.</li>
+<li>40 boxes per city, split into train, validation and test (<code>pipeline/vision/city.py</code>).</li>
+<li>Two scores per city: zero-shot (<code>r34_c5_s0</code>, no city training) and fine-tuned (<code>ft_c5_&lt;city&gt;</code>, started from <code>r34_c5_s0</code>, learning rate 0.0001, 250 steps per epoch, up to 12 epochs).</li>
+<li>Overlap fix: in Pittsburgh 34.8 % of the test box area was also inside train or validation boxes. <code>city.py</code> now keeps boxes apart, and city test scoring leaves out any test pixel inside a train or validation box. Philadelphia had no overlap.</li>
+<li>Philadelphia diagnosis (<code>pipeline/vision/city_check.py</code>): class mapping by NDVI, label alignment by shifting, footprint burn-in, flight dates, an NDVI threshold baseline, tree recall by canopy patch size, and per-lot tree and vegetation shares against the label.</li>
 </ul>
 </section>
-<section id="outputs-used-by-musa-5500" class="level2">
-<h2 class="anchored" data-anchor-id="outputs-used-by-musa-5500">Outputs used by MUSA 5500</h2>
-<p><code>lots_tract.csv</code> is the “lots with room” input for the 5500 forecast.</p>
+<section id="land-cover-per-lot" class="level2">
+<h2 class="anchored" data-anchor-id="land-cover-per-lot">6. Land cover per lot</h2>
+<ul>
+<li><code>pipeline/vision/infer_lots.py</code> runs the model over every lot tile and sums pixels per lot (<code>processed/&lt;city&gt;/cover.parquet</code>).</li>
+<li><code>pipeline/vision/raster_cover.py</code> does the same from the city rasters, and compares model and raster per lot. Lots inside the city train and validation boxes are left out of the comparison.</li>
+<li>Source per city, set in <code>pipeline/build_lots.py</code>:
+<ul>
+<li>Pittsburgh: the zero-shot model <code>r34_c5_s0</code> (<code>cover_model_r34_c5_s0.parquet</code>).</li>
+<li>Philadelphia: the 2018 city raster. Lots built in 2018 or later get a flag, since the raster may show the old use.</li>
+</ul></li>
+<li><code>pipeline/vision/cover_lookup.py</code> returns the cover inside any polygon. The lot builder uses it to report the tree, open ground and paving inside the suggested spot.</li>
+</ul>
+</section>
+<section id="structure-detector" class="level2">
+<h2 class="anchored" data-anchor-id="structure-detector">7. Structure detector</h2>
+<ul>
+<li>Ultralytics YOLO11 small, 640 px chips of PEMA 0.5 ft leaf-off imagery, classes garage, shed, other accessory and pool.</li>
+<li>Labels are first pass from footprints and OpenStreetMap: every non-main footprint on a residential lot is one object. Shed under 180 sq ft. Garage 180 to 700 sq ft and within 75 ft of a street, alley or service lane. Other accessory for the rest. Pools from OpenStreetMap.</li>
+<li>Areas split 70, 15 and 15 percent, so no area is in two splits.</li>
+<li>Scored with AP50 per class on the test areas, against the same first-pass labels.</li>
+<li>AGPL-3.0, so the code stays in <code>musa6950/yolo/</code>. Only a detections table leaves the folder.</li>
+</ul>
+</section>
+<section id="the-fit-test-in-the-lot-tool" class="level2">
+<h2 class="anchored" data-anchor-id="the-fit-test-in-the-lot-tool">8. The fit test in the lot tool</h2>
+<p>The fit test is a vector geometry test. It no longer uses a raster box on the U-Net map.</p>
+<ol type="1">
+<li><strong>Lot shape.</strong> Lot lines are split into edges and labeled front, side and rear. Front is the line facing the nearest street. On a corner lot the shorter street line is the front. Rear lines on an alley are found from alley lines. Each lot gets an edge confidence (high, medium, low).</li>
+<li><strong>Rules.</strong> The rules for the lot come from the rule files in <code>shared/rules/</code> for three scenarios: today’s law, local reform (Philadelphia Bill 250042, in Pittsburgh the same as today) and state reform (HB 2186). The bills are not law. Setbacks, size cap, height and approval path come from the rules. Missing setbacks get labeled fallbacks.</li>
+<li><strong>Buildable ground.</strong> The lot shrinks by each line’s setback. The house is removed with its separation distance around it. Garages and other outbuildings are hard blocks with a 5 ft clearance. Sheds (under 180 sq ft) are soft blocks: the tool reports “fits if the shed goes”.</li>
+<li><strong>Largest rectangle.</strong> The largest rectangle inside the buildable ground, at the lot’s own angle and offsets of 8 and 45 degrees. Short side at least 12 ft, long side at most 3 times the short side. The tool looks behind the house first and uses the front yard only when nothing fits behind.</li>
+<li><strong>Checks.</strong> Room in the yard, size cap, minimum size, share of the house, coverage and height. The first failed check is the limiting reason (no room, yard space, size cap and others). A second detached unit is tested where the rules allow two.</li>
+<li><strong>Other types.</strong> Internal units, attached units and garage conversions are tested from the house and garage outlines. Attached units use the internal test as a stand-in.</li>
+<li><strong>Context.</strong> Land cover adds tree canopy, open ground, hard surface, impervious share and the trees inside the suggested spot. Slope, landslide, flood and historic flags come from city layers. None of these change the fit answer.</li>
+</ol>
+<p>The same test runs in the browser for a unit the user draws (<code>app/src/lib/lot/verdict.ts</code>), on the saved buildable polygon.</p>
+</section>
+<section id="lot-build" class="level2">
+<h2 class="anchored" data-anchor-id="lot-build">9. Lot build</h2>
+<p><code>pipeline/build_lots.py</code> runs the fit for every lot and every scenario and writes one record per lot, grouped by census tract, plus <code>stats.json</code>, <code>manifest.json</code> and a QA contact sheet of random lots. Stats count shares of lots: any legal path today, detached unit fits at 400, 600, 800 and 1,000 sq ft, the limiting reason, and the same by housing type and zoning district.</p>
+</section>
+<section id="hand-label-check" class="level2">
+<h2 class="anchored" data-anchor-id="hand-label-check">10. Hand-label check</h2>
+<p>A sample of 250 lots (125 per city), stratified by lot type and shape, with corner and irregular lots oversampled (<code>pipeline/validation/</code>). A person looks at half-foot imagery and answers the same fit question. Sheets and chips are built. No lot has been labeled yet, so this check has no result.</p>
 
 
 </section>

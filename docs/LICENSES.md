@@ -6,7 +6,7 @@ The terms for every data set, model and main library the product uses.
 
 The code in this repository is under the Apache License 2.0 (`LICENSE`). The detector folder `musa6950/yolo/` uses an AGPL-3.0 library and is kept apart (see below).
 
-<!-- source: license text recorded in ~/musa-drive/raw/philadelphia/SOURCES.json and raw/pittsburgh/SOURCES.json, musa6950/yolo/config.py PEMA_TERMS, musa6950/yolo/README.md -->
+<!-- source: license text recorded in ~/musa-drive/raw/philadelphia/SOURCES.json, raw/pittsburgh/SOURCES.json and raw/landcover/<city>/SOURCES.json, musa6950/yolo/config.py PEMA_TERMS, musa6950/yolo/README.md, app/src/tool/aerial.ts -->
 
 ## How to read the tables
 
@@ -38,10 +38,12 @@ The code in this repository is under the Apache License 2.0 (`LICENSE`). The det
 |---|---|---|---|---|---|
 | Microsoft Global ML Building Footprints | ODbL | Yes, "Microsoft" with the ODbL notice | Yes, under ODbL | Yes | A database made from it and shared must also be under ODbL (share alike). Applies to the Pittsburgh buildings table, which mixes county and Microsoft outlines |
 | OpenStreetMap (Philadelphia service roads, pools for the detector) | ODbL 1.0 | Yes, "© OpenStreetMap contributors" | Yes, under ODbL | Yes | Share alike for derived databases. The Philadelphia alleys table uses it |
-| PEMA Orthoimagery Cycle 2 (via PASDA) | Access constraints: none. Use constraints: none. Acknowledgement of the source requested | Yes, "Pennsylvania Emergency Management Agency (PEMA), imagery hosted by PASDA" | Not stated. unclear, ask the provider | No constraint stated | Used for detector chips in both cities. A liability disclaimer applies |
+| PEMA Orthoimagery Cycle 2 and the 2021 to 2023 tile cache (via PASDA) | Access constraints: none. Use constraints: none. Acknowledgement of the source requested | Yes, "Pennsylvania Emergency Management Agency (PEMA), imagery hosted by PASDA" | Not stated. unclear, ask the provider | No constraint stated | Detector chips, hand-label sheets and the app's aerial layer. A liability disclaimer applies |
+| Esri World Imagery | Esri terms of use | Yes, "Esri, Maxar, Earthstar Geographics" | No | Under Esri's terms | Only a fallback in the app when the PEMA tiles do not load |
 | NAIP 2022 (via Microsoft Planetary Computer) | Public domain (USDA), as listed in the course data notes | Courtesy credit to USDA | Yes | Yes | Used for the land cover model |
 | Chesapeake Bay Program land use and land cover, 2024 edition (USGS ScienceBase) | Listed as public (USGS) in the course data notes | unclear, ask the provider | unclear, ask the provider | unclear, ask the provider | Used as training labels |
-| University of Vermont land cover rasters (Philadelphia 2018, Pittsburgh watersheds 2019) | Not recorded in the pipeline | unclear, ask the provider | unclear, ask the provider | unclear, ask the provider | Used to build city label sets for the land cover model |
+| Philadelphia Land Cover 2018 (University of Vermont with the City of Philadelphia) | City of Philadelphia License as listed on OpenDataPhilly: public use, free | Not stated. Naming the city and the University of Vermont Spatial Analysis Lab is good practice | unclear, ask the provider | unclear, ask the provider | City label set, and the land cover of every Philadelphia lot record |
+| High resolution land cover for Pittsburgh watersheds 2019 (University of Vermont, USDA Forest Service archive) | Use and access constraints: none | Yes, the archive asks for a citation | No constraint stated | No constraint stated | City label set and the check on Pittsburgh lot cover |
 | FEMA National Flood Hazard Layer | Recorded as US federal government data (public domain) | Courtesy credit to FEMA | Yes | Yes | Pittsburgh flood flag. Philadelphia uses the city's copy of FEMA data under the city license |
 | US Census TIGER 2020 tracts | No license recorded by the pipeline. A US federal government work | Courtesy credit to the US Census Bureau | Yes | Yes | |
 | US Census ACS (rent fallback, not built yet) | No license recorded. A US federal government work | Courtesy credit to the US Census Bureau | Yes | Yes | |
@@ -110,7 +112,16 @@ The code in this repository is under the Apache License 2.0 (`LICENSE`). The det
 | vite | 8.3.7 | MIT | Build |
 | vitest | 5.1.0 | MIT | Tests |
 | typescript | 7.0.2 | Apache-2.0 | Types |
+| @anthropic-ai/sdk | 1.8.0 | Apache-2.0 | The server function behind the Ask assistant |
+
+## Services the app calls
+
+| Service | Used for | Terms |
+|---|---|---|
+| Claude API (model `claude-haiku-5-5` by default) | The Ask assistant, through `api/agent.ts`. The key stays on the server | The API provider's commercial terms. Questions and tool results are sent to it |
+| OpenFreeMap | Basemap tiles | Free, no key. Map data from OpenStreetMap (ODbL) |
+| Photon (komoot) | Address search | Free, no key. OpenStreetMap data (ODbL) |
 
 ## What to credit on screen
 
-When the product shows a map or a lot, the credits should name: the City of Philadelphia or the City of Pittsburgh and Allegheny County (for the place shown), "© OpenStreetMap contributors", Microsoft building footprints (ODbL) for Pittsburgh, and PEMA via PASDA wherever detector results are shown.
+When the product shows a map or a lot, the credits should name: the City of Philadelphia or the City of Pittsburgh and Allegheny County (for the place shown), "© OpenStreetMap contributors", Microsoft building footprints (ODbL) for Pittsburgh, PEMA via PASDA for the aerial photo and wherever detector results are shown, and Esri when its fallback imagery is on screen.

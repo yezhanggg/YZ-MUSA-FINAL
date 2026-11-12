@@ -6,7 +6,7 @@ Submitted Nov 3, 2026.
 
 **Room for a Backyard Home: Measuring ADU Capacity Across Pennsylvania with GeoAI**
 
-Team: Ye Zhang
+Team: one student
 
 **Background and Research Question:** Pennsylvania needs more housing, but most towns make it hard to build an accessory dwelling unit (ADU), a small second home on a lot, like a backyard cottage. A state bill, HB 2186, would allow one on every home lot. But no one knows how many lots actually have room for one. Backyards also hold a lot of trees, so building there has an environmental cost.
 
@@ -20,6 +20,6 @@ Team: Ye Zhang
 
 **Proposed AI Methods:** First, a U-Net sorts each image into buildings, trees, and open ground, since building outlines alone do not show trees or pavement. I will compare it with a simpler Random Forest model. Second, YOLO finds garages and sheds the outlines miss. Third, a simple rule checks if each lot has an open spot big enough for an ADU, with and without cutting trees. I will test accuracy on lots I labeled myself, then run it statewide.
 
-**Expected Outcomes:** A model that maps buildings, trees, and open ground; a map of how many lots can fit an ADU, with and without cutting trees; a check of how accurate the AI is; and a dashboard with an address search and a town and county view. I will share the results in a written report and a presentation.
+**Expected Outcomes:** A model that maps buildings, trees, and open ground, a map of how many lots can fit an ADU, with and without cutting trees, a check of how accurate the AI is, and a dashboard with an address search and a town and county view. I will share the results in a written report and a presentation.
 
 **About the Larger Project:** This is half of a bigger ADU project. This half asks whether an ADU fits. My MUSA 5500 project asks whether people need housing there and whether an ADU would pay off, using population, job, and rent trends since 2010. Together they show whether there is room for ADUs where people need housing. Both will share one dashboard, but each class will have its own code and documentation.

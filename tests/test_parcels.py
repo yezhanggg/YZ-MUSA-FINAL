@@ -1,4 +1,5 @@
 """Checks the parcel vector tiles the tool draws (app/public/data/parcels.pmtiles). Runs on GitHub with only pytest."""
+
 import struct
 from pathlib import Path
 

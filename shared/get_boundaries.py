@@ -3,9 +3,9 @@
 Run from the repo root:
     python shared/get_boundaries.py
 """
-import geopandas as gpd
 
-from common import RAW, OUT, STATE, download, step
+import geopandas as gpd
+from common import OUT, RAW, STATE, download, step
 
 G = "https://www2.census.gov/geo"
 

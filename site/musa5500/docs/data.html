@@ -135,10 +135,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MUSA 5500 (demand and payoff)</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
@@ -154,6 +154,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/results.html">
  <span class="dropdown-text">Results</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
+ <span class="dropdown-text">Tract explorer</span></a>
   </li>  
     </ul>
   </li>
@@ -235,6 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Raw files go to <code>data/raw/5500/</code>. Clean tables go to <code>data/processed/</code>. Neither is committed to GitHub.</p>
 <section id="sources" class="level2">
 <h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<!-- source: musa5500/get_data.py, pipeline/tract/*.py, shared/rules/towns_index.json -->
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -344,28 +349,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><code>tracts_2020.gpkg</code>, etc.</td>
 </tr>
 <tr class="even">
-<td>Town ADU rules (12 towns)</td>
-<td>Hand-coded from research, see <code>shared/adu_rules_pa.md</code></td>
+<td>Fair Market Rent, 1 bedroom</td>
+<td>HUD Small Area FMR, FY2026</td>
+<td>Feature service (<code>pipeline/market.py</code>)</td>
+<td>FY2026</td>
+<td>ZIP</td>
+<td>read by <code>pipeline/tract/payoff.py</code></td>
+</tr>
+<tr class="odd">
+<td>Older town ADU list (12 towns), kept for the app</td>
+<td>Hand-coded list, <code>shared/legal_status.csv</code></td>
 <td>By hand</td>
 <td>As of Nov 10, 2026</td>
 <td>Town</td>
-<td><code>shared/legal_status.csv</code></td>
-</tr>
-<tr class="odd">
-<td>Philadelphia zoning, Council Districts, overlays</td>
-<td>City of Philadelphia (OpenDataPhilly, ArcGIS)</td>
-<td>Script (<code>shared/lot_rules.py</code>)</td>
-<td>Current</td>
-<td>Lot</td>
-<td><code>lot_rules_pilot.csv</code></td>
+<td><code>shared/legal_status.csv</code> (no longer read by the forecast)</td>
 </tr>
 <tr class="even">
-<td>Lots with room for an ADU</td>
-<td>My MUSA 6950 project</td>
+<td>Town ADU rule files (36 towns plus a statewide baseline)</td>
+<td>Each town’s zoning code, cited by section</td>
+<td>By hand, each file reviewed</td>
+<td>Checked Nov 11, 2026</td>
+<td>Town</td>
+<td><code>shared/rules/*.json</code>, <code>shared/rules/towns_index.json</code>. Turned into forecast classes in <code>town_legal_class.csv</code> (<code>pipeline/tract/legal.py</code>)</td>
+</tr>
+<tr class="odd">
+<td>Units in structure</td>
+<td>ACS 2020-24 table B25024</td>
+<td>Census table file (no key)</td>
+<td>2020-24</td>
+<td>Tract</td>
+<td><code>data/raw/5500/acs_moe/acsdt5y2024-b25024.dat</code>, read by <code>pipeline/tract/room.py</code></td>
+</tr>
+<tr class="even">
+<td>Lots with room, by tract</td>
+<td>Measured in Philadelphia and Pittsburgh, modelled elsewhere (<code>pipeline/tract/room.py</code>)</td>
+<td>Built from the lot records and ACS</td>
+<td>Nov 11, 2026</td>
+<td>Tract</td>
+<td><code>room_tract.csv</code></td>
+</tr>
+<tr class="odd">
+<td>Old lots with room (retired)</td>
+<td>Earlier statewide estimate from MUSA 6950 notebook 06: pilot fit rates by urban, suburban and rural group times ACS single-family homes</td>
 <td>Read from <code>data/processed/lots_tract.csv</code></td>
 <td>2022 imagery</td>
 <td>Tract</td>
-<td><code>lots_tract.csv</code></td>
+<td><code>lots_tract.csv</code>, kept for comparison</td>
+</tr>
+<tr class="even">
+<td>Lot records, Philadelphia and Pittsburgh</td>
+<td>Lot tool build (<code>pipeline/build_lots.py</code>)</td>
+<td>Read from the data drive, <code>lots/&lt;city&gt;/index.parquet</code> and <code>stats.json</code></td>
+<td>Built Nov 11, 2026</td>
+<td>Lot, summed to tract, city and county</td>
+<td><code>lots_tract_v2.csv</code>, <code>lots_city_v2.csv</code>, <code>lots_county_v2.csv</code> (<code>pipeline/tract/lot_rollup.py</code>)</td>
 </tr>
 </tbody>
 </table>
@@ -381,7 +418,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Migration is by county only and counts tax filers.</li>
 <li>ACS rent = median gross rent of all renters, including long-time tenants. It is lower than the rent a new ADU would get.</li>
 <li>Census uses -666666666 for “no data”. The script turns these into blanks.</li>
-<li>Dollar values need inflation adjustment to 2024 dollars before comparing years. CPI-U yearly average: 2014 = 236.736, 2019 = 255.657, 2024 = 313.689.</li>
+<li>Dollar values need inflation adjustment to 2024 dollars before comparing years. CPI-U yearly average: 2014 = 236.736, 2019 = 255.657, 2024 = 313.689. <!-- source: data/processed/lots_tract.csv (sums of lots_fit and lots_total), shared/rules/towns_index.json --></li>
+<li><code>lots_tract.csv</code> is not from the lot tool. It scales pilot fit rates (Philadelphia and Cumberland) to every tract. Its total is 2,586,637 lots with room out of 3,287,467 single-family homes. The forecast and the app no longer use it. <code>room_tract.csv</code> replaces it and keeps it beside the new estimate</li>
+<li><code>legal_status.csv</code> is the older 12-town list. The forecast now reads the rule files in <code>shared/rules/</code> through <code>town_legal_class.csv</code>, and the app shows that class on each town. The app’s older rule card still reads <code>legal_status.csv</code></li>
 <li>Rent by bedrooms: tract values by size rest on few renters, so the tool uses tract median rent x the county ratio for that size (PA median county: studio 0.75, 1 BR 0.77, 2 BR 1.02, 3 BR 1.19). Raw tract values are kept in the file as <code>rent_b*_tract</code></li>
 </ul>
 

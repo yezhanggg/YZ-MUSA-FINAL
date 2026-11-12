@@ -3,7 +3,7 @@
 import { useState, type ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { BookOpen } from 'lucide-react';
-import figUnet from '../../../musa6950/docs/figures/03_example_prediction.png';
+import figLots from '../../../musa6950/docs/figures/09_pittsburgh_lot_sheet.png';
 import figPayoff from '../../../musa5500/docs/figures/04_payoff_map.png';
 import { NUMBERS } from '../lib/numbers';
 import { QUARTO_URL, type Course } from '../lib/router';
@@ -25,31 +25,34 @@ const PAGES: Record<Course, Page> = {
     name: 'MUSA 6950',
     title: 'Room on the lot',
     purpose: [
-      'HB 2186 would allow one backyard home (ADU) on every home lot in Pennsylvania.',
-      'No one knows how many lots actually have room for one.',
-      'Backyards hold a lot of trees, so building there has a cost.',
-      'This part finds open ground on each lot from aerial images, then tests if a 600 sq ft unit fits.',
-      'It also checks if AI on images does better than building outlines alone.',
+      'On a given lot in Philadelphia or Pittsburgh, can a backyard home go up, where, and how big?',
+      'Aerial images answer part of it: trees, open ground, paving and small buildings.',
+      'Lot lines, building outlines and zoning answer the rest, under three scenarios: today, the local bill and the state bill (bills are not law).',
+      <>
+        Full methods and results are on the class site:{' '}
+        <a className="font-semibold text-violet-700 underline-offset-2 hover:underline" href={`${QUARTO_URL}musa6950/docs/methods.html`}>methods</a>,{' '}
+        <a className="font-semibold text-violet-700 underline-offset-2 hover:underline" href={`${QUARTO_URL}musa6950/docs/results.html`}>results</a>.
+      </>,
     ],
     data: [
-      ['NAIP aerial images (USDA)', 'Red, green, blue, near-infrared', '2022', '0.6 m pixels. 173 sample boxes of 1 km'],
-      ['Chesapeake Bay land cover (USGS)', 'Training labels', '2022', '1 m. 43 PA counties'],
-      ['Microsoft building footprints', 'Building outlines', '2026', 'Polygons. ODbL'],
-      ['Philadelphia parcels', 'Lot lines', 'Current', 'Polygons'],
-      ['Cumberland County parcels (PASDA)', 'Lot lines', '2026', 'Polygons'],
-      ['USDA RUCA codes', 'Urban, suburban, rural', '2020', 'Tract'],
-      ['ACS 5-year, table B25024', 'Single-family homes', '2020-24', 'Tract'],
+      ['NAIP aerial images (USDA)', 'Red, green, blue, near-infrared', '2022', '0.6 m. 173 boxes of 1 km'],
+      ['Chesapeake Bay land cover', 'Training and test labels', '2022 epoch', '1 m. Test counties: Cumberland and Centre'],
+      ['University of Vermont city land cover', 'City labels, Philadelphia lot cover', '2018 (Phila.), 2019 (Pgh.)', '2 ft'],
+      ['PEMA orthophotos (PASDA)', 'Structure detector images', '2021 to 2023', '0.5 ft'],
+      ['City parcels and building footprints', 'Lot lines and buildings', '2026', 'Philadelphia and Pittsburgh'],
+      ['Zoning codes and bills', 'Rule files, three scenarios', 'Checked Nov 2026', 'Per lot'],
     ],
     methods: [
-      { title: 'Sample and labels', body: 'Pick 1 km boxes in urban, suburban and rural tracts. Group the 56 Chesapeake classes into 4: building, tree, open ground, other. Cumberland and Centre counties are held out for testing.' },
-      { title: 'Random Forest baseline', body: 'Classify each pixel from its 4 bands plus NDVI. This is the simple model to beat.' },
-      { title: 'U-Net', body: <>Train a U-Net with a pretrained ResNet-34 encoder on 384 x 384 crops to label every pixel. On the held-out counties it scores a mean IoU of {NUMBERS.unetMiou}, against {NUMBERS.rfMiou} for the Random Forest.</> },
-      { title: 'Pick single-family lots', body: 'Keep lots with one main house outline. Smaller outlines count as garages or sheds.' },
-      { title: 'Fit test', body: 'Take each lot, minus 5 ft from the lot lines and 10 ft around the house. A 20 x 30 ft spot has to fit in open ground, in either direction. Run it again with trees not allowed.' },
-      { title: 'Statewide', body: <>Fit rates from the pilot lots are applied to single-family homes in every tract, by urban, suburban and rural. That gives about {NUMBERS.lotsWithRoom} lots with room.</> },
-      { title: 'Other sizes', body: 'In the tool you can change the ADU. Its footprint is size divided by stories, and a lot has room if its largest open spot is at least that big.' },
+      { title: 'Labels', body: 'Chesapeake codes are grouped into 4 classes (other, building, tree, open), or 5 with hard surface split out. Cumberland and Centre counties are held out as the test counties.' },
+      { title: 'Baselines', body: <>A Random Forest on the four bands plus NDVI (mean IoU {NUMBERS.rfMiou}), and a first plain U-Net.</> },
+      { title: 'U-Net', body: <>A U-Net with a pretrained ResNet-34 encoder. Every variant lands near {NUMBERS.unetMiou} test mean IoU. Seeds, NDVI, Dice and more epochs barely move it. The error analysis says the labels are the limit.</> },
+      { title: 'The two cities', body: 'In Pittsburgh the model transfers without city training, about 0.70 on clean test pixels. A first fine-tune score of 0.719 came from test boxes that overlapped training boxes and is withdrawn. In Philadelphia the spring photos hide trees and lawns (tree IoU about 0.26), so the lot tool uses the city\'s 2018 land cover raster there.' },
+      { title: 'Structure detector', body: 'A YOLO model for garages, sheds, other outbuildings and pools on PEMA images. It is scored against first-pass labels that no one has checked, so its scores are agreement, not accuracy. It is not used in the lot records.' },
+      { title: 'Fit test', body: 'A vector test on the lot lines, building outlines and streets. The lot shrinks by the setbacks of the rules, the house and garages are cut out, and the largest rectangle that fits is the room for a unit. Land cover adds context and does not change the answer.' },
+      { title: 'Lot results', body: <>{NUMBERS.lotsPittsburgh} {NUMBERS.lotsPhiladelphia}</> },
+      { title: 'Not checked yet', body: 'No hand-labeled lot exists yet (0 of 250), so the fit answers have not been checked against a person looking at the lot.' },
     ],
-    figure: { src: figUnet, caption: 'A test box in Cumberland County: image, label, Random Forest, U-Net.', after: 2 },
+    figure: { src: figLots, caption: 'Twenty random Pittsburgh lots from the final build. Gray: house. Brown: garage. Green: buildable ground today. Blue: the suggested unit.', after: 6 },
   },
   '5500': {
     name: 'MUSA 5500',
@@ -199,7 +202,7 @@ function Credits() {
   return (
     <footer className="mt-14 space-y-1.5 border-t border-stone-200 pt-5 text-caption leading-relaxed text-slate-500">
       <p>
-        Map data © <a className="underline hover:text-slate-800" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors (ODbL). Basemap <a className="underline hover:text-slate-800" href="https://openfreemap.org/" target="_blank" rel="noreferrer">OpenFreeMap</a>. Search <a className="underline hover:text-slate-800" href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a> by komoot. Building outlines © Microsoft (ODbL). Parcels: City of Philadelphia (PWD), Cumberland County GIS. Map by <a className="underline hover:text-slate-800" href="https://maplibre.org/" target="_blank" rel="noreferrer">MapLibre</a>.
+        Map data © <a className="underline hover:text-slate-800" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors (ODbL). Basemap <a className="underline hover:text-slate-800" href="https://openfreemap.org/" target="_blank" rel="noreferrer">OpenFreeMap</a>. Search <a className="underline hover:text-slate-800" href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a> by komoot. Building outlines © Microsoft (ODbL). Parcels: City of Philadelphia, Allegheny County. Aerial imagery: PEMA, via PASDA. Map by <a className="underline hover:text-slate-800" href="https://maplibre.org/" target="_blank" rel="noreferrer">MapLibre</a>.
       </p>
       <p>AI use: Claude Code wrote the scripts, tool, docs, and notebook code at my request. I set the question, design, and checks.</p>
       <p className="flex flex-wrap items-center gap-x-3 gap-y-1">

@@ -12,12 +12,14 @@ Predictions run on the CPU so the GPU queue is left alone.
 
     python -m pipeline.vision.city_check philadelphia --runs ft_c5_philadelphia r34_c5_s0
 """
+
 from __future__ import annotations
 
 import argparse
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 
@@ -41,18 +43,27 @@ def raw_codes(city: str, box: str) -> np.ndarray:
     import rasterio
     from rasterio.warp import Resampling, reproject
 
-    with rasterio.open(naip_dir(city) / f"{box}.tif") as ref, rasterio.open(data.data_root() / CITIES[city].landcover) as lc:
+    with (
+        rasterio.open(naip_dir(city) / f"{box}.tif") as ref,
+        rasterio.open(data.data_root() / CITIES[city].landcover) as lc,
+    ):
         out = np.zeros((ref.height, ref.width), np.uint8)
-        reproject(rasterio.band(lc, 1), out, dst_transform=ref.transform, dst_crs=ref.crs,
-                  resampling=Resampling.nearest, dst_nodata=0)
+        reproject(
+            rasterio.band(lc, 1),
+            out,
+            dst_transform=ref.transform,
+            dst_crs=ref.crs,
+            resampling=Resampling.nearest,
+            dst_nodata=0,
+        )
     return out
 
 
-def label_checks(city: str, boxes: list[str]) -> dict:
+def label_checks(city: str, boxes: list[str]) -> dict[str, Any]:
     """NDVI by raw class, the burn-in effect, nodata share, and the label shift that best fits the photo."""
     sums, counts = np.zeros(8), np.zeros(8)
     burn = np.zeros((5, 5), np.int64)
-    shifts = {(dy, dx): [0, 0] for dy in range(-3, 4) for dx in range(-3, 4)}
+    shifts: dict[tuple[int, int], list[Any]] = {(dy, dx): [0, 0] for dy in range(-3, 4) for dx in range(-3, 4)}
     nodata = total = 0
     for b in boxes:
         img, lab = load_city_box(city, b)
@@ -74,17 +85,21 @@ def label_checks(city: str, boxes: list[str]) -> dict:
         green = v > 0.2
         veg = np.isin(raw, [1, 2])
         for (dy, dx), acc in shifts.items():
-            g = green[3 + dy:green.shape[0] - 3 + dy, 3 + dx:green.shape[1] - 3 + dx]
+            g = green[3 + dy : green.shape[0] - 3 + dy, 3 + dx : green.shape[1] - 3 + dx]
             t = veg[3:-3, 3:-3]
             acc[0] += (g & t).sum()
             acc[1] += (g | t).sum()
     iou_shift = {f"{dy},{dx}": round(a[0] / a[1], 4) for (dy, dx), a in shifts.items()}
-    best = max(iou_shift, key=iou_shift.get)
+    best = max(iou_shift, key=lambda s: iou_shift[s])
     return {
-        "ndvi_mean_by_raw_class": {UVM_NAMES[k]: round(float(sums[k] / counts[k]), 3) for k in range(1, 8) if counts[k]},
+        "ndvi_mean_by_raw_class": {
+            UVM_NAMES[k]: round(float(sums[k] / counts[k]), 3) for k in range(1, 8) if counts[k]
+        },
         "pixels_by_raw_class": {UVM_NAMES[k]: int(counts[k]) for k in range(1, 8)},
         "burn_in_changed_share": round(float((burn.sum() - np.trace(burn)) / burn.sum()), 4),
-        "burn_in_changed_from": {n: int(burn[i, 1]) for i, n in enumerate(["other", "building", "tree", "open", "hard"]) if i != 1},
+        "burn_in_changed_from": {
+            n: int(burn[i, 1]) for i, n in enumerate(["other", "building", "tree", "open", "hard"]) if i != 1
+        },
         "nodata_share": round(float(nodata / total), 4),
         "green_vs_veg_label_iou_by_shift": {"0,0": iou_shift["0,0"], "best": best, "best_iou": iou_shift[best]},
     }
@@ -105,17 +120,28 @@ def predict_boxes(city: str, run: str, boxes: list[str], tree_offset: float = 0.
                 bias = [0.0] * meta["n_classes"]
                 bias[2] = tree_offset
             img, _ = load_city_box(city, b)
-            np.save(f, predict_array(model, img, meta["mean"], meta["std"], "cpu", n_classes=meta["n_classes"],
-                                     ndvi=meta["ndvi"], bias=bias))
+            np.save(
+                f,
+                predict_array(
+                    model,
+                    img,
+                    meta["mean"],
+                    meta["std"],
+                    "cpu",
+                    n_classes=meta["n_classes"],
+                    ndvi=meta["ndvi"],
+                    bias=bias,
+                ),
+            )
         out[b] = np.load(f)
     return out
 
 
-def tree_by_patch(labs: dict, preds: dict) -> list[dict]:
+def tree_by_patch(labs: dict[str, Any], preds: dict[str, Any]) -> list[dict[str, Any]]:
     """Tree recall by label canopy patch size, precision by predicted patch size."""
     from scipy import ndimage
 
-    acc = np.zeros((len(PATCH_NAMES), 4), np.int64)       # tp_label, n_label, tp_pred, n_pred
+    acc = np.zeros((len(PATCH_NAMES), 4), np.int64)  # tp_label, n_label, tp_pred, n_pred
     for b, lab in labs.items():
         pred = preds[b]
         ok = lab != NODATA
@@ -128,38 +154,52 @@ def tree_by_patch(labs: dict, preds: dict) -> list[dict]:
                 sel = (binned[cc] == k) & (cc > 0)
                 acc[k, cols[0]] += (sel & hit).sum()
                 acc[k, cols[1]] += sel.sum()
-    return [{"patch": n, "label_pixels": int(a[1]), "recall": round(a[0] / max(1, a[1]), 3),
-             "pred_pixels": int(a[3]), "precision": round(a[2] / max(1, a[3]), 3)} for n, a in zip(PATCH_NAMES, acc)]
+    return [
+        {
+            "patch": n,
+            "label_pixels": int(a[1]),
+            "recall": round(a[0] / max(1, a[1]), 3),
+            "pred_pixels": int(a[3]),
+            "precision": round(a[2] / max(1, a[3]), 3),
+        }
+        for n, a in zip(PATCH_NAMES, acc, strict=True)
+    ]
 
 
-def shares(lab: np.ndarray, pred: np.ndarray, mask: np.ndarray) -> dict:
+def shares(lab: np.ndarray, pred: np.ndarray, mask: np.ndarray) -> dict[str, Any]:
     ok = mask & (lab != NODATA)
     n = max(1, ok.sum())
     grp = {"tree": [2], "open": [3], "vegetation": [2, 3], "impervious": [1, 4]}
     return {k: (float(np.isin(lab[ok], v).sum() / n), float(np.isin(pred[ok], v).sum() / n)) for k, v in grp.items()}
 
 
-def agreement(pairs: list[dict]) -> dict:
+def agreement(pairs: list[dict[str, Any]]) -> dict[str, Any]:
     """MAE in percentage points and Pearson r for each share."""
-    out = {}
+    out: dict[str, Any] = {}
     for k in ["tree", "open", "vegetation", "impervious"]:
         a = np.array([p[k][0] for p in pairs])
         b = np.array([p[k][1] for p in pairs])
         r = float(np.corrcoef(a, b)[0, 1]) if len(a) > 2 and a.std() > 0 and b.std() > 0 else float("nan")
-        out[k] = {"mae_pp": round(float(np.abs(a - b).mean() * 100), 2), "r": round(r, 3),
-                  "label_mean_pct": round(float(a.mean() * 100), 1), "pred_mean_pct": round(float(b.mean() * 100), 1)}
+        out[k] = {
+            "mae_pp": round(float(np.abs(a - b).mean() * 100), 2),
+            "r": round(r, 3),
+            "label_mean_pct": round(float(a.mean() * 100), 1),
+            "pred_mean_pct": round(float(b.mean() * 100), 1),
+        }
     out["n"] = len(pairs)
     return out
 
 
-def lot_pairs(city: str, labs: dict, preds: dict) -> list[dict]:
+def lot_pairs(city: str, labs: dict[str, Any], preds: dict[str, Any]) -> list[dict[str, Any]]:
     """Per-lot shares for lots wholly inside a box, with their housing type."""
     import geopandas as gpd
     import rasterio
     from rasterio.features import rasterize
     from shapely.geometry import box as sbox
 
-    lots = gpd.read_parquet(data.data_root() / "processed" / city / "lots.parquet", columns=["lot_id", "housing_type", "geometry"])
+    lots = gpd.read_parquet(
+        data.data_root() / "processed" / city / "lots.parquet", columns=["lot_id", "housing_type", "geometry"]
+    )
     rows = []
     for b, lab in labs.items():
         with rasterio.open(naip_dir(city) / f"{b}.tif") as s:
@@ -169,8 +209,10 @@ def lot_pairs(city: str, labs: dict, preds: dict) -> list[dict]:
         sub = sub[sub.within(frame)]
         if sub.empty:
             continue
-        lr = rasterize(((g, i + 1) for i, g in enumerate(sub.geometry)), out_shape=lab.shape, transform=tr, fill=0, dtype="int32")
-        for i, (lot_id, ht) in enumerate(zip(sub.lot_id, sub.housing_type)):
+        lr = rasterize(
+            ((g, i + 1) for i, g in enumerate(sub.geometry)), out_shape=lab.shape, transform=tr, fill=0, dtype="int32"
+        )
+        for i, (lot_id, ht) in enumerate(zip(sub.lot_id, sub.housing_type, strict=True)):
             m = lr == i + 1
             if m.sum() < 20 or (lab[m] == NODATA).mean() > 0.1:
                 continue
@@ -178,7 +220,7 @@ def lot_pairs(city: str, labs: dict, preds: dict) -> list[dict]:
     return rows
 
 
-def veg_iou(labs: dict, masks: dict) -> float:
+def veg_iou(labs: dict[str, Any], masks: dict[str, Any]) -> float:
     inter = union = 0
     for b, lab in labs.items():
         ok = lab != NODATA
@@ -188,19 +230,22 @@ def veg_iou(labs: dict, masks: dict) -> float:
     return round(float(inter / union), 4)
 
 
-def ndvi_baseline(city: str, val: list[str], test: list[str]) -> dict:
+def ndvi_baseline(city: str, val: list[str], test: list[str]) -> dict[str, Any]:
     """Vegetation = NDVI above a threshold picked on the validation boxes."""
     labs_v = {b: load_city_box(city, b)[1] for b in val}
     nd_v = {b: ndvi(load_city_box(city, b)[0]) for b in val}
     grid = np.round(np.arange(-0.1, 0.45, 0.05), 2)
     scores = {float(t): veg_iou(labs_v, {b: nd_v[b] > t for b in val}) for t in grid}
-    t = max(scores, key=scores.get)
+    t = max(scores, key=lambda s: scores[s])
     labs_t = {b: load_city_box(city, b)[1] for b in test}
-    return {"threshold": t, "val_iou": scores[t],
-            "test_iou": veg_iou(labs_t, {b: ndvi(load_city_box(city, b)[0]) > t for b in test})}
+    return {
+        "threshold": t,
+        "val_iou": scores[t],
+        "test_iou": veg_iou(labs_t, {b: ndvi(load_city_box(city, b)[0]) > t for b in test}),
+    }
 
 
-def chips(city: str, labs: dict, preds: dict, path: Path, n: int = 10) -> None:
+def chips(city: str, labs: dict[str, Any], preds: dict[str, Any], path: Path, n: int = 10) -> None:
     import matplotlib
 
     matplotlib.use("Agg")
@@ -210,7 +255,7 @@ def chips(city: str, labs: dict, preds: dict, path: Path, n: int = 10) -> None:
     cmap = ListedColormap(["#3b6fd1", "#d7301f", "#1a9850", "#fee08b", "#9e9e9e"])
     keys = list(labs)[:n]
     fig, axes = plt.subplots(len(keys), 3, figsize=(6.6, 2.2 * len(keys)))
-    for row, b in zip(axes, keys):
+    for row, b in zip(axes, keys, strict=True):
         img, _ = load_city_box(city, b)
         sl = (slice(300, 600), slice(300, 600))
         rgb = np.moveaxis(img[:3], 0, -1)[sl].astype(float)
@@ -219,20 +264,27 @@ def chips(city: str, labs: dict, preds: dict, path: Path, n: int = 10) -> None:
         row[1].imshow(np.ma.masked_equal(labs[b][sl], NODATA), cmap=cmap, vmin=0, vmax=4, interpolation="nearest")
         row[2].imshow(preds[b][sl], cmap=cmap, vmin=0, vmax=4, interpolation="nearest")
         row[0].set_ylabel(b, fontsize=7)
-        for a, t in zip(row, ["NAIP 2022 (Apr-May)", "label 2018", "model"]):
-            a.set_xticks([]); a.set_yticks([]); a.set_title(t, fontsize=7)
+        for a, t in zip(row, ["NAIP 2022 (Apr-May)", "label 2018", "model"], strict=True):
+            a.set_xticks([])
+            a.set_yticks([])
+            a.set_title(t, fontsize=7)
     plt.tight_layout()
     plt.savefig(path, dpi=60)
     plt.close()
 
 
-def run(city: str, runs: list[str]) -> dict:
+def run(city: str, runs: list[str]) -> dict[str, Any]:
     out_dir = city_dir(city) / "diagnosis"
     out_dir.mkdir(parents=True, exist_ok=True)
     test, val, train = (city_boxes(city, r) for r in ["test", "val", "train"])
     labs = {b: load_city_box(city, b)[1] for b in test}
-    res: dict = {"city": city, "labels": label_checks(city, test + val),
-                 "tree_share_by_role": {}, "ndvi_baseline": ndvi_baseline(city, val, test), "models": {}}
+    res: dict[str, Any] = {
+        "city": city,
+        "labels": label_checks(city, test + val),
+        "tree_share_by_role": {},
+        "ndvi_baseline": ndvi_baseline(city, val, test),
+        "models": {},
+    }
     for role, bs in [("train", train), ("val", val), ("test", test)]:
         c = np.zeros(5, np.int64)
         for b in bs:
@@ -241,7 +293,7 @@ def run(city: str, runs: list[str]) -> dict:
         res["tree_share_by_role"][role] = round(float(c[2] / c.sum()), 4)
     for r in runs:
         preds = predict_boxes(city, r, test)
-        cm = sum(confusion(preds[b], labs[b], 5) for b in test)
+        cm = np.asarray(sum(confusion(preds[b], labs[b], 5) for b in test))
         iou = iou_per_class(cm)
         box_pairs = [shares(labs[b], preds[b], np.ones_like(labs[b], bool)) for b in test]
         lots = lot_pairs(city, labs, preds)
@@ -251,11 +303,12 @@ def run(city: str, runs: list[str]) -> dict:
             if len(sel) >= 10:
                 by_type[ht] = agreement(sel)
         res["models"][r] = {
-            "iou": dict(zip(["other", "building", "tree", "open", "hard"], iou.round(4).tolist())),
+            "iou": dict(zip(["other", "building", "tree", "open", "hard"], iou.round(4).tolist(), strict=True)),
             "vegetation_iou": veg_iou(labs, {b: np.isin(preds[b], [2, 3]) for b in test}),
             "tree_by_patch": tree_by_patch(labs, preds),
             "box_tree_share": agreement(box_pairs),
-            "lots_all": agreement(lots), "lots_by_type": by_type,
+            "lots_all": agreement(lots),
+            "lots_by_type": by_type,
         }
         chips(city, labs, preds, out_dir / f"chips_{r}.png")
     (out_dir / "diagnosis.json").write_text(json.dumps(res, indent=1))

@@ -1,4 +1,5 @@
 """Checks the ADU rule files (shared/rules) and the resolver (pipeline/rules.py). Runs with only pytest."""
+
 import copy
 import json
 import sys
@@ -12,13 +13,29 @@ from pipeline import rules  # noqa: E402
 FILES = ["philadelphia", "pittsburgh", "bill250042", "hb2186", "sb1346", "default"]
 SCENARIOS = ["today", "local_reform", "state_reform"]
 
-RSA5_D2 = {"zoning_district": "RSA-5", "overlays": [], "council_district": 2, "building_type": "detached",
-           "lot_sqft": 2000, "house_sqft": 1600, "historic": False, "has_alley": False,
-           "has_accessory_building": False}
+RSA5_D2 = {
+    "zoning_district": "RSA-5",
+    "overlays": [],
+    "council_district": 2,
+    "building_type": "detached",
+    "lot_sqft": 2000,
+    "house_sqft": 1600,
+    "historic": False,
+    "has_alley": False,
+    "has_accessory_building": False,
+}
 ROWHOUSE = {**RSA5_D2, "building_type": "rowhouse", "lot_sqft": 900}
-PGH_LOT = {"zoning_district": "R1D-L", "overlays": [], "council_district": None, "building_type": "detached",
-           "lot_sqft": 4500, "house_sqft": 1400, "historic": False, "has_alley": True,
-           "has_accessory_building": True}
+PGH_LOT = {
+    "zoning_district": "R1D-L",
+    "overlays": [],
+    "council_district": None,
+    "building_type": "detached",
+    "lot_sqft": 4500,
+    "house_sqft": 1400,
+    "historic": False,
+    "has_alley": True,
+    "has_accessory_building": True,
+}
 
 
 def raw(name):
@@ -67,13 +84,38 @@ def test_output_keys_exact():
     out = rules.resolve("philadelphia", "today", RSA5_D2)
     assert list(out) == rules.OUTPUT_KEYS
     # The first 21 keys are the original contract. New keys are only added after them.
-    assert set(rules.OUTPUT_KEYS[:21]) == {"allowed", "approval_path", "reasons", "types_allowed", "max_adus", "max_size_sqft",
-                        "min_size_sqft", "max_share_of_house", "min_lot_sqft", "max_height_ft",
-                        "setback_front_ft", "setback_side_ft", "setback_rear_ft", "setback_rear_alley_ft",
-                        "separation_ft", "max_building_coverage", "max_impervious", "owner_occupancy",
-                        "parking_spaces", "citations", "assumed"}
-    assert rules.OUTPUT_KEYS[21:] == ["approval_by_type", "max_height_by_type", "setback_rear_effective_ft",
-                                      "rear_setback_rule", "state_limits", "fire_separation", "historic_path"]
+    assert set(rules.OUTPUT_KEYS[:21]) == {
+        "allowed",
+        "approval_path",
+        "reasons",
+        "types_allowed",
+        "max_adus",
+        "max_size_sqft",
+        "min_size_sqft",
+        "max_share_of_house",
+        "min_lot_sqft",
+        "max_height_ft",
+        "setback_front_ft",
+        "setback_side_ft",
+        "setback_rear_ft",
+        "setback_rear_alley_ft",
+        "separation_ft",
+        "max_building_coverage",
+        "max_impervious",
+        "owner_occupancy",
+        "parking_spaces",
+        "citations",
+        "assumed",
+    }
+    assert rules.OUTPUT_KEYS[21:] == [
+        "approval_by_type",
+        "max_height_by_type",
+        "setback_rear_effective_ft",
+        "rear_setback_rule",
+        "state_limits",
+        "fire_separation",
+        "historic_path",
+    ]
 
 
 def test_philadelphia_rowhouse_today_not_allowed():
@@ -138,7 +180,11 @@ def test_philadelphia_state_reform_opens_detached_new():
     big = rules.resolve("philadelphia", "state_reform", {**RSA5_D2, "house_sqft": 2400})
     assert big["max_size_sqft"] == 850
     assert out["state_limits"]["max_size_sqft"]["mode"] == "at_least"
-    assert out["state_limits"]["setback_side_ft"] == {**out["state_limits"]["setback_side_ft"], "mode": "at_most", "value": 4}
+    assert out["state_limits"]["setback_side_ft"] == {
+        **out["state_limits"]["setback_side_ft"],
+        "mode": "at_most",
+        "value": 4,
+    }
 
 
 def test_philadelphia_rowhouse_state_and_local_reform():
@@ -215,14 +261,33 @@ def test_bad_scenario_and_place():
 
 def test_cli_validate_and_resolve(capsys):
     assert rules.main(["validate"]) == 0
-    assert rules.main(["resolve", "--place", "philadelphia", "--scenario", "today", "--district", "RSA-5",
-                       "--building-type", "detached", "--council", "2", "--lot-sqft", "2000"]) == 0
+    assert (
+        rules.main(
+            [
+                "resolve",
+                "--place",
+                "philadelphia",
+                "--scenario",
+                "today",
+                "--district",
+                "RSA-5",
+                "--building-type",
+                "detached",
+                "--council",
+                "2",
+                "--lot-sqft",
+                "2000",
+            ]
+        )
+        == 0
+    )
     printed = capsys.readouterr().out
-    out = json.loads(printed[printed.index("{"):])
+    out = json.loads(printed[printed.index("{") :])
     assert out["allowed"] is True
 
 
 # ---- review cases R1 to R11 and the lot builder findings
+
 
 def test_r1_six_overlay_bars_all():
     out = rules.resolve("philadelphia", "today", {**RSA5_D2, "overlays": ["/SIX"]})
@@ -248,7 +313,17 @@ def test_r3_council_ten_open_outside_wards():
 
 
 def test_council_districts_map_to_overlays():
-    for council, barred in [(1, False), (2, False), (3, False), (7, False), (4, True), (5, True), (8, True), (9, True), (6, True)]:
+    for council, barred in [
+        (1, False),
+        (2, False),
+        (3, False),
+        (7, False),
+        (4, True),
+        (5, True),
+        (8, True),
+        (9, True),
+        (6, True),
+    ]:
         lot = {**RSA5_D2, "overlays": None, "council_district": council, "ward": 1}
         assert rules.resolve("philadelphia", "today", lot)["allowed"] is (not barred), council
     # Districts 4, 5, 8, 9 exempt historic buildings. District 6 does not.
@@ -324,11 +399,17 @@ def test_hb2186_sale_apart_is_a_town_option():
 
 def test_fire_separation_keys():
     out = rules.resolve("pittsburgh", "today", PGH_LOT)
-    assert out["fire_separation"] == {"rated_wall_below_ft": 5, "no_openings_below_ft": 3, "sprinklered_unrated_min_ft": 3}
+    assert out["fire_separation"] == {
+        "rated_wall_below_ft": 5,
+        "no_openings_below_ft": 3,
+        "sprinklered_unrated_min_ft": 3,
+    }
     assert out["separation_ft"] == 10 and "separation_ft" in out["assumed"]
 
 
-@pytest.mark.parametrize("district,front,side", [("LNC", 0, 0), ("NDO", 0, 0), ("GI", 0, 10), ("H", 0, 0), ("P", 30, 5), ("R-MU", 0, 5)])
+@pytest.mark.parametrize(
+    "district,front,side", [("LNC", 0, 0), ("NDO", 0, 0), ("GI", 0, 10), ("H", 0, 0), ("P", 30, 5), ("R-MU", 0, 5)]
+)
 def test_pittsburgh_other_districts(district, front, side):
     out = rules.resolve("pittsburgh", "today", {**PGH_LOT, "zoning_district": district})
     assert out["setback_front_ft"] == front

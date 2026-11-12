@@ -2,250 +2,243 @@
 title: "MUSA 6950 Results"
 ---
 
-All numbers below come from the executed notebooks in `musa6950/notebooks/`.
-Hand labels are not made yet, so the fit rule has no hand-label check so far.
+Short version:
 
-## Data check
+- Every pretrained U-Net variant lands near 0.70 test mIoU on the held-out counties. A goal of 0.72 was not reached. No run reached building IoU 0.65. The error analysis says the labels are the limit.
+- In Pittsburgh the model transfers well without city training: about 0.70 on clean test pixels. City fine-tuning did not help.
+- In Philadelphia the model cannot see trees or lawns in the 2022 spring photos (tree IoU about 0.26). The lot tool uses the city's 2018 land cover raster there instead.
+- The structure detector is a first pass. Its scores are agreement with unchecked labels, not accuracy.
+- The lot tool's fit test is a vector test on lot lines, buildings and streets with rule-based setbacks. Land cover adds context.
+- No hand-labeled lot exists yet, so the fit answers have not been checked against a person looking at the lot.
 
-![NAIP image next to the Chesapeake label, 3 train boxes and 1 test box](figures/01_image_vs_label.png)
+## 1. Model comparison on the held-out counties
 
-- 177 boxes were picked. 4 on the New York line have no 2022 PA image. 173 are used: 146 train, 27 test
-- Labels sit on the image grid (same transform and size)
-- The test counties have less tree and more open ground than train
+Test: every labeled pixel of the 27 boxes in Cumberland and Centre counties, 109,183,195 pixels. Every run is scored on the same pixels with the same code. "TTA" averages 8 flips and turns.
 
-| Share of labeled pixels | other | building | tree | open |
-|---|---|---|---|---|
-| Train (146 boxes) | 0.143 | 0.056 | 0.410 | 0.391 |
-| Test, Cumberland + Centre (27 boxes) | 0.147 | 0.068 | 0.273 | 0.512 |
+<!-- source: ~/musa-drive/models/<run>/test_scores.json, test_scores_single.json, result.json; ~/musa-drive/models/external/unet_v2_r34/test_scores.json -->
 
-![Class shares, train vs test](figures/01_class_shares.png)
+| Run | Test mIoU, TTA | Single pass | Other | Building | Tree | Open | Edge band left out | Best val mIoU | Minutes |
+|---|---|---|---|---|---|---|---|---|---|
+| `r34ndvi_c4_s1` (NDVI band) | 0.7005 | 0.6952 | 0.6525 | 0.6427 | 0.7114 | 0.7952 | 0.7668 | 0.7339 | 48.8 |
+| `r34_c4_s1` (base) | 0.699 | 0.6939 | 0.6518 | 0.6404 | 0.71 | 0.7936 | 0.7648 | 0.7348 | 51.1 |
+| `r34_c4_s1_lowlr` (4 more epochs) | 0.6989 | not run | 0.654 | 0.6451 | 0.7048 | 0.7915 | 0.7652 | 0.7366 | 13.9 |
+| `r34_c4_s2` (seed 2) | 0.6987 | 0.6953 | 0.6516 | 0.6356 | 0.7112 | 0.7962 | 0.7646 | 0.734 | 53.3 |
+| `unet_v2_r34` (earlier published model) | 0.6985 | not run | 0.6501 | 0.6449 | 0.706 | 0.7929 | 0.7643 | not in file | not in file |
+| `r34ce_c4_s1` (no Dice) | 0.6959 | 0.6914 | 0.6487 | 0.6303 | 0.711 | 0.7934 | 0.7612 | 0.7296 | 48.7 |
+| `r34_c5_s0` merged to 4 classes | 0.6957 | not run | 0.6469 | 0.638 | 0.7075 | 0.7905 | 0.7611 | 0.7121 (5 classes) | 54.8 |
+| `plain_c4_s1` (no pretrained encoder) | 0.683 | 0.6793 | 0.6372 | 0.6091 | 0.6972 | 0.7886 | 0.7452 | 0.7154 | 94.2 |
 
-## Model accuracy
+Course baselines from the notebooks, same test pixels:
 
-Test = every labeled pixel in the 27 test boxes (109,183,195 pixels). All models are scored on the same pixels. The test counties were scored once, after every choice was made on validation.
+<!-- source: musa6950/notebooks/02_random_forest.ipynb, musa6950/notebooks/03_unet.ipynb -->
 
-Two U-Nets:
-- v1: the first run. Plain U-Net, 7.8 M parameters, 10 epochs, 45 min
-- v2: the final model. U-Net with an ImageNet ResNet-34 encoder, 24.4 M parameters, 14 epochs, 95 min. Predictions averaged over 8 flips and turns, plus a small tree offset set on validation
-
-| IoU on test counties | Random Forest | U-Net v1 | U-Net v2 | Gain v1 to v2 |
-|---|---|---|---|---|
-| other | 0.321 | 0.601 | 0.650 | +0.049 |
-| building | 0.267 | 0.543 | 0.645 | +0.102 |
-| tree | 0.368 | 0.672 | 0.706 | +0.034 |
-| open ground | 0.485 | 0.775 | 0.793 | +0.018 |
-| mean IoU | 0.360 | 0.648 | 0.699 | +0.051 |
-| pixel accuracy | 0.571 | 0.824 | 0.847 | +0.024 |
-
-| Test, U-Net v2 | other | building | tree | open |
-|---|---|---|---|---|
-| precision | 0.771 | 0.723 | 0.838 | 0.896 |
-| recall | 0.806 | 0.857 | 0.817 | 0.874 |
-| precision, v1 | 0.741 | 0.621 | 0.837 | 0.877 |
-| recall, v1 | 0.761 | 0.812 | 0.773 | 0.870 |
-
-| Mean IoU by group (test) | Random Forest | U-Net v1 | U-Net v2 |
-|---|---|---|---|
-| urban | 0.322 | 0.588 | 0.644 |
-| suburban | 0.358 | 0.681 | 0.732 |
-| rural | 0.388 | 0.672 | 0.718 |
-
-- Random Forest: 290,219 training pixels (500 per class per box), R, G, B, NIR, NDVI. NDVI is the top feature (0.275)
-- The biggest gain is buildings: +0.102 IoU. Fewer roofs are mixed up with paving. 7.4% of building pixels are called other (12.3% in v1)
-- Every group gains about 0.05. Urban boxes still score lowest (0.644)
-- Main mix-up left: 13.0% of tree pixels are called open ground (16.6% in v1), and 7.2% of open ground is called tree
-- In Assignment 6 bare soil got 0 IoU. Here it is inside "open ground", which scores best
-
-What helped (validation, 24 boxes in 7 held-back counties, every pixel):
-
-| Run | Val mIoU at epoch 3 | Best val mIoU | Epochs | Minutes |
-|---|---|---|---|---|
-| v1 plain U-Net, old recipe | | 0.689 | 10 | 45 |
-| plain U-Net, new recipe | 0.669 | 0.669 | 3 | 22 |
-| ResNet-34, CE + Dice, new recipe | 0.711 | 0.729 | 9 | 44 |
-| same + NDVI as a 5th band | 0.686 | 0.704 | 3 | 27 |
-| same, cross entropy only | 0.705 | 0.709 | 5 | 23 |
-| final: ResNet-34, 16 epoch schedule | 0.707 | 0.736 | 14 | 95 |
-| final + 8 flips and turns | | 0.740 | | |
-| final + flips + tree offset 0.5 | | 0.742 | | |
-
-- New recipe = random 384 px crops from whole boxes, 1 in 3 centered on a building, flips, 90 degree turns, brightness and contrast jitter, AdamW with warmup and cosine decay
-- Short runs were cut by a time cap, so they are compared at epoch 3, where the learning rate is the same
-- Pretrained encoder: +0.04 at epoch 3 (0.711 vs 0.669 for a plain U-Net with the same recipe). The largest single gain
-- Longer training: +0.007 (0.729 to 0.736). Validation was flat from epoch 12 on
-- Dice loss: +0.006 at epoch 3, +0.014 at epoch 5. Kept
-- NDVI: -0.024 at epoch 3. Dropped. The network already gets R and NIR, so NDVI adds little
-- 8 flips and turns at prediction: +0.004. Kept
-- Tree offset: +0.002 on validation, and the share of pixels called tree goes from 94% to 100% of the label share. Kept
-  - Why: the first test run of v2 (mIoU 0.692, no offset) looked fine, but on the Cumberland check lots in notebook 05 it called much less tree than the label (median 56 vs 159 m2 per lot). That made `fits_keep_trees` too high
-  - The offset (0.5 added to the tree log chance) was picked on validation only. The test was then scored once more with it
-- The old v1 score of 0.682 was on 256 px tiles. On whole validation boxes it is 0.689, the number used here
-- Total training time for all runs: about 3.5 hours on a Mac (MPS), with one 38 minute stall in the final run
-
-![U-Net v2 training curve](figures/03_training_curve.png)
-
-![Random Forest confusion matrix](figures/02_rf_confusion.png)
-
-![U-Net confusion matrices, v1 and v2](figures/03_unet_confusion.png)
-
-![Test box in Cumberland: image, label, Random Forest, U-Net v1, U-Net v2](figures/03_example_prediction.png)
-
-- The Random Forest is speckled pixel by pixel. The U-Nets give clean shapes
-- On this farm box v1 and v2 look alike. Both find a paved pad (bottom right) that the label does not have. The label and the image differ in date here
-- In the urban figure below, v2 gives whole large roofs where v1 breaks them into pieces
-
-Test boxes per group, the median box and the worst box (image, label, v1, v2, v2 errors in red):
-
-![Urban test boxes](figures/03_test_urban.png)
-
-![Suburban test boxes](figures/03_test_suburban.png)
-
-![Rural test boxes](figures/03_test_rural.png)
-
-### Leakage check
-
-- No test county (Cumberland, Centre) is in train or validation. No validation county is in train
-- No two boxes of different roles touch on the ground (checked on the real image extents)
-- Two pairs of boxes overlap inside one role: two train boxes in Dauphin (0.15 km2), and two Cumberland test boxes (0.09 km2). The test pair only counts about 0.2% of test pixels twice. It is not leakage
-
-### How high can it go?
-
-The Chesapeake label is not perfect, so 1.0 is out of reach. Checks on the test boxes:
-- Edges: the label is 1 m, put on the 0.6 m grid. 9.9% of test pixels sit in a 1 pixel band along a label edge. 32.3% of v2 errors are in that band
-- Secondary score, edge band left out: mIoU 0.764 (v1: 0.703). This is not the main score. It shows how much is edge noise
-- Registration: moving the prediction 2 pixels up and 1 left scores 0.708 instead of 0.699. So the label and the image are off by about 1 m in places. That error can not be learned away
-- Dates: some test images do not match the label. The worst box (Centre, mIoU 0.51) was flown in fall, and a clearing the label calls tree is cut in the image. In Cumberland a new paved pad is in the image but not in the label
-- Box scores run from 0.51 to 0.77 (median 0.66)
-- Tree vs open ground is the biggest error left. The label splits them partly by height (from lidar), which a flat image can not always see
-
-Realistic ceiling: about 0.75-0.78 mIoU against this label on these counties. Edge noise alone is worth about 0.07 (0.764 with the edge band out), and the 1 m offset and image dates cost a bit more. Validation, in other counties, tops out at 0.742. v2 at 0.699 has closed about 40% of the gap from v1 to that ceiling. More gains would need better labels or images from the same date, not a bigger model.
-
-## Garages and sheds
-
-- Outline method only. YOLO is not done (no shed labels yet)
-- Single-family lots picked in notebook 04:
-  - Philadelphia: 26,270 lots (detached house type, one main outline)
-  - Cumberland: 57,664 lots (300-20,000 m2, one main outline)
-
-| | Philadelphia | Cumberland |
-|---|---|---|
-| Median lot (m2) | 637 | 1,425 |
-| Median house outline (m2) | 141 | 187 |
-| Lots with a small outline (under 60 m2) | 8.2% | 8.8% |
-| Small outlines found | 2,214 | 5,320 |
-
-![Outline sizes](figures/04_outline_sizes.png)
-
-- Under 9% of lots have a garage or shed outline. That looks low. Microsoft outlines likely miss many small sheds, which is what YOLO was meant to test
-
-Is the outline method good enough? Check in notebook 05, Cumberland test boxes, where the Chesapeake label has its own building class:
-- 1,143 labeled building patches of 5-60 m2 sit in a backyard (median 18.4 m2)
-- Only 33.4% of them touch a Microsoft outline. So the outlines miss about 2 in 3 small structures
-- The U-Net calls at least half of the patch building for 35.5% of them. Of the patches with no outline, it catches 13.3%
-- 57.7% are missed by both. Most are small. A 10-20 m2 shed is only 30-60 NAIP pixels
-- The fit test only allows open ground (and trees). So a shed the U-Net sees already blocks the spot, outline or not. That is the cheap win, and it is already in the rule. `yard_bldg_m2` in `6950_lots_pilot_full.csv` gives the U-Net building area left in each backyard
-- Missed sheds still make the fit rule a bit too generous
-
-What YOLO would need: about 300 sheds and garages drawn by hand on NAIP in LabelMe, spread over urban, suburban, and rural lots, plus lots with no shed so it learns to say no. The objects are tiny at 0.6 m, so recall would be the hard part. Ultralytics is AGPL, so it would stay in notebook 04 only. With no hand labels yet, it is not done.
-
-## Room for an ADU
-
-Rule: lot minus 5 ft from lot lines, minus 10 ft around the house, minus other outlines. Then a 20 x 30 ft spot (10 x 15 pixels), both rotations. The land cover is U-Net v2.
-
-![Lots in a Cumberland test box, colored by the U-Net rule](figures/05_lot_example.png)
-
-| Pilot county | Lots | Fits (trees may be cut) | Fits keeping trees | Outline only |
-|---|---|---|---|---|
-| Philadelphia | 26,270 | 48.7% | 22.3% | 57.4% |
-| Cumberland | 57,664 | 87.2% | 69.5% | 90.6% |
-
-![Fit rates by rule](figures/05_fit_rates.png)
-
-- Median backyard left after setbacks: 223 m2 in Philadelphia, 797 m2 in Cumberland
-- Outline-only says yes and U-Net says no on 2,292 Philadelphia lots and 1,959 Cumberland lots. These are yards covered by driveways, patios, or pools. The U-Net never says yes when outline-only says no
-- Trees matter most in Philadelphia: keeping trees cuts the fit rate by more than half
-
-Check against real labels (not hand labels). 3,030 Cumberland lots sit inside test boxes, where the Chesapeake label exists. The rule is run with the label map and with the U-Net map:
-
-| Label map = truth | Share yes (label) | Share yes (model) | Precision | Recall | Agreement |
+| Model | Other | Building | Tree | Open | mIoU |
 |---|---|---|---|---|---|
-| fits, U-Net v2 | 0.646 | 0.641 | 0.973 | 0.966 | 0.961 |
-| fits keeping trees, U-Net v2 | 0.419 | 0.464 | 0.807 | 0.895 | 0.867 |
-| fits, U-Net v1 (old) | 0.646 | 0.621 | 0.980 | 0.942 | 0.950 |
-| fits keeping trees, U-Net v1 (old) | 0.419 | 0.409 | 0.835 | 0.816 | 0.855 |
-| fits, outline only | 0.646 | 0.728 | 0.888 | 1.000 | 0.918 |
+| Random Forest, pixel features with NDVI | 0.3211 | 0.2666 | 0.3679 | 0.4853 | 0.3602 |
+| First U-Net (v1), plain, 10 epochs | | | | | 0.648 |
 
-- The v2 map gives the same answer as the label map on 96.1% of lots (v1: 95.0%). Keeping trees is harder (86.7%, v1: 85.5%)
-- Outline only over-counts: it says yes on 72.8% of lots vs 64.6% with the label map
-- Open ground per lot: label vs v2 median 287 vs 290 m2, correlation 0.96 (v1: 258 m2)
-- Tree area per lot: median 159 vs 92 m2, correlation 0.94 (v1: 106 m2). Both models call less tree in yards than the label. Yard trees are often small or hang over lawns and roofs, which is hard to see from above
-- So `fits_keep_trees` is too high: 46.4% yes vs 41.9% with the label. The v2 tree offset (notebook 03) shrinks this gap but does not close it. Without the offset it was 50.8%
-- This check is only Cumberland and only tests the land cover step. Hand labels would also test the rule itself
+The 5-class run on its own 5 classes:
 
-### Largest footprint that fits
+<!-- source: ~/musa-drive/models/r34_c5_s0/test_scores.json -->
 
-- `max_fit_sqft` = largest footprint (100 to 2,000 sq ft, steps of 50) that fits as a square, 2:3, or 1:2 spot
-- Median: 500 sq ft in Philadelphia, 2,000 (the top of the ladder) in Cumberland. Keeping trees: 200 and 1,100
-- `fits` and `max_fit_sqft >= 600` agree on 98.2% of lots (keeping trees: 97.9%). The target was 99%
-  - 1,283 lots fit the 20 x 30 ft rule but no 600 sq ft shape on the ladder. 244 lots are the other way
-  - Why: the 20 x 30 ft rule rounds to 10 x 15 pixels (6.0 x 9.0 m, a bit under 600 sq ft). The ladder rounds up, so 600 sq ft at 2:3 is 11 x 16 pixels (6.6 x 9.6 m)
-- Map layers for the tool (EPSG:4326):
-  - `data/processed/6950_lot_open.gpkg`, layer `open`: 77,513 `open` and 65,997 `tree` shapes. 430 MB
-  - `data/processed/6950_lot_spot.gpkg`, layer `spot`: 79,348 `max` and 62,038 `base600` rectangles. 33 MB
-  - The spot is the place that fits farthest from the house center. On open ground alone if it fits there, else on open ground + trees
-
-## Statewide
-
-Fit rate by group from the pilot lots. Range = 95% bootstrap, resampling tracts 1,000 times.
-
-| Group | Pilot lots | Pilot tracts | Fit rate (range) | Keep trees rate (range) | Tree cut per fitting lot (m2) |
-|---|---|---|---|---|---|
-| Urban (RUCA 1) | 70,581 | 342 | 0.719 (0.671-0.764) | 0.494 (0.432-0.551) | 10.3 |
-| Suburban (RUCA 2-3) | 9,826 | 11 | 0.966 (0.934-0.990) | 0.873 (0.815-0.931) | 3.2 |
-| Rural (RUCA 4-10) | 3,527 | 4 | 0.800 (0.518-0.928) | 0.719 (0.376-0.870) | 2.8 |
-
-- Urban = 26,270 Philadelphia lots + 44,311 Cumberland urban lots. Philadelphia alone is 0.487, Cumberland urban is 0.857
-- Suburban and rural come only from Cumberland, from 11 and 4 tracts. The rural range is wide for that reason
-
-Applied to ACS 2020-24 single-family detached homes in all 3,445 PA tracts:
-
-| | Single-family homes | Lots with room | Range | Lots with room, keep trees | Tree canopy cut (m2) |
-|---|---|---|---|---|---|
-| Urban | 1,858,258 | 1,336,641 | 1,246,978-1,419,250 | 917,162 | 13,800,605 |
-| Suburban | 646,067 | 623,836 | 603,107-639,367 | 564,335 | 1,995,117 |
-| Rural | 783,142 | 626,160 | 405,305-726,515 | 563,105 | 1,777,454 |
-| Pennsylvania | 3,287,467 | 2,586,637 | 2,255,390-2,785,132 | 2,044,602 | 17,573,176 |
-
-- About 2.59 million single-family lots have room for a 20 x 30 ft ADU by this rule (v1: 2.55 million). About 2.04 million without cutting trees (v1: 1.93 million)
-- If every fitting lot built one, about 17.57 km2 (4,342 acres) of tree canopy would be cut (v1: 18.65 km2)
-- The keep-trees count is likely high, since the U-Net calls less yard tree than the label (see the check above)
-- Most of the tree loss is in urban tracts, where yards are small and the spot often needs trees cut
-- This is room, not demand. Zoning, slope, septic, and owner choice are not in the rule
-
-![Lots with room per tract](figures/06_lots_fit_map.png)
-
-Fit curves: share of pilot lots where a footprint of each size fits (`data/processed/fit_curves.csv`, range = same tract bootstrap):
-
-| Footprint (sq ft) | Urban | Suburban | Rural | Urban, keep trees | Suburban, keep trees | Rural, keep trees |
+| `r34_c5_s0` | Other | Building | Tree | Open | Hard | mIoU |
 |---|---|---|---|---|---|---|
-| 400 | 0.784 | 0.976 | 0.844 | 0.574 | 0.897 | 0.773 |
-| 600 | 0.705 | 0.965 | 0.791 | 0.479 | 0.869 | 0.709 |
-| 800 | 0.625 | 0.949 | 0.742 | 0.391 | 0.835 | 0.654 |
-| 1,000 | 0.551 | 0.932 | 0.696 | 0.324 | 0.801 | 0.595 |
-| 1,200 | 0.503 | 0.921 | 0.665 | 0.279 | 0.773 | 0.557 |
+| IoU | 0.4714 | 0.638 | 0.7075 | 0.7905 | 0.6567 | 0.6528 |
+| Precision | 0.5999 | 0.7171 | 0.823 | 0.9064 | 0.7717 | |
+| Recall | 0.6877 | 0.8526 | 0.8344 | 0.8607 | 0.8151 | |
 
-- At 600 sq ft the curve is 0.1-1.4 points under the group rates above (urban 0.705 vs 0.719). The curve uses the ladder shapes, which round up
-- Size matters most in urban tracts: going from 600 to 1,000 sq ft drops the share from 0.705 to 0.551
+Per place type (test mIoU, TTA):
 
-![Fit curves by footprint](figures/06_fit_curves.png)
+<!-- source: ~/musa-drive/models/<run>/test_scores.json by_group -->
 
-## Limits
+| Run | Urban | Suburban | Rural |
+|---|---|---|---|
+| `r34ndvi_c4_s1` | 0.6443 | 0.7363 | 0.7165 |
+| `r34_c4_s1` | 0.6428 | 0.7331 | 0.7181 |
+| `unet_v2_r34` | 0.6438 | 0.7324 | 0.7178 |
+| `plain_c4_s1` | 0.6228 | 0.7171 | 0.7049 |
+| `r34_c5_s0` (5 classes) | 0.6502 | 0.636 | 0.6082 |
 
-- No hand labels yet. The blank form is `data/processed/hand_labels_template.csv` (250 lots)
-- Labels only cover the Chesapeake part of PA (central and east). Western PA has no labels. The model is applied there only through the statewide rates, never checked
-- The rates come from two counties. All rural PA rests on 4 Cumberland tracts. Western PA towns and Pittsburgh are not in the sample
-- Philadelphia rowhouses and twins are left out (Microsoft merges a row into one outline). ACS counts some twins as detached, so Philadelphia tracts may have more homes in `lots_total` than the lots tested
-- "Backyard" includes the front yard. Many towns do not allow an ADU in front of the house
-- Missed sheds and under-called trees both make the rule a bit generous
-- Images and labels are from 2022
-- Lot rules (setbacks, minimum lot size) vary by town. One rule is used for all
+What it shows:
+
+- The pretrained encoder is worth about 0.016 test mIoU (0.699 against 0.683). Nothing else moves the score more than 0.005.
+- Seeds, NDVI, Dice and more epochs all land between 0.6959 and 0.7005. The model has stopped improving on these labels.
+- Single-pass scores are 0.004 to 0.005 below the TTA scores.
+- Urban boxes are the weak place type in every 4-class run.
+- The 5-class run pays for the extra class: "other" drops to 0.4714 once roads and paving leave it, and rural and suburban mIoU fall.
+
+## 2. Where and why the model fails
+
+<!-- source: ~/musa-drive/processed/vision/error_analysis.md (unet_v2_r34) -->
+
+![Left: test confusion, share of each label row. Right: building IoU by building size in the label.](figures/07_error_confusion_size.png)
+
+- Tree against open ground is 47 % of all wrong pixels (open called tree 24.2 %, tree called open 23.1 %).
+- The 1 pixel band along label edges is 9.9 % of pixels but 32.3 % of errors. Error rate 49.9 % in the band and 11.5 % inside. Without the band, mIoU is 0.764.
+- Small buildings fail: building IoU 0.28 under 50 m2, 0.50 for 50 to 100 m2, 0.68 to 0.72 above 100 m2 (0.55 for 200 to 500 m2, where paved lots merge into roofs).
+
+<!-- source: ~/musa-drive/processed/vision/error_analysis.md -->
+
+| Chesapeake code | Share of test | Error rate | Share of all errors | What the model says |
+|---|---|---|---|---|
+| 27 turf grass | 16.9 % | 23.7 % | 26.2 % | 12 % tree, 8 % other |
+| 22 other impervious | 9.4 % | 22.6 % | 13.9 % | 11 % building |
+| 26 tree canopy over turf | 5.3 % | 38.5 % | 13.4 % | 29 % open |
+| 41 forested other | 4.1 % | 28.4 % | 7.6 % | 23 % open |
+| 25 canopy over other impervious | 0.5 % | 65.6 % | 2.2 % | 41 % other |
+
+![The ten worst test tiles out of 243: image, label, prediction](figures/07_worst_tiles.png)
+
+- The two worst tiles are a forest edge and a meadow in Centre County, flown in fall colors. The label has patches the photo does not show. This is a season or label problem.
+- Most other bad tiles are dense older neighborhoods in Cumberland. Errors sit on crown edges, canopy over streets and alleys next to houses.
+- Shifting the prediction by (-2, -1) pixels raises mIoU from 0.699 to 0.708. Label and image are off by about a pixel in places.
+- The label calls canopy over lawns and paving tree because of lidar height. The photo shows lawn or paving under thin crowns.
+
+Conclusion: about 0.06 mIoU sits in pixels where the label itself is uncertain. Reaching 0.72 on these labels is unlikely from longer training. Gains would need cleaner tree and grass labels, scoring that matches the per-lot use, or more small-building examples.
+
+## 3. Transfer to Pittsburgh and Philadelphia
+
+### Pittsburgh, and the overlap leak
+
+The first Pittsburgh split placed some test boxes on top of training boxes: 34.8 % of the test box area was also inside train or validation boxes. A fine-tune score of 0.719 came from that split. It is withdrawn. The split code now keeps boxes apart, and city scores leave out overlapping pixels.
+
+<!-- source: ~/musa-drive/models/r34_c5_s0/city_pittsburgh_scores_clean.json, ~/musa-drive/models/ft_c5_pittsburgh/city_pittsburgh_scores_clean.json, ~/musa-drive/models/ft_c5_pittsburgh/city_pittsburgh_scores.json -->
+
+| Pittsburgh, 9 test boxes | Test pixels | mIoU without water | As 4 classes | Building | Tree | Open | Hard | Water |
+|---|---|---|---|---|---|---|---|---|
+| Zero-shot `r34_c5_s0`, clean | 4,839,728 | 0.7036 | 0.7039 | 0.7335 | 0.8116 | 0.5595 | 0.7097 | 0.7007 |
+| Fine-tuned `ft_c5_pittsburgh`, clean | 4,839,728 | 0.6941 | 0.6875 | 0.686 | 0.8203 | 0.5619 | 0.7083 | 0.0 |
+| Fine-tuned, overlapping pixels kept (withdrawn) | 7,122,645 | 0.7194 | 0.7146 | 0.7288 | 0.8393 | 0.5806 | 0.729 | 0.0 |
+
+- The original model is fine in Pittsburgh: 0.70 on clean pixels.
+- Fine-tuning lowered building IoU (0.7335 to 0.686) and lost the water class entirely. Pittsburgh lot cover uses the zero-shot model.
+- Open ground is the weak class in the city (0.56).
+
+### Philadelphia, an honest negative result
+
+<!-- source: ~/musa-drive/models/r34_c5_s0/city_philadelphia_scores.json, ~/musa-drive/models/ft_c5_philadelphia/city_philadelphia_scores.json -->
+
+| Philadelphia, 12 test boxes | mIoU, 5 classes | As 4 classes | Building | Tree | Open | Hard |
+|---|---|---|---|---|---|---|
+| Zero-shot `r34_c5_s0` | 0.3838 | 0.4798 | 0.7072 | 0.2622 | 0.272 | 0.6775 |
+| Fine-tuned `ft_c5_philadelphia` | 0.4078 | 0.5097 | 0.7386 | 0.2606 | 0.3226 | 0.717 |
+
+![Philadelphia test boxes: NAIP 2022 (April to May), the 2018 label, the fine-tuned model](figures/08_philadelphia_chips.png)
+
+<!-- source: ~/musa-drive/processed/vision/city/philadelphia/diagnosis/diagnosis.md -->
+
+- No bug: class mapping, alignment, footprint burn-in and nodata all check out.
+- NAIP 2022 over Philadelphia was flown on 2022-04-30, 05-10 and 05-17, early in the leaf season. The 2018 label was built from leaf-on 2017 photos and 2018 lidar.
+- Rowhouse back yards are narrow strips in deep shadow. The label says grass or small tree. The photo shows dark paving.
+- Even large canopy is mostly missed: tree recall is 0.41 for patches over 200 m2 and 0.081 under 10 m2.
+- A plain NDVI threshold gets vegetation IoU 0.485 on test, close to the model (0.448). The photos carry little green.
+- Decision: in Philadelphia the lot tool uses the city's 2018 raster for land cover. Buildings from the model are fine (IoU 0.73), but footprints are newer anyway.
+
+### Per-lot agreement with the city rasters
+
+<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, ~/musa-drive/processed/philadelphia/cover_compare.json. MAE in percentage points of lot area, r = correlation. Lots with at least 90 % raster coverage, outside the city train and validation boxes. -->
+
+| | Lots | Tree MAE (r) | Open MAE (r) | Vegetation MAE (r) | Building MAE (r) | Tree, raster mean | Tree, model mean |
+|---|---|---|---|---|---|---|---|
+| Pittsburgh, `r34_c5_s0` against the 2019 raster | 128 | 8.41 (0.862) | 11.02 (0.844) | 8.16 (0.884) | 7.32 (0.86) | 18.6 % | 12.5 % |
+| Philadelphia, `ft_c5_philadelphia` against the 2018 raster | 430,161 | 6.71 (0.622) | 12.02 (0.626) | 13.65 (0.76) | 17.66 (0.805) | 9.4 % | 5.3 % |
+
+- The Pittsburgh check has only 128 lots. The 2019 raster covers part of the city, and 801 lots inside train and validation boxes were left out. It is a small check.
+- The Pittsburgh lot records carry a note: tree share is off by about 8 points on average and building share reads high.
+- On Philadelphia rowhouse lots (306,228) the model reads vegetation 13.4 % against 24.4 % in the raster.
+
+## 4. Structure detector
+
+<!-- source: ~/musa-drive/models/yolo/runs/real/eval/eval.json -->
+
+| Test set | Chips | mAP50 | Garage AP50 | Shed AP50 | Other accessory AP50 | Pool AP50 | Precision | Recall |
+|---|---|---|---|---|---|---|---|---|
+| Both cities | 162 | 0.1692 | 0.2584 | 0.0331 | 0.2197 | 0.1656 | 0.4471 | 0.2237 |
+| Pittsburgh | 81 | 0.1934 | 0.3337 | 0.0466 | 0.2001 | no labels | 0.5709 | 0.2601 |
+| Philadelphia | 81 | 0.1815 | 0.16 | 0.026 | 0.2748 | 0.2653 | 0.4722 | 0.2112 |
+
+![Detector precision and recall curves on the test chips](figures/10_detector_pr_curve.png)
+
+![Detector confusion matrix on the test chips](figures/10_detector_confusion.png)
+
+- The test labels are first-pass labels from footprints and OpenStreetMap. They were not checked by hand. A real shed missing from the footprints counts against the model when it finds one. These are not accuracy numbers.
+- At a 0.25 score threshold the model predicts only the garage class. It finds 23 of 127 labeled garages.
+- Sheds are not detectable at this stage (AP50 0.0331).
+- A review pack of 150 chips per city is ready for hand checking. It has not been done.
+
+## 5. How the models feed the lot tool
+
+- **Land cover:** each lot record has a `cover` block (building, tree, open ground, hard surface, impervious share, source, date) and the cover inside the suggested spot. Pittsburgh: `model:r34_c5_s0`, 2022. Philadelphia: `landcover_2018`. The fit test does not use it. It tells the user how much canopy a unit might remove.
+- **Detector:** not used. Lot records carry an empty `objects` list. Garages and sheds come from building footprints by size (180 sq ft or more is a garage).
+- **Fit:** a vector test on the lot outline, edges labeled front, side and rear, building outlines, setbacks from the rule files, and the largest rectangle that fits. See the methods page.
+
+## 6. Lot results
+
+Three scenarios on every lot: today's law, local reform (Philadelphia Bill 250042, in Pittsburgh equal to today) and state reform (HB 2186). The bills are not law. The state session ends Nov 30, 2026.
+
+<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261111-bdeb5697ae, manifest built 2026-11-11T20:30:22) and ~/musa-drive/lots/philadelphia/stats.json and manifest.json (data version philadelphia-20261111-b7fa7bda07, built 2026-11-11T21:41:43) -->
+
+| Share of lots | Pittsburgh | Philadelphia |
+|---|---|---|
+| Lots | 92,081 | 459,998 |
+| Any legal ADU path today | 1.0 | 0.012<!-- stats.json all.paths.today.allowed --> |
+| New detached unit by right today | 0.0 | 0.0<!-- stats.json all.paths.today.detached_by_right --> |
+| Any legal path, local reform | 1.0 | 0.533<!-- stats.json all.paths.local_reform.allowed --> |
+| Any legal path, state reform | 1.0 | 1.0<!-- stats.json all.paths.state_reform.allowed --> |
+| A detached unit fits, today | 0.658 | 0.0<!-- stats.json all.paths.today.detached_fits --> |
+| A detached unit fits, state reform | 0.7 | 0.26<!-- stats.json all.paths.state_reform.detached_fits --> |
+| 600 sq ft detached fits, today | 0.412 | 0.0<!-- stats.json all.fit_600 --> |
+| 600 sq ft detached fits, state reform | 0.459 | 0.076<!-- stats.json all.fit_600_state_reform --> |
+| Median largest detached footprint where one fits (sq ft) | 764 | none fits<!-- stats.json all.median_largest_sqft --> |
+| Garage-size accessory building on the lot | 0.228 | 0.015<!-- stats.json all.garage_candidate --> |
+| Lot edges labeled with high confidence | 0.85 | 0.917<!-- stats.json all.edge_confidence.high --> |
+
+- **Pittsburgh:** under Ordinance 31-2026 (signed Oct 29, 2026) internal and attached units are by right. A new detached unit in a side or rear yard needs an Administrator's Exception. So every lot has a legal path, and none has a detached unit by right today. The binding limit is yard space.
+- **Philadelphia:** about 1.2 percent of lots have any legal ADU path today, and no lot can add a new detached unit by right. The limits come from the zoning code and its overlays. The binding limit is the law.
+
+Pittsburgh by housing type:
+
+<!-- source: ~/musa-drive/lots/pittsburgh/stats.json by_type (data version pittsburgh-20261111-bdeb5697ae) -->
+
+| Housing type | Lots | Detached fits, today | 600 sq ft fits, today | 600 sq ft fits, state reform | Median largest (sq ft) | Main limit |
+|---|---|---|---|---|---|---|
+| Single family detached | 64,578 | 0.729 | 0.482 | 0.536 | 830 | yard space 0.43 |
+| Two family | 7,780 | 0.605 | 0.372 | 0.402 | 745.5 | yard space 0.402 |
+| Three family | 2,041 | 0.619 | 0.381 | 0.413 | 750 | yard space 0.403 |
+| Four family | 881 | 0.602 | 0.412 | 0.446 | 892 | no room 0.398 |
+| Semi-detached | 5,976 | 0.531 | 0.246 | 0.292 | 574 | no room 0.469 |
+| Rowhouse | 10,825 | 0.35 | 0.121 | 0.136 | 488 | no room 0.65 |
+
+What stops a detached unit in Pittsburgh today, all lots: yard space 0.414, no room at all 0.342, the 1,000 sq ft size cap 0.244. 28.4 % of lots sit on steep slope or landslide-prone ground, a flag the fit does not act on.
+
+Philadelphia by housing type:
+
+<!-- source: ~/musa-drive/lots/philadelphia/stats.json by_type -->
+
+| Housing type | Lots | Any legal path today | Any legal path, local reform | 600 sq ft fits, state reform |
+|---|---|---|---|---|
+| Rowhouse | 329,279<!-- by_type.rowhouse.lots --> | 0.007<!-- by_type.rowhouse.paths.today.allowed --> | 0.541<!-- by_type.rowhouse.paths.local_reform.allowed --> | 0.016<!-- by_type.rowhouse.fit_600_state_reform --> |
+| Semi-detached | 65,806<!-- by_type.semi_detached.lots --> | 0.03<!-- by_type.semi_detached.paths.today.allowed --> | 0.495<!-- by_type.semi_detached.paths.local_reform.allowed --> | 0.18<!-- by_type.semi_detached.fit_600_state_reform --> |
+| Single family detached | 26,949<!-- by_type.single_family_detached.lots --> | 0.023<!-- by_type.single_family_detached.paths.today.allowed --> | 0.408<!-- by_type.single_family_detached.paths.local_reform.allowed --> | 0.536<!-- by_type.single_family_detached.fit_600_state_reform --> |
+| Two to four family | 37,964<!-- by_type.two_to_four_family.lots --> | 0.013<!-- by_type.two_to_four_family.paths.today.allowed --> | 0.621<!-- by_type.two_to_four_family.paths.local_reform.allowed --> | 0.087<!-- by_type.two_to_four_family.fit_600_state_reform --> |
+
+![Twenty random Pittsburgh lots from the final build. Gray: house. Brown: garage. Tan: shed. Green: buildable ground today. Blue: the suggested unit. Purple: a second unit. Red line: front lot line. Orange: rear.](figures/09_pittsburgh_lot_sheet.png)
+
+<!-- source: ~/musa-drive/lots/pittsburgh/qa/contact_seed2029.png (20:49 build), shrunk for the page -->
+
+## 7. Hand-label check
+
+<!-- source: ~/musa-drive/validation/DESIGN.md, ~/musa-drive/validation/results/<city>.json -->
+
+250 lots are sampled, 125 per city, with sheets and image chips ready. 0 are labeled. There is no measured agreement between the fit answer and a person looking at the lot. This is the most important missing check.
+
+## 8. Limits
+
+- Land cover scores sit near 0.70 on the held-out counties. The labels set the ceiling.
+- Philadelphia tree and open ground from NAIP 2022 are not reliable. The 2018 raster misses changes since 2018.
+- The Pittsburgh per-lot land cover check covers 128 lots.
+- The detector is not checked against hand labels and is not used in the lot records.
+- The fit answers are not checked against hand labels.
+- Lot lines come from county and city parcel maps. They are not a survey. Building outlines can be old or merged.
+- Rules come from rule files read from the codes. This is not legal advice and not a zoning determination. The bills behind the reform scenarios are not law.
+- Slope, flood and historic flags are shown but do not change the fit answer.

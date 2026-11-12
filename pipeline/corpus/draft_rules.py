@@ -21,6 +21,7 @@ Run (the API key is read from the environment only):
     python -m pipeline.corpus.draft_rules 4207146896
     python -m pipeline.corpus.draft_rules --all
 """
+
 from __future__ import annotations
 
 import argparse
@@ -56,70 +57,149 @@ QUERIES = [
     "maximum floor area of accessory dwelling unit square feet percent of principal dwelling",
 ]
 
-STATUS = ["allowed_by_right", "special_exception", "conditional_use", "family_only", "conversion_only",
-          "not_addressed", "prohibited"]
-PATHS = ["by_right", "administrator_exception", "special_exception", "conditional_use", "variance", "not_allowed",
-         "unknown"]
+STATUS = [
+    "allowed_by_right",
+    "special_exception",
+    "conditional_use",
+    "family_only",
+    "conversion_only",
+    "not_addressed",
+    "prohibited",
+]
+PATHS = [
+    "by_right",
+    "administrator_exception",
+    "special_exception",
+    "conditional_use",
+    "variance",
+    "not_allowed",
+    "unknown",
+]
 ABSENCE = ("not_addressed", "unknown")  # values that say the text was not found, not a rule
 FORMS = ["internal", "attached", "detached_new", "over_garage", "garage_conversion"]
 
-CLAIM = {"type": "object", "properties": {
-    "quote": {"type": "string", "description": "Exact words copied from the chunk, 5 to 60 words."},
-    "chunk": {"type": "string", "description": "Chunk id, e.g. C4"},
-    "section": {"type": "string", "description": "Section label as printed in the text"}},
-    "required": ["quote", "chunk", "section"]}
+CLAIM = {
+    "type": "object",
+    "properties": {
+        "quote": {"type": "string", "description": "Exact words copied from the chunk, 5 to 60 words."},
+        "chunk": {"type": "string", "description": "Chunk id, e.g. C4"},
+        "section": {"type": "string", "description": "Section label as printed in the text"},
+    },
+    "required": ["quote", "chunk", "section"],
+}
 
 
 def _claim(value_schema: dict[str, Any], desc: str) -> dict[str, Any]:
-    return {"type": "object", "description": desc, "properties": {
-        "value": value_schema, "support": {"type": "array", "items": CLAIM}}, "required": ["value", "support"]}
+    return {
+        "type": "object",
+        "description": desc,
+        "properties": {"value": value_schema, "support": {"type": "array", "items": CLAIM}},
+        "required": ["value", "support"],
+    }
 
 
-SCHEMA = {"type": "object", "properties": {
-    "status": _claim({"type": "string", "enum": STATUS}, "ADU status. If two apply pick the most limiting"),
-    "term": _claim({"type": ["string", "null"]}, "What the code calls an ADU, in its own words. null if none"),
-    "approval_path": _claim({"type": "string", "enum": PATHS}, "Path for an ADU where the code allows one"),
-    "fallback_path": _claim({"type": "string", "enum": PATHS},
-                            "Path when the lot or district does not qualify, or the use is not listed"),
-    "unlisted_use_path": _claim({"type": ["string", "null"], "enum": PATHS + [None]},
-                                "Path for a use the code does not list, only if the code has such a clause"),
-    "districts": _claim({"type": "array", "items": {"type": "string"}},
-                        "District codes where an ADU is allowed (any path). Empty if none"),
-    "district_paths": {"type": "array", "description": "Only where the path differs by district",
-                       "items": {"type": "object", "properties": {
-                           "districts": {"type": "array", "items": {"type": "string"}},
-                           "path": {"type": "string", "enum": PATHS},
-                           "support": {"type": "array", "items": CLAIM}},
-                           "required": ["districts", "path", "support"]}},
-    "forms": _claim({"type": "array", "items": {"type": "string", "enum": FORMS}}, "Forms of ADU allowed"),
-    "size_caps": {"type": "array", "description": "Each size cap, with the form it applies to", "items": {
-        "type": "object", "properties": {
-            "applies_to": {"type": "string", "enum": ["all", "internal", "attached", "accessory_building"]},
-            "kind": {"type": "string", "enum": ["max_sqft", "max_share_of_house", "min_sqft", "max_bedrooms"]},
-            "value": {"type": "number", "description": "Share as a fraction, e.g. 0.4 for 40 percent"},
-            "support": {"type": "array", "items": CLAIM}},
-        "required": ["applies_to", "kind", "value", "support"]}},
-    "occupancy": _claim({"type": ["string", "null"]}, "Who may live in the ADU, plain words"),
-    "family_only": _claim({"type": ["boolean", "null"]}, "Only relatives or caregivers may live there"),
-    "owner_occupancy": _claim({"type": ["boolean", "null"]}, "The owner must live on the lot"),
-    "parking_spaces_for_adu": _claim({"type": ["number", "null"]}, "Extra off-street spaces for the ADU"),
-    "conditions": {"type": "array", "description": "Other conditions that limit who may build (lot size, "
-                   "utilities, district, building type, existing building only)", "items": {
-        "type": "object", "properties": {"condition": {"type": "string"},
-                                         "districts": {"type": ["array", "null"], "items": {"type": "string"}},
-                                         "support": {"type": "array", "items": CLAIM}},
-        "required": ["condition", "support"]}},
-    "alternatives": {"type": "array", "description": "Other ways to add a unit that are not an ADU, such as "
-                     "a conversion to two-family or a duplex", "items": {
-        "type": "object", "properties": {"name": {"type": "string"}, "path": {"type": "string", "enum": PATHS},
-                                         "districts": {"type": "array", "items": {"type": "string"}},
-                                         "support": {"type": "array", "items": CLAIM}},
-        "required": ["name", "path", "support"]}},
-    "could_not_find": {"type": "array", "items": {"type": "string"},
-                       "description": "Topics the excerpts do not settle"},
-}, "required": ["status", "term", "approval_path", "fallback_path", "districts", "forms", "size_caps",
-                "occupancy", "family_only", "owner_occupancy", "parking_spaces_for_adu", "conditions",
-                "alternatives", "could_not_find"]}
+SCHEMA = {
+    "type": "object",
+    "properties": {
+        "status": _claim({"type": "string", "enum": STATUS}, "ADU status. If two apply pick the most limiting"),
+        "term": _claim({"type": ["string", "null"]}, "What the code calls an ADU, in its own words. null if none"),
+        "approval_path": _claim({"type": "string", "enum": PATHS}, "Path for an ADU where the code allows one"),
+        "fallback_path": _claim(
+            {"type": "string", "enum": PATHS},
+            "Path when the lot or district does not qualify, or the use is not listed",
+        ),
+        "unlisted_use_path": _claim(
+            {"type": ["string", "null"], "enum": PATHS + [None]},
+            "Path for a use the code does not list, only if the code has such a clause",
+        ),
+        "districts": _claim(
+            {"type": "array", "items": {"type": "string"}},
+            "District codes where an ADU is allowed (any path). Empty if none",
+        ),
+        "district_paths": {
+            "type": "array",
+            "description": "Only where the path differs by district",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "districts": {"type": "array", "items": {"type": "string"}},
+                    "path": {"type": "string", "enum": PATHS},
+                    "support": {"type": "array", "items": CLAIM},
+                },
+                "required": ["districts", "path", "support"],
+            },
+        },
+        "forms": _claim({"type": "array", "items": {"type": "string", "enum": FORMS}}, "Forms of ADU allowed"),
+        "size_caps": {
+            "type": "array",
+            "description": "Each size cap, with the form it applies to",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "applies_to": {"type": "string", "enum": ["all", "internal", "attached", "accessory_building"]},
+                    "kind": {"type": "string", "enum": ["max_sqft", "max_share_of_house", "min_sqft", "max_bedrooms"]},
+                    "value": {"type": "number", "description": "Share as a fraction, e.g. 0.4 for 40 percent"},
+                    "support": {"type": "array", "items": CLAIM},
+                },
+                "required": ["applies_to", "kind", "value", "support"],
+            },
+        },
+        "occupancy": _claim({"type": ["string", "null"]}, "Who may live in the ADU, plain words"),
+        "family_only": _claim({"type": ["boolean", "null"]}, "Only relatives or caregivers may live there"),
+        "owner_occupancy": _claim({"type": ["boolean", "null"]}, "The owner must live on the lot"),
+        "parking_spaces_for_adu": _claim({"type": ["number", "null"]}, "Extra off-street spaces for the ADU"),
+        "conditions": {
+            "type": "array",
+            "description": "Other conditions that limit who may build (lot size, "
+            "utilities, district, building type, existing building only)",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "condition": {"type": "string"},
+                    "districts": {"type": ["array", "null"], "items": {"type": "string"}},
+                    "support": {"type": "array", "items": CLAIM},
+                },
+                "required": ["condition", "support"],
+            },
+        },
+        "alternatives": {
+            "type": "array",
+            "description": "Other ways to add a unit that are not an ADU, such as "
+            "a conversion to two-family or a duplex",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "path": {"type": "string", "enum": PATHS},
+                    "districts": {"type": "array", "items": {"type": "string"}},
+                    "support": {"type": "array", "items": CLAIM},
+                },
+                "required": ["name", "path", "support"],
+            },
+        },
+        "could_not_find": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Topics the excerpts do not settle",
+        },
+    },
+    "required": [
+        "status",
+        "term",
+        "approval_path",
+        "fallback_path",
+        "districts",
+        "forms",
+        "size_caps",
+        "occupancy",
+        "family_only",
+        "owner_occupancy",
+        "parking_spaces_for_adu",
+        "conditions",
+        "alternatives",
+        "could_not_find",
+    ],
+}
 
 SYSTEM = """You read excerpts of one Pennsylvania municipality's zoning ordinance and fill a draft summary of its rules for accessory dwelling units (ADUs). The draft is checked against the text by a program and by people.
 
@@ -178,8 +258,10 @@ def retrieve(geoid: str, model: str = "bge") -> list[dict[str, Any]]:
 def context(hits: list[dict[str, Any]]) -> str:
     parts = []
     for i, h in enumerate(hits, 1):
-        parts.append(f"<excerpt id=\"C{i}\" section=\"{h.get('section') or ''}\" path=\"{h.get('heading_path') or ''}\" "
-                     f"pages=\"{h.get('page_start')}-{h.get('page_end')}\">\n{h['text']}\n</excerpt>")
+        parts.append(
+            f'<excerpt id="C{i}" section="{h.get("section") or ""}" path="{h.get("heading_path") or ""}" '
+            f'pages="{h.get("page_start")}-{h.get("page_end")}">\n{h["text"]}\n</excerpt>'
+        )
     return "\n\n".join(parts)
 
 
@@ -193,21 +275,48 @@ def spent() -> float:
 
 def log_spend(geoid: str, usage: dict[str, int], usd: float, note: str = "") -> None:
     with (sub("drafts") / "spend.jsonl").open("a") as f:
-        f.write(json.dumps({"at": time.strftime("%Y-%m-%dT%H:%M:%S"), "geoid": geoid, "model": MODEL,
-                            **usage, "usd": round(usd, 6), "note": note}) + "\n")
+        f.write(
+            json.dumps(
+                {
+                    "at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                    "geoid": geoid,
+                    "model": MODEL,
+                    **usage,
+                    "usd": round(usd, 6),
+                    "note": note,
+                }
+            )
+            + "\n"
+        )
 
 
 def cost(usage: dict[str, int], batch: bool = False) -> float:
     f = 0.5 if batch else 1.0
-    return f * (usage.get("input_tokens", 0) * PRICE_IN + usage.get("output_tokens", 0) * PRICE_OUT
-                + usage.get("cache_creation_input_tokens", 0) * PRICE_IN * 1.25
-                + usage.get("cache_read_input_tokens", 0) * PRICE_IN * 0.1)
+    return f * (
+        usage.get("input_tokens", 0) * PRICE_IN
+        + usage.get("output_tokens", 0) * PRICE_OUT
+        + usage.get("cache_creation_input_tokens", 0) * PRICE_IN * 1.25
+        + usage.get("cache_read_input_tokens", 0) * PRICE_IN * 0.1
+    )
 
 
-CLAIM_FIELDS = ("status", "term", "approval_path", "fallback_path", "unlisted_use_path", "districts", "forms",
-                "occupancy", "family_only", "owner_occupancy", "parking_spaces_for_adu")
-RETRY_NOTE = ("\n\nNote: in an earlier answer these fields were given as bare values: {}. Each of them must be an "
-              "object with value and support (quotes). Use null with empty support when the excerpts do not settle it.")
+CLAIM_FIELDS = (
+    "status",
+    "term",
+    "approval_path",
+    "fallback_path",
+    "unlisted_use_path",
+    "districts",
+    "forms",
+    "occupancy",
+    "family_only",
+    "owner_occupancy",
+    "parking_spaces_for_adu",
+)
+RETRY_NOTE = (
+    "\n\nNote: in an earlier answer these fields were given as bare values: {}. Each of them must be an "
+    "object with value and support (quotes). Use null with empty support when the excerpts do not settle it."
+)
 
 
 def schema_slips(raw: dict[str, Any]) -> list[str]:
@@ -222,15 +331,21 @@ def call_model(geoid: str, name: str, ctx: str) -> tuple[dict[str, Any], dict[st
     client = anthropic.Anthropic()
     t0 = time.time()
     msg = client.messages.create(
-        model=MODEL, max_tokens=6000, system=SYSTEM,
+        model=MODEL,
+        max_tokens=6000,
+        system=SYSTEM,
         tools=[{"name": "record_draft", "description": "Record the draft ADU summary", "input_schema": SCHEMA}],
         tool_choice={"type": "tool", "name": "record_draft"},
-        messages=[{"role": "user", "content": f"Municipality: {name}\n\n{ctx}"}])
+        messages=[{"role": "user", "content": f"Municipality: {name}\n\n{ctx}"}],
+    )
     dt = time.time() - t0
     u = msg.usage
-    usage = {"input_tokens": u.input_tokens, "output_tokens": u.output_tokens,
-             "cache_creation_input_tokens": u.cache_creation_input_tokens or 0,
-             "cache_read_input_tokens": u.cache_read_input_tokens or 0}
+    usage = {
+        "input_tokens": u.input_tokens,
+        "output_tokens": u.output_tokens,
+        "cache_creation_input_tokens": u.cache_creation_input_tokens or 0,
+        "cache_read_input_tokens": u.cache_read_input_tokens or 0,
+    }
     usd = cost(usage)
     log_spend(geoid, usage, usd)
     out = next((b.input for b in msg.content if b.type == "tool_use"), None) or {}
@@ -254,9 +369,18 @@ def _check_support(support: list[dict[str, Any]], hits: list[dict[str, Any]]) ->
                 found = next((j for j, t in enumerate(texts) if q in t), -1)
                 status = "other_chunk" if found >= 0 else "missing"
         h = hits[found] if 0 <= found < len(hits) else {}
-        out.append({**s, "check": status, "chunk_id": h.get("chunk_id"), "url": h.get("url"),
-                    "page_start": h.get("page_start"), "page_end": h.get("page_end"),
-                    "retrieved_on": h.get("retrieved_on"), "chunk_section": h.get("section")})
+        out.append(
+            {
+                **s,
+                "check": status,
+                "chunk_id": h.get("chunk_id"),
+                "url": h.get("url"),
+                "page_start": h.get("page_start"),
+                "page_end": h.get("page_end"),
+                "retrieved_on": h.get("retrieved_on"),
+                "chunk_section": h.get("section"),
+            }
+        )
     return out
 
 
@@ -278,8 +402,13 @@ def verify(draft: dict[str, Any], hits: list[dict[str, Any]]) -> tuple[dict[str,
             return {**item, "absence": True}
         if any(s["check"] in ("ok", "other_chunk") for s in sup):
             return item
-        unsupported.append({"field": field, "value": item.get("value", item.get("name", item.get("condition"))),
-                            "quotes": [s.get("quote") for s in sup]})
+        unsupported.append(
+            {
+                "field": field,
+                "value": item.get("value", item.get("name", item.get("condition"))),
+                "quotes": [s.get("quote") for s in sup],
+            }
+        )
         return None
 
     for field, val in draft.items():
@@ -311,32 +440,73 @@ def draft(geoid: str, model: str = "bge", force: bool = False) -> dict[str, Any]
     hits = retrieve(geoid, model)
     t_ret = time.time() - t0
     ctx = context(hits)
+    usage: dict[str, Any]
     raw, usage, usd = call_model(geoid, place_name(geoid), ctx)
     slips = schema_slips(raw)
     if slips:  # a claim given as a bare value has no quote: ask once more, then keep the better answer
         raw2, usage2, usd2 = call_model(geoid, place_name(geoid), ctx + RETRY_NOTE.format(", ".join(slips)))
         usd += usd2
-        usage = {k: usage.get(k, 0) + usage2.get(k, 0) if isinstance(usage.get(k), (int, float)) else usage.get(k)
-                 for k in usage} | {"retried_for": slips}
+        usage = {
+            k: usage.get(k, 0) + usage2.get(k, 0) if isinstance(usage.get(k), (int, float)) else usage.get(k)
+            for k in usage
+        } | {"retried_for": slips}
         if len(schema_slips(raw2)) < len(slips):
             raw = raw2
     clean, unsupported = verify(raw, hits)
-    n_claims = sum(len(v.get("support", [])) if isinstance(v, dict) else
-                   sum(len(x.get("support", [])) for x in v if isinstance(x, dict))
-                   for k, v in raw.items() if k != "could_not_find" and isinstance(v, (dict, list)))
-    checks = [s["check"] for v in clean.values() if isinstance(v, (dict, list))
-              for item in (v if isinstance(v, list) else [v]) if isinstance(item, dict)
-              for s in item.get("support", [])]
-    out = {"geoid": geoid, "place": place_name(geoid), "label": "machine-read, not verified, read the quoted text",
-           "model": MODEL, "made_on": date.today().isoformat(), "retrieval_model": model,
-           "chunks": [{k: h[k] for k in ("chunk_id", "section", "heading_path", "page_start", "page_end", "url",
-                                          "retrieved_on", "text")} for h in hits],
-           "draft": clean, "raw": raw, "unsupported": unsupported,
-           "quote_checks": {"total": len(checks), "ok": checks.count("ok"),
-                            "other_chunk": checks.count("other_chunk"), "missing": checks.count("missing"),
-                            "quotes_in_raw": n_claims},
-           "usage": usage, "usd": round(usd, 6), "seconds_total": round(time.time() - t0, 1),
-           "seconds_retrieval": round(t_ret, 1), "context_tokens_est": sum(len(h["text"]) // 4 for h in hits)}
+    n_claims = sum(
+        len(v.get("support", []))
+        if isinstance(v, dict)
+        else sum(len(x.get("support", [])) for x in v if isinstance(x, dict))
+        for k, v in raw.items()
+        if k != "could_not_find" and isinstance(v, (dict, list))
+    )
+    checks = [
+        s["check"]
+        for v in clean.values()
+        if isinstance(v, (dict, list))
+        for item in (v if isinstance(v, list) else [v])
+        if isinstance(item, dict)
+        for s in item.get("support", [])
+    ]
+    out = {
+        "geoid": geoid,
+        "place": place_name(geoid),
+        "label": "machine-read, not verified, read the quoted text",
+        "model": MODEL,
+        "made_on": date.today().isoformat(),
+        "retrieval_model": model,
+        "chunks": [
+            {
+                k: h[k]
+                for k in (
+                    "chunk_id",
+                    "section",
+                    "heading_path",
+                    "page_start",
+                    "page_end",
+                    "url",
+                    "retrieved_on",
+                    "text",
+                )
+            }
+            for h in hits
+        ],
+        "draft": clean,
+        "raw": raw,
+        "unsupported": unsupported,
+        "quote_checks": {
+            "total": len(checks),
+            "ok": checks.count("ok"),
+            "other_chunk": checks.count("other_chunk"),
+            "missing": checks.count("missing"),
+            "quotes_in_raw": n_claims,
+        },
+        "usage": usage,
+        "usd": round(usd, 6),
+        "seconds_total": round(time.time() - t0, 1),
+        "seconds_retrieval": round(t_ret, 1),
+        "context_tokens_est": sum(len(h["text"]) // 4 for h in hits),
+    }
     dest.write_text(json.dumps(out, indent=1))
     return out
 
@@ -359,8 +529,11 @@ def main() -> None:
             print(e)
             break
         st = d["draft"].get("status", {}).get("value")
-        print(f"{g} {d['place']}: status={st} quotes={d['quote_checks']} usd={d['usd']} s={d['seconds_total']} "
-              f"total_spent={spent():.4f}", flush=True)
+        print(
+            f"{g} {d['place']}: status={st} quotes={d['quote_checks']} usd={d['usd']} s={d['seconds_total']} "
+            f"total_spent={spent():.4f}",
+            flush=True,
+        )
 
 
 if __name__ == "__main__":

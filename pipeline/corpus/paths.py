@@ -1,4 +1,5 @@
 """Folders for the corpus. All under the data drive, never the repo."""
+
 from __future__ import annotations
 
 import os

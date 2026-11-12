@@ -7,7 +7,9 @@
 //   <base><place>/detail/<GEOID>.geom.json.gz geometry, when `geometry` names it (big tracts)
 // The base URL comes from VITE_LOT_DATA_URL, default /data/lots2/.
 // gzip is decoded in the browser (DecompressionStream) when the body is still gzip, so it works whether
-// or not the host sends Content-Encoding.
+// or not the host sends Content-Encoding. GitHub Pages sends .json.gz as application/gzip, with no
+// Content-Encoding and no CORS header on a 404 (docs/HOSTING.md). A tract the manifest does not list is
+// reported as not_found without trusting the failed request.
 import { SCHEMA_VERSION, type AreaGeom, type LotRecord } from './types';
 
 export const DEFAULT_LOT_DATA_URL = '/data/lots2/';
@@ -52,6 +54,8 @@ export interface Manifest {
   schema_version: string;
   built_at?: string;
   rule_files_verified_on?: Record<string, string | null>;
+  /** Tracts in the build, by GEOID. A tract not listed has no file. */
+  tracts?: Record<string, unknown>;
 }
 
 export interface TractLots {
@@ -224,6 +228,7 @@ export class TractCache {
   private readonly done = new Map<string, TractLots>();
   private readonly pending = new Map<string, Pending>();
   private readonly manifests = new Map<string, Promise<Manifest>>();
+  private readonly manifestsDone = new Map<string, Manifest>();
   constructor(readonly size = CACHE_TRACTS) {}
 
   get(key: string): TractLots | undefined {
@@ -264,6 +269,7 @@ export class TractCache {
     this.done.clear();
     this.pending.clear();
     this.manifests.clear();
+    this.manifestsDone.clear();
   }
 
   /** One load per key at a time. The shared request stops only when every caller has given up. */
@@ -284,9 +290,17 @@ export class TractCache {
       m = load();
       this.manifests.set(key, m);
       // A failed manifest is not kept, so the next call tries again.
-      m.catch(() => this.manifests.delete(key));
+      m.then(
+        (v) => this.manifestsDone.set(key, v),
+        () => this.manifests.delete(key),
+      );
     }
     return m;
+  }
+
+  /** The manifest when it has already arrived, without waiting. */
+  manifestNow(key: string): Manifest | undefined {
+    return this.manifestsDone.get(key);
   }
 
   private wait(p: Pending, signal?: AbortSignal): Promise<TractLots> {
@@ -326,7 +340,23 @@ async function readTract(geoid: string, place: string, base: string, f: Fetcher,
   const manifestUrl = `${root}manifest.json`;
   const manifestP = cache.manifest(manifestUrl, async () => asManifest(await getJson(manifestUrl, f), manifestUrl));
   const headUrl = `${root}detail/${geoid}.json.gz`;
-  const [manifest, head] = await Promise.all([manifestP, getJson(headUrl, f, signal).then((v) => asHead(v, headUrl))]);
+  // A tract the manifest does not list has no file. Some hosts (GitHub Pages) send no CORS header on a 404, so the
+  // browser reports a missing file as a network error. The manifest tells the two apart.
+  const listed = (m: Manifest) => !m.tracts || Object.hasOwn(m.tracts, geoid);
+  const notListed = () => new LotLoadError('not_found', `tract ${geoid} is not in ${manifestUrl}`, { url: headUrl });
+  const known = cache.manifestNow(manifestUrl);
+  if (known && !listed(known)) throw notListed();
+  let manifest: Manifest;
+  let head: HeadFile;
+  try {
+    [manifest, head] = await Promise.all([manifestP, getJson(headUrl, f, signal).then((v) => asHead(v, headUrl))]);
+  } catch (e) {
+    if (isLotLoadError(e) && e.kind !== 'aborted') {
+      const m = await manifestP.catch(() => null);
+      if (m && !listed(m)) throw notListed();
+    }
+    throw e;
+  }
 
   if (manifest.schema_version !== SCHEMA_VERSION || head.schema_version !== SCHEMA_VERSION) {
     throw new LotLoadError('version_mismatch', `schema ${head.schema_version} (manifest ${manifest.schema_version}), app reads ${SCHEMA_VERSION}`, { url: headUrl });

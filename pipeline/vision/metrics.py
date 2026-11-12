@@ -1,5 +1,8 @@
 """Confusion matrix scores, same formulas as notebook 03."""
+
 from __future__ import annotations
+
+from typing import Any
 
 import numpy as np
 
@@ -18,20 +21,23 @@ def iou_per_class(cm: np.ndarray) -> np.ndarray:
         return tp / (cm.sum(0) + cm.sum(1) - tp)
 
 
-def scores(cm: np.ndarray, classes: list[str]) -> dict:
+def scores(cm: np.ndarray, classes: list[str]) -> dict[str, Any]:
     """Per-class IoU, mean IoU and pixel accuracy, rounded to 4 places like the published file."""
     iou = iou_per_class(cm)
     tp = np.diag(cm).astype(float)
-    return {"iou": dict(zip(classes, iou.round(4).tolist())), "miou": round(float(np.nanmean(iou)), 4),
-            "accuracy": round(float(tp.sum() / cm.sum()), 4)}
+    return {
+        "iou": dict(zip(classes, iou.round(4).tolist(), strict=True)),
+        "miou": round(float(np.nanmean(iou)), 4),
+        "accuracy": round(float(tp.sum() / cm.sum()), 4),
+    }
 
 
-def full_scores(cm: np.ndarray, classes: list[str]) -> dict:
+def full_scores(cm: np.ndarray, classes: list[str]) -> dict[str, Any]:
     s = scores(cm, classes)
     tp = np.diag(cm).astype(float)
     with np.errstate(invalid="ignore", divide="ignore"):
-        s["precision"] = dict(zip(classes, (tp / cm.sum(0)).round(4).tolist()))
-        s["recall"] = dict(zip(classes, (tp / cm.sum(1)).round(4).tolist()))
+        s["precision"] = dict(zip(classes, (tp / cm.sum(0)).round(4).tolist(), strict=True))
+        s["recall"] = dict(zip(classes, (tp / cm.sum(1)).round(4).tolist(), strict=True))
     return s
 
 

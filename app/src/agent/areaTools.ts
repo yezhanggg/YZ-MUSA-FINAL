@@ -5,6 +5,7 @@
 import type { ToolDef } from '../lib/lot/agentTools';
 import type { CountyProps, FC, TownProps, TractProps } from '../tool/geo';
 import HEADLINE from '../lib/headline.json';
+import { tractRoom, type TractRoomFields } from '../lib/adu';
 
 // ------------------------------------------------------------------ find_lot
 export const FIND_LOT_TOOL: ToolDef = {
@@ -112,6 +113,22 @@ export function forecast(p: Props) {
 }
 const FORECAST_NOTE = 'ADUs built by 2031. today = current rules. HB 2186 and SB 1346 are bills, not law.';
 
+export const ROOM_NOTE = 'Lots with 1 to 4 homes where a 600 sq ft unit fits under state-reform setbacks. Measured from every lot in Philadelphia and Pittsburgh, modelled elsewhere from housing mix and density.';
+
+/** The tract room estimate for the assistant: lots, lots with room (low, mid, high) and how it was made. */
+export function roomOut(t: TractRoomFields) {
+  const r = tractRoom(t);
+  if (!r) return { lots_with_room_600: 'not in the data' };
+  return {
+    lots_1_to_4_homes: r.lots,
+    lots_with_room_600: r.mid,
+    lots_with_room_600_low: r.low,
+    lots_with_room_600_high: r.high,
+    estimate: r.measured ? 'measured from every lot record' : r.outside ? 'modelled, outside the range of the tracts the model learned from (wide range)' : 'modelled from housing mix and density',
+    note: ROOM_NOTE,
+  };
+}
+
 function tractOut(t: TractProps) {
   const growth = (m: string, before: [unknown, unknown]) => ({ before_2019: perYear(...before), after_2019: n(t[`${m}_after`], 2), after_2019_within_margin_of_error: moe(t[`${m}_after_moe`]) });
   return {
@@ -122,7 +139,7 @@ function tractOut(t: TractProps) {
     growth_note: 'Percent per year. before_2019: ACS 2010-14 to 2015-19. after_2019: ACS 2015-19 to 2020-24. within_margin_of_error true means the change may be noise.',
     jobs: { y2019: n(t.jobs_2019), y2024: n(t.jobs_2024) },
     payoff_600_sqft: { pays: t.pays ?? null, monthly_rent: n(t.rent_est), monthly_cost: n(t.cost_month) },
-    lots: { single_family: n(t.lots_total), fit_600_sqft: n(t.lots_fit), fit_keeping_trees: n(t.lots_fit_keep_trees) },
+    lots: roomOut(t),
     trend_group: t.trend_group ?? null,
     forecast_note: 'The ADU forecast is by town and county: use level town or county.',
   };
@@ -134,6 +151,7 @@ function townOut(w: TownProps) {
     population: { y2019: n(w.pop_2019), y2025: n(w.pop_2025) },
     permits_per_year: { before_2019: n(w.permits_yr_before, 1), after_2019: n(w.permits_yr_after, 1) },
     adu_rule_today: w.adu_rule ?? 'not coded',
+    rule_file_class: w.legal_class ?? 'unknown',
     adus_by_2031: forecast(w),
     forecast_note: FORECAST_NOTE,
   };
@@ -145,7 +163,7 @@ function countyOut(c: CountyProps) {
     payoff_600_sqft: { tracts_pays_yes: n(c.tracts_pays_yes), tracts_pays_maybe: n(c.tracts_pays_maybe), tracts_pays_no: n(c.tracts_pays_no), share_of_tracts_pays_yes: n(c.share_tracts_yes, 3) },
     median_tract_rent_1br: n(c.median_tract_rent_1br),
     largest_trend_group: c.largest_trend_group ?? null,
-    lots: { single_family: n(c.lots_total), fit_600_sqft: n(c.lots_fit) },
+    lots: { lots_1_to_4_homes: n(c.lots_est), lots_with_room_600: n(c.lots_room_mid), lots_with_room_600_low: n(c.lots_room_low), lots_with_room_600_high: n(c.lots_room_high), tracts_measured: n(c.tracts_room_measured), note: ROOM_NOTE },
     adus_by_2031: forecast(c),
     forecast_note: FORECAST_NOTE,
   };
@@ -158,6 +176,7 @@ function stateOut() {
     level: 'state', name: 'Pennsylvania', tracts: h.tracts, tracts_pays_yes: h.pays_tracts, share_of_tracts_pays_yes: h.pays_share,
     adus_by_2031: { today: a.current, hb2186: a.hb2186, sb1346: a.sb1346 },
     forecast_note: FORECAST_NOTE,
+    lots: { lots_1_to_4_homes: HEADLINE.room.lots_est, lots_with_room_600: HEADLINE.room.mid, lots_with_room_600_low: HEADLINE.room.low, lots_with_room_600_high: HEADLINE.room.high, measured_tracts: HEADLINE.room.measured_tracts, modelled_tracts: HEADLINE.room.modelled_tracts, note: ROOM_NOTE },
   };
 }
 

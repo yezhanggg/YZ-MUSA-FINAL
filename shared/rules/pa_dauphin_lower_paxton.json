@@ -124,8 +124,8 @@
       "value": [
         {
           "kind": "other",
-          "condition": "No part of an accessory garage may be occupied as a residential living area. Reading (secondary): this bars a unit in or above a garage. A full conversion that ends the garage use is arguable.",
-          "effect": "bars",
+          "condition": "No part of an accessory garage may be occupied as a residential living area. Reading (secondary): this bars a unit in or above a garage. A full conversion that ends the garage use is arguable. Garage forms are left out of form.types_allowed for this reason.",
+          "effect": "condition",
           "applies_to": [
             "garage_conversion",
             "over_garage"

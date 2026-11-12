@@ -3,7 +3,6 @@ import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs';
 import { homedir, tmpdir } from 'node:os';
 import { gunzipSync } from 'node:zlib';
 import { resolve } from 'node:path';
-import type { FitCurves } from '../app/src/lib/adu';
 import { BASE, type Adu } from '../app/src/lib/numbers';
 import { findFeature, prepare, type CountyProps, type FC, type LngLat, type Lot, type TownProps, type TractProps } from '../app/src/tool/geo';
 import type { AddressEntry } from '../app/src/agent/areaTools';
@@ -18,18 +17,16 @@ export type LotUnit = ReturnType<LotAgentProvider['unit']>;
 
 const DATA = resolve(import.meta.dirname, '../app/public/data');
 
-let cache: { tracts: FC<TractProps>; towns: FC<TownProps>; curves: FitCurves | null; lots: Map<string, Lot[]> } | null = null;
+let cache: { tracts: FC<TractProps>; towns: FC<TownProps>; lots: Map<string, Lot[]> } | null = null;
 
 function data() {
   if (cache) return cache;
   const tracts = JSON.parse(readFileSync(resolve(DATA, 'tracts.geojson'), 'utf8')) as FC<TractProps>;
   const towns = JSON.parse(readFileSync(resolve(DATA, 'towns.geojson'), 'utf8')) as FC<TownProps>;
   prepare(tracts, towns);
-  const cf = resolve(DATA, 'fit_curves.json');
-  const curves = existsSync(cf) ? (JSON.parse(readFileSync(cf, 'utf8')) as FitCurves) : null;
   const lots = new Map<string, Lot[]>();
   for (const f of readdirSync(resolve(DATA, 'lots'))) if (f.endsWith('.json')) lots.set(f.slice(0, -5), JSON.parse(readFileSync(resolve(DATA, 'lots', f), 'utf8')));
-  cache = { tracts, towns, curves, lots };
+  cache = { tracts, towns, lots };
   return cache;
 }
 
@@ -201,7 +198,6 @@ export function nodeProvider(
       const lots = (tract ? (data().lots.get(tract) ?? []) : []).map((l) => siteOf(l) as SiteRecord & { lot: Lot });
       return { lots, center: [sel.lon, sel.lat], scope: `tract ${tract}` };
     },
-    curves: () => data().curves,
     adu: () => opts.adu ?? BASE,
     rule: () => opts.rule ?? 'current',
   };

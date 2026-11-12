@@ -163,8 +163,8 @@
         },
         {
           "kind": "existing_structure",
-          "condition": "The apartment 'shall be contained within the main building'. A detached garage 'shall not include a dwelling'",
-          "effect": "bars",
+          "condition": "The apartment 'shall be contained within the main building'. A detached garage 'shall not include a dwelling'. The detached, garage and over-garage forms are left out of form.types_allowed for this reason.",
+          "effect": "condition",
           "applies_to": [
             "detached_new",
             "garage_conversion",

@@ -1,0 +1,61 @@
+# Publishes the class site (the already-rendered site/ folder) to GitHub Pages. Quarto does not run here:
+# render site/ locally, commit it, and this workflow publishes it as is.
+#
+# The class pages link to the tool with relative links ("../#/?view=test"), which work on Vercel, where the
+# site sits at /quarto/ beside the app. On Pages there is no app beside it, so those links are pointed at the
+# tool on Vercel. TOOL_URL is the only place that address is set.
+#
+# One-time repository setting (by the owner): Settings > Pages > Build and deployment > Source: GitHub Actions.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+env:
+  TOOL_URL: https://yz-musa-final-iota.vercel.app
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - name: Copy site/ and point the tool links at the tool on Vercel
+        run: |
+          test -f site/index.html || { echo "site/ is not rendered: run quarto render locally and commit site/"; exit 1; }
+          rm -rf _pages
+          cp -R site _pages
+          # Quarto copies the raw app folder into site/app. It is not part of the class site.
+          rm -rf _pages/app
+          grep -rlE '="\.\./#/' _pages --include='*.html' | while read -r f; do
+            sed -i -E "s#=\"\.\./\#/#=\"${TOOL_URL}/\#/#g" "$f"
+            echo "tool links: $f"
+          done
+          touch _pages/.nojekyll
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

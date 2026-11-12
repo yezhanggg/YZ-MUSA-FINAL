@@ -24,6 +24,7 @@ Run:
     python -m pipeline.corpus.extract            # every fetched document not yet extracted
     python -m pipeline.corpus.extract --force
 """
+
 from __future__ import annotations
 
 import argparse
@@ -40,8 +41,10 @@ SCANNED_PAGE_CHARS = 50
 HEADER_SHARE = 0.15
 EDGE_LINES = 4
 
-RX_ARTICLE = re.compile(r"^(ARTICLE|Article|CHAPTER|Chapter|PART|Part|DIVISION|Division)\s+"
-                        r"([IVXLC]+|\d+[A-Z]?)\b[.:\s-]*(.*)$")
+RX_ARTICLE = re.compile(
+    r"^(ARTICLE|Article|CHAPTER|Chapter|PART|Part|DIVISION|Division)\s+"
+    r"([IVXLC]+|\d+[A-Z]?)\b[.:\s-]*(.*)$"
+)
 RX_SECTION = [
     re.compile(r"^§+\s*(\d+[A-Z]?-\d+(?:\.\d+)*[A-Z]?)\.?\s*(.*)$"),
     re.compile(r"^(?:SECTION|Section|SEC\.|Sec\.)\s+(\d+(?:[.-]\d+)*[A-Z]?)\.?\s*(.*)$"),
@@ -49,7 +52,9 @@ RX_SECTION = [
     re.compile(r"^(\d{3,4}(?:\.\d+)+[A-Z]?)\.?\s+([A-Z(].*)$"),
     re.compile(r"^(\d{3,4})\.\s+([A-Z][A-Za-z].*)$"),
     re.compile(r"^(\d{1,3}-\d{1,4}(?:\.\d+)?[A-Z]?)\.\s+([A-Z][A-Za-z].*)$"),
-    re.compile(r"^(\d{2,3}-\d{1,3}(?:\.[A-Z0-9]{1,3})*)\.?\s+([A-Z][A-Za-z&].*)$"),  # 660-42 Accessory, 660-20.F. NUMBER
+    re.compile(
+        r"^(\d{2,3}-\d{1,3}(?:\.[A-Z0-9]{1,3})*)\.?\s+([A-Z][A-Za-z&].*)$"
+    ),  # 660-42 Accessory, 660-20.F. NUMBER
 ]
 RX_TOC = re.compile(r"(\.{4,}|…{2,}|\s{2,}\d+\s*$)")
 RX_PAGE_ONLY = re.compile(r"^(page\s*)?[\divxlc]{1,4}[a-z]?(\s*of\s*\d+)?$|^[-–\s]*\d{1,4}[-–\s]*$", re.I)
@@ -119,13 +124,17 @@ def clean_pages(pages: list[str]) -> list[list[str]]:
     lines_by_page = [[x for x in ls if x] for ls in lines_by_page]
     if len(pages) >= 5:
         # only the first and last lines of a page can be a running header or footer
-        freq = Counter(n for ls in lines_by_page
-                       for n in {norm_line(x) for x in ls[:EDGE_LINES] + ls[-EDGE_LINES:]})
+        freq = Counter(n for ls in lines_by_page for n in {norm_line(x) for x in ls[:EDGE_LINES] + ls[-EDGE_LINES:]})
         cut = max(3, HEADER_SHARE * len(pages))
         drop = {n for n, c in freq.items() if c > cut and 4 <= len(n) < 90}
-        lines_by_page = [[x for j, x in enumerate(ls)
-                          if not ((j < EDGE_LINES or j >= len(ls) - EDGE_LINES) and norm_line(x) in drop)]
-                         for ls in lines_by_page]
+        lines_by_page = [
+            [
+                x
+                for j, x in enumerate(ls)
+                if not ((j < EDGE_LINES or j >= len(ls) - EDGE_LINES) and norm_line(x) in drop)
+            ]
+            for ls in lines_by_page
+        ]
     return [[x for x in ls if not RX_PAGE_ONLY.match(x)] for ls in lines_by_page]
 
 
@@ -134,9 +143,9 @@ def _parent(label: str, seen: list[str]) -> str | None:
     such as 1.04.005 take the last four digit section (1304.01)."""
     best = None
     for prev in reversed(seen[-200:]):
-        if prev != label and (label.startswith(prev + ".") or label.startswith(prev + "-")):
-            if best is None or len(prev) > len(best):
-                best = prev
+        is_parent = prev != label and (label.startswith(prev + ".") or label.startswith(prev + "-"))
+        if is_parent and (best is None or len(prev) > len(best)):
+            best = prev
     if best is None and re.match(r"^\d\.\d{2}\.\d{3}", label):
         best = next((p for p in reversed(seen) if re.match(r"^\d{4}\.", p)), None)
     return best
@@ -145,8 +154,15 @@ def _parent(label: str, seen: list[str]) -> str | None:
 def segment(lines_by_page: list[list[str]]) -> list[dict[str, Any]]:
     flat = [(pno, line) for pno, lines in enumerate(lines_by_page, 1) for line in lines]
     segs: list[dict[str, Any]] = []
-    cur: dict[str, Any] = {"section": None, "heading": "", "article": None, "parent": None,
-                           "page_start": 1, "page_end": 1, "lines": []}
+    cur: dict[str, Any] = {
+        "section": None,
+        "heading": "",
+        "article": None,
+        "parent": None,
+        "page_start": 1,
+        "page_end": 1,
+        "lines": [],
+    }
     article = None
     seen: list[str] = []
     i = 0
@@ -156,9 +172,14 @@ def segment(lines_by_page: list[list[str]]) -> list[dict[str, Any]]:
         h = None if a else detect_heading(line)
         if not a and not h and RX_BARE_LABEL.match(line) and i + 1 < len(flat):
             # label alone on its line, title on the next, unless this is a table row
-            nxt = [x for _, x in flat[i + 1:i + 4]]
-            if nxt and not RX_CELL.match(nxt[0]) and not any(RX_CELL.match(x) for x in nxt[1:3]) \
-                    and len(nxt[0]) < 120 and not RX_BARE_LABEL.match(nxt[0]):
+            nxt = [x for _, x in flat[i + 1 : i + 4]]
+            if (
+                nxt
+                and not RX_CELL.match(nxt[0])
+                and not any(RX_CELL.match(x) for x in nxt[1:3])
+                and len(nxt[0]) < 120
+                and not RX_BARE_LABEL.match(nxt[0])
+            ):
                 h = (re.sub(r"^§+\s*", "", line.rstrip(".")), nxt[0])
                 line = f"{line} {nxt[0]}"
                 i += 1
@@ -168,9 +189,15 @@ def segment(lines_by_page: list[list[str]]) -> list[dict[str, Any]]:
             if a:
                 article = a
             label = h[0] if h else None
-            cur = {"section": label, "heading": (h[1] if h else a) or "", "article": article,
-                   "parent": _parent(label, seen) if label else None,
-                   "page_start": pno, "page_end": pno, "lines": [line]}
+            cur = {
+                "section": label,
+                "heading": (h[1] if h else a) or "",
+                "article": article,
+                "parent": _parent(label, seen) if label else None,
+                "page_start": pno,
+                "page_end": pno,
+                "lines": [line],
+            }
             if label:
                 seen.append(label)
         else:
@@ -192,8 +219,9 @@ def doc_pages(path: Path) -> list[str]:
     fixed pages."""
     import subprocess
 
-    out = subprocess.run(["textutil", "-convert", "txt", "-stdout", str(path)], capture_output=True, text=True,
-                         timeout=120)
+    out = subprocess.run(
+        ["textutil", "-convert", "txt", "-stdout", str(path)], capture_output=True, text=True, timeout=120
+    )
     if out.returncode != 0:
         raise RuntimeError(f"textutil failed: {out.stderr[:200]}")
     return [out.stdout]
@@ -211,9 +239,17 @@ def extract_doc(rec: dict[str, Any]) -> dict[str, Any]:
     kind = path.suffix.lstrip(".")
     pages: list[str]
     if served_page_not_doc(rec, kind):
-        return {"doc_id": doc_id, "geoid": rec["geoid"], "url": rec["url"], "final_url": rec.get("final_url"),
-                "kind": kind, "pages": 0, "scanned": None, "segments": [],
-                "skipped": "document link served an HTML page (redirect), not the document"}
+        return {
+            "doc_id": doc_id,
+            "geoid": rec["geoid"],
+            "url": rec["url"],
+            "final_url": rec.get("final_url"),
+            "kind": kind,
+            "pages": 0,
+            "scanned": None,
+            "segments": [],
+            "skipped": "document link served an HTML page (redirect), not the document",
+        }
     if kind == "pdf":
         pages = pdf_pages(path)
     elif kind == "html":
@@ -221,15 +257,34 @@ def extract_doc(rec: dict[str, Any]) -> dict[str, Any]:
     elif kind in ("doc", "docx"):
         pages = doc_pages(path)
     else:
-        return {"doc_id": doc_id, "geoid": rec["geoid"], "url": rec["url"], "kind": kind, "pages": 0,
-                "scanned": None, "segments": [], "skipped": f"no extractor for {kind}"}
+        return {
+            "doc_id": doc_id,
+            "geoid": rec["geoid"],
+            "url": rec["url"],
+            "kind": kind,
+            "pages": 0,
+            "scanned": None,
+            "segments": [],
+            "skipped": f"no extractor for {kind}",
+        }
     empty = sum(1 for p in pages if len(p.strip()) < SCANNED_PAGE_CHARS)
     scanned = kind == "pdf" and len(pages) > 0 and empty / len(pages) > 0.5
     segs = [] if scanned else segment(clean_pages(pages))
-    return {"doc_id": doc_id, "geoid": rec["geoid"], "url": rec["url"], "final_url": rec.get("final_url"),
-            "fetched_at": rec["fetched_at"], "sha256": rec.get("sha256"), "kind": kind, "pages": len(pages),
-            "empty_pages": empty, "scanned": scanned, "link_text": rec.get("link_text"),
-            "chars": sum(len(s["text"]) for s in segs), "segments": segs}
+    return {
+        "doc_id": doc_id,
+        "geoid": rec["geoid"],
+        "url": rec["url"],
+        "final_url": rec.get("final_url"),
+        "fetched_at": rec["fetched_at"],
+        "sha256": rec.get("sha256"),
+        "kind": kind,
+        "pages": len(pages),
+        "empty_pages": empty,
+        "scanned": scanned,
+        "link_text": rec.get("link_text"),
+        "chars": sum(len(s["text"]) for s in segs),
+        "segments": segs,
+    }
 
 
 def is_zoning_doc(rec: dict[str, Any]) -> bool:
@@ -250,8 +305,10 @@ def run(force: bool = False) -> list[dict[str, Any]]:
         else:
             d = extract_doc(rec)
             dest.write_text(json.dumps(d))
-        stats.append({k: d.get(k) for k in ("doc_id", "kind", "pages", "scanned", "chars")}
-                     | {"segments": len(d["segments"]), "labelled": sum(1 for s in d["segments"] if s["section"])})
+        stats.append(
+            {k: d.get(k) for k in ("doc_id", "kind", "pages", "scanned", "chars")}
+            | {"segments": len(d["segments"]), "labelled": sum(1 for s in d["segments"] if s["section"])}
+        )
         print(stats[-1], flush=True)
     return stats
 

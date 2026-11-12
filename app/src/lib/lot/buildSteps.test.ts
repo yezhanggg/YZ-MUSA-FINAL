@@ -13,7 +13,7 @@ describe('buildSteps', () => {
     const zoning = list.steps.find((s) => s.id === 'zoning')!;
     expect(zoning.title).toBe("Apply for an Administrator's Exception");
     expect(zoning.documents.join(' ')).toMatch(/neighbors/);
-    expect(zoning.basis).toMatchObject({ kind: 'rule', citation: { section: '925.06.G.1(i)' } });
+    expect(zoning.basis).toMatchObject({ kind: 'rule', citation: { section: expect.stringMatching(/^925\.06\.G\.1\(i\)/) } });
     expect(zoning.who).toMatch(/Zoning Administrator/);
   });
 

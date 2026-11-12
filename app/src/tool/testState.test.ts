@@ -3,7 +3,7 @@ import { fixture } from '../lib/lot/__fixtures__';
 import { fitBox } from '../lib/fitBox';
 import { areaFeet, frameOf } from '../lib/lot/geometry';
 import { unitVerdict } from '../lib/lot/verdict';
-import { DEFAULT_UNIT, PRESETS, boxRing, fitsAt, lotByAddress, normAddress, siteData, sidesFromArea, testFromHash, testHash, typeFor, typeOptions, unitInput } from './testState';
+import { DEFAULT_UNIT, PRESETS, allowedPhrase, boxRing, fitsAt, lotByAddress, normAddress, siteData, sidesFromArea, testFromHash, testHash, typeFor, typeOptions, unitInput } from './testState';
 
 describe('the address', () => {
   it('defaults to testing mode, today and a 20 x 30 ft cottage', () => {
@@ -96,6 +96,29 @@ describe('unit types', () => {
     expect(opts.find((o) => o.type === 'detached_new')?.why).toMatch(/not allowed/i);
     expect(opts.find((o) => o.type === 'attached')?.enabled).toBe(false);
     expect(typeFor(fixture('philadelphia_internal'), 'today', 'detached_new')).toBe('internal');
+  });
+
+  it('a conversion the rules allow on a lot with no garage says both, from the record', () => {
+    expect(typeOptions(fixture('easy_fit'), 'today').find((o) => o.type === 'garage_conversion')).toMatchObject({ enabled: false, why: 'Allowed here by right (no hearing). No garage or outbuilding was found on this lot.' });
+  });
+
+  it('only by right, an exception or conditional use count as allowed; a variance says it needs one', () => {
+    expect(allowedPhrase('by_right')).toBe('Allowed here by right (no hearing).');
+    expect(allowedPhrase('administrator_exception')).toMatch(/Administrator's Exception/);
+    expect(allowedPhrase('special_exception')).toBe('Allowed here with a special exception (zoning board hearing).');
+    expect(allowedPhrase('conditional_use')).toMatch(/^Allowed here with conditional use/);
+    expect(allowedPhrase('variance')).toBe('Needs a variance (zoning board hearing).');
+    const attached = (path: string) => {
+      const lot = structuredClone(fixture('easy_fit'));
+      const r = lot.rules.today!;
+      r.allowed = true;
+      r.approval_by_type = { ...(r.approval_by_type ?? {}), attached: path };
+      return typeOptions(lot, 'today').find((o) => o.type === 'attached')!.why!;
+    };
+    expect(attached('variance')).toMatch(/^Needs a variance \(zoning board hearing\)\./);
+    expect(attached('variance')).not.toMatch(/Allowed/);
+    expect(attached('conditional_use')).toMatch(/^Allowed here with conditional use/);
+    expect(attached('not_allowed')).toMatch(/^Not allowed here/);
   });
 
   it('a lot without a garage turns the garage types off', () => {

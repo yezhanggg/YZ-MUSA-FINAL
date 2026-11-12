@@ -1,12 +1,24 @@
 """Money model checks: hand-computed numbers, rules, the assumptions file, and parity with the browser."""
+
 import json
 from pathlib import Path
 
 import pytest
 
 from pipeline.money import (
-    ASSUMPTIONS_PATH, FIXTURE_PATH, Used, adu_cost, adu_rent_from_table, bedrooms_for_size, interp,
-    load_assumptions, loan_payment, pro_forma, round_to, tax_schedule, verdict,
+    ASSUMPTIONS_PATH,
+    FIXTURE_PATH,
+    Used,
+    adu_cost,
+    adu_rent_from_table,
+    bedrooms_for_size,
+    interp,
+    load_assumptions,
+    loan_payment,
+    pro_forma,
+    round_to,
+    tax_schedule,
+    verdict,
 )
 
 SCHEMA_PATH = ASSUMPTIONS_PATH.with_name("assumptions.schema.json")
@@ -53,8 +65,9 @@ def test_every_type_and_place_is_covered():
 
 
 def test_output_keys_all_exist():
-    pf = pro_forma({"place": "pittsburgh", "rent_by_bedroom": {"b1": 1300}},
-                   {"size_sqft": 600, "adu_type": "detached_new"})
+    pf = pro_forma(
+        {"place": "pittsburgh", "rent_by_bedroom": {"b1": 1300}}, {"size_sqft": 600, "adu_type": "detached_new"}
+    )
     assert pf["assumptions"] and set(pf["assumptions"]) <= set(A["items"])
     assert "tax.pittsburgh.millage" in pf["assumptions"]
 
@@ -70,8 +83,8 @@ def test_loan_payment_by_hand():
 
 
 def test_round_half_up_like_the_browser():
-    assert round_to(0.5, 0) == 1 and round(0.5) == 0   # Python round() goes to even, the browser goes up
-    assert round_to(-2.5, 0) == -2              # Math.round(-2.5) is -2
+    assert round_to(0.5, 0) == 1 and round(0.5) == 0  # Python round() goes to even, the browser goes up
+    assert round_to(-2.5, 0) == -2  # Math.round(-2.5) is -2
 
 
 def test_interp_flat_at_ends():
@@ -107,7 +120,10 @@ def test_septic_and_place_effects():
     base = adu_cost(600, "detached_new", "rest_of_pa")
     septic = adu_cost(600, "detached_new", "rest_of_pa", flags={"septic": True})
     assert septic["total"]["mid"] - base["total"]["mid"] > A["items"]["cost.septic_upgrade"]["mid"]
-    assert adu_cost(600, "detached_new", "philadelphia")["total"]["mid"] > adu_cost(600, "detached_new", "pittsburgh")["total"]["mid"]
+    assert (
+        adu_cost(600, "detached_new", "philadelphia")["total"]["mid"]
+        > adu_cost(600, "detached_new", "pittsburgh")["total"]["mid"]
+    )
 
 
 def test_screen_cost_override_keeps_spread():
@@ -148,9 +164,9 @@ def _case(flow, dscr, debt=1000.0, yoc=None):
 def test_verdict_thresholds_with_loan():
     u = Used(A)
     assert verdict(_case(10, 1.25), _case(100, 1.4), 1500, u)[0] == "pays"
-    assert verdict(_case(10, 1.10), _case(100, 1.4), 1500, u)[0] == "close"      # positive but thin coverage
-    assert verdict(_case(-140, 0.9), _case(-50, 0.95), 1500, u)[0] == "close"    # gap within 10 percent of rent
-    assert verdict(_case(-200, 0.8), _case(5, 1.0), 1500, u)[0] == "close"       # pays at the low cost
+    assert verdict(_case(10, 1.10), _case(100, 1.4), 1500, u)[0] == "close"  # positive but thin coverage
+    assert verdict(_case(-140, 0.9), _case(-50, 0.95), 1500, u)[0] == "close"  # gap within 10 percent of rent
+    assert verdict(_case(-200, 0.8), _case(5, 1.0), 1500, u)[0] == "close"  # pays at the low cost
     assert verdict(_case(-200, 0.8), _case(-60, 0.9), 1500, u)[0] == "does_not_pay"
 
 
@@ -185,7 +201,13 @@ def test_fixture_is_current_and_broad():
     assert len(cases) >= 25
     assert {c["input"]["lot_facts"]["place"] for c in cases} >= {"philadelphia", "pittsburgh", "rest_of_pa"}
     assert {c["input"]["adu"]["adu_type"] for c in cases} == set(A["adu_types"])
-    assert {c["input"]["financing"]["preset"] for c in cases} >= {"cash", "heloc", "construction_to_perm", "fha_203k", "all_borrowed"}
+    assert {c["input"]["financing"]["preset"] for c in cases} >= {
+        "cash",
+        "heloc",
+        "construction_to_perm",
+        "fha_203k",
+        "all_borrowed",
+    }
 
 
 @pytest.mark.parametrize("case", FIXTURE["cases"], ids=lambda c: c["id"])

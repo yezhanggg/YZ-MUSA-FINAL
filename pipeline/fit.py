@@ -9,13 +9,15 @@ Run the demo (geospatial env):
     python -m pipeline.fit demo --lots data/processed/6950_lots_sf.gpkg --n 200 \
         --out ~/musa-drive/processed/fit_demo/
 """
+
 from __future__ import annotations
 
 import functools
 import math
 import re
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
-from typing import Any, Callable, Literal, Mapping, Optional, Sequence, TypedDict, TypeVar
+from typing import Any, Literal, TypedDict
 
 import numpy as np
 import shapely
@@ -33,44 +35,67 @@ Confidence = Literal["high", "medium", "low"]
 ADU_TYPES: tuple[str, ...] = ("detached_new", "garage_conversion", "over_garage", "internal")
 
 RULE_KEYS: tuple[str, ...] = (
-    "allowed", "approval_path", "reasons", "types_allowed", "max_adus", "max_size_sqft",
-    "min_size_sqft", "max_share_of_house", "min_lot_sqft", "max_height_ft", "setback_front_ft",
-    "setback_side_ft", "setback_rear_ft", "setback_rear_alley_ft", "separation_ft",
-    "max_building_coverage", "max_impervious", "owner_occupancy", "parking_spaces", "citations", "assumed",
+    "allowed",
+    "approval_path",
+    "reasons",
+    "types_allowed",
+    "max_adus",
+    "max_size_sqft",
+    "min_size_sqft",
+    "max_share_of_house",
+    "min_lot_sqft",
+    "max_height_ft",
+    "setback_front_ft",
+    "setback_side_ft",
+    "setback_rear_ft",
+    "setback_rear_alley_ft",
+    "separation_ft",
+    "max_building_coverage",
+    "max_impervious",
+    "owner_occupancy",
+    "parking_spaces",
+    "citations",
+    "assumed",
 )
 # A null here would silently mean "build on the lot line", so the caller must supply a number.
 REQUIRED_NUMBERS: tuple[str, ...] = (
-    "setback_front_ft", "setback_side_ft", "setback_rear_ft", "setback_rear_alley_ft", "separation_ft",
+    "setback_front_ft",
+    "setback_side_ft",
+    "setback_rear_ft",
+    "setback_rear_alley_ft",
+    "separation_ft",
 )
 
 
 class Rules(TypedDict):
     """Resolved rules for one lot and one scenario. Units are feet and sq ft. None means no limit."""
+
     allowed: bool
-    approval_path: Optional[str]
+    approval_path: str | None
     reasons: list[str]
-    types_allowed: Optional[list[str]]
-    max_adus: Optional[int]
-    max_size_sqft: Optional[float]
-    min_size_sqft: Optional[float]
-    max_share_of_house: Optional[float]
-    min_lot_sqft: Optional[float]
-    max_height_ft: Optional[float]
+    types_allowed: list[str] | None
+    max_adus: int | None
+    max_size_sqft: float | None
+    min_size_sqft: float | None
+    max_share_of_house: float | None
+    min_lot_sqft: float | None
+    max_height_ft: float | None
     setback_front_ft: float
     setback_side_ft: float
     setback_rear_ft: float
     setback_rear_alley_ft: float
     separation_ft: float
-    max_building_coverage: Optional[float]
-    max_impervious: Optional[float]
-    owner_occupancy: Optional[bool]
-    parking_spaces: Optional[int]
-    citations: dict[str, dict[str, Any]]   # rule key -> {section, url, verified_on, confidence, source_file}
+    max_building_coverage: float | None
+    max_impervious: float | None
+    owner_occupancy: bool | None
+    parking_spaces: int | None
+    citations: dict[str, dict[str, Any]]  # rule key -> {section, url, verified_on, confidence, source_file}
     assumed: list[str]
 
 
 class Want(TypedDict, total=False):
     """What the owner wants to build. Every key is optional."""
+
     footprint_sqft: float
     stories: int
     height_ft: float
@@ -82,7 +107,7 @@ class Want(TypedDict, total=False):
 class Building:
     polygon: Polygon
     role: Role = "other"
-    height_ft: Optional[float] = None
+    height_ft: float | None = None
     source: str = "city"
 
     @property
@@ -94,10 +119,10 @@ class Building:
 class Edge:
     id: int
     line: LineString
-    role: str = "side"   # front, rear or side
+    role: str = "side"  # front, rear or side
     # Overrides the rule setback for this one line. A party wall shared with the attached
     # neighbor (twins, rows) has no side yard, so it is 0 there.
-    setback_ft: Optional[float] = None
+    setback_ft: float | None = None
 
 
 @dataclass
@@ -127,12 +152,13 @@ class EdgeInfo:
 @dataclass
 class LotShape:
     """One lot in local feet, with what the fit needs beyond the outline."""
+
     polygon: Polygon
     edges: EdgeInfo
-    living_sqft: Optional[float] = None        # main house living area from the assessor
-    hard_surface_sqft: Optional[float] = None  # driveways, patios: from land cover when known
-    tree_blocks: Optional[BaseGeometry] = None  # soft: fits if the tree goes
-    pool_blocks: Optional[BaseGeometry] = None  # hard: a pool is not coming out
+    living_sqft: float | None = None  # main house living area from the assessor
+    hard_surface_sqft: float | None = None  # driveways, patios: from land cover when known
+    tree_blocks: BaseGeometry | None = None  # soft: fits if the tree goes
+    pool_blocks: BaseGeometry | None = None  # hard: a pool is not coming out
 
     @property
     def area_sqft(self) -> float:
@@ -142,6 +168,7 @@ class LotShape:
 @dataclass
 class Buildable:
     """Where a new building may go. `clear` assumes sheds and trees are removed, `keep` keeps them."""
+
     clear: BaseGeometry
     keep: BaseGeometry
     soft: BaseGeometry
@@ -150,8 +177,8 @@ class Buildable:
 @dataclass
 class Rect:
     polygon: Polygon
-    width_ft: float   # short side
-    depth_ft: float   # long side
+    width_ft: float  # short side
+    depth_ft: float  # long side
     angle_deg: float  # direction of the long side, degrees counterclockwise from east, in [0, 180)
 
     @property
@@ -162,8 +189,8 @@ class Rect:
 @dataclass
 class Check:
     ok: bool
-    value: Optional[float] = None
-    limit: Optional[float] = None
+    value: float | None = None
+    limit: float | None = None
     note: str = ""
 
 
@@ -172,60 +199,69 @@ class FitResult:
     adu_type: str
     fits: bool
     largest_sqft: float
-    spot: Optional[Polygon]
-    width_ft: Optional[float]
-    depth_ft: Optional[float]
-    angle_deg: Optional[float]
-    limiting: str     # code: yard_space, size_cap, no_room, not_allowed, ...
+    spot: Polygon | None
+    width_ft: float | None
+    depth_ft: float | None
+    angle_deg: float | None
+    limiting: str  # code: yard_space, size_cap, no_room, not_allowed, ...
     checks: dict[str, Check]
-    note: str = ""    # the limiting reason in a sentence
+    note: str = ""  # the limiting reason in a sentence
     warnings: list[str] = field(default_factory=list)
     assumed: list[str] = field(default_factory=list)
-    largest_if_cleared_sqft: Optional[float] = None
-    second: Optional["FitResult"] = None
+    largest_if_cleared_sqft: float | None = None
+    second: FitResult | None = None
 
     def to_dict(self, geom: Any = None) -> dict[str, Any]:
         """Plain dict for JSON. `geom` converts a polygon (for example to WGS84 GeoJSON)."""
         conv = geom or (lambda g: shapely.geometry.mapping(g))
         return {
-            "adu_type": self.adu_type, "fits": self.fits, "largest_sqft": round(self.largest_sqft),
-            "largest_if_cleared_sqft": None if self.largest_if_cleared_sqft is None else round(self.largest_if_cleared_sqft),
+            "adu_type": self.adu_type,
+            "fits": self.fits,
+            "largest_sqft": round(self.largest_sqft),
+            "largest_if_cleared_sqft": None
+            if self.largest_if_cleared_sqft is None
+            else round(self.largest_if_cleared_sqft),
             "spot": conv(self.spot) if self.spot is not None else None,
-            "width_ft": _r1(self.width_ft), "depth_ft": _r1(self.depth_ft), "angle_deg": _r1(self.angle_deg),
-            "limiting": self.limiting, "note": self.note,
-            "checks": {k: {"pass": c.ok, "value": _r1(c.value), "limit": _r1(c.limit), "note": c.note}
-                       for k, c in self.checks.items()},
-            "warnings": list(self.warnings), "assumed": list(self.assumed),
+            "width_ft": _r1(self.width_ft),
+            "depth_ft": _r1(self.depth_ft),
+            "angle_deg": _r1(self.angle_deg),
+            "limiting": self.limiting,
+            "note": self.note,
+            "checks": {
+                k: {"pass": c.ok, "value": _r1(c.value), "limit": _r1(c.limit), "note": c.note}
+                for k, c in self.checks.items()
+            },
+            "warnings": list(self.warnings),
+            "assumed": list(self.assumed),
             "second": self.second.to_dict(geom) if self.second else None,
         }
 
 
-def _r1(v: Optional[float]) -> Optional[float]:
+def _r1(v: float | None) -> float | None:
     return None if v is None else round(float(v), 1)
 
 
 # Defaults for the shape of a livable unit. A 12 ft side fits a bedroom. Past 3:1 it is a hallway.
 MIN_SIDE_FT = 12.0
 MAX_ASPECT = 3.0
-STORY_HEIGHT_FT = {1: 15.0, 2: 25.0}   # peak height used when the owner gives none
-FIRE_WALL_FT = 5.0                     # building code: closer than this needs a rated wall
+STORY_HEIGHT_FT = {1: 15.0, 2: 25.0}  # peak height used when the owner gives none
+FIRE_WALL_FT = 5.0  # building code: closer than this needs a rated wall
 EMPTY = Polygon()
 
 
 # ---------------------------------------------------------------- rules
 
-F = TypeVar("F", bound=Callable[..., Any])
 
-
-def _quiet(fn: F) -> F:
+def _quiet[F: Callable[..., Any]](fn: F) -> F:
     """GEOS 3.10 sets a floating point flag on some valid unions and buffers. numpy turns it into a
     RuntimeWarning on every lot. The results are correct, so the flag is ignored here."""
+
     @functools.wraps(fn)
     def wrap(*a: Any, **k: Any) -> Any:
         with np.errstate(invalid="ignore"):
             return fn(*a, **k)
-    return wrap  # type: ignore[return-value]
 
+    return wrap  # type: ignore[return-value]
 
 
 def check_rules(rules: Mapping[str, Any]) -> None:
@@ -241,14 +277,25 @@ def check_rules(rules: Mapping[str, Any]) -> None:
 def default_rules(**over: Any) -> Rules:
     """The demo rules: 5 ft lot-line setbacks, 10 ft from the house, 800 sq ft cap, nothing else."""
     r: dict[str, Any] = {k: None for k in RULE_KEYS}
-    r.update(allowed=True, reasons=[], citations={}, assumed=["demo defaults"], max_adus=1,
-             max_size_sqft=800.0, setback_front_ft=5.0, setback_side_ft=5.0, setback_rear_ft=5.0,
-             setback_rear_alley_ft=5.0, separation_ft=10.0)
+    r.update(
+        allowed=True,
+        reasons=[],
+        citations={},
+        assumed=["demo defaults"],
+        max_adus=1,
+        max_size_sqft=800.0,
+        setback_front_ft=5.0,
+        setback_side_ft=5.0,
+        setback_rear_ft=5.0,
+        setback_rear_alley_ft=5.0,
+        separation_ft=10.0,
+    )
     r.update(over)
     return r  # type: ignore[return-value]
 
 
 # ---------------------------------------------------------------- edges
+
 
 def _unit(dx: float, dy: float) -> tuple[float, float]:
     n = math.hypot(dx, dy) or 1.0
@@ -261,12 +308,12 @@ def split_edges(poly: Polygon, tol: float = 0.5, turn_deg: float = 15.0, drift_d
     Survey outlines carry many near-collinear vertices, so a new line starts only at a real turn
     (over `turn_deg`) or when a gentle curve has drifted `drift_deg` from where the line began.
     """
-    ring = orient(poly.simplify(tol), 1.0).exterior   # counterclockwise: the outside is to the right
+    ring = orient(poly.simplify(tol), 1.0).exterior  # counterclockwise: the outside is to the right
     pts = np.asarray(ring.coords)[:-1]
     n = len(pts)
     seg = np.roll(pts, -1, axis=0) - pts
     ang = np.arctan2(seg[:, 1], seg[:, 0])
-    turn = np.abs((ang - np.roll(ang, 1) + np.pi) % (2 * np.pi) - np.pi)   # turn at vertex i
+    turn = np.abs((ang - np.roll(ang, 1) + np.pi) % (2 * np.pi) - np.pi)  # turn at vertex i
     start = int(np.argmax(turn))
     edges: list[LineString] = []
     cur = [start]
@@ -309,9 +356,14 @@ def _width_across(poly: Polygon, direction: tuple[float, float]) -> float:
 
 
 @_quiet
-def classify_edges(lot_polygon: Polygon, street_lines: Optional[BaseGeometry],
-                   alley_lines: Optional[BaseGeometry] = None, house: Optional[BaseGeometry] = None,
-                   max_street_ft: float = 150.0, alley_ft: float = 30.0) -> EdgeInfo:
+def classify_edges(
+    lot_polygon: Polygon,
+    street_lines: BaseGeometry | None,
+    alley_lines: BaseGeometry | None = None,
+    house: BaseGeometry | None = None,
+    max_street_ft: float = 150.0,
+    alley_ft: float = 30.0,
+) -> EdgeInfo:
     """Label lot lines as front, rear and side.
 
     Front is the lot line facing the nearest street. Rear is the farthest line facing the other way.
@@ -332,8 +384,11 @@ def classify_edges(lot_polygon: Polygon, street_lines: Optional[BaseGeometry],
     # A short piece, like the cut at a street corner, loses to a long lot line about as close to the
     # street. A flag lot's pole stays the front because nothing else is near the street.
     if has_street and lengths[front_i] < min(15.0, 0.5 * max(lengths)):
-        longer = [i for i in range(len(lines)) if lengths[i] >= min(15.0, 0.5 * max(lengths))
-                  and dist[i] <= dist[front_i] + 15.0]
+        longer = [
+            i
+            for i in range(len(lines))
+            if lengths[i] >= min(15.0, 0.5 * max(lengths)) and dist[i] <= dist[front_i] + 15.0
+        ]
         if longer:
             front_i = min(longer, key=lambda i: dist[i])
     street_edge = has_street and dist[front_i] <= max_street_ft
@@ -341,9 +396,14 @@ def classify_edges(lot_polygon: Polygon, street_lines: Optional[BaseGeometry],
     if street_edge:
         # Corner lot: a second street line facing another way, about as close as the first.
         # Pieces of a rounded street corner are not a second frontage.
-        near = [i for i in range(len(lines)) if i != front_i and lengths[i] >= max(15.0, 0.3 * max(lengths))
-                and dist[i] <= min(max(dist[front_i] + 12.0, 40.0), 50.0)
-                and abs(np.dot(normals[i], normals[front_i])) < 0.7]
+        near = [
+            i
+            for i in range(len(lines))
+            if i != front_i
+            and lengths[i] >= max(15.0, 0.3 * max(lengths))
+            and dist[i] <= min(max(dist[front_i] + 12.0, 40.0), 50.0)
+            and abs(np.dot(normals[i], normals[front_i])) < 0.7
+        ]
         if near:
             corner = True
             cands = [front_i] + near
@@ -359,8 +419,11 @@ def classify_edges(lot_polygon: Polygon, street_lines: Optional[BaseGeometry],
         front_i = _front_without_streets(lot_polygon, lines, normals, house)
 
     nf = normals[front_i]
-    front = [front_i] + [i for i in range(len(lines)) if i != front_i and np.dot(normals[i], nf) > 0.9
-                         and street_edge and dist[i] <= dist[front_i] + 10.0]
+    front = [front_i] + [
+        i
+        for i in range(len(lines))
+        if i != front_i and np.dot(normals[i], nf) > 0.9 and street_edge and dist[i] <= dist[front_i] + 10.0
+    ]
     front_line = lines[front_i]
 
     away = [i for i in range(len(lines)) if i not in front and np.dot(normals[i], nf) < -0.5]
@@ -370,8 +433,9 @@ def classify_edges(lot_polygon: Polygon, street_lines: Optional[BaseGeometry],
         away = [i for i in range(len(lines)) if i not in front]
     far = {i: lines[i].interpolate(0.5, normalized=True).distance(front_line) for i in away}
     rear_i = max(far, key=lambda i: (round(far[i], 0), lengths[i]))
-    rear = [rear_i] + [i for i in away if i != rear_i and np.dot(normals[i], normals[rear_i]) > 0.9
-                       and far[i] >= far[rear_i] - 10.0]
+    rear = [rear_i] + [
+        i for i in away if i != rear_i and np.dot(normals[i], normals[rear_i]) > 0.9 and far[i] >= far[rear_i] - 10.0
+    ]
     side = [i for i in range(len(lines)) if i not in front and i not in rear]
 
     # Flag lot: the street frontage is a narrow pole compared with the body of the lot.
@@ -391,12 +455,23 @@ def classify_edges(lot_polygon: Polygon, street_lines: Optional[BaseGeometry],
 
     roles = {**{i: "front" for i in front}, **{i: "rear" for i in rear}}
     edges = [Edge(i, lines[i], roles.get(i, "side")) for i in range(len(lines))]
-    return EdgeInfo(edges, front, rear, side, alley=alley, corner=corner, flag_lot=flag,
-                    street_edge=bool(street_edge), confidence=conf, notes=notes)
+    return EdgeInfo(
+        edges,
+        front,
+        rear,
+        side,
+        alley=alley,
+        corner=corner,
+        flag_lot=flag,
+        street_edge=bool(street_edge),
+        confidence=conf,
+        notes=notes,
+    )
 
 
-def _front_without_streets(poly: Polygon, lines: Sequence[LineString], normals: Sequence[tuple[float, float]],
-                           house: Optional[BaseGeometry]) -> int:
+def _front_without_streets(
+    poly: Polygon, lines: Sequence[LineString], normals: Sequence[tuple[float, float]], house: BaseGeometry | None
+) -> int:
     """Front guess with no streets: an end of the lot's long axis, the one nearest the house."""
     mrr = np.asarray(poly.minimum_rotated_rectangle.exterior.coords)
     s1, s2 = mrr[1] - mrr[0], mrr[2] - mrr[1]
@@ -409,6 +484,7 @@ def _front_without_streets(poly: Polygon, lines: Sequence[LineString], normals: 
 
 
 # ---------------------------------------------------------------- buildable area
+
 
 def _setback(edges: EdgeInfo, role: str, rules: Mapping[str, Any]) -> float:
     if role == "front":
@@ -428,8 +504,9 @@ def _union(geoms: Sequence[BaseGeometry]) -> BaseGeometry:
 
 
 @_quiet
-def buildable_area(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any],
-                   soft_blocks: Optional[BaseGeometry] = None) -> Buildable:
+def buildable_area(
+    lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any], soft_blocks: BaseGeometry | None = None
+) -> Buildable:
     """Ground where a new building may stand.
 
     The lot shrinks by each lot line's setback (a round buffer of the line, which is what
@@ -438,8 +515,11 @@ def buildable_area(lot: LotShape, buildings: Sequence[Building], rules: Mapping[
     them, `keep` removes them, so the app can say "fits if the shed goes".
     """
     check_rules(rules)
-    strips = [e.line.buffer(_edge_setback(lot.edges, e, rules), quad_segs=4)
-              for e in lot.edges.edges if _edge_setback(lot.edges, e, rules) > 0]
+    strips = [
+        e.line.buffer(_edge_setback(lot.edges, e, rules), quad_segs=4)
+        for e in lot.edges.edges
+        if _edge_setback(lot.edges, e, rules) > 0
+    ]
     inner = lot.polygon.difference(_union(strips)) if strips else lot.polygon
 
     sep = float(rules["separation_ft"])
@@ -464,6 +544,7 @@ def _polygons_only(g: BaseGeometry) -> BaseGeometry:
 
 # ---------------------------------------------------------------- largest rectangle
 
+
 def lot_axis_deg(poly: BaseGeometry) -> float:
     """Angle of the lot's own grid: the minimum rotated rectangle, folded into [0, 90)."""
     xy = np.asarray(poly.minimum_rotated_rectangle.exterior.coords)
@@ -475,9 +556,15 @@ ANGLE_OFFSETS: tuple[float, ...] = (0.0, -8.0, 8.0, 45.0)
 
 
 @_quiet
-def largest_rectangle(polygon: BaseGeometry, min_width_ft: float = 0.0, min_depth_ft: float = 0.0,
-                      angles: Optional[Sequence[float]] = None, max_aspect: Optional[float] = None,
-                      grid: int = 32, refine: int = 2) -> Optional[Rect]:
+def largest_rectangle(
+    polygon: BaseGeometry,
+    min_width_ft: float = 0.0,
+    min_depth_ft: float = 0.0,
+    angles: Sequence[float] | None = None,
+    max_aspect: float | None = None,
+    grid: int = 32,
+    refine: int = 2,
+) -> Rect | None:
     """Largest rectangle inside a polygon, at any of a few angles.
 
     `min_width_ft` bounds the short side and `min_depth_ft` the long side. With `max_aspect` the long side
@@ -505,7 +592,7 @@ def largest_rectangle(polygon: BaseGeometry, min_width_ft: float = 0.0, min_dept
     if not found:
         return None
     found.sort(key=lambda t: -t[0])
-    best: Optional[tuple[float, float, tuple[float, float, float, float]]] = None
+    best: tuple[float, float, tuple[float, float, float, float]] | None = None
     for _, a, flat, rect, step in found[:refine]:
         shapely.prepare(flat)
         rect = _push_out(flat, rect, step)
@@ -515,14 +602,15 @@ def largest_rectangle(polygon: BaseGeometry, min_width_ft: float = 0.0, min_dept
     assert best is not None
     _, a, (x0, y0, x1, y1) = best
     w, h = x1 - x0, y1 - y0
-    out = Rect(affinity.rotate(box(x0, y0, x1, y1), a, origin=c), min(w, h), max(w, h),
-               (a if w >= h else a + 90.0) % 180.0)
+    out = Rect(
+        affinity.rotate(box(x0, y0, x1, y1), a, origin=c), min(w, h), max(w, h), (a if w >= h else a + 90.0) % 180.0
+    )
     if max_aspect and out.depth_ft > out.width_ft * max_aspect:
         out = trim_rect(out, out.width_ft * out.width_ft * max_aspect, None, out.width_ft)
     return out
 
 
-def _score(rect: Sequence[float], max_aspect: Optional[float]) -> float:
+def _score(rect: Sequence[float], max_aspect: float | None) -> float:
     w, h = rect[2] - rect[0], rect[3] - rect[1]
     s, lg = min(w, h), max(w, h)
     return s * (min(lg, s * max_aspect) if max_aspect else lg)
@@ -531,7 +619,7 @@ def _score(rect: Sequence[float], max_aspect: Optional[float]) -> float:
 def _grid_lines(lo: float, hi: float, verts: np.ndarray, n: int) -> np.ndarray:
     """Even grid plus the polygon's own corner coordinates, with near-duplicates dropped."""
     v = verts[(verts > lo) & (verts < hi)]
-    if v.size > n:   # curved outlines (buffers) have many corners: keep an even subset
+    if v.size > n:  # curved outlines (buffers) have many corners: keep an even subset
         v = np.quantile(v, np.linspace(0, 1, n))
     g = np.unique(np.concatenate([np.linspace(lo, hi, n + 1), v]))
     keep = np.concatenate([[True], np.diff(g) > 0.05])
@@ -540,8 +628,9 @@ def _grid_lines(lo: float, hi: float, verts: np.ndarray, n: int) -> np.ndarray:
     return g
 
 
-def _best_axis_rect(flat: BaseGeometry, lo_side: float, hi_side: float, max_aspect: Optional[float],
-                    grid: int) -> Optional[tuple[float, tuple[float, float, float, float], float]]:
+def _best_axis_rect(
+    flat: BaseGeometry, lo_side: float, hi_side: float, max_aspect: float | None, grid: int
+) -> tuple[float, tuple[float, float, float, float], float] | None:
     """Best grid rectangle of an axis-aligned polygon: (score, (x0, y0, x1, y1), grid step)."""
     x0, y0, x1, y1 = flat.bounds
     if x1 - x0 < lo_side or y1 - y0 < lo_side:
@@ -556,10 +645,17 @@ def _best_axis_rect(flat: BaseGeometry, lo_side: float, hi_side: float, max_aspe
     node = shapely.intersects_xy(tol, gx, gy)
     cx, cy = np.meshgrid((X[:-1] + X[1:]) / 2, (Y[:-1] + Y[1:]) / 2)
     # Corners, center and side midpoints of each cell: catches thin notches that miss the corners.
-    ok = (node[:-1, :-1] & node[1:, :-1] & node[:-1, 1:] & node[1:, 1:]
-          & shapely.intersects_xy(tol, cx, cy)
-          & shapely.intersects_xy(tol, cx, gy[:-1, :-1]) & shapely.intersects_xy(tol, cx, gy[1:, 1:])
-          & shapely.intersects_xy(tol, gx[:-1, :-1], cy) & shapely.intersects_xy(tol, gx[1:, 1:], cy))
+    ok = (
+        node[:-1, :-1]
+        & node[1:, :-1]
+        & node[:-1, 1:]
+        & node[1:, 1:]
+        & shapely.intersects_xy(tol, cx, cy)
+        & shapely.intersects_xy(tol, cx, gy[:-1, :-1])
+        & shapely.intersects_xy(tol, cx, gy[1:, 1:])
+        & shapely.intersects_xy(tol, gx[:-1, :-1], cy)
+        & shapely.intersects_xy(tol, gx[1:, 1:], cy)
+    )
     if not ok.any():
         return None
 
@@ -571,7 +667,7 @@ def _best_axis_rect(flat: BaseGeometry, lo_side: float, hi_side: float, max_aspe
     for r in range(ny):
         run = np.where(ok[r], run + dy[r], 0.0)
         H[r] = run
-    # For every left column l and span k, the lowest bar over columns l..l+k, for all rows at once.
+    # For every left column c and span k, the lowest bar over columns c..c+k, for all rows at once.
     idx = np.arange(nx)[:, None] + np.arange(nx)[None, :]
     valid = idx < nx
     A = np.where(valid[None], H[:, np.minimum(idx, nx - 1)], 0.0)
@@ -583,14 +679,15 @@ def _best_axis_rect(flat: BaseGeometry, lo_side: float, hi_side: float, max_aspe
     f = int(np.argmax(area))
     if area.flat[f] <= 0:
         return None
-    r, l, k = np.unravel_index(f, area.shape)
+    r, c, k = (int(v) for v in np.unravel_index(f, area.shape))
     top = Y[r + 1]
-    rect = (X[l], top - A[r, l, k], X[l + k + 1], top)
+    rect = (X[c], top - A[r, c, k], X[c + k + 1], top)
     return float(area.flat[f]), rect, float(max(np.diff(X).max(), dy.max()))
 
 
-def _push_out(poly: BaseGeometry, rect: tuple[float, float, float, float], step: float,
-              rounds: int = 2, tries: int = 24) -> tuple[float, float, float, float]:
+def _push_out(
+    poly: BaseGeometry, rect: tuple[float, float, float, float], step: float, rounds: int = 2, tries: int = 24
+) -> tuple[float, float, float, float]:
     """Grow each side of a grid rectangle outward until it touches the outline.
 
     All trial positions of one side are tested in a single vectorized call. Growth is monotone
@@ -607,13 +704,14 @@ def _push_out(poly: BaseGeometry, rect: tuple[float, float, float, float], step:
             n_ok = tries if inside.all() else int(np.argmin(inside))
             if n_ok:
                 r[side] += sign * pushes[n_ok - 1]
-        step = step / tries * 2   # second round: finer steps around where the first stopped
+        step = step / tries * 2  # second round: finer steps around where the first stopped
         pushes = np.linspace(0.0, step, tries + 1)[1:]
     return float(r[0]), float(r[1]), float(r[2]), float(r[3])
 
 
-def trim_rect(rect: Rect, area_sqft: float, away_from: Optional[BaseGeometry] = None,
-              min_side_ft: float = MIN_SIDE_FT) -> Rect:
+def trim_rect(
+    rect: Rect, area_sqft: float, away_from: BaseGeometry | None = None, min_side_ft: float = MIN_SIDE_FT
+) -> Rect:
     """Shrink a rectangle to a target area: shorten the long side first, then go square.
 
     The smaller box slides to the end of the big one farthest from `away_from` (the house),
@@ -626,8 +724,8 @@ def trim_rect(rect: Rect, area_sqft: float, away_from: Optional[BaseGeometry] = 
     if d < w:
         w = d = max(math.sqrt(area_sqft), min_side_ft)
     ang = math.radians(rect.angle_deg)
-    ux, uy = math.cos(ang), math.sin(ang)          # long axis
-    vx, vy = -uy, ux                                # short axis
+    ux, uy = math.cos(ang), math.sin(ang)  # long axis
+    vx, vy = -uy, ux  # short axis
     c = rect.polygon.centroid
     target = away_from.centroid if away_from is not None and not away_from.is_empty else c
     # Slide along each axis away from the target, up to what the big rectangle allows.
@@ -655,7 +753,8 @@ def _rect_of(poly: Polygon) -> tuple[float, float, float]:
 
 # ---------------------------------------------------------------- the fit
 
-def _ok_limit(value: float, limit: Optional[float], note: str = "") -> Check:
+
+def _ok_limit(value: float, limit: float | None, note: str = "") -> Check:
     return Check(True if limit is None else bool(value <= limit + 1e-6), value, limit, note)
 
 
@@ -676,13 +775,15 @@ def _needs_old_building(rules: Mapping[str, Any]) -> bool:
     """True when the rule text ties a conversion to a structure that existed on some date."""
     cites = rules.get("citations") or {}
     # Citations come keyed by rule name with a section each. Older callers pass plain strings.
-    parts = [c.get("section", "") if isinstance(c, dict) else c
-             for c in (cites.values() if isinstance(cites, dict) else cites)]
+    parts = [
+        c.get("section", "") if isinstance(c, dict) else c
+        for c in (cites.values() if isinstance(cites, dict) else cites)
+    ]
     text = " ".join(str(t) for t in list(rules.get("reasons") or []) + parts)
     return bool(re.search(r"exist|built before|\b(19|20)\d\d\b", text, re.I))
 
 
-def _fire_warning(spot: Optional[Polygon], lot: LotShape) -> list[str]:
+def _fire_warning(spot: Polygon | None, lot: LotShape) -> list[str]:
     if spot is None:
         return []
     d = spot.distance(lot.polygon.exterior)
@@ -718,8 +819,9 @@ NOTES = {
 
 
 @_quiet
-def fit_adu(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any], adu_type: str,
-            want: Optional[Want] = None) -> FitResult:
+def fit_adu(
+    lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any], adu_type: str, want: Want | None = None
+) -> FitResult:
     """Largest unit of one type the rules and the lot allow, where it goes, and what stops it growing.
 
     `largest_sqft` is a footprint. For two stories the size cap applies to floor area, so the
@@ -749,8 +851,11 @@ def fit_adu(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, An
         res = _fit_internal(lot, buildings, rules, want, assumed, checks)
 
     # These failures decide the answer whatever the yard looks like.
-    first_notes = {"allowed": "not allowed here", "type_allowed": f"{adu_type} is not an allowed type here",
-                  "min_lot_size": f"lot is {lot_area:.0f} sq ft, under the {min_lot or 0:.0f} sq ft minimum"}
+    first_notes = {
+        "allowed": "not allowed here",
+        "type_allowed": f"{adu_type} is not an allowed type here",
+        "min_lot_size": f"lot is {lot_area:.0f} sq ft, under the {min_lot or 0:.0f} sq ft minimum",
+    }
     for name in FIRST_CHECKS:
         if not checks[name].ok:
             res.fits = False
@@ -762,10 +867,16 @@ def fit_adu(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, An
     return res
 
 
-def _size_limits(rules: Mapping[str, Any], lot: LotShape, buildings: Sequence[Building], stories: int,
-                 assumed: list[str], new_footprint: bool) -> dict[str, Optional[float]]:
+def _size_limits(
+    rules: Mapping[str, Any],
+    lot: LotShape,
+    buildings: Sequence[Building],
+    stories: int,
+    assumed: list[str],
+    new_footprint: bool,
+) -> dict[str, float | None]:
     """Footprint each size rule allows. None means that rule sets no limit."""
-    lim: dict[str, Optional[float]] = {}
+    lim: dict[str, float | None] = {}
     cap = rules["max_size_sqft"]
     lim["size_cap"] = None if cap is None else cap / stories
     share = rules["max_share_of_house"]
@@ -783,21 +894,33 @@ def _size_limits(rules: Mapping[str, Any], lot: LotShape, buildings: Sequence[Bu
     return lim
 
 
-def _cover_checks(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any],
-                  added: float, checks: dict[str, Check]) -> None:
+def _cover_checks(
+    lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any], added: float, checks: dict[str, Check]
+) -> None:
     cover = _existing_cover(lot, buildings)
-    checks["building_coverage"] = _ok_limit((cover + added) / lot.area_sqft, rules["max_building_coverage"],
-                                            "share of the lot under buildings")
-    checks["impervious"] = _ok_limit((cover + added + (lot.hard_surface_sqft or 0.0)) / lot.area_sqft,
-                                     rules["max_impervious"], "share of the lot paved or built")
+    checks["building_coverage"] = _ok_limit(
+        (cover + added) / lot.area_sqft, rules["max_building_coverage"], "share of the lot under buildings"
+    )
+    checks["impervious"] = _ok_limit(
+        (cover + added + (lot.hard_surface_sqft or 0.0)) / lot.area_sqft,
+        rules["max_impervious"],
+        "share of the lot paved or built",
+    )
 
 
-def _first_failure(checks: Mapping[str, Check]) -> Optional[str]:
+def _first_failure(checks: Mapping[str, Check]) -> str | None:
     return next((k for k, c in checks.items() if not c.ok and k not in FIRST_CHECKS), None)
 
 
-def _fit_detached(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any], want: Want,
-                  stories: int, assumed: list[str], checks: dict[str, Check]) -> FitResult:
+def _fit_detached(
+    lot: LotShape,
+    buildings: Sequence[Building],
+    rules: Mapping[str, Any],
+    want: Want,
+    stories: int,
+    assumed: list[str],
+    checks: dict[str, Check],
+) -> FitResult:
     min_side = float(want.get("min_side_ft", MIN_SIDE_FT))
     aspect = float(want.get("max_aspect", MAX_ASPECT))
     height = float(want.get("height_ft", STORY_HEIGHT_FT.get(stories, 10.0 * stories + 5.0)))
@@ -839,7 +962,9 @@ def _fit_detached(lot: LotShape, buildings: Sequence[Building], rules: Mapping[s
     asked = float(want.get("footprint_sqft", footprint))
     checks["room"] = Check(bool(room >= max(asked, smallest) - 1e-6), room, None, "largest rectangle in the yard")
     checks["size_cap"] = _ok_limit(asked * stories, rules["max_size_sqft"], "floor area")
-    checks["min_size"] = Check(asked * stories >= min_size - 1e-6, asked * stories, rules["min_size_sqft"], "floor area")
+    checks["min_size"] = Check(
+        asked * stories >= min_size - 1e-6, asked * stories, rules["min_size_sqft"], "floor area"
+    )
     checks["share_of_house"] = _ok_limit(asked, lim["share_of_house"], "footprint against the house")
     _cover_checks(lot, buildings, rules, asked, checks)
     checks["height"] = _ok_limit(height, rules["max_height_ft"], f"{stories} story")
@@ -857,22 +982,41 @@ def _fit_detached(lot: LotShape, buildings: Sequence[Building], rules: Mapping[s
         limiting, note = failed, f"fails the check on {NOTES.get(failed, failed)}"
     else:
         limiting, note = name, f"size set by {NOTES.get(name, name)}"
-    res = FitResult("detached_new", spot is not None and failed is None,
-                    footprint if spot is not None else 0.0, spot.polygon if spot else None,
-                    spot.width_ft if spot else None, spot.depth_ft if spot else None,
-                    spot.angle_deg if spot else None, limiting, checks, note=note,
-                    warnings=_fire_warning(spot.polygon if spot else None, lot),
-                    largest_if_cleared_sqft=rect_clear.area_sqft if rect_clear else 0.0)
+    res = FitResult(
+        "detached_new",
+        spot is not None and failed is None,
+        footprint if spot is not None else 0.0,
+        spot.polygon if spot else None,
+        spot.width_ft if spot else None,
+        spot.depth_ft if spot else None,
+        spot.angle_deg if spot else None,
+        limiting,
+        checks,
+        note=note,
+        warnings=_fire_warning(spot.polygon if spot else None, lot),
+        largest_if_cleared_sqft=rect_clear.area_sqft if rect_clear else 0.0,
+    )
     if rect_clear is not None and rect_clear.area_sqft > room + 1.0:
         res.warnings.append(f"room for {rect_clear.area_sqft:.0f} sq ft if the shed or trees go")
     if spot is not None and (rules["max_adus"] or 1) >= 2:
-        res.second = _second_detached(lot, buildings, rules, Buildable(clear, keep, b.soft), spot, min_side, aspect, footprint, angles, house)
+        res.second = _second_detached(
+            lot, buildings, rules, Buildable(clear, keep, b.soft), spot, min_side, aspect, footprint, angles, house
+        )
     return res
 
 
-def _second_detached(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any], b: Buildable,
-                     first: Rect, min_side: float, aspect: float, cap: float, angles: Sequence[float],
-                     house: BaseGeometry) -> FitResult:
+def _second_detached(
+    lot: LotShape,
+    buildings: Sequence[Building],
+    rules: Mapping[str, Any],
+    b: Buildable,
+    first: Rect,
+    min_side: float,
+    aspect: float,
+    cap: float,
+    angles: Sequence[float],
+    house: BaseGeometry,
+) -> FitResult:
     """A second unit in what is left after the first, kept the separation distance from it."""
     sep = float(rules["separation_ft"])
     rest = _polygons_only(b.keep.difference(first.polygon.buffer(sep, quad_segs=4)))
@@ -891,14 +1035,30 @@ def _second_detached(lot: LotShape, buildings: Sequence[Building], rules: Mappin
     checks = {"room": Check(spot is not None, room, None, "after the first unit")}
     limiting = name if spot is not None else "no_room"
     note = f"size set by {NOTES.get(name, name)}" if spot is not None else "no room left for a second unit"
-    return FitResult("detached_new", spot is not None, fp if spot else 0.0, spot.polygon if spot else None,
-                     spot.width_ft if spot else None, spot.depth_ft if spot else None,
-                     spot.angle_deg if spot else None, limiting, checks, note=note,
-                     warnings=_fire_warning(spot.polygon if spot else None, lot))
+    return FitResult(
+        "detached_new",
+        spot is not None,
+        fp if spot else 0.0,
+        spot.polygon if spot else None,
+        spot.width_ft if spot else None,
+        spot.depth_ft if spot else None,
+        spot.angle_deg if spot else None,
+        limiting,
+        checks,
+        note=note,
+        warnings=_fire_warning(spot.polygon if spot else None, lot),
+    )
 
 
-def _fit_garage(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any], want: Want,
-                adu_type: str, assumed: list[str], checks: dict[str, Check]) -> FitResult:
+def _fit_garage(
+    lot: LotShape,
+    buildings: Sequence[Building],
+    rules: Mapping[str, Any],
+    want: Want,
+    adu_type: str,
+    assumed: list[str],
+    checks: dict[str, Check],
+) -> FitResult:
     """The detected garage is the unit. Its footprint is fixed, so the checks pass or fail as is."""
     garages = [b for b in buildings if b.role == "garage"]
     if not garages:
@@ -940,16 +1100,39 @@ def _fit_garage(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str
         note = f"fails the check on {NOTES.get(failed, failed)}"
     else:
         note = "size set by the garage"
-    return FitResult(adu_type, failed is None, area, g.polygon, w, d, ang, failed or "garage_size", checks,
-                     note=note, warnings=warnings)
+    return FitResult(
+        adu_type,
+        failed is None,
+        area,
+        g.polygon,
+        w,
+        d,
+        ang,
+        failed or "garage_size",
+        checks,
+        note=note,
+        warnings=warnings,
+    )
 
 
-def _fit_internal(lot: LotShape, buildings: Sequence[Building], rules: Mapping[str, Any], want: Want,
-                  assumed: list[str], checks: dict[str, Check]) -> FitResult:
+def _fit_internal(
+    lot: LotShape,
+    buildings: Sequence[Building],
+    rules: Mapping[str, Any],
+    want: Want,
+    assumed: list[str],
+    checks: dict[str, Check],
+) -> FitResult:
     """A unit inside the house. No yard test: only the house size and the share-of-house cap."""
     house = _house_sqft(lot, buildings, assumed)
-    lim = {"house_size": house,
-           **{k: v for k, v in _size_limits(rules, lot, buildings, 1, assumed, new_footprint=False).items() if v is not None}}
+    lim = {
+        "house_size": house,
+        **{
+            k: v
+            for k, v in _size_limits(rules, lot, buildings, 1, assumed, new_footprint=False).items()
+            if v is not None
+        },
+    }
     name = min(lim, key=lambda k: lim[k])
     size = max(0.0, lim[name])
     asked = float(want.get("footprint_sqft", size))
@@ -971,6 +1154,7 @@ def _fit_internal(lot: LotShape, buildings: Sequence[Building], rules: Mapping[s
 
 
 # ---------------------------------------------------------------- demo command (file IO lives here only)
+
 
 @_quiet
 def _demo(args: Any) -> None:
@@ -999,7 +1183,11 @@ def _demo(args: Any) -> None:
     print(f"{len(lots)} lots, {len(bld)} building outlines")
 
     streets = None
-    graph = Path(args.streets).expanduser() if args.streets else lots_path.parents[1] / "raw/5500/osm/philadelphia_drive.graphml"
+    graph = (
+        Path(args.streets).expanduser()
+        if args.streets
+        else lots_path.parents[1] / "raw/5500/osm/philadelphia_drive.graphml"
+    )
     if graph.exists():
         t = time.perf_counter()
         streets = _load_streets(graph, lots.total_bounds, lots.crs)
@@ -1014,8 +1202,15 @@ def _demo(args: Any) -> None:
     for lot in lots.itertuples():
         poly = lot.geometry if lot.geometry.geom_type == "Polygon" else max(lot.geometry.geoms, key=lambda p: p.area)
         mine = bld[bld.lot_id == lot.lot_id]
-        blds = [Building(r.geometry if r.geometry.geom_type == "Polygon" else max(r.geometry.geoms, key=lambda p: p.area),
-                         _demo_role(r), None, "city") for r in mine.itertuples()]
+        blds = [
+            Building(
+                r.geometry if r.geometry.geom_type == "Polygon" else max(r.geometry.geoms, key=lambda p: p.area),
+                _demo_role(r),
+                None,
+                "city",
+            )
+            for r in mine.itertuples()
+        ]
         house = _union([b.polygon for b in blds if b.role == "main"])
         local = streets.intersection(poly.buffer(args.street_search_ft)) if streets is not None else None
         t0 = time.perf_counter()
@@ -1032,17 +1227,41 @@ def _demo(args: Any) -> None:
         t_edges += t1 - t0
         t_fit += t2 - t1
         t_rect += t3 - t2
-        rows.append({"lot_id": lot.lot_id, "lot_sqft": round(poly.area), "n_buildings": len(blds),
-                     "edge_conf": edges.confidence, "corner": edges.corner, "flag_lot": edges.flag_lot,
-                     "street_edge": edges.street_edge, "notes": "; ".join(edges.notes),
-                     "buildable_sqft": round(b.keep.area), "largest_sqft": round(res.largest_sqft),
-                     "fits_800_cap": res.fits, "limiting": res.limiting, "fits600": r600 is not None,
-                     "fits600_raster_angle": r600_grid is not None, "front_angle": round(edges.front_angle_deg, 1),
-                     "ms_edges": (t1 - t0) * 1e3, "ms_fit": (t2 - t1) * 1e3, "ms_600": (t3 - t2) * 1e3})
+        rows.append(
+            {
+                "lot_id": lot.lot_id,
+                "lot_sqft": round(poly.area),
+                "n_buildings": len(blds),
+                "edge_conf": edges.confidence,
+                "corner": edges.corner,
+                "flag_lot": edges.flag_lot,
+                "street_edge": edges.street_edge,
+                "notes": "; ".join(edges.notes),
+                "buildable_sqft": round(b.keep.area),
+                "largest_sqft": round(res.largest_sqft),
+                "fits_800_cap": res.fits,
+                "limiting": res.limiting,
+                "fits600": r600 is not None,
+                "fits600_raster_angle": r600_grid is not None,
+                "front_angle": round(edges.front_angle_deg, 1),
+                "ms_edges": (t1 - t0) * 1e3,
+                "ms_fit": (t2 - t1) * 1e3,
+                "ms_600": (t3 - t2) * 1e3,
+            }
+        )
         yards.append({"lot_id": lot.lot_id, "kind": "keep", "geometry": b.keep if not b.keep.is_empty else None})
         if res.spot is not None:
-            spots.append({"lot_id": lot.lot_id, "footprint_sqft": round(res.largest_sqft), "width_ft": round(res.width_ft, 1),
-                          "depth_ft": round(res.depth_ft, 1), "limiting": res.limiting, "geometry": res.spot})
+            assert res.width_ft is not None and res.depth_ft is not None  # set whenever a spot is found
+            spots.append(
+                {
+                    "lot_id": lot.lot_id,
+                    "footprint_sqft": round(res.largest_sqft),
+                    "width_ft": round(res.width_ft, 1),
+                    "depth_ft": round(res.depth_ft, 1),
+                    "limiting": res.limiting,
+                    "geometry": res.spot,
+                }
+            )
         for e in edges.edges:
             edge_rows.append({"lot_id": lot.lot_id, "edge_id": e.id, "role": e.role, "geometry": e.line})
     df = pd.DataFrame(rows)
@@ -1050,20 +1269,30 @@ def _demo(args: Any) -> None:
     gpkg = out / "fit_demo.gpkg"
     if gpkg.exists():
         gpkg.unlink()
-    gpd.GeoDataFrame(lots[["lot_id"]].merge(df, on="lot_id"), geometry=lots.geometry.values, crs=crs).to_file(gpkg, layer="lots")
+    gpd.GeoDataFrame(lots[["lot_id"]].merge(df, on="lot_id"), geometry=lots.geometry.values, crs=crs).to_file(
+        gpkg, layer="lots"
+    )
     gpd.GeoDataFrame(yards, crs=crs).to_file(gpkg, layer="buildable")
     gpd.GeoDataFrame(spots, crs=crs).to_file(gpkg, layer="spots")
     gpd.GeoDataFrame(edge_rows, crs=crs).to_file(gpkg, layer="edges")
     df.to_csv(out / "fit_demo.csv", index=False)
 
     summary: dict[str, Any] = {
-        "lots": len(df), "crs": crs, "streets": streets is not None,
-        "ms_per_lot_mean": {"edges": round(t_edges / len(df) * 1e3, 2), "fit_adu": round(t_fit / len(df) * 1e3, 2),
-                            "rect_600": round(t_rect / len(df) * 1e3, 2)},
+        "lots": len(df),
+        "crs": crs,
+        "streets": streets is not None,
+        "ms_per_lot_mean": {
+            "edges": round(t_edges / len(df) * 1e3, 2),
+            "fit_adu": round(t_fit / len(df) * 1e3, 2),
+            "rect_600": round(t_rect / len(df) * 1e3, 2),
+        },
         "ms_fit_adu_p50_p95_max": [round(float(x), 1) for x in np.percentile(df.ms_fit, [50, 95, 100])],
         "edge_confidence": df.edge_conf.value_counts().to_dict(),
-        "corner": int(df.corner.sum()), "flag_lot": int(df.flag_lot.sum()), "no_street_edge": int((~df.street_edge).sum()),
-        "fits_800_cap": int(df.fits_800_cap.sum()), "fits600": int(df.fits600.sum()),
+        "corner": int(df.corner.sum()),
+        "flag_lot": int(df.flag_lot.sum()),
+        "no_street_edge": int((~df.street_edge).sum()),
+        "fits_800_cap": int(df.fits_800_cap.sum()),
+        "fits600": int(df.fits600.sum()),
         "limiting": df.limiting.value_counts().to_dict(),
     }
     raster = Path(args.raster).expanduser() if args.raster else lots_path.parent / "6950_lots_pilot_full.csv"
@@ -1075,8 +1304,11 @@ def _demo(args: Any) -> None:
             a = both[col].astype(bool)
             for name, v in (("any_angle", both.fits600), ("raster_angle", both.fits600_raster_angle)):
                 summary[f"agree_vs_raster_{col}_{name}"] = {
-                    "n": int(len(both)), "agreement": round(float((a == v).mean()), 3),
-                    "raster_yes_vector_no": int((a & ~v).sum()), "raster_no_vector_yes": int((~a & v).sum())}
+                    "n": int(len(both)),
+                    "agreement": round(float((a == v).mean()), 3),
+                    "raster_yes_vector_no": int((a & ~v).sum()),
+                    "raster_no_vector_yes": int((~a & v).sum()),
+                }
         m.to_csv(out / "fit_demo_vs_raster.csv", index=False)
     (out / "summary.json").write_text(json.dumps(summary, indent=1, default=str))
     print(json.dumps(summary, indent=1, default=str))
@@ -1097,11 +1329,11 @@ def _load_streets(graph: Any, bounds: np.ndarray, crs: Any) -> BaseGeometry:
     g = ox.load_graphml(graph)
     edges = ox.graph_to_gdfs(g, nodes=False)[["geometry"]].to_crs(crs)
     x0, y0, x1, y1 = bounds
-    edges = edges.cx[x0 - 500:x1 + 500, y0 - 500:y1 + 500]
+    edges = edges.cx[x0 - 500 : x1 + 500, y0 - 500 : y1 + 500]
     return shapely.union_all(gpd.GeoSeries(edges.geometry).values)
 
 
-def main(argv: Optional[Sequence[str]] = None) -> None:
+def main(argv: Sequence[str] | None = None) -> None:
     import argparse
 
     p = argparse.ArgumentParser(prog="python -m pipeline.fit")
@@ -1111,7 +1343,9 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     d.add_argument("--n", type=int, default=200)
     d.add_argument("--out", required=True)
     d.add_argument("--county", default="42101", help="county FIPS prefix of lot_id, empty for all")
-    d.add_argument("--crs", default="EPSG:2272", help="local feet CRS: 2272 (Pennsylvania South) for Philadelphia and Pittsburgh")
+    d.add_argument(
+        "--crs", default="EPSG:2272", help="local feet CRS: 2272 (Pennsylvania South) for Philadelphia and Pittsburgh"
+    )
     d.add_argument("--streets", default=None, help="OSM drive graph (.graphml)")
     d.add_argument("--raster", default=None, help="raster rule results CSV to compare against")
     d.add_argument("--seed", type=int, default=0)

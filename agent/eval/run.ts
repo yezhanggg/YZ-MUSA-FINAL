@@ -2,7 +2,7 @@
 // handler (api/agent.ts) in-process, so the system prompt, tools, round limit and context block are the app's own.
 // Tools run through the Node provider on the lot records and app/public/data.
 //
-//   npm run eval:agent                          all 60 questions, model from EVAL_MODEL (default: the app's model)
+//   npm run eval:agent                          all 65 questions, model from EVAL_MODEL (default: the app's model)
 //   npm run eval:agent -- --category traps      one category (comma list allowed)
 //   npm run eval:agent -- --ids lot-01,fit-03   some questions
 //   npm run eval:agent -- --limit 5             the first 5

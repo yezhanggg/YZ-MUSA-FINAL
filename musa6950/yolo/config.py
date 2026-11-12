@@ -3,6 +3,7 @@
 Plain constants only. No heavy imports, so every script and both Python
 environments can read it.
 """
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -26,10 +27,10 @@ CLASS_ID = {name: i for i, name in enumerate(CLASSES)}
 # Size rule in square feet for footprints that are not the main building.
 SHED_MAX_SQFT = 180.0
 GARAGE_MAX_SQFT = 700.0
-GARAGE_ACCESS_FT = 75.0      # a garage sits within this distance of a street or alley centerline
-MIN_FOOTPRINT_SQFT = 36.0    # smaller outlines are slivers, not structures
-MIN_BOX_PX = 6.0             # boxes thinner than this after clipping are dropped
-MIN_VISIBLE = 0.5            # keep a box cut by the chip edge if at least half of it is inside
+GARAGE_ACCESS_FT = 75.0  # a garage sits within this distance of a street or alley centerline
+MIN_FOOTPRINT_SQFT = 36.0  # smaller outlines are slivers, not structures
+MIN_BOX_PX = 6.0  # boxes thinner than this after clipping are dropped
+MIN_VISIBLE = 0.5  # keep a box cut by the chip edge if at least half of it is inside
 
 # Chips: 640 px at the native 0.5 ft pixel, 3 x 3 chips per sample area (960 ft, about 293 m).
 CHIP_PX = 640

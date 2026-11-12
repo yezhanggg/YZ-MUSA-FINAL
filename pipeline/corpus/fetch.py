@@ -17,6 +17,7 @@ like zoning text are followed (at most MAX_LINKS per page).
 Run:
     python -m pipeline.corpus.fetch sources.csv
 """
+
 from __future__ import annotations
 
 import csv
@@ -26,7 +27,7 @@ import re
 import sys
 import time
 import urllib.robotparser
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 from urllib.parse import urljoin, urlparse
@@ -40,10 +41,22 @@ MIN_DELAY_S = 2.0
 TIMEOUT_S = 60
 MAX_BYTES = 120 * 1024 * 1024
 MAX_LINKS = 60
-BLOCKED_HOSTS = ("ecode360.com", "generalcode.com", "municode.com", "amlegal.com", "zoneomics.com",
-                 "codepublishing.com", "codelibrary", "elaws.us", "lawserver.com")
-LINK_WORDS = re.compile(r"zon|article|chapter|part|ordinance|definition|district|use|accessory|parking|"
-                        r"supplement|appendix|section|table", re.I)
+BLOCKED_HOSTS = (
+    "ecode360.com",
+    "generalcode.com",
+    "municode.com",
+    "amlegal.com",
+    "zoneomics.com",
+    "codepublishing.com",
+    "codelibrary",
+    "elaws.us",
+    "lawserver.com",
+)
+LINK_WORDS = re.compile(
+    r"zon|article|chapter|part|ordinance|definition|district|use|accessory|parking|"
+    r"supplement|appendix|section|table",
+    re.I,
+)
 DOC_EXT = re.compile(r"\.(pdf|docx?)($|\?)|/DocumentCenter/View/|getattachment|/download|/files/", re.I)
 
 
@@ -102,16 +115,16 @@ class Fetcher:
             try:
                 r = self.session.get(host + "/robots.txt", timeout=TIMEOUT_S)
                 if r.status_code in (401, 403):
-                    rp.disallow_all = True
+                    rp.disallow_all = True  # type: ignore[attr-defined]  # set by RobotFileParser.read, missing from the stubs
                     note = f"robots {r.status_code}"
                 elif r.status_code >= 400:
-                    rp.allow_all = True
+                    rp.allow_all = True  # type: ignore[attr-defined]  # as above
                     note = f"robots {r.status_code} (none)"
                 else:
                     rp.parse(r.text.splitlines())
                     note = "robots read"
             except requests.RequestException as e:
-                rp.allow_all = True
+                rp.allow_all = True  # type: ignore[attr-defined]  # as above
                 note = f"robots unreachable ({type(e).__name__})"
             self.robots[host] = rp
             self.robot_notes[host] = note
@@ -132,11 +145,16 @@ class Fetcher:
             return old
         if old and old.get("status") in (401, 403, 404, 410, "robots", "blocked_host"):
             return old
-        base = {"url": url, "geoid": geoid, "via": via,
-                "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+        base = {"url": url, "geoid": geoid, "via": via, "fetched_at": datetime.now(UTC).isoformat(timespec="seconds")}
         if is_blocked(url):
-            return self._record({**base, "status": "blocked_host", "robots": "not asked",
-                                 "error": "commercial code host, not fetched by policy"})
+            return self._record(
+                {
+                    **base,
+                    "status": "blocked_host",
+                    "robots": "not asked",
+                    "error": "commercial code host, not fetched by policy",
+                }
+            )
         ok, note = self.robots_ok(url)
         if not ok:
             return self._record({**base, "status": "robots", "robots": note, "error": "robots.txt disallows"})
@@ -147,19 +165,34 @@ class Fetcher:
             return self._record({**base, "status": "error", "robots": note, "error": f"{type(e).__name__}: {e}"[:300]})
         if is_blocked(r.url):
             r.close()
-            return self._record({**base, "status": "blocked_host", "final_url": r.url, "robots": note,
-                                 "error": "redirected to a commercial code host"})
+            return self._record(
+                {
+                    **base,
+                    "status": "blocked_host",
+                    "final_url": r.url,
+                    "robots": note,
+                    "error": "redirected to a commercial code host",
+                }
+            )
         if r.status_code != 200:
             r.close()
-            return self._record({**base, "status": r.status_code, "final_url": r.url, "robots": note,
-                                 "error": r.reason})
+            return self._record(
+                {**base, "status": r.status_code, "final_url": r.url, "robots": note, "error": r.reason}
+            )
         data = bytearray()
         for block in r.iter_content(1 << 16):
             data += block
             if len(data) > MAX_BYTES:
                 r.close()
-                return self._record({**base, "status": "too_big", "final_url": r.url, "robots": note,
-                                     "error": f"over {MAX_BYTES} bytes"})
+                return self._record(
+                    {
+                        **base,
+                        "status": "too_big",
+                        "final_url": r.url,
+                        "robots": note,
+                        "error": f"over {MAX_BYTES} bytes",
+                    }
+                )
         ctype = r.headers.get("Content-Type", "").split(";")[0].strip().lower()
         sha = hashlib.sha256(data).hexdigest()
         ext = _ext(ctype, r.url, bytes(data[:8]))
@@ -167,9 +200,19 @@ class Fetcher:
         folder.mkdir(parents=True, exist_ok=True)
         path = folder / f"{hashlib.sha1(url.encode()).hexdigest()[:12]}{ext}"
         path.write_bytes(bytes(data))
-        return self._record({**base, "status": 200, "final_url": r.url, "content_type": ctype,
-                             "bytes": len(data), "sha256": sha, "robots": note, "path": str(path),
-                             "last_modified": r.headers.get("Last-Modified")})
+        return self._record(
+            {
+                **base,
+                "status": 200,
+                "final_url": r.url,
+                "content_type": ctype,
+                "bytes": len(data),
+                "sha256": sha,
+                "robots": note,
+                "path": str(path),
+                "last_modified": r.headers.get("Last-Modified"),
+            }
+        )
 
     def expand(self, url: str, geoid: str, pattern: str | None = None) -> list[dict[str, Any]]:
         """Fetch an index page, then each linked document on the same site that looks like zoning text."""
@@ -184,7 +227,7 @@ class Fetcher:
         seen, links = set(), []
         rx = re.compile(pattern, re.I) if pattern else None
         for a in soup.find_all("a", href=True):
-            href = urljoin(rec.get("final_url") or url, a["href"]).split("#")[0]
+            href = urljoin(rec.get("final_url") or url, str(a["href"])).split("#")[0]
             text = " ".join(a.get_text(" ").split())
             if urlparse(href).netloc != host or href in seen or not DOC_EXT.search(href):
                 continue
@@ -227,8 +270,9 @@ def run(sources: Path) -> None:
         else:
             recs = [f.fetch(row["url"], row["geoid"])]
         for r in recs:
-            print(f"[{i}/{len(rows)}] {row['geoid']} {r.get('status')} {r.get('bytes', '')} {r['url'][:100]}",
-                  flush=True)
+            print(
+                f"[{i}/{len(rows)}] {row['geoid']} {r.get('status')} {r.get('bytes', '')} {r['url'][:100]}", flush=True
+            )
 
 
 if __name__ == "__main__":

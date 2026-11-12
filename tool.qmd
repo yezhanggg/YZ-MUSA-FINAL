@@ -4,10 +4,14 @@ page-layout: full
 toc: false
 ---
 
-Search an address or click the map. The report shows if an ADU is allowed, if it fits (MUSA 6950), and if it pays off (MUSA 5500).
+Search an address or click a lot. Lot-level answers cover Philadelphia and Pittsburgh. The rest of the state shows tract and town results.
 
-[Open full screen](../#/tool){target="_blank"} · [Back to the main site](../)
+- **ADU Testing** (MUSA 6950): one lot, three scenarios, a unit you can draw and move. [Open full screen](../#/?view=test){target="_blank"}
+- **ADU projecting and analysis** (MUSA 5500): tracts, towns and counties. [Open full screen](../#/?view=project){target="_blank"}
+- **Tract explorer** (MUSA 5500): [open](musa5500/figures/tract_explorer.html){target="_blank"}
+
+Not legal advice. Not a zoning determination. Parcel lines are not a survey. Bills are not law.
 
 ```{=html}
-<iframe src="../#/tool" title="Backyard Homes PA tool" style="width:100%; height:80vh; border:0; border-radius:12px;"></iframe>
+<iframe src="../#/?view=test" title="Backyard Homes PA tool" style="width:100%; height:80vh; border:0; border-radius:12px;"></iframe>
 ```

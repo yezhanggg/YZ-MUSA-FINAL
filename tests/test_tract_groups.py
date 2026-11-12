@@ -1,4 +1,5 @@
 """Trend groups: clipping, k rule, stability on clear blobs, deterministic plain names."""
+
 import numpy as np
 import pandas as pd
 
@@ -24,7 +25,7 @@ def toy(seed: int = 0, n: int = 60) -> pd.DataFrame:
 def test_features_drop_blanks_and_clip():
     t = toy()
     t.loc[0, "jobs_growth_after"] = np.nan
-    t.loc[1, "pop_growth_after"] = 5.0   # wild tiny-tract rate
+    t.loc[1, "pop_growth_after"] = 5.0  # wild tiny-tract rate
     x = G.features(t)
     assert len(x) == len(t) - 1
     assert x.pop_growth_after.max() < 5.0
@@ -40,11 +41,17 @@ def test_kmeans_recovers_clear_blobs_and_is_stable():
 
 
 def test_choose_k_rule():
-    m = pd.DataFrame({"k": [2, 3, 4], "silhouette": [0.20, 0.30, 0.35], "ari_bootstrap": [0.9, 0.85, 0.5],
-                      "smallest_group_share": [0.4, 0.1, 0.1]})
-    assert G.choose_k(m) == 3          # k=4 has the best silhouette but is unstable
+    m = pd.DataFrame(
+        {
+            "k": [2, 3, 4],
+            "silhouette": [0.20, 0.30, 0.35],
+            "ari_bootstrap": [0.9, 0.85, 0.5],
+            "smallest_group_share": [0.4, 0.1, 0.1],
+        }
+    )
+    assert G.choose_k(m) == 3  # k=4 has the best silhouette but is unstable
     m.loc[1, "smallest_group_share"] = 0.01
-    assert G.choose_k(m) == 2          # k=3 now has a tiny group
+    assert G.choose_k(m) == 2  # k=3 now has a tiny group
 
 
 def test_names_are_plain_deterministic_and_follow_the_data():
@@ -72,4 +79,4 @@ def test_compare_methods_shapes():
     scores, ari = G.compare_methods(G.scale(x), 3)
     assert set(scores.index) == {"kmeans", "gmm", "ward"}
     assert np.allclose(np.diag(ari.values), 1.0)
-    assert (ari.values > 0.9).all()   # clear blobs: all three methods agree
+    assert (ari.values > 0.9).all()  # clear blobs: all three methods agree

@@ -12,6 +12,7 @@ Run (geospatial env), after musa6950 notebook 04 made data/processed/6950_lots_s
     python shared/lot_rules.py
 Output: data/processed/lot_rules_pilot.csv  (lot_id, rule_lot, rule_why, phl_zoning, phl_council)
 """
+
 import sys
 from pathlib import Path
 
@@ -19,7 +20,7 @@ import geopandas as gpd
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import RAW, OUT, download, step  # noqa: E402
+from common import OUT, RAW, download, step  # noqa: E402
 
 BASE = "https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/{}/FeatureServer/0/query"
 LAYERS = {"zoning": "Zoning_BaseDistricts", "council": "Council_Districts_2024", "overlays": "Zoning_Overlays"}
@@ -33,11 +34,20 @@ def get_layer(key):
     dest = RAW / "rules" / f"phl_{key}.geojson"
     if not dest.exists():
         frames, offset = [], 0
-        while True:   # ArcGIS returns at most 2,000 rows per call
+        while True:  # ArcGIS returns at most 2,000 rows per call
             part = dest.with_suffix(f".{offset}.geojson")
-            download(BASE.format(LAYERS[key]), part, params={
-                "where": "1=1", "outFields": "*", "outSR": 4326, "f": "geojson",
-                "resultOffset": offset, "resultRecordCount": 2000})
+            download(
+                BASE.format(LAYERS[key]),
+                part,
+                params={
+                    "where": "1=1",
+                    "outFields": "*",
+                    "outSR": 4326,
+                    "f": "geojson",
+                    "resultOffset": offset,
+                    "resultRecordCount": 2000,
+                },
+            )
             g = gpd.read_file(part)
             part.unlink()
             frames.append(g)
@@ -59,7 +69,9 @@ def main():
     zoning = get_layer("zoning")[["code", "geometry"]]
     council = get_layer("council")[["district_num", "geometry"]]
     overlays = get_layer("overlays")
-    overlays = overlays[overlays.overlay_symbol.fillna("").str.startswith(SCREEN_OVERLAYS)][["overlay_symbol", "geometry"]]
+    overlays = overlays[overlays.overlay_symbol.fillna("").str.startswith(SCREEN_OVERLAYS)][
+        ["overlay_symbol", "geometry"]
+    ]
 
     j = gpd.sjoin(pts, zoning, how="left", predicate="within").drop(columns="index_right")
     j = j[~j.lot_id.duplicated()]
@@ -71,7 +83,7 @@ def main():
     dist_ok = j.district_num.isin(ADU_DISTRICTS)
     size_ok = j.lot_m2 * SQFT >= 1600
     why = []
-    for z, d, s, o, code, num in zip(zone_ok, dist_ok, size_ok, j.in_overlay, j.code, j.district_num):
+    for z, d, s, o, code, num in zip(zone_ok, dist_ok, size_ok, j.in_overlay, j.code, j.district_num, strict=True):
         miss = []
         if not d:
             miss.append(f"Council District {int(num) if pd.notna(num) else '?'} (needs 1, 2, 3, or 7)")
@@ -85,7 +97,8 @@ def main():
     j["rule_lot"] = ["conversion_only" if not w else "variance" for w in why]
     j["rule_why"] = [w if w else "Meets 14-604(11): conversion only, max 800 sq ft, owner on site" for w in why]
     out = j[["lot_id", "rule_lot", "rule_why", "code", "district_num"]].rename(
-        columns={"code": "phl_zoning", "district_num": "phl_council"})
+        columns={"code": "phl_zoning", "district_num": "phl_council"}
+    )
     out.to_csv(OUT / "lot_rules_pilot.csv", index=False)
     print(f"  saved lot_rules_pilot.csv ({len(out)} Philadelphia lots)")
     print(out.rule_lot.value_counts().to_string())

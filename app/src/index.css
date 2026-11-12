@@ -302,6 +302,20 @@ input[type='range'].weight:focus-visible::-webkit-slider-thumb {
 .bh-shell .maplibregl-ctrl-bottom-right .maplibregl-ctrl {
   margin: 0;
 }
+/* The site view map in the results keeps its credits in its own bottom right corner */
+.bh-shell .bh-site .maplibregl-ctrl-bottom-right {
+  left: auto;
+  right: 6px;
+  bottom: 6px;
+}
+
+/* While the right panel is being resized: the resize cursor everywhere, no text selection */
+.bh-resizing,
+.bh-resizing * {
+  cursor: col-resize !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
 
 /* Touch targets: at least 44 px on tablets, phones and any touch screen */
 @media (max-width: 1023px), (pointer: coarse) {

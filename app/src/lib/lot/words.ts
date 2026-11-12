@@ -47,11 +47,23 @@ export const TYPE_TITLE: Record<RuleType, string> = {
   attached: 'Attached addition',
 };
 
+/** Unit type names on the controls and the map legend: title case. Running text keeps TYPE_LABEL. */
+export const TYPE_NAME: Record<RuleType, string> = {
+  detached_new: 'Backyard Cottage',
+  garage_conversion: 'Garage Conversion',
+  over_garage: 'Unit Over the Garage',
+  internal: 'Unit Inside the House',
+  attached: 'Attached Addition',
+};
+
 export const SCENARIO_TITLE: Record<Scenario, string> = {
   today: "Today's law",
   local_reform: 'Local reform',
   state_reform: 'State reform',
 };
+
+/** The short names the screens use for the three scenarios (pickers, chips, headings, the lot report). */
+export const SCENARIO_NAME: Record<Scenario, string> = { today: 'Today', local_reform: 'Local Bill', state_reform: 'State Bill' };
 
 /** "today", "under the local bill", "under the state bill". */
 export const SCENARIO_PHRASE: Record<Scenario, string> = {

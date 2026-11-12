@@ -6,7 +6,8 @@ import { ChevronDown } from 'lucide-react';
 import { VIEW_LABEL, openResearch, openView, useResearch, useView, type Course, type ToolView } from '../lib/router';
 import { cx } from '../lib/cx';
 import { SPRING_TAB } from './primitives';
-import { GUTTER, narrow, rightDrawer, useMode, widths } from '../tool/layout';
+import { GUTTER, narrow, rightDrawer, useMode, useRightWidth, useSides, useViewportWidth, widths } from '../tool/layout';
+import { useTool } from '../tool/store';
 
 export const RESEARCH: { course: Course; label: string; line: string }[] = [
   { course: '6950', label: 'MUSA 6950: Room on the lot', line: 'AI on aerial images and a 600 sq ft fit test' },
@@ -18,10 +19,16 @@ const TAB = 'tap relative flex items-center justify-center gap-1 whitespace-nowr
 export default function TopBar() {
   const research = useResearch();
   const mode = useMode();
-  const { lw, rw } = widths(mode);
+  const { lw } = widths(mode);
+  const rw = useRightWidth(useViewportWidth());
   // Centred over the open map between the panels; on tablet and phone, right of the controls button.
-  // Laptop: the results drawer sits under the bar, its open button top right (about 120 px).
-  const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: lw + GUTTER * 2, right: rightDrawer(mode) ? 120 + GUTTER * 2 : rw + GUTTER * 2 };
+  // The side panels reach the top of the window, so the bar keeps to the map between them. Laptop: the results drawer
+  // when it is open, else its open button top right (about 120 px).
+  // A hidden side leaves its show button at the edge (about 120 px).
+  const resultsOpen = useTool((s) => s.resultsOpen);
+  const sides = useSides();
+  const rightOpen = rightDrawer(mode) ? resultsOpen : sides.right;
+  const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: sides.left ? lw + GUTTER * 2 : 120 + GUTTER * 2, right: rightOpen ? rw + GUTTER * 2 : 120 + GUTTER * 2 };
   const [open, setOpen] = useState(false);
   const shut = useRef<number | undefined>(undefined);
   const wrap = useRef<HTMLDivElement>(null);
@@ -54,12 +61,6 @@ export default function TopBar() {
     <div className="pointer-events-none absolute z-50 flex justify-center" style={{ top: GUTTER, ...place }}>
       <nav aria-label="Sections" className="pointer-events-auto relative flex min-w-0 gap-0.5 rounded-xl bg-white/90 p-1 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur">
         <ModePick />
-        {/* "Back to the tool" only while Research is open: the mode menu names the tool, and its full label needs the room. */}
-        {research && (
-          <button type="button" onClick={() => openResearch(null)} className={cx(TAB, 'text-slate-600 hover:text-slate-900')}>
-            <span className="relative">Tool</span>
-          </button>
-        )}
         <div ref={wrap} className="relative" onMouseEnter={show} onMouseLeave={hide}>
           <button type="button" aria-haspopup="menu" aria-expanded={open} aria-current={research ? 'page' : undefined} onClick={onClick} onFocus={show} className={cx(TAB, research ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900')}>
             {research && <motion.span layoutId="site-nav-pill" className="absolute inset-0 rounded-lg bg-stone-100 ring-1 ring-black/5" transition={SPRING_TAB} />}
@@ -72,9 +73,8 @@ export default function TopBar() {
                 {RESEARCH.map((r) => {
                   const on = research === r.course;
                   return (
-                    <button key={r.course} type="button" role="menuitem" onClick={() => openResearch(r.course)} aria-current={on ? 'page' : undefined} className={cx('tap block w-full rounded-lg px-3 py-2 text-left transition-colors', on ? 'bg-violet-50' : 'hover:bg-stone-100')}>
+                    <button key={r.course} type="button" role="menuitem" onClick={() => openResearch(r.course)} aria-current={on ? 'page' : undefined} title={r.line} className={cx('tap block w-full rounded-lg px-3 py-2 text-left transition-colors', on ? 'bg-violet-50' : 'hover:bg-stone-100')}>
                       <span className={cx('block text-small font-semibold', on ? 'text-violet-800' : 'text-slate-900')}>{r.label}</span>
-                      <span className="block text-caption text-slate-600">{r.line}</span>
                     </button>
                   );
                 })}
@@ -90,10 +90,18 @@ export default function TopBar() {
 /** Which tool: lot-level testing or tract and town projections. Same shell, different controls and cards. */
 function ModePick() {
   const view = useView();
+  // While a Research page is open, the menu stands on a placeholder with the mode's name, so picking either mode
+  // (the same one too) goes back to the map.
+  const research = useResearch();
   return (
     <label className="relative flex min-w-0 items-center">
       <span className="sr-only">Mode</span>
-      <select value={view} onChange={(e) => openView(e.target.value as ToolView)} className="tap min-w-0 cursor-pointer appearance-none truncate rounded-lg bg-violet-50 py-1.5 pl-3 pr-8 text-small font-semibold text-violet-900 ring-1 ring-violet-200 outline-none hover:bg-violet-100 focus-visible:ring-2 focus-visible:ring-violet-500 max-sm:max-w-[11rem] max-sm:text-small">
+      <select value={research ? '' : view} onChange={(e) => openView(e.target.value as ToolView)} title="Test Project: one lot, its rules and fit (MUSA 6950). Explore: tracts, towns and counties (MUSA 5500)." className="tap min-w-0 cursor-pointer appearance-none truncate rounded-lg bg-violet-50 py-1.5 pl-3 pr-8 text-small font-semibold text-violet-900 ring-1 ring-violet-200 outline-none hover:bg-violet-100 focus-visible:ring-2 focus-visible:ring-violet-500 max-sm:max-w-[11rem] max-sm:text-small">
+        {research && (
+          <option value="" hidden>
+            {VIEW_LABEL[view]}
+          </option>
+        )}
         {(Object.keys(VIEW_LABEL) as ToolView[]).map((v) => (
           <option key={v} value={v}>
             {VIEW_LABEL[v]}

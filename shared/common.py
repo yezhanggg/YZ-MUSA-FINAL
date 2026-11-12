@@ -3,6 +3,7 @@
 Every download script imports this file.
 Change folders, years, or pilot counties here, not in each script.
 """
+
 import os
 from pathlib import Path
 
@@ -10,12 +11,12 @@ import requests
 
 # Folders
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "raw"            # downloads, never committed
-OUT = ROOT / "data" / "processed"      # clean tables, never committed
-APP_DATA = ROOT / "app" / "public" / "data"       # small files the website reads, committed
+RAW = ROOT / "data" / "raw"  # downloads, never committed
+OUT = ROOT / "data" / "processed"  # clean tables, never committed
+APP_DATA = ROOT / "app" / "public" / "data"  # small files the website reads, committed
 
 # Study area
-STATE = "42"                           # Pennsylvania
+STATE = "42"  # Pennsylvania
 PA_BBOX = (-80.52, 39.72, -74.69, 42.27)  # west, south, east, north
 
 # Counties with free parcel data, used for the lot-level search (MUSA 6950).
@@ -28,6 +29,7 @@ PILOT_COUNTIES = {
 
 # ACS 5-year windows that do not overlap: 2010-14, 2015-19, 2020-24
 ACS_YEARS = [2014, 2019, 2024]
+
 
 # Census API key. Get one free at https://api.census.gov/data/key_signup.html
 # Then put it in a file called .env at the repo root: CENSUS_API_KEY=xxxx

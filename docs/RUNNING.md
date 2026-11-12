@@ -1,6 +1,6 @@
 # Running the pipeline
 
-How to set up, run each step from raw data to lot files, run the tests, and where outputs land. Every command here was checked with `--help` on 2026-11-11. Run them from the repository root unless a step says otherwise.
+How to set up, run each step from raw data to lot files, run the tests, and where outputs land. The commands were checked against the code (`--help` or the module's run notes) on 2026-11-11. Run them from the repository root unless a step says otherwise.
 
 ## 1. Python environments
 
@@ -40,7 +40,16 @@ Set the data root once. Every pipeline module reads it.
 export ADU_DATA_DIR=~/musa-drive     # this is also the default
 ```
 
-The detector scripts use `~/musa-drive` directly. The land cover code reads its images and labels from `ADU_VISION_SOURCE` (default `~/Documents/YZ-MUSA-FINAL/data/raw/6950`). See [ARCHITECTURE.md](ARCHITECTURE.md) for the folder layout.
+Other paths:
+
+| Variable | Default | Read by |
+|---|---|---|
+| `ADU_DATA_DIR` | `~/musa-drive` | Every pipeline module (`pipeline/paths.py`) |
+| `ADU_VISION_SOURCE` | `~/Documents/YZ-MUSA-FINAL/data/raw/6950` | The land cover code, for the Chesapeake images and labels |
+| `CORPUS_DIR` | `<data root>/corpus` | The machine-read zoning pilot (`pipeline/corpus/`) |
+| `LOT_DATA_DIR` | `~/musa-drive/lots` | The app's dev and preview server, the Node assistant provider and the end-to-end test |
+
+The detector scripts use `~/musa-drive` directly. See [ARCHITECTURE.md](ARCHITECTURE.md) for the folder layout.
 
 ## 3. From raw data to lot files
 
@@ -118,7 +127,7 @@ $G -m pipeline.build_lots run --place pittsburgh --workers 4
 $G -m pipeline.build_lots run --place philadelphia --workers 4
 ```
 
-Options: `--tracts <GEOID> ...` builds only those tracts, `--limit N` builds at most N lots (a smoke test), `--force` rebuilds tracts already done. A run skips tracts listed as finished in `progress.jsonl`, so a stopped run can be started again.
+Options: `--tracts <GEOID> ...` builds only those tracts, `--limit N` builds at most N lots (a smoke test), `--force` rebuilds tracts already done. A run skips tracts listed as finished in `progress.jsonl`, so a stopped run can be started again. Land cover is joined from the per-lot cover file when it exists (section 4.3). `build_lots cover --place <place>` refreshes only the cover in built tracts.
 
 Then:
 
@@ -127,6 +136,7 @@ $G -m pipeline.build_lots validate --place pittsburgh             # every record
 $G -m pipeline.build_lots validate --place pittsburgh --sample 20 # 20 records per tract
 $G -m pipeline.build_lots stats --place pittsburgh                # stats.json
 $G -m pipeline.build_lots qa --place pittsburgh --n 20 --seed 7   # contact sheet in qa/
+$G app/build_lot_tiles.py --place pittsburgh                      # tiles/lots.pmtiles + overview.pmtiles for the map (needs tippecanoe)
 ```
 
 Output in `lots/<place>/`:
@@ -136,8 +146,11 @@ Output in `lots/<place>/`:
 | `detail/<GEOID>.json.gz` | Full lot records for one tract. Large tracts are split into chunks (`<GEOID>.p2.json.gz`) and a geometry file (`<GEOID>.geom.json.gz`) |
 | `parts/<GEOID>.parquet` | Index rows for one tract |
 | `index.parquet` | One compact row per lot |
-| `app/<GEOID>.json` | The current app's per-tract list, with the new fields beside the old ones |
-| `lot_tract.parquet`, `lot_tract.json` | Which tract file holds each lot |
+| `app/<GEOID>.json` | A short per-tract list in the older app format. The current app does not read it |
+| `lot_tract.parquet`, `lot_tract.json` | Which tract file holds each lot. The app reads the JSON to open a lot from a link |
+| `tiles/parcels.pmtiles` | Parcel outlines with the lot id, tract and today's largest detached unit (older build of `app/build_lot_tiles.py`, the app's fallback) |
+| `tiles/lots.pmtiles` | The same outlines plus `a`, each lot's answer per scenario and unit type, from `app/build_lot_tiles.py` |
+| `tiles/overview.pmtiles` | Grid squares where there are lots (zoom 5 to 13), the most common answer per square, from `app/build_lot_tiles.py` |
 | `manifest.json` | Build date, input dates, rule dates, counts, data version, file sizes |
 | `progress.jsonl` | One line per finished tract |
 | `errors.jsonl` | One line per lot that crashed, with the traceback |
@@ -153,7 +166,7 @@ $G -m pipeline.money fixture     # rewrite tests/fixtures/money_cases.json after
 
 `demo` options: `--quality` (basic, standard, premium), `--financing` (cash, heloc, construction_to_perm, fha_203k, all_borrowed), `--rate`, `--septic`, `--managed`. How to change a number: [shared/ASSUMPTIONS.md](../shared/ASSUMPTIONS.md).
 
-## 4. Image models
+## 4. Models and analysis
 
 ### 4.1 Land cover
 
@@ -191,13 +204,19 @@ Output: chips in `raw/imagery/<city>/`, dataset and detections in `processed/yol
 ### 4.3 Land cover for the two cities
 
 ```bash
-$M -m pipeline.vision.city build pittsburgh --n 40
+$M -m pipeline.vision.city build pittsburgh --n 40                         # city label boxes from the 2 ft raster
+$M -m pipeline.vision.train --run ft_c5_pittsburgh --classes 5 --data city:pittsburgh --init-from ~/musa-drive/models/r34_c5_s0/best.pt
+$M -m pipeline.vision.evaluate ~/musa-drive/models/r34_c5_s0/best.pt --tta --data city:pittsburgh
+$M -m pipeline.vision.city_check philadelphia --runs ft_c5_philadelphia r34_c5_s0   # label and season checks
 $M -m pipeline.vision.infer_lots pittsburgh --estimate
-$M -m pipeline.vision.infer_lots pittsburgh --checkpoint ~/musa-drive/models/<run>/best.pt --tta
+$M -m pipeline.vision.infer_lots pittsburgh --checkpoint ~/musa-drive/models/r34_c5_s0/best.pt --tta --out ~/musa-drive/processed/pittsburgh/cover_model_r34_c5_s0.parquet
+$M -m pipeline.vision.raster_cover build philadelphia                      # per-lot counts from the city raster
+$M -m pipeline.vision.raster_cover finalize philadelphia                   # choose the cover file, write cover_compare.json
+$M -m pipeline.vision.raster_cover compare pittsburgh --model ~/musa-drive/processed/pittsburgh/cover_model_r34_c5_s0.parquet --out-name cover_compare_r34_c5_s0.json
 $M -m pipeline.vision.error_analysis ~/Documents/YZ-MUSA-FINAL/data/models/unet_v2_r34.pt
 ```
 
-Output: `processed/vision/city/<city>/`, `processed/<city>/cover.parquet` and `processed/vision/error_analysis/`.
+City test scores leave out pixels that also sit in a train or validation box. Output: `processed/vision/city/<city>/`, `models/<run>/city_<city>_scores*.json`, `processed/<city>/cover*.parquet`, `processed/<city>/cover_compare*.json` and `processed/vision/error_analysis/`. Which cover file each city's lot records read is set in `pipeline/build_lots.py` (`COVER_FILES_BY_PLACE`). See [DATA.md](DATA.md).
 
 ### 4.4 Hand-label check
 
@@ -210,6 +229,56 @@ $G -m pipeline.validation.score --city philadelphia
 ```
 
 Output in `<data root>/validation/`: `sample.parquet`, `<city>/chips/`, `<city>/sheets/`, `<city>/label.html`, and `results/<city>.json` and `.md`. Score reads hand labels from `validation/labels/`.
+
+<!-- source: ~/musa-drive/validation/results/philadelphia.json and pittsburgh.json (n_sample, n_labeled), generated 2026-11-11T09:20 -->
+
+Status: 250 lots are sampled (125 per city). 0 are labeled. The agreement of the fit answer with a person's reading is not measured yet.
+
+### 4.5 Tract analysis (MUSA 5500)
+
+```bash
+$G -m pipeline.tract.acs_moe
+$G -m pipeline.tract.growth
+$G -m pipeline.tract.migration
+$G -m pipeline.tract.groups
+$G -m pipeline.tract.payoff
+$G -m pipeline.tract.forecast
+$G -m pipeline.tract.rollup      # after payoff, groups and forecast
+$G -m pipeline.tract.viz         # musa5500/figures/tract_explorer.html
+```
+
+Output: `processed/5500/`. Then `python app/build_data.py` writes the app's tract, town and county files and `app/src/lib/headline.json`.
+
+### 4.6 Machine-read zoning pilot
+
+Not part of the product. See [CORPUS.md](CORPUS.md).
+
+```bash
+$G -m pipeline.corpus.places
+$G -m pipeline.corpus.fetch sources.csv
+$G -m pipeline.corpus.extract
+$G -m pipeline.corpus.chunk
+$M -m pipeline.corpus.embed
+$G -m pipeline.corpus.draft_rules --all
+$G -m pipeline.corpus.evaluate retrieval
+$G -m pipeline.corpus.evaluate extraction
+```
+
+The draft step calls the Claude API and needs `ANTHROPIC_API_KEY`.
+
+### 4.7 The app and the assistant eval
+
+```bash
+npm install
+npm run dev                  # http://localhost:5173, lot files from LOT_DATA_DIR
+npm run build                # typecheck, build to dist/, copy site/ to dist/quarto/
+npm run eval:agent:make      # agent/eval/questions.json from the lot files
+npm run eval:agent           # the assistant on every question (needs ANTHROPIC_API_KEY, model from EVAL_MODEL)
+npm run eval:agent -- --dry-run   # a scripted fake model, no key and no network
+npm run eval:agent:score
+```
+
+Eval runs land in `<data root>/ops/agent-eval/<time>-<model>/` (`report.md`, `score.json`). See [app/README.md](../app/README.md).
 
 ## 5. Tests
 
@@ -225,23 +294,30 @@ The land cover tests need torch, so they skip in `geospatial`. Run them in `geoa
 $M -m pytest -q tests/test_vision.py
 ```
 
-TypeScript: the build checkout has no installed `node_modules`. Either run `npm install` here and then `npx vitest run app/src/lib`, or use the main checkout's packages with a config that points at this checkout, as `app/src/lib/lot/README.md` shows:
+TypeScript and the end-to-end test, from the repository root:
 
 ```bash
-~/Documents/YZ-MUSA-FINAL/node_modules/.bin/vitest run --config <config that sets root to this checkout>
+npm test          # vitest: app/src, api and agent tests
+npm run e2e       # Playwright: the lot flow on the dev server. Skips without the lot files
 ```
 
-<!-- source: test runs at 09:21 on 2026-11-11 in this checkout -->
+Some agent tests replay the eval questions against the lot files in `LOT_DATA_DIR`. They skip when the files are not there.
 
-Status at 09:21 on 2026-11-11:
+<!-- source: test and check runs at 00:37 to 00:39 on 2026-11-12 in this checkout (geospatial env and npx), output read from the run logs. test_vision.py from the 2026-11-11 21:53 run -->
+
+Status at 00:39 on 2026-11-12:
 
 | Suite | Result |
 |---|---|
-| `pytest tests` (geospatial) | 403 passed, 1 skipped (the vision module, which needs torch) |
-| `pytest tests/test_vision.py` (geoai) | 8 passed |
-| `vitest` on `app/src/lib/lot/` | 135 passed, 1 failed. The failing test in `agentTools.test.ts` ("no tool returns text with nan, undefined or a question mark") took 7,002 ms, over the default test time limit |
-| `vitest` on `fitBox.test.ts` and `money.test.ts` | 43 passed |
-
+| `pytest tests` (geospatial) | 762 passed, 1 skipped (the vision module, which needs torch) |
+| `pytest tests -m "not needs_data and not needs_torch"` (what CI runs) | 762 passed, 1 skipped with the data drive attached |
+| `pytest tests/test_vision.py` (geoai) | 10 passed (2026-11-11 21:53, not run again) |
+| `npx vitest run` (23 files) | 414 passed |
+| `npx tsc --noEmit -p tsconfig.json` | 0 errors |
+| `python .github/scripts/check_schemas.py` | 43 rule files, assumptions and the lot schema: 0 problems |
+| `ruff check .` and `ruff format --check .` | clean |
+| `mypy pipeline` (mypy 2.4.1 in geospatial) | 62 errors in 11 files at 00:39. Those 62 were fixed at 14:40 on 2026-11-12: `pipeline/tract/`, `pipeline/validation/` and `pipeline/corpus/evaluate.py` are clean. Still open at 14:40: 16 errors in files under other work, `pipeline/vision/` (ensemble 8, infer_lots 1) and the new `pipeline/corpus/tierb.py` (7). CI keeps mypy report-only (`MYPY_STRICT` in `ci.yml`) until those are 0 |
+| `npx playwright test` | 9 passed in `app/e2e/lot-flow.spec.ts` (2.5 min, dev server, lot files on the drive) |
 
 ## 6. Order of a full refresh
 
@@ -249,6 +325,8 @@ Status at 09:21 on 2026-11-11:
 2. `build` and `check` for each place. Read `join_check.json` and `overlay_check.json`.
 3. `pipeline.market download --force` once a year.
 4. `pipeline.rules validate` after any rule file change.
-5. `build_lots run --force`, then `validate`, `stats` and `qa` for each place.
-6. Look at the `qa/` contact sheet by eye. Compare `stats.json` with the last one.
-7. Refresh the numbers in these docs from the files named in each table's comment.
+5. Land cover per lot (section 4.3) if the photos, the raster or the model changed.
+6. `build_lots run --force`, then `validate`, `stats` and `qa` for each place. Then `app/build_lot_tiles.py` for each place.
+7. Look at the `qa/` contact sheet by eye. Compare `stats.json` with the last one.
+8. `npm run eval:agent` on the new lot files.
+9. Refresh the numbers in these docs from the files named in each table's comment.

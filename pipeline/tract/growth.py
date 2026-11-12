@@ -17,10 +17,12 @@ Run:  python -m pipeline.tract.growth
 Saves data/processed/tract_panel.csv and trends_tract.csv (same columns as before plus flags),
 and <data root>/processed/5500/growth_summary.json.
 """
+
 from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass
+from typing import Any, cast
 
 import geopandas as gpd
 import numpy as np
@@ -54,7 +56,7 @@ MEASURES: dict[str, Measure] = {
 
 
 # ------------------------------------------------------------------ crosswalk
-def load_crosswalk(path=None) -> tuple[pd.DataFrame, pd.DataFrame]:
+def load_crosswalk(path: Any = None) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Block crosswalk 2010 -> 2020 tracts. Returns (pairs with land-share weight w, main 2010 tract per 2020 tract)."""
     path = path or RAW / "boundaries" / "TAB2010_TAB2020_ST42.zip"
     xw = pd.read_csv(path, sep="|", dtype=str)
@@ -69,15 +71,21 @@ def crosswalk_weights(xw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     pairs = xw.groupby(["tr10", "tr20"], as_index=False).land.sum()
     land10 = pairs.groupby("tr10").land.transform("sum")
     pairs["w"] = np.where(land10 > 0, pairs.land / land10, 0.0)
-    water = land10 == 0   # all-water 2010 tracts: split evenly
+    water = land10 == 0  # all-water 2010 tracts: split evenly
     pairs.loc[water, "w"] = 1 / pairs[water].groupby("tr10").tr20.transform("size")
     pairs = pairs[pairs.w > 0]
     main10 = pairs.sort_values("land", ascending=False).drop_duplicates("tr20")[["tr20", "tr10"]]
     return pairs, main10
 
 
-def to_2020(df: pd.DataFrame, counts: list[str], medians: list[str], pairs: pd.DataFrame,
-            main10: pd.DataFrame, count_moes: list[str] | None = None) -> pd.DataFrame:
+def to_2020(
+    df: pd.DataFrame,
+    counts: list[str],
+    medians: list[str],
+    pairs: pd.DataFrame,
+    main10: pd.DataFrame,
+    count_moes: list[str] | None = None,
+) -> pd.DataFrame:
     """Move a 2010-tract table to 2020 tracts.
 
     Counts: land-share weighted sums. Count margins: sqrt(sum((w * moe)^2)).
@@ -88,7 +96,8 @@ def to_2020(df: pd.DataFrame, counts: list[str], medians: list[str], pairs: pd.D
     out = m[counts].multiply(m.w, axis=0).groupby(m.tr20).sum(min_count=1)
     if count_moes:
         sq = (m[count_moes].multiply(m.w, axis=0) ** 2).groupby(m.tr20).sum(min_count=1)
-        out = out.join(np.sqrt(sq))
+        # numpy's stubs type a ufunc on a frame as an ndarray; at run time it is a DataFrame
+        out = out.join(cast(pd.DataFrame, np.sqrt(sq)))
     if medians:
         med = main10.merge(df[["GEOID"] + medians], left_on="tr10", right_on="GEOID", how="left")
         out = out.join(med.set_index("tr20")[medians], how="outer")
@@ -96,7 +105,7 @@ def to_2020(df: pd.DataFrame, counts: list[str], medians: list[str], pairs: pd.D
 
 
 # ------------------------------------------------------------------ math
-def cagr(start: pd.Series | float, end: pd.Series | float, years: float):
+def cagr(start: pd.Series | float, end: pd.Series | float, years: float) -> Any:
     return (end / start) ** (1 / years) - 1
 
 
@@ -109,14 +118,12 @@ def rate(start: pd.Series, end: pd.Series, years: float, min_start: float) -> pd
 def diff_moe(*moes: pd.Series, weights: tuple[float, ...] | None = None) -> pd.Series:
     """Margin of a weighted sum of independent estimates: sqrt(sum((w * m)^2))."""
     weights = weights or (1.0,) * len(moes)
-    return np.sqrt(sum((w * m) ** 2 for w, m in zip(weights, moes, strict=True)))
+    return cast(pd.Series, np.sqrt(sum((w * m) ** 2 for w, m in zip(weights, moes, strict=True))))
 
 
 def within_moe(change: pd.Series, moe: pd.Series) -> pd.Series:
     """True when a change is smaller than its margin of error. Blank when either is missing."""
-    out = (change.abs() < moe).astype("boolean")
-    out[~(change.notna() & moe.notna())] = pd.NA
-    return out
+    return (change.abs() < moe).astype("boolean").where(change.notna() & moe.notna(), pd.NA)
 
 
 def deflator(year: int, to_year: int = 2024) -> float:
@@ -125,11 +132,21 @@ def deflator(year: int, to_year: int = 2024) -> float:
 
 
 # ------------------------------------------------------------------ panel
-def build_panel(acs: pd.DataFrame, moe: pd.DataFrame, jobs: pd.DataFrame, dec: pd.DataFrame,
-                tracts: pd.DataFrame, pairs: pd.DataFrame, main10: pd.DataFrame) -> pd.DataFrame:
+def build_panel(
+    acs: pd.DataFrame,
+    moe: pd.DataFrame,
+    jobs: pd.DataFrame,
+    dec: pd.DataFrame,
+    tracts: pd.DataFrame,
+    pairs: pd.DataFrame,
+    main10: pd.DataFrame,
+) -> pd.DataFrame:
     """One row per 2020 tract, all years. Dollars in 2024 dollars. Margins as <col>_moe_<year>."""
-    acs = acs.merge(moe.drop(columns=["pop", "housing_units", "median_rent", "rent_b1", "rent_b1_moe"],
-                             errors="ignore"), on=["GEOID", "acs_year"], how="left")
+    acs = acs.merge(
+        moe.drop(columns=["pop", "housing_units", "median_rent", "rent_b1", "rent_b1_moe"], errors="ignore"),
+        on=["GEOID", "acs_year"],
+        how="left",
+    )
     moe_cols = ["pop_moe", "housing_units_moe"]
     by_year: dict[int, pd.DataFrame] = {}
     for y in ACS_YEARS:
@@ -149,7 +166,9 @@ def build_panel(acs: pd.DataFrame, moe: pd.DataFrame, jobs: pd.DataFrame, dec: p
         renamed = a.rename(columns={c: f"{c}_{y}" for c in a.columns if c != "GEOID"})
         panel = panel.merge(renamed, on="GEOID", how="left")
     jw = jobs.pivot_table(index="GEOID", columns="year", values=["jobs_here", "workers_living_here"], aggfunc="sum")
-    jw.columns = [f"{v}_{y}" for v, y in jw.columns]
+    jw.columns = [
+        f"{v}_{y}" for v, y in zip(jw.columns.get_level_values(0), jw.columns.get_level_values(1), strict=True)
+    ]
     panel = panel.merge(jw.reset_index(), on="GEOID", how="left")
     d10 = to_2020(dec[dec.year == 2010][["GEOID", "housing_units"]], ["housing_units"], [], pairs, main10)
     d20 = dec[dec.year == 2020][["GEOID", "housing_units"]]
@@ -179,8 +198,9 @@ def build_trends(panel: pd.DataFrame) -> pd.DataFrame:
             t[f"{name}_after_within_moe"] = within_moe(e[2024] - e[2019], diff_moe(s[2019], s[2024]))
             # Change in the 5-year change: E24 - 2*E19 + E14
             accel = e[2024] - 2 * e[2019] + e[2014]
-            t[f"{name}_change_within_moe"] = within_moe(accel, diff_moe(s[2014], s[2019], s[2024],
-                                                                        weights=(1.0, 2.0, 1.0)))
+            t[f"{name}_change_within_moe"] = within_moe(
+                accel, diff_moe(s[2014], s[2019], s[2024], weights=(1.0, 2.0, 1.0))
+            )
             t.loc[t[f"{name}_change"].isna(), f"{name}_change_within_moe"] = pd.NA
     t["growth_before"] = t.pop_growth_before
     t["growth_after"] = t.pop_growth_after
@@ -203,10 +223,14 @@ def statewide(panel: pd.DataFrame, trends: pd.DataFrame) -> pd.DataFrame:
         b0, b1 = m.before
         a0, a1 = m.after
         s = {y: panel[f"{m.column}_{y}"].sum() for y in {b0, b1, a0, a1}}
-        rows[name] = {"before": cagr(s[b0], s[b1], _span(m.before, m.acs)),
-                      "after": cagr(s[a0], s[a1], _span(m.after, m.acs))}
-    rows["rent (median tract, real)"] = {"before": trends.rent_growth_before.median(),
-                                         "after": trends.rent_growth_after.median()}
+        rows[name] = {
+            "before": cagr(s[b0], s[b1], _span(m.before, m.acs)),
+            "after": cagr(s[a0], s[a1], _span(m.after, m.acs)),
+        }
+    rows["rent (median tract, real)"] = {
+        "before": trends.rent_growth_before.median(),
+        "after": trends.rent_growth_after.median(),
+    }
     out = pd.DataFrame(rows).T
     out["change"] = out.after - out.before
     return out
@@ -217,8 +241,15 @@ def inflation_table(panel: pd.DataFrame) -> pd.DataFrame:
     rows = []
     for y in ACS_YEARS:
         for c in DOLLARS:
-            rows.append({"window": WINDOW[y], "measure": c, "nominal": panel[f"{c}_nominal_{y}"].median(),
-                         "dollars_2024": panel[f"{c}_{y}"].median(), "cpi_factor": deflator(y)})
+            rows.append(
+                {
+                    "window": WINDOW[y],
+                    "measure": c,
+                    "nominal": panel[f"{c}_nominal_{y}"].median(),
+                    "dollars_2024": panel[f"{c}_{y}"].median(),
+                    "cpi_factor": deflator(y),
+                }
+            )
     return pd.DataFrame(rows)
 
 
@@ -229,8 +260,14 @@ def moe_summary(trends: pd.DataFrame) -> pd.DataFrame:
         for part in ("before", "after", "change"):
             col = f"{name}_{part}_within_moe"
             s = trends[col].dropna().astype(bool)
-            rows.append({"measure": name, "part": part, "tracts": int(len(s)),
-                         "share_within_moe": float(s.mean()) if len(s) else np.nan})
+            rows.append(
+                {
+                    "measure": name,
+                    "part": part,
+                    "tracts": int(len(s)),
+                    "share_within_moe": float(s.mean()) if len(s) else np.nan,
+                }
+            )
     return pd.DataFrame(rows)
 
 
@@ -253,23 +290,38 @@ def run(save: bool = True) -> dict[str, pd.DataFrame]:
     state = statewide(panel, trends)
     infl = inflation_table(panel)
     moe = moe_summary(trends)
-    sped = pd.DataFrame({m: {"share_sped_up": float((trends[f"{m}_change"] > 0).mean()),
-                             "tracts_with_data": int(trends[f"{m}_change"].notna().sum())} for m in MEASURES}).T
+    sped = pd.DataFrame(
+        {
+            m: {
+                "share_sped_up": float((trends[f"{m}_change"] > 0).mean()),
+                "tracts_with_data": int(trends[f"{m}_change"].notna().sum()),
+            }
+            for m in MEASURES
+        }
+    ).T
     if save:
         old = PROCESSED / "trends_tract.csv"
-        if old.exists():   # keep the trend groups until groups.py writes new ones
+        if old.exists():  # keep the trend groups until groups.py writes new ones
             prev = pd.read_csv(old, dtype={"GEOID": str}, usecols=lambda c: c in ("GEOID", "trend_group"))
             if "trend_group" in prev:
                 trends = trends.merge(prev, on="GEOID", how="left")
         panel.to_csv(PROCESSED / "tract_panel.csv", index=False)
         trends.to_csv(PROCESSED / "trends_tract.csv", index=False)
-        write_json({"windows": {"before": "ACS 2010-14 to 2015-19 (midpoints 2012 to 2017)",
-                                "after": "ACS 2015-19 to 2020-24 (midpoints 2017 to 2022)",
-                                "jobs_before": "LODES 2010 to 2019", "jobs_after": "LODES 2019 to 2024"},
-                    "statewide": state.to_dict(orient="index"),
-                    "share_sped_up": sped.to_dict(orient="index"),
-                    "moe": moe.to_dict(orient="records"),
-                    "inflation": infl.to_dict(orient="records")}, out_dir() / "growth_summary.json")
+        write_json(
+            {
+                "windows": {
+                    "before": "ACS 2010-14 to 2015-19 (midpoints 2012 to 2017)",
+                    "after": "ACS 2015-19 to 2020-24 (midpoints 2017 to 2022)",
+                    "jobs_before": "LODES 2010 to 2019",
+                    "jobs_after": "LODES 2019 to 2024",
+                },
+                "statewide": state.to_dict(orient="index"),
+                "share_sped_up": sped.to_dict(orient="index"),
+                "moe": moe.to_dict(orient="records"),
+                "inflation": infl.to_dict(orient="records"),
+            },
+            out_dir() / "growth_summary.json",
+        )
     return {"panel": panel, "trends": trends, "statewide": state, "inflation": infl, "moe": moe, "sped": sped}
 
 

@@ -1,9 +1,11 @@
 """Static figures for the course pages. Each function draws one figure and saves it in
 musa5500/docs/figures. The notebooks call these and show the result.
 """
+
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -14,11 +16,21 @@ from pipeline.tract.io import FIGURES, PROCESSED
 
 DPI = 120
 PAYS_COLORS = {"yes": "#1a9850", "maybe": "#e0b000", "no": "#c0392b"}
-GROUP_COLORS = ["#4c72b0", "#dd8452", "#55a868", "#c44e52", "#8172b3", "#937860", "#da8bc3", "#8c8c8c",
-                "#ccb974", "#64b5cd"]
+GROUP_COLORS = [
+    "#4c72b0",
+    "#dd8452",
+    "#55a868",
+    "#c44e52",
+    "#8172b3",
+    "#937860",
+    "#da8bc3",
+    "#8c8c8c",
+    "#ccb974",
+    "#64b5cd",
+]
 
 
-def _save(fig, name: str) -> Path:
+def _save(fig: Any, name: str) -> Path:
     FIGURES.mkdir(parents=True, exist_ok=True)
     path = FIGURES / name
     fig.savefig(path, dpi=DPI, bbox_inches="tight")
@@ -30,7 +42,7 @@ def tracts_gdf() -> gpd.GeoDataFrame:
 
 
 # ------------------------------------------------------------------ growth
-def growth_hist(trends: pd.DataFrame):
+def growth_hist(trends: pd.DataFrame) -> Any:
     fig, axes = plt.subplots(1, 4, figsize=(14, 3.4))
     titles = {"pop": "Population", "units": "Housing units", "jobs": "Jobs", "rent": "Real rent"}
     for ax, m in zip(axes, titles, strict=True):
@@ -49,12 +61,20 @@ def growth_hist(trends: pd.DataFrame):
     return fig
 
 
-def trend_change_map(trends: pd.DataFrame):
+def trend_change_map(trends: pd.DataFrame) -> Any:
     g = tracts_gdf().merge(trends, on="GEOID")
     fig, axes = plt.subplots(1, 2, figsize=(13, 4.5))
     for ax, m, t in zip(axes, ["jobs", "pop"], ["Jobs", "Population"], strict=True):
-        g.plot(column=g[f"{m}_change"] * 100, ax=ax, cmap="RdBu", vmin=-4, vmax=4, legend=True,
-               missing_kwds={"color": "#ddd"}, legend_kwds={"shrink": 0.6, "label": "points per year"})
+        g.plot(
+            column=g[f"{m}_change"] * 100,
+            ax=ax,
+            cmap="RdBu",
+            vmin=-4,
+            vmax=4,
+            legend=True,
+            missing_kwds={"color": "#ddd"},
+            legend_kwds={"shrink": 0.6, "label": "points per year"},
+        )
         ax.set_title(f"{t}: growth after minus growth before")
         ax.set_axis_off()
     fig.tight_layout()
@@ -62,7 +82,7 @@ def trend_change_map(trends: pd.DataFrame):
     return fig
 
 
-def moe_bars(moe: pd.DataFrame):
+def moe_bars(moe: pd.DataFrame) -> Any:
     p = moe.pivot(index="measure", columns="part", values="share_within_moe")[["before", "after", "change"]] * 100
     fig, ax = plt.subplots(figsize=(6.5, 3.2))
     p.plot.barh(ax=ax, color=["#9ecae1", "#4292c6", "#08519c"])
@@ -77,7 +97,7 @@ def moe_bars(moe: pd.DataFrame):
 
 
 # ------------------------------------------------------------------ groups
-def k_metrics(m: pd.DataFrame, k: int):
+def k_metrics(m: pd.DataFrame, k: int) -> Any:
     fig, axes = plt.subplots(1, 4, figsize=(15, 3.2))
     axes[0].plot(m.k, m.inertia, "o-")
     axes[0].set_title("Inertia (elbow)")
@@ -101,7 +121,7 @@ def k_metrics(m: pd.DataFrame, k: int):
     return fig
 
 
-def groups_map(trends: pd.DataFrame, k: int):
+def groups_map(trends: pd.DataFrame, k: int) -> Any:
     g = tracts_gdf().merge(trends[["GEOID", "trend_group"]], on="GEOID")
     order = [n for n in g.trend_group.value_counts().index if n != "Not enough data"] + ["Not enough data"]
     colors = dict(zip(order[:-1], GROUP_COLORS, strict=False)) | {"Not enough data": "#dddddd"}
@@ -118,7 +138,7 @@ def groups_map(trends: pd.DataFrame, k: int):
 
 
 # ------------------------------------------------------------------ payoff
-def payoff_map(payoff: pd.DataFrame, title: str):
+def payoff_map(payoff: pd.DataFrame, title: str) -> Any:
     g = tracts_gdf().merge(payoff[["GEOID", "pays"]], on="GEOID")
     fig, ax = plt.subplots(figsize=(10, 6.5))
     for k, c in PAYS_COLORS.items():
@@ -134,7 +154,7 @@ def payoff_map(payoff: pd.DataFrame, title: str):
     return fig
 
 
-def sensitivity_heat(sens: pd.DataFrame):
+def sensitivity_heat(sens: pd.DataFrame) -> Any:
     p = sens.pivot_table(index=["rent_basis", "rate_name"], columns="cost_level", values="share_yes")
     p = p[["low", "mid", "high"]] * 100
     fig, ax = plt.subplots(figsize=(6.5, 4.2))
@@ -153,11 +173,12 @@ def sensitivity_heat(sens: pd.DataFrame):
 
 
 # ------------------------------------------------------------------ forecast
-def model_compare(cv: pd.DataFrame):
+def model_compare(cv: pd.DataFrame) -> Any:
     keep = cv[cv.scheme.isin(["random_5fold", "county_blocks", "grid_40km_blocks"])]
     fig, axes = plt.subplots(1, 2, figsize=(12, 3.6))
-    for ax, col, t in zip(axes, ["r2_pooled", "mae"], ["R2 (higher better)", "MAE, log points (lower better)"],
-                          strict=True):
+    for ax, col, t in zip(
+        axes, ["r2_pooled", "mae"], ["R2 (higher better)", "MAE, log points (lower better)"], strict=True
+    ):
         keep.pivot(index="model", columns="scheme", values=col).plot.barh(ax=ax)
         ax.set_title(t)
         ax.set_ylabel("")
@@ -168,10 +189,11 @@ def model_compare(cv: pd.DataFrame):
     return fig
 
 
-def backtest_scatter(detail: pd.DataFrame, model: str):
+def backtest_scatter(detail: pd.DataFrame, model: str) -> Any:
     fig, axes = plt.subplots(1, 2, figsize=(11, 4))
-    for ax, col, t in zip(axes, ["last_period_rate", model], ["Last-period rate", model.replace("_", " ")],
-                          strict=True):
+    for ax, col, t in zip(
+        axes, ["last_period_rate", model], ["Last-period rate", model.replace("_", " ")], strict=True
+    ):
         ax.scatter(detail[col] * 100, detail.actual * 100, s=3, alpha=0.3)
         ax.axline((0, 0), slope=1, color="k", lw=0.6, ls="--")
         ax.set_xlim(-30, 30)
@@ -185,7 +207,7 @@ def backtest_scatter(detail: pd.DataFrame, model: str):
     return fig
 
 
-def importance_pdp(imp: pd.DataFrame, pdp: pd.DataFrame):
+def importance_pdp(imp: pd.DataFrame, pdp: pd.DataFrame) -> Any:
     feats = list(pdp.feature.unique())
     fig, axes = plt.subplots(1, 1 + len(feats), figsize=(4 + 3 * len(feats), 3.4))
     imp.importance.iloc[::-1].plot.barh(ax=axes[0], xerr=imp.fold_sd.iloc[::-1], color="#4c72b0")
@@ -200,16 +222,28 @@ def importance_pdp(imp: pd.DataFrame, pdp: pd.DataFrame):
     return fig
 
 
-def forecast_map(towns_out: pd.DataFrame, rule: str = "hb2186"):
+def forecast_map(towns_out: pd.DataFrame, rule: str = "hb2186") -> Any:
     towns = gpd.read_file(PROCESSED / "towns_2020.gpkg")[["GEOID", "geometry"]]
     tw = towns.merge(towns_out[towns_out.rule == rule], left_on="GEOID", right_on="town_geoid").to_crs(3857)
     tw["per_1000"] = tw.adus_mid / tw["pop"].clip(lower=1) * 1000
     fig, axes = plt.subplots(1, 2, figsize=(13, 5.2))
-    for ax, col, t in zip(axes, ["adus_mid", "per_1000"], ["ADUs by 2031 (mid)", "Per 1,000 residents"],
-                          strict=True):
-        tw.plot(column=col, ax=ax, cmap="YlGnBu", scheme="quantiles", k=5, legend=True,
-                legend_kwds={"loc": "upper center", "bbox_to_anchor": (0.5, 0.02), "ncol": 3, "fontsize": 8,
-                             "frameon": False, "fmt": "{:.1f}"})
+    for ax, col, t in zip(axes, ["adus_mid", "per_1000"], ["ADUs by 2031 (mid)", "Per 1,000 residents"], strict=True):
+        tw.plot(
+            column=col,
+            ax=ax,
+            cmap="YlGnBu",
+            scheme="quantiles",
+            k=5,
+            legend=True,
+            legend_kwds={
+                "loc": "upper center",
+                "bbox_to_anchor": (0.5, 0.02),
+                "ncol": 3,
+                "fontsize": 8,
+                "frameon": False,
+                "fmt": "{:.1f}",
+            },
+        )
         ax.set_title(f"{t}, {rule.upper()} scenario, by town")
         ax.set_axis_off()
     fig.tight_layout()
@@ -217,13 +251,22 @@ def forecast_map(towns_out: pd.DataFrame, rule: str = "hb2186"):
     return fig
 
 
-def migration_map(periods: pd.DataFrame):
+def migration_map(periods: pd.DataFrame) -> Any:
     c = gpd.read_file(PROCESSED / "counties_2020.gpkg")[["GEOID", "geometry"]].to_crs(3857)
     g = c.merge(periods, left_on="GEOID", right_on="county")
     fig, axes = plt.subplots(1, 2, figsize=(12, 3.8))
     for ax, col, t in zip(axes, ["before", "after"], ["2012-2019", "2020-2023"], strict=True):
-        g.plot(column=col, ax=ax, cmap="PuOr", vmin=-10, vmax=10, legend=True, edgecolor="white", linewidth=0.3,
-               legend_kwds={"shrink": 0.6, "label": "net movers per 1,000 a year"})
+        g.plot(
+            column=col,
+            ax=ax,
+            cmap="PuOr",
+            vmin=-10,
+            vmax=10,
+            legend=True,
+            edgecolor="white",
+            linewidth=0.3,
+            legend_kwds={"shrink": 0.6, "label": "net movers per 1,000 a year"},
+        )
         ax.set_title(f"IRS county net migration, {t}")
         ax.set_axis_off()
     fig.tight_layout()

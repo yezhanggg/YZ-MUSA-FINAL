@@ -49,7 +49,7 @@ export interface BuildStepsInput {
   assumptions?: Assumptions;
 }
 
-const ASK_TIME = 'Ask the city how long this takes.';
+export const ASK_TIME = 'Ask the city how long this takes.';
 const GENERAL: StepBasis = { kind: 'general_practice' };
 
 interface Offices {

@@ -6,12 +6,13 @@ It is kept in <data root>/raw/tiger/.
 CLI:
     python -m pipeline.tracts download
 """
+
 from __future__ import annotations
 
 import argparse
 import urllib.request
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Optional, Sequence
 
 import geopandas as gpd
 import pandas as pd
@@ -70,7 +71,7 @@ def assign_tracts(points: gpd.GeoSeries, tracts: gpd.GeoDataFrame) -> pd.Series:
     return out
 
 
-def main(argv: Optional[Sequence[str]] = None) -> None:
+def main(argv: Sequence[str] | None = None) -> None:
     p = argparse.ArgumentParser(prog="python -m pipeline.tracts", description=__doc__.splitlines()[0])
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("download", help="download the Pennsylvania 2020 tract file")

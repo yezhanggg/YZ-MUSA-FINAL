@@ -2,6 +2,7 @@
 // shares per scenario). Fetched once per place and kept. Missing files resolve to null.
 import { useEffect, useState } from 'react';
 import { lotDataUrl } from '../../lib/lot/load';
+import { dateText } from '../../lib/lot/words';
 
 export interface PlaceManifest {
   place: string;
@@ -67,5 +68,15 @@ export function useManifests(): PlaceManifest[] {
   return list;
 }
 
-/** "Lot data: Philadelphia 2026-11-11, Pittsburgh 2026-11-11" */
-export const dataLine = (ms: PlaceManifest[]) => (ms.length ? `Lot data: ${ms.map((m) => `${PLACE_TITLE[m.place] ?? m.place} ${(m.built_at ?? m.data_version.split('-')[1] ?? '').slice(0, 10)}`).join(', ')}` : null);
+/** "Lot data: Nov 11, 2026" when every place was built the same day, else "Lot data: Philadelphia Nov 11, 2026, Pittsburgh ..." */
+export function dataLine(ms: PlaceManifest[]): string | null {
+  if (!ms.length) return null;
+  const day = (m: PlaceManifest) => (m.built_at ?? m.data_version.split('-')[1] ?? '').slice(0, 10);
+  const text = (iso: string) => {
+    const m = /^(\d{4})-?(\d{2})-?(\d{2})$/.exec(iso);
+    return m ? (dateText(`${m[1]}-${m[2]}-${m[3]}`) ?? iso) : iso;
+  };
+  const days = [...new Set(ms.map(day))];
+  if (days.length === 1) return `Lot data: ${text(days[0])}`;
+  return `Lot data: ${ms.map((m) => `${PLACE_TITLE[m.place] ?? m.place} ${text(day(m))}`).join(', ')}`;
+}

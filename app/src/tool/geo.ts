@@ -1,7 +1,7 @@
 // Data for the tool (app/public/data, made by app/build_data.py) and the small geometry helpers that test a spot
 // in the browser: point in polygon for the tract and town, nearest lot within 40 m.
-import { HAS_FIT_CURVES, LOT_TRACTS } from 'virtual:lot-index';
-import type { FitCurves } from '../lib/adu';
+import { LOT_TRACTS } from 'virtual:lot-index';
+import type { TractRoomFields } from '../lib/adu';
 import type { LotRule, TownRule } from '../lib/rules';
 import { annual } from '../lib/format';
 
@@ -11,7 +11,7 @@ export const PA_BBOX: [number, number, number, number] = [-80.52, 39.72, -74.69,
 type Ring = LngLat[];
 export type Geom = { type: 'Polygon'; coordinates: Ring[] } | { type: 'MultiPolygon'; coordinates: Ring[][] };
 
-export interface TractProps {
+export interface TractProps extends TractRoomFields {
   GEOID: string;
   NAMELSAD?: string;
   county?: string;
@@ -24,11 +24,6 @@ export interface TractProps {
   rent_est?: number | null;
   cost_month?: number | null;
   pays?: 'yes' | 'maybe' | 'no' | null;
-  lots_total?: number | null;
-  lots_fit?: number | null;
-  lots_fit_keep_trees?: number | null;
-  /** urban / suburban / rural, for the fit curves */
-  stratum?: string | null;
   /** monthly gross rent for a studio, 1, 2, 3 bedroom unit (2024 dollars) */
   rent_b0?: number | null;
   rent_b1?: number | null;
@@ -92,6 +87,8 @@ export interface Lot extends LotRule {
 
 const polys = (g: Geom): Ring[][] => (g.type === 'Polygon' ? [g.coordinates] : g.coordinates);
 
+export const bboxOf = (g: Geom) => bbox(g);
+
 function bbox(g: Geom): [number, number, number, number] {
   let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
   for (const p of polys(g)) for (const [x, y] of p[0]) {
@@ -143,9 +140,8 @@ export function prepare(tracts: FC<TractProps>, towns: FC<TownProps>) {
 export async function loadData() {
   const [tracts, towns] = (await Promise.all(['data/tracts.geojson', 'data/towns.geojson'].map((u) => fetch(u).then((r) => r.json())))) as [FC<TractProps>, FC<TownProps>];
   prepare(tracts, towns);
-  const curves = HAS_FIT_CURVES ? ((await fetch('data/fit_curves.json').then((r) => (r.ok ? r.json() : null)).catch(() => null)) as FitCurves | null) : null;
   const counties = (await fetch('data/counties.geojson').then((r) => (r.ok ? r.json() : null)).catch(() => null)) as FC<CountyProps> | null;
-  return { tracts, towns, curves, counties };
+  return { tracts, towns, counties };
 }
 
 const lotCache = new Map<string, Promise<Lot[] | null>>();

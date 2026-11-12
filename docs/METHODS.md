@@ -1,12 +1,14 @@
 # Methods
 
-How the product decides whether a backyard home fits on a lot, which rules apply, what the image models do, and how the money model works. Numbers in tables come from the files named in the HTML comment above each table.
+How the product decides whether a backyard home fits on a lot, which rules apply, what the image models do, how the money model works, and how the Ask assistant is checked. Numbers in tables come from the files named in the HTML comment above each table.
 
 Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
 ## 1. The fit test
 
-Code: `pipeline/fit.py` (pure functions) and `pipeline/build_lots.py` (the glue for each lot). All geometry is in a local state plane in feet: EPSG:2272 for Philadelphia, EPSG:2271 for Pittsburgh.
+Code: `pipeline/fit.py` (pure functions) and `pipeline/build_lots.py` (the glue for each lot). All geometry is in a local state plane in feet: EPSG:2272 (NAD83 Pennsylvania South, US feet) for both cities (`WORK_CRS` in `pipeline/places/philadelphia.py` and `pittsburgh.py`).
+
+The fit is a vector geometry test. It works on the lot outline, the building outlines and the street lines, with setbacks from the rule files. It does not use the land cover model. Land cover is read afterwards as context (section 3.5).
 
 ### 1.1 Lot lines
 
@@ -124,7 +126,7 @@ Each lot record has `quality.confidence`:
 | Fit demo, Philadelphia | 200 | 8.84 ms mean for one fit (p50 7.8, p95 17.5, max 26.3) |
 | Philadelphia sample run with demo rules (5 ft setbacks, 10 ft separation, 800 sq ft cap) | 500 | 14.1 ms median, 17.8 mean, 48.1 p95 |
 
-On the 200 demo lots, the vector fit and the earlier raster fit (a 20 by 30 ft box on 0.6 m pixels) agreed on "a 600 sq ft unit fits" on 0.785 to 0.875 of lots, depending on which raster column and which angle is compared.
+The fit used before Nov 2026 was a raster box (20 by 30 ft) placed on U-Net land cover pixels. It is retired. On the 200 demo lots, the vector fit and that raster fit agreed on "a 600 sq ft unit fits" on 0.785 to 0.875 of lots, depending on which raster column and which angle is compared.
 
 ### 1.9 Hand-label check
 
@@ -132,7 +134,25 @@ On the 200 demo lots, the vector fit and the earlier raster fit (a 20 by 30 ft b
 
 `pipeline/validation/` compares the product's answer with a person's answer from a half-foot aerial chip. The question is whether a 600 sq ft (and a 400 sq ft) unit fits in the yard, with sheds kept and with sheds cleared. A product answer within 15 percent of the size counts as borderline.
 
-The sample is stratified by lot type (detached, semi-detached, row) and lot shape (regular, corner, irregular), with a fixed seed (6950). On 2026-11-11 the sample held 125 lots per city and 0 were labeled. **Agreement is not measured yet.** The sheets show the lot line only, so the labeler is not led by the product's answer.
+The sample is stratified by lot type (detached, semi-detached, row) and lot shape (regular, corner, irregular), with a fixed seed (6950). It holds 250 lots, 125 per city. On 2026-11-11 0 lots were labeled. **Agreement with a person is not measured.** The fit has no measured accuracy against the ground. The sheets show the lot line only, so the labeler is not led by the product's answer. The last scoring run read lot indexes older than the current lot files, so the product answers in it must be read again once labels exist.
+
+### 1.10 Ground slope (terrain)
+
+The fit is a flat-ground test. Ground slope is read afterwards and reported next to it. It never changes the fit's yes or no.
+
+| Step | What is done |
+|---|---|
+| Source | USGS 3DEP 1 m bare-earth DEM, project PA_17County_D24, flown 2024-04-14 to 2025-04-02, public domain. Tiles and `SOURCES.json` in `raw/elevation/<city>/` |
+| Grid | Per block of lots (4,000 ft squares), the DEM is warped onto a 3 ft grid in EPSG:2272 (bilinear) and heights go from metres to US survey feet, so x, y and z share one unit |
+| Slope | Horn's 3x3 method (as in GDAL and ArcGIS), percent = 100 x rise / run. The kernel spans 6 ft |
+| Per polygon | Cells whose centers fall inside (all touched cells for a polygon smaller than a cell). Mean, 90th percentile and max slope, share at 15 percent or more and at 25 percent or more. For the lot and the spot also the lowest and highest ground and the drop between them in ft |
+| Polygons | The lot, the buildable ground of each scenario (`buildable.<scenario>.keep`) and the saved best spot of the detached unit (`fit.<scenario>.detached_new.spot`) |
+| Class | Mean slope under the best spot today (else the buildable ground today, else the lot): under 15 percent ordinary, 15 to 25 moderate (stepped foundations, retaining walls or more grading), 25 or more steep. `steep_site` is true when the class is steep. Thresholds: `lots.terrain.moderate_slope_pct` and `lots.terrain.steep_slope_pct` in `shared/assumptions.json` |
+| Gentle fit | Per scenario where the detached unit fits: steep cells (25 percent or more) inside the buildable ground are cut out, after dropping steep patches under 50 sq ft (a curb, a step, a lidar speck), and the fit's own largest rectangle search runs again. The unit size is the smaller of the saved size and the room left. Stored in `terrain.gentle_fit`, beside the saved answer |
+
+Code: `pipeline/terrain.py` (maths) and `build_lots terrain` (refresh step). Tests: `tests/test_terrain.py` (planes with known slope) and `tests/test_build_lots.py::test_terrain_refresh_without_rerun`.
+
+Limits: the DEM is bare earth, so ground under houses is filled in and a retaining wall reads as a strip of very steep cells. The 2024 to 2025 lidar does not see grading done since. Slope under the spot is a planning signal, not a site survey or a geotechnical finding.
 
 ## 2. How rules are resolved
 
@@ -183,11 +203,46 @@ Paths in order from least to most demanding: `by_right`, `administrator_exceptio
 
 For each scenario the lot record stores the resolved rules (allowed, path, reasons, types, every number, citations, assumed keys, path by type, height by type, the effective rear setback, state limits, fire separation distances, and whether the historic path was used), the buildable ground (`keep`, `clear`, and the area in front of the house left out), and one fit per tested type. Scenarios with identical rules share one fit.
 
+### 2.5 Philadelphia limits come from overlays
+
+Philadelphia's ADU section has no council district test. Seven zoning overlays carry ADU text (`eligibility.overlay_bars` in `philadelphia.json`). Five of them follow council district lines by their own text, and two follow ward lines. The resolver (`_active_overlays` in `pipeline/rules.py`) counts a lot as inside an overlay when the city overlay layer lists it, or when its council district or ward is the one the overlay text names. The district and ward are only a way to find the overlay. See [RULES.md](RULES.md).
+
+### 2.6 Towns beyond the two cities
+
+Not legal advice. Not a zoning determination.
+
+The product knows zoning at three levels:
+
+| Tier | Coverage | How it is used |
+|---|---|---|
+| 1. Lot-level rules | Philadelphia and Pittsburgh | Resolved for every lot and scenario and saved in the lot record |
+| 2. Town rule files | 36 towns, ranks 3 to 38 by 2020 population. 21 verified, 15 drafted | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a described lot. No lot files |
+| 3. Statewide baseline | Every other town (`pa_statewide.json`) | The assistant answers with MPC paths, building code, sewage rules and the bills, and says it is not the town's own code |
+
+<!-- source: shared/rules/towns_index.json status field, shared/rules/pa_*.json adu.status.value, read 2026-11-11 -->
+
+Each town file has the same cited leaves as a city file, plus the code's own term for an ADU, a town-wide ADU status, conditions, district scope and "other ways" to add a unit (duplex, conversion). Each of the 36 files was written from the code text and then checked a second time, value by value, by a separate review against the code link. 21 passed and are "verified". 15 stay "drafted" because the review left at least one point open, such as a table that could not be read, a parking count that depends on a reading, or a code copy that may be out of date. The open point is kept in `status_note` in `towns_index.json` where one was written.
+
+ADU status in the 36 town files:
+
+| ADU status | Towns |
+|---|---|
+| Not addressed (no ADU text in the code) | 17 |
+| Allowed by right | 8 |
+| Family only | 8 |
+| Prohibited | 1 |
+| Special exception | 1 |
+| Conversion of an existing building only | 1 |
+
+<!-- source: shared/rules/pa_*.json adu.status.value for the 36 files listed in towns_index.json with status verified or drafted -->
+
+So 17 of the 36 largest towns after the two cities have no ADU rule at all. A further 8 allow a unit only for family members. The table by town is in [RULES_TOWNS.md](RULES_TOWNS.md). 40 more towns in the index are still to write. A machine-read pilot of ordinance text is described in [CORPUS.md](CORPUS.md). It is not in the product.
+
 ## 3. Land cover model
 
 Code: `pipeline/vision/`. Runs: `<data root>/models/<run>/`.
 
-The model labels each pixel of an aerial image as other, building, tree or open ground. It is meant to tell the fit where trees and paving are. **Its output is not in the lot records yet.** The records carry an empty `cover` block and the note "no land cover yet: cover is empty and trees are not counted".
+The model labels each pixel of an aerial image as other, building, tree or open ground (a 5-class version adds hard surface). In the lot records land cover is context only. It gives the share of the lot in building, tree, open ground and hard surface, the impervious share, and the tree, open, building and hard surface area inside the suggested spot. The fit does not steer around trees. Section 3.5 says which source each city uses.
 
 ### 3.1 Data
 
@@ -255,17 +310,52 @@ By area type (test mIoU):
 - The edge band score (a 1 pixel band along label edges left out) is about 0.065 higher. Much of the error sits on class edges, where a 1 m label on a 0.6 m grid is uncertain anyway.
 - Building IoU near 0.64 means that about a third of the combined predicted and labeled building area is wrong (missed or extra). That is enough to see a house and a garage, not enough to measure a shed.
 
-### 3.5 Work on the two cities
+### 3.5 Transfer to the two cities
 
-- `pipeline/vision/city.py` builds label sets for Philadelphia and Pittsburgh from 2 ft city land cover rasters, with newer building footprints burned in. Boxes are 600 m squares on clusters of residential lots. Not scored yet.
-- `pipeline/vision/infer_lots.py` predicts land cover for every lot of a city, tile by tile, and sums the class pixels per lot into `processed/<city>/cover.parquet`. No `cover.parquet` exists yet.
+`pipeline/vision/city.py` builds label sets for Philadelphia and Pittsburgh from the 2 ft city land cover rasters (Philadelphia 2018, Pittsburgh 2019), with newer building footprints burned in. Boxes are 600 m squares on clusters of residential lots. The 5-class models were scored with no city training (zero-shot) and after a short fine-tune on the city's train boxes. In the city sets "other" is water.
+
+**Overlap found and corrected.** In Pittsburgh 34.8 percent of the test box area was also inside train or validation boxes. City test scoring now leaves those pixels out (the "clean" files). Philadelphia has no overlap. An earlier Pittsburgh fine-tune score of 0.7194 (mIoU without water) came from the overlapping pixels. It is withdrawn.
+
+<!-- source: ~/musa-drive/models/r34_c5_s0/city_pittsburgh_scores_clean.json, ~/musa-drive/models/ft_c5_pittsburgh/city_pittsburgh_scores_clean.json and city_pittsburgh_scores.json, ~/musa-drive/models/r34_c5_s0/city_philadelphia_scores.json, ~/musa-drive/models/ft_c5_philadelphia/city_philadelphia_scores.json -->
+
+| City, model | Test pixels | mIoU without water | Building | Tree | Open | Hard surface | Water |
+|---|---|---|---|---|---|---|---|
+| Pittsburgh, `r34_c5_s0` zero-shot (clean) | 4,839,728 | 0.7036 | 0.7335 | 0.8116 | 0.5595 | 0.7097 | 0.7007 |
+| Pittsburgh, `ft_c5_pittsburgh` fine-tuned (clean) | 4,839,728 | 0.6941 | 0.686 | 0.8203 | 0.5619 | 0.7083 | 0 |
+| Pittsburgh, `ft_c5_pittsburgh` on all test pixels (withdrawn) | 7,122,645 | 0.7194 | 0.7288 | 0.8393 | 0.5806 | 0.729 | 0 |
+| Philadelphia, `r34_c5_s0` zero-shot | 12,000,000 | 0.4797 | 0.7072 | 0.2622 | 0.272 | 0.6775 | no water labeled |
+| Philadelphia, `ft_c5_philadelphia` fine-tuned | 12,000,000 | 0.5097 | 0.7386 | 0.2606 | 0.3226 | 0.717 | no water labeled |
+
+- **Pittsburgh.** The original model transfers well (about 0.70). The fine-tune did not help on clean pixels, and it lost the water class (IoU 0). The lot files use the zero-shot model `r34_c5_s0` (`COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`).
+- **Philadelphia.** Tree and open ground are not reliable from NAIP 2022. The photos were flown 2022-04-30 to 2022-05-17, in early leaf, and rowhouse yards sit in deep shadow. No label bug was found. The fine-tune did not fix tree (0.2606). Philadelphia lot cover therefore uses the city's 2018 land cover raster (`landcover_2018`). A lot built in 2018 or later gets a flag that the raster may show the lot before the house.
+
+Per-lot agreement with a city raster:
+
+<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json and ~/musa-drive/processed/philadelphia/cover_compare.json. Lots at least 90 percent covered by the raster, lots inside city train and validation boxes left out -->
+
+| City, model vs raster | Lots | Tree MAE (points) | Tree r | Open MAE | Vegetation MAE | Vegetation r | Building MAE | Tree mean, raster vs model |
+|---|---|---|---|---|---|---|---|---|
+| Pittsburgh, `r34_c5_s0` vs 2019 raster | 128 | 8.41 | 0.862 | 11.02 | 8.16 | 0.884 | 7.32 | 18.6 vs 12.5 percent |
+| Philadelphia, model vs 2018 raster | 430,161 | 6.71 | 0.622 | 12.02 | 13.65 | 0.76 | 17.66 | 9.4 vs 5.3 percent |
+
+The Pittsburgh check rests on 128 lots, because the 2019 raster covers part of the city and 801 lots inside train and validation boxes were left out. It is a small check. The model reads less tree than the raster in both cities.
+
+Other tools:
+
+- `pipeline/vision/infer_lots.py` predicts land cover for every lot of a city and sums the class pixels per lot.
+- `pipeline/vision/raster_cover.py` counts raster pixels per lot and writes the comparison.
+- `pipeline/vision/cover_lookup.py` gives the cover inside any polygon, used for the suggested spot.
 - `pipeline/vision/error_analysis.py` breaks down where the published model loses on the test counties.
 
 ### 3.6 Known weaknesses
 
+<!-- source: ~/musa-drive/processed/vision/error_analysis.md -->
+
+- The targets (test mIoU 0.72, building IoU 0.65) were not met. Every pretrained variant lands near 0.70.
+- The labels are the limit. Tree versus open ground is 47 percent of wrong pixels. The 1 pixel band along label edges is 9.9 percent of pixels but 32.3 percent of errors.
+- Small buildings fail. Building IoU is 0.28 under 50 m2.
 - Urban areas score lowest (about 0.64). Urban tree IoU in `r34_c4_s1` is 0.5895.
-- Some test images and labels disagree in time or position. Labels were made from the same 2022 flights, but a few boxes were flown in a different season.
-- There are no labels for western Pennsylvania. The model has no labeled test in Pittsburgh.
+- Philadelphia tree and open ground from NAIP 2022 are not usable (section 3.5).
 - NAIP is 0.6 m. A small shed is a few pixels.
 
 ## 4. Object detector
@@ -387,45 +477,103 @@ From `verdict.rules` in the assumptions file:
 
 Build costs are vendor numbers. Pennsylvania has no official ADU cost data. Area cost factors come from the DoD 2026 tables. Permit fees come from the Philadelphia L&I and Pittsburgh PLI fee schedules. Rents come from HUD SAFMR fiscal year 2026. The mortgage rate comes from Freddie Mac PMMS (week of 2026-11-05). Tax rates come from the city and county. See [shared/ASSUMPTIONS.md](../shared/ASSUMPTIONS.md) for each item.
 
-## 6. Results on built lots
+## 6. The Ask assistant
 
-These numbers come from the lot files on the data drive. A full rebuild of both cities with the current code and rule files is due. Refresh this section from the new `manifest.json` and `stats.json` when it finishes.
+Code: `agent/schema.ts` (tools and system prompt), `app/src/agent/` and `app/src/lib/lot/agentTools.ts` (tools that run in the browser), `api/agent.ts` (the server function), `agent/eval/` (the eval).
 
-### Pittsburgh, as of 2026-11-11T01:04:42
+The assistant runs on Claude Haiku 5.5 (`claude-haiku-5-5`, `DEFAULT_MODEL`, overridable with `AGENT_MODEL`). It answers only from tool results: lot facts, lot rules, a unit test on the lot, scenario comparison, lot money, the limiting reason, rule text from the rule files (`get_rule_text`, `list_rule_places`), area statistics and lot search. The system prompt forbids numbers or citations that no tool returned in the conversation, says that bills are not law, and falls back to the statewide baseline for a town with no rule file. At most 6 tool rounds per question.
 
-<!-- source: ~/musa-drive/lots/pittsburgh/manifest.json (built_at 2026-11-11T01:04:42, data_version pittsburgh-20261111-91b1439b9f, rule files verified 2026-11-10) and ~/musa-drive/lots/pittsburgh/stats.json -->
+### 6.1 Eval
 
-This build ran before the latest changes to the rule files and the builder. Its stats file has no per-scenario path shares, which the current `stats` command adds.
+65 fixed questions in 7 groups (`agent/eval/questions.json`): lot facts, fit, zoning, money and market (10 each), traps (10, for example a wrong premise or a request for an owner's name) and town rules (5). A question is correct only when every expected fact is in the answer, the required tools were called, every cited section or link is in a rule file or a tool result, no forbidden pattern appears, and the right scenario was used. Targets: 90 percent correct and 0 made-up citations.
 
-The build covered 92,081 lots in 128 tracts with 0 errors. Every lot had an ADU path today. A detached unit fit on 57,248 lots today and on 62,611 lots under state reform.
+<!-- source: ~/musa-drive/ops/agent-eval/2026-11-12T04-08-14-claude-haiku-5-5/report.md and run.json -->
+
+Newest run (2026-11-12T04-08-14, Claude Haiku 5.5, on the final lot data: `pittsburgh-20261111-bdeb5697ae` and `philadelphia-20261111-b7fa7bda07`):
+
+| Measure | Result |
+|---|---|
+| Correct | 64 of 65 (98.5 percent) |
+| Made-up citations | 0 |
+| Forbidden content | 0 |
+| Runs that failed | 0 |
+| Tool calls per question | 1.9 |
+| Latency mean / p50 / p90 | 4.2 s / 4.1 s / 6.4 s |
+| Cost of the run | $0.06 |
+
+| Group | Correct |
+|---|---|
+| Lot facts | 10 of 10 |
+| Fit | 10 of 10 |
+| Zoning | 9 of 10 |
+| Money | 10 of 10 |
+| Market | 10 of 10 |
+| Traps | 10 of 10 |
+| Town rules | 5 of 5 |
+
+The one miss: a zoning answer (zone-06) skipped the lot rule tools.
+
+<!-- source: report.md in ~/musa-drive/ops/agent-eval/2026-11-11T15-17-22-claude-haiku-5-5, 15-51-15, 16-03-07, 16-06-52, 20-01-51 -->
+
+Spread across runs: the earlier full 65-question Haiku runs scored 62, 60, 64 and 60 of 65, each with 0 made-up citations. Those ran on lot data built earlier on Nov 11. A first run on an older 60-question set scored 50 of 60. So the score moves by a few questions from run to run. 64 of 65 is the best run, not a guaranteed rate.
+
+## 7. Results on built lots
+
+These numbers come from the lot files on the data drive. Refresh this section from the new `manifest.json` and `stats.json` after every rebuild.
+
+### Pittsburgh
+
+<!-- source: ~/musa-drive/lots/pittsburgh/manifest.json (built_at 2026-11-11T20:30:22, data_version pittsburgh-20261111-bdeb5697ae, crs_local 2272, rule files verified 2026-11-10) and ~/musa-drive/lots/pittsburgh/stats.json (written 2026-11-11 20:48) -->
+
+Data version `pittsburgh-20261111-bdeb5697ae`, built 2026-11-11T20:30:22.
+
+The build covered 92,081 lots in 128 tracts with 0 errors. Every lot has a legal ADU path today: inside the house, attached or a garage conversion by right, and a new detached unit through an Administrator's Exception. No lot has a new detached unit by right today. Under state reform (HB 2186, not law) every lot would. A detached unit of some size fits on 60,559 lots today (0.658) and on 64,432 lots under state reform (0.7). Local reform equals today in Pittsburgh.
 
 Share of lots where a detached unit of N sq ft fits the yard and today's size cap (on any legal path, including an Administrator's Exception):
 
 | Group | Lots | Fit 400 | Fit 600 | Fit 800 | Fit 1000 | Median largest (sq ft) | Two units | Garage candidate | Fit 600, state reform | Steep or landslide |
 |---|---|---|---|---|---|---|---|---|---|---|
-| All lots | 92,081 | 0.513 | 0.388 | 0.297 | 0.234 | 764 | 0.149 | 0.228 | 0.442 | 0.286 |
-| Single family detached | 64,578 | 0.627 | 0.485 | 0.377 | 0.299 | 810 | 0.188 | 0.241 | 0.545 | 0.326 |
-| Rowhouse | 10,825 | 0.066 | 0.031 | 0.019 | 0.012 | 481 | 0.013 | 0.133 | 0.051 | 0.141 |
-| Two family | 7,780 | 0.42 | 0.3 | 0.219 | 0.164 | 653 | 0.101 | 0.284 | 0.349 | 0.223 |
-| Semi-detached | 5,976 | 0.239 | 0.119 | 0.062 | 0.037 | 500 | 0.054 | 0.153 | 0.185 | 0.266 |
-| Three family | 2,041 | 0.443 | 0.311 | 0.22 | 0.17 | 657 | 0.091 | 0.284 | 0.364 | 0.152 |
-| Four family | 881 | 0.487 | 0.388 | 0.31 | 0.246 | 845.5 | 0.157 | 0.292 | 0.43 | 0.173 |
+| All lots | 92,081 | 0.543 | 0.412 | 0.314 | 0.244 | 764 | 0.153 | 0.228 | 0.459 | 0.284 |
+| Single family detached | 64,578 | 0.617 | 0.482 | 0.377 | 0.299 | 830 | 0.19 | 0.241 | 0.536 | 0.323 |
+| Rowhouse | 10,825 | 0.222 | 0.121 | 0.059 | 0.03 | 488 | 0.024 | 0.133 | 0.136 | 0.141 |
+| Two family | 7,780 | 0.496 | 0.372 | 0.28 | 0.203 | 745.5 | 0.11 | 0.284 | 0.402 | 0.222 |
+| Semi-detached | 5,976 | 0.397 | 0.246 | 0.143 | 0.09 | 574 | 0.066 | 0.153 | 0.292 | 0.266 |
+| Three family | 2,041 | 0.51 | 0.381 | 0.281 | 0.216 | 750 | 0.101 | 0.284 | 0.413 | 0.151 |
+| Four family | 881 | 0.53 | 0.412 | 0.334 | 0.27 | 892 | 0.163 | 0.292 | 0.446 | 0.173 |
 
-What limits the detached unit today, all lots: yard space 0.388, no room 0.378, size cap 0.234. Lot line confidence: high 0.85, medium 0.033, low 0.118. Rear lot line on an alley or way: 0.271.
+What limits the detached unit today, all lots: yard space 0.414, no room 0.342, size cap 0.244. Lot line confidence: high 0.85, medium 0.033, low 0.118. Rear lot line on an alley or way: 0.271. In Pittsburgh the binding limit is yard space, not the law.
 
-### Philadelphia: not built yet
+### Philadelphia
 
-<!-- source: ~/musa-drive/lots/philadelphia/manifest.json (built_at 2026-11-11T01:06:27, data_version philadelphia-20261111-ae74831dbc) -->
+<!-- source: ~/musa-drive/lots/philadelphia/manifest.json and ~/musa-drive/lots/philadelphia/stats.json. data_version philadelphia-20261111-b7fa7bda07, stats.json written 2026-11-11 22:50 -->
 
-The only Philadelphia lot files on the drive are a test run of 300 lots in 4 tracts (built 2026-11-11T01:06:27). They are not a city result. The whole city (459,998 lots in the place table) is not built yet, and no `stats.json` exists for it.
+Data version philadelphia-20261111-b7fa7bda07<!-- manifest.json data_version -->, built 2026-11-11T21:41:43<!-- manifest.json built_at -->.
 
-## 7. Limits and honest caveats
+The build covered 459,998 lots in 385<!-- manifest.json counts.tracts --> tracts with 0<!-- manifest.json counts.errors --> errors.
+
+| Scenario | Any legal ADU path | New detached unit legal | A detached unit fits |
+|---|---|---|---|
+| Today | 0.012<!-- stats.json all.paths.today.allowed --> | 0.0<!-- stats.json all.paths.today.detached_legal --> | 0.0<!-- stats.json all.paths.today.detached_fits --> |
+| Local reform (Bill 250042, not law) | 0.533<!-- stats.json all.paths.local_reform.allowed --> | 0.0<!-- stats.json all.paths.local_reform.detached_legal --> | 0.0<!-- stats.json all.paths.local_reform.detached_fits --> |
+| State reform (HB 2186, not law) | 1.0<!-- stats.json all.paths.state_reform.allowed --> | 1.0<!-- stats.json all.paths.state_reform.detached_legal --> | 0.26<!-- stats.json all.paths.state_reform.detached_fits --> |
+
+Today no Philadelphia lot can add a new detached unit by right: the code allows an ADU only inside the house or inside an accessory building that existed in 2012, in RSA-5 and CMX-1, on detached or semi-detached houses, outside seven overlays. A designated or contributing historic building skips the district, house type and lot size tests. The binding limit in Philadelphia is the law, not the yard. Fit 600 under state reform, all lots: 0.076<!-- stats.json all.fit_600_state_reform -->.
+
+| Group | Lots | Any legal path today | Fit 600, state reform | Garage candidate |
+|---|---|---|---|---|
+| All lots | 459,998 | 0.012<!-- stats.json all.allowed_today --> | 0.076<!-- stats.json all.fit_600_state_reform --> | 0.015<!-- stats.json all.garage_candidate --> |
+| Rowhouse | 329,279<!-- stats.json by_type.rowhouse.lots --> | 0.007<!-- stats.json by_type.rowhouse.allowed_today --> | 0.016<!-- stats.json by_type.rowhouse.fit_600_state_reform --> | 0.005<!-- stats.json by_type.rowhouse.garage_candidate --> |
+| Semi-detached | 65,806<!-- stats.json by_type.semi_detached.lots --> | 0.03<!-- stats.json by_type.semi_detached.allowed_today --> | 0.18<!-- stats.json by_type.semi_detached.fit_600_state_reform --> | 0.039<!-- stats.json by_type.semi_detached.garage_candidate --> |
+| Single family detached | 26,949<!-- stats.json by_type.single_family_detached.lots --> | 0.023<!-- stats.json by_type.single_family_detached.allowed_today --> | 0.536<!-- stats.json by_type.single_family_detached.fit_600_state_reform --> | 0.081<!-- stats.json by_type.single_family_detached.garage_candidate --> |
+| Two to four family | 37,964<!-- stats.json by_type.two_to_four_family.lots --> | 0.013<!-- stats.json by_type.two_to_four_family.allowed_today --> | 0.087<!-- stats.json by_type.two_to_four_family.fit_600_state_reform --> | 0.013<!-- stats.json by_type.two_to_four_family.garage_candidate --> |
+
+## 8. Limits and honest caveats
 
 - **Not a survey or a permit.** Parcel lines come from city and county maps, not surveys. Building outlines come from aerial mapping of different years. A unit that "fits" here may not fit on the ground.
 - **Rule files lag the code.** Each value carries its "checked on" date. A rule changed after that date is not in the tool. Pittsburgh's online code did not yet show Ord. No. 31-2026 folded in when it was read.
 - **Many setbacks are not confirmed.** Where a district has no confirmed value, the builder fills a planning number and marks it assumed. See the unverified list in [RULES.md](RULES.md).
 - **Separation from the house is a planning default.** Neither city's zoning sets one. The 10 ft comes from the building code reading in `default.json`.
-- **No land cover in the fit yet.** Trees, paving and pools are not counted. "Keep trees" in the app's older fields means keeping sheds only.
+- **Land cover is context, not part of the fit.** The record gives tree, open and hard surface shares and the trees inside the suggested spot. The unit is not moved to save trees. Philadelphia cover is the 2018 raster, so changes since 2018 are not seen. Pittsburgh cover is a model, off by about 8 points of tree share per lot against the 2019 raster on a small check of 128 lots.
 - **No detections in the fit yet.** Garages and sheds come from building outlines, which miss most small sheds (Pittsburgh county outlines skip structures under about 400 sq ft).
 - **Garage guesses are guesses.** Size and position decide what counts as a garage. The OPA garage type helps only in Philadelphia.
 - **Attached additions are not modeled.** The internal fit stands in for them.
@@ -436,5 +584,6 @@ The only Philadelphia lot files on the drive are a test run of 300 lots in 4 tra
 - **Pending bills are not law.** The local and state reform scenarios show what the bills would do if passed. The state session ends Nov 30, 2026.
 - **Money numbers are estimates.** Build costs are vendor ranges, rents are a federal benchmark, not a market quote, and the added value is an income estimate. A backyard unit does not sell on its own.
 - **The detector scores are not true accuracy yet.** Test labels are unchecked.
-<!-- source: pyproj get_factors at lon -79.99, lat 40.44 for EPSG:2271 and EPSG:2272, run on 2026-11-11 -->
-- **Pittsburgh's local grid is the northern zone.** The code uses EPSG:2271, which is NAD83 Pennsylvania North (ftUS), and a code comment calls it Pennsylvania South. Allegheny County lies in the South zone (EPSG:2272). At Pittsburgh the North zone stretches lengths by a factor of 1.0001011 and areas by 1.0002022, so a 600 sq ft unit reads about 0.12 sq ft large. The effect on the fit is negligible, but the comment is wrong.
+- **The fit has no measured accuracy.** The hand-label check has 250 lots drawn and 0 labeled.
+- **The assistant can be wrong.** It scored 64 of 65 on the newest eval run (60 to 64 across the five full runs), and scores move by a few questions between runs.
+- **Most towns have no rule file.** 36 towns beyond the two cities have one. Every other town gets the statewide baseline only.

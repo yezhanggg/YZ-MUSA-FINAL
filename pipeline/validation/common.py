@@ -1,4 +1,5 @@
 """Paths, city settings and small shared helpers for the hand-label check."""
+
 from __future__ import annotations
 
 import json
@@ -6,11 +7,11 @@ import math
 import os
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import pandas as pd
 
-from pipeline.paths import data_root
+from pipeline.paths import data_root as data_root  # re-exported for sample.py and score.py
 
 SEED = 6950
 
@@ -80,7 +81,8 @@ def log_note(text: str) -> None:
 
 # ---------------------------------------------------------------- statistics
 
-def wilson(k: float, n: float, z: float = 1.959964) -> tuple[Optional[float], Optional[float], Optional[float]]:
+
+def wilson(k: float, n: float, z: float = 1.959964) -> tuple[float | None, float | None, float | None]:
     """Share k/n and its Wilson score interval. n may be an effective (non integer) size."""
     if n <= 0:
         return None, None, None
@@ -94,11 +96,12 @@ def wilson(k: float, n: float, z: float = 1.959964) -> tuple[Optional[float], Op
 def kish_n(w: pd.Series) -> float:
     """Effective sample size of a weighted sample."""
     w = pd.Series(w, dtype=float)
-    s2 = float((w ** 2).sum())
+    s2 = float((w**2).sum())
     return float(w.sum()) ** 2 / s2 if s2 > 0 else 0.0
 
 
 # ---------------------------------------------------------------- product answers
+
 
 def answer_stratum(room_sqft: Any, threshold: float = THRESHOLD_SQFT, share: float = BORDER_SHARE) -> str:
     """fits / borderline / no from the product's largest yard rectangle."""
@@ -132,7 +135,7 @@ def _true(v: Any) -> bool:
     return bool(v)
 
 
-def index_status(city: str, frame_ids: Optional[pd.Series] = None) -> dict[str, Any]:
+def index_status(city: str, frame_ids: pd.Series | None = None) -> dict[str, Any]:
     """Is there a lot index for this city that matches the current lot table?
 
     Current means: the index was written after the lot table and it covers at least
@@ -165,11 +168,12 @@ def index_status(city: str, frame_ids: Optional[pd.Series] = None) -> dict[str, 
     return out
 
 
-def load_index(city: str, columns: Optional[list[str]] = None) -> Optional[pd.DataFrame]:
+def load_index(city: str, columns: list[str] | None = None) -> pd.DataFrame | None:
     p = index_path(city)
     if not p.exists():
         return None
     import pyarrow.parquet as pq
+
     have = set(pq.read_schema(p).names)
     cols = None if columns is None else [c for c in columns if c in have]
     return pd.read_parquet(p, columns=cols)
@@ -177,9 +181,24 @@ def load_index(city: str, columns: Optional[list[str]] = None) -> Optional[pd.Da
 
 # ---------------------------------------------------------------- label files
 
-LABEL_COLUMNS = ("lot_id", "city", "outbuilding", "outbuilding_count", "fit600", "fit400", "trees", "alley",
-                 "img_shadow", "img_leaf", "img_construction", "img_lotline", "note", "labeler",
-                 "labeled_at", "seconds")
+LABEL_COLUMNS = (
+    "lot_id",
+    "city",
+    "outbuilding",
+    "outbuilding_count",
+    "fit600",
+    "fit400",
+    "trees",
+    "alley",
+    "img_shadow",
+    "img_leaf",
+    "img_construction",
+    "img_lotline",
+    "note",
+    "labeler",
+    "labeled_at",
+    "seconds",
+)
 
 
 def label_files() -> list[Path]:

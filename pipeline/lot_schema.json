@@ -18,6 +18,7 @@
     "fit": {"$ref": "#/$defs/per_scenario_fit"},
     "facts": {"$ref": "#/$defs/facts"},
     "money": {"$ref": "#/$defs/money"},
+    "terrain": {"$ref": "#/$defs/terrain"},
     "quality": {"$ref": "#/$defs/quality"}
   },
   "$defs": {
@@ -317,6 +318,56 @@
         "rent_source": {"$ref": "#/$defs/str_or_null", "description": "hud_safmr when the ZIP has Small Area Fair Market Rents"},
         "rent_fiscal_year": {"$ref": "#/$defs/int_or_null"},
         "cost_index_key": {"$ref": "#/$defs/str_or_null", "description": "Key in shared/assumptions.json the cost index comes from"}
+      }
+    },
+    "slope_stats": {
+      "type": "object", "required": ["mean_pct", "p90_pct", "share_over_15", "share_over_25"], "additionalProperties": false,
+      "description": "Ground slope over a polygon, from grid cells whose centers fall inside. Percent = 100 x rise / run",
+      "properties": {
+        "mean_pct": {"type": "number", "minimum": 0},
+        "p90_pct": {"type": "number", "minimum": 0},
+        "max_pct": {"type": "number", "minimum": 0},
+        "share_over_15": {"type": "number", "minimum": 0, "maximum": 1, "description": "Share of the area at 15 percent or steeper"},
+        "share_over_25": {"type": "number", "minimum": 0, "maximum": 1, "description": "Share of the area at 25 percent or steeper"},
+        "elev_min_ft": {"type": "number", "description": "Lowest ground, ft above NAVD88"},
+        "elev_max_ft": {"type": "number"},
+        "drop_ft": {"type": "number", "minimum": 0, "description": "Highest minus lowest ground inside the polygon, ft"},
+        "sqft": {"type": "number", "minimum": 0, "description": "Area of the buildable ground measured"},
+        "class": {"enum": ["ordinary", "moderate", "steep"], "description": "From mean_pct and terrain.thresholds_pct"}
+      }
+    },
+    "slope_or_null": {"oneOf": [{"$ref": "#/$defs/slope_stats"}, {"type": "null"}]},
+    "gentle_fit": {
+      "type": "object", "required": ["fits", "largest_sqft"], "additionalProperties": false,
+      "description": "The detached fit with the best spot searched only on buildable ground under the steep threshold. Never true where fit.<scenario>.detached_new.fits is false",
+      "properties": {
+        "fits": {"type": "boolean"},
+        "largest_sqft": {"type": "number", "minimum": 0},
+        "room_sqft": {"$ref": "#/$defs/num_or_null", "description": "Largest rectangle on gentle ground. Null when no steep ground was cut out (same as the saved fit)"},
+        "steep_cut_sqft": {"$ref": "#/$defs/num_or_null", "description": "Steep buildable ground left out"}
+      }
+    },
+    "terrain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "resolution_ft", "thresholds_pct", "lot", "buildable", "spot", "gentle_fit", "slope_class", "steep_site"],
+      "description": "Ground slope from a bare-earth DEM, added by build_lots terrain. Reported next to the fit; the fit itself is a flat-ground test and is not changed",
+      "properties": {
+        "source": {"$ref": "#/$defs/str_or_null", "description": "DEM key, e.g. usgs_3dep_1m:PA_17County_D24"},
+        "flown_from": {"$ref": "#/$defs/date_or_null"},
+        "flown_to": {"$ref": "#/$defs/date_or_null"},
+        "resolution_ft": {"type": "number", "exclusiveMinimum": 0},
+        "thresholds_pct": {"type": "object", "required": ["moderate", "steep"], "additionalProperties": false,
+                           "properties": {"moderate": {"type": "number"}, "steep": {"type": "number"}}},
+        "lot": {"$ref": "#/$defs/slope_or_null"},
+        "buildable": {"type": "object", "propertyNames": {"$ref": "#/$defs/scenario"},
+                      "additionalProperties": {"$ref": "#/$defs/slope_or_null"}, "description": "Over buildable.<scenario>.keep"},
+        "spot": {"type": "object", "propertyNames": {"$ref": "#/$defs/scenario"},
+                 "additionalProperties": {"$ref": "#/$defs/slope_or_null"}, "description": "Under fit.<scenario>.detached_new.spot, with drop_ft and class"},
+        "gentle_fit": {"type": "object", "propertyNames": {"$ref": "#/$defs/scenario"},
+                       "additionalProperties": {"$ref": "#/$defs/gentle_fit"}},
+        "basis": {"enum": ["spot_today", "buildable_today", "lot", null], "description": "Which mean slope sets slope_class"},
+        "slope_class": {"enum": ["ordinary", "moderate", "steep", null]},
+        "steep_site": {"type": ["boolean", "null"], "description": "slope_class is steep: the ground under the unit is at or over the steep threshold"}
       }
     },
     "quality": {

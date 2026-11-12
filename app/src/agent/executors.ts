@@ -1,11 +1,11 @@
 // The agent's tools, run with the same code as the report (lib/adu.ts, lib/rules.ts). A DataProvider hides where
 // the data comes from: the loaded map in the browser (browserProvider.ts) or the files on disk (agent/nodeProvider.ts).
-import { footprint, lotFit, rentNote, tractPayoff, tractRoom, type FitCurves } from '../lib/adu';
+import { footprint, lotFit, rentNote, tractPayoff } from '../lib/adu';
 import { BED_SIZE, RATE, YEARS, COST_PSF, SOFT, OPEX, type Adu, type Bed, type Stories } from '../lib/numbers';
 import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, cleanWhy, isPittsburgh, ruleFor, ruleWarnings, type LotRule } from '../lib/rules';
 import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
 import { getRuleText, listRulePlaces } from './ruleText';
-import { areaStats, findLotResult, forecast, type AddressEntry, type AreaData } from './areaTools';
+import { areaStats, findLotResult, forecast, roomOut, type AddressEntry, type AreaData } from './areaTools';
 import { meters, type LngLat, type Lot, type TownProps, type TractProps } from '../tool/geo';
 
 export interface SiteRecord {
@@ -23,7 +23,6 @@ export interface DataProvider {
   town(geoid?: string): Promise<TownProps | null>;
   /** Lots to search: tracts on screen, or around the selected site. Each with its tract and town. */
   searchLots(): Promise<{ lots: (SiteRecord & { lot: Lot })[]; center: LngLat | null; scope: string }>;
-  curves(): FitCurves | null;
   adu(): Adu;
   rule(): 'current' | 'hb2186';
   /** Lot records (testing mode): the lot tools read them through this. */
@@ -87,9 +86,7 @@ function siteFacts(s: SiteRecord) {
           jobs_2019: r0(t.jobs_2019),
           jobs_2024: r0(t.jobs_2024),
           trend_group: t.trend_group ?? null,
-          single_family_lots: r0(t.lots_total),
-          lots_with_room_600: r0(t.lots_fit),
-          lots_with_room_600_keeping_trees: r0(t.lots_fit_keep_trees),
+          ...roomOut(t),
         }
       : null,
     town: w ? { geoid: w.GEOID ?? null, name: w.NAMELSAD ?? null, adu_rule_today: w.adu_rule ?? 'not coded', adus_by_2031_mid_today: r0(w.adus_mid_current as number), adus_by_2031_mid_hb2186: r0(w.adus_mid_hb2186 as number), forecast_note: 'Base case: 600 sq ft' } : null,
@@ -97,13 +94,12 @@ function siteFacts(s: SiteRecord) {
 }
 
 /** test_adu: the report's logic for one ADU on one site, under the rule the user chose (today or HB 2186). */
-export function testAduOn(s: SiteRecord, a: Adu, curves: FitCurves | null, rule: 'current' | 'hb2186' = 'current') {
+export function testAduOn(s: SiteRecord, a: Adu, rule: 'current' | 'hb2186' = 'current') {
   const t = s.tract ?? ({} as TractProps);
   const w = s.town ?? ({} as TownProps);
   const lotRule: LotRule | null = s.lot ?? null;
   const fit = s.lot ? lotFit(s.lot, a) : null;
   const pay = s.tract ? tractPayoff(t, a) : null;
-  const room = s.tract ? tractRoom(t, a, curves) : null;
   const today = ruleFor('current', w, lotRule);
   const chosen = ruleFor(rule, w, lotRule);
   return {
@@ -111,7 +107,7 @@ export function testAduOn(s: SiteRecord, a: Adu, curves: FitCurves | null, rule:
     rule_chosen: { rule: rule === 'hb2186' ? 'HB 2186 (a bill, not law)' : 'today', result: chosen.label, detail: chosen.why ?? chosen.sub, blocked: chosen.blocked, warnings: ruleWarnings(rule, w, lotRule, a.size) },
     adu: { bedrooms: a.bed, size_sqft: a.size, stories: a.stories, footprint_sqft: footprint(a) },
     room_on_lot: s.lot ? (fit ? FIT_TEXT[fit] : 'not ready for this size (model results for this footprint come after the next run)') : 'no lot record here',
-    tract_lots_with_room: room ? { lots: room.fit, keeping_trees: room.keep, of_single_family_lots: room.total } : 'not ready for this size',
+    tract_lots_with_room: s.tract ? roomOut(t) : 'no tract here',
     payoff: pay
       ? { pays: pay.pays, monthly_rent: r0(pay.rent), monthly_cost_mid: r0(pay.cost), gap_after_30pct_costs: r0(pay.gap), rent_source: rentNote(a, pay), assumptions: { cost_per_sqft: COST_PSF, soft_costs: SOFT, rate: RATE, years: YEARS, opex: OPEX } }
       : 'not ready for this size',
@@ -164,7 +160,7 @@ export function makeExecutors(p: DataProvider) {
     async test_adu(input: { lot_id: string; size_sqft?: number; stories?: number; bedrooms?: number }) {
       const s = await site(input.lot_id);
       if (!s) return notFound(input.lot_id);
-      return testAduOn(s, aduFrom(input, p.adu()), p.curves(), p.rule());
+      return testAduOn(s, aduFrom(input, p.adu()), p.rule());
     },
     async compare_sizes(input: { lot_id: string; sizes: number[]; stories?: number; bedrooms?: number }) {
       const s = await site(input.lot_id);
@@ -174,7 +170,7 @@ export function makeExecutors(p: DataProvider) {
         lot_id: input.lot_id,
         results: sizes.map((size) => {
           const bed = input.bedrooms ?? (size <= 450 ? 0 : size <= 700 ? 1 : size <= 900 ? 2 : 3);
-          const r = testAduOn(s, aduFrom({ size_sqft: size, stories: input.stories, bedrooms: bed }, p.adu()), p.curves(), p.rule());
+          const r = testAduOn(s, aduFrom({ size_sqft: size, stories: input.stories, bedrooms: bed }, p.adu()), p.rule());
           return { size_sqft: size, bedrooms: bed, footprint_sqft: r.adu.footprint_sqft, room_on_lot: r.room_on_lot, payoff: typeof r.payoff === 'string' ? r.payoff : r.payoff.pays, rule_chosen: r.rule_chosen.result, warnings: r.rule_chosen.warnings };
         }),
       };

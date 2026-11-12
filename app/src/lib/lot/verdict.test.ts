@@ -16,7 +16,13 @@ function centerOf(lot: LotRecord, what: 'spot' | 'house'): { lon: number; lat: n
 
 /** Drop the per-type approvals newer records carry, to test how older records are read. */
 function asOldRecord(lot: LotRecord): LotRecord {
-  for (const rules of Object.values(lot.rules)) if (rules) delete rules.approval_by_type;
+  for (const rules of Object.values(lot.rules)) {
+    if (!rules) continue;
+    delete rules.approval_by_type;
+    delete rules.rule_path_by_type;
+    delete rules.lot_conditions_by_type;
+    delete rules.citations_by_type;
+  }
   for (const types of Object.values(lot.fit)) for (const f of Object.values(types ?? {})) if (f) delete f.approval_path;
   return lot;
 }
@@ -27,7 +33,7 @@ describe('unitVerdict on real lots', () => {
     expect(v.status).toBe('fits');
     expect(v.headline).toBe('A 20 x 30 ft backyard cottage fits here.');
     expect(v.approval.path).toBe('administrator_exception');
-    expect(v.approval.citation?.section).toBe('925.06.G.1(i)');
+    expect(v.approval.citation?.section).toMatch(/^925\.06\.G\.1\(i\)/);
     expect(v.approval.text).toMatch(/neighbors/);
     expect(v.placed?.ring).toHaveLength(5);
     expect(v.placed?.where).toBe('best');
@@ -72,7 +78,7 @@ describe('unitVerdict on real lots', () => {
     expect(unitVerdict(lot, suggestedUnit(lot, 'detached_new', 'today')).status).toBe('fits');
     const v = unitVerdict(lot, cottage());
     expect(v.status).toBe('fits_with_changes');
-    expect(v.changes[0]).toBe('Make the footprint 378 sq ft or less.');
+    expect(v.changes[0]).toBe('Make the footprint 377 sq ft or less.');
   });
 
   it('alley rear: a unit over a garage on the alley is by right in the rule notes (older records)', () => {
@@ -108,7 +114,7 @@ describe('unitVerdict on real lots', () => {
     const lot = fixture('garage');
     const v = unitVerdict(lot, { ...cottage(), type: 'garage_conversion' });
     expect(v.status).toBe('fits');
-    expect(v.floor_sqft).toBeCloseTo(353.5, 1);
+    expect(v.floor_sqft).toBeCloseTo(353.4, 1);
     expect(v.approval.path).toBe('by_right');
     expect(v.warnings.map((w) => w.code)).toEqual(expect.arrayContaining(['building_date', 'fire_wall']));
     expect(v.warnings.find((w) => w.code === 'fire_wall')?.citation?.section).toMatch(/IRC/);
@@ -252,7 +258,7 @@ describe('records from the newer builder', () => {
     Object.assign(lot.fit.today!.detached_new!, { approval_path: 'administrator_exception', max_height_ft: 20 });
     const v = unitVerdict(lot, cottage({ height_ft: 22 }));
     expect(v.approval).toMatchObject({ path: 'administrator_exception', from: 'by_type' });
-    expect(v.approval.citation?.section).toBe('925.06.G.1(i)');
+    expect(v.approval.citation?.section).toMatch(/^925\.06\.G\.1\(i\)/);
     expect(v.limit).toEqual({ code: 'height', text: '22 ft tall. The limit is 20 ft.' });
   });
 
@@ -327,7 +333,7 @@ describe('garage unit on a lot without a garage', () => {
     expect(unitVerdict(lot, unit()).limit?.text).toBe('No garage or outbuilding was found on this lot.');
   });
   it('a rule that does not allow conversions still says not allowed', () => {
-    const lot = noGarage();
+    const lot = asOldRecord(noGarage());
     const r = lot.rules.today!;
     r.types_allowed = ['detached_new'];
     r.reasons = [];
@@ -341,5 +347,17 @@ describe('a lot with no room at all', () => {
     const v = unitVerdict(lot, { type: 'detached_new', width_ft: 20, depth_ft: 30, position: 'best', scenario: 'state_reform' });
     expect(v.status).toBe('does_not_fit');
     expect(v.changes).toEqual([]);
+  });
+});
+
+describe('per-type rule path and lot condition (final builds)', () => {
+  it('a type the rules allow but the lot cannot host reads allowed, then why not here, with its own section', () => {
+    const lot = fixture('easy_fit');
+    expect(lot.rules.today?.lot_conditions_by_type?.garage_conversion).toBeTruthy();
+    const v = unitVerdict(lot, { type: 'garage_conversion', width_ft: 20, depth_ft: 20, position: 'best', scenario: 'today' });
+    expect(v.status).toBe('does_not_fit');
+    expect(v.limit?.text).toBe('No garage or outbuilding was found on this lot.');
+    expect(v.approval.path).toBe('by_right');
+    expect(v.approval.citation?.section).toBe(lot.rules.today?.citations_by_type?.garage_conversion?.section);
   });
 });

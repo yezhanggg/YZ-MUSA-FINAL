@@ -395,11 +395,16 @@ describe('get_rule_text pass 4', () => {
     expect(out.summary).toMatch(/only if the ADU does not count/);
   });
 
-  it('shows a bare district minimum as a possible nonconforming lot', async () => {
-    const out = (await getRuleText({ place: 'Readington', topic: 'eligibility', district: 'RM' }, FAKE)) as P4;
-    const c = out.conditions!.find((x) => x.kind === 'lot_size')!;
-    expect(c.condition).toMatch(/nonconforming lot/);
+  it('shows a bare district minimum as a possible nonconforming lot, a lot rule the bill does not address', async () => {
+    const out = (await getRuleText({ place: 'Readington', topic: 'eligibility', district: 'RM' }, FAKE)) as P4 & { under_hb2186?: { still_applies?: string } };
+    // Same kind as pipeline/rules.py: district_lot_rule, not lot_size, so it is never marked as overridden by the bill.
+    expect(out.conditions!.some((x) => x.kind === 'lot_size')).toBe(false);
+    const c = out.conditions!.find((x) => x.kind === 'district_lot_rule')!;
+    expect(c.condition).toMatch(/a rule for creating lots, not an ADU rule.*nonconforming lot/);
     expect(c.effect).toBeUndefined();
+    expect((c as { bill_would_override?: boolean }).bill_would_override).toBeUndefined();
+    expect(out.under_hb2186!.conditions.map((x) => x.kind)).not.toContain('district_lot_rule');
+    expect(out.under_hb2186!.still_applies).toBe('Town lot rules the bill does not address still apply: district minimum lot 1,500 sq ft for creating lots (7-307 RM)');
   });
 
   it('lists sizes only for allowed forms', async () => {

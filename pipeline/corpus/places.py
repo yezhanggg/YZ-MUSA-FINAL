@@ -15,6 +15,7 @@ Survey design:
 Run:
     python -m pipeline.corpus.places            # write municipalities.csv and sample.csv
 """
+
 from __future__ import annotations
 
 import csv
@@ -29,30 +30,88 @@ from pipeline.corpus.paths import REPO, RULES, sub
 SEED = 20261111
 TOP_N = 60
 PER_CLASS = 30
-SIZE_CLASSES = [(0, 1000, "under 1k"), (1000, 2500, "1k-2.5k"), (2500, 5000, "2.5k-5k"),
-                (5000, 10000, "5k-10k"), (10000, 10**9, "10k+")]
+SIZE_CLASSES = [
+    (0, 1000, "under 1k"),
+    (1000, 2500, "1k-2.5k"),
+    (2500, 5000, "2.5k-5k"),
+    (5000, 10000, "5k-10k"),
+    (10000, 10**9, "10k+"),
+]
 
 REGIONS = {
     "Southeast": ["Bucks", "Chester", "Delaware", "Montgomery", "Philadelphia"],
-    "Northeast": ["Carbon", "Lackawanna", "Lehigh", "Luzerne", "Monroe", "Northampton", "Pike",
-                  "Schuylkill", "Susquehanna", "Wayne", "Wyoming"],
-    "South Central": ["Adams", "Berks", "Cumberland", "Dauphin", "Franklin", "Fulton", "Juniata",
-                      "Lancaster", "Lebanon", "Mifflin", "Perry", "York"],
-    "North Central": ["Bradford", "Cameron", "Centre", "Clearfield", "Clinton", "Columbia", "Elk",
-                      "Lycoming", "McKean", "Montour", "Northumberland", "Potter", "Snyder", "Sullivan",
-                      "Tioga", "Union"],
-    "Northwest": ["Clarion", "Crawford", "Erie", "Forest", "Jefferson", "Lawrence", "Mercer", "Venango",
-                  "Warren"],
-    "Southwest": ["Allegheny", "Armstrong", "Beaver", "Bedford", "Blair", "Butler", "Cambria", "Fayette",
-                  "Greene", "Huntingdon", "Indiana", "Somerset", "Washington", "Westmoreland"],
+    "Northeast": [
+        "Carbon",
+        "Lackawanna",
+        "Lehigh",
+        "Luzerne",
+        "Monroe",
+        "Northampton",
+        "Pike",
+        "Schuylkill",
+        "Susquehanna",
+        "Wayne",
+        "Wyoming",
+    ],
+    "South Central": [
+        "Adams",
+        "Berks",
+        "Cumberland",
+        "Dauphin",
+        "Franklin",
+        "Fulton",
+        "Juniata",
+        "Lancaster",
+        "Lebanon",
+        "Mifflin",
+        "Perry",
+        "York",
+    ],
+    "North Central": [
+        "Bradford",
+        "Cameron",
+        "Centre",
+        "Clearfield",
+        "Clinton",
+        "Columbia",
+        "Elk",
+        "Lycoming",
+        "McKean",
+        "Montour",
+        "Northumberland",
+        "Potter",
+        "Snyder",
+        "Sullivan",
+        "Tioga",
+        "Union",
+    ],
+    "Northwest": ["Clarion", "Crawford", "Erie", "Forest", "Jefferson", "Lawrence", "Mercer", "Venango", "Warren"],
+    "Southwest": [
+        "Allegheny",
+        "Armstrong",
+        "Beaver",
+        "Bedford",
+        "Blair",
+        "Butler",
+        "Cambria",
+        "Fayette",
+        "Greene",
+        "Huntingdon",
+        "Indiana",
+        "Somerset",
+        "Washington",
+        "Westmoreland",
+    ],
 }
 COUNTY_REGION = {c: r for r, cs in REGIONS.items() for c in cs}
 
 
-def _town_targets():
+def _town_targets() -> Any:
     spec = importlib.util.spec_from_file_location("town_targets", REPO / "tools" / "town_targets.py")
+    if spec is None or spec.loader is None:
+        raise ImportError("tools/town_targets.py not found")
     mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)  # type: ignore[union-attr]
+    spec.loader.exec_module(mod)
     return mod
 
 
@@ -112,7 +171,7 @@ def survey_rows() -> list[dict[str, Any]]:
     rows = municipalities()
     idx = index_towns()
     sample = {r["geoid"] for r in draw_sample(rows)}
-    n_class = {}
+    n_class: dict[Any, int] = {}
     for r in rows:
         n_class[r["stratum"]] = n_class.get(r["stratum"], 0) + 1
     out = []
@@ -127,11 +186,25 @@ def survey_rows() -> list[dict[str, Any]]:
         else:
             continue
         t = idx.get(r["geoid"], {})
-        out.append({"geoid": r["geoid"], "name": r["name"], "county": r["county"], "region": r["region"],
-                    "population": r["population"], "housing_units": r["housing_units"], "pop_rank": r["pop_rank"],
-                    "stratum": r["stratum"], "role": role, "weight": round(weight, 4),
-                    "in_index": in_index, "index_file": t.get("file", ""), "index_status": t.get("status", ""),
-                    "index_code_host": t.get("code_host", ""), "index_code_url": t.get("code_url", "")})
+        out.append(
+            {
+                "geoid": r["geoid"],
+                "name": r["name"],
+                "county": r["county"],
+                "region": r["region"],
+                "population": r["population"],
+                "housing_units": r["housing_units"],
+                "pop_rank": r["pop_rank"],
+                "stratum": r["stratum"],
+                "role": role,
+                "weight": round(weight, 4),
+                "in_index": in_index,
+                "index_file": t.get("file", ""),
+                "index_status": t.get("status", ""),
+                "index_code_host": t.get("code_host", ""),
+                "index_code_url": t.get("code_url", ""),
+            }
+        )
     return out
 
 
@@ -145,9 +218,17 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 def main() -> None:
     rows = municipalities()
     out = sub("")
-    write_csv(out / "municipalities.csv", [
-        {k: (";".join(v) if isinstance(v, list) else v) for k, v in r.items()
-         if k not in ("county_fips", "basename")} for r in rows])
+    write_csv(
+        out / "municipalities.csv",
+        [
+            {
+                k: (";".join(v) if isinstance(v, list) else v)
+                for k, v in r.items()
+                if k not in ("county_fips", "basename")
+            }
+            for r in rows
+        ],
+    )
     s = survey_rows()
     write_csv(out / "sample.csv", s)
     print(f"{len(rows)} municipalities, {sum(r['population'] for r in rows):,} people")

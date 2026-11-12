@@ -16,6 +16,7 @@ What is new vs the first model (v1, plain U-Net, 10 epochs):
 
 Saves data/models/unet_<tag>.pt and data/models/unet_<tag>_log.csv
 """
+
 import argparse
 import json
 import sys
@@ -66,7 +67,7 @@ def load(geoid):
     return img, lab
 
 
-CACHE = R6 / "npy_cache"     # plain .npy copies of the boxes, read as memory maps (low RAM). Safe to delete
+CACHE = R6 / "npy_cache"  # plain .npy copies of the boxes, read as memory maps (low RAM). Safe to delete
 
 
 def load_mm(geoid):
@@ -75,7 +76,8 @@ def load_mm(geoid):
     fi, fl = CACHE / f"{geoid}_img.npy", CACHE / f"{geoid}_lab.npy"
     if not fl.exists():
         img, lab = load(geoid)
-        np.save(fi, img); np.save(fl, lab)
+        np.save(fi, img)
+        np.save(fl, lab)
     return np.load(fi, mmap_mode="r"), np.load(fl, mmap_mode="r")
 
 
@@ -87,8 +89,11 @@ def confusion(pred, y):
 def scores(cm):
     tp = np.diag(cm).astype(float)
     iou = tp / (cm.sum(0) + cm.sum(1) - tp)
-    return {"iou": dict(zip(CLASSES, iou.round(4).tolist())), "miou": round(float(iou.mean()), 4),
-            "accuracy": round(float(tp.sum() / cm.sum()), 4)}
+    return {
+        "iou": dict(zip(CLASSES, iou.round(4).tolist(), strict=True)),
+        "miou": round(float(iou.mean()), 4),
+        "accuracy": round(float(tp.sum() / cm.sum()), 4),
+    }
 
 
 def dice_loss(logits, y, n=4):
@@ -155,7 +160,8 @@ def main():
                 c0 = int(np.clip(c - C // 2 + rng.integers(-C // 4, C // 4 + 1), 0, W - C))
             else:
                 r0, c0 = rng.integers(0, H - C + 1), rng.integers(0, W - C + 1)
-            xs.append(img[:, r0:r0 + C, c0:c0 + C]); ys.append(lab[r0:r0 + C, c0:c0 + C])
+            xs.append(img[:, r0 : r0 + C, c0 : c0 + C])
+            ys.append(lab[r0 : r0 + C, c0 : c0 + C])
         x = to_input(torch.from_numpy(np.stack(xs)).to(device), mean, std, a.ndvi)
         y = torch.from_numpy(np.stack(ys)).long().to(device)
         # same random flip / turn on image and label, one per crop
@@ -165,10 +171,22 @@ def main():
             if rng.random() < 0.5:
                 xi, yi = torch.flip(xi, [2]), torch.flip(yi, [1])
             x[i], y[i] = xi, yi
-        if a.jitter:   # brightness / contrast per crop and band, in z-score units
+        if a.jitter:  # brightness / contrast per crop and band, in z-score units
             nb = x.shape[1]
-            g = torch.from_numpy(rng.normal(0, a.jitter, (len(x), 1, 1, 1)) + rng.normal(0, a.jitter / 2, (len(x), nb, 1, 1))).float().to(device)
-            b = torch.from_numpy(rng.normal(0, a.jitter, (len(x), 1, 1, 1)) + rng.normal(0, a.jitter / 2, (len(x), nb, 1, 1))).float().to(device)
+            g = (
+                torch.from_numpy(
+                    rng.normal(0, a.jitter, (len(x), 1, 1, 1)) + rng.normal(0, a.jitter / 2, (len(x), nb, 1, 1))
+                )
+                .float()
+                .to(device)
+            )
+            b = (
+                torch.from_numpy(
+                    rng.normal(0, a.jitter, (len(x), 1, 1, 1)) + rng.normal(0, a.jitter / 2, (len(x), nb, 1, 1))
+                )
+                .float()
+                .to(device)
+            )
             x = x * (1 + g) + b
         return x, y
 
@@ -178,7 +196,13 @@ def main():
     total = a.epochs * a.steps
     warm = min(300, total // 10)
     sched = torch.optim.lr_scheduler.LambdaLR(
-        opt, lambda s: (s + 1) / warm if s < warm else 0.5 * (1 + np.cos(np.pi * min(1, (s - warm) / max(1, total - warm)))) * 0.99 + 0.01)
+        opt,
+        lambda s: (
+            (s + 1) / warm
+            if s < warm
+            else 0.5 * (1 + np.cos(np.pi * min(1, (s - warm) / max(1, total - warm)))) * 0.99 + 0.01
+        ),
+    )
     cw_t = torch.as_tensor(cw).to(device)
 
     log, best, bad, t0 = [], -1, 0, time.time()
@@ -194,33 +218,74 @@ def main():
                 loss = loss + a.dice * dice_loss(out, y)
             opt.zero_grad()
             loss.backward()
-            opt.step(); sched.step()
+            opt.step()
+            sched.step()
             tot += loss.item()
             if (_ + 1) % 100 == 0:
-                print(f"  step {_ + 1}/{a.steps} loss {tot / (_ + 1):.3f} ({(time.time() - t0) / 60:.1f} min)", flush=True)
+                print(
+                    f"  step {_ + 1}/{a.steps} loss {tot / (_ + 1):.3f} ({(time.time() - t0) / 60:.1f} min)", flush=True
+                )
         cm = np.zeros((4, 4), np.int64)
         for img, lab in data["val"]:
             cm += confusion(predict_array(model, np.asarray(img), mean, std, device, ndvi=a.ndvi), np.asarray(lab))
         s = scores(cm)
         mins = (time.time() - t0) / 60
-        log.append({"epoch": ep, "train_loss": tot / a.steps, "val_miou": s["miou"], "val_acc": s["accuracy"],
-                    **{f"val_iou_{k}": v for k, v in s["iou"].items()}, "lr": sched.get_last_lr()[0], "minutes": mins})
+        log.append(
+            {
+                "epoch": ep,
+                "train_loss": tot / a.steps,
+                "val_miou": s["miou"],
+                "val_acc": s["accuracy"],
+                **{f"val_iou_{k}": v for k, v in s["iou"].items()},
+                "lr": sched.get_last_lr()[0],
+                "minutes": mins,
+            }
+        )
         pd.DataFrame(log).to_csv(MODELS / f"unet_{a.tag}_log.csv", index=False)
         flag = ""
         if s["miou"] > best:
             best, bad, flag = s["miou"], 0, " *"
-            torch.save({"state": model.state_dict(), "kind": a.kind, "encoder": a.encoder, "ndvi": a.ndvi,
-                        "mean": mean, "std": std, "epoch": ep, "val_miou": best, "val_counties": VAL_COUNTIES,
-                        "class_weights": cw.tolist(), "args": vars(a), "val_confusion": cm.tolist()}, dest)
+            torch.save(
+                {
+                    "state": model.state_dict(),
+                    "kind": a.kind,
+                    "encoder": a.encoder,
+                    "ndvi": a.ndvi,
+                    "mean": mean,
+                    "std": std,
+                    "epoch": ep,
+                    "val_miou": best,
+                    "val_counties": VAL_COUNTIES,
+                    "class_weights": cw.tolist(),
+                    "args": vars(a),
+                    "val_confusion": cm.tolist(),
+                },
+                dest,
+            )
         else:
             bad += 1
-        print(f"epoch {ep}: loss {tot / a.steps:.3f} val mIoU {s['miou']:.4f} {s['iou']} ({mins:.1f} min){flag}", flush=True)
+        print(
+            f"epoch {ep}: loss {tot / a.steps:.3f} val mIoU {s['miou']:.4f} {s['iou']} ({mins:.1f} min){flag}",
+            flush=True,
+        )
         if bad >= a.patience:
-            print("early stop"); break
+            print("early stop")
+            break
         if mins > a.minutes:
-            print("time cap reached"); break
-    json.dump({"tag": a.tag, "best_val_miou": best, "minutes": round((time.time() - t0) / 60, 1), "epochs": len(log),
-               "args": vars(a)}, open(MODELS / f"unet_{a.tag}_summary.json", "w"), indent=1)
+            print("time cap reached")
+            break
+    with open(MODELS / f"unet_{a.tag}_summary.json", "w") as fh:
+        json.dump(
+            {
+                "tag": a.tag,
+                "best_val_miou": best,
+                "minutes": round((time.time() - t0) / 60, 1),
+                "epochs": len(log),
+                "args": vars(a),
+            },
+            fh,
+            indent=1,
+        )
     print("best val mIoU", best)
 
 

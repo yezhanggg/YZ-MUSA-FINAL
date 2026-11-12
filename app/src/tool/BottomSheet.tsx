@@ -1,23 +1,21 @@
-// Tablet and phone: one bottom sheet with three tabs. It peeks (tabs and the verdict line) and opens on tap,
-// or when a lot is selected.
+// Tablet and phone: one bottom sheet with tabs (Test a lot: Results, Build, Ask; Explore areas: Results, Ask). It peeks
+// (tabs and the answer line) and opens on tap, or when a spot is picked.
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { MousePointerClick } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { SPRING_PANEL, SPRING_TAB } from '../components/primitives';
 import { PANEL_BODY } from '../components/Panel';
 import AskBox from './AskBox';
-import { LotCardBody } from './LotCard';
-import { ReportStack, VerdictLine } from './RightPanel';
+import { ReportStack } from './RightPanel';
+import { AreaLine } from './AreaResults';
 import { reportTitle } from './Report';
 import { useTool } from './store';
 import { GUTTER, SHEET_PEEK, sheetOpenHeight } from './layout';
 import { TestActions, TestTabBody, TestTabs, type TestTab } from './test/LotResults';
 
-type Tab = 'lot' | 'report' | 'ask';
+type Tab = 'report' | 'ask';
 const TABS: { id: Tab; label: string }[] = [
-  { id: 'lot', label: 'This lot' },
-  { id: 'report', label: 'Report' },
+  { id: 'report', label: 'Results' },
   { id: 'ask', label: 'Ask' },
 ];
 
@@ -31,7 +29,7 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
   const setOpen = (o: boolean) => set({ sheetOpen: o });
   useEffect(() => {
     if (spot) {
-      setTab((t) => (t === 'ask' ? t : 'lot'));
+      setTab((t) => (t === 'ask' ? t : 'report'));
       setOpen(true);
     }
   }, [spot?.n]);
@@ -72,7 +70,7 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
             )}
           </>
         ) : (
-          <div role="tablist" aria-label="Sheet" className="relative grid grid-cols-3 rounded-xl bg-stone-100 p-1 ring-1 ring-stone-200/70">
+          <div role="tablist" aria-label="Sheet" className="relative grid grid-cols-2 rounded-xl bg-stone-100 p-1 ring-1 ring-stone-200/70">
             {TABS.map((t) => {
               const on = tab === t.id;
               return (
@@ -84,33 +82,20 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
             })}
           </div>
         )}
+        {!test && spot && (
+          <div className="mt-2 min-w-0">
+            <div className="truncate font-display text-body font-bold text-slate-900">{head?.label}</div>
+            <div className="truncate text-caption text-slate-600">{head?.sub}</div>
+          </div>
+        )}
         {!test && !open && spot && (
           <div className="mt-2">
-            <VerdictLine spot={spot} />
+            <AreaLine spot={spot} />
           </div>
         )}
       </div>
       <div className={cx(PANEL_BODY, 'pt-3')}>
         {test && <TestTabBody tab={testTab} />}
-        {!test && tab === 'lot' &&
-          (spot ? (
-            <div className="space-y-3">
-              <div>
-                <div className="truncate font-display text-lead font-bold text-slate-900">{head?.label}</div>
-                <div className="truncate text-caption text-slate-600">{head?.sub}</div>
-              </div>
-              <VerdictLine spot={spot} />
-              {(spot.lot || spot.parcel) && (
-                <div className="rounded-xl bg-white p-3 ring-1 ring-violet-200">
-                  <LotCardBody spot={spot} />
-                </div>
-              )}
-            </div>
-          ) : (
-            <p className="flex items-center gap-2 rounded-xl bg-violet-50/70 px-3 py-2.5 text-small text-violet-900 ring-1 ring-violet-200/70">
-              <MousePointerClick className="h-4 w-4 shrink-0 text-violet-600" /> Tap a single-family lot on the map, or search an address.
-            </p>
-          ))}
         {!test && tab === 'report' && <ReportStack />}
         {!test && tab === 'ask' && <AskBox expanded />}
       </div>

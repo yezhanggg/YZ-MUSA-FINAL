@@ -1,17 +1,16 @@
-// Testing mode result cards, top to bottom in the right panel: verdict, zoning, the three scenarios, money,
-// lot facts and flags. The Build list sits in its own tab. Same card shell as the projecting report.
-import type { ReactNode } from 'react';
-import { AlertTriangle, CheckCircle2, CircleSlash, ExternalLink, HelpCircle } from 'lucide-react';
+// Testing mode, the bodies of the Results folds: why (the verdict in sentences and the zoning rules), money,
+// lot facts. The Build list sits in its own tab. The answer and the checklist on top are in Answer.tsx.
+import { useState } from 'react';
+import { AlertTriangle, ChevronDown, ExternalLink } from 'lucide-react';
 import { cx } from '../../lib/cx';
 import { NOTICE, formatCitation } from '../../lib/lot/citations';
 import { dataDates, flagsOf, lotFacts, type MoneySummary } from '../../lib/lot/summary';
 import type { Citation, LotRecord, Rules, Scenario } from '../../lib/lot/types';
-import type { ScenarioVerdict, Status, UnitVerdict } from '../../lib/lot/verdict';
-import { SCENARIO_TITLE, TYPE_LABEL, ftText, isNum, pctText, sqftText, usdText } from '../../lib/lot/words';
-import type { BuildChecklist } from '../../lib/lot/buildSteps';
+import type { Status, UnitVerdict } from '../../lib/lot/verdict';
+import { SCENARIO_NAME, ftText, isNum, pctText, sqftText, usdText } from '../../lib/lot/words';
 import { ASSUMPTIONS } from '../../lib/money';
-import { Card, KV } from '../Report';
-import { useTool } from '../store';
+import type { NextPlan, NextStep } from '../../lib/lot/nextSteps';
+import { KV } from '../Report';
 
 type Tone = 'good' | 'warn' | 'bad' | 'none';
 export const STATUS_TEXT: Record<Status, string> = {
@@ -23,11 +22,11 @@ export const STATUS_TEXT: Record<Status, string> = {
 };
 export const STATUS_TONE: Record<Status, Tone> = { fits: 'good', fits_with_changes: 'warn', does_not_fit: 'bad', not_allowed: 'bad', check_needed: 'none' };
 const TONE_TEXT: Record<Tone, string> = { good: 'text-emerald-700', warn: 'text-amber-700', bad: 'text-rose-700', none: 'text-slate-600' };
-const TONE_BOX: Record<Tone, { box: string; icon: ReactNode; title: string; line: string }> = {
-  good: { box: 'bg-emerald-50 ring-emerald-200', icon: <CheckCircle2 className="h-5 w-5 text-emerald-600" />, title: 'text-emerald-900', line: 'text-emerald-900/80' },
-  warn: { box: 'bg-amber-50 ring-amber-200', icon: <AlertTriangle className="h-5 w-5 text-amber-600" />, title: 'text-amber-900', line: 'text-amber-900/80' },
-  bad: { box: 'bg-rose-50 ring-rose-200', icon: <CircleSlash className="h-5 w-5 text-rose-600" />, title: 'text-rose-900', line: 'text-rose-900/80' },
-  none: { box: 'bg-stone-50 ring-stone-200', icon: <HelpCircle className="h-5 w-5 text-slate-500" />, title: 'text-slate-900', line: 'text-slate-700' },
+const TONE_BOX: Record<Tone, string> = {
+  good: 'bg-emerald-50 ring-emerald-200',
+  warn: 'bg-amber-50 ring-amber-200',
+  bad: 'bg-rose-50 ring-rose-200',
+  none: 'bg-stone-50 ring-stone-200',
 };
 
 /** -$2,257 for a loss, $1,340 otherwise. */
@@ -54,50 +53,49 @@ export function Cite({ c }: { c: Citation | null | undefined }) {
   );
 }
 
-// ------------------------------------------------------------------ (a) verdict
-export function VerdictCard({ v, children }: { v: UnitVerdict; children?: ReactNode }) {
-  const tone = STATUS_TONE[v.status];
-  const T = TONE_BOX[tone];
+// ------------------------------------------------------------------ (a) why: the verdict in sentences
+/** The verdict's own sentences: what decides it, what would change it, the approval step and the warnings. */
+export function WhyText({ v, lot }: { v: UnitVerdict; lot: LotRecord }) {
   const lawWarnings = v.warnings.filter((w) => w.code !== 'not_law');
   const notLaw = v.warnings.find((w) => w.code === 'not_law');
+  // "Why not" (story.tsx) lists the reasons when there is no path, so the one reason is not said twice.
+  const whyNotShown = v.status === 'not_allowed' && !!lot.rules[v.scenario];
   return (
-    <section aria-label="Verdict" aria-live="polite" className={cx('rounded-2xl px-4 py-3.5 ring-1', T.box)} data-status={v.status}>
-      <div className="flex gap-3">
-        <span className="mt-0.5 shrink-0">{T.icon}</span>
-        <div className="min-w-0 space-y-1">
-          <div className={cx('text-caption font-semibold uppercase tracking-[0.12em]', T.line)}>{STATUS_TEXT[v.status]}</div>
-          <div className={cx('font-display text-lead font-bold leading-snug', T.title)}>{v.headline}</div>
-          {v.limit && (
-            <p className={cx('text-small', T.line)}>
-              <b className="font-semibold">{v.status === 'fits' ? 'What sets the limit: ' : 'Why: '}</b>
-              {v.limit.text}
-            </p>
-          )}
-          {v.changes.length > 0 && (
-            <p className={cx('text-small', T.line)}>
-              <b className="font-semibold">What would make it fit: </b>
-              {v.changes.join(' ')}
-            </p>
-          )}
-          <p className={cx('text-small', T.line)}>
-            <b className="font-semibold">Approval: </b>
-            {v.approval.label}. {v.approval.text}
-          </p>
-          {children}
-        </div>
+    <div className="space-y-1.5 text-small text-slate-700">
+      <p className="font-semibold text-slate-900">
+        {STATUS_TEXT[v.status]}. {v.headline}
+      </p>
+      {v.limit && !whyNotShown && (
+        <p>
+          <b className="font-semibold text-slate-900">{v.status === 'fits' ? 'What sets the limit: ' : 'Why: '}</b>
+          {v.limit.text}
+        </p>
+      )}
+      {v.changes.length > 0 && (
+        <p>
+          <b className="font-semibold text-slate-900">What would make it fit: </b>
+          {v.changes.join(' ')}
+        </p>
+      )}
+      <div>
+        <p>
+          <b className="font-semibold text-slate-900">Approval: </b>
+          {v.approval.label}. {v.approval.text}
+        </p>
+        <Cite c={v.approval.citation} />
       </div>
       {(notLaw || lawWarnings.length > 0) && (
-        <ul className="mt-2 space-y-1 border-t border-black/5 pt-2">
-          {notLaw && <li className="text-small font-semibold text-slate-800">{notLaw.text}</li>}
+        <ul className="space-y-1 pt-0.5">
+          {notLaw && <li className="font-semibold text-slate-800">{notLaw.text}</li>}
           {lawWarnings.map((w) => (
-            <li key={w.code} className="flex items-start gap-1.5 text-small text-slate-700">
+            <li key={w.code} className="flex items-start gap-1.5">
               <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-600" />
               {w.text}
             </li>
           ))}
         </ul>
       )}
-    </section>
+    </div>
   );
 }
 
@@ -126,22 +124,17 @@ const RULE_ROWS: RuleRow[] = [
   { key: 'parking_spaces', label: 'Parking spaces', value: (r) => (isNum(r.parking_spaces) ? String(r.parking_spaces) : 'None set') },
 ];
 
-export function ZoningCard({ lot, scenario, v }: { lot: LotRecord; scenario: Scenario; v: UnitVerdict }) {
+/** Zoning for the scenario: district, overlays and every rule value with its source. */
+export function ZoningRules({ lot, scenario }: { lot: LotRecord; scenario: Scenario }) {
   const rules = lot.rules[scenario];
   const z = lot.zoning;
   const party = lot.lot.edges?.some((e) => e.party_wall) ?? false;
   return (
-    <Card title={`Zoning, ${SCENARIO_TITLE[scenario].toLowerCase()}`} tag="Rules">
+    <div aria-label="Zoning rules">
+      <h4 className="mb-1 mt-3 text-small font-semibold text-slate-900">Zoning, {SCENARIO_NAME[scenario].toLowerCase()}</h4>
       <KV k="District" v={z.district ?? 'Not on file'} />
       {z.overlays && z.overlays.length > 0 && <KV k="Overlays" v={<span className="block max-w-[28rem] whitespace-normal">{z.overlays.join('. ')}</span>} />}
       {z.council_district && <KV k="Council district" v={z.council_district} />}
-      <div className="mt-2 rounded-lg bg-stone-50 px-3 py-2 ring-1 ring-stone-200/70">
-        <div className="text-small font-semibold text-slate-900">
-          Approval for a {TYPE_LABEL[v.type]}: {v.approval.label}
-        </div>
-        <p className="text-small text-slate-700">{v.approval.text}</p>
-        <Cite c={v.approval.citation} />
-      </div>
       {rules ? (
         <dl className="mt-2">
           {RULE_ROWS.map((row) => (
@@ -172,48 +165,7 @@ export function ZoningCard({ lot, scenario, v }: { lot: LotRecord; scenario: Sce
         </details>
       )}
       <Notice className="mt-2" />
-    </Card>
-  );
-}
-
-// ------------------------------------------------------------------ (d) three scenarios
-export function ScenarioTable({ lot, rows, scenario }: { lot: LotRecord; rows: ScenarioVerdict[]; scenario: Scenario }) {
-  const setTest = useTool((s) => s.setTest);
-  return (
-    <Card title="Three scenarios" tag="Rules">
-      <div className="-mx-1 overflow-x-auto">
-        <table className="w-full min-w-[420px] text-left text-small">
-          <thead>
-            <tr className="text-caption text-slate-500">
-              <th className="px-1 py-1 font-semibold">Scenario</th>
-              <th className="px-1 py-1 font-semibold">This unit</th>
-              <th className="px-1 py-1 font-semibold">Approval</th>
-              <th className="px-1 py-1 text-right font-semibold">Largest cottage</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => {
-              const on = r.scenario === scenario;
-              const largest = lot.fit[r.scenario]?.detached_new;
-              return (
-                <tr key={r.scenario} onClick={() => setTest({ scenario: r.scenario })} className={cx('cursor-pointer border-t border-stone-100 align-top transition-colors', on ? 'bg-violet-50' : 'hover:bg-stone-50')}>
-                  <td className="px-1 py-1.5">
-                    <button type="button" onClick={() => setTest({ scenario: r.scenario })} aria-pressed={on} className={cx('text-left font-semibold', on ? 'text-violet-800' : 'text-slate-900')}>
-                      {r.title}
-                    </button>
-                    {r.scenario !== 'today' && <span className="block text-[11px] text-slate-500">{r.same_as_today ? 'Same as today' : 'A bill. Not law.'}</span>}
-                  </td>
-                  <td className={cx('px-1 py-1.5 font-semibold', TONE_TEXT[STATUS_TONE[r.verdict.status]])}>{STATUS_TEXT[r.verdict.status]}</td>
-                  <td className="px-1 py-1.5 text-slate-700">{r.verdict.approval.label}</td>
-                  <td className="px-1 py-1.5 text-right text-slate-900 tnum">{largest?.fits ? sqftText(largest.largest_sqft) : 'None'}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-      <p className="mt-2 text-caption text-slate-500">Bills are not law. Click a row to see that scenario.</p>
-    </Card>
+    </div>
   );
 }
 
@@ -227,7 +179,7 @@ const RENT_SOURCE: Record<string, string> = {
 };
 export const ASSUMPTIONS_URL = 'https://github.com/yezhanggg/YZ-MUSA-FINAL/blob/main/shared/ASSUMPTIONS.md';
 
-export function MoneyCard({ m, lot }: { m: MoneySummary; lot: LotRecord }) {
+export function MoneyBody({ m, lot }: { m: MoneySummary; lot: LotRecord }) {
   const pf = m.pro_forma;
   const own = lot.money;
   // The record's ZIP rents (HUD SAFMR) win over the tract rents. Say which one this is.
@@ -237,13 +189,14 @@ export function MoneyCard({ m, lot }: { m: MoneySummary; lot: LotRecord }) {
       : (RENT_SOURCE[pf.rent.source] ?? pf.rent.source)
     : null;
   return (
-    <Card title="Money" tag="MUSA 5500">
+    <div>
+      <p className="mb-1.5 text-caption font-semibold uppercase tracking-[0.12em] text-slate-500">Estimate</p>
       {m.status === 'not_buildable' ? (
         <p className="text-small text-slate-600">{m.reason}</p>
       ) : (
         <>
           {m.verdict && (
-            <p className={cx('mb-2 rounded-lg px-3 py-2 text-small ring-1', TONE_BOX[VERDICT_TONE[m.verdict]].box)}>
+            <p className={cx('mb-2 rounded-lg px-3 py-2 text-small ring-1', TONE_BOX[VERDICT_TONE[m.verdict]])}>
               <b className={cx('font-semibold', TONE_TEXT[VERDICT_TONE[m.verdict]])}>{VERDICT_TEXT[m.verdict]}. </b>
               <span className="text-slate-700">{m.reason}</span>
             </p>
@@ -287,7 +240,7 @@ export function MoneyCard({ m, lot }: { m: MoneySummary; lot: LotRecord }) {
           <p className="mt-1 text-caption text-slate-500">An estimate, not a quote. Costs come from builder and lender figures.</p>
         </>
       )}
-    </Card>
+    </div>
   );
 }
 
@@ -299,11 +252,11 @@ const FLAG_KEYS = [
   ['historic', 'Historic district'],
 ] as const;
 
-export function FactsCard({ lot, builtAt }: { lot: LotRecord; builtAt: string | null }) {
+export function FactsBody({ lot, builtAt }: { lot: LotRecord; builtAt: string | null }) {
   const flags = lot.zoning.flags ?? {};
   const on = new Set(flagsOf(lot));
   return (
-    <Card title="Lot facts and flags" tag="MUSA 6950">
+    <div>
       <div className="mb-2 flex flex-wrap gap-1.5">
         {FLAG_KEYS.map(([k, label]) => {
           const v = flags[k];
@@ -329,49 +282,71 @@ export function FactsCard({ lot, builtAt }: { lot: LotRecord; builtAt: string | 
         ))}
       </div>
       <p className="mt-2 text-caption text-slate-500">Parcel lines are not a survey. Building heights are estimates.</p>
-    </Card>
+    </div>
   );
 }
 
-// ------------------------------------------------------------------ (g) build
-export function BuildList({ b }: { b: BuildChecklist }) {
+// ------------------------------------------------------------------ (h) next step
+/** One plain step: number and title; a click shows what to do, who, how long, cost and the official link. */
+function NextStepRow({ s, n }: { s: NextStep; n: number }) {
+  const [open, setOpen] = useState(n === 1);
   return (
-    <section aria-label="Build steps" className="space-y-2">
-      {b.stop && <p className="rounded-xl bg-rose-50 px-3 py-2 text-small text-rose-900 ring-1 ring-rose-200">{b.stop}</p>}
-      <ol className="space-y-2">
-        {b.steps.map((s, i) => (
-          <li key={s.id} className="rounded-xl bg-white p-3 ring-1 ring-stone-200/80">
-            <div className="flex items-baseline gap-2">
-              <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-violet-100 text-[11px] font-bold text-violet-800">{i + 1}</span>
-              <h3 className="text-body font-semibold text-slate-900">{s.title}</h3>
-            </div>
-            <p className="mt-1 text-small text-slate-700">{s.what}</p>
-            <p className="mt-1 text-caption text-slate-600">
-              <b className="font-semibold">Who: </b>
-              {s.who}
-            </p>
-            {s.documents.length > 0 && (
-              <p className="text-caption text-slate-600">
-                <b className="font-semibold">Bring: </b>
-                {s.documents.join('. ')}.
-              </p>
-            )}
-            {s.fee && (
-              <p className="text-caption text-slate-600">
-                <b className="font-semibold">Fee: </b>
-                {s.fee}
-              </p>
-            )}
-            <p className="text-caption text-slate-600">
-              <b className="font-semibold">Time: </b>
-              {s.time}
-            </p>
-            {s.basis.kind === 'rule' && <Cite c={s.basis.citation} />}
-          </li>
-        ))}
-      </ol>
-      <Notice />
+    <li data-next-step={s.kind}>
+      <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className="tap flex w-full items-center gap-2.5 px-3 py-2.5 text-left transition-colors hover:bg-stone-50">
+        <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-violet-100 text-[11px] font-bold text-violet-800">{n}</span>
+        <h3 className="min-w-0 flex-1 text-small font-semibold text-slate-900">{s.title}</h3>
+        <ChevronDown className={cx('h-4 w-4 shrink-0 text-slate-400 transition-transform', open && 'rotate-180')} aria-hidden />
+      </button>
+      {open && (
+        <div className="space-y-1 px-3 pb-3 pl-[42px] text-small text-slate-700">
+          <p>{s.text}</p>
+          <p className="text-caption text-slate-600"><b className="font-semibold">Who: </b>{s.who}</p>
+          <p className="text-caption text-slate-600"><b className="font-semibold">How long: </b>{s.time}</p>
+          {s.cost && <p className="text-caption text-slate-600"><b className="font-semibold">Cost: </b>{s.cost}</p>}
+          {s.link && (
+            <a href={s.link.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-caption font-semibold text-violet-700 hover:text-violet-900">
+              {s.link.label} <ExternalLink className="h-3 w-3" />
+            </a>
+          )}
+        </div>
+      )}
+    </li>
+  );
+}
+
+/** "Next Step": a one-line path summary, then at most six plain steps, or what would have to change when the answer is No. */
+export function NextStepList({ plan }: { plan: NextPlan }) {
+  return (
+    <section aria-label="Next steps" className="space-y-2">
+      <p className="px-1 text-small font-semibold text-slate-900" data-next-summary>
+        {plan.summary}
+      </p>
+      {plan.change ? (
+        <div className="rounded-xl bg-rose-50 px-3 py-2.5 ring-1 ring-rose-200">
+          <h3 className="text-small font-semibold text-rose-900">{plan.change.title}</h3>
+          <ul className="mt-1 list-disc space-y-1 pl-5 text-small text-rose-900">
+            {plan.change.items.map((i) => (
+              <li key={i.text}>
+                {i.text}{' '}
+                {i.link && (
+                  <a href={i.link.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-semibold text-violet-700 hover:text-violet-900">
+                    {i.link.label} <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <ol className="divide-y divide-stone-100 overflow-hidden rounded-xl bg-white ring-1 ring-stone-200/80">
+          {plan.steps.map((s, i) => (
+            <NextStepRow key={s.kind} s={s} n={i + 1} />
+          ))}
+        </ol>
+      )}
+      <p className="px-1 text-caption text-slate-500" title={NOTICE}>
+        Estimate. Not legal advice.
+      </p>
     </section>
   );
 }
-

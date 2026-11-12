@@ -11,6 +11,9 @@ The logic lives in Python modules in `pipeline/tract/`. The notebooks in `musa55
 | Trend groups | `groups.py` | 02 | `python -m pipeline.tract.groups` |
 | Land and job access | (in the notebook) | 03 | |
 | Payoff test | `payoff.py` | 04 | `python -m pipeline.tract.payoff` |
+| Lot results to tract, city and county | `lot_rollup.py` | 04 | `python -m pipeline.tract.lot_rollup` |
+| Room for a unit in every tract | `room.py` | 04 | `python -m pipeline.tract.room` |
+| Town legal classes from the rule files | `legal.py` | 04 | `python -m pipeline.tract.legal` |
 | Housing growth model, ADUs by 2031 | `forecast.py`, `migration.py` | 04 | `python -m pipeline.tract.forecast` |
 | County roll-up | `rollup.py` | 04 | `python -m pipeline.tract.rollup` |
 | Linked view | `viz.py` | 04 | `python -m pipeline.tract.viz` |
@@ -107,20 +110,67 @@ Rent basis. A 600 sq ft unit is a one-bedroom, so the test uses a one-bedroom re
 - ADUs = people x permit rate x payoff weight x lots index x demand x town rule x 5 years, capped at lots with room
   - Permit rate: 26 / 53.5 / 81 ADU permits per 100,000 people per year (low / mid / high), from cities that allow ADUs by right. The range comes from the proposal, credited to Pew. The exact page still needs to be recorded
   - Payoff weight: yes 1.0, maybe 0.5, no 0.2 (some people build for family, not rent)
-  - Lots index: share of homes on a lot with room / state share, capped at 2. From `lots_tract.csv` (MUSA 6950)
+  - Lots index: lots with room for a 600 sq ft unit per home, over the state ratio, capped at 2. From `room_tract.csv` (step 12): measured lot by lot in Philadelphia and Pittsburgh, modelled in every other tract. The same count caps the ADUs in each tract. The earlier pilot estimate (`lots_tract.csv`) is kept beside it for comparison
   - Demand: 0.5 to 1.5 from the rank of predicted 2020-30 growth
-- Scenarios, tied to `shared/legal_status.csv`:
-  - Today: allowed 1.0, limited 0.02 / 0.05 / 0.10, not allowed 0. Towns not in the list count as limited
-  - HB 2186: every town allowed, Philadelphia and Pittsburgh included
-  - SB 1346: every town allowed except Philadelphia and Pittsburgh, which the Municipalities Planning Code does not reach. They keep today's rule
+- Scenarios, tied to the town rule files through `town_legal_class.csv` (step 13):
+  - Today: each town's legal class sets its factor (`tract.forecast.legal_class_factor`): by right 1.0, discretionary, family-only, conversion-only and unknown 0.02 / 0.05 / 0.10, none 0 / 0.005 / 0.01
+  - HB 2186: every town by right, Philadelphia and Pittsburgh included
+  - SB 1346: every town by right except Philadelphia and Pittsburgh, which the Municipalities Planning Code does not reach. They keep today's class
   - Both bills die on Nov 30, 2026 if not enacted
 - This is scenario arithmetic, not a fitted ADU model. Pennsylvania has no ADU permit series to fit or test it on. The Census permit survey does not split out ADUs, and Philadelphia has about 10 legal ADUs since 2012. The model in step 6 only ranks where housing grows. The low to high range shows the assumptions, not statistical error
-- Outputs: `forecast_town.csv` (three rows per town: current, hb2186, sb1346), `forecast_tract_inputs.csv`, and in `processed/5500/`: `forecast_*.csv`, `forecast_summary.json`
+- Outputs: `forecast_town.csv` (three rows per town: current, hb2186, sb1346. `rule_today` keeps the old words allowed, limited, not_allowed. `legal_class` and `review` are added at the end), `forecast_tract_inputs.csv`, and in `processed/5500/`: `forecast_*.csv`, `forecast_summary.json`, and `forecast_old_vs_new.csv`, which reruns the arithmetic with each mix of old and new inputs so every change can be traced
 
 ## 9. County roll-up and linked view
 
-- `county_rollup.csv`: one row per county. Tract counts, people, payoff classes, ADUs by scenario and level, lots with room and net migration. Counts are sums of tracts, so they add up to the state totals
+- `county_rollup.csv`: one row per county. Tract counts, people, payoff classes, ADUs by scenario and level, lots with room and net migration. Counts are sums of tracts, so they add up to the state totals. The old pilot columns (`lots_total`, `lots_fit`) stay. The new room estimate is added at the end (`lots_est`, `lots_room_low`, `lots_room_mid`, `lots_room_high`, `tracts_room_measured`, `tracts_outside_training_range`)
 - `musa5500/figures/tract_explorer.html`: an Altair view with cross-filtering. Click counties on the map, brush tracts on the rent vs predicted growth scatter. The trend group bars, the margin histogram and a table of the best 12 tracts follow the selection. The Vega-Lite spec is saved next to it (`tract_explorer.vl.json`) for embedding
+
+## 10. Link to the lot tool and the town rules
+
+The tract model says where demand and payoff are. It does not say what the law or the yard allows on one lot. Two other parts of the project answer that, and the Results page puts them side by side.
+
+- Lot tool. `pipeline/build_lots.py` tests every residential lot in Philadelphia and Pittsburgh under three scenarios: today's law, local reform (Philadelphia Bill 250042, in Pittsburgh the same as today) and state reform (HB 2186). Each lot gets a legal path per ADU type and a vector fit test on lot lines, buildings and streets with the rule setbacks. `lots/<city>/stats.json` sums the lots: the share with any legal path today, the share where a detached unit fits, and the top reason a detached unit does not fit or cannot grow
+- Town rules. `shared/rules/` has one rule file per town for the 36 largest municipalities after the two cities (by 2020 population, `towns_index.json`), plus a statewide baseline (`pa_statewide.json`). Each file records whether the code addresses ADUs (`adu.status`), with the section and the date checked. The counts in Results are computed from these files
+- Steps 11 to 13 feed both into the tract work: the lot results become measured room in the two cities and the training data for a statewide room model, and the town files become the forecast's legal classes
+
+## 11. Lot results rolled up
+
+`lot_rollup.py` reads `lots/<city>/index.parquet` (459,998 Philadelphia and 92,081 Pittsburgh lots with 1 to 4 units) and sums 0/1 flags to tract, city and county. Counts are `n_*`, shares are `share_*`.
+
+- Legal path (`legal_<scenario>`): an ADU of some type has a path (by right, administrator or special exception). By right (`by_right_<scenario>`): the best path for any type is by right
+- Fit at 400, 600, 800 and 1,000 sq ft (`fit<N>_<scenario>`): a new detached unit of that size fits the scenario's setbacks, size cap and other limits. Where a scenario bars new detached units (Philadelphia today and under Bill 250042) the fit engine reports no fit, so those shares are 0
+- Physical room: `fit600_state_reform`, the 4 ft side and rear setbacks of HB 2186, the loosest any scenario allows. `room600` is the old app field (600 sq ft box after today's setbacks, sheds cleared)
+- Garage candidates: an accessory building of garage size stands on the lot. `garage_conversion_fits`: the conversion test passes today
+- Outputs: `data/processed/lots_tract_v2.csv`, `lots_city_v2.csv`, `lots_county_v2.csv`. Pittsburgh covers the city only, so its county row is part of Allegheny County
+- Old vs new: the 26,269 Philadelphia pilot lots are matched to the new lots by nearest centroid (within 15 ft, lot areas within 20%), and the old tract estimate is compared with the new counts for the 385 Philadelphia tracts in both
+
+## 12. Room for a unit in every tract (measured and modelled)
+
+- Measured: in the two cities, the share of 1 to 4 unit lots where a 600 sq ft detached unit fits under state-reform setbacks. This is physical room, not legality
+- Modelled: everywhere else, a ridge regression of that share on features every tract has: log homes per km2, shares of homes in 1-unit detached, 1-unit attached and 2 to 4 unit buildings (ACS 2020-24 B25024, from the Census table file, no key), NLCD developed share (2019), and developed m2 per small-building lot. Tracts weigh by the square root of their lot count. Trained on the 482 city tracts with at least 30 lots (373 Philadelphia, 109 Pittsburgh)
+- Compared with: the lot-weighted mean, the retired pilot rate by area type, and small gradient boosting
+- Validation: train on one city and predict the other (both ways), and 2 km block cross-validation within the two cities
+- Range: 90% band from the cross-city errors (half-width 0.218). Tracts with any feature outside the 1st to 99th percentile of the training tracts are flagged, and their band is doubled (a judgment call, because the cross-city error says little about places unlike both cities)
+- Lots outside the cities: 1-detached + 1-attached + 2-unit / 2 + 3-4 unit / 3.5 homes (ACS). In the two cities this proxy is 9 to 13% above the real lot count (median tract), correlation 0.96 to 0.97
+- Output: `data/processed/room_tract.csv` with `source` (measured or modelled), `outside_training_range`, the low / mid / high share and count, and the old pilot count beside it
+
+## 13. Town legal classes for the forecast
+
+`legal.py` reads `shared/rules/towns_index.json` and each town's `adu.status`. Philadelphia and Pittsburgh have full rule files instead. Their class comes from the lot results, which apply those files to every lot.
+
+| `adu.status` | Legal class | What it means for a new ADU |
+|---|---|---|
+| allowed_by_right | by_right | A zoning permit, no hearing |
+| special_exception, conditional_use | discretionary | A hearing before the zoning board or governing body |
+| family_only | family_only | Only for relatives, so not a rental |
+| conversion_only | conversion_only | Only inside the house or an existing building |
+| not_addressed, prohibited | none | No ADU use in the code, so a variance at best |
+| (no reviewed rule file) | unknown | Statewide baseline: zoning is local and has not been read |
+
+- Philadelphia is conversion_only: today 1.2% of its lots have a legal path, all conversions, and no lot can add a new detached unit. Pittsburgh is by_right: every lot has a by-right path (a detached unit in the side or rear yard needs an Administrator's Exception)
+- Drafted files are used and flagged (`review`). Index entries still marked todo count as unknown
+- Hempfield township allows family units only in one district (TC-R) and does not address ADUs elsewhere. It is classed family_only with that note
+- `shared/legal_status.csv` is left as it was, because the app still reads it. The forecast now reads the derived table `data/processed/town_legal_class.csv`
 
 ## Course requirements met
 
@@ -132,5 +182,5 @@ Rent basis. A 600 sq ft unit is a one-bedroom, so the test uses a one-bedroom re
 | OSMnx network analysis | Step 4 |
 | Clustering | Step 3 (K-means, Gaussian mixture, Ward) |
 | Raster analysis | Step 4 (zonal stats) |
-| scikit-learn models with honest validation | Step 6 (spatial block CV, temporal backtest, conformal intervals) |
+| scikit-learn models with honest validation | Step 6 (spatial block CV, temporal backtest, conformal intervals), step 12 (hold out one city) |
 | Interactive visualization | Step 9 (linked Altair view) and the tool |

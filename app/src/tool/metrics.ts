@@ -1,5 +1,5 @@
 // Map colour for each metric (Projecting mode). Tract metrics read tract properties (app/build_data.py),
-// Room and Pays off follow the ADU and payoff controls, so they read feature-state that MapCanvas recomputes live.
+// Pays off follows the ADU and payoff controls, so it reads feature-state that MapCanvas recomputes live.
 // Towns and counties are coloured by ADUs by 2031 per 1,000 people, under the forecast scenario.
 import type { ExpressionSpecification } from 'maplibre-gl';
 import { HEADLINE } from '../lib/numbers';
@@ -51,9 +51,11 @@ export const METRICS: Record<MetricId, Metric> = {
   window: { short: 'By window', label: 'Levels in one ACS window', steps: [], names: [] },
   room: {
     short: 'Room',
-    label: 'Lots with room for your ADU (MUSA 6950)',
-    steps: [[-Infinity, '#f5f3ff'], [50, '#c4b5fd'], [200, '#8b5cf6'], [500, '#5b21b6']],
-    names: ['Under 50', '50 to 200', '200 to 500', 'Over 500'],
+    label: 'Lots with room for a 600 sq ft unit (MUSA 5500)',
+    // Darker than the other violet scales: modelled tracts are drawn at half opacity and most tracts are hatched.
+    steps: [[-Infinity, '#ddd6fe'], [250, '#a78bfa'], [750, '#7c3aed'], [1500, '#4c1d95']],
+    names: ['Under 250', '250 to 750', '750 to 1,500', 'Over 1,500'],
+    moe: 'room_out',
   },
   pays: {
     short: 'Pays',
@@ -96,8 +98,11 @@ export function colorExpr(metric: MetricId, win: { v: WindowVar; w: Window } = {
     return stepped(['to-number', ['get', prop], 0], [[-Infinity, LEVEL_COLORS[0]], [b[0], LEVEL_COLORS[1]], [b[1], LEVEL_COLORS[2]], [b[2], LEVEL_COLORS[3]]], prop) as unknown as ExpressionSpecification;
   }
   const m = METRICS[metric];
-  // live metrics: feature-state, -1 when there is no answer for this ADU
-  if (metric === 'room' || metric === 'pays') {
+  // Room: the 600 sq ft estimate per tract (room_mid). Tracts outside the training range keep their colour and are
+  // hatched by the tract-moe layer; modelled tracts are drawn lighter (MapCanvas tractOpacity).
+  if (metric === 'room') return stepped(['to-number', ['get', 'room_mid'], -9999], m.steps, 'room_mid') as unknown as ExpressionSpecification;
+  // live metric: feature-state, -1 when there is no answer for this ADU
+  if (metric === 'pays') {
     const expr: unknown[] = ['step', ['coalesce', ['feature-state', metric], -1], NO_DATA, 0, m.steps[0][1]];
     m.steps.slice(1).forEach(([brk, col]) => expr.push(brk, col));
     return expr as unknown as ExpressionSpecification;

@@ -100,10 +100,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MUSA 5500 (demand and payoff)</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
         <li>
     <a class="dropdown-item" href="./musa5500/docs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
@@ -119,6 +119,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./musa5500/docs/results.html">
  <span class="dropdown-text">Results</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./musa5500/figures/tract_explorer.html">
+ <span class="dropdown-text">Tract explorer</span></a>
   </li>  
     </ul>
   </li>
@@ -170,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Backyard Homes PA</h1>
-<p class="subtitle lead">Where could Pennsylvania add ADUs, and would they pay off?</p>
+<p class="subtitle lead">Can this Pennsylvania lot take a backyard home, and would it pay off?</p>
 </div>
 
 
@@ -187,17 +191,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Ye Zhang · MUSA 5500 + MUSA 6950 · Fall 2026</p>
+<p>MUSA 5500 and MUSA 6950 · Fall 2026 final project</p>
 <section id="the-project" class="level2">
 <h2 class="anchored" data-anchor-id="the-project">The project</h2>
-<p>A state bill, HB 2186, would allow one accessory dwelling unit (ADU) on every home lot in Pennsylvania. No one knows how many lots have room for one, or where one would pay off. This project answers both, for the whole state.</p>
+<p>An accessory dwelling unit (ADU) is a small second home on a house lot: a backyard cottage, a unit over a garage, or an apartment inside the house. Two Pennsylvania bills would open ADUs statewide, HB 2186 and SB 1346. Philadelphia has its own bill, 250042. None of them is law. The state session ends Nov 30, 2026.</p>
+<p>The tool answers three questions for one lot, under today’s law and under each reform:</p>
 <ul>
-<li>Is it allowed? Town rules today vs HB 2186</li>
-<li>Does it fit? MUSA 6950. AI on aerial images finds open yard space and trees</li>
-<li>Does it pay off? MUSA 5500. Population, jobs, rent, and building trends since 2010</li>
-<li>How many by 2031? Both halves together</li>
+<li><strong>Is it allowed?</strong> Rule files with cited sections for Philadelphia, Pittsburgh and 36 more municipalities, and a statewide baseline for the rest.</li>
+<li><strong>Does it fit?</strong> A geometry test on the lot, building and street outlines, with the setbacks from the rules. Land cover from aerial images adds trees and open ground as context.</li>
+<li><strong>Does it pay off?</strong> Itemised build costs and local rents, and a tract-level test of where a unit covers its loan.</li>
 </ul>
-<p><a href="./tool.html" class="btn btn-primary">Open the tool</a></p>
+<p><a href="./tool.html" class="btn btn-primary">Open the tool</a> <a href="musa5500/figures/tract_explorer.html" class="btn btn-outline-primary">Tract explorer</a></p>
+<p>Not legal advice. Not a zoning determination. Parcel lines are not a survey.</p>
 </section>
 <section id="two-classes-one-tool" class="level2">
 <h2 class="anchored" data-anchor-id="two-classes-one-tool">Two classes, one tool</h2>
@@ -212,27 +217,88 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>Question</td>
-<td>Is there demand, and does an ADU pay off?</td>
-<td>Is there room on the lot?</td>
+<td>Where is there demand, and where does an ADU pay off?</td>
+<td>What is on the lot, and is there room?</td>
 </tr>
 <tr class="even">
 <td>Methods</td>
-<td>APIs, spatial joins, K-means, zonal stats, OSMnx, random forest</td>
-<td>U-Net, Random Forest, YOLO, a 600 sq ft fit rule</td>
+<td>Census and ACS APIs, margins of error, K-means vs GMM vs Ward, gradient boosting with county-held-out tests, payoff test, scenario arithmetic</td>
+<td>U-Net land cover on 4-band NAIP, fair comparison of model variants, error analysis, transfer to two cities, outbuilding detector, vector fit test</td>
 </tr>
 <tr class="odd">
-<td>Code</td>
-<td><code>musa5500/</code></td>
-<td><code>musa6950/</code></td>
+<td>Tool mode</td>
+<td>ADU projecting and analysis</td>
+<td>ADU Testing</td>
 </tr>
 <tr class="even">
-<td>Docs</td>
-<td><a href="./musa5500/docs/data.html">MUSA 5500 pages</a></td>
-<td><a href="./musa6950/docs/data.html">MUSA 6950 pages</a></td>
+<td>Pages</td>
+<td><a href="./musa5500/docs/proposal.html">Proposal</a> · <a href="./musa5500/docs/data.html">Data</a> · <a href="./musa5500/docs/methods.html">Methods</a> · <a href="./musa5500/docs/results.html">Results</a></td>
+<td><a href="./musa6950/docs/proposal.html">Proposal</a> · <a href="./musa6950/docs/data.html">Data</a> · <a href="./musa6950/docs/methods.html">Methods</a> · <a href="./musa6950/docs/results.html">Results</a></td>
 </tr>
 </tbody>
 </table>
-<p>Each class has its own code and documentation. The tool reads results from both.</p>
+</section>
+<section id="results-in-short" class="level2">
+<h2 class="anchored" data-anchor-id="results-in-short">Results in short</h2>
+<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261111-bdeb5697ae), ~/musa-drive/lots/philadelphia/stats.json (data version philadelphia-20261111-b7fa7bda07), ~/musa-drive/models/*/test_scores.json, ~/musa-drive/processed/5500/payoff_summary.json and forecast_summary.json, shared/rules/towns_index.json -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Philadelphia lots with any legal ADU path today</td>
+<td>1.2%<!-- stats.json all.allowed_today --> of 459,998</td>
+</tr>
+<tr class="even">
+<td>Pittsburgh lots with any legal ADU path today</td>
+<td>100% of 92,081 (a detached unit needs an Administrator’s Exception)</td>
+</tr>
+<tr class="odd">
+<td>Pittsburgh lots where a 600 sq ft detached unit fits today</td>
+<td>41.2%</td>
+</tr>
+<tr class="even">
+<td>Land cover U-Net, test mIoU on held-out counties</td>
+<td>about 0.70 (no run reached 0.72 mIoU or 0.65 building IoU)</td>
+</tr>
+<tr class="odd">
+<td>Tracts where a 600 sq ft 1-bedroom unit pays off (mid cost)</td>
+<td>10.3% (356 of 3,445)</td>
+</tr>
+<tr class="even">
+<td>ADUs by 2031, mid case</td>
+<td>about 1,000 today, about 13,500 with HB 2186, about 13,200 with SB 1346</td>
+</tr>
+<tr class="odd">
+<td>Lots with room for a 600 sq ft unit, statewide</td>
+<td>about 2.9 million (1.5 to 3.6 million). Measured in Philadelphia and Pittsburgh, modelled elsewhere</td>
+</tr>
+<tr class="even">
+<td>Of the 36 next-largest municipalities, no ADU text in the code</td>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<p>The binding limit differs by city. In Philadelphia it is the law. In Pittsburgh every lot has a legal path, and the limit is yard space.</p>
+</section>
+<section id="what-is-not-measured-yet" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-not-measured-yet">What is not measured yet</h2>
+<ul>
+<li>The fit answers have not been checked against hand labels. The 250-lot sample is drawn and none are labeled.</li>
+<li>The outbuilding detector is scored only against unchecked first-pass labels.</li>
+</ul>
+</section>
+<section id="code-and-docs" class="level2">
+<h2 class="anchored" data-anchor-id="code-and-docs">Code and docs</h2>
+<p>The code, the pipeline docs and the model cards are in the <a href="https://github.com/yezhanggg/YZ-MUSA-FINAL">repository</a>. Each class has its own folder: <code>musa5500/</code> and <code>musa6950/</code>.</p>
 
 
 </section>

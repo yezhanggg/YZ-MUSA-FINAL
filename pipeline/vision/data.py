@@ -4,10 +4,12 @@ Inputs are read in place from the course checkout (NAIP tiles, 4-class
 labels, sample boxes). Everything this package writes goes under the data
 root: caches and labels to processed/vision, runs to models/<run name>.
 """
+
 from __future__ import annotations
 
 import os
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 
@@ -24,6 +26,7 @@ def data_root() -> Path:
     """Data root. Uses pipeline.paths when present so every module agrees."""
     try:
         from pipeline.paths import data_root as root
+
         return root()
     except ImportError:
         return Path(os.environ.get("ADU_DATA_DIR", "~/musa-drive")).expanduser()
@@ -54,7 +57,7 @@ def all_geoids() -> list[str]:
     return split_boxes().GEOID.tolist()
 
 
-def split_boxes():
+def split_boxes() -> Any:
     """Train / val / test roles, same as notebook 03 and train_unet.py."""
     import geopandas as gpd
 

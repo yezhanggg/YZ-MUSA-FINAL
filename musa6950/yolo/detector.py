@@ -5,12 +5,14 @@ importing this module costs nothing and pulls in no AGPL code until a YOLO model
 To add another backend, write a class with the same `name`, `version` and `predict`, and
 register it in `load_detector`.
 """
+
 from __future__ import annotations
 
 import hashlib
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Protocol, Sequence
+from typing import Protocol
 
 
 @dataclass(frozen=True)
@@ -58,16 +60,21 @@ class YoloDetector:
     def predict(self, images: Sequence[Path], conf: float = 0.25) -> list[list[Detection]]:
         out: list[list[Detection]] = []
         for start in range(0, len(images), self.batch):
-            chunk = [str(p) for p in images[start:start + self.batch]]
-            results = self.model.predict(chunk, device=self.device, imgsz=self.imgsz, conf=conf,
-                                         max_det=300, verbose=False)
+            chunk = [str(p) for p in images[start : start + self.batch]]
+            results = self.model.predict(
+                chunk, device=self.device, imgsz=self.imgsz, conf=conf, max_det=300, verbose=False
+            )
             for r in results:
                 boxes = r.boxes
                 xyxy = boxes.xyxy.cpu().tolist()
                 cls = boxes.cls.cpu().int().tolist()
                 score = boxes.conf.cpu().tolist()
-                out.append([Detection(self.names[c], float(s), *map(float, b))
-                            for b, c, s in zip(xyxy, cls, score)])
+                out.append(
+                    [
+                        Detection(self.names[c], float(s), *map(float, b))
+                        for b, c, s in zip(xyxy, cls, score, strict=True)
+                    ]
+                )
         return out
 
 

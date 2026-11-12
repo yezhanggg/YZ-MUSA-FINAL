@@ -8,6 +8,7 @@ wards). Raw layers go to <data>/raw/pittsburgh, built tables to
     python -m pipeline.places.pittsburgh build      # lots.parquet + buildings.parquet
     python -m pipeline.places.pittsburgh check      # join test on 1,000 random lots
 """
+
 from __future__ import annotations
 
 import argparse
@@ -16,10 +17,11 @@ import gzip
 import json
 import math
 import time
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
-from typing import Iterable
+from typing import Any
 
 import geopandas as gpd
 import numpy as np
@@ -28,10 +30,21 @@ from shapely.geometry import box, shape
 
 from pipeline.paths import processed_dir, raw_dir
 from pipeline.places import common
-from pipeline.places.common import (LONLAT, add_geometry_columns, coverage_share,  # noqa: F401
-                                    download_file, grid_pieces, largest_overlap, names_at_points,
-                                    publish_parquet, publish_tables, read_sources, session,
-                                    touching, write_gpkg)
+from pipeline.places.common import (  # noqa: F401
+    LONLAT,
+    add_geometry_columns,
+    coverage_share,
+    download_file,
+    grid_pieces,
+    largest_overlap,
+    names_at_points,
+    publish_parquet,
+    publish_tables,
+    read_sources,
+    session,
+    touching,
+    write_gpkg,
+)
 from pipeline.places.common import cut_buildings_to_lots as assign_buildings
 
 PLACE = "pittsburgh"
@@ -50,10 +63,7 @@ ASSESSMENTS_CSV = (
 )
 MSFT_INDEX = "https://minedbuildings.z5.web.core.windows.net/global-buildings/dataset-links.csv"
 
-LIC_COUNTY = (
-    "Allegheny County via PASDA. No license stated. Use constraint: informational "
-    "purposes only, shipped as is"
-)
+LIC_COUNTY = "Allegheny County via PASDA. No license stated. Use constraint: informational purposes only, shipped as is"
 LIC_CITY = "City of Pittsburgh ArcGIS Online. No license stated (WPRDC lists 'License not specified')"
 
 
@@ -77,35 +87,64 @@ class Layer:
 
 LAYERS: tuple[Layer, ...] = (
     Layer("city_boundary", f"{PASDA}/21", LIC_COUNTY, where="NAME = 'PITTSBURGH'"),
-    Layer("parcels", f"{PASDA}/25", LIC_COUNTY, where=CITY_WARDS,
-          fields="PIN,MAPBLOCKLO,MUNICODE,CALCACREAG"),
-    Layer("footprints_county", f"{PASDA}/11", LIC_COUNTY, where=CITY_WARDS,
-          fields="PIN,CLASS,area,MUNICODE,USECODE,status",
-          note="County roof outlines. Nothing under about 400 sq ft. No height"),
-    Layer("buildings_elevation", f"{CITY}/Buildings_Elevation/FeatureServer/33", LIC_CITY,
-          fields="lotblock,bldg_heigh,bldg_heigh_new,Neighborhood",
-          note="City building outlines with height in feet (bldg_heigh_new is the newer value)"),
-    Layer("zoning", f"{CITY}/PGHWebZoning/FeatureServer/0", LIC_CITY,
-          fields="zon_new,full_zoning_type,legendtype,status"),
-    Layer("zoning_overlays", f"{CITY}/PGHWebZoningOverlays/FeatureServer/0", LIC_CITY,
-          fields="overlay,criteria"),
-    Layer("historic_districts", f"{CITY}/PGHWebCHDHistoricDistricts/FeatureServer/0", LIC_CITY,
-          fields="type,historic_name"),
-    Layer("steep_slope", f"{CITY}/PGHWebSlope25/FeatureServer/0", LIC_CITY, fields="slope25",
-          note="Slopes of 25 percent or more"),
-    Layer("landslide_prone", f"{CITY}/PGHWebLandslideProne/FeatureServer/0", LIC_CITY,
-          fields="landslideprone"),
-    Layer("council_districts", f"{CITY}/PGHWebCouncilDistricts/FeatureServer/0", LIC_CITY,
-          fields="council_district,council"),
-    Layer("neighborhoods", f"{CITY}/PGHWebNeighborhoods/FeatureServer/0", LIC_CITY,
-          fields="hood,hood_no"),
-    Layer("flood_nfhl", NFHL, "FEMA NFHL, US federal government data (public domain)",
-          fields="FLD_ZONE,ZONE_SUBTY,SFHA_TF,DFIRM_ID", bbox=CITY_BBOX, page=25,
-          note="Flood hazard zones touching the city box. SFHA_TF = T is the 1 percent annual chance area"),
-    Layer("streets", f"{PASDA}/7", LIC_COUNTY,
-          where="LMUNI = 'CITY OF PITTSBURGH' OR RMUNI = 'CITY OF PITTSBURGH'",
-          fields="FULL_NAME,ST_NAME,ST_TYPE,FCC,ONEWAY,LMUNI,RMUNI",
-          note="County street centerlines. FCC A73 is an alley"),
+    Layer("parcels", f"{PASDA}/25", LIC_COUNTY, where=CITY_WARDS, fields="PIN,MAPBLOCKLO,MUNICODE,CALCACREAG"),
+    Layer(
+        "footprints_county",
+        f"{PASDA}/11",
+        LIC_COUNTY,
+        where=CITY_WARDS,
+        fields="PIN,CLASS,area,MUNICODE,USECODE,status",
+        note="County roof outlines. Nothing under about 400 sq ft. No height",
+    ),
+    Layer(
+        "buildings_elevation",
+        f"{CITY}/Buildings_Elevation/FeatureServer/33",
+        LIC_CITY,
+        fields="lotblock,bldg_heigh,bldg_heigh_new,Neighborhood",
+        note="City building outlines with height in feet (bldg_heigh_new is the newer value)",
+    ),
+    Layer(
+        "zoning", f"{CITY}/PGHWebZoning/FeatureServer/0", LIC_CITY, fields="zon_new,full_zoning_type,legendtype,status"
+    ),
+    Layer("zoning_overlays", f"{CITY}/PGHWebZoningOverlays/FeatureServer/0", LIC_CITY, fields="overlay,criteria"),
+    Layer(
+        "historic_districts",
+        f"{CITY}/PGHWebCHDHistoricDistricts/FeatureServer/0",
+        LIC_CITY,
+        fields="type,historic_name",
+    ),
+    Layer(
+        "steep_slope",
+        f"{CITY}/PGHWebSlope25/FeatureServer/0",
+        LIC_CITY,
+        fields="slope25",
+        note="Slopes of 25 percent or more",
+    ),
+    Layer("landslide_prone", f"{CITY}/PGHWebLandslideProne/FeatureServer/0", LIC_CITY, fields="landslideprone"),
+    Layer(
+        "council_districts",
+        f"{CITY}/PGHWebCouncilDistricts/FeatureServer/0",
+        LIC_CITY,
+        fields="council_district,council",
+    ),
+    Layer("neighborhoods", f"{CITY}/PGHWebNeighborhoods/FeatureServer/0", LIC_CITY, fields="hood,hood_no"),
+    Layer(
+        "flood_nfhl",
+        NFHL,
+        "FEMA NFHL, US federal government data (public domain)",
+        fields="FLD_ZONE,ZONE_SUBTY,SFHA_TF,DFIRM_ID",
+        bbox=CITY_BBOX,
+        page=25,
+        note="Flood hazard zones touching the city box. SFHA_TF = T is the 1 percent annual chance area",
+    ),
+    Layer(
+        "streets",
+        f"{PASDA}/7",
+        LIC_COUNTY,
+        where="LMUNI = 'CITY OF PITTSBURGH' OR RMUNI = 'CITY OF PITTSBURGH'",
+        fields="FULL_NAME,ST_NAME,ST_TYPE,FCC,ONEWAY,LMUNI,RMUNI",
+        note="County street centerlines. FCC A73 is an alley",
+    ),
 )
 
 # Assessment columns kept. Owner names and mailing addresses are left out on purpose.
@@ -167,28 +206,28 @@ def bbox_quadkeys(bbox: tuple[float, float, float, float], zoom: int) -> set[str
 # ---------------------------------------------------------------- download
 
 
-def record_source(key: str, entry: dict) -> None:
+def record_source(key: str, entry: dict[str, Any]) -> None:
     common.record_source(PLACE, key, entry)
 
 
-def source_entry(url: str, license: str, count: int, path: Path, note: str = "",
-                 filter: str = "") -> dict:
+def source_entry(url: str, license: str, count: int, path: Path, note: str = "", filter: str = "") -> dict[str, Any]:
     return common.source_entry(url, license, count, path, note, filter)
 
 
 def fetch_layer(layer: Layer, out: Path) -> int:
     """One layer, one page at a time (PASDA and FEMA are slow and easily overloaded)."""
+
     def drop(df: pd.DataFrame) -> pd.DataFrame:
         return df.drop(columns=[c for c in layer.drop if c in df.columns])
 
-    return common.fetch_arcgis(layer.url, layer.key, out, layer.fields, layer.where, layer.bbox,
-                               layer.page, workers=1, clean=drop)
+    return common.fetch_arcgis(
+        layer.url, layer.key, out, layer.fields, layer.where, layer.bbox, layer.page, workers=1, clean=drop
+    )
 
 
 def drop_owner_columns(df: pd.DataFrame) -> pd.DataFrame:
     """Remove owner names and mailing address columns, whatever they are called."""
-    keep = [c for c in df.columns if not any(p in c.upper() for p in OWNER_PATTERNS)
-            or c.upper() == "OWNERDESC"]
+    keep = [c for c in df.columns if not any(p in c.upper() for p in OWNER_PATTERNS) or c.upper() == "OWNERDESC"]
     return df[keep]
 
 
@@ -198,9 +237,20 @@ def clean_assessments(df: pd.DataFrame) -> pd.DataFrame:
     muni = pd.to_numeric(df["MUNICODE"], errors="coerce")
     df = df[muni.between(101, 132)]
     df = df[[c for c in ASSESSMENT_COLUMNS if c in df.columns]].rename(columns=ASSESSMENT_COLUMNS)
-    for col in ("lot_area_assessed", "sale_price", "value_building", "value_land", "value_total",
-                "stories", "year_built", "bedrooms", "full_baths", "half_baths",
-                "basement_garage", "living_area"):
+    for col in (
+        "lot_area_assessed",
+        "sale_price",
+        "value_building",
+        "value_land",
+        "value_total",
+        "stories",
+        "year_built",
+        "bedrooms",
+        "full_baths",
+        "half_baths",
+        "basement_garage",
+        "living_area",
+    ):
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
     df["sale_date"] = pd.to_datetime(df["sale_date"], format="%m-%d-%Y", errors="coerce")
@@ -209,8 +259,10 @@ def clean_assessments(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_address(df: pd.DataFrame) -> pd.Series:
-    parts = [df.get(c, pd.Series("", index=df.index)).fillna("").astype(str).str.strip()
-             for c in ("house_num", "house_frac", "street")]
+    parts = [
+        df.get(c, pd.Series("", index=df.index)).fillna("").astype(str).str.strip()
+        for c in ("house_num", "house_frac", "street")
+    ]
     addr = (parts[0] + " " + parts[1] + " " + parts[2]).str.split().str.join(" ")
     unit = df.get("unit", pd.Series("", index=df.index)).fillna("").astype(str).str.strip()
     return addr.where(unit == "", addr + " UNIT " + unit)
@@ -233,8 +285,9 @@ def fetch_assessments(out: Path) -> int:
 def msft_tile_urls(bbox: tuple[float, float, float, float]) -> list[str]:
     keys = bbox_quadkeys(bbox, 9)
     text = session().get(MSFT_INDEX, timeout=120).text
-    return [r["Url"] for r in csv.DictReader(text.splitlines())
-            if r["Location"] == "UnitedStates" and r["QuadKey"] in keys]
+    return [
+        r["Url"] for r in csv.DictReader(text.splitlines()) if r["Location"] == "UnitedStates" and r["QuadKey"] in keys
+    ]
 
 
 def msft_local_name(url: str) -> str:
@@ -242,7 +295,7 @@ def msft_local_name(url: str) -> str:
     return Path(url).parent.name.replace("quadkey=", "msft_") + ".csv.gz"
 
 
-def read_msft_lines(path: Path, bbox: tuple[float, float, float, float]) -> Iterable[dict]:
+def read_msft_lines(path: Path, bbox: tuple[float, float, float, float]) -> Iterable[dict[str, Any]]:
     """Each line is one GeoJSON feature. Keep those whose box touches the city box."""
     area = box(*bbox)
     with gzip.open(path, "rt") as fh:
@@ -251,13 +304,12 @@ def read_msft_lines(path: Path, bbox: tuple[float, float, float, float]) -> Iter
             geom = shape(feat["geometry"])
             if geom.intersects(area):
                 props = feat.get("properties") or {}
-                yield {"height_m": props.get("height"), "confidence": props.get("confidence"),
-                       "geometry": geom}
+                yield {"height_m": props.get("height"), "confidence": props.get("confidence"), "geometry": geom}
 
 
 def fetch_msft(out: Path, boundary: Path) -> int:
     urls = msft_tile_urls(CITY_BBOX)
-    rows: list[dict] = []
+    rows: list[dict[str, Any]] = []
     for url in urls:
         local = out.parent / msft_local_name(url)
         if not local.exists():
@@ -299,9 +351,16 @@ def download(only: list[str] | None = None) -> None:
         else:
             print("get assessments")
             n = fetch_assessments(out)
-            record_source("assessments", source_entry(
-                ASSESSMENTS_CSV, "CC0 (WPRDC, Allegheny County Office of Property Assessments)",
-                n, out, "City wards 101 to 132. Owner and mailing columns dropped at ingest"))
+            record_source(
+                "assessments",
+                source_entry(
+                    ASSESSMENTS_CSV,
+                    "CC0 (WPRDC, Allegheny County Office of Property Assessments)",
+                    n,
+                    out,
+                    "City wards 101 to 132. Owner and mailing columns dropped at ingest",
+                ),
+            )
     if not wanted or "footprints_msft" in wanted:
         out = root / "footprints_msft.gpkg"
         if out.exists():
@@ -309,9 +368,16 @@ def download(only: list[str] | None = None) -> None:
         else:
             print("get footprints_msft")
             n = fetch_msft(out, root / "city_boundary.gpkg")
-            record_source("footprints_msft", source_entry(
-                MSFT_INDEX, "ODbL (Microsoft Global ML Building Footprints)", n, out,
-                "Zoom 9 quadkey tiles clipped to the city boundary. Height in meters where given"))
+            record_source(
+                "footprints_msft",
+                source_entry(
+                    MSFT_INDEX,
+                    "ODbL (Microsoft Global ML Building Footprints)",
+                    n,
+                    out,
+                    "Zoom 9 quadkey tiles clipped to the city boundary. Height in meters where given",
+                ),
+            )
     record_source("imagery", IMAGERY)
 
 
@@ -319,28 +385,25 @@ def download(only: list[str] | None = None) -> None:
 IMAGERY = {
     "note": "Service URLs and terms only. Nothing downloaded",
     "allegheny_2017_3in": {
-        "service": "https://imagery.pasda.psu.edu/arcgis/rest/services/pasda/"
-                   "AlleghenyCountyImagery2017/MapServer",
-        "layers": "1 = 3 inch mosaic, 0 = 3 inch tile index (URL_Tiff, URL_jpg fields), "
-                  "6 = 9 inch mosaic",
+        "service": "https://imagery.pasda.psu.edu/arcgis/rest/services/pasda/AlleghenyCountyImagery2017/MapServer",
+        "layers": "1 = 3 inch mosaic, 0 = 3 inch tile index (URL_Tiff, URL_jpg fields), 6 = 9 inch mosaic",
         "download": "https://www.pasda.psu.edu/download/alleghenycountyimagery2017/",
         "metadata": "https://www.pasda.psu.edu/uci/DataSummary.aspx?dataset=1701",
         "crs": "EPSG:4269 service, dynamic (no tile cache). Use export or the tile index",
         "terms": "Access constraints: call for details. Use constraints: informational "
-                 "purposes only, shipped as is, Allegheny County not responsible for reliance. "
-                 "No open license stated. No statement about machine learning use",
+        "purposes only, shipped as is, Allegheny County not responsible for reliance. "
+        "No open license stated. No statement about machine learning use",
     },
     "pema_2022_half_foot": {
-        "service": "https://imagery.pasda.psu.edu/arcgis/rest/services/pasda/"
-                   "PEMAImagery2022/MapServer",
+        "service": "https://imagery.pasda.psu.edu/arcgis/rest/services/pasda/PEMAImagery2022/MapServer",
         "tiles": "https://imagery.pasda.psu.edu/arcgis/rest/services/PEMAImagery2021_2023cache/"
-                 "MapServer/tile/{z}/{y}/{x}",
+        "MapServer/tile/{z}/{y}/{x}",
         "layers": "PEMAImagery2022: 0 = West mosaic (Allegheny is in it), 4 and 5 = tile index",
         "download": "https://www.pasda.psu.edu/download/pema/pema_imagery/cycle2/",
         "metadata": "https://www.pasda.psu.edu/uci/DataSummary.aspx?dataset=5178",
         "dates": "Flown 2022-03-16 to 2022-04-12 (leaf off), 0.5 ft pixels",
         "terms": "Access constraints: no restrictions. Use constraints: none, with an "
-                 "acknowledgement of the source requested. Liability disclaimer applies",
+        "acknowledgement of the source requested. Liability disclaimer applies",
     },
 }
 
@@ -348,10 +411,15 @@ IMAGERY = {
 # ---------------------------------------------------------------- build helpers
 
 
-HOUSING_TYPES = ("single_family_detached", "semi_detached", "rowhouse", "two_family",
-                 "three_family", "four_family")
-UNITS = {"single_family_detached": 1, "semi_detached": 1, "rowhouse": 1, "two_family": 2,
-         "three_family": 3, "four_family": 4}
+HOUSING_TYPES = ("single_family_detached", "semi_detached", "rowhouse", "two_family", "three_family", "four_family")
+UNITS = {
+    "single_family_detached": 1,
+    "semi_detached": 1,
+    "rowhouse": 1,
+    "two_family": 2,
+    "three_family": 3,
+    "four_family": 4,
+}
 
 
 def classify_housing(use_desc: object, style: object) -> str | None:
@@ -379,8 +447,7 @@ def classify_housing(use_desc: object, style: object) -> str | None:
     return None
 
 
-def new_buildings_only(primary: gpd.GeoDataFrame, extra: gpd.GeoDataFrame,
-                       max_cover: float = 0.3) -> gpd.GeoDataFrame:
+def new_buildings_only(primary: gpd.GeoDataFrame, extra: gpd.GeoDataFrame, max_cover: float = 0.3) -> gpd.GeoDataFrame:
     """Keep extra outlines that the primary set mostly misses (small sheds, garages)."""
     if extra.empty:
         return extra
@@ -402,8 +469,9 @@ def add_roles(buildings: gpd.GeoDataFrame, lot_id: str = "lot_id") -> gpd.GeoDat
     return b.reset_index(drop=True)
 
 
-def sane_overlap(share_in_lot: pd.Series, bldg_area: pd.Series, lot_area: pd.Series,
-                 min_share: float = 0.8, max_ratio: float = 1.0) -> pd.Series:
+def sane_overlap(
+    share_in_lot: pd.Series, bldg_area: pd.Series, lot_area: pd.Series, min_share: float = 0.8, max_ratio: float = 1.0
+) -> pd.Series:
     """A main building fits its lot sanely when most of it is inside and it is not bigger than the lot."""
     return (share_in_lot >= min_share) & (bldg_area <= max_ratio * lot_area)
 
@@ -453,13 +521,12 @@ def load_parcels() -> gpd.GeoDataFrame:
     p = p.dissolve(by="PIN", as_index=False, aggfunc={"MUNICODE": "first"})
     p["lot_id"] = lot_id_from_pin(p["PIN"])
     p["legacy_id"] = legacy_id_from_pin(p["PIN"])
-    return p.rename(columns={"PIN": "pin", "MUNICODE": "ward"})[["lot_id", "legacy_id", "pin",
-                                                                  "ward", "geometry"]]
+    return p.rename(columns={"PIN": "pin", "MUNICODE": "ward"})[["lot_id", "legacy_id", "pin", "ward", "geometry"]]
 
 
 def load_assessments() -> pd.DataFrame:
     a = pd.read_parquet(raw_dir(PLACE) / "assessments.parquet")
-    a["housing_type"] = [classify_housing(u, s) for u, s in zip(a["use_desc"], a["style"])]
+    a["housing_type"] = [classify_housing(u, s) for u, s in zip(a["use_desc"], a["style"], strict=True)]
     a["units"] = a["housing_type"].map(UNITS)
     return a.drop_duplicates("pin")
 
@@ -470,24 +537,33 @@ def join_lot_layers(lots: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     step("zoning")
     zoning = read_layer("zoning")
     z = largest_overlap(out, zoning, "lot_id", ["zon_new", "legendtype", "full_zoning_type"])
-    z = z.rename(columns={"zon_new": "zoning", "legendtype": "zoning_group",
-                          "full_zoning_type": "zoning_name", "share": "zoning_share"})
+    z = z.rename(
+        columns={
+            "zon_new": "zoning",
+            "legendtype": "zoning_group",
+            "full_zoning_type": "zoning_name",
+            "share": "zoning_share",
+        }
+    )
     out = out.merge(z, on="lot_id", how="left")
     out["zoning_split"] = out["zoning_share"] < 0.9  # lot crosses a district line
 
-    out["overlays"] = names_at_points(out, read_layer("zoning_overlays"), "lot_id",
-                                      "overlay").to_numpy()
-    out["council_district"] = names_at_points(out, read_layer("council_districts"), "lot_id",
-                                              "council_district").to_numpy()
-    out["neighborhood"] = names_at_points(out, read_layer("neighborhoods"), "lot_id",
-                                          "hood").to_numpy()
+    out["overlays"] = names_at_points(out, read_layer("zoning_overlays"), "lot_id", "overlay").to_numpy()
+    out["council_district"] = names_at_points(
+        out, read_layer("council_districts"), "lot_id", "council_district"
+    ).to_numpy()
+    out["neighborhood"] = names_at_points(out, read_layer("neighborhoods"), "lot_id", "hood").to_numpy()
     hist = read_layer("historic_districts")
     out["historic_district"] = names_at_points(out, hist, "lot_id", "historic_name").to_numpy()
 
     flood = read_layer("flood_nfhl")
     flood = flood[flood["SFHA_TF"].astype(str).str.upper() == "T"]
-    flags = {"flood": flood, "historic": hist, "steep_slope": read_layer("steep_slope"),
-             "landslide": read_layer("landslide_prone")}
+    flags = {
+        "flood": flood,
+        "historic": hist,
+        "steep_slope": read_layer("steep_slope"),
+        "landslide": read_layer("landslide_prone"),
+    }
     for name, layer in flags.items():
         step(f"flag {name}")
         share = coverage_share(out, layer, "lot_id")
@@ -497,8 +573,7 @@ def join_lot_layers(lots: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     return gpd.GeoDataFrame(out, geometry="geometry", crs=lots.crs)
 
 
-def load_buildings(lots_all: gpd.GeoDataFrame,
-                   near: gpd.GeoDataFrame | None = None) -> gpd.GeoDataFrame:
+def load_buildings(lots_all: gpd.GeoDataFrame, near: gpd.GeoDataFrame | None = None) -> gpd.GeoDataFrame:
     """County outlines plus Microsoft outlines the county missed, put on lots, with heights.
 
     `near` limits the work to buildings touching those lots (used by the check).
@@ -516,7 +591,7 @@ def load_buildings(lots_all: gpd.GeoDataFrame,
     bldgs = pd.concat([county, extra], ignore_index=True)
     bldgs = gpd.GeoDataFrame(bldgs, geometry="geometry", crs=WORK_CRS)
     bldgs = bldgs[bldgs.geometry.area > 1.0]
-    bldgs["height_source"] = np.where(bldgs["height_ft"].notna(), "msft", None)
+    bldgs["height_source"] = np.where(bldgs["height_ft"].notna(), "msft", None)  # type: ignore[call-overload]  # numpy stubs reject None as a fill value
     step("heights")
     bldgs = add_city_heights(bldgs, near)
     step("buildings to lots")
@@ -525,14 +600,14 @@ def load_buildings(lots_all: gpd.GeoDataFrame,
     return add_roles(bldgs)
 
 
-def add_city_heights(bldgs: gpd.GeoDataFrame,
-                     near: gpd.GeoDataFrame | None) -> gpd.GeoDataFrame:
+def add_city_heights(bldgs: gpd.GeoDataFrame, near: gpd.GeoDataFrame | None) -> gpd.GeoDataFrame:
     """Height in feet from the city's Buildings_Elevation outlines, matched by overlap."""
     elev = read_layer("buildings_elevation")
     if near is not None:
         elev = touching(elev, near)
     elev["h"] = pd.to_numeric(elev["bldg_heigh_new"], errors="coerce").fillna(
-        pd.to_numeric(elev["bldg_heigh"], errors="coerce"))
+        pd.to_numeric(elev["bldg_heigh"], errors="coerce")
+    )
     elev = elev[elev["h"] > 0]
     b = bldgs.reset_index(drop=True).copy()
     b["_bid"] = np.arange(len(b))
@@ -550,8 +625,9 @@ def summarize_buildings(lots: gpd.GeoDataFrame, bldgs: gpd.GeoDataFrame) -> gpd.
     out = lots.copy()
     g = bldgs.groupby("lot_id")
     out["n_buildings"] = out["lot_id"].map(g.size()).fillna(0).astype(int)
-    out["n_accessory"] = out["lot_id"].map(
-        bldgs[bldgs["role"] == "accessory"].groupby("lot_id").size()).fillna(0).astype(int)
+    out["n_accessory"] = (
+        out["lot_id"].map(bldgs[bldgs["role"] == "accessory"].groupby("lot_id").size()).fillna(0).astype(int)
+    )
     out["building_ids"] = out["lot_id"].map(g["building_id"].apply(list))
     main = bldgs[bldgs["role"] == "main"].set_index("lot_id")
     out["main_bldg_area_sqft"] = out["lot_id"].map(main["area_sqft"]).round(1)
@@ -561,8 +637,9 @@ def summarize_buildings(lots: gpd.GeoDataFrame, bldgs: gpd.GeoDataFrame) -> gpd.
     # Sane means the whole outline sits on this lot. Pieces cut from shared outlines
     # are usable but are counted apart so the check shows how often that happens.
     whole_area = out["lot_id"].map(main["orig_area_sqft"])
-    out["building_sane"] = sane_overlap(out["main_bldg_share_in_lot"], whole_area,
-                                        out["lot_area_sqft"]) & ~out["main_bldg_split"].fillna(False)
+    out["building_sane"] = sane_overlap(out["main_bldg_share_in_lot"], whole_area, out["lot_area_sqft"]) & ~out[
+        "main_bldg_split"
+    ].fillna(False)
     return out
 
 
@@ -594,9 +671,8 @@ def street_kind(fcc: object, st_type: object) -> str:
 
 def prepare_streets() -> gpd.GeoDataFrame:
     s = read_layer("streets")
-    s["kind"] = [street_kind(f, t) for f, t in zip(s["FCC"], s["ST_TYPE"])]
-    s = s.rename(columns={"FULL_NAME": "name", "FCC": "fcc", "ST_TYPE": "st_type",
-                          "ONEWAY": "oneway"})
+    s["kind"] = [street_kind(f, t) for f, t in zip(s["FCC"], s["ST_TYPE"], strict=True)]
+    s = s.rename(columns={"FULL_NAME": "name", "FCC": "fcc", "ST_TYPE": "st_type", "ONEWAY": "oneway"})
     return s[["name", "st_type", "fcc", "kind", "oneway", "geometry"]].reset_index(drop=True)
 
 
@@ -616,13 +692,24 @@ def build() -> None:
     lots = summarize_buildings(lots, bldgs)
     bldgs["legacy_id"] = legacy_building_id(bldgs["building_id"])
     # Others read these tables while a build runs: write aside, keep .prev, then swap.
-    keep = ["building_id", "lot_id", "role", "source", "area_sqft", "height_ft",
-            "height_source", "share_in_lot", "split", "orig_area_sqft", "legacy_id", "geometry"]
+    keep = [
+        "building_id",
+        "lot_id",
+        "role",
+        "source",
+        "area_sqft",
+        "height_ft",
+        "height_source",
+        "share_in_lot",
+        "split",
+        "orig_area_sqft",
+        "legacy_id",
+        "geometry",
+    ]
     publish_tables({out_dir / "lots.parquet": lots, out_dir / "buildings.parquet": bldgs[keep]})
     streets = prepare_streets()
     publish_parquet(streets, out_dir / "streets.parquet")
-    print(f"wrote {len(lots)} lots, {len(bldgs)} buildings, {len(streets)} street pieces "
-          f"to {out_dir}")
+    print(f"wrote {len(lots)} lots, {len(bldgs)} buildings, {len(streets)} street pieces to {out_dir}")
     print(lots["housing_type"].value_counts().to_string())
 
 
@@ -647,7 +734,7 @@ def match_rates(sample: gpd.GeoDataFrame) -> dict[str, float]:
     }
 
 
-def check(n: int = 1000, seed: int = 2026) -> dict:
+def check(n: int = 1000, seed: int = 2026) -> dict[str, Any]:
     """Run the full join on random lots and report match rates."""
     parcels = add_geometry_columns(load_parcels())
     assess = load_assessments()
@@ -682,8 +769,7 @@ def check(n: int = 1000, seed: int = 2026) -> dict:
 
 
 def main(argv: list[str] | None = None) -> None:
-    ap = argparse.ArgumentParser(prog="python -m pipeline.places.pittsburgh",
-                                 description=__doc__.splitlines()[0])
+    ap = argparse.ArgumentParser(prog="python -m pipeline.places.pittsburgh", description=__doc__.splitlines()[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
     d = sub.add_parser("download", help="fetch raw layers (skips files already present)")
     d.add_argument("--only", nargs="*", help="layer keys to fetch")

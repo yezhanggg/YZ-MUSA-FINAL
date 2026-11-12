@@ -12,15 +12,17 @@ so the labeler is not led.
 Outputs in ~/musa-drive/validation/<city>/: chips/, sheets/<lot_id>.png,
 sheets/<lot_id>_context.png, label.html.
 """
+
 from __future__ import annotations
 
 import argparse
 import io
 import json
 import time
+from collections.abc import Iterable
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from typing import Any, Iterable, Optional
+from typing import Any
 
 import geopandas as gpd
 import pandas as pd
@@ -28,13 +30,13 @@ from PIL import Image, ImageDraw, ImageFont
 
 from pipeline.validation import common as C
 
-NEAR_MIN_FT = 200.0          # about 60 m across
+NEAR_MIN_FT = 200.0  # about 60 m across
 NEAR_MAX_FT = 600.0
 NEAR_PAD_FT = 40.0
-PIXEL_FT = 0.5               # native PEMA pixel
+PIXEL_FT = 0.5  # native PEMA pixel
 CTX_MIN_FT = 800.0
 CTX_PX = 800
-SHEET_PX = 900               # displayed size of the near picture
+SHEET_PX = 900  # displayed size of the near picture
 MAX_PARALLEL = 2
 LOT_COLOR = (255, 230, 0)
 REF_RECTS = ((20, 30), (16, 25))
@@ -42,11 +44,11 @@ REF_RECTS = ((20, 30), (16, 25))
 
 # ---------------------------------------------------------------- geometry
 
+
 def lot_geoms(city: str, ids: Iterable[str]) -> gpd.GeoSeries:
     """Lot polygons in the city's state plane (feet), indexed by lot id."""
     ids = list(ids)
-    g = gpd.read_parquet(C.lots_path(city), columns=["lot_id", "geometry"],
-                         filters=[("lot_id", "in", ids)])
+    g = gpd.read_parquet(C.lots_path(city), columns=["lot_id", "geometry"], filters=[("lot_id", "in", ids)])
     epsg = C.CITIES[city]["epsg"]
     if g.crs is not None and g.crs.to_epsg() != epsg:
         g = g.to_crs(epsg)
@@ -71,11 +73,14 @@ def export_url(city: str, box: tuple[float, float, float, float], px: int) -> st
     src = C.CITIES[city]
     e = src["epsg"]
     b = ",".join(f"{v:.2f}" for v in box)
-    return (f"{src['export']}?bbox={b}&bboxSR={e}&imageSR={e}&size={px},{px}&format=jpg"
-            f"&compressionQuality=92&layers={src['layers']}&transparent=false&f=image")
+    return (
+        f"{src['export']}?bbox={b}&bboxSR={e}&imageSR={e}&size={px},{px}&format=jpg"
+        f"&compressionQuality=92&layers={src['layers']}&transparent=false&f=image"
+    )
 
 
 # ---------------------------------------------------------------- fetch
+
 
 def _complete(p: Path, px: int) -> bool:
     if not p.exists() or p.stat().st_size < 2000:
@@ -124,8 +129,16 @@ def plan(city: str, sample: pd.DataFrame) -> list[dict[str, Any]]:
         nb = near_box(geoms[lot_id])
         cb = context_box(nb)
         npx = int(round((nb[2] - nb[0]) / PIXEL_FT))
-        meta = {"lot_id": lot_id, "city": city, "epsg": C.CITIES[city]["epsg"], "near_box": nb, "near_px": npx,
-                "context_box": cb, "context_px": CTX_PX, "imagery": C.CITIES[city]["imagery"]}
+        meta = {
+            "lot_id": lot_id,
+            "city": city,
+            "epsg": C.CITIES[city]["epsg"],
+            "near_box": nb,
+            "near_px": npx,
+            "context_box": cb,
+            "context_px": CTX_PX,
+            "imagery": C.CITIES[city]["imagery"],
+        }
         (d / f"{lot_id}.json").write_text(json.dumps(meta))
         jobs.append({"url": export_url(city, nb, npx), "out": d / f"{lot_id}_near.jpg", "px": npx})
         jobs.append({"url": export_url(city, cb, CTX_PX), "out": d / f"{lot_id}_context.jpg", "px": CTX_PX})
@@ -134,6 +147,7 @@ def plan(city: str, sample: pd.DataFrame) -> list[dict[str, Any]]:
 
 def fetch(city: str, sample: pd.DataFrame) -> dict[str, int]:
     import requests
+
     jobs = plan(city, sample)
     session = requests.Session()
     session.headers["User-Agent"] = C.USER_AGENT
@@ -153,9 +167,13 @@ def fetch(city: str, sample: pd.DataFrame) -> dict[str, int]:
 
 # ---------------------------------------------------------------- render
 
-def _font(size: int) -> ImageFont.FreeTypeFont:
-    for f in ("/System/Library/Fonts/Helvetica.ttc", "/System/Library/Fonts/SFNS.ttf",
-              "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"):
+
+def _font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+    for f in (
+        "/System/Library/Fonts/Helvetica.ttc",
+        "/System/Library/Fonts/SFNS.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ):
         try:
             return ImageFont.truetype(f, size)
         except OSError:
@@ -174,14 +192,17 @@ def _rings(geom: Any) -> list[list[tuple[float, float]]]:
     return out
 
 
-def _to_px(coords: list[tuple[float, float]], box: tuple[float, float, float, float], size: int) -> list[tuple[float, float]]:
+def _to_px(
+    coords: list[tuple[float, float]], box: tuple[float, float, float, float], size: int
+) -> list[tuple[float, float]]:
     x0, y0, x1, y1 = box
     sx, sy = size / (x1 - x0), size / (y1 - y0)
     return [((x - x0) * sx, (y1 - y) * sy) for x, y, *_ in coords]
 
 
-def _outlined_text(d: ImageDraw.ImageDraw, xy: tuple[float, float], text: str, font: Any,
-                   fill: tuple[int, int, int] = (255, 255, 255)) -> None:
+def _outlined_text(
+    d: ImageDraw.ImageDraw, xy: tuple[float, float], text: str, font: Any, fill: tuple[int, int, int] = (255, 255, 255)
+) -> None:
     d.text(xy, text, font=font, fill=fill, stroke_width=3, stroke_fill=(0, 0, 0))
 
 
@@ -192,14 +213,14 @@ def _outlined_rect(d: ImageDraw.ImageDraw, box: list[float], width: int = 2) -> 
 
 def render_near(chip: Image.Image, geom: Any, box: tuple[float, float, float, float], title: str) -> Image.Image:
     """Aerial chip, lot line, scale bar, north arrow, reference rectangles in the top left corner."""
-    im = chip.convert("RGB").resize((SHEET_PX, SHEET_PX), Image.LANCZOS)
+    im = chip.convert("RGB").resize((SHEET_PX, SHEET_PX), Image.Resampling.LANCZOS)
     d = ImageDraw.Draw(im)
     ft_px = SHEET_PX / (box[2] - box[0])
     for ring in _rings(geom):
         d.line(_to_px(ring, box, SHEET_PX), fill=LOT_COLOR, width=2, joint="curve")
     small, mid = _font(15), _font(18)
     # reference rectangles, long side across, top left
-    x = 14
+    x: float = 14
     for w, h in REF_RECTS:
         rw, rh = h * ft_px, w * ft_px
         _outlined_rect(d, [x, 14, x + rw, 14 + rh])
@@ -219,8 +240,13 @@ def render_near(chip: Image.Image, geom: Any, box: tuple[float, float, float, fl
     return _with_footer(im, title)
 
 
-def render_context(chip: Image.Image, geom: Any, box: tuple[float, float, float, float],
-                   near: tuple[float, float, float, float], title: str) -> Image.Image:
+def render_context(
+    chip: Image.Image,
+    geom: Any,
+    box: tuple[float, float, float, float],
+    near: tuple[float, float, float, float],
+    title: str,
+) -> Image.Image:
     im = chip.convert("RGB")
     size = im.size[0]
     d = ImageDraw.Draw(im)
@@ -269,8 +295,9 @@ def render(city: str, sample: pd.DataFrame, force: bool = False) -> dict[str, in
         with Image.open(npath) as im:
             render_near(im, geoms[lot_id], tuple(meta["near_box"]), title).save(out_n, optimize=True)
         with Image.open(cpath) as im:
-            render_context(im, geoms[lot_id], tuple(meta["context_box"]), tuple(meta["near_box"]),
-                           title).save(out_c, optimize=True)
+            render_context(im, geoms[lot_id], tuple(meta["context_box"]), tuple(meta["near_box"]), title).save(
+                out_c, optimize=True
+            )
         counts["ok"] += 1
     C.log_note(f"[{city}] sheets: {counts}")
     return counts
@@ -278,18 +305,25 @@ def render(city: str, sample: pd.DataFrame, force: bool = False) -> dict[str, in
 
 # ---------------------------------------------------------------- labeling page
 
+
 def page_lots(city: str, sample: pd.DataFrame) -> list[dict[str, Any]]:
     s = sample[sample["city"] == city].sort_values("label_order")
-    return [{"id": r["lot_id"], "n": int(r["label_order"]), "addr": r.get("address") or "",
-             "sheet": f"sheets/{r['lot_id']}.png", "ctx": f"sheets/{r['lot_id']}_context.png"}
-            for _, r in s.iterrows()]
+    return [
+        {
+            "id": r["lot_id"],
+            "n": int(r["label_order"]),
+            "addr": r.get("address") or "",
+            "sheet": f"sheets/{r['lot_id']}.png",
+            "ctx": f"sheets/{r['lot_id']}_context.png",
+        }
+        for _, r in s.iterrows()
+    ]
 
 
 def build_html(city: str, lots: list[dict[str, Any]], version: str = "v1") -> str:
     tpl = (Path(__file__).with_name("label_page.html")).read_text()
     data = json.dumps(lots, separators=(",", ":"))
-    return (tpl.replace("__CITY__", city).replace("__STORE__", f"adu-labels-{city}-{version}")
-            .replace("__LOTS__", data))
+    return tpl.replace("__CITY__", city).replace("__STORE__", f"adu-labels-{city}-{version}").replace("__LOTS__", data)
 
 
 def write_html(city: str, sample: pd.DataFrame) -> Path:
@@ -299,7 +333,7 @@ def write_html(city: str, sample: pd.DataFrame) -> Path:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> None:
+def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("command", choices=["fetch", "render", "html", "all"])
     ap.add_argument("--city", choices=list(C.CITIES), action="append")

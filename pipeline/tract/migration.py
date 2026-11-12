@@ -11,6 +11,7 @@ Used two ways:
 
 Run:  python -m pipeline.tract.migration
 """
+
 from __future__ import annotations
 
 import argparse

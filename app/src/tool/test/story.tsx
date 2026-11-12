@@ -1,15 +1,14 @@
-// Plain-language pieces under the verdict: why a lot has no path under a scenario and what each bill would change,
+// Plain-language pieces for the Results folds: why a lot has no path under a scenario and what each bill would change,
 // the city-wide picture from stats.json, what is on the lot (land cover), and what the chosen spot covers.
 import { SCENARIOS, type LotRecord, type Scenario, type SpotCover } from '../../lib/lot/types';
 import type { UnitVerdict } from '../../lib/lot/verdict';
-import { SCENARIO_TITLE, TYPE_LABEL, sqftText } from '../../lib/lot/words';
-import { Card, KV } from '../Report';
+import { SCENARIO_NAME, SCENARIO_PHRASE, TYPE_LABEL, sqftText } from '../../lib/lot/words';
+import { KV } from '../Report';
 import { typeOptions, type UnitDraft } from '../testState';
-import { Cite } from './cards';
 import { PLACE_TITLE, usePlaceStats } from './placeData';
 
 const isLaw = (s: Scenario) => s === 'today';
-const scenarioName = (s: Scenario) => (isLaw(s) ? SCENARIO_TITLE[s] : `${SCENARIO_TITLE[s]} (a bill, not law)`);
+const scenarioName = (s: Scenario) => (isLaw(s) ? SCENARIO_NAME[s] : `${SCENARIO_NAME[s]} (not law)`);
 const pct = (share: number) => (share > 0 && share < 0.01 ? 'under 1%' : `${share < 0.1 ? (share * 100).toFixed(1).replace(/\.0$/, '') : Math.round(share * 100)}%`);
 const list = (xs: string[]) => (xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`);
 
@@ -29,17 +28,14 @@ export function WhyNot({ lot, v }: { lot: LotRecord; v: UnitVerdict }) {
   const reasons = !rules.allowed && rules.reasons.length ? rules.reasons : [v.limit?.text ?? 'The rules do not allow this kind of unit here.'];
   const others = SCENARIOS.filter((s) => s !== v.scenario);
   return (
-    <section aria-label="Why not, and what would change" className="rounded-2xl bg-white p-4 ring-1 ring-stone-200/80">
-      <h3 className="text-body font-semibold text-slate-900">Why not {isLaw(v.scenario) ? 'today' : `under ${SCENARIO_TITLE[v.scenario].toLowerCase()}`}</h3>
-      <ul className="mt-1.5 list-disc space-y-1 pl-5 text-small text-slate-700">
+    <section aria-label="Why not, and what would change" className="mt-3">
+      <h4 className="text-small font-semibold text-slate-900">Why not {SCENARIO_PHRASE[v.scenario]}</h4>
+      <ul className="mt-1 list-disc space-y-1 pl-5 text-small text-slate-700">
         {reasons.map((r) => (
           <li key={r}>{r.replace(/\.?$/, '.')}</li>
         ))}
       </ul>
-      <div className="mt-1">
-        <Cite c={v.approval.citation} />
-      </div>
-      <h3 className="mt-3 text-body font-semibold text-slate-900">What would change</h3>
+      <h4 className="mt-3 text-small font-semibold text-slate-900">What would change</h4>
       <ul className="mt-1.5 space-y-1 text-small text-slate-700">
         {others.map((s) => (
           <li key={s}>
@@ -64,7 +60,7 @@ function cottageToday(t: { detached_by_right: number; detached_legal?: number })
 export function CityStory({ place }: { place: string | undefined }) {
   const stats = usePlaceStats(place);
   const p = stats?.all.paths;
-  if (!stats || !p?.today) return null;
+  if (!stats || !p?.today) return <p className="text-small text-slate-600">No city numbers on file for this place.</p>;
   const name = PLACE_TITLE[stats.place] ?? stats.place;
   const lines: string[] = [
     `Today ${pct(p.today.allowed)} of these lots have a legal path for any ADU. ${cottageToday(p.today)}`,
@@ -72,12 +68,12 @@ export function CityStory({ place }: { place: string | undefined }) {
   if (p.local_reform) lines.push(`Under the local bill (not law): ${pct(p.local_reform.allowed)} would have a path.`);
   if (p.state_reform) lines.push(`Under the state bill (not law): ${pct(p.state_reform.allowed)} would have a path, and a backyard cottage fits on ${pct(p.state_reform.detached_fits)}.`);
   return (
-    <section aria-label={`${name} at a glance`} className="rounded-xl bg-stone-50 px-3 py-2.5 ring-1 ring-stone-200/70">
+    <div aria-label={`${name} at a glance`}>
       <div className="text-caption font-semibold uppercase tracking-[0.12em] text-slate-500">
         {name}, all {stats.lots.toLocaleString('en-US')} lots
       </div>
       <p className="mt-1 text-small leading-snug text-slate-700">{lines.join(' ')}</p>
-    </section>
+    </div>
   );
 }
 
@@ -99,14 +95,14 @@ export function coverSource(source: string | null | undefined, date: string | nu
 
 const BUILT_AFTER = /built after the land cover/i;
 
-export function CoverCard({ lot }: { lot: LotRecord }) {
+export function CoverBody({ lot }: { lot: LotRecord }) {
   const c = lot.cover;
-  if (!c || !c.building) return null;
+  if (!c || !c.building) return <p className="text-small text-slate-600">No land cover on file for this lot.</p>;
   // The accuracy note for the cover source, without the pipeline's internal wording.
   const notes = lot.quality.assumptions.filter((a) => /land cover|cover is|canopy/i.test(a) && !BUILT_AFTER.test(a) && !/spot_cover/.test(a));
   const builtAfter = lot.quality.assumptions.some((a) => BUILT_AFTER.test(a));
   return (
-    <Card title="What is on this lot" tag="MUSA 6950">
+    <div aria-label="What is on this lot">
       <div className="flex h-3 gap-0.5 overflow-hidden rounded-full" aria-hidden>
         {COVER_ROWS.map(([k, , color]) => (
           <span key={k} style={{ width: `${c[k]?.pct ?? 0}%`, background: color }} />
@@ -134,29 +130,45 @@ export function CoverCard({ lot }: { lot: LotRecord }) {
           {n.charAt(0).toUpperCase() + n.slice(1).replace(/\.?$/, '.')}
         </p>
       ))}
-    </Card>
+    </div>
   );
 }
 
 const num = (sc: SpotCover, k: string) => (typeof sc[k] === 'number' ? (sc[k] as number) : 0);
 
 /**
- * Tree canopy inside the spot and the hard surface the unit adds, from the record's spot_cover. That is the
- * pipeline's own spot: when the user dragged the box it is an estimate for the suggested spot.
+ * What lies inside the largest buildable spot, from the record's spot_cover. The record stores only totals for
+ * that spot, not the cover map, so this cannot say what the chosen footprint would cover. It gives the spot's
+ * size and shares, and says plainly that they are for the spot, not the user's unit.
  */
-export function SpotCoverLine({ lot, v, u }: { lot: LotRecord; v: UnitVerdict; u: UnitDraft }) {
+export function spotCoverText(lot: LotRecord, v: UnitVerdict, u: UnitDraft): { head: string; body: string } | null {
   if (v.type !== 'detached_new') return null;
-  const sc = lot.fit[v.scenario]?.detached_new?.spot_cover;
+  const f = lot.fit[v.scenario]?.detached_new;
+  const sc = f?.spot_cover;
   if (!sc) return null;
   const tree = num(sc, 'tree_sqft');
-  const already = num(sc, 'hard_surface_sqft') + num(sc, 'building_sqft');
-  const total = tree + already + num(sc, 'open_sqft') + num(sc, 'other_sqft');
-  const added = Math.max(0, total - already);
-  const src = typeof sc.source === 'string' ? sc.source : null;
+  const built = num(sc, 'hard_surface_sqft') + num(sc, 'building_sqft');
+  const total = tree + built + num(sc, 'open_sqft') + num(sc, 'other_sqft');
+  if (total <= 0) return null;
+  const spot = typeof f?.largest_sqft === 'number' && f.largest_sqft > 0 ? f.largest_sqft : total;
+  const unit = u.width * u.depth;
+  return {
+    head: `Largest buildable spot the tool found${u.at ? ' (not where you put the unit)' : ''}: `,
+    body:
+      `about ${sqftText(spot)}, ${pct(tree / total)} tree canopy and ${pct(built / total)} already paved or built. ` +
+      `These shares are for that whole spot, not your ${sqftText(unit)} unit; the tool does not have the cover under your footprint.`,
+  };
+}
+
+export function SpotCoverLine({ lot, v, u }: { lot: LotRecord; v: UnitVerdict; u: UnitDraft }) {
+  const t = spotCoverText(lot, v, u);
+  if (!t) return null;
+  const sc = lot.fit[v.scenario]?.detached_new?.spot_cover;
+  const src = typeof sc?.source === 'string' ? sc.source : null;
   return (
     <p className="text-small text-slate-700">
-      <b className="font-semibold">In the best spot the tool found{u.at ? ' (estimate for the suggested spot, not where you put it)' : ''}: </b>
-      {sqftText(tree)} of tree canopy would go. About {sqftText(added)} of new hard surface.
+      <b className="font-semibold">{t.head}</b>
+      {t.body}
       {src && <span className="block text-caption text-slate-500">{coverSource(src, src.startsWith('model:') ? lot.cover?.date : null)}.</span>}
     </p>
   );

@@ -1,10 +1,13 @@
-// Address search with Photon (komoot): free, no key, limited to the Pennsylvania bounding box.
+// Address search with Photon (komoot): free, no key, limited to the Pennsylvania bounding box. Photon gets 6 s; when it
+// fails or is that slow, Enter asks OpenStreetMap's Nominatim once (one request per Enter, never per keystroke, as
+// its usage policy asks).
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Loader2, MapPin, Search as SearchIcon, X } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { PA_BBOX, type LngLat } from './geo';
 import { clearSpot, testSpot } from './actions';
+import { houseFirst, looksLikeAddress, type PhotonFeature } from './searchRank';
 import { useTool } from './store';
 
 interface Hit {
@@ -13,16 +16,30 @@ interface Hit {
   sub: string;
 }
 
-interface PhotonFeature {
-  geometry: { coordinates: LngLat };
-  properties: { state?: string; housenumber?: string; street?: string; name?: string; city?: string; district?: string; county?: string };
+/** Nominatim, for Enter only when Photon is down: one request, Pennsylvania box, house-level details. */
+async function nominatim(text: string, signal: AbortSignal): Promise<Hit[]> {
+  const [w, s, e, n] = PA_BBOX;
+  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=5&countrycodes=us&bounded=1&viewbox=${w},${n},${e},${s}&q=${encodeURIComponent(text)}`;
+  type Row = { lat: string; lon: string; name?: string; address?: { house_number?: string; road?: string; city?: string; town?: string; village?: string; county?: string; state?: string } };
+  const rows = (await fetch(url, { signal }).then((r) => r.json())) as Row[];
+  return rows
+    .filter((r) => r.address?.state === 'Pennsylvania')
+    .map((r) => {
+      const a = r.address ?? {};
+      const main = a.house_number && a.road ? `${a.house_number} ${a.road}` : (r.name || a.road || 'Place');
+      return { coords: [Number(r.lon), Number(r.lat)] as LngLat, main, sub: [a.city ?? a.town ?? a.village, a.county].filter(Boolean).join(', ') };
+    });
 }
 
+const PHOTON_MS = 6000;
+
 async function photon(text: string, signal: AbortSignal): Promise<Hit[]> {
-  const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(text)}&bbox=${PA_BBOX.join(',')}&limit=6&lang=en`;
-  const data = (await fetch(url, { signal }).then((r) => r.json())) as { features: PhotonFeature[] };
-  return data.features
-    .filter((f) => f.properties.state === 'Pennsylvania')
+  const base = `https://photon.komoot.io/api/?q=${encodeURIComponent(text)}&bbox=${PA_BBOX.join(',')}&limit=6&lang=en`;
+  const get = async (url: string) => ((await fetch(url, { signal }).then((r) => r.json())) as { features: PhotonFeature[] }).features.filter((f) => f.properties.state === 'Pennsylvania');
+  // A typed house number also asks Photon's house layer (layer=house), in parallel with the usual search.
+  const [houses, rest] = await Promise.all([looksLikeAddress(text) ? get(`${base}&layer=house`).catch(() => []) : Promise.resolve([]), get(base)]);
+  return houseFirst(text, houses, rest)
+    .slice(0, 6)
     .map((f) => {
       const p = f.properties;
       const main = p.housenumber ? `${p.housenumber} ${p.street ?? ''}`.trim() : (p.name ?? p.street ?? 'Place');
@@ -41,23 +58,32 @@ export default function Search() {
   const spot = useTool((s) => s.spot);
   const set = useTool((s) => s.set);
   const ctl = useRef<AbortController | null>(null);
+  // Photon failed or timed out on the last try: Enter then asks Nominatim.
+  const down = useRef(false);
 
-  const run = async (text: string) => {
+  const run = async (text: string, fallback = false) => {
     ctl.current?.abort();
     const c = new AbortController();
     ctl.current = c;
     setLoading(true);
+    let slow = false;
+    const timer = window.setTimeout(() => ((slow = true), c.abort()), PHOTON_MS);
     try {
-      const r = await photon(text, c.signal);
+      const r = fallback && down.current ? await nominatim(text, c.signal) : await photon(text, c.signal);
+      if (!fallback) down.current = false;
       if (c.signal.aborted) return r;
       setHits(r);
       setActive(0);
       setOpen(true);
       return r;
     } catch (e) {
-      if ((e as Error).name !== 'AbortError') set({ msg: 'Search is not working right now. Click the map instead.' });
+      if (slow || (e as Error).name !== 'AbortError') {
+        down.current = true;
+        set({ msg: fallback ? 'Search is not working right now. Click the map instead.' : 'Search is slow right now. Press Enter to try again, or click the map.' });
+      }
       return [];
     } finally {
+      window.clearTimeout(timer);
       if (ctl.current === c) setLoading(false);
     }
   };
@@ -78,6 +104,7 @@ export default function Search() {
     setQ(h.main);
     setOpen(false);
     setHits([]);
+    set({ msg: null });
     void testSpot(h.coords, h.main);
   };
 
@@ -89,9 +116,9 @@ export default function Search() {
     } else if (e.key === 'Enter') {
       e.preventDefault();
       let list = hits;
-      if (!list.length && q.trim()) list = await run(q.trim());
+      if (!list.length && q.trim()) list = await run(q.trim(), true);
       if (list.length) pick(list[Math.min(active, list.length - 1)]);
-      else set({ msg: 'No match found in Pennsylvania.' });
+      else if (!useTool.getState().msg) set({ msg: 'No match found in Pennsylvania.' });
     } else if (e.key === 'Escape') setOpen(false);
   };
 

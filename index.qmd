@@ -1,31 +1,58 @@
 ---
 title: "Backyard Homes PA"
-subtitle: "Where could Pennsylvania add ADUs, and would they pay off?"
+subtitle: "Can this Pennsylvania lot take a backyard home, and would it pay off?"
 toc: false
 ---
 
-Ye Zhang · MUSA 5500 + MUSA 6950 · Fall 2026
+MUSA 5500 and MUSA 6950 · Fall 2026 final project
 
 ## The project
 
-A state bill, HB 2186, would allow one accessory dwelling unit (ADU) on every home lot in Pennsylvania.
-No one knows how many lots have room for one, or where one would pay off.
-This project answers both, for the whole state.
+An accessory dwelling unit (ADU) is a small second home on a house lot: a backyard cottage, a unit over a garage, or an apartment inside the house.
+Two Pennsylvania bills would open ADUs statewide, HB 2186 and SB 1346. Philadelphia has its own bill, 250042. None of them is law. The state session ends Nov 30, 2026.
 
-- Is it allowed? Town rules today vs HB 2186
-- Does it fit? MUSA 6950. AI on aerial images finds open yard space and trees
-- Does it pay off? MUSA 5500. Population, jobs, rent, and building trends since 2010
-- How many by 2031? Both halves together
+The tool answers three questions for one lot, under today's law and under each reform:
+
+- **Is it allowed?** Rule files with cited sections for Philadelphia, Pittsburgh and 36 more municipalities, and a statewide baseline for the rest.
+- **Does it fit?** A geometry test on the lot, building and street outlines, with the setbacks from the rules. Land cover from aerial images adds trees and open ground as context.
+- **Does it pay off?** Itemised build costs and local rents, and a tract-level test of where a unit covers its loan.
 
 [Open the tool](tool.qmd){.btn .btn-primary}
+[Tract explorer](musa5500/figures/tract_explorer.html){.btn .btn-outline-primary}
+
+Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
 ## Two classes, one tool
 
 | | MUSA 5500 | MUSA 6950 |
 |---|---|---|
-| Question | Is there demand, and does an ADU pay off? | Is there room on the lot? |
-| Methods | APIs, spatial joins, clustering (K-means vs GMM vs Ward), zonal stats, OSMnx, gradient boosting with spatial CV | U-Net, Random Forest, YOLO, a 600 sq ft fit rule |
-| Code | `musa5500/` | `musa6950/` |
-| Docs | [MUSA 5500 pages](musa5500/docs/data.md) | [MUSA 6950 pages](musa6950/docs/data.md) |
+| Question | Where is there demand, and where does an ADU pay off? | What is on the lot, and is there room? |
+| Methods | Census and ACS APIs, margins of error, K-means vs GMM vs Ward, gradient boosting with county-held-out tests, payoff test, scenario arithmetic | U-Net land cover on 4-band NAIP, fair comparison of model variants, error analysis, transfer to two cities, outbuilding detector, vector fit test |
+| Tool mode | ADU projecting and analysis | ADU Testing |
+| Pages | [Proposal](musa5500/docs/proposal.md) · [Data](musa5500/docs/data.md) · [Methods](musa5500/docs/methods.md) · [Results](musa5500/docs/results.md) | [Proposal](musa6950/docs/proposal.md) · [Data](musa6950/docs/data.md) · [Methods](musa6950/docs/methods.md) · [Results](musa6950/docs/results.md) |
 
-Each class has its own code and documentation. The tool reads results from both.
+## Results in short
+
+<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261111-bdeb5697ae), ~/musa-drive/lots/philadelphia/stats.json (data version philadelphia-20261111-b7fa7bda07), ~/musa-drive/models/*/test_scores.json, ~/musa-drive/processed/5500/payoff_summary.json and forecast_summary.json, shared/rules/towns_index.json -->
+
+| Result | Value |
+|---|---|
+| Philadelphia lots with any legal ADU path today | 1.2%<!-- stats.json all.allowed_today --> of 459,998 |
+| Pittsburgh lots with any legal ADU path today | 100% of 92,081 (a detached unit needs an Administrator's Exception) |
+| Pittsburgh lots where a 600 sq ft detached unit fits today | 41.2% |
+| Land cover U-Net, test mIoU on held-out counties | about 0.70 (no run reached 0.72 mIoU or 0.65 building IoU) |
+| Tracts where a 600 sq ft 1-bedroom unit pays off (mid cost) | 10.3% (356 of 3,445) |
+| ADUs by 2031, mid case | about 1,000 today, about 13,500 with HB 2186, about 13,200 with SB 1346 |
+| Lots with room for a 600 sq ft unit, statewide | about 2.9 million (1.5 to 3.6 million). Measured in Philadelphia and Pittsburgh, modelled elsewhere |
+| Of the 36 next-largest municipalities, no ADU text in the code | 17 |
+
+The binding limit differs by city. In Philadelphia it is the law. In Pittsburgh every lot has a legal path, and the limit is yard space.
+
+## What is not measured yet
+
+- The fit answers have not been checked against hand labels. The 250-lot sample is drawn and none are labeled.
+- The outbuilding detector is scored only against unchecked first-pass labels.
+
+## Code and docs
+
+The code, the pipeline docs and the model cards are in the [repository](https://github.com/yezhanggg/YZ-MUSA-FINAL). Each class has its own folder: `musa5500/` and `musa6950/`.

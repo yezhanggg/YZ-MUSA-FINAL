@@ -8,6 +8,7 @@ quick look, and contact sheets of 12 drawn chips.
 Run with the geospatial env:
     python review_pack.py
 """
+
 from __future__ import annotations
 
 import argparse
@@ -16,11 +17,10 @@ import random
 import shutil
 from pathlib import Path
 
-import pandas as pd
-from PIL import Image, ImageDraw
-
 import config
+import pandas as pd
 from labels import labelme_shape, parse_yolo_line
+from PIL import Image, ImageDraw
 
 COLORS = {"garage": (255, 64, 64), "shed": (255, 220, 0), "other_accessory": (0, 200, 255), "pool": (255, 0, 255)}
 SHEET_COLS, SHEET_ROWS, THUMB = 4, 3, 480
@@ -39,8 +39,10 @@ def read_boxes(label_file: Path) -> list[tuple[str, object]]:
 
 def pick_chips(city: str, n: int, seed: int) -> pd.DataFrame:
     chips = pd.read_csv(config.manifest_path(city))
-    chips["n_boxes"] = [len(read_boxes(config.DATASET / "labels" / s / f"{c}.txt"))
-                        for c, s in zip(chips["chip_id"], chips["split"])]
+    chips["n_boxes"] = [
+        len(read_boxes(config.DATASET / "labels" / s / f"{c}.txt"))
+        for c, s in zip(chips["chip_id"], chips["split"], strict=True)
+    ]
     test = chips[chips["split"] == "test"]
     rest = chips[(chips["split"] != "test") & (chips["n_boxes"] > 0)]
     k = max(n - len(test), 0)
@@ -58,9 +60,15 @@ def draw(img: Image.Image, boxes: list) -> Image.Image:
 
 
 def labelme_json(image_name: str, boxes: list) -> dict:
-    return {"version": "5.4.1", "flags": {"checked": False}, "shapes": [labelme_shape(n, b) for n, b in boxes],
-            "imagePath": image_name, "imageData": None,
-            "imageHeight": config.CHIP_PX, "imageWidth": config.CHIP_PX}
+    return {
+        "version": "5.4.1",
+        "flags": {"checked": False},
+        "shapes": [labelme_shape(n, b) for n, b in boxes],
+        "imagePath": image_name,
+        "imageData": None,
+        "imageHeight": config.CHIP_PX,
+        "imageWidth": config.CHIP_PX,
+    }
 
 
 def contact_sheets(drawn: list[tuple[str, Image.Image]], out_dir: Path, prefix: str) -> int:
@@ -69,7 +77,7 @@ def contact_sheets(drawn: list[tuple[str, Image.Image]], out_dir: Path, prefix: 
     for start in range(0, len(drawn), per):
         sheet = Image.new("RGB", (SHEET_COLS * THUMB, SHEET_ROWS * (THUMB + 18)), "white")
         d = ImageDraw.Draw(sheet)
-        for k, (name, im) in enumerate(drawn[start:start + per]):
+        for k, (name, im) in enumerate(drawn[start : start + per]):
             x, y = (k % SHEET_COLS) * THUMB, (k // SHEET_COLS) * (THUMB + 18)
             sheet.paste(im.resize((THUMB, THUMB)), (x, y + 18))
             d.text((x + 4, y + 3), name, fill="black")

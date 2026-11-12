@@ -5,7 +5,7 @@ import { Card } from './Report';
 import { FORECAST_LABEL } from './metrics';
 import { useTool } from './store';
 
-export default function CountyTable() {
+export default function CountyTable({ bare }: { bare?: boolean }) {
   const counties = useTool((s) => s.counties);
   const forecast = useTool((s) => s.forecast);
   if (!counties) return <p className="rounded-xl bg-stone-50 px-3 py-2.5 text-small text-slate-600 ring-1 ring-stone-200">The county table is not built yet.</p>;
@@ -15,8 +15,10 @@ export default function CountyTable() {
     .map((p) => ({ p, mid: n(p[`adus_mid_${forecast}`]), low: n(p[`adus_low_${forecast}`]), high: n(p[`adus_high_${forecast}`]) }))
     .sort((a, b) => (b.mid ?? -1) - (a.mid ?? -1));
   return (
-    <Card title="Counties" tag="MUSA 5500">
-      <p className="-mt-1 mb-2 text-caption text-slate-500">Tracts where a 600 sq ft 1-bedroom unit pays off at the mid cost, and ADUs by 2031 under {FORECAST_LABEL[forecast]} (mid, low to high).</p>
+    <Card title="Counties" tag="MUSA 5500" bare={bare}>
+      <p className="-mt-1 mb-2 text-caption text-slate-500" title="Tracts where a 600 sq ft 1-bedroom unit pays off at the mid cost, and ADUs by 2031 (mid, low to high).">
+        600 sq ft 1 BR, mid cost. {FORECAST_LABEL[forecast]}, mid (low to high).
+      </p>
       <div className="max-h-[420px] overflow-y-auto rounded-lg ring-1 ring-stone-200/80">
         <table className="w-full text-left text-small">
           <thead className="sticky top-0 bg-stone-50 text-caption text-slate-500">
@@ -41,7 +43,9 @@ export default function CountyTable() {
           </tbody>
         </table>
       </div>
-      <p className="mt-2 text-caption leading-snug text-slate-500">Scenario arithmetic, not a fitted forecast. Both bills die on Nov 30, 2026 if not enacted.</p>
+      <p className="mt-2 text-caption leading-snug text-slate-500" title="Both bills die on Nov 30, 2026 if not enacted.">
+        Arithmetic, not a forecast. Bills are not law.
+      </p>
     </Card>
   );
 }

@@ -100,10 +100,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand)</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MUSA 5500 (demand and payoff)</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
@@ -119,6 +119,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../musa5500/docs/results.html">
  <span class="dropdown-text">Results</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
+ <span class="dropdown-text">Tract explorer</span></a>
   </li>  
     </ul>
   </li>
@@ -170,11 +174,17 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#put-everything-on-2020-tracts" id="toc-put-everything-on-2020-tracts" class="nav-link active" data-scroll-target="#put-everything-on-2020-tracts">1. Put everything on 2020 tracts</a></li>
   <li><a href="#growth-before-and-after-2019" id="toc-growth-before-and-after-2019" class="nav-link" data-scroll-target="#growth-before-and-after-2019">2. Growth before and after 2019</a></li>
-  <li><a href="#group-places-by-trend-k-means" id="toc-group-places-by-trend-k-means" class="nav-link" data-scroll-target="#group-places-by-trend-k-means">3. Group places by trend (K-means)</a></li>
+  <li><a href="#trend-groups" id="toc-trend-groups" class="nav-link" data-scroll-target="#trend-groups">3. Trend groups</a></li>
   <li><a href="#land-and-job-access" id="toc-land-and-job-access" class="nav-link" data-scroll-target="#land-and-job-access">4. Land and job access</a></li>
-  <li><a href="#does-an-adu-pay-off" id="toc-does-an-adu-pay-off" class="nav-link" data-scroll-target="#does-an-adu-pay-off">5. Does an ADU pay off?</a></li>
-  <li><a href="#how-many-adus-by-2031" id="toc-how-many-adus-by-2031" class="nav-link" data-scroll-target="#how-many-adus-by-2031">6. How many ADUs by 2031?</a></li>
-  <li><a href="#test-other-adu-sizes-in-the-tool" id="toc-test-other-adu-sizes-in-the-tool" class="nav-link" data-scroll-target="#test-other-adu-sizes-in-the-tool">7. Test other ADU sizes (in the tool)</a></li>
+  <li><a href="#does-a-backyard-unit-pay-off" id="toc-does-a-backyard-unit-pay-off" class="nav-link" data-scroll-target="#does-a-backyard-unit-pay-off">5. Does a backyard unit pay off?</a></li>
+  <li><a href="#where-did-housing-grow-model-and-validation" id="toc-where-did-housing-grow-model-and-validation" class="nav-link" data-scroll-target="#where-did-housing-grow-model-and-validation">6. Where did housing grow? Model and validation</a></li>
+  <li><a href="#irs-migration" id="toc-irs-migration" class="nav-link" data-scroll-target="#irs-migration">7. IRS migration</a></li>
+  <li><a href="#adus-by-2031" id="toc-adus-by-2031" class="nav-link" data-scroll-target="#adus-by-2031">8. ADUs by 2031</a></li>
+  <li><a href="#county-roll-up-and-linked-view" id="toc-county-roll-up-and-linked-view" class="nav-link" data-scroll-target="#county-roll-up-and-linked-view">9. County roll-up and linked view</a></li>
+  <li><a href="#link-to-the-lot-tool-and-the-town-rules" id="toc-link-to-the-lot-tool-and-the-town-rules" class="nav-link" data-scroll-target="#link-to-the-lot-tool-and-the-town-rules">10. Link to the lot tool and the town rules</a></li>
+  <li><a href="#lot-results-rolled-up" id="toc-lot-results-rolled-up" class="nav-link" data-scroll-target="#lot-results-rolled-up">11. Lot results rolled up</a></li>
+  <li><a href="#room-for-a-unit-in-every-tract-measured-and-modelled" id="toc-room-for-a-unit-in-every-tract-measured-and-modelled" class="nav-link" data-scroll-target="#room-for-a-unit-in-every-tract-measured-and-modelled">12. Room for a unit in every tract (measured and modelled)</a></li>
+  <li><a href="#town-legal-classes-for-the-forecast" id="toc-town-legal-classes-for-the-forecast" class="nav-link" data-scroll-target="#town-legal-classes-for-the-forecast">13. Town legal classes for the forecast</a></li>
   <li><a href="#course-requirements-met" id="toc-course-requirements-met" class="nav-link" data-scroll-target="#course-requirements-met">Course requirements met</a></li>
   </ul>
 </nav>
@@ -201,125 +211,304 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Six steps. Each step is one notebook in <code>musa5500/notebooks/</code>. Each notebook saves one table that the tool reads.</p>
+<p>The logic lives in Python modules in <code>pipeline/tract/</code>. The notebooks in <code>musa5500/notebooks/</code> load the data, call the modules and show the result. Every assumption (costs, rates, permit rates, weights, CPI) is read from <code>shared/assumptions.json</code>. The tract keys start with <code>tract.</code>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Module</th>
+<th>Notebook</th>
+<th>Run alone</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Margins of error</td>
+<td><code>acs_moe.py</code></td>
+<td>01</td>
+<td><code>python -m pipeline.tract.acs_moe</code></td>
+</tr>
+<tr class="even">
+<td>Growth before and after 2019</td>
+<td><code>growth.py</code></td>
+<td>01</td>
+<td><code>python -m pipeline.tract.growth</code></td>
+</tr>
+<tr class="odd">
+<td>Trend groups</td>
+<td><code>groups.py</code></td>
+<td>02</td>
+<td><code>python -m pipeline.tract.groups</code></td>
+</tr>
+<tr class="even">
+<td>Land and job access</td>
+<td>(in the notebook)</td>
+<td>03</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Payoff test</td>
+<td><code>payoff.py</code></td>
+<td>04</td>
+<td><code>python -m pipeline.tract.payoff</code></td>
+</tr>
+<tr class="even">
+<td>Lot results to tract, city and county</td>
+<td><code>lot_rollup.py</code></td>
+<td>04</td>
+<td><code>python -m pipeline.tract.lot_rollup</code></td>
+</tr>
+<tr class="odd">
+<td>Room for a unit in every tract</td>
+<td><code>room.py</code></td>
+<td>04</td>
+<td><code>python -m pipeline.tract.room</code></td>
+</tr>
+<tr class="even">
+<td>Town legal classes from the rule files</td>
+<td><code>legal.py</code></td>
+<td>04</td>
+<td><code>python -m pipeline.tract.legal</code></td>
+</tr>
+<tr class="odd">
+<td>Housing growth model, ADUs by 2031</td>
+<td><code>forecast.py</code>, <code>migration.py</code></td>
+<td>04</td>
+<td><code>python -m pipeline.tract.forecast</code></td>
+</tr>
+<tr class="even">
+<td>County roll-up</td>
+<td><code>rollup.py</code></td>
+<td>04</td>
+<td><code>python -m pipeline.tract.rollup</code></td>
+</tr>
+<tr class="odd">
+<td>Linked view</td>
+<td><code>viz.py</code></td>
+<td>04</td>
+<td><code>python -m pipeline.tract.viz</code></td>
+</tr>
+</tbody>
+</table>
+<p>Run them in that order. Tests: <code>python -m pytest tests -q -k tract</code>.</p>
 <section id="put-everything-on-2020-tracts" class="level2">
 <h2 class="anchored" data-anchor-id="put-everything-on-2020-tracts">1. Put everything on 2020 tracts</h2>
-<p>Notebook <code>01_trends.ipynb</code></p>
 <ul>
-<li>Counts (people, housing units): move 2010-tract numbers to 2020 tracts by land-area share, using the block crosswalk</li>
-<li>Medians (rent, value, income): cannot add them up. Use the value from the 2010 tract with the biggest overlap</li>
-<li>Towns: tracts are split into towns with the LODES block crosswalk (block to tract and town), weighted by workers who live in each block (LODES 2024). This replaced the planned center-point join, because many small boroughs are smaller than a tract and would get no tract at all</li>
-<li>Inflation: rent and value in 2024 dollars</li>
+<li>Counts (people, housing units): move 2010-tract numbers to 2020 tracts by land-area share, using the Census block crosswalk</li>
+<li>Medians (rent, value, income): cannot be added. Use the value from the 2010 tract with the biggest overlap</li>
+<li>Margins of error move the same way. Counts: sqrt(sum((weight x margin)^2)). Medians: the margin of the biggest-overlap tract</li>
+<li>Towns: tracts are split into towns with the LODES block crosswalk, weighted by workers who live in each block (LODES 2024)</li>
+<li>Inflation: ACS dollars are in the last year of each window. CPI-U yearly averages (2014 = 236.736, 2019 = 255.657, 2024 = 313.689) move them to 2024 dollars. Notebook 01 shows nominal and real values side by side</li>
 </ul>
 </section>
 <section id="growth-before-and-after-2019" class="level2">
 <h2 class="anchored" data-anchor-id="growth-before-and-after-2019">2. Growth before and after 2019</h2>
-<p>Notebook <code>01_trends.ipynb</code></p>
+<p>ACS 5-year estimates describe a window, not a year. The three windows are 2010-14, 2015-19 and 2020-24. Their midpoints are 2012, 2017 and 2022.</p>
 <ul>
-<li>Before = 2010-14 to 2015-19 (ACS) or 2010 to 2019 (jobs)</li>
-<li>After = 2015-19 to 2020-24 (ACS) or 2019 to 2024 (jobs)</li>
-<li>Yearly growth rate = (end / start)^(1 / years) - 1</li>
-<li>Change in trend = growth after - growth before
+<li>Before = 2010-14 to 2015-19 (about 2012 to 2017)</li>
+<li>After = 2015-19 to 2020-24 (about 2017 to 2022). This step starts two years before 2019, so read it as “the latest five years”, not “since 2019”</li>
+<li>Jobs (LODES) are yearly counts. Before = 2010 to 2019. After = 2019 to 2024</li>
+<li>Yearly rate = (end / start)^(1 / years) - 1. ACS steps are 5 years between midpoints</li>
+<li>Change in trend = growth after - growth before. Positive = sped up</li>
+<li>A rate is blank if the start is under 200 people, 100 homes or 50 jobs (<code>tract.growth.min_start</code>)</li>
+</ul>
+<p>Margins of error:</p>
 <ul>
-<li>Positive = sped up</li>
-<li>Negative = slowed down</li>
-</ul></li>
-<li>Measures: population, housing units, jobs, rent</li>
-<li>A rate is blank if the start is under 200 people, 100 homes, or 50 jobs (tiny bases give wild rates)</li>
-<li><code>growth_before</code>, <code>growth_after</code>, <code>trend_change</code> use population. Each measure also has its own columns (<code>jobs_growth_before</code>, etc.)</li>
-<li>Output: <code>data/processed/trends_tract.csv</code>. Notebook 01 also saves <code>tract_panel.csv</code> (all years on 2020 tracts) for notebook 04</li>
+<li>The first download kept estimates only. The Census API now refuses calls without a key, so margins come from the public summary files (2010-14 and 2015-19 sequence files, 2020-24 table files). Their estimates match the API values exactly</li>
+<li>ACS margins are at 90%. The margin of a difference between two windows is sqrt(m1^2 + m2^2)</li>
+<li>Each tract gets flags in <code>trends_tract.csv</code>: <code>*_before_within_moe</code>, <code>*_after_within_moe</code>, <code>*_change_within_moe</code>. True means the change is smaller than its margin, so the data cannot tell it from no change</li>
+<li>The “change” flag tests the change in the 5-year change (2020-24 minus twice 2015-19 plus 2010-14)</li>
 </ul>
 </section>
-<section id="group-places-by-trend-k-means" class="level2">
-<h2 class="anchored" data-anchor-id="group-places-by-trend-k-means">3. Group places by trend (K-means)</h2>
-<p>Notebook <code>02_groups.ipynb</code></p>
+<section id="trend-groups" class="level2">
+<h2 class="anchored" data-anchor-id="trend-groups">3. Trend groups</h2>
 <ul>
-<li>Features: growth before + growth after for jobs, population, and rent</li>
+<li>Features: growth before and after for jobs, population and real rent</li>
 <li>Clip each feature to its 1st and 99th percentile, so a few tiny tracts do not get their own group</li>
-<li>Scale with StandardScaler, then KMeans (<code>n_init=10</code>, <code>random_state=42</code>)</li>
-<li>Pick k with the elbow method (try 3 to 8), plus silhouette scores. Chose k = 5</li>
-<li>Group names are given by profile (highest population growth after 2019, highest job growth after, and so on), so they do not depend on cluster numbers</li>
-<li>Name each group in plain words (e.g.&nbsp;“Growing faster”, “Steady”, “Shrinking”)</li>
-<li>Output: adds <code>trend_group</code> to <code>trends_tract.csv</code></li>
+<li>Scaling check: raw jobs rates have a standard deviation of 4.8 points a year, population before 2019 only 1.7. The two jobs rates hold 53% of the raw variance. So StandardScaler is used. Without it jobs would decide the groups</li>
+<li>k from 2 to 10: inertia (elbow), silhouette, Davies-Bouldin, Calinski-Harabasz and the gap statistic (10 uniform reference sets)</li>
+<li>Stability: adjusted Rand index (ARI) between K-means runs with 20 seeds, and between the full fit and 20 fits on 80% subsamples</li>
+<li>At the chosen k, K-means is compared with a Gaussian mixture (full covariance) and Ward clustering</li>
+<li>Rule for k, stated before looking at the groups: keep k where the subsample ARI is at least 0.8 and no group holds under 2% of tracts. Among those, take the best silhouette</li>
+<li>Names come from the group medians. The head word is Growing, Steady or Shrinking, from the mean of the jobs and population rates after 2019 (above +0.5% a year, below -0.5%, or in between). Then the measure that stands out most (largest median z-score, at least 0.5), for example “jobs jumped after 2019”</li>
+<li>The structure is weak at every k (see results). The groups are a description of the data, not natural clusters</li>
+<li>Output: <code>trend_group</code> in <code>trends_tract.csv</code></li>
 </ul>
 </section>
 <section id="land-and-job-access" class="level2">
 <h2 class="anchored" data-anchor-id="land-and-job-access">4. Land and job access</h2>
-<p>Notebook <code>03_land_access.ipynb</code></p>
+<p>Notebook <code>03_land_access.ipynb</code> (unchanged)</p>
 <ul>
-<li>Developed land: share of each tract in NLCD classes 21-24, for 2010, 2019, 2025
-<ul>
-<li><code>rasterstats.zonal_stats(tracts, tif, categorical=True)</code></li>
-</ul></li>
-<li>Job access: jobs reachable within 30 minutes by car, from each tract center
-<ul>
-<li>OSMnx drive network per metro area, not the whole state (too big)</li>
-<li>Scope cut to two areas that hold a MUSA 6950 pilot county: Philadelphia city and Harrisburg (Cumberland + Dauphin). The other metros were left out to keep run time and Overpass load bounded</li>
-<li>On the Nov 10 2026 run the public Overpass server was full for hours. Philadelphia downloaded. Harrisburg did not and is skipped until the notebook is rerun</li>
-<li>Only the largest strongly connected part of each network is used</li>
-<li>Network = metro counties plus a 15 km buffer, clipped to Pennsylvania. Jobs past the buffer or in New Jersey and Delaware are missed</li>
-<li>Speeds are posted or default speeds. No traffic</li>
-<li>Add speeds and travel times, then Dijkstra from each tract’s nearest node, cutoff 1800 s</li>
-<li>Sum LODES 2024 block jobs (WAC) at reachable nodes. Block lat/lon from <code>pa_xwalk.csv.gz</code></li>
-<li>Use networkx, not pandana (pandana is AGPL)</li>
-</ul></li>
-<li>Output: <code>data/processed/access_tract.csv</code> (dev_2010, dev_2019, dev_2025, high-intensity shares, jobs_30min, metro)</li>
-<li>Developed share = developed pixels / land pixels (open water left out)</li>
+<li>Developed land: share of each tract in NLCD classes 21-24, for 2010, 2019, 2025, with <code>rasterstats.zonal_stats(..., categorical=True)</code></li>
+<li>Jobs within 30 minutes by car from each tract center, OSMnx drive network, Dijkstra with a 1800 s cutoff, LODES 2024 block jobs. Philadelphia only. Harrisburg could not be downloaded on the run day</li>
+<li>Output: <code>data/processed/access_tract.csv</code></li>
 </ul>
 </section>
-<section id="does-an-adu-pay-off" class="level2">
-<h2 class="anchored" data-anchor-id="does-an-adu-pay-off">5. Does an ADU pay off?</h2>
-<p>Notebook <code>04_payoff_forecast.ipynb</code></p>
+<section id="does-a-backyard-unit-pay-off" class="level2">
+<h2 class="anchored" data-anchor-id="does-a-backyard-unit-pay-off">5. Does a backyard unit pay off?</h2>
 <ul>
-<li>Unit: 600 sq ft detached ADU</li>
-<li>Cost to build: $175 / $250 / $300 per sq ft (low / mid / high), plus 15% soft costs</li>
-<li>Loan: 30 years at the latest Freddie Mac rate</li>
-<li>Rent: ACS 2020-24 median gross rent for the tract (2024 dollars) x 1.0. 0.9x and 1.1x are tested</li>
-<li>Net rent = rent x (1 - 30%) for vacancy, repairs, tax, insurance</li>
-<li>cost_month = payment on the mid cost ($250 / sq ft), all borrowed</li>
-<li>pays = yes if net rent &gt;= cost_month. maybe if net rent covers the payment at the low cost ($175 / sq ft) or is within 10% of cost_month. no if below that</li>
-<li>Output: <code>data/processed/payoff_tract.csv</code></li>
+<li>Unit: 600 sq ft, one bedroom (<code>tract.payoff.size_sqft</code>)</li>
+<li>Cost: $175 / $250 / $300 per sq ft (low / mid / high) plus 15% soft costs, all borrowed over 30 years</li>
+<li>Rate: 6.53%, the 2026 average of weekly Freddie Mac rates (<code>financing.pmms30_2026_avg</code>). The sensitivity table adds 7.18%, the latest week (<code>financing.pmms30</code>)</li>
+<li>Monthly payment: <code>pipeline.money.loan_payment</code>, the same formula the lot-level money model uses</li>
+<li>Net rent = rent x (1 - 30%) for vacancy, repairs, tax and insurance</li>
+<li>yes = net rent covers the payment at the mid cost. maybe = it covers the payment at the low cost, or is within 10% of the mid payment. no = anything else</li>
+</ul>
+<p>Rent basis. A 600 sq ft unit is a one-bedroom, so the test uses a one-bedroom rent:</p>
+<ul>
+<li>Headline: <code>rent_b1</code> = tract median gross rent (ACS 2020-24, B25064) x the county ratio of 1-bedroom to all-unit median rent (B25031). Where a tract has no median rent, the county 1-bedroom median. The tool uses the same column, so the report and the tool give one number</li>
+<li>Cross-check 1: the raw tract 1-bedroom median (B25031). It is blank in about a third of tracts and noisy where it exists</li>
+<li>Cross-check 2: HUD Small Area Fair Market Rent, FY2026, 1 bedroom, by ZIP. Each tract takes the mean over its ZIPs, weighted by workers who live in each block. A ZIP in two metro areas takes the lower rent. SAFMRs are the 40th percentile of recent movers, so they run higher than ACS medians, which include long-time tenants</li>
+<li>Cross-check 3: the all-unit tract median (B25064), the basis of the first draft</li>
+<li>ACS gross rent is top-coded at $3,501, so the richest tracts tie</li>
+<li>Outputs: <code>payoff_tract.csv</code> (the tool reads <code>rent_est</code>, <code>cost_month</code>, <code>pays</code>), and in <code>processed/5500/</code>: <code>payoff_summary.json</code>, <code>payoff_sensitivity.csv</code>, <code>payoff_bases.csv</code>, <code>payoff_county.csv</code></li>
 </ul>
 </section>
-<section id="how-many-adus-by-2031" class="level2">
-<h2 class="anchored" data-anchor-id="how-many-adus-by-2031">6. How many ADUs by 2031?</h2>
-<p>Notebook <code>04_payoff_forecast.ipynb</code></p>
+<section id="where-did-housing-grow-model-and-validation" class="level2">
+<h2 class="anchored" data-anchor-id="where-did-housing-grow-model-and-validation">6. Where did housing grow? Model and validation</h2>
 <ul>
-<li>Random forest: predict housing growth by tract, 2010 to 2020
-<ul>
-<li>Target: 2020 housing units / 2010 housing units (decennial)</li>
-<li>Target is log(units 2020 / units 2010). Tracts with under 100 homes in 2010 are left out</li>
-<li>Model A: 2010 data only (decennial homes, LODES 2010 jobs and workers, NLCD 2010, land area, location)</li>
-<li>Model B: adds ACS 2010-14. Our data has no ACS 2006-10, so this is a small leak. Model B is used only if it beats A by more than 0.02 R2 in spatial CV</li>
-<li>Check with random 5-fold CV and spatial CV (whole counties held out). Report R2 and feature importance</li>
-<li>The fitted model is then fed 2020 values to rank tracts by expected growth</li>
-</ul></li>
-<li>ADUs by 2031 = people x Pew rate x payoff x lots x demand x rule x 5 years
-<ul>
-<li>Pew rate: 26 (low), 53.5 (mid), 81 (high) ADU permits per 100,000 people per year, from cities that allow ADUs</li>
-<li>Payoff: yes 1.0, maybe 0.5, no 0.2 (some people build for family, not rent)</li>
-<li>Lots: share of homes on a lot with room / state average, capped at 2. From <code>lots_tract.csv</code> (6950) when it exists, else single-family detached share (ACS 2020-24). The notebook switches by itself</li>
-<li>Demand: 0.5 to 1.5 from the random forest ranking</li>
-<li>Capped at lots with room (fallback: single-family detached homes)</li>
-</ul></li>
-<li>Sanity check: for all of PA the Pew range is about 3,400 to 10,500 a year</li>
-<li>Two rules: today (town list in <code>shared/legal_status.csv</code>) and HB 2186 (allowed everywhere)
-<ul>
-<li>Today: allowed 1.0, limited 0.02 / 0.05 / 0.10 (low / mid / high), not allowed 0</li>
-<li>Towns not in the list are treated as limited. This is an assumption. Many PA towns allow some kind of in-law unit, but the rules are not coded yet</li>
-</ul></li>
-<li>Output: <code>data/processed/forecast_town.csv</code></li>
+<li>Target: log(decennial homes 2020 / decennial homes 2010) per 2020 tract, crosswalked. Tracts with under 100 homes in 2010 are left out (3,394 tracts remain)</li>
+<li>Features, all from 2010: decennial homes, homes per km2, LODES jobs and workers living in the tract, jobs per home, NLCD developed and high-intensity shares, land area, tract center (x, y)</li>
+<li>Extra feature tested: county net migration from IRS files (see 7)</li>
+<li>Models: the training-fold median (baseline), ridge regression, random forest (400 trees, 5 per leaf), and histogram gradient boosting with absolute-error loss. A few crosswalk artifacts have log changes past -2, and squared-error boosting chased them</li>
+<li>Spatial cross-validation, 5 folds: whole counties held out, and 40 km grid blocks held out. Random 5-fold CV is shown only to show how much it flatters. A test checks that no county or block is on both sides of a split</li>
+<li>Rule: the model with the lowest county-held-out MAE is used. R2 is shown too, but the few artifacts dominate it</li>
+<li>Temporal backtest: train on the change from 2010-14 to 2015-19 (ACS homes, features at 2010-14), predict the change from 2015-19 to 2020-24 (features at 2015-19), and score against the 2020-24 ACS. Baselines: each tract keeps its own earlier change (last-period rate), and the earlier median. A second score uses only tracts whose change is bigger than its margin of error</li>
+<li>No pre-2010 decennial homes are in the data, so the last-period baseline exists only in the backtest</li>
+<li>Prediction intervals: split conformal at 90%. The half-width is a high quantile of the absolute county-held-out errors. Coverage is checked fold by fold, with the half-width taken from the other folds only. Quantile gradient boosting (5th and 95th percentiles) is shown for comparison</li>
+<li>Feature importance: permutation importance (drop in R2) on held-out counties, averaged over folds. Partial dependence for the top 4 features</li>
+<li>The fitted model is fed 2020 values (decennial 2020 homes, LODES 2019, NLCD 2019) to predict 2020-30 growth, with the conformal interval</li>
 </ul>
 </section>
-<section id="test-other-adu-sizes-in-the-tool" class="level2">
-<h2 class="anchored" data-anchor-id="test-other-adu-sizes-in-the-tool">7. Test other ADU sizes (in the tool)</h2>
+<section id="irs-migration" class="level2">
+<h2 class="anchored" data-anchor-id="irs-migration">7. IRS migration</h2>
 <ul>
-<li>The report uses one base case: 600 sq ft, tract median rent</li>
-<li>In the tool, users pick studio, 1, 2, or 3 BR, a size (250 to 1,500 sq ft), and 1 or 2 stories</li>
-<li>Rent = ACS rent for that bedroom count (see data notes). Cost = size x $/sq ft x 1.15, same loan as step 5</li>
-<li>Same yes / maybe / no rule as step 5, computed live in the browser</li>
-<li>Room on the lot uses the largest footprint that fits each lot (MUSA 6950). Footprint = size / stories</li>
-<li>The town forecast stays at the base case</li>
+<li>County inflow and outflow files from IRS Statistics of Income, 2010-11 to 2022-23. People = exemptions on returns that moved</li>
+<li>Net movers per 1,000 residents per year, by county, for 2012-19 and 2020-23 (labels are the second filing year)</li>
+<li>Used two ways. As a county feature in the model (flows just after the base year), kept only if it adds more than 0.02 to the held-out R2. It did not, so the model leaves it out. And as a context map of net migration before and after 2019</li>
+</ul>
+</section>
+<section id="adus-by-2031" class="level2">
+<h2 class="anchored" data-anchor-id="adus-by-2031">8. ADUs by 2031</h2>
+<ul>
+<li>ADUs = people x permit rate x payoff weight x lots index x demand x town rule x 5 years, capped at lots with room
+<ul>
+<li>Permit rate: 26 / 53.5 / 81 ADU permits per 100,000 people per year (low / mid / high), from cities that allow ADUs by right. The range comes from the proposal, credited to Pew. The exact page still needs to be recorded</li>
+<li>Payoff weight: yes 1.0, maybe 0.5, no 0.2 (some people build for family, not rent)</li>
+<li>Lots index: lots with room for a 600 sq ft unit per home, over the state ratio, capped at 2. From <code>room_tract.csv</code> (step 12): measured lot by lot in Philadelphia and Pittsburgh, modelled in every other tract. The same count caps the ADUs in each tract. The earlier pilot estimate (<code>lots_tract.csv</code>) is kept beside it for comparison</li>
+<li>Demand: 0.5 to 1.5 from the rank of predicted 2020-30 growth</li>
+</ul></li>
+<li>Scenarios, tied to the town rule files through <code>town_legal_class.csv</code> (step 13):
+<ul>
+<li>Today: each town’s legal class sets its factor (<code>tract.forecast.legal_class_factor</code>): by right 1.0, discretionary, family-only, conversion-only and unknown 0.02 / 0.05 / 0.10, none 0 / 0.005 / 0.01</li>
+<li>HB 2186: every town by right, Philadelphia and Pittsburgh included</li>
+<li>SB 1346: every town by right except Philadelphia and Pittsburgh, which the Municipalities Planning Code does not reach. They keep today’s class</li>
+<li>Both bills die on Nov 30, 2026 if not enacted</li>
+</ul></li>
+<li>This is scenario arithmetic, not a fitted ADU model. Pennsylvania has no ADU permit series to fit or test it on. The Census permit survey does not split out ADUs, and Philadelphia has about 10 legal ADUs since 2012. The model in step 6 only ranks where housing grows. The low to high range shows the assumptions, not statistical error</li>
+<li>Outputs: <code>forecast_town.csv</code> (three rows per town: current, hb2186, sb1346. <code>rule_today</code> keeps the old words allowed, limited, not_allowed. <code>legal_class</code> and <code>review</code> are added at the end), <code>forecast_tract_inputs.csv</code>, and in <code>processed/5500/</code>: <code>forecast_*.csv</code>, <code>forecast_summary.json</code>, and <code>forecast_old_vs_new.csv</code>, which reruns the arithmetic with each mix of old and new inputs so every change can be traced</li>
+</ul>
+</section>
+<section id="county-roll-up-and-linked-view" class="level2">
+<h2 class="anchored" data-anchor-id="county-roll-up-and-linked-view">9. County roll-up and linked view</h2>
+<ul>
+<li><code>county_rollup.csv</code>: one row per county. Tract counts, people, payoff classes, ADUs by scenario and level, lots with room and net migration. Counts are sums of tracts, so they add up to the state totals. The old pilot columns (<code>lots_total</code>, <code>lots_fit</code>) stay. The new room estimate is added at the end (<code>lots_est</code>, <code>lots_room_low</code>, <code>lots_room_mid</code>, <code>lots_room_high</code>, <code>tracts_room_measured</code>, <code>tracts_outside_training_range</code>)</li>
+<li><code>musa5500/figures/tract_explorer.html</code>: an Altair view with cross-filtering. Click counties on the map, brush tracts on the rent vs predicted growth scatter. The trend group bars, the margin histogram and a table of the best 12 tracts follow the selection. The Vega-Lite spec is saved next to it (<code>tract_explorer.vl.json</code>) for embedding</li>
+</ul>
+</section>
+<section id="link-to-the-lot-tool-and-the-town-rules" class="level2">
+<h2 class="anchored" data-anchor-id="link-to-the-lot-tool-and-the-town-rules">10. Link to the lot tool and the town rules</h2>
+<p>The tract model says where demand and payoff are. It does not say what the law or the yard allows on one lot. Two other parts of the project answer that, and the Results page puts them side by side.</p>
+<ul>
+<li>Lot tool. <code>pipeline/build_lots.py</code> tests every residential lot in Philadelphia and Pittsburgh under three scenarios: today’s law, local reform (Philadelphia Bill 250042, in Pittsburgh the same as today) and state reform (HB 2186). Each lot gets a legal path per ADU type and a vector fit test on lot lines, buildings and streets with the rule setbacks. <code>lots/&lt;city&gt;/stats.json</code> sums the lots: the share with any legal path today, the share where a detached unit fits, and the top reason a detached unit does not fit or cannot grow</li>
+<li>Town rules. <code>shared/rules/</code> has one rule file per town for the 36 largest municipalities after the two cities (by 2020 population, <code>towns_index.json</code>), plus a statewide baseline (<code>pa_statewide.json</code>). Each file records whether the code addresses ADUs (<code>adu.status</code>), with the section and the date checked. The counts in Results are computed from these files</li>
+<li>Steps 11 to 13 feed both into the tract work: the lot results become measured room in the two cities and the training data for a statewide room model, and the town files become the forecast’s legal classes</li>
+</ul>
+</section>
+<section id="lot-results-rolled-up" class="level2">
+<h2 class="anchored" data-anchor-id="lot-results-rolled-up">11. Lot results rolled up</h2>
+<p><code>lot_rollup.py</code> reads <code>lots/&lt;city&gt;/index.parquet</code> (459,998 Philadelphia and 92,081 Pittsburgh lots with 1 to 4 units) and sums 0/1 flags to tract, city and county. Counts are <code>n_*</code>, shares are <code>share_*</code>.</p>
+<ul>
+<li>Legal path (<code>legal_&lt;scenario&gt;</code>): an ADU of some type has a path (by right, administrator or special exception). By right (<code>by_right_&lt;scenario&gt;</code>): the best path for any type is by right</li>
+<li>Fit at 400, 600, 800 and 1,000 sq ft (<code>fit&lt;N&gt;_&lt;scenario&gt;</code>): a new detached unit of that size fits the scenario’s setbacks, size cap and other limits. Where a scenario bars new detached units (Philadelphia today and under Bill 250042) the fit engine reports no fit, so those shares are 0</li>
+<li>Physical room: <code>fit600_state_reform</code>, the 4 ft side and rear setbacks of HB 2186, the loosest any scenario allows. <code>room600</code> is the old app field (600 sq ft box after today’s setbacks, sheds cleared)</li>
+<li>Garage candidates: an accessory building of garage size stands on the lot. <code>garage_conversion_fits</code>: the conversion test passes today</li>
+<li>Outputs: <code>data/processed/lots_tract_v2.csv</code>, <code>lots_city_v2.csv</code>, <code>lots_county_v2.csv</code>. Pittsburgh covers the city only, so its county row is part of Allegheny County</li>
+<li>Old vs new: the 26,269 Philadelphia pilot lots are matched to the new lots by nearest centroid (within 15 ft, lot areas within 20%), and the old tract estimate is compared with the new counts for the 385 Philadelphia tracts in both</li>
+</ul>
+</section>
+<section id="room-for-a-unit-in-every-tract-measured-and-modelled" class="level2">
+<h2 class="anchored" data-anchor-id="room-for-a-unit-in-every-tract-measured-and-modelled">12. Room for a unit in every tract (measured and modelled)</h2>
+<ul>
+<li>Measured: in the two cities, the share of 1 to 4 unit lots where a 600 sq ft detached unit fits under state-reform setbacks. This is physical room, not legality</li>
+<li>Modelled: everywhere else, a ridge regression of that share on features every tract has: log homes per km2, shares of homes in 1-unit detached, 1-unit attached and 2 to 4 unit buildings (ACS 2020-24 B25024, from the Census table file, no key), NLCD developed share (2019), and developed m2 per small-building lot. Tracts weigh by the square root of their lot count. Trained on the 482 city tracts with at least 30 lots (373 Philadelphia, 109 Pittsburgh)</li>
+<li>Compared with: the lot-weighted mean, the retired pilot rate by area type, and small gradient boosting</li>
+<li>Validation: train on one city and predict the other (both ways), and 2 km block cross-validation within the two cities</li>
+<li>Range: 90% band from the cross-city errors (half-width 0.218). Tracts with any feature outside the 1st to 99th percentile of the training tracts are flagged, and their band is doubled (a judgment call, because the cross-city error says little about places unlike both cities)</li>
+<li>Lots outside the cities: 1-detached + 1-attached + 2-unit / 2 + 3-4 unit / 3.5 homes (ACS). In the two cities this proxy is 9 to 13% above the real lot count (median tract), correlation 0.96 to 0.97</li>
+<li>Output: <code>data/processed/room_tract.csv</code> with <code>source</code> (measured or modelled), <code>outside_training_range</code>, the low / mid / high share and count, and the old pilot count beside it</li>
+</ul>
+</section>
+<section id="town-legal-classes-for-the-forecast" class="level2">
+<h2 class="anchored" data-anchor-id="town-legal-classes-for-the-forecast">13. Town legal classes for the forecast</h2>
+<p><code>legal.py</code> reads <code>shared/rules/towns_index.json</code> and each town’s <code>adu.status</code>. Philadelphia and Pittsburgh have full rule files instead. Their class comes from the lot results, which apply those files to every lot.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>adu.status</code></th>
+<th>Legal class</th>
+<th>What it means for a new ADU</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>allowed_by_right</td>
+<td>by_right</td>
+<td>A zoning permit, no hearing</td>
+</tr>
+<tr class="even">
+<td>special_exception, conditional_use</td>
+<td>discretionary</td>
+<td>A hearing before the zoning board or governing body</td>
+</tr>
+<tr class="odd">
+<td>family_only</td>
+<td>family_only</td>
+<td>Only for relatives, so not a rental</td>
+</tr>
+<tr class="even">
+<td>conversion_only</td>
+<td>conversion_only</td>
+<td>Only inside the house or an existing building</td>
+</tr>
+<tr class="odd">
+<td>not_addressed, prohibited</td>
+<td>none</td>
+<td>No ADU use in the code, so a variance at best</td>
+</tr>
+<tr class="even">
+<td>(no reviewed rule file)</td>
+<td>unknown</td>
+<td>Statewide baseline: zoning is local and has not been read</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Philadelphia is conversion_only: today 1.2% of its lots have a legal path, all conversions, and no lot can add a new detached unit. Pittsburgh is by_right: every lot has a by-right path (a detached unit in the side or rear yard needs an Administrator’s Exception)</li>
+<li>Drafted files are used and flagged (<code>review</code>). Index entries still marked todo count as unknown</li>
+<li>Hempfield township allows family units only in one district (TC-R) and does not address ADUs elsewhere. It is classed family_only with that note</li>
+<li><code>shared/legal_status.csv</code> is left as it was, because the app still reads it. The forecast now reads the derived table <code>data/processed/town_legal_class.csv</code></li>
 </ul>
 </section>
 <section id="course-requirements-met" class="level2">
@@ -338,11 +527,11 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>Data from an API</td>
-<td>Census API (ACS, decennial), USGS web service (land cover)</td>
+<td>Census API (ACS, decennial), USGS web service (land cover), HUD SAFMR feature service</td>
 </tr>
 <tr class="even">
 <td>3+ data sources</td>
-<td>Census, LEHD, IRS, Freddie Mac, USGS, OpenStreetMap</td>
+<td>Census, LEHD, IRS, Freddie Mac, HUD, USGS, OpenStreetMap</td>
 </tr>
 <tr class="odd">
 <td>Complex analysis (joins, reshaping)</td>
@@ -353,20 +542,20 @@ ul.task-list li input[type="checkbox"] {
 <td>Step 4</td>
 </tr>
 <tr class="odd">
-<td>K-means clustering</td>
-<td>Step 3</td>
+<td>Clustering</td>
+<td>Step 3 (K-means, Gaussian mixture, Ward)</td>
 </tr>
 <tr class="even">
 <td>Raster analysis</td>
 <td>Step 4 (zonal stats)</td>
 </tr>
 <tr class="odd">
-<td>scikit-learn model</td>
-<td>Step 6 (random forest)</td>
+<td>scikit-learn models with honest validation</td>
+<td>Step 6 (spatial block CV, temporal backtest, conformal intervals), step 12 (hold out one city)</td>
 </tr>
 <tr class="even">
-<td>Interactive visualizations</td>
-<td>The tool + maps on the Results page</td>
+<td>Interactive visualization</td>
+<td>Step 9 (linked Altair view) and the tool</td>
 </tr>
 </tbody>
 </table>

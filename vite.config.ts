@@ -30,7 +30,7 @@ function copyQuarto(): Plugin {
   };
 }
 
-/** `virtual:lot-index`: which tracts have lot files (public/data/lots), and if fit_curves.json exists, so the tool never asks for a missing file. */
+/** `virtual:lot-index`: which tracts have lot files (public/data/lots), so the tool never asks for a missing file. */
 function lotIndex(): Plugin {
   const id = "virtual:lot-index";
   const list = (dir: string, ext: string) => {
@@ -40,8 +40,7 @@ function lotIndex(): Plugin {
   return {
     name: "lot-index",
     resolveId: (s) => (s === id ? "\0" + id : null),
-    load: (s) =>
-      s === "\0" + id ? `export const LOT_TRACTS = ${JSON.stringify(list("lots", ".json"))};\nexport const HAS_FIT_CURVES = ${existsSync(resolve(ROOT, "app/public/data/fit_curves.json"))};\nexport const HAS_LOT_DETAIL = ${existsSync(resolve(ROOT, "app/public/data/lot_detail.pmtiles"))};` : null,
+    load: (s) => (s === "\0" + id ? `export const LOT_TRACTS = ${JSON.stringify(list("lots", ".json"))};` : null),
   };
 }
 

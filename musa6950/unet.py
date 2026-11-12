@@ -9,6 +9,7 @@ Two models:
 Use load_model() to get either one back from a saved checkpoint,
 and predict_array() to classify a whole image.
 """
+
 import numpy as np
 import torch
 import torch.nn as nn
@@ -21,8 +22,13 @@ class Block(nn.Module):
     def __init__(self, cin, cout):
         super().__init__()
         self.net = nn.Sequential(
-            nn.Conv2d(cin, cout, 3, padding=1, bias=False), nn.BatchNorm2d(cout), nn.ReLU(inplace=True),
-            nn.Conv2d(cout, cout, 3, padding=1, bias=False), nn.BatchNorm2d(cout), nn.ReLU(inplace=True))
+            nn.Conv2d(cin, cout, 3, padding=1, bias=False),
+            nn.BatchNorm2d(cout),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(cout, cout, 3, padding=1, bias=False),
+            nn.BatchNorm2d(cout),
+            nn.ReLU(inplace=True),
+        )
 
     def forward(self, x):
         return self.net(x)
@@ -54,7 +60,7 @@ class UNet(nn.Module):
             skips.append(x)
             x = self.pool(x)
         x = self.bottom(x)
-        for up, dec, s in zip(self.ups, self.dec, reversed(skips)):
+        for up, dec, s in zip(self.ups, self.dec, reversed(skips), strict=True):
             x = dec(torch.cat([up(x), s], 1))
         return self.head(x)
 
@@ -66,7 +72,7 @@ def adapt_first_conv(conv, in_ch):
     A 5th channel (NDVI) starts at 0, so it is learned from scratch.
     Weights are scaled by 3 / 4 so the output size stays about the same.
     """
-    w = conv.weight.data                     # (out, 3, k, k)
+    w = conv.weight.data  # (out, 3, k, k)
     new = torch.zeros(w.shape[0], in_ch, *w.shape[2:])
     new[:, :3] = w
     if in_ch > 3:
@@ -83,13 +89,15 @@ def make_model(kind="smp", in_ch=4, n_classes=4, encoder="resnet34", pretrained=
     if kind == "plain":
         return UNet(in_ch, n_classes, base)
     import segmentation_models_pytorch as smp
-    m = smp.Unet(encoder_name=encoder, encoder_weights="imagenet" if pretrained else None,
-                 in_channels=3, classes=n_classes)
+
+    m = smp.Unet(
+        encoder_name=encoder, encoder_weights="imagenet" if pretrained else None, in_channels=3, classes=n_classes
+    )
     # swap the first 3-band conv of the encoder (conv1 in ResNet, conv_stem in EfficientNet)
     name, conv = next((n, c) for n, c in m.encoder.named_modules() if isinstance(c, nn.Conv2d) and c.in_channels == 3)
     parent = m.encoder.get_submodule(name.rsplit(".", 1)[0]) if "." in name else m.encoder
     new = adapt_first_conv(conv, in_ch)
-    if type(conv) is not nn.Conv2d:          # keep padding behaviour of timm's same-padding convs
+    if type(conv) is not nn.Conv2d:  # keep padding behaviour of timm's same-padding convs
         conv.weight = nn.Parameter(new.weight.data)
         conv.in_channels = in_ch
     else:
@@ -124,12 +132,19 @@ def load_model(path, device):
     ck = torch.load(path, map_location="cpu", weights_only=False)
     kind = ck.get("kind", "plain")
     in_ch = 5 if ck.get("ndvi") else 4
-    model = make_model(kind, in_ch=in_ch, encoder=ck.get("encoder", "resnet34"), pretrained=False, base=ck.get("base", 32))
+    model = make_model(
+        kind, in_ch=in_ch, encoder=ck.get("encoder", "resnet34"), pretrained=False, base=ck.get("base", 32)
+    )
     model.load_state_dict(ck["state"])
     model.to(device).eval()
     meta = {k: v for k, v in ck.items() if k != "state"}
-    meta.update(mean=np.asarray(ck["mean"], np.float32), std=np.asarray(ck["std"], np.float32),
-                ndvi=bool(ck.get("ndvi", False)), kind=kind, class_bias=ck.get("class_bias"))
+    meta.update(
+        mean=np.asarray(ck["mean"], np.float32),
+        std=np.asarray(ck["std"], np.float32),
+        ndvi=bool(ck.get("ndvi", False)),
+        kind=kind,
+        class_bias=ck.get("class_bias"),
+    )
     return model, meta
 
 
@@ -162,7 +177,9 @@ def predict_proba(model, x, tta=False, bias=None):
 
 
 @torch.no_grad()
-def predict_array(model, img, mean, std, device, win=512, margin=64, batch=4, ndvi=False, tta=False, proba=False, bias=None):
+def predict_array(
+    model, img, mean, std, device, win=512, margin=64, batch=4, ndvi=False, tta=False, proba=False, bias=None
+):
     """Predict classes for a whole (4, H, W) uint8 image.
 
     Windows of win + 2*margin pixels, keep the center win x win (less edge effect).
@@ -177,13 +194,15 @@ def predict_array(model, img, mean, std, device, win=512, margin=64, batch=4, nd
     out = np.zeros((4, nh * win, nw * win), np.float16) if proba else np.zeros((nh * win, nw * win), np.uint8)
     spots = [(i, j) for i in range(nh) for j in range(nw)]
     for k in range(0, len(spots), batch):
-        part = spots[k:k + batch]
-        raw = torch.stack([pad[:, i * win:i * win + full, j * win:j * win + full] for i, j in part]).to(device)
-        p = predict_proba(model, to_input(raw, mean, std, ndvi), tta, bias)[:, :, margin:margin + win, margin:margin + win]
+        part = spots[k : k + batch]
+        raw = torch.stack([pad[:, i * win : i * win + full, j * win : j * win + full] for i, j in part]).to(device)
+        p = predict_proba(model, to_input(raw, mean, std, ndvi), tta, bias)[
+            :, :, margin : margin + win, margin : margin + win
+        ]
         p = p.cpu().numpy()
-        for (i, j), pj in zip(part, p):
+        for (i, j), pj in zip(part, p, strict=True):
             if proba:
-                out[:, i * win:(i + 1) * win, j * win:(j + 1) * win] = pj
+                out[:, i * win : (i + 1) * win, j * win : (j + 1) * win] = pj
             else:
-                out[i * win:(i + 1) * win, j * win:(j + 1) * win] = pj.argmax(0)
+                out[i * win : (i + 1) * win, j * win : (j + 1) * win] = pj.argmax(0)
     return out[..., :H, :W]

@@ -209,3 +209,4 @@ The statewide tract screen in `pipeline/tract/` reads these keys. It is simpler 
 | `tract.forecast.rule_factor` | Share of the rate by town rule | limited 0.05 | limited 0.02 to 0.10 | multiplier | assumption | Owner setting 2026-11-10 |
 | `tract.forecast.unlisted_rule` | Rule for uncoded towns | limited |  | rule | assumption | Owner setting 2026-11-10 |
 | `tract.forecast.lots_index_cap` | Cap on the lots index | 2 |  | multiple | assumption | Owner setting 2026-11-10 |
+| `tract.forecast.legal_class_factor` | Share of the rate by town legal class (rule files) | by right 1.0, discretionary / family only / conversion only / unknown 0.05, none 0.005 | 0.02 to 0.10, none 0 to 0.01 | multiplier | assumption | Owner setting 2026-11-11 |

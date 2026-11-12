@@ -68,13 +68,14 @@ function Card({ id, name, line, on, onClick }: { id: string; name: string; line:
   );
 }
 
-export default function AduSamples() {
+/** `bare`: without its own heading, inside a Fold that already says "Pick an ADU". */
+export default function AduSamples({ bare }: { bare?: boolean }) {
   const adu = useTool((s) => s.adu);
   const setAdu = useTool((s) => s.setAdu);
   const current = sampleOf(adu);
   return (
     <section aria-label="Pick an ADU">
-      <h3 className="mb-2 text-caption font-semibold uppercase tracking-[0.12em] text-slate-500">Pick an ADU</h3>
+      {!bare && <h3 className="mb-2 text-caption font-semibold uppercase tracking-[0.12em] text-slate-500">Pick an ADU</h3>}
       <div className="grid grid-cols-2 gap-2">
         {SAMPLES.map((s) => (
           <Card key={s.id} id={s.id} name={s.name} line={`${s.adu.size} sq ft · ${s.adu.stories} ${s.adu.stories === 2 ? 'stories' : 'story'}${s.adu.stories === 2 ? ` (${footprint(s.adu)} footprint)` : ''}`} on={current?.id === s.id} onClick={() => setAdu(s.adu)} />

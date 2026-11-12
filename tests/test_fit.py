@@ -1,4 +1,5 @@
 """Fit engine checks on made-up lots with known answers. Needs shapely 2 (geospatial env)."""
+
 import math
 import time
 
@@ -9,13 +10,19 @@ from shapely import affinity  # noqa: E402
 from shapely.geometry import LineString, box  # noqa: E402
 
 from pipeline.fit import (  # noqa: E402
-    Building, LotShape, buildable_area, classify_edges, default_rules, fit_adu, largest_rectangle,
+    Building,
+    LotShape,
+    buildable_area,
+    classify_edges,
+    default_rules,
+    fit_adu,
+    largest_rectangle,
 )
 
 # GEOS 3.10 raises a harmless floating point flag on some unions in the test setup itself.
 pytestmark = pytest.mark.filterwarnings("ignore:invalid value encountered:RuntimeWarning")
 
-STREET = LineString([(-100, -20), (140, -20)])   # runs along the front, 20 ft out
+STREET = LineString([(-100, -20), (140, -20)])  # runs along the front, 20 ft out
 
 
 def near(a: float, b: float, rel: float = 0.01) -> bool:
@@ -35,7 +42,7 @@ def standard_lot(rotate: float = 0.0):
 # the strip x 5..35, y 10..95 (2,550 sq ft) minus the house grown by 10 ft. That cut is
 # 20 x 50 plus two edge pieces of 5 x 40 and a quarter-circle slice each: 1000 + 2 * (200 + 47.83).
 BUILDABLE = 30 * 85 - (1000 + 2 * (200 + (2.5 * math.sqrt(75) + 50 * math.pi / 6)))
-RECT = 30 * 35   # full width 5..35, from y 60 (clear of the rounded house zone) to the 95 ft rear line
+RECT = 30 * 35  # full width 5..35, from y 60 (clear of the rounded house zone) to the 95 ft rear line
 RULES = default_rules(setback_front_ft=10.0, max_size_sqft=None)
 
 
@@ -70,7 +77,7 @@ def test_size_cap_limits_and_trims_toward_rear():
     assert res.fits and res.limiting == "size_cap"
     assert res.largest_sqft == pytest.approx(600.0)
     assert res.spot.area == pytest.approx(600.0, rel=0.01)
-    assert res.spot.centroid.y > 70   # pushed to the back, away from the house
+    assert res.spot.centroid.y > 70  # pushed to the back, away from the house
 
 
 def test_rotated_lot_same_answer():
@@ -91,8 +98,9 @@ def test_l_shaped_lot():
     lot_poly = shapely.union_all([box(0, 0, 60, 40), box(0, 40, 30, 100)])
     edges = classify_edges(lot_poly, STREET)
     lot = LotShape(lot_poly, edges)
-    zero = default_rules(setback_front_ft=0.0, setback_side_ft=0.0, setback_rear_ft=0.0,
-                         setback_rear_alley_ft=0.0, max_size_sqft=None)
+    zero = default_rules(
+        setback_front_ft=0.0, setback_side_ft=0.0, setback_rear_ft=0.0, setback_rear_alley_ft=0.0, max_size_sqft=None
+    )
     b = buildable_area(lot, [], zero)
     assert near(b.keep.area, 4200)
     r = largest_rectangle(b.keep)
@@ -125,12 +133,12 @@ def test_alley_rear_uses_alley_setback():
     n = fit_adu(no_alley, blds, rules, "detached_new")
     assert a.spot.bounds[3] == pytest.approx(100.0) and n.spot.bounds[3] == pytest.approx(85.0)
     assert near(a.largest_sqft, 30 * 40) and near(n.largest_sqft, 30 * 25)
-    assert any("fire-rated" in w for w in a.warnings)        # wall on the rear lot line
+    assert any("fire-rated" in w for w in a.warnings)  # wall on the rear lot line
 
 
 def test_garage_conversion_over_cap():
     lot_poly = box(0, 0, 50, 140)
-    house, garage = box(10, 10, 40, 50), box(10, 100, 40, 130)   # 30 x 30 = 900 sq ft
+    house, garage = box(10, 10, 40, 50), box(10, 100, 40, 130)  # 30 x 30 = 900 sq ft
     lot = LotShape(lot_poly, classify_edges(lot_poly, STREET, None, house))
     blds = [Building(house, "main"), Building(garage, "garage", height_ft=14.0)]
     rules = default_rules(reasons=["conversion of a garage that existed in 2012"])
@@ -142,7 +150,7 @@ def test_garage_conversion_over_cap():
     ok = fit_adu(lot, blds, default_rules(max_size_sqft=1000.0), "garage_conversion")
     assert ok.fits and ok.largest_sqft == pytest.approx(900.0)
     over = fit_adu(lot, blds, default_rules(max_size_sqft=1000.0, max_height_ft=20.0), "over_garage")
-    assert not over.fits and over.limiting == "height"   # 10 ft garage walls + 12 ft story
+    assert not over.fits and over.limiting == "height"  # 10 ft garage walls + 12 ft story
     assert fit_adu(lot, [Building(house, "main")], default_rules(), "garage_conversion").limiting == "no_garage"
 
 
@@ -180,15 +188,17 @@ def test_null_limits_mean_no_limit_and_first_checks():
 
 
 def test_coverage_and_share_caps():
-    lot, blds = standard_lot()   # 4,000 sq ft lot, 800 sq ft house
-    cov = fit_adu(lot, blds, default_rules(setback_front_ft=10.0, max_size_sqft=None, max_building_coverage=0.3), "detached_new")
+    lot, blds = standard_lot()  # 4,000 sq ft lot, 800 sq ft house
+    cov = fit_adu(
+        lot, blds, default_rules(setback_front_ft=10.0, max_size_sqft=None, max_building_coverage=0.3), "detached_new"
+    )
     assert cov.limiting == "building_coverage" and cov.largest_sqft == pytest.approx(400.0)
     share = fit_adu(lot, blds, default_rules(max_share_of_house=0.4), "internal")
     assert share.fits and share.largest_sqft == pytest.approx(320.0) and share.limiting == "share_of_house"
 
 
 def test_no_streets_low_confidence():
-    lot_poly, house = box(0, 0, 40, 100), box(10, 60, 30, 95)   # house at the top end
+    lot_poly, house = box(0, 0, 40, 100), box(10, 60, 30, 95)  # house at the top end
     e = classify_edges(lot_poly, None, None, house)
     assert e.confidence == "low" and not e.street_edge
     assert e.edges[e.front[0]].line.centroid.y == pytest.approx(100.0)
@@ -198,7 +208,7 @@ def test_corner_and_flag_lots():
     side_street = LineString([(-20, -100), (-20, 200)])
     corner = classify_edges(box(0, 0, 40, 100), shapely.union_all([STREET, side_street]))
     assert corner.corner and corner.confidence == "low"
-    assert corner.edges[corner.front[0]].line.length == pytest.approx(40.0)   # shorter street line
+    assert corner.edges[corner.front[0]].line.length == pytest.approx(40.0)  # shorter street line
     flag_poly = shapely.union_all([box(0, 0, 12, 60), box(0, 60, 80, 140)])
     flag = classify_edges(flag_poly, STREET)
     assert flag.flag_lot and flag.confidence == "low"
@@ -211,7 +221,9 @@ def test_speed():
     t = time.perf_counter()
     for _ in range(20):
         largest_rectangle(b.keep)
-    assert (time.perf_counter() - t) / 20 < 0.02
+    # About 5 ms per call on a quiet laptop. The bound is loose so a busy or slow machine passes,
+    # and a 20x slowdown still fails.
+    assert (time.perf_counter() - t) / 20 < 0.1
 
 
 def test_record_validates():
@@ -230,13 +242,31 @@ def test_record_validates():
     epsg = 2272
     rec = {
         "schema_version": "1.0",
-        "lot": {"id": "42101-123", "parcel_id": "123", "address": None, "crs_local": epsg,
-                "polygon": lotmod.geojson_wgs84(poly, epsg), "area_sqft": poly.area,
-                **lotmod.edges_part(edges, epsg)},
-        "buildings": [{"polygon": lotmod.geojson_wgs84(b.polygon, epsg), "role": b.role, "source": "city",
-                       "area_sqft": b.area_sqft, "height_ft": None} for b in blds],
-        "zoning": {"district": "RSA-5", "overlays": [], "council_district": "7",
-                   "flags": {"flood": False, "historic": None, "steep_slope": None, "sewer": True}},
+        "lot": {
+            "id": "42101-123",
+            "parcel_id": "123",
+            "address": None,
+            "crs_local": epsg,
+            "polygon": lotmod.geojson_wgs84(poly, epsg),
+            "area_sqft": poly.area,
+            **lotmod.edges_part(edges, epsg),
+        },
+        "buildings": [
+            {
+                "polygon": lotmod.geojson_wgs84(b.polygon, epsg),
+                "role": b.role,
+                "source": "city",
+                "area_sqft": b.area_sqft,
+                "height_ft": None,
+            }
+            for b in blds
+        ],
+        "zoning": {
+            "district": "RSA-5",
+            "overlays": [],
+            "council_district": "7",
+            "flags": {"flood": False, "historic": None, "steep_slope": None, "sewer": True},
+        },
         "rules": {"today": rules},
         "buildable": {"today": lotmod.buildable_part(buildable_area(lot, blds, rules), epsg)},
         "fit": {"today": {"detached_new": lotmod.fit_part(res, epsg)}},
@@ -247,7 +277,7 @@ def test_record_validates():
     rec["facts"]["owner"] = "someone"
     assert any("owner" in e for e in lotmod.validate(rec))
     del rec["facts"]["owner"]
-    rec["lot"]["polygon"] = shapely.geometry.mapping(poly)   # feet saved by mistake
+    rec["lot"]["polygon"] = shapely.geometry.mapping(poly)  # feet saved by mistake
     assert any("Pennsylvania" in e for e in lotmod.validate(rec))
 
 

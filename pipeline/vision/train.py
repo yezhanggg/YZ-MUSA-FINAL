@@ -19,10 +19,15 @@ What is new:
   schedule and the same stop epoch, so they get the same compute even
   when other jobs slow the GPU down
 - --classes 5 adds the hard surface class
+- options that are off by default, so older configs train exactly as before:
+  --lovasz (weight of a Lovasz-softmax loss, a smooth stand-in for IoU),
+  --scale-aug (random zoom of each crop) and --color-aug (extra gain and
+  offset per band, on top of --jitter)
 
     python -m pipeline.vision.train --run r34_c5_s0 --classes 5 --seed 0 --epochs 16 --stop-epoch 14
     python -m pipeline.vision.train --run r34_c5_s0 --resume --max-minutes 60
 """
+
 from __future__ import annotations
 
 import argparse
@@ -32,9 +37,10 @@ import resource
 import signal
 import sys
 import time
+from collections.abc import Callable
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Callable
+from typing import Any, cast
 
 import numpy as np
 import torch
@@ -58,21 +64,24 @@ class Config:
     ndvi: bool = False
     crop: int = 384
     batch: int = 12
-    steps: int = 400               # steps per epoch
-    epochs: int = 16               # planned epochs, sets the LR schedule
-    stop_epoch: int = 0            # end the run after this epoch (0 = run the whole schedule)
+    steps: int = 400  # steps per epoch
+    epochs: int = 16  # planned epochs, sets the LR schedule
+    stop_epoch: int = 0  # end the run after this epoch (0 = run the whole schedule)
     patience: int = 5
     lr: float = 5e-4
-    warmup: int = 300              # warmup steps (capped at 10 % of all steps)
-    dice: float = 0.5              # weight of the Dice loss, 0 = cross entropy only
-    bld_frac: float = 1 / 3        # share of crops centered on a building pixel
+    warmup: int = 300  # warmup steps (capped at 10 % of all steps)
+    dice: float = 0.5  # weight of the Dice loss, 0 = cross entropy only
+    bld_frac: float = 1 / 3  # share of crops centered on a building pixel
     jitter: float = 0.1
+    lovasz: float = 0.0  # weight of the Lovasz-softmax loss (0 = off)
+    scale_aug: float = 0.0  # zoom each crop by exp(U(-a, a)) (0 = off)
+    color_aug: float = 0.0  # extra per-band gain and offset, std in z-score units (0 = off)
     seed: int = 0
-    init_from: str = ""            # start from these weights (e.g. a longer run at a lower LR)
-    data: str = "chesapeake"       # or "city:philadelphia", "city:pittsburgh" (5 classes)
+    init_from: str = ""  # start from these weights (e.g. a longer run at a lower LR)
+    data: str = "chesapeake"  # or "city:philadelphia", "city:pittsburgh" (5 classes)
     val_win: int = 512
     val_margin: int = 64
-    extra: dict = field(default_factory=dict)
+    extra: dict[str, Any] = field(default_factory=dict)
 
     @property
     def last_epoch(self) -> int:
@@ -103,13 +112,18 @@ def load_chesapeake(cfg: Config) -> dict[str, Boxes]:
     boxes = vdata.split_boxes()
     out: dict[str, Boxes] = {}
     for r in ["train", "val"]:
-        out[r] = [tuple(np.array(a) for a in vdata.load_box_mm(g, cfg.classes)) for g in boxes[boxes.role == r].GEOID]
+        out[r] = [
+            cast(tuple[np.ndarray, np.ndarray], tuple(np.array(a) for a in vdata.load_box_mm(g, cfg.classes)))
+            for g in boxes[boxes.role == r].GEOID
+        ]
     return out
 
 
 def band_stats(train: Boxes, ndvi: bool) -> tuple[np.ndarray, np.ndarray]:
     """Per-band mean and std from every 7th pixel of the training boxes."""
-    sample = np.concatenate([np.asarray(img[:, ::7, ::7]).reshape(img.shape[0], -1) for img, _ in train], 1).astype(np.float32)
+    sample = np.concatenate([np.asarray(img[:, ::7, ::7]).reshape(img.shape[0], -1) for img, _ in train], 1).astype(
+        np.float32
+    )
     if ndvi:
         sample = add_ndvi(torch.from_numpy(sample)[None, :, None, :])[0, :, 0].numpy()
     return sample.mean(1).astype(np.float32), sample.std(1).astype(np.float32)
@@ -117,7 +131,7 @@ def band_stats(train: Boxes, ndvi: bool) -> tuple[np.ndarray, np.ndarray]:
 
 def class_weights(train: Boxes, n: int) -> np.ndarray:
     """1 / sqrt(class share), scaled to mean 1. Rare classes (buildings) count more."""
-    freq = sum(np.bincount(np.asarray(lab).ravel(), minlength=256)[:n] for _, lab in train).astype(float)
+    freq = np.asarray(sum(np.bincount(np.asarray(lab).ravel(), minlength=256)[:n] for _, lab in train)).astype(float)
     freq = np.maximum(freq / freq.sum(), 1e-6)
     w = 1 / np.sqrt(freq)
     return (w / w.mean()).astype(np.float32)
@@ -128,37 +142,86 @@ def building_pixels(train: Boxes) -> list[np.ndarray]:
     return [np.flatnonzero(np.asarray(lab).ravel() == 1)[::20].astype(np.int32).copy() for _, lab in train]
 
 
-def make_batch(cfg: Config, train: Boxes, bld_px: list[np.ndarray], rng: np.random.Generator,
-               mean: np.ndarray, std: np.ndarray, device: str) -> tuple[torch.Tensor, torch.Tensor]:
-    """One batch of random crops with augmentation. Same draws in the same order as the course trainer."""
+def make_batch(
+    cfg: Config,
+    train: Boxes,
+    bld_px: list[np.ndarray],
+    rng: np.random.Generator,
+    mean: np.ndarray,
+    std: np.ndarray,
+    device: str,
+) -> tuple[torch.Tensor, torch.Tensor]:
+    """One batch of random crops with augmentation.
+
+    With the default options: same draws in the same order as the course trainer.
+    scale_aug and color_aug draw extra numbers only when they are on.
+    """
     C = cfg.crop
     xs, ys = [], []
     for _ in range(cfg.batch):
         k = rng.integers(len(train))
         img, lab = train[k]
         H, W = lab.shape
+        # source window: C, or C / zoom when scale_aug is on (resized back to C below)
+        S = (
+            C
+            if not cfg.scale_aug
+            else int(np.clip(round(C / np.exp(rng.uniform(-cfg.scale_aug, cfg.scale_aug))), 32, min(H, W)))
+        )
         if rng.random() < cfg.bld_frac and len(bld_px[k]):
             r, c = divmod(int(rng.choice(bld_px[k])), W)
-            r0 = int(np.clip(r - C // 2 + rng.integers(-C // 4, C // 4 + 1), 0, H - C))
-            c0 = int(np.clip(c - C // 2 + rng.integers(-C // 4, C // 4 + 1), 0, W - C))
+            r0 = int(np.clip(r - S // 2 + rng.integers(-S // 4, S // 4 + 1), 0, H - S))
+            c0 = int(np.clip(c - S // 2 + rng.integers(-S // 4, S // 4 + 1), 0, W - S))
         else:
-            r0, c0 = rng.integers(0, H - C + 1), rng.integers(0, W - C + 1)
-        xs.append(np.asarray(img[:, r0:r0 + C, c0:c0 + C]))
-        ys.append(np.asarray(lab[r0:r0 + C, c0:c0 + C]))
+            r0, c0 = rng.integers(0, H - S + 1), rng.integers(0, W - S + 1)
+        xs.append(np.asarray(img[:, r0 : r0 + S, c0 : c0 + S]))
+        ys.append(np.asarray(lab[r0 : r0 + S, c0 : c0 + S]))
+    if cfg.scale_aug:
+        xs = [_resize(a, C, image=True) for a in xs]
+        ys = [_resize(a, C, image=False) for a in ys]
     x = to_input(torch.from_numpy(np.stack(xs)).to(device), mean, std, cfg.ndvi)
     y = torch.from_numpy(np.stack(ys)).long().to(device)
-    for i in range(len(x)):        # same flip and turn on image and label
-        k = int(rng.integers(4))
-        xi, yi = torch.rot90(x[i], k, [1, 2]), torch.rot90(y[i], k, [0, 1])
+    for i in range(len(x)):  # same flip and turn on image and label
+        turns = int(rng.integers(4))
+        xi, yi = torch.rot90(x[i], turns, [1, 2]), torch.rot90(y[i], turns, [0, 1])
         if rng.random() < 0.5:
             xi, yi = torch.flip(xi, [2]), torch.flip(yi, [1])
         x[i], y[i] = xi, yi
-    if cfg.jitter:                 # brightness and contrast per crop and band, in z-score units
+    if cfg.jitter:  # brightness and contrast per crop and band, in z-score units
         nb = x.shape[1]
-        g = torch.from_numpy(rng.normal(0, cfg.jitter, (len(x), 1, 1, 1)) + rng.normal(0, cfg.jitter / 2, (len(x), nb, 1, 1))).float().to(device)
-        b = torch.from_numpy(rng.normal(0, cfg.jitter, (len(x), 1, 1, 1)) + rng.normal(0, cfg.jitter / 2, (len(x), nb, 1, 1))).float().to(device)
+        g = (
+            torch.from_numpy(
+                rng.normal(0, cfg.jitter, (len(x), 1, 1, 1)) + rng.normal(0, cfg.jitter / 2, (len(x), nb, 1, 1))
+            )
+            .float()
+            .to(device)
+        )
+        b = (
+            torch.from_numpy(
+                rng.normal(0, cfg.jitter, (len(x), 1, 1, 1)) + rng.normal(0, cfg.jitter / 2, (len(x), nb, 1, 1))
+            )
+            .float()
+            .to(device)
+        )
+        x = x * (1 + g) + b
+    if cfg.color_aug:  # stronger color shifts per band (season, sensor, haze)
+        nb = x.shape[1]
+        g = torch.from_numpy(rng.normal(0, cfg.color_aug, (len(x), nb, 1, 1))).float().to(device)
+        b = torch.from_numpy(rng.normal(0, cfg.color_aug, (len(x), nb, 1, 1))).float().to(device)
         x = x * (1 + g) + b
     return x, y
+
+
+def _resize(a: np.ndarray, size: int, image: bool) -> np.ndarray:
+    """Square crop to size x size: bilinear (antialiased) for the image, nearest for the label."""
+    if a.shape[-1] == size:
+        return np.asarray(a)
+    t = torch.from_numpy(np.ascontiguousarray(a))
+    if image:
+        out = F.interpolate(t[None].float(), size=(size, size), mode="bilinear", align_corners=False, antialias=True)
+        return out[0].round().clamp(0, 255).to(torch.uint8).numpy()
+    out = F.interpolate(t[None, None].float(), size=(size, size), mode="nearest")
+    return out[0, 0].to(torch.uint8).numpy()
 
 
 def dice_loss(logits: torch.Tensor, y: torch.Tensor, n: int) -> torch.Tensor:
@@ -173,36 +236,38 @@ def dice_loss(logits: torch.Tensor, y: torch.Tensor, n: int) -> torch.Tensor:
 
 def lr_factor(total: int, warm: int) -> Callable[[int], float]:
     """Linear warmup, then cosine decay to 1 % of the base LR."""
+
     def f(s: int) -> float:
         if s < warm:
             return (s + 1) / warm
         return 0.5 * (1 + np.cos(np.pi * min(1, (s - warm) / max(1, total - warm)))) * 0.99 + 0.01
+
     return f
 
 
 # ---------------------------------------------------------------- RNG and checkpoints
-def rng_state(rng: np.random.Generator, device: str) -> dict:
+def rng_state(rng: np.random.Generator, device: str) -> dict[str, Any]:
     st = {"numpy": rng.bit_generator.state, "torch": torch.get_rng_state()}
     if device == "mps":
         st["mps"] = torch.mps.get_rng_state()
     return st
 
 
-def set_rng_state(rng: np.random.Generator, st: dict, device: str) -> None:
+def set_rng_state(rng: np.random.Generator, st: dict[str, Any], device: str) -> None:
     rng.bit_generator.state = st["numpy"]
     torch.set_rng_state(st["torch"])
     if device == "mps" and "mps" in st:
         torch.mps.set_rng_state(st["mps"])
 
 
-def atomic_save(obj, path: Path) -> None:
+def atomic_save(obj: Any, path: Path) -> None:
     """Save next to the target, then rename. A kill during save never leaves a broken last.pt."""
     tmp = path.with_name(path.name + ".tmp")
     torch.save(obj, tmp)
     tmp.replace(path)
 
 
-def memory_gb(device: str) -> dict:
+def memory_gb(device: str) -> dict[str, Any]:
     """Peak resident memory of the process and memory the GPU driver holds, in GB."""
     out = {"rss_peak_gb": round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e9, 2)}  # bytes on macOS
     if device == "mps":
@@ -220,7 +285,7 @@ class Pause:
 
     def __init__(self, max_minutes: float | None, t_start: float, at_step: int | None = None):
         self.deadline = t_start + max_minutes * 60 if max_minutes is not None else None
-        self.at_step = at_step      # pause before this global step (lets tests pause at a known point)
+        self.at_step = at_step  # pause before this global step (lets tests pause at a known point)
         self.signal = False
 
     def due(self, global_step: int) -> bool:
@@ -239,17 +304,28 @@ def prepare_run_dir(run_dir: Path, resume: bool) -> None:
     run_dir.mkdir(parents=True)
 
 
-def validate(model, val: Boxes, cfg: Config, mean, std, device: str) -> tuple[dict, np.ndarray]:
+def validate(
+    model: Any, val: Boxes, cfg: Config, mean: Any, std: Any, device: str
+) -> tuple[dict[str, Any], np.ndarray]:
     n = cfg.classes
     cm = np.zeros((n, n), np.int64)
     for img, lab in val:
-        pred = predict_array(model, np.asarray(img), mean, std, device, n_classes=n, win=cfg.val_win,
-                             margin=cfg.val_margin, ndvi=cfg.ndvi)
+        pred = predict_array(
+            model,
+            np.asarray(img),
+            mean,
+            std,
+            device,
+            n_classes=n,
+            win=cfg.val_win,
+            margin=cfg.val_margin,
+            ndvi=cfg.ndvi,
+        )
         cm += confusion(pred, np.asarray(lab), n)
     return scores(cm, classes_for(n)), cm
 
 
-def write_log(run_dir: Path, rows: list[dict]) -> None:
+def write_log(run_dir: Path, rows: list[dict[str, Any]]) -> None:
     if not rows:
         return
     keys = list(rows[0])
@@ -259,20 +335,39 @@ def write_log(run_dir: Path, rows: list[dict]) -> None:
         w.writerows(rows)
 
 
-def write_result(run_dir: Path, cfg: Config, st: dict, state: str, reason: str, device: str) -> dict:
+def write_result(
+    run_dir: Path, cfg: Config, st: dict[str, Any], state: str, reason: str, device: str
+) -> dict[str, Any]:
     best_row = max(st["log"], key=lambda r: r["val_miou"]) if st["log"] else {}
-    res = {"run": cfg.run, "state": state, "reason": reason, "config": asdict(cfg),
-           "best_val_miou": st["best"] if st["best"] >= 0 else None, "best_epoch": best_row.get("epoch"),
-           "best_val_iou": {c: best_row.get(f"val_iou_{c}") for c in classes_for(cfg.classes)} if best_row else None,
-           "epochs_done": st["epoch"], "step_in_epoch": st["step"], "minutes": round(st["minutes"], 1),
-           "sessions": st["sessions"], "device": device, "memory": memory_gb(device)}
+    res = {
+        "run": cfg.run,
+        "state": state,
+        "reason": reason,
+        "config": asdict(cfg),
+        "best_val_miou": st["best"] if st["best"] >= 0 else None,
+        "best_epoch": best_row.get("epoch"),
+        "best_val_iou": {c: best_row.get(f"val_iou_{c}") for c in classes_for(cfg.classes)} if best_row else None,
+        "epochs_done": st["epoch"],
+        "step_in_epoch": st["step"],
+        "minutes": round(st["minutes"], 1),
+        "sessions": st["sessions"],
+        "device": device,
+        "memory": memory_gb(device),
+    }
     (run_dir / "result.json").write_text(json.dumps(res, indent=1, default=float))
     return res
 
 
-def train(cfg: Config, run_dir: Path, resume: bool = False, max_minutes: float | None = None,
-          device: str = "cpu", data_fn: Callable[[Config], dict[str, Boxes]] = load_real_data,
-          log: Callable[[str], None] = print, pause_at_step: int | None = None) -> dict:
+def train(
+    cfg: Config,
+    run_dir: Path,
+    resume: bool = False,
+    max_minutes: float | None = None,
+    device: str = "cpu",
+    data_fn: Callable[[Config], dict[str, Boxes]] = load_real_data,
+    log: Callable[[str], None] = print,
+    pause_at_step: int | None = None,
+) -> dict[str, Any]:
     """Train or continue one run. Returns the result.json content."""
     t_start = time.time()
     prepare_run_dir(run_dir, resume)
@@ -289,8 +384,15 @@ def train(cfg: Config, run_dir: Path, resume: bool = False, max_minutes: float |
         signal.signal(signal.SIGTERM, old)
 
 
-def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
-         data_fn: Callable[[Config], dict[str, Boxes]], log: Callable[[str], None]) -> dict:
+def _run(
+    cfg: Config,
+    run_dir: Path,
+    resume: bool,
+    pause: Pause,
+    device: str,
+    data_fn: Callable[[Config], dict[str, Boxes]],
+    log: Callable[[str], None],
+) -> dict[str, Any]:
     n = cfg.classes
     torch.manual_seed(cfg.seed)
     rng = np.random.default_rng(cfg.seed)
@@ -313,8 +415,13 @@ def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
     bld_px = building_pixels(d["train"])
     log(f"mean {mean.round(2)} std {std.round(2)} class weights {cw.round(3)}")
 
-    model = make_model(cfg.kind, in_ch=5 if cfg.ndvi else 4, n_classes=n, encoder=cfg.encoder,
-                       pretrained=cfg.pretrained and not cfg.init_from)
+    model = make_model(
+        cfg.kind,
+        in_ch=5 if cfg.ndvi else 4,
+        n_classes=n,
+        encoder=cfg.encoder,
+        pretrained=cfg.pretrained and not cfg.init_from,
+    )
     if init is not None:
         model.load_state_dict(init["state"])
     model.to(device)
@@ -322,8 +429,22 @@ def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
     total = cfg.epochs * cfg.steps
     sched = torch.optim.lr_scheduler.LambdaLR(opt, lr_factor(total, min(cfg.warmup, total // 10)))
     cw_t = torch.as_tensor(cw).to(device)
+    lovasz_fn = None
+    if cfg.lovasz:
+        import segmentation_models_pytorch as smp
 
-    st = {"epoch": 0, "step": 0, "loss_sum": 0.0, "best": -1.0, "bad": 0, "log": [], "minutes": 0.0, "sessions": 0}
+        lovasz_fn = smp.losses.LovaszLoss(mode="multiclass", ignore_index=255, from_logits=True)
+
+    st: dict[str, Any] = {
+        "epoch": 0,
+        "step": 0,
+        "loss_sum": 0.0,
+        "best": -1.0,
+        "bad": 0,
+        "log": [],
+        "minutes": 0.0,
+        "sessions": 0,
+    }
     if resume:
         ck = torch.load(run_dir / "last.pt", map_location="cpu", weights_only=False)
         model.load_state_dict(ck["model"])
@@ -339,12 +460,21 @@ def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
     log(f"{device} | {sum(p.numel() for p in model.parameters()):,} parameters | {cfg.classes} classes")
 
     def save_last() -> None:
-        atomic_save({"model": model.state_dict(), "opt": opt.state_dict(), "sched": sched.state_dict(),
-                     "progress": st, "rng": rng_state(rng, device), "config": asdict(cfg)}, run_dir / "last.pt")
+        atomic_save(
+            {
+                "model": model.state_dict(),
+                "opt": opt.state_dict(),
+                "sched": sched.state_dict(),
+                "progress": st,
+                "rng": rng_state(rng, device),
+                "config": asdict(cfg),
+            },
+            run_dir / "last.pt",
+        )
 
     t_mark = time.time()
 
-    def tick() -> None:            # running total of training minutes, across sessions
+    def tick() -> None:  # running total of training minutes, across sessions
         nonlocal t_mark
         st["minutes"] += (time.time() - t_mark) / 60
         t_mark = time.time()
@@ -363,6 +493,8 @@ def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
             loss = F.cross_entropy(out, y, weight=cw_t, ignore_index=255)
             if cfg.dice:
                 loss = loss + cfg.dice * dice_loss(out, y, n)
+            if lovasz_fn is not None:
+                loss = loss + cfg.lovasz * lovasz_fn(out, y)
             opt.zero_grad()
             loss.backward()
             opt.step()
@@ -375,18 +507,40 @@ def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
 
         s, cm = validate(model, d["val"], cfg, mean, std, device)
         tick()
-        row = {"epoch": ep, "train_loss": st["loss_sum"] / cfg.steps, "val_miou": s["miou"], "val_acc": s["accuracy"],
-               **{f"val_iou_{k}": v for k, v in s["iou"].items()}, "lr": sched.get_last_lr()[0],
-               "minutes": st["minutes"], **memory_gb(device)}
+        row = {
+            "epoch": ep,
+            "train_loss": st["loss_sum"] / cfg.steps,
+            "val_miou": s["miou"],
+            "val_acc": s["accuracy"],
+            **{f"val_iou_{k}": v for k, v in s["iou"].items()},
+            "lr": sched.get_last_lr()[0],
+            "minutes": st["minutes"],
+            **memory_gb(device),
+        }
         st["log"].append(row)
         st.update(epoch=ep, step=0, loss_sum=0.0)
         flag = ""
         if s["miou"] > st["best"]:
             st["best"], st["bad"], flag = s["miou"], 0, " *"
-            atomic_save({"state": model.state_dict(), "kind": cfg.kind, "encoder": cfg.encoder, "ndvi": cfg.ndvi,
-                         "n_classes": n, "classes": classes_for(n), "mean": mean, "std": std, "epoch": ep,
-                         "val_miou": s["miou"], "val_counties": vdata.VAL_COUNTIES, "class_weights": cw.tolist(),
-                         "args": asdict(cfg), "val_confusion": cm.tolist()}, run_dir / "best.pt")
+            atomic_save(
+                {
+                    "state": model.state_dict(),
+                    "kind": cfg.kind,
+                    "encoder": cfg.encoder,
+                    "ndvi": cfg.ndvi,
+                    "n_classes": n,
+                    "classes": classes_for(n),
+                    "mean": mean,
+                    "std": std,
+                    "epoch": ep,
+                    "val_miou": s["miou"],
+                    "val_counties": vdata.VAL_COUNTIES,
+                    "class_weights": cw.tolist(),
+                    "args": asdict(cfg),
+                    "val_confusion": cm.tolist(),
+                },
+                run_dir / "best.pt",
+            )
         else:
             st["bad"] += 1
         if st["bad"] >= cfg.patience:
@@ -395,8 +549,10 @@ def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
             st["finished"] = "stop_epoch"
         save_last()
         write_log(run_dir, st["log"])
-        log(f"epoch {ep}: loss {row['train_loss']:.3f} val mIoU {s['miou']:.4f} {s['iou']} "
-            f"({st['minutes']:.1f} min, {memory_gb(device)}){flag}")
+        log(
+            f"epoch {ep}: loss {row['train_loss']:.3f} val mIoU {s['miou']:.4f} {s['iou']} "
+            f"({st['minutes']:.1f} min, {memory_gb(device)}){flag}"
+        )
         if st.get("finished"):
             break
     st.setdefault("finished", "stop_epoch")
@@ -409,7 +565,9 @@ def _run(cfg: Config, run_dir: Path, resume: bool, pause: Pause, device: str,
 def parse(argv: list[str] | None) -> argparse.Namespace:
     ap = argparse.ArgumentParser(description="Train the land cover U-Net (resumable)")
     ap.add_argument("--run", required=True, help="run name, folder models/<run>")
-    ap.add_argument("--resume", action="store_true", help="continue the run from last.pt (recipe comes from its config.json)")
+    ap.add_argument(
+        "--resume", action="store_true", help="continue the run from last.pt (recipe comes from its config.json)"
+    )
     ap.add_argument("--max-minutes", type=float, help="pause cleanly after this many minutes of wall clock")
     ap.add_argument("--device")
     ap.add_argument("--classes", type=int, default=4, choices=[4, 5])
@@ -428,6 +586,9 @@ def parse(argv: list[str] | None) -> argparse.Namespace:
     ap.add_argument("--dice", type=float, default=0.5)
     ap.add_argument("--bld-frac", type=float, default=1 / 3)
     ap.add_argument("--jitter", type=float, default=0.1)
+    ap.add_argument("--lovasz", type=float, default=0.0, help="weight of a Lovasz-softmax loss (0 = off)")
+    ap.add_argument("--scale-aug", type=float, default=0.0, help="zoom crops by exp(U(-a, a)) (0 = off)")
+    ap.add_argument("--color-aug", type=float, default=0.0, help="extra per-band gain and offset std (0 = off)")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--init-from", default="", help="start from the weights of this checkpoint")
     ap.add_argument("--data", default="chesapeake", help='"chesapeake" or "city:<name>"')
@@ -435,19 +596,41 @@ def parse(argv: list[str] | None) -> argparse.Namespace:
 
 
 def config_from_args(a: argparse.Namespace) -> Config:
-    return Config(run=a.run, classes=a.classes, kind=a.kind, encoder=a.encoder, pretrained=not a.no_pretrained,
-                  ndvi=a.ndvi, crop=a.crop, batch=a.batch, steps=a.steps, epochs=a.epochs, stop_epoch=a.stop_epoch,
-                  patience=a.patience, lr=a.lr, warmup=a.warmup, dice=a.dice, bld_frac=a.bld_frac, jitter=a.jitter,
-                  seed=a.seed, init_from=a.init_from, data=a.data)
+    return Config(
+        run=a.run,
+        classes=a.classes,
+        kind=a.kind,
+        encoder=a.encoder,
+        pretrained=not a.no_pretrained,
+        ndvi=a.ndvi,
+        crop=a.crop,
+        batch=a.batch,
+        steps=a.steps,
+        epochs=a.epochs,
+        stop_epoch=a.stop_epoch,
+        patience=a.patience,
+        lr=a.lr,
+        warmup=a.warmup,
+        dice=a.dice,
+        bld_frac=a.bld_frac,
+        jitter=a.jitter,
+        lovasz=a.lovasz,
+        scale_aug=a.scale_aug,
+        color_aug=a.color_aug,
+        seed=a.seed,
+        init_from=a.init_from,
+        data=a.data,
+    )
 
 
 def main(argv: list[str] | None = None) -> int:
     a = parse(argv)
-    device = a.device or ("mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu")
+    device = a.device or (
+        "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
+    )
     run_dir = vdata.models_dir() / a.run
     try:
-        res = train(config_from_args(a), run_dir, a.resume, a.max_minutes, device,
-                    log=lambda m: print(m, flush=True))
+        res = train(config_from_args(a), run_dir, a.resume, a.max_minutes, device, log=lambda m: print(m, flush=True))
     except RunExists as e:
         print(f"refused: {e}", file=sys.stderr)
         return 2

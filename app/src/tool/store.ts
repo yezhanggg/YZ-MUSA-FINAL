@@ -1,8 +1,7 @@
 import { create } from 'zustand';
 import type { Map as MLMap } from 'maplibre-gl';
-import type { FitCurves } from '../lib/adu';
 import { BASE, SIZE_MAX, SIZE_MIN, SIZE_STEP, type Adu, type Bed, type Stories } from '../lib/numbers';
-import type { CountyProps, FC, LngLat, Lot, TownProps, TractProps } from './geo';
+import type { CountyProps, FC, LngLat, TownProps, TractProps } from './geo';
 import type { Forecast, MapLevel, MetricId, Window, WindowVar } from './metrics';
 import type { CostLevel } from '../lib/adu';
 import { RATE } from '../lib/numbers';
@@ -19,7 +18,6 @@ export interface Spot {
   pt: LngLat;
   tract: TractProps;
   town: TownProps;
-  lot: Lot | null;
   /** The parcel clicked on the map (vector tiles), if any. */
   parcel: ParcelProps | null;
   /** Testing mode: the lot record that contains the spot, if the place has lot records. */
@@ -53,10 +51,10 @@ interface ToolState {
   win: Window;
   counties: FC<CountyProps> | null;
   status: 'loading' | 'ready' | 'error';
+  /** Tracts, towns and counties: loaded on demand (tool/areas.ts). */
+  areas: 'idle' | 'loading' | 'ready' | 'error';
   tracts: FC<TractProps> | null;
   towns: FC<TownProps> | null;
-  /** Share of lots with room by footprint, per urban / suburban / rural (null until the file exists). */
-  curves: FitCurves | null;
   spot: Spot | null;
   /** A spot is being tested (lot file loading). */
   busy: boolean;
@@ -67,15 +65,14 @@ interface ToolState {
   selectedLot: string | null;
   /** The ADU being tested. */
   adu: Adu;
-  /** Parcel filters: hide parcels that were not checked (rowhouses, twins, other), hide lots with no room. */
-  sfOnly: boolean;
-  hideNoRoom: boolean;
   /** Tablet / phone bottom sheet: open or only peeking. */
   sheetOpen: boolean;
   /** Laptop: the results drawer over the map is open. */
   resultsOpen: boolean;
   /** Aerial photo under the map. */
   aerial: boolean;
+  /** Testing mode: every lot with a record on the map, coloured by its answer (testable.ts). Not in the link, like aerial. */
+  lotsLayer: boolean;
   set: (p: Partial<ToolState>) => void;
   setAdu: (p: Partial<Adu>) => void;
   /** Change the testing state and mirror it in the address (view, scenario, unit, lot). */
@@ -134,19 +131,18 @@ export const useTool = create<ToolState>((set, get) => ({
   win: '24',
   counties: null,
   status: 'loading',
+  areas: 'idle',
   tracts: null,
   towns: null,
-  curves: null,
   spot: null,
   busy: false,
   msg: null,
   view3d: false,
   selectedLot: null,
-  sfOnly: true,
-  hideNoRoom: false,
   sheetOpen: false,
   resultsOpen: false,
   aerial: false,
+  lotsLayer: false,
   adu: typeof window === 'undefined' ? BASE : aduFromHash(window.location.hash),
   set: (p) => set(p),
   setAdu: (p) =>

@@ -9,6 +9,7 @@ Run (geospatial env) after app/build_data.py. Needs tippecanoe (brew install tip
     python app/build_tiles.py
 Output: app/public/data/parcels.pmtiles  (layer "parcels")
 """
+
 import subprocess
 import sys
 import tempfile
@@ -18,7 +19,7 @@ import geopandas as gpd
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "shared"))
-from common import RAW, OUT, APP_DATA  # noqa: E402
+from common import APP_DATA, OUT, RAW  # noqa: E402
 
 PARCELS = RAW / "6950" / "parcels"
 
@@ -52,7 +53,7 @@ def main():
         r["r"] = r.rule_lot.map({"conversion_only": "c", "variance": "v"})
         lots = lots.merge(r[["lot_id", "r"]], on="lot_id", how="left")
     g = g.merge(lots, on="lot_id", how="left")
-    g["s"] = g.f.notna().astype(int)          # 1 = single-family lot checked by MUSA 6950
+    g["s"] = g.f.notna().astype(int)  # 1 = single-family lot checked by MUSA 6950
     g.loc[g.s == 1, "t"] = "detached"
     g = g.rename(columns={"lot_id": "id"})
     for c in ("f", "k", "mf", "mk"):
@@ -63,9 +64,25 @@ def main():
         src = Path(tmp) / "parcels.geojsonl"
         g.to_file(src, driver="GeoJSONSeq")
         dest = APP_DATA / "parcels.pmtiles"
-        subprocess.run(["tippecanoe", "-o", str(dest), "--force", "-l", "parcels",
-                        "-Z14", "-z15", "--no-tile-size-limit", "--no-feature-limit",
-                        "--simplification=4", "--detect-shared-borders", "-q", str(src)], check=True)
+        subprocess.run(
+            [
+                "tippecanoe",
+                "-o",
+                str(dest),
+                "--force",
+                "-l",
+                "parcels",
+                "-Z14",
+                "-z15",
+                "--no-tile-size-limit",
+                "--no-feature-limit",
+                "--simplification=4",
+                "--detect-shared-borders",
+                "-q",
+                str(src),
+            ],
+            check=True,
+        )
     print(f"  wrote app/public/data/parcels.pmtiles ({dest.stat().st_size / 1e6:.1f} MB)")
     print(f"  parcels: {len(g):,}  checked single-family: {int(g.s.sum()):,}")
     print("  types:", g.t.value_counts().to_dict())

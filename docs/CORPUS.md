@@ -1,6 +1,6 @@
 # Machine-read zoning layer: design
 
-Date: 2026-11-11. Status: pilot. Nothing here is wired into the app.
+Date: 2026-11-11. Status: pilot. Nothing here is in the product: not in the app, not in the assistant, not in the lot files. Code: `pipeline/corpus/`. Data and outputs: `<data root>/corpus/`.
 
 Not legal advice. Not a zoning determination.
 
@@ -12,7 +12,7 @@ Keep the hand-checked rule files as they are. Add a second, clearly weaker layer
 
 | Tier | What it is | How the assistant may use it | Label shown |
 |---|---|---|---|
-| A. Verified rule file | `shared/rules/pa_*.json`, read and checked by people | State values, cite section, link and check date. As today | "Checked rule file, verified on <date>" |
+| A. Hand-checked rule file | `shared/rules/pa_*.json` (36 towns: 21 verified, 15 drafted) and the two city files, read and checked against the code | State values, cite section, link and check date. As today | "Checked rule file, verified on <date>" |
 | B. Machine-read town | Ordinance text fetched from the town or county site, split into sections, plus a draft summary made by a small model, each claim tied to a quote that a program found in the text | Quote the text with section, page, link and retrieval date. Show the draft summary only under its label. Never state a conclusion the quotes do not support. Never fill a tier A field from it | "Machine-read, not verified. Read the quoted text." |
 | C. Statewide baseline | `shared/rules/pa_statewide.json` | MPC paths, building code, sewage, bills. As today | "Statewide baseline, not this town's code" |
 
@@ -24,6 +24,49 @@ Rules for tier B answers:
 - Fields the model could not support were dropped. They are listed in `unsupported` and must not be stated.
 - Always say the document date or retrieval date, and that a newer amendment may exist.
 - Always end with: ask the zoning officer before you design or build.
+
+## Pilot results
+
+<!-- source: ~/musa-drive/corpus/RESULTS.md and ~/musa-drive/corpus/RESULTS_check.md (2026-11-11) -->
+
+**Set.** 31 places with a public copy of the ordinance were tried. 28 were fetched (3 refused by robots.txt, 1 link gone). 146 files, 141 documents extracted. 54 documents are scans with no text layer, and 7 places have only scans. About a quarter of public copies need OCR. 24 places had usable text: 6,367 chunks.
+
+**Retrieval.** Hit = the section cited in the hand-checked file is in the top k. 44 questions on 5 towns.
+
+| System | Top 5 | Top 10 |
+|---|---|---|
+| BM25 only | 70% | 80% |
+| bge-small vectors | 77% | 86% |
+| bge-small hybrid | 80% | 89% |
+| e5-base vectors | 84% | 93% |
+| e5-base hybrid | 84% | 93% |
+
+On the verified towns only (37 questions, 4 towns) e5 hybrid finds the section in the top 10 for 92%. The fallback path (usually an MPC reading, not a sentence in the code) is found for 33%. One question moves a rate by 2 to 25 points, so these are small samples.
+
+**Extraction.** Claude Haiku 5.5 drafts a summary with quotes, three runs on six scored towns:
+
+| Field | Result |
+|---|---|
+| ADU status, raw | 4 of 6 |
+| ADU status, with the consistency rule | 5 of 6 in two runs, 4 of 6 in one |
+| Approval path | 4 of 6 |
+| Fallback path | 0 of 4 |
+| Districts | mean Jaccard 0.2 to 0.35, exact in 1 of 5 |
+| Size caps | 8 of 9 in every run |
+| Owner occupancy | 4 of 5 |
+| Family-only flag | 1 of 5 |
+| Conditions found | 22 of 31 |
+| Quotes found verbatim in the cited text | 74 of 75 |
+
+On verified towns only (5 towns): status raw 3 of 5, path 4 of 5, family flag 0 of 4, conditions 15 of 23.
+
+**Drafts read by hand.** Five drafts for towns with no hand-checked file were read against the text. 2 were right as shown, 1 partly right (a rule true in four districts read as town-wide) and 2 wrong. One of the wrong ones said "no ADU text found" for a town whose code defines an accessory dwelling and permits it in its district tables. The quote check passed because the quote was real.
+
+**Data problems found.** One place's link led to a county home page, so its draft said "not addressed" from a menu page. Two places share their county's ordinance and had no text. The code was fixed and the text rebuilt. The drafts for those three places were not redone.
+
+**What this means.** Retrieval works well enough to point a reader to the right section. The machine draft is not reliable enough to state a town's rule: it misses conditions, mixes up district lists held in tables, cannot give the fallback path, and can call a town silent when it is not. That is why it stays out of the product, and why tier B answers would quote text rather than state conclusions.
+
+**Cost.** About $0.004 to $0.005 and 7 to 9 s per town for the draft. $0.49 spent in the pilot.
 
 ## Tools the assistant would call
 
@@ -42,7 +85,7 @@ get_machine_summary(place)
 
 `get_rule_text` stays as it is. Its "not in my data" branch would add one line: "Machine-read text is available for this town: use search_zoning_text."
 
-Prototype: `pipeline/corpus/search_zoning_text.mjs` (Node, BM25 only, no model, reads one JSON file per place). Not wired into the app.
+Prototype: `pipeline/corpus/search_zoning_text.mjs` (Node, BM25 only, no model, reads one JSON file per place). Not wired into the app. Neither tool exists in `agent/schema.ts`.
 
 ## Serving
 
@@ -67,14 +110,14 @@ For towns in tier B only, and for the tier A towns that also have own-site text 
 
 ## Training a custom model: what it would and would not add
 
-- There are about 40 hand-checked towns. That is the test set, not a training set. Training on them would leave nothing honest to measure with.
-- A fine-tuned extractor would learn the format of 40 answers, not the law of 2,500 towns. The hard parts are retrieval (finding the use table row and the conditions), reading flattened tables, and keeping conditions and scope. None of these get better from 40 examples.
+- There are 38 hand-checked rule files (36 towns and the two cities). That is the test set, not a training set. Training on them would leave nothing honest to measure with.
+- A fine-tuned extractor would learn the format of 38 answers, not the law of 2,500 towns. The hard parts are retrieval (finding the use table row and the conditions), reading flattened tables, and keeping conditions and scope. None of these get better from 38 examples.
 - Retrieval plus a small general model plus a quote check is cheaper to run, easy to audit (every claim has a span), and does not need labels. The verified towns stay a clean test set.
 - What could help later: a small reranker or embedding fine-tune trained on (question, cited section) pairs from the rule files, if the pilot grows to a few hundred checked pairs. Gain would be in retrieval only, and only a few points.
 
 ## What the local GPU is for
 
-- Embeddings. bge-small runs at about 120 chunks/s on MPS against 20 on CPU. e5-base about 43 against 6. All public Pennsylvania text (about 200k chunks) embeds in about 30 minutes with bge-small or about 80 minutes with e5-base on the M3 Pro.
+- Embeddings. bge-small runs at about 120 chunks/s on MPS against 20 on CPU. e5-base about 43 against 6. All public Pennsylvania text (about 200k chunks) embeds in about 30 minutes with bge-small or about 80 minutes with e5-base on a laptop GPU (Apple MPS).
 - Re-embedding after a change, and trying other embedding models or a reranker.
 - Possibly OCR for scanned PDFs (a quarter of public copies), if a local OCR model is added later.
 - It is not needed for extraction. The extraction call is a hosted model and costs under half a cent per town.

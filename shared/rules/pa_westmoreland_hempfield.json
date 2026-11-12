@@ -43,7 +43,8 @@
       "A nonpaying guest house in an accessory building is only for occasional guests, 'not for permanent occupancy by others as housekeeping units' (87-210 'Accessory building')",
       "Nearest by-right alternative: a duplex is P in SR, CR and VR (Table 1). SR duplex lots need 8,000 sq ft per dwelling unit and 100 ft width (Table 3)",
       "Table 2 lists 'Quarters separate from the principal dwelling (caretaker's quarters)' as P in A, RR, TC-R, NC and BT. No standards or definition. It is tied to a caretaker, not a general ADU path. Ask the Zoning Officer",
-      "TND parking: 2 spaces per dwelling unit, garages excluded (87-75, Table 5)"
+      "TND parking: 2 spaces per dwelling unit, garages excluded (87-75, Table 5)",
+      "Table 2 also lists 'Other accessory uses customarily associated with permitted uses and special exceptions' as P*: permitted on a Zoning Officer finding that the use is subordinate, or by special exception. A second dwelling unit is not a customary accessory use on its face. Ask the Zoning Officer"
     ],
     "notes": "Zoning office: Planning and Zoning, https://www.hempfieldtwp.com/162/Planning-Zoning. Pending: New Laws (2) on eCode360 are Ord. 2026-05 (Development Authority) and 2026-06 (stray cats), per the review. Neither is about dwellings. A March 2026 news headline mentions proposed zoning changes. Not checked against an ordinance. Not law."
   },
@@ -231,8 +232,8 @@
         },
         {
           "kind": "existing_structure",
-          "condition": "'No garage or portion of any garage shall be used for or converted to a residential use.'",
-          "effect": "bars",
+          "condition": "'No garage or portion of any garage shall be used for or converted to a residential use.'. Garage forms are left out of form.types_allowed for this reason.",
+          "effect": "condition",
           "applies_to": [
             "garage_conversion",
             "over_garage"
@@ -486,7 +487,7 @@
         "url": "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "'Rear yard (home)' 40 ft for SL1 and SL2, 20 ft for SL3 and SL4. The apartment must be inside the house, so the home rear yard applies."
+        "note": "'Rear yard (home)' 40 ft for SL1 and SL2, 20 ft for SL3 and SL4, 50 ft for LL and EL. The value here is for SL1 and SL2. See yard_tiers."
       },
       "principal_max_height_ft": {
         "value": 38,
@@ -503,6 +504,54 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "'A special exception is required to create a single apartment within a single-family dwelling'."
+      },
+      "yard_tiers": {
+        "value": [
+          {
+            "min_lot_sqft": 5000,
+            "max_lot_sqft": 6000,
+            "applies_to": "principal",
+            "setback_front_ft": 15,
+            "setback_side_ft": 5,
+            "setback_rear_ft": 20,
+            "section": "87-73, TND Schedule A, SL3 and SL4",
+            "note": "Lot area 5K, rear yard (home) 20 ft."
+          },
+          {
+            "min_lot_sqft": 6000,
+            "max_lot_sqft": 10000,
+            "applies_to": "principal",
+            "setback_front_ft": 15,
+            "setback_side_ft": 5,
+            "setback_rear_ft": 40,
+            "section": "87-73, TND Schedule A, SL1 and SL2",
+            "note": "Lot area 6K, rear yard (home) 40 ft."
+          },
+          {
+            "min_lot_sqft": 10000,
+            "max_lot_sqft": 20000,
+            "applies_to": "principal",
+            "setback_front_ft": 20,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 50,
+            "section": "87-73, TND Schedule A, LL1 and LL2",
+            "note": "Lot area 10K, height 45 ft."
+          },
+          {
+            "min_lot_sqft": 20000,
+            "applies_to": "principal",
+            "setback_front_ft": 25,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "section": "87-73, TND Schedule A, EL1 and EL2",
+            "note": "Lot area 20K, height 45 ft."
+          }
+        ],
+        "section": "87-73, TND Schedule A",
+        "url": "https://ecode360.com/attachment/330310/HE0496-087e%20TND%20Schedule%20A.pdf",
+        "verified_on": "2026-11-11",
+        "confidence": "secondary",
+        "note": "Schedule A sets bulk rules by lot type (SL1 to SL4, LL1, LL2, EL1, EL2), not by district. The TND plan assigns the lot type. The tiers here go by the lot type's minimum lot area, which is a reading."
       }
     },
     "SR": {

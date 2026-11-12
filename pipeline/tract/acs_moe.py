@@ -9,6 +9,7 @@ No key is needed for either. Margins are at the 90 percent level.
 Run:  python -m pipeline.tract.acs_moe
 Saves data/processed/acs_moe_tract.csv (GEOID, acs_year, <measure>, <measure>_moe).
 """
+
 from __future__ import annotations
 
 import argparse
@@ -25,7 +26,7 @@ BASE = "https://www2.census.gov/programs-surveys/acs/summary_file"
 HEADERS = {"User-Agent": "tract-analysis/1.0"}
 # Table -> measure name. All are one-cell tables (cell 1 is the value we use).
 TABLES = {"B01003": "pop", "B25001": "housing_units", "B25064": "median_rent"}
-TABLES_2024 = {**TABLES, "B25031": "rent_b1"}   # B25031 cell 3 = 1 bedroom
+TABLES_2024 = {**TABLES, "B25031": "rent_b1"}  # B25031 cell 3 = 1 bedroom
 CELL_2024 = {"B01003": 1, "B25001": 1, "B25064": 1, "B25031": 3}
 FOLDER = RAW5500 / "acs_moe"
 
@@ -44,12 +45,13 @@ def _get(url: str, dest: Path) -> Path:
 
 def lookup(year: int) -> dict[str, tuple[int, int]]:
     """{table: (sequence number, 1-based start column)} from the Census lookup file."""
-    path = _get(f"{BASE}/{year}/documentation/user_tools/ACS_5yr_Seq_Table_Number_Lookup.txt",
-                FOLDER / f"lookup_{year}.txt")
+    path = _get(
+        f"{BASE}/{year}/documentation/user_tools/ACS_5yr_Seq_Table_Number_Lookup.txt", FOLDER / f"lookup_{year}.txt"
+    )
     lk = pd.read_csv(path, dtype=str, encoding="latin-1")
     lk.columns = ["file", "table", "seq", "line", "start", "cells", "seq_cells", "title", "subject"]
     head = lk[lk.table.isin(TABLES) & lk.start.notna() & (lk.start.str.strip() != "")]
-    return {r.table: (int(r.seq), int(r.start)) for r in head.itertuples()}
+    return {t: (int(q), int(s)) for t, q, s in zip(head["table"], head["seq"], head["start"], strict=True)}
 
 
 def geo_tracts(year: int) -> pd.Series:
@@ -72,8 +74,7 @@ def sequence_values(year: int, seq: int, start: int) -> pd.DataFrame:
         for kind in ("e", "m"):
             raw = z.read(f"{kind}{name}.txt").decode("latin-1")
             df = pd.read_csv(io.StringIO(raw), header=None, dtype=str)
-            out[kind] = pd.Series(pd.to_numeric(df[start - 1], errors="coerce").values,
-                                  index=df[5].astype(int).values)
+            out[kind] = pd.Series(pd.to_numeric(df[start - 1], errors="coerce").values, index=df[5].astype(int).values)
     return pd.DataFrame({"est": out["e"], "moe": out["m"]})
 
 
@@ -92,15 +93,23 @@ def older_year(year: int) -> pd.DataFrame:
 def year_2024() -> pd.DataFrame:
     frames = []
     for table, name in TABLES_2024.items():
-        path = _get(f"{BASE}/2024/table-based-SF/data/5YRData/acsdt5y2024-{table.lower()}.dat",
-                    FOLDER / f"acsdt5y2024-{table.lower()}.dat")
+        path = _get(
+            f"{BASE}/2024/table-based-SF/data/5YRData/acsdt5y2024-{table.lower()}.dat",
+            FOLDER / f"acsdt5y2024-{table.lower()}.dat",
+        )
         cell = CELL_2024[table]
         cols = ["GEO_ID", f"{table}_E{cell:03d}", f"{table}_M{cell:03d}"]
         df = pd.read_csv(path, sep="|", dtype=str, usecols=cols)
         df = df[df.GEO_ID.str.startswith("1400000US42")]
-        frames.append(pd.DataFrame({"GEOID": df.GEO_ID.str[9:].values,
-                                    name: pd.to_numeric(df[cols[1]], errors="coerce").values,
-                                    f"{name}_moe": pd.to_numeric(df[cols[2]], errors="coerce").values}))
+        frames.append(
+            pd.DataFrame(
+                {
+                    "GEOID": df.GEO_ID.str[9:].values,
+                    name: pd.to_numeric(df[cols[1]], errors="coerce").values,
+                    f"{name}_moe": pd.to_numeric(df[cols[2]], errors="coerce").values,
+                }
+            )
+        )
     out = frames[0]
     for f in frames[1:]:
         out = out.merge(f, on="GEOID", how="outer")

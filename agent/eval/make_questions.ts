@@ -1,4 +1,4 @@
-// Makes agent/eval/questions.json: 60 questions for the in-app assistant, 10 per category, with ground truth read
+// Makes agent/eval/questions.json: 65 questions for the in-app assistant, 10 per category (5 for town rules), with ground truth read
 // from the tools themselves (the same executors the browser runs) over the lot records and app/public/data.
 // No number is typed by hand: lots are picked by rules (first match in tract order), and every expected value is
 // read from a tool result. Run again when the data changes:
@@ -551,10 +551,10 @@ async function build(): Promise<EvalQuestion[]> {
     rubric: 'Gives the county share of tracts that pay off and the most common trend group.',
   });
   Q.push({
-    id: 'market-05', category: 'market', question: 'How many single-family lots in this tract have room for a 600 sq ft unit?', context: onSite(cumberland),
+    id: 'market-05', category: 'market', question: 'How many lots with 1 to 4 homes in this tract have room for a 600 sq ft unit?', context: onSite(cumberland),
     required: [['get_site', 'test_adu']], calls: [{ name: 'get_site', input: {} }],
-    facts: ([s]) => [n('lots with room', num(s, 'tract.lots_with_room_600'), 'count', 1), n('single-family lots', num(s, 'tract.single_family_lots'), 'count', 1)],
-    rubric: 'Gives lots with room out of the single-family lots.',
+    facts: ([s]) => [n('lots with room', num(s, 'tract.lots_with_room_600'), 'count', 1), n('lots with 1 to 4 homes', num(s, 'tract.lots_1_to_4_homes'), 'count', 1)],
+    rubric: 'Gives lots with room out of the lots with 1 to 4 homes, says it is a modelled estimate with a range (this tract is outside the two measured cities).',
   });
   Q.push({
     id: 'market-06', category: 'market', question: 'Does a 600 sq ft one-bedroom pay off in this tract? What would it cost per month?', context: onSite(cumberland),

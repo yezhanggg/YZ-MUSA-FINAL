@@ -5,6 +5,7 @@ the same lot with an alley behind, a twin cut from one outline, a rowhouse, a ga
 lot, a vacant steep lot, a district outside the rule table, a two-part parcel, a lot with a street
 named Way behind it, and one broken parcel that must be recorded as an error.
 """
+
 from __future__ import annotations
 
 import gzip
@@ -13,6 +14,7 @@ from pathlib import Path
 
 import numpy as np
 import pytest
+import shapely
 
 gpd = pytest.importorskip("geopandas")
 pytest.importorskip("pyarrow")
@@ -38,10 +40,23 @@ def built(tmp_path_factory: pytest.TempPathFactory) -> Path:
     for name in ("lots", "buildings", "streets"):
         gpd.read_file(FIXTURE / f"{name}.geojson").to_parquet(proc / f"{name}.parquet")
     # Land cover for one lot only, in the Pittsburgh model's columns.
-    gpd.pd.DataFrame([{"lot_id": "pgh-T01", "building_sqft": 800.0, "building_share": 0.2, "tree_sqft": 1200.0,
-                       "tree_share": 0.3, "open_sqft": 1600.0, "open_share": 0.4, "hard_surface_sqft": 400.0,
-                       "hard_surface_share": 0.1, "cover_source": "model:test", "cover_date": "2022"}]
-                     ).to_parquet(proc / "cover.parquet")
+    gpd.pd.DataFrame(
+        [
+            {
+                "lot_id": "pgh-T01",
+                "building_sqft": 800.0,
+                "building_share": 0.2,
+                "tree_sqft": 1200.0,
+                "tree_share": 0.3,
+                "open_sqft": 1600.0,
+                "open_share": 0.4,
+                "hard_surface_sqft": 400.0,
+                "hard_surface_share": 0.1,
+                "cover_source": "model:test",
+                "cover_date": "2022",
+            }
+        ]
+    ).to_parquet(proc / "cover.parquet")
     assert bl.main(["run", "--place", "pittsburgh", "--workers", "1"]) == 0
     yield root / "lots" / "pittsburgh"
     mp.undo()
@@ -58,7 +73,7 @@ def records(out: Path) -> dict[str, dict]:
 
 def test_every_record_valid(built: Path) -> None:
     recs = records(built)
-    assert len(recs) == 11   # 12 lots, one broken
+    assert len(recs) == 11  # 12 lots, one broken
     for rec in recs.values():
         assert lotmod.validate(rec) == []
         assert set(rec["rules"]) == set(bl.SCENARIOS)
@@ -76,8 +91,16 @@ def test_broken_lot_is_recorded(built: Path) -> None:
 def test_index_columns(built: Path) -> None:
     idx = gpd.pd.read_parquet(built / "index.parquet")
     assert len(idx) == 11
-    for col in bl.APP_FIELDS + ("allowed_today", "approval_today", "garage_present", "edge_confidence",
-                                "steep_slope", "landslide", "flood", "historic"):
+    for col in bl.APP_FIELDS + (
+        "allowed_today",
+        "approval_today",
+        "garage_present",
+        "edge_confidence",
+        "steep_slope",
+        "landslide",
+        "flood",
+        "historic",
+    ):
         assert col in idx.columns, col
     for s in bl.SCENARIOS:
         for col in ("detached_sqft_", "limiting_", "allowed_", "two_units_"):
@@ -94,7 +117,7 @@ def test_standard_lot_fits(built: Path) -> None:
     d = rec["fit"]["today"]["detached_new"]
     assert d["fits"] and d["largest_sqft"] > 400
     assert rec["lot"]["shape_confidence"] == "high" and not rec["lot"]["alley"]
-    assert rec["rules"]["today"]["setback_front_ft"] == 15   # R1D-H
+    assert rec["rules"]["today"]["setback_front_ft"] == 15  # R1D-H
 
 
 def test_alley_rear_uses_way_setback(built: Path) -> None:
@@ -104,7 +127,7 @@ def test_alley_rear_uses_way_setback(built: Path) -> None:
     # Same lot. The rear strip is 2 ft instead of 5 ft across the 30 ft between side setbacks.
     gain = alley["buildable"]["today"]["keep_sqft"] - plain["buildable"]["today"]["keep_sqft"]
     assert 80 <= gain <= 100
-    assert recs["T11"]["lot"]["alley"]   # a street named Way counts as a way
+    assert recs["T11"]["lot"]["alley"]  # a street named Way counts as a way
 
 
 def test_twin_split_building(built: Path) -> None:
@@ -165,9 +188,12 @@ def test_force_rebuilds_one_tract(built: Path) -> None:
 
 
 def test_split_geometry_round_trip() -> None:
-    rec = {"lot": {"id": "x", "polygon": {"type": "Polygon"}, "edges": []}, "buildings": [{"polygon": 1}],
-           "buildable": {"today": {"keep": 2, "clear": 3, "keep_sqft": 1.0}},
-           "fit": {"today": {"detached_new": {"spot": 4, "second": {"spot": 5}}}}}
+    rec = {
+        "lot": {"id": "x", "polygon": {"type": "Polygon"}, "edges": []},
+        "buildings": [{"polygon": 1}],
+        "buildable": {"today": {"keep": 2, "clear": 3, "keep_sqft": 1.0}},
+        "fit": {"today": {"detached_new": {"spot": 4, "second": {"spot": 5}}}},
+    }
     attrs, geoms = bl.split_geometry([rec])
     assert "polygon" not in attrs[0]["lot"] and "spot" not in attrs[0]["fit"]["today"]["detached_new"]
     assert geoms[0]["spots"]["today"]["detached_new"] == [4, 5]
@@ -190,8 +216,7 @@ def test_big_tract_splits_and_reads_back(built: Path, monkeypatch: pytest.Monkey
     (built / "parts" / "42003999900.parquet").unlink()
 
 
-def _feet(g: dict) -> "shapely.Geometry":
-    import shapely
+def _feet(g: dict) -> shapely.Geometry:
     from pyproj import Transformer
 
     tr = Transformer.from_crs(4326, 2272, always_xy=True)
@@ -226,19 +251,22 @@ def test_unit_keeps_clear_of_garage(built: Path) -> None:
 
 
 def test_front_yard_left_out(built: Path) -> None:
-    rec = records(built)["T09"]   # house 30 ft back from the street, room behind it
+    rec = records(built)["T09"]  # house 30 ft back from the street, room behind it
     b = rec["buildable"]["today"]
     assert b["front_sqft"] > 0
     keep = _feet(b["keep"])
     house = next(_feet(x["polygon"]) for x in rec["buildings"] if x["role"] == "main")
-    assert keep.bounds[1] >= house.bounds[1] - 1.0   # nothing drawn between the street and the house
+    assert keep.bounds[1] >= house.bounds[1] - 1.0  # nothing drawn between the street and the house
 
 
 def test_historic_inputs() -> None:
     flags = {"historic": True}
     row = {"historic_individual": False, "historic_status": "Contributing"}
-    assert bl.historic_inputs(row, flags) == {"historic_individual": False, "historic_district": True,
-                                              "historic_contributing": True}
+    assert bl.historic_inputs(row, flags) == {
+        "historic_individual": False,
+        "historic_district": True,
+        "historic_contributing": True,
+    }
     row = {"historic_individual": None, "historic_status": "Non-contributing"}
     assert bl.historic_inputs(row, {"historic": False})["historic_contributing"] is False
     assert bl.historic_inputs({}, {"historic": None})["historic_individual"] is None
@@ -252,16 +280,17 @@ def test_party_walls(built: Path) -> None:
     recs = records(built)
     twin = recs["T03"]["lot"]["edges"]
     walls = [e for e in twin if e.get("party_wall")]
-    assert len(walls) == 1 and _feet(walls[0]["line"]).centroid.x > 1_340_300 + 20   # the shared side
+    assert len(walls) == 1 and _feet(walls[0]["line"]).centroid.x > 1_340_300 + 20  # the shared side
     row = [e for e in recs["T05"]["lot"]["edges"] if e.get("party_wall")]
     assert len(row) == 2
-    assert not any(e.get("party_wall") for e in recs["T01"]["lot"]["edges"])   # detached keeps side yards
+    assert not any(e.get("party_wall") for e in recs["T01"]["lot"]["edges"])  # detached keeps side yards
     idx = gpd.pd.read_parquet(built / "index.parquet").set_index("parcel_id")
     assert idx.loc["T03", "party_walls"] == 1
 
 
 def test_spots_inside_buildable_and_bearing(built: Path) -> None:
     import shapely
+
     n = 0
     for rec in records(built).values():
         for s, types in rec["fit"].items():
@@ -293,8 +322,10 @@ def test_money_manifest_and_lookup(built: Path) -> None:
 
 
 def test_contextual_front() -> None:
-    raw = {k: None for k in ("setback_front_ft", "setback_side_ft", "setback_rear_ft", "setback_rear_alley_ft",
-                             "separation_ft")}
+    raw = {
+        k: None
+        for k in ("setback_front_ft", "setback_side_ft", "setback_rear_ft", "setback_rear_alley_ft", "separation_ft")
+    }
     raw.update(setback_side_ft=5, setback_rear_ft=9, separation_ft=10, citations={}, assumed=[])
     r, notes = bl.fill_rules(raw, "RSA-5", contextual_front=12.5)
     assert r["setback_front_ft"] == 12.5 and "contextual" in r["citations"]["setback_front_ft"]["section"]
@@ -304,6 +335,7 @@ def test_contextual_front() -> None:
 
 def test_strict_garage_test() -> None:
     from shapely.geometry import LineString, box
+
     from pipeline import fit
 
     lot = box(0, 0, 40, 120)
@@ -321,7 +353,7 @@ def test_strict_garage_test() -> None:
 
 
 def test_type_path_is_not_the_lot_fact(built: Path) -> None:
-    rec = records(built)["T01"]   # no garage on this lot
+    rec = records(built)["T01"]  # no garage on this lot
     r = rec["rules"]["today"]
     # The resolver's own split: the rule says by right, this lot has no structure to convert.
     assert r["approval_by_type"]["garage_conversion"] == "not_allowed"
@@ -342,8 +374,11 @@ def test_type_path_is_not_the_lot_fact(built: Path) -> None:
 
 def test_height_from_stories() -> None:
     from shapely.geometry import box
-    rows = [{"geometry": box(0, 0, 20, 30), "role": "main", "height_ft": None, "area_sqft": 600},
-            {"geometry": box(0, 50, 10, 60), "role": "accessory", "height_ft": None, "area_sqft": 100}]
+
+    rows = [
+        {"geometry": box(0, 0, 20, 30), "role": "main", "height_ft": None, "area_sqft": 600},
+        {"geometry": box(0, 50, 10, 60), "role": "accessory", "height_ft": None, "area_sqft": 100},
+    ]
     out = bl.to_buildings(rows, stories=2.0)
     assert out[0][1].height_ft == 20.0 and out[0][0]["height_source"] == "stories"
     assert out[1][1].height_ft is None
@@ -353,6 +388,7 @@ def test_height_from_stories() -> None:
 
 def test_broken_town_rule_file_is_never_read(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     import shutil
+
     from pipeline import rules as rulesmod
 
     for f in rulesmod.RULES_DIR.glob("*.json"):
@@ -395,8 +431,9 @@ def test_cover_source_from_model_columns(tmp_path: Path, monkeypatch: pytest.Mon
     monkeypatch.setenv("ADU_DATA_DIR", str(tmp_path))
     proc = tmp_path / "processed" / "pittsburgh"
     proc.mkdir(parents=True)
-    gpd.pd.DataFrame([{"lot_id": "a", "tree_sqft": 10.0, "tree_share": 0.1, "model": "r34_c5_s0",
-                       "imagery": "NAIP 2022, 0.6 m"}]).to_parquet(proc / "cover_model_r34_c5_s0.parquet")
+    gpd.pd.DataFrame(
+        [{"lot_id": "a", "tree_sqft": 10.0, "tree_share": 0.1, "model": "r34_c5_s0", "imagery": "NAIP 2022, 0.6 m"}]
+    ).to_parquet(proc / "cover_model_r34_c5_s0.parquet")
     out = bl.add_cover("pittsburgh", gpd.pd.DataFrame({"lot_id": ["a"]}))
     c = bl.cover_of(out.iloc[0].to_dict(), 100.0)
     assert c["source"] == "model:r34_c5_s0" and c["date"] == "2022"
@@ -408,3 +445,50 @@ def test_street_groups() -> None:
     assert bl.street_group("street", "ST") == "street"
     assert bl.street_group("highway", "") == "skip"
     assert bl.street_group("private", "DR") == "other"
+
+
+def test_terrain_refresh_without_rerun(built: Path) -> None:
+    """build_lots terrain folds a terrain block into built tracts from a DEM, keeps the fit as built,
+    backs up what it rewrites and skips finished tracts on a second run."""
+    from pyproj import Transformer
+    from test_terrain import write_dem_source
+
+    root = built.parents[1]
+    before = records(built)
+    b = gpd.read_file(FIXTURE / "lots.geojson").to_crs(2272).total_bounds
+    t = Transformer.from_crs(2272, 26917, always_xy=True)
+    xs, ys = t.transform([b[0], b[2]], [b[1], b[3]])
+    write_dem_source(root, "pittsburgh", (min(xs) - 60, min(ys) - 60, max(xs) + 60, max(ys) + 60), 0.30)
+    old_version = json.loads((built / "manifest.json").read_text())["data_version"]
+    assert bl.main(["terrain", "--place", "pittsburgh", "--workers", "1"]) == 0
+    recs = records(built)
+    t01 = recs["T01"]
+    ter = t01["terrain"]
+    assert ter["source"] == "test:plane" and ter["flown_to"] == "2025-04-02"
+    assert ter["lot"]["mean_pct"] == pytest.approx(30.0, abs=0.5)
+    assert ter["steep_site"] is True and ter["slope_class"] == "steep"
+    if t01["fit"]["today"]["detached_new"]["fits"]:
+        assert ter["basis"] == "spot_today" and ter["spot"]["today"]["drop_ft"] > 0
+        # Every buildable cell is steep: no gentle ground for the unit.
+        assert ter["gentle_fit"]["today"]["fits"] is False
+    # The fit itself is as built.
+    for pid, rec in recs.items():
+        assert rec["fit"] == before[pid]["fit"] and rec["rules"] == before[pid]["rules"]
+        assert sum(a.startswith("ground slope") for a in rec["quality"]["assumptions"]) == 1
+    assert bl.main(["validate", "--place", "pittsburgh"]) == 0
+    idx = gpd.pd.read_parquet(built / "index.parquet").set_index("parcel_id")
+    assert bool(idx.loc["T01", "steep_site"]) and idx.loc["T01", "slope_lot_mean_pct"] == pytest.approx(30.0, abs=0.5)
+    man = json.loads((built / "manifest.json").read_text())
+    assert man["stale_tracts"] == [] and man["terrain"]["tracts_done"] == len(TRACTS)
+    assert man["data_version"] != old_version
+    backup = Path((built / "terrain_backup.txt").read_text().strip())
+    assert old_version in backup.name and (backup / "index.parquet").exists()
+    assert all((backup / "parts" / f"{tr}.parquet").exists() for tr in TRACTS)
+    app = json.loads((built / "app" / f"{TRACTS[0]}.json").read_text())
+    assert "steep_site" in app[0]
+    # Resumable: a second run finds nothing to do.
+    n = len((built / "terrain_progress.jsonl").read_text().splitlines())
+    assert bl.main(["terrain", "--place", "pittsburgh", "--workers", "1"]) == 0
+    assert len((built / "terrain_progress.jsonl").read_text().splitlines()) == n
+    stats = bl.group_stats(gpd.pd.read_parquet(built / "index.parquet"))
+    assert stats["terrain"]["with_terrain"] == 1.0

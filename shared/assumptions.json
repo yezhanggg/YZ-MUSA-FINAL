@@ -636,6 +636,142 @@
       "note": "Share of homes on a lot with room, divided by the state share, is capped here so a few tracts do not dominate.",
       "confidence": "assumption",
       "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-10"}]
+    },
+    "tract.forecast.legal_class_factor": {
+      "label": "Share of the permit rate by town legal class (from the rule files)",
+      "unit": "multiplier",
+      "table": {"by_right": {"low": 1.0, "mid": 1.0, "high": 1.0}, "discretionary": {"low": 0.02, "mid": 0.05, "high": 0.10}, "family_only": {"low": 0.02, "mid": 0.05, "high": 0.10}, "conversion_only": {"low": 0.02, "mid": 0.05, "high": 0.10}, "none": {"low": 0.0, "mid": 0.005, "high": 0.01}, "unknown": {"low": 0.02, "mid": 0.05, "high": 0.10}},
+      "note": "Classes come from adu.status in shared/rules (pipeline/tract/legal.py). Discretionary, family-only, conversion-only and unknown keep the old 'limited' factor, so a change in the totals comes from a town's class and not from new factors. 'none' (code silent or prohibits ADUs) leaves only a variance, so it is near zero. Under a state bill every town it reaches counts as by_right.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (MUSA 5500 report)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.flag.steep_slope_min_share": {
+      "label": "Steep slope flag: share of the lot in the layer",
+      "unit": "share of lot area",
+      "value": 0.25,
+      "note": "Steep slope areas are mapped coarsely, so a lot is flagged only when a real part of it (a quarter) is inside.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.terrain.moderate_slope_pct": {
+      "label": "Ground slope: moderate from this mean slope under the unit",
+      "unit": "percent slope (rise over run x 100)",
+      "value": 15,
+      "note": "Under about 15 percent a small house sits on ordinary footings with light grading. From 15 to 25 percent it usually needs stepped or deeper foundations, retaining walls or more grading, and many hillside ordinances start their review here. Reported next to the fit (terrain.slope_class); the fit itself does not change.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (terrain refresh, pipeline/terrain.py), from common hillside practice", "url": "", "date": "2026-11-12"}]
+    },
+    "lots.terrain.steep_slope_pct": {
+      "label": "Ground slope: steep from this mean slope under the unit",
+      "unit": "percent slope (rise over run x 100)",
+      "value": 25,
+      "note": "At 25 percent or more ground is steep: engineered foundations, a geotechnical look and grading permits are likely, and building costs rise sharply. Pittsburgh maps slopes of 25 percent or more as its steep slope layer (PGHWebSlope25). Sets terrain.steep_site and the gentle fit (best spot searched only on buildable ground under this slope). The fit's yes or no does not change.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (terrain refresh, pipeline/terrain.py), matching the City of Pittsburgh 25 percent slope layer", "url": "", "date": "2026-11-12"}]
+    },
+    "lots.flag.landslide_min_share": {
+      "label": "Landslide flag: share of the lot in the layer",
+      "unit": "share of lot area",
+      "value": 0.25,
+      "note": "Landslide areas are mapped coarsely, so a lot is flagged only when a real part of it (a quarter) is inside.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.flag.flood_min_share": {
+      "label": "Flood flag: share of the lot in the floodplain",
+      "unit": "share of lot area",
+      "value": 0.1,
+      "note": "Any sizable floodplain share matters for where a unit can sit, so 10 percent is enough.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.flag.historic_min_share": {
+      "label": "Historic flag: share of the lot in a district",
+      "unit": "share of lot area",
+      "value": 0.5,
+      "note": "A historic district covers whole blocks, so half the lot inside means the lot is in the district. The lot center in a district also counts.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.garage.min_sqft": {
+      "label": "Smallest accessory building read as a garage",
+      "unit": "sq ft footprint",
+      "value": 180,
+      "note": "A one-car garage is about 10 x 18 ft. Smaller accessory buildings are sheds, which the fit treats as removable.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.garage.min_gap_ft": {
+      "label": "Strict garage test: gap from the house",
+      "unit": "ft",
+      "value": 3,
+      "note": "Where a place asks for the strict test (Philadelphia, where most accessory outlines are additions and lean-tos), a garage stands at least this far from the house.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.garage.behind_tol_ft": {
+      "label": "Strict garage test: how far in front of the house's rear face",
+      "unit": "ft",
+      "value": 5,
+      "note": "The center of a garage sits no more than this in front of the house's rear face.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.garage.access_ft": {
+      "label": "Strict garage test: distance to a street, alley or driveway",
+      "unit": "ft",
+      "value": 75,
+      "note": "A garage has a street, alley or driveway this close.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.accessory_clearance_ft": {
+      "label": "Clearance between a new unit and a garage or shed",
+      "unit": "ft",
+      "value": 5,
+      "note": "Planning clearance. Under 5 ft a facing wall needs a fire rating (the rule files' fire_separation.rated_wall_below_ft is used when present). Two dwellings keep the larger separation_ft from the rules.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.party_wall.tol_ft": {
+      "label": "Party wall: distance from the side lot line",
+      "unit": "ft",
+      "value": 1.5,
+      "note": "A side lot line the main house runs along, within this distance, is shared with the attached neighbor and gets no side yard. Only for twins, rows and multi-unit houses.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.party_wall.min_ft": {
+      "label": "Party wall: length along the side lot line",
+      "unit": "ft",
+      "value": 12,
+      "note": "The house must run along the side line for at least this length (or half the line) to count as a party wall.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.story_ft": {
+      "label": "Height per story when no height is measured",
+      "unit": "ft per story",
+      "value": 10,
+      "note": "Used only when a building has the assessor's story count and no measured height.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.street_search_ft": {
+      "label": "Search distance for the streets that front a lot",
+      "unit": "ft",
+      "value": 200,
+      "note": "Streets within this distance of a lot are used to find its front.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
+    },
+    "lots.fallback_setbacks_ft": {
+      "label": "Setbacks used when the rule files give none",
+      "unit": "ft",
+      "table": {"setback_front_ft": 25, "setback_side_ft": 5, "setback_rear_ft": 5, "separation_ft": 10},
+      "note": "Used only for a district outside the rule tables. Every use is listed in the record's assumed list and cited as a planning assumption, never as law.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
     }
   }
 }

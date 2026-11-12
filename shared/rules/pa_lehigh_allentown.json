@@ -251,6 +251,22 @@
           "building_types": null,
           "section": "660-49H, 660-42C(2)",
           "url": "https://ecode360.com/49641099"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "House A and House B lots need at least 3,500 sq ft and 40 ft of width in N3 and N4 (House B also in N5). The twin house needs 1,800 sq ft. 660-42 sets no ADU lot minimum. A smaller existing lot may be nonconforming. Ask the zoning officer",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "N3",
+            "N4",
+            "N5"
+          ],
+          "building_types": [
+            "detached"
+          ],
+          "section": "660-29D, 660-30D, 660-28D, 660-42C(1)",
+          "url": "https://ecode360.com/49783893"
         }
       ],
       "section": "660-42C, Article 4 tables part F",
@@ -473,12 +489,12 @@
   "districts": {
     "N3": {
       "min_lot_sqft": {
-        "value": null,
+        "value": 1800,
         "section": "660-27D, 660-28D, 660-29D, 660-30D",
-        "url": "https://ecode360.com/49640869",
+        "url": "https://ecode360.com/49783893",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "Varies by type: Suburban rowhouse and Twin house 1,800 s.f. min. House A and House B 3,500 s.f. min."
+        "note": "Smallest building type lot in N3: suburban rowhouse and twin house '1,800 s.f. min.' House A and House B need '3,500 s.f. min.' and 40 ft width. A building type siting rule, not an ADU rule."
       },
       "setback_side_ft": {
         "value": 3,
@@ -515,12 +531,12 @@
     },
     "N4": {
       "min_lot_sqft": {
-        "value": null,
+        "value": 1800,
         "section": "660-28D, 660-29D, 660-30D",
-        "url": "https://ecode360.com/49640869",
+        "url": "https://ecode360.com/49783893",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "Varies by type: Twin house 1,800 s.f. min. House A and House B 3,500 s.f. min."
+        "note": "Smallest building type lot in N4: twin house '1,800 s.f. min.' (22 ft width). House A and House B need '3,500 s.f. min.' and 40 ft width. No rowhouse type is allowed in N4. A building type siting rule, not an ADU rule."
       },
       "setback_side_ft": {
         "value": 3,
@@ -557,12 +573,12 @@
     },
     "N5": {
       "min_lot_sqft": {
-        "value": null,
+        "value": 3500,
         "section": "660-30D, 660-31D",
-        "url": "https://ecode360.com/49640876",
+        "url": "https://ecode360.com/49783893",
         "verified_on": "2026-11-11",
         "confidence": "verified",
-        "note": "House B 3,500 s.f. min. House C 6,000 s.f. min."
+        "note": "House B '3,500 s.f. min.' (40 ft). House C '6,000 s.f. min.' (50 ft). A building type siting rule, not an ADU rule."
       },
       "setback_side_ft": {
         "value": null,

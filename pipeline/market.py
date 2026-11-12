@@ -10,22 +10,26 @@ ACS tract median gross rent by bedrooms (table B25031) is the fallback.
 
 Run:  python -m pipeline.market download
 """
+
 from __future__ import annotations
 
 import argparse
 import json
 import time
+from collections.abc import Iterator, Mapping, Sequence
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Iterator, Mapping
+from typing import Any, cast
 
 import pandas as pd
 import requests
 
 from pipeline.paths import data_root
 
-SERVICE = ("https://services.arcgis.com/VTyQ9soqVukalItT/ArcGIS/rest/services/"
-           "HUD_PDR_Small_Area_Fair_Market_Rents/FeatureServer/1/query")
+SERVICE = (
+    "https://services.arcgis.com/VTyQ9soqVukalItT/ArcGIS/rest/services/"
+    "HUD_PDR_Small_Area_Fair_Market_Rents/FeatureServer/1/query"
+)
 ITEM = "https://www.arcgis.com/sharing/rest/content/items/6458c67bad2a4cc7aa97514ef7ba8a0e?f=json"
 HEADERS = {"User-Agent": "adu-feasibility-data/1.0"}
 # Pennsylvania ZIP codes run from 15001 to 19640. ZIP strings compare in order.
@@ -54,7 +58,7 @@ def _pages(session: requests.Session) -> Iterator[list[dict[str, Any]]]:
     """Yield pages of SAFMR rows for PA ZIPs. The service caps a page at 1,000 rows."""
     offset = 0
     while True:
-        params = {
+        params: dict[str, Any] = {
             "where": f"ID >= '{PA_ZIP_MIN}' AND ID <= '{PA_ZIP_MAX}'",
             "outFields": "HUD_CODE,FMR_NAME,ID,SAFMR_0BR,SAFMR_1BR,SAFMR_2BR,SAFMR_3BR,SAFMR_4BR",
             "orderByFields": "OBJECTID",
@@ -74,7 +78,7 @@ def _pages(session: requests.Session) -> Iterator[list[dict[str, Any]]]:
         if not body.get("exceededTransferLimit") and len(rows) < PAGE:
             return
         offset += len(rows)
-        time.sleep(0.3)   # be polite to a free service
+        time.sleep(0.3)  # be polite to a free service
 
 
 def service_vintage(session: requests.Session) -> dict[str, Any]:
@@ -95,21 +99,26 @@ def fiscal_year_of(modified: pd.Timestamp) -> int:
     return modified.year + 1 if modified.month >= 8 else modified.year
 
 
-def tidy_safmr(rows: list[Mapping[str, Any]], fiscal_year: int) -> pd.DataFrame:
+def tidy_safmr(rows: Sequence[Mapping[str, Any]], fiscal_year: int) -> pd.DataFrame:
     """Wide service rows to one row per ZIP, metro and bedroom count."""
     wide = pd.DataFrame(rows)
-    long = wide.melt(id_vars=["ID", "HUD_CODE", "FMR_NAME"],
-                     value_vars=[f"SAFMR_{b}BR" for b in BEDROOMS],
-                     var_name="field", value_name="rent")
+    long = wide.melt(
+        id_vars=["ID", "HUD_CODE", "FMR_NAME"],
+        value_vars=[f"SAFMR_{b}BR" for b in BEDROOMS],
+        var_name="field",
+        value_name="rent",
+    )
     long["bedrooms"] = long.field.str.extract(r"(\d)BR").astype(int)
-    out = pd.DataFrame({
-        "zip": long.ID.astype(str).str.zfill(5),
-        "bedrooms": long.bedrooms.astype("int8"),
-        "rent": pd.to_numeric(long.rent, errors="coerce"),
-        "fiscal_year": fiscal_year,
-        "metro_code": long.HUD_CODE,
-        "metro": long.FMR_NAME,
-    })
+    out = pd.DataFrame(
+        {
+            "zip": long.ID.astype(str).str.zfill(5),
+            "bedrooms": long.bedrooms.astype("int8"),
+            "rent": pd.to_numeric(long.rent, errors="coerce"),
+            "fiscal_year": fiscal_year,
+            "metro_code": long.HUD_CODE,
+            "metro": long.FMR_NAME,
+        }
+    )
     out = out.dropna(subset=["rent"])
     return out.sort_values(["zip", "metro_code", "bedrooms"]).reset_index(drop=True)
 
@@ -127,7 +136,9 @@ def download(force: bool = False) -> Path:
     raw.write_text(json.dumps({"source": SERVICE, "vintage": vintage, "rows": rows}))
     table = tidy_safmr(rows, vintage["fiscal_year"])
     table.to_parquet(dest, index=False)
-    print(f"wrote {dest}: {table.zip.nunique()} ZIPs, FY{vintage['fiscal_year']} (service updated {vintage['modified']})")
+    print(
+        f"wrote {dest}: {table.zip.nunique()} ZIPs, FY{vintage['fiscal_year']} (service updated {vintage['modified']})"
+    )
     return dest
 
 
@@ -162,9 +173,15 @@ def safmr_rent(zip_code: str, bedrooms: int, table: pd.DataFrame | None = None) 
     if hit.empty:
         return None
     row = hit.sort_values("rent").iloc[0]
-    return {"rent": float(row.rent), "bedrooms": int(bedrooms), "zip": row.zip,
-            "fiscal_year": int(row.fiscal_year), "metro": row.metro, "n_metros": int(len(hit)),
-            "source": "hud_safmr"}
+    return {
+        "rent": float(row.rent),
+        "bedrooms": int(bedrooms),
+        "zip": row.zip,
+        "fiscal_year": int(row.fiscal_year),
+        "metro": row.metro,
+        "n_metros": int(len(hit)),
+        "source": "hud_safmr",
+    }
 
 
 def rent_table_for_zips(zips: list[str], table: pd.DataFrame | None = None) -> dict[str, dict[int, float]]:
@@ -173,7 +190,8 @@ def rent_table_for_zips(zips: list[str], table: pd.DataFrame | None = None) -> d
     sub = t[t.zip.isin([str(z).zfill(5) for z in zips])]
     low = sub.groupby(["zip", "bedrooms"]).rent.min()
     out: dict[str, dict[int, float]] = {}
-    for (z, b), v in low.items():
+    for key, v in low.items():
+        z, b = cast(tuple[str, int], key)
         out.setdefault(z, {})[int(b)] = float(v)
     return out
 

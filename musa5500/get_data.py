@@ -8,7 +8,7 @@ Parts: acs, decennial, pop, jobs, permits, migration, rates, landcover
 Each part saves raw files in data/raw/5500/ and one clean table in data/processed/.
 Files already downloaded are skipped, so it is safe to run again.
 """
-import gzip
+
 import sys
 from pathlib import Path
 
@@ -16,7 +16,7 @@ import pandas as pd
 import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "shared"))
-from common import RAW, OUT, STATE, PA_BBOX, ACS_YEARS, HEADERS, census_key, download, step  # noqa: E402
+from common import ACS_YEARS, HEADERS, OUT, PA_BBOX, RAW, STATE, census_key, download, step  # noqa: E402
 
 R = RAW / "5500"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -32,7 +32,7 @@ ACS_VARS = {
     "B25064_001E": "median_rent",
     "B25077_001E": "median_value",
     "B19013_001E": "median_income",
-    "B25024_002E": "single_family_detached",   # used by MUSA 6950 to scale lot results statewide
+    "B25024_002E": "single_family_detached",  # used by MUSA 6950 to scale lot results statewide
 }
 
 
@@ -49,9 +49,15 @@ def acs():
             print(f"  get   ACS {year - 4}-{year}")
             r = requests.get(
                 f"https://api.census.gov/data/{year}/acs/acs5",
-                params={"get": "NAME," + ",".join(ACS_VARS), "for": "tract:*",
-                        "in": f"state:{STATE} county:*", "key": key},
-                headers=HEADERS, timeout=120)
+                params={
+                    "get": "NAME," + ",".join(ACS_VARS),
+                    "for": "tract:*",
+                    "in": f"state:{STATE} county:*",
+                    "key": key,
+                },
+                headers=HEADERS,
+                timeout=120,
+            )
             r.raise_for_status()
             rows = r.json()
             dest.parent.mkdir(parents=True, exist_ok=True)
@@ -61,7 +67,7 @@ def acs():
         df = df.rename(columns=ACS_VARS)[["GEOID", *ACS_VARS.values()]]
         num = list(ACS_VARS.values())
         df[num] = df[num].astype(float)
-        df[num] = df[num].mask(df[num] < 0)   # Census uses -666666666 for "no data"
+        df[num] = df[num].mask(df[num] < 0)  # Census uses -666666666 for "no data"
         df["acs_year"] = year
         frames.append(df)
     out = pd.concat(frames)
@@ -83,8 +89,12 @@ def decennial():
     }
     frames = []
     for year, (url, var) in calls.items():
-        r = requests.get(url, params={"get": var, "for": "tract:*", "in": f"state:{STATE} county:*", "key": key},
-                         headers=HEADERS, timeout=120)
+        r = requests.get(
+            url,
+            params={"get": var, "for": "tract:*", "in": f"state:{STATE} county:*", "key": key},
+            headers=HEADERS,
+            timeout=120,
+        )
         r.raise_for_status()
         rows = r.json()
         df = pd.DataFrame(rows[1:], columns=rows[0])
@@ -112,6 +122,7 @@ def pop():
     # Towns (SUMLEV 061 = townships, boroughs, cities as county subdivisions)
     a = pd.read_csv(R / "pop" / "sub-est2020_42.csv", encoding="latin-1", dtype=str)
     b = pd.read_csv(R / "pop" / "sub-est2025_42.csv", encoding="latin-1", dtype=str)
+
     def keep(d):
         towns = d[d.SUMLEV == "061"].copy()
         towns["GEOID"] = towns.STATE + towns.COUNTY + towns.COUSUB
@@ -119,6 +130,7 @@ def pop():
         philly = d[(d.SUMLEV == "050") & (d.COUNTY == "101")].copy()
         philly["GEOID"], philly["NAME"] = "4210160000", "Philadelphia city"
         return pd.concat([towns, philly])
+
     a, b = keep(a), keep(b)
     cols_a = {f"POPESTIMATE{y}": y for y in range(2010, 2020)}
     cols_b = {f"POPESTIMATE{y}": y for y in range(2020, 2026)}
@@ -166,23 +178,38 @@ def permits():
     county_rows, town_rows = [], []
     for y in PERMIT_YEARS:
         c = download(f"https://www2.census.gov/econ/bps/County/co{y}a.txt", R / "permits" / f"co{y}a.txt")
-        p = download(f"https://www2.census.gov/econ/bps/Place/Northeast%20Region/ne{y}a.txt",
-                     R / "permits" / f"ne{y}a.txt")
+        p = download(
+            f"https://www2.census.gov/econ/bps/Place/Northeast%20Region/ne{y}a.txt", R / "permits" / f"ne{y}a.txt"
+        )
         dc = pd.read_csv(c, skiprows=3, header=None, dtype=str)
         dc = dc[dc[1].str.strip() == STATE]
-        county_rows.append(pd.DataFrame({
-            "county_geoid": STATE + dc[2].str.strip(),
-            "year": y,
-            "units_1": dc[7].astype(int), "units_2": dc[10].astype(int),
-            "units_3_4": dc[13].astype(int), "units_5plus": dc[16].astype(int)}))
+        county_rows.append(
+            pd.DataFrame(
+                {
+                    "county_geoid": STATE + dc[2].str.strip(),
+                    "year": y,
+                    "units_1": dc[7].astype(int),
+                    "units_2": dc[10].astype(int),
+                    "units_3_4": dc[13].astype(int),
+                    "units_5plus": dc[16].astype(int),
+                }
+            )
+        )
         dp = pd.read_csv(p, skiprows=3, header=None, dtype=str)
-        dp = dp[(dp[1].str.strip() == STATE) & (dp[6].str.strip() != "")]   # skip county-level rows with no town
-        town_rows.append(pd.DataFrame({
-            "town_geoid": STATE + dp[3].str.strip() + dp[6].str.strip(),   # state + county + MCD
-            "name": dp[16].str.strip(),
-            "year": y,
-            "units_1": dp[18].astype(int), "units_2": dp[21].astype(int),
-            "units_3_4": dp[24].astype(int), "units_5plus": dp[27].astype(int)}))
+        dp = dp[(dp[1].str.strip() == STATE) & (dp[6].str.strip() != "")]  # skip county-level rows with no town
+        town_rows.append(
+            pd.DataFrame(
+                {
+                    "town_geoid": STATE + dp[3].str.strip() + dp[6].str.strip(),  # state + county + MCD
+                    "name": dp[16].str.strip(),
+                    "year": y,
+                    "units_1": dp[18].astype(int),
+                    "units_2": dp[21].astype(int),
+                    "units_3_4": dp[24].astype(int),
+                    "units_5plus": dp[27].astype(int),
+                }
+            )
+        )
     for df in county_rows + town_rows:
         df["units_total"] = df.units_1 + df.units_2 + df.units_3_4 + df.units_5plus
     pd.concat(county_rows).to_csv(OUT / "permits_county.csv", index=False)
@@ -206,15 +233,15 @@ def migration():
         i = pd.read_csv(fi, encoding="latin-1", dtype=str, header=0)
         o = pd.read_csv(fo, encoding="latin-1", dtype=str, header=0)
         i.columns = o.columns = range(i.shape[1])
-        i = i[(i[0].str.zfill(2) == STATE) & (i[2].str.zfill(2) == "96")]   # 96 = all movers, US + abroad
+        i = i[(i[0].str.zfill(2) == STATE) & (i[2].str.zfill(2) == "96")]  # 96 = all movers, US + abroad
         o = o[(o[0].str.zfill(2) == STATE) & (o[2].str.zfill(2) == "96")]
         i = i.set_index(STATE + i[1].str.zfill(3))[7].astype(int).rename("people_in")
         o = o.set_index(STATE + o[1].str.zfill(3))[7].astype(int).rename("people_out")
         t = pd.concat([i, o], axis=1).rename_axis("county_geoid").reset_index()
-        t["year"] = 2000 + int(yy[2:])   # label by the second year, e.g. 2122 -> 2022
+        t["year"] = 2000 + int(yy[2:])  # label by the second year, e.g. 2122 -> 2022
         rows.append(t)
     out = pd.concat(rows)
-    out = out[out.county_geoid != STATE + "000"]   # drop the statewide total row
+    out = out[out.county_geoid != STATE + "000"]  # drop the statewide total row
     out["net"] = out.people_in - out.people_out
     out.to_csv(OUT / "migration_county.csv", index=False)
     print(f"  saved migration_county.csv ({out.county_geoid.nunique()} counties, {out.year.min()}-{out.year.max()})")
@@ -245,14 +272,14 @@ def landcover():
     """
     import numpy as np  # noqa: F401
     import rasterio
-    from rasterio.merge import merge
     from pyproj import Transformer
+    from rasterio.merge import merge
 
     step("Land cover (Annual NLCD, 30 m)")
     wcs = "https://dmsdata.cr.usgs.gov/geoserver/mrlc_Land-Cover-Native_conus_year_data/wcs"
     cov = "mrlc_Land-Cover-Native_conus_year_data:Land-Cover-Native_conus_year_data"
     t = Transformer.from_crs(4326, 5070, always_xy=True)
-    xs, ys = zip(*[t.transform(x, y) for x in PA_BBOX[0::2] for y in PA_BBOX[1::2]])
+    xs, ys = zip(*[t.transform(x, y) for x in PA_BBOX[0::2] for y in PA_BBOX[1::2]], strict=True)
     x0, y0, x1, y1 = min(xs), min(ys), max(xs), max(ys)
     for year in NLCD_YEARS:
         final = R / "landcover" / f"nlcd_{year}_pa.tif"
@@ -264,29 +291,46 @@ def landcover():
         while x < x1:
             y = y0
             while y < y1:
-                params = dict(service="WCS", version="1.0.0", request="GetCoverage", coverage=cov,
-                              format="GeoTIFF", crs="EPSG:5070", resx=30, resy=30,
-                              bbox=f"{x:.0f},{y:.0f},{x + TILE:.0f},{y + TILE:.0f}",
-                              time=f"{year}-01-01T00:00:00.000Z")
+                params = dict(
+                    service="WCS",
+                    version="1.0.0",
+                    request="GetCoverage",
+                    coverage=cov,
+                    format="GeoTIFF",
+                    crs="EPSG:5070",
+                    resx=30,
+                    resy=30,
+                    bbox=f"{x:.0f},{y:.0f},{x + TILE:.0f},{y + TILE:.0f}",
+                    time=f"{year}-01-01T00:00:00.000Z",
+                )
                 tiles.append(download(wcs, R / "landcover" / "tiles" / f"{year}_{x:.0f}_{y:.0f}.tif", params=params))
                 y += TILE
             x += TILE
         srcs = [rasterio.open(p) for p in tiles]
         mosaic, transform = merge(srcs)
-        meta = srcs[0].meta | {"height": mosaic.shape[1], "width": mosaic.shape[2],
-                               "transform": transform, "compress": "deflate"}
+        meta = srcs[0].meta | {
+            "height": mosaic.shape[1],
+            "width": mosaic.shape[2],
+            "transform": transform,
+            "compress": "deflate",
+        }
         with rasterio.open(final, "w", **meta) as dst:
             dst.write(mosaic)
         for s in srcs:
             s.close()
-        for p in tiles:   # tiles are not needed once the mosaic is saved
+        for p in tiles:  # tiles are not needed once the mosaic is saved
             p.unlink()
         print(f"  saved {final.name}")
     print("  developed land = classes 21, 22, 23, 24")
 
 
-RENT_BR_VARS = {"B25031_001E": "rent_all", "B25031_002E": "rent_b0", "B25031_003E": "rent_b1",
-                "B25031_004E": "rent_b2", "B25031_005E": "rent_b3"}
+RENT_BR_VARS = {
+    "B25031_001E": "rent_all",
+    "B25031_002E": "rent_b0",
+    "B25031_003E": "rent_b1",
+    "B25031_004E": "rent_b2",
+    "B25031_005E": "rent_b3",
+}
 
 
 def rent_bedrooms():
@@ -305,14 +349,19 @@ def rent_bedrooms():
         return
     year = max(ACS_YEARS)
     frames = {}
-    for geo, params in [("tract", {"for": "tract:*", "in": f"state:{STATE} county:*"}),
-                        ("county", {"for": "county:*", "in": f"state:{STATE}"})]:
+    for geo, params in [
+        ("tract", {"for": "tract:*", "in": f"state:{STATE} county:*"}),
+        ("county", {"for": "county:*", "in": f"state:{STATE}"}),
+    ]:
         dest = R / "acs" / f"acs5_{year}_rent_bedrooms_{geo}.csv"
         if not dest.exists():
             print(f"  get   B25031 by {geo}")
-            r = requests.get(f"https://api.census.gov/data/{year}/acs/acs5",
-                             params={"get": "NAME," + ",".join(RENT_BR_VARS), **params, "key": key},
-                             headers=HEADERS, timeout=120)
+            r = requests.get(
+                f"https://api.census.gov/data/{year}/acs/acs5",
+                params={"get": "NAME," + ",".join(RENT_BR_VARS), **params, "key": key},
+                headers=HEADERS,
+                timeout=120,
+            )
             r.raise_for_status()
             rows = r.json()
             dest.parent.mkdir(parents=True, exist_ok=True)
@@ -327,18 +376,29 @@ def rent_bedrooms():
     t, c = frames["tract"].copy(), frames["county"].set_index("GEOID")
     cty = t.GEOID.str[:5]
     for col in ["rent_b0", "rent_b1", "rent_b2", "rent_b3"]:
-        t[f"{col}_tract"] = t[col]   # raw tract value, kept for reference
+        t[f"{col}_tract"] = t[col]  # raw tract value, kept for reference
         ratio = cty.map(c[col] / c["rent_all"])
         t[col] = (t["rent_all"] * ratio).round().fillna(cty.map(c[col]))
-    print("  county ratio to median rent (PA median county):",
-          {k: round((c[k] / c.rent_all).median(), 2) for k in ["rent_b0", "rent_b1", "rent_b2", "rent_b3"]})
+    print(
+        "  county ratio to median rent (PA median county):",
+        {k: round((c[k] / c.rent_all).median(), 2) for k in ["rent_b0", "rent_b1", "rent_b2", "rent_b3"]},
+    )
     out = t.drop(columns=["rent_all"]).rename(columns=lambda x: x)
     out.to_csv(OUT / "rent_bedrooms_tract.csv", index=False)
     print(f"  saved rent_bedrooms_tract.csv ({len(out)} tracts, blanks: {int(out.rent_b1.isna().sum())})")
 
 
-PARTS = {"acs": acs, "rent_bedrooms": rent_bedrooms, "decennial": decennial, "pop": pop, "jobs": jobs, "permits": permits,
-         "migration": migration, "rates": rates, "landcover": landcover}
+PARTS = {
+    "acs": acs,
+    "rent_bedrooms": rent_bedrooms,
+    "decennial": decennial,
+    "pop": pop,
+    "jobs": jobs,
+    "permits": permits,
+    "migration": migration,
+    "rates": rates,
+    "landcover": landcover,
+}
 
 if __name__ == "__main__":
     picks = sys.argv[1:] or list(PARTS)

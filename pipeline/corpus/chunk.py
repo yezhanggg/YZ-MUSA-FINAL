@@ -14,6 +14,7 @@ Writes corpus/chunks/chunks.jsonl (all documents) and prints counts.
 Run:
     python -m pipeline.corpus.chunk
 """
+
 from __future__ import annotations
 
 import json
@@ -51,7 +52,7 @@ def _split(text: str) -> Iterator[str]:
             buf, size = keep, sum(n_tokens(x) + 1 for x in keep)
         if t > MAX_TOKENS:  # one very long line (a table flattened into one line)
             for i in range(0, len(line), MAX_TOKENS * 4):
-                yield line[i:i + MAX_TOKENS * 4]
+                yield line[i : i + MAX_TOKENS * 4]
             continue
         buf.append(line)
         size += t
@@ -79,8 +80,13 @@ def heading_path(seg: dict[str, Any]) -> str:
 
 
 def doc_chunks(doc: dict[str, Any]) -> list[dict[str, Any]]:
-    base = {"geoid": doc["geoid"], "doc_id": doc["doc_id"], "url": doc.get("final_url") or doc["url"],
-            "fetched_at": doc.get("fetched_at"), "doc_title": doc.get("link_text")}
+    base = {
+        "geoid": doc["geoid"],
+        "doc_id": doc["doc_id"],
+        "url": doc.get("final_url") or doc["url"],
+        "fetched_at": doc.get("fetched_at"),
+        "doc_title": doc.get("link_text"),
+    }
     # keep a section with its subsections (660-42, 660-42.A, 660-42.C) while under MAX_TOKENS,
     # and merge short neighbours
     groups: list[list[dict[str, Any]]] = []
@@ -98,9 +104,17 @@ def doc_chunks(doc: dict[str, Any]) -> list[dict[str, Any]]:
         first = next((s for s in g if s.get("section")), g[0])
         text = "\n".join(s["text"] for s in g)
         labels = [s["section"] for s in g if s.get("section")]
-        meta = {**base, "section": first.get("section"), "sections": labels, "parent": first.get("parent"),
-                "article": first.get("article"), "heading": first.get("heading"), "heading_path": heading_path(first),
-                "page_start": g[0]["page_start"], "page_end": g[-1]["page_end"]}
+        meta = {
+            **base,
+            "section": first.get("section"),
+            "sections": labels,
+            "parent": first.get("parent"),
+            "article": first.get("article"),
+            "heading": first.get("heading"),
+            "heading_path": heading_path(first),
+            "page_start": g[0]["page_start"],
+            "page_end": g[-1]["page_end"],
+        }
         pieces = list(_split(text)) if n_tokens(text) > MAX_TOKENS else [text]
         for k, piece in enumerate(pieces):
             out.append({**meta, "part": k if len(pieces) > 1 else None, "text": piece, "n_tokens": n_tokens(piece)})

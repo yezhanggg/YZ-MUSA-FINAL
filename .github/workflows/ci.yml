@@ -1,12 +1,8 @@
 # Lint, type checks, tests, schema checks and a push guard for every push and pull request.
-# Runs beside codeql.yml. It covers what tests.yml did (pytest), so tests.yml can go once this lands.
+# Runs beside codeql.yml and pages.yml. It replaced tests.yml (pytest on every push).
 name: ci
 
-on:
-  push:
-    branches: [main, "build/**"]
-  pull_request:
-    branches: [main]
+on: [push, pull_request]
 
 permissions:
   contents: read
@@ -18,8 +14,10 @@ concurrency:
 env:
   PYTHON_VERSION: "3.12"
   NODE_VERSION: "22"
-  # Lint and type steps report but do not fail until the one-time cleanup lands. Then set "true".
-  LINT_STRICT: "false"
+  # ruff check and ruff format --check fail the job. mypy reports only until its last errors
+  # (pipeline/vision and pipeline/corpus/tierb.py) are fixed. Then set MYPY_STRICT to "true".
+  LINT_STRICT: "true"
+  MYPY_STRICT: "false"
 
 jobs:
   guard:
@@ -70,7 +68,7 @@ jobs:
         continue-on-error: ${{ env.LINT_STRICT != 'true' }}
         run: ruff format --check .
       - name: mypy
-        continue-on-error: ${{ env.LINT_STRICT != 'true' }}
+        continue-on-error: ${{ env.MYPY_STRICT != 'true' }}
         run: mypy pipeline
       - name: pytest (no data drive, no torch)
         env:

@@ -13,6 +13,7 @@ Run:
     python -m pipeline.corpus.embed                       # both models, MPS
     python -m pipeline.corpus.embed --bench 512           # chunks/s on MPS and CPU, by batch size
 """
+
 from __future__ import annotations
 
 import argparse
@@ -27,8 +28,12 @@ from pipeline.corpus.chunk import load_chunks
 from pipeline.corpus.paths import set_model_cache, sub
 
 MODELS = {
-    "bge": {"name": "BAAI/bge-small-en-v1.5", "query": "Represent this sentence for searching relevant passages: ",
-            "passage": "", "licence": "MIT"},
+    "bge": {
+        "name": "BAAI/bge-small-en-v1.5",
+        "query": "Represent this sentence for searching relevant passages: ",
+        "passage": "",
+        "licence": "MIT",
+    },
     "e5": {"name": "intfloat/e5-base-v2", "query": "query: ", "passage": "passage: ", "licence": "MIT"},
 }
 MAX_SEQ = 512
@@ -43,7 +48,7 @@ def device() -> str:
 _LOADED: dict[tuple[str, str], Any] = {}
 
 
-def load_model(key: str, dev: str | None = None):
+def load_model(key: str, dev: str | None = None) -> Any:
     set_model_cache()
     from sentence_transformers import SentenceTransformer
 
@@ -61,8 +66,7 @@ def passage_text(c: dict[str, Any], key: str) -> str:
 
 def encode_passages(key: str, texts: list[str], batch: int = 32, dev: str | None = None) -> np.ndarray:
     m = load_model(key, dev)
-    v = m.encode(texts, batch_size=batch, normalize_embeddings=True, show_progress_bar=False,
-                 convert_to_numpy=True)
+    v = m.encode(texts, batch_size=batch, normalize_embeddings=True, show_progress_bar=False, convert_to_numpy=True)
     return v.astype(np.float16)
 
 
@@ -93,7 +97,7 @@ def build(keys: list[str], batch: int = 32) -> dict[str, Any]:
         dt = time.time() - t0
         vecs, ids = [], []
         new_i = {c["chunk_id"]: i for i, c in enumerate(todo)}
-        dim = (new.shape[1] if new is not None else old.shape[1])  # type: ignore[union-attr]
+        dim = new.shape[1] if new is not None else old.shape[1]  # type: ignore[union-attr]
         for c in chunks:
             cid = c["chunk_id"]
             if cid in new_i:
@@ -105,9 +109,14 @@ def build(keys: list[str], batch: int = 32) -> dict[str, Any]:
         np.save(vec_path, arr)
         ids_path.write_text(json.dumps(ids))
         keys_path.write_text(json.dumps([ckey[i] for i in ids]))
-        stats[key] = {"chunks": len(ids), "new": len(todo), "seconds": round(dt, 1),
-                      "chunks_per_s": round(len(todo) / dt, 1) if todo and dt else None, "device": device(),
-                      "bytes": vec_path.stat().st_size}
+        stats[key] = {
+            "chunks": len(ids),
+            "new": len(todo),
+            "seconds": round(dt, 1),
+            "chunks_per_s": round(len(todo) / dt, 1) if todo and dt else None,
+            "device": device(),
+            "bytes": vec_path.stat().st_size,
+        }
         print(key, stats[key], flush=True)
     (out / "embed_stats.json").write_text(json.dumps(stats, indent=1))
     return stats
@@ -123,7 +132,7 @@ def bench(n: int) -> list[dict[str, Any]]:
         for dev in ["mps", "cpu"]:
             if dev == "mps" and not torch.backends.mps.is_available():
                 continue
-            for b in ([8, 16, 32, 64] if dev == "mps" else [32]):
+            for b in [8, 16, 32, 64] if dev == "mps" else [32]:
                 encode_passages(key, texts[:16], b, dev)  # warm up
                 if dev == "mps":
                     torch.mps.synchronize()
@@ -133,9 +142,17 @@ def bench(n: int) -> list[dict[str, Any]]:
                     torch.mps.synchronize()
                 dt = time.time() - t0
                 mem = torch.mps.driver_allocated_memory() / 2**20 if dev == "mps" else None
-                rows.append({"model": key, "device": dev, "batch": b, "chunks": len(texts),
-                             "seconds": round(dt, 2), "chunks_per_s": round(len(texts) / dt, 1),
-                             "mps_driver_mb": round(mem) if mem else None})
+                rows.append(
+                    {
+                        "model": key,
+                        "device": dev,
+                        "batch": b,
+                        "chunks": len(texts),
+                        "seconds": round(dt, 2),
+                        "chunks_per_s": round(len(texts) / dt, 1),
+                        "mps_driver_mb": round(mem) if mem else None,
+                    }
+                )
                 print(rows[-1], flush=True)
     (sub("index") / "embed_bench.json").write_text(json.dumps(rows, indent=1))
     return rows

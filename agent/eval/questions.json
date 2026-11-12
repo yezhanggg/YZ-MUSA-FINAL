@@ -1,14 +1,14 @@
 {
  "about": "Eval set for the in-app assistant. Made by agent/eval/make_questions.ts from the lot records and app/public/data: lots are picked by rule and every expected value is read from a tool result. Do not edit by hand. Regenerate with `node agent/eval/cli.mjs make_questions.ts`.",
- "generated_at": "2026-11-11T20:01:30.563Z",
+ "generated_at": "2026-11-12T05:08:10.591Z",
  "data_roots": {
   "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
   "philadelphia": "/Users/ye/musa-drive/lots/philadelphia"
  },
  "data_versions": {
-  "pittsburgh": "pittsburgh-20261111-ab8af0981d",
-  "philadelphia": "philadelphia-20261111-b3f97556ac",
-  "public_data": "2026-11-11 10:14"
+  "pittsburgh": "pittsburgh-20261111-bdeb5697ae",
+  "philadelphia": "philadelphia-20261111-b7fa7bda07",
+  "public_data": "2026-11-12 00:01"
  },
  "questions": [
   {
@@ -50,7 +50,7 @@
     {
      "kind": "number",
      "label": "lot size",
-     "value": 5318.5,
+     "value": 5317,
      "tol_pct": 2,
      "unit": "sqft"
     },
@@ -2743,14 +2743,14 @@
     {
      "kind": "number",
      "label": "low",
-     "value": 3,
+     "value": 2,
      "tol_pct": 2,
      "unit": "count"
     },
     {
      "kind": "number",
      "label": "high",
-     "value": 49,
+     "value": 34,
      "tol_pct": 2,
      "unit": "count"
     },
@@ -2879,7 +2879,7 @@
   {
    "id": "market-05",
    "category": "market",
-   "question": "How many single-family lots in this tract have room for a 600 sq ft unit?",
+   "question": "How many lots with 1 to 4 homes in this tract have room for a 600 sq ft unit?",
    "context": {
     "lot": null,
     "site_lot": "42041-09-11-3002-008",
@@ -2909,21 +2909,21 @@
     {
      "kind": "number",
      "label": "lots with room",
-     "value": 589,
+     "value": 607,
      "tol_pct": 1,
      "unit": "count"
     },
     {
      "kind": "number",
-     "label": "single-family lots",
-     "value": 819,
+     "label": "lots with 1 to 4 homes",
+     "value": 1554,
      "tol_pct": 1,
      "unit": "count"
     }
    ],
    "forbidden": [],
    "scenario": null,
-   "rubric": "Gives lots with room out of the single-family lots."
+   "rubric": "Gives lots with room out of the lots with 1 to 4 homes, says it is a modelled estimate with a range (this tract is outside the two measured cities)."
   },
   {
    "id": "market-06",
@@ -3020,14 +3020,14 @@
     {
      "kind": "number",
      "label": "ADUs by 2031 today",
-     "value": 16,
+     "value": 11,
      "tol_pct": 2,
      "unit": "count"
     },
     {
      "kind": "number",
      "label": "ADUs by 2031 under HB 2186",
-     "value": 321,
+     "value": 228,
      "tol_pct": 2,
      "unit": "count"
     },

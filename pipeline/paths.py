@@ -3,6 +3,7 @@
 Data is large and stays off the code checkout. One env var points at the data
 root so every module and every machine resolves the same folders.
 """
+
 from __future__ import annotations
 
 import os

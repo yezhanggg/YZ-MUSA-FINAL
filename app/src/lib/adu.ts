@@ -109,126 +109,35 @@ export function lotFit(l: LotFitFields, a: Adu): Fit | null {
   return fits ? (keep ? 'yes' : 'trees') : 'no';
 }
 
-export interface CurveStep {
-  f: number;
-  fit: number;
-  keep: number;
-  lo?: number;
-  hi?: number;
-}
-export type FitCurves = Partial<Record<string, CurveStep[]>>;
-
-/** Linear interpolation of a fit curve at footprint `fp` (clamped at the ends). */
-export function curveAt(steps: CurveStep[], fp: number): { fit: number; keep: number } | null {
-  if (!steps.length) return null;
-  const s = [...steps].sort((x, y) => x.f - y.f);
-  if (fp <= s[0].f) return { fit: s[0].fit, keep: s[0].keep };
-  const last = s[s.length - 1];
-  if (fp >= last.f) return { fit: last.fit, keep: last.keep };
-  for (let i = 1; i < s.length; i++) {
-    if (fp <= s[i].f) {
-      const t = (fp - s[i - 1].f) / (s[i].f - s[i - 1].f);
-      return { fit: s[i - 1].fit + t * (s[i].fit - s[i - 1].fit), keep: s[i - 1].keep + t * (s[i].keep - s[i - 1].keep) };
-    }
-  }
-  return null;
+/** Tract fields of the room estimate (app/build_data.py, from room_tract.csv). */
+export interface TractRoomFields {
+  lots_est?: number | null;
+  room_lo?: number | null;
+  room_mid?: number | null;
+  room_hi?: number | null;
+  room_measured?: number | null;
+  room_out?: number | null;
 }
 
-export interface TractLots {
-  stratum?: string | null;
-  lots_total?: number | null;
-  lots_fit?: number | null;
-  lots_fit_keep_trees?: number | null;
+export interface TractRoom {
+  /** Lots with 1 to 4 homes in the tract. */
+  lots: number;
+  low: number;
+  mid: number;
+  high: number;
+  /** Measured from every lot record (Philadelphia, Pittsburgh), or modelled from housing mix and density. */
+  measured: boolean;
+  /** Modelled outside the range of the tracts the model learned from: the range is wider. */
+  outside: boolean;
 }
 
-/** Lots with room in a tract for this footprint. Without fit curves, only the base footprint has an answer. */
-export function tractRoom(t: TractLots, a: Adu, curves: FitCurves | null): { fit: number; keep: number | null; total: number } | null {
-  if (!num(t.lots_total)) return null;
-  const steps = curves && t.stratum ? curves[t.stratum] : undefined;
-  if (steps) {
-    const c = curveAt(steps, footprint(a));
-    if (c) return { fit: Math.round(t.lots_total * c.fit), keep: Math.round(t.lots_total * c.keep), total: t.lots_total };
-  }
-  if (isBaseFootprint(a) && num(t.lots_fit)) return { fit: t.lots_fit, keep: num(t.lots_fit_keep_trees) ? t.lots_fit_keep_trees : null, total: t.lots_total };
-  return null;
-}
-
-// ------------------------------------------------------------------ "Play with it": the result of adding this ADU
-export interface PlayLot {
-  lot_m2: number;
-  open_m2: number;
-  tree_m2: number;
-  /** House footprint, when the data has it. Otherwise estimated (lot minus open minus trees, so it includes paving). */
-  house_m2?: number | null;
-}
-
-export interface PlayInput {
-  lot: PlayLot | null;
-  fit: Fit | null;
-  adu: Adu;
-  rent: number;
-  costPsf: number;
-  rate: number;
-  cutTrees: boolean;
-}
-
-export interface PlayResult {
-  homesBefore: number;
-  homesAfter: number;
-  /** Fits with these settings: 'yes', 'trees' (only by cutting trees), 'no', or null (not ready for this size). */
-  fits: Fit | null;
-  footprintSqft: number;
-  openLeftSqft: number | null;
-  treeLossSqft: number | null;
-  houseSqft: number | null;
-  houseEstimated: boolean;
-  coverBefore: number | null;
-  coverAfter: number | null;
-  totalCost: number;
-  payment: number;
-  netRent: number;
-  monthlyGain: number;
-  /** Years to pay back the build cost from net rent, paying cash. null when net rent is 0 or less. */
-  paybackYears: number | null;
-  /** Yearly net rent / build cost, paying cash. */
-  cashOnCost: number;
-  pays: boolean;
-}
-
-const SQ = 10.764;
-
-/** What adding this ADU does to one lot, with the user's rent, cost and rate. */
-export function playAdu(i: PlayInput): PlayResult {
-  const fp = footprint(i.adu);
-  const fits: Fit | null = i.fit === 'trees' && !i.cutTrees ? 'no' : i.fit;
-  const ok = fits === 'yes' || fits === 'trees';
-  const lot = i.lot && num(i.lot.lot_m2) && i.lot.lot_m2 > 0 ? i.lot : null;
-  const lotSqft = lot ? lot.lot_m2 * SQ : null;
-  const openSqft = lot ? lot.open_m2 * SQ : null;
-  const houseEstimated = !!lot && !num(lot.house_m2);
-  const houseSqft = lot ? (num(lot.house_m2) ? lot.house_m2 : Math.max(0, lot.lot_m2 - lot.open_m2 - lot.tree_m2)) * SQ : null;
-  const totalCost = buildCost(i.adu.size, i.costPsf);
-  const pay = payment(totalCost, i.rate);
-  const netRent = i.rent * (1 - OPEX);
-  return {
-    homesBefore: 1,
-    homesAfter: ok ? 2 : 1,
-    fits,
-    footprintSqft: fp,
-    openLeftSqft: openSqft != null && ok ? Math.max(0, openSqft - fp) : openSqft,
-    treeLossSqft: openSqft != null && fits === 'trees' ? Math.max(0, fp - openSqft) : fits === 'yes' ? 0 : null,
-    houseSqft,
-    houseEstimated,
-    coverBefore: lotSqft && houseSqft != null ? houseSqft / lotSqft : null,
-    coverAfter: lotSqft && houseSqft != null ? (houseSqft + (ok ? fp : 0)) / lotSqft : null,
-    totalCost,
-    payment: pay,
-    netRent,
-    monthlyGain: netRent - pay,
-    paybackYears: netRent > 0 ? totalCost / (netRent * 12) : null,
-    cashOnCost: (netRent * 12) / totalCost,
-    pays: netRent >= pay,
-  };
+/**
+ * Lots in a tract with room for a 600 sq ft unit under state-reform setbacks (pipeline/tract/room.py). The estimate
+ * is for that one size: it does not follow the ADU controls.
+ */
+export function tractRoom(t: TractRoomFields): TractRoom | null {
+  if (!num(t.lots_est) || !num(t.room_mid) || !num(t.room_lo) || !num(t.room_hi)) return null;
+  return { lots: t.lots_est, low: t.room_lo, mid: t.room_mid, high: t.room_hi, measured: t.room_measured === 1, outside: t.room_out === 1 };
 }
 
 /** The four sample ADUs on the "Pick an ADU" cards. */

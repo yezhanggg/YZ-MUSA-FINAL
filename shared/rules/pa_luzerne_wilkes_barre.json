@@ -133,8 +133,8 @@
         },
         {
           "kind": "existing_structure",
-          "condition": "A detached second dwelling is not a listed residential accessory structure (305), and a second principal structure needs land development approval (314.1).",
-          "effect": "bars",
+          "condition": "A detached second dwelling is not a listed residential accessory structure (305), and a second principal structure needs land development approval (314.1). Detached and garage forms are left out of form.types_allowed for this reason.",
+          "effect": "condition",
           "applies_to": [
             "detached_new",
             "garage_conversion",

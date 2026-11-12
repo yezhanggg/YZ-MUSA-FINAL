@@ -1,5 +1,7 @@
 import { Marker, type GeoJSONSource } from 'maplibre-gl';
-import { findFeature, findLot, inGeom, loadLots, type LngLat, type Lot, type TractProps } from './geo';
+import { findFeature, inGeom, type LngLat, type TownProps, type TractProps } from './geo';
+import { cityTractAt, loadAreas } from './areas';
+import { openView } from '../lib/router';
 import type { ParcelProps } from './parcels';
 import { mapRef, syncHash, useTool, type Spot } from './store';
 import { mapPadding } from './layout';
@@ -27,13 +29,6 @@ function ripple(pt: LngLat) {
   el.className = 'bh-ripple';
   const m = new Marker({ element: el }).setLngLat(pt).addTo(map);
   window.setTimeout(() => m.remove(), 900);
-}
-
-/** A checked parcel's lot record: from its tract file by id, or (edge lots) from the tile's own fields. */
-async function lotForParcel(geoid: string, p: ParcelProps, pt: LngLat): Promise<Lot> {
-  const hit = (await loadLots(geoid))?.find((l) => l.lot_id === p.id);
-  if (hit) return hit;
-  return { lot_id: p.id, lon: pt[0], lat: pt[1], lot_m2: NaN, open_m2: NaN, tree_m2: NaN, fits: p.f === 1, fits_keep_trees: p.k === 1, max_fit_sqft: p.mf ?? null, max_fit_keep_trees_sqft: p.mk ?? null };
 }
 
 const PLACE_NAME: Record<string, string> = { pittsburgh: 'Pittsburgh', philadelphia: 'Philadelphia' };
@@ -81,18 +76,38 @@ function fitUnitTo(record: LotRecord) {
 
 let pending: AbortController | null = null;
 
+/** County names for the places with lot records, for a tract known only by its GEOID. */
+const COUNTY_OF: Record<string, string> = { '42003': 'Allegheny', '42101': 'Philadelphia' };
+const CITY_OF: Record<string, string> = { '42003': 'Pittsburgh city', '42101': 'Philadelphia city' };
+
+/** A tract named by a parcel tile or a link, before (or without) the tract file: enough for the lot panel. */
+function knownTract(geoid: string): { tract: TractProps; town: TownProps } {
+  const t = Number(geoid.slice(5)) / 100;
+  return { tract: { GEOID: geoid, NAMELSAD: `Census Tract ${t}`, county: COUNTY_OF[geoid.slice(0, 5)] }, town: { NAMELSAD: CITY_OF[geoid.slice(0, 5)] } };
+}
+
 /**
- * Test one spot: find its tract and town, the lot, and open the report. A clicked parcel beats the 40 m
- * nearest-lot rule. A parcel that was not checked (s = 0) gets the short report. In testing mode the lot record
- * that contains the spot is loaded too.
+ * Test one spot. Testing mode: the lot record that contains the spot (or the one a parcel tile or a link names) and
+ * its tract. Projecting mode: the tract and town at the spot, with no lot (that is Testing mode's job).
+ * The tract files load only when needed: a lot whose tract is known from its tile or link opens without them.
  */
 export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps | null, opts: { lotId?: string; tract?: string; keepUnit?: boolean } = {}) {
-  const { tracts, towns, set, view3d, view } = useTool.getState();
+  const { set, view3d, view } = useTool.getState();
   const map = mapRef.current;
-  if (!tracts || !towns || !map) return;
-  const tract = findFeature(tracts, pt);
-  const town = findFeature(towns, pt);
-  if (!tract) {
+  if (!map) return;
+  const known = view === 'test' ? (opts.tract ?? parcel?.tr) : undefined;
+  // Testing mode, a searched or clicked spot with no tract yet: the small city tract index first (Pittsburgh and
+  // Philadelphia), the 10 MB area files only outside the two cities.
+  const indexed = view === 'test' && !known && useTool.getState().areas !== 'ready' ? await cityTractAt(pt) : null;
+  if (!known && !indexed && !(await loadAreas())) {
+    set({ msg: 'The map data did not load. Refresh the page to try again.' });
+    return;
+  }
+  const { tracts, towns } = useTool.getState();
+  const tract = tracts ? findFeature(tracts, pt) : undefined;
+  const town = towns ? findFeature(towns, pt) : undefined;
+  let area = tract ? { tract: tract.properties, town: town?.properties ?? {} } : (indexed ?? (known ? knownTract(known) : null));
+  if (!area) {
     set({ msg: 'That spot is outside Pennsylvania.' });
     return;
   }
@@ -100,24 +115,37 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   pending?.abort();
   const ctrl = new AbortController();
   pending = ctrl;
-  set({ msg: null, busy: true, selectedLot: parcel?.id ?? opts.lotId ?? null });
+  set({ msg: null, busy: true, selectedLot: view === 'test' ? (parcel?.id ?? opts.lotId ?? null) : null });
 
   // The selected parcel's glowing outline is the only mark. Outside the parcels, a ripple shows where.
   if (!parcel) ripple(pt);
-  map.flyTo({ center: pt, zoom: Math.max(map.getZoom(), 16.5), pitch: view3d ? PITCH_SPOT : 0, duration: reduced() ? 0 : 1400, padding: mapPadding(true), essential: true });
-  (map.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: [tract as unknown as GeoJSON.Feature] });
+  map.flyTo({ center: pt, zoom: Math.max(map.getZoom(), view === 'test' ? 16.5 : 12), pitch: view3d ? PITCH_SPOT : 0, duration: reduced() ? 0 : 1400, padding: mapPadding(true), essential: true });
+  (map.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: tract ? [tract as unknown as GeoJSON.Feature] : [] });
 
-  const geoid = tract.properties.GEOID;
-  const [lot, rec] = await Promise.all([
-    parcel ? (parcel.s === 1 ? lotForParcel(geoid, parcel, pt) : null) : view === 'project' ? findLot(geoid, pt) : null,
-    view === 'test' || opts.lotId ? recordAt(pt, tract.properties, ctrl.signal, label, opts.lotId ?? (parcel?.tr ? parcel.id : undefined), opts.tract ?? parcel?.tr) : { record: null, recordNote: null, builtAt: null },
-  ]);
+  let rec = view === 'test' ? await recordAt(pt, area.tract, ctrl.signal, label, opts.lotId ?? (parcel?.tr ? parcel.id : undefined), opts.tract ?? parcel?.tr) : { record: null, recordNote: null, builtAt: null };
   if (n !== counter || !rec) return; // a newer spot won
+  // No lot record from the index tract: the full area files, for the tract report and in case the point sits in the
+  // tract next door. The address match still runs in that tract.
+  if (indexed && !rec.record && (await loadAreas())) {
+    const s = useTool.getState();
+    const t = s.tracts ? findFeature(s.tracts, pt) : undefined;
+    if (t) {
+      area = { tract: t.properties, town: (s.towns ? findFeature(s.towns, pt)?.properties : undefined) ?? area.town };
+      if (t.properties.GEOID !== indexed.tract.GEOID) rec = await recordAt(pt, area.tract, ctrl.signal, label);
+      if (n !== counter || !rec) return;
+    }
+  }
   const record = rec.record;
-  const spot: Spot = { n, label: record?.lot.address ? titleCase(record.lot.address) : label, pt, tract: tract.properties, town: town?.properties ?? {}, lot, parcel: parcel ?? null, ...rec };
+  const spot: Spot = { n, label: record?.lot.address ? titleCase(record.lot.address) : label, pt, tract: area.tract, town: area.town, parcel: parcel ?? null, ...rec };
   if (record && !opts.keepUnit) fitUnitTo(record);
-  set({ busy: false, selectedLot: record?.lot.id ?? parcel?.id ?? lot?.lot_id ?? null, spot });
+  set({ busy: false, selectedLot: record?.lot.id ?? null, spot });
   syncHash();
+}
+
+/** Projecting mode: switch to Testing mode at the selected spot (the tool then opens the lot there). */
+export function testLotHere() {
+  // The view change re-runs testSpot at the selected spot (ToolPage), now looking for the lot record there.
+  openView('test');
 }
 
 /** "5459 BEACON ST" -> "5459 Beacon St" */
