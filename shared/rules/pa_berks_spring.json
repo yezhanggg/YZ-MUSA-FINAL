@@ -1,0 +1,398 @@
+{
+  "provenance": {
+    "jurisdiction": "Spring township",
+    "instrument": "Code of the Township of Spring (Berks County), Chapter 450 Zoning (Zoning Ordinance of 2015, Ord. No. 415, 6-22-2015, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 450 adopted 6-22-2015 by Ord. No. 415. eCode360 New Laws (read 2026-11-12) list Ord. 473 to 476 (fire code, code enforcement, traffic). None amends Chapter 450.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/45165330",
+      "https://ecode360.com/print/SP6788?guid=45165330",
+      "https://ecode360.com/45165366",
+      "https://ecode360.com/45165830",
+      "https://ecode360.com/45166070",
+      "https://ecode360.com/45166129",
+      "https://ecode360.com/45166176",
+      "https://ecode360.com/45166232",
+      "https://ecode360.com/45167191",
+      "https://ecode360.com/45168790",
+      "https://ecode360.com/45169002",
+      "https://ecode360.com/45169003",
+      "https://ecode360.com/45169104",
+      "https://ecode360.com/45169567",
+      "https://ecode360.com/SP6788/laws"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Berks",
+    "municipality_type": "township",
+    "geoid": "4201172824",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/45165330",
+    "code_current_through": "2026-03-23",
+    "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-12 shows no currency line. New Laws lists items to 2026-08-10, none zoning.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "'No land or building or structure shall be used or occupied except for a use permitted in the zoning district' (450-302A). LDS and MDS permit only the single-family detached dwelling as housing",
+      "SS and U permit by right (with site plan review) two-family detached (duplex) and semidetached (twin) dwellings and 'Single-family to multifamily conversions'. A conversion must meet the multifamily rules in 450-324 (450-310B, 450-311B, 450-324(97))",
+      "Lot area in the district tables is per dwelling unit for residential uses: LDS 10,000, MDS 8,000, SS 5,000, U 3,500 sq ft with public sewer and water (450-308F to 450-311F)",
+      "Two principal buildings on a lot with a residence must each meet the rules as if on a separate lot, including lot size, and need land development approval (450-402B)",
+      "Accessory buildings: 15 ft high. All of them together at most 50% of the house floor area (600 sq ft allowed in any case, 1,500 on two acres). Not in required yards (450-327C(1))",
+      "Parking: 2 spaces per dwelling unit of 3 bedrooms or less (Table 7.1)"
+    ],
+    "notes": "Zoning office: Spring Township Zoning (springtwpberks.org). Residential districts: RHA, RC, RS, LDS, MDS, SS, U. Read on eCode360 in a browser, the chapter print view, searched in the page. Searched for accessory dwelling, accessory apartment, apartment accessory, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, accessory unit, tiny, dependent, relative, family member, tenant, conversion, kitchen. No ADU provision. 450-327C(1)(e) does not limit 'other uses not mentioned so long as they are clearly accessory to the principal permitted use'. A second dwelling unit is read as not clearly accessory, since 450-401 and 450-402B treat added dwellings as principal uses. RHA, RC and RS district tables were not read in full."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "450-202, 450-305 to 450-311",
+      "url": "https://ecode360.com/45165366",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, apartment accessory, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, accessory unit, tiny, dependent, relative, family member, tenant, conversion, kitchen."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "450-302A, 450-308B, 450-309B",
+      "url": "https://ecode360.com/45165830",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "The code has no ADU text. LDS and MDS list only the single-family detached dwelling."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "450-302A, 450-401",
+      "url": "https://ecode360.com/45165830",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A second unit is not a permitted use in LDS or MDS. It needs a use variance from the Zoning Hearing Board (MPC 910.2). No unlisted-use special exception was found."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "450-302A, MPC 910.2",
+      "url": "https://ecode360.com/45165830",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Same as path."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached (duplex) or semidetached (twin) dwelling",
+          "path": "by_right",
+          "districts": [
+            "SS"
+          ],
+          "conditions": "Permitted by right with site plan review. Lot area is per dwelling unit, 5,000 sq ft each, so 10,000 for two units with public sewer and water. 2 parking spaces per unit.",
+          "min_lot_sqft": 10000,
+          "section": "450-310B(10), (11), 450-310F, 450-202, Table 7.1",
+          "url": "https://ecode360.com/45166176"
+        },
+        {
+          "name": "Two-family detached (duplex) or semidetached (twin) dwelling",
+          "path": "by_right",
+          "districts": [
+            "U"
+          ],
+          "conditions": "Permitted by right with site plan review. Lot area is per dwelling unit, 3,500 sq ft each, so 7,000 for two units. 2 parking spaces per unit.",
+          "min_lot_sqft": 7000,
+          "section": "450-311B(10), (11), 450-311F, 450-202, Table 7.1",
+          "url": "https://ecode360.com/45166232"
+        },
+        {
+          "name": "Single-family to multifamily conversion",
+          "path": "by_right",
+          "districts": [
+            "SS",
+            "U"
+          ],
+          "conditions": "Permitted by right with site plan review. 'Shall comply with all applicable requirements for multifamily dwellings (single-family attached dwellings or garden apartments).' Those rules set density and other limits in 450-324.",
+          "min_lot_sqft": null,
+          "section": "450-310B(8), 450-311B(8), 450-324(97)",
+          "url": "https://ecode360.com/45167191",
+          "confidence": "secondary",
+          "note": "The garden apartment and single-family attached standards in 450-324 were not read for this file. Whether a two-unit conversion of a house can meet them is open."
+        }
+      ],
+      "section": "450-310B, 450-311B, 450-324(97)",
+      "url": "https://ecode360.com/45166176",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. 'TWO-FAMILY DETACHED DWELLING ... commonly called a duplex.'"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "450-305 to 450-311",
+      "url": "https://ecode360.com/45166070",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 450",
+      "url": "https://ecode360.com/45165330",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "450-302A, 450-401",
+      "url": "https://ecode360.com/45165830",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "450-327C(1)(f)[3][a]",
+      "url": "https://ecode360.com/45168790",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. 'No accessory building to the principal residential use shall have a height greater than 15 feet.'"
+    },
+    "accessory_floor_area_total_sqft": {
+      "value": null,
+      "section": "450-327C(1)(f)[2]",
+      "url": "https://ecode360.com/45168790",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Cumulative accessory floor area may not exceed 50% of the principal building floor area, or 600 sq ft if that is larger. 1,500 sq ft on lots of two acres or more. No fixed number."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "450-327C(1)(a), (f)[1]",
+      "url": "https://ecode360.com/45168790",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not in required yards. In the rear yard the setback is the district's one-side yard. 5 ft where the yard abuts an alley."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "450-327C(1)(f)[1]",
+      "url": "https://ecode360.com/45168790",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "May sit in the required rear yard at the district's one-side yard distance."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "450-302A, 450-401",
+      "url": "https://ecode360.com/45165830",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU. 'No more than one principal use shall be permitted on a lot'."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "450-701 Table 7.1",
+      "url": "https://ecode360.com/45169567",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Dwelling, 3 bedrooms or less: 2 per dwelling unit'."
+    }
+  },
+  "districts": {
+    "LDS": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "450-308F",
+        "url": "https://ecode360.com/45166070",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Per dwelling unit for residential uses, with both public sewer and water. Width 80 ft. Impervious 55%. 43,560 sq ft without both public sewer and water. 450-408B lets a lot of record below these figures be built on if yards are met."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "450-308G",
+        "url": "https://ecode360.com/45166070",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "450-308G",
+        "url": "https://ecode360.com/45166070",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "450-308G",
+        "url": "https://ecode360.com/45166070",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "450-308F",
+        "url": "https://ecode360.com/45166070",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "450-308F",
+        "url": "https://ecode360.com/45166070",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "3 stories or 30 ft, whichever is less."
+      }
+    },
+    "MDS": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "450-309F",
+        "url": "https://ecode360.com/45166129",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Per dwelling unit for residential uses, with both public sewer and water. Width 70 ft. Impervious 60%. 43,560 sq ft without both public sewer and water. 450-408B lets a lot of record below these figures be built on if yards are met."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "450-309G",
+        "url": "https://ecode360.com/45166129",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "450-309G",
+        "url": "https://ecode360.com/45166129",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "450-309G",
+        "url": "https://ecode360.com/45166129",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.45,
+        "section": "450-309F",
+        "url": "https://ecode360.com/45166129",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "450-309F",
+        "url": "https://ecode360.com/45166129",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "3 stories or 30 ft, whichever is less."
+      }
+    },
+    "SS": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "450-310F",
+        "url": "https://ecode360.com/45166176",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Per dwelling unit for residential uses, with both public sewer and water. Width 50 ft. Impervious 70%. 43,560 sq ft without both public sewer and water. 450-408B lets a lot of record below these figures be built on if yards are met."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "450-310H",
+        "url": "https://ecode360.com/45166176",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "450-310H",
+        "url": "https://ecode360.com/45166176",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One side."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "450-310H",
+        "url": "https://ecode360.com/45166176",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "450-310F",
+        "url": "https://ecode360.com/45166176",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "450-310F",
+        "url": "https://ecode360.com/45166176",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "3 stories or 30 ft, whichever is less."
+      }
+    },
+    "U": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "450-311F",
+        "url": "https://ecode360.com/45166232",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Per dwelling unit for residential uses, with both public sewer and water. Width 35 ft. Impervious 70%. Uses other than garden apartments or single-family attached dwellings. 450-408B lets a lot of record below these figures be built on if yards are met."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "450-311H",
+        "url": "https://ecode360.com/45166232",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "450-311H",
+        "url": "https://ecode360.com/45166232",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One side."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "450-311H",
+        "url": "https://ecode360.com/45166232",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "450-311F",
+        "url": "https://ecode360.com/45166232",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "450-311F",
+        "url": "https://ecode360.com/45166232",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "3 stories or 30 ft, whichever is less."
+      }
+    }
+  }
+}
