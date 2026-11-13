@@ -30,13 +30,14 @@
       "Only inside the house: 'In no instance may a family/caregiver suite be located in an accessory structure.' It must work as an integral part of the house, entered mainly from inside it (1264.18(b)(3), (4), (7))",
       "Not more than two rooms plus a bathroom and an efficiency kitchen, for up to two people (1240.05(52))",
       "Occupants: relatives of the occupants of the house by blood, marriage, adoption or foster care, or an unrelated caregiver for an elder or a person with a disability who lives in the house (1240.05(52))",
-      "At most 35% of the combined gross floor area of the house and the suite. One suite per dwelling (1264.18(b)(1), (2))",
+      "At most 35% of the combined gross floor area of the house and the suite, so 35% of house plus suite, not of the house alone. For a suite carved out of a 2,000 sq ft house, 700 sq ft. For a suite added to a 2,000 sq ft house, up to about 1,077 sq ft (35/65 of the house). One suite per dwelling (1264.18(b)(1), (2))",
       "No separate electric or water meter, and one address for the property (1264.18(b)(5), (6))",
       "The owner files the name and relationship of the suite's occupant with the Borough every year (1264.18(b)(8))",
       "The Zoning Hearing Board also applies the general special exception standards of 1264.17",
       "A separate second unit is possible as a conversion of a single-family detached house to a two-family detached house, by special exception in RA, RB and RC: filed by an owner-occupant, one unit at least 1,600 sq ft and the other at least 600 sq ft, a separate entrance and utility service, and the district lot area for each unit (20,000, 14,000 or 8,000 sq ft). The 1240.05(36) definition calls it a conditional use, 1264.08 and the district lists a special exception (1264.08)",
       "Two-family dwellings are permitted by right in RA, RB and RC on a lot meeting the lot area for each dwelling unit (1246.02(a)(2), 1248.02(a)(2), 1250.02(a)(2))",
-      "Parking: a single-family dwelling needs two spaces, a two-family dwelling three. No rate for a suite (1268.03)"
+      "Parking: a single-family dwelling needs two spaces, a two-family dwelling three. No rate for a suite (1268.03)",
+      "Combined lot coverage and hardscape at most 40%, and building coverage 12% (RA), 18% (RB) or 20% (RC). An addition for a suite must fit both (1246.03(i), 1248.03(j), 1250.03(j))"
     ],
     "notes": "Zoning office: Borough of Swarthmore. Read on American Legal Publishing in a browser, one section page at a time. Searched the definitions for caregiver, two-family, in-law, accessory and short-term. The code has no accessory dwelling unit term. The family/caregiver suite is the only accessory unit, inside the house. Other districts (AR, AL, TC, IN-A, IN-B, PA, IN-C) were not opened. 1264.18(a) reaches them. The earlier town survey has no Swarthmore entry."
   },
@@ -162,6 +163,20 @@
           "section": "1246.02(a)(2), 1246.03(b), 1268.03(b)",
           "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
           "confidence": "verified"
+        },
+        {
+          "name": "Two-family semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "RC",
+            "RB"
+          ],
+          "conditions": "A permitted general use: two units, each half of a semidetached building. 8,000 sq ft of lot for each unit in RC (14,000 in RB). Three parking spaces.",
+          "min_lot_sqft": 16000,
+          "section": "1250.02(a)(4), 1248.02(a)(4), 1250.03(b), 1268.03(c)",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17071",
+          "confidence": "verified",
+          "note": "Not an ADU. 16,000 sq ft is the RC figure, RB needs 28,000."
         }
       ],
       "section": "1264.08, 1246.02, 1248.02, 1250.02",
@@ -285,7 +300,7 @@
       "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "'The gross floor area of the suite shall not exceed thirty-five percent of the combined gross floor area of the main dwelling and the family/caregiver suite.' A share of the whole building, suite included."
+      "note": "'The gross floor area of the suite shall not exceed thirty-five percent of the combined gross floor area of the main dwelling and the family/caregiver suite.' The base is house plus suite. The tool applies 35% to the house figure, which is right for a suite inside the existing house and low for an addition (about 54% of the house before the addition)."
     },
     "min_sqft": {
       "value": null,
@@ -526,6 +541,16 @@
         "verified_on": "2026-11-13",
         "confidence": "verified"
       }
+    }
+  },
+  "coverage": {
+    "max_impervious": {
+      "value": 0.4,
+      "section": "1246.03(i), 1248.03(j), 1250.03(j)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Maximum combined lot coverage and hardscape coverage shall be 40%' in RA, RB and RC, and never above the district building coverage."
     }
   }
 }

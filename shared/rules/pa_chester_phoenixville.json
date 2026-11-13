@@ -30,21 +30,22 @@
       "An accessory dwelling unit is a special exception (Zoning Hearing Board) in RI, MI, NC, CD and MG. It is not listed in TC or I (27-301.2B(1) table)",
       "One ADU, accessory to a single-family dwelling: a detached house, a twin or a townhouse (27-301.2B(2)(d)1))",
       "The owner of the lot must live in one of the two dwellings 'in perpetuity' (27-301.2B(2)(d)2))",
-      "Inside the house: at most 25% of the existing house's habitable floor area. As an addition: an increase of at most 25% of that area. In an accessory building: the accessory building limits, a footprint at most two thirds of the house's footprint (27-301.2B(2)(d)6), 27-404.2B(1))",
-      "An accessory building may be at most two stories or two thirds of the house height, whichever is less. With a one-story house it may not be taller than the house. No more than two accessory buildings on a lot (27-404.2B(2), (3))",
+      "Inside the house: at most 25% of the existing house's habitable floor area. As an addition: an increase of at most 25% of that area. In an accessory building: the accessory building limits, a building FOOTPRINT at most two thirds of the house's footprint, not two thirds of its floor area (27-301.2B(2)(d)6), 27-404.2B(1))",
+      "An accessory building may be at most two stories or two thirds of the actual house height, whichever is less (20 ft for a 30 ft house, 23 ft only for a 35 ft house). With a one-story house it may not be taller than the house. No more than two accessory buildings on a lot (27-404.2B(2), (3))",
       "At most one bedroom (27-301.2B(2)(d)7))",
       "A detached ADU may not be in the required front yard. Its own entrance, not in the front facade of the house (27-301.2B(2)(d)4), 5))",
       "The ADU meets the setback and coverage rules of the district for its type. In the RI chart an accessory building is 8 ft from the rear line and 5 ft from the side, or attached. The detached house is 25 ft rear, 5 ft side, 80% impervious (27-301.2B(2)(d)3), Attachment 1)",
       "Public electric, water and sewer, connected to the house's existing systems (27-301.2B(2)(d)11))",
-      "Parking under the chapter's rules, and the ADU may not remove any existing off-street space. The parking table has no ADU row (27-301.2B(2)(d)10), 27-405.2C)",
+      "Parking: 1 space for the ADU ('Accessory dwelling unit 1 space'), 3 in all with a detached house or townhouse. The ADU may not remove any existing off-street space. The Borough may adjust the minimum under 27-405.3 (27-405.2C, 27-301.2B(2)(d)10))",
       "Registered with the Borough every year. The registration ends when the lot is sold, and the new owner may register again (27-301.2B(2)(d)8))",
       "A concept plan to scale with the building permit application (27-301.2B(2)(d)9))",
       "MI, NC, CD and MG allow the same residential building types as RI, and the RI standards may be modified by up to 25% to fit the streetscape (Attachment 1)",
       "Lots under one acre take infill standards from the block: the minimum lot area is the median lot area on the block face, side yards match an adjacent lot (27-301.1A)",
       "In RI no new building type or residential use may be introduced in a block unless the tract is at least eight acres (27-301.1D). That limits a duplex, not the ADU",
-      "Residential uses are permitted by right in TC, but TC does not list the ADU"
+      "Residential uses are permitted by right in TC, but TC does not list the ADU",
+      "The RI chart sets a minimum building spacing of 10 ft for single-family detached and twin houses. Whether it reaches an accessory building on the same lot is not clear, since the chart also lets accessory buildings be attached (Attachment 1)"
     ],
-    "notes": "Zoning office: Borough of Phoenixville. Read on eCode360 in a browser, one section print view at a time. The use tables were read from the page as displayed. The district specifications are an image PDF attachment, read page by page. Searched the definitions for accessory dwelling, accessory building, duplex and short-term. The index note's 'TC' in the ADU district list is not borne out by the table, which marks RI, MI, NC, CD and MG. The index note's '1 space' parking figure is not in the current text. Chester County Planning Commission material (cross-check only) has nothing on Phoenixville ADUs. The earlier town survey has no Phoenixville entry."
+    "notes": "Zoning office: Borough of Phoenixville. Read on eCode360 in a browser, one section print view at a time. The use tables were read from the page as displayed. The district specifications are an image PDF attachment, read page by page. Searched the definitions for accessory dwelling, accessory building, duplex and short-term. The index note's 'TC' in the ADU district list is not borne out by the table, which marks RI, MI, NC, CD and MG. The 27-405.2C table has an 'Accessory dwelling unit 1 space' row (a first reading missed it). Chester County Planning Commission material (cross-check only) has nothing on Phoenixville ADUs. The earlier town survey has no Phoenixville entry."
   },
   "adu": {
     "term": {
@@ -275,7 +276,7 @@
       "url": "https://ecode360.com/print/PH1486?guid=47635814",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "'Detached ADU — Per accessory building size limits'. 'The building footprint shall be no more than 2/3 that of the principal building.' A footprint share, not a floor area share."
+      "note": "'Detached ADU — Per accessory building size limits'. 'The building footprint shall be no more than 2/3 that of the principal building.' A share of the house's footprint, not of its floor area. The tool shows it as a share of the house."
     },
     "min_sqft": {
       "value": null,
@@ -293,7 +294,7 @@
       "url": "https://ecode360.com/print/PH1486?guid=47635814",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "'The building height shall be no more than two stories or 2/3 the principal building height, whichever is less. If the principal building is one story, an accessory building shall not exceed the height of the principal building.' No fixed feet figure. 23 ft is two thirds of the 35 ft district height, the most any accessory building can reach. For a 30 ft house the cap is 20 ft."
+      "note": "'The building height shall be no more than two stories or 2/3 the principal building height, whichever is less. If the principal building is one story, an accessory building shall not exceed the height of the principal building.' The cap is two thirds of the actual house height. 23 ft is only the figure for a 35 ft house, the district maximum. For a 30 ft house the cap is 20 ft."
     },
     "max_height_stories": {
       "value": 2,
@@ -386,19 +387,20 @@
   },
   "parking": {
     "spaces_required": {
-      "value": null,
-      "section": "27-301.2B(2)(d)10), 27-405.2C",
+      "value": 1,
+      "section": "27-405.2C table",
       "url": "https://ecode360.com/print/PH1486?guid=47635825",
       "verified_on": "2026-11-13",
-      "confidence": "secondary",
-      "note": "'Parking for such use shall be pursuant to off-street parking requirements of this chapter.' The table has no ADU row."
+      "confidence": "verified",
+      "note": "Table for residential developments of four or fewer dwellings, last row: 'Accessory dwelling unit 1 space'. The ADU may not remove existing off-street spaces (27-301.2B(2)(d)10)). 27-405.3 lets the Borough adjust the minimum (shared parking and the like)."
     },
-    "reading": {
-      "value": "The table gives a single-family detached house 2 spaces, and an efficiency or one-bedroom unit in a twin or duplex 1 space. Read as 1 more space for the one-bedroom ADU, 3 in all for a detached house, or as no added space since no row names an ADU. Existing spaces may not be removed. Ask the zoning officer.",
-      "section": "27-405.2C, 27-301.2B(2)(d)10)",
+    "total_on_site": {
+      "value": 3,
+      "section": "27-405.2C table",
       "url": "https://ecode360.com/print/PH1486?guid=47635825",
       "verified_on": "2026-11-13",
-      "confidence": "secondary"
+      "confidence": "verified",
+      "note": "'Single-family detached 2 spaces per dwelling unit' (townhouse also 2) plus 1 for the ADU. A twin is 1 or 2 by bedrooms, so the total for a twin is 2 or 3."
     }
   },
   "utilities": {
@@ -457,6 +459,14 @@
         "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified"
+      },
+      "separation_ft": {
+        "value": 10,
+        "section": "Attachment 1, RI single-family detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Min. Building Spacing 10 ft.' (twin 10 ft). Whether it binds an accessory building on the same lot is not settled."
       }
     }
   }

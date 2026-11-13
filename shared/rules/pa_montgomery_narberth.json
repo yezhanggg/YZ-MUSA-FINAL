@@ -57,7 +57,10 @@
       "5A and 5B do not allow detached or twin houses as building types, so an ADU there needs an existing detached or twin house. Ask the zoning officer (500-308, 500-309)",
       "In the H Historic District Overlay (3A, 3B, 3C), a lot with a contributing resource that is wide enough to be subdivided may have more than one principal building, such as a cottage, by conditional use (500-404H, 500-310)",
       "A new detached house may be built as a two-family dwelling by right in 3B, 3C, 4A and 4B (district use tables)",
-      "No short-term rental rule in Chapter 500"
+      "No short-term rental rule in Chapter 500",
+      "Building and impervious coverage: the ADU counts toward the lot's coverage. Building coverage 3A 30% of the first 7,500 sq ft plus 3% above, 3B 55% of the first 4,000 plus 5%, 3C 40% of the first 7,500 plus 8%, 4A 50% of the first 6,000 plus 7%, 4B 80%. Impervious 50% (3A), 60% (3B, 3C, 4A), 90% (4B). On a small lot a large house can leave no room (500-802B(3), 500-503C(1), Table 500-503-1)",
+      "A house already used as a two-family dwelling cannot add an ADU, since the lot may hold no more than two units (500-802A(3))",
+      "A use not listed but of similar character to a permitted use may be allowed by special exception (500-403F). That is a hearing, not an ADU rule"
     ],
     "notes": "Zoning office: Narberth Borough. Read on eCode360 in a browser, one section print view at a time. Chapter 500 was replaced in full on 8-20-2026 (Ord. No. 1070), after the index note was written (it cites the 2022 text at 500-602). Searched the definitions for accessory dwelling, accessory building, lot layer, twin house, two-family and short-term. The district use tables cite special exceptions as 500-404 and conditional uses as 500-405, one number off from the sections in the chapter (500-403 Special exception uses, 500-404 Conditional uses, 500-405 Regulated uses). The earlier town survey has no Narberth entry. District codes: 3A, 3B, 3C, 4A, 4B, 5A, 5B, with the H overlay."
   },
@@ -101,7 +104,12 @@
         {
           "name": "Conversion of a house to accommodate additional families",
           "path": "special_exception",
-          "districts": ["3A", "3B", "3C", "4A"],
+          "districts": [
+            "3A",
+            "3B",
+            "3C",
+            "4A"
+          ],
           "conditions": "A detached house (or multifamily house) converted to more units. Building type standards met, parking met, one front entrance (others on the side or rear), fire escapes in the third lot layer, and the addition standards for any exterior change.",
           "min_lot_sqft": null,
           "section": "500-403A, 500-503A(3)",
@@ -112,7 +120,10 @@
         {
           "name": "Two-family dwelling in a new detached house",
           "path": "by_right",
-          "districts": ["3B", "3C"],
+          "districts": [
+            "3B",
+            "3C"
+          ],
           "conditions": "A detached house built as a two-family dwelling, with the detached house lot (6,000 sq ft) and yard rules. Changing an existing one-family house goes by the conversion special exception (500-503A(3)).",
           "min_lot_sqft": 6000,
           "section": "500-304C, 500-305C, 500-503",
@@ -123,7 +134,10 @@
         {
           "name": "Two-family dwelling in a new detached house",
           "path": "by_right",
-          "districts": ["4A", "4B"],
+          "districts": [
+            "4A",
+            "4B"
+          ],
           "conditions": "A detached house built as a two-family dwelling, with the detached house lot (4,000 sq ft) and yard rules. In 4A changing an existing one-family house goes by the conversion special exception. 500-403A does not name 4B, so ask how an existing house there is converted.",
           "min_lot_sqft": 4000,
           "section": "500-306C, 500-307C, 500-503",
@@ -134,7 +148,11 @@
         {
           "name": "More than one principal building on a historic district lot",
           "path": "conditional_use",
-          "districts": ["3A", "3B", "3C"],
+          "districts": [
+            "3A",
+            "3B",
+            "3C"
+          ],
           "conditions": "Only in the H Historic District Overlay, on a lot with a contributing resource that would be wide enough to subdivide. Borough Council must find the contributing resource is preserved. A cottage is the usual building type.",
           "min_lot_sqft": null,
           "section": "500-404H, 500-310B(3)(b), D",
@@ -148,11 +166,25 @@
       "url": "https://ecode360.com/print/NA0447?guid=52004250",
       "verified_on": "2026-11-13",
       "confidence": "verified"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "500-403F",
+      "url": "https://ecode360.com/print/NA0447?guid=52004250",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Any use of similar character, impact, appearance, and intensity as any of the uses specifically permitted in a district shall be permitted when authorized by special exception.' A path to ask for a unit the ADU text does not reach (for example 5A and 5B). In 3B, 3C, 4A and 4B a two-family dwelling is a listed use and the conversion special exception (500-403A) covers a unit in the house, so a second unit there is read as those listed uses, not as an unlisted one."
     }
   },
   "eligibility": {
     "zoning_districts": {
-      "value": ["3A", "3B", "3C", "4A", "4B"],
+      "value": [
+        "3A",
+        "3B",
+        "3C",
+        "4A",
+        "4B"
+      ],
       "section": "500-802A(1), 500-503A(2), 500-504A(2), 500-303D(2) to 500-307D(2)",
       "url": "https://ecode360.com/print/NA0447?guid=52005162",
       "verified_on": "2026-11-13",
@@ -160,7 +192,10 @@
       "note": "The ADU needs a lot with a detached or twin house. Those building types are allowed in 3A to 4B only."
     },
     "districts_in_doubt": {
-      "value": ["5A", "5B"],
+      "value": [
+        "5A",
+        "5B"
+      ],
       "section": "500-308D(2), 500-309D(2), 500-802A(1)",
       "url": "https://ecode360.com/print/NA0447?guid=52004087",
       "verified_on": "2026-11-13",
@@ -168,7 +203,10 @@
       "note": "The 5A and 5B notes say accessory buildings may include ADUs, but neither district allows a detached or twin house. Only an existing one could qualify."
     },
     "building_types": {
-      "value": ["detached", "semi_detached"],
+      "value": [
+        "detached",
+        "semi_detached"
+      ],
       "section": "500-802A(1)",
       "url": "https://ecode360.com/print/NA0447?guid=52005162",
       "verified_on": "2026-11-13",
@@ -217,7 +255,9 @@
           "kind": "existing_structure",
           "condition": "An existing accessory building that is nonconforming as to side or rear yard, coverage, height or orientation may be converted if its footprint is 600 sq ft or less and the nonconformity is not increased.",
           "effect": "condition",
-          "applies_to": ["garage_conversion"],
+          "applies_to": [
+            "garage_conversion"
+          ],
           "districts": null,
           "building_types": null,
           "section": "500-802B(5)",
@@ -254,7 +294,11 @@
   },
   "form": {
     "types_allowed": {
-      "value": ["detached_new", "garage_conversion", "over_garage"],
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
       "section": "500-201, 500-802A(4)",
       "url": "https://ecode360.com/print/NA0447?guid=52003707",
       "verified_on": "2026-11-13",
@@ -690,7 +734,33 @@
         "url": "https://ecode360.com/print/NA0447?guid=52005146",
         "verified_on": "2026-11-13",
         "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.8,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached house '80% of lot area'. Impervious 90%."
       }
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "500-802B(3), 500-503C(1)",
+      "url": "https://ecode360.com/print/NA0447?guid=52004652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The ADU's coverage counts toward the lot's (500-802B(3)). Detached house building coverage: 3A 30% of the first 7,500 sq ft plus 3% above, 3B 55% of the first 4,000 plus 5%, 3C 40% of the first 7,500 plus 8%, 4A 50% of the first 6,000 plus 7%, 4B 80%. A formula, stored per district only for 4B."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "Table 500-503-1, 500-802B(3)",
+      "url": "https://ecode360.com/print/NA0447?guid=52004652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Impervious surface: 3A 50%, 3B 60%, 3C 60%, 4A 60%, 4B 90%. By district, not one town figure."
     }
   }
 }

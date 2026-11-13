@@ -44,21 +44,23 @@
       "Any ADU needs a property of at least two acres gross. One ADU per property, at least 400 sq ft of habitable floor area (27-1002A(1) to (3))",
       "Sewer and water need Chester County Health Department approval before the building permit. Sketch and building plans go to the Zoning Officer with the building permit (27-1002A(4), (5), (7))",
       "Parking for at least two cars for each dwelling unit, so four spaces on the lot (27-1002A(6), 27-909G(1)(a)[1])",
-      "A new freestanding ADU only where the property could be subdivided into two conforming lots, each with one house meeting the district rules for a single-family house. In RC that is about 10 acres (two 5 acre lots). In A it is a 10 acre lot plus a split-off lot of 1 to 2 acres (27-1705), or 20 acres where the farm does not qualify for a split-off. Properties under a conservation easement are exempt from this test (27-1002B(1), 27-1703A(1), 27-1803A(1))",
+      "A new freestanding ADU only where the property could be subdivided into two conforming lots, each with one house meeting the district rules for a single-family house. In RC that is about 10 acres (two 5 acre lots). In A it is about 11 acres (a 10 acre lot plus a 1 to 2 acre split-off) only on a farm that qualifies under 27-1705 and has split-offs left (27-1705E, G), otherwise 20 acres (two 10 acre lots). Properties under a conservation easement are exempt from this test, which the tool cannot know (27-1002B(1), 27-1703A(1), 27-1803A(1))",
       "After a freestanding ADU is built the property may not be subdivided so that either house becomes nonconforming (27-1002B(3))",
       "A freestanding ADU may not have more habitable floor area than the house (27-1002B(4))",
       "An attached ADU is a conversion of or addition to the house, or a conversion of all or part of an existing accessory building. It may be at most 50% of the house's habitable floor area. The house or the accessory building may grow by at most 20% of its gross floor area for the unit (27-202, 27-1002C(2), (4))",
       "A unit in the house must share a common wall with it or be wholly inside it, and look like one house from outside. Entrances to the ADU on the side or rear. Fire escapes and outside stairs on the side or rear (27-1002A(8), C(3), C(5))",
       "No building that contains a dwelling unit may stand in a required yard. A freestanding ADU takes the district yards: A 40 ft front, 20 ft side, 60 ft rear. RC 60 ft front, 30 ft side, 60 ft rear (27-902C(1), 27-1703A, 27-1803A)",
       "Accessory buildings together may not have a larger footprint than the house. An accessory building may be as tall as the house or 20 ft, whichever is greater (27-1003C(1)(a), (b)). Whether these reach a freestanding ADU, which the code calls a freestanding dwelling, is not settled",
-      "In RC, when the house is within 100 ft of the street line, no accessory building other than a detached garage may stand between the front setback line and the front wall of the house (27-1003A(1))",
+      "In every district except A (in practice RC), when the house is within 100 ft of the street line, no accessory building other than a detached garage may stand between the front setback line and the front wall of the house (27-1003A(1))",
       "Short-term rental of an ADU is a special exception in A and RC under 27-1065: lot of two acres, only one short-term rental on a property, annual registration and inspection (27-1002A(9), 27-1702B(11), 27-1802B(7))",
       "A second freestanding ADU is a special exception on a property of 20 acres or more under a conservation easement or similar deed restriction (27-1002B(2))",
       "In NR and MUR a second unit can come as a two-family dwelling, by right, on 5,500 sq ft net of lot for each unit (27-402A(1)(b), 27-403A(2), 27-502A(2), 27-503A(2))",
       "An ECHO dwelling (temporary, for an elderly or disabled relative or caregiver, at most 1,250 sq ft) is not an ADU in this code. It is by right in A and RC and a special exception in NR and MUR (27-202, 27-1027)",
       "A residential conversion of a single-family house to two units has standards in 27-1054 (district lot area for a house, units of 550 to 1,000 sq ft by bedrooms), but no district use list read names it",
       "A unit over a new garage is not named. A new building is the freestanding form. An existing garage converted in whole or part is the attached form (27-202)",
-      "MUR and MUC let the Board of Supervisors approve, as a conditional use, a use not provided for that is of the same general character as listed uses (27-502C(3), 27-602C(3)). In MUR a second unit is already a listed two-family dwelling"
+      "MUR and MUC let the Board of Supervisors approve, as a conditional use, a use not provided for that is of the same general character as listed uses (27-502C(3), 27-602C(3)). In MUR a second unit is already a listed two-family dwelling",
+      "A lawfully nonconforming A lot that existed on 9-12-2018 takes the split-off lot standards: front 60 ft, side 20 ft, rear 60 ft, impervious cover 20% (27-1703A(10), 27-1705D to F). Most A house lots of 2 to 10 acres are such lots",
+      "No building that holds a dwelling unit may stand in a required yard, so a garage inside the district yards cannot hold the unit (27-902C(1))"
     ],
     "notes": "Zoning office: Honey Brook Township (Chester County). Read on eCode360 in a browser, one section print view at a time. Searched the definitions for accessory dwelling, ECHO, two-family, apartment and conversion. Chester County Planning Commission Missing Middle ADU page (cross-check only) cites 'Section 27-207' for freestanding and attached ADU definitions. That is older numbering. The current definitions are in 27-202 and the standards in 27-1002. CCPC eTool 32 also mentions a TND overlay in Part 24, which the current Chapter 27 does not have (Parts 1 to 21). District codes: A, RC, NR, MUR, MUC, BI, with the MHP overlay."
   },
@@ -78,6 +80,25 @@
       "verified_on": "2026-11-13",
       "confidence": "verified",
       "note": "'Uses Permitted by Right. ... (11) Accessory dwelling unit.' in A, and '(6) Accessory dwelling unit.' in RC (Ord. No. 211-2025). Not listed in NR, MUR, MUC or BI."
+    },
+    "scope_districts": {
+      "value": [
+        "A",
+        "RC"
+      ],
+      "section": "27-1702A(11), 27-1802A(6)",
+      "url": "https://ecode360.com/print/HO3693?guid=31040527",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The ADU is a listed use only in A and RC."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "27-402, 27-502, 27-602, 27-1902",
+      "url": "https://ecode360.com/print/HO3693?guid=31038034",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "NR, MUR, MUC and BI do not list ADUs. In NR and MUR a two-family dwelling is by right and an ECHO dwelling a special exception (see alternatives)."
     }
   },
   "approval": {
@@ -102,7 +123,10 @@
         {
           "name": "Second freestanding accessory dwelling unit on a preserved tract",
           "path": "special_exception",
-          "districts": ["A", "RC"],
+          "districts": [
+            "A",
+            "RC"
+          ],
           "conditions": "Only on a property permanently preserved by a conservation easement or similar deed restriction, on a tract of 20 acres or more that keeps at least 20 acres with the house and both ADUs. A recorded agreement acceptable to the Township Solicitor.",
           "min_lot_sqft": 871200,
           "section": "27-1002B(2)",
@@ -114,7 +138,10 @@
         {
           "name": "Two-family dwelling",
           "path": "by_right",
-          "districts": ["NR", "MUR"],
+          "districts": [
+            "NR",
+            "MUR"
+          ],
           "conditions": "A permitted principal use. 5,500 sq ft of net lot area for each unit, lot width 40 ft for each unit at the building line, lot coverage 45%, 35 ft. Two parking spaces for each unit.",
           "min_lot_sqft": 11000,
           "section": "27-402A(1)(b), 27-403A, 27-502A(2), 27-503A, 27-909G(1)(a)[1]",
@@ -125,7 +152,10 @@
         {
           "name": "Elder cottage housing opportunity (ECHO) dwelling",
           "path": "by_right",
-          "districts": ["A", "RC"],
+          "districts": [
+            "A",
+            "RC"
+          ],
           "conditions": "Temporary unit beside a single-family detached house for an elderly, handicapped or disabled relative of the occupants, or their caregiver. At most 1,250 sq ft and two people. Side or rear of the house, district side and rear yards. Removal agreement and escrow. Temporary use and occupancy permit reviewed each January.",
           "min_lot_sqft": null,
           "section": "27-1702A(17), 27-1802A(15), 27-1027",
@@ -136,7 +166,10 @@
         {
           "name": "Elder cottage housing opportunity (ECHO) dwelling",
           "path": "special_exception",
-          "districts": ["NR", "MUR"],
+          "districts": [
+            "NR",
+            "MUR"
+          ],
           "conditions": "Same 27-1027 standards: temporary, for an elderly, handicapped or disabled relative or caregiver, at most 1,250 sq ft and two people, removal agreement and escrow.",
           "min_lot_sqft": null,
           "section": "27-402B(2), 27-502B(5), 27-1027",
@@ -152,7 +185,10 @@
   },
   "eligibility": {
     "zoning_districts": {
-      "value": ["A", "RC"],
+      "value": [
+        "A",
+        "RC"
+      ],
       "section": "27-1702A(11), 27-1802A(6)",
       "url": "https://ecode360.com/print/HO3693?guid=31040624",
       "verified_on": "2026-11-13",
@@ -160,7 +196,9 @@
       "note": "By right in A and RC. NR (27-402), MUR (27-502), MUC (27-602) and BI (27-1902) do not list it."
     },
     "building_types": {
-      "value": ["detached"],
+      "value": [
+        "detached"
+      ],
       "section": "27-202, 27-1702A(7), 27-1802A(5)",
       "url": "https://ecode360.com/print/HO3693?guid=31037517",
       "verified_on": "2026-11-13",
@@ -197,8 +235,12 @@
           "kind": "lot_size",
           "condition": "A new freestanding ADU only where the property could be subdivided into two conforming lots, each with one house meeting the RC rules for a single-family house (5 acres gross, 60,000 sq ft net each). Not required on a property under a conservation easement or similar deed restriction.",
           "effect": "bars",
-          "applies_to": ["detached_new"],
-          "districts": ["RC"],
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "RC"
+          ],
           "building_types": null,
           "section": "27-1002B(1), 27-1803A(1), (2)",
           "url": "https://ecode360.com/print/HO3693?guid=31038556",
@@ -207,12 +249,16 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new freestanding ADU only where the property could be subdivided into two conforming lots, each with one house meeting the A rules. That needs a 10 acre residual lot plus a split-off house lot of 1 to 2 acres where the farm qualifies under 27-1705, or two 10 acre lots where it does not. Not required on a property under a conservation easement or similar deed restriction.",
+          "condition": "A new freestanding ADU only where the property could be subdivided into two conforming lots, each with one house meeting the A rules. On a farm that qualifies under 27-1705 (Clean and Green or the Agricultural Security Area, or Board finding) and still has split-offs left (one a year, at most 10 acres or 10% in all, 27-1705E, G), that is a 10 acre residual lot plus a 1 to 2 acre split-off lot, about 11 acres. Otherwise two 10 acre lots, 20 acres. The tool tests only the 11 acre floor, so a lot of 11 to 20 acres is shown as allowed only with this condition. Not required on a property under a conservation easement or similar deed restriction.",
           "effect": "bars",
-          "applies_to": ["detached_new"],
-          "districts": ["A"],
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "A"
+          ],
           "building_types": null,
-          "section": "27-1002B(1), 27-1703A(1), 27-1705C, F",
+          "section": "27-1002B(1), 27-1703A(1), 27-1705A, B, C, E, F, G",
           "url": "https://ecode360.com/print/HO3693?guid=31040543",
           "test": "lot_sqft_at_least",
           "value": 479160
@@ -221,7 +267,10 @@
           "kind": "existing_structure",
           "condition": "A unit in a garage or other accessory building is the attached kind: 'the conversion of all or part of an existing accessory structure'. The building may grow by at most 20% of its gross floor area. The unit may be at most 50% of the house's habitable floor area.",
           "effect": "condition",
-          "applies_to": ["garage_conversion", "over_garage"],
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
           "districts": null,
           "building_types": null,
           "section": "27-202, 27-1002C(2), (4)",
@@ -232,7 +281,10 @@
           "kind": "size",
           "condition": "A unit in or added to the house: the house may grow by at most 20% of its gross floor area for the unit, the unit shares a common wall enclosing habitable space or sits wholly inside, and the building looks like one house from outside.",
           "effect": "condition",
-          "applies_to": ["internal", "attached"],
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
           "districts": null,
           "building_types": null,
           "section": "27-1002C(1) to (3)",
@@ -262,7 +314,9 @@
           "kind": "other",
           "condition": "After a freestanding ADU is built, the property may not be subdivided so that the house or the ADU becomes nonconforming.",
           "effect": "condition",
-          "applies_to": ["detached_new"],
+          "applies_to": [
+            "detached_new"
+          ],
           "districts": null,
           "building_types": null,
           "section": "27-1002B(3)",
@@ -270,13 +324,47 @@
         },
         {
           "kind": "design",
-          "condition": "RC: when the house is within 100 ft of the street line, no accessory building other than a detached garage between the front setback line and the front wall of the house.",
+          "condition": "In every district except A (so in RC): when the house is within 100 ft of the street line, no accessory building other than a detached garage between the front setback line and the front wall of the house.",
           "effect": "condition",
-          "applies_to": ["detached_new", "garage_conversion", "over_garage"],
-          "districts": ["RC"],
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "RC"
+          ],
           "building_types": null,
           "section": "27-1003A(1)",
           "url": "https://ecode360.com/print/HO3693?guid=31038609"
+        },
+        {
+          "kind": "size",
+          "condition": "A new freestanding ADU 'shall not have a habitable floor area greater than the habitable floor area of the principal dwelling.'",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-1002B(4)",
+          "url": "https://ecode360.com/print/HO3693?guid=31038556"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A farm in A of 11 to 20 acres meets the freestanding-unit lot test only if it qualifies under 27-1705 and has split-off allowance left. Otherwise 20 acres are needed. Ask the township.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "A"
+          ],
+          "building_types": null,
+          "section": "27-1002B(1), 27-1705A, B, E, G",
+          "url": "https://ecode360.com/print/HO3693?guid=31040543",
+          "test": "lot_sqft_below",
+          "value": 871200
         }
       ],
       "section": "27-1002",
@@ -287,7 +375,13 @@
   },
   "form": {
     "types_allowed": {
-      "value": ["internal", "attached", "detached_new", "garage_conversion", "over_garage"],
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
       "section": "27-202, 27-1002B, C",
       "url": "https://ecode360.com/print/HO3693?guid=31037517",
       "verified_on": "2026-11-13",
@@ -324,12 +418,12 @@
       "note": "'The habitable floor area in use for the attached accessory dwelling unit shall not exceed 50% of the total habitable floor area of the principal dwelling.'"
     },
     "max_share_accessory_building": {
-      "value": 1.0,
-      "section": "27-1002B(4)",
+      "value": 0.5,
+      "section": "27-1002C(4), 27-202",
       "url": "https://ecode360.com/print/HO3693?guid=31038556",
       "verified_on": "2026-11-13",
-      "confidence": "secondary",
-      "note": "Freestanding: 'shall not have a habitable floor area greater than the habitable floor area of the principal dwelling.' A converted garage or other accessory building is the attached kind and takes the 50% cap (27-1002C(4)). The tool shows the freestanding figure for the garage forms. See gates."
+      "confidence": "verified",
+      "note": "A converted garage or other existing accessory building is the attached kind ('the conversion of all or part of an existing accessory structure', 27-202): 'shall not exceed 50% of the total habitable floor area of the principal dwelling.' A new freestanding unit may be as large as the house (27-1002B(4)), which the tool cannot hold apart. See gates."
     },
     "min_sqft": {
       "value": 400,
@@ -532,6 +626,25 @@
         "url": "https://ecode360.com/print/HO3693?guid=31040535",
         "verified_on": "2026-11-13",
         "confidence": "verified"
+      },
+      "yard_tiers": {
+        "value": [
+          {
+            "min_lot_sqft": 0,
+            "max_lot_sqft": 435600,
+            "applies_to": "principal",
+            "setback_front_ft": 60,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 60,
+            "section": "27-1703A(10), 27-1705F",
+            "note": "A lawfully nonconforming A lot under 10 acres that existed at adoption (9-12-2018) takes 27-1705D to F: front 60, side 20, rear 60, impervious 20%."
+          }
+        ],
+        "section": "27-1703A(10), 27-1705F",
+        "url": "https://ecode360.com/print/HO3693?guid=31040535",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'On any lawfully nonconforming lot in existence at the date of adoption of this Chapter, the area and bulk standards in § 27-1705D through F shall be applicable.' A lot under 10 acres created later would not qualify."
       }
     },
     "RC": {

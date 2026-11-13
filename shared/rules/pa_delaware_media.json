@@ -35,11 +35,12 @@
     "code_current_through_note": "eCode360 header on 2026-11-13: 'Includes legislation through 05-21-2026.' No new laws pending.",
     "checks": [
       "Article B-XV applies in R-1, R-2, R-3, R-4 and Office. The use tables list 'Accessory unit' as permitted (by right) with the detached house and the 'ADU, external' building form in all five, and also with the semi-detached and attached house in R-2, R-3, R-4 and Office (311.B-108, B-21, B-28, B-35, B-42, B-49)",
+      "R-3 and R-4: the lot tables permit the 'ADU, external' form only on lots under 60 ft wide. On a lot 60 ft wide or more it is marked prohibited (as is the detached house form), so only a unit inside the house fits the table. The tool cannot test lot width. Ask the zoning officer (311.B-37, 311.B-44)",
       "R-1: only with a detached house. A semi-detached or attached house in R-1 may not have one (311.B-21 table)",
       "Office: the 'ADU, external' building form is marked prohibited, so only a unit inside the house (311.B-49 table, 311.B-60)",
       "An external ADU is attached to or detached from the house, and may sit above or below a garage or shed. At most 800 sq ft in total, 20 ft wide and 20 ft deep, and no larger than the house's gross floor area (311.B-60A, C, D(5))",
       "Height of a semi-attached or detached ADU, also one in a garage: 22 ft with a roof pitch of 3:12 or more, 20 ft for a flatter roof. No decks or habitable rooftop elements (311.B-114)",
-      "Setbacks of an external ADU: the house's setbacks, and side and rear setbacks at least half the ADU's height. At least 5 ft behind the build-to line. No rear setback where the rear yard abuts an alley. An ADU in a parking garage takes the parking setbacks (311.B-60C, D(2) to (4))",
+      "Setbacks of an external ADU: the house's setbacks, and side and rear setbacks of at least half the ADU's height, for example 11 ft for a 22 ft building, more than the house's 3 to 6 ft side setback on most lots. At least 5 ft behind the build-to line. No rear setback where the rear yard abuts an alley. An ADU in a parking garage takes the parking setbacks (311.B-60C, D(2) to (4))",
       "311.E-6D also puts accessory structures at least 3 ft from side and rear lines and behind the rearmost part of the house. Article B governs where the two conflict (311.E-6A)",
       "An existing accessory structure that breaks a setback or coverage rule is exempt from it for the ADU, unless the change expands the nonconformity (311.B-60D(6))",
       "ADUs are exempt from the zone's lot coverage ratios when they meet the building form standards (311.B-113)",
@@ -49,7 +50,8 @@
       "Single-household occupancy. Short-term subletting is barred unless the zone permits short-term rentals. No personal service shops or offices beyond a no-impact home business (311.B-111, B-112)",
       "Two units in a detached house: by right in R-3, R-4 and Office. In R-1 and R-2 only by special exception for a building already used that way before 4-6-2023 (311.B-21C(2), B-28C(2) and the use tables)",
       "A conversion of a large house (2,500 sq ft detached, 1,750 sq ft semi-detached) is permitted by right in ROA and HBO, with 2,200 sq ft of lot for each unit. Those districts cite it as 311.E-18. The section is 311.E-19",
-      "Historic Resources Overlay: if a demolition permit is denied, Borough Council may allow a conversion to up to three units (R-1, R-2) or five (R-3, R-4) by conditional use (311.D-9A(1)(c))"
+      "Historic Resources Overlay: if a demolition permit is denied, Borough Council may allow a conversion to up to three units (R-1, R-2) or five (R-3, R-4) by conditional use (311.D-9A(1)(c))",
+      "R-4: a TwoPlex (a second house at the rear of the lot) is permitted by right on lots at least 60 ft wide and 120 ft deep (311.B-42, B-44, B-61)"
     ],
     "notes": "Zoning office: Borough of Media. Read on eCode360 in a browser, one article print view at a time. The use tables show permitted and special exception cells as symbols, so they were read from the page as displayed. Searched the definitions and the supplemental regulations for accessory dwelling, accessory apartment, supplemental dwelling, in-law, conversion and short-term rental. The older 'supplemental dwelling unit' or 'accessory apartment' text the index note mentions is not in the current Chapter 311. The Office district is shown as 'O' in the building form tables. Other districts (MERC, ROA, HBO, I) are outside Article B and have no ADU text. The earlier town survey has no Media entry."
   },
@@ -93,7 +95,11 @@
         {
           "name": "Two units in a detached house",
           "path": "by_right",
-          "districts": ["R-3", "R-4", "O"],
+          "districts": [
+            "R-3",
+            "R-4",
+            "O"
+          ],
           "conditions": "Two units permitted in the detached house, semi-detached and attached house forms. 'Detached houses may contain up to two units if permitted within the zone.'",
           "min_lot_sqft": null,
           "section": "311.B-35, B-42, B-49 use tables, 311.B-57A",
@@ -104,7 +110,10 @@
         {
           "name": "Two units in a detached house (existing use)",
           "path": "special_exception",
-          "districts": ["R-1", "R-2"],
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
           "conditions": "Only where the building existed and was used as two units before 4-6-2023, with no abandonment since, and the building form standards are met.",
           "min_lot_sqft": null,
           "section": "311.B-21C(2), 311.B-28C(2)",
@@ -115,13 +124,30 @@
         {
           "name": "Conversion of a large house",
           "path": "by_right",
-          "districts": ["ROA", "HBO"],
+          "districts": [
+            "ROA",
+            "HBO"
+          ],
           "conditions": "A detached house of at least 2,500 sq ft (semi-detached 1,750 sq ft), basement excluded. 2,200 sq ft of lot for each unit. Multifamily dimensional rules. Parking 1 space for a one-bedroom unit, 2 for larger.",
           "min_lot_sqft": 4400,
           "section": "311.C-12O, 311.C-18Q, 311.E-19",
           "url": "https://ecode360.com/print/ME1269?guid=44886659",
           "confidence": "verified",
           "note": "Not an ADU. The district lists cite '311.E-18', which is stormwater. The conversion rules are 311.E-19."
+        },
+        {
+          "name": "TwoPlex (second house at the rear of the lot)",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Two principal houses on one lot, the larger at the front. Lot at least 60 ft wide and 120 ft deep. Side 10 ft (20 ft total), rear 15 ft or the rear building's height, 20 ft between the buildings. The rear building at least 15% smaller in gross floor area.",
+          "min_lot_sqft": 7200,
+          "section": "311.B-42B table, 311.B-44B, 311.B-61",
+          "url": "https://ecode360.com/print/ME1269?guid=44885470",
+          "land_development": true,
+          "confidence": "secondary",
+          "note": "Not an ADU. Two principal buildings on a lot is land development under the MPC. 7,200 sq ft is 60 by 120 ft. In R-3 the TwoPlex is listed only for three to six units."
         }
       ],
       "section": "311.B-21, 311.E-19",
@@ -132,7 +158,13 @@
   },
   "eligibility": {
     "zoning_districts": {
-      "value": ["R-1", "R-2", "R-3", "R-4", "O"],
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "O"
+      ],
       "section": "311.B-108",
       "url": "https://ecode360.com/print/ME1269?guid=44885853",
       "verified_on": "2026-11-13",
@@ -140,7 +172,11 @@
       "note": "'This section shall apply to the R-1, R-2, R-3, R-4, or Office Districts.' MERC, ROA, HBO and I have no ADU text."
     },
     "building_types": {
-      "value": ["detached", "semi_detached", "attached"],
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
       "section": "311.B-28, B-35, B-42, B-49 use tables",
       "url": "https://ecode360.com/print/ME1269?guid=44885349",
       "verified_on": "2026-11-13",
@@ -170,8 +206,13 @@
           "condition": "R-1: an ADU only with a detached house. The semi-detached and attached house columns are marked prohibited.",
           "effect": "bars",
           "applies_to": null,
-          "districts": ["R-1"],
-          "building_types": ["semi_detached", "attached"],
+          "districts": [
+            "R-1"
+          ],
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
           "section": "311.B-21B table",
           "url": "https://ecode360.com/print/ME1269?guid=44885305"
         },
@@ -179,8 +220,15 @@
           "kind": "district",
           "condition": "Office: the 'ADU, external' building form is prohibited. Only a unit integrated into the house.",
           "effect": "bars",
-          "applies_to": ["detached_new", "garage_conversion", "over_garage", "attached"],
-          "districts": ["O"],
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage",
+            "attached"
+          ],
+          "districts": [
+            "O"
+          ],
           "building_types": null,
           "section": "311.B-49B table, 311.B-60",
           "url": "https://ecode360.com/print/ME1269?guid=44885435"
@@ -189,7 +237,12 @@
           "kind": "size",
           "condition": "External ADU (attached or detached): at most 800 sq ft in total, 20 ft wide, 20 ft deep, and no larger than the house's gross floor area.",
           "effect": "condition",
-          "applies_to": ["attached", "detached_new", "garage_conversion", "over_garage"],
+          "applies_to": [
+            "attached",
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
           "districts": null,
           "building_types": null,
           "section": "311.B-60C(2), (3), (5), D(5)",
@@ -199,7 +252,12 @@
           "kind": "design",
           "condition": "External ADU: the house's setbacks, side and rear setbacks at least half its height, at least 5 ft behind the build-to line. No rear setback on an alley.",
           "effect": "condition",
-          "applies_to": ["attached", "detached_new", "garage_conversion", "over_garage"],
+          "applies_to": [
+            "attached",
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
           "districts": null,
           "building_types": null,
           "section": "311.B-60C(1), D(2) to (4)",
@@ -209,7 +267,10 @@
           "kind": "existing_structure",
           "condition": "An existing accessory structure that does not meet a setback or coverage standard is exempt from it, unless the change expands the nonconformity.",
           "effect": "condition",
-          "applies_to": ["garage_conversion", "over_garage"],
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
           "districts": null,
           "building_types": null,
           "section": "311.B-60D(6)",
@@ -235,6 +296,24 @@
           "building_types": null,
           "section": "311.A-13, 311.B-117",
           "url": "https://ecode360.com/print/ME1269?guid=44885853"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "R-3 and R-4: on a lot 60 ft wide or more the 'Accessory dwelling unit, external' form is marked prohibited in the Table of Permitted Lots and Building Forms. 'Any lot or building form not specifically permitted in the Table of Permitted Lots and Building Forms is prohibited.' Only a unit inside the house. Ask the zoning officer how the Borough applies this, since the detached house row carries the same marks.",
+          "effect": "condition",
+          "applies_to": [
+            "attached",
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "building_types": null,
+          "section": "311.B-37A, B (R-3), 311.B-44A, B (R-4)",
+          "url": "https://ecode360.com/print/ME1269?guid=44885377"
         }
       ],
       "section": "Article B-XV, 311.B-60",
@@ -245,7 +324,13 @@
   },
   "form": {
     "types_allowed": {
-      "value": ["internal", "attached", "detached_new", "garage_conversion", "over_garage"],
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
       "section": "311.A-13, 311.B-60A, 311.B-114",
       "url": "https://ecode360.com/print/ME1269?guid=44885470",
       "verified_on": "2026-11-13",
@@ -326,7 +411,7 @@
       "url": "https://ecode360.com/print/ME1269?guid=44885470",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "'ADUs shall have side and rear yard setback a distance equal to 1/2 the height of the building.' Plus the house side setback, which depends on lot width (1 ft under 40 ft wide, 3 ft at 40 to 49, 5 ft at 50 to 59, 6 ft at 60 to 79, 10 ft at 80 or more)."
+      "note": "'ADUs shall have side and rear yard setback a distance equal to 1/2 the height of the building.' 11 ft for a 22 ft ADU, 10 ft for a 20 ft one. Also at least the house side setback, which depends on lot width (1 ft under 40 ft wide, 3 ft at 40 to 49, 5 ft at 50 to 59, 6 ft at 60 to 79, 10 ft at 80 or more, 311.B-57C)."
     },
     "setback_rear_ft": {
       "value": null,
@@ -334,7 +419,7 @@
       "url": "https://ecode360.com/print/ME1269?guid=44885470",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "House rear setback (20 ft in R-1 and R-2, 15 ft in R-3 and R-4), and at least half the ADU height. See districts."
+      "note": "The house rear setback (20 ft in R-1 and R-2, 15 ft in R-3 and R-4), and at least half the ADU's height (311.B-60D(4)). See districts."
     },
     "setback_rear_alley_ft": {
       "value": null,

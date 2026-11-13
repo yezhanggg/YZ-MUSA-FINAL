@@ -25,7 +25,8 @@
       "https://ecode360.com/attachment/330377/FE3697-027i%20205.9.pdf",
       "https://ecode360.com/attachment/330377/FE3697-027k%20205.11.pdf",
       "https://ecode360.com/FE3697/search?query=%22accessory%20dwelling%22",
-      "https://ecode360.com/FE3697/laws"
+      "https://ecode360.com/FE3697/laws",
+      "https://ecode360.com/print/FE3697?guid=36059516"
     ],
     "verified_on": "2026-11-13",
     "county": "Centre",
@@ -37,18 +38,20 @@
     "code_current_through_note": "eCode360 header on 2026-11-13: 'Includes legislation through 03-04-2025.' New Laws list no zoning ordinance.",
     "checks": [
       "The only ADU rule is in the Traditional Town Development (TTD) district: garage apartments, elder cottages or in-law quarters may be accessory to a single-family dwelling that is the principal use of the lot (27-303.3A(4))",
+      "Only on a lot designated for an ADU when the TTD plan was submitted, and at most 10% of the TTD's single-family detached houses. Ask the township whether this lot is designated (27-303.3C(1)(b)2))",
       "The definition limits who may live in an ADU: people related by blood or marriage to the resident owner, or people employed to give the resident owner health care, housekeeping or horticultural services on the site (27-1102)",
       "In the TTD: attached or separate from the house, one per deeded lot, owned by the owner of the house, no separate driveway unless the ADU takes access from a rear alley (27-303.3A(4)(a)1) to 4))",
       "A detached ADU in the TTD: first floor area (footprint) at most 600 sq ft. Living space may be combined with a workshop or studio up to 800 sq ft (27-303.3A(4)(a)5))",
       "The definition of 'elder cottage/in-law quarters/carriage house' calls it an apartment of not less than 600 sq ft, sharing utility connections with the principal building, not counted toward density (27-1102)",
       "The district use tables for R-1, R-1B, R-2, R-3, R-4 and V list no ADU. A second unit there has no ADU path. R-2, R-3, R-4 and V permit two-family dwellings by right (27-205.5 to 27-205.11, Attachments 5 to 11)",
       "RA and RR list 'Dwelling Unit(s)' as an accessory use by right for their farm and conservation category (RA category 1 on 50 acres, single- and two-family dwellings not over three units on a lot. RR category 1 on 10 acres). The tables are images and give no standards. Ask the township whether these are ADUs (27-205.1, 27-205.2)",
-      "Accessory structures on residential lots of two acres or less (not RA or RR): together at most 25% of the house's gross usable floor area, and at most two on a lot. Structures over 144 sq ft or 10 ft tall meet the principal setbacks (27-207.2C, F)",
-      "Parking rules are in Chapter 22, Subdivision and Land Development, Part 5C, which was not read (27-714)",
       "Short-term rentals need the owner or lessee to live in the dwelling at least six months a year (27-719)",
-      "A TTD development is approved through the TTD plan process (27-904). The ADU is an accessory use within it"
+      "A TTD development is approved through the TTD plan process (27-904). The ADU is an accessory use within it",
+      "Size: at most 800 sq ft in any form, and a detached unit's footprint at most 600 sq ft. The elder cottage definition says not less than 600 sq ft. Read together: 600 to 800 sq ft (27-303.3C(1)(b)2), 27-303.3A(4)(a)5), 27-1102)",
+      "27-207 (accessory structure caps) does not apply in the TTD (27-303.2F). Accessory structures shown on the approved plan may be 5 ft from the rear line, 0 ft from an alley. A 6 ft side yard is suggested (27-303.3D(1)(j), (k))",
+      "Parking: no ADU row in Chapter 22 (22-5C01). A single-family detached house needs 2 spaces, a two-family unit 1.5. In a TTD only 60% may be off-street (27-303.2F(1))"
     ],
-    "notes": "Zoning office: Ferguson Township (Centre County). Read on eCode360 in a browser, one section print view at a time. The District Quick attachments are image PDFs, read page by page. eCode360 search for 'accessory dwelling' returns only the two definitions and 27-303. The index note's '27-1503 Accessory Dwelling' is not in the current Chapter 27, which ends at 27-1102. District codes: RA, RR, AR, FG, R1, R1B, R2, R3, R4, MHP, V, OC, C, I, IRD, plus the TTD and PRD districts and overlays. The earlier town survey has no Ferguson entry."
+    "notes": "Zoning office: Ferguson Township (Centre County). Read on eCode360 in a browser, one section print view at a time. 27-303.2F lists the Chapter 27 sections that apply in the TTD. The District Quick attachments are image PDFs, read page by page. eCode360 search for 'accessory dwelling' returns only the two definitions and 27-303. The index note's '27-1503 Accessory Dwelling' is not in the current Chapter 27, which ends at 27-1102. District codes: RA, RR, AR, FG, R1, R1B, R2, R3, R4, MHP, V, OC, C, I, IRD, plus the TTD and PRD districts and overlays. The earlier town survey has no Ferguson entry."
   },
   "adu": {
     "term": {
@@ -68,7 +71,9 @@
       "note": "Allowed as an accessory use in the TTD district only. The definition limits occupancy to relatives of the resident owner or people employed to care for or serve the resident owner on the site."
     },
     "scope_districts": {
-      "value": ["TTD"],
+      "value": [
+        "TTD"
+      ],
       "section": "27-303.3A(4)",
       "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
@@ -91,7 +96,7 @@
       "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "'may be made available as accessory uses to single-family dwellings' in a TTD. No hearing is named for the unit. The TTD development itself is approved through 27-904."
+      "note": "'may be made available as accessory uses to single-family dwellings' in a TTD, on a lot designated at plan submission (27-303.3C(1)(b)2)). No hearing is named for the unit. The TTD development itself is approved through 27-904."
     },
     "fallback_path": {
       "value": "variance",
@@ -106,7 +111,11 @@
         {
           "name": "Two-family dwelling",
           "path": "by_right",
-          "districts": ["R2", "R3", "V"],
+          "districts": [
+            "R2",
+            "R3",
+            "V"
+          ],
           "conditions": "A permitted principal use. 4,250 sq ft of lot for each unit, 90 ft wide (50 ft in V), front 20 ft (0 ft in V), side 10 ft (3 ft in V), rear 30 ft (20 ft in V), 40 ft.",
           "min_lot_sqft": 8500,
           "section": "27-205.7, 27-205.8, 27-205.11 (Attachments 7, 8, 11)",
@@ -117,7 +126,9 @@
         {
           "name": "Two-family dwelling",
           "path": "by_right",
-          "districts": ["R4"],
+          "districts": [
+            "R4"
+          ],
           "conditions": "A permitted principal use, attached dwelling category: 4,250 sq ft of lot for each unit.",
           "min_lot_sqft": 8500,
           "section": "27-205.9 (Attachment 9)",
@@ -128,7 +139,9 @@
         {
           "name": "Accessory dwelling unit on a farm",
           "path": "by_right",
-          "districts": ["RA"],
+          "districts": [
+            "RA"
+          ],
           "conditions": "Accessory 'Dwelling Units' for the agricultural category (50 acre lot): usual farm structures including single- and two-family dwellings, not over three dwelling units on a lot. The definition's family or caregiver rule may apply.",
           "min_lot_sqft": 2178000,
           "section": "27-205.1 (Attachment 1)",
@@ -139,7 +152,9 @@
         {
           "name": "Accessory dwelling unit on an agricultural or conservation tract",
           "path": "by_right",
-          "districts": ["RR"],
+          "districts": [
+            "RR"
+          ],
           "conditions": "Accessory 'Dwelling Unit' for the agricultural and conservation category (10 acre lot).",
           "min_lot_sqft": 435600,
           "section": "27-205.2 (Attachment 2)",
@@ -156,7 +171,9 @@
   },
   "eligibility": {
     "zoning_districts": {
-      "value": ["TTD"],
+      "value": [
+        "TTD"
+      ],
       "section": "27-303.3A(4)",
       "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
@@ -164,7 +181,9 @@
       "note": "Traditional Town Development district only."
     },
     "building_types": {
-      "value": ["detached"],
+      "value": [
+        "detached"
+      ],
       "section": "27-303.3A(4)",
       "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
@@ -190,6 +209,18 @@
     "gates": {
       "value": [
         {
+          "kind": "other",
+          "condition": "Only on a lot designated for an ADU on the approved TTD plan: 'A maximum of 10% of the single-family detached units provided shall be designed to include an accessory dwelling unit ... All properties designed to accommodate such units shall be designated at the time of plan submission.' Ask the township whether this lot is designated. A lot not designated would need a revised TTD plan (27-904).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "TTD"
+          ],
+          "building_types": null,
+          "section": "27-303.3C(1)(b)2)",
+          "url": "https://ecode360.com/print/FE3697?guid=36114583"
+        },
+        {
           "kind": "family",
           "condition": "Occupied by people related by blood or marriage to the resident owner, or by people employed to provide health care, domestic housekeeping or horticultural services to the resident owner on the site.",
           "effect": "condition",
@@ -213,21 +244,15 @@
           "kind": "size",
           "condition": "Detached ADU: first floor area or footprint at most 600 sq ft. Living quarters may be combined with a workshop or studio up to 800 sq ft.",
           "effect": "condition",
-          "applies_to": ["detached_new", "garage_conversion", "over_garage"],
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
           "districts": null,
           "building_types": null,
           "section": "27-303.3A(4)(a)5)",
           "url": "https://ecode360.com/print/FE3697?guid=36114583"
-        },
-        {
-          "kind": "size",
-          "condition": "On a residential lot of two acres or less, all accessory structures together may not exceed 25% of the house's gross usable floor area, and there may be at most two. Whether a detached ADU counts is not settled.",
-          "effect": "condition",
-          "applies_to": ["detached_new", "garage_conversion", "over_garage"],
-          "districts": null,
-          "building_types": null,
-          "section": "27-207.2C",
-          "url": "https://ecode360.com/print/FE3697?guid=36114270"
         }
       ],
       "section": "27-303.3A(4), 27-1102",
@@ -238,7 +263,13 @@
   },
   "form": {
     "types_allowed": {
-      "value": ["internal", "attached", "detached_new", "garage_conversion", "over_garage"],
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
       "section": "27-303.3A(4)",
       "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
@@ -248,20 +279,12 @@
   },
   "size": {
     "max_sqft": {
-      "value": null,
-      "section": "27-303.3A(4)(a)5)",
+      "value": 800,
+      "section": "27-303.3C(1)(b)2)",
       "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "No cap for an attached unit. A detached unit's footprint is at most 600 sq ft (see below)."
-    },
-    "max_sqft_accessory_building": {
-      "value": 800,
-      "section": "27-303.3A(4)(a)5)",
-      "url": "https://ecode360.com/print/FE3697?guid=36114583",
-      "verified_on": "2026-11-13",
-      "confidence": "secondary",
-      "note": "'The maximum first floor area/footprint of a detached accessory dwelling shall not exceed 600 square feet. Space within this structure may combine living quarters with workshop, studio, or other similar use up to a maximum of 800 square feet.' 800 sq ft read as the building total."
+      "note": "'These accessory units may be located within the principal building or an accessory building but shall not exceed 800 total square feet.' Every form. A detached unit's footprint is also at most 600 sq ft (27-303.3A(4)(a)5))."
     },
     "min_sqft": {
       "value": 600,
@@ -282,28 +305,44 @@
       "note": "TTD: 'New residential structures within a TTD shall be no more than three stories.' No accessory height for the TTD was read."
     },
     "district_yards_bind_accessory": {
-      "value": true,
-      "section": "27-207.1, 27-207.2F",
-      "url": "https://ecode360.com/print/FE3697?guid=36114270",
+      "value": false,
+      "section": "27-303.2F, 27-303.3D(1)(k)",
+      "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "'all structures that include accessory uses shall comply with the lot, yard setback and maximum height requirements for the primary use'. Accessory buildings over 144 sq ft or 10 ft 'must comply with the setback requirements for primary structures.'"
+      "note": "27-207 is not among the Chapter 27 sections that 'remain applicable to development within the TTD District' (27-303.2F). The TTD sets its own accessory rear setback."
     },
-    "accessory_structure_max_share": {
-      "value": 0.25,
-      "section": "27-207.2C",
-      "url": "https://ecode360.com/print/FE3697?guid=36114270",
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "27-303.3D(1)(k)",
+      "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "'For all residential lots (excluding RA- and RR-zoned lots) of two acres or less, the combined square footage of all accessory structures may not exceed 25% of the gross usable floor area of the principal building.'"
+      "note": "'accessory structures and detached garages shown on the approved plan may be set back only five feet from the rear lot line.' Principal dwellings 25 ft."
     },
-    "accessory_cap_binds_adu": {
+    "setback_rear_alley_ft": {
+      "value": 0,
+      "section": "27-303.3D(1)(k)",
+      "url": "https://ecode360.com/print/FE3697?guid=36114583",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The rear yard setback for primary dwelling units, accessory structures and detached garages from an alley may be reduced to zero feet.'"
+    },
+    "setback_side_ft": {
       "value": null,
-      "section": "27-207.2C, 27-303.3A(4)",
-      "url": "https://ecode360.com/print/FE3697?guid=36114270",
+      "section": "27-303.3D(1)(j)",
+      "url": "https://ecode360.com/print/FE3697?guid=36114583",
       "verified_on": "2026-11-13",
-      "confidence": "secondary",
-      "note": "Not settled. The TTD rule has its own 600 sq ft footprint cap."
+      "confidence": "verified",
+      "note": "'A minimum side yard setback of six feet is suggested for all detached residential buildings'. Suggested, not required."
+    },
+    "max_height_stories": {
+      "value": 3,
+      "section": "27-303.3A(3)",
+      "url": "https://ecode360.com/print/FE3697?guid=36114583",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'New residential structures within a TTD shall be no more than three stories.' A separate ADU is a residential structure."
     }
   },
   "use": {
@@ -358,11 +397,18 @@
   "parking": {
     "spaces_required": {
       "value": null,
-      "section": "27-714",
-      "url": "https://ecode360.com/print/FE3697?guid=36116000",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "'See Chapter 22, Subdivision and Land Development, Part 5C, Off-Street Parking and Loading.' Not read."
+      "section": "22-5C01, 27-303.2F(1)",
+      "url": "https://ecode360.com/print/FE3697?guid=36059516",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The Chapter 22 residential table has no ADU row."
+    },
+    "reading": {
+      "value": "No ADU row in 22-5C01. If the ADU is counted as a dwelling unit: 2 spaces (single-family detached rate) or 1.5 (two-family rate). In a TTD only 60% of required spaces may be off-street, the rest on-street or shared (27-303.2F(1)). Ask the township.",
+      "section": "22-5C01, 27-303.2F(1)",
+      "url": "https://ecode360.com/print/FE3697?guid=36059516",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
     }
   },
   "utilities": {

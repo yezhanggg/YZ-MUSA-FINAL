@@ -1695,7 +1695,7 @@
       "pop_rank": 340,
       "file": "pa_chester_honey_brook",
       "batch": 12,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30832599",
@@ -1705,7 +1705,7 @@
       "why": [
         "known ADU ordinance (Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units)"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. By right in A and RC only (27-1702A(11), 27-1802A(6), Ord. 211-2025), 2 acre gross lot. Open: (1) the lot a new freestanding unit needs in A (27-1002B(1) two conforming lots: 11 acres with a 27-1705 split-off, or 20 acres) is stored as 11 acres, secondary. (2) A converted garage is the attached kind (50% cap) but the schema gives it the freestanding cap (100% of the house). (3) Height of a freestanding unit: 35 ft dwelling height read, accessory rule (house height or 20 ft, whichever greater, 27-1003C(1)(b)) also shown. (4) A unit over a new garage is not named."
+      "status_note": "Verified 2026-11-13 after independent review (review12) and fixes: converted accessory building 50% (27-1002C(4)) with the freestanding 100% cap as a condition, nonconforming A lots take 27-1705D to F (27-1703A(10)), scope A and RC. For a later check: the freestanding-unit lot in A is about 11 acres only on a qualifying farm with split-offs left (27-1705), otherwise 20 acres. The tool tests only the 11 acre floor and shows the rest as a condition."
     },
     {
       "geoid": "4209152664",
@@ -1719,7 +1719,7 @@
       "pop_rank": 629,
       "file": "pa_montgomery_narberth",
       "batch": 12,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/34400015",
@@ -1729,7 +1729,7 @@
       "why": [
         "known ADU ordinance (Ord. 1043 (2022). Code 500-602 and 500-1201)"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. Chapter 500 was replaced in full 8-20-2026 (Ord. 1070). ADU = unit within an accessory building, by right where a detached or twin house stands (500-801A(1)(d), 500-802), 600 sq ft footprint, 800 sq ft habitable, 16 ft and two stories, owner lives on the lot, no parking, green building rules (500-902). Open: (1) 5A and 5B list ADUs in their notes but allow no detached or twin house (districts_in_doubt). (2) District tables cite special exceptions as 500-404 and conditional uses as 500-405, one number off from the sections. (3) How an existing one-family house in 4B is converted (500-403A names 3A to 4A only). (4) The H overlay multiple-building alternative cannot be tied to the overlay in the schema, so it shows in all of 3A to 3C."
+      "status_note": "Verified 2026-11-13 after independent review (review12) and fixes: unlisted_use_path special exception (500-403F), building coverage formulas and impervious caps (500-503C(1), Table 500-503-1) bind the ADU (500-802B(3)). For a later check: 5A and 5B list ADUs in their notes but allow no detached or twin house (districts_in_doubt). District tables cite special exceptions and conditional uses one section number off."
     },
     {
       "geoid": "4204548480",
@@ -1753,7 +1753,7 @@
       "why": [
         "known ADU ordinance (Code 311.A-13 definition and Article B-XV)"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. By right in R-1 to R-4 and Office (311.B-108, use tables read from the displayed symbols), R-1 detached house only, Office no external ADU. External ADU 800 sq ft, 20 by 20 ft, 22 ft (20 ft flat roof), half-height side and rear setbacks, no parking. Open: (1) Office district map code assumed O. (2) Whether 311.E-6D (behind the rearmost part of the house) reaches an external ADU, stored as front_yard_barred, secondary. (3) The 800 sq ft cap and 22 ft height also bind an attached external ADU, which the schema cannot hold apart from a unit inside the house. (4) No count per lot in the code, one assumed. (5) 0 ft / 8 ft separation read as attached / detached."
+      "status_note": "Drafted, reviewed 2026-11-13 (review12) and fixed: R-3 and R-4 lot tables (311.B-37B, 311.B-44B) mark the ADU external form prohibited on lots 60 ft wide or more, added as a condition (no lot-width test in the schema, so the tool still says by right), TwoPlex alternative in R-4, half-height side and rear setbacks. Open: how the Borough applies the lot-width table (the detached house form is marked the same way). Office map code assumed O. No count per lot in the code, one assumed. 0 ft / 8 ft separation read as attached / detached."
     },
     {
       "geoid": "4202960120",
@@ -1767,7 +1767,7 @@
       "pop_rank": 114,
       "file": "pa_chester_phoenixville",
       "batch": 12,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/47638080",
@@ -1777,7 +1777,7 @@
       "why": [
         "known ADU ordinance (Ord. 2025-2410 (2025). ADU by special exception)"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. Special exception in RI, MI, NC, CD and MG (27-301.2B(1) table as displayed, not TC as the index note had), Ord. 2025-2410. Owner lives on the lot in perpetuity, one bedroom, 25% of the house inside or as an addition, accessory building footprint two thirds of the house, annual registration. Open: (1) parking: no ADU row in 27-405.2C, 1 more space or none. (2) Accessory height is two thirds of the house height (stored as 23 ft, two thirds of 35 ft). (3) Whether a unit may share a building with a garage (wholly and exclusively within an accessory building). (4) District chart (image PDF) read for RI only, MI to MG use RI residential standards modified up to 25%."
+      "status_note": "Verified 2026-11-13 after independent review (review12) and fixes: parking 1 space for the ADU (27-405.2C table row), RI building spacing 10 ft (secondary), accessory caps are two thirds of the house footprint and of the actual house height (23 ft only for a 35 ft house; the tool shows 23). For a later check: whether a unit may share a building with a garage."
     },
     {
       "geoid": "4202725624",
@@ -1801,7 +1801,7 @@
       "why": [
         "known ADU ordinance (Code Chapter 27 Part 11 definition and 27-1503 Accessory Dwelling)"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. ADU text only in the TTD district (27-303.3A(4): garage apartment, elder cottage or in-law quarters, one per lot, same owner, detached footprint 600 sq ft) and the 27-1102 definition (relatives or employed caregivers of the resident owner), so family_only in TTD, not addressed elsewhere. The index note 27-1503 does not exist. Open: (1) RA and RR image tables list accessory Dwelling Unit(s) for farm and conservation tracts, kept as alternatives, secondary. (2) Parking is in Chapter 22 Part 5C, not read. (3) TTD yards and accessory height not read. (4) Whether the 25% accessory structure cap (27-207.2C) reaches a detached ADU. (5) 600 sq ft minimum from the elder cottage definition applied to all forms. (6) Code current only to 03-04-2025."
+      "status_note": "Drafted, reviewed 2026-11-13 (review12) and fixed: 800 sq ft for every form and the designated-lot and 10% limit (27-303.3C(1)(b)2)), 27-207 items removed in the TTD (27-303.2F), TTD accessory rear 5 ft, 0 from an alley (27-303.3D(1)(k)), three stories, parking reading from 22-5C01. Open: whether a TTD lot not designated at plan submission can get an ADU (the tool shows by right with the condition), whether the RA and RR accessory Dwelling Unit(s) are ADUs, code current only to 03-04-2025."
     },
     {
       "geoid": "4204575648",
@@ -1815,7 +1815,7 @@
       "pop_rank": 439,
       "file": "pa_delaware_swarthmore",
       "batch": 12,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "amlegal",
       "code_url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
@@ -1825,7 +1825,7 @@
       "why": [
         "known ADU ordinance (Family or caregiver suite by special exception, 1264.18)"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. Family/caregiver suite by special exception in all districts (1264.18, Ord. 1084), inside the house only, at most 35% of house plus suite, two rooms plus bath and efficiency kitchen, up to two relatives or a caregiver, no separate meters, annual filing. Open: (1) the conversion to a two-family house is a special exception in 1264.08 and the district lists but a conditional use in the 1240.05(36) definition. (2) Whether an addition may hold the suite (not named, kept as attached). (3) Parking for a suite is not stated. (4) District chapters other than RA, RB and RC were not opened (1264.18(a) reaches all districts)."
+      "status_note": "Verified 2026-11-13 after independent review (review12) and fixes: RB and RC two-family semidetached by right added, 40% combined lot and hardscape cap, the 35% is of house plus suite. For a later check: the conversion is a special exception in 1264.08 and the district lists but a conditional use in the 1240.05(36) definition."
     },
     {
       "geoid": "4202939352",
