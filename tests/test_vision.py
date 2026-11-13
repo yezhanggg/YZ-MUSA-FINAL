@@ -256,3 +256,19 @@ def test_subset_confusions_match_direct_mean():
         q[2] += 0.5
         direct = confusion(q.argmax(0).numpy().astype(np.uint8), lab.numpy().astype(np.uint8), 4)
         assert np.array_equal(cms[1], direct) and cms[0].sum() == ok.sum()
+
+
+def test_hybrid_mean_of_five_class_members_and_only(tmp_path):
+    from pipeline.vision import ensemble as e
+
+    rng = np.random.default_rng(3)
+    lab = rng.integers(0, 5, (8, 8)).astype(np.uint8)
+    for role in ("val", "test"):
+        e._save(e.label_path(tmp_path, "city:x", role, "b1"), lab)
+        for name in ("m1", "m2"):
+            p = rng.random((5, 8, 8)).astype(np.float32)
+            e._save(e.prob_path(tmp_path, "city:x", name, "tta", role, "b1"), (p / p.sum(0)).astype(np.float16))
+    cm = e.hybrid_confusions(tmp_path, "city:x", "test", "tta", ["m1", "m2"], "unused", [0.0])[0]
+    a = np.load(e.prob_path(tmp_path, "city:x", "m1", "tta", "test", "b1")).astype(np.float32)
+    b = np.load(e.prob_path(tmp_path, "city:x", "m2", "tta", "test", "b1")).astype(np.float32)
+    assert np.array_equal(cm, confusion(((a + b) / 2).argmax(0).astype(np.uint8), lab, 5))
