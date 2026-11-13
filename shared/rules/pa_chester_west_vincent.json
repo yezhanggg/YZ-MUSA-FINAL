@@ -4,8 +4,8 @@
     "instrument": "West Vincent Township Zoning Ordinance of 2010, Chapter 390 Zoning, as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "390-1: 'West Vincent Township Zoning Ordinance of 2010.' eCode360 header: legislation through 01-05-2026. New Laws (read 2026-11-13) list Ord. No. 227 'Data Center Land Use' (2026-06-15) and non-zoning items (Ord. Nos. 225, 226, 228 to 230). No ADU amendment is pending there.",
-    "effective_date": null,
+    "status_detail": "390-1: 'West Vincent Township Zoning Ordinance of 2010.' Chapter history: adopted 10-25-2010 by Ord. No. 151, amended through 6-20-2016 by Ord. No. 171. eCode360 header: legislation through 01-05-2026. New Laws (read 2026-11-13) list Ord. No. 227 'Data Center Land Use' (2026-06-15) and non-zoning items (Ord. Nos. 225, 226, 228 to 230). No ADU amendment is pending there.",
+    "effective_date": "2010-10-25",
     "source_urls": [
       "https://ecode360.com/32399799",
       "https://ecode360.com/print/WE3779?guid=32402747",
@@ -52,6 +52,8 @@
       "Parking: the parking rules apply to each ADU, and a dwelling needs three spaces. A unit inside the house or in an existing building must use existing parking areas (390-144E(4), E(9)(a)[4], E(10)(a)[3], 390-135)",
       "Lots in RC, R-3 and R-2 have no fixed minimum size. Each district sets density by subdivision 'tier'. For an existing lot the Tier IV setbacks apply (390-18C, 390-206B(2))",
       "Historic resources (Class I, II or III): an ADU is allowed 'irrespective of any minimum lot size, maximum impervious coverage or maximum habitable floor area'. The conversion may get a lower lot area by conditional use after Historical Commission review (390-144E(9)(c), 390-192B). 390-144E(9)(c) cites 390-191, which is the archaeological section. 390-192 is the historic reuse section. Ask the zoning officer",
+      "A unit in a new addition to the house is not named in 390-144. The accessory apartment is 'located entirely within an existing single-family dwelling'. The tool shows such a unit as a variance, but the code is silent, not a firm no. Once the addition is part of the house the zoning officer may treat it as an accessory apartment (25% cap). Ask",
+      "Parcels of five acres or less: 'existing' means a freestanding building that stood on 10-25-2010, when Chapter 390 was adopted (Ord. No. 151)",
       "A freestanding ADU may be sold as a condominium after subdivision and land development approval (390-144E(10)(a)[4], E(11)(a)[4])"
     ],
     "notes": "Zoning office: West Vincent Township (westvincenttwp.org). Read on eCode360 in a browser, one section print view at a time, and the chapter print view searched in the page. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house. Chester County Planning Commission eTool 14 (cross-check only) lists West Vincent as by right in most residential districts with old section 2201(E). It matches the current 390-144. VCR (Village Center Residential Overlay) applies only after the Route 100 bypass is built or guaranteed (390-65). Its dimensional rules mention 'Minimum additional land per accessory dwelling unit (maximum of two units): 4,000 square feet' (390-69A(3)), but its use list (390-68) does not list ADUs."
@@ -239,7 +241,7 @@
       "value": [
         {
           "kind": "lot_size",
-          "condition": "A new freestanding building for an ADU only on a parcel of more than five acres. On five acres or less, 'Accessory dwellings shall not be permitted in freestanding buildings not in existence as of the date of the adoption of this chapter'.",
+          "condition": "A new freestanding building for an ADU only on a parcel of more than five acres. On five acres or less, 'Accessory dwellings shall not be permitted in freestanding buildings not in existence as of the date of the adoption of this chapter' (adopted 10-25-2010, Ord. No. 151).",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -253,7 +255,7 @@
         },
         {
           "kind": "existing_structure",
-          "condition": "On a parcel of five acres or less, a unit in a freestanding building only if the building existed when the 2010 ordinance was adopted, and its height may not be raised.",
+          "condition": "On a parcel of five acres or less, a unit in a freestanding building only if the building existed on 10-25-2010 (adoption of Chapter 390, Ord. No. 151), and its height may not be raised. A building put up after that date does not qualify.",
           "effect": "condition",
           "applies_to": [
             "garage_conversion",
@@ -498,8 +500,8 @@
       "section": "390-144E(2)",
       "url": "https://ecode360.com/print/WE3779?guid=32402747",
       "verified_on": "2026-11-13",
-      "confidence": "verified",
-      "note": "One on a lot under 25 acres, two on 25 acres or more. An apartment in the house and a barn conversion are allowed on any size parcel."
+      "confidence": "secondary",
+      "note": "One on a lot under 25 acres, two on 25 acres or more. 'An accessory apartment within a principal dwelling and the conversion of an existing barn into accessory apartment shall be allowed on any size parcel.' That sentence could be read to let an apartment in the house sit beside a freestanding unit. One is the safer reading. Ask the zoning officer."
     },
     "sale_apart_allowed": {
       "value": true,

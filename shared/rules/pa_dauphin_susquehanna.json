@@ -8,6 +8,7 @@
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/28271832",
+      "https://ecode360.com/print/SU2468?guid=28273192",
       "https://ecode360.com/print/SU2468?guid=28271846",
       "https://ecode360.com/print/SU2468?guid=28272056",
       "https://ecode360.com/print/SU2468?guid=28272062",
@@ -47,7 +48,9 @@
       "District density caps: C 0.5 unit an acre, RC 1, R-1 2, R-2 4, R-3 8 units an acre. R-4 single-family 5 an acre (27-404 to 27-904)",
       "Accessory buildings: 15 ft high, not in the front yard, at least 10 ft behind the rear of the house, 3 ft from lot lines, 5 ft from an alley (27-2104.2, 27-2106.4)",
       "Parking: two spaces per dwelling unit (27-2302.1.E)",
-      "Live-in caretaker or guard quarters are an accessory use in CH and IG only, not for homes"
+      "Live-in caretaker or guard quarters are an accessory use in CH and IG only, not for homes",
+      "Where the building code sets no minimum, a single-family unit needs at least 700 sq ft of habitable floor (27-2107.2.A)",
+      "'Multiple family' means a building of three or more dwelling units (27-204), so the multifamily listings in R-4, BOR and MU-1 do not reach a house plus one unit. No two-family dwelling is listed in any district"
     ],
     "notes": "Zoning office: Susquehanna Township (susquehannatwp.com). Read on eCode360 in a browser, the chapter print view searched in the page and section print views. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house, family suite, accessory residential, conversion, short-term. The only unlisted-use path is a special exception in IG for 'Any lawful use which the law requires the Township to provide for which is not otherwise permitted in any other district' (27-1303.5, 27-2047: 500 ft from any residential use). It does not reach a unit on a house lot."
   },
@@ -126,7 +129,7 @@
           "url": "https://ecode360.com/print/SU2468?guid=28273211",
           "confidence": "secondary",
           "land_development": true,
-          "note": "Twice the district lot. Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
+          "note": "Two dwellings under the district density cap (27-504.1.A, 604.1.A, 704.1.A, 804.1.A: RC 1, R-1 2, R-2 4, R-3 8 units an acre), which binds before twice the lot minimum. Each house at least 700 sq ft (27-2107). Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
         },
         {
           "name": "Second principal dwelling on the lot",
@@ -135,12 +138,12 @@
             "R-1"
           ],
           "conditions": "'More than one principal use may be erected on a single lot provided that all lot and yard requirements ... shall be met for each structure, as though it were on an individual lot.' Two dwellings on one lot are a land development (MPC 107).",
-          "min_lot_sqft": 40000,
+          "min_lot_sqft": 43560,
           "section": "27-2110",
           "url": "https://ecode360.com/print/SU2468?guid=28273211",
           "confidence": "secondary",
           "land_development": true,
-          "note": "Twice the district lot. Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
+          "note": "Two dwellings under the district density cap (27-504.1.A, 604.1.A, 704.1.A, 804.1.A: RC 1, R-1 2, R-2 4, R-3 8 units an acre), which binds before twice the lot minimum. Each house at least 700 sq ft (27-2107). Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
         },
         {
           "name": "Second principal dwelling on the lot",
@@ -149,12 +152,12 @@
             "R-2"
           ],
           "conditions": "'More than one principal use may be erected on a single lot provided that all lot and yard requirements ... shall be met for each structure, as though it were on an individual lot.' Two dwellings on one lot are a land development (MPC 107).",
-          "min_lot_sqft": 20000,
+          "min_lot_sqft": 21780,
           "section": "27-2110",
           "url": "https://ecode360.com/print/SU2468?guid=28273211",
           "confidence": "secondary",
           "land_development": true,
-          "note": "Twice the district lot. Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
+          "note": "Two dwellings under the district density cap (27-504.1.A, 604.1.A, 704.1.A, 804.1.A: RC 1, R-1 2, R-2 4, R-3 8 units an acre), which binds before twice the lot minimum. Each house at least 700 sq ft (27-2107). Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
         },
         {
           "name": "Second principal dwelling on the lot",
@@ -163,12 +166,12 @@
             "R-3"
           ],
           "conditions": "'More than one principal use may be erected on a single lot provided that all lot and yard requirements ... shall be met for each structure, as though it were on an individual lot.' Two dwellings on one lot are a land development (MPC 107).",
-          "min_lot_sqft": 8000,
+          "min_lot_sqft": 10890,
           "section": "27-2110",
           "url": "https://ecode360.com/print/SU2468?guid=28273211",
           "confidence": "secondary",
           "land_development": true,
-          "note": "Twice the district lot. Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
+          "note": "Two dwellings under the district density cap (27-504.1.A, 604.1.A, 704.1.A, 804.1.A: RC 1, R-1 2, R-2 4, R-3 8 units an acre), which binds before twice the lot minimum. Each house at least 700 sq ft (27-2107). Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
         }
       ],
       "section": "27-2009, 27-2110",

@@ -22,7 +22,7 @@
       "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26020",
       "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26027",
       "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27292",
-      "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29097"
+      "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29109"
     ],
     "verified_on": "2026-11-13",
     "county": "Montgomery",
@@ -43,7 +43,10 @@
       "General accessory building cap: 600 sq ft of building coverage (except a barn). Whether it binds a unit building is not settled (255-29B)",
       "Parking: two all-weather spaces per family plus garage space, met for both units, so four (255-135A, 255-27E(1)(c))",
       "Historic Resource Overlay: on a property with a Class 1 or Class 2 historic resource an 'Accessory apartment' is a conditional use (Board of Commissioners) after a Historical Commission recommendation, in the resource or in an accessory structure that existed when Article XXXIV was adopted (255-255B(1)(d))",
-      "A-1 and A-2 lot rules depend on sewer and water. They were not stored (255-43.1)"
+      "A district lots depend on utilities (255-15A, amended 7-9-2024 by Ord. No. 24-1391): both public sewer and water 26,000 sq ft (stored), one of them 35,000 sq ft, neither 45,000 sq ft with one-story accessory buildings",
+      "A-1 and A-2: accessory buildings 20 ft and one story, so a two-story unit building is barred there (255-43.1)",
+      "Height of a two-story unit building: 22 ft under 255-27E(1)(e) or 20 ft under the district tables. Stored as 20 ft. Ask the zoning officer",
+      "No nonconforming-lot section was found in Article XX (255-142 to 255-151 are nonconforming use sections)"
     ],
     "notes": "Zoning office: Upper Dublin Township (upperdublin.net). Read on American Legal in a browser, one section page at a time. Searched for accessory dwelling, accessory apartment, in-law, caretaker, household employee, immediate family, conversion, short-term. The unit has no defined name. 255-27E(1)(e) and (f) call it an 'accessory dwelling unit'. 255-27D allows renting rooms in the owner's dwelling to at most two nontransient persons (not a separate unit). Nonconforming lot rules (255-24.1 merger of lots, Article XX) not read."
   },
@@ -62,7 +65,7 @@
       "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25576",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "Special exception. Occupants limited to household employees, caretakers, caregivers or the owner's immediate family, with a recorded covenant. The path is in approval.path."
+      "note": "Special exception. Occupants: household employees, caretakers, caregivers, or members of the owner's immediate family, with a recorded covenant. Not relatives only: a caretaker or household employee also qualifies. The path is in approval.path."
     }
   },
   "approval": {
@@ -91,7 +94,7 @@
           "conditions": "Property in the Historic Resource Overlay with a Class 1 or Class 2 historic resource. Historical Commission recommendation and conditional use approval by the Board of Commissioners. May be in an accessory structure that existed when Article XXXIV was adopted. A financial guarantee under 255-257B(4) first.",
           "min_lot_sqft": null,
           "section": "255-255B(1)(d)",
-          "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29097",
+          "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29109",
           "adu_listing": true,
           "confidence": "secondary",
           "note": "No occupant rule in (d). The resource's eligibility is set by the Historic Resource Inventory (A264-1)."
@@ -100,11 +103,11 @@
           "name": "Conversion of a single-family dwelling",
           "path": "special_exception",
           "districts": null,
-          "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 1,000 ft. Each unit at least 500 sq ft. Lot area per family at least 75% of the district requirement. District yards kept. No external alteration except for safety.",
+          "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 1,000 ft. Each unit at least 500 sq ft. Lot area per family at least 75% of the district requirement. District yards kept. No external alteration except for safety. The Zoning Hearing Board sets the number of families (255-19F). 'The conversion shall be authorized only for a large dwelling with relatively little economic usefulness as a conforming use' (255-19H).",
           "min_lot_sqft": null,
           "section": "255-19",
           "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25513",
-          "confidence": "verified",
+          "confidence": "secondary",
           "note": "Two units need 1.5 times the district lot: A 39,000, B 18,000, C 13,500, NH 8,250 sq ft."
         },
         {
@@ -176,7 +179,7 @@
     "historic_bypass": {
       "value": false,
       "section": "255-255B(1)(d)",
-      "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29097",
+      "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29109",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
       "note": "The historic accessory apartment is a separate listing (conditional use). See alternatives."
@@ -185,7 +188,7 @@
       "value": [
         {
           "kind": "family",
-          "condition": "Only household employees, caretakers, caregivers or members of the owner's immediate family (grandparent, parent, child or grandchild of a person or spouse).",
+          "condition": "Who may live there: household employees, caretakers, caregivers, or members of the owner's immediate family (grandparent, parent, child or grandchild of a person or spouse). A caretaker or household employee need not be a relative.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -227,6 +230,24 @@
           "building_types": null,
           "section": "255-27E(1)(e), (f)",
           "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25576"
+        },
+        {
+          "kind": "size",
+          "condition": "Accessory buildings may not exceed one story in A-1, A-2, and A lots served by neither public sewer nor public water. A two-story unit building is barred there.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "A",
+            "A-1",
+            "A-2"
+          ],
+          "building_types": null,
+          "section": "255-43.1A, 255-43.1B, 255-15A(1)",
+          "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973"
         },
         {
           "kind": "parking",
@@ -301,7 +322,7 @@
       "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25576",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "255-27E(1)(e): 13 ft one story, 22 ft two stories. The district tables cap 'Accessory building' height at 20 ft, and 255-29A at 22 ft or the house height. Read as 20 ft for two stories, 13 ft for one."
+      "note": "Open point. 255-27E(1)(e) (2014): 13 ft for a one-story building, 22 ft for a two-story building, to the peak. The district tables (2008) cap 'Accessory building' at 20 ft. 255-29A defers to a specific rule. 22 ft is the likely reading for two stories, 13 ft binds one story. 20 ft is stored as the safe figure."
     },
     "max_height_stories": {
       "value": 2,
@@ -438,48 +459,141 @@
     "A": {
       "min_lot_sqft": {
         "value": 26000,
-        "section": "255-43B",
-        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25947",
+        "section": "255-15A(3), 255-43B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25482",
         "verified_on": "2026-11-13",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "With both public sewer and public water (255-15A(3), amended 7-9-2024 by Ord. No. 24-1391). Neither: 45,000 sq ft, 150 ft wide, yards 60 / 30 / 60, accessory building one story (255-15A(1)). One of the two: 35,000 sq ft, 130 ft, 60 / 25 / 60 (255-15A(2))."
       },
       "setback_front_ft": {
         "value": 50,
-        "section": "255-43B",
-        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25947",
+        "section": "255-15A(3), 255-43B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25482",
         "verified_on": "2026-11-13",
         "confidence": "verified"
       },
       "setback_side_ft": {
         "value": 25,
-        "section": "255-43B",
-        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25947",
+        "section": "255-15A(3), 255-43B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25482",
         "verified_on": "2026-11-13",
         "confidence": "verified",
         "note": "Each side."
       },
       "setback_rear_ft": {
         "value": 50,
-        "section": "255-43B",
-        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25947",
+        "section": "255-15A(3), 255-43B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25482",
         "verified_on": "2026-11-13",
         "confidence": "verified"
       },
       "principal_max_height_ft": {
         "value": 35,
-        "section": "255-43B",
-        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25947",
+        "section": "255-15A(3), 255-43B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25482",
         "verified_on": "2026-11-13",
         "confidence": "verified",
         "note": "Accessory building 20 ft."
       },
       "max_building_coverage": {
         "value": 0.15,
-        "section": "255-43B",
-        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25947",
+        "section": "255-15A(3), 255-43B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25482",
         "verified_on": "2026-11-13",
         "confidence": "verified",
         "note": "Impervious 25%."
+      }
+    },
+    "A-1": {
+      "min_lot_sqft": {
+        "value": 22000,
+        "section": "255-43.1A(2)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "With sanitary sewers and public water. 26,000 sq ft where sewers are installed and capped (255-43.1A(1)). Accessory building 20 ft and one story."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "255-43.1A(2)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "255-43.1A(2)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "255-43.1A(2)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-43.1A(2)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "255-43.1A(2)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Impervious 25%."
+      }
+    },
+    "A-2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "255-43.1B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Residential development plan required (Article VI). At least 40% of the lots 18,000 sq ft or larger. Public water and sewer required. Accessory building 20 ft and one story."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "255-43.1B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "255-43.1B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "40 ft together, 15 ft each side (10 ft in some cases)."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "255-43.1B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-43.1B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "255-43.1B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25973",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
       }
     },
     "B": {

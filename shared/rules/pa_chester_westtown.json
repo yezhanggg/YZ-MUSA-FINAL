@@ -149,11 +149,11 @@
     },
     "existing_structure_only": {
       "value": true,
-      "section": "170-201, 170-1603A(2)(b), (f)",
+      "section": "170-201, 170-1603A(2)(b), (f), (i)",
       "url": "https://ecode360.com/print/WE1870?guid=12398469",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "The unit is 'accessory to the existing primary dwelling unit', sits in the house or an accessory structure on the lot, and 'No other alterations to the exterior of the structure shall be permitted unless necessary for health or safety reasons.' Read as no addition and no new building for the unit."
+      "note": "Open point, two readings. For: the intent clause (existing building stock), the definition ('accessory to the existing primary dwelling unit') and (f) 'No other alterations to the exterior of the structure shall be permitted unless necessary for health or safety reasons.' Against: (f) also lets the Zoning Hearing Board judge exterior changes against the single-family character, (i) asks for a plan of 'any proposed exterior alterations', and (b) says 'a structure which is accessory', not an existing one. Stored as existing only. The tool's variance for a new building or an addition is firmer than the code. Ask the Zoning Hearing Board."
     },
     "historic_bypass": {
       "value": false,
@@ -167,14 +167,14 @@
       "value": [
         {
           "kind": "lot_size",
-          "condition": "R-2: lot of at least 18,000 sq ft if both units are on public sewer and water. Otherwise 40,000 sq ft.",
+          "condition": "R-2: lot of at least 18,000 sq ft if both units are on public sewer and water. Otherwise 40,000 sq ft. The two-acre rule in 170-702E does not apply: 702E is headed 'Nonresidential uses permitted by special exception', and 701B(7) is the specific ADU lot rule.",
           "effect": "bars",
           "applies_to": null,
           "districts": [
             "R-2"
           ],
           "building_types": null,
-          "section": "170-701B(7)",
+          "section": "170-701B(7), 170-702E",
           "url": "https://ecode360.com/print/WE1870?guid=12397345",
           "test": "lot_sqft_at_least",
           "value": 18000
@@ -297,6 +297,38 @@
       "confidence": "secondary",
       "note": "No ADU height rule. The unit is in an existing structure. A detached accessory structure 'may not exceed the height of the principal dwelling or 20 feet, whichever is greater'."
     },
+    "accessory_structure_max_sqft": {
+      "value": 1000,
+      "section": "170-1603C(3)(a)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The footprint of an accessory structure shall not exceed 50% of the footprint of the principal dwelling unit, or 1,000 square feet, whichever is less.'"
+    },
+    "accessory_structure_max_share": {
+      "value": 0.5,
+      "section": "170-1603C(3)(a)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "50% of the house footprint (not floor area), with 1,000 sq ft, whichever is less."
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "170-1603A, 170-1603C(3)(a)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Not settled. It matters for a unit in a garage or other accessory structure."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "170-1502F, 170-1619B(2)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398162",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Detached accessory structures use 170-1502F, not the district yards. An existing garage keeps its position. The rental path says a detached ADU 'shall meet setbacks for an accessory structure' (1619B(2))."
+    },
     "setback_front_ft": {
       "value": null,
       "section": "170-1603C(3)",
@@ -319,7 +351,7 @@
       "url": "https://ecode360.com/print/WE1870?guid=12398162",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "Under 250 sq ft and under 12 ft high: 5 ft. 250 sq ft or more, or 12 ft or taller: a distance equal to the height."
+      "note": "170-1502F: structures under 250 sq ft and under 12 ft high 5 ft. A garage of 250 sq ft or more, or 12 ft or taller, 'a distance equivalent to the height of the structure'. Not stored as one number."
     },
     "setback_rear_ft": {
       "value": null,

@@ -8,6 +8,7 @@
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/44681314",
+      "https://ecode360.com/print/HO1764?guid=9955385",
       "https://ecode360.com/print/HO1764?guid=9953490",
       "https://ecode360.com/print/HO1764?guid=9953502",
       "https://ecode360.com/print/HO1764?guid=9953523",
@@ -75,24 +76,91 @@
     },
     "fallback_path": {
       "value": "variance",
-      "section": "MPC 910.2",
-      "url": "https://ecode360.com/print/HO1764?guid=9953999",
+      "section": "MPC 910.2, 230-233A",
+      "url": "https://ecode360.com/print/HO1764?guid=9955385",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "No unlisted-use section in Chapter 230."
+      "note": "No unlisted-use special exception in Chapter 230. Under 230-233A the Zoning Hearing Board may decide 'whether questionable uses are permitted by virtue of being \"similar to\" or \"customarily incidental to\" permitted uses'. That is an interpretation, not a special exception. 230-15C(5) weighs against a second dwelling as a use accessory to a dwelling."
     },
     "alternatives": {
       "value": [
         {
           "name": "Conversion of a single-family dwelling",
           "path": "special_exception",
-          "districts": null,
+          "districts": [
+            "R-1"
+          ],
           "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 500 ft. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. District yards and building area met. No exterior change except for safety. Parking met. Only for 'a dwelling with relatively little economic usefulness as a conforming use'.",
-          "min_lot_sqft": null,
+          "min_lot_sqft": 90000,
           "section": "230-17",
           "url": "https://ecode360.com/print/HO1764?guid=9953528",
           "confidence": "verified",
-          "note": "Two units need 1.5 times the district lot: R-1 90,000, R-2 and R-2A 65,340, R-3 48,000, R-4 18,000 sq ft."
+          "note": "Two units at 75% of the district lot each, 1.5 times the district lot."
+        },
+        {
+          "name": "Conversion of a single-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 500 ft. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. District yards and building area met. No exterior change except for safety. Parking met. Only for 'a dwelling with relatively little economic usefulness as a conforming use'.",
+          "min_lot_sqft": 65340,
+          "section": "230-17",
+          "url": "https://ecode360.com/print/HO1764?guid=9953528",
+          "confidence": "verified",
+          "note": "Two units at 75% of the district lot each, 1.5 times the district lot."
+        },
+        {
+          "name": "Conversion of a single-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-2A"
+          ],
+          "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 500 ft. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. District yards and building area met. No exterior change except for safety. Parking met. Only for 'a dwelling with relatively little economic usefulness as a conforming use'.",
+          "min_lot_sqft": 65340,
+          "section": "230-17",
+          "url": "https://ecode360.com/print/HO1764?guid=9953528",
+          "confidence": "verified",
+          "note": "Two units at 75% of the district lot each, 1.5 times the district lot."
+        },
+        {
+          "name": "Conversion of a single-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 500 ft. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. District yards and building area met. No exterior change except for safety. Parking met. Only for 'a dwelling with relatively little economic usefulness as a conforming use'.",
+          "min_lot_sqft": 48000,
+          "section": "230-17",
+          "url": "https://ecode360.com/print/HO1764?guid=9953528",
+          "confidence": "verified",
+          "note": "Two units at 75% of the district lot each, 1.5 times the district lot."
+        },
+        {
+          "name": "Conversion of a single-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 500 ft. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. District yards and building area met. No exterior change except for safety. Parking met. Only for 'a dwelling with relatively little economic usefulness as a conforming use'.",
+          "min_lot_sqft": 18000,
+          "section": "230-17",
+          "url": "https://ecode360.com/print/HO1764?guid=9953528",
+          "confidence": "verified",
+          "note": "Two units at 75% of the district lot each, 1.5 times the district lot."
+        },
+        {
+          "name": "Conversion of a single-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-5"
+          ],
+          "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 500 ft. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. District yards and building area met. No exterior change except for safety. Parking met. Only for 'a dwelling with relatively little economic usefulness as a conforming use'.",
+          "min_lot_sqft": 15000,
+          "section": "230-17",
+          "url": "https://ecode360.com/print/HO1764?guid=9953528",
+          "confidence": "verified",
+          "note": "Two units at 75% of the district lot each, 1.5 times the district lot."
         },
         {
           "name": "Two-family dwelling (duplex)",
