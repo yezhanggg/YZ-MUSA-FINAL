@@ -54,7 +54,11 @@
       "When the owner leaves or the family member moves out, the unit goes back into the house (325-159F)",
       "Parking: 1 space for the unit plus 2 for the house (325-114)",
       "N-C/H permits 'All uses permitted in the N-C District' with a retail exception list. Whether that carries the N-C special exception for this unit is not clear (325-33A)",
-      "In the F-R and F-O flexible overlays, which the Board of Supervisors applies to run-down tracts, the family unit is listed as a permitted use (325-90.1, 325-97)"
+      "In the F-R and F-O flexible overlays, which the Board of Supervisors applies to run-down tracts, the family unit is listed as a permitted use (325-90.1, 325-97)",
+      "In R-1 and N-C the area and bulk charts give the special exception 'Dwelling unit conversion' (the family unit) its own row: rear yard 30 ft, side yard 15 ft, coverage 50% (R-1) or 75% (N-C). The tool shows these for an addition in R-1 and N-C. The house's own row is rear 25 ft, side 10 ft, coverage 40%. Ask which applies to the whole lot (charts for 325-14 and 325-34)",
+      "The house left after the unit is carved out must still meet the minimum habitable floor area for a dwelling: 700 sq ft in R-1 and N-C, 900 sq ft in R-7, R-10, R-20 and R-R (325-123)",
+      "On a nonconforming lot of record a single-family house and customary accessory buildings may be built. The family unit is not named there (325-193C)",
+      "Any use that is not a permitted use or a use by special exception is prohibited in the district (325-13D and the like), so a detached unit cannot come in under 325-4.1"
     ],
     "notes": "Zoning office: Springettsbury Township Community Development (York County). Districts (325-7): R-1, R-7, R-10, R-20, R-R, N-C, N-C/H, M-U, C-H, B-I, G-I, O-S, F-D, overlays F-P, S-S, F-O, F-R, T-N, T-C. Read on eCode360 in a browser, the chapter print view searched in the page and read section by section. Area and bulk charts read from the attachment PDFs (fetched once each). Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage, second dwelling, accessory residential, guest house, caretaker, conversion, tiny, two-family, family member. 'Accessory apartment' appears only in the T-N overlay mix rule (325-50B(2)), with no standards. A 'guest room' (no cooking) may be within or attached to a residence (325-5). 325-123: minimum habitable floor area of a dwelling unit 700 sq ft (R-1, N-C) or 900 sq ft (R-7 to R-R), read as reaching the house, not the family unit capped by 325-159D. No historic district rule beyond the N-C/H district."
   },
@@ -378,7 +382,7 @@
         "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified",
-        "note": "Detached single-family. Semi-attached 3,500, attached 2,500. The chart's special exception row 'Dwelling unit conversion' also lists 7,500 sq ft."
+        "note": "Detached single-family and the special exception 'Dwelling unit conversion' both 7,500 sq ft. Semi-attached 3,500, attached 2,500."
       },
       "setback_front_ft": {
         "value": 20,
@@ -388,18 +392,20 @@
         "confidence": "verified"
       },
       "setback_rear_ft": {
-        "value": 25,
-        "section": "chart for 325-14",
+        "value": 30,
+        "section": "chart for 325-14, Uses by Special Exception (5)",
         "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
         "verified_on": "2026-11-13",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "Row '(5) Dwelling unit conversion 20 30 15 35 7,500 square feet 50%', read as the family unit's row (R-10 lists the use as 'Dwelling unit conversion for family members'). The detached house row is rear 25 ft. Shown here so an addition for the unit reads 30 ft."
       },
       "setback_side_ft": {
-        "value": 10,
-        "section": "chart for 325-14",
+        "value": 15,
+        "section": "chart for 325-14, Uses by Special Exception (5)",
         "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
         "verified_on": "2026-11-13",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "Conversion row side 15 ft. The detached house row is 10 ft."
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -409,11 +415,12 @@
         "confidence": "verified"
       },
       "max_building_coverage": {
-        "value": 0.4,
-        "section": "chart for 325-14",
+        "value": 0.5,
+        "section": "chart for 325-14, Uses by Special Exception (5)",
         "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
         "verified_on": "2026-11-13",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "Conversion row 50%. The detached house row is 40%."
       }
     },
     "R-7": {
@@ -603,7 +610,55 @@
         "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified",
-        "note": "Detached single-family."
+        "note": "Detached single-family and the special exception 'Dwelling unit conversion' both 7,500 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "chart for 325-34, Uses by Special Exception (6)",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Row '(6) Dwelling unit conversion 20 None 30 15 35 7,500 square feet 75%', read as the family unit's row. The detached house row is rear 25 ft."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "chart for 325-34, Uses by Special Exception (6)",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Conversion row side 15 ft. The detached house row is 10 ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "chart for 325-34, Uses by Special Exception (6)",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Conversion row 75%. The detached house row is 40%."
+      }
+    },
+    "N-C/H": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "The N-C and N-C/H chart is shared. Detached single-family. The unit's listing here is in doubt (325-33A)."
       },
       "setback_front_ft": {
         "value": 20,

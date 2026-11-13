@@ -17,11 +17,13 @@
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7303",
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7312",
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7382",
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7452",
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7480",
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7555",
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6836",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6847",
       "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6863"
     ],
     "verified_on": "2026-11-13",
@@ -35,11 +37,12 @@
     "checks": [
       "The zoning code has no accessory dwelling unit, accessory apartment or in-law suite. A second dwelling unit on a one-family lot needs a use variance, or one of the two-unit paths below",
       "A one-family detached dwelling is 'a wholly detached building containing one dwelling unit only' (1311.28(c))",
-      "'No dwelling unit shall include a separate living area that is completely separated by interior walls so as to prevent interior access from the remainder of the living area.' A family suite inside a house must stay open to the rest of the house (1311.28(a)(2))",
+      "'No dwelling unit shall include a separate living area that is completely separated by interior walls so as to prevent interior access from the remainder of the living area.' A family suite inside a house must stay open to the rest of the house. A suite with its own kitchen behind a locked door is a second dwelling unit, which makes the house a two-family dwelling (1311.28(a)(2), (e))",
       "In R3 only, an existing principal building may be converted into a two-family or multi-family dwelling by special exception: lot area 6,000 sq ft for the first unit and 2,000 sq ft for each more (8,000 sq ft for two units), parking, few outside changes (1333.05(a)(7))",
       "A new two-family dwelling: conditional use in R3 and INST, permitted in CC and CS, conditional use in CBD. Not listed in R1A, R1B or R2 (1333.05(a)(2))",
-      "Every new dwelling unit must have at least 850 sq ft of habitable floor area (1341.32(a))",
-      "A use not permitted anywhere in the city may be allowed by the Zoning Hearing Board on proof that it is less offensive than permitted uses and fits the district (1333.06). A second unit may be read as a listed two-family use instead",
+      "A dwelling unit 'erected hereunder' needs at least 850 sq ft of habitable floor area (1341.32(a)). The code extends that rule to conversions only for rooming houses (1341.25(a)(1)), so whether it reaches a unit made by converting a house is doubtful. Ask the zoning officer",
+      "1333.06 (the Zoning Hearing Board may allow a use permitted nowhere in the city) does not reach a second unit. A building with two units is a two-family dwelling, which the table lists in R3, INST, CC, CBD and CS",
+      "An existing nonconforming residential use (for example a two-family house in R2) may be improved inside, but 'no structural alterations shall be made which would increase the number of dwelling units on the lot' (1323.02(c))",
       "Detached accessory buildings in R districts: 15 ft high, not in a front or side yard, 25 ft from a street line, 5 ft from the house, at most two accessory structures per lot (1341.33, 1341.35)",
       "Parking: 2 spaces per dwelling unit (1345.01)"
     ],
@@ -70,15 +73,7 @@
       "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "A second unit on a one-family lot is not a listed use. In R3 a conversion into two units is a special exception (alternative). Otherwise a use variance."
-    },
-    "unlisted_use_path": {
-      "value": "special_exception",
-      "section": "1333.06",
-      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7303",
-      "verified_on": "2026-11-13",
-      "confidence": "secondary",
-      "note": "'If a use is not permitted by right, as a conditional use or as a special exception use by this ordinance within any zoning district in the city, the use is prohibited in the city, except the applicant may apply to the Zoning Hearing Board.' The Board may permit it if the use is less offensive than permitted uses, compatible with the district, meets the special exception criteria and is not prohibited there. A second unit in a house may be read as a two-family dwelling or conversion, which are listed, so the Board may refuse to treat it as unlisted."
+      "note": "A second unit makes a two-family dwelling, which is not permitted on a one-family lot in R1A, R1B or R2 ('If no letter is shown ... that use if prohibited'). In R3 a conversion into two units is a special exception (alternative). Otherwise a use variance. 1333.06 reaches only uses permitted in no district, and a two-family dwelling is listed, so it is not set as an unlisted-use path."
     },
     "fallback_path": {
       "value": "variance",
@@ -96,7 +91,7 @@
           "districts": [
             "R3"
           ],
-          "conditions": "Special exception. Lot area 6,000 sq ft for the first unit plus 2,000 sq ft for each more unit (8,000 sq ft for two), at most 8 units. Parking per Art. 1345 (2 per unit). Outside changes kept to those needed for safety. Other area and dimensional rules met. Each unit at least 850 sq ft.",
+          "conditions": "Special exception. Lot area 6,000 sq ft for the first unit plus 2,000 sq ft for each more unit (8,000 sq ft for two), at most 8 units. Parking per Art. 1345 (2 per unit). Outside changes kept to those needed for safety. Other area and dimensional rules met. 850 sq ft per unit only if 1341.32 reaches conversions. It speaks of a unit 'erected hereunder'. Ask the zoning officer.",
           "min_lot_sqft": 8000,
           "section": "1333.05(a)(7), 1341.32, 1345.01",
           "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298"
@@ -168,12 +163,12 @@
         },
         {
           "kind": "other",
-          "condition": "Each new dwelling unit at least 850 sq ft of habitable floor area.",
+          "condition": "A new dwelling unit 'erected hereunder' needs at least 850 sq ft of habitable floor area. Whether this reaches a unit made by conversion is doubtful (1341.25(a)(1) extends it to conversions only for rooming houses).",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
-          "section": "1341.32(a)",
+          "section": "1341.32(a), 1341.25(a)(1)",
           "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416"
         }
       ],
@@ -186,25 +181,22 @@
   },
   "form": {
     "types_allowed": {
-      "value": [
-        "internal",
-        "attached"
-      ],
-      "section": "1333.05, 1333.06",
+      "value": [],
+      "section": "1333.05",
       "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "No ADU form is listed. These are only the forms a 1333.06 hearing could consider. A detached second dwelling is a second principal building. The tool reads the unit as not allowed, with the hearing as the path to ask."
+      "note": "No ADU form is listed. A second unit in a house is a two-family dwelling, a listed use, so 1333.06 does not reach it."
     }
   },
   "size": {
     "min_sqft": {
       "value": 850,
-      "section": "1341.32(a)",
+      "section": "1341.32(a), 1341.25(a)(1)",
       "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "'The minimum habitable floor area of a dwelling unit erected hereunder shall be 850 square feet'. Read as reaching any new dwelling unit (300 sq ft only for one-person multi-family units)."
+      "note": "'The minimum habitable floor area of a dwelling unit erected hereunder shall be 850 square feet'. It reaches a new unit. Whether it reaches a unit made by converting a house is doubtful: 1341.25(a)(1) applies 1341.32 to rooming houses 'regardless of whether the use will be new construction or conversion', which suggests it otherwise reaches only units erected."
     }
   },
   "envelope": {

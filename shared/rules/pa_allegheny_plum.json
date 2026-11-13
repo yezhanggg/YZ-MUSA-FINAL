@@ -18,6 +18,7 @@
     "code_url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
     "code_current_through": "2023-04-10",
     "code_current_through_note": "Cover page: REVISED 4/10/2023 BY ORD. #972-23. Later zoning amendments, if any, were not seen.",
+    "code_caution": "The zoning PDF is revised through Ord. 972-23 (4-10-2023). Later ordinances exist (Ord. 982-24, a fee schedule). Later zoning amendments, if any, were not seen. Ask the borough.",
     "checks": [
       "An Accessory Dwelling Unit is a conditional use (Borough Council hearing) in RR and NC only. It is not listed in SR or MR, the main single-family districts. There a second unit needs a use variance (Table 12, 322B, 406)",
       "The unit must be attached to the house. The definition reads 'a separate and accessory living space that is attached to the primary dwelling'. A detached unit or a unit in a garage is not an ADU here (Art. II, 406A)",
@@ -26,7 +27,9 @@
       "A 'Conversion Dwelling' (extra units made from an existing house, meant as rentals) is a separate path by conditional use in RR, SR, MR and NC: each unit at least 800 sq ft, the lot must meet the lot rules for a similar dwelling type, no conversion of a detached garage (Art. II, Table 11, 429A)",
       "Council applies the general conditional use standards and may add conditions (401A, 405A)",
       "Accessory short-term rentals are a conditional use in RR, SR and MR. The host must live there at least 180 days a year (Table 12, 461)",
-      "Code text as posted: revised through Ord. 972-23 (4-10-2023). Ask the borough whether later zoning amendments apply"
+      "Code text as posted: revised through Ord. 972-23 (4-10-2023). Ask the borough whether later zoning amendments apply",
+      "Table 12 also lists 'Any other Building or Use that is Customarily Incidental to the Permitted Principal Use or Principal Building' as a conditional use in every district. It is read as not reaching a second dwelling: the ADU is listed (blank in SR and MR means not permitted) and a detached unit falls outside the ADU definition. An applicant may still try it (Table 12, 321A)",
+      "Accessory uses not in Table 12 are not permitted. One accessory structure of each type per lot. No accessory use before the principal use is established (321A, G, I)"
     ],
     "notes": "Zoning office: Plum Borough Community Development (plumboro.com). Districts (302): RR, SR, MR, NC, GC, HC, LI, HI, S, M. Read the borough PDF (fetched once, text layer searched, Table 12 page checked as an image). Searched for accessory dwelling, accessory apartment, in-law, mother, granny, ECHO, second dwelling, two-family, duplex, conversion, short-term, caretaker, guest house, carriage. ADU text: Art. II definition, Table 12, 322B, 406, Table 19. The Conversion Dwelling definition says conversions 'are defined separately from Accessory Dwellings Units or Mother-in-law Suites which are primarily intended to house family members', but 406 itself has no family rule. No historic district rule in the ordinance. 306E: in all residential districts 'there shall only be one (1) principal use and structure on a lot'."
   },
@@ -188,7 +191,7 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A single-family house may be built on a nonconforming lot of record that meets the yard and bulk rules. Whether an ADU may be added on such a lot is not stated. 406D asks the ADU to meet the area rules of the principal use. Ask the zoning officer.",
+          "condition": "1004 protects one dwelling, or a use permitted by right, on a nonconforming lot. It does not cover an ADU, which is a second unit and a conditional use, and 406D asks the ADU to meet the area rules of the principal use. On a lot below the district minimum a variance may be needed. Ask the zoning officer.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,

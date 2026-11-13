@@ -4,8 +4,8 @@
     "instrument": "Code of the Township of Swatara (Dauphin County), Chapter 295 Zoning (Zoning Ordinance of 2010, Ord. No. 2010-1, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Chapter 295 adopted 7-27-2010 by Ord. No. 2010-1. 295-96 (accessory uses, including the accessory apartment standards) was amended 6-12-2024 (Ord. 2024-01), 5-14-2025 (Ord. 2025-03) and 8-5-2026 (Ord. 2026-05). The online text reflects them. 295-85.1 (non-owner short-term rentals) was added 5-14-2025. eCode360 New Laws (read 2026-11-13) list only Ord. 2026-07 (insurance claims for fires) and two airport maps. Code SW2044 is the Dauphin County township, not Swatara Township in Lebanon County.",
-    "effective_date": null,
+    "status_detail": "Chapter 295 adopted 7-27-2010 by Ord. No. 2010-1. The accessory apartment is new: Ord. 2026-05 (8-5-2026) added the 'Accessory apartment' definition, renamed the use table rows to it, rewrote 295-96D(1) and made 295-96D(18) (the old family-only 'Unit for care of relative') reserved. That is the review's reading of the township's 6-10-2026 amendment text. The codified text read here shows the definitions and 295-96 amended 8-5-2026 and D(18) '(Reserved)'. The leftover 'except for a unit for care of relative' in 295-125 refers to a use that no longer exists. Ord. 2024-01 and 2025-03 changed other parts of 295-96. 295-85.1 (non-owner short-term rentals) was added 5-14-2025. eCode360 New Laws (read 2026-11-13) list only Ord. 2026-07 (insurance claims for fires) and two airport maps. Code SW2044 is the Dauphin County township, not Swatara Township in Lebanon County.",
+    "effective_date": "2026-08-05",
     "source_urls": [
       "https://ecode360.com/11636509",
       "https://ecode360.com/print/SW2044?guid=11636509",
@@ -17,6 +17,7 @@
       "https://ecode360.com/46791849",
       "https://ecode360.com/11637486",
       "https://ecode360.com/11637642",
+      "https://ecode360.com/11637607",
       "https://ecode360.com/11636738",
       "https://ecode360.com/11637094",
       "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
@@ -33,13 +34,15 @@
     "checks": [
       "An 'Accessory apartment' is a permitted accessory use by right in every district in the use tables (C, A, R-S, R-M and R-ML, A-OG, C-L, C-G, C-H, M-L, M-G), and in MU areas developed under R-M, C-L or M-L rules. A zoning permit is needed (295-28, 295-34D, 295-96D(1))",
       "Only on a single-family detached lot, one apartment per lot. It may be inside, attached or detached. The definition speaks of a unit 'in or added to an existing single-family detached dwelling', while 295-96D(1)(b) says 'The apartment may be detached or attached to the primary residence'. Ask whether a new house and a unit may be built together (295-22, 295-96D(1)(b))",
-      "Size: at least 300 sq ft and no more than 45% of the house's total floor area (295-96D(1)(f))",
+      "Size: at least 300 sq ft and no more than 45% of the house's total floor area (295-96D(1)(f)). The general rule 295-121C asks every dwelling unit for 600 sq ft of heated floor area 'primarily above the ground level' and is not excepted. If it applies, the unit needs 600 sq ft (a house of at least 1,334 sq ft) and a basement unit is doubtful. Ask the zoning officer",
+      "In M-L and M-G a new single-family house is not permitted, so only an existing house there could add an apartment. In MU the land must first be assigned to R-M, C-L or M-L rules through the master plan (295-28, 295-34B, D)",
+      "A residential lot may hold only one principal use and one principal building (295-121B(2)). The apartment is an accessory use, so a detached apartment is read as allowed by 295-96D(1)(b)",
       "Own exterior entry, not on the front of the house. Matching style. Meets the district building setbacks and coverage. A detached unit 10 ft from the house (295-96D(1)(a), (c), (d))",
-      "Parking: at least 3 off-street spaces in total for the owner-occupant and the tenant (295-96D(1)(g))",
+      "Parking: at least 3 off-street spaces in total for the owner-occupant and the tenant (295-96D(1)(g)). The parking table gives 2 per dwelling unit for any unit not listed separately, so 4 in all is a second reading (295-104)",
       "The ordinance does not say in so many words that the owner must live there. 295-96D(1)(g) speaks of 'the owner-occupant and tenant'. Ask the zoning officer",
       "On a lot under 3 acres, a structure accessory to a dwelling may be one story plus a half story of nonhabitable storage, or 20 ft, whichever is less. A unit over a garage is read as not possible on such a lot (295-29B(1))",
       "Not subdivided or sold apart from the house. With an on-lot septic system, a sewage permit first (295-96D(1)(h), (i))",
-      "Short-term rentals (owner-occupied or not) are allowed only in an existing residential building and 'Addition of new rental units on the property is prohibited' (295-85.1A, 295-96D(9.1))"
+      "Short-term rentals (owner-occupied or not) are allowed only in an existing residential building and 'Addition of new rental units on the property is prohibited'. Non-owner short-term rentals also need a structure built as a single-family, semidetached or two-family dwelling (295-85.1A, B, 295-96D(9.1))"
     ],
     "notes": "Zoning office: Swatara Township Community Development (Dauphin County). Districts (295-23): C, A, R-S, R-ML, R-M, A-OG, C-L, C-G, C-H, M-L, M-G, MU, AP overlay. MU areas are developed under R-M, C-L or M-L rules (295-34D). Read on eCode360 in a browser, the chapter print view, searched in the page, and the dimensional attachment (Attachment 2) page by page. Searched for accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage, second dwelling, guest house, caretaker, conversion, tiny, short-term, two-family, family member, care of relative. 295-125 mentions 'a unit for care of relative' in a setback rule, but no such use is defined or listed. No historic district in the zoning chapter (historic text is in the wireless rules only)."
   },
@@ -202,6 +205,41 @@
           "bill_overrides": true
         },
         {
+          "kind": "other",
+          "condition": "In M-L and M-G a new single-family detached house is not permitted, so only a lawful existing house there can have an apartment.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "M-L",
+            "M-G"
+          ],
+          "building_types": null,
+          "section": "295-28 (business use table)",
+          "url": "https://ecode360.com/11637058"
+        },
+        {
+          "kind": "other",
+          "condition": "In MU the land must first be approved for R-M, C-L or M-L rules through the master plan. The apartment follows the rules of that area.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "MU"
+          ],
+          "building_types": null,
+          "section": "295-34A, B, D",
+          "url": "https://ecode360.com/11637094"
+        },
+        {
+          "kind": "other",
+          "condition": "If 295-121C applies, each dwelling unit needs 600 sq ft of heated floor area, primarily above the ground level.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "295-121C",
+          "url": "https://ecode360.com/11637607"
+        },
+        {
           "kind": "utilities",
           "condition": "With an on-lot sewage system, a sewage permit from the Township Sewage Enforcement Officer before the building permit.",
           "effect": "condition",
@@ -264,11 +302,11 @@
     },
     "min_sqft": {
       "value": 300,
-      "section": "295-96D(1)(f)",
+      "section": "295-96D(1)(f), 295-121C",
       "url": "https://ecode360.com/11637445",
       "verified_on": "2026-11-13",
-      "confidence": "verified",
-      "note": "'A minimum of 300 square feet of floor area shall be required.'"
+      "confidence": "secondary",
+      "note": "'A minimum of 300 square feet of floor area shall be required.' But 295-121C: 'Each dwelling unit shall include a minimum of 600 square feet of enclosed habitable, indoor, heated floor area, which shall be primarily above the ground level.' The specific 300 likely controls. The general rule is not excepted."
     }
   },
   "envelope": {
@@ -387,21 +425,28 @@
     },
     "short_term_rental_banned": {
       "value": true,
-      "section": "295-85.1A, 295-96D(9.1)(a)[1]",
+      "section": "295-85.1A, B, 295-96D(9.1)(a)[1]",
       "url": "https://ecode360.com/46791849",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "Both short-term rental uses: 'Short-term rentals are only permitted in an existing residential building where the existing or prior approved use included a habitable dwelling unit. Addition of new rental units on the property is prohibited.' Read as barring a new apartment from short-term rental use."
+      "note": "Both short-term rental uses: 'Short-term rentals are only permitted in an existing residential building where the existing or prior approved use included a habitable dwelling unit. Addition of new rental units on the property is prohibited.' Read as barring a new apartment from short-term rental use. It may instead bar only adding units for that purpose. 295-85.1B also limits non-owner short-term rentals to 'a structure originally built as a single-family detached dwelling unit, single-family semidetached dwelling unit, or two-family detached dwelling', which a detached apartment is not."
     }
   },
   "parking": {
     "spaces_required": {
-      "value": 1,
+      "value": null,
       "section": "295-96D(1)(g), 295-104",
       "url": "https://ecode360.com/11637445",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "The standard sets a total of 3 for the lot. The house needs 2 (295-104 table: dwelling unit 2 per dwelling unit), so the apartment adds 1."
+      "note": "The standard sets a total of 3 for the lot, which would mean 1 for the apartment. 295-104 gives 2 per dwelling unit for any unit not listed separately, which would mean 2. See parking.reading."
+    },
+    "reading": {
+      "value": "3 spaces in total under 295-96D(1)(g) (the house's 2 plus 1). Or 4 in total if the 295-104 table ('Dwelling unit, other than types listed separately in this table 2 per dwelling unit') counts the apartment as a dwelling unit. Ask the zoning officer.",
+      "section": "295-96D(1)(g), 295-104",
+      "url": "https://ecode360.com/11637486",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
     },
     "total_on_site": {
       "value": 3,

@@ -1263,8 +1263,8 @@
       "pop_rank": 51,
       "file": "pa_northampton_easton",
       "batch": 9,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9647638",
       "plain_fetch": false,
@@ -1273,7 +1273,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-13, not yet reviewed. not_addressed. Detached forms barred by 595-09D(7). Unit in the house: undefined residential use, special exception in CH, DD, SS, WW only (595-09C(1)). Open: (1) the January 2025 amendment package that adds an I16 ADU use in CH, SS, WW is not in the code, adoption status unknown, ask the city. (2) Whether the Board treats a second unit as an undefined use or as a listed two-family dwelling. (3) Two-family alternatives depend on the block class map, so no lot minimum is stored. (4) DD dimensional rules not read."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch9), fixes applied. not_addressed, detached forms prohibited (595-09D(7)), undefined-use special exception in CH, DD, SS, WW (595-09C(1)). For a later check: whether council adopted the January 2025 ADU draft after Ord. 5934 (5-13-2026). Lot rules depend on the block class map. DD dimensions not read."
     },
     {
       "geoid": "4204375672",
@@ -1287,8 +1287,8 @@
       "pop_rank": 52,
       "file": "pa_dauphin_swatara",
       "batch": 9,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11636509",
       "plain_fetch": false,
@@ -1297,7 +1297,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-13, not yet reviewed. allowed_by_right, 'Accessory apartment' P in every district (295-28, 295-96D(1)), 300 sq ft to 45% of the house, 3 spaces in all. Open: (1) no express owner-occupancy rule, only 'owner-occupant and tenant' in the parking line. (2) The definition says 'in or added to an existing' house while 295-96D(1)(b) allows a detached unit. (3) 'Building setback' for a detached unit read as the district setbacks, not the 5 ft accessory setback. (4) Over-garage unit read as barred on lots under 3 acres by 295-29B(1). (5) Which of the 2024 to 2026 amendments to 295-96 touched the apartment text was not traced."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch9), fixes applied. allowed_by_right, 'Accessory apartment' (Ord. 2026-05, 8-5-2026, replaced the family-only unit for care of relative). For a later check: no express owner-occupancy rule. 295-121C (600 sq ft above ground) against the 300 sq ft of 295-96D(1)(f). Parking 3 in all, or 4 under 295-104."
     },
     {
       "geoid": "4208185312",
@@ -1311,8 +1311,8 @@
       "pop_rank": 53,
       "file": "pa_lycoming_williamsport",
       "batch": 9,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-13",
       "code_host": "amlegal",
       "code_url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-5800",
       "plain_fetch": false,
@@ -1321,7 +1321,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-13, not yet reviewed. not_addressed, use variance, with 1333.06 (ZHB may permit a use not permitted anywhere) as the hearing to ask about. Alternatives: R3 conversion to two units by special exception (8,000 sq ft), two-family by conditional use in R3. Open: (1) whether 1333.06 can reach a second unit, since two-family dwellings and conversions are listed uses. (2) Whether the 850 sq ft minimum (1341.32) reaches a converted unit. (3) Article 1323.02 (nonconforming lots) not read in full. (4) No currency line seen on amlegal. Ord. 6510 and 6511 (Part Three) not read."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch9), fixes applied (1333.06 unlisted-use path removed). not_addressed, use variance. Alternatives: R3 conversion to two units by special exception (8,000 sq ft), two-family by conditional use in R3. For a later check: whether the 850 sq ft minimum (1341.32, 'erected hereunder') reaches a converted unit."
     },
     {
       "geoid": "4200350784",
@@ -1335,8 +1335,8 @@
       "pop_rank": 54,
       "file": "pa_allegheny_moon",
       "batch": 9,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30859895",
       "plain_fetch": false,
@@ -1345,7 +1345,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-13, not yet reviewed. not_addressed, use variance. Unlisted uses go to conditional use in M-1 and RT only (27-206), so no hearing path on a residential lot. Two-family dwelling by right in R-4 (10,890 sq ft) and R-5 (7,260 sq ft). Open: (1) the online code is current to May 2024 (Table 27-1 through Ord. 702), later zoning amendments not seen, township website did not load. (2) Parking table section letter in Part 6 not re-checked."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch9), with code_caution kept. not_addressed, use variance. Two-family dwelling by right in R-4 and R-5. For a later check: the online code stops at Ord. 702 (5-29-2024) and the township posts no later ordinances."
     },
     {
       "geoid": "4200361536",
@@ -1359,8 +1359,8 @@
       "pop_rank": 55,
       "file": "pa_allegheny_plum",
       "batch": 9,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-13",
       "code_host": "own site",
       "code_url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
       "plain_fetch": true,
@@ -1369,7 +1369,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-13, not yet reviewed. conditional_use (Borough Council), Accessory Dwelling Unit in RR and NC only (Table 12, checked on the page image), attached to the house, owner-occupied, one per lot, 1 extra space. Not permitted in SR or MR. Open: (1) posted PDF is revised through Ord. 972-23 (4-10-2023), later zoning amendments not checked (borough site search needs a login). (2) Whether NC's 10,000 sq ft per unit counts the ADU. (3) Which 'similar dwelling type' sets the lot rule for a conversion dwelling in SR and RR."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch9), fixes applied (code_caution added). conditional_use (Borough Council), ADU in RR and NC only, attached, owner-occupied. For a later check: zoning amendments after Ord. 972-23 (4-10-2023). Whether NC's 10,000 sq ft per unit counts the ADU."
     },
     {
       "geoid": "4213372992",
@@ -1383,8 +1383,8 @@
       "pop_rank": 56,
       "file": "pa_york_springettsbury",
       "batch": 9,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/5176819",
       "plain_fetch": false,
@@ -1393,7 +1393,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-13, not yet reviewed. family_only, 'Accessory dwelling unit for family members' by special exception in R-1, R-7, R-10, R-20, R-R, N-C (325-159): inside or added to the existing house, owner-occupied with yearly affidavit, grandparent, parent, child or grandchild, no rent, 2 people, 450 sq ft and 30%. Matches the YCPC table. Open: (1) N-C/H 'all uses permitted in N-C' may or may not carry the special exception (districts_in_doubt). (2) F-R and F-O overlays list the unit as permitted, kept as an alternative. (3) Whether the 700 or 900 sq ft habitable floor minimum (325-123) reaches the unit."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch9), fixes applied (R-1 and N-C conversion-row yards). family_only, special exception in R-1, R-7, R-10, R-20, R-R, N-C (325-159). For a later check: N-C/H in doubt (325-33A). F-O listing (325-90.1) read by the author only."
     },
     {
       "geoid": "4207542168",

@@ -4,7 +4,7 @@
     "instrument": "Code of the City of Easton, Chapter 595 Zoning (amended in its entirety 7-8-2020 by Ord. No. 5701, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Chapter 595 adopted 10-12-1988, amended in its entirety 7-8-2020 (Ord. 5701). Latest amendment seen in the text: 595-39 hearings, 5-13-2026 (Ord. 5934). eCode360 New Laws (read 2026-11-13): none. A city zoning amendment package proposed in January 2025 (city summary dated 1-27-2025, Lehigh Valley Planning Commission review letter 2-27-2025) would add 'I16 Accessory Dwelling Unit' as a permitted use in College Hill, South Side and West Ward, relax 595-09D(7) and add ADU standards in 595-32H(4) (one per property, single-family detached or semidetached only, size and occupant caps, parking, owner residency, no short-term rental). None of it is in the code as of 2026-11-13. Its status is unknown.",
+    "status_detail": "Chapter 595 adopted 10-12-1988, amended in its entirety 7-8-2020 (Ord. 5701). Latest amendment seen in the text: 595-39 hearings, 5-13-2026 (Ord. 5934). eCode360 New Laws (read 2026-11-13): none. A city zoning amendment package was proposed in January 2025 (draft 'Proposed Amendments 1/23/2025', city summary 1-27-2025, Lehigh Valley Planning Commission letter 2-27-2025). The draft lists 'I16 Accessory dwelling unit' as a permitted use in CH, SS, WW and DD, changes 595-09D(7) to 'Except where otherwise permitted, habitation in accessory buildings', and adds 595-32H(4): only on block class A in WW, SS and CH, one per parcel, attached or detached, accessory to a single-family detached dwelling, at least 220 sq ft (two occupants) or 320 sq ft (three), at most three occupants, one more parking space, the owner lives in the principal dwelling, and no short-term rental in the unit (595-32A(5)(e)). It is not adopted as far as the code shows: the codified text runs to Ord. 5934 (5-13-2026) and has no I16 and an unqualified 595-09D(7). Whether council acted after that is not known.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/9647638",
@@ -23,6 +23,7 @@
       "https://ecode360.com/36578596",
       "https://ecode360.com/EA2741/laws",
       "https://easton-pa.com/DocumentCenter/View/1483/Zoning-Amendment-Summary-12425",
+      "https://easton-pa.com/DocumentCenter/View/1494/Proposed_Zoning_Amendments_1_23_25",
       "https://easton-pa.com/DocumentCenter/View/1533/LVPC-Easton-Zoning-Ordinance-Amendments-Response-27FEB25"
     ],
     "verified_on": "2026-11-13",
@@ -34,10 +35,14 @@
     "code_current_through": "2026-09-23",
     "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-13 shows amendments to 5-13-2026 (Ord. 5934) and no currency line. New Laws: none.",
     "checks": [
-      "The zoning code has no accessory dwelling unit use today. In January 2025 the city proposed adding an 'Accessory Dwelling Unit' as a permitted use in College Hill, South Side and West Ward, with standards. It is not in the code as of 2026-11-13. Ask the Planning and Codes office whether it was adopted",
+      "The zoning code has no accessory dwelling unit use today. A January 2025 draft would add one in CH, SS, WW and DD, but only on block class A lots, beside a single-family detached house, with the owner living there. It is not in the code as codified through Ord. 5934 (5-13-2026). Ask the Planning and Codes office whether council acted on it",
       "'Habitation in accessory buildings' is a prohibited use in all of the city. A unit in a garage or other detached building is barred (595-09D(7))",
       "A unit inside or attached to the house is an undefined residential use. Undefined residential uses are a special exception before the Zoning Hearing Board in College Hill (CH), Downtown (DD), South Side (SS) and West Ward (WW) only. Elsewhere a use variance (595-09C(1), 595-40C)",
-      "A house made into two units may instead be a two-family dwelling. Two-family detached (A4) is permitted by right in CH, SS and WW, two-family attached and semidetached (A5, A6) in SS and in Block Classes B and C of CH and WW. Lot rules depend on the block class map (595-12, 595-14, 595-15)",
+      "A house made into two units may instead be a two-family dwelling. Two-family detached (A4) needs the two units side by side, divided by an unpierced wall from exterior wall to exterior wall, and is by right in CH, SS and WW. An upper and a lower unit in a detached or semidetached house is not A4, so it is the undefined use above. A rowhouse split up and down is A6, by right in SS and in Block Classes B and C of CH and WW, as is A5. Lot rules depend on the block class map (595-09A(1), 595-12, 595-14, 595-15)",
+      "College Hill and West Ward in 595-09C(1) do not include the transitional zones CH/INS-1 T and WW/INS-2 T. There a second unit needs a use variance",
+      "If the Board calls a second unit an accessory use rather than a residential one, undefined accessory uses are a special exception in the AR and ET districts and the IO overlay (595-09C(6)). A detached unit stays barred by 595-09D(7)",
+      "A nonconforming lot may not be altered to increase its nonconformity (595-10D(3)). Many block class lots are small. In the INS districts each dwelling unit needs 1,500 sq ft of lot (595-32A(1)(b))",
+      "A unit attached to the house is part of the principal building and takes the district yards, not the 3 or 4 ft accessory building yards the tool may show (595-04 'principal building')",
       "Minimum dwelling unit size 450 sq ft (595-32A(1)(c))",
       "Parking: 1 space per single-family dwelling unit, 1.5 per two-family dwelling unit (595-33B)",
       "Short-term rental (A17) is a use only by special exception in a few districts such as DD. It is not listed in CH, SS or WW (595-12 to 595-20, 595-32A(5))",
@@ -121,14 +126,16 @@
           "name": "Two-family attached or semidetached dwelling (A5, A6)",
           "path": "by_right",
           "districts": [
-            "SS"
+            "SS",
+            "CH",
+            "WW"
           ],
-          "conditions": "Permitted use in SS. A6: two units one over the other in a row of at least three dwellings (rowhouses). A5: a two-family dwelling attached to another by a common wall. Lot area by block class: A6 3,000 / 2,000 / 1,200 sq ft, A5 3,000 / 2,000 / 1,750. Also by right in Block Classes B and C of CH and WW. Parking 1.5 per unit.",
+          "conditions": "Permitted use in SS. A6: two units one over the other in a row of at least three dwellings (rowhouses). A5: a two-family dwelling attached to another by a common wall. Lot area by block class: A6 3,000 / 2,000 / 1,200 sq ft, A5 3,000 / 2,000 / 1,750. In CH and WW by right in Block Classes B and C only. Parking 1.5 per unit.",
           "min_lot_sqft": null,
           "section": "595-09A(1)(e), (f), 595-14B(5), (6), 595-12B(4), 595-15B(5), (6), 595-14D, 595-33B",
           "url": "https://ecode360.com/36576598",
           "confidence": "secondary",
-          "note": "Lot area depends on the block class map. A rowhouse with an upper and a lower unit fits A6."
+          "note": "Lot area depends on the block class map. A rowhouse with an upper and a lower unit fits A6. In CH and WW only Block Classes B and C (595-12B(4), 595-15B(5), (6))."
         },
         {
           "name": "Two-family dwellings (A4 to A6)",
@@ -190,7 +197,7 @@
         },
         {
           "kind": "other",
-          "condition": "Undefined residential uses are a special exception only in CH, DD, SS and WW. In other districts a second unit needs a use variance.",
+          "condition": "Undefined residential uses are a special exception only in CH, DD, SS and WW. Not in the transitional zones CH/INS-1 T and WW/INS-2 T or any other district, where a second unit needs a use variance.",
           "effect": "bars",
           "applies_to": [
             "internal",
