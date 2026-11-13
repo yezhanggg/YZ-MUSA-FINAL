@@ -61,7 +61,8 @@ def chart(t: pd.DataFrame, counties: gpd.GeoDataFrame) -> alt.VConcatChart:
     )
     # alt.Data has no annotations (only **kwds). alt.InlineData is typed, but altair then inlines
     # the counties instead of listing them under "datasets", which changes the saved spec.
-    geo = alt.Data(values=json.loads(counties.to_json())["features"])  # type: ignore[no-untyped-call]
+    # unused-ignore: where altair is not installed (CI) it is Any and the ignore has nothing to silence.
+    geo = alt.Data(values=json.loads(counties.to_json())["features"])  # type: ignore[no-untyped-call,unused-ignore]
     cmap = (
         alt.Chart(geo)
         .mark_geoshape(stroke="white", strokeWidth=0.5)

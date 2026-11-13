@@ -184,6 +184,8 @@ def write_dem_source(root: Path, place: str, bounds_utm: tuple[float, float, flo
 
 
 def test_read_warps_utm_metres_to_local_feet(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # terrain.dem_vrt builds the tile mosaic with the GDAL Python bindings, which pip does not install with rasterio.
+    pytest.importorskip("osgeo", reason="needs the GDAL Python bindings (osgeo) for terrain.dem_vrt")
     from pyproj import Transformer
 
     monkeypatch.setenv("ADU_DATA_DIR", str(tmp_path))

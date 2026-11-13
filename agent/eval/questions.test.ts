@@ -1,8 +1,10 @@
 // Tool-level check of the eval set, no model: for every question, calling the tool executors through the Node
 // provider reproduces the ground truth. This proves the tools can answer the set and catches tool bugs early.
-// Skipped when the lot data folders the set was made from are not on this machine.
+// Skipped when the lot data folders the set was made from are not on this machine. A question that calls a tool reading
+// the public zoning text (tier B) is also skipped when that folder (ZONING_TEXT_DIR) is not on this machine.
 import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { zoningTextDir } from '../nodeProvider';
 import { TOOLS } from '../schema';
 import { QUESTIONS_FILE, callTool, readSet, useRoots } from './provider';
 import { numbersIn } from './score';
@@ -11,6 +13,9 @@ import { CATEGORIES, type Fact } from './types';
 const set = existsSync(QUESTIONS_FILE) ? readSet() : null;
 const haveData = !!set && Object.values(set.data_roots).every((r) => existsSync(r));
 if (set) useRoots(set.data_roots);
+// Tools that read the zoning text folder (app/src/agent/executors.ts: p.zoningText).
+const TEXT_TOOLS = new Set(['get_rule_text', 'get_place_answer', 'search_zoning_text', 'list_text_places']);
+const haveText = existsSync(zoningTextDir());
 
 const TOOL_NAMES = new Set(TOOLS.map((t) => t.name));
 
@@ -61,7 +66,7 @@ describe('eval set shape', () => {
 
 describe.skipIf(!haveData)('ground truth is reproducible from the tools', () => {
   for (const q of set?.questions ?? []) {
-    it(`${q.id}: ${q.question}`, async () => {
+    it.skipIf(!haveText && q.calls.some((c) => TEXT_TOOLS.has(c.name)))(`${q.id}: ${q.question}`, async () => {
       const results: unknown[] = [];
       for (const c of q.calls) {
         const out = await callTool(q.context, c.name, c.input);

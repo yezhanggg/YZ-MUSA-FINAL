@@ -14,10 +14,10 @@ concurrency:
 env:
   PYTHON_VERSION: "3.12"
   NODE_VERSION: "22"
-  # ruff check and ruff format --check fail the job. mypy reports only until its last errors
-  # (pipeline/vision and pipeline/corpus/tierb.py) are fixed. Then set MYPY_STRICT to "true".
+  # ruff check, ruff format --check and mypy (strict for pipeline/, see pyproject.toml) fail the job.
+  # Set one to "false" to make it report only.
   LINT_STRICT: "true"
-  MYPY_STRICT: "false"
+  MYPY_STRICT: "true"
 
 jobs:
   guard:

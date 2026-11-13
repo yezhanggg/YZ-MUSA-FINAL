@@ -335,7 +335,7 @@ Status at 00:39 on 2026-11-12:
 | `npx tsc --noEmit -p tsconfig.json` | 0 errors |
 | `python .github/scripts/check_schemas.py` | 43 rule files, assumptions and the lot schema: 0 problems |
 | `ruff check .` and `ruff format --check .` | clean |
-| `mypy pipeline` (mypy 2.4.1 in geospatial) | 62 errors in 11 files at 00:39. Those 62 were fixed at 14:40 on 2026-11-12: `pipeline/tract/`, `pipeline/validation/` and `pipeline/corpus/evaluate.py` are clean. Still open at 14:40: 16 errors in files under other work, `pipeline/vision/` (ensemble 8, infer_lots 1) and the new `pipeline/corpus/tierb.py` (7). CI keeps mypy report-only (`MYPY_STRICT` in `ci.yml`) until those are 0 |
+| `mypy pipeline` (mypy 2.4.1 in geospatial) | 62 errors in 11 files at 00:39. Those 62 were fixed at 14:40 on 2026-11-12: `pipeline/tract/`, `pipeline/validation/` and `pipeline/corpus/evaluate.py` are clean. Still open at 14:40: 16 errors in files under other work, `pipeline/vision/` (ensemble 8, infer_lots 1) and the new `pipeline/corpus/tierb.py` (7). Those reached 0 later on 2026-11-12, and CI now fails on mypy errors (`MYPY_STRICT` is `"true"` in `ci.yml`) |
 | `npx playwright test` | 9 passed in `app/e2e/lot-flow.spec.ts` (2.5 min, dev server, lot files on the drive) |
 
 ## 6. Order of a full refresh

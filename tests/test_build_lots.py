@@ -450,6 +450,7 @@ def test_street_groups() -> None:
 def test_terrain_refresh_without_rerun(built: Path) -> None:
     """build_lots terrain folds a terrain block into built tracts from a DEM, keeps the fit as built,
     backs up what it rewrites and skips finished tracts on a second run."""
+    pytest.importorskip("osgeo", reason="needs the GDAL Python bindings (osgeo) for terrain.dem_vrt")
     from pyproj import Transformer
     from test_terrain import write_dem_source
 

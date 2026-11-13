@@ -249,7 +249,7 @@ All were run on 2026-11-12 between 00:37 and 00:39. The results are in [RUNNING.
 | `$G -m pytest -q tests` | Rules, fit, lot builder, money, tract analysis, validation kit, the 50-lot regression set (762 passed, 1 skipped) |
 | `$M -m pytest -q tests/test_vision.py` | Land cover code (needs torch) |
 | `ruff check .` and `ruff format --check .` | Python lint and format (clean) |
-| `mypy pipeline` | Python types. 16 known errors today (see f). Do not add new ones |
+| `mypy pipeline` | Python types. 0 errors (mypy 2.4.1, 2026-11-12). CI fails on any new one (`MYPY_STRICT`) |
 | `$G .github/scripts/check_schemas.py` | Rule files, assumptions and the lot schema against their schemas |
 | `npx tsc --noEmit -p tsconfig.json` | TypeScript types (0 errors) |
 | `npx vitest run` | Browser money, verdicts, citations, Ask tools, eval scoring (414 passed) |
@@ -315,4 +315,4 @@ Also backups: `processed/<place>/<name>.prev.parquet` (the table before the last
   - 1,780 of the 2,932 modelled tracts are outside their range (`~/musa-drive/processed/5500/room_summary.json`).
   - The statewide range is wide: 1.49 to 3.55 million lots.
 - **Licences marked unclear.** Several city and county layers state no licence, or none that covers republishing. The Chesapeake labels and the PEMA imagery also have open points. See [LICENSES.md](LICENSES.md) ("unclear, ask the provider").
-- **Type-check errors.** `mypy pipeline` reports 16 errors in 3 files (mypy 2.4.1, geospatial env, 2026-11-12 14:40): `pipeline/vision/ensemble.py` (8), `pipeline/vision/infer_lots.py` (1) and `pipeline/corpus/tierb.py` (7). The 62 earlier errors in `pipeline/tract/`, `pipeline/validation/` and `pipeline/corpus/evaluate.py` are fixed (outputs checked unchanged, see `~/musa-drive/ops/logs/types.md`). When `mypy pipeline` reaches 0, set `MYPY_STRICT` to `"true"` in `.github/workflows/ci.yml`. CI pins mypy 2.4.1 in `requirements-dev.txt`. An older mypy (1.20.2 in the base conda env) reports only 15, so use the pinned one.
+- **Type-check errors.** `mypy pipeline` is clean (0 errors, mypy 2.4.1 pinned in `requirements-dev.txt`, checked 2026-11-12 in a clean Python 3.12 venv with only the CI packages and in the geospatial env). `MYPY_STRICT` is `"true"` in `.github/workflows/ci.yml`, so a new error fails CI. An older mypy (1.20.2 in the base conda env) can disagree, so use the pinned one.
