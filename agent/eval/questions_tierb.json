@@ -1,0 +1,729 @@
+{
+ "about": "Tier B questions (search_zoning_text over public zoning text). Hand-written: scripts in ~/musa-drive/ops/scratch/tierb/make_tierb_questions.py. Read with questions.json by agent/eval/provider.ts readSet.",
+ "questions": [
+  {
+   "id": "tierb-01",
+   "category": "tier_b",
+   "question": "Can I build an ADU in Plum borough, Allegheny County? What does the zoning text say?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "get_place_answer"
+    ],
+    [
+     "search_zoning_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Plum borough",
+      "topic": "status"
+     }
+    },
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Plum borough",
+      "query": "accessory dwelling unit"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "section",
+     "label": "section 406",
+     "value": "406"
+    },
+    {
+     "kind": "behaviour",
+     "label": "labels it unverified text",
+     "accept": [
+      "unverified",
+      "not verified",
+      "has not been checked",
+      "not been verified"
+     ],
+     "evidence": "Unverified text search"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says to confirm with the town",
+     "accept": [
+      "zoning officer",
+      "confirm with",
+      "check with",
+      "ask the",
+      "contact the",
+      "zoning office"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "why": "a verdict outside a quote"
+    },
+    {
+     "pattern": "\\b(allowed|permitted) by right\\b|\\bby-right\\b",
+     "why": "a by-right verdict outside a quote"
+    },
+    {
+     "pattern": "\\byou (can|can't|cannot|may not) (build|add|have)\\b",
+     "why": "a verdict to the user outside a quote"
+    },
+    {
+     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "why": "an absence verdict"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No rule file: quotes Section 406 word for word, labels it unverified, gives link and date, says to confirm with the borough. No verdict.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "tierb-02",
+   "category": "tier_b",
+   "question": "Does Dunmore borough's zoning ordinance say anything about granny flats?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "search_zoning_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Dunmore borough",
+      "query": "granny flat accessory dwelling"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "cites 2.2 or 3.4",
+     "accept": [
+      "2.2",
+      "3.4"
+     ],
+     "evidence": "granny flat"
+    },
+    {
+     "kind": "behaviour",
+     "label": "labels it unverified text",
+     "accept": [
+      "unverified",
+      "not verified",
+      "has not been checked",
+      "not been verified"
+     ],
+     "evidence": "Unverified text search"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "why": "a verdict outside a quote"
+    },
+    {
+     "pattern": "\\b(allowed|permitted) by right\\b|\\bby-right\\b",
+     "why": "a by-right verdict outside a quote"
+    },
+    {
+     "pattern": "\\byou (can|can't|cannot|may not) (build|add|have)\\b",
+     "why": "a verdict to the user outside a quote"
+    },
+    {
+     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "why": "an absence verdict"
+    }
+   ],
+   "scenario": null,
+   "rubric": "The pilot draft wrongly said Dunmore does not address ADUs. Must quote the 2.2 definition or the 3.4 tables and not say it is silent.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "tierb-03",
+   "category": "tier_b",
+   "question": "How big can an accessory apartment be in Gregg township, Centre County? Quote the code.",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "search_zoning_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Gregg township, Centre",
+      "query": "accessory apartment size floor area"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "cites 15.2.5",
+     "accept": [
+      "15.2.5"
+     ],
+     "evidence": "15.2.5"
+    },
+    {
+     "kind": "behaviour",
+     "label": "labels it unverified text",
+     "accept": [
+      "unverified",
+      "not verified",
+      "has not been checked",
+      "not been verified"
+     ],
+     "evidence": "Unverified text search"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "why": "a verdict outside a quote"
+    },
+    {
+     "pattern": "\\b(allowed|permitted) by right\\b|\\bby-right\\b",
+     "why": "a by-right verdict outside a quote"
+    },
+    {
+     "pattern": "\\byou (can|can't|cannot|may not) (build|add|have)\\b",
+     "why": "a verdict to the user outside a quote"
+    },
+    {
+     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "why": "an absence verdict"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Quotes the accessory apartment section with its numbers, labelled unverified. No verdict beyond the quote.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "tierb-04",
+   "category": "tier_b",
+   "question": "What does the Robesonia borough zoning ordinance say about accessory apartments?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "search_zoning_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Robesonia borough",
+      "query": "accessory apartment"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "labels it unverified text",
+     "accept": [
+      "unverified",
+      "not verified",
+      "has not been checked",
+      "not been verified"
+     ],
+     "evidence": "Unverified text search"
+    },
+    {
+     "kind": "behaviour",
+     "label": "mentions the scanned copy",
+     "accept": [
+      "ocr",
+      "scan",
+      "reading error"
+     ],
+     "evidence": "OCR"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "why": "a verdict outside a quote"
+    },
+    {
+     "pattern": "\\b(allowed|permitted) by right\\b|\\bby-right\\b",
+     "why": "a by-right verdict outside a quote"
+    },
+    {
+     "pattern": "\\byou (can|can't|cannot|may not) (build|add|have)\\b",
+     "why": "a verdict to the user outside a quote"
+    },
+    {
+     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "why": "an absence verdict"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Robesonia's copy is a scan read by OCR. Must say so and quote only text the tool returned.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "tierb-05",
+   "category": "tier_b",
+   "question": "Does the Howe township (Perry County) zoning ordinance say anything about tiny houses on wheels?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "search_zoning_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Howe township, Perry",
+      "query": "tiny house on wheels"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "says not found in the text searched",
+     "accept": [
+      "not found in the text searched"
+     ],
+     "evidence": "Not found in the text searched"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says to confirm with the town",
+     "accept": [
+      "zoning officer",
+      "confirm with",
+      "check with",
+      "ask the",
+      "contact the",
+      "zoning office"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "why": "an absence verdict"
+    },
+    {
+     "pattern": "\\bprohibit|\\bnot allowed\\b|\\bbanned\\b",
+     "why": "turns no match into a ban"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Full text on file and no match: says 'Not found in the text searched', not that the ordinance bans or ignores it.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "tierb-06",
+   "category": "tier_b",
+   "question": "Does South Middleton township's zoning text mention tiny houses?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "search_zoning_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "South Middleton township",
+      "query": "tiny house"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "says the text on file is incomplete",
+     "accept": [
+      "incomplete",
+      "not complete",
+      "only part",
+      "partial",
+      "may be missing",
+      "not the full"
+     ],
+     "evidence": "incomplete"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "why": "an absence verdict"
+    },
+    {
+     "pattern": "\\bprohibit|\\bnot allowed\\b|\\bbanned\\b",
+     "why": "turns no match into a ban"
+    },
+    {
+     "pattern": "not found in the text searched",
+     "why": "the not-found wording when the text is incomplete"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Text on file is a set of article files: no 'not found' wording, says the text is incomplete.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "tierb-07",
+   "category": "tier_b",
+   "question": "What does the Penn township zoning text say about accessory dwellings?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [],
+   "calls": [
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Penn township",
+      "query": "accessory dwelling"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "asks which county",
+     "accept": [
+      "which county",
+      "what county",
+      "which penn township",
+      "which one",
+      "more than one",
+      "several",
+      "13 "
+     ],
+     "evidence": "Ask which county"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(\u00a7|\\bsection)\\s*\\d",
+     "why": "cites a section before knowing which Penn township"
+    }
+   ],
+   "scenario": null,
+   "rubric": "13 Pennsylvania municipalities are named Penn township: asks which one before quoting.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "tierb-08",
+   "category": "tier_b",
+   "question": "What does Duryea borough's zoning say about accessory dwelling units?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "search_zoning_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Duryea borough",
+      "query": "accessory dwelling unit"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "says it is the county ordinance",
+     "accept": [
+      "luzerne county"
+     ],
+     "evidence": "Luzerne County zoning ordinance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says not found in the text searched",
+     "accept": [
+      "not found in the text searched"
+     ],
+     "evidence": "Not found in the text searched"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "why": "a verdict outside a quote"
+    },
+    {
+     "pattern": "\\b(allowed|permitted) by right\\b|\\bby-right\\b",
+     "why": "a by-right verdict outside a quote"
+    },
+    {
+     "pattern": "\\byou (can|can't|cannot|may not) (build|add|have)\\b",
+     "why": "a verdict to the user outside a quote"
+    },
+    {
+     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "why": "an absence verdict"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Duryea is under the Luzerne County Zoning Ordinance, which has no ADU wording: says the county ordinance applies and 'Not found in the text searched', no verdict either way.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "tierb-09",
+   "category": "tier_b",
+   "question": "Can I turn my carriage house into an ADU in York city? Which section says so?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "York city",
+      "topic": "approval"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "section",
+     "label": "1.04.005",
+     "value": "1.04.005"
+    },
+    {
+     "kind": "enum",
+     "label": "approval path",
+     "value": "special_exception",
+     "accept": [
+      "special exception"
+     ],
+     "reject": []
+    },
+    {
+     "kind": "behaviour",
+     "label": "answers from the checked rule",
+     "accept": [
+      "special exception"
+     ],
+     "evidence": "special_exception"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "unverified text",
+     "why": "answers from text search when a verified rule file exists"
+    },
+    {
+     "pattern": "(?<!not )(?<!n't )\\b(allowed|permitted) by right",
+     "why": "says by right"
+    }
+   ],
+   "scenario": null,
+   "rubric": "York city has a verified rule file: answers from get_rule_text (special exception, 1.04.005), not from text search."
+  },
+  {
+   "id": "tierb-10",
+   "category": "tier_b",
+   "question": "Can you quote Easton city's zoning ordinance on ADUs?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "search_zoning_text",
+     "list_text_places"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Easton city",
+      "query": "accessory dwelling unit"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "says no text is on file",
+     "accept": [
+      "no public zoning text",
+      "not on file",
+      "not in my data",
+      "don't have",
+      "do not have",
+      "not have the",
+      "no text",
+      "can't quote",
+      "cannot quote",
+      "unable to quote"
+     ],
+     "evidence": "No public zoning text"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says to confirm with the town",
+     "accept": [
+      "zoning officer",
+      "confirm with",
+      "check with",
+      "ask the",
+      "contact the",
+      "zoning office"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(\u00a7|\\bsection)\\s*\\d",
+     "why": "a section with no text behind it"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No text and no rule file for Easton: says so, gives the statewide baseline or points to the zoning officer, quotes nothing.",
+   "quotes": "verbatim"
+  }
+ ]
+}

@@ -108,6 +108,37 @@ export function rulesCorpus(): string {
   return RULES_CORPUS;
 }
 
+// ------------------------------------------------------------------ quotes (tier B)
+const QUOTE_RES = [/"([^"]+)"/g, /“([^”]+)”/g];
+const flat = (s: string) => norm(s).replace(/[^a-z0-9]+/g, ' ').trim();
+
+/** Spans in quotation marks with 4 words or more. A span cut with "..." is split into its pieces. A span that ends in
+ *  a question mark is a question for the user to ask, not a quote. */
+export function quotedSpans(text: string): string[] {
+  const out: string[] = [];
+  for (const re of QUOTE_RES)
+    for (const m of text.matchAll(re))
+      if (!/\?\s*$/.test(m[1]))
+        for (const piece of m[1].split(/\.\.\.|…|\[[^\]]*\]/)) if (flat(piece).split(' ').filter(Boolean).length >= 4) out.push(piece.trim());
+  return out;
+}
+
+/** The answer with its quoted spans taken out. */
+export const withoutQuotes = (text: string) => QUOTE_RES.reduce((t, re) => t.replace(re, ' "" '), text);
+
+/** Quoted spans that are not in any search_zoning_text passage or other tool result of the run (case, spacing and punctuation ignored). */
+export function madeUpQuotes(answer: string, events: ToolEvent[], question = ''): string[] {
+  const searches = events.filter((e) => e.name === 'search_zoning_text');
+  // Passages first; any other tool result text (a rule file note, the statewide baseline) also counts as a source.
+  const passages = [
+    ...searches.flatMap((e) => ((e.result as { results?: { quote?: string }[] } | null)?.results ?? []).map((r) => flat(r.quote ?? ''))),
+    ...events.map((e) => flat(JSON.stringify(e.result ?? '').replace(/\\n/g, ' '))),
+  ].join(' | ');
+  // Words the user asked or the assistant searched for are not quotes of the text.
+  const asked = [question, ...events.flatMap((e) => Object.values(e.input ?? {}).filter((v): v is string => typeof v === 'string'))].map(flat).join(' | ');
+  return quotedSpans(answer).filter((q) => !passages.includes(flat(q)) && !asked.includes(flat(q)));
+}
+
 // ------------------------------------------------------------------ numbers
 /** Numbers written in a text, with $ , k, thousand, million and % read. Citations, links and lot ids are removed
  *  first so "6305(4)" or "0002D00004" are not read as numbers. */
@@ -168,6 +199,8 @@ export interface QuestionScore {
   facts: FactResult[];
   tools_missing: string[][];
   made_up_citations: string[];
+  /** Tier B: quoted spans not found in a search_zoning_text passage. */
+  made_up_quotes: string[];
   forbidden_hits: string[];
   scenario_ok: boolean;
   scenario_why: string | null;
@@ -187,7 +220,9 @@ export function scoreQuestion(q: EvalQuestion, t: Transcript): QuestionScore {
   const tools_missing = q.tools_required.filter((group) => !group.some((n) => called.has(n)));
   const corpus = `${rulesCorpus()}\n${squash(JSON.stringify(t.tool_calls.map((c) => c.result)))}\n${squash(q.question)}`;
   const made_up_citations = citationsIn(answer).filter((c) => !citationKnown(c, corpus));
-  const forbidden_hits = q.forbidden.filter((f) => new RegExp(f.pattern, 'i').test(answer)).map((f) => f.why);
+  const plain = q.quotes === 'verbatim' ? withoutQuotes(answer) : answer;
+  const forbidden_hits = q.forbidden.filter((f) => new RegExp(f.pattern, 'i').test(plain)).map((f) => f.why);
+  const made_up_quotes = q.quotes === 'verbatim' ? madeUpQuotes(answer, t.tool_calls, q.question) : [];
   let scenario_ok = true;
   let scenario_why: string | null = null;
   if (q.scenario) {
@@ -206,9 +241,9 @@ export function scoreQuestion(q: EvalQuestion, t: Transcript): QuestionScore {
       scenario_why = `no lot tool call used ${q.scenario}`;
     }
   }
-  const correct = t.ok && facts.every((f) => f.pass) && tools_missing.length === 0 && made_up_citations.length === 0 && forbidden_hits.length === 0 && scenario_ok;
+  const correct = t.ok && facts.every((f) => f.pass) && tools_missing.length === 0 && made_up_citations.length === 0 && made_up_quotes.length === 0 && forbidden_hits.length === 0 && scenario_ok;
   return {
-    id: q.id, category: q.category, correct, ok: t.ok, facts, tools_missing, made_up_citations, forbidden_hits, scenario_ok, scenario_why,
+    id: q.id, category: q.category, correct, ok: t.ok, facts, tools_missing, made_up_citations, made_up_quotes, forbidden_hits, scenario_ok, scenario_why,
     truncated: (t.stop_reasons ?? []).includes('max_tokens'),
     tool_calls: t.tool_calls.length, latency_ms: t.latency_ms, cost_usd: t.cost_usd, usage: t.usage,
   };
@@ -224,6 +259,7 @@ export interface RunSummary {
   correct_pct: number;
   by_category: Record<string, { n: number; correct: number; pct: number }>;
   made_up_citations: number;
+  made_up_quotes: number;
   forbidden_hits: number;
   failed_runs: number;
   avg_tool_calls: number;
@@ -262,6 +298,7 @@ export function summarize(runId: string, scores: QuestionScore[], transcripts: T
     correct_pct: pct(correct, scores.length),
     by_category,
     made_up_citations: made,
+    made_up_quotes: scores.reduce((a, s) => a + (s.made_up_quotes?.length ?? 0), 0),
     forbidden_hits: scores.reduce((a, s) => a + s.forbidden_hits.length, 0),
     failed_runs: scores.filter((s) => !s.ok).length,
     avg_tool_calls: scores.length ? Math.round((10 * scores.reduce((a, s) => a + s.tool_calls, 0)) / scores.length) / 10 : 0,
@@ -287,6 +324,7 @@ export function markdown(s: RunSummary, scores: QuestionScore[]): string {
     `|---|---|---|`,
     `| Correct | ${s.correct} of ${s.questions} (${s.correct_pct}%) | ${s.targets.correct_pct}% (${mark(s.correct_pct >= s.targets.correct_pct)}) |`,
     `| Made-up citations | ${s.made_up_citations} | ${s.targets.made_up_citations} (${mark(s.made_up_citations <= s.targets.made_up_citations)}) |`,
+    `| Quotes not in the searched text (tier B) | ${s.made_up_quotes} | 0 |`,
     `| Forbidden content | ${s.forbidden_hits} | 0 |`,
     `| Runs that failed | ${s.failed_runs} | 0 |`,
     `| Tool calls per question | ${s.avg_tool_calls} | |`,
@@ -312,6 +350,7 @@ export function markdown(s: RunSummary, scores: QuestionScore[]): string {
       ...m.facts.filter((f) => !f.pass).map((f) => `fact "${f.label}" missing (${f.why ?? ''})`),
       ...m.tools_missing.map((g) => `no call to ${g.join(' or ')}`),
       ...m.made_up_citations.map((c) => `made-up citation ${c}`),
+      ...(m.made_up_quotes ?? []).map((c) => `quote not in the text: "${c.slice(0, 80)}"`),
       ...m.forbidden_hits.map((f) => `forbidden: ${f}`),
       m.scenario_why,
     ].filter(Boolean);
@@ -339,7 +378,7 @@ export function scoreRun(dir: string, questions: EvalQuestion[]): RunSummary {
 export function printSummary(s: RunSummary) {
   console.log(`correct: ${s.correct}/${s.questions} (${s.correct_pct}%), target ${s.targets.correct_pct}%`);
   console.log(`by category: ${Object.entries(s.by_category).map(([c, v]) => `${c} ${v.correct}/${v.n}`).join(', ')}`);
-  console.log(`made-up citations: ${s.made_up_citations} (target ${s.targets.made_up_citations}), forbidden: ${s.forbidden_hits}, failed runs: ${s.failed_runs}`);
+  console.log(`made-up citations: ${s.made_up_citations} (target ${s.targets.made_up_citations}), quotes not in the text: ${s.made_up_quotes}, forbidden: ${s.forbidden_hits}, failed runs: ${s.failed_runs}`);
   console.log(`tool calls per question: ${s.avg_tool_calls}, latency mean ${(s.latency_ms.mean / 1000).toFixed(1)} s, p90 ${(s.latency_ms.p90 / 1000).toFixed(1)} s`);
   console.log(`tokens in ${s.tokens.input_tokens}, out ${s.tokens.output_tokens}, cache read ${s.tokens.cache_read_input_tokens}, cache write ${s.tokens.cache_creation_input_tokens}${s.usage_estimated ? ' (estimate)' : ''}`);
   console.log(`cost: $${s.cost_usd.toFixed(2)}${s.usage_estimated ? ' (estimate)' : ''}. Targets ${s.meets_targets ? 'met' : 'not met'}.`);

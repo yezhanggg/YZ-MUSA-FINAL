@@ -37,7 +37,7 @@ const jsonNumbers = (text: string) => [...text.matchAll(/-?\d+(?:\.\d+)?/g)].map
 
 describe('eval set shape', () => {
   it.skipIf(!set)('has 10 questions in each main category, up to 5 on town rule files, unique ids', () => {
-    for (const c of CATEGORIES.filter((c) => c !== 'town_rules')) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
+    for (const c of CATEGORIES.filter((c) => c !== 'town_rules' && c !== 'ladder')) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
     expect(set!.questions.filter((q) => q.category === 'town_rules').length).toBeLessThanOrEqual(5);
     expect(new Set(set!.questions.map((q) => q.id)).size).toBe(set!.questions.length);
   });
@@ -50,9 +50,10 @@ describe('eval set shape', () => {
     }
   });
 
-  it.skipIf(!set)('traps carry a behaviour check, other questions carry data', () => {
+  it.skipIf(!set)('traps and tier B carry a behaviour check, other questions carry data', () => {
     for (const q of set!.questions) {
-      if (q.category === 'traps') expect(q.facts.some((f) => f.kind === 'behaviour'), q.id).toBe(true);
+      // Tier B questions check behaviour (labels, wording) on top of the text the tool returns.
+      if (q.category === 'traps' || q.category === 'tier_b' || q.category === 'ladder') expect(q.facts.some((f) => f.kind === 'behaviour'), q.id).toBe(true);
       else expect(q.facts.some((f) => f.kind !== 'behaviour'), q.id).toBe(true);
     }
   });

@@ -11,6 +11,8 @@ import type { LotAgentProvider } from '../app/src/lib/lot/agentTools';
 import { PLACE_BY_COUNTY, loadLot, loadTractLots, lotByIdAnywhere, type Fetcher } from '../app/src/lib/lot/load';
 import type { LotRecord, Scenario } from '../app/src/lib/lot/types';
 import { DEFAULT_MONEY, moneyOptions, tractRents } from '../app/src/tool/testState';
+import { zoningTextSource, type ZoningTextSource } from '../app/src/agent/zoningText';
+import { memoryPlaces, type PlaceRow, type PlacesSource } from '../app/src/agent/placeAnswer';
 
 /** The unit drawn on screen in testing mode, as the lot tools take it. */
 export type LotUnit = ReturnType<LotAgentProvider['unit']>;
@@ -127,6 +129,36 @@ function addressesOf(place: string): AddressEntry[] {
   return entries;
 }
 
+/** The public zoning text files (tier B) on disk: ZONING_TEXT_DIR, default ~/musa-drive/corpus/tierb (made by
+ *  pipeline/corpus/tierb.py). Read through the same loader as the browser. */
+export function zoningTextDir(): string {
+  return resolve(process.env.ZONING_TEXT_DIR ?? resolve(homedir(), 'musa-drive/corpus/tierb'));
+}
+const TEXT_URL = 'file:///zoning_text/';
+let textSource: { dir: string; src: ZoningTextSource } | null = null;
+export function nodeZoningText(): ZoningTextSource {
+  const dir = zoningTextDir();
+  if (textSource?.dir === dir) return textSource.src;
+  const src = zoningTextSource({
+    baseUrl: TEXT_URL,
+    fetch: async (url) => {
+      const path = resolve(dir, url.slice(TEXT_URL.length));
+      return path.startsWith(dir) && existsSync(path) ? new Response(readFileSync(path)) : new Response('missing', { status: 404 });
+    },
+  });
+  textSource = { dir, src };
+  return src;
+}
+
+/** The statewide place table (app/public/data/pa_places.json), read once. Empty source when the file is missing. */
+let placeRows: PlacesSource | null = null;
+export function nodePlaces(): PlacesSource {
+  if (placeRows) return placeRows;
+  const f = resolve(DATA, 'pa_places.json');
+  placeRows = existsSync(f) ? memoryPlaces(JSON.parse(readFileSync(f, 'utf8')) as PlaceRow[]) : { rows: async () => null };
+  return placeRows;
+}
+
 /** Mean of the outer ring of a lot polygon, lon / lat. */
 function lotPoint(rec: LotRecord): LngLat | null {
   const g = rec.lot.polygon;
@@ -164,6 +196,8 @@ export function nodeProvider(
   const townBy = (geoid: string) => data().towns.features.find((f) => f.properties.GEOID === geoid)?.properties ?? null;
   return {
     lots: nodeLots(opts.lot, opts.scenario ?? 'today', opts.unit ?? null),
+    zoningText: nodeZoningText(),
+    places: nodePlaces(),
     async lotById(id) {
       const lot = byId(id);
       return lot ? siteOf(lot) : null;

@@ -9,6 +9,8 @@ import { findLoadedLot, loadedLots, lotByIdAnywhere } from '../lib/lot/load';
 import type { LotAgentProvider } from '../lib/lot/agentTools';
 import type { LotRecord } from '../lib/lot/types';
 import { moneyOptions, tractRents } from '../tool/testState';
+import { zoningTextSource } from './zoningText';
+import { placesSource } from './placeAnswer';
 
 function siteOfLot(lot: Lot): SiteRecord {
   const { tracts, towns } = useTool.getState();
@@ -85,6 +87,10 @@ export const lotProvider: LotAgentProvider = {
 
 export const browserProvider: DataProvider = {
   lots: lotProvider,
+  // Public zoning text (tier B), one file per town, loaded when the assistant searches it.
+  zoningText: zoningTextSource(),
+  // The statewide place table for get_place_answer, from the app's own data folder.
+  places: placesSource(),
   async lotById(id) {
     const lot = await lotById(id);
     return lot ? siteOfLot(lot) : null;

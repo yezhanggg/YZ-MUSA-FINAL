@@ -44,8 +44,16 @@ export function useRoots(roots: Record<string, string>) {
   for (const [place, root] of Object.entries(roots)) if (!process.env[envKey(place)]) process.env[envKey(place)] = root;
 }
 
+/** Hand-written questions added to the generated set: tier B (search_zoning_text) and the answer ladder (get_place_answer). */
+export const TIERB_FILE = resolve(EVAL_DIR, 'questions_tierb.json');
+export const LADDER_FILE = resolve(EVAL_DIR, 'questions_ladder.json');
+
 export function readSet(file = QUESTIONS_FILE): QuestionSet {
-  return JSON.parse(readFileSync(file, 'utf8')) as QuestionSet;
+  const set = JSON.parse(readFileSync(file, 'utf8')) as QuestionSet;
+  if (file === QUESTIONS_FILE)
+    for (const f of [TIERB_FILE, LADDER_FILE])
+      if (existsSync(f)) set.questions = [...set.questions, ...(JSON.parse(readFileSync(f, 'utf8')) as { questions: QuestionSet['questions'] }).questions];
+  return set;
 }
 
 export function providerFor(c: QuestionContext): DataProvider {

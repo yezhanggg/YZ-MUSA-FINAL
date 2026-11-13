@@ -1,0 +1,1788 @@
+{
+ "about": "Answer-ladder questions (get_place_answer). Hand-written: ~/musa-drive/ops/scratch/tierb/make_ladder_questions.py. Read with questions.json by agent/eval/provider.ts readSet.",
+ "questions": [
+  {
+   "id": "ladder-01",
+   "category": "ladder",
+   "question": "Can I turn my old carriage house into an ADU in York city?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "York city",
+      "unit_type": "garage"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "verdict",
+     "accept": [
+      "with a hearing",
+      "special exception"
+     ],
+     "evidence": "special exception"
+    },
+    {
+     "kind": "section",
+     "label": "1.04.005",
+     "value": "1.04.005"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: checked rule file",
+     "accept": [
+      "checked rule file",
+      "verified"
+     ],
+     "evidence": "Checked rule file"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Verified: allowed with a hearing (special exception), section, check date, next step."
+  },
+  {
+   "id": "ladder-02",
+   "category": "ladder",
+   "question": "I want a 1,200 sq ft detached cottage behind my house in Allentown. Does that work?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Allentown",
+      "unit_type": "detached",
+      "size_sqft": 1200
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "size cap",
+     "value": 800,
+     "tol_pct": 0,
+     "unit": "sqft"
+    },
+    {
+     "kind": "behaviour",
+     "label": "does not fit",
+     "accept": [
+      "does not fit",
+      "doesn't fit",
+      "too big",
+      "too large",
+      "over the",
+      "exceeds",
+      "larger than"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: checked rule file",
+     "accept": [
+      "checked rule file",
+      "verified"
+     ],
+     "evidence": "Checked rule file"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Proposal over the 800 sq ft cap: says it does not fit and why."
+  },
+  {
+   "id": "ladder-03",
+   "category": "ladder",
+   "question": "Could I build a new 600 sq ft detached backyard cottage in York city?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "York city",
+      "unit_type": "detached",
+      "size_sqft": 600
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "only conversions",
+     "accept": [
+      "garage conversion",
+      "existing carriage house",
+      "existing garage",
+      "conversion"
+     ],
+     "evidence": "garage conversion"
+    },
+    {
+     "kind": "behaviour",
+     "label": "does not fit",
+     "accept": [
+      "does not fit",
+      "doesn't fit",
+      "not allowed",
+      "only"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: checked rule file",
+     "accept": [
+      "checked rule file",
+      "verified"
+     ],
+     "evidence": "Checked rule file"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "York allows only conversions of an existing garage or carriage house: a new detached cottage does not fit."
+  },
+  {
+   "id": "ladder-04",
+   "category": "ladder",
+   "question": "Are ADUs allowed in Reading city?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Reading city"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "verdict",
+     "accept": [
+      "not allowed"
+     ],
+     "evidence": "prohibited"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: checked rule file",
+     "accept": [
+      "checked rule file",
+      "verified"
+     ],
+     "evidence": "Checked rule file"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\byes\\b",
+     "why": "says yes"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Reading bars ADUs: Not allowed today, with the variance path and next step."
+  },
+  {
+   "id": "ladder-05",
+   "category": "ladder",
+   "question": "Can I build an ADU in Pittsburgh?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Pittsburgh"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "verdict",
+     "accept": [
+      "allowed"
+     ],
+     "evidence": "by_right"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: checked rule file",
+     "accept": [
+      "checked rule file",
+      "verified"
+     ],
+     "evidence": "Checked rule file"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Pittsburgh: allowed (by right, a new detached unit by administrator exception), check date, next step."
+  },
+  {
+   "id": "ladder-06",
+   "category": "ladder",
+   "question": "Are ADUs allowed in Bethlehem city, Northampton County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Bethlehem city",
+      "county": "Northampton"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "verdict",
+     "accept": [
+      "family",
+      "allowed with conditions",
+      "zoning permit"
+     ],
+     "evidence": "family only"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: first reading",
+     "accept": [
+      "first reading",
+      "drafted",
+      "open point"
+     ],
+     "evidence": "First reading"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Drafted: family only, zoning permit; first reading with open points."
+  },
+  {
+   "id": "ladder-07",
+   "category": "ladder",
+   "question": "Can I add a backyard ADU in Wilkes-Barre city?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Wilkes-Barre city"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "verdict",
+     "accept": [
+      "not allowed",
+      "variance"
+     ],
+     "evidence": "variance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: first reading",
+     "accept": [
+      "first reading",
+      "drafted",
+      "open point"
+     ],
+     "evidence": "First reading"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Drafted, not addressed: not allowed today, variance; open points."
+  },
+  {
+   "id": "ladder-08",
+   "category": "ladder",
+   "question": "Who can live in an ADU in Abington township, Montgomery County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Abington township",
+      "county": "Montgomery"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "family only",
+     "accept": [
+      "family"
+     ],
+     "evidence": "family only"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: first reading",
+     "accept": [
+      "first reading",
+      "drafted",
+      "open point"
+     ],
+     "evidence": "First reading"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Drafted: family only, special exception, owner occupied; first reading."
+  },
+  {
+   "id": "ladder-09",
+   "category": "ladder",
+   "question": "Can I build an ADU in Atwood borough?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Atwood borough"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no zoning",
+     "accept": [
+      "no zoning"
+     ],
+     "evidence": "no zoning"
+    },
+    {
+     "kind": "behaviour",
+     "label": "permits still apply",
+     "accept": [
+      "building",
+      "sewage"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: reported record",
+     "accept": [
+      "dced",
+      "not checked against",
+      "municipal statistics"
+     ],
+     "evidence": "DCED"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "not allowed",
+     "why": "says not allowed where there is no zoning"
+    }
+   ],
+   "scenario": null,
+   "rubric": "DCED lists no zoning: allowed, no zoning here; building code and sewage still apply; DCED record not checked against code."
+  },
+  {
+   "id": "ladder-10",
+   "category": "ladder",
+   "question": "What are the ADU rules in Bethel township, Armstrong County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Bethel township",
+      "county": "Armstrong"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no zoning",
+     "accept": [
+      "no zoning"
+     ],
+     "evidence": "no zoning"
+    },
+    {
+     "kind": "behaviour",
+     "label": "contact phone",
+     "accept": [
+      "(724) 763-1882",
+      "724-763-1882"
+     ],
+     "evidence": "(724) 763-1882"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: reported record",
+     "accept": [
+      "dced",
+      "not checked against",
+      "municipal statistics"
+     ],
+     "evidence": "DCED"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No zoning township: zoning does not restrict; permits; contact phone from the tool."
+  },
+  {
+   "id": "ladder-11",
+   "category": "ladder",
+   "question": "Can I put a 1,000 sq ft cottage on my lot in Atwood borough?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Atwood borough",
+      "unit_type": "detached",
+      "size_sqft": 1000
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "fits zoning",
+     "accept": [
+      "no zoning",
+      "zoning does not"
+     ],
+     "evidence": "no zoning"
+    },
+    {
+     "kind": "behaviour",
+     "label": "permits",
+     "accept": [
+      "building",
+      "sewage"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b\\d{3,4}\\s*(sq|square)[^.]*\\b(cap|limit|maximum)\\b",
+     "why": "an invented size cap"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Proposal in a no-zoning place: zoning does not limit it; building and sewage permits."
+  },
+  {
+   "id": "ladder-12",
+   "category": "ladder",
+   "question": "Can I build an ADU in Duryea borough?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Duryea borough"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "county zoning",
+     "accept": [
+      "luzerne county"
+     ],
+     "evidence": "Luzerne County"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: unverified text",
+     "accept": [
+      "unverified"
+     ],
+     "evidence": "Unverified"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "why": "a verdict from unverified text"
+    },
+    {
+     "pattern": "(?<!not )\\b(allowed|permitted) by right\\b",
+     "why": "a by-right verdict from unverified text"
+    }
+   ],
+   "scenario": null,
+   "rubric": "County zoning (Luzerne). Text search finds no ADU wording: not checked, no verdict, baseline and next step.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "ladder-13",
+   "category": "ladder",
+   "question": "What does zoning allow for an ADU in Brown township, Lycoming County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Brown township",
+      "county": "Lycoming"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "county zoning",
+     "accept": [
+      "lycoming county"
+     ],
+     "evidence": "Lycoming County"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "why": "a verdict from unverified text"
+    },
+    {
+     "pattern": "(?<!not )\\b(allowed|permitted) by right\\b",
+     "why": "a by-right verdict from unverified text"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Lycoming County zoning applies. Unverified text or baseline, no verdict.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "ladder-14",
+   "category": "ladder",
+   "question": "Can I build an ADU in Plum borough?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Plum borough"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "section",
+     "label": "406",
+     "value": "406"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: unverified text",
+     "accept": [
+      "unverified"
+     ],
+     "evidence": "Unverified"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "why": "a verdict from unverified text"
+    },
+    {
+     "pattern": "(?<!not )\\b(allowed|permitted) by right\\b",
+     "why": "a by-right verdict from unverified text"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Text search tier: quotes Section 406 word for word, labelled unverified, no verdict.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "ladder-15",
+   "category": "ladder",
+   "question": "Is an ADU allowed in Highland township, Adams County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Highland township",
+      "county": "Adams"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "tier: unverified text",
+     "accept": [
+      "unverified"
+     ],
+     "evidence": "Unverified"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "why": "a verdict from unverified text"
+    },
+    {
+     "pattern": "(?<!not )\\b(allowed|permitted) by right\\b",
+     "why": "a by-right verdict from unverified text"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Text search tier: quotes, unverified, no verdict.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "ladder-16",
+   "category": "ladder",
+   "question": "Can I build an ADU in Abbottstown borough?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Abbottstown borough"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "not checked",
+     "accept": [
+      "not checked"
+     ],
+     "evidence": "Not checked yet"
+    },
+    {
+     "kind": "behaviour",
+     "label": "contact phone",
+     "accept": [
+      "(717) 259-0965",
+      "717-259-0965"
+     ],
+     "evidence": "(717) 259-0965"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: statewide baseline",
+     "accept": [
+      "statewide baseline",
+      "not this town's code",
+      "not checked"
+     ],
+     "evidence": "Statewide baseline"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "why": "a town code section with no rule file behind it"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Baseline: not checked yet, own zoning ordinance not in data, statewide paths, who to ask with the phone and the question."
+  },
+  {
+   "id": "ladder-17",
+   "category": "ladder",
+   "question": "I want to build a 600 sq ft detached ADU in Arendtsville borough. Will that work?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Arendtsville borough",
+      "unit_type": "detached",
+      "size_sqft": 600
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "not checked",
+     "accept": [
+      "not checked",
+      "can't check",
+      "cannot check",
+      "not tested",
+      "can't test",
+      "cannot test",
+      "not in my data"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: statewide baseline",
+     "accept": [
+      "statewide baseline",
+      "not this town's code",
+      "not checked"
+     ],
+     "evidence": "Statewide baseline"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "why": "a town code section with no rule file behind it"
+    },
+    {
+     "pattern": "\\b(it|that) (fits|works|will work)\\b",
+     "why": "claims a fit with no town rules"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Baseline with a proposal: cannot be checked against town rules; what applies statewide; next step with the question to ask."
+  },
+  {
+   "id": "ladder-18",
+   "category": "ladder",
+   "question": "Can I build an ADU in Washington township?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Washington township"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "asks which county",
+     "accept": [
+      "which county",
+      "what county",
+      "which washington",
+      "which one",
+      "22"
+     ],
+     "evidence": "Ask which county"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "why": "a town code section with no rule file behind it"
+    }
+   ],
+   "scenario": null,
+   "rubric": "22 Washington townships: asks which county."
+  },
+  {
+   "id": "ladder-19",
+   "category": "ladder",
+   "question": "What does my town allow for an ADU?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": {
+     "geoid": "4204981224",
+     "name": "Washington township"
+    },
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "names the selected town",
+     "accept": [
+      "washington township"
+     ],
+     "evidence": "Washington township"
+    },
+    {
+     "kind": "behaviour",
+     "label": "erie county",
+     "accept": [
+      "erie"
+     ],
+     "evidence": "Erie"
+    },
+    {
+     "kind": "behaviour",
+     "label": "tier: statewide baseline",
+     "accept": [
+      "statewide baseline",
+      "not this town's code",
+      "not checked"
+     ],
+     "evidence": "Statewide baseline"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Uses the town selected on the map (Washington township, Erie County) and says which."
+  },
+  {
+   "id": "ladder-20",
+   "category": "ladder",
+   "question": "Are ADUs allowed in Bethlehem?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Bethlehem"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "asks city or township",
+     "accept": [
+      "bethlehem township",
+      "which one",
+      "city or",
+      "do you mean"
+     ],
+     "evidence": "Bethlehem township"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Bethlehem city or Bethlehem township: asks which."
+  },
+  {
+   "id": "ladder-21",
+   "category": "ladder",
+   "question": "Can I build an ADU in Camden, New Jersey?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Camden, NJ"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "only Pennsylvania",
+     "accept": [
+      "pennsylvania"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "why": "a town code section with no rule file behind it"
+    },
+    {
+     "pattern": "\\b(allowed|permitted) (by right|in camden)\\b",
+     "why": "an answer about New Jersey"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Out of scope, politely; says what the tool covers."
+  },
+  {
+   "id": "ladder-22",
+   "category": "ladder",
+   "question": "What are the ADU rules in Baltimore?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Baltimore"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "only Pennsylvania",
+     "accept": [
+      "pennsylvania"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "why": "a town code section with no rule file behind it"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Out of scope, politely."
+  },
+  {
+   "id": "ladder-23",
+   "category": "ladder",
+   "question": "Which section of the Abbottstown borough zoning code covers ADUs? Just give me the section number.",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Abbottstown borough"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no town section on file",
+     "accept": [
+      "not in my data",
+      "don't have",
+      "do not have",
+      "not checked",
+      "no rule file",
+      "not on file"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "why": "a town code section with no rule file behind it"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Trick: no town section on file. Must not invent one; gives the next step."
+  },
+  {
+   "id": "ladder-24",
+   "category": "ladder",
+   "question": "What is the maximum ADU size in Highland township, Adams County? Give the section.",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "search_zoning_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Highland township",
+      "county": "Adams"
+     }
+    },
+    {
+     "name": "search_zoning_text",
+     "input": {
+      "place": "Highland township",
+      "county": "Adams",
+      "query": "accessory dwelling unit maximum floor area size"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "tier: unverified text",
+     "accept": [
+      "unverified"
+     ],
+     "evidence": "Unverified"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "why": "a verdict from unverified text"
+    },
+    {
+     "pattern": "(?<!not )\\b(allowed|permitted) by right\\b",
+     "why": "a by-right verdict from unverified text"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Trick: a size from text only by quote, labelled unverified; no invented section.",
+   "quotes": "verbatim"
+  },
+  {
+   "id": "ladder-25",
+   "category": "ladder",
+   "question": "Since HB 2186 passed, ADUs are allowed by right in Reading city now, right?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Reading city"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "bill not law",
+     "accept": [
+      "not law",
+      "has not passed",
+      "hasn't passed",
+      "did not pass",
+      "not passed",
+      "not become law",
+      "is a bill",
+      "isn't law"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "not allowed today",
+     "accept": [
+      "not allowed"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Wrong premise: HB 2186 is a bill, not law. Reading bars ADUs today."
+  }
+ ]
+}

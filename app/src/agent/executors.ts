@@ -5,6 +5,8 @@ import { BED_SIZE, RATE, YEARS, COST_PSF, SOFT, OPEX, type Adu, type Bed, type S
 import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, cleanWhy, isPittsburgh, ruleFor, ruleWarnings, type LotRule } from '../lib/rules';
 import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
 import { getRuleText, listRulePlaces } from './ruleText';
+import { listTextPlaces, searchZoningText, textHint, type ZoningTextSource } from './zoningText';
+import { getPlaceAnswer, type PlacesSource } from './placeAnswer';
 import { areaStats, findLotResult, forecast, roomOut, type AddressEntry, type AreaData } from './areaTools';
 import { meters, type LngLat, type Lot, type TownProps, type TractProps } from '../tool/geo';
 
@@ -33,6 +35,10 @@ export interface DataProvider {
   addressBook?(): Promise<{ entries: AddressEntry[]; scope: string }>;
   /** get_area_stats: tracts, towns and counties. */
   areas?(): Promise<AreaData | null>;
+  /** search_zoning_text: the public zoning text files (tier B). Missing: the tool says text search is not available. */
+  zoningText?: ZoningTextSource | null;
+  /** get_place_answer: the statewide place table (app/public/data/pa_places.json). */
+  places?: PlacesSource | null;
 }
 
 export interface SetMapInput {
@@ -188,7 +194,30 @@ export function makeExecutors(p: DataProvider) {
       return rulesOf(await p.town(input.town_geoid));
     },
     async get_rule_text(input: { place?: unknown; county?: unknown; topic?: unknown; district?: unknown }) {
-      return getRuleText(input);
+      const out = (await getRuleText(input)) as Record<string, unknown>;
+      // No rule file: say when the town's public zoning text can be searched (tier B), so the model can quote it.
+      if (out.rule_file === false && typeof input.place === 'string') {
+        const t = out.town as { geoid?: string; name?: string; county?: string } | null;
+        const hint = await textHint(t?.geoid ? t : { name: input.place, county: typeof input.county === 'string' ? input.county : null }, p.zoningText);
+        if (hint) out.text_search = hint;
+      }
+      return out;
+    },
+    async get_place_answer(input: { place?: unknown; county?: unknown; unit_type?: unknown; size_sqft?: unknown; proposal?: unknown; query?: unknown }) {
+      return getPlaceAnswer(input, {
+        places: p.places,
+        text: p.zoningText,
+        selectedTown: async () => {
+          const t = await p.town();
+          return t ? { geoid: (t.GEOID as string | undefined) ?? null, name: (t.NAMELSAD as string | undefined) ?? (t.NAME as string | undefined) ?? null } : null;
+        },
+      });
+    },
+    async search_zoning_text(input: { place?: unknown; county?: unknown; query?: unknown; k?: unknown }) {
+      return searchZoningText(input, p.zoningText);
+    },
+    async list_text_places(input: { county?: unknown }) {
+      return listTextPlaces(input, p.zoningText);
     },
     async list_rule_places(input: { county?: unknown; with_file_only?: unknown }) {
       return listRulePlaces(input);

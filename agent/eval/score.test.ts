@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { QUESTIONS_FILE, readSet } from './provider';
 import { oracleText, parseFlags, selectQuestions, toolEvents } from './run';
-import { checkFact, citationKnown, citationsIn, numbersIn, rulesCorpus, scoreQuestion, type Transcript } from './score';
+import { checkFact, citationKnown, citationsIn, numbersIn, rulesCorpus, scoreQuestion, type Transcript, madeUpQuotes, quotedSpans, withoutQuotes } from './score';
 import type { EvalQuestion, Fact } from './types';
 
 const usage = { input_tokens: 0, output_tokens: 0, cache_read_input_tokens: 0, cache_creation_input_tokens: 0 };
@@ -217,5 +217,19 @@ describe.skipIf(!existsSync(QUESTIONS_FILE))('widened phrasings still reject wro
     if (f.kind !== 'enum') throw new Error('not an enum fact');
     const opposite = f.value === 'true' ? 'The change is beyond the margin of error.' : 'The change is within the margin of error, so it may be noise.';
     expect(checkFact(f, opposite).pass).toBe(false);
+  });
+});
+
+describe('tier B quote checks', () => {
+  const ev = [{ name: 'search_zoning_text', input: {}, ok: true, result: { results: [{ quote: 'Section 406: Accessory Dwelling Unit\nA. Accessory dwelling units shall be attached to a permitted, principal residential dwelling.' }] } }];
+  it('finds quoted spans of 4 words or more, split at "..."', () => {
+    expect(quotedSpans('It says "Accessory dwelling units shall be attached ... a permitted, principal residential dwelling" and "a short one".')).toEqual(["Accessory dwelling units shall be attached", "a permitted, principal residential dwelling"]);
+  });
+  it('a quote is real when it is in a search_zoning_text passage, case and spacing aside', () => {
+    expect(madeUpQuotes('The text says "accessory dwelling units shall be  attached to a permitted, principal residential dwelling."', ev)).toEqual([]);
+    expect(madeUpQuotes('The text says "accessory dwelling units are allowed by right in every district"', ev)).toEqual(['accessory dwelling units are allowed by right in every district']);
+  });
+  it('verdict patterns are matched outside quotes only', () => {
+    expect(withoutQuotes('The code says "ADUs are permitted in R-1". Confirm with the town.')).not.toMatch(/permitted/);
   });
 });

@@ -3,7 +3,9 @@ import type { Scenario } from '../../app/src/lib/lot/types';
 import type { LotUnit } from '../nodeProvider';
 
 /** town_rules: questions on the town rule files (shared/rules/pa_*.json), 5 while there are few town files. */
-export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules'] as const;
+/** tier_b: quote search over public zoning text (search_zoning_text), hand-written in questions_tierb.json.
+ *  ladder: the answer ladder for any Pennsylvania place (get_place_answer), hand-written in questions_ladder.json. */
+export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 /** Units a number fact is written in. pct is a percent (7.5 means 7.5 percent), the answer may also give 0.075. */
@@ -60,6 +62,10 @@ export interface EvalQuestion {
   /** The scenario the answer must use, when one applies. Lot tool calls that name a scenario must name this one. */
   scenario: Scenario | null;
   rubric: string;
+  /** Tier B: every quoted span in the answer (in quotation marks, 4 words or more) must be in a search_zoning_text
+   *  passage of the run, and forbidden patterns are matched on the answer with the quoted spans taken out (a quote
+   *  may say "permitted"; the assistant may not). */
+  quotes?: 'verbatim';
 }
 
 export interface QuestionSet {
