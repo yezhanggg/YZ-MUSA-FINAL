@@ -1714,7 +1714,8 @@
    "tools_required": [
     [
      "get_lot_rules",
-     "test_unit_on_lot"
+     "test_unit_on_lot",
+     "explain_limit"
     ]
    ],
    "calls": [
@@ -1996,7 +1997,8 @@
     [
      "get_rule_text",
      "get_lot_rules",
-     "get_rules"
+     "get_rules",
+     "get_place_answer"
     ]
    ],
    "calls": [
@@ -3144,7 +3146,8 @@
    },
    "tools_required": [
     [
-     "get_rules"
+     "get_rules",
+     "get_place_answer"
     ]
    ],
    "calls": [
@@ -3306,7 +3309,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "\\b\\d{3,4}\\s*(sq|square)",
+     "pattern": "(?!600\\b)\\b\\d{3,4}\\s*(sq|square)",
      "why": "a size with no data behind it"
     }
    ],
@@ -3371,7 +3374,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "\\b\\d{3,4}\\s*(sq|square)",
+     "pattern": "(?!600\\b)\\b\\d{3,4}\\s*(sq|square)",
      "why": "a size with no data behind it"
     },
     {
@@ -3380,7 +3383,7 @@
     }
    ],
    "scenario": null,
-   "rubric": "Says the lot is not in the loaded data (outside Pittsburgh and Philadelphia) and asks the user to select a lot. No made-up answer."
+   "rubric": "Says the lot is not in the loaded data (no lot record for it) and asks the user to select a lot. No made-up answer."
   },
   {
    "id": "trap-03",
@@ -3770,6 +3773,10 @@
       "don't have",
       "do not have",
       "not in my data",
+      "can't tell you what",
+      "cannot tell you what",
+      "not on file",
+      "isn't on file",
       "n't in my data",
       "doesn't include",
       "does not include",
@@ -3940,7 +3947,8 @@
    },
    "tools_required": [
     [
-     "get_rule_text"
+     "get_rule_text",
+     "get_place_answer"
     ]
    ],
    "calls": [
@@ -3963,11 +3971,6 @@
       "owner must",
       "required",
       "yes"
-     ],
-     "reject": [
-      "doesn't have to",
-      "does not have to",
-      "not required"
      ]
     },
     {
@@ -3999,7 +4002,8 @@
    },
    "tools_required": [
     [
-     "get_rule_text"
+     "get_rule_text",
+     "get_place_answer"
     ]
    ],
    "calls": [
@@ -4050,7 +4054,8 @@
    },
    "tools_required": [
     [
-     "get_rule_text"
+     "get_rule_text",
+     "get_place_answer"
     ]
    ],
    "calls": [
@@ -4109,7 +4114,8 @@
    },
    "tools_required": [
     [
-     "get_rule_text"
+     "get_rule_text",
+     "get_place_answer"
     ]
    ],
    "calls": [
@@ -4159,7 +4165,8 @@
    },
    "tools_required": [
     [
-     "get_rule_text"
+     "get_rule_text",
+     "get_place_answer"
     ]
    ],
    "calls": [

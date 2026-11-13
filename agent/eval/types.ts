@@ -5,7 +5,9 @@ import type { LotUnit } from '../nodeProvider';
 /** town_rules: questions on the town rule files (shared/rules/pa_*.json), 5 while there are few town files. */
 /** tier_b: quote search over public zoning text (search_zoning_text), hand-written in questions_tierb.json.
  *  ladder: the answer ladder for any Pennsylvania place (get_place_answer), hand-written in questions_ladder.json. */
-export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder'] as const;
+/** allentown: lot questions on the third city's records; rule_text: per-form status, lesser-of caps, hearing body,
+ *  code caution and ADUs under another listing. Both made by make_more_questions.ts. */
+export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder', 'allentown', 'rule_text'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 /** Units a number fact is written in. pct is a percent (7.5 means 7.5 percent), the answer may also give 0.075. */

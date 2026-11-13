@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-11-13
+
+### Assistant
+
+<!-- source: ~/musa-drive/ops/agent-eval/2026-11-13T06-15-29 to 06-26-49 (claude-haiku-5-5), notes in ~/Library/Caches/yz-musa/assistant2/notes.md -->
+
+- Allentown lot records (`allentown-20261112-5825ca3817`, 29,158 lots) work with `find_lot` and the lot tools. The list of cities with lot records in tool descriptions, messages and the system prompt now comes from the lot loader's registry (`PLACE_BY_COUNTY`), so a new city needs no wording change.
+- Lot tools say "not checked" for what a record cannot test: a check with no answer (for example the share-of-house cap with no house size) has `pass: "not checked"`, and a record with no land cover block (Allentown) says trees and paving were not mapped.
+- `get_place_answer` uses the resolver's new rule text: a "Depends on the form" verdict when the status differs by form (Whitehall township, Lehigh County), the lesser-of size cap as one sentence (McCandless), who hears a special exception or conditional use, per form (Chester city: garage conversion), the code caution line first (North Huntingdon), and an ADU under another listing (Monroeville). A town with no rule file but a town summary from the earlier survey gets that summary, labelled.
+- Zoning text search: quotes come with a copy rule and a `text_kind` ("scanned text, quoted as read"); stray margin marks of scanned pages are left out of the quote. A search with no match returns the exact sentence to use (`say_exactly`).
+- Eval: 14 new questions (`questions_allentown.json`, `questions_rule_text.json`, made by `agent/eval/make_more_questions.ts`), 114 in all. Scorer fixes: plurals in words the user asked, markdown emphasis, block quotes, negated reject phrases, hedged or attributed verdicts, the screen's own unit size; dropped connections are retried. Live runs on claude-haiku-5-5: 106, 111, 99 (5 dropped connections) and 110 of 114; the last run is 114 of 114 under the fixed scorer. Made-up citations 0 and quotes not in the text 0 in the last run; no dead ends in any run. About $0.53 for the four runs.
+
 ## 2026-11-12
 
 What changed since the evening entry below. The lot files changed only through the terrain refresh (next section). Before it: Philadelphia `philadelphia-20261111-b7fa7bda07`, Pittsburgh `pittsburgh-20261111-bdeb5697ae`.

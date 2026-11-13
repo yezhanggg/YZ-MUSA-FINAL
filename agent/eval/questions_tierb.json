@@ -76,7 +76,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
      "why": "a verdict outside a quote"
     },
     {
@@ -88,7 +88,7 @@
      "why": "a verdict to the user outside a quote"
     },
     {
-     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "pattern": "\\bnot addressed\\b|(?<!\\b(a|any) use (that )?the (ordinance|code) )\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
      "why": "an absence verdict"
     }
    ],
@@ -152,7 +152,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
      "why": "a verdict outside a quote"
     },
     {
@@ -164,7 +164,7 @@
      "why": "a verdict to the user outside a quote"
     },
     {
-     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "pattern": "\\bnot addressed\\b|(?<!\\b(a|any) use (that )?the (ordinance|code) )\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
      "why": "an absence verdict"
     }
    ],
@@ -227,7 +227,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
      "why": "a verdict outside a quote"
     },
     {
@@ -239,7 +239,7 @@
      "why": "a verdict to the user outside a quote"
     },
     {
-     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "pattern": "\\bnot addressed\\b|(?<!\\b(a|any) use (that )?the (ordinance|code) )\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
      "why": "an absence verdict"
     }
    ],
@@ -304,7 +304,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
      "why": "a verdict outside a quote"
     },
     {
@@ -316,7 +316,7 @@
      "why": "a verdict to the user outside a quote"
     },
     {
-     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "pattern": "\\bnot addressed\\b|(?<!\\b(a|any) use (that )?the (ordinance|code) )\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
      "why": "an absence verdict"
     }
    ],
@@ -380,7 +380,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "pattern": "\\bnot addressed\\b|(?<!\\b(a|any) use (that )?the (ordinance|code) )\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
      "why": "an absence verdict"
     },
     {
@@ -441,7 +441,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "pattern": "\\bnot addressed\\b|(?<!\\b(a|any) use (that )?the (ordinance|code) )\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
      "why": "an absence verdict"
     },
     {
@@ -562,7 +562,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
      "why": "a verdict outside a quote"
     },
     {
@@ -574,7 +574,7 @@
      "why": "a verdict to the user outside a quote"
     },
     {
-     "pattern": "\\bnot addressed\\b|\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
+     "pattern": "\\bnot addressed\\b|(?<!\\b(a|any) use (that )?the (ordinance|code) )\\b(does|do) not (mention|address|allow|permit|cover|say anything)\\b|\\bsays nothing\\b|\\bno (adu|accessory) (rules|provisions)\\b",
      "why": "an absence verdict"
     }
    ],

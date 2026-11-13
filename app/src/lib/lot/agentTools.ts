@@ -164,6 +164,11 @@ const isLaw = (lot: LotRecord, s: Scenario) => s === 'today' || JSON.stringify(l
 const CONFIDENCE = { high: 'high', medium: 'medium', low: 'low' } as const;
 /** Assessed value and the last sale (date and price): kept on the drive, not in the public data. */
 export const NOT_PUBLIC = 'not in the public data';
+/** A lot record with no land cover block (Allentown so far): trees, paving and sheds in the yard were not mapped. */
+export const NO_COVER = 'Not checked: no land cover for this lot, so trees, paving and sheds in the yard were not mapped. A fit result does not account for them.';
+const hasCover = (lot: LotRecord) => !!lot.cover && Object.keys(lot.cover).length > 0;
+/** What a check could not test, said as "not checked" (never a pass or a fail). */
+export const NOT_CHECKED = 'not checked';
 
 export function getLotFacts(lot: LotRecord) {
   const f = lot.facts ?? {};
@@ -185,6 +190,7 @@ export function getLotFacts(lot: LotRecord) {
     corner: lot.lot.corner ?? false,
     flags,
     public_sewer: lot.zoning.flags?.sewer ?? 'not on file',
+    ...(hasCover(lot) ? {} : { land_cover: NO_COVER }),
     // Left out of the published lot files (tools/publish_lots.sh), so never read here, even from a local build.
     assessed_value: NOT_PUBLIC,
     last_sale: NOT_PUBLIC,
@@ -256,7 +262,10 @@ function verdictOut(lot: LotRecord, v: UnitVerdict) {
     headline: v.headline,
     limit: v.limit?.text ?? null,
     changes: v.changes,
-    checks: v.checks.map((c) => ({ check: c.label, pass: c.pass ?? 'unknown', text: c.text })),
+    checks: v.checks.map((c) => ({ check: c.label, pass: c.pass ?? NOT_CHECKED, text: c.text })),
+    ...(v.checks.some((c) => c.pass == null) || !hasCover(lot)
+      ? { not_checked: [...v.checks.filter((c) => c.pass == null).map((c) => `${c.label}: ${c.text}`), ...(hasCover(lot) ? [] : [NO_COVER])], not_checked_rule: 'Say these are not checked. Do not guess a result for them.' }
+      : {}),
     warnings: v.warnings.map((w) => w.text),
     approval: { path: v.approval.path ?? 'not known', label: v.approval.label, text: v.approval.text },
     assumed: v.assumed,

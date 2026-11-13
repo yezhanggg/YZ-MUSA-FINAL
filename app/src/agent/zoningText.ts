@@ -18,10 +18,45 @@ import { townKey } from './ruleText';
 export const TIER_B_LABEL =
   'Unverified text search: passages copied word for word from the public zoning text, found by a word search. Not a checked rule file and not a zoning determination. Confirm with the municipal zoning officer.';
 export const NOT_FOUND = 'Not found in the text searched.';
+/** The sentence for a search with no match in a text on file that is incomplete. */
+export const INCOMPLETE = 'The text on file is incomplete, so I cannot tell from it.';
+/** How a passage must be quoted. Sent with every result that has passages. */
+export const QUOTE_RULE =
+  'Each "quote" field is the exact text. Put a quote in quotation marks and copy it character for character. To shorten it, cut with "..." between pieces. ' +
+  'Never fix spelling, reading errors or spacing, never join or split words, never drop stray marks inside a piece: cut around them with "..." instead. ' +
+  'Cite a passage by its "section" value as written, with no subsection letter added.';
+/** text_kind of a passage read by OCR from a scanned copy. */
+export const SCANNED = 'scanned text, quoted as read (stray margin marks left out)';
+/** What a word search with no match never shows. */
+export const NOT_FOUND_RULE = 'A word search cannot show the ordinance is silent: never say the text does not mention, address, allow or cover it, or says nothing about it.';
 const HOW_TO_USE =
   'Quote the passages word for word in quotation marks, with section, link and the date fetched. Say this is unverified text from a word search and that the user should confirm with the town. ' +
   'Do not turn the passages into a verdict: do not say the use is allowed, not allowed, by right, or which approval or districts apply unless a quoted sentence says exactly that, and then attribute it to the quote. ' +
   'A newer amendment may exist.';
+
+// ------------------------------------------------------------------ scanned text
+/** Two-letter words a line may start with. Any other token of one or two letters at a line start of scanned text is
+ *  a mark the scan picked up from the margin ("i j constructed", "Ee c The applicant"). */
+const SHORT_WORDS = new Set(['of', 'to', 'in', 'an', 'or', 'be', 'by', 'is', 'it', 'at', 'as', 'on', 'no', 'if', 'so', 'do', 'up', 'we', 'he', 'my', 'us', 'am', 'go', 'me', 'ft', 'sq', 'ac', 'mi', 'lb', 'ie', 'eg']);
+const MARKER = /^(?:[a-z]{1,2}|\d{1,3}|[ivx]{1,4})[.)]$/i;
+const PUNCT = /^[^\w\s§$%(]{1,3}$/;
+const LETTERS = (tok: string) => /^[A-Za-z]{1,2}$/.test(tok) && !SHORT_WORDS.has(tok.toLowerCase()) && !/^[A-Z]{2}$/.test(tok);
+const isMark = (tok: string, next: string | undefined) =>
+  PUNCT.test(tok) || (LETTERS(tok) && (!/^(a|A|I)$/.test(tok) || next === undefined || MARKER.test(next) || LETTERS(next) || PUNCT.test(next)));
+/** Scanned (OCR) text with stray margin marks taken off each line start ("i j constructed" -> "constructed"). Every
+ *  other character is kept as read, reading errors included. Quotes of scanned passages are cut from this text. */
+export function cleanScan(text: string): string {
+  const out: string[] = [];
+  for (const line of text.split('\n')) {
+    const toks = line.split(' ');
+    let i = 0;
+    while (i < toks.length && isMark(toks[i], toks[i + 1])) i++;
+    // A line that was only marks goes; a line that was blank stays.
+    if (i === toks.length && line.trim()) continue;
+    out.push(toks.slice(i).join(' '));
+  }
+  return out.join('\n');
+}
 
 // ------------------------------------------------------------------ data shapes
 export interface TextPlace {
@@ -379,7 +414,7 @@ export async function searchZoningText(input: { place?: unknown; county?: unknow
     const c = file.chunks[i];
     const doc = file.docs[c[0]] ?? { url: null, fetched_on: null, last_modified: null, ocr: false };
     const cov = coverage(query, passages[i]);
-    const ex = excerpt(c[5], query, 1400, aduAsked ? ADU_PHRASES : undefined);
+    const ex = excerpt(doc.ocr ? cleanScan(c[5]) : c[5], query, 1400, aduAsked ? ADU_PHRASES : undefined);
     return {
       match: isMatch(i),
       row: {
@@ -391,6 +426,7 @@ export async function searchZoningText(input: { place?: unknown; county?: unknow
         url: doc.url,
         fetched_on: doc.fetched_on,
         ...(doc.last_modified ? { file_last_modified: doc.last_modified } : {}),
+        text_kind: doc.ocr ? SCANNED : 'typed text',
         ...(doc.ocr ? { ocr: true } : {}),
         words_matched: cov.matched,
         score: Math.round(score * 100) / 100,
@@ -409,12 +445,14 @@ export async function searchZoningText(input: { place?: unknown; county?: unknow
     out.rule_file_first = `${p.name} has a ${p.rule_file} rule file. Answer from get_rule_text first. Use these passages only for a detail the rule file does not have, and keep them apart, labelled as unverified text.`;
   if (matches.length) {
     out.found = true;
+    out.quote_rule = QUOTE_RULE;
+    if (matches.some((r) => r.ocr)) out.scanned_note = `Passages with text_kind "${SCANNED}" were read by OCR from a scan and may have reading errors. Say so in those words, and copy them as returned.`;
     out.results = matches;
-    out.how_to_use = matches.some((r) => r.ocr)
-      ? `${HOW_TO_USE} Passages marked ocr were read from a scan: copy them exactly as returned, reading errors included (do not fix words), and say the text came from a scanned copy.`
-      : HOW_TO_USE;
+    out.how_to_use = HOW_TO_USE;
   } else {
     out.found = false;
+    out.say_exactly = p.complete ? NOT_FOUND : INCOMPLETE;
+    out.not_found_rule = NOT_FOUND_RULE;
     out.results = [];
     out.message = p.complete
       ? `${NOT_FOUND} No passage of the ${p.name} zoning text on file (fetched ${p.fetched_on ?? 'on an unknown date'}) has the words searched (the most specific one included). This is a word search: it does not show the ordinance is silent. Say "${NOT_FOUND}" and suggest asking the zoning officer.`

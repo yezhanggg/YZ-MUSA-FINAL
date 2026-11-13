@@ -229,7 +229,32 @@ describe('tier B quote checks', () => {
     expect(madeUpQuotes('The text says "accessory dwelling units shall be  attached to a permitted, principal residential dwelling."', ev)).toEqual([]);
     expect(madeUpQuotes('The text says "accessory dwelling units are allowed by right in every district"', ev)).toEqual(['accessory dwelling units are allowed by right in every district']);
   });
+  it('repeating the words searched is not a made-up quote, singular or plural, but a changed passage still is', () => {
+    const search = [{ name: 'search_zoning_text', input: { query: 'tiny houses on wheels' }, ok: true, result: { found: false, results: [] } }];
+    expect(madeUpQuotes('The search for "tiny house on wheels" returned nothing.', search, 'Does it say anything about tiny houses on wheels?')).toEqual([]);
+    expect(madeUpQuotes('The search for "tiny houses on wheels" returned nothing.', search)).toEqual([]);
+    // Whole words only: "house on wheels" is not inside "warehouses on wheels".
+    expect(madeUpQuotes('It says "small house on wheels allowed"', [{ ...search[0], input: { query: 'small warehouses on wheels allowed' } }])).toEqual(['small house on wheels allowed']);
+    // A passage quoted in the plural when the text has the singular is not verbatim.
+    expect(madeUpQuotes('"Accessory dwelling units shall be attached to permitted, principal residential dwellings"', ev)).toHaveLength(1);
+  });
   it('verdict patterns are matched outside quotes only', () => {
     expect(withoutQuotes('The code says "ADUs are permitted in R-1". Confirm with the town.')).not.toMatch(/permitted/);
+  });
+});
+
+describe('answer formatting', () => {
+  it('markdown emphasis does not hide a phrase, and a block quote is a quote', () => {
+    expect(checkFact({ kind: 'enum', label: 's', value: 'fits', accept: ['would fit'] }, 'It would **fit by right** under the bill.').pass).toBe(true);
+    expect(quotedSpans('The text:\n> C. Only one accessory dwelling unit is permitted on a lot.\nConfirm with the town.')).toEqual(['C. Only one accessory dwelling unit is permitted on a lot.']);
+    expect(withoutQuotes('The text:\n> ADUs are permitted in R-1.\nConfirm.')).not.toMatch(/permitted/);
+  });
+});
+
+describe('reject phrases', () => {
+  it('a negated reject phrase does not fail the fact', () => {
+    const f = { kind: 'enum' as const, label: 'm', value: 'true', accept: ['within the margin'], reject: ['more than the margin of error'] };
+    expect(checkFact(f, 'No, the change is not more than the margin of error. It is within the margin.').pass).toBe(true);
+    expect(checkFact(f, 'The change is more than the margin of error, but within the margin of the old survey.').pass).toBe(false);
   });
 });

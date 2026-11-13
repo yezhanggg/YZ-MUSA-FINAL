@@ -891,7 +891,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
      "why": "a verdict from unverified text"
     },
     {
@@ -960,7 +960,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
      "why": "a verdict from unverified text"
     },
     {
@@ -1033,7 +1033,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
      "why": "a verdict from unverified text"
     },
     {
@@ -1102,7 +1102,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
      "why": "a verdict from unverified text"
     },
     {
@@ -1700,7 +1700,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(?<!(whether|if|say|says|know|decide|tell you)( an| the| a)?\\s)\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|they|it)\\s+(is|are)\\s+(allowed|permitted|prohibited|banned)\\b",
      "why": "a verdict from unverified text"
     },
     {

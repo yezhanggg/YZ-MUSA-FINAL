@@ -1,0 +1,621 @@
+{
+ "about": "Allentown lot questions. Made by agent/eval/make_more_questions.ts from the Allentown lot records: lots picked by rule, expected values read from tool results. Do not edit by hand.",
+ "generated_at": "2026-11-13T06:25:57.697Z",
+ "data_roots": {
+  "allentown": "/Users/ye/musa-drive/lots/allentown"
+ },
+ "data_versions": {
+  "allentown": "allentown-20261112-5825ca3817"
+ },
+ "questions": [
+  {
+   "id": "alt-01",
+   "category": "allentown",
+   "question": "Can I build this backyard cottage on my lot? What approval does it need?",
+   "context": {
+    "lot": {
+     "id": "42077-640799209410",
+     "tract": "42077000101",
+     "label": "1007 E LIVINGSTON ST"
+    },
+    "site_lot": null,
+    "town": {
+     "geoid": "4207702000",
+     "name": "Allentown city"
+    },
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 24,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "test_unit_on_lot"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "test_unit_on_lot",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "status",
+     "value": "fits",
+     "accept": [
+      "fits",
+      "would fit",
+      "will fit",
+      "could fit",
+      "can fit",
+      "does fit"
+     ]
+    },
+    {
+     "kind": "enum",
+     "label": "approval path",
+     "value": "by_right",
+     "accept": [
+      "by right",
+      "by-right"
+     ]
+    },
+    {
+     "kind": "section",
+     "label": "ADU section",
+     "value": "660-42"
+    }
+   ],
+   "forbidden": [],
+   "scenario": "today",
+   "rubric": "Tests the 20 by 24 ft cottage on screen on an Allentown lot: it fits, by right, and cites 660-42."
+  },
+  {
+   "id": "alt-02",
+   "category": "allentown",
+   "question": "Can I put a backyard cottage behind my rowhouse? If not, what can I do?",
+   "context": {
+    "lot": {
+     "id": "42077-641719369670",
+     "tract": "42077000101",
+     "label": "1513 E TREMONT ST"
+    },
+    "site_lot": null,
+    "town": {
+     "geoid": "4207702000",
+     "name": "Allentown city"
+    },
+    "scenario": "today",
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "test_unit_on_lot",
+     "get_lot_rules",
+     "explain_limit"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "test_unit_on_lot",
+     "input": {
+      "type": "detached_new",
+      "width_ft": 20,
+      "depth_ft": 24
+     }
+    },
+    {
+     "name": "get_lot_rules",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "cottage status",
+     "value": "not_allowed",
+     "accept": [
+      "not allowed",
+      "isn't allowed",
+      "not permitted",
+      "isn't permitted",
+      "not an allowed",
+      "no new",
+      "barred",
+      "bars",
+      "variance",
+      "cannot build",
+      "can't build"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "a unit inside the house is the way",
+     "accept": [
+      "inside the house",
+      "inside your house",
+      "in the house",
+      "in the main building",
+      "principal building",
+      "inside the rowhouse",
+      "inside your rowhouse"
+     ],
+     "evidence": "Rowhouses (Town, Urban, Suburban)"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(?<!(state|bill|hb|2186|proposal|reform)[^.]{0,80})\\bcottage (fits|would fit|is allowed)\\b(?![^.]{0,40}(state|bill|hb))",
+     "why": "says a cottage is allowed today"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Allentown rowhouse: no ADU in an outbuilding; a unit inside the house is the path (660-24F to 660-27F)."
+  },
+  {
+   "id": "alt-03",
+   "category": "allentown",
+   "question": "Why can't I build a detached ADU at 1015 N Jasper St, Allentown?",
+   "context": {
+    "lot": {
+     "id": "42077-640799217294",
+     "tract": "42077000101",
+     "label": "1015 N JASPER ST"
+    },
+    "site_lot": null,
+    "town": {
+     "geoid": "4207702000",
+     "name": "Allentown city"
+    },
+    "scenario": "today",
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_lot_rules",
+     "test_unit_on_lot",
+     "explain_limit"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_lot_rules",
+     "input": {}
+    },
+    {
+     "name": "get_lot_facts",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "names the alley or corner rule",
+     "accept": [
+      "alley"
+     ],
+     "evidence": "needs a lot that abuts an alley"
+    },
+    {
+     "kind": "section",
+     "label": "alley rule section",
+     "value": "660-42C(1)(c)"
+    }
+   ],
+   "forbidden": [],
+   "scenario": "today",
+   "rubric": "The lot has no alley, no rear or side street and is not a corner lot: a detached ADU needs one (660-42C(1)(c))."
+  },
+  {
+   "id": "alt-04",
+   "category": "allentown",
+   "question": "Could I build a 1,000 sq ft backyard cottage here, 25 by 40 feet?",
+   "context": {
+    "lot": {
+     "id": "42077-640799226076",
+     "tract": "42077000101",
+     "label": "1021 N JASPER ST"
+    },
+    "site_lot": null,
+    "town": {
+     "geoid": "4207702000",
+     "name": "Allentown city"
+    },
+    "scenario": "today",
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "test_unit_on_lot",
+     "explain_limit",
+     "get_lot_rules"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "test_unit_on_lot",
+     "input": {
+      "type": "detached_new",
+      "width_ft": 25,
+      "depth_ft": 40
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "size cap",
+     "value": 800,
+     "tol_pct": 2,
+     "unit": "sqft"
+    },
+    {
+     "kind": "behaviour",
+     "label": "too big for the cap",
+     "accept": [
+      "cap",
+      "too big",
+      "too large",
+      "over the",
+      "exceeds",
+      "larger than",
+      "maximum",
+      "at most"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\byes\\b[^.]{0,30}\\b1,?000\\s*sq",
+     "why": "says a 1,000 sq ft cottage is fine"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "The 800 sq ft cap (660-42C(5)) is the limit: a 1,000 sq ft cottage is too big."
+  },
+  {
+   "id": "alt-05",
+   "category": "allentown",
+   "question": "Is a 700 sq ft unit inside my house within the limit on how big it can be compared with the house?",
+   "context": {
+    "lot": {
+     "id": "42077-640798997975",
+     "tract": "42077000101",
+     "label": "1118 1120 E LIVINGSTON ST"
+    },
+    "site_lot": null,
+    "town": {
+     "geoid": "4207702000",
+     "name": "Allentown city"
+    },
+    "scenario": "today",
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "test_unit_on_lot",
+     "get_lot_rules"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "test_unit_on_lot",
+     "input": {
+      "type": "internal",
+      "width_ft": 20,
+      "depth_ft": 35
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "says the share of the house is not checked",
+     "accept": [
+      "not checked",
+      "wasn't checked",
+      "was not checked",
+      "couldn't check",
+      "could not check",
+      "cannot check",
+      "can't check",
+      "not able to check",
+      "no house size",
+      "no living area",
+      "not on file",
+      "isn't on file"
+     ],
+     "evidence": "not checked"
+    },
+    {
+     "kind": "number",
+     "label": "share of the house",
+     "value": 40,
+     "tol_pct": 2,
+     "unit": "pct"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "(?<!\\b(whether|if|ask)\\b[^.]{0,60})(\\b(it is|it's|is|well) (within|under|below) (the|that) (40|share)|\\bmeets the (40|share)|\\bpasses the share)",
+     "why": "guesses the share-of-house check"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "The record has no house size, so the share-of-house cap is not checked. Says \"not checked\", gives the share, no guess."
+  },
+  {
+   "id": "alt-06",
+   "category": "allentown",
+   "question": "How would the state bill change things for a backyard cottage on this lot?",
+   "context": {
+    "lot": {
+     "id": "42077-641719369670",
+     "tract": "42077000101",
+     "label": "1513 E TREMONT ST"
+    },
+    "site_lot": null,
+    "town": {
+     "geoid": "4207702000",
+     "name": "Allentown city"
+    },
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 24,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "compare_scenarios",
+     "test_unit_on_lot"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "compare_scenarios",
+     "input": {
+      "type": "detached_new"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "today status",
+     "value": "not_allowed",
+     "accept": [
+      "not allowed",
+      "isn't allowed",
+      "not permitted",
+      "isn't permitted",
+      "not an allowed",
+      "no new",
+      "barred",
+      "bars",
+      "variance",
+      "cannot build",
+      "can't build"
+     ]
+    },
+    {
+     "kind": "enum",
+     "label": "state bill status",
+     "value": "fits",
+     "accept": [
+      "fits",
+      "would fit",
+      "will fit",
+      "could fit",
+      "can fit",
+      "does fit"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "state bill is not law",
+     "accept": [
+      "not law",
+      "not yet law",
+      "not a law",
+      "has not passed the senate",
+      "hasn't passed the senate",
+      "pending",
+      "waiting in the senate",
+      "only passed the house",
+      "still in the senate",
+      "not passed",
+      "a bill"
+     ]
+    }
+   ],
+   "forbidden": [],
+   "scenario": null,
+   "rubric": "Not allowed today (rowhouse), fits by right under the state bill, and the bill is not law."
+  },
+  {
+   "id": "alt-07",
+   "category": "allentown",
+   "question": "Can I add a unit inside my house at 1515 E Tremont St, Allentown? By what approval?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "find_lot"
+    ],
+    [
+     "test_unit_on_lot",
+     "get_lot_rules"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "find_lot",
+     "input": {
+      "address": "1515 E Tremont St"
+     }
+    },
+    {
+     "name": "test_unit_on_lot",
+     "input": {
+      "lot_id": "42077-641719461688",
+      "type": "internal",
+      "width_ft": 20,
+      "depth_ft": 24
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "approval path",
+     "value": "by_right",
+     "accept": [
+      "by right",
+      "by-right"
+     ]
+    }
+   ],
+   "forbidden": [],
+   "scenario": "today",
+   "rubric": "Nothing is selected: finds the Allentown lot by address, then tests a unit inside the house (by right)."
+  },
+  {
+   "id": "alt-08",
+   "category": "allentown",
+   "question": "Would I have to cut down trees to fit a backyard cottage here?",
+   "context": {
+    "lot": {
+     "id": "42077-640799306540",
+     "tract": "42077000101",
+     "label": "1019 E LIVINGSTON ST"
+    },
+    "site_lot": null,
+    "town": {
+     "geoid": "4207702000",
+     "name": "Allentown city"
+    },
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 24,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "test_unit_on_lot",
+     "get_lot_facts",
+     "explain_limit"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_lot_facts",
+     "input": {}
+    },
+    {
+     "name": "test_unit_on_lot",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "says trees are not checked here",
+     "accept": [
+      "not checked",
+      "not mapped",
+      "no land cover",
+      "no tree data",
+      "no data on trees",
+      "don't have tree",
+      "do not have tree",
+      "can't tell",
+      "cannot tell",
+      "not in my data",
+      "no information on trees",
+      "doesn't show trees",
+      "does not show trees"
+     ],
+     "evidence": "no land cover"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\b(no|without) (cutting|removing|cutting down) (any )?trees\\b|\\bno trees (are|would be|need)|\\byou (won't|will not|don't|do not) (have|need) to (cut|remove)",
+     "why": "guesses about trees with no land cover"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Allentown records have no land cover: trees are not checked. Says so, no guess either way."
+  }
+ ]
+}

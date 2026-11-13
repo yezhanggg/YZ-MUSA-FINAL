@@ -161,7 +161,9 @@ function realClient(key: string, tally: Tally): Client {
       } catch (e) {
         const status = (e as { status?: number }).status;
         const headers = (e as { headers?: Headers }).headers;
-        if (attempt >= 6 || status === undefined || !RETRY_STATUS.has(status)) throw e;
+        // A dropped connection has no status: try it again like a 5xx.
+        const dropped = status === undefined && /Connection/.test((e as Error).name ?? '');
+        if (attempt >= 6 || (!dropped && (status === undefined || !RETRY_STATUS.has(status)))) throw e;
         tally.retries++;
         const after = Number(headers?.get?.('retry-after'));
         await sleep(Number.isFinite(after) && after > 0 ? after * 1000 : Math.min(60_000, 2000 * 2 ** attempt) + Math.random() * 1000);

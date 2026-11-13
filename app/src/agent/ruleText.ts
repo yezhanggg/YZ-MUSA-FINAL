@@ -197,11 +197,19 @@ const leafAt = (file: Obj, part: string, key: string): Obj | null => {
 const cite = (leaf: Obj | null): Obj => (leaf ? { section: leaf.section ?? null, url: leaf.url ?? null, checked_on: leaf.verified_on ?? null, confidence: leaf.confidence ?? null } : {});
 const cond = (kind: string, condition: string, leaf: Obj | null, extra: Obj = {}): Obj => ({ kind, condition, ...cite(leaf), ...extra });
 const NOT_OK = new Set(['variance', 'not_allowed']);
+/** ADU forms and approval paths, least to most demanding (pipeline/rules.py ALL_TYPES, PATH_ORDER, OK_PATHS). */
+export const ADU_FORMS = ['detached_new', 'garage_conversion', 'over_garage', 'internal', 'attached'] as const;
+const PATH_ORDER = ['by_right', 'administrator_exception', 'special_exception', 'conditional_use', 'variance', 'not_allowed'];
+const OK_PATHS = new Set(['by_right', 'administrator_exception', 'special_exception', 'conditional_use']);
+const harder = (a: string, b: string) => (PATH_ORDER.indexOf(b) > PATH_ORDER.indexOf(a) ? b : a);
 /** Who hears a special exception or a conditional use (pipeline/rules.py BOARDS). */
 const BOARDS: Record<string, [string, string]> = {
   special_exception: ['the Zoning Hearing Board', 'MPC 912.1'],
   conditional_use: ['the governing body (council, commissioners or supervisors)', 'MPC 913.2'],
 };
+/** "A special exception is decided by the Zoning Hearing Board after a public hearing (MPC 912.1)", else null. */
+export const hearingText = (path: unknown): string | null =>
+  typeof path === 'string' && path in BOARDS ? `A ${label(path)} is decided by ${BOARDS[path][0]} after a public hearing (${BOARDS[path][1]})` : null;
 /** Town conditions HB 2186 would override (same list as pipeline/rules.py BILL_OVERRIDES). */
 const BILL_OVERRIDES = new Set(['adu_status', 'family', 'age', 'care', 'owner_occupancy', 'sponsor', 'lot_area_per_unit', 'occupancy', 'lot_size', 'existing_structure', 'district', 'building_type', 'scope']);
 const FACT_TEXT: Record<string, string> = {
@@ -543,12 +551,28 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     parts.splice(1, 1, approval.qualifier_text as string);
   }
   const byForm = leafAt(file, 'adu', 'status_by_form');
+  // The path per form today (pipeline/rules.py by_type, no lot facts): the base path for an allowed form, else the
+  // fallback; a form's own path when it is more demanding; a form the code bars or leaves out takes the fallback.
+  const typesLeaf = leafAt(file, 'form', 'types_allowed');
+  const allowedForms = Array.isArray(typesLeaf?.value) ? (typesLeaf!.value as string[]) : [...ADU_FORMS];
+  const base = inScope === false ? 'not_allowed' : String(dpath ?? path?.value ?? 'not_allowed');
+  const fbPath = String(fallback?.value ?? 'variance');
+  const formPaths = (Array.isArray(leafAt(file, 'approval', 'form_paths')?.value) ? (leafAt(file, 'approval', 'form_paths')!.value as Json[]) : []).filter(isObj);
+  const byType: Record<string, string> = {};
+  for (const t of ADU_FORMS) {
+    const ok = base !== 'not_allowed' && allowedForms.includes(t);
+    let p = ok ? base : inScope === false ? String(effective ?? fbPath) : fbPath;
+    if (ok) for (const it of formPaths) if (Array.isArray(it.forms) && it.forms.includes(t) && typeof it.path === 'string') p = harder(p, it.path);
+    const fs = byForm && isObj(byForm.value) ? byForm.value[t] : undefined;
+    if (typeof fs === 'string' && NO_ADU.has(fs) && OK_PATHS.has(p)) p = OK_PATHS.has(fbPath) ? 'variance' : fbPath;
+    byType[t] = p;
+  }
   if (byForm && isObj(byForm.value)) parts.push(`By form: ${Object.entries(byForm.value).map(([t, v]) => `${label(t)} ${label(v)}`).join('. ')} (${byForm.section ?? ''})`);
   const out: Obj = {
     ...(typeof prov.code_caution === 'string' ? { code_caution: prov.code_caution } : {}),
     summary: parts.filter(Boolean).join('. '),
     adu: { status: st ? ruleOut('adu.status', st) : null, term: term ? ruleOut('adu.term', term) : null, ...(byForm && isObj(byForm.value) ? { status_by_form: ruleOut('adu.status_by_form', byForm) } : {}) },
-    approval,
+    approval: { ...approval, by_form_today: byType },
     conditions: inScope === false ? conditions.filter((c) => !['family', 'occupancy', 'owner_occupancy', 'adu_status'].includes(String(c.kind))) : conditions,
     checks: (prov.checks as Json) ?? [],
     forms: formsOf(file, district, noAdu || inScope === false),
@@ -600,11 +624,19 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     const sec = s0.includes('910.2') ? s0 : s0 ? `${s0}, MPC 910.2` : 'MPC 910.2';
     out.path_to_ask = { path: 'variance', section: sec, url: fbl?.url ?? null, note: `${lead}. The path is a use variance from the Zoning Hearing Board (${sec}). The owner must show unnecessary hardship` };
   }
-  // An ADU allowed after a hearing: say which body hears it (pipeline/rules.py _hearing_to_ask).
-  if (!out.path_to_ask && effective && effective in BOARDS && !noAdu && inScope !== false) {
-    const [board, mpc] = BOARDS[effective];
-    const sec = String((isObj(approval.district_path) ? approval.district_path.section : path?.section) ?? '');
-    out.path_to_ask = { path: effective, section: sec.includes(mpc) ? sec : sec ? `${sec}, ${mpc}` : mpc, kind: 'hearing', note: `A ${label(effective)} is decided by ${board} after a public hearing (${mpc})` };
+  // An ADU allowed after a hearing: say which body hears it, per form (pipeline/rules.py _hearing_to_ask).
+  const okForms = allowedForms.filter((t) => t in byType);
+  const hearings = Object.keys(BOARDS).filter((h) => okForms.some((t) => byType[t] === h));
+  if (!out.path_to_ask && hearings.length && !noAdu && inScope !== false) {
+    const main = effective && hearings.includes(effective) ? effective : hearings[0];
+    const mpc = BOARDS[main][1];
+    const notes = hearings.map((h) => {
+      const forms = okForms.filter((t) => byType[t] === h);
+      return `A ${label(h)}${forms.length === okForms.length ? '' : ` (${forms.map(label).join(', ')})`} is decided by ${BOARDS[h][0]} after a public hearing (${BOARDS[h][1]})`;
+    });
+    const formSec = main === effective ? null : formPaths.find((it) => it.path === main)?.section;
+    const sec = String(formSec ?? (isObj(approval.district_path) ? approval.district_path.section : path?.section) ?? '');
+    out.path_to_ask = { path: main, section: sec.includes(mpc) ? sec : sec ? `${sec}, ${mpc}` : mpc, kind: 'hearing', note: notes.join('. ') };
   }
   if ((status && NO_ADU.has(status) && !dpath) || (effective && NOT_OK.has(effective))) {
     const reasons = [st?.note, path?.note, fallback?.note].filter((x): x is string => typeof x === 'string' && !!x);

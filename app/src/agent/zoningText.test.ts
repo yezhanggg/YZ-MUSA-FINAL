@@ -8,8 +8,7 @@ import { SYSTEM_PROMPT, TOOLS } from '../../../agent/schema';
 import { makeExecutors, runTool, type DataProvider } from './executors';
 import {
   NOT_FOUND, TIER_B_LABEL, bm25, coverage, excerpt, findTextPlace, listTextPlaces, searchZoningText, tokens, zoningTextSource, zoningTextUrl,
-  type TextFile, type TextManifest, type TextPlace, type ZoningTextSource,
-} from './zoningText';
+  type TextFile, type TextManifest, type TextPlace, type ZoningTextSource, INCOMPLETE, QUOTE_RULE, cleanScan } from './zoningText';
 
 // Same cases as tests/test_corpus_tierb.py: the browser and the builder tokenize alike.
 const TOKEN_CASES: [string, string[]][] = [
@@ -89,6 +88,17 @@ describe('search_zoning_text', () => {
     expect(flat).not.toMatch(/"(status|approval_path|districts)"/);
     expect(String(out.how_to_use)).toMatch(/word for word/);
     expect(String(out.next_step)).toMatch(/zoning officer/);
+    // Quote discipline is in the result: the copy rule, and what kind of text each passage is.
+    expect(out.quote_rule).toBe(QUOTE_RULE);
+    expect(out.results![0].text_kind).toBe('typed text');
+  });
+
+  it('a search with no match gives the exact sentence to use, and the incomplete text its own', async () => {
+    const full = await search({ place: 'Alpha borough', query: 'short-term rental airbnb' });
+    expect(full.say_exactly).toBe(NOT_FOUND);
+    expect(String(full.not_found_rule)).toMatch(/does not mention/);
+    const part = await search({ place: 'Beta township', county: 'Lycoming', query: 'short-term rental airbnb' });
+    expect(part.say_exactly).toBe(INCOMPLETE);
   });
 
   it('says "Not found in the text searched" only when the full text is on file', async () => {
@@ -195,7 +205,8 @@ describe.skipIf(!existsSync(resolve(dir, 'manifest.json')))('built tier B files'
       const out = (await runTool(ex, 'search_zoning_text', { place: pl.geoid, query: 'accessory dwelling unit' })).result as Out;
       expect(out.tier).toBe('B');
       const file = JSON.parse(new TextDecoder().decode(await new Response(new Blob([readFileSync(resolve(dir, 'text', `${pl.text_id}.json.gz`))]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer())) as TextFile;
-      for (const r of out.results ?? []) expect(file.chunks.some((c) => c[5].includes(String(r.quote))), `${pl.name} ${r.section}`).toBe(true);
+      // A scanned passage is quoted from its text with the margin marks taken off (cleanScan).
+      for (const r of out.results ?? []) expect(file.chunks.some((c) => (r.ocr ? cleanScan(c[5]) : c[5]).includes(String(r.quote))), `${pl.name} ${r.section}`).toBe(true);
       for (const k of VERDICT_KEYS) expect(Object.keys(out)).not.toContain(k);
     }
   }, 60_000);
@@ -204,5 +215,16 @@ describe.skipIf(!existsSync(resolve(dir, 'manifest.json')))('built tier B files'
 describe('place names', () => {
   it('"name, county" works also when the county is given again', async () => {
     expect((await search({ place: 'Beta township, Lycoming County', county: 'Lycoming', query: 'accessory dwelling' })).found).toBe(true);
+  });
+});
+
+describe('scanned text', () => {
+  it('takes stray margin marks off line starts and keeps every word as read', () => {
+    const scan = 'c 15. Unit for Care of Relative.\nj\na a. The use shall meet the definition.\nE b. The accessory unit shall be occupied by two persons, who shal! be\ni of the permanent residents.\n: - unit shall need care.\nEe c The applicant shall prove that it has been designed and\ni j constructed so that it can be reconverted after the\n, relative no longer resides. A building may not\nPA Code and ft of lot area stay.';
+    expect(cleanScan(scan)).toBe(
+      '15. Unit for Care of Relative.\na. The use shall meet the definition.\nb. The accessory unit shall be occupied by two persons, who shal! be\nof the permanent residents.\nunit shall need care.\nThe applicant shall prove that it has been designed and\nconstructed so that it can be reconverted after the\nrelative no longer resides. A building may not\nPA Code and ft of lot area stay.',
+    );
+    // Typed lines that start with a word, a list marker or a section sign are unchanged.
+    for (const t of ['A building shall not exceed 800 square feet.', 'A. Accessory dwelling units', '(a) The lot', '§ 403 applies', 'I. Purpose']) expect(cleanScan(t)).toBe(t);
   });
 });

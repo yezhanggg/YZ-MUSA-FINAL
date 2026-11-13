@@ -124,3 +124,51 @@ describe.skipIf(!existsSync(TABLE))('the real place table', () => {
     }
   });
 });
+
+// The rule text keys from the resolver (status by form, lesser-of cap, hearing body, code caution), on the bundled rule files.
+describe('rule text from the resolver', () => {
+  const town = (geoid: string, name: string, county: string, rule_file: string, over: Partial<PlaceRow> = {}) =>
+    row({ geoid, name, county, rule_file, tier: 'verified', status: 'limited', approval: 'by_right', unit_types: ['detached', 'attached', 'internal', 'garage'], source: { name: 'code', url: 'https://c', date: '2026-11-12' }, ...over });
+  const R = [
+    town('4207784528', 'Whitehall township', 'Lehigh', 'pa_lehigh_whitehall', { status: 'not_addressed', approval: 'variance', unit_types: [] }),
+    town('4200345900', 'McCandless township', 'Allegheny', 'pa_allegheny_mccandless'),
+    town('4212955128', 'North Huntingdon township', 'Westmoreland', 'pa_westmoreland_north_huntingdon', { tier: 'drafted', status: 'not_addressed', approval: 'variance', unit_types: [] }),
+    town('4204513212', 'Chester city', 'Delaware', 'pa_delaware_chester'),
+    town('4207702000', 'Allentown city', 'Lehigh', 'pa_lehigh_allentown'),
+  ];
+  const ask2 = (input: Record<string, unknown>) => ask(input, { places: memoryPlaces(R) });
+  const za = (o: Out) => o.zoning_allows as Out;
+
+  it('a status that differs by form gives one verdict line per form', async () => {
+    const o = await ask2({ place: 'Whitehall township, Lehigh County', unit_type: 'detached' });
+    expect(String(o.verdict)).toMatch(/^Depends on the form\. A detached backyard cottage.*bars this form \(27-62D\).*A unit inside the house or an addition attached to the house: Not allowed today/);
+    expect((za(o).by_form as Out[]).find((f) => f.form === 'a unit inside the house')!.verdict).toMatch(/no rule for this form/);
+    expect((o.proposal as Out).check).toMatchObject({ fits_zoning: 'no' });
+    expect(String(((o.proposal as Out).check as Out).why)).toMatch(/27-62D/);
+    expect(String(o.how_to_answer)).toMatch(/one line per form/);
+  });
+  it('the lesser-of cap is one sentence, and the share of the house is "not checked" in a proposal', async () => {
+    const o = await ask2({ place: 'McCandless township', unit_type: 'detached', size_sqft: 900 });
+    expect(za(o).size_rule_accessory_building).toBe('At most 1,000 sq ft or 50% of the house, whichever is less (1303.220(B)(1)(d))');
+    const why = ((o.proposal as Out).check as Out).why as string[];
+    expect(why.join(' ')).toMatch(/50% of the house .*whichever is less\. Not checked/);
+  });
+  it('a placeholder code comes with its caution line first, and the unlisted-use hearing names who decides', async () => {
+    const o = await ask2({ place: 'North Huntingdon township' });
+    expect(String(o.code_caution)).toMatch(/^Code caution: .*placeholder/);
+    expect(za(o).who_decides).toMatch(/Zoning Hearing Board after a public hearing \(MPC 912\.1\)/);
+    expect(String(o.how_to_answer)).toMatch(/code caution/);
+  });
+  it('a hearing for one form only names that form and the body that hears it', async () => {
+    const o = await ask2({ place: 'Chester city', county: 'Delaware' });
+    expect(za(o).who_decides).toMatch(/^A special exception \(garage conversion\) is decided by the Zoning Hearing Board/);
+    expect(String(o.verdict)).toMatch(/A garage conversion: Allowed with a special exception/);
+  });
+  it('a city with lot records points to find_lot and the lot tools; every answer ends with the next step', async () => {
+    const o = await ask2({ place: 'Allentown city' });
+    expect(String(o.lot_records)).toMatch(/find_lot/);
+    expect(String(o.next_step)).toMatch(/search its address/);
+    expect(String(o.how_to_answer)).toMatch(/End with "Next step:"/);
+    expect((await ask2({ place: 'McCandless township' })).lot_records).toBeUndefined();
+  });
+});

@@ -11,6 +11,7 @@ import type { QuestionContext, QuestionSet } from './types';
 
 export const EVAL_DIR = import.meta.dirname;
 export const QUESTIONS_FILE = resolve(EVAL_DIR, 'questions.json');
+/** Places the generated set (questions.json) is made from. Allentown questions are in questions_allentown.json. */
 export const PLACES = ['pittsburgh', 'philadelphia'] as const;
 
 const envKey = (place: string) => `LOT_DATA_DIR_${place.toUpperCase()}`;
@@ -47,12 +48,21 @@ export function useRoots(roots: Record<string, string>) {
 /** Hand-written questions added to the generated set: tier B (search_zoning_text) and the answer ladder (get_place_answer). */
 export const TIERB_FILE = resolve(EVAL_DIR, 'questions_tierb.json');
 export const LADDER_FILE = resolve(EVAL_DIR, 'questions_ladder.json');
+/** Made by make_more_questions.ts: Allentown lot questions and rule text questions. */
+export const ALLENTOWN_FILE = resolve(EVAL_DIR, 'questions_allentown.json');
+export const RULE_TEXT_FILE = resolve(EVAL_DIR, 'questions_rule_text.json');
 
 export function readSet(file = QUESTIONS_FILE): QuestionSet {
   const set = JSON.parse(readFileSync(file, 'utf8')) as QuestionSet;
   if (file === QUESTIONS_FILE)
-    for (const f of [TIERB_FILE, LADDER_FILE])
-      if (existsSync(f)) set.questions = [...set.questions, ...(JSON.parse(readFileSync(f, 'utf8')) as { questions: QuestionSet['questions'] }).questions];
+    for (const f of [TIERB_FILE, LADDER_FILE, ALLENTOWN_FILE, RULE_TEXT_FILE])
+      if (existsSync(f)) {
+        const extra = JSON.parse(readFileSync(f, 'utf8')) as Partial<QuestionSet> & { questions: QuestionSet['questions'] };
+        set.questions = [...set.questions, ...extra.questions];
+        // A file made from another place's lot folder adds that folder (the tests skip when it is missing).
+        set.data_roots = { ...extra.data_roots, ...set.data_roots };
+        set.data_versions = { ...extra.data_versions, ...set.data_versions };
+      }
   return set;
 }
 

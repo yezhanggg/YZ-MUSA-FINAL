@@ -11,6 +11,7 @@ import type { LotRecord } from '../lib/lot/types';
 import { moneyOptions, tractRents } from '../tool/testState';
 import { zoningTextSource } from './zoningText';
 import { placesSource } from './placeAnswer';
+import { lotPlacesText } from './lotPlaces';
 
 function siteOfLot(lot: Lot): SiteRecord {
   const { tracts, towns } = useTool.getState();
@@ -112,7 +113,7 @@ export const browserProvider: DataProvider = {
     const map = mapRef.current;
     const spot = useTool.getState().spot;
     const center: LngLat | null = spot ? spot.pt : map ? [map.getCenter().lng, map.getCenter().lat] : null;
-    return { lots, center, scope: ids.length ? `${ids.length} tract(s) on screen or around the selected site` : 'no tracts with older pilot lots on screen. For one lot in Philadelphia or Pittsburgh use the lot record tools' };
+    return { lots, center, scope: ids.length ? `${ids.length} tract(s) on screen or around the selected site` : `no tracts with older pilot lots on screen. For one lot in ${lotPlacesText('or')} use find_lot and the lot record tools` };
   },
   async addressBook() {
     const recs = loadedLots();

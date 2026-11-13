@@ -161,6 +161,22 @@ describe('results', () => {
   });
 });
 
+describe('what a record cannot check is "not checked"', () => {
+  it('a record with no land cover says so in the facts and in a unit test, and a check with no answer is "not checked"', async () => {
+    const base = fixture('garage');
+    const bare: LotRecord = { ...base, cover: {} as LotRecord['cover'], facts: { ...base.facts, living_sqft: null } as LotRecord['facts'] };
+    const p: LotAgentProvider = { ...provider(null), lotById: async () => bare, selectedLot: async () => bare };
+    expect(String((await run(p, 'get_lot_facts')).land_cover)).toMatch(/^Not checked: no land cover/);
+    const t = await run(p, 'test_unit_on_lot', { type: 'detached_new', width_ft: 12, depth_ft: 20 });
+    const list = t.not_checked as string[];
+    expect(list.some((x) => /no land cover/.test(x))).toBe(true);
+    for (const c of t.checks as Json[]) expect([true, false, 'not checked']).toContain(c.pass);
+    expect(String(t.not_checked_rule)).toMatch(/Do not guess/);
+    // A record with land cover has no such note.
+    expect((await run(provider('garage'), 'get_lot_facts')).land_cover).toBeUndefined();
+  });
+});
+
 describe('no placeholders', () => {
   it('compact turns NaN and Infinity into null and drops undefined', () => {
     expect(compact({ a: NaN, b: Infinity, c: undefined, d: [1.234567, -0] })).toEqual({ a: null, b: null, d: [1.23, -0] });

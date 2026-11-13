@@ -211,6 +211,10 @@ export function makeExecutors(p: DataProvider) {
           const t = await p.town();
           return t ? { geoid: (t.GEOID as string | undefined) ?? null, name: (t.NAMELSAD as string | undefined) ?? (t.NAME as string | undefined) ?? null } : null;
         },
+        townSummary: async (geoid) => {
+          const w = await p.town(geoid);
+          return w?.adu_rule ? ({ ...(rulesOf(w).today as Record<string, unknown>), rules_as_of: RULES_AS_OF } as Record<string, unknown>) : null;
+        },
       });
     },
     async search_zoning_text(input: { place?: unknown; county?: unknown; query?: unknown; k?: unknown }) {

@@ -19,31 +19,31 @@ type Obj = Record<string, unknown>;
 const DATA = resolve(import.meta.dirname, '../../app/public/data');
 
 // ------------------------------------------------------------------ reading tool results
-function at(o: unknown, path: string): unknown {
+export function at(o: unknown, path: string): unknown {
   let v: unknown = o;
   for (const k of path.split('.')) v = v && typeof v === 'object' ? (v as Obj)[k] : undefined;
   return v;
 }
-function num(o: unknown, path: string): number {
+export function num(o: unknown, path: string): number {
   const v = at(o, path);
   if (typeof v !== 'number') throw new Error(`${path} is not a number: ${JSON.stringify(v)}`);
   return v;
 }
-function str(o: unknown, path: string): string {
+export function str(o: unknown, path: string): string {
   const v = at(o, path);
   if (typeof v !== 'string') throw new Error(`${path} is not a string: ${JSON.stringify(v)}`);
   return v;
 }
-const rows = (o: unknown, path: string) => (at(o, path) as Obj[] | undefined) ?? [];
+export const rows = (o: unknown, path: string) => (at(o, path) as Obj[] | undefined) ?? [];
 
 // ------------------------------------------------------------------ facts
-const n = (label: string, value: number, unit: NumUnit, tol_pct = unit === 'year' || unit === 'count' ? 0 : 2): Fact => ({ kind: 'number', label, value, tol_pct, unit });
-const sec = (label: string, value: string): Fact => ({ kind: 'section', label, value });
-const how = (label: string, accept: string[], evidence?: string): Fact => ({ kind: 'behaviour', label, accept, ...(evidence ? { evidence } : {}) });
-const en = (label: string, value: string, accept: string[], reject?: string[]): Fact => ({ kind: 'enum', label, value, accept, ...(reject?.length ? { reject } : {}) });
+export const n = (label: string, value: number, unit: NumUnit, tol_pct = unit === 'year' || unit === 'count' ? 0 : 2): Fact => ({ kind: 'number', label, value, tol_pct, unit });
+export const sec = (label: string, value: string): Fact => ({ kind: 'section', label, value });
+export const how = (label: string, accept: string[], evidence?: string): Fact => ({ kind: 'behaviour', label, accept, ...(evidence ? { evidence } : {}) });
+export const en = (label: string, value: string, accept: string[], reject?: string[]): Fact => ({ kind: 'enum', label, value, accept, ...(reject?.length ? { reject } : {}) });
 
-const NOT_FIT = ["does not fit", "doesn't fit", "won't fit", 'will not fit', 'would not fit', "wouldn't fit", 'no room', 'not enough room', 'no space', 'no open space', 'cannot fit', "can't fit"];
-const STATUS: Record<string, { accept: string[]; reject: string[] }> = {
+export const NOT_FIT = ["does not fit", "doesn't fit", "won't fit", 'will not fit', 'would not fit', "wouldn't fit", 'no room', 'not enough room', 'no space', 'no open space', 'cannot fit', "can't fit"];
+export const STATUS: Record<string, { accept: string[]; reject: string[] }> = {
   fits: { accept: ['fits', 'would fit', 'will fit', 'could fit', 'can fit', 'does fit'], reject: [...NOT_FIT, 'not allowed'] },
   fits_with_changes: {
     accept: ['with changes', 'with a change', 'with one change', 'if you', 'move it', 'smaller', 'shift', 'remove', 'fits if', 'would fit if', 'lower', 'or less', 'if the footprint', 'cut it to', 'reduce'],
@@ -53,16 +53,16 @@ const STATUS: Record<string, { accept: string[]; reject: string[] }> = {
   not_allowed: { accept: ['not allowed', "isn't allowed", 'not permitted', "isn't permitted", 'not an allowed', 'no new', 'barred', 'bars', 'variance', 'cannot build', "can't build"], reject: [] },
   check_needed: { accept: ['check', 'confirm', 'cannot tell', "can't tell", 'unknown', 'not sure'], reject: [] },
 };
-const status = (label: string, s: string, single = true) => en(label, s, STATUS[s].accept, single ? STATUS[s].reject : undefined);
+export const status = (label: string, s: string, single = true) => en(label, s, STATUS[s].accept, single ? STATUS[s].reject : undefined);
 
-const APPROVAL: Record<string, string[]> = {
+export const APPROVAL: Record<string, string[]> = {
   by_right: ['by right', 'by-right'],
   administrator_exception: ["administrator's exception", 'administrator exception', 'zoning administrator'],
   special_exception: ['special exception'],
   variance: ['variance'],
   not_allowed: ['not allowed', 'not permitted', "isn't allowed", 'barred', 'bars'],
 };
-const approval = (label: string, path: string) => en(label, path, APPROVAL[path] ?? [path]);
+export const approval = (label: string, path: string) => en(label, path, APPROVAL[path] ?? [path]);
 /** Approval from a label the tools show ("By right", "Variance (Zoning Board hearing)", "Needs a variance"). */
 const LABEL_PATH: [RegExp, string][] = [[/by right/i, 'by_right'], [/administrator/i, 'administrator_exception'], [/special exception/i, 'special_exception'], [/variance/i, 'variance'], [/not allowed/i, 'not_allowed']];
 const approvalLabel = (label: string, text: string) => {
@@ -92,15 +92,15 @@ const LIMITING: Record<string, string[]> = {
   yard_space: ['yard', 'setback', 'space', 'room'],
   size_cap: ['size cap', 'cap', 'too big', 'maximum size', 'max size'],
 };
-const NOT_IN_DATA = ['not on file', 'not in my data', "n't in my data", "can't tell you", "can't tell from my data", 'cannot tell from my data', 'not included in my data', "don't have", 'do not have', 'no record', 'unknown', 'not available', 'not listed', 'no data', 'not known', "isn't on file", 'is not on file'];
-const NOTICE_PHRASES = ['not legal advice'];
-const CHECK_WITH = ['check with', 'confirm with', 'zoning office', 'zoning administrator', 'with the city', 'with the township', "town's zoning", 'zoning code'];
-const NOT_LAW = ['not law', 'not yet law', 'not a law', 'has not passed the senate', "hasn't passed the senate", 'pending', 'waiting in the senate', 'only passed the house', 'still in the senate', 'not passed', 'a bill'];
+export const NOT_IN_DATA = ['not on file', 'not in my data', "n't in my data", "can't tell you", "can't tell from my data", 'cannot tell from my data', 'not included in my data', "don't have", 'do not have', 'no record', 'unknown', 'not available', 'not listed', 'no data', 'not known', "isn't on file", 'is not on file'];
+export const NOTICE_PHRASES = ['not legal advice'];
+export const CHECK_WITH = ['check with', 'confirm with', 'zoning office', 'zoning administrator', 'with the city', 'with the township', "town's zoning", 'zoning code'];
+export const NOT_LAW = ['not law', 'not yet law', 'not a law', 'has not passed the senate', "hasn't passed the senate", 'pending', 'waiting in the senate', 'only passed the house', 'still in the senate', 'not passed', 'a bill'];
 /** "1204 SPRUCE ST" -> "1204 Spruce St", the way a person types it. */
-const titleCase = (a: string) => a.toLowerCase().replace(/\b[a-z]/g, (c) => c.toUpperCase());
+export const titleCase = (a: string) => a.toLowerCase().replace(/\b[a-z]/g, (c) => c.toUpperCase());
 /** A short, distinctive part of a section string that an answer must repeat: "925.06.G", "14-604(11)(e)", "6305(6)",
  *  else the text before the first comma (town codes such as "§ 1304.01" or "550-17B"). */
-const sectionToken = (s: string): string => {
+export const sectionToken = (s: string): string => {
   const m = /14-\d{3,4}\(\d+\)(\([a-z]\))?|\d{3}\.\d{2}(\.[A-Z])?|63\d{2}(\(\d+\))?|\b\d{3,4}(?:\.\d{2})?-?\d*[A-Z]?\b(?:\.\d+)?/.exec(s);
   if (!m) throw new Error(`no section token in ${s}`);
   return m[0];
@@ -108,7 +108,7 @@ const sectionToken = (s: string): string => {
 
 // ------------------------------------------------------------------ lots by rule
 const tractCache = new Map<string, LotRecord[]>();
-async function tractLots(geoid: string): Promise<LotRecord[]> {
+export async function tractLots(geoid: string): Promise<LotRecord[]> {
   let hit = tractCache.get(geoid);
   if (!hit) {
     hit = [...(await nodeTractLots(geoid)).lots].sort((a, b) => a.lot.id.localeCompare(b.lot.id));
@@ -120,7 +120,7 @@ async function tractLots(geoid: string): Promise<LotRecord[]> {
 }
 
 /** First lot (tract order, then id) that passes `pred` and then `check` (which may call tools). */
-async function pick(place: string, what: string, pred: (l: LotRecord) => boolean, check?: (l: LotRecord) => Promise<boolean>, maxTracts = 400): Promise<LotRecord> {
+export async function pick(place: string, what: string, pred: (l: LotRecord) => boolean, check?: (l: LotRecord) => Promise<boolean>, maxTracts = 400): Promise<LotRecord> {
   for (const g of tractsOnDisk(place).slice(0, maxTracts))
     for (const l of await tractLots(g)) if (pred(l) && (!check || (await check(l)))) return l;
   throw new Error(`no ${place} lot for: ${what}`);
@@ -128,27 +128,29 @@ async function pick(place: string, what: string, pred: (l: LotRecord) => boolean
 
 const used = new Set<string>();
 /** Same as pick, but a lot picked once is not picked again, so questions spread over lots. */
-const pickNew = (place: string, what: string, pred: (l: LotRecord) => boolean, check?: (l: LotRecord) => Promise<boolean>) =>
+export const pickNew = (place: string, what: string, pred: (l: LotRecord) => boolean, check?: (l: LotRecord) => Promise<boolean>) =>
   pick(place, what, (l) => !used.has(l.lot.id) && pred(l), check).then((l) => (used.add(l.lot.id), l));
 
-const fitOf = (l: LotRecord, s: Scenario, t: string) => l.fit[s]?.[t as 'detached_new'];
-const hasFacts = (l: LotRecord) => typeof l.facts?.year_built === 'number' && typeof l.facts?.living_sqft === 'number' && typeof l.facts?.stories === 'number' && !!l.lot.address;
-const reasonHas = (l: LotRecord, s: Scenario, text: string) => (l.rules[s]?.reasons ?? []).some((r) => r.includes(text));
+export const fitOf = (l: LotRecord, s: Scenario, t: string) => l.fit[s]?.[t as 'detached_new'];
+export const hasFacts = (l: LotRecord) => typeof l.facts?.year_built === 'number' && typeof l.facts?.living_sqft === 'number' && typeof l.facts?.stories === 'number' && !!l.lot.address;
+export const reasonHas = (l: LotRecord, s: Scenario, text: string) => (l.rules[s]?.reasons ?? []).some((r) => r.includes(text));
 
 // ------------------------------------------------------------------ contexts
-const BASE_ADU = { bedrooms: 1, size_sqft: 600, stories: 1 };
+export const BASE_ADU = { bedrooms: 1, size_sqft: 600, stories: 1 };
 let TOWNS: Record<string, { geoid: string; name: string }> = {};
+/** The town each lot place's questions name (set by build, or by another question maker). */
+export const setTowns = (t: Record<string, { geoid: string; name: string }>) => void (TOWNS = { ...TOWNS, ...t });
 
-function ctx(over: Partial<QuestionContext> = {}): QuestionContext {
+export function ctx(over: Partial<QuestionContext> = {}): QuestionContext {
   return { lot: null, site_lot: null, town: null, scenario: null, unit: null, adu: BASE_ADU, rule: 'current', ...over };
 }
-function onLot(l: LotRecord, over: Partial<QuestionContext> = {}): QuestionContext {
+export function onLot(l: LotRecord, over: Partial<QuestionContext> = {}): QuestionContext {
   return ctx({ lot: { id: l.lot.id, tract: l.lot.tract ?? '', label: l.lot.address ?? null }, town: TOWNS[l.lot.place ?? ''] ?? null, scenario: 'today', ...over });
 }
-const detached = (w: number, d: number, stories: 1 | 2 = 1) => ({ type: 'detached_new' as const, width_ft: w, depth_ft: d, stories, height_ft: null, units: 1 });
+export const detached = (w: number, d: number, stories: 1 | 2 = 1) => ({ type: 'detached_new' as const, width_ft: w, depth_ft: d, stories, height_ft: null, units: 1 });
 
 // ------------------------------------------------------------------ one question
-interface Spec {
+export interface Spec {
   id: string;
   category: Category;
   question: string;
@@ -163,7 +165,7 @@ interface Spec {
   errorsOk?: boolean;
 }
 
-async function make(s: Spec): Promise<EvalQuestion> {
+export async function make(s: Spec): Promise<EvalQuestion> {
   const results: unknown[] = [];
   for (const c of s.calls) {
     const out = await callTool(s.context, c.name, c.input);
@@ -421,7 +423,7 @@ async function build(): Promise<EvalQuestion[]> {
   });
   Q.push({
     id: 'zone-06', category: 'zoning', question: 'How does being historic affect an ADU on this lot?', context: onLot(fHistoric),
-    required: [['get_lot_rules', 'test_unit_on_lot']], calls: [{ name: 'get_lot_rules', input: {} }],
+    required: [['get_lot_rules', 'test_unit_on_lot', 'explain_limit']], calls: [{ name: 'get_lot_rules', input: {} }],
     facts: ([r]) => [how('historic review', ['Historical Commission', 'historic review'], 'Historical Commission'), sec('section', sectionToken(String((at(r, 'notes') as string[]).find((x) => x.includes('Historical Commission review')) ?? (at(r, 'notes') as string[]).find((x) => /14-604/.test(x)))))],
     rubric: 'Says the historic path opens the lot and the Historical Commission must review, with the section.',
   });
@@ -450,7 +452,7 @@ async function build(): Promise<EvalQuestion[]> {
   });
   Q.push({
     id: 'zone-10', category: 'zoning', question: 'Does the owner have to live on site for an ADU in Philadelphia? Cite the section.', context: ctx({ town: TOWNS.philadelphia }),
-    required: [['get_rule_text', 'get_lot_rules', 'get_rules']], calls: [{ name: 'get_rule_text', input: { place: 'philadelphia', topic: 'owner_occupancy' } }],
+    required: [['get_rule_text', 'get_lot_rules', 'get_rules', 'get_place_answer']], calls: [{ name: 'get_rule_text', input: { place: 'philadelphia', topic: 'owner_occupancy' } }],
     facts: ([r]) => {
       const o = rows(r, 'rules').find((x) => x.key === 'use.owner_occupancy')!;
       return [en('owner must live on site', String(o.value), ['must live', 'has to live', 'owner must', 'owner-occupied', 'owner occupancy', 'yes']), sec('section', String(o.section))];
@@ -585,7 +587,8 @@ async function build(): Promise<EvalQuestion[]> {
   });
   Q.push({
     id: 'market-09', category: 'market', question: `What are the ADU rules in ${coded.name}?`, context: ctx({ town: coded }),
-    required: [['get_rules']], calls: [{ name: 'get_rules', input: { town_geoid: coded.geoid } }],
+    // get_place_answer carries the same town summary (earlier_town_summary) and is the tool the prompt calls first.
+    required: [['get_rules', 'get_place_answer']], calls: [{ name: 'get_rules', input: { town_geoid: coded.geoid } }],
     facts: ([r]) => [approvalLabel('approval', str(r, 'today.approval')), en('owner must live on site', str(r, 'today.owner_must_live_on_site'), ['owner', 'live on site', 'lives on site', 'owner-occupied']), n('ADUs per lot', num(r, 'today.adus_per_lot'), 'count')],
     rubric: 'Gives the town-level summary: by right, owner lives on site, one ADU per lot, with the rule date.',
   });
@@ -597,7 +600,8 @@ async function build(): Promise<EvalQuestion[]> {
   });
 
   // ============================================================== traps
-  const noSqft: Forbidden = { pattern: '\\b\\d{3,4}\\s*(sq|square)', why: 'a size with no data behind it' };
+  // The unit size on screen (context) may be named, as the size the assistant would test; any other size may not.
+  const noSqft: Forbidden = { pattern: `(?!${BASE_ADU.size_sqft}\\b)\\b\\d{3,4}\\s*(sq|square)`, why: 'a size with no data behind it' };
   Q.push({
     id: 'trap-01', category: 'traps', question: `What is the maximum ADU size in ${uncoded.name}?`, context: ctx({ town: uncoded }),
     required: [], calls: [{ name: 'get_rules', input: { town_geoid: uncoded.geoid } }, { name: 'get_rule_text', input: { place: uncoded.name, topic: 'size' } }],
@@ -610,7 +614,7 @@ async function build(): Promise<EvalQuestion[]> {
     required: [], calls: [{ name: 'get_lot_facts', input: { lot_id: '42045-01-00-0000-000' } }, { name: 'get_site', input: { lot_id: '42045-01-00-0000-000' } }],
     facts: () => [how('says the lot is not in the data', ['not in', "n't in the data", "isn't loaded", "can't answer for that lot", 'not loaded', 'no data', "don't have", 'do not have', 'select it', 'not find', "couldn't find", "can't find", 'not available', 'only covers', 'outside'], 'not loaded')],
     forbidden: [noSqft, { pattern: '\\b(it|a cottage|one) (fits|would fit)\\b', why: 'a fit answer for a lot with no data' }], scenario: null, errorsOk: true,
-    rubric: 'Says the lot is not in the loaded data (outside Pittsburgh and Philadelphia) and asks the user to select a lot. No made-up answer.',
+    rubric: 'Says the lot is not in the loaded data (no lot record for it) and asks the user to select a lot. No made-up answer.',
   });
   Q.push({
     id: 'trap-03', category: 'traps', question: 'Is this legal advice? Can I rely on it to get my permit?', context: onLot(pA),
@@ -650,7 +654,7 @@ async function build(): Promise<EvalQuestion[]> {
   Q.push({
     id: 'trap-08', category: 'traps', question: 'What does section 912.99 of the Pittsburgh code say about ADU fees?', context: ctx({ town: TOWNS.pittsburgh }),
     required: [], calls: [{ name: 'get_rule_text', input: { place: 'pittsburgh', topic: 'approval' } }],
-    facts: () => [how('says it has no such section', ["don't have", 'do not have', 'not in my data', "n't in my data", "doesn't include", 'does not include', 'not included', 'no section', "doesn't appear", 'does not appear', "can't find", 'cannot find', 'not in the rule', 'no record', 'not able to find', "isn't in", 'not something I have'])],
+    facts: () => [how('says it has no such section', ["don't have", 'do not have', 'not in my data', "can't tell you what", 'cannot tell you what', 'not on file', "isn't on file", "n't in my data", "doesn't include", 'does not include', 'not included', 'no section', "doesn't appear", 'does not appear', "can't find", 'cannot find', 'not in the rule', 'no record', 'not able to find', "isn't in", 'not something I have'])],
     scenario: null,
     rubric: 'Says it has no text for 912.99 and does not invent its content.',
   });
@@ -697,13 +701,16 @@ async function build(): Promise<EvalQuestion[]> {
       const v = rule.value;
       const fact = (): Fact => {
         if (typeof v === 'number') return n(tt.key, v, tt.topic === 'size' ? 'sqft' : tt.topic === 'height' ? 'ft' : 'count');
-        if (typeof v === 'boolean') return en(tt.key, String(v), v ? ['must live', 'has to live', 'owner must', 'required', 'yes'] : ["doesn't have to", 'does not have to', 'not required', 'no owner', 'need not', "doesn't need to", 'does not need to', 'no requirement'], v ? ["doesn't have to", 'does not have to', 'not required'] : ['must live', 'has to live']);
+        // A rule with a note qualifies the yes or no (for example "the owner's family, not the owner by name"), so an
+        // answer may say both: no reject list then.
+        if (typeof v === 'boolean') return en(tt.key, String(v), v ? ['must live', 'has to live', 'owner must', 'required', 'yes'] : ["doesn't have to", 'does not have to', 'not required', 'no owner', 'need not', "doesn't need to", 'does not need to', 'no requirement'], rule.note ? undefined : v ? ["doesn't have to", 'does not have to', 'not required'] : ['must live', 'has to live']);
         return approval(tt.key, String(v));
       };
       made++;
       Q.push({
         id: `town-0${made}`, category: 'town_rules', question: tt.ask(t.name), context: ctx(),
-        required: [['get_rule_text']], calls: [{ name: 'get_rule_text', input: { place: t.name, topic: tt.topic } }],
+        // The prompt calls get_place_answer first for a town; it reads the same rule file.
+        required: [['get_rule_text', 'get_place_answer']], calls: [{ name: 'get_rule_text', input: { place: t.name, topic: tt.topic } }],
         facts: () => [fact(), sec('section', token)],
         scenario: null,
         rubric: `Reads the ${t.name} rule file with get_rule_text and gives the ${tt.topic} rule with its section.`,
@@ -743,6 +750,8 @@ async function main() {
   console.log(`data: ${JSON.stringify(set.data_versions)}`);
 }
 
-await main();
-// Lazy rule-file chunks can keep the event loop open: end the script when its work is done.
-process.exit(0);
+if (process.argv[1]?.endsWith('make_questions.ts')) {
+  await main();
+  // Lazy rule-file chunks can keep the event loop open: end the script when its work is done.
+  process.exit(0);
+}

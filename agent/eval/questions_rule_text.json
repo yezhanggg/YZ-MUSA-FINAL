@@ -1,0 +1,455 @@
+{
+ "about": "Rule text questions (status by form, lesser-of cap, hearing body, code caution, ADU under another listing). Made by agent/eval/make_more_questions.ts from get_place_answer over the rule files. Do not edit by hand.",
+ "generated_at": "2026-11-13T06:25:58.244Z",
+ "data_roots": {},
+ "data_versions": {},
+ "questions": [
+  {
+   "id": "rt-01",
+   "category": "rule_text",
+   "question": "In Whitehall township, Lehigh County, can I build a backyard cottage? What about a unit inside my house?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Whitehall township, Lehigh County"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "detached form barred",
+     "accept": [
+      "bars",
+      "barred",
+      "prohibit",
+      "expressly",
+      "not allowed"
+     ],
+     "evidence": "bars this form"
+    },
+    {
+     "kind": "section",
+     "label": "section that bars it",
+     "value": "27-62D"
+    },
+    {
+     "kind": "behaviour",
+     "label": "inside the house: a variance",
+     "accept": [
+      "variance"
+     ],
+     "evidence": "variance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with",
+      "confirm with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b(cottage|detached)[^.]{0,40}\\b(is|are) allowed\\b",
+     "why": "says the barred form is allowed"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Whitehall township: the answer differs by form. Detached forms are barred (27-62D); a unit inside or attached is not named, so a use variance."
+  },
+  {
+   "id": "rt-02",
+   "category": "rule_text",
+   "question": "How big can a backyard ADU be in McCandless township, Allegheny County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "McCandless township, Allegheny County"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "square feet cap",
+     "value": 1000,
+     "tol_pct": 2,
+     "unit": "sqft"
+    },
+    {
+     "kind": "number",
+     "label": "share of the house",
+     "value": 50,
+     "tol_pct": 2,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "whichever is less",
+     "accept": [
+      "whichever is less",
+      "whichever is smaller",
+      "lesser of",
+      "the smaller of",
+      "smaller of the two",
+      "whichever is lower"
+     ],
+     "evidence": "whichever is less"
+    },
+    {
+     "kind": "section",
+     "label": "size section",
+     "value": "1303.220"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "McCandless township: At most 1,000 sq ft or 50% of the house, whichever is less (1303.220(B)(1)(d)). Both limits and \"whichever is less\"."
+  },
+  {
+   "id": "rt-03",
+   "category": "rule_text",
+   "question": "Is a 900 sq ft backyard cottage within the size limit in McCandless township, Allegheny County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "McCandless township, Allegheny County",
+      "unit_type": "detached",
+      "size_sqft": 900
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "square feet cap",
+     "value": 1000,
+     "tol_pct": 2,
+     "unit": "sqft"
+    },
+    {
+     "kind": "number",
+     "label": "share of the house",
+     "value": 50,
+     "tol_pct": 2,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the share depends on the house",
+     "accept": [
+      "your house",
+      "the house is",
+      "house size",
+      "size of the house",
+      "size of your house",
+      "floor area of",
+      "not checked",
+      "depends on"
+     ],
+     "evidence": "Not checked: the house size"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\byes\\b[^.]{0,20}900[^.]{0,40}(within|under|fits)(?![^.]{0,60}(if|as long as|depend|provided|50%|half))",
+     "why": "says yes without the share-of-house limit"
+    }
+   ],
+   "scenario": null,
+   "rubric": "900 sq ft is under the 1000 sq ft cap, but the cap is the lesser of that and 50% of the house, which the tool cannot check without the house size."
+  },
+  {
+   "id": "rt-04",
+   "category": "rule_text",
+   "question": "Who decides whether I can add an ADU in Bristol township, Bucks County? Is there a hearing?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Bristol township, Bucks County"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "names the body",
+     "accept": [
+      "zoning hearing board"
+     ],
+     "evidence": "Zoning Hearing Board"
+    },
+    {
+     "kind": "behaviour",
+     "label": "a public hearing",
+     "accept": [
+      "hearing"
+     ],
+     "evidence": "public hearing"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with",
+      "confirm with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\bno hearing\\b|\\bby right\\b(?![^.]{0,30}(not|isn))",
+     "why": "says no hearing"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Bristol township: A special exception is decided by the Zoning Hearing Board after a public hearing (MPC 912.1)."
+  },
+  {
+   "id": "rt-05",
+   "category": "rule_text",
+   "question": "What does North Huntingdon township, Westmoreland County allow for an ADU?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "North Huntingdon township, Westmoreland County"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "gives the code caution",
+     "accept": [
+      "placeholder",
+      "not online",
+      "were not seen",
+      "not seen",
+      "source gap",
+      "may be out of date",
+      "not available online",
+      "2266",
+      "2302",
+      "2302"
+     ],
+     "evidence": "Code caution"
+    },
+    {
+     "kind": "behaviour",
+     "label": "first reading with open points",
+     "accept": [
+      "first reading",
+      "open point",
+      "not fully checked",
+      "draft"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with",
+      "confirm with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "North Huntingdon township: says the code caution (placeholder code, amendments not seen), the drafted answer and asks the township for the missing ordinance."
+  },
+  {
+   "id": "rt-06",
+   "category": "rule_text",
+   "question": "Besides a regular ADU, is there another kind of ADU listed in the Monroeville municipality (Allegheny County) code?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Monroeville municipality, Allegheny County"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "names the other listing",
+     "accept": [
+      "tiny home"
+     ],
+     "evidence": "Tiny home as an accessory dwelling unit"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says its path",
+     "accept": [
+      "conditional use"
+     ],
+     "evidence": "adu_under_another_listing"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Monroeville municipality: names \"Tiny home as an accessory dwelling unit\", an ADU under another listing in the code, with its own path (listed as conditional use, but ask the zoning officer)."
+  }
+ ]
+}

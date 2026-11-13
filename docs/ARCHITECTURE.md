@@ -93,7 +93,9 @@ Tier 2b is built by `pipeline/corpus/tierb.py` from the machine-read pilot (`pip
 ## How the assistant answers
 
 For any question about what a Pennsylvania municipality allows, the assistant calls `get_place_answer` first
-(`app/src/agent/placeAnswer.ts`). For one lot in Philadelphia or Pittsburgh the lot tools come first. The tool
+(`app/src/agent/placeAnswer.ts`). For one lot in a city with lot records (Pittsburgh, Philadelphia, Allentown: the
+list comes from `PLACE_BY_COUNTY` in `app/src/lib/lot/load.ts` through `app/src/agent/lotPlaces.ts`, so the wording
+needs no change for a new city) the lot tools come first. The tool
 resolves the place (name, "name, county", GEOID, or the town selected on the map; a shared name such as the 22
 Washington townships gets a question back, never a guess), reads its row in `app/public/data/pa_places.json` and
 walks the ladder. The assistant never answers "I don't know": it gives the best grounded answer with its label and the
@@ -110,6 +112,26 @@ next step, and never invents a rule, a section or a number.
 With a unit type or size, the tool also checks the proposal against the rule file (form allowed, size cap) and says
 why it fits or not. The answer format (verdict line, "Zoning here allows", "Your proposal", "Why it does or does not
 fit", source and confidence, "Next step") is in the system prompt (`agent/schema.ts`). Eval: `agent/eval/questions_ladder.json`.
+
+What the tool results carry so the model does not have to infer it (the prompt stays short):
+
+- Rule text from the resolver: a status per form (`adu.status_by_form`, `approval.by_form_today`) gives a "Depends on
+  the form" verdict with one line per form; a lesser-of cap comes as one sentence (`size_rule_*`, "At most 1,000 sq ft
+  or 50% of the house, whichever is less"); `who_decides` names the body that hears a special exception (Zoning
+  Hearing Board) or conditional use (governing body), per form; a `code_caution` line (placeholder code, amendments not
+  seen) comes first; an ADU under another listing is named as such. A proposal check says the share-of-house cap is
+  "Not checked" when the house size is not known.
+- Text search: every passage sits in a `quote` field, with a `quote_rule` line (copy character for character, cut with
+  "..." around stray marks, never fix a word) and `text_kind` ("scanned text, quoted as read" for OCR). A search with
+  no match returns `say_exactly: "Not found in the text searched."` and a `not_found_rule`.
+- Lot records: a check the record cannot test (no house size, no land cover block) has `pass: "not checked"`, and
+  `test_unit_on_lot` lists them under `not_checked`. Allentown records have no land cover, so trees and paving are
+  never claimed either way.
+
+Eval files: `questions.json` (generated, two cities), `questions_tierb.json`, `questions_ladder.json`,
+`questions_allentown.json` and `questions_rule_text.json` (both from `agent/eval/make_more_questions.ts`). The scorer
+checks that quoted spans are in a tool result; words the user asked or the assistant searched for are matched word by
+word with plurals folded.
 
 ## Module map
 

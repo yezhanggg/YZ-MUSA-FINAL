@@ -6,11 +6,12 @@ import type { ToolDef } from '../lib/lot/agentTools';
 import type { CountyProps, FC, TownProps, TractProps } from '../tool/geo';
 import HEADLINE from '../lib/headline.json';
 import { tractRoom, type TractRoomFields } from '../lib/adu';
+import { lotPlacesText } from './lotPlaces';
 
 // ------------------------------------------------------------------ find_lot
 export const FIND_LOT_TOOL: ToolDef = {
   name: 'find_lot',
-  description: 'Find a lot record by street address (Pittsburgh and Philadelphia). Returns up to 5 candidates with lot id, tract and place. Then use the lot tools with that lot_id.',
+  description: `Find a lot record by street address (lot records exist for ${lotPlacesText()}). Returns up to 5 candidates with lot id, tract and place. Then use the lot tools with that lot_id.`,
   input_schema: { type: 'object', properties: { address: { type: 'string', description: 'street address, e.g. 1204 Spruce St' } }, required: ['address'] },
 };
 
@@ -68,7 +69,7 @@ export function findLotResult(address: unknown, book: { entries: AddressEntry[];
   const hits = matchAddress(address, book.entries);
   return hits.length
     ? { address, searched: book.scope, candidates: hits }
-    : { address, searched: book.scope, candidates: [], message: 'No lot with this address in my data. Lot records cover Pittsburgh and Philadelphia only.' };
+    : { address, searched: book.scope, candidates: [], message: `No lot with this address in my data. Lot records cover ${lotPlacesText()} only.` };
 }
 
 // ------------------------------------------------------------------ get_area_stats
@@ -113,7 +114,7 @@ export function forecast(p: Props) {
 }
 const FORECAST_NOTE = 'ADUs built by 2031. today = current rules. HB 2186 and SB 1346 are bills, not law.';
 
-export const ROOM_NOTE = 'Lots with 1 to 4 homes where a 600 sq ft unit fits under state-reform setbacks. Measured from every lot in Philadelphia and Pittsburgh, modelled elsewhere from housing mix and density.';
+export const ROOM_NOTE = 'Lots with 1 to 4 homes where a 600 sq ft unit fits under state-reform setbacks. Measured from every lot record where the estimate says so, modelled elsewhere from housing mix and density.';
 
 /** The tract room estimate for the assistant: lots, lots with room (low, mid, high) and how it was made. */
 export function roomOut(t: TractRoomFields) {

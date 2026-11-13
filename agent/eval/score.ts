@@ -49,9 +49,18 @@ export interface Transcript {
 }
 
 // ------------------------------------------------------------------ text helpers
-const norm = (s: string) => s.toLowerCase().replace(/[’‘]/g, "'").replace(/[‐‑–—]/g, '-');
+/** Lower case, plain quotes and dashes, and no markdown emphasis ("would **fit**" reads "would fit"). */
+const norm = (s: string) => s.toLowerCase().replace(/[’‘]/g, "'").replace(/[‐‑–—]/g, '-').replace(/\*+|_{2,}/g, '');
 const squash = (s: string) => norm(s).replace(/\s+/g, '');
 const has = (text: string, phrase: string) => norm(text).includes(norm(phrase));
+/** The phrase occurs once at least without "not", "n't", "no" or "never" in the two words before it ("is not more
+ *  than the margin" does not say "more than the margin"). */
+export function hasUnnegated(text: string, phrase: string): boolean {
+  const t = norm(text);
+  const p = norm(phrase);
+  for (let i = t.indexOf(p); i >= 0; i = t.indexOf(p, i + 1)) if (!/(\bnot|n't|\bno|\bnever)\s+(\S+\s+){0,2}$/.test(t.slice(Math.max(0, i - 40), i))) return true;
+  return false;
+}
 
 /** Things an answer can cite: code sections, bills, ordinances, IRC sections and links. */
 const CITATION_RES: RegExp[] = [
@@ -109,7 +118,8 @@ export function rulesCorpus(): string {
 }
 
 // ------------------------------------------------------------------ quotes (tier B)
-const QUOTE_RES = [/"([^"]+)"/g, /“([^”]+)”/g];
+/** Quotation marks, and markdown block quotes (a line that starts with ">"). */
+const QUOTE_RES = [/"([^"]+)"/g, /“([^”]+)”/g, /^[ \t]*>[ \t]?(.+)$/gm];
 const flat = (s: string) => norm(s).replace(/[^a-z0-9]+/g, ' ').trim();
 
 /** Spans in quotation marks with 4 words or more. A span cut with "..." is split into its pieces. A span that ends in
@@ -134,10 +144,17 @@ export function madeUpQuotes(answer: string, events: ToolEvent[], question = '')
     ...searches.flatMap((e) => ((e.result as { results?: { quote?: string }[] } | null)?.results ?? []).map((r) => flat(r.quote ?? ''))),
     ...events.map((e) => flat(JSON.stringify(e.result ?? '').replace(/\\n/g, ' '))),
   ].join(' | ');
-  // Words the user asked or the assistant searched for are not quotes of the text.
-  const asked = [question, ...events.flatMap((e) => Object.values(e.input ?? {}).filter((v): v is string => typeof v === 'string'))].map(flat).join(' | ');
-  return quotedSpans(answer).filter((q) => !passages.includes(flat(q)) && !asked.includes(flat(q)));
+  // Words the user asked or the assistant searched for are not quotes of the text. Matched word by word with plurals
+  // folded ("tiny house on wheels" repeats a search for "tiny houses on wheels").
+  const asked = ` ${[question, ...events.flatMap((e) => Object.values(e.input ?? {}).filter((v): v is string => typeof v === 'string'))].map(singular).join(' | ')} `;
+  return quotedSpans(answer).filter((q) => !passages.includes(flat(q)) && !asked.includes(` ${singular(q)} `));
 }
+
+/** One word in its singular form: "houses" -> "house", "parties" -> "party". Words of 3 letters or less, and "ss",
+ *  "us" and "is" endings ("class", "bus", "this") are kept. */
+export const singularWord = (w: string) => (w.length <= 3 || /(ss|us|is)$/.test(w) ? w : w.endsWith('ies') ? `${w.slice(0, -3)}y` : w.endsWith('s') ? w.slice(0, -1) : w);
+/** A text flattened (see flat) with every word singular, for comparing words the user asked with words quoted. */
+export const singular = (s: string) => flat(s).split(' ').map(singularWord).join(' ');
 
 // ------------------------------------------------------------------ numbers
 /** Numbers written in a text, with $ , k, thousand, million and % read. Citations, links and lot ids are removed
@@ -180,7 +197,7 @@ export function checkFact(f: Fact, answer: string, found = numbersIn(answer)): F
       return { label: f.label, pass: numberMatches(f, found), why: `want ${f.value} (${f.unit}, ${f.tol_pct}%)` };
     case 'enum': {
       const ok = f.accept.some((a) => has(answer, a));
-      const bad = (f.reject ?? []).find((r) => has(answer, r));
+      const bad = (f.reject ?? []).find((r) => hasUnnegated(answer, r));
       return { label: f.label, pass: ok && !bad, why: bad ? `says "${bad}"` : ok ? undefined : `none of ${JSON.stringify(f.accept.slice(0, 4))}` };
     }
     case 'section':
