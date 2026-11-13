@@ -309,8 +309,9 @@ def select(
     exclude: list[str],
     log: Any = print,
     max_size: int = 0,
+    only: list[str] | None = None,
 ) -> dict[str, Any]:
-    names = [n for n in model_names(cache, dataset) if n not in exclude]
+    names = [n for n in model_names(cache, dataset) if n not in exclude and (not only or n in only)]
     classes = classes_for(N)
     rows: list[dict[str, Any]] = []
     for mode in MODES:
@@ -365,6 +366,7 @@ def select(
         "dataset": dataset,
         "models": names,
         "excluded": exclude,
+        "only": only or [],
         "offsets": OFFSETS,
         "scan_pixel_stride": stride,
         "max_size": max_size,
@@ -414,7 +416,8 @@ def offset_on_val(cache: Path, dataset: str, candidate: str) -> tuple[float, lis
 def hybrid_confusions(
     cache: Path, dataset: str, role: str, mode: str, members: list[str], splitter: str, offsets: list[float]
 ) -> list[np.ndarray]:
-    """5-class confusions of a 4-class candidate whose "other" is split by a 5-class model.
+    """5-class confusions of a candidate. All members 5-class: their mean. Otherwise the 4-class
+    mean, with "other" split by a 5-class model:
 
     building, tree and open come from the candidate. Its "other" share is divided into water
     (other) and hard surface in the ratio the 5-class model gives. This is the only way a
@@ -425,11 +428,17 @@ def hybrid_confusions(
     for box in boxes_in(cache, dataset, role):
         lab = torch.from_numpy(np.load(label_path(cache, dataset, role, box)).ravel().astype(np.int64))
         ok = lab != IGNORE
-        p4 = sum(load_prob(cache, dataset, n, mode, role, box) for n in members) / len(members)
-        assert isinstance(p4, torch.Tensor)
-        q5 = torch.from_numpy(np.load(prob_path(cache, dataset, splitter, mode, role, box)).astype(np.float32))
-        r = q5[0] / (q5[0] + q5[4] + 1e-6)
-        p5 = torch.stack([p4[0] * r, p4[1], p4[2], p4[3], p4[0] * (1 - r)]).reshape(n5, -1)
+        raw = [
+            torch.from_numpy(np.load(prob_path(cache, dataset, n, mode, role, box)).astype(np.float32)) for n in members
+        ]
+        if all(q.shape[0] == n5 for q in raw):  # every member has 5 classes: average them as they are
+            p5 = (sum(raw) / len(raw)).reshape(n5, -1)
+        else:
+            p4 = sum(load_prob(cache, dataset, n, mode, role, box) for n in members) / len(members)
+            assert isinstance(p4, torch.Tensor)
+            q5 = torch.from_numpy(np.load(prob_path(cache, dataset, splitter, mode, role, box)).astype(np.float32))
+            r = q5[0] / (q5[0] + q5[4] + 1e-6)
+            p5 = torch.stack([p4[0] * r, p4[1], p4[2], p4[3], p4[0] * (1 - r)]).reshape(n5, -1)
         for oi, b in enumerate(offsets):
             if role == "val":
                 q = torch.log(p5 + 1e-6)
@@ -538,6 +547,7 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--top", type=int, default=12, help="candidates rescored at full resolution")
     s.add_argument("--exclude", nargs="*", default=[])
     s.add_argument("--max-size", type=int, default=0, help="largest subset scanned (0 = all)")
+    s.add_argument("--only", nargs="*", default=[], help="use only these cached models")
     s.add_argument("--threads", type=int, default=4)
     s.add_argument("--out", type=Path, required=True)
     t = sub.add_parser("test", help="CPU: score candidates on the test boxes (once)")
@@ -561,7 +571,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"refused: {a.out} exists, pick a new --out", file=sys.stderr)
         return 2
     if a.cmd == "select":
-        res = select(a.cache.expanduser(), a.data, a.stride, a.top, a.exclude, log, a.max_size)
+        res = select(a.cache.expanduser(), a.data, a.stride, a.top, a.exclude, log, a.max_size, a.only)
         a.out.write_text(json.dumps(res, indent=1, default=float))
         log(f"picked {res['picked']} -> {a.out}")
         return 0
