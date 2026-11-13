@@ -8,7 +8,7 @@
 import { useEffect, useState } from 'react';
 import { setBoxContext } from '../boxDrag';
 import { motion } from 'motion/react';
-import { Check, FileText, Link2, MousePointerClick } from 'lucide-react';
+import { Check, FileText, Link2 } from 'lucide-react';
 import { cx } from '../../lib/cx';
 import { SPRING_TAB } from '../../components/primitives';
 import type { LotRecord } from '../../lib/lot/types';
@@ -16,6 +16,7 @@ import AskBox from '../AskBox';
 import { ReportStack } from '../RightPanel';
 import { ReportSkeleton } from '../Report';
 import { linkHash, useTool, type Spot } from '../store';
+import { testSpot } from '../actions';
 import { AnswerCard, Fold, Folds, RuleChecklist, ScenarioChips, ShortNotice } from './Answer';
 import { FactsBody, NextStepList, MoneyBody, WhyText, ZoningRules } from './cards';
 import LotReport from './LotReport';
@@ -48,19 +49,14 @@ export function TestTabs({ tab, onTab, layoutId, ask = true }: { tab: TestTab; o
   );
 }
 
-const Hint = () => (
-  <p className="flex items-center gap-2 rounded-xl bg-violet-50/70 px-3 py-2.5 text-small text-violet-900 ring-1 ring-violet-200/70">
-    <MousePointerClick className="h-4 w-4 shrink-0 text-violet-600" /> Click a lot in Pittsburgh or Philadelphia.
-  </p>
-);
-
 /** The body of one tab. */
 export function TestTabBody({ tab }: { tab: TestTab }) {
   const spot = useTool((s) => s.spot);
   const busy = useTool((s) => s.busy);
   if (tab === 'ask') return <AskBox expanded />;
   if (busy && !spot) return <ReportSkeleton />;
-  if (!spot) return <Hint />;
+  // Nothing picked: the box stays empty under its title (Details).
+  if (!spot) return null;
   if (!spot.record) return <NoRecord spot={spot} tab={tab} />;
   return <WithRecord record={spot.record} builtAt={spot.builtAt} tab={tab} />;
 }
@@ -70,6 +66,11 @@ function NoRecord({ spot, tab }: { spot: Spot; tab: TestTab }) {
     <div className="space-y-4">
       <p className="rounded-xl bg-amber-50 px-3 py-2.5 text-small text-amber-900 ring-1 ring-amber-200" role="status">
         {spot.recordNote ?? 'There is no lot record for this spot.'}
+        {spot.loadFailed && (
+          <button type="button" onClick={() => void testSpot(spot.pt, spot.label, spot.parcel, { lotId: spot.parcel?.id, tract: spot.parcel?.tr ?? spot.tract.GEOID })} className="tap ml-2 font-semibold text-violet-700 underline underline-offset-2 hover:text-violet-900">
+            Try again
+          </button>
+        )}
       </p>
       {tab === 'results' ? <ReportStack /> : <p className="text-small text-slate-600">The next steps need a lot record.</p>}
     </div>
@@ -87,7 +88,7 @@ function WithRecord({ record, builtAt, tab }: { record: LotRecord; builtAt: stri
   if (tab === 'build') return <NextStepList plan={nextSteps(r.build, r.verdict, r.rows, record.lot.place)} />;
   return (
     <div className="space-y-3">
-      <AnswerCard v={r.verdict} />
+      <AnswerCard v={r.verdict} lot={record} />
       <RuleChecklist lot={record} v={r.verdict} />
       <SiteView record={record} r={r} />
       <ScenarioChips rows={r.rows} scenario={r.scenario} />

@@ -1,4 +1,4 @@
-// Projecting mode (MUSA 5500), left panel: map level, map colour with its legend, the payoff cost and rate
+// Explore (MUSA 5500), left panel: map level, map colour with its legend, the payoff cost and rate
 // (the Pays map and the live share of tracts that pay), and the ADUs-by-2031 scenario.
 import type { ReactNode } from 'react';
 import { Segmented } from '../components/primitives';
@@ -38,6 +38,7 @@ function Legend({ title, items, note, hint }: { title?: string; items: { name: s
 
 /** Short names in the map colour menu. The full name (METRICS label) is the hover text. */
 const PICK_NAME: Record<MetricId, string> = {
+  legal: 'Where to Build',
   pays: 'Pays Off?',
   room: 'Room on Lots (Estimate)',
   jobs_after: 'Jobs, 2019 to 2024',
@@ -59,7 +60,10 @@ export function MapLevelPick() {
   const set = useTool((s) => s.set);
   const m = METRICS[metric];
   let legend: ReactNode;
-  if (level !== 'tract') {
+  if (level === 'tract' && metric === 'legal') {
+    // Its legend and the people summary sit in the legend card under the left panel (PlacesLegend).
+    legend = null;
+  } else if (level !== 'tract') {
     legend = (
       <Legend
         title={`ADUs by 2031 per 1,000 people, ${FORECAST_LABEL[forecast]}`}

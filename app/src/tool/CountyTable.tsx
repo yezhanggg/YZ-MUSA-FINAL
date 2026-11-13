@@ -1,4 +1,4 @@
-// Projecting mode, map by counties: the county roll-up of tract results (counties.geojson, from county_rollup.csv).
+// Explore, map by counties: the county roll-up of tract results (counties.geojson, from county_rollup.csv).
 import { fmt } from '../lib/format';
 import { cx } from '../lib/cx';
 import { Card } from './Report';

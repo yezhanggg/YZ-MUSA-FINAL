@@ -8,6 +8,7 @@ import { SCENARIO_NAME, TYPE_TITLE } from '../lib/lot/words';
 import { ask, splitLinks, type Turn } from '../agent/client';
 import { browserProvider, selectLotById } from '../agent/browserProvider';
 import { mapRef, useTool } from './store';
+import { askTags, type AskTags } from './askTags';
 
 const SUGGESTED = ["Could I build a 2 BR here?", "What's the biggest ADU that fits?", 'Is it legal here today?', 'Which lots near here fit a 1 BR without cutting trees?'];
 const TOOL_TEXT: Record<string, string> = {
@@ -23,6 +24,8 @@ const TOOL_TEXT: Record<string, string> = {
   compare_scenarios: 'Comparing scenarios',
   lot_money: 'Working out the money',
   explain_limit: 'Finding the limit',
+  get_place_answer: 'Looking up the town',
+  search_zoning_text: 'Searching the zoning text',
 };
 const TEST_SUGGESTED = ['Does this unit fit here?', 'What limits it on this lot?', 'How do the three scenarios compare?', 'Does it pay off?'];
 
@@ -31,6 +34,8 @@ interface Msg {
   text: string;
   tools?: string[];
   error?: boolean;
+  /** What the tool results say about how sure the answer is (askTags). */
+  tags?: AskTags;
 }
 
 function useContext() {
@@ -81,7 +86,9 @@ export default function AskBox({ expanded: forceOpen, flat }: { expanded?: boole
     const out = await ask(question, history, context, browserProvider, { onTool: (n) => setBusy(TOOL_TEXT[n] ?? 'Working') });
     setBusy(null);
     if (out.ok) setHistory(out.history);
-    setMsgs((m) => [...m, { role: 'assistant', text: out.text, tools: out.tools, error: !out.ok }]);
+    // The turns this answer added (its tool calls and results), for the tags under it.
+    const tags = out.ok ? askTags(out.history.slice(history.length) as { role: string; content: unknown }[]) : undefined;
+    setMsgs((m) => [...m, { role: 'assistant', text: out.text, tools: out.tools, error: !out.ok, tags }]);
   };
 
   return (
@@ -125,6 +132,20 @@ export default function AskBox({ expanded: forceOpen, flat }: { expanded?: boole
               {msgs.map((m, i) => (
                 <div key={i} className={cx('rounded-lg px-3 py-2 text-small leading-snug', m.role === 'user' ? 'ml-6 bg-violet-600 text-white' : m.error ? 'bg-amber-50 text-amber-900 ring-1 ring-amber-200' : 'bg-white text-slate-800 ring-1 ring-stone-200')}>
                   {m.role === 'assistant' ? <Answer text={m.text} /> : m.text}
+                  {m.tags && (m.tags.unverified || m.tags.confidence.length > 0) && (
+                    <div className="mt-1.5 flex flex-wrap gap-1" data-ask-tags>
+                      {m.tags.unverified && (
+                        <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-800 ring-1 ring-amber-200" title="Passages copied word for word from the public zoning text, found by a word search. Not a checked rule file.">
+                          Unverified text search
+                        </span>
+                      )}
+                      {m.tags.confidence.map((c) => (
+                        <span key={c} className="rounded-full bg-stone-50 px-2 py-0.5 text-[11px] font-medium text-slate-600 ring-1 ring-stone-200" data-confidence>
+                          {c}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   {m.tools && m.tools.length > 0 && <div className="mt-1 text-[11px] text-slate-400">From: {[...new Set(m.tools)].join(', ')}</div>}
                 </div>
               ))}

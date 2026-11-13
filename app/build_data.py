@@ -257,6 +257,18 @@ def write_headline():
     )
 
 
+def compact_geojson(path):
+    """Rewrite a GeoJSON file GDAL wrote with no spaces or line breaks, and whole-number floats (249.0) as 249.
+    Same features, numbers and 5-decimal coordinates; about 14% smaller, which keeps tracts.geojson under the 5 MB
+    push limit (.github/scripts/guard.py)."""
+    d = json.loads(path.read_text())
+    for f in d["features"]:
+        f["properties"] = {
+            k: int(v) if isinstance(v, float) and v.is_integer() else v for k, v in f["properties"].items()
+        }
+    path.write_text(json.dumps(d, separators=(",", ":"), ensure_ascii=False))
+
+
 def write_city_tracts(tracts, towns):
     """city_tracts.json: the tracts of the two lot-record cities with their town, so a searched address in Testing
     mode finds its tract (and its lot file) without the 10 MB area files. Finer shapes than tracts.geojson."""
@@ -380,6 +392,7 @@ def main():
         gdf["geometry"] = gdf.geometry.simplify(SIMPLIFY, preserve_topology=True)
         path = APP_DATA / f"{name}.geojson"
         gdf.to_file(path, driver="GeoJSON", COORDINATE_PRECISION=5)
+        compact_geojson(path)
         print(f"  wrote app/public/data/{name}.geojson ({path.stat().st_size / 1e6:.1f} MB, {len(gdf)} shapes)")
     write_city_tracts(tracts, towns)
 

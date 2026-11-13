@@ -175,7 +175,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
     });
     ro.observe(container);
 
-    const detachDrag = attachBoxDrag(map, ['site-unit-fill', 'site-unit-3d']);
+    const detachDrag = attachBoxDrag(map, ['site-unit-fill', 'site-unit-3d', 'site-model-3d']);
     return () => {
       ro.disconnect();
       container.removeEventListener('wheel', gate, { capture: true });

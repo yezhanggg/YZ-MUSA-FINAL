@@ -4,6 +4,7 @@ import { cityTractAt, loadAreas } from './areas';
 import { openView } from '../lib/router';
 import type { ParcelProps } from './parcels';
 import { mapRef, syncHash, useTool, type Spot } from './store';
+import { placesShown } from './places';
 import { mapPadding } from './layout';
 import { isLotLoadError, loadLot, loadTractLots, placeOfGeoid } from '../lib/lot/load';
 import { centroid, frameOf } from '../lib/lot/geometry';
@@ -37,6 +38,8 @@ interface RecordResult {
   record: LotRecord | null;
   recordNote: string | null;
   builtAt: string | null;
+  /** The lot file did not load (network, server, bad file): the panel offers to try again. */
+  loadFailed?: boolean;
 }
 
 /** What is missing when a place has no lot records, said plainly. */
@@ -63,7 +66,7 @@ async function recordAt(pt: LngLat, tract: TractProps, signal: AbortSignal, labe
     if (isLotLoadError(e) && e.kind === 'aborted') return null;
     const why = isLotLoadError(e) ? e.userMessage : 'The lot data could not be loaded.';
     const missing = isLotLoadError(e) && e.kind === 'not_found' ? `There is no lot file for ${PLACE_NAME[place] ?? place} here yet. ` : '';
-    return { record: null, recordNote: `${missing}${why} The tract and town numbers below still apply.`, builtAt: null };
+    return { record: null, recordNote: `${missing}${why} The tract and town numbers below still apply.`, builtAt: null, loadFailed: !missing };
   }
 }
 
@@ -87,8 +90,8 @@ function knownTract(geoid: string): { tract: TractProps; town: TownProps } {
 }
 
 /**
- * Test one spot. Testing mode: the lot record that contains the spot (or the one a parcel tile or a link names) and
- * its tract. Projecting mode: the tract and town at the spot, with no lot (that is Testing mode's job).
+ * Test one spot. Test Project: the lot record that contains the spot (or the one a parcel tile or a link names) and
+ * its tract. Explore: the tract and town at the spot, with no lot (that is Test Project's job).
  * The tract files load only when needed: a lot whose tract is known from its tile or link opens without them.
  */
 export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps | null, opts: { lotId?: string; tract?: string; keepUnit?: boolean } = {}) {
@@ -96,7 +99,7 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   const map = mapRef.current;
   if (!map) return;
   const known = view === 'test' ? (opts.tract ?? parcel?.tr) : undefined;
-  // Testing mode, a searched or clicked spot with no tract yet: the small city tract index first (Pittsburgh and
+  // Test Project, a searched or clicked spot with no tract yet: the small city tract index first (Pittsburgh and
   // Philadelphia), the 10 MB area files only outside the two cities.
   const indexed = view === 'test' && !known && useTool.getState().areas !== 'ready' ? await cityTractAt(pt) : null;
   if (!known && !indexed && !(await loadAreas())) {
@@ -119,8 +122,12 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
 
   // The selected parcel's glowing outline is the only mark. Outside the parcels, a ripple shows where.
   if (!parcel) ripple(pt);
-  map.flyTo({ center: pt, zoom: Math.max(map.getZoom(), view === 'test' ? 16.5 : 12), pitch: view3d ? PITCH_SPOT : 0, duration: reduced() ? 0 : 1400, padding: mapPadding(true), essential: true });
-  (map.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: tract ? [tract as unknown as GeoJSON.Feature] : [] });
+  // Where to Build answers for a whole municipality: zoom in only to about county level, so its outline shows.
+  const legal = placesShown(useTool.getState());
+  map.flyTo({ center: pt, zoom: Math.max(map.getZoom(), view === 'test' ? 16.5 : legal ? 10 : 12), pitch: view3d ? PITCH_SPOT : 0, duration: reduced() ? 0 : 1400, padding: mapPadding(true), essential: true });
+  // Explore, Where to Build answers for the municipality, so its outline is the one drawn.
+  const outline = legal && town ? town : tract;
+  (map.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: outline ? [outline as unknown as GeoJSON.Feature] : [] });
 
   let rec = view === 'test' ? await recordAt(pt, area.tract, ctrl.signal, label, opts.lotId ?? (parcel?.tr ? parcel.id : undefined), opts.tract ?? parcel?.tr) : { record: null, recordNote: null, builtAt: null };
   if (n !== counter || !rec) return; // a newer spot won
@@ -142,7 +149,7 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   syncHash();
 }
 
-/** Projecting mode: switch to Testing mode at the selected spot (the tool then opens the lot there). */
+/** Explore: switch to Test Project at the selected spot (the tool then opens the lot there). */
 export function testLotHere() {
   // The view change re-runs testSpot at the selected spot (ToolPage), now looking for the lot record there.
   openView('test');
@@ -166,9 +173,11 @@ export async function openLot(lotId: string, geoid: string) {
 }
 
 export function clearSpot() {
+  // A lot still loading must neither come back nor leave the panel on its loading skeleton.
+  counter++;
   pending?.abort();
   (mapRef.current?.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: [] });
-  useTool.getState().set({ spot: null, selectedLot: null });
+  useTool.getState().set({ spot: null, selectedLot: null, busy: false });
   syncHash();
 }
 

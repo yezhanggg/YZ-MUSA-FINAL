@@ -3,7 +3,7 @@
 //   tablet / phone: controls in a drawer from the left, one bottom sheet with tabs
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { Loader2, MousePointerClick, PanelLeftOpen, PanelRightOpen, SlidersHorizontal } from 'lucide-react';
+import { PanelLeftOpen, PanelRightOpen, SlidersHorizontal } from 'lucide-react';
 import MapCanvas from './MapCanvas';
 import LeftPanel from './LeftPanel';
 import RightPanel from './RightPanel';
@@ -12,17 +12,16 @@ import MapControls from './MapControls';
 import { aduFromHash, useTool } from './store';
 import { clearSpot, openLot, testSpot } from './actions';
 import { testFromHash } from './testState';
-import { CONTROLS_W, GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding } from './layout';
+import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding } from './layout';
 import { SPRING_PANEL } from '../components/primitives';
 import { mapRef } from './store';
 import { reduced } from './actions';
+import { PA_BBOX } from './geo';
 
 const SHOW_BTN = 'tap absolute z-40 flex h-11 items-center gap-2 rounded-xl bg-white/95 px-3 text-small font-semibold text-slate-700 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-violet-500';
 
 export default function ToolPage() {
   const status = useTool((s) => s.status);
-  const areas = useTool((s) => s.areas);
-  const hasSpot = useTool((s) => !!s.spot || s.busy);
   const mode = useMode();
   const isNarrow = narrow(mode);
   const isDrawer = rightDrawer(mode);
@@ -64,6 +63,9 @@ export default function ToolPage() {
       if (link.lot && link.lot.id !== st.spot?.record?.lot.id) void openLot(link.lot.id, link.lot.tract);
     };
     window.addEventListener('hashchange', on);
+    // The mode can change before this listener is on (a pick in the top bar while the page loads): catch up once.
+    const v = testFromHash(window.location.hash).view;
+    if (v !== useTool.getState().view) useTool.getState().set({ view: v });
     return () => window.removeEventListener('hashchange', on);
   }, []);
   // A lot link opened from outside: load the lot once the map is ready.
@@ -110,11 +112,48 @@ export default function ToolPage() {
   const firstSides = useRef(true);
   useEffect(() => {
     if (firstSides.current) return void (firstSides.current = false);
-    mapRef.current?.easeTo({ padding: mapPadding(rightOpen), duration: reduced() ? 0 : 500 });
+    const map = mapRef.current;
+    if (!map) return;
+    // A flight to a picked lot may be under way (the laptop drawer opens with the first spot): easing now would cancel
+    // it and leave the map where it was, so re-centre once it lands.
+    const go = () => map.easeTo({ padding: mapPadding(rightOpen), duration: reduced() ? 0 : 500 });
+    if (map.isMoving()) map.once('moveend', go);
+    else go();
   }, [leftOpen, rightOpen]);
   useEffect(() => {
     if (!isNarrow) setDrawer(false);
   }, [isNarrow]);
+  // Explore with nothing picked: Pennsylvania fills the open map between the panels, on the first load, on switching
+  // to Explore, and again when a side is hidden or shown, the right panel resized or the window changed, as long as
+  // the user has not moved the map since. Test Project keeps its own camera.
+  const spotOn = useTool((s) => !!s.spot);
+  const atState = useRef(false);
+  const lastView = useRef<string | null>(null);
+  useEffect(() => {
+    const map = mapRef.current;
+    if (status !== 'ready' || !map) return;
+    const off = (e: { originalEvent?: unknown }) => {
+      if (e.originalEvent) atState.current = false;
+    };
+    map.on('movestart', off);
+    return () => void map.off('movestart', off);
+  }, [status]);
+  useEffect(() => {
+    const map = mapRef.current;
+    if (status !== 'ready' || !map) return;
+    const entering = view === 'project' && lastView.current !== 'project';
+    lastView.current = view;
+    if (view !== 'project' || spotOn) return void (atState.current = false);
+    if (!entering && !atState.current) return;
+    atState.current = true; // a burst of changes right after entering still fits
+    const fit = () => {
+      map.fitBounds(PA_BBOX, { padding: statePadding(isNarrow ? sheetOpen : rightOpen), absolutePadding: true, duration: entering || reduced() ? 0 : 400 });
+      atState.current = true;
+    };
+    // After layout (the legend's place), and once per burst while the right panel is dragged.
+    const t = window.setTimeout(fit, entering ? 0 : 120);
+    return () => window.clearTimeout(t);
+  }, [status, view, spotOn, leftOpen, rightOpen, panelW, vw, vh, isNarrow, sheetOpen]);
 
   // Desktop and laptop: both panels start one gutter from the top (PANEL_TOP); the top bar sits between them.
   const leftStyle: CSSProperties = isNarrow ? { left: GUTTER, top: TOP, bottom: GUTTER, width: `min(${lw || 360}px, calc(100% - ${GUTTER * 2}px))` } : { left: GUTTER, top: PANEL_TOP, bottom: GUTTER, width: widths(mode).lw };
@@ -176,32 +215,6 @@ export default function ToolPage() {
       {/* Desktop and laptop: the controls row sits under the right panel (RightPanel `below`). It floats on the map
           only on tablet and phone, and on a laptop while the results drawer is closed. */}
       {controlsSize !== 'none' && (isNarrow || !rightOpen) && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} chat={!isNarrow} onChat={() => setRight(true)} />}
-      <AnimatePresence>
-        {/* The click hint only when the results panel is closed: an open panel says it already. */}
-        {(status === 'loading' || areas === 'loading' || (status === 'ready' && !hasSpot && !isNarrow && !rightOpen)) && (
-          <motion.div
-            key={`${status}-${areas}`}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 30, delay: status === 'ready' ? 0.6 : 0 }}
-            className="pointer-events-none absolute z-10 flex justify-center"
-            style={isNarrow ? { left: GUTTER, right: GUTTER, top: TOP + 4 } : { left: lw + GUTTER * 2, right: rw + GUTTER * 2 + CONTROLS_W, bottom: GUTTER + 4 }}
-          >
-            <div className="flex items-center gap-2 rounded-full bg-slate-900/90 px-4 py-2 text-small font-medium text-white shadow-lg backdrop-blur">
-              {status === 'loading' || areas === 'loading' ? (
-                <>
-                  <Loader2 className="h-4 w-4 shrink-0 animate-spin" /> {status === 'loading' ? 'Loading the map…' : 'Loading areas…'}
-                </>
-              ) : (
-                <>
-                  <MousePointerClick className="h-4 w-4 shrink-0 text-violet-300" /> {view === 'test' ? 'Click a lot to test it' : 'Click the map to pick a tract'}
-                </>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

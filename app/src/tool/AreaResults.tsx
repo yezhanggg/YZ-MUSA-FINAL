@@ -1,6 +1,6 @@
 // Explore areas, right panel with a tract picked: the answer in one line (does a backyard home pay off here, and is
 // it allowed in this town), four short rows with numbers that open to their detail, then folds that start closed.
-// Same pieces as Testing mode (test/Answer.tsx). The answer is read off tractPayoff and ruleFor (tool/areaAnswer.ts).
+// Same pieces as Test Project (test/Answer.tsx). The answer is read off tractPayoff and ruleFor (tool/areaAnswer.ts).
 import { Minus } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { tractPayoff, tractRoom, rentNote } from '../lib/adu';
@@ -53,8 +53,9 @@ const PAY_STATE = { yes: 'pass', maybe: 'approval', no: 'fail' } as const;
 const PAY_LABEL = { yes: 'Pays off', maybe: 'Close', no: 'Does not pay off' } as const;
 const RULE_STATE: Record<'good' | 'warn' | 'bad' | 'none', RowState> = { good: 'pass', warn: 'approval', bad: 'fail', none: 'unknown' };
 
-/** Four rows: pays off, allowed, room on lots, ADUs by 2031 in the town. Each opens to its detail. */
-export function AreaRows({ spot }: { spot: Spot }) {
+/** Four rows: pays off, allowed, room on lots, ADUs by 2031 in the town. Each opens to its detail. `skipRule`: Where to
+ * Build answers the rule from the statewide table, so the older town rule row is left out. */
+export function AreaRows({ spot, skipRule }: { spot: Spot; skipRule?: boolean }) {
   const { adu, mode, costLevel, payRate, pay, rule } = useArea(spot);
   const forecast = useTool((s) => s.forecast);
   const room = tractRoom(spot.tract);
@@ -79,26 +80,28 @@ export function AreaRows({ spot }: { spot: Spot }) {
           <p>No rent figure for this tract and unit size.</p>
         )}
       </Row>
-      <Row
-        state={RULE_STATE[rule.tone]}
-        stateLabel={rule.label}
-        name="Allowed"
-        value={
-          mode === 'hb2186' ? (
-            <span className="inline-flex items-center gap-1.5">
-              {ruleValue} <NotLaw />
-            </span>
-          ) : (
-            ruleValue
-          )
-        }
-        data={{ 'data-area-row': 'rules' }}
-      >
-        {warnings.map((wn) => (
-          <p key={wn} className="text-amber-800">{wn}</p>
-        ))}
-        <RulesCard spot={spot} bare />
-      </Row>
+      {!skipRule && (
+        <Row
+          state={RULE_STATE[rule.tone]}
+          stateLabel={rule.label}
+          name="Allowed"
+          value={
+            mode === 'hb2186' ? (
+              <span className="inline-flex items-center gap-1.5">
+                {ruleValue} <NotLaw />
+              </span>
+            ) : (
+              ruleValue
+            )
+          }
+          data={{ 'data-area-row': 'rules' }}
+        >
+          {warnings.map((wn) => (
+            <p key={wn} className="text-amber-800">{wn}</p>
+          ))}
+          <RulesCard spot={spot} bare />
+        </Row>
+      )}
       <Row state={null} name="Room on lots" value={room && room.lots > 0 ? `${room.measured ? '' : 'about '}${Math.round((100 * room.mid) / room.lots)}% of lots` : 'No estimate'} data={{ 'data-area-row': 'room' }}>
         <RoomCard spot={spot} bare />
       </Row>

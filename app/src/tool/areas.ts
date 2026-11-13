@@ -1,5 +1,5 @@
-// Tracts, towns and counties (app/public/data/*.geojson, about 10 MB) load only when they are needed: Projecting
-// mode, or a lot test whose tract is not known from a parcel tile or a link. Testing mode starts without them.
+// Tracts, towns and counties (app/public/data/*.geojson, about 10 MB) load only when they are needed: Explore,
+// or a lot test whose tract is not known from a parcel tile or a link. Test Project starts without them.
 import { bboxOf, findFeature, loadData, type FC, type LngLat, type TownProps, type TractProps } from './geo';
 import { useTool } from './store';
 

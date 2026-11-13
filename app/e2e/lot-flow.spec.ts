@@ -1,4 +1,4 @@
-// The main lot flow: pick Testing mode, open a Pittsburgh lot by link, read the verdict, grow the unit until it
+// The main lot flow: pick Test Project, open a Pittsburgh lot by link, read the verdict, grow the unit until it
 // no longer fits, switch the scenario, open the Next Step tab and the lot report. Screenshots go to SHOTS_DIR.
 import { existsSync, mkdirSync } from 'node:fs';
 import { homedir } from 'node:os';
@@ -35,9 +35,11 @@ test.describe('lot flow', () => {
     // Answer first: one word and one short line, then the rule checklist.
     await expect(verdict(page)).toHaveAttribute('data-answer', 'approval');
     await expect(verdict(page)).toContainText('Yes, with approval');
-    await expect(verdict(page)).toContainText('cottage fits here');
+    // The line says why in plain words: it fits, and which approval it needs (lib/lot/whyNot).
+    await expect(verdict(page)).toContainText("It fits, but it needs the zoning administrator's sign-off.");
     const checklist = page.locator('section[aria-label="Rule checklist"]').first();
-    await expect(checklist.locator('[data-rule-row]')).toHaveCount(6);
+    // Six rule rows; the ground slope row (a site caution, not a rule) comes after them when the lot has terrain.
+    await expect(checklist.locator('[data-rule-row]:not([data-rule-row="slope"])')).toHaveCount(6);
     await expect(checklist.locator('[data-rule-row="approval"]')).toContainText("Administrator's Exception");
     // The notice: short on screen, in full on hover and in the Why fold.
     const notice = page.getByText('Estimate. Not legal advice.').first();
@@ -76,7 +78,7 @@ test.describe('lot flow', () => {
     await shot(page, 'lot-1440-report.png');
   });
 
-  test('projecting mode shows the tract, and Test a lot here goes back to the lot', async ({ page }) => {
+  test('Explore shows the tract, and Test a lot here goes back to the lot', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(`/#/?view=test&lot=${LOT}&tract=${TRACT}`);
     await expect(verdict(page)).toHaveAttribute('data-status', 'fits');
@@ -158,7 +160,7 @@ async function search(page: Page, text: string) {
   await box.press('Enter');
 }
 
-test.describe('address search in testing mode', () => {
+test.describe('address search in Test Project', () => {
   test.skip(!hasPhl, `no Philadelphia lot records at ${LOTS}`);
 
   // Time from picking the address to the verdict on a throttled connection (about 1.6 Mbps down, 150 ms latency),
@@ -213,7 +215,7 @@ test.describe('room for a 600 sq ft unit (MUSA 5500)', () => {
   });
 });
 
-test.describe('projecting mode', () => {
+test.describe('Explore', () => {
   test('payoff controls, counties and the research explorer', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=project');

@@ -1,11 +1,13 @@
-// Testing mode, top of the Results tab: the answer in one word, the rule checklist, the three scenarios as chips,
+// Test Project, top of the Results tab: the answer in one word, the rule checklist, the three scenarios as chips,
 // and the folds that hold everything else. The answer and the rows come from lib/lot/answer.ts, which reads the
 // verdict. Nothing here decides a rule.
 import { useState, type ReactNode } from 'react';
-import { Check, ChevronDown, CircleHelp, Clock, X } from 'lucide-react';
+import { Check, ChevronDown, CircleHelp, Clock, TriangleAlert, X } from 'lucide-react';
 import { cx } from '../../lib/cx';
 import { answerOf, ruleRows, type Answer, type RowState, type RuleRow } from '../../lib/lot/answer';
 import { NOTICE } from '../../lib/lot/citations';
+import { slopeOf, type SlopeView } from '../../lib/lot/slope';
+import { answerFor, whyNot } from '../../lib/lot/whyNot';
 import { SCENARIO_NAME } from '../../lib/lot/words';
 import type { LotRecord, Scenario } from '../../lib/lot/types';
 import type { ScenarioVerdict, UnitVerdict } from '../../lib/lot/verdict';
@@ -31,7 +33,7 @@ export const NotLaw = ({ className }: { className?: string }) => (
   <span className={cx('inline-flex items-center whitespace-nowrap rounded-full bg-white px-1.5 py-px text-[11px] font-semibold text-slate-600 ring-1 ring-slate-300', className)}>not law</span>
 );
 
-/** The answer box: a coloured icon, one or two words, one short line. Testing mode and Explore areas share it. */
+/** The answer box: a coloured icon, one or two words, one short line. Test Project and Explore areas share it. */
 export function AnswerBox({ answer, title, sub, notLaw, icon, label, data }: { answer: Answer; title: string; sub: ReactNode; notLaw?: boolean; icon?: ReactNode; label: string; data?: Record<string, string> }) {
   const L = ANSWER_LOOK[answer];
   return (
@@ -50,9 +52,9 @@ export function AnswerBox({ answer, title, sub, notLaw, icon, label, data }: { a
   );
 }
 
-/** The answer: Yes, Yes with approval, or No, and one short line. */
-export function AnswerCard({ v }: { v: UnitVerdict }) {
-  const a = answerOf(v);
+/** The answer: Yes, Yes with approval, or No, and one short line (in everyday words when it is a No or needs approval). */
+export function AnswerCard({ v, lot }: { v: UnitVerdict; lot?: LotRecord }) {
+  const a = lot ? answerFor(lot, v) : answerOf(v);
   return <AnswerBox label="Verdict" answer={a.answer} title={a.title} sub={a.sub} notLaw={v.scenario !== 'today'} data={{ 'data-status': v.status }} />;
 }
 
@@ -81,13 +83,21 @@ const InfoDot = () => (
   </span>
 );
 
-/** One checklist row: icon, a short name, the numbers on the right; a click opens the detail below. */
-export function Row({ state, stateLabel, name, value, children, data }: { state: RowState | null; stateLabel?: string; name: string; value: ReactNode; children: ReactNode; data?: Record<string, string> }) {
+/** A site caution (not a rule): amber between the two slope thresholds, orange over the steep one. */
+const CAUTION_LOOK = { caution: 'bg-amber-100 text-amber-700', warning: 'bg-orange-200 text-orange-800' } as const;
+export const CautionIcon = ({ level, label }: { level: 'caution' | 'warning'; label: string }) => (
+  <span role="img" aria-label={label} title={label} className={cx('grid h-5 w-5 shrink-0 place-items-center rounded-full', CAUTION_LOOK[level])}>
+    <TriangleAlert className="h-3 w-3" strokeWidth={2.5} />
+  </span>
+);
+
+/** One checklist row: icon, a short name, the numbers on the right; a click opens the detail below. `icon` replaces the state icon. */
+export function Row({ state, stateLabel, name, value, children, data, icon }: { state: RowState | null; stateLabel?: string; name: string; value: ReactNode; children: ReactNode; data?: Record<string, string>; icon?: ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
     <li {...data}>
       <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className="tap flex w-full items-center gap-2.5 px-3 py-2 text-left transition-colors hover:bg-stone-50">
-        {state ? <StateIcon state={state} label={stateLabel} /> : <InfoDot />}
+        {icon ?? (state ? <StateIcon state={state} label={stateLabel} /> : <InfoDot />)}
         <span className="shrink-0 whitespace-nowrap text-small font-semibold text-slate-900">{name}</span>
         <span className={cx('min-w-0 flex-1 text-right text-small tnum', state === 'fail' ? 'font-semibold text-rose-700' : 'text-slate-700')}>{value}</span>
         <ChevronDown className={cx('h-4 w-4 shrink-0 text-slate-400 transition-transform', open && 'rotate-180')} aria-hidden />
@@ -105,10 +115,18 @@ export const Rows = ({ label, title, children }: { label: string; title?: string
   </section>
 );
 
-function RowItem({ r }: { r: RuleRow }) {
+function RowItem({ r, lead }: { r: RuleRow; lead?: string[] }) {
   return (
     <Row state={r.state} name={r.name} value={r.numbers ?? (r.state === 'unknown' ? 'Not checked' : '')} data={{ 'data-rule-row': r.id }}>
-      <p>{r.text.replace(/\.?$/, '.')}</p>
+      {/* A No or an approval: what the zoning allows, what yours is, why (lib/lot/whyNot). */}
+      {lead && (
+        <div className="space-y-0.5 text-slate-900" data-why-not>
+          {lead.map((l) => (
+            <p key={l}>{l}</p>
+          ))}
+        </div>
+      )}
+      {!lead?.includes(r.text.replace(/\.?$/, '.')) && <p>{r.text.replace(/\.?$/, '.')}</p>}
       {r.parts.length > 1 && (
         <ul className="space-y-0.5">
           {r.parts.map((p) => (
@@ -130,12 +148,31 @@ function RowItem({ r }: { r: RuleRow }) {
 export function RuleChecklist({ lot, v }: { lot: LotRecord; v: UnitVerdict }) {
   const rows = ruleRows(lot, v);
   if (!rows.length) return null;
+  const w = whyNot(lot, v);
+  const slope = slopeOf(lot, v);
   return (
     <Rows label="Rule checklist" title="Does it follow the rules?">
       {rows.map((r) => (
-        <RowItem key={`${r.id}-${v.scenario}`} r={r} />
+        <RowItem key={`${r.id}-${v.scenario}`} r={r} lead={r.id === 'zoning' && w ? [w.allows, w.yours, w.why] : undefined} />
       ))}
+      {slope && <SlopeRow s={slope} />}
     </Rows>
+  );
+}
+
+const SLOPE_WORD = { ordinary: 'gentle', moderate: 'moderate', steep: 'steep' } as const;
+
+/** Ground slope: a site caution next to the rules. It never changes the answer. */
+function SlopeRow({ s }: { s: SlopeView }) {
+  const label = `Ground slope: ${SLOPE_WORD[s.cls]}`;
+  return (
+    <Row state={s.mark === 'pass' ? 'pass' : null} stateLabel={label} icon={s.mark === 'pass' ? undefined : <CautionIcon level={s.mark} label={label} />} name="Ground slope" value={s.value} data={{ 'data-rule-row': 'slope', 'data-slope': s.cls }}>
+      <p>{s.text}</p>
+      {s.detail && <p className="text-caption text-slate-600">{s.detail}</p>}
+      <p className="text-caption text-slate-500">
+        A site caution, not a zoning rule. Elevation: {s.source}. Gentle under {s.thresholds.moderate}%, steep from {s.thresholds.steep}%.
+      </p>
+    </Row>
   );
 }
 

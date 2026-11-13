@@ -18,6 +18,8 @@ import { lotDataUrl } from '../lib/lot/load';
 import { unitVerdict } from '../lib/lot/verdict';
 import { FLY_IN_ZOOM, LOT_ZOOM, answerColorExpr, answerOf, lotFillOpacity, lotTipHtml, overviewOpacity, squareTipHtml } from './testable';
 import { TestableLegend } from './test/TestableLots';
+import { usePlacesLayer } from './placesLayer';
+import { PlacesLegend } from './PlaceResults';
 
 setWorkerUrl(workerUrl);
 // Parcels are PMTiles files, read by byte range.
@@ -38,7 +40,7 @@ const selFilter = (id: string | null): ExpressionSpecification => ['==', ['get',
 const tilesUrl = (place: string, file: string) => new URL(`${lotDataUrl()}${place}/tiles/${file}`, window.location.href).href;
 
 /**
- * Parcel tiles for the places with lot records, next to those records (app/build_lot_tiles.py). Testing mode only.
+ * Parcel tiles for the places with lot records, next to those records (app/build_lot_tiles.py). Test Project only.
  * lots.pmtiles is parcels.pmtiles plus each lot's answers (Show testable lots), used when it is there.
  * overview.pmtiles holds the grid squares for lower zooms, loaded the first time the switch is on.
  */
@@ -196,6 +198,8 @@ export default function MapCanvas() {
   const lotsLayer = useTool((s) => s.lotsLayer);
   /** The lot tiles carry the answers (lots.pmtiles), null until the map has loaded. */
   const [answers, setAnswers] = useState<boolean | null>(null);
+  // Explore, Where to Build: municipalities coloured by status (placesLayer.ts).
+  usePlacesLayer();
 
   useEffect(() => {
     const container = el.current;
@@ -251,7 +255,7 @@ export default function MapCanvas() {
         for (const src of present(map)) addSelected(map, src);
         // The tested lot from its record: outline, buildable ground, the unit box.
         addSiteLayers(map, false);
-        attachBoxDrag(map, ['site-unit-fill']); // the unit box drags here too, linked with the site view (boxDrag.ts)
+        attachBoxDrag(map, ['site-unit-fill', 'site-model-3d']); // the unit box drags here too, linked with the site view (boxDrag.ts)
         addAreaLayers(map);
         set({ status: 'ready' });
         // Start with the credits folded (MapLibre opens them on small screens). The (i) button opens them.
@@ -266,7 +270,7 @@ export default function MapCanvas() {
       if (on !== useTool.getState().view3d) set({ view3d: on });
     });
 
-    // Testing mode: a click on a lot outline opens that lot's record. Projecting mode: a click picks the tract.
+    // Test Project: a click on a lot outline opens that lot's record. Explore: a click picks the tract.
     map.on('click', (e) => {
       if (consumeBoxPress(map)) return; // a press on the unit box: a drag, not a pick
       const testing = useTool.getState().view === 'test';
@@ -282,7 +286,7 @@ export default function MapCanvas() {
       const layers = testing ? present(map).map(fillOf).filter((l) => map.getLayer(l)) : [];
       const hit = layers.length && map.getZoom() >= 14 ? map.queryRenderedFeatures(e.point, { layers })[0] : undefined;
       const parcel = hit ? (hit.properties as ParcelProps) : null;
-      // Testing mode at lot zoom: a click on the selected lot again, or off any lot (ground, street), deselects.
+      // Test Project at lot zoom: a click on the selected lot again, or off any lot (ground, street), deselects.
       if (testing && map.getZoom() >= 14 && (!parcel || parcel.id === useTool.getState().selectedLot)) return void clearSpot();
       void testSpot([e.lngLat.lng, e.lngLat.lat], parcel ? 'Selected lot' : testing ? 'Dropped pin' : 'Selected tract', parcel);
     });
@@ -341,7 +345,7 @@ export default function MapCanvas() {
     };
   }, []);
 
-  // Projecting mode needs the tracts, towns and counties. Testing mode loads them only when a lot test needs them.
+  // Explore needs the tracts, towns and counties. Test Project loads them only when a lot test needs them.
   useEffect(() => {
     if (view === 'project') void loadAreas();
   }, [view]);
@@ -350,7 +354,7 @@ export default function MapCanvas() {
     if (status === 'ready' && areas === 'ready' && map) addAreaLayers(map);
   }, [areas, status]);
 
-  // Projecting mode: tract metric, map level, forecast scenario and the margin-of-error hatch.
+  // Explore: tract metric, map level, forecast scenario and the margin-of-error hatch.
   useEffect(() => {
     const map = mapRef.current;
     if (status !== 'ready' || areas !== 'ready' || !map?.getLayer('tract-fill')) return;
@@ -358,8 +362,8 @@ export default function MapCanvas() {
     map.setPaintProperty('tract-fill', 'fill-opacity', tractOpacity(metric));
     const project = view === 'project';
     const show = (id: string, on: boolean) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
-    // Show testable lots (Testing mode) hides the tract colours, so only the lot answers are coloured.
-    show('tract-fill', (!project || level === 'tract') && !(lotsLayer && view === 'test'));
+    // Show testable lots (Test Project) hides the tract colours, so only the lot answers are coloured.
+    show('tract-fill', (!project || level === 'tract') && !(lotsLayer && view === 'test') && !(project && metric === 'legal'));
     show('town-fill', project && level === 'town');
     show('county-fill', project && level === 'county');
     show('county-line', project && level === 'county');
@@ -387,7 +391,7 @@ export default function MapCanvas() {
     return () => window.clearTimeout(t);
   }, [adu, status, areas, costLevel, payRate]);
 
-  // Lot outlines: Testing mode only. Over the aerial photo the fills go, so the photo shows through.
+  // Lot outlines: Test Project only. Over the aerial photo the fills go, so the photo shows through.
   // Show testable lots: each lot filled with its answer for the scenario and unit type, white lines between lots.
   useEffect(() => {
     const map = mapRef.current;
@@ -446,7 +450,7 @@ export default function MapCanvas() {
     for (const src of present(map)) for (const l of SEL) if (map.getLayer(`${src}-${l}`)) map.setFilter(`${src}-${l}`, selFilter(selectedLot));
   }, [selectedLot, status]);
 
-  // Testing mode: the lot from its record, with the buildable ground and the unit box.
+  // Test Project: the lot from its record, with the buildable ground and the unit box.
   const site = useMemo(() => (view === 'test' && record ? siteData(record, unit, unitVerdict(record, unitInput(unit, scenario))) : null), [view, record, unit, scenario]);
   useEffect(() => {
     const map = mapRef.current;
@@ -468,6 +472,7 @@ export default function MapCanvas() {
     <div className="bh-map absolute inset-0">
       <div ref={el} className="h-full w-full" aria-label="Map of Pennsylvania. Click to test a spot." />
       <TestableLegend answers={answers} />
+      <PlacesLegend />
     </div>
   );
 }

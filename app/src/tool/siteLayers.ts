@@ -5,6 +5,7 @@
 import type { GeoJSONSource, Map as MLMap } from 'maplibre-gl';
 import type { Pt } from '../lib/fitBox';
 import type { AreaGeom, LotRecord, Scenario } from '../lib/lot/types';
+import { cottageFeatures } from './cottage';
 
 export const FT = 0.3048;
 /** Height used for a building with no height on file, by role (ft). */
@@ -16,7 +17,7 @@ export interface SiteData {
   lot: LotRecord;
   scenario: Scenario;
   /** The unit box where it stands, or null for a unit inside a building. */
-  unit: { ring: Pt[]; fits: boolean; heightFt: number } | null;
+  unit: { ring: Pt[]; fits: boolean; heightFt: number; stories?: 1 | 2 } | null;
   /** The spot the tool found when the user's spot does not fit. */
   best: Pt[] | null;
   /** Building to highlight for a unit in the house or the garage. */
@@ -24,7 +25,7 @@ export interface SiteData {
 }
 
 const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] };
-const SOURCES = ['site-lot', 'site-party', 'site-buildings', 'site-buildable', 'site-unit', 'site-best'] as const;
+const SOURCES = ['site-lot', 'site-party', 'site-buildings', 'site-buildable', 'site-unit', 'site-best', 'site-model'] as const;
 /** Lot line shared with an attached neighbor (twins, rows): no side yard there. */
 export const PARTY_COLOR = '#ea580c';
 
@@ -55,8 +56,11 @@ export function addSiteLayers(map: MLMap, full: boolean, before?: string) {
   }
   add({ id: 'site-best-line', type: 'line', source: 'site-best', paint: { 'line-color': FIT_COLOR, 'line-width': 2, 'line-dasharray': [1, 1] } });
   add({ id: 'site-unit-fill', type: 'fill', source: 'site-unit', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': 0.35 } });
-  add({ id: 'site-unit-3d', type: 'fill-extrusion', source: 'site-unit', layout: { visibility: 'none' }, paint: { 'fill-extrusion-color': ['get', 'color'], 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.8 } });
+  // The plain box stays for picking the unit in 3D (drag), drawn invisible; the cottage model is what shows.
+  add({ id: 'site-unit-3d', type: 'fill-extrusion', source: 'site-unit', layout: { visibility: 'none' }, paint: { 'fill-extrusion-color': ['get', 'color'], 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0 } });
   add({ id: 'site-unit-line', type: 'line', source: 'site-unit', paint: { 'line-color': ['get', 'color'], 'line-width': 2.4 } });
+  add({ id: 'site-model-3d', type: 'fill-extrusion', source: 'site-model', filter: ['!=', ['get', 'kind'], 'ridge'], layout: { visibility: 'none' }, paint: { 'fill-extrusion-color': ['get', 'color'], 'fill-extrusion-base': ['get', 'base'], 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.95 } });
+  add({ id: 'site-model-ridge', type: 'line', source: 'site-model', filter: ['==', ['get', 'kind'], 'ridge'], paint: { 'line-color': ['get', 'color'], 'line-width': 1.6, 'line-dasharray': [3, 2] } });
 }
 
 const setData = (map: MLMap, id: (typeof SOURCES)[number], data: GeoJSON.FeatureCollection) => (map.getSource(id) as GeoJSONSource | undefined)?.setData(data);
@@ -64,6 +68,8 @@ const setData = (map: MLMap, id: (typeof SOURCES)[number], data: GeoJSON.Feature
 /** Only the unit box, while it is being dragged (cheaper than redrawing everything). */
 export function setUnitBox(map: MLMap, unit: SiteData['unit']) {
   setData(map, 'site-unit', unit ? fc([feature(poly(unit.ring), { color: unit.fits ? FIT_COLOR : MISS_COLOR, h: unit.heightFt * FT })]) : EMPTY);
+  // The cottage from the same rectangle: rebuilt with the box, so it moves with every drag frame.
+  setData(map, 'site-model', unit ? fc(cottageFeatures({ ring: unit.ring, heightFt: unit.heightFt, stories: unit.stories ?? 1, roofColor: unit.fits ? FIT_COLOR : MISS_COLOR })) : EMPTY);
 }
 
 /** Draw one lot, or clear with null. `extrude`: the unit stands up (3D). */
@@ -85,6 +91,9 @@ export function updateSite(map: MLMap, d: SiteData | null, extrude: boolean) {
   setUnitBox(map, d.unit);
   setData(map, 'site-best', d.best ? fc([feature({ type: 'LineString', coordinates: d.best })]) : EMPTY);
   if (map.getLayer('site-unit-3d')) map.setLayoutProperty('site-unit-3d', 'visibility', extrude ? 'visible' : 'none');
+  // 3D: the cottage model. Top view: the footprint with its ridge line.
+  if (map.getLayer('site-model-3d')) map.setLayoutProperty('site-model-3d', 'visibility', extrude ? 'visible' : 'none');
+  if (map.getLayer('site-model-ridge')) map.setLayoutProperty('site-model-ridge', 'visibility', extrude ? 'none' : 'visible');
 }
 
 /** [west, south, east, north] of the lot, for fitting the camera. */

@@ -77,7 +77,7 @@ From the build worktree, with the main checkout's `node_modules`:
 
 ## Wiring into the app
 
-Done on Nov 11, 2026 (Testing mode, see app/README.md). The table below is what was wired:
+Done on Nov 11, 2026 (Test Project, see app/README.md). The table below is what was wired:
 
 | File | Function or type | Change |
 |---|---|---|

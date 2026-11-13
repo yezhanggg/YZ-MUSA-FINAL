@@ -37,7 +37,7 @@ function draw() {
   if (!drag || !ctx) return;
   const { record: lot, r: res } = ctx;
   const { width, depth } = res.unit;
-  const box = { ring: boxRing(lot, drag.center, drag.angle, width, depth), fits: fitsAt(lot, res.scenario, drag.center, drag.angle, width, depth), heightFt: res.verdict.height_ft ?? 15 };
+  const box = { ring: boxRing(lot, drag.center, drag.angle, width, depth), fits: fitsAt(lot, res.scenario, drag.center, drag.angle, width, depth), heightFt: res.verdict.height_ft ?? 15, stories: res.unit.stories };
   const at = `${drag.center[0].toFixed(7)},${drag.center[1].toFixed(7)}`;
   for (const m of linked) {
     if (!m.getSource('site-unit')) continue;
@@ -103,6 +103,7 @@ export function attachBoxDrag(map: MLMap, layers: string[]): () => void {
     map.on('mousedown', layer, start);
     map.on('touchstart', layer, start);
     map.on('mouseenter', layer, enter);
+    map.on('mousemove', layer, enter); // after the lot hover, so the box keeps its grab cursor
     map.on('mouseleave', layer, leave);
   }
   return () => {
@@ -111,6 +112,7 @@ export function attachBoxDrag(map: MLMap, layers: string[]): () => void {
       map.off('mousedown', layer, start);
       map.off('touchstart', layer, start);
       map.off('mouseenter', layer, enter);
+      map.off('mousemove', layer, enter);
       map.off('mouseleave', layer, leave);
     }
   };

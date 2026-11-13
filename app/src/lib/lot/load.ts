@@ -117,14 +117,21 @@ async function gunzipIfNeeded(buf: ArrayBuffer): Promise<string> {
   return new Response(stream).text();
 }
 
-async function getJson(url: string, f: Fetcher, signal?: AbortSignal): Promise<unknown> {
+async function getJson(url: string, f: Fetcher, signal?: AbortSignal, retry = 1): Promise<unknown> {
   let res: Response;
+  // A network error or a server error (5xx) is tried once more after a short wait; a 404 or an abort is not.
+  const again = () => new Promise<unknown>((ok, bad) => {
+    const t = setTimeout(() => getJson(url, f, signal, retry - 1).then(ok, bad), 400);
+    signal?.addEventListener('abort', () => (clearTimeout(t), bad(new LotLoadError('aborted', `aborted: ${url}`, { url }))), { once: true });
+  });
   try {
     res = await f(url, { signal });
   } catch (e) {
     if (isAbort(e) || signal?.aborted) throw new LotLoadError('aborted', `aborted: ${url}`, { url });
+    if (retry > 0) return again();
     throw new LotLoadError('offline', `network error for ${url}: ${(e as Error).message}`, { url });
   }
+  if (res.status >= 500 && retry > 0) return again();
   if (res.status === 404) throw new LotLoadError('not_found', `no file at ${url}`, { url, status: 404 });
   if (!res.ok) throw new LotLoadError('server', `HTTP ${res.status} for ${url}`, { url, status: res.status });
   try {

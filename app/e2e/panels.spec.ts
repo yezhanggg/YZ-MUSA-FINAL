@@ -77,7 +77,7 @@ test.describe('right panel', () => {
     await expect.poll(() => panelWidth(page)).toBe(630);
   });
 
-  test('the site view zoom buttons change the zoom, and recentre frames the lot again', async ({ page }) => {
+  test('the site view zooms (buttons, wheel after a rest), turns with Cmd + drag, and recentre frames the lot again', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await open(page, PGH);
     const site = page.locator('section[aria-label="Aerial and site view"]');
@@ -92,14 +92,35 @@ test.describe('right panel', () => {
     await expect.poll(zoom).toBeLessThan(z0 - 0.5);
     await site.getByRole('button', { name: 'Recentre on the lot' }).click();
     await expect.poll(zoom).toBeCloseTo(z0, 1);
-    // A plain wheel scrolls the panel, it does not zoom the site map.
+    // A wheel that only passes over the site map scrolls the panel; once the pointer rests on the map, it zooms.
     const before = await body(page).evaluate((n) => n.scrollTop);
     const box = (await site.locator('canvas').first().boundingBox())!;
+    await page.mouse.move(box.x - 40, box.y + box.height / 2);
     await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
-    await page.mouse.wheel(0, 300);
-    await expect.poll(() => body(page).evaluate((n) => n.scrollTop)).toBeGreaterThan(before);
+    // Scroll toward whichever end has room (the panel may already sit at its bottom).
+    await page.mouse.wheel(0, before > 0 ? -300 : 300);
+    await expect.poll(() => body(page).evaluate((n) => n.scrollTop)).not.toBe(before);
     await page.waitForTimeout(400);
     expect(await zoom()).toBeCloseTo(z0, 1);
+    const box2 = (await site.locator('canvas').first().boundingBox())!;
+    await page.mouse.move(box2.x + box2.width / 3, box2.y + box2.height / 2);
+    await page.mouse.move(box2.x + box2.width / 3 + 4, box2.y + box2.height / 2 + 2);
+    await page.waitForTimeout(700);
+    await page.mouse.wheel(0, -200);
+    await expect.poll(zoom).toBeGreaterThan(z0 + 0.1);
+    // Cmd / Ctrl + drag turns the view (bearing and pitch).
+    const b0 = Number(await site.getAttribute('data-bearing'));
+    const mod = (await page.evaluate(() => /Mac|iPhone|iPad/.test(navigator.platform))) ? 'Meta' : 'Control';
+    await site.scrollIntoViewIfNeeded();
+    const box3 = (await site.locator('canvas').first().boundingBox())!;
+    const [ox, oy] = [box3.x + box3.width * 0.3, box3.y + box3.height * 0.5];
+    await page.keyboard.down(mod);
+    await page.mouse.move(ox, oy);
+    await page.mouse.down();
+    await page.mouse.move(ox + 120, oy - 20, { steps: 6 });
+    await page.mouse.up();
+    await page.keyboard.up(mod);
+    await expect.poll(async () => Number(await site.getAttribute('data-bearing'))).not.toBeCloseTo(b0, 0);
   });
 
   test('the chat box grows to at most half the column, the results box keeps the rest, and it minimises into the Chat button', async ({ page }) => {
@@ -115,12 +136,13 @@ test.describe('right panel', () => {
       await input.press('Enter');
       await expect(chat.getByText('Line 30 of a long answer about this lot.').last()).toBeAttached();
     }
+    await page.waitForTimeout(800); // the conversation's open animation
     const [c, col, res] = await Promise.all([chat.boundingBox(), column.boundingBox(), panel(page).boundingBox()]);
     console.log(`chat ${Math.round(c!.height)} px, results ${Math.round(res!.height)} px, column ${Math.round(col!.height)} px`);
     expect(c!.height).toBeLessThanOrEqual(col!.height * 0.5 + 1);
     expect(res!.height).toBeGreaterThanOrEqual(col!.height * 0.45 - 1);
     // The conversation scrolls inside the chat box.
-    expect(await chat.evaluate((n) => n.scrollHeight > n.clientHeight)).toBe(true);
+    await expect.poll(() => chat.evaluate((n) => n.scrollHeight > n.clientHeight)).toBe(true);
     // Minimised: the chat box goes into the "Chat" button of the controls row and the results box takes the height.
     await chat.getByRole('button', { name: 'Minimise chat' }).click();
     await expect(chat).toHaveCount(0);
@@ -168,18 +190,22 @@ test.describe('right panel', () => {
       await expect(page.getByRole('combobox', { name: 'Search an address in Pennsylvania' })).toBeEnabled();
       await page.locator('[data-place="pittsburgh"]').click();
       await page.waitForTimeout(4000);
-      const x = (l.x + l.width + r.x) / 2;
-      // Lots are dense in the Pittsburgh view: try a few points until one opens a lot record.
+      // Lots are dense in the Pittsburgh view: try points across the open map until one opens a lot record
+      // (a street or a non-home lot opens none).
       let ok = false;
-      for (const dy of [0, 40, -40, 80]) {
-        await page.mouse.click(x, h / 2 + dy);
-        try {
-          await expect(verdict(page)).toBeVisible({ timeout: 15_000 });
-          ok = true;
-          break;
-        } catch {
-          /* a street or a non-home lot: try the next point */
+      const xs = [0.5, 0.35, 0.65, 0.42, 0.58].map((f) => l.x + l.width + 12 + (r.x - l.x - l.width - 24) * f);
+      for (const y of [0.5, 0.35, 0.65].map((f) => h * f)) {
+        for (const x of xs) {
+          await page.mouse.click(x, y);
+          try {
+            await expect(verdict(page)).toBeVisible({ timeout: 6_000 });
+            ok = true;
+          } catch {
+            /* try the next point */
+          }
+          if (ok) break;
         }
+        if (ok) break;
       }
       expect(ok, `no lot opened at ${w}x${h}`).toBe(true);
       const vh = (await verdict(page).boundingBox())!.height;

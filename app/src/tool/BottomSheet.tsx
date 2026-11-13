@@ -8,6 +8,8 @@ import { PANEL_BODY } from '../components/Panel';
 import AskBox from './AskBox';
 import { ReportStack } from './RightPanel';
 import { AreaLine } from './AreaResults';
+import { HeadSub, PlaceLine } from './PlaceResults';
+import { placesShown } from './places';
 import { reportTitle } from './Report';
 import { useTool } from './store';
 import { GUTTER, SHEET_PEEK, sheetOpenHeight } from './layout';
@@ -40,7 +42,10 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
     return () => window.removeEventListener('resize', on);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const head = spot ? reportTitle(spot) : null;
+  // Where to Build answers for the municipality: its name heads the sheet (as in the right panel).
+  const legal = useTool((s) => placesShown(s));
+  const town = spot?.town.NAMELSAD as string | undefined;
+  const head = spot ? (legal && town ? { label: town, sub: spot.tract.county ? `${spot.tract.county} County` : undefined } : reportTitle(spot)) : null;
   return (
     <motion.section
       aria-label="Site sheet"
@@ -61,7 +66,7 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
               <div className="mt-2 flex items-center justify-between gap-2">
                 <div className="min-w-0">
                   <div className="truncate font-display text-body font-bold text-slate-900">{head?.label}</div>
-                  <div className="truncate text-caption text-slate-600">{head?.sub}</div>
+                  <div className="truncate text-caption text-slate-600"><HeadSub spot={spot} text={head?.sub} /></div>
                 </div>
                 <div className="flex shrink-0 gap-1">
                   <TestActions />
@@ -85,12 +90,12 @@ export default function BottomSheet({ maxWidth }: { maxWidth?: number }) {
         {!test && spot && (
           <div className="mt-2 min-w-0">
             <div className="truncate font-display text-body font-bold text-slate-900">{head?.label}</div>
-            <div className="truncate text-caption text-slate-600">{head?.sub}</div>
+            <div className="truncate text-caption text-slate-600">{legal ? <HeadSub spot={spot} text={head?.sub} /> : head?.sub}</div>
           </div>
         )}
         {!test && !open && spot && (
           <div className="mt-2">
-            <AreaLine spot={spot} />
+            {legal ? <PlaceLine spot={spot} /> : <AreaLine spot={spot} />}
           </div>
         )}
       </div>

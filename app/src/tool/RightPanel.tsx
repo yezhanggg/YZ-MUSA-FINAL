@@ -1,9 +1,9 @@
 // The right panel. Explore areas: Ask on top, then the answer for the tract and town, four rows, Test a lot here,
-// and closed folds (AreaResults). Testing mode: the lot results (test/LotResults). On tablet and
+// and closed folds (AreaResults). Test Project: the lot results (test/LotResults). On tablet and
 // phone the same pieces fill the bottom sheet's tabs. On desktop and laptop the left edge drags to resize (ResizeHandle).
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, MotionConfig, animate, motion, useMotionValue, useReducedMotion } from 'motion/react';
-import { Home, Minimize2, MousePointerClick, PanelRightClose } from 'lucide-react';
+import { Home, Minimize2, PanelRightClose } from 'lucide-react';
 import { PANEL, PANEL_BODY, PanelHeader, IconButton } from '../components/Panel';
 import { SPRING_PANEL } from '../components/primitives';
 import { cx } from '../lib/cx';
@@ -11,14 +11,16 @@ import AskBox from './AskBox';
 import CountyTable from './CountyTable';
 import { ReportSkeleton, reportTitle } from './Report';
 import { AreaAnswer, AreaFolds, AreaLine, AreaRows } from './AreaResults';
+import { HeadSub, PlaceAnswer, PlaceRows } from './PlaceResults';
+import { hasLotTesting, placesShown } from './places';
 import { testLotHere } from './actions';
 import ResizeHandle from './ResizeHandle';
 import { useChatOpen } from './layout';
 import { useTool } from './store';
-import { ShortNotice } from './test/Answer';
+import { Fold, Folds, ShortNotice } from './test/Answer';
 import { TestActions, TestTabBody, TestTabs, type TestTab } from './test/LotResults';
 
-/** Projecting mode is tract and town level: one lot is tested in Testing mode, at the same spot. */
+/** Explore is tract and town level: one lot is tested in Test Project, at the same spot. */
 export function TestLotHere() {
   return (
     <button type="button" onClick={testLotHere} className="tap inline-flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-3 py-2.5 text-small font-semibold text-white shadow-sm transition hover:bg-violet-700">
@@ -27,18 +29,13 @@ export function TestLotHere() {
   );
 }
 
-const Hint = () => (
-  <p className="flex items-center gap-2 rounded-xl bg-violet-50/70 px-3 py-2.5 text-small text-violet-900 ring-1 ring-violet-200/70">
-    <MousePointerClick className="h-4 w-4 shrink-0 text-violet-600" /> Click the map to pick a tract.
-  </p>
-);
-
 /** The answer, four rows, Test a lot here, then closed folds. Shared by the right panel and the sheet. */
 export function ReportStack() {
   const spot = useTool((s) => s.spot);
   const level = useTool((s) => s.level);
   const view = useTool((s) => s.view);
   const busy = useTool((s) => s.busy);
+  const legal = useTool((s) => placesShown(s));
   if (busy && !spot) return <ReportSkeleton />;
   // Test a lot, a spot with no lot record: the tract and town on one line, kept small so it does not read as the lot's answer.
   if (view === 'test')
@@ -47,14 +44,28 @@ export function ReportStack() {
         <p className="px-1 text-caption text-slate-500">This tract and town, from Explore:</p>
         <AreaLine spot={spot} />
       </div>
-    ) : (
-      <Hint />
-    );
+    ) : null;
   const counties = level === 'county' && view === 'project';
+  // Where to Build: the municipality's answer first, four short rows, then the payoff and room rows folded.
+  if (legal && spot)
+    return (
+      <div className="space-y-3">
+        <PlaceAnswer spot={spot} />
+        <PlaceRows spot={spot} />
+        {hasLotTesting(spot.town.GEOID as string | undefined) && <TestLotHere />}
+        <ShortNotice />
+        <Folds>
+          <Fold title="Payoff and room">
+            <AreaRows spot={spot} skipRule />
+          </Fold>
+        </Folds>
+        <AreaFolds spot={spot} />
+      </div>
+    );
   return (
     <div className="space-y-3">
       {counties && !spot && <CountyTable />}
-      {spot ? <AreaAnswer spot={spot} /> : <Hint />}
+      {spot && <AreaAnswer spot={spot} />}
       {spot && <AreaRows spot={spot} />}
       {spot && <TestLotHere />}
       {spot && <ShortNotice />}
@@ -69,14 +80,16 @@ export default function RightPanel({ style, drawer, onClose, below }: { style: R
   const busy = useTool((s) => s.busy);
   const view = useTool((s) => s.view);
   const [tab, setTab] = useState<TestTab>('results');
-  const head = spot ? reportTitle(spot) : null;
+  const legal = useTool((s) => placesShown(s));
+  const town = spot?.town.NAMELSAD as string | undefined;
+  const head = spot ? (legal && town ? { label: town, sub: spot.tract.county ? `${spot.tract.county} County` : undefined } : reportTitle(spot)) : null;
   const test = view === 'test';
   // The same elements while the width changes, so a drag only re-lays out the panel and re-renders nothing inside.
   const header = useMemo(
     () => (
       <PanelHeader
         title={head?.label ?? 'Details'}
-        sub={head?.sub}
+        sub={spot && (legal || test) ? <HeadSub spot={spot} text={head?.sub} /> : head?.sub}
         actions={
           <>
             {test && <TestActions />}
@@ -89,7 +102,7 @@ export default function RightPanel({ style, drawer, onClose, below }: { style: R
         {busy && <div className="mt-2 h-0.5 overflow-hidden rounded-full bg-violet-100"><motion.div className="h-full w-1/3 rounded-full bg-violet-500" animate={{ x: ['-100%', '300%'] }} transition={{ repeat: Infinity, duration: 1, ease: 'easeInOut' }} /></div>}
       </PanelHeader>
     ),
-    [head?.label, head?.sub, test, spot, drawer, onClose, tab, busy],
+    [head?.label, head?.sub, legal, test, spot, drawer, onClose, tab, busy],
   );
   const chatOpen = useChatOpen((s) => s.open);
   const chat = useMemo(() => <AskBox flat />, []);

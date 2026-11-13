@@ -170,3 +170,13 @@ export function mapPadding(report = true) {
   const left = sides.left ? lw + GUTTER * 2 : GUTTER;
   return { left: left + 20, right: right + GUTTER * 2 + 20, top: TOP + 20, bottom: 40 };
 }
+
+/** Explore's statewide view: the panel room (mapPadding) plus a legend that sits on the map (tablet and phone).
+ * `open`: the results side is open (laptop drawer) or the sheet is open (tablet, phone). */
+export function statePadding(open = false) {
+  const p = mapPadding(open);
+  const legend = typeof document === 'undefined' ? null : document.querySelector('[data-map-legend]');
+  const r = legend?.getBoundingClientRect();
+  if (r && r.height) p.top = Math.max(p.top, Math.round(r.bottom) + 12);
+  return p;
+}

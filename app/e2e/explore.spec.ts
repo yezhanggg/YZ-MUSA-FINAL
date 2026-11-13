@@ -58,6 +58,8 @@ test.describe('explore areas', () => {
     await page.goto(`/#/?view=test&lot=${PGH.lot}&tract=${PGH.tract}`);
     await expect(page.locator('section[aria-label="Verdict"]').first()).toBeVisible();
     await page.getByRole('combobox', { name: 'Mode' }).selectOption({ label: 'Explore' });
+    // Explore opens on Where to Build (the municipality's answer, places.spec.ts); a tract map colour shows the tract answer.
+    await left(page).getByRole('combobox', { name: 'Map colour' }).selectOption('pays');
     await expect(answer(page)).toBeVisible();
     await expect(answer(page)).toHaveAttribute('data-answer', /^(yes|approval|no|unknown)$/);
     await expect(answer(page)).toContainText(/Pays off|paying off|No payoff estimate/);

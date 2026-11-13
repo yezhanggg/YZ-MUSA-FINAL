@@ -2,7 +2,7 @@
 // external drive (LOT_DATA_DIR, default ~/musa-drive/lots) and skips when they are not there.
 import { defineConfig, devices } from '@playwright/test';
 
-const PORT = 5199;
+const PORT = Number(process.env.E2E_PORT ?? 5199);
 
 export default defineConfig({
   testDir: 'app/e2e',

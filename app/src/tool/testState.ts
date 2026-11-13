@@ -1,4 +1,4 @@
-// Testing mode (MUSA 6950, lot level): the unit the user draws, the money settings, and how both live in the
+// Test Project (MUSA 6950, lot level): the unit the user draws, the money settings, and how both live in the
 // address so a link opens the same lot, scenario and unit. Pure functions, tested in testState.test.ts.
 import { ASSUMPTIONS } from '../lib/money';
 import { ADU_TYPES, isAduType, isScenario, type AduType, type LotRecord, type RuleType, type Scenario } from '../lib/lot/types';
@@ -246,11 +246,11 @@ export function siteData(lot: LotRecord, u: UnitDraft, v: UnitVerdict): SiteData
   if (u.type !== 'detached_new' || v.status === 'not_allowed') return { lot, scenario: v.scenario, unit: null, best: null, host };
   const p = v.placed;
   const heightFt = v.height_ft ?? 15;
-  if (p && (p.where === 'asked' || !u.at)) return { lot, scenario: v.scenario, unit: { ring: p.ring, fits: !p.needs_clearing, heightFt }, best: null, host };
+  if (p && (p.where === 'asked' || !u.at)) return { lot, scenario: v.scenario, unit: { ring: p.ring, fits: !p.needs_clearing, heightFt, stories: u.stories }, best: null, host };
   const f = frameOf(lot);
   const center: Pt = u.at ? [u.at.lon, u.at.lat] : f.toLonLat(centroid(areaFeet(lot.lot.polygon, f)));
   const ring = boxRing(lot, center, u.angle ?? p?.angle_deg ?? 0, u.width, u.depth);
-  return { lot, scenario: v.scenario, unit: { ring, fits: false, heightFt }, best: p?.ring ?? null, host };
+  return { lot, scenario: v.scenario, unit: { ring, fits: false, heightFt, stories: u.stories }, best: p?.ring ?? null, host };
 }
 
 /** The pipeline simplifies the saved buildable outline by up to 0.25 ft, so the box is tested this much smaller per side (as in verdict.ts). */

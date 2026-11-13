@@ -1,10 +1,10 @@
-// Map colour for each metric (Projecting mode). Tract metrics read tract properties (app/build_data.py),
+// Map colour for each metric (Explore). Tract metrics read tract properties (app/build_data.py),
 // Pays off follows the ADU and payoff controls, so it reads feature-state that MapCanvas recomputes live.
 // Towns and counties are coloured by ADUs by 2031 per 1,000 people, under the forecast scenario.
 import type { ExpressionSpecification } from 'maplibre-gl';
 import { HEADLINE } from '../lib/numbers';
 
-export type MetricId = 'jobs_after' | 'jobs_shift' | 'pop_after' | 'units_after' | 'rent_after' | 'group' | 'window' | 'room' | 'pays';
+export type MetricId = 'legal' | 'jobs_after' | 'jobs_shift' | 'pop_after' | 'units_after' | 'rent_after' | 'group' | 'window' | 'room' | 'pays';
 export type MapLevel = 'tract' | 'town' | 'county';
 export type Forecast = 'current' | 'hb2186' | 'sb1346';
 export type WindowVar = 'pop' | 'homes' | 'rent';
@@ -32,6 +32,8 @@ const GROWTH_NAMES = ['Fell over 0.5% a year', 'Fell 0 to 0.5%', 'Grew 0 to 0.5%
 const LEVEL_COLORS = ['#ede9fe', '#c4b5fd', '#8b5cf6', '#5b21b6'];
 
 export const METRICS: Record<MetricId, Metric> = {
+  // Where you can build an ADU today, per municipality (tool/places.ts, drawn by tool/placesLayer.ts, not on tracts).
+  legal: { short: 'Where to Build', label: 'Where you can build an ADU today, by municipality', steps: [], names: [] },
   jobs_after: {
     short: 'Jobs',
     label: 'Job change, 2019 to 2024',
@@ -89,6 +91,8 @@ const stepped = (value: unknown, steps: [number, string][], prop: string) => {
 };
 
 export function colorExpr(metric: MetricId, win: { v: WindowVar; w: Window } = { v: 'rent', w: '24' }): ExpressionSpecification {
+  // Where to Build colours municipalities, not tracts. Test Project keeps its usual tract colours under it.
+  if (metric === 'legal') return colorExpr('jobs_after');
   if (metric === 'group') {
     return ['match', ['get', 'trend_group'], ...GROUP_COLORS.flat(), NO_DATA] as unknown as ExpressionSpecification;
   }

@@ -1,4 +1,4 @@
-// "Show testable lots": a switch in the Testing panel that puts every lot with a lot record on the map, coloured by
+// "Show testable lots": a switch in the Test Project panel that puts every lot with a lot record on the map, coloured by
 // its answer for the scenario and unit type picked, and the small legend the map shows while it is on.
 import { useEffect, useState } from 'react';
 import { cx } from '../../lib/cx';
@@ -57,7 +57,7 @@ export default function TestableLots() {
   );
 }
 
-/** The map legend while the switch is on (Testing mode). `answers` is false when the tiles carry no answers. */
+/** The map legend while the switch is on (Test Project). `answers` is false when the tiles carry no answers. */
 export function TestableLegend({ answers }: { answers: boolean | null }) {
   const show = useTool((s) => s.lotsLayer && s.view === 'test');
   const ready = useTool((s) => s.status === 'ready');

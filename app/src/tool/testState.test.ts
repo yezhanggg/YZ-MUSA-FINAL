@@ -6,7 +6,7 @@ import { unitVerdict } from '../lib/lot/verdict';
 import { DEFAULT_UNIT, PRESETS, allowedPhrase, boxRing, fitsAt, lotByAddress, normAddress, siteData, sidesFromArea, testFromHash, testHash, typeFor, typeOptions, unitInput } from './testState';
 
 describe('the address', () => {
-  it('defaults to testing mode, today and a 20 x 30 ft cottage', () => {
+  it('defaults to Test Project, today and a 20 x 30 ft cottage', () => {
     expect(testFromHash('#/')).toEqual({ view: 'test', scenario: 'today', unit: DEFAULT_UNIT, lot: null });
   });
 
@@ -18,7 +18,7 @@ describe('the address', () => {
     expect(testFromHash(hash)).toEqual(link);
   });
 
-  it('writes only the view in projecting mode', () => {
+  it('writes only the view in Explore', () => {
     const hash = testHash('#/?sc=today&uw=20', { view: 'project', scenario: 'today', unit: DEFAULT_UNIT, lot: null });
     expect(hash).toBe('#/?view=project');
     expect(testFromHash(hash).view).toBe('project');

@@ -1,4 +1,4 @@
-// Testing mode, the bodies of the Results folds: why (the verdict in sentences and the zoning rules), money,
+// Test Project, the bodies of the Results folds: why (the verdict in sentences and the zoning rules), money,
 // lot facts. The Build list sits in its own tab. The answer and the checklist on top are in Answer.tsx.
 import { useState } from 'react';
 import { AlertTriangle, ChevronDown, ExternalLink } from 'lucide-react';

@@ -20,33 +20,35 @@ export interface Spot {
   town: TownProps;
   /** The parcel clicked on the map (vector tiles), if any. */
   parcel: ParcelProps | null;
-  /** Testing mode: the lot record that contains the spot, if the place has lot records. */
+  /** Test Project: the lot record that contains the spot, if the place has lot records. */
   record: LotRecord | null;
-  /** Testing mode: why there is no record, in one plain sentence. */
+  /** Test Project: why there is no record, in one plain sentence. */
   recordNote: string | null;
   /** Build date of the lot records (manifest). */
   builtAt: string | null;
+  /** The lot file did not load: the panel offers to try again. */
+  loadFailed?: boolean;
 }
 
 interface ToolState {
   /** Testing (lot level) or projecting (tract and town level). Kept in the hash. */
   view: ToolView;
-  /** Testing mode: the law scenario. */
+  /** Test Project: the law scenario. */
   scenario: Scenario;
-  /** Testing mode: the unit being tested. */
+  /** Test Project: the unit being tested. */
   unit: UnitDraft;
-  /** Testing mode: cost, finish, financing and rent settings. */
+  /** Test Project: cost, finish, financing and rent settings. */
   money: MoneyDraft;
   rule: Rule;
   metric: MetricId;
-  /** Projecting mode: map by tract, town or county. */
+  /** Explore: map by tract, town or county. */
   level: MapLevel;
-  /** Projecting mode: the forecast scenario for ADUs by 2031. */
+  /** Explore: the forecast scenario for ADUs by 2031. */
   forecast: Forecast;
-  /** Projecting mode: payoff cost level and loan rate (the Pays map and the share that pays). */
+  /** Explore: payoff cost level and loan rate (the Pays map and the share that pays). */
   costLevel: CostLevel;
   payRate: number;
-  /** Projecting mode: the ACS window and measure for the "By window" map. */
+  /** Explore: the ACS window and measure for the "By window" map. */
   winVar: WindowVar;
   win: Window;
   counties: FC<CountyProps> | null;
@@ -71,7 +73,7 @@ interface ToolState {
   resultsOpen: boolean;
   /** Aerial photo under the map. */
   aerial: boolean;
-  /** Testing mode: every lot with a record on the map, coloured by its answer (testable.ts). Not in the link, like aerial. */
+  /** Test Project: every lot with a record on the map, coloured by its answer (testable.ts). Not in the link, like aerial. */
   lotsLayer: boolean;
   set: (p: Partial<ToolState>) => void;
   setAdu: (p: Partial<Adu>) => void;
@@ -122,7 +124,7 @@ export const useTool = create<ToolState>((set, get) => ({
   unit: start.unit,
   money: DEFAULT_MONEY,
   rule: 'current',
-  metric: 'jobs_after',
+  metric: 'legal',
   level: 'tract',
   forecast: 'current',
   costLevel: 'mid',
