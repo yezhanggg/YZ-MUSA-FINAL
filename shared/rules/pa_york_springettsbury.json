@@ -1,0 +1,645 @@
+{
+  "provenance": {
+    "jurisdiction": "Springettsbury township",
+    "instrument": "Code of the Township of Springettsbury, Chapter 325 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 325 as amended (latest amendment seen: 325-89, 12-11-2025, Ord. 2025-10). 325-4.1 (uses not provided for) added 5-12-2022 (Ord. 2022-01). The area and bulk charts are attachments (R-1, R-7, R-10, R-20 dated 12-15-2007, R-R 6-1-2010, N-C and N-C/H Supp 51 Oct 2022). eCode360 New Laws (read 2026-11-13): none. The York County Planning Commission senior housing table lists 'ADU - Special Exception' in N-C, R-1, R-10, R-20, R-7 and R-R, which matches the code (cross-check only).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/5176819",
+      "https://ecode360.com/print/SP2128?guid=5176819",
+      "https://ecode360.com/5176836",
+      "https://ecode360.com/38773231",
+      "https://ecode360.com/5177155",
+      "https://ecode360.com/5177222",
+      "https://ecode360.com/5177272",
+      "https://ecode360.com/5177317",
+      "https://ecode360.com/5177385",
+      "https://ecode360.com/5177464",
+      "https://ecode360.com/5177514",
+      "https://ecode360.com/14372325",
+      "https://ecode360.com/5178582",
+      "https://ecode360.com/5178856",
+      "https://ecode360.com/5178836",
+      "https://ecode360.com/5178896",
+      "https://ecode360.com/5179181",
+      "https://ecode360.com/5179279",
+      "https://ecode360.com/5179389",
+      "https://ecode360.com/5179582",
+      "https://ecode360.com/5180012",
+      "https://ecode360.com/5179570",
+      "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
+      "https://ecode360.com/attachment/SP2128/SP2128-325c%20Area%20and%20Bulk%20Req%20Table%20R-7.pdf",
+      "https://ecode360.com/attachment/SP2128/SP2128-325d%20Area%20and%20Bulk%20Req%20Table%20R-10.pdf",
+      "https://ecode360.com/attachment/SP2128/SP2128-325e%20Area%20and%20Bulk%20Req%20Table%20R-20.pdf",
+      "https://ecode360.com/attachment/SP2128/SP2128-325f%20Area%20and%20Bulk%20Req%20Table%20R-R.pdf",
+      "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+      "https://ecode360.com/SP2128/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213372992",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/5176819",
+    "code_current_through": "2026-06-25",
+    "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-13 shows amendments to 12-11-2025 and no currency line. New Laws: none.",
+    "checks": [
+      "An 'Accessory dwelling unit for family members' is a special exception (Zoning Hearing Board) in R-1, R-7, R-10 (listed as 'Dwelling unit conversion for family members'), R-20, R-R and N-C (325-13C, 325-16C, 325-19C, 325-22C, 325-26C, 325-32C)",
+      "Family only: the unit is for a grandparent, parent, child or grandchild. No rent may be charged and no more than two people may live in it (325-159A, C)",
+      "Inside the existing house, or added to it with a common wall, floor or ceiling, in one building. A breezeway or porch is not enough. No detached unit (325-159A)",
+      "Owner-occupied. The special exception is renewed every year with a notarized affidavit by January 31 (325-159B, E)",
+      "Size: at most 450 sq ft, unless existing space is arranged into a larger one-bedroom unit, and never more than 30% of the house's floor area, basement excluded (325-159D)",
+      "When the owner leaves or the family member moves out, the unit goes back into the house (325-159F)",
+      "Parking: 1 space for the unit plus 2 for the house (325-114)",
+      "N-C/H permits 'All uses permitted in the N-C District' with a retail exception list. Whether that carries the N-C special exception for this unit is not clear (325-33A)",
+      "In the F-R and F-O flexible overlays, which the Board of Supervisors applies to run-down tracts, the family unit is listed as a permitted use (325-90.1, 325-97)"
+    ],
+    "notes": "Zoning office: Springettsbury Township Community Development (York County). Districts (325-7): R-1, R-7, R-10, R-20, R-R, N-C, N-C/H, M-U, C-H, B-I, G-I, O-S, F-D, overlays F-P, S-S, F-O, F-R, T-N, T-C. Read on eCode360 in a browser, the chapter print view searched in the page and read section by section. Area and bulk charts read from the attachment PDFs (fetched once each). Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage, second dwelling, accessory residential, guest house, caretaker, conversion, tiny, two-family, family member. 'Accessory apartment' appears only in the T-N overlay mix rule (325-50B(2)), with no standards. A 'guest room' (no cooking) may be within or attached to a residence (325-5). 325-123: minimum habitable floor area of a dwelling unit 700 sq ft (R-1, N-C) or 900 sq ft (R-7 to R-R), read as reaching the house, not the family unit capped by 325-159D. No historic district rule beyond the N-C/H district."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory dwelling unit for family members",
+      "section": "325-159, 325-13C(6), 325-5 'Accessory dwelling'",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "325-5: 'ACCESSORY DWELLING A dwelling unit that has been added onto, or created within, a single-family house, which is subordinate to the principal single-family dwelling unit in terms of size, location and appearance'. R-10 lists the same use as 'Dwelling unit conversion for family members' (325-19C(4))."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "325-159, 325-13C(6), 325-16C(3), 325-19C(4), 325-22C(4), 325-26C(13), 325-32C(6)",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Special exception in R-1, R-7, R-10, R-20, R-R and N-C, for a family member only. The family rule limits most, so family_only, with the special exception in approval.path."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "325-159, 325-156A, 325-190",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Uses by special exception are decided by the Zoning Hearing Board (325-156A). The Board may attach conditions. 325-159E: an affidavit to the Board before the zoning permit, then a yearly affidavit to the Zoning Officer."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "325-159, MPC 910.2",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails 325-159 (a detached unit, a non-family tenant, rent) needs a variance. 325-4.1 (uses not provided for, by special exception) does not reach it, since the use is listed."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Accessory dwelling unit for family members in the F-R or F-O flexible overlay",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-7",
+            "N-C",
+            "N-C/H"
+          ],
+          "conditions": "Listed as a permitted principal use only where the Board of Supervisors has applied the Flexible Residential Overlay (R-1, R-7 base, one acre or more) or the Flexible Development Overlay (N-C, N-C/H and other bases, two acres or more) to a run-down or vacant tract. The 325-159 family standards are read as still applying. Land development rules apply.",
+          "min_lot_sqft": 43560,
+          "min_lot_is_tract": true,
+          "adu_listing": true,
+          "land_development": true,
+          "section": "325-90.1A(1)(j), 325-97A(1)(i), 325-89C, 325-96B, C",
+          "url": "https://ecode360.com/5178856",
+          "confidence": "secondary",
+          "note": "Rare. The overlay must first be applied by the Board to the tract. Ask the township."
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "N-C"
+          ],
+          "conditions": "Permitted principal use. Lot 7,500 sq ft, front 20 ft (15 in N-C), rear 25 ft, side 15 ft, coverage 50% (40% in N-C), 35 ft. 2 parking spaces per unit. No family rule.",
+          "min_lot_sqft": 7500,
+          "section": "325-13A(5), 325-32, chart for 325-14, chart for 325-34, 325-114",
+          "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf"
+        }
+      ],
+      "section": "325-13A(5), 325-90.1, 325-97",
+      "url": "https://ecode360.com/5177155",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The F-R and F-O listing is the same family unit under another listing. The two-family dwelling is not an ADU."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-7",
+        "R-10",
+        "R-20",
+        "R-R",
+        "N-C"
+      ],
+      "section": "325-13C(6), 325-16C(3), 325-19C(4), 325-22C(4), 325-26C(13), 325-32C(6)",
+      "url": "https://ecode360.com/5177155",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Listed as a use by special exception in each. 325-159A: 'in any residence district'. Not listed in M-U, C-H, B-I, G-I or O-S."
+    },
+    "districts_in_doubt": {
+      "value": [
+        "N-C/H"
+      ],
+      "section": "325-33A",
+      "url": "https://ecode360.com/5177514",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'All uses permitted in the N-C District are permitted in the N-C/H, except' a retail list. The unit is a special exception in N-C. Whether 'permitted' carries special exception uses is not clear. The YCPC table shows no ADU in N-C/H."
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "325-159A",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'A single-family dwelling unit may be converted'. R-1 permits detached, semi-attached and attached single-family dwellings, R-7 detached and semi-attached. No type is excluded."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "325-159A",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Set false so an addition to the house shows as allowed. The house itself must already exist. 325-159A: 'incorporation shall mean either completely within an existing principal building or added to an existing principal building, provided that both dwelling units shall be attached by a common wall, floor or ceiling and not simply by an attached breezeway or porch and shall be contained within one building.'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 325",
+      "url": "https://ecode360.com/print/SP2128?guid=5176819",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No historic path for the unit. The N-C/H district is a use district."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "A second kitchen in the existing house or an addition joined by a common wall, floor or ceiling, in one building. A breezeway or porch does not count.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "325-159A",
+          "url": "https://ecode360.com/5179582"
+        },
+        {
+          "kind": "other",
+          "condition": "A notarized affidavit that the owner lives there and a family member occupies the unit, to the Zoning Hearing Board before the permit and to the Zoning Officer by January 31 each year. The unit returns to the house when either stops.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "325-159B, E, F",
+          "url": "https://ecode360.com/5179582"
+        }
+      ],
+      "section": "325-159",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Conditions from 325-159."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "325-159A",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Within an existing principal building or added to it, attached by a common wall, floor or ceiling. An attached garage converted inside the house is read as internal. No detached or garage-apartment unit."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 450,
+      "section": "325-159D",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The additional dwelling unit shall not exceed 450 square feet of floor area, unless parts of an existing dwelling are otherwise arranged or designed to be transformed into a larger one-bedroom unit.'"
+    },
+    "max_share_of_house": {
+      "value": 0.3,
+      "section": "325-159D",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The maximum floor area of the additional dwelling unit shall not be more than 30% of the total floor area of the principal dwelling, excluding basement area.'"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "325-159",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No minimum size for the unit."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "325-159A",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The unit is part of the house, so the district height applies (35 ft)."
+    },
+    "max_height_ft": {
+      "value": 18,
+      "section": "325-134G",
+      "url": "https://ecode360.com/5179389",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule: 'For all residential uses, accessory buildings and structures shall be limited to 18 feet in height.' No detached unit is allowed today. Also no taller than the house (325-134C)."
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "325-134C",
+      "url": "https://ecode360.com/5179389",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The height of an accessory building or structure shall be less than or equal to that of the primary structure.'"
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "325-134B",
+      "url": "https://ecode360.com/5179389",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'An accessory building or structure must be located to the rear of the principal building or structure. The rear setback shall be 10 feet. All required side setbacks shall be maintained.'"
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "325-134B",
+      "url": "https://ecode360.com/5179389",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'All required side setbacks shall be maintained.' The district side setback applies. See districts."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "325-134B",
+      "url": "https://ecode360.com/5179389",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'An accessory building or structure must be located to the rear of the principal building or structure.'"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "325-159B",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The dwelling in question shall be owner-occupied during the duration of the special exception which shall be renewed on an annual basis.'"
+    },
+    "family_only": {
+      "value": true,
+      "section": "325-159A, C",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'family members shall include and be restricted to the following: (1) Grandparent. (2) Parent. (3) Children. (4) Grandchildren.' The unit 'shall be occupied by a family member'."
+    },
+    "occupancy": {
+      "value": "A grandparent, parent, child or grandchild of the owner. No rent. No more than two individuals in the unit.",
+      "section": "325-159A, C",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'no rent shall be charged and under no circumstances shall more than two individuals occupy this unit.'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "325-159A",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'the incorporation of one additional dwelling unit for a family member'."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "325-159C",
+      "url": "https://ecode360.com/5179582",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'no rent shall be charged'."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "325-114D",
+      "url": "https://ecode360.com/5179181",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units 1 space per dwelling unit'."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "325-114D",
+      "url": "https://ecode360.com/5179181",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'All residential dwellings (except accessory dwelling units) 2 spaces per dwelling unit', plus 1."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "chart for 325-14",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached single-family. Semi-attached 3,500, attached 2,500. The chart's special exception row 'Dwelling unit conversion' also lists 7,500 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "chart for 325-14",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "chart for 325-14",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "chart for 325-14",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "chart for 325-14",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "chart for 325-14",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325b%20Area%20and%20Bulk%20Req%20Table%20R-1.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-7": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "chart for 325-17",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325c%20Area%20and%20Bulk%20Req%20Table%20R-7.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached single-family. Semi-attached 3,500."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "chart for 325-17",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325c%20Area%20and%20Bulk%20Req%20Table%20R-7.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "chart for 325-17",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325c%20Area%20and%20Bulk%20Req%20Table%20R-7.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "chart for 325-17",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325c%20Area%20and%20Bulk%20Req%20Table%20R-7.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "chart for 325-17",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325c%20Area%20and%20Bulk%20Req%20Table%20R-7.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "chart for 325-17",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325c%20Area%20and%20Bulk%20Req%20Table%20R-7.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-10": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "chart for 325-20",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325d%20Area%20and%20Bulk%20Req%20Table%20R-10.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached single-family. Street frontage 80 ft."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "chart for 325-20",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325d%20Area%20and%20Bulk%20Req%20Table%20R-10.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "chart for 325-20",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325d%20Area%20and%20Bulk%20Req%20Table%20R-10.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "chart for 325-20",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325d%20Area%20and%20Bulk%20Req%20Table%20R-10.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "chart for 325-20",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325d%20Area%20and%20Bulk%20Req%20Table%20R-10.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "chart for 325-20",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325d%20Area%20and%20Bulk%20Req%20Table%20R-10.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-20": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "chart for 325-23",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325e%20Area%20and%20Bulk%20Req%20Table%20R-20.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached single-family. 10,000 under the open space option."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "chart for 325-23",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325e%20Area%20and%20Bulk%20Req%20Table%20R-20.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "chart for 325-23",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325e%20Area%20and%20Bulk%20Req%20Table%20R-20.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "chart for 325-23",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325e%20Area%20and%20Bulk%20Req%20Table%20R-20.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "chart for 325-23",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325e%20Area%20and%20Bulk%20Req%20Table%20R-20.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "chart for 325-23",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325e%20Area%20and%20Bulk%20Req%20Table%20R-20.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-R": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "chart for 325-27",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325f%20Area%20and%20Bulk%20Req%20Table%20R-R.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One acre with public sewer, two acres without."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "chart for 325-27",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325f%20Area%20and%20Bulk%20Req%20Table%20R-R.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "chart for 325-27",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325f%20Area%20and%20Bulk%20Req%20Table%20R-R.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "chart for 325-27",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325f%20Area%20and%20Bulk%20Req%20Table%20R-R.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "chart for 325-27",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325f%20Area%20and%20Bulk%20Req%20Table%20R-R.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "chart for 325-27",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325f%20Area%20and%20Bulk%20Req%20Table%20R-R.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "N-C": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached single-family."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "chart for 325-34",
+        "url": "https://ecode360.com/attachment/SP2128/SP2128-325g%20Area%20and%20Bulk%20Req%20Table%20NC%20N-C_H.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

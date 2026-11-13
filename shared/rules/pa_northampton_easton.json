@@ -1,0 +1,464 @@
+{
+  "provenance": {
+    "jurisdiction": "Easton city",
+    "instrument": "Code of the City of Easton, Chapter 595 Zoning (amended in its entirety 7-8-2020 by Ord. No. 5701, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 595 adopted 10-12-1988, amended in its entirety 7-8-2020 (Ord. 5701). Latest amendment seen in the text: 595-39 hearings, 5-13-2026 (Ord. 5934). eCode360 New Laws (read 2026-11-13): none. A city zoning amendment package proposed in January 2025 (city summary dated 1-27-2025, Lehigh Valley Planning Commission review letter 2-27-2025) would add 'I16 Accessory Dwelling Unit' as a permitted use in College Hill, South Side and West Ward, relax 595-09D(7) and add ADU standards in 595-32H(4) (one per property, single-family detached or semidetached only, size and occupant caps, parking, owner residency, no short-term rental). None of it is in the code as of 2026-11-13. Its status is unknown.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/9647638",
+      "https://ecode360.com/print/EA2741?guid=9647638",
+      "https://ecode360.com/36576033",
+      "https://ecode360.com/36576242",
+      "https://ecode360.com/36576389",
+      "https://ecode360.com/36576425",
+      "https://ecode360.com/36576598",
+      "https://ecode360.com/36576669",
+      "https://ecode360.com/36576822",
+      "https://ecode360.com/36577072",
+      "https://ecode360.com/36577529",
+      "https://ecode360.com/36577641",
+      "https://ecode360.com/36577837",
+      "https://ecode360.com/36578596",
+      "https://ecode360.com/EA2741/laws",
+      "https://easton-pa.com/DocumentCenter/View/1483/Zoning-Amendment-Summary-12425",
+      "https://easton-pa.com/DocumentCenter/View/1533/LVPC-Easton-Zoning-Ordinance-Amendments-Response-27FEB25"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Northampton",
+    "municipality_type": "city",
+    "geoid": "4209521648",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9647638",
+    "code_current_through": "2026-09-23",
+    "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-13 shows amendments to 5-13-2026 (Ord. 5934) and no currency line. New Laws: none.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit use today. In January 2025 the city proposed adding an 'Accessory Dwelling Unit' as a permitted use in College Hill, South Side and West Ward, with standards. It is not in the code as of 2026-11-13. Ask the Planning and Codes office whether it was adopted",
+      "'Habitation in accessory buildings' is a prohibited use in all of the city. A unit in a garage or other detached building is barred (595-09D(7))",
+      "A unit inside or attached to the house is an undefined residential use. Undefined residential uses are a special exception before the Zoning Hearing Board in College Hill (CH), Downtown (DD), South Side (SS) and West Ward (WW) only. Elsewhere a use variance (595-09C(1), 595-40C)",
+      "A house made into two units may instead be a two-family dwelling. Two-family detached (A4) is permitted by right in CH, SS and WW, two-family attached and semidetached (A5, A6) in SS and in Block Classes B and C of CH and WW. Lot rules depend on the block class map (595-12, 595-14, 595-15)",
+      "Minimum dwelling unit size 450 sq ft (595-32A(1)(c))",
+      "Parking: 1 space per single-family dwelling unit, 1.5 per two-family dwelling unit (595-33B)",
+      "Short-term rental (A17) is a use only by special exception in a few districts such as DD. It is not listed in CH, SS or WW (595-12 to 595-20, 595-32A(5))",
+      "Historic district buildings also need Historic District Commission approval under Chapter 318 (not part of zoning)"
+    ],
+    "notes": "Zoning office: City of Easton Planning and Codes. Districts (595-11): CH, CH/INS-1 T, SS, WW, WW/INS-2 T, RC, INS-1, INS-2, DD, BE, AR, ET, with SC and IO overlays. Lot and yard rules depend on the Official Block Class Map (Blocks A, B, C), so district rows here give height only. Read on eCode360 in a browser, the chapter print view, searched in the page and read section by section. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage, second dwelling, accessory residential, guest house, caretaker, tiny, conversion, short-term. No ADU term. 'Conversion' appears only in the MPC land development definition and enforcement text. The 2025 proposal was read from the city's summary and the LVPC letter (city website), not the full draft text."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "595-04, 595-09A",
+      "url": "https://ecode360.com/36576033",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage, second dwelling, accessory residential, guest house, caretaker, tiny, conversion. Residential uses are A1 to A17 (595-09A(1)). The proposed 2025 'I16 Accessory Dwelling Unit' is not in the code."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "595-09A, 595-09C(1), 595-09D(7)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU text. 595-09D(7) prohibits 'Habitation in accessory buildings', kept as a gate and in status_by_form for the detached forms. A unit in or attached to the house is an undefined residential use (595-09C(1))."
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "595-09D(7)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Such uses are specifically prohibited from all areas of the City and shall include: ... (7) Habitation in accessory buildings.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "595-09B, 595-09C(1), MPC 910.2",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU use. 595-09B: 'no building, structure or land shall be used or occupied except for the purposes permitted in each district'. A unit in a detached building is barred by 595-09D(7). For a unit in or attached to the house see unlisted_use_path (CH, DD, SS, WW) and the two-family alternatives."
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "595-09C(1), 595-40C",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Uses not listed or without a definition shall be a use compatible with, and shall be considered a special exception in the zoning districts as follows: (1) All undefined residential uses shall be considered as a special exception in the College Hill, Downtown, South Side, and West Ward Zoning Districts.' Only those four districts. Elsewhere a use variance. The Board may read a second unit in a house as a two-family dwelling (a listed use), not an undefined one."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "595-09, MPC 910.2",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Outside CH, DD, SS and WW, and for any unit in a detached building (595-09D(7)), a use variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (A4)",
+          "path": "by_right",
+          "districts": [
+            "CH",
+            "SS",
+            "WW"
+          ],
+          "conditions": "Permitted use. A building on one lot with two units 'totally separated from the other by an unpierced wall extending from exterior wall to exterior wall', open on all four sides. Lot area by block class: CH 6,750 / 4,000 / 2,500 sq ft (A / B / C), SS 3,750 / 3,000 / 2,500, WW 3,000 / 2,500 (B / C). Each unit at least 450 sq ft. Parking 1.5 per unit.",
+          "min_lot_sqft": null,
+          "section": "595-09A(1)(d), 595-12B(3), 595-14B(4), 595-15B(4), 595-12D, 595-14D, 595-15D, 595-32A(1)(c), 595-33B",
+          "url": "https://ecode360.com/36576242",
+          "confidence": "secondary",
+          "note": "The definition asks for side-by-side units divided by an unpierced wall. A house split into an upper and a lower unit may not fit A4. Lot area depends on the block class map."
+        },
+        {
+          "name": "Two-family attached or semidetached dwelling (A5, A6)",
+          "path": "by_right",
+          "districts": [
+            "SS"
+          ],
+          "conditions": "Permitted use in SS. A6: two units one over the other in a row of at least three dwellings (rowhouses). A5: a two-family dwelling attached to another by a common wall. Lot area by block class: A6 3,000 / 2,000 / 1,200 sq ft, A5 3,000 / 2,000 / 1,750. Also by right in Block Classes B and C of CH and WW. Parking 1.5 per unit.",
+          "min_lot_sqft": null,
+          "section": "595-09A(1)(e), (f), 595-14B(5), (6), 595-12B(4), 595-15B(5), (6), 595-14D, 595-33B",
+          "url": "https://ecode360.com/36576598",
+          "confidence": "secondary",
+          "note": "Lot area depends on the block class map. A rowhouse with an upper and a lower unit fits A6."
+        },
+        {
+          "name": "Two-family dwellings (A4 to A6)",
+          "path": "special_exception",
+          "districts": [
+            "DD"
+          ],
+          "conditions": "Special exception in the Downtown District. Single-family dwellings are also special exceptions there.",
+          "min_lot_sqft": null,
+          "section": "595-20C(4) to (6)",
+          "url": "https://ecode360.com/36577072"
+        }
+      ],
+      "section": "595-09A(1), 595-12 to 595-20",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Not ADUs. Second dwelling unit paths through the listed two-family uses. The code has no separate conversion use."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "595-12 to 595-26",
+      "url": "https://ecode360.com/36576425",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 595, Chapter 318",
+      "url": "https://ecode360.com/print/EA2741?guid=9647638",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Historic buildings need a certificate of appropriateness under Chapter 318 (Historic preservation). No zoning path for a unit."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "Habitation in accessory buildings is a prohibited use in all areas of the city.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "not_districts": null,
+          "building_types": [
+            "detached",
+            "semi_detached",
+            "attached"
+          ],
+          "section": "595-09D(7)",
+          "url": "https://ecode360.com/36576242",
+          "bill_overrides": true
+        },
+        {
+          "kind": "other",
+          "condition": "Undefined residential uses are a special exception only in CH, DD, SS and WW. In other districts a second unit needs a use variance.",
+          "effect": "bars",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "not_districts": [
+            "CH",
+            "DD",
+            "SS",
+            "WW"
+          ],
+          "building_types": null,
+          "section": "595-09C(1)",
+          "url": "https://ecode360.com/36576242"
+        },
+        {
+          "kind": "other",
+          "condition": "Each dwelling unit at least 450 sq ft.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "595-32A(1)(c)",
+          "url": "https://ecode360.com/36577641"
+        }
+      ],
+      "section": "595-09D(7), 595-32A(1)(c)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Express bar on detached forms, and the minimum unit size."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "595-09C(1), 595-09D(7)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. These are only the forms the 595-09C(1) special exception for an undefined residential use could consider, in CH, DD, SS and WW. Detached forms are barred by 595-09D(7). The tool reads the unit as not allowed, with the hearing as the path to ask."
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": 450,
+      "section": "595-32A(1)(c)",
+      "url": "https://ecode360.com/36577641",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Minimum dwelling unit size: 450 square feet.' Single-family and two-family dwelling standard, read as reaching any dwelling unit."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "595-09A(9)(c)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory structure rule, not an ADU rule. I3 Small Accessory Structure: 'shall not exceed 15 feet in height, and shall not be more than 15% of the gross floor area of the principal use'. I4 Large Accessory Structure (special exception): not taller than the principal use less 10 ft or 25 ft, whichever is lower, and at most 30% of its floor area. Habitation in accessory buildings is prohibited today."
+    },
+    "accessory_structure_max_share": {
+      "value": 0.15,
+      "section": "595-09A(9)(c)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "I3: 'shall not be more than 15% of the gross floor area of the principal use'."
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "595-09A(9)(c)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "595-09A(9)(c), (d)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU text to say. Shown for the state bill view only."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "595-12E(4), 595-14E(4), 595-15E(4)",
+      "url": "https://ecode360.com/36576425",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory buildings 'Shall be located behind the principal structure.'"
+    },
+    "setback_side_ft": {
+      "value": 4,
+      "section": "595-12E(1), 595-14E(1)",
+      "url": "https://ecode360.com/36576425",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "CH and SS: 'Shall be four feet from any and all side lot lines.' WW: three feet. See districts."
+    },
+    "setback_rear_ft": {
+      "value": 4,
+      "section": "595-12E(2), 595-14E(2)",
+      "url": "https://ecode360.com/36576425",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Shall be four feet from the rear lot line, where no vehicular access exists, and six feet otherwise.' WW: three feet, six with vehicular access."
+    },
+    "setback_rear_alley_ft": {
+      "value": 6,
+      "section": "595-12E(2), 595-14E(2), 595-15E(2)",
+      "url": "https://ecode360.com/36576425",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Six feet where vehicular access exists."
+    },
+    "separation_ft": {
+      "value": 4,
+      "section": "595-12E(3), 595-14E(3), 595-15E(3)",
+      "url": "https://ecode360.com/36576425",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Shall be located at least four feet from other structures.'"
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "595-09",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU as such. See unlisted_use_path and the two-family alternatives."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "595-12, 595-14, 595-15, 595-20C(10), 595-32A(5)",
+      "url": "https://ecode360.com/36576598",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A17 Short-Term Rental is listed as a special exception in DD and some transitional districts, not in CH, SS or WW, where it is not permitted. 595-32A(5)(c): no short-term rental within 500 ft of another."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "595-33B",
+      "url": "https://ecode360.com/36577837",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Single-family dwellings 1 per dwelling unit. Two-family dwellings 1.5 per dwelling unit.'"
+    }
+  },
+  "districts": {
+    "CH": {
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "595-12D",
+        "url": "https://ecode360.com/36576425",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "40 ft in every block class. Lot area, width and yards depend on the block class: single-family detached 9,500 / 5,000 / 4,000 sq ft, rear 40 / 35 / 25 ft (A / B / C)."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "595-12D",
+        "url": "https://ecode360.com/36576425",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Depends on the block class map: single-family detached A 9,500, B 5,000, C 4,000 sq ft."
+      },
+      "accessory_setback_side_ft": {
+        "value": 4,
+        "section": "595-12E(1)",
+        "url": "https://ecode360.com/36576425",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 4,
+        "section": "595-12E(2)",
+        "url": "https://ecode360.com/36576425",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Six feet where vehicular access exists."
+      }
+    },
+    "SS": {
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "595-14D",
+        "url": "https://ecode360.com/36576598",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "40 ft in every block class. Single-family detached 7,500 / 5,000 / 3,000 sq ft, rear 35 / 30 / 20 ft (A / B / C)."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "595-14D",
+        "url": "https://ecode360.com/36576598",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Depends on the block class map: single-family detached A 7,500, B 5,000, C 3,000 sq ft."
+      },
+      "accessory_setback_side_ft": {
+        "value": 4,
+        "section": "595-14E(1)",
+        "url": "https://ecode360.com/36576598",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 4,
+        "section": "595-14E(2)",
+        "url": "https://ecode360.com/36576598",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Six feet where vehicular access exists."
+      }
+    },
+    "WW": {
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "595-15D",
+        "url": "https://ecode360.com/36576669",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "40 ft in every block class. Single-family detached 6,000 / 4,500 / 3,000 sq ft, rear 35 / 30 / 25 ft (A / B / C)."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "595-15D",
+        "url": "https://ecode360.com/36576669",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Depends on the block class map: single-family detached A 6,000, B 4,500, C 3,000 sq ft."
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "595-15E(1)",
+        "url": "https://ecode360.com/36576669",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Shall be three feet from any and all side lot lines.'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "595-15E(2)",
+        "url": "https://ecode360.com/36576669",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Six feet where vehicular access exists."
+      }
+    },
+    "DD": {
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "595-20D",
+        "url": "https://ecode360.com/36577072",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "DD heights depend on use and block (mid-rise and high-rise). Not read for this file."
+      }
+    }
+  }
+}

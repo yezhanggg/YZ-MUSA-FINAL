@@ -1,0 +1,738 @@
+{
+  "provenance": {
+    "jurisdiction": "Swatara township",
+    "instrument": "Code of the Township of Swatara (Dauphin County), Chapter 295 Zoning (Zoning Ordinance of 2010, Ord. No. 2010-1, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 295 adopted 7-27-2010 by Ord. No. 2010-1. 295-96 (accessory uses, including the accessory apartment standards) was amended 6-12-2024 (Ord. 2024-01), 5-14-2025 (Ord. 2025-03) and 8-5-2026 (Ord. 2026-05). The online text reflects them. 295-85.1 (non-owner short-term rentals) was added 5-14-2025. eCode360 New Laws (read 2026-11-13) list only Ord. 2026-07 (insurance claims for fires) and two airport maps. Code SW2044 is the Dauphin County township, not Swatara Township in Lebanon County.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11636509",
+      "https://ecode360.com/print/SW2044?guid=11636509",
+      "https://ecode360.com/11637046",
+      "https://ecode360.com/11637058",
+      "https://ecode360.com/11637059",
+      "https://ecode360.com/11637445",
+      "https://ecode360.com/11637226",
+      "https://ecode360.com/46791849",
+      "https://ecode360.com/11637486",
+      "https://ecode360.com/11637642",
+      "https://ecode360.com/11636738",
+      "https://ecode360.com/11637094",
+      "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+      "https://ecode360.com/SW2044/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Dauphin",
+    "municipality_type": "township",
+    "geoid": "4204375672",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11636509",
+    "code_current_through": "2026-08-12",
+    "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-13 shows amendments to 8-5-2026 (Ord. 2026-05) and no currency line.",
+    "checks": [
+      "An 'Accessory apartment' is a permitted accessory use by right in every district in the use tables (C, A, R-S, R-M and R-ML, A-OG, C-L, C-G, C-H, M-L, M-G), and in MU areas developed under R-M, C-L or M-L rules. A zoning permit is needed (295-28, 295-34D, 295-96D(1))",
+      "Only on a single-family detached lot, one apartment per lot. It may be inside, attached or detached. The definition speaks of a unit 'in or added to an existing single-family detached dwelling', while 295-96D(1)(b) says 'The apartment may be detached or attached to the primary residence'. Ask whether a new house and a unit may be built together (295-22, 295-96D(1)(b))",
+      "Size: at least 300 sq ft and no more than 45% of the house's total floor area (295-96D(1)(f))",
+      "Own exterior entry, not on the front of the house. Matching style. Meets the district building setbacks and coverage. A detached unit 10 ft from the house (295-96D(1)(a), (c), (d))",
+      "Parking: at least 3 off-street spaces in total for the owner-occupant and the tenant (295-96D(1)(g))",
+      "The ordinance does not say in so many words that the owner must live there. 295-96D(1)(g) speaks of 'the owner-occupant and tenant'. Ask the zoning officer",
+      "On a lot under 3 acres, a structure accessory to a dwelling may be one story plus a half story of nonhabitable storage, or 20 ft, whichever is less. A unit over a garage is read as not possible on such a lot (295-29B(1))",
+      "Not subdivided or sold apart from the house. With an on-lot septic system, a sewage permit first (295-96D(1)(h), (i))",
+      "Short-term rentals (owner-occupied or not) are allowed only in an existing residential building and 'Addition of new rental units on the property is prohibited' (295-85.1A, 295-96D(9.1))"
+    ],
+    "notes": "Zoning office: Swatara Township Community Development (Dauphin County). Districts (295-23): C, A, R-S, R-ML, R-M, A-OG, C-L, C-G, C-H, M-L, M-G, MU, AP overlay. MU areas are developed under R-M, C-L or M-L rules (295-34D). Read on eCode360 in a browser, the chapter print view, searched in the page, and the dimensional attachment (Attachment 2) page by page. Searched for accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage, second dwelling, guest house, caretaker, conversion, tiny, short-term, two-family, family member, care of relative. 295-125 mentions 'a unit for care of relative' in a setback rule, but no such use is defined or listed. No historic district in the zoning chapter (historic text is in the wireless rules only)."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory apartment",
+      "section": "295-22 'Accessory apartment', 295-96D(1)",
+      "url": "https://ecode360.com/11637046",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A second dwelling unit either in or added to an existing single-family detached dwelling for use as a complete, independent living facility with provision within the accessory apartment for cooking, eating, sanitation and sleeping. Such a dwelling is an accessory use to the main dwelling.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "295-28 (use tables), 295-96D(1)",
+      "url": "https://ecode360.com/11637058",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Use tables, Accessory Uses: 'Accessory apartment (§ 295-96) P P P P P' under C, A, R-S, R-M and R-ML, A-OG, and 'P P P' under C-L, C-G and C-H, M-L and M-G."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "295-28, 295-96D(1)",
+      "url": "https://ecode360.com/11637058",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "P means permitted by right with a zoning permit, if 295-96D(1) is met."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "295-96D(1), MPC 910.2",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails 295-96D(1) (for example a second apartment, or one over 45% of the house) needs a variance from the Zoning Hearing Board. 295-7B (uses not regulated) does not reach it, since the use is listed."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of an existing building into two units",
+          "path": "by_right",
+          "districts": [
+            "R-M",
+            "R-ML"
+          ],
+          "conditions": "Permitted use (only 2 dwelling units in a building). The house keeps the look of a one-family dwelling with one front entrance. The lot and building must meet the rules for a new apartment building, including lot area: an average of 2,800 sq ft per unit. Parking for all units without credit for an old shortfall.",
+          "min_lot_sqft": 5600,
+          "section": "295-28, 295-56B, D, F, G, Attachment 2",
+          "url": "https://ecode360.com/11637226"
+        },
+        {
+          "name": "Conversion of an existing building into two units",
+          "path": "by_right",
+          "districts": [
+            "A-OG"
+          ],
+          "conditions": "Permitted use (only 2 dwelling units in a building). Keeps the look of a one-family dwelling. Meets the rules for a new apartment building: an average of 2,500 sq ft per unit.",
+          "min_lot_sqft": 5000,
+          "section": "295-28, 295-56, Attachment 2",
+          "url": "https://ecode360.com/11637226"
+        },
+        {
+          "name": "Conversion of an existing building into more dwelling units",
+          "path": "by_right",
+          "districts": [
+            "C-L",
+            "C-G",
+            "C-H"
+          ],
+          "conditions": "Permitted use in the commercial use table. Meets 295-56 and the district lot rules (20,000 sq ft).",
+          "min_lot_sqft": 20000,
+          "section": "295-28, 295-56, Attachment 2",
+          "url": "https://ecode360.com/11637226",
+          "confidence": "secondary",
+          "note": "The commercial table row reads 'P P N' under C-L, C-G and C-H, M-L and M-G."
+        }
+      ],
+      "section": "295-28, 295-56",
+      "url": "https://ecode360.com/11637058",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not ADUs. The conversion row in the residential table: 'Only 2 dwelling units in a building N N N P P' under C, A, R-S, R-M and R-ML, A-OG. The apartment or two-family detached row is the same for new buildings."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "C",
+        "A",
+        "R-S",
+        "R-M",
+        "R-ML",
+        "A-OG",
+        "C-L",
+        "C-G",
+        "C-H",
+        "M-L",
+        "M-G",
+        "MU"
+      ],
+      "section": "295-28 (use tables), 295-34D",
+      "url": "https://ecode360.com/11637058",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory apartment P in every column of both use tables. Single-family detached dwellings are N in M-L and M-G, so there only an existing house could have one. MU is included because its areas are developed under the R-M, C-L or M-L rules, all of which list the apartment: 'If a use is not allowed in one of those three districts, it shall not be allowed in the MU District' (295-34D)."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "295-96D(1)(b), 295-22",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Only one accessory apartment shall be permitted per single-family detached residential lot.'"
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "295-22, 295-96D(1)(b)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The definition says 'an existing single-family detached dwelling'. The standards allow a detached unit. No rule that the unit's building already exists. Whether the house must exist first is not settled."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 295",
+      "url": "https://ecode360.com/print/SW2044?guid=11636509",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No historic district in the zoning chapter."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "The apartment has its own exterior entryway, not part of the front facade of the house, and conforms to the house's architectural style.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "295-96D(1)(a), (c)",
+          "url": "https://ecode360.com/11637445"
+        },
+        {
+          "kind": "other",
+          "condition": "On a lot under 3 acres a structure accessory to a dwelling may be one story plus a half story limited to nonhabitable storage, or 20 ft. A unit above a garage needs a habitable upper story, so it is read as possible only on a lot of 3 acres or more.",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "295-29B(1)",
+          "url": "https://ecode360.com/11637059",
+          "bill_overrides": true
+        },
+        {
+          "kind": "utilities",
+          "condition": "With an on-lot sewage system, a sewage permit from the Township Sewage Enforcement Officer before the building permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "295-96D(1)(i)",
+          "url": "https://ecode360.com/11637445"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "On a lawful nonconforming lot of record, a single permitted principal use and its customary accessory uses may be built if setbacks are met. The apartment is an accessory use.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "295-125",
+          "url": "https://ecode360.com/11637642"
+        }
+      ],
+      "section": "295-96D(1)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Conditions from the accessory apartment standards."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "295-22, 295-96D(1)(b), (d)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The apartment may be detached or attached to the primary residence.' A unit inside the house fits 'in ... an existing single-family detached dwelling'. A garage conversion is read as a detached unit. Over a garage is limited by 295-29B(1) (see gates)."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "295-96D(1)(f)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No fixed square-foot cap. Share cap only."
+    },
+    "max_share_of_house": {
+      "value": 0.45,
+      "section": "295-96D(1)(f)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The accessory apartment shall be no more than 45% of the primary structure's total floor area.'"
+    },
+    "min_sqft": {
+      "value": 300,
+      "section": "295-96D(1)(f)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A minimum of 300 square feet of floor area shall be required.'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "295-29B(1)",
+      "url": "https://ecode360.com/11637059",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Any structure that is accessory to a dwelling on a lot of less than three acres shall have a maximum height of one story, plus 1/2 story that is limited to nonhabitable storage, or 20 feet, whichever is more restrictive.'"
+    },
+    "max_height_stories": {
+      "value": 1,
+      "section": "295-29B(1)",
+      "url": "https://ecode360.com/11637059",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "One story plus a half story of nonhabitable storage, on a lot under 3 acres."
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 38,
+          "where": "on a lot of 3 acres or more (3 stories or 38 ft, whichever is less)",
+          "section": "295-29B(3)",
+          "url": "https://ecode360.com/11637059",
+          "note": "'The maximum height for any other structure shall be three stories or 38 feet, whichever is more restrictive.'"
+        }
+      ],
+      "section": "295-29B",
+      "url": "https://ecode360.com/11637059",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "295-29B(3)",
+      "url": "https://ecode360.com/11637059",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A unit in or attached to the house takes the general height, 3 stories or 38 ft."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "295-96D(1)(d), 295-29C(2)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The apartment shall meet all building setback and coverage requirements of the underlying zoning district.' Read as the district building setbacks, not the 5 ft accessory structure setback of 295-29C(2). See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "295-96D(1)(d), 295-29C(2)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "As for the side yard. District building setback."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "295-29C(3)",
+      "url": "https://ecode360.com/11637059",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'No accessory building and no swimming pool shall be allowed in the minimum front yard.'"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "295-96D(1)(d)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'When detached from the primary residence, the apartment shall be set back a minimum of 10 feet from the primary residence.'"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "295-96D(1)(d)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The apartment shall meet all building setback and coverage requirements of the underlying zoning district.' 295-29C(2) gives 5 ft side and rear (10 ft in C and A) for detached structures accessory to a dwelling. Read as the district setbacks for an apartment."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "295-96D(1)(g)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No express owner-occupancy rule. 295-96D(1)(g): 'At least a total of three off-street parking spaces are available for use by the owner-occupant and tenant.' The wording assumes an owner lives there. Ask the zoning officer."
+    },
+    "family_only": {
+      "value": false,
+      "section": "295-96D(1)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No family or age rule."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "295-96D(1)(b)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Only one accessory apartment shall be permitted per single-family detached residential lot.'"
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "295-96D(1)(h)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The accessory apartment shall be located on the same lot as the primary residence and cannot be subdivided or sold separately from the primary residence.'"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "295-85.1A, 295-96D(9.1)(a)[1]",
+      "url": "https://ecode360.com/46791849",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Both short-term rental uses: 'Short-term rentals are only permitted in an existing residential building where the existing or prior approved use included a habitable dwelling unit. Addition of new rental units on the property is prohibited.' Read as barring a new apartment from short-term rental use."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "295-96D(1)(g), 295-104",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The standard sets a total of 3 for the lot. The house needs 2 (295-104 table: dwelling unit 2 per dwelling unit), so the apartment adds 1."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "295-96D(1)(g)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'At least a total of three off-street parking spaces are available for use by the owner-occupant and tenant.'"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "295-96D(1)(i)",
+      "url": "https://ecode360.com/11637445",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No connection rule. On-lot sewage needs a permit first."
+    }
+  },
+  "districts": {
+    "C": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "2 acres."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "43,560 sq ft, 39,000 with public water, 20,000 with public water and sewer. Width 140 ft (90 ft on a 20,000 sq ft lot)."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-S": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. 39,000 with one of them, 43,560 with neither. Width 60 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side at least 5 ft, both sides at least 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "295-29B(3)",
+        "url": "https://ecode360.com/11637059",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Three stories or 38 ft."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "295-29B(3)",
+        "url": "https://ecode360.com/11637059",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-ML": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. 43,560 without. Width 50 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side at least 5 ft, both sides at least 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "295-29B(3)",
+        "url": "https://ecode360.com/11637059",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "295-29B(3)",
+        "url": "https://ecode360.com/11637059",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-M": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. Width 40 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "295-29B(3)",
+        "url": "https://ecode360.com/11637059",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "295-29B(3)",
+        "url": "https://ecode360.com/11637059",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "A-OG": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. Width 40 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "15 ft without public water and sewer."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "C-L": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "Attachment 2",
+        "url": "https://ecode360.com/attachment/339279/SW2044-295b%20Dimensional%20Req%20in%20Each%20Dist.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

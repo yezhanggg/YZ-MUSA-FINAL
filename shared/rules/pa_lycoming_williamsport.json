@@ -1,0 +1,498 @@
+{
+  "provenance": {
+    "jurisdiction": "Williamsport city",
+    "instrument": "Codified Ordinances of the City of Williamsport, Part Thirteen Planning and Zoning Code, Title Three to Title Seven (Zoning Ordinance, Ord. 5745 of 4-16-1998 as amended), as published by American Legal Publishing",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Zoning Ordinance Ord. 5745 (4-16-1998), codified as Articles 1311 to 1346. The use table 1333.05 was last amended by Ord. 6402 (2-4-2021). The amlegal pages show no currency line in the text read. City Ord. 6510 and 6511 re-enact Part Three, Title Seven, Articles 355 and 353 of the codified ordinances. Part Three is not the zoning code (Part Thirteen), so they were not read. No 2024 to 2026 zoning text amendment was found in a web search.",
+    "effective_date": null,
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-5800",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-5928",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6085",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6201",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6232",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7262",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7303",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7312",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7452",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7480",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7555",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6836",
+      "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6863"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Lycoming",
+    "municipality_type": "city",
+    "geoid": "4208185312",
+    "code_host": "amlegal",
+    "code_url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-5800",
+    "code_current_through": "2026-05-28",
+    "code_current_through_note": "Date carried from the towns index. Not shown in the section pages read on 2026-11-13.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law suite. A second dwelling unit on a one-family lot needs a use variance, or one of the two-unit paths below",
+      "A one-family detached dwelling is 'a wholly detached building containing one dwelling unit only' (1311.28(c))",
+      "'No dwelling unit shall include a separate living area that is completely separated by interior walls so as to prevent interior access from the remainder of the living area.' A family suite inside a house must stay open to the rest of the house (1311.28(a)(2))",
+      "In R3 only, an existing principal building may be converted into a two-family or multi-family dwelling by special exception: lot area 6,000 sq ft for the first unit and 2,000 sq ft for each more (8,000 sq ft for two units), parking, few outside changes (1333.05(a)(7))",
+      "A new two-family dwelling: conditional use in R3 and INST, permitted in CC and CS, conditional use in CBD. Not listed in R1A, R1B or R2 (1333.05(a)(2))",
+      "Every new dwelling unit must have at least 850 sq ft of habitable floor area (1341.32(a))",
+      "A use not permitted anywhere in the city may be allowed by the Zoning Hearing Board on proof that it is less offensive than permitted uses and fits the district (1333.06). A second unit may be read as a listed two-family use instead",
+      "Detached accessory buildings in R districts: 15 ft high, not in a front or side yard, 25 ft from a street line, 5 ft from the house, at most two accessory structures per lot (1341.33, 1341.35)",
+      "Parking: 2 spaces per dwelling unit (1345.01)"
+    ],
+    "notes": "Zoning office: City of Williamsport Codes Department. Districts (1333.05): R1A, R1B, R2, R3, RU, INST, CC, CBD, CS, ML, MH, O. Read on amlegal in a browser, one section page at a time: Art. 1311 contents and 1311.030, 1311.27, 1311.28, 1311.30, 1333.01 to 1333.07, 1341.31 to 1341.38, 1343.01 to 1343.04, 1345.01, 1323.01 to 1323.04. Searched the Art. 1311 contents and the pages read for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage, second dwelling, accessory residential, guest house, caretaker, tiny. No ADU term. 1333.05(a)(100) allows 'Incidental keeping of not more than two non-transient boarders or lodgers by a resident family in a one-family dwelling' in R1A, R1B, R2, R3 and INST (rooms, not a unit). 1343.04 (special exception for two or more principal buildings) applies only with two or more different principal uses. The Lycoming County zoning material was not used: the city has its own ordinance."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "1311 (definitions), 1333.05",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-5928",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage, second dwelling, accessory residential, guest house, caretaker, tiny."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "1333.01, 1333.05",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU text. 1333.01(a): no land or building 'shall be employed for uses other than those permitted in the district'. 1333.05 legend: 'If no letter is shown in a particular column, then that use if prohibited in that zoning district'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "1333.01, 1333.05, MPC 910.2",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A second unit on a one-family lot is not a listed use. In R3 a conversion into two units is a special exception (alternative). Otherwise a use variance."
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "1333.06",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7303",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'If a use is not permitted by right, as a conditional use or as a special exception use by this ordinance within any zoning district in the city, the use is prohibited in the city, except the applicant may apply to the Zoning Hearing Board.' The Board may permit it if the use is less offensive than permitted uses, compatible with the district, meets the special exception criteria and is not prohibited there. A second unit in a house may be read as a two-family dwelling or conversion, which are listed, so the Board may refuse to treat it as unlisted."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1333.05, MPC 910.2",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Use variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of an existing principal building into a two-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R3"
+          ],
+          "conditions": "Special exception. Lot area 6,000 sq ft for the first unit plus 2,000 sq ft for each more unit (8,000 sq ft for two), at most 8 units. Parking per Art. 1345 (2 per unit). Outside changes kept to those needed for safety. Other area and dimensional rules met. Each unit at least 850 sq ft.",
+          "min_lot_sqft": 8000,
+          "section": "1333.05(a)(7), 1341.32, 1345.01",
+          "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298"
+        },
+        {
+          "name": "Two-family dwelling (other than conversion)",
+          "path": "conditional_use",
+          "districts": [
+            "R3"
+          ],
+          "conditions": "Conditional use (City Council). Lot 8,500 sq ft, width 50 ft. Each unit at least 850 sq ft. 2 parking spaces per unit.",
+          "min_lot_sqft": 8500,
+          "section": "1333.05(a)(2), 1343.02, 1341.32",
+          "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298"
+        },
+        {
+          "name": "Two-family dwelling (other than conversion)",
+          "path": "by_right",
+          "districts": [
+            "CC",
+            "CS"
+          ],
+          "conditions": "Permitted use. CC: 1,000 sq ft of lot per unit (500 by conditional use). CS: lot 10,000 sq ft. Each unit at least 850 sq ft.",
+          "min_lot_sqft": null,
+          "section": "1333.05(a)(2), 1343.02 note (d)",
+          "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+          "confidence": "secondary",
+          "note": "Few one-family houses are in these districts."
+        }
+      ],
+      "section": "1333.05",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not ADUs. 1333.05 rows (2) and (7)."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "1333.05",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "1333.05",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The use table refers to the Historic District for some uses in R3. No historic path for a second unit."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "A dwelling unit may not contain a separate living area closed off by interior walls with no interior access to the rest of the unit.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1311.28(a)(2)",
+          "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6201"
+        },
+        {
+          "kind": "other",
+          "condition": "Each new dwelling unit at least 850 sq ft of habitable floor area.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1341.32(a)",
+          "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416"
+        }
+      ],
+      "section": "1311.28, 1341.32",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-6201",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Definition and floor area rules that bear on any second unit."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "1333.05, 1333.06",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. These are only the forms a 1333.06 hearing could consider. A detached second dwelling is a second principal building. The tool reads the unit as not allowed, with the hearing as the path to ask."
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": 850,
+      "section": "1341.32(a)",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The minimum habitable floor area of a dwelling unit erected hereunder shall be 850 square feet'. Read as reaching any new dwelling unit (300 sq ft only for one-person multi-family units)."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "1341.35",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory structure rule, not an ADU rule. In R and INST districts no accessory building shall 'exceed 15 feet in height'."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "1341.35",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'no accessory building or structure shall be erected in any required front or side yard or within 25 feet of any street line'."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "1341.35",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "5 ft from a rear lot line that is the side lot line of an abutting lot. No general rear figure. At most 40% of the required rear yard covered."
+    },
+    "setback_rear_alley_ft": {
+      "value": null,
+      "section": "1341.35",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "15 ft from the centerline of an alley, not from the lot line."
+    },
+    "separation_ft": {
+      "value": 5,
+      "section": "1341.35",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7416",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'within five feet of any principal building' is barred."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "1333.05",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "1333.05",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7298",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No short-term rental use found in the use table. Bed and breakfast inns are a separate use (1333.05(i)(104))."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1345.01",
+      "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7555",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Any residential 1-family detached or attached dwelling, 2-family' 2 spaces for each dwelling unit."
+    }
+  },
+  "districts": {
+    "R1A": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Any structure or principal use. Width 150 ft, depth 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 ft. Where height is given in stories and feet the more restrictive applies (note (g))."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R1B": {
+      "min_lot_sqft": {
+        "value": 9800,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One-family detached. Width 70 ft, depth 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 ft. Where height is given in stories and feet the more restrictive applies (note (g))."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R2": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One-family detached. Width 50 ft. Two-family 8,500 sq ft (not permitted in R2)."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 ft. Where height is given in stories and feet the more restrictive applies (note (g))."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R3": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One-family detached. Width 50 ft. Two-family 8,500 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 ft. Where height is given in stories and feet the more restrictive applies (note (g))."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "1343.02",
+        "url": "https://codelibrary.amlegal.com/codes/williamsport/latest/williamsport_pa/0-0-0-7465",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

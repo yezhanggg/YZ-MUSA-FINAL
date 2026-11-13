@@ -1,0 +1,560 @@
+{
+  "provenance": {
+    "jurisdiction": "Plum borough",
+    "instrument": "Plum Borough Zoning Ordinance (Ord. No. 916-17, adopted 10-2-2017, revised by Ord. 932-18, 961-22 and 972-23), PDF on the borough website",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Cover page: adopted 10/02/2017, revised 10/10/2018 (Ord. 932-18), 6/13/2022 (Ord. 961-22) and 4/10/2023 (Ord. 972-23). PDF created 4-17-2023. The borough Planning and Zoning Ordinances page (read 2026-11-13) links this PDF as the zoning ordinance. It also links a fee schedule Ord. 982-24, so ordinances after 972-23 exist. The borough site search needs a login, so no list of zoning amendments after April 2023 could be checked.",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "https://www.plumboro.com/community-development/pages/planning-and-zoning-ordinances"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Allegheny",
+    "municipality_type": "borough",
+    "geoid": "4200361536",
+    "code_host": "own site",
+    "code_url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+    "code_current_through": "2023-04-10",
+    "code_current_through_note": "Cover page: REVISED 4/10/2023 BY ORD. #972-23. Later zoning amendments, if any, were not seen.",
+    "checks": [
+      "An Accessory Dwelling Unit is a conditional use (Borough Council hearing) in RR and NC only. It is not listed in SR or MR, the main single-family districts. There a second unit needs a use variance (Table 12, 322B, 406)",
+      "The unit must be attached to the house. The definition reads 'a separate and accessory living space that is attached to the primary dwelling'. A detached unit or a unit in a garage is not an ADU here (Art. II, 406A)",
+      "The owner must live in one of the dwellings on the lot. One ADU per lot. It must meet all setback, bulk and area rules for the house (406B to 406D)",
+      "Parking: 1 space for the ADU plus 2 for the house, 3 in all (406E, Table 19)",
+      "A 'Conversion Dwelling' (extra units made from an existing house, meant as rentals) is a separate path by conditional use in RR, SR, MR and NC: each unit at least 800 sq ft, the lot must meet the lot rules for a similar dwelling type, no conversion of a detached garage (Art. II, Table 11, 429A)",
+      "Council applies the general conditional use standards and may add conditions (401A, 405A)",
+      "Accessory short-term rentals are a conditional use in RR, SR and MR. The host must live there at least 180 days a year (Table 12, 461)",
+      "Code text as posted: revised through Ord. 972-23 (4-10-2023). Ask the borough whether later zoning amendments apply"
+    ],
+    "notes": "Zoning office: Plum Borough Community Development (plumboro.com). Districts (302): RR, SR, MR, NC, GC, HC, LI, HI, S, M. Read the borough PDF (fetched once, text layer searched, Table 12 page checked as an image). Searched for accessory dwelling, accessory apartment, in-law, mother, granny, ECHO, second dwelling, two-family, duplex, conversion, short-term, caretaker, guest house, carriage. ADU text: Art. II definition, Table 12, 322B, 406, Table 19. The Conversion Dwelling definition says conversions 'are defined separately from Accessory Dwellings Units or Mother-in-law Suites which are primarily intended to house family members', but 406 itself has no family rule. No historic district rule in the ordinance. 306E: in all residential districts 'there shall only be one (1) principal use and structure on a lot'."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory Dwelling Unit",
+      "section": "Art. II 'Accessory Dwelling Unit', 406",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A separate and accessory living space that is attached to the primary dwelling. Attached accessory dwelling units typically include living, sleeping, kitchen, and bathroom facilities that are accessed from a lockable entrance door.' Printed page 7."
+    },
+    "status": {
+      "value": "conditional_use",
+      "section": "Table 12, 322B, 406",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Table 12 (printed page 76): Accessory Dwelling Unit CU under RR and NC, blank under SR, MR and the other districts. 'Blank cells indicate that the use is not permitted in the corresponding district.' 322B: 'Subject to the conditional use standards found in Article IV'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "conditional_use",
+      "section": "Table 12, 401, 402, 406",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Borough Council decides conditional uses (306B(2), 402). General standards in 405 and the ADU standards in 406 apply. Council may attach reasonable conditions (401A)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Table 12, 320A, MPC 910.2",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "In SR, MR and the other districts the ADU is not permitted (blank cell), and a unit that fails 406 (for example a detached unit) needs a variance from the Zoning Hearing Board. 306C and 473 (unlisted uses by conditional use if similar) do not reach it, since the ADU is a listed use."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion dwelling (extra unit made from an existing house)",
+          "path": "conditional_use",
+          "districts": [
+            "RR",
+            "SR",
+            "MR",
+            "NC"
+          ],
+          "conditions": "Conditional use. Each unit at least 800 sq ft of gross floor area with its own living, sleeping, kitchen and bathroom. Each unit has a separate entrance. The lot must meet the lot and area rules for similar dwelling types in the district. A detached garage or other accessory structure may not be converted. 2 parking spaces per unit.",
+          "min_lot_sqft": null,
+          "section": "Art. II 'Conversion Dwelling', Table 11, 429A, Table 19",
+          "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+          "confidence": "secondary",
+          "note": "Which 'similar dwelling type' sets the lot rule is not stated. In MR a duplex needs 3,600 sq ft per unit (7,200 for two). In SR and RR only single-family lot figures exist. Ask the zoning officer."
+        },
+        {
+          "name": "Duplex (two-unit house)",
+          "path": "by_right",
+          "districts": [
+            "MR"
+          ],
+          "conditions": "Permitted use. A detached house with no more than two units and no internal connection between them. 3,600 sq ft of lot per unit, 24 ft lot width, 2 parking spaces per unit. Turning an existing house into two units is a conversion dwelling, a conditional use.",
+          "min_lot_sqft": 7200,
+          "section": "Table 11, Art. II 'Duplex', Table 3, Table 19",
+          "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf"
+        },
+        {
+          "name": "Duplex (two-unit house)",
+          "path": "by_right",
+          "districts": [
+            "NC"
+          ],
+          "conditions": "Permitted use. 3,600 sq ft of lot per unit, 24 ft lot width, 2 parking spaces per unit. Turning an existing house into two units is a conversion dwelling, a conditional use.",
+          "min_lot_sqft": 7200,
+          "section": "Table 11, Art. II 'Duplex', Table 4, Table 19",
+          "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf"
+        }
+      ],
+      "section": "Table 11, 429A",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not ADUs. Table 11: Conversion Dwellings CU in RR, SR, MR, NC. Duplex P in MR and NC."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RR",
+        "NC"
+      ],
+      "section": "Table 12",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Row 'Accessory Dwelling Unit': CU under RR and NC. Blank under SR, MR, GC, HC, LI, HI, S and M. Checked on the rendered page image."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "406A, Art. II 'Dwelling Types'",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Accessory dwelling units shall be attached to a permitted, principal residential dwelling.' RR permits single-family and mobile homes. NC also permits duplexes and townhomes. A unit attached to a duplex or townhome is not ruled out by the text, but it would add a third unit to the building. Read as single-family detached."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "406A",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No rule that the house or the unit must already exist."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Zoning Ordinance",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No historic district or historic rule in the zoning ordinance."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The unit must be attached to the house. A separate building is not an ADU here.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "Art. II 'Accessory Dwelling Unit', 406A",
+          "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf"
+        },
+        {
+          "kind": "other",
+          "condition": "The ADU must meet all setback, bulk and area requirements of the principal use of the lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "406D",
+          "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf"
+        },
+        {
+          "kind": "other",
+          "condition": "Council applies the general conditional use standards (character of the neighborhood, traffic, suitability) and may attach conditions.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "401A, 405A",
+          "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A single-family house may be built on a nonconforming lot of record that meets the yard and bulk rules. Whether an ADU may be added on such a lot is not stated. 406D asks the ADU to meet the area rules of the principal use. Ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1004A, 406D",
+          "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf"
+        }
+      ],
+      "section": "406",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Conditions from the ADU standards."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "Art. II 'Accessory Dwelling Unit', 406A",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'attached to the primary dwelling'. A unit inside the house is read as attached. An attached garage converted into the unit is read as part of the house (321B: an accessory structure attached to the principal structure is part of it). No detached unit."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "406",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No size cap in 406."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "406",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No share cap in 406."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "406",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No minimum size in 406. The 800 sq ft per unit rule is for conversion dwellings (429A(1))."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "406D, 321B",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units shall meet all the setback, bulk, and area requirements of the principal use of the lot.' 321B: an attached accessory structure is part of the principal structure."
+    },
+    "max_height_ft": {
+      "value": null,
+      "section": "406A, 321H",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No detached ADU, so no accessory height applies today. Accessory structures may not be taller than the principal structure (321H)."
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "321H",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory structures shall not exceed the height of the principal structure unless the accessory structure is directly related to an agricultural operation.'"
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "321C(3)",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'All permanent accessory structures shall be set back a minimum of five (5) feet from any side or rear property line'. Accessory structure rule. A detached ADU is not allowed today."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "321C(3)",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Same rule as the side line."
+    },
+    "setback_rear_alley_ft": {
+      "value": 5,
+      "section": "321C(3)",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No alley reduction found."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "321C(1)",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory structures and uses ... shall not be located in the required front yard of any lot in any zoning district unless a 100-foot setback is provided from the required front setback line.' The district front setback applies."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "406D",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The ADU meets the setbacks of the principal use."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "406B",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units are only permitted in conjunction with owner occupied properties, when the owner occupies one of the dwellings on the lot.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "406, Art. II 'Conversion Dwelling'",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "406 has no family rule. The Conversion Dwelling definition says ADUs are 'primarily intended to house family members', which describes intent but is not a standard."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "406C",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Only one (1) accessory dwelling unit is permitted on a lot.'"
+    },
+    "short_term_rental_banned": {
+      "value": false,
+      "section": "Table 12, 461",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory short-term rentals are a conditional use in RR, SR and MR (Table 12). The host must use the place as a primary residence at least 180 days a year (461B). Not listed in NC. No rule ties this to an ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "406E, Table 19",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Table 19: 'Accessory Dwelling Unit 1 per accessory dwelling unit'. 406E: added to the spaces for the principal use."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "406E, Table 19",
+      "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Single-family 2 per dwelling unit plus 1 for the ADU."
+    }
+  },
+  "districts": {
+    "RR": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "Table 1 (308)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "40,000 sq ft with sewer, 60,000 without. Lot width 150 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Table 1 (308)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "Table 1 (308)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "Table 1 (308)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 1 (308)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "Table 1 (308)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot coverage 20 percent."
+      }
+    },
+    "SR": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "Table 2 (309)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "15,000 sq ft with sewer, 40,000 without. Width 75 ft. The ADU is not permitted in SR."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 2 (309)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7.5,
+        "section": "Table 2 (309)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Table 2 (309)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 2 (309)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "Table 2 (309)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "MR": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "Table 3 (310)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family 15,000 sq ft with sewer, 40,000 without. Duplex and townhome 3,600 sq ft per unit. The ADU is not permitted in MR."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 3 (310)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family."
+      },
+      "setback_side_ft": {
+        "value": 7.5,
+        "section": "Table 3 (310)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Table 3 (310)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 3 (310)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "Table 3 (310)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family."
+      }
+    },
+    "NC": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "Table 4 (311)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family unit: '10,000 sq. ft. per unit (with sewer)', 40,000 per unit without. Width 75 ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10000,
+        "section": "Table 4 (311), 406D",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Table 4 gives single-family lot size 'per unit'. Whether the ADU counts as a unit under 406D (meet the area rules of the principal use) is not settled."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 4 (311)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7.5,
+        "section": "Table 4 (311)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Table 4 (311)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 4 (311)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "Table 4 (311)",
+        "url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "provenance": {
+    "jurisdiction": "Moon township",
+    "instrument": "Code of the Township of Moon, Chapter 27 Zoning (Ord. 658, 4-9-2015, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 27 adopted 4-9-2015 (Ord. 658). Table 27-1 (use table attachment) is marked Supp 5, May 2024, amended through Ord. No. 702 (5-29-2024). eCode360 New Laws (read 2026-11-13): none. The towns index notes eCode360 has not been updated since 2024. A 2024 zoning map ordinance (Ord. 703) is known from search results. The township website did not load in the browser, so zoning amendments after May 2024 could not be checked.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/30859895",
+      "https://ecode360.com/print/MO1356?guid=30859895",
+      "https://ecode360.com/31371378",
+      "https://ecode360.com/31371845",
+      "https://ecode360.com/31371880",
+      "https://ecode360.com/31371886",
+      "https://ecode360.com/31371895",
+      "https://ecode360.com/31371931",
+      "https://ecode360.com/31371935",
+      "https://ecode360.com/36446676",
+      "https://ecode360.com/31372477",
+      "https://ecode360.com/31372706",
+      "https://ecode360.com/43543102",
+      "https://ecode360.com/31374106",
+      "https://ecode360.com/31374692",
+      "https://ecode360.com/attachment/MO1356/MO1356-027a%20Table%2027-1%20Use%20Table.pdf",
+      "https://ecode360.com/MO1356/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200350784",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30859895",
+    "code_current_through": "2024-05-29",
+    "code_current_through_note": "Table 27-1: 'Supp 5, May 2024', amended through Ord. No. 702, 5/29/2024. No later amendment seen.",
+    "code_caution": "The online zoning code is current to May 2024. Zoning amendments after that, if any, were not seen. Ask the township.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law suite. A second dwelling unit on a single-family lot needs a use variance from the Zoning Hearing Board",
+      "A single-family dwelling is 'the only principal structure on the lot' with 'one dwelling unit'. A building with more than one set of cooking facilities counts as more than one dwelling unit unless the extra cooking is clearly accessory, such as an outdoor grill (27-107)",
+      "Uses not listed anywhere are a conditional use only in the M-1 and RT districts, not in residential districts (27-206, 27-870)",
+      "Two-family dwellings are permitted by right in R-4 and R-5 only. Each unit needs the district lot area per unit: 5,445 sq ft in R-4, 3,630 sq ft in R-5 (Table 27-1, 27-208 Table 27-3)",
+      "Accessory structures to a single-family house: 10 ft from side and rear lot lines, no taller than the house, 8 ft from the house or they count as attached. A garage or shed at most the size of the house or 1,000 sq ft, one and a half stories (27-501)",
+      "Short-term rental is a conditional use in R-4 and permitted in R-5 (Table 27-1, 27-862)",
+      "Code text as posted is current to May 2024. Ask whether later zoning amendments apply"
+    ],
+    "notes": "Zoning office: Moon Township Planning and Zoning. Districts (27-201): R-1, R-1A, R-2, R-3, R-4, R-5 (residential), BP, C-1, C-2, M-1, MX, RT, AP, ED, OS, overlays AZO, CVO, MEO, UBO, MCHO, and MB-TND. Read on eCode360 in a browser, the chapter print view searched in the page, and Table 27-1 (attachment) page by page. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage, second dwelling, accessory residential, guest house, caretaker, tiny, conversion, two-family, not listed. No ADU term. 'Caretaker' appears only in the beekeeper definition. 27-501.11 makes an accessory use that falls in a conditional or special exception use class a conditional use or special exception. MCHO Mooncrest Historic Overlay (27-309) keeps the Table 27-1 uses."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "27-107, Table 27-1",
+      "url": "https://ecode360.com/31371378",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage, second dwelling, accessory residential, guest house, caretaker, tiny, conversion."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-205, Table 27-1, 27-107",
+      "url": "https://ecode360.com/31371880",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU text. Table 27-1 lists single-family, two-family, townhouse, quadplex and apartment dwellings. None is an accessory unit."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-205, Table 27-1, 27-206, MPC 910.2",
+      "url": "https://ecode360.com/31371880",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a single-family lot is not a permitted use. 'Dwelling, Single-Family' allows one unit. In R-4 and R-5 two units may be a two-family dwelling (alternative). Otherwise a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-206, 27-870, MPC 910.2",
+      "url": "https://ecode360.com/31371886",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "27-206: 'Uses which are not specifically listed as a permitted use, conditional use, or special exception in any zoning district shall be permitted as a conditional use in the M-1 Industrial District and RT Research and Technology District'. Not a path on a residential lot. Not set as unlisted_use_path."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Permitted use. One building, the only principal building on the lot, with two units each with a separate entrance to the outside. Lot area 5,445 sq ft per unit (10,890 for two). 2 parking spaces per unit. A house made into two units would have to meet the same rules.",
+          "min_lot_sqft": 10890,
+          "section": "Table 27-1, 27-107 'Dwelling', 27-208 Table 27-3",
+          "url": "https://ecode360.com/attachment/MO1356/MO1356-027a%20Table%2027-1%20Use%20Table.pdf"
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-5"
+          ],
+          "conditions": "Permitted use. Lot area 3,630 sq ft per unit (7,260 for two). 2 parking spaces per unit.",
+          "min_lot_sqft": 7260,
+          "section": "Table 27-1, 27-107 'Dwelling', 27-208 Table 27-3",
+          "url": "https://ecode360.com/attachment/MO1356/MO1356-027a%20Table%2027-1%20Use%20Table.pdf"
+        }
+      ],
+      "section": "Table 27-1",
+      "url": "https://ecode360.com/attachment/MO1356/MO1356-027a%20Table%2027-1%20Use%20Table.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not ADUs. Table 27-1 'Dwelling, Two-Family': P under R-4 and R-5, blank elsewhere."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Table 27-1",
+      "url": "https://ecode360.com/attachment/MO1356/MO1356-027a%20Table%2027-1%20Use%20Table.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "27-309",
+      "url": "https://ecode360.com/36446676",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The Mooncrest Historic Overlay keeps the uses of Table 27-1. No historic path for a unit."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "A building with more than one set of cooking facilities counts as more than one dwelling unit, unless the extra cooking is clearly accessory, such as an outdoor grill.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-107 'Dwelling'",
+          "url": "https://ecode360.com/31371378"
+        }
+      ],
+      "section": "27-107",
+      "url": "https://ecode360.com/31371378",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Definition rule that turns a second kitchen into a second unit."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "Table 27-1, 27-107",
+      "url": "https://ecode360.com/attachment/MO1356/MO1356-027a%20Table%2027-1%20Use%20Table.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "27-501.3",
+      "url": "https://ecode360.com/31372477",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory structure rule, not an ADU rule: 'No accessory structures shall have a height greater than the principal structure on the subject property.' Garages and sheds at most one and a half stories (27-501.7B)."
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "27-501.3",
+      "url": "https://ecode360.com/31372477",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'No accessory structures shall have a height greater than the principal structure on the subject property.'"
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "27-501.2A",
+      "url": "https://ecode360.com/31372477",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A freestanding structure accessory to a single-family dwelling ... shall be located at least 10 feet from the side lot lines and rear lot lines'."
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "27-501.2A",
+      "url": "https://ecode360.com/31372477",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "setback_rear_alley_ft": {
+      "value": 10,
+      "section": "27-501.2A",
+      "url": "https://ecode360.com/31372477",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No alley reduction found."
+    },
+    "separation_ft": {
+      "value": 8,
+      "section": "27-501.4",
+      "url": "https://ecode360.com/31372477",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'All accessory structures, except swimming pools, shall be separated from the principal building or structure by at least eight feet.' Closer than that, it counts as attached and meets the principal yards."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "Table 27-1, 27-107",
+      "url": "https://ecode360.com/attachment/MO1356/MO1356-027a%20Table%2027-1%20Use%20Table.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Table 27-1, 27-862",
+      "url": "https://ecode360.com/43543102",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Short-term rental is a listed use: conditional use in R-4 (27-862 standards), permitted in R-5, not listed in R-1 to R-3. Nothing ties it to an accessory unit."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-601",
+      "url": "https://ecode360.com/31372706",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Single-family dwelling, two-family dwelling 2 spaces for each dwelling unit'. The table's section letter was not re-checked."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit for conventional lot development."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 40000,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'No lot ... shall be less than the minimum lot area per dwelling unit as defined by Table 27-3'."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-211 Table 27-5, 27-212",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      }
+    },
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit for conventional lot development."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 40000,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'No lot ... shall be less than the minimum lot area per dwelling unit as defined by Table 27-3'."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-211 Table 27-5, 27-212",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit for conventional lot development."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 20000,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'No lot ... shall be less than the minimum lot area per dwelling unit as defined by Table 27-3'."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-211 Table 27-5, 27-212",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit for conventional lot development."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 12000,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'No lot ... shall be less than the minimum lot area per dwelling unit as defined by Table 27-3'."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-211 Table 27-5, 27-212",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 5445,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit for conventional lot development."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5445,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'No lot ... shall be less than the minimum lot area per dwelling unit as defined by Table 27-3'."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-211 Table 27-5, 27-212",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 3630,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling unit for conventional lot development."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 3630,
+        "section": "27-208 Table 27-3",
+        "url": "https://ecode360.com/31371895",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'No lot ... shall be less than the minimum lot area per dwelling unit as defined by Table 27-3'."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-211 Table 27-5, 27-212",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-211 Table 27-5",
+        "url": "https://ecode360.com/31371931",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      }
+    }
+  }
+}
