@@ -1,0 +1,722 @@
+{
+  "provenance": {
+    "jurisdiction": "Tredyffrin township",
+    "instrument": "Code of the Township of Tredyffrin, Chapter 208 Zoning, as published on eCode360, with 208 Attachment 1 (R-4 area and bulk table)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code TR1485): includes legislation through 09-21-2026. New Laws: a charter amendment (2026-05-20) and a vehicles and traffic amendment (2026-10-19), neither in Chapter 208. Recent Chapter 208 amendments (Ord. HR-474 2023, HR-490 and HR-491 2025) touch the historic overlay demolition rules, office conversions and site development, not the residence district uses. Read in the eCode360 print views in a browser on 2026-11-12.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/7115532",
+      "https://ecode360.com/print/TR1485?guid=7115532",
+      "https://ecode360.com/7115558",
+      "https://ecode360.com/7115912",
+      "https://ecode360.com/7115950",
+      "https://ecode360.com/7116089",
+      "https://ecode360.com/7116116",
+      "https://ecode360.com/7116136",
+      "https://ecode360.com/7116151",
+      "https://ecode360.com/7116171",
+      "https://ecode360.com/7116187",
+      "https://ecode360.com/7116207",
+      "https://ecode360.com/7116224",
+      "https://ecode360.com/7116244",
+      "https://ecode360.com/7116268",
+      "https://ecode360.com/7116976",
+      "https://ecode360.com/7117095",
+      "https://ecode360.com/7117186",
+      "https://ecode360.com/7117248",
+      "https://ecode360.com/7117257",
+      "https://ecode360.com/7117258",
+      "https://ecode360.com/15170803",
+      "https://ecode360.com/15170827",
+      "https://ecode360.com/15170835",
+      "https://ecode360.com/15170871",
+      "https://ecode360.com/15170877",
+      "https://ecode360.com/attachment/339108/TR1485-208a%20R-4%20Residence%20Districts.pdf",
+      "https://ecode360.com/TR1485/laws"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202977344",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/7115532",
+    "code_current_through": "2026-09-21",
+    "code_current_through_note": "eCode360: Includes legislation through 09-21-2026. New Laws: none for Chapter 208.",
+    "checks": [
+      "No general accessory dwelling unit rule. RC, R-1/2, R-1, R-2, R-3 and R-4 allow the listed uses 'and no other' and one single-family detached dwelling (208-12, 208-17, 208-21, 208-25, 208-29, 208-33)",
+      "On a property with a historic resource on the Historic Resources Map, an 'accessory apartment' is allowed by conditional use (Board of Supervisors) after a Historical Commission recommendation. It may be in an accessory structure only if that structure is a contributing resource. It is the only other dwelling unit. 2 off-street spaces (208-122.6B(1)(d))",
+      "As an accessory use in every residence district, an 'accessory apartment for a watchman, caretaker or the staff or employees of a permitted use' is allowed, subject to the RC area and height rules of 208-13 (208-12G(2)). It is not a general rental unit",
+      "A house that existed when the chapter took effect may be converted to two-family or multifamily use (four units at most) by special exception. The lot needs the district minimum times the number of families (208-106)",
+      "A building with more than one set of cooking facilities counts as more than one dwelling unit (208-6 'Dwelling unit')",
+      "One rental room for up to two boarders, without housekeeping privileges, is a permitted accessory use (208-12G(3))",
+      "Accessory buildings over 144 sq ft or 10 ft high meet the district yards and height. None between the house and the street (208-112A(1))",
+      "R-4 allows a two-family detached dwelling (duplex) by special exception after Planning Commission review, 6,000 sq ft per unit (208-33E(2), 208 Attachment 1)"
+    ],
+    "notes": "Zoning office: Tredyffrin Township Zoning Officer, Zoning Hearing Board, Board of Supervisors (conditional uses), Historical Commission. Census GEOID from towns_index.json. Searched the full Chapter 208 print view for: accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, accessory unit, family member, short-term, conversion, similar, not listed. No section sends unlisted uses to a hearing. Short-term rentals in a historic structure are a special exception in R-1/2 (208-17E(7))."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment",
+      "section": "208-122.6B(1)(d), 208-12G(2)",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "208-6 'APARTMENT, ACCESSORY': 'One dwelling unit which is incidental and subordinate to the principal use of a building on a lot which may be either a separate living unit for a member of the family or other relatives, servants or caretakers in a residence' or a unit with a nonresidential use. The definition reaches family, but the only general listing is the Historic Resource Overlay (conditional use). Elsewhere the use is listed only for a watchman, caretaker or staff (208-12G(2)), so a family accessory apartment is defined but not listed."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "208-12, 208-17, 208-21, 208-25, 208-29, 208-33",
+      "url": "https://ecode360.com/7116136",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No general ADU rule. The residence districts allow the listed uses 'and no other'. Only a property with a historic resource has an accessory apartment path (conditional use, 208-122.6B(1)(d))."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "208-21, 208-25, 208-29, MPC 910.2",
+      "url": "https://ecode360.com/7116136",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Land and buildings may be used and occupied for any one of the following purposes and no other'. A second unit on a house lot that is not a conversion or a historic accessory apartment needs a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://ecode360.com/7116136",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board."
+    },
+    "historic_path": {
+      "value": "conditional_use",
+      "section": "208-122.6B(1), B(1)(d), 208-122.9",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "On a property with a historic resource that has street access: 'Accessory apartment' after a Historical Commission recommendation and conditional use approval from the Board of Supervisors. No family or owner rule. Conditions in gates."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family detached dwelling to two-family or multifamily use",
+          "path": "special_exception",
+          "districts": [
+            "RC"
+          ],
+          "conditions": "Only a house that existed when the chapter took effect. At most four units. Lot area at least the district minimum times the number of families: 217,800 sq ft per family, 435,600 sq ft for two. No external alteration except for safety. Stairs to the rear where practicable. Parking per 208-103. The Board sets the number of families.",
+          "min_lot_sqft": 435600,
+          "section": "208-106, 208-12F(2), 208-13",
+          "url": "https://ecode360.com/7117186"
+        },
+        {
+          "name": "Conversion of a single-family detached dwelling to two-family or multifamily use",
+          "path": "special_exception",
+          "districts": [
+            "R-1/2"
+          ],
+          "conditions": "Only a house that existed when the chapter took effect. At most four units. Lot area at least the district minimum times the number of families: 80,000 sq ft per family, 160,000 sq ft for two. No external alteration except for safety. Stairs to the rear where practicable. Parking per 208-103. The Board sets the number of families.",
+          "min_lot_sqft": 160000,
+          "section": "208-106, 208-17E(2), 208-18",
+          "url": "https://ecode360.com/7117186"
+        },
+        {
+          "name": "Conversion of a single-family detached dwelling to two-family or multifamily use",
+          "path": "special_exception",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "Only a house that existed when the chapter took effect. At most four units. Lot area at least the district minimum times the number of families: 30,000 sq ft per family, 60,000 sq ft for two. No external alteration except for safety. Stairs to the rear where practicable. Parking per 208-103. The Board sets the number of families.",
+          "min_lot_sqft": 60000,
+          "section": "208-106, 208-21D(2), 208-22",
+          "url": "https://ecode360.com/7117186"
+        },
+        {
+          "name": "Conversion of a single-family detached dwelling to two-family or multifamily use",
+          "path": "special_exception",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Only a house that existed when the chapter took effect. At most four units. Lot area at least the district minimum times the number of families: 18,000 sq ft per family, 36,000 sq ft for two. No external alteration except for safety. Stairs to the rear where practicable. Parking per 208-103. The Board sets the number of families.",
+          "min_lot_sqft": 36000,
+          "section": "208-106, 208-25D(2), 208-26",
+          "url": "https://ecode360.com/7117186"
+        },
+        {
+          "name": "Conversion of a single-family detached dwelling to two-family or multifamily use",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Only a house that existed when the chapter took effect. At most four units. Lot area at least the district minimum times the number of families: 12,000 sq ft per family, 24,000 sq ft for two. No external alteration except for safety. Stairs to the rear where practicable. Parking per 208-103. The Board sets the number of families.",
+          "min_lot_sqft": 24000,
+          "section": "208-106, 208-29D(2), 208-30",
+          "url": "https://ecode360.com/7117186"
+        },
+        {
+          "name": "Conversion of a single-family detached dwelling to two-family or multifamily use",
+          "path": "special_exception",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Only a house that existed when the chapter took effect. At most four units. Lot area at least the district minimum times the number of families: 10,000 sq ft per family, 20,000 sq ft for two. No external alteration except for safety. Stairs to the rear where practicable. Parking per 208-103. The Board sets the number of families.",
+          "min_lot_sqft": 20000,
+          "section": "208-106, 208-33D(2), 208 Attachment 1",
+          "url": "https://ecode360.com/7117186"
+        },
+        {
+          "name": "Two-family detached dwelling (duplex)",
+          "path": "special_exception",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "After Planning Commission review. 6,000 sq ft per dwelling unit, 80 ft wide, front 25, side 15, rear 25 ft, 25% building coverage. 2 parking spaces per unit.",
+          "min_lot_sqft": 12000,
+          "section": "208-33E(2), 208-102, 208 Attachment 1, 208-103C(1)",
+          "url": "https://ecode360.com/7116244"
+        },
+        {
+          "name": "Accessory apartment for a watchman, caretaker or staff of a permitted use",
+          "path": "by_right",
+          "districts": [
+            "RC",
+            "R-1/2",
+            "R-1",
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Only for a watchman, caretaker or the staff or employees of a permitted use. A live-in paid caregiver may fit 'staff or employees'. Subject to the RC area and height rules of 208-13 (5 acres, 300 ft wide, 35 ft high), as the text reads.",
+          "min_lot_sqft": 217800,
+          "section": "208-12G(2), 208-13, 208-17F, 208-21E, 208-25F, 208-29F, 208-33F",
+          "url": "https://ecode360.com/7115912",
+          "confidence": "secondary",
+          "note": "Employee housing, not a general ADU. Whether household staff of a house count, and whether the 5 acre RC lot applies in other districts, is a reading. Ask the zoning officer."
+        }
+      ],
+      "section": "208-106, 208-33E, 208-12G(2)",
+      "url": "https://ecode360.com/7117186",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. 208-106: 'a single-family detached dwelling, existing at the effective date of this chapter, may be converted into and used as a two-family or a multifamily dwelling for no more than four dwelling units when authorized as a special exception'."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "208-12, 208-17, 208-21, 208-25, 208-29, 208-33",
+      "url": "https://ecode360.com/7116136",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No district lists a general ADU. The historic accessory apartment follows the Historic Resources Map, not a district."
+    },
+    "historic_bypass": {
+      "value": true,
+      "section": "208-122.5, 208-122.6B(1)(d)",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "The Historic Resource Overlay adds an accessory apartment for properties with a historic resource. Confirm the property is on the Historic Resources Map."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "historic",
+          "condition": "The property has a historic resource on the Historic Resources Map and access from a street. It may be used for 'any one of' the listed uses (bed-and-breakfast, cultural studio, gallery or museum, accessory apartment), so only one of them. Historical Commission recommendation and Board of Supervisors conditional use approval.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "208-122.6B(1), 208-122.3, 208-122.9",
+          "url": "https://ecode360.com/15170835",
+          "when": "historic"
+        },
+        {
+          "kind": "historic",
+          "condition": "The apartment may be in a structure accessory to the house only if the Board finds that structure a contributing resource shown on the Historic Resource Map.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "208-122.6B(1)(d)",
+          "url": "https://ecode360.com/15170835",
+          "when": "historic"
+        },
+        {
+          "kind": "other",
+          "condition": "'The accessory apartment can be the only other single-family dwelling unit on the property.'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "208-122.6B(1)(d)[1]",
+          "url": "https://ecode360.com/15170835",
+          "when": "historic"
+        },
+        {
+          "kind": "design",
+          "condition": "In a residence district: new parking seen from neighbors screened to 4 ft, no display or sign beyond 2 sq ft, no noise at the property line, shielded lighting. Floor area added to the historic resource after January 1, 2011 does not count.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "208-122.6C",
+          "url": "https://ecode360.com/15170835",
+          "when": "historic"
+        },
+        {
+          "kind": "historic",
+          "condition": "On a historic resource the district building area, impervious and yard rules may be modified by up to 15% by conditional use after a Historical Commission recommendation, more where essential to preserve the resource. Added building area may not exceed 50% of the resource's building area.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "208-122.7",
+          "url": "https://ecode360.com/15170871",
+          "when": "historic"
+        },
+        {
+          "kind": "other",
+          "condition": "Accessory buildings over 144 sq ft or 10 ft high meet the district yards and height, and stand behind the house (not between the house and the street).",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "208-112A(1)",
+          "url": "https://ecode360.com/7117248"
+        }
+      ],
+      "section": "208-122.6, 208-112",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Historic Resource Overlay conditions apply only on the historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "garage_conversion"
+      ],
+      "section": "208-122.6B(1)(d)",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Historic path only. The apartment is in the house or 'in a structure accessory to the principal dwelling' that is a contributing resource. New buildings and additions are not addressed. No form is allowed off the historic path."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "208-112A(1)",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "An accessory building over 144 sq ft or 10 ft must meet the district height (35 ft)."
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "208-112A(1)",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "The 10 ft rule is only for buildings up to 144 sq ft. A building large enough for a unit takes the district height."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "208-112A(1)",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Any building exceeding 144 square feet or 10 feet in height must meet the yard and height regulations of the zoning district in which it is located.'"
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "208-112A(1)",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "6 ft only for buildings up to 144 sq ft and 10 ft. Larger ones take the district side yard."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "208-112A(1)",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "6 ft only for buildings up to 144 sq ft and 10 ft. Larger ones take the district rear yard."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "208-112A(1)",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory buildings are not allowed between the house and any street line."
+    },
+    "setback_rear_alley_ft": {
+      "value": null,
+      "section": "208-112A(1)",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley rule."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "208-112",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No distance between buildings set for accessory buildings."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "208-22G",
+      "url": "https://ecode360.com/7116151",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "District height 35 ft."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "208-122.6B(1)(d)",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No owner rule for the historic accessory apartment."
+    },
+    "family_only": {
+      "value": false,
+      "section": "208-122.6B(1)(d), 208-6 'Family'",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No family rule for the historic accessory apartment. A family allows up to three unrelated persons."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "208-17E(7), 208-6",
+      "url": "https://ecode360.com/7116089",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Short-term rentals in a historic structure are a special exception in R-1/2 (208-17E(7)) and R-1 (208-21D(7)). Other rules not read."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "208-122.6B(1)(d)[1]",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Historic path: the apartment 'can be the only other single-family dwelling unit on the property.' Off that path no ADU is allowed."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "208-122.6B(1)(d)[2]",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Historic Resource Overlay accessory apartment only: 'Two off-street parking spaces shall be required for the accessory apartment.' The house needs 2 more (208-103C(1))."
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "208-122.6B(1)(d)[2], 208-103C(1)",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Historic path: 2 for the house and 2 for the apartment."
+    }
+  },
+  "districts": {
+    "RC": {
+      "min_lot_sqft": {
+        "value": 217800,
+        "section": "208-13",
+        "url": "https://ecode360.com/7115950",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Five acres, 300 ft wide."
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "208-13",
+        "url": "https://ecode360.com/7115950",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 45,
+        "section": "208-13",
+        "url": "https://ecode360.com/7115950",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Two side yards, 100 ft together, neither under 45 ft."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "208-13",
+        "url": "https://ecode360.com/7115950",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.05,
+        "section": "208-13",
+        "url": "https://ecode360.com/7115950",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "208-13",
+        "url": "https://ecode360.com/7115950",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-1/2": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "208-18",
+        "url": "https://ecode360.com/7116116",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "80,000 sq ft, 200 ft wide."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "208-18",
+        "url": "https://ecode360.com/7116116",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "208-18",
+        "url": "https://ecode360.com/7116116",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Two side yards, 50 ft together, neither under 25 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "208-18",
+        "url": "https://ecode360.com/7116116",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "208-18",
+        "url": "https://ecode360.com/7116116",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "208-18",
+        "url": "https://ecode360.com/7116116",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "208-22",
+        "url": "https://ecode360.com/7116151",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "30,000 sq ft, 100 ft wide. Impervious 30%."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "208-22",
+        "url": "https://ecode360.com/7116151",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "208-22",
+        "url": "https://ecode360.com/7116151",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Two side yards, 40 ft together, neither under 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "208-22",
+        "url": "https://ecode360.com/7116151",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "208-22",
+        "url": "https://ecode360.com/7116151",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "208-22",
+        "url": "https://ecode360.com/7116151",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 18000,
+        "section": "208-26",
+        "url": "https://ecode360.com/7116187",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "18,000 sq ft, 85 ft wide."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "208-26",
+        "url": "https://ecode360.com/7116187",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "208-26",
+        "url": "https://ecode360.com/7116187",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Two side yards, 40 ft together, neither under 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "208-26",
+        "url": "https://ecode360.com/7116187",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "208-26",
+        "url": "https://ecode360.com/7116187",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "208-26",
+        "url": "https://ecode360.com/7116187",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "208-30",
+        "url": "https://ecode360.com/7116224",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "12,000 sq ft, 70 ft wide. Impervious 45%."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "208-30",
+        "url": "https://ecode360.com/7116224",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "208-30",
+        "url": "https://ecode360.com/7116224",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Two side yards, 30 ft together, neither under 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "208-30",
+        "url": "https://ecode360.com/7116224",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "208-30",
+        "url": "https://ecode360.com/7116224",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "208-30",
+        "url": "https://ecode360.com/7116224",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "208-34, 208 Attachment 1",
+        "url": "https://ecode360.com/attachment/339108/TR1485-208a%20R-4%20Residence%20Districts.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single-family detached: 10,000 sq ft per dwelling unit, 60 ft wide (208 Attachment 1). Impervious 30%."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "208-34, 208 Attachment 1",
+        "url": "https://ecode360.com/attachment/339108/TR1485-208a%20R-4%20Residence%20Districts.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "208-34, 208 Attachment 1",
+        "url": "https://ecode360.com/attachment/339108/TR1485-208a%20R-4%20Residence%20Districts.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "208-34, 208 Attachment 1",
+        "url": "https://ecode360.com/attachment/339108/TR1485-208a%20R-4%20Residence%20Districts.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "208-34, 208 Attachment 1",
+        "url": "https://ecode360.com/attachment/339108/TR1485-208a%20R-4%20Residence%20Districts.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "208-34, 208 Attachment 1",
+        "url": "https://ecode360.com/attachment/339108/TR1485-208a%20R-4%20Residence%20Districts.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    }
+  }
+}

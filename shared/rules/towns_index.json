@@ -975,8 +975,8 @@
       "pop_rank": 39,
       "file": "pa_delaware_chester",
       "batch": 7,
-      "status": "todo",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/45941765",
       "plain_fetch": false,
@@ -985,7 +985,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Reviewed 2026-11-12, fixes applied. Unit for care of relative (family only): by right attached, detached or converted garage by special exception (900 sq ft). Later check: the tool shows a variance for a garage conversion (resolver cannot give that form its own path), whether the unit counts toward R-2 and R-3 lot area per unit, Ord. 10-2026 parking once codified."
     },
     {
       "geoid": "4207744952",
@@ -999,8 +999,8 @@
       "pop_rank": 40,
       "file": "pa_lehigh_lower_macungie",
       "batch": 7,
-      "status": "todo",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30829060",
       "plain_fetch": false,
@@ -1009,7 +1009,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Reviewed 2026-11-12, fixes applied. Accessory residential dwelling (family only), by right in the house or an existing accessory structure. Later check: AP double listing (by-right 27-418 read as governing), I, HI-SC and HE nonconforming reading, Ord. 2026-05 once codified."
     },
     {
       "geoid": "4202977344",
@@ -1023,8 +1023,8 @@
       "pop_rank": 41,
       "file": "pa_chester_tredyffrin",
       "batch": 7,
-      "status": "todo",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/7115532",
       "plain_fetch": false,
@@ -1033,7 +1033,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Reviewed 2026-11-12, fixes applied. No general ADU rule, use variance. Historic resource accessory apartment by conditional use (208-122.6B(1)(d)). Later check: R-4 Attachment 1 row not rechecked by the reviewer, effective date for the 208-106 conversion."
     },
     {
       "geoid": "4212955128",
@@ -1047,8 +1047,8 @@
       "pop_rank": 42,
       "file": "pa_westmoreland_north_huntingdon",
       "batch": 7,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/16043696",
       "plain_fetch": false,
@@ -1057,7 +1057,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Reviewed 2026-11-12, fixes applied, stays drafted. No ADU rule, use variance, Table 4 footnote special exception as a path to ask. Open: eCode360 Chapter 555 is a placeholder, text read is the township PDF through August 2016, zoning amendments Ord. No. 2266 (2021) and Ord. No. 2302 (5-15-2024) are not online. Ask the township for Ord. No. 2302."
     },
     {
       "geoid": "4204564800",
@@ -1071,8 +1071,8 @@
       "pop_rank": 43,
       "file": "pa_delaware_ridley",
       "batch": 7,
-      "status": "todo",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/8799872",
       "plain_fetch": false,
@@ -1081,7 +1081,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Reviewed 2026-11-12, fixes applied. No ADU rule, use variance. 325-89F bars heating or sewer plumbing in a detached accessory building. Later check: a stacked two-unit split is 'multifamily', not listed in C."
     },
     {
       "geoid": "4207933408",
@@ -1095,8 +1095,8 @@
       "pop_rank": 44,
       "file": "pa_luzerne_hazleton",
       "batch": 7,
-      "status": "todo",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/37222224",
       "plain_fetch": false,
@@ -1105,7 +1105,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Reviewed 2026-11-12, fixes applied. No ADU rule, use variance. Conversion to a two-family dwelling by right in R-2, R-3 and CC (900 sq ft per unit). Later check: R-1 conversion wording in 575-610A(3), 575-411 'Maximum' column read as a minimum, parking table not rechecked by the reviewer."
     },
     {
       "geoid": "4213387056",

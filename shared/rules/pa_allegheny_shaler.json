@@ -1,0 +1,419 @@
+{
+  "provenance": {
+    "jurisdiction": "Shaler township",
+    "instrument": "Code of the Township of Shaler, Chapter 225 Zoning (Ord. No. 1925, 10-14-2014, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 225 adopted 10-14-2014 by Ord. No. 1925. Ord. No. 1966 (4-12-2022) repealed the special exception for converting a one-family house to a multifamily dwelling in R-1 to R-3. Later amendments include Ord. 1971 (2022), 1974 (2023) and 1987 (3-11-2025). eCode360 New Laws (read 2026-11-12) list Ord. 1990 (retaining walls, zoning), 1981 (zoning map) and non-zoning items. Their titles do not touch dwellings. Their text was not opened.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/9196870",
+      "https://ecode360.com/print/SH1304?guid=9196870",
+      "https://ecode360.com/9197020",
+      "https://ecode360.com/9197030",
+      "https://ecode360.com/9197031",
+      "https://ecode360.com/9197035",
+      "https://ecode360.com/9197075",
+      "https://ecode360.com/9197212",
+      "https://ecode360.com/9197242",
+      "https://ecode360.com/9197243",
+      "https://ecode360.com/9197269",
+      "https://ecode360.com/30364318",
+      "https://ecode360.com/30364849",
+      "https://ecode360.com/SH1304/laws"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200369584",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9196870",
+    "code_current_through": "2025-06-10",
+    "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-12 shows no currency line. New Laws lists items to 2026-10-13.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "'Only uses listed or defined within the categories under this article shall be permitted' (225-11). R-1 and R-2 permit only one-family dwellings",
+      "The special exception for converting a one-family house into more units was repealed in 2022 (Ord. No. 1966). It no longer exists",
+      "R-3, R-4 and R-5 permit a two-family dwelling by right on 7,500 sq ft. R-3 also permits an apartment building of no more than two units. Each unit needs its own outside door (225-15, 225-16, 225-17, 225-218)",
+      "Uses not listed anywhere may be a conditional use only in the I Industrial District (225-34)",
+      "Accessory structures: 15 ft high. Side and rear yards 10 ft in R-1 and R-4, 5 ft in R-2 and R-3 (225-24 to 225-27)",
+      "Parking: 2 spaces per dwelling unit for one- and two-family dwellings. No parking in front or side yards except on a driveway (225-35 table)"
+    ],
+    "notes": "Zoning office: Shaler Township Code Enforcement (shaler.org). Districts (225-6): R-1, R-2, R-3, R-4, R-5, C, P, NS, GC, I, with an overlay for Mt. Alvernia. Read on eCode360 in a browser, the chapter print view, searched in the page. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, conversion, accessory unit, family member, kitchen. No ADU provision. 'Family' allows up to three unrelated persons (225-218)."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "225-218, 225-13 to 225-17",
+      "url": "https://ecode360.com/30364849",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, conversion, accessory unit, family member, kitchen."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "225-11, 225-13A, 225-14A",
+      "url": "https://ecode360.com/9197020",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "The code has no ADU text. R-1 and R-2: 'The permitted principal use shall be one-family dwellings.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "225-11, 225-13, 225-14",
+      "url": "https://ecode360.com/9197020",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Only uses listed or defined within the categories under this article shall be permitted.' A second unit on a one-family lot needs a use variance from the Zoning Hearing Board (MPC 910.2)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "225-11, MPC 910.2",
+      "url": "https://ecode360.com/9197020",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Same as path. 225-34 sends unlisted uses to a conditional use only in the I Industrial District, which does not reach a house lot."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4",
+            "R-5"
+          ],
+          "conditions": "Permitted use. Two noncommunicating units, each with its own outside door. Lot 7,500 sq ft, width 70 ft in R-3 and 60 ft in R-4. Rear yard 20 ft, side yards 10 ft. 2 parking spaces per unit. A house on a smaller lot does not qualify without relief.",
+          "min_lot_sqft": 7500,
+          "section": "225-15A(2), 225-16A(2), 225-17A(2), 225-26, 225-27, 225-218",
+          "url": "https://ecode360.com/9197243"
+        },
+        {
+          "name": "Apartment building with no more than two dwelling units",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Listed as a permitted principal use in R-3. Lot rules for a two-family dwelling are read as applying.",
+          "min_lot_sqft": null,
+          "section": "225-15A(3)",
+          "url": "https://ecode360.com/9197035",
+          "confidence": "secondary",
+          "note": "225-26 gives lot rules for one-family and two-family dwellings only."
+        }
+      ],
+      "section": "225-15, 225-16, 225-17",
+      "url": "https://ecode360.com/9197035",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. The one-family to multifamily conversion special exception was repealed by Ord. No. 1966 (4-12-2022)."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "225-13 to 225-22",
+      "url": "https://ecode360.com/9197030",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 225",
+      "url": "https://ecode360.com/9196870",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path. The Mt. Alvernia overlay is institutional."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "225-11, 225-218",
+      "url": "https://ecode360.com/30364849",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A one-family dwelling is 'A detached building containing only one dwelling unit'. An accessory structure is 'used exclusively for the purposes constituting an accessory use'."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "225-24G(2), 225-25G(2), 225-26G(3), 225-27G(4)",
+      "url": "https://ecode360.com/9197212",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Accessory structure rule, not an ADU rule. 'Accessory structure: 15 feet.'"
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "225-24E to 225-27E",
+      "url": "https://ecode360.com/9197212",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory side yard by district: R-1 10 ft, R-2 5 ft, R-3 5 ft, R-4 10 ft. See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "225-24D to 225-27D",
+      "url": "https://ecode360.com/9197212",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory rear yard by district: R-1 10 ft, R-2 5 ft, R-3 5 ft, R-4 10 ft. See districts."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "225-218 'Family'",
+      "url": "https://ecode360.com/30364849",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A family is related persons with servants or guests, or up to three unrelated persons."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "225-11, 225-218",
+      "url": "https://ecode360.com/9197020",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU. A one-family dwelling contains only one dwelling unit."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "225-35",
+      "url": "https://ecode360.com/print/SH1304?guid=9196870",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. One-family or two-family dwelling: 2 parking spaces for each family dwelling unit."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "225-24A",
+        "url": "https://ecode360.com/9197212",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Lot width 70 ft. Rear yard 10 ft (25 ft on a through lot). 225-166 lets a lot held in separate ownership be built on below these figures."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "225-24C",
+        "url": "https://ecode360.com/9197212",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "225-24E",
+        "url": "https://ecode360.com/9197212",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling, each side not abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "225-24D",
+        "url": "https://ecode360.com/9197212",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "225-24G",
+        "url": "https://ecode360.com/9197212",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "225-24E",
+        "url": "https://ecode360.com/9197212",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "225-24D",
+        "url": "https://ecode360.com/9197212",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "225-25A",
+        "url": "https://ecode360.com/9197242",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Lot width 50 ft. 225-166 lets a lot held in separate ownership be built on below these figures."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "225-25C",
+        "url": "https://ecode360.com/9197242",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "225-25E",
+        "url": "https://ecode360.com/9197242",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling, each side not abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "225-25D",
+        "url": "https://ecode360.com/9197242",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "225-25G",
+        "url": "https://ecode360.com/9197242",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "225-25E",
+        "url": "https://ecode360.com/9197242",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "225-25D",
+        "url": "https://ecode360.com/9197242",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "225-26A",
+        "url": "https://ecode360.com/9197243",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling. Two-family needs 7,500 sq ft and 70 ft. 225-166 lets a lot held in separate ownership be built on below these figures."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "225-26C",
+        "url": "https://ecode360.com/9197243",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "225-26E",
+        "url": "https://ecode360.com/9197243",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling, each side not abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "225-26D",
+        "url": "https://ecode360.com/9197243",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "225-26G",
+        "url": "https://ecode360.com/9197243",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "225-26E",
+        "url": "https://ecode360.com/9197243",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "225-26D",
+        "url": "https://ecode360.com/9197243",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "225-27A",
+        "url": "https://ecode360.com/9197269",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling. Two-family needs 7,500 sq ft and 60 ft. 225-166 lets a lot held in separate ownership be built on below these figures."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "225-27C",
+        "url": "https://ecode360.com/9197269",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "225-27E",
+        "url": "https://ecode360.com/9197269",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling, each side not abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "225-27D",
+        "url": "https://ecode360.com/9197269",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One-family dwelling."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "225-27G",
+        "url": "https://ecode360.com/9197269",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "225-27E",
+        "url": "https://ecode360.com/9197269",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "225-27D",
+        "url": "https://ecode360.com/9197269",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    }
+  }
+}

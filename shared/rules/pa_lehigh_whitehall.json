@@ -1,0 +1,406 @@
+{
+  "provenance": {
+    "jurisdiction": "Whitehall township",
+    "instrument": "Code of the Township of Whitehall, Chapter 27 Zoning (Ord. No. 1651, 9-18-1989, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 27 adopted 9-18-1989, amended many times. 27-137.1 short-term rentals added 3-13-2023 (Ord. 3298). eCode360 New Laws (read 2026-11-12) list Ord. 3442 (zoning map, 9-14-2026) and non-zoning items. No text amendment to Chapter 27 is pending there.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/13159599",
+      "https://ecode360.com/print/WH2503?guid=13159599",
+      "https://ecode360.com/13159872",
+      "https://ecode360.com/13159910",
+      "https://ecode360.com/13159928",
+      "https://ecode360.com/13159942",
+      "https://ecode360.com/13160044",
+      "https://ecode360.com/13160091",
+      "https://ecode360.com/13160138",
+      "https://ecode360.com/13160233",
+      "https://ecode360.com/13160840",
+      "https://ecode360.com/13161158",
+      "https://ecode360.com/13161586",
+      "https://ecode360.com/13162115",
+      "https://ecode360.com/WH2503/laws"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Lehigh",
+    "municipality_type": "township",
+    "geoid": "4207784528",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/13159599",
+    "code_current_through": "2026-02-26",
+    "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-12 shows no currency line. New Laws lists items to 2026-09-14.",
+    "checks": [
+      "The code expressly prohibits 'The use of a detached accessory building as a dwelling' (27-62D)",
+      "It also prohibits 'A use not listed in a zoning district schedule and not similar as per 27-63' (27-62A). No district lists an accessory dwelling unit, and no district lists a two-family dwelling",
+      "R-1 to R-4 permit only single-family detached dwellings as housing (27-70A to 27-74A). Semidetached, attached and apartment dwellings appear only in R-5, R-5A and R-6",
+      "The similar-use special exception (27-63) cannot treat a use listed in another district as similar. A second unit is an apartment or semidetached unit, which are listed in R-5 and R-6",
+      "Detached accessory buildings on lots under one acre: 22 ft high and no more than 1,200 sq ft or the house's footprint perimeter area, whichever is smaller. 3 ft from property lines, not in the front yard (27-84D, E, G)",
+      "Short-term rentals need a license under 27-137.1 (added 2023)",
+      "Parking: two spaces per dwelling unit (27-146A(18))"
+    ],
+    "notes": "Zoning office: Whitehall Township Bureau of Planning and Zoning (whitehalltownship.com). Districts (27-66) include R-1, R-2, R-3, R-3A, R-4, R-5, R-5A, R-6 and commercial and industrial districts. Read on eCode360 in a browser, the chapter print view, searched in the page. Searched for accessory dwelling, accessory apartment, apartment accessory, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, accessory unit, tiny, two-family, duplex, conversion, kitchen. No ADU term. 'Adaptive reuse for affordable housing and multifamily housing' is permitted in every residential district, but only for a building first built for commercial, institutional or industrial use (Article XVI). It does not reach a house."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "27-194 (Article XVI Definitions), 27-70 to 27-77",
+      "url": "https://ecode360.com/13162115",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, apartment accessory, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, accessory unit, tiny, two-family, duplex, conversion, kitchen."
+    },
+    "status": {
+      "value": "prohibited",
+      "section": "27-62A, 27-62D",
+      "url": "https://ecode360.com/13159910",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "27-62: 'The following uses are expressly prohibited: A. A use not listed in a zoning district schedule and not similar as per 27-63 ... D. The use of a detached accessory building as a dwelling.' No schedule lists an accessory dwelling."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-62, 27-63",
+      "url": "https://ecode360.com/13159910",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A second unit is an unlisted, expressly prohibited use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). A detached unit also runs into the express bar in 27-62D."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-62, MPC 910.2",
+      "url": "https://ecode360.com/13159910",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Same as path. 27-63 lets the Zoning Hearing Board find a use similar to a listed one by special exception, but 'No use which is listed in a use schedule of a zoning district ... shall be considered as a similar use in any other zoning district.' Apartments and semidetached dwellings are listed in R-5 and R-6, so a second unit is not a similar use in R-1 to R-4."
+    },
+    "alternatives": {
+      "value": [],
+      "section": "27-70 to 27-77",
+      "url": "https://ecode360.com/13160044",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alternative on a house lot in R-1 to R-4. No two-family dwelling or conversion use exists in Chapter 27. R-5, R-5A and R-6 list semidetached, attached and apartment dwellings as new buildings with their own lot rules."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "27-70 to 27-77",
+      "url": "https://ecode360.com/13160044",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/13159599",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Historic text in Chapter 27 is floodplain and airport related. No historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The use of a detached accessory building as a dwelling is expressly prohibited.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "not_districts": null,
+          "building_types": [
+            "detached",
+            "semi_detached",
+            "attached"
+          ],
+          "section": "27-62D",
+          "url": "https://ecode360.com/13159910",
+          "bill_overrides": true
+        }
+      ],
+      "section": "27-62D",
+      "url": "https://ecode360.com/13159910",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Express bar on detached forms."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-62, 27-194",
+      "url": "https://ecode360.com/13159910",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A single-family detached dwelling is 'A dwelling unit on a permanent foundation occupied as a residence for one family'."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 22,
+      "section": "27-84G",
+      "url": "https://ecode360.com/13160840",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. 'Detached accessory buildings located on a lot of less than one acre in residential zones ... shall be limited to a height of 22 feet and shall not exceed 1,200 square feet or the square foot perimeter of the primary structure'."
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "27-84E(1)",
+      "url": "https://ecode360.com/13160840",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Accessory building rule. 'must not be less than three feet from all property lines and six feet from any alley right-of-way.'"
+    },
+    "setback_rear_ft": {
+      "value": 3,
+      "section": "27-84E(1)",
+      "url": "https://ecode360.com/13160840",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Accessory building rule."
+    },
+    "setback_rear_alley_ft": {
+      "value": 6,
+      "section": "27-84E(1)",
+      "url": "https://ecode360.com/13160840",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Six feet from any alley right-of-way."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "27-84D",
+      "url": "https://ecode360.com/13160840",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Accessory buildings, structures or uses shall not be located in any front yard area.'"
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "27-62",
+      "url": "https://ecode360.com/13159910",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    },
+    "short_term_rental_banned": {
+      "value": false,
+      "section": "27-137.1",
+      "url": "https://ecode360.com/print/WH2503?guid=13159599",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Short-term rentals are regulated and licensed under 27-137.1 (added 3-13-2023), not banned outright."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-146A(18)",
+      "url": "https://ecode360.com/13161586",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Residential dwelling: two spaces per dwelling unit.'"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-70E(1)",
+        "url": "https://ecode360.com/13160044",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Area: one acre.' Width 120 ft. Side yards 25 ft one, 60 ft both. Impervious 30%."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-70E(2)",
+        "url": "https://ecode360.com/13160044",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-70E(2)",
+        "url": "https://ecode360.com/13160044",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One side."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-70E(2)",
+        "url": "https://ecode360.com/13160044",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-70E(3)",
+        "url": "https://ecode360.com/13160044",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-70E(4)",
+        "url": "https://ecode360.com/13160044",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'35 feet above finished grade.'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 22000,
+        "section": "27-71E(1)",
+        "url": "https://ecode360.com/13160091",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "22,000 sq ft. Width 100 ft. One acre without public water and sewer. Side yards 15 ft one, 30 ft both. Impervious 45%."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-71E(2)",
+        "url": "https://ecode360.com/13160091",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-71E(2)",
+        "url": "https://ecode360.com/13160091",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-71E(2)",
+        "url": "https://ecode360.com/13160091",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-71E(3)",
+        "url": "https://ecode360.com/13160091",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-71E(4)",
+        "url": "https://ecode360.com/13160091",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'35 feet above finished grade.'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "27-72E(1)",
+        "url": "https://ecode360.com/13160138",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "12,000 sq ft. Width 90 ft. One acre without public water and sewer. Single-family detached side yards 12.5 ft one, 25 ft both. Impervious 55%."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-72E(2)",
+        "url": "https://ecode360.com/13160138",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12.5,
+        "section": "27-72E(2)",
+        "url": "https://ecode360.com/13160138",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-72E(2)",
+        "url": "https://ecode360.com/13160138",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-72E(3)",
+        "url": "https://ecode360.com/13160138",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-72E(4)",
+        "url": "https://ecode360.com/13160138",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'35 feet above finished grade.'"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 9600,
+        "section": "27-74E(1)",
+        "url": "https://ecode360.com/13160233",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "9,600 sq ft. Width 80 ft. One acre without public water and sewer. Single-family detached side yards 8 ft one, 20 ft both. Impervious 50%."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-74E(2)",
+        "url": "https://ecode360.com/13160233",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-74E(2)",
+        "url": "https://ecode360.com/13160233",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "One side."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-74E(2)",
+        "url": "https://ecode360.com/13160233",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-74E(3)",
+        "url": "https://ecode360.com/13160233",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-74E(4)",
+        "url": "https://ecode360.com/13160233",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'35 feet above finished grade.'"
+      }
+    }
+  }
+}

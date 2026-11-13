@@ -1,0 +1,714 @@
+{
+  "provenance": {
+    "jurisdiction": "North Huntingdon township",
+    "instrument": "Township of North Huntingdon Zoning Ordinance No. 765 (enacted 2-20-1991), with amendments through August 2016, as posted by the township (PDF). eCode360 Chapter 555 holds only a placeholder note",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 Chapter 555 (code NO0456) says only: 'The current Township of North Huntingdon Zoning Ordinance and any amendments thereto are on file in the Township offices.' The text read is the township's posted PDF of Ord. No. 765 with amendments through August 2016 (scanned, 357 pages). eCode360 New Laws list five 2026 zoning amendments: Ord. 2319 (solar, title only), 2321 (enforcement, 915), 2322 (CBD, tobacco and vape shops, C-1 and C-1A), 2323 (glare and lighting, new 830), 2324 (definitions of accessory structure and zoning permit, fence heights). The four read do not touch dwelling uses. Amendments between August 2016 and 2026 were not seen: the eCode360 Disposition List shows Ord. No. 2266 (2021, later repealed by 2302) and Ord. No. 2302 (5-15-2024, Zoning Amendment) as not included, and their text is not online. Ord. No. 2251 (2019, telecommunications) is posted by the township and was not read.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/16043696",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=19",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=20",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=37",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=103",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=118",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=148",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=151",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=152",
+      "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=172",
+      "https://www.township.north-huntingdon.pa.us/388/Ordinances",
+      "https://ecode360.com/NO0456/laws",
+      "https://ecode360.com/NO0456/laws/LF2657916.pdf",
+      "https://ecode360.com/NO0456/laws/LF2691329.pdf",
+      "https://ecode360.com/NO0456/laws/LF2878571.pdf",
+      "https://ecode360.com/NO0456/laws/LF2878570.pdf",
+      "https://ecode360.com/NO0456/laws/LF2878569.pdf"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Westmoreland",
+    "municipality_type": "township",
+    "geoid": "4212955128",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/16043696",
+    "code_current_through": null,
+    "code_current_through_note": "eCode360 Chapter 555 is a placeholder. The township PDF says 'Zoning Ordinance with Amendments through August 2016'. 2026 zoning amendments are on the eCode360 New Laws list.",
+    "checks": [
+      "The zoning ordinance has no accessory dwelling unit, accessory apartment or in-law provision",
+      "No more than one principal detached residential building on a zoning lot (404). R-1, R-2, R-3 and R-4 allow only one principal building per lot (503.2 to 503.6, subsection 7)",
+      "Table 4 lists 'Duplex Dwelling Units' (no more than two attached units on one lot) by right only in R-1 and R-1A. R-2, R-3 and R-4 allow only a single dwelling unit",
+      "Table 4 footnote: 'Any residential use not listed shall fall under Paragraph 6.1 and is subject to consideration under a Special Exception.' A second unit is a duplex or a second principal building, both addressed, so this route is uncertain. Ask the zoning officer",
+      "Accessory buildings occupied by employees on the premises as a residence need a special exception (821.3). A dwelling behind the house needs a 20 ft deeded access with a drive fit for fire apparatus (821.1)",
+      "Accessory buildings: not in the required front or side yard, not over 10 ft high in the required rear yard, and 10 ft from the rear property line (801.2, 801.3, 801.5)",
+      "Parking: 2 spaces per dwelling unit for single-family and two-family structures, as a garage or carport (820.3, 820.5)",
+      "Source gap: the township posts the ordinance with amendments through August 2016. Zoning amendments Ord. No. 2266 (2021) and Ord. No. 2302 (5-15-2024) are not online and were not seen. Ask the township for Ord. No. 2302",
+      "Minimum first floor area: 950 sq ft for a one-story dwelling in every residence district (503.2 to 503.6, item 11)"
+    ],
+    "notes": "Zoning office: North Huntingdon Township Community Development Department (Planning and Zoning). Census GEOID from towns_index.json. The district names run from R-1 (densest, older small lots) to R-4 (one unit per acre). Searched the OCR text of the full PDF for: accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, conversion, two-family, duplex, short-term. Caretaker hits are the Township park caretaker residence (827). No short-term rental rule. Page numbers in links are PDF pages."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "302 Definitions, Table 4",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, conversion."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "601.4, Table 4, 404",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "The ordinance has no ADU text. Table 4 lists single, duplex and multiple dwelling units only."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "601.4, 404, 503.4 to 503.6, 910.5, MPC 910.2",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=103",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'no building ... shall be used for any purpose ... other than for one or more of the uses hereinafter set forth as permitted in the district'. R-2 to R-4 allow one principal building and a single dwelling unit. A second unit needs a use variance. The Table 4 footnote special exception for unlisted residential uses is at most a question to ask."
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "Table 4 footnote, 601.3",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Any residential use not listed shall fall under Paragraph 6.1 and is subject to consideration under a Special Exception.' Caution: a second unit may be read as a duplex (listed, by right only in R-1 and R-1A) or as a second principal building (barred by 404 and 503.x.7), so the Zoning Hearing Board may refuse to treat it as unlisted. A hearing with no ADU standards."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "910.5, MPC 910.2",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=172",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex (two attached dwelling units on one lot)",
+          "path": "by_right",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "Density at most 6 units per gross acre, so two units need about 14,520 sq ft as the text reads (lot minimum 7,500 sq ft). One principal building per lot in R-1. 2 parking spaces per unit as a garage or carport.",
+          "min_lot_sqft": 14520,
+          "section": "Table 4 line 2, 302 'Dwelling, duplex', 503.2, 820.5",
+          "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+          "confidence": "secondary",
+          "note": "Whether the density cap applies to one lot or a tract is a reading. Ask the zoning officer."
+        },
+        {
+          "name": "Duplex (two attached dwelling units on one lot)",
+          "path": "by_right",
+          "districts": [
+            "R-1A"
+          ],
+          "conditions": "Density at most 6 units per gross acre, so two units need about 14,520 sq ft as the text reads (lot minimum 7,500 sq ft, 70 ft wide, side yards 20 ft). More than one unit or building on a lot needs site plan approval (914). 2 parking spaces per unit.",
+          "min_lot_sqft": 14520,
+          "section": "Table 4 line 2, 503.3, 820.5",
+          "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+          "confidence": "secondary",
+          "note": "Whether the density cap applies to one lot or a tract is a reading. Ask the zoning officer."
+        },
+        {
+          "name": "Accessory building occupied by employees on the premises as a residence",
+          "path": "special_exception",
+          "districts": [
+            "R-1",
+            "R-1A",
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Only for employees on the premises. A dwelling behind the principal structure needs a 20 ft deeded access to a street with a drive fit for fire apparatus, and meets the density rules for a principal building.",
+          "min_lot_sqft": null,
+          "section": "821.1, 821.2, 821.3",
+          "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=152",
+          "confidence": "secondary",
+          "note": "Employee housing, not a general ADU."
+        }
+      ],
+      "section": "Table 4, 821.3",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. Table 4: 'Duplex Dwelling Units' P in R-1 and R-1A only."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Table 4",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent ordinance."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "district",
+          "condition": "R-1, R-2, R-3 and R-4: 'there will be only one principal building permitted per lot.' No more than one principal detached residential building on a zoning lot.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "503.2.7, 503.4.7, 503.5.7, 503.6.7, 404",
+          "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43"
+        },
+        {
+          "kind": "size",
+          "condition": "Minimum first floor area in every residence district: 950 sq ft for a one-story dwelling, 840 sq ft for one and a half stories, 616 sq ft for two and a half stories. If it reaches a second dwelling it is a large floor for an ADU.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "503.2.2(11) to 503.6.2(11)",
+          "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42"
+        },
+        {
+          "kind": "abutting_way",
+          "condition": "A building behind the house used as a dwelling needs an unobstructed deeded access at least 20 ft wide to a street with a drive able to carry fire apparatus.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "821.1",
+          "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=151"
+        },
+        {
+          "kind": "other",
+          "condition": "Accessory buildings: not in the required front or side yard. Over 10 ft high, not in the required rear yard. In the rear yard, 10 ft from the property line.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "801.2, 801.3, 801.5",
+          "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117"
+        }
+      ],
+      "section": "404, 503, 801, 821",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Rules that reach any second unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Ordinance No. 765",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "Table 4 footnote, 404",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. These are only the forms the Table 4 footnote hearing could consider. A detached second dwelling is a second principal building, barred by 404. The tool reads the unit as not allowed and names the hearing as a path to ask."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "801.3",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No accessory height cap in feet. An accessory building over 10 ft may not stand in the required rear yard."
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "801.5",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=118",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'No accessory building, structure or use shall be placed in the required rear yard within a ten (10) feet setback from the property line'. Over 10 ft high, the district rear yard applies (801.3)."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "801.2",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'No accessory building or use shall be permitted in the required front or side yard setback area'. District side yard applies."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "801.2",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not in the required front yard. District front yard applies."
+    },
+    "setback_rear_alley_ft": {
+      "value": 10,
+      "section": "801.5",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=118",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley rule."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "801",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No distance between buildings for residential accessory buildings."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "503.2 to 503.6",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "District height is 2 stories, no feet number."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Ordinance No. 765",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "302 'Family'",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=20",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU rule. A family is one person, related persons with household help, or up to four unrelated persons."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Ordinance No. 765",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "Table 4, 404",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=104",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the ordinance allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "820.5",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=148",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "No ADU row. Single-family residence 2 spaces per dwelling unit. If the second unit counts as a unit, 4 in total. A duplex needs 2 per unit, 4 in total. Spaces as a garage or carport with a paved drive.",
+      "section": "820.3, 820.5",
+      "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=148",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "7,500 sq ft, 60 ft wide. Density 6 units per gross acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Or the greater of the two adjacent front yards if both are less."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "10 ft, 30 ft abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7260,
+        "section": "503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "From the density maximum per gross acre. Whether it reaches one lot is a reading."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "801.2, 503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Accessory buildings stay out of the required side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 30,
+        "section": "801.3, 503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      }
+    },
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "7,500 sq ft, 70 ft wide. Density 6 units per gross acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Or the greater of the two adjacent front yards if both are less."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "20 ft, 30 ft abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7260,
+        "section": "503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "From the density maximum per gross acre. Whether it reaches one lot is a reading."
+      },
+      "accessory_setback_side_ft": {
+        "value": 20,
+        "section": "801.2, 503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Accessory buildings stay out of the required side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 30,
+        "section": "801.3, 503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "10,000 sq ft, 65 ft wide. Density 4 units per gross acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Or the greater of the two adjacent front yards if both are less."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "10 ft, 30 ft abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10890,
+        "section": "503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "From the density maximum per gross acre. Whether it reaches one lot is a reading."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "801.2, 503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Accessory buildings stay out of the required side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 30,
+        "section": "801.3, 503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "20,000 sq ft, 100 ft wide. Density 2 units per gross acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Or the greater of the two adjacent front yards if both are less."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "10 ft, 30 ft abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 21780,
+        "section": "503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "From the density maximum per gross acre. Whether it reaches one lot is a reading."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "801.2, 503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Accessory buildings stay out of the required side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 30,
+        "section": "801.3, 503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "40,000 sq ft, 150 ft wide. Density 1 unit per gross acre."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Or the greater of the two adjacent front yards if both are less."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "20 ft, 40 ft abutting a street."
+      },
+      "setback_rear_ft": {
+        "value": 60,
+        "section": "503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "From the density maximum per gross acre. Whether it reaches one lot is a reading."
+      },
+      "accessory_setback_side_ft": {
+        "value": 20,
+        "section": "801.2, 503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Accessory buildings stay out of the required side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 60,
+        "section": "801.3, 503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=117",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      }
+    }
+  }
+}

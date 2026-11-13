@@ -1,0 +1,503 @@
+{
+  "provenance": {
+    "jurisdiction": "Ridley township",
+    "instrument": "Code of the Township of Ridley, Chapter 325 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code RI0534): includes legislation through 02-25-2026. New Laws: none on 2026-11-12. Chapter 325 history: original Ord. No. 237 (1937), restated 1970, 1977 and 1990. Amendments since 2020 touch C-1, C-2, I and fences only (Ord. 2056, 2060, 2084, 2025 amendment to 325-25). The A, B and C Residential articles carry no amendment after 2007. Read in the eCode360 print views in a browser on 2026-11-12.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/8799872",
+      "https://ecode360.com/print/RI0534?guid=8799872",
+      "https://ecode360.com/8799907",
+      "https://ecode360.com/8800127",
+      "https://ecode360.com/8800133",
+      "https://ecode360.com/8800139",
+      "https://ecode360.com/8800152",
+      "https://ecode360.com/8800158",
+      "https://ecode360.com/8800175",
+      "https://ecode360.com/8800179",
+      "https://ecode360.com/8800183",
+      "https://ecode360.com/8800198",
+      "https://ecode360.com/8800201",
+      "https://ecode360.com/8800204",
+      "https://ecode360.com/8800417",
+      "https://ecode360.com/8800890",
+      "https://ecode360.com/8800939",
+      "https://ecode360.com/8801318",
+      "https://ecode360.com/8801347",
+      "https://ecode360.com/8801352",
+      "https://ecode360.com/RI0534/laws"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204564800",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/8799872",
+    "code_current_through": "2026-02-25",
+    "code_current_through_note": "eCode360: Includes legislation through 02-25-2026. New Laws: none.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "A, B and C Residential allow the listed uses 'and for no other' (325-13, 325-17, 325-21). A and B list only the single-family detached house. A second unit on a house lot is a use variance",
+      "No detached garage or accessory building may have central heating or plumbing tied to the sanitary sewer (325-89F). That rules out a dwelling in a detached accessory building without a variance",
+      "Detached garages: one story, 15 ft with a peaked roof or 10 ft flat, no dormers. Other accessory buildings: 10 ft. At least 3 ft from side and rear lines and behind the rear of the house (325-89B, C, E)",
+      "A detached garage or accessory building must stand at least 30 ft from any other building on the lot in A, and 20 ft in B and C (325-15G, 325-19E, 325-23G)",
+      "C Residential allows two-family attached or semidetached dwellings by right, and conversion apartments (a house converted for more than two families) by special exception (325-21B, 325-22B)",
+      "Minimum habitable floor area for a new dwelling unit: A 1,150 sq ft (one story), B 950 sq ft (new or reconverted), C 720 sq ft (new or reconverted) (325-15J, 325-19H, 325-23J)",
+      "The MH Multiple Type Housing district allows two-family stacked dwellings on parcels of one acre or more (325-53)",
+      "Parking: single-family 1 space per unit, two-family 1.5 per unit. A garage converted to living space must be replaced on site (325-80B)"
+    ],
+    "notes": "Zoning office: Ridley Township Zoning Officer, Zoning Hearing Board (325-115, 325-116). Census GEOID from towns_index.json. Searched the full Chapter 325 print view for: accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, accessory unit, family member, short-term, conversion, two-family. 'Accessory dwelling uses' appears once, in the professional office definition, and is not an ADU. The only 'same general character' clause is in C-2 (325-32). No short-term rental rule."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "325-7",
+      "url": "https://ecode360.com/8799907",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, accessory unit."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "325-13, 325-17, 325-21",
+      "url": "https://ecode360.com/8800139",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "The code has no ADU text. A district: 'for any of the following purposes and for no other: A. Single-family detached dwelling.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "325-13, 325-17, 325-21, 325-112, MPC 910.2",
+      "url": "https://ecode360.com/8801352",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Residential districts allow the listed uses 'and no other'. No section sends unlisted uses to a special exception or conditional use in the residential districts. A second unit on a house lot needs a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "325-112, MPC 910.2",
+      "url": "https://ecode360.com/8801352",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family attached or semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "C"
+          ],
+          "conditions": "Lot at least 5,000 sq ft and 50 ft wide. A semidetached building takes two side yards of 10 ft. Any other building that is not a single-family dwelling takes two 20 ft side yards. Front 15 ft, rear 25 ft. Each unit meets the C minimum floor area (720 sq ft one story). 1.5 parking spaces per unit. On a typical 50 ft lot only a semidetached (side by side) building fits: any other two-family building needs two 20 ft side yards (325-23E), leaving a 10 ft wide building. A house split into stacked units is 'multifamily' in 325-7, which C does not list.",
+          "min_lot_sqft": 5000,
+          "section": "325-21B, 325-23A, D, E, J, 325-80B",
+          "url": "https://ecode360.com/8800198",
+          "note": "The code does not say whether a house split into two stacked units is a 'two-family attached' dwelling. Its 'multifamily' definition is two families, one above the other, and C does not list it. Ask the zoning officer."
+        },
+        {
+          "name": "Conversion apartments (a one-family house converted for more than two families)",
+          "path": "special_exception",
+          "districts": [
+            "C"
+          ],
+          "conditions": "Only for more than two families. Each reconverted unit needs the C minimum habitable floor area (720 sq ft one story, about 835 sq ft for one and a half stories, 950 sq ft for two stories).",
+          "min_lot_sqft": 5000,
+          "section": "325-22B, 325-7 'Conversion apartments', 325-23J",
+          "url": "https://ecode360.com/8800201"
+        },
+        {
+          "name": "Multifamily dwelling (two families, one unit above the other)",
+          "path": "by_right",
+          "districts": [
+            "MH"
+          ],
+          "conditions": "Parcel of at least one acre. At most one unit per 1,000 sq ft of parcel. Buildings 35 ft from parcel lines and 20 ft apart. Public sewer. One space per two units.",
+          "min_lot_sqft": 43560,
+          "section": "325-53B(2), C(6), (7), (10), (11), (12)",
+          "url": "https://ecode360.com/8800417"
+        }
+      ],
+      "section": "325-21, 325-22, 325-53",
+      "url": "https://ecode360.com/8800198",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. C: 'Two-family attached or semidetached dwellings' (325-21B) and 'Conversion apartments' by special exception (325-22B)."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "325-13, 325-17, 325-21",
+      "url": "https://ecode360.com/8800139",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "utilities",
+          "condition": "'No private garage and no accessory building which is separated from the principal building on any lot shall contain or have installed central heating systems or plumbing systems which involve a tie-in to the sanitary sewer system.'",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "325-89F",
+          "url": "https://ecode360.com/8800939",
+          "bill_overrides": true
+        },
+        {
+          "kind": "other",
+          "condition": "Detached garages are one story with no dormers, 15 ft high with a peaked roof or 10 ft flat. Other accessory buildings are at most 10 ft. They stand 3 ft from side and rear lines and behind the rear of the house.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "325-89B, C, E",
+          "url": "https://ecode360.com/8800939"
+        },
+        {
+          "kind": "size",
+          "condition": "Minimum habitable floor area: A, any new dwelling unit, 1,150 sq ft for one story (325-15J). B, any new or reconverted dwelling unit, 950 sq ft (325-19H). C, any new dwelling or reconverted unit, 720 sq ft (325-23J). More for one and a half or two stories.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "325-15J, 325-19H, 325-23J",
+          "url": "https://ecode360.com/8800158"
+        },
+        {
+          "kind": "parking",
+          "condition": "When a garage that counted for required parking becomes living space, the parking must be provided elsewhere on the lot.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "325-80B(6)",
+          "url": "https://ecode360.com/8800890"
+        }
+      ],
+      "section": "325-89, 325-15, 325-19, 325-23, 325-80",
+      "url": "https://ecode360.com/8800939",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Rules that reach any second unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 325",
+      "url": "https://ecode360.com/print/RI0534?guid=8799872",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "325-13, 325-17, 325-21",
+      "url": "https://ecode360.com/8800139",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A detached building may not have plumbing tied to the sewer (325-89F)."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 10,
+      "section": "325-89E",
+      "url": "https://ecode360.com/8800939",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. 'All accessory buildings, except garages and carports, which are separated from the principal building on any lot shall not exceed a maximum of 10 feet in height.'"
+    },
+    "max_height_garage_ft": {
+      "value": 15,
+      "section": "325-89C",
+      "url": "https://ecode360.com/8800939",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Garages and carports 'no more than one story and shall not exceed 15 feet in height in the case of a peaked roof and 10 feet in height in the case of a flat roof. There shall be no dormers.'"
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "325-89B",
+      "url": "https://ecode360.com/8800939",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'not less than three feet from any side or rear lot line and behind the rearmost portion of the principal building'"
+    },
+    "setback_rear_ft": {
+      "value": 3,
+      "section": "325-89B",
+      "url": "https://ecode360.com/8800939",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'not less than three feet from any side or rear lot line'"
+    },
+    "setback_rear_alley_ft": {
+      "value": 3,
+      "section": "325-89B",
+      "url": "https://ecode360.com/8800939",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley rule. The 3 ft applies from 'any side or rear lot line'."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "325-89A, B",
+      "url": "https://ecode360.com/8800939",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Detached accessory buildings stand behind the rearmost portion of the house. On a corner lot, 5 ft more than the house setback."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "325-15, 325-19, 325-23",
+      "url": "https://ecode360.com/8800158",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No principal height cap in A, B or C. Yards grow for buildings over 40 ft."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 325",
+      "url": "https://ecode360.com/print/RI0534?guid=8799872",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "325-7 'Family'",
+      "url": "https://ecode360.com/8799907",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU rule. A family is persons 'living and cooking together as a single housekeeping unit', related or not. No cap on unrelated persons."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 325",
+      "url": "https://ecode360.com/print/RI0534?guid=8799872",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not addressed in Chapter 325."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "325-13, 325-17, 325-21",
+      "url": "https://ecode360.com/8800139",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "325-80B",
+      "url": "https://ecode360.com/8800890",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "No ADU row. Single-family residences need 1 space per unit. If the second unit counts as a unit, 2 in total. A two-family dwelling needs 1.5 per unit, 3 in total.",
+      "section": "325-80B Table 325-80-1",
+      "url": "https://ecode360.com/8800890",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "325-15A",
+        "url": "https://ecode360.com/8800158",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'in no case shall any building be erected on a lot with an area of less than 6,000 square feet and width of less than 60 feet.' Building area at most 20%."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "325-15B",
+        "url": "https://ecode360.com/8800158",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Corner lot: a front yard on each street."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "325-15D",
+        "url": "https://ecode360.com/8800158",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Two side yards, 30 ft together, neither under 10 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "325-15F",
+        "url": "https://ecode360.com/8800158",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "15 ft for a lot under 100 ft deep held in single and separate ownership when the chapter took effect."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "325-15A",
+        "url": "https://ecode360.com/8800158",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed 20% of the lot area'. Detached accessory buildings at most 11% (325-89D)."
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "325-15",
+        "url": "https://ecode360.com/8800158",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "No height cap. Yards grow for a building over 40 ft."
+      },
+      "separation_ft": {
+        "value": 30,
+        "section": "325-15G",
+        "url": "https://ecode360.com/8800158",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'No garage or accessory building that is separated from the main building shall hereafter be located at a distance of less than 30 feet from any portion of any other building'"
+      }
+    },
+    "B": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "325-19A",
+        "url": "https://ecode360.com/8800183",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'in no case shall any building be erected on any lot with an area of less than 5,000 square feet and a width of less than 50 feet.'"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "325-19B",
+        "url": "https://ecode360.com/8800183",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "325-19C",
+        "url": "https://ecode360.com/8800183",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Two side yards, 20 ft together, neither under 8 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "325-19D",
+        "url": "https://ecode360.com/8800183",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "15 ft for a shallow lot held separately when the chapter took effect."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "325-19A",
+        "url": "https://ecode360.com/8800183",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Detached accessory buildings at most 13% (325-89D)."
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "325-19",
+        "url": "https://ecode360.com/8800183",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "No height cap. Yards grow for a building over 40 ft."
+      },
+      "separation_ft": {
+        "value": 20,
+        "section": "325-19E",
+        "url": "https://ecode360.com/8800183",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Detached garage or accessory building at least 20 ft from any other building on the lot."
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "325-23A",
+        "url": "https://ecode360.com/8800204",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'in no case shall a building be erected on a lot with an area of less than 5,000 square feet and a width of less than 50 feet.'"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "325-23B",
+        "url": "https://ecode360.com/8800204",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "325-23D",
+        "url": "https://ecode360.com/8800204",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single-family detached: 20 ft together, neither under 8 ft. Semidetached: 10 ft each. Other buildings: 20 ft each (325-23E)."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "325-23F",
+        "url": "https://ecode360.com/8800204",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "15 ft for a shallow lot held separately when the chapter took effect."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "325-23A",
+        "url": "https://ecode360.com/8800204",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Detached accessory buildings at most 13% (325-89D)."
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "325-23",
+        "url": "https://ecode360.com/8800204",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "No height cap. Yards grow for a building over 40 ft."
+      },
+      "separation_ft": {
+        "value": 20,
+        "section": "325-23G",
+        "url": "https://ecode360.com/8800204",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Detached garage or accessory building at least 20 ft from any other building on the lot."
+      }
+    }
+  }
+}

@@ -1,0 +1,517 @@
+{
+  "provenance": {
+    "jurisdiction": "Hazleton city",
+    "instrument": "Code of the City of Hazleton, Chapter 575 Zoning (Hazleton City Zoning Ordinance of 2021, Ord. No. 2021-9), as published on eCode360, with 575 Attachment 1 (Use Regulations) and Attachment 2 (Dimensional Regulations)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code HA1359): includes legislation through 08-25-2026. The use table carries Ord. No. 2022-13 and Ord. No. 2026-7 (4-14-2026). 575-610 carries Ord. 2022-13, 2024-9 and 2026-7. New Laws: Ord. 2026-17 (parking, vehicles) and 2026-18 (animals), not Chapter 575. Read in the eCode360 print views and the attachment PDFs on 2026-11-12.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/37222224",
+      "https://ecode360.com/print/HA1359?guid=37222224",
+      "https://ecode360.com/37222265",
+      "https://ecode360.com/37222328",
+      "https://ecode360.com/37222888",
+      "https://ecode360.com/37222925",
+      "https://ecode360.com/37222926",
+      "https://ecode360.com/37222977",
+      "https://ecode360.com/37222978",
+      "https://ecode360.com/37222994",
+      "https://ecode360.com/37223003",
+      "https://ecode360.com/42714899",
+      "https://ecode360.com/37223873",
+      "https://ecode360.com/37224079",
+      "https://ecode360.com/37224094",
+      "https://ecode360.com/37224475",
+      "https://ecode360.com/attachment/339316/HA1359-575a%20Zoning%20District%20Use%20Regulations.pdf",
+      "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+      "https://ecode360.com/HA1359/laws"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Luzerne",
+    "municipality_type": "city",
+    "geoid": "4207933408",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/37222224",
+    "code_current_through": "2026-08-25",
+    "code_current_through_note": "eCode360: Includes legislation through 08-25-2026. New Laws: none for Chapter 575.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
+      "Only one principal building and its accessory structures per lot (575-412A)",
+      "Added living space may go only in the principal building, not in an unattached accessory structure (575-610A(4))",
+      "Converting a single-family house into a two-family dwelling is permitted where two-family dwellings are permitted by right: R-2, R-3 and CC. Each unit needs at least 900 sq ft (575-610A(3), 575-411, use table)",
+      "R-1 does not allow two-family dwellings. R-3 allows conversion to multifamily (up to four units) by special exception (use table, 575-610A)",
+      "A tiny home (500 to 750 sq ft) is a principal dwelling, allowed by right only in R-3, not a second unit on a house lot (575-202, 575-610N)",
+      "Unattached residential accessory buildings: side and rear 10 ft, front 20 ft, 15 ft high, two per lot, 1,600 sq ft each at most (575-402)",
+      "Where doubt exists, the language is read in favor of the property owner (575-104B)",
+      "R-1 conversion: 575-610A(3) permits converting a house to two units where 'the single-family dwelling or two-family dwelling is a use permitted by right'. Single-family is by right in R-1, so the words are open, but two-family is not permitted in R-1. The file reads R-1 as not allowed. Ask the zoning officer",
+      "Parking: 2 spaces per dwelling unit for single-family and two-family dwellings (575-801C)"
+    ],
+    "notes": "Zoning office: City of Hazleton Zoning Officer. Census GEOID from towns_index.json. Searched the full Chapter 575 print view for: accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, accessory unit, conversion, two-family, not listed, similar. 'In-law' appears only in the relative definition. No section sends unlisted uses to a hearing. Short-term home rentals: special exception in R-2, permitted in R-3 and CC (575-610I)."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "575-202",
+      "url": "https://ecode360.com/37222328",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, accessory unit."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "575-503 use table, 575-412",
+      "url": "https://ecode360.com/attachment/339316/HA1359-575a%20Zoning%20District%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "The code has no ADU text. The use table lists single-family, two-family and multifamily dwelling units, conversions and tiny homes, but no accessory unit."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "575-412A, 575-503, 575-610A(4), 575-1114, MPC 910.2",
+      "url": "https://ecode360.com/37222978",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'there shall be no more than one principal building and its permitted accessory structures located on each lot'. No section sends unlisted uses to a hearing. A second unit that is not a two-family conversion needs a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "575-1114, MPC 910.2",
+      "url": "https://ecode360.com/37224475",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A lot that fails a district rule also needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family dwelling into a two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Permitted where two-family dwellings are permitted by right. Each unit at least 900 sq ft. No exterior stair on the front and no parking in the front yard if it becomes multifamily. 2 parking spaces per unit. District lot 7,500 sq ft, 75 ft wide, but an existing lot of record below it may still be built on if setbacks, height and coverage are met (575-709A). A twin (one side of a semidetached pair) split into two units makes a three-unit building, which is multifamily, a special exception in R-2.",
+          "min_lot_sqft": null,
+          "section": "575-610A(3), 575-411, 575-709A, 575 Attachment 1, 575-801C",
+          "url": "https://ecode360.com/37223873"
+        },
+        {
+          "name": "Conversion of a single-family dwelling into a two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Each unit at least 900 sq ft. 2 parking spaces per unit. District lot 6,500 sq ft, 65 ft wide, but an existing lot of record below it may still be built on if setbacks, height and coverage are met (575-709A). A twin split into two units makes a three-unit building (multifamily, permitted in R-3).",
+          "min_lot_sqft": null,
+          "section": "575-610A(3), 575-411, 575-709A, 575 Attachment 1, 575-801C",
+          "url": "https://ecode360.com/37223873"
+        },
+        {
+          "name": "Conversion of a single-family dwelling into a two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "CC"
+          ],
+          "conditions": "Each unit at least 900 sq ft. 2 parking spaces per unit. District lot 4,500 sq ft, but an existing lot of record below it may still be built on (575-709A). A twin split into two units makes a three-unit building (multifamily, special exception in CC).",
+          "min_lot_sqft": null,
+          "section": "575-610A(3), 575-411, 575-709A, 575 Attachment 1, 575-801C",
+          "url": "https://ecode360.com/37223873"
+        },
+        {
+          "name": "Conversion to multifamily (three or four units)",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "At most four units per lot, each at least 750 sq ft. No exterior stair on the front, no parking in the front yard. 35 ft setback next to an existing single-family dwelling. 12 units per net acre at most.",
+          "min_lot_sqft": 6500,
+          "section": "575-610A(1), (2), 575-610F, 575-411, 575 Attachment 1",
+          "url": "https://ecode360.com/37223873"
+        }
+      ],
+      "section": "575-610A, 575 Attachment 1",
+      "url": "https://ecode360.com/attachment/339316/HA1359-575a%20Zoning%20District%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. Use table: 'Two-Family Dwelling Unit' N P P P for R-1, R-2, R-3, CC. 'Conversion to Multi-Family' S in R-3 only. 610A(3): 'the conversion of a single-family dwelling unit into a two-family dwelling unit is permitted, provided that the single-family dwelling or two-family dwelling is a use permitted by right in the zoning district'."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "575-503, 575 Attachment 1",
+      "url": "https://ecode360.com/attachment/339316/HA1359-575a%20Zoning%20District%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "'The adding or construction of additional living space ... shall be limited to the principal structure or building on the property and shall not be placed in an unattached accessory structure.'",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "575-610A(4)",
+          "url": "https://ecode360.com/37223873"
+        },
+        {
+          "kind": "district",
+          "condition": "No more than one principal building and its accessory structures per lot.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "575-412A",
+          "url": "https://ecode360.com/37222978"
+        },
+        {
+          "kind": "size",
+          "condition": "A single-family or two-family dwelling unit needs at least 900 sq ft of habitable floor area. The section title says minimum, the table column reads 'Maximum Size Per Dwelling Unit'. Read as a minimum.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "575-411",
+          "url": "https://ecode360.com/37222977"
+        }
+      ],
+      "section": "575-412, 575-610A, 575-411",
+      "url": "https://ecode360.com/37223873",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Rules that reach any second unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "575-508",
+      "url": "https://ecode360.com/37223360",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "The historical overlay adds no residential use."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "575-503",
+      "url": "https://ecode360.com/attachment/339316/HA1359-575a%20Zoning%20District%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. Living space may not go in an unattached accessory structure (575-610A(4))."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "575-402",
+      "url": "https://ecode360.com/37222926",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. Unattached residential accessory buildings: 15 ft, two per lot, 1,600 sq ft each."
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "575-402",
+      "url": "https://ecode360.com/37222926",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Residential unattached accessory building: 10 ft side."
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "575-402",
+      "url": "https://ecode360.com/37222926",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Residential unattached accessory building: 10 ft rear."
+    },
+    "setback_rear_alley_ft": {
+      "value": 10,
+      "section": "575-402",
+      "url": "https://ecode360.com/37222926",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley rule."
+    },
+    "setback_front_ft": {
+      "value": 20,
+      "section": "575-402",
+      "url": "https://ecode360.com/37222926",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Only in a side or rear yard. 20 ft front setback in the table."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 1600,
+      "section": "575-402",
+      "url": "https://ecode360.com/37222926",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Maximum Floor Area (square feet)' 1,600 for a residential unattached accessory building."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "575-402",
+      "url": "https://ecode360.com/37222926",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No distance between buildings for accessory buildings."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "575-401, 575 Attachment 2",
+      "url": "https://ecode360.com/37222925",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "An attached accessory building is part of the principal building. District height 35 ft."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 575",
+      "url": "https://ecode360.com/print/HA1359?guid=37222224",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "575-202 'Family'",
+      "url": "https://ecode360.com/37222328",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No ADU rule. A family allows up to four unrelated persons."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "575 Attachment 1, 575-610I",
+      "url": "https://ecode360.com/37223873",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU rule. Short-term home rental: not permitted in R-1, special exception in R-2, permitted in R-3 and CC."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "575-412A, 575-503",
+      "url": "https://ecode360.com/37222978",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "575-801C",
+      "url": "https://ecode360.com/37224094",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "No ADU row. Single-family and two-family dwelling units: 2 spaces each. A house converted to two units needs 4 in total.",
+      "section": "575-801C",
+      "url": "https://ecode360.com/37224094",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "10,000 sq ft, 100 ft wide, 150 ft deep. 43,560 sq ft with public water and on-lot sewage, 87,120 sq ft with well and on-lot sewage."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "7,500 sq ft, 75 ft wide, 100 ft deep. 43,560 sq ft with public water and on-lot sewage, 87,120 sq ft with well and on-lot sewage."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 6500,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "6,500 sq ft, 65 ft wide, 50 ft deep. 43,560 sq ft with public water and on-lot sewage, 87,120 sq ft with well and on-lot sewage."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "CC": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "4,500 sq ft, 20 ft wide, 75 ft deep. 43,560 sq ft with public water and on-lot sewage, 87,120 sq ft with well and on-lot sewage."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "575 Attachment 2",
+        "url": "https://ecode360.com/attachment/339316/HA1359-575b%20Zoning%20District%20Dimensional%20Regulations.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    }
+  }
+}

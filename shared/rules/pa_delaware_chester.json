@@ -1,0 +1,905 @@
+{
+  "provenance": {
+    "jurisdiction": "Chester city",
+    "instrument": "Code of the City of Chester, Chapter 550 Zoning (City of Chester Zoning Ordinance of 2015, Ord. No. 5-2015), as published on eCode360, with Ord. No. 10-2026 (adopted 10-28-2026, not yet codified)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code CH6779): includes legislation through 08-12-2026. Chapter 550 adopted 9-9-2015 by Ord. No. 5-2015, amended 8-23-2017 (Ord. 6-2017), 2022, 2025. New Laws lists Ord. No. 10-2026 (Zoning Amendment, passed 10-28-2026, effective on adoption). It was read (scanned PDF). It renames R-2, R-3, R-4, sets residential parking at 1 space per dwelling unit with on-street credit (550-71, 550-72E(2)), drops per-unit density in C-1/R and C-2/R, and adds CBD multifamily frontage rules. It does not touch the unit for care of relative. Read in the eCode360 print views in a browser on 2026-11-12.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/45941765",
+      "https://ecode360.com/print/CH6779?guid=45941765",
+      "https://ecode360.com/45941806",
+      "https://ecode360.com/45941812",
+      "https://ecode360.com/45941816",
+      "https://ecode360.com/45941829",
+      "https://ecode360.com/45941848",
+      "https://ecode360.com/45941851",
+      "https://ecode360.com/45941855",
+      "https://ecode360.com/45941962",
+      "https://ecode360.com/45942323",
+      "https://ecode360.com/45942594",
+      "https://ecode360.com/45942603",
+      "https://ecode360.com/45943010",
+      "https://ecode360.com/45943190",
+      "https://ecode360.com/45943268",
+      "https://ecode360.com/45943477",
+      "https://ecode360.com/45943518",
+      "https://ecode360.com/45943573",
+      "https://ecode360.com/45943612",
+      "https://ecode360.com/CH6779/laws",
+      "https://ecode360.com/CH6779/laws/LF2883850.pdf"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Delaware",
+    "municipality_type": "city",
+    "geoid": "4204513208",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/45941765",
+    "code_current_through": "2026-08-12",
+    "code_current_through_note": "eCode360: Includes legislation through 08-12-2026. New Laws: Ord. 10-2026 (Ch 550, 2026-10-28) not yet codified.",
+    "checks": [
+      "The code's second unit is a 'unit for care of relative'. It is permitted by right in R-1 to R-4, C-1/R, C-2/R, CBD and U/O (550-13, 550-15). Not in CN, LIC, MIC, HIC or W-1",
+      "At most two people may live in it, relatives of the household in the house. At least one must need care because of illness, old age or disability (550-45D(18)(b))",
+      "A recorded legal mechanism acceptable to the City must stop its use as a separate unit when the relative leaves. The Zoning Officer may ask for proof at any time (550-45D(18)(d), (e))",
+      "The unit must be attached to the house. A detached unit or modular cottage needs a Zoning Hearing Board special exception, must meet principal building setbacks and may have at most 900 sq ft of floor area. A modular cottage is removed within 90 days after the relative leaves (550-45D(18)(f))",
+      "A lawful detached garage may be converted (550-45D(18)(c)). A converted garage is a detached unit, so read it as a special exception. Ask the zoning officer. Garages may be at most 15 ft high (550-22B(5))",
+      "The definitions list an 'accessory apartment' (a unit in the house or above a garage), but no use table lists it (550-115). Ask the zoning officer before relying on it",
+      "Each dwelling unit needs at least 500 sq ft of heated indoor floor area, mostly above ground level (550-88C)",
+      "R-2 and R-3 set lot area per dwelling unit (2,500 and 1,000 sq ft). Whether the care unit counts toward it is a reading. Ask the zoning officer",
+      "Ord. No. 10-2026 (effective 10-28-2026, not yet in the online code): 1 off-street space per dwelling unit, on-street spaces along the lot frontage may count. No parking in CBD",
+      "A building on the Historic Sites List may have 'one or more dwelling units within the building' by special exception, for any household. It is not a new structure (550-53A(1), 550-55)",
+      "On an existing lot with a nonconforming width, the Zoning Hearing Board may cut each side setback by up to 50 percent. The rule bars more units from the cut 'except for a unit for care of relative' (550-92C(2)(c))",
+      "A single permitted principal use and its customary accessory uses may be built on a lawful nonconforming lot (550-92C(2)(a)). The care unit is not tied to a conforming lot",
+      "A use the code does not list in any district may be allowed by special exception (550-12, 550-100B). A general second unit is listed (two-family dwelling, conversion), so this route is not expected to reach it"
+    ],
+    "notes": "Zoning office: City of Chester Zoning Officer and Zoning Hearing Board (550-105, 550-106). Census GEOID from towns_index.json (2020 county subdivision). Searched the full Chapter 550 print view for: accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, short-term, transient. 'Accessory apartment' appears only in 550-115. No short-term rental rule."
+  },
+  "adu": {
+    "term": {
+      "value": "unit for care of relative",
+      "section": "550-115 'Unit for care of relative', 550-13",
+      "url": "https://ecode360.com/45943612",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'A dwelling unit that: A. Is especially created for and limited to occupancy by a close relative of the permanent residents of the principal dwelling unit'. 550-115 'Dwelling unit': a unit 'shall not include two or more separate living areas that are completely separated by interior walls ... unless approved as unit for care of relative', so a walled-off suite for anyone else is a second unit. 550-115 also defines 'accessory apartment', a term no use table uses."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "550-13, 550-15, 550-45D(18)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Permitted by right in R-1 to R-4, C-1/R, C-2/R, CBD and U/O, only for relatives of the household and only while one of them needs care."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "550-13 table, 550-45D(18)(f)",
+      "url": "https://ecode360.com/45941812",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Use table: 'Unit for care of relative (see § 550-45)' P in R-1 to R-4. P means 'Permitted by right use (zoning decision by Zoning Officer)'. By right only for a unit attached to the house."
+    },
+    "detached_in_yard_path": {
+      "value": "special_exception",
+      "section": "550-45D(18)(f), 550-111",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'The accessory unit shall be attached to the principal dwelling unit, except a detached dwelling may be specifically approved by the Zoning Hearing Board as a special exception.'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "550-106, MPC 910.2",
+      "url": "https://ecode360.com/45943518",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A lot that fails these rules, or a district that does not list the unit (CN, LIC, MIC, HIC, W-1), needs a use variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of an existing one-family dwelling into two or more dwelling units",
+          "path": "special_exception",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Only a building with more than 3,000 sq ft of heated habitable indoor floor area. Keeps a one-family look with a single front entrance. No exterior stair on the front. At most two parking spaces in the front yard. At most four units unless the building had more than 3,000 sq ft when the chapter was adopted. Each unit at least 500 sq ft.",
+          "min_lot_sqft": null,
+          "section": "550-13 table and note 1, 550-44A(18), 550-88C",
+          "url": "https://ecode360.com/45941962"
+        },
+        {
+          "name": "Conversion of an existing one-family dwelling into two or more dwelling units",
+          "path": "special_exception",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "No building size limit in R-4. Keeps a one-family look with a single front entrance. No exterior stair on the front. At most four units unless the building had more than 3,000 sq ft when the chapter was adopted. Each unit at least 500 sq ft.",
+          "min_lot_sqft": null,
+          "section": "550-13 table, 550-44A(18), 550-88C",
+          "url": "https://ecode360.com/45941962"
+        },
+        {
+          "name": "Two-family dwelling (typically one unit above the other)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Average lot area 2,500 sq ft per dwelling unit, lot width 25 ft per unit. Public water and sewer.",
+          "min_lot_sqft": 5000,
+          "section": "550-13 table, 550-20",
+          "url": "https://ecode360.com/45941848"
+        },
+        {
+          "name": "Two-family dwelling (typically one unit above the other)",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Lot area 1,000 sq ft per dwelling unit, lot width 18 ft per unit (R-4 uses the R-3 standards for uses other than multifamily). Public water and sewer.",
+          "min_lot_sqft": 2000,
+          "section": "550-13 table, 550-20",
+          "url": "https://ecode360.com/45941848"
+        },
+        {
+          "name": "Second principal house on the same lot (land development approval needed)",
+          "path": "by_right",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "A lot may hold more than one permitted principal building if every rule is met for each building. R-1 sets lot width '40 per dwelling unit', so 80 ft for two houses. R-1 sets no lot area per unit, and the 550-88B(1)(a) example applies the most restrictive single requirement rather than adding them, so the area need is unclear. Each house meets the district yards. Two houses on one lot are a land development under MPC 107 and need a plan under Chapter 490 (Subdivision and Land Development), so this is not a plain zoning permit.",
+          "min_lot_sqft": null,
+          "section": "550-88B(1), 550-20",
+          "url": "https://ecode360.com/45943190",
+          "confidence": "secondary",
+          "note": "The use is permitted, but the land development plan and the area reading make it far from a plain permit. Ask the zoning officer."
+        },
+        {
+          "name": "Second principal house on the same lot (land development approval needed)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "A lot may hold more than one permitted principal building if every rule is met for each building. 2,500 sq ft of lot per dwelling unit, and each house meets the district yards. Two houses on one lot are a land development under MPC 107 and need a plan under Chapter 490 (Subdivision and Land Development), so this is not a plain zoning permit.",
+          "min_lot_sqft": 5000,
+          "section": "550-88B(1), 550-20",
+          "url": "https://ecode360.com/45943190",
+          "confidence": "secondary",
+          "note": "Ask the zoning officer how the yards apply to two houses on one lot."
+        },
+        {
+          "name": "Second principal house on the same lot (land development approval needed)",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "A lot may hold more than one permitted principal building if every rule is met for each building. 1,000 sq ft of lot per dwelling unit, and each house meets the district yards. Two houses on one lot are a land development under MPC 107 and need a plan under Chapter 490 (Subdivision and Land Development), so this is not a plain zoning permit.",
+          "min_lot_sqft": 2000,
+          "section": "550-88B(1), 550-20",
+          "url": "https://ecode360.com/45943190",
+          "confidence": "secondary",
+          "note": "Ask the zoning officer how the yards apply to two houses on one lot."
+        }
+      ],
+      "section": "550-13, 550-44A(18), 550-88B",
+      "url": "https://ecode360.com/45941812",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. Use table rows: 'Two-family dwelling (Typically one unit above another unit)' N N P P P and 'Conversion of an existing one-family dwelling into two or more dwelling units' N SE1 SE1 SE1 SE for CN, R-1 to R-4. Note 1: 'Limited to a building that includes more than 3,000 square feet of heated habitable indoor floor area.'"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "C-1/R",
+        "C-2/R",
+        "CBD",
+        "U/O"
+      ],
+      "section": "550-13 table, 550-15 table",
+      "url": "https://ecode360.com/45941812",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "P in R-1, R-2, R-3, R-4 (550-13). 550-15: 'Unit for care of relative (see § 550-45) on the lot of an existing dwelling' P in C-1/R, C-2/R, CBD, U/O and N in LIC, MIC, HIC, W-1. N in CN."
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "550-13 table, 550-45D(18)(f)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "The rule names no house type. The unit must not reduce the 'one-family residential appearance' of the dwelling. Reading: any lawful single house."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "550-45D(18), 550-20",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No lot minimum for the unit. The district lot rules apply (see districts). 550-92C(2)(a): a permitted principal use and its customary accessory uses may be built on a lawful nonconforming lot."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "At most two people may live in the unit, relatives of the permanent residents of the house (spouse, sibling, parent, child, grandparent, grandchild, uncle, aunt, niece, nephew, in-laws as listed). At least one needs care because of illness, old age or disability.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "550-45D(18)(b), 550-115 'Related or relative'",
+          "url": "https://ecode360.com/45942323"
+        },
+        {
+          "kind": "other",
+          "condition": "Before the permit, a legally binding mechanism acceptable to the City must bar use as a separate dwelling unit after the relative leaves. It binds later owners. The Zoning Officer may ask for proof that the relative still lives there.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "550-45D(18)(d), (e)",
+          "url": "https://ecode360.com/45942323",
+          "bill_overrides": true
+        },
+        {
+          "kind": "design",
+          "condition": "The unit is built so it can easily become part of the house again, or it is a modular cottage removed within 90 days after the relative leaves. The house keeps a one-family look from the lot lines.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "550-45D(18)(c), (f)",
+          "url": "https://ecode360.com/45942323"
+        },
+        {
+          "kind": "size",
+          "condition": "A detached unit needs a special exception, must meet the principal building setbacks and may have at most 900 sq ft of building floor area.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "550-45D(18)(f)",
+          "url": "https://ecode360.com/45942323"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "Garage conversion is allowed: 'A lawful detached garage may be converted into a Unit for Care of Relative'. As a detached unit its path is a special exception (550-45D(18)(f)), with principal setbacks and the 900 sq ft cap. This tool shows 'variance' for the garage conversion form only because it cannot give that form its own path. The code path is a special exception. A new unit above a garage is not in this rule. The 550-115 'accessory apartment' definition names a unit above a garage, but no use table lists it, and garages are capped at 15 ft (550-22B(5)).",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "550-45D(18)(c), (f), 550-22B(5)",
+          "url": "https://ecode360.com/45942323"
+        },
+        {
+          "kind": "other",
+          "condition": "In C-1/R, C-2/R, CBD and U/O the unit is allowed only on the lot of an existing dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "C-1/R",
+            "C-2/R",
+            "CBD",
+            "U/O"
+          ],
+          "building_types": null,
+          "section": "550-15 table",
+          "url": "https://ecode360.com/45941829"
+        },
+        {
+          "kind": "size",
+          "condition": "Each dwelling unit needs at least 500 sq ft of enclosed heated habitable floor area, mostly above ground level.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "550-88C, 550-115 'Unit for care of relative'",
+          "url": "https://ecode360.com/45943190"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Each dwelling unit and each principal building is served by public water and public sewer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "550-20",
+          "url": "https://ecode360.com/45941848"
+        }
+      ],
+      "section": "550-45D(18), 550-15, 550-88C",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Conditions from the unit for care of relative rule."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "550-45D(18)(c), (f)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "New construction is allowed: an attached addition by right, a detached unit or modular cottage by special exception."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "550-53",
+      "url": "https://ecode360.com/45942594",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No historic rule in 550-45D(18). 550-53 lets a building on the Historic Sites List add dwelling units by special exception. Listed in checks."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new"
+      ],
+      "section": "550-45D(18)(c), (f)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Inside or attached to the house by right. A detached unit by special exception. A converted detached garage is expressly allowed (550-45D(18)(c)) by special exception, but the tool cannot give that form its own path, so it is left out here and the tool shows a variance for it. The condition on the garage forms states the code path."
+    }
+  },
+  "size": {
+    "max_sqft_accessory_building": {
+      "value": 900,
+      "section": "550-45D(18)(f)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'A detached dwelling shall only be placed on the lot if it will meet principal building setbacks and has a maximum building floor area of 900 square feet.'"
+    },
+    "max_sqft_internal": {
+      "value": null,
+      "section": "550-45D(18)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No size cap for a unit inside or attached to the house."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "550-45D(18)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No share-of-house cap."
+    },
+    "min_sqft": {
+      "value": 500,
+      "section": "550-88C",
+      "url": "https://ecode360.com/45943190",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Each dwelling unit shall include a minimum of 500 square feet of enclosed habitable, indoor and heated floor area'. The care unit is 'A dwelling unit' (550-115). 400 sq ft for a unit legally restricted to age 55 and older."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "550-21A, 550-45D(18)(f)",
+      "url": "https://ecode360.com/45941851",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Accessory buildings: 'one habitable story or 20 feet, unless it meets the minimum setbacks for a principal building, in which case the maximum height for a principal building shall apply.' A detached unit must meet principal setbacks, so the district height applies."
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "550-21A, 550-45D(18)(f)",
+      "url": "https://ecode360.com/45941851",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: the 20 ft accessory cap gives way because a detached unit must meet principal building setbacks."
+    },
+    "max_height_garage_ft": {
+      "value": 15,
+      "section": "550-22B(5)",
+      "url": "https://ecode360.com/45941855",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "A garage accessory to a dwelling shall 'have a height requirement of no more than 15 feet from the ground'."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "550-45D(18)(f), 550-22A",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "A detached unit 'will meet principal building setbacks'. Other accessory buildings: 5 ft side and rear (550-22B)."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "550-22B(6), 550-45C",
+      "url": "https://ecode360.com/45941855",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'No accessory building and no swimming pool shall be allowed between the principal building and the front lot line.' District front yard applies."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "550-45D(18)(f), 550-20",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "A detached unit meets the district side yard for a principal building (see districts). Other accessory buildings 5 ft (550-22B)."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "550-45D(18)(f), 550-20",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "A detached unit meets the district rear yard for a principal building (see districts). Other accessory buildings 5 ft (550-22B)."
+    },
+    "setback_rear_alley_ft": {
+      "value": null,
+      "section": "550-22B(5), 550-45D(18)(f)",
+      "url": "https://ecode360.com/45941855",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley reduction for a dwelling. The 10 ft from the alley center line is for a garage."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "550-22, 550-45D(18)",
+      "url": "https://ecode360.com/45941855",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No distance between the unit and the house in the zoning text."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "550-20, 550-21",
+      "url": "https://ecode360.com/45941848",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A unit in or attached to the house is part of the principal building. District height applies."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "550-45D(18)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No owner rule. The occupants must be relatives of 'the permanent residents of the principal dwelling unit'."
+    },
+    "family_only": {
+      "value": true,
+      "section": "550-45D(18)(b), 550-115",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'occupied by a maximum of two persons, who shall be relatives of the permanent residents of the principal dwelling unit.'"
+    },
+    "occupancy": {
+      "value": "At most two people, relatives of the household in the house. At least one needs care because of illness, old age or disability. Not a rental unit.",
+      "section": "550-45D(18)(b), (e)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "verified"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 550",
+      "url": "https://ecode360.com/print/CH6779?guid=45941765",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No short-term rental rule in Chapter 550. The unit may house only the relatives named above."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "550-45D(18)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "The rule speaks of 'the accessory unit' but sets no number per lot."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "550-71 as amended by Ord. No. 10-2026, 550-45D(18)(g)",
+      "url": "https://ecode360.com/CH6779/laws/LF2883850.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Ord. 10-2026: '1 per dwelling unit where off-street parking is required by this chapter.' The care unit is a dwelling unit. 'Additional parking for the accessory unit is not required if the applicant proves that the resident(s) of the accessory unit will not routinely operate a vehicle.' Codified text still says 2 per unit."
+    },
+    "total_on_site": {
+      "value": 2,
+      "section": "550-71 as amended by Ord. No. 10-2026",
+      "url": "https://ecode360.com/CH6779/laws/LF2883850.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "House 1 and unit 1. On-street spaces along the lot frontage may be credited (550-72E(2), Ord. 10-2026). None in CBD."
+    },
+    "reading": {
+      "value": "House and unit: 2 spaces in total under Ord. 10-2026 (1 per dwelling unit), or 1 if the relative will not routinely drive. On-street frontage spaces may count. No off-street parking in CBD. Before Ord. 10-2026 the code asked 2 per dwelling unit.",
+      "section": "550-71, 550-72E(2), 550-45D(18)(g), Ord. No. 10-2026",
+      "url": "https://ecode360.com/CH6779/laws/LF2883850.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'a) Allowed dwelling ... 4,500'. Lot width '40 per dwelling unit'. Front 20 ft (15 ft along a second street on a corner lot). Impervious 50%."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'All uses: 40 feet or 3 stories'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 2500,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Minimum average lot area of 2,500 per dwelling unit'. Width 25 ft per unit. Front 15 ft (10 on a corner second street). Impervious 60%. Ord. 10-2026 renames it R-2 Medium Low Density Residential."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'All uses: 40 feet or 3 stories'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 2500,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "Reading: the care unit is 'A dwelling unit' (550-115). If it counts, house and unit need 5,000 sq ft. The unit is temporary and bound to the house by a recorded mechanism, so it may not count. Ask the zoning officer."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 1000,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'a) 1,000 [Note C]'. Width 18 ft per unit. Front 10 ft. Impervious 70%. Ord. 10-2026 renames it R-3 Medium Density Residential."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'All uses: 40 feet or 3 stories, except 60 feet or 5 stories' with a 50 ft step back from adjacent dwellings"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 1000,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "Reading: if the care unit counts as a dwelling unit, house and unit need 2,000 sq ft. Ask the zoning officer."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 1000,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'b) Other allowed uses shall meet the requirements of the R-3 District instead of the R-4 requirements'. Houses follow R-3: 1,000 sq ft, width 18 ft per unit. Ord. 10-2026 renames it R-4 High Density Residential."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "R-3 rule for uses other than multifamily: 40 ft or 3 stories"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 1000,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "R-3 figure. Reading as in R-3."
+      }
+    },
+    "C-1/R": {
+      "min_lot_sqft": {
+        "value": 1500,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Ord. 10-2026: '1,500. No minimum average lot area per dwelling unit shall apply.' Width 20 ft. Front 10 ft, or 0 where the block's setback is less. Impervious 90%."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 55,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'5 stories or 55 feet'"
+      }
+    },
+    "C-2/R": {
+      "min_lot_sqft": {
+        "value": 2000,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Ord. 10-2026: 'Allowed uses, other than manufactured home park: 2,000. No minimum average lot area per dwelling unit shall apply.' Width 30 ft. Impervious 90%."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.8,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 80,
+        "section": "550-20, Ord. No. 10-2026",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'6 stories or 80 feet'"
+      }
+    },
+    "CBD": {
+      "min_lot_sqft": {
+        "value": 1500,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'1,500 for the lot, minimum average of 400 sq. ft. per dwelling unit'. Width 15 ft. Minimum building height 30 ft or 2 stories (20 ft for a new principal building, 550-21C)."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 1.0,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 150,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'12 stories or 150 feet'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 400,
+        "section": "550-20",
+        "url": "https://ecode360.com/45941848",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "Reading: if the care unit counts, house and unit need 800 sq ft."
+      }
+    }
+  }
+}

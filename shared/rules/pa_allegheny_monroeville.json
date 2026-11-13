@@ -1,0 +1,603 @@
+{
+  "provenance": {
+    "jurisdiction": "Monroeville municipality",
+    "instrument": "Code of the Municipality of Monroeville, Chapter 359 Zoning (Ord. No. 2779, 11-14-2023, amended by Ord. No. 2805, 6-10-2025), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 Chapter 359 is the 2023 rewrite: 'Adopted by the Municipal Council ... 11-14-2023 by Ord. No. 2779'. It repealed the 1984 chapter (Ord. No. 1443). Sections 359-19, 359-29, 359-54 and 359-142 show amendments by Ord. No. 2805 (6-10-2025). eCode360 New Laws (read 2026-11-12) lists only Ord. No. 2777 (Charter).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11510889",
+      "https://ecode360.com/print/MO1197?guid=11510889",
+      "https://ecode360.com/45217538",
+      "https://ecode360.com/45218426",
+      "https://ecode360.com/45218439",
+      "https://ecode360.com/45218486",
+      "https://ecode360.com/45218496",
+      "https://ecode360.com/45218504",
+      "https://ecode360.com/45218579",
+      "https://ecode360.com/45219070",
+      "https://ecode360.com/45219081",
+      "https://ecode360.com/45221837",
+      "https://ecode360.com/45222274",
+      "https://ecode360.com/45222379",
+      "https://ecode360.com/MO1197/laws"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Allegheny",
+    "municipality_type": "municipality",
+    "geoid": "4200350528",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11510889",
+    "code_current_through": "2026-06-09",
+    "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-12 shows no currency line. New Laws lists only a 2023 Charter ordinance.",
+    "checks": [
+      "The code defines 'accessory dwelling unit' (359-13) but the use chart does not list it. The listed unit is a 'dependent dwelling (granny flat)', only for elderly parents or other dependent close relatives (359-13, 359-34)",
+      "Dependent dwelling: special exception (Zoning Hearing Board) in R-1, C-3, S and BLVD. Conditional use (Council) in R-2, R-3, R-4 and C-1. Not allowed in C-2, L, M-1, M-2, LF (359-34 use chart)",
+      "Lot of at least 7,200 sq ft. One bedroom. Each story 400 to 625 sq ft, two stories or 25 ft at most (359-54Z)",
+      "A detached dependent dwelling stays out of the required front yard and may sit in the side or rear yard no closer than 10 ft to a side line or 20 ft to the rear line, and 10 ft from the house (359-54Z(3), (9), (10))",
+      "Accessory structures in residential districts: at most 20% of the house's square footage or 500 sq ft, and two per lot. Accessory structures: 15 ft mean height. Whether these reach a dependent dwelling is not stated (359-19F, 359-30A(1))",
+      "Parking: 0.5 space for each resident of the dependent dwelling, plus 2 for the house (359-115)",
+      "Mechanical equipment screened from neighbors. Waste storage at least 50 ft from the nearest building inside a solid masonry wall (359-54Z(7), (8))",
+      "A tiny home of 150 to 400 sq ft may be an accessory dwelling unit by conditional use in R-3, with one parking space and within district density. No family rule (359-34, 359-54MMMM)",
+      "A use not listed needs a use variance from the Zoning Hearing Board (359-31)"
+    ],
+    "notes": "Zoning office: Monroeville Community Development (monroeville.pa.us). Districts (use chart): R-1, R-2, R-3, R-4, C-1, C-2, C-3, L, M-1, M-2, S, LF, BLVD. Read on eCode360 in a browser, one print view, searched in the page. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, conversion, two-family, duplex, not listed, similar. The towns index was unsure whether eCode360 had the 2023 rewrite. It does."
+  },
+  "adu": {
+    "term": {
+      "value": "dependent dwelling (granny flat)",
+      "section": "359-13 'Dependent dwelling', 359-54Z",
+      "url": "https://ecode360.com/45217538",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit attached to a principal one-family house, installed and intended solely for the use of elderly parents, or other dependent, close relatives (\"granny flat\").' 359-13 also defines 'Accessory dwelling unit' ('A dwelling unit that is either attached to the principal permitted building or to a permitted accessory building on a lot'), but the use chart does not list it."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "359-13, 359-34 use chart, 359-54Z",
+      "url": "https://ecode360.com/45218579",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Only the dependent dwelling is listed, and only for elderly parents or other dependent close relatives. Path is a special exception or a conditional use by district, see approval."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "359-34 use chart 'Dependent dwelling', 359-142",
+      "url": "https://ecode360.com/45218579",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Use chart row 'Dependent dwelling': SE in R-1, C-3, S and BLVD. Zoning Hearing Board under 359-142."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "R-2",
+            "R-3",
+            "R-4",
+            "C-1"
+          ],
+          "path": "conditional_use",
+          "section": "359-34 use chart, 359-52, 359-53, 359-54Z",
+          "url": "https://ecode360.com/45218579",
+          "note": "Use chart: CU. Council decides under the conditional use procedure. In C-1 a single-family house is not a listed use (N), so only an existing house qualifies."
+        }
+      ],
+      "section": "359-34 use chart",
+      "url": "https://ecode360.com/45218579",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Row 'Dependent dwelling|SE|CU|CU|CU|CU|N|SE|N|N|N|SE|N|SE' under R-1, R-2, R-3, R-4, C-1, C-2, C-3, L, M-1, M-2, S, LF, BLVD."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "359-31, MPC 910.2",
+      "url": "https://ecode360.com/45218504",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Where a use is not listed as a permitted, conditional or special exception use, a landowner and/or developer may request approval for a use variance'. A unit for someone who is not a dependent close relative, or one that fails 359-54Z, needs a variance."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Tiny home as an accessory dwelling unit",
+          "path": "conditional_use",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "A dwelling of 150 to 400 sq ft of habitable floor area, on a foundation or on wheels, used as a principal or accessory dwelling unit. Served by water and sewer. One off-street parking space. District density may not be exceeded. District setbacks apply. No family rule.",
+          "min_lot_sqft": null,
+          "section": "359-13 'Tiny home', 359-34 use chart, 359-54MMMM",
+          "url": "https://ecode360.com/45219081",
+          "confidence": "secondary",
+          "note": "This is an accessory dwelling unit in the code's own words, open to anyone, not only a relative. The R-3 density table gives 7,500 sq ft per single-family home. How the tiny home counts toward density is not stated. Ask the zoning officer."
+        },
+        {
+          "name": "Two-family home",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Permitted use. A detached structure for not more than two families. Density 4,375 sq ft of lot per unit (8,750 for two). District lot minimum 7,500 sq ft in R-3, 10,000 in R-4. 2 parking spaces per unit.",
+          "min_lot_sqft": 8750,
+          "section": "359-34 use chart, 359-13 'Two-family home', Tables 359-20B and 359-20C(1), 359-115",
+          "url": "https://ecode360.com/45218579"
+        }
+      ],
+      "section": "359-34, 359-54MMMM",
+      "url": "https://ecode360.com/45218579",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Use chart: Tiny home N N CU N in R-1 to R-4. Two-family home N N R R. The use chart also lists Short-term rental SE in R-3 and R-4."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "C-1",
+        "C-3",
+        "S",
+        "BLVD"
+      ],
+      "section": "359-34 use chart",
+      "url": "https://ecode360.com/45218579",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Districts where the dependent dwelling is SE or CU."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "359-13 'Dependent dwelling'",
+      "url": "https://ecode360.com/45217538",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'attached to a principal one-family house'. A single-family residence is 'A detached structure'."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "359-54Z",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Z(10) treats both attached and detached dependent dwellings. A new structure is allowed."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 359",
+      "url": "https://ecode360.com/11510889",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Historic text in Chapter 359 is floodplain related only. No historic ADU path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_size",
+          "condition": "Dependent dwellings shall not be located on lots of less than 7,200 square feet.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 7200,
+          "section": "359-54Z(1)",
+          "url": "https://ecode360.com/45219081"
+        },
+        {
+          "kind": "family",
+          "condition": "Only for elderly parents or other dependent, close relatives of the household.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "359-13 'Dependent dwelling'",
+          "url": "https://ecode360.com/45217538"
+        },
+        {
+          "kind": "design",
+          "condition": "One bedroom at most. Mechanical equipment screened from neighbors. Waste storage at least 50 ft from the nearest building and enclosed by a solid masonry wall.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "359-54Z(6), (7), (8)",
+          "url": "https://ecode360.com/45219081"
+        },
+        {
+          "kind": "other",
+          "condition": "Accessory structures in residential districts may not exceed 20% of the house's square footage or 500 sq ft, with no more than two on a lot. Whether this reaches a detached dependent dwelling, which 359-54Z lets reach 625 sq ft a story, is not stated. Ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "building_types": null,
+          "section": "359-19F",
+          "url": "https://ecode360.com/45218426"
+        },
+        {
+          "kind": "district",
+          "condition": "In C-1 a single-family house is not a listed use. Only an existing house could add a dependent dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "C-1"
+          ],
+          "building_types": null,
+          "section": "359-34 use chart",
+          "url": "https://ecode360.com/45218579"
+        },
+        {
+          "kind": "other",
+          "condition": "The detailed dependent dwelling standards sit in 359-54, the conditional use standards. The special exception districts (R-1, C-3, S, BLVD) are read as using the same standards.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1",
+            "C-3",
+            "S",
+            "BLVD"
+          ],
+          "building_types": null,
+          "section": "359-54Z, 359-142B",
+          "url": "https://ecode360.com/45222379"
+        }
+      ],
+      "section": "359-54Z",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Conditions from the dependent dwelling standards."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "359-13, 359-54Z(2), (10)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "The definition says 'attached to a principal one-family house'. 359-54Z(2) says 'Shall only be permitted as an accessory structure' and (10) covers both an attached unit and a detached one 10 ft from the house. Internal and garage forms are readings."
+    },
+    "labels": {
+      "value": {
+        "detached_new": "Detached dependent dwelling (granny flat)",
+        "attached": "Dependent dwelling attached to the house"
+      },
+      "section": "359-54Z",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1250,
+      "section": "359-54Z(4), (5)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Limited to two stories or 25 feet' and 'Each story is limited to 625 square feet (not less than 400 square feet)'. Two stories of 625 gives 1,250. A one-story unit is 625 at most."
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "359-54Z(5)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'not less than 400 square feet' per story."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "359-54Z",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No share of the house cap in 359-54Z. 359-19F caps accessory structures at 20% of the house, see gates."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "359-54Z(4)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Limited to two stories or 25 feet'. 359-30A(1) caps accessory structures at a mean height of 15 ft. The specific use standard is read as governing."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "359-54Z(10)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'If the dependent dwelling is attached to the principal structure, then it shall be considered part of the principal structure and shall be subject to all requirements relating to the principal structure.'"
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "359-54Z(9)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'May be erected within the required side or rear yards, provided that such an accessory structure is not located closer than 20 feet to the rear lot line or 10 feet to the side lot line'."
+    },
+    "setback_rear_ft": {
+      "value": 20,
+      "section": "359-54Z(9)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified"
+    },
+    "setback_rear_alley_ft": {
+      "value": 20,
+      "section": "359-54Z(9)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley reduction found."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "359-54Z(3)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'The structure is not to be placed within any required yard'. (9) then allows the side and rear yards. Not in the front yard."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "359-54Z(10)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Detached accessory structures shall maintain a separation of at least 10 feet from the principal structure.'"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "359-54Z(9), 359-29B(1)",
+      "url": "https://ecode360.com/45218486",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "359-29B(1): accessory structures to single-family homes may extend into required rear and side yards, but not closer than 10 feet to the property line."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "359-13 'Dependent dwelling'",
+      "url": "https://ecode360.com/45217538",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Solely for the use of elderly parents, or other dependent, close relatives."
+    },
+    "occupancy": {
+      "value": "Elderly parents or other dependent, close relatives. One bedroom.",
+      "section": "359-13, 359-54Z(6)",
+      "url": "https://ecode360.com/45217538",
+      "verified_on": "2026-11-12",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "359-13, 359-54Z",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No owner-occupancy rule in the definition or 359-54Z."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "359-54Z",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No number stated."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "359-34",
+      "url": "https://ecode360.com/45218579",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Short-term rental is SE in R-3, R-4, C-3, BLVD and N in R-1, R-2. Not addressed for a dependent dwelling."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "359-115",
+      "url": "https://ecode360.com/45221837",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "'Dependent dwelling 0.5 space for each resident'. The count depends on the number of residents."
+    },
+    "reading": {
+      "value": "House 2 spaces plus 0.5 per dependent dwelling resident: 2.5 for one resident, 3 for two. Rounding is not stated.",
+      "section": "359-115",
+      "url": "https://ecode360.com/45221837",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Minimum lot width 75 ft. 359-127C exempts a lot of record from area and width if yards are met."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 359-20B, 359-30A(2)",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'No residential structure except an apartment may exceed 35 feet'. The table allows 60 ft in R-3 and 100 ft in R-4 for other buildings."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Minimum lot width 60 ft. 359-127C exempts a lot of record from area and width if yards are met."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 359-20B, 359-30A(2)",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'No residential structure except an apartment may exceed 35 feet'. The table allows 60 ft in R-3 and 100 ft in R-4 for other buildings."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Minimum lot width 60 ft. 359-127C exempts a lot of record from area and width if yards are met."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 359-20B, 359-30A(2)",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'No residential structure except an apartment may exceed 35 feet'. The table allows 60 ft in R-3 and 100 ft in R-4 for other buildings."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Minimum lot width 75 ft. 359-127C exempts a lot of record from area and width if yards are met."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "Table 359-20B",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 359-20B, 359-30A(2)",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'No residential structure except an apartment may exceed 35 feet'. The table allows 60 ft in R-3 and 100 ft in R-4 for other buildings."
+      }
+    }
+  }
+}

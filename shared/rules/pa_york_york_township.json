@@ -1,0 +1,724 @@
+{
+  "provenance": {
+    "jurisdiction": "York township",
+    "instrument": "York Township Zoning Ordinance (Chapter 265, Ord. 2012-13 as amended through Ord. 2023-01), PDF on the township website",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Township PDF 'Zoning Ordinance, last amendment 3-14-23'. Cover lists amendments Ord. 2013-8, 2014-7, 2017-1 and 2023-01. Ord. 2023-01 (scanned PDF, read page by page) changes RL lot coverage, contractor and recreation uses, fences, vehicle storage, yard projections and other items. It does not touch 265-602. The township page lists Ord. 2023-02 (a map change for specific parcels) and a zoning map amended 05-22-2026. The township Ordinances and Studies page (read 2026-11-12) lists adopted ordinances through 2023-05. The only zoning items are 2022-06, 2023-01 and 2023-02 (map). No zoning text amendment after 2023-01 is posted. The 05-22-2026 map implies later map amendments that are not posted as ordinances.",
+    "effective_date": null,
+    "source_urls": [
+      "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "https://yorktownshippa.gov/wp-content/uploads/2023-01-Chapter-265-Zoning-Ordinance-Update.pdf",
+      "https://yorktownshippa.gov/?p=20017",
+      "https://yorktownshippa.gov/ordinances-and-studies-4/",
+      "https://yorktownshippa.gov/wp-content/uploads/Zoning-Map-05-22-2026.pdf"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213387056",
+    "code_host": "own site",
+    "code_url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+    "code_current_through": "2023-03-14",
+    "code_current_through_note": "Cover page: Incorporated amendments ... Ordinance 2023-01 3/14/2023. The township page also lists a zoning map amended 05-22-2026.",
+    "checks": [
+      "The unit is an 'Accessory Unit, Single Bedroom': one bedroom only, added onto or created within a single-family detached house or an existing accessory structure, with its own entrance (Article 11, 265-602)",
+      "Special exception from the Zoning Hearing Board in RL, RM, RH, RA and MRC (265-602, 265-401C to 265-405C). Not listed in CO, CS, CI or I",
+      "Habitable floor area 400 to 720 sq ft (300 sq ft if built for one person). One unit per single-family detached lot (265-602A, B, 265-517)",
+      "The owner of the lot must live in the house or the unit, for as long as the unit is used (265-602C)",
+      "One more off-street space for the unit. A house needs 2, so 3 in total (265-602D, 265-806A)",
+      "No new detached building for the unit. It must be in the house, an addition, or an accessory structure that already exists (Article 11 definition)",
+      "Accessory structures: 6 ft from side and rear lines, 15 ft high (up to 20 ft with larger setbacks), not in the front yard unless 100 ft back from the street (265-401D to 265-405D, E)",
+      "If the lot uses an on-lot septic system, show it can take the added sewage (265-602F)",
+      "Lot below the district minimum: by right if the shortfall is under 20%, by special exception at 20% or more (265-903)"
+    ],
+    "notes": "Zoning office: York Township Community Development (yorktownshippa.gov). Districts from 265-301: RL, RM, RH, RA, MRC, CO, CS, CI, I. Searched the full PDF text for accessory dwelling, accessory unit, accessory apartment, in-law, granny, ECHO, elder cottage, caretaker, guest house, second dwelling, conversion, kitchen. The York County Planning Commission ADU table lists 'ADU - Special Exception' in RA, RL, RM, RH and MRC, which agrees with this reading. The towns index note said no ADU term was found. That was wrong: 265-602 is the ADU rule."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory Unit, Single Bedroom",
+      "section": "Article 11 'Accessory Unit, Single Bedroom', 265-602",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'An independent dwelling unit containing only one (1) bedroom that has been added onto, or created within, a single family dwelling or an existing accessory structure and having an independent means of access.' Printed page 154."
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "265-602, 265-401C(9)(a), 265-402C(12)(a), 265-403C(15)(b), 265-404C(25)(a), 265-405C(15)(f)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Accessory Units, Single Bedroom (Unit) are permitted by special exception in the RL, RM, RH, RA and MRC Districts'. Printed page 58."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "265-602, 265-1009",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board. 265-1009C general standards (purpose, compatibility, suitability, serviceability, accessibility, conformity) apply with the 265-602 criteria."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "265-602, 265-1009, MPC 910.2",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A lot or unit that fails 265-602 (for example a new detached building, a second bedroom, or over 720 sq ft) needs a variance from the Zoning Hearing Board. 265-304 (uses not listed) does not reach it, since the unit is a listed use."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (both units on one lot)",
+          "path": "by_right",
+          "districts": [
+            "RM"
+          ],
+          "conditions": "Permitted use. One building with two units side by side or one above the other. Lot of at least 10,000 sq ft net in RM. 2 parking spaces per unit. District yards apply. Turning a house into two units is also a conversion apartment (special exception) if the outside is not much changed.",
+          "min_lot_sqft": 10000,
+          "section": "265-402B(3), Table 4.A, 265-806A(1)",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        },
+        {
+          "name": "Two-family detached dwelling (both units on one lot)",
+          "path": "by_right",
+          "districts": [
+            "RH"
+          ],
+          "conditions": "Permitted use. One building with two units side by side or one above the other. Lot of at least 5,000 sq ft net in RH. 2 parking spaces per unit. District yards apply.",
+          "min_lot_sqft": 5000,
+          "section": "265-403B(3), Table 4.B, 265-806A(1)",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        },
+        {
+          "name": "Two-family detached dwelling (both units on one lot)",
+          "path": "by_right",
+          "districts": [
+            "MRC"
+          ],
+          "conditions": "Permitted use. One building with two units side by side or one above the other. Lot of at least 4,000 sq ft net in MRC. 2 parking spaces per unit. District yards apply.",
+          "min_lot_sqft": 4000,
+          "section": "265-405B(4), Table 4.C, 265-806A(1)",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        },
+        {
+          "name": "Conversion apartment",
+          "path": "special_exception",
+          "districts": [
+            "RM",
+            "RH",
+            "MRC"
+          ],
+          "conditions": "An existing building converted into two or more units without much change to the outside. In RM no more than two units. Lot area per unit follows the district. Each unit meets 265-517 floor area.",
+          "min_lot_sqft": null,
+          "section": "265-624, Article 11 'Conversion Apartment'",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        },
+        {
+          "name": "Accessory farm dwelling (farm employees only)",
+          "path": "special_exception",
+          "districts": [
+            "RA"
+          ],
+          "conditions": "A second single-family dwelling on an agricultural parcel, occupied only by a laborer or employee of the principal use. RA lot area and yards apply to each dwelling. Separate water and sewage. Not deeded apart.",
+          "min_lot_sqft": 130680,
+          "section": "265-603, 265-404C(1), Article 11 'Dwelling, Accessory Farm'",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        }
+      ],
+      "section": "265-402B, 265-403B, 265-405B, 265-603, 265-624",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. RA minimum lot is 3 acres (265-404F). Conversion lot minimum depends on the district per-unit area, which the tables give per use, so it is left blank."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RL",
+        "RM",
+        "RH",
+        "RA",
+        "MRC"
+      ],
+      "section": "265-602, 265-401C to 265-405C",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Listed as an accessory special exception use in each of these districts. Not listed in CO, CS, CI or I."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "265-602B, Article 11",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Only one (1) Unit may be permitted within a Single-Family Detached Dwelling or on a Single-Family Detached Lot.' The definition says 'a single family dwelling'. A semidetached or attached house is read as not qualifying."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "Article 11 'Accessory Unit, Single Bedroom'",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'added onto, or created within, a single family dwelling or an existing accessory structure'. An addition to the house is allowed. A new detached building is not."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 265",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "The zoning ordinance has no historic district or historic ADU rule."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "A unit outside the house must be created within an accessory structure that already exists. A new detached building for the unit is not allowed. Adding a story to a garage is a reading, ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "Article 11 'Accessory Unit, Single Bedroom'",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        },
+        {
+          "kind": "design",
+          "condition": "One bedroom only. The unit has its own means of access.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "265-602A, Article 11",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        },
+        {
+          "kind": "other",
+          "condition": "A plan and documents showing the lot meets the dimensional rules of its district and of 265-602.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "265-602E",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Where the house uses an on-lot septic system, show it can treat the added sewage from the unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "265-602F",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+        }
+      ],
+      "section": "265-602",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Conditions from 265-602 and the definition."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "Article 11 'Accessory Unit, Single Bedroom'",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'added onto, or created within, a single family dwelling or an existing accessory structure'. Over a garage is read as allowed only within an existing garage. No new detached building."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 720,
+      "section": "265-602A",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'The habitable floor area of the Unit ... shall not exceed 720 square feet. Only one (1) bedroom area shall be permitted.' Habitable floor area excludes hallways, stairways, closets and utility rooms (Article 11)."
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "265-517, 265-602A",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'not less than 400 square feet per dwelling unit, except those apartments designed for and occupied exclusively by one person shall not be less than 300 square feet.'"
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "265-602",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No share of the house cap."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "265-401E(2), 265-402E(2), 265-403E(2), 265-404E(2), 265-405 E(2)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory buildings/structures - fifteen (15) feet. The height may be increased by one (1) foot for each additional foot that all front, side and rear setbacks are increased, but may not be increased by more than five (5) feet."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "265-502A",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'An accessory structure sharing a common wall with a principal residence shall be considered as part of the principal building and shall comply with all of its respective principal use setbacks.'"
+    },
+    "setback_side_ft": {
+      "value": 6,
+      "section": "265-401D(4), 265-402D(1)(d), 265-403D(1)(d), 265-404D(1)(d), 265-405D(1)(d)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Accessory structures shall be set back a minimum of six (6) feet from side and rear property lines.'"
+    },
+    "setback_rear_ft": {
+      "value": 6,
+      "section": "265-401D(4), 265-402D(1)(d), 265-403D(1)(d), 265-404D(1)(d), 265-405D(1)(d)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Same rule as the side line."
+    },
+    "setback_rear_alley_ft": {
+      "value": 6,
+      "section": "265-401D(4) to 265-405D(1)(d)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley reduction found. The 6 ft rear line rule applies."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "265-502C(1)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Accessory structures are not permitted within the front yard unless set back no less than 100 feet from the street right-of-way.'"
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "265-504",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Table 5.A separation applies between principal buildings on one lot. No accessory to house distance found."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "265-401D(4), 265-502A",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Detached accessory structures take 6 ft side and rear. An attached addition takes the principal setbacks."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "265-602C",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'A Unit may only be permitted and may only continue in use as long as the principal dwelling or unit is occupied by the owner of the lot.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "265-602",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No family or age rule for the occupants."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "265-602B",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Only one (1) Unit may be permitted within a Single-Family Detached Dwelling or on a Single-Family Detached Lot.'"
+    },
+    "occupancy": {
+      "value": "One bedroom only. A dwelling unit is for one family (Article 11). The ordinance does not define family.",
+      "section": "265-602A, Article 11 'Dwelling Unit'",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 265",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No short-term rental rule found in Chapter 265."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "265-602D, 265-806A(2)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'One additional off-street parking space shall be provided.' 265-806A(2): 'Accessory Unit, Single Bedroom: 1 space/unit'."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "265-806A(1), 265-806A(2)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Single-family detached 2 spaces per dwelling unit, plus 1 for the unit."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "265-602F",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No separate connection rule. On-lot septic must have capacity for the unit."
+    }
+  },
+  "districts": {
+    "RL": {
+      "min_lot_sqft": {
+        "value": 11500,
+        "section": "265-401D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Minimum Net Lot Area shall be 11,500 square feet.' Purpose statement (265-401A) names a density of 3 units per acre."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "265-401D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "265-401D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "265-401D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "265-401D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "May rise 1 ft per added foot of all setbacks, up to 10 ft more."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "265-401D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Lot coverage share of Net Lot Area. The code counts all coverage, not only buildings."
+      },
+      "accessory_setback_side_ft": {
+        "value": 6,
+        "section": "265-401D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "265-401D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "RM": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "265-402D, E, F Table 4.A",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single family detached 10,000 sq ft net. Two-family detached also 10,000."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "265-402D, E, F Table 4.A",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "265-402D, E, F Table 4.A",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "265-402D, E, F Table 4.A",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "265-402D, E, F Table 4.A",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "May rise 1 ft per added foot of all setbacks, up to 10 ft more."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "265-402D, E, F Table 4.A",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Lot coverage share of Net Lot Area. The code counts all coverage, not only buildings."
+      },
+      "accessory_setback_side_ft": {
+        "value": 6,
+        "section": "265-402D, E, F Table 4.A",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "265-402D, E, F Table 4.A",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "RH": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "265-403D, E, F Table 4.B",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single family detached 5,000 sq ft net. Two-family detached also 5,000."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "265-403D, E, F Table 4.B",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "265-403D, E, F Table 4.B",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "265-403D, E, F Table 4.B",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "265-403D, E, F Table 4.B",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "May rise 1 ft per added foot of all setbacks, up to 10 ft more."
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "265-403D, E, F Table 4.B",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Lot coverage share of Net Lot Area. The code counts all coverage, not only buildings."
+      },
+      "accessory_setback_side_ft": {
+        "value": 6,
+        "section": "265-403D, E, F Table 4.B",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "265-403D, E, F Table 4.B",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "RA": {
+      "min_lot_sqft": {
+        "value": 130680,
+        "section": "265-404D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Minimum lot area shall be three (3) acres for all uses unless otherwise stipulated in Article 5.'"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "265-404D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "265-404D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "265-404D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "265-404D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "May rise 1 ft per added foot of all setbacks, up to 10 ft more."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "265-404D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Lot coverage share of Net Lot Area. The code counts all coverage, not only buildings."
+      },
+      "accessory_setback_side_ft": {
+        "value": 6,
+        "section": "265-404D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "265-404D, E, F, G",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "MRC": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "265-405D, B (Height), C Table 4.C",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single family detached 4,000 sq ft net. Two-family detached also 4,000."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "265-405D, B (Height), C Table 4.C",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "265-405D, B (Height), C Table 4.C",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "265-405D, B (Height), C Table 4.C",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "265-405D, B (Height), C Table 4.C",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Forty-five feet, not over three stories entirely above grade. The section letters repeat (B, C) after E in the PDF."
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "265-405D, B (Height), C Table 4.C",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Lot coverage share of Net Lot Area. The code counts all coverage, not only buildings."
+      },
+      "accessory_setback_side_ft": {
+        "value": 6,
+        "section": "265-405D, B (Height), C Table 4.C",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "265-405D, B (Height), C Table 4.C",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4840,
+        "section": "265-405E(1)",
+        "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "'For tracts ten (10) acres or less Gross Lot Area, the maximum residential use density shall be nine (9) units per acre, based upon Net Lot Area.' 43,560 / 9 = 4,840. Reading: whether the unit counts toward density is not stated."
+      }
+    }
+  }
+}

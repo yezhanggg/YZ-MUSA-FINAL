@@ -1,0 +1,562 @@
+{
+  "provenance": {
+    "jurisdiction": "McCandless township",
+    "instrument": "Town of McCandless Code of Ordinances, Part 13 Zoning (Ord. No. 1540, 6-26-2023), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Part 13 was repealed and replaced by Ord. No. 1540 on 6-26-2023. The township now styles itself the Town of McCandless. eCode360 New Laws (read 2026-11-12) list Ord. 1567 (signs, Article 1305), Ord. 1568 and 1574 (zoning map) and Res. 2025-33 (proposed sign amendment, read page by page). None changes 1303.220 or the residential district rules.",
+    "effective_date": "2023-06-26",
+    "source_urls": [
+      "https://ecode360.com/37748731",
+      "https://ecode360.com/print/MC4162?guid=37748731",
+      "https://ecode360.com/43686593",
+      "https://ecode360.com/43683527",
+      "https://ecode360.com/43683537",
+      "https://ecode360.com/43683547",
+      "https://ecode360.com/43685668",
+      "https://ecode360.com/43686947",
+      "https://ecode360.com/43686887",
+      "https://ecode360.com/43686820",
+      "https://ecode360.com/43685663",
+      "https://ecode360.com/43688127",
+      "https://ecode360.com/MC4162/laws",
+      "https://ecode360.com/MC4162/laws/LF2556182.pdf"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200345900",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/37748731",
+    "code_current_through": "2025-09-08",
+    "code_current_through_note": "Date carried from the towns index. The eCode360 print views read on 2026-11-12 show no currency line. New Laws lists items to 2026-09-14, none an ADU change.",
+    "checks": [
+      "An Accessory Dwelling Unit is a permitted accessory use in R-VL and R-L only. A zoning permit or certificate of use is needed before it is recognized (Table 1303.I, 1303.220(B)(1)(a))",
+      "Not listed in R-M, M-N, M-C, M-U, TC, SD or CD. There a second unit needs a use variance",
+      "The property must have one one-unit dwelling and be owner-occupied, in the house or in the ADU (1303.220(B)(1)(a), (b))",
+      "Size: at most 50% of the gross floor area of the house or 1,000 sq ft, whichever is less (1303.220(B)(1)(d))",
+      "At one time the ADU may house one adult and related minor children, or two adults and minor children related to at least one of them (1303.220(B)(1)(j))",
+      "No separate street address. An all-weather path from the street to the ADU. The ADU may not be sold apart from the lot (1303.220(B)(1)(f), (h), (l))",
+      "With public sewer the ADU ties into the house's sewer line. No new utility connection for a unit inside the house unless the lot already has more than one (1303.220(B)(1)(i), (k))",
+      "Parking: Table 1304.A has no ADU row. The house needs 2. Ask the zoning officer how many the ADU needs (1303.220(B)(1)(e), 1304.180)",
+      "Accessory buildings: 15 ft high where they sit inside the principal building setbacks, otherwise 24 ft. 3 ft from the house (1302.200, 1302.210, 1304.110(D))",
+      "On a lot below the district minimum, only one single-family dwelling may be built in a residential district. Ask whether an ADU is allowed on it (1303.240(C)(2)(c))"
+    ],
+    "notes": "Zoning office: Town of McCandless Planning and Zoning (townofmccandless.org). Districts (Table 1303.I): CD, R-VL, R-L, R-M, M-N, M-C, M-U, TC, SD. Read on eCode360 in a browser, one section print view at a time. Searched the full Part 13 print view for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, conversion, not listed. Accessory Dwelling Unit appears only in 1303.220, Table 1303.I and the R-L purpose. No historic district or short-term rental rule in Part 13."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory Dwelling Unit",
+      "section": "1303.220(B)(1)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'A Dwelling Unit that is associated with and is incidental to another Dwelling Unit on the same Lot which serves as the Lot's Principal Use.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "Table 1303.I, 1303.220(B)(1)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Table 1303.I: Accessory Dwelling Unit P (Permitted by Right) in R-VL and R-L. Blank (not permitted) in the other districts."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "Table 1303.I, 1303.220(B)(1)(a)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'A Property Owner must file a Zoning Permit or Certificate of Use for an Accessory Dwelling Unit prior to its recognition as an Accessory Dwelling Unit.'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1301.260, MPC 910.2",
+      "url": "https://ecode360.com/43685663",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A lot or unit that fails 1303.220 needs a variance from the Zoning Hearing Board. 1303.130 (unlisted uses by special exception) reaches only a use 'clearly not provided for', and the ADU is provided for."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-L"
+          ],
+          "conditions": "Permitted use. One building on one lot with at most two units, one above the other or side by side. The R-L purpose says two-unit dwellings must conform to the form of a single-unit dwelling. Lot 12,000 sq ft with public sewer and water, 20,000 without. 2 parking spaces per unit.",
+          "min_lot_sqft": 12000,
+          "section": "Table 1303.A, 1303.140(D)(3), 1302.210(A), Figure 1302.C, Table 1304.A",
+          "url": "https://ecode360.com/43685668"
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-M"
+          ],
+          "conditions": "Permitted use. One building on one lot with at most two units. Lot 5,200 sq ft. 2 parking spaces per unit.",
+          "min_lot_sqft": 5200,
+          "section": "Table 1303.A, 1303.140(D)(3), 1302.220 Figure 1302.D, Table 1304.A",
+          "url": "https://ecode360.com/43685668"
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "M-N",
+            "M-C"
+          ],
+          "conditions": "Permitted use. One building on one lot with at most two units. District form rules apply. 2 parking spaces per unit.",
+          "min_lot_sqft": null,
+          "section": "Table 1303.A, 1303.140(D)(3), 1302.230, 1302.240",
+          "url": "https://ecode360.com/43685668",
+          "confidence": "secondary",
+          "note": "M-N and M-C lot rules not read for this file."
+        }
+      ],
+      "section": "Table 1303.A, 1303.140(D)(3)",
+      "url": "https://ecode360.com/43685668",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Not ADUs. Table 1303.A lists Dwelling, Two-Family as P in R-L, R-M, M-N and M-C. 'A Building located on one Lot containing not more than two Dwelling Units, arranged one above the other or side by side'."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-VL",
+        "R-L"
+      ],
+      "section": "Table 1303.I",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Row 'Accessory Dwelling Unit': P under R-VL and R-L. Blank under CD, R-M, M-N, M-C, M-U, TC, SD."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "1303.220(B)(1)(a), 1303.140(D)(1)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'The property proposed for an Accessory Dwelling Unit must contain one, but no more than one, residential Structure occupied as a one-unit Dwelling.' Only the single-family detached house is a permitted dwelling in R-VL. R-L also allows two-family, which is not a one-unit dwelling."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "1303.220(B)(1)(c)(1)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'In a newly constructed Accessory Dwelling Unit Structure.'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Part 13",
+      "url": "https://ecode360.com/43688127",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No historic district or historic rule found in Part 13."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The lot has one, and only one, residential structure, used as a one-unit dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1303.220(B)(1)(a)",
+          "url": "https://ecode360.com/43686593"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "An ADU in an existing detached accessory building only where its first floor is or was a garage, barn or similar accessory use.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1303.220(B)(1)(c)(2)",
+          "url": "https://ecode360.com/43686593"
+        },
+        {
+          "kind": "design",
+          "condition": "A unit inside the house needs its own entrance to the outside or to an unconditioned porch.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1303.220(B)(1)(c)(3)",
+          "url": "https://ecode360.com/43686593"
+        },
+        {
+          "kind": "design",
+          "condition": "All-weather path from the street to the ADU. Placed to keep neighbors' privacy (screening, fencing, window and door placement). No separate street number. Mechanical equipment on the ground or inside, not on the roof.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1303.220(B)(1)(f), (g), (h), (m)",
+          "url": "https://ecode360.com/43686593"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Certify the ADU can connect to the sewer or septic system. With public sewer it ties into the house's sewer line. No new separate utility connection for a unit in the house unless the lot already has more than one.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1303.220(B)(1)(i), (k)",
+          "url": "https://ecode360.com/43686593"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "On a nonconforming lot (below the district lot area or width) in a residential district 'only one Single-Family Dwelling may be erected'. Ask the zoning officer whether an ADU is allowed on such a lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1303.240(C)(2)(c)",
+          "url": "https://ecode360.com/43686820"
+        }
+      ],
+      "section": "1303.220(B)(1)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Conditions from the ADU use rules."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "1303.220(B)(1)(c)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'(1) In a newly constructed Accessory Dwelling Unit Structure. (2) In an existing detached Accessory Structure occupied, or formerly occupied, on the first floor by a Garage, barn, or similar Accessory Use. (3) In a Principal Structure'. An addition to the house is read as part of the principal structure. A unit above a garage is read from (2)."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1000,
+      "section": "1303.220(B)(1)(d)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'shall not exceed 50% of the Gross Floor Area of the principal Dwelling Unit or 1,000 square feet, whichever is less.' Patios, decks, porches and interior access stairs are not counted."
+    },
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "1303.220(B)(1)(d)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "50% of the gross floor area of the principal dwelling unit."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "1303.220",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No minimum size in the ADU rule."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "1302.200(B) Figure 1302.B B.2, 1302.210(B) Figure 1302.C B.2",
+      "url": "https://ecode360.com/43683537",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Accessory Building Height a. 15 feet maximum w/n Principal Building Setbacks (C) b. Otherwise, 24 feet maximum'. A detached ADU at the 10 ft accessory rear setback sits inside the 40 ft principal rear setback, so 15 ft. One placed outside the principal setbacks may reach 24 ft."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "1303.220(B)(1)(c)(3)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A unit in the principal structure takes the principal building height (45 ft in R-VL and R-L)."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "1302.200, 1302.210 table D",
+      "url": "https://ecode360.com/43683537",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory front setback is set by district: R-VL 50 ft, R-L 45 ft. See districts."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "1302.200, 1302.210 table D",
+      "url": "https://ecode360.com/43683537",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory side setback by district: R-VL 15 ft, R-L 10 ft. See districts."
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "1302.200(B) D.4, 1302.210(B) D.4",
+      "url": "https://ecode360.com/43683537",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Rear Setback 10 feet minimum' for accessory buildings in both R-VL and R-L."
+    },
+    "setback_rear_alley_ft": {
+      "value": 10,
+      "section": "1302.200(B) D.4, 1302.210(B) D.4",
+      "url": "https://ecode360.com/43683537",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley reduction found."
+    },
+    "separation_ft": {
+      "value": 3,
+      "section": "1304.110(D)",
+      "url": "https://ecode360.com/43686887",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Fire Separation. An Accessory Building or Structure must be at least three feet from the Principal Building.'"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "1304.110(A)",
+      "url": "https://ecode360.com/43686887",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'An Accessory Building must be located and constructed according to the Accessory Building Form Requirements specified for each zoning district'."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "1303.220(B)(1)(b)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'The property must be Owner-occupied, either in the Principal Structure or principal Dwelling Unit, or in the accessory Dwelling.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "1303.220(B)(1)(j)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No family tie to the owner. Occupants of the ADU are capped, see occupancy."
+    },
+    "occupancy": {
+      "value": "At one time the ADU may house one adult and minor children related to that adult, or two adults in total and minor children related to at least one of them.",
+      "section": "1303.220(B)(1)(j)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "1303.220(B)(1), (B)(1)(a)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "The rule speaks of one ADU incidental to the one-unit dwelling on the lot. No express number."
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "1303.220(B)(1)(l)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'The Accessory Dwelling Unit may not be conveyed, or the title to the Accessory Dwelling Unit be transferred separate and apart from the rest of the property.'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Part 13",
+      "url": "https://ecode360.com/43688127",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No short-term rental rule found in Part 13."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1303.220(B)(1)(e), 1304.180 Table 1304.A",
+      "url": "https://ecode360.com/43686947",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "'Parking for the Accessory Dwelling Unit must be provided on-site in accordance with the off-street parking ... requirements specified in Article 1304'. Table 1304.A has no ADU row. Single-family detached: 2 per unit."
+    },
+    "reading": {
+      "value": "The house needs 2 spaces. Table 1304.A has no ADU row. If the ADU counts as a dwelling unit at 2 per unit, 4 in total. Ask the zoning officer.",
+      "section": "1303.220(B)(1)(e), Table 1304.A",
+      "url": "https://ecode360.com/43686947",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "1303.220(B)(1)(i), (k)",
+      "url": "https://ecode360.com/43686593",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'No new, separate utility connection may be installed for the Accessory Dwelling Unit in a Principal Structure, unless more than one utility connection already serves the Lot'. With public sewer the ADU ties into the house's sewer line."
+    }
+  },
+  "districts": {
+    "R-VL": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "1302.200(B) Figure 1302.B B.5",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Lot Area 20,000 square feet minimum'. Lot width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "1302.200(B) C.1",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "1302.200(B) C.3",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "1302.200(B) C.4",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1302.200(B) B.1",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "1302.200(B) D.1",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "1302.200(B) D.3",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "1302.200(B) D.4",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "1302.200(B) B.3",
+        "url": "https://ecode360.com/43683527",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "No building coverage. Impervious coverage 30% maximum."
+      }
+    },
+    "R-L": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "1302.210(B) Figure 1302.C B.5",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'20,000 square feet without public sewer/water 12,000 square feet with public sewer/water'. Lot width 80 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1302.210(B) C.1",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "1302.210(B) C.3",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "1302.210(B) C.4",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1302.210(B) B.1",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 45,
+        "section": "1302.210(B) D.1",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "1302.210(B) D.3",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "1302.210(B) D.4",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "1302.210(B) B.3",
+        "url": "https://ecode360.com/43683537",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "No building coverage. Impervious coverage 40% maximum."
+      }
+    }
+  }
+}

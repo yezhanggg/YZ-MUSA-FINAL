@@ -1,0 +1,687 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Macungie township",
+    "instrument": "Code of the Township of Lower Macungie, Chapter 27 Zoning (Zoning Ordinance of 2019, Ord. No. 2019-10), as published on eCode360, with Exhibit 1 Zoning Use Table (27 Attachment 2) and the Parking Matrix Exhibit (27 Attachment 9)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 (code LO1244): includes legislation through 05-21-2026. The use table carries Ord. No. 2023-03 and Ord. No. 2026-02 (5/21/2026). 27-1708 carries only Ord. No. 2019-10 (8/1/2019). New Laws: Ord. No. 2026-05 (Zoning, adopted 9-17-2026) was read. It amends 27-1708 (fences, home occupations not in garages or accessory structures, solar, temporary storage units), 27-1709, 27-1705, adds 27-1910 and deletes open space neighborhood development. It does not change the accessory residential dwelling (27-1708.2.M). Read in the eCode360 print views and the attachment PDFs on 2026-11-12.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/30829060",
+      "https://ecode360.com/print/LO1244?guid=30829060",
+      "https://ecode360.com/34782295",
+      "https://ecode360.com/34782301",
+      "https://ecode360.com/34782308",
+      "https://ecode360.com/34782688",
+      "https://ecode360.com/34782783",
+      "https://ecode360.com/34782784",
+      "https://ecode360.com/34782785",
+      "https://ecode360.com/34782805",
+      "https://ecode360.com/34782816",
+      "https://ecode360.com/34782817",
+      "https://ecode360.com/34782833",
+      "https://ecode360.com/34782854",
+      "https://ecode360.com/34782862",
+      "https://ecode360.com/34782863",
+      "https://ecode360.com/34782878",
+      "https://ecode360.com/34782885",
+      "https://ecode360.com/34782886",
+      "https://ecode360.com/34782919",
+      "https://ecode360.com/34782926",
+      "https://ecode360.com/34782927",
+      "https://ecode360.com/34782988",
+      "https://ecode360.com/34783108",
+      "https://ecode360.com/34784332",
+      "https://ecode360.com/34784380",
+      "https://ecode360.com/34784426",
+      "https://ecode360.com/34784613",
+      "https://ecode360.com/34785273",
+      "https://ecode360.com/34786219",
+      "https://ecode360.com/attachment/333566/LO1244-027b%20Zoning%20Use%20Table.pdf",
+      "https://ecode360.com/attachment/333566/LO1244-027i%20Parking%20Matrix%20Exhibit.pdf",
+      "https://ecode360.com/LO1244/laws",
+      "https://ecode360.com/LO1244/laws/LF2816763.pdf"
+    ],
+    "verified_on": "2026-11-12",
+    "county": "Lehigh",
+    "municipality_type": "township",
+    "geoid": "4207744952",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30829060",
+    "code_current_through": "2026-05-21",
+    "code_current_through_note": "eCode360: Includes legislation through 05-21-2026. New Laws: Ord. No. 2026-05 (Ch 27, 2026-09-17) not yet codified.",
+    "checks": [
+      "The code's second unit is an 'accessory residential dwelling': one per single-family detached house, permitted by right as an accessory use with a Zoning Officer permit (27-1708.2.M)",
+      "It may be occupied only by family members. The intent is to let related family members live on the premises and to bar for-profit apartments (27-1708.2.M)",
+      "It must be part of the house or inside an existing accessory structure such as a garage. No new detached building may be built for it (27-1708.2.M(2))",
+      "Not in a basement unless one wall is at grade with direct outside access. No exterior change that suggests more than one dwelling (27-1708.2.M(2), (4))",
+      "A deed restriction must say it is not a rental apartment unit. The Zoning Officer keeps a record of its use (27-1708.2.M(6), (7))",
+      "The district accessory use lists name it in AP, R, SR, S, U, ETV-1, ETV-2, HLRO, I, HI-SC and HE. Not in ETV-3, C, WC, HC, C-SC or ORLIC. In I, HI-SC and HE houses are not a permitted use, so only an existing house qualifies",
+      "AP also lists an 'accessory dwelling unit' as a special exception (27-404.1.A). The term is not defined. Ask whether it is the same unit or a broader one",
+      "A site plan is required for an accessory dwelling unit (27-2402.3)",
+      "Parking: 2 spaces per single-family detached dwelling unit. No ADU row (27 Attachment 9)",
+      "Tiny houses, trailers and shipping containers are not accessory structures (27-202). 'Recreational vehicles may not be utilized as accessory dwelling units or structures upon a lot' (27-1708.2.C)",
+      "A use not specifically provided for is a conditional use (27-108, Ord. 2025-04). It is not expected to reach a second unit: the accessory residential dwelling is provided for, and 27-1708.2.M(2) bars a new detached building for it",
+      "'Family members' in 27-1708.2.M(3) is not defined. Read with the intent sentence ('related family members'), it means relatives. It is not the 27-202 'family' that allows up to six unrelated persons"
+    ],
+    "notes": "Zoning office: Lower Macungie Township Zoning Officer. Census GEOID from towns_index.json. Searched the full Chapter 27 print view for: accessory dwelling, accessory apartment, accessory residential dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, family member, short-term, conversion. The use table (Exhibit 1) has no accessory use rows and no two-family row. No short-term rental rule."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory residential dwelling",
+      "section": "27-1708.2.M, 27-418.1.B, 27-505, 27-605, 27-705, 27-805",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'One dwelling accessory to a single-family detached dwelling permitted subject to the conditions of this paragraph.' 27-404.1.A and 27-2402.3 use 'accessory dwelling unit'."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-1708.2.M",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Permitted by right as an accessory use, for family members only, inside the house or an existing accessory structure. 'The accessory residential dwelling shall be occupied only by family members.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-1708.2, 27-1708.2.M(6), 27-705.1.D",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Accessory uses or structures on the same lot which are customarily incidental to the permitted use and primary structure are permitted by right.' 'Each accessory residential dwelling must be permitted by the Township Zoning Officer'."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "I",
+            "HI-SC",
+            "HE"
+          ],
+          "path": "special_exception",
+          "section": "27-1205, 27-1305, 27-1405, 27-2503.2.A, Exhibit 1",
+          "url": "https://ecode360.com/34786219",
+          "note": "Listed as an accessory use, but a house is not a permitted use here. Reading: adding a unit enlarges a nonconforming use, which needs Zoning Hearing Board approval."
+        }
+      ],
+      "section": "27-2503.2.A",
+      "url": "https://ecode360.com/34786219",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Nonconforming uses and structures shall not be extended or enlarged' except with Zoning Hearing Board approval."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-2503, MPC 910.2",
+      "url": "https://ecode360.com/34786219",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A lot or a unit that fails these rules, or a new detached building, needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Accessory dwelling unit by special exception (AP)",
+          "path": "special_exception",
+          "districts": [
+            "AP"
+          ],
+          "conditions": "AP lists 'Accessory dwelling unit' as a special exception, subject to Part 24, and also lists 'Accessory residential dwelling' by right (27-418.1.B). AP lots for a house are 1 acre or more.",
+          "min_lot_sqft": 43560,
+          "section": "27-404.1.A, 27-416",
+          "url": "https://ecode360.com/34782688",
+          "confidence": "secondary",
+          "note": "Most likely the same family unit: 27-1708.2.M(2) itself calls the accessory residential dwelling an 'accessory dwelling unit' and an 'accessory apartment', as does 27-2402.3. So the by-right listing in 27-418.1.B governs (doubt resolved for the owner, MPC 603.1). The special exception matters only if the township reads it as a broader unit. Ask the zoning officer."
+        }
+      ],
+      "section": "27-404.1.A",
+      "url": "https://ecode360.com/34782688",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "The use table has no two-family or conversion row. Single-family semidetached and attached dwellings are permitted only in U, ETV and HLRO, as new buildings."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "AP",
+        "R",
+        "SR",
+        "S",
+        "U",
+        "ETV-1",
+        "ETV-2",
+        "HLRO",
+        "I",
+        "HI-SC",
+        "HE"
+      ],
+      "section": "27-418.1.B, 27-505, 27-5A06, 27-605, 27-705.1.D, 27-805.1.A, 27-9A04, 27-9B04, 27-1205, 27-1305, 27-1405",
+      "url": "https://ecode360.com/34782878",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Districts whose accessory use list names 'Accessory residential dwelling'. 'Only the following accessory uses are permitted in this part.'"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-1708.2.M",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'One dwelling accessory to a single-family detached dwelling'. Not for a twin or a townhouse."
+    },
+    "min_lot_sqft": {
+      "value": null,
+      "section": "27-1708.2.M",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No lot minimum for the unit. The district lot rules apply."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Occupied only by family members. The intent is to let related family members live on the premises and to bar for-profit apartments.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1708.2.M, M(3)",
+          "url": "https://ecode360.com/34784613"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "The unit is part of the house or is inside an existing accessory structure such as a garage. 'No new separate detached structures on the same lot with the principal residence shall be permitted to be constructed for this use.'",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-1708.2.M(2)",
+          "url": "https://ecode360.com/34784613"
+        },
+        {
+          "kind": "design",
+          "condition": "Not in a basement (half or more of its height below grade) unless one wall is at grade with direct outside access. No exterior change that suggests more than one dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1708.2.M(2), (4)",
+          "url": "https://ecode360.com/34784613"
+        },
+        {
+          "kind": "other",
+          "condition": "A deed restriction must say the unit is used only as this chapter allows and not as a rental apartment unit. The Zoning Officer permits it and keeps a record of its use. A site plan is required.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1708.2.M(6), (7), 27-2402.3",
+          "url": "https://ecode360.com/34784613",
+          "bill_overrides": true
+        },
+        {
+          "kind": "utilities",
+          "condition": "Where a septic system is used, the applicant shows it is permitted and adequate for the added wastewater.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1708.2.M(8)",
+          "url": "https://ecode360.com/34784613"
+        },
+        {
+          "kind": "district",
+          "condition": "In I, HI-SC and HE a single-family detached dwelling is not a permitted use (use table N). Only an existing house qualifies. Enlarging a nonconforming use needs Zoning Hearing Board approval, so the tool shows a hearing path here.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "I",
+            "HI-SC",
+            "HE"
+          ],
+          "building_types": null,
+          "section": "Exhibit 1 Zoning Use Table, 27-2503.2",
+          "url": "https://ecode360.com/attachment/333566/LO1244-027b%20Zoning%20Use%20Table.pdf"
+        }
+      ],
+      "section": "27-1708.2.M",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Conditions from the accessory residential dwelling rule."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-1708.2.M(2)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Inside the house or an existing accessory structure. An addition that becomes part of the house is read as allowed. A new detached building is not."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "27-1708.2.M",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No historic rule in the accessory dwelling text."
+    },
+    "requires_conforming_lot": {
+      "value": false,
+      "section": "27-2503.1",
+      "url": "https://ecode360.com/34786219",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'A building may be constructed on any lot which was lawful when created and which prior to the effective date of this chapter was in separate ownership'. The unit is not tied to a conforming lot."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-1708.2.M(2)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'part of the principal residence or may be contained in an existing accessory structure such as a garage'. An addition to the house and a unit above an existing garage are readings. No new detached building."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-1708.2.M",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No size cap."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "27-1708.2.M",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No share-of-house cap."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 18,
+      "section": "27-1708.2.A(5)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Detached garage or carport cap, the only accessory building that can hold the unit. No new detached unit is allowed (27-1708.2.M(2)). Sheds 12 ft (27-1708.2.A(6))."
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "27-1708",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No distance between a garage and the house in 27-1708."
+    },
+    "max_height_garage_ft": {
+      "value": 18,
+      "section": "27-1708.2.A(5)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Detached garage or carport: 'The maximum building height shall not exceed 18 feet in height.'"
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "27-1708.2.A(5)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'A detached garage or carport shall be allowed no closer than between 10 feet to the rear or side lot lines'. An existing garage keeps its lawful place."
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "27-1708.2.A(5)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Detached garage or carport 10 ft from the rear lot line."
+    },
+    "setback_rear_alley_ft": {
+      "value": 10,
+      "section": "27-1708.2.A(5)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No alley rule for a garage."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "27-1708.2",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory uses meet the district yards except as modified. District front yard."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "27-1708.2.A(5)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "A detached garage takes the 10 ft side and rear rule, not the district yards."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-506, 27-606, 27-706, 27-806",
+      "url": "https://ecode360.com/34782885",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "District height 35 ft for houses."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "27-1708.2.M",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "No owner rule. Occupants must be family members."
+    },
+    "family_only": {
+      "value": true,
+      "section": "27-1708.2.M(3), 27-202 'Family'",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'The accessory residential dwelling shall be occupied only by family members.' Not defined. Read as relatives (intent: 'related family members'), not the 27-202 family of up to six unrelated persons."
+    },
+    "occupancy": {
+      "value": "Family members only. The deed must say the unit is not a rental apartment unit.",
+      "section": "27-1708.2.M(3), (7)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "27-1708.2.M(7)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: the unit may not be used 'as a rental apartment unit', so it may not be rented at all. No town-wide short-term rental rule in Chapter 27."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-1708.2.M(5)",
+      "url": "https://ecode360.com/34784613",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'No more than one accessory residential dwelling shall be permitted per single-family detached dwelling.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27 Attachment 9",
+      "url": "https://ecode360.com/attachment/333566/LO1244-027i%20Parking%20Matrix%20Exhibit.pdf",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "No ADU row. Single-family detached dwellings: 2 spaces per dwelling unit, garage and driveway may count. If the unit counts as a dwelling unit, 4 in total. If it does not, 2.",
+      "section": "27 Attachment 9 Parking Matrix Exhibit",
+      "url": "https://ecode360.com/attachment/333566/LO1244-027i%20Parking%20Matrix%20Exhibit.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "AP": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-416",
+        "url": "https://ecode360.com/34782783",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single-family dwelling on a lot from an original tract under 12 acres: 1 acre, 150 ft wide. Larger tracts: 27-411 (1 to 1.5 acres)."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-417",
+        "url": "https://ecode360.com/34782784",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-417",
+        "url": "https://ecode360.com/34782784",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-417",
+        "url": "https://ecode360.com/34782784",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-416",
+        "url": "https://ecode360.com/34782783",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Impervious 25%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-416",
+        "url": "https://ecode360.com/34782783",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "R": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "27-506",
+        "url": "https://ecode360.com/34782816",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single-family detached: 2 acres, 150 ft wide."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-507",
+        "url": "https://ecode360.com/34782817",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 35,
+        "section": "27-507",
+        "url": "https://ecode360.com/34782817",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-507",
+        "url": "https://ecode360.com/34782817",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.05,
+        "section": "27-506",
+        "url": "https://ecode360.com/34782816",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Impervious 15%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-506",
+        "url": "https://ecode360.com/34782816",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "SR": {
+      "min_lot_sqft": {
+        "value": 18000,
+        "section": "27-606",
+        "url": "https://ecode360.com/34782862",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single-family detached: 18,000 sq ft, 100 ft wide. One acre with on-lot sewage or well."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-607",
+        "url": "https://ecode360.com/34782863",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-607",
+        "url": "https://ecode360.com/34782863",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-607",
+        "url": "https://ecode360.com/34782863",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-606",
+        "url": "https://ecode360.com/34782862",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Impervious 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-606",
+        "url": "https://ecode360.com/34782862",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "S": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "27-706",
+        "url": "https://ecode360.com/34782885",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single-family detached: 12,000 sq ft, 80 ft wide. One acre with on-lot sewage or well."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-707",
+        "url": "https://ecode360.com/34782886",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Residential use."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-707",
+        "url": "https://ecode360.com/34782886",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Residential use."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-707",
+        "url": "https://ecode360.com/34782886",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-706",
+        "url": "https://ecode360.com/34782885",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Impervious 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-706",
+        "url": "https://ecode360.com/34782885",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    },
+    "U": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-806",
+        "url": "https://ecode360.com/34782926",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Single-family detached: 6,000 sq ft, 60 ft wide. One acre with on-lot sewage."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-807",
+        "url": "https://ecode360.com/34782927",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-807",
+        "url": "https://ecode360.com/34782927",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-807",
+        "url": "https://ecode360.com/34782927",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-806",
+        "url": "https://ecode360.com/34782926",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Impervious 40%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-806",
+        "url": "https://ecode360.com/34782926",
+        "verified_on": "2026-11-12",
+        "confidence": "verified"
+      }
+    }
+  }
+}
