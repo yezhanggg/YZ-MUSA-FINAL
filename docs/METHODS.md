@@ -152,6 +152,16 @@ The fit is a flat-ground test. Ground slope is read afterwards and reported next
 
 Code: `pipeline/terrain.py` (maths) and `build_lots terrain` (refresh step). Tests: `tests/test_terrain.py` (planes with known slope) and `tests/test_build_lots.py::test_terrain_refresh_without_rerun`.
 
+Results on the built lots (Nov 12, 2026; source: `lots/<city>/index.parquet` terrain columns, `ops/logs/terrain.md`):
+
+| City, scenario | Detached fits | Fits with a steep best spot (25 percent or more) | Fits on ground under 25 percent | Fit 600 | Fit 600 under 25 percent |
+|---|---|---|---|---|---|
+| Pittsburgh, today | 65.8% | 17.9% (27.2% of the lots that fit) | 53.0% | 41.2% | 24.6% |
+| Pittsburgh, state reform | 70.0% | 19.0% | 56.7% | 45.9% | 27.5% |
+| Philadelphia, state reform | 26.0% | 0.7% (2.6% of the lots that fit) | 25.0% | 7.6% | 6.9% |
+
+The headline answers are unchanged; these are the answers reported beside them. Slope under the spot barely moves between a 3, 6 and 9 ft grid (median 14.0, 13.8, 13.9 percent on 292 Pittsburgh spots), so the steep share is terrain, not lidar noise.
+
 Limits: the DEM is bare earth, so ground under houses is filled in and a retaining wall reads as a strip of very steep cells. The 2024 to 2025 lidar does not see grading done since. Slope under the spot is a planning signal, not a site survey or a geotechnical finding.
 
 ## 2. How rules are resolved

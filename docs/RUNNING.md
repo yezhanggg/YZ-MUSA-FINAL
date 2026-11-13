@@ -280,6 +280,25 @@ npm run eval:agent:score
 
 Eval runs land in `<data root>/ops/agent-eval/<time>-<model>/` (`report.md`, `score.json`). See [app/README.md](../app/README.md).
 
+#### Lot files from the internal disk (faster, steadier dev server)
+
+`npm run dev` serves the lot files at `/data/lots2/` from `LOT_DATA_DIR` (default `~/musa-drive/lots`, the external
+drive). When the drive is busy (training, OCR, downloads) its reads can stall. A copy of the public bundle on the
+internal disk (outside the repo and outside iCloud) works the same, since it holds every file the app reads:
+
+```bash
+tools/publish_lots.sh                                   # refresh ~/musa-drive/host (nothing is uploaded)
+mkdir -p ~/Library/Caches/yz-musa/lots-local
+rsync -a --delete ~/musa-drive/host/lots/ ~/Library/Caches/yz-musa/lots-local/   # about 480 MB
+LOT_DATA_DIR=~/Library/Caches/yz-musa/lots-local npm run dev
+```
+
+The copy leaves out the sale and assessment facts (the app never reads them) and the files only the pipeline uses
+(`index.parquet`). Re-run the two copy lines after a lot rebuild. Measured on Nov 12 (headless, 10 lots): opening a
+lot that was not loaded yet took 0.2 to 1.7 s from either disk, and the first page load took about 11 to 13 s on the
+dev server either way (module transforms, base map, fonts).
+
+
 ## 5. Tests
 
 Python (geospatial env):

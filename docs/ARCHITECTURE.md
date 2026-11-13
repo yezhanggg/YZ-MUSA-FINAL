@@ -58,6 +58,7 @@ In words:
 2. The place `build` step joins parcels, assessor rows, zoning, overlays, flags and building outlines into one lots table and one buildings table per place, in `processed/<place>/`.
 3. The lot builder (`pipeline/build_lots.py`) reads those tables. For every lot and each of the three scenarios (today, local reform, state reform) it resolves the rules (`pipeline/rules.py`), finds the front, rear and side lot lines, cuts the buildable ground and fits each allowed ADU type (`pipeline/fit.py`). The fit is a vector geometry test on lot, building and street lines with rule-based setbacks.
 4. It joins land cover per lot and reads what lies inside the suggested spot (trees a unit would remove, open ground, hard surface). Land cover is context. It does not move or block the unit.
+   A later refresh step (`build_lots terrain`) adds ground slope from the USGS 3DEP 1 m DEM: over the lot, the buildable ground and under the suggested spot, a steep flag and a second fit on ground under 25 percent. Slope is context too. It does not change the fit's yes or no.
 5. It writes one validated JSON record per lot, grouped by 2020 census tract, plus a compact index, the current app's per-tract lists and a manifest.
 6. The browser loads a tract file, shows the saved answer, and tests a unit the user draws against the saved buildable ground.
 
@@ -82,11 +83,33 @@ Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 |---|---|---|---|
 | 1. Lot-level rules | Philadelphia and Pittsburgh (`shared/rules/philadelphia.json`, `pittsburgh.json`, plus the bill files) | Every rule resolved for every lot and scenario, with district setbacks and overlays, saved in the lot record | Lot files, Testing mode, the assistant's lot tools |
 | 2. Town rule files | 36 towns beyond the two cities, ranks 3 to 38 by 2020 population (`shared/rules/pa_<county>_<town>.json`). 21 verified, 15 drafted with a stated open point | ADU status, approval path, size, owner occupancy, conditions and other ways to add a unit, each cited. No lot files | The assistant (`get_rule_text`, `list_rule_places`), `pipeline/rules.py` town resolver, [RULES_TOWNS.md](RULES_TOWNS.md) |
+| 2b. Public zoning text (unverified) | 66 towns with a public copy of the ordinance on the town or a county site (`<data root>/corpus/tierb/`, published as `zoning_text/` next to the lot data) | Passages copied word for word, with section, pages, link and fetch date. No verdict | The assistant (`search_zoning_text`, `list_text_places`), only for a town with no rule file or a detail the rule file lacks. Labelled "unverified text search" |
 | 3. Statewide baseline | Every other Pennsylvania town (`shared/rules/pa_statewide.json`) | MPC approval paths, building code, sewage rules, the pending bills. No town zoning numbers | The assistant, which says the answer is the statewide baseline and not the town's own code |
 
 <!-- source: shared/rules/towns_index.json (status per town), shared/rules/pa_*.json, app/src/agent/ruleText.ts, agent/schema.ts SYSTEM_PROMPT -->
 
-A machine-read pilot of town ordinance text (`pipeline/corpus/`) sits outside the product. It is not in the app or the assistant. See [CORPUS.md](CORPUS.md).
+Tier 2b is built by `pipeline/corpus/tierb.py` from the machine-read pilot (`pipeline/corpus/`). The pilot's machine drafts (status, path, districts) stay out of the product. See [CORPUS.md](CORPUS.md).
+
+## How the assistant answers
+
+For any question about what a Pennsylvania municipality allows, the assistant calls `get_place_answer` first
+(`app/src/agent/placeAnswer.ts`). For one lot in Philadelphia or Pittsburgh the lot tools come first. The tool
+resolves the place (name, "name, county", GEOID, or the town selected on the map; a shared name such as the 22
+Washington townships gets a question back, never a guess), reads its row in `app/public/data/pa_places.json` and
+walks the ladder. The assistant never answers "I don't know": it gives the best grounded answer with its label and the
+next step, and never invents a rule, a section or a number.
+
+| Tier | Where from | What the answer says | Confidence label |
+|---|---|---|---|
+| verified | Hand-checked rule file | The rule as fact: forms, size cap, approval, conditions, sections | "Checked rule file, verified on <date>" |
+| drafted | Rule file with open points | The answer, plus the open points | "First reading of the town's code (<date>), with open points" |
+| reported | Dated public record (DCED Municipal Statistics: no zoning ordinance) | "Allowed, no zoning here": building code, sewage permits, deeds still apply | "<publisher> (<year>) lists ... Not checked against the code here" |
+| text_search | Public zoning text (tier 2b) | Quoted passages, no verdict, plus the statewide baseline | "Unverified text search" |
+| baseline | `shared/rules/pa_statewide.json` | Who zones here (own, county or none), the MPC paths, the bills (not law), who to ask and the question to ask | "Statewide baseline, not this town's code" |
+
+With a unit type or size, the tool also checks the proposal against the rule file (form allowed, size cap) and says
+why it fits or not. The answer format (verdict line, "Zoning here allows", "Your proposal", "Why it does or does not
+fit", source and confidence, "Next step") is in the system prompt (`agent/schema.ts`). Eval: `agent/eval/questions_ladder.json`.
 
 ## Module map
 
@@ -102,7 +125,8 @@ A machine-read pilot of town ordinance text (`pipeline/corpus/`) sits outside th
 | `pipeline/rules.py` | Validates rule files and resolves them for one lot and one scenario. Cities and towns have separate resolvers |
 | `pipeline/fit.py` | Vector fit engine: lot lines, setbacks, buildable ground, largest rectangle, fit per ADU type |
 | `pipeline/lot.py`, `pipeline/lot_schema.json` | The lot record contract and its validator |
-| `pipeline/build_lots.py` | Lot file builder: `run`, `validate`, `stats`, `qa` |
+| `pipeline/build_lots.py` | Lot file builder: `run`, `validate`, `stats`, `qa`, and the refresh steps `cover` (land cover) and `terrain` (ground slope), which fold a block into built records without a fit rerun |
+| `pipeline/terrain.py` | Ground slope from the 3DEP 1 m DEM: slope grid in EPSG:2272, slope over the lot, buildable ground and best spot, and the fit on ground under 25 percent |
 | `pipeline/market.py` | HUD Small Area Fair Market Rents for Pennsylvania ZIP codes |
 | `pipeline/money.py`, `shared/assumptions.json` | Cost, rent and pay-off model. Every number lives in the assumptions file |
 | `pipeline/vision/` | Land cover U-Net: labels, training, scoring, error analysis, city label sets (`city.py`, `city_check.py`), land cover per lot from the model (`infer_lots.py`) or a city raster (`raster_cover.py`), and cover inside any polygon (`cover_lookup.py`) |

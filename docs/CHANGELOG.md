@@ -2,9 +2,18 @@
 
 ## 2026-11-12
 
-What changed since the evening entry below. The lot files themselves did not change: Philadelphia `philadelphia-20261111-b7fa7bda07`, Pittsburgh `pittsburgh-20261111-bdeb5697ae`.
+What changed since the evening entry below. The lot files changed only through the terrain refresh (next section). Before it: Philadelphia `philadelphia-20261111-b7fa7bda07`, Pittsburgh `pittsburgh-20261111-bdeb5697ae`.
 
 Not legal advice. Not a zoning determination. HB 2186, SB 1346 and Bill 250042 are bills, not law. Both state bills die if not enacted by Nov 30, 2026.
+
+### Ground slope folded into the lot files (terrain refresh)
+
+<!-- source: ~/musa-drive/lots/<city>/manifest.json terrain block, ~/musa-drive/ops/logs/terrain.md -->
+
+- New refresh step `build_lots terrain` adds a `terrain` block to every lot record from the USGS 3DEP 1 m lidar DEM (flown 2024-04-14 to 2025-04-02, public domain): slope over the lot, over the buildable ground per scenario and under the best spot, drop across the spot, a `steep_site` flag (mean slope 25 percent or more under the spot) and a second fit on ground under 25 percent. The fit's yes or no is unchanged.
+- New data versions: Pittsburgh `pittsburgh-20261112-f2be01fba6`, Philadelphia `philadelphia-20261112-d441ac616a`. Backups of the files it rewrote are in `~/musa-drive/backups/lots-<city>-pre-terrain-<old version>/`.
+- Pittsburgh: 27.2 % of the lots where a detached unit fits today have a steep best spot. On ground under 25 percent, a 600 sq ft unit fits on 24.6 % of lots (headline 41.2 %).
+- Thresholds `lots.terrain.moderate_slope_pct` (15) and `lots.terrain.steep_slope_pct` (25) in `shared/assumptions.json`.
 
 ### Tract analysis rerun on the lot results and the town files
 

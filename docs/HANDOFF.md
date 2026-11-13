@@ -79,6 +79,8 @@ File: `shared/assumptions.json`, keys under `lots.`. The lot builder reads them 
 |---|---|---|
 | `lots.flag.steep_slope_min_share` | 0.25 | Share of the lot in the steep slope layer to set the flag |
 | `lots.flag.landslide_min_share` | 0.25 | Same for landslide-prone ground |
+| `lots.terrain.moderate_slope_pct` | 15 | Mean slope under the best spot from which the ground is moderate (no lot rebuild: rerun `build_lots terrain --force`) |
+| `lots.terrain.steep_slope_pct` | 25 | Mean slope from which the ground is steep (`terrain.steep_site`), and the cut for the gentle fit. Same rerun |
 | `lots.flag.flood_min_share` | 0.1 | Same for the floodplain |
 | `lots.flag.historic_min_share` | 0.5 | Same for a historic district |
 | `lots.garage.min_sqft` | 180 | Smallest accessory building read as a garage |
@@ -185,6 +187,21 @@ $G -m pipeline.build_lots cover --place pittsburgh --workers 4                  
 - Training commands are in [RUNNING.md](RUNNING.md) section 4.
 
 Detector steps are in `musa6950/yolo/README.md`. Its scores are against unchecked labels (see f).
+
+### 6b. Ground slope (terrain refresh)
+
+Ground slope comes from the USGS 3DEP 1 m DEM in `~/musa-drive/raw/elevation/<city>/` (tiles, `SOURCES.json`, `dem.vrt`). `build_lots terrain` folds a `terrain` block into the built lot records and adds slope columns to the index and app files. It does not rerun the fit and does not change any yes or no. Method: [METHODS.md](METHODS.md) section 1.10.
+
+```bash
+$G -m pipeline.build_lots terrain --place pittsburgh --workers 4     # resumable by tract (terrain_progress.jsonl)
+$G -m pipeline.build_lots validate --place pittsburgh
+$G -m pipeline.build_lots stats --place pittsburgh                  # stats.json gets a terrain block per group
+```
+
+- A full `run` writes records without terrain. Run `terrain` again after it.
+- `--force` redoes tracts already done with the same DEM, code and thresholds. `--tracts` limits the run.
+- Before it rewrites anything the step copies the files it touches to `~/musa-drive/backups/lots-<city>-pre-terrain-<old data version>/` (named in `lots/<city>/terrain_backup.txt`): `index.parquet`, `manifest.json`, `progress.jsonl`, `lot_tract.*`, `stats.json`, `app/`, and per tract `detail/<GEOID>.*` and `parts/<GEOID>.parquet`.
+- Roll back: `rsync -a <backup>/ ~/musa-drive/lots/<city>/`, then delete `lots/<city>/terrain_progress.jsonl` and `terrain_backup.txt`.
 
 ### 7. The assistant (Ask)
 

@@ -1,6 +1,6 @@
 # Machine-read zoning layer: design
 
-Date: 2026-11-11. Status: pilot. Nothing here is in the product: not in the app, not in the assistant, not in the lot files. Code: `pipeline/corpus/`. Data and outputs: `<data root>/corpus/`.
+Date: 2026-11-11, tier B added 2026-11-12. Status: the quote search (tier B, below) is in the assistant. The machine drafts are not: no status, path or district from this pipeline reaches the product. Code: `pipeline/corpus/`. Data and outputs: `<data root>/corpus/`.
 
 Not legal advice. Not a zoning determination.
 
@@ -12,18 +12,18 @@ Keep the hand-checked rule files as they are. Add a second, clearly weaker layer
 
 | Tier | What it is | How the assistant may use it | Label shown |
 |---|---|---|---|
-| A. Hand-checked rule file | `shared/rules/pa_*.json` (36 towns: 21 verified, 15 drafted) and the two city files, read and checked against the code | State values, cite section, link and check date. As today | "Checked rule file, verified on <date>" |
-| B. Machine-read town | Ordinance text fetched from the town or county site, split into sections, plus a draft summary made by a small model, each claim tied to a quote that a program found in the text | Quote the text with section, page, link and retrieval date. Show the draft summary only under its label. Never state a conclusion the quotes do not support. Never fill a tier A field from it | "Machine-read, not verified. Read the quoted text." |
-| C. Statewide baseline | `shared/rules/pa_statewide.json` | MPC paths, building code, sewage, bills. As today | "Statewide baseline, not this town's code" |
+| A. Hand-checked rule file | `shared/rules/pa_*.json` (36 towns: 21 verified, 15 drafted) and the two city files, read and checked against the code | State values, cite section, link and check date | "Checked rule file, verified on <date>" |
+| B. Public zoning text | Ordinance text fetched from the town or county site, split into sections | Quote passages word for word with section, pages, link and fetch date. No verdict | "Unverified text search" |
+| C. Statewide baseline | `shared/rules/pa_statewide.json` | MPC paths, building code, sewage, bills | "Statewide baseline, not this town's code" |
 
-Order: A wins. B is used only for a place with no A file. C is always given beside B, because B may be stale, partial or wrong.
+Order: A wins. B is used for a place with no A file, or for a detail the A file lacks, kept apart and labelled. C is given beside B.
 
-Rules for tier B answers:
-- Every sentence about the town's rule carries a quote from `search_zoning_text` or from a summary claim whose `check` is `ok`.
-- A summary field with `absence: true` (for example `not_addressed`) is said as "I did not find ADU text in the parts of the ordinance I searched", never as "ADUs are not allowed".
-- Fields the model could not support were dropped. They are listed in `unsupported` and must not be stated.
-- Always say the document date or retrieval date, and that a newer amendment may exist.
-- Always end with: ask the zoning officer before you design or build.
+Rules for tier B answers (in the system prompt and the tool result):
+- Quote word for word in quotation marks, with section, link and date fetched. Say it is unverified text and to confirm with the town.
+- Never turn quotes into a verdict: no allowed / not allowed / by right, no approval path, no district list, unless a quoted sentence says it, attributed to the quote.
+- No match: "Not found in the text searched", and only when the full text is on file. With partial text the answer says the text on file is incomplete.
+- OCR text is quoted as returned, reading errors included, and said to come from a scan.
+- The machine drafts (status, path, districts, "not addressed") are never served. The pilot showed them wrong for 2 of 5 towns, one a false "not addressed".
 
 ## Pilot results
 
@@ -68,35 +68,39 @@ On verified towns only (5 towns): status raw 3 of 5, path 4 of 5, family flag 0 
 
 **Cost.** About $0.004 to $0.005 and 7 to 9 s per town for the draft. $0.49 spent in the pilot.
 
-## Tools the assistant would call
+## Tier B in the product (2026-11-12)
 
-```
-search_zoning_text(place, query, k=5)
-  place: name, "name, county" or 10 digit GEOID
-  returns: {geoid, tier: "B", label, results: [{section, heading_path, pages, url, retrieved_on, score, text}]}
-  empty results when the place has no tier B text
+**Build.** `python -m pipeline.corpus.tierb build` writes `<data root>/corpus/tierb/`: `manifest.json` (one row per place: name, county, GEOID, text file, own site or county ordinance, links, date fetched, document date, `complete` with reasons when not, OCR flag, rule file status, how many PA towns share the name) and `text/<id>.json.gz` (documents, then passages as `[doc, section, heading, first page, last page, text]`). No drafts in either. `publish <dir>` copies them. `eval` runs the retrieval check below. No network, no model.
 
-get_machine_summary(place)
-  returns: {label: "machine-read, not verified, read the quoted text", model, made_on,
-            status_consistent, draft: {field: {value, support: [{quote, section, chunk_id, url,
-            page_start, page_end, retrieved_on, check}], absence?}}, unsupported, quote_checks}
-  or null
-```
+**Places.** 66 places from 29 texts. 26 places have their own text, 8 of them read wholly or partly by OCR from scans (Robesonia, Boggs, Beaver, Middle Paxton, Ridgway, Wilkes-Barre, parts of Mont Alto and Whitehall). 40 places are covered by a county ordinance already fetched: Luzerne (19, list from the county zoning page), Lycoming (19, Zoning Partnership list), Warren (2). The county lists are in `corpus/sources/county_coverage.csv`. 61 places have the full text on file. 5 do not: South Middleton, Mont Alto, Manheim, Whitehall (separate article files), Abington (2017 base text, 16 later amendments not included; `corpus/sources/tierb_overrides.csv`). 7 places also have a rule file.
 
-`get_rule_text` stays as it is. Its "not in my data" branch would add one line: "Machine-read text is available for this town: use search_zoning_text."
+Every own-site and county source in `availability.csv` (39 rows) was already in the pilot, so no new source could be added from it and nothing was fetched. The rest of the 60-place extension came from mapping county ordinances to the places their county page lists. OCR: tesseract through ocrmypdf, 53 scanned documents, 1,311 pages, about 20 minutes of CPU. Quotes from OCR text are verbatim of the OCR, not of the scan.
 
-Prototype: `pipeline/corpus/search_zoning_text.mjs` (Node, BM25 only, no model, reads one JSON file per place). Not wired into the app. Neither tool exists in `agent/schema.ts`.
+**Size.** 15.9 MB of text, 4.3 MB gzipped (median 138 kB, largest 0.28 MB per file). A county ordinance is stored once.
 
-## Serving
+**Search: lexical, no vectors.** BM25 in the browser or Node over one place's passages, with a plural stem and query expansion for ADU words ("ADU" also searches accessory, apartment, in-law, granny, carriage, cottage, secondary) and size, parking, height and owner words at half weight. On the pilot retrieval questions (37, verified towns, cited section in the top k):
 
-- One JSON file per place: `~/musa-drive/corpus/serve/<geoid>.json` with chunks, section, pages, URL, retrieval date and the summary. Pilot: 24 places, 14 MB in all, median 0.6 MB, largest 1.2 MB. Gzip takes text like this to about a quarter.
-- Statewide guess: about 900 places with public text, 25% of them scans (left out without OCR). About 700 files, about 400 MB raw, about 100 MB gzipped.
-- Option 1, static: put the files in a public bucket or the site's static hosting. The browser loads one place file on demand (like the town rule files today) and runs BM25 in JS. No server. Vectors left out (the browser would need the embedding model).
-- Option 2, small server function: one function holds a single file (all chunks, about 400 MB) or a SQLite FTS5 index, plus the float16 vectors (e5-base 768 dims: 1.5 kB per chunk, about 0.3 GB for 200k chunks, or bge-small 384 dims at half that). The query is embedded server side. This gives the hybrid search that scored best in the pilot.
-- Start with option 1. Move to option 2 only if BM25 alone misses too much (in the pilot BM25 alone found the cited section in the top 10 for 80% of questions, hybrid 93%).
-- Refresh: re-fetch monthly with the manifest (hash and Last-Modified). Re-extract and re-draft only what changed. A draft is redone when its source hash changes.
+| Search | Top 5 | Top 10 |
+|---|---|---|
+| BM25 as in the pilot | 78% | 81% |
+| + plural stem | 84% | 86% |
+| + query expansion (shipped) | 84% | 89% |
+| e5-base hybrid (pilot, needs a model) | 84% | 92% |
 
-## Eval questions to add (agent/eval)
+The expansion was tuned on the same questions, so 89% is optimistic. Vectors would need the embedding model in the browser, or a server function that embeds the query; the API route runs no tools. One question of difference does not justify either.
+
+A passage counts as a match when it has most of the question's words, the rarest one included. For an ADU question it must also name an ADU (`ADU_PHRASES`: accessory dwelling, accessory apartment, dwelling for a relative, conversion apartment, separate residential dwelling unit and others), so "accessory" and "dwelling" scattered through a definitions page do not count. No match gives no passages and the not-found wording. Passages longer than 1,400 characters are cut to a contiguous excerpt (always an exact substring) around the ADU name or the query words.
+
+**Tools** (`app/src/agent/zoningText.ts`, in `agent/schema.ts` TOOLS, run by `app/src/agent/executors.ts`):
+- `search_zoning_text(place, county?, query, k?)`: `{tier: "B", label, place, query, source: {kind, document_date, fetched_on, full_text_on_file, incomplete_because?, ocr?}, found, results: [{quote, section, heading, pages, url, fetched_on, ocr?, words_matched}], how_to_use, next_step}`, plus `rule_file_first` for a town with a rule file. A shared name with no county (13 Penn townships) returns `ambiguous` and asks for the county.
+- `list_text_places(county?)`: the places, completeness, dates and rule file status.
+- `get_rule_text` adds `text_search` when a town has no rule file but has text.
+
+**Where the files are read.** Browser: `VITE_ZONING_TEXT_URL`, else the lot data URL with `lots/` replaced by `zoning_text/`, else `/data/zoning_text/`. Node (tests, eval): `ZONING_TEXT_DIR`, default `~/musa-drive/corpus/tierb`. The publishable copy is `~/musa-drive/host/zoning_text/` (4.2 MB), next to `host/lots/`: it goes to the same Pages repository with the lot data (docs/HOSTING.md step 4), so with `VITE_LOT_DATA_URL` set no new setting is needed. The API route (`api/agent.ts`) only passes the tool definitions to the model; tools run in the browser.
+
+**Eval.** `agent/eval/questions_tierb.json`, 10 questions (category `tier_b`), read with the generated set. Checks: every quoted span of 4 words or more is in a passage or tool result of the run; verdict and absence patterns outside quotes; not-found wording only with full text; county ordinance named; shared name asks for the county; a verified town answered from its rule file; a town with no text quotes nothing. Claude Haiku 5.5, last three runs after the fixes: 10, 7 and 10 of 10 (27 of 30). Made-up citations 0. One quote not in the text in 30 answers: the model fixed OCR errors inside a quote. Other misses: "doesn't mention" for a no-match, and asking for the county of a unique name. About $0.02 a run.
+
+## Eval questions planned in the pilot (agent/eval)
 
 For towns in tier B only, and for the tier A towns that also have own-site text (used as the check):
 1. "Can I build an ADU in <town>?" Must call `search_zoning_text`, quote a section, show the machine-read label and the zoning officer line. Fail if it states allowed or not allowed without a quote.

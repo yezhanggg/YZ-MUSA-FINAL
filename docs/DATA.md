@@ -163,6 +163,8 @@ The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARC
 | Pittsburgh | `pittsburgh-20261111-bdeb5697ae` | 2026-11-11 20:30 | 92,081 | 128 | 0 | 108,915,795 bytes, 37 tracts split into chunks |
 | Philadelphia | `philadelphia-20261111-b7fa7bda07` | 2026-11-11 21:41 | 459,998 | 385 | 0 | 314,906,136 bytes, 22 tracts split into chunks |
 
+On 2026-11-12 the terrain refresh (`build_lots terrain`) added a `terrain` block to every record without a fit rerun. New versions: `pittsburgh-20261112-f2be01fba6` (detail about 135 MB) and `philadelphia-20261112-d441ac616a` (about 339 MB). The files before it are kept in `~/musa-drive/backups/lots-<city>-pre-terrain-<old version>/`.
+
 Rule files used by both builds were checked on 2026-11-10. Lots without a cover row (42 in Pittsburgh) keep an empty `cover` block.
 
 ## Elevation (ground slope)
@@ -173,8 +175,8 @@ USGS 3DEP standard 1 m DEM, bare earth from lidar, project PA_17County_D24 (flow
 
 | City | Tiles | CRS | Folder | Size |
 |---|---|---|---|---|
-| Pittsburgh | 9 (x57 to x59, y447 to y449) | UTM 17N, metres, NAVD88 | `raw/elevation/pittsburgh/` | about 3.0 GB |
-| Philadelphia | 13 (x47 to x50, y442 to y445) | UTM 18N, metres, NAVD88 | `raw/elevation/philadelphia/` | about 4.3 GB |
+| Pittsburgh | 9 (x57 to x59, y447 to y449) | UTM 17N, metres, NAVD88 | `raw/elevation/pittsburgh/` | 2.7 GB |
+| Philadelphia | 13 (x47 to x50, y442 to y445) | UTM 18N, metres, NAVD88 | `raw/elevation/philadelphia/` | 4.0 GB |
 
 An older 1 m project also covers each city (Pittsburgh PA_WesternPA_2019_D20, flown 2019 to 2020; Philadelphia a 2015 project). They are not used.
 

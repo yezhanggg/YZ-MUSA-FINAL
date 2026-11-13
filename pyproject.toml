@@ -14,6 +14,9 @@ dependencies = [
     "pyarrow>=15",
     "jsonschema>=4.20",
     "requests>=2.31",
+    "scikit-learn>=1.5",  # pipeline/tract: forecast, groups and room models
+    "pillow>=10",  # pipeline/validation/sheets.py: the image review sheets
+    "matplotlib>=3.8",  # figures: pipeline/tract/plots.py, pipeline/places_index/analysis.py
 ]
 
 [project.optional-dependencies]

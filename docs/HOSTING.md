@@ -102,6 +102,15 @@ lists a house with that number on that street first. Photon's house layer also r
 usual one (streets and places), and the address match inside the tract still finds the lot by its address. A tract the manifest does not list now says "We have no lot data for this place yet."
 instead of a network error, because Pages sends no CORS header on a 404.
 
+## Zoning text for the assistant
+
+`~/musa-drive/host/zoning_text/` (`manifest.json` and `text/<id>.json.gz`, 4.2 MB) is the assistant's public zoning
+text (tier B, see [CORPUS.md](CORPUS.md)). It is published with the lot data by the same `rsync` in step 4. The app
+reads it from `VITE_ZONING_TEXT_URL`, or, when that is not set, from the lot data URL with `lots/` replaced by
+`zoning_text/` (`https://yezhanggg.github.io/backyard-homes-lots/zoning_text/`). No extra setting is needed. To
+update: `python -m pipeline.corpus.tierb build`, then `python -m pipeline.corpus.tierb publish ~/musa-drive/host/zoning_text`.
+The files hold ordinance text copied from town and county websites, never from commercial code hosts.
+
 ## Publish (owner, once)
 
 You need: GitHub Desktop signed in as `yezhanggg`, the external drive plugged in, and about 30 minutes.

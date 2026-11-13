@@ -1,6 +1,6 @@
 # Adding a city
 
-The recipe for a new Pennsylvania place with lot records. Philadelphia (`pipeline/places/philadelphia.py`) and Pittsburgh (`pipeline/places/pittsburgh.py`) are the two worked examples. Pittsburgh is the simpler one to copy.
+The recipe for a new Pennsylvania place with lot records. Philadelphia (`pipeline/places/philadelphia.py`) and Pittsburgh (`pipeline/places/pittsburgh.py`) are the two worked examples. Pittsburgh is the simpler one to copy. Allentown (`pipeline/places/allentown.py`) is the first place built on a town rule file (`pa_lehigh_allentown.json`), with no assessor living area.
 
 A town can also get rules without lot records. That needs only a rule file. Sections 5 and 9 cover it, and [RULES_TOWNS.md](RULES_TOWNS.md) lists the towns that have one.
 
@@ -101,7 +101,7 @@ An optional `alleys.parquet` with the same columns is added to the streets. Only
 
 | File | Change |
 |---|---|
-| `pipeline/build_lots.py` | Add a `Place` to `PLACES`: name, county FIPS, CRS, street suffixes that name a lane, `front_when_null` (`fixed` or `contextual`), `strict_garage`, `cost_key` (a key of `cost.area_cost_factor`, or `rest_of_pa`) and `imagery_key` |
+| `pipeline/build_lots.py` | Add a `Place` to `PLACES`: name, county FIPS, CRS, street suffixes that name a lane, `front_when_null` (`fixed` or `contextual`), `strict_garage`, `cost_key` (a key of `cost.area_cost_factor`, or `rest_of_pa`) and `imagery_key`. For a town rule file also: `not_checked` (setbacks left unchecked where the file has no number, instead of the planning fallbacks), `share_cap_from_footprint=False` (no living area: the share-of-house cap is not checked) and `way_gate_counts_corner` (a corner lot passes an "abuts an alley" gate). Allentown is the example |
 | `pipeline/lot.py` | Add the place to `LOCAL_CRS` |
 | `pipeline/lot_schema.json` | If the CRS is new, add it to the `crs_local` enum |
 | `app/src/lib/lot/load.ts` | Add the county FIPS to `PLACE_BY_COUNTY` |

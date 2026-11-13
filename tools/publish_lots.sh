@@ -209,7 +209,10 @@ mailing addresses. No assessed values and no sale dates or prices: those stay ou
   ArcGIS Online layers (zoning, overlays, historic, steep slope, landslide prone). Allegheny County property
   assessments (WPRDC). Microsoft Global ML Building Footprints. High resolution land cover for Pittsburgh watersheds
   2019 (University of Vermont).
-- Both: US Census TIGER 2020 tracts. HUD Small Area Fair Market Rents. FEMA National Flood Hazard Layer.
+- Allentown: City of Allentown GIS services (parcels with land use, tax parcel use code, units and ZIP, Zone
+  Allentown zoning per parcel, zoning overlays, historic districts, building outlines, street centerlines with
+  cartway widths). Microsoft Global ML Building Footprints for outlines the city layer misses. USGS 3DEP 1 m DEM.
+- All places: US Census TIGER 2020 tracts. HUD Small Area Fair Market Rents. FEMA National Flood Hazard Layer.
 - Rules: city zoning codes and state bills, each cited with its link and the date it was checked.
 
 ## Licence notes
@@ -219,9 +222,10 @@ These notes repeat what the providers state. They are not legal advice.
 - Some city and county layers have no stated licence. The Allegheny County layers on PASDA state no licence and say
   "informational purposes only". The City of Pittsburgh layers state no licence (WPRDC lists "License not
   specified"). The City of Philadelphia License says free public use and keeps all rights, but does not say whether
-  copies may be republished. Republishing these derived files may need the provider's permission. Ask the provider.
-- Microsoft building footprints and OpenStreetMap are under the ODbL. The Pittsburgh building outlines mix county and
-  Microsoft outlines, and the Philadelphia alleys use OpenStreetMap. Data derived from them is shared under the ODbL:
+  copies may be republished. The City of Allentown layers state no licence (copyright text "City GIS").
+  Republishing these derived files may need the provider's permission. Ask the provider.
+- Microsoft building footprints and OpenStreetMap are under the ODbL. The Pittsburgh and Allentown building outlines mix
+  county or city and Microsoft outlines, and the Philadelphia alleys use OpenStreetMap. Data derived from them is shared under the ODbL:
   © Microsoft, © OpenStreetMap contributors.
 - Allegheny County property assessments are CC0. Owner and mailing columns were dropped at download.
 - Census, FEMA and other federal data are US government works.
