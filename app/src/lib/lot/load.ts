@@ -17,7 +17,7 @@ export const DEFAULT_LOT_DATA_URL = '/data/lots2/';
 export const CACHE_TRACTS = 12;
 
 /** County FIPS (state + county) -> place folder. Only places with built lot files are listed. */
-export const PLACE_BY_COUNTY: Readonly<Record<string, string>> = { '42003': 'pittsburgh', '42101': 'philadelphia' };
+export const PLACE_BY_COUNTY: Readonly<Record<string, string>> = { '42003': 'pittsburgh', '42101': 'philadelphia', '42077': 'allentown' };
 
 export type LotLoadErrorKind = 'not_found' | 'offline' | 'server' | 'bad_data' | 'version_mismatch' | 'aborted';
 

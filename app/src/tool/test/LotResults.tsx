@@ -101,12 +101,15 @@ function WithRecord({ record, builtAt, tab }: { record: LotRecord; builtAt: stri
         <Fold title="Money">
           <MoneyBody m={r.money} lot={record} />
         </Fold>
-        <Fold title="Land cover">
-          <div className="space-y-2">
-            <SpotCoverLine lot={record} v={r.verdict} u={r.unit} />
-            <CoverBody lot={record} />
-          </div>
-        </Fold>
+        {/* A place with no land cover (Allentown) shows no Land cover fold. */}
+        {record.cover?.building != null && (
+          <Fold title="Land cover">
+            <div className="space-y-2">
+              <SpotCoverLine lot={record} v={r.verdict} u={r.unit} />
+              <CoverBody lot={record} />
+            </div>
+          </Fold>
+        )}
         <Fold title="Lot facts">
           <FactsBody lot={record} builtAt={builtAt} />
         </Fold>

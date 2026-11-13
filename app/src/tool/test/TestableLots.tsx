@@ -15,9 +15,11 @@ import { useManifests } from './placeData';
 export const LOT_PLACES = [
   { id: 'pittsburgh', name: 'Pittsburgh', center: [-79.9236, 40.4381] as [number, number] },
   { id: 'philadelphia', name: 'Philadelphia', center: [-75.0126, 40.0618] as [number, number] },
+  { id: 'allentown', name: 'Allentown', center: [-75.4880, 40.6010] as [number, number] },
 ];
 
-/** "Testable Lots": the switch on the title line, then one button per city that flies there, with its lot count. */
+/** "Testable Lots": the switch on the title line, then one row per city that flies there, with its lot count (three
+ * cities do not fit side by side in the 300 px panel). */
 export default function TestableLots() {
   const on = useTool((s) => s.lotsLayer);
   const ready = useTool((s) => s.status === 'ready');
@@ -42,11 +44,11 @@ export default function TestableLots() {
           <span aria-hidden className={cx('absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform', on && 'translate-x-5')} />
         </button>
       </div>
-      <div className="mt-2 grid grid-cols-2 gap-1.5">
+      <div className="mt-2 grid grid-cols-1 gap-1.5">
         {LOT_PLACES.map((p) => {
           const n = count(p.id);
           return (
-            <button key={p.id} type="button" disabled={!ready} onClick={() => flyToPilot(p.center)} data-place={p.id} title={`Go to ${p.name}`} className="tap flex min-w-0 flex-col items-start rounded-lg bg-white px-2.5 py-1.5 text-left ring-1 ring-stone-300 transition hover:bg-violet-50 hover:ring-violet-200 disabled:opacity-40">
+            <button key={p.id} type="button" disabled={!ready} onClick={() => flyToPilot(p.center)} data-place={p.id} title={`Go to ${p.name}`} className="tap flex min-w-0 items-baseline justify-between gap-2 rounded-lg bg-white px-2.5 py-1.5 text-left ring-1 ring-stone-300 transition hover:bg-violet-50 hover:ring-violet-200 disabled:opacity-40">
               <span className="text-small font-semibold text-slate-900">{p.name}</span>
               <span className="text-caption text-slate-500 tnum">{n != null ? `${n.toLocaleString('en-US')} Lots` : ' '}</span>
             </button>

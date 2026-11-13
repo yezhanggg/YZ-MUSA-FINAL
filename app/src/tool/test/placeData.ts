@@ -37,8 +37,8 @@ function getJson<T>(url: string): Promise<T | null> {
   return p as Promise<T | null>;
 }
 
-export const PLACES = ['philadelphia', 'pittsburgh'] as const;
-export const PLACE_TITLE: Record<string, string> = { philadelphia: 'Philadelphia', pittsburgh: 'Pittsburgh' };
+export const PLACES = ['philadelphia', 'pittsburgh', 'allentown'] as const;
+export const PLACE_TITLE: Record<string, string> = { philadelphia: 'Philadelphia', pittsburgh: 'Pittsburgh', allentown: 'Allentown' };
 
 function usePlaceFile<T>(place: string | null | undefined, file: string): T | null {
   const [v, setV] = useState<T | null>(null);

@@ -10,7 +10,7 @@ export interface NextLink {
   url: string;
 }
 
-type Place = 'pittsburgh' | 'philadelphia';
+type Place = 'pittsburgh' | 'philadelphia' | 'allentown';
 
 export const NEXT_LINKS: Record<Place, Partial<Record<NextKind, NextLink>>> = {
   pittsburgh: {
@@ -28,6 +28,14 @@ export const NEXT_LINKS: Record<Place, Partial<Record<NextKind, NextLink>>> = {
     build: { label: 'Licenses and Inspections', url: 'https://www.phila.gov/departments/department-of-licenses-and-inspections/' },
     rent: { label: 'Rent your property (long-term)', url: 'https://www.phila.gov/services/permits-violations-licenses/rent-or-sell-property/rent-your-property-long-term/' },
     variance: { label: 'Zoning Board of Adjustment', url: 'https://www.phila.gov/departments/zoning-board-of-adjustment/' },
+  },
+  allentown: {
+    rules: { label: 'Office of Zoning', url: 'https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Planning-Zoning-Bureau/Zoning' },
+    zoning: { label: 'Apply for permits online', url: 'https://energov.allentownpa.gov/EnerGov_Prod/SelfService/' },
+    permit: { label: 'Construction Permitting', url: 'https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Building-Standards-and-Safety/Building-Construction/Construction-Permitting' },
+    build: { label: 'Building Standards and Safety', url: 'https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Building-Standards-and-Safety' },
+    rent: { label: 'Rental Unit Registration and Inspection', url: 'https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Building-Standards-and-Safety/Rental-Unit-Registration-Inspection-Program' },
+    variance: { label: 'Zoning Hearing Board', url: 'https://www.allentownpa.gov/en-us/Government/Authorities-Boards-Commissions-Councils/Zoning-Hearing-Board' },
   },
 };
 

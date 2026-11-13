@@ -59,7 +59,7 @@ test.describe('where to build', () => {
     const shares = await legend.locator('[data-place-legend] .tnum').allInnerTexts();
     expect(shares).toHaveLength(6);
 
-    // Allentown: the answer matches its row in the file, at most four rows, no lot test outside the two cities.
+    // Allentown: the answer matches its row in the file, at most four rows, a zoning code link, and a lot test (lot records).
     const allentown = rows.find((r) => r.name === 'Allentown city')!;
     await clickAt(page, -75.478, 40.602, 10);
     const answer = right(page).locator('section[aria-label="Place answer"]');
@@ -67,7 +67,9 @@ test.describe('where to build', () => {
     await expect(answer.locator('h3')).toHaveText(TITLE[allentown.status]);
     expect(await right(page).locator('[data-place-row]').count()).toBeLessThanOrEqual(4);
     await expect(right(page).getByRole('heading', { name: 'Allentown city' })).toBeVisible();
-    await expect(right(page).getByRole('button', { name: 'Test a lot here' })).toHaveCount(0);
+    await expect(right(page).locator('[data-code-link="Zoning code"]')).toHaveAttribute('href', 'https://ecode360.com/49783893');
+    await expect(right(page).locator('[data-code-link="Zoning code"]')).toHaveAttribute('rel', 'noopener noreferrer');
+    await expect(right(page).getByRole('button', { name: 'Test a lot here' })).toBeVisible();
     await expect(right(page).getByRole('button', { name: 'Payoff and room' })).toHaveAttribute('aria-expanded', 'false');
 
     // The state bill: a zoned town becomes by right, marked not law.

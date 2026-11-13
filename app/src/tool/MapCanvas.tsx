@@ -47,6 +47,7 @@ const tilesUrl = (place: string, file: string) => new URL(`${lotDataUrl()}${plac
 const PARCEL_SOURCES = [
   { id: 'parcels-pgh', url: () => tilesUrl('pittsburgh', 'parcels.pmtiles'), lots: () => tilesUrl('pittsburgh', 'lots.pmtiles'), overview: () => tilesUrl('pittsburgh', 'overview.pmtiles') },
   { id: 'parcels-phl', url: () => tilesUrl('philadelphia', 'parcels.pmtiles'), lots: () => tilesUrl('philadelphia', 'lots.pmtiles'), overview: () => tilesUrl('philadelphia', 'overview.pmtiles') },
+  { id: 'parcels-abe', url: () => tilesUrl('allentown', 'parcels.pmtiles'), lots: () => tilesUrl('allentown', 'lots.pmtiles'), overview: () => tilesUrl('allentown', 'overview.pmtiles') },
 ] as const;
 type ParcelSource = (typeof PARCEL_SOURCES)[number]['id'];
 const fillOf = (src: ParcelSource) => `${src}-fill`;
@@ -137,7 +138,7 @@ function tractOpacity(metric: MetricId): ExpressionSpecification {
 function addAreaLayers(map: MLMap) {
   const { tracts, towns, counties, metric, forecast, level } = useTool.getState();
   if (!tracts || !towns || map.getSource('tracts')) return;
-  const before = ['parcels-pgh-fill', 'parcels-phl-fill', 'site-buildable-fill'].find((id) => map.getLayer(id)) ?? map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
+  const before = [...PARCEL_SOURCES.map((x) => fillOf(x.id)), 'site-buildable-fill'].find((id) => map.getLayer(id)) ?? map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
   map.addSource('tracts', { type: 'geojson', data: tracts as unknown as GeoJSON.FeatureCollection, promoteId: 'GEOID' });
   map.addSource('towns', { type: 'geojson', data: towns as unknown as GeoJSON.FeatureCollection });
   map.addSource('pick', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
@@ -168,7 +169,7 @@ function addAreaLayers(map: MLMap) {
   map.addLayer({ id: 'town-line', type: 'line', source: 'towns', minzoom: 8, paint: { 'line-color': '#475569', 'line-width': 0.6, 'line-opacity': 0.45 } }, before);
   // The picked tract's outline: above the labels and the 3D buildings, under the selected lot and the tested lot
   // (the same order as when the areas loaded with the map).
-  const overLabels = ['parcels-pgh-sel-glow', 'parcels-phl-sel-glow', 'site-buildable-fill'].find((id) => map.getLayer(id));
+  const overLabels = [...PARCEL_SOURCES.map((x) => `${x.id}-sel-glow`), 'site-buildable-fill'].find((id) => map.getLayer(id));
   map.addLayer({ id: 'pick-glow', type: 'line', source: 'pick', paint: { 'line-color': '#a78bfa', 'line-width': 8, 'line-opacity': ['interpolate', ['linear'], ['zoom'], 13, 0.35, 15, 0.12], 'line-blur': 4 } }, overLabels);
   map.addLayer({ id: 'pick-line', type: 'line', source: 'pick', paint: { 'line-color': '#7c3aed', 'line-width': ['interpolate', ['linear'], ['zoom'], 13, 2.5, 15, 1.2] } }, overLabels);
 }
@@ -226,17 +227,15 @@ export default function MapCanvas() {
     map.on('load', async () => {
       try {
         // Lot outlines with the answers when they are built, else the plain outlines.
-        const [pgh, phl] = await Promise.all(PARCEL_SOURCES.map(async (p) => ((await exists(p.lots())) ? p.lots() : (await exists(p.url())) ? p.url() : '')));
-        const [hasPgh, hasPhl] = [!!pgh, !!phl];
+        const urls = await Promise.all(PARCEL_SOURCES.map(async (p) => ((await exists(p.lots())) ? p.lots() : (await exists(p.url())) ? p.url() : '')));
         if (!alive) return;
-        setAnswers([pgh, phl].some((u) => u.endsWith('/lots.pmtiles')));
+        setAnswers(urls.some((u) => u.endsWith('/lots.pmtiles')));
         map.addSource('aerial', aerialSource());
         const firstLabel = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
         // Aerial photo under the data layers and the labels, off until the Aerial button turns it on.
         map.addLayer({ id: 'aerial', type: 'raster', source: 'aerial', layout: { visibility: useTool.getState().aerial ? 'visible' : 'none' } }, firstLabel);
         watchAerial(map);
-        if (hasPgh) addParcels(map, 'parcels-pgh', pgh, firstLabel);
-        if (hasPhl) addParcels(map, 'parcels-phl', phl, firstLabel);
+        PARCEL_SOURCES.forEach((p, i) => urls[i] && addParcels(map, p.id, urls[i], firstLabel));
         // 3D buildings from the OpenFreeMap vector tiles. Shown in the 3D view.
         map.addLayer({
           id: 'buildings-3d',

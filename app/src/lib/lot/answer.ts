@@ -209,7 +209,9 @@ function numbersOf(v: UnitVerdict, c: VerdictCheck, district: string | null): st
     case 'share_of_house':
       // A garage unit with no garage has no floor area to compare.
       if (!isNum(value) || value <= 0) return null;
-      return isNum(limit) ? `${num(value)} / max ${num(limit)} sq ft` : `${num(value)} sq ft · no cap`;
+      if (isNum(limit)) return `${num(value)} / max ${num(limit)} sq ft`;
+      // A share cap with no living area to apply it to: not checked, not "no cap".
+      return c.pass === null ? `${num(value)} sq ft · not checked` : `${num(value)} sq ft · no cap`;
     case 'room':
       if (v.type === 'garage_conversion' || v.type === 'over_garage') return isNum(value) && value > 0 ? `${num(value)} sq ft garage` : null;
       if (!isNum(value)) return null;

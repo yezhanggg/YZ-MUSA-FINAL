@@ -18,6 +18,7 @@ export const CONFIDENCE_LABEL: Record<CitationConfidence, string> = {
 const SOURCE_LABEL: Record<string, string> = {
   pittsburgh: 'Pittsburgh Zoning Code',
   philadelphia: 'Philadelphia Zoning Code',
+  pa_lehigh_allentown: 'Allentown Zoning Code (Ch. 660)',
   default: 'Building code default',
   hb2186: 'State bill HB 2186 (not law)',
   sb1346: 'State bill SB 1346 (not law)',
@@ -55,7 +56,8 @@ const webUrl = (u: string | null | undefined) => (u && /^https?:\/\//.test(u) ? 
 
 export function formatCitation(c: Citation): CitationView {
   const checked = dateText(c.verified_on);
-  const source = sourceLabel(c.source_file);
+  // A planning default the build could not check against the rule file ("not checked: ...") says so.
+  const source = c.source_file === 'build_lots' && /^not checked/i.test(c.section) ? 'Not checked' : sourceLabel(c.source_file);
   const checkedText = checked ? `Checked on ${checked}` : 'Date not recorded';
   return {
     section: c.section,

@@ -39,9 +39,10 @@ from pipeline.paths import processed_dir  # noqa: E402
 RESULTS_5500 = processed_dir("5500")
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 SIMPLIFY = 0.0003  # degrees, about 30 m. Keeps the files small.
-# The two counties with lot records (Allegheny for Pittsburgh, Philadelphia) and the finer shapes of their tract index.
-CITY_COUNTIES = ("42003", "42101")
-CITY_TOWNS = ("Pittsburgh city", "Philadelphia city")
+# The counties with lot records (Allegheny for Pittsburgh, Philadelphia, Lehigh for Allentown) and the finer shapes of
+# their tract index.
+CITY_COUNTIES = ("42003", "42101", "42077")
+CITY_TOWNS = ("Pittsburgh city", "Philadelphia city", "Allentown city")
 CITY_SIMPLIFY = 0.00003  # degrees, about 3 m
 
 
@@ -204,7 +205,7 @@ def room_headline(d):
 
 
 LOT_DATA = Path(os.environ.get("LOT_DATA_DIR", Path.home() / "musa-drive" / "lots"))
-LOT_PLACES = ("philadelphia", "pittsburgh")
+LOT_PLACES = ("philadelphia", "pittsburgh", "allentown")
 
 
 def lot_headline(old):
@@ -270,11 +271,11 @@ def compact_geojson(path):
 
 
 def write_city_tracts(tracts, towns):
-    """city_tracts.json: the tracts of the two lot-record cities with their town, so a searched address in Testing
+    """city_tracts.json: the tracts of the lot-record cities with their town, so a searched address in Testing
     mode finds its tract (and its lot file) without the 10 MB area files. Finer shapes than tracts.geojson."""
     keep = ["GEOID", "NAMELSAD", "county", "rent_b0", "rent_b1", "rent_b2", "rent_b3"]
     t = tracts[tracts.GEOID.str[:5].isin(CITY_COUNTIES)][[c for c in keep if c in tracts.columns] + ["geometry"]]
-    # Only tracts that reach into the two cities or lie within about 150 m of them: lot records cover the cities, not
+    # Only tracts that reach into the cities or lie within about 150 m of them: lot records cover the cities, not
     # the rest of Allegheny County, and a few boundary parcels sit in the tract next door.
     cities = towns[towns.NAMELSAD.isin(CITY_TOWNS) & towns.GEOID.str[:5].isin(CITY_COUNTIES)].to_crs(t.crs)
     t = t[t.intersects(cities.geometry.buffer(0.0015).union_all())].copy()

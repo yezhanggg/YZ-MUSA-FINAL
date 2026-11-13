@@ -47,8 +47,8 @@
   "lots": {
     "philadelphia": {
       "lots": 459998,
-      "data_version": "philadelphia-20261111-b7fa7bda07",
-      "built_at": "2026-11-11T21:41:43",
+      "data_version": "philadelphia-20261112-d441ac616a",
+      "built_at": "2026-11-12T16:17:54",
       "today": {
         "any_path": 0.012,
         "detached_by_right": 0.0,
@@ -67,8 +67,8 @@
     },
     "pittsburgh": {
       "lots": 92081,
-      "data_version": "pittsburgh-20261111-bdeb5697ae",
-      "built_at": "2026-11-11T20:30:22",
+      "data_version": "pittsburgh-20261112-f2be01fba6",
+      "built_at": "2026-11-12T15:40:28",
       "today": {
         "any_path": 1.0,
         "detached_by_right": 0.0,
@@ -83,6 +83,26 @@
         "any_path": 1.0,
         "detached_fits": 0.7,
         "fit_600": 0.459
+      }
+    },
+    "allentown": {
+      "lots": 29158,
+      "data_version": "allentown-20261112-5825ca3817",
+      "built_at": "2026-11-12T19:12:15",
+      "today": {
+        "any_path": 0.883,
+        "detached_by_right": 0.261,
+        "detached_fits": 0.224,
+        "fit_600": 0.204
+      },
+      "local_reform": {
+        "any_path": 0.883,
+        "detached_fits": 0.224
+      },
+      "state_reform": {
+        "any_path": 1.0,
+        "detached_fits": 0.747,
+        "fit_600": 0.494
       }
     }
   }

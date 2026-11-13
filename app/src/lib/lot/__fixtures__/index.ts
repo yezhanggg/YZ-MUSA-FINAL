@@ -1,6 +1,7 @@
 // Real lot records for the tests: eight Pittsburgh lots and five Philadelphia lots from the final builds of
-// Nov 11, 2026. Picked by ~/musa-drive/ops/scratch/vitest-lot/pick_fixtures2.py. No owner data.
+// Nov 11, 2026, and one Allentown lot (build of Nov 12, ops/scratch/ui9/pick_abe.py). Picked by ~/musa-drive/ops/scratch/vitest-lot/pick_fixtures2.py. No owner data.
 import type { LotRecord } from '../types';
+import abeDetached from './abe_detached.json';
 import alleyRear from './alley_rear.json';
 import easyFit from './easy_fit.json';
 import garage from './garage.json';
@@ -29,6 +30,7 @@ const RAW = {
   phl_rsa5_internal: phlRsa5Internal,
   phl_historic: phlHistoric,
   phl_twin_state: phlTwinState,
+  abe_detached: abeDetached,
 };
 
 export type FixtureName = keyof typeof RAW;

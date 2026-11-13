@@ -533,8 +533,11 @@ function sizeChecks(lot: LotRecord, rules: Rules, s: Sizes, height: { limit: num
     out.push(check(rules, { key: 'min_size', label: 'Smallest size', pass: s.floor >= min - 0.5, value: s.floor, limit: min, unit: 'sqft', rule_key: 'min_size_sqft', text: `The smallest unit allowed is ${sqftText(min)}.` }));
   }
   const share = rules.max_share_of_house;
+  // The share is of the house's living area. Without one on file (Allentown has none) it is not checked: the
+  // building outline is a footprint, and a two-story house would get half the cap it has.
   const house = houseSqft(lot);
-  const shareLimit = isNum(share) && isNum(house.sqft) ? share * house.sqft : null;
+  const living = house.estimated ? null : house.sqft;
+  const shareLimit = isNum(share) && isNum(living) ? share * living : null;
   out.push(check(rules, {
     key: 'share_of_house', label: 'Share of the house', unit: 'sqft', rule_key: 'max_share_of_house', value: s.floor, limit: shareLimit,
     pass: !isNum(share) ? true : isNum(shareLimit) ? s.floor <= shareLimit + 0.5 : null,
@@ -542,7 +545,7 @@ function sizeChecks(lot: LotRecord, rules: Rules, s: Sizes, height: { limit: num
       ? 'No limit tied to the size of the house.'
       : isNum(shareLimit)
         ? `Up to ${pctText(share)} of the house, which is ${sqftText(shareLimit)}.`
-        : `Up to ${pctText(share)} of the house. The house size is not on file.`,
+        : `Up to ${pctText(share)} of the house. Not checked: no living area on file.`,
   }));
   const maxH = height.limit;
   if (s.height === null) {
@@ -844,7 +847,10 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
     const ch = changeFor(c, lot, s);
     if (ch && !changes.includes(ch)) changes.push(ch);
   }
-  const unknown = checks.filter((c) => c.pass === null);
+  // A share-of-house cap that could not be checked only because no living area is on file (the house is there) stays
+  // "not checked" in its row but does not turn the answer into "not sure": the stored fit skips that cap too.
+  const noLiving = houseSqft(lot).estimated && houseSqft(lot).sqft !== null;
+  const unknown = checks.filter((c) => c.pass === null && !(noLiving && c.key === 'share_of_house'));
   // A change can only help when some unit of this type passes on this lot.
   const fixable = changes.length > 0 && (stored.fits || placed !== null);
 

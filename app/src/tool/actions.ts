@@ -80,8 +80,8 @@ function fitUnitTo(record: LotRecord) {
 let pending: AbortController | null = null;
 
 /** County names for the places with lot records, for a tract known only by its GEOID. */
-const COUNTY_OF: Record<string, string> = { '42003': 'Allegheny', '42101': 'Philadelphia' };
-const CITY_OF: Record<string, string> = { '42003': 'Pittsburgh city', '42101': 'Philadelphia city' };
+const COUNTY_OF: Record<string, string> = { '42003': 'Allegheny', '42101': 'Philadelphia', '42077': 'Lehigh' };
+const CITY_OF: Record<string, string> = { '42003': 'Pittsburgh city', '42101': 'Philadelphia city', '42077': 'Allentown city' };
 
 /** A tract named by a parcel tile or a link, before (or without) the tract file: enough for the lot panel. */
 function knownTract(geoid: string): { tract: TractProps; town: TownProps } {

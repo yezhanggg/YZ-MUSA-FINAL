@@ -73,6 +73,14 @@ const OFFICES: Record<string, Offices> = {
     water: 'the Philadelphia Water Department',
     historic: 'the Philadelphia Historical Commission',
   },
+  // Office names as the city's pages give them (allentownpa.gov, checked 2026-11-12). Water and sewer: the Lehigh
+  // County Authority runs the city's system under its lease.
+  allentown: {
+    zoning: "Allentown's Zoning Officer (Bureau of Planning and Zoning)",
+    building: 'Allentown Bureau of Building Standards and Safety',
+    water: 'the Lehigh County Authority (LCA)',
+    historic: "Allentown's Historical Architectural Review Board (HARB)",
+  },
 };
 const OTHER_OFFICES: Offices = {
   zoning: "the town's zoning officer",

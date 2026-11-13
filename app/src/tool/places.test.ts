@@ -106,10 +106,11 @@ describe('places file', () => {
     expect(placeAnswer({ ...base, status_detail: 'Accessory Mobile Home (min. lot 2 acres) special exception (A)' }, 'current').sub).toBe('Accessory Mobile Home.');
   });
 
-  it('lot testing only in the two cities', () => {
+  it('lot testing only in the three lot cities', () => {
     expect(hasLotTesting('4200361000')).toBe(true);
     expect(hasLotTesting('4210160000')).toBe(true);
-    expect(hasLotTesting('4207702000')).toBe(false);
+    expect(hasLotTesting('4207702000')).toBe(true);
+    expect(hasLotTesting('4209100156')).toBe(false);
   });
 });
 
@@ -119,10 +120,11 @@ describe('zoning code link', () => {
     expect(codeLink(row('Abington township'), '4209100156')).toEqual({ href: 'http://WWW.ABINGTONPA.GOV', label: 'Town website' });
     expect(codeLink(row('Atwood borough'), '4200503480')).toBeNull();
     expect(codeLink(undefined, '4210160000')?.label).toBe('Zoning code');
-    expect(codeLink(undefined, '4207702000')).toBeNull();
+    expect(codeLink(undefined, '4207702000')?.href).toBe('https://ecode360.com/49783893');
+    expect(codeLink(undefined, '4209100156')).toBeNull();
   });
 
-  it('the two lot cities link the code the index and their rule files name', () => {
+  it('the lot cities link the code the index and their rule files name', () => {
     const rules = resolve(__dirname, '../../../shared/rules');
     const idx = JSON.parse(readFileSync(resolve(rules, 'towns_index.json'), 'utf8')) as { towns: { geoid: string; file: string; code_url: string | null }[] };
     for (const [geoid, url] of Object.entries(LOT_CITY_CODE)) {
