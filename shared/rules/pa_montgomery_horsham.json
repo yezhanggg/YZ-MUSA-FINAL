@@ -1,0 +1,480 @@
+{
+  "provenance": {
+    "jurisdiction": "Horsham township",
+    "instrument": "Code of the Township of Horsham, Chapter 230 Zoning (Horsham Township Zoning Ordinance of 1995, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 header on 2026-11-13: legislation through 07-08-2026. Recent zoning amendments seen in the text: Ord. No. 2024-02 (R-1, 11-13-2024), Ord. No. 2025-01 (230-16, 2-12-2025), Ord. No. 2025-05 (R-4, 11-12-2025). New Laws lists only Ord. No. 2026-03 (Chapter 5, not zoning).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/44681314",
+      "https://ecode360.com/print/HO1764?guid=9953490",
+      "https://ecode360.com/print/HO1764?guid=9953502",
+      "https://ecode360.com/print/HO1764?guid=9953523",
+      "https://ecode360.com/print/HO1764?guid=9953528",
+      "https://ecode360.com/print/HO1764?guid=9953999",
+      "https://ecode360.com/print/HO1764?guid=9954019",
+      "https://ecode360.com/print/HO1764?guid=9954036",
+      "https://ecode360.com/print/HO1764?guid=9954062",
+      "https://ecode360.com/print/HO1764?guid=9954085",
+      "https://ecode360.com/print/HO1764?guid=9954111",
+      "https://ecode360.com/print/HO1764?guid=9954128",
+      "https://ecode360.com/print/HO1764?guid=9954136",
+      "https://ecode360.com/print/HO1764?guid=9954153",
+      "https://ecode360.com/print/HO1764?guid=9954160",
+      "https://ecode360.com/print/HO1764?guid=9955109",
+      "https://ecode360.com/HO1764/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209135808",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/44681314",
+    "code_current_through": "2026-07-08",
+    "code_current_through_note": "eCode360 header: 'legislation through 07-08-2026'.",
+    "checks": [
+      "Chapter 230 has no accessory dwelling text. The residential districts R-1 to R-4 permit one principal use, a single-family detached dwelling, and customary accessory uses (230-51 to 230-63)",
+      "Uses accessory to a dwelling are a private garage, a pool, greenhouses and storage buildings, stables and home occupations, and not 'a hotel, boarding home or any other similar use' (230-15C)",
+      "Conversion: the Zoning Hearing Board may allow, by special exception, the conversion of a single-family dwelling into a dwelling for more families. A petition signed by owners of 60% or more of the frontage on the same street within 500 ft is required. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. No exterior change (230-17)",
+      "R-5: two-family dwellings (duplexes) may be permitted where all dimensional rules are met. 10,000 sq ft lot with public sewer and water (230-66B, 230-67)",
+      "Historic Resource Overlay: a Class I historic resource may be converted into apartments by special exception, at least 800 sq ft each (230-201)",
+      "Accessory buildings: 14 ft in side or rear yards, 21.5 ft inside the building envelope. In a side yard only behind the rear line of the house and 7 ft from side and rear lines. Not in the minimum front yard. R-4: one story and 14 ft, rear yard only (230-16, 230-64F)",
+      "Total floor area of accessory buildings: on lots under two acres at most 50% of the house footprint, on two acres or more at most the footprint (230-16F)",
+      "Parking: three spaces per single-family dwelling, not counting garage spaces (230-32A(1))",
+      "Nonconforming lot: a single-family dwelling may be built on a lot of at least 80% of the district area (230-11)"
+    ],
+    "notes": "Zoning office: Horsham Township (horsham.org). Read on eCode360 in a browser, the chapter print view searched in the page and section print views. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house, family suite, accessory residential, short-term, kitchen. 'Carriage house' appears only as a single-family attached dwelling type. No unlisted-use section found (searched 'not specifically', 'not provided for', 'uses not listed'). Districts R-6, R-7, MR-1, MR-2, MHD, RGCC and the commercial districts were not read row by row."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "230-5, 230-15",
+      "url": "https://ecode360.com/print/HO1764?guid=9953502",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house, family suite, accessory residential."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "230-15C, 230-51",
+      "url": "https://ecode360.com/print/HO1764?guid=9953502",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU text. A second unit is not a listed accessory use of a dwelling (230-15C), and the residential districts allow 'one principal use' (230-51)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "230-51, 230-15C, MPC 910.2",
+      "url": "https://ecode360.com/print/HO1764?guid=9953999",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A second unit on a single-family lot is not permitted. A use variance from the Zoning Hearing Board. Conversion of the house under 230-17 is a separate special exception path, see alternatives."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://ecode360.com/print/HO1764?guid=9953999",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No unlisted-use section in Chapter 230."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family dwelling",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "Petition signed by owners of 60% or more of the frontage on the same street within 500 ft. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. District yards and building area met. No exterior change except for safety. Parking met. Only for 'a dwelling with relatively little economic usefulness as a conforming use'.",
+          "min_lot_sqft": null,
+          "section": "230-17",
+          "url": "https://ecode360.com/print/HO1764?guid=9953528",
+          "confidence": "verified",
+          "note": "Two units need 1.5 times the district lot: R-1 90,000, R-2 and R-2A 65,340, R-3 48,000, R-4 18,000 sq ft."
+        },
+        {
+          "name": "Two-family dwelling (duplex)",
+          "path": "by_right",
+          "districts": [
+            "R-5"
+          ],
+          "conditions": "Permitted 'if all dimensional requirements, including, but not limited to, minimum lot widths and yard requirements can be maintained and adequate provision is made for off-street parking'. Public sewer and water.",
+          "min_lot_sqft": 10000,
+          "section": "230-66B, 230-67A",
+          "url": "https://ecode360.com/44681314",
+          "confidence": "secondary",
+          "note": "230-67A sets 10,000 sq ft for every principal building. Whether a duplex needs more is not stated."
+        },
+        {
+          "name": "Conversion apartments in a Class I historic resource",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "A residential structure designated a Class I historic resource in the Historic Resource Overlay. Each unit at least 800 sq ft, own bathroom and kitchen. Exterior work per the Historical Advisory Commission. Parking per 230-32.",
+          "min_lot_sqft": null,
+          "section": "230-201",
+          "url": "https://ecode360.com/print/HO1764?guid=9955109",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "230-17, 230-66, 230-201",
+      "url": "https://ecode360.com/print/HO1764?guid=9953528",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "230-51, 230-54, 230-57, 230-60, 230-63",
+      "url": "https://ecode360.com/print/HO1764?guid=9953999",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "230-201",
+      "url": "https://ecode360.com/print/HO1764?guid=9955109",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The historic overlay allows conversion apartments in a Class I resource by special exception. Not an ADU path. See alternatives."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "230-15C",
+      "url": "https://ecode360.com/print/HO1764?guid=9953502",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 14,
+      "section": "230-16B",
+      "url": "https://ecode360.com/print/HO1764?guid=9953523",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. 'The maximum permitted height of buildings or structures when located within required side or rear yards shall be 14 feet.'"
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 21.5,
+          "where": "entirely within the required building envelope",
+          "section": "230-16A",
+          "url": "https://ecode360.com/print/HO1764?guid=9953523",
+          "note": "'21 feet six inches for accessory buildings and structures located entirely within the required building envelope'."
+        }
+      ],
+      "section": "230-16A",
+      "url": "https://ecode360.com/print/HO1764?guid=9953523",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    },
+    "setback_side_ft": {
+      "value": 7,
+      "section": "230-16C",
+      "url": "https://ecode360.com/print/HO1764?guid=9953523",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory building rule. 'not be less than seven feet each from the side and rear lot line'."
+    },
+    "setback_rear_ft": {
+      "value": 7,
+      "section": "230-16C",
+      "url": "https://ecode360.com/print/HO1764?guid=9953523",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory building rule."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "230-16D",
+      "url": "https://ecode360.com/print/HO1764?guid=9953523",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory buildings or structures are not permitted within the minimum front yard'. The district front yard applies."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "230-51, 230-15C",
+      "url": "https://ecode360.com/print/HO1764?guid=9953999",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 230",
+      "url": "https://ecode360.com/44681314",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No short-term rental rule found in Chapter 230."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "230-32A(1)",
+      "url": "https://ecode360.com/44681314",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Single-family detached dwellings: three spaces per unit, not including garage spaces.'"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 60000,
+        "section": "230-52B(1)",
+        "url": "https://ecode360.com/print/HO1764?guid=9954019",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Standard district regulations. Ord. No. 2024-02."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "230-52B(5)(a)",
+        "url": "https://ecode360.com/print/HO1764?guid=9954019",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "230-52B(5)(b)",
+        "url": "https://ecode360.com/print/HO1764?guid=9954019",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 80,
+        "section": "230-52B(5)(c)",
+        "url": "https://ecode360.com/print/HO1764?guid=9954019",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "230-52B(6)",
+        "url": "https://ecode360.com/print/HO1764?guid=9954019",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "230-52B(3)",
+        "url": "https://ecode360.com/print/HO1764?guid=9954019",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "10% of the developable area."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "230-55A",
+        "url": "https://ecode360.com/print/HO1764?guid=9954062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "230-55",
+        "url": "https://ecode360.com/print/HO1764?guid=9954062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "230-55",
+        "url": "https://ecode360.com/print/HO1764?guid=9954062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Two side yards, 40 ft together, neither under 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 80,
+        "section": "230-55",
+        "url": "https://ecode360.com/print/HO1764?guid=9954062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "230-55F",
+        "url": "https://ecode360.com/print/HO1764?guid=9954062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-2A": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "230-58A",
+        "url": "https://ecode360.com/print/HO1764?guid=9954111",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "230-58",
+        "url": "https://ecode360.com/print/HO1764?guid=9954111",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "230-58",
+        "url": "https://ecode360.com/print/HO1764?guid=9954111",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "40 ft together, neither under 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 80,
+        "section": "230-58",
+        "url": "https://ecode360.com/print/HO1764?guid=9954111",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "230-58F",
+        "url": "https://ecode360.com/print/HO1764?guid=9954111",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 32000,
+        "section": "230-61A",
+        "url": "https://ecode360.com/print/HO1764?guid=9954136",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "230-61",
+        "url": "https://ecode360.com/print/HO1764?guid=9954136",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "230-61",
+        "url": "https://ecode360.com/print/HO1764?guid=9954136",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "35 ft together, neither under 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "230-61",
+        "url": "https://ecode360.com/print/HO1764?guid=9954136",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "230-61F",
+        "url": "https://ecode360.com/print/HO1764?guid=9954136",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "230-64A(1)",
+        "url": "https://ecode360.com/print/HO1764?guid=9954160",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "With public water and sewers. Ord. No. 2025-05."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "230-64",
+        "url": "https://ecode360.com/print/HO1764?guid=9954160",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "230-64",
+        "url": "https://ecode360.com/print/HO1764?guid=9954160",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "With public water and sewer: 25 ft together, neither under 10 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "230-64",
+        "url": "https://ecode360.com/print/HO1764?guid=9954160",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "230-64F",
+        "url": "https://ecode360.com/print/HO1764?guid=9954160",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Accessory structures one story and at most 14 ft, rear yard only, 7 ft from side and rear lines."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "230-67A",
+        "url": "https://ecode360.com/44681314",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "With public sewer and water."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "230-67C",
+        "url": "https://ecode360.com/44681314",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "230-67D",
+        "url": "https://ecode360.com/44681314",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "25 ft together, neither under 10 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "230-67E",
+        "url": "https://ecode360.com/44681314",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "230-67F",
+        "url": "https://ecode360.com/44681314",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "230-67B",
+        "url": "https://ecode360.com/44681314",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

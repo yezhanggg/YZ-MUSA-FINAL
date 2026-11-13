@@ -1,0 +1,722 @@
+{
+  "provenance": {
+    "jurisdiction": "Lebanon city",
+    "instrument": "City of Lebanon Codified Ordinances, Part Thirteen Zoning Code, Title One Zoning Ordinance (Ord. No. 1-2020, passed 6-22-2020), as published on eCode360, with the dimensional table from the City's adopted PDF",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Title One adopted 6-22-2020 by Ord. No. 1-2020. Every section read on eCode360 carries only that ordinance. New Laws on 2026-11-13: Ord. No. 23-2024 (rental licensing, Article 1907), 1-2026 (renumbering), 2-2026 (lease), 4-2026 (bicycles), 5-2026 (parks), 24-2024 (fee schedule). None amends Title One.",
+    "effective_date": "2020-06-22",
+    "source_urls": [
+      "https://ecode360.com/37751377",
+      "https://ecode360.com/print/LE3707?guid=31233662",
+      "https://ecode360.com/print/LE3707?guid=36363491",
+      "https://ecode360.com/print/LE3707?guid=31233776",
+      "https://ecode360.com/print/LE3707?guid=31233783",
+      "https://ecode360.com/print/LE3707?guid=36368208",
+      "https://ecode360.com/print/LE3707?guid=36368658",
+      "https://ecode360.com/print/LE3707?guid=36368996",
+      "https://ecode360.com/print/LE3707?guid=36369410",
+      "https://ecode360.com/print/LE3707?guid=36369635",
+      "https://ecode360.com/print/LE3707?guid=36369709",
+      "https://ecode360.com/print/LE3707?guid=36370021",
+      "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+      "https://ecode360.com/LE3707/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Lebanon",
+    "municipality_type": "city",
+    "geoid": "4207542168",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/37751377",
+    "code_current_through": "2025-11-24",
+    "code_current_through_note": "eCode360 header on 2026-11-13: 'legislation through 11-24-2025'. The 1305.01 dimensional table is an attachment that eCode360 does not show. It was read in the City's PDF 'City of Lebanon Zoning Ordinance - As Adopted June 22, 2020'.",
+    "checks": [
+      "The only ADU is a 'Unit for care of relative', permitted by right (Zoning Officer) in RLD, RMLD, RMD and RHD, and on the lot of an existing dwelling in OI, CG, CBD and CN. Not in LIC or GIC (1303.01, 1304.01 tables)",
+      "At most two occupants, relatives of the permanent residents of the main unit, and at least one must need the arrangement because of illness, old age or disability. The Zoning Officer may ask for proof at any time (1306.03(20)B, E)",
+      "The unit must be easy to fold back into the house, or be a modular cottage removed within 90 days after the relative leaves. A lawful detached garage may be converted and later reconverted. A recorded, binding mechanism bars use as a separate unit afterwards (1306.03(20)C, D, F)",
+      "Attached to the house, except a detached modular unit designed for that purpose: rear yard only, district side yards, 20 ft rear setback, at most 800 sq ft (1306.03(20)F)",
+      "No change to the one-family look of the house from the property lines (1306.03(20)F)",
+      "Parking: dwellings need two spaces a unit. No added space if the applicant proves the relative will not routinely drive (1311.01, 1306.03(20)G)",
+      "Accessory buildings: not between the house and the front lot line. A one-story structure up to 16 ft accessory to a dwelling may sit 3 ft from side and rear lines. Larger ones meet the district setbacks (1305.03(b))",
+      "Conversion of an existing one-family dwelling into more units is a special exception in RMD and RHD only for a building that had more than 3,000 sq ft of heated habitable floor area (1303.01 note 1, 1306.02(18))",
+      "Historic Overlay: in a principal building built before 1-1-1940, 'The development of one or more dwelling units within the building' is a special exception (1308.04(a)(1))",
+      "Short-term rental of a dwelling is permitted under 1306.03(16): rooms while a permanent resident lives there, or the whole unit for at most 30 days a year",
+      "Each dwelling unit must be served by public water and public sewer (1305.01)"
+    ],
+    "notes": "Zoning office: City of Lebanon Department of Community Development, Zoning (lebanonpa.org). Read on eCode360 in a browser, the Title One print view searched in the page. The dimensional table (1305.01 attachment) is not on eCode360. It was read in the City's adopted PDF (fetched once from lebanonpa.org). Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house, care of relative. The dwelling unit definition bars two separate living areas 'unless approved as unit for care of relative' (1315.02). MR (Municipal Recreation) shows P for the unit in the 1303.01 table but permits no dwellings."
+  },
+  "adu": {
+    "term": {
+      "value": "Unit for care of relative",
+      "section": "1315.02",
+      "url": "https://ecode360.com/print/LE3707?guid=36370021",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A dwelling unit that a) is especially created for and limited to occupancy by a close relative of the permanent residents of the principal dwelling unit, b) is necessary to provide needed care and supervision to such relative, and c) meets the requirements for such use in Article 1306.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "1303.01 table, 1306.03(20), 1315.02",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Permitted by right where listed, for up to two relatives of the residents, at least one needing care. No general ADU."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "1303.01 table (5) Accessory uses, 1304.01 table",
+      "url": "https://ecode360.com/print/LE3707?guid=31233662",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Unit for care of relative (see § 1306.03) P P P P' in RLD and RMLD, RMD, RHD, MR. P = 'Permitted by right use (zoning decision by Zoning Officer)'."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1302.05, MPC 910.2",
+      "url": "https://ecode360.com/print/LE3707?guid=36363491",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit not for a relative needing care has no listed path. 1302.05 lets the Zoning Hearing Board permit an unlisted use by special exception if it is closely similar to allowed uses and no more intensive. Conversions and two-family dwellings are listed uses with their own districts, so a general second unit is read as needing a variance. Not set as unlisted_use_path."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (one unit above another)",
+          "path": "by_right",
+          "districts": [
+            "RMD",
+            "RHD"
+          ],
+          "conditions": "Permitted use. Density: average lot area of 2,500 sq ft (RMD) or 1,800 sq ft (RHD) per dwelling unit. Not permitted in RLD or RMLD.",
+          "min_lot_sqft": 3600,
+          "section": "1303.01 table, 1305.01(a)",
+          "url": "https://ecode360.com/print/LE3707?guid=31233662",
+          "confidence": "secondary",
+          "note": "3,600 sq ft is the RHD figure for two units. RMD needs 5,000 sq ft."
+        },
+        {
+          "name": "Conversion of an existing one-family dwelling into additional dwelling units",
+          "path": "special_exception",
+          "districts": [
+            "RMD",
+            "RHD"
+          ],
+          "conditions": "Only a preexisting building with more than 3,000 sq ft of heated habitable floor area. One-family look with one front entrance, no front exterior stair, at most two parking spaces in the front yard, at most four units, each at least 500 sq ft.",
+          "min_lot_sqft": null,
+          "section": "1303.01 table note 1, 1306.02(18), 1313.01(c)",
+          "url": "https://ecode360.com/print/LE3707?guid=36368208",
+          "confidence": "verified"
+        },
+        {
+          "name": "Dwelling units within a pre-1940 building in the Historic Overlay",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "A principal building built before 1-1-1940 inside the Historic Overlay District. Architectural plans of front changes to the Zoning Officer and the Zoning Hearing Board. An expansion must meet the dimensional rules.",
+          "min_lot_sqft": null,
+          "section": "1308.04(a)(1), (b), (c)",
+          "url": "https://ecode360.com/print/LE3707?guid=36368996",
+          "confidence": "secondary",
+          "note": "No occupant rule. Read as reaching a second unit inside an existing old house."
+        }
+      ],
+      "section": "1303.01, 1306.02(18), 1308.04",
+      "url": "https://ecode360.com/print/LE3707?guid=31233662",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RLD",
+        "RMLD",
+        "RMD",
+        "RHD",
+        "OI",
+        "CG",
+        "CBD",
+        "CN"
+      ],
+      "section": "1303.01, 1304.01 tables",
+      "url": "https://ecode360.com/print/LE3707?guid=31233662",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "P in RLD, RMLD, RMD, RHD (and MR, which permits no dwellings). In OI, CG, CBD and CN 'on the lot of an existing dwelling'. N in LIC and GIC."
+    },
+    "building_types": {
+      "value": null,
+      "section": "1306.03(20)F",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The unit 'shall not decrease the one-family residential appearance of a one-family dwelling'. No building type limit stated."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "1306.03(20)C, F",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "An attached unit, a converted lawful detached garage, or a removable detached modular unit designed for the purpose."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "1308.04",
+      "url": "https://ecode360.com/print/LE3707?guid=36368996",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The Historic Overlay adds a special exception for units in pre-1940 buildings. Listed in alternatives."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "care",
+          "condition": "At most two occupants, relatives of the permanent residents of the main unit. At least one needs the unit because of illness, old age or disability.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1306.03(20)B",
+          "url": "https://ecode360.com/print/LE3707?guid=36368658"
+        },
+        {
+          "kind": "design",
+          "condition": "Designed so it can easily be made part of the house again, or a modular cottage that will be completely removed. A recorded, binding mechanism bars use as a separate unit afterwards, binding future owners.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1306.03(20)C, D",
+          "url": "https://ecode360.com/print/LE3707?guid=36368658"
+        },
+        {
+          "kind": "design",
+          "condition": "No loss of the one-family look of the house from the property lines. Attached to the house unless it is a detached modular unit designed for that purpose.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1306.03(20)F",
+          "url": "https://ecode360.com/print/LE3707?guid=36368658"
+        },
+        {
+          "kind": "size",
+          "condition": "A detached modular unit: rear yard only, district side yards, 20 ft rear setback, at most 800 sq ft, removed within 90 days after the relative leaves.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1306.03(20)F",
+          "url": "https://ecode360.com/print/LE3707?guid=36368658"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "Only a lawful detached garage may be converted, and it must be reconverted later.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1306.03(20)C",
+          "url": "https://ecode360.com/print/LE3707?guid=36368658"
+        },
+        {
+          "kind": "other",
+          "condition": "In OI, CG, CBD and CN only on the lot of an existing dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "OI",
+            "CG",
+            "CBD",
+            "CN"
+          ],
+          "building_types": null,
+          "section": "1304.01 table",
+          "url": "https://ecode360.com/37751377"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Each dwelling unit served by public water and public sewer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1305.01",
+          "url": "https://ecode360.com/print/LE3707?guid=31233776"
+        }
+      ],
+      "section": "1306.03(20)",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "1306.03(20)C, F",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Attached to or inside the house. 'A lawful detached garage may be converted'. 'a detached modular unit may be allowed if it was designed for that purpose.' A unit over a garage is not named."
+    },
+    "labels": {
+      "value": {
+        "detached_new": "Detached modular cottage (removable)"
+      },
+      "section": "1306.03(20)C, F",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "1306.03(20)",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No size cap for a unit in or attached to the house, or in a converted garage. A detached modular unit is capped at 800 sq ft (gate, 1306.03(20)F)."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "1306.03(20)H",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A minimum floor area shall not apply to the Unit for Care of Relative.'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "1305.01(a), 1305.03(b)",
+      "url": "https://ecode360.com/print/LE3707?guid=31233783",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU height. District height 40 ft or 3 stories. A one-story accessory structure up to 16 ft gets reduced 3 ft side and rear setbacks."
+    },
+    "setback_rear_ft": {
+      "value": 20,
+      "section": "1306.03(20)F",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Detached modular unit: 'a 20 feet minimum rear yard setback'."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "1306.03(20)F",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Detached unit: 'meet minimum side yard requirements' of the district. See districts."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "1306.03(20)F, 1305.03(a)",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "1305.03(a): accessory structures meet the district yards 'unless otherwise provided'. 1306.03(20)F provides district side yards and a 20 ft rear setback for a detached unit. Stored per district."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "1305.03(b)(5)",
+      "url": "https://ecode360.com/print/LE3707?guid=31233783",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'No accessory building and no swimming pool shall be allowed between the principal building and the front lot line.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "1305.03(b)(5), 1306.03(20)F",
+      "url": "https://ecode360.com/print/LE3707?guid=31233783",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory buildings not between the house and the front lot line. A detached care unit goes in the rear yard."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "1305.01(a)",
+      "url": "https://ecode360.com/print/LE3707?guid=31233776",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "1306.03(20)",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No owner rule. The occupants are relatives of the permanent residents."
+    },
+    "family_only": {
+      "value": true,
+      "section": "1306.03(20)B",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'occupied by a maximum of two persons, who shall be relatives of the permanent residents of the principal dwelling unit.'"
+    },
+    "occupancy": {
+      "value": "At most two persons, relatives of the permanent residents of the main unit, at least one needing the arrangement because of illness, old age or disability.",
+      "section": "1306.03(20)B",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": null,
+      "section": "1306.03(20)",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No number per lot stated."
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "1306.03(20)D",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A binding mechanism must bar use as a separate dwelling unit after the relative leaves."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "1306.03(20)B",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Occupancy is limited to care-needing relatives."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1311.01, 1306.03(20)G",
+      "url": "https://ecode360.com/print/LE3707?guid=36369410",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Dwelling Unit ... 2 per dwelling unit'. 'Additional parking for the accessory unit is not required if the applicant proves that the resident(s) of the accessory unit will not routinely operate a vehicle.'"
+    },
+    "reading": {
+      "value": "The house needs two spaces. The care unit needs none if the relative will not routinely drive, otherwise read as two more. Ask the zoning officer.",
+      "section": "1311.01, 1306.03(20)G",
+      "url": "https://ecode360.com/print/LE3707?guid=36369410",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "RLD": {
+      "accessory_setback_side_ft": {
+        "value": 8,
+        "section": "1306.03(20)F, 1305.01(a)",
+        "url": "https://ecode360.com/print/LE3707?guid=36368658",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached care unit: 'meet minimum side yard requirements'. District side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "1306.03(20)F",
+        "url": "https://ecode360.com/print/LE3707?guid=36368658",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached care unit: 'a 20 feet minimum rear yard setback'."
+      },
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "1305.01(a)1",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single family detached. Read in the City's PDF (p. 22). Other uses 12,500 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "1305.01(a)1",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "1305.01(a)1",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "1305.01(a)1",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1305.01(a)1",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'40 feet or 3 stories, whichever is more restrictive'."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1305.01(a)1",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "1305.01(a)1",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Impervious 60%."
+      }
+    },
+    "RMLD": {
+      "accessory_setback_side_ft": {
+        "value": 8,
+        "section": "1306.03(20)F, 1305.01(a)",
+        "url": "https://ecode360.com/print/LE3707?guid=36368658",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached care unit: 'meet minimum side yard requirements'. District side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "1306.03(20)F",
+        "url": "https://ecode360.com/print/LE3707?guid=36368658",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached care unit: 'a 20 feet minimum rear yard setback'."
+      },
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "1305.01(a)2",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single family detached. Semi-detached 4,500 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "1305.01(a)2",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "20 ft with front-yard parking or a garage door facing the front line."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "1305.01(a)2",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "1305.01(a)2",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1305.01(a)2",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1305.01(a)2",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "1305.01(a)2",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Impervious 70%."
+      }
+    },
+    "RMD": {
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "1306.03(20)F, 1305.01(a)",
+        "url": "https://ecode360.com/print/LE3707?guid=36368658",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached care unit: 'meet minimum side yard requirements'. District side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "1306.03(20)F",
+        "url": "https://ecode360.com/print/LE3707?guid=36368658",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached care unit: 'a 20 feet minimum rear yard setback'."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "1305.01(a)3, Note C",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "No lot minimum for a dwelling. Average lot area of 2,500 sq ft per dwelling unit across a tract."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 2500,
+        "section": "1305.01(a)3, Note C",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Minimum average lot area of 2,500 per dwelling unit'. Whether a care unit counts toward density is not stated."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "1305.01(a)3",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "1305.01(a)3",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "1305.01(a)3",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1305.01(a)3",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1305.01(a)3",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "1305.01(a)3",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Impervious 80%."
+      }
+    },
+    "RHD": {
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "1306.03(20)F, 1305.01(a)",
+        "url": "https://ecode360.com/print/LE3707?guid=36368658",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached care unit: 'meet minimum side yard requirements'. District side yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "1306.03(20)F",
+        "url": "https://ecode360.com/print/LE3707?guid=36368658",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached care unit: 'a 20 feet minimum rear yard setback'."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "1305.01(a)4, Note C",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Average lot area of 1,800 sq ft per dwelling unit."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 1800,
+        "section": "1305.01(a)4, Note C",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Minimum average lot area of 1,800'. Whether a care unit counts toward density is not stated."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "1305.01(a)4",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "0 unless 1305.04 sets a front setback."
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "1305.01(a)4",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "1305.01(a)4",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1305.01(a)4",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1305.01(a)4",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "1305.01(a)4",
+        "url": "https://lebanonpa.org/getattachment/c34e9b2f-05b6-4969-bda8-2d38b20829d9/zoning-ORDINANCE.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Impervious 90%."
+      }
+    }
+  }
+}

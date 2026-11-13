@@ -1,0 +1,549 @@
+{
+  "provenance": {
+    "jurisdiction": "Westtown township",
+    "instrument": "Code of the Township of Westtown, Chapter 170 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Accessory dwelling standards 170-1603A amended 9-15-2008 (Ord. No. 2008-1) and 5-21-2012 (Ord. No. 2012-5). Rental conversion 170-1619 added 5-6-2019 (Ord. No. 2019-02). Latest zoning amendment seen: Ord. No. 2026-02 (6-1-2026, repealed the flexible development procedure). eCode360 New Laws on 2026-11-13: 'There are currently no known new laws for this Code.'",
+    "effective_date": "2012-05-21",
+    "source_urls": [
+      "https://ecode360.com/12396615",
+      "https://ecode360.com/print/WE1870?guid=12396652",
+      "https://ecode360.com/print/WE1870?guid=12398469",
+      "https://ecode360.com/print/WE1870?guid=34450384",
+      "https://ecode360.com/print/WE1870?guid=12397236",
+      "https://ecode360.com/print/WE1870?guid=12397257",
+      "https://ecode360.com/print/WE1870?guid=12397289",
+      "https://ecode360.com/print/WE1870?guid=12397313",
+      "https://ecode360.com/print/WE1870?guid=12397345",
+      "https://ecode360.com/print/WE1870?guid=12397362",
+      "https://ecode360.com/print/WE1870?guid=12397422",
+      "https://ecode360.com/print/WE1870?guid=12398162",
+      "https://ecode360.com/print/WE1870?guid=12398921",
+      "https://ecode360.com/print/WE1870?guid=12399191",
+      "https://ecode360.com/print/WE1870?guid=12399222",
+      "https://ecode360.com/print/WE1870?guid=12399325",
+      "https://ecode360.com/WE1870/laws",
+      "https://www.chescoplanning.org/MuniCorner/eTools/14-AccessoryUnits.cfm",
+      "https://chescoplanning.org/Housing/MissingMiddle/Opportunities/Low-ADU.cfm"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202984104",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/12396615",
+    "code_current_through": "2026-06-01",
+    "code_current_through_note": "eCode360 header on 2026-11-13: 'legislation through 06-01-2026'. New Laws empty.",
+    "checks": [
+      "An accessory dwelling unit is a special exception (Zoning Hearing Board) in A/C, R-1 and R-2 only. Not listed in R-3 (multifamily), M-U, the commercial districts, POC or the Township district (170-501B(5), 170-601B(6), 170-701B(7))",
+      "R-2: the lot must be at least 18,000 sq ft when both units connect to public sewer and water, otherwise 40,000 sq ft (170-701B(7))",
+      "Only family members of the people in the main house, or people providing care or services to them, may live in the unit. The owner lives in one of the two units (170-1603A(2)(c), (d))",
+      "Size: 500 sq ft at least, at most 35% of the house's gross habitable area before the unit, and never over 1,200 sq ft not counting garage space (170-1603A(2)(e))",
+      "The unit goes in the house or in an existing accessory structure. 'No other alterations to the exterior of the structure shall be permitted unless necessary for health or safety reasons' (170-1603A(2)(b), (f))",
+      "A use and occupancy certificate for an accessory dwelling is valid for one year and must be renewed every year (170-2004C)",
+      "A permitted family unit may later become a rental by a second special exception (170-1619): owner or a family member of the owner lives on the lot, at most 50% of the house footprint, no taller than the house, one more paved parking space, utility bills in the owner's name, tenants one related family",
+      "Parking: one more off-street space for the unit, not in a required yard. A single-family dwelling needs three (170-1603A(2)(h), 170-1705A(1))",
+      "Septic lots: a Chester County Health Department permit showing the system can serve the added residents (170-1603A(2)(g))",
+      "Detached accessory structures stand only in side and rear yards. Footprint at most 50% of the house footprint or 1,000 sq ft, whichever is less. Structures of 250 sq ft or more, or 12 ft or taller, are set back from side and rear lines a distance equal to their height (170-1603C(3), 170-1502F)"
+    ],
+    "notes": "Zoning office: Westtown Township (westtown.org). Read on eCode360 in a browser, one section print view at a time, and the chapter print view searched in the page. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house, family suite, short-term. Historic Preservation (Article XXIV, Ord. No. 2013-1) sets up a commission only. No historic ADU path. Chester County Planning Commission eTool 14 and the Missing Middle guide (cross-check only) describe 'family-occupied ADUs ... by special exception in most residential districts' with a rental conversion by special exception (170-1603(A), 170-1619). That matches the code."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "170-201, 170-1603A",
+      "url": "https://ecode360.com/print/WE1870?guid=12396652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "170-201: 'ACCESSORY DWELLING A self-contained dwelling unit which is complete with food preparation and bathroom facilities, has direct access to the outdoors ... and is accessory to the existing primary dwelling unit.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "170-1603A(2)(d), 170-501B(5), 170-601B(6), 170-701B(7)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Special exception in A/C, R-1 and R-2. 'The accessory dwelling unit shall be occupied only by members of the family of the occupants of the principal dwelling or those providing care or services to the occupants of the principal dwelling unit.' The path is in approval.path. A rental unit needs a second special exception (170-1619), see alternatives."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "170-501B(5), 170-601B(6), 170-701B(7), 170-2108",
+      "url": "https://ecode360.com/print/WE1870?guid=12397345",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Uses by special exception ... when authorized by the Zoning Hearing Board as a special exception, in accordance with ... § 170-2108.'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "170-1902B, MPC 910.2",
+      "url": "https://ecode360.com/print/WE1870?guid=12399191",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails 170-1603A or the R-2 lot size needs a variance from the Zoning Hearing Board. No unlisted-use path found in Chapter 170."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Rental accessory dwelling unit (conversion of an approved ADU)",
+          "path": "special_exception",
+          "districts": [
+            "A/C",
+            "R-1",
+            "R-2"
+          ],
+          "conditions": "An approved, permitted ADU may become a rental by special exception. The owner or a family member of the owner lives in one unit. ADU 500 sq ft at least and at most 50% of the house footprint, no taller than the house, one more paved parking space outside setbacks, utility billing in the owner's name, no exterior alteration, one ADU per lot, tenants one family of related persons.",
+          "min_lot_sqft": null,
+          "section": "170-1619, 170-501B(8), 170-601B(9), 170-701B(8)",
+          "url": "https://ecode360.com/print/WE1870?guid=34450384",
+          "adu_listing": true,
+          "confidence": "verified",
+          "note": "Needs an ADU approved under 170-1603A first. The R-2 lot rule of 170-701B(7) still applies."
+        },
+        {
+          "name": "Conversion of a single-family dwelling to a two-family or multifamily dwelling",
+          "path": "special_exception",
+          "districts": [
+            "A/C",
+            "R-1",
+            "R-2"
+          ],
+          "conditions": "A single-family detached dwelling existing on the effective date of the chapter. The owner lives on the premises. Two parking spaces for each unit, not between the front line and the house. District height, yard and other rules. No external alteration except for safety.",
+          "min_lot_sqft": 130680,
+          "section": "170-1608B, 170-501B(6), 170-601B(7), 170-701B(6)",
+          "url": "https://ecode360.com/12396615",
+          "confidence": "verified",
+          "note": "'In no instance shall the lot area for a converted structure be less than three acres.'"
+        }
+      ],
+      "section": "170-1608, 170-1619",
+      "url": "https://ecode360.com/print/WE1870?guid=34450384",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "A/C",
+        "R-1",
+        "R-2"
+      ],
+      "section": "170-501B(5), 170-601B(6), 170-701B(7)",
+      "url": "https://ecode360.com/print/WE1870?guid=12397345",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Special exception in A/C, R-1 and R-2. Not listed in R-3 (a multifamily district, 170-801), M-U, C-1, C-2, POC or the Township district."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "170-1603A(2)(a), (b)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'There shall not be more than one accessory dwelling unit created on any single-family residential lot.' A/C, R-1 and R-2 permit only single-family detached dwellings."
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "170-201, 170-1603A(2)(b), (f)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The unit is 'accessory to the existing primary dwelling unit', sits in the house or an accessory structure on the lot, and 'No other alterations to the exterior of the structure shall be permitted unless necessary for health or safety reasons.' Read as no addition and no new building for the unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Article XXIV",
+      "url": "https://ecode360.com/12396615",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Article XXIV (Ord. No. 2013-1) sets up the Historical Commission. No historic ADU path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_size",
+          "condition": "R-2: lot of at least 18,000 sq ft if both units are on public sewer and water. Otherwise 40,000 sq ft.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "R-2"
+          ],
+          "building_types": null,
+          "section": "170-701B(7)",
+          "url": "https://ecode360.com/print/WE1870?guid=12397345",
+          "test": "lot_sqft_at_least",
+          "value": 18000
+        },
+        {
+          "kind": "lot_size",
+          "condition": "R-2 without public sewer and water for both units: 40,000 sq ft.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-2"
+          ],
+          "building_types": null,
+          "section": "170-701B(7)",
+          "url": "https://ecode360.com/print/WE1870?guid=12397345"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "One of the two units is occupied by the owner of the lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "170-1603A(2)(c)",
+          "url": "https://ecode360.com/print/WE1870?guid=12398469"
+        },
+        {
+          "kind": "family",
+          "condition": "The unit is occupied only by family members of the occupants of the main house, or by people providing care or services to them.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "170-1603A(2)(d)",
+          "url": "https://ecode360.com/print/WE1870?guid=12398469"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "In the house or an existing accessory structure on the lot. No exterior alteration unless needed for health or safety, and nothing out of keeping with the single-family character, in the Zoning Hearing Board's judgment.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "170-1603A(2)(b), (f)",
+          "url": "https://ecode360.com/print/WE1870?guid=12398469"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Without public sewer: a Chester County Health Department permit for the septic system for the added residents. An inadequate system must be improved first.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "170-1603A(2)(g)",
+          "url": "https://ecode360.com/print/WE1870?guid=12398469"
+        },
+        {
+          "kind": "other",
+          "condition": "Architectural plan to scale. A use and occupancy certificate valid for one year, renewed each year.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "170-1603A(2)(i), (j), 170-2004C",
+          "url": "https://ecode360.com/print/WE1870?guid=12399222"
+        }
+      ],
+      "section": "170-1603A",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "170-1603A(2)(b), (f)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The accessory dwelling unit may be located in the principal dwelling or in a structure which is accessory to the principal dwelling'. With the bar on exterior alterations, read as the house or an existing accessory structure (a garage, including space over it). No addition and no new building."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1200,
+      "section": "170-1603A(2)(e)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'in no case shall the accessory dwelling exceed 1,200 square feet, not including any vehicle garage space.'"
+    },
+    "max_share_of_house": {
+      "value": 0.35,
+      "section": "170-1603A(2)(e)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'not more than 35% of the gross habitable area of the principal dwelling prior to creation of the accessory dwelling.'"
+    },
+    "min_sqft": {
+      "value": 500,
+      "section": "170-1603A(2)(e)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The minimum size of an accessory dwelling shall be 500 square feet of gross habitable area.'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "170-1603C(3)(b)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU height rule. The unit is in an existing structure. A detached accessory structure 'may not exceed the height of the principal dwelling or 20 feet, whichever is greater'."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "170-1603C(3)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Detached accessory structures 'may be located only in side and rear yards'."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "170-1603C(3)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory structures may be located only in side and rear yards.'"
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "170-1502F",
+      "url": "https://ecode360.com/print/WE1870?guid=12398162",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Under 250 sq ft and under 12 ft high: 5 ft. 250 sq ft or more, or 12 ft or taller: a distance equal to the height."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "170-1502F",
+      "url": "https://ecode360.com/print/WE1870?guid=12398162",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Same as side: 5 ft for small structures, else equal to the height."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "170-602B(8), 170-702B(4)(e)",
+      "url": "https://ecode360.com/print/WE1870?guid=12397362",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A unit in the house takes the house's district height: three stories, not over 38 ft."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "170-1603A(2)(c)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One of the two dwelling units shall be occupied by the owner of the lot on which both dwelling units are located.'"
+    },
+    "family_only": {
+      "value": true,
+      "section": "170-1603A(2)(d)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Family of the main house occupants or their care or service providers. A rental needs 170-1619."
+    },
+    "occupancy": {
+      "value": "Members of the family of the people in the main house, or people providing care or services to them. RELATED or RELATIVE is defined by blood, marriage, adoption or foster relationship (170-201).",
+      "section": "170-1603A(2)(d), 170-201",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "170-1603A(2)(a)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'There shall not be more than one accessory dwelling unit created on any single-family residential lot.'"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "170-1603A(2)(d), 170-1619B(13)",
+      "url": "https://ecode360.com/print/WE1870?guid=34450384",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The family unit may not be rented to others. A 170-1619 rental is for one related family. No short-term rental rule in Chapter 170 (bed-and-breakfast stays are at most seven days, 170-1607)."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "170-1603A(2)(h)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One off-street parking space shall be required for the accessory dwelling unit in addition to those required for the principal dwelling. The additional parking space shall not be located within any required yard area.'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "170-1603A(2)(h), 170-1705A(1)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398921",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Single-family dwelling: 'Three parking spaces for each dwelling unit', plus one for the ADU."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "170-1603A(2)(g)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Septic capacity must be certified. No rule on separate connections. 170-1619B(8) keeps utility billing in the owner's name for a rental."
+    }
+  },
+  "districts": {
+    "A/C": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "170-502B(1)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397257",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Lot size: two acre minimum.'"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "170-502B(5)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397257",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "170-502B(6)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397257",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "170-502B(7)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397257",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "170-502B(8)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397257",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "170-502B(8)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397257",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'three stories, not to exceed 38 feet.'"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "170-602B(1)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397313",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Lot size: one acre minimum.' Ord. No. 2022-02."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "170-602B(5)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397313",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "170-602B(6)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397313",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "170-602B(7)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397313",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "170-602B(8)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397313",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "170-602B(8)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397313",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 22000,
+        "section": "170-702B(3)(a)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397362",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "22,000 sq ft with public sewer and water. One acre with on-site sewage or water. The ADU itself needs 18,000 sq ft (public) or 40,000 sq ft (170-701B(7))."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "170-702B(4)(b)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397362",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "170-702B(4)(c)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397362",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "10 ft each, 25 ft together."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "170-702B(4)(d)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397362",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 38,
+        "section": "170-702B(4)(e)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397362",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "170-702B(4)(e)",
+        "url": "https://ecode360.com/print/WE1870?guid=12397362",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

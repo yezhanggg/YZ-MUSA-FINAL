@@ -1,0 +1,560 @@
+{
+  "provenance": {
+    "jurisdiction": "Susquehanna township",
+    "instrument": "Code of the Township of Susquehanna, Chapter 27 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 header on 2026-11-13: legislation through 02-26-2026. Latest zoning amendment seen in the text: Ord. No. 25-07 (9-11-2025, 27-2101). New Laws: Ord. Nos. 26-03 (Appendix D), 26-04 (stormwater, Chapter 19), 26-05 (massage establishments, Chapter 13), 26-06 (abandoned property, Chapter 4). None amends Chapter 27.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/28271832",
+      "https://ecode360.com/print/SU2468?guid=28271846",
+      "https://ecode360.com/print/SU2468?guid=28272056",
+      "https://ecode360.com/print/SU2468?guid=28272062",
+      "https://ecode360.com/print/SU2468?guid=28272077",
+      "https://ecode360.com/print/SU2468?guid=28272081",
+      "https://ecode360.com/print/SU2468?guid=28272098",
+      "https://ecode360.com/print/SU2468?guid=28272102",
+      "https://ecode360.com/print/SU2468?guid=28272118",
+      "https://ecode360.com/print/SU2468?guid=28272122",
+      "https://ecode360.com/print/SU2468?guid=28272139",
+      "https://ecode360.com/print/SU2468?guid=28272142",
+      "https://ecode360.com/print/SU2468?guid=28272159",
+      "https://ecode360.com/print/SU2468?guid=28272164",
+      "https://ecode360.com/print/SU2468?guid=28272255",
+      "https://ecode360.com/print/SU2468?guid=28272227",
+      "https://ecode360.com/print/SU2468?guid=28272571",
+      "https://ecode360.com/print/SU2468?guid=28273073",
+      "https://ecode360.com/print/SU2468?guid=28273124",
+      "https://ecode360.com/print/SU2468?guid=28273134",
+      "https://ecode360.com/print/SU2468?guid=28273211",
+      "https://ecode360.com/print/SU2468?guid=28273285",
+      "https://ecode360.com/print/SU2468?guid=28273333",
+      "https://ecode360.com/SU2468/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Dauphin",
+    "municipality_type": "township",
+    "geoid": "4204375528",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/28271832",
+    "code_current_through": "2026-02-26",
+    "code_current_through_note": "eCode360 header: 'legislation through 02-26-2026'.",
+    "checks": [
+      "Chapter 27 has no accessory dwelling text. C, RC, R-1, R-2 and R-3 permit single-family detached dwellings and customary accessory uses such as garages, playhouses, garden houses and pools (27-402, 27-502, 27-602, 27-702, 27-802)",
+      "Residential conversions of an existing building are a permitted use in R-4 and MU-1: lot at least 8,000 sq ft and 65 ft wide, 2,000 sq ft of land and 700 sq ft of floor for each unit, no more than three units added, no exterior change, public water and sewer (27-902.5, 27-1402.4, 27-2009)",
+      "More than one principal use may be built on a lot if each structure meets all lot and yard rules as though on its own lot (27-2110). On a nonconforming lot in a residential district only one single-family dwelling may be built (27-2203)",
+      "District density caps: C 0.5 unit an acre, RC 1, R-1 2, R-2 4, R-3 8 units an acre. R-4 single-family 5 an acre (27-404 to 27-904)",
+      "Accessory buildings: 15 ft high, not in the front yard, at least 10 ft behind the rear of the house, 3 ft from lot lines, 5 ft from an alley (27-2104.2, 27-2106.4)",
+      "Parking: two spaces per dwelling unit (27-2302.1.E)",
+      "Live-in caretaker or guard quarters are an accessory use in CH and IG only, not for homes"
+    ],
+    "notes": "Zoning office: Susquehanna Township (susquehannatwp.com). Read on eCode360 in a browser, the chapter print view searched in the page and section print views. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house, family suite, accessory residential, conversion, short-term. The only unlisted-use path is a special exception in IG for 'Any lawful use which the law requires the Township to provide for which is not otherwise permitted in any other district' (27-1303.5, 27-2047: 500 ft from any residential use). It does not reach a unit on a house lot."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "27-204",
+      "url": "https://ecode360.com/print/SU2468?guid=28271846",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No ADU term. 27-204 defines RESIDENTIAL CONVERSIONS: 'An existing building converted into residential dwelling units in accordance with this Chapter.'"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-602, 27-204",
+      "url": "https://ecode360.com/print/SU2468?guid=28272098",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU text. A single-family detached dwelling is 'occupied by not more than one family' (27-204)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-602, MPC 910.2",
+      "url": "https://ecode360.com/print/SU2468?guid=28272098",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A second unit on a single-family lot is not a listed use. A use variance from the Zoning Hearing Board. In R-4 and MU-1 a residential conversion is permitted, see alternatives."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://ecode360.com/print/SU2468?guid=28272098",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The IG special exception for required uses not permitted elsewhere (27-2047) does not reach a unit on a house lot."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion of an existing building",
+          "path": "by_right",
+          "districts": [
+            "R-4",
+            "MU-1"
+          ],
+          "conditions": "Lot at least 8,000 sq ft and 65 ft wide. At least 2,000 sq ft of land and 700 sq ft of floor for each unit. No more than three units added. No exterior change except as codes require. Parking per 27-2302. Public water and sewer. Plans approved by the Codes Enforcement Officer.",
+          "min_lot_sqft": 8000,
+          "section": "27-902.5, 27-1402.4, 27-2009",
+          "url": "https://ecode360.com/print/SU2468?guid=28272571",
+          "confidence": "verified"
+        },
+        {
+          "name": "Single-family semi-detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "A new two-unit twin building. 5,000 sq ft of lot for each dwelling, 40 ft width, yards 30 / 10 / 30.",
+          "min_lot_sqft": 10000,
+          "section": "27-902.8, 27-904",
+          "url": "https://ecode360.com/print/SU2468?guid=28272164",
+          "confidence": "secondary",
+          "note": "Two lots of 5,000 sq ft. A new building, not a unit added to a house."
+        },
+        {
+          "name": "Second principal dwelling on the lot",
+          "path": "by_right",
+          "districts": [
+            "RC"
+          ],
+          "conditions": "'More than one principal use may be erected on a single lot provided that all lot and yard requirements ... shall be met for each structure, as though it were on an individual lot.' Two dwellings on one lot are a land development (MPC 107).",
+          "min_lot_sqft": 87120,
+          "section": "27-2110",
+          "url": "https://ecode360.com/print/SU2468?guid=28273211",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "Twice the district lot. Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
+        },
+        {
+          "name": "Second principal dwelling on the lot",
+          "path": "by_right",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "'More than one principal use may be erected on a single lot provided that all lot and yard requirements ... shall be met for each structure, as though it were on an individual lot.' Two dwellings on one lot are a land development (MPC 107).",
+          "min_lot_sqft": 40000,
+          "section": "27-2110",
+          "url": "https://ecode360.com/print/SU2468?guid=28273211",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "Twice the district lot. Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
+        },
+        {
+          "name": "Second principal dwelling on the lot",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "'More than one principal use may be erected on a single lot provided that all lot and yard requirements ... shall be met for each structure, as though it were on an individual lot.' Two dwellings on one lot are a land development (MPC 107).",
+          "min_lot_sqft": 20000,
+          "section": "27-2110",
+          "url": "https://ecode360.com/print/SU2468?guid=28273211",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "Twice the district lot. Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
+        },
+        {
+          "name": "Second principal dwelling on the lot",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "'More than one principal use may be erected on a single lot provided that all lot and yard requirements ... shall be met for each structure, as though it were on an individual lot.' Two dwellings on one lot are a land development (MPC 107).",
+          "min_lot_sqft": 8000,
+          "section": "27-2110",
+          "url": "https://ecode360.com/print/SU2468?guid=28273211",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "Twice the district lot. Ask the zoning officer. 27-2203 allows only one single-family dwelling on a nonconforming lot."
+        }
+      ],
+      "section": "27-2009, 27-2110",
+      "url": "https://ecode360.com/print/SU2468?guid=28272571",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "27-402 to 27-1402",
+      "url": "https://ecode360.com/print/SU2468?guid=28272098",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/28271832",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No historic district rule found in Chapter 27."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-602",
+      "url": "https://ecode360.com/print/SU2468?guid=28272098",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "27-2104.2",
+      "url": "https://ecode360.com/print/SU2468?guid=28273124",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. 'Maximum height of accessory buildings shall not exceed 15 feet in height.'"
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "27-2106.4.B(3)",
+      "url": "https://ecode360.com/print/SU2468?guid=28273134",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory building rule. 'not less than three feet from any lot line'."
+    },
+    "setback_rear_ft": {
+      "value": 3,
+      "section": "27-2106.4.B(3)",
+      "url": "https://ecode360.com/print/SU2468?guid=28273134",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory building rule."
+    },
+    "setback_rear_alley_ft": {
+      "value": 5,
+      "section": "27-2106.4.B(2)",
+      "url": "https://ecode360.com/print/SU2468?guid=28273134",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'not less than five feet from the alley'."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "27-2106.4.A, 27-2101.3",
+      "url": "https://ecode360.com/print/SU2468?guid=28273134",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The accessory building shall not be erected or substantially altered within any front yards.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-2106.4.A, 27-2101.3",
+      "url": "https://ecode360.com/print/SU2468?guid=28273134",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'no accessory structure shall be located in the front yard area' (27-2101.3). Also at least 10 ft behind the rear-most part of the house (27-2106.4.B(1))."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "27-602",
+      "url": "https://ecode360.com/print/SU2468?guid=28272098",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/28271832",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No short-term rental rule found in Chapter 27."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-2302.1.E",
+      "url": "https://ecode360.com/print/SU2468?guid=28273333",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Single- and multiple-family dwellings. 2 spaces per dwelling unit'."
+    }
+  },
+  "districts": {
+    "C": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-404.2",
+        "url": "https://ecode360.com/print/SU2468?guid=28272062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Minimum lot area: one acre.' Density 0.50 unit per acre."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 87120,
+        "section": "27-404.1",
+        "url": "https://ecode360.com/print/SU2468?guid=28272062",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Maximum residential density: 0.50 unit per acre.' Read as 87,120 sq ft per unit."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-404.4.A",
+        "url": "https://ecode360.com/print/SU2468?guid=28272062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "27-404.4.B",
+        "url": "https://ecode360.com/print/SU2468?guid=28272062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-404.4.C",
+        "url": "https://ecode360.com/print/SU2468?guid=28272062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "27-404.6",
+        "url": "https://ecode360.com/print/SU2468?guid=28272062",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "RC": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-504.1.B",
+        "url": "https://ecode360.com/print/SU2468?guid=28272081",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "27-504.1.A",
+        "url": "https://ecode360.com/print/SU2468?guid=28272081",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Maximum residential density: one unit per acre.'"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-504.1.D(1)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272081",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-504.1.D(2)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272081",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-504.1.D(3)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272081",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "27-504.2",
+        "url": "https://ecode360.com/print/SU2468?guid=28272081",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-604.1.B",
+        "url": "https://ecode360.com/print/SU2468?guid=28272102",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 21780,
+        "section": "27-604.1.A",
+        "url": "https://ecode360.com/print/SU2468?guid=28272102",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Maximum residential density: two units per acre.' Read as 21,780 sq ft per unit."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-604.1.D(1)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272102",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-604.1.D(2)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272102",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-604.1.D(3)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272102",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "27-604.2",
+        "url": "https://ecode360.com/print/SU2468?guid=28272102",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "27-704.1.B",
+        "url": "https://ecode360.com/print/SU2468?guid=28272122",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10890,
+        "section": "27-704.1.A",
+        "url": "https://ecode360.com/print/SU2468?guid=28272122",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Maximum residential density: Four units per acre.'"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-704.1.D(1)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272122",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-704.1.D(2)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272122",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-704.1.D(3)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272122",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "27-704.2",
+        "url": "https://ecode360.com/print/SU2468?guid=28272122",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "27-804.1.B",
+        "url": "https://ecode360.com/print/SU2468?guid=28272142",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5445,
+        "section": "27-804.1.A",
+        "url": "https://ecode360.com/print/SU2468?guid=28272142",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Maximum residential density: eight units per acre.'"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-804.1.D(1)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272142",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-804.1.D(2)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272142",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-804.1.D(3)",
+        "url": "https://ecode360.com/print/SU2468?guid=28272142",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "27-804.2",
+        "url": "https://ecode360.com/print/SU2468?guid=28272142",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "27-904.1 table",
+        "url": "https://ecode360.com/print/SU2468?guid=28272164",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single family detached: 'Minimum Lot Area per Dwelling' 8,000 sq ft. Semi-detached 5,000 per dwelling."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8712,
+        "section": "27-904.1 table",
+        "url": "https://ecode360.com/print/SU2468?guid=28272164",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Single family detached: maximum 5 dwelling units per acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-904.1 table",
+        "url": "https://ecode360.com/print/SU2468?guid=28272164",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-904.1 table",
+        "url": "https://ecode360.com/print/SU2468?guid=28272164",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-904.1 table",
+        "url": "https://ecode360.com/print/SU2468?guid=28272164",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "27-904.2",
+        "url": "https://ecode360.com/print/SU2468?guid=28272164",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

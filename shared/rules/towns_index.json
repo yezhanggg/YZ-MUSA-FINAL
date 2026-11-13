@@ -1407,17 +1407,17 @@
       "pop_rank": 57,
       "file": "pa_lebanon_lebanon",
       "batch": 10,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/LE3707",
+      "code_url": "https://ecode360.com/37751377",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2025-11-24",
       "code_note": "Zoning: Part Thirteen (Planning and Zoning Code), Zoning Ordinance of 2020 (Ord. 1-2020, passed 6-22-2020). conditional uses ref 1314.17. Code root LE3707 seen in ecode360 index URL (ecode360.com/index/LE3707/M). Zoning sections seen at https://ecode360.com/36369818 and https://ecode360.com/36363477 (Ord. 1-2020). Plain curl returns 403 (ecode360 bot block). WebFetch also 403.",
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, needs the independent review. family_only: 'Unit for care of relative' by right (Zoning Officer) in RLD, RMLD, RMD, RHD, and on the lot of an existing dwelling in OI, CG, CBD, CN. Open: (1) the 1305.01 dimensional table is not shown on eCode360, read in the City's 2020 adopted PDF. (2) whether a care unit counts toward the RMD and RHD average lot area per unit. (3) parking for the unit when the relative drives. (4) whether 1302.05 (unlisted uses by special exception) could reach a unit for a non-relative."
     },
     {
       "geoid": "4204375528",
@@ -1431,17 +1431,17 @@
       "pop_rank": 58,
       "file": "pa_dauphin_susquehanna",
       "batch": 10,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/SU2468",
+      "code_url": "https://ecode360.com/28271832",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-02-26",
       "code_note": "Zoning: Chapter 27 Zoning (Zoning Map 27-301). Code root from ecode360.com/index/SU2468/C. Search tool described https://ecode360.com/28271833 as zoning ordinance opening sections (not independently verified as chapter id). Zoneomics mirror at zoneomics.com/code/susquehanna-township-PA. ecode360 returns 403 to plain curl.",
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, needs the independent review. not_addressed, use variance. Residential conversion by right in R-4 and MU-1 (27-2009, 8,000 sq ft). Open: (1) 27-2110 (more than one principal use per lot) as a second-house path, as a land development, against 27-2203 (one single-family dwelling on a nonconforming lot). (2) whether the units-per-acre density caps bind a single lot. (3) commercial and mixed-use districts not read row by row."
     },
     {
       "geoid": "4209179008",
@@ -1455,17 +1455,17 @@
       "pop_rank": 59,
       "file": "pa_montgomery_upper_dublin",
       "batch": 10,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "amlegal",
-      "code_url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa",
+      "code_url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-24735",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-10-13",
       "code_note": "Zoning: Chapter 255 Zoning (Upper Dublin Township Zoning Ordinance of 1956). Township site points to American Legal Publishing. URL is code root (zoning chapter node id not seen). amlegal returns 403 to plain curl. Zoneomics mirror (zoneomics.com/code/upper-dublin-township-PA) shows amendment dated 12-9-2025. A snippet suggested 'supplements through 1-8-2008' but that is probably an old header. currency unconfirmed.",
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, needs the independent review. family_only by special exception (255-27E(1)): household employees, caretakers, caregivers or the owner's immediate family, recorded covenant. Open: (1) the 40% / 1,200 sq ft cap names the accessory building, so no stated cap for a unit inside the house. (2) whether the 600 sq ft accessory coverage cap (255-29B) binds the unit building. (3) height 22 ft (255-27E) against the 20 ft district accessory height. (4) nonconforming lot rules and A-1, A-2 rows not read. (5) historic accessory apartment (255-255B(1)(d)) occupancy."
     },
     {
       "geoid": "4209135808",
@@ -1479,17 +1479,17 @@
       "pop_rank": 60,
       "file": "pa_montgomery_horsham",
       "batch": 10,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/HO1764",
+      "code_url": "https://ecode360.com/44681314",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-07-08",
       "code_note": "Zoning: Chapter 230 Zoning (Horsham Township Zoning Ordinance of 1995). Code id HO1764 seen in index URLs (ecode360.com/index/HO1764/G). Zoning short-title section at https://ecode360.com/9953287. 230-17 allows conversion of single-family dwelling to more families by special exception (not an ADU per se). ecode360 403 to plain curl.",
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, needs the independent review. not_addressed, use variance. Conversion of a single-family dwelling by special exception with a neighbor petition (230-17). Open: (1) R-5 duplex lot size beyond 10,000 sq ft. (2) R-6, R-7, MR-1, MR-2, MHD, RGCC and commercial districts not read row by row. (3) historic overlay conversion apartments (230-201) cited from the chapter view."
     },
     {
       "geoid": "4202984160",
@@ -1503,17 +1503,17 @@
       "pop_rank": 431,
       "file": "pa_chester_west_vincent",
       "batch": 10,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/WE3779",
+      "code_url": "https://ecode360.com/32399799",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-01-05",
       "code_note": "Zoning: Chapter 390 Zoning (TDR article 390-196). 2021 codification Ch 1-390. ADU text seen: Search snippet indicated zoning chapter covers accessory dwelling units (section not seen) - unverified. Code id WE3779 from ecode360 help/about URL. ecode360 403 to plain curl.",
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, needs the independent review. allowed_by_right in RC, R-3, R-2, RM, KV (conditional use in BV), 390-144. New freestanding unit only on parcels over five acres. Open: (1) an addition attached to the house is not named in 390-144. (2) RC, R-3, R-2 have no fixed lot minimum (tier density), stored as null. (3) parking per ADU read as three spaces. (4) 390-144E(9)(c) cites 390-191, the historic reuse section is 390-192. (5) RC 5% cap on accessory structures (390-16D(1)) and the ADU."
     },
     {
       "geoid": "4202984104",
@@ -1527,17 +1527,17 @@
       "pop_rank": 229,
       "file": "pa_chester_westtown",
       "batch": 10,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/WE1870",
+      "code_url": "https://ecode360.com/12396615",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-06-01",
       "code_note": "Zoning: Chapter 170 Zoning (170-100 to 170-2504). ecode360 New Laws lists Ord. 2026-02 amending Ch 170 (dated 2026-06-01), so code is recently maintained. ecode360 403 to plain curl.",
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, needs the independent review. family_only by special exception in A/C, R-1, R-2 (170-1603A). R-2 lot 18,000 sq ft with public sewer and water, else 40,000. Rental conversion by a second special exception (170-1619). Open: (1) read as the house or an existing accessory structure only (no exterior alterations), new building and addition left out. (2) 170-701B applies the 702E nonresidential special exception area rules to all R-2 special exceptions, against 701B(7). (3) a unit over an existing garage."
     },
     {
       "geoid": "4202946792",
