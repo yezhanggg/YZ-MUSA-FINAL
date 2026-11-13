@@ -171,6 +171,16 @@ class Place:
     strict_garage: bool = False
     cost_key: str = "rest_of_pa"  # place key in shared/assumptions.json cost.area_cost_factor
     imagery_key: str | None = None
+    # Setback keys that stay unchecked (0 ft, listed in `assumed` and cited "not checked") where the
+    # rule file gives no number, instead of the planning fallbacks. For town files, whose nulls are
+    # often "no number in the code" rather than a missing reading.
+    not_checked: tuple[str, ...] = ()
+    # A share-of-house size cap needs the house's living area. False: without it the cap is not
+    # checked (noted on the lot). True: the main building footprint stands in (the two cities).
+    share_cap_from_footprint: bool = True
+    # The rule's "abuts an alley" test also passes on a corner lot (a street on the street side lot
+    # line). Allentown 660-42C(1)(c).
+    way_gate_counts_corner: bool = False
 
 
 PLACES = {
@@ -185,6 +195,27 @@ PLACES = {
         strict_garage=True,
         cost_key="philadelphia",
         imagery_key="city_2025_3in",
+    ),
+    # Town rules from shared/rules/pa_lehigh_allentown.json (rules.resolve maps the place name to it).
+    # Allentown's small streets all carry the suffix ST, so no suffix names a lane. Alleys come from
+    # the city's cartway widths (pipeline/places/allentown.py).
+    # 660-41B(6): no accessory structure in any front yard, so the front setback is taken from the house.
+    # Separation: no distance in the zoning text. No open living area, so the 40 percent cap is unchecked.
+    "allentown": Place(
+        "allentown",
+        "42077",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=(
+            "setback_front_ft",
+            "separation_ft",
+            "setback_side_ft",
+            "setback_rear_ft",
+            "setback_rear_alley_ft",
+        ),
+        share_cap_from_footprint=False,
+        way_gate_counts_corner=True,
     ),
 }
 
@@ -403,6 +434,9 @@ class Ctx:
     imagery_date: str | None = None
     money: dict[str, Any] = field(default_factory=dict)  # cost index and its key, same for every lot
     spot_cover: bool = False  # a cover map exists for this place
+    not_checked: tuple[str, ...] = ()
+    share_cap_from_footprint: bool = True
+    way_gate_counts_corner: bool = False
 
 
 def _union(geoms: Iterable[BaseGeometry]) -> BaseGeometry | None:
@@ -592,11 +626,15 @@ def resolver_lot(
 
 
 def fill_rules(
-    raw: dict[str, Any], district: str | None, contextual_front: float | None = None
+    raw: dict[str, Any],
+    district: str | None,
+    contextual_front: float | None = None,
+    not_checked: Sequence[str] = (),
 ) -> tuple[dict[str, Any], list[str]]:
     """Give the fit a number for every setback. A filled value is listed in `assumed` and cited as
     an assumption, so the record never shows a guess as law. `contextual_front` is the existing
-    house's own front setback, used for a null front where the place sets fronts by context."""
+    house's own front setback, used for a null front where the place sets fronts by context. Keys in
+    `not_checked` get 0 ft (no limit applied) and a "not checked" citation instead of a fallback."""
     r = {**raw, "citations": dict(raw.get("citations") or {}), "assumed": list(raw.get("assumed") or [])}
     notes = []
     for key in fit.REQUIRED_NUMBERS:
@@ -607,6 +645,10 @@ def fill_rules(
             val = contextual_front
             section = "contextual front setback, taken from the existing house on this lot"
             notes.append(f"front setback {val:.1f} ft: contextual, taken from the existing house")
+        elif key in not_checked:
+            val = 0.0
+            section = "not checked: the rule file gives no number here (see its note), so no limit is applied"
+            notes.append(f"{key} not checked: district {district or 'unknown'} has no number in the rule file")
         else:
             val = (
                 r["setback_rear_ft"]
@@ -624,6 +666,30 @@ def fill_rules(
             "source_file": "build_lots",
         }
     return r, notes
+
+
+def town_extras_to_reasons(rules: dict[str, Any]) -> dict[str, Any]:
+    """A town file resolves with extra keys (rulesmod.TOWN_KEYS) that the lot record has no place
+    for yet. They are dropped. Its conditions (owner occupancy, floor area, design) are kept as
+    reason lines, so the record still says them. City results carry none of these keys."""
+    extra = [k for k in rulesmod.TOWN_KEYS if k in rules]
+    if not extra:
+        return rules
+    out = {k: v for k, v in rules.items() if k not in rulesmod.TOWN_KEYS}
+    reasons = list(out.get("reasons") or [])
+    for c in rules.get("conditions") or []:
+        # Only conditions this lot was not tested against. Met gates (house type, district) are noise.
+        if c.get("effect") != "condition" or not c.get("condition") or c.get("met") is not None:
+            continue
+        line = f"Condition: {c['condition']} ({c.get('section') or 'rule file'})"
+        if line not in reasons and c["condition"] not in " ".join(reasons):
+            reasons.append(line)
+    if rules.get("parking_reading"):
+        line = f"Parking: {rules['parking_reading']}"
+        if line not in reasons:
+            reasons.append(line)
+    out["reasons"] = reasons
+    return out
 
 
 def cite_type_paths(rules: dict[str, Any]) -> None:
@@ -989,7 +1055,10 @@ def build_lot(
     # The real fact goes to the resolver. Its extra keys keep the rule's own path per type apart
     # from this lot's facts (rule_path_by_type, lot_conditions_by_type).
     has_acc = any(b.role in ("garage", "shed") for b in blds)
-    rlot = resolver_lot(r, flags, edges.alley, has_acc, float(poly.area), house_height(r, blds))
+    way = edges.alley or (ctx.way_gate_counts_corner and edges.corner)
+    if way and not edges.alley:
+        notes.append("corner lot: the street side lot line counts as abutting a way for a detached ADU")
+    rlot = resolver_lot(r, flags, way, has_acc, float(poly.area), house_height(r, blds))
 
     rules_out: dict[str, Any] = {}
     buildable: dict[str, Any] = {}
@@ -997,12 +1066,18 @@ def build_lot(
     raw_res: dict[str, dict[str, fit.FitResult]] = {}
     cache: dict[str, tuple[Any, Any, Any]] = {}
     for s in SCENARIOS:
-        resolved = rulesmod.resolve(ctx.place, s, rlot, extra=True)
-        filled, fill_notes = fill_rules(resolved, rlot["zoning_district"], ctx_front)
+        resolved = town_extras_to_reasons(rulesmod.resolve(ctx.place, s, rlot, extra=True))
+        filled, fill_notes = fill_rules(resolved, rlot["zoning_district"], ctx_front, ctx.not_checked)
         notes += [n for n in fill_notes if n not in notes]
-        key = _rules_key(filled)
+        fit_in = filled
+        if not ctx.share_cap_from_footprint and filled.get("max_share_of_house") is not None and not shape.living_sqft:
+            fit_in = {**filled, "max_share_of_house": None}  # the record keeps the cap, the fit skips it
+            note = "share-of-house size cap not checked: no living area on file for this house"
+            if note not in notes:
+                notes.append(note)
+        key = _rules_key(fit_in)
         if key not in cache:  # scenarios with the same rules (Pittsburgh local reform) share a fit
-            cache[key] = run_scenario(shape, blds, filled, epsg)
+            cache[key] = run_scenario(shape, blds, fit_in, epsg)
         buildable[s], fits[s], raw_res[s] = cache[key]
         cite_type_paths(filled)
         rules_out[s] = filled
@@ -1535,6 +1610,9 @@ def make_ctx(place: Place, paths: dict[str, Path]) -> Ctx:
         imagery_date(place),
         cost_index(place),
         SPOT_COVER and cover_map_ok(place.name),
+        not_checked=place.not_checked,
+        share_cap_from_footprint=place.share_cap_from_footprint,
+        way_gate_counts_corner=place.way_gate_counts_corner,
     )
 
 
@@ -1634,7 +1712,14 @@ OTHER_STATE_BILLS = ("sb1346",)
 def _rule_files(place: str) -> list[str]:
     """The place file, its local bill, the defaults and the state bills. Checked by file name only,
     so a half-written town file elsewhere in the folder is never read."""
-    names = {place, rulesmod.DEFAULT, rulesmod.STATE_REFORM, *rulesmod.LOCAL_REFORM.get(place, []), *OTHER_STATE_BILLS}
+    names = {
+        place,
+        rulesmod._place_file(place),  # a town place reads its pa_<county>_<town> file
+        rulesmod.DEFAULT,
+        rulesmod.STATE_REFORM,
+        *rulesmod.LOCAL_REFORM.get(place, []),
+        *OTHER_STATE_BILLS,
+    }
     return sorted(n for n in names if (rulesmod.RULES_DIR / f"{n}.json").exists())
 
 

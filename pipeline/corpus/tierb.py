@@ -112,8 +112,8 @@ def stem(t: str) -> str:
     return t
 
 
-def tokens(text: str) -> list[str]:
-    return [stem(t) for t in TOKEN.findall(text.lower()) if t not in STOP]
+def tokens(text: str, use_stem: bool = True) -> list[str]:
+    return [stem(t) if use_stem else t for t in TOKEN.findall(text.lower()) if t not in STOP]
 
 
 # Query words that also search for the words ordinances use. Weight 0.5 for the added words.
@@ -134,25 +134,31 @@ EXPAND: list[tuple[re.Pattern[str], list[str]]] = [
 EXPAND_WEIGHT = 0.5
 
 
-def query_terms(query: str, expand: bool = True) -> dict[str, float]:
+def query_terms(query: str, expand: bool = True, use_stem: bool = True) -> dict[str, float]:
     """Query tokens with weights: 1 for the user's words, EXPAND_WEIGHT for added words."""
     out: dict[str, float] = {}
-    for t in tokens(query):
+    for t in tokens(query, use_stem):
         out[t] = 1.0
     if expand:
         low = query.lower()
         for rx, words in EXPAND:
             if rx.search(low):
                 for w in words:
-                    for t in tokens(w):
+                    for t in tokens(w, use_stem):
                         out.setdefault(t, EXPAND_WEIGHT)
     return out
 
 
 def bm25(
-    passages: list[str], query: str, k: int = 5, expand: bool = True, k1: float = 1.5, b: float = 0.75
+    passages: list[str],
+    query: str,
+    k: int = 5,
+    expand: bool = True,
+    use_stem: bool = True,
+    k1: float = 1.5,
+    b: float = 0.75,
 ) -> list[tuple[float, int]]:
-    docs = [tokens(p) for p in passages]
+    docs = [tokens(p, use_stem) for p in passages]
     n = len(docs)
     if not n:
         return []
@@ -160,7 +166,7 @@ def bm25(
     df: Counter[str] = Counter()
     for d in docs:
         df.update(set(d))
-    q = query_terms(query, expand)
+    q = query_terms(query, expand, use_stem)
     scored = []
     for i, d in enumerate(docs):
         tf = Counter(d)
@@ -175,6 +181,17 @@ def bm25(
             scored.append((s, i))
     scored.sort(key=lambda x: (-x[0], x[1]))
     return scored[:k]
+
+
+DROP = frozenset(
+    ["city", "borough", "boro", "township", "twp", "town", "municipality", "of", "the", "pa", "pennsylvania"]
+)
+
+
+def town_key(text: str) -> str:
+    """'Upper Darby Twp' -> 'upperdarby'. Same as townKey in app/src/agent/ruleText.ts."""
+    words = re.sub(r"[^a-z0-9 ]", " ", text.lower().replace("-", " ")).split()
+    return "".join(w for w in words if w not in DROP)
 
 
 # ---------------------------------------------------------------- sources
@@ -206,8 +223,8 @@ def ocr_pages(doc_id: str) -> list[str] | None:
     if not p.exists() or p.stat().st_size == 0:
         return None
     pages = p.read_text(errors="replace").split("\f")
-    if pages and not pages[-1].strip():
-        pages = pages[:-1]
+    if len(pages) > 1 and not pages[-1].strip():
+        pages = pages[:-1]  # the separator after the last page
     return pages
 
 
@@ -253,6 +270,9 @@ def build(out_dir: Path | None = None, min_ocr_chars: int = 200) -> dict[str, An
             if r.get("path"):
                 fetch[f"{r['geoid']}_{Path(r['path']).stem}"] = r
     rules = rule_index()
+    overrides = {r["geoid"]: r for r in _csv("sources/tierb_overrides.csv")}
+    name_keys = Counter(town_key(r["name"]) for r in places.values())
+    exact_names = Counter(r["name"].lower() for r in places.values())
 
     # documents per source place
     docs_by: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -288,7 +308,8 @@ def build(out_dir: Path | None = None, min_ocr_chars: int = 200) -> dict[str, An
                 if pages is None or text_chars < min_ocr_chars:
                     problems.append(f"scan without OCR: {d['doc_id']} ({d.get('pages')} pages)")
                     continue
-                if len(pages) != int(d.get("pages") or 0):
+                # A blank last page leaves no separator, so one page fewer is fine.
+                if not 0 <= int(d.get("pages") or 0) - len(pages) <= 1:
                     problems.append(f"OCR page count {len(pages)} != {d.get('pages')} for {d['doc_id']}")
                 rows.extend(ocr_chunks(d, pages))
                 meta["ocr"] = True
@@ -300,6 +321,8 @@ def build(out_dir: Path | None = None, min_ocr_chars: int = 200) -> dict[str, An
         multi = "index" in pilot_kind.get(geoid, set()) or (avail.get(geoid, {}).get("format") == "multi_pdf")
         if multi:
             problems.append("assembled from separate article files linked on the town page; the set may be incomplete")
+        if overrides.get(geoid, {}).get("complete", "").lower() == "false":
+            problems.append(overrides[geoid]["reason"])
         doc_index = {m["doc_id"]: i for i, m in enumerate(doc_meta)}
         packed = []
         for c in rows:
@@ -326,9 +349,11 @@ def build(out_dir: Path | None = None, min_ocr_chars: int = 200) -> dict[str, An
 
     # places: own text, shared county text, county coverage list
     links: dict[str, tuple[str, str, str | None]] = {g: (g, "own", None) for g in texts}
+    county_note: dict[str, str] = {}
     for r in _csv("sources/shared_text.csv") + _csv("sources/county_coverage.csv"):
         if r["source_geoid"] in texts and r["geoid"] not in texts:
             links[r["geoid"]] = (r["source_geoid"], "county", r.get("coverage_url") or None)
+            county_note[r["geoid"]] = r.get("note") or ""
     # Pine township's own fetch was a county home page (no text). It is covered by the county text above.
 
     manifest_places = []
@@ -340,7 +365,7 @@ def build(out_dir: Path | None = None, min_ocr_chars: int = 200) -> dict[str, An
         dest.write_bytes(gzip.compress(raw, 9, mtime=0))
         sizes[tid] = {"raw": len(raw), "gz": dest.stat().st_size}
     for geoid, (tid, how, coverage_url) in sorted(links.items()):
-        p = places.get(geoid, {})
+        row = places.get(geoid, {})
         src = places.get(tid, {})
         a = avail.get(tid, {})
         t = texts[tid]
@@ -348,14 +373,17 @@ def build(out_dir: Path | None = None, min_ocr_chars: int = 200) -> dict[str, An
         manifest_places.append(
             {
                 "geoid": geoid,
-                "name": p.get("name"),
-                "county": p.get("county"),
+                "name": row.get("name"),
+                "county": row.get("county"),
                 "text_id": tid,
                 "source": "own_site" if how == "own" and a.get("source_type") != "county" else "county",
                 "source_note": (
                     None
                     if how == "own"
-                    else f"County zoning ordinance, fetched for {src.get('name')} ({src.get('county')} County)."
+                    else f"{row.get('name')} is zoned under the {row.get('county')} County zoning ordinance, and this is"
+                    f" that ordinance ({county_note.get(geoid, '').split(';')[0].strip()}). It is"
+                    f" {row.get('name')}'s zoning text. The county file was downloaded once (listed under"
+                    f" {src.get('name')}) and is shared by every municipality it covers."
                 ),
                 "coverage_url": coverage_url,
                 "landing_url": a.get("landing_url") or None,
@@ -367,6 +395,8 @@ def build(out_dir: Path | None = None, min_ocr_chars: int = 200) -> dict[str, An
                 "incomplete_reasons": t["problems"],
                 "ocr": t["ocr_docs"] > 0,
                 "rule_file": rules.get(geoid),
+                "same_name": name_keys.get(town_key(row.get("name") or ""), 0),
+                "same_exact_name": exact_names.get((row.get("name") or "").lower(), 0),
                 "chunks": len(t["chunks"]),
                 "bytes_gz": sizes[tid]["gz"],
             }
@@ -404,6 +434,7 @@ def retrieval_eval(k: int = 10) -> dict[str, Any]:
     """Top 5 / top 10 hit rate of BM25 with and without stemming and expansion, on the pilot
     retrieval questions (gold from the rule files on disk), on the text-layer chunks."""
     from pipeline.corpus import evaluate as ev
+    from pipeline.corpus.draft_rules import norm
 
     ev.GOLD_SOURCE = "worktree"
     ev.GOLD_STATUSES = ("verified",)
@@ -411,8 +442,6 @@ def retrieval_eval(k: int = 10) -> dict[str, Any]:
     by_place: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for c in load_chunks():
         by_place[c["geoid"]].append(c)
-    global stem
-    plain_stem = stem
     variants = {"bm25": (False, False), "bm25_stem": (True, False), "bm25_stem_expand": (True, True)}
     hits: dict[str, list[int | None]] = {v: [] for v in variants}
     n = 0
@@ -428,26 +457,25 @@ def retrieval_eval(k: int = 10) -> dict[str, Any]:
             if item.get("value") is None and item.get("confidence") == "unverified":
                 continue
             labels = [x for x in ev.labels_in(item["section"]) if any(ev.chunk_has(c, x) for c in cs)]
-            quotes = [q for q in ev.gold_quotes(item) if any(q in ev.norm(c["text"]) for c in cs)]
+            quotes = [q for q in ev.gold_quotes(item) if any(q in norm(c["text"]) for c in cs)]
             if not labels and not quotes:
                 continue
 
             def ok(c: dict[str, Any], labels: list[str] = labels, quotes: list[str] = quotes) -> bool:
                 if labels:
                     return any(ev.chunk_has(c, x) for x in labels)
-                return any(q in ev.norm(c["text"]) for q in quotes)
+                return any(q in norm(c["text"]) for q in quotes)
 
             q = question if not term or qtype == "adu_term" else question.replace("accessory dwelling unit", term)
             n += 1
             passages = [f"{c.get('heading_path') or ''} {c['text']}" for c in cs]
             for name, (use_stem, expand) in variants.items():
-                stem = plain_stem if use_stem else (lambda t: t)  # type: ignore[assignment]
-                try:
-                    top = bm25(passages, q, k, expand=expand)
-                finally:
-                    stem = plain_stem
+                top = bm25(passages, q, k, expand=expand, use_stem=use_stem)
                 hits[name].append(next((i + 1 for i, (_, j) in enumerate(top) if ok(cs[j])), None))
-    rate = lambda xs, kk: round(100 * sum(1 for x in xs if x and x <= kk) / max(len(xs), 1), 1)  # noqa: E731
+
+    def rate(xs: list[int | None], kk: int) -> float:
+        return round(100 * sum(1 for x in xs if x and x <= kk) / max(len(xs), 1), 1)
+
     return {
         "questions": n,
         "towns": len([g for g in gold if g in by_place]),

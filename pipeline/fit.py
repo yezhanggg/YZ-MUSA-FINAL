@@ -578,6 +578,26 @@ def largest_rectangle(
     """
     if polygon is None or polygon.is_empty or polygon.area <= 0:
         return None
+    try:
+        return _largest_rectangle(polygon, min_width_ft, min_depth_ft, angles, max_aspect, grid, refine)
+    except shapely.errors.GEOSException:
+        # A valid yard with near-touching vertices can turn invalid once rotated flat. Snapping it to
+        # a 0.01 ft grid fixes that. Shapes that never raise keep their answers unchanged.
+        fixed = _polygons_only(shapely.make_valid(shapely.set_precision(polygon, 0.01)))
+        if fixed.is_empty or fixed.area <= 0:
+            return None
+        return _largest_rectangle(fixed, min_width_ft, min_depth_ft, angles, max_aspect, grid, refine)
+
+
+def _largest_rectangle(
+    polygon: BaseGeometry,
+    min_width_ft: float,
+    min_depth_ft: float,
+    angles: Sequence[float] | None,
+    max_aspect: float | None,
+    grid: int,
+    refine: int,
+) -> Rect | None:
     lo_side, hi_side = sorted((min_width_ft, min_depth_ft))
     if angles is None:
         base = lot_axis_deg(polygon)

@@ -18,7 +18,7 @@ from shapely.geometry.base import BaseGeometry
 SCHEMA_PATH = Path(__file__).with_name("lot_schema.json")
 SCHEMA_VERSION = "1.0"
 SCENARIOS = ("today", "local_reform", "state_reform")
-LOCAL_CRS = {"philadelphia": 2272, "pittsburgh": 2272}
+LOCAL_CRS = {"philadelphia": 2272, "pittsburgh": 2272, "allentown": 2272}
 PA_BOX = (-80.6, 39.6, -74.6, 42.4)  # lon / lat around Pennsylvania with a margin
 # Keys that would carry a person's name. The schema already forbids unknown keys in facts,
 # this catches them anywhere else in the record too.
