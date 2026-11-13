@@ -134,6 +134,37 @@ Other rules:
 - A gate with `effect: bars` needs a `test` or a scope (`districts`, `not_districts`, `building_types`, `when`). Without one it is shown as a condition, and `python -m pipeline.rules validate` prints a warning. To bar a form everywhere, leave it out of `form.types_allowed`.
 - `path_to_ask` says "may be authorized" only when the file sets `approval.unlisted_use_path`. A not-addressed town with a variance path gets a Zoning Hearing Board use variance with MPC 910.2.
 
+## More fields (pass 6)
+
+Each closes a case where the tool said something untrue because a file could not hold the rule. All optional.
+
+| Field | Use it for | Example |
+|---|---|---|
+| `approval.form_paths` | A path for some forms only: `{forms, path, section, url, note}`. The form takes the more demanding of this and `approval.path` (or the district path). Not used under the state bill. Keep the form in `form.types_allowed` | Chester: garage conversion by special exception, a unit in or attached to the house by right |
+| alternative `adu_listing: true` | The code itself calls the alternative an accessory dwelling unit under another listing. It reads "An ADU under another listing in the code, with its own path and standards", never "Not an ADU" | Lower Macungie AP 'accessory dwelling unit' (27-404.1.A). Monroeville tiny home (359-54MMMM) |
+| district path `term` | A district listing that is the town's general ADU path in that district, under its own name. The town-wide conditions still apply, so if the listing has other standards keep it an alternative with `adu_listing` | |
+| `eligibility.historic_test` | The town's own historic test in plain words. With it the resolver reads the lot fact `historic_resource` (true, false or unknown), not Philadelphia's Chapter 14-1000 inputs, and the messages use the town's words | Tredyffrin: on the Historic Resources Map. Lower Merion: Class 1 or Class 2 Historic Resource |
+| `form.types_allowed_historic` | Forms allowed only on the historic path. Set `form.types_allowed` to the forms off that path (often `[]`) | Tredyffrin: internal and a contributing accessory structure |
+| `districts.<code>.principal_max_stories`, `envelope.max_height_stories` | Height in stories. Fill it beside the feet figure, and alone when the code gives only stories. The tool then says "at most 2 stories", never no limit (`max_stories_by_type`) | North Huntingdon: 2 stories, no feet |
+| alternative `land_development: true` | The path also needs a land development (subdivision) plan. It reads "by right with land development plan approval", never a plain permit | Chester: a second principal house |
+| alternative `min_units`, `min_lot_is_tract` | The path needs three or more units in all (it then never applies to one added unit), or `min_lot_sqft` is a development tract | Spring: conversion to multifamily, three or more units on a 3 acre tract |
+| `provenance.code_caution` | The code text itself is in doubt: a placeholder online code, or amendments that exist but were not seen. Shown first with every answer | North Huntingdon (eCode360 placeholder, Ord. 2266 and 2302 not seen) |
+| `envelope.max_height_where` | An accessory height that holds only where the building sits: `{max_height_ft, where, section, url, note}`. `max_height_ft` keeps the height the tool shows. Each item is a condition | McCandless: 24 ft outside the principal setbacks (15 ft inside). York township: up to 5 ft more with larger setbacks |
+| `envelope.accessory_structure_max_share`, `accessory_structure_max_height_ft`, `accessory_cap_binds_adu` | The general accessory structure caps beside the ADU's own. `accessory_cap_binds_adu` true: a unit in an accessory building takes the lesser of both (size, share and height). false: the ADU text replaces them. null: not settled, both are shown. A unit in or attached to the house is never reached | Monroeville: 500 sq ft or 20% and 15 ft (359-19F, 359-30A(1)) next to 625 sq ft a story and 25 ft |
+| `parking.spaces_per_resident` | Parking counted per resident. `spaces_required` stays null. Shown as a condition | Monroeville: 0.5 per resident (359-115) |
+| `envelope.front_yard_barred` | An accessory building may not stand in the front yard (between the house and the street). A bar, not a setback number: a detached unit shows no front setback, and the bar is a condition. Not for "not in the required front yard", which is the district setback | York township 265-502C(1) (unless 100 ft back), Whitehall 27-84D, Chester 550-22B(6) |
+| `adu.status_by_form` | A status for some forms when it differs from `adu.status` | Whitehall: detached forms prohibited (27-62D), the rest not addressed |
+| `eligibility.districts_in_doubt` | Districts that list the ADU while the ADU section names other districts. The tool says "listed, but ask", with `path_to_ask` | York township CI and I |
+
+How the resolver now reads a file (pass 6):
+
+- Size caps that are "X sq ft or Y% of the house, whichever is less" give the lesser in `max_size_by_type` when the house size is known, and say so in `size_rule_by_type` either way. `max_size_sqft` stays the fixed number, with `max_share_of_house` beside it.
+- Where the code has no ADU rule (`not_addressed` or `prohibited`, no district or historic path) no ADU parking is shown.
+- `path_to_ask` names the body for an ADU allowed after a hearing: the Zoning Hearing Board for a special exception (MPC 912.1), the governing body for a conditional use (MPC 913.2). Its `kind` is `hearing`.
+- A `prohibited` town says "The code bars ADUs here", never "no ADU rule here".
+- Under the state bill a town's status reads `allowed_by_right` where the unit is allowed. Today's status stays in the reasons and in `conditions_overridden`.
+- A town without these fields resolves as before.
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

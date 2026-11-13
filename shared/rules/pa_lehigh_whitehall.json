@@ -32,11 +32,12 @@
     "code_current_through": "2026-02-26",
     "code_current_through_note": "Date carried from the towns index. The print view read on 2026-11-12 shows no currency line. New Laws lists items to 2026-09-14.",
     "checks": [
-      "The code expressly prohibits 'The use of a detached accessory building as a dwelling' (27-62D)",
+      "The code expressly prohibits 'The use of a detached accessory building as a dwelling' (27-62D). A unit inside or attached to the house is not named, but it is an unlisted use, also prohibited (27-62A)",
       "It also prohibits 'A use not listed in a zoning district schedule and not similar as per 27-63' (27-62A). No district lists an accessory dwelling unit, and no district lists a two-family dwelling",
       "R-1 to R-4 permit only single-family detached dwellings as housing (27-70A to 27-74A). Semidetached, attached and apartment dwellings appear only in R-5, R-5A and R-6",
-      "The similar-use special exception (27-63) cannot treat a use listed in another district as similar. A second unit is an apartment or semidetached unit, which are listed in R-5 and R-6",
+      "The similar-use special exception (27-63) cannot treat a use listed in another district as similar. A rented second unit is an 'apartment' (Article XVI: leased for at least 30 days), listed in R-5, so it cannot be a similar use. An unleased family suite inside the house is not an apartment as defined, so a special exception as similar to a single-family dwelling (27-63), or a customary accessory use (27-70B(1), 27-58), is arguable. Ask the zoning officer",
       "Detached accessory buildings on lots under one acre: 22 ft high and no more than 1,200 sq ft or the house's footprint perimeter area, whichever is smaller. 3 ft from property lines, not in the front yard (27-84D, E, G)",
+      "Accessory uses: 'Any use customarily associated with, incidental to or provided with a permitted use' is allowed by right (27-70B(1)), if customary, in scale and not in a front yard or a side yard on a street (27-58)",
       "Short-term rentals need a license under 27-137.1 (added 2023)",
       "Parking: two spaces per dwelling unit (27-146A(18))"
     ],
@@ -52,12 +53,24 @@
       "note": "No ADU term. Searched for accessory dwelling, accessory apartment, apartment accessory, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, accessory unit, tiny, two-family, duplex, conversion, kitchen."
     },
     "status": {
-      "value": "prohibited",
-      "section": "27-62A, 27-62D",
+      "value": "not_addressed",
+      "section": "27-62A, 27-62D, 27-63, 27-70B(1)",
+      "url": "https://ecode360.com/13159910",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No ADU text. 27-62D expressly bars 'The use of a detached accessory building as a dwelling', which is kept as a gate on the detached forms. A unit inside or attached to the house is not named. It is an unlisted use under 27-62A ('A use not listed in a zoning district schedule and not similar as per 27-63'). Changed from prohibited after review, since the express bar reaches only detached units. The detached forms are prohibited in adu.status_by_form."
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "27-62D",
       "url": "https://ecode360.com/13159910",
       "verified_on": "2026-11-12",
       "confidence": "verified",
-      "note": "27-62: 'The following uses are expressly prohibited: A. A use not listed in a zoning district schedule and not similar as per 27-63 ... D. The use of a detached accessory building as a dwelling.' No schedule lists an accessory dwelling."
+      "note": "'The use of a detached accessory building as a dwelling' is expressly prohibited."
     }
   },
   "approval": {
@@ -67,15 +80,15 @@
       "url": "https://ecode360.com/13159910",
       "verified_on": "2026-11-12",
       "confidence": "secondary",
-      "note": "A second unit is an unlisted, expressly prohibited use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). A detached unit also runs into the express bar in 27-62D."
+      "note": "A second unit is an unlisted use, prohibited by 27-62A. It needs a use variance from the Zoning Hearing Board (MPC 910.2). A detached unit also runs into the express bar in 27-62D. 27-70B(1) allows by right 'Any use customarily associated with, incidental to or provided with a permitted use', subject to 27-58. A separate dwelling unit is read as not customary."
     },
     "fallback_path": {
       "value": "variance",
-      "section": "27-62, MPC 910.2",
+      "section": "27-62, 27-63, MPC 910.2",
       "url": "https://ecode360.com/13159910",
       "verified_on": "2026-11-12",
       "confidence": "secondary",
-      "note": "Same as path. 27-63 lets the Zoning Hearing Board find a use similar to a listed one by special exception, but 'No use which is listed in a use schedule of a zoning district ... shall be considered as a similar use in any other zoning district.' Apartments and semidetached dwellings are listed in R-5 and R-6, so a second unit is not a similar use in R-1 to R-4."
+      "note": "Same as path. 27-63 lets the Zoning Hearing Board find a use similar to a listed one by special exception, but 'No use which is listed in a use schedule of a zoning district ... shall be considered as a similar use in any other zoning district.' A rented unit is an apartment, listed in R-5, so it is not a similar use in R-1 to R-4. An unleased family suite is not an apartment as defined, so a 27-63 special exception may be argued for it. Not set as unlisted_use_path because its reach is unsettled."
     },
     "alternatives": {
       "value": [],
@@ -183,6 +196,14 @@
       "verified_on": "2026-11-12",
       "confidence": "verified",
       "note": "'Accessory buildings, structures or uses shall not be located in any front yard area.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-84D",
+      "url": "https://ecode360.com/13160840",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Accessory buildings, structures or uses shall not be located in any front yard area.'"
     }
   },
   "use": {
@@ -192,7 +213,7 @@
       "url": "https://ecode360.com/13159910",
       "verified_on": "2026-11-12",
       "confidence": "secondary",
-      "note": "Reading: 0 means the code allows no ADU."
+      "note": "Reading: 0 means the code allows no ADU. An unleased family suite is the open case, see checks."
     },
     "short_term_rental_banned": {
       "value": false,

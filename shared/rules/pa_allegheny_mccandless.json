@@ -40,9 +40,9 @@
       "With public sewer the ADU ties into the house's sewer line. No new utility connection for a unit inside the house unless the lot already has more than one (1303.220(B)(1)(i), (k))",
       "Parking: Table 1304.A has no ADU row. The house needs 2. Ask the zoning officer how many the ADU needs (1303.220(B)(1)(e), 1304.180)",
       "Accessory buildings: 15 ft high where they sit inside the principal building setbacks, otherwise 24 ft. 3 ft from the house (1302.200, 1302.210, 1304.110(D))",
-      "On a lot below the district minimum, only one single-family dwelling may be built in a residential district. Ask whether an ADU is allowed on it (1303.240(C)(2)(c))"
+      "On a lot below the district minimum, only one single-family dwelling may be built in a residential district. 'Erected' fits a new building, so a unit inside an existing house is likely fine and a new detached ADU is the doubtful case. Ask the zoning officer (1303.240(C)(2)(c))"
     ],
-    "notes": "Zoning office: Town of McCandless Planning and Zoning (townofmccandless.org). Districts (Table 1303.I): CD, R-VL, R-L, R-M, M-N, M-C, M-U, TC, SD. Read on eCode360 in a browser, one section print view at a time. Searched the full Part 13 print view for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, conversion, not listed. Accessory Dwelling Unit appears only in 1303.220, Table 1303.I and the R-L purpose. No historic district or short-term rental rule in Part 13."
+    "notes": "Zoning office: Town of McCandless Planning and Zoning (townofmccandless.org). Districts (Table 1303.I): CD, R-VL, R-L, R-M, M-N, M-C, M-U, TC, SD. Read on eCode360 in a browser, one section print view at a time. Searched the full Part 13 print view for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, conversion, not listed. Accessory Dwelling Unit appears only in 1303.220, Table 1303.I and the R-L purpose. No historic district rule in Part 13. Short-Term Rental is a principal use by conditional use in M-N, M-C, M-U and TC only. 1303.220(A)(2) lets the Zoning Officer accept unlisted accessory uses that are customary, subordinate and necessary. It does not reach a second dwelling."
   },
   "adu": {
     "term": {
@@ -122,7 +122,7 @@
       "url": "https://ecode360.com/43685668",
       "verified_on": "2026-11-12",
       "confidence": "verified",
-      "note": "Not ADUs. Table 1303.A lists Dwelling, Two-Family as P in R-L, R-M, M-N and M-C. 'A Building located on one Lot containing not more than two Dwelling Units, arranged one above the other or side by side'."
+      "note": "Not ADUs. Table 1303.A lists Dwelling, Two-Family as P in R-L, R-M, M-N and M-C. 'A Building located on one Lot containing not more than two Dwelling Units, arranged one above the other or side by side'. Also, per the review, 1303.100(A) lets more than one principal use on a lot if each structure meets the rules as though on its own lot (about 24,000 sq ft in R-L with sewer, 40,000 in R-VL), as a land development. But the single-family detached definition says 'Only one Single-Family Detached Dwelling is permitted for each legally subdivided Lot' (1303.140(D)(1)). The two texts conflict, so this is not listed as an alternative. Ask the zoning officer."
     }
   },
   "eligibility": {
@@ -345,6 +345,21 @@
       "verified_on": "2026-11-12",
       "confidence": "verified",
       "note": "'An Accessory Building must be located and constructed according to the Accessory Building Form Requirements specified for each zoning district'."
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 24,
+          "where": "placed outside the principal building setbacks",
+          "section": "1302.200(B) Figure 1302.B B.2, 1302.210(B) Figure 1302.C B.2",
+          "url": "https://ecode360.com/43683537",
+          "note": "'Accessory Building Height a. 15 feet maximum w/n Principal Building Setbacks (C) b. Otherwise, 24 feet maximum'."
+        }
+      ],
+      "section": "1302.200(B) Figure 1302.B B.2, 1302.210(B) Figure 1302.C B.2",
+      "url": "https://ecode360.com/43683537",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary"
     }
   },
   "use": {
@@ -388,12 +403,12 @@
       "note": "'The Accessory Dwelling Unit may not be conveyed, or the title to the Accessory Dwelling Unit be transferred separate and apart from the rest of the property.'"
     },
     "short_term_rental_banned": {
-      "value": null,
-      "section": "Part 13",
-      "url": "https://ecode360.com/43688127",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "No short-term rental rule found in Part 13."
+      "value": true,
+      "section": "Table 1303.A, 1303.140 'Short-Term Rental', 1306 definitions",
+      "url": "https://ecode360.com/43685668",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading, from the independent review. Short-Term Rental is a defined principal use ('A Principal Use of a Dwelling Unit where, for compensation, temporary lodging is provided for transient guests for less than 30 consecutive days'), listed as a conditional use only in M-N, M-C, M-U and TC. It is not listed in R-VL or R-L, where the ADU is allowed, so an ADU there may not be a short-term rental. The subsection letter of the use rules was not re-checked."
     }
   },
   "parking": {

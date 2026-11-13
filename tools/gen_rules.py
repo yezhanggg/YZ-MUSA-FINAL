@@ -298,6 +298,9 @@ def _path_cell(d):
     for code, row in (d.get("districts") or {}).items():
         if (row.get("adu_path") or {}).get("value"):
             extra.append(f"{NAMES.get(row['adu_path']['value'], row['adu_path']['value'])} in {code}")
+    for item in ((d.get("approval") or {}).get("form_paths") or {}).get("value") or []:
+        forms = ", ".join(f.replace("_", " ") for f in item["forms"])
+        extra.append(f"{NAMES.get(item['path'], item['path'])} for {forms}")
     hist = ((d.get("approval") or {}).get("historic_path") or {}).get("value")
     if hist:
         extra.append(f"historic building: {NAMES.get(hist, hist)}")
@@ -334,12 +337,14 @@ def _conditions_cell(d):
         out.insert(0, f"ADU rule only in {', '.join(scope)}")
     alts = ((d.get("approval") or {}).get("alternatives") or {}).get("value") or []
     if alts:
-        out.append(
-            "other ways (not ADUs): "
-            + "; ".join(
-                f"{a['name']} ({NAMES.get(a['path'], a['path'])}, {clean(a['section'])})" for a in alts
-            ).replace("; ", ". ")
-        )
+
+        def alt(a):
+            path = NAMES.get(a["path"], a["path"]) + (" with land development" if a.get("land_development") else "")
+            tag = "ADU under another listing, " if a.get("adu_listing") else ""
+            return f"{a['name']} ({tag}{path}, {clean(a['section'])})"
+
+        label = "other ways" if any(a.get("adu_listing") for a in alts) else "other ways (not ADUs)"
+        out.append(f"{label}: " + "; ".join(alt(a) for a in alts).replace("; ", ". "))
     tot = ((d.get("parking") or {}).get("total_on_site") or {}).get("value")
     if tot:
         out.append(f"{tot} parking spaces in total")

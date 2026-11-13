@@ -463,3 +463,73 @@ describe('get_rule_text pass 5', () => {
     expect(out.other_ways_to_add_a_unit!.options[0].display_path).toBe('listed as by right, but ask the zoning officer');
   });
 });
+
+// Pass 6: the assistant's text says what pipeline/rules.py now says for the same files.
+type Any6 = Record<string, any>;
+const town6 = async (file: string, topic: string, district?: string) => (await getRuleText({ place: file, topic, ...(district ? { district } : {}) })) as Any6;
+
+describe('get_rule_text pass 6 fields', () => {
+  it('gives a form its own path (Chester garage conversion by special exception)', async () => {
+    const out = await town6('pa_delaware_chester', 'approval', 'R-2');
+    expect(out.approval.by_form[0]).toMatchObject({ forms: ['garage_conversion'], path: 'special_exception' });
+    expect(out.approval.by_form[0].section).toContain('550-45D(18)');
+  });
+
+  it('marks an ADU under another listing and a land development path', async () => {
+    const lm = await town6('pa_lehigh_lower_macungie', 'approval', 'AP');
+    const ap = lm.other_ways_to_add_a_unit.options[0];
+    expect(ap.reads_as).toMatch(/^An ADU under another listing/);
+    expect(lm.other_ways_to_add_a_unit.label).toMatch(/adu_listing/);
+    const ch = await town6('pa_delaware_chester', 'approval');
+    const second = ch.other_ways_to_add_a_unit.options.filter((o: Any6) => String(o.name).startsWith('Second principal house'));
+    expect(second.length).toBeGreaterThan(0);
+    for (const o of second) expect(o.display_path).toMatch(/land development plan approval/);
+    const sp = await town6('pa_berks_spring', 'approval');
+    const conv = sp.other_ways_to_add_a_unit.options.find((o: Any6) => o.name === 'Single-family to multifamily conversion');
+    expect(conv.reads_as).toMatch(/3 or more units/);
+  });
+
+  it("gives a town's own historic test and historic forms, and no ADU parking off that path", async () => {
+    const out = await town6('pa_chester_tredyffrin', 'parking', 'R-2');
+    expect(out.approval.historic_path.applies_if.test).toMatch(/Historic Resources Map/);
+    expect(out.approval.historic_path.forms).toEqual(['internal', 'garage_conversion']);
+    const parking = out.conditions.filter((c: Any6) => c.kind === 'parking');
+    expect(parking.length).toBeGreaterThan(0);
+    for (const c of parking) expect(c.when).toBe('historic');
+    const nh = await town6('pa_westmoreland_north_huntingdon', 'parking', 'R-2');
+    expect(nh.conditions.some((c: Any6) => c.kind === 'parking')).toBe(false);
+  });
+
+  it('gives a height in stories, never a bare null, and shows the code caution', async () => {
+    const out = await town6('pa_westmoreland_north_huntingdon', 'height', 'R-2');
+    expect(out.forms.inside_or_attached.max_height_ft).toMatchObject({ value: 2, unit: 'stories' });
+    expect(out.code_caution).toMatch(/placeholder/);
+  });
+
+  it('gives height by position, the lesser-of size rule and the hearing body', async () => {
+    const mc = await town6('pa_allegheny_mccandless', 'size', 'R-L');
+    expect(mc.conditions.find((c: Any6) => c.kind === 'height').condition).toMatch(/up to 24 ft\. Otherwise 15 ft/);
+    expect(mc.forms.accessory_building.size_rule).toBe('At most 1,000 sq ft or 50% of the house, whichever is less');
+    const yt = await town6('pa_york_york_township', 'approval', 'RM');
+    expect(yt.path_to_ask).toMatchObject({ path: 'special_exception', kind: 'hearing' });
+    expect(yt.path_to_ask.note).toMatch(/Zoning Hearing Board/);
+  });
+
+  it('shows general accessory caps, parking per resident and a front-yard bar (Monroeville)', async () => {
+    const out = await town6('pa_allegheny_monroeville', 'size', 'R-1');
+    const g = out.forms.accessory_building.general_accessory_caps;
+    expect(g.rule).toBe('At most 500 sq ft or 20% of the house, whichever is less');
+    expect(g.binds_adu).toMatch(/^yes/);
+    expect(out.conditions.find((c: Any6) => c.kind === 'parking' && /per resident/.test(c.condition))).toBeTruthy();
+    expect(out.forms.accessory_building.yards.front.note).toMatch(/Not in the front yard/);
+  });
+
+  it('says listed but ask in a district in doubt, and gives a status by form', async () => {
+    const ci = await town6('pa_york_york_township', 'approval', 'CI');
+    expect(ci.approval.district_path.listed_in_doubt).toBe(true);
+    expect(ci.summary).toMatch(/Listed, but ask/);
+    const wh = await town6('pa_lehigh_whitehall', 'approval', 'R-4');
+    expect(wh.adu.status_by_form.value.detached_new).toBe('prohibited');
+    expect(wh.summary).toMatch(/By form: detached new prohibited/);
+  });
+});

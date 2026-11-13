@@ -186,6 +186,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "Accessory building rule: '10 feet from all other buildings'."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "182-1310",
+      "url": "https://ecode360.com/HA0527/laws/LF2859866.pdf#page=129",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory buildings may not be in a front yard or any yard that abuts a street."
     }
   },
   "size": {

@@ -228,6 +228,14 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "No separation between buildings on the same lot found in Section 302."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "302.3",
+      "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART3GERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Unattached accessory structures in any R zone 'shall be erected only within the rear or side yard'. Not in the front yard."
     }
   },
   "coverage": {

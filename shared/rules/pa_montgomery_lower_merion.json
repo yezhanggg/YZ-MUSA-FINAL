@@ -285,6 +285,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "'Any use permitted by special exception or conditional use shall be subject to the dimensional requirements of the zoning district'. Lot area is a dimensional standard. Applies to the special exception path in LDR and MDR, not to the by-right IC and IH or historic paths."
+    },
+    "historic_test": {
+      "value": "The building is a Class 1 or Class 2 Historic Resource",
+      "section": "155-7.1B(3), B(4)(a), (b), (d), C, D, Tables 7.1.1 and 7.1.2",
+      "url": "https://ecode360.com/35687393",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "Moved from the historic_bypass note."
     }
   },
   "form": {

@@ -1119,8 +1119,8 @@
       "pop_rank": 45,
       "file": "pa_york_york_township",
       "batch": 8,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "own site",
       "code_url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
       "plain_fetch": true,
@@ -1129,7 +1129,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-12, awaiting independent review. ADU found: 265-602 Accessory Unit, Single Bedroom, special exception in RL, RM, RH, RA, MRC (the code_note above missed it). Open: (1) a unit over an existing garage by adding a story is a reading of 'created within an existing accessory structure'. (2) semidetached houses read as not qualifying (265-602B says single-family detached). (3) whether the unit counts toward MRC density of 9 units per acre (265-405E). (4) the township posts no zoning text ordinance after 2023-01, but the zoning map was amended 05-22-2026."
+      "status_note": "Verified 2026-11-12 after the independent review (town-rules-review-batch8). Every finding resolved. Later check: the township's posted ordinance list stops at 2023-05. Ask whether zoning text amendments after Ord. 2023-01 exist."
     },
     {
       "geoid": "4200345900",
@@ -1143,8 +1143,8 @@
       "pop_rank": 46,
       "file": "pa_allegheny_mccandless",
       "batch": 8,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/37748731",
       "plain_fetch": false,
@@ -1153,7 +1153,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-12, awaiting independent review. ADU by right in R-VL and R-L only (Table 1303.I, 1303.220(B)(1)). Open: (1) ADU parking count, Table 1304.A has no ADU row. (2) whether 1303.240(C)(2)(c) 'only one Single-Family Dwelling' bars an ADU on a nonconforming lot. (3) detached height 15 ft inside principal setbacks or 24 ft outside, file stores 15. (4) max one ADU is a reading. (5) code_current_through carried from the index, the print view shows none."
+      "status_note": "Verified 2026-11-12 after the independent review (town-rules-review-batch8). Every finding resolved. Later check: the ADU parking count (Table 1304.A has no ADU row) and how far 1303.240(C)(2)(c) reaches on a nonconforming lot."
     },
     {
       "geoid": "4207784528",
@@ -1167,8 +1167,8 @@
       "pop_rank": 47,
       "file": "pa_lehigh_whitehall",
       "batch": 8,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/13159599",
       "plain_fetch": false,
@@ -1177,7 +1177,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-12, awaiting independent review. Status prohibited: 27-62D bars a detached accessory building as a dwelling and 27-62A bars unlisted uses. Open: (1) prohibited vs not_addressed for an internal unit (no express text, barred only as an unlisted use). (2) 27-63 similar-use special exception read as not reaching a second unit because apartments and semidetached dwellings are listed in R-5 and R-6. (3) R-5, R-5A, R-6 district rows not entered. (4) code_current_through carried from the index."
+      "status_note": "Verified 2026-11-12 after the independent review (town-rules-review-batch8). Every finding resolved. Later check: whether an unleased family suite could be a 27-63 similar use or a 27-70B(1) customary accessory use."
     },
     {
       "geoid": "4200350528",
@@ -1201,7 +1201,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-12, awaiting independent review. eCode360 Ch 359 is the 2023 rewrite (Ord. 2779, amended by Ord. 2805 in 2025). family_only: dependent dwelling (granny flat), SE in R-1, C-3, S, BLVD and CU in R-2, R-3, R-4, C-1 (359-34, 359-54Z). Open: (1) 359-19F accessory cap (500 sq ft or 20% of house, two per lot) and 359-30A(1) 15 ft vs 359-54Z 625 sq ft a story and 25 ft. (2) whether the SE districts use the 359-54 (conditional use) standards. (3) internal and garage forms are readings, the definition says attached. (4) 'accessory dwelling unit' is defined (359-13) but not in the use chart. (5) tiny home as an ADU by CU in R-3, density count unclear. (6) parking 0.5 per resident, rounding."
+      "status_note": "Reviewed 2026-11-12 (town-rules-review-batch8), review fixes applied. Two open points the code text does not settle: (1) whether 359-19F (500 sq ft or 20% of the house) and 359-30A(1) (15 ft mean height) reach a detached dependent dwelling, which 359-54Z lets reach 625 sq ft a story and 25 ft (the file applies both caps); (2) whether the unit counts toward the Table 359-20C(1) lot area per dwelling unit."
     },
     {
       "geoid": "4201172824",
@@ -1215,8 +1215,8 @@
       "pop_rank": 49,
       "file": "pa_berks_spring",
       "batch": 8,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/45165330",
       "plain_fetch": false,
@@ -1225,7 +1225,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-12, awaiting independent review. not_addressed, use variance (450-302A). Open: (1) single-family to multifamily conversion by right in SS and U must meet the 450-324 multifamily standards, which were not read. (2) 450-327C(1)(e) lets other clearly accessory uses in, read as not reaching a second dwelling. (3) RHA, RC, RS district tables not read. (4) code_current_through carried from the index."
+      "status_note": "Verified 2026-11-12 after the independent review (town-rules-review-batch8). Every finding resolved."
     },
     {
       "geoid": "4200369584",
@@ -1239,8 +1239,8 @@
       "pop_rank": 50,
       "file": "pa_allegheny_shaler",
       "batch": 8,
-      "status": "drafted",
-      "checked_on": null,
+      "status": "verified",
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9196870",
       "plain_fetch": false,
@@ -1249,7 +1249,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted 2026-11-12, awaiting independent review. not_addressed, use variance ('Only uses listed or defined ... shall be permitted', 225-11). Conversion special exception repealed 2022 (Ord. 1966). Open: (1) New Laws Ord. 1990 (retaining walls, zoning) and 1981 (map) were not opened. (2) lot rules for the R-3 two-unit apartment building. (3) code_current_through carried from the index."
+      "status_note": "Verified 2026-11-12 after the independent review (town-rules-review-batch8). Every finding resolved. Later check: New Laws Ord. No. 1990 (retaining walls, 2025) was not opened."
     },
     {
       "geoid": "4209521648",

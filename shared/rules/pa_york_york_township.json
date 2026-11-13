@@ -23,11 +23,15 @@
     "code_current_through_note": "Cover page: Incorporated amendments ... Ordinance 2023-01 3/14/2023. The township page also lists a zoning map amended 05-22-2026.",
     "checks": [
       "The unit is an 'Accessory Unit, Single Bedroom': one bedroom only, added onto or created within a single-family detached house or an existing accessory structure, with its own entrance (Article 11, 265-602)",
-      "Special exception from the Zoning Hearing Board in RL, RM, RH, RA and MRC (265-602, 265-401C to 265-405C). Not listed in CO, CS, CI or I",
+      "Special exception from the Zoning Hearing Board in RL, RM, RH, RA and MRC (265-602, 265-401C to 265-405C). Not listed in CO or CS",
+      "CI and I also list the unit as a special exception accessory use (265-408C(19)(f), 265-409C(18)(e)), but 265-602 names only five districts and neither district permits a new single-family house. The owner of an existing house there should ask the Zoning Hearing Board (265-901A(2)(f))",
+      "The Zoning Hearing Board may attach further conditions to a special exception (265-1009B, C)",
+      "Code text as amended through Ord. 2023-01 (3-14-2023). The township lists no later text amendment, but 2026 rezonings exist. Ask whether later amendments apply",
       "Habitable floor area 400 to 720 sq ft (300 sq ft if built for one person). One unit per single-family detached lot (265-602A, B, 265-517)",
       "The owner of the lot must live in the house or the unit, for as long as the unit is used (265-602C)",
       "One more off-street space for the unit. A house needs 2, so 3 in total (265-602D, 265-806A)",
       "No new detached building for the unit. It must be in the house, an addition, or an accessory structure that already exists (Article 11 definition)",
+      "A garage or other accessory structure with the unit may not sit in the front yard unless it is 100 ft back from the street (265-502C(1)). The tool shows the district front setback instead",
       "Accessory structures: 6 ft from side and rear lines, 15 ft high (up to 20 ft with larger setbacks), not in the front yard unless 100 ft back from the street (265-401D to 265-405D, E)",
       "If the lot uses an on-lot septic system, show it can take the added sewage (265-602F)",
       "Lot below the district minimum: by right if the shortfall is under 20%, by special exception at 20% or more (265-903)"
@@ -124,16 +128,18 @@
             "RA"
           ],
           "conditions": "A second single-family dwelling on an agricultural parcel, occupied only by a laborer or employee of the principal use. RA lot area and yards apply to each dwelling. Separate water and sewage. Not deeded apart.",
-          "min_lot_sqft": 130680,
-          "section": "265-603, 265-404C(1), Article 11 'Dwelling, Accessory Farm'",
-          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf"
+          "min_lot_sqft": 261360,
+          "section": "265-603A, B, 265-404C(1), 265-404F, Article 11 'Dwelling, Accessory Farm'",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+          "confidence": "secondary",
+          "note": "265-603B: 'The minimum lot area and yard setback requirements of the RA District shall apply to the principal and accessory farm dwellings individually and collectively.' Read as 3 acres for each dwelling, about 6 acres in all. 265-603A speaks of housing 'a farm owner or farm worker or members of their respective families', while the definition says it 'shall only be occupied by a laborer or an employee of the principal use'."
         }
       ],
       "section": "265-402B, 265-403B, 265-405B, 265-603, 265-624",
       "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
       "verified_on": "2026-11-12",
       "confidence": "verified",
-      "note": "Not ADUs. RA minimum lot is 3 acres (265-404F). Conversion lot minimum depends on the district per-unit area, which the tables give per use, so it is left blank."
+      "note": "Not ADUs. RA minimum lot is 3 acres (265-404F), so an accessory farm dwelling reads as needing about 6 acres (265-603B). Conversion lot minimum depends on the district per-unit area, which the tables give per use, so it is left blank."
     }
   },
   "eligibility": {
@@ -145,11 +151,11 @@
         "RA",
         "MRC"
       ],
-      "section": "265-602, 265-401C to 265-405C",
+      "section": "265-602, 265-401C to 265-405C, 265-408C(19)(f), 265-409C(18)(e)",
       "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
       "verified_on": "2026-11-12",
-      "confidence": "verified",
-      "note": "Listed as an accessory special exception use in each of these districts. Not listed in CO, CS, CI or I."
+      "confidence": "secondary",
+      "note": "265-602 names RL, RM, RH, RA and MRC, and each lists the unit as an accessory special exception use. CI (265-408C(19)(f)) and I (265-409C(18)(e)) also list 'Accessory Unit, Single Bedroom' as a special exception accessory use, which conflicts with 265-602. Neither CI nor I permits a single-family detached dwelling, so only an existing house there could ask. Kept to the five districts named in 265-602. Not listed in CO or CS."
     },
     "building_types": {
       "value": [
@@ -181,7 +187,7 @@
       "value": [
         {
           "kind": "existing_structure",
-          "condition": "A unit outside the house must be created within an accessory structure that already exists. A new detached building for the unit is not allowed. Adding a story to a garage is a reading, ask the zoning officer.",
+          "condition": "A unit outside the house must be created within an accessory structure that already exists. A new detached building for the unit is not allowed. Adding a story to a garage, or a structure built now and converted later, is a reading, ask the zoning officer.",
           "effect": "condition",
           "applies_to": [
             "garage_conversion",
@@ -228,6 +234,17 @@
       "verified_on": "2026-11-12",
       "confidence": "verified",
       "note": "Conditions from 265-602 and the definition."
+    },
+    "districts_in_doubt": {
+      "value": [
+        "CI",
+        "I"
+      ],
+      "section": "265-408C(19)(f), 265-409C(18)(e), 265-602",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "CI (265-408C(19)(f)) and I (265-409C(18)(e)) also list 'Accessory Unit, Single Bedroom' as a special exception accessory use, which conflicts with 265-602. Neither CI nor I permits a single-family detached dwelling, so only an existing house there could ask."
     }
   },
   "form": {
@@ -318,7 +335,7 @@
       "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
       "verified_on": "2026-11-12",
       "confidence": "verified",
-      "note": "'Accessory structures are not permitted within the front yard unless set back no less than 100 feet from the street right-of-way.'"
+      "note": "'Accessory structures are not permitted within the front yard unless set back no less than 100 feet from the street right-of-way.' This is a bar on the front yard, not a setback number (envelope.front_yard_barred)."
     },
     "separation_ft": {
       "value": null,
@@ -335,6 +352,29 @@
       "verified_on": "2026-11-12",
       "confidence": "verified",
       "note": "Detached accessory structures take 6 ft side and rear. An attached addition takes the principal setbacks."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "265-502C(1)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Accessory structures are not permitted within the front yard unless set back no less than 100 feet from the street right-of-way.'"
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 20,
+          "where": "with every front, side and rear setback 5 ft more than required (1 ft of height for each added foot)",
+          "section": "265-401E(2), 265-402E(2), 265-403E(2), 265-404E(2), 265-405 E(2)",
+          "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+          "note": "The height may be increased by one (1) foot for each additional foot that all front, side and rear setbacks are increased, but may not be increased by more than five (5) feet."
+        }
+      ],
+      "section": "265-401E(2), 265-402E(2), 265-403E(2), 265-404E(2), 265-405 E(2)",
+      "url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
+      "verified_on": "2026-11-12",
+      "confidence": "verified"
     }
   },
   "use": {

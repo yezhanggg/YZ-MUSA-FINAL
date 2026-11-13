@@ -138,6 +138,11 @@
             "pattern": "^42\\d{8}$"
           },
           "description": "Other Census county subdivision GEOIDs of the same place, e.g. the part of a city in a second county (Bethlehem, Lehigh part 4207706088). Lookups by these find this file."
+        },
+        "code_caution": {
+          "type": "string",
+          "minLength": 1,
+          "description": "A caution about the code text itself, shown with every answer: the online code is a placeholder, or amendments exist that were not seen."
         }
       }
     },
@@ -159,6 +164,9 @@
         "status_outside": {
           "$ref": "#/$defs/leaf_adu_status",
           "description": "Status outside scope_districts (often not_addressed)."
+        },
+        "status_by_form": {
+          "$ref": "#/$defs/leaf_status_by_form"
         }
       }
     },
@@ -188,6 +196,9 @@
         },
         "alternatives": {
           "$ref": "#/$defs/leaf_alternatives"
+        },
+        "form_paths": {
+          "$ref": "#/$defs/leaf_form_paths"
         }
       }
     },
@@ -227,6 +238,14 @@
         "requires_conforming_lot": {
           "$ref": "#/$defs/leaf_bool",
           "description": "true when the code ties the ADU to a lot that meets the district minimum lot (a conforming lot). Without it, a lot below the district minimum is shown as a possible nonconforming lot, not barred."
+        },
+        "historic_test": {
+          "$ref": "#/$defs/leaf_str",
+          "description": "The town's own test for the historic path in plain words (for example on the Historic Resources Map). With it the resolver reads the lot fact historic_resource, not the Philadelphia inputs."
+        },
+        "districts_in_doubt": {
+          "$ref": "#/$defs/leaf_list",
+          "description": "Districts that list the ADU while the ADU section names other districts. The tool says: listed, ask. Not allowed as a plain answer."
         }
       }
     },
@@ -240,6 +259,10 @@
         },
         "labels": {
           "$ref": "#/$defs/leaf_labels"
+        },
+        "types_allowed_historic": {
+          "$ref": "#/$defs/leaf_types",
+          "description": "Forms allowed on the historic path, when they differ from types_allowed."
         }
       }
     },
@@ -350,6 +373,29 @@
         },
         "yard_tiers": {
           "$ref": "#/$defs/leaf_yard_tiers"
+        },
+        "max_height_stories": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Accessory building height in stories, when the code gives stories."
+        },
+        "max_height_where": {
+          "$ref": "#/$defs/leaf_height_where"
+        },
+        "accessory_structure_max_share": {
+          "$ref": "#/$defs/leaf_share",
+          "description": "Every accessory structure: at most this share of the house, beside accessory_structure_max_sqft (whichever is less)."
+        },
+        "accessory_structure_max_height_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "The general accessory structure height, when the ADU text sets its own height in max_height_ft."
+        },
+        "accessory_cap_binds_adu": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Whether the general accessory structure caps (accessory_structure_max_sqft, _max_share, _max_height_ft) also bind a unit in an accessory building. true: the lesser applies. false: the ADU text replaces them. null: not settled, both are shown."
+        },
+        "front_yard_barred": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "true when an accessory building may not stand in the front yard (between the house and the street), a bar rather than a setback number. Put any exception in the note (for example 100 ft from the street)."
         }
       }
     },
@@ -415,6 +461,10 @@
         "reading": {
           "$ref": "#/$defs/leaf_str",
           "description": "When the parking rule has more than one reading, state them here in plain words (e.g. '2 in total, or 4 if the apartment counts as a unit')."
+        },
+        "spaces_per_resident": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Spaces per resident of the unit, when the code counts residents. spaces_required stays null."
         }
       }
     },
@@ -1113,6 +1163,10 @@
         },
         "yard_tiers": {
           "$ref": "#/$defs/leaf_yard_tiers"
+        },
+        "principal_max_stories": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Principal building height in stories, when the code gives stories. Fill it beside principal_max_height_ft, and alone when the code gives no feet figure."
         }
       }
     },
@@ -1240,6 +1294,13 @@
                   "string",
                   "null"
                 ]
+              },
+              "term": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The code's name for the unit under this district listing, when it differs from adu.term. The town-wide conditions still apply."
               }
             }
           }
@@ -1560,6 +1621,23 @@
                   "string",
                   "null"
                 ]
+              },
+              "adu_listing": {
+                "type": "boolean",
+                "description": "true when the code itself calls this an accessory dwelling unit under another listing (its own path and standards). It is shown as an ADU under another listing, not as 'not an ADU'."
+              },
+              "land_development": {
+                "type": "boolean",
+                "description": "true when the path also needs land development (subdivision and land development) plan approval, so it is never a plain zoning permit."
+              },
+              "min_units": {
+                "type": "integer",
+                "minimum": 2,
+                "description": "Units the path needs on the lot in all, when more than two (for example a conversion to three or more units). Over two, it is not a path for one added unit."
+              },
+              "min_lot_is_tract": {
+                "type": "boolean",
+                "description": "true when min_lot_sqft is a tract size (the development tract), not the lot of one house."
               }
             }
           }
@@ -1759,6 +1837,329 @@
             },
             "attached": {
               "type": "string"
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_form_paths": {
+      "type": "object",
+      "description": "Approval path by ADU form, when a form's path differs from approval.path (for example a garage conversion by special exception where a unit in the house is by right). The resolver uses the more demanding of the two. Not applied under a state bill.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "forms",
+              "path",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "forms": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "detached_new",
+                    "garage_conversion",
+                    "over_garage",
+                    "internal",
+                    "attached"
+                  ]
+                },
+                "minItems": 1
+              },
+              "path": {
+                "enum": [
+                  "by_right",
+                  "administrator_exception",
+                  "special_exception",
+                  "conditional_use",
+                  "variance",
+                  "not_allowed"
+                ]
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_height_where": {
+      "type": "object",
+      "description": "An accessory height that holds only where the building sits (for example 24 ft outside the principal building setbacks, 15 ft inside them). envelope.max_height_ft keeps the height the tool shows. Each item is shown as a condition.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "max_height_ft",
+              "where",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "max_height_ft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "where": {
+                "type": "string",
+                "minLength": 1
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_status_by_form": {
+      "type": "object",
+      "description": "ADU status for some forms when it differs from adu.status (for example a detached unit expressly prohibited where a unit in the house is not addressed). Forms left out take adu.status.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "detached_new": {
+              "enum": [
+                "allowed_by_right",
+                "special_exception",
+                "conditional_use",
+                "family_only",
+                "conversion_only",
+                "not_addressed",
+                "prohibited"
+              ]
+            },
+            "garage_conversion": {
+              "enum": [
+                "allowed_by_right",
+                "special_exception",
+                "conditional_use",
+                "family_only",
+                "conversion_only",
+                "not_addressed",
+                "prohibited"
+              ]
+            },
+            "over_garage": {
+              "enum": [
+                "allowed_by_right",
+                "special_exception",
+                "conditional_use",
+                "family_only",
+                "conversion_only",
+                "not_addressed",
+                "prohibited"
+              ]
+            },
+            "internal": {
+              "enum": [
+                "allowed_by_right",
+                "special_exception",
+                "conditional_use",
+                "family_only",
+                "conversion_only",
+                "not_addressed",
+                "prohibited"
+              ]
+            },
+            "attached": {
+              "enum": [
+                "allowed_by_right",
+                "special_exception",
+                "conditional_use",
+                "family_only",
+                "conversion_only",
+                "not_addressed",
+                "prohibited"
+              ]
             }
           }
         },

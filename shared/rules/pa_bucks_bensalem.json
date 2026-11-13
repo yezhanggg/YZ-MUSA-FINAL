@@ -159,6 +159,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "'In no case shall a garage or other accessory building be closer than ten feet to any other structure.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "232-583(a)(1)",
+      "url": "https://library.municode.com/pa/bensalem/codes/code_of_ordinances?nodeId=PTIIGELE_CH232ZO_ARTXIIIGERE",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory building: no closer than the district front yard and 'no closer to the street line than the principal building'."
     }
   },
   "use": {

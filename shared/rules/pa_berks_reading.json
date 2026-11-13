@@ -153,6 +153,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "Garage door set back a minimum of three feet from an alley."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "600-1001B",
+      "url": "https://codelibrary.amlegal.com/codes/readingpa/latest/reading_pa/0-0-0-25252",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory buildings shall not be located between the principal building and any public street right-of-way."
     }
   },
   "use": {

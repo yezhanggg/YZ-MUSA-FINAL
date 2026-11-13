@@ -302,6 +302,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "An accessory building attached to the main building shall be deemed part of the main building."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "1306.03(c)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No accessory building ... shall be allowed between the principal building and the front lot line."
     }
   },
   "coverage": {

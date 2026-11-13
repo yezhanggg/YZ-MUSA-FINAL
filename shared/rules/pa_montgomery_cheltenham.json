@@ -216,6 +216,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "'shall not be constructed closer than 10 feet from any other structures'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "295-405A(1)(e)",
+      "url": "https://ecode360.com/33236133",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'A detached accessory structure shall not be erected within the front yard area'."
     }
   },
   "use": {

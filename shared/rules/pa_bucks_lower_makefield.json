@@ -241,6 +241,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "A unit inside or attached to the house takes the 35 ft district height."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "200-69A(14)(a)[1]",
+      "url": "https://ecode360.com/11227742",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "No number. Not in front yards, and behind the median line of the house."
     }
   },
   "use": {

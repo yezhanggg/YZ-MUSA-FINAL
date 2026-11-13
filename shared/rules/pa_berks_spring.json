@@ -34,13 +34,13 @@
     "checks": [
       "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
       "'No land or building or structure shall be used or occupied except for a use permitted in the zoning district' (450-302A). LDS and MDS permit only the single-family detached dwelling as housing",
-      "SS and U permit by right (with site plan review) two-family detached (duplex) and semidetached (twin) dwellings and 'Single-family to multifamily conversions'. A conversion must meet the multifamily rules in 450-324 (450-310B, 450-311B, 450-324(97))",
+      "SS and U permit by right (with site plan review) two-family detached (duplex) and semidetached (twin) dwellings. 'Single-family to multifamily conversions' are also listed, but must meet the multifamily rules (three or more units, a tract of 3 to 5 acres) (450-310B, 450-311B, 450-324B(44), (97))",
       "Lot area in the district tables is per dwelling unit for residential uses: LDS 10,000, MDS 8,000, SS 5,000, U 3,500 sq ft with public sewer and water (450-308F to 450-311F)",
       "Two principal buildings on a lot with a residence must each meet the rules as if on a separate lot, including lot size, and need land development approval (450-402B)",
       "Accessory buildings: 15 ft high. All of them together at most 50% of the house floor area (600 sq ft allowed in any case, 1,500 on two acres). Not in required yards (450-327C(1))",
       "Parking: 2 spaces per dwelling unit of 3 bedrooms or less (Table 7.1)"
     ],
-    "notes": "Zoning office: Spring Township Zoning (springtwpberks.org). Residential districts: RHA, RC, RS, LDS, MDS, SS, U. Read on eCode360 in a browser, the chapter print view, searched in the page. Searched for accessory dwelling, accessory apartment, apartment accessory, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, accessory unit, tiny, dependent, relative, family member, tenant, conversion, kitchen. No ADU provision. 450-327C(1)(e) does not limit 'other uses not mentioned so long as they are clearly accessory to the principal permitted use'. A second dwelling unit is read as not clearly accessory, since 450-401 and 450-402B treat added dwellings as principal uses. RHA, RC and RS district tables were not read in full."
+    "notes": "Zoning office: Spring Township Zoning (springtwpberks.org). Residential districts: RHA, RC, RS, LDS, MDS, SS, U. Read on eCode360 in a browser, the chapter print view, searched in the page. Searched for accessory dwelling, accessory apartment, apartment accessory, in-law, granny, ECHO, elder cottage, caretaker, guest house, carriage, second dwelling, accessory residential, servant, au pair, accessory unit, tiny, dependent, relative, family member, tenant, conversion, kitchen. No ADU provision. 450-327C(1)(e) does not limit 'other uses not mentioned so long as they are clearly accessory to the principal permitted use'. A second dwelling unit is read as not clearly accessory, since 450-401 and 450-402B treat added dwellings as principal uses. RHA, RC and RS district tables were not read in full. A second house on a lot large enough for two (450-402B, each as if on its own lot, with land development approval) is a further path, not an ADU."
   },
   "adu": {
     "term": {
@@ -108,15 +108,16 @@
             "SS",
             "U"
           ],
-          "conditions": "Permitted by right with site plan review. 'Shall comply with all applicable requirements for multifamily dwellings (single-family attached dwellings or garden apartments).' Those rules set density and other limits in 450-324.",
-          "min_lot_sqft": null,
-          "section": "450-310B(8), 450-311B(8), 450-324(97)",
+          "conditions": "Permitted by right with site plan review. 'Shall comply with all applicable requirements for multifamily dwellings (single-family attached dwellings or garden apartments).' Those standards (450-324B(44)) need a tract of at least 3 acres (townhouses) or 5 acres (garden apartments), 10 to 15 units an acre, open space and public sewer and water. Multifamily means three or more units (450-202). Not a path for an ordinary house.",
+          "min_lot_sqft": 130680,
+          "section": "450-310B(8), 450-311B(8), 450-324B(97), 450-324B(44), 450-202",
           "url": "https://ecode360.com/45167191",
-          "confidence": "secondary",
-          "note": "The garden apartment and single-family attached standards in 450-324 were not read for this file. Whether a two-unit conversion of a house can meet them is open."
+          "note": "Tract minimum read by the reviewer in 450-324B(44). 3 acres is the smaller of the two tract sizes.",
+          "min_units": 3,
+          "min_lot_is_tract": true
         }
       ],
-      "section": "450-310B, 450-311B, 450-324(97)",
+      "section": "450-310B, 450-311B, 450-324B(97)",
       "url": "https://ecode360.com/45166176",
       "verified_on": "2026-11-12",
       "confidence": "verified",
@@ -244,6 +245,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified"
       },
+      "lot_area_per_unit_sqft": {
+        "value": 10000,
+        "section": "450-308F",
+        "url": "https://ecode360.com/45166070",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Table footnote: '* Per dwelling unit for residential uses.' A house and a second unit would need twice this area."
+      },
       "principal_max_height_ft": {
         "value": 30,
         "section": "450-308F",
@@ -290,6 +299,14 @@
         "url": "https://ecode360.com/45166129",
         "verified_on": "2026-11-12",
         "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8000,
+        "section": "450-309F",
+        "url": "https://ecode360.com/45166129",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Table footnote: '* Per dwelling unit for residential uses.' A house and a second unit would need twice this area."
       },
       "principal_max_height_ft": {
         "value": 30,
@@ -338,6 +355,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified"
       },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "450-310F",
+        "url": "https://ecode360.com/45166176",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Table footnote: '* Per dwelling unit for residential uses.' A house and a second unit would need twice this area."
+      },
       "principal_max_height_ft": {
         "value": 30,
         "section": "450-310F",
@@ -384,6 +409,14 @@
         "url": "https://ecode360.com/45166232",
         "verified_on": "2026-11-12",
         "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 3500,
+        "section": "450-311F",
+        "url": "https://ecode360.com/45166232",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "Table footnote: '* Per dwelling unit for residential uses.' A house and a second unit would need twice this area."
       },
       "principal_max_height_ft": {
         "value": 30,

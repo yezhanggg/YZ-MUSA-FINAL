@@ -49,10 +49,10 @@
       "Accessory buildings occupied by employees on the premises as a residence need a special exception (821.3). A dwelling behind the house needs a 20 ft deeded access with a drive fit for fire apparatus (821.1)",
       "Accessory buildings: not in the required front or side yard, not over 10 ft high in the required rear yard, and 10 ft from the rear property line (801.2, 801.3, 801.5)",
       "Parking: 2 spaces per dwelling unit for single-family and two-family structures, as a garage or carport (820.3, 820.5)",
-      "Source gap: the township posts the ordinance with amendments through August 2016. Zoning amendments Ord. No. 2266 (2021) and Ord. No. 2302 (5-15-2024) are not online and were not seen. Ask the township for Ord. No. 2302",
       "Minimum first floor area: 950 sq ft for a one-story dwelling in every residence district (503.2 to 503.6, item 11)"
     ],
-    "notes": "Zoning office: North Huntingdon Township Community Development Department (Planning and Zoning). Census GEOID from towns_index.json. The district names run from R-1 (densest, older small lots) to R-4 (one unit per acre). Searched the OCR text of the full PDF for: accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, conversion, two-family, duplex, short-term. Caretaker hits are the Township park caretaker residence (827). No short-term rental rule. Page numbers in links are PDF pages."
+    "notes": "Zoning office: North Huntingdon Township Community Development Department (Planning and Zoning). Census GEOID from towns_index.json. The district names run from R-1 (densest, older small lots) to R-4 (one unit per acre). Searched the OCR text of the full PDF for: accessory apartment, accessory dwelling, in-law, granny, ECHO, elder cottage, carriage house, guest house, caretaker, servant, second dwelling, secondary dwelling, conversion, two-family, duplex, short-term. Caretaker hits are the Township park caretaker residence (827). No short-term rental rule. Page numbers in links are PDF pages.",
+    "code_caution": "eCode360 Chapter 555 is a placeholder ('on file in the Township offices'). Source gap: the township posts the ordinance with amendments through August 2016. Zoning amendments Ord. No. 2266 (2021) and Ord. No. 2302 (5-15-2024) are not online and were not seen. Ask the township for Ord. No. 2302"
   },
   "adu": {
     "term": {
@@ -420,6 +420,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "503.2.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=42",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
       }
     },
     "R-1A": {
@@ -492,6 +500,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "503.3.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=43",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
       }
     },
     "R-2": {
@@ -564,6 +580,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "503.4.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=45",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
       }
     },
     "R-3": {
@@ -636,6 +660,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "503.5.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=46",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
       }
     },
     "R-4": {
@@ -708,6 +740,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "An accessory building over 10 ft high may not stand in the required rear yard. Small ones may, 10 ft from the line (801.5)."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "503.6.2",
+        "url": "https://township.north-huntingdon.pa.us/DocumentCenter/View/234/Zoning-Ordinance-765-with-Amendments-through-August-2016-Adopted-1991-PDF#page=48",
+        "verified_on": "2026-11-12",
+        "confidence": "verified",
+        "note": "'Building Height Maximum 2 stories'. No feet number."
       }
     }
   }

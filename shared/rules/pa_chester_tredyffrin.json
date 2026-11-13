@@ -301,10 +301,26 @@
       "verified_on": "2026-11-12",
       "confidence": "secondary",
       "note": "Historic Resource Overlay conditions apply only on the historic path."
+    },
+    "historic_test": {
+      "value": "The property has a historic resource on the Historic Resources Map",
+      "section": "208-122.5, 208-122.6B(1)(d)",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Moved from the historic_bypass note and the 208-122.6B(1) gate. Confirm the property is on the Historic Resources Map."
     }
   },
   "form": {
     "types_allowed": {
+      "value": [],
+      "section": "208-122.6B(1)(d)",
+      "url": "https://ecode360.com/15170835",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "No form is allowed off the historic path. The historic path forms are in form.types_allowed_historic."
+    },
+    "types_allowed_historic": {
       "value": [
         "internal",
         "garage_conversion"
@@ -388,6 +404,14 @@
       "verified_on": "2026-11-12",
       "confidence": "verified",
       "note": "District height 35 ft."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "208-112A(1)",
+      "url": "https://ecode360.com/7117248",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory buildings are not allowed between the house and any street line."
     }
   },
   "use": {

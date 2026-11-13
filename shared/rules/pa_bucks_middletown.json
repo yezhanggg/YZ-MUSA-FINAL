@@ -215,6 +215,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "Accessory rule for garages and sheds, not an ADU rule. 'limited to 3% of the lot area up to a maximum of 500 square feet'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "500-2402A(2)",
+      "url": "https://ecode360.com/13029419",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Garages and sheds must be 10 ft farther back from the street line than the rear of the house."
     }
   },
   "use": {

@@ -384,6 +384,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "Unit is inside the house, so the district height (35 ft) applies."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "87-18, Table 4",
+      "url": "https://ecode360.com/attachment/330310/HE0496-087c1%20Table%204.pdf",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "Accessory structures 'Shall not be constructed any closer to the front yard line than the front of the principal building'."
     }
   },
   "use": {

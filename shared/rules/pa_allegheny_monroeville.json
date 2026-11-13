@@ -36,7 +36,7 @@
       "Dependent dwelling: special exception (Zoning Hearing Board) in R-1, C-3, S and BLVD. Conditional use (Council) in R-2, R-3, R-4 and C-1. Not allowed in C-2, L, M-1, M-2, LF (359-34 use chart)",
       "Lot of at least 7,200 sq ft. One bedroom. Each story 400 to 625 sq ft, two stories or 25 ft at most (359-54Z)",
       "A detached dependent dwelling stays out of the required front yard and may sit in the side or rear yard no closer than 10 ft to a side line or 20 ft to the rear line, and 10 ft from the house (359-54Z(3), (9), (10))",
-      "Accessory structures in residential districts: at most 20% of the house's square footage or 500 sq ft, and two per lot. Accessory structures: 15 ft mean height. Whether these reach a dependent dwelling is not stated (359-19F, 359-30A(1))",
+      "Accessory structures in residential districts: at most 20% of the house's square footage or 500 sq ft, and two per lot. Accessory structures: 15 ft mean height. The file applies these to a detached dependent dwelling, so it is held to 500 sq ft, 20% of the house and 15 ft. An attached unit may reach 625 sq ft a story, two stories or 25 ft. Whether the dependent dwelling standards govern a detached unit alone is open (359-19F, 359-30A(1), 359-142C(5), 359-54Z)",
       "Parking: 0.5 space for each resident of the dependent dwelling, plus 2 for the house (359-115)",
       "Mechanical equipment screened from neighbors. Waste storage at least 50 ft from the nearest building inside a solid masonry wall (359-54Z(7), (8))",
       "A tiny home of 150 to 400 sq ft may be an accessory dwelling unit by conditional use in R-3, with one parking space and within district density. No family rule (359-34, 359-54MMMM)",
@@ -65,11 +65,11 @@
   "approval": {
     "path": {
       "value": "special_exception",
-      "section": "359-34 use chart 'Dependent dwelling', 359-142",
+      "section": "359-34 use chart 'Dependent dwelling', 359-142C(5)",
       "url": "https://ecode360.com/45218579",
       "verified_on": "2026-11-12",
       "confidence": "verified",
-      "note": "Use chart row 'Dependent dwelling': SE in R-1, C-3, S and BLVD. Zoning Hearing Board under 359-142."
+      "note": "Use chart row 'Dependent dwelling': SE in R-1, C-3, S and BLVD. Zoning Hearing Board under 359-142, with the specific criteria in 359-142C(5)(a) to (h). The conditional use districts use 359-54Z."
     },
     "district_paths": {
       "value": [
@@ -108,12 +108,13 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "A dwelling of 150 to 400 sq ft of habitable floor area, on a foundation or on wheels, used as a principal or accessory dwelling unit. Served by water and sewer. One off-street parking space. District density may not be exceeded. District setbacks apply. No family rule.",
-          "min_lot_sqft": null,
-          "section": "359-13 'Tiny home', 359-34 use chart, 359-54MMMM",
+          "conditions": "A dwelling of 150 to 400 sq ft of habitable floor area, on a foundation or on wheels, used as a principal or accessory dwelling unit. Served by water and sewer. One off-street parking space. District density may not be exceeded (359-54MMMM(4)). R-3 allows 7,500 sq ft of lot per single-family home (Table 359-20C(1)), so a house plus a tiny home reads as needing about 15,000 sq ft. As an accessory structure it is also held to 500 sq ft or 20% of the house, two accessory structures per lot, and 15 ft mean height (359-19F, 359-30A(1)). No family rule.",
+          "min_lot_sqft": 15000,
+          "section": "359-13 'Tiny home', 359-34 use chart, 359-54MMMM, Table 359-20C(1)",
           "url": "https://ecode360.com/45219081",
           "confidence": "secondary",
-          "note": "This is an accessory dwelling unit in the code's own words, open to anyone, not only a relative. The R-3 density table gives 7,500 sq ft per single-family home. How the tiny home counts toward density is not stated. Ask the zoning officer."
+          "note": "This is an accessory dwelling unit in the code's own words, open to anyone, not only a relative. The R-3 density table gives 7,500 sq ft per single-family home. How the tiny home counts toward density is not stated. Ask the zoning officer.",
+          "adu_listing": true
         },
         {
           "name": "Two-family home",
@@ -205,32 +206,28 @@
         },
         {
           "kind": "design",
-          "condition": "One bedroom at most. Mechanical equipment screened from neighbors. Waste storage at least 50 ft from the nearest building and enclosed by a solid masonry wall.",
+          "condition": "Mechanical equipment screened from neighbors. Waste storage at least 50 ft from the nearest building and enclosed by a solid masonry wall. These two rules are in the conditional use standards only.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-2",
+            "R-3",
+            "R-4",
+            "C-1"
+          ],
+          "building_types": null,
+          "section": "359-54Z(7), (8)",
+          "url": "https://ecode360.com/45219081"
+        },
+        {
+          "kind": "design",
+          "condition": "One bedroom at most.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
-          "section": "359-54Z(6), (7), (8)",
+          "section": "359-54Z(6), 359-142C(5)(f)",
           "url": "https://ecode360.com/45219081"
-        },
-        {
-          "kind": "other",
-          "condition": "Accessory structures in residential districts may not exceed 20% of the house's square footage or 500 sq ft, with no more than two on a lot. Whether this reaches a detached dependent dwelling, which 359-54Z lets reach 625 sq ft a story, is not stated. Ask the zoning officer.",
-          "effect": "condition",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-1",
-            "R-2",
-            "R-3",
-            "R-4"
-          ],
-          "building_types": null,
-          "section": "359-19F",
-          "url": "https://ecode360.com/45218426"
         },
         {
           "kind": "district",
@@ -246,7 +243,7 @@
         },
         {
           "kind": "other",
-          "condition": "The detailed dependent dwelling standards sit in 359-54, the conditional use standards. The special exception districts (R-1, C-3, S, BLVD) are read as using the same standards.",
+          "condition": "Special exception districts use 359-142C(5)(a) to (h): lot of 7,200 sq ft, only as an accessory structure, 'not to be placed within any front yard', two stories or 25 feet, 625 sq ft a story but not less than 400, one bedroom, 20 ft from the rear line and 10 ft from a side line, attached = part of the principal structure, detached 10 ft from it. No screening or waste storage rule.",
           "effect": "condition",
           "applies_to": null,
           "districts": [
@@ -256,7 +253,7 @@
             "BLVD"
           ],
           "building_types": null,
-          "section": "359-54Z, 359-142B",
+          "section": "359-142C(5)",
           "url": "https://ecode360.com/45222379"
         }
       ],
@@ -295,12 +292,36 @@
   },
   "size": {
     "max_sqft": {
-      "value": 1250,
-      "section": "359-54Z(4), (5)",
+      "value": null,
+      "section": "359-54Z(4), (5), 359-142C(5)(d), (e), 359-19F",
       "url": "https://ecode360.com/45219081",
       "verified_on": "2026-11-12",
       "confidence": "secondary",
-      "note": "'Limited to two stories or 25 feet' and 'Each story is limited to 625 square feet (not less than 400 square feet)'. Two stories of 625 gives 1,250. A one-story unit is 625 at most."
+      "note": "No single cap for every form. See max_sqft_internal (attached unit) and max_sqft_accessory_building (detached unit)."
+    },
+    "max_sqft_internal": {
+      "value": 1250,
+      "section": "359-54Z(4), (5), (10), 359-142C(5)(d), (e), (h)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "'Limited to two stories or 25 feet' and 'Each story is limited to 625 square feet (not less than 400 square feet)'. Two stories of 625 gives 1,250. An attached unit is part of the principal structure, so 359-19F does not reach it."
+    },
+    "max_sqft_accessory_building": {
+      "value": 500,
+      "section": "359-19F, 359-54Z(2), 359-142C(5)(b)",
+      "url": "https://ecode360.com/45218426",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A detached dependent dwelling is 'only ... an accessory structure'. 359-19F: accessory structures 'shall not exceed 20% of the total square footage of the primary structure or exceed 500 square feet. There shall be no more than two accessory structures on a lot.' Read as applying with 359-54Z, per the review. Whether 359-54Z (625 a story) governs alone is open."
+    },
+    "max_share_accessory_building": {
+      "value": 0.2,
+      "section": "359-19F",
+      "url": "https://ecode360.com/45218426",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "20% of the total square footage of the primary structure. With the 400 sq ft floor, a detached unit needs a house of at least 2,000 sq ft."
     },
     "min_sqft": {
       "value": 400,
@@ -321,12 +342,12 @@
   },
   "envelope": {
     "max_height_ft": {
-      "value": 25,
-      "section": "359-54Z(4)",
-      "url": "https://ecode360.com/45219081",
+      "value": 15,
+      "section": "359-30A(1), 359-54Z(4), 359-142C(5)(d)",
+      "url": "https://ecode360.com/45218496",
       "verified_on": "2026-11-12",
       "confidence": "secondary",
-      "note": "'Limited to two stories or 25 feet'. 359-30A(1) caps accessory structures at a mean height of 15 ft. The specific use standard is read as governing."
+      "note": "Detached unit. 359-30A(1): 'No accessory structure shall exceed a mean height of 15 feet.' The dependent dwelling text allows 'two stories or 25 feet'. Both are caps, so the stricter 15 ft (mean) is used for a detached unit, per the review. Whether 25 ft governs alone is open. An attached unit takes the principal structure rules, but is still limited to two stories or 25 ft, which the file cannot set per form."
     },
     "internal_uses_district_height": {
       "value": true,
@@ -361,11 +382,11 @@
     },
     "setback_front_ft": {
       "value": null,
-      "section": "359-54Z(3)",
+      "section": "359-54Z(3), 359-142C(5)(c)",
       "url": "https://ecode360.com/45219081",
       "verified_on": "2026-11-12",
       "confidence": "verified",
-      "note": "'The structure is not to be placed within any required yard'. (9) then allows the side and rear yards. Not in the front yard."
+      "note": "'The structure is not to be placed within any required yard' (CU, 359-54Z(3)), 'not to be placed within any front yard' (SE, 359-142C(5)(c)). (9) and (g) then allow the side and rear yards. Not in the front yard. This is a bar, not a setback number (envelope.front_yard_barred)."
     },
     "separation_ft": {
       "value": 10,
@@ -382,6 +403,59 @@
       "verified_on": "2026-11-12",
       "confidence": "verified",
       "note": "359-29B(1): accessory structures to single-family homes may extend into required rear and side yards, but not closer than 10 feet to the property line."
+    },
+    "accessory_structure_max_sqft": {
+      "value": 500,
+      "section": "359-19F",
+      "url": "https://ecode360.com/45218426",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "Accessory structures in residential districts 'shall not exceed 20% of the total square footage of the primary structure or exceed 500 square feet. There shall be no more than two accessory structures on a lot.'"
+    },
+    "accessory_structure_max_share": {
+      "value": 0.2,
+      "section": "359-19F",
+      "url": "https://ecode360.com/45218426",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "20% of the total square footage of the primary structure."
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "359-30A(1)",
+      "url": "https://ecode360.com/45218496",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'No accessory structure shall exceed a mean height of 15 feet.'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "359-19F, 359-30A(1), 359-54Z(2), 359-142C(5)(b)",
+      "url": "https://ecode360.com/45218426",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "A detached dependent dwelling is an accessory structure (359-54Z(2), 359-142C(5)(b)). Accessory structures in residential districts may not exceed 20% of the house's square footage or 500 sq ft, with no more than two on a lot (359-19F), and 15 ft mean height (359-30A(1)). The file applies these to the detached forms, so a detached unit needs a house of at least 2,000 sq ft to reach the 400 sq ft floor. Whether the dependent dwelling standards (625 sq ft a story, 25 ft) govern alone is open. Ask the zoning officer."
+    },
+    "accessory_cap_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "359-19F",
+      "url": "https://ecode360.com/45218426",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "359-19F: accessory structures in residential districts."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "359-54Z(3), 359-142C(5)(c)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'not to be placed within any front yard' (SE, 359-142C(5)(c)). 'The structure is not to be placed within any required yard' (CU, 359-54Z(3)), with (9) allowing the side and rear yards."
     }
   },
   "use": {
@@ -440,6 +514,14 @@
       "url": "https://ecode360.com/45221837",
       "verified_on": "2026-11-12",
       "confidence": "secondary"
+    },
+    "spaces_per_resident": {
+      "value": 0.5,
+      "section": "359-115",
+      "url": "https://ecode360.com/45221837",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'Dependent dwelling 0.5 space for each resident'."
     }
   },
   "districts": {
@@ -480,6 +562,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "'No residential structure except an apartment may exceed 35 feet'. The table allows 60 ft in R-3 and 100 ft in R-4 for other buildings."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7500,
+        "section": "Table 359-20C(1)",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "Density table, single-family home per dwelling unit. A dependent dwelling is 'an accessory dwelling unit' (359-13), so it may count. If it does, a house and the unit need twice this. Unsettled."
       }
     },
     "R-2": {
@@ -519,6 +609,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "'No residential structure except an apartment may exceed 35 feet'. The table allows 60 ft in R-3 and 100 ft in R-4 for other buildings."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7500,
+        "section": "Table 359-20C(1)",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "Density table, single-family home per dwelling unit. A dependent dwelling is 'an accessory dwelling unit' (359-13), so it may count. If it does, a house and the unit need twice this. Unsettled."
       }
     },
     "R-3": {
@@ -558,6 +656,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "'No residential structure except an apartment may exceed 35 feet'. The table allows 60 ft in R-3 and 100 ft in R-4 for other buildings."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7500,
+        "section": "Table 359-20C(1)",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "Density table, single-family home per dwelling unit. A dependent dwelling is 'an accessory dwelling unit' (359-13), so it may count. If it does, a house and the unit need twice this. Unsettled."
       }
     },
     "R-4": {
@@ -597,6 +703,14 @@
         "verified_on": "2026-11-12",
         "confidence": "verified",
         "note": "'No residential structure except an apartment may exceed 35 feet'. The table allows 60 ft in R-3 and 100 ft in R-4 for other buildings."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10000,
+        "section": "Table 359-20C(1)",
+        "url": "https://ecode360.com/45218439",
+        "verified_on": "2026-11-12",
+        "confidence": "secondary",
+        "note": "Density table, single-family home per dwelling unit. A dependent dwelling is 'an accessory dwelling unit' (359-13), so it may count. If it does, a house and the unit need twice this. Unsettled."
       }
     }
   }

@@ -207,6 +207,14 @@
       "verified_on": null,
       "confidence": "unverified",
       "note": "No separation between buildings on one lot found in 27-1105."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-1105.1B",
+      "url": "https://ecode360.com/34429573",
+      "verified_on": "2026-11-11",
+      "confidence": "verified",
+      "note": "'The accessory building, structure or use shall not be located in the front yard.'"
     }
   },
   "use": {

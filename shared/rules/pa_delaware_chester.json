@@ -158,7 +158,8 @@
           "section": "550-88B(1), 550-20",
           "url": "https://ecode360.com/45943190",
           "confidence": "secondary",
-          "note": "The use is permitted, but the land development plan and the area reading make it far from a plain permit. Ask the zoning officer."
+          "note": "The use is permitted, but the land development plan and the area reading make it far from a plain permit. Ask the zoning officer.",
+          "land_development": true
         },
         {
           "name": "Second principal house on the same lot (land development approval needed)",
@@ -171,7 +172,8 @@
           "section": "550-88B(1), 550-20",
           "url": "https://ecode360.com/45943190",
           "confidence": "secondary",
-          "note": "Ask the zoning officer how the yards apply to two houses on one lot."
+          "note": "Ask the zoning officer how the yards apply to two houses on one lot.",
+          "land_development": true
         },
         {
           "name": "Second principal house on the same lot (land development approval needed)",
@@ -185,7 +187,8 @@
           "section": "550-88B(1), 550-20",
           "url": "https://ecode360.com/45943190",
           "confidence": "secondary",
-          "note": "Ask the zoning officer how the yards apply to two houses on one lot."
+          "note": "Ask the zoning officer how the yards apply to two houses on one lot.",
+          "land_development": true
         }
       ],
       "section": "550-13, 550-44A(18), 550-88B",
@@ -193,6 +196,24 @@
       "verified_on": "2026-11-12",
       "confidence": "verified",
       "note": "Not ADUs. Use table rows: 'Two-family dwelling (Typically one unit above another unit)' N N P P P and 'Conversion of an existing one-family dwelling into two or more dwelling units' N SE1 SE1 SE1 SE for CN, R-1 to R-4. Note 1: 'Limited to a building that includes more than 3,000 square feet of heated habitable indoor floor area.'"
+    },
+    "form_paths": {
+      "value": [
+        {
+          "forms": [
+            "garage_conversion"
+          ],
+          "path": "special_exception",
+          "section": "550-45D(18)(c), (f)",
+          "url": "https://ecode360.com/45942323",
+          "note": "Garage conversion is allowed: 'A lawful detached garage may be converted into a Unit for Care of Relative'. As a detached unit its path is a special exception (550-45D(18)(f)), with principal setbacks and the 900 sq ft cap."
+        }
+      ],
+      "section": "550-45D(18)(c), (f)",
+      "url": "https://ecode360.com/45942323",
+      "verified_on": "2026-11-12",
+      "confidence": "secondary",
+      "note": "Reading: a converted garage is a detached unit, so it takes the detached unit's special exception."
     }
   },
   "eligibility": {
@@ -280,10 +301,9 @@
         },
         {
           "kind": "existing_structure",
-          "condition": "Garage conversion is allowed: 'A lawful detached garage may be converted into a Unit for Care of Relative'. As a detached unit its path is a special exception (550-45D(18)(f)), with principal setbacks and the 900 sq ft cap. This tool shows 'variance' for the garage conversion form only because it cannot give that form its own path. The code path is a special exception. A new unit above a garage is not in this rule. The 550-115 'accessory apartment' definition names a unit above a garage, but no use table lists it, and garages are capped at 15 ft (550-22B(5)).",
+          "condition": "A new unit above a garage is not in this rule. The 550-115 'accessory apartment' definition names a unit above a garage, but no use table lists it, and garages are capped at 15 ft (550-22B(5)).",
           "effect": "condition",
           "applies_to": [
-            "garage_conversion",
             "over_garage"
           ],
           "districts": null,
@@ -355,13 +375,14 @@
       "value": [
         "internal",
         "attached",
-        "detached_new"
+        "detached_new",
+        "garage_conversion"
       ],
       "section": "550-45D(18)(c), (f)",
       "url": "https://ecode360.com/45942323",
       "verified_on": "2026-11-12",
       "confidence": "secondary",
-      "note": "Inside or attached to the house by right. A detached unit by special exception. A converted detached garage is expressly allowed (550-45D(18)(c)) by special exception, but the tool cannot give that form its own path, so it is left out here and the tool shows a variance for it. The condition on the garage forms states the code path."
+      "note": "Inside or attached to the house by right. A detached unit by special exception. A converted detached garage is expressly allowed (550-45D(18)(c)) by special exception, set in approval.form_paths."
     }
   },
   "size": {
@@ -478,6 +499,14 @@
       "verified_on": "2026-11-12",
       "confidence": "secondary",
       "note": "A unit in or attached to the house is part of the principal building. District height applies."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "550-22B(6), 550-45C",
+      "url": "https://ecode360.com/45941855",
+      "verified_on": "2026-11-12",
+      "confidence": "verified",
+      "note": "'No accessory building and no swimming pool shall be allowed between the principal building and the front lot line.' District front yard applies."
     }
   },
   "use": {

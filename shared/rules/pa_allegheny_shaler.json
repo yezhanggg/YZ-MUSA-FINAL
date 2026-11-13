@@ -33,7 +33,7 @@
     "checks": [
       "The zoning code has no accessory dwelling unit, accessory apartment or in-law provision",
       "'Only uses listed or defined within the categories under this article shall be permitted' (225-11). R-1 and R-2 permit only one-family dwellings",
-      "The special exception for converting a one-family house into more units was repealed in 2022 (Ord. No. 1966). It no longer exists",
+      "The special exception for converting a one-family house into more units was repealed in 2022 (Ord. No. 1966). It no longer exists. R-3 now reads 'Special exceptions: none' (225-15D)",
       "R-3, R-4 and R-5 permit a two-family dwelling by right on 7,500 sq ft. R-3 also permits an apartment building of no more than two units. Each unit needs its own outside door (225-15, 225-16, 225-17, 225-218)",
       "Uses not listed anywhere may be a conditional use only in the I Industrial District (225-34)",
       "Accessory structures: 15 ft high. Side and rear yards 10 ft in R-1 and R-4, 5 ft in R-2 and R-3 (225-24 to 225-27)",
@@ -97,12 +97,12 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "Listed as a permitted principal use in R-3. Lot rules for a two-family dwelling are read as applying.",
-          "min_lot_sqft": null,
-          "section": "225-15A(3)",
+          "conditions": "Listed as a permitted principal use in R-3. The two-family lot rules (7,500 sq ft, 70 ft) are read as the nearest. 225-218 defines an apartment building as three or more units without a separate outside entrance for each, which clashes with a two-unit listing.",
+          "min_lot_sqft": 7500,
+          "section": "225-15A(3), 225-26A(2), 225-218 'Apartment building'",
           "url": "https://ecode360.com/9197035",
           "confidence": "secondary",
-          "note": "225-26 gives lot rules for one-family and two-family dwellings only."
+          "note": "225-26 gives lot rules for one-family and two-family dwellings only. How far the R-3 listing reaches is unclear given the three-unit definition. Ask the zoning officer."
         }
       ],
       "section": "225-15, 225-16, 225-17",
@@ -202,7 +202,7 @@
         "url": "https://ecode360.com/9197212",
         "verified_on": "2026-11-12",
         "confidence": "verified",
-        "note": "Lot width 70 ft. Rear yard 10 ft (25 ft on a through lot). 225-166 lets a lot held in separate ownership be built on below these figures."
+        "note": "Lot width 70 ft. Rear yard 10 ft (25 ft on a through lot). 225-166 lets a lot held in separate ownership at the effective date be built on below these figures, and B says a yard variance shall be obtained from the Zoning Hearing Board."
       },
       "setback_front_ft": {
         "value": 25,
@@ -257,7 +257,7 @@
         "url": "https://ecode360.com/9197242",
         "verified_on": "2026-11-12",
         "confidence": "verified",
-        "note": "Lot width 50 ft. 225-166 lets a lot held in separate ownership be built on below these figures."
+        "note": "Lot width 50 ft. 225-166 lets a lot held in separate ownership at the effective date be built on below these figures, and B says a yard variance shall be obtained from the Zoning Hearing Board."
       },
       "setback_front_ft": {
         "value": 20,
@@ -312,7 +312,7 @@
         "url": "https://ecode360.com/9197243",
         "verified_on": "2026-11-12",
         "confidence": "verified",
-        "note": "One-family dwelling. Two-family needs 7,500 sq ft and 70 ft. 225-166 lets a lot held in separate ownership be built on below these figures."
+        "note": "One-family dwelling. Two-family needs 7,500 sq ft and 70 ft. 225-166 lets a lot held in separate ownership at the effective date be built on below these figures, and B says a yard variance shall be obtained from the Zoning Hearing Board."
       },
       "setback_front_ft": {
         "value": 20,
@@ -367,7 +367,7 @@
         "url": "https://ecode360.com/9197269",
         "verified_on": "2026-11-12",
         "confidence": "verified",
-        "note": "One-family dwelling. Two-family needs 7,500 sq ft and 60 ft. 225-166 lets a lot held in separate ownership be built on below these figures."
+        "note": "One-family dwelling. Two-family needs 7,500 sq ft and 60 ft. 225-166 lets a lot held in separate ownership at the effective date be built on below these figures, and B says a yard variance shall be obtained from the Zoning Hearing Board."
       },
       "setback_front_ft": {
         "value": 20,
