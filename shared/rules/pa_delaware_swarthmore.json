@@ -1,0 +1,531 @@
+{
+  "provenance": {
+    "jurisdiction": "Swarthmore borough",
+    "instrument": "Borough of Swarthmore Zoning Code, Part Twelve Title Four (Chapters 1240 to 1275), as published by American Legal Publishing",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Family/caregiver suites were added by Ord. 1084 (passed 11-13-18): the definition in 1240.05(52), the special exception listing in each residential district and the standards in 1264.18. American Legal shows the code as '2026 S-21 (current)', with Ord. 01-2026 (passed 2-9-26) folded into 1264.20.",
+    "effective_date": "2018-11-13",
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16633",
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17636",
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17003",
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17024",
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17071",
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+      "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17852"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Delaware",
+    "municipality_type": "borough",
+    "geoid": "4204575648",
+    "code_host": "amlegal",
+    "code_url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+    "code_current_through": null,
+    "code_current_through_note": "American Legal shows '2026 S-21 (current)' and no date. The latest ordinance seen in the zoning title is Ord. 01-2026, passed 2-9-26.",
+    "checks": [
+      "A family/caregiver suite is a special exception (Zoning Hearing Board) 'in all zoning districts'. RA, RB and RC list it among their special exceptions (1264.18(a), 1246.02(c)(6), 1248.02(c)(6), 1250.02(c)(6))",
+      "Only inside the house: 'In no instance may a family/caregiver suite be located in an accessory structure.' It must work as an integral part of the house, entered mainly from inside it (1264.18(b)(3), (4), (7))",
+      "Not more than two rooms plus a bathroom and an efficiency kitchen, for up to two people (1240.05(52))",
+      "Occupants: relatives of the occupants of the house by blood, marriage, adoption or foster care, or an unrelated caregiver for an elder or a person with a disability who lives in the house (1240.05(52))",
+      "At most 35% of the combined gross floor area of the house and the suite. One suite per dwelling (1264.18(b)(1), (2))",
+      "No separate electric or water meter, and one address for the property (1264.18(b)(5), (6))",
+      "The owner files the name and relationship of the suite's occupant with the Borough every year (1264.18(b)(8))",
+      "The Zoning Hearing Board also applies the general special exception standards of 1264.17",
+      "A separate second unit is possible as a conversion of a single-family detached house to a two-family detached house, by special exception in RA, RB and RC: filed by an owner-occupant, one unit at least 1,600 sq ft and the other at least 600 sq ft, a separate entrance and utility service, and the district lot area for each unit (20,000, 14,000 or 8,000 sq ft). The 1240.05(36) definition calls it a conditional use, 1264.08 and the district lists a special exception (1264.08)",
+      "Two-family dwellings are permitted by right in RA, RB and RC on a lot meeting the lot area for each dwelling unit (1246.02(a)(2), 1248.02(a)(2), 1250.02(a)(2))",
+      "Parking: a single-family dwelling needs two spaces, a two-family dwelling three. No rate for a suite (1268.03)"
+    ],
+    "notes": "Zoning office: Borough of Swarthmore. Read on American Legal Publishing in a browser, one section page at a time. Searched the definitions for caregiver, two-family, in-law, accessory and short-term. The code has no accessory dwelling unit term. The family/caregiver suite is the only accessory unit, inside the house. Other districts (AR, AL, TC, IN-A, IN-B, PA, IN-C) were not opened. 1264.18(a) reaches them. The earlier town survey has no Swarthmore entry."
+  },
+  "adu": {
+    "term": {
+      "value": "family/caregiver suite",
+      "section": "1240.05(52), 1264.18",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16633",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'\"Family/caregiver suite\" is defined as not more than two rooms plus a bathroom and efficiency kitchen. The suite may only be occupied by up to two persons'."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "1264.18, 1240.05(52)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A special exception in all districts, limited to relatives of the household or a caregiver for an elder or disabled occupant. The family rule limits most, so family_only, with the special exception in approval.path."
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "1264.18(b)(7)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'In no instance may a family/caregiver suite be located in an accessory structure.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "1264.18(a), (c), 1264.17, 1242.075",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Family/caregiver suites shall be allowed by special exception in all zoning districts'. 'Applicants must follow the procedures for special exceptions outlined in Section 1242.075.'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit outside the suite rules (in an accessory structure, larger, for non-relatives) needs a variance, unless it is done as a two-family conversion or a two-family dwelling."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family detached house to a two-family detached house",
+          "path": "special_exception",
+          "districts": [
+            "RC"
+          ],
+          "conditions": "Filed by an owner-occupant. One unit at least 1,600 sq ft, the other at least 600 sq ft. Separate entrance and utility service. 8,000 sq ft of lot for each unit. Planning Commission recommendation.",
+          "min_lot_sqft": 16000,
+          "section": "1250.02(c)(1), 1250.03(b), 1264.08",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17636",
+          "confidence": "secondary",
+          "note": "Not an ADU. 1240.05(36) says the conversion permit issues 'where authorized as a conditional use', while 1264.08 and the district list say special exception."
+        },
+        {
+          "name": "Conversion of a single-family detached house to a two-family detached house",
+          "path": "special_exception",
+          "districts": [
+            "RB"
+          ],
+          "conditions": "Same 1264.08 standards. 14,000 sq ft of lot for each unit.",
+          "min_lot_sqft": 28000,
+          "section": "1248.02(c)(1), 1248.03(b), 1264.08",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17636",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Conversion of a single-family detached house to a two-family detached house",
+          "path": "special_exception",
+          "districts": [
+            "RA"
+          ],
+          "conditions": "Same 1264.08 standards. 20,000 sq ft of lot for each unit.",
+          "min_lot_sqft": 40000,
+          "section": "1246.02(c)(1), 1246.03(b), 1264.08",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17636",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "RC"
+          ],
+          "conditions": "A permitted general use. 8,000 sq ft of lot for each unit. Three parking spaces.",
+          "min_lot_sqft": 16000,
+          "section": "1250.02(a)(2), 1250.03(b), 1268.03(b)",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17071",
+          "confidence": "verified",
+          "note": "Not an ADU. Changing an existing house goes by the conversion special exception."
+        },
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "RB"
+          ],
+          "conditions": "A permitted general use. 14,000 sq ft of lot for each unit. Three parking spaces.",
+          "min_lot_sqft": 28000,
+          "section": "1248.02(a)(2), 1248.03(b), 1268.03(b)",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17003",
+          "confidence": "verified"
+        },
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "RA"
+          ],
+          "conditions": "A permitted general use. 20,000 sq ft of lot for each unit. Three parking spaces.",
+          "min_lot_sqft": 40000,
+          "section": "1246.02(a)(2), 1246.03(b), 1268.03(b)",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
+          "confidence": "verified"
+        }
+      ],
+      "section": "1264.08, 1246.02, 1248.02, 1250.02",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17636",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RA",
+        "RB",
+        "RC",
+        "AR",
+        "AL",
+        "TC",
+        "IN-A",
+        "IN-B",
+        "PA",
+        "IN-C"
+      ],
+      "section": "1264.18(a)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'in all zoning districts in the Borough of Swarthmore Zoning Code.' RA, RB and RC also list it. The other district chapters were not opened."
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "1264.18(b)(1)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Not more than one family/caregiver suite shall be permitted in a dwelling.' No house type is excluded."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "1264.18(b)(3)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The suite is part of the dwelling. An addition to the house is not barred if the suite stays integral to it."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "1264.18",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Up to two occupants, related to the occupants of the house by blood, marriage, adoption or foster care, or unrelated if one is a caregiver for an elder or a person with a disability who lives in the house. The owner files their name and relationship every year.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1240.05(52), 1264.18(b)(8)",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16633"
+        },
+        {
+          "kind": "design",
+          "condition": "Integral part of the house. Primary access from inside. An outside door only if needed for a second exit or an accessible path. No separate utility meters. One address.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1264.18(b)(3) to (6)",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482"
+        },
+        {
+          "kind": "size",
+          "condition": "Not more than two rooms plus a bathroom and an efficiency kitchen.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1240.05(52)",
+          "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16633"
+        }
+      ],
+      "section": "1264.18, 1240.05(52)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "1264.18(b)(3), (7)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'In no instance may a family/caregiver suite be located in an accessory structure.' Inside the house. An addition to the house is not named, kept as attached since the suite must be 'an integral part of the principal dwelling'. No detached or garage unit."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "1264.18(b)(2), 1240.05(52)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No square foot cap. Two rooms plus a bathroom and an efficiency kitchen."
+    },
+    "max_share_of_house": {
+      "value": 0.35,
+      "section": "1264.18(b)(2)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The gross floor area of the suite shall not exceed thirty-five percent of the combined gross floor area of the main dwelling and the family/caregiver suite.' A share of the whole building, suite included."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "1264.18",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No minimum size."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "1246.03(f), 1248.03(l), 1250.03(l)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The suite is in the house: 35 ft in RA, RB and RC."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "1264.18(b)(7)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No suite in an accessory structure, so an addition for the suite takes the house's yards."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "1264.18(b)(8)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The owner files the occupant's name each year. No rule that the owner lives there. The occupants must be relatives of, or caregivers to, the occupants of the main dwelling."
+    },
+    "family_only": {
+      "value": true,
+      "section": "1240.05(52)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16633",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Up to two people: relatives of the occupants of the house by blood, marriage, adoption or foster care, or unrelated people if one is a caregiver for an elder or a person with a disability living in the house.",
+      "section": "1240.05(52)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16633",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "1264.18(b)(1)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Not more than one family/caregiver suite shall be permitted in a dwelling.'"
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "1264.18(b)(3), (6)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "An integral part of the dwelling with one address."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "1240.05(52)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16633",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Only relatives or caregivers may occupy the suite."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1268.03",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17852",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No rate for a suite."
+    },
+    "reading": {
+      "value": "The suite is part of a single-family dwelling, which needs two spaces, so no added space. If the Board treats the house as two-family, three spaces in all. The Board may set parking as a condition (1264.17(a)(5)).",
+      "section": "1268.03, 1264.17",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17852",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "1264.18(b)(5)",
+      "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The suite shall not have separate utility service (i.e., electric meter and water meter).'"
+    }
+  },
+  "districts": {
+    "RA": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "1246.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Also 20,000 sq ft for each dwelling unit (1246.03(b)). The suite is not read as a dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1246.03(e)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "1246.03(h)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "1246.03(g)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1246.03(f)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.12,
+        "section": "1246.03(d)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-16946",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "RB": {
+      "min_lot_sqft": {
+        "value": 14000,
+        "section": "1248.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17024",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Also 14,000 sq ft for each dwelling unit (1248.03(b))."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "1248.03(f)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17024",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "1248.03(h)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17024",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached. Semidetached 25 ft (1248.03(i))."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "1248.03(g)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17024",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1248.03(l)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17024",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.18,
+        "section": "1248.03(e)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17024",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "RC": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "1250.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "With a detached building. Also 8,000 sq ft for each dwelling unit (1250.03(b))."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "1250.03(f)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "1250.03(h)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "With a detached building."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "1250.03(g)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1250.03(l)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1250.03(e)",
+        "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-17092",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

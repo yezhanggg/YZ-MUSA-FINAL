@@ -1,0 +1,463 @@
+{
+  "provenance": {
+    "jurisdiction": "Phoenixville borough",
+    "instrument": "Borough of Phoenixville Zoning Ordinance (form-based), Chapter 27 Zoning as enacted by Ord. No. 2025-2410, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "The former Chapter 27 (Ord. 2227 of 2013 as amended) 'was repealed by Ord. No. 2025-2410, 8/12/2025', which enacted the current chapter with the ADU special exception (27-301.2B(2)(d)). 27-301 was amended by Ord. No. 2025-2415 (10-14-2025) and Ord. No. 2026-2424 (3-10-2026), and 27-405 by Ord. No. 2026-2424. eCode360 header: legislation through 09-08-2026. New Laws (read 2026-11-13): none.",
+    "effective_date": "2025-08-12",
+    "source_urls": [
+      "https://ecode360.com/47638080",
+      "https://ecode360.com/print/PH1486?guid=47635652",
+      "https://ecode360.com/print/PH1486?guid=47635372",
+      "https://ecode360.com/print/PH1486?guid=47635814",
+      "https://ecode360.com/print/PH1486?guid=47635807",
+      "https://ecode360.com/print/PH1486?guid=47635825",
+      "https://ecode360.com/print/PH1486?guid=47635795",
+      "https://ecode360.com/print/PH1486?guid=47636447",
+      "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+      "https://ecode360.com/PH1486/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Chester",
+    "municipality_type": "borough",
+    "geoid": "4202960120",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/47638080",
+    "code_current_through": "2026-09-08",
+    "code_current_through_note": "eCode360 header on 2026-11-13: 'Includes legislation through 09-08-2026.' No new laws pending.",
+    "checks": [
+      "An accessory dwelling unit is a special exception (Zoning Hearing Board) in RI, MI, NC, CD and MG. It is not listed in TC or I (27-301.2B(1) table)",
+      "One ADU, accessory to a single-family dwelling: a detached house, a twin or a townhouse (27-301.2B(2)(d)1))",
+      "The owner of the lot must live in one of the two dwellings 'in perpetuity' (27-301.2B(2)(d)2))",
+      "Inside the house: at most 25% of the existing house's habitable floor area. As an addition: an increase of at most 25% of that area. In an accessory building: the accessory building limits, a footprint at most two thirds of the house's footprint (27-301.2B(2)(d)6), 27-404.2B(1))",
+      "An accessory building may be at most two stories or two thirds of the house height, whichever is less. With a one-story house it may not be taller than the house. No more than two accessory buildings on a lot (27-404.2B(2), (3))",
+      "At most one bedroom (27-301.2B(2)(d)7))",
+      "A detached ADU may not be in the required front yard. Its own entrance, not in the front facade of the house (27-301.2B(2)(d)4), 5))",
+      "The ADU meets the setback and coverage rules of the district for its type. In the RI chart an accessory building is 8 ft from the rear line and 5 ft from the side, or attached. The detached house is 25 ft rear, 5 ft side, 80% impervious (27-301.2B(2)(d)3), Attachment 1)",
+      "Public electric, water and sewer, connected to the house's existing systems (27-301.2B(2)(d)11))",
+      "Parking under the chapter's rules, and the ADU may not remove any existing off-street space. The parking table has no ADU row (27-301.2B(2)(d)10), 27-405.2C)",
+      "Registered with the Borough every year. The registration ends when the lot is sold, and the new owner may register again (27-301.2B(2)(d)8))",
+      "A concept plan to scale with the building permit application (27-301.2B(2)(d)9))",
+      "MI, NC, CD and MG allow the same residential building types as RI, and the RI standards may be modified by up to 25% to fit the streetscape (Attachment 1)",
+      "Lots under one acre take infill standards from the block: the minimum lot area is the median lot area on the block face, side yards match an adjacent lot (27-301.1A)",
+      "In RI no new building type or residential use may be introduced in a block unless the tract is at least eight acres (27-301.1D). That limits a duplex, not the ADU",
+      "Residential uses are permitted by right in TC, but TC does not list the ADU"
+    ],
+    "notes": "Zoning office: Borough of Phoenixville. Read on eCode360 in a browser, one section print view at a time. The use tables were read from the page as displayed. The district specifications are an image PDF attachment, read page by page. Searched the definitions for accessory dwelling, accessory building, duplex and short-term. The index note's 'TC' in the ADU district list is not borne out by the table, which marks RI, MI, NC, CD and MG. The index note's '1 space' parking figure is not in the current text. Chester County Planning Commission material (cross-check only) has nothing on Phoenixville ADUs. The earlier town survey has no Phoenixville entry."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit (ADU)",
+      "section": "27-202",
+      "url": "https://ecode360.com/print/PH1486?guid=47635372",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ACCESSORY DWELLING UNIT (ADU) An accessory dwelling proposed within an existing principal single-family dwelling, attached to an existing principal single-family dwelling by way of addition, or wholly and exclusively within an accessory building on the same lot as a principal single-family dwelling.' Internal, attached and detached ADUs."
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "27-301.2B(1), 27-301.2B(2)(d)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The uses listed below are permitted by special exception in the zoning districts as indicated below.' The ADU row is marked in RI, MI, NC, CD and MG."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "27-301.2B, 27-904",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board special exception, with the ADU standards of 27-301.2B(2)(d). Then a building permit with a concept plan and annual registration."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-903, MPC 910.2",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails the standards, or one in TC or I, needs a variance."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex (two units, one over the other)",
+          "path": "by_right",
+          "districts": [
+            "RI",
+            "MI",
+            "NC",
+            "CD",
+            "MG"
+          ],
+          "conditions": "Residential uses are by right. A duplex is two units in one building, separated by a floor and ceiling. RI chart: lot 2,000 sq ft, 40 ft wide, 5 ft side, 20 ft rear, 35 ft, 90% impervious. In RI a duplex may not be introduced in a block that has none unless the tract is eight acres or more.",
+          "min_lot_sqft": 2000,
+          "section": "27-301.2C(1), 27-202, 27-301.1D, Attachment 1",
+          "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+          "confidence": "secondary",
+          "note": "Not an ADU. Whether an existing house may be converted to a duplex is for the zoning officer."
+        }
+      ],
+      "section": "27-301.2C",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RI",
+        "MI",
+        "NC",
+        "CD",
+        "MG"
+      ],
+      "section": "27-301.2B(1)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Special exception table, read as displayed. TC and I are not marked."
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "27-301.2B(2)(d)1)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One ADU may be permitted as an accessory use to a single-family dwelling, including a single-family detached dwelling, a twin dwelling or a townhouse dwelling.'"
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-202",
+      "url": "https://ecode360.com/print/PH1486?guid=47635372",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "An internal or attached ADU needs an existing house. A detached ADU may be a new accessory building."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "27-301.2A",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No historic path for an ADU. Adaptive reuse of historic buildings is a separate conditional use."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "An internal ADU is built within an existing house, an attached ADU as an addition to an existing house. Its size is measured from the house's habitable floor area before construction.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-202, 27-301.2B(2)(d)6)",
+          "url": "https://ecode360.com/print/PH1486?guid=47635372"
+        },
+        {
+          "kind": "size",
+          "condition": "At most one bedroom.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-301.2B(2)(d)7)",
+          "url": "https://ecode360.com/print/PH1486?guid=47635652"
+        },
+        {
+          "kind": "size",
+          "condition": "Detached ADU: the accessory building footprint is at most two thirds of the house footprint. Height at most two stories or two thirds of the house height, whichever is less, and no taller than a one-story house. At most two accessory buildings on the lot.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-301.2B(2)(d)6)c), 27-404.2B",
+          "url": "https://ecode360.com/print/PH1486?guid=47635814"
+        },
+        {
+          "kind": "design",
+          "condition": "A detached ADU may not be in the required front yard. An entrance separate from the house's, not in the house's front facade.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-301.2B(2)(d)4), 5)",
+          "url": "https://ecode360.com/print/PH1486?guid=47635652"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Public electric, water and sewer, connected to the house's existing systems.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-301.2B(2)(d)11)",
+          "url": "https://ecode360.com/print/PH1486?guid=47635652"
+        },
+        {
+          "kind": "other",
+          "condition": "Registered with the Borough every year. The registration ends when the lot is conveyed. A concept plan to scale with the building permit application.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-301.2B(2)(d)8), 9)",
+          "url": "https://ecode360.com/print/PH1486?guid=47635652"
+        },
+        {
+          "kind": "parking",
+          "condition": "The ADU may not remove any existing off-street parking on the lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-301.2B(2)(d)10)",
+          "url": "https://ecode360.com/print/PH1486?guid=47635652"
+        }
+      ],
+      "section": "27-301.2B(2)(d)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-202, 27-301.2B(2)(d)3)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635372",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Internal, attached (an addition) and detached ('wholly and exclusively within an accessory building'). A unit over a garage is not named. 'Wholly and exclusively' may be read to bar a unit that shares a building with a garage. Ask."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-301.2B(2)(d)6)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No square foot cap. Share caps only, and one bedroom."
+    },
+    "max_share_internal": {
+      "value": 0.25,
+      "section": "27-301.2B(2)(d)6)a), b)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Internal ADU — Not to exceed 25% of existing principal dwelling's habitable floor area prior to construction.' 'Attached ADU — Not to exceed 25% increase of the existing principal dwelling's habitable floor area prior to construction.'"
+    },
+    "max_share_accessory_building": {
+      "value": 0.667,
+      "section": "27-301.2B(2)(d)6)c), 27-404.2B(1)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635814",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Detached ADU — Per accessory building size limits'. 'The building footprint shall be no more than 2/3 that of the principal building.' A footprint share, not a floor area share."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "27-301.2B(2)(d)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No minimum size."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 23,
+      "section": "27-404.2B(2), Attachment 1",
+      "url": "https://ecode360.com/print/PH1486?guid=47635814",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The building height shall be no more than two stories or 2/3 the principal building height, whichever is less. If the principal building is one story, an accessory building shall not exceed the height of the principal building.' No fixed feet figure. 23 ft is two thirds of the 35 ft district height, the most any accessory building can reach. For a 30 ft house the cap is 20 ft."
+    },
+    "max_height_stories": {
+      "value": 2,
+      "section": "27-404.2B(2)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635814",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "27-404.2B(2)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635814",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "At most two thirds of the house height, which is lower than the house."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "Attachment 1",
+      "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "RI single-family detached 35 ft."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "27-301.2B(2)(d)3), Attachment 1",
+      "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "ADUs meet 'all building setback and coverage requirements of the underlying zoning district and per ADU type'. The district chart gives accessory buildings their own rear and side setbacks."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "Attachment 1, RI single-family detached",
+      "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory Building-rear/side 8/5 ft. or attached'."
+    },
+    "setback_rear_ft": {
+      "value": 8,
+      "section": "Attachment 1, RI single-family detached",
+      "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "27-301.2B(2)(d)4), 27-301.1A(1)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A detached ADU may not be located within the required front yard.' The front line is the block's build-to line."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "27-301.2B(2)(d)2)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One of the dwellings shall be occupied, in perpetuity, by the owner of the lot on which both dwellings are located.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "27-301.2B(2)(d)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No relative rule."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-301.2B(2)(d)1)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One ADU may be permitted as an accessory use to a single-family dwelling'."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "27-202",
+      "url": "https://ecode360.com/print/PH1486?guid=47635372",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No short-term rental rule in Chapter 27."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-301.2B(2)(d)10), 27-405.2C",
+      "url": "https://ecode360.com/print/PH1486?guid=47635825",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Parking for such use shall be pursuant to off-street parking requirements of this chapter.' The table has no ADU row."
+    },
+    "reading": {
+      "value": "The table gives a single-family detached house 2 spaces, and an efficiency or one-bedroom unit in a twin or duplex 1 space. Read as 1 more space for the one-bedroom ADU, 3 in all for a detached house, or as no added space since no row names an ADU. Existing spaces may not be removed. Ask the zoning officer.",
+      "section": "27-405.2C, 27-301.2B(2)(d)10)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635825",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "27-301.2B(2)(d)11)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'All ADUs shall be served by public electric, water and sewer services, connected to the principal dwelling's existing systems for each.'"
+    }
+  },
+  "districts": {
+    "RI": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "Attachment 1, RI single-family detached, 27-301.1A(2)",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Chart figure. For lots under one acre the minimum is the median lot area on the block face. Twin 3,000 sq ft, townhouse 2,000."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Lots under one acre match an adjacent side yard (27-301.1A(3))."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 1",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Twin and townhouse 20 ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 1",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 8,
+        "section": "Attachment 1",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

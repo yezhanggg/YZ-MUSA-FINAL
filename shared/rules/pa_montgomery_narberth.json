@@ -1,0 +1,696 @@
+{
+  "provenance": {
+    "jurisdiction": "Narberth borough",
+    "instrument": "Narberth Borough Zoning Ordinance (form-based), Chapter 500 Zoning, as amended in its entirety by Ord. No. 1070 (8-20-2026), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 500 history: 'Adopted by the Borough Council of the Borough of Narberth 4-28-2016 by Ord. No. 995. Amended in its entirety 8-20-2026 by Ord. No. 1070.' The ADU rules are now 500-801 and 500-802, with green building rules in 500-902. The older 500-602 and 500-1201 text (Ord. No. 1043 of 2022) is replaced. eCode360 header: legislation through 08-20-2026. New Laws (read 2026-11-13) list only a 2026-10-15 Vehicles and Traffic amendment.",
+    "effective_date": "2026-08-20",
+    "source_urls": [
+      "https://ecode360.com/34400015",
+      "https://ecode360.com/print/NA0447?guid=52005162",
+      "https://ecode360.com/print/NA0447?guid=52005146",
+      "https://ecode360.com/print/NA0447?guid=52005206",
+      "https://ecode360.com/print/NA0447?guid=52003707",
+      "https://ecode360.com/print/NA0447?guid=52004201",
+      "https://ecode360.com/print/NA0447?guid=52004245",
+      "https://ecode360.com/print/NA0447?guid=52004250",
+      "https://ecode360.com/print/NA0447?guid=52004313",
+      "https://ecode360.com/print/NA0447?guid=52003976",
+      "https://ecode360.com/print/NA0447?guid=52003997",
+      "https://ecode360.com/print/NA0447?guid=52004020",
+      "https://ecode360.com/print/NA0447?guid=52004045",
+      "https://ecode360.com/print/NA0447?guid=52004065",
+      "https://ecode360.com/print/NA0447?guid=52004087",
+      "https://ecode360.com/print/NA0447?guid=52004123",
+      "https://ecode360.com/print/NA0447?guid=52004153",
+      "https://ecode360.com/print/NA0447?guid=52004652",
+      "https://ecode360.com/print/NA0447?guid=52004698",
+      "https://ecode360.com/print/NA0447?guid=52005004",
+      "https://ecode360.com/print/NA0447?guid=52005215",
+      "https://ecode360.com/print/NA0447?guid=52005370",
+      "https://ecode360.com/print/NA0447?guid=52005391",
+      "https://ecode360.com/NA0447/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Montgomery",
+    "municipality_type": "borough",
+    "geoid": "4209152664",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/34400015",
+    "code_current_through": "2026-08-20",
+    "code_current_through_note": "eCode360 header on 2026-11-13: 'Includes legislation through 08-20-2026.' The zoning chapter was replaced that day by Ord. No. 1070.",
+    "checks": [
+      "In this code an ADU is a unit 'within an accessory building'. Accessory buildings are permitted in every district and 'may be used as a residence or dwelling' under 500-802. Each district says accessory building types 'may include accessory uses and accessory dwelling units' (500-201, 500-801A(1), 500-303D(2) to 500-309D(2))",
+      "Only on a lot with a detached house or a twin house. One ADU on a lot, and no more than two units on the lot with the house (500-802A(1) to (3)). Detached houses are allowed in 3A, 3B, 3C, 4A and 4B, twin houses in 3B, 3C, 4A and 4B (500-503A(2), 500-504A(2))",
+      "A unit inside the house or in an addition is not an ADU here. It is a conversion of the house to more families, a special exception in 3A, 3B, 3C and 4A (500-403A, 500-503A(3)). The district tables cite this as 500-404A, but the section is numbered 500-403A",
+      "The ADU must be in the second or third lot layer, not in the first (front) layer. The second layer is 30 ft deep (20 ft in 4B) behind the front setback. In 3A to 4A other accessory buildings must be in the third layer (500-802B(1), 500-801B(1), Table 500-503-1)",
+      "Footprint at most 600 sq ft. Habitable floor area at most 800 sq ft, counting attics, basements, lofts and mezzanines (500-802B(4), C(1))",
+      "Height at most two stories and 16 ft, measured to the midpoint of the roof (500-802C(2), 500-601B(1)(b))",
+      "The ADU may share a building with a garage. An existing accessory building that is nonconforming as to side or rear yard, coverage, height or orientation may be converted if its footprint is 600 sq ft or less and the nonconformity does not grow (500-802A(4), B(5))",
+      "All accessory buildings together may not have a larger footprint than the house. ADU coverage counts toward the lot's building and impervious coverage (500-801A(2)(c), 500-802B(3))",
+      "The owner must be a natural person who lives in the house or the ADU (500-802D(3))",
+      "No off-street parking space is needed for an ADU (500-1001A(3)(a))",
+      "Green building rules for an ADU: built to the newest IECC, no gas, propane, oil or other fossil fuel hookups for a new ADU or new portions (a converted existing accessory building is exempt), on-site renewables where reasonably viable, and every use on the property, the house included, must buy 100% renewable electricity (and stay in any Borough community choice program). A restrictive covenant is recorded (500-902)",
+      "An ADU in the second lot layer whose entrance faces the street, or on a corner or through lot, needs a porch or portico frontage. A path must join its entrance to the sidewalk, and it gets its own unit number (500-802C(4), C(5), D(2), D(4))",
+      "A use and occupancy certificate for the ADU from the Borough (500-802D(5))",
+      "5A and 5B do not allow detached or twin houses as building types, so an ADU there needs an existing detached or twin house. Ask the zoning officer (500-308, 500-309)",
+      "In the H Historic District Overlay (3A, 3B, 3C), a lot with a contributing resource that is wide enough to be subdivided may have more than one principal building, such as a cottage, by conditional use (500-404H, 500-310)",
+      "A new detached house may be built as a two-family dwelling by right in 3B, 3C, 4A and 4B (district use tables)",
+      "No short-term rental rule in Chapter 500"
+    ],
+    "notes": "Zoning office: Narberth Borough. Read on eCode360 in a browser, one section print view at a time. Chapter 500 was replaced in full on 8-20-2026 (Ord. No. 1070), after the index note was written (it cites the 2022 text at 500-602). Searched the definitions for accessory dwelling, accessory building, lot layer, twin house, two-family and short-term. The district use tables cite special exceptions as 500-404 and conditional uses as 500-405, one number off from the sections in the chapter (500-403 Special exception uses, 500-404 Conditional uses, 500-405 Regulated uses). The earlier town survey has no Narberth entry. District codes: 3A, 3B, 3C, 4A, 4B, 5A, 5B, with the H overlay."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "500-201",
+      "url": "https://ecode360.com/print/NA0447?guid=52003707",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ACCESSORY DWELLING UNIT A self-contained dwelling unit that results from the creation of a dwelling unit within an accessory building, and which is complete with food preparation and bathroom facilities, and has direct access to the outdoors.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "500-801A(1)(d), 500-802, 500-303D(2)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005146",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory buildings are permitted in all zoning districts.' 'An accessory building may be used as a residence or dwelling, pursuant to the requirements of § 500-802'. No hearing is named. Zoning permit and a use and occupancy certificate (500-802D(5))."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "500-801A(1), 500-802, 500-402C",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A permitted accessory use in an accessory building when 500-802 and 500-902 are met."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "500-1603, MPC 910.2",
+      "url": "https://ecode360.com/34400015",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails 500-802 (for example over 600 sq ft of footprint or 16 ft) needs a variance. A unit inside the house goes by the conversion special exception instead (500-403A)."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a house to accommodate additional families",
+          "path": "special_exception",
+          "districts": ["3A", "3B", "3C", "4A"],
+          "conditions": "A detached house (or multifamily house) converted to more units. Building type standards met, parking met, one front entrance (others on the side or rear), fire escapes in the third lot layer, and the addition standards for any exterior change.",
+          "min_lot_sqft": null,
+          "section": "500-403A, 500-503A(3)",
+          "url": "https://ecode360.com/print/NA0447?guid=52004250",
+          "confidence": "verified",
+          "note": "Not an ADU in this code. It is the path for a unit inside the house or in an addition. District tables cite it as 500-404A. A detached house is 'designed as a dwelling for one or two families' (500-503A(1))."
+        },
+        {
+          "name": "Two-family dwelling in a new detached house",
+          "path": "by_right",
+          "districts": ["3B", "3C"],
+          "conditions": "A detached house built as a two-family dwelling, with the detached house lot (6,000 sq ft) and yard rules. Changing an existing one-family house goes by the conversion special exception (500-503A(3)).",
+          "min_lot_sqft": 6000,
+          "section": "500-304C, 500-305C, 500-503",
+          "url": "https://ecode360.com/print/NA0447?guid=52004652",
+          "confidence": "secondary",
+          "note": "Not an ADU. The building type tables mark the two-family dwelling 'Allowed' in a detached house."
+        },
+        {
+          "name": "Two-family dwelling in a new detached house",
+          "path": "by_right",
+          "districts": ["4A", "4B"],
+          "conditions": "A detached house built as a two-family dwelling, with the detached house lot (4,000 sq ft) and yard rules. In 4A changing an existing one-family house goes by the conversion special exception. 500-403A does not name 4B, so ask how an existing house there is converted.",
+          "min_lot_sqft": 4000,
+          "section": "500-306C, 500-307C, 500-503",
+          "url": "https://ecode360.com/print/NA0447?guid=52004652",
+          "confidence": "secondary",
+          "note": "Not an ADU."
+        },
+        {
+          "name": "More than one principal building on a historic district lot",
+          "path": "conditional_use",
+          "districts": ["3A", "3B", "3C"],
+          "conditions": "Only in the H Historic District Overlay, on a lot with a contributing resource that would be wide enough to subdivide. Borough Council must find the contributing resource is preserved. A cottage is the usual building type.",
+          "min_lot_sqft": null,
+          "section": "500-404H, 500-310B(3)(b), D",
+          "url": "https://ecode360.com/print/NA0447?guid=52004313",
+          "land_development": true,
+          "confidence": "secondary",
+          "note": "Not an ADU. 500-310 cites this as 500-405H. Two principal buildings on a lot is land development under the MPC."
+        }
+      ],
+      "section": "500-403A, 500-404H, 500-503",
+      "url": "https://ecode360.com/print/NA0447?guid=52004250",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": ["3A", "3B", "3C", "4A", "4B"],
+      "section": "500-802A(1), 500-503A(2), 500-504A(2), 500-303D(2) to 500-307D(2)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The ADU needs a lot with a detached or twin house. Those building types are allowed in 3A to 4B only."
+    },
+    "districts_in_doubt": {
+      "value": ["5A", "5B"],
+      "section": "500-308D(2), 500-309D(2), 500-802A(1)",
+      "url": "https://ecode360.com/print/NA0447?guid=52004087",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The 5A and 5B notes say accessory buildings may include ADUs, but neither district allows a detached or twin house. Only an existing one could qualify."
+    },
+    "building_types": {
+      "value": ["detached", "semi_detached"],
+      "section": "500-802A(1)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit shall only be permitted on a lot with a detached house or a twin house.' Not a row house."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "500-802B(5)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A new accessory building may hold the ADU. An existing nonconforming one may be converted under B(5)."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "500-310",
+      "url": "https://ecode360.com/print/NA0447?guid=52004153",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The H overlay uses the underlying district's uses. No separate ADU path. The multiple-building conditional use is an alternative."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "The ADU must be in the second or third lot layer. Not in the first lot layer at the front of the lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "500-802B(1)",
+          "url": "https://ecode360.com/print/NA0447?guid=52005162"
+        },
+        {
+          "kind": "size",
+          "condition": "The ADU's building footprint is at most 600 sq ft.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "500-802B(4)",
+          "url": "https://ecode360.com/print/NA0447?guid=52005162"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "An existing accessory building that is nonconforming as to side or rear yard, coverage, height or orientation may be converted if its footprint is 600 sq ft or less and the nonconformity is not increased.",
+          "effect": "condition",
+          "applies_to": ["garage_conversion"],
+          "districts": null,
+          "building_types": null,
+          "section": "500-802B(5)",
+          "url": "https://ecode360.com/print/NA0447?guid=52005162",
+          "test": "has_accessory_building"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Green building: newest IECC, no fossil fuel hookups or storage for a new ADU or new portions, on-site renewables where reasonably viable, all uses on the property buy 100% renewable electricity, and a restrictive covenant is recorded.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "500-902",
+          "url": "https://ecode360.com/print/NA0447?guid=52005206",
+          "bill_overrides": true
+        },
+        {
+          "kind": "design",
+          "condition": "Entrance facing a street (second lot layer, corner or through lot): a porch or portico frontage. A walking path to the sidewalk and a separate unit number.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "500-802C(4), C(5), D(2), D(4)",
+          "url": "https://ecode360.com/print/NA0447?guid=52005162"
+        }
+      ],
+      "section": "500-802",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": ["detached_new", "garage_conversion", "over_garage"],
+      "section": "500-201, 500-802A(4)",
+      "url": "https://ecode360.com/print/NA0447?guid=52003707",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Only within an accessory building. 'An accessory dwelling unit may be located in a building that also includes a garage.' A unit inside the house or in an addition is a conversion (500-403A), not an ADU."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 800,
+      "section": "500-802C(1)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The maximum habitable floor area of an accessory dwelling unit shall be 800 square feet, which includes the total amount of interior occupiable space, including attics, basements, floors, lofts and mezzanines'. Footprint at most 600 sq ft (500-802B(4))."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "500-802",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No share of the house for the unit. All accessory footprints together may not exceed the house footprint (500-801A(2)(c))."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "500-802",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No minimum size."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 16,
+      "section": "500-802C(2), Table 500-801-1",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The maximum height of an accessory dwelling unit shall not exceed two stories and 16 feet.' Measured to the midpoint between the highest and lowest points of the roof (500-601B(1)(b))."
+    },
+    "max_height_stories": {
+      "value": 2,
+      "section": "500-802C(2)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "accessory_structure_max_share": {
+      "value": 1.0,
+      "section": "500-801A(2)(c)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005146",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The total area of all building footprints of all accessory buildings on a lot shall not exceed the area of the principal building(s) footprint on the lot.'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "500-801A(2)(a), 500-802B(3)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005146",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The ADU is an accessory building and 500-801 applies to it unless 500-802 says otherwise."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "500-801A(2)(b), Table 500-801-1",
+      "url": "https://ecode360.com/print/NA0447?guid=52005146",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory buildings follow the accessory setbacks in Table 500-801-1 by district. See districts."
+    },
+    "setback_front_ft": {
+      "value": null,
+      "section": "500-802B(1)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No front setback number. The ADU sits in the second or third lot layer, behind the front setback (the first layer)."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "Table 500-503-1",
+      "url": "https://ecode360.com/print/NA0447?guid=52004652",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU inside the house in this code. The house is 35 ft and three stories."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "500-802D(3)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The owner of the property where the accessory dwelling unit is located shall be a natural person and shall reside in the principal building or the accessory dwelling unit on the property.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "500-802",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No relative rule."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "500-802A(2), (3)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A maximum of one accessory dwelling unit shall be located on a lot.' With the house, no more than two units."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "500-201, 500-802",
+      "url": "https://ecode360.com/print/NA0447?guid=52003707",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Chapter 500 has no short-term rental rule. The owner must live on the lot."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 0,
+      "section": "500-1001A(3)(a)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005215",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units shall not require an off-street parking space.'"
+    },
+    "total_on_site": {
+      "value": null,
+      "section": "Table 500-1001-1",
+      "url": "https://ecode360.com/print/NA0447?guid=52005215",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The house's own requirement is in Table 500-1001-1: residential 2.0 per dwelling in the residential districts, with on-street parking credits in 3B to 4B. Not stored as a total because credits vary by lot."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "500-902A(2)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005206",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No rule on a separate connection. Fossil fuel hookups are barred for a new ADU."
+    }
+  },
+  "districts": {
+    "3A": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached house: 'Existing Lot: 7,500 New Lot: 10,500'. No extra lot area for an ADU (500-802B(2))."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "House. Aggregate 20 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Side fronting a street: 30 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "3B": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached house. Twin house 3,000 sq ft each half (Table 500-504-1)."
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "House. Aggregate 14 ft."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Side fronting a street: 25 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "3C": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached house. Twin house 3,000 sq ft each half."
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Side fronting a street: 25 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "4A": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached house. Twin house 3,000 sq ft each half."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Primary frontage, minimum. In 3A to 3C the front setback is the block median."
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Side fronting a street: 25 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "4B": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached house. Twin house 2,000 sq ft each half."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Midblock. Corner lot 0 to 6 ft."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Aggregate 10 ft."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Table 500-503-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52004652",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 0,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Side fronting a street: 25 ft. Building code fire separation still applies near a lot line."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 0,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

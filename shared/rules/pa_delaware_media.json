@@ -1,0 +1,528 @@
+{
+  "provenance": {
+    "jurisdiction": "Media borough",
+    "instrument": "Borough of Media Zoning Ordinance, Chapter 311 Zoning (Article B Hybrid Form-Based Code), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 311 history: 'Adopted by the Borough Council of the Borough of Media 1-23-1989 by Ord. No. 823; amended in its entirety 4-20-2023 by Ord. No. 1161.' The ADU article (Article B-XV, 311.B-107 to 311.B-117) and the ADU, external building form (311.B-60) are part of that text. eCode360 header: legislation through 05-21-2026. New Laws (read 2026-11-13): none.",
+    "effective_date": "2023-04-20",
+    "source_urls": [
+      "https://ecode360.com/6866878",
+      "https://ecode360.com/print/ME1269?guid=44885853",
+      "https://ecode360.com/print/ME1269?guid=44884951",
+      "https://ecode360.com/print/ME1269?guid=44884915",
+      "https://ecode360.com/print/ME1269?guid=44885256",
+      "https://ecode360.com/print/ME1269?guid=44885305",
+      "https://ecode360.com/print/ME1269?guid=44885349",
+      "https://ecode360.com/print/ME1269?guid=44885377",
+      "https://ecode360.com/print/ME1269?guid=44885412",
+      "https://ecode360.com/print/ME1269?guid=44885435",
+      "https://ecode360.com/print/ME1269?guid=44885470",
+      "https://ecode360.com/print/ME1269?guid=44885927",
+      "https://ecode360.com/print/ME1269?guid=44886239",
+      "https://ecode360.com/print/ME1269?guid=44886406",
+      "https://ecode360.com/print/ME1269?guid=44886434",
+      "https://ecode360.com/print/ME1269?guid=44886659",
+      "https://ecode360.com/ME1269/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Delaware",
+    "municipality_type": "borough",
+    "geoid": "4204548480",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/6866878",
+    "code_current_through": "2026-05-21",
+    "code_current_through_note": "eCode360 header on 2026-11-13: 'Includes legislation through 05-21-2026.' No new laws pending.",
+    "checks": [
+      "Article B-XV applies in R-1, R-2, R-3, R-4 and Office. The use tables list 'Accessory unit' as permitted (by right) with the detached house and the 'ADU, external' building form in all five, and also with the semi-detached and attached house in R-2, R-3, R-4 and Office (311.B-108, B-21, B-28, B-35, B-42, B-49)",
+      "R-1: only with a detached house. A semi-detached or attached house in R-1 may not have one (311.B-21 table)",
+      "Office: the 'ADU, external' building form is marked prohibited, so only a unit inside the house (311.B-49 table, 311.B-60)",
+      "An external ADU is attached to or detached from the house, and may sit above or below a garage or shed. At most 800 sq ft in total, 20 ft wide and 20 ft deep, and no larger than the house's gross floor area (311.B-60A, C, D(5))",
+      "Height of a semi-attached or detached ADU, also one in a garage: 22 ft with a roof pitch of 3:12 or more, 20 ft for a flatter roof. No decks or habitable rooftop elements (311.B-114)",
+      "Setbacks of an external ADU: the house's setbacks, and side and rear setbacks at least half the ADU's height. At least 5 ft behind the build-to line. No rear setback where the rear yard abuts an alley. An ADU in a parking garage takes the parking setbacks (311.B-60C, D(2) to (4))",
+      "311.E-6D also puts accessory structures at least 3 ft from side and rear lines and behind the rearmost part of the house. Article B governs where the two conflict (311.E-6A)",
+      "An existing accessory structure that breaks a setback or coverage rule is exempt from it for the ADU, unless the change expands the nonconformity (311.B-60D(6))",
+      "ADUs are exempt from the zone's lot coverage ratios when they meet the building form standards (311.B-113)",
+      "A separate entrance that opens onto a street or has a 4 ft paved path to it. No passing through another unit (311.B-115)",
+      "No additional off-street parking (311.B-116)",
+      "The ADU must be owned by the owner of the house. A lot may not be subdivided to separate the ADU (311.A-13, 311.B-117)",
+      "Single-household occupancy. Short-term subletting is barred unless the zone permits short-term rentals. No personal service shops or offices beyond a no-impact home business (311.B-111, B-112)",
+      "Two units in a detached house: by right in R-3, R-4 and Office. In R-1 and R-2 only by special exception for a building already used that way before 4-6-2023 (311.B-21C(2), B-28C(2) and the use tables)",
+      "A conversion of a large house (2,500 sq ft detached, 1,750 sq ft semi-detached) is permitted by right in ROA and HBO, with 2,200 sq ft of lot for each unit. Those districts cite it as 311.E-18. The section is 311.E-19",
+      "Historic Resources Overlay: if a demolition permit is denied, Borough Council may allow a conversion to up to three units (R-1, R-2) or five (R-3, R-4) by conditional use (311.D-9A(1)(c))"
+    ],
+    "notes": "Zoning office: Borough of Media. Read on eCode360 in a browser, one article print view at a time. The use tables show permitted and special exception cells as symbols, so they were read from the page as displayed. Searched the definitions and the supplemental regulations for accessory dwelling, accessory apartment, supplemental dwelling, in-law, conversion and short-term rental. The older 'supplemental dwelling unit' or 'accessory apartment' text the index note mentions is not in the current Chapter 311. The Office district is shown as 'O' in the building form tables. Other districts (MERC, ROA, HBO, I) are outside Article B and have no ADU text. The earlier town survey has no Media entry."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit (ADU)",
+      "section": "311.A-13",
+      "url": "https://ecode360.com/print/ME1269?guid=44884951",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ACCESSORY DWELLING UNIT (ADU) A secondary residential living unit on the same parcel as a principal housing unit. ... It may take various forms: a detached unit; a semi-attached unit; a unit that is part of an accessory structure, such as a detached garage; or a unit that is totally integrated into the primary residence.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "311.B-108, 311.B-21, B-28, B-35, B-42, B-49",
+      "url": "https://ecode360.com/print/ME1269?guid=44885305",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory unit' is marked permitted in the use tables of R-1, R-2, R-3, R-4 and Office. 'This section shall apply to the R-1, R-2, R-3, R-4, or Office Districts.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "311.B-21B, 311.B-108",
+      "url": "https://ecode360.com/print/ME1269?guid=44885305",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Permitted use with the listed building forms. Zoning permit."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Article F-III, MPC 910.2",
+      "url": "https://ecode360.com/print/ME1269?guid=44887457",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Any use or building form not specifically permitted in the Table of Permitted Uses and Special Exceptions is prohibited' (311.B-21A). A variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two units in a detached house",
+          "path": "by_right",
+          "districts": ["R-3", "R-4", "O"],
+          "conditions": "Two units permitted in the detached house, semi-detached and attached house forms. 'Detached houses may contain up to two units if permitted within the zone.'",
+          "min_lot_sqft": null,
+          "section": "311.B-35, B-42, B-49 use tables, 311.B-57A",
+          "url": "https://ecode360.com/print/ME1269?guid=44885377",
+          "confidence": "verified",
+          "note": "Not an ADU."
+        },
+        {
+          "name": "Two units in a detached house (existing use)",
+          "path": "special_exception",
+          "districts": ["R-1", "R-2"],
+          "conditions": "Only where the building existed and was used as two units before 4-6-2023, with no abandonment since, and the building form standards are met.",
+          "min_lot_sqft": null,
+          "section": "311.B-21C(2), 311.B-28C(2)",
+          "url": "https://ecode360.com/print/ME1269?guid=44885349",
+          "confidence": "verified",
+          "note": "Not a path for a new unit."
+        },
+        {
+          "name": "Conversion of a large house",
+          "path": "by_right",
+          "districts": ["ROA", "HBO"],
+          "conditions": "A detached house of at least 2,500 sq ft (semi-detached 1,750 sq ft), basement excluded. 2,200 sq ft of lot for each unit. Multifamily dimensional rules. Parking 1 space for a one-bedroom unit, 2 for larger.",
+          "min_lot_sqft": 4400,
+          "section": "311.C-12O, 311.C-18Q, 311.E-19",
+          "url": "https://ecode360.com/print/ME1269?guid=44886659",
+          "confidence": "verified",
+          "note": "Not an ADU. The district lists cite '311.E-18', which is stormwater. The conversion rules are 311.E-19."
+        }
+      ],
+      "section": "311.B-21, 311.E-19",
+      "url": "https://ecode360.com/print/ME1269?guid=44885305",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": ["R-1", "R-2", "R-3", "R-4", "O"],
+      "section": "311.B-108",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'This section shall apply to the R-1, R-2, R-3, R-4, or Office Districts.' MERC, ROA, HBO and I have no ADU text."
+    },
+    "building_types": {
+      "value": ["detached", "semi_detached", "attached"],
+      "section": "311.B-28, B-35, B-42, B-49 use tables",
+      "url": "https://ecode360.com/print/ME1269?guid=44885349",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "With detached, semi-detached and attached houses in R-2, R-3, R-4 and Office. R-1 detached only (see gates)."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "311.B-60",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A new external ADU building is a listed building form."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "311.D-5 to D-14",
+      "url": "https://ecode360.com/print/ME1269?guid=44886434",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The Historic Resources Overlay governs demolition. No ADU path of its own."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "R-1: an ADU only with a detached house. The semi-detached and attached house columns are marked prohibited.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": ["R-1"],
+          "building_types": ["semi_detached", "attached"],
+          "section": "311.B-21B table",
+          "url": "https://ecode360.com/print/ME1269?guid=44885305"
+        },
+        {
+          "kind": "district",
+          "condition": "Office: the 'ADU, external' building form is prohibited. Only a unit integrated into the house.",
+          "effect": "bars",
+          "applies_to": ["detached_new", "garage_conversion", "over_garage", "attached"],
+          "districts": ["O"],
+          "building_types": null,
+          "section": "311.B-49B table, 311.B-60",
+          "url": "https://ecode360.com/print/ME1269?guid=44885435"
+        },
+        {
+          "kind": "size",
+          "condition": "External ADU (attached or detached): at most 800 sq ft in total, 20 ft wide, 20 ft deep, and no larger than the house's gross floor area.",
+          "effect": "condition",
+          "applies_to": ["attached", "detached_new", "garage_conversion", "over_garage"],
+          "districts": null,
+          "building_types": null,
+          "section": "311.B-60C(2), (3), (5), D(5)",
+          "url": "https://ecode360.com/print/ME1269?guid=44885470"
+        },
+        {
+          "kind": "design",
+          "condition": "External ADU: the house's setbacks, side and rear setbacks at least half its height, at least 5 ft behind the build-to line. No rear setback on an alley.",
+          "effect": "condition",
+          "applies_to": ["attached", "detached_new", "garage_conversion", "over_garage"],
+          "districts": null,
+          "building_types": null,
+          "section": "311.B-60C(1), D(2) to (4)",
+          "url": "https://ecode360.com/print/ME1269?guid=44885470"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "An existing accessory structure that does not meet a setback or coverage standard is exempt from it, unless the change expands the nonconformity.",
+          "effect": "condition",
+          "applies_to": ["garage_conversion", "over_garage"],
+          "districts": null,
+          "building_types": null,
+          "section": "311.B-60D(6)",
+          "url": "https://ecode360.com/print/ME1269?guid=44885470",
+          "test": "has_accessory_building"
+        },
+        {
+          "kind": "design",
+          "condition": "A separate entrance opening onto a street or joined to it by a clear paved path at least 4 ft wide. No access through another unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "311.B-115",
+          "url": "https://ecode360.com/print/ME1269?guid=44885853"
+        },
+        {
+          "kind": "other",
+          "condition": "The ADU is owned by the owner of the house. No subdivision to separate it.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "311.A-13, 311.B-117",
+          "url": "https://ecode360.com/print/ME1269?guid=44885853"
+        }
+      ],
+      "section": "Article B-XV, 311.B-60",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": ["internal", "attached", "detached_new", "garage_conversion", "over_garage"],
+      "section": "311.A-13, 311.B-60A, 311.B-114",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Integrated into the house, semi-attached, detached, or part of an accessory structure such as a garage, 'below or above another accessory use, including a garage or storage shed'."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "Article B-XV",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No cap for a unit integrated into the house. The external ADU cap is below."
+    },
+    "max_sqft_accessory_building": {
+      "value": 800,
+      "section": "311.B-60C(5)",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Total square footage ... 800'. With width and depth at most 20 ft each. An attached external ADU takes the same cap, which the tool cannot show on the attached form (see gates)."
+    },
+    "max_share_accessory_building": {
+      "value": 1.0,
+      "section": "311.B-60D(5)",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ADUs may not exceed the gross floor area of the primary principal structure.'"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "Article B-XV",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No minimum size."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 22,
+      "section": "311.B-114A",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ADUs may have a height of up to 22 feet where the slope of the roof meets or exceeds 14° (3:12 rise:run).' 20 ft for a flatter roof. Applies to semi-attached and detached ADUs, including those in a garage. Measured to the ridge (311.B-10). It supersedes the 14 ft accessory rule of 311.E-6C (311.B-109)."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "311.B-26, B-33, B-40, B-47",
+      "url": "https://ecode360.com/print/ME1269?guid=44885305",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit inside the house takes the district height. A semi-attached (attached) ADU is held to 22 ft by 311.B-114, which the tool cannot show apart from the house height."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "311.E-6D, 311.B-60C(1)",
+      "url": "https://ecode360.com/print/ME1269?guid=44886659",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory structures are placed 'behind the rearmost portion of the principal building' (311.E-6D), and an external ADU is at least 5 ft behind the build-to line. Article B governs a conflict, and it has no rule that puts the ADU in front of the house."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "311.B-60D(2)",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ADUs shall comply with all setback standards of the primary principal structure on site unless the ADU is part of a parking garage'."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "311.B-60D(4), 311.B-57C",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ADUs shall have side and rear yard setback a distance equal to 1/2 the height of the building.' Plus the house side setback, which depends on lot width (1 ft under 40 ft wide, 3 ft at 40 to 49, 5 ft at 50 to 59, 6 ft at 60 to 79, 10 ft at 80 or more)."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "311.B-60D(4), 311.B-57C(3), (4)",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "House rear setback (20 ft in R-1 and R-2, 15 ft in R-3 and R-4), and at least half the ADU height. See districts."
+    },
+    "setback_rear_alley_ft": {
+      "value": null,
+      "section": "311.B-60D(3)",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'ADUs are exempt from rear yard setback requirements when the rear yard abuts an alleyway.' Whether the half-height rule of D(4) still applies there is not settled."
+    },
+    "separation_ft": {
+      "value": 8,
+      "section": "311.B-60C(4)",
+      "url": "https://ecode360.com/print/ME1269?guid=44885470",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Building separation 0 feet/8 feet'. Read as 0 ft for an attached ADU and 8 ft for a detached one."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "311.B-113",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units are exempt from lot coverage ratios established in the zone so long as they meet the standards established in Article B-VIII'."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "311.A-13",
+      "url": "https://ecode360.com/print/ME1269?guid=44884951",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "An ADU is 'owned by the owner of the principal dwelling'. Common ownership, not a rule that the owner lives there."
+    },
+    "family_only": {
+      "value": false,
+      "section": "311.B-111",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Single-household occupancy.' No relative rule."
+    },
+    "max_adus": {
+      "value": null,
+      "section": "311.A-13, Article B-XV",
+      "url": "https://ecode360.com/print/ME1269?guid=44884951",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No number per lot is stated. The definition speaks of 'a secondary residential living unit'. One is the safe reading."
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "311.A-13, 311.B-117",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A lot may not be subdivided to separate an ADU from its primary principal structure.'"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "311.B-112A(1)",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Subleasing or subletting of units for short-term rental is prohibited if such use is not permitted in the underlying zone.' The R-1 to R-4 and Office use tables do not list short-term rentals."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 0,
+      "section": "311.B-116",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The addition of an ADU shall not require any additional off-street parking.'"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "Article B-XV",
+      "url": "https://ecode360.com/print/ME1269?guid=44885853",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No utility rule in the ADU article."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "311.B-57C(3)",
+        "url": "https://ecode360.com/print/ME1269?guid=44885470",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached house rear setback in R-1 and R-2."
+      },
+      "principal_max_height_ft": {
+        "value": 28,
+        "section": "311.B-26A",
+        "url": "https://ecode360.com/print/ME1269?guid=44885305",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'No building shall have a height exceeding 28 feet or a maximum of 2 1/2 stories above grade, whichever is the lesser'. Up to 35 ft and three stories in listed cases (311.B-26B)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "311.B-26A",
+        "url": "https://ecode360.com/print/ME1269?guid=44885305",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "311.B-57C(3)",
+        "url": "https://ecode360.com/print/ME1269?guid=44885470",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 28,
+        "section": "311.B-33A",
+        "url": "https://ecode360.com/print/ME1269?guid=44885349",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "28 ft or 2 1/2 stories, whichever is less. Up to 35 ft in listed cases (311.B-33B)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "311.B-33A",
+        "url": "https://ecode360.com/print/ME1269?guid=44885349",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "311.B-57C(4)",
+        "url": "https://ecode360.com/print/ME1269?guid=44885470",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Detached house rear setback in R-3 and R-4."
+      },
+      "principal_max_height_ft": {
+        "value": 28,
+        "section": "311.B-40A",
+        "url": "https://ecode360.com/print/ME1269?guid=44885377",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "28 ft or 2 1/2 stories, whichever is less. Up to 35 ft in listed cases (311.B-40B)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "311.B-40A",
+        "url": "https://ecode360.com/print/ME1269?guid=44885377",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "311.B-57C(4)",
+        "url": "https://ecode360.com/print/ME1269?guid=44885470",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "311.B-47A(1)",
+        "url": "https://ecode360.com/print/ME1269?guid=44885412",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'No building shall have a height exceeding 35 feet with a maximum of three stories above grade.'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "311.B-47A(1)",
+        "url": "https://ecode360.com/print/ME1269?guid=44885412",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}
