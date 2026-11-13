@@ -1,0 +1,7 @@
+{
+ "provenance": {"jurisdiction": "Alpha city", "instrument": "Alpha Zoning Code, ADU section", "verified_on": "2026-11-11", "code_url": "https://example.gov/alpha-code"},
+ "adu": {"status": {"value": "allowed_by_right", "section": "1", "url": "https://example.gov/alpha-code", "verified_on": "2026-11-11", "confidence": "verified"}},
+ "approval": {"path": {"value": "by_right", "section": "1", "url": "https://example.gov/alpha-code", "verified_on": "2026-11-11", "confidence": "verified"}},
+ "form": {"types_allowed": {"value": ["internal", "detached_new", "over_garage"], "section": "1", "url": "https://example.gov/alpha-code", "verified_on": "2026-11-11", "confidence": "verified"}},
+ "use": {"owner_occupancy": {"value": false, "section": "1", "url": "https://example.gov/alpha-code", "verified_on": "2026-11-11", "confidence": "verified"}}
+}

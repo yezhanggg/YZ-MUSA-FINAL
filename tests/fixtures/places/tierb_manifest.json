@@ -1,0 +1,5 @@
+{"version": 1, "places": [
+  {"geoid": "4200300006", "name": "Epsilon township", "source": "own_site", "urls": ["https://epsilon.example.gov/zoning.pdf"], "fetched_on": "2026-11-11", "doc_date": "Ordinance of 2019", "complete": true, "text_id": "4200300006"},
+  {"geoid": "4200500010", "name": "Iota township", "source": "county", "urls": ["https://example.gov/blair_zoning.pdf"], "fetched_on": "2026-11-11", "doc_date": null, "complete": true, "text_id": "4200599999"},
+  {"geoid": "4200500009", "name": "Theta township", "source": "own_site", "urls": ["https://theta.example.gov/z.pdf"], "fetched_on": "2026-11-11", "doc_date": null, "complete": false, "text_id": "4200500009"}
+]}

@@ -1,0 +1,7 @@
+{
+ "provenance": {"jurisdiction": "Beta township", "instrument": "Beta Township Zoning Ordinance", "verified_on": "2026-11-11", "code_url": "https://example.gov/beta-code"},
+ "adu": {"status": {"value": "family_only", "section": "2", "url": "https://example.gov/beta-code", "verified_on": "2026-11-11", "confidence": "verified"}},
+ "approval": {"path": {"value": "special_exception", "section": "2", "url": "https://example.gov/beta-code", "verified_on": "2026-11-11", "confidence": "verified"}},
+ "form": {"types_allowed": {"value": ["internal", "attached"], "section": "2", "url": "https://example.gov/beta-code", "verified_on": "2026-11-11", "confidence": "verified"}},
+ "use": {"owner_occupancy": {"value": true, "section": "2", "url": "https://example.gov/beta-code", "verified_on": "2026-11-11", "confidence": "verified"}}
+}

@@ -1,0 +1,4 @@
+{
+ "provenance": {"jurisdiction": "Delta borough", "instrument": "Delta draft", "source_urls": ["https://example.gov/delta-code"], "verified_on": "2026-11-11"},
+ "adu": {"status": {"value": "allowed_by_right", "section": "3", "url": "https://example.gov/delta", "verified_on": "2026-11-11", "confidence": "verified"}}
+}

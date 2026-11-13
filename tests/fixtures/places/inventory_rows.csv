@@ -1,0 +1,11 @@
+source_id,publisher,title,doc_url,locator,inventory_date,county,municipality,muni_type,reported_text,status,status_detail,unit_types,approval,notes
+inv_a,Adams Planning,ADU survey,https://example.gov/inv_a.pdf,Table 1,2024,Adams,Alpha,,Not permitted,prohibited,,,,
+inv_a,Adams Planning,ADU survey,https://example.gov/inv_a.pdf,Table 1,2024,Adams,Beta Township,,Permitted by special exception for family,limited,"family only, special exception",internal;attached,special_exception,
+inv_a,Adams Planning,ADU survey,https://example.gov/inv_a.pdf,Table 1,2024,Adams,Beta Borough,,Permitted,by_right,,internal;detached,by_right,
+inv_b,Old Region,Housing barriers,https://example.gov/inv_b.pdf,p. 9,2009,Adams,Beta Borough,borough,Special exception,limited,special exception,,special_exception,
+inv_a,Adams Planning,ADU survey,https://example.gov/inv_a.pdf,Table 1,2024,Adams,Nowhere,,Permitted,by_right,,,,
+inv_a,Adams Planning,ADU survey,https://example.gov/inv_a.pdf,Table 1,2024,Bedford,Epsilon Township,,Permitted,by_right,,,by_right,
+inv_c,Elsewhere,Undated examples,https://example.gov/c,p. 1,,Bedford,Zeta Township,,Permitted,by_right,by right in R-1,,by_right,
+inv_a,Adams Planning,ADU survey,https://example.gov/inv_a.pdf,Table 1,2024,Adams,Gamma Township,,No ADU use listed,,no ADU use listed in any of 3 districts,,,
+inv_b,Old Region,Housing barriers,https://example.gov/inv_b.pdf,p. 9,2009,Bedford,Mount Eta Borough,,Permitted: Yes (same table: No local zoning code),by_right,,,,Inventory says both Yes and No local zoning code
+inv_a,Adams Planning,ADU survey,https://example.gov/inv_a.pdf,Table 1,2024,Bedford,Kappa Township,,No Zoning,,,,,

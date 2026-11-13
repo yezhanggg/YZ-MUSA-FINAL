@@ -1,0 +1,390 @@
+{
+ "about": "Where can you build an ADU today, for every Pennsylvania county subdivision. One tier and one status per place. Not legal advice. Not a zoning determination. See docs/PLACES.md.",
+ "built_on": "2026-11-12",
+ "file": "pa_places.json",
+ "fields": [
+  "geoid",
+  "name",
+  "type",
+  "county",
+  "pop",
+  "housing_units",
+  "zoning_authority",
+  "zoning_source",
+  "status",
+  "status_detail",
+  "tier",
+  "unit_types",
+  "approval",
+  "source",
+  "rule_file",
+  "code_url",
+  "has_text_search",
+  "contact"
+ ],
+ "enums": {
+  "type": [
+   "city",
+   "borough",
+   "township",
+   "town",
+   "municipality"
+  ],
+  "zoning_authority": [
+   "municipal",
+   "county",
+   "none",
+   "unknown"
+  ],
+  "status": [
+   "by_right",
+   "limited",
+   "not_addressed",
+   "prohibited",
+   "no_zoning",
+   "unknown"
+  ],
+  "tier": [
+   "verified",
+   "drafted",
+   "reported",
+   "text_search",
+   "baseline"
+  ],
+  "unit_types": [
+   "detached",
+   "attached",
+   "internal",
+   "garage"
+  ],
+  "approval": [
+   "by_right",
+   "administrator_exception",
+   "special_exception",
+   "conditional_use",
+   "variance",
+   "not_allowed"
+  ]
+ },
+ "population": {
+  "pop": "Census Vintage 2025 subcounty estimate, July 1, 2025 (sub-est2025_42.csv)",
+  "pop_2020_fallback": [
+   "4208584376"
+  ],
+  "housing_units": "2020 Census PL 94-171 HU100"
+ },
+ "contact": "Office phone and website as the municipality filed them with DCED (County / Municipal Contact Person report). Ask the office for the zoning officer. No names or emails are copied.",
+ "code_url": "Link to the place's zoning code from shared/rules/towns_index.json (code_url, every entry whatever its status), else the rule file's provenance. null where neither has one.",
+ "no_zoning": "No zoning, so zoning does not limit an ADU. Building and sewage permits still apply. House Bill 2186 would not change such a place.",
+ "sources": {
+  "berkeley_zrt_2026": {
+   "name": "Othering & Belonging Institute, UC Berkeley: Zoning Reform Tracker (database + webmap)",
+   "url": "https://belonging.berkeley.edu/zoning-reform-tracker",
+   "date": "2026-02-28 (webmap \"Data Updated: 02-28-2026\"; page \"Updated April 23, 2026\")",
+   "licence": "Page footnote: \"We fully support and consent that the data in our tracker be used for research by housing policy researchers, research institutions, government agencies, PhD students, and other stakeholders ... Our only condition for using our data is that you cite our project in your research\" (citation: [authors], \"Zoning Reform Tracker\" (Berkeley, CA: Othering & Belonging Institute, 2023), Database Last Updated: [date], https://belonging.berkeley.edu/zoning-reform-tracker). Page footer also says \"(c) 2026 Othering and Belonging Institute. All rights reserved.\""
+  },
+  "centre_housing_needs_2005": {
+   "name": "Centre County (County Planning Office), PA: Centre County Affordable Housing Needs Assessment: A Blueprint for Action - Public Policy Barriers (Table 28: Policy Barriers in Six Municipalities)",
+   "url": "https://centrecountypa.gov/DocumentCenter/View/440",
+   "date": "2005 (PDF metadata creation 2005-10-28; text cites 2003-2004 sources)",
+   "licence": "no terms found; public government document"
+  },
+  "chesco_missingmiddle_2023": {
+   "name": "Chester County Planning Commission: Planning for Attractive Homes - Missing Middle Housing: Accessory Dwelling Unit (ADU) page, zoning ordinance examples",
+   "url": "https://chescoplanning.org/Housing/MissingMiddle/Opportunities/Low-ADU.cfm",
+   "date": "2023-01 (approximate: month the guide was announced, per CCPC news-release URL news/2023/0125-MissingMiddle.cfm which now returns 404; page itself undated)",
+   "licence": "no terms found; public government document"
+  },
+  "dced": {
+   "name": "Pennsylvania Department of Community and Economic Development (DCED), Governor's Center for Local Government Services, Municipal Statistics: Municipal/County Planning, Zoning & Building Codes (report CountyMuniBuilding_Excel), All Counties",
+   "url": "https://apps.dced.pa.gov/Munstats-public/ReportInformation2.aspx?report=CountyMuniBuilding_Excel",
+   "date": "2026-11-12",
+   "licence": "Public record of the Commonwealth of Pennsylvania. No terms of use are posted on the report pages. robots.txt (apps.dced.pa.gov) disallows only /lguda/ paths."
+  },
+  "dced_contacts": {
+   "name": "Pennsylvania DCED, Municipal Statistics: County / Municipal Contact Person (report CountyMuniContact), All Counties: office address, phone and website only",
+   "url": "https://apps.dced.pa.gov/Munstats-public/ReportInformation2.aspx?report=CountyMuniContact",
+   "date": "2026-11-12",
+   "licence": "Public record of the Commonwealth of Pennsylvania. No terms of use posted on the report pages."
+  },
+  "dvrpc_mit_toolbox_2019": {
+   "name": "Delaware Valley Regional Planning Commission: Municipal Implementation Toolbox mailer (Report 20007), ADU case: Plumstead Township",
+   "url": "https://www.dvrpc.org/Reports/20007.pdf",
+   "date": "2019 (PDF metadata 2019-09-04)",
+   "licence": "no terms found; public government document (no robots.txt on host)"
+  },
+  "luzerne": {
+   "name": "Luzerne County Department of Planning and Zoning: Zoning: municipalities under the 2021 Luzerne County Zoning Ordinance (19 of 76)",
+   "url": "https://www.luzernecounty.org/307/Zoning",
+   "date": "2026-04-22",
+   "licence": "Public county government web page. No reuse terms found."
+  },
+  "lycoming": {
+   "name": "Lycoming County Department of Planning and Community Development: Zoning: the Lycoming County Zoning Partnership (19 municipalities)",
+   "url": "https://lycomingcountypa.gov/government/departments/planning_community_development/zoning.php",
+   "date": "2026-11-12",
+   "licence": "Public county government web page. No reuse terms found. No robots.txt (404)."
+  },
+  "ycpc_senior_housing_2024": {
+   "name": "York County Planning Commission: Senior Housing Opportunities by Municipality (PDF, 18 pp.)",
+   "url": "https://www.ycpc.org/DocumentCenter/View/5314/Senior-Housing-Opportunities-by-Municipality-PDF",
+   "date": "2024-09 (PDF metadata creation date 2024-09-03; no data date stated in the document)",
+   "licence": "Site footer: \"All content (c) 2006-2026 York County Planning Commission PA and its representatives. All rights reserved.\" (https://www.ycpc.org/copyright). PDF disclaimer: \"The York County Planning Commission provides this data as a public information service and it should be used for general information only ... the YCPC does not guarantee its accuracy, completeness, or timeliness.\" Openly posted public-agency document; only factual cell contents transcribed."
+  }
+ },
+ "counts": {
+  "places": 2572,
+  "pop_total": 13060017,
+  "by_tier": [
+   {
+    "tier": "baseline",
+    "places": 1901,
+    "pop": 7947600,
+    "pop_share": 0.6085,
+    "housing_units": 3466985
+   },
+   {
+    "tier": "verified",
+    "places": 28,
+    "pop": 3197242,
+    "pop_share": 0.2448,
+    "housing_units": 1423813
+   },
+   {
+    "tier": "reported",
+    "places": 570,
+    "pop": 1010872,
+    "pop_share": 0.0774,
+    "housing_units": 465226
+   },
+   {
+    "tier": "drafted",
+    "places": 17,
+    "pop": 736870,
+    "pop_share": 0.0564,
+    "housing_units": 310050
+   },
+   {
+    "tier": "text_search",
+    "places": 56,
+    "pop": 167433,
+    "pop_share": 0.0128,
+    "housing_units": 76754
+   }
+  ],
+  "by_status": [
+   {
+    "status": "unknown",
+    "places": 1957,
+    "pop": 8115033,
+    "pop_share": 0.6214,
+    "housing_units": 3543739
+   },
+   {
+    "status": "limited",
+    "places": 51,
+    "pop": 2710729,
+    "pop_share": 0.2076,
+    "housing_units": 1190376
+   },
+   {
+    "status": "not_addressed",
+    "places": 21,
+    "pop": 810912,
+    "pop_share": 0.0621,
+    "housing_units": 334677
+   },
+   {
+    "status": "by_right",
+    "places": 13,
+    "pop": 670560,
+    "pop_share": 0.0513,
+    "housing_units": 310998
+   },
+   {
+    "status": "no_zoning",
+    "places": 527,
+    "pop": 648621,
+    "pop_share": 0.0497,
+    "housing_units": 323825
+   },
+   {
+    "status": "prohibited",
+    "places": 3,
+    "pop": 104162,
+    "pop_share": 0.008,
+    "housing_units": 39213
+   }
+  ],
+  "by_zoning_authority": [
+   {
+    "zoning_authority": "municipal",
+    "places": 1640,
+    "pop": 11936722,
+    "pop_share": 0.914,
+    "housing_units": 5177976
+   },
+   {
+    "zoning_authority": "none",
+    "places": 527,
+    "pop": 648621,
+    "pop_share": 0.0497,
+    "housing_units": 323825
+   },
+   {
+    "zoning_authority": "unknown",
+    "places": 267,
+    "pop": 253943,
+    "pop_share": 0.0194,
+    "housing_units": 132576
+   },
+   {
+    "zoning_authority": "county",
+    "places": 138,
+    "pop": 220731,
+    "pop_share": 0.0169,
+    "housing_units": 108451
+   }
+  ],
+  "tier_x_status": [
+   {
+    "tier": "baseline",
+    "status": "unknown",
+    "places": 1901,
+    "pop": 7947600
+   },
+   {
+    "tier": "drafted",
+    "status": "by_right",
+    "places": 4,
+    "pop": 223490
+   },
+   {
+    "tier": "drafted",
+    "status": "limited",
+    "places": 6,
+    "pop": 265655
+   },
+   {
+    "tier": "drafted",
+    "status": "not_addressed",
+    "places": 7,
+    "pop": 247725
+   },
+   {
+    "tier": "reported",
+    "status": "by_right",
+    "places": 7,
+    "pop": 63924
+   },
+   {
+    "tier": "reported",
+    "status": "limited",
+    "places": 34,
+    "pop": 289997
+   },
+   {
+    "tier": "reported",
+    "status": "no_zoning",
+    "places": 527,
+    "pop": 648621
+   },
+   {
+    "tier": "reported",
+    "status": "prohibited",
+    "places": 2,
+    "pop": 8330
+   },
+   {
+    "tier": "text_search",
+    "status": "unknown",
+    "places": 56,
+    "pop": 167433
+   },
+   {
+    "tier": "verified",
+    "status": "by_right",
+    "places": 2,
+    "pop": 383146
+   },
+   {
+    "tier": "verified",
+    "status": "limited",
+    "places": 11,
+    "pop": 2155077
+   },
+   {
+    "tier": "verified",
+    "status": "not_addressed",
+    "places": 14,
+    "pop": 563187
+   },
+   {
+    "tier": "verified",
+    "status": "prohibited",
+    "places": 1,
+    "pop": 95832
+   }
+  ]
+ },
+ "conflicts": [
+  {
+   "geoid": "4202766736",
+   "name": "Rush township",
+   "kind": "inventory_no_zoning_vs_dced_zoning",
+   "kept": "DCED: municipal zoning (2026-11-12)",
+   "other": "by_right (centre_housing_needs_2005, 2005)",
+   "note": "The inventory says the place had no zoning code then. DCED now records zoning, so the old answer is not used"
+  },
+  {
+   "geoid": "4202786544",
+   "name": "Worth township",
+   "kind": "inventory_no_zoning_vs_dced_zoning",
+   "kept": "DCED: municipal zoning (2026-11-12)",
+   "other": "by_right (centre_housing_needs_2005, 2005)",
+   "note": "The inventory says the place had no zoning code then. DCED now records zoning, so the old answer is not used"
+  },
+  {
+   "geoid": "4210160000",
+   "name": "Philadelphia city",
+   "kind": "rule_file_vs_inventory",
+   "kept": "verified limited (philadelphia)",
+   "other": "by_right (berkeley_zrt_2026, 2026-02-28)",
+   "note": "by right in single-family zoned areas; interior or existing detached structure only; max 800 sq ft (inventory dated 2026-02-28)"
+  },
+  {
+   "geoid": "4213321296",
+   "name": "East Hopewell township",
+   "kind": "inventory_use_check",
+   "kept": "reported limited (ycpc_senior_housing_2024, 2024-09)",
+   "other": "the inventory lists this use in its ADU column",
+   "note": "Check whether this use is an ADU. Accessory Mobile Home (min. 2 acres) special exception (A-1, GC, RR) (inventory dated 2024-09)"
+  },
+  {
+   "geoid": "4213325584",
+   "name": "Felton borough",
+   "kind": "inventory_use_check",
+   "kept": "reported limited (ycpc_senior_housing_2024, 2024-09)",
+   "other": "the inventory lists this use in its ADU column",
+   "note": "Check whether this use is an ADU. Multiple Dwelling Structures by right (VC); not listed in residential-named district(s) R (inventory dated 2024-09)"
+  },
+  {
+   "geoid": "4213373096",
+   "name": "Springfield township",
+   "kind": "inventory_use_check",
+   "kept": "reported limited (ycpc_senior_housing_2024, 2024-09)",
+   "other": "the inventory lists this use in its ADU column",
+   "note": "Check whether this use is an ADU. Conservation Easement Residential Dwelling conditional use (A, C, R, ROS, VC) (inventory dated 2024-09)"
+  },
+  {
+   "geoid": "4213387048",
+   "name": "York city",
+   "kind": "rule_file_vs_inventory_detail",
+   "kept": "verified limited, class conversion_only (pa_york_york)",
+   "other": "limited, class discretionary (ycpc_senior_housing_2024, 2024-09)",
+   "note": "ADU special exception (MUI1, MUI2, RS1, RS2, UN1, UN2) (inventory dated 2024-09)"
+  }
+ ],
+ "dced_unmatched": [],
+ "inventory_unmatched": []
+}

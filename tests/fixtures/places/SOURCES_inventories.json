@@ -1,0 +1,5 @@
+[
+  {"source_id": "inv_a", "publisher": "Adams Planning", "title": "ADU survey", "url": "https://example.gov/inv_a.pdf", "inventory_date": "2024", "licence_or_terms": "public document", "used": true},
+  {"source_id": "inv_b", "publisher": "Old Region", "title": "Housing barriers", "url": "https://example.gov/inv_b.pdf", "inventory_date": "2009", "licence_or_terms": "public document", "used": true},
+  {"source_id": "inv_c", "publisher": "Elsewhere", "title": "Not used", "url": "https://example.gov/c", "inventory_date": "2020", "licence_or_terms": "all rights reserved", "used": false}
+]

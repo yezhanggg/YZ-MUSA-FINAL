@@ -1,0 +1,14 @@
+geoid,name,basename,county,type,pop_2020,housing_units
+4200100001,Alpha city,Alpha,Adams,city,50000,20000
+4200100002,Beta township,Beta,Adams,township,8000,3000
+4200100003,Beta borough,Beta,Adams,borough,2000,900
+4200100004,Gamma township,Gamma,Adams,township,600,250
+4200100005,Delta borough,Delta,Adams,borough,1500,700
+4200300006,Epsilon township,Epsilon,Bedford,township,900,400
+4200300007,Zeta township,Zeta,Bedford,township,700,300
+4200300008,Mount Eta borough,Mount Eta,Bedford,borough,1100,500
+4200500008,Mount Eta borough,Mount Eta,Blair,borough,300,120
+4200500009,Theta township,Theta,Blair,township,5000,2100
+4200500010,Iota township,Iota,Blair,township,4000,1700
+4200000000,County subdivisions not defined,County subdivisions not defined,Blair,other,0,0
+4200300011,Kappa township,Kappa,Bedford,township,450,200

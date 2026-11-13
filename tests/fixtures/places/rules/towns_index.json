@@ -1,0 +1,8 @@
+{
+ "about": "Fixture index for tests/test_places_index.py",
+ "towns": [
+  {"geoid": "4200100001", "geoid_aliases": [], "name": "Alpha city", "county": "Adams", "type": "city", "file": "pa_adams_alpha", "status": "verified", "checked_on": "2026-11-11", "code_url": "https://example.gov/alpha-code", "status_note": null},
+  {"geoid": "4200100002", "geoid_aliases": [], "name": "Beta township", "county": "Adams", "type": "township", "file": "pa_adams_beta", "status": "drafted", "checked_on": "2026-11-11", "code_url": "https://example.gov/beta-code", "status_note": "Family-only unit by special exception. Open: parking count (2 or 4 spaces)."},
+  {"geoid": "4200100005", "geoid_aliases": [], "name": "Delta borough", "county": "Adams", "type": "borough", "file": "pa_adams_delta", "status": "todo", "checked_on": null, "code_url": null, "status_note": null}
+ ]
+}
