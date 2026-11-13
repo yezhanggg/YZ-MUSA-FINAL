@@ -85,14 +85,14 @@
     "alternatives": {
       "value": [
         {
-          "name": "Historic carriage house adaptive reuse",
+          "name": "Historic carriage house adaptive reuse (only a listed historic carriage house)",
           "path": "by_right",
           "districts": [
             "NC-1",
             "NC-2",
             "TC"
           ],
-          "conditions": "Only a historic carriage house on the borough's inventory map, the National Register, a determination of eligibility, or named by Borough Council. A dwelling may be created in it as a separate unit on the lot of a house, or an ADU, office or studio. Not subdivided from the lot. HARB reviews the design. The Zoning Officer sets the parking and approves before the building permit. No student home.",
+          "conditions": "Only a historic carriage house on the borough's inventory map, the National Register, a determination of eligibility, or named by Borough Council. A dwelling may be created in it as a separate unit on the lot of a house, or an ADU, office or studio. Not subdivided from the lot. HARB reviews the design. The Zoning Officer sets the parking and approves before the building permit. No student home. 112-505 has no owner occupancy, size, bedroom or two-person rule.",
           "min_lot_sqft": null,
           "adu_listing": true,
           "section": "112-505, 112-304B row 2, 112-202 'Historic carriage house'",
@@ -407,12 +407,12 @@
       "note": "Not addressed. The unit must be on the same lot as the house (112-903I(7))."
     },
     "short_term_rental_banned": {
-      "value": true,
+      "value": null,
       "section": "112-304D row 23, 112-202 'Short term rental'",
       "url": "https://ecode360.com/6472406",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "A short term rental (a dwelling unit rented for under 30 days) is a special exception in TC only, and not listed in NC-1 or NC-2. In TC it may be possible by special exception."
+      "note": "Differs by district. A short term rental (a dwelling unit rented for under 30 days) is a special exception in TC, so an ADU there may be one with Zoning Hearing Board approval. It is not listed in NC-1 or NC-2, where it is not permitted."
     }
   },
   "parking": {

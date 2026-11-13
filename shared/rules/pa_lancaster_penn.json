@@ -4,7 +4,7 @@
     "instrument": "Code of the Township of Penn (Lancaster County), Chapter 27 Zoning (Ord. No. 2022-01, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Chapter 27 was adopted as a whole by Ord. No. 2022-01 (1/10/2022). 27-402 (specific use standards) was last amended by Ord. No. 2024-03 (6/10/2024), the latest ordinance cited in the chapter. eCode360 New Laws (read 2026-11-13): Ord. 2026-02 (data centers) and Ord. 2026-03 (large agricultural operation). The first page of each was read: both are Penn Township, Lancaster County, and neither touches the accessory dwelling rules. This is eCode360 code PE3692, the Penn Township around Manheim, not the Penn Townships of other counties.",
+    "status_detail": "Chapter 27 was adopted as a whole by Ord. No. 2022-01 (1/10/2022). 27-402 (specific use standards) was last amended by Ord. No. 2024-03 (6/10/2024), the latest ordinance cited in the chapter. eCode360 New Laws (read 2026-11-13): Ord. 2026-02 (data centers) and Ord. 2026-03 (large agricultural operation). Both were read (first pages, and the review read the second pages): Ord. 2026-02 adds data centers (special exception in LC, new 27-402.83), Ord. 2026-03 adds a large agricultural operation (special exception in AG on 350 acres). Both are Penn Township, Lancaster County, and neither changes the accessory dwelling rules. This is eCode360 code PE3692, the Penn Township around Manheim, not the Penn Townships of other counties.",
     "effective_date": "2022-01-10",
     "source_urls": [
       "https://ecode360.com/30832287",
@@ -12,6 +12,10 @@
       "https://ecode360.com/39350230",
       "https://ecode360.com/39351529",
       "https://ecode360.com/39352684",
+      "https://ecode360.com/39350723",
+      "https://ecode360.com/39350808",
+      "https://ecode360.com/39350829",
+      "https://ecode360.com/39350853",
       "https://ecode360.com/39358257",
       "https://ecode360.com/39350728",
       "https://ecode360.com/39350762",
@@ -42,7 +46,7 @@
       "Parking: one all-weather space for the unit in addition to the house's two, three in all (27-402.1E, 27-310)",
       "Every dwelling unit needs at least 400 sq ft of habitable heated floor area (27-307)",
       "A detached accessory structure may be 20 ft tall, or the house height on a lot over one acre when it meets the principal setbacks (27-302.1E)",
-      "Two-family conversion by right in AG, SR, RM and V: only a single-family detached house that had at least 3,000 sq ft of habitable floor area before 1-1-2021, into two units, no exterior change, four parking spaces in all. No family rule (Table 27-202.3 note 4, 27-402.75)",
+      "Two-family conversion by right in AG, SR, RM and V: only a single-family detached house that had at least 3,000 sq ft of habitable floor area before 1-1-2021 (the table) or on the chapter's effective date, 1-10-2022 (27-402.75A), into two units, no exterior change, four parking spaces in all. No family rule (Table 27-202.3 note 4, 27-402.75)",
       "Two-family and semidetached dwellings are permitted in RM, V and MU (Tables 27-202.3, 27-202.4)",
       "Short-term rentals are not allowed in CN, AG, SR, RM, V, MU, CLI, I or Q, and need a special exception in COM and LC (Tables 27-202.3, 27-202.4)",
       "On a nonconforming lot of record a single-family detached house and customary accessory uses may be built if the setbacks are met (27-508)"
@@ -95,10 +99,11 @@
             "RM",
             "V"
           ],
-          "conditions": "Only a single-family detached house that existed with at least 3,000 sq ft of habitable floor area before 1-1-2021, into at most two units. Approved water and sewage. No exterior change except fire escapes. Four parking spaces in all. No family rule.",
+          "conditions": "Only a single-family detached house with at least 3,000 sq ft of habitable floor area that existed before 1-1-2021 (Table 27-202.3 note 4) or on the chapter's effective date, 1-10-2022 (27-402.75A). The two dates differ. Into at most two units. Approved water and sewage. No exterior change except fire escapes. Four parking spaces in all. No family rule.",
           "min_lot_sqft": null,
           "section": "Table 27-202.3 note 4, 27-402.75",
-          "url": "https://ecode360.com/39351529"
+          "url": "https://ecode360.com/39351529",
+          "confidence": "secondary"
         },
         {
           "name": "Two-family dwelling",
@@ -599,6 +604,217 @@
         "url": "https://ecode360.com/39350770",
         "verified_on": "2026-11-13",
         "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "27-206",
+        "url": "https://ecode360.com/39350770",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with public sewer. 40 ft with water only or with well and septic."
+      }
+    },
+    "CN": {
+      "min_lot_sqft": {
+        "value": 435600,
+        "section": "27-203",
+        "url": "https://ecode360.com/39350723",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Principal use, 10 acres. Width 250 ft, depth 350 ft. Lots limited by parent tract subdivision rights."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-203",
+        "url": "https://ecode360.com/39350723",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Minimum building setback from all lot lines."
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "27-203",
+        "url": "https://ecode360.com/39350723",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-203",
+        "url": "https://ecode360.com/39350723",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-203",
+        "url": "https://ecode360.com/39350723",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.06,
+        "section": "27-203",
+        "url": "https://ecode360.com/39350723",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot coverage, combined principal and accessory."
+      },
+      "accessory_setback_side_ft": {
+        "value": 50,
+        "section": "27-203",
+        "url": "https://ecode360.com/39350723",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Accessory use 50 ft. The ADU meets the principal setbacks anyway (27-402.1F)."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 50,
+        "section": "27-203",
+        "url": "https://ecode360.com/39350723",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "27-208.1",
+        "url": "https://ecode360.com/39350808",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer (W and S). 43,560 without both, then width 150, front 30, side 25, rear 50, 15%."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "27-208.1",
+        "url": "https://ecode360.com/39350808",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-208.1",
+        "url": "https://ecode360.com/39350808",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-208.1",
+        "url": "https://ecode360.com/39350808",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-208.1",
+        "url": "https://ecode360.com/39350808",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-208.1",
+        "url": "https://ecode360.com/39350808",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot coverage, with water and sewer."
+      }
+    },
+    "COM": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "27-209.1",
+        "url": "https://ecode360.com/39350829",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Other allowed uses with public sewer and water. 43,560 without both (then rear 50 ft, 35 ft height, 40%). No separate house row."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "27-209.1",
+        "url": "https://ecode360.com/39350829",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "15 ft minimum, 70 ft maximum."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-209.1",
+        "url": "https://ecode360.com/39350829",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-209.1",
+        "url": "https://ecode360.com/39350829",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 60,
+        "section": "27-209.1",
+        "url": "https://ecode360.com/39350829",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "With public sewer and water. 35 ft without."
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "27-209.1",
+        "url": "https://ecode360.com/39350829",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Lot coverage, with sewer and water."
+      }
+    },
+    "LC": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "27-210",
+        "url": "https://ecode360.com/39350853",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "With public sewer and water. 20,000 sewer only, 32,670 water only, 43,560 neither."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-210",
+        "url": "https://ecode360.com/39350853",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "From the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-210",
+        "url": "https://ecode360.com/39350853",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-210",
+        "url": "https://ecode360.com/39350853",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-210",
+        "url": "https://ecode360.com/39350853",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "27-210",
+        "url": "https://ecode360.com/39350853",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Lot coverage with sewer and water. 50% sewer only, 35% otherwise."
       }
     }
   }

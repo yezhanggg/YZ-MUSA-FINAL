@@ -4,7 +4,7 @@
     "instrument": "Code of the Township of East Brandywine, Chapter 399 Zoning (Zoning Ordinance of 1989, Ord. No. 89-01, as amended), with definitions in Chapter 300, as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Chapter 399 adopted 4-27-1989 by Ord. No. 89-01. 399-91 (accessory dwellings) amended 3-17-1998, 3-27-2002, 7-21-2004 (Ord. 04-03), 3-7-2013 (Ord. 02-2013), 7-16-2014 (Ord. 02-2014, which added the by-right standards in 399-91C) and 12-20-2018 (Ord. 07-2018). The district use lists were last amended 4-16-2026 (Ord. 02-2026). Definitions moved to Chapter 300, 300-17, in 2016 (Ord. 06-2016). eCode360 New Laws (read 2026-11-13): Ord. 05-2026 (11-5-2026, a corrected zoning map scale) and Ord. 06-2026 (11-5-2026, 399-75 in an age-qualified community). The first page of each was read. Neither touches the accessory dwelling rules.",
+    "status_detail": "Chapter 399 adopted 4-27-1989 by Ord. No. 89-01. 399-91 (accessory dwellings) amended 3-17-1998, 3-27-2002, 7-21-2004 (Ord. 04-03), 3-7-2013 (Ord. 02-2013), 7-16-2014 (Ord. 02-2014, which added the by-right standards in 399-91C) and 12-20-2018 (Ord. 07-2018). The district use lists were last amended 4-16-2026 (Ord. 02-2026). Definitions moved to Chapter 300, 300-17, in 2016 (Ord. 06-2016). eCode360 New Laws (read 2026-11-13): Ord. 05-2026 (11-5-2026, a corrected zoning map scale) and Ord. 06-2026 (11-5-2026, 399-75 in an age-qualified community). Ord. 05-2026 replaces the zoning map to fix its scale. Ord. 06-2026 amends 399-75 for side and rear yards in an age-qualified community. Both were read and neither touches the accessory dwelling rules.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/11881518",
@@ -15,6 +15,7 @@
       "https://ecode360.com/45605419",
       "https://ecode360.com/45605449",
       "https://ecode360.com/11883427",
+      "https://ecode360.com/11883441",
       "https://ecode360.com/11882175",
       "https://ecode360.com/11882197",
       "https://ecode360.com/11882325",
@@ -50,7 +51,11 @@
       "A recorded memorandum of the Board's decision. A use and occupancy permit renewed every year, inspection at least every three years and at each change of occupant (399-91B(11), (12), C(8))",
       "Conversion of a house that existed on 4-27-1989 into two (up to five) units is a separate path with no family rule: special exception in R-1, R-2, R-3 and VC, by right in TND-1. New units at least 950 sq ft (800 by right) (399-96)",
       "Class I or Class II historic resources may add a two-family dwelling by conditional use in R-1, R-2, MU, CS/LI and I/R (399-67C)",
-      "A vacant nonconforming lot in single and separate ownership may be built on if the yards are met, else by special exception (399-125A)"
+      "A vacant nonconforming lot in single and separate ownership may be built on if the yards are met, else by special exception (399-125A)",
+      "In TND-1 the by-right standards (399-91C) set a 500 sq ft minimum and no maximum. The 800 sq ft cap shown by the tool is the special exception cap (399-91B(4)) and does not apply in TND-1",
+      "In TND-1 and VC the district lot rules apply only where adequate sewage and water are shown. Otherwise the R-3 single-family rules (1 acre) apply (399-40A, 399-160A)",
+      "Houses in a clustered residential development sit on lots smaller than the district minimum, so 399-91B(5) bars a unit inside such a house by special exception (399-21A(2), 399-33A(2))",
+      "A tenant house is a separate path on a farm of 10 acres or more in R-1, R-2 and R-3: one per property, may be newly built, no family rule (399-97G)"
     ],
     "notes": "Zoning office: East Brandywine Township. Districts (399-10A): R-1, R-2, R-3, VC, TND-1, MU, CS/LI, I/R, with overlays (floodplain, steep slope, water hazard soils, historic resources, mobile home park in R-1, TND-2 and age-qualified in R-2 and R-3). Read on eCode360 in a browser, section print views and the chapter print view searched in the page. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, tenant house, carriage house, second dwelling, guest house, short-term, transient. No short-term rental rule. 399-92 allows renting rooms in the dwelling to not more than two nontransient persons."
   },
@@ -173,11 +178,25 @@
           "districts": [
             "TND-1"
           ],
-          "conditions": "Permitted use in TND-1. Its lot rules sit outside 399-40 and were not read for this file.",
-          "min_lot_sqft": null,
-          "section": "399-39A(2)",
-          "url": "https://ecode360.com/11882589",
-          "confidence": "secondary"
+          "conditions": "Permitted use in TND-1. A net lot area of 3,500 sq ft per dwelling unit (7,000 for two), width 40 ft, front 5 to 12 ft build-to, side 7.5 ft, rear 25 ft. No family rule.",
+          "min_lot_sqft": 7000,
+          "section": "399-39A(2), 399-41A",
+          "url": "https://ecode360.com/11882618"
+        },
+        {
+          "name": "Tenant house on a farm of 10 acres or more",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "On a property used for agriculture that is 10 acres or more, one tenant house in addition to the main house. One per property. It may be newly built where no second dwelling existed on the effective date. Sited so the tenant house could later be subdivided onto its own lot. No family or employee rule in the text. Agriculture is a permitted use in R-1, R-2 and R-3.",
+          "min_lot_sqft": 435600,
+          "section": "399-97G, 399-21A(1), 399-27A(1), 399-33A(1)",
+          "url": "https://ecode360.com/11883441",
+          "confidence": "secondary",
+          "note": "The property must be in agricultural use. Ask the township what counts."
         },
         {
           "name": "Two-family dwelling on a Class I or Class II historic resource",
@@ -542,11 +561,18 @@
     },
     "total_on_site": {
       "value": 3,
-      "section": "399-108A(1)",
+      "section": "399-91B(9), 399-108A(1)",
       "url": "https://ecode360.com/11883553",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "Single-family dwellings: two spaces per dwelling unit, plus one."
+      "note": "By special exception: the house's two spaces plus one. In TND-1 see parking.reading."
+    },
+    "reading": {
+      "value": "Special exception: one more space, three in all (399-91B(9)). By right in TND-1: 399-91C sets no parking figure, so 399-108A(1) ('single-family and two-family dwellings: two parking spaces for each dwelling unit') may ask two for the unit, four in all. Ask the zoning officer.",
+      "section": "399-91B(9), C, 399-108A(1)",
+      "url": "https://ecode360.com/11883553",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
     }
   },
   "utilities": {

@@ -4,8 +4,8 @@
     "instrument": "Code of Ordinances of the Borough of Doylestown, Chapter 27 Zoning (Ord. 1972-10, as amended), with Attachment 5 (Table of Use Regulations) and Attachment 6 (Table of Dimensional Requirements), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Chapter 27 rests on Ord. 1972-10 (10/16/1972). Use 61.1, Accessory Dwelling Unit, sits in 27-406, whose amendment line ends with Ord. No. 2024-5 (7/15/2024), 2025-2 (4/21/2025), 2026-5 (4/20/2026) and 2026-13 (9/22/2026). The definitions (27-202) and the Table of Use Regulations were also amended by Ord. No. 2026-5, so the ADU listing is read as added on 4/20/2026. Not confirmed from the ordinance itself. eCode360 shows 'Includes legislation through 09-22-2026'. New Laws (read 2026-11-13): none.",
-    "effective_date": "2026-04-20",
+    "status_detail": "Chapter 27 rests on Ord. 1972-10 (10/16/1972). Use 61.1, Accessory Dwelling Unit, sits in 27-406, whose amendment line ends with Ord. No. 2024-5 (7/15/2024), 2025-2 (4/21/2025), 2026-5 (4/20/2026) and 2026-13 (9/22/2026). The adopting ordinance is not confirmed. The Borough Zoning and Planning Committee minutes of 5-11-2026 show the ADU ordinance still in draft ('The Committee agreed to allow the Ordinance to move forward to the Planning Commission'), so Ord. 2026-5 (4/20/2026) is unlikely to be it. The only later ordinance on the 27-406 and Attachment 5 amendment lines is Ord. No. 2026-13 (9/22/2026), and Attachment 5 carries Supp 115, Sep 2026. So the ADU rule most likely took effect 9-22-2026 by Ord. 2026-13. Ord. 2026-13 itself could not be found: it is codified, so it is no longer on eCode360 New Laws, and searches of the borough's own pages found no copy. eCode360 shows 'Includes legislation through 09-22-2026'. New Laws (read 2026-11-13): none.",
+    "effective_date": null,
     "source_urls": [
       "https://ecode360.com/11768539",
       "https://ecode360.com/print/DO1641?guid=11768539",
@@ -19,7 +19,8 @@
       "https://ecode360.com/16054796",
       "https://ecode360.com/attachment/339140/DO1641-27e%20Table%20of%20Use%20Regulations.pdf",
       "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
-      "https://ecode360.com/DO1641/laws"
+      "https://ecode360.com/DO1641/laws",
+      "https://storage.googleapis.com/dtown/ZP-MAY-2026-MINUTES.pdf"
     ],
     "verified_on": "2026-11-13",
     "county": "Bucks",
@@ -310,12 +311,35 @@
       "note": "No separate height for a detached unit. Accessory buildings inside a required rear yard are limited to 15 ft (27-518), but the unit must meet the house's yards, so the district height (35 ft or 3 stories) applies."
     },
     "separation_ft": {
-      "value": 25,
+      "value": null,
       "section": "27-521",
       "url": "https://ecode360.com/16054436",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "At least 25 ft, or 200% of the taller building's height in R-1, R-2 and R-3 (100% in CR), whichever is greater, between facing walls with a window."
+      "note": "Not one number: the greater of 25 ft or 200% of the taller building's height in R-1, R-2 and R-3 (100% in CR), between facing walls where one has a window. With a 30 ft house, 60 ft in R-1 to R-3 and 30 ft in CR. See districts for the figure at the 35 ft district height."
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "27-518, 27-522, Attachment 6 use 61",
+      "url": "https://ecode360.com/16054430",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No separate height for a detached unit that meets the house's yards. The district height (35 ft or 3 stories) applies. 27-518 allows a lower building in the required rear yard (see max_height_where)."
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 15,
+          "where": "in the required rear yard, at the district side yard distance and at least 15 ft farther back from the street than the rearmost part of the house",
+          "section": "27-518",
+          "url": "https://ecode360.com/16054430",
+          "note": "'Such accessory building, structure, or use shall not exceed 15 feet in height.' Outside the required yards the district height applies."
+        }
+      ],
+      "section": "27-518",
+      "url": "https://ecode360.com/16054430",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
     }
   },
   "use": {
@@ -387,6 +411,14 @@
   },
   "districts": {
     "R-1": {
+      "separation_ft": {
+        "value": 70,
+        "section": "27-521, Attachment 6 R-1",
+        "url": "https://ecode360.com/16054436",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Greater of 25 ft or 200% of the taller building's height. 70 ft is the figure for a 35 ft building, the district maximum. Lower for lower buildings. Not for facing walls neither of which has a window (note 9)."
+      },
       "min_lot_sqft": {
         "value": 20000,
         "section": "Attachment 6 R-1",
@@ -440,6 +472,14 @@
       }
     },
     "R-2": {
+      "separation_ft": {
+        "value": 70,
+        "section": "27-521, Attachment 6 R-2",
+        "url": "https://ecode360.com/16054436",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Greater of 25 ft or 200% of the taller building's height. 70 ft is the figure for a 35 ft building, the district maximum. Lower for lower buildings. Not for facing walls neither of which has a window (note 9)."
+      },
       "min_lot_sqft": {
         "value": 13500,
         "section": "Attachment 6 R-2",
@@ -492,6 +532,14 @@
       }
     },
     "R-3": {
+      "separation_ft": {
+        "value": 70,
+        "section": "27-521, Attachment 6 R-3",
+        "url": "https://ecode360.com/16054436",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Greater of 25 ft or 200% of the taller building's height. 70 ft is the figure for a 35 ft building, the district maximum. Lower for lower buildings. Not for facing walls neither of which has a window (note 9)."
+      },
       "min_lot_sqft": {
         "value": 13500,
         "section": "Attachment 6 R-3",
@@ -544,6 +592,14 @@
       }
     },
     "CR": {
+      "separation_ft": {
+        "value": 35,
+        "section": "27-521, Attachment 6 CR",
+        "url": "https://ecode360.com/16054436",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Greater of 25 ft or 100% of the taller building's height. 35 ft is the figure for a 35 ft building, the district maximum. Lower for lower buildings. Not for facing walls neither of which has a window (note 9)."
+      },
       "min_lot_sqft": {
         "value": 5000,
         "section": "Attachment 6 CR",

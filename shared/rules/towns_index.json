@@ -1551,7 +1551,7 @@
       "pop_rank": 811,
       "file": "pa_chester_malvern",
       "batch": 11,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11230593",
@@ -1561,7 +1561,7 @@
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. special_exception, 'supplemental dwelling unit or accessory apartment' (220-2401A(11)) in R1, R2, R3a, R3b only, inside an existing house or accessory building, owner-occupied, 35% of the house and at least 400 sq ft. Open: I4 lists all 220-2401A accessory uses by right with no exception for A(11) (districts_in_doubt). Whether 220-2401A(11)(c) ties the unit to a conforming lot (read as yes, secondary). Zoning matrix attachment (image PDF) not read."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch11), fixes applied (I4 settled by the zoning matrix, historic multifamily in the overlay only). special_exception, supplemental dwelling unit (220-2401A(11)) in R1, R2, R3a, R3b. For a later check: Council voted down a full rewrite of Chapter 220 on 10-20-2026 (code_caution). Lot area per dwelling unit in R3a and R3b (220-602A(1), B(1)), secondary."
     },
     {
       "geoid": "4202920864",
@@ -1575,7 +1575,7 @@
       "pop_rank": 272,
       "file": "pa_chester_east_brandywine",
       "batch": 11,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11881518",
@@ -1585,7 +1585,7 @@
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. family_only (relative of the owner, 399-91B(2)). Special exception in R-1, R-2, R-3, VC, by right in TND-1 (399-39A(5), inside the existing house only). Open: the 800 sq ft cap of 399-91B(4) is shown in TND-1, where the by-right standards (399-91C) set no maximum. Whether an addition counts under the by-right standards. Ord. 05-2026 and 06-2026 (11-5-2026) not yet codified, first pages read (map scale, 399-75)."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch11), fixes applied (TND-1 two-family 7,000 sq ft, TND-1 parking reading, tenant house alternative 399-97G). family_only: special exception in R-1, R-2, R-3, VC, by right in TND-1. For a later check: the 800 sq ft cap does not apply in TND-1 (399-91C), which the schema cannot show. Ord. 05-2026 and 06-2026 read, no ADU change."
     },
     {
       "geoid": "4202982704",
@@ -1599,7 +1599,7 @@
       "pop_rank": 111,
       "file": "pa_chester_west_chester",
       "batch": 11,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/6471979",
@@ -1609,7 +1609,7 @@
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. allowed_by_right in NC-1, NC-2, TC (Ord. 11-2023, 112-903I): owner-occupied, 800 sq ft, one bedroom, two people, detached 24 ft not in front or side yard. Open: whether the TC first-floor residential note (112-304A note 1) reaches a ground-floor ADU. Short-term rental reading (SE in TC only). Historic carriage house reuse (112-505) kept as an ADU listing under another section. No currency line read."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch11), fixes applied (short-term rental differs by district, carriage house only when listed). allowed_by_right in NC-1, NC-2, TC (Ord. 11-2023, 112-903I). For a later check: TC first-floor residential note (112-304A note 1) against a ground-floor ADU."
     },
     {
       "geoid": "4202715136",
@@ -1623,7 +1623,7 @@
       "pop_rank": 243,
       "file": "pa_centre_college",
       "batch": 11,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10705471",
@@ -1633,7 +1633,7 @@
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. allowed_by_right as an accessory use to any single-family detached house (200-11A(1)): one bedroom, owner on site, 25% of the house, house at least 1,500 sq ft. Open: GWC (dwellings of all types) in doubt. Districts read from the Criteria and Standards attachments (Supp 17, Jan 2023). Zoning ordinances O-26-02 and O-26-03 (data centers) in New Laws not opened. Share-only size cap not turned into a number by the resolver."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch11), fixes applied (district 'Maximum Coverage' read as impervious, not stored as building coverage). allowed_by_right as an accessory use to a single-family detached house (200-11A(1)). For a later check: the 1,500 sq ft house minimum and the 25% cap cannot be tested by the tool. GWC in doubt. O-26-02 and O-26-03: no ADU change."
     },
     {
       "geoid": "4207158840",
@@ -1647,7 +1647,7 @@
       "pop_rank": 256,
       "file": "pa_lancaster_penn",
       "batch": 11,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-13",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30832287",
@@ -1657,7 +1657,7 @@
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. family_only, 'Accessory Dwelling Unit for Relative' by right (Zoning Officer, temporary permit) in CN, AG, SR, RM, V, MU, COM, LC (27-402.1): relative 50 or older or disabled, portable unit up to 900 sq ft or an addition. Open: whether a detached garage can hold the unit (definition vs 27-402.1A). Adaptive reuse of historic farmsteads: SE in the tables, by right in the text. Chapter cites ordinances only to 2024-03."
+      "status_note": "Verified 2026-11-13 after the independent review (town-rules-review-batch11), fixes applied (CN, MU, COM, LC rows, V height, both conversion dates). family_only, ADU for relative by right with a temporary permit (27-402.1). For a later check: farmstead reuse SE in the tables vs by right in the text. Ord. 2026-02 and 2026-03: no ADU change."
     },
     {
       "geoid": "4201719784",
@@ -1681,7 +1681,7 @@
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": "Drafted 2026-11-13, awaiting independent review. special_exception in R-1, R-2, R-3, CR (27-406(61.1), Ord. 2026-5 read as the source). Open: size is 800 (R-1, R-2) or 600 (R-3, CR) sq ft or 50% of the house, whichever is GREATER, which the schema cannot hold (shown as a condition). Building spacing of 27-521 (25 ft or 200% of the taller building height) for a detached unit. Whether 27-406(61.1)D ties the unit to a conforming lot."
+      "status_note": "Drafted 2026-11-13. Review fixes applied (spacing ratio, district height with the 27-518 rear-yard 15 ft, effective date). Open: the adopting ordinance is not confirmed. The 5-11-2026 committee minutes show the ADU ordinance still in draft, so it is most likely Ord. 2026-13 (9/22/2026), not 2026-5. Ord. 2026-13 could not be found. Also open: the greater-of size rule (800 or 600 sq ft or 50%) cannot be held by the schema."
     },
     {
       "geoid": "4202935536",
@@ -1695,17 +1695,17 @@
       "pop_rank": 340,
       "file": "pa_chester_honey_brook",
       "batch": 12,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/HO3693",
+      "code_url": "https://ecode360.com/30832599",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2025-07-09",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. 196-2018, 9/12/2018). ADU text seen: accessory dwelling unit (freestanding or attached) - 27-1002 Accessory Dwelling Units [Ord. 196-2018. Ord. 211-2025, 7/9/2025] in Part 10 specific use criteria: min 2-acre gross lot, max 1 ADU per property, min 400 sf, Health Dept sewer/water approval, 2 parking spaces/unit, STR must meet 27-1065. Approval: permitted where the district allows the use, via zoning/building permit (district-level path not confirmed). Text read at https://www.zoneomics.com/code/honey-brook-township-PA/chapter_10 (mirror of ecode360 text). CONFIRMED ADU text. Lead said 27-207 - actual standards are 27-1002 (27-207 may be a district use list. not",
       "why": [
         "known ADU ordinance (Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units)"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, awaiting independent review. By right in A and RC only (27-1702A(11), 27-1802A(6), Ord. 211-2025), 2 acre gross lot. Open: (1) the lot a new freestanding unit needs in A (27-1002B(1) two conforming lots: 11 acres with a 27-1705 split-off, or 20 acres) is stored as 11 acres, secondary. (2) A converted garage is the attached kind (50% cap) but the schema gives it the freestanding cap (100% of the house). (3) Height of a freestanding unit: 35 ft dwelling height read, accessory rule (house height or 20 ft, whichever greater, 27-1003C(1)(b)) also shown. (4) A unit over a new garage is not named."
     },
     {
       "geoid": "4209152664",
@@ -1719,17 +1719,17 @@
       "pop_rank": 629,
       "file": "pa_montgomery_narberth",
       "batch": 12,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/NA0447",
+      "code_url": "https://ecode360.com/34400015",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-08-20",
       "code_note": "Zoning: Chapter 500 Zoning (form-based. TOC page https://ecode360.com/34400015). ADU text seen: accessory dwelling unit - definition 500-1201 (added 4-21-2022 by Ord. 1043: self-contained unit within a detached accessory structure) and standards in 500-602 Accessory buildings [Amended 4-21-2022 by Ord. 1043]: A(2) 'A residence or dwelling shall be permitted as an accessory dwelling unit', C 'Specific to accessory dwelling units' (only on lot with detached house or twin, max 1 per lot, max 2 units combined, may share building with garage, no extra lot area). Approval: appears permitted (by right) as accessory use. conditional use referenced only for historic contributing-resource case. Seen a",
       "why": [
         "known ADU ordinance (Ord. 1043 (2022). Code 500-602 and 500-1201)"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, awaiting independent review. Chapter 500 was replaced in full 8-20-2026 (Ord. 1070). ADU = unit within an accessory building, by right where a detached or twin house stands (500-801A(1)(d), 500-802), 600 sq ft footprint, 800 sq ft habitable, 16 ft and two stories, owner lives on the lot, no parking, green building rules (500-902). Open: (1) 5A and 5B list ADUs in their notes but allow no detached or twin house (districts_in_doubt). (2) District tables cite special exceptions as 500-404 and conditional uses as 500-405, one number off from the sections. (3) How an existing one-family house in 4B is converted (500-403A names 3A to 4A only). (4) The H overlay multiple-building alternative cannot be tied to the overlay in the schema, so it shows in all of 3A to 3C."
     },
     {
       "geoid": "4204548480",
@@ -1743,17 +1743,17 @@
       "pop_rank": 485,
       "file": "pa_delaware_media",
       "batch": 12,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/ME1269",
+      "code_url": "https://ecode360.com/6866878",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-05-21",
       "code_note": "Zoning: Chapter 311 Zoning, Article B Hybrid Form-Based Code (applies to R-1..R-4, Office). ADU text seen: accessory dwelling unit (ADU) - definition in 311.A-13 and Article B-XV Accessory Dwelling Units starting 311.B-107 (Purpose and intent). TOC also lists 'Building Form - ADU External'. Approval path not seen. Seen in Zoneomics mirror TOC/definitions https://www.zoneomics.com/code/media-PA/chapter_1 and ecode360 TOC via search. CONFIRMED ADU article exists (definition + Article B-XV heading read). standards text of B-107+ not read. An older ecode360 page with 'supplemental dwelling unit/accessory apartment' (35% / 400 sf) may be pre-form-based text. ecode360 403 to plain curl.",
       "why": [
         "known ADU ordinance (Code 311.A-13 definition and Article B-XV)"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, awaiting independent review. By right in R-1 to R-4 and Office (311.B-108, use tables read from the displayed symbols), R-1 detached house only, Office no external ADU. External ADU 800 sq ft, 20 by 20 ft, 22 ft (20 ft flat roof), half-height side and rear setbacks, no parking. Open: (1) Office district map code assumed O. (2) Whether 311.E-6D (behind the rearmost part of the house) reaches an external ADU, stored as front_yard_barred, secondary. (3) The 800 sq ft cap and 22 ft height also bind an attached external ADU, which the schema cannot hold apart from a unit inside the house. (4) No count per lot in the code, one assumed. (5) 0 ft / 8 ft separation read as attached / detached."
     },
     {
       "geoid": "4202960120",
@@ -1767,17 +1767,17 @@
       "pop_rank": 114,
       "file": "pa_chester_phoenixville",
       "batch": 12,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/47635361",
+      "code_url": "https://ecode360.com/47638080",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-09-08",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. 2227, 12-10-2013, as amended). ADU text seen: accessory dwelling unit (ADU) - definition added by Ord. 2025-2410 (8/12/2025) (within, attached to, or in accessory building on lot of single-family dwelling). special exception use in RI, TC, MI, NC, CD districts per special-exception use table, with standards '(d) Accessory Dwelling Unit (ADU)': one ADU accessory to single-family detached, twin or townhouse. owner occupancy in perpetuity. parking 1 space. Approval: SPECIAL EXCEPTION. Seen at https://ecode360.com/47635361 (definition, search) and https://www.zoneomics.com/code/phoenixville-PA/chapter_3. CONFIRMED ADU text. code_url is the definitions section page",
       "why": [
         "known ADU ordinance (Ord. 2025-2410 (2025). ADU by special exception)"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, awaiting independent review. Special exception in RI, MI, NC, CD and MG (27-301.2B(1) table as displayed, not TC as the index note had), Ord. 2025-2410. Owner lives on the lot in perpetuity, one bedroom, 25% of the house inside or as an addition, accessory building footprint two thirds of the house, annual registration. Open: (1) parking: no ADU row in 27-405.2C, 1 more space or none. (2) Accessory height is two thirds of the house height (stored as 23 ft, two thirds of 35 ft). (3) Whether a unit may share a building with a garage (wholly and exclusively within an accessory building). (4) District chart (image PDF) read for RI only, MI to MG use RI residential standards modified up to 25%."
     },
     {
       "geoid": "4202725624",
@@ -1791,17 +1791,17 @@
       "pop_rank": 109,
       "file": "pa_centre_ferguson",
       "batch": 12,
-      "status": "todo",
-      "checked_on": null,
+      "status": "drafted",
+      "checked_on": "2026-11-13",
       "code_host": "ecode360",
-      "code_url": "https://ecode360.com/FE3697",
+      "code_url": "https://ecode360.com/30847049",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2025-03-04",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. 1049, 11/18/2019. amended incl. Ord. 1097, 4/16/2024). ADU text seen: accessory dwelling unit - definition in Part 11 (occupied by relatives of owner or caregivers/household staff) plus 'Elder cottage/in-law quarters/carriage house (accessory dwelling unit)' definition (min 600 sf, not counted toward density). ecode360 TOC lists 27-1503 Accessory Dwelling (Part 15 Accessory Uses). Approval path not seen. Definitions read at https://www.zoneomics.com/code/ferguson-township-centre-county-PA/chapter_10. 27-1503 from ecode360 TOC via search (https://www.ecode360.com/32480896). CONFIRMED ADU text (definitions read. 27-1503 heading via search only, body not read). C",
       "why": [
         "known ADU ordinance (Code Chapter 27 Part 11 definition and 27-1503 Accessory Dwelling)"
       ],
-      "status_note": null
+      "status_note": "Drafted 2026-11-13, awaiting independent review. ADU text only in the TTD district (27-303.3A(4): garage apartment, elder cottage or in-law quarters, one per lot, same owner, detached footprint 600 sq ft) and the 27-1102 definition (relatives or employed caregivers of the resident owner), so family_only in TTD, not addressed elsewhere. The index note 27-1503 does not exist. Open: (1) RA and RR image tables list accessory Dwelling Unit(s) for farm and conservation tracts, kept as alternatives, secondary. (2) Parking is in Chapter 22 Part 5C, not read. (3) TTD yards and accessory height not read. (4) Whether the 25% accessory structure cap (27-207.2C) reaches a detached ADU. (5) 600 sq ft minimum from the elder cottage definition applied to all forms. (6) Code current only to 03-04-2025."
     },
     {
       "geoid": "4204575648",

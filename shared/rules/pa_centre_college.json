@@ -4,7 +4,7 @@
     "instrument": "Code of the Township of College, Chapter 200 Zoning (Ord. No. 59, as amended), with the district Criteria and Standards attachments, as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Chapter 200 adopted 9-8-1977 by Ord. No. 59. The accessory dwelling unit rule in 200-11A(1) was amended 11-14-1985 (Ord. 59-J), 3-11-1993 (O-93-02), 4-6-2000 (O-00-01) and 3-19-2009 (O-09-02). Parking for it amended 12-20-2012 (O-12-13), the rental permit line added 6-21-2012 (O-12-01). The latest amendment noted in the chapter text is O-25-01 (3-20-2025). The district attachments carry 'Supp 17, Jan 2023' and amendments to 7-21-2022 (O-22-02). eCode360 New Laws (read 2026-11-13) list zoning ordinances O-26-02 (2-19-2026) and O-26-03 (4-16-2026), both titled data center conditional uses, and SALDO, sign and fee changes. Their PDFs were not opened.",
+    "status_detail": "Chapter 200 adopted 9-8-1977 by Ord. No. 59. The accessory dwelling unit rule in 200-11A(1) was amended 11-14-1985 (Ord. 59-J), 3-11-1993 (O-93-02), 4-6-2000 (O-00-01) and 3-19-2009 (O-09-02). Parking for it amended 12-20-2012 (O-12-13), the rental permit line added 6-21-2012 (O-12-01). The latest amendment noted in the chapter text is O-25-01 (3-20-2025). The district attachments carry 'Supp 17, Jan 2023' and amendments to 7-21-2022 (O-22-02). eCode360 New Laws (read 2026-11-13) list zoning ordinances O-26-02 (2-19-2026) and O-26-03 (4-16-2026), both titled data center conditional uses, and SALDO, sign and fee changes. The independent review (2026-11-13) read them: data centers by conditional use, a traffic study threshold, a parking reduction for transit passes, mobile food vendors. No change to the accessory dwelling unit rules.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/10705471",
@@ -38,8 +38,9 @@
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/10705471",
     "code_current_through": null,
-    "code_current_through_note": "No currency line read. Latest amendment noted in the chapter: O-25-01 (3-20-2025). New Laws list O-26-02 and O-26-03 (zoning, data centers) not yet codified.",
+    "code_current_through_note": "No currency line read. Latest amendment noted in the chapter: O-25-01 (3-20-2025). New Laws list O-26-02 and O-26-03 (zoning, data centers, no ADU change) not yet codified.",
     "checks": [
+      "No unit if the house has under 1,500 sq ft of finished gross living area. The tool cannot test house size, so check this first (200-11A(1)(c))",
       "A single-family detached house may include a one-bedroom attached or detached accessory dwelling unit as an accessory use, with a zoning permit (200-11A(1)). It follows the house: allowed where single-family detached houses are permitted (F, A, RR, R-1, R-2, R-O, V). R-3, C-1, C-2 and OSRC have no single-family houses",
       "The landowner must live in the house or the unit. If away for more than three months the owner may rent one of the two, not both (200-11A(1))",
       "Size: at most 25% of the finished gross living area of the house, and the house must have at least 1,500 sq ft of finished gross living area (200-11A(1)(b), (c))",
@@ -370,7 +371,7 @@
         "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified",
-        "note": "2 acres. Width 200 ft."
+        "note": "2 acres. Width 200 ft. The table also gives 10% for buildings and 30% total impervious."
       },
       "setback_front_ft": {
         "value": 50,
@@ -395,13 +396,6 @@
       },
       "principal_max_height_ft": {
         "value": 35,
-        "section": "Attachment 2 (9)",
-        "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
-        "verified_on": "2026-11-13",
-        "confidence": "verified"
-      },
-      "max_building_coverage": {
-        "value": 0.1,
         "section": "Attachment 2 (9)",
         "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
         "verified_on": "2026-11-13",
@@ -444,13 +438,6 @@
         "url": "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified"
-      },
-      "max_building_coverage": {
-        "value": 0.1,
-        "section": "Attachment 3 (13)",
-        "url": "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
-        "verified_on": "2026-11-13",
-        "confidence": "verified"
       }
     },
     "RR": {
@@ -489,13 +476,6 @@
         "url": "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
         "verified_on": "2026-11-13",
         "confidence": "secondary"
-      },
-      "max_building_coverage": {
-        "value": 0.1,
-        "section": "Attachment 5 (19), Attachment 3 (13)",
-        "url": "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
-        "verified_on": "2026-11-13",
-        "confidence": "secondary"
       }
     },
     "R-1": {
@@ -505,7 +485,7 @@
         "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified",
-        "note": "Width 80 ft at the building setback line."
+        "note": "Width 80 ft at the building setback line. The table gives 'Maximum Coverage' 40%. Not stored as building coverage: the R-2 and R-3 tables head the same column 'Maximum Impervious Coverage', and 200-7 defines building coverage and lot coverage apart, so it is read as impervious coverage."
       },
       "setback_front_ft": {
         "value": 20,
@@ -535,14 +515,6 @@
         "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified"
-      },
-      "max_building_coverage": {
-        "value": 0.4,
-        "section": "Attachment 6 (2)",
-        "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
-        "verified_on": "2026-11-13",
-        "confidence": "verified",
-        "note": "The table says Maximum Coverage 40%, without saying building or impervious."
       }
     },
     "R-2": {
@@ -629,7 +601,7 @@
         "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified",
-        "note": "Width 50 ft. No structure over 2,500 sq ft of ground floor."
+        "note": "Width 50 ft. No structure over 2,500 sq ft of ground floor. The table gives 35% for buildings and 75% total impervious."
       },
       "setback_front_ft": {
         "value": 4,
@@ -654,13 +626,6 @@
       },
       "principal_max_height_ft": {
         "value": 35,
-        "section": "Attachment 9",
-        "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
-        "verified_on": "2026-11-13",
-        "confidence": "verified"
-      },
-      "max_building_coverage": {
-        "value": 0.35,
         "section": "Attachment 9",
         "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
         "verified_on": "2026-11-13",

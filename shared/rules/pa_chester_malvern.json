@@ -9,6 +9,8 @@
     "source_urls": [
       "https://ecode360.com/11230593",
       "https://ecode360.com/print/MA0856?guid=11230593",
+      "https://ecode360.com/attachment/294146/MA0856-220b%20Malvern%20Zoning%20Matrix.pdf",
+      "https://www.malvern.org/1202",
       "https://ecode360.com/31446948",
       "https://ecode360.com/31445124",
       "https://ecode360.com/31445485",
@@ -34,6 +36,7 @@
     "code_url": "https://ecode360.com/11230593",
     "code_current_through": "2023-12-19",
     "code_current_through_note": "Code date shown in the eCode360 breadcrumb on 2026-11-13. New Laws list only Ord. 2025-4 and 2026-4, not zoning.",
+    "code_caution": "Borough Council voted on 10-20-2026 on a full replacement of the zoning chapter. The borough reports that the motion failed and that the existing Zoning Ordinance and map remain in effect (one news report said the opposite). The text here is the ordinance in force. A new zoning ordinance may be proposed again.",
     "checks": [
       "A 'supplemental dwelling unit or accessory apartment' needs a special exception from the Zoning Hearing Board in R1, R2, R3a and R3b only (220-401B(3), 220-501B(3), 220-601B(4)). R4, R5, R6 and R7 list the residential accessory uses 'with the exception of § 220-2401A(9) and (11)' and give it no special exception, so it is not allowed there",
       "Only inside an existing single-family detached house or an existing accessory building on the lot, 'without substantial exterior modification'. No additions except an enclosed stairwell or what safety codes need. Entrances to the side or rear (220-2401A(11) intro, (a), (e))",
@@ -42,14 +45,16 @@
       "One unit per lot. The district area and bulk rules apply to the lot (220-2401A(11)(c), (d))",
       "Parking: one space for the unit in addition to the house's two, three in all (220-2401A(11)(h), 220-2501B(5))",
       "Accessory uses stand in the side or rear yard, no further forward than the front line of the house, and have a maximum height of 15 ft. Setbacks: 5 ft side and 7 ft rear in R3a and R3b, 7 ft from lot lines elsewhere (220-2401 intro)",
-      "I4 lists 'Accessory use, as per § 220-2401A, B, C, and D' by right with no exception for A(11), and permits single-family detached houses. Read literally the unit would be by right in I4. Ask the zoning officer (220-1901A(9))",
       "Two-family duplex and semidetached dwellings are permitted by right in R3a, R3b, R4, R5, R6, R7 and I4, with lot area per unit (220-601A, 220-701A, 220-801A, 220-901A, 220-1001A, 220-1901A)",
       "In R4 a residential conversion of a house into two or more units is a special exception: lot area of the district minimum times the number of units, minimum unit sizes of 450 to 800 sq ft, not on a nonconforming lot (220-701B(2), 220-2422)",
       "Properties in the Historic District Overlay may add multifamily residential (three or more units) by conditional use from Borough Council (220-2301E(1))",
       "On a nonconforming lot of record a building may be built if the setbacks are met, and the use must be a permitted use in the district (220-2704C)",
-      "The zoning matrix attachment (Attachment 2) is an image PDF and was not read. The text sections govern here"
+      "The zoning matrix confirms the districts: 'Dwelling unit, supplemental' is SE in R1, R2 and R3a/R3b and blank elsewhere, and 'Accessory Use, Residential does not include minor home occupation, major home occupation, or supplemental dwelling unit'. So the blanket accessory listing in I4 (220-1901A(9)) does not bring the unit there (Attachment 2, 10-01-2016)",
+      "Borough Council voted down a full replacement of Chapter 220 (a 2026 zoning ordinance that would have renamed the unit 'Accessory Dwelling Unit') on 10-20-2026. The borough says its existing Zoning Ordinance and zoning map remain in effect. A new attempt may follow (malvern.org zoning page)",
+      "In R3a and R3b the lot area table applies to 'Each dwelling unit'. Read with 220-2401A(11)(c), a house and a unit might need 24,000 sq ft (R3a) or 20,000 (R3b). Not settled (220-602A(1), B(1))",
+      "Side yards in R3a to R7 are written 'for every single-family detached dwelling ... and its accessory buildings', which competes with the 5 ft accessory setback of 220-2401. It matters only for new construction, which the unit does not allow (220-602A(3), 220-702C(1))"
     ],
-    "notes": "Zoning office: Borough of Malvern. Districts (220-300): R1, R2, R3 (R3a and R3b), R4, R5, R6, R7, C1, C2, C3, C4, I1, I2, I3, I4, LI, LI1, POSC, with a Historic District Overlay (220-2301). Read on eCode360 in a browser, section and article print views, and the chapter print view searched in the page. Searched for supplemental dwelling, accessory apartment, accessory dwelling, in-law, granny, ECHO, carriage, second dwelling, guest house, tiny, short-term, transient, boarder. No short-term rental rule in the zoning chapter. A(12) allows one boarder per single-family detached house."
+    "notes": "Zoning office: Borough of Malvern. Attachment 2 (Malvern Zoning Matrix, 10-01-2016) was read from the PDF text layer on the second reading. Districts (220-300): R1, R2, R3 (R3a and R3b), R4, R5, R6, R7, C1, C2, C3, C4, I1, I2, I3, I4, LI, LI1, POSC, with a Historic District Overlay (220-2301). Read on eCode360 in a browser, section and article print views, and the chapter print view searched in the page. Searched for supplemental dwelling, accessory apartment, accessory dwelling, in-law, granny, ECHO, carriage, second dwelling, guest house, tiny, short-term, transient, boarder. No short-term rental rule in the zoning chapter. A(12) allows one boarder per single-family detached house."
   },
   "adu": {
     "term": {
@@ -66,7 +71,7 @@
       "url": "https://ecode360.com/31445485",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "'Supplemental dwelling unit, as per § 220-2401A(11)' is listed under 'Special exception uses' in R1, R2 and R3 (R3a and R3b). The by-right residential accessory uses in every residential district exclude A(11)."
+      "note": "'Supplemental dwelling unit, as per § 220-2401A(11)' is listed under 'Special exception uses' in R1, R2 and R3 (R3a and R3b). The by-right residential accessory uses in every residential district exclude A(11). The zoning matrix row 'Dwelling unit, supplemental' shows SE in R1, R2 and R3a/R3b only."
     }
   },
   "approval": {
@@ -157,10 +162,10 @@
           "url": "https://ecode360.com/31447433"
         },
         {
-          "name": "Multifamily residential in the Historic District Overlay",
+          "name": "Multifamily residential (Historic District Overlay properties only)",
           "path": "conditional_use",
           "districts": null,
-          "conditions": "Properties in the Historic District Overlay may add multifamily residential by conditional use from Borough Council. Multifamily means three or more units.",
+          "conditions": "Only properties in the Historic District Overlay (220-2301E(1)). They may add multifamily residential by conditional use from Borough Council. Multifamily means three or more units.",
           "min_lot_sqft": null,
           "min_units": 3,
           "section": "220-2301E(1)(a)[4], 220-201 'Multifamily dwelling'",
@@ -223,16 +228,6 @@
       "verified_on": "2026-11-13",
       "confidence": "secondary",
       "note": "'The area and bulk regulations of the zoning district shall apply to the lot on which the supplemental dwelling unit is located.' Read as the lot must meet the district minimum. Ask the zoning officer about an older lot below it."
-    },
-    "districts_in_doubt": {
-      "value": [
-        "I4"
-      ],
-      "section": "220-1901A(9)",
-      "url": "https://ecode360.com/31446040",
-      "verified_on": "2026-11-13",
-      "confidence": "secondary",
-      "note": "I4 permits single-family detached houses and lists 'Accessory use, as per § 220-2401A, B, C, and D' by right, with no exception for A(11). Read literally the unit would be allowed by right there."
     },
     "gates": {
       "value": [
@@ -583,6 +578,14 @@
       }
     },
     "R3a": {
+      "lot_area_per_unit_sqft": {
+        "value": 12000,
+        "section": "220-602A(1)",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "'Each dwelling unit or other use shall have a lot area ... of not less than' 12,000 sq ft for a single-family detached dwelling. Whether the supplemental unit counts is not settled."
+      },
       "min_lot_sqft": {
         "value": 12000,
         "section": "220-602A",
@@ -651,6 +654,14 @@
       }
     },
     "R3b": {
+      "lot_area_per_unit_sqft": {
+        "value": 10000,
+        "section": "220-602B(1)",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Same wording as R3a, 10,000 sq ft. Whether the supplemental unit counts is not settled."
+      },
       "min_lot_sqft": {
         "value": 10000,
         "section": "220-602B",
