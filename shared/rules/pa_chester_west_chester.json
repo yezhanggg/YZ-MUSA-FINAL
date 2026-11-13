@@ -1,0 +1,590 @@
+{
+  "provenance": {
+    "jurisdiction": "West Chester borough",
+    "instrument": "Code of the Borough of West Chester, Chapter 112 Zoning (amended in its entirety 10-20-2021 by Ord. No. 09-2021), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 112 adopted 8-23-1966 by Ord. No. 13-66 and amended in its entirety 10-20-2021 by Ord. No. 09-2021. The accessory dwelling unit standards (112-903I) and the ADU row in the 112-304B accessory use table were added 7-19-2023 by Ord. No. 11-2023. 112-304 was later amended by Ord. 16-2023, 08-2024, 12-2025, 05-2026 and 07-2026 (8-19-2026). eCode360 New Laws (read 2026-11-13): none.",
+    "effective_date": "2023-07-19",
+    "source_urls": [
+      "https://ecode360.com/6471979",
+      "https://ecode360.com/print/WE0442?guid=6471979",
+      "https://ecode360.com/6472005",
+      "https://ecode360.com/6472406",
+      "https://ecode360.com/6472432",
+      "https://ecode360.com/6472433",
+      "https://ecode360.com/6472545",
+      "https://ecode360.com/6472871",
+      "https://ecode360.com/6472940",
+      "https://ecode360.com/6472971",
+      "https://ecode360.com/6473091",
+      "https://ecode360.com/6473968",
+      "https://ecode360.com/6474116",
+      "https://ecode360.com/WE0442/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Chester",
+    "municipality_type": "borough",
+    "geoid": "4202982704",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/6471979",
+    "code_current_through": "2026-08-19",
+    "code_current_through_note": "Latest amendment noted in the chapter: Ord. No. 07-2026 (8-19-2026, in 112-304). No currency line was read. New Laws: none.",
+    "checks": [
+      "An accessory dwelling unit is a permitted accessory use by right in NC-1, NC-2 and TC, accessory to a single-family detached, semidetached or attached house (112-304B row 8, 112-903I(2)). A building permit and a use and occupancy permit renewed every year are needed (112-903I(10), (11))",
+      "The owner must live in the house or the unit. One unit per lot. At most 800 sq ft and one bedroom. At most two people (112-903I(3))",
+      "A unit inside or added to the house follows the house's dimensional rules, except minimum lot area (112-903I(4)(a))",
+      "A detached unit may not stand in the front or side yard. It follows the accessory structure rules except height, and may be 24 ft tall (or the height of an older accessory building that is taller). Accessory buildings stand 5 ft from side and rear lot lines, 10 ft from the house, and at least 10 ft farther back from the street than the back of the house (112-903I(4)(b), (c), 112-903G(1), 112-802J)",
+      "Parking: one off-street space for the unit in addition to the house's two, three in all. ADU residents cannot get on-street residential parking permits (112-903I(5), 112-603B(1))",
+      "A unit in the house needs its own entrance, not on the front facade (112-903I(8))",
+      "A unit in an accessory building next to an alley must meet design rules: landscaping, stabilized alley edge, detailed front facade, traditional materials, no parking in front. In the Historic District it must meet the HARB rules of 112-504 (112-903I(9))",
+      "Wastewater Department approval before the building permit. A rental license under Chapter 66 if the unit is rented (112-903I(3)(e), (6))",
+      "Short-term rentals (under 30 days) are a special exception in TC only and not listed in NC-1 or NC-2 (112-304D row 23, 112-202)",
+      "A historic carriage house on the borough's inventory may be converted into a dwelling unit, an ADU, an office or a studio. The definition of ADU says such a conversion is not an ADU under 112-903I. The Zoning Officer approves it before the building permit, HARB reviews the design, and the Zoning Officer sets the parking (112-505)",
+      "In TC residential uses may not be on the first floor except in a unified residential development. That note sits on the principal use table. Ask whether it reaches a ground-floor ADU (112-304A note [1])",
+      "Two-family dwellings (attached, detached or semidetached) are permitted by right in NC-2, NC-3, MU and TC. Lot area per unit in NC-2 is the median of the block face (112-304A, 112-307B)",
+      "On a nonconforming lot, a conforming building may be enlarged or another building erected if all area and bulk rules except lot size and width are met (112-810E)"
+    ],
+    "notes": "Zoning office: Borough of West Chester, Building, Housing and Codes Enforcement. Districts (112-302): NC-1, NC-2, NC-3, MU, TC, CS, ID, IS, PUC, with overlays HO-60, HO-75, CU, PO, ROD, GU, IU, TRANS and the Historic District. Read on eCode360 in a browser, section print views, the use tables read from the table cells (the first header cell spans two columns), and the chapter print view searched in the page. Searched for accessory dwelling, ADU, accessory apartment, in-law, granny, ECHO, carriage house, second dwelling, guest house, tiny, short term rental. The Chester County Planning Commission pages and the earlier town summary describe only the carriage house rule and predate Ord. 11-2023."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory dwelling unit or ADU",
+      "section": "112-202 'Accessory dwelling unit or ADU', 112-903I",
+      "url": "https://ecode360.com/6472005",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A residential dwelling unit located on the same lot as a single-family detached dwelling, single-family semidetached dwelling and single-family attached dwelling unit which provides complete independent living facilities for a maximum of two persons. It may take various forms: a detached dwelling unit; a dwelling unit that is part of an accessory structure, such as a detached garage; or a dwelling unit that is part of an expanded or remodeled principal dwelling unit.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "112-304B, 112-903I(2)",
+      "url": "https://ecode360.com/6472406",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "112-304B accessory uses, row 8 'Accessory dwelling unit': X under NC-1, NC-2 and TC. 'An ADU may be permitted as an accessory use to a single-family detached dwelling, single-family semidetached dwelling and single-family attached dwelling in the NC-1, NC-2 and TC Town Center Districts as identified in § 112-304B'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "112-304B, 112-903I(10), (11)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory uses in the table are permitted by right. An architectural plan with the building permit application, then a use and occupancy permit renewed every year."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "112-304, MPC 910.2",
+      "url": "https://ecode360.com/6472406",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Elsewhere, or for a unit that fails 112-903I, a variance. The conditional use for uses 'not specifically permitted in any zoning district' (112-304C row 7) is in IS only and does not reach a listed use."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Historic carriage house adaptive reuse",
+          "path": "by_right",
+          "districts": [
+            "NC-1",
+            "NC-2",
+            "TC"
+          ],
+          "conditions": "Only a historic carriage house on the borough's inventory map, the National Register, a determination of eligibility, or named by Borough Council. A dwelling may be created in it as a separate unit on the lot of a house, or an ADU, office or studio. Not subdivided from the lot. HARB reviews the design. The Zoning Officer sets the parking and approves before the building permit. No student home.",
+          "min_lot_sqft": null,
+          "adu_listing": true,
+          "section": "112-505, 112-304B row 2, 112-202 'Historic carriage house'",
+          "url": "https://ecode360.com/6472940",
+          "note": "The ADU definition says the reuse of a historic carriage house 'shall not be considered an ADU', so 112-903I does not apply. 112-304B lists the reuse also in NC-3, CS, ID and IS, while 112-505B places the carriage houses in NC-1, NC-2 and TC."
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "NC-2",
+            "NC-3",
+            "MU",
+            "TC"
+          ],
+          "conditions": "Two-family attached, detached and semidetached dwellings are permitted uses. In NC-2 the lot area per unit is the median of the lots on the block face. Two spaces per unit.",
+          "min_lot_sqft": null,
+          "section": "112-304A rows 48 to 50, 112-307B, 112-603B(1)",
+          "url": "https://ecode360.com/6472406"
+        },
+        {
+          "name": "Conversion of an existing building to multifamily",
+          "path": "special_exception",
+          "districts": [
+            "NC-2",
+            "MU"
+          ],
+          "conditions": "Special exception from the Zoning Hearing Board.",
+          "min_lot_sqft": null,
+          "min_units": 3,
+          "section": "112-304D row 2",
+          "url": "https://ecode360.com/6472406",
+          "confidence": "secondary",
+          "note": "Multifamily is read as three or more units. The standards were not read for this file."
+        }
+      ],
+      "section": "112-505, 112-304",
+      "url": "https://ecode360.com/6472940",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "NC-1",
+        "NC-2",
+        "TC"
+      ],
+      "section": "112-304B row 8, 112-903I(2)",
+      "url": "https://ecode360.com/6472406",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "112-903I(2)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Single-family detached, semidetached and attached dwellings. In NC-1 only single-family detached houses are permitted principal uses."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "112-202 'Accessory dwelling unit or ADU', 112-903I(4)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A detached unit, a unit in an accessory structure, or part of an expanded or remodeled house."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "112-903I(9)(h), 112-505",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "In the Historic District an alley unit must meet 112-504 (HARB). Carriage houses have their own path (alternatives)."
+    },
+    "requires_conforming_lot": {
+      "value": false,
+      "section": "112-903I(4)(a), 112-810E",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit in or added to the house is exempt from minimum lot area. NC-1 and NC-2 set lot area as the median of the block face, not a number."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "A detached unit may not be in the front or side yard. Accessory buildings stand at least 10 ft farther back from the street than the back of the house and 10 ft from the house.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "112-903I(4)(b), 112-802J, 112-903G(1)",
+          "url": "https://ecode360.com/6474116"
+        },
+        {
+          "kind": "design",
+          "condition": "A unit inside the house has an entrance separate from the house's entrance, not on the front facade.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "112-903I(8)",
+          "url": "https://ecode360.com/6474116"
+        },
+        {
+          "kind": "design",
+          "condition": "A unit in an accessory building next to an alley: landscaping between the unit and the alley, stabilized alley edges, a detailed front facade with vertical windows, screened equipment, traditional materials, no parking in front of the unit. In the Historic District, HARB review under 112-504.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "112-903I(9)",
+          "url": "https://ecode360.com/6474116",
+          "test": "has_alley"
+        },
+        {
+          "kind": "other",
+          "condition": "One bedroom at most.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "112-903I(3)(c)",
+          "url": "https://ecode360.com/6474116"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Permits and approvals from the Borough Wastewater Department before the building permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "112-903I(6)",
+          "url": "https://ecode360.com/6474116"
+        },
+        {
+          "kind": "other",
+          "condition": "Use and occupancy permit renewed every year, with inspection at least every three years. A rental license under Chapter 66 if rented.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "112-903I(3)(e), (11)",
+          "url": "https://ecode360.com/6474116"
+        },
+        {
+          "kind": "parking",
+          "condition": "ADU residents are not eligible for on-street parking permits under the Residential Parking Program.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "112-903I(5)(b)",
+          "url": "https://ecode360.com/6474116"
+        }
+      ],
+      "section": "112-903I",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "112-202 'Accessory dwelling unit or ADU', 112-903I(4), (7)",
+      "url": "https://ecode360.com/6472005",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'a detached dwelling unit; a dwelling unit that is part of an accessory structure, such as a detached garage; or a dwelling unit that is part of an expanded or remodeled principal dwelling unit.'"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 800,
+      "section": "112-903I(3)(c)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The floor area of an ADU shall be limited to a maximum of 800 square feet and shall contain no more than one bedroom.'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 24,
+      "section": "112-903I(4)(c)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The maximum building height for a detached ADU shall not exceed 24 feet. If an ADU is proposed for an accessory structure existing at the time of adoption of this subsection that is in excess of 24 feet, the height of the existing structure is considered the maximum height permitted.'"
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "112-903I(4)(a)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A unit within or attached to the house follows the principal dimensional rules (35 ft in NC-1 and NC-2, 45 ft in TC)."
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "112-903I(4)(b), (c), 112-903G(2)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The 15 ft height for detached accessory structures (112-903G(2)) does not apply. 4(b) excepts 'maximum building height' and 4(c) sets 24 ft."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "112-903I(4)(b), 112-802J",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A detached ADU shall not be located within any front or side yard'."
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "112-306B, 112-307B, 112-802J",
+      "url": "https://ecode360.com/6473091",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory structures 5 ft from side lot lines in NC-1 and NC-2. In TC the TC setbacks apply (0 ft side). See districts."
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "112-306B, 112-307B, 112-802J",
+      "url": "https://ecode360.com/6473091",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory structures 5 ft from the rear lot line."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "112-903G(1)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'All accessory buildings shall be at least 10 feet from any principal building.'"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "112-903I(4)(b)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A detached unit follows the accessory structure dimensional rules."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "112-903I(3)(a)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One of the two dwelling units shall be occupied by the owner of the lot on which both dwelling units are located.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "112-903I",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No family or age rule. The purposes include rental income."
+    },
+    "occupancy": {
+      "value": "At most two people live in the ADU.",
+      "section": "112-903I(3)(d), 112-202",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "112-903I(3)(b)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'There shall be no more than one ADU built on each lot.'"
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "112-903I",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Not addressed. The unit must be on the same lot as the house (112-903I(7))."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "112-304D row 23, 112-202 'Short term rental'",
+      "url": "https://ecode360.com/6472406",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A short term rental (a dwelling unit rented for under 30 days) is a special exception in TC only, and not listed in NC-1 or NC-2. In TC it may be possible by special exception."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "112-903I(5)(a)",
+      "url": "https://ecode360.com/6474116",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One off-street parking space shall be required for an ADU, in addition to those required for the principal dwelling.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "112-603B(1)",
+      "url": "https://ecode360.com/6472971",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Single-family detached, semidetached and attached dwellings: two spaces per dwelling unit, plus one."
+    }
+  },
+  "districts": {
+    "NC-1": {
+      "setback_side_ft": {
+        "value": 15,
+        "section": "112-306B",
+        "url": "https://ecode360.com/6472432",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "112-306B",
+        "url": "https://ecode360.com/6472432",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "112-306B",
+        "url": "https://ecode360.com/6472432",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "112-306B",
+        "url": "https://ecode360.com/6472432",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "112-306B",
+        "url": "https://ecode360.com/6472432",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "112-306B",
+        "url": "https://ecode360.com/6472432",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lots under 12,000 sq ft. 20% for 12,000 to 20,000, 15% over 20,000. Lot area per unit is the median of the block face. Width 60 ft. Front yard matches the adjacent setbacks."
+      }
+    },
+    "NC-2": {
+      "setback_side_ft": {
+        "value": 10,
+        "section": "112-307B",
+        "url": "https://ecode360.com/6472433",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Existing adjacent, 10 ft minimum."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "112-307B",
+        "url": "https://ecode360.com/6472433",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "112-307B",
+        "url": "https://ecode360.com/6472433",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "112-307B",
+        "url": "https://ecode360.com/6472433",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "112-307B",
+        "url": "https://ecode360.com/6472433",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "112-307B",
+        "url": "https://ecode360.com/6472433",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lots over 5,000 sq ft. 45% on smaller lots. Lot area per unit is the median of the block face. Front yard matches the adjacent setbacks."
+      }
+    },
+    "TC": {
+      "min_lot_sqft": {
+        "value": 2500,
+        "section": "112-309B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Width 20 ft."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "112-309B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "112-309B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "112-309B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "112-309B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "More in the HO-60 and HO-75 overlays."
+      },
+      "max_building_coverage": {
+        "value": 0.9,
+        "section": "112-309B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 0,
+        "section": "112-309B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "112-802J(3): structures in TC meet the TC setbacks."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "112-309B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

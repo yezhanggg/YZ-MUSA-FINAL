@@ -1,0 +1,605 @@
+{
+  "provenance": {
+    "jurisdiction": "Penn township",
+    "instrument": "Code of the Township of Penn (Lancaster County), Chapter 27 Zoning (Ord. No. 2022-01, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 27 was adopted as a whole by Ord. No. 2022-01 (1/10/2022). 27-402 (specific use standards) was last amended by Ord. No. 2024-03 (6/10/2024), the latest ordinance cited in the chapter. eCode360 New Laws (read 2026-11-13): Ord. 2026-02 (data centers) and Ord. 2026-03 (large agricultural operation). The first page of each was read: both are Penn Township, Lancaster County, and neither touches the accessory dwelling rules. This is eCode360 code PE3692, the Penn Township around Manheim, not the Penn Townships of other counties.",
+    "effective_date": "2022-01-10",
+    "source_urls": [
+      "https://ecode360.com/30832287",
+      "https://ecode360.com/print/PE3692?guid=30832287",
+      "https://ecode360.com/39350230",
+      "https://ecode360.com/39351529",
+      "https://ecode360.com/39352684",
+      "https://ecode360.com/39358257",
+      "https://ecode360.com/39350728",
+      "https://ecode360.com/39350762",
+      "https://ecode360.com/39350770",
+      "https://ecode360.com/39350790",
+      "https://ecode360.com/39351030",
+      "https://ecode360.com/39351193",
+      "https://ecode360.com/39351200",
+      "https://ecode360.com/PE3692/laws",
+      "https://ecode360.com/PE3692/laws/LF2849339.pdf",
+      "https://ecode360.com/PE3692/laws/LF2812366.pdf"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Lancaster",
+    "municipality_type": "township",
+    "geoid": "4207158840",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30832287",
+    "code_current_through": null,
+    "code_current_through_note": "No currency line read. Latest ordinance cited in the chapter: Ord. No. 2024-03 (6/10/2024). New Laws: Ord. 2026-02 and 2026-03, not yet codified.",
+    "checks": [
+      "An 'Accessory Dwelling Unit for Relative' is permitted by right (Zoning Officer) in CN, AG, SR, RM, V, and on the lot of an existing dwelling in MU, COM and LC (Table 27-202.3, Table 27-202.4). Not in CLI, I or Q",
+      "Family only: at most two people, at least one of them 50 or older or disabled and related by blood, marriage or adoption to the people in the house. At most two bedrooms (27-402.1C)",
+      "Temporary: the Zoning Officer issues a temporary zoning permit reviewed every 12 months, with a fee. A recorded agreement binds later owners to remove the unit or join it back into the house when no eligible relative lives there. A portable unit leaves within three months, or on sale unless the new owner is approved (27-402.1G, H, I)",
+      "Forms: a portable unit of at most 900 sq ft, or an addition to or a part of the house. A plan shows how a non-portable unit becomes part of the house later (27-402.1A)",
+      "The unit goes to the side or rear of the house and meets the side and rear setbacks for principal buildings. Total building coverage stays within the district maximum (27-402.1B, F)",
+      "Utilities: connected to the house's water and sewer. A second septic system or well only when needed to meet DEP rules (27-402.1D)",
+      "Parking: one all-weather space for the unit in addition to the house's two, three in all (27-402.1E, 27-310)",
+      "Every dwelling unit needs at least 400 sq ft of habitable heated floor area (27-307)",
+      "A detached accessory structure may be 20 ft tall, or the house height on a lot over one acre when it meets the principal setbacks (27-302.1E)",
+      "Two-family conversion by right in AG, SR, RM and V: only a single-family detached house that had at least 3,000 sq ft of habitable floor area before 1-1-2021, into two units, no exterior change, four parking spaces in all. No family rule (Table 27-202.3 note 4, 27-402.75)",
+      "Two-family and semidetached dwellings are permitted in RM, V and MU (Tables 27-202.3, 27-202.4)",
+      "Short-term rentals are not allowed in CN, AG, SR, RM, V, MU, CLI, I or Q, and need a special exception in COM and LC (Tables 27-202.3, 27-202.4)",
+      "On a nonconforming lot of record a single-family detached house and customary accessory uses may be built if the setbacks are met (27-508)"
+    ],
+    "notes": "Zoning office: Penn Township (Lancaster County). Districts (27-203 to 27-215): CN, AG, SR, V, RM, MU, COM, LC, Q, I, CLI, with Airport Safety and Natural Resources overlays. Read on eCode360 in a browser, the chapter print view (use tables read from the table cells) and section print views. Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, elder cottage, family unit, second dwelling, accessory residential, guest house, tiny house, caretaker, dependent, short-term. The earlier town summary (relative only, temporary) agrees, but it called the path a special exception. The use tables show P."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory Dwelling Unit for Relative",
+      "section": "Table 27-202.3, 27-112 'Accessory dwelling unit (ADU)', 27-402.1",
+      "url": "https://ecode360.com/39358257",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "27-112: 'A dwelling unit that is either attached to the principal permitted building or to a permitted accessory building on a lot that has common utilities with the principal permitted building. Note: In certain cases, this type of unit is limited to occupancy by an older person or disabled person who is related ... to the occupants of the principal dwelling.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "Table 27-202.3, Table 27-202.4, 27-402.1C",
+      "url": "https://ecode360.com/39358257",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "P (permitted by right, determination by the Zoning Officer) in CN, AG, SR, RM, V, MU, COM and LC, for a relative 50 or older or disabled. The family rule limits most."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "Table 27-202.3 key, 27-402.1H",
+      "url": "https://ecode360.com/39358257",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'P = Permitted by right (determination by the Zoning Officer)'. The Zoning Officer issues a temporary zoning permit, reviewed every 12 months."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-402.1, MPC 910.2",
+      "url": "https://ecode360.com/39358257",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails 27-402.1 (for example a tenant who is not an eligible relative) needs a variance."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family conversion of a single-family detached house",
+          "path": "by_right",
+          "districts": [
+            "AG",
+            "SR",
+            "RM",
+            "V"
+          ],
+          "conditions": "Only a single-family detached house that existed with at least 3,000 sq ft of habitable floor area before 1-1-2021, into at most two units. Approved water and sewage. No exterior change except fire escapes. Four parking spaces in all. No family rule.",
+          "min_lot_sqft": null,
+          "section": "Table 27-202.3 note 4, 27-402.75",
+          "url": "https://ecode360.com/39351529"
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "RM",
+            "V",
+            "MU"
+          ],
+          "conditions": "Permitted use. Its lot rules were not read for this file (RM sets 4 units an acre at most).",
+          "min_lot_sqft": null,
+          "section": "Table 27-202.3, Table 27-202.4",
+          "url": "https://ecode360.com/39358257",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Two dwelling units in a pre-1945 building on a historic farmstead",
+          "path": "special_exception",
+          "districts": [
+            "AG",
+            "SR",
+            "RM",
+            "V",
+            "MU",
+            "COM",
+            "LC",
+            "CLI",
+            "I",
+            "Q"
+          ],
+          "conditions": "Adaptive reuse of buildings built before 1945 within a historic farmstead. Parking rules apply.",
+          "min_lot_sqft": null,
+          "section": "Tables 27-202.3, 27-202.4, 27-402 'Adaptive Reuse of Existing Buildings on Historic Farmsteads'",
+          "url": "https://ecode360.com/39351529",
+          "confidence": "secondary",
+          "note": "The tables mark it SE. The section text says the uses 'may be approved as permitted-by-right uses'. Ask the zoning officer."
+        }
+      ],
+      "section": "27-402.75, Tables 27-202.3, 27-202.4",
+      "url": "https://ecode360.com/39358257",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not ADUs."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "CN",
+        "AG",
+        "SR",
+        "RM",
+        "V",
+        "MU",
+        "COM",
+        "LC"
+      ],
+      "section": "Table 27-202.3, Table 27-202.4",
+      "url": "https://ecode360.com/39358257",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Residential table: P P P P P under CN, AG, SR, RM, V. Business table: 'on the lot of an existing dwelling' P P P under MU, COM, LC, N under CLI, I, Q."
+    },
+    "building_types": {
+      "value": null,
+      "section": "27-402.1A, 27-112",
+      "url": "https://ecode360.com/39350230",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Not limited to a house type. The unit is an addition to or part of 'the principal dwelling', or a portable unit."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-402.1A",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A portable unit may be placed new, and an addition may be built."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/print/PE3692?guid=30832287",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No historic path for this unit."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "care",
+          "condition": "At least one occupant is 50 or older or disabled, and related by blood, marriage or adoption to the occupants of the house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-402.1C",
+          "url": "https://ecode360.com/39351529"
+        },
+        {
+          "kind": "other",
+          "condition": "Temporary use: a temporary zoning permit reviewed every 12 months, and a recorded agreement to remove the unit or make it part of the house when the conditions are no longer met. A portable unit leaves within three months.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-402.1G, H, I",
+          "url": "https://ecode360.com/39351529"
+        },
+        {
+          "kind": "design",
+          "condition": "The unit is placed to the side or rear of the house and meets the side and rear setbacks for principal buildings.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-402.1F",
+          "url": "https://ecode360.com/39351529"
+        },
+        {
+          "kind": "size",
+          "condition": "Total building coverage of the house, other accessory structures and the unit within the district maximum lot coverage.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-402.1B",
+          "url": "https://ecode360.com/39351529"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Connected to the systems serving the house. On-site systems must be shown adequate for all occupants.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-402.1D",
+          "url": "https://ecode360.com/39351529"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "On a nonconforming lot of record, a single-family detached house and customary accessory uses may be built if the setbacks are met.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-508",
+          "url": "https://ecode360.com/39352684"
+        }
+      ],
+      "section": "27-402.1",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new"
+      ],
+      "section": "27-402.1A",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The ADU shall either: 1) be of portable construction, in which case it shall be limited to a maximum of 900 square feet of floor area, or 2) be constructed as an addition or within part of the principal dwelling on the lot.' A garage of the house is part of the principal dwelling. A detached garage is not named."
+    },
+    "labels": {
+      "value": {
+        "detached_new": "Portable unit (removable), up to 900 sq ft"
+      },
+      "section": "27-402.1A",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft_accessory_building": {
+      "value": 900,
+      "section": "27-402.1A",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Portable unit at most 900 sq ft of floor area. No size cap for an addition or a unit inside the house."
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "27-307",
+      "url": "https://ecode360.com/39351193",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'All dwelling units shall have a minimum habitable indoor heated floor area of 400 square feet'."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "27-302.1E",
+      "url": "https://ecode360.com/39351030",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Unless otherwise specified, detached accessory structures shall have a maximum height of 20 feet, except that the principal building height shall apply for a building that meets the setback requirements for a principal building and is on a lot of more than one acre.' Read as reaching a portable unit."
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 35,
+          "where": "on a lot of more than one acre when it meets the principal building setbacks (the district height, 35 ft in SR and RM, 40 ft in AG)",
+          "section": "27-302.1E",
+          "url": "https://ecode360.com/39351030"
+        }
+      ],
+      "section": "27-302.1E",
+      "url": "https://ecode360.com/39351030",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-402.1A",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "An addition is part of the house."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-402.1F, 27-302.1B",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The ADU shall be installed and located to the side or rear of the principal dwelling'."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "27-402.1F",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'and shall adhere to all side and rear yard setback requirements for principal uses.'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "27-302.1F(1)",
+      "url": "https://ecode360.com/39351030",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The footprint of any one accessory structure shall be smaller than the building footprint of the principal dwelling unit.' A portable unit is held to 900 sq ft anyway."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "27-402.1",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No owner-occupancy rule. The occupants must be related to the occupants of the house."
+    },
+    "family_only": {
+      "value": true,
+      "section": "27-402.1C",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The ADU shall be occupied by a maximum of two people, at least one of whom is: 1) at least 50 years old or disabled, and 2) is related to the occupants of the principal dwelling by blood, marriage, or adoption.'"
+    },
+    "occupancy": {
+      "value": "At most two people. At least one is 50 or older or disabled and related to the people in the house. At most two bedrooms.",
+      "section": "27-402.1C",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": null,
+      "section": "27-402.1",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Not stated. The standards speak of 'the ADU'."
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "27-402.1G, I",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Not stated as such. The unit is temporary and is removed or joined to the house on sale unless the new owner is approved."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "Table 27-202.3, Table 27-202.4",
+      "url": "https://ecode360.com/39358257",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Short-Term Rental is N in CN, AG, SR, RM, V and MU and SE in COM and LC. The family rule also limits who may live in the unit."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "27-402.1E",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A minimum of one all-weather, off-street parking space, with ingress and egress to the street, shall be provided for the ADU, in addition to spaces required for the principal dwelling.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "27-310",
+      "url": "https://ecode360.com/39351200",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Two spaces for each detached, semidetached or attached dwelling unit, plus one."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "27-402.1D(1)",
+      "url": "https://ecode360.com/39351529",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'the ADU shall be physically connected to those systems serving the principal dwelling'. A second septic system or well only when DEP rules or water yield require it."
+    }
+  },
+  "districts": {
+    "SR": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-205.1",
+        "url": "https://ecode360.com/39350762",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Residential uses, 1 acre. Width 150 ft."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-205.1",
+        "url": "https://ecode360.com/39350762",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-205.1",
+        "url": "https://ecode360.com/39350762",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side 15 ft, both 30 ft."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-205.1",
+        "url": "https://ecode360.com/39350762",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-205.1",
+        "url": "https://ecode360.com/39350762",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "27-205.1",
+        "url": "https://ecode360.com/39350762",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot coverage."
+      }
+    },
+    "RM": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/39350790",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. 43,560 without. Width 70 ft."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/39350790",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/39350790",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/39350790",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/39350790",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/39350790",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot coverage. 60% on a lot under 10,000 sq ft existing before 1-1-2019."
+      }
+    },
+    "AG": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-204",
+        "url": "https://ecode360.com/39350728",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached, 1 acre minimum and 2 acres maximum. Width 150 ft. Lots limited by parent tract size."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-204",
+        "url": "https://ecode360.com/39350728",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-204",
+        "url": "https://ecode360.com/39350728",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-204",
+        "url": "https://ecode360.com/39350728",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-204",
+        "url": "https://ecode360.com/39350728",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-204",
+        "url": "https://ecode360.com/39350728",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot coverage."
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-206",
+        "url": "https://ecode360.com/39350770",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with public sewer. 40,000 with water only, 43,560 with well and septic."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "27-206",
+        "url": "https://ecode360.com/39350770",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "10 ft minimum, 30 ft maximum."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-206",
+        "url": "https://ecode360.com/39350770",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-206",
+        "url": "https://ecode360.com/39350770",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

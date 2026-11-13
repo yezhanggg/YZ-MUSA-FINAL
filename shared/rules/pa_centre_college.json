@@ -1,0 +1,671 @@
+{
+  "provenance": {
+    "jurisdiction": "College township",
+    "instrument": "Code of the Township of College, Chapter 200 Zoning (Ord. No. 59, as amended), with the district Criteria and Standards attachments, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 200 adopted 9-8-1977 by Ord. No. 59. The accessory dwelling unit rule in 200-11A(1) was amended 11-14-1985 (Ord. 59-J), 3-11-1993 (O-93-02), 4-6-2000 (O-00-01) and 3-19-2009 (O-09-02). Parking for it amended 12-20-2012 (O-12-13), the rental permit line added 6-21-2012 (O-12-01). The latest amendment noted in the chapter text is O-25-01 (3-20-2025). The district attachments carry 'Supp 17, Jan 2023' and amendments to 7-21-2022 (O-22-02). eCode360 New Laws (read 2026-11-13) list zoning ordinances O-26-02 (2-19-2026) and O-26-03 (4-16-2026), both titled data center conditional uses, and SALDO, sign and fee changes. Their PDFs were not opened.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/10705471",
+      "https://ecode360.com/print/CO1052?guid=10705471",
+      "https://ecode360.com/10705494",
+      "https://ecode360.com/10705751",
+      "https://ecode360.com/10705769",
+      "https://ecode360.com/10706044",
+      "https://ecode360.com/10706085",
+      "https://ecode360.com/10706606",
+      "https://ecode360.com/10706824",
+      "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200d%20OSRC%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200g%20TFR%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200h%20MFR%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200j%20RO%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200k%20General%20Comm%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200l%20Gateway%20Comm%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200o%20Office%20Commercial%20District.pdf",
+      "https://ecode360.com/attachment/CO1052/CO1052-200t%20Parking%20Table.pdf",
+      "https://ecode360.com/CO1052/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Centre",
+    "municipality_type": "township",
+    "geoid": "4202715136",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10705471",
+    "code_current_through": null,
+    "code_current_through_note": "No currency line read. Latest amendment noted in the chapter: O-25-01 (3-20-2025). New Laws list O-26-02 and O-26-03 (zoning, data centers) not yet codified.",
+    "checks": [
+      "A single-family detached house may include a one-bedroom attached or detached accessory dwelling unit as an accessory use, with a zoning permit (200-11A(1)). It follows the house: allowed where single-family detached houses are permitted (F, A, RR, R-1, R-2, R-O, V). R-3, C-1, C-2 and OSRC have no single-family houses",
+      "The landowner must live in the house or the unit. If away for more than three months the owner may rent one of the two, not both (200-11A(1))",
+      "Size: at most 25% of the finished gross living area of the house, and the house must have at least 1,500 sq ft of finished gross living area (200-11A(1)(b), (c))",
+      "At most three unrelated persons living as a family in the house and unit together (200-11A(1)(f))",
+      "Parking: one space for the unit in addition to the house's two, three in all (200-11A(1)(d), 200-38, Attachment 20)",
+      "A residential rental permit is needed if the unit is rented (200-11A(1)(g), Chapter 160)",
+      "Accessory structures meet the lot, yard and height rules of the house (200-11A). A detached unit uses the district yards",
+      "The Gateway Commercial District permits 'Residential dwellings of all types', so a single-family house and its unit may be possible there. District symbol GWC (Attachment 12, 200-8, 200-26.1)",
+      "Commercial buildings in V, C-1 and C-2 may include one dwelling unit (per tenant space). Not an ADU to a house (200-11A(2))",
+      "On a single nonconforming lot of record a single-family detached house and customary accessory uses may be built, with the R-1 yards (200-44A)",
+      "Duplexes are permitted by right in R-1 on new construction only (8,500 sq ft per unit, 500 ft from another duplex on lots under two acres) and in R-2 (200-19C, Attachments 6 and 7)"
+    ],
+    "notes": "Zoning office: College Township. Districts (200-8): F, A, OSR, RR, R-1 (SFR), R-2 (TFR), R-3 (MFR), V, MHP, PRD, R-O, C-1, GWC, C-2, PRBD, Medical Campus, I-1, University-Planned. Read on eCode360 in a browser (chapter print view, searched in the page). The district Criteria and Standards attachments were fetched once each and read as text (the Agricultural one as a page image). Searched for accessory dwelling, accessory apartment, in-law, granny, ECHO, carriage house, second dwelling, guest house, tiny house, short-term, transient. No short-term rental rule found. The earlier town summary (by right, one bedroom, owner on site, 25%) agrees."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory dwelling unit",
+      "section": "200-7 'Accessory dwelling unit', 200-11A(1)",
+      "url": "https://ecode360.com/10705494",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A second unit either in, added to or on the property of an existing single-family detached dwelling in which there is no means of access between the two dwelling units.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "200-11A(1)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A single-family detached dwelling may include a one-bedroom, attached or detached accessory dwelling unit, as defined in § 200-7, provided that the landowner is a resident of either the principal or accessory dwelling unit.' Listed as an accessory use, with no hearing."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "200-11A(1), Attachment 6 (14)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "An accessory use to a permitted single-family detached house. The district tables list 'Customary uses accessory to the above' as accessory uses."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "200-11, MPC 910.2",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'All other uses not expressly permitted are prohibited' (200-11). A unit that fails 200-11A(1) needs a variance."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex",
+          "path": "by_right",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "New construction only: 'Any structure existing at the time of adoption of this subsection shall not be permitted to be utilized as a duplex.' 8,500 sq ft per unit. On a lot under two acres, one duplex and at least 500 ft from another duplex.",
+          "min_lot_sqft": 17000,
+          "section": "200-19C, Attachment 6 (4)",
+          "url": "https://ecode360.com/10706085"
+        },
+        {
+          "name": "Duplex",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-O"
+          ],
+          "conditions": "Permitted use. 7,000 sq ft per building, width 70 ft. R-O allows all R-2 uses.",
+          "min_lot_sqft": 7000,
+          "section": "Attachment 7 (4), Attachment 10 (1)",
+          "url": "https://ecode360.com/attachment/CO1052/CO1052-200g%20TFR%20District.pdf"
+        },
+        {
+          "name": "Two-family detached or semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "V"
+          ],
+          "conditions": "Permitted use. 10,000 sq ft lot. No structure over 2,500 sq ft of ground floor.",
+          "min_lot_sqft": 10000,
+          "section": "Attachment 9 (13), (14)",
+          "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf"
+        }
+      ],
+      "section": "Attachments 6, 7, 9",
+      "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not ADUs."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "F",
+        "A",
+        "RR",
+        "R-1",
+        "R-2",
+        "R-O",
+        "V"
+      ],
+      "section": "200-11A(1), Attachments 2, 3, 5, 6, 7, 9, 10",
+      "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Districts whose tables permit single-family detached houses: F (9), A (13), RR ((19) all A uses), R-1 (2), R-2 ('Single-family houses'), R-O ((1) all R-2 uses), V (13). Gateway Commercial (GWC) also allows dwellings of all types (eligibility.districts_in_doubt)."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "200-11A(1)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A single-family detached dwelling may include'."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "200-7 'Accessory dwelling unit'",
+      "url": "https://ecode360.com/10705494",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The definition speaks of 'an existing single-family detached dwelling'. The unit itself may be in, added to, or on the property of the house."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 200",
+      "url": "https://ecode360.com/print/CO1052?guid=10705471",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No historic path found for the unit."
+    },
+    "districts_in_doubt": {
+      "value": [
+        "GWC"
+      ],
+      "section": "200-8, Attachment 12 (12), 200-26.1",
+      "url": "https://ecode360.com/attachment/CO1052/CO1052-200l%20Gateway%20Comm%20District.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The Gateway Commercial District (GWC) permits 'Residential dwellings of all types defined herein'. A single-family detached house there could carry the unit under 200-11A(1). Not confirmed."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "size",
+          "condition": "The house must have at least 1,500 sq ft of finished gross living area.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-11A(1)(c)",
+          "url": "https://ecode360.com/10705769"
+        },
+        {
+          "kind": "other",
+          "condition": "One bedroom at most. No means of access between the two units.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-11A(1), 200-7",
+          "url": "https://ecode360.com/10705494"
+        },
+        {
+          "kind": "other",
+          "condition": "The unit meets Chapter 82 (building code) and Chapter 152 (property maintenance and fire code). A residential rental permit if rented.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-11A(1)(a), (g)",
+          "url": "https://ecode360.com/10705769"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "On a single nonconforming lot of record in separate ownership, a house and customary accessory uses may be built if the R-1 yards are met.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-44A",
+          "url": "https://ecode360.com/10706824"
+        }
+      ],
+      "section": "200-11A(1)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "200-7, 200-11A(1)",
+      "url": "https://ecode360.com/10705494",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'either in, added to or on the property of an existing single-family detached dwelling', 'attached or detached'."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "200-11A(1)(b)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No fixed square-foot cap. Share cap only."
+    },
+    "max_share_of_house": {
+      "value": 0.25,
+      "section": "200-11A(1)(b)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The accessory dwelling unit shall not exceed 25% of the finished gross living area of the principal dwelling.' With the 1,500 sq ft house minimum, at least 375 sq ft."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "200-11A, 200-14",
+      "url": "https://ecode360.com/10706044",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "District height, 35 ft in the residential districts."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "200-11A",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'All accessory structures, except where otherwise permitted by this chapter, shall comply with the lot, yard setback and maximum height requirements for the primary use to which such structure is accessory.'"
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "200-11A, 200-14",
+      "url": "https://ecode360.com/10706044",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No separate accessory height. The district height applies."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "200-11A(1)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'provided that the landowner is a resident of either the principal or accessory dwelling unit.' If the landowner is away more than three months, one of the two units may be rented, not both."
+    },
+    "family_only": {
+      "value": false,
+      "section": "200-11A(1)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No family rule."
+    },
+    "occupancy": {
+      "value": "At most three unrelated persons living as a family unit in the house and the unit together.",
+      "section": "200-11A(1)(f)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "200-11A(1)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'may include a one-bedroom ... accessory dwelling unit'. Read as one."
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "200-11A(1)",
+      "url": "https://ecode360.com/10705769",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Not addressed."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 200",
+      "url": "https://ecode360.com/print/CO1052?guid=10705471",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No short-term rental rule found in the zoning chapter. Rentals need a Chapter 160 permit."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "200-11A(1)(d), 200-38",
+      "url": "https://ecode360.com/10706606",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One additional off-street parking space shall be required for the accessory dwelling unit in addition to that required for the principal dwelling unit'."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "Attachment 20",
+      "url": "https://ecode360.com/attachment/CO1052/CO1052-200t%20Parking%20Table.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Residential structures: 2 per dwelling unit, plus one."
+    }
+  },
+  "districts": {
+    "F": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "Attachment 2 (9)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "2 acres. Width 200 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Attachment 2 (9)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "Attachment 2 (9)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "Attachment 2 (9)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 2 (9)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "Attachment 2 (9)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200b%20Forest%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "1 acre. Width 150 ft at the building setback line."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200c%20Agricultural%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "Attachment 5 (19), Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "RR permits all Agricultural District uses under the A rules."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Attachment 5 (19), Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "Attachment 5 (19), Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "Attachment 5 (19), Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 5 (19), Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "Attachment 5 (19), Attachment 3 (13)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200e%20RR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 8500,
+        "section": "Attachment 6 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Width 80 ft at the building setback line."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Attachment 6 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "50 ft on arterial streets."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Attachment 6 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Attachment 6 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 6 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "Attachment 6 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200f%20SFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "The table says Maximum Coverage 40%, without saying building or impervious."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200g%20TFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family houses. Width 70 ft."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200g%20TFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "50 ft on arterial streets."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200g%20TFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200g%20TFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200g%20TFR%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-O": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "Attachment 10 (1), Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200j%20RO%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "R-O permits all R-2 uses under the R-2 rules."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Attachment 10 (1), Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200j%20RO%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Attachment 10 (1), Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200j%20RO%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Attachment 10 (1), Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200j%20RO%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 10 (1), Attachment 7 (2)",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200j%20RO%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "Attachment 9",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Width 50 ft. No structure over 2,500 sq ft of ground floor."
+      },
+      "setback_front_ft": {
+        "value": 4,
+        "section": "Attachment 9",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "Attachment 9",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "Attachment 9",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 9",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "Attachment 9",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200i%20Village%20Ctr%20District.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

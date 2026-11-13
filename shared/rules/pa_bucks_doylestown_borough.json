@@ -1,0 +1,600 @@
+{
+  "provenance": {
+    "jurisdiction": "Doylestown borough",
+    "instrument": "Code of Ordinances of the Borough of Doylestown, Chapter 27 Zoning (Ord. 1972-10, as amended), with Attachment 5 (Table of Use Regulations) and Attachment 6 (Table of Dimensional Requirements), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 27 rests on Ord. 1972-10 (10/16/1972). Use 61.1, Accessory Dwelling Unit, sits in 27-406, whose amendment line ends with Ord. No. 2024-5 (7/15/2024), 2025-2 (4/21/2025), 2026-5 (4/20/2026) and 2026-13 (9/22/2026). The definitions (27-202) and the Table of Use Regulations were also amended by Ord. No. 2026-5, so the ADU listing is read as added on 4/20/2026. Not confirmed from the ordinance itself. eCode360 shows 'Includes legislation through 09-22-2026'. New Laws (read 2026-11-13): none.",
+    "effective_date": "2026-04-20",
+    "source_urls": [
+      "https://ecode360.com/11768539",
+      "https://ecode360.com/print/DO1641?guid=11768539",
+      "https://ecode360.com/16053356",
+      "https://ecode360.com/16053641",
+      "https://ecode360.com/16053649",
+      "https://ecode360.com/16054402",
+      "https://ecode360.com/16054409",
+      "https://ecode360.com/16054430",
+      "https://ecode360.com/16054436",
+      "https://ecode360.com/16054796",
+      "https://ecode360.com/attachment/339140/DO1641-27e%20Table%20of%20Use%20Regulations.pdf",
+      "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+      "https://ecode360.com/DO1641/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Bucks",
+    "municipality_type": "borough",
+    "geoid": "4201719784",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11768539",
+    "code_current_through": "2026-09-22",
+    "code_current_through_note": "'Includes legislation through 09-22-2026' on the eCode360 table of contents, read 2026-11-13.",
+    "checks": [
+      "An accessory dwelling unit needs a special exception from the Zoning Hearing Board in R-1, R-2, R-3 and CR only (27-406(61.1)A, Attachment 5 use 61.1: S in R1, R2, R3, CR, N elsewhere)",
+      "In R-1 and R-2 the house must be a single-family detached dwelling. In R-3 and CR it may be single-family detached or semidetached (27-406(61.1)F(1), G(1))",
+      "Size: in R-1 and R-2 at most 800 sq ft or 50% of the house's floor area, whichever is greater. In R-3 and CR, 600 sq ft or 50%, whichever is greater (27-406(61.1)F(2), G(2))",
+      "One unit per lot. One more off-street space, sharing the house's driveway, three in all (27-406(61.1)B, C, 27-801)",
+      "The unit meets the district dimensional rules, but it is not counted in gross density or lot area per dwelling unit (27-406(61.1)D)",
+      "Before the certificate of occupancy, a recorded covenant: the lot stays undivided, the unit is never sold or made a condominium apart, it is not enlarged without Borough approval, and either one family lives in both units or the owner lives in one of them (27-406(61.1)H)",
+      "Occupancy certificate under Chapter 13, Part 7 (27-406(61.1)E)",
+      "Residential accessory buildings take the same front, side and rear yards as the house (Attachment 6, use 61)",
+      "Two buildings on one lot, one of them residential, must be apart by at least 25 ft or 200% of the taller building's height in R-1, R-2 and R-3 (100% in CR), whichever is greater, where a facing wall has a window. A 15 ft cottage beside a 30 ft house would need 60 ft in R-1 to R-3 (27-521, Attachment 6 note 9)",
+      "Not in R-2A, CR-H, O, RC, RC-1, CC, FC, CI, PI, TND-1 or TND-2. Uses not listed are not permitted there (27-401, 27-402)",
+      "Two-family duplex dwellings are permitted by right in R-3 (20,000 sq ft, 10,000 per unit), CR and CR-H (Attachment 5 use 4, Attachment 6)",
+      "A single-family dwelling may be built on a lawful older lot in separate ownership if the yards are met (27-506)"
+    ],
+    "notes": "Zoning office: Doylestown Borough. Districts (Attachment 5 columns): R1, R2, R2A, R3, CR, CR-H, O, RC, RC-1, CC, FC, CI, PI, TND-1, TND-2. The ordinance text writes R-1, R-2, R-3. Read on eCode360 in a browser (chapter print view, searched in the page). Attachments 5 and 6 fetched once each and read as text. Searched for accessory dwelling, ADU, accessory apartment, in-law, granny, ECHO, elder cottage, second dwelling, guest house, tiny house, carriage house, short-term. No short-term rental rule found. Use 5 (conversion) is 'Intentionally Omitted'. Historic district (HARB) review under other chapters was not checked."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory Dwelling Unit (\"ADU\")",
+      "section": "27-406(61.1)",
+      "url": "https://ecode360.com/print/DO1641?guid=11768539",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A dwelling unit that is accessory to, and located on the same lot as, a Single-Family Detached Dwelling (Use 1) or a Single-Family Semi-Detached Dwelling (Use 2).'"
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "27-406(61.1), Attachment 5 use 61.1",
+      "url": "https://ecode360.com/attachment/339140/DO1641-27e%20Table%20of%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ADUs are only permitted by special exception approved and granted by the Zoning Hearing Board pursuant to Part 11 of this chapter'. Table: S in R1, R2, R3, CR."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "27-406(61.1), 27-402.3",
+      "url": "https://ecode360.com/16053641",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A use listed in § 406 is permitted as a special exception in any district under which it is denoted by the letter \"S\", provided the Zoning Hearing Board ... authorizes the issuance of a zoning permit'."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-401, 27-402.4, MPC 910.2",
+      "url": "https://ecode360.com/16053641",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Elsewhere the use is 'N', not permitted. No unlisted-use path found. A variance is the path."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family duplex dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Permitted use. Minimum area 20,000 sq ft, 10,000 sq ft per unit, density 3 units an acre, front 35 ft, side 12 ft, rear 25 ft. Two spaces per unit.",
+          "min_lot_sqft": 20000,
+          "section": "Attachment 5 use 4, Attachment 6 R-3, 27-801",
+          "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf"
+        },
+        {
+          "name": "Two-family duplex dwelling",
+          "path": "by_right",
+          "districts": [
+            "CR"
+          ],
+          "conditions": "Permitted use. 5,000 sq ft per unit (Attachment 6 also lists a 4,000 sq ft minimum area), width 60 ft, front 15 ft, side 15 ft, rear 25 ft. Two spaces per unit.",
+          "min_lot_sqft": 10000,
+          "section": "Attachment 5 use 4, Attachment 6 CR, 27-801",
+          "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Two-family duplex dwelling",
+          "path": "by_right",
+          "districts": [
+            "CR-H"
+          ],
+          "conditions": "Permitted use. The CR-H dimensional row for other uses is blank.",
+          "min_lot_sqft": null,
+          "section": "Attachment 5 use 4",
+          "url": "https://ecode360.com/attachment/339140/DO1641-27e%20Table%20of%20Use%20Regulations.pdf",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "Attachment 5 use 4",
+      "url": "https://ecode360.com/attachment/339140/DO1641-27e%20Table%20of%20Use%20Regulations.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not ADUs."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "CR"
+      ],
+      "section": "27-406(61.1)A, Attachment 5 use 61.1",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ADUs shall only be permitted in the Residential 1 (R-1), Residential 2 (R-2), Residential 3 (R-3), and Central Residential (CR) Zoning Districts of the Borough.'"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached"
+      ],
+      "section": "27-406(61.1)F(1), G(1)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Single-family detached in R-1 and R-2. Detached or semidetached in R-3 and CR."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-406(61.1)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No rule that the unit be in an existing building."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/print/DO1641?guid=11768539",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No historic path in 27-406(61.1)."
+    },
+    "requires_conforming_lot": {
+      "value": null,
+      "section": "27-406(61.1)D, 27-506",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'ADUs shall comply with § 27-502, District Regulations, and the Table of Dimensional Requirements ... except that the ADU shall not be included in the calculation of Maximum Gross Density and Minimum Lot Area per Dwelling Unit.' Whether an older lot below the minimum qualifies is not settled. Ask the zoning officer."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "In R-1 and R-2 the house must be a single-family detached dwelling.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "building_types": [
+            "semi_detached"
+          ],
+          "section": "27-406(61.1)F(1)",
+          "url": "https://ecode360.com/16053649"
+        },
+        {
+          "kind": "size",
+          "condition": "In R-1 and R-2 the unit may have up to 800 sq ft or 50% of the house's floor area, whichever is greater.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "building_types": null,
+          "section": "27-406(61.1)F(2)",
+          "url": "https://ecode360.com/16053649"
+        },
+        {
+          "kind": "size",
+          "condition": "In R-3 and CR the unit may have up to 600 sq ft or 50% of the house's floor area, whichever is greater.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-3",
+            "CR"
+          ],
+          "building_types": null,
+          "section": "27-406(61.1)G(2)",
+          "url": "https://ecode360.com/16053649"
+        },
+        {
+          "kind": "other",
+          "condition": "Two buildings on one lot, one residential, must be apart by the greater of 25 ft or the district ratio of the taller building's height: 200% in R-1, R-2 and R-3, 100% in CR. It does not apply to facing walls neither of which has a window.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-521, Attachment 6 note 9",
+          "url": "https://ecode360.com/16054436"
+        },
+        {
+          "kind": "other",
+          "condition": "A recorded declaration of restrictive covenants before the certificate of occupancy: undivided lot, no separate sale or condominium, no enlargement without Borough approval, and the occupancy rule.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-406(61.1)H",
+          "url": "https://ecode360.com/16053649"
+        },
+        {
+          "kind": "parking",
+          "condition": "The unit's parking space shares the driveway of the house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-406(61.1)C",
+          "url": "https://ecode360.com/16053649"
+        }
+      ],
+      "section": "27-406(61.1)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-406(61.1)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The ADU is any dwelling unit 'accessory to, and located on the same lot as' the house. No form is excluded."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-406(61.1)F(2), G(2)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not a cap in the usual sense: 'shall not exceed 800 square feet or 50% of the floor area of the principal dwelling on the same lot, whichever is greater' (R-1, R-2), 600 sq ft or 50% in R-3 and CR. Shown in gates."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-522, Attachment 6",
+      "url": "https://ecode360.com/16054402",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "District height 35 ft or 3 stories."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "Attachment 6 use 61, 27-406(61.1)D",
+      "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Use 61 Residential Accessory - Front, rear and side yard requirements shall be the same as specified for the principal residential use.'"
+    },
+    "max_height_ft": {
+      "value": null,
+      "section": "27-518, 27-522",
+      "url": "https://ecode360.com/16054430",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No separate height for a detached unit. Accessory buildings inside a required rear yard are limited to 15 ft (27-518), but the unit must meet the house's yards, so the district height (35 ft or 3 stories) applies."
+    },
+    "separation_ft": {
+      "value": 25,
+      "section": "27-521",
+      "url": "https://ecode360.com/16054436",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "At least 25 ft, or 200% of the taller building's height in R-1, R-2 and R-3 (100% in CR), whichever is greater, between facing walls with a window."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "27-406(61.1)H(3)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Either one 'family' lives in both units, or, if the unit or the house is the owner's domicile, each may house a separate family. So a tenant household in both units is not allowed, but the owner need not live there if one family occupies both."
+    },
+    "family_only": {
+      "value": false,
+      "section": "27-406(61.1)H(3)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Two separate families may live in the two units when the owner lives in one of them."
+    },
+    "occupancy": {
+      "value": "Either one family occupies the house and the unit, or the owner lives in one and a separate single family in the other.",
+      "section": "27-406(61.1)H(3)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-406(61.1)B",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A maximum of one ADU shall be permitted per lot.'"
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "27-406(61.1)H(1)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'the segregation, bifurcation, subdivision, sale, or transfer of the ADU separately from the principal residence ... is strictly prohibited.'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/print/DO1641?guid=11768539",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No short-term rental rule found in the zoning chapter."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "27-406(61.1)C",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One additional off-street parking space shall be provided for an ADU. Driveway access to the parking shall be shared with the principal use.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "27-801",
+      "url": "https://ecode360.com/16054796",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Residential (Uses 1 to 6): two spaces per dwelling unit', plus one."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "Attachment 6 R-1",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit for a single-family detached house. The ADU is not counted (27-406(61.1)D). Width 100/80 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Attachment 6 R-1",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Attachment 6 R-1",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "Attachment 6 R-1",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 6 R-1",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Attachment 6 R-1",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "Attachment 6 R-1",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Maximum lot coverage, individual lots."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 13500,
+        "section": "Attachment 6 R-2",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit for a house. Width 90/75 ft."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "Attachment 6 R-2",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "Attachment 6 R-2",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 6 R-2",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 6 R-2",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Attachment 6 R-2",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "Attachment 6 R-2",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 13500,
+        "section": "Attachment 6 R-3",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. 10,000 per unit for semidetached."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "Attachment 6 R-3",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "Attachment 6 R-3",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 6 R-3",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 6 R-3",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Attachment 6 R-3",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "Attachment 6 R-3",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "CR": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "Attachment 6 CR",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit, single-family detached and semidetached. Width 50 ft."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "Attachment 6 CR",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Attachment 6 CR",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "15 ft for a semidetached house."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 6 CR",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 6 CR",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "Attachment 6 CR",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "Attachment 6 CR",
+        "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

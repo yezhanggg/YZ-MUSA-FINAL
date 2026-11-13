@@ -1,0 +1,982 @@
+{
+  "provenance": {
+    "jurisdiction": "Malvern borough",
+    "instrument": "Code of the Borough of Malvern, Chapter 220 Zoning (Ord. No. 2003-8, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 220 adopted 5-21-2003 by Ord. No. 2003-8. 220-2401 (accessory uses, with the supplemental dwelling unit in A(11)) amended 8-21-2007 by Ord. No. 2007-4. The district dimensional rules were amended in 2016 (Ord. 2016-13) and 2020 (Ord. 2020-5). The chapter is numbered 220 on eCode360. eCode360 New Laws (read 2026-11-13) list Ord. 2025-4 (parks, Ch 139) and Ord. 2026-4 (mobile food), neither a zoning change.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11230593",
+      "https://ecode360.com/print/MA0856?guid=11230593",
+      "https://ecode360.com/31446948",
+      "https://ecode360.com/31445124",
+      "https://ecode360.com/31445485",
+      "https://ecode360.com/31445513",
+      "https://ecode360.com/31445541",
+      "https://ecode360.com/31445586",
+      "https://ecode360.com/31445618",
+      "https://ecode360.com/31445645",
+      "https://ecode360.com/31445676",
+      "https://ecode360.com/31446040",
+      "https://ecode360.com/31446464",
+      "https://ecode360.com/31447433",
+      "https://ecode360.com/31447547",
+      "https://ecode360.com/31447865",
+      "https://ecode360.com/31447935",
+      "https://ecode360.com/MA0856/laws"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Chester",
+    "municipality_type": "borough",
+    "geoid": "4202946792",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11230593",
+    "code_current_through": "2023-12-19",
+    "code_current_through_note": "Code date shown in the eCode360 breadcrumb on 2026-11-13. New Laws list only Ord. 2025-4 and 2026-4, not zoning.",
+    "checks": [
+      "A 'supplemental dwelling unit or accessory apartment' needs a special exception from the Zoning Hearing Board in R1, R2, R3a and R3b only (220-401B(3), 220-501B(3), 220-601B(4)). R4, R5, R6 and R7 list the residential accessory uses 'with the exception of § 220-2401A(9) and (11)' and give it no special exception, so it is not allowed there",
+      "Only inside an existing single-family detached house or an existing accessory building on the lot, 'without substantial exterior modification'. No additions except an enclosed stairwell or what safety codes need. Entrances to the side or rear (220-2401A(11) intro, (a), (e))",
+      "The owner must live in the house or in the unit (220-2401A(11)(f))",
+      "Size: at most 35% of the house's total floor area and at least 400 sq ft. A unit of 400 sq ft needs a house of at least about 1,143 sq ft (220-2401A(11)(g))",
+      "One unit per lot. The district area and bulk rules apply to the lot (220-2401A(11)(c), (d))",
+      "Parking: one space for the unit in addition to the house's two, three in all (220-2401A(11)(h), 220-2501B(5))",
+      "Accessory uses stand in the side or rear yard, no further forward than the front line of the house, and have a maximum height of 15 ft. Setbacks: 5 ft side and 7 ft rear in R3a and R3b, 7 ft from lot lines elsewhere (220-2401 intro)",
+      "I4 lists 'Accessory use, as per § 220-2401A, B, C, and D' by right with no exception for A(11), and permits single-family detached houses. Read literally the unit would be by right in I4. Ask the zoning officer (220-1901A(9))",
+      "Two-family duplex and semidetached dwellings are permitted by right in R3a, R3b, R4, R5, R6, R7 and I4, with lot area per unit (220-601A, 220-701A, 220-801A, 220-901A, 220-1001A, 220-1901A)",
+      "In R4 a residential conversion of a house into two or more units is a special exception: lot area of the district minimum times the number of units, minimum unit sizes of 450 to 800 sq ft, not on a nonconforming lot (220-701B(2), 220-2422)",
+      "Properties in the Historic District Overlay may add multifamily residential (three or more units) by conditional use from Borough Council (220-2301E(1))",
+      "On a nonconforming lot of record a building may be built if the setbacks are met, and the use must be a permitted use in the district (220-2704C)",
+      "The zoning matrix attachment (Attachment 2) is an image PDF and was not read. The text sections govern here"
+    ],
+    "notes": "Zoning office: Borough of Malvern. Districts (220-300): R1, R2, R3 (R3a and R3b), R4, R5, R6, R7, C1, C2, C3, C4, I1, I2, I3, I4, LI, LI1, POSC, with a Historic District Overlay (220-2301). Read on eCode360 in a browser, section and article print views, and the chapter print view searched in the page. Searched for supplemental dwelling, accessory apartment, accessory dwelling, in-law, granny, ECHO, carriage, second dwelling, guest house, tiny, short-term, transient, boarder. No short-term rental rule in the zoning chapter. A(12) allows one boarder per single-family detached house."
+  },
+  "adu": {
+    "term": {
+      "value": "Supplemental dwelling unit or accessory apartment",
+      "section": "220-2401A(11), 220-201 'Supplemental dwelling unit'",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'This accessory use allows a smaller secondary dwelling unit within an existing single-family detached dwelling or accessory building on the same lot as the principal dwelling without substantial exterior modification to the existing building.'"
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "220-401B(3), 220-501B(3), 220-601B(4), 220-2401A(11)",
+      "url": "https://ecode360.com/31445485",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Supplemental dwelling unit, as per § 220-2401A(11)' is listed under 'Special exception uses' in R1, R2 and R3 (R3a and R3b). The by-right residential accessory uses in every residential district exclude A(11)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "220-401B, 220-501B, 220-601B, 220-2809",
+      "url": "https://ecode360.com/31445485",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The following uses shall be permitted only upon the grant of a special exception from the Zoning Hearing Board'. The Board may attach reasonable conditions (220-2809)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "220-701A(6), 220-801A(6), MPC 910.2",
+      "url": "https://ecode360.com/31445586",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "In R4 to R7 the unit is excluded from the accessory uses and has no special exception, so a use variance. LI and LI1 allow 'Any lawful use not specifically provided for elsewhere in this chapter', which does not reach a listed use."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family duplex or semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R3a",
+            "R3b"
+          ],
+          "conditions": "Permitted use. A duplex has two units one over the other with a horizontal party wall. R3a: 10,000 sq ft per unit (20,000 for a duplex), width 60 ft. R3b: 10,000 sq ft per family. Side yards 12.5 ft, rear 25 ft. Two spaces per unit.",
+          "min_lot_sqft": 20000,
+          "section": "220-601A(2), (3), 220-602A(1), B(1), 220-2501B(5)",
+          "url": "https://ecode360.com/31445541"
+        },
+        {
+          "name": "Two-family duplex or semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R4"
+          ],
+          "conditions": "Permitted use. 7,000 sq ft per unit, width 45 ft. Two spaces per unit.",
+          "min_lot_sqft": 14000,
+          "section": "220-701A(2), (3), 220-702A",
+          "url": "https://ecode360.com/31445586"
+        },
+        {
+          "name": "Two-family duplex or semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R5"
+          ],
+          "conditions": "Permitted use. 4,250 sq ft per unit. Two spaces per unit.",
+          "min_lot_sqft": 8500,
+          "section": "220-801A(2), (3), 220-802A",
+          "url": "https://ecode360.com/31445618"
+        },
+        {
+          "name": "Two-family duplex or semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R6",
+            "R7"
+          ],
+          "conditions": "Permitted use. 5,000 sq ft per unit for a duplex. Two spaces per unit.",
+          "min_lot_sqft": 10000,
+          "section": "220-901A(2), (3), 220-902A, 220-1001A(2), (3), 220-1002A",
+          "url": "https://ecode360.com/31445645"
+        },
+        {
+          "name": "Two-family duplex or semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "I4"
+          ],
+          "conditions": "Permitted use. 9,000 sq ft per unit, width 45 ft.",
+          "min_lot_sqft": 18000,
+          "section": "220-1901A(2), (3), 220-1902A",
+          "url": "https://ecode360.com/31446040"
+        },
+        {
+          "name": "Residential conversion of a single-family detached house",
+          "path": "special_exception",
+          "districts": [
+            "R4"
+          ],
+          "conditions": "Dividing a house into two or more units. Lot area of the district minimum (7,000 sq ft) times the number of units. Minimum unit sizes: efficiency 450, one bedroom 550, two bedrooms 700, three bedrooms 800 sq ft. Keeps the look of a single-family house with one front entrance. Not on a nonconforming lot or in a nonconforming structure. One space per bedroom.",
+          "min_lot_sqft": 14000,
+          "section": "220-701B(2), 220-2422, 220-2501B(5)",
+          "url": "https://ecode360.com/31447433"
+        },
+        {
+          "name": "Multifamily residential in the Historic District Overlay",
+          "path": "conditional_use",
+          "districts": null,
+          "conditions": "Properties in the Historic District Overlay may add multifamily residential by conditional use from Borough Council. Multifamily means three or more units.",
+          "min_lot_sqft": null,
+          "min_units": 3,
+          "section": "220-2301E(1)(a)[4], 220-201 'Multifamily dwelling'",
+          "url": "https://ecode360.com/31446464",
+          "confidence": "secondary",
+          "note": "The historic incentives also allow 'any combination' of uses available in the district by conditional use."
+        }
+      ],
+      "section": "220-601A, 220-701, 220-2422, 220-2301E",
+      "url": "https://ecode360.com/31445541",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Not ADUs."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R1",
+        "R2",
+        "R3a",
+        "R3b"
+      ],
+      "section": "220-401B(3), 220-501B(3), 220-601B(4)",
+      "url": "https://ecode360.com/31445485",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "R3 is split into R3a and R3b, both with the same use list (220-601)."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "220-2401A(11)(a)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A supplemental dwelling unit shall be permitted only in single-family detached dwellings and their accessory buildings.'"
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "220-2401A(11) intro, (e)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Only within an existing single-family detached house or an existing accessory building, 'without substantial exterior modification to the existing building'. No additions except enclosed stairwells or what safety codes need."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "220-2301E",
+      "url": "https://ecode360.com/31446464",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The historic incentives add uses by conditional use. They do not change the supplemental dwelling unit rule."
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "220-2401A(11)(c), 220-2704C(3)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The area and bulk regulations of the zoning district shall apply to the lot on which the supplemental dwelling unit is located.' Read as the lot must meet the district minimum. Ask the zoning officer about an older lot below it."
+    },
+    "districts_in_doubt": {
+      "value": [
+        "I4"
+      ],
+      "section": "220-1901A(9)",
+      "url": "https://ecode360.com/31446040",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "I4 permits single-family detached houses and lists 'Accessory use, as per § 220-2401A, B, C, and D' by right, with no exception for A(11). Read literally the unit would be allowed by right there."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "Entrances to the unit are at the rear or side of the building. The house keeps the look of a single-family detached house. No additions except enclosed stairwells or what safety codes need.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "220-2401A(11)(e)[1], [2]",
+          "url": "https://ecode360.com/31446948"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A unit outside the house must be contained within an existing accessory building on the same lot as the house.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "220-2401A(11)(e)[3]",
+          "url": "https://ecode360.com/31446948",
+          "test": "has_accessory_building"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "On a nonconforming lot of record, a building may be altered or erected if the district setbacks are met, and the use must be a permitted use in the district.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "220-2704C",
+          "url": "https://ecode360.com/31447865"
+        }
+      ],
+      "section": "220-2401A(11)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Conditions from the supplemental dwelling unit standards."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "220-2401A(11) intro, (e)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "(e)[1]: in the existing house, 'may be a conversion of an existing floor area, such as a garage or upper story'. (e)[3]: 'Contained within an accessory building on the same lot'. No additions, so no attached unit, and no new building."
+    },
+    "labels": {
+      "value": {
+        "garage_conversion": "Unit inside an existing garage or other accessory building",
+        "over_garage": "Unit on the upper floor of an existing accessory building"
+      },
+      "section": "220-2401A(11)(e)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "220-2401A(11)(g)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No fixed square-foot cap. Share cap only."
+    },
+    "max_share_of_house": {
+      "value": 0.35,
+      "section": "220-2401A(11)(g)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The supplemental dwelling unit shall be no more than 35% of the principal dwelling's total floor area'."
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "220-2401A(11)(g)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'and shall have a minimum floor area of 400 square feet.'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "220-2401 intro",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Accessory uses shall have a maximum height of 15 feet'. The unit must be in an existing accessory building, so its height is that building's, within this cap."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "220-2401A(11)(e)[1]",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A unit inside the house takes the district height (3 stories or 35 ft)."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "220-2401 intro",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The accessory use shall be located in the rear or side yard of the lot and shall be located no further forward than the front line of the principal building.'"
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "220-2401 intro",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "5 ft in R3a, R3b, R4, R5 and R6. 7 ft from the lot lines in other districts. See districts."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "220-2401 intro",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "7 ft in every district. See districts."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "220-2401 intro",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The accessory use setbacks in 220-2401 apply to an accessory building."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "220-2401A(11)(f)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Either the principal single-family dwelling or the supplemental dwelling unit shall be occupied by the bona fide owner of the property on which both dwelling units are located.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "220-2401A(11)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The purpose speaks of 'the specific housing needs of Borough families', but no standard limits who may live in the unit."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "220-2401A(11)(d)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'No more than one supplemental dwelling unit shall be allowed on each lot.'"
+    },
+    "sale_apart_allowed": {
+      "value": null,
+      "section": "220-2401A(11)",
+      "url": "https://ecode360.com/31446948",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Not addressed. The unit must 'remain accessory and secondary' to the house ((b))."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 220",
+      "url": "https://ecode360.com/print/MA0856?guid=11230593",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No short-term rental rule in the zoning chapter."
+    },
+    "occupancy": {
+      "value": "Any household. A 'family' is one person, related persons with up to two others, or unrelated persons living as a single housekeeping unit.",
+      "section": "220-201 'Family'",
+      "url": "https://ecode360.com/31445124",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "220-2401A(11)(h), 220-2501B(5)",
+      "url": "https://ecode360.com/31447547",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One off street parking space shall be provided for a supplemental dwelling unit in addition to the parking requirements for the principal use'. The table: 'Supplemental dwelling 1 space per supplemental dwelling'."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "220-2501B(5)",
+      "url": "https://ecode360.com/31447547",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Single-family detached dwelling 2 spaces per unit, plus 1."
+    }
+  },
+  "districts": {
+    "R1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "220-402",
+        "url": "https://ecode360.com/31445485",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One acre. Width 150 ft at the building line."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "220-402",
+        "url": "https://ecode360.com/31445485",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "220-402",
+        "url": "https://ecode360.com/31445485",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Two side yards, each 30 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "220-402",
+        "url": "https://ecode360.com/31445485",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.075,
+        "section": "220-402",
+        "url": "https://ecode360.com/31445485",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot coverage 20%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-402",
+        "url": "https://ecode360.com/31445485",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-402",
+        "url": "https://ecode360.com/31445485",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 7,
+        "section": "220-2401 intro",
+        "url": "https://ecode360.com/31446948",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 7,
+        "section": "220-2401 intro",
+        "url": "https://ecode360.com/31446948",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "220-502",
+        "url": "https://ecode360.com/31445513",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Residential uses. Width 80 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "220-502",
+        "url": "https://ecode360.com/31445513",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "220-502",
+        "url": "https://ecode360.com/31445513",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side yard may be 5 ft for a house, with an 18 ft height for that part (220-502D)."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "220-502",
+        "url": "https://ecode360.com/31445513",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "220-502",
+        "url": "https://ecode360.com/31445513",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "17.5% by conditional use. Lot coverage 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-502",
+        "url": "https://ecode360.com/31445513",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-502",
+        "url": "https://ecode360.com/31445513",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 7,
+        "section": "220-2401 intro",
+        "url": "https://ecode360.com/31446948",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 7,
+        "section": "220-2401 intro",
+        "url": "https://ecode360.com/31446948",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R3a": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "220-602A",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 60 ft."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "220-602A",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12.5,
+        "section": "220-602A",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side yard may be 5 ft, with an 18 ft height for that part (220-602A(3)(c))."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-602A",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "220-602A",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "25% by conditional use. Lot coverage 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-602A",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-602A",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "220-2401 intro",
+        "url": "https://ecode360.com/31446948",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 7,
+        "section": "220-2401 intro",
+        "url": "https://ecode360.com/31446948",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R3b": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "220-602B",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 60 ft."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "220-602B",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12.5,
+        "section": "220-602B",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side yard may be 5 ft, with an 18 ft height for that part (220-602B(3)(c))."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-602B",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "220-602B",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "25% by conditional use. Lot coverage 35%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-602B",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-602B",
+        "url": "https://ecode360.com/31445541",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "220-2401 intro",
+        "url": "https://ecode360.com/31446948",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 7,
+        "section": "220-2401 intro",
+        "url": "https://ecode360.com/31446948",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R4": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "220-702",
+        "url": "https://ecode360.com/31445586",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 45 ft."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "220-702",
+        "url": "https://ecode360.com/31445586",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "No less than 5 ft and no more than 40 ft."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "220-702",
+        "url": "https://ecode360.com/31445586",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-702",
+        "url": "https://ecode360.com/31445586",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "220-702",
+        "url": "https://ecode360.com/31445586",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-702",
+        "url": "https://ecode360.com/31445586",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-702",
+        "url": "https://ecode360.com/31445586",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R5": {
+      "min_lot_sqft": {
+        "value": 4250,
+        "section": "220-802",
+        "url": "https://ecode360.com/31445618",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family dwelling. Width 35 ft."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "220-802",
+        "url": "https://ecode360.com/31445618",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "No less than 5 ft and no more than 35 ft."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-802",
+        "url": "https://ecode360.com/31445618",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-802",
+        "url": "https://ecode360.com/31445618",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.275,
+        "section": "220-802",
+        "url": "https://ecode360.com/31445618",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-802",
+        "url": "https://ecode360.com/31445618",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-802",
+        "url": "https://ecode360.com/31445618",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R6": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "220-902",
+        "url": "https://ecode360.com/31445645",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "220-902",
+        "url": "https://ecode360.com/31445645",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-902",
+        "url": "https://ecode360.com/31445645",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-902",
+        "url": "https://ecode360.com/31445645",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.275,
+        "section": "220-902",
+        "url": "https://ecode360.com/31445645",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-902",
+        "url": "https://ecode360.com/31445645",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-902",
+        "url": "https://ecode360.com/31445645",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R7": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "220-1002",
+        "url": "https://ecode360.com/31445676",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "220-1002",
+        "url": "https://ecode360.com/31445676",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-1002",
+        "url": "https://ecode360.com/31445676",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "220-1002",
+        "url": "https://ecode360.com/31445676",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "220-1002",
+        "url": "https://ecode360.com/31445676",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-1002",
+        "url": "https://ecode360.com/31445676",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-1002",
+        "url": "https://ecode360.com/31445676",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "I4": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "220-1902",
+        "url": "https://ecode360.com/31446040",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Single-family detached or two-family, 9,000 sq ft per unit."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "220-1902",
+        "url": "https://ecode360.com/31446040",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "220-1902",
+        "url": "https://ecode360.com/31446040",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "220-1902",
+        "url": "https://ecode360.com/31446040",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "220-1902",
+        "url": "https://ecode360.com/31446040",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-1902",
+        "url": "https://ecode360.com/31446040",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-1902",
+        "url": "https://ecode360.com/31446040",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary"
+      }
+    }
+  }
+}
