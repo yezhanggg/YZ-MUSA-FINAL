@@ -91,3 +91,25 @@ def test_publish_copies_the_answer_tiles_and_refuses_other_fields(tmp_path):
     run = subprocess.run(["bash", str(SCRIPT)], env=env, capture_output=True, text=True, check=False)
     assert run.returncode != 0
     assert "unexpected tile fields ['sale_price']" in run.stderr + run.stdout
+
+
+@pytest.mark.skipif(shutil.which("bash") is None or shutil.which("python3") is None, reason="needs bash and python3")
+def test_publish_defaults_to_every_place_with_a_manifest(tmp_path):
+    src, out = tmp_path / "lots", tmp_path / "host"
+    fake_build(src)
+    (src / "scratch").mkdir()  # a folder without a manifest is not a place
+    env = {k: v for k, v in os.environ.items() if k != "LOT_PLACES"}
+    env.update({"LOT_DATA_DIR": str(src), "LOT_HOST_DIR": str(out)})
+    run = subprocess.run(["bash", str(SCRIPT)], env=env, capture_output=True, text=True, check=False)
+    assert run.returncode == 0, run.stderr
+    assert "places: testville\n" in run.stdout
+    assert (out / "lots/testville/manifest.json").exists()
+    assert not (out / "lots/scratch").exists()
+
+    # No place at all: stop with a message instead of an empty bundle.
+    empty = tmp_path / "empty"
+    empty.mkdir()
+    env["LOT_DATA_DIR"] = str(empty)
+    run = subprocess.run(["bash", str(SCRIPT)], env=env, capture_output=True, text=True, check=False)
+    assert run.returncode != 0
+    assert "no place with a manifest.json" in run.stderr

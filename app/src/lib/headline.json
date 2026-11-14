@@ -87,22 +87,22 @@
     },
     "allentown": {
       "lots": 29158,
-      "data_version": "allentown-20261112-5825ca3817",
-      "built_at": "2026-11-12T19:12:15",
+      "data_version": "allentown-20261113-c3f7b21cb2",
+      "built_at": "2026-11-13T05:19:20",
       "today": {
         "any_path": 0.883,
-        "detached_by_right": 0.261,
-        "detached_fits": 0.224,
-        "fit_600": 0.204
+        "detached_by_right": 0.285,
+        "detached_fits": 0.215,
+        "fit_600": 0.188
       },
       "local_reform": {
         "any_path": 0.883,
-        "detached_fits": 0.224
+        "detached_fits": 0.215
       },
       "state_reform": {
         "any_path": 1.0,
-        "detached_fits": 0.747,
-        "fit_600": 0.494
+        "detached_fits": 0.713,
+        "fit_600": 0.45
       }
     }
   }

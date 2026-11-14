@@ -166,7 +166,9 @@ class Place:
     # legal name for one (the 'way' of 912.04.B). Philadelphia has no such convention.
     way_types: tuple[str, ...] = ()
     # Where the rule files give no front setback: "fixed" fills FALLBACK_SETBACKS_FT, "contextual"
-    # takes the existing house's own front setback (Philadelphia: front yards match the neighbors).
+    # takes the existing house's own front setback (Philadelphia: front yards match the neighbors),
+    # "behind_house" keeps the unit in the rear yard, behind the far side of the house (Allentown:
+    # outbuildings in the "Rear yard" only, Article 4 tables part E, and no front yard, 660-41B(6)).
     front_when_null: str = "fixed"
     strict_garage: bool = False
     cost_key: str = "rest_of_pa"  # place key in shared/assumptions.json cost.area_cost_factor
@@ -181,7 +183,27 @@ class Place:
     # The rule's "abuts an alley" test also passes on a corner lot (a street on the street side lot
     # line). Allentown 660-42C(1)(c).
     way_gate_counts_corner: bool = False
+    # Fronts from the place's A, B, C street designation (streets.parquet `frontage`): the front lot
+    # line is on the highest class street the lot abuts, side street lines keep an accessory building
+    # no closer than the house, and a street on the rear lot line counts as abutting a way. Allentown
+    # 660-18J(4), Article 4 tables part E, 660-42C(1)(c).
+    abc_fronts: bool = False
+    # A place that holds lots of several towns: the town rule files its lots may name in their
+    # `rule_file` column (rules.resolve takes the file name per lot), and a front rule per file where
+    # it differs from front_when_null. One place per county (the app's registry is by county FIPS).
+    rule_files: tuple[str, ...] = ()
+    front_by_rule_file: tuple[tuple[str, str], ...] = ()
 
+
+# Setbacks a town file leaves null for a reason the code gives ("not in the front yard", "no separation
+# in the zoning text"): unchecked, never filled with the planning fallbacks.
+TOWN_NOT_CHECKED = (
+    "setback_front_ft",
+    "separation_ft",
+    "setback_side_ft",
+    "setback_rear_ft",
+    "setback_rear_alley_ft",
+)
 
 PLACES = {
     "pittsburgh": Place(
@@ -205,17 +227,34 @@ PLACES = {
         "allentown",
         "42077",
         2272,
-        front_when_null="contextual",
+        front_when_null="behind_house",
         imagery_key="pema_2022_half_foot",
-        not_checked=(
-            "setback_front_ft",
-            "separation_ft",
-            "setback_side_ft",
-            "setback_rear_ft",
-            "setback_rear_alley_ft",
-        ),
+        not_checked=TOWN_NOT_CHECKED,
         share_cap_from_footprint=False,
         way_gate_counts_corner=True,
+        abc_fronts=True,
+    ),
+    # Chester County (pipeline/places/chester_county.py): the towns with a verified rule file whose
+    # districts the county zoning layer names. Each lot names its town's file in `rule_file`.
+    # West Chester: a detached unit "may not be in the front or side yard" (front_yard_barred and the
+    # gate in pa_chester_west_chester.json), so it stays behind the house. The other towns bar the front
+    # yard only: the house's own front line. No living area in the open data.
+    "chester_county": Place(
+        "chester_county",
+        "42029",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=(
+            "pa_chester_west_chester",
+            "pa_chester_malvern",
+            "pa_chester_phoenixville",
+            "pa_chester_west_vincent",
+            "pa_chester_east_brandywine",
+        ),
+        front_by_rule_file=(("pa_chester_west_chester", "behind_house"),),
     ),
 }
 
@@ -277,6 +316,8 @@ LOT_COLUMNS = (
     "main_bldg_height_ft",
     "legacy_id",
     "garage_type",
+    "rule_file",
+    "municipality",
     *COVER_COLUMNS.values(),
 )
 BUILDING_COLUMNS = (
@@ -291,7 +332,7 @@ BUILDING_COLUMNS = (
     "split",
     "geometry",
 )
-STREET_COLUMNS = ("kind", "st_type", "geometry")
+STREET_COLUMNS = ("kind", "st_type", "frontage", "geometry")
 
 
 def _read(path: Path, wanted: Sequence[str]) -> Any:
@@ -417,6 +458,8 @@ class Near:
     streets: BaseGeometry | None  # ordinary streets: candidates for the front
     ways: BaseGeometry | None  # alleys and streets named Way: rear on a way, front as fallback
     other: BaseGeometry | None  # private roads: front as fallback only
+    # Street lines (the `streets` group) by frontage class A, B, C, where the place has the classes
+    classes: dict[str, BaseGeometry | None] | None = None
 
 
 @dataclass
@@ -437,6 +480,8 @@ class Ctx:
     not_checked: tuple[str, ...] = ()
     share_cap_from_footprint: bool = True
     way_gate_counts_corner: bool = False
+    abc_fronts: bool = False
+    front_by_rule_file: tuple[tuple[str, str], ...] = ()
 
 
 def _union(geoms: Iterable[BaseGeometry]) -> BaseGeometry | None:
@@ -503,6 +548,57 @@ def classify(poly: shapely.Polygon, house: BaseGeometry, near: Near, notes: list
             edges2.confidence = "medium"
         return edges2
     return edges
+
+
+ABUT_FT = 50.0  # lot line to street centreline: the street abuts the lot (as fit's corner test)
+
+
+def classify_abc(poly: shapely.Polygon, house: BaseGeometry, near: Near, notes: list[str]) -> fit.EdgeInfo:
+    """Front, rear and side lot lines from A, B, C street classes (Allentown 660-18J(4)).
+
+    The front is on the highest class street the lot abuts: A, else B, else C (a C street is a
+    front only when nothing else abuts the lot). Two streets of the same class keep the general
+    rule (the shorter line, 660-18J(4)(c)[3]). Any other lot line facing an abutting street is a
+    side street line: an accessory building keeps no closer to it than the house (Article 4 tables
+    part E), stored as that line's own setback. Lots with no classed street use `classify`."""
+    cls = near.classes or {}
+    edges = None
+    for c in ("A", "B", "C"):
+        lines = cls.get(c)
+        if lines is None or lines.is_empty:
+            continue
+        found = fit.classify_edges(poly, lines, near.ways, house, max_street_ft=ABUT_FT)
+        if found.street_edge:
+            edges = found
+            edges.notes.append(f"front lot line on a {c} street (660-18J(4))")
+            break
+    if edges is None:
+        return classify(poly, house, near, notes)
+    streets = near.streets
+    if streets is None or streets.is_empty:
+        return edges
+    for i in list(edges.side):
+        e = edges.edges[i]
+        if e.line.length < 15.0 or fit._facing_distance(e.line, streets) > ABUT_FT:
+            continue
+        gap = float(e.line.distance(house)) if house is not None and not house.is_empty else 0.0
+        setback = max(0.5, math.floor(gap * 2) / 2)
+        edges.edges[i] = dataclasses.replace(e, setback_ft=setback)
+        if not edges.corner:
+            edges.corner = True
+            if edges.confidence == "high":
+                edges.confidence = "medium"
+        edges.notes.append(
+            f"side street lot line: an outbuilding keeps {setback:.1f} ft from it, no closer than the house"
+        )
+    return edges
+
+
+def rear_on_street(edges: fit.EdgeInfo, near: Near) -> bool:
+    """A street (not an alley) abuts a rear lot line: a through lot."""
+    if near.streets is None or near.streets.is_empty or not edges.street_edge:
+        return False
+    return any(fit._facing_distance(edges.edges[i].line, near.streets) <= ABUT_FT for i in edges.rear)
 
 
 def flag_value(share: Any, cut: float) -> bool | None:
@@ -630,6 +726,7 @@ def fill_rules(
     district: str | None,
     contextual_front: float | None = None,
     not_checked: Sequence[str] = (),
+    front_basis: str = "contextual",
 ) -> tuple[dict[str, Any], list[str]]:
     """Give the fit a number for every setback. A filled value is listed in `assumed` and cited as
     an assumption, so the record never shows a guess as law. `contextual_front` is the existing
@@ -643,8 +740,12 @@ def fill_rules(
         section = "planning assumption: no value in the rule files for this district"
         if key == "setback_front_ft" and contextual_front is not None:
             val = contextual_front
-            section = "contextual front setback, taken from the existing house on this lot"
-            notes.append(f"front setback {val:.1f} ft: contextual, taken from the existing house")
+            if front_basis == "behind_house":
+                section = "rear yard only: the unit stays behind the far side of the existing house"
+                notes.append(f"front setback {val:.1f} ft: rear yard only, behind the existing house")
+            else:
+                section = "contextual front setback, taken from the existing house on this lot"
+                notes.append(f"front setback {val:.1f} ft: contextual, taken from the existing house")
         elif key in not_checked:
             val = 0.0
             section = "not checked: the rule file gives no number here (see its note), so no limit is applied"
@@ -729,6 +830,18 @@ def house_front_setback(edges: fit.EdgeInfo, house: BaseGeometry | None) -> floa
     return math.floor(float(front.distance(house)) * 2) / 2 if front is not None else None
 
 
+def house_rear_line_setback(edges: fit.EdgeInfo, house: BaseGeometry | None) -> float | None:
+    """Distance from the front lot line to the far side of the house (the start of the rear yard),
+    rounded up to half a foot. None without a house or a street-facing front."""
+    if house is None or house.is_empty or not edges.street_edge or not edges.front:
+        return None
+    front = _union(edges.edges[i].line for i in edges.front)
+    if front is None:
+        return None
+    far = max(float(front.distance(shapely.Point(xy))) for xy in shapely.get_coordinates(house))
+    return math.ceil(far * 2) / 2
+
+
 def mark_party_walls(edges: fit.EdgeInfo, house: BaseGeometry | None, housing: Any) -> list[int]:
     """Side lines shared with an attached neighbor get a 0 ft setback. A twin has one (the side the
     house runs along most), a row or multi-unit house can have two. Returns their ids."""
@@ -737,6 +850,8 @@ def mark_party_walls(edges: fit.EdgeInfo, house: BaseGeometry | None, housing: A
     zone = house.buffer(PARTY_WALL_TOL_FT, quad_segs=2)
     touch = {}
     for i in edges.side:
+        if edges.edges[i].setback_ft is not None:  # a side street line, not a shared wall
+            continue
         line = edges.edges[i].line
         t = float(line.intersection(zone).length)
         if t >= min(PARTY_WALL_MIN_FT, 0.5 * line.length):
@@ -1041,7 +1156,10 @@ def build_lot(
     poly = lot_polygon(r["geometry"], notes)
     pairs = to_buildings(brows, _num(r.get("stories")))
     house = _union(b.polygon for _, b in pairs if b.role == "main")
-    edges = classify(poly, house if house is not None else shapely.Polygon(), near, notes)
+    if ctx.abc_fronts:
+        edges = classify_abc(poly, house if house is not None else shapely.Polygon(), near, notes)
+    else:
+        edges = classify(poly, house if house is not None else shapely.Polygon(), near, notes)
     if ctx.strict_garage:
         pairs = tighten_garages(pairs, r, edges, near, notes)
     blds = [b for _, b in pairs]
@@ -1050,7 +1168,16 @@ def build_lot(
         notes.append(f"party wall on {len(walls)} side lot line(s): no side yard there")
     hard = _num(r.get("cv_hard_surface_sqft"))
     shape = fit.LotShape(poly, edges, living_sqft=_num(r.get("living_area")), hard_surface_sqft=hard)
-    ctx_front = house_front_setback(edges, house) if ctx.front_when_null == "contextual" else None
+    # A multi-town place names the lot's rule file per lot. Otherwise the place itself is the rule file.
+    rule_place = rule_place_of(r, ctx)
+    front_mode = dict(ctx.front_by_rule_file).get(rule_place, ctx.front_when_null)
+    ctx_front = (
+        house_front_setback(edges, house)
+        if front_mode == "contextual"
+        else house_rear_line_setback(edges, house)
+        if front_mode == "behind_house"
+        else None
+    )
     flags = flags_for(r)
     # The real fact goes to the resolver. Its extra keys keep the rule's own path per type apart
     # from this lot's facts (rule_path_by_type, lot_conditions_by_type).
@@ -1058,6 +1185,9 @@ def build_lot(
     way = edges.alley or (ctx.way_gate_counts_corner and edges.corner)
     if way and not edges.alley:
         notes.append("corner lot: the street side lot line counts as abutting a way for a detached ADU")
+    if ctx.abc_fronts and not way and rear_on_street(edges, near):
+        way = True
+        notes.append("through lot: a street abuts the rear lot line, which counts as access for a detached ADU")
     rlot = resolver_lot(r, flags, way, has_acc, float(poly.area), house_height(r, blds))
 
     rules_out: dict[str, Any] = {}
@@ -1066,8 +1196,8 @@ def build_lot(
     raw_res: dict[str, dict[str, fit.FitResult]] = {}
     cache: dict[str, tuple[Any, Any, Any]] = {}
     for s in SCENARIOS:
-        resolved = town_extras_to_reasons(rulesmod.resolve(ctx.place, s, rlot, extra=True))
-        filled, fill_notes = fill_rules(resolved, rlot["zoning_district"], ctx_front, ctx.not_checked)
+        resolved = town_extras_to_reasons(rulesmod.resolve(rule_place, s, rlot, extra=True))
+        filled, fill_notes = fill_rules(resolved, rlot["zoning_district"], ctx_front, ctx.not_checked, front_mode)
         notes += [n for n in fill_notes if n not in notes]
         fit_in = filled
         if not ctx.share_cap_from_footprint and filled.get("max_share_of_house") is not None and not shape.living_sqft:
@@ -1159,6 +1289,11 @@ def _m2(sqft: float | None) -> float | None:
     return None if sqft is None else round(sqft * 0.09290304, 1)
 
 
+def rule_place_of(r: dict[str, Any], ctx: Ctx) -> str:
+    """The rule file a lot resolves on: its own `rule_file` in a multi-town place, else the place."""
+    return str(r["rule_file"]) if _present(r.get("rule_file")) else ctx.place
+
+
 def old_rule_fields(place: str, rules: dict[str, Any]) -> dict[str, str | None]:
     """rule_lot / rule_why in the old app meaning: Philadelphia only, conversion_only where a unit
     inside the house or a conversion has a legal path today, variance otherwise. Null elsewhere."""
@@ -1196,6 +1331,8 @@ def index_row(
         "source_lot_id": str(r.get("legacy_id") or r["lot_id"]),
         "place": ctx.place,
         "tract": lot["tract"],
+        "rule_file": rule_place_of(r, ctx),
+        "municipality": str(r["municipality"]) if _present(r.get("municipality")) else None,
         "lon": _num(r.get("lon")),
         "lat": _num(r.get("lat")),
         "address": lot["address"],
@@ -1278,7 +1415,7 @@ class TractJob:
     tract: str
     lots: list[dict[str, Any]]  # lot rows, geometry as WKB
     buildings: dict[str, list[dict[str, Any]]]  # lot_id -> building rows, geometry as WKB
-    streets: list[tuple[str, str, bytes]]  # (kind, st_type, WKB)
+    streets: list[tuple[str, str, bytes]] | list[tuple[str, str, bytes, str]]  # (kind, st_type, WKB[, frontage])
     expected: int  # lots in the tract (a --limit run builds fewer)
 
 
@@ -1298,9 +1435,11 @@ class TractResult:
 class StreetIndex:
     """Street lines of one tract with a spatial index, split into fronts, ways and private roads."""
 
-    def __init__(self, rows: Sequence[tuple[str, str, bytes]], way_types: Sequence[str] = ()):
-        self.geoms = np.array([shapely.from_wkb(w) for _, _, w in rows], dtype=object)
-        self.group = np.array([street_group(k, t, way_types) for k, t, _ in rows], dtype=object)
+    def __init__(self, rows: Sequence[tuple[Any, ...]], way_types: Sequence[str] = ()):
+        self.geoms = np.array([shapely.from_wkb(r[2]) for r in rows], dtype=object)
+        self.group = np.array([street_group(r[0], r[1], way_types) for r in rows], dtype=object)
+        self.frontage = np.array([r[3] if len(r) > 3 else "" for r in rows], dtype=object)
+        self.has_classes = bool(len(rows)) and any(len(r) > 3 for r in rows)
         self.tree = shapely.STRtree(self.geoms) if len(rows) else None
 
     def near(self, poly: BaseGeometry) -> Near:
@@ -1311,7 +1450,11 @@ class StreetIndex:
         def pick(name: str) -> BaseGeometry | None:
             return _union(self.geoms[idx][self.group[idx] == name])
 
-        return Near(pick("street"), pick("way"), pick("other"))
+        classes = None
+        if self.has_classes:
+            street = self.group[idx] == "street"
+            classes = {c: _union(self.geoms[idx][street & (self.frontage[idx] == c)]) for c in ("A", "B", "C")}
+        return Near(pick("street"), pick("way"), pick("other"), classes)
 
 
 SKIP_KINDS = {"highway", "expressway", "ramp", "walkway"}
@@ -1569,14 +1712,14 @@ def make_jobs(
         pad = STREET_SEARCH_FT + 50
         sidx = tree.query(shapely.box(x0 - pad, y0 - pad, x1 + pad, y1 + pad))
         s = streets.iloc[np.sort(sidx)]
-        srows = list(
-            zip(
-                s["kind"].astype(str),
-                s["st_type"].fillna("").astype(str),
-                shapely.to_wkb(np.asarray(s.geometry.values)),
-                strict=True,
-            )
-        )
+        cols = [
+            s["kind"].astype(str),
+            s["st_type"].fillna("").astype(str),
+            shapely.to_wkb(np.asarray(s.geometry.values)),
+        ]
+        if "frontage" in s.columns:  # A, B, C street classes (Allentown)
+            cols.append(s["frontage"].fillna("").astype(str))
+        srows: Any = list(zip(*cols, strict=True))
         yield TractJob(t, _rows(part, LOT_COLUMNS), bmap, srows, counts[t])
 
 
@@ -1613,6 +1756,8 @@ def make_ctx(place: Place, paths: dict[str, Path]) -> Ctx:
         not_checked=place.not_checked,
         share_cap_from_footprint=place.share_cap_from_footprint,
         way_gate_counts_corner=place.way_gate_counts_corner,
+        abc_fronts=place.abc_fronts,
+        front_by_rule_file=place.front_by_rule_file,
     )
 
 
@@ -1712,8 +1857,10 @@ OTHER_STATE_BILLS = ("sb1346",)
 def _rule_files(place: str) -> list[str]:
     """The place file, its local bill, the defaults and the state bills. Checked by file name only,
     so a half-written town file elsewhere in the folder is never read."""
+    towns = PLACES[place].rule_files if place in PLACES else ()
     names = {
         place,
+        *towns,  # a multi-town place reads each town's file
         rulesmod._place_file(place),  # a town place reads its pa_<county>_<town> file
         rulesmod.DEFAULT,
         rulesmod.STATE_REFORM,
@@ -2138,6 +2285,9 @@ STATS_CAVEATS = {
 def cmd_stats(args: argparse.Namespace) -> int:
     out = out_dir(get_place(args.place).name)
     index = pd.read_parquet(out / "index.parquet")
+    towns = "municipality" in index.columns and index["municipality"].notna().any()
+    if towns:  # a multi-town place: district codes are per town ("West Chester borough NC-2")
+        index = index.assign(zoning=index["municipality"].fillna("") + " " + index["zoning"].fillna("unknown"))
     top_zones = index["zoning"].value_counts()
     zones = top_zones[top_zones >= args.min_lots].index
     stats = {
@@ -2150,6 +2300,8 @@ def cmd_stats(args: argparse.Namespace) -> int:
         "by_zoning": {z: group_stats(index[index["zoning"] == z]) for z in zones},
         "by_council_district": {str(c): group_stats(g) for c, g in index.groupby("council_district")},
     }
+    if towns:
+        stats["by_town"] = {str(t): group_stats(g) for t, g in index.groupby("municipality")}
     _write_atomic(out / "stats.json", json.dumps(stats, indent=1).encode())
     print_stats(stats)
     print_paths(stats)

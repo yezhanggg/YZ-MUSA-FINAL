@@ -447,6 +447,69 @@ def test_street_groups() -> None:
     assert bl.street_group("private", "DR") == "other"
 
 
+def test_abc_fronts() -> None:
+    """Allentown 660-18J(4): on an A and B corner the A street is the front, even when it is the
+    longer line. The B street line becomes a side street line that keeps an outbuilding as far
+    from it as the house. A street behind the lot is a through lot."""
+    from shapely.geometry import LineString, box
+
+    lot = box(0, 0, 40, 100)  # 40 ft on the B street (y = -20), 100 ft on the A street (x = -20)
+    house = box(8, 5, 32, 40)  # 8 ft from the A street side line, 5 ft from the B street line
+    a_line = LineString([(-20, -50), (-20, 150)])
+    b_line = LineString([(-50, -20), (90, -20)])
+    near = bl.Near(shapely.union(a_line, b_line), None, None, {"A": a_line, "B": b_line, "C": None})
+    edges = bl.classify_abc(lot, house, near, [])
+    front = edges.edges[edges.front[0]].line
+    assert front.length == pytest.approx(100.0)  # the A street line, not the shorter B line
+    assert edges.corner
+    side_street = [e for e in edges.edges if e.setback_ft is not None]
+    assert len(side_street) == 1 and side_street[0].setback_ft == pytest.approx(5.0)
+    # Same lot, B street only: the old rule (only street, so the front).
+    near_b = bl.Near(b_line, None, None, {"A": None, "B": b_line, "C": None})
+    edges_b = bl.classify_abc(lot, house, near_b, [])
+    assert edges_b.edges[edges_b.front[0]].line.length == pytest.approx(40.0)
+    assert not bl.rear_on_street(edges_b, near_b)
+    # Rear yard only: the unit starts behind the far side of the house (40 ft from the front line).
+    assert bl.house_rear_line_setback(edges_b, house) == pytest.approx(40.0)
+    r, notes = bl.fill_rules(
+        {
+            "setback_front_ft": None,
+            "setback_side_ft": 3,
+            "setback_rear_ft": 3,
+            "setback_rear_alley_ft": 3,
+            "separation_ft": 0,
+            "citations": {},
+            "assumed": [],
+        },
+        "N3",
+        40.0,
+        (),
+        "behind_house",
+    )
+    assert r["setback_front_ft"] == 40.0 and "rear yard only" in r["citations"]["setback_front_ft"]["section"]
+    # A street in front and a C street behind: a through lot with a street on the rear lot line.
+    c_line = LineString([(-50, 120), (90, 120)])
+    near_t = bl.Near(shapely.union(b_line, c_line), None, None, {"A": None, "B": b_line, "C": c_line})
+    edges_t = bl.classify_abc(lot, house, near_t, [])
+    assert edges_t.edges[edges_t.front[0]].line.length == pytest.approx(40.0)
+    assert bl.rear_on_street(edges_t, near_t)
+    # No classed street: the general classify is used.
+    plain = bl.Near(b_line, None, None, None)
+    assert bl.classify_abc(lot, house, plain, []).front == bl.classify(lot, house, plain, []).front
+
+
+def test_coverage_by_building_type() -> None:
+    from pipeline import rules as rulesmod
+
+    lot = {"zoning_district": "N3", "lot_sqft": 4000, "has_alley": True, "has_accessory_building": False}
+    twin = rulesmod.resolve("allentown", "today", {**lot, "building_type": "semi_detached"}, extra=True)
+    house = rulesmod.resolve("allentown", "today", {**lot, "building_type": "detached"}, extra=True)
+    row = rulesmod.resolve("allentown", "today", {**lot, "building_type": "attached"}, extra=True)
+    assert twin["max_building_coverage"] == 0.7 and house["max_building_coverage"] == 0.5
+    assert row["max_building_coverage"] is None
+    assert "max_building_coverage_by_type.semi_detached" in twin["citations"]["max_building_coverage"]["source_file"]
+
+
 def test_terrain_refresh_without_rerun(built: Path) -> None:
     """build_lots terrain folds a terrain block into built tracts from a DEM, keeps the fit as built,
     backs up what it rewrites and skips finished tracts on a second run."""

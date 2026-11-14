@@ -139,6 +139,14 @@ LAYERS: tuple[Layer, ...] = (
         note="Open street centerlines. CIRCULATION_CODE 1 = highway. CARTWAY_WIDTH in feet",
     ),
     Layer(
+        "street_types",
+        f"{CITY}/Hosted/Zone_Allentown_Street_Types/FeatureServer/19",
+        LIC_CITY,
+        "full_name,a_b_c_stre,cartway_wi,row_width,circulatio",
+        note="City Zoning - Street Types: the A, B and C street designation of 660-18J(2) (the streets map for "
+        "zoning). a_b_c_stre = A, B or C. Sets the front lot line of corner and through lots (660-18J(4))",
+    ),
+    Layer(
         "streets_private",
         f"{CITY}/CityPrivateStreets/MapServer/0",
         LIC_CITY,
@@ -509,10 +517,52 @@ def prepare_streets() -> gpd.GeoDataFrame:
     p = read_layer("streets_private").rename(columns={"FULL_NAME": "name", "STREET_TYPE": "st_type"})
     p["kind"] = "private"
     p["cartway_ft"] = np.nan
-    cols = ["name", "st_type", "kind", "cartway_ft", "geometry"]
+    p["frontage"] = None
+    s["frontage"] = street_frontage(s)
+    cols = ["name", "st_type", "kind", "cartway_ft", "frontage", "geometry"]
     out = pd.concat([s[cols], p[cols]], ignore_index=True)
     out["st_type"] = out["st_type"].fillna("").astype(str).str.strip()
     return gpd.GeoDataFrame(out, geometry="geometry", crs=WORK_CRS)
+
+
+FRONTAGE_MATCH_FT = 10.0  # a street piece takes the A/B/C class of the zoning street line along it
+
+
+def street_frontage(streets: gpd.GeoDataFrame) -> list[str | None]:
+    """A, B or C (660-18J(2)) for each street centreline, from the city's zoning street types layer.
+
+    The two layers are drawn from the same centrelines but cut differently. Each piece takes the
+    class with the most length within FRONTAGE_MATCH_FT of it; None where no zoning line is near.
+    """
+    path = raw_dir(PLACE) / "street_types.gpkg"
+    if not path.exists():
+        return [None] * len(streets)
+    types = read_layer("street_types")
+    types = types[types["a_b_c_stre"].astype(str).str.strip().isin(["A", "B", "C"])].reset_index(drop=True)
+    cls = types["a_b_c_stre"].astype(str).str.strip().to_numpy()
+    tree = shapely.STRtree(np.asarray(types.geometry.values))
+    out: list[str | None] = []
+    for geom in streets.geometry.values:
+        if geom is None or geom.is_empty:
+            out.append(None)
+            continue
+        zone = geom.buffer(FRONTAGE_MATCH_FT, cap_style="flat")
+        idx = tree.query(zone, predicate="intersects")
+        best: dict[str, float] = {}
+        for i in idx:
+            length = float(types.geometry.values[i].intersection(zone).length)
+            best[cls[i]] = best.get(cls[i], 0.0) + length
+        out.append(max(best, key=lambda k: best[k]) if best and max(best.values()) >= 0.3 * geom.length else None)
+    return out
+
+
+def build_streets() -> None:
+    """Rebuild only streets.parquet (lots and buildings unchanged)."""
+    out_dir = processed_dir(PLACE, create=True)
+    streets = prepare_streets()
+    publish_parquet(streets, out_dir / "streets.parquet")
+    print(f"wrote {len(streets)} street pieces to {out_dir}")
+    print(streets.groupby(["kind", "frontage"], dropna=False).size().to_string())
 
 
 def base_lots() -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame]:
@@ -623,6 +673,7 @@ def main(argv: list[str] | None = None) -> None:
     d = sub.add_parser("download", help="fetch raw layers (skips files already present)")
     d.add_argument("--only", nargs="*", help="layer keys to fetch")
     sub.add_parser("build", help="build lots.parquet, buildings.parquet and streets.parquet")
+    sub.add_parser("streets", help="rebuild streets.parquet only (A, B, C street classes)")
     c = sub.add_parser("check", help="join test on random lots")
     c.add_argument("-n", type=int, default=1000)
     c.add_argument("--seed", type=int, default=2026)
@@ -631,6 +682,8 @@ def main(argv: list[str] | None = None) -> None:
         download(args.only)
     elif args.cmd == "build":
         build()
+    elif args.cmd == "streets":
+        build_streets()
     else:
         check(args.n, args.seed)
 

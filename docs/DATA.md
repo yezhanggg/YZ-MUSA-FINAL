@@ -156,20 +156,23 @@ ACS table B25031 (median rent by bedrooms, tract) is named as the rent fallback 
 
 The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARCHITECTURE.md](ARCHITECTURE.md) lists the files.
 
-<!-- source: ~/musa-drive/lots/pittsburgh/manifest.json (data_version pittsburgh-20261111-bdeb5697ae, built_at 2026-11-11T20:30:22) and ~/musa-drive/lots/philadelphia/manifest.json (data_version philadelphia-20261111-b7fa7bda07, built_at 2026-11-11T21:41:43), "counts" and "sizes" -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json, read 2026-11-13 ("data_version", "built_at", "counts", "sizes") -->
 
 | Place | Data version | Built | Lots | Tracts | Errors | Detail files |
 |---|---|---|---|---|---|---|
-| Pittsburgh | `pittsburgh-20261111-bdeb5697ae` | 2026-11-11 20:30 | 92,081 | 128 | 0 | 108,915,795 bytes, 37 tracts split into chunks |
-| Philadelphia | `philadelphia-20261111-b7fa7bda07` | 2026-11-11 21:41 | 459,998 | 385 | 0 | 314,906,136 bytes, 22 tracts split into chunks |
+| Pittsburgh | `pittsburgh-20261112-f2be01fba6` | 2026-11-12 15:40 (terrain refresh of the Nov 11 build) | 92,081 | 128 | 0 | 140,740,251 bytes, 61 tracts split into chunks |
+| Philadelphia | `philadelphia-20261112-d441ac616a` | 2026-11-12 16:17 (terrain refresh of the Nov 11 build) | 459,998 | 385 | 0 | 355,098,084 bytes, 48 tracts split into chunks |
+| Allentown | `allentown-20261113-c3f7b21cb2` | 2026-11-13 05:19 (full run and terrain) | 29,158 | 31 | 0 | 73,045,284 bytes, 23 tracts split into chunks |
 
-On 2026-11-12 the terrain refresh (`build_lots terrain`) added a `terrain` block to every record without a fit rerun. New versions: `pittsburgh-20261112-f2be01fba6` (detail about 135 MB) and `philadelphia-20261112-d441ac616a` (about 339 MB). The files before it are kept in `~/musa-drive/backups/lots-<city>-pre-terrain-<old version>/`.
+On 2026-11-12 the terrain refresh (`build_lots terrain`) added a `terrain` block to every record without a fit rerun (Pittsburgh from `pittsburgh-20261111-bdeb5697ae`, Philadelphia from `philadelphia-20261111-b7fa7bda07`). The files before it are kept in `~/musa-drive/backups/lots-<city>-pre-terrain-<old version>/`. On 2026-11-13 every record of the three places was checked (all files open, record counts match the manifests and the index, `lot_schema.json` valid, terrain present): 0 problems.
 
-Rule files used by both builds were checked on 2026-11-10. Lots without a cover row (42 in Pittsburgh) keep an empty `cover` block.
+Allentown was rebuilt on 2026-11-13 with the A, B and C street designation (front lot lines), side street and rear yard placement, coverage by house type and through lots (see [ADDING_A_CITY.md](ADDING_A_CITY.md) section 4). The build before it (`allentown-20261112-5825ca3817`) is kept in `~/musa-drive/backups/lots-allentown-pre-lotdata2-allentown-20261112-5825ca3817/`.
+
+Rule files used by the Pittsburgh and Philadelphia builds were checked on 2026-11-10; the Allentown build reads `pa_lehigh_allentown.json` as of 2026-11-13. Lots without a cover row (42 in Pittsburgh) keep an empty `cover` block.
 
 ## Elevation (ground slope)
 
-USGS 3DEP standard 1 m DEM, bare earth from lidar, project PA_17County_D24 (flown 2024-04-14 to 2025-04-02, published 2026-10-23). Public domain ("All 3DEP products are public domain"). Downloaded tile by tile from the USGS staged products bucket listed by the TNM Access API. `build_lots terrain` reads it through `dem.vrt` (see [METHODS.md](METHODS.md) section 1.10).
+USGS 3DEP standard 1 m DEM, bare earth from lidar. Pittsburgh and Philadelphia: project PA_17County_D24 (flown 2024-04-14 to 2025-04-02, published 2026-10-23). Allentown: PA_AllentownOrthoLidar_D24 (flown 2024-11-25 to 2024-12-07). Public domain ("All 3DEP products are public domain"). Downloaded tile by tile from the USGS staged products bucket listed by the TNM Access API. `build_lots terrain` reads it through `dem.vrt` (see [METHODS.md](METHODS.md) section 1.10).
 
 <!-- source: ~/musa-drive/raw/elevation/<city>/SOURCES.json, tile metadata begdate/enddate -->
 
@@ -177,6 +180,7 @@ USGS 3DEP standard 1 m DEM, bare earth from lidar, project PA_17County_D24 (flow
 |---|---|---|---|---|
 | Pittsburgh | 9 (x57 to x59, y447 to y449) | UTM 17N, metres, NAVD88 | `raw/elevation/pittsburgh/` | 2.7 GB |
 | Philadelphia | 13 (x47 to x50, y442 to y445) | UTM 18N, metres, NAVD88 | `raw/elevation/philadelphia/` | 4.0 GB |
+| Allentown | 4 (x45 to x46, y449 to y450), project PA_AllentownOrthoLidar_D24, flown 2024-11-25 to 2024-12-07 | UTM 18N, metres, NAVD88 | `raw/elevation/allentown/` | 273 MB |
 
 An older 1 m project also covers each city (Pittsburgh PA_WesternPA_2019_D20, flown 2019 to 2020; Philadelphia a 2015 project). They are not used.
 

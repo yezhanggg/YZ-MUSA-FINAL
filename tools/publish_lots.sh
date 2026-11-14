@@ -4,33 +4,50 @@
 # the metadata, and writes the data README.
 # Nothing is uploaded. Publishing is a manual step: see docs/HOSTING.md.
 #
-#   tools/publish_lots.sh                 # from ~/musa-drive/lots to ~/musa-drive/host
+#   tools/publish_lots.sh                 # from ~/musa-drive/lots to ~/musa-drive/host, every place with a manifest.json
 #   LOT_DATA_DIR=... LOT_HOST_DIR=... tools/publish_lots.sh
+#   LOT_PLACES="pittsburgh allentown" tools/publish_lots.sh   # only these places
 #
 # Output (LOT_HOST_DIR):
 #   README.md  .nojekyll  .gitignore
 #   lots/<place>/manifest.json  stats.json  lot_tract.json
 #   lots/<place>/detail/<GEOID>.json.gz  (+ <GEOID>.geom.json.gz, <GEOID>.pN.json.gz when the build split a tract)
-#   lots/<place>/tiles/parcels.pmtiles
+#   lots/<place>/tiles/parcels.pmtiles  (when built; Allentown has none, the app treats it as optional)
 #   lots/<place>/tiles/lots.pmtiles  overview.pmtiles  (when built: "Show testable lots", app/build_lot_tiles.py)
+#   lots/<place>/tiles/terrain.pmtiles  (when built: terrarium raster-DEM tiles, tools/terrain_tiles.py)
 set -euo pipefail
 
 SRC="${LOT_DATA_DIR:-$HOME/musa-drive/lots}"
 OUT="${LOT_HOST_DIR:-$HOME/musa-drive/host}"
-PLACES="${LOT_PLACES:-pittsburgh philadelphia}"
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
+[ -d "$SRC" ] || { echo "no lot data at $SRC" >&2; exit 1; }
+# Default: every place folder of the build that has a manifest.json (pittsburgh, philadelphia, allentown, ...).
+if [ -n "${LOT_PLACES:-}" ]; then
+  PLACES="$LOT_PLACES"
+else
+  PLACES="$(for d in "$SRC"/*/; do if [ -f "$d/manifest.json" ]; then basename "$d"; fi; done | sort | tr '\n' ' ')"
+fi
+PLACES="${PLACES% }"
+[ -n "$PLACES" ] || { echo "no place with a manifest.json under $SRC" >&2; exit 1; }
+echo "places: $PLACES"
 
 case "$OUT" in
   "$REPO"*) echo "LOT_HOST_DIR is inside the app repo. Use a folder on the drive." >&2; exit 1 ;;
 esac
 
 for p in $PLACES; do
-  for f in manifest.json stats.json lot_tract.json tiles/parcels.pmtiles; do
+  for f in manifest.json stats.json lot_tract.json; do
     [ -f "$SRC/$p/$f" ] || { echo "missing $SRC/$p/$f" >&2; exit 1; }
   done
+  [ -f "$SRC/$p/tiles/parcels.pmtiles" ] || [ -f "$SRC/$p/tiles/lots.pmtiles" ] || { echo "missing $SRC/$p/tiles/lots.pmtiles" >&2; exit 1; }
   # Optional: without them the app keeps the plain outlines and "Show testable lots" has no colours.
-  for f in tiles/lots.pmtiles tiles/overview.pmtiles; do
-    [ -f "$SRC/$p/$f" ] || echo "note: no $SRC/$p/$f (run app/build_lot_tiles.py --place $p)" >&2
+  for f in tiles/lots.pmtiles tiles/overview.pmtiles tiles/terrain.pmtiles; do
+    if [ ! -f "$SRC/$p/$f" ]; then
+      case "$f" in
+        tiles/terrain.pmtiles) echo "note: no $SRC/$p/$f (run tools/terrain_tiles.py --place $p)" >&2 ;;
+        *) echo "note: no $SRC/$p/$f (run app/build_lot_tiles.py --place $p)" >&2 ;;
+      esac
+    fi
   done
 done
 
@@ -150,7 +167,7 @@ for p in places:
     with open(f"{out}/{p}/manifest.json", "w") as f:
         json.dump(m, f, indent=1)
         f.write("\n")
-    for name in ("parcels.pmtiles", "lots.pmtiles", "overview.pmtiles"):
+    for name in ("parcels.pmtiles", "lots.pmtiles", "overview.pmtiles", "terrain.pmtiles"):
         if os.path.exists(f"{src}/{p}/tiles/{name}"):
             pmtiles_scrub(f"{src}/{p}/tiles/{name}", f"{out}/{p}/tiles/{name}")
         elif os.path.exists(f"{out}/{p}/tiles/{name}"):
@@ -192,6 +209,7 @@ lots/<place>/detail/<GEOID>.geom.json.gz   geometry of a large tract, split out
 lots/<place>/tiles/parcels.pmtiles    parcel outlines, read by byte range
 lots/<place>/tiles/lots.pmtiles       the same outlines with each lot's answer per scenario and unit type
 lots/<place>/tiles/overview.pmtiles   grid squares where there are lots, for the zoomed-out map
+lots/<place>/tiles/terrain.pmtiles    ground heights (Terrarium PNG tiles, zoom 10 to 15 or 16, see the file header) for the 3D map
 ```
 
 The `.json.gz` files are served as plain gzip bytes. The app decompresses them in the browser.
@@ -211,7 +229,9 @@ mailing addresses. No assessed values and no sale dates or prices: those stay ou
   2019 (University of Vermont).
 - Allentown: City of Allentown GIS services (parcels with land use, tax parcel use code, units and ZIP, Zone
   Allentown zoning per parcel, zoning overlays, historic districts, building outlines, street centerlines with
-  cartway widths). Microsoft Global ML Building Footprints for outlines the city layer misses. USGS 3DEP 1 m DEM.
+  cartway widths, the A, B and C street designation of the zoning map). Microsoft Global ML Building Footprints for
+  outlines the city layer misses. USGS 3DEP 1 m DEM.
+- Ground heights (all places): USGS 3DEP 1 m DEM, public domain. Used for the slope numbers and the terrain tiles.
 - All places: US Census TIGER 2020 tracts. HUD Small Area Fair Market Rents. FEMA National Flood Hazard Layer.
 - Rules: city zoning codes and state bills, each cited with its link and the date it was checked.
 
@@ -265,6 +285,8 @@ if total > 1e9:
     sys.exit("bundle over 1 GB")
 # No sale or assessment facts in any published tract file.
 import gzip
+import re
+BAD_KEY = re.compile(rb'"(owner[a-z_0-9]*|mailing[a-z_0-9]*|taxpayer[a-z_0-9]*|sale_price|sale_date|market_value|value_total|assessed[a-z_]*)"\s*:')
 for d, _, fs in os.walk(f"{out}/lots"):
     for f in fs:
         if f.endswith(".json.gz") and not f.endswith(".geom.json.gz"):
@@ -272,7 +294,15 @@ for d, _, fs in os.walk(f"{out}/lots"):
                 body = g.read()
             if b'"assessed_value"' in body or b'"last_sale_' in body:
                 sys.exit(f"sale or assessment facts left in {f}")
-print("no sale or assessment facts in the tract files")
+            # Owner, mailing, sale and value keys. owner_occupancy is a rule (the owner must live on the lot), not a fact.
+            keys = set(BAD_KEY.findall(body.lower())) - {b"owner_occupancy"}
+            if keys:
+                sys.exit(f"owner, sale or value keys {sorted(k.decode() for k in keys)} in {f}")
+print("no sale, assessment or owner fields in the tract files")
+for p in sorted(os.listdir(f"{out}/lots")):
+    t = f"{out}/lots/{p}/tiles"
+    names = sorted(os.listdir(t)) if os.path.isdir(t) else []
+    print(f"{p} tiles: " + ", ".join(f"{n} {os.path.getsize(os.path.join(t, n)) / 1e6:.1f} MB" for n in names))
 PY
 if grep -rlE '/Users/|/var/folders/' "$OUT/lots" --include='*.json' >/dev/null; then echo "local paths left in json files" >&2; exit 1; fi
 if LC_ALL=C grep -rlaE '/Users/|/var/folders/' "$OUT/lots"/*/tiles >/dev/null; then echo "local paths left in the PMTiles metadata" >&2; exit 1; fi
