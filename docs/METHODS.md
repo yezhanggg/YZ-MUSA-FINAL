@@ -371,9 +371,9 @@ Other tools:
 
 ### 3.7 Later runs (Nov 12 to 14)
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md (sections "06:15 Nov 14 interim" and "09:25 Nov 14"), unet.md -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md (sections "09:25 Nov 14" and "14:30 Nov 14"), unet.md -->
 
-As of Nov 14 morning. A training round runs until that night, so these numbers may still move. Same test pixels and 8 flips and turns as section 3.3. Ensembles are picked on validation only.
+Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end that evening and are added only if they change the best). Same test pixels and 8 flips and turns as section 3.3. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
 
 | Run or pick | What changes | Val mIoU | Test mIoU | Building IoU |
 |---|---|---|---|---|
@@ -382,10 +382,11 @@ As of Nov 14 morning. A training round runs until that night, so these numbers m
 | `effb2lov_c4_s1` | the same, Lovasz loss | 0.7458 | 0.7057 | 0.6506 |
 | ResNet-34 Lovasz ensemble | 3 models, seeds only | | 0.7035 | 0.6493 |
 | DeepLabV3+ and EfficientNet-B2 ensemble | `dlv3lov` + `effb2lov`, 8 views each | 0.7512 | **0.7089** | **0.6546** |
+| 5-class ensemble | `effb2lov_c5_s0` + `r34lov_c5_s0`, 8 views each | 0.7422 | 0.7009 | 0.6478 |
 
 - Two model types in one ensemble helped where more seeds did not: +0.0054 test mIoU over the ResNet-only ensemble.
 - Building IoU 0.6546 meets the 0.65 target. mIoU 0.7089 misses 0.72.
-- Pittsburgh adoption bar: a new model replaces `r34_c5_s0` in the lot files only if it reaches set scores on the clean Pittsburgh pixels: mIoU 0.7136 and building IoU 0.7435. The ensemble scored 0.7133 and 0.7571. Building passed, mIoU missed by 0.0003. So the lots keep `r34_c5_s0`.
+- Pittsburgh adoption bar: a new model replaces `r34_c5_s0` in the lot files only if it reaches set scores on the clean Pittsburgh pixels: mIoU 0.7136 and building IoU 0.7435. The ensemble scored 0.7133 and 0.7571. Building passed, mIoU missed by 0.0003. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models). The 5-class ensemble scored 0.7085 and 0.7524. So the lots keep `r34_c5_s0`.
 
 ## 4. Object detector
 
@@ -434,7 +435,7 @@ YOLO11 small (`yolo11s.pt`), 640 px, batch 16, up to 50 epochs with patience 10,
 
 At a score threshold of 0.25 on both cities, the model predicted only the garage class. It matched 23 of 127 labeled garages and called 25 labeled other accessory buildings garages.
 
-**Later runs (as of Nov 14 morning).** Same 162 test chips, same unchecked labels. Target garage AP50 0.50.
+**Later runs (final, Nov 14).** Same 162 test chips, same unchecked labels. Target garage AP50 0.50.
 
 <!-- source: ~/musa-drive/ops/logs/yolo.md (FINAL detector table), ~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json -->
 
@@ -665,4 +666,4 @@ The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Ste
 - **Heights from Microsoft outlines read low** in Upper Dublin, so the height test reads "not checked" in Montgomery County.
 - **Pittsburgh's undermined-area overlay (UM-O)** is not in the lot data. The rule is in the file but no lot carries the flag.
 - **New lot places have no land cover.** Allentown and the three county places carry no cover block.
-- **The detector is still on unchecked labels.** Garage AP50 0.469 against a target of 0.50, as of Nov 14 morning.
+- **The detector is still on unchecked labels.** Garage AP50 0.469 against a target of 0.50 (final for the Nov 12 to 14 rounds).

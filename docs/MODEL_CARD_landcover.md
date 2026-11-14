@@ -15,7 +15,7 @@ A U-Net that labels each pixel of a 4-band aerial image (red, green, blue, near 
 | Best 4-class run by test mIoU | `r34ndvi_c4_s1` (NDVI as a fifth input band), 0.7005 |
 | Run used for Pittsburgh lot cover | `r34_c5_s0` (5 classes), zero-shot on the city |
 | Reference run | `unet_v2_r34`, the earlier published model, scored again: 0.6985 |
-| Best result as of Nov 14 morning | Ensemble of `dlv3lov_c4_s1` (DeepLabV3+) and `effb2lov_c4_s1` (U-Net with EfficientNet-B2), test mIoU 0.7089, building IoU 0.6546. Not used for the lots (see "Later runs") |
+| Best result (final, Nov 14) | Ensemble of `dlv3lov_c4_s1` (DeepLabV3+) and `effb2lov_c4_s1` (U-Net with EfficientNet-B2), test mIoU 0.7089, building IoU 0.6546. Not used for the lots (see "Later runs") |
 
 ## What it is used for in the product
 
@@ -100,9 +100,9 @@ What the table says:
 
 ### Later runs (Nov 12 to 14)
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "06:15 Nov 14 interim" and "09:25 Nov 14" -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14" and "14:30 Nov 14"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json -->
 
-As of Nov 14 morning. A training round runs until that night, so these may move. Same test pixels, 8 flips and turns. Ensembles are picked on validation only.
+Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end that evening and are added only if they change the best). Same test pixels, 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
 
 | Run or pick | Val mIoU | Test mIoU | Building IoU | Tree IoU |
 |---|---|---|---|---|
@@ -111,10 +111,11 @@ As of Nov 14 morning. A training round runs until that night, so these may move.
 | `effb2lov_c4_s1` (same, Lovasz loss) | 0.7458 | 0.7057 | 0.6506 | 0.7177 |
 | 3 ResNet-34 Lovasz models, ensemble | | 0.7035 | 0.6493 | |
 | `dlv3lov` + `effb2lov`, 8 views each | 0.7512 | **0.7089** | **0.6546** | 0.7185 |
+| 5-class ensemble `effb2lov_c5_s0` + `r34lov_c5_s0`, 8 views | 0.7422 | 0.7009 | 0.6478 | 0.7097 |
 
 - Two model types in one ensemble beat more seeds of one type: +0.0054 test mIoU over the ResNet-only ensemble.
 - Building IoU target 0.65: met (0.6546). mIoU target 0.72: missed (0.7089).
-- Adoption for the Pittsburgh lots needs mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571 (5 classes, "other" split by a 5-class model, water left out). mIoU missed by 0.0003, so the lots keep `r34_c5_s0`.
+- Adoption for the Pittsburgh lots needs mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571 (5 classes, "other" split by a 5-class model, water left out). mIoU missed by 0.0003. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models). The 5-class ensemble scored 0.7085 and 0.7524. The lots keep `r34_c5_s0`.
 
 ## Error analysis
 

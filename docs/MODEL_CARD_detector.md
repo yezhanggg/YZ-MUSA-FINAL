@@ -78,7 +78,7 @@ These cover the sample area chips only, not whole cities.
 
 <!-- source: ~/musa-drive/ops/logs/yolo.md (FINAL detector table), ~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json -->
 
-As of Nov 14 morning. Same 162 test chips and the same unchecked labels. Target garage AP50 0.50.
+Final for the Nov 12 to 14 rounds. Same 162 test chips and the same unchecked labels. Target garage AP50 0.50.
 
 | Run | What changes | mAP50 | Garage | Shed | Other accessory | Pool | Garage, size rule classes (Pittsburgh / Philadelphia) |
 |---|---|---|---|---|---|---|---|

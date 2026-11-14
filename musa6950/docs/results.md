@@ -4,7 +4,7 @@ title: "MUSA 6950 Results"
 
 Short version:
 
-- Every pretrained single U-Net lands near 0.70 test mIoU on the held-out counties. As of Nov 14 morning (one more training round ends that night), the best result is an ensemble of a DeepLabV3+ and an EfficientNet-B2 model: test mIoU 0.7089 and building IoU 0.6546. The building goal of 0.65 is met. The mIoU goal of 0.72 is not. The error analysis says the labels are the limit.
+- Every pretrained single U-Net lands near 0.70 test mIoU on the held-out counties. After the Nov 12 to 14 training rounds, the best result is an ensemble of a DeepLabV3+ and an EfficientNet-B2 model: test mIoU 0.7089 and building IoU 0.6546. The building goal of 0.65 is met. The mIoU goal of 0.72 is not. The error analysis says the labels are the limit.
 - In Pittsburgh the model transfers well without city training: about 0.70 on clean test pixels. City fine-tuning did not help. The new ensemble missed the bar for replacing the lot model by 0.0003, so the lots keep the earlier model.
 - In Philadelphia the model cannot see trees or lawns in the 2022 spring photos (tree IoU about 0.26). The lot tool uses the city's 2018 land cover raster there instead.
 - The structure detector reaches garage AP50 0.469 (goal 0.50) with classes set by the label size rule. Its scores are agreement with unchecked labels, not accuracy.
@@ -69,9 +69,9 @@ What it shows:
 
 ### Later runs (Nov 12 to 14)
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "06:15 Nov 14 interim" and "09:25 Nov 14" -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14" and "14:30 Nov 14"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json -->
 
-As of Nov 14 morning. One more training round ends that night, so these may move. Same test pixels and 8 flips and turns. Ensembles are picked on validation only.
+Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end that evening and are added only if they change the best). Same test pixels and 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
 
 | Run or pick | What changes | Val mIoU | Test mIoU | Building IoU |
 |---|---|---|---|---|
@@ -80,10 +80,11 @@ As of Nov 14 morning. One more training round ends that night, so these may move
 | `effb2lov_c4_s1` | the same, Lovasz loss | 0.7458 | 0.7057 | 0.6506 |
 | ResNet-34 Lovasz ensemble | 3 models, seeds only | | 0.7035 | 0.6493 |
 | `dlv3lov` + `effb2lov` | ensemble of two model types, 8 views each | 0.7512 | **0.7089** | **0.6546** |
+| 5-class ensemble | `effb2lov_c5_s0` + `r34lov_c5_s0`, 8 views each | 0.7422 | 0.7009 | 0.6478 |
 
 - Mixing model types helped where more seeds did not: +0.0054 test mIoU over the ResNet-only ensemble.
 - Building IoU goal (0.65) met. mIoU goal (0.72) missed.
-- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571, so it was not adopted.
+- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571, so it was not adopted. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models). The 5-class ensemble scored 0.7085 and 0.7524.
 
 ## 2. Where and why the model fails
 
@@ -184,7 +185,7 @@ The first Pittsburgh split placed some test boxes on top of training boxes: 34.8
 - Sheds are not detectable at this stage (AP50 0.0331).
 - A review pack of 150 chips per city is ready for hand checking. It has not been done.
 
-**Later runs (as of Nov 14 morning).** Same test chips, same unchecked labels. Goal: garage AP50 0.50.
+**Later runs (final, Nov 14).** Same test chips, same unchecked labels. Goal: garage AP50 0.50.
 
 <!-- source: ~/musa-drive/ops/logs/yolo.md (FINAL detector table), ~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json -->
 
