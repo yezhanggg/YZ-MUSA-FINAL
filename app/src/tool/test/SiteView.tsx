@@ -10,6 +10,8 @@
 // (REST_MS without scrolling, or a click on it); a scroll that passes over the map scrolls the panel, and at the
 // zoom limits the wheel goes back to the panel. Drag off the box pans; Cmd (Ctrl on Windows) + drag turns the view
 // (sideways: bearing, up and down: pitch, 0 to 70 degrees). Recentre frames the lot and resets bearing and pitch.
+// 3D stands on the ground from our terrain tiles where the place has them (terrain.ts), Top is flat. A steep or
+// sloping lot is turned to look across the slope once the ground has loaded, so the hill shows side-on.
 import { useEffect, useRef, useState } from 'react';
 import { Map as MLMap } from 'maplibre-gl';
 import { Crosshair, LocateFixed, Minus, Plus, RotateCcw, RotateCw } from 'lucide-react';
@@ -21,8 +23,11 @@ import { attachBoxDrag } from '../boxDrag';
 import type { LotResult } from './useLotResult';
 import type { LotRecord } from '../../lib/lot/types';
 import { areaFeet, frameOf, longSideAngle } from '../../lib/lot/geometry';
+import { acrossSlopeBearing, applyTerrain, fitScale, groundPlane, placeOfLot, sampleGround, terrainInfo, type TerrainInfo } from '../terrain';
 
 const PITCH_3D = 50;
+/** A sloping lot, turned to look across its slope: a little lower, so the hill shows in profile. */
+const PITCH_SLOPE = 60;
 /** The pointer rests this long on the site view before the wheel zooms it. */
 const REST_MS = 400;
 const MAX_PITCH = 70;
@@ -31,18 +36,46 @@ const ZOOM_OUT = 3;
 const ZOOM_IN = 3;
 const reducedMotion = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-/** Turn the view so the lot's long side runs across the wide card, then fit the lot with some room around it. */
-function frameLot(map: MLMap, lot: LotRecord, pitch: number, duration = 0) {
-  const f = frameOf(lot);
-  const bearing = -longSideAngle(areaFeet(lot.lot.polygon, f)[0][0]);
+/** A lot whose ground slope shows: steep site, or a moderate or steep slope class. */
+export const slopedLot = (lot: LotRecord) => !!lot.terrain && (lot.terrain.steep_site === true || lot.terrain.slope_class === 'moderate' || lot.terrain.slope_class === 'steep');
+
+/** The usual bearing: the lot's long side across the wide card. */
+const longSideBearing = (lot: LotRecord) => -longSideAngle(areaFeet(lot.lot.polygon, frameOf(lot))[0][0]);
+
+/**
+ * Turn the view so the lot's long side runs across the wide card (or to `turn`, the across-slope bearing of a
+ * sloping lot), then fit the lot with some room around it.
+ */
+function frameLot(map: MLMap, lot: LotRecord, pitch: number, duration = 0, turn: number | null = null) {
+  const bearing = turn ?? longSideBearing(lot);
   const cam = map.cameraForBounds(lotBounds(lot), { padding: 28, bearing });
   if (!cam) return;
-  const home = cam.zoom ?? map.getZoom();
-  map.setMinZoom(Math.max(0, home - ZOOM_OUT));
-  map.setMaxZoom(Math.min(24, home + ZOOM_IN));
-  if (duration) map.easeTo({ ...cam, bearing, pitch, duration });
-  else map.jumpTo({ ...cam, bearing, pitch });
+  let zoom = cam.zoom ?? map.getZoom();
+  // On terrain the uphill side comes nearer the camera and looks bigger: zoom out until the lot as drawn on the
+  // ground fits (measured at the end camera, then the move starts from where it was).
+  if (map.getTerrain()) {
+    const from = { center: map.getCenter(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
+    const cv = map.getCanvas();
+    const ring = lotRing(lot);
+    for (let i = 0; i < 3; i++) {
+      map.jumpTo({ ...cam, zoom, bearing, pitch });
+      const s = fitScale(ring.map((p) => map.project(p)), cv.clientWidth, cv.clientHeight, 28);
+      if (s <= 1.02) break;
+      zoom -= Math.log2(s);
+    }
+    if (duration) map.jumpTo(from);
+  }
+  map.setMinZoom(Math.max(0, zoom - ZOOM_OUT));
+  map.setMaxZoom(Math.min(24, zoom + ZOOM_IN));
+  if (duration) map.easeTo({ ...cam, zoom, bearing, pitch, duration });
+  else map.jumpTo({ ...cam, zoom, bearing, pitch });
 }
+
+/** The lot's outer ring points (every part). */
+const lotRing = (lot: LotRecord): [number, number][] => {
+  const g = lot.lot.polygon;
+  return (g.type === 'Polygon' ? [g.coordinates[0]] : g.coordinates.map((p) => p[0])).flat() as [number, number][];
+};
 
 /** Close the map credits to their (i) button: one click shows them. */
 function foldCredits(container: HTMLElement) {
@@ -64,8 +97,12 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
   live.current = { record, r };
   /** The user panned, zoomed or turned the map since it was last framed. */
   const moved = useRef(false);
-  const pitchR = useRef(PITCH_3D);
-  pitchR.current = threeD ? PITCH_3D : 0;
+  /** Across-slope bearing of a sloping lot, once its ground has been read; null keeps the usual framing. */
+  const slopeTurn = useRef<number | null>(null);
+  const threeDR = useRef(true);
+  threeDR.current = threeD;
+  const pitchOf = (on: boolean) => (on ? (slopeTurn.current !== null ? PITCH_SLOPE : PITCH_3D) : 0);
+  const [ground, setGround] = useState<TerrainInfo | null>(null);
 
   useEffect(() => {
     const container = el.current;
@@ -171,7 +208,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
     });
     const ro = new ResizeObserver(() => {
       map.resize();
-      if (!moved.current) frameLot(map, live.current.record, pitchR.current);
+      if (!moved.current) frameLot(map, live.current.record, pitchOf(threeDR.current), 0, slopeTurn.current);
     });
     ro.observe(container);
 
@@ -200,9 +237,45 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
     const map = mapR.current;
     if (map && ready) {
       moved.current = false;
-      frameLot(map, record, threeD ? PITCH_3D : 0);
+      slopeTurn.current = null;
+      frameLot(map, record, pitchOf(threeD));
     }
   }, [record, ready]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // The ground of the lot's place (null: no terrain file, flat ground).
+  const lotId = record.lot.id;
+  useEffect(() => {
+    let alive = true;
+    setGround(null);
+    void terrainInfo(placeOfLot(lotId)).then((g) => alive && setGround(g));
+    return () => void (alive = false);
+  }, [lotId]);
+
+  // 3D on the ground, Top flat. Hillshade over the photo, under the lot drawing.
+  useEffect(() => {
+    const map = mapR.current;
+    if (!map || !ready) return;
+    applyTerrain(map, threeD ? ground : null, 'site-buildable-fill');
+  }, [ground, threeD, ready]);
+
+  // A sloping lot: once the ground under it has loaded, turn to look across the slope (unless the user has moved).
+  useEffect(() => {
+    const map = mapR.current;
+    const lot = live.current.record;
+    if (!map || !ready || !threeD || !ground || slopeTurn.current !== null || !slopedLot(lot)) return;
+    let tries = 0;
+    const read = () => {
+      const plane = groundPlane(sampleGround(map, lotBounds(lot)) ?? []);
+      if (!plane) {
+        if (++tries < 8) map.once('idle', read);
+        return;
+      }
+      slopeTurn.current = acrossSlopeBearing(plane.downhill, longSideBearing(lot));
+      if (!moved.current) frameLot(map, lot, pitchOf(true), reducedMotion() ? 0 : 700, slopeTurn.current);
+    };
+    map.once('idle', read);
+    return () => void map.off('idle', read);
+  }, [ground, threeD, ready, lotId]);
 
   useEffect(() => {
     const map = mapR.current;
@@ -210,7 +283,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
   }, [r.site, threeD, ready]);
 
   useEffect(() => {
-    mapR.current?.easeTo({ pitch: threeD ? PITCH_3D : 0, duration: 400 });
+    mapR.current?.easeTo({ pitch: pitchOf(threeD), duration: 400 });
   }, [threeD]);
 
   const setUnit = useTool((s) => s.setUnit);
@@ -227,7 +300,7 @@ export default function SiteView({ record, r }: { record: LotRecord; r: LotResul
   const recentre = () => {
     if (!mapR.current) return;
     moved.current = false;
-    frameLot(mapR.current, record, threeD ? PITCH_3D : 0, reducedMotion() ? 0 : 500);
+    frameLot(mapR.current, record, pitchOf(threeD), reducedMotion() ? 0 : 500, slopeTurn.current);
   };
   const ZBTN = 'tap grid h-8 w-8 place-items-center text-slate-700 transition-colors hover:bg-stone-100 hover:text-slate-900 disabled:opacity-35';
   const fitsNow = r.site.unit?.fits;

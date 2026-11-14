@@ -5,7 +5,8 @@
 import type { Map as MLMap, MapLayerMouseEvent, MapLayerTouchEvent } from 'maplibre-gl';
 import type { Pt } from '../lib/fitBox';
 import type { LotRecord } from '../lib/lot/types';
-import { setUnitBox } from './siteLayers';
+import { FT, setUnitBox } from './siteLayers';
+import { underBox } from './terrain';
 import { useTool } from './store';
 import { boxRing, fitsAt } from './testState';
 import type { LotResult } from './test/useLotResult';
@@ -73,7 +74,7 @@ export function attachBoxDrag(map: MLMap, layers: string[]): () => void {
     useTool.getState().setUnit({ at: { lon: d.center[0], lat: d.center[1] }, angle: d.angle });
   };
   const start = (e: MapLayerMouseEvent | MapLayerTouchEvent) => {
-    if (!ctx || ctx.r.unit.type !== 'detached_new') return;
+    if (drag || !ctx || ctx.r.unit.type !== 'detached_new') return;
     const oe = e.originalEvent as MouseEvent;
     if (oe.metaKey || oe.ctrlKey || (typeof oe.button === 'number' && oe.button !== 0)) return; // Cmd + drag turns the view
     e.preventDefault();
@@ -99,6 +100,22 @@ export function attachBoxDrag(map: MLMap, layers: string[]): () => void {
     map.getCanvas().style.cursor = '';
     glow(false);
   };
+  // On terrain MapLibre's picking misses the cottage (it tests extrusions at sea level), and the box's flat fill
+  // is the ground under the pointer only when the pointer is on the footprint: the box as seen from the camera is
+  // tested here instead (terrain.ts underBox). Registered after the layer handlers, so a press they took is kept.
+  const onBox = (e: MapLayerMouseEvent | MapLayerTouchEvent) => {
+    const u = ctx?.r.site.unit;
+    return !!u && !!map.getTerrain() && underBox([e.lngLat.lng, e.lngLat.lat], u.ring, u.heightFt * FT, map.getBearing(), map.getPitch());
+  };
+  const pressGround = (e: MapLayerMouseEvent | MapLayerTouchEvent) => !drag && onBox(e) && start(e);
+  let overBox = false;
+  const hoverGround = (e: MapLayerMouseEvent) => {
+    if (drag || !map.getTerrain()) return;
+    const on = onBox(e);
+    if (on) enter();
+    else if (overBox) leave();
+    overBox = on;
+  };
   for (const layer of layers) {
     map.on('mousedown', layer, start);
     map.on('touchstart', layer, start);
@@ -106,7 +123,13 @@ export function attachBoxDrag(map: MLMap, layers: string[]): () => void {
     map.on('mousemove', layer, enter); // after the lot hover, so the box keeps its grab cursor
     map.on('mouseleave', layer, leave);
   }
+  map.on('mousedown', pressGround);
+  map.on('touchstart', pressGround);
+  map.on('mousemove', hoverGround);
   return () => {
+    map.off('mousedown', pressGround);
+    map.off('touchstart', pressGround);
+    map.off('mousemove', hoverGround);
     linked.delete(map);
     for (const layer of layers) {
       map.off('mousedown', layer, start);

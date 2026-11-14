@@ -6,6 +6,7 @@ import type { GeoJSONSource, Map as MLMap } from 'maplibre-gl';
 import type { Pt } from '../lib/fitBox';
 import type { AreaGeom, LotRecord, Scenario } from '../lib/lot/types';
 import { cottageFeatures } from './cottage';
+import { levelOnGround } from './terrain';
 
 export const FT = 0.3048;
 /** Height used for a building with no height on file, by role (ft). */
@@ -34,9 +35,33 @@ const fc = (features: GeoJSON.Feature[]): GeoJSON.FeatureCollection => ({ type: 
 const area = (g: AreaGeom) => g as unknown as GeoJSON.Geometry;
 const poly = (ring: Pt[]): GeoJSON.Geometry => ({ type: 'Polygon', coordinates: [ring] });
 
+/**
+ * Sources whose polygons are extruded. On terrain MapLibre lifts each polygon by the ground at its centroid per tile,
+ * so a building cut by a tile edge would stand at two heights: tiles up to z16 (about 470 m across here, 6 cm
+ * steps) instead of the default z18 (117 m) make that rare.
+ */
+const EXTRUDED = new Set<string>(['site-buildings', 'site-unit', 'site-model']);
+
+/** The unit last drawn on each map, so the cottage can be levelled again when the ground arrives or goes. */
+const lastUnit = new WeakMap<MLMap, SiteData['unit']>();
+
 /** Add the sources and layers once. `full` (site view) also extrudes the record's buildings. */
 export function addSiteLayers(map: MLMap, full: boolean, before?: string) {
-  for (const s of SOURCES) map.addSource(s, { type: 'geojson', data: EMPTY });
+  for (const s of SOURCES) map.addSource(s, { type: 'geojson', data: EMPTY, ...(EXTRUDED.has(s) ? { maxzoom: 16 } : {}) });
+  // The cottage stands level on the ground: draw it again when terrain is turned on or off and when ground tiles load.
+  let queued = 0;
+  const relevel = () => {
+    if (queued) return;
+    queued = requestAnimationFrame(() => {
+      queued = 0;
+      if (lastUnit.has(map) && map.getSource('site-model')) setUnitBox(map, lastUnit.get(map)!);
+    });
+  };
+  map.on('terrain', relevel);
+  map.on('sourcedata', (e) => {
+    const t = map.getTerrain();
+    if (t && e.sourceId === t.source && e.tile) relevel();
+  });
   const add = (l: Parameters<MLMap['addLayer']>[0]) => map.addLayer(l, before);
   add({ id: 'site-buildable-fill', type: 'fill', source: 'site-buildable', paint: { 'fill-color': '#22c55e', 'fill-opacity': full ? 0.28 : 0.2 } });
   add({ id: 'site-buildable-line', type: 'line', source: 'site-buildable', paint: { 'line-color': '#15803d', 'line-width': 1.6, 'line-dasharray': [2, 1.5] } });
@@ -67,9 +92,11 @@ const setData = (map: MLMap, id: (typeof SOURCES)[number], data: GeoJSON.Feature
 
 /** Only the unit box, while it is being dragged (cheaper than redrawing everything). */
 export function setUnitBox(map: MLMap, unit: SiteData['unit']) {
+  lastUnit.set(map, unit);
   setData(map, 'site-unit', unit ? fc([feature(poly(unit.ring), { color: unit.fits ? FIT_COLOR : MISS_COLOR, h: unit.heightFt * FT })]) : EMPTY);
-  // The cottage from the same rectangle: rebuilt with the box, so it moves with every drag frame.
-  setData(map, 'site-model', unit ? fc(cottageFeatures({ ring: unit.ring, heightFt: unit.heightFt, stories: unit.stories ?? 1, roofColor: unit.fits ? FIT_COLOR : MISS_COLOR })) : EMPTY);
+  // The cottage from the same rectangle: rebuilt with the box, so it moves with every drag frame. On terrain, levelled.
+  const model = unit ? cottageFeatures({ ring: unit.ring, heightFt: unit.heightFt, stories: unit.stories ?? 1, roofColor: unit.fits ? FIT_COLOR : MISS_COLOR }) : [];
+  setData(map, 'site-model', unit ? fc(map.getTerrain() ? levelOnGround(model, (p) => map.queryTerrainElevation(p)) : model) : EMPTY);
 }
 
 /** Draw one lot, or clear with null. `extrude`: the unit stands up (3D). */

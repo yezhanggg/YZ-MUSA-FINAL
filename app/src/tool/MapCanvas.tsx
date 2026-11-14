@@ -20,6 +20,7 @@ import { FLY_IN_ZOOM, LOT_ZOOM, answerColorExpr, answerOf, lotFillOpacity, lotTi
 import { TestableLegend } from './test/TestableLots';
 import { usePlacesLayer } from './placesLayer';
 import { PlacesLegend } from './PlaceResults';
+import { useMainTerrain } from './terrain';
 
 setWorkerUrl(workerUrl);
 // Parcels are PMTiles files, read by byte range.
@@ -201,6 +202,8 @@ export default function MapCanvas() {
   const [answers, setAnswers] = useState<boolean | null>(null);
   // Explore, Where to Build: municipalities coloured by status (placesLayer.ts).
   usePlacesLayer();
+  // 3D: the ground from the place's terrain tiles (terrain.ts). 2D: flat.
+  useMainTerrain();
 
   useEffect(() => {
     const container = el.current;

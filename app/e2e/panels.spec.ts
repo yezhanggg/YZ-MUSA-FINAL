@@ -79,6 +79,9 @@ test.describe('right panel', () => {
 
   test('the site view zooms (buttons, wheel after a rest), turns with Cmd + drag, and recentre frames the lot again', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
+    // Flat ground here (terrain.spec.ts covers the ground): headless software WebGL draws terrain slowly enough that
+    // the pointer's 400 ms rest passes before the wheel arrives, and a sloping lot turns its view a few seconds in.
+    await page.route('**/terrain.pmtiles', (r) => r.fulfill({ status: 404, body: 'not found' }));
     await open(page, PGH);
     const site = page.locator('section[aria-label="Aerial and site view"]');
     await site.scrollIntoViewIfNeeded();
