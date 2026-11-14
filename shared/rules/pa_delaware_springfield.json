@@ -15,6 +15,7 @@
       "https://ecode360.com/print/SP0159?guid=9332475",
       "https://ecode360.com/print/SP0159?guid=9332155",
       "https://ecode360.com/print/SP0159?guid=9330363",
+      "https://ecode360.com/print/SP0159?guid=9331966",
       "https://ecode360.com/SP0159/search?query=%22accessory%20dwelling%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/SP0159/search?query=%22accessory%20apartment%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/SP0159/search?query=%22in-law%22&scope=all&sortOrder=relevance",
@@ -32,14 +33,19 @@
     "code_url": "https://ecode360.com/30536824",
     "code_current_through": "2026-06-09",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2026-06-09'. Ord. No. 1651 and Ord. No. 1660 (zoning) are still listed under New Laws.",
-    "code_caution": "Two zoning amendments, Ord. No. 1651 (2025-06-04) and Ord. No. 1660 (2026-06-09), are listed as new laws and were not read (PDF only). They may change these rules. Ask the Township.",
+    "code_caution": "Two zoning amendments, Ord. No. 1651 (2025-06-04) and Ord. No. 1660 (2026-06-09), are listed as new laws and were not read (PDF only). Search snippets suggest office townhouses in the TND-5 overlay and changes in the F district, but they may change other rules too. Ask the Township.",
     "checks": [
       "The zoning code has no accessory dwelling unit, accessory apartment, in-law or ECHO provision. A code search for those words found nothing",
       "The A and B Residence Districts permit 'any one of the following uses and no other', and the only dwelling is a single-family detached house (143-14, 143-19). C adds the single-family semidetached house (143-23). D adds apartment houses on a tract of at least five acres (143-27, 143-29B)",
       "No district lists a two-family dwelling or a conversion of a house to more units",
       "A private garage is limited to one per lot, 12 ft high (up to 18 ft by special exception) and 24 by 24 ft (143-111I)",
       "Detached accessory buildings must be 10 ft from the house and at least 3 ft from any lot line, in a side or rear yard (143-111C, D)",
-      "Parking: 2 spaces for every dwelling unit (143-92)"
+      "Parking: 2 spaces for every dwelling unit (143-92)",
+      "A detached garage or carport in a side yard must be at least 90 ft from the street line, or 75% of the lot depth on lots under 120 ft deep, and 10 ft from the house (143-111I(4), (5))",
+      "Sheds: one per lot, at most 10 ft high and 168 sq ft, in the rear yard, 3 ft from lot lines (143-111J)",
+      "Accessory buildings may stand only in a side or rear yard (143-111D)",
+      "The code search finds no ADU listing in any district, the PRD overlay (Article VIII), the SU and E Business districts included",
+      "In the TND overlays, new development may include live-work units (TND-1, TND-2, and TND-5 over the F district) and, as part of a continuing care retirement community in TND-5, duplex and other independent living units by conditional use (143-88C, G). These are development options, not a unit added to a house"
     ],
     "notes": "Zoning office: Springfield Township, Delaware County (springfieldtwp-pa.org). Read on eCode360 (SP0159) in a browser, one print view at a time. Use lists read for A, B, C and D. Business, shopping center, special use, industrial and TND overlay lists were not read. Code searches on 2026-11-14 listed in source_urls."
   },
@@ -139,6 +145,14 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "Detached accessory buildings 10 ft from the principal building."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "143-111D",
+      "url": "https://ecode360.com/print/SP0159?guid=9332475",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory structures 'may be located, erected or maintained in the side yard or in any rear yard'."
     }
   },
   "use": {

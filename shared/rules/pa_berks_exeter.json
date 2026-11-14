@@ -12,6 +12,8 @@
       "https://ecode360.com/print/EX2329?guid=8337755",
       "https://ecode360.com/print/EX2329?guid=8338334",
       "https://ecode360.com/print/EX2329?guid=8338344",
+      "https://ecode360.com/print/EX2329?guid=8338351",
+      "https://ecode360.com/print/EX2329?guid=8338087",
       "https://ecode360.com/print/EX2329?guid=8338489",
       "https://ecode360.com/print/EX2329?guid=8339085",
       "https://ecode360.com/print/EX2329?guid=8339090",
@@ -42,7 +44,11 @@
       "Parking: 3 spaces per dwelling unit for residential uses, not counting garages (390-37Q(1))",
       "In AP a farm may have up to two dwelling units per 40 acres, and an existing farm building may be converted to a residence by special exception (390-12B(4), C(2))",
       "A building on the Historic Resources Map may be reused for a single-family house, or for homes above an office or shop, under the adaptive reuse rules (390-70)",
-      "Undefined uses are a conditional use only in the GI district, so there is no unlisted-use path for a second unit on a house lot (390-71.2B)"
+      "Undefined uses are a conditional use only in the GI district, so there is no unlisted-use path for a second unit on a house lot (390-71.2B)",
+      "On a nonresidential lot, living quarters are permitted only for proprietors, watchmen, caretakers or similar employees (390-30B(2))",
+      "In the Stonersville and Limekiln Rural Village Overlays, homes are permitted above a business or office ('dual use'): each unit at least 500 sq ft with a kitchen and private bath, at most two units per acre, and the owner or manager of the business lives in one of them (390-19B(10), 390-20B(10))",
+      "For a building on the Historic Resources Map in AP, R, RC, SR0, SR1, SR2, SR3 and UR, the uses allowed in the NC district may be permitted by conditional use (390-70B(3)(b)). The NC use list was not read",
+      "A detached garage must be at least 10 ft from a dwelling, with no side longer than 40 ft (390-29B(2))"
     ],
     "notes": "Zoning office: Exeter Township (exetertownship.com). Read on eCode360 (EX2329) in a browser, one print view at a time. Code searches on 2026-11-14 for 'accessory dwelling', 'accessory apartment', 'in-law', 'ECHO', cottage, apartment and 'two-family'. Use lists read for RC, AP, R, SR0, SR1, SR2, SR3, UR and the Stonersville RVO. Commercial and industrial district lists were not read, and 'two-family' appears in no district list besides SR3 and UR."
   },
@@ -84,18 +90,43 @@
     "alternatives": {
       "value": [
         {
-          "name": "Two-family detached dwelling",
+          "name": "Two-family detached dwelling, with public sewer and water",
           "path": "by_right",
           "districts": [
             "SR3",
             "UR"
           ],
-          "conditions": "A building for two families, 'one family living wholly or partly over the other'. Lot area 12,000 sq ft per dwelling unit with public sewer and water (24,000 for two), one acre per unit without. Width 40 ft per unit at the street. Side yards 15 ft (30 total) with public utilities. 3 parking spaces per unit.",
+          "conditions": "A building for two families, 'one family living wholly or partly over the other'. With public or community sewer and water: 12,000 sq ft per dwelling unit, so 24,000 for two, width 40 ft per unit, side yards 15 ft (30 total). 3 parking spaces per unit. Without public sewer and water the lot must be two acres (see the next item).",
           "min_lot_sqft": 24000,
           "section": "390-17B(4), 390-18B(4), 390-6 dwelling F, district area tables",
           "url": "https://ecode360.com/print/EX2329?guid=8337755",
           "confidence": "secondary",
-          "note": "Read as a conversion path for an existing house. The definition is a stacked two-unit building. Without public sewer and water the lot must be two acres."
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public or community sewage disposal",
+              "section": "390-17 table, 390-18E"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public or community water supply",
+              "section": "390-17 table, 390-18E"
+            }
+          ],
+          "note": "Read as a conversion path for an existing house. The definition is a stacked two-unit building."
+        },
+        {
+          "name": "Two-family detached dwelling, on-site sewage or water",
+          "path": "by_right",
+          "districts": [
+            "SR3",
+            "UR"
+          ],
+          "conditions": "With on-site sewage disposal or on-site water supply: one acre per dwelling unit, so two acres (87,120 sq ft) for two. Side yards 30 ft (60 total).",
+          "min_lot_sqft": 87120,
+          "section": "390-17B(4), 390-18B(4), district area tables",
+          "url": "https://ecode360.com/print/EX2329?guid=8337755",
+          "confidence": "secondary"
         },
         {
           "name": "Second farm dwelling",

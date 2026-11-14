@@ -18,6 +18,9 @@
       "https://ecode360.com/print/UP1380?guid=32899004",
       "https://ecode360.com/print/UP1380?guid=32899006",
       "https://ecode360.com/print/UP1380?guid=32901138",
+      "https://ecode360.com/print/UP1380?guid=32900378",
+      "https://ecode360.com/print/UP1380?guid=32900980",
+      "https://ecode360.com/print/UP1380?guid=32901230",
       "https://ecode360.com/UP1380/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22family%20care%22%20OR%20%22accessory%20residential%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/UP1380/search?query=%22apartments%2C%20accessory%22%20OR%20%22accessory%20apartment%22%20OR%20%22245-14.3%22&scope=code&sortOrder=relevance"
     ],
@@ -39,7 +42,10 @@
       "At least three off-street parking spaces in total for the owner and the tenant (245-14.3H)",
       "It may not be subdivided or sold apart from the house (245-14.3I)",
       "Accessory buildings: not in the front yard, 5 ft from lot lines, 20 ft high at most (245-16.2). Whether 20 ft binds a detached apartment is not stated in 245-14.3",
-      "R-2 and R-3 tables give lot size 'per dwelling unit'. Whether the apartment needs its own share is not settled"
+      "R-2 and R-3 tables give lot size 'per dwelling unit'. Whether the apartment needs its own share is not settled",
+      "The definition ('in or added to an existing single-family detached dwelling', 245-2.1) and 245-14.3B ('may be detached or attached', 2025) conflict on whether a detached apartment or one with a new house is allowed. Ask the Township",
+      "Minimum habitable floor area: 'accessory dwelling units' at least 400 sq ft, or 350 sq ft for one occupant (245-16.7). 245-14.3G says 300 sq ft. The larger figure is shown",
+      "Conversion apartments (special exception in R-3): no outside alterations except for fire protection, no more than two units added, one common principal entrance kept (245-14.20)"
     ],
     "notes": "Zoning office: Upper Allen Township (uatwp.org). Read on eCode360 (UP1380) in a browser, one print view at a time. Code searches on 2026-11-14 for accessory dwelling, accessory apartment, in-law, ECHO, elder cottage, family care and accessory residential found the use only in 245-2.1, 245-14.3 and the use tables 245-4.2, 245-5.2 and 245-6.2. Industrial district tables do not list it. Zoning Hearing Board agendas (2022 to 2026) show special exception requests for accessory apartments, including a detached one on 2026-08-13."
   },
@@ -160,7 +166,7 @@
           "section": "Table V-1 #20, Tables V-2 and V-3",
           "url": "https://ecode360.com/print/UP1380?guid=32898925",
           "confidence": "secondary",
-          "note": "245-14.61 (density) was not read."
+          "note": "245-14.61: lot area per dwelling unit as in the district tables, at most six units per acre in R-2, and a landscaping plan for any two-family dwelling."
         },
         {
           "name": "Conversion apartments",
@@ -168,12 +174,12 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "Conversion apartments by special exception in R-3, lot 10,000 sq ft per unit, front 20 ft, side 15 ft, rear 15 ft.",
+          "conditions": "Special exception in R-3. Plans approved by the Zoning Officer first. No outside alterations except those required for fire protection. No more than two dwelling units added. One common principal entrance kept. Each unit at least 400 sq ft of habitable floor area. Lot 10,000 sq ft per unit, front 20 ft, side 15 ft, rear 15 ft.",
           "min_lot_sqft": 20000,
-          "section": "Table V-1 #9, Table V-3 #1, 245-14.20",
-          "url": "https://ecode360.com/print/UP1380?guid=32898925",
-          "confidence": "secondary",
-          "note": "The standards in 245-14.20 were not read. The 20,000 sq ft figure assumes two units at 10,000 each."
+          "section": "Table V-1 #9, Table V-3 #1, 245-14.20, 245-16.7",
+          "url": "https://ecode360.com/print/UP1380?guid=32900378",
+          "confidence": "verified",
+          "note": "The 20,000 sq ft figure is two units at 10,000 each (Table V-3, per unit)."
         }
       ],
       "section": "Tables IV-1, V-1, V-2, V-3, VI-1",
@@ -219,13 +225,13 @@
       "value": [
         {
           "kind": "existing_structure",
-          "condition": "The definition speaks of a unit 'in or added to an existing single-family detached dwelling'.",
+          "condition": "The definition speaks of a unit 'in or added to an existing single-family detached dwelling', while 245-14.3B allows a detached apartment. The two conflict. Ask the Township.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
           "test": "house_exists",
-          "section": "245-2.1",
+          "section": "245-2.1, 245-14.3B",
           "url": "https://ecode360.com/print/UP1380?guid=32898155"
         },
         {
@@ -260,13 +266,13 @@
         },
         {
           "kind": "size",
-          "condition": "At least 300 sq ft.",
+          "condition": "At least 300 sq ft (245-14.3G), and at least 400 sq ft of habitable floor area, 350 for one occupant (245-16.7).",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
-          "section": "245-14.3G",
-          "url": "https://ecode360.com/print/UP1380?guid=32899923"
+          "section": "245-14.3G, 245-16.7",
+          "url": "https://ecode360.com/print/UP1380?guid=32901230"
         },
         {
           "kind": "other",
@@ -319,11 +325,12 @@
       "note": "'no more than 45% of the primary structure's total floor area'."
     },
     "min_sqft": {
-      "value": 300,
-      "section": "245-14.3G",
-      "url": "https://ecode360.com/print/UP1380?guid=32899923",
+      "value": 400,
+      "section": "245-16.7, 245-14.3G",
+      "url": "https://ecode360.com/print/UP1380?guid=32901230",
       "verified_on": "2026-11-14",
-      "confidence": "verified"
+      "confidence": "secondary",
+      "note": "245-16.7: accessory dwelling units 'not less than 400 square feet', 350 for an apartment for one person. 245-14.3G: 'A minimum of 300 square feet'. The stricter figure is shown."
     }
   },
   "envelope": {
@@ -452,6 +459,14 @@
         "url": "https://ecode360.com/print/UP1380?guid=32898868",
         "verified_on": "2026-11-14",
         "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "245-4.3E(1)",
+        "url": "https://ecode360.com/print/UP1380?guid=32898868",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage 35%. No separate building coverage, so it is stored as the cap on buildings."
       }
     },
     "R-1": {
@@ -490,6 +505,14 @@
         "url": "https://ecode360.com/print/UP1380?guid=32898925",
         "verified_on": "2026-11-14",
         "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "245-5.3D(1)",
+        "url": "https://ecode360.com/print/UP1380?guid=32898925",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage 30% on conventional and estate lots. No separate building coverage, so it is stored as the cap on buildings."
       }
     },
     "R-2": {

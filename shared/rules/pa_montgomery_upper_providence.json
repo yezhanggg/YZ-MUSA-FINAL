@@ -16,6 +16,13 @@
       "https://ecode360.com/print/UP1236?guid=42976579",
       "https://ecode360.com/print/UP1236?guid=42976604",
       "https://ecode360.com/print/UP1236?guid=42976806",
+      "https://ecode360.com/print/UP1236?guid=42976822",
+      "https://ecode360.com/print/UP1236?guid=42976900",
+      "https://ecode360.com/print/UP1236?guid=42976977",
+      "https://ecode360.com/print/UP1236?guid=42977122",
+      "https://ecode360.com/print/UP1236?guid=42977253",
+      "https://ecode360.com/print/UP1236?guid=42978014",
+      "https://ecode360.com/print/UP1236?guid=42976526",
       "https://ecode360.com/UP1236/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22family%20care%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/UP1236/search?query=%22single-family%20detached%22%20AND%20%22accessory%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/UP1236/search?query=%22300-15%22%20OR%20%22temporary%20unit%22%20OR%20%22relative%22&scope=all&sortOrder=relevance"
@@ -35,12 +42,14 @@
       "The main home must be owner-occupied (300-15B(4)(b))",
       "Only immediate family may live in it: parents, grandparents, children, grandchildren, siblings, aunts, uncles, stepparents and stepchildren (300-15B(4)(e))",
       "The owners record a covenant, approved by the Township Solicitor, that bars use of the property as two or more dwelling units (300-15B(4)(d))",
-      "It reaches the districts whose use lists permit a single-family detached house with accessory uses: R-1, R-2, R-3, VP, YMU, CL, and the planned community districts OSR-1, OSR-2, GCR, ARR and VCO. The planned community district lists were seen only in search results",
+      "It reaches the districts whose use lists permit a single-family detached house with accessory uses: R-1, R-2, R-3, VP, YMU, CL, the planned community districts OSR-1, OSR-2, GCR and ARR, VCO (houses only in existing structures, one use per lot) and MH (conventionally built houses may be up to 40% of a mobile home development). In MH and in R-4 (single-family attached units only in buildings mixed with multifamily) whether the unit applies is not settled",
+      "In ARR every household must include a permanent resident 55 or older, and no one 18 or younger may live there, except for example grandchildren staying less than 120 days a year (300-345A, 300-350G)",
+      "No more than three accessory structures or uses on a lot, one swimming pool not counted. Together they may cover at most 3% of a lot up to 20,000 sq ft, or 2% of a larger lot (300-15E)",
       "No size limit and no extra parking rule is set for the unit",
       "R-1 and R-2 tables state lot area 'per dwelling unit'. Whether the in-law suite counts is not settled. The covenant suggests the Township treats the property as one dwelling unit",
       "A zoning permit is needed for any accessory structure or building (300-15D)"
     ],
-    "notes": "Zoning office: Upper Providence Township, Montgomery County (uprov-montco.org). Read on eCode360 (UP1236) in a browser, one print view at a time. Use lists and area rules read for R-1, R-2, R-3, VP, YMU and CL. OSR-1, OSR-2, GCR, ARR, MH, VCO and the Mixed Residential Community option were seen only in search results. Commercial and industrial district lists were not read."
+    "notes": "Zoning office: Upper Providence Township, Montgomery County (uprov-montco.org). Read on eCode360 (UP1236) in a browser, one print view at a time. Use lists and area rules read for R-1, R-2, R-3, R-4, VP, YMU, CL, OSR-1, OSR-2, GCR, ARR, MH and VCO. The Mixed Residential Community option was seen only in search results. Commercial and industrial district lists were not read."
   },
   "adu": {
     "term": {
@@ -71,21 +80,22 @@
         "OSR-2",
         "GCR",
         "ARR",
-        "VCO"
+        "VCO",
+        "MH"
       ],
-      "section": "300-171D, 300-187A, 300-202H, 300-236D, 300-249H, 300-277D(4), 300-291, 300-309, 300-325, 300-344, 300-491",
+      "section": "300-171D, 300-187A, 300-202H, 300-236D, 300-249H, 300-277D(4), 300-291A, D, 300-309, 300-325, 300-344A, C(2), 300-491A(9), (10), 300-362A, C(2)",
       "url": "https://ecode360.com/print/UP1236?guid=42976358",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "300-15B(4) names no district. These are the districts whose use lists permit a single-family detached house and accessory uses customarily incidental to it. OSR-1, OSR-2, GCR, ARR and VCO were seen in search results only."
+      "note": "300-15B(4) names no district. These are the districts whose use lists permit a single-family detached house and accessory uses customarily incidental to it. MH is included because 300-362A lists conventionally built houses, but it is also marked in doubt."
     },
     "status_outside": {
       "value": "not_addressed",
-      "section": "300-171, 300-202",
-      "url": "https://ecode360.com/print/UP1236?guid=42976358",
+      "section": "300-220, 300-171, 300-202",
+      "url": "https://ecode360.com/print/UP1236?guid=42976526",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Elsewhere a single-family house is not a listed use, so the accessory unit has nothing to attach to. MH (mobile home parks) and the commercial and industrial districts were not read."
+      "note": "Elsewhere a single-family house is not a listed use, so the accessory unit has nothing to attach to. R-4 lists single-family attached units only in buildings with multifamily dwellings (300-220A.1) and is marked in doubt. Commercial and industrial district lists were not read."
     }
   },
   "approval": {
@@ -137,7 +147,7 @@
           "districts": [
             "VP"
           ],
-          "conditions": "Each unit at least 600 sq ft plus 100 sq ft per bedroom over one. Lot area per family at least 33% of the district figure. At most three families. Parking met. 'Authorized only for a large dwelling with relatively little economic usefulness as a conforming use.'",
+          "conditions": "Each unit at least 600 sq ft plus 100 sq ft per bedroom over one. Lot area per family may be reduced to 33% of the district figure (about 2,000 sq ft of the 6,000 sq ft single-family lot). At most three families. Parking met. 'Authorized only for a large dwelling with relatively little economic usefulness as a conforming use.'",
           "min_lot_sqft": null,
           "section": "300-236C(2)",
           "url": "https://ecode360.com/print/UP1236?guid=42976579",
@@ -177,9 +187,10 @@
         "OSR-2",
         "GCR",
         "ARR",
-        "VCO"
+        "VCO",
+        "MH"
       ],
-      "section": "300-171D, 300-187A, 300-202H, 300-236D, 300-249H, 300-277D(4), 300-291, 300-309, 300-325, 300-344, 300-491",
+      "section": "300-171D, 300-187A, 300-202H, 300-236D, 300-249H, 300-277D(4), 300-291A, D, 300-309, 300-325, 300-344A, C(2), 300-491A(9), (10), 300-362A, C(2)",
       "url": "https://ecode360.com/print/UP1236?guid=42976358",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
@@ -187,13 +198,14 @@
     },
     "districts_in_doubt": {
       "value": [
-        "MH"
+        "MH",
+        "R-4"
       ],
-      "section": "300-362",
-      "url": "https://ecode360.com/42975244",
+      "section": "300-362A, C(2), 300-220A.1, D",
+      "url": "https://ecode360.com/print/UP1236?guid=42977253",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Mobile home development district. Its accessory uses on individual lots were seen only in a search result. Ask the zoning officer."
+      "note": "MH: a mobile home development may include conventionally built single-family detached homes, and accessory uses customarily incidental to dwellings are allowed on individual lots, but the unit was written for ordinary house lots. R-4: single-family attached units only in buildings with multifamily dwellings. Ask the zoning officer."
     },
     "building_types": {
       "value": [
@@ -258,15 +270,37 @@
         },
         {
           "kind": "age",
-          "condition": "In ARR the community is age-restricted (300-344).",
+          "condition": "In ARR each household must include a permanent resident 55 or older, and no one 18 or younger may live there except, for example, grandchildren for less than 120 days in a calendar year. A relative under 19 could not live in the unit.",
           "effect": "condition",
           "applies_to": null,
           "districts": [
             "ARR"
           ],
           "building_types": null,
-          "section": "300-344",
-          "url": "https://ecode360.com/42975244"
+          "section": "300-345A, 300-350G",
+          "url": "https://ecode360.com/print/UP1236?guid=42977122"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "In VCO a single-family home is permitted only within an existing structure, and only one use is permitted on a lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "VCO"
+          ],
+          "building_types": null,
+          "section": "300-491A(9), (10)",
+          "url": "https://ecode360.com/print/UP1236?guid=42978014"
+        },
+        {
+          "kind": "other",
+          "condition": "No more than three accessory structures or uses on a lot (one pool not counted), covering at most 3% of a lot up to 20,000 sq ft or 2% of a larger lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "300-15E",
+          "url": "https://ecode360.com/print/UP1236?guid=42975288"
         }
       ],
       "section": "300-15B(4)",
@@ -695,6 +729,236 @@
         "value": 5,
         "section": "300-249A, 300-172",
         "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "OSR-1": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "300-294B, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42976822",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Lots may be as small as 12,000 sq ft, with half of the lots at least 15,000. Width and yards as for 15,000 sq ft lots in R-2 (300-188B)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "300-294B, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42976822",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-294B, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42976822",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "300-294B, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42976822",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "300-294B, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42976822",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-294G, 300-173A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976822",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      }
+    },
+    "OSR-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "300-312C(2)",
+        "url": "https://ecode360.com/print/UP1236?guid=42976900",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling with front access. 4,500 sq ft with rear access. Tract at least 50 acres."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "300-312C(2)",
+        "url": "https://ecode360.com/print/UP1236?guid=42976900",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "300-312C(2)",
+        "url": "https://ecode360.com/print/UP1236?guid=42976900",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "300-312C(2)",
+        "url": "https://ecode360.com/print/UP1236?guid=42976900",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "300-312C(2)",
+        "url": "https://ecode360.com/print/UP1236?guid=42976900",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-312C(2)",
+        "url": "https://ecode360.com/print/UP1236?guid=42976900",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "GCR": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "300-328B, F(1), I",
+        "url": "https://ecode360.com/print/UP1236?guid=42976977",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No lot minimum. A dwelling is at least 10 ft from any lot line and 20 ft from an internal street."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "300-328B, F(1), I",
+        "url": "https://ecode360.com/print/UP1236?guid=42976977",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "300-328B, F(1), I",
+        "url": "https://ecode360.com/print/UP1236?guid=42976977",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "At least 10 ft from any lot line."
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "300-328B, F(1), I",
+        "url": "https://ecode360.com/print/UP1236?guid=42976977",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "300-328B, F(1), I",
+        "url": "https://ecode360.com/print/UP1236?guid=42976977",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-328H(1)",
+        "url": "https://ecode360.com/print/UP1236?guid=42976977",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "ARR": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "300-347B, F, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42977122",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No lot minimum. 20 ft from an internal street. The code sets distances between units (10 ft side to side, 30 ft rear to rear), not side or rear yards. Building coverage 15% of the tract."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "300-347B, F, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42977122",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": null,
+        "section": "300-347B, F, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42977122",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No side yard. 10 ft between the sides of adjacent units (300-347F(2))."
+      },
+      "setback_rear_ft": {
+        "value": null,
+        "section": "300-347B, F, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42977122",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "300-347B, F, H",
+        "url": "https://ecode360.com/print/UP1236?guid=42977122",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-347G(1)",
+        "url": "https://ecode360.com/print/UP1236?guid=42977122",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "VCO": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "300-492B(1)(a), (3), (4)",
+        "url": "https://ecode360.com/print/UP1236?guid=42978014",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No lot minimum. Frontage 100 ft on parcels under one acre. Public sewer and water required."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "300-492B(1)(a), (3), (4)",
+        "url": "https://ecode360.com/print/UP1236?guid=42978014",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "300-492B(1)(a), (3), (4)",
+        "url": "https://ecode360.com/print/UP1236?guid=42978014",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft aggregate. 15 ft (25 aggregate) next to a residential zone."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300-492B(1)(a), (3), (4)",
+        "url": "https://ecode360.com/print/UP1236?guid=42978014",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "300-492B(1)(a), (3), (4)",
+        "url": "https://ecode360.com/print/UP1236?guid=42978014",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-492B(6)",
+        "url": "https://ecode360.com/print/UP1236?guid=42978014",
         "verified_on": "2026-11-14",
         "confidence": "verified"
       }

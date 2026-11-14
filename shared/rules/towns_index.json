@@ -2079,7 +2079,7 @@
       "pop_rank": 68,
       "file": "pa_berks_exeter",
       "batch": 15,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/8337502",
@@ -2089,7 +2089,7 @@
       "why": [
         "known ADU ordinance (batch 15 by population. Code Chapter 390 has no ADU text)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). No ADU text found. Open: Ord. No. 881 (2026-06-22, zoning amendment) is not yet in the online code and its PDF was not read. Commercial and industrial district use lists and the Limekiln RVO were not read. Whether the AP repurposed farm building counts toward the two-dwelling farm limit."
+      "status_note": "Verified 2026-11-14 after independent review; fixes applied (390-30B(2), Limekiln RVO dual use, 390-70B(3)(b), garage spacing, two-family alternative split by utilities). For a later check: Ord. No. 881 (2026-06-22, zoning amendment) is not yet in the online code and was not read; it is shown as a code caution."
     },
     {
       "geoid": "4204573032",
@@ -2103,7 +2103,7 @@
       "pop_rank": 69,
       "file": "pa_delaware_springfield",
       "batch": 15,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30536824",
@@ -2113,7 +2113,7 @@
       "why": [
         "known ADU ordinance (batch 15 by population. Code Chapter 143 has no ADU text)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). No ADU text found. Open: Ord. No. 1651 (2025-06-04) and Ord. No. 1660 (2026-06-09) zoning amendments are listed as new laws and were not read (PDF only). Business, shopping center, special use, industrial and TND overlay use lists were not read."
+      "status_note": "Verified 2026-11-14 after independent review; fixes applied (front-yard bar for accessory buildings, garage and shed rules, TND and PRD notes). For a later check: Ord. No. 1651 (2025-06-04) and Ord. No. 1660 (2026-06-09) zoning amendments were not read (PDF only); search snippets point to TND-5 office townhouses and the F district. Shown as a code caution."
     },
     {
       "geoid": "4209179256",
@@ -2137,7 +2137,7 @@
       "why": [
         "known ADU ordinance (Code 300-15B(4) temporary unit for relative (in-law suite))"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21) zoning amendments not codified and not read. 300-15B(4) names no district; scope set from use lists read for R-1, R-2, R-3, VP, YMU, CL, while OSR-1, OSR-2, GCR, ARR and VCO were seen only in search results and have no district rows; MH left in doubt. Whether the R-1 and R-2 lot area 'per dwelling unit' counts the in-law suite. General parking article not read."
+      "status_note": "Drafted 2026-11-14, review15 fixes applied: MH added to scope and kept in doubt with R-4; ARR age rule (300-345A, 300-350G); VCO existing-structure rule; 300-15E limit; rows for OSR-1, OSR-2, GCR, ARR, VCO. Open: Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21) not codified and not read; whether the unit applies in MH and R-4; whether the R-1 and R-2 lot area 'per dwelling unit' counts the in-law suite."
     },
     {
       "geoid": "4204178736",
@@ -2161,7 +2161,7 @@
       "why": [
         "known ADU ordinance (Code 245-14.3 accessory apartment)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: the definition (245-2.1) speaks of a unit in or added to an existing house while 245-14.3B (2025) allows a detached apartment; whether the 20 ft accessory height (245-16.2E) binds a detached apartment; whether the R-2 and R-3 lot size 'per dwelling unit' counts the apartment; 245-14.20 conversion apartment and 245-14.61 density standards not read. In R-3 the tool shows the town status special exception next to the by-right path."
+      "status_note": "Drafted 2026-11-14, review15 fixes applied: conversion apartment standards (245-14.20), 245-14.61 density, 245-16.7 minimum floor area (400 sq ft against 300 in 245-14.3G), A and R-1 coverage. Open: the definition (245-2.1) allows a unit only in or added to an existing house while 245-14.3B allows a detached one; whether the 20 ft accessory height binds a detached apartment; whether R-2 and R-3 lot size per dwelling unit counts the apartment."
     },
     {
       "geoid": "4213319704",
@@ -2185,7 +2185,7 @@
       "why": [
         "known ADU ordinance (Code 27-602 accessory apartment and 27-603 accessory family dwelling unit)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: the use table row 'Accessory Dwelling Units' is read as the 27-603 accessory family dwelling unit; whether district density limits (R-1, R-3, R-4) count the apartment; Part 7 parking and the Part 6 residential conversion standards not read; American Legal shows version 2026 S-10 with no currency date."
+      "status_note": "Drafted 2026-11-14, review15 fixes applied: family unit limited to lineal relatives (27-603.6), residential conversion from 27-667, R-1 Growth Boundary condition, 27-502.1.D versus 27-602.2 note, adaptive reuse note. Open: the use table row 'Accessory Dwelling Units' read as the 27-603 family unit; whether density limits count the apartment; whether a lot is inside the Growth Boundary Area; 27-504 floor area and Part 7 parking not read; adaptive reuse districts not matched to columns."
     }
   ]
 }

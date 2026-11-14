@@ -9,6 +9,8 @@
     "source_urls": [
       "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
       "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25446",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25462",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-26393",
       "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
       "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-23934",
       "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
@@ -32,7 +34,11 @@
       "A separate 'accessory family dwelling unit' is also permitted by right in the same districts. It is for the owner's relatives with a medical hardship, at most two persons, never rented, renewed every year, and may be a detached portable unit up to 900 sq ft and 15 ft high in the side or rear yard (27-202, 27-603)",
       "No owner-occupancy or size rule is set for the accessory apartment",
       "District density limits (R-1 one unit per half acre in the growth area, R-3 five and R-4 eight units per acre) may count the apartment. Not settled",
-      "A two-family dwelling is permitted in R-3 and R-4, and a residential conversion by special exception in R-3"
+      "A two-family dwelling is permitted in R-3 and R-4, and a residential conversion by special exception in R-3 (single-family detached houses only, district bulk rules and parking apply, 27-667)",
+      "R-1 lot minimum and density depend on the Growth Boundary Area: half an acre and one unit per half acre inside it, one and a half acres and one unit per 1.5 acres outside it (27-405.3.A, G). The lot data does not say which side a lot is on",
+      "27-502.1.D lists 'Accessory family dwelling units or accessory apartment' among accessory structures, while 27-602.2 says the apartment 'shall be part of the principle structure' and 27-502.1.G bars living quarters in accessory buildings except under Part 6. The file follows 27-602.2",
+      "The family unit (27-603.6) is for the owner's lineal family only: great-grandparents, grandparents, parents, children or lineal descendants, with a family member's spouse and children. Siblings are not included",
+      "An existing building that meets the adaptive reuse criteria may be reused as a single-family or multifamily dwelling by special exception (27-604). The four districts where adaptive reuse is listed were not matched to their columns"
     ],
     "notes": "Zoning office: Dover Township, York County (dovertownship.org). Read in a browser on American Legal (codelibrary.amlegal.com/codes/dovertwp), one page at a time. Use table 27-401 read from the screen to place each P in its column. District rules read for CV, A, V, R-1, R-3, R-4 and the Crossroads Village (CRV) overlay. Part 6 standards other than 27-602 and 27-603 and Part 7 parking were not read."
   },
@@ -109,7 +115,7 @@
             "V"
           ],
           "adu_listing": true,
-          "conditions": "Attached or detached. For an elderly, handicapped or disabled relative of the owners. The owner lives in the main house. A detached unit is of portable construction, at most 900 sq ft and 15 ft high, in the side or rear yard only. District setbacks and lot coverage met. At most two occupants. Never rented. One-year use permit, renewed while the family member's medical hardship continues. A detached unit is removed within six months when the owner or the family member leaves.",
+          "conditions": "Attached or detached. Only for the owner's family: great-grandparents, grandparents, parents, children or lineal descendants (a family member's spouse and children included), not siblings, and per the definition an elderly, handicapped or disabled relative. The owner lives in the main house. A detached unit is of portable construction, at most 900 sq ft and 15 ft high, in the side or rear yard only. District setbacks and lot coverage met. At most two occupants. Never rented. One-year use permit, renewed while the family member's medical hardship continues. A detached unit is removed within six months when the owner or the family member leaves.",
           "min_lot_sqft": null,
           "section": "27-202, 27-401, 27-603",
           "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
@@ -117,8 +123,8 @@
           "requires": [
             {
               "test": null,
-              "condition": "A relative of the owners with a medical hardship (elderly, handicapped or disabled)",
-              "section": "27-202, 27-603.7"
+              "condition": "A lineal relative of the owner (great-grandparent to lineal descendant) with a medical hardship",
+              "section": "27-202, 27-603.6, 27-603.7"
             }
           ],
           "note": "The use table row reads 'Accessory Dwelling Units'. It is read as this use."
@@ -146,11 +152,12 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "Listed as a special exception in R-3. The Part 6 standards for it were not read.",
+          "conditions": "Special exception in R-3. Only a single-family detached dwelling may be converted. No unit below the minimum habitable floor area. Parking for each unit under Part 7. All bulk and area rules of the district apply to the lot.",
           "min_lot_sqft": null,
-          "section": "27-401",
-          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
-          "confidence": "secondary"
+          "section": "27-401, 27-667",
+          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-26393",
+          "confidence": "verified",
+          "note": "The number of units and the lot area per unit are not stated in 27-667. R-3 density is five units per acre (27-406.3.A(4)). The minimum habitable floor area section (27-504) was not read."
         },
         {
           "name": "Farm tenant dwelling unit",
@@ -235,6 +242,18 @@
           "building_types": null,
           "section": "27-602.3",
           "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Outside the Growth Boundary Area the R-1 minimum lot is one and a half acres (65,340 sq ft) and density one unit per 1.5 acres. Inside it, half an acre and one unit per half acre.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "section": "27-405.3.A, G",
+          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784"
         }
       ],
       "section": "27-602",
