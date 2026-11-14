@@ -1,0 +1,522 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Southampton township",
+    "instrument": "Lower Southampton Township Code Chapter 27 Zoning (Ord. No. 558, 9-4-2012, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-07-08 (breadcrumb). New Laws on 2026-11-14: resolutions and Ord. No. 618 (Chapter 15, vehicles), none zoning. Use 78 is listed in R-1 to R-4 as amended by Ord. No. 600 (9-14-2022). 27-1403 as amended by Ord. No. 563 (8-14-2013).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/29169162",
+      "https://ecode360.com/print/LO0148?guid=29169721",
+      "https://ecode360.com/print/LO0148?guid=29169303",
+      "https://ecode360.com/print/LO0148?guid=29169320",
+      "https://ecode360.com/print/LO0148?guid=29169335",
+      "https://ecode360.com/print/LO0148?guid=29169349",
+      "https://ecode360.com/LO0148/laws",
+      "https://ecode360.com/LO0148/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20conversion%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LO0148/search?query=%22in-law%20dwelling%22%20OR%20%22in-law%20suite%22%20OR%20%22in-law%20suites%22%20OR%20%22Use%2078%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201745112",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/29169162",
+    "code_current_through": "2026-07-08",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-07-08'. New Laws do not amend Chapter 27.",
+    "checks": [
+      "An accessory in-law dwelling (Use 78) is permitted by right in R-1, R-2, R-3 and R-4, as an accessory use 'only for single-family detached dwellings' (27-402, 27-502, 27-602, 27-702, 27-1403H(11))",
+      "The lot must meet the district minimum lot area for the house. A township permit and an annual inspection are required. Only one per lot (27-1403H(11)(a)-(c))",
+      "It must be part of the house with a door connecting it to the rest of the house. 'No new separate structures on the same lot with the principal residence shall be permitted to be constructed for this use' (27-1403H(11)(d))",
+      "Conflicting text, ask the Zoning Officer: 27-1403H(11)(g) caps 'the height of the accessory building to be used for the accessory in-law dwelling' at the height of the house, while (d) requires the unit to be part of the house. Whether an existing accessory building may be used is not settled",
+      "Not in a cellar or basement unless at least one wall of the unit is at grade with direct access outside. No outside change that makes the house look other than a single-family detached dwelling (27-1403H(11)(e), (f))",
+      "At most 600 sq ft in aggregate (27-1403H(11)(j))",
+      "The owner gives the township an affidavit confirming the relationship of the in-law dwelling tenant to the owner, and consents to an annual inspection (27-1403H(11)(i))",
+      "Parking: one space for each bedroom in the suite, on top of the house's parking (27-1403H(11)(h))",
+      "A two-family (semidetached) dwelling is permitted by right in R-4 on 10,000 sq ft (5,000 per dwelling), lot width 100 ft, with public water and sewer (27-702, 27-703A(2), 27-705)",
+      "Residential accessory buildings stand to the rear of the house, at least 3 ft from property lines, at most 15 ft high and 500 sq ft of ground floor in all (27-1403C(3))"
+    ],
+    "notes": "Zoning office: Lower Southampton Township. Read on eCode360 (LO0148) in a browser, one print view at a time, on 2026-11-14. Code search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit', 'living quarters', 'in-law dwelling', 'in-law suite' and 'Use 78' found Use 78 listed only in R-1, R-2, R-3 and R-4, its standards in 27-1403H(11), and Board minutes from 2012 on mother-in-law suites. Use lists read for R-1 to R-4. The commercial, industrial, business technology and overlay parts were not read. No definition of an accessory in-law dwelling was found. No height limit was found for R-1 to R-3."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory in-law dwelling",
+      "section": "27-1403H(11)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Use 78, Accessory In-Law Dwellings. Accessory In-Law Dwellings are permitted as accessory uses only for single-family detached dwellings.' The text also calls it an in-law suite."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-1403H(11)(i)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "By right in R-1 to R-4. Read as family only: the use is an in-law dwelling and the owner must confirm by affidavit the relationship of the tenant to the owner. The text does not list which relatives qualify."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "27-402, 27-502, 27-602, 27-702",
+      "url": "https://ecode360.com/print/LO0148?guid=29169303",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "27-401, 27-501, 27-601, 27-701",
+      "url": "https://ecode360.com/print/LO0148?guid=29169303",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The code search found Use 78 listed only in R-1 to R-4. Each district allows its listed uses 'and no other', so elsewhere a second unit is not a listed use."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-402.1, 27-502.1, 27-602.1, 27-702.1, 27-1403H(11)(b)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169303",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Use 78 is listed among the uses 'permitted by right'. A township permit and an annual inspection are required."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Chapter 27, Part 23",
+      "url": "https://ecode360.com/29169162",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that does not meet 27-1403H(11) needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family (semidetached) dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "A semidetached dwelling unit with only one wall in common with another dwelling unit, no more than two units per structure. 10,000 sq ft for two dwellings, lot width 100 ft, side yards 20 ft in all (8 ft each), 35% building coverage, public water and sewer.",
+          "min_lot_sqft": 10000,
+          "section": "27-702.1, 27-703A(2), 27-705, 27-1403B(2)",
+          "url": "https://ecode360.com/print/LO0148?guid=29169349",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sanitary sewer",
+              "section": "27-705"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "27-705"
+            }
+          ],
+          "note": "A two-family dwelling here is a twin (side by side), so it reads as new construction, not a unit added to a detached house."
+        }
+      ],
+      "section": "27-702",
+      "url": "https://ecode360.com/print/LO0148?guid=29169349",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "27-402, 27-502, 27-602, 27-702",
+      "url": "https://ecode360.com/print/LO0148?guid=29169303",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-1403H(11)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Only for single-family detached dwellings.'"
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "27-1403H(11)(a)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The minimum lot area for the use in the district in which the dwelling is located is required for the principal dwelling in order to be eligible to add an accessory in-law dwelling.'"
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-1403H(11)(d)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The unit must be part of the house. An addition to the house is not barred. A new separate structure is barred."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The owner gives the township an affidavit confirming the relationship of the in-law dwelling tenant to the owner. Failure leads to denial or revocation of the permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1403H(11)(i)",
+          "url": "https://ecode360.com/print/LO0148?guid=29169721"
+        },
+        {
+          "kind": "other",
+          "condition": "A township permit and an annual inspection.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1403H(11)(b), (i)",
+          "url": "https://ecode360.com/print/LO0148?guid=29169721"
+        },
+        {
+          "kind": "design",
+          "condition": "Part of the principal residence, with a door connecting the suite to the rest of the residence.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1403H(11)(d)",
+          "url": "https://ecode360.com/print/LO0148?guid=29169721"
+        },
+        {
+          "kind": "design",
+          "condition": "Not in a cellar or basement (half or more of its height below the adjoining ground) unless at least one wall of the unit is at grade with direct access outside.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1403H(11)(e)",
+          "url": "https://ecode360.com/print/LO0148?guid=29169721"
+        },
+        {
+          "kind": "design",
+          "condition": "No outside change that suggests the dwelling is other than a single-family detached dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1403H(11)(f)",
+          "url": "https://ecode360.com/print/LO0148?guid=29169721"
+        },
+        {
+          "kind": "other",
+          "condition": "Conflicting text, ask: (g) caps the height of 'the accessory building to be used for the accessory in-law dwelling' at the height of the house, while (d) requires the unit to be part of the house and bars new separate structures.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1403H(11)(d), (g)",
+          "url": "https://ecode360.com/print/LO0148?guid=29169721"
+        }
+      ],
+      "section": "27-1403H(11)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "27-1403H(11)(d)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Part of the principal residence with a connecting door. 'No new separate structures on the same lot with the principal residence shall be permitted to be constructed for this use.' Use of an existing accessory building is not settled ((g) names one)."
+    },
+    "types_not_addressed": {
+      "value": [
+        "garage_conversion"
+      ],
+      "section": "27-1403H(11)(d), (g)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Conflicting text, ask the Zoning Officer."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 600,
+      "section": "27-1403H(11)(j)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No accessory in-law dwelling shall exceed an aggregate of 600 square feet.'"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-706",
+      "url": "https://ecode360.com/print/LO0148?guid=29169349",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Part of the house. R-4 caps a dwelling unit at 35 ft. No height limit was found for R-1 to R-3."
+    },
+    "attached_height_capped_at_house": {
+      "value": true,
+      "section": "27-1403H(11)(g)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'The height of the accessory building to be used for the accessory in-law dwelling shall not exceed the height of the principal dwelling.'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "27-1403C(3)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Residential accessory buildings, 500 sq ft of ground floor in all on a lot."
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "27-1403C(3), H(11)(d)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit in a separate structure is not allowed, so the accessory cap reaches only the conflicting (g) case."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "27-1403H(11)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No owner-occupancy rule. The owner must confirm the tenant's relationship."
+    },
+    "family_only": {
+      "value": true,
+      "section": "27-1403H(11)(i)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Read from the in-law name and the relationship affidavit."
+    },
+    "occupancy": {
+      "value": "A tenant whose relationship to the property owner the owner confirms by affidavit. The relatives who qualify are not listed.",
+      "section": "27-1403H(11)(i)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-1403H(11)(c)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Only one accessory in-law dwelling shall be allowed per lot.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-1403H(11)(h)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Parking shall be provided for the in-law suite at the rate of one space per bedroom contained within the suite.'"
+    },
+    "reading": {
+      "value": "One space per bedroom in the suite, in addition to the house's own parking. The house's figure was not read.",
+      "section": "27-1403H(11)(h)",
+      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/LO0148?guid=29169303",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/LO0148?guid=29169303",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "50 ft on arterial and collector streets."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/LO0148?guid=29169303",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, 35 ft in all."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/LO0148?guid=29169303",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/LO0148?guid=29169303",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building area. Impervious 30%."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/LO0148?guid=29169320",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "For each dwelling. Width 80 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/LO0148?guid=29169320",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "50 ft on arterial and collector streets."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/LO0148?guid=29169320",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, 25 ft in all."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/LO0148?guid=29169320",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/LO0148?guid=29169320",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building area. Impervious 40%."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/LO0148?guid=29169335",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "For each single-family dwelling. Width 60 ft. One single-family detached dwelling per lot."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/LO0148?guid=29169335",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft on the long side of a corner lot, 50 ft on arterial and collector streets."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/LO0148?guid=29169335",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, 20 ft in all."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/LO0148?guid=29169335",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-703, 27-706",
+        "url": "https://ecode360.com/print/LO0148?guid=29169349",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 60 ft. Public water and sewer (27-705)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-703, 27-706",
+        "url": "https://ecode360.com/print/LO0148?guid=29169349",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "50 ft on arterial and collector streets."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-703, 27-706",
+        "url": "https://ecode360.com/print/LO0148?guid=29169349",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, 20 ft in all."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-703, 27-706",
+        "url": "https://ecode360.com/print/LO0148?guid=29169349",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-703, 27-706",
+        "url": "https://ecode360.com/print/LO0148?guid=29169349",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'No dwelling unit shall exceed a vertical height of 35 feet' (27-706)."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-703, 27-706",
+        "url": "https://ecode360.com/print/LO0148?guid=29169349",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single- or two-family dwelling. Impervious 35%."
+      }
+    }
+  }
+}

@@ -1,0 +1,812 @@
+{
+  "provenance": {
+    "jurisdiction": "Springfield township",
+    "instrument": "Springfield Township (Montgomery County) Code Chapter 114 Zoning (Ord. No. 242, 1940, reenacted Ord. No. 487, 8-8-1962, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 'Includes legislation through 05-13-2026'. New Laws on 2026-11-14: none. The accessory apartment listing in the Historic Resource Overlay District (114-12D4B(10)) was added 12-11-2019 by Ord. No. 962.",
+    "effective_date": "2019-12-11",
+    "source_urls": [
+      "https://ecode360.com/11823514",
+      "https://ecode360.com/print/SP0463?guid=35157051",
+      "https://ecode360.com/print/SP0463?guid=11823992",
+      "https://ecode360.com/print/SP0463?guid=11824060",
+      "https://ecode360.com/print/SP0463?guid=11824077",
+      "https://ecode360.com/print/SP0463?guid=11824094",
+      "https://ecode360.com/print/SP0463?guid=11824124",
+      "https://ecode360.com/print/SP0463?guid=11823635",
+      "https://ecode360.com/print/SP0463?guid=11824269",
+      "https://ecode360.com/print/SP0463?guid=11824724",
+      "https://ecode360.com/print/SP0463?guid=11823541",
+      "https://ecode360.com/SP0463/laws",
+      "https://ecode360.com/SP0463/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relatives%20OR%20caretaker%20OR%20conversion%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209173088",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11823514",
+    "code_current_through": "2026-05-13",
+    "code_current_through_note": "eCode360: 'Includes legislation through 05-13-2026.' New Laws (0).",
+    "checks": [
+      "The zoning code has no general ADU rule. Each residence district allows the listed uses 'and for no other' (114-41, 114-51, 114-61, 114-71, 114-81, 114-8C1)",
+      "Only a property with a historic resource on the Township's Historic Resource Inventory, in the Historic Resource Overlay District, may have an 'accessory apartment': one apartment 'located in a structure accessory to the principal dwelling', by special exception from the Zoning Hearing Board after a Historical Commission recommendation. The Board must find the accessory structure a contributing resource listed on the Inventory, the apartment must be the only other dwelling unit, two extra parking spaces are needed and the owner must live on the property (114-12D4B(10), 114-12D6)",
+      "The overlay listing reaches the property only where it 'obtains access from any cartway'. Hours limits (12 hours a day between 7 a.m. and 9 p.m.) also name the accessory apartment (114-12D4B, D(3))",
+      "Without public sewer a County Health Department permit must show the septic system can take the added load. With public sewer the needed EDUs must be acquired (114-12D4C(7))",
+      "Conversion: the Zoning Hearing Board may allow by special exception the conversion of a dwelling that existed when Article XIII took effect into a dwelling for more families in AA, A and B. Lot area per family at least 15,000 sq ft in AA, 8,000 in A and 5,000 in B. No major outside structural change except for sanitation or safety. Only for 'a building which has relatively little economic value or usefulness as a single-family dwelling' (114-133A)",
+      "A two-family detached or semidetached dwelling (one family living wholly or partly over the other) is permitted by right in C (5,000 sq ft per family) and D (3,500 sq ft per family) (114-71B, C, 114-72A, 114-81A, 114-82A, 114-21)",
+      "Accessory buildings may not exceed 20 ft or one story, whichever is less. One standing in a side yard or the required rear yard must be at least 10 ft behind the rear of the house, 7 ft from the lot line (4 ft if masonry), and at most 12 ft with a sloped roof or 9 ft with a flat roof (114-131B(2), C(2), D)",
+      "Parking: two spaces for each housekeeping unit (114-134A(1)). The overlay asks two spaces for the accessory apartment in addition to those for the house (114-12D4B(10)(c))",
+      "Where public sewer is not available a lot needs at least 12,500 sq ft unless the Department of Health certifies a smaller area (114-130C)"
+    ],
+    "notes": "Zoning office: Springfield Township (Montgomery County) Zoning Officer. Read on eCode360 (SP0463) in a browser, one print view at a time, on 2026-11-14. Code search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relatives, caretaker, conversion, 'accessory unit' and 'living quarters' found the overlay accessory apartment, the 114-133A conversion, school conversions to offices (114-139.1) and watchmen in the Industrial District (114-121). Use lists read for AAA, AA, A, B, C, D and Multiple Use Residence. The Multifamily Apartment, Cluster Residential, Institutional, B1, B2, Shopping Center, Industrial and Limited Industrial use lists were not read. The search found no ADU-like listing there. Attachment 2 (Summary of Zoning Requirements) was not opened."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment",
+      "section": "114-12D4B(10)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One single-family apartment unit located in a structure accessory to the principal dwelling.' Listed only for a historic resource in the Historic Resource Overlay District. The code has no general definition."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "114-41, 114-51, 114-61, 114-71, 114-81",
+      "url": "https://ecode360.com/print/SP0463?guid=11823992",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No general ADU rule. The residence districts allow the listed uses 'and for no other'. Only a property with a historic resource in the overlay has an accessory apartment path (special exception, 114-12D4B(10))."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "114-41, 114-165",
+      "url": "https://ecode360.com/print/SP0463?guid=11823992",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a single-family lot is not a listed use outside the overlay. It needs a use variance from the Zoning Hearing Board (MPC 910.2). In C and D a two-family dwelling is permitted, and in AA, A and B the Board may allow a conversion by special exception (114-133A)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "114-165",
+      "url": "https://ecode360.com/11823514",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "historic_path": {
+      "value": "special_exception",
+      "section": "114-12D4B(10), 114-12D6, 114-165",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "For a historic resource in the Historic Resource Overlay District, with access from a cartway: an accessory apartment by special exception from the Zoning Hearing Board after a Historical Commission recommendation. Owner must live on the property. Conditions in gates."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a dwelling to more families",
+          "path": "special_exception",
+          "districts": [
+            "AA",
+            "A",
+            "B"
+          ],
+          "conditions": "Conversion of a dwelling that existed when Article XIII took effect into a dwelling for more families. Lot area per family at least 15,000 sq ft in AA, 8,000 in A and 5,000 in B. Yards and building area not reduced. No major outside structural change except for sanitation or safety. Only for a building with relatively little economic value or use as a single-family dwelling. The Board may add conditions.",
+          "min_lot_sqft": 30000,
+          "min_lot_by_district": {
+            "AA": 30000,
+            "A": 16000,
+            "B": 10000
+          },
+          "section": "114-133A",
+          "url": "https://ecode360.com/print/SP0463?guid=11824724",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The dwelling existed at the effective date of Article XIII (the date is not shown in the code text)",
+              "section": "114-133A"
+            },
+            {
+              "test": null,
+              "condition": "A building with relatively little economic value or usefulness as a single-family dwelling",
+              "section": "114-133A(4)"
+            }
+          ],
+          "note": "Lot figures are for two families. The Article XIII effective date is not printed, so the age test is left to the Zoning Officer."
+        },
+        {
+          "name": "Two-family detached or semidetached dwelling",
+          "path": "by_right",
+          "districts": [
+            "C",
+            "D"
+          ],
+          "conditions": "A building for two families, one living wholly or partly over the other. Lot area per family: C 5,000 sq ft, D 3,500 sq ft. C side yards 8 ft each, 20 in all. D two-family detached side yards 16 ft each, 35 in all. Two parking spaces per housekeeping unit.",
+          "min_lot_sqft": 10000,
+          "min_lot_by_district": {
+            "C": 10000,
+            "D": 7000
+          },
+          "section": "114-71B, C, 114-72A, 114-74B, 114-81A, 114-82A, 114-84B(2), 114-21",
+          "url": "https://ecode360.com/print/SP0463?guid=11824094",
+          "confidence": "secondary",
+          "note": "Read as a path for an existing house converted to two stacked units. 114-130C asks 12,500 sq ft for a lot without public sewer unless the Department of Health certifies less."
+        }
+      ],
+      "section": "114-71, 114-81, 114-133A",
+      "url": "https://ecode360.com/print/SP0463?guid=11824094",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "114-41 to 114-8C1",
+      "url": "https://ecode360.com/print/SP0463?guid=11823992",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. The overlay accessory apartment applies over any underlying district, on a historic resource only."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "114-12D4B(10)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The historic path is its own special exception, not a bypass of district rules."
+    },
+    "historic_test": {
+      "value": "The property has a historic resource on the Township's Historic Resource Inventory, in the Historic Resource Overlay District, and access from a cartway",
+      "section": "114-12D2A, 114-12D4B",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Confirm the property is on the Inventory and in the overlay with the Zoning Officer."
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "114-12D4B(10)(a)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Historic path only. The accessory structure must be a contributing resource on the Inventory, so it already exists."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "historic",
+          "condition": "A historic resource on the Historic Resource Inventory, in the overlay, with access from a cartway. Historical Commission recommendation and Zoning Hearing Board special exception (114-12D6 criteria, impact study where land development is proposed).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "114-12D2A, 114-12D4B, 114-12D6",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "when": "historic"
+        },
+        {
+          "kind": "historic",
+          "condition": "The apartment must be in a structure accessory to the house that the Zoning Hearing Board finds to be a contributing resource identified on the Historic Resource Inventory.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "114-12D4B(10)(a)",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "when": "historic"
+        },
+        {
+          "kind": "other",
+          "condition": "'The accessory apartment shall be the only other dwelling unit on the property.'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "114-12D4B(10)(b)",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "when": "historic"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "'The property owner must reside on the premises.'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "114-12D4B(10)(d), 114-12D4D(7)",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "when": "historic"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Without public sewer, a Montgomery County Department of Health permit showing the septic system can take the added load. With public sewer, documentation that the needed EDUs were acquired.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "114-12D4C(7)",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "when": "historic"
+        },
+        {
+          "kind": "design",
+          "condition": "In a residential district: new parking seen from neighbors screened to 5 ft, one sign of at most 2 sq ft, no noise at the property line, shielded lighting, use hours at most 12 a day between 7 a.m. and 9 p.m.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "114-12D4D",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "when": "historic"
+        },
+        {
+          "kind": "historic",
+          "condition": "The district building area, impervious and yard rules may be modified by up to 15% by special exception after a Historical Commission recommendation, more where essential to preserve the resource. Added building area may not exceed 50% of the resource's building area.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "114-12D5",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "when": "historic"
+        },
+        {
+          "kind": "other",
+          "condition": "A use under the overlay needs a use and occupancy certificate, must be registered with the Zoning Officer within 30 days, and ends if the property no longer has a historic resource.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "114-12D4C(1)-(4)",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "when": "historic"
+        }
+      ],
+      "section": "114-12D4",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "114-41 to 114-8C1",
+      "url": "https://ecode360.com/print/SP0463?guid=11823992",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No form is allowed off the historic path."
+    },
+    "types_allowed_historic": {
+      "value": [
+        "garage_conversion"
+      ],
+      "section": "114-12D4B(10)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Historic path only: 'located in a structure accessory to the principal dwelling' that is a contributing resource. A unit inside or added to the house and a new building are not named."
+    },
+    "labels": {
+      "value": {
+        "garage_conversion": "In an accessory structure that is a contributing historic resource"
+      },
+      "section": "114-12D4B(10)(a)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "114-12D4B(10)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No size cap for the accessory apartment."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "114-131D",
+      "url": "https://ecode360.com/print/SP0463?guid=11824724",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'Accessory buildings shall not exceed 20 feet or one story in height, whichever is less.' On the historic path the structure already exists."
+    },
+    "max_height_stories": {
+      "value": 1,
+      "section": "114-131D",
+      "url": "https://ecode360.com/print/SP0463?guid=11824724",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "20 ft or one story, whichever is less."
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 12,
+          "where": "An accessory building in a side yard or the required rear yard",
+          "section": "114-131B(2)(d), C(2)(d)",
+          "url": "https://ecode360.com/print/SP0463?guid=11824724",
+          "note": "12 ft with a sloped roof, 9 ft with a flat roof, or one story, whichever is less. It must be at least 10 ft behind the rear of the house and 7 ft from the side or rear line (4 ft if masonry)."
+        }
+      ],
+      "section": "114-131B(2), C(2)",
+      "url": "https://ecode360.com/print/SP0463?guid=11824724",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "114-12D4B(10)(d)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Historic path only. 'The property owner must reside on the premises.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "114-12D4B(10)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No family rule on the historic path."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "114-12D4B(10)(b)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Historic path only. 'The only other dwelling unit on the property.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "114-12D4B(10)(c)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Two off-street parking spaces shall be required for the accessory apartment, in addition to the parking spaces necessary for the principal use of the property.'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "114-12D4B(10)(c), 114-134A(1)",
+      "url": "https://ecode360.com/print/SP0463?guid=35157051",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Historic path: 2 for the house ('Two parking spaces for each housekeeping unit') and 2 for the apartment."
+    }
+  },
+  "districts": {
+    "AAA": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "114-3A2C",
+        "url": "https://ecode360.com/print/SP0463?guid=11823635",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Cluster lot on a tract of 10 acres or more (10,000 where the underlying district is AA). Standard lots on tracts under 10 acres follow the underlying district."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "114-3A2C",
+        "url": "https://ecode360.com/print/SP0463?guid=11823635",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "114-3A2C",
+        "url": "https://ecode360.com/print/SP0463?guid=11823635",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "114-3A2C",
+        "url": "https://ecode360.com/print/SP0463?guid=11823635",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "114-3A2C",
+        "url": "https://ecode360.com/print/SP0463?guid=11823635",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "114-3A2C",
+        "url": "https://ecode360.com/print/SP0463?guid=11823635",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      }
+    },
+    "AA": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "114-42 to 114-44",
+        "url": "https://ecode360.com/print/SP0463?guid=11823992",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family. Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "114-42 to 114-44",
+        "url": "https://ecode360.com/print/SP0463?guid=11823992",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "114-42 to 114-44",
+        "url": "https://ecode360.com/print/SP0463?guid=11823992",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards. The figure is the smaller one. Aggregate 50 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "114-42 to 114-44",
+        "url": "https://ecode360.com/print/SP0463?guid=11823992",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft for a lot held separately when the chapter took effect with a depth under 100 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "114-42 to 114-44",
+        "url": "https://ecode360.com/print/SP0463?guid=11823992",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building area."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "114-130A(1)",
+        "url": "https://ecode360.com/print/SP0463?guid=11824724",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached and semidetached dwellings."
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 12500,
+        "section": "114-52 to 114-54",
+        "url": "https://ecode360.com/print/SP0463?guid=11824060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family. Width 75 ft."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "114-52 to 114-54",
+        "url": "https://ecode360.com/print/SP0463?guid=11824060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "114-52 to 114-54",
+        "url": "https://ecode360.com/print/SP0463?guid=11824060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards. The figure is the smaller one. Aggregate 35 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "114-52 to 114-54",
+        "url": "https://ecode360.com/print/SP0463?guid=11824060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft for a lot held separately when the chapter took effect with a depth under 100 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "114-52 to 114-54",
+        "url": "https://ecode360.com/print/SP0463?guid=11824060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building area."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "114-130A(1)",
+        "url": "https://ecode360.com/print/SP0463?guid=11824724",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached and semidetached dwellings."
+      }
+    },
+    "B": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "114-62 to 114-64",
+        "url": "https://ecode360.com/print/SP0463?guid=11824077",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family. Width 60 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "114-62 to 114-64",
+        "url": "https://ecode360.com/print/SP0463?guid=11824077",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "114-62 to 114-64",
+        "url": "https://ecode360.com/print/SP0463?guid=11824077",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards. The figure is the smaller one. Aggregate 25 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "114-62 to 114-64",
+        "url": "https://ecode360.com/print/SP0463?guid=11824077",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft for a lot held separately when the chapter took effect with a depth under 100 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "114-62 to 114-64",
+        "url": "https://ecode360.com/print/SP0463?guid=11824077",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building area."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "114-130A(1)",
+        "url": "https://ecode360.com/print/SP0463?guid=11824724",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached and semidetached dwellings."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 12500,
+            "section": "114-130C"
+          },
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 12500,
+            "section": "114-130C"
+          }
+        ],
+        "section": "114-130C",
+        "url": "https://ecode360.com/print/SP0463?guid=11824724",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Where sewer is not available, at least 12,500 sq ft unless the Department of Health certifies less, and never below the district minimum."
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "114-72 to 114-74",
+        "url": "https://ecode360.com/print/SP0463?guid=11824094",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family. Width 50 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "114-72 to 114-74",
+        "url": "https://ecode360.com/print/SP0463?guid=11824094",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "114-72 to 114-74",
+        "url": "https://ecode360.com/print/SP0463?guid=11824094",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single- or two-family detached: two side yards, 20 ft in all. A semidetached dwelling has one side yard of 12 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "114-72 to 114-74",
+        "url": "https://ecode360.com/print/SP0463?guid=11824094",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft for a lot held separately when the chapter took effect with a depth under 100 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "114-72 to 114-74",
+        "url": "https://ecode360.com/print/SP0463?guid=11824094",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building area."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "114-130A(1), (2)",
+        "url": "https://ecode360.com/print/SP0463?guid=11824724",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single- and two-family dwellings."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "114-72A",
+        "url": "https://ecode360.com/print/SP0463?guid=11824094",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family, for any building used as a dwelling."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 12500,
+            "section": "114-130C"
+          },
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 12500,
+            "section": "114-130C"
+          }
+        ],
+        "section": "114-130C",
+        "url": "https://ecode360.com/print/SP0463?guid=11824724",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Where sewer is not available, at least 12,500 sq ft unless the Department of Health certifies less, and never below the district minimum."
+      }
+    },
+    "D": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "114-82 to 114-85",
+        "url": "https://ecode360.com/print/SP0463?guid=11824124",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. Other permitted dwelling types 3,500 sq ft per family. Width 45 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "114-82 to 114-85",
+        "url": "https://ecode360.com/print/SP0463?guid=11824124",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "114-82 to 114-85",
+        "url": "https://ecode360.com/print/SP0463?guid=11824124",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached: 20 ft in all. Two-family detached: 16 ft each, 35 in all. Semidetached: 12 ft per family on one side."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "114-82 to 114-85",
+        "url": "https://ecode360.com/print/SP0463?guid=11824124",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft for a lot held separately when the chapter took effect with a depth under 100 ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "114-82 to 114-85",
+        "url": "https://ecode360.com/print/SP0463?guid=11824124",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'No building shall exceed 35 feet in height' (114-85A)."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "114-82 to 114-85",
+        "url": "https://ecode360.com/print/SP0463?guid=11824124",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building area. Impervious surface 50%."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 12500,
+            "section": "114-130C"
+          },
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 12500,
+            "section": "114-130C"
+          }
+        ],
+        "section": "114-130C",
+        "url": "https://ecode360.com/print/SP0463?guid=11824724",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Where sewer is not available, at least 12,500 sq ft unless the Department of Health certifies less, and never below the district minimum."
+      }
+    },
+    "Multiple Use Residence": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "114-8C2 to 114-8C4",
+        "url": "https://ecode360.com/print/SP0463?guid=11824269",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family. Width 85 ft."
+      },
+      "setback_front_ft": {
+        "value": 45,
+        "section": "114-8C2 to 114-8C4",
+        "url": "https://ecode360.com/print/SP0463?guid=11824269",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "114-8C2 to 114-8C4",
+        "url": "https://ecode360.com/print/SP0463?guid=11824269",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards. The figure is the smaller one. Aggregate 40 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "114-8C2 to 114-8C4",
+        "url": "https://ecode360.com/print/SP0463?guid=11824269",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.175,
+        "section": "114-8C2 to 114-8C4",
+        "url": "https://ecode360.com/print/SP0463?guid=11824269",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building area."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "114-130A(1)",
+        "url": "https://ecode360.com/print/SP0463?guid=11824724",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings."
+      }
+    }
+  }
+}

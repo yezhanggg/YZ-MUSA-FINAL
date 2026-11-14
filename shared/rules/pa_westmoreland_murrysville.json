@@ -1,0 +1,488 @@
+{
+  "provenance": {
+    "jurisdiction": "Murrysville municipality",
+    "instrument": "Municipality of Murrysville Code Chapter 220 Zoning (Ord. No. 680-05, 4-20-2005, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-05-20 (breadcrumb). New Laws on 2026-11-14: Ord. No. 1113-26 (2026-07-21), fees and parks, not zoning.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11539206",
+      "https://ecode360.com/print/MU1309?guid=11539521",
+      "https://ecode360.com/print/MU1309?guid=11539544",
+      "https://ecode360.com/print/MU1309?guid=11539545",
+      "https://ecode360.com/print/MU1309?guid=11540867",
+      "https://ecode360.com/MU1309/laws",
+      "https://ecode360.com/MU1309/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20conversion%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/MU1309/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20granny%20OR%20%22accessory%20unit%22%20OR%20caretaker%20OR%20%22in-law%20suite%22%20OR%20%22in-law%20apartment%22%20OR%20conversion%20OR%20%22two-family%22&scope=code&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Westmoreland",
+    "municipality_type": "municipality",
+    "geoid": "4212952432",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11539206",
+    "code_current_through": "2026-05-20",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-05-20'. The one New Law (Ord. No. 1113-26) does not amend Chapter 220.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or granny flat provision. Code searches for those words and for 'accessory unit', caretaker, relative, conversion and 'living quarters' found no ADU text in Chapter 220",
+      "A two-family dwelling is permitted in R-2, R-3 and MU. It must be the only principal structure on the lot, for two families living independently, each unit with a separate entrance directly to the outside (220-13, 220-16, 220-8)",
+      "R-3 lot area: single-family 10,900 sq ft, two-family 7,500 sq ft per dwelling unit with public sewage and water. Without them, 2 acres per dwelling unit. R-2: 20,000 sq ft with public sewage and water, 2 acres without (220-14A)",
+      "Accessory uses and buildings are allowed in every residential district under Article VI. No accessory use or building may stand in the front yard, which includes the area in front of the house. Accessory structures over 500 sq ft: R-R 20 ft side and rear, 30 ft high. R-1 20 ft side, 15 ft rear, 15 ft high. R-2 10 and 10 ft, 15 ft high. R-3 5 ft side, 10 ft rear, 15 ft high. Smaller ones 5 ft from the property line (220-15)",
+      "The area and bulk table applies 'unless otherwise stated in Article V' (220-14A(1)). Article V was not read",
+      "The parking requirements table of 220-68B was not in the page text and was not read"
+    ],
+    "notes": "Zoning office: Municipality of Murrysville. Read on eCode360 (MU1309) in a browser, one print view at a time, on 2026-11-14. Use tables read for R-R, R-1, R-2, R-3 (220-13) and MU and B (220-16). Public Land (220-12), Planned Residential Development (Article IV, conditional use) and Mixed-Use Planned Residential Development (Article IVA) were not read in full."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "220-8",
+      "url": "https://ecode360.com/11539206",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Code searches for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'accessory unit', caretaker, relative, conversion and 'living quarters' found no ADU text (2026-11-14)."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "220-13, 220-16",
+      "url": "https://ecode360.com/print/MU1309?guid=11539544",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code has no ADU text."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "220-13, 220-16",
+      "url": "https://ecode360.com/print/MU1309?guid=11539544",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a single-family lot is not an authorized use in R-R or R-1. It needs a use variance from the Zoning Hearing Board (MPC 910.2). In R-2, R-3 and MU a two-family dwelling is permitted, so a unit could be added as a conversion to a two-family dwelling if the lot meets its rules."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Chapter 220, Article X",
+      "url": "https://ecode360.com/11539206",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling, with public sewage and water",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "MU"
+          ],
+          "conditions": "The only principal structure on the lot, two dwelling units for two families living independently, each with a separate entrance directly to the outside. R-3: 7,500 sq ft per dwelling unit, width 110 ft, frontage 66 ft, side yards 15 ft each, front and rear 30 ft. R-2: 20,000 sq ft lot, width 90 ft. MU: 10,000 sq ft lot, width 75 ft.",
+          "min_lot_sqft": 15000,
+          "min_lot_by_district": {
+            "R-2": 20000,
+            "R-3": 15000,
+            "MU": 10000
+          },
+          "section": "220-13, 220-14A, 220-16, 220-17, 220-8 (dwelling, two-family)",
+          "url": "https://ecode360.com/print/MU1309?guid=11539545",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewage",
+              "section": "220-14A"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "220-14A"
+            }
+          ],
+          "note": "Read as a path for an existing house converted to two units, each with its own outside entrance. The R-2 table gives one lot figure for all uses. The MU table gives one lot figure for all uses."
+        },
+        {
+          "name": "Two-family dwelling, without public sewage and water",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Without public sewage and water: R-2 2 acres, R-3 2 acres per dwelling unit (4 acres for two).",
+          "min_lot_sqft": 87120,
+          "min_lot_by_district": {
+            "R-2": 87120,
+            "R-3": 174240
+          },
+          "section": "220-14A",
+          "url": "https://ecode360.com/print/MU1309?guid=11539545",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "220-13, 220-14",
+      "url": "https://ecode360.com/print/MU1309?guid=11539545",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "220-13, 220-16",
+      "url": "https://ecode360.com/print/MU1309?guid=11539544",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 220",
+      "url": "https://ecode360.com/11539206",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "220-13",
+      "url": "https://ecode360.com/print/MU1309?guid=11539544",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "220-15A",
+      "url": "https://ecode360.com/print/MU1309?guid=11539521",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory structures in R-1, R-2 and R-3 (30 ft in R-R, 20 ft in MU). Accessory building rule, not an ADU rule."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "220-13",
+      "url": "https://ecode360.com/print/MU1309?guid=11539544",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "220-68B",
+      "url": "https://ecode360.com/print/MU1309?guid=11540867",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. The parking requirements table was not read."
+    }
+  },
+  "districts": {
+    "R-R": {
+      "min_lot_sqft": {
+        "value": 65340,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "1 1/2 acres with public sewage and water. Width 200 ft, frontage 120 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two sides, 100 ft in all."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Lot coverage. Impervious 25%."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewage and water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "section": "220-14A"
+          }
+        ],
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Minimum lot area without public sewage and water': 2 acres. A lot with only one of the two services is not settled by the table."
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "1 acre with public sewage and water. Width 150 ft, frontage 90 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two sides, 60 ft in all."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Lot coverage. Impervious 30%."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewage and water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "section": "220-14A"
+          }
+        ],
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Minimum lot area without public sewage and water': 2 acres. A lot with only one of the two services is not settled by the table."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewage and water. Width 90 ft, frontage 54 ft."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two sides, 35 ft in all."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Lot coverage. Impervious 50%."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewage and water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "section": "220-14A"
+          }
+        ],
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Minimum lot area without public sewage and water': 2 acres. A lot with only one of the two services is not settled by the table."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10900,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family with public sewage and water. Two-family 7,500 sq ft per dwelling unit. Width 75 ft (two-family 110)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family 10 ft each side. Two-family 15 ft each side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Lot coverage. Impervious 65%."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewage and water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "section": "220-14A"
+          }
+        ],
+        "section": "220-14A",
+        "url": "https://ecode360.com/print/MU1309?guid=11539545",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Minimum lot area without public sewage and water': 2 acres. A lot with only one of the two services is not settled by the table."
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "220-17",
+        "url": "https://ecode360.com/print/MU1309?guid=11539521",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 75 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "220-17",
+        "url": "https://ecode360.com/print/MU1309?guid=11539521",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "220-17",
+        "url": "https://ecode360.com/print/MU1309?guid=11539521",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "220-17",
+        "url": "https://ecode360.com/print/MU1309?guid=11539521",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "220-17",
+        "url": "https://ecode360.com/print/MU1309?guid=11539521",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "220-17",
+        "url": "https://ecode360.com/print/MU1309?guid=11539521",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Lot coverage. Impervious 80%."
+      }
+    }
+  }
+}

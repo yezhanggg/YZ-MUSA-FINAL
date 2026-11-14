@@ -1,0 +1,568 @@
+{
+  "provenance": {
+    "jurisdiction": "West Whiteland township",
+    "instrument": "West Whiteland Township Code Chapter 325 Zoning, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-08-26 (breadcrumb). New Laws on 2026-11-14: Ord. No. 492 (2026-10-14), 'Noise Disturbance Amendment; Zoning Amendment', affects Chapter 325, not opened (PDF).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11701933",
+      "https://ecode360.com/print/WE2141?guid=11702332",
+      "https://ecode360.com/print/WE2141?guid=11702874",
+      "https://ecode360.com/print/WE2141?guid=11702668",
+      "https://ecode360.com/print/WE2141?guid=11703067",
+      "https://ecode360.com/WE2141/laws",
+      "https://ecode360.com/WE2141/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20conversion%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE2141/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22accessory%20unit%22%20OR%20caretaker%20OR%20%22family%20suite%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE2141/search?query=%22two-family%22%20OR%20duplex%20OR%20conversion%20OR%20%22living%20quarters%22%20OR%20%22accessory%20residential%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/WE2141/search?query=%22single-family%20detached%22%20OR%20%22single-family%20dwelling%22%20OR%20%22single-family%20dwellings%22&scope=code&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202984192",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11701933",
+    "code_current_through": "2026-08-26",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-08-26'. Ord. No. 492 (2026-10-14, zoning amendment) is listed under New Laws and not yet in the code.",
+    "code_caution": "Ord. No. 492 (adopted 2026-10-14) amends the zoning chapter and is not yet in the online code. It was not read. The code site's search of New Laws found no ADU terms in it.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or granny flat provision. Code and New Laws searches for those words and for 'accessory unit', caretaker and 'family suite' found nothing in the zoning chapter",
+      "R-1, R-2 and R-3 allow the listed uses 'and no other'. A single-family detached dwelling with residential accessory uses and structures is allowed in R-1 and R-2 (325-9B, 325-10B)",
+      "Two-family (duplex) and two-family (twin) dwellings are permitted by right in R-3, at 14,000 sq ft of developable acreage per dwelling unit, so 28,000 for two. R-4 permits any R-3 use (325-11B(1), 325-11C(1), 325-12B(2))",
+      "Conversion: the Board of Supervisors may allow by conditional use the conversion of a single-family dwelling in R-3 that existed when the chapter took effect into a use permitted in R-3. Lot area per dwelling unit not below the district figure, yards not reduced, no outside change except for safety, each unit at least 500 contiguous sq ft, two parking spaces per unit, a County Health Department permit where public sewer is not used (325-11B(2)(b), 325-25)",
+      "In R-2 and R-3, without public water or centralized sewer (or both), the R-1 area and bulk rules apply: 43,560 sq ft per dwelling unit (325-10C(10)(a), 325-11C(10)(a))",
+      "In O/R a single-family dwelling follows the R-2 rules. Two-family and multifamily dwellings need a gross lot of at least 10 acres (325-15.1D(1), (2))",
+      "Accessory buildings may stand only in the rear or side yard, at least 10 ft farther back than the rear of the house. In a required yard only uninhabitable structures such as sheds up to 12 ft are allowed (325-31)",
+      "Parking for a single-family detached dwelling depends on bedrooms: 1.5 for two, 2 for three, 2.5 for four (or when not stated), 3 for five (325-39G)",
+      "Lot sizes are counted on developable acreage (325-9C, 325-10C, 325-11C)"
+    ],
+    "notes": "Zoning office: West Whiteland Township. Read on eCode360 (WE2141) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4, O/L, O/R and O/C. Search for single-family dwellings in use lists found only R-1, R-2, R-3 and O/R. The Town Center, Neighborhood Commercial, Industrial, Institutional, Unified Development Area, Historic Preservation and Rail Transit Overlay articles were not read. The 325-8 two-family definition was seen only as a search snippet."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "325-8",
+      "url": "https://ecode360.com/11701933",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Code and New Laws searches for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'accessory unit', caretaker and 'family suite' found no ADU text (2026-11-14)."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "325-9B, 325-10B, 325-11B",
+      "url": "https://ecode360.com/print/WE2141?guid=11702332",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code has no ADU text."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "325-9B, 325-10B, 325-11B",
+      "url": "https://ecode360.com/print/WE2141?guid=11702332",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a single-family lot is not a listed use in R-1 or R-2. It needs a use variance from the Zoning Hearing Board (MPC 910.2). In R-3 and R-4 a two-family dwelling is permitted by right and a conversion of a single-family dwelling is a conditional use (325-25)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Chapter 325",
+      "url": "https://ecode360.com/11701933",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family (duplex or twin) dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Two-family (duplex) or two-family (twin) dwelling. 14,000 sq ft of developable acreage per dwelling unit, so 28,000 for two. Side yards 15 ft each, 40 in all (zero on the shared side of a twin). Building coverage 15%. Public water and centralized sewer, or the R-1 figures apply.",
+          "min_lot_sqft": 28000,
+          "section": "325-11B(1), 325-11C, 325-12B(2), 325-12E",
+          "url": "https://ecode360.com/print/WE2141?guid=11702332",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Centralized sewer (else the R-1 rules, 43,560 sq ft per unit)",
+              "section": "325-11C(10)(a)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water (else the R-1 rules, 43,560 sq ft per unit)",
+              "section": "325-11C(10)(a)"
+            }
+          ],
+          "note": "Read as a path for an existing house converted to two units. R-4 permits any R-3 use under the R-3 area and bulk rules."
+        },
+        {
+          "name": "Two-family dwelling without public water or centralized sewer",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Without public water or centralized sewer, or both, the R-1 area and bulk rules apply: 43,560 sq ft of developable acreage per dwelling unit, so 87,120 for two.",
+          "min_lot_sqft": 87120,
+          "section": "325-11C(10)(a), 325-9C",
+          "url": "https://ecode360.com/print/WE2141?guid=11702332",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Conversion of a single-family dwelling",
+          "path": "conditional_use",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Conversion of a single-family dwelling that existed when the chapter took effect into a use permitted in R-3. Lot area per dwelling unit not below the district figure (14,000 sq ft), yards and building area not reduced, no outside change except for safety, each unit at least 500 contiguous sq ft, two parking spaces per unit outside required yards. A County Health Department permit where public sewer is not used.",
+          "min_lot_sqft": 28000,
+          "section": "325-11B(2)(b), 325-25",
+          "url": "https://ecode360.com/print/WE2141?guid=11702874",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The dwelling existed at the effective date of the chapter (the date is not shown on the pages read)",
+              "section": "325-25"
+            }
+          ],
+          "note": "R-4 permits any R-3 use, so the conversion may reach R-4 too. Ask the Zoning Officer."
+        },
+        {
+          "name": "Two-family dwelling on a 10 acre lot",
+          "path": "by_right",
+          "districts": [
+            "O/R"
+          ],
+          "conditions": "Two-family and multifamily dwellings in O/R need a gross lot of at least 10 acres, 50 ft side and rear yards, 25% building coverage.",
+          "min_lot_sqft": 435600,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "325-15.1B(9), D(2)",
+          "url": "https://ecode360.com/print/WE2141?guid=11702668",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "325-11, 325-25",
+      "url": "https://ecode360.com/print/WE2141?guid=11702332",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "325-9 to 325-15.1",
+      "url": "https://ecode360.com/print/WE2141?guid=11702332",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 325",
+      "url": "https://ecode360.com/11701933",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "325-9B, 325-10B",
+      "url": "https://ecode360.com/print/WE2141?guid=11702332",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "325-31B(1)",
+      "url": "https://ecode360.com/print/WE2141?guid=11703067",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Only sheds and similar uninhabitable structures in a required yard are capped (12 ft). Outside the required yards the district height applies (35 ft)."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "325-9B, 325-10B",
+      "url": "https://ecode360.com/print/WE2141?guid=11702332",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "325-39G",
+      "url": "https://ecode360.com/print/WE2141?guid=11703067",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. A single-family detached dwelling needs 1.5 to 3 spaces by bedrooms (2.5 when not stated)."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "325-9C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Developable acreage per dwelling unit. Width 100 ft at the street, 125 at the building line."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "325-9C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "325-9C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "45 ft for both."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "325-9C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "325-9C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "325-9C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious 15%."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "325-9C(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Developable acreage per dwelling unit."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 22000,
+        "section": "325-10C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Developable acreage per dwelling unit. Width 75 ft at the street, 100 at the building line."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "325-10C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "325-10C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft for both."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "325-10C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "325-10C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.12,
+        "section": "325-10C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious 20%."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 22000,
+        "section": "325-10C(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Developable acreage per dwelling unit."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "325-10C(10)(a)"
+          },
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "325-10C(10)(a)"
+          },
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "325-10C(10)(a)"
+          }
+        ],
+        "section": "325-10C(10)(a)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'In the absence of either public water or centralized sewer services, or both, the area and bulk regulations of the R-1 District shall apply.' The R-1 yards (front 75, rear 40, side 20) and coverage (10%) then apply too."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 14000,
+        "section": "325-11C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Developable acreage per dwelling unit. Width 60 ft at the street, 80 at the building line."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "325-11C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "325-11C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft for both. Zero on the shared side of a twin."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "325-11C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "325-11C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "325-11C",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious 25%."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 14000,
+        "section": "325-11C(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Developable acreage per dwelling unit."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "325-11C(10)(a)"
+          },
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "325-11C(10)(a)"
+          },
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "325-11C(10)(a)"
+          }
+        ],
+        "section": "325-11C(10)(a)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'In the absence of either public water or centralized sewer services, or both, the area and bulk regulations of the R-1 District shall apply.' The R-1 yards (front 75, rear 40, side 20) and coverage (10%) then apply too."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 14000,
+        "section": "325-11C, 325-12E",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Uses other than a manufactured home park follow the R-3 area and bulk rules (325-12E)."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "325-11C, 325-12E",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "325-11C, 325-12E",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft for both."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "325-11C, 325-12E",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "325-11C, 325-12E",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "325-11C, 325-12E",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious 25%."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "325-11C(10)(a), 325-12E"
+          },
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "325-11C(10)(a), 325-12E"
+          },
+          {
+            "when": "No public water or no centralized sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "325-11C(10)(a), 325-12E"
+          }
+        ],
+        "section": "325-11C(10)(a), 325-12E",
+        "url": "https://ecode360.com/print/WE2141?guid=11702332",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'In the absence of either public water or centralized sewer services, or both, the area and bulk regulations of the R-1 District shall apply.' The R-1 yards (front 75, rear 40, side 20) and coverage (10%) then apply too."
+      }
+    },
+    "O/R": {
+      "min_lot_sqft": {
+        "value": 22000,
+        "section": "325-10C, 325-15.1D(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702668",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Single-family dwellings are permitted when in compliance with the area and bulk regulations of the R-2' (325-15.1D(1)(a)). No single-family lot may front on Lincoln Highway."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "325-10C, 325-15.1D(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702668",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "325-10C, 325-15.1D(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702668",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "40 ft for both (R-2)."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "325-10C, 325-15.1D(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702668",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "325-10C, 325-15.1D(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702668",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.12,
+        "section": "325-10C, 325-15.1D(1)",
+        "url": "https://ecode360.com/print/WE2141?guid=11702668",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      }
+    }
+  }
+}

@@ -1,0 +1,772 @@
+{
+  "provenance": {
+    "jurisdiction": "Hatfield township",
+    "instrument": "Hatfield Township Code Chapter 282 Zoning (Ord. No. 420, 9-28-1994, readopted Ord. No. 578, 12-10-2008, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 'Includes legislation through 12-17-2025'. New Laws on 2026-11-14: none. The definitions section was last amended 2-26-2025 by Ord. No. 708.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/10506475",
+      "https://ecode360.com/print/HA2083?guid=10506490",
+      "https://ecode360.com/print/HA2083?guid=10506654",
+      "https://ecode360.com/print/HA2083?guid=10506756",
+      "https://ecode360.com/print/HA2083?guid=10506837",
+      "https://ecode360.com/print/HA2083?guid=10506888",
+      "https://ecode360.com/print/HA2083?guid=10506922",
+      "https://ecode360.com/print/HA2083?guid=10506956",
+      "https://ecode360.com/print/HA2083?guid=10507009",
+      "https://ecode360.com/print/HA2083?guid=10507426",
+      "https://ecode360.com/print/HA2083?guid=28831979",
+      "https://ecode360.com/HA2083/laws",
+      "https://ecode360.com/HA2083/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20conversion%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/HA2083/search?query=%22single-family%20detached%22&scope=code&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209133120",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10506475",
+    "code_current_through": "2025-12-17",
+    "code_current_through_note": "eCode360: 'Includes legislation through 12-17-2025.' New Laws (0).",
+    "checks": [
+      "The code has no accessory dwelling unit section. The definition of 'family' lets relatives live 'as two nonprofit housekeeping units and doing separate cooking on the premises' when all its conditions are met, so the second unit counts as part of one family in a single-family house (282-6, family, D)",
+      "Both units must be inside a detached single-family dwelling and connected internally (282-6, family, D(2))",
+      "One unit includes the property owner. The other has at most two members, one of whom is at least 60 years old. All are related by blood, marriage or legal adoption (282-6, family, D, D(1))",
+      "'One unit may not exceed a maximum of 600 square feet in area' (282-6, family, D(4))",
+      "The owner signs an agreement with the Township, recorded with the County Recorder of Deeds, to remove the separate cooking facilities at once when they are no longer used by the person they were installed for or another qualified family member (282-6, family, D(3))",
+      "Parking: one space in addition to the spaces the house needs. The districts ask two spaces for each dwelling unit, so three in all is the reading (282-6, family, D(5), 282-17A, 282-29A)",
+      "The rule follows the single-family detached dwelling. Use lists read that permit one: ER, RA-1, RA-2, RA-3, B, BA, BB, LPO and TD (282-12, 282-24, 282-32, 282-40, 282-48, 282-56, 282-64, 282-105, 282-242). The other districts' use lists were not read",
+      "There is no two-family dwelling listing. Each lot has one principal use (282-6, use, principal)",
+      "Accessory buildings to a dwelling: 16 ft and one story in ER and RA-1, 14 ft and one story in RA-2, RA-3, B, BA and BB (282-16B, 282-28B, 282-36B, 282-44B, 282-52B, 282-60B, 282-68B)"
+    ],
+    "notes": "Zoning office: Hatfield Township (Montgomery County) Zoning Officer. Read on eCode360 (HA2083) in a browser, one print view at a time, on 2026-11-14. Code search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit' and 'living quarters' found the two-housekeeping-unit clause of the family definition (282-6), dwelling quarters for a watchman or caretaker in LI and HI (282-198) and definitions. Use lists read for ER, RA-1, RA-2, RA-3, B, BA, BB, LPO and TD. Not read: TH, GA, MHD, MF-E, IN, C, LC, SC, LI and LIRC."
+  },
+  "adu": {
+    "term": {
+      "value": "two housekeeping units in a single-family detached dwelling (family definition)",
+      "section": "282-6 (family, D)",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The code has no ADU term. The family definition: individuals 'related by blood, marriage, or legal adoption, as two nonprofit housekeeping units and doing separate cooking on the premises shall be included within the definition of family when all the following conditions are met'."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "282-6 (family, D)",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second housekeeping unit is allowed only for relatives, inside a detached single-family dwelling, with one occupant at least 60. It is part of the family definition, so it rides on the single-family detached dwelling wherever that use is permitted by right."
+    },
+    "scope_by_use": {
+      "value": {
+        "use": "single-family detached dwelling",
+        "permitted_in": [
+          "ER",
+          "RA-1",
+          "RA-2",
+          "RA-3",
+          "B",
+          "BA",
+          "BB",
+          "LPO",
+          "TD"
+        ],
+        "not_permitted_in": []
+      },
+      "section": "282-12, 282-24, 282-32, 282-40, 282-48, 282-56, 282-64, 282-105, 282-242",
+      "url": "https://ecode360.com/print/HA2083?guid=10506654",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The use lists read that permit 'one single-family detached dwelling'. Other districts were not read."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "282-6 (family, D)",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The clause needs a detached single-family dwelling."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "282-6 (family, D), 282-12A",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No separate approval is named. The units count as one family in a single-family detached dwelling, a use permitted by right. A recorded agreement with the Township is required, and building and use and occupancy permits apply."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "282-229",
+      "url": "https://ecode360.com/10506475",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second unit that does not meet the family definition is a second dwelling unit, which no district lists for a single-family lot. That needs a variance from the Zoning Hearing Board."
+    }
+  },
+  "eligibility": {
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "282-6 (family, D(2))",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Both units shall be located within a detached single-family dwelling.'"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "All individuals 'related by blood, marriage, or legal adoption'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "282-6 (family, D)",
+          "url": "https://ecode360.com/print/HA2083?guid=10506490"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "'One of the housekeeping units shall include the property owner(s).'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "282-6 (family, D(1))",
+          "url": "https://ecode360.com/print/HA2083?guid=10506490"
+        },
+        {
+          "kind": "age",
+          "condition": "The other unit has 'no more than two members, one of whom shall have attained the age of 60 years'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "282-6 (family, D(1))",
+          "url": "https://ecode360.com/print/HA2083?guid=10506490"
+        },
+        {
+          "kind": "design",
+          "condition": "'Both units shall be located within a detached single-family dwelling and shall be connected internally.'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "282-6 (family, D(2))",
+          "url": "https://ecode360.com/print/HA2083?guid=10506490"
+        },
+        {
+          "kind": "other",
+          "condition": "A recorded agreement with the Township provides for the immediate removal of the separate cooking facilities when they are no longer used by the person they were installed for, or by another qualified family member.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "282-6 (family, D(3))",
+          "url": "https://ecode360.com/print/HA2083?guid=10506490"
+        }
+      ],
+      "section": "282-6 (family, D)",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "282-6 (family, D(2))",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Inside the detached house, connected internally. An addition that becomes part of the house is read as inside it. A unit in a separate building is not allowed."
+    },
+    "labels": {
+      "value": {
+        "attached": "In an addition that is part of the house and connected internally"
+      },
+      "section": "282-6 (family, D(2))",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 600,
+      "section": "282-6 (family, D(4))",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One unit may not exceed a maximum of 600 square feet in area.'"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "282-16A, 282-28A, 282-36A, 282-44A",
+      "url": "https://ecode360.com/print/HA2083?guid=10506654",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The units are in the house. 35 ft and 2 1/2 stories in the residential districts."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "282-6 (family, D(1))",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "One of the two housekeeping units includes the property owner."
+    },
+    "family_only": {
+      "value": true,
+      "section": "282-6 (family, D)",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Relatives by blood, marriage or legal adoption. The owner lives in one unit. The other has at most two members, one of whom is at least 60.",
+      "section": "282-6 (family, D(1))",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "282-6 (family, D)",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Two nonprofit housekeeping units.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "282-6 (family, D(5))",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'In addition to the required off-street parking of Article XXIV herein, one additional off-street parking space must be provided.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "282-6 (family, D(5)), 282-17A, 282-29A, 282-37A, 282-45A",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Two all-weather spaces for the dwelling unit and one more for the second housekeeping unit."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "282-6 (family, D)",
+      "url": "https://ecode360.com/print/HA2083?guid=10506490",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No utility rule in the family definition."
+    }
+  },
+  "districts": {
+    "ER": {
+      "min_lot_sqft": {
+        "value": 70000,
+        "section": "282-13 to 282-16",
+        "url": "https://ecode360.com/print/HA2083?guid=10506654",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 175 ft."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "282-13 to 282-16",
+        "url": "https://ecode360.com/print/HA2083?guid=10506654",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "282-13 to 282-16",
+        "url": "https://ecode360.com/print/HA2083?guid=10506654",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 65,
+        "section": "282-13 to 282-16",
+        "url": "https://ecode360.com/print/HA2083?guid=10506654",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-13 to 282-16",
+        "url": "https://ecode360.com/print/HA2083?guid=10506654",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "282-13 to 282-16",
+        "url": "https://ecode360.com/print/HA2083?guid=10506654",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "282-13 to 282-16",
+        "url": "https://ecode360.com/print/HA2083?guid=10506654",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious 25% for single-family use."
+      }
+    },
+    "RA-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "282-25 to 282-28",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "282-25 to 282-28",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "282-25 to 282-28",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "282-25 to 282-28",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-25 to 282-28",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "282-25 to 282-28",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "282-25 to 282-28",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious 35% for single-family use."
+      }
+    },
+    "RA-2": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "282-33 to 282-36",
+        "url": "https://ecode360.com/print/HA2083?guid=10506837",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 80 ft."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "282-33 to 282-36",
+        "url": "https://ecode360.com/print/HA2083?guid=10506837",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "282-33 to 282-36",
+        "url": "https://ecode360.com/print/HA2083?guid=10506837",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "282-33 to 282-36",
+        "url": "https://ecode360.com/print/HA2083?guid=10506837",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-33 to 282-36",
+        "url": "https://ecode360.com/print/HA2083?guid=10506837",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "282-33 to 282-36",
+        "url": "https://ecode360.com/print/HA2083?guid=10506837",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "282-33 to 282-36",
+        "url": "https://ecode360.com/print/HA2083?guid=10506837",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling. Impervious 40%."
+      }
+    },
+    "RA-3": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "282-41 to 282-44",
+        "url": "https://ecode360.com/print/HA2083?guid=10506888",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 90 ft."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "282-41 to 282-44",
+        "url": "https://ecode360.com/print/HA2083?guid=10506888",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "282-41 to 282-44",
+        "url": "https://ecode360.com/print/HA2083?guid=10506888",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "282-41 to 282-44",
+        "url": "https://ecode360.com/print/HA2083?guid=10506888",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-41 to 282-44",
+        "url": "https://ecode360.com/print/HA2083?guid=10506888",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "282-41 to 282-44",
+        "url": "https://ecode360.com/print/HA2083?guid=10506888",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "282-41 to 282-44",
+        "url": "https://ecode360.com/print/HA2083?guid=10506888",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious 40%."
+      }
+    },
+    "B": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling here is 'as regulated by Article V' (RA-1). Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-48A, 282-52A",
+        "url": "https://ecode360.com/print/HA2083?guid=10506922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft, 2 1/2 stories (282-52A)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "282-48A, 282-52A",
+        "url": "https://ecode360.com/print/HA2083?guid=10506922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "BA": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling here is 'as regulated by Article V' (RA-1). Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-56A, 282-60A",
+        "url": "https://ecode360.com/print/HA2083?guid=10506956",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft, 2 1/2 stories (282-60A)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "282-56A, 282-60A",
+        "url": "https://ecode360.com/print/HA2083?guid=10506956",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "BB": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling here is 'as regulated by Article V' (RA-1). Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-64A, 282-68A",
+        "url": "https://ecode360.com/print/HA2083?guid=10507009",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft, 2 1/2 stories (282-68A)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "282-64A, 282-68A",
+        "url": "https://ecode360.com/print/HA2083?guid=10507009",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "LPO": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "282-106 to 282-109",
+        "url": "https://ecode360.com/print/HA2083?guid=10507426",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Every building or use. Width 100 ft. Public sewer and water required (282-111C)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "282-106 to 282-109",
+        "url": "https://ecode360.com/print/HA2083?guid=10507426",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "282-106 to 282-109",
+        "url": "https://ecode360.com/print/HA2083?guid=10507426",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "282-106 to 282-109",
+        "url": "https://ecode360.com/print/HA2083?guid=10507426",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-106 to 282-109",
+        "url": "https://ecode360.com/print/HA2083?guid=10507426",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "282-106 to 282-109",
+        "url": "https://ecode360.com/print/HA2083?guid=10507426",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "282-106 to 282-109",
+        "url": "https://ecode360.com/print/HA2083?guid=10507426",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious 60%."
+      }
+    },
+    "TD": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling here is 'as regulated by Article V' (RA-1). Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "282-25 to 282-27 (Article V)",
+        "url": "https://ecode360.com/print/HA2083?guid=10506756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-242A, 282-245",
+        "url": "https://ecode360.com/print/HA2083?guid=28831979",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The single-family detached dwelling follows Article V. The district height is 45 ft and 3 1/2 stories (282-245), Article V sets 35 ft."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "282-242A, 282-245",
+        "url": "https://ecode360.com/print/HA2083?guid=28831979",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

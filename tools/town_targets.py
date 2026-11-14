@@ -953,6 +953,48 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2025-01-27",
         "note": "Zoning: Chapter 220 Zoning (Ord. No. 2009-2). ADU text: 'Accessory dwelling' (220-149): permitted use in R-1, R-2 and MUN (and TND and NR overlays), in an owner-occupied single-family detached dwelling, at most 30% of the floor area, at least 360 sq ft, additions limited to 10%. Read in the browser on eCode360 (LO1571).",
     },
+    "4209173088": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11823514",
+        "plain_fetch": False,
+        "current_through": "2026-05-13",
+        "note": "Zoning: Chapter 114 Zoning (Ord. No. 487, 1962). No general ADU text. 'Accessory apartment' only for a historic resource in the Historic Resource Overlay District (114-12D4B(10), Ord. No. 962, 2019): special exception, in a contributing accessory structure, owner on the premises. Two-family dwellings by right in C and D; conversion by special exception in AA, A and B (114-133A). Read in the browser on eCode360 (SP0463).",
+    },
+    "4209133120": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/10506475",
+        "plain_fetch": False,
+        "current_through": "2025-12-17",
+        "note": "Zoning: Chapter 282 Zoning (Ord. No. 420, 1994, readopted 2008). No ADU section. The family definition (282-6, D) allows relatives as two housekeeping units in a detached single-family dwelling, connected internally, one unit with the owner, the other at most two members with one aged 60 or more, one unit at most 600 sq ft, recorded agreement. Read in the browser on eCode360 (HA2083).",
+    },
+    "4202984192": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11701933",
+        "plain_fetch": False,
+        "current_through": "2026-08-26",
+        "note": "Zoning: Chapter 325 Zoning. No ADU text. Two-family (duplex, twin) by right in R-3 and R-4; conversion of a single-family dwelling by conditional use in R-3 (325-25). Ord. No. 492 (2026, zoning) not yet codified. Read in the browser on eCode360 (WE2141).",
+    },
+    "4212958880": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/9968279",
+        "plain_fetch": False,
+        "current_through": "2025-05-21",
+        "note": "Zoning: Chapter 190 Zoning (Ord. No. 912-2016). ADU-like text: 'Conversion apartment' (a dwelling unit created within an existing single-family dwelling, 190-202) permitted in CC and IC only (190-405, 190-406); the multifamily definition also names conversion apartments. Duplex by right in MDR. Ord. No. 973-2025 (zoning) not yet codified. Read in the browser on eCode360 (PE1662).",
+    },
+    "4212952432": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11539206",
+        "plain_fetch": False,
+        "current_through": "2026-05-20",
+        "note": "Zoning: Chapter 220 Zoning (Ord. No. 680-05, 2005). No ADU text. Two-family dwellings permitted in R-2, R-3 and MU (220-13, 220-16). Read in the browser on eCode360 (MU1309).",
+    },
+    "4201745112": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/29169162",
+        "plain_fetch": False,
+        "current_through": "2026-07-08",
+        "note": "Zoning: Chapter 27 Zoning (Ord. No. 558, 2012). ADU text: 'Accessory in-law dwelling' (Use 78, 27-1403H(11)): by right in R-1 to R-4, part of a single-family detached house with a connecting door, at most 600 sq ft, one per lot, permit and annual inspection, owner affidavit on the tenant's relationship. Read in the browser on eCode360 (LO0148).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -962,6 +1004,9 @@ FIXED_BATCH = {g: 14 for g in ("4207779104", "4207121232", "4209506096", "420178
 FIXED_BATCH.update({g: 15 for g in ("4201124384", "4204573032", "4209179256", "4204178736", "4213319704")})
 FIXED_BATCH.update(
     {g: 16 for g in ("4202983080", "4205512536", "4212559608", "4204111272", "4209143312", "4204144832")}
+)
+FIXED_BATCH.update(
+    {g: 17 for g in ("4209173088", "4209133120", "4202984192", "4212958880", "4212952432", "4201745112")}
 )
 
 EXTRAS = {
@@ -998,6 +1043,15 @@ EXTRAS = {
     "4204111272": "batch 16 by population. Code Chapter 255 has no ADU text",
     "4209143312": "Code 184-71B(6) temporary unit for relative",
     "4204144832": "Code 220-149 accessory dwellings",
+    # Batch 17 (2026-11-14): the next towns by population without a rule file. Unity, New Castle, Buckingham,
+    # Coolbaugh, Baldwin and Upper St. Clair were skipped (use tables or the whole ordinance only in PDFs), and
+    # Whitpain (new ADU ordinance Ord. No. 4-269 of 2026 not yet codified).
+    "4209173088": "Code 114-12D4B(10) accessory apartment (historic resource overlay)",
+    "4209133120": "Code 282-6 family definition, two housekeeping units",
+    "4202984192": "batch 17 by population. Code Chapter 325 has no ADU text",
+    "4212958880": "Code 190-202 and 190-405 conversion apartment",
+    "4212952432": "batch 17 by population. Code Chapter 220 has no ADU text",
+    "4201745112": "Code 27-1403H(11) accessory in-law dwelling",
 }
 
 if __name__ == "__main__":

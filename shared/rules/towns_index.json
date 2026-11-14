@@ -2330,6 +2330,150 @@
         "known ADU ordinance (Code 220-149 accessory dwellings)"
       ],
       "status_note": "Drafted 2026-11-14, review16 fixes applied: TND and NR need the overlay conditional use and master plan first, TND lot row (220-127), 220-239 parking (multifamily row excludes accessory apartments), both readings of the 220-149F 10% limit. Open: the 220-6C definition names a unit in an accessory structure while 220-149 speaks only of the house; whether the unit counts toward density; whether it adds 2 parking spaces; TND height (220-125) not read."
+    },
+    {
+      "geoid": "4209173088",
+      "geoid_aliases": [],
+      "name": "Springfield township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 20814,
+      "population_with_aliases": 20814,
+      "housing_units": 7940,
+      "pop_rank": 90,
+      "file": "pa_montgomery_springfield",
+      "batch": 17,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11823514",
+      "plain_fetch": false,
+      "code_current_through": "2026-05-13",
+      "code_note": "Zoning: Chapter 114 Zoning (Ord. No. 487, 1962). No general ADU text. 'Accessory apartment' only for a historic resource in the Historic Resource Overlay District (114-12D4B(10), Ord. No. 962, 2019): special exception, in a contributing accessory structure, owner on the premises. Two-family dwellings by right in C and D; conversion by special exception in AA, A and B (114-133A). Read in the browser on eCode360 (SP0463).",
+      "why": [
+        "known ADU ordinance (Code 114-12D4B(10) accessory apartment (historic resource overlay))"
+      ],
+      "status_note": "First reading 2026-11-14. Open: Article XIII effective date for the 114-133A conversion; use lists of the multifamily, cluster, institutional, business and industrial districts not read; Attachment 2 not opened."
+    },
+    {
+      "geoid": "4209133120",
+      "geoid_aliases": [],
+      "name": "Hatfield township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 18640,
+      "population_with_aliases": 18640,
+      "housing_units": 7489,
+      "pop_rank": 113,
+      "file": "pa_montgomery_hatfield",
+      "batch": 17,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/10506475",
+      "plain_fetch": false,
+      "code_current_through": "2025-12-17",
+      "code_note": "Zoning: Chapter 282 Zoning (Ord. No. 420, 1994, readopted 2008). No ADU section. The family definition (282-6, D) allows relatives as two housekeeping units in a detached single-family dwelling, connected internally, one unit with the owner, the other at most two members with one aged 60 or more, one unit at most 600 sq ft, recorded agreement. Read in the browser on eCode360 (HA2083).",
+      "why": [
+        "known ADU ordinance (Code 282-6 family definition, two housekeeping units)"
+      ],
+      "status_note": "First reading 2026-11-14. Open: the ADU-like rule is the family definition (282-6, D), read as family only by right wherever a single-family detached dwelling is permitted; use lists of TH, GA, MHD, MF-E, IN, C, LC, SC, LI and LIRC not read."
+    },
+    {
+      "geoid": "4202984192",
+      "geoid_aliases": [],
+      "name": "West Whiteland township",
+      "county": "Chester",
+      "type": "township",
+      "population": 19632,
+      "population_with_aliases": 19632,
+      "housing_units": 8950,
+      "pop_rank": 102,
+      "file": "pa_chester_west_whiteland",
+      "batch": 17,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11701933",
+      "plain_fetch": false,
+      "code_current_through": "2026-08-26",
+      "code_note": "Zoning: Chapter 325 Zoning. No ADU text. Two-family (duplex, twin) by right in R-3 and R-4; conversion of a single-family dwelling by conditional use in R-3 (325-25). Ord. No. 492 (2026, zoning) not yet codified. Read in the browser on eCode360 (WE2141).",
+      "why": [
+        "known ADU ordinance (batch 17 by population. Code Chapter 325 has no ADU text)"
+      ],
+      "status_note": "First reading 2026-11-14. Open: Ord. No. 492 (2026-10-14, zoning) not read; Town Center, Institutional, UDA, Historic Preservation and Rail Transit Overlay articles not read."
+    },
+    {
+      "geoid": "4212958880",
+      "geoid_aliases": [],
+      "name": "Penn township",
+      "county": "Westmoreland",
+      "type": "township",
+      "population": 20079,
+      "population_with_aliases": 20079,
+      "housing_units": 8228,
+      "pop_rank": 97,
+      "file": "pa_westmoreland_penn",
+      "batch": 17,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/9968279",
+      "plain_fetch": false,
+      "code_current_through": "2025-05-21",
+      "code_note": "Zoning: Chapter 190 Zoning (Ord. No. 912-2016). ADU-like text: 'Conversion apartment' (a dwelling unit created within an existing single-family dwelling, 190-202) permitted in CC and IC only (190-405, 190-406); the multifamily definition also names conversion apartments. Duplex by right in MDR. Ord. No. 973-2025 (zoning) not yet codified. Read in the browser on eCode360 (PE1662).",
+      "why": [
+        "known ADU ordinance (Code 190-202 and 190-405 conversion apartment)"
+      ],
+      "status_note": "First reading 2026-11-14. Open: conversion apartment vs multifamily definition (conflicting text); Ord. No. 973-2025 (zoning) and Table 2 (Appendix A) not read."
+    },
+    {
+      "geoid": "4212952432",
+      "geoid_aliases": [],
+      "name": "Murrysville municipality",
+      "county": "Westmoreland",
+      "type": "municipality",
+      "population": 21006,
+      "population_with_aliases": 21006,
+      "housing_units": 8737,
+      "pop_rank": 87,
+      "file": "pa_westmoreland_murrysville",
+      "batch": 17,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11539206",
+      "plain_fetch": false,
+      "code_current_through": "2026-05-20",
+      "code_note": "Zoning: Chapter 220 Zoning (Ord. No. 680-05, 2005). No ADU text. Two-family dwellings permitted in R-2, R-3 and MU (220-13, 220-16). Read in the browser on eCode360 (MU1309).",
+      "why": [
+        "known ADU ordinance (batch 17 by population. Code Chapter 220 has no ADU text)"
+      ],
+      "status_note": "First reading 2026-11-14. Open: parking requirements table (220-68B) and Article V use standards not read."
+    },
+    {
+      "geoid": "4201745112",
+      "geoid_aliases": [],
+      "name": "Lower Southampton township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 20599,
+      "population_with_aliases": 20599,
+      "housing_units": 7893,
+      "pop_rank": 92,
+      "file": "pa_bucks_lower_southampton",
+      "batch": 17,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/29169162",
+      "plain_fetch": false,
+      "code_current_through": "2026-07-08",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 558, 2012). ADU text: 'Accessory in-law dwelling' (Use 78, 27-1403H(11)): by right in R-1 to R-4, part of a single-family detached house with a connecting door, at most 600 sq ft, one per lot, permit and annual inspection, owner affidavit on the tenant's relationship. Read in the browser on eCode360 (LO0148).",
+      "why": [
+        "known ADU ordinance (Code 27-1403H(11) accessory in-law dwelling)"
+      ],
+      "status_note": "First reading 2026-11-14. Open: 27-1403H(11)(d) and (g) conflict on an accessory building; family reading of the relationship affidavit; no height limit found for R-1 to R-3."
     }
   ]
 }
