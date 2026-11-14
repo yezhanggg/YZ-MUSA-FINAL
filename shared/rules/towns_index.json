@@ -2727,17 +2727,17 @@
       "pop_rank": 121,
       "file": "pa_montgomery_plymouth",
       "batch": 20,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/26906730",
       "plain_fetch": false,
       "code_current_through": "2026-07-13",
-      "code_note": "Zoning: Appendix B Zoning (Ord. No. 342, 1960, as amended). ADU text: 'Additional living quarters (not a dwelling unit)' (1910B(8)): accessory to a single-family dwelling, immediate family only, inside or added to the house, owner-occupied, no rent, one-year renewable permit, recorded deed restriction, detached units prohibited. Conversion to more families by special exception (1912), duplexes by right in D. Read in the browser on eCode360 (PL1880).",
+      "code_note": "Zoning: Appendix B Zoning (Ord. No. 342, 1960, as amended). ADU text: 'Additional living quarters (not a dwelling unit)' (1910B(8)): accessory to a single-family dwelling, immediate family only, inside or added to the house, owner-occupied, no rent, one-year renewable permit, recorded deed restriction, detached units prohibited. Conversion to more families by special exception (1912). Duplexes in D only as an attached dwelling development on a tract of one acre or more with a land development plan (803). D-1 bars additional dwelling units (1910B(8)(h)). Read in the browser on eCode360 (PL1880).",
       "why": [
         "named as a town with an ADU ordinance (Code Appendix B 1910B(8) additional living quarters, family only)"
       ],
-      "status_note": "Drafted 2026-11-14, awaiting independent review. Open points: whether the additional living quarters count as a second family for parking (1700A, 1 or 2 spaces); no size cap or count is written; RS and MUV permit single-family dwellings only indirectly. Not read: Commercial, Shopping Center, Office Laboratory, industrial, Limited Commercial, Open Space Recreation, Cluster Development Overlay, planned office park, mixed use planned development and business park use lists, Article XXI, 1801."
+      "status_note": "Reviewed and fixed 2026-11-14. Mapping: the code uses 'C' for both C Residential and C Commercial (300). The file reads 'C' as C Residential, so a C Commercial lot would wrongly read as allowing the quarters. The parcel layer must tell them apart. For a later check: whether the quarters count as a second family for parking (1700A, 1 or 2 spaces); no size cap or count is written; D-1 prohibited is read from 1910B(8)(h), a sentence inside the quarters section; RS, MUV and LI (mobile homes) permit a single-family dwelling only indirectly; the D duplex path needs a one-acre attached dwelling development (803), so it rarely fits one lot. Not read: Planned Office Park (3200), Resource Recovery and Flood Plain Conservation use lists, the Interchange Development district code, Article XXI, 1801, accessory heights (401B, 601), Sec. 5-49."
     },
     {
       "geoid": "4213358888",
@@ -2751,17 +2751,17 @@
       "pop_rank": 128,
       "file": "pa_york_penn",
       "batch": 20,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/27440640",
       "plain_fetch": false,
       "code_current_through": "2026-04-20",
-      "code_note": "Zoning: Chapter 325 Zoning (Ord. No. 880, 11-17-2025). ADU text: 'Dwelling, conversion' (325-630): special exception in R-10, R-15, R-22, R-40, RC and MU, one added unit for a family member inside or added to the house, at most 450 sq ft and two people, owner-occupied, annual affidavit, one more parking space. ECHO elder cottage by special exception in the same zones (325-637, 300 to 900 sq ft, relative 60 or older or disabled). Read in the browser on eCode360 (PE0541).",
+      "code_note": "Zoning: Chapter 325 Zoning (Ord. No. 880, 11-17-2025). ADU text: 'Dwelling, conversion' (325-630): special exception in R-10, R-15, R-22, R-40, RC and MU, one added unit for a family member inside or added to the house, at most 450 sq ft and two people, owner-occupied, annual affidavit, one more parking space. ECHO elder cottage by special exception in the same zones (325-637, portable, 300 to 900 sq ft, relative 60 or older or disabled). MU allows four dwelling units per gross acre (325-207D). Read in the browser on eCode360 (PE0541).",
       "why": [
         "named as a town with an ADU ordinance (Code 325-630 conversion dwelling for a family member and 325-637 ECHO)"
       ],
-      "status_note": "Drafted 2026-11-14, awaiting independent review. Open points: the 450 sq ft cap has an exception for an existing dwelling that can become 'a slightly larger one bedroom unit' (325-630D); ECHO is stored as the detached and existing-building forms of the same family-only special exception; R-10 lot width printed as '0.100'. Not read: 325-635 (duplex standards), Article V special exception standards, Article IV, the family definition, the full lot coverage definition."
+      "status_note": "Reviewed and fixed 2026-11-14. For a later check: the MU density (325-207D, four units per gross acre) is applied per lot, and whether an elder cottage counts as a dwelling unit there is not said; the owner-occupancy rule is file-wide while 325-637 (ECHO) has none; the 450 sq ft cap has an exception for 'a slightly larger one bedroom unit' and sits against the 800 and 600 sq ft habitable minimums of 325-309; the accessory footprint cap (325-300C, 1 or 1.5 times the house footprint) has no field; garage conversion reads not addressed; R-10 lot width printed as '0.100'. Not read: the family definition, the full lot coverage definition, 325-603, the rest of Article IV."
     },
     {
       "geoid": "4204515488",

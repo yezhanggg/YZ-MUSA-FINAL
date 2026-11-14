@@ -1094,14 +1094,14 @@ HOSTS: dict[str, dict[str, Any]] = {
         "code_url": "https://ecode360.com/26906730",
         "plain_fetch": False,
         "current_through": "2026-07-13",
-        "note": "Zoning: Appendix B Zoning (Ord. No. 342, 1960, as amended). ADU text: 'Additional living quarters (not a dwelling unit)' (1910B(8)): accessory to a single-family dwelling, immediate family only, inside or added to the house, owner-occupied, no rent, one-year renewable permit, recorded deed restriction, detached units prohibited. Conversion to more families by special exception (1912), duplexes by right in D. Read in the browser on eCode360 (PL1880).",
+        "note": "Zoning: Appendix B Zoning (Ord. No. 342, 1960, as amended). ADU text: 'Additional living quarters (not a dwelling unit)' (1910B(8)): accessory to a single-family dwelling, immediate family only, inside or added to the house, owner-occupied, no rent, one-year renewable permit, recorded deed restriction, detached units prohibited. Conversion to more families by special exception (1912). Duplexes in D only as an attached dwelling development on a tract of one acre or more with a land development plan (803). D-1 bars additional dwelling units (1910B(8)(h)). Read in the browser on eCode360 (PL1880).",
     },
     "4213358888": {
         "code_host": "ecode360",
         "code_url": "https://ecode360.com/27440640",
         "plain_fetch": False,
         "current_through": "2026-04-20",
-        "note": "Zoning: Chapter 325 Zoning (Ord. No. 880, 11-17-2025). ADU text: 'Dwelling, conversion' (325-630): special exception in R-10, R-15, R-22, R-40, RC and MU, one added unit for a family member inside or added to the house, at most 450 sq ft and two people, owner-occupied, annual affidavit, one more parking space. ECHO elder cottage by special exception in the same zones (325-637, 300 to 900 sq ft, relative 60 or older or disabled). Read in the browser on eCode360 (PE0541).",
+        "note": "Zoning: Chapter 325 Zoning (Ord. No. 880, 11-17-2025). ADU text: 'Dwelling, conversion' (325-630): special exception in R-10, R-15, R-22, R-40, RC and MU, one added unit for a family member inside or added to the house, at most 450 sq ft and two people, owner-occupied, annual affidavit, one more parking space. ECHO elder cottage by special exception in the same zones (325-637, portable, 300 to 900 sq ft, relative 60 or older or disabled). MU allows four dwelling units per gross acre (325-207D). Read in the browser on eCode360 (PE0541).",
     },
     "4204515488": {
         "code_host": "ecode360",

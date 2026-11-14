@@ -17,6 +17,9 @@
       "https://ecode360.com/print/PE0541?guid=51424818",
       "https://ecode360.com/print/PE0541?guid=51423832",
       "https://ecode360.com/print/PE0541?guid=51423945",
+      "https://ecode360.com/51424158",
+      "https://ecode360.com/51424226",
+      "https://ecode360.com/51424712",
       "https://ecode360.com/print/PE0541?guid=51428408",
       "https://ecode360.com/print/PE0541?guid=51428407",
       "https://ecode360.com/print/PE0541?guid=51428411",
@@ -39,11 +42,19 @@
       "Utilities: the unit connects to the house's sewer, water and other systems. No separate systems (325-630G)",
       "Elder cottage housing opportunity (ECHO) is a special exception in the same six zones: a portable cottage of 300 to 900 sq ft for one relative at least 60 years old, handicapped or disabled, or a related caregiver, at most two people, sharing the house's utilities, in the side or rear yard at the principal building's side and rear setbacks unless inside an existing building, removed within three months after use ends, bond posted, permit reviewed every 12 months (325-637). One parking space (325-303)",
       "'Lot coverage' is 'The total of impervious areas' (142-2): 65% in R-10, MU and R-15 or R-22 with public water and sewer, 30% otherwise. The house, accessory structures and an elder cottage together stay within it (325-637B)",
-      "Detached accessory structures stand in the rear yard and outside the side and rear setbacks, and are otherwise treated as part of the principal building. All accessory building footprints together at most the house footprint (single-story house) or 1.5 times it (multi-story) (325-300B, C)",
+      "Detached accessory structures stand in the rear yard and outside the side and rear setbacks, and are otherwise treated as part of the principal building. All accessory building footprints together at most the house footprint (single-story house) or 1.5 times it (multi-story) (325-300B, C). This likely reaches an elder cottage",
       "In residential zones no more than one principal use per lot except by special exception (325-307). The uses by right and by special exception in each zone are the only uses permitted (325-201A). A use neither permitted nor denied goes to the Zoning Hearing Board as a special exception (325-317)",
-      "Two-family detached dwellings (duplexes) are permitted by right in R-10 and Mixed Use (325-212). Their standards in 325-635 were not read"
+      "Two-family detached dwellings (duplexes) are permitted by right in R-10 and Mixed Use (325-212): lot at least 10,000 sq ft and 80 ft wide (325-635A, B). In Mixed Use at most four dwelling units per gross acre (325-207D)",
+      "Mixed Use: 'The maximum number of dwelling units per gross acre of land permitted in this zone is four' (325-207D). A house and one added unit read as about 21,780 sq ft of land, so a 10,000 sq ft lot reads too small",
+      "The added unit's floor area: 'The minimum non-habitable floor area shall not be more than 30% of the total habitable floor area of the dwelling' (325-630D, second sentence, as printed)",
+      "Before the zoning permit, an affidavit that the owner lives there and a family member occupies the unit goes to the Planning Commission and the Zoning Hearing Board (325-630E)",
+      "Minimum habitable floor area: 'Single-family dwelling: 800 square feet. Multi-family dwellings: 600 square feet' (325-309). It does not say how it meets the 450 sq ft cap for the added unit (325-630D). Ask the zoning officer",
+      "Special exception filing: a site plan at 1 inch = 50 ft, floor plans and elevations, names and addresses of adjoining owners, photos of existing structures. The Board applies general criteria (325-503C) and may add conditions. The grant expires after one year without a zoning, building or occupancy permit (325-503B, C, D)",
+      "Setback changes: buildings along major or minor arterials stand at least 50 ft from the right-of-way. Front yards on built-up streets may follow the average of neighbours within 100 ft, never under 20 ft (325-400A, B)",
+      "Steep Slope Protection overlay: 'Slopes that exceed 25% shall not be developed'. Disturbing slopes of 15% to 25% needs a detailed grading plan (325-211)",
+      "Elder cottage: no owner-occupancy rule is written in 325-637. The file's owner rule is for the unit in or added to the house only"
     ],
-    "notes": "Zoning office: Penn Township (York County) Zoning Officer. eCode360 code PE0541 is Penn Township, York County ('Penn Township, York County, Pennsylvania' in 166-37). Read on eCode360 in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'guest house', 'accessory living', 'tenant house', 'living quarters', 'second dwelling' and 'accessory residential' found 325-637 (ECHO) and definitions. A second search for 'dwelling, conversion', duplex, 'two-family' and 'accessory use' found 325-630. The principal land use table (325-212) was read on screen to place each mark in its column. Read in full: Articles II (zones, use table) and III (general provisions, parking), 325-630, 325-637, the definitions of conversion dwelling, dwelling unit, single-family detached dwelling and ECHO. Not read: 325-635 (duplex standards), Article V (special exception standards), Article IV (modifications, nonconforming lots), the family definition, the full lot coverage definition (search excerpt only), 325-603 (age-restricted communities)."
+    "notes": "Zoning office: Penn Township (York County) Zoning Officer. eCode360 code PE0541 is Penn Township, York County ('Penn Township, York County, Pennsylvania' in 166-37). Read on eCode360 in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'guest house', 'accessory living', 'tenant house', 'living quarters', 'second dwelling' and 'accessory residential' found 325-637 (ECHO) and definitions. A second search for 'dwelling, conversion', duplex, 'two-family' and 'accessory use' found 325-630. The principal land use table (325-212) was read on screen to place each mark in its column. Read in full: Articles II (zones, use table) and III (general provisions, parking), 325-630, 325-635, 325-637, the definitions of conversion dwelling, dwelling unit, single-family detached dwelling and ECHO. Read in part: Article IV (325-400), Article V (325-500C, 325-502, 325-503). Fix round on 2026-11-14 after an independent review: MU density, duplex minimums, the 325-502 variance citation, the elder cottage forms. Not read: the family definition, the full lot coverage definition (search excerpt only), 325-603 (age-restricted communities), the rest of Article IV (nonconforming lots)."
   },
   "adu": {
     "term": {
@@ -88,19 +99,19 @@
   "approval": {
     "path": {
       "value": "special_exception",
-      "section": "325-212, 325-630, 325-637",
+      "section": "325-212, 325-630, 325-637, 325-503",
       "url": "https://ecode360.com/print/PE0541?guid=51424712",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Zoning Hearing Board special exception for both uses. Article V general standards also apply (not read)."
+      "note": "Zoning Hearing Board special exception for both uses. The general criteria and filing rules of 325-503 also apply."
     },
     "fallback_path": {
       "value": "variance",
-      "section": "MPC 910.2",
-      "url": "https://ecode360.com/27440640",
+      "section": "325-502, 325-500C(4)",
+      "url": "https://ecode360.com/51424226",
       "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+      "confidence": "verified",
+      "note": "'An application may be made to the Zoning Hearing Board for a Variance where it is alleged that the provisions of the Zoning Ordinance inflict unnecessary hardship upon the applicant' (325-502A). A variance lapses after one year without a permit."
     },
     "alternatives": {
       "value": [
@@ -111,9 +122,14 @@
             "R-10",
             "MU"
           ],
-          "conditions": "Permitted by right in the principal land use table. Standards in 325-635 (not read). Two parking spaces per dwelling. Mixed Use allows at most four dwelling units per gross acre.",
-          "section": "325-212, 325-635, 325-303",
-          "url": "https://ecode360.com/print/PE0541?guid=51423944",
+          "conditions": "Permitted by right in the principal land use table. Lot at least 10,000 sq ft and 80 ft wide (325-635A, B). Two parking spaces per dwelling (325-303). Mixed Use allows at most four dwelling units per gross acre (325-207D), read as 21,780 sq ft for two units.",
+          "min_lot_sqft": 10000,
+          "min_lot_by_district": {
+            "R-10": 10000,
+            "MU": 21780
+          },
+          "section": "325-212, 325-635, 325-207D, 325-303",
+          "url": "https://ecode360.com/51424712",
           "confidence": "secondary",
           "note": "A building of two dwelling units, not an ADU listing. Whether adding a unit to an existing house is read as this use is not said."
         }
@@ -177,8 +193,7 @@
           "condition": "One relative (blood, marriage or adoption) of the house's occupants who is at least 60, handicapped or disabled, or a related caregiver of such an occupant. At most two people.",
           "effect": "condition",
           "applies_to": [
-            "detached_new",
-            "garage_conversion"
+            "detached_new"
           ],
           "districts": null,
           "building_types": null,
@@ -213,11 +228,10 @@
         },
         {
           "kind": "design",
-          "condition": "A portable elder cottage, in the side or rear yard at the principal building's side and rear setbacks unless inside an existing building. Removed within three months after it is no longer occupied by a qualifying person. Bond for removal. Occupancy permit reviewed every 12 months.",
+          "condition": "A portable elder cottage ('of portable construction', 300 to 900 sq ft), in the side or rear yard at the principal building's side and rear setbacks unless inside an existing building. Removed within three months after it is no longer occupied by a qualifying person. Bond for removal. Occupancy permit reviewed every 12 months.",
           "effect": "condition",
           "applies_to": [
-            "detached_new",
-            "garage_conversion"
+            "detached_new"
           ],
           "districts": null,
           "building_types": null,
@@ -239,8 +253,7 @@
           "condition": "The house, any existing accessory structures and the elder cottage together stay within the zone's maximum lot coverage.",
           "effect": "condition",
           "applies_to": [
-            "detached_new",
-            "garage_conversion"
+            "detached_new"
           ],
           "districts": null,
           "building_types": null,
@@ -259,19 +272,27 @@
       "value": [
         "internal",
         "attached",
-        "detached_new",
-        "garage_conversion"
+        "detached_new"
       ],
       "section": "325-630A, 325-637A, F",
       "url": "https://ecode360.com/print/PE0541?guid=51424712",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Internal and attached: the conversion unit (325-630A). Detached new: a portable elder cottage (325-637A). In an existing accessory building: 325-637F ('Unless provided within an existing building')."
+      "note": "Internal and attached: the conversion unit (325-630A). Detached new: a portable elder cottage (325-637A). 'Unless provided within an existing building' (325-637F) lets the portable cottage stand inside an existing building. It is still a portable cottage, not a conversion of that building."
+    },
+    "types_not_addressed": {
+      "value": [
+        "garage_conversion"
+      ],
+      "section": "325-630A, 325-637A, F",
+      "url": "https://ecode360.com/print/PE0541?guid=51424818",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Turning an existing garage or other accessory building into a unit is not named. The conversion unit must be in or added to the principal building (325-630A). An elder cottage is 'of portable construction' (325-637A)."
     },
     "labels": {
       "value": {
-        "detached_new": "Portable elder cottage (ECHO)",
-        "garage_conversion": "Elder cottage (ECHO) inside an existing building"
+        "detached_new": "Portable elder cottage (ECHO)"
       },
       "section": "325-637",
       "url": "https://ecode360.com/print/PE0541?guid=51424818",
@@ -294,7 +315,7 @@
       "url": "https://ecode360.com/print/PE0541?guid=51424818",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Elder cottage: 'a minimum of 300 square feet of floor area and may not exceed 900 square feet'."
+      "note": "Elder cottage: 'a minimum of 300 square feet of floor area and may not exceed 900 square feet'. The 300 sq ft minimum has no field."
     }
   },
   "envelope": {
@@ -337,7 +358,7 @@
       "url": "https://ecode360.com/print/PE0541?guid=51424712",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "For the unit in or added to the house. The ECHO section has no owner rule."
+      "note": "For the unit in or added to the house: 'The dwelling in question shall be owner occupied during the duration of the special permit.' The elder cottage section (325-637) has no owner rule. The file holds one value for all forms."
     },
     "family_only": {
       "value": true,
@@ -723,6 +744,14 @@
         "verified_on": "2026-11-14",
         "confidence": "secondary",
         "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage, so it is stored as the cap on buildings."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10890,
+        "section": "325-207D, 325-630A",
+        "url": "https://ecode360.com/print/PE0541?guid=51423832",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The maximum number of dwelling units per gross acre of land permitted in this zone is four.' 43,560 sq ft / 4 = 10,890 sq ft per unit. The conversion adds 'one additional dwelling unit' (325-630A), so a house and the added unit need about 21,780 sq ft. Whether an elder cottage counts as a dwelling unit here is not said."
       }
     }
   }

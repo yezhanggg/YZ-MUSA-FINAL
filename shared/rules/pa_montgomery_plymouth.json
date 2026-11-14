@@ -11,6 +11,8 @@
       "https://ecode360.com/PL1880/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20conversion%20OR%20duplex%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/PL1880/search?query=%22living%20quarters%22%20OR%20%22additional%20dwelling%22%20OR%20%22immediate%20family%22%20OR%20%22accessory%20use%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/PL1880/search?query=historic%20OR%20%22accessory%20building%22%20OR%20%22second%20dwelling%22%20OR%20cottage&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PL1880/search?query=%22no%20other%22%20OR%20%22permitted%20uses%22%20OR%20%22use%20regulations%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/PL1880?guid=26906918",
       "https://ecode360.com/print/PL1880?guid=26907766",
       "https://ecode360.com/print/PL1880?guid=26906745",
       "https://ecode360.com/print/PL1880?guid=26906933",
@@ -21,6 +23,20 @@
       "https://ecode360.com/print/PL1880?guid=26907047",
       "https://ecode360.com/print/PL1880?guid=26907089",
       "https://ecode360.com/print/PL1880?guid=26908842",
+      "https://ecode360.com/print/PL1880?guid=26908332",
+      "https://ecode360.com/print/PL1880?guid=26907106",
+      "https://ecode360.com/print/PL1880?guid=26907145",
+      "https://ecode360.com/print/PL1880?guid=26907234",
+      "https://ecode360.com/print/PL1880?guid=26907257",
+      "https://ecode360.com/print/PL1880?guid=26907287",
+      "https://ecode360.com/print/PL1880?guid=26907404",
+      "https://ecode360.com/print/PL1880?guid=26907967",
+      "https://ecode360.com/print/PL1880?guid=26908035",
+      "https://ecode360.com/print/PL1880?guid=26908272",
+      "https://ecode360.com/print/PL1880?guid=26908307",
+      "https://ecode360.com/print/PL1880?guid=26908505",
+      "https://ecode360.com/print/PL1880?guid=26908653",
+      "https://ecode360.com/print/PL1880?guid=26908722",
       "https://ecode360.com/print/PL1880?guid=26907694",
       "https://ecode360.com/PL1880/laws"
     ],
@@ -41,12 +57,18 @@
       "No size cap, no parking line and no limit of one unit are written for the quarters. Parking for a dwelling is 'One (1) all-weather parking space per family on the same lot' (1700A). Whether the quarters count as a second family for parking is not said",
       "A dwelling unit needs 'complete housekeeping facilities for one (1) family' and 'private ingress and egress facilities' (200, dwelling 7). The quarters are expressly not a dwelling unit, so the house stays a single-family detached dwelling",
       "Conversion of a single-family dwelling into a dwelling for more families is a special exception anywhere (1912): a petition by owners of 60% of the frontage within 500 ft, each unit at least 500 sq ft, lot area per family at least 75% of the district figure, no exterior change, only for a large dwelling with little economic usefulness as a conforming use",
-      "D Residential permits duplex dwellings (two units on one lot 'attached ceiling to floor') by right: 3,000 sq ft per family, width 60 ft, side yards 10 ft and 25 ft together (802)",
+      "D Residential permits duplex dwellings (two units on one lot 'attached ceiling to floor') by right (800B). A duplex is an attached dwelling (200, dwelling 9), so 803 applies: a development tract of at least one contiguous acre, in one ownership, with a plan under the Subdivision and Land Development Ordinance, at most 8 dwellings per developable acre, setbacks 40 ft from any property line and 30 ft from the right-of-way, two off-street spaces per unit (garages not counted) plus visitor spaces, a 15 ft buffer and 20% open space (803A to F)",
+      "D-1 Residential permits only two-family duplex and townhouse dwellings (800.A). 'Detached additional living quarters and additional dwelling units are specifically prohibited' (1910B(8)(h)). The quarters need a principal single-family dwelling, which D-1 does not permit",
+      "District code 'C' names two districts: C Residential and C Commercial (300). Commercial Districts list no single-family dwelling (1000). The tool reads 'C' as C Residential. On a C Commercial lot the quarters do not apply",
+      "Cluster Development Overlay (Article XXXI): an option in AA and A on sites of 10 acres or more, approved by the Township Council. It permits single-family detached dwellings, so quarters inside the house can arise there. 'No outbuildings shall be permitted' (3105G). Parking two spaces per single-family dwelling (3105E)",
+      "Open Space Recreation District: the single-family detached dwelling listing was repealed in 2005 (2900, editor's note)",
+      "Limited Industrial District: a mobile home park and mobile homes for residential use by conditional use (1402.1). Whether quarters can be added to a mobile home is not settled",
+      "Office Laboratory, Industrial Park, Limited Industrial and Heavy Industrial: 'Dwelling quarters for watchmen and caretakers employed on the premises' with offices, laboratories or industrial establishments (1906). Not a unit for a household of its own",
       "Residential districts: one detached private garage and one storage shed per lot (a second garage by special exception). Garages 16 ft high, 32 by 24 ft in AA and A, 24 by 24 ft elsewhere (1908.1). Detached garages and sheds stand in the side or rear yard at least 10 ft behind the rear of the house, 4 ft from side and rear lines (3 ft in D and D-1) (1908G)",
       "Living quarters for household employees, caretakers or watchmen are an accessory use to a dwelling, in the house or in an accessory structure that meets the principal building yards and coverage (1910B(3)). Not a unit for a household of its own",
       "Plymouth Township Historic District (Chapter 7): exterior work needs a certificate of appropriateness after Historical Architectural Review Board review. It is not a zoning use path"
     ],
-    "notes": "Zoning office: Plymouth Township Code Enforcement (Zoning Officer). Read on eCode360 (PL1880) in a browser, one page at a time, on 2026-11-14. Zoning is Appendix B. Code search (all content) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'guest house', 'accessory living', 'tenant house', conversion, duplex and 'two-family' did not find 1910B(8). A second search for 'living quarters', 'additional dwelling', 'immediate family' and 'accessory use' found it. Read in full: Articles II (definitions), IV to IX (AA, A, B, C, D, D-1, RS), XVII (parking), XIX (general provisions) and XXXIX (MUV). Not read: Commercial (X), Shopping Center, Office Laboratory, industrial, Limited Commercial, Open Space Recreation, Cluster Development Overlay (XXXI), planned office park, mixed use planned development and business park use lists, Article XXI (Zoning Hearing Board powers), nonconforming lots (1801)."
+    "notes": "Zoning office: Plymouth Township Code Enforcement (Zoning Officer). Read on eCode360 (PL1880) in a browser, one page at a time, on 2026-11-14. Zoning is Appendix B. Code search (all content) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'guest house', 'accessory living', 'tenant house', conversion, duplex and 'two-family' did not find 1910B(8). A second search for 'living quarters', 'additional dwelling', 'immediate family' and 'accessory use' found it. Read in full: Articles II (definitions), III (district list), IV to IX (AA, A, B, C, D, D-1, RS), X (Commercial), XI (Shopping Center), XVII (parking), XIX (general provisions), XXXI (Cluster Development Overlay) and XXXIX (MUV). Use lists read: Office Laboratory 1200, Industrial Park 1300, Limited Industrial 1400 to 1402.1, Heavy Industrial 1500, High-Rise Apartment 2401, Campus Industrial 2500, Limited Commercial 2800, Open Space Recreation 2900, Mixed-Use Planned Development 3402, Business Park 3702, Interchange Development 3801 (its district code is not in the 300 list). Fix round on 2026-11-14 after an independent review: D duplex through 803, D-1 status, the C code, the other districts. Not read: Planned Office Park 3200, Resource Recovery, Flood Plain Conservation, Article XXI (Zoning Hearing Board powers), nonconforming lots (1801), accessory heights (401B, 601), rental licensing (Sec. 5-49)."
   },
   "adu": {
     "term": {
@@ -88,26 +110,54 @@
           "D"
         ],
         "not_permitted_in": [
-          "D-1"
+          "D-1",
+          "SC",
+          "OL",
+          "CI",
+          "IP",
+          "HI",
+          "H-RA",
+          "LC",
+          "OSR",
+          "MU",
+          "BP"
         ],
         "read_not_named": [
           "RS",
-          "MUV"
+          "MUV",
+          "LI"
         ]
       },
-      "section": "1910B(8), 400A, 500A, 600A, 700A, 800A, 800.A, 900A, 3903A",
+      "section": "1910B(8), 400A, 500A, 600A, 700A, 800A, 800.A, 900A, 3903A, 1402.1",
       "url": "https://ecode360.com/print/PL1880?guid=26907766",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "The quarters are accessory to a principal single-family dwelling. AA, A, B, C and D permit single-family detached dwellings. D-1 permits only duplexes and townhouses. RS permits the uses of the least restricted abutting residential district. MUV permits single-family detached dwellings only within a conditional use MUV development."
+      "note": "The quarters are accessory to a principal single-family dwelling. AA, A, B, C (C Residential) and D permit single-family detached dwellings, and so does the Cluster Development Overlay on AA and A land (3104A). D-1 permits only duplexes and townhouses. RS permits the uses of the least restricted abutting residential district. MUV permits single-family detached dwellings only within a conditional use MUV development. LI permits mobile homes in a mobile home park by conditional use. The other districts read permit no single-family dwelling."
     },
     "status_outside": {
       "value": "not_addressed",
-      "section": "800.A",
-      "url": "https://ecode360.com/print/PL1880?guid=26907047",
+      "section": "300, 1000, 1100, 1200, 1300, 1500, 2401, 2500, 2800, 2900, 3402, 3702",
+      "url": "https://ecode360.com/PL1880/search?query=%22no%20other%22%20OR%20%22permitted%20uses%22%20OR%20%22use%20regulations%22&scope=all&sortOrder=relevance",
       "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "No single-family dwelling, so no additional living quarters."
+      "confidence": "verified",
+      "note": "These districts permit no single-family dwelling, so no additional living quarters arise there."
+    },
+    "status_outside_by_district": {
+      "value": [
+        {
+          "districts": [
+            "D-1"
+          ],
+          "status": "prohibited",
+          "section": "1910B(8)(h), 800.A",
+          "url": "https://ecode360.com/print/PL1880?guid=26907766",
+          "note": "'Detached additional living quarters and additional dwelling units are specifically prohibited.' The sentence sits inside the quarters section. D-1 permits only duplex and townhouse dwellings, so no quarters arise there."
+        }
+      ],
+      "section": "1910B(8)(h)",
+      "url": "https://ecode360.com/print/PL1880?guid=26907766",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
     }
   },
   "approval": {
@@ -157,17 +207,19 @@
           "note": "Each unit is a dwelling unit. Not an ADU listing. The lot area per family is 75% of each district's figure, which the section does not restate by district."
         },
         {
-          "name": "Duplex dwelling in D Residential",
+          "name": "Duplex dwelling in D Residential (attached dwelling development)",
           "path": "by_right",
           "districts": [
             "D"
           ],
-          "conditions": "Two dwelling units on one lot, 'attached ceiling to floor'. 3,000 sq ft of lot area per family (6,000 for two), width 60 ft, building coverage 30%, impervious surface 50%, front 25 ft, side yards 10 ft and 25 ft together, rear 25 ft.",
-          "min_lot_sqft": 6000,
-          "section": "800B, 802, 200 (dwelling 2)",
+          "conditions": "Two dwelling units on one lot, 'attached ceiling to floor'. A duplex is an attached dwelling, so 803 applies: a tract of at least one contiguous acre without street rights-of-way, in one ownership or one joint application, developed under single direction with a plan for the whole tract under the Subdivision and Land Development Ordinance. At most 8 dwellings per developable acre. Setbacks 40 ft from any property line and 30 ft from the right-of-way. Two off-street spaces per unit not counting garages, plus one visitor space per five units. A 15 ft landscaped buffer and 20% open space. The 802 figures (3,000 sq ft per family, width 60 ft, side yards 10 ft and 25 ft together) also apply.",
+          "min_lot_sqft": 43560,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "800B, 802, 803, 200 (dwelling 2, 9)",
           "url": "https://ecode360.com/print/PL1880?guid=26907007",
           "confidence": "secondary",
-          "note": "Adding a unit above or below the existing one in a house is read as this use. Not an ADU listing."
+          "note": "'Dwelling, Attached ... The term includes a twin, a duplex, a triplex and a quadraplex' (200, dwelling 9). 803A(1): 'Not less than one contiguous acre ... for every area proposed to be used in whole or in part as a townhouse or attached dwelling development.' Adding a unit above or below the existing one in a house is read as this use. Not an ADU listing."
         }
       ],
       "section": "1912, 800B",
@@ -211,13 +263,22 @@
     },
     "districts_read_no_listing": {
       "value": [
-        "D-1"
+        "SC",
+        "OL",
+        "CI",
+        "IP",
+        "HI",
+        "H-RA",
+        "LC",
+        "OSR",
+        "MU",
+        "BP"
       ],
-      "section": "800.A",
-      "url": "https://ecode360.com/print/PL1880?guid=26907047",
+      "section": "1100, 1200, 1300, 1500, 2401, 2500, 2800, 2900, 3402, 3702",
+      "url": "https://ecode360.com/PL1880/search?query=%22no%20other%22%20OR%20%22permitted%20uses%22%20OR%20%22use%20regulations%22&scope=all&sortOrder=relevance",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Two-family duplex and townhouse dwellings only."
+      "note": "Use lists read. None permits a single-family dwelling or names additional living quarters. Commercial (also coded C) lists none either (1000)."
     },
     "gates": {
       "value": [
