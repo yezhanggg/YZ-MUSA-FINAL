@@ -286,3 +286,16 @@ def test_arch_option_builds_and_loads(tmp_path):
         torch.save(ck, tmp_path / f"{arch}.pt")
         m2, meta = load_model(tmp_path / f"{arch}.pt", "cpu")
         assert torch.allclose(m2(x), m(x)) and meta["n_classes"] == 5
+
+
+def test_utm_zone_from_naip_items():
+    from pipeline.vision.infer_lots import utm_for
+
+    z17, z18 = {"crs": "EPSG:26917"}, {"crs": "EPSG:26918"}
+    assert utm_for("pittsburgh") == 26917 and utm_for("philadelphia") == 26918  # fixed, outputs unchanged
+    assert utm_for("centre_county", [z17, z18, z18], -77.9) == 26918  # most items decide
+    assert utm_for("somewhere", [z17, z17, z18], -77.5) == 26917
+    assert utm_for("on_the_line", [z17, z18], -78.2) == 26917  # tie: longitude of the lots
+    assert utm_for("on_the_line", [z17, z18], -77.8) == 26918
+    with pytest.raises(ValueError):
+        utm_for("nowhere", [], None)

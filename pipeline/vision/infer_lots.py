@@ -35,6 +35,23 @@ MARGIN = 64
 CLASSES = ["other", "building", "tree", "open", "hard"]
 SQFT_PER_M2 = 10.7639
 UTM = {"pittsburgh": 26917, "philadelphia": 26918}  # NAIP 2022 PA is delivered in UTM 17N / 18N
+UTM_ZONES = (26917, 26918)  # Pennsylvania: 17N west of 78 W, 18N east of it
+
+
+def utm_for(city: str, items: list[dict[str, Any]] | None = None, lon: float | None = None) -> int:
+    """Grid of the city's outputs. The two first cities keep their fixed zone.
+
+    Any other place: the zone most of its NAIP items are delivered in, so most tiles are read
+    without warping. A tie (a place on the 78 W line) goes by the longitude of its lots.
+    """
+    if city in UTM:
+        return UTM[city]
+    counts = {z: sum(1 for it in items or [] if it["crs"] == f"EPSG:{z}") for z in UTM_ZONES}
+    if counts[26917] != counts[26918]:
+        return max(counts, key=lambda z: counts[z])
+    if lon is None:
+        raise ValueError(f"{city}: no NAIP items and no longitude to pick a UTM zone")
+    return 26917 if lon < -78 else 26918
 
 
 def out_dir(city: str) -> Path:
@@ -46,12 +63,22 @@ def work_dir(city: str, tag: str = "") -> Path:
     return out_dir(city) / "cover_work" / tag if tag else out_dir(city) / "cover_work"
 
 
-def load_lots(city: str) -> Any:
+def load_lots(city: str, crs: int | None = None) -> Any:
+    """Lots in the city's UTM grid (crs), or as stored when crs is None."""
     import geopandas as gpd
 
     lots = gpd.read_parquet(out_dir(city) / "lots.parquet", columns=["lot_id", "geometry"])
-    lots = lots[lots.geometry.notna() & ~lots.geometry.is_empty].to_crs(UTM[city]).reset_index(drop=True)
-    return lots
+    lots = lots[lots.geometry.notna() & ~lots.geometry.is_empty].reset_index(drop=True)
+    return lots.to_crs(crs) if crs else lots
+
+
+def place_grid(city: str) -> tuple[Any, list[dict[str, Any]], int]:
+    """Lots in their UTM grid, the NAIP items over them and the grid's EPSG code."""
+    lots = load_lots(city)
+    items = naip_items(lots, city)
+    lon = float(lots.to_crs(4326).total_bounds[[0, 2]].mean()) if city not in UTM else None
+    crs = utm_for(city, items, lon)
+    return lots.to_crs(crs), items, crs
 
 
 def tile_grid(lots: Any) -> list[tuple[int, int, tuple[float, float, float, float]]]:
@@ -94,11 +121,12 @@ def naip_items(lots: Any, city: str) -> list[dict[str, Any]]:
 
 def estimate(city: str) -> dict[str, Any]:
     """Tile count, imagery read and a time guess, before starting."""
-    lots = load_lots(city)
+    lots, _, crs = place_grid(city)
     tiles = tile_grid(lots)
     px = len(tiles) * (TILE + 2 * MARGIN) ** 2
     return {
         "city": city,
+        "utm_epsg": crs,
         "lots": len(lots),
         "tiles": len(tiles),
         "area_km2": round(len(tiles) * (TILE * 0.6) ** 2 / 1e6, 1),
@@ -123,16 +151,25 @@ def read_window(
     hits = [
         it
         for it in items
-        if it["crs"] == f"EPSG:{crs}"
-        and not (it["bbox"][2] < ll[0] or it["bbox"][0] > ll[2] or it["bbox"][3] < ll[1] or it["bbox"][1] > ll[3])
+        if not (it["bbox"][2] < ll[0] or it["bbox"][0] > ll[2] or it["bbox"][3] < ll[1] or it["bbox"][1] > ll[3])
     ]
+    # items in the grid's own zone first (merge keeps the first value); items from the other
+    # zone, near the 78 W line, are warped onto the grid and only fill what is left
+    hits.sort(key=lambda it: it["crs"] != f"EPSG:{crs}")
     if not hits:
         return None, None
-    srcs = [rasterio.open(planetary_computer.sign(it["href"])) for it in hits]
+    from rasterio.vrt import WarpedVRT
+
+    srcs: list[Any] = []
+    bases: list[Any] = []
+    for it in hits:
+        ds = rasterio.open(planetary_computer.sign(it["href"]))
+        bases.append(ds)
+        srcs.append(ds if it["crs"] == f"EPSG:{crs}" else WarpedVRT(ds, crs=f"EPSG:{crs}", resampling=1))
     try:
         arr, transform = merge(srcs, bounds=b, res=0.6, nodata=0)
     finally:
-        for s in srcs:
+        for s in srcs + bases:
             s.close()
     side = TILE + 2 * MARGIN
     arr = arr[:4, :side, :side]
@@ -166,7 +203,8 @@ def run_tile(
     part = work_dir(city, tag) / "parts" / f"{name}.parquet"
     if part.exists():
         return 0
-    img, transform = read_window(items, bounds, UTM[city])
+    crs = int(lots.crs.to_epsg())  # the lots are in the city's UTM grid
+    img, transform = read_window(items, bounds, crs)
     part.parent.mkdir(parents=True, exist_ok=True)
     if img is None:
         pd.DataFrame({"lot_row": [], **{k: [] for k in CLASSES}}).to_parquet(part)
@@ -207,7 +245,7 @@ def run_tile(
         width=TILE,
         count=1,
         dtype="uint8",
-        crs=UTM[city],
+        crs=crs,
         transform=t_core,
         compress="deflate",
         nodata=255,
@@ -242,7 +280,7 @@ def aggregate(city: str, lots: Any, meta_note: dict[str, Any], tag: str, dest: P
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Per-lot land cover from NAIP 2022 (resumable)")
-    ap.add_argument("city", choices=sorted(UTM))
+    ap.add_argument("city", help="a place with processed/<place>/lots.parquet (UTM zone from its NAIP items)")
     ap.add_argument("--checkpoint", type=Path, action="append", help="repeat for an ensemble (mean of softmax)")
     ap.add_argument("--split-other", type=Path, help="5-class checkpoint that splits other for 4-class members")
     ap.add_argument("--tag", help="work folder name (needed for an ensemble)")
@@ -263,9 +301,8 @@ def main(argv: list[str] | None = None) -> int:
 
     t0 = time.time()
     device = a.device or ("mps" if torch.backends.mps.is_available() else "cpu")
-    lots = load_lots(a.city)
+    lots, items, crs = place_grid(a.city)
     tiles = tile_grid(lots)
-    items = naip_items(lots, a.city)
     ckpts = [c.expanduser() for c in a.checkpoint]
     if len(ckpts) == 1 and not a.split_other:
         model, meta = load_model(ckpts[0], device)
@@ -301,7 +338,7 @@ def main(argv: list[str] | None = None) -> int:
                 time.sleep(20)
         if (i + 1) % 25 == 0:
             print(f"  {i + 1}/{len(tiles)} tiles ({(time.time() - t0) / 60:.1f} min)", flush=True)
-    note = {"model": tag, "imagery": "NAIP 2022, 0.6 m", "tta": a.tta, "tree_offset": a.tree_offset}
+    note = {"model": tag, "imagery": "NAIP 2022, 0.6 m", "tta": a.tta, "tree_offset": a.tree_offset, "utm_epsg": crs}
     if isinstance(model, list):
         note["members"] = ",".join(c.parent.name for c in ckpts)
         note["split_other"] = a.split_other.expanduser().parent.name if a.split_other else ""
