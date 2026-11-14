@@ -589,3 +589,75 @@ describe('get_rule_text pass 7', () => {
     expect(ud.forms.inside_or_attached.attached_not_taller_than_house.value).toBe(true);
   });
 });
+
+// Pass 8: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 8 section).
+describe('get_rule_text pass 8', () => {
+  it('shows the Allentown 15 ft accessory cap with no sqft cap, house type cases, rear yard only, no bookkeeping', async () => {
+    const n5 = await town6('pa_lehigh_allentown', 'size', 'N5');
+    const caps = n5.forms.accessory_building.general_accessory_caps;
+    expect(caps.max_height_ft.value).toBe(15);
+    expect(caps.binds_adu).toMatch(/^not settled: whether this 15 ft cap also binds an outbuilding/);
+    expect(n5.forms.accessory_building.yards.front.note).toMatch(/^Rear yard only: not in the front yard and not in a side yard/);
+    const cov = n5.conditions.filter((c: Any6) => c.kind === 'house_type').map((c: Any6) => c.condition);
+    expect(cov).toContain('N5: building coverage at most 40%, and 30% for a House C (detached) (660-31D, 660-31E). The tool cannot tell these house types apart, so check which one the house is');
+    expect(cov.some((t: string) => /^N5: outbuilding side and rear yards at least 3 ft, and 5 ft for a House C/.test(t))).toBe(true);
+    expect(n5.conditions.find((c: Any6) => c.kind === 'front_yard').condition).toMatch(/only in the rear yard/);
+    expect(JSON.stringify(n5)).not.toMatch(/pending a second check|Added 2026-11-13/);
+    expect(n5.checks.join(' ')).not.toMatch(/No feet number/);
+  });
+
+  it('strips author bookkeeping from owner text only', async () => {
+    const { ownerText } = await import('./ruleText');
+    expect(ownerText('Rear yard. Added 2026-11-13, pending a second check.')).toBe('Rear yard.');
+    expect(ownerText("See 450-402B and C.' Read 2026-11-13. Secondary: ask.")).toBe("See 450-402B and C.' Secondary: ask.");
+    expect(ownerText('Ord. 2026-04 adopted 2026-04-02.')).toBe('Ord. 2026-04 adopted 2026-04-02.');
+  });
+
+  it('gives the status outside the scope by district, and twin lot figures', async () => {
+    const r1 = await town6('pa_lehigh_upper_macungie', 'approval', 'R1');
+    expect(r1.lot_status.value).toBe('family_only');
+    expect(r1.lot_status.note).toMatch(/In R1 the code's status is family only/);
+    const rt = await town6('pa_lehigh_upper_macungie', 'approval', 'RT');
+    expect(rt.lot_status.value).toBe('prohibited');
+    expect(rt.path_to_ask.note).toMatch(/^The code bars ADUs here/);
+    const r4 = await town6('pa_lehigh_upper_macungie', 'approval', 'R4');
+    expect(r4.conditions.find((c: Any6) => c.kind === 'lot_area_per_unit').condition).toMatch(/For a semi detached house: 6,000 sq ft per dwelling unit/);
+    expect(r4.approval.qualifier_text).toMatch(/a lot under 24,000 sq ft \(a semi detached house: under 12,000 sq ft\) needs relief/);
+  });
+
+  it('says a share of the primary living area is not the whole cap', async () => {
+    const lp = await town6('pa_montgomery_lower_providence', 'size', 'R-3');
+    expect(lp.forms.inside_or_attached.size_rule).toBe(
+      "At most 800 sq ft and at most 50% of the house's primary living area (living room, dining room, kitchen, one bathroom and the largest bedroom), whichever is less. The tool cannot measure that part of the house, so 800 sq ft is only the outer limit",
+    );
+    expect(lp.forms.inside_or_attached.max_share_of_part.value.share).toBe(0.5);
+  });
+
+  it('reads a district whose use list is not on file as only if, and a disputed septic bar as ask', async () => {
+    const c = await town6('pa_montgomery_montgomery', 'approval', 'C');
+    expect(c.approval.qualifier).toBe('conditional_on_reading');
+    expect(c.approval.qualifier_text).toMatch(/^By right only if a single-family detached dwelling is a permitted use in C/);
+    expect(c.approval.by_form_today.internal).toBe('by_right');
+    expect(c.path_to_ask?.path).not.toBe('variance');
+    const wa = await town6('pa_bucks_warrington', 'approval', 'R1');
+    const sewer = wa.conditions.find((c2: Any6) => c2.test === 'public_sewer');
+    expect(sewer.condition).toMatch(/But 370-305H\(1\)\(a\)\[8\]: .*Ask the zoning officer\.$/);
+    expect(sewer.disputed_by.section).toBe('370-305H(1)(a)[8]');
+  });
+
+  it('follows a less demanding district path, and reads a district in doubt outside the scope as ask', async () => {
+    const ua = await town6('pa_cumberland_upper_allen', 'approval', 'R-3');
+    expect(ua.adu.status_in_district).toMatchObject({ value: 'allowed_by_right', district: 'R-3', town_status: 'special_exception' });
+    expect(ua.summary).not.toMatch(/^Needs a special exception/);
+    const mh = await town6('pa_montgomery_upper_providence', 'approval', 'MH');
+    expect(mh.lot_status).toBeUndefined();
+    expect(mh.approval.district_path.listed_in_doubt).toBe(true);
+  });
+
+  it('gives a height by story count', async () => {
+    const ud = await town6('pa_montgomery_upper_dublin', 'size', 'A');
+    const h = ud.conditions.filter((c: Any6) => c.kind === 'height').map((c: Any6) => c.condition);
+    expect(h).toContain('A detached unit of 1 story may be up to 13 ft. To the peak.');
+    expect(h.some((t: string) => t.startsWith('A detached unit of 2 stories may be up to 22 ft'))).toBe(true);
+  });
+});

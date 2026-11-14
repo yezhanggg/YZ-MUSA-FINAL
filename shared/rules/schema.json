@@ -167,6 +167,12 @@
         },
         "status_by_form": {
           "$ref": "#/$defs/leaf_status_by_form"
+        },
+        "status_outside_by_district": {
+          "$ref": "#/$defs/leaf_status_by_district"
+        },
+        "scope_by_use": {
+          "$ref": "#/$defs/leaf_scope_by_use"
         }
       }
     },
@@ -318,6 +324,9 @@
         "max_share_by_form": {
           "$ref": "#/$defs/leaf_num_by_form",
           "description": "A share-of-house cap for one form only, e.g. {\"detached_new\": 1.0}. Wins over the other share caps for that form."
+        },
+        "max_share_of_part": {
+          "$ref": "#/$defs/leaf_share_of_part"
         }
       }
     },
@@ -420,6 +429,13 @@
         "attached_height_capped_at_house": {
           "$ref": "#/$defs/leaf_bool",
           "description": "An attached unit (an addition) may not be taller than the existing house."
+        },
+        "accessory_rear_yard_only": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Pass 8: true when an accessory building (and so a detached ADU) may stand only in the rear yard: not the front yard and not a side yard."
+        },
+        "max_height_by_stories": {
+          "$ref": "#/$defs/leaf_height_by_stories"
         }
       }
     },
@@ -1206,6 +1222,17 @@
         },
         "utility_rows": {
           "$ref": "#/$defs/leaf_utility_rows"
+        },
+        "lot_area_per_unit_by_type": {
+          "$ref": "#/$defs/leaf_num_by_type",
+          "description": "Lot area per dwelling unit by building type (for example twin 6,000 against single-family 12,000). The lot's house type picks it."
+        },
+        "min_lot_sqft_by_type": {
+          "$ref": "#/$defs/leaf_num_by_type",
+          "description": "District minimum lot by building type, when the table gives one per type. The lot's house type picks it."
+        },
+        "stricter_by_house_type": {
+          "$ref": "#/$defs/leaf_house_type_cases"
         }
       }
     },
@@ -1556,6 +1583,34 @@
                 ],
                 "minimum": 0,
                 "description": "The gate holds only on a lot under this size (for example a rule for parcels of five acres or less)."
+              },
+              "disputed_by": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "required": [
+                  "section",
+                  "note"
+                ],
+                "additionalProperties": false,
+                "description": "Pass 8: another passage that may undo this bar (for example [1] needs public sewer, [8] names an on-lot septic system). A lot that fails the test reads 'depends, ask the zoning officer' and cites both, never a plain no.",
+                "properties": {
+                  "section": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "url": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
               }
             }
           }
@@ -2653,6 +2708,493 @@
         },
         "assumption": {
           "type": "boolean"
+        }
+      }
+    },
+    "leaf_status_by_district": {
+      "type": "object",
+      "description": "Pass 8: the ADU status outside scope_districts when it differs by district (for example family_only by special exception in some districts, prohibited in another). A listed district takes its item's status; any other district outside the scope takes status_outside.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "districts",
+              "status"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "districts": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "enum": [
+                  "allowed_by_right",
+                  "special_exception",
+                  "conditional_use",
+                  "family_only",
+                  "conversion_only",
+                  "not_addressed",
+                  "prohibited"
+                ]
+              },
+              "section": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_num_by_type": {
+      "type": "object",
+      "description": "Pass 8: a lot figure (sq ft) by the house type of the lot, keyed by building type (detached, semi_detached, attached), e.g. {\"semi_detached\": 6000}. For a lot of a listed type it replaces the district figure; otherwise the district figure applies and the answer names the other types' figures.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "detached": {
+              "type": "number",
+              "minimum": 0
+            },
+            "semi_detached": {
+              "type": "number",
+              "minimum": 0
+            },
+            "attached": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_share_of_part": {
+      "type": "object",
+      "description": "Pass 8: a size cap that is a share of a named part of the house (for example 50% of the 'primary living area': living room, dining room, kitchen, one bathroom, largest bedroom), not of the whole house. The tool cannot measure the part, so the sentence says the sq ft cap is only the outer limit.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "share",
+            "part"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "part": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_scope_by_use": {
+      "type": "object",
+      "description": "Pass 8: the ADU rule reaches every district where a principal use (for example a single-family detached dwelling) is permitted, rather than a named list. permitted_in: districts whose use lists were read and permit it. not_permitted_in: districts read and found not to permit it (they take status_outside). Any other district reads 'only if the use is permitted there', never a plain yes or no.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "use",
+            "permitted_in"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "use": {
+              "type": "string",
+              "minLength": 1
+            },
+            "permitted_in": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "not_permitted_in": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_house_type_cases": {
+      "type": "object",
+      "description": "Pass 8: figures for house types the tool cannot tell apart (for example House A, B and C, all detached), stricter than the row's figure for the same building type. The row's figure is said as 'at most' (coverage) or 'at least' (yards) with each stricter case named; it is never shown as a flat number.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "building_type"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "building_type": {
+                "enum": [
+                  "detached",
+                  "semi_detached",
+                  "attached"
+                ]
+              },
+              "max_building_coverage": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "setback_side_ft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "setback_rear_ft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "accessory_setback_side_ft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "accessory_setback_rear_ft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "section": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_height_by_stories": {
+      "type": "object",
+      "description": "Pass 8: an accessory (detached unit) height that depends on the number of stories, e.g. 13 ft for one story and 22 ft for two. Each item: stories and max_height_ft. The answer gives each figure; max_height_ft keeps the figure for the most stories allowed.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "stories",
+              "max_height_ft"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "stories": {
+                "type": "number",
+                "minimum": 1
+              },
+              "max_height_ft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "section": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     }

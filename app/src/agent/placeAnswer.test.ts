@@ -171,6 +171,7 @@ describe('rule text from the resolver', () => {
     town('4201719784', 'Doylestown borough', 'Bucks', 'pa_bucks_doylestown_borough', { tier: 'drafted', approval: 'special_exception' }),
     town('4204375672', 'Swatara township', 'Dauphin', 'pa_dauphin_swatara', { status: 'by_right' }),
     town('4202984160', 'West Vincent township', 'Chester', 'pa_chester_west_vincent', { status: 'by_right' }),
+    town('4209144744', 'Lower Providence township', 'Montgomery', 'pa_montgomery_lower_providence', { status: 'limited' }),
   ];
   const ask7 = (input: Record<string, unknown>) => ask(input, { places: memoryPlaces(P7) });
   const check = (o: Out) => (o.proposal as Out).check as Out;
@@ -209,6 +210,14 @@ describe('rule text from the resolver', () => {
     const wv = check(await ask7({ place: 'West Vincent township', unit_type: 'attached' }));
     expect(wv.fits_zoning).toBe('not_addressed');
     expect(String(wv.why)).toMatch(/Not addressed for this form: the code does not name it\. Not a firm no; ask the zoning officer/);
+  });
+  // Pass 8: a share of a named part of the house is never presented as the whole cap.
+  it('Lower Providence: 800 sq ft is the outer limit; the primary living area share depends on the house', async () => {
+    const o = await ask7({ place: 'Lower Providence township', unit_type: 'internal', size_sqft: 600 });
+    expect((o.zoning_allows as Out).size_rule_inside_or_attached).toMatch(/^At most 800 sq ft and at most 50% of the house's primary living area .*800 sq ft is only the outer limit/);
+    const c = check(o);
+    expect(c.fits_zoning).toBe('depends_on_lot_facts');
+    expect((c.why as string[]).join(' ')).toMatch(/It must also be at most 50% of the house's primary living area .* Not checked: that part of the house cannot be measured here\./);
   });
   it('a city with lot records points to find_lot and the lot tools; every answer ends with the next step', async () => {
     const o = await ask2({ place: 'Allentown city' });

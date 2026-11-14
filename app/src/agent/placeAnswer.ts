@@ -219,6 +219,12 @@ function formVerdict(path: string, status: string | null, section: string | null
   if (path === 'not_allowed') return 'Not allowed: the code bars this form';
   return path === 'by_right' ? 'Allowed by right (zoning permit, no hearing)' : path === 'variance' || path === 'not_allowed' ? 'Not allowed today except by variance' : `Allowed with ${APPROVAL_TEXT[path] ?? path}`;
 }
+const partOut = (x: unknown): { share: number; part: string; section: unknown } | null => {
+  const o = x as Obj | null;
+  const v = o && typeof o === 'object' ? (o.value as Obj | null) : null;
+  return v && typeof v === 'object' && typeof v.share === 'number' ? { share: v.share, part: String(v.part), section: o!.section ?? null } : null;
+};
+
 const capText = (rule: unknown, cap: { value: unknown; section: unknown } | null) =>
   typeof rule === 'string' ? `${rule}${cap?.section ? ` (${cap.section})` : ''}` : null;
 
@@ -266,6 +272,8 @@ async function ruleDetails(r: PlaceRow) {
     max_share_inside_or_attached: leafOut(ins.max_share_of_house),
     size_rule_accessory_building: capText(acc.size_rule, accCap),
     size_rule_inside_or_attached: capText(ins.size_rule, insCap),
+    // Pass 8: a share of a named part of the house the tool cannot measure (size.max_share_of_part).
+    share_of_part: partOut(ins.max_share_of_part ?? acc.max_share_of_part),
     by_form: differs ? formRows.map((x) => ({ form: FORM_TEXT[x.form], verdict: x.verdict })) : null,
     status_by_form: statusByForm,
     status_by_form_section: (sbf?.section as string | undefined) ?? null,
@@ -330,6 +338,13 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   if (size && shareNum && capNum !== null && !greater) {
     why.push(`The unit may also be at most ${pct} of the house (${share!.section ?? 'rule file'}), whichever is less. Not checked: the house size is not known here.${fits === 'yes' ? ` It fits that limit only if the house has at least ${houseFor(size)} sq ft.` : ''}`);
     if (fits === 'yes') depends.push({ fact: "the house's floor area", rule: sizeRule ?? `At most ${pct} of the house`, section: share?.section ?? null });
+  }
+  // Pass 8: the cap is also a share of a named part of the house (Lower Providence: the primary living area). The sq ft
+  // cap is only the outer limit, and the part cannot be measured here.
+  const part = rule?.share_of_part ?? null;
+  if (size && part) {
+    why.push(`It must also be at most ${Math.round(part.share * 100)}% of the house's ${part.part} (${part.section ?? 'rule file'}). Not checked: that part of the house cannot be measured here.`);
+    if (fits === 'yes') depends.push({ fact: `the floor area of the house's ${part.part}`, rule: `At most ${Math.round(part.share * 100)}% of the house's ${part.part}`, section: part.section });
   }
   if (unit && rule)
     for (const d of rule.depends_on)

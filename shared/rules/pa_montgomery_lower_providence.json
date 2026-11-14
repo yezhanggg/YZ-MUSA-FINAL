@@ -209,16 +209,6 @@
           "building_types": null,
           "section": "143-6.2, in-law suite (3)",
           "url": "https://ecode360.com/print/LO0679?guid=35882118"
-        },
-        {
-          "kind": "size",
-          "condition": "At most 50% of the total floor area of the house's primary living area (living room, dining room, kitchen, one bathroom and the largest bedroom).",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": null,
-          "building_types": null,
-          "section": "143-6.2, in-law suite (1)",
-          "url": "https://ecode360.com/print/LO0679?guid=35882118"
         }
       ],
       "section": "143-6.2",
@@ -249,7 +239,7 @@
       "url": "https://ecode360.com/print/LO0679?guid=35882118",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "'In no event shall the in-law suite exceed a total floor area of 800 square feet.' This is only the outer limit. The suite is also capped at 50% of the house's primary living area (living room, dining room, kitchen, one bathroom and largest bedroom), which is usually smaller. The file cannot compute that share."
+      "note": "'In no event shall the in-law suite exceed a total floor area of 800 square feet.' This is only the outer limit. The suite is also capped at 50% of the house's primary living area (living room, dining room, kitchen, one bathroom and largest bedroom), which is usually smaller. See max_share_of_part; the tool cannot measure that part of the house."
     },
     "max_share_of_house": {
       "value": null,
@@ -257,7 +247,18 @@
       "url": "https://ecode360.com/print/LO0679?guid=35882118",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "The 50% cap is of the 'primary living area' (living room, dining room, kitchen, one bathroom, largest bedroom), not of the whole house. Not stored as a share of the house. See gates."
+      "note": "The 50% cap is of the 'primary living area' (living room, dining room, kitchen, one bathroom, largest bedroom), not of the whole house. Stored in max_share_of_part."
+    },
+    "max_share_of_part": {
+      "value": {
+        "share": 0.5,
+        "part": "primary living area (living room, dining room, kitchen, one bathroom and the largest bedroom)"
+      },
+      "section": "143-6.2, in-law suite (1)",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'(1) An in-law suite shall not be larger than 50% of the total floor area of the primary living area (the living room, dining room, kitchen, one bathroom, and the largest bedroom) of the principal residence on the lot. In no event shall the in-law suite exceed a total floor area of 800 square feet.'"
     },
     "min_sqft": {
       "value": null,

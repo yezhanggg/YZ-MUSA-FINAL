@@ -77,6 +77,26 @@
       "confidence": "verified",
       "note": "Districts whose use lists permit a single-family detached dwelling by right, with accessory uses customarily incidental to it. 230-149C itself names no district."
     },
+    "scope_by_use": {
+      "value": {
+        "use": "single-family detached dwelling",
+        "permitted_in": [
+          "R-1",
+          "R-2",
+          "R-3",
+          "R-3A",
+          "R-3B",
+          "R-5",
+          "R-6"
+        ],
+        "not_permitted_in": null
+      },
+      "section": "230-149C; 230-26A, 230-31A, 230-36A(1)(c), 230-49A(1), 230-53.2A(1), 230-64A(1), 230-70A(1)(b)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "230-149C: 'One accessory dwelling unit to a single-family detached dwelling shall be permitted ...' and names no district. Each district list allows 'Accessory use on the same lot with and customarily incidental to any of the foregoing uses'. So the unit reaches every district where a single-family detached dwelling is permitted. permitted_in: the use lists read. The C district and other nonresidential lists (Appendix Table 230-A) were not opened."
+    },
     "status_outside": {
       "value": "not_addressed",
       "section": "230-75A(1)",

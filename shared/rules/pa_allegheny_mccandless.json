@@ -117,41 +117,13 @@
           "url": "https://ecode360.com/43685668",
           "confidence": "secondary",
           "note": "M-N and M-C lot rules not read for this file."
-        },
-        {
-          "name": "Second principal dwelling on the lot",
-          "path": "by_right",
-          "districts": [
-            "R-VL"
-          ],
-          "conditions": "1303.100(A): 'More than one Principal Use may be erected on a single Lot, provided that requirements of this Part are met for each Structure as though it were on an individual Lot.' Each house needs its own district lot (R-VL 20,000 sq ft, so about 40,000 in all), yards and frontage. Two or more residential buildings on one lot are a land development (MPC 107), so a land development plan is needed.",
-          "min_lot_sqft": 40000,
-          "section": "1303.100(A), 1302.200(B) Figure 1302.B B.5, MPC 107",
-          "url": "https://ecode360.com/43685640",
-          "confidence": "secondary",
-          "land_development": true,
-          "note": "Conflicts with 1303.140(D)(1): 'Only one Single-Family Detached Dwelling is permitted for each legally subdivided Lot'. Listed as a possible path only. Ask the zoning officer."
-        },
-        {
-          "name": "Second principal dwelling on the lot",
-          "path": "by_right",
-          "districts": [
-            "R-L"
-          ],
-          "conditions": "1303.100(A): each structure must meet the rules 'as though it were on an individual Lot'. R-L lot 12,000 sq ft with public sewer and water (about 24,000 in all), plus yards and frontage for each. A land development plan is needed (MPC 107).",
-          "min_lot_sqft": 24000,
-          "section": "1303.100(A), 1302.210(B) Figure 1302.C B.5, MPC 107",
-          "url": "https://ecode360.com/43685640",
-          "confidence": "secondary",
-          "land_development": true,
-          "note": "Conflicts with 1303.140(D)(1) ('Only one Single-Family Detached Dwelling is permitted for each legally subdivided Lot'). Listed as a possible path only. Ask the zoning officer."
         }
       ],
       "section": "Table 1303.A, 1303.140(D)(3)",
       "url": "https://ecode360.com/43685668",
       "verified_on": "2026-11-12",
       "confidence": "verified",
-      "note": "Not ADUs. Table 1303.A lists Dwelling, Two-Family as P in R-L, R-M, M-N and M-C. 'A Building located on one Lot containing not more than two Dwelling Units, arranged one above the other or side by side'. Also, per the review, 1303.100(A) lets more than one principal use on a lot if each structure meets the rules as though on its own lot (about 24,000 sq ft in R-L with sewer, 40,000 in R-VL), as a land development. But the single-family detached definition says 'Only one Single-Family Detached Dwelling is permitted for each legally subdivided Lot' (1303.140(D)(1)). The two texts conflict. Since 2026-11-13 it is listed as an alternative with land_development and confidence secondary (1303.100(A) read on 2026-11-13). Ask the zoning officer."
+      "note": "Not ADUs. Table 1303.A lists Dwelling, Two-Family as P in R-L, R-M, M-N and M-C. 'A Building located on one Lot containing not more than two Dwelling Units, arranged one above the other or side by side'. Also, per the review, 1303.100(A) lets more than one principal use on a lot if each structure meets the rules as though on its own lot (about 24,000 sq ft in R-L with sewer, 40,000 in R-VL), as a land development. But the single-family detached definition says 'Only one Single-Family Detached Dwelling is permitted for each legally subdivided Lot' (1303.140(D)(1)). The two texts conflict, so this is not listed as an alternative. Ask the zoning officer."
     }
   },
   "eligibility": {

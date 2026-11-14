@@ -117,13 +117,39 @@
           "min_lot_is_tract": true
         },
         {
-          "name": "Second house on the lot",
+          "name": "Second house on the lot, with public sewer and water",
           "path": "by_right",
           "districts": [
             "LDS"
           ],
-          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. LDS lot minimum 10,000 sq ft per house, so 20,000 in all, with yards and frontage for each.",
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. LDS lot minimum 10,000 sq ft per house with both public sewer and public water (450-308F), so 20,000 in all, with yards and frontage for each. Without both public sewer and water the district minimum is 43,560 sq ft per house (450-308F).",
           "min_lot_sqft": 20000,
+          "section": "450-401, 450-402B(1), 450-402B(3), LDS district lot minimum",
+          "url": "https://ecode360.com/45169003",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call.",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer serves the lot (the 10,000 sq ft per house figure assumes public sewer and water; without both it is 43,560 sq ft per house)",
+              "section": "450-308F"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water serves the lot (the 10,000 sq ft per house figure assumes public sewer and water; without both it is 43,560 sq ft per house)",
+              "section": "450-308F"
+            }
+          ]
+        },
+        {
+          "name": "Second house on the lot, without both public sewer and water",
+          "path": "by_right",
+          "districts": [
+            "LDS"
+          ],
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. Without both public sewer and public water the LDS lot minimum is 43,560 sq ft per house (450-308F), so 87,120 in all, with yards and frontage for each. A lot of 87,120 sq ft or more meets the figure with or without the services.",
+          "min_lot_sqft": 87120,
           "section": "450-401, 450-402B(1), 450-402B(3), LDS district lot minimum",
           "url": "https://ecode360.com/45169003",
           "confidence": "secondary",
@@ -131,13 +157,39 @@
           "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call."
         },
         {
-          "name": "Second house on the lot",
+          "name": "Second house on the lot, with public sewer and water",
           "path": "by_right",
           "districts": [
             "MDS"
           ],
-          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. MDS lot minimum 8,000 sq ft per house, so 16,000 in all, with yards and frontage for each.",
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. MDS lot minimum 8,000 sq ft per house with both public sewer and public water (450-309F), so 16,000 in all, with yards and frontage for each. Without both public sewer and water the district minimum is 43,560 sq ft per house (450-309F).",
           "min_lot_sqft": 16000,
+          "section": "450-401, 450-402B(1), 450-402B(3), MDS district lot minimum",
+          "url": "https://ecode360.com/45169003",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call.",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer serves the lot (the 8,000 sq ft per house figure assumes public sewer and water; without both it is 43,560 sq ft per house)",
+              "section": "450-309F"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water serves the lot (the 8,000 sq ft per house figure assumes public sewer and water; without both it is 43,560 sq ft per house)",
+              "section": "450-309F"
+            }
+          ]
+        },
+        {
+          "name": "Second house on the lot, without both public sewer and water",
+          "path": "by_right",
+          "districts": [
+            "MDS"
+          ],
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. Without both public sewer and public water the MDS lot minimum is 43,560 sq ft per house (450-309F), so 87,120 in all, with yards and frontage for each. A lot of 87,120 sq ft or more meets the figure with or without the services.",
+          "min_lot_sqft": 87120,
           "section": "450-401, 450-402B(1), 450-402B(3), MDS district lot minimum",
           "url": "https://ecode360.com/45169003",
           "confidence": "secondary",
@@ -145,13 +197,39 @@
           "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call."
         },
         {
-          "name": "Second house on the lot",
+          "name": "Second house on the lot, with public sewer and water",
           "path": "by_right",
           "districts": [
             "SS"
           ],
-          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. SS lot minimum 5,000 sq ft per house, so 10,000 in all, with yards and frontage for each.",
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. SS lot minimum 5,000 sq ft per house with both public sewer and public water (450-310F), so 10,000 in all, with yards and frontage for each. Without both public sewer and water the district minimum is 43,560 sq ft per house (450-310F).",
           "min_lot_sqft": 10000,
+          "section": "450-401, 450-402B(1), 450-402B(3), SS district lot minimum",
+          "url": "https://ecode360.com/45169003",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call.",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer serves the lot (the 5,000 sq ft per house figure assumes public sewer and water; without both it is 43,560 sq ft per house)",
+              "section": "450-310F"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water serves the lot (the 5,000 sq ft per house figure assumes public sewer and water; without both it is 43,560 sq ft per house)",
+              "section": "450-310F"
+            }
+          ]
+        },
+        {
+          "name": "Second house on the lot, without both public sewer and water",
+          "path": "by_right",
+          "districts": [
+            "SS"
+          ],
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. Without both public sewer and public water the SS lot minimum is 43,560 sq ft per house (450-310F), so 87,120 in all, with yards and frontage for each. A lot of 87,120 sq ft or more meets the figure with or without the services.",
+          "min_lot_sqft": 87120,
           "section": "450-401, 450-402B(1), 450-402B(3), SS district lot minimum",
           "url": "https://ecode360.com/45169003",
           "confidence": "secondary",
@@ -159,18 +237,24 @@
           "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call."
         },
         {
-          "name": "Second house on the lot",
+          "name": "Second house on the lot, with public sewer and water",
           "path": "by_right",
           "districts": [
             "U"
           ],
-          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. U lot minimum 3,500 sq ft per house, so 7,000 in all, with yards and frontage for each.",
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. U lot minimum 3,500 sq ft per house with both public sewer and public water (450-311F), so 7,000 in all, with yards and frontage for each.",
           "min_lot_sqft": 7000,
           "section": "450-401, 450-402B(1), 450-402B(3), U district lot minimum",
           "url": "https://ecode360.com/45169003",
           "confidence": "secondary",
           "land_development": true,
-          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call."
+          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call.",
+          "requires": [
+            {
+              "condition": "Public sewer and public water serve the lot (the U figure of 3,500 sq ft per house assumes both, 450-311F; the U minimum without them is not in this file, so ask the zoning officer)",
+              "section": "450-311F"
+            }
+          ]
         }
       ],
       "section": "450-310B, 450-311B, 450-324B(97)",

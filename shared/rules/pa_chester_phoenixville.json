@@ -63,6 +63,28 @@
       "verified_on": "2026-11-13",
       "confidence": "verified",
       "note": "'The uses listed below are permitted by special exception in the zoning districts as indicated below.' The ADU row is marked in RI, MI, NC, CD and MG."
+    },
+    "scope_districts": {
+      "value": [
+        "RI",
+        "MI",
+        "NC",
+        "CD",
+        "MG"
+      ],
+      "section": "27-301.2B(1)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Districts the special exception table marks for the ADU (27-301.2B(1))."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "27-301.2B(1)",
+      "url": "https://ecode360.com/print/PH1486?guid=47635652",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "TC and I are not marked in the special exception table, so the table gives no ADU path there. A unit there needs a variance."
     }
   },
   "approval": {

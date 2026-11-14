@@ -1698,3 +1698,212 @@ def test_lot_width_gate_and_share_cap_for_one_form(tmp_path, monkeypatch):
     assert narrow["max_size_by_type"]["detached_new"] == 1600
     unknown = rules.resolve(name, "today", lot)
     assert "detached_new" in unknown["types_allowed"] and unknown["approval_qualifier"] == "depends_on_lot_facts"
+
+
+# ------------------------------------------------------------------ pass 8: second-reader fixes and schema gaps
+
+
+def test_mccandless_lists_no_second_principal_dwelling():
+    out = rules.resolve("pa_allegheny_mccandless", "today", {"zoning_district": "R-VL", "lot_sqft": 50000}, extra=True)
+    assert not [a for a in out["alternatives"] if "Second principal" in a["name"]]
+    note = raw("pa_allegheny_mccandless")["approval"]["alternatives"]["note"]
+    assert "so this is not listed as an alternative" in note
+
+
+def test_spring_second_house_assumes_public_sewer_and_water():
+    lot = {"zoning_district": "LDS", "building_type": "detached", "lot_sqft": 30000}
+    alts = lambda o: {  # noqa: E731
+        a["name"]: a for a in o["alternatives"] if a["name"].startswith("Second house") and "LDS" in a["districts"]
+    }
+    both = alts(rules.resolve("pa_berks_spring", "today", {**lot, "public_sewer": True, "public_water": True}))
+    assert both["Second house on the lot, with public sewer and water"]["applies"] is True
+    septic = alts(rules.resolve("pa_berks_spring", "today", {**lot, "public_sewer": False, "public_water": True}))
+    with_s = septic["Second house on the lot, with public sewer and water"]
+    assert with_s["applies"] is False and "43,560 sq ft per house" in with_s["note"]
+    assert septic["Second house on the lot, without both public sewer and water"]["applies"] is False  # under 87,120
+    big = alts(rules.resolve("pa_berks_spring", "today", {**lot, "lot_sqft": 90000, "public_sewer": False}))
+    assert big["Second house on the lot, without both public sewer and water"]["applies"] is True
+    unknown = alts(rules.resolve("pa_berks_spring", "today", lot))
+    assert unknown["Second house on the lot, with public sewer and water"]["applies"] is None
+    u = rules.resolve("pa_berks_spring", "today", {"zoning_district": "U", "lot_sqft": 9000, "public_sewer": True})
+    u_alt = [a for a in u["alternatives"] if a["name"].startswith("Second house") and a["districts"] == ["U"]]
+    assert len(u_alt) == 1 and u_alt[0]["applies"] is None and "not in this file" in u_alt[0]["note"]
+
+
+ALLENTOWN = {"zoning_district": "N5", "lot_sqft": 7000, "building_type": "detached", "house_sqft": 1600}
+
+
+def test_allentown_accessory_height_cap_is_said_without_a_sqft_cap():
+    out = rules.resolve("pa_lehigh_allentown", "today", {**ALLENTOWN, "house_height_ft": 28})
+    line = [r for r in out["reasons"] if r.startswith("Accessory structures are capped at 15 ft (660-41B(4))")]
+    assert (
+        line and "Not settled" in line[0] and "at most 2 stories" in line[0] and "no taller than the house" in line[0]
+    )
+    assert not any("No feet number" in r for r in out["reasons"])
+
+
+def test_allentown_house_types_read_at_most_with_the_stricter_case():
+    n5 = rules.resolve("pa_lehigh_allentown", "today", ALLENTOWN)
+    assert n5["max_building_coverage"] == 0.4  # the shown figure stays; the sentence names the stricter case
+    assert any(r.startswith("Building coverage at most 40%, and 30% for a House C") for r in n5["reasons"])
+    assert any(
+        r.startswith("Outbuilding side and rear yards at least 3 ft, and 5 ft for a House C") for r in n5["reasons"]
+    )
+    n3 = rules.resolve("pa_lehigh_allentown", "today", {**ALLENTOWN, "zoning_district": "N3"})
+    assert any(r.startswith("Building coverage at most 50%, and 40% for a House B") for r in n3["reasons"])
+    twin = rules.resolve(
+        "pa_lehigh_allentown", "today", {**ALLENTOWN, "zoning_district": "N3", "building_type": "semi_detached"}
+    )
+    assert not any("House B" in r and r.startswith("Building coverage") for r in twin["reasons"])
+
+
+def test_allentown_rear_yard_only_and_no_bookkeeping_in_owner_sentences():
+    out = rules.resolve("pa_lehigh_allentown", "today", ALLENTOWN, extra=True)
+    front = [c for c in out["conditions"] if c["kind"] == "front_yard"][0]
+    assert "only in the rear yard" in front["condition"] and "side yard" in front["condition"]
+    text = json.dumps([out["reasons"], out["conditions"], out["alternatives"]])
+    assert "pending a second check" not in text and "Added 2026" not in text and "second reading" not in text
+
+
+def test_owner_text_strips_bookkeeping_only():
+    assert rules._owner_text("Rear yard. Added 2026-11-13, pending a second check.") == "Rear yard."
+    assert (
+        rules._owner_text("See 450-402B and C.' Read 2026-11-13. Secondary: ask.")
+        == "See 450-402B and C.' Secondary: ask."
+    )
+    assert rules._owner_text("Also, per the review, 1303.100(A) applies.") == "Also, 1303.100(A) applies."
+    assert rules._owner_text("Ord. 2026-04 adopted 2026-04-02.") == "Ord. 2026-04 adopted 2026-04-02."
+    for place in ("pa_berks_spring", "pa_allegheny_monroeville", "pa_lehigh_allentown"):
+        for d in ("LDS", "R-1", "N3"):
+            out = rules.resolve(place, "today", {"zoning_district": d, "lot_sqft": 30000}, extra=True)
+            text = json.dumps([out["reasons"], out["conditions"], out["alternatives"]])
+            assert not re.search(r"pending a second check|per the review|read by the reviewer|Read 2026-", text), place
+
+
+def test_status_outside_scope_by_district():
+    lot = {"zoning_district": "R1", "building_type": "detached", "lot_sqft": 20000}
+    r1 = rules.resolve("pa_lehigh_upper_macungie", "today", lot, extra=True)
+    assert r1["adu_status"] == "family_only" and r1["scope"]["status_outside"] == "family_only"
+    assert any("In R1 the code's status is family only" in r for r in r1["reasons"])
+    assert [a for a in r1["alternatives"] if a["name"] == "Apartment for care of relative"][0]["applies"] is True
+    rt = rules.resolve("pa_lehigh_upper_macungie", "today", {**lot, "zoning_district": "RT"}, extra=True)
+    assert rt["adu_status"] == "prohibited" and rt["path_to_ask"]["note"].startswith("The code bars ADUs here")
+    assert not any("status_outside" in r for r in rt["reasons"])  # no field names in owner sentences
+
+
+def test_lot_area_per_unit_by_building_type():
+    lot = {"zoning_district": "R4", "lot_sqft": 6500, "house_sqft": 1800}
+    twin = rules.resolve("pa_lehigh_upper_macungie", "today", {**lot, "building_type": "semi_detached"}, extra=True)
+    assert any("12,000 sq ft for the house and the ADU" in r for r in twin["reasons"])
+    per = [c for c in twin["conditions"] if c["kind"] == "lot_area_per_unit"]
+    assert len(per) == 1 and per[0]["condition"].startswith("If the ADU counts as a dwelling unit: 6,000 sq ft")
+    lot_rule = [c for c in twin["conditions"] if c["kind"] == "district_lot_rule"][0]
+    assert "6,000 sq ft" in lot_rule["condition"] and lot_rule["met"] is True
+    single = rules.resolve("pa_lehigh_upper_macungie", "today", {**lot, "building_type": "detached"}, extra=True)
+    assert any("24,000 sq ft for the house and the ADU" in r for r in single["reasons"])
+
+
+def test_share_of_a_named_part_of_the_house():
+    out = rules.resolve(
+        "pa_montgomery_lower_providence",
+        "today",
+        {"zoning_district": "R-3", "building_type": "detached", "lot_sqft": 30000, "house_sqft": 2200},
+        extra=True,
+    )
+    rule = out["size_rule_by_type"]["internal"]
+    assert rule.startswith("At most 800 sq ft and at most 50% of the house's primary living area")
+    assert rule.endswith("so 800 sq ft is only the outer limit")
+    assert out["max_size_sqft"] == 800
+
+
+def test_scope_wherever_the_use_is_permitted():
+    lot = {"zoning_district": "C", "building_type": "detached", "lot_sqft": 20000, "house_sqft": 2400}
+    c = rules.resolve("pa_montgomery_montgomery", "today", lot, extra=True)
+    assert c["allowed"] is True and c["approval_qualifier"] == "conditional_on_reading"
+    assert c["reasons"][0].startswith("By right only if a single-family detached dwelling is a permitted use in C")
+    assert c["scope"]["in_scope"] is None and c["path_to_ask"] is None
+    r1 = rules.resolve("pa_montgomery_montgomery", "today", {**lot, "zoning_district": "R-1"}, extra=True)
+    assert r1["approval_qualifier"] is None and r1["scope"]["in_scope"] is True
+
+
+def test_scope_by_use_district_read_and_not_permitted(tmp_path, monkeypatch):
+    body = _base()
+    body["adu"]["scope_by_use"] = _leaf(
+        {"use": "single-family detached dwelling", "permitted_in": ["R-1"], "not_permitted_in": ["I"]}, "1"
+    )
+    body["adu"]["status_outside"] = _leaf("not_addressed", "2")
+    name = _fixture(tmp_path, monkeypatch, "pa_test_byuse", body)
+    i = rules.resolve(name, "today", {"zoning_district": "I", "building_type": "detached", "lot_sqft": 9000})
+    assert i["allowed"] is False and i["scope"]["in_scope"] is False
+    unknown = rules.resolve(name, "today", {"zoning_district": "B", "building_type": "detached", "lot_sqft": 9000})
+    assert unknown["allowed"] is True and unknown["approval_qualifier"] == "conditional_on_reading"
+
+
+def test_disputed_bar_reads_depends_and_cites_both():
+    lot = {"zoning_district": "R1", "building_type": "detached", "lot_sqft": 45000, "public_water": True}
+    septic = rules.resolve("pa_bucks_warrington", "today", {**lot, "public_sewer": False}, extra=True)
+    assert septic["allowed"] is True and septic["approval_qualifier"] == "conditional_on_reading"
+    first = septic["reasons"][0]
+    assert "370-305H(1)(a)[1]" in first and "370-305H(1)(a)[8]" in first and "Ask the zoning officer" in first
+    assert not any(r.startswith("Not allowed as of right") for r in septic["reasons"])
+    sewer = rules.resolve("pa_bucks_warrington", "today", {**lot, "public_sewer": True}, extra=True)
+    assert sewer["approval_qualifier"] is None
+    unknown = rules.resolve("pa_bucks_warrington", "today", lot, extra=True)
+    assert unknown["approval_qualifier"] == "depends_on_lot_facts" and "[8]" in unknown["reasons"][0]
+    nowater = rules.resolve("pa_bucks_warrington", "today", {**lot, "public_water": False, "public_sewer": True})
+    assert nowater["allowed"] is False  # the water bar is not disputed
+
+
+def test_allentown_lot_record_hold_lifted():
+    assert not rules.LOT_RECORD_TOWNS
+    out = rules.resolve(
+        "pa_lehigh_allentown", "today", {"zoning_district": "N2", "building_type": "detached", "lot_sqft": 4000}
+    )
+    if not out["allowed"]:
+        assert out["parking_spaces"] is None
+
+
+def test_height_by_story_count():
+    out = rules.resolve("pa_montgomery_upper_dublin", "today", {"zoning_district": "A", "lot_sqft": 30000}, extra=True)
+    h = [c["condition"] for c in out["conditions"] if c["kind"] == "height"]
+    assert any(t.startswith("A detached unit of 1 story may be up to 13 ft") for t in h)
+    assert any(t.startswith("A detached unit of 2 stories may be up to 22 ft") for t in h)
+
+
+def test_default_yards_are_not_the_towns_rule():
+    lot = {"zoning_district": "ZZ", "building_type": "detached", "lot_sqft": 20000, "house_sqft": 1600}
+    out = rules.resolve("pa_montgomery_montgomery", "today", lot, extra=True)
+    assert any(r.startswith("Yards: the town file has no yard figures for ZZ") for r in out["reasons"])
+    assert out["setbacks_by_type"]["attached"]["setback_side_ft"] is None and out["setback_side_ft"] is None
+
+
+def test_phoenixville_scope():
+    tc = rules.resolve("pa_chester_phoenixville", "today", {"zoning_district": "TC", "lot_sqft": 9000}, extra=True)
+    assert tc["adu_status"] == "not_addressed" and tc["scope"]["in_scope"] is False
+    ri = rules.resolve("pa_chester_phoenixville", "today", {"zoning_district": "RI", "lot_sqft": 9000}, extra=True)
+    assert ri["adu_status"] == "special_exception"
+
+
+def test_less_demanding_district_path_leads_the_status():
+    lot = {"zoning_district": "R-3", "building_type": "detached", "lot_sqft": 12000, "house_sqft": 1800}
+    out = rules.resolve("pa_cumberland_upper_allen", "today", lot, extra=True)
+    assert out["adu_status"] == "allowed_by_right" and out["approval_path"] == "by_right"
+    assert not any(r.startswith("The code's ADU status is special exception") for r in out["reasons"])
+    assert any(r.startswith("In R-3 the district path is by right") for r in out["reasons"])
+
+
+def test_district_in_doubt_outside_the_scope_reads_ask():
+    lot = {"zoning_district": "MH", "building_type": "detached", "lot_sqft": 12000}
+    out = rules.resolve("pa_montgomery_upper_providence", "today", lot, extra=True)
+    assert out["adu_status"] != "not_addressed" and out["path_to_ask"]["kind"] == "listed_in_doubt"
+    assert not any("not a listed use" in r for r in out["reasons"])
+
+
+def test_inside_only_unit_shows_no_accessory_yards():
+    lot = {"zoning_district": "R-1", "building_type": "detached", "lot_sqft": 30000}
+    out = rules.resolve("pa_montgomery_upper_providence", "today", lot, extra=True)
+    assert not set(out["types_allowed"]) & {"detached_new", "garage_conversion", "over_garage"}
+    assert out["setback_side_ft"] == out["setbacks_by_type"]["attached"]["setback_side_ft"] != 5
+    um = rules.resolve("pa_lehigh_upper_macungie", "today", {"zoning_district": "R4", "lot_sqft": 20000}, extra=True)
+    if um["types_allowed"] == ["internal"]:
+        assert um["setback_side_ft"] is None and um["setback_rear_ft"] is None

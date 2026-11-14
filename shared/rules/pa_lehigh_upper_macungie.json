@@ -76,12 +76,34 @@
       "note": "Districts where the accessory apartment is listed. The apartment for care of relative is listed in all residential districts (see alternatives)."
     },
     "status_outside": {
-      "value": "family_only",
+      "value": "prohibited",
       "section": "27-306, 27-403.4C",
       "url": "https://ecode360.com/print/UP2477?guid=14516362",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "The general accessory apartment is N (not permitted) in RU3, RU1.5, R1, R2, OSP and RT, so a general unit there needs a variance. In RU3, RU1.5, R1, R2 and OSP the 'apartment for care of relative' is a special exception, for a relative who needs care (see alternatives). In RT neither is listed, so there it is prohibited. One value cannot hold both."
+      "note": "In RT neither the accessory apartment nor the apartment for care of relative is listed, so a unit there is prohibited (27-306). In RU3, RU1.5, R1, R2 and OSP the general accessory apartment is N but the 'apartment for care of relative' is a special exception, for a relative who needs care (see the other ways to add a unit)."
+    },
+    "status_outside_by_district": {
+      "value": [
+        {
+          "districts": [
+            "RU3",
+            "RU1.5",
+            "R1",
+            "R2",
+            "OSP"
+          ],
+          "status": "family_only",
+          "section": "27-306, 27-403.4C",
+          "url": "https://ecode360.com/print/UP2477?guid=14516362",
+          "note": "The general accessory apartment is N (not permitted) here, so a general unit needs a variance. The 'apartment for care of relative' is a special exception (SE in all eight residential columns of the 27-306 table), for a close relative who needs care (see alternatives)."
+        }
+      ],
+      "section": "27-306, 27-403.4C",
+      "url": "https://ecode360.com/print/UP2477?guid=14516362",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Review 14: status outside the scope differs by district. RT takes status_outside (prohibited)."
     }
   },
   "approval": {
@@ -285,25 +307,6 @@
           "building_types": null,
           "section": "27-403.4A(8)",
           "url": "https://ecode360.com/print/UP2477?guid=14517058"
-        },
-        {
-          "kind": "lot_area_per_unit",
-          "condition": "For a twin half the lot area per dwelling unit is R3 8,000, R4 6,000, R5 5,000 sq ft, not the single-family figure. If the apartment counts, a twin lot needs twice that.",
-          "effect": "condition",
-          "applies_to": [
-            "internal"
-          ],
-          "districts": [
-            "R3",
-            "R4",
-            "R5",
-            "NC"
-          ],
-          "building_types": [
-            "semi_detached"
-          ],
-          "section": "27-307.2B",
-          "url": "https://ecode360.com/print/UP2477?guid=14516436"
         }
       ],
       "section": "27-403.4A",
@@ -455,6 +458,16 @@
         "confidence": "verified",
         "note": "Single-family detached dwelling with both public sewer and public water. The table states lot area 'per dwelling unit for residential purposes'."
       },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 8000
+        },
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Twin (single-family semidetached) dwelling: 8,000 sq ft lot area per dwelling unit with both public sewer and public water, against 14,000 for a single-family detached dwelling (review 14)."
+      },
       "lot_area_per_unit_sqft": {
         "value": 14000,
         "section": "27-307.2B",
@@ -462,6 +475,16 @@
         "verified_on": "2026-11-14",
         "confidence": "secondary",
         "note": "The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
+      },
+      "lot_area_per_unit_by_type": {
+        "value": {
+          "semi_detached": 8000
+        },
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Twin dwelling: 8,000 sq ft per dwelling unit. The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
       },
       "setback_front_ft": {
         "value": 25,
@@ -566,6 +589,16 @@
         "confidence": "verified",
         "note": "Single-family detached dwelling with both public sewer and public water. The table states lot area 'per dwelling unit for residential purposes'."
       },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 6000
+        },
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Twin (single-family semidetached) dwelling: 6,000 sq ft lot area per dwelling unit with both public sewer and public water, against 12,000 for a single-family detached dwelling (review 14)."
+      },
       "lot_area_per_unit_sqft": {
         "value": 12000,
         "section": "27-307.2B",
@@ -573,6 +606,16 @@
         "verified_on": "2026-11-14",
         "confidence": "secondary",
         "note": "The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
+      },
+      "lot_area_per_unit_by_type": {
+        "value": {
+          "semi_detached": 6000
+        },
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Twin dwelling: 6,000 sq ft per dwelling unit. The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
       },
       "setback_front_ft": {
         "value": 25,
@@ -677,6 +720,16 @@
         "confidence": "verified",
         "note": "Single-family detached dwelling with both public sewer and public water. The table states lot area 'per dwelling unit for residential purposes'."
       },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 5000
+        },
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Twin (single-family semidetached) dwelling: 5,000 sq ft lot area per dwelling unit with both public sewer and public water, against 8,000 for a single-family detached dwelling (review 14)."
+      },
       "lot_area_per_unit_sqft": {
         "value": 8000,
         "section": "27-307.2B",
@@ -684,6 +737,16 @@
         "verified_on": "2026-11-14",
         "confidence": "secondary",
         "note": "The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
+      },
+      "lot_area_per_unit_by_type": {
+        "value": {
+          "semi_detached": 5000
+        },
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Twin dwelling: 5,000 sq ft per dwelling unit. The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
       },
       "setback_front_ft": {
         "value": 25,
@@ -788,6 +851,16 @@
         "confidence": "verified",
         "note": "27-307.2C note 1: in NC residential uses follow the R4 rules. R4 single-family detached with both public services."
       },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 6000
+        },
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Twin (single-family semidetached) dwelling: 6,000 sq ft lot area per dwelling unit with both public sewer and public water, against 12,000 for a single-family detached dwelling (review 14). 27-307.2C note 1: in NC residential uses follow the R4 rules."
+      },
       "lot_area_per_unit_sqft": {
         "value": 12000,
         "section": "27-307.2B",
@@ -795,6 +868,16 @@
         "verified_on": "2026-11-14",
         "confidence": "secondary",
         "note": "The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
+      },
+      "lot_area_per_unit_by_type": {
+        "value": {
+          "semi_detached": 6000
+        },
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Twin dwelling: 6,000 sq ft per dwelling unit. The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer. 27-307.2C note 1: in NC residential uses follow the R4 rules."
       },
       "setback_front_ft": {
         "value": 25,

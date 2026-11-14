@@ -147,11 +147,28 @@ export function findTown(towns: TownEntry[], place: string, county?: string | nu
   return (exact.length ? exact : hits).sort((x, y) => y.population - x.population);
 }
 
+/** Author bookkeeping in a note (dates added, second checks, who read it): never part of an owner sentence
+ * (pipeline/rules.py BOOKKEEPING and _owner_text, pass 8). */
+const BOOKKEEPING: [RegExp, string][] = [
+  [/\s*\bAdded (?:on )?\d{4}-\d{2}-\d{2}[^.]*\./g, ''],
+  [/\s*[^.]*\bpending a second (?:check|reading)[^.]*\./g, ''],
+  [/\s*\b(?:Read|Checked) (?:on )?\d{4}-\d{2}-\d{2}\./g, ''],
+  [/\s*\bEarlier reading [^.]*\./g, ''],
+  [/,? per the review(?=[,.])/g, ''],
+  [/ read by the reviewer\b/g, ''],
+];
+export function ownerText<T>(text: T): T {
+  if (typeof text !== 'string') return text;
+  let out: string = text;
+  for (const [re, rep] of BOOKKEEPING) out = out.replace(re, rep);
+  return (out === text ? text : out.trim()) as T;
+}
+
 /** One rule value, trimmed to what an answer needs. */
 function ruleOut(key: string, r: Json | undefined) {
   if (!isObj(r) || !('section' in r || 'value' in r)) return { key, value: r ?? null };
   const out: Obj = { key, value: r.value ?? null, section: r.section ?? null, url: r.url ?? null, checked_on: r.verified_on ?? null, confidence: r.confidence ?? null };
-  if (r.note) out.note = r.note;
+  if (r.note) out.note = ownerText(r.note);
   if (r.mode) out.mode = r.mode;
   if (r.assumption) out.assumption = true;
   return out;
@@ -195,7 +212,7 @@ const leafAt = (file: Obj, part: string, key: string): Obj | null => {
   return isObj(block) && isObj(block[key]) ? block[key] : null;
 };
 const cite = (leaf: Obj | null): Obj => (leaf ? { section: leaf.section ?? null, url: leaf.url ?? null, checked_on: leaf.verified_on ?? null, confidence: leaf.confidence ?? null } : {});
-const cond = (kind: string, condition: string, leaf: Obj | null, extra: Obj = {}): Obj => ({ kind, condition, ...cite(leaf), ...extra });
+const cond = (kind: string, condition: string, leaf: Obj | null, extra: Obj = {}): Obj => ({ kind, condition: ownerText(condition), ...cite(leaf), ...extra });
 const NOT_OK = new Set(['variance', 'not_allowed']);
 /** ADU forms and approval paths, least to most demanding (pipeline/rules.py ALL_TYPES, PATH_ORDER, OK_PATHS). */
 export const ADU_FORMS = ['detached_new', 'garage_conversion', 'over_garage', 'internal', 'attached'] as const;
@@ -341,7 +358,31 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
   for (const [code, row] of Object.entries(districts)) {
     if (!isObj(row) || (rowKey && code !== rowKey)) continue;
     const p = isObj(row.lot_area_per_unit_sqft) ? row.lot_area_per_unit_sqft : null;
-    if (p && typeof p.value === 'number') out.push(cond('lot_area_per_unit', perText(p, code), p, { district: code, effect: p.confidence === 'verified' ? 'bars' : 'condition' }));
+    // Pass 8: figures by building type (districts.<code>.lot_area_per_unit_by_type, min_lot_sqft_by_type).
+    const typeFigs = (k: string, unit: string): string => {
+      const l = isObj(row[k]) ? (row[k] as Obj) : null;
+      return l && isObj(l.value) ? Object.entries(l.value).filter(([, v]) => typeof v === 'number').map(([t, v]) => `. For a ${label(t)} house: ${num(v)} ${unit}`).join('') : '';
+    };
+    if (p && typeof p.value === 'number') out.push(cond('lot_area_per_unit', perText(p, code) + typeFigs('lot_area_per_unit_by_type', 'sq ft per dwelling unit'), p, { district: code, effect: p.confidence === 'verified' ? 'bars' : 'condition' }));
+    const cases = isObj(row.stricter_by_house_type) ? (row.stricter_by_house_type as Obj) : null;
+    if (cases && Array.isArray(cases.value)) {
+      // Pass 8: a figure stricter for a house type the tool cannot tell apart (pipeline/rules.py _house_type_cases).
+      const covBy = isObj(row.max_building_coverage_by_type) && isObj((row.max_building_coverage_by_type as Obj).value) ? ((row.max_building_coverage_by_type as Obj).value as Obj) : {};
+      const tail = 'The tool cannot tell these house types apart, so check which one the house is';
+      for (const c of cases.value.filter(isObj)) {
+        const sec = c.section ?? cases.section ?? '';
+        const who = `a ${String(c.label)} (${label(c.building_type)})`;
+        const shown = typeof covBy[String(c.building_type)] === 'number' ? (covBy[String(c.building_type)] as number) : isObj(row.max_building_coverage) && typeof row.max_building_coverage.value === 'number' ? row.max_building_coverage.value : null;
+        if (typeof c.max_building_coverage === 'number')
+          out.push(cond('house_type', `${code}: building coverage ${shown !== null ? `at most ${Math.round(shown * 100)}%, and ` : ''}${Math.round(c.max_building_coverage * 100)}% for ${who} (${sec}). ${tail}`, cases, { district: code }));
+        const yardsC = ['accessory_setback_side_ft', 'accessory_setback_rear_ft'].filter((k) => typeof c[k] === 'number');
+        if (yardsC.length) {
+          const accSide = isObj(row.accessory_setback_side_ft) && typeof row.accessory_setback_side_ft.value === 'number' ? row.accessory_setback_side_ft.value : null;
+          const figs = [...new Set(yardsC.map((k) => c[k] as number))].sort((a, b) => a - b).join('/');
+          out.push(cond('house_type', `${code}: outbuilding ${yardsC.map((k) => k.split('_').slice(-2)[0]).join(' and ')} yards ${accSide !== null ? `at least ${num(accSide)} ft, and` : ''} ${figs} ft for ${who} (${sec}). ${tail}`.replace(/\s+/g, ' '), cases, { district: code }));
+        }
+      }
+    }
     const m = isObj(row.min_lot_sqft) ? row.min_lot_sqft : null;
     if (rowKey && m && typeof m.value === 'number') {
       const conf = leafAt(file, 'eligibility', 'requires_conforming_lot');
@@ -353,7 +394,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
           ? cond('lot_size', `${code}: the ADU needs a lot that meets the district minimum of ${num(m.value)} sq ft (${conf.section ?? ''})`, m, { district: code, effect: 'bars' })
           : // A bare district minimum is a rule for creating lots, not an ADU rule: the bill does not touch it
             // (pipeline/rules.py kind district_lot_rule, not in BILL_OVERRIDES).
-            cond('district_lot_rule', `${code}: the district's minimum lot is ${num(m.value)} sq ft, a rule for creating lots, not an ADU rule. A smaller existing lot may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it`, m, { district: code }),
+            cond('district_lot_rule', `${code}: the district's minimum lot is ${num(m.value)} sq ft${typeFigs('min_lot_sqft_by_type', 'sq ft')}, a rule for creating lots, not an ADU rule. A smaller existing lot may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it`, m, { district: code }),
       );
     }
     // District figures that change with public sewer and water (pipeline/rules.py _utility_conditions, pass 7).
@@ -364,7 +405,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
           .filter((f) => typeof it[f] === 'number')
           .map((f) => `${f.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')} ${f === 'max_building_coverage' ? `${Math.round((it[f] as number) * 100)}%` : num(it[f])}`)
           .join(', ');
-        out.push({ kind: 'utilities', condition: `${code}: ${it.when}: ${figs}${it.note ? `. ${it.note}` : ''}. The district figures are for a lot with public sewer and water`, section: it.section ?? null, url: it.url ?? ur.url ?? null, checked_on: ur.verified_on ?? null, confidence: ur.confidence ?? null, district: code, test: 'public_sewer_water' });
+        out.push({ kind: 'utilities', condition: ownerText(`${code}: ${it.when}: ${figs}${it.note ? `. ${it.note}` : ''}. The district figures are for a lot with public sewer and water`), section: it.section ?? null, url: it.url ?? ur.url ?? null, checked_on: ur.verified_on ?? null, confidence: ur.confidence ?? null, district: code, test: 'public_sewer_water' });
       }
   }
   const gates = leafAt(file, 'eligibility', 'gates');
@@ -383,7 +424,11 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
       scope.warning = 'A bar with no lot test and no scope is shown as a condition';
     }
     if (g.bill_overrides === true) scope.bill_overrides = true;
-    out.push({ kind: g.kind ?? 'other', condition: `${g.condition ?? ''}${ifText}`, section: g.section ?? null, url: g.url ?? gates!.url ?? null, checked_on: gates!.verified_on ?? null, confidence: gates!.confidence ?? null, ...scope });
+    // Pass 8: a bar another passage may undo (pipeline/rules.py disputed_by). Depends, never a plain no; cites both.
+    const dispute = isObj(g.disputed_by) ? g.disputed_by : null;
+    if (dispute) scope.disputed_by = dispute;
+    const disputeText = dispute ? ` But ${dispute.section ?? ''}: ${String(dispute.note ?? '').replace(/\.$/, '')}. The code does not settle which reading holds. Ask the zoning officer.` : '';
+    out.push({ kind: g.kind ?? 'other', condition: ownerText(`${g.condition ?? ''}${ifText}${disputeText}`), section: g.section ?? null, url: g.url ?? gates!.url ?? null, checked_on: gates!.verified_on ?? null, confidence: gates!.confidence ?? null, ...scope });
   }
   // Pass 6 fields (pipeline/rules.py _town_conditions): height by position, parking per resident, front-yard bar.
   const noAduHere = !!st && NO_ADU.has(String(st.value)) && !hasDistrictPath(file, district);
@@ -392,12 +437,21 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
   if (!noAduHere)
     for (const it of Array.isArray(where?.value) ? where!.value : [])
       if (isObj(it))
-        out.push({ kind: 'height', condition: `A detached unit ${it.where} may be up to ${num(it.max_height_ft)} ft${typeof baseH?.value === 'number' ? `. Otherwise ${num(baseH.value)} ft` : ''}${it.note ? `. ${it.note}` : ''}`, section: it.section ?? null, url: it.url ?? where!.url ?? null, checked_on: where!.verified_on ?? null, confidence: where!.confidence ?? null, applies_to: ['detached_new', 'garage_conversion', 'over_garage'] });
+        out.push({ kind: 'height', condition: ownerText(`A detached unit ${it.where} may be up to ${num(it.max_height_ft)} ft${typeof baseH?.value === 'number' ? `. Otherwise ${num(baseH.value)} ft` : ''}${it.note ? `. ${it.note}` : ''}`), section: it.section ?? null, url: it.url ?? where!.url ?? null, checked_on: where!.verified_on ?? null, confidence: where!.confidence ?? null, applies_to: ['detached_new', 'garage_conversion', 'over_garage'] });
+  // Pass 8: height by story count (pipeline/rules.py envelope.max_height_by_stories).
+  const bySt = leafAt(file, 'envelope', 'max_height_by_stories');
+  if (!noAduHere)
+    for (const it of Array.isArray(bySt?.value) ? bySt!.value.filter(isObj) : [])
+      out.push({ kind: 'height', condition: ownerText(`A detached unit of ${num(it.stories)} stor${it.stories === 1 ? 'y' : 'ies'} may be up to ${num(it.max_height_ft)} ft${it.note ? `. ${it.note}` : ''}`), section: it.section ?? bySt!.section ?? null, url: bySt!.url ?? null, checked_on: bySt!.verified_on ?? null, confidence: bySt!.confidence ?? null, applies_to: ['detached_new', 'garage_conversion', 'over_garage'] });
   const perRes = leafAt(file, 'parking', 'spaces_per_resident');
   if (perRes && typeof perRes.value === 'number' && !noAduHere)
     out.push(cond('parking', `${perRes.value} off-street space per resident of the unit. The count depends on how many people live there${perRes.note ? `. ${perRes.note}` : ''}`, perRes, { bill_overrides: true }));
   const bar = leafAt(file, 'envelope', 'front_yard_barred');
-  if (bar && bar.value === true)
+  // Pass 8: rear yard only rules out the side yards too (pipeline/rules.py accessory_rear_yard_only).
+  const rearOnly = leafAt(file, 'envelope', 'accessory_rear_yard_only');
+  if (rearOnly && rearOnly.value === true)
+    out.push(cond('front_yard', `An accessory building may stand only in the rear yard: not in the front yard and not in a side yard. It is a bar, not a setback number${rearOnly.note ? `. ${rearOnly.note}` : ''}`, rearOnly, { applies_to: ['detached_new', 'garage_conversion', 'over_garage'] }));
+  else if (bar && bar.value === true)
     out.push(cond('front_yard', `An accessory building may not stand in the front yard, between the house and the street. It is a bar, not a setback number${bar.note ? `. ${bar.note}` : ''}`, bar, { applies_to: ['detached_new', 'garage_conversion', 'over_garage'] }));
   const si = leafAt(file, 'size', 'max_share_internal');
   if (si && typeof si.value === 'number') out.push(cond('size', `A unit inside or attached to the house: at most ${Math.round(si.value * 100)}% of the house`, si));
@@ -465,7 +519,13 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const accessory = !list || list.some((x) => x === 'detached_new' || x === 'garage_conversion' || x === 'over_garage');
   const labels = leafAt(file, 'form', 'labels');
   const bar = leafAt(file, 'envelope', 'front_yard_barred');
-  const frontBar = bar && bar.value === true ? { ...ruleOut('envelope.front_yard_barred', bar), note: `Not in the front yard: a bar, not a setback number${bar.note ? `. ${bar.note}` : ''}` } : null;
+  const rearOnly = leafAt(file, 'envelope', 'accessory_rear_yard_only');
+  const frontBar =
+    rearOnly && rearOnly.value === true
+      ? { ...ruleOut('envelope.accessory_rear_yard_only', rearOnly), note: ownerText(`Rear yard only: not in the front yard and not in a side yard. A bar, not a setback number${rearOnly.note ? `. ${rearOnly.note}` : ''}`) }
+      : bar && bar.value === true
+        ? { ...ruleOut('envelope.front_yard_barred', bar), note: ownerText(`Not in the front yard: a bar, not a setback number${bar.note ? `. ${bar.note}` : ''}`) }
+        : null;
   // General accessory structure caps beside the ADU's own (pipeline/rules.py _acc_cap).
   const accSqft = leafAt(file, 'envelope', 'accessory_structure_max_sqft');
   const accShare = leafAt(file, 'envelope', 'accessory_structure_max_share');
@@ -481,7 +541,23 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
             ? { binds_adu: binds.value === true ? 'yes: the unit must meet these caps too' : binds.value === false ? 'no: the ADU text replaces them' : 'not settled: ask the zoning officer', binds_section: binds.section ?? null }
             : {}),
         }
-      : null;
+      : // Pass 8: a height cap stored without a floor area cap is shown too (pipeline/rules.py _height_cap_reasons).
+        accH && typeof accH.value === 'number' && !noAdu
+        ? {
+            max_height_ft: ruleOut('envelope.accessory_structure_max_height_ft', accH),
+            ...(binds
+              ? {
+                  binds_adu:
+                    binds.value === true
+                      ? 'yes: the unit must meet this cap too'
+                      : binds.value === false
+                        ? 'no: the ADU text sets the height of a unit in an accessory building instead'
+                        : `not settled: whether this ${num(accH.value)} ft cap also binds an outbuilding with an ADU. Both it and the ADU's own outbuilding rule are shown; the lower one is the safe reading. Ask the zoning officer`,
+                  binds_section: binds.section ?? null,
+                }
+              : {}),
+          }
+        : null;
   // The form's own cap, else the general one (pipeline/rules.py _town_sizes).
   // Pass 7: a district cap (adu_max_sqft) replaces size.max_sqft, and a district may lift the town caps.
   const rowCap = fromRow('adu_max_sqft');
@@ -490,8 +566,19 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const firstNum = (...keys: string[]) => keys.map(sizeLeaf).find((l) => l && typeof l.value === 'number') ?? null;
   const greater = leafAt(file, 'size', 'cap_is_greater_of')?.value === true;
   const rule = (k1: string, k2: string, s1: string, s2: string) => lesserOf(firstNum(k1, k2), firstNum(s1, s2), greater);
-  const ruleIn = rule('max_sqft_internal', 'max_sqft', 'max_share_internal', 'max_share_of_house');
-  const ruleAcc = rule('max_sqft_accessory_building', 'max_sqft', 'max_share_accessory_building', 'max_share_of_house');
+  // Pass 8: a share of a named part of the house (size.max_share_of_part) the tool cannot measure (pipeline/rules.py _town_sizes).
+  const partLeaf = leafAt(file, 'size', 'max_share_of_part');
+  const part = partLeaf && isObj(partLeaf.value) && typeof partLeaf.value.share === 'number' ? (partLeaf.value as Obj) : null;
+  const withPart = (text: string | null, sqft: Obj | null): string | null => {
+    if (!part || lifted) return text;
+    const p = `at most ${Math.round((part.share as number) * 100)}% of the house's ${String(part.part)}`;
+    if (text) return `${text}. Also ${p}, which may be less`;
+    if (sqft && typeof sqft.value === 'number') return `At most ${num(sqft.value)} sq ft and ${p}, whichever is less. The tool cannot measure that part of the house, so ${num(sqft.value)} sq ft is only the outer limit`;
+    return `At most ${p}. The tool cannot measure that part of the house, so no number is given`;
+  };
+  const ruleIn = withPart(rule('max_sqft_internal', 'max_sqft', 'max_share_internal', 'max_share_of_house'), firstNum('max_sqft_internal', 'max_sqft'));
+  const ruleAcc = withPart(rule('max_sqft_accessory_building', 'max_sqft', 'max_share_accessory_building', 'max_share_of_house'), firstNum('max_sqft_accessory_building', 'max_sqft'));
+  const partOut: Obj = part && !lifted ? { max_share_of_part: ruleOut('size.max_share_of_part', partLeaf!) } : {};
   const liftNote: Obj | null = lifted ? { value: null, ...cite(lifted), note: `No ADU size maximum in ${rowKey}${lifted.note ? `. ${lifted.note}` : ''}` } : null;
   const sizePick = (...keys: string[]) => liftNote ?? (keys.includes('max_sqft') && rowCap ? (pick('size', ...keys.slice(0, keys.indexOf('max_sqft'))) ?? rowCap) : pick('size', ...keys));
   const byForm = leafAt(file, 'size', 'max_sqft_by_form');
@@ -509,6 +596,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
       max_sqft: sizePick('max_sqft_internal', 'max_sqft'),
       max_share_of_house: liftNote ?? pick('size', 'max_share_internal', 'max_share_of_house'),
       ...(ruleIn && !lifted ? { size_rule: ruleIn } : {}),
+      ...partOut,
       ...formCaps,
       max_height_ft: internalFlag && internalFlag.value === false ? accHeight : districtHeight,
       ...(attCap && attCap.value === true ? { attached_not_taller_than_house: ruleOut('envelope.attached_height_capped_at_house', attCap) } : {}),
@@ -518,6 +606,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
       max_sqft: sizePick('max_sqft_accessory_building', 'max_sqft'),
       max_share_of_house: liftNote ?? pick('size', 'max_share_accessory_building', 'max_share_of_house'),
       ...(ruleAcc && !lifted ? { size_rule: ruleAcc } : {}),
+      ...partOut,
       ...formCaps,
       ...(general ? { general_accessory_caps: general } : {}),
       max_height_ft: detachedHeight,
@@ -605,28 +694,55 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   // A town with no ADU rule has no district list, so only a real district path counts there (pass 7). Otherwise a
   // "not listed" fallback would hide the unlisted-use path the resolver gives.
   const noRuleFile = !!st && NO_ADU.has(String(st.value)) && !hasDistrictPath(file, district);
-  const dpath = isObj(approval.district_path) && !noRuleFile ? approval.district_path.path : undefined;
   // An ADU rule that reaches only some districts or an overlay.
   const scopeLeaf = leafAt(file, 'adu', 'scope_districts');
-  const scopeList = Array.isArray(scopeLeaf?.value) ? (scopeLeaf!.value as string[]) : null;
+  // Pass 8: the rule reaches wherever a use is permitted (adu.scope_by_use); a district whose use list is not on file
+  // reads "only if", never a plain yes or no (pipeline/rules.py _scope).
+  const useLeaf = leafAt(file, 'adu', 'scope_by_use');
+  const useVal = useLeaf && isObj(useLeaf.value) ? (useLeaf.value as Obj) : null;
+  const scopeList = Array.isArray(scopeLeaf?.value) ? (scopeLeaf!.value as string[]) : useVal && Array.isArray(useVal.permitted_in) ? (useVal.permitted_in as string[]) : null;
   const outsideLeaf = leafAt(file, 'adu', 'status_outside');
-  const outside = (outsideLeaf?.value as string | undefined) ?? 'not_addressed';
-  const inScope = scopeList && district ? scopeList.some((d) => dkey(d) === dkey(district)) : null;
+  const listedIn = (list: unknown, d: string) => Array.isArray(list) && list.some((x) => typeof x === 'string' && dkey(x) === dkey(d));
+  let inScope: boolean | null = scopeList && district ? scopeList.some((d) => dkey(d) === dkey(district)) : null;
+  const useOpen = !!useVal && inScope === false && !!district && !listedIn(useVal.not_permitted_in, district);
+  if (useOpen) inScope = null;
+  // Pass 8: a district in doubt outside the scope reads "in doubt, ask", never "not addressed" (pipeline/rules.py _scope).
+  const doubtLeaf = leafAt(file, 'eligibility', 'districts_in_doubt');
+  const doubtOut = inScope === false && !!district && listedIn(doubtLeaf?.value, district);
+  if (doubtOut) inScope = null;
+  // Pass 8: the status outside the scope when it differs by district (adu.status_outside_by_district).
+  const byOut = leafAt(file, 'adu', 'status_outside_by_district');
+  const outHit = inScope === false && district && Array.isArray(byOut?.value) ? byOut!.value.filter(isObj).find((it) => listedIn(it.districts, district)) : undefined;
+  const outside = (outHit?.status as string | undefined) ?? (outsideLeaf?.value as string | undefined) ?? 'not_addressed';
+  if (useOpen && isObj(approval.district_path) && approval.district_path.note === 'District not listed for ADUs')
+    approval.district_path = { district, path: path?.value ?? null, section: useLeaf!.section ?? null, url: useLeaf!.url ?? null, note: `Only if a ${String(useVal!.use)} is a permitted use in ${district}` };
+  const dpath = isObj(approval.district_path) && !noRuleFile ? approval.district_path.path : undefined;
   // Pass 7: approval.unlisted_use_districts limits the unlisted-use path to some districts.
   const unDist = leafAt(file, 'approval', 'unlisted_use_districts');
   const unHere = !(unDist && Array.isArray(unDist.value)) || (!!district && unDist.value.some((d) => typeof d === 'string' && dkey(d) === dkey(district)));
   const unlisted = unHere ? leafAt(file, 'approval', 'unlisted_use_path') : null;
   let status = st?.value as string | undefined;
   let effective = (dpath ?? path?.value) as string | undefined;
+  // Pass 8: a district path less demanding than the town status leads (pipeline/rules.py adu_status).
+  const dpLess = typeof dpath === 'string' && typeof status === 'string' && status in BOARDS && OK_PATHS.has(dpath) && PATH_ORDER.indexOf(dpath) < PATH_ORDER.indexOf(status);
+  const townStatus = status;
+  if (dpLess) status = dpath === 'by_right' ? 'allowed_by_right' : (dpath as string);
   if (inScope === false) {
     status = outside;
     effective = (unlisted?.value ?? fallback?.value ?? 'variance') as string;
-    approval.district_path = { district, path: effective, section: unlisted?.section ?? fallback?.section ?? scopeLeaf?.section ?? null, note: `Outside ${scopeList!.join(', ')} the code has no ADU rule` };
+    approval.district_path = {
+      district,
+      path: effective,
+      section: unlisted?.section ?? fallback?.section ?? scopeLeaf?.section ?? null,
+      note: outHit ? `Outside ${scopeList!.join(', ')}. In ${district} the code's status is ${label(outside)} (${outHit.section ?? byOut!.section ?? ''})` : `Outside ${scopeList!.join(', ')} the code has no ADU rule`,
+    };
   } else if (status && NO_ADU.has(status) && !dpath && unlisted?.value) effective = unlisted.value as string;
   const head = status === 'allowed_by_right' && effective && effective !== 'by_right' ? null : LIMITED[status ?? ''] ?? (status ? label(status) : null);
   const parts = [head, effective ? `path: ${label(effective)}${district ? ` in ${district}` : ''}` : null];
   const askLeaf = unlisted?.value ? unlisted : null;
-  if (scopeList && inScope === null)
+  if (useOpen)
+    parts.unshift(`The ADU rule reaches every district where a ${String(useVal!.use)} is a permitted use (${useLeaf!.section ?? ''}). Read so far: ${scopeList!.join(', ')}. Whether ${district} permits it is not on file`);
+  else if (scopeList && inScope === null)
     parts.unshift(`ADU rule only in ${scopeList.join(', ')}, otherwise ${label(outside)}${askLeaf ? `. Outside: a use not listed may be authorized by ${label(askLeaf.value)} (${askLeaf.section ?? ''})` : ''}`);
   if (isObj(approval.district_path) && approval.district_path.listed_in_doubt) parts.splice(1, 1, String(approval.district_path.note));
   if (conditions.length) parts.push(`${conditions.length} condition${conditions.length > 1 ? 's' : ''} below`);
@@ -636,8 +752,15 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   const dKey = district ? districtIn(Object.keys(dRows), district) : undefined;
   const rowPer = dKey && isObj(dRows[dKey]) && isObj((dRows[dKey] as Obj).lot_area_per_unit_sqft) ? ((dRows[dKey] as Obj).lot_area_per_unit_sqft as Obj) : null;
   const per = rowPer ?? leafAt(file, 'eligibility', 'lot_area_per_unit_sqft');
-  if (per && typeof per.value === 'number' && per.confidence !== 'verified' && effective && !NOT_OK.has(effective) && inScope !== false) {
-    const text = `${label(effective)} only if the ADU does not count toward lot area per unit (${per.section ?? ''}). If it counts, a lot under ${num(2 * per.value)} sq ft needs relief`;
+  const perBy = dKey && isObj(dRows[dKey]) && isObj((dRows[dKey] as Obj).lot_area_per_unit_by_type) ? ((dRows[dKey] as Obj).lot_area_per_unit_by_type as Obj) : null;
+  const perByText = perBy && isObj(perBy.value) ? Object.entries(perBy.value).filter(([, v]) => typeof v === 'number').map(([t, v]) => ` (a ${label(t)} house: under ${num(2 * (v as number))} sq ft)`).join('') : '';
+  if (useOpen && effective && !NOT_OK.has(effective)) {
+    const text = `${label(effective)} only if a ${String(useVal!.use)} is a permitted use in ${district} (${useLeaf!.section ?? ''}). This district's use list is not on file. Ask the zoning officer`;
+    approval.qualifier = 'conditional_on_reading';
+    approval.qualifier_text = text.charAt(0).toUpperCase() + text.slice(1);
+    parts.splice(1, 1, approval.qualifier_text as string);
+  } else if (per && typeof per.value === 'number' && per.confidence !== 'verified' && effective && !NOT_OK.has(effective) && inScope !== false) {
+    const text = `${label(effective)} only if the ADU does not count toward lot area per unit (${per.section ?? ''}). If it counts, a lot under ${num(2 * per.value)} sq ft${perByText} needs relief`;
     approval.qualifier = 'conditional_on_reading';
     approval.qualifier_text = text.charAt(0).toUpperCase() + text.slice(1);
     parts.splice(1, 1, approval.qualifier_text as string);
@@ -675,6 +798,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
       term: term ? ruleOut('adu.term', term) : null,
       ...(byForm && isObj(byForm.value) ? { status_by_form: ruleOut('adu.status_by_form', byForm) } : {}),
       // Pass 7: a district whose path is a hearing never reads "allowed by right" (pipeline/rules.py adu_status).
+      ...(dpLess ? { status_in_district: { value: status ?? null, district, town_status: townStatus ?? null, section: isObj(approval.district_path) ? approval.district_path.section ?? null : null } } : {}),
       ...(status === 'allowed_by_right' && typeof dpath === 'string' && dpath in BOARDS ? { status_in_district: { value: dpath, district, section: isObj(approval.district_path) ? approval.district_path.section ?? null : null } } : {}),
     },
     approval: { ...approval, by_form_today: byType },
@@ -683,7 +807,9 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     forms: formsOf(file, district, noAdu || inScope === false),
   };
   if (scopeList) out.scope = { districts: scopeList, in_scope: inScope, status_outside: outside, section: scopeLeaf?.section ?? null };
-  if (inScope === false) out.lot_status = { value: outside, note: `This district is outside ${scopeList!.join(', ')}. The town's ADU numbers do not apply here` };
+  if (inScope === false)
+    out.lot_status = { value: outside, note: `This district is outside ${scopeList!.join(', ')}. The town's ADU numbers do not apply here${outHit ? `. In ${district} the code's status is ${label(outside)} (${outHit.section ?? byOut!.section ?? ''})` : ''}` };
+  if (useOpen) out.lot_status = { value: null, note: `Only if a ${String(useVal!.use)} is a permitted use in ${district} (${useLeaf!.section ?? ''}). This district's use list is not on file. Ask the zoning officer` };
   const overridden = (out.conditions as Obj[]).filter((c) => c.bill_would_override);
   const kept = billKeeps(file, district);
   const inDoubtHere = isObj(approval.district_path) && approval.district_path.listed_in_doubt === true;
@@ -752,7 +878,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     out.path_to_ask = { path: main, section: sec.includes(mpc) ? sec : sec ? `${sec}, ${mpc}` : mpc, kind: 'hearing', note: notes.join('. ') };
   }
   if ((status && NO_ADU.has(status) && !dpath) || (effective && NOT_OK.has(effective))) {
-    const reasons = [st?.note, path?.note, fallback?.note].filter((x): x is string => typeof x === 'string' && !!x);
+    const reasons = [st?.note, path?.note, fallback?.note].filter((x): x is string => typeof x === 'string' && !!x).map(ownerText);
     const fb = (unlisted?.value ? unlisted : null) ?? fallback ?? path;
     out.not_allowed = {
       reasons: reasons.length ? reasons : [`${name}'s code gives no path for an ADU here`],

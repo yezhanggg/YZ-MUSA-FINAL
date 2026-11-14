@@ -201,6 +201,18 @@ How the resolver reads a file now (pass 7):
 - A file whose ADU rule reaches only some districts should set `adu.scope_districts`, so `adu_status` does not show the town status on lots outside them.
 - `python -m pipeline.rules validate` warns when a not-addressed file sets `unlisted_use_path` while an alternative names a two-family dwelling and the path's note says nothing about it, and when an alternative with `districts` null names an overlay but has no `overlays`.
 
+## More fields (pass 8)
+
+- `adu.status_outside_by_district`: the status outside `scope_districts` when it differs by district. A list of `{districts, status, section, url, note}`. A listed district takes its item's status. Any other district outside the scope takes `status_outside`. Example: Upper Macungie, `family_only` (care-of-relative unit by special exception) in RU3, RU1.5, R1, R2 and OSP, `prohibited` in RT.
+- `adu.scope_by_use`: the rule reaches every district where a principal use is permitted, not a named list. `{use, permitted_in, not_permitted_in}`. `permitted_in` lists the districts whose use lists you read and that permit the use. `not_permitted_in` lists the ones you read that do not (they take `status_outside`). Any other district reads "allowed only if the use is permitted there, ask the zoning officer", never a plain yes or no. Example: Montgomery Township 230-149C.
+- `districts.<code>.lot_area_per_unit_by_type` and `districts.<code>.min_lot_sqft_by_type`: figures by building type, for example `{"semi_detached": 6000}` for a twin. The lot's house type picks the figure. Otherwise the row's figure applies. Only for the row with public sewer and water (`utility_rows` still wins without them).
+- `size.max_share_of_part`: a size cap that is a share of a named part of the house, `{share, part}` (Lower Providence: 50% of the primary living area). The tool cannot measure the part, so the size sentence says the sq ft cap is only the outer limit. Do not store it in `max_share_of_house`.
+- A gate's `disputed_by`: `{section, url, note}` for another passage that may undo the bar (Warrington: [1] needs public sewer, [8] names an on-lot septic system). Keep `effect: bars`. A lot that fails the test reads "depends, ask the zoning officer" and cites both. A lot with the fact unknown says it depends on the fact and on the reading.
+- `districts.<code>.stricter_by_house_type`: figures for house types the tool cannot tell apart (Allentown House A, B, C are all detached). A list of `{label, building_type, max_building_coverage, setback_side_ft, setback_rear_ft, accessory_setback_side_ft, accessory_setback_rear_ft, section, note}` with only the figures that are stricter than the row's. The row keeps the least strict figure, and the answer says "at most" (coverage) or "at least" (yards) and names each stricter case.
+- `envelope.accessory_rear_yard_only`: true when an accessory building may stand only in the rear yard (not a side yard either). Shown in place of the front-yard bar.
+- An accessory structure height cap (`envelope.accessory_structure_max_height_ft`) is now said even with no floor area cap, where a detached unit is allowed. With `accessory_cap_binds_adu` null the answer gives both the cap and the ADU's own outbuilding rule and says which is not settled.
+- Notes are owner text. The resolver drops author bookkeeping from every owner sentence ("Added 2026-11-13, pending a second check.", "Read 2026-11-13.", "per the review", "read by the reviewer", "Earlier reading ..."). Keep such remarks in `provenance.notes`, not in a leaf note.
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

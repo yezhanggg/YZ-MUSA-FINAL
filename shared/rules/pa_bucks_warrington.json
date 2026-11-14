@@ -189,8 +189,8 @@
         },
         {
           "kind": "utilities",
-          "condition": "The house must be served by public sewer (370-305H(1)(a)[1]). But [8] asks for a county permit showing the property 'can be adequately served by public sewer and water or by an adequate on-lot septic system'. The code does not settle whether a septic lot qualifies. Ask the zoning officer.",
-          "effect": "condition",
+          "condition": "The house must be served by public sewer: 'The dwelling shall be owner-occupied and serviced by public water and sewer.'",
+          "effect": "bars",
           "applies_to": null,
           "districts": [
             "RA",
@@ -203,8 +203,13 @@
           ],
           "building_types": null,
           "test": "public_sewer",
-          "section": "370-305H(1)(a)[1], [8]",
-          "url": "https://ecode360.com/print/WA0807?guid=41359671"
+          "section": "370-305H(1)(a)[1]",
+          "url": "https://ecode360.com/print/WA0807?guid=41359671",
+          "disputed_by": {
+            "section": "370-305H(1)(a)[8]",
+            "url": "https://ecode360.com/print/WA0807?guid=41359671",
+            "note": "the Health Department permit 'shall indicate that the property with a multigenerational apartment can be adequately served by public sewer and water or by an adequate on-lot septic system', so the drafters contemplated a septic lot"
+          }
         },
         {
           "kind": "utilities",

@@ -333,6 +333,27 @@
       "confidence": "secondary",
       "note": "Open point. 255-27E(1)(e) (2014): 13 ft for a one-story building, 22 ft for a two-story building, to the peak. The district tables (2008) cap 'Accessory building' at 20 ft. 255-29A defers to a specific rule. 22 ft is the likely reading for two stories, 13 ft binds one story. 20 ft is stored as the safe figure."
     },
+    "max_height_by_stories": {
+      "value": [
+        {
+          "stories": 1,
+          "max_height_ft": 13,
+          "section": "255-27E(1)(e)",
+          "note": "To the peak."
+        },
+        {
+          "stories": 2,
+          "max_height_ft": 22,
+          "section": "255-27E(1)(e)",
+          "note": "To the peak. The district tables cap an accessory building at 20 ft, the figure the tool uses. Ask the zoning officer which governs."
+        }
+      ],
+      "section": "255-27E(1)(e)",
+      "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25576",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "255-27E(1)(e) (2014): 13 ft for a one-story building, 22 ft for a two-story building, to the peak."
+    },
     "max_height_stories": {
       "value": 2,
       "section": "255-27E(1)(e)",
