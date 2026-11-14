@@ -90,43 +90,39 @@
     "alternatives": {
       "value": [
         {
-          "name": "Two-family detached dwelling, with public sewer and water",
+          "name": "Two-family detached dwelling",
           "path": "by_right",
           "districts": [
             "SR3",
             "UR"
           ],
-          "conditions": "A building for two families, 'one family living wholly or partly over the other'. With public or community sewer and water: 12,000 sq ft per dwelling unit, so 24,000 for two, width 40 ft per unit, side yards 15 ft (30 total). 3 parking spaces per unit. Without public sewer and water the lot must be two acres (see the next item).",
+          "conditions": "A building for two families, 'one family living wholly or partly over the other'. With public or community sewer and water: 12,000 sq ft per dwelling unit, so 24,000 for two, width 40 ft per unit, side yards 15 ft (30 total). 3 parking spaces per unit. With on-site sewage disposal or on-site water supply: one acre per dwelling unit, so two acres (87,120 sq ft) for two. Side yards 30 ft (60 total).",
           "min_lot_sqft": 24000,
+          "min_lot_by_utility": [
+            {
+              "when": "With public or community sewer and water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 24000,
+              "section": "390-17B(4), 390-18B(4), 390-6 dwelling F, district area tables"
+            },
+            {
+              "when": "With on-site sewage disposal",
+              "public_sewer": false,
+              "min_lot_sqft": 87120,
+              "section": "390-17B(4), 390-18B(4), district area tables"
+            },
+            {
+              "when": "With an on-site water supply",
+              "public_water": false,
+              "min_lot_sqft": 87120,
+              "section": "390-17B(4), 390-18B(4), district area tables"
+            }
+          ],
           "section": "390-17B(4), 390-18B(4), 390-6 dwelling F, district area tables",
           "url": "https://ecode360.com/print/EX2329?guid=8337755",
           "confidence": "secondary",
-          "requires": [
-            {
-              "test": "public_sewer",
-              "condition": "Public or community sewage disposal",
-              "section": "390-17 table, 390-18E"
-            },
-            {
-              "test": "public_water",
-              "condition": "Public or community water supply",
-              "section": "390-17 table, 390-18E"
-            }
-          ],
           "note": "Read as a conversion path for an existing house. The definition is a stacked two-unit building."
-        },
-        {
-          "name": "Two-family detached dwelling, on-site sewage or water",
-          "path": "by_right",
-          "districts": [
-            "SR3",
-            "UR"
-          ],
-          "conditions": "With on-site sewage disposal or on-site water supply: one acre per dwelling unit, so two acres (87,120 sq ft) for two. Side yards 30 ft (60 total).",
-          "min_lot_sqft": 87120,
-          "section": "390-17B(4), 390-18B(4), district area tables",
-          "url": "https://ecode360.com/print/EX2329?guid=8337755",
-          "confidence": "secondary"
         },
         {
           "name": "Second farm dwelling",

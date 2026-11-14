@@ -244,47 +244,9 @@
           "districts": null,
           "building_types": null,
           "section": "116-272E(1), 116-11 (tract area)",
-          "url": "https://ecode360.com/print/WH0819?guid=11710782"
-        },
-        {
-          "kind": "other",
-          "condition": "A second ADU is allowed on a lot of 10 acres or more in an Option One subdivision, at most 750 sq ft of gross floor area (1,800 sq ft on lots over 15 acres). One ADU on a smaller lot.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": null,
-          "building_types": null,
-          "section": "116-272E(2), (3)",
-          "url": "https://ecode360.com/print/WH0819?guid=11710782"
-        },
-        {
-          "kind": "size",
-          "condition": "An existing historic accessory building more than 75 years old may be used as an ADU even if it is over the floor area limits, and need not meet the setbacks. The 25 ft ADU height limit does not apply to historic buildings.",
-          "effect": "condition",
-          "applies_to": [
-            "garage_conversion"
-          ],
-          "districts": null,
-          "building_types": null,
-          "section": "116-272E(3), (5)",
-          "url": "https://ecode360.com/print/WH0819?guid=11710782"
-        },
-        {
-          "kind": "utilities",
-          "condition": "On a lot in AAA, AA, A or B served by neither an approved sanitary sewage system nor an approved public water supply, any accessory building must be at least 30 ft from the nearest property line or street, at most 20 ft high and one story.",
-          "effect": "condition",
-          "applies_to": [
-            "detached_new"
-          ],
-          "districts": [
-            "AAA",
-            "AA",
-            "A",
-            "B"
-          ],
-          "building_types": null,
-          "test": "public_sewer",
-          "section": "116-23A(3), (5)",
-          "url": "https://ecode360.com/11709088"
+          "url": "https://ecode360.com/print/WH0819?guid=11710782",
+          "test": "tract_sqft_at_least",
+          "value": 653400
         },
         {
           "kind": "occupancy",
@@ -392,13 +354,34 @@
     "max_sqft_by_form": {
       "value": {
         "internal": 900,
-        "detached_new": 900
+        "detached_new": 900,
+        "garage_conversion": 900
       },
       "section": "116-272E(3)",
       "url": "https://ecode360.com/print/WH0819?guid=11710782",
       "verified_on": "2026-11-14",
       "confidence": "verified",
       "note": "First ADU 900 sq ft gross floor area. A unit in an existing historic structure takes 900 sq ft too, unless it is a historic accessory building over 75 years old, which may exceed it. A second ADU 750 sq ft (1,800 on lots over 15 acres)."
+    },
+    "exempt_building": {
+      "value": {
+        "forms": [
+          "garage_conversion"
+        ],
+        "caps": [
+          "size",
+          "height",
+          "setbacks"
+        ],
+        "older_than_years": 75,
+        "historic": null,
+        "what": "an existing historic accessory building more than 75 years old"
+      },
+      "section": "116-272E(3), (5)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "An existing historic accessory building more than 75 years old may be used as an ADU even if it is over the floor area limits, and need not meet the setbacks. The 25 ft ADU height limit does not apply to historic buildings."
     }
   },
   "envelope": {
@@ -425,13 +408,6 @@
           "section": "116-46A(8)(b), 116-268C, 116-33.2",
           "url": "https://ecode360.com/print/WH0819?guid=11709359",
           "note": "Conflicting text, ask. The AAA Option One standards set 20 ft for an accessory building, the ADU rule 25 ft. 116-268C says the more restrictive applies (20 ft). 116-33.2 says overlay requirements take precedence over the underlying district (25 ft)."
-        },
-        {
-          "max_height_ft": 20,
-          "where": "in a new structure on a lot with neither public sewer nor public water",
-          "section": "116-23A(5)",
-          "url": "https://ecode360.com/11709088",
-          "note": "'Any accessory building shall have a maximum height of 20 feet and shall not exceed one story.' Residential districts other than AAAA."
         }
       ],
       "section": "116-272E(5), 116-46A(8)(b), 116-268C, 116-33.2, 116-23A(5)",
@@ -469,6 +445,14 @@
       "verified_on": "2026-11-14",
       "confidence": "verified",
       "note": "'No point on a completely detached accessory building ... shall be any closer than 15 feet to any point on the nearest principal building.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "116-24E(3)(a)",
+      "url": "https://ecode360.com/print/WH0819?guid=11709107",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Detached accessory buildings: not in the front yard or forward of the front of the house (116-24D(3), E(3))."
     }
   },
   "use": {
@@ -495,6 +479,29 @@
       "verified_on": "2026-11-14",
       "confidence": "verified",
       "note": "One ADU on a lot under 10 acres in an Option One subdivision, two on a lot of 10 acres or more."
+    },
+    "max_adus_by_lot_size": {
+      "value": [
+        {
+          "lot_sqft_at_least": 0,
+          "max_adus": 1
+        },
+        {
+          "lot_sqft_at_least": 435600,
+          "max_adus": 2,
+          "extra_unit_max_sqft": 750
+        },
+        {
+          "lot_sqft_over": 653400,
+          "max_adus": 2,
+          "extra_unit_max_sqft": 1800
+        }
+      ],
+      "section": "116-272E(2), (3)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "In an Option One subdivision."
     }
   },
   "parking": {
@@ -629,8 +636,13 @@
             "setback_rear_ft": 60,
             "principal_max_height_ft": 35,
             "max_building_coverage": 0.15,
-            "section": "116-23A",
-            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street."
+            "section": "116-23A, A(3), A(5)",
+            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street. On a lot in AAA, AA, A or B served by neither an approved sanitary sewage system nor an approved public water supply, any accessory building must be at least 30 ft from the nearest property line or street, at most 20 ft high and one story.",
+            "accessory_setback_front_ft": 30,
+            "accessory_setback_side_ft": 30,
+            "accessory_setback_rear_ft": 30,
+            "accessory_max_height_ft": 20,
+            "accessory_max_stories": 1
           },
           {
             "when": "With public sewer but no public water",
@@ -711,8 +723,13 @@
             "setback_rear_ft": 60,
             "principal_max_height_ft": 35,
             "max_building_coverage": 0.15,
-            "section": "116-23A",
-            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street."
+            "section": "116-23A, A(3), A(5)",
+            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street. On a lot in AAA, AA, A or B served by neither an approved sanitary sewage system nor an approved public water supply, any accessory building must be at least 30 ft from the nearest property line or street, at most 20 ft high and one story.",
+            "accessory_setback_front_ft": 30,
+            "accessory_setback_side_ft": 30,
+            "accessory_setback_rear_ft": 30,
+            "accessory_max_height_ft": 20,
+            "accessory_max_stories": 1
           },
           {
             "when": "With public sewer but no public water",
@@ -793,8 +810,13 @@
             "setback_rear_ft": 60,
             "principal_max_height_ft": 35,
             "max_building_coverage": 0.15,
-            "section": "116-23A",
-            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street."
+            "section": "116-23A, A(3), A(5)",
+            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street. On a lot in AAA, AA, A or B served by neither an approved sanitary sewage system nor an approved public water supply, any accessory building must be at least 30 ft from the nearest property line or street, at most 20 ft high and one story.",
+            "accessory_setback_front_ft": 30,
+            "accessory_setback_side_ft": 30,
+            "accessory_setback_rear_ft": 30,
+            "accessory_max_height_ft": 20,
+            "accessory_max_stories": 1
           },
           {
             "when": "With public sewer but no public water",
@@ -876,8 +898,13 @@
             "setback_rear_ft": 60,
             "principal_max_height_ft": 35,
             "max_building_coverage": 0.15,
-            "section": "116-23A",
-            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street."
+            "section": "116-23A, A(3), A(5)",
+            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street. On a lot in AAA, AA, A or B served by neither an approved sanitary sewage system nor an approved public water supply, any accessory building must be at least 30 ft from the nearest property line or street, at most 20 ft high and one story.",
+            "accessory_setback_front_ft": 30,
+            "accessory_setback_side_ft": 30,
+            "accessory_setback_rear_ft": 30,
+            "accessory_max_height_ft": 20,
+            "accessory_max_stories": 1
           },
           {
             "when": "With public sewer but no public water",

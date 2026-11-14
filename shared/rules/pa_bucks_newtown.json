@@ -983,6 +983,14 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "600B",
+        "url": "https://ecode360.com/print/NE3758?guid=31186748",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Side yards 30 ft together' (both sides). No single side figure."
+      },
       "setback_rear_ft": {
         "value": 50,
         "section": "600B",
@@ -1079,6 +1087,14 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
+      "setback_sides_total_ft": {
+        "value": 10,
+        "section": "604B.1",
+        "url": "https://ecode360.com/print/NE3758?guid=31186748",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Side yards 10 ft together' (both sides). No single side figure."
+      },
       "setback_rear_ft": {
         "value": 20,
         "section": "604B.1",
@@ -1116,6 +1132,14 @@
         "url": "https://ecode360.com/print/NE3758?guid=31186748",
         "verified_on": "2026-11-14",
         "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 15,
+        "section": "601B.1",
+        "url": "https://ecode360.com/print/NE3758?guid=31186748",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Side yards 15 ft together' (both sides). No single side figure."
       },
       "setback_rear_ft": {
         "value": 50,
@@ -1169,6 +1193,14 @@
         "url": "https://ecode360.com/print/NE3758?guid=31187070",
         "verified_on": "2026-11-14",
         "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "701B",
+        "url": "https://ecode360.com/print/NE3758?guid=31187070",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Side yards 30 ft together' (both sides). No single side figure."
       },
       "setback_rear_ft": {
         "value": 20,

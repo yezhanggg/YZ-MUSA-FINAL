@@ -1907,3 +1907,255 @@ def test_inside_only_unit_shows_no_accessory_yards():
     um = rules.resolve("pa_lehigh_upper_macungie", "today", {"zoning_district": "R4", "lot_sqft": 20000}, extra=True)
     if um["types_allowed"] == ["internal"]:
         assert um["setback_side_ft"] is None and um["setback_rear_ft"] is None
+
+
+# ------------------------------------------------------------------ pass 9: untrue sentences and shapes with no field
+
+
+def test_front_yard_bar_never_blanks_the_house_yard():
+    # A not-addressed town with a front-yard bar: no ADU allowed, so the top-level yards are the district's own
+    lot = {"zoning_district": "R-1", "building_type": "detached", "lot_sqft": 20000}
+    out = rules.resolve("pa_westmoreland_murrysville", "today", lot, extra=True)
+    assert not out["allowed"] and out["setback_front_ft"] == 50
+    assert "front_yard_barred" not in out["citations"]["setback_front_ft"].get("source", "")
+    # where a detached unit is allowed the bar still holds for it
+    wm = {
+        "zoning_district": "AAA",
+        "building_type": "detached",
+        "lot_sqft": 700000,
+        "designated_on_plan": True,
+        "public_sewer": True,
+        "public_water": True,
+    }
+    out = rules.resolve("pa_montgomery_whitemarsh", "today", wm, extra=True)
+    assert out["allowed"] and out["setback_front_ft"] is None
+    assert out["setbacks_by_type"]["detached_new"]["setback_front_ft"] is None
+
+
+def test_no_accessory_yards_where_no_form_is_allowed():
+    lot = {"zoning_district": "B", "building_type": "detached", "lot_sqft": 9000}
+    out = rules.resolve("pa_montgomery_springfield", "today", lot, extra=True)
+    assert not out["allowed"]
+    assert (out["setback_front_ft"], out["setback_side_ft"], out["setback_rear_ft"]) == (30, 10, 25)
+    assert out["setback_rear_alley_ft"] is None
+
+
+def test_district_read_versus_not_read(tmp_path, monkeypatch):
+    lot = {"zoning_district": "VC", "building_type": "detached", "lot_sqft": 20000}
+    out = rules.resolve("pa_montgomery_limerick", "today", lot, extra=True)
+    assert any("VC's use list was read and does not name" in r for r in out["reasons"])
+    assert not any("use list is not on file" in r for r in out["reasons"])
+    body = {
+        "adu": {"status": _leaf("allowed_by_right", "1")},
+        "approval": {"path": _leaf("by_right", "1")},
+        "eligibility": {"districts_read_no_listing": _leaf(["R-9"], "9-1")},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_read", body)
+    read = rules.resolve(name, "today", {"zoning_district": "R-9", "building_type": "detached", "lot_sqft": 9000})
+    unread = rules.resolve(name, "today", {"zoning_district": "Q-1", "building_type": "detached", "lot_sqft": 9000})
+    assert any("R-9 was read: its use list has no ADU" in r for r in read["reasons"])
+    assert any("Q-1 is not in the town file: its rules were not read" in r for r in unread["reasons"])
+    st = rules.resolve(name, "state_reform", {"zoning_district": "Q-1", "building_type": "detached", "lot_sqft": 9000})
+    default = [k for k in ("setback_side_ft", "setback_rear_ft") if k in st["assumed"]]
+    assert not default or any(r.startswith("Yards: the town file has no yard figures") for r in st["reasons"])
+
+
+def test_historic_only_path_leads_the_status():
+    lot = {
+        "zoning_district": "B",
+        "building_type": "detached",
+        "lot_sqft": 9000,
+        "historic_resource": True,
+        "overlays": ["Historic Resource Overlay"],
+    }
+    out = rules.resolve("pa_montgomery_springfield", "today", lot, extra=True)
+    assert out["allowed"] and out["adu_status"] == "special_exception"
+    assert out["reasons"][0].startswith("The code has no general ADU rule (status not addressed")
+    assert "historic path applies" in out["reasons"][0]
+    assert not any(r.startswith("The code's ADU status is not addressed") for r in out["reasons"])
+
+
+def test_conflicting_text_on_a_form_reads_ask():
+    lot = {"zoning_district": "R-1", "building_type": "detached", "lot_sqft": 12000}
+    out = rules.resolve("pa_cumberland_lower_allen", "today", lot, extra=True)
+    if out["allowed"]:
+        assert out["approval_by_type"]["detached_new"] == "not_addressed"
+        assert any(r.startswith("The code's text conflicts on detached new") for r in out["reasons"])
+
+
+def test_adus_by_lot_size_and_tract_test():
+    base = {"zoning_district": "AAA", "building_type": "detached", "designated_on_plan": True}
+    small = rules.resolve("pa_montgomery_whitemarsh", "today", {**base, "lot_sqft": 100000}, extra=True)
+    big = rules.resolve("pa_montgomery_whitemarsh", "today", {**base, "lot_sqft": 500000}, extra=True)
+    huge = rules.resolve("pa_montgomery_whitemarsh", "today", {**base, "lot_sqft": 700000}, extra=True)
+    open_ = rules.resolve("pa_montgomery_whitemarsh", "today", base, extra=True)
+    assert (small["max_adus"], big["max_adus"], huge["max_adus"]) == (1, 2, 2)
+    assert any("a unit after the first at most 750 sq ft" in r for r in big["reasons"])
+    assert any("a unit after the first at most 1,800 sq ft" in r for r in huge["reasons"])
+    assert any("depends on the lot size, which was not given" in r for r in open_["reasons"])
+    assert open_["max_adus"] == 1
+    tract = next(c for c in small["conditions"] if c.get("test") == "tract_sqft_at_least")
+    assert tract["met"] is None  # a 100,000 sq ft lot says nothing about its tract
+    on_tract = rules.resolve("pa_montgomery_whitemarsh", "today", {**base, "lot_sqft": 100000, "tract_sqft": 700000})
+    assert next(c for c in on_tract["conditions"] if c.get("test") == "tract_sqft_at_least")["met"] is True
+    assert rules._tract_met("tract_sqft_at_least", 653400, {"lot_sqft": 700000}) is True
+    assert rules._tract_met("tract_sqft_below", 653400, {"lot_sqft": 700000}) is False
+
+
+def test_historic_building_exempt_from_caps():
+    base = {"zoning_district": "AAA", "building_type": "detached", "designated_on_plan": True, "lot_sqft": 100000}
+    old = {**base, "has_accessory_building": True, "accessory_building_year_built": 1900}
+    out = rules.resolve("pa_montgomery_whitemarsh", "today", old, extra=True)
+    assert out["max_size_by_type"]["garage_conversion"] is None
+    assert out["max_height_by_type"]["garage_conversion"] is None
+    assert all(v is None for v in out["setbacks_by_type"]["garage_conversion"].values())
+    new = rules.resolve("pa_montgomery_whitemarsh", "today", {**old, "accessory_building_year_built": 2010}, extra=True)
+    assert new["max_size_by_type"]["garage_conversion"] == 900
+    unknown = rules.resolve("pa_montgomery_whitemarsh", "today", {**base, "has_accessory_building": True}, extra=True)
+    assert unknown["max_size_by_type"]["garage_conversion"] == 900
+    assert any("Depends on the year the building was built" in r for r in unknown["reasons"])
+
+
+def test_utility_row_accessory_figures_and_growth_area():
+    lot = {
+        "zoning_district": "AAA",
+        "building_type": "detached",
+        "lot_sqft": 100000,
+        "designated_on_plan": True,
+        "public_sewer": False,
+        "public_water": False,
+    }
+    out = rules.resolve("pa_montgomery_whitemarsh", "today", lot, extra=True)
+    assert out["setbacks_by_type"]["detached_new"]["setback_side_ft"] == 30
+    assert out["max_height_by_type"]["detached_new"] == 20
+    assert out["max_stories_by_type"]["detached_new"] == 1
+    dover = {"zoning_district": "R-1", "building_type": "detached", "lot_sqft": 30000}
+    open_ = rules.resolve("pa_york_dover", "today", dover, extra=True)
+    c = next(c for c in open_["conditions"] if c["kind"] == "utilities")
+    assert c["test"] == "in_growth_area" and c["met"] is None
+    assert any(x["test"] == "in_growth_area" for x in open_["depends_on"])
+    outside = rules.resolve("pa_york_dover", "today", {**dover, "in_growth_area": False}, extra=True)
+    inside = rules.resolve("pa_york_dover", "today", {**dover, "in_growth_area": True}, extra=True)
+    assert not any(c["kind"] == "utilities" for c in inside["conditions"])
+    assert any("65,340 sq ft of lot per dwelling unit" in c["condition"] for c in outside["conditions"])
+
+
+def test_alternative_lot_minimum_by_sewer_and_water():
+    lot = {"zoning_district": "UR", "building_type": "detached", "lot_sqft": 30000}
+    alt = lambda o: next(a for a in o["alternatives"] if a["name"] == "Two-family detached dwelling")  # noqa: E731
+    open_ = alt(rules.resolve("pa_berks_exeter", "today", lot, extra=True))
+    both = alt(
+        rules.resolve("pa_berks_exeter", "today", {**lot, "public_sewer": True, "public_water": True}, extra=True)
+    )
+    none = alt(rules.resolve("pa_berks_exeter", "today", {**lot, "public_sewer": False}, extra=True))
+    assert open_["applies"] is None and "depends on public sewer and water" in open_["note"]
+    assert both["applies"] is True and none["applies"] is False
+
+
+def test_share_of_house_and_unit():
+    lot = {"zoning_district": "R-2", "building_type": "detached", "lot_sqft": 20000, "house_sqft": 2000}
+    out = rules.resolve("pa_chester_west_goshen", "today", lot, extra=True)
+    assert out["max_share_by_type"]["internal"] == 0.35
+    assert out["max_share_by_type"]["attached"] == 0.538
+    assert "35% of the house and the unit together" in out["size_rule_by_type"]["attached"]
+
+
+def test_accessory_rules_where_and_sides_total(tmp_path, monkeypatch):
+    body = _base()
+    body["envelope"] = {
+        "accessory_rules_where": _leaf(
+            [
+                {"where": "in R-1", "districts": ["R-1"], "over_sqft": 500, "setback_side_ft": 20, "section": "9A"},
+                {
+                    "where": "in the required rear yard",
+                    "setback_rear_ft": 6,
+                    "max_share_of_rear_yard": 0.35,
+                    "section": "9B",
+                },
+            ],
+            "9",
+        )
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_accwhere", body)
+    r1 = rules.resolve(name, "today", {"zoning_district": "R-1", "lot_sqft": 9000})
+    r2 = rules.resolve(name, "today", {"zoning_district": "R-2", "lot_sqft": 9000})
+    lines = [c["condition"] for c in r1["conditions"] if c["condition"].startswith("An accessory building")]
+    assert lines == [
+        "An accessory building in R-1 (over 500 sq ft): side 20 ft",
+        "An accessory building in the required rear yard: rear 6 ft, at most 35% of the required rear yard",
+    ]
+    assert sum(c["condition"].startswith("An accessory building") for c in r2["conditions"]) == 1
+    assert r1["setback_side_ft"] == r2["setback_side_ft"]  # the headline yards are not changed
+
+
+def test_side_yards_given_only_as_a_total():
+    nt = rules.resolve("pa_bucks_newtown", "today", {"zoning_district": "VC-1", "lot_sqft": 50000}, extra=True)
+    assert nt["setback_side_ft"] is None
+    assert any(r.startswith("Side yards for VC-1: 30 ft for both sides together") for r in nt["reasons"])
+
+
+def test_overlay_listing_with_disputed_path():
+    lot = {"zoning_district": "R-2", "building_type": "detached", "lot_sqft": 12000}
+    plain = rules.resolve("pa_lancaster_warwick", "today", {**lot, "overlays": []}, extra=True)
+    assert (plain["path_to_ask"] or {}).get("kind") != "listed_in_doubt"
+    assert not any("An ADU under another listing may apply" in r for r in plain["reasons"])
+    open_ = rules.resolve("pa_lancaster_warwick", "today", lot, extra=True)
+    assert any("Only if the lot is in the VO" in r for r in open_["reasons"])
+    vo = rules.resolve("pa_lancaster_warwick", "today", {**lot, "overlays": ["VO"]}, extra=True)
+    a = next(a for a in vo["alternatives"] if a.get("disputed_path"))
+    assert a["applies"] is True and "the code does not settle which" in a["display_path"]
+
+
+def test_short_term_rental_listing_says_so():
+    out = rules.resolve("pa_chester_uwchlan", "today", {"zoning_district": "R-1", "lot_sqft": 20000}, extra=True)
+    g = next(a for a in out["alternatives"] if a["name"].startswith("Guesthouse"))
+    assert "short-term rental only, not a long-term home" in g["note"]
+
+
+def test_unlisted_path_reaches_a_town_with_no_form_listed():
+    d = rules.load_rules("pa_york_west_manchester")
+    lot = {"zoning_district": list(d["districts"])[0], "lot_sqft": 30000, "building_type": "detached"}
+    out = rules.resolve("pa_york_west_manchester", "today", lot, extra=True)
+    assert out["path_to_ask"]["path"] == "special_exception"
+
+
+def test_outside_scope_unlisted_path_only_where_listed(tmp_path, monkeypatch):
+    body = {
+        "adu": {
+            "status": _leaf("allowed_by_right", "1"),
+            "scope_districts": _leaf(["R-1"], "1"),
+            "status_outside": _leaf("not_addressed", "1"),
+        },
+        "approval": {
+            "path": _leaf("by_right", "1"),
+            "fallback_path": _leaf("variance", "1"),
+            "unlisted_use_path": _leaf("special_exception", "1"),
+            "unlisted_use_districts": _leaf(["C-1"], "1"),
+        },
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_outscope", body)
+    c1 = rules.resolve(name, "today", {"zoning_district": "C-1", "lot_sqft": 9000}, extra=True)
+    r2 = rules.resolve(name, "today", {"zoning_district": "R-2", "lot_sqft": 9000}, extra=True)
+    assert c1["path_to_ask"]["path"] == "special_exception"
+    assert r2["path_to_ask"]["path"] == "variance"
+
+
+def test_cli_sets_pass9_facts():
+    a = rules.main  # the flags parse into the lot
+    assert callable(a)
+    import argparse
+
+    ns = argparse.Namespace(
+        **{k: None for k in ("district", "overlays", "council", "ward", "building_type", "lot_sqft", "house_sqft")},
+        **{k: None for k in ("house_height_ft", "historic_individual", "historic_district", "historic_contributing")},
+        **{k: None for k in ("alley", "accessory_building", "house_year_built", "accessory_building_year_built")},
+        **{k: None for k in ("house_exists", "public_sewer", "public_water", "slope_class", "steep_slope_area")},
+        **{k: None for k in ("landslide_area", "undermined_area", "lot_width_ft")},
+        historic_resource="yes",
+        designated_on_plan="no",
+        tract_sqft=700000.0,
+        in_growth_area="yes",
+    )
+    lot = rules._lot_from_args(ns)
+    assert lot["historic_resource"] is True and lot["designated_on_plan"] is False
+    assert lot["tract_sqft"] == 700000.0 and lot["in_growth_area"] is True

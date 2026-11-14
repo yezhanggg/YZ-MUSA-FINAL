@@ -300,7 +300,7 @@
       "confidence": "secondary",
       "note": "Inside the house, or with an addition of at most 10% of the existing floor area."
     },
-    "types_not_addressed": {
+    "types_in_conflict": {
       "value": [
         "detached_new",
         "garage_conversion",

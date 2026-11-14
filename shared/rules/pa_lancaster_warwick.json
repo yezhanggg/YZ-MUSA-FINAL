@@ -149,7 +149,9 @@
         {
           "name": "Accessory building apartment in a Village Overlay development",
           "path": "conditional_use",
-          "districts": null,
+          "districts": [
+            "R-2"
+          ],
           "overlays": [
             "VO",
             "Village Overlay Zone"
@@ -160,7 +162,13 @@
           "url": "https://ecode360.com/print/WA2488?guid=11672529",
           "confidence": "secondary",
           "adu_listing": true,
-          "note": "Conflicting text, ask. 340-23E(9) lists 'Accessory building apartments with no more than one dwelling unit' as a conditional use. Note 4 of the lot table says 'an accessory building apartment is permitted by special exception', and 340-65 says the conversion of an accessory building in the VO Zone is by special exception. The cross-reference to 340-64 now points to conservation cluster developments, so the 340-65 criteria are read as the ones that apply. Only inside an approved Village Overlay development on R-2 land."
+          "note": "Conflicting text, ask. 340-23E(9) lists 'Accessory building apartments with no more than one dwelling unit' as a conditional use. Note 4 of the lot table says 'an accessory building apartment is permitted by special exception', and 340-65 says the conversion of an accessory building in the VO Zone is by special exception. The cross-reference to 340-64 now points to conservation cluster developments, so the 340-65 criteria are read as the ones that apply. Only inside an approved Village Overlay development on R-2 land.",
+          "disputed_path": {
+            "path": "special_exception",
+            "section": "340-23J(1) note 4, 340-65",
+            "url": "https://ecode360.com/print/WA2488?guid=11672529",
+            "note": "Note 4 of the lot table says 'an accessory building apartment is permitted by special exception', and 340-65 says the conversion of an accessory building in the VO Zone is by special exception"
+          }
         },
         {
           "name": "Temporary farm employee housing (one mobile home per farm)",
@@ -217,16 +225,6 @@
       "url": "https://ecode360.com/print/WA2488?guid=11673258",
       "verified_on": "2026-11-14",
       "confidence": "verified"
-    },
-    "districts_in_doubt": {
-      "value": [
-        "R-2"
-      ],
-      "section": "340-23B, E(9), J(1) note 4",
-      "url": "https://ecode360.com/print/WA2488?guid=11672529",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "R-2 land inside an approved Village Overlay (VO) development has an accessory building apartment (one dwelling unit), by conditional use or special exception (conflicting text, ask). On R-2 land outside a VO development the code has no ADU rule. Ask the Zoning Officer whether the lot is in a VO development."
     },
     "building_types": {
       "value": [

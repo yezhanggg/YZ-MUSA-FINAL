@@ -272,31 +272,13 @@
       "confidence": "verified",
       "note": "No square-foot cap. The cap is a share of the floor area. Floor area is the 84-8 definition: it counts basements that are a story, attics with 8 ft headroom, porches more than 50% enclosed and accessory buildings (not parking space). A tax record's living area may be smaller than this."
     },
-    "max_share_internal": {
+    "max_share_of_house_and_unit": {
       "value": 0.35,
       "section": "84-57.25B(5)",
       "url": "https://ecode360.com/print/WE0457?guid=32180863",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "'Shall not exceed 35% of the combined floor area of the principal dwelling plus the in-law suite.' For a suite inside the house the house floor area already includes it. Floor area as defined in 84-8 (basements that are a story, attics with 8 ft headroom, porches over 50% enclosed, accessory buildings)."
-    },
-    "max_share_accessory_building": {
-      "value": 0.538,
-      "section": "84-57.25B(5)",
-      "url": "https://ecode360.com/print/WE0457?guid=32180863",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "For a suite in a separate building, 35% of the house plus the suite equals about 53.8% of the house alone."
-    },
-    "max_share_by_form": {
-      "value": {
-        "attached": 0.538
-      },
-      "section": "84-57.25B(5)",
-      "url": "https://ecode360.com/print/WE0457?guid=32180863",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "For an addition, 35% of the house plus the suite equals about 53.8% of the existing house."
     },
     "min_sqft": {
       "value": null,

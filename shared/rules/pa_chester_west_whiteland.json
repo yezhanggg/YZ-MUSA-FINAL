@@ -223,6 +223,14 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "Only sheds and similar uninhabitable structures in a required yard are capped (12 ft). Outside the required yards the district height applies (35 ft)."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "325-31",
+      "url": "https://ecode360.com/print/WE2141?guid=11703067",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory buildings may stand only in the rear or side yard, at least 10 ft farther back than the rear of the house."
     }
   },
   "use": {

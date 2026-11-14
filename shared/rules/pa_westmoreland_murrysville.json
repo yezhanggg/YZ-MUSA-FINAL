@@ -163,6 +163,79 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "Accessory structures over 500 sq ft in R-1, R-2 and R-3 (30 ft in R-R, 20 ft in MU). The side, rear and height table binds only structures over 500 sq ft. Smaller ones must be 5 ft from the property line. Accessory building rule, not an ADU rule."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "220-15",
+      "url": "https://ecode360.com/print/MU1309?guid=11539521",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'No accessory use or building may stand in the front yard, which includes the area in front of the house' (provenance check, 220-15)."
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "in R-R",
+          "districts": [
+            "R-R"
+          ],
+          "over_sqft": 500,
+          "setback_side_ft": 20,
+          "setback_rear_ft": 20,
+          "max_height_ft": 30,
+          "section": "220-15A",
+          "url": "https://ecode360.com/print/MU1309?guid=11539521"
+        },
+        {
+          "where": "in R-1",
+          "districts": [
+            "R-1"
+          ],
+          "over_sqft": 500,
+          "setback_side_ft": 20,
+          "setback_rear_ft": 15,
+          "max_height_ft": 15,
+          "section": "220-15A",
+          "url": "https://ecode360.com/print/MU1309?guid=11539521"
+        },
+        {
+          "where": "in R-2",
+          "districts": [
+            "R-2"
+          ],
+          "over_sqft": 500,
+          "setback_side_ft": 10,
+          "setback_rear_ft": 10,
+          "max_height_ft": 15,
+          "section": "220-15A",
+          "url": "https://ecode360.com/print/MU1309?guid=11539521"
+        },
+        {
+          "where": "in R-3",
+          "districts": [
+            "R-3"
+          ],
+          "over_sqft": 500,
+          "setback_side_ft": 5,
+          "setback_rear_ft": 10,
+          "max_height_ft": 15,
+          "section": "220-15A",
+          "url": "https://ecode360.com/print/MU1309?guid=11539521"
+        },
+        {
+          "where": "of 500 sq ft or less",
+          "setback_side_ft": 5,
+          "setback_rear_ft": 5,
+          "section": "220-15A",
+          "url": "https://ecode360.com/print/MU1309?guid=11539521",
+          "note": "'Smaller ones 5 ft from the property line.'"
+        }
+      ],
+      "section": "220-15A",
+      "url": "https://ecode360.com/print/MU1309?guid=11539521",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The side, rear and height table binds only accessory structures over 500 sq ft. Accessory building rule, not an ADU rule."
     }
   },
   "use": {

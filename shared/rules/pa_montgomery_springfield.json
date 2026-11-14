@@ -382,6 +382,22 @@
       "url": "https://ecode360.com/print/SP0463?guid=11824724",
       "verified_on": "2026-11-14",
       "confidence": "secondary"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "of masonry, in a side yard or the required rear yard",
+          "setback_side_ft": 4,
+          "setback_rear_ft": 4,
+          "section": "114-131B(2)(c), C(2)(c)",
+          "url": "https://ecode360.com/print/SP0463?guid=11824724",
+          "note": "'No closer than four feet if constructed of masonry.' At least 10 ft farther back than the rear of the house."
+        }
+      ],
+      "section": "114-131B(2)(c), C(2)(c)",
+      "url": "https://ecode360.com/print/SP0463?guid=11824724",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
     }
   },
   "use": {

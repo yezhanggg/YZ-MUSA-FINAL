@@ -244,6 +244,23 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "For a building projecting into the required rear yard: 'No such projection shall be less than six feet from any rear lot line.' Otherwise the district rear yard applies."
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "projecting into the required rear yard",
+          "setback_rear_ft": 6,
+          "max_share_of_rear_yard": 0.35,
+          "min_from_front_line_ft": 60,
+          "section": "300-133E(1)",
+          "url": "https://ecode360.com/print/CH1151?guid=10697139",
+          "note": "A detached one must stand at least 60 ft from the front lot line. Outside the required rear yard the district yards and height apply."
+        }
+      ],
+      "section": "300-133E(1)",
+      "url": "https://ecode360.com/print/CH1151?guid=10697139",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
     }
   },
   "use": {

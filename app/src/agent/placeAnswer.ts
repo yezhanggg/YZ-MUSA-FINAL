@@ -215,6 +215,7 @@ function formVerdict(path: string, status: string | null, section: string | null
   if (status === 'prohibited') return `Not allowed: the code bars this form${section ? ` (${section})` : ''}. Only a use variance (Zoning Hearing Board, hardship test)`;
   if (status === 'not_addressed') return 'Not allowed today: the code has no rule for this form, so it takes a use variance or a code change';
   // Pass 7 (pipeline/rules.py): a form the code does not name, and a form the code bars, by their own path.
+  if (path === 'not_addressed' && status === 'in_conflict') return `Not settled for this form: the code's text conflicts${section ? ` (${section})` : ''}. Neither a yes nor a firm no; ask the zoning officer`;
   if (path === 'not_addressed') return 'Not addressed for this form: the code does not name it. Not a firm no; ask the zoning officer';
   if (path === 'not_allowed') return 'Not allowed: the code bars this form';
   return path === 'by_right' ? 'Allowed by right (zoning permit, no hearing)' : path === 'variance' || path === 'not_allowed' ? 'Not allowed today except by variance' : `Allowed with ${APPROVAL_TEXT[path] ?? path}`;
@@ -244,7 +245,10 @@ async function ruleDetails(r: PlaceRow) {
   const byType = (approval.by_form_today ?? {}) as Record<string, string>;
   const overall = ((out.adu as Obj | undefined)?.status as Obj | undefined)?.value;
   const noRule = overall === 'not_addressed' || overall === 'prohibited' ? (overall as string) : null;
-  const formRows = Object.keys(FORM_TEXT).filter((t) => t in byType).map((t) => ({ form: t, verdict: formVerdict(byType[t], statusByForm[t] ?? noRule, statusByForm[t] ? ((sbf?.section as string) ?? null) : null) }));
+  // Pass 9 (pipeline/rules.py form.types_in_conflict): a form whose text conflicts reads "not settled", not "not named".
+  const conflict = Array.isArray(approval.forms_in_conflict) ? (approval.forms_in_conflict as string[]) : [];
+  const conflictSec = (approval.forms_in_conflict_section as string | undefined) ?? null;
+  const formRows = Object.keys(FORM_TEXT).filter((t) => t in byType).map((t) => ({ form: t, verdict: conflict.includes(t) && byType[t] === 'not_addressed' ? formVerdict('not_addressed', 'in_conflict', conflictSec) : formVerdict(byType[t], statusByForm[t] ?? noRule, statusByForm[t] ? ((sbf?.section as string) ?? null) : null) }));
   const differs = new Set(formRows.map((x) => x.verdict)).size > 1;
   const alts = ((out.other_ways_to_add_a_unit as Obj | undefined)?.options ?? []) as Obj[];
   const accCap = leafOut(acc.max_sqft);
@@ -286,6 +290,12 @@ async function ruleDetails(r: PlaceRow) {
     adu_under_another_listing: alts.filter((a) => a.adu_listing === true).map((a) => ({ name: a.name ?? null, path: a.display_path ?? a.path ?? null, section: a.section ?? null, reads_as: a.reads_as ?? null })),
     code_url: ((out.town as Obj | undefined)?.code_url as string | undefined) ?? null,
     depends_on: dependsOn,
+    forms_in_conflict: conflict,
+    forms_in_conflict_section: conflictSec,
+    // Pass 9: a share of the house and the unit together, ADUs by lot size, a building exempt from caps.
+    share_of_house_and_unit: (forms.share_of_house_and_unit as Obj | undefined) ? { inside: (forms.share_of_house_and_unit as Obj).inside ?? null, added: (forms.share_of_house_and_unit as Obj).added ?? null } : null,
+    adus_by_lot_size: leafOut(forms.adus_by_lot_size),
+    exempt_building: ((forms.exempt_building as Obj | undefined)?.note as string | undefined) ?? null,
   };
 }
 
@@ -302,7 +312,10 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   }
   const formPath = unit && rule ? rule.path_by_form[FORM_OF[unit]] : undefined;
   // A form the code does not name is not a firm no (pass 7): say so, not "does not fit".
-  if (formPath === 'not_addressed') return { fits_zoning: 'not_addressed', why: [`The proposal is ${UNIT_TEXT[unit!]}. ${formVerdict('not_addressed', null, null)}.`] };
+  if (formPath === 'not_addressed') {
+    const inConflict = rule!.forms_in_conflict.includes(FORM_OF[unit!]);
+    return { fits_zoning: 'not_addressed', why: [`The proposal is ${UNIT_TEXT[unit!]}. ${formVerdict('not_addressed', inConflict ? 'in_conflict' : null, inConflict ? rule!.forms_in_conflict_section : null)}.`] };
+  }
   let fits: 'yes' | 'no' = 'yes';
   // Facts the answer hangs on that are not known here: the house size for a share cap, and the bars in depends_on.
   const depends: { fact: string; rule: unknown; section: unknown }[] = [];

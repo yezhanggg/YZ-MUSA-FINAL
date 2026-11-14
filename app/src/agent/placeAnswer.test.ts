@@ -172,6 +172,7 @@ describe('rule text from the resolver', () => {
     town('4204375672', 'Swatara township', 'Dauphin', 'pa_dauphin_swatara', { status: 'by_right' }),
     town('4202984160', 'West Vincent township', 'Chester', 'pa_chester_west_vincent', { status: 'by_right' }),
     town('4209144744', 'Lower Providence township', 'Montgomery', 'pa_montgomery_lower_providence', { status: 'limited' }),
+    town('4204144832', 'Lower Allen township', 'Cumberland', 'pa_cumberland_lower_allen', { status: 'limited' }),
   ];
   const ask7 = (input: Record<string, unknown>) => ask(input, { places: memoryPlaces(P7) });
   const check = (o: Out) => (o.proposal as Out).check as Out;
@@ -210,6 +211,13 @@ describe('rule text from the resolver', () => {
     const wv = check(await ask7({ place: 'West Vincent township', unit_type: 'attached' }));
     expect(wv.fits_zoning).toBe('not_addressed');
     expect(String(wv.why)).toMatch(/Not addressed for this form: the code does not name it\. Not a firm no; ask the zoning officer/);
+  });
+  // Pass 9: a form whose text conflicts reads "not settled", never "the code does not name it".
+  it('Lower Allen: a detached unit with conflicting text is not settled, not unnamed', async () => {
+    const la = check(await ask7({ place: 'Lower Allen township', county: 'Cumberland', unit_type: 'detached' }));
+    expect(la.fits_zoning).toBe('not_addressed');
+    expect(String(la.why)).toMatch(/Not settled for this form: the code's text conflicts \(220-6C, 220-149\)\. Neither a yes nor a firm no; ask the zoning officer/);
+    expect(String(la.why)).not.toMatch(/does not name it/);
   });
   // Pass 8: a share of a named part of the house is never presented as the whole cap.
   it('Lower Providence: 800 sq ft is the outer limit; the primary living area share depends on the house', async () => {

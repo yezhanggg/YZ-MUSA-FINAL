@@ -294,13 +294,13 @@
       "confidence": "verified",
       "note": "No square foot cap. Two rooms plus a bathroom and an efficiency kitchen."
     },
-    "max_share_of_house": {
+    "max_share_of_house_and_unit": {
       "value": 0.35,
       "section": "1264.18(b)(2)",
       "url": "https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "'The gross floor area of the suite shall not exceed thirty-five percent of the combined gross floor area of the main dwelling and the family/caregiver suite.' The base is house plus suite. The tool applies 35% to the house figure, which is right for a suite inside the existing house and low for an addition (about 54% of the house before the addition)."
+      "note": "'The gross floor area of the suite shall not exceed thirty-five percent of the combined gross floor area of the main dwelling and the family/caregiver suite.' The base is house plus suite."
     },
     "min_sqft": {
       "value": null,

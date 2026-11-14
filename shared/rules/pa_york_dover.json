@@ -242,18 +242,6 @@
           "building_types": null,
           "section": "27-602.3",
           "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441"
-        },
-        {
-          "kind": "lot_size",
-          "condition": "Outside the Growth Boundary Area the R-1 minimum lot is one and a half acres (65,340 sq ft) and density one unit per 1.5 acres. Inside it, half an acre and one unit per half acre.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-1"
-          ],
-          "building_types": null,
-          "section": "27-405.3.A, G",
-          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784"
         }
       ],
       "section": "27-602",
@@ -412,6 +400,24 @@
         "verified_on": "2026-11-14",
         "confidence": "secondary",
         "note": "Maximum density one unit per half acre in the Growth Boundary Area (one per 1.5 acres outside). Whether the apartment counts is not settled."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Outside the Growth Boundary Area",
+            "in_growth_area": false,
+            "min_lot_sqft": 65340,
+            "lot_area_per_unit_sqft": 65340,
+            "section": "27-405.3.A, G",
+            "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+            "note": "Outside the Growth Boundary Area the R-1 minimum lot is one and a half acres (65,340 sq ft) and density one unit per 1.5 acres. Inside it, half an acre and one unit per half acre."
+          }
+        ],
+        "section": "27-405.3.A, G",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The row shows the Growth Boundary Area figures (half an acre). Outside it one and a half acres."
       }
     },
     "R-3": {

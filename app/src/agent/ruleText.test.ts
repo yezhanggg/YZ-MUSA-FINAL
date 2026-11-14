@@ -724,3 +724,58 @@ describe('steep slope rules', () => {
     expect(lines[0].line).toBe(phl.site.steep_slopes.value[0].text);
   });
 });
+
+// Pass 9: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 9 section).
+describe('get_rule_text pass 9', () => {
+  it('reads a district whose use list was read and does not name the use as not settled', async () => {
+    const vc = await town6('pa_montgomery_limerick', 'approval', 'VC');
+    expect(vc.lot_status.note).toMatch(/This district's use list was read and does not name it, so it is not settled/);
+    expect(JSON.stringify(vc)).not.toMatch(/use list is not on file/);
+  });
+
+  it('says the historic-only path leads where the code has no general ADU rule', async () => {
+    const sp = await town6('pa_montgomery_springfield', 'approval', 'B');
+    expect(sp.approval.historic_path.lot_status).toMatch(/^The code has no general ADU rule \(status not addressed, .*the historic path applies: special exception/);
+  });
+
+  it('reads a form with conflicting text as ask', async () => {
+    const la = await town6('pa_cumberland_lower_allen', 'approval');
+    expect(la.summary).toMatch(/The code's text conflicts on detached new, garage conversion, over garage/);
+  });
+
+  it('says accessory rules by placement, utility row accessory figures and a growth area row', async () => {
+    const ch = await town6('pa_franklin_chambersburg', 'size', 'R-1');
+    // no ADU rule in Chambersburg: an accessory building row is not an ADU rule, so it is not said as one
+    expect(ch.conditions.some((c: Any6) => /projecting into the required rear yard/.test(c.condition))).toBe(false);
+    const mu = await town6('pa_westmoreland_murrysville', 'size', 'R-1');
+    const acc = mu.conditions.filter((c: Any6) => /^An accessory building in /.test(c.condition));
+    expect(acc.map((c: Any6) => c.districts)).toEqual([]); // no ADU rule: the accessory rows are not ADU rules
+    const wm = await town6('pa_montgomery_whitemarsh', 'size', 'AAA');
+    expect(wm.conditions.some((c: Any6) => /accessory setback side 30.*accessory building height 20, accessory building stories 1/.test(c.condition))).toBe(true);
+    const dv = await town6('pa_york_dover', 'size', 'R-1');
+    const g = dv.conditions.find((c: Any6) => c.test === 'in_growth_area');
+    expect(g.condition).toMatch(/Outside the Growth Boundary Area: min lot 65,340, lot area per unit 65,340.*Depends on whether the lot is inside the mapped growth area$/);
+  });
+
+  it('gives the other listings their disputed path, short-term rental and services lot minimum', async () => {
+    const wk = await town6('pa_lancaster_warwick', 'approval', 'R-2');
+    const vo = wk.other_ways_to_add_a_unit.options.find((o: Any6) => o.disputed_path);
+    expect(vo.display_path).toMatch(/^conditional use \(.*\) or special exception \(340-23J\(1\) note 4, 340-65\): the code does not settle which/);
+    expect(wk.approval.district_path?.listed_in_doubt).toBeFalsy();
+    const uw = await town6('pa_chester_uwchlan', 'approval', 'R-1');
+    expect(uw.other_ways_to_add_a_unit.options.find((o: Any6) => String(o.name).startsWith('Guesthouse')).reads_as).toMatch(/short-term rental only, not a long-term home/);
+    const ex = await town6('pa_berks_exeter', 'approval', 'UR');
+    expect(ex.other_ways_to_add_a_unit.options[0].reads_as).toMatch(/Lot minimum by public sewer and water: With public or community sewer and water: 24,000 sq ft/);
+  });
+
+  it('gives a share of the house and the unit, ADUs by lot size, an exempt building and sides given as a total', async () => {
+    const wg = await town6('pa_chester_west_goshen', 'size', 'R-2');
+    expect(wg.forms.share_of_house_and_unit.inside).toMatch(/^At most 35% of the house \(35% of the house and the unit together/);
+    expect(wg.forms.share_of_house_and_unit.added).toMatch(/^At most 54% of the existing house/);
+    const wm = await town6('pa_montgomery_whitemarsh', 'size', 'AAA');
+    expect(wm.forms.adus_by_lot_size.value).toHaveLength(3);
+    expect(wm.forms.exempt_building.note).toMatch(/^an existing historic accessory building more than 75 years old: no floor area cap, ADU height limit, setbacks/);
+    const nt = await town6('pa_bucks_newtown', 'size', 'VC-1');
+    expect(nt.forms.inside_or_attached.attached_yards?.side?.sides_total_ft ?? nt.forms.inside_or_attached.attached_yards?.side).toBeTruthy();
+  });
+});

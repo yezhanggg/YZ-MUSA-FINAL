@@ -250,7 +250,7 @@
       "confidence": "secondary",
       "note": "Part of the principal residence with a connecting door. 'No new separate structures on the same lot with the principal residence shall be permitted to be constructed for this use.' Use of an existing accessory building is not settled ((g) names one)."
     },
-    "types_not_addressed": {
+    "types_in_conflict": {
       "value": [
         "garage_conversion"
       ],

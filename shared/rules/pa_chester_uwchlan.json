@@ -146,7 +146,8 @@
               "section": "612.7a"
             }
           ],
-          "note": "The code titles it 'Guesthouse, as an accessory dwelling', but a guest house is 'An accessory single-family dwelling on a lot available for short-term rental' (301.4). It is not a home for a household. Board of Supervisors hearing."
+          "note": "The code titles it 'Guesthouse, as an accessory dwelling', but a guest house is 'An accessory single-family dwelling on a lot available for short-term rental' (301.4). It is not a home for a household. Board of Supervisors hearing.",
+          "short_term_rental_only": true
         },
         {
           "name": "Two-family detached or semidetached dwelling in R-2",
