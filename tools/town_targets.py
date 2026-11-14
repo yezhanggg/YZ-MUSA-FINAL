@@ -911,6 +911,48 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": None,
         "note": "Zoning: Chapter 27 Zoning (Ord. No. 2024-01, 5-13-2024). ADU text: 'Accessory apartment' (27-202, 27-602) by right in R-1, R-3, R-4, CV, CRV, A, V, part of the principal structure; 'Accessory family dwelling unit' (27-603) for relatives with a medical hardship, detached portable unit up to 900 sq ft. Read in the browser on American Legal (2026 S-10).",
     },
+    "4202983080": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/10796167",
+        "plain_fetch": False,
+        "current_through": "2026-09-01",
+        "note": "Zoning: Chapter 84 Zoning (adopted 1972, as amended). ADU text: 'In-law suite' (84-8, 84-57.25, Ord. No. 5-2016): accessory use by right in R-2, R-3 and R-4 only, for a relative of the residents, at most two occupants, inside the house or an existing accessory structure, 35% of the house plus suite, recorded no-rent agreement. Read in the browser on eCode360 (WE0457).",
+    },
+    "4205512536": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/10696328",
+        "plain_fetch": False,
+        "current_through": "2026-09-28",
+        "note": "Zoning: Chapter 300 Zoning (Ord. No. 82-7, 1982). No ADU text. Two-family dwellings by right in LDR and MDR (and DCN, DCH, Central Core, Professional Office); conversion apartments by special exception (300-135). Read in the browser on eCode360 (CH1151).",
+    },
+    "4212559608": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/32749579",
+        "plain_fetch": False,
+        "current_through": "2026-01-05",
+        "note": "Zoning: Chapter 440 Zoning (Ord. No. 820, 2017). No ADU text. Duplexes count as single-family attached dwellings (440-301), permitted in MD, VR and mixed-use districts. Ord. No. 925, 928 and 929 (2026, zoning) not yet codified. Read in the browser on eCode360 (PE3557).",
+    },
+    "4204111272": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/10683915",
+        "plain_fetch": False,
+        "current_through": "2026-06-03",
+        "note": "Zoning: Chapter 255 Zoning (Ord. No. 1993, 2003). No ADU text; 'No dwelling units shall be permitted within a detached garage' (255-200D(12)(b)[7]). Two-family detached by right in R-3, R-4 and UM. Read in the browser on eCode360 (CA1126).",
+    },
+    "4209143312": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11206587",
+        "plain_fetch": False,
+        "current_through": "2026-03-03",
+        "note": "Zoning: Chapter 184 Zoning (Ord. No. 146, 1992, readopted 2006). ADU text: 'Temporary unit for relative' (184-10, 184-71B(6)): accessory to a single-family dwelling, inside the house, owner-occupied, immediate family, recorded covenant, annual permit, detached units prohibited. Ord. No. 438 (2026, zoning) not yet codified. Read in the browser on eCode360 (LI1176).",
+    },
+    "4204144832": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11213000",
+        "plain_fetch": False,
+        "current_through": "2025-01-27",
+        "note": "Zoning: Chapter 220 Zoning (Ord. No. 2009-2). ADU text: 'Accessory dwelling' (220-149): permitted use in R-1, R-2 and MUN (and TND and NR overlays), in an owner-occupied single-family detached dwelling, at most 30% of the floor area, at least 360 sq ft, additions limited to 10%. Read in the browser on eCode360 (LO1571).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -918,6 +960,9 @@ HOSTS: dict[str, dict[str, Any]] = {
 # Towns whose batch was set when they were assigned, not by position in the list.
 FIXED_BATCH = {g: 14 for g in ("4207779104", "4207121232", "4209506096", "4201781048", "4209145080", "4209150640")}
 FIXED_BATCH.update({g: 15 for g in ("4201124384", "4204573032", "4209179256", "4204178736", "4213319704")})
+FIXED_BATCH.update(
+    {g: 16 for g in ("4202983080", "4205512536", "4212559608", "4204111272", "4209143312", "4204144832")}
+)
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -944,6 +989,15 @@ EXTRAS = {
     "4209179256": "Code 300-15B(4) temporary unit for relative (in-law suite)",
     "4204178736": "Code 245-14.3 accessory apartment",
     "4213319704": "Code 27-602 accessory apartment and 27-603 accessory family dwelling unit",
+    # Batch 16 (2026-11-14): the next towns by population without a rule file. Marple, Pottstown, Palmer,
+    # Muhlenberg, Manor (Lancaster), Silver Spring, East Pennsboro and South Whitehall were skipped (district
+    # tables only in PDFs, or no code readable as web pages).
+    "4202983080": "Code 84-57.25 in-law suites",
+    "4205512536": "batch 16 by population. Code Chapter 300 has no ADU text",
+    "4212559608": "batch 16 by population. Code Chapter 440 has no ADU text",
+    "4204111272": "batch 16 by population. Code Chapter 255 has no ADU text",
+    "4209143312": "Code 184-71B(6) temporary unit for relative",
+    "4204144832": "Code 220-149 accessory dwellings",
 }
 
 if __name__ == "__main__":

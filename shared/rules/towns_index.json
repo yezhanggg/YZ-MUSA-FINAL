@@ -2186,6 +2186,150 @@
         "known ADU ordinance (Code 27-602 accessory apartment and 27-603 accessory family dwelling unit)"
       ],
       "status_note": "Drafted 2026-11-14, review15 fixes applied: family unit limited to lineal relatives (27-603.6), residential conversion from 27-667, R-1 Growth Boundary condition, 27-502.1.D versus 27-602.2 note, adaptive reuse note. Open: the use table row 'Accessory Dwelling Units' read as the 27-603 family unit; whether density limits count the apartment; whether a lot is inside the Growth Boundary Area; 27-504 floor area and Part 7 parking not read; adaptive reuse districts not matched to columns."
+    },
+    {
+      "geoid": "4202983080",
+      "geoid_aliases": [],
+      "name": "West Goshen township",
+      "county": "Chester",
+      "type": "township",
+      "population": 23040,
+      "population_with_aliases": 23040,
+      "housing_units": 9174,
+      "pop_rank": 75,
+      "file": "pa_chester_west_goshen",
+      "batch": 16,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/10796167",
+      "plain_fetch": false,
+      "code_current_through": "2026-09-01",
+      "code_note": "Zoning: Chapter 84 Zoning (adopted 1972, as amended). ADU text: 'In-law suite' (84-8, 84-57.25, Ord. No. 5-2016): accessory use by right in R-2, R-3 and R-4 only, for a relative of the residents, at most two occupants, inside the house or an existing accessory structure, 35% of the house plus suite, recorded no-rent agreement. Read in the browser on eCode360 (WE0457).",
+      "why": [
+        "known ADU ordinance (Code 84-57.25 in-law suites)"
+      ],
+      "status_note": "Drafted 2026-11-14. Open: the 35% cap is of the house plus the suite, so a suite in a garage or addition is about 54% of the house (read, not stated); whether a new addition is allowed (the code names the house and an existing accessory structure); R-3A overlay lots (use list without in-law suites) read as barred."
+    },
+    {
+      "geoid": "4205512536",
+      "geoid_aliases": [],
+      "name": "Chambersburg borough",
+      "county": "Franklin",
+      "type": "borough",
+      "population": 21903,
+      "population_with_aliases": 21903,
+      "housing_units": 9756,
+      "pop_rank": 81,
+      "file": "pa_franklin_chambersburg",
+      "batch": 16,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/10696328",
+      "plain_fetch": false,
+      "code_current_through": "2026-09-28",
+      "code_note": "Zoning: Chapter 300 Zoning (Ord. No. 82-7, 1982). No ADU text. Two-family dwellings by right in LDR and MDR (and DCN, DCH, Central Core, Professional Office); conversion apartments by special exception (300-135). Read in the browser on eCode360 (CH1151).",
+      "why": [
+        "known ADU ordinance (batch 16 by population. Code Chapter 300 has no ADU text)"
+      ],
+      "status_note": "Drafted 2026-11-14. No ADU text. Open: two-family conversion read as a path for an existing house; HCS and HI use lists not read; whether a second unit could be a use 'of the same general character' (300-14N) is for the Zoning Officer."
+    },
+    {
+      "geoid": "4212559608",
+      "geoid_aliases": [],
+      "name": "Peters township",
+      "county": "Washington",
+      "type": "township",
+      "population": 22946,
+      "population_with_aliases": 22946,
+      "housing_units": 8315,
+      "pop_rank": 76,
+      "file": "pa_washington_peters",
+      "batch": 16,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/32749579",
+      "plain_fetch": false,
+      "code_current_through": "2026-01-05",
+      "code_note": "Zoning: Chapter 440 Zoning (Ord. No. 820, 2017). No ADU text. Duplexes count as single-family attached dwellings (440-301), permitted in MD, VR and mixed-use districts. Ord. No. 925, 928 and 929 (2026, zoning) not yet codified. Read in the browser on eCode360 (PE3557).",
+      "why": [
+        "known ADU ordinance (batch 16 by population. Code Chapter 440 has no ADU text)"
+      ],
+      "status_note": "Drafted 2026-11-14. No ADU text. Open: Ord. No. 925, 928 and 929 (2026 zoning amendments) not read (PDF); duplex conversion read from the definitions (a 2025 Planning Commission record, seen as a snippet, agrees); lot rules of the TC, VC, MA, WV and VB districts not read."
+    },
+    {
+      "geoid": "4204111272",
+      "geoid_aliases": [],
+      "name": "Carlisle borough",
+      "county": "Cumberland",
+      "type": "borough",
+      "population": 20118,
+      "population_with_aliases": 20118,
+      "housing_units": 8821,
+      "pop_rank": 95,
+      "file": "pa_cumberland_carlisle",
+      "batch": 16,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/10683915",
+      "plain_fetch": false,
+      "code_current_through": "2026-06-03",
+      "code_note": "Zoning: Chapter 255 Zoning (Ord. No. 1993, 2003). No ADU text; 'No dwelling units shall be permitted within a detached garage' (255-200D(12)(b)[7]). Two-family detached by right in R-3, R-4 and UM. Read in the browser on eCode360 (CA1126).",
+      "why": [
+        "known ADU ordinance (batch 16 by population. Code Chapter 255 has no ADU text)"
+      ],
+      "status_note": "Drafted 2026-11-14. No ADU text. Open: C-1 to C-4, I-1, I-2, I-C, INS and OS use lists and the UM area rules not read; two-family conversion read as a path for an existing house."
+    },
+    {
+      "geoid": "4209143312",
+      "geoid_aliases": [],
+      "name": "Limerick township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 20458,
+      "population_with_aliases": 20458,
+      "housing_units": 8103,
+      "pop_rank": 93,
+      "file": "pa_montgomery_limerick",
+      "batch": 16,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11206587",
+      "plain_fetch": false,
+      "code_current_through": "2026-03-03",
+      "code_note": "Zoning: Chapter 184 Zoning (Ord. No. 146, 1992, readopted 2006). ADU text: 'Temporary unit for relative' (184-10, 184-71B(6)): accessory to a single-family dwelling, inside the house, owner-occupied, immediate family, recorded covenant, annual permit, detached units prohibited. Ord. No. 438 (2026, zoning) not yet codified. Read in the browser on eCode360 (LI1176).",
+      "why": [
+        "known ADU ordinance (Code 184-71B(6) temporary unit for relative)"
+      ],
+      "status_note": "Drafted 2026-11-14. Open: Ord. No. 438 (2026-07-07 zoning amendment) not read (PDF); R-4 and R-5 lot and yard figures are in PDF attachments; MHP scope from search snippets; parking (184-87) not read."
+    },
+    {
+      "geoid": "4204144832",
+      "geoid_aliases": [],
+      "name": "Lower Allen township",
+      "county": "Cumberland",
+      "type": "township",
+      "population": 20099,
+      "population_with_aliases": 20099,
+      "housing_units": 8479,
+      "pop_rank": 96,
+      "file": "pa_cumberland_lower_allen",
+      "batch": 16,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11213000",
+      "plain_fetch": false,
+      "code_current_through": "2025-01-27",
+      "code_note": "Zoning: Chapter 220 Zoning (Ord. No. 2009-2). ADU text: 'Accessory dwelling' (220-149): permitted use in R-1, R-2 and MUN (and TND and NR overlays), in an owner-occupied single-family detached dwelling, at most 30% of the floor area, at least 360 sq ft, additions limited to 10%. Read in the browser on eCode360 (LO1571).",
+      "why": [
+        "known ADU ordinance (Code 220-149 accessory dwellings)"
+      ],
+      "status_note": "Drafted 2026-11-14. Open: whether the accessory dwelling counts toward the district density (R-1 4 per acre, R-2 1 per acre, MUN 10 per acre); TND and NR overlay caps and 220-239 parking read from search snippets; a unit in a separate building is not named."
     }
   ]
 }

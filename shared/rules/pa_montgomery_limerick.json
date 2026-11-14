@@ -1,0 +1,593 @@
+{
+  "provenance": {
+    "jurisdiction": "Limerick township",
+    "instrument": "Limerick Township Code Chapter 184 Zoning (Ord. No. 146, 9-29-1992, readopted 10-26-2006 by Ord. No. 269, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-03-03 (breadcrumb). New Laws on the chapter page on 2026-11-14: Ord. No. 438, adopted 2026-07-07, 'Zoning Amendment', Ch 184, PDF only, not opened and not yet in the online text. 184-71 was last amended 6-3-2025 by Ord. No. 434.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11206587",
+      "https://ecode360.com/print/LI1176?guid=11207372",
+      "https://ecode360.com/print/LI1176?guid=11206950",
+      "https://ecode360.com/print/LI1176?guid=11207363",
+      "https://ecode360.com/print/LI1176?guid=11207844",
+      "https://ecode360.com/print/LI1176?guid=11207936",
+      "https://ecode360.com/print/LI1176?guid=11207952",
+      "https://ecode360.com/print/LI1176?guid=11207971",
+      "https://ecode360.com/print/LI1176?guid=11208013",
+      "https://ecode360.com/LI1176/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22family%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LI1176/search?query=%22accessory%20dwelling%22%20OR%20relative%20OR%20relatives%20OR%20%22second%20dwelling%22%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LI1176/search?query=%22temporary%20unit%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LI1176/search?query=%22184-71%22%20AND%20%22single-family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LI1176/search?query=%22residential%20conversions%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209143312",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11206587",
+    "code_current_through": "2026-03-03",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-03-03'. Ord. No. 438 (2026-07-07, zoning) is listed under New Laws and not yet codified.",
+    "code_caution": "A zoning amendment, Ord. No. 438, was adopted on 2026-07-07 and is not yet in the online code. It was not read, so it may change these rules. Ask the Township.",
+    "checks": [
+      "A 'temporary unit for relative' is a permitted accessory use to a single-family dwelling wherever the district allows accessory uses under 184-71: R-1, R-2, R-3, R-4, R-5 and individual lots in MHP (184-71B(6), 184-98C, 184-104C, 184-108E, 184-112F, 184-117E, 184-122)",
+      "The unit must be totally enclosed within the house, with an internal connection and access through the main unit. Detached temporary dwellings are prohibited (184-71B(6)(a), (c), (i), (j))",
+      "The house must be owner-occupied, and the unit is only for the owner's immediate family: parents, grandparents, children, grandchildren, sisters, brothers, aunts, uncles, stepparents and stepchildren (184-71B(6)(b), (h))",
+      "The owners record a covenant, approved by the Township Solicitor, that bars use as two or more dwelling units and requires removing one kitchen within six months after family use ends. The permit is renewed every year (184-71B(6)(d), (e))",
+      "With an on-lot septic system, the County Health Department must find it adequate for the added use (184-71B(6)(f))",
+      "An addition for the unit must keep the look of a single-family detached house from the street and neighbors (184-71B(6)(g))",
+      "A single-family detached house may be converted into a dwelling for more families by special exception: each unit at least 500 sq ft, the lot area per unit not below the district requirement, no outside change except for safety (184-70)",
+      "R-4 and R-5 lot and yard figures are in PDF attachments that were not read. Tracts under 10 acres there follow the R-3 rules (184-114A, 184-119A)",
+      "On lots under 3 acres no accessory building in the front yard or between the house and the street (184-71C(1))"
+    ],
+    "notes": "Zoning office: Limerick Township (limerickpa.org). Read on eCode360 (LI1176) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4 and R-5. A code search for '184-71' with 'single-family' also returned the MHP sections (snippets only). The VC, HC, MS, O/LI, LLI, HI, HI/E and RB use lists were not read. The R-4 and R-5 development standards (Attachments 1 and 2) are PDF only and were not opened. Parking (184-87) was not read."
+  },
+  "adu": {
+    "term": {
+      "value": "temporary unit for relative",
+      "section": "184-10, 184-71B(6)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A temporary dwelling unit may be established as accessory to a principal single-family dwelling unit'."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "184-71B(6)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "A permitted accessory use, inside the house, for immediate family of the owner."
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "184-71B(6)(a), (i)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Detached temporary dwellings are specifically prohibited.' The unit is 'totally enclosed within the principal building'."
+    },
+    "scope_by_use": {
+      "value": {
+        "use": "single-family detached dwelling with accessory uses under 184-71",
+        "permitted_in": [
+          "R-1",
+          "R-2",
+          "R-3",
+          "R-4",
+          "R-5",
+          "MHP"
+        ],
+        "not_permitted_in": []
+      },
+      "section": "184-71B(6), 184-98, 184-104, 184-108, 184-112, 184-117, 184-122",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "184-71 names no district. The rule reaches a principal single-family dwelling where the district permits it with accessory uses under 184-71. MHP from search snippets only."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "184-71, 184-71B(6)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The following accessory uses shall be permitted, subject to the additional requirements herein.' A permit renewed every year (184-71B(6)(e))."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "184-44",
+      "url": "https://ecode360.com/11206587",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that does not meet 184-71B(6) needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "Conversion of a single-family detached dwelling into a dwelling for more families. Each unit at least 500 sq ft. The lot area per unit may not drop below the district requirement, and yards and building area may not be reduced. No outside change except for safety. The Zoning Hearing Board sets the number of families.",
+          "min_lot_sqft": null,
+          "min_lot_by_district": {
+            "R-1": 160000,
+            "R-2": 80000,
+            "R-3": 40000
+          },
+          "section": "184-70",
+          "url": "https://ecode360.com/print/LI1176?guid=11207363",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling",
+              "section": "184-70"
+            }
+          ],
+          "note": "Read as twice the district lot area for two units (R-1 80,000, R-2 and R-3 traditional lots with public sewer and water 40,000 and 20,000). Not tied to a district list."
+        }
+      ],
+      "section": "184-70",
+      "url": "https://ecode360.com/print/LI1176?guid=11207363",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "R-5",
+        "MHP"
+      ],
+      "section": "184-98C, 184-104C, 184-108E, 184-112F, 184-117E, 184-122",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "184-71B(6)(g)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory to a principal single-family dwelling unit, which must keep its appearance as a single-family detached dwelling."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "184-71B(6)(a), (g)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Inside the house. An addition is contemplated in (g)."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Occupied by immediate family of the owner: parents, grandparents, children, grandchildren, sisters, brothers, aunts, uncles, stepparents and stepchildren.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "184-71B(6)(e), (h)",
+          "url": "https://ecode360.com/print/LI1176?guid=11207372"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The principal dwelling unit shall be owner-occupied.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "184-71B(6)(b)",
+          "url": "https://ecode360.com/print/LI1176?guid=11207372"
+        },
+        {
+          "kind": "design",
+          "condition": "Totally enclosed within the principal building, with an internal connection such as a stairway or corridor, and access through the principal unit. An addition keeps the look of a single-family detached house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "184-71B(6)(a), (c), (g), (j)",
+          "url": "https://ecode360.com/print/LI1176?guid=11207372"
+        },
+        {
+          "kind": "other",
+          "condition": "Recorded covenant, approved by the Township Solicitor, barring use as two or more dwelling units and requiring removal of one kitchen within six months after family use ends. Permit renewed every year with inspection on request.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "184-71B(6)(d), (e)",
+          "url": "https://ecode360.com/print/LI1176?guid=11207372"
+        },
+        {
+          "kind": "utilities",
+          "condition": "An on-lot septic system must be found adequate by the County Health Department for the expanded use.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "184-71B(6)(f)",
+          "url": "https://ecode360.com/print/LI1176?guid=11207372"
+        }
+      ],
+      "section": "184-71B(6)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "184-71B(6)(a), (g), (i)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Inside the house, or in an addition that becomes part of the house. Detached units are prohibited."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "184-71B(6)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No size cap is set."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "184-71B(6)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "184-71B(6)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No minimum for the unit was seen."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "184-101A, 184-106, 184-110",
+      "url": "https://ecode360.com/print/LI1176?guid=11207844",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "35 ft in R-1, R-2 and R-3."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "184-71B(6)(b)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "family_only": {
+      "value": true,
+      "section": "184-71B(6)(h)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Immediate family of the owner: parents, grandparents, children, grandchildren, sisters, brothers, aunts, uncles, stepparents and stepchildren.",
+      "section": "184-71B(6)(h)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "184-71B(6)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'A temporary dwelling unit'. The covenant bars use as two or more dwelling units."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 184",
+      "url": "https://ecode360.com/11206587",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not searched."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "184-87",
+      "url": "https://ecode360.com/11206587",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not read."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "184-71B(6)(f)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207372",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Septic adequacy only. No rule on a separate connection."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "184-101A",
+        "url": "https://ecode360.com/print/LI1176?guid=11207844",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Traditional lotting. Cluster and lot averaging lots 40,000."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "184-101A",
+        "url": "https://ecode360.com/print/LI1176?guid=11207844",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "184-101A",
+        "url": "https://ecode360.com/print/LI1176?guid=11207844",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "184-101A",
+        "url": "https://ecode360.com/print/LI1176?guid=11207844",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "184-101A",
+        "url": "https://ecode360.com/print/LI1176?guid=11207844",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "184-101A",
+        "url": "https://ecode360.com/print/LI1176?guid=11207844",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage of the individual lot."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "184-106B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207936",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Traditional lotting with public sewer and public water. Lot averaging 15,000 (average 35,000), cluster 25,000."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "184-106B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207936",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "184-106B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207936",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "184-106B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207936",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "184-106B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207936",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "184-106B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207936",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.1,
+            "principal_max_height_ft": 35,
+            "section": "184-106A"
+          },
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 60000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.1,
+            "principal_max_height_ft": 35,
+            "section": "184-106A"
+          },
+          {
+            "when": "On-site water and on-site sewage: R-1 rules",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "setback_front_ft": 75,
+            "setback_side_ft": 50,
+            "setback_rear_ft": 75,
+            "max_building_coverage": 0.1,
+            "principal_max_height_ft": 35,
+            "section": "184-106A, 184-101A"
+          }
+        ],
+        "section": "184-106A",
+        "url": "https://ecode360.com/print/LI1176?guid=11207936",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "184-110B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207952",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Traditional lotting with public sewer and public water. Cluster and lot averaging 15,000."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "184-110B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207952",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "184-110B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207952",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "184-110B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207952",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "184-110B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207952",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "184-110B",
+        "url": "https://ecode360.com/print/LI1176?guid=11207952",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.1,
+            "principal_max_height_ft": 35,
+            "section": "184-110A"
+          },
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.1,
+            "principal_max_height_ft": 35,
+            "section": "184-110A"
+          },
+          {
+            "when": "On-site water and on-site sewage: R-1 rules",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "setback_front_ft": 75,
+            "setback_side_ft": 50,
+            "setback_rear_ft": 75,
+            "max_building_coverage": 0.1,
+            "principal_max_height_ft": 35,
+            "section": "184-110A, 184-101A"
+          }
+        ],
+        "section": "184-110A",
+        "url": "https://ecode360.com/print/LI1176?guid=11207952",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "184-114, 184-115",
+        "url": "https://ecode360.com/print/LI1176?guid=11207971",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The R-4 development standards are in a PDF attachment that was not read. Tracts under 10 acres follow R-3 rules."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "184-119, 184-120",
+        "url": "https://ecode360.com/print/LI1176?guid=11208013",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The R-5 development standards are in a PDF attachment that was not read. Tracts under 10 acres follow R-3 rules."
+      }
+    }
+  }
+}

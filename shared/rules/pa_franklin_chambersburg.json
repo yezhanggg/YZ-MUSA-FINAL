@@ -1,0 +1,608 @@
+{
+  "provenance": {
+    "jurisdiction": "Chambersburg borough",
+    "instrument": "Borough of Chambersburg Code Chapter 300 Zoning (Ord. No. 82-7, 6-23-1982, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-09-28 (breadcrumb). New Laws on 2026-11-14: Ord. No. 2026-07 (Ch 135, electric) and 2026-08 (Ch 286, vehicles), neither zoning.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/10696328",
+      "https://ecode360.com/print/CH1151?guid=10696490",
+      "https://ecode360.com/print/CH1151?guid=10696531",
+      "https://ecode360.com/print/CH1151?guid=10696558",
+      "https://ecode360.com/print/CH1151?guid=10696583",
+      "https://ecode360.com/print/CH1151?guid=10696604",
+      "https://ecode360.com/print/CH1151?guid=10696703",
+      "https://ecode360.com/print/CH1151?guid=10696728",
+      "https://ecode360.com/print/CH1151?guid=10697188",
+      "https://ecode360.com/print/CH1151?guid=10697139",
+      "https://ecode360.com/print/CH1151?guid=10696762",
+      "https://ecode360.com/print/CH1151?guid=10696347",
+      "https://ecode360.com/print/CH1151?guid=10696483",
+      "https://ecode360.com/CH1151/laws",
+      "https://ecode360.com/CH1151/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20cottage%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/CH1151/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20caretaker%20OR%20conversion%20OR%20%22two-family%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Franklin",
+    "municipality_type": "borough",
+    "geoid": "4205512536",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10696328",
+    "code_current_through": "2026-09-28",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-09-28'. The two New Laws (2026-10-26) do not amend Chapter 300.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or granny flat provision. A code search for those words and for cottage, 'accessory unit' and 'living quarters' found only watchman or caretaker quarters in the manufacturing districts (300-50, 300-55)",
+      "A two-family dwelling is permitted by right in LDR (6,000 sq ft per dwelling unit, so 12,000 for two) and MDR (3,600 per unit, so 7,200), and through them in DCN, DCH, Central Core and Professional Office (625 sq ft per family in a building for two or more families) (300-14C, 300-17C, 300-23, 300-26, 300-31A, 300-35A, 300-36A, 300-40A, 300-44, 300-70A, 300-73D)",
+      "Conversion apartments: the Zoning Hearing Board may allow, by special exception, the conversion of a building that existed on 6-23-1982 into a dwelling for two or more families in a residential district. Lot area per family at least 6,000 sq ft in LDR and 625 sq ft in other residential districts. No outside structural change except for sanitation or safety. Only for 'a large building which has relatively little economic value or usefulness as a conforming dwelling' (300-135, 300-24A)",
+      "Where neither public sewer nor public water is provided, each lot needs 20,000 sq ft per family. With one of them, 10,000 sq ft per family (300-133C(1))",
+      "Parking: 2 spaces 'per each family or dwelling' (300-77A). In the Southgate Neighborhood Overlay half of that (300-61A). None in Central Core (300-45)",
+      "Accessory buildings in the rear yard: at most 35% of the required rear yard, 15 ft high, 6 ft from the rear lot line and 60 ft from the front lot line (300-133E(1))",
+      "LDR, MDR, DCN, Central Core and Professional Office also permit 'uses which are of the same general character' as the listed uses (300-14N, 300-23F, 300-31M, 300-40D, 300-70I). Whether a second unit on a house lot could qualify is for the Zoning Officer. It is not an ADU rule",
+      "A boardinghouse may not use accessory buildings or garages as living units (300-138.1D)"
+    ],
+    "notes": "Zoning office: Borough of Chambersburg Land Use and Community Development. Read on eCode360 (CH1151) in a browser, one print view at a time, on 2026-11-14. Use lists read for LDR, MDR, DCN, DCH, Central Core, Southgate Neighborhood Overlay and Professional Office. The Health Care Service and Health Institution use lists were not read, and the code searches found no ADU-like listing there."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "300-7",
+      "url": "https://ecode360.com/print/CH1151?guid=10696347",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Code searches for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, caretaker, cottage, 'accessory unit' and 'living quarters' found no ADU text (2026-11-14)."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "300-14, 300-23",
+      "url": "https://ecode360.com/print/CH1151?guid=10696490",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code has no ADU text."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "300-14, 300-23, 300-113",
+      "url": "https://ecode360.com/print/CH1151?guid=10696490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a single-family lot is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). A two-family dwelling is permitted by right in LDR and MDR, so a unit could be added as a conversion to a two-family dwelling if the lot meets the per-unit lot area, and conversion apartments are a special exception (300-135)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "300-113",
+      "url": "https://ecode360.com/10696328",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling, with public sewer and water",
+          "path": "by_right",
+          "districts": [
+            "LDR",
+            "MDR",
+            "DCN",
+            "DCH",
+            "Central Core",
+            "Professional Office"
+          ],
+          "conditions": "A building for two families living independently of each other. Lot area per dwelling unit: LDR 6,000, MDR 3,600 (lot coverage 30%), and 625 sq ft per family in DCH, Central Core and Professional Office. Two parking spaces per family. Without public sewer and water, 20,000 sq ft per family (10,000 with one of them).",
+          "min_lot_sqft": 12000,
+          "min_lot_by_district": {
+            "LDR": 12000,
+            "MDR": 7200,
+            "DCN": 7200,
+            "DCH": 1250,
+            "Central Core": 1250,
+            "Professional Office": 6000
+          },
+          "section": "300-14C, 300-17C, 300-26, 300-31A, 300-32, 300-36A, 300-44, 300-70A, 300-73D, 300-133C(1)",
+          "url": "https://ecode360.com/print/CH1151?guid=10696490",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "300-133C(1)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "300-133C(1)"
+            }
+          ],
+          "note": "Read as a path for an existing house converted to two units. DCN dwellings follow the MDR area rules (300-32). Professional Office lots need 6,000 sq ft for a detached building (300-73D)."
+        },
+        {
+          "name": "Two-family dwelling, without public sewer or public water",
+          "path": "by_right",
+          "districts": [
+            "LDR",
+            "MDR",
+            "DCN",
+            "DCH",
+            "Central Core",
+            "Professional Office"
+          ],
+          "conditions": "Where neither public sewer nor public water is provided, 20,000 sq ft per family, so 40,000 for two, and 100 ft width. With one of them, 10,000 per family, so 20,000 for two, and 75 ft width.",
+          "min_lot_sqft": 40000,
+          "section": "300-133C(1)",
+          "url": "https://ecode360.com/print/CH1151?guid=10697139",
+          "confidence": "secondary",
+          "note": "The 40,000 figure is for a lot with neither service. A lot with one of them needs 20,000."
+        },
+        {
+          "name": "Conversion apartments",
+          "path": "special_exception",
+          "districts": [
+            "LDR",
+            "MDR"
+          ],
+          "conditions": "Conversion of a building that existed when the chapter took effect into a dwelling for two or more families. 6,000 sq ft of lot per family in LDR, 625 in other residential districts. Yards, building area and parking may not be reduced. No outside structural change except for sanitation or safety. Only for a large building with little economic value or use as a conforming dwelling.",
+          "min_lot_sqft": 12000,
+          "min_lot_by_district": {
+            "LDR": 12000,
+            "MDR": 1250
+          },
+          "section": "300-135, 300-24A, 300-26",
+          "url": "https://ecode360.com/print/CH1151?guid=10697188",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1982-06-23",
+              "condition": "The building existed at the effective date of the chapter (adopted 6-23-1982)",
+              "section": "300-135"
+            },
+            {
+              "test": null,
+              "condition": "A large building with relatively little economic value or usefulness as a conforming dwelling",
+              "section": "300-135D"
+            }
+          ],
+          "note": "MDR lists conversion apartments as a special exception (300-24A). 300-135 names 'any residential district', so LDR is included. The adoption date of the chapter is used as its effective date. Without public sewer and water, 300-133C(1) sets 20,000 sq ft per family (10,000 with one of them)."
+        }
+      ],
+      "section": "300-14, 300-24, 300-135",
+      "url": "https://ecode360.com/print/CH1151?guid=10697188",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "300-14 to 300-73",
+      "url": "https://ecode360.com/print/CH1151?guid=10696490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/10696328",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "300-14, 300-23",
+      "url": "https://ecode360.com/print/CH1151?guid=10696490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "300-133E(1)(b)[2]",
+      "url": "https://ecode360.com/print/CH1151?guid=10697139",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. A detached accessory building in the rear yard may not exceed 15 ft."
+    },
+    "setback_rear_ft": {
+      "value": 6,
+      "section": "300-133E(1)(b)[3]",
+      "url": "https://ecode360.com/print/CH1151?guid=10697139",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory building in the rear yard: at least 6 ft from the rear lot line."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "300-133E(1)(b)[4]",
+      "url": "https://ecode360.com/print/CH1151?guid=10697139",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A detached accessory building in the rear yard must be at least 60 ft from the front lot line."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "300-14, 300-23",
+      "url": "https://ecode360.com/print/CH1151?guid=10696490",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "300-77A",
+      "url": "https://ecode360.com/print/CH1151?guid=10696762",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Dwellings: 2 per each family or dwelling'."
+    }
+  },
+  "districts": {
+    "LDR": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "300-16 to 300-20",
+        "url": "https://ecode360.com/print/CH1151?guid=10696490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per dwelling unit (300-17). Single-family detached. Width 60 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "300-16 to 300-20",
+        "url": "https://ecode360.com/print/CH1151?guid=10696490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "300-16 to 300-20",
+        "url": "https://ecode360.com/print/CH1151?guid=10696490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "300-16 to 300-20",
+        "url": "https://ecode360.com/print/CH1151?guid=10696490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-16 to 300-20",
+        "url": "https://ecode360.com/print/CH1151?guid=10696490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential buildings."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "300-16 to 300-20",
+        "url": "https://ecode360.com/print/CH1151?guid=10696490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Lot coverage, not counting paved areas without a structure."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "section": "300-133C(1)"
+          },
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 10000,
+            "section": "300-133C(1)"
+          },
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 10000,
+            "section": "300-133C(1)"
+          }
+        ],
+        "section": "300-133C(1)",
+        "url": "https://ecode360.com/print/CH1151?guid=10697139",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family. The row figure holds with both public sewer and public water."
+      }
+    },
+    "MDR": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "300-25 to 300-27",
+        "url": "https://ecode360.com/print/CH1151?guid=10696531",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, per dwelling unit (300-26). Width 60 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "300-25 to 300-27",
+        "url": "https://ecode360.com/print/CH1151?guid=10696531",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "300-25 to 300-27",
+        "url": "https://ecode360.com/print/CH1151?guid=10696531",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300-25 to 300-27",
+        "url": "https://ecode360.com/print/CH1151?guid=10696531",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-25 to 300-27",
+        "url": "https://ecode360.com/print/CH1151?guid=10696531",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "300-25 to 300-27",
+        "url": "https://ecode360.com/print/CH1151?guid=10696531",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached 35%. Two-family 30%."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "section": "300-133C(1)"
+          },
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 10000,
+            "section": "300-133C(1)"
+          },
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 10000,
+            "section": "300-133C(1)"
+          }
+        ],
+        "section": "300-133C(1)",
+        "url": "https://ecode360.com/print/CH1151?guid=10697139",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family. The row figure holds with both public sewer and public water."
+      }
+    },
+    "DCN": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "300-32, 300-33",
+        "url": "https://ecode360.com/print/CH1151?guid=10696558",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 60 ft. Dwelling buildings also follow the MDR area and height rules (300-32)."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "300-32, 300-33",
+        "url": "https://ecode360.com/print/CH1151?guid=10696558",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "300-32, 300-33",
+        "url": "https://ecode360.com/print/CH1151?guid=10696558",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards of 5 ft. 10 ft next to a residential district."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300-32, 300-33",
+        "url": "https://ecode360.com/print/CH1151?guid=10696558",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-32, 300-33",
+        "url": "https://ecode360.com/print/CH1151?guid=10696558",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "300-32, 300-33",
+        "url": "https://ecode360.com/print/CH1151?guid=10696558",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "All buildings and structures."
+      }
+    },
+    "DCH": {
+      "min_lot_sqft": {
+        "value": 625,
+        "section": "300-36 to 300-39",
+        "url": "https://ecode360.com/print/CH1151?guid=10696583",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "625 sq ft per family for a building used as a dwelling."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "300-36 to 300-39",
+        "url": "https://ecode360.com/print/CH1151?guid=10696583",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "300-36 to 300-39",
+        "url": "https://ecode360.com/print/CH1151?guid=10696583",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Not required. 10 ft where the district adjoins a residential district."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300-36 to 300-39",
+        "url": "https://ecode360.com/print/CH1151?guid=10696583",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 72,
+        "section": "300-36 to 300-39",
+        "url": "https://ecode360.com/print/CH1151?guid=10696583",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 6,
+        "section": "300-36 to 300-39",
+        "url": "https://ecode360.com/print/CH1151?guid=10696583",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.65,
+        "section": "300-36 to 300-39",
+        "url": "https://ecode360.com/print/CH1151?guid=10696583",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "All buildings and structures."
+      }
+    },
+    "Central Core": {
+      "min_lot_sqft": {
+        "value": 625,
+        "section": "300-41 to 300-44",
+        "url": "https://ecode360.com/print/CH1151?guid=10696604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "625 sq ft per family for a building used in whole or part as a dwelling."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "300-41 to 300-44",
+        "url": "https://ecode360.com/print/CH1151?guid=10696604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Front and side yards are not required."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "300-41 to 300-44",
+        "url": "https://ecode360.com/print/CH1151?guid=10696604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300-41 to 300-44",
+        "url": "https://ecode360.com/print/CH1151?guid=10696604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Not required if two public streets abut the lot."
+      },
+      "principal_max_height_ft": {
+        "value": 72,
+        "section": "300-41 to 300-44",
+        "url": "https://ecode360.com/print/CH1151?guid=10696604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 6,
+        "section": "300-41 to 300-44",
+        "url": "https://ecode360.com/print/CH1151?guid=10696604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 1.0,
+        "section": "300-43",
+        "url": "https://ecode360.com/print/CH1151?guid=10696604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'There shall be no coverage limitation', except the required yards and loading area."
+      }
+    },
+    "Professional Office": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "300-73",
+        "url": "https://ecode360.com/print/CH1151?guid=10696728",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Detached building, width 60 ft. 625 sq ft per family in a building for two or more families."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "300-73",
+        "url": "https://ecode360.com/print/CH1151?guid=10696728",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "300-73",
+        "url": "https://ecode360.com/print/CH1151?guid=10696728",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300-73",
+        "url": "https://ecode360.com/print/CH1151?guid=10696728",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "300-73",
+        "url": "https://ecode360.com/print/CH1151?guid=10696728",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "300-73",
+        "url": "https://ecode360.com/print/CH1151?guid=10696728",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

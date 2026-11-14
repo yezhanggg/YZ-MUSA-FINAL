@@ -1,0 +1,566 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Allen township",
+    "instrument": "Lower Allen Township Code Chapter 220 Zoning (Ord. No. 2009-2, 7-13-2009, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-01-27 (breadcrumb). New Laws on 2026-11-14: nine ordinances (2025-2026), none amending Chapter 220. The R-1 use list was last amended 1-27-2025 by Ord. No. 2025-01.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11213000",
+      "https://ecode360.com/print/LO1571?guid=11214717",
+      "https://ecode360.com/print/LO1571?guid=11214718",
+      "https://ecode360.com/print/LO1571?guid=11214734",
+      "https://ecode360.com/print/LO1571?guid=11214944",
+      "https://ecode360.com/print/LO1571?guid=11213499",
+      "https://ecode360.com/print/LO1571?guid=11213535",
+      "https://ecode360.com/print/LO1571?guid=11213765",
+      "https://ecode360.com/print/LO1571?guid=11213813",
+      "https://ecode360.com/LO1571/laws",
+      "https://ecode360.com/LO1571/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20dwellings%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22conversion%20apartment%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LO1571/search?query=%22per%20dwelling%20unit%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Cumberland",
+    "municipality_type": "township",
+    "geoid": "4204144832",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11213000",
+    "code_current_through": "2025-01-27",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-01-27'. The New Laws listed do not amend Chapter 220.",
+    "checks": [
+      "An accessory dwelling is a permitted use in R-1, R-2 and MUN, and in the TND and NR overlays (220-11D, 220-19D, 220-28G, 220-124, 220-139K). A code search found it in no other district list. R-3 allows conversion apartments and two-family dwellings instead (220-37)",
+      "The accessory dwelling is created in a single-family detached dwelling that the applicant owns and lives in. The house or the unit must be the owner's principal residence (220-149, 220-149C)",
+      "Only one accessory dwelling per house. It must have its own living, sleeping, cooking and bathroom areas (220-149A, B)",
+      "Size: at most 30% of the building's total floor area and at least 360 sq ft of habitable floor area (220-149G, H)",
+      "Additions and alterations to create the unit are limited to 10% of the floor area existing at the time of the permit application, and no application is approved if the habitable floor area was increased in the last three years (220-149F, I)",
+      "The house keeps the look of a single-family detached dwelling. New entrances go on the sides or rear (220-149D)",
+      "The Lower Allen Township Authority rules on connection and fees for an additional dwelling unit apply (220-149E)",
+      "In the TND and NR overlays at most 5% of the residential uses may be accessory dwelling units, and not more than 10% on a street in any block (220-127, 220-142, search snippets)",
+      "Density: R-1 allows 4 dwelling units per gross acre with public water and sewer (1 per acre with on-lot systems), R-2 1 per gross acre and MUN 10 per gross acre. Whether the accessory dwelling counts is not settled (220-13, 220-21, 220-30)",
+      "Parking: 2 spaces per dwelling unit for single-family dwellings. Apartments are counted by bedrooms (220-239, search snippet)",
+      "Accessory structures may not stand in a front yard setback and must be at least 5 ft from side and rear lot lines. Accessory buildings are capped at 25 ft (220-150A, B(1), 220-12B)"
+    ],
+    "notes": "Zoning office: Lower Allen Township (latwp.org). Read on eCode360 (LO1571) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, MUN and R-3. The TND and NR overlay sections and 220-239 were seen as search snippets only. The commercial and industrial lists allow only watchman or caretaker dwellings (I-1, I-2, I-3, search snippets)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling",
+      "section": "220-6C, 220-149",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'An accessory dwelling may be created in a single-family detached dwelling that is owned and occupied by the permit applicant.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "220-11D, 220-19D, 220-28G, 220-149",
+      "url": "https://ecode360.com/print/LO1571?guid=11213499",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "A permitted use in R-1, R-2 and MUN under the standards of 220-149."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "MUN",
+        "TND",
+        "NR"
+      ],
+      "section": "220-11D, 220-19D, 220-28G, 220-124, 220-139K",
+      "url": "https://ecode360.com/LO1571/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20dwellings%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22conversion%20apartment%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "TND and NR are overlays, read from search snippets."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "220-37, 220-181",
+      "url": "https://ecode360.com/print/LO1571?guid=11213813",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Other district lists do not name the accessory dwelling. The unlisted-use special exception (220-181) reaches only uses not permitted in any district, so it does not apply."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "220-11D, 220-19D, 220-28G",
+      "url": "https://ecode360.com/print/LO1571?guid=11213499",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Listed among 'the permitted uses', in accordance with 220-149."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "220-266",
+      "url": "https://ecode360.com/11213000",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that does not meet 220-149 needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion apartment",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "A building that existed on 7-13-2009 converted to a dwelling for more than one family. It must meet the district rules, with no outside sign of change except as codes require. Three or more units need a land development plan.",
+          "min_lot_sqft": null,
+          "section": "220-37I, 220-154",
+          "url": "https://ecode360.com/print/LO1571?guid=11214734",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "2009-07-13",
+              "condition": "The building existed at the effective date of the chapter",
+              "section": "220-154"
+            }
+          ]
+        },
+        {
+          "name": "Conversion apartment",
+          "path": "special_exception",
+          "districts": [
+            "MUN"
+          ],
+          "conditions": "Same standards as R-3, by special exception from the Zoning Hearing Board.",
+          "min_lot_sqft": null,
+          "section": "220-28F, 220-154",
+          "url": "https://ecode360.com/print/LO1571?guid=11213765",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "2009-07-13",
+              "condition": "The building existed at the effective date of the chapter",
+              "section": "220-154"
+            }
+          ]
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "MUN"
+          ],
+          "conditions": "Two-family attached and side-by-side dwellings are permitted uses.",
+          "min_lot_sqft": null,
+          "section": "220-28C, D, 220-37B, C",
+          "url": "https://ecode360.com/print/LO1571?guid=11213813",
+          "confidence": "secondary",
+          "note": "Read as a path for converting a house into two units. The R-3 lot rules were not read."
+        }
+      ],
+      "section": "220-28, 220-37, 220-154",
+      "url": "https://ecode360.com/print/LO1571?guid=11214734",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "MUN",
+        "TND",
+        "NR"
+      ],
+      "section": "220-11D, 220-19D, 220-28G, 220-124, 220-139K",
+      "url": "https://ecode360.com/LO1571/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20dwellings%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22conversion%20apartment%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "220-149",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'In a single-family detached dwelling'."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "220-149, 220-149F",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Created in an existing house, which may be enlarged by at most 10% of its existing floor area. The house_exists gate carries the existing-house rule."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "owner_occupancy",
+          "condition": "The house is owned and occupied by the permit applicant, and the house or the unit is the owner's principal residence.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "220-149, 220-149C",
+          "url": "https://ecode360.com/print/LO1571?guid=11214717"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "Created in an existing single-family detached dwelling.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "house_exists",
+          "section": "220-149",
+          "url": "https://ecode360.com/print/LO1571?guid=11214717"
+        },
+        {
+          "kind": "size",
+          "condition": "Additions and alterations to create the unit are limited to 10% of the floor area existing at the time of application. No approval if the habitable floor area was increased within three years.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "220-149F, I",
+          "url": "https://ecode360.com/print/LO1571?guid=11214717"
+        },
+        {
+          "kind": "design",
+          "condition": "The building keeps the look of a single-family detached dwelling. New entrances on the sides or rear.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "220-149D",
+          "url": "https://ecode360.com/print/LO1571?guid=11214717"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Township Authority rules on connection of and fees for an additional dwelling unit apply.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "220-149E",
+          "url": "https://ecode360.com/print/LO1571?guid=11214717"
+        },
+        {
+          "kind": "other",
+          "condition": "In the TND and NR overlays at most 5% of residential uses may be accessory dwelling units, and not more than 10% on a street in any block.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "TND",
+            "NR"
+          ],
+          "building_types": null,
+          "section": "220-127, 220-142",
+          "url": "https://ecode360.com/LO1571/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20dwellings%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22conversion%20apartment%22&scope=all&sortOrder=relevance"
+        }
+      ],
+      "section": "220-149",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "220-149, 220-149F",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Inside the house, or with an addition of at most 10% of the existing floor area."
+    },
+    "types_not_addressed": {
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "220-149",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The unit is created in the single-family detached dwelling. A unit in a separate building is not named."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "220-149G",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No square-foot cap. Share cap of 30%."
+    },
+    "max_share_of_house": {
+      "value": 0.3,
+      "section": "220-149G",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The accessory dwelling shall not be greater than 30% of the building's total floor area.'"
+    },
+    "min_sqft": {
+      "value": 360,
+      "section": "220-149H",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Habitable floor area."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "220-12A, 220-20A, 220-29A",
+      "url": "https://ecode360.com/print/LO1571?guid=11213499",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "35 ft."
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 25,
+      "section": "220-12B, 220-20B, 220-29B",
+      "url": "https://ecode360.com/print/LO1571?guid=11213499",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Accessory buildings, which may not hold the unit."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "220-149, 220-149C",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "family_only": {
+      "value": false,
+      "section": "220-149",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "220-149B",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Only one accessory dwelling may be created within a single-family detached dwelling unit.'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 220",
+      "url": "https://ecode360.com/11213000",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not searched."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "220-239",
+      "url": "https://ecode360.com/LO1571/search?query=%22per%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Single-family dwellings: '2 per dwelling unit'. Apartments are counted by bedrooms."
+    },
+    "reading": {
+      "value": "Two spaces per dwelling unit, so four for the house and the unit, if the unit is counted like a single-family dwelling unit. Counted as an apartment it needs 1 to 3 spaces by bedrooms.",
+      "section": "220-239",
+      "url": "https://ecode360.com/LO1571/search?query=%22per%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "220-149E",
+      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Township Authority rules on connection and fees for an additional dwelling unit apply."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 7200,
+        "section": "220-12 to 220-15",
+        "url": "https://ecode360.com/print/LO1571?guid=11213499",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public water and public sewer. No minimum with on-lot systems (density 1 unit per gross acre)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "220-12 to 220-15",
+        "url": "https://ecode360.com/print/LO1571?guid=11213499",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-12 to 220-15",
+        "url": "https://ecode360.com/print/LO1571?guid=11213499",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-12 to 220-15",
+        "url": "https://ecode360.com/print/LO1571?guid=11213499",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-12 to 220-15",
+        "url": "https://ecode360.com/print/LO1571?guid=11213499",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "220-12 to 220-15",
+        "url": "https://ecode360.com/print/LO1571?guid=11213499",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious coverage. No separate building coverage is set."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10890,
+        "section": "220-13A(1)",
+        "url": "https://ecode360.com/print/LO1571?guid=11213499",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Four dwelling units per gross acre with public water and sewer. One per acre with on-lot systems. Whether the accessory dwelling counts is not settled."
+      }
+    },
+    "R-2": {
+      "setback_front_ft": {
+        "value": 40,
+        "section": "220-20 to 220-24",
+        "url": "https://ecode360.com/print/LO1571?guid=11213535",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-20 to 220-24",
+        "url": "https://ecode360.com/print/LO1571?guid=11213535",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "220-20 to 220-24",
+        "url": "https://ecode360.com/print/LO1571?guid=11213535",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-20 to 220-24",
+        "url": "https://ecode360.com/print/LO1571?guid=11213535",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "220-20 to 220-24",
+        "url": "https://ecode360.com/print/LO1571?guid=11213535",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious coverage. No separate building coverage is set."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "220-22A",
+        "url": "https://ecode360.com/print/LO1571?guid=11213535",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'There shall be no minimum lot area.' Width 100 ft at the building line."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "220-21",
+        "url": "https://ecode360.com/print/LO1571?guid=11213535",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "One dwelling unit per gross acre. Whether the accessory dwelling counts is not settled."
+      }
+    },
+    "MUN": {
+      "setback_front_ft": {
+        "value": 30,
+        "section": "220-29 to 220-33",
+        "url": "https://ecode360.com/print/LO1571?guid=11213765",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-29 to 220-33",
+        "url": "https://ecode360.com/print/LO1571?guid=11213765",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-29 to 220-33",
+        "url": "https://ecode360.com/print/LO1571?guid=11213765",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-29 to 220-33",
+        "url": "https://ecode360.com/print/LO1571?guid=11213765",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "220-29 to 220-33",
+        "url": "https://ecode360.com/print/LO1571?guid=11213765",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious coverage. No separate building coverage is set."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "220-31A",
+        "url": "https://ecode360.com/print/LO1571?guid=11213765",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'There shall be no minimum lot area.' Width 50 ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4356,
+        "section": "220-30",
+        "url": "https://ecode360.com/print/LO1571?guid=11213765",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Ten units per gross acre. Whether the accessory dwelling counts is not settled."
+      }
+    }
+  }
+}

@@ -1,0 +1,630 @@
+{
+  "provenance": {
+    "jurisdiction": "Peters township",
+    "instrument": "Peters Township Code Chapter 440 Zoning (Ord. No. 820, 8-28-2017, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-01-05 (breadcrumb). New Laws on the chapter page on 2026-11-14: Ord. No. 925 (2026-04-27), Ord. No. 928 (2026-06-22) and Ord. No. 929 (2026-09-28), each 'Zoning Amendment', Ch 440, PDF only, not opened and not yet in the online text.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/32749579",
+      "https://ecode360.com/32770956",
+      "https://ecode360.com/print/PE3557?guid=32770968",
+      "https://ecode360.com/print/PE3557?guid=32771005",
+      "https://ecode360.com/print/PE3557?guid=32771011",
+      "https://ecode360.com/print/PE3557?guid=32771048",
+      "https://ecode360.com/print/PE3557?guid=32771054",
+      "https://ecode360.com/print/PE3557?guid=32771060",
+      "https://ecode360.com/print/PE3557?guid=32771066",
+      "https://ecode360.com/print/PE3557?guid=32749883",
+      "https://ecode360.com/print/PE3557?guid=32749882",
+      "https://ecode360.com/print/PE3557?guid=32785885",
+      "https://ecode360.com/32785883",
+      "https://ecode360.com/PE3557/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20caretaker%20OR%20cottage%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PE3557/search?query=%22two-family%22%20OR%20duplex%20OR%20conversion%20OR%20%22second%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PE3557/search?query=%22single-family%20attached%22%20OR%20%22limited%20lodging%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Washington",
+    "municipality_type": "township",
+    "geoid": "4212559608",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/32749579",
+    "code_current_through": "2026-01-05",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-01-05'. Ord. No. 925, 928 and 929 (2026, zoning) are listed under New Laws and not yet codified.",
+    "code_caution": "Three zoning amendments, Ord. No. 925 (2026-04-27), 928 (2026-06-22) and 929 (2026-09-28), are not yet in the online code. They were not read, so they may change these rules. Ask the Township.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or granny flat provision. A code search for those words and for caretaker, cottage, 'accessory unit' and 'living quarters' found none. The 2016 Comprehensive Plan recommends permitting ADUs, and a 2017 Zoning Hearing Board agenda lists a variance request for a second dwelling unit as a 'granny flat'",
+      "Uses not listed for a district are not allowed: 'No building, structure or land shall be constructed or used for any purpose ... other than' the listed uses. 'All other uses' are a conditional use only in the IN district (440-402A, Figure 400.2)",
+      "Not more than one detached principal building on a lot, except in a planned land development (440-402A)",
+      "A duplex ('a single residential structure that is divided into two dwelling units each of which has a separate entrance') is a single-family attached dwelling. Single-family attached dwellings are permitted by right in MD, VR, TC, VC, MA.1, MA.2, WV and VB, and in the CR and MR overlays (440-301, Figure 400.2)",
+      "MD allows at most 7 dwelling units per gross acre (Figure MD.2). LD allows 1.2 per acre, CL 2 per acre and RR one per 5 acres",
+      "Accessory structures over 120 sq ft or 10 ft high meet the accessory setbacks, stay at least 5 ft from the house, and may not hold a use the district does not permit (440-501B, E, G)",
+      "Existing lots without public sewer need a septic system approved by the Sanitary District and at least one acre. New lots must connect to public water and sewer (440-402H(2))",
+      "Parking: 2 spaces per dwelling unit for single-family detached and attached dwellings (440-507, Figure 500.9)",
+      "Limited lodging (short-term stays) is a permitted accessory use in most districts (Figure 400.2, 440-601)"
+    ],
+    "notes": "Zoning office: Peters Township Planning Department (peterstownship.com). Read on eCode360 (PE3557) in a browser, one print view at a time, on 2026-11-14. The Composite Land Use Chart (Figure 400.2) was read from screenshots of the HTML table. District pages read for LD, WP, CL, MD, RR and VR. Nonresidential, mixed-use and overlay district pages were not opened beyond the chart. A search snippet of the 2025-10-09 Planning Commission minutes (PDF, not opened) says a conversion of a single-family home to two units was found a permitted use because duplexes are single-family attached dwellings."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "440-301",
+      "url": "https://ecode360.com/print/PE3557?guid=32749883",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Code searches for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, caretaker, cottage, 'accessory unit' and 'living quarters' found no zoning text (2026-11-14)."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "440-402, Figure 400.2",
+      "url": "https://ecode360.com/print/PE3557?guid=32770968",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code has no ADU text. Uses not listed are not allowed."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "440-402A, Figure 400.2",
+      "url": "https://ecode360.com/print/PE3557?guid=32770968",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit with a single-family detached house is not a listed use, and only one detached principal building is allowed on a lot. It needs a use variance from the Zoning Hearing Board (MPC 910.2). Where single-family attached dwellings are permitted, a house might be converted to a duplex."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "440-402A",
+      "url": "https://ecode360.com/print/PE3557?guid=32770968",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex (single-family attached dwelling)",
+          "path": "by_right",
+          "districts": [
+            "MD",
+            "VR",
+            "TC",
+            "VC",
+            "MA.1",
+            "MA.2",
+            "WV",
+            "VB"
+          ],
+          "conditions": "A single residential structure divided into two dwelling units, each with a separate entrance and separate access to the outdoors. 2 parking spaces per unit. In MD at most 7 units per gross acre (about 12,446 sq ft for two). In VR each unit needs a primary entrance on the front facade.",
+          "min_lot_sqft": null,
+          "min_lot_by_district": {
+            "MD": 12446
+          },
+          "section": "440-301 (duplex, dwelling B), 440-402 Figure 400.2, Figure MD.2, 440-403.6D(2)(a)",
+          "url": "https://ecode360.com/print/PE3557?guid=32770968",
+          "confidence": "secondary",
+          "note": "Read as a path for converting an existing house into two units. The lot and density rules of the TC, VC, MA, WV and VB districts were not read."
+        }
+      ],
+      "section": "Figure 400.2",
+      "url": "https://ecode360.com/print/PE3557?guid=32770968",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Figure 400.2",
+      "url": "https://ecode360.com/print/PE3557?guid=32770968",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 440",
+      "url": "https://ecode360.com/32749579",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "Figure 400.2",
+      "url": "https://ecode360.com/print/PE3557?guid=32770968",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "separation_ft": {
+      "value": 5,
+      "section": "440-501G",
+      "url": "https://ecode360.com/print/PE3557?guid=32785885",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory structure rule, not an ADU rule. 'No accessory structures shall be closer than five feet to a principal structure.'"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "440-501F",
+      "url": "https://ecode360.com/print/PE3557?guid=32785885",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory structures meet the district side and rear setbacks. The district tables set accessory setbacks."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "Figure 400.2",
+      "url": "https://ecode360.com/print/PE3557?guid=32770968",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    },
+    "short_term_rental_banned": {
+      "value": false,
+      "section": "Figure 400.2",
+      "url": "https://ecode360.com/print/PE3557?guid=32770968",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Limited lodging is a permitted accessory use in most districts."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "440-507, Figure 500.9",
+      "url": "https://ecode360.com/32785883",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. Single-family detached: '2 per dwelling unit'."
+    }
+  },
+  "districts": {
+    "LD": {
+      "min_lot_sqft": {
+        "value": 21780,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "23,780 for a corner lot. At most 1.2 dwelling units per acre."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "Figure LD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771005",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "WP": {
+      "min_lot_sqft": {
+        "value": 10890,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Open space option, the smallest of three. Half-acre option 21,780 (23,780 corner), two-acre option 87,120. The yards and coverage on this row are for the half-acre option."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Maximum lot coverage, half-acre option. Open space option 22%, two-acre option 10%."
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "yard_tiers": {
+        "value": [
+          {
+            "min_lot_sqft": 10890,
+            "max_lot_sqft": 21779,
+            "applies_to": "principal",
+            "setback_front_ft": 25,
+            "setback_side_ft": 7.5,
+            "setback_rear_ft": 20,
+            "section": "Figure WP.2 (open space option)"
+          },
+          {
+            "min_lot_sqft": 10890,
+            "max_lot_sqft": 21779,
+            "applies_to": "accessory",
+            "setback_front_ft": 25,
+            "setback_side_ft": 7.5,
+            "setback_rear_ft": 7.5,
+            "section": "Figure WP.2 (open space option)"
+          }
+        ],
+        "section": "Figure WP.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771011",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Read by lot size: the open space option allows lots from 10,890 sq ft with smaller yards."
+      }
+    },
+    "CL": {
+      "min_lot_sqft": {
+        "value": 10890,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "At most 2 dwelling units per acre."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7.5,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.22,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 25,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 7.5,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 7.5,
+        "section": "Figure CL.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771048",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "MD": {
+      "setback_front_ft": {
+        "value": 25,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7.5,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 25,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 7.5,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "Figure MD.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771054",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Five acres for a development. 'No minimum lot size for individual lots.' At most 7 dwelling units per gross acre."
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 217800,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Five acres. One dwelling unit per 5 acres."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 25,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 25,
+        "section": "Figure RR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771060",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "VR": {
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft minimum, 25 ft maximum on local streets. 30 to 45 ft along Venetia Road."
+      },
+      "setback_side_ft": {
+        "value": 7.5,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 32,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Average ground level to average roof height."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Maximum lot coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 20,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 7.5,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "Figure VR.2",
+        "url": "https://ecode360.com/print/PE3557?guid=32771066",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'No minimum lot size'. One single-family detached dwelling per lot."
+      }
+    }
+  }
+}

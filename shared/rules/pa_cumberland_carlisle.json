@@ -1,0 +1,713 @@
+{
+  "provenance": {
+    "jurisdiction": "Carlisle borough",
+    "instrument": "Borough of Carlisle Code Chapter 255 Zoning (Ord. No. 1993, 6-12-2003, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-06-03 (breadcrumb). New Laws on 2026-11-14: Ord. No. 2473, 2474 and 2475 (2026), all Chapter 244 vehicles and traffic, none zoning.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/10683915",
+      "https://ecode360.com/print/CA1126?guid=10684298",
+      "https://ecode360.com/print/CA1126?guid=10684343",
+      "https://ecode360.com/print/CA1126?guid=10684382",
+      "https://ecode360.com/print/CA1126?guid=10684421",
+      "https://ecode360.com/print/CA1126?guid=10684454",
+      "https://ecode360.com/print/CA1126?guid=10684498",
+      "https://ecode360.com/print/CA1126?guid=10684772",
+      "https://ecode360.com/print/CA1126?guid=10685114",
+      "https://ecode360.com/print/CA1126?guid=10686066",
+      "https://ecode360.com/print/CA1126?guid=10685577",
+      "https://ecode360.com/print/CA1126?guid=10686199",
+      "https://ecode360.com/CA1126/laws",
+      "https://ecode360.com/CA1126/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22%20OR%20conversion&scope=all&sortOrder=relevance",
+      "https://ecode360.com/CA1126/search?query=%22two-family%22%20OR%20duplex%20OR%20%22existed%20as%20of%22%20OR%20%22additional%20dwelling%20units%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Cumberland",
+    "municipality_type": "borough",
+    "geoid": "4204111272",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10683915",
+    "code_current_through": "2026-06-03",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-06-03'. The New Laws listed do not amend Chapter 255.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or granny flat provision. A code search for those words and for caretaker, 'accessory unit', 'living quarters' and conversion found none for house lots",
+      "'No dwelling units shall be permitted within a detached garage' (255-200D(12)(b)[7])",
+      "The residential districts allow 'only the following accessory uses', so a second unit is not an accessory use (255-16, 255-24, 255-32, 255-39, 255-45)",
+      "A two-family detached dwelling is permitted by right in R-3 (with public water and public sewer) and R-4, on a lot of at least 7,200 sq ft, and in UM (255-31C(3), 255-34, 255-38E, 255-42, 255-120A(38))",
+      "In UM a principal building that existed before the district was adopted may be converted into any use permitted there (255-120A(41))",
+      "In OR an office may include one dwelling unit in the same building, by special exception (255-51A, Ord. No. 2460, 2025)",
+      "Every principal building must have public water and sewer. A dwelling without both needs a one-acre lot (255-194)",
+      "Detached garage or carport: at most 20 ft high and 30 by 30 ft, not in a required front yard or an accessory setback, 8 ft from a street line. Sheds and other accessory buildings: 12 ft (255-200D(12)(b), (c)). In R-5 no accessory structure may stand between the house and the street (255-47B(1))",
+      "Parking: 1 space per dwelling unit with one bedroom or less, 2 with two or more bedrooms (255-204A)",
+      "One recreational vehicle may be lived in as a temporary accessory residence for seven days once a year (255-200D(10)(e))",
+      "In C-5 a building of more than 10,000 sq ft that existed when the district was adopted may be converted into apartments by special exception (255-92B). Not a path for a house"
+    ],
+    "notes": "Zoning office: Borough of Carlisle (carlislepa.org). Read on eCode360 (CA1126) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4, R-5, OR, C-5 and UM. The C-1, C-2, C-3, C-4, I-1, I-2, I-C, INS and OS use lists were not read. The code searches found no ADU-like listing there besides caretaker quarters in INS (255-129C). The UM area and bulk rules were not read."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "255-12",
+      "url": "https://ecode360.com/10683915",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Code searches for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, caretaker, 'accessory unit', 'living quarters' and conversion found no ADU text (2026-11-14)."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "255-15, 255-16, 255-23, 255-24",
+      "url": "https://ecode360.com/print/CA1126?guid=10684298",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code has no ADU text. The residential districts allow only the listed accessory uses."
+    },
+    "status_by_form": {
+      "value": {
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "255-200D(12)(b)[7]",
+      "url": "https://ecode360.com/print/CA1126?guid=10686066",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No dwelling units shall be permitted within a detached garage.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "255-15, 255-16, 255-250",
+      "url": "https://ecode360.com/print/CA1126?guid=10684298",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit with a single-family house is not a listed use or accessory use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). In R-3, R-4 and UM a two-family detached dwelling is permitted by right, so a unit could be added as a conversion to a two-family dwelling if the lot meets its rules."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "255-250",
+      "url": "https://ecode360.com/10683915",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4",
+            "UM"
+          ],
+          "conditions": "A building for two households. R-3 and R-4: lot at least 7,200 sq ft, width 30 ft per unit, building coverage 50%. In R-3 only with both public water and public sewer. Parking 1 or 2 spaces per unit by bedrooms.",
+          "min_lot_sqft": 7200,
+          "min_lot_by_district": {
+            "R-3": 7200,
+            "R-4": 7200
+          },
+          "section": "255-31C(3), 255-34 Table V-1, 255-38E, 255-42 Table VI-1, 255-120A(38)",
+          "url": "https://ecode360.com/print/CA1126?guid=10684421",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer service",
+              "section": "255-31C, 255-194"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water service",
+              "section": "255-31C, 255-194"
+            }
+          ],
+          "note": "Read as a path for converting an existing house into two units. The UM lot rules were not read. In UM an existing building may be converted to any permitted use (255-120A(41))."
+        }
+      ],
+      "section": "255-31, 255-38, 255-120",
+      "url": "https://ecode360.com/print/CA1126?guid=10684421",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "Chapter 255",
+      "url": "https://ecode360.com/10683915",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 255",
+      "url": "https://ecode360.com/10683915",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "255-16, 255-24, 255-32, 255-39, 255-45",
+      "url": "https://ecode360.com/print/CA1126?guid=10684298",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A dwelling unit in a detached garage is barred (255-200D(12)(b)[7])."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 12,
+      "section": "255-200D(12)(c)",
+      "url": "https://ecode360.com/print/CA1126?guid=10686066",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. 'Storage shed or any other customary and incidental accessory building: maximum height, 12 feet.'"
+    },
+    "max_height_garage_ft": {
+      "value": 20,
+      "section": "255-200D(12)(b)[1]",
+      "url": "https://ecode360.com/print/CA1126?guid=10686066",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Detached garage or carport, which may not hold a dwelling unit."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "255-18, 255-26",
+      "url": "https://ecode360.com/print/CA1126?guid=10684298",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The district tables set separate accessory yards."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "255-16, 255-24",
+      "url": "https://ecode360.com/print/CA1126?guid=10684298",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "255-204A",
+      "url": "https://ecode360.com/print/CA1126?guid=10686199",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. One space per dwelling unit with one bedroom or less, two with two or more."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public water and public sewer. Otherwise 255-194."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Principal and accessory structures."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft or 2 1/2 stories, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage. Impervious 50%."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 40,
+        "section": "255-18",
+        "url": "https://ecode360.com/print/CA1126?guid=10684298",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          }
+        ],
+        "section": "255-194",
+        "url": "https://ecode360.com/print/CA1126?guid=10685577",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Every principal building shall be served by public water and sewage services.' If the Borough allows a dwelling without both, the lot must be one acre."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5500,
+        "section": "255-26 Table IV-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684343",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and public sewer. Otherwise 255-194."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "255-26 Table IV-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684343",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "255-26 Table IV-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684343",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "16 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "255-26 Table IV-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684343",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-26 Table IV-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684343",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "255-26 Table IV-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684343",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage. Impervious 60%."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "255-26 Table IV-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684343",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "255-26 Table IV-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684343",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          }
+        ],
+        "section": "255-194",
+        "url": "https://ecode360.com/print/CA1126?guid=10685577",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Every principal building shall be served by public water and sewage services.' If the Borough allows a dwelling without both, the lot must be one acre."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "255-34 Table V-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684382",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. 255-194 applies without both public water and public sewer."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "255-34 Table V-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684382",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "255-34 Table V-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684382",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "12 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "255-34 Table V-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684382",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-34 Table V-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684382",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "255-34 Table V-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684382",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage. Impervious 60%."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "255-34 Table V-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684382",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "255-34 Table V-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684382",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          }
+        ],
+        "section": "255-194",
+        "url": "https://ecode360.com/print/CA1126?guid=10685577",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Every principal building shall be served by public water and sewage services.' If the Borough allows a dwelling without both, the lot must be one acre."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "255-42 Table VI-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684421",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "255-42 Table VI-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684421",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "255-42 Table VI-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684421",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "255-42 Table VI-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684421",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-42 Table VI-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684421",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "255-42 Table VI-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684421",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage. Impervious 75%."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "255-42 Table VI-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684421",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "255-42 Table VI-1",
+        "url": "https://ecode360.com/print/CA1126?guid=10684421",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          }
+        ],
+        "section": "255-194",
+        "url": "https://ecode360.com/print/CA1126?guid=10685577",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Every principal building shall be served by public water and sewage services.' If the Borough allows a dwelling without both, the lot must be one acre."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "255-47",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "255-47",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The front wall may not be set back more than 40 ft."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "255-47",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "255-47",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-47",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft or 2.5 stories, whichever is more restrictive."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "255-47",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "255-47",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage. Impervious 50% for a single-family detached dwelling."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "255-47F, G",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "255-47F, G",
+        "url": "https://ecode360.com/print/CA1126?guid=10684454",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "255-194"
+          }
+        ],
+        "section": "255-194",
+        "url": "https://ecode360.com/print/CA1126?guid=10685577",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Every principal building shall be served by public water and sewage services.' If the Borough allows a dwelling without both, the lot must be one acre."
+      }
+    },
+    "OR": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "255-57",
+        "url": "https://ecode360.com/print/CA1126?guid=10684498",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "255-57",
+        "url": "https://ecode360.com/print/CA1126?guid=10684498",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Principal and accessory structures."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "255-57",
+        "url": "https://ecode360.com/print/CA1126?guid=10684498",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage. Impervious 50%. Uses permitted by right follow the R-1 requirements (255-50A)."
+      }
+    }
+  }
+}
