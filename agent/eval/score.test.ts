@@ -139,7 +139,11 @@ describe('runner parts', () => {
     const qs = readSet().questions;
     expect(selectQuestions(qs, { limit: 3, category: null, ids: null, dryRun: true, concurrency: 1, timeoutS: 10 })).toHaveLength(3);
     for (const q of qs) {
-      expect(scoreQuestion(q, transcript(q, oracleText(q))).correct, q.id).toBe(true);
+      // The tool results carry the sections the facts cite (questions.test.ts checks that against the real tools), so a
+      // section found only in the zoning text, not in a rule file, is not a made-up citation here.
+      const sections = q.facts.flatMap((f) => (f.kind === 'section' ? [f.value] : []));
+      const calls = q.calls.map((c, i) => ({ ...c, result: i === 0 && sections.length ? { sections } : {}, ok: true }));
+      expect(scoreQuestion(q, transcript(q, oracleText(q), calls)).correct, q.id).toBe(true);
       if (q.facts.some((f) => f.kind === 'number')) expect(scoreQuestion(q, transcript(q, 'I am not sure.')).correct, q.id).toBe(false);
     }
   });

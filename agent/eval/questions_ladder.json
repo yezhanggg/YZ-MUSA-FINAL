@@ -975,7 +975,7 @@
   {
    "id": "ladder-14",
    "category": "ladder",
-   "question": "Can I build an ADU in Plum borough?",
+   "question": "Can I build an ADU in South Middleton township, Cumberland County?",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -998,15 +998,16 @@
     {
      "name": "get_place_answer",
      "input": {
-      "place": "Plum borough"
+      "place": "South Middleton township",
+      "county": "Cumberland"
      }
     }
    ],
    "facts": [
     {
      "kind": "section",
-     "label": "406",
-     "value": "406"
+     "label": "1646",
+     "value": "1646"
     },
     {
      "kind": "behaviour",
@@ -1042,13 +1043,13 @@
     }
    ],
    "scenario": null,
-   "rubric": "Text search tier: quotes Section 406 word for word, labelled unverified, no verdict.",
+   "rubric": "Text search tier: quotes Section 1646 (ECHO housing) word for word, labelled unverified, no verdict.",
    "quotes": "verbatim"
   },
   {
    "id": "ladder-15",
    "category": "ladder",
-   "question": "Is an ADU allowed in Highland township, Adams County?",
+   "question": "Is an ADU allowed in St. Clair borough, Schuylkill County?",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -1071,8 +1072,8 @@
     {
      "name": "get_place_answer",
      "input": {
-      "place": "Highland township",
-      "county": "Adams"
+      "place": "St. Clair borough",
+      "county": "Schuylkill"
      }
     }
    ],
@@ -1637,7 +1638,7 @@
   {
    "id": "ladder-24",
    "category": "ladder",
-   "question": "What is the maximum ADU size in Highland township, Adams County? Give the section.",
+   "question": "What is the maximum ADU size in Dunmore borough, Lackawanna County? Give the section.",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -1661,15 +1662,15 @@
     {
      "name": "get_place_answer",
      "input": {
-      "place": "Highland township",
-      "county": "Adams"
+      "place": "Dunmore borough",
+      "county": "Lackawanna"
      }
     },
     {
      "name": "search_zoning_text",
      "input": {
-      "place": "Highland township",
-      "county": "Adams",
+      "place": "Dunmore borough",
+      "county": "Lackawanna",
       "query": "accessory dwelling unit maximum floor area size"
      }
     }
