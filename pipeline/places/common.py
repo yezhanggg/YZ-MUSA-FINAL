@@ -227,7 +227,12 @@ def fetch_page(s: requests.Session, url: str, fields: str, ids: Sequence[int]) -
         "f": "geojson",
     }
     try:
-        return post_json(s, f"{url}/query", data, tries=2 if len(ids) > 1 else 5)
+        fc = post_json(s, f"{url}/query", data, tries=2 if len(ids) > 1 else 5)
+        # A server caps a reply at its maxRecordCount and says so only in a flag that geojson replies can
+        # drop: a page bigger than the cap came back short (51,000 of 101,537 Chester County outlines on
+        # 2026-11-13). Split a short page until every piece fits.
+        if len(fc.get("features") or []) >= len(ids) or len(ids) == 1:
+            return fc
     except (requests.RequestException, RuntimeError, ValueError):
         if len(ids) == 1:
             raise

@@ -89,6 +89,8 @@
         "parcel_id": {"type": "string", "description": "The city or county parcel id"},
         "address": {"$ref": "#/$defs/str_or_null"},
         "place": {"type": "string", "description": "philadelphia, pittsburgh, ..."},
+        "rule_file": {"type": ["string", "null"], "description": "A county place holding several towns: the town rule file the lot resolves on (pa_chester_west_chester). Absent for a one-town place."},
+        "municipality": {"type": ["string", "null"], "description": "A county place: the lot's town, the Census name (West Chester borough). Absent for a one-town place."},
         "county_fips": {"type": "string", "pattern": "^42\\d{3}$"},
         "tract": {"type": "string"},
         "crs_local": {"enum": [2272]},

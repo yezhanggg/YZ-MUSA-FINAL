@@ -193,6 +193,11 @@ class Place:
     # it differs from front_when_null. One place per county (the app's registry is by county FIPS).
     rule_files: tuple[str, ...] = ()
     front_by_rule_file: tuple[tuple[str, str], ...] = ()
+    # Town files whose share cap for some forms is a share of the house's footprint, not its floor
+    # area, so the main building footprint is the right base even without a living area:
+    # (rule file, forms). Phoenixville 27-404.2B(1): an accessory building's footprint "no more than 2/3
+    # that of the principal building".
+    footprint_share: tuple[tuple[str, tuple[str, ...]], ...] = ()
 
 
 # Setbacks a town file leaves null for a reason the code gives ("not in the front yard", "no separation
@@ -255,6 +260,31 @@ PLACES = {
             "pa_chester_east_brandywine",
         ),
         front_by_rule_file=(("pa_chester_west_chester", "behind_house"),),
+        footprint_share=(("pa_chester_phoenixville", ("detached_new", "garage_conversion", "over_garage")),),
+    ),
+    # Centre County (pipeline/places/centre_county.py): College Township today (pa_centre_college).
+    # The county parcels carry the assessor's living area, so share-of-house caps are checked.
+    "centre_county": Place(
+        "centre_county",
+        "42027",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=("pa_centre_college",),
+    ),
+    # Montgomery County (pipeline/places/montgomery_county.py): Narberth, Lower Merion and Upper Dublin,
+    # the verified towns with an ADU path. Microsoft outlines only. No living area in the open data.
+    "montgomery_county": Place(
+        "montgomery_county",
+        "42091",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=("pa_montgomery_narberth", "pa_montgomery_lower_merion", "pa_montgomery_upper_dublin"),
     ),
 }
 
@@ -482,6 +512,7 @@ class Ctx:
     way_gate_counts_corner: bool = False
     abc_fronts: bool = False
     front_by_rule_file: tuple[tuple[str, str], ...] = ()
+    footprint_share: tuple[tuple[str, tuple[str, ...]], ...] = ()
 
 
 def _union(geoms: Iterable[BaseGeometry]) -> BaseGeometry | None:
@@ -789,8 +820,27 @@ def town_extras_to_reasons(rules: dict[str, Any]) -> dict[str, Any]:
         line = f"Parking: {rules['parking_reading']}"
         if line not in reasons:
             reasons.append(line)
+    # A form the town's code does not address (or bars) gets that status in place of a path. The lot
+    # record holds paths only (lot_schema.json, the app's APPROVAL_PATHS): no ADU rule for the form means
+    # a use variance, as the resolver says for a town that does not address ADUs; a bar is not allowed.
+    for key in ("approval_by_type", "rule_path_by_type"):
+        by_type = out.get(key)
+        if not isinstance(by_type, dict):
+            continue
+        for form, value in list(by_type.items()):
+            if value in STATUS_AS_PATH:
+                by_type[form] = STATUS_AS_PATH[value]
+                line = (
+                    f"{form.replace('_', ' ').capitalize()}: the code {'does not address' if value == 'not_addressed' else 'bars'} "
+                    f"this form, so it is shown as {STATUS_AS_PATH[value].replace('_', ' ')}"
+                )
+                if key == "approval_by_type" and line not in reasons:
+                    reasons.append(line)
     out["reasons"] = reasons
     return out
+
+
+STATUS_AS_PATH = {"not_addressed": "variance", "prohibited": "not_allowed"}
 
 
 def cite_type_paths(rules: dict[str, Any]) -> None:
@@ -963,11 +1013,23 @@ def with_clearance(shape: fit.LotShape, blds: Sequence[fit.Building], rules: dic
 
 
 def rules_for_type(rules: dict[str, Any], adu_type: str) -> dict[str, Any]:
-    """Rules as the fit sees them for one ADU type: that type's height limit."""
+    """Rules as the fit sees them for one ADU type: that type's height limit, and for a town file the
+    type's own size cap and share cap where the file has no cap for every form (SIZE_BY_TYPE)."""
     heights = rules.get("max_height_by_type") or {}
-    if adu_type in heights:
-        return {**rules, "max_height_ft": heights[adu_type]}
-    return rules
+    out = {**rules, "max_height_ft": heights[adu_type]} if adu_type in heights else rules
+    sizes = rules.get(SIZE_BY_TYPE)
+    if sizes:
+        size = (sizes.get("max_size_by_type") or {}).get(adu_type)
+        share = (sizes.get("max_share_by_type") or {}).get(adu_type)
+        if out.get("max_size_sqft") is None and size is not None:
+            out = {**out, "max_size_sqft": size}
+        if out.get("max_share_of_house") is None and share is not None and adu_type in sizes.get("share_forms", ()):
+            out = {**out, "max_share_of_house": share}
+    return out
+
+
+# Private key: a town file's per-form caps, carried from the resolver to the fit (never written).
+SIZE_BY_TYPE = "_size_by_type"
 
 
 def bearing_deg(spot: BaseGeometry, angle_deg: float, epsg: int) -> float:
@@ -1196,7 +1258,8 @@ def build_lot(
     raw_res: dict[str, dict[str, fit.FitResult]] = {}
     cache: dict[str, tuple[Any, Any, Any]] = {}
     for s in SCENARIOS:
-        resolved = town_extras_to_reasons(rulesmod.resolve(rule_place, s, rlot, extra=True))
+        raw = rulesmod.resolve(rule_place, s, rlot, extra=True)
+        resolved = town_extras_to_reasons(raw)
         filled, fill_notes = fill_rules(resolved, rlot["zoning_district"], ctx_front, ctx.not_checked, front_mode)
         notes += [n for n in fill_notes if n not in notes]
         fit_in = filled
@@ -1205,6 +1268,21 @@ def build_lot(
             note = "share-of-house size cap not checked: no living area on file for this house"
             if note not in notes:
                 notes.append(note)
+        if raw.get("max_size_by_type") or raw.get("max_share_by_type"):
+            # Per-form caps of a town file. A share cap needs the house size: the living area, or the
+            # footprint where the place allows it or the file's share is of the footprint.
+            fp_forms = dict(ctx.footprint_share).get(rule_place, ())
+            share_forms = [
+                t for t in rulesmod.ALL_TYPES if shape.living_sqft or ctx.share_cap_from_footprint or t in fp_forms
+            ]
+            fit_in = {
+                **fit_in,
+                SIZE_BY_TYPE: {
+                    "max_size_by_type": raw.get("max_size_by_type"),
+                    "max_share_by_type": raw.get("max_share_by_type"),
+                    "share_forms": share_forms,
+                },
+            }
         key = _rules_key(fit_in)
         if key not in cache:  # scenarios with the same rules (Pittsburgh local reform) share a fit
             cache[key] = run_scenario(shape, blds, fit_in, epsg)
@@ -1257,6 +1335,9 @@ def lot_part(
         "polygon": geo(poly, ctx.crs),
         "area_sqft": round(float(poly.area), 1),
     }
+    if _present(r.get("rule_file")):  # a county place: the lot's own town
+        part["rule_file"] = str(r["rule_file"])
+        part["municipality"] = str(r["municipality"]) if _present(r.get("municipality")) else None
     part.update(lotmod.edges_part(edges, ctx.crs))
     part["shape_notes"] = list(part["shape_notes"]) + [n for n in notes if n.startswith("lot has")]
     return part
@@ -1758,6 +1839,7 @@ def make_ctx(place: Place, paths: dict[str, Path]) -> Ctx:
         way_gate_counts_corner=place.way_gate_counts_corner,
         abc_fronts=place.abc_fronts,
         front_by_rule_file=place.front_by_rule_file,
+        footprint_share=place.footprint_share,
     )
 
 
@@ -2025,6 +2107,28 @@ def dir_size(path: Path, pattern: str) -> tuple[int, int, str | None]:
     return sum(sizes.values()), (sizes[big] if big else 0), big
 
 
+def manifest_towns(index: pd.DataFrame) -> list[dict[str, Any]]:
+    """The towns of a county place: rule file, Census name and GEOID (shared/rules/towns_index.json), lots."""
+    try:
+        towns = json.loads(rulesmod.TOWNS_INDEX.read_text()).get("towns") or []
+    except (OSError, ValueError):
+        towns = []
+    geoid = {t.get("file"): t.get("geoid") for t in towns if t.get("file")}
+    out = []
+    for (rule_file, town), g in index.groupby(["rule_file", "municipality"], dropna=False, sort=True):
+        if not isinstance(rule_file, str):
+            continue
+        out.append(
+            {
+                "rule_file": rule_file,
+                "municipality": town if isinstance(town, str) else None,
+                "geoid": geoid.get(rule_file),
+                "lots": int(len(g)),
+            }
+        )
+    return out
+
+
 def write_manifest(place: Place, out: Path, ctx: Ctx, paths: dict[str, Path], index: pd.DataFrame) -> None:
     progress = read_progress(out)
     errors = (
@@ -2046,6 +2150,11 @@ def write_manifest(place: Place, out: Path, ctx: Ctx, paths: dict[str, Path], in
         "built_at": dt.datetime.now().isoformat(timespec="seconds"),
         "inputs": {k: {"file": str(p), "modified": file_date(p)} for k, p in paths.items()},
         "rule_files_verified_on": rule_dates(place.name),
+        **(
+            {"towns": manifest_towns(index)}
+            if "rule_file" in index.columns and index["rule_file"].notna().any()
+            else {}
+        ),
         "counts": {
             "lots": int(len(index)),
             "tracts": int(index["tract"].nunique()),
@@ -2274,6 +2383,22 @@ STATS_LABELS = {
 }
 # Approval caveats by place that the rule files do not carry yet.
 STATS_CAVEATS = {
+    "chester_county": [
+        "Five towns, each on its own rule file (by_town). Zoning from the county's compiled 'working' layer: "
+        "map dates by town 2013 (Phoenixville, whose code was replaced in 2025), 2014 (West Vincent), 2018 (Malvern), "
+        "2021 (West Chester), 2024 (East Brandywine). West Vincent BV lots (conditional use) are left out.",
+        "No living area in the open data: share-of-house caps are not checked, except Phoenixville's two thirds of "
+        "the house footprint for an accessory building. House heights are DVRPC 2015 lidar estimates.",
+    ],
+    "centre_county": [
+        "College Township only. Zoning from the county's unofficial combined layer. Residential parcels are read as "
+        "one unit houses (the open data has no unit count), so a duplex reads as a house.",
+    ],
+    "montgomery_county": [
+        "Three towns, each on its own rule file (by_town). Building outlines are Microsoft's only; their model heights "
+        "are not used, so tests against the house height read not checked. No living area: share-of-house caps are "
+        "not checked.",
+    ],
     "pittsburgh": [
         "A detached ADU in a side or rear yard needs an Administrator's Exception (925.06.G), "
         "except above an existing garage on a way. Internal and attached units are by right. "

@@ -32,6 +32,16 @@ The code in this repository is under the Apache License 2.0 (`LICENSE`). The det
 | Allegheny County property assessments (WPRDC) | CC0 | Not required (courtesy credit to WPRDC and the Office of Property Assessments) | Yes | Yes | Owner and mailing columns are dropped at download |
 | Allegheny County Imagery 2017, 3 inch | Access: call for details. Informational purposes only, as is. No open license stated | Not stated | No (not downloaded) | unclear, ask the provider | Recorded only. Not used |
 
+## Data: county places (Chester, Centre, Montgomery)
+
+| Data set | License or terms as recorded | Attribution | Redistribute | Commercial use | Notes |
+|---|---|---|---|---|---|
+| Chester County GIS layers on ArcGIS Online (parcels, compiled municipal zoning, road centerlines, municipal boundaries) | No license stated on the layers | Not stated. Naming Chester County GIS is good practice | unclear, ask the provider | unclear, ask the provider | Owner, sale and assessment fields of the parcel layer are never requested |
+| DVRPC 2015 building footprints (served by Chester County) | No license stated on the layer | "Delaware Valley Regional Planning Commission (DVRPC)" (copyright text) | unclear, ask the provider | unclear, ask the provider | Heights estimated from lidar |
+| Centre County GIS OpenData service (parcels, address points, unofficial combined zoning, Buildings_3D, road centerlines) | No license stated on the service | Not stated. Naming Centre County GIS is good practice | unclear, ask the provider | unclear, ask the provider | The zoning layer calls itself unofficial. Sale and assessed value fields of ParcelsPlus are never requested |
+| Montgomery County GIS (parcels, Board of Assessment land table, municipal zoning, street centerlines) | The zoning item says "Montgomery County provides this data as a free and open resource". The other layers state no license | Not stated. Naming Montgomery County is good practice | Zoning yes as stated; the rest unclear, ask the provider | unclear, ask the provider | Owner, mailing, sale and assessed value fields of the land table are never requested |
+| US Census 2020 ZIP Code Tabulation Areas (TIGERweb) | A US federal government work | Courtesy credit to the US Census Bureau | Yes | Yes | ZIP for rents where no property ZIP is published |
+
 ## Data: open and federal
 
 | Data set | License or terms as recorded | Attribution | Redistribute | Commercial use | Notes |

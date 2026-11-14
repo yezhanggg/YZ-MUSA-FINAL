@@ -556,3 +556,40 @@ def test_terrain_refresh_without_rerun(built: Path) -> None:
     assert len((built / "terrain_progress.jsonl").read_text().splitlines()) == n
     stats = bl.group_stats(gpd.pd.read_parquet(built / "index.parquet"))
     assert stats["terrain"]["with_terrain"] == 1.0
+
+
+def test_town_status_becomes_a_path() -> None:
+    """A form the town code does not address resolves to a status. The record keeps paths only."""
+    raw = {
+        "allowed": True,
+        "approval_path": "by_right",
+        "reasons": [],
+        "approval_by_type": {"internal": "by_right", "attached": "not_addressed", "detached_new": "prohibited"},
+        "rule_path_by_type": {"internal": "by_right", "attached": "not_addressed", "detached_new": "prohibited"},
+        "conditions": [],
+    }
+    out = bl.town_extras_to_reasons(raw)
+    assert out["approval_by_type"] == {"internal": "by_right", "attached": "variance", "detached_new": "not_allowed"}
+    assert out["rule_path_by_type"]["attached"] == "variance"
+    assert any("does not address" in r for r in out["reasons"])
+
+
+def test_rule_file_per_lot_and_form_caps() -> None:
+    """A county place resolves each lot on its town file, and a town's per-form caps reach the fit."""
+    ctx = bl.Ctx("chester_county", "42029", 2272, "v", {})
+    assert bl.rule_place_of({"rule_file": "pa_chester_west_chester"}, ctx) == "pa_chester_west_chester"
+    assert bl.rule_place_of({"rule_file": None}, ctx) == "chester_county"
+    rules = {
+        "max_size_sqft": None,
+        "max_share_of_house": None,
+        bl.SIZE_BY_TYPE: {
+            "max_size_by_type": {"detached_new": 1200, "internal": None},
+            "max_share_by_type": {"detached_new": 0.667, "internal": 0.25},
+            "share_forms": ["detached_new"],
+        },
+    }
+    det = bl.rules_for_type(rules, "detached_new")
+    assert det["max_size_sqft"] == 1200 and det["max_share_of_house"] == 0.667
+    inside = bl.rules_for_type(rules, "internal")
+    assert inside["max_size_sqft"] is None and inside["max_share_of_house"] is None  # no house size for a floor share
+    assert bl.rules_for_type({**rules, "max_size_sqft": 800}, "detached_new")["max_size_sqft"] == 800

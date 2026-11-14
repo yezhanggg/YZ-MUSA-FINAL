@@ -231,6 +231,16 @@ mailing addresses. No assessed values and no sale dates or prices: those stay ou
   Allentown zoning per parcel, zoning overlays, historic districts, building outlines, street centerlines with
   cartway widths, the A, B and C street designation of the zoning map). Microsoft Global ML Building Footprints for
   outlines the city layer misses. USGS 3DEP 1 m DEM.
+- Chester County (West Chester, Phoenixville, West Vincent, Malvern, East Brandywine): Chester County GIS layers on
+  ArcGIS Online (parcels with the land use code, the compiled municipal zoning, road centerlines, municipal
+  boundaries). DVRPC 2015 building footprints with estimated heights. Microsoft Global ML Building Footprints for
+  outlines the 2015 set misses. Census 2020 ZIP Code Tabulation Areas.
+- Centre County (College Township): Centre County GIS OpenData service (parcels with living area, address points,
+  the unofficial combined zoning layer, buildings with heights, road centerlines). Microsoft Global ML Building
+  Footprints for outlines the county layer misses.
+- Montgomery County (Narberth, Lower Merion, Upper Dublin): Montgomery County GIS (parcels, the Board of Assessment
+  land table for land use, living units and property ZIP, the aggregated municipal zoning, street centerlines).
+  Microsoft Global ML Building Footprints. Census 2020 ZIP Code Tabulation Areas.
 - Ground heights (all places): USGS 3DEP 1 m DEM, public domain. Used for the slope numbers and the terrain tiles.
 - All places: US Census TIGER 2020 tracts. HUD Small Area Fair Market Rents. FEMA National Flood Hazard Layer.
 - Rules: city zoning codes and state bills, each cited with its link and the date it was checked.
@@ -242,10 +252,13 @@ These notes repeat what the providers state. They are not legal advice.
 - Some city and county layers have no stated licence. The Allegheny County layers on PASDA state no licence and say
   "informational purposes only". The City of Pittsburgh layers state no licence (WPRDC lists "License not
   specified"). The City of Philadelphia License says free public use and keeps all rights, but does not say whether
-  copies may be republished. The City of Allentown layers state no licence (copyright text "City GIS").
+  copies may be republished. The City of Allentown layers state no licence (copyright text "City GIS"). The Chester
+  County, DVRPC and Centre County layers state no licence. Montgomery County says its zoning layer is "a free and open
+  resource".
   Republishing these derived files may need the provider's permission. Ask the provider.
-- Microsoft building footprints and OpenStreetMap are under the ODbL. The Pittsburgh and Allentown building outlines mix
-  county or city and Microsoft outlines, and the Philadelphia alleys use OpenStreetMap. Data derived from them is shared under the ODbL:
+- Microsoft building footprints and OpenStreetMap are under the ODbL. The Pittsburgh, Allentown, Chester County and
+  Centre County building outlines mix county, city or regional and Microsoft outlines, the Montgomery County outlines
+  are Microsoft's, and the Philadelphia alleys use OpenStreetMap. Data derived from them is shared under the ODbL:
   © Microsoft, © OpenStreetMap contributors.
 - Allegheny County property assessments are CC0. Owner and mailing columns were dropped at download.
 - Census, FEMA and other federal data are US government works.

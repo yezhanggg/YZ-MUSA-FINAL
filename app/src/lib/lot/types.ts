@@ -66,6 +66,10 @@ export interface LotPart {
   parcel_id: string;
   address?: string | null;
   place?: string;
+  /** A county place holding several towns: the town rule file the lot resolves on (pa_chester_west_chester). */
+  rule_file?: string | null;
+  /** A county place: the lot's town, the Census name ("West Chester borough"). */
+  municipality?: string | null;
   county_fips?: string;
   tract?: string;
   crs_local: 2272;
@@ -365,7 +369,7 @@ export const LOT_KEYS = {
   citation: keysOf<Citation>()(['section', 'url', 'verified_on', 'confidence', 'source_file']),
   edge: keysOf<Edge>()(['id', 'role', 'line', 'length_ft', 'party_wall']),
   lot: keysOf<LotPart>()([
-    'id', 'parcel_id', 'address', 'place', 'county_fips', 'tract', 'crs_local', 'polygon', 'area_sqft', 'edges',
+    'id', 'parcel_id', 'address', 'place', 'rule_file', 'municipality', 'county_fips', 'tract', 'crs_local', 'polygon', 'area_sqft', 'edges',
     'front_edges', 'rear_edges', 'side_edges', 'alley', 'corner', 'flag_lot', 'street_edge', 'shape_confidence', 'shape_notes',
   ]),
   building: keysOf<Building>()(['id', 'polygon', 'height_ft', 'height_source', 'role', 'source', 'area_sqft']),

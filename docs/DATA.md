@@ -139,6 +139,22 @@ Known limits:
 - The flood layer was pulled by a box around the city, so it holds zones outside the city too. Only lot overlaps are used.
 - "Way" is the legal name of many Pittsburgh alleys, but some Ways are full streets. The place build does not call every Way an alley. The lot builder treats a Way as a lane for the rear setback.
 
+## County places (lot records for several towns)
+
+Built 2026-11-13 and 14. One place per county (the app's registry is by county). Each lot names its town's rule file in `rule_file`. Only towns with a verified rule file and an ADU path whose districts the county zoning layer names are built. Raw files in `raw/<place>/` with `SOURCES.json`, built tables in `processed/<place>/` (`lots`, `buildings`, `streets`, `join_check.json`, `zoning_dates.json`). Owner, mailing, sale and assessed value fields are never requested.
+
+<!-- source: raw/<place>/SOURCES.json and processed/<place>/join_check.json, 2026-11-14 -->
+
+| Place | Towns (rule file) | Parcels and facts | Zoning | Outlines | Streets | ZIP |
+|---|---|---|---|---|---|---|
+| `chester_county` (42029) | West Chester, Phoenixville, West Vincent, Malvern, East Brandywine | County `Parcels_owners` (UPI, address, land use code: R-10 single family, R-20 two family, R-55 townhouse). No living area | County `Zoning_Edit_Working` (compiled, "working"). Map dates per town: Phoenixville 2013-12-10, West Vincent 2014-10-13, Malvern 2018-10-02, West Chester 2021-10-20, East Brandywine 2024-06-11. Overlays split from districts | DVRPC 2015 (height estimate in feet) plus Microsoft outlines it misses | County centerlines (ROAD_THORO_TYPE AL = alley) | 2020 Census ZCTA |
+| `centre_county` (42027) | College Township | County `ParcelsPlus` (class R, living area). Address points with postal ZIP | County `UnofficialCountyZoning` ("unofficial"; R1, RO read as the file's R-1, R-O) | County `Buildings_3D` (height) plus Microsoft | County NG911 centerlines (St_PosTyp Alley) | Address points |
+| `montgomery_county` (42091) | Narberth, Lower Merion, Upper Dublin | County parcels (TAXPIN) and the Board of Assessment land table (land use 11xx, living units, property location and ZIP). No living area | County `Montgomery_County_Municipal_Zoning` ("free and open"). Map dates: Narberth April 2016, Lower Merion February 2020, Upper Dublin October 2022 | Microsoft only (no county outline layer) | County NG911 centerlines | Assessment ZIP, else 2020 ZCTA |
+
+House type: units from the land use code (or living units), then twin and row from shared walls of the outlines (`pipeline.places.allentown.wall_chains`). Lots left out: condominium units, apartments, parcels without a house, and West Vincent BV lots (an ADU there is a conditional use, which the lot record cannot say).
+
+Ground: USGS 3DEP 1 m DEM. Chester and Montgomery: PA_17County_D24 (Montgomery's five tiles are the Philadelphia files, hard-linked). Centre: PA_Northcentral_2019_B19 (zone 18 tiles, flown 2019-03-20 to 2019-11-23). No land cover model run for these places: the `cover` block is empty.
+
 ## Statewide
 
 <!-- source: file listing of ~/musa-drive/raw/tiger and ~/musa-drive/raw/market on 2026-11-11, raw/market/safmr_pa_fy2026.json "source" and "vintage", output of `python -m pipeline.market coverage` on 2026-11-11 -->

@@ -1,6 +1,8 @@
 # Adding a city
 
-The recipe for a new Pennsylvania place with lot records. Philadelphia (`pipeline/places/philadelphia.py`) and Pittsburgh (`pipeline/places/pittsburgh.py`) are the two worked examples. Pittsburgh is the simpler one to copy. Allentown (`pipeline/places/allentown.py`) is the first place built on a town rule file (`pa_lehigh_allentown.json`), with no assessor living area.
+The recipe for a new Pennsylvania place with lot records. Philadelphia (`pipeline/places/philadelphia.py`) and Pittsburgh (`pipeline/places/pittsburgh.py`) are the two worked examples. Pittsburgh is the simpler one to copy. Allentown (`pipeline/places/allentown.py`) is the first place built on a town rule file (`pa_lehigh_allentown.json`), with no assessor living area. Chester County (`pipeline/places/chester_county.py`, five towns) and Centre County (`pipeline/places/centre_county.py`, College Township) are the examples of one place that holds the lots of several towns from county layers.
+
+The app's registry is by county (`PLACE_BY_COUNTY` in `app/src/lib/lot/load.ts`: county FIPS to one place folder). So one place per county: a county already used by a place (Allegheny for Pittsburgh, Lehigh for Allentown) cannot take a second place, and a new county place should hold every town in it that can be built. Each lot then names its town's rule file (section 4).
 
 A town can also get rules without lot records. That needs only a rule file. Sections 5 and 9 cover it, and [RULES_TOWNS.md](RULES_TOWNS.md) lists the towns that have one.
 
@@ -42,7 +44,9 @@ python -m pipeline.places.<town> build      # processed/<town>/lots, buildings, 
 python -m pipeline.places.<town> check      # join rates on random lots -> join_check.json
 ```
 
-Pick the local state plane in feet by the county's zone: EPSG:2272 (Pennsylvania South) or EPSG:2271 (Pennsylvania North). Both Philadelphia and Pittsburgh use EPSG:2272 (`WORK_CRS` in each place module). Compute every area and length there. `pipeline/lot_schema.json` accepts only 2272 today, so a northern county also needs the schema change in section 4.
+Pick the local state plane in feet: EPSG:2272 (Pennsylvania South) or EPSG:2271 (Pennsylvania North). Every place so far uses EPSG:2272 (`WORK_CRS` in each place module), and `pipeline/lot_schema.json` accepts only 2272. Centre County is in the North zone but uses 2272: College Township lies between the South zone's standard parallels (39°56' and 40°58') and next to its central meridian (77°45' W), so lengths and areas are as true there. A place outside that band needs 2271 and the schema change in section 4. Compute every area and length in the place CRS.
+
+ArcGIS servers cap a reply at their `maxRecordCount` (often 1,000). `common.fetch_page` now splits a page that comes back short, but keep `page` at or under the layer's cap, and compare the feature count with the file you wrote (a 2,000 page on a 1,000 cap once kept 51,000 of 101,537 outlines).
 
 Drop owner columns on download with a `drop_owner_columns` function, as both place modules do.
 
@@ -55,6 +59,8 @@ Drop owner columns on download with a `drop_owner_columns` function, as both pla
 | Column | Needed | Meaning |
 |---|---|---|
 | `lot_id` | Yes | `<county FIPS>-<parcel id>`, for example `42003-0001D00128000000` |
+| `rule_file` | For a place of several towns | The town's rule file (`pa_chester_west_chester`). `build_lots` resolves the lot on it instead of the place name |
+| `municipality` | For a place of several towns | The town's Census name. With `rule_file` it goes into each record (`lot.rule_file`, `lot.municipality`) and the index, `manifest.json` gets a `towns` list (rule file, name, GEOID, lots) and `stats.json` gets `by_town` |
 | `geometry` | Yes | Lot polygon in the local feet CRS |
 | `pin` or `parcel_id` | Yes | County parcel id |
 | `housing_type` | Yes | `single_family_detached`, `semi_detached`, `rowhouse`, or a 2 to 4 unit type. Picks the house type for the rules and the party wall test |
@@ -103,10 +109,13 @@ An optional `alleys.parquet` with the same columns is added to the streets. Only
 | File | Change |
 |---|---|
 | `pipeline/build_lots.py` | Add a `Place` to `PLACES`: name, county FIPS, CRS, street suffixes that name a lane, `front_when_null` (`fixed` or `contextual`), `strict_garage`, `cost_key` (a key of `cost.area_cost_factor`, or `rest_of_pa`) and `imagery_key`. For a town rule file also: `not_checked` (setbacks left unchecked where the file has no number, instead of the planning fallbacks), `share_cap_from_footprint=False` (no living area: the share-of-house cap is not checked) `way_gate_counts_corner` (a corner lot passes an "abuts an alley" gate) and `abc_fronts` (the town's zoning map designates A, B and C streets: the front lot line goes on the highest class street the lot abuts, a side street line keeps an outbuilding no closer than the house, and a street on the rear lot line counts as abutting a way; needs a `frontage` column in `streets.parquet`). Allentown is the example |
+| `pipeline/build_lots.py`, several towns | `rule_files` (every town file the place's lots name, so the data version and the manifest follow them) and `front_by_rule_file` (a front rule per town where it differs, for example West Chester's "not in the front or side yard" as `behind_house`). Chester County is the example |
 | `pipeline/lot.py` | Add the place to `LOCAL_CRS` |
 | `pipeline/lot_schema.json` | If the CRS is new, add it to the `crs_local` enum |
 | `app/src/lib/lot/load.ts` | Add the county FIPS to `PLACE_BY_COUNTY` |
-| `pipeline/rules.py` | Add the place to `LOCAL_REFORM` (an empty list if it has no pending local bill) |
+| `pipeline/rules.py` | A city place: add it to `LOCAL_REFORM` (an empty list if it has no pending local bill). A town place needs nothing here: `rules.resolve` takes the rule file name, and a missing `LOCAL_REFORM` entry means no local bill |
+
+A town file can give a path the lot record cannot hold. The record and the app keep five paths (`APPROVAL_PATHS`: by right, administrator exception, special exception, variance, not allowed). `build_lots.town_extras_to_reasons` turns a form's status into a path (`not_addressed` to variance, `prohibited` to not allowed) with a reason line. A conditional use has no honest path value: leave those lots out in the place module and say so (West Vincent BV), until `conditional_use` is added to `pipeline/lot_schema.json` and the app.
 
 Lots outside Philadelphia and Pittsburgh use the `rest_of_pa` money numbers. Permit fees there use the Pittsburgh schedule as a stand-in.
 
@@ -146,11 +155,17 @@ $G -m pipeline.places.<town> check
 $G -m pipeline.build_lots run --place <town> --limit 300      # smoke test
 $G -m pipeline.build_lots validate --place <town>
 $G -m pipeline.build_lots run --place <town> --force          # the whole place
+$G -m pipeline.build_lots terrain --place <town> --workers 3   # slope per lot, needs the DEM below
 $G -m pipeline.build_lots validate --place <town>
 $G -m pipeline.build_lots stats --place <town>
 $G -m pipeline.build_lots qa --place <town> --n 20 --seed 7
 $G app/build_lot_tiles.py --place <town>                       # parcel tiles for the map (needs tippecanoe)
+$G tools/terrain_tiles.py --place <town>                        # ground tiles for the 3D view
 ```
+
+A full `run` writes records without terrain, but `terrain_progress.jsonl` still marks the tracts done with the same DEM. Move it aside after a full run, or run `terrain --force`.
+
+Ground slope needs the USGS 3DEP 1 m DEM in `raw/elevation/<town>/`: the tiles that touch the towns (TNM Access API, `datasets=Digital Elevation Model (DEM) 1 meter`, one UTM zone only so the mosaic has one CRS) and a `SOURCES.json` with a `dem` entry (`files`, `source_key`, `flown_from`, `flown_to`, `license`, `title`). Copy the entry of `raw/elevation/allentown/SOURCES.json` and take the flight dates from a tile's metadata (`begdate`, `enddate`).
 
 The app finds a place by its county FIPS (`PLACE_BY_COUNTY` in `app/src/lib/lot/load.ts`). It reads the files from `<VITE_LOT_DATA_URL><town>/`. See [app/README.md](../app/README.md).
 
