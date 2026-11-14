@@ -184,6 +184,23 @@ On 2026-11-12 the terrain refresh (`build_lots terrain`) added a `terrain` block
 
 Allentown was rebuilt on 2026-11-13 with the A, B and C street designation (front lot lines), side street and rear yard placement, coverage by house type and through lots (see [ADDING_A_CITY.md](ADDING_A_CITY.md) section 4). The build before it (`allentown-20261112-5825ca3817`) is kept in `~/musa-drive/backups/lots-allentown-pre-lotdata2-allentown-20261112-5825ca3817/`.
 
+### Address index
+
+`python -m pipeline.build_lots addresses --place <place>` (same as `python -m pipeline.address_index --place <place>`) reads `index.parquet` (columns `lot_id`, `tract`, `address` and, for a county place, `municipality`; nothing else) and writes `<data root>/lots/<place>/addresses/`: `index.json.gz` (the towns, the shard keys and every street name with its lot count and lowest and highest house number) and `shards/<key>.json.gz` (house number, lot id, tract and town of each lot on the streets whose name, without a leading N, S, E or W, starts with `<key>`). A key gets one letter longer until its shard holds at most 4,000 lots. No owner, sale or value field. The run replaces the folder as a whole and gives the same bytes for the same input, so it is safe to rerun after a rebuild of one place. `tools/publish_lots.sh` builds it when it is missing or older than `index.parquet`, and publishes it. The assistant's `find_lot` reads it (`app/src/lib/lot/addressIndex.ts`); the address normalisation is shared with the app (cases in `tests/fixtures/address_norm_cases.json`).
+
+<!-- source: python -m pipeline.build_lots addresses, run 2026-11-14 on the builds in the table above and the county builds of 2026-11-14 -->
+
+| Place | Lots with an address | Streets | Shards | `index.json.gz` | Largest shard | All files |
+|---|---|---|---|---|---|---|
+| Pittsburgh | 92,081 of 92,081 | 3,134 | 96 | 33,822 bytes | 25,849 bytes | 631,338 bytes |
+| Philadelphia | 459,998 of 459,998 | 3,200 | 525 | 38,726 bytes | 32,233 bytes | 2,309,421 bytes |
+| Allentown | 29,150 of 29,158 | 621 | 33 | 6,799 bytes | 24,551 bytes | 299,910 bytes |
+| Chester County | 14,838 of 14,847 | 648 | 31 | 7,717 bytes | 8,390 bytes | 98,727 bytes |
+| Centre County | 3,474 of 3,484 | 248 | 24 | 3,073 bytes | 2,801 bytes | 28,895 bytes |
+| Montgomery County | 26,118 of 26,119 | 1,182 | 25 | 13,164 bytes | 17,195 bytes | 196,820 bytes |
+
+3,565,111 bytes in all. The lots left out have no address (8 in Allentown, 9 in Chester County, 10 in Centre County) or no house number (1 in Montgomery County, `CHURCH ST`).
+
 Rule files used by the Pittsburgh and Philadelphia builds were checked on 2026-11-10; the Allentown build reads `pa_lehigh_allentown.json` as of 2026-11-13. Lots without a cover row (42 in Pittsburgh) keep an empty `cover` block.
 
 ## Elevation (ground slope)

@@ -15,6 +15,10 @@
 #   lots/<place>/tiles/parcels.pmtiles  (when built; Allentown has none, the app treats it as optional)
 #   lots/<place>/tiles/lots.pmtiles  overview.pmtiles  (when built: "Show testable lots", app/build_lot_tiles.py)
 #   lots/<place>/tiles/terrain.pmtiles  (when built: terrarium raster-DEM tiles, tools/terrain_tiles.py)
+#   lots/<place>/addresses/index.json.gz  shards/<key>.json.gz  (the address index of find_lot, pipeline/address_index.py;
+#                                         built here first when it is missing or older than index.parquet)
+#
+# PYTHON names the Python with pandas and pyarrow for the address index (default python3).
 set -euo pipefail
 
 SRC="${LOT_DATA_DIR:-$HOME/musa-drive/lots}"
@@ -51,11 +55,28 @@ for p in $PLACES; do
   done
 done
 
+# Address index (house number, street, town, lot id, tract; nothing else) for the assistant's find_lot. Built from
+# index.parquet when it is missing or older than the lot build. Safe to rerun: the folder is replaced as a whole.
+for p in $PLACES; do
+  ix="$SRC/$p/addresses/index.json.gz"
+  if [ -f "$SRC/$p/index.parquet" ] && { [ ! -f "$ix" ] || [ "$SRC/$p/index.parquet" -nt "$ix" ]; }; then
+    echo "$p: building the address index"
+    (cd "$REPO" && "${PYTHON:-python3}" -m pipeline.address_index --lots-dir "$SRC" --place "$p") \
+      || { echo "could not build the address index of $p. Run: python -m pipeline.build_lots addresses --place $p" >&2; exit 1; }
+  fi
+done
+
 mkdir -p "$OUT/lots"
 for p in $PLACES; do
   dst="$OUT/lots/$p"
   mkdir -p "$dst/detail" "$dst/tiles"
   cp "$SRC/$p/stats.json" "$SRC/$p/lot_tract.json" "$dst/"
+  rm -rf "$dst/addresses"
+  if [ -f "$SRC/$p/addresses/index.json.gz" ]; then
+    cp -R "$SRC/$p/addresses" "$dst/addresses"
+  else
+    echo "note: no address index for $p (python -m pipeline.build_lots addresses --place $p). find_lot then searches only the lots on the map" >&2
+  fi
 done
 
 # Tract files: the head file and its split parts, with the sale and assessment facts left out (the app and the
@@ -210,6 +231,8 @@ lots/<place>/tiles/parcels.pmtiles    parcel outlines, read by byte range
 lots/<place>/tiles/lots.pmtiles       the same outlines with each lot's answer per scenario and unit type
 lots/<place>/tiles/overview.pmtiles   grid squares where there are lots, for the zoomed-out map
 lots/<place>/tiles/terrain.pmtiles    ground heights (Terrarium PNG tiles, zoom 10 to 15 or 16, see the file header) for the 3D map
+lots/<place>/addresses/index.json.gz  street names of the place, for the address search of the assistant
+lots/<place>/addresses/shards/<key>.json.gz   house number, lot id, tract and town of each lot on the streets that start with <key>
 ```
 
 The `.json.gz` files are served as plain gzip bytes. The app decompresses them in the browser.
@@ -312,6 +335,27 @@ for d, _, fs in os.walk(f"{out}/lots"):
             if keys:
                 sys.exit(f"owner, sale or value keys {sorted(k.decode() for k in keys)} in {f}")
 print("no sale, assessment or owner fields in the tract files")
+# Address index: only its own keys, and no owner, sale or value key anywhere in it.
+INDEX_KEYS = {"format", "kind", "place", "data_version", "prefix", "towns", "lots", "addressed", "skipped", "shards", "streets"}
+SHARD_KEYS = {"key", "streets"}
+import json
+n = 0
+for d, _, fs in os.walk(f"{out}/lots"):
+    if "/addresses" not in d:
+        continue
+    for f in fs:
+        with gzip.open(os.path.join(d, f), "rb") as g:
+            body = g.read()
+        doc = json.loads(body)
+        want = INDEX_KEYS if f == "index.json.gz" else SHARD_KEYS
+        if set(doc) - want:
+            sys.exit(f"unexpected keys {sorted(set(doc) - want)} in {d}/{f}")
+        if f != "index.json.gz" and any(set(v) - {"label", "rows"} for v in doc["streets"].values()):
+            sys.exit(f"unexpected street keys in {d}/{f}")
+        if BAD_KEY.findall(body.lower()):
+            sys.exit(f"owner, sale or value keys in {d}/{f}")
+        n += 1
+print(f"address index: {n} files, addresses only")
 for p in sorted(os.listdir(f"{out}/lots")):
     t = f"{out}/lots/{p}/tiles"
     names = sorted(os.listdir(t)) if os.path.isdir(t) else []

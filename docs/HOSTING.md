@@ -21,6 +21,14 @@ Checked by running the production build and logging every request in Chromium (N
 | `<place>/detail/<GEOID>.pN.json.gz` | When a head file names extra chunks in `more`. None in the Nov 11 build, kept for later builds | |
 | `<place>/stats.json` | When a lot opens, for the city-wide story | 48 KB |
 | `<place>/lot_tract.json` | Only when the Ask assistant opens a lot by id that is not in memory | 3.4 MB and 14 MB (gzipped on the fly to 0.3 MB and 1.3 MB) |
+| `<place>/addresses/index.json.gz` (each place) | When the Ask assistant first searches an address (`find_lot`), then kept | 3 KB to 39 KB, 103 KB for all six places |
+| `<place>/addresses/shards/<key>.json.gz` | One per street the address names (usually one) | up to 32 KB |
+
+The address index (`addresses/`, 3.6 MB for all six places, see [DATA.md](DATA.md#address-index)) lets the assistant
+find any address of a lot place, on the map or not: one lookup downloads the six index files once (103 KB) and one
+shard (under 33 KB). `tools/publish_lots.sh` builds it when it is missing or older than `index.parquet` (set `PYTHON`
+to a Python with pandas and pyarrow) and checks that it holds addresses only. Without it `find_lot` searches only
+the lots on the map.
 
 The app does not read `app/`, `index.parquet`, `lot_tract.parquet`, `parts/`, `qa/`, `progress.jsonl` or the
 `*.before_2272.*` files. They stay on the drive.

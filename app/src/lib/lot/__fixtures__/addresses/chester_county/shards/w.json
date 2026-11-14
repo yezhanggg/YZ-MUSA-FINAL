@@ -1,0 +1,33 @@
+{
+ "key": "w",
+ "streets": {
+  "washington ave": {
+   "label": "WASHINGTON AV",
+   "rows": [
+    [
+     "75",
+     "15-10-118",
+     "300900",
+     0
+    ],
+    [
+     "77",
+     "15-10-119",
+     "300900",
+     0
+    ]
+   ]
+  },
+  "washington st": {
+   "label": "WASHINGTON ST",
+   "rows": [
+    [
+     "75",
+     "1-9-900",
+     "302500",
+     1
+    ]
+   ]
+  }
+ }
+}

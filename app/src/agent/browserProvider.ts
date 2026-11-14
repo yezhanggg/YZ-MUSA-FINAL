@@ -13,6 +13,7 @@ import { zoningTextSource } from './zoningText';
 import { placesSource } from './placeAnswer';
 import { lotPlacesText } from './lotPlaces';
 import { lotTownOf } from '../lib/lot/towns';
+import { addressIndexSource } from '../lib/lot/addressIndex';
 
 /** { town } of a lot record for find_lot, when its town is known. */
 const townOf = (r: LotRecord) => {
@@ -99,6 +100,8 @@ export const browserProvider: DataProvider = {
   zoningText: zoningTextSource(),
   // The statewide place table for get_place_answer, from the app's own data folder.
   places: placesSource(),
+  // find_lot: the address index of every lot place (published next to the tract files), fetched per street.
+  addressIndex: addressIndexSource(),
   async lotById(id) {
     const lot = await lotById(id);
     return lot ? siteOfLot(lot) : null;

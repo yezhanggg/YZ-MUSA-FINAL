@@ -21,6 +21,7 @@ CLI:
     python -m pipeline.build_lots qa --place pittsburgh [--n 20] [--seed 7]
     python -m pipeline.build_lots cover --place pittsburgh [--workers 4]
     python -m pipeline.build_lots terrain --place pittsburgh [--workers 4] [--tracts ...] [--force]
+    python -m pipeline.build_lots addresses --place pittsburgh   (address index for find_lot, pipeline/address_index.py)
 
 `cover` and `terrain` are refresh steps: they fold a new block into built records without a fit
 rerun. Run `terrain` again after a `run`, which writes records without the terrain block.
@@ -2943,6 +2944,13 @@ def cmd_terrain(args: argparse.Namespace) -> int:
 # ---------------------------------------------------------------- CLI
 
 
+def cmd_addresses(args: argparse.Namespace) -> int:
+    from pipeline.address_index import build_place
+
+    build_place(get_place(args.place).name)
+    return 0
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="python -m pipeline.build_lots", description=__doc__.splitlines()[0])
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -2972,6 +2980,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     tr.add_argument("--tracts", nargs="*", help="only these tract GEOIDs")
     tr.add_argument("--force", action="store_true", help="redo tracts already done with this terrain version")
     tr.add_argument("--no-backup", action="store_true", help="do not copy the files it rewrites first")
+    ad = sub.add_parser(
+        "addresses", help="address index for the assistant's find_lot (reads index.parquet, safe to rerun)"
+    )
+    ad.add_argument("--place", required=True)
     args = p.parse_args(argv)
     if args.cmd in ("run", "cover", "terrain") and args.workers > 4:
         print("note: other jobs share this machine. Using 4 workers at most is advised")
@@ -2982,6 +2994,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "qa": cmd_qa,
         "cover": cmd_cover,
         "terrain": cmd_terrain,
+        "addresses": cmd_addresses,
     }
     return cmds[args.cmd](args)
 

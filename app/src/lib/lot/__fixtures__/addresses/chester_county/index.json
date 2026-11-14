@@ -1,0 +1,68 @@
+{
+ "addressed": 8,
+ "data_version": "chester_county-fixture",
+ "format": 1,
+ "kind": "address_index",
+ "lots": 8,
+ "place": "chester_county",
+ "prefix": "42029",
+ "shards": {
+  "c": 2,
+  "d": 2,
+  "m": 1,
+  "w": 3
+ },
+ "skipped": 0,
+ "streets": [
+  [
+   "church st",
+   2,
+   309,
+   309,
+   [
+    0,
+    1
+   ]
+  ],
+  [
+   "s darlington st",
+   2,
+   324,
+   326,
+   [
+    1
+   ]
+  ],
+  [
+   "w marshall st",
+   1,
+   307,
+   307,
+   [
+    1
+   ]
+  ],
+  [
+   "washington ave",
+   2,
+   75,
+   77,
+   [
+    0
+   ]
+  ],
+  [
+   "washington st",
+   1,
+   75,
+   75,
+   [
+    1
+   ]
+  ]
+ ],
+ "towns": [
+  "Phoenixville borough",
+  "West Chester borough"
+ ]
+}

@@ -423,6 +423,13 @@ export async function loadLot(lotId: string, geoid: string, opts: LoadOptions = 
   return lot;
 }
 
+/** Any JSON or gzip JSON file of the lot data by its path under the base URL ("pittsburgh/addresses/index.json.gz").
+ *  Same fetch, retry and errors as the tract files. */
+export function fetchLotFile(path: string, opts: LoadOptions = {}): Promise<unknown> {
+  const { base, f } = settings(opts);
+  return getJson(`${base}${path}`, f, opts.signal);
+}
+
 /** Every lot record in memory (the assistant's address search in the browser). */
 export const loadedLots = (cache: TractCache = sharedCache): LotRecord[] => cache.allLots();
 

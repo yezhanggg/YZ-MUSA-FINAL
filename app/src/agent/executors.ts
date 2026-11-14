@@ -7,7 +7,8 @@ import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
 import { getRuleText, listRulePlaces } from './ruleText';
 import { listTextPlaces, searchZoningText, textHint, type ZoningTextSource } from './zoningText';
 import { getPlaceAnswer, type PlacesSource } from './placeAnswer';
-import { areaStats, findLotResult, forecast, roomOut, type AddressEntry, type AreaData } from './areaTools';
+import { areaStats, findLotIndexResult, findLotResult, forecast, matchAddress, roomOut, type AddressEntry, type AreaData } from './areaTools';
+import type { AddressIndexSource } from '../lib/lot/addressIndex';
 import { meters, type LngLat, type Lot, type TownProps, type TractProps } from '../tool/geo';
 
 export interface SiteRecord {
@@ -33,6 +34,8 @@ export interface DataProvider {
   setMap?(input: SetMapInput): Promise<string>;
   /** find_lot: the lot addresses this side can search, and what they cover. */
   addressBook?(): Promise<{ entries: AddressEntry[]; scope: string }>;
+  /** find_lot: the published address index of every lot place (lib/lot/addressIndex.ts). Searched first. */
+  addressIndex?: AddressIndexSource | null;
   /** get_area_stats: tracts, towns and counties. */
   areas?(): Promise<AreaData | null>;
   /** search_zoning_text: the public zoning text files (tier B). Missing: the tool says text search is not available. */
@@ -182,8 +185,20 @@ export function makeExecutors(p: DataProvider) {
       };
     },
     async find_lot(input: { address?: unknown }) {
+      const address = input.address;
+      if (p.addressIndex && typeof address === 'string' && address.trim()) {
+        const r = await p.addressIndex.search(address);
+        // Found, or every place's index was read: the index is the whole answer (the lots in memory are a part of it).
+        if (r.candidates.length || !r.missing.length) return findLotIndexResult(address, r);
+        // An index could not be read: the lots in memory may still have the address.
+        const book = p.addressBook ? await p.addressBook() : null;
+        const hits = book ? matchAddress(address, book.entries) : [];
+        if (book && hits.length) return { address, searched: book.scope, candidates: hits };
+        if (r.searched.length) return findLotIndexResult(address, r);
+        return book ? findLotResult(address, book) : { error: 'The address files could not be read. Try again in a moment.' };
+      }
       if (!p.addressBook) return { error: 'Address search is not available here.' };
-      return findLotResult(input.address, await p.addressBook());
+      return findLotResult(address, await p.addressBook());
     },
     async get_area_stats(input: { level?: unknown; geoid?: unknown; name?: unknown }) {
       const s = await p.selected();

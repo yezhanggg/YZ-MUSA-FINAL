@@ -113,3 +113,45 @@ def test_publish_defaults_to_every_place_with_a_manifest(tmp_path):
     run = subprocess.run(["bash", str(SCRIPT)], env=env, capture_output=True, text=True, check=False)
     assert run.returncode != 0
     assert "no place with a manifest.json" in run.stderr
+
+
+@pytest.mark.skipif(shutil.which("bash") is None, reason="needs bash")
+def test_publish_builds_and_copies_the_address_index(tmp_path):
+    import sys
+
+    pd = pytest.importorskip("pandas")
+    pytest.importorskip("pyarrow")
+    src, out = tmp_path / "lots", tmp_path / "host"
+    built = fake_build(src)
+    rows = {"lot_id": ["42003-1"], "tract": ["42003000100"], "address": ["5704 POCUSSET ST"], "assessed_value": [1.0]}
+    pd.DataFrame(rows).to_parquet(built / "index.parquet")
+    env = {
+        **os.environ,
+        "LOT_DATA_DIR": str(src),
+        "LOT_HOST_DIR": str(out),
+        "LOT_PLACES": "testville",
+        "PYTHON": sys.executable,
+    }
+    run = subprocess.run(["bash", str(SCRIPT)], env=env, capture_output=True, text=True, check=False)
+    assert run.returncode == 0, run.stderr
+    assert "testville: building the address index" in run.stdout
+    assert "address index: 2 files, addresses only" in run.stdout
+    ix = json.loads(gzip.decompress((out / "lots/testville/addresses/index.json.gz").read_bytes()))
+    assert ix["streets"] == [["pocusset st", 1, 5704, 5704, [0]]]
+    shard = json.loads(gzip.decompress((out / "lots/testville/addresses/shards/p.json.gz").read_bytes()))
+    assert shard["streets"]["pocusset st"]["rows"] == [["5704", "1", "000100", 0]]
+    # Up to date: a second run copies it without building again.
+    run = subprocess.run(["bash", str(SCRIPT)], env=env, capture_output=True, text=True, check=False)
+    assert run.returncode == 0, run.stderr
+    assert "building the address index" not in run.stdout
+
+
+@pytest.mark.skipif(shutil.which("bash") is None or shutil.which("python3") is None, reason="needs bash and python3")
+def test_publish_without_an_address_index_says_so(tmp_path):
+    src, out = tmp_path / "lots", tmp_path / "host"
+    fake_build(src)
+    env = {**os.environ, "LOT_DATA_DIR": str(src), "LOT_HOST_DIR": str(out), "LOT_PLACES": "testville"}
+    run = subprocess.run(["bash", str(SCRIPT)], env=env, capture_output=True, text=True, check=False)
+    assert run.returncode == 0, run.stderr
+    assert "note: no address index for testville" in run.stderr
+    assert not (out / "lots/testville/addresses").exists()

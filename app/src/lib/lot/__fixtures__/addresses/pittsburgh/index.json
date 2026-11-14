@@ -1,0 +1,104 @@
+{
+ "addressed": 13,
+ "data_version": "pittsburgh-fixture",
+ "format": 1,
+ "kind": "address_index",
+ "lots": 14,
+ "place": "pittsburgh",
+ "prefix": "42003",
+ "shards": {
+  "b": 3,
+  "f": 1,
+  "p": 3,
+  "sa": 1,
+  "se": 1,
+  "sh": 2,
+  "sm": 1,
+  "sw": 1
+ },
+ "skipped": 0,
+ "streets": [
+  [
+   "beacon st",
+   1,
+   5459,
+   5459,
+   [
+    0
+   ]
+  ],
+  [
+   "belasco ave",
+   2,
+   1404,
+   1406,
+   [
+    0
+   ]
+  ],
+  [
+   "forbes ave",
+   1,
+   2006,
+   2006,
+   [
+    0
+   ]
+  ],
+  [
+   "n sheridan ave",
+   2,
+   1316,
+   1318,
+   [
+    0
+   ]
+  ],
+  [
+   "pocusset st",
+   3,
+   5704,
+   5708,
+   [
+    0
+   ]
+  ],
+  [
+   "sapphire way",
+   1,
+   321,
+   321,
+   [
+    0
+   ]
+  ],
+  [
+   "semple st",
+   1,
+   236,
+   236,
+   [
+    0
+   ]
+  ],
+  [
+   "smallman st",
+   1,
+   3602,
+   3602,
+   [
+    0
+   ]
+  ],
+  [
+   "sweetbay st",
+   1,
+   4427,
+   4427,
+   [
+    0
+   ]
+  ]
+ ],
+ "towns": []
+}

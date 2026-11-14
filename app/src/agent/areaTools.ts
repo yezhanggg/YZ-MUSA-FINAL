@@ -1,17 +1,19 @@
 // Two assistant tools that read the app's built data, no network:
-//   find_lot(address)          address -> lot id, tract and place, from the lot records the provider can list
+//   find_lot(address)          address -> lot id, tract and place, from the address index of every lot place
+//                              (lib/lot/addressIndex.ts), else from the lot records the provider can list
 //   get_area_stats(level, ...) rents, growth, payoff, lots that fit and the ADU forecast of a tract, town, county or the state
 // Pure functions. The provider (browser or Node) hands over the data.
 import type { ToolDef } from '../lib/lot/agentTools';
 import type { CountyProps, FC, TownProps, TractProps } from '../tool/geo';
 import HEADLINE from '../lib/headline.json';
 import { tractRoom, type TractRoomFields } from '../lib/adu';
-import { lotPlacesText } from './lotPlaces';
+import { lotPlaceTitle, lotPlacesText } from './lotPlaces';
+import type { AddressHit, AddressLookup } from '../lib/lot/addressIndex';
 
 // ------------------------------------------------------------------ find_lot
 export const FIND_LOT_TOOL: ToolDef = {
   name: 'find_lot',
-  description: `Find a lot record by street address (lot records exist for ${lotPlacesText()}). Returns up to 5 candidates with lot id, tract, place and town. Then use the lot tools with that lot_id.`,
+  description: `Find a lot record by street address, anywhere in the places with lot records (${lotPlacesText()}), on the map or not. Returns up to 5 candidates with lot id, tract, place and town. Then use the lot tools with that lot_id. With no candidate it lists the nearest lot addresses on that street or street names spelled alike: ask the user, never take a lot id that is not a candidate.`,
   input_schema: { type: 'object', properties: { address: { type: 'string', description: 'street address, e.g. 1204 Spruce St' } }, required: ['address'] },
 };
 
@@ -72,6 +74,46 @@ export function findLotResult(address: unknown, book: { entries: AddressEntry[];
   return hits.length
     ? { address, searched: book.scope, candidates: hits }
     : { address, searched: book.scope, candidates: [], message: `No lot with this address in my data. Lot records cover ${lotPlacesText()} only.` };
+}
+
+const placeName = (h: { place: string }) => lotPlaceTitle(h.place);
+const hitOut = (h: AddressHit) => ({ ...h, place_name: placeName(h) });
+
+/** find_lot from the address index: candidates, or what is close, and a message that never leaves the model stuck. */
+export function findLotIndexResult(address: string, r: AddressLookup) {
+  const searched = `address index of every lot in ${r.searched.map(lotPlaceTitle).join(', ') || 'no place'}${r.missing.length ? ` (not available: ${r.missing.map(lotPlaceTitle).join(', ')})` : ''}`;
+  const named = r.other_place ? ` The address names "${r.other_place}", which is not one of these places.` : '';
+  if (r.candidates.length) {
+    const elsewhere = r.place_hint && !r.candidates.some((c) => c.place === r.place_hint);
+    const note = elsewhere
+      ? `No lot with this address in ${lotPlaceTitle(r.place_hint!)}. These candidates are in other places: check the town with the user before you use one.`
+      : r.other_place
+        ? `These candidates are in places with lot data.${named} Check the town with the user before you use one.`
+        : r.candidates.length > 1
+          ? 'More than one lot matches: the place and town tell them apart. Ask the user if it is not clear which one.'
+          : undefined;
+    return { address, searched, candidates: r.candidates.map(hitOut), ...(note ? { message: note } : {}) };
+  }
+  const outside = r.missing.length
+    ? `Not found in ${r.searched.map(lotPlaceTitle).join(', ')}. The address list of ${r.missing.map(lotPlaceTitle).join(', ')} could not be read, so it may be there: try again later. Do not guess a lot.`
+    : `That address is outside the places with lot data: ${lotPlacesText()}.${named} Do not guess a lot.`;
+  // A town is named that has no lot data ("Harrisburg"): the same street in a lot place is not this address.
+  if (r.other_place && !r.missing.length) return { address, searched, candidates: [], message: outside };
+  if (r.query.n === null && r.nearest_streets?.length)
+    return { address, searched, candidates: [], streets: r.nearest_streets.map((s) => ({ ...s, place_name: lotPlaceTitle(s.place) })), message: 'No house number in the address. These streets have lot records: ask the user for the house number.' };
+  if (r.nearest_addresses?.length)
+    return {
+      address, searched, candidates: [],
+      nearest_addresses: r.nearest_addresses.map(hitOut),
+      message: `No lot with house number ${r.query.number} on that street in my data. nearest_addresses are other lots on the same street, not this address: ask the user if they meant one of them. Never use their lot ids for the address asked.${named}`,
+    };
+  if (r.nearest_streets?.length)
+    return {
+      address, searched, candidates: [],
+      nearest_streets: r.nearest_streets.map((s) => ({ ...s, place_name: lotPlaceTitle(s.place) })),
+      message: `No street by that name in my lot data. nearest_streets are spelled alike: ask the user if they meant one of them, then call find_lot again with the full address. If not, ${outside.charAt(0).toLowerCase()}${outside.slice(1)}`,
+    };
+  return { address, searched, candidates: [], message: outside };
 }
 
 // ------------------------------------------------------------------ get_area_stats

@@ -1,0 +1,162 @@
+[
+ {
+  "in": "1815 S. Bancroft Street, Philadelphia, PA 19145",
+  "number": "1815",
+  "n": 1815,
+  "hi": null,
+  "street": "s bancroft st",
+  "core": "bancroft st"
+ },
+ {
+  "in": "1815 S BANCROFT ST",
+  "number": "1815",
+  "n": 1815,
+  "hi": null,
+  "street": "s bancroft st",
+  "core": "bancroft st"
+ },
+ {
+  "in": "722 -A COPELAND ST",
+  "number": "722a",
+  "n": 722,
+  "hi": null,
+  "street": "copeland st",
+  "core": "copeland st"
+ },
+ {
+  "in": "629-1/2 HANOVER AVE",
+  "number": "629 1/2",
+  "n": 629,
+  "hi": null,
+  "street": "hanover ave",
+  "core": "hanover ave"
+ },
+ {
+  "in": "2006 1/2 FORBES AVE",
+  "number": "2006 1/2",
+  "n": 2006,
+  "hi": null,
+  "street": "forbes ave",
+  "core": "forbes ave"
+ },
+ {
+  "in": "236 -238 SEMPLE ST UNIT APT 1 &2",
+  "number": "236-238",
+  "n": 236,
+  "hi": 238,
+  "street": "semple st",
+  "core": "semple st"
+ },
+ {
+  "in": "405 A & B FORT WASHINGTON AVE",
+  "number": "405a",
+  "n": 405,
+  "hi": null,
+  "street": "ft washington ave",
+  "core": "ft washington ave"
+ },
+ {
+  "in": "17 Lovers LA",
+  "number": "17",
+  "n": 17,
+  "hi": null,
+  "street": "lovers ln",
+  "core": "lovers ln"
+ },
+ {
+  "in": "75 WASHINGTON AV",
+  "number": "75",
+  "n": 75,
+  "hi": null,
+  "street": "washington ave",
+  "core": "washington ave"
+ },
+ {
+  "in": "1341 Saint John Street",
+  "number": "1341",
+  "n": 1341,
+  "hi": null,
+  "street": "st john st",
+  "core": "st john st"
+ },
+ {
+  "in": "206 E BROAD ST APT 2",
+  "number": "206",
+  "n": 206,
+  "hi": null,
+  "street": "e broad st",
+  "core": "broad st"
+ },
+ {
+  "in": "12 N Fifth St #3",
+  "number": "12",
+  "n": 12,
+  "hi": null,
+  "street": "n 5th st",
+  "core": "5th st"
+ },
+ {
+  "in": "1111 1115-1/2 N WAHNETA ST",
+  "number": "1111-1115",
+  "n": 1111,
+  "hi": 1115,
+  "street": "n wahneta st",
+  "core": "wahneta st"
+ },
+ {
+  "in": "5 E ST",
+  "number": "5",
+  "n": 5,
+  "hi": null,
+  "street": "e st",
+  "core": "st"
+ },
+ {
+  "in": "CHURCH ST",
+  "number": "",
+  "n": null,
+  "hi": null,
+  "street": "church st",
+  "core": "church st"
+ },
+ {
+  "in": "4427 Sweetbay St.",
+  "number": "4427",
+  "n": 4427,
+  "hi": null,
+  "street": "sweetbay st",
+  "core": "sweetbay st"
+ },
+ {
+  "in": "3602-3606 Smallman Street",
+  "number": "3602-3606",
+  "n": 3602,
+  "hi": 3606,
+  "street": "smallman st",
+  "core": "smallman st"
+ },
+ {
+  "in": "100 O'Hara Ln",
+  "number": "100",
+  "n": 100,
+  "hi": null,
+  "street": "ohara ln",
+  "core": "ohara ln"
+ },
+ {
+  "in": "1204 Spruce St Rear",
+  "number": "1204",
+  "n": 1204,
+  "hi": null,
+  "street": "spruce st",
+  "core": "spruce st"
+ },
+ {
+  "in": "12B West Avenue",
+  "number": "12b",
+  "n": 12,
+  "hi": null,
+  "street": "w ave",
+  "core": "ave"
+ }
+]

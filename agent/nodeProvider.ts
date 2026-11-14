@@ -14,6 +14,7 @@ import { lotTownByFile, townsOfPlace } from '../app/src/lib/lot/towns';
 import { DEFAULT_MONEY, moneyOptions, tractRents } from '../app/src/tool/testState';
 import { zoningTextSource, type ZoningTextSource } from '../app/src/agent/zoningText';
 import { memoryPlaces, type PlaceRow, type PlacesSource } from '../app/src/agent/placeAnswer';
+import { addressIndexSource } from '../app/src/lib/lot/addressIndex';
 
 /** The unit drawn on screen in testing mode, as the lot tools take it. */
 export type LotUnit = ReturnType<LotAgentProvider['unit']>;
@@ -63,6 +64,8 @@ const fileFetch: Fetcher = async (url) => {
   return path.startsWith(root) && existsSync(path) ? new Response(readFileSync(path)) : new Response('missing', { status: 404 });
 };
 const LOAD = { baseUrl: BASE_URL, fetch: fileFetch };
+/** find_lot's address index on disk (<place>/addresses/, pipeline/address_index.py), read like the browser does. */
+const ADDRESS_INDEX = addressIndexSource(LOAD);
 
 /** Every lot record of one tract on disk. */
 export const nodeTractLots = (geoid: string) => loadTractLots(geoid, LOAD);
@@ -213,6 +216,7 @@ export function nodeProvider(
     lots: nodeLots(opts.lot, opts.scenario ?? 'today', opts.unit ?? null),
     zoningText: nodeZoningText(),
     places: nodePlaces(),
+    addressIndex: ADDRESS_INDEX,
     async lotById(id) {
       const lot = byId(id);
       return lot ? siteOf(lot) : null;
