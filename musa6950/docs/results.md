@@ -4,10 +4,10 @@ title: "MUSA 6950 Results"
 
 Short version:
 
-- Every pretrained U-Net variant lands near 0.70 test mIoU on the held-out counties. A goal of 0.72 was not reached. No run reached building IoU 0.65. The error analysis says the labels are the limit.
-- In Pittsburgh the model transfers well without city training: about 0.70 on clean test pixels. City fine-tuning did not help.
+- Every pretrained single U-Net lands near 0.70 test mIoU on the held-out counties. As of Nov 14 morning (one more training round ends that night), the best result is an ensemble of a DeepLabV3+ and an EfficientNet-B2 model: test mIoU 0.7089 and building IoU 0.6546. The building goal of 0.65 is met. The mIoU goal of 0.72 is not. The error analysis says the labels are the limit.
+- In Pittsburgh the model transfers well without city training: about 0.70 on clean test pixels. City fine-tuning did not help. The new ensemble missed the bar for replacing the lot model by 0.0003, so the lots keep the earlier model.
 - In Philadelphia the model cannot see trees or lawns in the 2022 spring photos (tree IoU about 0.26). The lot tool uses the city's 2018 land cover raster there instead.
-- The structure detector is a first pass. Its scores are agreement with unchecked labels, not accuracy.
+- The structure detector reaches garage AP50 0.469 (goal 0.50) with classes set by the label size rule. Its scores are agreement with unchecked labels, not accuracy.
 - The lot tool's fit test is a vector test on lot lines, buildings and streets with rule-based setbacks. Land cover adds context.
 - No hand-labeled lot exists yet, so the fit answers have not been checked against a person looking at the lot.
 
@@ -66,6 +66,24 @@ What it shows:
 - Single-pass scores are 0.004 to 0.005 below the TTA scores.
 - Urban boxes are the weak place type in every 4-class run.
 - The 5-class run pays for the extra class: "other" drops to 0.4714 once roads and paving leave it, and rural and suburban mIoU fall.
+
+### Later runs (Nov 12 to 14)
+
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "06:15 Nov 14 interim" and "09:25 Nov 14" -->
+
+As of Nov 14 morning. One more training round ends that night, so these may move. Same test pixels and 8 flips and turns. Ensembles are picked on validation only.
+
+| Run or pick | What changes | Val mIoU | Test mIoU | Building IoU |
+|---|---|---|---|---|
+| `dlv3lov_c4_s1` | DeepLabV3+, Lovasz loss | 0.7456 | 0.7031 | 0.6507 |
+| `effb2_c4_s1` | U-Net with an EfficientNet-B2 encoder | 0.7439 | 0.7038 | 0.6441 |
+| `effb2lov_c4_s1` | the same, Lovasz loss | 0.7458 | 0.7057 | 0.6506 |
+| ResNet-34 Lovasz ensemble | 3 models, seeds only | | 0.7035 | 0.6493 |
+| `dlv3lov` + `effb2lov` | ensemble of two model types, 8 views each | 0.7512 | **0.7089** | **0.6546** |
+
+- Mixing model types helped where more seeds did not: +0.0054 test mIoU over the ResNet-only ensemble.
+- Building IoU goal (0.65) met. mIoU goal (0.72) missed.
+- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571, so it was not adopted.
 
 ## 2. Where and why the model fails
 
@@ -166,9 +184,22 @@ The first Pittsburgh split placed some test boxes on top of training boxes: 34.8
 - Sheds are not detectable at this stage (AP50 0.0331).
 - A review pack of 150 chips per city is ready for hand checking. It has not been done.
 
+**Later runs (as of Nov 14 morning).** Same test chips, same unchecked labels. Goal: garage AP50 0.50.
+
+<!-- source: ~/musa-drive/ops/logs/yolo.md (FINAL detector table), ~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json -->
+
+| Run | What changes | mAP50 | Garage AP50 | Garage AP50, size rule classes (Pittsburgh / Philadelphia) |
+|---|---|---|---|---|
+| `long640` | 80 epochs, cosine schedule | 0.2868 | 0.4062 | **0.469** (0.5042 / 0.4093) |
+| `pseudo1` | plus 141 pseudo boxes on train | 0.2644 | 0.401 | 0.4057 (0.5315 / 0.1732) |
+| `px960` | 960 px, 40 epochs | 0.1428 | 0.257 | |
+
+- Size rule classes: each found building gets garage, shed or other by the same size and street-distance rule that made the labels. The image cannot show that split, so applying the rule after detection is the cheapest gain.
+- Best garage AP50 0.469 misses the 0.50 goal. Pittsburgh alone passes (0.504).
+
 ## 5. How the models feed the lot tool
 
-- **Land cover:** each lot record has a `cover` block (building, tree, open ground, hard surface, impervious share, source, date) and the cover inside the suggested spot. Pittsburgh: `model:r34_c5_s0`, 2022. Philadelphia: `landcover_2018`. The fit test does not use it. It tells the user how much canopy a unit might remove.
+- **Land cover:** each Pittsburgh and Philadelphia lot record has a `cover` block (building, tree, open ground, hard surface, impervious share, source, date) and the cover inside the suggested spot. Pittsburgh: `model:r34_c5_s0`, 2022. Philadelphia: `landcover_2018`. Allentown and the three county places have no cover block. The fit test does not use it. It tells the user how much canopy a unit might remove.
 - **Detector:** not used. Lot records carry an empty `objects` list. Garages and sheds come from building footprints by size (180 sq ft or more is a garage).
 - **Fit:** a vector test on the lot outline, edges labeled front, side and rear, building outlines, setbacks from the rule files, and the largest rectangle that fits. See the methods page.
 
@@ -176,7 +207,7 @@ The first Pittsburgh split placed some test boxes on top of training boxes: 34.8
 
 Three scenarios on every lot: today's law, local reform (Philadelphia Bill 250042, in Pittsburgh equal to today) and state reform (HB 2186). The bills are not law. The state session ends Nov 30, 2026.
 
-<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261111-bdeb5697ae, manifest built 2026-11-11T20:30:22) and ~/musa-drive/lots/philadelphia/stats.json and manifest.json (data version philadelphia-20261111-b7fa7bda07, built 2026-11-11T21:41:43) -->
+<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261112-f2be01fba6, the terrain refresh of pittsburgh-20261111-bdeb5697ae, fit numbers unchanged) and ~/musa-drive/lots/philadelphia/stats.json and manifest.json (data version philadelphia-20261112-d441ac616a, the terrain refresh of philadelphia-20261111-b7fa7bda07), read 2026-11-14 -->
 
 | Share of lots | Pittsburgh | Philadelphia |
 |---|---|---|
@@ -195,6 +226,19 @@ Three scenarios on every lot: today's law, local reform (Philadelphia Bill 25004
 
 - **Pittsburgh:** under Ordinance 31-2026 (signed Oct 29, 2026) internal and attached units are by right. A new detached unit in a side or rear yard needs an Administrator's Exception. So every lot has a legal path, and none has a detached unit by right today. The binding limit is yard space.
 - **Philadelphia:** about 1.2 percent of lots have any legal ADU path today, and no lot can add a new detached unit by right. The limits come from the zoning code and its overlays. The binding limit is the law.
+
+The tool now also has lot records for Allentown and three county places, where each lot answers with its own town's rule file:
+
+<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-14 -->
+
+| Place | Lots | Any legal ADU path today | A detached unit is legal and fits, today | Same, state reform |
+|---|---|---|---|---|
+| Allentown | 29,158 | 0.883 | 0.215 | 0.713 |
+| Montgomery County (Lower Merion, Narberth, Upper Dublin) | 26,119 | 0.782 | 0.256 | 0.86 |
+| Chester County (West Chester, Phoenixville, West Vincent, Malvern, East Brandywine) | 14,847 | 0.688 | 0.231 | 0.588 |
+| Centre County (College Township) | 3,484 | 0.537 | 0.487 | 0.805 |
+
+All six places: 625,687 lots.
 
 Pittsburgh by housing type:
 
@@ -234,10 +278,11 @@ Philadelphia by housing type:
 
 ## 8. Limits
 
-- Land cover scores sit near 0.70 on the held-out counties. The labels set the ceiling.
+- Land cover single models sit near 0.70 on the held-out counties, the best ensemble at 0.709. The labels set the ceiling.
 - Philadelphia tree and open ground from NAIP 2022 are not reliable. The 2018 raster misses changes since 2018.
 - The Pittsburgh per-lot land cover check covers 128 lots.
 - The detector is not checked against hand labels and is not used in the lot records.
+- Allentown and the three county places have no land cover block.
 - The fit answers are not checked against hand labels.
 - Lot lines come from county and city parcel maps. They are not a survey. Building outlines can be old or merged.
 - Rules come from rule files read from the codes. This is not legal advice and not a zoning determination. The bills behind the reform scenarios are not law.

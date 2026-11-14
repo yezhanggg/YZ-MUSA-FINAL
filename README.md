@@ -11,49 +11,60 @@ Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
 ## Two modes
 
-- **ADU Testing** (`#/?view=test`, the default). One lot at a time, in Philadelphia and Pittsburgh. Draw a unit, pick a type and a scenario, and get a verdict with the rule sections behind it, an aerial site view, a cost and rent estimate, the steps to build, and a printable lot report.
+- **ADU Testing** (`#/?view=test`, the default). One lot at a time, in six lot places: Pittsburgh, Philadelphia, Allentown, and parts of Chester, Centre and Montgomery counties. Draw a unit, pick a type and a scenario, and get a verdict with the rule sections behind it, an aerial site view, a cost and rent estimate, the steps to build, and a printable lot report.
 - **ADU projecting and analysis** (`#/?view=project`). Census tracts, towns and counties for the whole state: demand trends, whether a unit pays off on local rent, and ADUs by 2031 under each bill.
 
 Both modes have **Ask**, an assistant that answers from the tool's own data with citations. It runs on Claude Haiku 5.5 through a server function, and the browser runs the tools.
 
 ## Three scenarios on every lot
 
-| Scenario | Philadelphia | Pittsburgh |
-|---|---|---|
-| Today's law | Zoning Code 14-604(11) | Ordinance 31-2026, signed Oct 29, 2026 |
-| Local reform | Bill 250042 (in committee) | Same as today |
-| State reform | HB 2186 (passed the House, in Senate committee) | HB 2186 |
+| Scenario | Philadelphia | Pittsburgh | Other lot places |
+|---|---|---|---|
+| Today's law | Zoning Code 14-604(11) | Ordinance 31-2026, signed Oct 29, 2026 | The town's own zoning code |
+| Local reform | Bill 250042 (in committee) | Same as today | Same as today |
+| State reform | HB 2186 (passed the House, in Senate committee) | HB 2186 | HB 2186 |
 
 Bills are not law. The state session ends Nov 30, 2026. A bill not enacted by then dies.
 
 ## What works today
 
-<!-- source: ~/musa-drive/lots/pittsburgh/stats.json and manifest.json, data version pittsburgh-20261111-bdeb5697ae. ~/musa-drive/lots/philadelphia/stats.json and manifest.json, data version philadelphia-20261111-b7fa7bda07 -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-14. Data versions: pittsburgh-20261112-f2be01fba6, philadelphia-20261112-d441ac616a, allentown-20261114-33d9df7faf, chester_county-20261114-18e81019a3, centre_county-20261114-2f26bac9ff, montgomery_county-20261114-c5ec79eaaa -->
 
-| | Philadelphia | Pittsburgh |
-|---|---|---|
-| Lots with a record | 459,998 | 92,081 |
-| Any legal ADU path today | 1.2%<!-- stats.json all.allowed_today --> | 100% |
-| New detached unit by right today | 0%<!-- stats.json all.paths.today.detached_by_right --> | 0% (needs an Administrator's Exception) |
-| A detached unit fits, today, on a legal path | 0%<!-- stats.json all.paths.today.detached_fits --> | 65.8% |
-| A 600 sq ft detached unit fits today | 0%<!-- stats.json all.fit_600 --> | 41.2% |
-| Main limit on a detached unit | the law | yard space |
+| Lot place | Towns | Lots with a record | Any legal ADU path today | A detached unit is legal and fits today | Same under HB 2186 |
+|---|---|---|---|---|---|
+| Philadelphia | Philadelphia | 459,998 | 1.2% | 0% | 26.0% |
+| Pittsburgh | Pittsburgh | 92,081 | 100% | 65.8% (needs an Administrator's Exception) | 70.0% |
+| Allentown | Allentown | 29,158 | 88.3% | 21.5% | 71.3% |
+| Montgomery County | Lower Merion, Narberth, Upper Dublin | 26,119 | 78.2% | 25.6% | 86.0% |
+| Chester County | West Chester, Phoenixville, West Vincent, Malvern, East Brandywine | 14,847 | 68.8% | 23.1% | 58.8% |
+| Centre County | College Township | 3,484 | 53.7% | 48.7% | 80.5% |
+| All six | 12 towns | 625,687 | | | |
+
+By town, a detached unit is legal and fits today on 76.2% of Narberth lots, 66.5% in Upper Dublin, 42.8% in West Chester, 34.6% in Phoenixville and 12.8% in West Vincent. Lower Merion, Malvern and East Brandywine allow no new detached unit, so 0%.
 
 - **Fit test.** A vector geometry test on the lot outline, the buildings and the streets, with the setbacks from the rule file. It finds the largest unit that fits and where.
-- **Land cover as context.** Each lot carries tree canopy, open ground, hard surface and impervious share, and the trees inside the suggested spot. Philadelphia uses the city's 2018 land cover raster. Pittsburgh uses the project's U-Net on 2022 aerial images. Land cover does not decide the fit.
+- **Land cover as context.** Pittsburgh and Philadelphia lots carry tree canopy, open ground, hard surface and impervious share, and the trees inside the suggested spot. Philadelphia uses the city's 2018 land cover raster. Pittsburgh uses the project's U-Net on 2022 aerial images. The other four places have no land cover block. Land cover does not decide the fit.
+- **Ground slope.** Every lot has a slope block from the USGS 1 m lidar DEM.
+- **Steep slope rules.** Pittsburgh (915.02 grading and the LS-O, UM-O and SS-O overlays, 906.04, 906.05, 906.08) and Philadelphia (14-704(2)) steep slope rules are in the rule files as cited rows. They are shown as conditions or questions for the city, never as a bar. The Ask rule text uses them now. They reach the lot records only after the two cities are rebuilt. That rebuild was running on Nov 14 and is not yet in the published numbers. It changes sentences, not the shares above.
+- **Address search.** Ask can find any address in the six lot places, on the map or not. It reads a static address index (3.6 MB, in the lot data bundle). It works live only after the bundle is published.
 - **Money.** Itemised costs from one assumptions file (`shared/assumptions.json`). Rent from HUD Small Area Fair Market Rents by ZIP.
 - **Tract analysis.** A 600 sq ft 1-bedroom unit pays off in 10.3% of tracts (356 of 3,445) at the mid cost. Seven descriptive growth groups. ADUs by 2031: about 1,000 under today's rules, about 13,500 under HB 2186 and about 13,200 under SB 1346 (mid case, scenario arithmetic). Lots with room for a 600 sq ft unit: about 2.9 million statewide (1.5 to 3.6 million), measured in Philadelphia and Pittsburgh and modelled elsewhere.
-- **Town rules.** 36 more municipalities have rule files, each reviewed against the code text: 21 verified and 15 drafted with a stated open point. A statewide baseline covers every other town. 17 of the 36 have no ADU text at all.
+- **Town rules.** 95 places have a rule file: Philadelphia, Pittsburgh and 93 towns. 64 are verified by an independent second reading. 31 stay first readings (drafted): the review left an open point, written down for each. 34 of the 93 town codes have no ADU text at all. A statewide baseline covers every other town.
+- **An answer for every Pennsylvania place.** Each of the 2,572 county subdivisions gets one best answer and says how good the evidence is: verified rule file, drafted rule file, a dated agency report (or no zoning on record with the state), a search of the town's public zoning text, or the statewide baseline. See [docs/PLACES.md](docs/PLACES.md).
 
-<!-- source: ~/musa-drive/processed/5500/payoff_summary.json, forecast_summary.json, groups_summary.json. shared/rules/towns_index.json and the town files -->
+<!-- source: ~/musa-drive/processed/5500/payoff_summary.json, forecast_summary.json, groups_summary.json. shared/rules/towns_index.json status (2026-11-14) and the town files adu.status. app/public/data/pa_places_meta.json -->
 
 ## What does not work yet
 
-- Lot-level answers exist only in Philadelphia and Pittsburgh. Elsewhere the tool shows tract and town results.
+- Lot-level answers exist only in the six lot places. Elsewhere the tool shows tract and town answers.
+- The public lot data bundle is about 952 MB, close to the 1 GB GitHub Pages limit. It is not published yet. Until it is, the live site has no lot data and address search does not work there.
 - The fit answers have not been checked by hand. A 250-lot labeling sample is drawn (125 per city). None are labeled yet, so fit accuracy is not measured.
-- The land cover model scores test mIoU about 0.70 on held-out counties. No run reached 0.72 mIoU or 0.65 building IoU. In Philadelphia it cannot read trees from the spring 2022 photos, so the city raster is used there.
-- The outbuilding detector was scored only against unchecked first-pass labels (garage AP50 about 0.26). That is not a true accuracy.
-- The tract forecast explains little: county-held-out R2 about 0.20, and about 0.02 on a test of earlier years.
+- Land cover (as of Nov 14 morning, a training round runs until that night): the best model, a DeepLabV3+ and EfficientNet-B2 ensemble, scores test mIoU 0.7089 and building IoU 0.6546. The targets were 0.72 and 0.65, so the mIoU target is missed. In Pittsburgh it missed the bar for replacing the lot model, so the lots keep the earlier U-Net. In Philadelphia the model cannot read trees from the spring 2022 photos, so the city raster is used there.
+- The outbuilding detector (as of Nov 14 morning) scores garage AP50 0.469 with classes set by the size rule, against a target of 0.50. The labels are unchecked first-pass labels, so this is not a true accuracy.
+- The tract forecast explains little: county-held-out R2 about 0.20, and about 0.02 on a test of earlier years. It read the 38 rule files of Nov 11, not the 95 of today.
+- 31 rule files are first readings. Towns whose code is only a PDF were skipped. Some 2026 ordinances could not be read.
+- Microsoft building heights read low in Upper Dublin, so the "no taller than the house" test there reads "not checked".
+- Pittsburgh's undermined-area overlay (UM-O) layer is not in the lot data.
 - A machine-read zoning pilot for more towns exists (`docs/CORPUS.md`). It is not in the product.
 
 ## Run it locally

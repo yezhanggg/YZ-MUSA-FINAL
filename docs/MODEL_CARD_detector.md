@@ -74,6 +74,24 @@ Detections written:
 
 These cover the sample area chips only, not whole cities.
 
+### Later runs (Nov 12 to 14)
+
+<!-- source: ~/musa-drive/ops/logs/yolo.md (FINAL detector table), ~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json -->
+
+As of Nov 14 morning. Same 162 test chips and the same unchecked labels. Target garage AP50 0.50.
+
+| Run | What changes | mAP50 | Garage | Shed | Other accessory | Pool | Garage, size rule classes (Pittsburgh / Philadelphia) |
+|---|---|---|---|---|---|---|---|
+| `real` | the run above | 0.1692 | 0.2584 | 0.0331 | 0.2197 | 0.1656 | |
+| `long640` | 80 epochs, cosine schedule | 0.2868 | 0.4062 | 0.0894 | 0.369 | 0.2828 | **0.469** (0.5042 / 0.4093) |
+| `pseudo1` | `long640` plus 141 pseudo boxes on train | 0.2644 | 0.401 | 0.0489 | 0.4113 | 0.1966 | 0.4057 (0.5315 / 0.1732) |
+| `px960` | 960 px, 40 epochs | 0.1428 | 0.257 | 0.0318 | 0.272 | 0.0102 | |
+
+- Size rule classes: each detected building is classed by the same size and street-distance rule that made the labels, with a box size factor picked on train chips (0.6). With them other accessory rises to 0.4346 and shed falls to 0.0149.
+- A run with one building class and the rule after it (`acc2`) was not better (test garage 0.3657).
+- Best garage AP50 is 0.469. The 0.50 target is missed overall. Pittsburgh alone passes (0.504).
+- Detections in the lot records: still none.
+
 ## Limits
 
 - Labels and images are from different years. Some buildings were built or torn down in between.
@@ -87,7 +105,7 @@ These cover the sample area chips only, not whole cities.
 ## What not to use it for
 
 - Do not use the scores above as accuracy. They are not, until the test chips are checked by hand.
-- Do not count sheds with it. Shed AP50 is 0.0331.
+- Do not count sheds with it. Shed AP50 is 0.0331 (0.0894 in `long640`).
 - Do not use a detection as proof that a garage exists, or that it is legal, or what year it was built.
 - Do not run it on whole cities and publish the counts as a census of garages.
 - Do not import it from product code. Read only the detections file.

@@ -1,6 +1,6 @@
 # Model card: land cover U-Net
 
-<!-- sources: ~/musa-drive/models/<run>/result.json, test_scores.json, test_scores_single.json, city_<city>_scores.json, city_pittsburgh_scores_clean.json; ~/musa-drive/models/external/unet_v2_r34/; ~/musa-drive/processed/vision/class_shares.json, error_analysis.md, city/<city>/summary.json, city/philadelphia/diagnosis/diagnosis.md; ~/musa-drive/processed/<city>/cover_compare*.json; pipeline/build_lots.py (COVER_FILES_BY_PLACE, COVER_NOTES). Read on 2026-11-11. -->
+<!-- sources: ~/musa-drive/models/<run>/result.json, test_scores.json, test_scores_single.json, city_<city>_scores.json, city_pittsburgh_scores_clean.json; ~/musa-drive/models/external/unet_v2_r34/; ~/musa-drive/processed/vision/class_shares.json, error_analysis.md, city/<city>/summary.json, city/philadelphia/diagnosis/diagnosis.md; ~/musa-drive/processed/<city>/cover_compare*.json; pipeline/build_lots.py (COVER_FILES_BY_PLACE, COVER_NOTES). Read on 2026-11-11. Later runs: ~/musa-drive/ops/logs/model-1112.md, read 2026-11-14. -->
 
 ## What it is
 
@@ -15,6 +15,7 @@ A U-Net that labels each pixel of a 4-band aerial image (red, green, blue, near 
 | Best 4-class run by test mIoU | `r34ndvi_c4_s1` (NDVI as a fifth input band), 0.7005 |
 | Run used for Pittsburgh lot cover | `r34_c5_s0` (5 classes), zero-shot on the city |
 | Reference run | `unet_v2_r34`, the earlier published model, scored again: 0.6985 |
+| Best result as of Nov 14 morning | Ensemble of `dlv3lov_c4_s1` (DeepLabV3+) and `effb2lov_c4_s1` (U-Net with EfficientNet-B2), test mIoU 0.7089, building IoU 0.6546. Not used for the lots (see "Later runs") |
 
 ## What it is used for in the product
 
@@ -94,8 +95,26 @@ What the table says:
 
 - Every pretrained ResNet-34 variant lands between 0.6957 and 0.7005 test mIoU. Seeds, NDVI, the loss and extra epochs move the score by less than 0.005.
 - The pretrained encoder is the one change that matters: 0.699 against 0.683 for the same recipe without it.
-- A test mIoU of 0.72 was not reached by any run. No run reached a building IoU of 0.65 either. The best is 0.6451.
+- A test mIoU of 0.72 was not reached by any run in this table. No run here reached a building IoU of 0.65 either. The best here is 0.6451.
 - Building recall is higher than precision: the model calls some paving and flat roofs building.
+
+### Later runs (Nov 12 to 14)
+
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "06:15 Nov 14 interim" and "09:25 Nov 14" -->
+
+As of Nov 14 morning. A training round runs until that night, so these may move. Same test pixels, 8 flips and turns. Ensembles are picked on validation only.
+
+| Run or pick | Val mIoU | Test mIoU | Building IoU | Tree IoU |
+|---|---|---|---|---|
+| `dlv3lov_c4_s1` (DeepLabV3+, Lovasz loss) | 0.7456 | 0.7031 | 0.6507 | 0.7088 |
+| `effb2_c4_s1` (EfficientNet-B2 encoder) | 0.7439 | 0.7038 | 0.6441 | 0.717 |
+| `effb2lov_c4_s1` (same, Lovasz loss) | 0.7458 | 0.7057 | 0.6506 | 0.7177 |
+| 3 ResNet-34 Lovasz models, ensemble | | 0.7035 | 0.6493 | |
+| `dlv3lov` + `effb2lov`, 8 views each | 0.7512 | **0.7089** | **0.6546** | 0.7185 |
+
+- Two model types in one ensemble beat more seeds of one type: +0.0054 test mIoU over the ResNet-only ensemble.
+- Building IoU target 0.65: met (0.6546). mIoU target 0.72: missed (0.7089).
+- Adoption for the Pittsburgh lots needs mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571 (5 classes, "other" split by a 5-class model, water left out). mIoU missed by 0.0003, so the lots keep `r34_c5_s0`.
 
 ## Error analysis
 
@@ -160,7 +179,8 @@ Decision: Philadelphia lot cover uses the city's 2018 raster. The model output i
 
 ## Limits
 
-- Scores cluster near 0.70 test mIoU on the Chesapeake labels. The labels set the ceiling.
+- Single models cluster near 0.70 test mIoU on the Chesapeake labels. The best ensemble reaches 0.709. The labels set the ceiling.
+- Allentown and the three county lot places have no land cover block. The model was not run there.
 - Urban areas score lowest. Urban tree IoU is about 0.59.
 - 0.6 m pixels: a small shed is a few pixels and a narrow side yard is a handful.
 - Tree canopy over paving is labeled tree. The model cannot see a patio under a tree.

@@ -153,6 +153,8 @@ Built 2026-11-13 and 14. One place per county (the app's registry is by county).
 
 House type: units from the land use code (or living units), then twin and row from shared walls of the outlines (`pipeline.places.allentown.wall_chains`). Lots left out: condominium units, apartments, parcels without a house, and West Vincent BV lots (an ADU there is a conditional use, which the lot record cannot say).
 
+Heights: Microsoft model heights read low in Upper Dublin (median house 15.7 ft where most houses have two stories). They are not used for Montgomery County, so the "no taller than the house" test reads "not checked" there. Allentown has the same problem on 15 to 19 lots.
+
 Ground: USGS 3DEP 1 m DEM. Chester and Montgomery: PA_17County_D24 (Montgomery's five tiles are the Philadelphia files, hard-linked). Centre: PA_Northcentral_2019_B19 (zone 18 tiles, flown 2019-03-20 to 2019-11-23). No land cover model run for these places: the `cover` block is empty.
 
 ## Statewide
@@ -172,15 +174,24 @@ ACS table B25031 (median rent by bedrooms, tract) is named as the rent fallback 
 
 The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARCHITECTURE.md](ARCHITECTURE.md) lists the files.
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json, read 2026-11-13 ("data_version", "built_at", "counts", "sizes") -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json, read 2026-11-14 ("data_version", "built_at", "counts", "sizes") -->
 
 | Place | Data version | Built | Lots | Tracts | Errors | Detail files |
 |---|---|---|---|---|---|---|
 | Pittsburgh | `pittsburgh-20261112-f2be01fba6` | 2026-11-12 15:40 (terrain refresh of the Nov 11 build) | 92,081 | 128 | 0 | 140,740,251 bytes, 61 tracts split into chunks |
 | Philadelphia | `philadelphia-20261112-d441ac616a` | 2026-11-12 16:17 (terrain refresh of the Nov 11 build) | 459,998 | 385 | 0 | 355,098,084 bytes, 48 tracts split into chunks |
-| Allentown | `allentown-20261113-c3f7b21cb2` | 2026-11-13 05:19 (full run and terrain) | 29,158 | 31 | 0 | 73,045,284 bytes, 23 tracts split into chunks |
+| Allentown | `allentown-20261114-33d9df7faf` | 2026-11-14 05:23 (rules engine pass 8) | 29,158 | 31 | 0 | 81,431,194 bytes, 24 tracts split into chunks |
+| Chester County | `chester_county-20261114-18e81019a3` | 2026-11-14 05:49 (rules engine pass 8) | 14,847 | 15 | 0 | 55,699,322 bytes, 11 tracts split into chunks |
+| Centre County | `centre_county-20261114-2f26bac9ff` | 2026-11-14 01:50 | 3,484 | 3 | 0 | 11,310,352 bytes, 2 tracts split into chunks |
+| Montgomery County | `montgomery_county-20261114-c5ec79eaaa` | 2026-11-14 06:09 (rules engine pass 8) | 26,119 | 28 | 0 | 64,504,885 bytes, 22 tracts split into chunks |
+
+625,687 lots in all.
+
+Pittsburgh and Philadelphia are being rebuilt so that their records carry the steep slope rules (Pittsburgh 915.02 and 906.04, 906.05, 906.08, Philadelphia 14-704(2)). That rebuild was running on Nov 14. When it is done the two rows above get new data versions. The slope rows add condition lines to about 44,153 Pittsburgh records and 31,349 Philadelphia records (HB 2186 scenario only). They do not change any yes or no.
 
 On 2026-11-12 the terrain refresh (`build_lots terrain`) added a `terrain` block to every record without a fit rerun (Pittsburgh from `pittsburgh-20261111-bdeb5697ae`, Philadelphia from `philadelphia-20261111-b7fa7bda07`). The files before it are kept in `~/musa-drive/backups/lots-<city>-pre-terrain-<old version>/`. On 2026-11-13 every record of the three places was checked (all files open, record counts match the manifests and the index, `lot_schema.json` valid, terrain present): 0 problems.
+
+On 2026-11-14 Allentown, Chester County and Montgomery County were rebuilt on rules engine pass 8. No headline share moved. Only sentences, citations and the yards of lots where only an inside unit is allowed changed. The Allentown build before it is kept in `~/musa-drive/backups/lots-allentown-pre-pass8-allentown-20261113-c3f7b21cb2`.
 
 Allentown was rebuilt on 2026-11-13 with the A, B and C street designation (front lot lines), side street and rear yard placement, coverage by house type and through lots (see [ADDING_A_CITY.md](ADDING_A_CITY.md) section 4). The build before it (`allentown-20261112-5825ca3817`) is kept in `~/musa-drive/backups/lots-allentown-pre-lotdata2-allentown-20261112-5825ca3817/`.
 
@@ -201,7 +212,7 @@ Allentown was rebuilt on 2026-11-13 with the A, B and C street designation (fron
 
 3,565,111 bytes in all. The lots left out have no address (8 in Allentown, 9 in Chester County, 10 in Centre County) or no house number (1 in Montgomery County, `CHURCH ST`).
 
-Rule files used by the Pittsburgh and Philadelphia builds were checked on 2026-11-10; the Allentown build reads `pa_lehigh_allentown.json` as of 2026-11-13. Lots without a cover row (42 in Pittsburgh) keep an empty `cover` block.
+Rule files used by the Pittsburgh and Philadelphia builds were checked on 2026-11-10. The Allentown build reads `pa_lehigh_allentown.json` as of 2026-11-11. The county builds read their town files as of 2026-11-11 to 2026-11-13 (`rule_files_verified_on` in each manifest). Lots without a cover row (42 in Pittsburgh) keep an empty `cover` block. Allentown and the three county places have no land cover block.
 
 ## Elevation (ground slope)
 

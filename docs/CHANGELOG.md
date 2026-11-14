@@ -1,5 +1,41 @@
 # Changelog
 
+## 2026-11-14
+
+Not legal advice. Not a zoning determination. HB 2186, SB 1346 and Bill 250042 are bills, not law.
+
+### Lot places
+
+<!-- source: ~/musa-drive/lots/<place>/manifest.json and stats.json, read 2026-11-14 -->
+
+- Three county places with lot records, each lot answered by its own town's rule file: Chester County (5 towns, 14,847 lots: West Chester, Phoenixville, West Vincent, Malvern, East Brandywine), Centre County (College Township, 3,484) and Montgomery County (Lower Merion, Narberth, Upper Dublin, 26,119). With Pittsburgh, Philadelphia and Allentown: six places, 625,687 lots.
+- Share of lots where a detached unit is legal and fits today: Chester County 23.1%, Centre County 48.7%, Montgomery County 25.6% (Narberth 76.2%, Upper Dublin 66.5%, Lower Merion 0%).
+- Allentown, Chester County and Montgomery County rebuilt on rules engine pass 8 (`allentown-20261114-33d9df7faf`, `chester_county-20261114-18e81019a3`, `montgomery_county-20261114-c5ec79eaaa`). No headline share moved.
+- Lot data bundle for all six places: 951.9 MB, close to the 1 GB Pages limit. Not published.
+
+### Rules
+
+<!-- source: shared/rules/towns_index.json (2026-11-14), ~/Library/Caches/yz-musa/rules8/notes.md, slope1/notes.md -->
+
+- Town rule batches 14, 15 and 16: 95 places now have a rule file (93 towns and the two cities). 64 verified by an independent second reading, 31 stay first readings (drafted). Towns whose code is only a PDF were skipped.
+- Rules engine pass 8: second-reader fixes (Allentown height cap, rear yard only, stricter house types, McCandless second-house path removed), status by district, lot area by building type, share of a named part, disputed gates, no bookkeeping notes in owner sentences.
+- Steep slope rules for Pittsburgh (915.02, 906.04, 906.05, 906.08) and Philadelphia (14-704(2)) as cited rows. The resolver says them as conditions or questions for the city, never as a bar. They reach the city lot records only after the rebuild of the two cities, which was running on Nov 14. Pittsburgh's undermined-area layer (UM-O) is not in the lot data.
+
+### Assistant
+
+<!-- source: ~/musa-drive/ops/agent-eval/2026-11-14T04-51-56-claude-haiku-5-5/report.md -->
+
+- `find_lot` finds any address in the six lot places from a static address index (3.6 MB in the lot bundle). It works live only once the bundle is published.
+- The assistant says what a rule depends on (house-size caps, lot width, designated lots, forms the code does not name). Shorter why-not line inside the 90-word budget.
+- Eval: 109 of 114 correct, 0 made-up citations, $0.14.
+
+### Models (as of Nov 14 morning, a training round runs until that night)
+
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, yolo.md -->
+
+- Land cover: DeepLabV3+ and EfficientNet-B2 options. Their ensemble scores test mIoU 0.7089 and building IoU 0.6546 (targets 0.72 and 0.65). It missed the Pittsburgh adoption bar by 0.0003, so the lots keep `r34_c5_s0`.
+- Detector: classes set by the label size rule. Garage AP50 0.469 on unchecked labels (target 0.50).
+
 ## 2026-11-13
 
 ### Assistant

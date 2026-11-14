@@ -7,18 +7,25 @@ Draft for the director. Not in the site render list. Numbers from `<data root>/p
 
 <!-- source: ~/musa-drive/processed/5500/places_by_status.csv, places_by_tier.csv, places_scenarios.csv, places_summary.json; app/public/data/pa_places.json -->
 
-Sections 8 and 9 read the rules of 38 places by hand. Pennsylvania has 2,560 municipalities, each with its own zoning
+Sections 8 and 9 read the rules of 38 places by hand (95 by Nov 14). Pennsylvania has 2,560 municipalities, each with its own zoning
 or none. To see the whole pattern, every county subdivision now gets one answer, the evidence tier behind it, and a
 dated source (docs/PLACES.md):
 
-- Hand-read rule files (verified or drafted) for the 38 places.
+- Hand-read rule files (verified or drafted): 95 places on Nov 14, 64 of them verified.
 - The state's record of which municipalities have no zoning at all (PA DCED Municipal Statistics, from the annual
   filing every municipality makes, exported 2026-11-12). Where there is no zoning, zoning does not limit an ADU. The
   building code and sewage permits still apply.
 - Planning-agency ADU inventories, where an open and dated one exists (shown as "reported", never as verified).
 - Searchable public zoning text (no answer claimed), and the statewide baseline for the rest.
 
-**People by the ADU rule where they live (2025 estimates, 13.06 million residents)**
+The tables and figures below are from the analyze run of Nov 12 (38 rule files). The places table was rebuilt on
+Nov 14 with 95 rule files: by right 15 places (5.3% of people), no zoning 527 (5.0%), limited 80 (25.0%), not allowed
+37 (9.7%), not known 1,913 (55.1%). So the rule is now known for 45% of people. Rerun
+`python -m pipeline.places_index analyze` to refresh the tables and figures.
+
+<!-- source: app/public/data/pa_places_meta.json counts.by_status, built 2026-11-14 -->
+
+**People by the ADU rule where they live (2025 estimates, 13.06 million residents, Nov 12 run)**
 
 | ADU status today | Places | Residents | Share |
 |---|---|---|---|

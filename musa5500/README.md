@@ -37,7 +37,7 @@ After each notebook, run `python app/build_data.py` to see the result in the too
 ## Due
 
 - Presentation: Thu Dec 3 (class) or Dec 4 (project page)
-- Report (~3 pages: intro, methods, results, conclusion): Mon Dec 8, 11:59 pm
+- Report (~3 pages: intro, methods, results, conclusion): Mon Dec 7, 11:59 pm
 - Canvas: GitHub repo link + website URL. README must have the website URL
 
 ## Course requirements met

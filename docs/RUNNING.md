@@ -127,6 +127,8 @@ $G -m pipeline.build_lots run --place pittsburgh --workers 4
 $G -m pipeline.build_lots run --place philadelphia --workers 4
 ```
 
+The other places are `allentown`, `chester_county`, `centre_county` and `montgomery_county`. Each needs its place tables first (`pipeline/places/<place>.py`, see [ADDING_A_CITY.md](ADDING_A_CITY.md)).
+
 Options: `--tracts <GEOID> ...` builds only those tracts, `--limit N` builds at most N lots (a smoke test), `--force` rebuilds tracts already done. A run skips tracts listed as finished in `progress.jsonl`, so a stopped run can be started again. Land cover is joined from the per-lot cover file when it exists (section 4.3). `build_lots cover --place <place>` refreshes only the cover in built tracts.
 
 Then:
@@ -289,7 +291,7 @@ internal disk (outside the repo and outside iCloud) works the same, since it hol
 ```bash
 tools/publish_lots.sh                                   # refresh ~/musa-drive/host (nothing is uploaded)
 mkdir -p ~/Library/Caches/yz-musa/lots-local
-rsync -a --delete ~/musa-drive/host/lots/ ~/Library/Caches/yz-musa/lots-local/   # about 480 MB
+rsync -a --delete ~/musa-drive/host/lots/ ~/Library/Caches/yz-musa/lots-local/   # about 893 MB (six places, Nov 14)
 LOT_DATA_DIR=~/Library/Caches/yz-musa/lots-local npm run dev
 ```
 

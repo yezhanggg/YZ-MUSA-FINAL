@@ -106,6 +106,8 @@ $G app/build_lot_tiles.py --place pittsburgh             # parcel tiles (needs t
 tools/publish_lots.sh                                     # bundle in ~/musa-drive/host, nothing uploaded
 ```
 
+The six places are `pittsburgh`, `philadelphia`, `allentown`, `chester_county`, `centre_county` and `montgomery_county`. The same commands work for each. The rebuild of Allentown, Chester County and Montgomery County took about an hour in all on Nov 14.
+
 <!-- source: ~/musa-drive/ops/logs/build-lots-run-pittsburgh.log ("total 17.7 min"), build-lots-run-philadelphia.log ("total 52.5 min"). Validate and stats for Philadelphia took about one hour (manifest 21:41, stats 22:50 on Nov 11) -->
 
 All `build_lots` subcommands were checked with `--help`. Validate plus stats for Philadelphia took about an hour on Nov 11. Then publish (section e). After a rebuild, refresh the numbers in the docs from `lots/<place>/stats.json` and `manifest.json` (each table names its source).
@@ -125,7 +127,7 @@ python3 tools/gen_rules.py towns > docs/RULES_TOWNS.md    # refresh the town tab
 ```
 
 - A change to `philadelphia.json`, `pittsburgh.json`, a bill file or `default.json` changes lot records. Rebuild the two cities (recipe 2).
-- A change to a town file changes no lot file. The assistant reads town files at run time. The MUSA 5500 forecast reads them through `pipeline/tract/legal.py`, so rerun recipe 5 if you want the 2031 numbers to follow.
+- A change to a town file in a lot place (Allentown, and the towns of the Chester, Centre and Montgomery places, listed in each `manifest.json` under `towns`) changes lot records. Rebuild that place. Any other town file changes no lot file. The assistant reads town files at run time. The MUSA 5500 forecast reads them through `pipeline/tract/legal.py`, so rerun recipe 5 if you want the 2031 numbers to follow.
 - `python -m pipeline.rules resolve ...` prints the resolved rules for one lot. Options are in [RUNNING.md](RUNNING.md) section 3.6.
 
 ### 4. Add a town rule file
@@ -181,12 +183,13 @@ $G -m pipeline.build_lots cover --place pittsburgh --workers 4                  
 ```
 
 - All of these were checked with `--help`.
-- Pittsburgh lot files read `cover_model_r34_c5_s0.parquet` first (`COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`).
+- Pittsburgh lot files read `cover_model_r34_c5_s0.parquet` first (`COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`). The Nov 12 to 14 runs (DeepLabV3+, EfficientNet-B2, Lovasz loss, ensembles) did not pass the Pittsburgh bar for replacing it. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
+- Allentown and the three county places have no land cover block.
 - Philadelphia reads `cover.parquet`, which holds the 2018 city raster.
 - City boxes that overlap training boxes are left out of city scores (`pipeline/vision/city.py`).
 - Training commands are in [RUNNING.md](RUNNING.md) section 4.
 
-Detector steps are in `musa6950/yolo/README.md`. Its scores are against unchecked labels (see f).
+Detector steps are in `musa6950/yolo/README.md`. The best run is `~/musa-drive/models/yolo/runs/long640/` with the size rule classes (`eval_rule/eval_rule.json`). Its scores are against unchecked labels (see f).
 
 ### 6b. Ground slope (terrain refresh)
 
@@ -209,11 +212,11 @@ $G -m pipeline.build_lots stats --place pittsburgh                  # stats.json
 |---|---|
 | Model id | `agent/schema.ts` `DEFAULT_MODEL` = `claude-haiku-5-5`. `AGENT_MODEL` on the server overrides it |
 | System prompt | `agent/schema.ts` `SYSTEM_PROMPT` |
-| Tools | Schemas in `agent/schema.ts`, `app/src/agent/areaTools.ts`, `app/src/agent/ruleText.ts` and `app/src/lib/lot/agentTools.ts`. Executors in `app/src/agent/executors.ts`. 16 tools: get_site, test_adu, compare_sizes, get_rules, find_lots, set_map (area and map), find_lot, get_area_stats (tracts, towns, counties), get_lot_facts, get_lot_rules, test_unit_on_lot, compare_scenarios, lot_money, explain_limit (lot records), get_rule_text, list_rule_places (city, town and bill rule files and the town index) |
+| Tools | Schemas in `agent/schema.ts`, `app/src/agent/areaTools.ts`, `app/src/agent/ruleText.ts` and `app/src/lib/lot/agentTools.ts`. Executors in `app/src/agent/executors.ts`. 19 tools: get_site, test_adu, compare_sizes, get_rules, find_lots, set_map (area and map), find_lot (any address in the six lot places, from the address index), get_area_stats (tracts, towns, counties), get_lot_facts, get_lot_rules, test_unit_on_lot, compare_scenarios, lot_money, explain_limit (lot records), get_rule_text, list_rule_places (city, town and bill rule files and the town index), get_place_answer (the answer ladder for any Pennsylvania place), search_zoning_text, list_text_places (public zoning text) |
 | Limits | `MAX_ROUNDS` 6 tool rounds (`agent/schema.ts`), `MAX_OUTPUT_TOKENS` 2048 and a daily cap of 2,000 model requests (`AGENT_DAILY_CAP`) in `api/agent.ts` |
-| Questions | `agent/eval/questions.json` (65 questions in 7 groups) |
+| Questions | 114 in all: `agent/eval/questions.json` (65 in 7 groups), `questions_ladder.json` (25), `questions_tierb.json` (10), `questions_allentown.json` (8), `questions_rule_text.json` (6) |
 
-<!-- source: ~/musa-drive/ops/agent-eval/2026-11-12T04-08-14-claude-haiku-5-5/report.md -->
+<!-- source: ~/musa-drive/ops/agent-eval/2026-11-14T04-51-56-claude-haiku-5-5/report.md -->
 
 ```bash
 EVAL_OUT_DIR=/tmp/evaldry npm run eval:agent -- --dry-run --limit 2   # no key, no network (ran 2026-11-12)
@@ -223,8 +226,8 @@ npm run eval:agent -- --category zoning                               # one grou
 
 - The full run needs `ANTHROPIC_API_KEY` in the environment. The script never reads it from a file.
 - Reports go to `~/musa-drive/ops/agent-eval/<run id>/report.md`.
-- The newest full run (2026-11-12, Haiku, final data) scored 64 of 65 with 0 made-up citations. It cost $0.06 at the prices in the report.
-- After a prompt or tool change, run the full set at least twice. Scores moved by a few questions between runs (60 to 64 of 65).
+- The newest full run (2026-11-14 04:51, Haiku) scored 109 of 114 with 0 made-up citations and 0 quotes not in the text. It cost $0.14 at the prices in the report. Misses: fit-10, tierb-05, tierb-10, trap-02, trap-03. No question covers the county places yet.
+- After a prompt or tool change, run the full set at least twice. Scores moved by a few questions between runs.
 
 ### 8. The class site
 
@@ -242,17 +245,17 @@ These commands rendered all 10 pages on 2026-11-11 with no warnings. Pages and n
 
 ## (c) Checks before every commit
 
-All were run on 2026-11-12 between 00:37 and 00:39. The results are in [RUNNING.md](RUNNING.md) section 5. CI (`.github/workflows/ci.yml`) runs the same set on every push.
+All were run on 2026-11-12 between 00:37 and 00:39. The results are in [RUNNING.md](RUNNING.md) section 5. The pytest and vitest counts below are from Nov 14. CI (`.github/workflows/ci.yml`) runs the same set on every push.
 
 | Command | What it protects |
 |---|---|
-| `$G -m pytest -q tests` | Rules, fit, lot builder, money, tract analysis, validation kit, the 50-lot regression set (762 passed, 1 skipped) |
+| `$G -m pytest -q tests` | Rules, fit, lot builder, money, tract analysis, validation kit, the 50-lot regression set (1,362 passed, 2 skipped on 2026-11-14) |
 | `$M -m pytest -q tests/test_vision.py` | Land cover code (needs torch) |
 | `ruff check .` and `ruff format --check .` | Python lint and format (clean) |
 | `mypy pipeline` | Python types. 0 errors (mypy 2.4.1, 2026-11-12). CI fails on any new one (`MYPY_STRICT`) |
 | `$G .github/scripts/check_schemas.py` | Rule files, assumptions and the lot schema against their schemas |
 | `npx tsc --noEmit -p tsconfig.json` | TypeScript types (0 errors) |
-| `npx vitest run` | Browser money, verdicts, citations, Ask tools, eval scoring (414 passed) |
+| `npx vitest run` | Browser money, verdicts, citations, Ask tools, eval scoring (690 passed on 2026-11-14) |
 | `npm run build` | The production build, including the copy of `site/`. Fails if `site/` is missing |
 | `npm run e2e` | Playwright browser tests on the dev server: the lot flow, Philadelphia rowhouse, address search, room map, Projecting mode (9 passed on 2026-11-12, 2.5 min). Skips when the lot files are not on the drive |
 | `python .github/scripts/guard.py <base> <head>` | CI only: big files, keys and `no-push/` never committed |
@@ -267,12 +270,12 @@ The data root is `ADU_DATA_DIR` (default `~/musa-drive`). Other variables: `LOT_
 |---|---|---|---|
 | `raw/` | 1.4 GB | Downloads per place, with `SOURCES.json` | No. Some sources change or vanish |
 | `processed/` | 5.0 GB | Built tables, per-lot cover, tract outputs (`processed/5500/`) | No |
-| `lots/` | 885 MB | The lot files. `index.parquet`, `detail/`, `tiles/`, `stats.json`, `manifest.json` | No. `lots/pittsburgh/index.before_2272.parquet` is an old copy and can go |
+| `lots/` | 1.5 GB (Nov 14) | The lot files of the six places. `index.parquet`, `detail/`, `tiles/`, `stats.json`, `manifest.json` | No. `lots/pittsburgh/index.before_2272.parquet` is an old copy and can go |
 | `models/` | 3.2 GB | Model runs | No |
 | `validation/` | 582 MB | 250-lot sample, label sheets, results. Labels go in `validation/labels/` | No |
 | `corpus/` | 364 MB | Zoning pilot texts and drafts | Only if the pilot is dropped |
 | `data/` | 5.2 GB | Course notebook tables. The repo's `data` link points here | No |
-| `host/` | 437 MB | Publishing bundle from `tools/publish_lots.sh` | Yes. It is rebuilt each time |
+| `host/` | 911 MB on disk, 952 MB of files (Nov 14) | Publishing bundle from `tools/publish_lots.sh` | Yes. It is rebuilt each time |
 | `cache/` | 647 MB | pip, Hugging Face and Census caches | Yes. Refilled on use |
 | `smoke/` | 17 MB | Small test builds | Yes |
 | `data-work/` | 1.6 GB | An older copy of `data/`. No code refers to it | Yes, after a look |
@@ -298,9 +301,10 @@ Also backups: `processed/<place>/<name>.prev.parquet` (the table before the last
   - Label them with `~/musa-drive/validation/PROTOCOL.md`: open `validation/<city>/label.html`, answer by key, press D to save a CSV into `validation/labels/`.
   - Then score with `$G -m pipeline.validation.score --city philadelphia` (and `pittsburgh`). Results go to `validation/results/<city>.md`.
   - The last scoring run read an older lot index. Score again once labels exist.
-- **Detector labels are unchecked.** Garage AP50 0.2584 is against first-pass labels from footprints and OSM (`~/musa-drive/models/yolo/runs/real/eval/eval.json`). Detections are not in the lot records. See [MODEL_CARD_detector.md](MODEL_CARD_detector.md).
+- **Detector labels are unchecked.** As of Nov 14 morning the best garage AP50 is 0.469 (run `long640`, classes set by the size rule), against a target of 0.50. Pittsburgh alone reaches 0.504. This is agreement with first-pass labels from footprints and OSM, not true accuracy (`~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json`). Detections are not in the lot records. See [MODEL_CARD_detector.md](MODEL_CARD_detector.md).
 - **Land cover limits by city.** See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
-  - Test mIoU is about 0.70 on the held-out counties.
+  - As of Nov 14 morning (a training round runs until that night): best test mIoU 0.7089 and building IoU 0.6546, from a DeepLabV3+ and EfficientNet-B2 ensemble. Targets 0.72 and 0.65. Single models land near 0.70.
+  - In Pittsburgh that ensemble scored 0.7133 against the 0.7136 needed to replace the lot model, so the lots keep `r34_c5_s0`.
   - Philadelphia: the model cannot read trees from the spring 2022 photos (tree IoU about 0.26), so the 2018 city raster is used.
   - Pittsburgh: the per-lot check against the 2019 raster covers only 128 lots.
   - A note in `pipeline/build_lots.py` (`COVER_NOTES`) says Pittsburgh building share reads about 9 points high. That figure is for the fine-tune. For the model the lots use, it is 7.32 (`processed/pittsburgh/cover_compare_r34_c5_s0.json`).
@@ -309,7 +313,10 @@ Also backups: `processed/<place>/<name>.prev.parquet` (the table before the last
   - A front line that runs through the house: the contextual front setback is taken from the house (`house_front_setback` in `pipeline/build_lots.py`).
   - Building outlines wider than the lot: outlines and parcel lines come from different sources and years.
   - About one lot in ten has low lot line confidence (`stats.json` `edge_confidence`).
-- **Town files with open readings.** 15 town files are `drafted`, each with its open point in `towns_index.json` `status_note`. 17 of the 36 have no ADU text, so their answer leans on the statewide baseline and the Municipalities Planning Code.
+- **Town files with open readings.** 31 of 93 town files stay `drafted` (first readings), each with its open point in `towns_index.json` `status_note`. 34 of the 93 have no ADU text, so their answer leans on the statewide baseline and the Municipalities Planning Code. Towns whose code is only a PDF were skipped (Marple, Palmer, Muhlenberg, Pottstown, East Pennsboro, South Whitehall, Manor, Silver Spring, Upper Moreland, Derry). Some 2026 ordinances could not be read.
+- **Steep slope rules are not in the city lot records yet.** The Pittsburgh and Philadelphia rule files have them. The records get them only after the two cities are rebuilt (running on Nov 14). Pittsburgh's undermined-area overlay (UM-O) is not in the lot data at all.
+- **Heights.** Microsoft building heights read low in Upper Dublin, so the "no taller than the house" test reads "not checked" in Montgomery County.
+- **Lot data not published.** The bundle is about 952 MB against the 1 GB Pages limit. Until it is published, the live site has no lot data and Ask cannot search addresses there.
 - **Statewide room is an extrapolation.**
   - The room model is trained on two cities.
   - 1,780 of the 2,932 modelled tracts are outside their range (`~/musa-drive/processed/5500/room_summary.json`).

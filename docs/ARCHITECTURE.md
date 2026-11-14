@@ -1,6 +1,6 @@
 # Architecture
 
-This product answers one question for a home lot in Pennsylvania: can a backyard home (an ADU) go here, how big, under which rules, and does it pay. Philadelphia (459,998 lots) and Pittsburgh (92,081 lots) are covered lot by lot. For 36 more towns the product has a hand-checked rule file, and for every other Pennsylvania town a statewide baseline. Those towns have rules but no lot files.
+This product answers one question for a home lot in Pennsylvania: can a backyard home (an ADU) go here, how big, under which rules, and does it pay. Six lot places are covered lot by lot: Philadelphia (459,998 lots), Pittsburgh (92,081), Allentown (29,158), and parts of Montgomery County (26,119), Chester County (14,847) and Centre County (3,484), 625,687 lots in all. 93 towns have a hand-checked rule file (10 of them are in the lot places). Every Pennsylvania place gets one answer from the answer ladder, down to a statewide baseline. Towns outside the lot places have rules but no lot files.
 
 <!-- source: ~/musa-drive/lots/<city>/manifest.json counts.lots (Pittsburgh pittsburgh-20261111-bdeb5697ae, Philadelphia build of 2026-11-11T21:41:43), shared/rules/towns_index.json -->
 
@@ -81,8 +81,8 @@ Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
 | Tier | Where | What it holds | Used by |
 |---|---|---|---|
-| 1. Lot-level rules | Philadelphia and Pittsburgh (`shared/rules/philadelphia.json`, `pittsburgh.json`, plus the bill files) | Every rule resolved for every lot and scenario, with district setbacks and overlays, saved in the lot record | Lot files, Testing mode, the assistant's lot tools |
-| 2. Town rule files | 36 towns beyond the two cities, ranks 3 to 38 by 2020 population (`shared/rules/pa_<county>_<town>.json`). 21 verified, 15 drafted with a stated open point | ADU status, approval path, size, owner occupancy, conditions and other ways to add a unit, each cited. No lot files | The assistant (`get_rule_text`, `list_rule_places`), `pipeline/rules.py` town resolver, [RULES_TOWNS.md](RULES_TOWNS.md) |
+| 1. Lot-level rules | The six lot places (`shared/rules/philadelphia.json`, `pittsburgh.json`, the town files of Allentown and the 9 county-place towns, plus the bill files) | Every rule resolved for every lot and scenario, with district setbacks and overlays, saved in the lot record | Lot files, Testing mode, the assistant's lot tools |
+| 2. Town rule files | 93 towns beyond the two cities, mostly the largest by 2020 population (`shared/rules/pa_<county>_<town>.json`). With the two cities, 64 verified and 31 drafted with a stated open point (2026-11-14) | ADU status, approval path, size, owner occupancy, conditions and other ways to add a unit, each cited. Lot files only for the towns in the lot places | The assistant (`get_rule_text`, `list_rule_places`), `pipeline/rules.py` town resolver, [RULES_TOWNS.md](RULES_TOWNS.md) |
 | 2b. Public zoning text (unverified) | 66 towns with a public copy of the ordinance on the town or a county site (`<data root>/corpus/tierb/`, published as `zoning_text/` next to the lot data) | Passages copied word for word, with section, pages, link and fetch date. No verdict | The assistant (`search_zoning_text`, `list_text_places`), only for a town with no rule file or a detail the rule file lacks. Labelled "unverified text search" |
 | 3. Statewide baseline | Every other Pennsylvania town (`shared/rules/pa_statewide.json`) | MPC approval paths, building code, sewage rules, the pending bills. No town zoning numbers | The assistant, which says the answer is the statewide baseline and not the town's own code |
 
@@ -93,7 +93,7 @@ Tier 2b is built by `pipeline/corpus/tierb.py` from the machine-read pilot (`pip
 ## How the assistant answers
 
 For any question about what a Pennsylvania municipality allows, the assistant calls `get_place_answer` first
-(`app/src/agent/placeAnswer.ts`). For one lot in a city with lot records (Pittsburgh, Philadelphia, Allentown: the
+(`app/src/agent/placeAnswer.ts`). For one lot in a place with lot records (Pittsburgh, Philadelphia, Allentown, Chester County, Centre County, Montgomery County: the
 list comes from `PLACE_BY_COUNTY` in `app/src/lib/lot/load.ts` through `app/src/agent/lotPlaces.ts`, so the wording
 needs no change for a new city) the lot tools come first. The tool
 resolves the place (name, "name, county", GEOID, or the town selected on the map; a shared name such as the 22
@@ -125,8 +125,11 @@ What the tool results carry so the model does not have to infer it (the prompt s
   "..." around stray marks, never fix a word) and `text_kind` ("scanned text, quoted as read" for OCR). A search with
   no match returns `say_exactly: "Not found in the text searched."` and a `not_found_rule`.
 - Lot records: a check the record cannot test (no house size, no land cover block) has `pass: "not checked"`, and
-  `test_unit_on_lot` lists them under `not_checked`. Allentown records have no land cover, so trees and paving are
+  `test_unit_on_lot` lists them under `not_checked`. Allentown and county place records have no land cover, so trees and paving are
   never claimed either way.
+- Address search: `find_lot` reads a static address index per place (`<place>/addresses/`, 3.6 MB for the six
+  places, in the lot data bundle, see [DATA.md](DATA.md#address-index)). It finds any address in a lot place, on the
+  map or not. It works on the live site only once the bundle is published.
 
 Eval files: `questions.json` (generated, two cities), `questions_tierb.json`, `questions_ladder.json`,
 `questions_allentown.json` and `questions_rule_text.json` (both from `agent/eval/make_more_questions.ts`). The scorer
