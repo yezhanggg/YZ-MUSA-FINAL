@@ -1,0 +1,489 @@
+{
+  "provenance": {
+    "jurisdiction": "Lansdale borough",
+    "instrument": "Borough of Lansdale Code Chapter 405 Zoning (Ord. No. 1393, 11-16-1988, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-05-20 (breadcrumb). New Laws for Chapter 405 on 2026-11-14: Ord. 2012 'Residential B&C amendments' and Ord. 2013 'TOD text amendment' (2026), PDF only, not read.",
+    "effective_date": "2018-02-21",
+    "source_urls": [
+      "https://ecode360.com/11763313",
+      "https://ecode360.com/print/LA0393?guid=33133854",
+      "https://ecode360.com/print/LA0393?guid=12266515",
+      "https://ecode360.com/print/LA0393?guid=12266743",
+      "https://ecode360.com/print/LA0393?guid=12266756",
+      "https://ecode360.com/print/LA0393?guid=12266788",
+      "https://ecode360.com/print/LA0393?guid=12266828",
+      "https://ecode360.com/LA0393/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "borough",
+    "geoid": "4209141432",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11763313",
+    "code_current_through": "2026-05-20",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-05-20'. Two 2026 zoning amendments (Residential B and C, TOD) are listed as New Laws, not yet in the code text.",
+    "code_caution": "Two 2026 zoning amendments are listed as New Laws for Chapter 405 and were not read (PDF only): 'Residential B&C amendments' (Ord. 2012) and a TOD text amendment (Ord. 2013). The first may change the Class B and Class C Residential rules below.",
+    "checks": [
+      "'Accessory dwelling units shall be permitted by right attached to or contained within single-family detached homes only' (405-1913B). Not in a separate building, not joined by a corridor or breezeway (405-1913E)",
+      "Occupants are limited to the parents, grandparents, step-parents or step-grandparents of the occupants of the house, or the spouse, sibling or partner of one of them. At most two people (405-1913G)",
+      "The house is owner-occupied and the owner's primary residence. The unit may not be rented (405-1913F, I)",
+      "A deed restriction is recorded with the Montgomery County Recorder of Deeds. A license to operate is renewed every year by January 1, with inspections twice a year. The second kitchen is removed within six months after the approved occupant leaves (405-1913A, H, J)",
+      "One more off-street parking space, unless the house already has at least one space beyond its own requirement. Utilities are routed through the house. A separate entrance that does not face the street, no separate address or mailbox (405-1913B, D, K, L)",
+      "Lot area per dwelling unit: Class A 9,000 sq ft (standard option), Class B 5,600, Class C 4,500 for a single-family detached dwelling. Where the block has existing homes, the block median governs (405-404, 405-504, 405-506, 405-604, 405-606). Whether the ADU counts as a dwelling unit for this is not said. Ask the Code Enforcement Officer",
+      "An accessory building is 'subordinate, uninhabitable' by definition, so a unit in a detached garage or outbuilding is not allowed (405-201)"
+    ],
+    "notes": "Zoning office: Borough of Lansdale Department of Code Enforcement. Read on eCode360 (LA0393) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house' and 'guest house' found 405-1913 and the ADU definition (405-201), and a conversion of a single-family dwelling to apartment conversion units in Professional Office District B (405-900E, excerpt). Read in full: 405-1913, the definitions page (ADU, accessory building), Class A, B and C Residential (Articles IV to VI) and Residential Apartment (Article VII). Not read: Professional Office A and B, LPO, Commercial, Business, B-2, Industrial and the overlay districts, accessory structures (405-1904) and parking (405-1703)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "405-201, 405-1913",
+      "url": "https://ecode360.com/print/LA0393?guid=12266515",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A suite attached to or contained within the principal dwelling unit on a lot that houses certain family members of the occupant(s) of the principal dwelling unit, and may contain separate cooking facilities' (Ord. No. 2018-1907)."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "405-1913B, G",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "By right, attached to or inside a single-family detached home, only for parents, grandparents and step-relatives of the household (or their spouse, sibling or partner), at most two people, owner-occupied, not rented."
+    },
+    "scope_by_use": {
+      "value": {
+        "use": "single-family detached dwelling",
+        "permitted_in": [
+          "A",
+          "B",
+          "C"
+        ],
+        "not_permitted_in": [
+          "RA"
+        ]
+      },
+      "section": "405-1913B, 405-402, 405-502, 405-602, 405-700",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The ADU is allowed with single-family detached homes only. Class A, B and C list single-family detached dwellings. The Residential Apartment District does not. Other districts' use lists were not read."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "405-700",
+      "url": "https://ecode360.com/print/LA0393?guid=12266828",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Where single-family detached dwellings are not permitted, no ADU rule applies."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "405-1913B, J",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Permitted by right.' A recorded deed restriction and an accessory dwelling unit license to operate, renewed every year."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "405-2204",
+      "url": "https://ecode360.com/11763313",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family duplex dwelling in Class B or C Residential",
+          "path": "by_right",
+          "districts": [
+            "B",
+            "C"
+          ],
+          "conditions": "Two-family duplex dwellings are permitted. Lot area per dwelling unit 5,600 sq ft (B) or 4,500 sq ft (C), side yards 8 ft, rear 20 ft. 'Conversion of single-family detached dwelling to other uses' is listed as not permitted.",
+          "min_lot_sqft": 9000,
+          "min_lot_by_district": {
+            "B": 11200,
+            "C": 9000
+          },
+          "section": "405-502, 405-504, 405-602, 405-604",
+          "url": "https://ecode360.com/print/LA0393?guid=12266756",
+          "confidence": "secondary",
+          "note": "Lot figures are two units at the per-unit area. Since conversion of a single-family detached dwelling to other uses is not permitted, this is a path for a new duplex, not for converting a house. Ask the Code Enforcement Officer."
+        },
+        {
+          "name": "Conversion of a single-family dwelling to apartment conversion units in Professional Office District B",
+          "path": "by_right",
+          "districts": [
+            "PO-B"
+          ],
+          "conditions": "Listed as a permitted use with conditions that were not read.",
+          "section": "405-900E",
+          "url": "https://ecode360.com/LA0393/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22&scope=all&sortOrder=relevance",
+          "confidence": "secondary",
+          "note": "Read from a search excerpt only. The conditions and lot rules were not read. Ask the Code Enforcement Officer."
+        }
+      ],
+      "section": "405-502, 405-602, 405-900E",
+      "url": "https://ecode360.com/print/LA0393?guid=12266756",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "A",
+        "B",
+        "C"
+      ],
+      "section": "405-402, 405-502, 405-602",
+      "url": "https://ecode360.com/print/LA0393?guid=12266743",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Districts read that permit single-family detached dwellings."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "405-1913B",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Single-family detached homes only.'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "405-1913",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No historic path."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Occupants limited to the parents, grandparents, step-parents or step-grandparents of the occupants of the house, or the spouse, sibling or partner of one of those relatives. At most two people.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "405-1913G",
+          "url": "https://ecode360.com/print/LA0393?guid=33133854"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The house is owner-occupied and the owner's primary residence. The unit may not be leased or rented.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "405-1913F, I",
+          "url": "https://ecode360.com/print/LA0393?guid=33133854"
+        },
+        {
+          "kind": "other",
+          "condition": "Deed restriction recorded with the Montgomery County Recorder of Deeds. Annual license to operate (by January 1), inspections twice a year, owner reimburses enforcement costs. The second kitchen is removed within six months after the approved occupant leaves.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "405-1913A, H, J",
+          "url": "https://ecode360.com/print/LA0393?guid=33133854"
+        },
+        {
+          "kind": "design",
+          "condition": "Attached and interconnected with the house, any connecting door open from both sides. A separate entrance that does not face the street (on a corner lot, not the street the main entrance faces). No separate address or mailbox. Outside changes keep the look of a single-family detached house. The addition meets the house's dimensional rules.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "405-1913B to E",
+          "url": "https://ecode360.com/print/LA0393?guid=33133854"
+        },
+        {
+          "kind": "utilities",
+          "condition": "All utilities for the unit are routed through the house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "405-1913L",
+          "url": "https://ecode360.com/print/LA0393?guid=33133854"
+        }
+      ],
+      "section": "405-1913",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "405-1913B, E",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Attached to or contained within single-family detached homes only.' 'Shall not be located in a separate freestanding building joined to the principal dwelling by a corridor or breezeway.'"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "405-1913",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "405-1913 sets no floor area limit."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "405-404, 405-504H, 405-604H",
+      "url": "https://ecode360.com/print/LA0393?guid=12266743",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "35 ft or three stories."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "405-1913F",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The principal dwelling unit shall [be] owner-occupied, and shall be the primary residence of the owner of the property.'"
+    },
+    "family_only": {
+      "value": true,
+      "section": "405-1913G",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At most two people: parents, grandparents, step-parents or step-grandparents of the occupants of the house, or the spouse, sibling or partner of one of them.",
+      "section": "405-1913G",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "405-1913",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'An accessory dwelling unit' with the house. No number is stated."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "405-1913K",
+      "url": "https://ecode360.com/print/LA0393?guid=33133854",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit requires one new, additional off-street parking space.' Not needed if the house already has at least one space beyond its own requirement."
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "405-404B(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266743",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Standard option, per dwelling unit, where two or fewer homes are on the block. Where more than two are, the block median lot area governs (405-404A). Width 60 ft. Impervious 45%."
+      },
+      "setback_front_ft": {
+        "value": 24,
+        "section": "405-404B(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266743",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "24 ft minimum, 30 ft maximum. On a block with homes, the block median."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "405-404B(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266743",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "405-404B(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266743",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "405-404B(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266743",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "405-404B(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266743",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "405-404B(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266743",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 9000,
+        "section": "405-404B(1)(a)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266743",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'The minimum lot area shall be 9,000 square feet per dwelling unit.' Applies to the ADU only if it counts as a dwelling unit. Ask."
+      }
+    },
+    "B": {
+      "min_lot_sqft": {
+        "value": 5600,
+        "section": "405-504",
+        "url": "https://ecode360.com/print/LA0393?guid=12266756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, per dwelling unit. Width 45 ft. Existing homes use the block median (405-506). Impervious 75%."
+      },
+      "setback_front_ft": {
+        "value": 24,
+        "section": "405-504",
+        "url": "https://ecode360.com/print/LA0393?guid=12266756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Block median of permitted uses, 24 ft where the block has no homes."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "405-504",
+        "url": "https://ecode360.com/print/LA0393?guid=12266756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "405-504",
+        "url": "https://ecode360.com/print/LA0393?guid=12266756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "405-504",
+        "url": "https://ecode360.com/print/LA0393?guid=12266756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "405-504",
+        "url": "https://ecode360.com/print/LA0393?guid=12266756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "405-504",
+        "url": "https://ecode360.com/print/LA0393?guid=12266756",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5600,
+        "section": "405-504A(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266756",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Applies to redevelopment 'at a density greater than existed prior'. Applies to the ADU only if it counts as a dwelling unit. Ask."
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "405-604",
+        "url": "https://ecode360.com/print/LA0393?guid=12266788",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, per dwelling unit. Width 32 ft. Existing homes use the block median (405-606). Impervious 75%."
+      },
+      "setback_front_ft": {
+        "value": 24,
+        "section": "405-604",
+        "url": "https://ecode360.com/print/LA0393?guid=12266788",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Block median of permitted uses, 24 ft where the block has no homes."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "405-604",
+        "url": "https://ecode360.com/print/LA0393?guid=12266788",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "405-604",
+        "url": "https://ecode360.com/print/LA0393?guid=12266788",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "405-604",
+        "url": "https://ecode360.com/print/LA0393?guid=12266788",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "405-604",
+        "url": "https://ecode360.com/print/LA0393?guid=12266788",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "405-604",
+        "url": "https://ecode360.com/print/LA0393?guid=12266788",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4500,
+        "section": "405-604A(1)",
+        "url": "https://ecode360.com/print/LA0393?guid=12266788",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Applies to redevelopment 'at a density greater than existed prior'. Applies to the ADU only if it counts as a dwelling unit. Ask."
+      }
+    }
+  }
+}

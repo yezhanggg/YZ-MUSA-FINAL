@@ -1,0 +1,727 @@
+{
+  "provenance": {
+    "jurisdiction": "West Manchester township",
+    "instrument": "West Manchester Township Code Chapter 150 Zoning (Ord. No. 79-1, 1-4-1979, amended in its entirety by Ord. No. 87-2, 3-31-1987, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-11-13 (breadcrumb). New Laws on 2026-11-14: Ord. No. 26-01 (2026-01-05), 26-02 (2026-01-22) and 26-03 (2026-05-28), with no subject or chapter shown, PDF only, not read.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/15443121",
+      "https://ecode360.com/print/WE1311?guid=15443158",
+      "https://ecode360.com/print/WE1311?guid=15443370",
+      "https://ecode360.com/print/WE1311?guid=15443380",
+      "https://ecode360.com/print/WE1311?guid=15443451",
+      "https://ecode360.com/print/WE1311?guid=15443490",
+      "https://ecode360.com/print/WE1311?guid=15443519",
+      "https://ecode360.com/print/WE1311?guid=15443548",
+      "https://ecode360.com/print/WE1311?guid=15443582",
+      "https://ecode360.com/print/WE1311?guid=15443649",
+      "https://ecode360.com/print/WE1311?guid=15443687",
+      "https://ecode360.com/print/WE1311?guid=15443741",
+      "https://ecode360.com/print/WE1311?guid=15444489",
+      "https://ecode360.com/15445211",
+      "https://ecode360.com/WE1311/laws",
+      "https://ecode360.com/WE1311/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE1311/search?query=conversion%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22accessory%20residential%22%20OR%20%22second%20dwelling%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213383432",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/15443121",
+    "code_current_through": "2025-11-13",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-11-13'. The definitions show amendments through Ord. No. 25-06 (10-23-2025). Ord. No. 26-01, 26-02 and 26-03 are listed as New Laws, subject not shown.",
+    "code_caution": "Three 2026 ordinances (Ord. No. 26-01, 26-02 and 26-03) are listed as New Laws with no subject or chapter shown. They were not read (PDF only) and may amend the zoning chapter.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or similar rule. The single-family zones permit single-family detached dwellings and 'Accessory uses customarily incidental to the above permitted uses' (150-14, 150-24, 150-33, 150-42, 150-51, 150-69, 150-75)",
+      "'Unless otherwise specifically provided in other provisions of this chapter, only one specific principal use shall be allowed on a lot of land' (150-12.1). A dwelling unit is occupied by 'not more than one family and having separate cooking and sanitary facilities' (150-5)",
+      "A use not specifically allowed may be allowed by special exception where similar uses are permitted (150-9). A second dwelling may instead be read as a two-family dwelling, which the single-family zones do not list. Ask the Zoning Officer",
+      "Two-family conversion of a detached single-family dwelling is a special exception only in the Local Commercial (LC) Zone: lot 8,000 sq ft, public sewer and water, no outside change except fire escapes (150-85D, 150-354)",
+      "Duplex dwellings are permitted in R-4 (7,260 sq ft per unit) and R-6 (4,000 sq ft lot), and in the MU Zone and the Planned Residential Development Overlay (150-60, 150-63, 150-75, 150-78, 150-116.2, 150-228.21)",
+      "No accessory use (except permitted signs) in the front yard, the area between the street line and the house, in A, R, R-1, R-2, R-3 and R-6. Accessory buildings 15 ft high (20 ft in R-1 and R-2) (150-20D, 150-29B, 150-30B, 150-38B, 150-39B, 150-47B, 150-48B, 150-56B, 150-57B, 150-73, 150-80)",
+      "Every dwelling unit at least 700 sq ft of habitable floor area for a single-family, duplex or townhouse unit, 350 sq ft for a one-person efficiency (150-235)"
+    ],
+    "notes": "Zoning office: West Manchester Township (York County) Zoning Officer. Read on eCode360 (WE1311) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house' and 'guest house' found no ADU text (only definitions that use 'single-family dwelling unit'). A second search for conversion, two-family, duplex, 'accessory residential' and 'second dwelling' found 150-354 (LC two-family conversions), duplex standards in R-4, R-6 and MU, and two-family dwellings in the Planned Residential Development Overlay. Read in full: Article II definitions, Article IV general use regulations, the A, R, R-1, R-2, R-3, R-4, R-5, R-6 and LC zones, and Article XXIII supplementary regulations. Not read: OSR-1, OSR-2, OSR-3, MU and PRD (search excerpts only), HC, PO, RC, I-1, I-2, I-3, OS, Q, DCO, parking (Article XXIV) and the special exception criteria (150-302)."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "150-5, 150-14 to 150-80",
+      "url": "https://ecode360.com/print/WE1311?guid=15443158",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, tenant house, guest house, conversion, two-family and duplex."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "150-14, 150-24, 150-33, 150-42, 150-51, 150-69, 150-75",
+      "url": "https://ecode360.com/print/WE1311?guid=15443519",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The single-family zones list single-family detached dwellings and incidental accessory uses. Only one principal use per lot (150-12.1)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "150-12.1, 150-301",
+      "url": "https://ecode360.com/print/WE1311?guid=15443370",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a single-family lot is not a listed use and only one principal use is allowed per lot. A use variance from the Zoning Hearing Board (MPC 910.2)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "150-301",
+      "url": "https://ecode360.com/15443121",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a zone rule is a variance from the Zoning Hearing Board."
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "150-9",
+      "url": "https://ecode360.com/print/WE1311?guid=15443370",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'Any use not specifically allowed elsewhere in this chapter shall be allowed by special exception in the zone or zones where, and to the extent that, similar uses are permitted.' A second unit may instead be read as a two-family dwelling, a listed use that the single-family zones do not permit (duplexes only in R-4, R-6, MU and the PRD overlay, conversions only in LC). Ask the Zoning Officer."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family conversion of a detached single-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "LC"
+          ],
+          "conditions": "Minimum lot area 8,000 sq ft. Public sewer and water. No change to the outside look except fire escapes. All floors above grade with direct escape to ground level.",
+          "min_lot_sqft": 8000,
+          "section": "150-85D, 150-354",
+          "url": "https://ecode360.com/15445211",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer is used",
+              "section": "150-354B"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water is used",
+              "section": "150-354B"
+            }
+          ],
+          "note": "Zoning Hearing Board special exception. The former four-space parking rule was repealed (Ord. No. 01-03)."
+        },
+        {
+          "name": "Duplex dwelling in R-6",
+          "path": "by_right",
+          "districts": [
+            "R-6"
+          ],
+          "conditions": "Duplex dwellings are a permitted use. Lot 4,000 sq ft, width 40 ft, depth 100 ft, front 20 ft, side 8 ft, rear 15 ft, 35 ft, buildings at most 50% of the lot.",
+          "min_lot_sqft": 4000,
+          "section": "150-75B, 150-78",
+          "url": "https://ecode360.com/print/WE1311?guid=15443687",
+          "confidence": "secondary",
+          "note": "A duplex is two units side by side or over and under. Whether an existing house may be converted to a duplex under these standards is not said. Ask the Zoning Officer."
+        },
+        {
+          "name": "Duplex dwelling in R-4",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Duplex dwellings are a permitted use. 7,260 sq ft per dwelling unit, width 55 ft, depth 120 ft, front 35 ft, side 25 ft, rear 35 ft, 35 ft, lot coverage 40%. Single-family detached dwellings are not listed in R-4.",
+          "min_lot_sqft": 14520,
+          "section": "150-60A, 150-63",
+          "url": "https://ecode360.com/print/WE1311?guid=15443582",
+          "confidence": "verified",
+          "note": "Lot figure is two units at 7,260 sq ft each."
+        },
+        {
+          "name": "Duplex dwelling in the MU Zone",
+          "path": "by_right",
+          "districts": [
+            "MU"
+          ],
+          "conditions": "Duplex dwellings are permitted within designated residential development areas, with their own lot standards.",
+          "section": "150-116.2, 150-116.4E",
+          "url": "https://ecode360.com/WE1311/search?query=conversion%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22accessory%20residential%22%20OR%20%22second%20dwelling%22&scope=all&sortOrder=relevance",
+          "confidence": "secondary",
+          "note": "Read from search excerpts only. The MU lot figures were not read."
+        },
+        {
+          "name": "Two-family dwelling in a Planned Residential Development",
+          "path": "by_right",
+          "districts": null,
+          "overlays": [
+            "PRD",
+            "Planned Residential Development Overlay District"
+          ],
+          "conditions": "Two-family dwellings are listed as of right in the overlay's development standards, with their own parking, height and setback rules.",
+          "section": "150-228.21",
+          "url": "https://ecode360.com/WE1311/search?query=conversion%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22accessory%20residential%22%20OR%20%22second%20dwelling%22&scope=all&sortOrder=relevance",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "Read from search excerpts only. A planned development, not a path for one existing lot."
+        }
+      ],
+      "section": "150-354, 150-63, 150-78, 150-116.2, 150-228.21",
+      "url": "https://ecode360.com/15445211",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "150-14 to 150-80",
+      "url": "https://ecode360.com/print/WE1311?guid=15443519",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No zone lists an accessory dwelling unit."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "150-14 to 150-80",
+      "url": "https://ecode360.com/print/WE1311?guid=15443519",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "150-20B(4), 150-30A, 150-39A, 150-48A, 150-57A, 150-71E, 150-77E",
+      "url": "https://ecode360.com/print/WE1311?guid=15443519",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "35 ft for a house in every residential zone read."
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "150-17B, 150-18, 150-20B, 150-21B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443380",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached: 20,000 sq ft minimum and one acre maximum, one lot per 25 acres of the parent tract (or one on a tract of 2 to 25 acres). Width 100 ft. Lot coverage 35%."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "150-17B, 150-18, 150-20B, 150-21B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443380",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft from Township roads, 50 ft from other roads."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "150-17B, 150-18, 150-20B, 150-21B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443380",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft each, 40 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "150-17B, 150-18, 150-20B, 150-21B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443380",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-17B, 150-18, 150-20B, 150-21B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443380",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "150-17B, 150-18, 150-20B, 150-21B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443380",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "150-20D",
+        "url": "https://ecode360.com/print/WE1311?guid=15443380",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory uses: none in the front yard, 10 ft side and rear, 15 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "150-20D",
+        "url": "https://ecode360.com/print/WE1311?guid=15443380",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "150-26, 150-27, 150-29, 150-30, 150-31",
+        "url": "https://ecode360.com/print/WE1311?guid=15443451",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One acre. Residential lots outside the Township's urban growth boundary need three acres. Width 175 ft."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "150-26, 150-27, 150-29, 150-30, 150-31",
+        "url": "https://ecode360.com/print/WE1311?guid=15443451",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "150-26, 150-27, 150-29, 150-30, 150-31",
+        "url": "https://ecode360.com/print/WE1311?guid=15443451",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "30 ft each, 60 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "150-26, 150-27, 150-29, 150-30, 150-31",
+        "url": "https://ecode360.com/print/WE1311?guid=15443451",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-26, 150-27, 150-29, 150-30, 150-31",
+        "url": "https://ecode360.com/print/WE1311?guid=15443451",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "150-26, 150-27, 150-29, 150-30, 150-31",
+        "url": "https://ecode360.com/print/WE1311?guid=15443451",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "150-29B, 150-30B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443451",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: none in the front yard, 15 ft side and rear, 15 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "150-29B, 150-30B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443451",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "150-35 to 150-40",
+        "url": "https://ecode360.com/print/WE1311?guid=15443490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 120 ft at the setback line, depth 165 ft. Lot coverage 35%."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "150-35 to 150-40",
+        "url": "https://ecode360.com/print/WE1311?guid=15443490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "150-35 to 150-40",
+        "url": "https://ecode360.com/print/WE1311?guid=15443490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft each, 40 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "150-35 to 150-40",
+        "url": "https://ecode360.com/print/WE1311?guid=15443490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-35 to 150-40",
+        "url": "https://ecode360.com/print/WE1311?guid=15443490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "150-35 to 150-40",
+        "url": "https://ecode360.com/print/WE1311?guid=15443490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "150-38B, 150-39B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: none in the front yard, 10 ft side and rear, 20 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "150-38B, 150-39B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "150-44 to 150-49",
+        "url": "https://ecode360.com/print/WE1311?guid=15443519",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 100 ft at the setback line, depth 150 ft. Lot coverage 35%."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "150-44 to 150-49",
+        "url": "https://ecode360.com/print/WE1311?guid=15443519",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "150-44 to 150-49",
+        "url": "https://ecode360.com/print/WE1311?guid=15443519",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft each, 30 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "150-44 to 150-49",
+        "url": "https://ecode360.com/print/WE1311?guid=15443519",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-44 to 150-49",
+        "url": "https://ecode360.com/print/WE1311?guid=15443519",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "150-44 to 150-49",
+        "url": "https://ecode360.com/print/WE1311?guid=15443519",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "150-47B, 150-48B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443519",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: none in the front yard, 10 ft side and rear, 20 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "150-47B, 150-48B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443519",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "150-53 to 150-58",
+        "url": "https://ecode360.com/print/WE1311?guid=15443548",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 80 ft at the setback line, depth 115 ft. Lot coverage 35%."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "150-53 to 150-58",
+        "url": "https://ecode360.com/print/WE1311?guid=15443548",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "25 ft from local roads, 50 ft from collector and arterial roads."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "150-53 to 150-58",
+        "url": "https://ecode360.com/print/WE1311?guid=15443548",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft each, 20 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "150-53 to 150-58",
+        "url": "https://ecode360.com/print/WE1311?guid=15443548",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-53 to 150-58",
+        "url": "https://ecode360.com/print/WE1311?guid=15443548",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "150-53 to 150-58",
+        "url": "https://ecode360.com/print/WE1311?guid=15443548",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "150-56B, 150-57B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443548",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: none in the front yard, 5 ft side and rear, 15 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "150-56B, 150-57B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443548",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "150-71",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewer and public water. Width 40 ft, depth 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "150-71",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "7 ft on the secondary street of a corner lot."
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "150-71",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "150-71",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-71",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "150-71",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The principal building at most 50% of the lot. Accessory uses together at most 20% (150-73C)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 4,
+        "section": "150-73A, B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: side yard as for the house (down to 2 ft with vegetative screening), rear 5 ft (2 ft with screening, not for alley garages), 15 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "150-73A, B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer and public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 40,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.35,
+            "section": "150-72"
+          },
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 40,
+            "section": "150-72"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 40,
+            "section": "150-72"
+          }
+        ],
+        "section": "150-71, 150-72",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Principal buildings without public sewer and public water': 20,000 sq ft, width 120 ft, lot coverage 35%. Read as applying unless both services are used."
+      }
+    },
+    "R-6": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "150-77",
+        "url": "https://ecode360.com/print/WE1311?guid=15443687",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 40 ft, depth 125 ft."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "150-77",
+        "url": "https://ecode360.com/print/WE1311?guid=15443687",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft on the secondary street of a corner lot."
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "150-77",
+        "url": "https://ecode360.com/print/WE1311?guid=15443687",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "150-77",
+        "url": "https://ecode360.com/print/WE1311?guid=15443687",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-77",
+        "url": "https://ecode360.com/print/WE1311?guid=15443687",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "150-77",
+        "url": "https://ecode360.com/print/WE1311?guid=15443687",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The principal building at most 40% of the lot. Accessory uses together at most 20% (150-80C)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 4,
+        "section": "150-80A, B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443687",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: none in the front yard, side yard as for the house (down to 2 ft with vegetative screening), rear 5 ft (2 ft with screening), 15 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "150-80A, B",
+        "url": "https://ecode360.com/print/WE1311?guid=15443687",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "LC": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "150-87 to 150-90, 150-95",
+        "url": "https://ecode360.com/print/WE1311?guid=15443741",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "All uses. Width 75 ft. 25 ft from residentially zoned land. Lot coverage 70%. A two-family conversion needs 8,000 sq ft (150-354A)."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "150-87 to 150-90, 150-95",
+        "url": "https://ecode360.com/print/WE1311?guid=15443741",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "150-87 to 150-90, 150-95",
+        "url": "https://ecode360.com/print/WE1311?guid=15443741",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "150-87 to 150-90, 150-95",
+        "url": "https://ecode360.com/print/WE1311?guid=15443741",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 25,
+        "section": "150-87 to 150-90, 150-95",
+        "url": "https://ecode360.com/print/WE1311?guid=15443741",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "150-87 to 150-90, 150-95",
+        "url": "https://ecode360.com/print/WE1311?guid=15443741",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

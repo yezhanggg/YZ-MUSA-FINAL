@@ -9,6 +9,7 @@
     "source_urls": [
       "https://ecode360.com/11708888",
       "https://ecode360.com/11708909",
+      "https://ecode360.com/WH0819/search?query=tract&scope=code&sortOrder=relevance",
       "https://ecode360.com/print/WH0819?guid=11710782",
       "https://ecode360.com/print/WH0819?guid=11710772",
       "https://ecode360.com/print/WH0819?guid=11710767",
@@ -44,19 +45,20 @@
     "code_url": "https://ecode360.com/11708888",
     "code_current_through": "2025-04-10",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2025-04-10'. Ord. No. 1049 (Zoning Amendment, adopted 2026-01-08) is listed under New Laws for Chapter 116 and is not yet in the code text.",
-    "code_caution": "Ord. No. 1049 (Zoning Amendment, adopted 2026-01-08) is listed as a New Law for Chapter 116 and was not read (PDF only). It may change the rules below.",
+    "code_caution": "Ord. No. 1049 (Zoning Amendment, adopted 2026-01-08) is listed as a New Law for Chapter 116 and was not read (PDF only). A code search shows it amends conservation feature definitions and the Conservation Design Overlay average lot area, with no hit on dwellings, accessory uses or ADUs. It touches Article XXXVI, where the ADU rule sits, so check it.",
     "checks": [
       "The code's accessory dwelling unit is tied to a conservation design subdivision: 'Accessory dwelling units (ADU) including, but not limited to, elder cottages for relatives and tenant houses for employees of a farm or estate and proposed in Option One subdivisions, are permitted within the Conservation Overlay Design District' (116-272E, 116-11)",
       "Option One is a by-right conservation design option only in AAAA and AAA, inside the Conservation Design Overlay shown on the Zoning Map, with a permanent conservation easement and a density of one dwelling unit per 10 acres of base site area (116-270A(1), 116-42A, 116-46A, 116-268A). Ask the Zoning Officer whether the lot is in an Option One subdivision",
-      "Where allowed: inside the house, in an existing historic structure, or in a new structure on a tract of 15 acres or more. One ADU on a lot under 10 acres, two on 10 acres or more. First ADU at most 900 sq ft gross floor area (116-272E(1) to (3))",
+      "Where allowed: inside the house, in an existing historic structure, or in a new structure on a tract of 15 acres or more. Tract area is all land within the site as defined by the deed (116-11), so ask whether the test is on the subdivision tract or the lot. One ADU on a lot under 10 acres, two on 10 acres or more. First ADU at most 900 sq ft gross floor area, a second 750 sq ft (1,800 on lots over 15 acres). Historic accessory buildings over 75 years old may exceed these limits (116-272E(1) to (3))",
       "Building permits only after a restrictive conservation easement bars enlarging the ADU, more ADUs and further subdivision. Montgomery County Department of Health approval for any on-site sewage system (116-272E(4))",
-      "ADU height at most 25 ft except historic buildings. The ADU stays on the same lot as the house (116-272E(5), (6))",
+      "ADU height at most 25 ft except historic buildings. In AAA the Option One standards give accessory buildings 20 ft: conflicting text, ask (116-46A(8)(b), 116-268C more restrictive applies, 116-33.2 overlay takes precedence). The ADU stays on the same lot as the house (116-272E(5), (6))",
+      "An annual occupancy permit is needed when a dwelling is occupied by more than one family or by adults not of the principal family (116-30). An accessory structure may be occupied only while the house is (116-24D(1))",
       "Detached accessory buildings: not in the front yard or forward of the front of the house, at least 4 ft from side and rear lines, 15 ft from the house. All accessory uses and structures together cover at most 30% of the required rear yard (116-24D(3), E(3))",
       "A guesthouse in an accessory structure must have no kitchen and is not for rent or permanent occupancy (116-24B(9))",
       "Conversion of a single-family dwelling into more dwelling units is a special exception anywhere: a petition signed by owners of 60% of the street frontage within 500 ft, 750 sq ft per unit, lot area per family at least 75% of the district requirement, no outside change except for safety, only for a large dwelling with relatively little economic usefulness as a single-family house (116-26)",
-      "Without public sewer and public water, lots in AAA, AA, A and B need 2 acres, the house 60 ft and accessory buildings 30 ft from lot lines. With one of the two, 1.5 acres (116-23)"
+      "Without public sewer and public water, lots in AAA, AA, A and B need 2 acres, the house 60 ft and accessory buildings 30 ft from the nearest property line or street, accessory buildings at most 20 ft and one story. With one of the two, 1.5 acres (116-23)"
     ],
-    "notes": "Zoning office: Whitemarsh Township (Montgomery County) Zoning Officer. Read on eCode360 (WH0819) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit' and 'living quarters' found the ADU definition (116-11), the Conservation Design Overlay ADU (116-272E), quarters of a household employee, caretaker or watchman (116-24B(14)), conversions (116-26) and a caretaker residence in HVY (116-155). Searches for two-family, duplex, conversion and historic structures found 116-26, the SM-MU and VC use lists and 116-293 (VC historic building reuse, no dwelling path). Use lists read: AAAA to B (116-35), AD (116-74), SM-MU (116-310), VC (116-290). TDO bars single-family and two-family dwellings (116-318, search excerpt). Use lists not read: LR and HR, MHP, CR, AR, CLI, CLI-X, LIM, HVY, EX, CCRC and the Institutional and Recreational overlays. The definition of residential districts names a C Residential District, but Article XI is reserved."
+    "notes": "Zoning office: Whitemarsh Township (Montgomery County) Zoning Officer. Read on eCode360 (WH0819) in a browser, one page at a time, on 2026-11-14. Fix round 2026-11-14: read again 116-272, Article IV (116-16 to 116-33.4, incl. 116-23, 116-24, 116-30, 116-33.2), 116-268 and the tract area definition (116-11 search excerpt). The 15 acre test is now a condition, the size and height caps are held so a historic building does not show them, and 116-23A and 116-30 are added. The front-yard bar (116-24E(3)(a)) stays in checks because the tool hides the district front yard on lots outside the ADU scope when the envelope flag is set. Code search (all content, New Laws included) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit' and 'living quarters' found the ADU definition (116-11), the Conservation Design Overlay ADU (116-272E), quarters of a household employee, caretaker or watchman (116-24B(14)), conversions (116-26) and a caretaker residence in HVY (116-155). Searches for two-family, duplex, conversion and historic structures found 116-26, the SM-MU and VC use lists and 116-293 (VC historic building reuse, no dwelling path). Use lists read: AAAA to B (116-35), AD (116-74), SM-MU (116-310), VC (116-290). TDO bars single-family and two-family dwellings (116-318, search excerpt). Use lists not read: LR and HR, MHP, CR, AR, CLI, CLI-X, LIM, HVY, EX, CCRC and the Institutional and Recreational overlays. The definition of residential districts names a C Residential District, but Article XI is reserved."
   },
   "adu": {
     "term": {
@@ -234,17 +236,65 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new structure for the ADU only 'on tracts 15 acres or larger'.",
-          "effect": "bars",
+          "condition": "A new structure for the ADU only 'on tracts 15 acres or larger'. Tract area is 'All land area within the site as defined by the deed' (116-11). Two readings: the test is on the whole tract of the Option One subdivision, so a smaller lot in it may qualify, or on the lot's own deed. Ask the Zoning Officer.",
+          "effect": "condition",
           "applies_to": [
             "detached_new"
           ],
           "districts": null,
           "building_types": null,
-          "test": "lot_sqft_at_least",
-          "value": 653400,
-          "section": "116-272E(1)",
+          "section": "116-272E(1), 116-11 (tract area)",
           "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "other",
+          "condition": "A second ADU is allowed on a lot of 10 acres or more in an Option One subdivision, at most 750 sq ft of gross floor area (1,800 sq ft on lots over 15 acres). One ADU on a smaller lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "116-272E(2), (3)",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "size",
+          "condition": "An existing historic accessory building more than 75 years old may be used as an ADU even if it is over the floor area limits, and need not meet the setbacks. The 25 ft ADU height limit does not apply to historic buildings.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "116-272E(3), (5)",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "utilities",
+          "condition": "On a lot in AAA, AA, A or B served by neither an approved sanitary sewage system nor an approved public water supply, any accessory building must be at least 30 ft from the nearest property line or street, at most 20 ft high and one story.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "AAA",
+            "AA",
+            "A",
+            "B"
+          ],
+          "building_types": null,
+          "test": "public_sewer",
+          "section": "116-23A(3), (5)",
+          "url": "https://ecode360.com/11709088"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "When a dwelling is occupied by more than one family, or by adults not of the principal family, the owner or lessee gets an annual occupancy permit, filed by April 1 each year. An accessory structure may be occupied only while the house is occupied.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "116-30, 116-24D(1)",
+          "url": "https://ecode360.com/11709088"
         },
         {
           "kind": "other",
@@ -332,35 +382,60 @@
   },
   "size": {
     "max_sqft": {
-      "value": 900,
+      "value": null,
+      "section": "116-272E(3)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'The gross floor area in the first ADU shall not exceed 900 square feet.' The cap is held per form, because historic accessory buildings over 75 years old may exceed it."
+    },
+    "max_sqft_by_form": {
+      "value": {
+        "internal": 900,
+        "detached_new": 900
+      },
       "section": "116-272E(3)",
       "url": "https://ecode360.com/print/WH0819?guid=11710782",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "'The gross floor area in the first ADU shall not exceed 900 square feet.' A second ADU on a lot of 10 acres or more: 750 sq ft (1,800 on lots over 15 acres). Historic accessory buildings over 75 years old may exceed these limits."
+      "note": "First ADU 900 sq ft gross floor area. A unit in an existing historic structure takes 900 sq ft too, unless it is a historic accessory building over 75 years old, which may exceed it. A second ADU 750 sq ft (1,800 on lots over 15 acres)."
     }
   },
   "envelope": {
     "max_height_ft": {
-      "value": 25,
+      "value": null,
       "section": "116-272E(5)",
       "url": "https://ecode360.com/print/WH0819?guid=11710782",
       "verified_on": "2026-11-14",
-      "confidence": "verified",
-      "note": "'Any ADU permitted under this subsection shall be limited to a height of 25 feet, with the exception of historic buildings.'"
+      "confidence": "secondary",
+      "note": "'Any ADU permitted under this subsection shall be limited to a height of 25 feet, with the exception of historic buildings.' The 25 ft is held as a condition for a new structure, so it is not shown for a historic building."
     },
     "max_height_where": {
       "value": [
         {
+          "max_height_ft": 25,
+          "where": "in a new structure (not a historic building)",
+          "section": "116-272E(5)",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782",
+          "note": "Historic buildings are exempt from the 25 ft limit."
+        },
+        {
           "max_height_ft": 20,
-          "where": "An accessory building in an Option One subdivision in AAA",
-          "section": "116-46A(8)(b)",
+          "where": "in a new structure in an AAA Option One subdivision",
+          "section": "116-46A(8)(b), 116-268C, 116-33.2",
           "url": "https://ecode360.com/print/WH0819?guid=11709359",
-          "note": "Conflicting text, ask. The AAA Option One standards set 20 ft for an accessory building, the ADU rule 25 ft. Where the overlay and the district conflict the more restrictive applies (116-268C)."
+          "note": "Conflicting text, ask. The AAA Option One standards set 20 ft for an accessory building, the ADU rule 25 ft. 116-268C says the more restrictive applies (20 ft). 116-33.2 says overlay requirements take precedence over the underlying district (25 ft)."
+        },
+        {
+          "max_height_ft": 20,
+          "where": "in a new structure on a lot with neither public sewer nor public water",
+          "section": "116-23A(5)",
+          "url": "https://ecode360.com/11709088",
+          "note": "'Any accessory building shall have a maximum height of 20 feet and shall not exceed one story.' Residential districts other than AAAA."
         }
       ],
-      "section": "116-46A(8)(b), 116-268C",
-      "url": "https://ecode360.com/print/WH0819?guid=11709359",
+      "section": "116-272E(5), 116-46A(8)(b), 116-268C, 116-33.2, 116-23A(5)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
       "verified_on": "2026-11-14",
       "confidence": "secondary"
     },

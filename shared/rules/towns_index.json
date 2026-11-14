@@ -2497,7 +2497,7 @@
       "why": [
         "known ADU ordinance (Code 116-272E accessory dwelling units (Conservation Design Overlay, Option One))"
       ],
-      "status_note": "Open: Ord. No. 1049 (2026 zoning amendment) not read. ADU only in Option One subdivisions of the Conservation Design Overlay; AAA accessory height 20 ft vs ADU 25 ft (116-46A, 116-272E(5)) conflicting text. Use lists of LR/HR, MHP, CR, AR, industrial, EX, CCRC not read."
+      "status_note": "Open: Ord. No. 1049 (2026 zoning amendment, touches Article XXXVI) not read; 15 acre tract test (tract vs lot) and AAA accessory height 20 ft vs ADU 25 ft (116-268C vs 116-33.2) are conflicting text; 116-23A 30 ft accessory yards without sewer and water cannot be held in utility rows; use lists of LR/HR, MHP, CR, AR, industrial, EX, CCRC not read."
     },
     {
       "geoid": "4201754192",
@@ -2521,7 +2521,7 @@
       "why": [
         "known ADU ordinance (JMZO 803 H-3.4 residential accessory apartment)"
       ],
-      "status_note": "Open: four 2026 New Laws (Article VIII) not read; JMZO shared with Upper Makefield and Wrightstown, so which districts are mapped in Newtown not checked; B-16 names CM but the CM use lists do not; CR-2 lot 30,000 vs 20,000 sq ft conflicting text; office, commercial and industrial use lists not read."
+      "status_note": "Open: four 2026 New Laws (Article VIII) not read; JMZO shared with Upper Makefield and Wrightstown, which districts are mapped in Newtown not checked; B-16 district lists conflict with B-16.8 (CM, VC-1, VC-2, QA-A, TC-2); CR-2 lot 30,000 vs 20,000 sq ft conflicting text; PC lists H-3 with no dwelling use; whether the between-buildings distance binds a detached apartment is not said."
     },
     {
       "geoid": "4202979480",
@@ -2535,17 +2535,17 @@
       "pop_rank": 107,
       "file": "pa_chester_uwchlan",
       "batch": 18,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/8009217",
       "plain_fetch": false,
       "code_current_through": "2025-10-13",
-      "code_note": "Zoning: Chapter 265 Zoning (Ord. No. 94-11, 1994). No general ADU text. 'Guesthouse, as an accessory dwelling' only for historic resources by conditional use where a property has more than one historic resource (612.7f); historic residential conversions by conditional use (612.7e). Ord. No. 2021-05 and 2026-08 (zoning) not yet codified. Read in the browser on eCode360 (UW2708).",
+      "code_note": "Zoning: Chapter 265 Zoning (Ord. No. 94-11, 1994). No ADU text for a household. 'Guesthouse, as an accessory dwelling' (612.7f) is short-term rental lodging in a second historic resource (301.4, 90-day stays), conditional use. Historic residential conversions by conditional use (612.7e). Ord. No. 2021-05 and 2026-08 (zoning) not yet codified. Read in the browser on eCode360 (UW2708).",
       "why": [
-        "known ADU ordinance (Code 612.7f guesthouse as an accessory dwelling (historic resources))"
+        "known ADU ordinance (batch 18 by population. Code Chapter 265 has no ADU text for a household (612.7f short-term guesthouse))"
       ],
-      "status_note": "Open: Ord. No. 2021-05, 2026-06 and 2026-08 not read; Historic Resources Map and Inventory are PDF attachments; PC, PC-2, PIC, PCID, PI use lists and parking (607) not read."
+      "status_note": "Code caution: Ord. No. 2021-05 (2021 zoning amendment) not read. For a later check: Ord. No. 2026-06 and 2026-08, the Historic Resources Map and Inventory (PDF), PC, PC-2, PIC, PCID, PI use lists and parking (607)."
     },
     {
       "geoid": "4207181168",
@@ -2564,12 +2564,60 @@
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11671452",
       "plain_fetch": false,
-      "code_current_through": null,
-      "code_note": "Zoning: Chapter 340 Zoning (Ord. No. 159, 1993). ADU text: 'ECHO housing' (340-67): special exception in the A Zone only, portable elder cottage up to 900 sq ft for a relative 50 or older or disabled, utilities shared, removed when no longer needed. Conversion apartments (340-65), two-family conversions (340-103). Ord. No. 306 and 307 (2026, zoning) not yet codified. Read in the browser on eCode360 (WA2488; WA1313 is Warwick, Bucks County).",
+      "code_current_through": "2025-02-19",
+      "code_note": "Zoning: Chapter 340 Zoning (Ord. No. 159, 1993). ADU text: 'ECHO housing' (340-67): special exception in the A Zone only, portable elder cottage up to 900 sq ft for a relative 50 or older or disabled, utilities shared, removed when no longer needed. Accessory building apartment in Village Overlay developments (340-23E(9)). Conversion apartments (340-65), two-family conversions (340-103), temporary farm employee housing (340-101). Ord. No. 306 and 307 (2026, zoning) not yet codified. Read in the browser on eCode360 (WA2488; WA1313 is Warwick, Bucks County).",
       "why": [
         "known ADU ordinance (Code 340-67 ECHO housing)"
       ],
-      "status_note": "Open: Ord. No. 306 and 307 (2026 zoning) not read; only the A Zone, 340-61, 340-65, 340-67 and 340-103 read; other zone use lists, accessory (340-25) and parking (340-35) not read."
+      "status_note": "Open: Ord. No. 306 and 307 (2026 zoning) not read; VO accessory building apartment is conditional use (340-23E(9)) or special exception (J(1) note 4, 340-65), conflicting text, and its 340-64 cross-reference is stale; the tool cannot key status on the VO overlay, so R-2 is held as a district in doubt; other zone use lists, 340-14, 340-25, 340-35 and 340-121 not read."
+    },
+    {
+      "geoid": "4213383432",
+      "geoid_aliases": [],
+      "name": "West Manchester township",
+      "county": "York",
+      "type": "township",
+      "population": 19206,
+      "population_with_aliases": 19206,
+      "housing_units": 8408,
+      "pop_rank": 106,
+      "file": "pa_york_west_manchester",
+      "batch": 18,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/15443121",
+      "plain_fetch": false,
+      "code_current_through": "2025-11-13",
+      "code_note": "Zoning: Chapter 150 Zoning (Ord. No. 87-2, 1987). No ADU text. Two-family conversions by special exception in LC only (150-354), duplexes in R-4, R-6, MU and the PRD overlay. Unlisted uses by special exception where similar uses are permitted (150-9). Ord. No. 26-01, 26-02 and 26-03 (2026, subject not shown) not yet codified. Read in the browser on eCode360 (WE1311).",
+      "why": [
+        "known ADU ordinance (batch 18 by population. Code Chapter 150 has no ADU text)"
+      ],
+      "status_note": "First reading. Open: Ord. No. 26-01, 26-02 and 26-03 (2026, subject not shown) not read; whether a second unit is an unlisted use (150-9 special exception) or a two-family dwelling; OSR, MU, PRD, commercial and industrial zones and parking not read."
+    },
+    {
+      "geoid": "4209141432",
+      "geoid_aliases": [],
+      "name": "Lansdale borough",
+      "county": "Montgomery",
+      "type": "borough",
+      "population": 18773,
+      "population_with_aliases": 18773,
+      "housing_units": 7583,
+      "pop_rank": 110,
+      "file": "pa_montgomery_lansdale",
+      "batch": 18,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11763313",
+      "plain_fetch": false,
+      "code_current_through": "2026-05-20",
+      "code_note": "Zoning: Chapter 405 Zoning (Ord. No. 1393, 1988). ADU text: 'Accessory dwelling unit' (405-1913, Ord. No. 2018-1907): by right, attached to or inside a single-family detached home, parents or grandparents of the household only, at most two people, owner-occupied, no rent, deed restriction, annual license, one more parking space. 2026 zoning amendments (Residential B and C, TOD) not yet codified. Read in the browser on eCode360 (LA0393).",
+      "why": [
+        "known ADU ordinance (Code 405-1913 accessory dwelling units, family only)"
+      ],
+      "status_note": "First reading. Open: 2026 Residential B and C amendment (Ord. 2012) and TOD amendment not read; whether the ADU counts as a dwelling unit for lot area per unit; PO-A, PO-B, LPO, commercial, business, industrial and overlay use lists not read."
     }
   ]
 }

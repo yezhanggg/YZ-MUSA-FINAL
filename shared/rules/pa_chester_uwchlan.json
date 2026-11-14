@@ -8,6 +8,7 @@
     "effective_date": "2013-12-09",
     "source_urls": [
       "https://ecode360.com/8009217",
+      "https://ecode360.com/28541134",
       "https://ecode360.com/print/UW2708?guid=9403327",
       "https://ecode360.com/print/UW2708?guid=9403328",
       "https://ecode360.com/print/UW2708?guid=9403329",
@@ -26,27 +27,27 @@
     "code_url": "https://ecode360.com/8009217",
     "code_current_through": "2025-10-13",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2025-10-13'. Zoning amendments Ord. No. 2021-05 and 2026-08 and map amendment Ord. No. 2026-06 are listed as New Laws, not yet in the code text.",
-    "code_caution": "Zoning amendments Ord. No. 2021-05 (2021-09-13) and Ord. No. 2026-08 (2026-08-10) and map amendment Ord. No. 2026-06 are listed as New Laws for Chapter 265 and were not read (PDF only). They may change the rules below.",
+    "code_caution": "Zoning amendment Ord. No. 2021-05 (adopted 2021-09-13) is listed as a New Law for Chapter 265 and was not read (PDF only). It may change the rules below. Ord. No. 2026-08 (Zoning Amendment, 2026-08-10) and Ord. No. 2026-06 (Zoning Map Amendment, 2026-05-11) are also listed and were not read.",
     "checks": [
       "The code has no general accessory dwelling unit rule. The residential districts list single-family detached dwellings and accessory uses 'clearly incidental to the principal use' (501.2, 501.3, 502.2, 502.3, 503.2, 503.3, 504.2, 504.3)",
-      "On a property with a historic resource on the Historic Resources Map and Inventory, a 'Guesthouse, as an accessory dwelling' is a conditional use in every district, but only 'if more than one historic resource exists on a property', and inside a building designated as a historic resource (612.7a, 612.7f)",
-      "A guest, individual or family may not stay longer than 90 consecutive days in any 180 days. Two off-street parking spaces beyond those of the house. No walk-in trade (612.7f)",
+      "The code's 'Guesthouse, as an accessory dwelling' is short-term lodging, not a home for a household. A guest house is 'An accessory single-family dwelling on a lot available for short-term rental' (301.4). No guest, individual or family may stay longer than 90 consecutive days in any 180 days (612.7f(1))",
+      "The guesthouse is a conditional use in every district only if more than one historic resource exists on the property, inside a building designated as a historic resource. Two off-street parking spaces beyond those of the house. No walk-in trade (612.7a, 612.7f)",
       "A historic resource may be enlarged only as minimally needed, as a guideline by no more than 50% of its footprint. Work should follow the Secretary of the Interior's Standards for Rehabilitation (612.7b, 612.5a)",
       "Conversion of a historic resource into dwellings is a conditional use in every district: 3 parking spaces per unit (not in the front yard), lot area per unit at least the district lot area, no enlargement, units of at least 500 contiguous sq ft (612.7b(1), 612.7e)",
       "R-2 allows two-family detached and semidetached dwellings on a lot of at least 20 acres. Two-family detached 24,000 sq ft and 120 ft wide per building (504.2c, d, 504.6)",
       "Detached accessory buildings (other than garages up to 120 sq ft) may stand in the required rear yard, at least 10 ft from the rear line and no closer to the side line than the district allows (603.1)",
       "The Historic Resources Map and Inventory and the Inventory List are attachments (PDF) and were not read. Ask the Zoning Officer whether a property is listed"
     ],
-    "notes": "Zoning office: Uwchlan Township (Chester County) Zoning Officer. Read on eCode360 (UW2708) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters', conversion and duplex found the guest house definition (301.4), the family and dwelling unit definitions and living quarters for a proprietor, manager, caretaker or watchman in PC (505). The historic preservation section (612) holds the guesthouse and conversion paths. Use lists read: R-A, R-R, R-1, R-2. PC, PC-2, PIC, PCID and PI use lists not read except the 612.7a table. Parking (607) not read."
+    "notes": "Zoning office: Uwchlan Township (Chester County) Zoning Officer. Read on eCode360 (UW2708) in a browser, one page at a time, on 2026-11-14. Fix round 2026-11-14: the guest house definition (301.4, Ord. No. 2013-06) and 612.7 were read again. The guesthouse is short-term rental lodging, so it is no longer the historic ADU path. It is listed as an alternative. New Laws list checked again (Ord. No. 2021-05, 2026-06, 2026-08 for zoning). Code search (all content, New Laws included) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters', conversion and duplex found the guest house definition (301.4), the family and dwelling unit definitions and living quarters for a proprietor, manager, caretaker or watchman in PC (505). The historic preservation section (612) holds the guesthouse and conversion paths. Use lists read: R-A, R-R, R-1, R-2. PC, PC-2, PIC, PCID and PI use lists not read except the 612.7a table. Parking (607) not read."
   },
   "adu": {
     "term": {
-      "value": "guesthouse, as an accessory dwelling",
-      "section": "612.7f, 301.4 (guest house)",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "value": null,
+      "section": "301.4 (guest house), 612.7f",
+      "url": "https://ecode360.com/28541134",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "612.7f is titled 'Guesthouse, as an accessory dwelling'. The definition reads 'An accessory single-family dwelling on a lot available for short' term stays (search excerpt). Only for historic resources."
+      "note": "The code has no term for an accessory dwelling for a household. Its only 'accessory dwelling' is the guesthouse in a historic resource (612.7f), and a guest house is 'An accessory single-family dwelling on a lot available for short-term rental' (301.4). Stays are limited to 90 consecutive days in any 180 days. Searched for accessory dwelling, accessory apartment, in-law, ECHO, granny, family dwelling, relative, caretaker, housekeeping unit, guest house, accessory unit, living quarters, conversion and duplex."
     },
     "status": {
       "value": "not_addressed",
@@ -54,7 +55,7 @@
       "url": "https://ecode360.com/print/UW2708?guid=9403329",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Not addressed for an ordinary lot. The only accessory dwelling text is the guesthouse in a historic resource, by conditional use, on a property with more than one historic resource (612.7f)."
+      "note": "No district lists an accessory dwelling unit for a household. The guesthouse in a historic resource is short-term lodging, listed under the alternatives."
     }
   },
   "approval": {
@@ -64,7 +65,7 @@
       "url": "https://ecode360.com/print/UW2708?guid=9403329",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "A second dwelling unit on a single-family lot is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). On a property with historic resources, see the historic path and the conversion alternative."
+      "note": "A second dwelling unit on a single-family lot is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). On a property with historic resources, see the alternatives."
     },
     "fallback_path": {
       "value": "variance",
@@ -73,14 +74,6 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
-    },
-    "historic_path": {
-      "value": "conditional_use",
-      "section": "612.7a, 612.7f",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "verified",
-      "note": "'Guesthouse, as accessory' is CU in R-A, R-R, R-1, R-2, PC, PC-2, PIC and PI, inside a building designated as a historic resource, where more than one historic resource exists on the property. Board of Supervisors hearing."
     },
     "alternatives": {
       "value": [
@@ -121,6 +114,41 @@
           "note": "Lot figures are two units at the district lot area with public sewer and water."
         },
         {
+          "name": "Guesthouse, as an accessory dwelling, in a second historic building (short-term rental only)",
+          "path": "conditional_use",
+          "districts": [
+            "R-A",
+            "R-R",
+            "R-1",
+            "R-2",
+            "PC",
+            "PC-2",
+            "PIC",
+            "PI"
+          ],
+          "conditions": "Only if more than one historic resource exists on the property, and inside a building designated as a historic resource. Short-term lodging: 'No guest, individual or family may stay longer than 90 consecutive days during any consecutive period of 180 days.' Amenities for guests only, no walk-in trade. Two off-street parking spaces beyond those of the house. Enlargement only as minimally needed (guideline at most 50% of the footprint), Secretary of the Interior's Standards, landscaping plan, 602.1 and 603 in residential districts.",
+          "section": "612.7a, 612.7b, 612.7f, 301.4",
+          "url": "https://ecode360.com/print/UW2708?guid=9403347",
+          "confidence": "verified",
+          "adu_listing": true,
+          "overlays": [
+            "Historic Resources Map"
+          ],
+          "requires": [
+            {
+              "test": null,
+              "condition": "More than one historic resource on the Historic Resources Map and Inventory exists on the property",
+              "section": "612.7f"
+            },
+            {
+              "test": null,
+              "condition": "The guesthouse is inside a building designated as a historic resource",
+              "section": "612.7a"
+            }
+          ],
+          "note": "The code titles it 'Guesthouse, as an accessory dwelling', but a guest house is 'An accessory single-family dwelling on a lot available for short-term rental' (301.4). It is not a home for a household. Board of Supervisors hearing."
+        },
+        {
           "name": "Two-family detached or semidetached dwelling in R-2",
           "path": "by_right",
           "districts": [
@@ -134,7 +162,7 @@
           "confidence": "verified"
         }
       ],
-      "section": "612.7e, 504.2",
+      "section": "612.7e, 612.7f, 504.2",
       "url": "https://ecode360.com/print/UW2708?guid=9403347",
       "verified_on": "2026-11-14",
       "confidence": "verified"
@@ -147,72 +175,15 @@
       "url": "https://ecode360.com/print/UW2708?guid=9403329",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "No district lists an ADU. The guesthouse applies on the historic path only."
+      "note": "No district lists an accessory dwelling unit."
     },
     "historic_bypass": {
       "value": false,
-      "section": "612.7f",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "The historic path is its own conditional use."
-    },
-    "historic_test": {
-      "value": "The building is a historic resource on the Township's Historic Resources Map and Inventory (Class 1, 2 or 3), and the property has more than one historic resource",
-      "section": "612.3, 612.7a, 612.7f",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "The Map and Inventory are attachments. Confirm with the Zoning Officer."
-    },
-    "existing_structure_only": {
-      "value": true,
-      "section": "612.7a, 612.7f",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "'The additional use must be located within a building which is designated as an historic resource.'"
-    },
-    "gates": {
-      "value": [
-        {
-          "kind": "historic",
-          "condition": "More than one historic resource exists on the property. The guesthouse is in a building designated as a historic resource.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": null,
-          "building_types": null,
-          "when": "historic",
-          "section": "612.7a, 612.7f",
-          "url": "https://ecode360.com/print/UW2708?guid=9403347"
-        },
-        {
-          "kind": "other",
-          "condition": "'No guest, individual or family may stay longer than 90 consecutive days during any consecutive period of 180 days.' Amenities for guests only, no walk-in trade.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": null,
-          "building_types": null,
-          "when": "historic",
-          "section": "612.7f(1), (2)",
-          "url": "https://ecode360.com/print/UW2708?guid=9403347"
-        },
-        {
-          "kind": "design",
-          "condition": "Enlargement only as minimally needed (guideline: at most 50% of the existing footprint). Rehabilitation in substantial compliance with the Secretary of the Interior's Standards. In residential districts 602.1 and 603 apply. Landscaping plan (612.9).",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": null,
-          "building_types": null,
-          "when": "historic",
-          "section": "612.7b, 612.5a",
-          "url": "https://ecode360.com/print/UW2708?guid=9403347"
-        }
-      ],
       "section": "612.7",
       "url": "https://ecode360.com/print/UW2708?guid=9403347",
       "verified_on": "2026-11-14",
-      "confidence": "verified"
+      "confidence": "secondary",
+      "note": "The historic resource uses are listed under the alternatives. None is an accessory dwelling for a household."
     }
   },
   "form": {
@@ -222,26 +193,7 @@
       "url": "https://ecode360.com/print/UW2708?guid=9403329",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "No form is allowed off the historic path."
-    },
-    "types_allowed_historic": {
-      "value": [
-        "garage_conversion"
-      ],
-      "section": "612.7a, 612.7f",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "In a second historic building on the property. Not the house itself and not a new building."
-    },
-    "labels": {
-      "value": {
-        "garage_conversion": "In a second historic building on the property"
-      },
-      "section": "612.7f",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary"
+      "note": "No ADU form is listed."
     }
   },
   "envelope": {
@@ -252,33 +204,6 @@
       "verified_on": "2026-11-14",
       "confidence": "verified",
       "note": "35 ft or 2 1/2 stories, whichever is less."
-    }
-  },
-  "use": {
-    "occupancy": {
-      "value": "Guests only. No guest, individual or family stays longer than 90 consecutive days in any 180 days.",
-      "section": "612.7f(1)",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "verified"
-    },
-    "owner_occupancy": {
-      "value": false,
-      "section": "612.7f",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "No owner-occupancy rule."
-    }
-  },
-  "parking": {
-    "spaces_required": {
-      "value": 2,
-      "section": "612.7f(3)",
-      "url": "https://ecode360.com/print/UW2708?guid=9403347",
-      "verified_on": "2026-11-14",
-      "confidence": "verified",
-      "note": "'A minimum of two off-street parking spaces, in addition to those required for the principal dwelling units.'"
     }
   },
   "districts": {

@@ -4,7 +4,7 @@
     "instrument": "Warwick Township (Lancaster County) Code Chapter 340 Zoning (Warwick Township Zoning Ordinance of 1993, Ord. No. 159, 8-30-1993, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 shows no code date for this code. New Laws on 2026-11-14 for Chapter 340: Ord. No. 306 (2026-04-15) and Ord. No. 307 (2026-07-15), Zoning Amendments, PDF only, not read.",
+    "status_detail": "eCode360 code date 2025-02-19 (breadcrumb). New Laws on 2026-11-14 for Chapter 340: Ord. No. 306 (2026-04-15) and Ord. No. 307 (2026-07-15), Zoning Amendments, PDF only, not read.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/11671452",
@@ -13,6 +13,9 @@
       "https://ecode360.com/print/WA2488?guid=11673243",
       "https://ecode360.com/print/WA2488?guid=11673794",
       "https://ecode360.com/print/WA2488?guid=11673180",
+      "https://ecode360.com/print/WA2488?guid=11672529",
+      "https://ecode360.com/11673786",
+      "https://ecode360.com/WA2488/search?query=%22farm%20employee%22&scope=code&sortOrder=relevance",
       "https://ecode360.com/WA2488/laws",
       "https://ecode360.com/WA2488/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20%22housekeeping%20unit%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22Lancaster%20County%22&scope=all&sortOrder=relevance"
     ],
@@ -22,8 +25,8 @@
     "geoid": "4207181168",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/11671452",
-    "code_current_through": null,
-    "code_current_through_note": "eCode360 shows no currency date for this code. Ord. No. 306 and 307 (2026) are listed as New Laws, not yet in the code text.",
+    "code_current_through": "2025-02-19",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-02-19'. Ord. No. 306 and 307 (2026) are listed as New Laws, not yet in the code text.",
     "code_caution": "Zoning amendments Ord. No. 306 (2026-04-15) and Ord. No. 307 (2026-07-15) are listed as New Laws for Chapter 340 and were not read (PDF only). They may change the rules below.",
     "checks": [
       "ECHO housing is a special exception only in the Agricultural (A) Zone: a portable elder cottage of at most 900 sq ft (340-11C(1), 340-67)",
@@ -31,10 +34,13 @@
       "The cottage connects to the house's sewage, water and other utilities. No separate systems. With on-site systems, evidence that they can serve both (340-67E)",
       "Side or rear yard only, meeting the principal side and rear setbacks. Total building coverage within the zone maximum. One extra all-weather parking space (340-67B, F, G)",
       "Temporary zoning permit reviewed every 12 months with a fee. The cottage is removed within three months after no qualifying person lives in it (340-67H, I)",
-      "In the A Zone a single-family detached dwelling is itself a conditional use (one per 20 acres of the 1985 parent tract), lot 1 to 2 acres, or 15,000 sq ft with public sewer and water (340-11D(1), E(2), F(2))",
+      "In the A Zone, agriculture including one single-family detached dwelling on the site is permitted by right (340-11B(1)). A single-family detached dwelling that is not part of a farm is a conditional use, one per 20 acres of the 1985 parent tract. Lot 1 to 2 acres, or 15,000 sq ft with public sewer and water (340-11D(1), E(2), F(2))",
+      "Inside an approved Village Overlay (VO) development on R-2 land, 'Accessory building apartments with no more than one dwelling unit' are listed as a conditional use (340-23E(9)), while the lot table note says an accessory building apartment 'is permitted by special exception' (340-23J(1) note 4). Conflicting text, ask. Both refer to the criteria of 340-64, which is now conservation cluster developments. The matching criteria are in 340-65 (owner-occupied house, 10,000 sq ft lot, 4 parking spaces)",
+      "In a VO development an accessory building may be up to two stories when it holds an accessory apartment (15 ft otherwise). Accessory buildings 10 ft from the rear line and 6 ft from side lines, none in the front yard. Public sewer and public water throughout (340-23J(1) note 2, J(3)(a), N(1))",
+      "Temporary farm employee housing: one mobile home per farm for farm workers and their families, in the rear yard of the farm dwelling, by special exception in the A Zone. Occupied at least 120 days a year by a farm employee, or removed within 120 days (340-101)",
       "Other paths: two-family conversion of a house of at least 3,000 sq ft that existed in 1993 (A and RE, special exception), conversion apartment in an existing house (MU and LC, conditional use), conversion of an accessory building of an owner-occupied house into one dwelling (VO overlay, special exception), and historic conversion apartments (A, C, RE, MU by special exception, LC and VO by conditional use) (340-103, 340-65, 340-61)"
     ],
-    "notes": "Zoning office: Warwick Township (Lancaster County) Zoning Officer. Read on eCode360 (WA2488) in a browser, one page at a time, on 2026-11-14. eCode360 WA1313 'Township of Warwick' is Warwick Township in Bucks County and was not used. Code search (all content) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters' and conversion found 340-65 and 340-103. The table of contents shows ECHO housing (340-67), conversion of historic structures (340-61) and temporary farm employee housing (340-101). Read: 340-11 (A Zone), 340-61, 340-65, 340-67, 340-103. Not read: the other zone use lists and tables (RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2, Q, VO), definitions (340-10), accessory uses (340-25), parking (340-35) and temporary farm employee housing (340-101)."
+    "notes": "Zoning office: Warwick Township (Lancaster County) Zoning Officer. Read on eCode360 (WA2488) in a browser, one page at a time, on 2026-11-14. eCode360 WA1313 'Township of Warwick' is Warwick Township in Bucks County and was not used. Code search (all content) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters' and conversion found 340-65 and 340-103. The table of contents shows ECHO housing (340-67), conversion of historic structures (340-61) and temporary farm employee housing (340-101). Read: 340-11 (A Zone), 340-61, 340-65, 340-67, 340-103. Fix round 2026-11-14: read 340-23 (VO) in full, 340-101, and the Article IV contents (340-64 is now conservation cluster developments). Not read: the other zone use lists and tables (RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2, Q), definitions (340-10), accessory uses (340-25), parking (340-35), 340-14 and 340-121."
   },
   "adu": {
     "term": {
@@ -69,7 +75,7 @@
       "url": "https://ecode360.com/print/WA2488?guid=11673258",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "No other zone lists ECHO housing in the sections read. The RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2 and Q use lists were not read."
+      "note": "No other zone lists ECHO housing in the sections read. The RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2 and Q use lists were not read. Inside an approved Village Overlay development on R-2 land an accessory building apartment is listed (340-23E(9)), shown under the alternatives."
     }
   },
   "approval": {
@@ -101,7 +107,7 @@
           "conditions": "A detached single-family dwelling that existed on the effective date of the chapter and then had at least 3,000 sq ft may become two dwelling units. Approved water and sewage, no extensions or outside changes, escape from upper floors, 4 off-street parking spaces, land development approval if required.",
           "section": "340-103, 340-11C(7)",
           "url": "https://ecode360.com/print/WA2488?guid=11673794",
-          "confidence": "verified",
+          "confidence": "secondary",
           "requires": [
             {
               "test": "house_built_before",
@@ -116,7 +122,7 @@
               "section": "340-103"
             }
           ],
-          "note": "The chapter was adopted 8-30-1993 (Ord. No. 159). Its effective date is read as that date. Lot rules for RE were not read."
+          "note": "The chapter was adopted 8-30-1993 (Ord. No. 159). Its effective date is read as that date, a reading to confirm with the Zoning Officer. Lot rules for RE were not read."
         },
         {
           "name": "Conversion apartment in an existing house",
@@ -129,7 +135,7 @@
           "min_lot_sqft": 10000,
           "section": "340-65",
           "url": "https://ecode360.com/print/WA2488?guid=11673243",
-          "confidence": "verified",
+          "confidence": "secondary",
           "requires": [
             {
               "test": "house_built_before",
@@ -137,22 +143,42 @@
               "condition": "The house existed on the effective date of the chapter",
               "section": "340-65B"
             }
-          ]
+          ],
+          "note": "The effective date of the chapter is read as its adoption date, 8-30-1993 (Ord. No. 159). Confirm with the Zoning Officer."
         },
         {
-          "name": "Accessory building converted into one dwelling in the Village Overlay",
-          "path": "special_exception",
+          "name": "Accessory building apartment in a Village Overlay development",
+          "path": "conditional_use",
           "districts": null,
           "overlays": [
-            "VO Village Overlay Zone"
+            "VO",
+            "Village Overlay Zone"
           ],
-          "conditions": "Conversion of an accessory building of an owner-occupied single-family dwelling into one dwelling. Lot at least 10,000 sq ft, approved water and sewage, no outside change altering the residential look, at least 4 off-street parking spaces.",
+          "conditions": "No more than one dwelling unit, in an accessory building of an owner-occupied single-family detached dwelling. Lot at least 10,000 sq ft. Approved water and sewage (public sewer and water throughout a VO development). No outside change altering the residential look. At least 4 off-street parking spaces on the site. The accessory building may be up to two stories with an apartment (15 ft otherwise). Accessory buildings 10 ft from the rear line and 6 ft from side lines, none in the front yard.",
           "min_lot_sqft": 10000,
-          "section": "340-65",
-          "url": "https://ecode360.com/print/WA2488?guid=11673243",
+          "section": "340-23E(9), J(1) notes 2 and 4, J(3)(a), N(1), O(3)(c), 340-65",
+          "url": "https://ecode360.com/print/WA2488?guid=11672529",
+          "confidence": "secondary",
+          "adu_listing": true,
+          "note": "Conflicting text, ask. 340-23E(9) lists 'Accessory building apartments with no more than one dwelling unit' as a conditional use. Note 4 of the lot table says 'an accessory building apartment is permitted by special exception', and 340-65 says the conversion of an accessory building in the VO Zone is by special exception. The cross-reference to 340-64 now points to conservation cluster developments, so the 340-65 criteria are read as the ones that apply. Only inside an approved Village Overlay development on R-2 land."
+        },
+        {
+          "name": "Temporary farm employee housing (one mobile home per farm)",
+          "path": "special_exception",
+          "districts": [
+            "A"
+          ],
+          "conditions": "For farm workers and their families employed by the farm owner, while the employee works the owner's land. In the rear yard of the farm dwelling, meeting the single-family setbacks. Anchored on a mobile home stand with a 6 inch concrete slab and utility connections. Occupied at least 120 days a year by a person employed on the farm, or removed within 120 days.",
+          "section": "340-101, 340-11C",
+          "url": "https://ecode360.com/11673786",
           "confidence": "verified",
-          "adu_listing": false,
-          "note": "Only where the VO overlay is mapped. The owner lives in the house."
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is a farm and the occupant is employed by the farm owner",
+              "section": "340-101A"
+            }
+          ]
         },
         {
           "name": "Historic conversion apartment",
@@ -176,7 +202,7 @@
           ]
         }
       ],
-      "section": "340-103, 340-65, 340-61",
+      "section": "340-103, 340-65, 340-23, 340-101, 340-61",
       "url": "https://ecode360.com/print/WA2488?guid=11673794",
       "verified_on": "2026-11-14",
       "confidence": "verified"
@@ -191,6 +217,16 @@
       "url": "https://ecode360.com/print/WA2488?guid=11673258",
       "verified_on": "2026-11-14",
       "confidence": "verified"
+    },
+    "districts_in_doubt": {
+      "value": [
+        "R-2"
+      ],
+      "section": "340-23B, E(9), J(1) note 4",
+      "url": "https://ecode360.com/print/WA2488?guid=11672529",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "R-2 land inside an approved Village Overlay (VO) development has an accessory building apartment (one dwelling unit), by conditional use or special exception (conflicting text, ask). On R-2 land outside a VO development the code has no ADU rule. Ask the Zoning Officer whether the lot is in a VO development."
     },
     "building_types": {
       "value": [

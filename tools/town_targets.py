@@ -1014,14 +1014,28 @@ HOSTS: dict[str, dict[str, Any]] = {
         "code_url": "https://ecode360.com/8009217",
         "plain_fetch": False,
         "current_through": "2025-10-13",
-        "note": "Zoning: Chapter 265 Zoning (Ord. No. 94-11, 1994). No general ADU text. 'Guesthouse, as an accessory dwelling' only for historic resources by conditional use where a property has more than one historic resource (612.7f); historic residential conversions by conditional use (612.7e). Ord. No. 2021-05 and 2026-08 (zoning) not yet codified. Read in the browser on eCode360 (UW2708).",
+        "note": "Zoning: Chapter 265 Zoning (Ord. No. 94-11, 1994). No ADU text for a household. 'Guesthouse, as an accessory dwelling' (612.7f) is short-term rental lodging in a second historic resource (301.4, 90-day stays), conditional use. Historic residential conversions by conditional use (612.7e). Ord. No. 2021-05 and 2026-08 (zoning) not yet codified. Read in the browser on eCode360 (UW2708).",
     },
     "4207181168": {
         "code_host": "ecode360",
         "code_url": "https://ecode360.com/11671452",
         "plain_fetch": False,
-        "current_through": None,
-        "note": "Zoning: Chapter 340 Zoning (Ord. No. 159, 1993). ADU text: 'ECHO housing' (340-67): special exception in the A Zone only, portable elder cottage up to 900 sq ft for a relative 50 or older or disabled, utilities shared, removed when no longer needed. Conversion apartments (340-65), two-family conversions (340-103). Ord. No. 306 and 307 (2026, zoning) not yet codified. Read in the browser on eCode360 (WA2488; WA1313 is Warwick, Bucks County).",
+        "current_through": "2025-02-19",
+        "note": "Zoning: Chapter 340 Zoning (Ord. No. 159, 1993). ADU text: 'ECHO housing' (340-67): special exception in the A Zone only, portable elder cottage up to 900 sq ft for a relative 50 or older or disabled, utilities shared, removed when no longer needed. Accessory building apartment in Village Overlay developments (340-23E(9)). Conversion apartments (340-65), two-family conversions (340-103), temporary farm employee housing (340-101). Ord. No. 306 and 307 (2026, zoning) not yet codified. Read in the browser on eCode360 (WA2488; WA1313 is Warwick, Bucks County).",
+    },
+    "4213383432": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/15443121",
+        "plain_fetch": False,
+        "current_through": "2025-11-13",
+        "note": "Zoning: Chapter 150 Zoning (Ord. No. 87-2, 1987). No ADU text. Two-family conversions by special exception in LC only (150-354), duplexes in R-4, R-6, MU and the PRD overlay. Unlisted uses by special exception where similar uses are permitted (150-9). Ord. No. 26-01, 26-02 and 26-03 (2026, subject not shown) not yet codified. Read in the browser on eCode360 (WE1311).",
+    },
+    "4209141432": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11763313",
+        "plain_fetch": False,
+        "current_through": "2026-05-20",
+        "note": "Zoning: Chapter 405 Zoning (Ord. No. 1393, 1988). ADU text: 'Accessory dwelling unit' (405-1913, Ord. No. 2018-1907): by right, attached to or inside a single-family detached home, parents or grandparents of the household only, at most two people, owner-occupied, no rent, deed restriction, annual license, one more parking space. 2026 zoning amendments (Residential B and C, TOD) not yet codified. Read in the browser on eCode360 (LA0393).",
     },
 }
 
@@ -1036,7 +1050,7 @@ FIXED_BATCH.update(
 FIXED_BATCH.update(
     {g: 17 for g in ("4209173088", "4209133120", "4202984192", "4212958880", "4212952432", "4201745112")}
 )
-FIXED_BATCH.update({g: 18 for g in ("4209184624", "4201754192", "4202979480", "4207181168")})
+FIXED_BATCH.update({g: 18 for g in ("4209184624", "4201754192", "4202979480", "4207181168", "4213383432", "4209141432")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1085,8 +1099,10 @@ EXTRAS = {
     # skipped (district use tables only in PDF attachments).
     "4209184624": "Code 116-272E accessory dwelling units (Conservation Design Overlay, Option One)",
     "4201754192": "JMZO 803 H-3.4 residential accessory apartment",
-    "4202979480": "Code 612.7f guesthouse as an accessory dwelling (historic resources)",
+    "4202979480": "batch 18 by population. Code Chapter 265 has no ADU text for a household (612.7f short-term guesthouse)",
     "4207181168": "Code 340-67 ECHO housing",
+    "4213383432": "batch 18 by population. Code Chapter 150 has no ADU text",
+    "4209141432": "Code 405-1913 accessory dwelling units, family only",
 }
 
 if __name__ == "__main__":
