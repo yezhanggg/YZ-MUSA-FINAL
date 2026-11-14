@@ -1,0 +1,740 @@
+{
+  "provenance": {
+    "jurisdiction": "East Hempfield township",
+    "instrument": "East Hempfield Township Zoning Ordinance of 2014, Chapter 270 Zoning (Ord. No. 2014-06), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 270 adopted 8-6-2014 by Ord. No. 2014-06. ADUs became a permitted accessory use (no longer a special exception) in each zone that lists them by Ord. No. 2022-02 (2-2-2022). 270-5.2 carries amendments to Ord. No. 2024-04 (9-18-2024). New Laws on 2026-11-14 list Ord. No. 2026-02 'Zoning Amendment', adopted 2026-11-04, not yet folded in. It is only a PDF and was not read. Its subject is unknown.",
+    "effective_date": "2022-02-02",
+    "source_urls": [
+      "https://ecode360.com/14043769",
+      "https://ecode360.com/print/EA2319?guid=11089757",
+      "https://ecode360.com/print/EA2319?guid=29166244",
+      "https://ecode360.com/print/EA2319?guid=29166256",
+      "https://ecode360.com/print/EA2319?guid=11088497",
+      "https://ecode360.com/print/EA2319?guid=11088559",
+      "https://ecode360.com/print/EA2319?guid=11088712",
+      "https://ecode360.com/print/EA2319?guid=11088740",
+      "https://ecode360.com/print/EA2319?guid=11088786",
+      "https://ecode360.com/print/EA2319?guid=11088836",
+      "https://ecode360.com/print/EA2319?guid=11089109",
+      "https://ecode360.com/print/EA2319?guid=11087957",
+      "https://ecode360.com/print/EA2319?guid=11089910",
+      "https://ecode360.com/EA2319/laws"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Lancaster",
+    "municipality_type": "township",
+    "geoid": "4207121232",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14043769",
+    "code_current_through": null,
+    "code_current_through_note": "No 'legislation through' date seen. Newest codified zoning ordinance seen: Ord. No. 2024-04 (9-18-2024) in 270-5.2. New Laws: Ord. No. 2026-02 (2026-11-04, Zoning Amendment), not codified.",
+    "code_caution": "A zoning amendment, Ord. No. 2026-02, was adopted on 2026-11-04 and is not yet in the online code. It was not read, so it may change these rules. Ask the Township.",
+    "checks": [
+      "An ADU is a permitted accessory use (zoning permit) in the A, RB, RL, RM, VR, VC, CBC, AH and RCC zones, with a single-family detached house or a twin half (270-2.2, zone use lists B(5))",
+      "Family only: the unit is 'for immediate family of the principal building occupants, including parents, grandparents, children, and grandchildren'. It may not be a dwelling for anyone outside the family, and the owners must record a notarized covenant saying so before the permit (270-2.2, 270-5.2A(11), (12))",
+      "The landowner must live in the house or the ADU. All occupants of both units together may not exceed the definition of family (270-5.2A(6), (7))",
+      "At most 40% of the total square footage of the house. One ADU per lot. Architecturally consistent with the house (270-5.2A(3), (4), (8))",
+      "The ADU meets the zone's setbacks, height, coverage, lot width and every other single-family detached dimensional rule (270-5.2A(1), (5)). Each zone table has its own 'Accessory Dwelling' setback column. In A, VR and VC it may not stand in the front yard",
+      "One parking space more than the house needs (270-5.2A(10))",
+      "On-lot sewage rules apply where there is no public sewer (270-5.2A(2)). The A zone has no public sewer or water",
+      "A two-family conversion of an existing single-family detached house is a separate use: by right in A, RB, VR, VC and CBC, special exception in RM. No change to the outside of the building except for safety (270-2.2, 270-5.2III)"
+    ],
+    "notes": "Zoning office: East Hempfield Township (easthempfield.org). Read on eCode360 in a browser, one section print view at a time. The term is 'accessory dwelling' in 270-2.2 and 'accessory dwelling units' in the zone lists and 270-5.2A. ME, E and ROS zone pages were not opened. The Campus zone page did not show an ADU listing. Zone pages RB, CBC, AH and RCC list ADUs but their dimensional tables were not read."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "270-2.2, 270-5.2A",
+      "url": "https://ecode360.com/print/EA2319?guid=29166244",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "270-2.2 'ACCESSORY DWELLING: A dwelling unit that is secondary to and located on the same lot as a principal single-family detached dwelling unit or a principal single-family semidetached dwelling unit; either attached to the principal building or as an accessory building; and is designed, built, and maintained as a separate and independent dwelling unit for immediate family of the principal building occupants, including parents, grandparents, children, and grandchildren.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "270-2.2, 270-5.2A(11)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Permitted by right where listed, but only for immediate family. 'No accessory dwelling unit shall operate as a dwelling unit to non-family members of the principal building occupants.'"
+    },
+    "scope_districts": {
+      "value": [
+        "A",
+        "RB",
+        "RL",
+        "RM",
+        "VR",
+        "VC",
+        "CBC",
+        "AH",
+        "RCC"
+      ],
+      "section": "270-3.2B(5)(e), 3.3B, 3.5B(5)(c), 3.6B(5)(c), 3.7B(5)(c), 3.8B(5)(c), 3.9B, 3.10B, 3.14B",
+      "url": "https://ecode360.com/print/EA2319?guid=11088712",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Zones whose use lists name accessory dwelling units."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "270-3.11",
+      "url": "https://ecode360.com/print/EA2319?guid=11089109",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The Campus zone does not list ADUs. ME, E and ROS were not opened."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "270-3.5B(5)(c), 270-5.2A(9)",
+      "url": "https://ecode360.com/print/EA2319?guid=11088712",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Accessory uses customarily incidental to the above permitted uses ... (c) Accessory dwelling units. [Amended 2-2-2022 by Ord. No. 2022-02]'. The former special exception listing was repealed by the same ordinance. A permit before construction (270-5.2A(9))."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "270-9.1",
+      "url": "https://ecode360.com/14043769",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that fails 270-5.2A needs a variance from the Zoning Hearing Board. The unlisted-use special exception (270-1.9) reaches only uses not permitted in any other zone, so it does not fit an ADU."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family conversion",
+          "path": "by_right",
+          "districts": [
+            "A",
+            "RB",
+            "VR",
+            "VC",
+            "CBC"
+          ],
+          "conditions": "Conversion of an existing single-family detached house into two units. No extension or change to the outside except fire escapes. Approved water and sewage. Direct escape from every floor. Any land development approval.",
+          "min_lot_sqft": null,
+          "section": "270-2.2, 270-5.2III",
+          "url": "https://ecode360.com/print/EA2319?guid=11089757",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached house",
+              "section": "270-2.2"
+            }
+          ],
+          "note": "No family rule. In VR and VC the lot area is 8,700 sq ft per dwelling unit."
+        },
+        {
+          "name": "Two-family conversion",
+          "path": "special_exception",
+          "districts": [
+            "RM"
+          ],
+          "conditions": "Same standards as above, with a Zoning Hearing Board hearing.",
+          "min_lot_sqft": null,
+          "section": "270-3.6D(13), 270-5.2III",
+          "url": "https://ecode360.com/print/EA2319?guid=11088740",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached house",
+              "section": "270-2.2"
+            }
+          ]
+        }
+      ],
+      "section": "270-2.2, 270-5.2III",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "A",
+        "RB",
+        "RL",
+        "RM",
+        "VR",
+        "VC",
+        "CBC",
+        "AH",
+        "RCC"
+      ],
+      "section": "zone use lists B(5)",
+      "url": "https://ecode360.com/print/EA2319?guid=11088712",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached"
+      ],
+      "section": "270-2.2",
+      "url": "https://ecode360.com/print/EA2319?guid=29166244",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'a principal single-family detached dwelling unit or a principal single-family semidetached dwelling unit'."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "270-2.2",
+      "url": "https://ecode360.com/print/EA2319?guid=29166244",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Attached to the house or as an accessory building. No rule that the building must exist."
+    },
+    "requires_conforming_lot": {
+      "value": null,
+      "section": "270-5.2A(5)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'Must meet all other single-family detached dimensional requirements of the zone.' Whether a lot below the zone minimum may have an ADU is not settled."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Only for immediate family of the people living in the house, such as parents, grandparents, children and grandchildren. Never a dwelling for non-family members.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "270-2.2, 270-5.2A(11)",
+          "url": "https://ecode360.com/print/EA2319?guid=11089757"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "'Landowner of lot must maintain principal residency in either the primary structure or accessory dwelling unit.'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "270-5.2A(6)",
+          "url": "https://ecode360.com/print/EA2319?guid=11089757"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "All occupants of the house and the ADU together may not exceed the number in the definition of family.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "270-5.2A(7)",
+          "url": "https://ecode360.com/print/EA2319?guid=11089757"
+        },
+        {
+          "kind": "other",
+          "condition": "The owners record a notarized document, signed by all owners, that the unit will not be a dwelling for non-family members. It binds later owners. Proof of recording before the permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "270-5.2A(12)",
+          "url": "https://ecode360.com/print/EA2319?guid=11089757"
+        },
+        {
+          "kind": "design",
+          "condition": "Architecturally consistent with the house. A permit before construction.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "270-5.2A(8), (9)",
+          "url": "https://ecode360.com/print/EA2319?guid=11089757"
+        },
+        {
+          "kind": "design",
+          "condition": "A detached ADU may not stand in the front yard.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "A",
+            "VR",
+            "VC"
+          ],
+          "building_types": null,
+          "section": "270-3.2E(2), 270-3.7E(3), 270-3.8E(3)",
+          "url": "https://ecode360.com/print/EA2319?guid=11088786"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Where there is no public sewer the on-lot sewage rules of Article 4 apply.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "270-5.2A(2)",
+          "url": "https://ecode360.com/print/EA2319?guid=11089757"
+        }
+      ],
+      "section": "270-5.2A",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "270-2.2",
+      "url": "https://ecode360.com/print/EA2319?guid=29166244",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'either attached to the principal building or as an accessory building'. A unit inside the house is read as part of the principal building, and a garage unit as one in an accessory building."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "270-5.2A(3)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No fixed number."
+    },
+    "max_share_of_house": {
+      "value": 0.4,
+      "section": "270-5.2A(3)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Shall not exceed 40% of the total square footage of the primary structure.'"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "270-5.2A",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No minimum in 270-5.2A."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 35,
+      "section": "270-3.5E(6)(a), 270-3.6E(6)(a)",
+      "url": "https://ecode360.com/print/EA2319?guid=11088712",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "RL and RM: 'Principal structures including detached garage and accessory dwelling units: 35 feet.' Accessory structures 20 ft. A, VR and VC set 35 ft for residential uses. 270-5.2A(1) applies the zone height to the ADU."
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "270-3.5E(6)",
+      "url": "https://ecode360.com/print/EA2319?guid=11088712",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "RL and RM put ADUs with principal structures at 35 ft, not with accessory structures at 20 ft."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "270-5.2A(1)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "270-3.5E(2)",
+      "url": "https://ecode360.com/print/EA2319?guid=11088712",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Each zone table has its own 'Accessory Dwelling' column. See districts."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "270-5.2A(6)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The landowner lives in the house or the ADU."
+    },
+    "family_only": {
+      "value": true,
+      "section": "270-2.2, 270-5.2A(11)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Immediate family of the people in the house, such as parents, grandparents, children and grandchildren. Both units together within the definition of family.",
+      "section": "270-2.2, 270-5.2A(7), (11)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "270-5.2A(4)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Limit one accessory dwelling unit per lot.'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "270-5.2A(11)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No short-term rental rule was searched. Renting to non-family members is barred in any case."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "270-5.2A(10)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A minimum of one off-street parking space shall be provided in addition to the off-street parking spaces required for the principal dwelling unit(s).'"
+    },
+    "total_on_site": {
+      "value": null,
+      "section": "270-8.1, 270-3.8E(17)(c)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089910",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "270-8.1 sets parking by demand. VC needs two spaces for each dwelling unit. The house figure elsewhere was not read."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "270-5.2A(2)",
+      "url": "https://ecode360.com/print/EA2319?guid=11089757",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "On-lot sewage rules apply. No rule on a separate connection."
+    }
+  },
+  "districts": {
+    "A": {
+      "setback_front_ft": {
+        "value": 30,
+        "section": "270-3.2E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088559",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "270-3.2E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088559",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "270-3.2E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088559",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "270-3.2E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088559",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "270-3.2E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088559",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.2E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088559",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "270-3.2E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088559",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Farm 10 acres. Other uses one acre. A single-family detached dwelling follows Article 5 (270-5.2EEE), not read in full."
+      }
+    },
+    "RL": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "270-3.5E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses: 12,000 sq ft. Density three single-family units per acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "270-3.5E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "270-3.5E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "270-3.5E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "270-3.5E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 30,
+        "section": "270-3.5E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "270-3.5E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.5E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      }
+    },
+    "RM": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "270-3.6E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses: 4,000 sq ft. Front 25 ft if a sidewalk runs along the street."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "270-3.6E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "270-3.6E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "270-3.6E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "270-3.6E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 20,
+        "section": "270-3.6E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "270-3.6E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.6E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      }
+    },
+    "VR": {
+      "min_lot_sqft": {
+        "value": 8700,
+        "section": "270-3.7E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "All permitted residential uses: 8,700 sq ft per dwelling unit."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8700,
+        "section": "270-3.7E(1)(a)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'All permitted residential uses: 8,700 square feet per dwelling unit.' The ADU is an accessory use. Whether it needs its own 8,700 sq ft is not settled. Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "270-3.7E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Not less than the average setback of developed lots on the block."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "270-3.7E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.7E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "270-3.7E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "270-3.7E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.7E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 8700,
+        "section": "270-3.8E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "All permitted residential uses: 8,700 sq ft per dwelling unit."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8700,
+        "section": "270-3.8E(1)(a)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'All permitted residential uses: 8,700 square feet per dwelling unit.' The ADU is an accessory use. Whether it needs its own 8,700 sq ft is not settled. Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "270-3.8E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Not less than the average setback of developed lots on the block."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "270-3.8E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.8E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "270-3.8E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "270-3.8E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.8E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      }
+    }
+  }
+}

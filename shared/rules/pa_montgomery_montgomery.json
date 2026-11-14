@@ -1,0 +1,317 @@
+{
+  "provenance": {
+    "jurisdiction": "Montgomery township",
+    "instrument": "Montgomery Township Code Chapter 230 Zoning (readopted 2-12-2007 by Ord. No. 06-211Z, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "230-149 (accessory uses) carries amendments to Ord. No. 25-350Z (9-22-2025). eCode360 New Laws showed 0 items on 2026-11-14.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11516266",
+      "https://ecode360.com/print/MO1293?guid=11517634",
+      "https://ecode360.com/print/MO1293?guid=11516607",
+      "https://ecode360.com/print/MO1293?guid=11516626",
+      "https://ecode360.com/print/MO1293?guid=11516638",
+      "https://ecode360.com/print/MO1293?guid=11516283",
+      "https://ecode360.com/MO1293/laws"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209150640",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11516266",
+    "code_current_through": null,
+    "code_current_through_note": "No 'legislation through' date read. Newest amendment seen in 230-149: Ord. No. 25-350Z (9-22-2025). New Laws: none.",
+    "checks": [
+      "One 'accessory family dwelling' is permitted with a single-family detached house, 'as a residence by family members or a family caregiver' (230-149C)",
+      "It must be part of the house, with an internal connection to it. At most 25% of the house's total floor area, not counting any garage (230-149C(5), (6))",
+      "The house keeps the look of a single-family house with one front entrance. Side or rear entrances only. No outside stair on the front. No parking in the front yard beyond three spaces in the driveway (230-149C(2), (3))",
+      "No rental, and no income use. The owner records a deed restriction in favor of the Township (230-149C(9))",
+      "Registered with the Zoning Officer for a fee. The registration ends when the property is sold. A new owner may register again (230-149C(8))",
+      "One parking space more than the house needs (230-149C(7))",
+      "Any on-lot septic system must be recertified if sewage flows increase (230-149C(1))"
+    ],
+    "notes": "Zoning office: Montgomery Township (montgomerytwp.org). Read on eCode360 in a browser, one section print view at a time. District use lists read for R-1 and R-2 (an accessory use customarily incidental to the house is permitted, subject to 230-149). The accessory family dwelling rule in 230-149C is not tied to a district. Other district use lists (R-3, R-3A, R-3B, R-5, R-6 and nonresidential) were not opened. Dimensional rules read for R-1 only."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory family dwelling",
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Accessory family dwelling. One accessory dwelling unit to a single-family detached dwelling shall be permitted as a residence by family members or a family caregiver.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Permitted with a single-family detached house, for family members or a family caregiver. No rental (230-149C(9)(c))."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "230-149C, 230-26G, 230-31G",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'shall be permitted'. District lists allow accessory uses customarily incidental to the house, 'subject to the provisions of ... § 230-149'. Registration with the Zoning Officer (230-149C(8))."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "230-184",
+      "url": "https://ecode360.com/11516266",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that fails 230-149C needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Living quarters for a household caretaker",
+          "path": "by_right",
+          "districts": null,
+          "conditions": "Living quarters for a household caretaker within the dwelling, listed as a use accessory to a dwelling.",
+          "min_lot_sqft": null,
+          "section": "230-149A(2)(a)[3]",
+          "url": "https://ecode360.com/print/MO1293?guid=11517634",
+          "confidence": "secondary",
+          "note": "The code does not say whether these quarters may be a separate dwelling unit with its own kitchen."
+        }
+      ],
+      "section": "230-149A(2)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": null,
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Not tied to a district. Reaches any lot with a lawful single-family detached house. R-1 and R-2 checked."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'to a single-family detached dwelling'."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "230-149C(6)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Part of the house. The code does not require the space to exist already."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Only as a residence by family members or a family caregiver. No rental, no income use.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "230-149C, C(9)(c)",
+          "url": "https://ecode360.com/print/MO1293?guid=11517634"
+        },
+        {
+          "kind": "design",
+          "condition": "Part of the house with an internal connection. One front entrance, others on the side or rear. No outside stair on the front. No front-yard parking beyond three spaces in the driveway. Separate cooking and sanitary facilities.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "230-149C(2) to (4), (6)",
+          "url": "https://ecode360.com/print/MO1293?guid=11517634"
+        },
+        {
+          "kind": "other",
+          "condition": "Registration with the Zoning Officer, ending at sale. A recorded deed restriction in favor of the Township describing the unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "230-149C(8), (9)",
+          "url": "https://ecode360.com/print/MO1293?guid=11517634"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Any on-lot septic system must be recertified if sewage flows will increase.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "230-149C(1)",
+          "url": "https://ecode360.com/print/MO1293?guid=11517634"
+        }
+      ],
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "230-149C(6)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'shall be part of the principal residence. An internal connection shall be provided'. An addition joined inside to the house is read as part of the residence. A detached or garage unit is not."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "230-149C(5)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No fixed number."
+    },
+    "max_share_of_house": {
+      "value": 0.25,
+      "section": "230-149C(5)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'shall occupy no more than 25% of the total floor area of the principal residence, not including any garage.'"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "230-149C(6)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Part of the house. No ADU height."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "230-149C(6)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No owner-occupancy rule. The record owner grants the deed restriction."
+    },
+    "family_only": {
+      "value": true,
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Family members or a family caregiver. No rental.",
+      "section": "230-149C, C(9)(c)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "230-149C",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One accessory dwelling unit to a single-family detached dwelling'."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "230-149C(9)(c)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The rental of an accessory family dwelling shall not be permitted, nor shall it be used in any way as an income property.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "230-149C(7)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The required off-street parking for the principal dwelling plus one additional off-street parking space for the accessory family dwelling shall be provided.'"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "230-149C(1)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Septic recertification. No rule on a separate connection."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "230-28A",
+        "url": "https://ecode360.com/print/MO1293?guid=11516626",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "230-28B",
+        "url": "https://ecode360.com/print/MO1293?guid=11516626",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "230-28C(1)",
+        "url": "https://ecode360.com/print/MO1293?guid=11516626",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "60 ft together, neither under 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "230-28D",
+        "url": "https://ecode360.com/print/MO1293?guid=11516626",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

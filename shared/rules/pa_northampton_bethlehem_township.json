@@ -1,0 +1,496 @@
+{
+  "provenance": {
+    "jurisdiction": "Bethlehem township",
+    "instrument": "Bethlehem Township Code Chapter 275 Zoning (Ord. No. 8-97, 12-15-1997, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 header on 2026-11-14: 'Includes legislation through 06-15-2026.' 275-190 (accessory uses) was last amended 5-18-2026 by Ord. No. 05-26. No New Laws block was shown on the chapter page.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/13370636",
+      "https://ecode360.com/print/BE2269?guid=13373997",
+      "https://ecode360.com/print/BE2269?guid=13373404",
+      "https://ecode360.com/print/BE2269?guid=13371566",
+      "https://ecode360.com/print/BE2269?guid=13371638",
+      "https://ecode360.com/print/BE2269?guid=13371486",
+      "https://ecode360.com/print/BE2269?guid=13371510",
+      "https://ecode360.com/print/BE2269?guid=13371399",
+      "https://ecode360.com/print/BE2269?guid=13371603",
+      "https://ecode360.com/print/BE2269?guid=13371706",
+      "https://ecode360.com/print/BE2269?guid=13372656",
+      "https://ecode360.com/print/BE2269?guid=13371008",
+      "https://ecode360.com/print/BE2269?guid=13370656",
+      "https://ecode360.com/print/BE2269?guid=13374614"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Northampton",
+    "municipality_type": "township",
+    "geoid": "4209506096",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/13370636",
+    "code_current_through": "2026-06-15",
+    "code_current_through_note": "eCode360: 'Includes legislation through 06-15-2026.'",
+    "checks": [
+      "An accessory apartment is allowed by right (zoning permit) only inside an existing single-family detached house in the MDR and MHDR districts. It is not listed in RR or LDR, whose use lists say 'Only the following uses are permitted' (275-38, 275-46B(6), 275-54B(6))",
+      "The house as it stands must have at least 1,500 sq ft, and the main unit must keep at least 900 sq ft (275-190D(1)(c))",
+      "One of the units must be owner-occupied for at least 12 months after the conversion (275-190D(1)(b))",
+      "The conversion rules of 275-189A(24) apply: the lot must meet the district lot area, yard, building area and parking rules, all work stays inside the existing shell, no second front entrance and no outside stair or fire escape on the front or a street-facing side wall. Extending the sides or raising the height is not a conversion",
+      "Parking: two spaces for each dwelling unit, outside the required front yard and to the side or rear of the house (275-142, 275-190D(1)(d), 275-189A(24)(i))",
+      "A detached unit, a garage unit and an addition are not listed",
+      "Lot area: whether the apartment needs a second share of the district lot area is not settled. MHDR states its single-family lot area per dwelling unit (275-58A)"
+    ],
+    "notes": "Zoning office: Bethlehem Township (bethlehemtwp.com). Read on eCode360 in a browser, one section print view at a time. Use lists read for RR, LDR (by right and special exception), MDR and MHDR, and the Neighborhood Enhancement Overlay. AG, NC, GC, PC, OB, GI, LI, CR, Town Center, Mixed-Use Village and Hospital Health Care Village were not opened. The definitions page showed no 'accessory apartment' definition."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment",
+      "section": "275-46B(6), 275-190D(1)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Accessory apartment within an existing single-family detached dwelling.' Not defined in 275-24."
+    },
+    "status": {
+      "value": "conversion_only",
+      "section": "275-190D(1), 275-189A(24)(m)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Only inside an existing single-family detached house: 'any proposed alteration must be confined to the interior of an already existing structural shell'. By right in MDR and MHDR."
+    },
+    "scope_districts": {
+      "value": [
+        "MDR",
+        "MHDR"
+      ],
+      "section": "275-46B(6), 275-54B(6)",
+      "url": "https://ecode360.com/print/BE2269?guid=13371566",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "275-31, 275-38",
+      "url": "https://ecode360.com/print/BE2269?guid=13371486",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "RR and LDR do not list it, and their lists say 'Only the following uses are permitted'. Other districts were not all opened."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "275-46B(6), 275-54B(6)",
+      "url": "https://ecode360.com/print/BE2269?guid=13371566",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Listed among accessory uses permitted by right 'within the requirements of § 275-190'."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "275-11",
+      "url": "https://ecode360.com/13370636",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that fails 275-190D(1) needs a variance. The unlisted-use path (275-5B) reaches only uses not permitted anywhere in the Township."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "MHDR"
+          ],
+          "conditions": "A new two-family building with public water and public sewer. Lot 6,000 sq ft, width 50 ft per unit, depth 75 ft.",
+          "min_lot_sqft": 6000,
+          "section": "275-54A(11)(d), 275-58A",
+          "url": "https://ecode360.com/print/BE2269?guid=13371706",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer service",
+              "section": "275-58A"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water service",
+              "section": "275-58A"
+            }
+          ],
+          "note": "Whether the 6,000 sq ft is for the building or for each unit is not marked in the table."
+        }
+      ],
+      "section": "275-54, 275-58",
+      "url": "https://ecode360.com/print/BE2269?guid=13371638",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "MDR",
+        "MHDR"
+      ],
+      "section": "275-46B(6), 275-54B(6)",
+      "url": "https://ecode360.com/print/BE2269?guid=13371566",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "275-190D(1)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Single-family detached dwelling only."
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "275-189A(24)(m), (n)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373404",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "Only inside an existing single-family detached house. Alterations stay inside the existing shell.",
+          "effect": "bars",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "house_exists",
+          "section": "275-190D(1), 275-189A(24)(m)",
+          "url": "https://ecode360.com/print/BE2269?guid=13373404"
+        },
+        {
+          "kind": "size",
+          "condition": "The house as it exists must have at least 1,500 sq ft, and the main unit must keep at least 900 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "house_sqft_at_least",
+          "value": 1500,
+          "section": "275-190D(1)(c)",
+          "url": "https://ecode360.com/print/BE2269?guid=13373997"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "'One of the dwelling units shall be owner-occupied for a minimum period of 12 months following the conversion.'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "275-190D(1)(b)",
+          "url": "https://ecode360.com/print/BE2269?guid=13373997"
+        },
+        {
+          "kind": "design",
+          "condition": "Keeps the look of a single-family house with one front entrance. Other entrances on the side or rear. Outside stairs and fire escapes on the rear wall. No major change to the outside. Separate cooking and sanitary facilities.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "275-189A(24)(e) to (h)",
+          "url": "https://ecode360.com/print/BE2269?guid=13373404"
+        },
+        {
+          "kind": "other",
+          "condition": "The lot must meet the district minimum lot area, yards, building area and parking for the result.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "275-189A(24)(a)",
+          "url": "https://ecode360.com/print/BE2269?guid=13373404"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Any sewage system other than public sewer must be recertified for the new use.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "275-189A(24)(c)",
+          "url": "https://ecode360.com/print/BE2269?guid=13373404"
+        }
+      ],
+      "section": "275-190D(1), 275-189A(24)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal"
+      ],
+      "section": "275-190D(1), 275-189A(24)(m)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Only within the existing house."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "275-190D(1)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No maximum size. The main unit keeps at least 900 sq ft."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "275-190D(1)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "275-190D(1)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No minimum for the apartment was seen."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "275-189A(24)(n)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373404",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Inside the existing house. Raising the height is not a conversion."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "275-49I",
+      "url": "https://ecode360.com/print/BE2269?guid=13371603",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "MDR: 3 1/2 stories or 35 ft."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "275-190D(1)(b)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Owner-occupied for 12 months after the conversion. After that the code is silent."
+    },
+    "family_only": {
+      "value": false,
+      "section": "275-190D(1)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "275-190D(1)(e)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373997",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No more than a total of two dwelling units shall be allowed.'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "275-24",
+      "url": "https://ecode360.com/print/BE2269?guid=13371008",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not searched."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "275-142",
+      "url": "https://ecode360.com/print/BE2269?guid=13372656",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'Dwelling ... 2 spaces per dwelling unit.' Read as reaching the apartment."
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "275-142, 275-189A(24)(a)",
+      "url": "https://ecode360.com/print/BE2269?guid=13372656",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Two for each of the two units, outside the required front yard."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "275-189A(24)(c)",
+      "url": "https://ecode360.com/print/BE2269?guid=13373404",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Septic recertification. No rule on a separate connection."
+    }
+  },
+  "districts": {
+    "MDR": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "275-49A(1)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. Otherwise one acre."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "275-49E",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "275-49F(1)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "25 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "275-49G(1)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "275-49I",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3.5,
+        "section": "275-49I",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "275-49A(3)"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "275-49A(3)"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "275-49A(3)"
+          }
+        ],
+        "section": "275-49A(3)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "MHDR": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "275-58A",
+        "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer, marked 'per dwelling unit'."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7000,
+        "section": "275-58A, 275-189A(24)(a)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The table marks 7,000 sq ft 'per dwelling unit' and the conversion must meet the district lot area. Whether the apartment needs its own 7,000 sq ft is not settled."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "275-58B",
+        "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "275-58C",
+        "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "275-58D",
+        "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "275-58A"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "275-58A"
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "275-58A"
+          }
+        ],
+        "section": "275-58A",
+        "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

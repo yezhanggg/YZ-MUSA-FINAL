@@ -1,6 +1,6 @@
 {
  "about": "Where can you build an ADU today, for every Pennsylvania county subdivision. One tier and one status per place. Not legal advice. Not a zoning determination. See docs/PLACES.md.",
- "built_on": "2026-11-13",
+ "built_on": "2026-11-14",
  "file": "pa_places.json",
  "fields": [
   "geoid",
@@ -138,10 +138,10 @@
   "by_tier": [
    {
     "tier": "baseline",
-    "places": 1876,
-    "pop": 7480159,
-    "pop_share": 0.5728,
-    "housing_units": 3271616
+    "places": 1870,
+    "pop": 7317790,
+    "pop_share": 0.5603,
+    "housing_units": 3211223
    },
    {
     "tier": "verified",
@@ -151,18 +151,18 @@
     "housing_units": 1644640
    },
    {
+    "tier": "drafted",
+    "places": 30,
+    "pop": 985010,
+    "pop_share": 0.0754,
+    "housing_units": 409275
+   },
+   {
     "tier": "reported",
     "places": 564,
     "pop": 906874,
     "pop_share": 0.0694,
     "housing_units": 425234
-   },
-   {
-    "tier": "drafted",
-    "places": 24,
-    "pop": 822641,
-    "pop_share": 0.063,
-    "housing_units": 348882
    },
    {
     "tier": "text_search",
@@ -175,17 +175,17 @@
   "by_status": [
    {
     "status": "unknown",
-    "places": 1929,
-    "pop": 7590942,
-    "pop_share": 0.5812,
-    "housing_units": 3324072
+    "places": 1923,
+    "pop": 7428573,
+    "pop_share": 0.5688,
+    "housing_units": 3263679
    },
    {
     "status": "limited",
-    "places": 68,
-    "pop": 2968110,
-    "pop_share": 0.2273,
-    "housing_units": 1299721
+    "places": 74,
+    "pop": 3130479,
+    "pop_share": 0.2397,
+    "housing_units": 1360114
    },
    {
     "status": "not_addressed",
@@ -250,8 +250,8 @@
    {
     "tier": "baseline",
     "status": "unknown",
-    "places": 1876,
-    "pop": 7480159
+    "places": 1870,
+    "pop": 7317790
    },
    {
     "tier": "drafted",
@@ -262,8 +262,8 @@
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 12,
-    "pop": 345506
+    "places": 18,
+    "pop": 507875
    },
    {
     "tier": "drafted",

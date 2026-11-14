@@ -1,0 +1,442 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Providence township",
+    "instrument": "Lower Providence Township Code Chapter 143 Zoning (Ord. No. 432, 7-15-1999, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code version shown as 2026-04-01. The in-law suite rules are in 143-6.2, added 1-16-2020 by Ord. No. 662 and amended 6-5-2025 by Ord. No. 687. New Laws on 2026-11-14 list Ord. No. 698 (2026-06-18, fire insurance claims) and Ord. No. 699 (2026-09-03, cable television). Neither is a zoning change.",
+    "effective_date": "2020-01-16",
+    "source_urls": [
+      "https://ecode360.com/6205724",
+      "https://ecode360.com/print/LO0679?guid=35882118",
+      "https://ecode360.com/6206011",
+      "https://ecode360.com/print/LO0679?guid=6206412",
+      "https://ecode360.com/print/LO0679?guid=6206437",
+      "https://ecode360.com/print/LO0679?guid=6206532",
+      "https://ecode360.com/print/LO0679?guid=6206566",
+      "https://ecode360.com/print/LO0679?guid=6206603",
+      "https://ecode360.com/print/LO0679?guid=6206254",
+      "https://ecode360.com/LO0679/laws"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209145080",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/6205724",
+    "code_current_through": "2026-04-01",
+    "code_current_through_note": "eCode360 breadcrumb shows 'Code 2026-04-01'. New Laws hold two non-zoning ordinances (698, 699).",
+    "checks": [
+      "An in-law suite is a residential accessory use allowed by right (zoning permit) in R-1, R-2, R-3, R-4 and R-5, on a lot with a single-family detached house (143-32, 143-36, 143-48, 143-52, 143-56, 143-6.2)",
+      "It must be inside the house or inside a detached household garage on the same lot (143-6.2, in-law suite)",
+      "Family only: at most two members of the family living in the house. The owner files a statement by January 15 each year, and removes the separate kitchen when those people no longer live there (143-6.2, in-law suite (6) to (11))",
+      "Size: at most 50% of the house's 'primary living area' (living room, dining room, kitchen, one bathroom and the largest bedroom), and never over 800 sq ft (143-6.2, in-law suite (1))",
+      "One per lot. No outside change that makes the house or garage look like anything other than a single-family house or a garage (143-6.2, in-law suite (3))",
+      "The owner signs a written agreement with the Township, recorded with the Recorder of Deeds, naming the occupants and describing the suite. A separate zoning permit (143-6.2, in-law suite (4), (5))",
+      "One more off-street parking space than the house needs (143-6.2, in-law suite (14))",
+      "No more than one detached household garage per lot (district use lists)"
+    ],
+    "notes": "Zoning office: Lower Providence Township (lowerprovidence.org). Read on eCode360 in a browser, one page at a time, the in-law suite text from screenshots of the Article I page. Use lists checked for R-1 to R-5. Commercial, industrial, mixed-use, MHP and overlay districts were not checked. District area rules read for R-2 and R-3 only. Off-street parking (143-71) and height rules were not opened."
+  },
+  "adu": {
+    "term": {
+      "value": "in-law suite",
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A single, additional, separate dwelling unit, located on the same lot as a single-family detached dwelling unit, and located only within the principal building or a detached household garage on that same lot. The intent of these provisions is to allow for related family members to reside on the same lot in separate dwelling units, but to prohibit the creation of for-profit apartments in districts where multifamily housing is not otherwise permitted.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'limited to, and used by no more than, two members of the same family that occupies the principal single-family dwelling on the same lot.' Allowed by right in R-1 to R-5."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "R-5"
+      ],
+      "section": "143-32, 143-36, 143-48, 143-52, 143-56",
+      "url": "https://ecode360.com/print/LO0679?guid=6206412",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "143-32",
+      "url": "https://ecode360.com/print/LO0679?guid=6206412",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Other districts were not checked. Each district lists its uses 'and no other'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "143-32, 143-36(7)(h), 143-48A(4)(h)",
+      "url": "https://ecode360.com/print/LO0679?guid=6206412",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The following residential accessory uses, buildings, and structures are allowed by right on a lot with a residential principal use': 'In-law suite.' A separate zoning permit (143-6.2)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "143-161",
+      "url": "https://ecode360.com/6205724",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A suite that fails 143-6.2 needs a variance from the Zoning Hearing Board. District lists allow listed uses 'and no other'."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex or twin dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Single-family detached, twin and duplex dwellings at most 3.0 units per gross acre. Lots 8,000 sq ft, public water and sewer.",
+          "min_lot_sqft": null,
+          "section": "143-48A(1), 143-49A",
+          "url": "https://ecode360.com/print/LO0679?guid=6206532",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sanitary sewer",
+              "section": "143-49A(3)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "143-49A(3)"
+            }
+          ],
+          "note": "Whether an existing house may be converted to a duplex on one lot was not checked. The density cap is per gross acre of the site."
+        }
+      ],
+      "section": "143-48",
+      "url": "https://ecode360.com/print/LO0679?guid=6206532",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "R-5"
+      ],
+      "section": "143-32, 143-36, 143-48, 143-52, 143-56",
+      "url": "https://ecode360.com/print/LO0679?guid=6206412",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'on the same lot as a single-family detached dwelling unit'."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Inside the house or a detached household garage. No rule that either must already exist."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Used by no more than two members of the family that lives in the house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "143-6.2, in-law suite (6)",
+          "url": "https://ecode360.com/print/LO0679?guid=35882118"
+        },
+        {
+          "kind": "other",
+          "condition": "A written agreement with the Township, recorded against the property, describing the suite and naming its occupants. A separate zoning permit. A statement each January 15 that the same people still live there.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "143-6.2, in-law suite (4), (5), (7)",
+          "url": "https://ecode360.com/print/LO0679?guid=35882118"
+        },
+        {
+          "kind": "other",
+          "condition": "When the named people stop living there full time, the owner notifies the Township within 30 days, removes the separate kitchen and surrenders the permit. The suite reverts to part of the house or garage.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "143-6.2, in-law suite (8) to (11)",
+          "url": "https://ecode360.com/print/LO0679?guid=35882118"
+        },
+        {
+          "kind": "design",
+          "condition": "No change to the outside of the house or garage that makes it look like anything other than a single-family house or a garage.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "143-6.2, in-law suite (3)",
+          "url": "https://ecode360.com/print/LO0679?guid=35882118"
+        },
+        {
+          "kind": "size",
+          "condition": "At most 50% of the total floor area of the house's primary living area (living room, dining room, kitchen, one bathroom and the largest bedroom).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "143-6.2, in-law suite (1)",
+          "url": "https://ecode360.com/print/LO0679?guid=35882118"
+        }
+      ],
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'located only within the principal building or a detached household garage'. An addition is read as part of the principal building. A new standalone cottage is not allowed."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 800,
+      "section": "143-6.2, in-law suite (1)",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'In no event shall the in-law suite exceed a total floor area of 800 square feet.'"
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "143-6.2, in-law suite (1)",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The 50% cap is of the 'primary living area' (living room, dining room, kitchen, one bathroom, largest bedroom), not of the whole house. Not stored as a share of the house. See gates."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No height for a garage suite was found. Height rules (143-25 and district sections) were not opened."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No owner-occupancy rule. The occupants must be family of the household in the house."
+    },
+    "family_only": {
+      "value": true,
+      "section": "143-6.2, in-law suite (6)",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At most two members of the family that lives in the house.",
+      "section": "143-6.2, in-law suite (6)",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "143-6.2, in-law suite (3)",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Only one in-law suite shall be permitted on a lot.'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "143-32",
+      "url": "https://ecode360.com/print/LO0679?guid=6206412",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Short-term rental is a separate listed accessory use. The in-law suite is limited to named family members."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "143-6.2, in-law suite (14)",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One off-street parking space shall be provided for this accessory use in addition to the required number of residential parking spaces for the single-family detached dwelling upon the lot.'"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "143-6.2",
+      "url": "https://ecode360.com/print/LO0679?guid=35882118",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No utility rule seen."
+    }
+  },
+  "districts": {
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "143-37A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206437",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With both public water and sanitary sewer. 30,000 with one, 40,000 with neither."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "143-37A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206437",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "143-37A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206437",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 60,
+        "section": "143-37A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206437",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Water or sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 60,
+            "section": "143-37A(2)"
+          },
+          {
+            "when": "Water or sewer only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 60,
+            "section": "143-37A(2)"
+          },
+          {
+            "when": "No public service",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 30,
+            "setback_rear_ft": 60,
+            "section": "143-37A(2)"
+          }
+        ],
+        "section": "143-37A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206437",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "143-49A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Individual lots. All dwellings on public water and sewer (143-49A(3))."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "143-49A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "143-49A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "143-49A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

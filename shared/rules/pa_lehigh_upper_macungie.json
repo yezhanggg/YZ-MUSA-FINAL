@@ -1,0 +1,872 @@
+{
+  "provenance": {
+    "jurisdiction": "Upper Macungie township",
+    "instrument": "Upper Macungie Township Code Chapter 27 Zoning (Ord. 9-94, 4-7-1994, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 27 Zoning on eCode360 (code UP2477). The use table 27-306 carries amendments to Ord. No. 2025-04 (12-4-2025). 27-403 carries amendments to Ord. No. 2024-07 (10-3-2024). New Laws on 2026-11-14 list one zoning ordinance not yet folded in: Ord. No. 2026-04 (adopted 2026-04-02). Its PDF was not opened. A local news report (Lehigh Valley Press, 2026-04-10) says the Supervisors adopted on April 2 an ordinance on automated storage and retrieval systems (ASRS) in the LI and LI(L) districts. It is very likely Ord. No. 2026-04. Nothing seen ties it to accessory apartments.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/14515564",
+      "https://ecode360.com/print/UP2477?guid=14516362",
+      "https://ecode360.com/print/UP2477?guid=14517058",
+      "https://ecode360.com/print/UP2477?guid=14515848",
+      "https://ecode360.com/print/UP2477?guid=14516436",
+      "https://ecode360.com/print/UP2477?guid=14516459",
+      "https://ecode360.com/print/UP2477?guid=14517380",
+      "https://ecode360.com/print/UP2477?guid=14517591",
+      "https://ecode360.com/UP2477/laws",
+      "https://www.lvpnews.com/20260410/upper-macungie-supervisors-approve-asrs-ordinance-name-township-parks/"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Lehigh",
+    "municipality_type": "township",
+    "geoid": "4207779104",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14515564",
+    "code_current_through": null,
+    "code_current_through_note": "eCode360 shows no 'legislation through' date on the chapter page. The newest codified zoning ordinance seen is Ord. No. 2025-04 (12-4-2025, in 27-306 and 27-402). New Laws: Ord. No. 2026-04 (2026-04-02, Zoning), not codified.",
+    "checks": [
+      "One accessory apartment is allowed only inside an existing single-family detached house or one half of an existing twin. It is a special exception (Zoning Hearing Board) in R3, R4 and R5, and a use by right in NC, HC, LI, LI(L) and GI. It is not permitted in RU3, RU1.5, R1, R2, OSP or RT (27-306)",
+      "The house as it stands before the conversion must have at least 1,500 sq ft of floor area, and the main unit must keep at least 800 sq ft (27-403.4A(7))",
+      "One of the two units must be lived in by the owner or a relative of the owner for at least 36 months after the conversion (27-403.4A(6))",
+      "The house keeps the look of a single-family house with one front entrance. Other entrances go on the side or rear. No outside stair on the front, and not four or more parking spaces in the front yard (27-403.4A(2), (3))",
+      "Every dwelling unit needs at least 600 sq ft of habitable heated floor area (27-801.4)",
+      "Any on-lot septic system must be recertified if sewage flows will increase (27-403.4A(1))",
+      "An 'apartment for care of relative' is a separate listing, a special exception in every residential district: at most two occupants, a close relative of the household who needs care, no rental income, and the unit is removed or folded back into the house afterward (27-403.4C)",
+      "A new detached unit, a unit in a garage and an addition are not listed. Accessory uses to a dwelling that the table does not list are not permitted (27-306)"
+    ],
+    "notes": "Zoning office: Upper Macungie Township (uppermac.org). Read on eCode360 in a browser, one section print view at a time. Searched the definitions (27-202) for accessory dwelling, accessory apartment, in-law, granny, ECHO, tiny house, short-term rental, two-family and duplex. The code has no 'accessory dwelling unit' term. It uses 'accessory apartment, one' (27-306, 27-403.4A) and 'apartment for care of relative' (27-202, 27-403.4C)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment",
+      "section": "27-306, 27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "27-306: 'Accessory apartment, one within an existing single-family detached dwelling or single-family semidetached dwelling (twin dwelling) (§ 27-403)'. Not defined in 27-202. A second listing, 'apartment for care of relative', is defined in 27-202."
+    },
+    "status": {
+      "value": "conversion_only",
+      "section": "27-306, 27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14516362",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Only inside an existing single-family detached house or twin half. Special exception in R3, R4 and R5. By right in NC, HC, LI, LI(L) and GI."
+    },
+    "scope_districts": {
+      "value": [
+        "R3",
+        "R4",
+        "R5",
+        "NC",
+        "HC",
+        "LI",
+        "LI(L)",
+        "GI"
+      ],
+      "section": "27-306",
+      "url": "https://ecode360.com/print/UP2477?guid=14516362",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Districts where the accessory apartment is listed. The apartment for care of relative is listed in all residential districts (see alternatives)."
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "27-306",
+      "url": "https://ecode360.com/print/UP2477?guid=14516362",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Marked N (not permitted) in RU3, RU1.5, R1, R2, OSP and RT. The table also says any accessory use to a dwelling that it does not list is not permitted."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "27-306, 27-119",
+      "url": "https://ecode360.com/print/UP2477?guid=14516362",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'SE = Special exception use (decision by Zoning Hearing Board)'. Accessory apartment: SE in R3, R4, R5."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-111",
+      "url": "https://ecode360.com/14515564",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that fails 27-403.4A, or a form the table does not list, needs a variance from the Zoning Hearing Board. The residential table has no similar-use path ('Any accessory use that is not specifically listed ... N')."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "NC",
+            "HC",
+            "LI",
+            "LI(L)",
+            "GI"
+          ],
+          "path": "by_right",
+          "section": "27-306",
+          "url": "https://ecode360.com/print/UP2477?guid=14516362",
+          "note": "Business districts table: 'Accessory apartment, one within an existing single-family detached dwelling or single-family semidetached dwelling' is P (Zoning Officer) in NC, HC, LI, LI(L) and GI, N in RT. New dwellings are not permitted in HC, LI, LI(L) or GI, so this reaches existing houses. In NC residential uses follow the R4 rules (27-307.2C note 1)."
+        }
+      ],
+      "section": "27-306",
+      "url": "https://ecode360.com/print/UP2477?guid=14516362",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Apartment for care of relative",
+          "path": "special_exception",
+          "districts": [
+            "RU3",
+            "RU1.5",
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "OSP"
+          ],
+          "conditions": "Only a close relative of a permanent resident of the house who needs care because of old age, disability, handicap or illness. At most two persons. Designed to be folded back into the house, and reconverted or removed when the relative leaves. No rental income. The Township may require a recorded covenant.",
+          "min_lot_sqft": null,
+          "section": "27-202, 27-306, 27-403.4C",
+          "url": "https://ecode360.com/print/UP2477?guid=14517058",
+          "adu_listing": true,
+          "confidence": "verified",
+          "note": "27-202: 'A dwelling unit especially created for and limited to occupancy by a close relative of the permanent residents of the principal dwelling unit'. The code does not say whether it must be inside the house. 27-403.4C(4) speaks of reconverting it 'into part of the principal dwelling unit' or removing it."
+        },
+        {
+          "name": "Conversion apartments (residential conversion)",
+          "path": "special_exception",
+          "districts": [
+            "R4",
+            "R5",
+            "NC",
+            "HC"
+          ],
+          "conditions": "Conversion of an existing single-family detached house into more units. Public sewer and water. At least 600 sq ft of habitable heated floor area for each unit and 4,000 sq ft of lot for each unit. One front entrance, no front outside stair, site plan to the Zoning Officer.",
+          "min_lot_sqft": 8000,
+          "section": "27-306, 27-402.YY",
+          "url": "https://ecode360.com/print/UP2477?guid=14516459",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer service",
+              "section": "27-306"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water service",
+              "section": "27-306"
+            }
+          ],
+          "note": "8,000 sq ft is two units at 4,000 sq ft each (27-402.YY(11)). The use is listed 'other than one accessory apartment'."
+        }
+      ],
+      "section": "27-306, 27-402, 27-403",
+      "url": "https://ecode360.com/print/UP2477?guid=14516362",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R3",
+        "R4",
+        "R5",
+        "NC",
+        "HC",
+        "LI",
+        "LI(L)",
+        "GI"
+      ],
+      "section": "27-306",
+      "url": "https://ecode360.com/print/UP2477?guid=14516362",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "SE in R3, R4, R5. P in NC, HC, LI, LI(L), GI."
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached"
+      ],
+      "section": "27-306, 27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Within an existing single-family detached dwelling or within an existing single-family semidetached dwelling (half of a twin dwelling)'."
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Only within an existing dwelling."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "Only within an existing single-family detached house or an existing twin half.",
+          "effect": "bars",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "house_exists",
+          "section": "27-403.4A",
+          "url": "https://ecode360.com/print/UP2477?guid=14517058"
+        },
+        {
+          "kind": "size",
+          "condition": "The house as it exists must have at least 1,500 sq ft of total floor area, and the main unit must keep at least 800 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "house_sqft_at_least",
+          "value": 1500,
+          "section": "27-403.4A(7)",
+          "url": "https://ecode360.com/print/UP2477?guid=14517058"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "'One of the dwelling units shall be owner-occupied or occupied by a relative of the owner for a minimum period of 36 months following the conversion.'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-403.4A(6)",
+          "url": "https://ecode360.com/print/UP2477?guid=14517058"
+        },
+        {
+          "kind": "design",
+          "condition": "Keeps the look of a single-family house or twin with one front entrance. Other entrances on the side or rear. No outside stair on the front and not four or more parking spaces in the required front yard. Separate cooking and sanitary facilities. A lot of four or more spaces is screened from neighboring houses.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-403.4A(2) to (5)",
+          "url": "https://ecode360.com/print/UP2477?guid=14517058"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Any on-lot septic system must be recertified if sewage flows will increase.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-403.4A(1)",
+          "url": "https://ecode360.com/print/UP2477?guid=14517058"
+        },
+        {
+          "kind": "other",
+          "condition": "At most two dwelling units in the building.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-403.4A(8)",
+          "url": "https://ecode360.com/print/UP2477?guid=14517058"
+        }
+      ],
+      "section": "27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal"
+      ],
+      "section": "27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Within an existing dwelling only. A detached unit, a garage unit and an addition are not listed, and unlisted accessory uses to a dwelling are not permitted (27-306)."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No maximum size for the accessory apartment. The main unit must keep at least 800 sq ft."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No share cap."
+    },
+    "min_sqft": {
+      "value": 600,
+      "section": "27-801.4",
+      "url": "https://ecode360.com/print/UP2477?guid=14517591",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'Each dwelling unit shall include a minimum of 600 square feet of habitable, indoor, heated floor area.' Read as reaching the accessory apartment, which is a dwelling unit."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "27-307.2B",
+      "url": "https://ecode360.com/print/UP2477?guid=14516436",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No detached unit. A unit inside the house takes the district height."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-307.2B",
+      "url": "https://ecode360.com/print/UP2477?guid=14516436",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Principal building 35 ft and 2 1/2 stories in R3, R4 and R5."
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 25,
+      "section": "27-307.2A, 2B",
+      "url": "https://ecode360.com/print/UP2477?guid=14516436",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Accessory building 25 ft or the house height, whichever is less, and one story plus a storage floor. Not reached by an internal unit."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "27-403.4A(6)",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Owner or a relative of the owner in one of the units for at least 36 months after the conversion. After that the code is silent."
+    },
+    "family_only": {
+      "value": false,
+      "section": "27-403.4A",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No family rule for the accessory apartment. The apartment for care of relative is family only (27-403.4C)."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-306, 27-403.4A(8)",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Accessory apartment, one'. At most two dwelling units in the building."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "27-202",
+      "url": "https://ecode360.com/print/UP2477?guid=14515848",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No short-term rental term was found in the definitions. Not searched further."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-601.1",
+      "url": "https://ecode360.com/print/UP2477?guid=14517380",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "27-601: dwelling unit '2 per dwelling unit, except 1 per 1-bedroom/efficiency conversion apartment'."
+    },
+    "reading": {
+      "value": "Each dwelling unit needs 2 spaces, so 4 with the house. If the apartment counts as a one-bedroom conversion apartment it needs 1, so 3 in all. Ask the zoning officer.",
+      "section": "27-601.1, 27-403.4A(3)",
+      "url": "https://ecode360.com/print/UP2477?guid=14517380",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "27-601.1",
+      "url": "https://ecode360.com/print/UP2477?guid=14517380",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Two spaces for each of the two dwelling units."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "27-403.4A(1)",
+      "url": "https://ecode360.com/print/UP2477?guid=14517058",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Septic recertification if flows increase. No rule on a separate connection."
+    }
+  },
+  "districts": {
+    "R3": {
+      "min_lot_sqft": {
+        "value": 14000,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling with both public sewer and public water. The table states lot area 'per dwelling unit for residential purposes'."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 14000,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two sides."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer or public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          },
+          {
+            "when": "Public sewer but not public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          },
+          {
+            "when": "Public water but not public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          }
+        ],
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Figures for a single-family detached dwelling without both public services."
+      }
+    },
+    "R4": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling with both public sewer and public water. The table states lot area 'per dwelling unit for residential purposes'."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 12000,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two sides."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer or public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          },
+          {
+            "when": "Public sewer but not public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          },
+          {
+            "when": "Public water but not public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          }
+        ],
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Figures for a single-family detached dwelling without both public services."
+      }
+    },
+    "R5": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling with both public sewer and public water. The table states lot area 'per dwelling unit for residential purposes'."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8000,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two sides."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer or public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          },
+          {
+            "when": "Public sewer but not public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          },
+          {
+            "when": "Public water but not public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          }
+        ],
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Figures for a single-family detached dwelling without both public services."
+      }
+    },
+    "NC": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "27-307.2C note 1: in NC residential uses follow the R4 rules. R4 single-family detached with both public services."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 12000,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The lot area is stated 'per dwelling unit'. Whether the accessory apartment needs a second share of lot area is not settled. Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two sides."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer or public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          },
+          {
+            "when": "Public sewer but not public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          },
+          {
+            "when": "Public water but not public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 20,
+            "principal_max_height_ft": 35,
+            "section": "27-307.2B"
+          }
+        ],
+        "section": "27-307.2B",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Figures for a single-family detached dwelling without both public services."
+      }
+    }
+  }
+}
