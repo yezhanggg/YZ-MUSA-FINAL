@@ -39,10 +39,15 @@ from pipeline.paths import processed_dir  # noqa: E402
 RESULTS_5500 = processed_dir("5500")
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 SIMPLIFY = 0.0003  # degrees, about 30 m. Keeps the files small.
-# The counties with lot records (Allegheny for Pittsburgh, Philadelphia, Lehigh for Allentown) and the finer shapes of
-# their tract index.
-CITY_COUNTIES = ("42003", "42101", "42077")
-CITY_TOWNS = ("Pittsburgh city", "Philadelphia city", "Allentown city")
+# The counties with lot records (Allegheny for Pittsburgh, Philadelphia, Lehigh for Allentown, and the county places
+# Chester and Centre, whose lots cover the towns listed in app/src/lib/lot/towns.ts) and the finer shapes of their
+# tract index.
+CITY_COUNTIES = ("42003", "42101", "42077", "42029", "42027")
+CITY_TOWNS = (
+    "Pittsburgh city", "Philadelphia city", "Allentown city",
+    "West Chester borough", "Phoenixville borough", "West Vincent township", "Malvern borough", "East Brandywine township",
+    "College township",
+)
 CITY_SIMPLIFY = 0.00003  # degrees, about 3 m
 
 

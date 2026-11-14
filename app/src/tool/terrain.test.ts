@@ -16,7 +16,8 @@ describe('terrain source per place', () => {
     expect(placeOfLot('42003-0116K00029000000')).toBe('pittsburgh');
     expect(placeOfLot('42101-011307005')).toBe('philadelphia');
     expect(placeOfLot('42077-548659263446')).toBe('allentown');
-    expect(placeOfLot('42029-123')).toBeNull();
+    expect(placeOfLot('42029-1-4-50')).toBe('chester_county');
+    expect(placeOfLot('42045-123')).toBeNull();
     expect(placeOfLot(null)).toBeNull();
   });
 

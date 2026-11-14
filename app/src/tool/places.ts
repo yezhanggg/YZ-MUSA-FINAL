@@ -7,6 +7,8 @@
 import { create } from 'zustand';
 import type { Answer } from '../lib/lot/answer';
 import { dateText } from '../lib/lot/words';
+import { LOT_TOWNS, lotTownByGeoid, lotTownOf } from '../lib/lot/towns';
+import type { LotRecord } from '../lib/lot/types';
 
 export type PlaceStatus = 'by_right' | 'limited' | 'not_addressed' | 'prohibited' | 'no_zoning' | 'unknown';
 export type PlaceTier = 'verified' | 'drafted' | 'reported' | 'text_search' | 'baseline';
@@ -395,20 +397,17 @@ export function placeRows(r: PlaceRow | undefined, mode: PlaceMode): PlaceRowVie
   return out.slice(0, 4);
 }
 
-/** Pittsburgh, Philadelphia and Allentown have lot records: "Test a lot here" stays for them. */
-export const hasLotTesting = (geoid: string | undefined | null) => geoid === '4200361000' || geoid === '4210160000' || geoid === '4207702000';
+/** The towns with lot records (lib/lot/towns.ts: Pittsburgh, Philadelphia, Allentown and the towns of the county
+ * places): "Test a lot here" stays for them. The rest of a county place's county has no lot records. */
+export const hasLotTesting = (geoid: string | undefined | null) => lotTownByGeoid(geoid) !== null;
 
-/** Zoning codes of the lot cities, for Test Project before the places file is loaded: shared/rules/towns_index.json
+/** Zoning codes of the lot towns, for Test Project before the places file is loaded: shared/rules/towns_index.json
  * code_url, the code the rule files cite (places.test.ts checks both against those files). */
-export const LOT_CITY_CODE: Record<string, string> = {
-  '4200361000': 'https://ecode360.com/45474194',
-  '4210160000': 'https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292755',
-  '4207702000': 'https://ecode360.com/49783893',
-};
+export const LOT_CITY_CODE: Record<string, string> = Object.fromEntries(LOT_TOWNS.map((t) => [t.geoid, t.code_url]));
 
-/** The municipality of a lot record by its county (each lot city is the only place with lots in its county). A lot
- * opened from a link has a tract but no town GEOID until Explore's areas load. */
-export const LOT_TOWN_BY_COUNTY: Record<string, string> = { '42003': '4200361000', '42101': '4210160000', '42077': '4207702000' };
+/** The municipality GEOID of a lot record: its town's rule file (a county place holds several towns). A lot opened
+ * from a link has a tract but no town GEOID until Explore's areas load. */
+export const lotTownGeoid = (lot: LotRecord | null | undefined): string | undefined => lotTownOf(lot)?.geoid;
 
 /** The tiny header link: the zoning code, else the town website, else none. */
 export function codeLink(r: PlaceRow | undefined, geoid: string | undefined | null): { href: string; label: string } | null {

@@ -11,11 +11,15 @@ import { ANSWER_COLOR, LEGEND, LOT_ZOOM, testableCaption } from '../testable';
 import { useManifests } from './placeData';
 
 
-/** Places with lot records, and a home street to fly to. */
+/** Places with lot records, and a home street to fly to (placeData.ts PLACES, in the order of the loader's registry). */
 export const LOT_PLACES = [
   { id: 'pittsburgh', name: 'Pittsburgh', center: [-79.9236, 40.4381] as [number, number] },
   { id: 'philadelphia', name: 'Philadelphia', center: [-75.0126, 40.0618] as [number, number] },
   { id: 'allentown', name: 'Allentown', center: [-75.4880, 40.6010] as [number, number] },
+  // County places hold several towns: the row is named for the county and flies to its largest town with lots by right
+  // (West Chester, College Township).
+  { id: 'chester_county', name: 'Chester County', center: [-75.6060, 39.9584] as [number, number] },
+  { id: 'centre_county', name: 'Centre County', center: [-77.8216, 40.8113] as [number, number] },
 ];
 
 /** "Testable Lots": the switch on the title line, then one row per city that flies there, with its lot count (three

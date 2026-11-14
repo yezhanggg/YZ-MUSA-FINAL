@@ -6,6 +6,7 @@ import { SCENARIO_NAME, SCENARIO_PHRASE, TYPE_LABEL, sqftText } from '../../lib/
 import { KV } from '../Report';
 import { typeOptions, type UnitDraft } from '../testState';
 import { PLACE_TITLE, usePlaceStats } from './placeData';
+import { lotTownOf, townShortName, townsOfPlace } from '../../lib/lot/towns';
 
 const isLaw = (s: Scenario) => s === 'today';
 const scenarioName = (s: Scenario) => (isLaw(s) ? SCENARIO_NAME[s] : `${SCENARIO_NAME[s]} (not law)`);
@@ -56,12 +57,16 @@ function cottageToday(t: { detached_by_right: number; detached_legal?: number })
   return `A new backyard cottage has a legal path on ${pct(legal)}, by right on ${pct(t.detached_by_right)}.`;
 }
 
-/** The city-wide picture for the lot's place, from <lot data>/<place>/stats.json. */
-export function CityStory({ place }: { place: string | undefined }) {
+/** The city-wide picture for the lot's place, from <lot data>/<place>/stats.json. A county place with several towns
+ * gives the lot's own town (stats.json by_town). */
+export function CityStory({ place, lot }: { place: string | undefined; lot?: LotRecord }) {
   const stats = usePlaceStats(place);
-  const p = stats?.all.paths;
+  const town = place && townsOfPlace(place).length > 1 ? lotTownOf(lot) : null;
+  const own = town ? stats?.by_town?.[town.name] : undefined;
+  const p = own?.paths ?? stats?.all.paths;
   if (!stats || !p?.today) return <p className="text-small text-slate-600">No city numbers on file for this place.</p>;
-  const name = PLACE_TITLE[stats.place] ?? stats.place;
+  const name = own && town ? townShortName(town) : (PLACE_TITLE[stats.place] ?? stats.place);
+  const count = own?.lots ?? stats.lots;
   const lines: string[] = [
     `Today ${pct(p.today.allowed)} of these lots have a legal path for any ADU. ${cottageToday(p.today)}`,
   ];
@@ -70,7 +75,7 @@ export function CityStory({ place }: { place: string | undefined }) {
   return (
     <div aria-label={`${name} at a glance`}>
       <div className="text-caption font-semibold uppercase tracking-[0.12em] text-slate-500">
-        {name}, all {stats.lots.toLocaleString('en-US')} lots
+        {name}, all {count.toLocaleString('en-US')} lots
       </div>
       <p className="mt-1 text-small leading-snug text-slate-700">{lines.join(' ')}</p>
     </div>

@@ -31,7 +31,7 @@ const CREDITS = [
   '<a href="https://maplibre.org/" target="_blank" rel="noreferrer">MapLibre</a>',
   'Search <a href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a> (OSM data, ODbL)',
   'Building outlines <a href="https://github.com/microsoft/GlobalMLBuildingFootprints" target="_blank" rel="noreferrer">Microsoft</a> (ODbL)',
-  'Parcels: City of Philadelphia, Allegheny County',
+  'Parcels: City of Philadelphia, Allegheny County, Chester County, Centre County',
 ];
 
 const MOE_NONE: ExpressionSpecification = ['==', ['get', 'GEOID'], '__none__'];
@@ -49,6 +49,8 @@ const PARCEL_SOURCES = [
   { id: 'parcels-pgh', url: () => tilesUrl('pittsburgh', 'parcels.pmtiles'), lots: () => tilesUrl('pittsburgh', 'lots.pmtiles'), overview: () => tilesUrl('pittsburgh', 'overview.pmtiles') },
   { id: 'parcels-phl', url: () => tilesUrl('philadelphia', 'parcels.pmtiles'), lots: () => tilesUrl('philadelphia', 'lots.pmtiles'), overview: () => tilesUrl('philadelphia', 'overview.pmtiles') },
   { id: 'parcels-abe', url: () => tilesUrl('allentown', 'parcels.pmtiles'), lots: () => tilesUrl('allentown', 'lots.pmtiles'), overview: () => tilesUrl('allentown', 'overview.pmtiles') },
+  { id: 'parcels-chc', url: () => tilesUrl('chester_county', 'parcels.pmtiles'), lots: () => tilesUrl('chester_county', 'lots.pmtiles'), overview: () => tilesUrl('chester_county', 'overview.pmtiles') },
+  { id: 'parcels-cen', url: () => tilesUrl('centre_county', 'parcels.pmtiles'), lots: () => tilesUrl('centre_county', 'lots.pmtiles'), overview: () => tilesUrl('centre_county', 'overview.pmtiles') },
 ] as const;
 type ParcelSource = (typeof PARCEL_SOURCES)[number]['id'];
 const fillOf = (src: ParcelSource) => `${src}-fill`;

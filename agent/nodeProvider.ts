@@ -9,7 +9,8 @@ import type { AddressEntry } from '../app/src/agent/areaTools';
 import type { DataProvider, SiteRecord } from '../app/src/agent/executors';
 import type { LotAgentProvider } from '../app/src/lib/lot/agentTools';
 import { PLACE_BY_COUNTY, loadLot, loadTractLots, lotByIdAnywhere, type Fetcher } from '../app/src/lib/lot/load';
-import type { LotRecord, Scenario } from '../app/src/lib/lot/types';
+import type { Citation, LotRecord, Scenario } from '../app/src/lib/lot/types';
+import { lotTownByFile, townsOfPlace } from '../app/src/lib/lot/towns';
 import { DEFAULT_MONEY, moneyOptions, tractRents } from '../app/src/tool/testState';
 import { zoningTextSource, type ZoningTextSource } from '../app/src/agent/zoningText';
 import { memoryPlaces, type PlaceRow, type PlacesSource } from '../app/src/agent/placeAnswer';
@@ -118,13 +119,27 @@ function addressesOf(place: string): AddressEntry[] {
   else {
     const dir = resolve(lotRoot(place), 'detail');
     for (const tract of tractsOnDisk(place)) {
-      const read = (name: string) => JSON.parse(gunzipSync(readFileSync(resolve(dir, name))).toString('utf8')) as { lots: { lot: { id: string; address?: string | null } }[]; more?: string[] };
+      type Cites = Record<string, Citation | null> | { $cite: number };
+      type Part = { lots: { lot: { id: string; address?: string | null }; rules?: { today?: { citations?: Cites } } }[]; citations?: Record<string, Citation | null>[]; more?: string[] };
+      const read = (name: string) => JSON.parse(gunzipSync(readFileSync(resolve(dir, name))).toString('utf8')) as Part;
+      // The town of a lot in a county place: the town rule file its citations name (a city place's town is added below).
+      const townOf = (part: Part, l: Part['lots'][number]): string | undefined => {
+        const c = l.rules?.today?.citations;
+        const table = c && '$cite' in c ? part.citations?.[c.$cite as number] : (c as Record<string, Citation | null> | undefined);
+        for (const x of Object.values(table ?? {})) {
+          const t = lotTownByFile(x?.source_file);
+          if (t) return t.name;
+        }
+        return undefined;
+      };
       const head = read(`${tract}.json.gz`);
       for (const part of [head, ...(head.more ?? []).map(read)])
-        for (const l of part.lots) if (l.lot.address) entries.push({ lot_id: l.lot.id, tract, place, address: l.lot.address });
+        for (const l of part.lots) if (l.lot.address) entries.push({ lot_id: l.lot.id, tract, place, ...(townOf(part, l) ? { town: townOf(part, l) } : {}), address: l.lot.address });
     }
     if (version !== 'none') writeFileSync(cacheFile, JSON.stringify(entries));
   }
+  const only = townsOfPlace(place);
+  if (only.length === 1) entries = entries.map((e) => ({ ...e, town: only[0].name }));
   addressCache.set(place, entries);
   return entries;
 }

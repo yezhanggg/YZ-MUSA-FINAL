@@ -5,7 +5,7 @@ import { ExternalLink, Minus } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { dateText } from '../lib/lot/words';
 import { useLegendSlot } from './layout';
-import { codeLink, LOT_TOWN_BY_COUNTY, HATCH_LINE, LEGEND_ORDER, STATUS_COLOR, STATUS_HINT, STATUS_NAME, peopleShares, placeAnswer, placeRows, placesShown, shareText, usePlaces, type PlaceRow } from './places';
+import { codeLink, lotTownGeoid, HATCH_LINE, LEGEND_ORDER, STATUS_COLOR, STATUS_HINT, STATUS_NAME, peopleShares, placeAnswer, placeRows, placesShown, shareText, usePlaces, type PlaceRow } from './places';
 import { useTool, type Spot } from './store';
 import { AnswerBox, NotLaw, Row, Rows } from './test/Answer';
 
@@ -68,7 +68,7 @@ export function PlacesLegend() {
 /** The place row for a spot, when the table has it. */
 export function usePlaceRow(spot: Spot): PlaceRow | undefined {
   const places = usePlaces((s) => s.places);
-  const geoid = spot.town.GEOID as string | undefined;
+  const geoid = lotTownGeoid(spot.record) ?? (spot.town.GEOID as string | undefined);
   return geoid ? places?.byGeoid.get(geoid) : undefined;
 }
 
@@ -130,8 +130,8 @@ export function PlaceRows({ spot }: { spot: Spot }) {
 /** The header sub line, with a tiny link to the town's zoning code (or its website) at its end. */
 export function HeadSub({ spot, text }: { spot: Spot; text?: string }) {
   const r = usePlaceRow(spot);
-  const lot = spot.record?.lot;
-  const geoid = (spot.town.GEOID as string | undefined) ?? (lot ? LOT_TOWN_BY_COUNTY[lot.county_fips ?? lot.id.slice(0, 5)] : undefined);
+  // A lot record names its own town (a county place holds several), else the town at the spot.
+  const geoid = lotTownGeoid(spot.record) ?? (spot.town.GEOID as string | undefined);
   const link = codeLink(r, geoid);
   if (!link) return text ? <>{text}</> : null;
   return (

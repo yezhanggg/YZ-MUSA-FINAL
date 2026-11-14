@@ -11,7 +11,7 @@ import { lotPlacesText } from './lotPlaces';
 // ------------------------------------------------------------------ find_lot
 export const FIND_LOT_TOOL: ToolDef = {
   name: 'find_lot',
-  description: `Find a lot record by street address (lot records exist for ${lotPlacesText()}). Returns up to 5 candidates with lot id, tract and place. Then use the lot tools with that lot_id.`,
+  description: `Find a lot record by street address (lot records exist for ${lotPlacesText()}). Returns up to 5 candidates with lot id, tract, place and town. Then use the lot tools with that lot_id.`,
   input_schema: { type: 'object', properties: { address: { type: 'string', description: 'street address, e.g. 1204 Spruce St' } }, required: ['address'] },
 };
 
@@ -19,6 +19,8 @@ export interface AddressEntry {
   lot_id: string;
   tract: string;
   place: string;
+  /** The municipality, when the provider knows it ("West Chester borough"): a county place holds several towns. */
+  town?: string;
   address: string;
 }
 

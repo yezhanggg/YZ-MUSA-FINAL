@@ -11,6 +11,9 @@ import { centroid, frameOf } from '../lib/lot/geometry';
 import { toFeet } from '../lib/fitBox';
 import type { LotRecord } from '../lib/lot/types';
 import { lotByAddress, startUnit, typeFor } from './testState';
+import { lotTownOf, townsOfPlace } from '../lib/lot/towns';
+import { lotPlacesText } from '../agent/lotPlaces';
+import { PLACE_TITLE } from './test/placeData';
 
 export { mapPadding };
 
@@ -32,8 +35,6 @@ function ripple(pt: LngLat) {
   window.setTimeout(() => m.remove(), 900);
 }
 
-const PLACE_NAME: Record<string, string> = { pittsburgh: 'Pittsburgh', philadelphia: 'Philadelphia' };
-
 interface RecordResult {
   record: LotRecord | null;
   recordNote: string | null;
@@ -44,7 +45,7 @@ interface RecordResult {
 
 /** What is missing when a place has no lot records, said plainly. */
 function noRecordsHere(t: TractProps): string {
-  return `There are no lot records for ${t.county ? `${t.county} County` : 'this place'} yet. Lot records cover Pittsburgh and Philadelphia. The tract and town numbers below still apply.`;
+  return `There are no lot records for ${t.county ? `${t.county} County` : 'this place'} yet. Lot records cover ${lotPlacesText()}. The tract and town numbers below still apply.`;
 }
 
 /**
@@ -65,7 +66,7 @@ async function recordAt(pt: LngLat, tract: TractProps, signal: AbortSignal, labe
   } catch (e) {
     if (isLotLoadError(e) && e.kind === 'aborted') return null;
     const why = isLotLoadError(e) ? e.userMessage : 'The lot data could not be loaded.';
-    const missing = isLotLoadError(e) && e.kind === 'not_found' ? `There is no lot file for ${PLACE_NAME[place] ?? place} here yet. ` : '';
+    const missing = isLotLoadError(e) && e.kind === 'not_found' ? `There is no lot file for ${PLACE_TITLE[place] ?? place} here yet. ` : '';
     return { record: null, recordNote: `${missing}${why} The tract and town numbers below still apply.`, builtAt: null, loadFailed: !missing };
   }
 }
@@ -80,13 +81,28 @@ function fitUnitTo(record: LotRecord) {
 let pending: AbortController | null = null;
 
 /** County names for the places with lot records, for a tract known only by its GEOID. */
-const COUNTY_OF: Record<string, string> = { '42003': 'Allegheny', '42101': 'Philadelphia', '42077': 'Lehigh' };
-const CITY_OF: Record<string, string> = { '42003': 'Pittsburgh city', '42101': 'Philadelphia city', '42077': 'Allentown city' };
+const COUNTY_OF: Record<string, string> = { '42003': 'Allegheny', '42101': 'Philadelphia', '42077': 'Lehigh', '42029': 'Chester', '42027': 'Centre' };
+
+/** The town of a tract known only by its GEOID: the city of a one-town place. A county place's town comes from the
+ * lot record (townOfRecord). */
+function cityOf(geoid: string): string | undefined {
+  const place = placeOfGeoid(geoid);
+  const towns = place ? townsOfPlace(place) : [];
+  return towns.length === 1 ? towns[0].name : undefined;
+}
+
+/** The town of a lot record (its rule file's town) when it differs from the town found at the spot: a county place
+ * holds several towns, and a tract index or a link names a tract, not a town. Full town properties when loaded. */
+function townOfRecord(record: LotRecord | null, town: TownProps): TownProps {
+  const t = lotTownOf(record);
+  if (!t || town.GEOID === t.geoid) return town;
+  return useTool.getState().towns?.features.find((f) => f.properties.GEOID === t.geoid)?.properties ?? { GEOID: t.geoid, NAMELSAD: t.name };
+}
 
 /** A tract named by a parcel tile or a link, before (or without) the tract file: enough for the lot panel. */
 function knownTract(geoid: string): { tract: TractProps; town: TownProps } {
   const t = Number(geoid.slice(5)) / 100;
-  return { tract: { GEOID: geoid, NAMELSAD: `Census Tract ${t}`, county: COUNTY_OF[geoid.slice(0, 5)] }, town: { NAMELSAD: CITY_OF[geoid.slice(0, 5)] } };
+  return { tract: { GEOID: geoid, NAMELSAD: `Census Tract ${t}`, county: COUNTY_OF[geoid.slice(0, 5)] }, town: { NAMELSAD: cityOf(geoid) } };
 }
 
 /**
@@ -143,7 +159,7 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
     }
   }
   const record = rec.record;
-  const spot: Spot = { n, label: record?.lot.address ? titleCase(record.lot.address) : label, pt, tract: area.tract, town: area.town, parcel: parcel ?? null, ...rec };
+  const spot: Spot = { n, label: record?.lot.address ? titleCase(record.lot.address) : label, pt, tract: area.tract, town: townOfRecord(record, area.town), parcel: parcel ?? null, ...rec };
   if (record && !opts.keepUnit) fitUnitTo(record);
   set({ busy: false, selectedLot: record?.lot.id ?? null, spot });
   syncHash();

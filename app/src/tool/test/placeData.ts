@@ -22,6 +22,8 @@ export interface PlaceStats {
   place: string;
   lots: number;
   all: { paths: Partial<Record<'today' | 'local_reform' | 'state_reform', Paths>> };
+  /** A county place: the same numbers per town, by Census name ("West Chester borough"). */
+  by_town?: Record<string, { lots: number; paths: Partial<Record<'today' | 'local_reform' | 'state_reform', Paths>> }>;
 }
 
 const cache = new Map<string, Promise<unknown>>();
@@ -37,8 +39,8 @@ function getJson<T>(url: string): Promise<T | null> {
   return p as Promise<T | null>;
 }
 
-export const PLACES = ['philadelphia', 'pittsburgh', 'allentown'] as const;
-export const PLACE_TITLE: Record<string, string> = { philadelphia: 'Philadelphia', pittsburgh: 'Pittsburgh', allentown: 'Allentown' };
+export const PLACES = ['philadelphia', 'pittsburgh', 'allentown', 'chester_county', 'centre_county'] as const;
+export const PLACE_TITLE: Record<string, string> = { philadelphia: 'Philadelphia', pittsburgh: 'Pittsburgh', allentown: 'Allentown', chester_county: 'Chester County', centre_county: 'Centre County' };
 
 function usePlaceFile<T>(place: string | null | undefined, file: string): T | null {
   const [v, setV] = useState<T | null>(null);

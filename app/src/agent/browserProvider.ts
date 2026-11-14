@@ -12,6 +12,13 @@ import { moneyOptions, tractRents } from '../tool/testState';
 import { zoningTextSource } from './zoningText';
 import { placesSource } from './placeAnswer';
 import { lotPlacesText } from './lotPlaces';
+import { lotTownOf } from '../lib/lot/towns';
+
+/** { town } of a lot record for find_lot, when its town is known. */
+const townOf = (r: LotRecord) => {
+  const t = lotTownOf(r);
+  return t ? { town: t.name } : {};
+};
 
 function siteOfLot(lot: Lot): SiteRecord {
   const { tracts, towns } = useTool.getState();
@@ -117,7 +124,7 @@ export const browserProvider: DataProvider = {
   },
   async addressBook() {
     const recs = loadedLots();
-    const entries = recs.filter((r) => r.lot.address).map((r) => ({ lot_id: r.lot.id, tract: r.lot.tract ?? '', place: r.lot.place ?? '', address: r.lot.address! }));
+    const entries = recs.filter((r) => r.lot.address).map((r) => ({ lot_id: r.lot.id, tract: r.lot.tract ?? '', place: r.lot.place ?? '', ...townOf(r), address: r.lot.address! }));
     return { entries, scope: `lot records loaded on the map (${new Set(entries.map((e) => e.tract)).size} tracts). Search the address on the map to load more` };
   },
   async areas() {

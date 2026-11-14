@@ -6,6 +6,7 @@
 import { ASSUMPTIONS } from '../money';
 import { NOTICE, collectSources, sourcesOf, verdictCitations, type CitationView } from './citations';
 import { lotMoney, type MoneyOptions } from './summary';
+import { lotTownOf } from './towns';
 import { ADU_TYPES, SCENARIOS, isAduType, isScenario, type AduType, type LotRecord, type RentByBedroom, type Scenario } from './types';
 import { approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from './verdict';
 import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_TITLE, isNum } from './words';
@@ -170,6 +171,9 @@ const hasCover = (lot: LotRecord) => !!lot.cover && Object.keys(lot.cover).lengt
 /** What a check could not test, said as "not checked" (never a pass or a fail). */
 export const NOT_CHECKED = 'not checked';
 
+/** The municipality of a lot record, "West Chester borough". */
+const townName = (lot: LotRecord) => lotTownOf(lot)?.name ?? 'not on file';
+
 export function getLotFacts(lot: LotRecord) {
   const f = lot.facts ?? {};
   const garage = lot.buildings.filter((b) => b.role === 'garage').sort((a, b) => b.area_sqft - a.area_sqft)[0];
@@ -177,6 +181,8 @@ export function getLotFacts(lot: LotRecord) {
   return compact({
     lot_id: lot.lot.id,
     address: lot.lot.address ?? 'not on file',
+    // The municipality whose rules apply (a county place holds several towns): name this town, not the place.
+    town: townName(lot),
     place: lot.lot.place ?? 'not on file',
     tract: lot.lot.tract ?? 'not on file',
     lot_sqft: lot.lot.area_sqft,
@@ -207,6 +213,7 @@ export function getLotRules(lot: LotRecord, scenario: Scenario) {
   const byType = Object.fromEntries(ADU_TYPES.map((t) => [t, approvalFor(lot, scenario, t).label]));
   return compact({
     lot_id: lot.lot.id,
+    town: townName(lot),
     scenario,
     scenario_title: SCENARIO_TITLE[scenario],
     is_law: isLaw(lot, scenario),
@@ -254,6 +261,7 @@ export function changesFromToday(lot: LotRecord, scenario: Scenario): Record<str
 function verdictOut(lot: LotRecord, v: UnitVerdict) {
   return {
     lot_id: lot.lot.id,
+    town: townName(lot),
     scenario: v.scenario,
     is_law: isLaw(lot, v.scenario),
     unit: unitOut(v),

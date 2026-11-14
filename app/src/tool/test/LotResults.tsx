@@ -114,7 +114,7 @@ function WithRecord({ record, builtAt, tab }: { record: LotRecord; builtAt: stri
           <FactsBody lot={record} builtAt={builtAt} />
         </Fold>
         <Fold title="City numbers">
-          <CityStory place={record.lot.place} />
+          <CityStory place={record.lot.place} lot={record} />
         </Fold>
       </Folds>
       <ShortNotice />
