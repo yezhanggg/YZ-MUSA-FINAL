@@ -2775,17 +2775,17 @@
       "pop_rank": 120,
       "file": "pa_delaware_concord",
       "batch": 20,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10946616",
       "plain_fetch": false,
       "code_current_through": "2025-05-13",
-      "code_note": "Zoning: Chapter 210 Zoning (Ord. No. 132, 12-7-1982, as amended). No general ADU rule: residence districts allow listed uses 'and for no other'. 'Single-family residence with an accessory apartment' (210-4, 210-72A(1)(f), 210-74C(17)) by right only inside an XR-PRD-1 planned residential development (50 acres, attached, 600 to 1,000 sq ft, two bedrooms). Added dwelling unit in a Class I or II historic resource by conditional use (210-183.7B). Read in the browser on eCode360 (CO1622).",
+      "code_note": "Zoning: Chapter 210 Zoning (Ord. No. 132, 12-7-1982, as amended). No general ADU rule: residence districts allow listed uses 'and for no other'. 'Single-family residence with an accessory apartment' (210-4, 210-72A(1)(f), 210-74C(17)) by right only inside an R-PRD-1 planned residential development (50 acres, public water and sewer) on a lot the approved plan designates for it (attached, 600 to 1,000 sq ft, two bedrooms, at most 30% of the units). Added dwelling unit in a Class I or II historic resource by conditional use (210-183.7B) on a property large enough for two units under the district rules, else a Zoning Hearing Board variance (210-183.8A). Read in the browser on eCode360 (CO1622).",
       "why": [
-        "named as a town with an ADU ordinance (Code 210-72A(1)(f) accessory apartment (XR-PRD-1) and 210-183.7B historic added unit). Its code as read has no ADU rule (not addressed)"
+        "named as a town with an ADU ordinance (Code 210-72A(1)(f) accessory apartment (R-PRD-1) and 210-183.7B historic added unit). Its code as read has no ADU rule (not addressed)"
       ],
-      "status_note": "Drafted 2026-11-14, awaiting independent review. Open points: R-3 lot and yard figures depend on whether the plan was approved before or after May 11, 1959 (the file holds the later ones); no height is written for R-3 or R-4; whether the accessory building caps (750 sq ft, 15 ft) reach a unit in an existing historic barn; the Historic Resources Map is a PDF, so the class of a resource cannot be checked from the code text. Not read: R-A, R-AH, R-MHD, R-PRD-2, R-PRD-3, commercial, M/I, LI, PIP, R-PLO and PBPD use lists, the Concordville Village Overlay (210-125.1), Article XXVII, definitions J to Z."
+      "status_note": "Verified 2026-11-14 after independent review; all findings fixed (R-PRD-1 key, plan designation gate, historic lot-size bar with the 210-183.8A variance, garage heights). Open: the Historic Resources Map is a PDF, so a resource's class cannot be checked from the code text; R-3 lot figures depend on whether the plan was approved before or after May 11, 1959 (the tool tests the lower 30,000 sq ft for two units and names 60,000 as a condition); no height written for R-3 or R-4; whether the accessory caps (750 sq ft, 15 ft) reach a unit in an existing historic barn; a lot not designated on the PRD plan reads variance though the real step is a Council plan amendment (schema gap). Not read: 210-75 to 210-82 (PRD approval procedure), R-A, R-AH, R-MHD, R-PRD-2, R-PRD-3, commercial, M/I, LI, PIP, R-PLO and PBPD use lists, the Concordville Village Overlay (210-125.1), Article XXVII, 210-183.9, definitions J to Z."
     },
     {
       "geoid": "4202921192",
@@ -2799,17 +2799,17 @@
       "pop_rank": 118,
       "file": "pa_chester_east_goshen",
       "batch": 20,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/7252554",
       "plain_fetch": false,
       "code_current_through": "2025-07-15",
-      "code_note": "Zoning: Chapter 240 Zoning (Ord. No. 119, 6-9-1997, as amended). ADU text: 'Apartment for care of a relative' (240-6, 240-32C): accessory use by right in R-1 to R-5, for a relative of a resident who needs care, at most two persons, reconverted or removed when no longer needed, recorded agreement against renting to a nonrelative. Historic resource conversion to dwelling units by conditional use (240-38.5A(2)(c)). Read in the browser on eCode360 (EA1698).",
+      "code_note": "Zoning: Chapter 240 Zoning (Ord. No. 119, 6-9-1997, as amended). ADU text: 'Apartment for care of a relative' (240-6, 240-32C): accessory use by right in R-1 to R-5, for a relative of a resident who needs care, at most two persons, reconverted or removed when no longer needed, recorded agreement against renting to a nonrelative. Outside R-1 to R-5 a use variance (240-4D does not reach a listed use). Historic resource conversion to dwelling units by conditional use (240-38.5A(2)(c), 240-38.7). Read in the browser on eCode360 (EA1698).",
       "why": [
         "named as a town with an ADU ordinance (Code 240-32C apartment for care of a relative)"
       ],
-      "status_note": "Drafted 2026-11-14, awaiting independent review. Open points: whether the apartment for care of a relative may be in a separate building (240-32C(4) allows 'completely removed'); whether it counts as a dwelling unit for parking (2 or 4 spaces); whether 240-4D lets a non-relative unit in as a similar unlisted use. Not read: commercial, industrial and business park use lists, 240-28 to 240-30, 240-36, 240-31, 240-38.7, definitions after I."
+      "status_note": "Verified 2026-11-14 after independent review; all findings fixed (no unlisted-use conditional use outside R-1 to R-5, relatives list, historic conversion wording, R-1 PRD condition, utilities gates, detached form in conflict). Open: R-1 PRD lots cannot be keyed in the schema, so an R-1 lot still shows the R-2 yards with a condition that a PRD lot takes 240-8E(4)(k) instead; whether a separate new building may hold the apartment (240-32C(4)); whether the apartment counts as a dwelling unit for parking (2 or 4 spaces, the text leans to 4); 240-38.7 seen only as a search excerpt. Not read: 240-14 to 240-21 use lists, 240-28 to 240-30, 240-36, 240-31, Article VII nonconforming lots, the other definitions after I."
     }
   ]
 }

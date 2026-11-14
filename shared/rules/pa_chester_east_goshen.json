@@ -43,10 +43,13 @@
       "The unit must be designed so it can easily be reconverted into part of the principal dwelling unit. When the relative no longer lives there it is reconverted or completely removed, kitchen and its plumbing and wiring included, with no exterior evidence left. Before use the owner records an agreement that bars renting it to a nonrelative. The house occupants report changes in adult residents (240-32C(4) to (6))",
       "The apartment may have its own kitchen and may not harm the single-family exterior appearance of the dwelling (240-32C(7), (8)). Otherwise a dwelling unit may not include a second kitchen or a walled-off living area 'unless specifically permitted by this chapter' (240-6 dwelling unit)",
       "No size cap and no parking rule of its own. A dwelling unit with three bedrooms or fewer needs 2 spaces, four or more 3 spaces (240-33)",
-      "Historic resources: a Class I or Class II historic resource on the Historic Resources Inventory may be converted into one or more dwelling units by conditional use of the Board of Supervisors, each unit at least 800 sq ft of habitable floor area with its own bathroom and kitchen, within the historic resource (240-38.5A(2)(c), B). The Board may modify area and bulk rules except height (240-38.6)",
-      "A use not permitted by right, by condition or by special exception anywhere is prohibited, but the Board of Supervisors may allow a closely similar unlisted use as a conditional use (240-4C, D). Only one principal use per lot unless specifically permitted (240-23A)"
+      "Historic resources: a Class I or Class II historic resource on the Historic Resources Inventory may be converted into one or more dwelling units by conditional use of the Board of Supervisors, as its one adaptive reuse, with each unit having its own bathroom and kitchen, within the historic resource (240-38.5A(2)(c), B). Except where the district provides otherwise, where several units result from the conversion each has at least 800 sq ft of habitable floor area (240-38.5A(2)(c)[1]). The Board must find the reuse necessary to preserve the resource for reasons other than purely economic grounds (240-38.7). The Board may modify area and bulk rules except height (240-38.6)",
+      "Outside R-1 to R-5 the apartment for care of a relative is not listed. 240-4D (conditional use for a similar unlisted use) reaches only a use 'not listed as permitted in any zoning district', and the apartment is listed in R-1 to R-5, so elsewhere the path is a use variance. Only one principal use per lot unless specifically permitted (240-23A)",
+      "R-1 planned residential development (PRD): within a PRD, 240-8E(4)(k) applies 'in place of any other setback or height requirements': no building within 15 ft of a paved cartway or of another building, residential buildings 50 ft from the tract's exterior lines and perimeter streets, height at most 30 ft, and the Board of Supervisors may vary these. A PRD lot has no lot minimum of its own (density at least 12,000 sq ft per detached unit on any one acre, 240-8E(1)(c)). The R-2 lot size and yards apply only to a single-family detached dwelling outside a PRD (240-8D(1)(b))",
+      "A garage or other structure of 80 sq ft or more accessory to a dwelling may not stand in the required front yard (240-32F). A garage is 'used only for storage purposes' (240-6)",
+      "A guest house (240-6) is a separate building for the temporary accommodation of guests in a PRD. It is a commercial use under 240-8D(1)(a)[2], not an ADU"
     ],
-    "notes": "Zoning office: East Goshen Township Zoning Officer. eCode360 code EA1698 is East Goshen Township, Chester County (Township of East Goshen, PA; Chester County Recorder of Deeds in 240-8). Read on eCode360 in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'living quarters', 'immediate family', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', 'two-family', duplex, caretaker, 'tenant house', 'guest house' and 'accessory living' found the apartment for care of a relative (240-6, 240-32C and the R-2 to R-5 accessory use lists), the PRD guest house definition, and group homes. A second search for unlisted uses, accessory building, 'second dwelling', 'additional dwelling' and 'in-law' found 240-4. Read in full: 240-8 to 240-12, 240-32, 240-23, 240-2, 240-38.5, 240-38.6, the definitions from A to I. Read on screen: 240-4, the residential rows of the 240-33 parking table. Not read: commercial, industrial and business park use lists (240-14 to 240-21), 240-28 cluster, 240-29 apartments, 240-30 townhouses, 240-36 open space development, 240-31 conditional use standards, 240-38.7 historic conditional use criteria, Article VII nonconforming lots, definitions after I."
+    "notes": "Zoning office: East Goshen Township Zoning Officer. eCode360 code EA1698 is East Goshen Township, Chester County (Township of East Goshen, PA; Chester County Recorder of Deeds in 240-8). Read on eCode360 in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'living quarters', 'immediate family', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', 'two-family', duplex, caretaker, 'tenant house', 'guest house' and 'accessory living' found the apartment for care of a relative (240-6, 240-32C and the R-2 to R-5 accessory use lists), the PRD guest house definition, and group homes. A second search for unlisted uses, accessory building, 'second dwelling', 'additional dwelling' and 'in-law' found 240-4. Read in full: 240-8 to 240-12, 240-32, 240-23, 240-2, 240-38.5, 240-38.6, the definitions from A to I and RELATED OR RELATIVE. Read on screen: 240-4, 240-33A(1), the residential rows of the 240-33 parking table. 240-38.7 seen only as a search excerpt ('for reasons other than purely economic grounds'). Not read: commercial, industrial and business park use lists (240-14 to 240-21), 240-28 cluster, 240-29 apartments, 240-30 townhouses, 240-36 open space development, 240-31 conditional use standards, 240-38.7 in full, Article VII nonconforming lots, the other definitions after I."
   },
   "adu": {
     "term": {
@@ -80,11 +83,11 @@
     },
     "status_outside": {
       "value": "not_addressed",
-      "section": "240-14 to 240-21",
+      "section": "240-4C, D, 240-14 to 240-21",
       "url": "https://ecode360.com/7252554",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "The commercial, industrial and business park use lists were not read. A use not listed in a district is prohibited there unless the Board of Supervisors allows a similar use by conditional use (240-4C, D)."
+      "note": "The commercial, industrial and business park use lists were not read. A use not permitted in a district is prohibited there (240-4C). The 240-4D conditional use reaches only a use not listed as permitted in any district, and the apartment for care of a relative is listed in R-1 to R-5, so outside them the path is a use variance."
     }
   },
   "approval": {
@@ -104,21 +107,13 @@
       "confidence": "secondary",
       "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
     },
-    "unlisted_use_path": {
-      "value": "conditional_use",
-      "section": "240-4C, D",
-      "url": "https://ecode360.com/7252575",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "A use not listed as permitted in any district may be allowed by the Board of Supervisors as a conditional use if it is closely similar to permitted uses, compatible and not specifically prohibited. It reaches only a use not listed as permitted in any district. The relative apartment is listed in R-1 to R-5, so outside them it may be read as a listed use, and then a variance is the path. Whether a unit for someone other than a relative in care is an unlisted use is not settled."
-    },
     "alternatives": {
       "value": [
         {
           "name": "Residential conversion of a historic resource into dwelling units",
           "path": "conditional_use",
           "districts": null,
-          "conditions": "Only a structure on the Historic Resources Inventory (Class I or Class II), as one adaptive reuse approved by the Board of Supervisors under 240-31 and 240-38.7. Where several units result, each has at least 800 sq ft of habitable floor area and its own bathroom and kitchen, and additions may not raise the unit count. The use is contained within the historic resource. The Board may modify area and bulk rules, never height.",
+          "conditions": "Only a structure on the Historic Resources Inventory (Class I or Class II), as one adaptive reuse approved by the Board of Supervisors under 240-31 and 240-38.7. Each unit has its own bathroom and kitchen. Except where the district provides otherwise, where several units result each has at least 800 sq ft of habitable floor area and additions may not raise the unit count. The use is contained within the historic resource. The Board must find the reuse necessary to preserve the resource for reasons other than purely economic grounds (240-38.7). The Board may modify area and bulk rules, never height. Further development of the property, or a subdivision keeping the resource on its own lot, is also a conditional use (240-38.5C, D).",
           "requires": [
             {
               "test": null,
@@ -126,10 +121,10 @@
               "section": "240-38.5A(2), 240-6"
             }
           ],
-          "section": "240-38.5A(2)(c), B, 240-38.6",
+          "section": "240-38.5A(2)(c), B, C, D, 240-38.6, 240-38.7",
           "url": "https://ecode360.com/print/EA1698?guid=7255534",
           "confidence": "secondary",
-          "note": "No relative or care rule. Could turn a historic house or barn into a second unit. The conditional use criteria in 240-38.7 were not read."
+          "note": "No relative or care rule. Could turn a historic house or barn into a second unit. 240-38.7 was seen only as a search excerpt."
         }
       ],
       "section": "240-38.5",
@@ -154,16 +149,12 @@
       "note": "R-1 by reference to the R-2 accessory uses."
     },
     "building_types": {
-      "value": [
-        "detached",
-        "semi_detached",
-        "attached"
-      ],
+      "value": null,
       "section": "240-32C, 240-6",
       "url": "https://ecode360.com/print/EA1698?guid=7255049",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Accessory to the 'principal dwelling unit'. The text does not limit the house type. R-3 to R-5 permit semidetached dwellings and R-5 townhouses and apartments."
+      "note": "Not limited. Accessory to the 'principal dwelling unit'. The text does not limit the house type. R-3 to R-5 permit semidetached dwellings and R-5 townhouses and apartments."
     },
     "historic_bypass": {
       "value": false,
@@ -217,7 +208,7 @@
         },
         {
           "kind": "utilities",
-          "condition": "R-4 and R-5: all uses are served by centralized sewage disposal and centralized water supply.",
+          "condition": "R-4 and R-5: 'All uses in this district shall be serviced by centralized sewage disposal' systems. A lot without public sewer does not meet the district rule. Ask the zoning officer before planning a unit.",
           "effect": "condition",
           "applies_to": null,
           "districts": [
@@ -225,8 +216,35 @@
             "R-5"
           ],
           "building_types": null,
+          "test": "public_sewer",
           "section": "240-11G, 240-12G",
           "url": "https://ecode360.com/print/EA1698?guid=7253224"
+        },
+        {
+          "kind": "utilities",
+          "condition": "R-4 and R-5: all uses are served by a centralized water supply system. A lot without public water does not meet the district rule. Ask the zoning officer before planning a unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-4",
+            "R-5"
+          ],
+          "building_types": null,
+          "test": "public_water",
+          "section": "240-11G, 240-12G",
+          "url": "https://ecode360.com/print/EA1698?guid=7253224"
+        },
+        {
+          "kind": "other",
+          "condition": "R-1: if the lot is in a planned residential development (PRD, 240-8D(1)(a)), the R-2 lot size and yards shown do not apply. Within a PRD 240-8E(4)(k) applies 'in place of any other setback or height requirements': no building within 15 ft of a paved cartway or of another building, residential buildings at least 50 ft from the tract's exterior lines and perimeter streets, height at most 30 ft, and the Board of Supervisors may vary these. A PRD lot under one acre is not nonconforming for that reason. Outside a PRD a single-family detached lot follows the R-2 rules: 1 acre (43,560 sq ft), and a smaller lot there may be nonconforming.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "section": "240-8D(1)(a), (b), 240-8E(4)(k)",
+          "url": "https://ecode360.com/print/EA1698?guid=7253032"
         }
       ],
       "section": "240-32C",
@@ -247,17 +265,26 @@
       "confidence": "secondary",
       "note": "The unit must be easy to reconvert 'into part of the principal dwelling unit' and may not harm the single-family exterior appearance, read as a unit in or added to the house."
     },
-    "types_not_addressed": {
+    "types_in_conflict": {
       "value": [
-        "detached_new",
-        "garage_conversion",
-        "over_garage"
+        "detached_new"
       ],
       "section": "240-32C(4), 240-6",
       "url": "https://ecode360.com/print/EA1698?guid=7255049",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "The text does not name a unit in a separate building. 240-32C(4) says the unit is reconverted into the house 'or be completely removed'. A garage is used 'only for storage purposes' (240-6)."
+      "note": "240-32C(4) asks for a unit that 'can easily be reconverted into part of the principal dwelling unit', which reads as a unit in or added to the house. The same paragraph lets it 'be completely removed' when the relative leaves, which fits a separate building. The code does not settle a separate new building."
+    },
+    "types_not_addressed": {
+      "value": [
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "240-6",
+      "url": "https://ecode360.com/print/EA1698?guid=7252653",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A garage is 'an accessory building ... which is used only for storage purposes' (240-6). The apartment text does not name a garage."
     }
   },
   "size": {
@@ -304,9 +331,9 @@
       "confidence": "verified"
     },
     "occupancy": {
-      "value": "A relative (parent, child, sibling, grandparent, grandchild, great-grandparent or great-grandchild, aunt, uncle, niece, nephew, or in-law) of a permanent resident of the house, who needs care and supervision, and the relative's spouse. At most two persons.",
+      "value": "A relative of a permanent resident of the house, who needs care and supervision, and the relative's spouse. At most two persons. Relative means brother, sister, parent, child, grandparent, great-grandparent, grandchild, great-grandchild, uncle, aunt, niece, nephew, sister-in-law, brother-in-law or parent-in-law, by blood, marriage, adoption or formal foster relationship. Not second cousins or cousins further removed.",
       "section": "240-6, 240-32C(2), (3)",
-      "url": "https://ecode360.com/print/EA1698?guid=7255049",
+      "url": "https://ecode360.com/print/EA1698?guid=7252899",
       "verified_on": "2026-11-14",
       "confidence": "verified"
     },
@@ -329,8 +356,8 @@
       "note": "No row for the apartment."
     },
     "reading": {
-      "value": "If the apartment counts as a dwelling unit ('Dwelling unit (or housing unit)', 240-6), it needs 2 more spaces, 4 in total with a house of three bedrooms or fewer. If it is part of the house's use, the house's 2 (3 with four or more bedrooms) are enough.",
-      "section": "240-33, 240-6",
+      "value": "If the apartment counts as a dwelling unit, it needs 2 more spaces, 4 in total with a house of three bedrooms or fewer. The text leans this way: 240-32C(4) calls it 'Such dwelling unit', an unlisted use takes the most similar listed use (240-33A(1)(b)), and where a use includes more than one type of use the spaces are 'the sum of the parking requirements for each separate use' (240-33A(1)(c)). If it is part of the house's use, the house's 2 (3 with four or more bedrooms) are enough.",
+      "section": "240-33A(1)(b), (c), 240-32C(4), 240-6",
       "url": "https://ecode360.com/print/EA1698?guid=7255200",
       "verified_on": "2026-11-14",
       "confidence": "secondary"
@@ -338,21 +365,13 @@
   },
   "districts": {
     "R-1": {
-      "min_lot_sqft": {
-        "value": 43560,
-        "section": "240-8D(1)(b), 240-9G",
-        "url": "https://ecode360.com/print/EA1698?guid=7253032",
-        "verified_on": "2026-11-14",
-        "confidence": "verified",
-        "note": "A single-family detached dwelling outside a PRD is 'developed under the same regulations as would apply in the R-2 District' (240-8D(1)(b)): 1 acre, width 150 ft at the setback line and 60 ft at the street."
-      },
       "setback_front_ft": {
         "value": 45,
         "section": "240-8D(1)(b), 240-9G",
         "url": "https://ecode360.com/print/EA1698?guid=7253032",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Minimum 45 ft. In subdivisions of two or more lots an average of 60 ft."
+        "note": "Outside a PRD only, R-2 figures (240-8D(1)(b)). Within a PRD 240-8E(4)(k) applies in place of them. Minimum 45 ft. In subdivisions of two or more lots an average of 60 ft."
       },
       "setback_side_ft": {
         "value": 20,
@@ -360,14 +379,15 @@
         "url": "https://ecode360.com/print/EA1698?guid=7253032",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Each of two side yards."
+        "note": "Outside a PRD only, R-2 figures (240-8D(1)(b)). Within a PRD 240-8E(4)(k) applies in place of them. Each of two side yards."
       },
       "setback_rear_ft": {
         "value": 50,
         "section": "240-8D(1)(b), 240-9G",
         "url": "https://ecode360.com/print/EA1698?guid=7253032",
         "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "Outside a PRD only, R-2 figures (240-8D(1)(b)). Within a PRD 240-8E(4)(k) applies in place of them. "
       },
       "principal_max_height_ft": {
         "value": 30,
@@ -375,14 +395,15 @@
         "url": "https://ecode360.com/print/EA1698?guid=7253032",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "3 stories and 30 ft."
+        "note": "Outside a PRD only, R-2 figures (240-8D(1)(b)). Within a PRD 240-8E(4)(k) applies in place of them. 3 stories and 30 ft."
       },
       "principal_max_stories": {
         "value": 3,
         "section": "240-8D(1)(b), 240-9G",
         "url": "https://ecode360.com/print/EA1698?guid=7253032",
         "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "Outside a PRD only, R-2 figures (240-8D(1)(b)). Within a PRD 240-8E(4)(k) applies in place of them. "
       },
       "max_building_coverage": {
         "value": 0.25,
@@ -390,7 +411,7 @@
         "url": "https://ecode360.com/print/EA1698?guid=7253032",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Lot coverage by buildings 25%: the ground floor area of all principal and accessory buildings (240-6). Total impervious cover 35%."
+        "note": "Outside a PRD only, R-2 figures (240-8D(1)(b)). Within a PRD 240-8E(4)(k) applies in place of them. Lot coverage by buildings 25%: the ground floor area of all principal and accessory buildings (240-6). Total impervious cover 35%."
       }
     },
     "R-2": {

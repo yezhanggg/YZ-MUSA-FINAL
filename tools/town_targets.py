@@ -1108,14 +1108,14 @@ HOSTS: dict[str, dict[str, Any]] = {
         "code_url": "https://ecode360.com/10946616",
         "plain_fetch": False,
         "current_through": "2025-05-13",
-        "note": "Zoning: Chapter 210 Zoning (Ord. No. 132, 12-7-1982, as amended). No general ADU rule: residence districts allow listed uses 'and for no other'. 'Single-family residence with an accessory apartment' (210-4, 210-72A(1)(f), 210-74C(17)) by right only inside an XR-PRD-1 planned residential development (50 acres, attached, 600 to 1,000 sq ft, two bedrooms). Added dwelling unit in a Class I or II historic resource by conditional use (210-183.7B). Read in the browser on eCode360 (CO1622).",
+        "note": "Zoning: Chapter 210 Zoning (Ord. No. 132, 12-7-1982, as amended). No general ADU rule: residence districts allow listed uses 'and for no other'. 'Single-family residence with an accessory apartment' (210-4, 210-72A(1)(f), 210-74C(17)) by right only inside an R-PRD-1 planned residential development (50 acres, public water and sewer) on a lot the approved plan designates for it (attached, 600 to 1,000 sq ft, two bedrooms, at most 30% of the units). Added dwelling unit in a Class I or II historic resource by conditional use (210-183.7B) on a property large enough for two units under the district rules, else a Zoning Hearing Board variance (210-183.8A). Read in the browser on eCode360 (CO1622).",
     },
     "4202921192": {
         "code_host": "ecode360",
         "code_url": "https://ecode360.com/7252554",
         "plain_fetch": False,
         "current_through": "2025-07-15",
-        "note": "Zoning: Chapter 240 Zoning (Ord. No. 119, 6-9-1997, as amended). ADU text: 'Apartment for care of a relative' (240-6, 240-32C): accessory use by right in R-1 to R-5, for a relative of a resident who needs care, at most two persons, reconverted or removed when no longer needed, recorded agreement against renting to a nonrelative. Historic resource conversion to dwelling units by conditional use (240-38.5A(2)(c)). Read in the browser on eCode360 (EA1698).",
+        "note": "Zoning: Chapter 240 Zoning (Ord. No. 119, 6-9-1997, as amended). ADU text: 'Apartment for care of a relative' (240-6, 240-32C): accessory use by right in R-1 to R-5, for a relative of a resident who needs care, at most two persons, reconverted or removed when no longer needed, recorded agreement against renting to a nonrelative. Outside R-1 to R-5 a use variance (240-4D does not reach a listed use). Historic resource conversion to dwelling units by conditional use (240-38.5A(2)(c), 240-38.7). Read in the browser on eCode360 (EA1698).",
     },
 }
 
@@ -1198,7 +1198,7 @@ EXTRAS = {
     "4213358888": "Code 325-630 conversion dwelling for a family member and 325-637 ECHO",
     # Batch 20b (2026-11-14): Upper Saucon, Windsor (York) and Fairview (York) were skipped (zoning only in PDFs, or
     # the online code is not the adopted ordinance).
-    "4204515488": "Code 210-72A(1)(f) accessory apartment (XR-PRD-1) and 210-183.7B historic added unit",
+    "4204515488": "Code 210-72A(1)(f) accessory apartment (R-PRD-1) and 210-183.7B historic added unit",
     "4202921192": "Code 240-32C apartment for care of a relative",
 }
 
