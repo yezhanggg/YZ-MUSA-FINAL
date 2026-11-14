@@ -199,7 +199,8 @@ const cond = (kind: string, condition: string, leaf: Obj | null, extra: Obj = {}
 const NOT_OK = new Set(['variance', 'not_allowed']);
 /** ADU forms and approval paths, least to most demanding (pipeline/rules.py ALL_TYPES, PATH_ORDER, OK_PATHS). */
 export const ADU_FORMS = ['detached_new', 'garage_conversion', 'over_garage', 'internal', 'attached'] as const;
-const PATH_ORDER = ['by_right', 'administrator_exception', 'special_exception', 'conditional_use', 'variance', 'not_allowed'];
+// not_addressed (pass 7): a form the code does not name (form.types_not_addressed). Not a firm no.
+const PATH_ORDER = ['by_right', 'administrator_exception', 'special_exception', 'conditional_use', 'not_addressed', 'variance', 'not_allowed'];
 const OK_PATHS = new Set(['by_right', 'administrator_exception', 'special_exception', 'conditional_use']);
 const harder = (a: string, b: string) => (PATH_ORDER.indexOf(b) > PATH_ORDER.indexOf(a) ? b : a);
 /** Who hears a special exception or a conditional use (pipeline/rules.py BOARDS). */
@@ -217,6 +218,26 @@ const FACT_TEXT: Record<string, string> = {
   has_accessory_building: 'only if an accessory building already exists on the lot',
   lot_sqft_at_least: 'only if the lot is at least',
   lot_sqft_below: 'only if the lot is under',
+  // Pass 7: tests on the house and the services (pipeline/rules.py HOUSE_TESTS). The answer depends on them.
+  house_sqft_at_least: 'only if the house has at least',
+  house_sqft_over: 'only if the house has more than',
+  house_built_before: 'only if the house was built before',
+  accessory_building_built_before: 'only if the accessory building was built before',
+  house_exists: 'only if a lawful house already stands on the lot',
+  public_sewer: 'only if the lot has public sewer',
+  public_water: 'only if the lot has public water',
+  lot_width_at_least: 'only if the lot is at least this wide:',
+  lot_width_below: 'only if the lot is narrower than',
+  designated_on_plan: 'only if the lot is designated on the plan the code names',
+};
+const HOUSE_TESTS = new Set(['house_sqft_at_least', 'house_sqft_over', 'house_built_before', 'accessory_building_built_before', 'house_exists', 'public_sewer', 'public_water', 'lot_width_at_least', 'lot_width_below', 'designated_on_plan']);
+/** " Allowed only if ..." for a gate or alternative test (no lot facts here, so always an "only if"). */
+const testText = (g: Obj): string => {
+  const t = typeof g.test === 'string' ? FACT_TEXT[g.test] : undefined;
+  if (!t) return '';
+  const width = g.test === 'lot_width_at_least' || g.test === 'lot_width_below' ? ` ${num(g.value)} ft` : '';
+  const unit = width ? width : g.test === 'lot_sqft_at_least' || g.test === 'lot_sqft_below' || g.test === 'house_sqft_at_least' || g.test === 'house_sqft_over' ? ` ${num(g.value)} sq ft` : g.value_date ? ` ${String(g.value_date)}` : '';
+  return ` Allowed ${t}${unit}.${HOUSE_TESTS.has(String(g.test)) ? ' It depends on that fact.' : ''}`;
 };
 const num = (v: Json | undefined) => (typeof v === 'number' ? v.toLocaleString('en-US') : String(v));
 const NO_ADU = new Set(['not_addressed', 'prohibited']);
@@ -259,9 +280,14 @@ function hasDistrictPath(file: Obj, district: string | null): boolean {
   return !!(row && isObj(row.adu_path) && row.adu_path.value);
 }
 
-/** "X sq ft or Y% of the house, whichever is less" (pipeline/rules.py size_rule_by_type). */
-const lesserOf = (sqft: Obj | null, share: Obj | null): string | null =>
-  sqft && share && typeof sqft.value === 'number' && typeof share.value === 'number' ? `At most ${num(sqft.value)} sq ft or ${Math.round(share.value * 100)}% of the house, whichever is less` : null;
+/** "X sq ft or Y% of the house, whichever is less" (pipeline/rules.py size_rule_by_type). "Greater" with
+ * size.cap_is_greater_of, and "At most Y% of the house" for a share-only cap (pass 7). */
+const lesserOf = (sqft: Obj | null, share: Obj | null, greater = false): string | null =>
+  share && typeof share.value === 'number'
+    ? sqft && typeof sqft.value === 'number'
+      ? `At most ${num(sqft.value)} sq ft or ${Math.round(share.value * 100)}% of the house, whichever is ${greater ? 'greater' : 'less'}`
+      : `At most ${Math.round(share.value * 100)}% of the house. Give the house size to get the number`
+    : null;
 
 function conditionsOf(file: Obj, district: string | null): Obj[] {
   const out: Obj[] = [];
@@ -297,13 +323,26 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     if (rowKey && m && typeof m.value === 'number') {
       const conf = leafAt(file, 'eligibility', 'requires_conforming_lot');
       out.push(
-        conf && conf.value === true
+        // Only a verified requires_conforming_lot bars. A secondary reading is a condition with "if" (pass 7).
+        conf && conf.value === true && conf.confidence !== 'verified'
+          ? cond('lot_size', `${code}: if the ADU needs a lot that meets the district minimum of ${num(m.value)} sq ft (${conf.section ?? ''}, a reading that needs care)`, m, { district: code })
+          : conf && conf.value === true
           ? cond('lot_size', `${code}: the ADU needs a lot that meets the district minimum of ${num(m.value)} sq ft (${conf.section ?? ''})`, m, { district: code, effect: 'bars' })
           : // A bare district minimum is a rule for creating lots, not an ADU rule: the bill does not touch it
             // (pipeline/rules.py kind district_lot_rule, not in BILL_OVERRIDES).
             cond('district_lot_rule', `${code}: the district's minimum lot is ${num(m.value)} sq ft, a rule for creating lots, not an ADU rule. A smaller existing lot may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it`, m, { district: code }),
       );
     }
+    // District figures that change with public sewer and water (pipeline/rules.py _utility_conditions, pass 7).
+    const ur = isObj(row.utility_rows) ? (row.utility_rows as Obj) : null;
+    if (rowKey && ur && Array.isArray(ur.value))
+      for (const it of ur.value.filter(isObj)) {
+        const figs = ['min_lot_sqft', 'setback_front_ft', 'setback_side_ft', 'setback_rear_ft', 'principal_max_height_ft', 'max_building_coverage']
+          .filter((f) => typeof it[f] === 'number')
+          .map((f) => `${f.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')} ${f === 'max_building_coverage' ? `${Math.round((it[f] as number) * 100)}%` : num(it[f])}`)
+          .join(', ');
+        out.push({ kind: 'utilities', condition: `${code}: ${it.when}: ${figs}${it.note ? `. ${it.note}` : ''}. The district figures are for a lot with public sewer and water`, section: it.section ?? null, url: it.url ?? ur.url ?? null, checked_on: ur.verified_on ?? null, confidence: ur.confidence ?? null, district: code, test: 'public_sewer_water' });
+      }
   }
   const gates = leafAt(file, 'eligibility', 'gates');
   for (const g of Array.isArray(gates?.value) ? gates!.value : []) {
@@ -312,10 +351,9 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     if (want && Array.isArray(g.districts) && !g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(want))) continue;
     if (want && Array.isArray(g.not_districts) && g.not_districts.some((d) => typeof d === 'string' && dkey(d) === dkey(want))) continue;
     const scope: Obj = {};
-    for (const k of ['applies_to', 'districts', 'not_districts', 'building_types', 'when', 'effect', 'test', 'value']) if (g[k] !== undefined && g[k] !== null) scope[k] = g[k];
+    for (const k of ['applies_to', 'districts', 'not_districts', 'building_types', 'when', 'effect', 'test', 'value', 'value_date', 'only_below_lot_sqft']) if (g[k] !== undefined && g[k] !== null) scope[k] = g[k];
     // No lot facts here, so a gate with a lot test is always an "allowed only if".
-    const test = typeof g.test === 'string' ? FACT_TEXT[g.test] : undefined;
-    const ifText = test ? ` Allowed ${test}${g.test === 'lot_sqft_at_least' || g.test === 'lot_sqft_below' ? ` ${num(g.value)} sq ft` : ''}.` : '';
+    const ifText = testText(g);
     const scoped = !!(g.test || g.districts || g.not_districts || g.building_types || g.when === 'historic' || g.when === 'not_historic');
     if (g.effect === 'bars' && !scoped) {
       scope.effect = 'condition';
@@ -422,23 +460,42 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
         }
       : null;
   // The form's own cap, else the general one (pipeline/rules.py _town_sizes).
-  const firstNum = (...keys: string[]) => keys.map((k) => leafAt(file, 'size', k)).find((l) => l && typeof l.value === 'number') ?? null;
-  const rule = (k1: string, k2: string, s1: string, s2: string) => lesserOf(firstNum(k1, k2), firstNum(s1, s2));
+  // Pass 7: a district cap (adu_max_sqft) replaces size.max_sqft, and a district may lift the town caps.
+  const rowCap = fromRow('adu_max_sqft');
+  const lifted = row && isObj(row.adu_size_cap_lifted) && row.adu_size_cap_lifted.value === true ? (row.adu_size_cap_lifted as Obj) : null;
+  const sizeLeaf = (k: string) => (lifted ? null : k === 'max_sqft' && row && isObj(row.adu_max_sqft) && typeof row.adu_max_sqft.value === 'number' ? (row.adu_max_sqft as Obj) : leafAt(file, 'size', k));
+  const firstNum = (...keys: string[]) => keys.map(sizeLeaf).find((l) => l && typeof l.value === 'number') ?? null;
+  const greater = leafAt(file, 'size', 'cap_is_greater_of')?.value === true;
+  const rule = (k1: string, k2: string, s1: string, s2: string) => lesserOf(firstNum(k1, k2), firstNum(s1, s2), greater);
   const ruleIn = rule('max_sqft_internal', 'max_sqft', 'max_share_internal', 'max_share_of_house');
   const ruleAcc = rule('max_sqft_accessory_building', 'max_sqft', 'max_share_accessory_building', 'max_share_of_house');
+  const liftNote: Obj | null = lifted ? { value: null, ...cite(lifted), note: `No ADU size maximum in ${rowKey}${lifted.note ? `. ${lifted.note}` : ''}` } : null;
+  const sizePick = (...keys: string[]) => liftNote ?? (keys.includes('max_sqft') && rowCap ? (pick('size', ...keys.slice(0, keys.indexOf('max_sqft'))) ?? rowCap) : pick('size', ...keys));
+  const byForm = leafAt(file, 'size', 'max_sqft_by_form');
+  const shareByForm = leafAt(file, 'size', 'max_share_by_form');
+  const formCaps: Obj = lifted
+    ? {}
+    : {
+        ...(byForm && isObj(byForm.value) ? { max_sqft_by_form: ruleOut('size.max_sqft_by_form', byForm) } : {}),
+        ...(shareByForm && isObj(shareByForm.value) ? { max_share_by_form: ruleOut('size.max_share_by_form', shareByForm) } : {}),
+      };
+  const attCap = leafAt(file, 'envelope', 'attached_height_capped_at_house');
   return {
     ...(labels && isObj(labels.value) ? { labels: labels.value } : {}),
     inside_or_attached: !inside ? notAllowed : {
-      max_sqft: pick('size', 'max_sqft_internal', 'max_sqft'),
-      max_share_of_house: pick('size', 'max_share_internal', 'max_share_of_house'),
-      ...(ruleIn ? { size_rule: ruleIn } : {}),
+      max_sqft: sizePick('max_sqft_internal', 'max_sqft'),
+      max_share_of_house: liftNote ?? pick('size', 'max_share_internal', 'max_share_of_house'),
+      ...(ruleIn && !lifted ? { size_rule: ruleIn } : {}),
+      ...formCaps,
       max_height_ft: internalFlag && internalFlag.value === false ? accHeight : districtHeight,
+      ...(attCap && attCap.value === true ? { attached_not_taller_than_house: ruleOut('envelope.attached_height_capped_at_house', attCap) } : {}),
       attached_yards: { front: yards('setback_front_ft', true), side: yards('setback_side_ft', true), rear: yards('setback_rear_ft', true) },
     },
     accessory_building: {
-      max_sqft: pick('size', 'max_sqft_accessory_building', 'max_sqft'),
-      max_share_of_house: pick('size', 'max_share_accessory_building', 'max_share_of_house'),
-      ...(ruleAcc ? { size_rule: ruleAcc } : {}),
+      max_sqft: sizePick('max_sqft_accessory_building', 'max_sqft'),
+      max_share_of_house: liftNote ?? pick('size', 'max_share_accessory_building', 'max_share_of_house'),
+      ...(ruleAcc && !lifted ? { size_rule: ruleAcc } : {}),
+      ...formCaps,
       ...(general ? { general_accessory_caps: general } : {}),
       max_height_ft: detachedHeight,
       garage_max_height_ft: noAdu ? null : pick('envelope', 'max_height_garage_ft'),
@@ -474,7 +531,13 @@ function approvalOf(file: Obj, district: string | null) {
   if (Array.isArray(fp?.value) && fp!.value.length)
     out.by_form = fp!.value.filter(isObj).map((it) => ({ forms: it.forms, path: it.path, section: it.section ?? null, url: it.url ?? fp!.url ?? null, note: it.note ?? null, confidence: fp!.confidence ?? null }));
   const unlisted = leafAt(file, 'approval', 'unlisted_use_path');
-  if (unlisted && unlisted.value) out.unlisted_use_path = { ...ruleOut('approval.unlisted_use_path', unlisted), note: unlisted.note ?? 'A use the code does not list, by this path' };
+  const unDistricts = leafAt(file, 'approval', 'unlisted_use_districts');
+  if (unlisted && unlisted.value)
+    out.unlisted_use_path = {
+      ...ruleOut('approval.unlisted_use_path', unlisted),
+      note: unlisted.note ?? 'A use the code does not list, by this path',
+      ...(unDistricts && Array.isArray(unDistricts.value) ? { only_in: unDistricts.value, only_in_section: unDistricts.section ?? null } : {}),
+    };
   if (byDistrict.length) out.by_district = byDistrict;
   if (district) {
     const hit = byDistrict.find((r) => dkey(String(r.district)) === dkey(district));
@@ -516,14 +579,20 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   const conditions = conditionsOf(file, district);
   const path = leafAt(file, 'approval', 'path');
   const fallback = leafAt(file, 'approval', 'fallback_path');
-  const dpath = isObj(approval.district_path) ? approval.district_path.path : undefined;
+  // A town with no ADU rule has no district list, so only a real district path counts there (pass 7). Otherwise a
+  // "not listed" fallback would hide the unlisted-use path the resolver gives.
+  const noRuleFile = !!st && NO_ADU.has(String(st.value)) && !hasDistrictPath(file, district);
+  const dpath = isObj(approval.district_path) && !noRuleFile ? approval.district_path.path : undefined;
   // An ADU rule that reaches only some districts or an overlay.
   const scopeLeaf = leafAt(file, 'adu', 'scope_districts');
   const scopeList = Array.isArray(scopeLeaf?.value) ? (scopeLeaf!.value as string[]) : null;
   const outsideLeaf = leafAt(file, 'adu', 'status_outside');
   const outside = (outsideLeaf?.value as string | undefined) ?? 'not_addressed';
   const inScope = scopeList && district ? scopeList.some((d) => dkey(d) === dkey(district)) : null;
-  const unlisted = leafAt(file, 'approval', 'unlisted_use_path');
+  // Pass 7: approval.unlisted_use_districts limits the unlisted-use path to some districts.
+  const unDist = leafAt(file, 'approval', 'unlisted_use_districts');
+  const unHere = !(unDist && Array.isArray(unDist.value)) || (!!district && unDist.value.some((d) => typeof d === 'string' && dkey(d) === dkey(district)));
+  const unlisted = unHere ? leafAt(file, 'approval', 'unlisted_use_path') : null;
   let status = st?.value as string | undefined;
   let effective = (dpath ?? path?.value) as string | undefined;
   if (inScope === false) {
@@ -559,19 +628,32 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   const fbPath = String(fallback?.value ?? 'variance');
   const formPaths = (Array.isArray(leafAt(file, 'approval', 'form_paths')?.value) ? (leafAt(file, 'approval', 'form_paths')!.value as Json[]) : []).filter(isObj);
   const byType: Record<string, string> = {};
+  const nnLeaf = leafAt(file, 'form', 'types_not_addressed');
+  const notNamed = Array.isArray(nnLeaf?.value) ? (nnLeaf!.value as string[]) : [];
   for (const t of ADU_FORMS) {
     const ok = base !== 'not_allowed' && allowedForms.includes(t);
     let p = ok ? base : inScope === false ? String(effective ?? fbPath) : fbPath;
     if (ok) for (const it of formPaths) if (Array.isArray(it.forms) && it.forms.includes(t) && typeof it.path === 'string') p = harder(p, it.path);
     const fs = byForm && isObj(byForm.value) ? byForm.value[t] : undefined;
     if (typeof fs === 'string' && NO_ADU.has(fs) && OK_PATHS.has(p)) p = OK_PATHS.has(fbPath) ? 'variance' : fbPath;
+    // Pass 7: a form the code bars is not allowed (not a variance). A form the code does not name is not addressed.
+    if (fs === 'prohibited') p = 'not_allowed';
+    else if (base !== 'not_allowed' && notNamed.includes(t) && !allowedForms.includes(t) && !OK_PATHS.has(p)) p = 'not_addressed';
     byType[t] = p;
   }
+  const nn = leafAt(file, 'form', 'types_not_addressed');
+  if (notNamed.length) parts.push(`Not addressed for ${notNamed.map(label).join(', ')}: the code does not name it, so ask the zoning officer (${nn?.section ?? ''})`);
   if (byForm && isObj(byForm.value)) parts.push(`By form: ${Object.entries(byForm.value).map(([t, v]) => `${label(t)} ${label(v)}`).join('. ')} (${byForm.section ?? ''})`);
   const out: Obj = {
     ...(typeof prov.code_caution === 'string' ? { code_caution: prov.code_caution } : {}),
     summary: parts.filter(Boolean).join('. '),
-    adu: { status: st ? ruleOut('adu.status', st) : null, term: term ? ruleOut('adu.term', term) : null, ...(byForm && isObj(byForm.value) ? { status_by_form: ruleOut('adu.status_by_form', byForm) } : {}) },
+    adu: {
+      status: st ? ruleOut('adu.status', st) : null,
+      term: term ? ruleOut('adu.term', term) : null,
+      ...(byForm && isObj(byForm.value) ? { status_by_form: ruleOut('adu.status_by_form', byForm) } : {}),
+      // Pass 7: a district whose path is a hearing never reads "allowed by right" (pipeline/rules.py adu_status).
+      ...(status === 'allowed_by_right' && typeof dpath === 'string' && dpath in BOARDS ? { status_in_district: { value: dpath, district, section: isObj(approval.district_path) ? approval.district_path.section ?? null : null } } : {}),
+    },
     approval: { ...approval, by_form_today: byType },
     conditions: inScope === false ? conditions.filter((c) => !['family', 'occupancy', 'owner_occupancy', 'adu_status'].includes(String(c.kind))) : conditions,
     checks: (prov.checks as Json) ?? [],
@@ -581,9 +663,11 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   if (inScope === false) out.lot_status = { value: outside, note: `This district is outside ${scopeList!.join(', ')}. The town's ADU numbers do not apply here` };
   const overridden = (out.conditions as Obj[]).filter((c) => c.bill_would_override);
   const kept = billKeeps(file, district);
-  if (overridden.length || kept.length)
+  const inDoubtHere = isObj(approval.district_path) && approval.district_path.listed_in_doubt === true;
+  if (overridden.length || kept.length || inDoubtHere)
     out.under_hb2186 = {
-      note: 'HB 2186 (not law) would make one ADU by right and would remove these town conditions. Town size caps would give way to the bill floor: at least the lesser of 50 percent of the house or 850 sq ft',
+      note: 'HB 2186 (not law) would make one ADU by right and would remove these town conditions. Town size caps would give way to the bill floor: at least the lesser of 50 percent of the house or 850 sq ft. A form the town bars today would get that floor',
+      ...(inDoubtHere ? { district_in_doubt: `${district} would be opened by the bill like any other district where a house is allowed` } : {}),
       conditions: overridden.map((c) => ({ kind: c.kind, section: c.section ?? null })),
       ...(kept.length ? { still_applies: `Town lot rules the bill does not address still apply: ${kept.join('. ')}` } : {}),
     };
@@ -603,6 +687,12 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
           a.land_development === true ? 'Needs land development plan approval as well as zoning, so it is not a plain zoning permit' : null,
           typeof a.min_units === 'number' && a.min_units > 2 ? `Needs ${a.min_units} or more units in all, so it is not a path for one added unit` : null,
           a.min_lot_is_tract === true && typeof a.min_lot_sqft === 'number' ? `The ${num(a.min_lot_sqft)} sq ft minimum is for the development tract` : null,
+          // Pass 7 (pipeline/rules.py _alternatives): per-district lots, overlays and other tests. Never "applies" unchecked.
+          isObj(a.min_lot_by_district) ? `Lot minimum by district: ${Object.entries(a.min_lot_by_district).map(([d, v]) => `${d} ${num(v)} sq ft`).join(', ')}` : null,
+          Array.isArray(a.overlays) && a.overlays.length ? `Applies only if the lot is in the ${a.overlays.join(' or ')} overlay` : null,
+          Array.isArray(a.requires) && a.requires.length
+            ? `Applies only if: ${a.requires.filter(isObj).map((r) => `${r.condition}${r.section ? ` (${r.section})` : ''}`).join('. ')}`
+            : null,
         ].filter(Boolean);
         return { ...a, url: a.url ?? alts!.url ?? null, confidence: conf, display_path: conf === 'verified' ? p : `listed as ${p}, but ask the zoning officer`, reads_as: extra.join('. ') };
       }),

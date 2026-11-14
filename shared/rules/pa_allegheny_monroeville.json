@@ -342,20 +342,20 @@
   },
   "envelope": {
     "max_height_ft": {
-      "value": 15,
-      "section": "359-30A(1), 359-54Z(4), 359-142C(5)(d)",
-      "url": "https://ecode360.com/45218496",
-      "verified_on": "2026-11-12",
-      "confidence": "secondary",
-      "note": "Detached unit. 359-30A(1): 'No accessory structure shall exceed a mean height of 15 feet.' The dependent dwelling text allows 'two stories or 25 feet'. Both are caps, so the stricter 15 ft (mean) is used for a detached unit, per the review. Whether 25 ft governs alone is open. An attached unit takes the principal structure rules, but is still limited to two stories or 25 ft, which the file cannot set per form."
+      "value": 25,
+      "section": "359-54Z(4)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The dependent dwelling standard: 'Limited to two stories or 25 feet' (359-54Z(4)). It holds for the unit in any form. A detached unit is also an accessory structure and takes the lesser of this and the general accessory caps (accessory_structure_max_height_ft 15 ft mean, 359-30A(1); accessory_cap_binds_adu true), so 15 ft as before. Earlier reading kept the 15 ft here; 359-142C(5)(d) (special exception path) not re-read on 2026-11-13."
     },
     "internal_uses_district_height": {
-      "value": true,
-      "section": "359-54Z(10)",
+      "value": false,
+      "section": "359-54Z(4), 359-54Z(10)",
       "url": "https://ecode360.com/45219081",
-      "verified_on": "2026-11-12",
-      "confidence": "verified",
-      "note": "'If the dependent dwelling is attached to the principal structure, then it shall be considered part of the principal structure and shall be subject to all requirements relating to the principal structure.'"
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "359-54Z(10): 'If the dependent dwelling is attached to the principal structure, then it shall be considered part of the principal structure and shall be subject to all requirements relating to the principal structure.' 359-54Z(4) still limits the dependent dwelling to 'two stories or 25 feet', so an attached unit is read as 25 ft (and the principal height where lower), not the district height alone. Secondary: whether (4) or (10) governs an attached unit's height is a reading."
     },
     "setback_side_ft": {
       "value": 10,
@@ -456,6 +456,14 @@
       "verified_on": "2026-11-12",
       "confidence": "verified",
       "note": "'not to be placed within any front yard' (SE, 359-142C(5)(c)). 'The structure is not to be placed within any required yard' (CU, 359-54Z(3)), with (9) allowing the side and rear yards."
+    },
+    "max_height_stories": {
+      "value": 2,
+      "section": "359-54Z(4)",
+      "url": "https://ecode360.com/45219081",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Limited to two stories or 25 feet'."
     }
   },
   "use": {

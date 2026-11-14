@@ -300,7 +300,7 @@
         {
           "kind": "lot_size",
           "condition": "R-3 and R-4: on a lot 60 ft wide or more the 'Accessory dwelling unit, external' form is marked prohibited in the Table of Permitted Lots and Building Forms. 'Any lot or building form not specifically permitted in the Table of Permitted Lots and Building Forms is prohibited.' Only a unit inside the house. Ask the zoning officer how the Borough applies this, since the detached house row carries the same marks.",
-          "effect": "condition",
+          "effect": "bars",
           "applies_to": [
             "attached",
             "detached_new",
@@ -313,7 +313,9 @@
           ],
           "building_types": null,
           "section": "311.B-37A, B (R-3), 311.B-44A, B (R-4)",
-          "url": "https://ecode360.com/print/ME1269?guid=44885377"
+          "url": "https://ecode360.com/print/ME1269?guid=44885377",
+          "test": "lot_width_below",
+          "value": 60
         }
       ],
       "section": "Article B-XV, 311.B-60",

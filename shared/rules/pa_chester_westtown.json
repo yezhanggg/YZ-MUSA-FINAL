@@ -100,7 +100,17 @@
           "url": "https://ecode360.com/print/WE1870?guid=34450384",
           "adu_listing": true,
           "confidence": "verified",
-          "note": "Needs an ADU approved under 170-1603A first. The R-2 lot rule of 170-701B(7) still applies."
+          "note": "Needs an ADU approved under 170-1603A first. The R-2 lot rule of 170-701B(7) still applies.",
+          "requires": [
+            {
+              "test": null,
+              "condition": "Needs an ADU approved under 170-1603A first",
+              "section": "170-1619"
+            }
+          ],
+          "min_lot_by_district": {
+            "R-2": 18000
+          }
         },
         {
           "name": "Conversion of a single-family dwelling to a two-family or multifamily dwelling",
@@ -260,6 +270,16 @@
       "verified_on": "2026-11-13",
       "confidence": "secondary",
       "note": "'The accessory dwelling unit may be located in the principal dwelling or in a structure which is accessory to the principal dwelling'. With the bar on exterior alterations, read as the house or an existing accessory structure (a garage, including space over it). No addition and no new building."
+    },
+    "types_not_addressed": {
+      "value": [
+        "detached_new"
+      ],
+      "section": "170-1603A(2)(b), (f)",
+      "url": "https://ecode360.com/print/WE1870?guid=12398469",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The accessory dwelling unit may be located in the principal dwelling or in a structure which is accessory to the principal dwelling'. A new accessory structure is not named. With the bar on exterior alterations it is read as an existing one."
     }
   },
   "size": {

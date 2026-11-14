@@ -115,6 +115,62 @@
           "note": "Tract minimum read by the reviewer in 450-324B(44). 3 acres is the smaller of the two tract sizes.",
           "min_units": 3,
           "min_lot_is_tract": true
+        },
+        {
+          "name": "Second house on the lot",
+          "path": "by_right",
+          "districts": [
+            "LDS"
+          ],
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. LDS lot minimum 10,000 sq ft per house, so 20,000 in all, with yards and frontage for each.",
+          "min_lot_sqft": 20000,
+          "section": "450-401, 450-402B(1), 450-402B(3), LDS district lot minimum",
+          "url": "https://ecode360.com/45169003",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call."
+        },
+        {
+          "name": "Second house on the lot",
+          "path": "by_right",
+          "districts": [
+            "MDS"
+          ],
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. MDS lot minimum 8,000 sq ft per house, so 16,000 in all, with yards and frontage for each.",
+          "min_lot_sqft": 16000,
+          "section": "450-401, 450-402B(1), 450-402B(3), MDS district lot minimum",
+          "url": "https://ecode360.com/45169003",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call."
+        },
+        {
+          "name": "Second house on the lot",
+          "path": "by_right",
+          "districts": [
+            "SS"
+          ],
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. SS lot minimum 5,000 sq ft per house, so 10,000 in all, with yards and frontage for each.",
+          "min_lot_sqft": 10000,
+          "section": "450-401, 450-402B(1), 450-402B(3), SS district lot minimum",
+          "url": "https://ecode360.com/45169003",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call."
+        },
+        {
+          "name": "Second house on the lot",
+          "path": "by_right",
+          "districts": [
+            "U"
+          ],
+          "conditions": "450-402B: two or more principal buildings on a lot, one with a residential use, 'shall conform to all requirements of this chapter as if each building were on a separate lot, including the minimum lot size' and 'Conform to the standards, improvements and procedures required for a land development by Chapter 400'. U lot minimum 3,500 sq ft per house, so 7,000 in all, with yards and frontage for each.",
+          "min_lot_sqft": 7000,
+          "section": "450-401, 450-402B(1), 450-402B(3), U district lot minimum",
+          "url": "https://ecode360.com/45169003",
+          "confidence": "secondary",
+          "land_development": true,
+          "note": "450-401: 'No more than one principal use shall be permitted on a lot, unless ... it is otherwise permitted by this chapter. See § 450-402B and C.' Read 2026-11-13. Secondary: the district lot minimum is taken from this file's district row, and whether a second single-family house is a permitted combination in the district is the zoning officer's call."
         }
       ],
       "section": "450-310B, 450-311B, 450-324B(97)",

@@ -97,7 +97,10 @@
           "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29109",
           "adu_listing": true,
           "confidence": "secondary",
-          "note": "No occupant rule in (d). The resource's eligibility is set by the Historic Resource Inventory (A264-1)."
+          "note": "No occupant rule in (d). The resource's eligibility is set by the Historic Resource Inventory (A264-1).",
+          "overlays": [
+            "Historic Resource Overlay"
+          ]
         },
         {
           "name": "Conversion of a single-family dwelling",
@@ -108,7 +111,13 @@
           "section": "255-19",
           "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25513",
           "confidence": "secondary",
-          "note": "Two units need 1.5 times the district lot: A 39,000, B 18,000, C 13,500, NH 8,250 sq ft."
+          "note": "Two units need 1.5 times the district lot: A 39,000, B 18,000, C 13,500, NH 8,250 sq ft.",
+          "min_lot_by_district": {
+            "A": 39000,
+            "B": 18000,
+            "C": 13500,
+            "NH": 8250
+          }
         },
         {
           "name": "Duplex or twin dwelling",
@@ -394,6 +403,14 @@
       "verified_on": "2026-11-13",
       "confidence": "secondary",
       "note": "Not settled. 255-27E(1)(d) allows up to 1,200 sq ft of floor area in the accessory building. 255-29B caps building coverage at 600 sq ft. A two-story unit building could meet both."
+    },
+    "attached_height_capped_at_house": {
+      "value": true,
+      "section": "255-27E(1)(e), (f)",
+      "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25576",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Attached: no taller than the house (255-27E(1)(e))."
     }
   },
   "use": {
@@ -502,6 +519,48 @@
         "verified_on": "2026-11-13",
         "confidence": "verified",
         "note": "Impervious 25%."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 45000,
+            "setback_front_ft": 60,
+            "setback_side_ft": 30,
+            "setback_rear_ft": 60,
+            "section": "255-15A(1)",
+            "note": "150 ft wide. Accessory building one story."
+          },
+          {
+            "when": "With public sewer or public water, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 35000,
+            "setback_front_ft": 60,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 60,
+            "section": "255-15A(2)",
+            "note": "130 ft wide."
+          },
+          {
+            "when": "With public sewer or public water, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 35000,
+            "setback_front_ft": 60,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 60,
+            "section": "255-15A(2)",
+            "note": "130 ft wide."
+          }
+        ],
+        "section": "255-15A",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-25482",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "With both public sewer and public water (255-15A(3), amended 7-9-2024 by Ord. No. 24-1391). Neither: 45,000 sq ft, 150 ft wide, yards 60 / 30 / 60, accessory building one story (255-15A(1)). One of the two: 35,000 sq ft, 130 ft, 60 / 25 / 60 (255-15A(2))."
       }
     },
     "A-1": {

@@ -533,3 +533,51 @@ describe('get_rule_text pass 6 fields', () => {
     expect(wh.summary).toMatch(/By form: detached new prohibited/);
   });
 });
+
+// Pass 7: the same cases pipeline/rules.py now says truthfully (tests/test_town_rules.py, pass 7 section).
+describe('get_rule_text pass 7', () => {
+  it('gives share-only and greater-of size sentences, a district cap and a lifted cap', async () => {
+    const sw = await town6('pa_dauphin_swatara', 'size', 'R-S');
+    expect(sw.forms.inside_or_attached.size_rule).toBe('At most 45% of the house. Give the house size to get the number');
+    const dy = await town6('pa_bucks_doylestown_borough', 'size', 'R-1');
+    expect(dy.forms.inside_or_attached.size_rule).toBe('At most 800 sq ft or 50% of the house, whichever is greater');
+    const r3 = await town6('pa_bucks_doylestown_borough', 'size', 'R-3');
+    expect(r3.forms.inside_or_attached.size_rule).toBe('At most 600 sq ft or 50% of the house, whichever is greater');
+    const eb = await town6('pa_chester_east_brandywine', 'size', 'TND-1');
+    expect(eb.forms.inside_or_attached.max_sqft.note).toMatch(/^No ADU size maximum in TND-1/);
+    const leb = await town6('pa_lebanon_lebanon', 'size', 'RLD');
+    expect(leb.forms.accessory_building.max_sqft_by_form.value).toEqual({ detached_new: 800 });
+  });
+
+  it('says a house test is an "only if", and a not-named form is not addressed', async () => {
+    const co = await town6('pa_centre_college', 'approval', 'R-1');
+    expect(co.conditions.find((c: Any6) => c.test === 'house_sqft_at_least').condition).toMatch(/Allowed only if the house has at least 1,500 sq ft\. It depends on that fact/);
+    const wv = await town6('pa_chester_west_vincent', 'approval', 'R-2');
+    expect(wv.approval.by_form_today.attached).toBe('not_addressed');
+    expect(wv.summary).toMatch(/Not addressed for attached/);
+    const bv = await town6('pa_chester_west_vincent', 'approval', 'BV');
+    expect(bv.adu.status_in_district).toMatchObject({ value: 'conditional_use', district: 'BV' });
+  });
+
+  it('bars a prohibited form outright, limits the unlisted path, and opens a district in doubt under the bill', async () => {
+    const ea = await town6('pa_northampton_easton', 'approval', 'SS');
+    expect(ea.approval.by_form_today.detached_new).toBe('not_allowed');
+    expect(ea.path_to_ask.path).toBe('special_exception');
+    const rc = await town6('pa_northampton_easton', 'approval', 'RC');
+    expect(rc.path_to_ask.path).toBe('variance');
+    const ci = await town6('pa_york_york_township', 'approval', 'CI');
+    expect(ci.under_hb2186.district_in_doubt).toMatch(/opened by the bill/);
+  });
+
+  it('marks alternatives that need more than the district, and a secondary conforming-lot rule as an if', async () => {
+    const ud = await town6('pa_montgomery_upper_dublin', 'approval', 'C');
+    const opts = ud.other_ways_to_add_a_unit.options;
+    expect(opts.find((o: Any6) => o.name === 'Conversion of a single-family dwelling').reads_as).toMatch(/C 13,500 sq ft/);
+    expect(opts.find((o: Any6) => o.name === 'Accessory apartment for a historic resource').reads_as).toMatch(/Applies only if the lot is in the Historic Resource Overlay/);
+    const ml = await town6('pa_chester_malvern', 'approval', 'R1');
+    expect(ml.conditions.find((c: Any6) => c.kind === 'lot_size' && /^R1: if the ADU needs a lot/.test(c.condition))).toBeTruthy();
+    const a = await town6('pa_montgomery_upper_dublin', 'approval', 'A');
+    expect(a.conditions.some((c: Any6) => c.kind === 'utilities' && /With neither public sewer nor public water: min lot 45,000/.test(c.condition))).toBe(true);
+    expect(ud.forms.inside_or_attached.attached_not_taller_than_house.value).toBe(true);
+  });
+});

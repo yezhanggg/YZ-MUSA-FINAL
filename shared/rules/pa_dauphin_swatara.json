@@ -207,7 +207,7 @@
         {
           "kind": "other",
           "condition": "In M-L and M-G a new single-family detached house is not permitted, so only a lawful existing house there can have an apartment.",
-          "effect": "condition",
+          "effect": "bars",
           "applies_to": null,
           "districts": [
             "M-L",
@@ -215,7 +215,8 @@
           ],
           "building_types": null,
           "section": "295-28 (business use table)",
-          "url": "https://ecode360.com/11637058"
+          "url": "https://ecode360.com/11637058",
+          "test": "house_exists"
         },
         {
           "kind": "other",

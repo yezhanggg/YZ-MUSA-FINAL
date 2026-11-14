@@ -103,7 +103,21 @@
           "min_lot_sqft": null,
           "section": "Table 27-202.3 note 4, 27-402.75",
           "url": "https://ecode360.com/39351529",
-          "confidence": "secondary"
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "house_sqft_at_least",
+              "value": 3000,
+              "condition": "A single-family detached house with at least 3,000 sq ft of habitable floor area",
+              "section": "Table 27-202.3 note 4, 27-402.75"
+            },
+            {
+              "test": "house_built_before",
+              "value_date": "2022-01-10",
+              "condition": "The house existed before 1-1-2021 (Table 27-202.3 note 4) or on 1-10-2022 (27-402.75A). The two dates differ",
+              "section": "Table 27-202.3 note 4, 27-402.75A"
+            }
+          ]
         },
         {
           "name": "Two-family dwelling",
@@ -139,7 +153,14 @@
           "section": "Tables 27-202.3, 27-202.4, 27-402 'Adaptive Reuse of Existing Buildings on Historic Farmsteads'",
           "url": "https://ecode360.com/39351529",
           "confidence": "secondary",
-          "note": "The tables mark it SE. The section text says the uses 'may be approved as permitted-by-right uses'. Ask the zoning officer."
+          "note": "The tables mark it SE. The section text says the uses 'may be approved as permitted-by-right uses'. Ask the zoning officer.",
+          "requires": [
+            {
+              "test": null,
+              "condition": "A building built before 1945 within a historic farmstead",
+              "section": "27-402 'Adaptive Reuse of Existing Buildings on Historic Farmsteads'"
+            }
+          ]
         }
       ],
       "section": "27-402.75, Tables 27-202.3, 27-202.4",
@@ -768,6 +789,33 @@
         "verified_on": "2026-11-13",
         "confidence": "secondary",
         "note": "Lot coverage, with sewer and water."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public sewer and public water",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.4,
+            "section": "27-209.1"
+          },
+          {
+            "when": "Without both public sewer and public water",
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.4,
+            "section": "27-209.1"
+          }
+        ],
+        "section": "27-209.1",
+        "url": "https://ecode360.com/39350829",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Other allowed uses with public sewer and water. 43,560 without both (then rear 50 ft, 35 ft height, 40%). No separate house row."
       }
     },
     "LC": {
@@ -815,6 +863,39 @@
         "verified_on": "2026-11-13",
         "confidence": "secondary",
         "note": "Lot coverage with sewer and water. 50% sewer only, 35% otherwise."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "max_building_coverage": 0.5,
+            "section": "27-210"
+          },
+          {
+            "when": "Public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 32670,
+            "max_building_coverage": 0.35,
+            "section": "27-210"
+          },
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "max_building_coverage": 0.35,
+            "section": "27-210"
+          }
+        ],
+        "section": "27-210",
+        "url": "https://ecode360.com/39350853",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "With public sewer and water. 20,000 sewer only, 32,670 water only, 43,560 neither."
       }
     }
   }

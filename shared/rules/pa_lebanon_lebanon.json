@@ -162,7 +162,15 @@
           "min_lot_sqft": null,
           "section": "1303.01 table note 1, 1306.02(18), 1313.01(c)",
           "url": "https://ecode360.com/print/LE3707?guid=36368208",
-          "confidence": "verified"
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "house_sqft_over",
+              "value": 3000,
+              "condition": "Only a preexisting building with more than 3,000 sq ft of heated habitable floor area",
+              "section": "1303.01 table note 1"
+            }
+          ]
         },
         {
           "name": "Dwelling units within a pre-1940 building in the Historic Overlay",
@@ -173,7 +181,18 @@
           "section": "1308.04(a)(1), (b), (c)",
           "url": "https://ecode360.com/print/LE3707?guid=36368996",
           "confidence": "secondary",
-          "note": "No occupant rule. Read as reaching a second unit inside an existing old house."
+          "note": "No occupant rule. Read as reaching a second unit inside an existing old house.",
+          "overlays": [
+            "Historic Overlay"
+          ],
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1940-01-01",
+              "condition": "A principal building built before 1-1-1940",
+              "section": "1308.04(a)(1)"
+            }
+          ]
         }
       ],
       "section": "1303.01, 1306.02(18), 1308.04",
@@ -352,6 +371,16 @@
       "verified_on": "2026-11-13",
       "confidence": "verified",
       "note": "'A minimum floor area shall not apply to the Unit for Care of Relative.'"
+    },
+    "max_sqft_by_form": {
+      "value": {
+        "detached_new": 800
+      },
+      "section": "1306.03(20)F",
+      "url": "https://ecode360.com/print/LE3707?guid=36368658",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A detached modular unit: rear yard only, district side yards, 20 ft rear setback, at most 800 sq ft, removed within 90 days after the relative leaves."
     }
   },
   "envelope": {

@@ -199,6 +199,10 @@
         },
         "form_paths": {
           "$ref": "#/$defs/leaf_form_paths"
+        },
+        "unlisted_use_districts": {
+          "$ref": "#/$defs/leaf_list",
+          "description": "Districts where approval.unlisted_use_path applies. Elsewhere the fallback path."
         }
       }
     },
@@ -263,6 +267,10 @@
         "types_allowed_historic": {
           "$ref": "#/$defs/leaf_types",
           "description": "Forms allowed on the historic path, when they differ from types_allowed."
+        },
+        "types_not_addressed": {
+          "$ref": "#/$defs/leaf_types",
+          "description": "Forms the code does not name (neither allowed nor barred). They read 'not addressed for this form, ask the zoning officer', not a variance. Leave them out of types_allowed."
         }
       }
     },
@@ -298,6 +306,18 @@
         "max_share_accessory_building": {
           "$ref": "#/$defs/leaf_share",
           "description": "Share cap for a unit in an accessory building, when it differs from max_share_of_house."
+        },
+        "max_sqft_by_form": {
+          "$ref": "#/$defs/leaf_num_by_form",
+          "description": "A size cap for one form only, e.g. {\"detached_new\": 800}. Wins over the other sq ft caps for that form."
+        },
+        "cap_is_greater_of": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "true when the code says max_sqft or max_share_of_house, whichever is GREATER. Otherwise the two are the lesser of."
+        },
+        "max_share_by_form": {
+          "$ref": "#/$defs/leaf_num_by_form",
+          "description": "A share-of-house cap for one form only, e.g. {\"detached_new\": 1.0}. Wins over the other share caps for that form."
         }
       }
     },
@@ -396,6 +416,10 @@
         "front_yard_barred": {
           "$ref": "#/$defs/leaf_bool",
           "description": "true when an accessory building may not stand in the front yard (between the house and the street), a bar rather than a setback number. Put any exception in the note (for example 100 ft from the street)."
+        },
+        "attached_height_capped_at_house": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "An attached unit (an addition) may not be taller than the existing house."
         }
       }
     },
@@ -1167,6 +1191,21 @@
         "principal_max_stories": {
           "$ref": "#/$defs/leaf_num",
           "description": "Principal building height in stories, when the code gives stories. Fill it beside principal_max_height_ft, and alone when the code gives no feet figure."
+        },
+        "max_building_coverage_by_type": {
+          "$ref": "#/$defs/leaf_share_by_type",
+          "description": "Building coverage that differs by building type in this district (the lot's house type picks it). Without a match the district or town max_building_coverage applies."
+        },
+        "adu_max_sqft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "The ADU size cap in this district when it differs from size.max_sqft."
+        },
+        "adu_size_cap_lifted": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "true when the code sets no ADU size maximum in this district, so the town-wide caps do not apply."
+        },
+        "utility_rows": {
+          "$ref": "#/$defs/leaf_utility_rows"
         }
       }
     },
@@ -1349,7 +1388,7 @@
     },
     "leaf_gates": {
       "type": "object",
-      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value.",
+      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan).",
       "required": [
         "value",
         "section",
@@ -1457,6 +1496,16 @@
                   "has_accessory_building",
                   "lot_sqft_at_least",
                   "lot_sqft_below",
+                  "house_sqft_at_least",
+                  "house_sqft_over",
+                  "house_built_before",
+                  "accessory_building_built_before",
+                  "house_exists",
+                  "public_sewer",
+                  "public_water",
+                  "lot_width_at_least",
+                  "lot_width_below",
+                  "designated_on_plan",
                   null
                 ]
               },
@@ -1476,7 +1525,7 @@
                   "null"
                 ],
                 "minimum": 0,
-                "description": "Threshold for test lot_sqft_at_least (met when the lot is at least this) or lot_sqft_below (met when the lot is under this)."
+                "description": "Threshold for test lot_sqft_at_least (met when the lot is at least this), lot_sqft_below (met when the lot is under this), house_sqft_at_least or house_sqft_over (the house floor area)."
               },
               "not_districts": {
                 "type": [
@@ -1491,6 +1540,22 @@
               "bill_overrides": {
                 "type": "boolean",
                 "description": "true when HB 2186 would remove this condition (for example a connection or employee-only rule). Family, owner and lot rules are already treated so."
+              },
+              "value_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "description": "Date for test house_built_before or accessory_building_built_before (met when the building was built before it, from the lot fact house_year_built or accessory_building_year_built)."
+              },
+              "only_below_lot_sqft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "The gate holds only on a lot under this size (for example a rule for parcels of five acres or less)."
               }
             }
           }
@@ -1638,6 +1703,86 @@
               "min_lot_is_tract": {
                 "type": "boolean",
                 "description": "true when min_lot_sqft is a tract size (the development tract), not the lot of one house."
+              },
+              "min_lot_by_district": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "additionalProperties": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "description": "Lot minimum by district code when it differs between the alternative's districts. Wins over min_lot_sqft for a listed district."
+              },
+              "requires": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "description": "Other tests the alternative needs. test is a gate test (house or lot) or null for a fact the tool cannot know (a prior approval, a listed building). An unknown or untestable item makes it read 'applies only if', never 'applies'.",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "condition"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "test": {
+                      "enum": [
+                        "house_sqft_at_least",
+                        "house_sqft_over",
+                        "house_built_before",
+                        "accessory_building_built_before",
+                        "house_exists",
+                        "public_sewer",
+                        "public_water",
+                        "has_alley",
+                        "has_accessory_building",
+                        "lot_sqft_at_least",
+                        "lot_sqft_below",
+                        "lot_width_at_least",
+                        "lot_width_below",
+                        "designated_on_plan",
+                        null
+                      ]
+                    },
+                    "value": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "value_date": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                    },
+                    "condition": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "section": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              },
+              "overlays": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "The alternative holds only where one of these overlays is applied. Without the lot's overlays it reads 'applies only if'."
               }
             }
           }
@@ -1837,6 +1982,84 @@
             },
             "attached": {
               "type": "string"
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_share_by_type": {
+      "type": "object",
+      "description": "Building coverage by the house type of the lot, keyed by building type (detached, semi_detached, attached), e.g. {\"semi_detached\": 0.7, \"detached\": 0.5}. For a lot of a listed type it replaces max_building_coverage.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "detached": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "semi_detached": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "attached": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
             }
           }
         },
@@ -2160,6 +2383,234 @@
                 "not_addressed",
                 "prohibited"
               ]
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_num_by_form": {
+      "type": "object",
+      "description": "A number per ADU form, for a rule that names one form only.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "detached_new": {
+              "type": "number",
+              "minimum": 0
+            },
+            "garage_conversion": {
+              "type": "number",
+              "minimum": 0
+            },
+            "over_garage": {
+              "type": "number",
+              "minimum": 0
+            },
+            "internal": {
+              "type": "number",
+              "minimum": 0
+            },
+            "attached": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        }
+      }
+    },
+    "leaf_utility_rows": {
+      "type": "object",
+      "description": "District figures that change with public sewer and water. The district row holds the figures with both. Each item gives the figures when the lot's services match (public_sewer, public_water: true, false or null for either).",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "when",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "when": {
+                "type": "string",
+                "minLength": 1
+              },
+              "public_sewer": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "public_water": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "min_lot_sqft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "setback_front_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "setback_side_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "setback_rear_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "principal_max_height_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "max_building_coverage": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
             }
           }
         },

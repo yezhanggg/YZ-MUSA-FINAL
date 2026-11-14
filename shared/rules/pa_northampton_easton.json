@@ -154,6 +154,19 @@
       "verified_on": "2026-11-13",
       "confidence": "secondary",
       "note": "Not ADUs. Second dwelling unit paths through the listed two-family uses. The code has no separate conversion use."
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "CH",
+        "DD",
+        "SS",
+        "WW"
+      ],
+      "section": "595-09C(1)",
+      "url": "https://ecode360.com/36576242",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Undefined residential uses are a special exception only in CH, DD, SS and WW. Not in the transitional zones CH/INS-1 T and WW/INS-2 T or any other district, where a second unit needs a use variance."
     }
   },
   "eligibility": {
@@ -194,25 +207,6 @@
           "section": "595-09D(7)",
           "url": "https://ecode360.com/36576242",
           "bill_overrides": true
-        },
-        {
-          "kind": "other",
-          "condition": "Undefined residential uses are a special exception only in CH, DD, SS and WW. Not in the transitional zones CH/INS-1 T and WW/INS-2 T or any other district, where a second unit needs a use variance.",
-          "effect": "bars",
-          "applies_to": [
-            "internal",
-            "attached"
-          ],
-          "districts": null,
-          "not_districts": [
-            "CH",
-            "DD",
-            "SS",
-            "WW"
-          ],
-          "building_types": null,
-          "section": "595-09C(1)",
-          "url": "https://ecode360.com/36576242"
         },
         {
           "kind": "other",

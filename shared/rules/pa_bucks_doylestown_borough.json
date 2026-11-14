@@ -193,32 +193,6 @@
           "url": "https://ecode360.com/16053649"
         },
         {
-          "kind": "size",
-          "condition": "In R-1 and R-2 the unit may have up to 800 sq ft or 50% of the house's floor area, whichever is greater.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-1",
-            "R-2"
-          ],
-          "building_types": null,
-          "section": "27-406(61.1)F(2)",
-          "url": "https://ecode360.com/16053649"
-        },
-        {
-          "kind": "size",
-          "condition": "In R-3 and CR the unit may have up to 600 sq ft or 50% of the house's floor area, whichever is greater.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-3",
-            "CR"
-          ],
-          "building_types": null,
-          "section": "27-406(61.1)G(2)",
-          "url": "https://ecode360.com/16053649"
-        },
-        {
           "kind": "other",
           "condition": "Two buildings on one lot, one residential, must be apart by the greater of 25 ft or the district ratio of the taller building's height: 200% in R-1, R-2 and R-3, 100% in CR. It does not apply to facing walls neither of which has a window.",
           "effect": "condition",
@@ -277,12 +251,28 @@
   },
   "size": {
     "max_sqft": {
-      "value": null,
+      "value": 800,
       "section": "27-406(61.1)F(2), G(2)",
       "url": "https://ecode360.com/16053649",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "Not a cap in the usual sense: 'shall not exceed 800 square feet or 50% of the floor area of the principal dwelling on the same lot, whichever is greater' (R-1, R-2), 600 sq ft or 50% in R-3 and CR. Shown in gates."
+      "note": "Not a cap in the usual sense: 'shall not exceed 800 square feet or 50% of the floor area of the principal dwelling on the same lot, whichever is greater' (R-1, R-2), 600 sq ft or 50% in R-3 and CR. Stored as max_sqft, max_share_of_house and cap_is_greater_of, with 600 in the R-3 and CR rows (adu_max_sqft)."
+    },
+    "max_share_of_house": {
+      "section": "27-406(61.1)F(2), G(2)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "value": 0.5,
+      "note": "In R-1 and R-2 the unit may have up to 800 sq ft or 50% of the house's floor area, whichever is greater."
+    },
+    "cap_is_greater_of": {
+      "section": "27-406(61.1)F(2), G(2)",
+      "url": "https://ecode360.com/16053649",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "value": true,
+      "note": "'whichever is greater'"
     }
   },
   "envelope": {
@@ -589,6 +579,14 @@
         "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified"
+      },
+      "adu_max_sqft": {
+        "value": 600,
+        "section": "27-406(61.1)G(2)",
+        "url": "https://ecode360.com/16053649",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "In R-3 and CR the unit may have up to 600 sq ft or 50% of the house's floor area, whichever is greater."
       }
     },
     "CR": {
@@ -650,6 +648,14 @@
         "url": "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
         "verified_on": "2026-11-13",
         "confidence": "verified"
+      },
+      "adu_max_sqft": {
+        "value": 600,
+        "section": "27-406(61.1)G(2)",
+        "url": "https://ecode360.com/16053649",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "In R-3 and CR the unit may have up to 600 sq ft or 50% of the house's floor area, whichever is greater."
       }
     }
   }

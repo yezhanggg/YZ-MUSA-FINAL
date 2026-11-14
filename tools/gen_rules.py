@@ -289,6 +289,29 @@ def _v(d, sec, key):
     return val(v, leaf)
 
 
+def _size_cell(d):
+    """Max size: the sq ft cap, or the share-only, greater-of, per-form and per-district caps (pass 7)."""
+    size = d.get("size") or {}
+    base = _v(d, "size", "max_sqft")
+    sqft = (size.get("max_sqft") or {}).get("value")
+    share = (size.get("max_share_of_house") or {}).get("value")
+    greater = (size.get("cap_is_greater_of") or {}).get("value") is True
+    if greater and sqft is not None and share is not None:
+        base = f"{sqft:,.0f} or {share:.0%} of the house, whichever is greater"
+    elif sqft is None and share is not None:
+        base = f"{share:.0%} of the house"
+    extra = [
+        f"{v:,.0f} for {f.replace('_', ' ')}"
+        for f, v in ((size.get("max_sqft_by_form") or {}).get("value") or {}).items()
+    ]
+    for code, row in (d.get("districts") or {}).items():
+        if (row.get("adu_max_sqft") or {}).get("value") is not None:
+            extra.append(f"{row['adu_max_sqft']['value']:,.0f} in {code}")
+        if (row.get("adu_size_cap_lifted") or {}).get("value") is True:
+            extra.append(f"no maximum in {code}")
+    return base + (" (" + ". ".join(extra) + ")" if extra else "")
+
+
 def _path_cell(d):
     """The path, with any district or historic path after it."""
     cell = _v(d, "approval", "path")
@@ -304,6 +327,12 @@ def _path_cell(d):
     hist = ((d.get("approval") or {}).get("historic_path") or {}).get("value")
     if hist:
         extra.append(f"historic building: {NAMES.get(hist, hist)}")
+    nn = ((d.get("form") or {}).get("types_not_addressed") or {}).get("value")
+    if nn:
+        extra.append(f"not addressed for {', '.join(f.replace('_', ' ') for f in nn)}")
+    un = ((d.get("approval") or {}).get("unlisted_use_districts") or {}).get("value")
+    if un and ((d.get("approval") or {}).get("unlisted_use_path") or {}).get("value"):
+        extra.append(f"unlisted-use path only in {', '.join(un)}")
     return cell + (" (" + ". ".join(extra) + ")" if extra else "")
 
 
@@ -404,7 +433,7 @@ def towns():
         status = val((adu.get("status") or {}).get("value")) if adu.get("status") else ""
         out.append(
             f"| {t['name']} | {t['county']} | {t['status']} | {clean(term)} | {status} | {_path_cell(d)} | {_conditions_cell(d)} | "
-            f"{_v(d, 'size', 'max_sqft')} | {_v(d, 'use', 'owner_occupancy')} | {_v(d, 'use', 'max_adus')} | {d['provenance'].get('verified_on')} |"
+            f"{_size_cell(d)} | {_v(d, 'use', 'owner_occupancy')} | {_v(d, 'use', 'max_adus')} | {d['provenance'].get('verified_on')} |"
         )
     out += [
         "",

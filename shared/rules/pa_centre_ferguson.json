@@ -211,14 +211,15 @@
         {
           "kind": "other",
           "condition": "Only on a lot designated for an ADU on the approved TTD plan: 'A maximum of 10% of the single-family detached units provided shall be designed to include an accessory dwelling unit ... All properties designed to accommodate such units shall be designated at the time of plan submission.' Ask the township whether this lot is designated. A lot not designated would need a revised TTD plan (27-904).",
-          "effect": "condition",
+          "effect": "bars",
           "applies_to": null,
           "districts": [
             "TTD"
           ],
           "building_types": null,
           "section": "27-303.3C(1)(b)2)",
-          "url": "https://ecode360.com/print/FE3697?guid=36114583"
+          "url": "https://ecode360.com/print/FE3697?guid=36114583",
+          "test": "designated_on_plan"
         },
         {
           "kind": "family",

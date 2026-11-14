@@ -165,6 +165,42 @@ How the resolver now reads a file (pass 6):
 - Under the state bill a town's status reads `allowed_by_right` where the unit is allowed. Today's status stays in the reasons and in `conditions_overridden`.
 - A town without these fields resolves as before.
 
+## More fields (pass 7)
+
+Each closes a case where the tool told a homeowner something untrue. All optional.
+
+| Field | Use it for | Example |
+|---|---|---|
+| `size.cap_is_greater_of` | "X sq ft or Y% of the house, whichever is greater". Without it the two are the lesser of | Doylestown borough: 800 sq ft or 50% |
+| `districts.<code>.adu_max_sqft` | The ADU size cap in one district when it differs from `size.max_sqft` | Doylestown borough R-3 and CR: 600 |
+| `districts.<code>.adu_size_cap_lifted` | The code sets no ADU size maximum in this district, so the town-wide caps do not apply there | East Brandywine TND-1 (399-91C) |
+| `size.max_sqft_by_form` | A size cap for one form only, e.g. `{"detached_new": 800}` | Lebanon: the detached modular cottage |
+| gate `test` on the house: `house_sqft_at_least`, `house_sqft_over` (with `value`), `house_built_before`, `accessory_building_built_before` (with `value_date`, YYYY-MM-DD), `house_exists`, `public_sewer`, `public_water` | A rule that tests the house, a building's age or the services, not the lot | College: a house of 1,500 sq ft. West Vincent: a freestanding building that existed on 10-25-2010. Swatara M-L and M-G: only a lawful existing house |
+| gate `only_below_lot_sqft` | The gate holds only on lots under this size | West Vincent: five acres or less |
+| alternative `min_lot_by_district` | Lot minimums that differ between the alternative's districts | Upper Dublin conversion: 1.5 times the district lot |
+| alternative `requires` | Other tests: `{test, value, value_date, condition, section}`. `test` null for a fact the tool cannot know (a prior approval, a listed building) | Penn conversion (3,000 sq ft house), Westtown rental (an approved ADU first), West Chester carriage house |
+| alternative `overlays` | The alternative holds only where an overlay is applied | Springettsbury F-R and F-O. Historic overlays |
+| `districts.<code>.utility_rows` | District figures that change with public sewer and water. The row holds the figures with both. Each item: `{when, public_sewer, public_water, min_lot_sqft, setback_*_ft, principal_max_height_ft, max_building_coverage, section}` | Upper Dublin A (255-15A). Penn COM and LC |
+| `form.types_not_addressed` | Forms the code does not name. They read "not addressed for this form, ask the zoning officer", never a variance. Leave them out of `types_allowed` | West Vincent: an addition. Westtown: a new accessory structure |
+| `approval.unlisted_use_districts` | Districts where `unlisted_use_path` applies. Elsewhere the fallback | Easton 595-09C(1): CH, DD, SS, WW |
+| `envelope.attached_height_capped_at_house` | An attached unit may not be taller than the existing house | Upper Dublin 255-27E(1)(e) |
+| `size.max_share_by_form` | A share-of-house cap for one form only, e.g. `{"detached_new": 1.0}` | Honey Brook: a freestanding unit up to 100% of the house, a converted building 50% |
+| gate `test: lot_width_at_least` or `lot_width_below` (with `value` in ft), `designated_on_plan` | A rule on the lot width (lot fact `lot_width_ft`), or on lots designated on a plan (lot fact `designated_on_plan`) | Media R-3 and R-4: external unit only on lots under 60 ft wide. Ferguson TTD plan lots |
+
+How the resolver reads a file now (pass 7):
+
+- A share-only cap ("45% of the house") gives a number in `max_size_by_type` when the house size is known, and a sentence in `size_rule_by_type` either way. A greater-of cap gives the greater; without the house size `max_size_sqft` is null, because the fixed number is not a maximum.
+- Lot facts the resolver reads besides the lot: `house_sqft`, `house_year_built`, `accessory_building_year_built`, `house_exists`, `public_sewer`, `public_water`. A gate or alternative test whose fact is not given never bars and never reads as met. The output lists it in `depends_on`, the condition says "Depends on ...", an alternative reads "Applies only if", and an ADU allowed only if a house test holds gets `approval_qualifier: depends_on_lot_facts` with an "only if" line first in the reasons.
+- `adu.status_by_form` `prohibited` gives that form the path `not_allowed`, not a variance.
+- A district whose path is a special exception or conditional use never reads `allowed_by_right` in `adu_status` today.
+- `requires_conforming_lot` with confidence `secondary` is a condition with "if", never a bar. Only a verified one bars.
+- Under the state bill a district in `districts_in_doubt` is opened like any other district. The size sentence ends with the number in `max_size_by_type`. A form the town bars today, opened by the bill, gets the bill floor (the lesser of 50% of the house or 850 sq ft) where the town caps ADU size at all. A story limit gives way when the bill's height floor is above the town's height cap.
+- An attached unit takes the district yards, never a district accessory yard, today and under the bill (the bill's 4 ft yard cap is for a separate unit).
+- No yards for a form that is not allowed, and no ADU parking on a lot where no ADU is allowed today.
+- A planned or special district may switch off general sections (Ferguson 27-303.2F turns off 27-207 in the TTD). Check whether the district's own section lists which general sections still apply, and do not cite a switched-off section there.
+- A file whose ADU rule reaches only some districts should set `adu.scope_districts`, so `adu_status` does not show the town status on lots outside them.
+- `python -m pipeline.rules validate` warns when a not-addressed file sets `unlisted_use_path` while an alternative names a two-family dwelling and the path's note says nothing about it, and when an alternative with `districts` null names an overlay but has no `overlays`.
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

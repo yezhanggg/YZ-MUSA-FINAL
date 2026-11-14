@@ -212,6 +212,9 @@ const FORM_TEXT: Record<string, string> = { detached_new: 'a detached backyard c
 function formVerdict(path: string, status: string | null, section: string | null): string {
   if (status === 'prohibited') return `Not allowed: the code bars this form${section ? ` (${section})` : ''}. Only a use variance (Zoning Hearing Board, hardship test)`;
   if (status === 'not_addressed') return 'Not allowed today: the code has no rule for this form, so it takes a use variance or a code change';
+  // Pass 7 (pipeline/rules.py): a form the code does not name, and a form the code bars, by their own path.
+  if (path === 'not_addressed') return 'Not addressed for this form: the code does not name it. Not a firm no; ask the zoning officer';
+  if (path === 'not_allowed') return 'Not allowed: the code bars this form';
   return path === 'by_right' ? 'Allowed by right (zoning permit, no hearing)' : path === 'variance' || path === 'not_allowed' ? 'Not allowed today except by variance' : `Allowed with ${APPROVAL_TEXT[path] ?? path}`;
 }
 const capText = (rule: unknown, cap: { value: unknown; section: unknown } | null) =>
@@ -286,8 +289,14 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
     } else why.push(`${size} sq ft is within the ${cap.value} sq ft cap (${cap.section ?? 'rule file'}).`);
   } else if (size) why.push('No size cap number on file for this form: ask the zoning officer.');
   const share = unit === 'internal' || unit === 'attached' ? rule?.max_share_inside_or_attached : rule?.max_share_accessory_building;
+  const sizeRule = unit === 'internal' || unit === 'attached' ? rule?.size_rule_inside_or_attached : rule?.size_rule_accessory_building;
   if (size && share && typeof share.value === 'number')
-    why.push(`The unit may also be at most ${Math.round(share.value * 100)}% of the house (${share.section ?? 'rule file'}), whichever is less. Not checked: the house size is not known here.`);
+    // A greater-of or share-only cap is said as its own sentence, never as "whichever is less" (pass 7).
+    why.push(
+      sizeRule && !sizeRule.includes('whichever is less')
+        ? `${sizeRule}. Not checked: the house size is not known here.`
+        : `The unit may also be at most ${Math.round(share.value * 100)}% of the house (${share.section ?? 'rule file'}), whichever is less. Not checked: the house size is not known here.`,
+    );
   const formPath = unit && rule ? rule.path_by_form[FORM_OF[unit]] : undefined;
   if (fits === 'yes' && formPath && formPath !== r.approval) why.push(`For ${UNIT_TEXT[unit!]} the path is ${APPROVAL_TEXT[formPath] ?? formPath}.`);
   if (fits === 'yes' && !why.length) why.push('The form is one the code allows.');
@@ -428,7 +437,7 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
   const extra = [
     out.code_caution ? 'Start with the code caution line, in its words.' : null,
     rule?.by_form ? 'The answer differs by form: give one line per form from zoning_allows.by_form.' : null,
-    rule?.size_rule_accessory_building || rule?.size_rule_inside_or_attached ? 'Give the size cap as the size_rule sentence (both limits, whichever is less).' : null,
+    rule?.size_rule_accessory_building || rule?.size_rule_inside_or_attached ? 'Give the size cap as the size_rule sentence (it says which limit wins, or that it is a share of the house).' : null,
     rule?.hearing ? 'Say who decides (who_decides) and that it is a public hearing.' : null,
     summary ? 'Also give earlier_town_summary (approval, owner on site, units per lot, size cap) with its label and source.' : null,
   ].filter(Boolean).join(' ');

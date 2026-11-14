@@ -183,7 +183,10 @@
           "min_lot_sqft": null,
           "section": "230-201",
           "url": "https://ecode360.com/print/HO1764?guid=9955109",
-          "confidence": "secondary"
+          "confidence": "secondary",
+          "overlays": [
+            "Historic Resource Overlay"
+          ]
         }
       ],
       "section": "230-17, 230-66, 230-201",

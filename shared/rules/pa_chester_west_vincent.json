@@ -52,7 +52,6 @@
       "Parking: the parking rules apply to each ADU, and a dwelling needs three spaces. A unit inside the house or in an existing building must use existing parking areas (390-144E(4), E(9)(a)[4], E(10)(a)[3], 390-135)",
       "Lots in RC, R-3 and R-2 have no fixed minimum size. Each district sets density by subdivision 'tier'. For an existing lot the Tier IV setbacks apply (390-18C, 390-206B(2))",
       "Historic resources (Class I, II or III): an ADU is allowed 'irrespective of any minimum lot size, maximum impervious coverage or maximum habitable floor area'. The conversion may get a lower lot area by conditional use after Historical Commission review (390-144E(9)(c), 390-192B). 390-144E(9)(c) cites 390-191, which is the archaeological section. 390-192 is the historic reuse section. Ask the zoning officer",
-      "A unit in a new addition to the house is not named in 390-144. The accessory apartment is 'located entirely within an existing single-family dwelling'. The tool shows such a unit as a variance, but the code is silent, not a firm no. Once the addition is part of the house the zoning officer may treat it as an accessory apartment (25% cap). Ask",
       "Parcels of five acres or less: 'existing' means a freestanding building that stood on 10-25-2010, when Chapter 390 was adopted (Ord. No. 151)",
       "A freestanding ADU may be sold as a condominium after subdivision and land development approval (390-144E(10)(a)[4], E(11)(a)[4])"
     ],
@@ -256,7 +255,7 @@
         {
           "kind": "existing_structure",
           "condition": "On a parcel of five acres or less, a unit in a freestanding building only if the building existed on 10-25-2010 (adoption of Chapter 390, Ord. No. 151), and its height may not be raised. A building put up after that date does not qualify.",
-          "effect": "condition",
+          "effect": "bars",
           "applies_to": [
             "garage_conversion",
             "over_garage"
@@ -264,7 +263,10 @@
           "districts": null,
           "building_types": null,
           "section": "390-144E(10)(a)",
-          "url": "https://ecode360.com/print/WE3779?guid=32402747"
+          "url": "https://ecode360.com/print/WE3779?guid=32402747",
+          "test": "accessory_building_built_before",
+          "value_date": "2010-10-25",
+          "only_below_lot_sqft": 217801
         },
         {
           "kind": "owner_occupancy",
@@ -368,6 +370,16 @@
       "verified_on": "2026-11-13",
       "confidence": "secondary",
       "note": "Inside the house (accessory apartment), an existing barn or freestanding building, a new freestanding building over five acres, and a unit on the second floor of a garage (E(11)(a)[2]). An addition attached to the house is not named in 390-144. Left out. Ask the zoning officer."
+    },
+    "types_not_addressed": {
+      "value": [
+        "attached"
+      ],
+      "section": "390-144",
+      "url": "https://ecode360.com/print/WE3779?guid=32402747",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The accessory apartment is 'located entirely within an existing single-family dwelling'. Once the addition is part of the house the zoning officer may treat it as an accessory apartment (25% cap)."
     }
   },
   "size": {

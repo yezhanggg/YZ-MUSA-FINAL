@@ -52,7 +52,6 @@
       "Conversion of a house that existed on 4-27-1989 into two (up to five) units is a separate path with no family rule: special exception in R-1, R-2, R-3 and VC, by right in TND-1. New units at least 950 sq ft (800 by right) (399-96)",
       "Class I or Class II historic resources may add a two-family dwelling by conditional use in R-1, R-2, MU, CS/LI and I/R (399-67C)",
       "A vacant nonconforming lot in single and separate ownership may be built on if the yards are met, else by special exception (399-125A)",
-      "In TND-1 the by-right standards (399-91C) set a 500 sq ft minimum and no maximum. The 800 sq ft cap shown by the tool is the special exception cap (399-91B(4)) and does not apply in TND-1",
       "In TND-1 and VC the district lot rules apply only where adequate sewage and water are shown. Otherwise the R-3 single-family rules (1 acre) apply (399-40A, 399-160A)",
       "Houses in a clustered residential development sit on lots smaller than the district minimum, so 399-91B(5) bars a unit inside such a house by special exception (399-21A(2), 399-33A(2))",
       "A tenant house is a separate path on a farm of 10 acres or more in R-1, R-2 and R-3: one per property, may be newly built, no family rule (399-97G)"
@@ -122,7 +121,15 @@
           "conditions": "Only a house that existed on 4-27-1989. Gross lot area 50% of the house minimum times the number of units (3 acres for two units). New unit at least 950 sq ft. No external alteration except for safety. Two spaces per unit. Up to five units. No family rule.",
           "min_lot_sqft": 130680,
           "section": "399-21B(3), 399-96B",
-          "url": "https://ecode360.com/11883427"
+          "url": "https://ecode360.com/11883427",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1989-04-27",
+              "condition": "Only a house that existed on 4-27-1989",
+              "section": "399-96B"
+            }
+          ]
         },
         {
           "name": "Conversion of a single-family detached house into two units",
@@ -133,7 +140,15 @@
           "conditions": "Only a house that existed on 4-27-1989. Gross lot area 75% of 100,000 sq ft times the number of units. New unit at least 950 sq ft. No external alteration. Two spaces per unit.",
           "min_lot_sqft": 150000,
           "section": "399-27B(2), 399-96B",
-          "url": "https://ecode360.com/11883427"
+          "url": "https://ecode360.com/11883427",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1989-04-27",
+              "condition": "Only a house that existed on 4-27-1989",
+              "section": "399-96B"
+            }
+          ]
         },
         {
           "name": "Conversion of a single-family detached house into two units",
@@ -144,7 +159,15 @@
           "conditions": "Only a house that existed on 4-27-1989. Gross lot area 100% of 1 acre times the number of units. New unit at least 950 sq ft. No external alteration. Two spaces per unit.",
           "min_lot_sqft": 87120,
           "section": "399-33B(2), 399-96B",
-          "url": "https://ecode360.com/11883427"
+          "url": "https://ecode360.com/11883427",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1989-04-27",
+              "condition": "Only a house that existed on 4-27-1989",
+              "section": "399-96B"
+            }
+          ]
         },
         {
           "name": "Conversion of a single-family detached house into two units",
@@ -157,7 +180,15 @@
           "section": "399-159B(1)(a), 399-96B",
           "url": "https://ecode360.com/45605419",
           "confidence": "secondary",
-          "note": "399-96B(3) gives lot area multipliers only for R-1, R-2 and R-3."
+          "note": "399-96B(3) gives lot area multipliers only for R-1, R-2 and R-3.",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1989-04-27",
+              "condition": "Only a house that existed on 4-27-1989",
+              "section": "399-96B"
+            }
+          ]
         },
         {
           "name": "Conversion of a single-family detached house into two units",
@@ -170,7 +201,15 @@
           "section": "399-39A(4), 399-96C",
           "url": "https://ecode360.com/11883427",
           "confidence": "secondary",
-          "note": "TND-1 sets a 5,000 sq ft net lot, read here as the house minimum."
+          "note": "TND-1 sets a 5,000 sq ft net lot, read here as the house minimum.",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1989-04-27",
+              "condition": "Only a house that existed on 4-27-1989",
+              "section": "399-96C"
+            }
+          ]
         },
         {
           "name": "Two-family dwelling",
@@ -814,6 +853,14 @@
         "url": "https://ecode360.com/11882618",
         "verified_on": "2026-11-13",
         "confidence": "verified"
+      },
+      "adu_size_cap_lifted": {
+        "value": true,
+        "section": "399-91C",
+        "url": "https://ecode360.com/11883319",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "In TND-1 the by-right standards (399-91C) set a 500 sq ft minimum and no maximum. The 800 sq ft cap (399-91B(4)) is the special exception cap and does not apply in TND-1"
       }
     }
   }

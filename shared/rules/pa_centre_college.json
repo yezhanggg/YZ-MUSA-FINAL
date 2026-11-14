@@ -192,12 +192,14 @@
         {
           "kind": "size",
           "condition": "The house must have at least 1,500 sq ft of finished gross living area.",
-          "effect": "condition",
+          "effect": "bars",
           "applies_to": null,
           "districts": null,
           "building_types": null,
           "section": "200-11A(1)(c)",
-          "url": "https://ecode360.com/10705769"
+          "url": "https://ecode360.com/10705769",
+          "test": "house_sqft_at_least",
+          "value": 1500
         },
         {
           "kind": "other",

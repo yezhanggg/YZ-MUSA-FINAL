@@ -97,7 +97,14 @@
           "adu_listing": true,
           "section": "112-505, 112-304B row 2, 112-202 'Historic carriage house'",
           "url": "https://ecode360.com/6472940",
-          "note": "The ADU definition says the reuse of a historic carriage house 'shall not be considered an ADU', so 112-903I does not apply. 112-304B lists the reuse also in NC-3, CS, ID and IS, while 112-505B places the carriage houses in NC-1, NC-2 and TC."
+          "note": "The ADU definition says the reuse of a historic carriage house 'shall not be considered an ADU', so 112-903I does not apply. 112-304B lists the reuse also in NC-3, CS, ID and IS, while 112-505B places the carriage houses in NC-1, NC-2 and TC.",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The building is a historic carriage house on the borough's inventory map, the National Register, a determination of eligibility, or named by Borough Council",
+              "section": "112-505, 112-202 'Historic carriage house'"
+            }
+          ]
         },
         {
           "name": "Two-family dwelling",

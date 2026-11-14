@@ -423,7 +423,7 @@
       "url": "https://ecode360.com/print/HO3693?guid=31038556",
       "verified_on": "2026-11-13",
       "confidence": "verified",
-      "note": "A converted garage or other existing accessory building is the attached kind ('the conversion of all or part of an existing accessory structure', 27-202): 'shall not exceed 50% of the total habitable floor area of the principal dwelling.' A new freestanding unit may be as large as the house (27-1002B(4)), which the tool cannot hold apart. See gates."
+      "note": "A converted garage or other existing accessory building is the attached kind ('the conversion of all or part of an existing accessory structure', 27-202): 'shall not exceed 50% of the total habitable floor area of the principal dwelling.' A new freestanding unit may be as large as the house (27-1002B(4)), stored as max_share_by_form for the freestanding unit."
     },
     "min_sqft": {
       "value": 400,
@@ -432,6 +432,16 @@
       "verified_on": "2026-11-13",
       "confidence": "verified",
       "note": "'All accessory dwelling units shall have a minimum habitable floor area of 400 square feet.'"
+    },
+    "max_share_by_form": {
+      "value": {
+        "detached_new": 1.0
+      },
+      "section": "27-1002B(4)",
+      "url": "https://ecode360.com/print/HO3693?guid=31038556",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A new freestanding ADU 'shall not have a habitable floor area greater than the habitable floor area of the principal dwelling.'"
     }
   },
   "envelope": {
