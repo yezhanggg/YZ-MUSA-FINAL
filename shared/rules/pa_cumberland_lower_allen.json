@@ -9,6 +9,11 @@
     "source_urls": [
       "https://ecode360.com/11213000",
       "https://ecode360.com/print/LO1571?guid=11214717",
+      "https://ecode360.com/print/LO1571?guid=41767766",
+      "https://ecode360.com/print/LO1571?guid=11214604",
+      "https://ecode360.com/print/LO1571?guid=11214423",
+      "https://ecode360.com/print/LO1571?guid=11214688",
+      "https://ecode360.com/print/LO1571?guid=13736305",
       "https://ecode360.com/print/LO1571?guid=11214718",
       "https://ecode360.com/print/LO1571?guid=11214734",
       "https://ecode360.com/print/LO1571?guid=11214944",
@@ -36,12 +41,14 @@
       "Additions and alterations to create the unit are limited to 10% of the floor area existing at the time of the permit application, and no application is approved if the habitable floor area was increased in the last three years (220-149F, I)",
       "The house keeps the look of a single-family detached dwelling. New entrances go on the sides or rear (220-149D)",
       "The Lower Allen Township Authority rules on connection and fees for an additional dwelling unit apply (220-149E)",
-      "In the TND and NR overlays at most 5% of the residential uses may be accessory dwelling units, and not more than 10% on a street in any block (220-127, 220-142, search snippets)",
+      "In the TND and NR overlays the accessory dwelling is by right only after the overlay's conditional use is approved and it fits the approved Overall Master Plan (220-124A, 220-139). In the TND at most 5% of the residential uses may be accessory dwelling units, located on the same lot with a single-family dwelling, and not more than 10% on each side of a street in any block (220-127B(3)). NR has the same cap (220-142, search snippet)",
+      "The definition of an accessory dwelling includes a unit 'in an accessory structure on the same lot' (220-6C), but 220-149 speaks only of a unit created in the single-family detached dwelling. Whether a unit in a garage or other accessory building is allowed is not settled. Ask the Zoning Officer",
+      "220-149F limits 'the total floor area of additions and alterations' to 10% of the existing floor area. Read narrowly it limits only new floor area added to the house. Read broadly it also counts the space altered inside the house, which would hold the unit to about 10% of the house",
       "Density: R-1 allows 4 dwelling units per gross acre with public water and sewer (1 per acre with on-lot systems), R-2 1 per gross acre and MUN 10 per gross acre. Whether the accessory dwelling counts is not settled (220-13, 220-21, 220-30)",
-      "Parking: 2 spaces per dwelling unit for single-family dwellings. Apartments are counted by bedrooms (220-239, search snippet)",
+      "Parking: 'Single-family dwellings: 2 per dwelling unit'. The multifamily row includes conversion apartments and excludes accessory apartments, so only the single-family row can apply. Whether the accessory dwelling adds 2 spaces is not settled (220-239)",
       "Accessory structures may not stand in a front yard setback and must be at least 5 ft from side and rear lot lines. Accessory buildings are capped at 25 ft (220-150A, B(1), 220-12B)"
     ],
-    "notes": "Zoning office: Lower Allen Township (latwp.org). Read on eCode360 (LO1571) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, MUN and R-3. The TND and NR overlay sections and 220-239 were seen as search snippets only. The commercial and industrial lists allow only watchman or caretaker dwellings (I-1, I-2, I-3, search snippets)."
+    "notes": "Zoning office: Lower Allen Township (latwp.org). Read on eCode360 (LO1571) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, MUN and R-3. 220-6C (accessory dwelling), 220-124, 220-127, 220-139 and 220-239 were read in the print view. 220-142 (NR) was seen as a search snippet only. The commercial and industrial lists allow only watchman or caretaker dwellings (I-1, I-2, I-3, search snippets)."
   },
   "adu": {
     "term": {
@@ -50,7 +57,7 @@
       "url": "https://ecode360.com/print/LO1571?guid=11214717",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "'An accessory dwelling may be created in a single-family detached dwelling that is owned and occupied by the permit applicant.'"
+      "note": "'An accessory dwelling may be created in a single-family detached dwelling that is owned and occupied by the permit applicant.' The definition (220-6C) also names a unit 'in an accessory structure on the same lot'."
     },
     "status": {
       "value": "allowed_by_right",
@@ -68,11 +75,11 @@
         "TND",
         "NR"
       ],
-      "section": "220-11D, 220-19D, 220-28G, 220-124, 220-139K",
+      "section": "220-11D, 220-19D, 220-28G, 220-124A(11), 220-139K",
       "url": "https://ecode360.com/LO1571/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20dwellings%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22conversion%20apartment%22&scope=all&sortOrder=relevance",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "TND and NR are overlays, read from search snippets."
+      "note": "TND and NR are overlays. There the unit is by right only after the overlay's conditional use and Overall Master Plan are approved (220-124A, 220-139)."
     },
     "status_outside": {
       "value": "not_addressed",
@@ -220,7 +227,7 @@
         },
         {
           "kind": "size",
-          "condition": "Additions and alterations to create the unit are limited to 10% of the floor area existing at the time of application. No approval if the habitable floor area was increased within three years.",
+          "condition": "'The total floor area of additions and alterations that are proposed to create an accessory dwelling are limited to 10% of the floor area existing at the time of permit application.' Read narrowly, only new floor area counts. Read broadly, altered space inside the house counts too, which would hold the unit to about 10% of the house. No approval if the habitable floor area was increased within three years.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -250,7 +257,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the TND and NR overlays at most 5% of residential uses may be accessory dwelling units, and not more than 10% on a street in any block.",
+          "condition": "In the TND and NR overlays at most 5% of residential uses may be accessory dwelling units, and not more than 10% on each side of a street in any block.",
           "effect": "condition",
           "applies_to": null,
           "districts": [
@@ -258,8 +265,21 @@
             "NR"
           ],
           "building_types": null,
-          "section": "220-127, 220-142",
-          "url": "https://ecode360.com/LO1571/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20dwellings%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22conversion%20apartment%22&scope=all&sortOrder=relevance"
+          "section": "220-127B(3), 220-142",
+          "url": "https://ecode360.com/print/LO1571?guid=11214604"
+        },
+        {
+          "kind": "other",
+          "condition": "By right in the TND and NR overlays only after the overlay's conditional use is approved and only if consistent with the approved Overall Master Plan.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "TND",
+            "NR"
+          ],
+          "building_types": null,
+          "section": "220-124A, 220-139",
+          "url": "https://ecode360.com/print/LO1571?guid=11214423"
         }
       ],
       "section": "220-149",
@@ -286,11 +306,11 @@
         "garage_conversion",
         "over_garage"
       ],
-      "section": "220-149",
-      "url": "https://ecode360.com/print/LO1571?guid=11214717",
+      "section": "220-6C, 220-149",
+      "url": "https://ecode360.com/print/LO1571?guid=41767766",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "The unit is created in the single-family detached dwelling. A unit in a separate building is not named."
+      "note": "Conflicting text: the definition names a unit 'in an accessory structure on the same lot', while 220-149 speaks only of a unit created in the house. Ask the Zoning Officer."
     }
   },
   "size": {
@@ -308,7 +328,7 @@
       "url": "https://ecode360.com/print/LO1571?guid=11214717",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "'The accessory dwelling shall not be greater than 30% of the building's total floor area.'"
+      "note": "'The accessory dwelling shall not be greater than 30% of the building's total floor area.' Under the broad reading of 220-149F the unit could be held to about 10% of the existing house."
     },
     "min_sqft": {
       "value": 360,
@@ -373,15 +393,15 @@
     "spaces_required": {
       "value": null,
       "section": "220-239",
-      "url": "https://ecode360.com/LO1571/search?query=%22per%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "url": "https://ecode360.com/print/LO1571?guid=13736305",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Single-family dwellings: '2 per dwelling unit'. Apartments are counted by bedrooms."
+      "note": "'Single-family dwellings: 2 per dwelling unit.' The multifamily row includes conversion apartments and excludes accessory apartments."
     },
     "reading": {
-      "value": "Two spaces per dwelling unit, so four for the house and the unit, if the unit is counted like a single-family dwelling unit. Counted as an apartment it needs 1 to 3 spaces by bedrooms.",
+      "value": "Two spaces for the house. If the accessory dwelling is counted as a dwelling unit under the single-family row it adds 2 more, so 4 in all. The code does not settle this.",
       "section": "220-239",
-      "url": "https://ecode360.com/LO1571/search?query=%22per%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "url": "https://ecode360.com/print/LO1571?guid=13736305",
       "verified_on": "2026-11-14",
       "confidence": "secondary"
     }
@@ -560,6 +580,55 @@
         "verified_on": "2026-11-14",
         "confidence": "secondary",
         "note": "Ten units per gross acre. Whether the accessory dwelling counts is not settled."
+      }
+    },
+    "TND": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "220-127A(1), D",
+        "url": "https://ecode360.com/print/LO1571?guid=11214604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, width 40 ft."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "220-127A(1), D",
+        "url": "https://ecode360.com/print/LO1571?guid=11214604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "5 ft minimum, 25 ft maximum."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-127A(1), D",
+        "url": "https://ecode360.com/print/LO1571?guid=11214604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-127A(1), D",
+        "url": "https://ecode360.com/print/LO1571?guid=11214604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "5 ft if the building is served by a rear alley."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "220-127G",
+        "url": "https://ecode360.com/print/LO1571?guid=11214604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Detached accessory buildings. Not permitted within a front yard."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "220-127G",
+        "url": "https://ecode360.com/print/LO1571?guid=11214604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
       }
     }
   }

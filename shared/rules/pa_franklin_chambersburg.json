@@ -8,6 +8,8 @@
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/10696328",
+      "https://ecode360.com/print/CH1151?guid=10697248",
+      "https://ecode360.com/print/CH1151?guid=10697297",
       "https://ecode360.com/print/CH1151?guid=10696490",
       "https://ecode360.com/print/CH1151?guid=10696531",
       "https://ecode360.com/print/CH1151?guid=10696558",
@@ -34,11 +36,15 @@
     "code_current_through_note": "eCode360 breadcrumb 'Code 2026-09-28'. The two New Laws (2026-10-26) do not amend Chapter 300.",
     "checks": [
       "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or granny flat provision. A code search for those words and for cottage, 'accessory unit' and 'living quarters' found only watchman or caretaker quarters in the manufacturing districts (300-50, 300-55)",
-      "A two-family dwelling is permitted by right in LDR (6,000 sq ft per dwelling unit, so 12,000 for two) and MDR (3,600 per unit, so 7,200), and through them in DCN, DCH, Central Core and Professional Office (625 sq ft per family in a building for two or more families) (300-14C, 300-17C, 300-23, 300-26, 300-31A, 300-35A, 300-36A, 300-40A, 300-44, 300-70A, 300-73D)",
+      "A two-family dwelling is permitted by right in LDR (6,000 sq ft per dwelling unit, so 12,000 for two) and MDR (3,600 per unit, so 7,200), and through them in DCN, DCH, Central Core, Professional Office, Health Care Service and Health Institution (625 sq ft per family in a building for two or more families where stated) (300-14C, 300-17C, 300-23, 300-26, 300-31A, 300-35A, 300-36A, 300-40A, 300-44, 300-70A, 300-73D, 300-146Y, 300-155J)",
       "Conversion apartments: the Zoning Hearing Board may allow, by special exception, the conversion of a building that existed on 6-23-1982 into a dwelling for two or more families in a residential district. Lot area per family at least 6,000 sq ft in LDR and 625 sq ft in other residential districts. No outside structural change except for sanitation or safety. Only for 'a large building which has relatively little economic value or usefulness as a conforming dwelling' (300-135, 300-24A)",
       "Where neither public sewer nor public water is provided, each lot needs 20,000 sq ft per family. With one of them, 10,000 sq ft per family (300-133C(1))",
       "Parking: 2 spaces 'per each family or dwelling' (300-77A). In the Southgate Neighborhood Overlay half of that (300-61A). None in Central Core (300-45)",
-      "Accessory buildings in the rear yard: at most 35% of the required rear yard, 15 ft high, 6 ft from the rear lot line and 60 ft from the front lot line (300-133E(1))",
+      "An accessory building (a garage attached to a one-family house, or a detached building of the same design used for an accessory use) may project into the required rear yard. Such a projection may occupy at most 35% of the required rear yard, be at most 15 ft high and at least 6 ft from the rear lot line, and a detached one must be at least 60 ft from the front lot line (300-133E(1)). Outside the required rear yard the district height applies",
+      "In LDR every dwelling must have at least 900 sq ft of floor area, not counting a basement (300-20)",
+      "A group housing development (two or more buildings on a plot of at least five acres that is not subdivided) is a special exception in LDR and MDR (300-15C, 300-24C, 300-136)",
+      "The subdivision of an existing attached or semidetached dwelling or accessory structure may be allowed by special exception, outside the manufacturing districts (300-138.4)",
+      "Recreational vehicles may not be used as a dwelling while parked or stored on a lot (300-76E)",
       "LDR, MDR, DCN, Central Core and Professional Office also permit 'uses which are of the same general character' as the listed uses (300-14N, 300-23F, 300-31M, 300-40D, 300-70I). Whether a second unit on a house lot could qualify is for the Zoning Officer. It is not an ADU rule",
       "A boardinghouse may not use accessory buildings or garages as living units (300-138.1D)"
     ],
@@ -90,7 +96,9 @@
             "DCN",
             "DCH",
             "Central Core",
-            "Professional Office"
+            "Professional Office",
+            "Health Care Service",
+            "Health Institution"
           ],
           "conditions": "A building for two families living independently of each other. Lot area per dwelling unit: LDR 6,000, MDR 3,600 (lot coverage 30%), and 625 sq ft per family in DCH, Central Core and Professional Office. Two parking spaces per family. Without public sewer and water, 20,000 sq ft per family (10,000 with one of them).",
           "min_lot_sqft": 12000,
@@ -102,7 +110,7 @@
             "Central Core": 1250,
             "Professional Office": 6000
           },
-          "section": "300-14C, 300-17C, 300-26, 300-31A, 300-32, 300-36A, 300-44, 300-70A, 300-73D, 300-133C(1)",
+          "section": "300-14C, 300-17C, 300-26, 300-31A, 300-32, 300-36A, 300-44, 300-70A, 300-73D, 300-146Y, 300-155J, 300-133C(1)",
           "url": "https://ecode360.com/print/CH1151?guid=10696490",
           "confidence": "secondary",
           "requires": [
@@ -117,7 +125,7 @@
               "section": "300-133C(1)"
             }
           ],
-          "note": "Read as a path for an existing house converted to two units. DCN dwellings follow the MDR area rules (300-32). Professional Office lots need 6,000 sq ft for a detached building (300-73D)."
+          "note": "Read as a path for an existing house converted to two units. DCN dwellings follow the MDR area rules (300-32). Professional Office lots need 6,000 sq ft for a detached building (300-73D). Health Care Service allows the Professional Office uses (300-146Y) and Health Institution the LDR and Professional Office residential uses (300-155J). No lot area figure for a dwelling is set in those two districts."
         },
         {
           "name": "Two-family dwelling, without public sewer or public water",
@@ -128,7 +136,9 @@
             "DCN",
             "DCH",
             "Central Core",
-            "Professional Office"
+            "Professional Office",
+            "Health Care Service",
+            "Health Institution"
           ],
           "conditions": "Where neither public sewer nor public water is provided, 20,000 sq ft per family, so 40,000 for two, and 100 ft width. With one of them, 10,000 per family, so 20,000 for two, and 75 ft width.",
           "min_lot_sqft": 40000,
@@ -205,12 +215,27 @@
   },
   "envelope": {
     "max_height_ft": {
-      "value": 15,
-      "section": "300-133E(1)(b)[2]",
-      "url": "https://ecode360.com/print/CH1151?guid=10697139",
+      "value": 35,
+      "section": "300-16A, 300-25A, 300-33",
+      "url": "https://ecode360.com/print/CH1151?guid=10696490",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Accessory building rule, not an ADU rule. A detached accessory building in the rear yard may not exceed 15 ft."
+      "note": "District height for residential buildings. Accessory building rule, not an ADU rule. No general accessory height cap was found outside the required rear yard."
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 15,
+          "where": "A building projecting into the required rear yard",
+          "section": "300-133E(1)(b)[2]",
+          "url": "https://ecode360.com/print/CH1151?guid=10697139",
+          "note": "No such projection may occupy more than 35% of the required rear yard, and a detached one must stand at least 60 ft from the front lot line."
+        }
+      ],
+      "section": "300-133E(1)(b)",
+      "url": "https://ecode360.com/print/CH1151?guid=10697139",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
     },
     "setback_rear_ft": {
       "value": 6,
@@ -218,15 +243,7 @@
       "url": "https://ecode360.com/print/CH1151?guid=10697139",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Accessory building in the rear yard: at least 6 ft from the rear lot line."
-    },
-    "front_yard_barred": {
-      "value": true,
-      "section": "300-133E(1)(b)[4]",
-      "url": "https://ecode360.com/print/CH1151?guid=10697139",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "A detached accessory building in the rear yard must be at least 60 ft from the front lot line."
+      "note": "For a building projecting into the required rear yard: 'No such projection shall be less than six feet from any rear lot line.' Otherwise the district rear yard applies."
     }
   },
   "use": {

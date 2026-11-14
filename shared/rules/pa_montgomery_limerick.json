@@ -11,6 +11,9 @@
       "https://ecode360.com/print/LI1176?guid=11207372",
       "https://ecode360.com/print/LI1176?guid=11206950",
       "https://ecode360.com/print/LI1176?guid=11207363",
+      "https://ecode360.com/print/LI1176?guid=11208134",
+      "https://ecode360.com/print/LI1176?guid=11208259",
+      "https://ecode360.com/print/LI1176?guid=11207699",
       "https://ecode360.com/print/LI1176?guid=11207844",
       "https://ecode360.com/print/LI1176?guid=11207936",
       "https://ecode360.com/print/LI1176?guid=11207952",
@@ -40,9 +43,13 @@
       "An addition for the unit must keep the look of a single-family detached house from the street and neighbors (184-71B(6)(g))",
       "A single-family detached house may be converted into a dwelling for more families by special exception: each unit at least 500 sq ft, the lot area per unit not below the district requirement, no outside change except for safety (184-70)",
       "R-4 and R-5 lot and yard figures are in PDF attachments that were not read. Tracts under 10 acres there follow the R-3 rules (184-114A, 184-119A)",
+      "VC permits a single-family detached village house, but its use list does not refer to the 184-71 accessory uses, and a lot without public water or sewer may hold only one dwelling unit (184-129R, 184-131). Ask the Zoning Officer whether the unit is allowed there",
+      "HC permits one residential use per lot, either one apartment or one single-family detached unit, so a second unit is not permitted there (184-139A(16))",
+      "In VC a twin or duplex is permitted (5,000 sq ft per unit with public sewer and water), and an existing single-family house may be converted to at most four apartments with 2,000 sq ft of lot per unit, keeping the front facade (184-129S, V, 184-133A)",
+      "Parking: 2 spaces per dwelling unit for a single-family dwelling. Other dwellings: 1 per studio unit, 2 per other unit (184-87)",
       "On lots under 3 acres no accessory building in the front yard or between the house and the street (184-71C(1))"
     ],
-    "notes": "Zoning office: Limerick Township (limerickpa.org). Read on eCode360 (LI1176) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4 and R-5. A code search for '184-71' with 'single-family' also returned the MHP sections (snippets only). The VC, HC, MS, O/LI, LLI, HI, HI/E and RB use lists were not read. The R-4 and R-5 development standards (Attachments 1 and 2) are PDF only and were not opened. Parking (184-87) was not read."
+    "notes": "Zoning office: Limerick Township (limerickpa.org). Read on eCode360 (LI1176) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4 and R-5. A code search for '184-71' with 'single-family' also returned the MHP sections (snippets only). The VC and HC use lists were read. The MS, O/LI, LLI, HI, HI/E and RB use lists were not read. The R-4 and R-5 development standards (Attachments 1 and 2) are PDF only and were not opened. Parking (184-87) was read."
   },
   "adu": {
     "term": {
@@ -60,6 +67,14 @@
       "verified_on": "2026-11-14",
       "confidence": "verified",
       "note": "A permitted accessory use, inside the house, for immediate family of the owner."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "184-139A(16)",
+      "url": "https://ecode360.com/print/LI1176?guid=11208259",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Outside the districts that allow a single-family dwelling with 184-71 accessory uses the code has no rule for the unit. HC allows one residential use per lot."
     },
     "status_by_form": {
       "value": {
@@ -84,13 +99,15 @@
           "R-5",
           "MHP"
         ],
-        "not_permitted_in": []
+        "not_permitted_in": [
+          "HC"
+        ]
       },
       "section": "184-71B(6), 184-98, 184-104, 184-108, 184-112, 184-117, 184-122",
       "url": "https://ecode360.com/print/LI1176?guid=11207372",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "184-71 names no district. The rule reaches a principal single-family dwelling where the district permits it with accessory uses under 184-71. MHP from search snippets only."
+      "note": "184-71 names no district. The rule reaches a principal single-family dwelling where the district permits it with accessory uses under 184-71. MHP from search snippets only. HC allows one residential use per lot (184-139A(16)). VC permits a village house (184-129R) but its use list does not name the 184-71 accessory uses, so it is left out of both lists and reads as ask."
     }
   },
   "approval": {
@@ -134,9 +151,69 @@
             }
           ],
           "note": "Read as twice the district lot area for two units (R-1 80,000, R-2 and R-3 traditional lots with public sewer and water 40,000 and 20,000). Not tied to a district list."
+        },
+        {
+          "name": "Two-family dwelling (twin or duplex)",
+          "path": "by_right",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "Twin or duplex with public sewer and water: 5,000 sq ft per unit, so 10,000 for two, width 60 ft for a duplex, building coverage 20%.",
+          "min_lot_sqft": 10000,
+          "section": "184-129S, 184-133A(1)(b)",
+          "url": "https://ecode360.com/print/LI1176?guid=11208134",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "184-133A(1)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "184-133A(1)"
+            }
+          ],
+          "note": "Read as a path for converting an existing house into two units."
+        },
+        {
+          "name": "Multifamily conversion",
+          "path": "by_right",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "An existing single-family detached house may be converted to at most four apartments. The front facade and porch are kept, additions go to the rear, stairs and fire escapes to the rear or side. 2,000 sq ft of lot per dwelling unit.",
+          "min_lot_sqft": 4000,
+          "section": "184-129V",
+          "url": "https://ecode360.com/print/LI1176?guid=11208134",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing building",
+              "section": "184-129V(1)"
+            }
+          ]
+        },
+        {
+          "name": "Two-family dwelling (twin or duplex)",
+          "path": "by_right",
+          "districts": [
+            "R-4",
+            "R-5"
+          ],
+          "conditions": "Two-family dwellings are permitted uses. Development under R-4 or R-5 standards needs a 10-acre tract with public sewer and water. Smaller tracts follow R-3, where twins and duplexes also need a 10-acre tract.",
+          "min_lot_sqft": 435600,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "184-112B, 184-114A, 184-117B, 184-119A, 184-110C",
+          "url": "https://ecode360.com/print/LI1176?guid=11207971",
+          "confidence": "secondary",
+          "note": "The R-4 and R-5 lot figures are in PDF attachments that were not read."
         }
       ],
-      "section": "184-70",
+      "section": "184-70, 184-112, 184-129",
       "url": "https://ecode360.com/print/LI1176?guid=11207363",
       "verified_on": "2026-11-14",
       "confidence": "verified"
@@ -325,10 +402,17 @@
     "spaces_required": {
       "value": null,
       "section": "184-87",
-      "url": "https://ecode360.com/11206587",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "Not read."
+      "url": "https://ecode360.com/print/LI1176?guid=11207699",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No row for the unit. 'Single-family dwelling: 2 per dwelling unit.' 'Other dwellings not listed separately: 1 per studio unit; 2 per unit for any other unit.'"
+    },
+    "reading": {
+      "value": "Two spaces for the house. The unit may add 2 more (or 1 for a studio) if it is counted as a dwelling unit. The covenant treats the property as one dwelling, so the Zoning Officer may count only the house.",
+      "section": "184-87, 184-71B(6)(d)",
+      "url": "https://ecode360.com/print/LI1176?guid=11207699",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
     }
   },
   "utilities": {
@@ -587,6 +671,53 @@
         "verified_on": null,
         "confidence": "unverified",
         "note": "The R-5 development standards are in a PDF attachment that was not read. Tracts under 10 acres follow R-3 rules."
+      }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "184-133",
+        "url": "https://ecode360.com/print/LI1176?guid=11208134",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached village house with public sewer and water. Without them, each existing lot may hold one permitted use and one dwelling unit (184-131)."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "184-133",
+        "url": "https://ecode360.com/print/LI1176?guid=11208134",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft minimum, 30 ft maximum."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "184-133",
+        "url": "https://ecode360.com/print/LI1176?guid=11208134",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "184-133",
+        "url": "https://ecode360.com/print/LI1176?guid=11208134",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "184-133",
+        "url": "https://ecode360.com/print/LI1176?guid=11208134",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "184-133",
+        "url": "https://ecode360.com/print/LI1176?guid=11208134",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Of net lot area. Impervious 70%. Bonus to 30% and 75% under 184-136A."
       }
     }
   }

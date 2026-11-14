@@ -44,7 +44,7 @@
       "One recreational vehicle may be lived in as a temporary accessory residence for seven days once a year (255-200D(10)(e))",
       "In C-5 a building of more than 10,000 sq ft that existed when the district was adopted may be converted into apartments by special exception (255-92B). Not a path for a house"
     ],
-    "notes": "Zoning office: Borough of Carlisle (carlislepa.org). Read on eCode360 (CA1126) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4, R-5, OR, C-5 and UM. The C-1, C-2, C-3, C-4, I-1, I-2, I-C, INS and OS use lists were not read. The code searches found no ADU-like listing there besides caretaker quarters in INS (255-129C). The UM area and bulk rules were not read."
+    "notes": "Zoning office: Borough of Carlisle (carlislepa.org). Read on eCode360 (CA1126) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4, R-5, OR, C-5 and UM. The C-1, C-2, C-3, C-4, I-1, I-2, I-C, INS and OS use lists were not read. The code searches found no ADU-like listing there besides caretaker quarters in INS (255-129C). The UM area and bulk table (255-123) was read from the print view. The UM density table (255-126) was seen only as a search snippet."
   },
   "adu": {
     "term": {
@@ -106,9 +106,10 @@
           "min_lot_sqft": 7200,
           "min_lot_by_district": {
             "R-3": 7200,
-            "R-4": 7200
+            "R-4": 7200,
+            "UM": 7200
           },
-          "section": "255-31C(3), 255-34 Table V-1, 255-38E, 255-42 Table VI-1, 255-120A(38)",
+          "section": "255-31C(3), 255-34 Table V-1, 255-38E, 255-42 Table VI-1, 255-120A(38), 255-123",
           "url": "https://ecode360.com/print/CA1126?guid=10684421",
           "confidence": "secondary",
           "requires": [
@@ -123,7 +124,7 @@
               "section": "255-31C, 255-194"
             }
           ],
-          "note": "Read as a path for converting an existing house into two units. The UM lot rules were not read. In UM an existing building may be converted to any permitted use (255-120A(41))."
+          "note": "Read as a path for converting an existing house into two units. UM: 3,600 sq ft per dwelling unit for residential types other than single-family detached, townhouse and garden apartment (255-123), so 7,200 for two. In UM an existing building may be converted to any permitted use (255-120A(41))."
         }
       ],
       "section": "255-31, 255-38, 255-120",
@@ -682,6 +683,69 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "'Every principal building shall be served by public water and sewage services.' If the Borough allows a dwelling without both, the lot must be one acre."
+      }
+    },
+    "UM": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "255-123",
+        "url": "https://ecode360.com/print/CA1126?guid=10685114",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, per dwelling unit. Other residential types 3,600 per unit."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "255-123",
+        "url": "https://ecode360.com/print/CA1126?guid=10685114",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "5 ft minimum, 20 ft maximum."
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "255-123",
+        "url": "https://ecode360.com/print/CA1126?guid=10685114",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "16 ft total where two are required."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "255-123",
+        "url": "https://ecode360.com/print/CA1126?guid=10685114",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "255-123",
+        "url": "https://ecode360.com/print/CA1126?guid=10685114",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "75 ft by special exception."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "255-123",
+        "url": "https://ecode360.com/print/CA1126?guid=10685114",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage. Impervious 80%."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "255-123",
+        "url": "https://ecode360.com/print/CA1126?guid=10685114",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "255-123",
+        "url": "https://ecode360.com/print/CA1126?guid=10685114",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
       }
     },
     "OR": {

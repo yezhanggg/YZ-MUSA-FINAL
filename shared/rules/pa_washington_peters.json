@@ -32,13 +32,13 @@
     "code_url": "https://ecode360.com/32749579",
     "code_current_through": "2026-01-05",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2026-01-05'. Ord. No. 925, 928 and 929 (2026, zoning) are listed under New Laws and not yet codified.",
-    "code_caution": "Three zoning amendments, Ord. No. 925 (2026-04-27), 928 (2026-06-22) and 929 (2026-09-28), are not yet in the online code. They were not read, so they may change these rules. Ask the Township.",
+    "code_caution": "Three zoning amendments, Ord. No. 925 (2026-04-27), 928 (2026-06-22) and 929 (2026-09-28), are not yet in the online code. A search of their text finds no accessory dwelling, accessory apartment, in-law or granny wording, but Ord. No. 928 restates the single-family attached and duplex definitions and their parking. They were not read in full, so ask the Township about the duplex route.",
     "checks": [
       "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or granny flat provision. A code search for those words and for caretaker, cottage, 'accessory unit' and 'living quarters' found none. The 2016 Comprehensive Plan recommends permitting ADUs, and a 2017 Zoning Hearing Board agenda lists a variance request for a second dwelling unit as a 'granny flat'",
       "Uses not listed for a district are not allowed: 'No building, structure or land shall be constructed or used for any purpose ... other than' the listed uses. 'All other uses' are a conditional use only in the IN district (440-402A, Figure 400.2)",
       "Not more than one detached principal building on a lot, except in a planned land development (440-402A)",
       "A duplex ('a single residential structure that is divided into two dwelling units each of which has a separate entrance') is a single-family attached dwelling. Single-family attached dwellings are permitted by right in MD, VR, TC, VC, MA.1, MA.2, WV and VB, and in the CR and MR overlays (440-301, Figure 400.2)",
-      "MD allows at most 7 dwelling units per gross acre (Figure MD.2). LD allows 1.2 per acre, CL 2 per acre and RR one per 5 acres",
+      "MD allows at most 7 dwelling units per gross acre (Figure MD.2), and unit counts round up at 0.5 (440-402G(3)), so two units need about 9,334 sq ft (about 12,446 without rounding). LD allows 1.2 per acre, CL 2 per acre and RR one per 5 acres",
       "Accessory structures over 120 sq ft or 10 ft high meet the accessory setbacks, stay at least 5 ft from the house, and may not hold a use the district does not permit (440-501B, E, G)",
       "Existing lots without public sewer need a septic system approved by the Sanitary District and at least one acre. New lots must connect to public water and sewer (440-402H(2))",
       "Parking: 2 spaces per dwelling unit for single-family detached and attached dwellings (440-507, Figure 500.9)",
@@ -94,17 +94,19 @@
             "MA.1",
             "MA.2",
             "WV",
-            "VB"
+            "VB",
+            "CR",
+            "MR"
           ],
-          "conditions": "A single residential structure divided into two dwelling units, each with a separate entrance and separate access to the outdoors. 2 parking spaces per unit. In MD at most 7 units per gross acre (about 12,446 sq ft for two). In VR each unit needs a primary entrance on the front facade.",
+          "conditions": "A single residential structure divided into two dwelling units, each with a separate entrance and separate access to the outdoors. 2 parking spaces per unit. In MD at most 7 units per gross acre. With the rounding rule (0.5 or more rounds up) two units need about 9,334 sq ft. Without rounding they need about 12,446. In VR each unit needs a primary entrance on the front facade. CR and MR are overlays with their own development rules.",
           "min_lot_sqft": null,
           "min_lot_by_district": {
-            "MD": 12446
+            "MD": 9334
           },
-          "section": "440-301 (duplex, dwelling B), 440-402 Figure 400.2, Figure MD.2, 440-403.6D(2)(a)",
+          "section": "440-301 (duplex, dwelling B), 440-402 Figure 400.2, 440-402G(3), Figure MD.2, 440-403.6D(2)(a)",
           "url": "https://ecode360.com/print/PE3557?guid=32770968",
           "confidence": "secondary",
-          "note": "Read as a path for converting an existing house into two units. The lot and density rules of the TC, VC, MA, WV and VB districts were not read."
+          "note": "Listed, but ask the zoning officer: a single-family attached dwelling is defined as units attached 'by common vertical wall(s)', so a duplex with one unit over the other may not fit. Read as a path for converting an existing house into two units. The MD figure uses the 440-402G(3) rounding (7 x lot acres of 1.5 or more rounds up to 2). The lot and density rules of the TC, VC, MA, WV and VB districts and the CR and MR overlays were not read."
         }
       ],
       "section": "Figure 400.2",

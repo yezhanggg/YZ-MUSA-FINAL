@@ -10,6 +10,7 @@
       "https://ecode360.com/10796167",
       "https://ecode360.com/print/WE0457?guid=32180863",
       "https://ecode360.com/print/WE0457?guid=32180791",
+      "https://ecode360.com/print/WE0457?guid=32180852",
       "https://ecode360.com/print/WE0457?guid=10796512",
       "https://ecode360.com/print/WE0457?guid=10796563",
       "https://ecode360.com/print/WE0457?guid=10796691",
@@ -36,7 +37,7 @@
     "checks": [
       "An in-law suite is allowed by right (use and occupancy and zoning permit) only in the R-2, R-3 and R-4 districts: 'In-law suites shall only be permitted in the R-2, R-3 and R-4 Zoning Districts' (84-57.25B, 84-9D(6), 84-12D(6), 84-15D(6))",
       "Only for a relative of the residents of the house (and the relative's spouse), at most two occupants. The Zoning Officer may ask for proof (84-8, 84-57.25B(1), (2))",
-      "The suite may not be more than 35% of the floor area of the house and the suite together (84-57.25B(5))",
+      "The suite may not be more than 35% of the floor area of the house and the suite together (84-57.25B(5)). Floor area is the 84-8 definition: it includes basements that count as a story, attics with 8 ft headroom, porches more than 50% enclosed and accessory buildings, so it can be larger than the living area on a tax record",
       "It may be in the house or 'in an existing accessory structure, such as a garage'. A new building for the suite is not named (84-57.25B(4))",
       "The house must keep the look of a single-family house, and all utilities (gas, electric, heat, water, sewer) are shared (84-57.25B(6), (7))",
       "The owner signs an agreement recorded with the Chester County Recorder of Deeds that bars renting the suite as an apartment to nonrelatives (84-57.25B(9))",
@@ -269,7 +270,7 @@
       "url": "https://ecode360.com/print/WE0457?guid=32180863",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "No square-foot cap. The cap is a share of the floor area."
+      "note": "No square-foot cap. The cap is a share of the floor area. Floor area is the 84-8 definition: it counts basements that are a story, attics with 8 ft headroom, porches more than 50% enclosed and accessory buildings (not parking space). A tax record's living area may be smaller than this."
     },
     "max_share_internal": {
       "value": 0.35,
@@ -277,7 +278,7 @@
       "url": "https://ecode360.com/print/WE0457?guid=32180863",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "'Shall not exceed 35% of the combined floor area of the principal dwelling plus the in-law suite.' For a suite inside the house the house floor area already includes it."
+      "note": "'Shall not exceed 35% of the combined floor area of the principal dwelling plus the in-law suite.' For a suite inside the house the house floor area already includes it. Floor area as defined in 84-8 (basements that are a story, attics with 8 ft headroom, porches over 50% enclosed, accessory buildings)."
     },
     "max_share_accessory_building": {
       "value": 0.538,
@@ -349,9 +350,9 @@
       "confidence": "verified"
     },
     "occupancy": {
-      "value": "A relative of the residents of the house (84-8 relative), and that relative's spouse. At most two occupants.",
-      "section": "84-8, 84-57.25B(1), (2)",
-      "url": "https://ecode360.com/print/WE0457?guid=32180863",
+      "value": "A relative of the residents of the house, and that relative's spouse. 84-8 relatives, by blood, marriage, adoption or formal foster relationship: brother, sister, parent, child, grandparent, great-grandparent, grandchild, great-grandchild, uncle, aunt, niece, nephew, sister-in-law, brother-in-law or parent-in-law. At most two occupants.",
+      "section": "84-8 (in-law suite, related or relative), 84-57.25B(1), (2)",
+      "url": "https://ecode360.com/print/WE0457?guid=32180852",
       "verified_on": "2026-11-14",
       "confidence": "verified"
     },

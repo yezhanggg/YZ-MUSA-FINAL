@@ -2199,7 +2199,7 @@
       "pop_rank": 75,
       "file": "pa_chester_west_goshen",
       "batch": 16,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10796167",
@@ -2209,7 +2209,7 @@
       "why": [
         "known ADU ordinance (Code 84-57.25 in-law suites)"
       ],
-      "status_note": "Drafted 2026-11-14. Open: the 35% cap is of the house plus the suite, so a suite in a garage or addition is about 54% of the house (read, not stated); whether a new addition is allowed (the code names the house and an existing accessory structure); R-3A overlay lots (use list without in-law suites) read as barred."
+      "status_note": "Verified 2026-11-14 after review16 fixes (84-8 floor area base for the 35% cap, 84-8 relatives list). For a later check: the 35% cap is of the house plus the suite, so a garage or addition suite is about 54% of the house (arithmetic); whether a new addition is allowed; R-3A overlay lots read as barred."
     },
     {
       "geoid": "4205512536",
@@ -2223,7 +2223,7 @@
       "pop_rank": 81,
       "file": "pa_franklin_chambersburg",
       "batch": 16,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10696328",
@@ -2233,7 +2233,7 @@
       "why": [
         "known ADU ordinance (batch 16 by population. Code Chapter 300 has no ADU text)"
       ],
-      "status_note": "Drafted 2026-11-14. No ADU text. Open: two-family conversion read as a path for an existing house; HCS and HI use lists not read; whether a second unit could be a use 'of the same general character' (300-14N) is for the Zoning Officer."
+      "status_note": "Verified 2026-11-14 after review16 fixes (300-133E(1) rear-yard projection rules, Health Care Service and Health Institution two-family route, 300-20, 300-136, 300-138.4, 300-76E). For a later check: two-family conversion read as a path for an existing house; whether a second unit could be a use 'of the same general character' is for the Zoning Officer."
     },
     {
       "geoid": "4212559608",
@@ -2247,7 +2247,7 @@
       "pop_rank": 76,
       "file": "pa_washington_peters",
       "batch": 16,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/32749579",
@@ -2257,7 +2257,7 @@
       "why": [
         "known ADU ordinance (batch 16 by population. Code Chapter 440 has no ADU text)"
       ],
-      "status_note": "Drafted 2026-11-14. No ADU text. Open: Ord. No. 925, 928 and 929 (2026 zoning amendments) not read (PDF); duplex conversion read from the definitions (a 2025 Planning Commission record, seen as a snippet, agrees); lot rules of the TC, VC, MA, WV and VB districts not read."
+      "status_note": "Verified 2026-11-14 after review16 fixes (MD duplex lot about 9,334 sq ft with 440-402G(3) rounding, CR and MR added, narrower caution). For a later check: Ord. No. 928 (2026) restates the single-family attached and duplex definitions and parking (PDF, seen as a search snippet); duplex route stays 'ask' because single-family attached means common vertical walls."
     },
     {
       "geoid": "4204111272",
@@ -2271,7 +2271,7 @@
       "pop_rank": 95,
       "file": "pa_cumberland_carlisle",
       "batch": 16,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10683915",
@@ -2281,7 +2281,7 @@
       "why": [
         "known ADU ordinance (batch 16 by population. Code Chapter 255 has no ADU text)"
       ],
-      "status_note": "Drafted 2026-11-14. No ADU text. Open: C-1 to C-4, I-1, I-2, I-C, INS and OS use lists and the UM area rules not read; two-family conversion read as a path for an existing house."
+      "status_note": "Verified 2026-11-14. UM area and bulk (255-123) added. For a later check: C-1 to C-4, I-1, I-2, I-C, INS and OS use lists not read; UM density table (255-126) seen only as a snippet."
     },
     {
       "geoid": "4209143312",
@@ -2305,7 +2305,7 @@
       "why": [
         "known ADU ordinance (Code 184-71B(6) temporary unit for relative)"
       ],
-      "status_note": "Drafted 2026-11-14. Open: Ord. No. 438 (2026-07-07 zoning amendment) not read (PDF); R-4 and R-5 lot and yard figures are in PDF attachments; MHP scope from search snippets; parking (184-87) not read."
+      "status_note": "Drafted 2026-11-14, review16 fixes applied: HC not permitted (184-139A(16)), VC left as ask (village house permitted, 184-71 not named), VC twin/duplex and multifamily conversion and R-4/R-5 two-family alternatives, 184-87 parking. Open: Ord. No. 438 (2026 zoning amendment) not read (PDF); R-4 and R-5 lot figures only in PDF attachments; MHP scope from snippets; whether the unit adds parking."
     },
     {
       "geoid": "4204144832",
@@ -2329,7 +2329,7 @@
       "why": [
         "known ADU ordinance (Code 220-149 accessory dwellings)"
       ],
-      "status_note": "Drafted 2026-11-14. Open: whether the accessory dwelling counts toward the district density (R-1 4 per acre, R-2 1 per acre, MUN 10 per acre); TND and NR overlay caps and 220-239 parking read from search snippets; a unit in a separate building is not named."
+      "status_note": "Drafted 2026-11-14, review16 fixes applied: TND and NR need the overlay conditional use and master plan first, TND lot row (220-127), 220-239 parking (multifamily row excludes accessory apartments), both readings of the 220-149F 10% limit. Open: the 220-6C definition names a unit in an accessory structure while 220-149 speaks only of the house; whether the unit counts toward density; whether it adds 2 parking spaces; TND height (220-125) not read."
     }
   ]
 }
