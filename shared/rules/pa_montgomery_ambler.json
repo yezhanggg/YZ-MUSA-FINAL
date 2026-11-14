@@ -1,0 +1,716 @@
+{
+  "provenance": {
+    "jurisdiction": "Ambler borough",
+    "instrument": "Borough of Ambler Code of Ordinances Chapter 27 Zoning (the 1996 Zoning Ordinance, Ord. 922, as amended), chapter PDF on the Borough website",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "The chapter PDF on the Borough site (file page dated October 8, 2026) is a compiled text whose page footers read 5/18/2011. The latest history note seen is Ord. 1055 (1/18/2011). The ADU text in 27-407 carries 'Ord. 922, 9/17/1996 ... as amended by Ord. 991, 8/15/2005; and by Ord. 987, 8/16/2004; and by Ord. 1021, 9/16/2008'. The Borough lists later zoning ordinances separately (Ordinances Passed After July 17, 2012).",
+    "effective_date": null,
+    "source_urls": [
+      "https://boroughofambler.com/wpfd_file/27-chapter-zoning/",
+      "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf",
+      "https://boroughofambler.com/departments/code-enforcement/code-of-ordinances/",
+      "https://boroughofambler.com/zoning-ordinance-amendment-public-hearing-information/",
+      "https://boroughofambler.com/?s=zoning+chapter+27"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Montgomery",
+    "municipality_type": "borough",
+    "geoid": "4209102264",
+    "code_host": "own site",
+    "code_url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf",
+    "code_current_through": null,
+    "code_current_through_note": "No currency date. Page footers 5/18/2011. Latest history note Ord. 1055 (1/18/2011).",
+    "code_caution": "Read with care: this is the Borough's Chapter 27 PDF, compiled only to about 2011. The ADU text (27-407) was last amended by Ord. 1021 on 9/16/2008. At least eight later zoning ordinances are posted separately and were not read, among them Ord. 1097 'Zoning Removing Residential Special Exceptions' and Ord. 1131 on R-3 (2023), one of the five ADU districts, plus 1084, 1086, 1087, 1117, 1133, 1134 and untitled ordinances from 2021 to 2026. A February 2026 hearing considered replacing Part 27 (Redevelopment Overlay). Any of them may change the rules below. Ask the Borough for the current Chapter 27 before relying on this answer.",
+    "checks": [
+      "An ADU is a permitted accessory use to a dwelling (27-407A(8)) in R-1, R-1-A, R-2, R-3 and MR, by zoning permit. The permit lasts at most one year and is renewed after an inspection by the Zoning Officer. It ends when the occupancy changes (27-407C(6))",
+      "Only for the lot owner's family: the ADU may be occupied only while the owner's family lives in the house, and at least one occupant must be a parent or grandparent, a spouse, partner or sibling of one of them, or a relative needing continuous care for injury, illness or a serious disability (27-202, 27-407C(2)(b))",
+      "A covenant is recorded so the unit is never rented (27-407C(1)(b), C(2)(c))",
+      "At least 400 sq ft of living space and at most the lesser of 800 sq ft or one third of the gross living area above grade of the house (27-407C(5)(a))",
+      "A new detached ADU, or a garage with the ADU above, may not be taller than the house (27-407C(5)(b))",
+      "A detached ADU stands in the rear yard, at least 10 ft behind the rear of the house and at least 4 ft from the side and rear lot lines. A covered walkway to the house is allowed but may not be fully enclosed (27-407B, C(5)(f))",
+      "Kitchen and full bath. Water, sewer and other utilities connect through the house's systems, with no separate connections. No separate address or mailbox. Not a mobile home, motor home or trailer (27-407C(3), C(5)(c) to (e))",
+      "Parking: one space for the ADU on top of the house's two. The Zoning Administrator may raise or lower it by the number of drivers, and street parking may reduce it (27-407C(4), 27-2102)",
+      "One ADU per property (27-407C(2)(a))",
+      "Because the unit must be at least 400 sq ft and at most one third of the house's gross living area above grade, a house under 1,200 sq ft above grade cannot have an ADU without a variance (27-407C(5)(a))",
+      "The ADU is accessory to 'a dwelling', so twins, two-family and attached houses in R-2, R-3 and MR qualify too. The district figures in the tool are for detached houses. Twin and attached lots have their own minimums: R-2 3,500 sq ft per unit, R-3 and MR 2,500 per unit (27-703, 27-803, 27-905)",
+      "An attached ADU is also an accessory use: it must be in the rear yard and at least 4 ft from the side and rear lines. Only the separation rules exempt it. On a party-wall line the wall must be permanent and roof water must drain on the lot or to a storm sewer (27-407B)",
+      "The only way to rent space to someone outside the family is renting rooms, in the dwelling where the owner lives or in an accessory building, to no more than two nontransient persons (27-407A(5)). The ADU itself may never be rented",
+      "A lot below the district area or width may be used only after a variance (27-2605)",
+      "Accessory uses to a dwelling also include living quarters for a household employee or caretaker, and renting rooms in the dwelling or an accessory building to no more than two nontransient persons (27-407A(4), (5))",
+      "R-2 allows a two-family dwelling only if both units are built at the same time (27-702.1.B)",
+      "The conversion of a house to two or more families by special exception in R-2 and R-3 (27-408) may have been removed by Ord. 1097. Not checked",
+      "Garden apartment, elderly housing, commercial, office, industrial and institutional districts also list accessory uses under 27-407, but have no single-family house. Ask the zoning officer",
+      "No short-term rental rule in Chapter 27. The ADU may not be rented at all"
+    ],
+    "notes": "Zoning office: Ambler Borough. The index link (.../download/code_of_ordinances/code-of-ordinances-by-chapter/Chapter27.pdf) now returns 'Page not found' in a browser. A plain fetch meets a script cookie check, which was not worked around. The current chapter link was found with the Borough site search. Opening it in the browser saved a copy to the Downloads folder, which was read. The post-2012 ordinance PDFs open only as downloads and were not opened. The text was searched for accessory dwelling, ADU, conversion, nonconforming, similar, short-term. No unlisted-use or similar-use section was found."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "27-202",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=13",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'ACCESSORY DWELLING UNIT — a suite, either detached from or attached to the primary dwelling unit on the lot, for occupation by the following members of the lot owner's family'."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-202, 27-407A(8), C(2)(b)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A permitted accessory use to a dwelling, limited to the lot owner's family (parents, grandparents and their spouses, partners or siblings, or a relative needing continuous care). The path is a zoning permit renewed each year."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-1-A",
+        "R-2",
+        "R-3",
+        "MR"
+      ],
+      "section": "27-502.1.B, 27-602.1.B, 27-702.1.C, 27-802.1.D, 27-902.1.E",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Districts that permit a single-family detached dwelling and 'Accessory uses, in compliance with §27-407'."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "27-1102, 27-1202, 27-1302, 27-1402",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Other districts list 27-407 accessory uses but permit no single-family house."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-407A(8), C(6), 27-502.1.B",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Permitted accessory use. 'Permits for accessory dwelling units shall be issued for a period not longer than one year and must be renewed'. Renewal 'requires inspection of the accessory dwelling unit by the Zoning Officer'."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails 27-407 needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Living quarters for a household employee or caretaker",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-1-A",
+            "R-2",
+            "R-3",
+            "MR"
+          ],
+          "conditions": "A use accessory to a dwelling. The code gives no size or form rule for it.",
+          "min_lot_sqft": null,
+          "section": "27-407A(4)",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+          "confidence": "secondary",
+          "note": "Listed beside the ADU. Whether it may hold a kitchen is not stated"
+        },
+        {
+          "name": "Renting rooms to up to two nontransient persons",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-1-A",
+            "R-2",
+            "R-3",
+            "MR"
+          ],
+          "conditions": "'The renting of rooms within the dwelling in which the lessor resides, or in an accessory building, for not more than two nontransient persons.'",
+          "min_lot_sqft": null,
+          "section": "27-407A(5)",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+          "confidence": "secondary",
+          "note": "Rooms, not a separate dwelling unit"
+        },
+        {
+          "name": "Conversion of a house to two or more families",
+          "path": "special_exception",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Each unit at least 700 sq ft plus 100 sq ft per bedroom over one. Lot size per unit at least 75% of the district minimum. Outside stairs to the rear. Parking met. Not in a floodplain area.",
+          "min_lot_sqft": null,
+          "section": "27-408, 27-702.2.B",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=45",
+          "confidence": "secondary",
+          "note": "Ord. 1097 'Zoning Removing Residential Special Exceptions' was adopted after this compilation and may have removed it. Ask the Borough"
+        }
+      ],
+      "section": "27-407A, 27-408",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-1-A",
+        "R-2",
+        "R-3",
+        "MR"
+      ],
+      "section": "27-502, 27-602, 27-702, 27-802, 27-902",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-202, 27-407C(5)(b)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=13",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A detached ADU may take the form of a cottage or similar dwelling, or may be constructed over a detached accessory building such as a garage.' New construction is named."
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "27-2605.1.A",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=218",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A nonconforming lot of record 'may be used as otherwise permitted in that district following the granting of a variance by the Zoning Hearing Board for the particular use.' Reading: a new accessory use on an undersized lot needs a variance."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The ADU may be occupied only while the lot owner's family lives in the house, and by at least one of: a parent or grandparent, a spouse, partner or sibling of one of them, or a relative by blood, marriage or adoption needing continuous care.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-407C(2)(b)",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "A recorded covenant bars renting the unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-407C(2)(c)",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41"
+        },
+        {
+          "kind": "other",
+          "condition": "Zoning permit for at most one year, renewed after a Zoning Officer inspection. It expires when the occupancy changes.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-407C(6)",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43",
+          "bill_overrides": true
+        },
+        {
+          "kind": "utilities",
+          "condition": "Water, sewer and other utilities connect to the systems serving the house. No separate utility systems or connections.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-407C(5)(d)",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43"
+        },
+        {
+          "kind": "size",
+          "condition": "The unit must be at least 400 sq ft and at most one third of the house's gross living area above grade, so a house under 1,200 sq ft above grade cannot have one.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "house_sqft_at_least",
+          "value": 1200,
+          "section": "27-407C(5)(a)",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43"
+        },
+        {
+          "kind": "design",
+          "condition": "An attached ADU must also be in the rear yard, at least 4 ft from the side and rear lot lines (27-407B(3)). Only the separation from the house is waived for it.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-407B",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "The district lot figures shown are for a detached house. A twin or attached house has its own minimum: 3,500 sq ft per unit in R-2, 2,500 per unit in R-3 and MR.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-2",
+            "R-3",
+            "MR"
+          ],
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "27-703, 27-803, 27-905",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=94"
+        },
+        {
+          "kind": "design",
+          "condition": "No separate address or mailbox. Not a mobile home, motor home or trailer. A covered walkway to a detached ADU may not be fully enclosed.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-407C(3), C(5)(e), (f)",
+          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43"
+        }
+      ],
+      "section": "27-407C",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-202, 27-407A(8)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=13",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'(a) Detached ADUs ... (b) Attached ADUs'. Detached: 'a cottage or similar dwelling, or ... over a detached accessory building such as a garage'. Attached: 'attached to the principal dwelling unit'. Reading: a suite inside the house and a converted garage are read as the attached and the detached kind. Ask the zoning officer."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 800,
+      "section": "27-407C(5)(a)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'may not exceed the lesser of 800 square feet of living space or 1/3 of the gross living area above grade of the principal house on the lot.'"
+    },
+    "max_share_of_house": {
+      "value": 0.3333,
+      "section": "27-407C(5)(a)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "One third of the house's gross living area above grade. The lesser of this and 800 sq ft."
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "27-407C(5)(a)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Floor space must have at least 400 square feet of living space'."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 40,
+      "section": "27-407C(5)(b), 27-503",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No ADU feet figure. 'The height of a newly constructed, detached accessory dwelling unit may not exceed the height of the principal building on the lot.' The district height (40 ft in every ADU district) is the outer limit."
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "27-407C(5)(b)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Also a garage with the ADU on the second story."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-503, 27-603, 27-703, 27-803, 27-905",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "setback_side_ft": {
+      "value": 4,
+      "section": "27-407B(3)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory uses 'Are not nearer than four feet to any side or rear property line.'"
+    },
+    "setback_rear_ft": {
+      "value": 4,
+      "section": "27-407B(3)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "27-407B(1), (2)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Detached accessory uses are 'separated by at least 10 feet, measured back from the street line, from the rearmost portion of the principal building (with the exception of attached accessory dwelling units)'."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-407B",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory uses are permitted in the rear yard'."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "27-407B",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "27-407C(2)(b)1)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit may be occupied only when the lot owner's family is living in the principal dwelling on the lot.'"
+    },
+    "family_only": {
+      "value": true,
+      "section": "27-202, 27-407C(2)(b)2)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At least one occupant is a parent or grandparent of the owner's family, a spouse, partner or sibling of one of them, or a relative needing continuous care because of injury, illness or a serious disability. The owner's family lives in the house.",
+      "section": "27-202, 27-407C(2)(b)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-407C(2)(a)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'No more than one accessory dwelling unit will be permitted on any property.'"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "27-407C(1)(b), C(2)(c)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "The unit may not be rented at all: 'Prohibit the creation of rental units in accessory dwelling units' and a covenant 'so it shall not be rented'."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "27-407C(4)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=42",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One off-street parking space is required per accessory dwelling unit in addition to parking required for the principal building on the lot. The Zoning Administrator may revise the requirement upwards or downwards'. Street parking may reduce it."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "27-407C(4), 27-2102",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=191",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "House: 'Single-family detached two-family, single-family attached dwelling ... 2 space per dwelling unit'. Plus one for the ADU, subject to the Zoning Administrator's adjustment."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "27-407C(5)(d)",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=43",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'No separate utility systems or connections shall be constructed or used'."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "27-503, 27-603, 27-703, 27-803, 27-905",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "By district: R-1 30%, R-1-A 30%, R-2 40%, R-3 40%, MR 30% (single-family detached)."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "27-503, 27-603, 27-703, 27-803, 27-903.11",
+      "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "R-1 45%, R-1-A 45%, R-2 60%, R-3 75%, MR 45% for single-family lots."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-503",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot width 50 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-503",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-503",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Total of both sides 17 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-503",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-503",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-503",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=85",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-1-A": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "27-603",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=88",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Lot width 50 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-603",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=88",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-603",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=88",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Total of both sides 17 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-603",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=88",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-603",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=88",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-603",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=88",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "27-703",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=91",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Twin and duplex 3,500 per unit. Lot width 45 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-703",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=91",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-703",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=91",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Total of both sides 17 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-703",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=91",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-703",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=91",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-703",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=91",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "27-803",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=94",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Lot width 45 ft. Impervious 75%."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-803",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=94",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-803",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=94",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Total of both sides 17 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-803",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=94",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-803",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=94",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-803",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=94",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "MR": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-905",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=100",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Lot width 50 ft. MR tracts are developed under a plan (27-903)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-905",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=100",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-905",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=100",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached. Total of both sides 17 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-905",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=100",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-905",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=100",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-905",
+        "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=100",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

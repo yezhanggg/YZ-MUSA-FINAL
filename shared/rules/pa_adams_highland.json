@@ -1,0 +1,947 @@
+{
+  "provenance": {
+    "jurisdiction": "Highland township",
+    "instrument": "Highland Township Zoning Ordinance of 2025 (Ord. No. 2025-001, Chapter 132 of the Codified Ordinances), PDF on the Township website",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Title page: 'As adopted by the Highland Township Board of Supervisors on November 17, 2025. This Ordinance is effective on November 22, 2025.' 'Ordinance No. 2025-001.' This is the file linked as 'View Highland Township Zoning Ordinance' on the Township Land Use page (PDF created 2026-02-09, modified 2026-03-19). The file in the index ('Final Draft - October 9, 2025', unsigned adoption page) is the pre-adoption draft. Its ADU text is the same.",
+    "effective_date": "2025-11-22",
+    "source_urls": [
+      "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf",
+      "https://highland.adamscountypa.gov/departments/land-use",
+      "https://highland.adamscountypa.gov/getmedia/f6af9e19-a9a2-4645-9034-a9cde6880d9e/Highland-Township-Zoning-Ordinance-of-2025-Final-Compiled-v3.pdf",
+      "https://highland.adamscountypa.gov/departments/news"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Adams",
+    "municipality_type": "township",
+    "geoid": "4200134424",
+    "code_host": "own site",
+    "code_url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf",
+    "code_current_through": null,
+    "code_current_through_note": "Adopted November 17, 2025, effective November 22, 2025 (title page). No amendments listed on the Township site (Land Use and News pages read 2026-11-13).",
+    "code_caution": "In the C-MDR district (906.B.2 and B.3) the side and rear yard figures repeat the lot width figures (for example 150 ft side and rear yards for a single-family house without both public utilities). This looks like a drafting error, but it is the law as printed. With 80 ft side yards a typical 80 ft wide C-MDR lot has no buildable width, so an addition or a detached unit cannot meet them. Only a unit inside the existing house works without relief. Ask the Township before relying on C-MDR yards. Board of Supervisors minutes since adoption were not checked for amendments.",
+    "checks": [
+      "An ADU here is only for close relatives who need care: at most two persons, relatives of the permanent residents of the house, at least one needing the unit because of illness, old age or disability (Art. 2 'Accessory Dwelling Unit', 1502.H.1.a)",
+      "A permitted accessory use in AP, LC, RR, SFR, C-MDR, V and I (sections 505, 605, 705, 805, 905, 1005, 1105) and in the IO overlay where the underlying district allows it (1205). Zoning permit from the Zoning Officer",
+      "The unit must be designed to be easily turned back into part of the house, removed, or turned into a lawful accessory use when the relative leaves. A legally binding document acceptable to the Township, binding on future owners, bars its use as a separate dwelling (1502.H.1.b, c)",
+      "The unit is attached to the house, with an interior door between the two, unless the Township specifically approves a detached unit. A detached unit must meet the principal building setbacks and be removed within 90 days after the relative leaves. A lawful detached garage may be converted and later turned back (1502.H.1.b, d)",
+      "It may not change the single-family look of the house from the property lines (1502.H.1.d)",
+      "An on-lot septic system must be re-certified if sewage flow will increase (1502.H.1.e)",
+      "Parking: one space for the ADU, plus two for the house (1602.H.1, 1602.B.9)",
+      "No size cap for the unit",
+      "A new detached unit needs the Township's specific approval (1502.H.1.d). The code names no body and no procedure. The tool shows it as a conditional use, the nearest path, but no hearing is named. Ask the Township",
+      "A converted lawful detached garage may later be turned back into a garage or home occupation area. The 90-day removal and the principal-setback rule are written for a detached dwelling placed on the lot (1502.H.1.b, d). Ask whether the specific approval also applies to a garage conversion",
+      "Detached unit height: 15 ft at the 5 ft accessory setback, plus 1 ft for every 2 ft of extra setback, up to 25 ft. A detached unit sits at the principal setbacks, so at the side yard it gets about 17.5 ft in SFR, 20 ft in AP and RR (and in V without both public utilities), 25 ft in LC and C-MDR, and 15 ft in V with both utilities (1402.F.4, 1402.D.2.b(1), 1502.H.1.d)",
+      "No accessory structure in a required front yard (1402.D.2.a)",
+      "IO is an overlay that keeps the underlying district's residential uses (1201.B, 1202.B.1, 1205.A). Use the underlying district's rules",
+      "In AP the number of dwellings and lots is fixed by the size of the deeded area (506.A). Ask whether a detached unit counts against it",
+      "A lot in a residential district may hold only one principal use (1402.A.2)",
+      "Duplex dwellings are a use by right only in C-MDR. Conversion apartments (three or more units) are special exceptions in AP, LC, RR, C-MDR and V. Barn conversion apartments are special exceptions in AP, LC, RR and SFR (902, 503, 603, 703, 803, 903, 1003)",
+      "Uses not expressly permitted elsewhere may be a conditional use (1502.I). A second unrestricted dwelling is a duplex, which is permitted in C-MDR, so that path does not reach it",
+      "Vacation rentals are a special exception use with their own standards (1502.C.19). The relative rule leaves no room for renting the ADU"
+    ],
+    "notes": "Zoning office: Highland Township, Adams County (GEOID 4200134424). Read the adopted PDF in full text. Searched for accessory dwelling, accessory apartment, relative, duplex, conversion, similar, not expressly, short-term, vacation rental, nonconforming. 'Accessory Apartment' is defined in Article 2 but used nowhere in the districts. District codes: AP, LC, RR, SFR, C-MDR, V, I, IO overlay, FO floodplain overlay."
+  },
+  "adu": {
+    "term": {
+      "value": "Accessory Dwelling Unit",
+      "section": "Article 2, Section 202",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=13",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory Dwelling Unit: A dwelling unit that is especially created for and limited to occupancy by a close relative of the permanent residents of the principal dwelling unit, and is necessary to provide needed care and supervision to such relative.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "1502.H.1, 505.A, 805.A",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A permitted accessory use, limited to relatives who need care. The path is a zoning permit."
+    },
+    "scope_districts": {
+      "value": [
+        "AP",
+        "LC",
+        "RR",
+        "SFR",
+        "C-MDR",
+        "V",
+        "I",
+        "IO"
+      ],
+      "section": "505.A, 605.A, 705.A, 805.A, 905.A, 1005.A, 1105.A, 1205.A, Appendix B",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=265",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory Dwelling Unit, in accordance with Section 1502.H.1.' Appendix B marks it P in every district."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "1502.H.1, 805.A",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Permitted accessory use. The applicant proves the design to the Zoning Officer (1502.H.1.b)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails 1502.H.1 needs a variance from the Zoning Hearing Board."
+    },
+    "form_paths": {
+      "value": [
+        {
+          "forms": [
+            "detached_new",
+            "over_garage"
+          ],
+          "path": "conditional_use",
+          "section": "1502.H.1.d",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187",
+          "note": "'The Accessory Dwelling Unit shall be attached to the principal dwelling unit, except for a detached dwelling unit that is specifically approved by the Township.' A discretionary approval by the Township, body and procedure not named. Conditional use is the nearest path in the schema. No hearing is named in the text."
+        }
+      ],
+      "section": "1502.H.1.d",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex dwelling",
+          "path": "by_right",
+          "districts": [
+            "C-MDR"
+          ],
+          "conditions": "Two units, one wholly or mostly above the other. 10,000 sq ft per dwelling unit, lot width 100 ft, front 25 ft.",
+          "min_lot_sqft": 20000,
+          "section": "902.B.1, 906.A.1.f, 906.A.2.f",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=67",
+          "confidence": "secondary",
+          "note": "The 906 side and rear yards for a duplex read 100 ft, which looks like a drafting error"
+        },
+        {
+          "name": "Conversion apartments",
+          "path": "special_exception",
+          "districts": [
+            "AP",
+            "LC",
+            "RR",
+            "C-MDR",
+            "V"
+          ],
+          "conditions": "Conversion of an existing single-family detached dwelling, keeping a single-family look and one front entrance. At most four units in a building of 4,000 sq ft or less.",
+          "min_lot_sqft": null,
+          "section": "Article 2 'Conversion Apartment', 1502.B.3",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=130",
+          "confidence": "secondary",
+          "min_units": 3,
+          "note": "By definition for three or more families"
+        },
+        {
+          "name": "Conversion apartments in an agricultural barn",
+          "path": "special_exception",
+          "districts": [
+            "AP",
+            "LC",
+            "RR",
+            "SFR"
+          ],
+          "conditions": "In an agricultural barn of at least 600 sq ft that existed on the effective date (November 22, 2025). The Sewage Enforcement Officer must find the septic system adequate.",
+          "min_lot_sqft": null,
+          "section": "1502.B.4",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=131",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": null,
+              "condition": "An agricultural barn of at least 600 sq ft existing on November 22, 2025",
+              "section": "1502.B.4.a, b"
+            }
+          ],
+          "note": "Called conversion apartments. Whether one unit may be made is not stated"
+        }
+      ],
+      "section": "902, 1502.B.3, 1502.B.4",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=130",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "AP",
+        "LC",
+        "RR",
+        "SFR",
+        "C-MDR",
+        "V"
+      ],
+      "section": "505, 605, 705, 805, 905, 1005",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=64",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Districts that permit a single-family detached dwelling and list the ADU."
+    },
+    "districts_in_doubt": {
+      "value": [
+        "I",
+        "IO"
+      ],
+      "section": "1102.B, 1105.A, 1202.B, 1205.A",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=93",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "I lists the ADU but permits no house (its only residential use is a group home). IO is an overlay that takes the underlying district's uses."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "1502.H.1.b, d",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A detached unit may be 'placed on the property' if specifically approved, and a lawful detached garage may be converted."
+    },
+    "requires_conforming_lot": {
+      "value": false,
+      "section": "302.D.2.a",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=39",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A single, permitted by right, principal use and its customary accessory uses may be constructed, reconstructed, or expanded on a nonconforming lot' if it is a lawful lot of record and setbacks are met."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "care",
+          "condition": "At most two persons, relatives of the permanent residents of the house, at least one needing the unit because of illness, old age or disability.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1502.H.1.a",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186"
+        },
+        {
+          "kind": "design",
+          "condition": "A detached unit only if specifically approved by the Township (the code does not name the body). It must meet the principal building setbacks and be completely removed within 90 days after the relative no longer lives in it.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1502.H.1.d",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A lawful detached garage may be converted into the unit and later reconverted to a garage or home occupation area. Ask whether the Township's specific approval for a detached unit applies.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "has_accessory_building",
+          "section": "1502.H.1.b",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187"
+        },
+        {
+          "kind": "design",
+          "condition": "An attached unit has an interior door to the house. The unit can be easily turned back into part of the house, removed, or turned into a lawful accessory use.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1502.H.1.b",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187"
+        },
+        {
+          "kind": "other",
+          "condition": "A legally binding document acceptable to the Township, binding on future owners, bars use as a separate dwelling after the relative leaves.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1502.H.1.c",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187",
+          "bill_overrides": true
+        },
+        {
+          "kind": "design",
+          "condition": "No change to the single-family look of the house as seen from the property lines.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1502.H.1.d",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187"
+        },
+        {
+          "kind": "utilities",
+          "condition": "An on-lot septic system must be re-certified if sewage flow will increase.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1502.H.1.e",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187"
+        },
+        {
+          "kind": "other",
+          "condition": "In AP the dwellings and lots allowed on a deeded area are fixed by its size (506.A.1). Ask whether a detached unit counts as a dwelling.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "AP"
+          ],
+          "building_types": null,
+          "section": "506.A",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=48"
+        }
+      ],
+      "section": "1502.H.1",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "1502.H.1.b, d",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'The Accessory Dwelling Unit shall be attached to the principal dwelling unit, except for a detached dwelling unit that is specifically approved by the Township.' 'A lawful detached garage may be converted into an Accessory Dwelling Unit'. A unit inside the house is read as the attached kind."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "1502.H.1",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No size cap."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "1502.H.1",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No share cap."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "1502.H.1",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "1402.F.4",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Accessory Structures: Fifteen (15) feet when placed at the minimum required accessory structure setback. The maximum height of an accessory structure may be increased by one (1) foot for every two (2) feet of additional setback, provided that a maximum height of twenty-five (25) feet is not exceeded.' A detached ADU sits at the principal setbacks, so it often gets more than 15 ft."
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 17.5,
+          "where": "in SFR, at the 10 ft principal side yard (5 ft beyond the accessory setback)",
+          "section": "1402.F.4, 806.B.2",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109"
+        },
+        {
+          "max_height_ft": 20,
+          "where": "in AP and RR, and in V without both public utilities, at the 15 ft principal side yard",
+          "section": "1402.F.4, 506.C, 706.B, 1006.B.2",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109"
+        },
+        {
+          "max_height_ft": 25,
+          "where": "in LC and C-MDR, where the principal side yard is 30 ft or more",
+          "section": "1402.F.4, 606.B.2, 906.B.2",
+          "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109"
+        }
+      ],
+      "section": "1402.F.4",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "15 ft at the 5 ft accessory setback (1402.D.2.b(1)), plus 1 ft per 2 ft more, at most 25 ft. A detached unit sits at the principal setbacks (1502.H.1.d). 15 ft holds in V with both utilities (5 ft side yard)."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "1402.F.3",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "1502.H.1.d",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'A detached dwelling shall only be placed on the lot if it will meet principal building setbacks.'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 25,
+      "section": "1402.F.4",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "1402.F",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Except as specified otherwise in this Ordinance for a particular use'. 1502.H.1 sets no height, so the accessory rule reaches a detached unit."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "1502.H.1",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No owner rule. The occupants must be relatives of 'the permanent residents of the principal dwelling unit'."
+    },
+    "family_only": {
+      "value": true,
+      "section": "Article 2, 1502.H.1.a",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At most two persons, relatives of the permanent residents of the house, at least one needing the unit because of illness, old age or disability. 'Relative' covers spouse, siblings, parents, children, grandparents, grandchildren, great-grandparents and great-grandchildren, uncles, aunts, nieces, nephews, in-laws and first cousins.",
+      "section": "1502.H.1.a, Article 2 'Related or Relative'",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "Article 2, 1502.H.1",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The code speaks of 'the' ADU of 'the principal dwelling unit'. No number is stated."
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "1502.H.1.a, c",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=186",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Occupancy is limited to relatives, and a recorded document bars use as a separate dwelling."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "1602.H.1",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=220",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory Dwelling Unit: One (1).' The no-stacking rule does not apply where the garage and driveway hold the spaces (1604.A.2)."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "1602.B.9, 1602.H.1",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=212",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Single-Family Detached Dwelling: Two (2).' Plus one for the ADU."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "1502.H.1.e",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=187",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Only the septic re-certification rule."
+    }
+  },
+  "coverage": {
+    "max_impervious": {
+      "value": null,
+      "section": "506.B.4, 606.A.4, 706.A.4, 806.A.4, 906.A.4, 1006.A.4",
+      "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=48",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "AP 25%, LC 25%, RR 50%, SFR 50%, C-MDR 60%, V 60% (single-family)."
+    }
+  },
+  "districts": {
+    "AP": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "506.B, 506.C",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=48",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One acre. Lot width 150 ft. The number of dwellings and lots is fixed by deeded area (506.A). Accessory storage buildings up to 600 sq ft and 25 ft may be 10 ft from side and rear lines (506.C.4)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "506.B, 506.C",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=48",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "506.B, 506.C",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=48",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "506.B, 506.C",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=48",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Three (3) stories or forty (40) feet, whichever is more restrictive.'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "LC": {
+      "min_lot_sqft": {
+        "value": 130680,
+        "section": "606.A, 606.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=56",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Three acres (two with lot averaging). Lot width 250 ft (200 ft for existing lots under three acres). Existing lots under three acres: side yard 15 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "606.A, 606.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=56",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "606.A, 606.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=56",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "606.A, 606.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=56",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Three (3) stories or forty (40) feet, whichever is more restrictive.'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "606.A, 606.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=56",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "706.A, 706.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=61",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One acre. Lot width 150 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "706.A, 706.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=61",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "706.A, 706.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=61",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "706.A, 706.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=61",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Three (3) stories or forty (40) feet, whichever is more restrictive.'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "706.A, 706.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=61",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "SFR": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "806.A, 806.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=65",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with both public water and public sewer: 12,000 sq ft, lot width 75 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "806.A, 806.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=65",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "806.A, 806.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=65",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "806.A, 806.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=65",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Three (3) stories or forty (40) feet, whichever is more restrictive.'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "806.A, 806.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=65",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public water nor public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 30,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 30,
+            "section": "806.A.1, 806.B",
+            "note": "One acre."
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 30,
+            "section": "806.A.1, 806.B"
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 30,
+            "section": "806.A.1, 806.B"
+          }
+        ],
+        "section": "806.A, 806.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=65",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Figures without both public water and public sewer. The row above holds the figures with both."
+      }
+    },
+    "C-MDR": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "906.A, 906.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=74",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with both public water and public sewer: 10,000 sq ft, lot width 80 ft. The side and rear yard figures (80 ft with both utilities, 150 ft otherwise) repeat the lot width figures, as printed. Likely a drafting error."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "906.A, 906.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=74",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 80,
+        "section": "906.A, 906.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=74",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 80,
+        "section": "906.A, 906.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=74",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Three (3) stories or forty (40) feet, whichever is more restrictive.'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "906.A, 906.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=74",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public water nor public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 25,
+            "setback_side_ft": 150,
+            "setback_rear_ft": 150,
+            "section": "906.A.1, 906.B",
+            "note": "One acre."
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 150,
+            "setback_rear_ft": 150,
+            "section": "906.A.1, 906.B"
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 150,
+            "setback_rear_ft": 150,
+            "section": "906.A.1, 906.B"
+          }
+        ],
+        "section": "906.A, 906.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=74",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Figures without both public water and public sewer. The row above holds the figures with both."
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "1006.A, 1006.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=83",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached with both public water and public sewer: 10,000 sq ft, lot width 80 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "1006.A, 1006.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=83",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "1006.A, 1006.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=83",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "1006.A, 1006.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=83",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "'Three (3) stories or forty (40) feet, whichever is more restrictive.'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1402.F.3",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=109",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "1006.A, 1006.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=83",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public water nor public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 25,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 25,
+            "section": "1006.A.1, 1006.B",
+            "note": "One acre."
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 25,
+            "section": "1006.A.1, 1006.B"
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_front_ft": 25,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 25,
+            "section": "1006.A.1, 1006.B"
+          }
+        ],
+        "section": "1006.A, 1006.B",
+        "url": "https://highland.adamscountypa.gov/getmedia/89aefa31-f838-41e9-9d8b-722b539357c4/Zoning-ordinance-final-2025.pdf#page=83",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Figures without both public water and public sewer. The row above holds the figures with both."
+      }
+    }
+  }
+}

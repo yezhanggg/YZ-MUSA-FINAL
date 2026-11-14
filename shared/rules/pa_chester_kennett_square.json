@@ -1,0 +1,816 @@
+{
+  "provenance": {
+    "jurisdiction": "Kennett Square borough",
+    "instrument": "Kennett Square Borough Code Chapter 23 Zoning, as published on Municode (Supplement 30)",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Municode: 'Supplement 30. Online content updated on September 26, 2025.' 'Codified through ... Ord. 985, passed August 4, 2025.' Adopted ordinances not yet codified: Ord. No. 987 and 986 (11/5/25, tax rates and police pension). The ADU text in 23-30 carries history through 'Ord. No. 983, §§ 2, 3, 8-4-2025'. The Zoneomics copy linked in the index has the same text and was used to read the whole chapter. Key passages were checked on Municode.",
+    "effective_date": null,
+    "source_urls": [
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIDE_23-7DE",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-28USSTALSALOCUINPEUS",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-27USALSPEXCOUSEXPR",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-29ADRECEPERIUSSPEXUSCOUS",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-13REDI",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-16PAREPROFDI",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-18PRREDI",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-19SECODI",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIVGERE",
+      "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTVIIOREPALO_23-65RENUOREPASP",
+      "https://www.zoneomics.com/code/kennett-square-PA/chapter_3",
+      "https://www.zoneomics.com/code/kennett-square-PA/chapter_2",
+      "https://www.zoneomics.com/code/kennett-square-PA/chapter_4",
+      "https://www.zoneomics.com/code/kennett-square-PA/chapter_7",
+      "https://www.chescoplanning.org/planreview/reports/2026/02-Ordinances.pdf"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Chester",
+    "municipality_type": "borough",
+    "geoid": "4202939352",
+    "code_host": "municode",
+    "code_url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO",
+    "code_current_through": "2025-08-04",
+    "code_current_through_note": "Municode on 2026-11-13: Supplement 30, online September 26, 2025, codified through Ord. 985 passed August 4, 2025.",
+    "code_caution": "The online code is current only to August 4, 2025. Borough Council passed a short-term rental ordinance on or about August 17, 2026 (news reports, text and number not seen). As reported it caps short-term rentals at 20 in the Borough, bars a single-family house as a short-term rental, and limits future short-term rentals to accessory units such as garages or guest houses, owner occupied during the stay. It likely amends Table 17 and may amend 23-30. A proposed 2026 amendment (single-family stacked dwellings in R-3, multifamily in OI-2, Chester County review ZA-01-26-18774) was not seen either. Also, 23-30(c)(2)(B)(vii) says 'The following standards are required for detached ADUs;' for lots on alleys, but no list follows. Ask the Borough for the current text.",
+    "checks": [
+      "Two kinds of unit, both accessory uses by right to a residential use: an 'accessory apartment' inside the house, and an 'accessory dwelling unit' in an accessory building on a lot with a detached single-family house (23-7, 23-30(a)(4)(A))",
+      "Accessory apartment: at most 50% of the square footage of the house, in the upper floors, basement, rear of the house, or a carriage house or garage, with its own kitchen, bath and either its own outside door or a common hall or balcony (23-30(c)(1))",
+      "Accessory dwelling unit: at most 1,000 sq ft of living space (interior rooms) and two bedrooms. One per parcel. It may not be subdivided off and stays in single ownership (23-30(c)(2)(B)(v), (vi), (viii))",
+      "Detached ADU height: the lesser of 25 ft or the height of the house. An existing structure over 25 ft keeps its own height (23-30(c)(2)(B)(i))",
+      "Detached ADU in the rear yard only (not a front or side yard), at least 6 ft from the side and rear lot lines. The rear setback does not apply where the rear backs up to an alley, but the code gives no alley figure (23-30(c)(2)(B), (ii), (iii))",
+      "The definition puts an accessory apartment 'within the principal dwelling unit', but 23-30(c)(1)(B) also allows it 'in a carriage house or garage'. On a twin or townhouse lot, where an ADU in an accessory building is not allowed, ask whether an accessory apartment in a garage is (23-7, 23-30(c)(1)(B))",
+      "Short-term rentals: a 2026 ordinance (passed about August 17, 2026, not read) reportedly limits future short-term rentals to accessory units, owner occupied, at most 20 in the Borough. Ask the Borough",
+      "Lots under 15,000 sq ft may have two accessory structures in all, a detached garage included. Only one may be an ADU (23-30(c)(2)(B)(iv))",
+      "Lots on alleys: the code says standards are required for detached ADUs along alleys, but lists none. A scaled engineered or architectural plan goes with the building permit (23-30(c)(2)(B)(vii))",
+      "Parking: 1 space per bedroom, at most 2, for an accessory apartment or ADU, plus 2 for the house (23-65 Table 7.1)",
+      "No owner-occupancy rule and no relative rule in 23-30",
+      "District lot tables give lot area 'per dwelling unit for residential uses'. Whether an ADU needs a second share of lot area is not settled (Tables 1, 3, 6, 8)",
+      "Short-term rentals are an allowable accessory use in every district listed in Table 17, subject to Borough Code chapter 8, article VII (not read) (23-28)",
+      "In the Historic District a change of use goes to Borough staff and may need a certificate of appropriateness from Borough Council (23-12(b), chapter 25)",
+      "Residential conversions of a house to more units are listed as special exceptions in R-3 and R-3/PAO, but 23-29(c)(11) says conditional use. Ask which applies",
+      "R-3 and R-3/PAO allow two-family detached and semi-detached dwellings by right on 2,000 sq ft per unit (23-15, 23-16)",
+      "C-2 allows by right 'Any use allowed as a by right use in the R-3 Zoning District' (23-19(b)(10)). Accessory uses for residential uses listed in 23-30 take the R-3 yards (23-19(e)(3)), and Table 12 gives residential uses the R-3 requirements",
+      "If the Borough treats a detached unit as a second principal dwelling, two principal buildings need twice the side yard and land development approval (23-32(b))",
+      "Parking may be reduced by special exception (23-65(b))",
+      "Only one principal use per lot unless approved as a conditional use (23-31)"
+    ],
+    "notes": "Zoning office: Kennett Square Borough. Read on Municode in a browser and in the Zoneomics copy (same Supplement 30 text). Searched for accessory dwelling, accessory apartment, accessory habitation, alley, short-term rental, residential conversion. The index note on parking (1 space per bedroom, max 2) and the 25 ft and 6 ft figures agree with the code. Chester County Planning Commission material in the drive has no Kennett Square Borough entry. District codes: R-1, R-2, R-3, R-3/PAO, C-1, C-2, C-3, OI-1, OI-2, with FP, SS, MSD, RUA and TBO overlays."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "23-7",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIDE_23-7DE",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory dwelling unit' means a residential living unit on the same parcel as a detached single-family primary residential structure, in an accessory building and not located within the principal dwelling unit. A unit inside the house is an 'accessory apartment'."
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "23-30(a), (a)(4)(A)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'An accessory use on the same lot and customarily incidental to a permitted principal use is permitted by right.' '(A) Accessory Habitation: (i) An accessory apartment as an accessory use. (ii) An accessory dwelling unit (limited to one per property).'"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-3/PAO",
+        "C-1",
+        "C-2",
+        "OI-1"
+      ],
+      "section": "23-28 Table 17, 23-30(a)(4)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-28USSTALSALOCUINPEUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Table 17 marks 'Accessory Apartment' allowable in R-1, R-2a, R-3, R-3/PAO, C-1, C-2 and OI-1 (OI-1 only as accessory to a residential use). Table 17 has no ADU row. C-3 and OI-2 are not in Table 17."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "23-28 Table 17",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-28USSTALSALOCUINPEUS",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "C-3 and OI-2 are not in Table 17."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "23-30(a)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Zoning and building permit. A detached ADU needs a scaled plan with the building permit (23-30(c)(2)(B)(vii))."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails 23-30 needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached or semi-detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-3/PAO"
+          ],
+          "conditions": "2,000 sq ft per unit in R-3 (3,500 in R-3/PAO), lot width 22 ft per unit, at least 5,000 sq ft per construction site, front 20, side 4 (14 total), rear 25, 35 ft.",
+          "min_lot_sqft": 5000,
+          "section": "23-15(b), (f), (g), 23-16(b), (f), (g)",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+          "confidence": "secondary",
+          "note": "A two-family building on its own lot. Building one in place of a house is a new principal use"
+        },
+        {
+          "name": "Residential conversion of a house to more units",
+          "path": "special_exception",
+          "districts": [
+            "R-3",
+            "R-3/PAO"
+          ],
+          "conditions": "Lot area, yards, building area and parking of the district are not reduced. Utilities certified adequate. The resulting use must be permitted in the district. A converted house keeps one front entrance, parking in the rear yard, residential look, minimum floor areas of Borough ordinances. Historic structures follow the conditional use procedure and chapter 25.",
+          "min_lot_sqft": null,
+          "section": "23-15(c)(2), 23-16(c)(5), 23-27 Table 16, 23-29(c)(11)",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-29ADRECEPERIUSSPEXUSCOUS",
+          "confidence": "secondary",
+          "note": "The district lists and Table 16 say special exception. 23-29(c)(11)(A) says 'permitted in R-3 and R-3/PAO zoning districts by conditional use'"
+        }
+      ],
+      "section": "23-15, 23-16, 23-29(c)(11)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-3/PAO",
+        "C-2"
+      ],
+      "section": "23-12(b), 23-13(b), 23-15(b), 23-16(b), 23-19(b)(10), (e)(3), 23-28 Table 17",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-28USSTALSALOCUINPEUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Districts that permit a single-family detached dwelling by right and list the accessory apartment. C-2: 'Residential uses—Any use allowed as a by right use in the R-3 Zoning District' (23-19(b)(10)), and 'Accessory uses and structures for primarily residential land uses, as listed in section 23-30, will comply with the minimum yard requirements contained in subsection (g) of section 23-15' (23-19(e)(3))."
+    },
+    "districts_in_doubt": {
+      "value": [
+        "C-1",
+        "OI-1"
+      ],
+      "section": "23-28 Table 17, 23-18(b)(5)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-28USSTALSALOCUINPEUS",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Table 17 lists the accessory apartment here. C-1 permits only upper floor dwellings (23-18(b)(5)). OI-1 is marked 'As an accessory to a residential use only'."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "23-30(c)(2)(B)(i)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "A new accessory building may hold the ADU. An existing structure over 25 ft may be used at its own height."
+    },
+    "requires_conforming_lot": {
+      "value": false,
+      "section": "23-37(c)(2)(B)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIVGERE",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'A building may be constructed and expanded on a nonconforming, residential lot provided the minimum yard and maximum lot coverage requirements listed for the particular district are complied with.'"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "A unit in an accessory building (an 'accessory dwelling unit') needs a detached single-family house on the parcel. On a twin or townhouse lot, ask whether an accessory apartment 'in a carriage house or garage' (23-30(c)(1)(B)) is allowed.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "23-7 'Accessory dwelling unit'",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIDE_23-7DE"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Lots under 15,000 sq ft may have no more than two accessory structures in all, a detached garage included. 15,000 to 29,000 sq ft: three. Only one may be an ADU.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "23-30(c)(2)(B)(iv)",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS"
+        },
+        {
+          "kind": "abutting_way",
+          "condition": "A detached ADU along an alley should contribute to the character of the historic alleys. The code says standards are required but lists none. Ask the Borough.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "has_alley",
+          "section": "23-30(c)(2)(B)(vii)",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS"
+        },
+        {
+          "kind": "design",
+          "condition": "An engineered or architectural plan, drawn to scale, goes with the building permit: the dwelling units, area and bulk criteria, stormwater, parking and exterior changes.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "23-30(c)(2)(B)(vii)",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS"
+        },
+        {
+          "kind": "design",
+          "condition": "An accessory apartment is in the upper floors, basement, rear of the house, or a carriage house or garage, with its own kitchen, bath and either a separate outside door or a common hallway or balcony.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "23-30(c)(1)(B), (D)",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS"
+        },
+        {
+          "kind": "historic",
+          "condition": "In the Historic District a change of use is reviewed by Borough staff and a certificate of appropriateness may be needed from Borough Council (chapter 25).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "23-12(b), 23-15(b), 23-45",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI"
+        },
+        {
+          "kind": "other",
+          "condition": "The ADU may not be subdivided from the principal parcel and stays in single ownership.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "23-30(c)(2)(B)(viii)",
+          "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS"
+        }
+      ],
+      "section": "23-30",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "23-7, 23-30(a)(4)(A), (c)(1)(B), (c)(2)(B)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory apartment: 'in the upper floors, basement, to the rear of the principal building, or in a carriage house or garage'. ADU: 'in an accessory building'. Reading: 'to the rear of the principal building' covers a rear addition."
+    },
+    "labels": {
+      "value": {
+        "internal": "accessory apartment",
+        "attached": "accessory apartment at the rear of the house",
+        "detached_new": "accessory dwelling unit (new accessory building)"
+      },
+      "section": "23-7, 23-30(c)(1)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIDE_23-7DE",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "23-30(c)(1)(A), (c)(2)(B)(vi)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Caps differ by form. See below."
+    },
+    "max_share_internal": {
+      "value": 0.5,
+      "section": "23-30(c)(1)(A)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory apartment: 'not exceeding fifty percent of the square footage of the principal dwelling unit'."
+    },
+    "max_sqft_accessory_building": {
+      "value": 1000,
+      "section": "23-30(c)(2)(B)(vi)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'An ADU shall be limited to a maximum of one thousand square feet of living space (defined as the square footage of the interior rooms therein) and no more than two bedrooms.' An accessory apartment placed in a carriage house or garage takes the 50% cap instead."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "23-30",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "23-30(c)(2)(B)(i)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The maximum building height for detached ADUs shall not exceed twenty-five feet or the height of the principal dwelling unit on the parcel, whichever is lesser.' An existing structure over 25 ft keeps its height."
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "23-30(c)(2)(B)(i)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "Tables 1, 3, 6, 8",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "setback_side_ft": {
+      "value": 6,
+      "section": "23-30(c)(2)(B)(ii)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units shall not be less than six feet from the side lot line.'"
+    },
+    "setback_rear_ft": {
+      "value": 6,
+      "section": "23-30(c)(2)(B)(iii)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'not be less than six feet from the rear lot line unless the rear of the property backs up to an alley.'"
+    },
+    "setback_rear_alley_ft": {
+      "value": null,
+      "section": "23-30(c)(2)(B)(iii), (vii)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "The 6 ft rear setback does not apply on an alley, but no other figure is given."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "23-30(c)(2)(B)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Detached accessory structures may be erected within a rear yard'. Rear yard only, so not a side yard either."
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "23-30(b), (c)(2)(B)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Accessory uses take the district yards 'except as otherwise specifically provided'. The ADU has its own 6 ft side and rear setbacks. Attached accessory structures meet principal yards (23-30(c)(2)(A))."
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "23-7 'Accessory structure', 23-30(c)(2)(B)(i)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Other accessory structures: 15 ft and one story."
+    },
+    "accessory_cap_binds_adu": {
+      "value": false,
+      "section": "23-30(c)(2)(B)(i)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'fifteen feet, with a maximum of one story, except for Accessory Dwelling Units as set forth below.'"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "23-30",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No owner-occupancy rule. The ADU stays in single ownership with the parcel (23-30(c)(2)(B)(viii))."
+    },
+    "family_only": {
+      "value": false,
+      "section": "23-30",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No relative rule."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "23-30(a)(4)(A)(ii), (c)(2)(B)(v)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'There shall not be more than one accessory dwelling unit created on any single parcel.' The code does not say whether a lot may have both an accessory apartment and an ADU."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "23-28 Table 17",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-28USSTALSALOCUINPEUS",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Short-term rental is an allowable accessory use in every Table 17 district, 'Subject to compliance with Kennett Square Borough Code chapter 8, article VII.' Chapter 8 was not read. A 2026 ordinance (about August 17, 2026, not read) reportedly limits future short-term rentals to accessory units, owner occupied, capped at 20."
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "23-30(c)(2)(B)(viii)",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit shall not be subdivided from the principal parcel, and shall remain under single ownership.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "23-65 Table 7.1 A.6",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTVIIOREPALO_23-65RENUOREPASP",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Short-Term Rental; Accessory Apartment; Accessory Dwelling Unit | 1 Space per Bedroom (Maximum of 2 spaces per Dwelling Unit)'."
+    },
+    "reading": {
+      "value": "One space per bedroom, at most two. An ADU has at most two bedrooms, so one or two spaces, plus two for the house (Table 7.1 A.1).",
+      "section": "23-65 Table 7.1",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTVIIOREPALO_23-65RENUOREPASP",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "total_on_site": {
+      "value": null,
+      "section": "23-65 Table 7.1 A.1, A.6",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTVIIOREPALO_23-65RENUOREPASP",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "House 2 plus 1 or 2 for the unit, 3 or 4 in all. 23-65 also allows public parking and fee-in-lieu options in commercial districts."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "23-30",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-30ACUS",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No utility rule in 23-30."
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "Tables 1, 3, 6, 8",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "By district: R-1 25%, R-2 30%, R-3 40%, R-3/PAO 40%, C-2 residential as R-3."
+    },
+    "max_impervious": {
+      "value": null,
+      "section": "Tables 1, 3, 6, 8",
+      "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "By district: R-1 35%, R-2 40%, R-3 60%, R-3/PAO 60%, C-2 residential as R-3."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10500,
+        "section": "23-12(e), (f) Tables 1, 2",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Table 1: single-family detached. The table's footnote says '*Per dwelling unit for residential uses.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10500,
+        "section": "23-12(e), (f) Tables 1, 2",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Footnote '*Per dwelling unit for residential uses.' Whether the ADU counts as a dwelling unit here is not settled. The parking table counts it 'per Dwelling Unit' (23-65). Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "23-12(e), (f) Tables 1, 2",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "23-12(e), (f) Tables 1, 2",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side. Total 35 ft."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "23-12(e), (f) Tables 1, 2",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "23-12(e), (f) Tables 1, 2",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "23-12(e), (f) Tables 1, 2",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-12REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "23-13(e), (f) Tables 3, 4",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-13REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Table 3: single-family detached. The table's footnote says '*Per dwelling unit for residential uses.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7000,
+        "section": "23-13(e), (f) Tables 3, 4",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-13REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Footnote '*Per dwelling unit for residential uses.' Whether the ADU counts as a dwelling unit here is not settled. The parking table counts it 'per Dwelling Unit' (23-65). Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "23-13(e), (f) Tables 3, 4",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-13REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "23-13(e), (f) Tables 3, 4",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-13REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side. Total 25 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "23-13(e), (f) Tables 3, 4",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-13REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "23-13(e), (f) Tables 3, 4",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-13REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "23-13(e), (f) Tables 3, 4",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-13REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "23-15(f), (g) Tables 6, 7",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Table 6: single-family detached. The table's footnote says '*Per dwelling unit for residential uses.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "23-15(f), (g) Tables 6, 7",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Footnote '*Per dwelling unit for residential uses.' Whether the ADU counts as a dwelling unit here is not settled. The parking table counts it 'per Dwelling Unit' (23-65). Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "23-15(f), (g) Tables 6, 7",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "23-15(f), (g) Tables 6, 7",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side. Total 14 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "23-15(f), (g) Tables 6, 7",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "23-15(f), (g) Tables 6, 7",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "23-15(f), (g) Tables 6, 7",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-15REDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-3/PAO": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "23-16(f), (g) Tables 8, 9",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-16PAREPROFDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Table 8: single-family detached. The table's footnote says '*Per dwelling unit for residential uses.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "23-16(f), (g) Tables 8, 9",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-16PAREPROFDI",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Footnote '*Per dwelling unit for residential uses.' Whether the ADU counts as a dwelling unit here is not settled. The parking table counts it 'per Dwelling Unit' (23-65). Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "23-16(f), (g) Tables 8, 9",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-16PAREPROFDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "23-16(f), (g) Tables 8, 9",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-16PAREPROFDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side. Total 14 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "23-16(f), (g) Tables 8, 9",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-16PAREPROFDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "23-16(f), (g) Tables 8, 9",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-16PAREPROFDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "23-16(f), (g) Tables 8, 9",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-16PAREPROFDI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "C-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "23-19(b)(10), (e)(3), (g) Table 12, 23-15(f), (g)",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-19SECODI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Table 12 'Residential Uses (Same as requirements as the R-3 Medium Density Residential District)', R-3 Table 6: single-family detached. The table's footnote says '*Per dwelling unit for residential uses.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "23-19(b)(10), (e)(3), (g) Table 12, 23-15(f), (g)",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-19SECODI",
+        "verified_on": "2026-11-13",
+        "confidence": "secondary",
+        "note": "Footnote '*Per dwelling unit for residential uses.' Whether the ADU counts as a dwelling unit here is not settled. The parking table counts it 'per Dwelling Unit' (23-65). Ask the zoning officer."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "23-19(b)(10), (e)(3), (g) Table 12, 23-15(f), (g)",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-19SECODI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "23-19(b)(10), (e)(3), (g) Table 12, 23-15(f), (g)",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-19SECODI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "One side. Total 14 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "23-19(b)(10), (e)(3), (g) Table 12, 23-15(f), (g)",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-19SECODI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "23-19(b)(10), (e)(3), (g) Table 12, 23-15(f), (g)",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-19SECODI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "23-19(b)(10), (e)(3), (g) Table 12, 23-15(f), (g)",
+        "url": "https://library.municode.com/pa/kennett_square/codes/code_of_ordinances?nodeId=PAI_CH23ZO_ARTIIIZODIUSRE_23-19SECODI",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    }
+  }
+}

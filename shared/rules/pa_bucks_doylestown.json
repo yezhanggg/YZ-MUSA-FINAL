@@ -1,0 +1,882 @@
+{
+  "provenance": {
+    "jurisdiction": "Doylestown township",
+    "instrument": "Doylestown Township Code Chapter 175 Zoning (adopted 10-11-1988 by Ord. No. 176), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 header: 'Includes legislation through 08-18-2026.' The ADU listing H-12 is now a use by right in R-1a, R-1, R-2, R-2a, R-2b and R-4. The district use lists carry 'Ord. No. 433' (6-16-2026) and, in R-1a and R-1, 'Ord. No. 434' (8-18-2026). Earlier reports of a special exception in R-1 describe the text before these 2026 ordinances. One new law is not yet folded in: Ord. No. 435 (10-27-2026), a curative amendment for data centers (definitions, 175-16G, 175-22D, 175-84, Attachment 2). Read on 2026-11-13. It does not touch H-12.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/10729898",
+      "https://ecode360.com/print/DO1312?guid=10730585",
+      "https://ecode360.com/print/DO1312?guid=10730483",
+      "https://ecode360.com/print/DO1312?guid=10730068",
+      "https://ecode360.com/print/DO1312?guid=10730983",
+      "https://ecode360.com/print/DO1312?guid=10731000",
+      "https://ecode360.com/print/DO1312?guid=10731017",
+      "https://ecode360.com/print/DO1312?guid=10731034",
+      "https://ecode360.com/print/DO1312?guid=10731066",
+      "https://ecode360.com/print/DO1312?guid=10731077",
+      "https://ecode360.com/print/DO1312?guid=10731122",
+      "https://ecode360.com/print/DO1312?guid=10731137",
+      "https://ecode360.com/print/DO1312?guid=10731094",
+      "https://ecode360.com/print/DO1312?guid=10731163",
+      "https://ecode360.com/print/DO1312?guid=10731272",
+      "https://ecode360.com/print/DO1312?guid=10730601",
+      "https://ecode360.com/print/DO1312?guid=10730651",
+      "https://ecode360.com/print/DO1312?guid=10729919",
+      "https://ecode360.com/print/DO1312?guid=37334151",
+      "https://ecode360.com/print/DO1312?guid=10730061",
+      "https://ecode360.com/DO1312/laws",
+      "https://ecode360.com/DO1312/laws/LF2892760.pdf"
+    ],
+    "verified_on": "2026-11-13",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201719792",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10729898",
+    "code_current_through": "2026-08-18",
+    "code_current_through_note": "eCode360 header on 2026-11-13: 'Includes legislation through 08-18-2026.' New Laws: Ord. No. 435 (2026-10-27, Zoning Amendment, data centers).",
+    "checks": [
+      "An ADU is allowed by right with a zoning permit in R-1a, R-1, R-2, R-2a, R-2b and R-4, only with a single-family detached dwelling (175-16H(12), district use lists as amended in 2026)",
+      "The unit must be part of the house or inside an existing accessory structure such as a garage. A new detached cottage is not named (175-16H(12)(b))",
+      "At most 25% of the total usable floor area of the house, not counting any garage (175-16H(12)(a))",
+      "At most two occupants. No change to the outside of the house that suggests it is not a single-family dwelling. No manufactured home, RV, travel trailer or other transportable structure (175-16H(12)(d), (f))",
+      "Register the unit with the Zoning Officer for a fee. The registration ends when the property is sold and the new owner must register again (175-16H(12)(g))",
+      "A Bucks County Board of Health (or other agency) certificate that the wastewater facilities can serve the house and the unit (175-16H(12)(h))",
+      "Record a deed restriction in favor of the Township describing the unit's size and location (175-16H(12)(i))",
+      "Parking: the house's two spaces plus one for the unit. Garage spaces do not count (175-16H(12)(c), 175-22E)",
+      "No owner-occupancy rule and no relative rule. But the code treats the ADU as part of the single dwelling unit of the house, used by one household (related or unrelated). It is not a unit for a separate tenant household (175-9 'Dwelling unit', 'Family')",
+      "Short-term rentals (30 days or less) are barred only where no resident lives on site during the stay (175-9, 175-30.6)",
+      "The ADU does not count as a second dwelling unit for the 'minimum lot area per dwelling unit' in the district tables (175-9)",
+      "Cluster (B-7) and lot-averaging (B-9) lots are lawful single-family lots with smaller minimums: R-1a 1 acre and 72,500 sq ft, R-1 30,000 and 22,000, R-2 30,000 and 16,500, R-2a 30,000, 20,000 and 16,500, R-2b and R-4 16,500 (B-9). The tool compares a lot with the B-1 minimum only",
+      "Driveways and parking spaces on B-1, B-7 and B-9 lots must be at least 10 ft from side and rear lines, which matters for the unit's extra space (175-16H(3)(a))",
+      "A garage over 144 sq ft that stands inside today's principal setbacks is a nonconforming structure. Converting it may need relief (175-17F(1))",
+      "The specific and later H-12(b) text allows a unit in an existing garage, so it likely governs over the older 'accessory building' definition",
+      "An accessory structure over 144 sq ft must meet the principal building setbacks and stand behind the house's front building line. Accessory structures are capped at 20 ft (175-17F(1), 175-16H(3)(d))",
+      "The definition of 'accessory building' says it is not to be used for residential purposes unless originally designed for them. H-12(b) allows a unit in an existing garage. Ask the Zoning Officer how the two are read together (175-9, 175-16H(12)(b))",
+      "VC and C-1 allow single-family houses but do not list H-12. Each district allows only the listed uses 'and no other' (175-65.2, 175-67, 175-14A)",
+      "In R-2b, R-4 and VC a two-family detached dwelling (duplex) is a use by right, with its own lot and site rules (175-53, 175-58, 175-65.2)",
+      "A lot of record may be used for a permitted use only if the district minimums are met. The older nonconforming lot rule was repealed in 1996 (175-17A, B)",
+      "Historic districts (Chapter 102) may need a separate review. Not checked"
+    ],
+    "notes": "Zoning office: Doylestown Township. Read on eCode360 in a browser, one section print view at a time. Searched the definitions and 175-16 for accessory dwelling, accessory apartment, short-term rental and nonconforming lot. The index note's 'accessory family apartment' wording and the special exception in R-1 are from older text. H-13 'accessory apartment' is a different use, accessory to nonresidential uses only. District codes: R-1a, R-1, R-2, R-2a, R-2b, R-4, CR, VC, C-1, C-2, C-3, C-4, ME, LI, I, I-2 and others. C-3, C-4, ME, LI, I-2, Attachment 2 (Summary of Permitted Uses) and Chapter 102 were not opened."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "175-16H(12)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Accessory dwelling unit. One accessory dwelling unit to a single-family detached dwelling shall be permitted as a residence'. No separate definition in 175-9."
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "175-16H(12), 175-32A, 175-37A, 175-42A, 175-47A, 175-53A, 175-58A",
+      "url": "https://ecode360.com/print/DO1312?guid=10731000",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Listed under 'A. Uses by right' as 'H-12 Accessory dwelling unit' in R-1a, R-1, R-2, R-2a, R-2b and R-4 (amended 6-16-2026 by Ord. No. 433 and, in R-1a and R-1, 8-18-2026 by Ord. No. 434)."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1a",
+        "R-1",
+        "R-2",
+        "R-2a",
+        "R-2b",
+        "R-4"
+      ],
+      "section": "175-32A, 175-37A, 175-42A, 175-47A, 175-53A, 175-58A",
+      "url": "https://ecode360.com/print/DO1312?guid=10731000",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "H-12 appears in these six district lists only. Not in CR, VC, C-1, C-2 or I."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "175-14A, 175-65.2, 175-67",
+      "url": "https://ecode360.com/print/DO1312?guid=10730061",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'in each district no building, structure or land shall be used or occupied except for the purposes permitted'. VC and C-1 allow a single-family house but not H-12."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "175-16H(12), 175-37A",
+      "url": "https://ecode360.com/print/DO1312?guid=10731000",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Zoning permit, registration with the Zoning Officer, wastewater certificate and recorded deed restriction (175-16H(12)(g) to (i))."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "175-14A, MPC 910.2",
+      "url": "https://ecode360.com/print/DO1312?guid=10730061",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A unit that fails H-12 (for example a new detached building or over 25% of the house) or a lot outside the six districts needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (duplex)",
+          "path": "by_right",
+          "districts": [
+            "R-2b"
+          ],
+          "conditions": "Use B-3: public water and public sewer, 5,000 sq ft per dwelling unit, lot width 100 ft, front 35, side 15 each, rear 20. The district table also lists a 3 acre gross site and 3 units per acre for B-3.",
+          "min_lot_sqft": 10000,
+          "section": "175-16B(3), 175-53A, 175-54, 175-55",
+          "url": "https://ecode360.com/print/DO1312?guid=10731066",
+          "confidence": "secondary",
+          "note": "A two-family building, one family wholly or partly over the other (175-9). Whether the 3 acre gross site applies to one lot is for the Township"
+        },
+        {
+          "name": "Two-family detached dwelling (duplex)",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Use B-3: public water and public sewer, 2,500 sq ft per dwelling unit, lot width 60 ft, front 25, side 10 each, rear 20, height 35. A 3 acre gross site and 6 units per acre in the 175-59 table.",
+          "min_lot_sqft": 5000,
+          "section": "175-16B(3), 175-58A, 175-59, 175-60",
+          "url": "https://ecode360.com/print/DO1312?guid=10731077",
+          "confidence": "secondary",
+          "note": "175-60 note 1: a building with more than one dwelling needs the per-unit lot area times the number of units"
+        },
+        {
+          "name": "Two-family detached dwelling (duplex)",
+          "path": "by_right",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "Use B-3: 10,000 sq ft lot area per dwelling unit, lot width 70 ft, front 20, side 10, rear 30, 40 ft and three stories. Architectural plans approved by the Board of Supervisors.",
+          "min_lot_sqft": 20000,
+          "section": "175-65.2A, 175-65.3, 175-65.4",
+          "url": "https://ecode360.com/print/DO1312?guid=10731122",
+          "confidence": "secondary",
+          "note": "VC does not list H-12"
+        },
+        {
+          "name": "Residential conversion of a designated historic structure",
+          "path": "conditional_use",
+          "districts": [
+            "R-1a",
+            "R-1"
+          ],
+          "conditions": "Only for structures officially designated by the Township as historic. Conversion of an existing dwelling into more than one dwelling, or of an accessory building into one dwelling. Each unit at least 750 sq ft, lot area per family at least 75% of the district figure, no external alteration except for safety.",
+          "min_lot_sqft": null,
+          "section": "175-16B(10), 175-32D, 175-37D",
+          "url": "https://ecode360.com/print/DO1312?guid=10730068",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The structure is officially designated by the Township as historic",
+              "section": "175-16B(10)(a)"
+            }
+          ],
+          "note": "B-10(a) says special exception, the R-1a and R-1 lists say conditional use by the Board of Supervisors. The district list is used here"
+        },
+        {
+          "name": "Residential conversion of a designated historic structure",
+          "path": "special_exception",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "Only for structures officially designated by the Township as historic. Units of at least 750 sq ft. The Zoning Hearing Board sets the number of families.",
+          "min_lot_sqft": null,
+          "section": "175-16B(10), 175-65.2B",
+          "url": "https://ecode360.com/print/DO1312?guid=10731122",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The structure is officially designated by the Township as historic",
+              "section": "175-16B(10)(a)"
+            }
+          ],
+          "note": "Units of at least 750 sq ft"
+        }
+      ],
+      "section": "175-16B(3), 175-16B(10), 175-53, 175-58, 175-65.2",
+      "url": "https://ecode360.com/print/DO1312?guid=10730068",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1a",
+        "R-1",
+        "R-2",
+        "R-2a",
+        "R-2b",
+        "R-4"
+      ],
+      "section": "175-32A, 175-37A, 175-42A, 175-47A, 175-53A, 175-58A",
+      "url": "https://ecode360.com/print/DO1312?guid=10731000",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "175-16H(12)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'One accessory dwelling unit to a single-family detached dwelling'. Not a twin or townhouse."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "175-16H(12)(b)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'Accessory dwelling units shall be part of the principal residence or may be contained in the existing accessory structure such as a garage.' A unit outside the house needs an existing accessory structure (gate). No date is given for 'existing'. A new detached building is not named (types_not_addressed)."
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "175-17A, 175-17B",
+      "url": "https://ecode360.com/print/DO1312?guid=10730601",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'may be used for a permitted use in the district in which it is located; provided, however, that the minimum and maximum regulations of the district are met.' The nonconforming lot subsection was repealed in 1996. Reading: an undersized lot needs a variance. Ask the Zoning Officer."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "A unit outside the house must be inside an existing accessory structure such as a garage.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "has_accessory_building",
+          "section": "175-16H(12)(b)",
+          "url": "https://ecode360.com/print/DO1312?guid=10730585"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "At most two occupants in the unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "175-16H(12)(f)",
+          "url": "https://ecode360.com/print/DO1312?guid=10730585"
+        },
+        {
+          "kind": "design",
+          "condition": "No change to the outside of the house that suggests it is other than a single-family dwelling or detracts from the single-family character of the neighborhood.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "175-16H(12)(d)",
+          "url": "https://ecode360.com/print/DO1312?guid=10730585"
+        },
+        {
+          "kind": "other",
+          "condition": "Registration with the Zoning Officer for a fee. It expires when the property is conveyed. A deed restriction in favor of the Township is recorded.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "175-16H(12)(g), (i)",
+          "url": "https://ecode360.com/print/DO1312?guid=10730585",
+          "bill_overrides": true
+        },
+        {
+          "kind": "lot_size",
+          "condition": "The district lot figure shown is for a B-1 single-family lot. A lawful cluster (B-7) or lot-averaging (B-9) lot has a smaller minimum (R-1a 1 acre or 72,500 sq ft, R-1 30,000 or 22,000, R-2 30,000 or 16,500, R-2a 30,000, 20,000 or 16,500, R-2b and R-4 16,500). Ask the zoning officer which applies to this lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "175-34, 175-39, 175-44, 175-49, 175-55, 175-60",
+          "url": "https://ecode360.com/print/DO1312?guid=10731017"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "The unit is part of the one dwelling unit of the house and is used by the same household, related or unrelated. Not a unit for a separate tenant household.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "175-9 'Dwelling unit', 'Family'",
+          "url": "https://ecode360.com/print/DO1312?guid=10729919"
+        },
+        {
+          "kind": "utilities",
+          "condition": "A Bucks County Board of Health (or other agency) certificate that the wastewater facilities are adequate for the house and the unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "175-16H(12)(h)",
+          "url": "https://ecode360.com/print/DO1312?guid=10730585"
+        }
+      ],
+      "section": "175-16H(12)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "175-16H(12)(b), (d)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "'part of the principal residence' (internal, and an addition that keeps a single-family look) or 'the existing accessory structure such as a garage'. A new detached building is not named."
+    },
+    "types_not_addressed": {
+      "value": [
+        "detached_new"
+      ],
+      "section": "175-16H(12)(b)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "A new freestanding unit is not named in H-12."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "175-16H(12)(a)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No square foot cap. Share only."
+    },
+    "max_share_of_house": {
+      "value": 0.25,
+      "section": "175-16H(12)(a)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'shall occupy no more than 25% of the total usable floor area of the principal residence, not including any garage.'"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "175-16H(12)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "175-16H(3)(d)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730483",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "Accessory structures such as detached garages 'do not exceed 20 feet in height'. The unit sits in an existing structure."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "175-34, 175-39, 175-44, 175-49, 175-55, 175-59A",
+      "url": "https://ecode360.com/print/DO1312?guid=10731000",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "House height 35 ft in each ADU district."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "175-17F(1)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730601",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'Structures with a floor area of more than 144 square feet shall meet the building setback requirements for principal structures.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "175-17F(1)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730601",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'All accessory structures shall be located behind the principal building setback line closest to the street on which the principal building fronts and shall be set back from the street line to a distance no less than the actual setback of the principal building'. Lots of 10 acres or more may differ (175-17F(2))."
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 20,
+      "section": "175-16H(3)(d)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730483",
+      "verified_on": "2026-11-13",
+      "confidence": "verified"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "175-16H(3)(d), 175-16H(12)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730483",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "H-12 has no height of its own. The 20 ft accessory cap likely reaches a garage that holds the unit."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "175-16H(12)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "No owner-occupancy rule in H-12."
+    },
+    "family_only": {
+      "value": false,
+      "section": "175-16H(12), 175-9",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No relative rule. The 'dwelling unit' definition says the ADU is part of a single dwelling unit 'even though it may contain facilities ... used by family members', and 'family' covers related or unrelated people living as one household."
+    },
+    "occupancy": {
+      "value": "At most two occupants, who are part of the one household of the house. 'Family' is any group, related or unrelated, living together as a household unit (175-9), and the ADU is part of a single dwelling unit with the house. A separate tenant household is not provided for.",
+      "section": "175-16H(12)(f), 175-9 'Dwelling unit', 'Family'",
+      "url": "https://ecode360.com/print/DO1312?guid=10729919",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "175-16H(12), (e)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'No more than one accessory dwelling unit shall be permitted per single-family detached dwelling.'"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "175-30.6, 175-9 'Short-term rental', 'Dwelling unit'",
+      "url": "https://ecode360.com/print/DO1312?guid=10729919",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "175-30.6 bars short-term rentals in every district. A short-term rental is 'for exclusive transient use', meaning 'no resident of the dwelling unit lives on-site, in the dwelling unit, throughout any visitor's stay'. The ADU is 'part of a single dwelling unit' with the house (175-9). Reading: banned when no resident lives on site, not reached when the household lives in the house. The household rule may limit it further."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "175-16H(12)(c)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "'The required off-street parking for the principal dwelling plus one additional off-street parking space for the accessory dwelling unit shall be provided.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "175-16H(12)(c), 175-22E",
+      "url": "https://ecode360.com/print/DO1312?guid=10730651",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "House: 'a minimum of two off-street parking spaces shall be provided for each dwelling unit. Parking spaces within garages shall not be used to meet the off-street parking requirement.' Plus one for the unit."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "175-16H(12)(h)",
+      "url": "https://ecode360.com/print/DO1312?guid=10730585",
+      "verified_on": "2026-11-13",
+      "confidence": "secondary",
+      "note": "No rule on separate connections. A wastewater adequacy certificate is needed."
+    }
+  },
+  "coverage": {
+    "max_impervious": {
+      "value": null,
+      "section": "175-33, 175-38, 175-43, 175-48, 175-54, 175-59",
+      "url": "https://ecode360.com/print/DO1312?guid=10731000",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Impervious surface ratio by district and lot type: R-1a .15, R-1 .20, R-2 .20 (.40 on 8,000 sq ft cluster lots), R-2a .20, R-2b .20 or .35, R-4 .35 on 8,000 sq ft lots. Accessory structures count (175-16H(3)(d)[4])."
+    }
+  },
+  "districts": {
+    "R-1a": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "175-33, 175-34",
+        "url": "https://ecode360.com/print/DO1312?guid=10730983",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Single-family detached B-1: 2 acres, lot width 200 ft. The ADU is part of the single dwelling unit (175-9), so no extra lot area."
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "175-33, 175-34",
+        "url": "https://ecode360.com/print/DO1312?guid=10730983",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 35,
+        "section": "175-33, 175-34",
+        "url": "https://ecode360.com/print/DO1312?guid=10730983",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "175-33, 175-34",
+        "url": "https://ecode360.com/print/DO1312?guid=10730983",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "175-33, 175-34",
+        "url": "https://ecode360.com/print/DO1312?guid=10730983",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "175-38, 175-39",
+        "url": "https://ecode360.com/print/DO1312?guid=10731000",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "B-1: 40,000 sq ft, lot width 150 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "175-38, 175-39",
+        "url": "https://ecode360.com/print/DO1312?guid=10731000",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "175-38, 175-39",
+        "url": "https://ecode360.com/print/DO1312?guid=10731000",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "175-38, 175-39",
+        "url": "https://ecode360.com/print/DO1312?guid=10731000",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "175-38, 175-39",
+        "url": "https://ecode360.com/print/DO1312?guid=10731000",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "175-43, 175-44",
+        "url": "https://ecode360.com/print/DO1312?guid=10731017",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "B-1 with public water and public sewer: 20,000 sq ft, lot width 100 ft, side 10 ft minimum and 30 ft total. Without both: 40,000 sq ft. An 8,000 sq ft row applies only to 10 acre developments with 50% open space."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "175-43, 175-44",
+        "url": "https://ecode360.com/print/DO1312?guid=10731017",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "175-43, 175-44",
+        "url": "https://ecode360.com/print/DO1312?guid=10731017",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "175-43, 175-44",
+        "url": "https://ecode360.com/print/DO1312?guid=10731017",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "175-43, 175-44",
+        "url": "https://ecode360.com/print/DO1312?guid=10731017",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-43, 175-44",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-43, 175-44",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-43, 175-44",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          }
+        ],
+        "section": "175-43, 175-44",
+        "url": "https://ecode360.com/print/DO1312?guid=10731017",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Figures without both public water and public sewer. The row above holds the figures with both."
+      }
+    },
+    "R-2a": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "175-48, 175-49",
+        "url": "https://ecode360.com/print/DO1312?guid=10731034",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "B-1: 40,000 sq ft, lot width 150 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "175-48, 175-49",
+        "url": "https://ecode360.com/print/DO1312?guid=10731034",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "175-48, 175-49",
+        "url": "https://ecode360.com/print/DO1312?guid=10731034",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "175-48, 175-49",
+        "url": "https://ecode360.com/print/DO1312?guid=10731034",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "175-48, 175-49",
+        "url": "https://ecode360.com/print/DO1312?guid=10731034",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      }
+    },
+    "R-2b": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "175-54, 175-55",
+        "url": "https://ecode360.com/print/DO1312?guid=10731066",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "B-1 with public water and sewer: 8,000 sq ft, lot width 70 ft. Front may drop to 25 ft with a deeper rear yard (175-55 note 3). Without both: 40,000 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "175-54, 175-55",
+        "url": "https://ecode360.com/print/DO1312?guid=10731066",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "175-54, 175-55",
+        "url": "https://ecode360.com/print/DO1312?guid=10731066",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "175-54, 175-55",
+        "url": "https://ecode360.com/print/DO1312?guid=10731066",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "175-54, 175-55",
+        "url": "https://ecode360.com/print/DO1312?guid=10731066",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-54, 175-55",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-54, 175-55",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-54, 175-55",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          }
+        ],
+        "section": "175-54, 175-55",
+        "url": "https://ecode360.com/print/DO1312?guid=10731066",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Figures without both public water and public sewer. The row above holds the figures with both."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "175-59, 175-60",
+        "url": "https://ecode360.com/print/DO1312?guid=10731077",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "B-1 with public water and sewer: 8,000 sq ft, lot width 70 ft. Without both: 40,000 sq ft. Height 35 ft for all uses (175-59A)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "175-59, 175-60",
+        "url": "https://ecode360.com/print/DO1312?guid=10731077",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "175-59, 175-60",
+        "url": "https://ecode360.com/print/DO1312?guid=10731077",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "175-59, 175-60",
+        "url": "https://ecode360.com/print/DO1312?guid=10731077",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "175-59, 175-60",
+        "url": "https://ecode360.com/print/DO1312?guid=10731077",
+        "verified_on": "2026-11-13",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-59, 175-60",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-59, 175-60",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          },
+          {
+            "when": "Without both public water and public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "section": "175-59, 175-60",
+            "note": "B-1 40,000 sq ft, lot width 150 ft."
+          }
+        ],
+        "section": "175-59, 175-60",
+        "url": "https://ecode360.com/print/DO1312?guid=10731077",
+        "verified_on": "2026-11-13",
+        "confidence": "verified",
+        "note": "Figures without both public water and public sewer. The row above holds the figures with both."
+      }
+    }
+  }
+}

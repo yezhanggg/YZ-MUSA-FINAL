@@ -1,6 +1,6 @@
 {
  "about": "Where can you build an ADU today, for every Pennsylvania county subdivision. One tier and one status per place. Not legal advice. Not a zoning determination. See docs/PLACES.md.",
- "built_on": "2026-11-12",
+ "built_on": "2026-11-13",
  "file": "pa_places.json",
  "fields": [
   "geoid",
@@ -138,68 +138,68 @@
   "by_tier": [
    {
     "tier": "baseline",
-    "places": 1897,
-    "pop": 7835770,
-    "pop_share": 0.6,
-    "housing_units": 3416583
+    "places": 1876,
+    "pop": 7480159,
+    "pop_share": 0.5728,
+    "housing_units": 3271616
    },
    {
     "tier": "verified",
-    "places": 33,
-    "pop": 3342271,
-    "pop_share": 0.2559,
-    "housing_units": 1485310
+    "places": 55,
+    "pop": 3739560,
+    "pop_share": 0.2863,
+    "housing_units": 1644640
    },
    {
     "tier": "reported",
-    "places": 569,
-    "pop": 979393,
-    "pop_share": 0.075,
-    "housing_units": 452527
+    "places": 564,
+    "pop": 906874,
+    "pop_share": 0.0694,
+    "housing_units": 425234
    },
    {
     "tier": "drafted",
-    "places": 18,
-    "pop": 764555,
-    "pop_share": 0.0585,
-    "housing_units": 323659
+    "places": 24,
+    "pop": 822641,
+    "pop_share": 0.063,
+    "housing_units": 348882
    },
    {
     "tier": "text_search",
-    "places": 55,
-    "pop": 138028,
-    "pop_share": 0.0106,
-    "housing_units": 64749
+    "places": 53,
+    "pop": 110783,
+    "pop_share": 0.0085,
+    "housing_units": 52456
    }
   ],
   "by_status": [
    {
     "status": "unknown",
-    "places": 1952,
-    "pop": 7973798,
-    "pop_share": 0.6106,
-    "housing_units": 3481332
+    "places": 1929,
+    "pop": 7590942,
+    "pop_share": 0.5812,
+    "housing_units": 3324072
    },
    {
     "status": "limited",
-    "places": 53,
-    "pop": 2766853,
-    "pop_share": 0.2119,
-    "housing_units": 1216705
+    "places": 68,
+    "pop": 2968110,
+    "pop_share": 0.2273,
+    "housing_units": 1299721
    },
    {
     "status": "not_addressed",
-    "places": 24,
-    "pop": 896023,
-    "pop_share": 0.0686,
-    "housing_units": 370755
+    "places": 29,
+    "pop": 1036881,
+    "pop_share": 0.0794,
+    "housing_units": 428172
    },
    {
     "status": "by_right",
-    "places": 13,
-    "pop": 670560,
-    "pop_share": 0.0513,
-    "housing_units": 310998
+    "places": 16,
+    "pop": 711301,
+    "pop_share": 0.0545,
+    "housing_units": 327825
    },
    {
     "status": "no_zoning",
@@ -250,20 +250,20 @@
    {
     "tier": "baseline",
     "status": "unknown",
-    "places": 1897,
-    "pop": 7835770
+    "places": 1876,
+    "pop": 7480159
    },
    {
     "tier": "drafted",
     "status": "by_right",
-    "places": 4,
-    "pop": 223490
+    "places": 5,
+    "pop": 229410
    },
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 7,
-    "pop": 293340
+    "places": 12,
+    "pop": 345506
    },
    {
     "tier": "drafted",
@@ -280,8 +280,8 @@
    {
     "tier": "reported",
     "status": "limited",
-    "places": 33,
-    "pop": 258518
+    "places": 28,
+    "pop": 185999
    },
    {
     "tier": "reported",
@@ -298,26 +298,26 @@
    {
     "tier": "text_search",
     "status": "unknown",
-    "places": 55,
-    "pop": 138028
+    "places": 53,
+    "pop": 110783
    },
    {
     "tier": "verified",
     "status": "by_right",
-    "places": 2,
-    "pop": 383146
+    "places": 4,
+    "pop": 417967
    },
    {
     "tier": "verified",
     "status": "limited",
-    "places": 13,
-    "pop": 2214995
+    "places": 28,
+    "pop": 2436605
    },
    {
     "tier": "verified",
     "status": "not_addressed",
-    "places": 17,
-    "pop": 648298
+    "places": 22,
+    "pop": 789156
    },
    {
     "tier": "verified",
@@ -345,6 +345,22 @@
    "note": "The inventory says the place had no zoning code then. DCED now records zoning, so the old answer is not used"
   },
   {
+   "geoid": "4202920864",
+   "name": "East Brandywine township",
+   "kind": "rule_file_vs_inventory_detail",
+   "kept": "verified limited, class family_only (pa_chester_east_brandywine)",
+   "other": "limited, class discretionary (chesco_missingmiddle_2023, 2023-01)",
+   "note": "mostly special exception, by right in some limited circumstances; most residential districts (inventory dated 2023-01)"
+  },
+  {
+   "geoid": "4202982704",
+   "name": "West Chester borough",
+   "kind": "rule_file_vs_inventory_detail",
+   "kept": "verified limited, class by_right (pa_chester_west_chester)",
+   "other": "limited, class conversion_only (chesco_missingmiddle_2023, 2023-01)",
+   "note": "conversion of historic carriage houses only, several districts (inventory dated 2023-01)"
+  },
+  {
    "geoid": "4210160000",
    "name": "Philadelphia city",
    "kind": "rule_file_vs_inventory",
@@ -367,6 +383,14 @@
    "kept": "reported limited (ycpc_senior_housing_2024, 2024-09)",
    "other": "the inventory lists this use in its ADU column",
    "note": "Check whether this use is an ADU. Multiple Dwelling Structures by right (VC); not listed in residential-named district(s) R (inventory dated 2024-09)"
+  },
+  {
+   "geoid": "4213372992",
+   "name": "Springettsbury township",
+   "kind": "rule_file_vs_inventory_detail",
+   "kept": "verified limited, class family_only (pa_york_springettsbury)",
+   "other": "limited, class discretionary (ycpc_senior_housing_2024, 2024-09)",
+   "note": "ADU special exception (N-C, R-1, R-10, R-20, R-7, R-R) (inventory dated 2024-09)"
   },
   {
    "geoid": "4213373096",

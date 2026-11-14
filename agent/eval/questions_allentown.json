@@ -1,11 +1,11 @@
 {
  "about": "Allentown lot questions. Made by agent/eval/make_more_questions.ts from the Allentown lot records: lots picked by rule, expected values read from tool results. Do not edit by hand.",
- "generated_at": "2026-11-13T06:25:57.697Z",
+ "generated_at": "2026-11-13T14:22:08.396Z",
  "data_roots": {
   "allentown": "/Users/ye/musa-drive/lots/allentown"
  },
  "data_versions": {
-  "allentown": "allentown-20261112-5825ca3817"
+  "allentown": "allentown-20261113-c3f7b21cb2"
  },
  "questions": [
   {
@@ -14,9 +14,9 @@
    "question": "Can I build this backyard cottage on my lot? What approval does it need?",
    "context": {
     "lot": {
-     "id": "42077-640799209410",
+     "id": "42077-640799226076",
      "tract": "42077000101",
-     "label": "1007 E LIVINGSTON ST"
+     "label": "1021 N JASPER ST"
     },
     "site_lot": null,
     "town": {
@@ -237,9 +237,9 @@
    "question": "Could I build a 1,000 sq ft backyard cottage here, 25 by 40 feet?",
    "context": {
     "lot": {
-     "id": "42077-640799226076",
+     "id": "42077-640799465517",
      "tract": "42077000101",
-     "label": "1021 N JASPER ST"
+     "label": "1101 1107 N JEROME ST"
     },
     "site_lot": null,
     "town": {
@@ -544,9 +544,9 @@
    "question": "Would I have to cut down trees to fit a backyard cottage here?",
    "context": {
     "lot": {
-     "id": "42077-640799306540",
+     "id": "42077-640799389142",
      "tract": "42077000101",
-     "label": "1019 E LIVINGSTON ST"
+     "label": "1028 E CONGRESS ST"
     },
     "site_lot": null,
     "town": {
