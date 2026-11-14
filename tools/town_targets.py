@@ -1103,6 +1103,20 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-04-20",
         "note": "Zoning: Chapter 325 Zoning (Ord. No. 880, 11-17-2025). ADU text: 'Dwelling, conversion' (325-630): special exception in R-10, R-15, R-22, R-40, RC and MU, one added unit for a family member inside or added to the house, at most 450 sq ft and two people, owner-occupied, annual affidavit, one more parking space. ECHO elder cottage by special exception in the same zones (325-637, 300 to 900 sq ft, relative 60 or older or disabled). Read in the browser on eCode360 (PE0541).",
     },
+    "4204515488": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/10946616",
+        "plain_fetch": False,
+        "current_through": "2025-05-13",
+        "note": "Zoning: Chapter 210 Zoning (Ord. No. 132, 12-7-1982, as amended). No general ADU rule: residence districts allow listed uses 'and for no other'. 'Single-family residence with an accessory apartment' (210-4, 210-72A(1)(f), 210-74C(17)) by right only inside an XR-PRD-1 planned residential development (50 acres, attached, 600 to 1,000 sq ft, two bedrooms). Added dwelling unit in a Class I or II historic resource by conditional use (210-183.7B). Read in the browser on eCode360 (CO1622).",
+    },
+    "4202921192": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/7252554",
+        "plain_fetch": False,
+        "current_through": "2025-07-15",
+        "note": "Zoning: Chapter 240 Zoning (Ord. No. 119, 6-9-1997, as amended). ADU text: 'Apartment for care of a relative' (240-6, 240-32C): accessory use by right in R-1 to R-5, for a relative of a resident who needs care, at most two persons, reconverted or removed when no longer needed, recorded agreement against renting to a nonrelative. Historic resource conversion to dwelling units by conditional use (240-38.5A(2)(c)). Read in the browser on eCode360 (EA1698).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1120,7 +1134,7 @@ FIXED_BATCH.update(
     {g: 18 for g in ("4209184624", "4201754192", "4202979480", "4207181168", "4213383432", "4209141432")}
 )
 FIXED_BATCH.update({g: 19 for g in ("4207121344", "4205530944", "4200372160", "4207141224")})
-FIXED_BATCH.update({g: 20 for g in ("4209161664", "4213358888")})
+FIXED_BATCH.update({g: 20 for g in ("4209161664", "4213358888", "4204515488", "4202921192")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1182,6 +1196,10 @@ EXTRAS = {
     # Batch 20 (2026-11-14): the next towns by population without a rule file.
     "4209161664": "Code Appendix B 1910B(8) additional living quarters, family only",
     "4213358888": "Code 325-630 conversion dwelling for a family member and 325-637 ECHO",
+    # Batch 20b (2026-11-14): Upper Saucon, Windsor (York) and Fairview (York) were skipped (zoning only in PDFs, or
+    # the online code is not the adopted ordinance).
+    "4204515488": "Code 210-72A(1)(f) accessory apartment (XR-PRD-1) and 210-183.7B historic added unit",
+    "4202921192": "Code 240-32C apartment for care of a relative",
 }
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-113 towns in the index, 113 with a rule file (Philadelphia and Pittsburgh included). Verified 73, drafted 40, in progress 0, todo 0.
+115 towns in the index, 115 with a rule file (Philadelphia and Pittsburgh included). Verified 73, drafted 42, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -126,6 +126,8 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Lancaster township | Lancaster | verified | accessory dwelling unit | by right | by right | ADU rule only in R-1. occupancy (280-1502E, 280-201 (family)). owner on site (280-1502D). house type detached. R-1 15,000 sq ft per unit. other ways (not ADUs): Two-family dwelling in R-2 or R-3 (by right, 280-502M, 280-505, 280-602N, 280-605). Conversion of a building that existed before July 17, 1972 into a multifamily dwelling (special exception, 280-403C, 280-503B, 280-1605). Residential infill development (conditional use with land development, 280-404C, 280-504C, 280-604C, 280-1530). 3 parking spaces in total | 40% of the house | yes | 1 | 2026-11-14 |
 | Plymouth township | Montgomery | drafted | additional living quarters | family only | by right | occupancy (1910B(8)(a), (i)). family only (1910B(8)(a)). owner on site (1910B(8)(b)). house type detached. other ways (not ADUs): Conversion of a single-family dwelling into a dwelling for more families (special exception, 1912). Duplex dwelling in D Residential (by right, 800B, 802, 200 (dwelling 2)) | none set | yes | none set | 2026-11-14 |
 | Penn township | York | drafted | dwelling, conversion (additional dwelling unit for a family member) | family only | special exception | ADU rule only in R-10, R-15, R-22, R-40, RC, MU. occupancy (325-630A, C, 325-637C, D). family only (325-630A, 325-637C). owner on site (325-630B). house type detached. other ways (not ADUs): Two-family detached dwelling (duplex) in R-10 or Mixed Use (by right, 325-212, 325-635, 325-303). 3 parking spaces in total | not confirmed | yes | 1 | 2026-11-14 |
+| Concord township | Delaware | drafted | accessory apartment (planned residential development) and additional dwelling unit (historic resource) | not in the code | variance (by right in XR-PRD-1. historic building: conditional use) | house type detached. R-1 43,560 sq ft per unit. R-2 43,560 sq ft per unit. R-2D 43,560 sq ft per unit. R-3 30,000 sq ft per unit. R-4 15,000 sq ft per unit. district gate (210-72A(1)(f), 210-10, 210-18, 210-26, 210-34, 210-40.2). other gate (210-70, 210-72A(1)(f), 210-78 to 210-82). lot size gate (210-71). utilities gate (210-71). utilities gate (210-71). 4 parking spaces in total | none set (1,000 in XR-PRD-1) | none set | 1 | 2026-11-14 |
+| East Goshen township | Chester | drafted | apartment for care of a relative | family only | by right (not addressed for detached new, garage conversion, over garage) | ADU rule only in R-1, R-2, R-3, R-4, R-5. occupancy (240-6, 240-32C(2), (3)). family only (240-6, 240-32C(2)). house type detached, semi_detached, attached. other ways (not ADUs): Residential conversion of a historic resource into dwelling units (conditional use, 240-38.5A(2)(c), B, 240-38.6) | none set | none set | 1 | 2026-11-14 |
 
 ## Towns still to write
 
@@ -142,4 +144,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 111 | 40.9% |
+| 113 | 41.2% |

@@ -1,0 +1,808 @@
+{
+  "provenance": {
+    "jurisdiction": "Concord township",
+    "instrument": "Concord Township (Delaware County) Code Chapter 210 Zoning (Ord. No. 132, 12-7-1982, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-05-13 (breadcrumb). New Laws on 2026-11-14: Ord. No. 412 (2025-12-02), budget, not zoning.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/10946616",
+      "https://ecode360.com/CO1622/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22living%20quarters%22%20OR%20%22immediate%20family%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20duplex%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/CO1622?guid=10947198",
+      "https://ecode360.com/print/CO1622?guid=10947328",
+      "https://ecode360.com/print/CO1622?guid=10947346",
+      "https://ecode360.com/print/CO1622?guid=10947364",
+      "https://ecode360.com/print/CO1622?guid=10947420",
+      "https://ecode360.com/print/CO1622?guid=10946677",
+      "https://ecode360.com/print/CO1622?guid=10949543",
+      "https://ecode360.com/print/CO1622?guid=10947750",
+      "https://ecode360.com/print/CO1622?guid=27620943",
+      "https://ecode360.com/print/CO1622?guid=10949968",
+      "https://ecode360.com/print/CO1622?guid=10950193",
+      "https://ecode360.com/CO1622/laws"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204515488",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10946616",
+    "code_current_through": "2025-05-13",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-05-13'. The only New Law (Ord. No. 412, budget) is not zoning.",
+    "checks": [
+      "The zoning code has no general accessory dwelling unit rule. Each residential district allows the listed uses 'and for no other' (210-10, 210-18, 210-26, 210-34, 210-40.2). A single-family detached dwelling is 'occupied exclusively as a residence for only one family' (210-4)",
+      "Historic path: on a property with a Class I or Class II historic resource on the Historic Resources Map, 'An additional dwelling unit, over and above existing zoning requirements, may be allowed' by conditional use: Township Council approval after a hearing, with a historic resource study and Historical Commission review (210-183.7A, B)",
+      "The historic added unit has no more than two bedrooms, is 'totally contained within the historic resource' (in the historic house or wholly in the historic barn or outbuilding), has rear or side parking for two more vehicles, and the property must be large enough for two dwelling units under the district rules (210-183.7B)",
+      "XR-PRD-1 planned residential development: 'Single-family residence with an accessory apartment' is a permitted use (210-72A(1)(f)) only in a planned residential development of 50 acres or more in one ownership with public water and sewer, approved by Township Council through the PRD tentative and final approval process (210-71, 210-78 to 210-82). The apartment is attached, 600 to 1,000 sq ft, at most two bedrooms, on a lot deed restricted against division (210-4, 210-74C(17))",
+      "Accessory buildings in residential districts: at most one story or the height of the house and never over 15 ft; at most 750 sq ft and one detached accessory building on a property under three acres; all accessory buildings together at most 75% of the house's first floor area; not in the front yard and at least 10 ft behind the rearmost part of the house; over 250 sq ft within the principal building setbacks. A detached garage may not be used for 'overnight accommodations or sleeping quarters' and may have no full bathroom or kitchen equipment (210-292, 210-293)",
+      "R-3 lot and yard figures depend on whether the development plan was approved before or after May 11, 1959 (210-35A, B). The file holds the later figures",
+      "Parking: 2 spaces per dwelling unit for a single-family dwelling (210-197G)"
+    ],
+    "notes": "Zoning office: Concord Township (Delaware County) Zoning Officer. eCode360 code CO1622 is Concord Township, Delaware County (Bethel Road, Baltimore Pike, Concord Mills, Concordville). Read on eCode360 in a browser, one page at a time, on 2026-11-14 (a first author read the definitions of accessory apartment, 210-72, 210-74 and 210-183.7 the same day; this author read 210-183.7 and 210-74C(17) again). Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'living quarters', 'immediate family', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', conversion, 'two-family', duplex, caretaker, 'tenant house', 'guest house' and 'accessory living' found the accessory apartment definitions and 210-72 (XR-PRD-1), caretaker quarters in R-A (210-42) and R-PLO (210-171), conversion to professional office in M/I (210-225), and the Historic Resources Inventory (a PDF attachment, not opened). Read in full: Articles III, IV, V, VI, VIA, XXII, XXV, XXXV, 210-183.7, and 210-4 up to the I entries. Not read: R-A, R-AH, R-MHD, R-PRD-2, R-PRD-3, C-1, C-2, M/I, LI, PIP, R-PLO, PBPD use lists, the Concordville Village Overlay (210-125.1), Article XXVII conditional use standards, Article XXXII open space, the rest of Article X beyond 210-71, 210-72 and 210-74 (first author), the remaining definitions (J to Z), and the PDF attachments (Historic Resources Map and Inventory, Zoning Map)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment (planned residential development) and additional dwelling unit (historic resource)",
+      "section": "210-4A{106}, 210-72A(1)(f), 210-183.7B",
+      "url": "https://ecode360.com/print/CO1622?guid=10946677",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "210-4: 'DWELLING, SINGLE-FAMILY RESIDENCE WITH AN ACCESSORY APARTMENT A detached single-family residential unit with an attached apartment, the total area of such apartment not to exceed 1,000 square feet ... constituting two dwelling units on a single lot.' Listed only in XR-PRD-1. A historic resource may get 'An additional dwelling unit' by conditional use (210-183.7B)."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "210-10, 210-18, 210-26, 210-34, 210-40.2",
+      "url": "https://ecode360.com/print/CO1622?guid=10947198",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No general ADU rule. The residence districts allow the listed uses 'and for no other', and none lists an accessory apartment. The accessory apartment is listed only inside an XR-PRD-1 planned residential development, and an added unit is open only in a Class I or Class II historic resource by conditional use (210-183.7)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "210-10, 210-18, 210-26, 210-34, 210-40.2, MPC 910.2",
+      "url": "https://ecode360.com/print/CO1622?guid=10947198",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'A building may be erected, altered or used ... for any of the purposes set forth in this section and for no other.' A second unit on a house lot that is not in a historic resource or an XR-PRD-1 development needs a use variance from the Zoning Hearing Board."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://ecode360.com/10946616",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "historic_path": {
+      "value": "conditional_use",
+      "section": "210-183.7A, B",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'An additional dwelling unit, over and above existing zoning requirements, may be allowed in a historic dwelling, barn, outbuilding or other building' that is a Class I or Class II historic resource, after a historic resource study, Historical Commission review and 'Approval of the Township Council following a conditional use hearing'. No family or owner rule. Conditions in gates."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "XR-PRD-1"
+          ],
+          "path": "by_right",
+          "term": "single-family residence with an accessory apartment",
+          "section": "210-72A(1)(f), 210-74C(17), 210-4A{106}",
+          "url": "https://ecode360.com/print/CO1622?guid=10947750",
+          "note": "A permitted use within an XR-PRD-1 planned residential development. The development itself needs Township Council tentative and final PRD approval after a public hearing (210-70, 210-78 to 210-82). The apartment is attached, 600 to 1,000 sq ft, at most two bedrooms."
+        }
+      ],
+      "section": "210-72A(1)(f)",
+      "url": "https://ecode360.com/print/CO1622?guid=10947750",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The XR-PRD-1 sections other than 210-71, 210-72 and 210-74 were not read."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "210-10, 210-18, 210-26, 210-34, 210-40.2",
+      "url": "https://ecode360.com/print/CO1622?guid=10947198",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No residence district lists a general ADU. XR-PRD-1 has its own district path (approval.district_paths). The historic path follows the Historic Resources Map, not a district."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "210-183.7B(6), 210-4",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The historic unit is in a historic dwelling, barn or outbuilding. The residence districts permit single-family detached dwellings."
+    },
+    "historic_bypass": {
+      "value": true,
+      "section": "210-183.7",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A Class I or Class II historic resource may get an added dwelling unit by conditional use. Confirm the class on the Historic Resources Map (a PDF attachment)."
+    },
+    "historic_test": {
+      "value": "The property has a Class I or Class II historic resource on the Concord Township Historic Resources Map",
+      "section": "210-183.7A",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'each Class I or Class II historic resource dwelling, barn, outbuilding or other building as defined on the Historic Resources Map'."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "district",
+          "condition": "The attached accessory apartment is listed only in an XR-PRD-1 planned residential development (210-72A(1)(f)). Every other district allows its listed uses 'and for no other'.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "not_districts": [
+            "XR-PRD-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "section": "210-72A(1)(f), 210-10, 210-18, 210-26, 210-34, 210-40.2",
+          "url": "https://ecode360.com/print/CO1622?guid=10947750"
+        },
+        {
+          "kind": "other",
+          "condition": "The house is part of an approved XR-PRD-1 planned residential development plan (Township Council tentative and final approval after a public hearing).",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "XR-PRD-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "designated_on_plan",
+          "section": "210-70, 210-72A(1)(f), 210-78 to 210-82",
+          "url": "https://ecode360.com/print/CO1622?guid=10947750"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "The planned residential development is at least 50 acres in one ownership.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "XR-PRD-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "tract_sqft_at_least",
+          "value": 2178000,
+          "section": "210-71",
+          "url": "https://ecode360.com/print/CO1622?guid=10947750"
+        },
+        {
+          "kind": "utilities",
+          "condition": "The development is served by public sewer.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "XR-PRD-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "public_sewer",
+          "section": "210-71",
+          "url": "https://ecode360.com/print/CO1622?guid=10947750"
+        },
+        {
+          "kind": "utilities",
+          "condition": "The development is served by public water.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "XR-PRD-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "public_water",
+          "section": "210-71",
+          "url": "https://ecode360.com/print/CO1622?guid=10947750"
+        },
+        {
+          "kind": "size",
+          "condition": "The apartment is 600 to 1,000 sq ft with at most two bedrooms. The lot is held in title by one owner and deed restricted against further division. Such houses are at most 30% of the development's units, at 5 units per net acre in their area.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "XR-PRD-1"
+          ],
+          "building_types": null,
+          "when": "always",
+          "section": "210-4A{106}, 210-74C(8), C(17)(a)",
+          "url": "https://ecode360.com/print/CO1622?guid=10947750"
+        },
+        {
+          "kind": "historic",
+          "condition": "The building is a Class I or Class II historic resource (dwelling, barn, outbuilding or other building) on the Historic Resources Map. A historic resource study (210-183.10), Historical Commission review and recommendation, and Township Council approval after a conditional use hearing.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "210-183.7A",
+          "url": "https://ecode360.com/print/CO1622?guid=10949543"
+        },
+        {
+          "kind": "design",
+          "condition": "'The dwelling unit shall be totally contained within the historic resource': an apartment in the historic house, or wholly inside the historic barn, outbuilding or other building. No more than two bedrooms.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "210-183.7B(1), (4), (6)",
+          "url": "https://ecode360.com/print/CO1622?guid=10949543"
+        },
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "The property is 'of sufficient size to comply with the zoning requirements of the district for two dwelling units' (for example 87,120 sq ft in R-1, R-2 and R-2D at 43,560 sq ft per family).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "210-183.7B(5)",
+          "url": "https://ecode360.com/print/CO1622?guid=10949543"
+        },
+        {
+          "kind": "design",
+          "condition": "Additions or alterations to the historic structure and all landscaping conform to the zoning and subdivision and land development rules and follow the Secretary of the Interior's Standards for Rehabilitation as closely as possible.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "210-183.7B(3)",
+          "url": "https://ecode360.com/print/CO1622?guid=10949543"
+        }
+      ],
+      "section": "210-71, 210-74C(17), 210-183.7",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "attached"
+      ],
+      "section": "210-4A{106}, 210-72A(1)(f), 210-10",
+      "url": "https://ecode360.com/print/CO1622?guid=10947750",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Off the historic path only the XR-PRD-1 accessory apartment, 'a detached single-family residential unit with an attached apartment' (210-4). It is barred outside XR-PRD-1 (gate). The historic path forms are in form.types_allowed_historic."
+    },
+    "types_allowed_historic": {
+      "value": [
+        "internal",
+        "garage_conversion"
+      ],
+      "section": "210-183.7B(4), (6)",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The dwelling unit may be in the form of an apartment unit in the historic dwelling or may be wholly contained within the barn, outbuilding or other building.' It is 'totally contained within the historic resource', so an addition or a new building is not this path."
+    },
+    "labels": {
+      "value": {
+        "garage_conversion": "Unit wholly inside a historic barn or outbuilding"
+      },
+      "section": "210-183.7B(6)",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "210-183.7B",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No floor area cap for the historic unit. At most two bedrooms (210-183.7B(1)). The XR-PRD-1 accessory apartment is 600 to 1,000 sq ft (210-74C(17))."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "210-11B",
+      "url": "https://ecode360.com/print/CO1622?guid=10947198",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "210-292E, 210-293B",
+      "url": "https://ecode360.com/print/CO1622?guid=27620943",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No accessory building or structure shall be erected or placed within a front yard', and it stands at least 10 ft farther back from the front street line than the rearmost part of the house, attached decks included."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "210-293E",
+      "url": "https://ecode360.com/print/CO1622?guid=27620943",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A detached private garage or other detached accessory building greater than 250 square feet in area shall be located within the setbacks of the principal permitted building.' Older text allows 5 ft from side and rear lines (210-222B, C)."
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "210-292B",
+      "url": "https://ecode360.com/print/CO1622?guid=27620943",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No accessory building or structure ... shall exceed one story or the height of the existing residence, and in no event be greater than 15 feet high.'"
+    },
+    "accessory_structure_max_sqft": {
+      "value": 750,
+      "section": "210-292D",
+      "url": "https://ecode360.com/print/CO1622?guid=27620943",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No accessory building on a property of less than three acres shall exceed 750 square feet in area.' All accessory buildings together at most 75% of the house's first floor area (210-292G)."
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "210-183.7B(3), 210-292",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The historic unit sits in an existing historic barn or outbuilding. Additions and alterations must conform to zoning (210-183.7B(3)), but whether the accessory size and height caps reach an existing historic building is not said."
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "210-292B",
+      "url": "https://ecode360.com/print/CO1622?guid=27620943",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Not taller than the existing residence."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "210-183.7B",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No owner rule for the historic added unit."
+    },
+    "family_only": {
+      "value": false,
+      "section": "210-183.7B",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No family rule for the historic added unit."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "210-183.7B",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'An additional dwelling unit'."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "210-183.7B(2)",
+      "url": "https://ecode360.com/print/CO1622?guid=10949543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Sufficient off-street parking, to the rear or side, to accommodate two additional vehicles'."
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "210-197G, 210-183.7B(2)",
+      "url": "https://ecode360.com/print/CO1622?guid=10949968",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Single-family dwelling '2 per dwelling unit' for the house plus two for the added unit."
+    }
+  },
+  "districts": {
+    "XR-PRD-1": {
+      "adu_max_sqft": {
+        "value": 1000,
+        "section": "210-74C(17)(a)[1], 210-4A{106}",
+        "url": "https://ecode360.com/print/CO1622?guid=10947750",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'A minimum of 600 square feet and a maximum of 1,000 square feet.'"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "210-74C(17)(a)[3][a]",
+        "url": "https://ecode360.com/print/CO1622?guid=10947750",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "For a single-family residence with an accessory apartment."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "210-74C(17)(a)[3][b]",
+        "url": "https://ecode360.com/print/CO1622?guid=10947750",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Minimum side yard 15 ft, aggregate 40 ft."
+      },
+      "setback_sides_total_ft": {
+        "value": 40,
+        "section": "210-74C(17)(a)[3][b]",
+        "url": "https://ecode360.com/print/CO1622?guid=10947750",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "210-74C(17)(a)[3][c]",
+        "url": "https://ecode360.com/print/CO1622?guid=10947750",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "210-74G(1)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947750",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "2 per dwelling unit (210-74G(1)), the same as 210-197G."
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947198",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'A lot area not less than one acre, 43,560 square feet, per family' (210-11A(1)). Width 150 ft at the building line."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947198",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Per family' for every building used in whole or in part as a dwelling. The historic added unit needs a property 'of sufficient size to comply with the zoning requirements of the district for two dwelling units' (210-183.7B(5)), so 87,120 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947198",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "From each street right-of-way on which the lot abuts."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947198",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Side yards, either side: 20 feet; total of 50 feet for both.'"
+      },
+      "setback_sides_total_ft": {
+        "value": 50,
+        "section": "210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947198",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Both side yards together 50 ft, at least 20 ft each."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947198",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947198",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The maximum height of buildings and other structures shall be 35 feet' (210-11B)."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947198",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed 25% of the lot area.' Building area is the footprint of the buildings on the lot (210-4)."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "210-19, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'A lot area not less than one acre, 43,560 square feet, per family' (210-11A(1)). Width 150 ft at the building line. R-2 uses the R-1 figures (210-19)."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "210-19, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Per family' for every building used in whole or in part as a dwelling. The historic added unit needs a property 'of sufficient size to comply with the zoning requirements of the district for two dwelling units' (210-183.7B(5)), so 87,120 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "210-19, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "From each street right-of-way on which the lot abuts."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "210-19, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Side yards, either side: 20 feet; total of 50 feet for both.'"
+      },
+      "setback_sides_total_ft": {
+        "value": 50,
+        "section": "210-19, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Both side yards together 50 ft, at least 20 ft each."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "210-19, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "210-19, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The maximum height of buildings and other structures shall be 35 feet' (210-11B)."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "210-19, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed 25% of the lot area.' Building area is the footprint of the buildings on the lot (210-4)."
+      }
+    },
+    "R-2D": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "210-27, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947346",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'A lot area not less than one acre, 43,560 square feet, per family' (210-11A(1)). Width 150 ft at the building line. R-2D uses the R-1 figures (210-27)."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "210-27, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947346",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Per family' for every building used in whole or in part as a dwelling. The historic added unit needs a property 'of sufficient size to comply with the zoning requirements of the district for two dwelling units' (210-183.7B(5)), so 87,120 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "210-27, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947346",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "From each street right-of-way on which the lot abuts."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "210-27, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947346",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Side yards, either side: 20 feet; total of 50 feet for both.'"
+      },
+      "setback_sides_total_ft": {
+        "value": 50,
+        "section": "210-27, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947346",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Both side yards together 50 ft, at least 20 ft each."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "210-27, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947346",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "210-27, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947346",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The maximum height of buildings and other structures shall be 35 feet' (210-11B)."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "210-27, 210-11",
+        "url": "https://ecode360.com/print/CO1622?guid=10947346",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed 25% of the lot area.' Building area is the footprint of the buildings on the lot (210-4)."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "210-35B",
+        "url": "https://ecode360.com/print/CO1622?guid=10947364",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Single-family dwelling on a development plan approved after May 11, 1959: 30,000 sq ft per family, width 100 ft. On a plan approved before May 11, 1959: 15,000 sq ft per family, width 75 ft, front 30 ft, side 15 ft (30 ft both), rear 25 ft (210-35A). The row holds the later figures. Ask which applies to the lot."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 30000,
+        "section": "210-35B, 210-183.7B(5)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947364",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Per family. 15,000 sq ft per family on a plan approved before May 11, 1959 (210-35A)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "210-35B(4)(a)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947364",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "30 ft on a plan approved before May 11, 1959."
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "210-35B(4)(b)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947364",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Side yards, either side: 25 feet; total of 50 feet for both.' Before May 11, 1959: 15 ft, 30 ft for both."
+      },
+      "setback_sides_total_ft": {
+        "value": 50,
+        "section": "210-35B(4)(b)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947364",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "30 ft on a plan approved before May 11, 1959."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "210-35B(4)(c)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947364",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "25 ft on a plan approved before May 11, 1959."
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "210-35",
+        "url": "https://ecode360.com/print/CO1622?guid=10947364",
+        "verified_on": "2026-11-14",
+        "confidence": "unverified",
+        "note": "Article VI gives no height. Not settled whether the R-1 35 ft applies (210-35C points to R-1 only for other permitted uses)."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "210-35A(3), B(3)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947364",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed 25% of the lot area.'"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "210-40.3B(1)(a)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947420",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Not less than 15,000 square feet per family'. Average 19,500 sq ft in the development, width 75 ft. R-4 is a lot averaging development of 50 acres or more with public water and sewer (210-40.3A)."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 15000,
+        "section": "210-40.3B(1)(a), 210-183.7B(5)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947420",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per family. Density at most 2.5 units per acre in the development (210-40.3B(1)(c))."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "210-40.3B(4)(a)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947420",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "210-40.3B(4)(b)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947420",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Side yards: either side 10 feet, total of 30 feet for both.'"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "210-40.3B(4)(b)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947420",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 16,
+        "section": "210-40.3B(4)(c)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947420",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "210-40.3",
+        "url": "https://ecode360.com/print/CO1622?guid=10947420",
+        "verified_on": "2026-11-14",
+        "confidence": "unverified",
+        "note": "Article VIA gives no height."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "210-40.3B(3)",
+        "url": "https://ecode360.com/print/CO1622?guid=10947420",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed 20% of the lot area.'"
+      }
+    }
+  }
+}
