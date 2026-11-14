@@ -1,4 +1,4 @@
-// A county place with several towns (Chester County: West Chester, Phoenixville, West Vincent, Malvern, East
+// County places with several towns (Chester County: West Chester, Phoenixville, West Vincent, Malvern, East
 // Brandywine). A West Chester lot opened by link gets West Chester's answer, names its town and cites the West Chester
 // rule file; a Phoenixville lot in the same county names Phoenixville and links its code. Uses the lot records on the
 // external drive (LOT_DATA_DIR, default ~/musa-drive/lots) and skips when they are not there.
@@ -56,5 +56,38 @@ test.describe('a county place with several towns', () => {
     await expect(row).toContainText('Chester County');
     await expect(row).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
     await expect(page.locator('[data-place="centre_county"]')).toContainText('Centre County');
+  });
+});
+
+// Montgomery County: three towns (Lower Merion, Narberth, Upper Dublin). Its records name their town themselves.
+const NAR = { lot: '42091-120000004002', tract: '42091205600' }; // 203 Barrie Rd, Narberth, 3B
+const hasMont = existsSync(resolve(LOTS, 'montgomery_county/detail', `${NAR.tract}.json.gz`));
+
+test.describe('Montgomery County, a second county place', () => {
+  test.skip(!hasMont, `no Montgomery County lot records at ${LOTS}`);
+
+  test("a Narberth lot: Narberth's answer, its town, the Narberth rule file and its numbers", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/#/?view=test&lot=${NAR.lot}&tract=${NAR.tract}`);
+    await expect(verdict(page)).toHaveAttribute('data-status', 'fits');
+    await expect(verdict(page)).toHaveAttribute('data-answer', 'yes');
+    await expect(right(page).locator('h2')).toHaveText('203 Barrie Rd');
+    await expect(right(page)).toContainText('Narberth borough');
+    await expect(right(page).locator('[data-code-link="Zoning code"]')).toHaveAttribute('href', 'https://ecode360.com/34400015');
+    const why = page.locator('section[aria-label="Why"]').first();
+    await why.getByRole('button', { name: 'Why' }).click();
+    await expect(why).toContainText('Narberth Zoning Code (Ch. 500)');
+    await expect(why).not.toContainText(/Lower Merion|Upper Dublin/);
+    const numbers = page.locator('section[aria-label="City numbers"]').first();
+    await numbers.getByRole('button', { name: 'City numbers' }).click();
+    await expect(numbers).toContainText(/Narberth, all \d{1,3}(,\d{3})* lots/);
+  });
+
+  test('Testable Lots lists Montgomery County with its lot count', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/#/?view=test');
+    const row = page.locator('[data-place="montgomery_county"]');
+    await expect(row).toContainText('Montgomery County');
+    await expect(row).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
   });
 });

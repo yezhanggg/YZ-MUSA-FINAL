@@ -27,7 +27,6 @@ const ALL_TOWNS: readonly LotTown[] = [
   { file: 'pa_chester_malvern', geoid: '4202946792', name: 'Malvern borough', place: 'chester_county', code_url: 'https://ecode360.com/11230593' },
   { file: 'pa_chester_east_brandywine', geoid: '4202920864', name: 'East Brandywine township', place: 'chester_county', code_url: 'https://ecode360.com/11881518' },
   { file: 'pa_centre_college', geoid: '4202715136', name: 'College township', place: 'centre_county', code_url: 'https://ecode360.com/10705471' },
-  // Montgomery County: listed for when its build is done. Its towns count only once the county is in PLACE_BY_COUNTY.
   { file: 'pa_montgomery_lower_merion', geoid: '4209144976', name: 'Lower Merion township', place: 'montgomery_county', code_url: 'https://ecode360.com/35907405' },
   { file: 'pa_montgomery_narberth', geoid: '4209152664', name: 'Narberth borough', place: 'montgomery_county', code_url: 'https://ecode360.com/34400015' },
   { file: 'pa_montgomery_upper_dublin', geoid: '4209179008', name: 'Upper Dublin township', place: 'montgomery_county', code_url: 'https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-24735' },

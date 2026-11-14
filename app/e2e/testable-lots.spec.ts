@@ -24,7 +24,7 @@ test.describe('show testable lots', () => {
     await expect(map).toHaveAttribute('data-testable', '');
     await expect(legend).toHaveCount(0);
     // One button per place (a city, or a county with several towns), each with its lot count from the place manifest.
-    for (const place of ['pittsburgh', 'philadelphia', 'allentown', 'chester_county', 'centre_county']) await expect(page.locator(`[data-place="${place}"]`)).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
+    for (const place of ['pittsburgh', 'philadelphia', 'allentown', 'chester_county', 'centre_county', 'montgomery_county']) await expect(page.locator(`[data-place="${place}"]`)).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
     // The legend is a card under the left panel, not over the map.
     const panel = page.locator('aside[aria-label="Search and map controls"]');
 

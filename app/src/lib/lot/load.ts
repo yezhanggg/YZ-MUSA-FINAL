@@ -18,7 +18,7 @@ export const CACHE_TRACTS = 12;
 
 /** County FIPS (state + county) -> place folder. Only places with built lot files are listed. A city place is one
  * town; a county place (chester_county) holds the lots of several towns (lib/lot/towns.ts). */
-export const PLACE_BY_COUNTY: Readonly<Record<string, string>> = { '42003': 'pittsburgh', '42101': 'philadelphia', '42077': 'allentown', '42029': 'chester_county', '42027': 'centre_county' };
+export const PLACE_BY_COUNTY: Readonly<Record<string, string>> = { '42003': 'pittsburgh', '42101': 'philadelphia', '42077': 'allentown', '42029': 'chester_county', '42027': 'centre_county', '42091': 'montgomery_county' };
 
 export type LotLoadErrorKind = 'not_found' | 'offline' | 'server' | 'bad_data' | 'version_mismatch' | 'aborted';
 

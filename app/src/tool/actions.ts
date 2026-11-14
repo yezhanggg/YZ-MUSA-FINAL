@@ -81,7 +81,7 @@ function fitUnitTo(record: LotRecord) {
 let pending: AbortController | null = null;
 
 /** County names for the places with lot records, for a tract known only by its GEOID. */
-const COUNTY_OF: Record<string, string> = { '42003': 'Allegheny', '42101': 'Philadelphia', '42077': 'Lehigh', '42029': 'Chester', '42027': 'Centre' };
+const COUNTY_OF: Record<string, string> = { '42003': 'Allegheny', '42101': 'Philadelphia', '42077': 'Lehigh', '42029': 'Chester', '42027': 'Centre', '42091': 'Montgomery' };
 
 /** The town of a tract known only by its GEOID: the city of a one-town place. A county place's town comes from the
  * lot record (townOfRecord). */

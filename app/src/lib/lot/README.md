@@ -58,7 +58,7 @@ pipeline's own unit agreed with the pipeline on every lot.
 <base>philadelphia/...
 ```
 
-The place folder comes from the county in the GEOID (`42003` Pittsburgh, `42101` Philadelphia, see `PLACE_BY_COUNTY`). A county place (`42029` chester_county, `42027` centre_county) holds several towns: a lot's town is its rule file (`towns.ts`).
+The place folder comes from the county in the GEOID (`42003` Pittsburgh, `42101` Philadelphia, see `PLACE_BY_COUNTY`). A county place (`42029` chester_county, `42027` centre_county, `42091` montgomery_county) holds several towns: a lot's town is its rule file (`towns.ts`).
 The files are decoded in the browser with `DecompressionStream` when the body is still gzip, so a host that serves
 `.json.gz` as plain bytes works, and so does one that sets `Content-Encoding: gzip`.
 
