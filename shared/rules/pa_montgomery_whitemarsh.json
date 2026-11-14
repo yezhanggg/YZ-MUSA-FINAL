@@ -1,0 +1,892 @@
+{
+  "provenance": {
+    "jurisdiction": "Whitemarsh township",
+    "instrument": "Whitemarsh Township Code Chapter 116 Zoning (Ord. No. 112, 9-26-1957, amended in its entirety by Ord. No. 409, 6-18-1981, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-04-10 (breadcrumb). Chapter 116 New Laws on 2026-11-14: Ord. No. 1049 (2026-01-08), Zoning Amendment, shown only as a PDF and not read.",
+    "effective_date": "2006-04-06",
+    "source_urls": [
+      "https://ecode360.com/11708888",
+      "https://ecode360.com/11708909",
+      "https://ecode360.com/print/WH0819?guid=11710782",
+      "https://ecode360.com/print/WH0819?guid=11710772",
+      "https://ecode360.com/print/WH0819?guid=11710767",
+      "https://ecode360.com/print/WH0819?guid=11710777",
+      "https://ecode360.com/print/WH0819?guid=11709107",
+      "https://ecode360.com/print/WH0819?guid=11709185",
+      "https://ecode360.com/print/WH0819?guid=11709262",
+      "https://ecode360.com/11709088",
+      "https://ecode360.com/print/WH0819?guid=11710268",
+      "https://ecode360.com/print/WH0819?guid=11709298",
+      "https://ecode360.com/print/WH0819?guid=11709308",
+      "https://ecode360.com/print/WH0819?guid=11709349",
+      "https://ecode360.com/print/WH0819?guid=11709359",
+      "https://ecode360.com/print/WH0819?guid=11709400",
+      "https://ecode360.com/print/WH0819?guid=11709429",
+      "https://ecode360.com/print/WH0819?guid=11709458",
+      "https://ecode360.com/45934269",
+      "https://ecode360.com/print/WH0819?guid=45934269",
+      "https://ecode360.com/print/WH0819?guid=11709582",
+      "https://ecode360.com/print/WH0819?guid=13977390",
+      "https://ecode360.com/print/WH0819?guid=13977485",
+      "https://ecode360.com/WH0819/laws",
+      "https://ecode360.com/WH0819/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20%22housekeeping%20unit%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WH0819/search?query=%22accessory%20use%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20duplex&scope=code&sortOrder=relevance",
+      "https://ecode360.com/WH0819/search?query=%22single-family%20detached%22%20OR%20%22single-family%20dwelling%22%20OR%20%22single-family%20dwellings%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/WH0819/search?query=%22historic%20structure%22%20OR%20%22historic%20structures%22%20OR%20%22historic%20building%22%20OR%20%22historic%20resource%22%20OR%20%22adaptive%20reuse%22&scope=code&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209184624",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11708888",
+    "code_current_through": "2025-04-10",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-04-10'. Ord. No. 1049 (Zoning Amendment, adopted 2026-01-08) is listed under New Laws for Chapter 116 and is not yet in the code text.",
+    "code_caution": "Ord. No. 1049 (Zoning Amendment, adopted 2026-01-08) is listed as a New Law for Chapter 116 and was not read (PDF only). It may change the rules below.",
+    "checks": [
+      "The code's accessory dwelling unit is tied to a conservation design subdivision: 'Accessory dwelling units (ADU) including, but not limited to, elder cottages for relatives and tenant houses for employees of a farm or estate and proposed in Option One subdivisions, are permitted within the Conservation Overlay Design District' (116-272E, 116-11)",
+      "Option One is a by-right conservation design option only in AAAA and AAA, inside the Conservation Design Overlay shown on the Zoning Map, with a permanent conservation easement and a density of one dwelling unit per 10 acres of base site area (116-270A(1), 116-42A, 116-46A, 116-268A). Ask the Zoning Officer whether the lot is in an Option One subdivision",
+      "Where allowed: inside the house, in an existing historic structure, or in a new structure on a tract of 15 acres or more. One ADU on a lot under 10 acres, two on 10 acres or more. First ADU at most 900 sq ft gross floor area (116-272E(1) to (3))",
+      "Building permits only after a restrictive conservation easement bars enlarging the ADU, more ADUs and further subdivision. Montgomery County Department of Health approval for any on-site sewage system (116-272E(4))",
+      "ADU height at most 25 ft except historic buildings. The ADU stays on the same lot as the house (116-272E(5), (6))",
+      "Detached accessory buildings: not in the front yard or forward of the front of the house, at least 4 ft from side and rear lines, 15 ft from the house. All accessory uses and structures together cover at most 30% of the required rear yard (116-24D(3), E(3))",
+      "A guesthouse in an accessory structure must have no kitchen and is not for rent or permanent occupancy (116-24B(9))",
+      "Conversion of a single-family dwelling into more dwelling units is a special exception anywhere: a petition signed by owners of 60% of the street frontage within 500 ft, 750 sq ft per unit, lot area per family at least 75% of the district requirement, no outside change except for safety, only for a large dwelling with relatively little economic usefulness as a single-family house (116-26)",
+      "Without public sewer and public water, lots in AAA, AA, A and B need 2 acres, the house 60 ft and accessory buildings 30 ft from lot lines. With one of the two, 1.5 acres (116-23)"
+    ],
+    "notes": "Zoning office: Whitemarsh Township (Montgomery County) Zoning Officer. Read on eCode360 (WH0819) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit' and 'living quarters' found the ADU definition (116-11), the Conservation Design Overlay ADU (116-272E), quarters of a household employee, caretaker or watchman (116-24B(14)), conversions (116-26) and a caretaker residence in HVY (116-155). Searches for two-family, duplex, conversion and historic structures found 116-26, the SM-MU and VC use lists and 116-293 (VC historic building reuse, no dwelling path). Use lists read: AAAA to B (116-35), AD (116-74), SM-MU (116-310), VC (116-290). TDO bars single-family and two-family dwellings (116-318, search excerpt). Use lists not read: LR and HR, MHP, CR, AR, CLI, CLI-X, LIM, HVY, EX, CCRC and the Institutional and Recreational overlays. The definition of residential districts names a C Residential District, but Article XI is reserved."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "116-11, 116-272E",
+      "url": "https://ecode360.com/11708909",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A building or portion thereof providing complete housekeeping facilities for one family as permitted within a conservation design subdivision or land development' (Ord. No. 812, 2006)."
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "116-272E, 116-270A",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Permitted in the Conservation Design Overlay, in Option One subdivisions only (AAAA and AAA). Option One is one of three 'by-right development options'. Elsewhere the code has no ADU rule."
+    },
+    "scope_districts": {
+      "value": [
+        "AAAA",
+        "AAA"
+      ],
+      "section": "116-270A(1), 116-272E",
+      "url": "https://ecode360.com/print/WH0819?guid=11710772",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Option One is permitted in AAAA and AAA Residential Districts only.' The overlay covers parts of AAAA, AAA, AA and A as shown on the Zoning Map (116-268A)."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "116-35",
+      "url": "https://ecode360.com/print/WH0819?guid=11709262",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Outside an Option One subdivision a lot in AAAA to B allows 'One single-family detached dwelling' and accessory uses."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "116-270A, 116-272E",
+      "url": "https://ecode360.com/print/WH0819?guid=11710772",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Option One is a 'by-right development option'. Building permits for the ADU follow a recorded conservation easement."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "116-227",
+      "url": "https://ecode360.com/11708888",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family dwelling to more families",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "A petition signed by owners of 60% or more of the street frontage within 500 ft. Each dwelling unit at least 750 sq ft of floor area. Lot area per family at least 75% of the district requirement. Yards and building area not reduced. No outside change except for safety. The Board sets the number of families. Parking met.",
+          "min_lot_sqft": 15000,
+          "min_lot_by_district": {
+            "AAAA": 135000,
+            "AAA": 65340,
+            "AA": 45000,
+            "A": 22500,
+            "B": 15000
+          },
+          "section": "116-26",
+          "url": "https://ecode360.com/print/WH0819?guid=11709185",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": null,
+              "condition": "A large dwelling with relatively little economic usefulness as a conforming use",
+              "section": "116-26H"
+            },
+            {
+              "test": null,
+              "condition": "A petition signed by owners of 60% or more of the frontage on the same street within 500 ft",
+              "section": "116-26A"
+            }
+          ],
+          "note": "Lot figures are for two families at 75% of the district lot area per family. The section names no district."
+        },
+        {
+          "name": "Two-family dwelling in SM-MU",
+          "path": "by_right",
+          "districts": [
+            "SM-MU"
+          ],
+          "conditions": "Single-family and two-family dwellings are permitted uses. Lot 6,000 sq ft detached, width 40 ft, front 10 ft, side 10 ft, rear 30 ft, 35 ft and 2 stories.",
+          "min_lot_sqft": 6000,
+          "section": "116-310A, 116-311A, 116-312",
+          "url": "https://ecode360.com/45934269",
+          "confidence": "secondary",
+          "note": "Read as a path for an existing house converted to two units."
+        },
+        {
+          "name": "Two-family residence or multifamily conversion of up to four units in VC",
+          "path": "by_right",
+          "districts": [
+            "VC-1",
+            "VC-2",
+            "VC-3",
+            "VC-4"
+          ],
+          "conditions": "'Two-family residence' and 'Multifamily conversion; no more than four units' are permitted uses. Conditions for all uses in 116-291 apply.",
+          "section": "116-290A(2), (3)",
+          "url": "https://ecode360.com/print/WH0819?guid=13977390",
+          "confidence": "secondary",
+          "note": "The VC lot and yard figures (116-294, 116-295) were not read."
+        },
+        {
+          "name": "Quarters of a household employee, caretaker or watchman",
+          "path": "by_right",
+          "districts": null,
+          "conditions": "An accessory use on the same lot as a permitted principal use. For a household employee, caretaker or watchman only.",
+          "section": "116-24B(14)",
+          "url": "https://ecode360.com/print/WH0819?guid=11709107",
+          "confidence": "secondary",
+          "note": "The code does not say whether the quarters may be a full dwelling unit with a kitchen. Ask the Zoning Officer."
+        }
+      ],
+      "section": "116-26, 116-310, 116-290, 116-24B(14)",
+      "url": "https://ecode360.com/print/WH0819?guid=11709185",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "AAAA",
+        "AAA"
+      ],
+      "section": "116-270A(1), 116-272E",
+      "url": "https://ecode360.com/print/WH0819?guid=11710772",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "In the Conservation Design Overlay, Option One subdivisions only."
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "116-272E, 116-35A",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The overlay permits single-family detached dwellings (116-272A)."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "116-272E(3)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Historic accessory buildings over 75 years old may exceed the floor area limits and need not meet setbacks, but stay inside the Option One rule."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The lot is in an Option One conservation design subdivision in the Conservation Design Overlay (AAAA or AAA), with a permanent conservation easement.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "designated_on_plan",
+          "section": "116-272E, 116-270A(1), 116-268A",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new structure for the ADU only 'on tracts 15 acres or larger'.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 653400,
+          "section": "116-272E(1)",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "other",
+          "condition": "A restrictive conservation easement on the property prohibits enlarging the ADU, more ADUs than allowed and further subdivision before building permits issue.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "116-272E(4)",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Montgomery County Department of Health approval for any on-site sewage disposal system the ADU needs.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "116-272E(4)",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "other",
+          "condition": "All performance and dimensional standards for a primary dwelling unit are met. The ADU is on the same lot as the house, not on its own lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "116-272E(2), (6)",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "design",
+          "condition": "A unit in an existing building must be in an existing historic structure.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "116-272E(1)",
+          "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        }
+      ],
+      "section": "116-272E",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "garage_conversion",
+        "detached_new"
+      ],
+      "section": "116-272E(1)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The ADU may be located within the principle dwelling, in an existing historic structure or, on tracts 15 acres or larger, in a new structure.'"
+    },
+    "types_not_addressed": {
+      "value": [
+        "attached",
+        "over_garage"
+      ],
+      "section": "116-272E(1)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "An addition and a unit over a garage are not named."
+    },
+    "labels": {
+      "value": {
+        "garage_conversion": "In an existing historic structure",
+        "detached_new": "In a new structure, on a tract of 15 acres or more"
+      },
+      "section": "116-272E(1)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 900,
+      "section": "116-272E(3)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The gross floor area in the first ADU shall not exceed 900 square feet.' A second ADU on a lot of 10 acres or more: 750 sq ft (1,800 on lots over 15 acres). Historic accessory buildings over 75 years old may exceed these limits."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "116-272E(5)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Any ADU permitted under this subsection shall be limited to a height of 25 feet, with the exception of historic buildings.'"
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 20,
+          "where": "An accessory building in an Option One subdivision in AAA",
+          "section": "116-46A(8)(b)",
+          "url": "https://ecode360.com/print/WH0819?guid=11709359",
+          "note": "Conflicting text, ask. The AAA Option One standards set 20 ft for an accessory building, the ADU rule 25 ft. Where the overlay and the district conflict the more restrictive applies (116-268C)."
+        }
+      ],
+      "section": "116-46A(8)(b), 116-268C",
+      "url": "https://ecode360.com/print/WH0819?guid=11709359",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "116-42A(8)(a), 116-46A(8)(a)",
+      "url": "https://ecode360.com/print/WH0819?guid=11709308",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "35 ft for a principal building."
+    },
+    "setback_side_ft": {
+      "value": 4,
+      "section": "116-24E(3)(b)",
+      "url": "https://ecode360.com/print/WH0819?guid=11709107",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A completely detached accessory building may occupy a required side and rear yard, but shall not be located closer than four feet to any side or rear lot line.'"
+    },
+    "setback_rear_ft": {
+      "value": 4,
+      "section": "116-24E(3)(b)",
+      "url": "https://ecode360.com/print/WH0819?guid=11709107",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "separation_ft": {
+      "value": 15,
+      "section": "116-24E(3)(c)",
+      "url": "https://ecode360.com/print/WH0819?guid=11709107",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No point on a completely detached accessory building ... shall be any closer than 15 feet to any point on the nearest principal building.'"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "116-272E",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "116-272E has no owner-occupancy rule."
+    },
+    "family_only": {
+      "value": false,
+      "section": "116-272E",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'Including, but not limited to, elder cottages for relatives and tenant houses for employees of a farm or estate.'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "116-272E(2)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "One ADU on a lot under 10 acres in an Option One subdivision, two on a lot of 10 acres or more."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "116-184A",
+      "url": "https://ecode360.com/print/WH0819?guid=11710268",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU row. 'Dwelling: 2 per dwelling unit (single family, townhome, attached square feet)'. The ADU is a dwelling unit by definition (116-11)."
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "116-184A",
+      "url": "https://ecode360.com/print/WH0819?guid=11710268",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Two for the house and two for the ADU."
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": null,
+      "section": "116-272E(4)",
+      "url": "https://ecode360.com/print/WH0819?guid=11710782",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Only on-site sewage approval by the County Health Department is named."
+    }
+  },
+  "districts": {
+    "AAAA": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "116-42A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709308",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Option One lot (one acre, width 150 ft), where the ADU rule applies. A standard AAAA lot is 90,000 sq ft, width 250 ft, yards 60 ft (116-41)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "116-42A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709308",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "116-42A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709308",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side. Accessory building 25 ft high in AAAA."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "116-42A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709308",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "116-42A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709308",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "116-42A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709308",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "AAA": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "116-46A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709359",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Option One lot (one acre, width 150 ft), where the ADU rule applies. A standard AAA lot is one acre, width 175 ft, front and rear 60 ft, sides 30 ft each (116-45)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "116-46A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709359",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "116-46A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709359",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side. Accessory building 20 ft high in AAA."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "116-46A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709359",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "116-46A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709359",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "116-46A",
+        "url": "https://ecode360.com/print/WH0819?guid=11709359",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without an approved sanitary sewage system and without public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "setback_front_ft": 60,
+            "setback_side_ft": 60,
+            "setback_rear_ft": 60,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.15,
+            "section": "116-23A",
+            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street."
+          },
+          {
+            "when": "With public sewer but no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 65340,
+            "section": "116-23B"
+          },
+          {
+            "when": "With public water but no public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 65340,
+            "section": "116-23B"
+          }
+        ],
+        "section": "116-23",
+        "url": "https://ecode360.com/11709088",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Lot area shall be at least two acres' with neither service, 1 1/2 acres with one of them."
+      }
+    },
+    "AA": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "116-49",
+        "url": "https://ecode360.com/print/WH0819?guid=11709400",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 135 ft. Accessory building 20 ft and one story."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "116-49",
+        "url": "https://ecode360.com/print/WH0819?guid=11709400",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "116-49",
+        "url": "https://ecode360.com/print/WH0819?guid=11709400",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "116-49",
+        "url": "https://ecode360.com/print/WH0819?guid=11709400",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "116-49",
+        "url": "https://ecode360.com/print/WH0819?guid=11709400",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "116-49",
+        "url": "https://ecode360.com/print/WH0819?guid=11709400",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without an approved sanitary sewage system and without public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "setback_front_ft": 60,
+            "setback_side_ft": 60,
+            "setback_rear_ft": 60,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.15,
+            "section": "116-23A",
+            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street."
+          },
+          {
+            "when": "With public sewer but no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 65340,
+            "section": "116-23B"
+          },
+          {
+            "when": "With public water but no public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 65340,
+            "section": "116-23B"
+          }
+        ],
+        "section": "116-23",
+        "url": "https://ecode360.com/11709088",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Lot area shall be at least two acres' with neither service, 1 1/2 acres with one of them."
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "116-53",
+        "url": "https://ecode360.com/print/WH0819?guid=11709429",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 90 ft. Accessory building 20 ft and one story."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "116-53",
+        "url": "https://ecode360.com/print/WH0819?guid=11709429",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "116-53",
+        "url": "https://ecode360.com/print/WH0819?guid=11709429",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "At least 15 ft each, 40 ft together."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "116-53",
+        "url": "https://ecode360.com/print/WH0819?guid=11709429",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "116-53",
+        "url": "https://ecode360.com/print/WH0819?guid=11709429",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "116-53",
+        "url": "https://ecode360.com/print/WH0819?guid=11709429",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without an approved sanitary sewage system and without public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "setback_front_ft": 60,
+            "setback_side_ft": 60,
+            "setback_rear_ft": 60,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.15,
+            "section": "116-23A",
+            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street."
+          },
+          {
+            "when": "With public sewer but no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 65340,
+            "section": "116-23B"
+          },
+          {
+            "when": "With public water but no public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 65340,
+            "section": "116-23B"
+          }
+        ],
+        "section": "116-23",
+        "url": "https://ecode360.com/11709088",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Lot area shall be at least two acres' with neither service, 1 1/2 acres with one of them."
+      }
+    },
+    "B": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "116-57",
+        "url": "https://ecode360.com/print/WH0819?guid=11709458",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 80 ft. Accessory building 20 ft and one story. Impervious 30%."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "116-57",
+        "url": "https://ecode360.com/print/WH0819?guid=11709458",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "116-57",
+        "url": "https://ecode360.com/print/WH0819?guid=11709458",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "At least 12 ft each, 30 ft together."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "116-57",
+        "url": "https://ecode360.com/print/WH0819?guid=11709458",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "116-57",
+        "url": "https://ecode360.com/print/WH0819?guid=11709458",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The code reads 'Principal building: 35 feet minimum', read as the 35 ft maximum of the other districts."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "116-57",
+        "url": "https://ecode360.com/print/WH0819?guid=11709458",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without an approved sanitary sewage system and without public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "setback_front_ft": 60,
+            "setback_side_ft": 60,
+            "setback_rear_ft": 60,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.15,
+            "section": "116-23A",
+            "note": "House 60 ft and accessory buildings 30 ft from the nearest property line or street."
+          },
+          {
+            "when": "With public sewer but no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 65340,
+            "section": "116-23B"
+          },
+          {
+            "when": "With public water but no public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 65340,
+            "section": "116-23B"
+          }
+        ],
+        "section": "116-23",
+        "url": "https://ecode360.com/11709088",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Lot area shall be at least two acres' with neither service, 1 1/2 acres with one of them."
+      }
+    },
+    "SM-MU": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "116-311A, 116-312",
+        "url": "https://ecode360.com/45934269",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Single-family or two-family detached dwelling. 2,200 sq ft attached. Width 40 ft."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "116-311A, 116-312",
+        "url": "https://ecode360.com/45934269",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "116-311A, 116-312",
+        "url": "https://ecode360.com/45934269",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "10 ft. 30 ft where a nonresidential or mixed use adjoins a residential use or district."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "116-311A, 116-312",
+        "url": "https://ecode360.com/45934269",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "30 ft. 40 ft where a nonresidential or mixed use adjoins a residential use or district."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "116-311A, 116-312",
+        "url": "https://ecode360.com/45934269",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Residential up to 4 units: 35 ft, 2 stories. Impervious 60%, buildings at most 50%."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "116-311A, 116-312",
+        "url": "https://ecode360.com/45934269",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "accessory_setback_side_ft": {
+        "value": 4,
+        "section": "116-311A",
+        "url": "https://ecode360.com/45934269",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 4,
+        "section": "116-311A",
+        "url": "https://ecode360.com/45934269",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

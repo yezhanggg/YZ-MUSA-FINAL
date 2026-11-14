@@ -1,0 +1,597 @@
+{
+  "provenance": {
+    "jurisdiction": "Uwchlan township",
+    "instrument": "Uwchlan Township Code Chapter 265 Zoning (Uwchlan Township Zoning Ordinance of 1994, Ord. No. 94-11, 7-11-1994, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-10-13 (breadcrumb). New Laws on 2026-11-14 for Chapter 265: Ord. No. 2021-05 (Zoning Amendment, 2021-09-13), Ord. No. 2026-06 (Zoning Map Amendment, 2026-05-11) and Ord. No. 2026-08 (Zoning Amendment, 2026-08-10), PDF only, not read.",
+    "effective_date": "2013-12-09",
+    "source_urls": [
+      "https://ecode360.com/8009217",
+      "https://ecode360.com/print/UW2708?guid=9403327",
+      "https://ecode360.com/print/UW2708?guid=9403328",
+      "https://ecode360.com/print/UW2708?guid=9403329",
+      "https://ecode360.com/print/UW2708?guid=9403330",
+      "https://ecode360.com/print/UW2708?guid=8889672",
+      "https://ecode360.com/print/UW2708?guid=9403347",
+      "https://ecode360.com/UW2708/laws",
+      "https://ecode360.com/UW2708/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20%22housekeeping%20unit%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20duplex&scope=all&sortOrder=relevance",
+      "https://ecode360.com/UW2708/search?query=%22guest%20house%22%20OR%20%22two-family%22%20OR%20%22accessory%20use%22&scope=code&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202979480",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/8009217",
+    "code_current_through": "2025-10-13",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-10-13'. Zoning amendments Ord. No. 2021-05 and 2026-08 and map amendment Ord. No. 2026-06 are listed as New Laws, not yet in the code text.",
+    "code_caution": "Zoning amendments Ord. No. 2021-05 (2021-09-13) and Ord. No. 2026-08 (2026-08-10) and map amendment Ord. No. 2026-06 are listed as New Laws for Chapter 265 and were not read (PDF only). They may change the rules below.",
+    "checks": [
+      "The code has no general accessory dwelling unit rule. The residential districts list single-family detached dwellings and accessory uses 'clearly incidental to the principal use' (501.2, 501.3, 502.2, 502.3, 503.2, 503.3, 504.2, 504.3)",
+      "On a property with a historic resource on the Historic Resources Map and Inventory, a 'Guesthouse, as an accessory dwelling' is a conditional use in every district, but only 'if more than one historic resource exists on a property', and inside a building designated as a historic resource (612.7a, 612.7f)",
+      "A guest, individual or family may not stay longer than 90 consecutive days in any 180 days. Two off-street parking spaces beyond those of the house. No walk-in trade (612.7f)",
+      "A historic resource may be enlarged only as minimally needed, as a guideline by no more than 50% of its footprint. Work should follow the Secretary of the Interior's Standards for Rehabilitation (612.7b, 612.5a)",
+      "Conversion of a historic resource into dwellings is a conditional use in every district: 3 parking spaces per unit (not in the front yard), lot area per unit at least the district lot area, no enlargement, units of at least 500 contiguous sq ft (612.7b(1), 612.7e)",
+      "R-2 allows two-family detached and semidetached dwellings on a lot of at least 20 acres. Two-family detached 24,000 sq ft and 120 ft wide per building (504.2c, d, 504.6)",
+      "Detached accessory buildings (other than garages up to 120 sq ft) may stand in the required rear yard, at least 10 ft from the rear line and no closer to the side line than the district allows (603.1)",
+      "The Historic Resources Map and Inventory and the Inventory List are attachments (PDF) and were not read. Ask the Zoning Officer whether a property is listed"
+    ],
+    "notes": "Zoning office: Uwchlan Township (Chester County) Zoning Officer. Read on eCode360 (UW2708) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters', conversion and duplex found the guest house definition (301.4), the family and dwelling unit definitions and living quarters for a proprietor, manager, caretaker or watchman in PC (505). The historic preservation section (612) holds the guesthouse and conversion paths. Use lists read: R-A, R-R, R-1, R-2. PC, PC-2, PIC, PCID and PI use lists not read except the 612.7a table. Parking (607) not read."
+  },
+  "adu": {
+    "term": {
+      "value": "guesthouse, as an accessory dwelling",
+      "section": "612.7f, 301.4 (guest house)",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "612.7f is titled 'Guesthouse, as an accessory dwelling'. The definition reads 'An accessory single-family dwelling on a lot available for short' term stays (search excerpt). Only for historic resources."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "501.2, 502.2, 503.2, 504.2",
+      "url": "https://ecode360.com/print/UW2708?guid=9403329",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Not addressed for an ordinary lot. The only accessory dwelling text is the guesthouse in a historic resource, by conditional use, on a property with more than one historic resource (612.7f)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "503.2, 903",
+      "url": "https://ecode360.com/print/UW2708?guid=9403329",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a single-family lot is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). On a property with historic resources, see the historic path and the conversion alternative."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Article 9",
+      "url": "https://ecode360.com/8009217",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "historic_path": {
+      "value": "conditional_use",
+      "section": "612.7a, 612.7f",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Guesthouse, as accessory' is CU in R-A, R-R, R-1, R-2, PC, PC-2, PIC and PI, inside a building designated as a historic resource, where more than one historic resource exists on the property. Board of Supervisors hearing."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion of a historic resource",
+          "path": "conditional_use",
+          "districts": [
+            "R-A",
+            "R-R",
+            "R-1",
+            "R-2",
+            "PC",
+            "PC-2",
+            "PIC",
+            "PI"
+          ],
+          "conditions": "Site and architectural plans with the conditional use application. At least 3 parking spaces per dwelling unit, between the building and the required yards, none in the front yard. Lot area per dwelling unit at least the district lot area (20,000 sq ft with public sewer and water in nonresidential districts). District area and bulk rules met. No outside change except for safety. No enlargement. Each unit at least 500 contiguous sq ft.",
+          "min_lot_sqft": 40000,
+          "min_lot_by_district": {
+            "R-A": 87120,
+            "R-R": 87120,
+            "R-1": 60000,
+            "R-2": 40000
+          },
+          "section": "612.7a, 612.7b(1), 612.7e",
+          "url": "https://ecode360.com/print/UW2708?guid=9403347",
+          "confidence": "verified",
+          "overlays": [
+            "Historic Resources Map"
+          ],
+          "requires": [
+            {
+              "test": null,
+              "condition": "The building is a historic resource on the Historic Resources Map and Inventory",
+              "section": "612.7a"
+            }
+          ],
+          "note": "Lot figures are two units at the district lot area with public sewer and water."
+        },
+        {
+          "name": "Two-family detached or semidetached dwelling in R-2",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Only with a minimum lot area of 20 acres. Two-family detached: 24,000 sq ft and 120 ft wide per building, side yards 20 ft (50 together).",
+          "min_lot_sqft": 871200,
+          "min_lot_is_tract": true,
+          "section": "504.2c, d, 504.6, 504.7",
+          "url": "https://ecode360.com/print/UW2708?guid=9403330",
+          "confidence": "verified"
+        }
+      ],
+      "section": "612.7e, 504.2",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "501.2 to 504.2",
+      "url": "https://ecode360.com/print/UW2708?guid=9403329",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. The guesthouse applies on the historic path only."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "612.7f",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The historic path is its own conditional use."
+    },
+    "historic_test": {
+      "value": "The building is a historic resource on the Township's Historic Resources Map and Inventory (Class 1, 2 or 3), and the property has more than one historic resource",
+      "section": "612.3, 612.7a, 612.7f",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The Map and Inventory are attachments. Confirm with the Zoning Officer."
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "612.7a, 612.7f",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'The additional use must be located within a building which is designated as an historic resource.'"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "historic",
+          "condition": "More than one historic resource exists on the property. The guesthouse is in a building designated as a historic resource.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "612.7a, 612.7f",
+          "url": "https://ecode360.com/print/UW2708?guid=9403347"
+        },
+        {
+          "kind": "other",
+          "condition": "'No guest, individual or family may stay longer than 90 consecutive days during any consecutive period of 180 days.' Amenities for guests only, no walk-in trade.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "612.7f(1), (2)",
+          "url": "https://ecode360.com/print/UW2708?guid=9403347"
+        },
+        {
+          "kind": "design",
+          "condition": "Enlargement only as minimally needed (guideline: at most 50% of the existing footprint). Rehabilitation in substantial compliance with the Secretary of the Interior's Standards. In residential districts 602.1 and 603 apply. Landscaping plan (612.9).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "612.7b, 612.5a",
+          "url": "https://ecode360.com/print/UW2708?guid=9403347"
+        }
+      ],
+      "section": "612.7",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "501.2 to 504.2",
+      "url": "https://ecode360.com/print/UW2708?guid=9403329",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No form is allowed off the historic path."
+    },
+    "types_allowed_historic": {
+      "value": [
+        "garage_conversion"
+      ],
+      "section": "612.7a, 612.7f",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "In a second historic building on the property. Not the house itself and not a new building."
+    },
+    "labels": {
+      "value": {
+        "garage_conversion": "In a second historic building on the property"
+      },
+      "section": "612.7f",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "501.8, 502.8, 503.8, 504.8",
+      "url": "https://ecode360.com/print/UW2708?guid=9403329",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "35 ft or 2 1/2 stories, whichever is less."
+    }
+  },
+  "use": {
+    "occupancy": {
+      "value": "Guests only. No guest, individual or family stays longer than 90 consecutive days in any 180 days.",
+      "section": "612.7f(1)",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "612.7f",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No owner-occupancy rule."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "612.7f(3)",
+      "url": "https://ecode360.com/print/UW2708?guid=9403347",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A minimum of two off-street parking spaces, in addition to those required for the principal dwelling units.'"
+    }
+  },
+  "districts": {
+    "R-A": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "501.6 to 501.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With off-site water and sewage disposal. Width 150 ft. Impervious 25%."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "501.6 to 501.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "501.6 to 501.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "501.6 to 501.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "501.6 to 501.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "501.6 to 501.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "501.6 to 501.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site water and on-site sewage disposal",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "setback_side_ft": 35,
+            "section": "501.6, 501.7"
+          },
+          {
+            "when": "Either off-site water or off-site sewage disposal",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 65340,
+            "setback_side_ft": 30,
+            "section": "501.6, 501.7"
+          },
+          {
+            "when": "Either off-site water or off-site sewage disposal",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 65340,
+            "setback_side_ft": 30,
+            "section": "501.6, 501.7"
+          }
+        ],
+        "section": "501.6, 501.7",
+        "url": "https://ecode360.com/print/UW2708?guid=9403327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-R": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "502.6 to 502.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With off-site water and sewage disposal. Width 150 ft. Impervious 25%."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "502.6 to 502.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "502.6 to 502.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "502.6 to 502.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "502.6 to 502.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "502.6 to 502.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "502.6 to 502.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site water and on-site sewage disposal",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "setback_side_ft": 30,
+            "section": "502.6, 502.7"
+          },
+          {
+            "when": "Either off-site water or off-site sewage disposal",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 50000,
+            "setback_side_ft": 25,
+            "section": "502.6, 502.7"
+          },
+          {
+            "when": "Either off-site water or off-site sewage disposal",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 50000,
+            "setback_side_ft": 25,
+            "section": "502.6, 502.7"
+          }
+        ],
+        "section": "502.6, 502.7",
+        "url": "https://ecode360.com/print/UW2708?guid=9403328",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "503.6 to 503.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403329",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With off-site water and sewage disposal. Width 125 ft. Impervious 25%."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "503.6 to 503.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403329",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "503.6 to 503.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403329",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "503.6 to 503.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403329",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "503.6 to 503.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403329",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "503.6 to 503.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403329",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "503.6 to 503.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403329",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site water and on-site sewage disposal",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "setback_side_ft": 30,
+            "section": "503.6, 503.7",
+            "setback_rear_ft": 50
+          },
+          {
+            "when": "Either off-site water or off-site sewage disposal",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 45000,
+            "setback_side_ft": 25,
+            "section": "503.6, 503.7",
+            "setback_rear_ft": 50
+          },
+          {
+            "when": "Either off-site water or off-site sewage disposal",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 45000,
+            "setback_side_ft": 25,
+            "section": "503.6, 503.7",
+            "setback_rear_ft": 50
+          }
+        ],
+        "section": "503.6, 503.7",
+        "url": "https://ecode360.com/print/UW2708?guid=9403329",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "504.6 to 504.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403330",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, per building. Width 100 ft. Impervious 35%. The district is meant for areas with public water and sewer (504.1)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "504.6 to 504.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403330",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "504.6 to 504.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403330",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft each, 40 ft together."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "504.6 to 504.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403330",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "504.6 to 504.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403330",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "504.6 to 504.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403330",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "504.6 to 504.8",
+        "url": "https://ecode360.com/print/UW2708?guid=9403330",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

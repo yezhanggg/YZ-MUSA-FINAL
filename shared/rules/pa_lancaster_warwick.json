@@ -1,0 +1,450 @@
+{
+  "provenance": {
+    "jurisdiction": "Warwick township",
+    "instrument": "Warwick Township (Lancaster County) Code Chapter 340 Zoning (Warwick Township Zoning Ordinance of 1993, Ord. No. 159, 8-30-1993, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 shows no code date for this code. New Laws on 2026-11-14 for Chapter 340: Ord. No. 306 (2026-04-15) and Ord. No. 307 (2026-07-15), Zoning Amendments, PDF only, not read.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11671452",
+      "https://ecode360.com/print/WA2488?guid=11673258",
+      "https://ecode360.com/print/WA2488?guid=11671801",
+      "https://ecode360.com/print/WA2488?guid=11673243",
+      "https://ecode360.com/print/WA2488?guid=11673794",
+      "https://ecode360.com/print/WA2488?guid=11673180",
+      "https://ecode360.com/WA2488/laws",
+      "https://ecode360.com/WA2488/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20%22housekeeping%20unit%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22Lancaster%20County%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Lancaster",
+    "municipality_type": "township",
+    "geoid": "4207181168",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11671452",
+    "code_current_through": null,
+    "code_current_through_note": "eCode360 shows no currency date for this code. Ord. No. 306 and 307 (2026) are listed as New Laws, not yet in the code text.",
+    "code_caution": "Zoning amendments Ord. No. 306 (2026-04-15) and Ord. No. 307 (2026-07-15) are listed as New Laws for Chapter 340 and were not read (PDF only). They may change the rules below.",
+    "checks": [
+      "ECHO housing is a special exception only in the Agricultural (A) Zone: a portable elder cottage of at most 900 sq ft (340-11C(1), 340-67)",
+      "At least one occupant is 50 or older, handicapped or disabled, and related to the occupants of the house by blood, marriage or adoption. At most two people (340-67C, D)",
+      "The cottage connects to the house's sewage, water and other utilities. No separate systems. With on-site systems, evidence that they can serve both (340-67E)",
+      "Side or rear yard only, meeting the principal side and rear setbacks. Total building coverage within the zone maximum. One extra all-weather parking space (340-67B, F, G)",
+      "Temporary zoning permit reviewed every 12 months with a fee. The cottage is removed within three months after no qualifying person lives in it (340-67H, I)",
+      "In the A Zone a single-family detached dwelling is itself a conditional use (one per 20 acres of the 1985 parent tract), lot 1 to 2 acres, or 15,000 sq ft with public sewer and water (340-11D(1), E(2), F(2))",
+      "Other paths: two-family conversion of a house of at least 3,000 sq ft that existed in 1993 (A and RE, special exception), conversion apartment in an existing house (MU and LC, conditional use), conversion of an accessory building of an owner-occupied house into one dwelling (VO overlay, special exception), and historic conversion apartments (A, C, RE, MU by special exception, LC and VO by conditional use) (340-103, 340-65, 340-61)"
+    ],
+    "notes": "Zoning office: Warwick Township (Lancaster County) Zoning Officer. Read on eCode360 (WA2488) in a browser, one page at a time, on 2026-11-14. eCode360 WA1313 'Township of Warwick' is Warwick Township in Bucks County and was not used. Code search (all content) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters' and conversion found 340-65 and 340-103. The table of contents shows ECHO housing (340-67), conversion of historic structures (340-61) and temporary farm employee housing (340-101). Read: 340-11 (A Zone), 340-61, 340-65, 340-67, 340-103. Not read: the other zone use lists and tables (RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2, Q, VO), definitions (340-10), accessory uses (340-25), parking (340-35) and temporary farm employee housing (340-101)."
+  },
+  "adu": {
+    "term": {
+      "value": "ECHO housing (elder cottage)",
+      "section": "340-67, 340-11C(1)",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The specific criteria call the unit an 'elder cottage'."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "340-67",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Special exception in the A Zone, for a relative who is 50 or older, handicapped or disabled. Portable and temporary."
+    },
+    "scope_districts": {
+      "value": [
+        "A"
+      ],
+      "section": "340-67, 340-11C(1)",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Within the (A) Zone, ECHO housing is permitted by special exception.'"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "340-67",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No other zone lists ECHO housing in the sections read. The RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2 and Q use lists were not read."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "340-67, 340-11C",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board special exception, then a temporary zoning permit renewed every 12 months."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "340-121",
+      "url": "https://ecode360.com/11671452",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a zone rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family conversion of a large existing house",
+          "path": "special_exception",
+          "districts": [
+            "A",
+            "RE"
+          ],
+          "conditions": "A detached single-family dwelling that existed on the effective date of the chapter and then had at least 3,000 sq ft may become two dwelling units. Approved water and sewage, no extensions or outside changes, escape from upper floors, 4 off-street parking spaces, land development approval if required.",
+          "section": "340-103, 340-11C(7)",
+          "url": "https://ecode360.com/print/WA2488?guid=11673794",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1993-08-30",
+              "condition": "The house existed on the effective date of the chapter (adopted 8-30-1993)",
+              "section": "340-103"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 3000,
+              "condition": "The house had at least 3,000 sq ft on that date",
+              "section": "340-103"
+            }
+          ],
+          "note": "The chapter was adopted 8-30-1993 (Ord. No. 159). Its effective date is read as that date. Lot rules for RE were not read."
+        },
+        {
+          "name": "Conversion apartment in an existing house",
+          "path": "conditional_use",
+          "districts": [
+            "MU",
+            "LC"
+          ],
+          "conditions": "Only one apartment added within a single-family detached dwelling that existed on the effective date of the chapter. Lot at least 10,000 sq ft. Approved water and sewage. No outside change altering the residential look. At least 4 off-street parking spaces on the site. Upper-story unit with its own exterior escape.",
+          "min_lot_sqft": 10000,
+          "section": "340-65",
+          "url": "https://ecode360.com/print/WA2488?guid=11673243",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1993-08-30",
+              "condition": "The house existed on the effective date of the chapter",
+              "section": "340-65B"
+            }
+          ]
+        },
+        {
+          "name": "Accessory building converted into one dwelling in the Village Overlay",
+          "path": "special_exception",
+          "districts": null,
+          "overlays": [
+            "VO Village Overlay Zone"
+          ],
+          "conditions": "Conversion of an accessory building of an owner-occupied single-family dwelling into one dwelling. Lot at least 10,000 sq ft, approved water and sewage, no outside change altering the residential look, at least 4 off-street parking spaces.",
+          "min_lot_sqft": 10000,
+          "section": "340-65",
+          "url": "https://ecode360.com/print/WA2488?guid=11673243",
+          "confidence": "verified",
+          "adu_listing": false,
+          "note": "Only where the VO overlay is mapped. The owner lives in the house."
+        },
+        {
+          "name": "Historic conversion apartment",
+          "path": "special_exception",
+          "districts": [
+            "A",
+            "C",
+            "RE",
+            "MU"
+          ],
+          "conditions": "Only within historic structures. Each unit at least 400 sq ft of habitable floor area, outside changes complement the residential character, escape from upper and lower floors, 3 off-street parking spaces per unit, approved water and sewage. Conditional use in LC and VO.",
+          "section": "340-61A, J",
+          "url": "https://ecode360.com/print/WA2488?guid=11673180",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The building is a historic structure as defined in the chapter",
+              "section": "340-61A"
+            }
+          ]
+        }
+      ],
+      "section": "340-103, 340-65, 340-61",
+      "url": "https://ecode360.com/print/WA2488?guid=11673794",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "A"
+      ],
+      "section": "340-67",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "340-11B(1), F(2)",
+      "url": "https://ecode360.com/print/WA2488?guid=11671801",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The cottage serves a principal dwelling on an agricultural lot."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "340-67",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No historic path for ECHO housing."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "At least one occupant is at least 50 years old, handicapped or disabled, and related to the occupants of the house by blood, marriage or adoption. At most two people.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "340-67C, D",
+          "url": "https://ecode360.com/print/WA2488?guid=11673258"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Physically connected to the house's sewage, water and other utility systems. No separate systems. With on-site systems, evidence they can serve both, Sewage Enforcement Officer review.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "340-67E",
+          "url": "https://ecode360.com/print/WA2488?guid=11673258"
+        },
+        {
+          "kind": "design",
+          "condition": "Portable construction. In the side or rear yard only, meeting the principal side and rear setbacks. Building coverage of house, accessory structures and cottage within the zone maximum.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "340-67A, B, G",
+          "url": "https://ecode360.com/print/WA2488?guid=11673258"
+        },
+        {
+          "kind": "other",
+          "condition": "Temporary zoning permit reviewed every 12 months with a fee. Removed within three months after it is no longer occupied by a qualifying person.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "340-67H, I",
+          "url": "https://ecode360.com/print/WA2488?guid=11673258"
+        }
+      ],
+      "section": "340-67",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new"
+      ],
+      "section": "340-67A",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The elder cottage shall be of portable construction.'"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "A portable elder cottage"
+      },
+      "section": "340-67A",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 900,
+      "section": "340-67A",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'May not exceed 900 square feet of floor area.'"
+    }
+  },
+  "envelope": {
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "340-67G",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Shall adhere to all side and rear yard setback requirements for principal uses.' A Zone house setbacks: side 15 ft each, rear 35 ft."
+    },
+    "max_height_ft": {
+      "value": 20,
+      "section": "340-11H(4)(f)",
+      "url": "https://ecode360.com/print/WA2488?guid=11671801",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Residential accessory uses on a parcel whose house was established on or after 11-13-1985: 20 ft. Pre-1985 parcels use the R-1 accessory figures (340-14, not read). 340-67 sets no height."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "340-67C",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At most two people. At least one is 50 or older, handicapped or disabled, and related to the occupants of the house by blood, marriage or adoption.",
+      "section": "340-67C, D",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "340-67",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "340-67 has no owner-occupancy rule."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "340-67",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'The elder cottage' in the singular."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "340-67F",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A minimum of one all-weather, off-street parking space ... in addition to that required for the principal dwelling.'"
+    }
+  },
+  "utilities": {
+    "new_connection_required": {
+      "value": false,
+      "section": "340-67E(1)",
+      "url": "https://ecode360.com/print/WA2488?guid=11673258",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No separate utility systems or connections shall be constructed or used.'"
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "340-11F(2), G, H(2)(b), I(2)(b)",
+        "url": "https://ecode360.com/print/WA2488?guid=11671801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewer and public water. One acre otherwise, and at most two acres for a single-family dwelling. Width 100 ft at the setback line. A dwelling is a conditional use limited to one per 20 acres of the parent tract (340-11D(1), E(2))."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "340-11F(2), G, H(2)(b), I(2)(b)",
+        "url": "https://ecode360.com/print/WA2488?guid=11671801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "340-11F(2), G, H(2)(b), I(2)(b)",
+        "url": "https://ecode360.com/print/WA2488?guid=11671801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft each, 30 ft total, for a house built on or after 11-13-1985. Older houses use the R-1 figures (340-14, not read)."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "340-11F(2), G, H(2)(b), I(2)(b)",
+        "url": "https://ecode360.com/print/WA2488?guid=11671801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "340-11F(2), G, H(2)(b), I(2)(b)",
+        "url": "https://ecode360.com/print/WA2488?guid=11671801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "340-11F(2), G, H(2)(b), I(2)(b)",
+        "url": "https://ecode360.com/print/WA2488?guid=11671801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Lot coverage 20% for a house built on or after 11-13-1985."
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "340-11H(4)(d)",
+        "url": "https://ecode360.com/print/WA2488?guid=11671801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential accessory uses, post-1985 house. An elder cottage takes the principal side setback, also 15 ft (340-67G)."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer and public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "340-11F(2)(a)"
+          },
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "340-11F(2)(a)"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "340-11F(2)(a)"
+          }
+        ],
+        "section": "340-11F(2)(a)",
+        "url": "https://ecode360.com/print/WA2488?guid=11671801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Minimum lot area shall be one acre ... may be reduced to 15,000 square feet if both public sewer and public water are utilized.'"
+      }
+    }
+  }
+}

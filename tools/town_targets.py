@@ -995,6 +995,34 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-07-08",
         "note": "Zoning: Chapter 27 Zoning (Ord. No. 558, 2012). ADU text: 'Accessory in-law dwelling' (Use 78, 27-1403H(11)): by right in R-1 to R-4, part of a single-family detached house with a connecting door, at most 600 sq ft, one per lot, permit and annual inspection, owner affidavit on the tenant's relationship. Read in the browser on eCode360 (LO0148).",
     },
+    "4209184624": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11708888",
+        "plain_fetch": False,
+        "current_through": "2025-04-10",
+        "note": "Zoning: Chapter 116 Zoning (Ord. No. 409, 1981). ADU text: 'Accessory dwelling unit' (116-11, 116-272E, Ord. No. 812, 2006): only in Option One conservation design subdivisions in AAAA and AAA (Conservation Design Overlay), at most 900 sq ft, 25 ft, conservation easement. Conversion of a single-family dwelling by special exception anywhere (116-26). Ord. No. 1049 (2026, zoning) not yet codified. Read in the browser on eCode360 (WH0819).",
+    },
+    "4201754192": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/37786375",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Joint Municipal Zoning Ordinance (Newtown, Upper Makefield, Wrightstown), readopted 2007. ADU text: 'residential accessory apartment' within use H-3 (803 H-3.4): by right in the residential districts, for family members, domestic servants, caretakers or occasional guests, County Health sewage permit, 2 parking spaces per unit. Residential conversion (B-16) by conditional use or special exception. Read in the browser on eCode360 (NE3758, Newtown Area Zoning Jointure).",
+    },
+    "4202979480": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/8009217",
+        "plain_fetch": False,
+        "current_through": "2025-10-13",
+        "note": "Zoning: Chapter 265 Zoning (Ord. No. 94-11, 1994). No general ADU text. 'Guesthouse, as an accessory dwelling' only for historic resources by conditional use where a property has more than one historic resource (612.7f); historic residential conversions by conditional use (612.7e). Ord. No. 2021-05 and 2026-08 (zoning) not yet codified. Read in the browser on eCode360 (UW2708).",
+    },
+    "4207181168": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11671452",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 340 Zoning (Ord. No. 159, 1993). ADU text: 'ECHO housing' (340-67): special exception in the A Zone only, portable elder cottage up to 900 sq ft for a relative 50 or older or disabled, utilities shared, removed when no longer needed. Conversion apartments (340-65), two-family conversions (340-103). Ord. No. 306 and 307 (2026, zoning) not yet codified. Read in the browser on eCode360 (WA2488; WA1313 is Warwick, Bucks County).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1008,6 +1036,7 @@ FIXED_BATCH.update(
 FIXED_BATCH.update(
     {g: 17 for g in ("4209173088", "4209133120", "4202984192", "4212958880", "4212952432", "4201745112")}
 )
+FIXED_BATCH.update({g: 18 for g in ("4209184624", "4201754192", "4202979480", "4207181168")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1052,6 +1081,12 @@ EXTRAS = {
     "4212958880": "Code 190-202 and 190-405 conversion apartment",
     "4212952432": "batch 17 by population. Code Chapter 220 has no ADU text",
     "4201745112": "Code 27-1403H(11) accessory in-law dwelling",
+    # Batch 18 (2026-11-14): the next towns by population without a rule file. Manchester (York) and Stroud were
+    # skipped (district use tables only in PDF attachments).
+    "4209184624": "Code 116-272E accessory dwelling units (Conservation Design Overlay, Option One)",
+    "4201754192": "JMZO 803 H-3.4 residential accessory apartment",
+    "4202979480": "Code 612.7f guesthouse as an accessory dwelling (historic resources)",
+    "4207181168": "Code 340-67 ECHO housing",
 }
 
 if __name__ == "__main__":

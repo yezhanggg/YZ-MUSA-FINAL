@@ -2474,6 +2474,102 @@
         "known ADU ordinance (Code 27-1403H(11) accessory in-law dwelling)"
       ],
       "status_note": "Open: 27-1403H(11)(d) and (g) conflict on an accessory building; family reading of the relationship affidavit. Heights 27-1718 added after review."
+    },
+    {
+      "geoid": "4209184624",
+      "geoid_aliases": [],
+      "name": "Whitemarsh township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 19707,
+      "population_with_aliases": 19707,
+      "housing_units": 8055,
+      "pop_rank": 101,
+      "file": "pa_montgomery_whitemarsh",
+      "batch": 18,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11708888",
+      "plain_fetch": false,
+      "code_current_through": "2025-04-10",
+      "code_note": "Zoning: Chapter 116 Zoning (Ord. No. 409, 1981). ADU text: 'Accessory dwelling unit' (116-11, 116-272E, Ord. No. 812, 2006): only in Option One conservation design subdivisions in AAAA and AAA (Conservation Design Overlay), at most 900 sq ft, 25 ft, conservation easement. Conversion of a single-family dwelling by special exception anywhere (116-26). Ord. No. 1049 (2026, zoning) not yet codified. Read in the browser on eCode360 (WH0819).",
+      "why": [
+        "known ADU ordinance (Code 116-272E accessory dwelling units (Conservation Design Overlay, Option One))"
+      ],
+      "status_note": "Open: Ord. No. 1049 (2026 zoning amendment) not read. ADU only in Option One subdivisions of the Conservation Design Overlay; AAA accessory height 20 ft vs ADU 25 ft (116-46A, 116-272E(5)) conflicting text. Use lists of LR/HR, MHP, CR, AR, industrial, EX, CCRC not read."
+    },
+    {
+      "geoid": "4201754192",
+      "geoid_aliases": [],
+      "name": "Newtown township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 19895,
+      "population_with_aliases": 19895,
+      "housing_units": 7967,
+      "pop_rank": 98,
+      "file": "pa_bucks_newtown",
+      "batch": 18,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/37786375",
+      "plain_fetch": false,
+      "code_current_through": null,
+      "code_note": "Zoning: Joint Municipal Zoning Ordinance (Newtown, Upper Makefield, Wrightstown), readopted 2007. ADU text: 'residential accessory apartment' within use H-3 (803 H-3.4): by right in the residential districts, for family members, domestic servants, caretakers or occasional guests, County Health sewage permit, 2 parking spaces per unit. Residential conversion (B-16) by conditional use or special exception. Read in the browser on eCode360 (NE3758, Newtown Area Zoning Jointure).",
+      "why": [
+        "known ADU ordinance (JMZO 803 H-3.4 residential accessory apartment)"
+      ],
+      "status_note": "Open: four 2026 New Laws (Article VIII) not read; JMZO shared with Upper Makefield and Wrightstown, so which districts are mapped in Newtown not checked; B-16 names CM but the CM use lists do not; CR-2 lot 30,000 vs 20,000 sq ft conflicting text; office, commercial and industrial use lists not read."
+    },
+    {
+      "geoid": "4202979480",
+      "geoid_aliases": [],
+      "name": "Uwchlan township",
+      "county": "Chester",
+      "type": "township",
+      "population": 19161,
+      "population_with_aliases": 19161,
+      "housing_units": 7251,
+      "pop_rank": 107,
+      "file": "pa_chester_uwchlan",
+      "batch": 18,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8009217",
+      "plain_fetch": false,
+      "code_current_through": "2025-10-13",
+      "code_note": "Zoning: Chapter 265 Zoning (Ord. No. 94-11, 1994). No general ADU text. 'Guesthouse, as an accessory dwelling' only for historic resources by conditional use where a property has more than one historic resource (612.7f); historic residential conversions by conditional use (612.7e). Ord. No. 2021-05 and 2026-08 (zoning) not yet codified. Read in the browser on eCode360 (UW2708).",
+      "why": [
+        "known ADU ordinance (Code 612.7f guesthouse as an accessory dwelling (historic resources))"
+      ],
+      "status_note": "Open: Ord. No. 2021-05, 2026-06 and 2026-08 not read; Historic Resources Map and Inventory are PDF attachments; PC, PC-2, PIC, PCID, PI use lists and parking (607) not read."
+    },
+    {
+      "geoid": "4207181168",
+      "geoid_aliases": [],
+      "name": "Warwick township",
+      "county": "Lancaster",
+      "type": "township",
+      "population": 19022,
+      "population_with_aliases": 19022,
+      "housing_units": 7525,
+      "pop_rank": 108,
+      "file": "pa_lancaster_warwick",
+      "batch": 18,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11671452",
+      "plain_fetch": false,
+      "code_current_through": null,
+      "code_note": "Zoning: Chapter 340 Zoning (Ord. No. 159, 1993). ADU text: 'ECHO housing' (340-67): special exception in the A Zone only, portable elder cottage up to 900 sq ft for a relative 50 or older or disabled, utilities shared, removed when no longer needed. Conversion apartments (340-65), two-family conversions (340-103). Ord. No. 306 and 307 (2026, zoning) not yet codified. Read in the browser on eCode360 (WA2488; WA1313 is Warwick, Bucks County).",
+      "why": [
+        "known ADU ordinance (Code 340-67 ECHO housing)"
+      ],
+      "status_note": "Open: Ord. No. 306 and 307 (2026 zoning) not read; only the A Zone, 340-61, 340-65, 340-67 and 340-103 read; other zone use lists, accessory (340-25) and parking (340-35) not read."
     }
   ]
 }
