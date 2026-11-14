@@ -9,6 +9,7 @@
     "source_urls": [
       "https://ecode360.com/29169162",
       "https://ecode360.com/print/LO0148?guid=29169721",
+      "https://ecode360.com/print/LO0148?guid=29170613",
       "https://ecode360.com/print/LO0148?guid=29169303",
       "https://ecode360.com/print/LO0148?guid=29169320",
       "https://ecode360.com/print/LO0148?guid=29169335",
@@ -35,9 +36,10 @@
       "The owner gives the township an affidavit confirming the relationship of the in-law dwelling tenant to the owner, and consents to an annual inspection (27-1403H(11)(i))",
       "Parking: one space for each bedroom in the suite, on top of the house's parking (27-1403H(11)(h))",
       "A two-family (semidetached) dwelling is permitted by right in R-4 on 10,000 sq ft (5,000 per dwelling), lot width 100 ft, with public water and sewer (27-702, 27-703A(2), 27-705)",
-      "Residential accessory buildings stand to the rear of the house, at least 3 ft from property lines, at most 15 ft high and 500 sq ft of ground floor in all (27-1403C(3))"
+      "Residential accessory buildings (Use 70) stand in the rear whenever possible and/or side yards: at the rear at least 3 ft from property lines, at the side 50 ft from the front property line and 5 ft from the side line. Detached garages, sheds and other accessory structures may total at most 500 sq ft of ground floor on a lot and 15 ft in height (27-1403H(3), 27-1718.3)",
+      "No building may exceed 35 ft unless a use or district states otherwise (27-1718.1)"
     ],
-    "notes": "Zoning office: Lower Southampton Township. Read on eCode360 (LO0148) in a browser, one print view at a time, on 2026-11-14. Code search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit', 'living quarters', 'in-law dwelling', 'in-law suite' and 'Use 78' found Use 78 listed only in R-1, R-2, R-3 and R-4, its standards in 27-1403H(11), and Board minutes from 2012 on mother-in-law suites. Use lists read for R-1 to R-4. The commercial, industrial, business technology and overlay parts were not read. No definition of an accessory in-law dwelling was found. No height limit was found for R-1 to R-3."
+    "notes": "Zoning office: Lower Southampton Township. Read on eCode360 (LO0148) in a browser, one print view at a time, on 2026-11-14. Code search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit', 'living quarters', 'in-law dwelling', 'in-law suite' and 'Use 78' found Use 78 listed only in R-1, R-2, R-3 and R-4, its standards in 27-1403H(11), and Board minutes from 2012 on mother-in-law suites. Use lists read for R-1 to R-4. The commercial, industrial, business technology and overlay parts were not read. No definition of an accessory in-law dwelling was found."
   },
   "adu": {
     "term": {
@@ -276,27 +278,19 @@
       "url": "https://ecode360.com/print/LO0148?guid=29169349",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Part of the house. R-4 caps a dwelling unit at 35 ft. No height limit was found for R-1 to R-3."
-    },
-    "attached_height_capped_at_house": {
-      "value": true,
-      "section": "27-1403H(11)(g)",
-      "url": "https://ecode360.com/print/LO0148?guid=29169721",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "'The height of the accessory building to be used for the accessory in-law dwelling shall not exceed the height of the principal dwelling.'"
+      "note": "Part of the house. R-4 caps a dwelling unit at 35 ft."
     },
     "accessory_structure_max_height_ft": {
       "value": 15,
-      "section": "27-1403C(3)",
-      "url": "https://ecode360.com/print/LO0148?guid=29169721",
+      "section": "27-1718.3, 27-1403H(3)",
+      "url": "https://ecode360.com/print/LO0148?guid=29170613",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Residential accessory buildings, 500 sq ft of ground floor in all on a lot."
+      "note": "'No accessory structure shall exceed the maximum height of 15 feet.' Residential accessory structures total at most 500 sq ft of ground floor on a lot (27-1403H(3))."
     },
     "accessory_cap_binds_adu": {
       "value": null,
-      "section": "27-1403C(3), H(11)(d)",
+      "section": "27-1403H(3), H(11)(d), (g)",
       "url": "https://ecode360.com/print/LO0148?guid=29169721",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
@@ -393,6 +387,14 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "Building area. Impervious 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1718.1",
+        "url": "https://ecode360.com/print/LO0148?guid=29170613",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'No building shall exceed the maximum height of 35 feet unless otherwise stated for a specific use or district.'"
       }
     },
     "R-2": {
@@ -434,6 +436,14 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "Building area. Impervious 40%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1718.1",
+        "url": "https://ecode360.com/print/LO0148?guid=29170613",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'No building shall exceed the maximum height of 35 feet unless otherwise stated for a specific use or district.'"
       }
     },
     "R-3": {
@@ -467,6 +477,14 @@
         "url": "https://ecode360.com/print/LO0148?guid=29169335",
         "verified_on": "2026-11-14",
         "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1718.1",
+        "url": "https://ecode360.com/print/LO0148?guid=29170613",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'No building shall exceed the maximum height of 35 feet unless otherwise stated for a specific use or district.'"
       }
     },
     "R-4": {

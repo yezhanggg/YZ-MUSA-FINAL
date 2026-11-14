@@ -2343,7 +2343,7 @@
       "pop_rank": 90,
       "file": "pa_montgomery_springfield",
       "batch": 17,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11823514",
@@ -2353,7 +2353,7 @@
       "why": [
         "known ADU ordinance (Code 114-12D4B(10) accessory apartment (historic resource overlay))"
       ],
-      "status_note": "First reading 2026-11-14. Open: Article XIII effective date for the 114-133A conversion; use lists of the multifamily, cluster, institutional, business and industrial districts not read; Attachment 2 not opened."
+      "status_note": "Verified 2026-11-14 after review. Later check: the effective date of Article XIII for the 114-133A conversion; use lists of the multifamily, cluster, institutional, business and industrial districts."
     },
     {
       "geoid": "4209133120",
@@ -2367,7 +2367,7 @@
       "pop_rank": 113,
       "file": "pa_montgomery_hatfield",
       "batch": 17,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10506475",
@@ -2377,7 +2377,7 @@
       "why": [
         "known ADU ordinance (Code 282-6 family definition, two housekeeping units)"
       ],
-      "status_note": "First reading 2026-11-14. Open: the ADU-like rule is the family definition (282-6, D), read as family only by right wherever a single-family detached dwelling is permitted; use lists of TH, GA, MHD, MF-E, IN, C, LC, SC, LI and LIRC not read."
+      "status_note": "Verified 2026-11-14 after review. Later check: the LI use list (not read); the rule is the family definition (282-6, D), read as family only by right wherever a single-family detached dwelling is permitted."
     },
     {
       "geoid": "4202984192",
@@ -2401,7 +2401,7 @@
       "why": [
         "known ADU ordinance (batch 17 by population. Code Chapter 325 has no ADU text)"
       ],
-      "status_note": "First reading 2026-11-14. Open: Ord. No. 492 (2026-10-14, zoning) not read; Town Center, Institutional, UDA, Historic Preservation and Rail Transit Overlay articles not read."
+      "status_note": "Open: Ord. No. 492 (2026-10-14, zoning) not read. Historic residential conversion path (325-86) added after review. Town Center, Institutional, UDA and Rail Transit Overlay articles not read."
     },
     {
       "geoid": "4212958880",
@@ -2425,7 +2425,7 @@
       "why": [
         "known ADU ordinance (Code 190-202 and 190-405 conversion apartment)"
       ],
-      "status_note": "First reading 2026-11-14. Open: conversion apartment vs multifamily definition (conflicting text); Ord. No. 973-2025 (zoning) and Table 2 (Appendix A) not read."
+      "status_note": "Open: conversion apartment vs multifamily definition (conflicting text, ask); Ord. No. 973-2025 (zoning) and Table 2 (Appendix A) not read."
     },
     {
       "geoid": "4212952432",
@@ -2439,7 +2439,7 @@
       "pop_rank": 87,
       "file": "pa_westmoreland_murrysville",
       "batch": 17,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11539206",
@@ -2449,7 +2449,7 @@
       "why": [
         "known ADU ordinance (batch 17 by population. Code Chapter 220 has no ADU text)"
       ],
-      "status_note": "First reading 2026-11-14. Open: parking requirements table (220-68B) and Article V use standards not read."
+      "status_note": "Verified 2026-11-14 after review. Later check: the parking requirements table (220-68B) and Article V use standards. The 220-15B front-yard bar on accessory structures is kept in checks only, because the tool hides the district front yard when front_yard_barred is set."
     },
     {
       "geoid": "4201745112",
@@ -2473,7 +2473,7 @@
       "why": [
         "known ADU ordinance (Code 27-1403H(11) accessory in-law dwelling)"
       ],
-      "status_note": "First reading 2026-11-14. Open: 27-1403H(11)(d) and (g) conflict on an accessory building; family reading of the relationship affidavit; no height limit found for R-1 to R-3."
+      "status_note": "Open: 27-1403H(11)(d) and (g) conflict on an accessory building; family reading of the relationship affidavit. Heights 27-1718 added after review."
     }
   ]
 }

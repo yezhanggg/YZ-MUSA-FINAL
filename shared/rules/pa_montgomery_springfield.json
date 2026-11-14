@@ -53,11 +53,11 @@
     },
     "status": {
       "value": "not_addressed",
-      "section": "114-41, 114-51, 114-61, 114-71, 114-81",
+      "section": "114-41, 114-51, 114-61, 114-71, 114-81, 114-12D4B(10)",
       "url": "https://ecode360.com/print/SP0463?guid=11823992",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "No general ADU rule. The residence districts allow the listed uses 'and for no other'. Only a property with a historic resource in the overlay has an accessory apartment path (special exception, 114-12D4B(10))."
+      "note": "Not addressed for an ordinary lot: the residence districts allow the listed uses 'and for no other'. The code's one ADU text is the accessory apartment for a historic resource in the Historic Resource Overlay District, by special exception (114-12D4B(10)). On such a lot that path applies instead."
     }
   },
   "approval": {
@@ -136,9 +136,29 @@
           "url": "https://ecode360.com/print/SP0463?guid=11824094",
           "confidence": "secondary",
           "note": "Read as a path for an existing house converted to two stacked units. 114-130C asks 12,500 sq ft for a lot without public sewer unless the Department of Health certifies less."
+        },
+        {
+          "name": "Two-family or multiple dwelling in a historic house of worship, club or lodge",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "For a historic resource in the Historic Resource Overlay that is lawfully and principally used for, or was originally designed as, a religious house of worship, club or lodge: conversion to a two-family or multiple-dwelling use (a nonhistoric accessory building on the lot may also be converted). The district minimum lot area for each dwelling unit, a recorded covenant against subdivision below it, limited outside changes, the Zoning Hearing Board sets the number of units, Historical Commission recommendation and impact study.",
+          "section": "114-12D4B(12)",
+          "url": "https://ecode360.com/print/SP0463?guid=35157051",
+          "confidence": "verified",
+          "overlays": [
+            "Historic Resource Overlay"
+          ],
+          "requires": [
+            {
+              "test": null,
+              "condition": "A historic resource on the Historic Resource Inventory that is or was designed as a house of worship, club or lodge",
+              "section": "114-12D4B(12)"
+            }
+          ],
+          "note": "A narrow path, not for a house."
         }
       ],
-      "section": "114-71, 114-81, 114-133A",
+      "section": "114-71, 114-81, 114-133A, 114-12D4B(12)",
       "url": "https://ecode360.com/print/SP0463?guid=11824094",
       "verified_on": "2026-11-14",
       "confidence": "verified"
@@ -331,6 +351,22 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "20 ft or one story, whichever is less."
+    },
+    "setback_side_ft": {
+      "value": 7,
+      "section": "114-131B(2)(c)",
+      "url": "https://ecode360.com/print/SP0463?guid=11824724",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "An accessory building used solely for residential purposes may stand in one side yard 'no closer to the side property line than seven feet if constructed of wood frame or combustible material and no closer than four feet if constructed of masonry'. It must be at least 10 ft farther back than the rear of the house."
+    },
+    "setback_rear_ft": {
+      "value": 7,
+      "section": "114-131C(2)(c)",
+      "url": "https://ecode360.com/print/SP0463?guid=11824724",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "In the required rear yard: 7 ft from the rear line for wood frame, 4 ft for masonry, and at least 10 ft farther back than the rear of the house."
     },
     "max_height_where": {
       "value": [

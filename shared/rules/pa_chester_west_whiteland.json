@@ -9,6 +9,7 @@
     "source_urls": [
       "https://ecode360.com/11701933",
       "https://ecode360.com/print/WE2141?guid=11702332",
+      "https://ecode360.com/print/WE2141?guid=11703833",
       "https://ecode360.com/print/WE2141?guid=11702874",
       "https://ecode360.com/print/WE2141?guid=11702668",
       "https://ecode360.com/print/WE2141?guid=11703067",
@@ -32,13 +33,14 @@
       "R-1, R-2 and R-3 allow the listed uses 'and no other'. A single-family detached dwelling with residential accessory uses and structures is allowed in R-1 and R-2 (325-9B, 325-10B)",
       "Two-family (duplex) and two-family (twin) dwellings are permitted by right in R-3, at 14,000 sq ft of developable acreage per dwelling unit, so 28,000 for two. R-4 permits any R-3 use (325-11B(1), 325-11C(1), 325-12B(2))",
       "Conversion: the Board of Supervisors may allow by conditional use the conversion of a single-family dwelling in R-3 that existed when the chapter took effect into a use permitted in R-3. Lot area per dwelling unit not below the district figure, yards not reduced, no outside change except for safety, each unit at least 500 contiguous sq ft, two parking spaces per unit, a County Health Department permit where public sewer is not used (325-11B(2)(b), 325-25)",
+      "For a building associated with a Class I, II or III historic resource on the Historic Resources Map, a residential conversion is a conditional use also in R-1, R-2, R-4, TC, NC, O/C, O/L, O/R, I-1 and I-2. No outside alteration. The Board of Supervisors may modify the lot area per unit (325-86A, B(1), E)",
       "In R-2 and R-3, without public water or centralized sewer (or both), the R-1 area and bulk rules apply: 43,560 sq ft per dwelling unit (325-10C(10)(a), 325-11C(10)(a))",
       "In O/R a single-family dwelling follows the R-2 rules. Two-family and multifamily dwellings need a gross lot of at least 10 acres (325-15.1D(1), (2))",
       "Accessory buildings may stand only in the rear or side yard, at least 10 ft farther back than the rear of the house. In a required yard only uninhabitable structures such as sheds up to 12 ft are allowed (325-31)",
       "Parking for a single-family detached dwelling depends on bedrooms: 1.5 for two, 2 for three, 2.5 for four (or when not stated), 3 for five (325-39G)",
       "Lot sizes are counted on developable acreage (325-9C, 325-10C, 325-11C)"
     ],
-    "notes": "Zoning office: West Whiteland Township. Read on eCode360 (WE2141) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4, O/L, O/R and O/C. Search for single-family dwellings in use lists found only R-1, R-2, R-3 and O/R. The Town Center, Neighborhood Commercial, Industrial, Institutional, Unified Development Area, Historic Preservation and Rail Transit Overlay articles were not read. The 325-8 two-family definition was seen only as a search snippet."
+    "notes": "Zoning office: West Whiteland Township. Read on eCode360 (WE2141) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4, O/L, O/R and O/C. Search for single-family dwellings in use lists found only R-1, R-2, R-3 and O/R. Article XVI (Historic Preservation) was read for its residential conversion path. The Town Center, Neighborhood Commercial, Industrial, Institutional, Unified Development Area and Rail Transit Overlay articles were not read. The 325-8 two-family definition was seen only as a search snippet."
   },
   "adu": {
     "term": {
@@ -65,7 +67,7 @@
       "url": "https://ecode360.com/print/WE2141?guid=11702332",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "A second dwelling unit on a single-family lot is not a listed use in R-1 or R-2. It needs a use variance from the Zoning Hearing Board (MPC 910.2). In R-3 and R-4 a two-family dwelling is permitted by right and a conversion of a single-family dwelling is a conditional use (325-25)."
+      "note": "A second dwelling unit on a single-family lot is not a listed use in R-1 or R-2. It needs a use variance from the Zoning Hearing Board (MPC 910.2). In R-3 and R-4 a two-family dwelling is permitted by right. A conversion of a single-family dwelling is a conditional use in R-3 (325-25), and for a building associated with a Class I, II or III historic resource also in R-1, R-2, R-4, TC, NC, O/C, O/L, O/R, I-1 and I-2 (325-86A, E)."
     },
     "fallback_path": {
       "value": "variance",
@@ -135,6 +137,34 @@
             }
           ],
           "note": "R-4 permits any R-3 use, so the conversion may reach R-4 too. Ask the Zoning Officer."
+        },
+        {
+          "name": "Residential conversion of a historic resource",
+          "path": "conditional_use",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-4",
+            "TC",
+            "NC",
+            "O/C",
+            "O/L",
+            "O/R",
+            "I-1",
+            "I-2"
+          ],
+          "conditions": "For a building associated with a Class I, II or III historic resource on the Historic Resources Map: conversion into residential use by conditional use under the 325-25 standards. The building may not be altered externally. The Board of Supervisors may modify the 325-25D lot area. Historical Commission review against the Secretary of the Interior's standards. In R-3 the conversion is already a conditional use in the base district.",
+          "section": "325-86A, B(1), E, 325-25",
+          "url": "https://ecode360.com/print/WE2141?guid=11703833",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": null,
+              "condition": "A building associated with a Class I, II or III historic resource on the Historic Resources Map",
+              "section": "325-83, 325-86A"
+            }
+          ],
+          "note": "The Historic Resources Map overlays every district (325-82B)."
         },
         {
           "name": "Two-family dwelling on a 10 acre lot",

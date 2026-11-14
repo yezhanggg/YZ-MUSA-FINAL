@@ -9,6 +9,15 @@
     "source_urls": [
       "https://ecode360.com/10506475",
       "https://ecode360.com/print/HA2083?guid=10506490",
+      "https://ecode360.com/print/HA2083?guid=10507395",
+      "https://ecode360.com/print/HA2083?guid=10507062",
+      "https://ecode360.com/print/HA2083?guid=10507106",
+      "https://ecode360.com/print/HA2083?guid=10507158",
+      "https://ecode360.com/print/HA2083?guid=10507457",
+      "https://ecode360.com/print/HA2083?guid=10507492",
+      "https://ecode360.com/print/HA2083?guid=10507538",
+      "https://ecode360.com/print/HA2083?guid=10507570",
+      "https://ecode360.com/print/HA2083?guid=10507666",
       "https://ecode360.com/print/HA2083?guid=10506654",
       "https://ecode360.com/print/HA2083?guid=10506756",
       "https://ecode360.com/print/HA2083?guid=10506837",
@@ -37,11 +46,12 @@
       "'One unit may not exceed a maximum of 600 square feet in area' (282-6, family, D(4))",
       "The owner signs an agreement with the Township, recorded with the County Recorder of Deeds, to remove the separate cooking facilities at once when they are no longer used by the person they were installed for or another qualified family member (282-6, family, D(3))",
       "Parking: one space in addition to the spaces the house needs. The districts ask two spaces for each dwelling unit, so three in all is the reading (282-6, family, D(5), 282-17A, 282-29A)",
-      "The rule follows the single-family detached dwelling. Use lists read that permit one: ER, RA-1, RA-2, RA-3, B, BA, BB, LPO and TD (282-12, 282-24, 282-32, 282-40, 282-48, 282-56, 282-64, 282-105, 282-242). The other districts' use lists were not read",
+      "The rule follows the single-family detached dwelling. Use lists that permit one: ER, RA-1, RA-2, RA-3, B, BA, BB, LPO and TD (282-12, 282-24, 282-32, 282-40, 282-48, 282-56, 282-64, 282-105, 282-242), and MF-E within an active adult community (282-97C, 282-103.1B(1)). Use lists that do not: TH, GA, MHD, IN, C, LC, SC and LIRC (282-72, 282-80, 282-89, 282-113, 282-121, 282-129, 282-137, 282-154). The LI list was not read",
+      "In MF-E a single-family detached dwelling is part of an active adult community on a tract of at least 80 acres, with a recorded declaration that one occupant of each unit is 55 or older: lot 6,000 sq ft, width 50 ft, front 20 ft, sides 10 ft, rear 25 ft, 35 ft high (282-103.1A, B(1))",
       "There is no two-family dwelling listing. Each lot has one principal use (282-6, use, principal)",
       "Accessory buildings to a dwelling: 16 ft and one story in ER and RA-1, 14 ft and one story in RA-2, RA-3, B, BA and BB (282-16B, 282-28B, 282-36B, 282-44B, 282-52B, 282-60B, 282-68B)"
     ],
-    "notes": "Zoning office: Hatfield Township (Montgomery County) Zoning Officer. Read on eCode360 (HA2083) in a browser, one print view at a time, on 2026-11-14. Code search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit' and 'living quarters' found the two-housekeeping-unit clause of the family definition (282-6), dwelling quarters for a watchman or caretaker in LI and HI (282-198) and definitions. Use lists read for ER, RA-1, RA-2, RA-3, B, BA, BB, LPO and TD. Not read: TH, GA, MHD, MF-E, IN, C, LC, SC, LI and LIRC."
+    "notes": "Zoning office: Hatfield Township (Montgomery County) Zoning Officer. Read on eCode360 (HA2083) in a browser, one print view at a time, on 2026-11-14. Code search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit' and 'living quarters' found the two-housekeeping-unit clause of the family definition (282-6), dwelling quarters for a watchman or caretaker in LI and HI (282-198) and definitions. Use lists read for every district except LI. A single-family detached dwelling is listed in ER, RA-1, RA-2, RA-3, B, BA, BB, LPO, TD and (in an active adult community) MF-E, and not in TH, GA, MHD, IN, C, LC, SC or LIRC."
   },
   "adu": {
     "term": {
@@ -72,15 +82,25 @@
           "BA",
           "BB",
           "LPO",
-          "TD"
+          "TD",
+          "MF-E"
         ],
-        "not_permitted_in": []
+        "not_permitted_in": [
+          "TH",
+          "GA",
+          "MHD",
+          "IN",
+          "C",
+          "LC",
+          "SC",
+          "LIRC"
+        ]
       },
-      "section": "282-12, 282-24, 282-32, 282-40, 282-48, 282-56, 282-64, 282-105, 282-242",
+      "section": "282-12, 282-24, 282-32, 282-40, 282-48, 282-56, 282-64, 282-105, 282-242, 282-97C, 282-103.1",
       "url": "https://ecode360.com/print/HA2083?guid=10506654",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "The use lists read that permit 'one single-family detached dwelling'. Other districts were not read."
+      "note": "Use lists that permit a single-family detached dwelling (MF-E within an active adult community, 282-97C, 282-103.1). TH, GA, MHD, IN, C, LC, SC and LIRC do not. LI was not read."
     },
     "status_outside": {
       "value": "not_addressed",
@@ -712,6 +732,54 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "Impervious 60%."
+      }
+    },
+    "MF-E": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "282-103.1B(1)",
+        "url": "https://ecode360.com/print/HA2083?guid=10507395",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling in an active adult community (tract of at least 80 acres, one occupant 55 or older). Width 50 ft."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "282-103.1B(1)",
+        "url": "https://ecode360.com/print/HA2083?guid=10507395",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "From the right-of-way. 28 ft from the cartway edge where there is no right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "282-103.1B(1)",
+        "url": "https://ecode360.com/print/HA2083?guid=10507395",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "282-103.1B(1)",
+        "url": "https://ecode360.com/print/HA2083?guid=10507395",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "282-103.1B(1)",
+        "url": "https://ecode360.com/print/HA2083?guid=10507395",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "282-103.1B(1)",
+        "url": "https://ecode360.com/print/HA2083?guid=10507395",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two stories (282-101)."
       }
     },
     "TD": {
