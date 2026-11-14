@@ -164,6 +164,52 @@ describe('rule text from the resolver', () => {
     expect(za(o).who_decides).toMatch(/^A special exception \(garage conversion\) is decided by the Zoning Hearing Board/);
     expect(String(o.verdict)).toMatch(/A garage conversion: Allowed with a special exception/);
   });
+  // Pass 7: a rule that hangs on a lot or house fact says exactly what it depends on. Never a plain yes, never a dead end.
+  const P7 = [
+    town('4204548480', 'Media borough', 'Delaware', 'pa_delaware_media', { tier: 'drafted', status: 'by_right' }),
+    town('4202725624', 'Ferguson township', 'Centre', 'pa_centre_ferguson', { tier: 'drafted' }),
+    town('4201719784', 'Doylestown borough', 'Bucks', 'pa_bucks_doylestown_borough', { tier: 'drafted', approval: 'special_exception' }),
+    town('4204375672', 'Swatara township', 'Dauphin', 'pa_dauphin_swatara', { status: 'by_right' }),
+    town('4202984160', 'West Vincent township', 'Chester', 'pa_chester_west_vincent', { status: 'by_right' }),
+  ];
+  const ask7 = (input: Record<string, unknown>) => ask(input, { places: memoryPlaces(P7) });
+  const check = (o: Out) => (o.proposal as Out).check as Out;
+  it('Media: the R-3 and R-4 bar on a lot 60 ft wide or more depends on the lot width', async () => {
+    const o = await ask7({ place: 'Media borough', unit_type: 'detached', size_sqft: 600 });
+    expect(String(o.verdict)).toBe('Allowed by right. It also depends on the lot width, not known here (depends_on).');
+    const d = (o.depends_on as Out[]).find((x) => x.fact === 'the lot width')!;
+    expect(d).toMatchObject({ section: '311.B-37A, B (R-3), 311.B-44A, B (R-4)', districts: ['R-3', 'R-4'] });
+    expect(String(d.rule)).toMatch(/60 ft wide or more.*Allowed only if the lot is narrower than 60 ft\. It depends on the lot width, which is not known here\./);
+    expect(d.forms).toContain('a detached backyard cottage');
+    expect(check(o).fits_zoning).toBe('depends_on_lot_facts');
+    expect((check(o).depends_on as Out[]).map((x) => x.fact)).toEqual(expect.arrayContaining(['the lot width', "the house's floor area"]));
+    expect(String(o.how_to_answer)).toMatch(/depends on: each fact in depends_on/);
+    // A unit inside the house is not under the width bar.
+    const inside = check(await ask7({ place: 'Media borough', unit_type: 'internal' }));
+    expect((inside.depends_on as Out[] | undefined)?.map((x) => x.fact) ?? []).not.toContain('the lot width');
+  });
+  it('Ferguson: an ADU only on a lot designated on the TTD plan depends on that designation', async () => {
+    const o = await ask7({ place: 'Ferguson township', county: 'Centre' });
+    expect(String(o.verdict)).toBe('Allowed with conditions. It also depends on whether the lot is designated on the plan the code names, not known here (depends_on).');
+    expect(o.depends_on).toEqual([expect.objectContaining({ fact: 'whether the lot is designated on the plan the code names', section: '27-303.3C(1)(b)2)', districts: ['TTD'] })]);
+    expect(String(o.next_step)).toMatch(/zoning officer/);
+  });
+  it('Doylestown borough: over 800 sq ft is not a no under a greater-of cap, it depends on the house size', async () => {
+    const o = await ask7({ place: 'Doylestown borough', unit_type: 'internal', size_sqft: 900 });
+    expect((o.zoning_allows as Out).size_rule_inside_or_attached).toMatch(/^At most 800 sq ft or 50% of the house, whichever is greater/);
+    expect(check(o).fits_zoning).toBe('depends_on_lot_facts');
+    expect((check(o).why as string[]).join(' ')).toMatch(/900 sq ft fits only if the house has at least 1,800 sq ft\. It depends on the house's floor area, which is not known here\./);
+    expect((check(o).why as string[]).join(' ')).not.toMatch(/whichever is less/);
+    expect(check(await ask7({ place: 'Doylestown borough', unit_type: 'internal', size_sqft: 700 })).why).toEqual(expect.arrayContaining([expect.stringMatching(/700 sq ft is within the 800 sq ft cap/)]));
+  });
+  it('a share-only cap gives the house size it needs; a form the code does not name is not a no', async () => {
+    const sw = check(await ask7({ place: 'Swatara township', county: 'Dauphin', unit_type: 'internal', size_sqft: 700 }));
+    expect((sw.why as string[])[0]).toMatch(/^The size cap is a share of the house: at most 45% of the house .*700 sq ft fits only if the house has at least 1,556 sq ft/);
+    expect((sw.why as string[]).join(' ')).not.toMatch(/No size cap number on file/);
+    const wv = check(await ask7({ place: 'West Vincent township', unit_type: 'attached' }));
+    expect(wv.fits_zoning).toBe('not_addressed');
+    expect(String(wv.why)).toMatch(/Not addressed for this form: the code does not name it\. Not a firm no; ask the zoning officer/);
+  });
   it('a city with lot records points to find_lot and the lot tools; every answer ends with the next step', async () => {
     const o = await ask2({ place: 'Allentown city' });
     expect(String(o.lot_records)).toMatch(/find_lot/);

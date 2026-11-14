@@ -551,12 +551,20 @@ describe('get_rule_text pass 7', () => {
 
   it('says a house test is an "only if", and a not-named form is not addressed', async () => {
     const co = await town6('pa_centre_college', 'approval', 'R-1');
-    expect(co.conditions.find((c: Any6) => c.test === 'house_sqft_at_least').condition).toMatch(/Allowed only if the house has at least 1,500 sq ft\. It depends on that fact/);
+    expect(co.conditions.find((c: Any6) => c.test === 'house_sqft_at_least').condition).toMatch(/Allowed only if the house has at least 1,500 sq ft\. It depends on the house's floor area, which is not known here\./);
     const wv = await town6('pa_chester_west_vincent', 'approval', 'R-2');
     expect(wv.approval.by_form_today.attached).toBe('not_addressed');
     expect(wv.summary).toMatch(/Not addressed for attached/);
     const bv = await town6('pa_chester_west_vincent', 'approval', 'BV');
     expect(bv.adu.status_in_district).toMatchObject({ value: 'conditional_use', district: 'BV' });
+  });
+
+  it('names the lot fact a bar depends on, and a lot test on a condition is an "applies only if", not a bar', async () => {
+    const md = await town6('pa_delaware_media', 'approval', 'R-3');
+    expect(md.conditions.find((c: Any6) => c.test === 'lot_width_below').condition).toMatch(/Allowed only if the lot is narrower than 60 ft\. It depends on the lot width, which is not known here\.$/);
+    const ex = md.conditions.find((c: Any6) => c.test === 'has_accessory_building').condition;
+    expect(ex).toMatch(/Applies only if an accessory building already exists on the lot\.$/);
+    expect(ex).not.toMatch(/Allowed only if/);
   });
 
   it('bars a prohibited form outright, limits the unlisted path, and opens a district in doubt under the bill', async () => {

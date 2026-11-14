@@ -10,7 +10,7 @@
 // <data root>/ops/logs/pa-places.md). Rule details come from get_rule_text, quotes from search_zoning_text.
 import type { ToolDef } from '../lib/lot/agentTools';
 import { NOTICE } from '../lib/lot/citations';
-import { getRuleText, hearingText, townKey } from './ruleText';
+import { dependsFact, getRuleText, hearingText, townKey } from './ruleText';
 import { searchZoningText, type ZoningTextSource } from './zoningText';
 import { lotPlaceOfTown, lotPlacesText } from './lotPlaces';
 
@@ -205,6 +205,8 @@ const leafOut = (x: unknown) => {
   return o && typeof o === 'object' && 'value' in o ? { value: o.value, section: o.section ?? null } : null;
 };
 
+/** Paths that allow the unit (pipeline/rules.py OK_PATHS). */
+const OK_PATHS = new Set(['by_right', 'administrator_exception', 'special_exception', 'conditional_use']);
 /** Rule file form keys for each unit type the tool takes. */
 const FORM_OF: Record<UnitType, string> = { detached: 'detached_new', attached: 'attached', internal: 'internal', garage: 'garage_conversion' };
 const FORM_TEXT: Record<string, string> = { detached_new: 'a detached backyard cottage', garage_conversion: 'a garage conversion', over_garage: 'a unit over a garage', internal: 'a unit inside the house', attached: 'an addition attached to the house' };
@@ -241,6 +243,19 @@ async function ruleDetails(r: PlaceRow) {
   const alts = ((out.other_ways_to_add_a_unit as Obj | undefined)?.options ?? []) as Obj[];
   const accCap = leafOut(acc.max_sqft);
   const insCap = leafOut(ins.max_sqft);
+  // Bars that hang on a lot or house fact (lot width, house size, a designated lot): no lot is known here, so the
+  // answer depends on them (pipeline/rules.py depends_on). Only bars on a form the code otherwise allows count.
+  const okForm = (t: string) => OK_PATHS.has(byType[t] ?? '');
+  const dependsOn = conds
+    .filter((c) => c.effect === 'bars' && dependsFact(c.test))
+    .filter((c) => (Array.isArray(c.applies_to) ? (c.applies_to as string[]) : Object.keys(byType)).some(okForm))
+    .map((c) => ({
+      fact: dependsFact(c.test)!,
+      rule: c.condition,
+      section: c.section ?? null,
+      ...(Array.isArray(c.applies_to) ? { forms: (c.applies_to as string[]).filter((t) => t in FORM_TEXT).map((t) => FORM_TEXT[t]) } : {}),
+      ...(Array.isArray(c.districts) ? { districts: c.districts } : {}),
+    }));
   return {
     summary: (out.summary as string) ?? null,
     code_caution: typeof out.code_caution === 'string' ? out.code_caution : null,
@@ -262,6 +277,7 @@ async function ruleDetails(r: PlaceRow) {
     hearing: ask?.kind === 'hearing' ? { who_decides: ask.note, section: ask.section ?? null } : hearingText(ask?.path) ? { who_decides: hearingText(ask?.path), section: ask?.section ?? null } : null,
     adu_under_another_listing: alts.filter((a) => a.adu_listing === true).map((a) => ({ name: a.name ?? null, path: a.display_path ?? a.path ?? null, section: a.section ?? null, reads_as: a.reads_as ?? null })),
     code_url: ((out.town as Obj | undefined)?.code_url as string | undefined) ?? null,
+    depends_on: dependsOn,
   };
 }
 
@@ -276,31 +292,57 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
     why.push(r.status === 'prohibited' ? 'The code bars ADUs.' : 'The code has no ADU rule; a variance or a code change would be needed.');
     return { fits_zoning: 'no', why };
   }
+  const formPath = unit && rule ? rule.path_by_form[FORM_OF[unit]] : undefined;
+  // A form the code does not name is not a firm no (pass 7): say so, not "does not fit".
+  if (formPath === 'not_addressed') return { fits_zoning: 'not_addressed', why: [`The proposal is ${UNIT_TEXT[unit!]}. ${formVerdict('not_addressed', null, null)}.`] };
   let fits: 'yes' | 'no' = 'yes';
+  // Facts the answer hangs on that are not known here: the house size for a share cap, and the bars in depends_on.
+  const depends: { fact: string; rule: unknown; section: unknown }[] = [];
   if (unit && Array.isArray(r.unit_types) && !r.unit_types.includes(unit)) {
     fits = 'no';
     why.push(`Zoning here allows only ${r.unit_types.length ? r.unit_types.map((t) => UNIT_TEXT[t]).join(' or ') : 'no ADU form'}; the proposal is ${UNIT_TEXT[unit]}.`);
   }
-  const cap = unit === 'internal' || unit === 'attached' ? rule?.max_sqft_inside_or_attached : rule?.max_sqft_accessory_building;
-  if (size && cap && typeof cap.value === 'number') {
-    if (size > cap.value) {
+  const inside = unit === 'internal' || unit === 'attached';
+  const cap = inside ? rule?.max_sqft_inside_or_attached : rule?.max_sqft_accessory_building;
+  const share = inside ? rule?.max_share_inside_or_attached : rule?.max_share_accessory_building;
+  const sizeRule = inside ? rule?.size_rule_inside_or_attached : rule?.size_rule_accessory_building;
+  const capNum = cap && typeof cap.value === 'number' ? cap.value : null;
+  const shareNum = share && typeof share.value === 'number' ? share.value : null;
+  const greater = !!sizeRule && sizeRule.includes('whichever is greater');
+  const pct = shareNum !== null ? `${Math.round(shareNum * 100)}%` : '';
+  // The house size at which the share of the house reaches the proposal.
+  const houseFor = (sz: number) => Math.ceil(sz / shareNum!).toLocaleString('en-US');
+  const houseDepends = (sz: number) => {
+    depends.push({ fact: "the house's floor area", rule: sizeRule ?? `At most ${pct} of the house`, section: share?.section ?? null });
+    return `${sz} sq ft fits only if the house has at least ${houseFor(sz)} sq ft. It depends on the house's floor area, which is not known here.`;
+  };
+  if (size && capNum !== null) {
+    if (size <= capNum) why.push(`${size} sq ft is within the ${capNum} sq ft cap (${cap!.section ?? 'rule file'}).`);
+    // Greater of a number and a share of the house: over the number still fits on a big enough house.
+    else if (greater && shareNum) why.push(`${size} sq ft is over ${capNum} sq ft, but the cap is the greater of ${capNum} sq ft or ${pct} of the house (${share!.section ?? cap!.section ?? 'rule file'}). ${houseDepends(size)}`);
+    else {
       fits = 'no';
-      why.push(`The size cap is ${cap.value} sq ft (${cap.section ?? 'rule file'}); the proposal is ${size} sq ft.`);
-    } else why.push(`${size} sq ft is within the ${cap.value} sq ft cap (${cap.section ?? 'rule file'}).`);
-  } else if (size) why.push('No size cap number on file for this form: ask the zoning officer.');
-  const share = unit === 'internal' || unit === 'attached' ? rule?.max_share_inside_or_attached : rule?.max_share_accessory_building;
-  const sizeRule = unit === 'internal' || unit === 'attached' ? rule?.size_rule_inside_or_attached : rule?.size_rule_accessory_building;
-  if (size && share && typeof share.value === 'number')
-    // A greater-of or share-only cap is said as its own sentence, never as "whichever is less" (pass 7).
-    why.push(
-      sizeRule && !sizeRule.includes('whichever is less')
-        ? `${sizeRule}. Not checked: the house size is not known here.`
-        : `The unit may also be at most ${Math.round(share.value * 100)}% of the house (${share.section ?? 'rule file'}), whichever is less. Not checked: the house size is not known here.`,
-    );
-  const formPath = unit && rule ? rule.path_by_form[FORM_OF[unit]] : undefined;
+      why.push(`The size cap is ${capNum} sq ft (${cap!.section ?? 'rule file'}); the proposal is ${size} sq ft.`);
+    }
+  } else if (size && shareNum) why.push(`The size cap is a share of the house: at most ${pct} of the house (${share!.section ?? 'rule file'}). ${houseDepends(size)}`);
+  else if (size) why.push('No size cap number on file for this form: ask the zoning officer.');
+  // Lesser of a number and a share of the house: the share may still be the lower limit.
+  if (size && shareNum && capNum !== null && !greater) {
+    why.push(`The unit may also be at most ${pct} of the house (${share!.section ?? 'rule file'}), whichever is less. Not checked: the house size is not known here.${fits === 'yes' ? ` It fits that limit only if the house has at least ${houseFor(size)} sq ft.` : ''}`);
+    if (fits === 'yes') depends.push({ fact: "the house's floor area", rule: sizeRule ?? `At most ${pct} of the house`, section: share?.section ?? null });
+  }
+  if (unit && rule)
+    for (const d of rule.depends_on)
+      if (!d.forms || d.forms.includes(UNIT_TEXT[unit])) depends.push({ fact: d.fact, rule: d.rule, section: d.section });
   if (fits === 'yes' && formPath && formPath !== r.approval) why.push(`For ${UNIT_TEXT[unit!]} the path is ${APPROVAL_TEXT[formPath] ?? formPath}.`);
   if (fits === 'yes' && !why.length) why.push('The form is one the code allows.');
-  return { fits_zoning: fits === 'yes' ? 'yes_if_conditions_met' : 'no', why, ...(fits === 'yes' && rule?.conditions.length ? { conditions_still_apply: rule.conditions.map((c) => c.condition) } : {}) };
+  const verdict = fits === 'no' ? 'no' : depends.length ? 'depends_on_lot_facts' : 'yes_if_conditions_met';
+  return {
+    fits_zoning: verdict,
+    why,
+    ...(fits === 'yes' && depends.length ? { depends_on: depends } : {}),
+    ...(fits === 'yes' && rule?.conditions.length ? { conditions_still_apply: rule.conditions.map((c) => c.condition) } : {}),
+  };
 }
 
 // ------------------------------------------------------------------ the answer
@@ -395,6 +437,13 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
         : {}),
     };
     if (r.tier === 'drafted') out.open_points = r.status_detail;
+    if (rule.depends_on.length) {
+      // A bar that hangs on a lot or house fact: never a plain yes, never a dead end. Say what it depends on.
+      const facts = [...new Set(rule.depends_on.map((d) => d.fact))];
+      const list = facts.length < 2 ? facts[0] : `${facts.slice(0, -1).join(', ')} and ${facts[facts.length - 1]}`;
+      out.verdict = `${String(out.verdict).replace(/\.$/, '')}. It also depends on ${list}, not known here (depends_on).`;
+      out.depends_on = rule.depends_on;
+    }
   }
   if (r.status === 'no_zoning') out.what_still_applies = sw(NO_ZONING_KEYS);
   // No rule file here, but the earlier town survey coded this town: give it, labelled, next to the ladder answer.
@@ -439,6 +488,7 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
     rule?.by_form ? 'The answer differs by form: give one line per form from zoning_allows.by_form.' : null,
     rule?.size_rule_accessory_building || rule?.size_rule_inside_or_attached ? 'Give the size cap as the size_rule sentence (it says which limit wins, or that it is a share of the house).' : null,
     rule?.hearing ? 'Say who decides (who_decides) and that it is a public hearing.' : null,
+    rule?.depends_on.length ? 'Say what the answer depends on: each fact in depends_on with its rule and section, and that the zoning officer or the lot records can settle it.' : null,
     summary ? 'Also give earlier_town_summary (approval, owner on site, units per lot, size cap) with its label and source.' : null,
   ].filter(Boolean).join(' ');
   out.how_to_answer =

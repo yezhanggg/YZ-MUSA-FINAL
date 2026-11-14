@@ -230,14 +230,37 @@ const FACT_TEXT: Record<string, string> = {
   lot_width_below: 'only if the lot is narrower than',
   designated_on_plan: 'only if the lot is designated on the plan the code names',
 };
-const HOUSE_TESTS = new Set(['house_sqft_at_least', 'house_sqft_over', 'house_built_before', 'accessory_building_built_before', 'house_exists', 'public_sewer', 'public_water', 'lot_width_at_least', 'lot_width_below', 'designated_on_plan']);
-/** " Allowed only if ..." for a gate or alternative test (no lot facts here, so always an "only if"). */
+/** The lot or house fact each test reads, in plain words (pipeline/rules.py HOUSE_TESTS and LOT_TESTS). */
+const DEPENDS_FACT: Record<string, string> = {
+  has_alley: 'whether the lot has an alley',
+  has_accessory_building: 'whether the lot has an accessory building',
+  lot_sqft_at_least: 'the lot area',
+  lot_sqft_below: 'the lot area',
+  house_sqft_at_least: "the house's floor area",
+  house_sqft_over: "the house's floor area",
+  house_built_before: 'the year the house was built',
+  accessory_building_built_before: 'the year the accessory building was built',
+  house_exists: 'whether a lawful house already stands on the lot',
+  public_sewer: 'whether the lot has public sewer',
+  public_water: 'whether the lot has public water',
+  lot_width_at_least: 'the lot width',
+  lot_width_below: 'the lot width',
+  designated_on_plan: 'whether the lot is designated on the plan the code names',
+};
+/** The fact a gate test reads ("the lot width"), or null for no test. */
+export const dependsFact = (test: unknown): string | null => (typeof test === 'string' ? DEPENDS_FACT[test] ?? null : null);
+/**
+ * " Allowed only if ..." for a gate that bars, " Applies only if ..." for a gate that is a condition. No lot facts
+ * here, so a bar always names the fact it depends on.
+ */
 const testText = (g: Obj): string => {
   const t = typeof g.test === 'string' ? FACT_TEXT[g.test] : undefined;
   if (!t) return '';
   const width = g.test === 'lot_width_at_least' || g.test === 'lot_width_below' ? ` ${num(g.value)} ft` : '';
   const unit = width ? width : g.test === 'lot_sqft_at_least' || g.test === 'lot_sqft_below' || g.test === 'house_sqft_at_least' || g.test === 'house_sqft_over' ? ` ${num(g.value)} sq ft` : g.value_date ? ` ${String(g.value_date)}` : '';
-  return ` Allowed ${t}${unit}.${HOUSE_TESTS.has(String(g.test)) ? ' It depends on that fact.' : ''}`;
+  const bars = g.effect === 'bars';
+  const fact = dependsFact(g.test);
+  return ` ${bars ? 'Allowed' : 'Applies'} ${t}${unit}.${bars && fact ? ` It depends on ${fact}, which is not known here.` : ''}`;
 };
 const num = (v: Json | undefined) => (typeof v === 'number' ? v.toLocaleString('en-US') : String(v));
 const NO_ADU = new Set(['not_addressed', 'prohibited']);
