@@ -58,7 +58,7 @@ function allowsLine(lot: LotRecord, rules: Rules, v: UnitVerdict): string {
     if (words(s) <= 16) return end(s);
     return end(`${where} allows ${open.length} other kinds of unit, not this one`);
   }
-  return end(`${where} allows no extra unit on this lot`);
+  return end(`${where} allows no extra unit here`);
 }
 
 /** Row houses and twins from the lot's party walls, when the record has them. */

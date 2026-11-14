@@ -108,7 +108,7 @@ test.describe('why not, and ground slope', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test&lot=42101-011000034&tract=42101002702');
     await expect(verdict(page)).toHaveAttribute('data-answer', 'no');
-    await expect(verdict(page)).toContainText('zoning allows no extra unit on this lot.');
+    await expect(verdict(page)).toContainText('zoning allows no extra unit here.');
     const zoning = page.locator('[data-rule-row="zoning"]').first();
     await zoning.locator('> button').click();
     await expect(zoning.locator('[data-why-not] p')).toHaveCount(3);

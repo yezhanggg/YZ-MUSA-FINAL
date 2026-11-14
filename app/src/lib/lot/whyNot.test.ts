@@ -54,10 +54,10 @@ describe('why not, in plain words', () => {
     const lot = fixture('phl_row_today');
     const v = unitVerdict(lot, cottage());
     const w = whyNot(lot, v)!;
-    expect(w.allows).toBe('RSA5 zoning allows no extra unit on this lot.');
+    expect(w.allows).toBe('RSA5 zoning allows no extra unit here.');
     expect(w.why).toBe('Attached building. Needs a detached or semi-detached house.');
     expect(w.yours).toMatch(/^Yours is a .*backyard cottage on a 726 sq ft lot\.$/);
-    expect(answerFor(lot, v).sub).toBe('RSA5 zoning allows no extra unit on this lot. Attached building. Needs a detached or semi-detached house.');
+    expect(answerFor(lot, v).sub).toBe('RSA5 zoning allows no extra unit here. Attached building. Needs a detached or semi-detached house.');
   });
 
   it('Philadelphia RSA5 with a house: only a unit inside, a backyard cottage is out', () => {
