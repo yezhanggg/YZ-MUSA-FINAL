@@ -1,0 +1,578 @@
+{
+  "provenance": {
+    "jurisdiction": "Greene township",
+    "instrument": "Greene Township (Franklin County) Code Chapter 105 Zoning (Ord. No. 3-1998, 2-24-1998, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-09-08 (breadcrumb). New Laws on 2026-11-14: 'There are currently no known new laws for this Code.' The AR use list was last amended by Ord. No. 2026-2 (8-25-2026), already in the text.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11174931",
+      "https://ecode360.com/GR1759/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20duplex&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/GR1759?guid=11174965",
+      "https://ecode360.com/print/GR1759?guid=11175118",
+      "https://ecode360.com/print/GR1759?guid=11175278",
+      "https://ecode360.com/print/GR1759?guid=11175879",
+      "https://ecode360.com/print/GR1759?guid=11175907",
+      "https://ecode360.com/print/GR1759?guid=11175919",
+      "https://ecode360.com/print/GR1759?guid=11174956",
+      "https://ecode360.com/print/GR1759?guid=11176339",
+      "https://ecode360.com/print/GR1759?guid=11176385",
+      "https://ecode360.com/print/GR1759?guid=11176386",
+      "https://ecode360.com/print/GR1759?guid=11176394",
+      "https://ecode360.com/GR1759/laws"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Franklin",
+    "municipality_type": "township",
+    "geoid": "4205530944",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11174931",
+    "code_current_through": "2026-09-08",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-09-08'. New Laws: none on 2026-11-14.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or similar rule. 'Any use not permitted by this chapter shall be deemed to be prohibited' (105-5E). The special exception for unlisted uses reaches only HC, LI and HI",
+      "AR, R-1 and R-2 permit by right 'Conversions of existing single-family detached dwellings to two-family dwellings provided each unit has two points of entrance and exit and a minimum of one parking space per dwelling unit'. The lot needs the district's single-family lot size plus 3,000 sq ft for each added unit, and the district setbacks (105-6A(7), 105-7A(10), 105-8A(7))",
+      "New two-family dwellings: semidetached by right in R-1 and R-2, and two-family detached (one unit over the other) in R-2 on a lot 25% larger than the single-family minimum. Lot area per dwelling unit is in 105-17B and 105-18B (105-7A(2), 105-8A(3), (4), 105-64)",
+      "A separate building with a second dwelling is not a listed use. An accessory building is 'subordinate to and detached from the main building' (105-64)",
+      "Detached accessory buildings in a residential district may stand in a required side or rear yard if at most 20 ft high, 5 ft from every lot line, and together at most 30% of the required yard. Outside the yards they take the principal height (40 ft). None nearer the street than the house's minimum front setback (105-25A, E, F)",
+      "Lot sizes depend on public water and sewer (105-17, 105-18). With on-lot sewer the Sewage Enforcement Officer or DEP may require a larger lot",
+      "Where a lot adjoins an existing highway whose right-of-way is less than 25 ft from the center line, the difference is added to the setbacks (Article IV notes)"
+    ],
+    "notes": "Zoning office: Greene Township (Franklin County) Zoning Officer. Read on eCode360 (GR1759) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house', 'guest house', 'accessory living', 'second dwelling', conversion and duplex found no ADU text in Chapter 105. The hits were the apartment definition ('Conversion apartments are not included'), the land development definition and 105-37.2. Read: AR, R-1 and R-2 use lists (105-6 to 105-8), Article IV (105-16 to 105-24), 105-5, 105-25, 105-26 and the definitions of accessory building, single-family detached and two-family detached dwelling and family. Not read: CC, TC, HC, LI, HI and overlay use lists, parking (105-29), PRD (Article VI), 105-57.1. Greene Township, Franklin County (GR1759), not Franklin Township, Greene County."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "105-6 to 105-8, 105-64",
+      "url": "https://ecode360.com/11174931",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, tenant house, guest house, accessory living, second dwelling, conversion and duplex."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "105-5E, 105-6A, 105-7A, 105-8A",
+      "url": "https://ecode360.com/print/GR1759?guid=11174956",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The residential districts list single-family detached dwellings, two-family dwellings and conversions of existing single-family detached dwellings to two-family dwellings, but no accessory dwelling unit."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "105-5E, 105-6A, 105-7A, 105-8A",
+      "url": "https://ecode360.com/print/GR1759?guid=11174956",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an accessory dwelling unit, and unlisted uses are prohibited outside the HC, LI and HI special exception. A second unit inside an existing house is a by right conversion to a two-family dwelling in AR, R-1 and R-2 (see the other ways to add a unit). A separate dwelling in an accessory building needs a use variance."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "105-57",
+      "url": "https://ecode360.com/11174931",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of an existing single-family detached dwelling to a two-family dwelling (AR)",
+          "path": "by_right",
+          "districts": [
+            "AR"
+          ],
+          "conditions": "An existing single-family detached dwelling converted to two dwellings. Each unit has two points of entrance and exit and at least one off-street parking space. The lot is the district's single-family lot size plus 3,000 sq ft for each added unit. District setbacks apply. Any state approvals first.",
+          "section": "105-6A(7), 105-16",
+          "url": "https://ecode360.com/print/GR1759?guid=11174965",
+          "confidence": "verified",
+          "note": "Listed as a permitted use. Not an ADU listing: the house becomes a two-family dwelling.",
+          "min_lot_sqft": 63000
+        },
+        {
+          "name": "Conversion of an existing single-family detached dwelling to a two-family dwelling (R-1)",
+          "path": "by_right",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "An existing single-family detached dwelling converted to two dwellings. Each unit has two points of entrance and exit and at least one off-street parking space. The lot is the district's single-family lot size plus 3,000 sq ft for each added unit. District setbacks apply. Any state approvals first.",
+          "section": "105-7A(10), 105-17A",
+          "url": "https://ecode360.com/print/GR1759?guid=11175118",
+          "confidence": "verified",
+          "note": "Listed as a permitted use. Not an ADU listing: the house becomes a two-family dwelling.",
+          "min_lot_by_utility": [
+            {
+              "when": "Central water and sewer",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 18000,
+              "section": "105-7A(10), 105-17A"
+            },
+            {
+              "when": "On-lot water, central sewer",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 23000,
+              "section": "105-7A(10), 105-17A"
+            },
+            {
+              "when": "On-lot sewer, central water",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 33000,
+              "section": "105-7A(10), 105-17A"
+            },
+            {
+              "when": "On-lot water and sewer",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 43000,
+              "section": "105-7A(10), 105-17A"
+            }
+          ]
+        },
+        {
+          "name": "Conversion of an existing single-family detached dwelling to a two-family dwelling (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "An existing single-family detached dwelling converted to two dwellings. Each unit has two points of entrance and exit and at least one off-street parking space. The lot is the district's single-family lot size plus 3,000 sq ft for each added unit. District setbacks apply. Any state approvals first.",
+          "section": "105-8A(7), 105-18A",
+          "url": "https://ecode360.com/print/GR1759?guid=11175278",
+          "confidence": "verified",
+          "note": "Listed as a permitted use. Not an ADU listing: the house becomes a two-family dwelling.",
+          "min_lot_by_utility": [
+            {
+              "when": "Central water and sewer",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 15000,
+              "section": "105-8A(7), 105-18A"
+            },
+            {
+              "when": "On-lot water, central sewer",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 19000,
+              "section": "105-8A(7), 105-18A"
+            },
+            {
+              "when": "On-lot sewer, central water",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 33000,
+              "section": "105-8A(7), 105-18A"
+            },
+            {
+              "when": "On-lot water and sewer",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 43000,
+              "section": "105-8A(7), 105-18A"
+            }
+          ]
+        }
+      ],
+      "section": "105-6A(7), 105-7A(10), 105-8A(7)",
+      "url": "https://ecode360.com/print/GR1759?guid=11175118",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "105-6 to 105-8",
+      "url": "https://ecode360.com/print/GR1759?guid=11175118",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an accessory dwelling unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "105-6 to 105-15.2",
+      "url": "https://ecode360.com/11174931",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No historic overlay or historic path in Chapter 105."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "105-6 to 105-8",
+      "url": "https://ecode360.com/print/GR1759?guid=11175118",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "105-16, 105-17, 105-18",
+      "url": "https://ecode360.com/print/GR1759?guid=11175879",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "40 ft in AR, R-1 and R-2."
+    },
+    "max_height_ft": {
+      "value": 20,
+      "section": "105-25A(1)",
+      "url": "https://ecode360.com/print/GR1759?guid=11175907",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "A detached accessory building in a required side or rear yard: 'Such building shall not exceed more than 20 feet in height.'"
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 40,
+          "where": "Outside the required yards",
+          "section": "105-25E",
+          "url": "https://ecode360.com/print/GR1759?guid=11175907",
+          "note": "'An accessory building on that portion of a lot not included in any yard setback shall conform to the height regulations for principal buildings' (40 ft)."
+        }
+      ],
+      "section": "105-25E",
+      "url": "https://ecode360.com/print/GR1759?guid=11175907",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "In a required side or rear yard",
+          "max_share_of_rear_yard": 0.3,
+          "section": "105-25A(3)",
+          "url": "https://ecode360.com/print/GR1759?guid=11175907",
+          "note": "'All such buildings in the aggregate shall not occupy more than 30% of the area of the required rear or side yard.'"
+        }
+      ],
+      "section": "105-25A",
+      "url": "https://ecode360.com/print/GR1759?guid=11175907",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "105-25A",
+      "url": "https://ecode360.com/print/GR1759?guid=11175907",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Detached accessory buildings may stand in required side or rear yards, 5 ft from lot lines."
+    }
+  },
+  "parking": {
+    "reading": {
+      "value": "No ADU parking rule. A single-family dwelling needs 2 off-street spaces (105-16 to 105-18). A conversion to a two-family dwelling needs at least one space per dwelling unit (105-7A(10)).",
+      "section": "105-17A, 105-7A(10)",
+      "url": "https://ecode360.com/print/GR1759?guid=11175879",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "districts": {
+    "AR": {
+      "min_lot_sqft": {
+        "value": 60000,
+        "section": "105-16",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Width 200 ft, depth 200 ft. With on-lot sewer the Sewage Enforcement Officer or DEP may increase the lot."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "105-16",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "105-16",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side yard."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "105-16",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "105-16",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No accessory building nearer the street than the minimum front setback of the house (105-25F)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "A detached accessory building in a required side or rear yard: 5 ft from any lot line, at most 20 ft high, at most 30% of the required yard (105-25A)."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "105-17A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling with central (public or off-site) water and sewer. Width 100 ft, depth 125 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "105-17A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "105-17A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side yard."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "105-17A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "105-17A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 30,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No accessory building nearer the street than the minimum front setback of the house (105-25F)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "A detached accessory building in a required side or rear yard: 5 ft from any lot line, at most 20 ft high, at most 30% of the required yard (105-25A)."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-lot water and sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "principal_max_height_ft": 40,
+            "accessory_setback_front_ft": 40,
+            "accessory_setback_side_ft": 5,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 20,
+            "section": "105-17A",
+            "note": "Single-family dwelling. Width and depth also vary. With on-lot sewer the lot may be increased for health and sanitation."
+          },
+          {
+            "when": "On-lot sewer, central water",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 35,
+            "principal_max_height_ft": 40,
+            "accessory_setback_front_ft": 35,
+            "accessory_setback_side_ft": 5,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 20,
+            "section": "105-17A",
+            "note": "Single-family dwelling. Width and depth also vary. With on-lot sewer the lot may be increased for health and sanitation."
+          },
+          {
+            "when": "On-lot water, central sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 30,
+            "principal_max_height_ft": 40,
+            "accessory_setback_front_ft": 30,
+            "accessory_setback_side_ft": 5,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 20,
+            "section": "105-17A",
+            "note": "Single-family dwelling. Width and depth also vary. With on-lot sewer the lot may be increased for health and sanitation."
+          }
+        ],
+        "section": "105-17A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "105-18A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling with central (public or off-site) water and sewer. Width 100 ft, depth 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "105-18A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "105-18A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side yard."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "105-18A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "105-18A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 30,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No accessory building nearer the street than the minimum front setback of the house (105-25F)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "A detached accessory building in a required side or rear yard: 5 ft from any lot line, at most 20 ft high, at most 30% of the required yard (105-25A)."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "105-25A(2), F",
+        "url": "https://ecode360.com/print/GR1759?guid=11175907",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-lot water and sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "principal_max_height_ft": 40,
+            "accessory_setback_front_ft": 40,
+            "accessory_setback_side_ft": 5,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 20,
+            "section": "105-18A",
+            "note": "Single-family dwelling. Width and depth also vary. With on-lot sewer the lot may be increased for health and sanitation."
+          },
+          {
+            "when": "On-lot sewer, central water",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 35,
+            "principal_max_height_ft": 40,
+            "accessory_setback_front_ft": 35,
+            "accessory_setback_side_ft": 5,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 20,
+            "section": "105-18A",
+            "note": "Single-family dwelling. Width and depth also vary. With on-lot sewer the lot may be increased for health and sanitation."
+          },
+          {
+            "when": "On-lot water, central sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 16000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 30,
+            "principal_max_height_ft": 40,
+            "accessory_setback_front_ft": 30,
+            "accessory_setback_side_ft": 5,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 20,
+            "section": "105-18A",
+            "note": "Single-family dwelling. Width and depth also vary. With on-lot sewer the lot may be increased for health and sanitation."
+          }
+        ],
+        "section": "105-18A",
+        "url": "https://ecode360.com/print/GR1759?guid=11175879",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

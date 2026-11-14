@@ -1,0 +1,560 @@
+{
+  "provenance": {
+    "jurisdiction": "South Fayette township",
+    "instrument": "South Fayette Township Code Chapter 240 Zoning (South Fayette Township Zoning Ordinance, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-01-14 (breadcrumb). New Laws on 2026-11-14: Ord. No. 4-2026 (2026-09-09), 'Zoning Amendment', Chapter 240, PDF only, not read. The residential use lists were last amended by Ord. No. 1-2025 and 2-2025 (2025).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11615243",
+      "https://ecode360.com/SO0208/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20conversion%20OR%20duplex%20OR%20%22tenant%20house%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SO0208/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20relatives%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20%22accessory%20residential%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/SO0208?guid=11615653",
+      "https://ecode360.com/print/SO0208?guid=11615744",
+      "https://ecode360.com/print/SO0208?guid=11615828",
+      "https://ecode360.com/print/SO0208?guid=11615903",
+      "https://ecode360.com/print/SO0208?guid=31723830",
+      "https://ecode360.com/print/SO0208?guid=11617655",
+      "https://ecode360.com/SO0208/laws"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200372160",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11615243",
+    "code_current_through": "2026-01-14",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-01-14'. Ord. No. 4-2026 (zoning amendment, adopted 2026-09-09) is a New Law, not yet in the code text.",
+    "code_caution": "Ord. No. 4-2026, a zoning amendment adopted 2026-09-09, is listed as a New Law for Chapter 240 and was not read (PDF only). The code search, which also covers New Laws text, found no accessory dwelling, accessory apartment or in-law wording in it.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or similar rule. Each residential district says 'only the following uses are authorized' (240-15, 240-22, 240-29, 240-36)",
+      "A single-family dwelling is 'A detached residential building which is the only principal structure on the lot, designed exclusively for occupancy by one family ... and containing one dwelling unit' (240-9, dwelling types A). A second unit makes the building a two-family dwelling, which only R-4 (and the ND district) permits",
+      "R-4: two-family dwellings are permitted by right. Lot 12,000 sq ft with public sewers, 43,560 sq ft without, width 60 ft (150 ft without sewers) (240-36A(1)(c), 240-37)",
+      "Detached garages and storage buildings: not in the minimum front yard, 10 ft from side and rear lines (15 ft over 900 sq ft) in R-1 to R-3, 5 ft in R-4, 10 ft from the house. All accessory structures together at most 900 sq ft on a lot up to 20,000 sq ft, 1,000 sq ft up to 40,000, 1,200 sq ft up to 5 acres (240-99C(9), (11)). One story and 20 ft in R-1 and R-2, 15 ft in R-3 and R-4 (240-16I, 240-23I, 240-30I, 240-37I)",
+      "'Maximum lot coverage' counts all principal and accessory structures on the lot (240-99C(9)(b))",
+      "ND Neighborhood Design District: single-family, two-family, triplex, fourplex, townhouse and multifamily dwellings in a planned neighborhood design development. Accessory residential buildings may have habitable space above the ground floor (20 ft high), but no accessory dwelling is listed (240-76.19, 240-76.20L(1)(e))"
+    ],
+    "notes": "Zoning office: South Fayette Township Zoning Officer. Read on eCode360 (SO0208) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, relatives, 'housekeeping unit', caretaker, 'guest house', 'accessory living', 'tenant house', 'accessory residential', conversion and duplex found no ADU text. The hits were the dwelling type definitions, area and bulk sections, the ND accessory residential building height, and the subdivision chapter's exclusion of a conversion into not more than three units from land development (215-8A). Read in full: Articles IV to VII (R-1 to R-4) and 240-99C. Read for its use list and accessory items: Article XIIC (ND). Not read: commercial, industrial, CD-1, B-1 and overlay districts, Article XIV open space design option, parking (Article XVII), the definition of lot coverage itself."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "240-9, 240-15, 240-22, 240-29, 240-36",
+      "url": "https://ecode360.com/11615243",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, accessory residential, conversion and duplex."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "240-15, 240-22, 240-29, 240-36",
+      "url": "https://ecode360.com/print/SO0208?guid=11615653",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Each residential district lists the only uses authorized: single-family dwellings (and two-family dwellings in R-4) with customary accessory uses. No accessory dwelling unit."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "240-15, 240-22, 240-29, 240-36, 240-9 (dwelling types A, B)",
+      "url": "https://ecode360.com/print/SO0208?guid=11615653",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Only the listed uses are authorized. A house with a second unit is a two-family dwelling, which R-1, R-2 and R-3 do not list, so a second unit there needs a use variance. In R-4 a two-family dwelling is permitted (see the other ways to add a unit)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "MPC 910.2",
+      "url": "https://ecode360.com/11615243",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Relief from a district rule is a variance from the Zoning Hearing Board. The chapter article on the Board was not read."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling in R-4",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "A two-family dwelling is a permitted principal use. Lot 12,000 sq ft with public sewers (43,560 without), width 60 ft (150 ft without), front 25 ft, rear 30 ft, lot coverage 35%, 45 ft.",
+          "min_lot_by_utility": [
+            {
+              "when": "With public sewers",
+              "public_sewer": true,
+              "min_lot_sqft": 12000,
+              "section": "240-37A(2)"
+            },
+            {
+              "when": "Without public sewers",
+              "public_sewer": false,
+              "min_lot_sqft": 43560,
+              "section": "240-37A(2)"
+            }
+          ],
+          "section": "240-36A(1)(c), 240-37",
+          "url": "https://ecode360.com/print/SO0208?guid=11615903",
+          "confidence": "secondary",
+          "note": "Two dwelling units in one building ('including double houses and duplexes', 240-9). Converting an existing house into a two-family dwelling is read as this use. Not an ADU listing."
+        }
+      ],
+      "section": "240-36A(1)(c)",
+      "url": "https://ecode360.com/print/SO0208?guid=11615903",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "240-15, 240-22, 240-29, 240-36",
+      "url": "https://ecode360.com/print/SO0208?guid=11615653",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an accessory dwelling unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 240",
+      "url": "https://ecode360.com/11615243",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No historic path found."
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "ND"
+      ],
+      "section": "240-76.19",
+      "url": "https://ecode360.com/print/SO0208?guid=31723830",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Use list read. It lists dwelling types and customary accessory uses, no accessory dwelling."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "240-15, 240-22, 240-29, 240-36",
+      "url": "https://ecode360.com/print/SO0208?guid=11615653",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "240-16I, 240-23I, 240-30I, 240-37I",
+      "url": "https://ecode360.com/print/SO0208?guid=11615653",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "35 ft and 2 1/2 stories in R-1 and R-2. 45 ft and three stories in R-3 and R-4."
+    },
+    "front_yard_barred": {
+      "value": false,
+      "section": "240-99C(9)(a)",
+      "url": "https://ecode360.com/print/SO0208?guid=11617655",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Detached garages and storage structures may not be in the minimum required front yard. That is the district setback, not a bar on the whole front yard."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 22000,
+        "section": "240-16",
+        "url": "https://ecode360.com/print/SO0208?guid=11615653",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling with public sewers. Width 110 ft."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "240-16",
+        "url": "https://ecode360.com/print/SO0208?guid=11615653",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "240-16",
+        "url": "https://ecode360.com/print/SO0208?guid=11615653",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewers: 40 ft total, 10 ft minimum on one side."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "240-16",
+        "url": "https://ecode360.com/print/SO0208?guid=11615653",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "240-16",
+        "url": "https://ecode360.com/print/SO0208?guid=11615653",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "240-16",
+        "url": "https://ecode360.com/print/SO0208?guid=11615653",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "240-16",
+        "url": "https://ecode360.com/print/SO0208?guid=11615653",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage.' The sum of all principal and accessory structures may not exceed it (240-99C(9)(b)), so it is read as building coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 40,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No detached garage or storage structure in the minimum required front yard."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft from side and rear lines for a structure of 900 sq ft or less, 15 ft if larger (240-99C(9)(a)[1])."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 20,
+            "setback_front_ft": 40,
+            "setback_rear_ft": 50,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.15,
+            "note": "Without public sewers: 43,560 sq ft, width 150 ft, side yards 20 ft each.",
+            "when": "Without public sewers",
+            "public_sewer": false,
+            "section": "240-16",
+            "accessory_setback_front_ft": 40
+          }
+        ],
+        "section": "240-16",
+        "url": "https://ecode360.com/print/SO0208?guid=11615653",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "240-23",
+        "url": "https://ecode360.com/print/SO0208?guid=11615744",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling with public sewers. Width 95 ft."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "240-23",
+        "url": "https://ecode360.com/print/SO0208?guid=11615744",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "240-23",
+        "url": "https://ecode360.com/print/SO0208?guid=11615744",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewers: 25 ft total, 10 ft minimum on one side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "240-23",
+        "url": "https://ecode360.com/print/SO0208?guid=11615744",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "240-23",
+        "url": "https://ecode360.com/print/SO0208?guid=11615744",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "240-23",
+        "url": "https://ecode360.com/print/SO0208?guid=11615744",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "240-23",
+        "url": "https://ecode360.com/print/SO0208?guid=11615744",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage.' The sum of all principal and accessory structures may not exceed it (240-99C(9)(b)), so it is read as building coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 35,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No detached garage or storage structure in the minimum required front yard."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft from side and rear lines for a structure of 900 sq ft or less, 15 ft if larger (240-99C(9)(a)[1])."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 15,
+            "setback_front_ft": 35,
+            "setback_rear_ft": 30,
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.25,
+            "note": "Without public sewers: 43,560 sq ft, width 150 ft, side yards 35 ft total, 15 ft minimum on one side.",
+            "when": "Without public sewers",
+            "public_sewer": false,
+            "section": "240-23",
+            "accessory_setback_front_ft": 35
+          }
+        ],
+        "section": "240-23",
+        "url": "https://ecode360.com/print/SO0208?guid=11615744",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10500,
+        "section": "240-30",
+        "url": "https://ecode360.com/print/SO0208?guid=11615828",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling with public sewers. Width 80 ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "240-30",
+        "url": "https://ecode360.com/print/SO0208?guid=11615828",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "240-30",
+        "url": "https://ecode360.com/print/SO0208?guid=11615828",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft each side."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "240-30",
+        "url": "https://ecode360.com/print/SO0208?guid=11615828",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "240-30",
+        "url": "https://ecode360.com/print/SO0208?guid=11615828",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "240-30",
+        "url": "https://ecode360.com/print/SO0208?guid=11615828",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "240-30",
+        "url": "https://ecode360.com/print/SO0208?guid=11615828",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage.' The sum of all principal and accessory structures may not exceed it (240-99C(9)(b)), so it is read as building coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 30,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No detached garage or storage structure in the minimum required front yard."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft from side and rear lines for a structure of 900 sq ft or less, 15 ft if larger (240-99C(9)(a)[1])."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "min_lot_sqft": 43500,
+            "setback_side_ft": 10,
+            "setback_front_ft": 30,
+            "setback_rear_ft": 35,
+            "principal_max_height_ft": 45,
+            "max_building_coverage": 0.35,
+            "note": "Without public sewers: 43,500 sq ft (as written), width 150 ft.",
+            "when": "Without public sewers",
+            "public_sewer": false,
+            "section": "240-30",
+            "accessory_setback_front_ft": 30
+          }
+        ],
+        "section": "240-30",
+        "url": "https://ecode360.com/print/SO0208?guid=11615828",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "240-37",
+        "url": "https://ecode360.com/print/SO0208?guid=11615903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling with public sewers. Width 60 ft. A two-family dwelling needs 12,000 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "240-37",
+        "url": "https://ecode360.com/print/SO0208?guid=11615903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "240-37",
+        "url": "https://ecode360.com/print/SO0208?guid=11615903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewers: 15 ft total, 5 ft minimum on one side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "240-37",
+        "url": "https://ecode360.com/print/SO0208?guid=11615903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "240-37",
+        "url": "https://ecode360.com/print/SO0208?guid=11615903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "240-37",
+        "url": "https://ecode360.com/print/SO0208?guid=11615903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "240-37",
+        "url": "https://ecode360.com/print/SO0208?guid=11615903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage.' The sum of all principal and accessory structures may not exceed it (240-99C(9)(b)), so it is read as building coverage."
+      },
+      "accessory_setback_front_ft": {
+        "value": 25,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "No detached garage or storage structure in the minimum required front yard."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "5 ft from side and rear lines regardless of floor area (240-99C(9)(a)[2])."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "240-99C(9)(a)",
+        "url": "https://ecode360.com/print/SO0208?guid=11617655",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 15,
+            "setback_front_ft": 25,
+            "setback_rear_ft": 30,
+            "principal_max_height_ft": 45,
+            "max_building_coverage": 0.35,
+            "note": "Without public sewers: 43,560 sq ft, width 150 ft, side yards 30 ft total, 15 ft minimum on one side.",
+            "when": "Without public sewers",
+            "public_sewer": false,
+            "section": "240-37",
+            "accessory_setback_front_ft": 25
+          }
+        ],
+        "section": "240-37",
+        "url": "https://ecode360.com/print/SO0208?guid=11615903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

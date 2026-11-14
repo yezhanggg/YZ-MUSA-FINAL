@@ -138,10 +138,10 @@
   "by_tier": [
    {
     "tier": "baseline",
-    "places": 1848,
-    "pop": 6838706,
-    "pop_share": 0.5236,
-    "housing_units": 3026282
+    "places": 1845,
+    "pop": 6782745,
+    "pop_share": 0.5194,
+    "housing_units": 3003831
    },
    {
     "tier": "verified",
@@ -152,17 +152,17 @@
    },
    {
     "tier": "drafted",
-    "places": 39,
-    "pop": 1159665,
-    "pop_share": 0.0888,
-    "housing_units": 478948
+    "places": 43,
+    "pop": 1234440,
+    "pop_share": 0.0945,
+    "housing_units": 508557
    },
    {
     "tier": "reported",
-    "places": 563,
-    "pop": 882479,
-    "pop_share": 0.0676,
-    "housing_units": 415954
+    "places": 562,
+    "pop": 863665,
+    "pop_share": 0.0661,
+    "housing_units": 408796
    },
    {
     "tier": "text_search",
@@ -175,31 +175,31 @@
   "by_status": [
    {
     "status": "unknown",
-    "places": 1901,
-    "pop": 6949489,
-    "pop_share": 0.5321,
-    "housing_units": 3078738
+    "places": 1898,
+    "pop": 6893528,
+    "pop_share": 0.5278,
+    "housing_units": 3056287
    },
    {
     "status": "limited",
-    "places": 87,
-    "pop": 3412047,
-    "pop_share": 0.2613,
-    "housing_units": 1467305
+    "places": 89,
+    "pop": 3449453,
+    "pop_share": 0.2641,
+    "housing_units": 1481821
    },
    {
     "status": "not_addressed",
-    "places": 39,
-    "pop": 1258792,
-    "pop_share": 0.0964,
-    "housing_units": 515202
+    "places": 41,
+    "pop": 1296161,
+    "pop_share": 0.0992,
+    "housing_units": 530295
    },
    {
     "status": "by_right",
-    "places": 15,
-    "pop": 686906,
-    "pop_share": 0.0526,
-    "housing_units": 318545
+    "places": 14,
+    "pop": 668092,
+    "pop_share": 0.0512,
+    "housing_units": 311387
    },
    {
     "status": "no_zoning",
@@ -250,8 +250,8 @@
    {
     "tier": "baseline",
     "status": "unknown",
-    "places": 1848,
-    "pop": 6838706
+    "places": 1845,
+    "pop": 6782745
    },
    {
     "tier": "drafted",
@@ -262,20 +262,20 @@
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 26,
-    "pop": 661704
+    "places": 28,
+    "pop": 699110
    },
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 8,
-    "pop": 268551
+    "places": 10,
+    "pop": 305920
    },
    {
     "tier": "reported",
     "status": "by_right",
-    "places": 6,
-    "pop": 39529
+    "places": 5,
+    "pop": 20715
    },
    {
     "tier": "reported",
@@ -359,6 +359,14 @@
    "kept": "verified limited, class by_right (pa_chester_west_chester)",
    "other": "limited, class conversion_only (chesco_missingmiddle_2023, 2023-01)",
    "note": "conversion of historic carriage houses only, several districts (inventory dated 2023-01)"
+  },
+  {
+   "geoid": "4207121344",
+   "name": "East Lampeter township",
+   "kind": "rule_file_vs_inventory",
+   "kept": "drafted limited (pa_lancaster_east_lampeter)",
+   "other": "by_right (berkeley_zrt_2026, 2026-02-28)",
+   "note": "by right in every district allowing residential; 1 off-street parking space (inventory dated 2026-02-28)"
   },
   {
    "geoid": "4210160000",

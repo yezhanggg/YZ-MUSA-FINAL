@@ -1062,6 +1062,34 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-05-20",
         "note": "Zoning: Chapter 405 Zoning (Ord. No. 1393, 1988). ADU text: 'Accessory dwelling unit' (405-1913, Ord. No. 2018-1907): by right, attached to or inside a single-family detached home, parents or grandparents of the household only, at most two people, owner-occupied, no rent, deed restriction, annual license, one more parking space. 2026 zoning amendments (Residential B and C, TOD) not yet codified. Read in the browser on eCode360 (LA0393).",
     },
+    "4207121344": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/48621783",
+        "plain_fetch": False,
+        "current_through": "2025-12-15",
+        "note": "Zoning: Chapter 375 Zoning (East Lampeter Zoning Ordinance of 2016, Ord. No. 323). ADU text: 'Apartment as an accessory use' (375-2020, 375-23070): by right with a single-family detached dwelling in R-1, R-2, R-3, MU, BH, VG, VC and VR, one per lot, for rent or lease, no size cap. ECHO housing for a relative (375-23240) by right also in AG, up to 2,000 sq ft. Read in the browser on eCode360 (EA2320).",
+    },
+    "4205530944": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11174931",
+        "plain_fetch": False,
+        "current_through": "2026-09-08",
+        "note": "Zoning: Chapter 105 Zoning (Ord. No. 3-1998). No ADU text. Conversion of an existing single-family detached dwelling to a two-family dwelling by right in AR, R-1 and R-2 (105-6A(7), 105-7A(10), 105-8A(7)). Read in the browser on eCode360 (GR1759).",
+    },
+    "4200372160": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11615243",
+        "plain_fetch": False,
+        "current_through": "2026-01-14",
+        "note": "Zoning: Chapter 240 Zoning. No ADU text. Two-family dwellings by right in R-4 (240-36). Ord. No. 4-2026 (zoning) not yet codified. Read in the browser on eCode360 (SO0208).",
+    },
+    "4207141224": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/13005392",
+        "plain_fetch": False,
+        "current_through": "2022-11-14",
+        "note": "Zoning: Chapter 280 Zoning (Ord. No. 2012-04). ADU text: 'Accessory dwelling unit' (280-201, 280-402A, 280-1502): by right in R-1 only, at most 40% of the house, one per lot, owner lives in either unit, lot meets the single-family requirements. Ord. No. 2026-05 (zoning) not yet codified. Read in the browser on eCode360 (LA1280; LA3847 is Lancaster Township, Butler County).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1078,6 +1106,7 @@ FIXED_BATCH.update(
 FIXED_BATCH.update(
     {g: 18 for g in ("4209184624", "4201754192", "4202979480", "4207181168", "4213383432", "4209141432")}
 )
+FIXED_BATCH.update({g: 19 for g in ("4207121344", "4205530944", "4200372160", "4207141224")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1130,6 +1159,12 @@ EXTRAS = {
     "4207181168": "Code 340-67 ECHO housing",
     "4213383432": "batch 18 by population. Code Chapter 150 has no ADU text",
     "4209141432": "Code 405-1913 accessory dwelling units, family only",
+    # Batch 19 (2026-11-14): the next towns by population without a rule file. West Mifflin was skipped (Table of
+    # Uses and dimension tables only in PDF attachments).
+    "4207121344": "Code 375-23070 apartment as an accessory use and 375-23240 ECHO housing",
+    "4205530944": "batch 19 by population. Code Chapter 105 has no ADU text",
+    "4200372160": "batch 19 by population. Code Chapter 240 has no ADU text",
+    "4207141224": "Code 280-1502 accessory dwelling unit (R-1)",
 }
 
 if __name__ == "__main__":

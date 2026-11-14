@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 105,
-      "population": 5210239,
-      "share_of_pa": 0.4007
+      "towns_beyond_the_two_cities": 109,
+      "population": 5283451,
+      "share_of_pa": 0.4063
     }
   ],
   "towns": [
@@ -2618,6 +2618,102 @@
         "named as a town with an ADU ordinance (Code 405-1913 accessory dwelling units, family only)"
       ],
       "status_note": "Open: Ord. 2012 (Residential B and C amendments, PDF, not read; listed as adopted Nov 19, 2026 though titled 8.19.2026) rewrites the B and C tables and the conversion row; Ord. 2013 (TOD) not read; whether the ADU counts as a dwelling unit for lot area per unit; whether 405-901's 7,500 sq ft reaches a PO-B conversion; LPO yards come from the abutting residential district; commercial, business, industrial and other overlay use lists not read."
+    },
+    {
+      "geoid": "4207121344",
+      "geoid_aliases": [],
+      "name": "East Lampeter township",
+      "county": "Lancaster",
+      "type": "township",
+      "population": 17776,
+      "population_with_aliases": 17776,
+      "housing_units": 7158,
+      "pop_rank": 125,
+      "file": "pa_lancaster_east_lampeter",
+      "batch": 19,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/48621783",
+      "plain_fetch": false,
+      "code_current_through": "2025-12-15",
+      "code_note": "Zoning: Chapter 375 Zoning (East Lampeter Zoning Ordinance of 2016, Ord. No. 323). ADU text: 'Apartment as an accessory use' (375-2020, 375-23070): by right with a single-family detached dwelling in R-1, R-2, R-3, MU, BH, VG, VC and VR, one per lot, for rent or lease, no size cap. ECHO housing for a relative (375-23240) by right also in AG, up to 2,000 sq ft. Read in the browser on eCode360 (EA2320).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 375-23070 apartment as an accessory use and 375-23240 ECHO housing)"
+      ],
+      "status_note": "First reading, awaiting independent review. Open points: whether an apartment inside or attached to the house is allowed (the single-family detached definition says one dwelling unit, 375-2020), whether a semidetached house qualifies in R-2 and R-3, and whether the 'per dwelling unit' lot area in BH, VG, VC and VR counts the apartment."
+    },
+    {
+      "geoid": "4205530944",
+      "geoid_aliases": [],
+      "name": "Greene township",
+      "county": "Franklin",
+      "type": "township",
+      "population": 18436,
+      "population_with_aliases": 18436,
+      "housing_units": 8003,
+      "pop_rank": 116,
+      "file": "pa_franklin_greene",
+      "batch": 19,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11174931",
+      "plain_fetch": false,
+      "code_current_through": "2026-09-08",
+      "code_note": "Zoning: Chapter 105 Zoning (Ord. No. 3-1998). No ADU text. Conversion of an existing single-family detached dwelling to a two-family dwelling by right in AR, R-1 and R-2 (105-6A(7), 105-7A(10), 105-8A(7)). Read in the browser on eCode360 (GR1759).",
+      "why": [
+        "added as batch 19 by population. Code Chapter 105 has no ADU text"
+      ],
+      "status_note": "First reading, awaiting independent review. No ADU text. Open point: the conversion to a two-family dwelling (by right in AR, R-1, R-2) is the only way to add a unit, a separate building needs a use variance."
+    },
+    {
+      "geoid": "4200372160",
+      "geoid_aliases": [],
+      "name": "South Fayette township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 18358,
+      "population_with_aliases": 18358,
+      "housing_units": 7090,
+      "pop_rank": 119,
+      "file": "pa_allegheny_south_fayette",
+      "batch": 19,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11615243",
+      "plain_fetch": false,
+      "code_current_through": "2026-01-14",
+      "code_note": "Zoning: Chapter 240 Zoning. No ADU text. Two-family dwellings by right in R-4 (240-36). Ord. No. 4-2026 (zoning) not yet codified. Read in the browser on eCode360 (SO0208).",
+      "why": [
+        "added as batch 19 by population. Code Chapter 240 has no ADU text"
+      ],
+      "status_note": "First reading, awaiting independent review. No ADU text. Open point: Ord. No. 4-2026 (zoning amendment, 2026-09-09) not read (PDF). Parking article and the commercial and industrial use lists not read."
+    },
+    {
+      "geoid": "4207141224",
+      "geoid_aliases": [],
+      "name": "Lancaster township",
+      "county": "Lancaster",
+      "type": "township",
+      "population": 18642,
+      "population_with_aliases": 18642,
+      "housing_units": 7358,
+      "pop_rank": 112,
+      "file": "pa_lancaster_lancaster_township",
+      "batch": 19,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/13005392",
+      "plain_fetch": false,
+      "code_current_through": "2022-11-14",
+      "code_note": "Zoning: Chapter 280 Zoning (Ord. No. 2012-04). ADU text: 'Accessory dwelling unit' (280-201, 280-402A, 280-1502): by right in R-1 only, at most 40% of the house, one per lot, owner lives in either unit, lot meets the single-family requirements. Ord. No. 2026-05 (zoning) not yet codified. Read in the browser on eCode360 (LA1280; LA3847 is Lancaster Township, Butler County).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 280-1502 accessory dwelling unit (R-1))"
+      ],
+      "status_note": "First reading, awaiting independent review. Open points: Ord. No. 2026-05 (zoning amendment, 2026-09-14) not read (PDF) and the online code is current only to 2022-11-14. Whether the ADU needs its own 'per dwelling unit' lot area in R-1 (280-1502C says 'all other' requirements)."
     }
   ]
 }

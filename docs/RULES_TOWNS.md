@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-107 towns in the index, 107 with a rule file (Philadelphia and Pittsburgh included). Verified 69, drafted 38, in progress 0, todo 0.
+111 towns in the index, 111 with a rule file (Philadelphia and Pittsburgh included). Verified 69, drafted 42, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -120,6 +120,10 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Warwick township | Lancaster | drafted | ECHO housing (elder cottage) | family only | special exception | ADU rule only in A. occupancy (340-67C, D). family only (340-67C). house type detached. other ways: Two-family conversion of a large existing house (special exception, 340-103, 340-11C(7)). Conversion apartment in an existing house (conditional use, 340-65). Accessory building apartment in a Village Overlay development (ADU under another listing, conditional use, 340-23E(9), J(1) notes 2 and 4, J(3)(a), N(1), O(3)(c), 340-65). Temporary farm employee housing (one mobile home per farm) (special exception, 340-101, 340-11C). Historic conversion apartment (special exception, 340-61A, J) | 900 | no | 1 | 2026-11-14 |
 | West Manchester township | York | verified | none | not in the code | variance | other ways (not ADUs): Two-family conversion of a detached single-family dwelling (special exception, 150-85D, 150-354). Duplex dwelling in R-6 (by right, 150-5, 150-75B, 150-78, 150-263). Duplex dwelling in R-4 (by right, 150-60A, 150-63, 150-263). Duplex dwelling in the MU Zone (by right with land development, 150-116.2A(1), 150-116.4A, B, C, E). Two-family dwelling in a Planned Residential Development (by right with land development, 150-228.21) | not confirmed | not confirmed | not confirmed | 2026-11-14 |
 | Lansdale borough | Montgomery | drafted | accessory dwelling unit | family only | by right | occupancy (405-1913G). family only (405-1913G). owner on site (405-1913F). house type detached. A 9,000 sq ft per unit. B 5,600 sq ft per unit. C 4,500 sq ft per unit. other ways (not ADUs): Two-family duplex dwelling in Class B or C Residential (by right, 405-502, 405-504, 405-602, 405-604). Conversion of a single-family dwelling to apartment conversion units in Professional Office District B (by right, 405-900E, 405-901, 405-903, 405-905). Two-family duplex dwelling in the Residential Apartment District (by right, 405-700A(3), 405-701 to 405-707) | none set | yes | 1 | 2026-11-14 |
+| East Lampeter township | Lancaster | drafted | apartment as an accessory use | by right | by right (code text conflicts for internal, attached) | ADU rule only in R-1, R-2, R-3, MU, BH, VG, VC, VR. occupancy (375-2020 (Dwelling (8), Family)). house type detached. BH 7,500 sq ft per unit. VG 7,500 sq ft per unit. VC 7,500 sq ft per unit. VR 7,500 sq ft per unit. other gate (375-3020B(3), 375-23240). other ways: ECHO housing as an accessory use (ADU under another listing, by right, 375-2020 (Dwelling (7)), 375-23240, Table 375-22160.1). Single-family attached dwelling as a second dwelling on a farm (special exception, 375-3020C(11), 375-23780). Historic resource adapted for townhouses or multifamily dwellings (conditional use, 375-21050C, E(1), E(2)(k)). 3 parking spaces in total | none set (2,000 in AG) | no | 1 | 2026-11-14 |
+| Greene township | Franklin | drafted | none | not in the code | variance | other ways (not ADUs): Conversion of an existing single-family detached dwelling to a two-family dwelling (AR) (by right, 105-6A(7), 105-16). Conversion of an existing single-family detached dwelling to a two-family dwelling (R-1) (by right, 105-7A(10), 105-17A). Conversion of an existing single-family detached dwelling to a two-family dwelling (R-2) (by right, 105-8A(7), 105-18A) | not confirmed | not confirmed | not confirmed | 2026-11-14 |
+| South Fayette township | Allegheny | drafted | none | not in the code | variance | other ways (not ADUs): Two-family dwelling in R-4 (by right, 240-36A(1)(c), 240-37) | not confirmed | not confirmed | not confirmed | 2026-11-14 |
+| Lancaster township | Lancaster | drafted | accessory dwelling unit | by right | by right | ADU rule only in R-1. occupancy (280-1502E, 280-201 (family)). owner on site (280-1502D). house type detached. R-1 15,000 sq ft per unit. other ways (not ADUs): Two-family dwelling in R-2 or R-3 (by right, 280-502M, 280-505, 280-602N, 280-605). Conversion of a building that existed before July 17, 1972 into a multifamily dwelling (special exception, 280-403C, 280-503B, 280-1605) | 40% of the house | yes | 1 | 2026-11-14 |
 
 ## Towns still to write
 
@@ -136,4 +140,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 105 | 40.1% |
+| 109 | 40.6% |
