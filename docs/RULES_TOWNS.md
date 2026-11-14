@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-111 towns in the index, 111 with a rule file (Philadelphia and Pittsburgh included). Verified 73, drafted 38, in progress 0, todo 0.
+113 towns in the index, 113 with a rule file (Philadelphia and Pittsburgh included). Verified 73, drafted 40, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -124,6 +124,8 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Greene township | Franklin | verified | none | not in the code | variance | other ways (not ADUs): Conversion of an existing single-family detached dwelling to a two-family dwelling (AR) (by right, 105-6A(7), 105-16). Conversion of an existing single-family detached dwelling to a two-family dwelling (R-1) (by right, 105-7A(10), 105-17A). Conversion of an existing single-family detached dwelling to a two-family dwelling (R-2) (by right, 105-8A(7), 105-18A). Conversion of an existing single-family detached dwelling into a two-family detached dwelling (CC) (by right, 105-9A(5), 105-18A) | not confirmed | not confirmed | not confirmed | 2026-11-14 |
 | South Fayette township | Allegheny | verified | none | not in the code | variance (unlisted-use path only in C-1, C-2, PED, I-P, I-1) | other ways (not ADUs): Two-family dwelling in R-4 (by right, 240-36A(1)(c), 240-37). Two-family dwelling in a neighborhood design development (ND) (by right with land development, 240-76.18, 240-76.19A(1)(a)[3], (d), 240-76.20) | not confirmed | not confirmed | not confirmed | 2026-11-14 |
 | Lancaster township | Lancaster | verified | accessory dwelling unit | by right | by right | ADU rule only in R-1. occupancy (280-1502E, 280-201 (family)). owner on site (280-1502D). house type detached. R-1 15,000 sq ft per unit. other ways (not ADUs): Two-family dwelling in R-2 or R-3 (by right, 280-502M, 280-505, 280-602N, 280-605). Conversion of a building that existed before July 17, 1972 into a multifamily dwelling (special exception, 280-403C, 280-503B, 280-1605). Residential infill development (conditional use with land development, 280-404C, 280-504C, 280-604C, 280-1530). 3 parking spaces in total | 40% of the house | yes | 1 | 2026-11-14 |
+| Plymouth township | Montgomery | drafted | additional living quarters | family only | by right | occupancy (1910B(8)(a), (i)). family only (1910B(8)(a)). owner on site (1910B(8)(b)). house type detached. other ways (not ADUs): Conversion of a single-family dwelling into a dwelling for more families (special exception, 1912). Duplex dwelling in D Residential (by right, 800B, 802, 200 (dwelling 2)) | none set | yes | none set | 2026-11-14 |
+| Penn township | York | drafted | dwelling, conversion (additional dwelling unit for a family member) | family only | special exception | ADU rule only in R-10, R-15, R-22, R-40, RC, MU. occupancy (325-630A, C, 325-637C, D). family only (325-630A, 325-637C). owner on site (325-630B). house type detached. other ways (not ADUs): Two-family detached dwelling (duplex) in R-10 or Mixed Use (by right, 325-212, 325-635, 325-303). 3 parking spaces in total | not confirmed | yes | 1 | 2026-11-14 |
 
 ## Towns still to write
 
@@ -140,4 +142,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 109 | 40.6% |
+| 111 | 40.9% |

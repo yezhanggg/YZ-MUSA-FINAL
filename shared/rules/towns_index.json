@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 109,
-      "population": 5283451,
-      "share_of_pa": 0.4063
+      "towns_beyond_the_two_cities": 111,
+      "population": 5319194,
+      "share_of_pa": 0.4091
     }
   ],
   "towns": [
@@ -2714,6 +2714,54 @@
         "named as a town with an ADU ordinance (Code 280-1502 accessory dwelling unit (R-1))"
       ],
       "status_note": "Reviewed and fixed 2026-11-14. For a later check: Ord. No. 2026-05 (zoning, Industrial District campgrounds) and 2024-01 (NCM rezoning) not read (PDFs), and the online code is current only to 2022-11-14; whether the per dwelling unit lot area applies to the ADU in R-1; how the combined family cap treats a related household plus an unrelated tenant; the R-2 and R-3 public-sewer-only yards are an inference. Not read: LC, GC, I and S use lists, 280-1610, 280-1703, the residential infill development definition."
+    },
+    {
+      "geoid": "4209161664",
+      "geoid_aliases": [],
+      "name": "Plymouth township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 18256,
+      "population_with_aliases": 18256,
+      "housing_units": 7654,
+      "pop_rank": 121,
+      "file": "pa_montgomery_plymouth",
+      "batch": 20,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/26906730",
+      "plain_fetch": false,
+      "code_current_through": "2026-07-13",
+      "code_note": "Zoning: Appendix B Zoning (Ord. No. 342, 1960, as amended). ADU text: 'Additional living quarters (not a dwelling unit)' (1910B(8)): accessory to a single-family dwelling, immediate family only, inside or added to the house, owner-occupied, no rent, one-year renewable permit, recorded deed restriction, detached units prohibited. Conversion to more families by special exception (1912), duplexes by right in D. Read in the browser on eCode360 (PL1880).",
+      "why": [
+        "named as a town with an ADU ordinance (Code Appendix B 1910B(8) additional living quarters, family only)"
+      ],
+      "status_note": "Drafted 2026-11-14, awaiting independent review. Open points: whether the additional living quarters count as a second family for parking (1700A, 1 or 2 spaces); no size cap or count is written; RS and MUV permit single-family dwellings only indirectly. Not read: Commercial, Shopping Center, Office Laboratory, industrial, Limited Commercial, Open Space Recreation, Cluster Development Overlay, planned office park, mixed use planned development and business park use lists, Article XXI, 1801."
+    },
+    {
+      "geoid": "4213358888",
+      "geoid_aliases": [],
+      "name": "Penn township",
+      "county": "York",
+      "type": "township",
+      "population": 17487,
+      "population_with_aliases": 17487,
+      "housing_units": 7035,
+      "pop_rank": 128,
+      "file": "pa_york_penn",
+      "batch": 20,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/27440640",
+      "plain_fetch": false,
+      "code_current_through": "2026-04-20",
+      "code_note": "Zoning: Chapter 325 Zoning (Ord. No. 880, 11-17-2025). ADU text: 'Dwelling, conversion' (325-630): special exception in R-10, R-15, R-22, R-40, RC and MU, one added unit for a family member inside or added to the house, at most 450 sq ft and two people, owner-occupied, annual affidavit, one more parking space. ECHO elder cottage by special exception in the same zones (325-637, 300 to 900 sq ft, relative 60 or older or disabled). Read in the browser on eCode360 (PE0541).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 325-630 conversion dwelling for a family member and 325-637 ECHO)"
+      ],
+      "status_note": "Drafted 2026-11-14, awaiting independent review. Open points: the 450 sq ft cap has an exception for an existing dwelling that can become 'a slightly larger one bedroom unit' (325-630D); ECHO is stored as the detached and existing-building forms of the same family-only special exception; R-10 lot width printed as '0.100'. Not read: 325-635 (duplex standards), Article V special exception standards, Article IV, the family definition, the full lot coverage definition."
     }
   ]
 }

@@ -1089,6 +1089,19 @@ HOSTS: dict[str, dict[str, Any]] = {
         "plain_fetch": False,
         "current_through": "2022-11-14",
         "note": "Zoning: Chapter 280 Zoning (Ord. No. 2012-04). ADU text: 'Accessory dwelling unit' (280-201, 280-402A, 280-1502): by right in R-1 only, at most 40% of the house, one per lot, owner lives in either unit, lot meets the single-family requirements, one more parking space. Ord. No. 2026-05 (zoning, Industrial District campgrounds) not yet codified. Read in the browser on eCode360 (LA1280; LA3847 is Lancaster Township, Butler County).",
+    },    "4209161664": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/26906730",
+        "plain_fetch": False,
+        "current_through": "2026-07-13",
+        "note": "Zoning: Appendix B Zoning (Ord. No. 342, 1960, as amended). ADU text: 'Additional living quarters (not a dwelling unit)' (1910B(8)): accessory to a single-family dwelling, immediate family only, inside or added to the house, owner-occupied, no rent, one-year renewable permit, recorded deed restriction, detached units prohibited. Conversion to more families by special exception (1912), duplexes by right in D. Read in the browser on eCode360 (PL1880).",
+    },
+    "4213358888": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/27440640",
+        "plain_fetch": False,
+        "current_through": "2026-04-20",
+        "note": "Zoning: Chapter 325 Zoning (Ord. No. 880, 11-17-2025). ADU text: 'Dwelling, conversion' (325-630): special exception in R-10, R-15, R-22, R-40, RC and MU, one added unit for a family member inside or added to the house, at most 450 sq ft and two people, owner-occupied, annual affidavit, one more parking space. ECHO elder cottage by special exception in the same zones (325-637, 300 to 900 sq ft, relative 60 or older or disabled). Read in the browser on eCode360 (PE0541).",
     },
 }
 
@@ -1107,6 +1120,7 @@ FIXED_BATCH.update(
     {g: 18 for g in ("4209184624", "4201754192", "4202979480", "4207181168", "4213383432", "4209141432")}
 )
 FIXED_BATCH.update({g: 19 for g in ("4207121344", "4205530944", "4200372160", "4207141224")})
+FIXED_BATCH.update({g: 20 for g in ("4209161664", "4213358888")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1165,6 +1179,9 @@ EXTRAS = {
     "4205530944": "batch 19 by population. Code Chapter 105 has no ADU text",
     "4200372160": "batch 19 by population. Code Chapter 240 has no ADU text",
     "4207141224": "Code 280-1502 accessory dwelling unit (R-1)",
+    # Batch 20 (2026-11-14): the next towns by population without a rule file.
+    "4209161664": "Code Appendix B 1910B(8) additional living quarters, family only",
+    "4213358888": "Code 325-630 conversion dwelling for a family member and 325-637 ECHO",
 }
 
 if __name__ == "__main__":
