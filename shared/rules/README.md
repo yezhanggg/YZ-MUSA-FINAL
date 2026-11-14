@@ -71,6 +71,10 @@ The result has the same keys every time. Every value that is not null has a cita
 | `historic_district`, `historic_contributing` | Inside a historic district, and rated contributing by the Historical Commission. A district alone does not open the historic path |
 | `has_alley` | Picks the rear setback on an alley. Also decides whether a unit over an existing garage needs an exception in Pittsburgh |
 | `has_accessory_building` | Whether a garage conversion is possible |
+| `slope_class` | `ordinary`, `moderate` or `steep` from the lot's terrain block (`terrain.slope_class`). Says the steep slope lines of `site.steep_slopes` in the two cities |
+| `steep_slope_area`, `landslide_area`, `undermined_area` | The lot is in a mapped steep slope area (Pittsburgh 25 percent slopes layer, Philadelphia Steep Slope Protection Area: record `zoning.flags.steep_slope`), the Pittsburgh landslide-prone area (`zoning.flags.landslide`), or the Pittsburgh undermined area (not in the lot data yet) |
+
+Steep slope, landslide and undermined area rules (Pittsburgh 915.02, 906.04, 906.05, 906.08; Philadelphia 14-704(2)) are added to `reasons` as conditions or questions, never as a bar, and only when one of these facts says them. A lot without them reads as before. The measured class comes from a 1 m elevation model, not a survey, and the code's own trigger may be a mapped area.
 
 The older single `historic` flag still works. It is read as "in a historic district", so it does not open the historic path alone.
 

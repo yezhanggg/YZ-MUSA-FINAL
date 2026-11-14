@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { TOOLS } from '../../../agent/schema';
 import { makeExecutors, runTool } from './executors';
-import { RULE_PLACES, RULE_TOPICS, findTown, getRuleText, listRulePlaces, rulePlaceOf, townIndex, type TownEntry, type TownSource } from './ruleText';
+import { RULE_PLACES, RULE_TOPICS, findTown, getRuleText, listRulePlaces, rulePlaceOf, siteLines, siteRowMet, townIndex, type TownEntry, type TownSource } from './ruleText';
 
 const RULES = resolve(import.meta.dirname, '../../../shared/rules');
 const file = (name: string) => JSON.parse(readFileSync(resolve(RULES, `${name}.json`), 'utf8'));
@@ -659,5 +659,68 @@ describe('get_rule_text pass 8', () => {
     const h = ud.conditions.filter((c: Any6) => c.kind === 'height').map((c: Any6) => c.condition);
     expect(h).toContain('A detached unit of 1 story may be up to 13 ft. To the peak.');
     expect(h.some((t: string) => t.startsWith('A detached unit of 2 stories may be up to 22 ft'))).toBe(true);
+  });
+});
+
+// Steep slope rules (site.steep_slopes): the same lines as pipeline/rules.py _site_lines, said only on a lot fact.
+describe('steep slope rules', () => {
+  type Line = { id: string; kind: string; line: string; section: string; url: string; checked_on: string; quote: string };
+  type SlopeOut = Out & { lot_lines?: Line[] };
+  const pgh = file('pittsburgh');
+  const phl = file('philadelphia');
+  const GROUND = ['detached_new', 'garage_conversion', 'over_garage', 'internal', 'attached'];
+  const ids = (lines: { id?: unknown }[]) => lines.map((l) => l.id);
+
+  it('903 Woods Run Ave: grading, the steep slope overlay question and the landslide overlay', () => {
+    const lines = siteLines(pgh, { slope_class: 'moderate', steep_slope_area: true, landslide_area: true }, GROUND);
+    expect(ids(lines)).toEqual(['grading_all_slopes', 'ss_o_mapped', 'ls_o']);
+    expect(lines[0].line).toMatch(/not a survey/);
+    expect(lines[0].line).toMatch(/915\.02\.A\.1\.c/);
+    expect(lines[1].line).toMatch(/Ask the Zoning Administrator/);
+    expect(lines[2].section).toBe('906.04.B.1, B.2, B.3');
+  });
+
+  it('says nothing without a lot fact, and never from a false or unknown area alone', () => {
+    for (const f of [{}, { slope_class: 'ordinary' }, { steep_slope_area: false }, { landslide_area: false, steep_slope_area: null }]) {
+      expect(siteLines(pgh, f, GROUND)).toEqual([]);
+      expect(siteLines(phl, f, GROUND)).toEqual([]);
+    }
+    expect(siteRowMet({ slope_classes: null, area: 'steep_slope_area', area_is: [false, null] }, { steep_slope_area: false })).toBe(false);
+  });
+
+  it('a measured steep spot outside the mapped area is a question, not a bar', () => {
+    expect(ids(siteLines(pgh, { slope_class: 'steep', steep_slope_area: false }, GROUND))).toEqual(['grading_all_slopes', 'ss_o_measured']);
+    expect(ids(siteLines(phl, { slope_class: 'moderate', steep_slope_area: false }, GROUND))).toEqual(['sspa_outside']);
+    expect(ids(siteLines(phl, { slope_class: 'steep' }, GROUND))).toEqual(['sspa_unknown']);
+    for (const r of [...pgh.site.steep_slopes.value, ...phl.site.steep_slopes.value]) expect(['condition', 'ask']).toContain(r.kind);
+  });
+
+  it('Philadelphia: the mapped area, and only for units that move earth', () => {
+    expect(ids(siteLines(phl, { steep_slope_area: true, slope_class: 'steep' }, GROUND))).toEqual(['sspa', 'sspa_steep_spot']);
+    expect(siteLines(phl, { steep_slope_area: true, slope_class: 'steep' }, ['garage_conversion', 'internal'])).toEqual([]);
+  });
+
+  it('the undermined area row waits for a flag the lot files do not carry', () => {
+    const um = pgh.site.steep_slopes.value.find((r: { id: string }) => r.id === 'um_o');
+    expect(um.area_on_lot_data).toBe(false);
+    expect(ids(siteLines(pgh, { undermined_area: true }, GROUND))).toEqual(['um_o']);
+  });
+
+  it('get_rule_text topic steep_slopes returns the cited rows and the lot lines', async () => {
+    expect(RULE_TOPICS).toContain('steep_slopes');
+    const bare = (await getRuleText({ place: 'pittsburgh', topic: 'steep_slopes' })) as SlopeOut;
+    expect(bare.rules?.[0].key).toBe('site.steep_slopes');
+    expect(bare.lot_lines).toBeUndefined();
+    const lot = (await getRuleText({ place: 'pittsburgh', topic: 'steep_slopes', slope_class: 'moderate', steep_slope_area: true, landslide_area: true, types_allowed: GROUND })) as SlopeOut;
+    expect(ids(lot.lot_lines ?? [])).toEqual(['grading_all_slopes', 'ss_o_mapped', 'ls_o']);
+    expect(lot.lot_lines?.[0].checked_on).toBe('2026-11-14');
+    const town = (await getRuleText({ place: 'bill250042', topic: 'steep_slopes' })) as SlopeOut;
+    expect(town.message).toMatch(/nothing on steep_slopes/);
+  });
+
+  it('matches the Python resolver sentences word for word', () => {
+    for (const r of [...pgh.site.steep_slopes.value, ...phl.site.steep_slopes.value]) expect(r.text).not.toMatch(/\bAI\b/);
+    const lines = siteLines(phl, { steep_slope_area: true }, GROUND);
+    expect(lines[0].line).toBe(phl.site.steep_slopes.value[0].text);
   });
 });

@@ -390,6 +390,125 @@
       "note": "Not reviewed."
     }
   },
+  "site": {
+    "steep_slopes": {
+      "value": [
+        {
+          "id": "sspa",
+          "kind": "condition",
+          "trigger": "mapped_area",
+          "slope_classes": null,
+          "area": "steep_slope_area",
+          "area_is": [
+            true
+          ],
+          "forms": [
+            "detached_new",
+            "attached"
+          ],
+          "text": "City maps put a quarter or more of this lot in the Steep Slope Protection Area. Unless the lot has no slopes of 15% or more, or all digging and clearing stays at 1,400 sq ft or less, the City Planning Commission reviews the plan before a zoning permit. On slopes of 15% to 25% digging and clearing need an earth moving plan by a Pennsylvania licensed engineer, and on 25% or more none is allowed (14-704(2))",
+          "section": "14-704(2)(a) to (e)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293369",
+          "verified_on": "2026-11-14",
+          "quote": "On those portions of the lot where the slope of land is twenty-five percent (25%) or greater, no site clearing or earth moving activity is permitted.",
+          "applies_by": "The mapped Steep Slope Protection Area on the Steep Slopes Map kept by the City Planning Commission (14-704(2)(a)), then the slopes on the lot.",
+          "exempt": "Lots without slopes of 15 percent or more; development, earth moving or site clearing of 1,400 sq ft or less in all, outside the street; stream restoration projects (14-704(2)(b)).",
+          "adds": "Prerequisite City Planning Commission approval before the zoning permit (14-704(2)(c)(.1), 14-301(3)(c)(.1)(.j)); a topographic survey by a licensed engineer or surveyor if the Commission asks (c)(.2); an earth moving plan by a PA licensed professional engineer, approved by the Commission, kept on site (e).",
+          "area_on_lot_data": true,
+          "area_layer": "City of Philadelphia Zoning_SteepSlopeProtectArea_r, record zoning.flags.steep_slope (a quarter or more of the lot inside)",
+          "note": "A small detached unit may stay under the 1,400 sq ft disturbance exception. The digging for the foundation, path and utilities counts."
+        },
+        {
+          "id": "sspa_steep_spot",
+          "kind": "ask",
+          "trigger": "measured_slope_in_mapped_area",
+          "slope_classes": [
+            "steep"
+          ],
+          "area": "steep_slope_area",
+          "area_is": [
+            true
+          ],
+          "forms": [
+            "detached_new",
+            "attached"
+          ],
+          "text": "Our ground measure reads the spot for the ADU at 25% or more (a 1 m elevation model, not a survey). Inside the Steep Slope Protection Area no clearing or digging is allowed on such ground, and the Commission may ask for a topographic survey to settle where it is (14-704(2)(c)(.2), (d)(.2)). Ask the City Planning Commission",
+          "section": "14-704(2)(c)(.2), (d)(.2)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293369",
+          "verified_on": "2026-11-14",
+          "quote": "On those portions of the lot where the slope of land is twenty-five percent (25%) or greater, no site clearing or earth moving activity is permitted.",
+          "applies_by": "Measured slope inside the mapped area.",
+          "exempt": "The 1,400 sq ft disturbance exception (14-704(2)(b)(.2)) is read to apply before (d). Ask.",
+          "adds": "A topographic survey of the 15 to 25 percent and 25 percent or more slopes if the Commission asks.",
+          "area_on_lot_data": true,
+          "area_layer": "City of Philadelphia Zoning_SteepSlopeProtectArea_r, record zoning.flags.steep_slope",
+          "note": "Never a bar from our measure: only a survey settles where the 25 percent ground is."
+        },
+        {
+          "id": "sspa_outside",
+          "kind": "ask",
+          "trigger": "measured_slope_outside_mapped_area",
+          "slope_classes": [
+            "moderate",
+            "steep"
+          ],
+          "area": "steep_slope_area",
+          "area_is": [
+            false
+          ],
+          "forms": [
+            "detached_new",
+            "attached"
+          ],
+          "text": "Our ground measure reads this spot as sloped, 15% or more (a 1 m elevation model, not a survey). The city steep slope rules apply only inside the mapped Steep Slope Protection Area, and this lot is not flagged in it (a lot is flagged when a quarter or more of it is inside). If part of the lot is in it, 14-704(2) applies. Check the Steep Slopes Map with the City Planning Commission (14-704(2)(a))",
+          "section": "14-704(2)(a)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293369",
+          "verified_on": "2026-11-14",
+          "quote": "within the \u201cSteep Slope Protection Area\u201d, as shown on the City of Philadelphia Steep Slopes Map maintained by the Commission.",
+          "applies_by": "The mapped area only.",
+          "exempt": null,
+          "adds": null,
+          "area_on_lot_data": true,
+          "area_layer": "City of Philadelphia Zoning_SteepSlopeProtectArea_r, record zoning.flags.steep_slope",
+          "note": null
+        },
+        {
+          "id": "sspa_unknown",
+          "kind": "ask",
+          "trigger": "measured_slope_mapped_area_unknown",
+          "slope_classes": [
+            "moderate",
+            "steep"
+          ],
+          "area": "steep_slope_area",
+          "area_is": [
+            null
+          ],
+          "forms": [
+            "detached_new",
+            "attached"
+          ],
+          "text": "Our ground measure reads this spot as sloped, 15% or more (a 1 m elevation model, not a survey). Whether the lot is in the mapped Steep Slope Protection Area is not on file. If it is, the City Planning Commission reviews the plan before a zoning permit, and on 25% or more no clearing or digging is allowed (14-704(2)). Check the Steep Slopes Map",
+          "section": "14-704(2)(a), (c), (d)",
+          "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293369",
+          "verified_on": "2026-11-14",
+          "quote": "These steep slope protection requirements shall apply to development, earth moving activity, and site clearing within the \u201cSteep Slope Protection Area\u201d",
+          "applies_by": "The mapped area only.",
+          "exempt": null,
+          "adds": null,
+          "area_on_lot_data": true,
+          "area_layer": "City of Philadelphia Zoning_SteepSlopeProtectArea_r",
+          "note": null
+        }
+      ],
+      "section": "14-704(2)",
+      "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293369",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Read on American Legal (2026 code, current) on 2026-11-14. Steep slope protection applies only inside the mapped Steep Slope Protection Area (14-704(2)(a)), with limits by the slope on the lot: 15 to 25 percent needs an engineer's earth moving plan, 25 percent or more allows no clearing or earth moving. Exempt: lots without 15 percent slopes and disturbance of 1,400 sq ft or less. The Commission reviews before the zoning permit. Said as a condition or a question, never as a bar."
+    }
+  },
   "districts": {
     "RSD-1": {
       "min_lot_sqft": {

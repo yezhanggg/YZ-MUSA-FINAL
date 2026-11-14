@@ -521,6 +521,16 @@
         }
       }
     },
+    "site": {
+      "type": "object",
+      "description": "Site rules that come from the ground, not from the ADU text. Read only for Philadelphia and Pittsburgh.",
+      "additionalProperties": false,
+      "properties": {
+        "steep_slopes": {
+          "$ref": "#/$defs/leaf_site_rows"
+        }
+      }
+    },
     "statewide": {
       "type": "object",
       "description": "pa_statewide.json only. What applies in every Pennsylvania town, one cited text item per key. value is a short plain statement.",
@@ -3195,6 +3205,215 @@
             "string",
             "null"
           ]
+        }
+      }
+    },
+    "leaf_site_rows": {
+      "type": "object",
+      "description": "Site rules tied to the ground (steep slope, landslide, undermined areas). Each item is said to the owner as a condition or a question, never as a bar, when the lot's measured slope class or a mapped area it carries meets the row.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "kind",
+              "trigger",
+              "text",
+              "section",
+              "url",
+              "quote"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "condition",
+                  "ask"
+                ],
+                "description": "condition: a rule the owner must meet. ask: a question for the zoning office. Never a bar."
+              },
+              "trigger": {
+                "enum": [
+                  "measured_slope",
+                  "mapped_area",
+                  "measured_slope_in_mapped_area",
+                  "measured_slope_outside_mapped_area",
+                  "measured_slope_mapped_area_unknown"
+                ],
+                "description": "What says the row. measured_slope: the lot's slope_class from the terrain block. mapped_area: a mapped area flag the lot carries (area)."
+              },
+              "slope_classes": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "enum": [
+                    "ordinary",
+                    "moderate",
+                    "steep"
+                  ]
+                },
+                "description": "The row is said when the lot's measured slope_class is one of these. null: slope does not matter."
+              },
+              "area": {
+                "enum": [
+                  "steep_slope_area",
+                  "landslide_area",
+                  "undermined_area",
+                  null
+                ],
+                "description": "The resolver lot input for the mapped area. null: no mapped area."
+              },
+              "area_is": {
+                "type": "array",
+                "items": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "description": "Values of the area input that say the row (default [true]). [false] or [null] need slope_classes too."
+              },
+              "forms": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "detached_new",
+                    "garage_conversion",
+                    "over_garage",
+                    "internal",
+                    "attached"
+                  ]
+                },
+                "description": "Said only when one of these ADU forms is allowed on the lot (forms that put new building on the ground)."
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The owner sentence, with its sections in brackets."
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "verified_on": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A short verbatim quote of the code text."
+              },
+              "applies_by": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "How the code itself says where the rule applies (mapped area or measured slope)."
+              },
+              "exempt": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "adds": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The review, report or approval the rule adds."
+              },
+              "area_on_lot_data": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "description": "true when the lot records carry the mapped area this row reads."
+              },
+              "area_layer": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The public layer behind the area flag, or the one that would be needed."
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
         }
       }
     }

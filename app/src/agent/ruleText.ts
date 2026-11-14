@@ -36,6 +36,7 @@ const TOPICS = {
   unit_types: [['form', 'types_allowed']],
   coverage: [['coverage', '*']],
   utilities: [['utilities', '*']],
+  steep_slopes: [['site', 'steep_slopes']],
   status: [],
 } as const satisfies Record<string, readonly (readonly [string, string])[]>;
 export type RuleTopic = keyof typeof TOPICS;
@@ -59,7 +60,9 @@ export const RULE_TEXT_TOOL: ToolDef = {
     'Places: philadelphia, pittsburgh, any Pennsylvania town in list_rule_places (by name, "name, county" or 10 digit Census GEOID), ' +
     'the bills bill250042 (Philadelphia), hb2186 and sb1346 (state), and building_code (fallback defaults). ' +
     "A town without a rule file gets the statewide baseline (MPC approval paths, building code, sewage, bills), not its own code. " +
-    'Give `district` (for example RSA-5 or R1D-L) to add that district row.',
+    'Give `district` (for example RSA-5 or R1D-L) to add that district row. ' +
+    'Topic steep_slopes (Philadelphia and Pittsburgh): the steep slope, landslide and undermined area rules; give the lot\'s slope_class, ' +
+    'steep_slope_area, landslide_area and types_allowed to get the lines that apply to it (conditions or questions, never a bar).',
   input_schema: {
     type: 'object',
     properties: {
@@ -67,6 +70,10 @@ export const RULE_TEXT_TOOL: ToolDef = {
       county: { type: 'string', description: 'county, when the town name is shared (e.g. Penn township)' },
       topic: { type: 'string', enum: RULE_TOPICS },
       district: { type: 'string', description: 'zoning district, for the district table row' },
+      slope_class: { type: 'string', enum: ['ordinary', 'moderate', 'steep'], description: "steep_slopes only: the lot record's terrain.slope_class" },
+      steep_slope_area: { type: 'boolean', description: 'steep_slopes only: the lot record zoning.flags.steep_slope (city steep slope map)' },
+      landslide_area: { type: 'boolean', description: 'steep_slopes only: the lot record zoning.flags.landslide (Pittsburgh)' },
+      types_allowed: { type: 'array', items: { type: 'string' }, description: 'steep_slopes only: the ADU forms allowed on the lot (rules.<scenario>.types_allowed)' },
     },
     required: ['place', 'topic'],
   },
@@ -913,7 +920,46 @@ export interface TownSource {
 }
 const BUNDLED: TownSource = { index: townIndex, town: (file) => loadJson(() => loadPa(file.slice(3))) };
 
-export async function getRuleText(input: { place?: unknown; county?: unknown; topic?: unknown; district?: unknown }, src: TownSource = BUNDLED) {
+// Site rules (site.steep_slopes in the two city files). Mirrors pipeline/rules.py _site_row_met and _site_lines: a row is
+// said when the lot carries the fact it reads (its measured slope class, or a mapped area flag that is true), only for the
+// ADU forms it names, as a condition or a question. Never a bar: the slope class comes from a 1 m elevation model, not a survey.
+export const SITE_AREAS = ['steep_slope_area', 'landslide_area', 'undermined_area'] as const;
+export interface SiteFacts {
+  slope_class?: string | null;
+  steep_slope_area?: boolean | null;
+  landslide_area?: boolean | null;
+  undermined_area?: boolean | null;
+}
+function siteFacts(input: Obj): SiteFacts | null {
+  const out: SiteFacts = {};
+  if (typeof input.slope_class === 'string') out.slope_class = input.slope_class;
+  for (const a of SITE_AREAS) if (typeof input[a] === 'boolean') out[a] = input[a] as boolean;
+  return Object.keys(out).length ? out : null;
+}
+export function siteRowMet(row: Obj, lot: SiteFacts): boolean {
+  const classes = Array.isArray(row.slope_classes) ? (row.slope_classes as string[]) : null;
+  const cls = lot.slope_class ?? null;
+  if (classes && !classes.includes(cls as string)) return false;
+  const area = typeof row.area === 'string' ? (row.area as keyof SiteFacts) : null;
+  const val = area ? ((lot[area] as boolean | null | undefined) ?? null) : null;
+  if (area) {
+    const accepted = Array.isArray(row.area_is) ? (row.area_is as (boolean | null)[]) : [true];
+    if (!accepted.includes(val)) return false;
+    if (val !== true && !classes) return false;
+  }
+  return !!classes || val === true;
+}
+/** The site lines that apply to a lot, with their citations. typesAllowed null: forms are not checked. */
+export function siteLines(file: Obj, lot: SiteFacts, typesAllowed: string[] | null = null): Obj[] {
+  const leaf = leafAt(file, 'site', 'steep_slopes');
+  const rows = leaf && Array.isArray(leaf.value) ? (leaf.value as Obj[]) : [];
+  return rows
+    .filter((r) => !(typesAllowed && Array.isArray(r.forms) && !(r.forms as string[]).some((f) => typesAllowed.includes(f))))
+    .filter((r) => siteRowMet(r, lot))
+    .map((r) => ({ id: r.id, kind: r.kind, line: r.text, section: r.section, url: r.url ?? null, checked_on: r.verified_on ?? null, quote: r.quote }));
+}
+
+export async function getRuleText(input: { place?: unknown; county?: unknown; topic?: unknown; district?: unknown; [k: string]: unknown }, src: TownSource = BUNDLED) {
   const topic = typeof input.topic === 'string' && input.topic in TOPICS ? (input.topic as RuleTopic) : null;
   const asked = typeof input.place === 'string' ? input.place.trim() : '';
   let place: string | null = rulePlaceOf(asked);
@@ -999,6 +1045,10 @@ export async function getRuleText(input: { place?: unknown; county?: unknown; to
     const row = hit && districts ? districts[hit] : null;
     out.district = hit ?? wantDistrict.toUpperCase();
     out.district_rules = isObj(row) ? Object.entries(row).map(([k, v]) => ruleOut(k, v)) : `No row for district ${wantDistrict} in the ${place} rule file.`;
+  }
+  if (topic === 'steep_slopes' && rules.length) {
+    const facts = siteFacts(input as Obj);
+    if (facts) out.lot_lines = siteLines(file, facts, Array.isArray((input as Obj).types_allowed) ? ((input as Obj).types_allowed as string[]) : null);
   }
   if (rules.length === 0 && topic !== 'status') out.message = [out.message, `The ${place} rule file has nothing on ${topic}.`].filter(Boolean).join(' ');
   out.notice = NOTICE;

@@ -258,6 +258,149 @@
       "note": "Not addressed."
     }
   },
+  "site": {
+    "steep_slopes": {
+      "value": [
+        {
+          "id": "grading_all_slopes",
+          "kind": "condition",
+          "trigger": "measured_slope",
+          "slope_classes": [
+            "moderate",
+            "steep"
+          ],
+          "area": null,
+          "forms": [
+            "detached_new",
+            "attached"
+          ],
+          "text": "Our ground measure reads this spot as sloped, 15% or more (a 1 m elevation model, not a survey). The city grading rules apply on any slope: cut or filled slopes may not be steeper than 25% unless a geotechnical report certifies them and walls or terraces at least every 10 ft are approved in it, and bare slopes over 15% must be replanted (915.02.A.1.c, 915.02.B)",
+          "section": "915.02.A.1, A.1.c, B",
+          "url": "https://ecode360.com/45478229",
+          "verified_on": "2026-11-14",
+          "quote": "The Grading, Cut, and Fill Standards of this Section Shall Apply to All Slopes.",
+          "applies_by": "Measured slope on the site. No mapped area. 915.01.B applies the chapter to every structure.",
+          "exempt": "No exemption named for small or accessory structures or existing lots.",
+          "adds": "A geotechnical investigation report for cut or filled slopes over 25%. Replanting of exposed slopes over 15% (one canopy tree, two evergreens, two understory trees and five shrubs per 150 sq ft).",
+          "area_on_lot_data": null,
+          "area_layer": null,
+          "note": "915.02.A.1.c: 'Cut or filled slopes shall not exceed twenty-five (25) percent unless' a geotechnical report certifies them and walls or terraces at intervals of not less than 10 ft are approved in it. 915.02.C (tree survey on sites over a quarter acre) and D (replace trees of 12 in or more) are not tied to slope and are not said here."
+        },
+        {
+          "id": "ss_o_mapped",
+          "kind": "ask",
+          "trigger": "mapped_area",
+          "slope_classes": null,
+          "area": "steep_slope_area",
+          "area_is": [
+            true
+          ],
+          "forms": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "text": "City maps show slopes of 25% or more on a quarter or more of this lot. Land with a natural slope of 25% or more is in the Steep Slope Overlay, where new structures need Planning Commission approval after a public hearing (906.08.A.1, 906.08.C). Ask the Zoning Administrator whether the spot for the ADU is in it",
+          "section": "906.08.A.1, C.1 to C.5",
+          "url": "https://ecode360.com/45474902",
+          "verified_on": "2026-11-14",
+          "quote": "all uses and structures permitted in the base underlying district shall be reviewed and approved by the Planning Commission per the procedures of this Section.",
+          "applies_by": "906.08.A.1 sets the SS-O as any land comprising a steep slope, a natural slope of 25 percent or greater. The text gives no separate map. The lot flag is the city's mapped 25 percent slopes layer.",
+          "exempt": "None named. The Planning Commission may waive any of the 14 review standards if other measures preserve the site (906.08.C.5).",
+          "adds": "An application to the Zoning Administrator with a fee, 21 days notice, a Planning Commission public hearing and decision within 45 days, review standards incl. a 50 ft setback from the ridgeline or base edge (906.08.C.2 to C.5). Approval lapses after one year without work (C.7).",
+          "area_on_lot_data": true,
+          "area_layer": "City of Pittsburgh PGHWebSlope25 (slopes of 25 percent or more), record zoning.flags.steep_slope (a quarter or more of the lot inside)",
+          "note": "906.08.A.1: 'includes any land comprising a steep slope (i.e. a natural slope of twenty-five (25) percent or greater)'. Whether the mapped 25 percent layer is the overlay boundary the Zoning Administrator uses is not stated in the code. Ask."
+        },
+        {
+          "id": "ss_o_measured",
+          "kind": "ask",
+          "trigger": "measured_slope_outside_mapped_area",
+          "slope_classes": [
+            "steep"
+          ],
+          "area": "steep_slope_area",
+          "area_is": [
+            false,
+            null
+          ],
+          "forms": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "text": "Our ground measure reads this spot as steep, 25% or more (a 1 m elevation model, not a survey). If the natural slope there is 25% or more, it is in the Steep Slope Overlay, where new structures need Planning Commission approval after a public hearing (906.08.A.1, 906.08.C). Ask the Zoning Administrator",
+          "section": "906.08.A.1, C.1",
+          "url": "https://ecode360.com/45474902",
+          "verified_on": "2026-11-14",
+          "quote": "includes any land comprising a steep slope (i.e. a natural slope of twenty-five (25) percent or greater).",
+          "applies_by": "Natural slope of 25 percent or more (906.08.A.1).",
+          "exempt": "None named.",
+          "adds": "Planning Commission review after a public hearing (906.08.C).",
+          "area_on_lot_data": true,
+          "area_layer": "City of Pittsburgh PGHWebSlope25, record zoning.flags.steep_slope",
+          "note": "Said when the lot is not flagged in the city's 25 percent layer but our measure under the unit spot is steep. Our measure can read built or graded ground as steep. It never bars the ADU."
+        },
+        {
+          "id": "ls_o",
+          "kind": "condition",
+          "trigger": "mapped_area",
+          "slope_classes": null,
+          "area": "landslide_area",
+          "area_is": [
+            true
+          ],
+          "forms": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "text": "City maps put a quarter or more of this lot in the Landslide-Prone Overlay. Before zoning approval for work that digs, fills or clears plants, the owner gives a site plan and a field investigation by a registered professional or geotechnical consultant showing the work will not add to landslide risk, and Building Inspection must approve the construction plans (906.04.B)",
+          "section": "906.04.B.1, B.2, B.3",
+          "url": "https://ecode360.com/45474902",
+          "verified_on": "2026-11-14",
+          "quote": "No Certificate of Occupancy application shall be approved for zoning for any structure or for any use of land requiring excavation, fill or removal of vegetation until the applicant has submitted evidence",
+          "applies_by": "The mapped LS-O district. 906.04.A.1 warns the map may not hold all land subject to sliding.",
+          "exempt": "None named. Every new or changed use and every structure erected or enlarged in the LS-O complies with the Hillside Development Standards (906.04.B.1).",
+          "adds": "A development plan (site plan, building plan) for the Hillside Development Standards, a field investigation by a registered professional or geotechnical consultant, and construction and land plans approved by the Chief of the Bureau of Building Inspection.",
+          "area_on_lot_data": true,
+          "area_layer": "City of Pittsburgh PGHWebLandslideProne, record zoning.flags.landslide (a quarter or more of the lot inside)",
+          "note": "A lot with less than a quarter inside is not flagged, so a false flag does not clear the lot."
+        },
+        {
+          "id": "um_o",
+          "kind": "condition",
+          "trigger": "mapped_area",
+          "slope_classes": null,
+          "area": "undermined_area",
+          "area_is": [
+            true
+          ],
+          "forms": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "text": "This lot is in the Undermined Area Overlay. Before zoning approval the owner gives the state mine records for the site. A house-sized building needs evidence of more than 100 ft of rock and soil over the mine and no known subsidence nearby, otherwise a site investigation by a registered professional (906.05.B)",
+          "section": "906.05.B.1 to B.4",
+          "url": "https://ecode360.com/45474902",
+          "verified_on": "2026-11-14",
+          "quote": "provided that competent evidence is provided to the Zoning Administrator showing that the site has more than one hundred (100) feet of overburden above the mine",
+          "applies_by": "The mapped UM-O district.",
+          "exempt": "None. A single-unit dwelling or a comparable structure is approved with evidence of more than 100 ft of overburden and no known subsidence history (906.05.B.2).",
+          "adds": "Mine information from the PA Department of Environmental Protection, Bureau of Mining and Reclamation (B.1). Otherwise a site investigation by a registered professional, and Building Inspection approval of plans where it recommends special construction (B.3, B.4).",
+          "area_on_lot_data": false,
+          "area_layer": "Not in the lot files. Needed: the City of Pittsburgh UM-O Undermined Area Overlay boundary from the city zoning map (City Planning GIS, the same ArcGIS Online organization as PGHWebLandslideProne). It is not in PGHWebZoningOverlays, which the lots use. A stand-in is the PA DEP mine subsidence or abandoned mine land layers on PASDA, which are not the overlay.",
+          "note": "The resolver says this row only when a lot carries undermined_area true. No Pittsburgh lot does today."
+        }
+      ],
+      "section": "915.02 and 906.04, 906.05, 906.08",
+      "url": "https://ecode360.com/45478229",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Read on eCode360 (code version 2026-09-16) on 2026-11-14. 915.02 grading applies on every slope, by the slope measured on the site. The LS-O and UM-O are mapped districts. The SS-O is defined as land with a natural slope of 25 percent or more, with no separate map in the text. No section exempts small accessory structures or existing lots. Every row is said as a condition or a question, never as a bar: the lot's slope class comes from a 1 m elevation model, not a survey."
+    }
+  },
   "districts": {
     "R1D-VL": {
       "min_lot_sqft": {

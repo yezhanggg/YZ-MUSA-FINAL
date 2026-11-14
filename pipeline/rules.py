@@ -736,7 +736,11 @@ def _resolve_city(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     out: dict[str, Any] = {
         "allowed": allowed,
         "approval_path": approval,
-        "reasons": reasons + fails + _type_reasons(picked, by_type) + (_checks(place, scenario) if allowed else []),
+        "reasons": reasons
+        + fails
+        + _type_reasons(picked, by_type)
+        + (_checks(place, scenario) if allowed else [])
+        + _site_lines(place_rules, lot, types_allowed),
         "types_allowed": types_allowed,
     }
     citations, assumed = {}, []
@@ -773,6 +777,44 @@ def _resolve_city(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     out["fire_separation"] = fire
     out["historic_path"] = historic
     return {k: out[k] for k in OUTPUT_KEYS}
+
+
+# ------------------------------------------------------------------ site rules (steep slope, landslide, undermined)
+# site.steep_slopes rows in the two city files. A row is said, as a condition or a question and never as a
+# bar, when the lot carries the fact it reads: slope_class (the terrain block's measured class) or a mapped
+# area flag (steep_slope_area, landslide_area, undermined_area). A lot without these facts reads as before.
+
+SLOPE_CLASSES = ("ordinary", "moderate", "steep")
+SITE_AREAS = ("steep_slope_area", "landslide_area", "undermined_area")
+
+
+def _site_row_met(row: dict[str, Any], lot: dict[str, Any]) -> bool:
+    """True when the lot's facts say the row. A row needs one positive fact: a measured class in its list, or
+    its mapped area true. An area that is false or unknown alone never says a row."""
+    classes = row.get("slope_classes")
+    if classes is not None and lot.get("slope_class") not in classes:
+        return False
+    area = row.get("area")
+    if area is not None:
+        if lot.get(area) not in row.get("area_is", [True]):
+            return False
+        if lot.get(area) is not True and classes is None:
+            return False
+    return classes is not None or (area is not None and lot.get(area) is True)
+
+
+def _site_lines(data: dict[str, Any], lot: dict[str, Any], types_allowed: list[str]) -> list[str]:
+    """The owner lines of site.steep_slopes for this lot, in file order, for the ADU forms allowed here."""
+    leaf = _leaf(data, ("site", "steep_slopes"))
+    if not _usable(leaf):
+        return []
+    out = []
+    for row in leaf.get("value") or []:
+        if row.get("forms") and not any(t in types_allowed for t in row["forms"]):
+            continue
+        if _site_row_met(row, lot):
+            out.append(row["text"])
+    return out
 
 
 # ------------------------------------------------------------------ town resolver
@@ -2996,6 +3038,10 @@ def _lot_from_args(a: argparse.Namespace) -> dict[str, Any]:
         "house_exists": _yes_no(a.house_exists),
         "public_sewer": _yes_no(a.public_sewer),
         "public_water": _yes_no(a.public_water),
+        "slope_class": a.slope_class,
+        "steep_slope_area": _yes_no(a.steep_slope_area),
+        "landslide_area": _yes_no(a.landslide_area),
+        "undermined_area": _yes_no(a.undermined_area),
     }
 
 
@@ -3024,6 +3070,10 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--house-exists", help="yes or no: a lawful house already stands on the lot")
     r.add_argument("--public-sewer", help="yes or no")
     r.add_argument("--public-water", help="yes or no")
+    r.add_argument("--slope-class", choices=SLOPE_CLASSES, help="measured slope class from the terrain block")
+    r.add_argument("--steep-slope-area", help="yes or no: in the city's mapped steep slope area")
+    r.add_argument("--landslide-area", help="yes or no: in the mapped landslide-prone area (Pittsburgh)")
+    r.add_argument("--undermined-area", help="yes or no: in the mapped undermined area (Pittsburgh)")
     a = p.parse_args(argv)
     if a.cmd == "validate":
         return _cmd_validate()

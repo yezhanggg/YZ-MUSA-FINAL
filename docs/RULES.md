@@ -74,6 +74,7 @@ Bills are not law. Bill 250042 is in committee. HB 2186 passed the House and is 
 | ADU may be sold apart from the house | not confirmed | 14-604(11) | not checked | unverified |
 | Parking spaces required | not confirmed | 14-802(2) | not checked | unverified |
 | New utility connection required | not confirmed | Title 13 | not checked | unverified |
+| site.steep_slopes | 4 entries (see below) | 14-704(2) | 2026-11-14 | verified |
 
 Notes from the file:
 
@@ -101,6 +102,20 @@ Notes from the file:
 - ADU may be sold apart from the house: Not addressed in the section.
 - Parking spaces required: Set per district. See districts table (Table 14-802-1).
 - New utility connection required: Not reviewed.
+- site.steep_slopes: Read on American Legal (2026 code, current) on 2026-11-14. Steep slope protection applies only inside the mapped Steep Slope Protection Area (14-704(2)(a)), with limits by the slope on the lot: 15 to 25 percent needs an engineer's earth moving plan, 25 percent or more allows no clearing or earth moving. Exempt: lots without 15 percent slopes and disturbance of 1,400 sq ft or less. The Commission reviews before the zoning permit. Said as a condition or a question, never as a bar.
+
+### Steep slopes
+
+The rules for building on steep, landslide-prone or undermined ground (`site.steep_slopes`). The resolver says a row in `reasons`, as a condition or a question and never as a bar, only when the lot carries the fact it reads: the measured slope class from the terrain block (`slope_class`, a 1 m elevation model, not a survey) or a mapped area flag. A lot without these facts reads as before. Rows are said only when a form that puts new building on the ground is allowed.
+
+| Row | Kind | Said when | Section | Quote | Lot data carries the area |
+|---|---|---|---|---|---|
+| sspa | condition | steep_slope_area true | 14-704(2)(a) to (e) | "On those portions of the lot where the slope of land is twenty-five percent (25%) or greater, no site clearing or earth moving activity is permitted." | yes |
+| sspa_steep_spot | ask | measured slope steep, steep_slope_area true | 14-704(2)(c)(.2), (d)(.2) | "On those portions of the lot where the slope of land is twenty-five percent (25%) or greater, no site clearing or earth moving activity is permitted." | yes |
+| sspa_outside | ask | measured slope moderate or steep, steep_slope_area false | 14-704(2)(a) | "within the "Steep Slope Protection Area", as shown on the City of Philadelphia Steep Slopes Map maintained by the Commission." | yes |
+| sspa_unknown | ask | measured slope moderate or steep, steep_slope_area unknown | 14-704(2)(a), (c), (d) | "These steep slope protection requirements shall apply to development, earth moving activity, and site clearing within the "Steep Slope Protection Area"" | yes |
+
+Read on 2026-11-14: https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-293369. Exempt: Lots without slopes of 15 percent or more; development, earth moving or site clearing of 1,400 sq ft or less in all, outside the street; stream restoration projects (14-704(2)(b)). The 1,400 sq ft disturbance exception (14-704(2)(b)(.2)) is read to apply before (d). Ask.
 
 ### What this means for a backyard home
 
@@ -258,6 +273,7 @@ With this bill, an RSA-5 example lot keeps "by right" for a unit inside the hous
 | ADU may be sold apart from the house | not confirmed | 912.08 | not checked | unverified |
 | Parking spaces required | 0 | 914.02.A (Bill 2025-1545, Section 40) | 2026-11-10 | verified |
 | New utility connection required | not confirmed | Title 9 | not checked | unverified |
+| site.steep_slopes | 5 entries (see below) | 915.02 and 906.04, 906.05, 906.08 | 2026-11-14 | verified |
 
 Notes from the file:
 
@@ -284,6 +300,23 @@ Notes from the file:
 - ADU may be sold apart from the house: Not addressed.
 - Parking spaces required: Minimum parking schedule struck. New 914.02.A is a maximum parking schedule only.
 - New utility connection required: Not addressed.
+- site.steep_slopes: Read on eCode360 (code version 2026-09-16) on 2026-11-14. 915.02 grading applies on every slope, by the slope measured on the site. The LS-O and UM-O are mapped districts. The SS-O is defined as land with a natural slope of 25 percent or more, with no separate map in the text. No section exempts small accessory structures or existing lots. Every row is said as a condition or a question, never as a bar: the lot's slope class comes from a 1 m elevation model, not a survey.
+
+### Steep slopes
+
+The rules for building on steep, landslide-prone or undermined ground (`site.steep_slopes`). The resolver says a row in `reasons`, as a condition or a question and never as a bar, only when the lot carries the fact it reads: the measured slope class from the terrain block (`slope_class`, a 1 m elevation model, not a survey) or a mapped area flag. A lot without these facts reads as before. Rows are said only when a form that puts new building on the ground is allowed.
+
+| Row | Kind | Said when | Section | Quote | Lot data carries the area |
+|---|---|---|---|---|---|
+| grading_all_slopes | condition | measured slope moderate or steep | 915.02.A.1, A.1.c, B | "The Grading, Cut, and Fill Standards of this Section Shall Apply to All Slopes." | not needed |
+| ss_o_mapped | ask | steep_slope_area true | 906.08.A.1, C.1 to C.5 | "all uses and structures permitted in the base underlying district shall be reviewed and approved by the Planning Commission per the procedures of this Section." | yes |
+| ss_o_measured | ask | measured slope steep, steep_slope_area false or unknown | 906.08.A.1, C.1 | "includes any land comprising a steep slope (i.e. a natural slope of twenty-five (25) percent or greater)." | yes |
+| ls_o | condition | landslide_area true | 906.04.B.1, B.2, B.3 | "No Certificate of Occupancy application shall be approved for zoning for any structure or for any use of land requiring excavation, fill or removal of vegetation until the applicant has submitted evidence" | yes |
+| um_o | condition | undermined_area true | 906.05.B.1 to B.4 | "provided that competent evidence is provided to the Zoning Administrator showing that the site has more than one hundred (100) feet of overburden above the mine" | no |
+
+Read on 2026-11-14: https://ecode360.com/45478229 (915) and https://ecode360.com/45474902 (906), code version 2026-09-16. Exempt: no section exempts small or accessory structures or existing lots. In the UM-O a single-unit dwelling or a comparable structure is approved with evidence of more than 100 ft of overburden and no known subsidence (906.05.B.2). The Planning Commission may waive any of the 14 SS-O review standards (906.08.C.5). Grading applies by the slope on the site; the LS-O and UM-O are mapped; the SS-O is land with a natural slope of 25 percent or more.
+
+Data gap (um_o): Not in the lot files. Needed: the City of Pittsburgh UM-O Undermined Area Overlay boundary from the city zoning map (City Planning GIS, the same ArcGIS Online organization as PGHWebLandslideProne). It is not in PGHWebZoningOverlays, which the lots use. A stand-in is the PA DEP mine subsidence or abandoned mine land layers on PASDA, which are not the overlay.
 
 ### Administrator's Exception
 
