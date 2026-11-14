@@ -537,7 +537,23 @@ def test_terrain_refresh_without_rerun(built: Path) -> None:
         assert ter["gentle_fit"]["today"]["fits"] is False
     # The fit itself is as built.
     for pid, rec in recs.items():
-        assert rec["fit"] == before[pid]["fit"] and rec["rules"] == before[pid]["rules"]
+        assert rec["fit"] == before[pid]["fit"]
+        # Rules change only by the steep slope lines the measured slope class now says, appended last.
+        from pipeline import rules as rulesmod
+
+        texts = {r["text"] for r in rulesmod.load_rules("pittsburgh")["site"]["steep_slopes"]["value"]}
+        for s, rules in rec["rules"].items():
+            old = before[pid]["rules"][s]
+            assert {k: v for k, v in rules.items() if k != "reasons"} == {
+                k: v for k, v in old.items() if k != "reasons"
+            }
+            kept = [x for x in rules["reasons"] if x not in texts]
+            assert kept == [x for x in old["reasons"] if x not in texts]
+            added = rules["reasons"][len(kept) :]
+            assert added and all(x in texts for x in added)  # steep ground: the grading row at least
+        again = json.loads(json.dumps(rec))
+        bl.add_site_lines(again, bl.Ctx("pittsburgh", "42003", 2272, "v", {}))  # running it again changes nothing
+        assert again["rules"] == rec["rules"]
         assert sum(a.startswith("ground slope") for a in rec["quality"]["assumptions"]) == 1
     assert bl.main(["validate", "--place", "pittsburgh"]) == 0
     idx = gpd.pd.read_parquet(built / "index.parquet").set_index("parcel_id")
@@ -593,3 +609,20 @@ def test_rule_file_per_lot_and_form_caps() -> None:
     inside = bl.rules_for_type(rules, "internal")
     assert inside["max_size_sqft"] is None and inside["max_share_of_house"] is None  # no house size for a floor share
     assert bl.rules_for_type({**rules, "max_size_sqft": 800}, "detached_new")["max_size_sqft"] == 800
+
+
+def test_site_facts_reach_the_resolver() -> None:
+    """The mapped area flags go to the resolver with the lot; the measured class comes with the terrain block."""
+    flags = {"steep_slope": True, "landslide": False, "flood": None, "historic": None, "sewer": None}
+    lot = bl.resolver_lot({"zoning": "R1D-L"}, flags, False, None, 5000.0, None)
+    assert lot["steep_slope_area"] is True and lot["landslide_area"] is False
+    rec = {"zoning": {"flags": flags}, "terrain": {"slope_class": "moderate"}}
+    assert bl.site_facts(rec) == {"slope_class": "moderate", "steep_slope_area": True, "landslide_area": False}
+    ctx = bl.Ctx("allentown", "42077", 2272, "v", {})
+    town = {
+        "lot": {},
+        "zoning": {"flags": flags},
+        "rules": {"today": {"reasons": ["x"], "types_allowed": ["internal"]}},
+    }
+    bl.add_site_lines(town, ctx)  # a town file has no site rows: nothing changes
+    assert town["rules"]["today"]["reasons"] == ["x"]

@@ -750,7 +750,37 @@ def resolver_lot(
         **historic_inputs(r, flags),
         "has_alley": alley,
         "has_accessory_building": has_accessory,
+        # Site facts for the steep slope rows of a city file (rules.SITE_AREAS). The measured slope class
+        # comes later, with the terrain block (add_site_lines).
+        "steep_slope_area": flags.get("steep_slope"),
+        "landslide_area": flags.get("landslide"),
     }
+
+
+def site_facts(rec: dict[str, Any]) -> dict[str, Any]:
+    """The lot facts the steep slope rows read: the terrain block's measured class and the mapped area flags."""
+    flags = (rec.get("zoning") or {}).get("flags") or {}
+    terrain = rec.get("terrain") or {}
+    return {
+        "slope_class": terrain.get("slope_class"),
+        "steep_slope_area": flags.get("steep_slope"),
+        "landslide_area": flags.get("landslide"),
+    }
+
+
+def add_site_lines(rec: dict[str, Any], ctx: Ctx) -> None:
+    """Say the steep slope rows of the lot's rule file (site.steep_slopes) in each scenario's reasons, as the
+    resolver does: last, in file order, for the forms allowed there. Run again after the terrain block changes:
+    lines from an earlier pass are replaced. A file without site rows changes nothing."""
+    data = rulesmod.load_rules(rulesmod._place_file(str((rec.get("lot") or {}).get("rule_file") or ctx.place)))
+    rows = ((data.get("site") or {}).get("steep_slopes") or {}).get("value") or []
+    if not rows:
+        return
+    texts = {row.get("text") for row in rows}
+    facts = site_facts(rec)
+    for rules in rec["rules"].values():
+        lines = rulesmod._site_lines(data, facts, list(rules.get("types_allowed") or []))
+        rules["reasons"] = [x for x in rules.get("reasons") or [] if x not in texts] + lines
 
 
 def fill_rules(
@@ -2801,6 +2831,8 @@ def refresh_terrain_tract(tract: str, out: str, ctx: Ctx) -> TractResult:
     records = read_tract(o, tract)
     rows = pd.read_parquet(o / "parts" / f"{tract}.parquet").set_index("lot_id")
     errors = add_terrain(records, ctx.place, ctx.crs)
+    for rec in records:  # the measured slope class is known now: say the steep slope rows
+        add_site_lines(rec, ctx)
     trows = pd.DataFrame([terrain_row(r["terrain"]) for r in records], index=[r["lot"]["id"] for r in records])
     rows = rows.drop(columns=[c for c in trows.columns if c in rows.columns])
     rows = rows.join(trows.astype(object).where(pd.notna(trows), None), how="left")
