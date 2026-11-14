@@ -1,6 +1,6 @@
 {
   "about": "Pennsylvania towns targeted for ADU rule files, ranked. Made by tools/town_targets.py. Town workers update only 'status' and 'status_note'. See TOWNS.md.",
-  "generated_on": "2026-11-11",
+  "generated_on": "2026-11-14",
   "population_source": {
     "title": "2020 Census Redistricting Data (PL 94-171), Pennsylvania, county subdivisions",
     "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Pennsylvania/pa2020.pl.zip",
@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 87,
-      "population": 4845141,
-      "share_of_pa": 0.3726
+      "towns_beyond_the_two_cities": 105,
+      "population": 5210239,
+      "share_of_pa": 0.4007
     }
   ],
   "towns": [
@@ -1124,7 +1124,7 @@
       "code_host": "own site",
       "code_url": "https://yorktownshippa.gov/wp-content/uploads/Zoning-Ordinance-last-amendment-3-14-23.pdf",
       "plain_fetch": true,
-      "code_current_through": null,
+      "code_current_through": "2023-03-14",
       "code_note": "Zoning: Zoning Ordinance (Ord. 2012-13), sections numbered 265-xxx. ADU text seen: No ADU term found. Related: Conversion Apartments 265-624. Accessory Farm Dwelling 265-603. Apartment/residence with commercial use 265-608. Not on ecode360. The PDF is 193 pages, text-extractable, and lists on the Ordinances & Studies page (yorktownshippa.gov/?p=20017). Not the City of York. Date shown: Amendments through Ord. 2023-01 (3/14/2023). zoning map amended 8/13/2024.",
       "why": [
         "top 60 by 2020 population"
@@ -1192,7 +1192,7 @@
       "file": "pa_allegheny_monroeville",
       "batch": 8,
       "status": "drafted",
-      "checked_on": null,
+      "checked_on": "2026-11-12",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11510889",
       "plain_fetch": false,
@@ -1364,7 +1364,7 @@
       "code_host": "own site",
       "code_url": "https://www.plumboro.com/sites/g/files/vyhlif3686/f/pages/zoning_ordinance_w-_amendments_2023_0.pdf",
       "plain_fetch": true,
-      "code_current_through": null,
+      "code_current_through": "2023-04-10",
       "code_note": "Zoning: Plum Borough Zoning Ordinance (with amendments, 2023). ADU text seen: Accessory Dwelling Unit (attached. also 'Mother-in-law Suites'), Section 406. No ecode360, municode or amlegal code found. Linked from plumboro.com/community-development/pages/planning-and-zoning-ordinances. The PDF is 253 pages and text-extractable. Date shown: PDF titled 'with amendments 2023'.",
       "why": [
         "top 60 by 2020 population"
@@ -1628,7 +1628,7 @@
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10705471",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2023-10-19",
       "code_note": "Zoning: Chapter 200 Zoning (College Township Zoning Ordinance). Code id from ecode360.com/CO1052/index. Zoning short-title section https://ecode360.com/10705478. ecode360 403 to plain curl.",
       "why": [
         "in shared/legal_status.csv"
@@ -1703,7 +1703,7 @@
       "code_current_through": "2025-07-09",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. 196-2018, 9/12/2018). ADU text seen: accessory dwelling unit (freestanding or attached) - 27-1002 Accessory Dwelling Units [Ord. 196-2018. Ord. 211-2025, 7/9/2025] in Part 10 specific use criteria: min 2-acre gross lot, max 1 ADU per property, min 400 sf, Health Dept sewer/water approval, 2 parking spaces/unit, STR must meet 27-1065. Approval: permitted where the district allows the use, via zoning/building permit (district-level path not confirmed). Text read at https://www.zoneomics.com/code/honey-brook-township-PA/chapter_10 (mirror of ecode360 text). CONFIRMED ADU text. Lead said 27-207 - actual standards are 27-1002 (27-207 may be a district use list. not",
       "why": [
-        "known ADU ordinance (Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units)"
+        "named as a town with an ADU ordinance (Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units)"
       ],
       "status_note": "Verified 2026-11-13 after independent review (review12) and fixes: converted accessory building 50% (27-1002C(4)) with the freestanding 100% cap as a condition, nonconforming A lots take 27-1705D to F (27-1703A(10)), scope A and RC. For a later check: the freestanding-unit lot in A is about 11 acres only on a qualifying farm with split-offs left (27-1705), otherwise 20 acres. The tool tests only the 11 acre floor and shows the rest as a condition."
     },
@@ -1727,7 +1727,7 @@
       "code_current_through": "2026-08-20",
       "code_note": "Zoning: Chapter 500 Zoning (form-based. TOC page https://ecode360.com/34400015). ADU text seen: accessory dwelling unit - definition 500-1201 (added 4-21-2022 by Ord. 1043: self-contained unit within a detached accessory structure) and standards in 500-602 Accessory buildings [Amended 4-21-2022 by Ord. 1043]: A(2) 'A residence or dwelling shall be permitted as an accessory dwelling unit', C 'Specific to accessory dwelling units' (only on lot with detached house or twin, max 1 per lot, max 2 units combined, may share building with garage, no extra lot area). Approval: appears permitted (by right) as accessory use. conditional use referenced only for historic contributing-resource case. Seen a",
       "why": [
-        "known ADU ordinance (Ord. 1043 (2022). Code 500-602 and 500-1201)"
+        "named as a town with an ADU ordinance (Ord. 1043 (2022). Code 500-602 and 500-1201)"
       ],
       "status_note": "Verified 2026-11-13 after independent review (review12) and fixes: unlisted_use_path special exception (500-403F), building coverage formulas and impervious caps (500-503C(1), Table 500-503-1) bind the ADU (500-802B(3)). For a later check: 5A and 5B list ADUs in their notes but allow no detached or twin house (districts_in_doubt). District tables cite special exceptions and conditional uses one section number off."
     },
@@ -1751,7 +1751,7 @@
       "code_current_through": "2026-05-21",
       "code_note": "Zoning: Chapter 311 Zoning, Article B Hybrid Form-Based Code (applies to R-1..R-4, Office). ADU text seen: accessory dwelling unit (ADU) - definition in 311.A-13 and Article B-XV Accessory Dwelling Units starting 311.B-107 (Purpose and intent). TOC also lists 'Building Form - ADU External'. Approval path not seen. Seen in Zoneomics mirror TOC/definitions https://www.zoneomics.com/code/media-PA/chapter_1 and ecode360 TOC via search. CONFIRMED ADU article exists (definition + Article B-XV heading read). standards text of B-107+ not read. An older ecode360 page with 'supplemental dwelling unit/accessory apartment' (35% / 400 sf) may be pre-form-based text. ecode360 403 to plain curl.",
       "why": [
-        "known ADU ordinance (Code 311.A-13 definition and Article B-XV)"
+        "named as a town with an ADU ordinance (Code 311.A-13 definition and Article B-XV)"
       ],
       "status_note": "Drafted, reviewed 2026-11-13 (review12) and fixed: R-3 and R-4 lot tables (311.B-37B, 311.B-44B) mark the ADU external form prohibited on lots 60 ft wide or more, added as a condition (no lot-width test in the schema, so the tool still says by right), TwoPlex alternative in R-4, half-height side and rear setbacks. Open: how the Borough applies the lot-width table (the detached house form is marked the same way). Office map code assumed O. No count per lot in the code, one assumed. 0 ft / 8 ft separation read as attached / detached."
     },
@@ -1775,7 +1775,7 @@
       "code_current_through": "2026-09-08",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. 2227, 12-10-2013, as amended). ADU text seen: accessory dwelling unit (ADU) - definition added by Ord. 2025-2410 (8/12/2025) (within, attached to, or in accessory building on lot of single-family dwelling). special exception use in RI, TC, MI, NC, CD districts per special-exception use table, with standards '(d) Accessory Dwelling Unit (ADU)': one ADU accessory to single-family detached, twin or townhouse. owner occupancy in perpetuity. parking 1 space. Approval: SPECIAL EXCEPTION. Seen at https://ecode360.com/47635361 (definition, search) and https://www.zoneomics.com/code/phoenixville-PA/chapter_3. CONFIRMED ADU text. code_url is the definitions section page",
       "why": [
-        "known ADU ordinance (Ord. 2025-2410 (2025). ADU by special exception)"
+        "named as a town with an ADU ordinance (Ord. 2025-2410 (2025). ADU by special exception)"
       ],
       "status_note": "Verified 2026-11-13 after independent review (review12) and fixes: parking 1 space for the ADU (27-405.2C table row), RI building spacing 10 ft (secondary), accessory caps are two thirds of the house footprint and of the actual house height (23 ft only for a 35 ft house; the tool shows 23). For a later check: whether a unit may share a building with a garage."
     },
@@ -1799,7 +1799,7 @@
       "code_current_through": "2025-03-04",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. 1049, 11/18/2019. amended incl. Ord. 1097, 4/16/2024). ADU text seen: accessory dwelling unit - definition in Part 11 (occupied by relatives of owner or caregivers/household staff) plus 'Elder cottage/in-law quarters/carriage house (accessory dwelling unit)' definition (min 600 sf, not counted toward density). ecode360 TOC lists 27-1503 Accessory Dwelling (Part 15 Accessory Uses). Approval path not seen. Definitions read at https://www.zoneomics.com/code/ferguson-township-centre-county-PA/chapter_10. 27-1503 from ecode360 TOC via search (https://www.ecode360.com/32480896). CONFIRMED ADU text (definitions read. 27-1503 heading via search only, body not read). C",
       "why": [
-        "known ADU ordinance (Code Chapter 27 Part 11 definition and 27-1503 Accessory Dwelling)"
+        "named as a town with an ADU ordinance (Code Chapter 27 Part 11 definition and 27-1503 Accessory Dwelling)"
       ],
       "status_note": "Drafted, reviewed 2026-11-13 (review12) and fixed: 800 sq ft for every form and the designated-lot and 10% limit (27-303.3C(1)(b)2)), 27-207 items removed in the TTD (27-303.2F), TTD accessory rear 5 ft, 0 from an alley (27-303.3D(1)(k)), three stories, parking reading from 22-5C01. Open: whether a TTD lot not designated at plan submission can get an ADU (the tool shows by right with the condition), whether the RA and RR accessory Dwelling Unit(s) are ADUs, code current only to 03-04-2025."
     },
@@ -1823,7 +1823,7 @@
       "code_current_through": null,
       "code_note": "Zoning: Part Twelve Planning and Zoning Code - Zoning Code (sections 12xx. family/caregiver suite 1264.18). ADU text seen: family/caregiver suite (in-law suite type, internal only) - 1264.18 per Zoneomics cross-ref. allowed by SPECIAL EXCEPTION in all zoning districts. 1 per dwelling. max 35% of combined floor area. may not be in an accessory structure. annual filing of occupant name/relationship. Adopted 2018. Seen at https://codelibrary.amlegal.com/codes/swarthmore/latest/swarthm_pa/0-0-0-23482 (search snippet). CONFIRMED in-law-suite text (not a general ADU. detached units prohibited). Section number 1264.18 from Zoneomics cross-reference, unverified on amlegal. code_url is the section pa",
       "why": [
-        "known ADU ordinance (Family or caregiver suite by special exception, 1264.18)"
+        "named as a town with an ADU ordinance (Family or caregiver suite by special exception, 1264.18)"
       ],
       "status_note": "Verified 2026-11-13 after independent review (review12) and fixes: RB and RC two-family semidetached by right added, 40% combined lot and hardscape cap, the 35% is of house plus suite. For a later check: the conversion is a special exception in 1264.08 and the district lists but a conditional use in the 1240.05(36) definition."
     },
@@ -1847,7 +1847,7 @@
       "code_current_through": "2025-08-04",
       "code_note": "Zoning: Chapter 23 Zoning (Zoning Ordinance of the Borough of Kennett Square. Ord. 761). ADU text seen: accessory dwelling unit (detached, in accessory building) and accessory apartment (within principal dwelling) - definitions in Ch 23 Art. II. 23-30 Accessory uses: '(A) Accessory Habitation: (i) an accessory apartment as an accessory use. (ii) an accessory dwelling unit (limited to one per property)' allowed as accessory uses to residential uses. detached ADU max 25 ft height, 6 ft side/rear setbacks, max 1,000 sf living space and 2 bedrooms, not subdividable. parking 1 space/bedroom (max 2). Approval: allowed accessory use (by right as listed). Seen at https://www.zoneomics.com/code/kenne",
       "why": [
-        "known ADU ordinance (Code 23-30 accessory apartment and accessory dwelling unit)"
+        "named as a town with an ADU ordinance (Code 23-30 accessory apartment and accessory dwelling unit)"
       ],
       "status_note": "Drafted, reviewed 2026-11-13 (review13) and fixed: C-2 is a confirmed ADU district with the R-3 figures (23-19(b)(10), (e)(3), Table 12), detached unit in the rear yard only, accessory apartment may be in a garage or carriage house. Open: a short-term rental zoning ordinance passed about 2026-08-17 (not read; reported cap of 20, future short-term rentals only in accessory units, owner occupied) likely amends Table 17 and possibly 23-30; the alley standards in 23-30(c)(2)(B)(vii) are announced but not listed; whether the ADU counts toward lot area per dwelling unit; C-1 and OI-1 listed in Table 17 but doubtful; conversions SE (district lists, Table 16) versus CU (23-29(c)(11)); a proposed 2026 R-3 stacked-dwelling amendment not seen; chapter 8 article VII not read. Online code is Municode through Ord. 985 (8-4-2025)."
     },
@@ -1871,7 +1871,7 @@
       "code_current_through": null,
       "code_note": "Zoning: Chapter 27 Zoning. ADU text seen: accessory dwelling units (ADUs), detached and attached - definition in 27-202 and 27-407 Accessory Uses: A(8) ADUs listed as use accessory to a dwelling. C 'Additional Requirements for Accessory Dwelling Units': max 1 per property, occupied only when owner's family lives in principal dwelling and by specified relatives, no rental. not a mobile home. Approval: permitted accessory use (zoning permit), family-occupancy restricted. Read in PDF at https://boroughofambler.com/download/code_of_ordinances/code-of-ordinances-by-chapter/Chapter27.pdf. CONFIRMED ADU text (family-only ADU). PDF 269 pages, 858 KB, plain curl 200 with text. Borough also on ecode36",
       "why": [
-        "known ADU ordinance (Code 27-407.A(8) family occupied ADUs)"
+        "named as a town with an ADU ordinance (Code 27-407.A(8) family occupied ADUs)"
       ],
       "status_note": "Drafted, reviewed 2026-11-13 (review13): every value agrees with the 2011 compiled text; fixed the attached ADU rear-yard rule, the 1,200 sq ft house floor (400 sq ft minimum against the one-third cap) and the twin lot minimums. Open: the Borough's Chapter 27 PDF is compiled only to about 2011 (ADU text last amended 2008) and the later zoning ordinances (1084, 1086, 1087, 1097 removing residential special exceptions, 1117, 1131 on R-3, 1133, 1134 and untitled 2021 to 2026 ones) were not read; they open only as downloads and need the owner's OK, or ask the Borough for a current Chapter 27; whether the 27-408 conversion special exception survives Ord. 1097; whether a suite inside the house and a converted garage count as the attached and detached kinds. The old index link returns Page not found. The chapter PDF was read from a copy the browser saved to the Downloads folder."
     },
@@ -1895,7 +1895,7 @@
       "code_current_through": null,
       "code_note": "Zoning: Highland Township Zoning Ordinance of 2025 (standalone). ADU text seen: Accessory Dwelling Unit - definition (Art. 2). permitted accessory use in every district (e.g. 505.A 'Accessory Dwelling Unit, in accordance with Section 1502.H.1'. use table shows P in all districts). standards 1502.H.1 (p.177): max 2 occupants who are relatives of principal residents, at least one needing care for illness/age/disability. must be reconvertible. recorded legal mechanism. attached unless detached specifically approved, detached removed within 90 days. Approval: PERMITTED (by right) accessory use, family/care-restricted (ECHO-style). Read in PDF. CONFIRMED ADU text. PDF labelled 'Final Draft - Octo",
       "why": [
-        "known ADU ordinance (2025 zoning ordinance 1502.H.1 (final draft, adoption not confirmed))"
+        "named as a town with an ADU ordinance (2025 zoning ordinance 1502.H.1 (final draft, adoption not confirmed))"
       ],
       "status_note": "Verified 2026-11-13 after independent review (review13) and fixes: a new detached unit (and a unit over a garage) needs the Township's specific approval, filed as a conditional use, the nearest path (the code names no body and no hearing); the 90-day removal no longer reaches a converted garage; detached heights at the principal setbacks (17.5 ft SFR, 20 ft AP and RR, 25 ft LC and C-MDR, 15 ft V) as conditions. Adopted text: Ord. 2025-001, adopted 11-17-2025, effective 11-22-2025. For a later check: the C-MDR side and rear yards repeat the lot width figures (error in the law itself); whether a detached unit counts against the AP deeded-area allowance; I and IO listed (IO uses the underlying district); minutes since adoption not checked."
     },
@@ -1919,7 +1919,7 @@
       "code_current_through": "2026-08-18",
       "code_note": "Zoning: Chapter 175 Zoning (adopted 10-11-1988). chapter page likely https://ecode360.com/10729898. ADU text seen: accessory dwelling unit (formerly 'accessory family apartment') - use H(12) in 175-16 (added 5-4-1993 Ord. 224. amended 2-16-2021 Ord. 401. renamed/amended apparently 2026): 1 per single-family detached, max 25% of floor area, within principal residence or existing accessory structure (e.g. garage), +1 parking space, max 2 occupants, registration with Zoning Officer, deed restriction, Bucks County Board of Health sewage certification. Approval: SPECIAL EXCEPTION in R-1 per 175-37 (cited in 2024 ZHB decision). Text read at https://www.zoneomics.com/code/doylestown-township-PA/cha",
       "why": [
-        "known ADU ordinance (Code 175-16.H(12) accessory dwelling unit by special exception)"
+        "named as a town with an ADU ordinance (Code 175-16.H(12) accessory dwelling unit by special exception)"
       ],
       "status_note": "Verified 2026-11-13 after independent review (review13) and fixes: the short-term rental ban reaches only rentals with no resident on site (175-9), so no flat ban is stored; the unit is part of the one household of the house (175-9), not a separate tenant household; B-7 and B-9 lot minimums added as a condition. H-12 is by right in R-1a, R-1, R-2, R-2a, R-2b, R-4 after Ord. 433 and 434 (2026). For a later check: the accessory building definition against H-12(b) garage units; whether an addition counts as part of the residence; undersized lots of record (175-17A); B-10 SE versus CU; Ord. 435 (10-27-2026, data centers) not yet codified; Chapter 102 not opened."
     },
@@ -1943,7 +1943,7 @@
       "code_current_through": "2026-01-05",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. 9-94). ADU text: 'Accessory apartment, one' within an existing single-family detached house or twin half (27-306, 27-403.4A), special exception in R3, R4, R5 and by right in NC, HC, LI, LI(L), GI. Separate 'apartment for care of relative' by special exception in all residential districts (27-403.4C). Read in the browser on eCode360 (UP2477).",
       "why": [
-        "known ADU ordinance (Code 27-306 and 27-403.4A accessory apartment by special exception)"
+        "named as a town with an ADU ordinance (Code 27-306 and 27-403.4A accessory apartment by special exception)"
       ],
       "status_note": "Verified 2026-11-14 after independent review (review14) and fixes: outside R3, R4, R5 and the business districts the status now reads family only (the apartment for care of relative is a special exception in RU3, RU1.5, R1, R2 and OSP; RT has neither, which one status_outside value cannot hold); twin-half lot area per unit (8,000/6,000/5,000) added as a condition; code current through 2026-01-05. For a later check: Ord. No. 2026-04 (2026-04-02, likely the ASRS interim ordinance) is PDF only and not read; whether the apartment needs a second share of per-unit lot area; parking 2 or 1 space."
     },
@@ -1967,7 +1967,7 @@
       "code_current_through": "2025-03-19",
       "code_note": "Zoning: Chapter 270 Zoning (East Hempfield Township Zoning Ordinance of 2014). ADU text: 'accessory dwelling' (270-2.2) and 270-5.2A, permitted accessory use in A, RB, RL, RM, VR, VC, CBC, AH, RCC since Ord. No. 2022-02; immediate family only, 40% of the house, owner residency, +1 parking. Read in the browser on eCode360 (EA2319).",
       "why": [
-        "known ADU ordinance (Code 270-5.2A accessory dwelling units by right, family only)"
+        "named as a town with an ADU ordinance (Code 270-5.2A accessory dwelling units by right, family only)"
       ],
       "status_note": "Drafted 2026-11-14, review14 fixes applied: the E zone (270-3.12B(5)(c)) added with its row; RB, CBC, AH, RCC rows and zone lot coverage added; C, ME and ROS confirmed without an ADU listing; code date 2025-03-19. Open: Ord. No. 2026-02 'Zoning Amendment' (2026-11-04) is not codified and not read (PDF only), so the code caution stays. Also open: whether zone densities or the VR/VC 8,700 sq ft per unit count the ADU; whether historic conversions (270-5.2FF) can add a dwelling."
     },
@@ -1991,7 +1991,7 @@
       "code_current_through": "2026-06-15",
       "code_note": "Zoning: Chapter 275 Zoning (Ord. No. 8-97). ADU text: 'Accessory apartment within an existing single-family detached dwelling' (275-190D(1)), accessory use by right in MDR (275-46B(6)) and MHDR (275-54B(6)); conversion rules 275-189A(24). Read in the browser on eCode360 (BE2269), legislation through 06-15-2026.",
       "why": [
-        "known ADU ordinance (Code 275-190D(1) accessory apartment by right in AG, MDR, MHDR)"
+        "named as a town with an ADU ordinance (Code 275-190D(1) accessory apartment by right in AG, MDR, MHDR)"
       ],
       "status_note": "Verified 2026-11-14 after independent review (review14) and fixes: AG added (275-111D(2), lot rules 275-114); eCode360 search for 'accessory apartment' finds only AG, MDR and MHDR, so the status outside is prohibited; MHDR height 35 ft and three habitable stories (275-57). For a later check: whether the apartment needs its own share of the district lot area (275-189A(24)(a), MHDR 7,000 sq ft per unit)."
     },
@@ -2015,7 +2015,7 @@
       "code_current_through": "2026-08-11",
       "code_note": "Zoning: Chapter 370 Zoning (Ord. No. 2021-O-04). ADU text: 'H1, Multigenerational apartment' (370-305H(1)), special exception in RA, R1, R2, R2-I, R3, MR, EV (Table 300): relatives of the owner, no rent, inside the house, lesser of 25% or 800 sq ft, public water and sewer. 370-820 limits secondary kitchens (Ord. No. 2026-O-01). Read in the browser on eCode360 (WA0807), legislation through 08-11-2026.",
       "why": [
-        "known ADU ordinance (Code 370-305H(1) multigenerational apartment by special exception)"
+        "named as a town with an ADU ordinance (Code 370-305H(1) multigenerational apartment by special exception)"
       ],
       "status_note": "Drafted 2026-11-14, review14 fixes applied: the public sewer rule is now a condition because 370-305H(1)(a)[8] mentions an adequate on-lot septic system; rows for RA, R2, R2-I, R3 and the MR lot area added. Open: whether 370-820 (secondary kitchens, 2026) reaches the apartment's kitchen; the septic conflict between [1] and [8]; Ord. No. 2026-O-05 (2026-09-08) not read (PDF only); EV not read; R2-I and R3 side and rear yards not read."
     },
@@ -2039,7 +2039,7 @@
       "code_current_through": "2026-04-01",
       "code_note": "Zoning: Chapter 143 Zoning (Ord. No. 432). ADU text: 'In-law suite' (143-6.2, Ord. No. 662, 2020; amended Ord. No. 687, 2025), residential accessory use by right in R-1 to R-5: inside the house or a detached household garage, two family members, 800 sq ft cap. Read in the browser on eCode360 (LO0679).",
       "why": [
-        "known ADU ordinance (Code 143-6.2 in-law suite by right in R-1 to R-5)"
+        "named as a town with an ADU ordinance (Code 143-6.2 in-law suite by right in R-1 to R-5)"
       ],
       "status_note": "Verified 2026-11-14 after independent review (review14) and fixes: status outside R-1 to R-5 is prohibited (search for 'in-law suite'); duplex alternative now R-3, R-4, R-5; rows for R-1 to R-5 with heights (R-5 55 ft); the size line says 800 sq ft is only the outer limit. For a later check: the 50% cap of the 'primary living area' cannot be computed by the tool (schema gap); whether the suite counts toward the 3.0 units per gross acre density in R-3 to R-5; no household garage height or yard rule was found."
     },
@@ -2063,7 +2063,7 @@
       "code_current_through": null,
       "code_note": "Zoning: Chapter 230 Zoning (readopted 2007 by Ord. No. 06-211Z). ADU text: 'Accessory family dwelling' (230-149C): one unit with a single-family detached house for family members or a family caregiver, part of the house with an internal connection, 25% of floor area, no rental, registration, +1 parking. Read in the browser on eCode360 (MO1293).",
       "why": [
-        "known ADU ordinance (Code 230-149C accessory family dwelling)"
+        "named as a town with an ADU ordinance (Code 230-149C accessory family dwelling)"
       ],
       "status_note": "Drafted 2026-11-14, review14 fixes applied: scope set to the districts whose use lists permit a single-family detached dwelling (R-1, R-2, R-3, R-3A, R-3B, R-5, R-6, all read); path note quotes fixed; R-1 height 35 ft and 2 1/2 stories. Open: C and the other nonresidential districts permit the uses in Appendix Table 230-A, an attachment not opened, so whether a house (and this unit) is allowed there is not confirmed; MHP not read."
     },
@@ -2087,7 +2087,7 @@
       "code_current_through": "2026-04-13",
       "code_note": "Zoning: Chapter 390 Zoning (Exeter Township Zoning Ordinance of 2010, Ord. No. 700). No ADU text: searches for accessory dwelling, accessory apartment, in-law and ECHO find nothing. Two-family detached by right in SR3 and UR. Ord. No. 881 (2026-06-22, zoning) not yet codified. Read in the browser on eCode360 (EX2329).",
       "why": [
-        "known ADU ordinance (batch 15 by population. Code Chapter 390 has no ADU text)"
+        "added as batch 15 by population. Code Chapter 390 has no ADU text"
       ],
       "status_note": "Verified 2026-11-14 after independent review; fixes applied (390-30B(2), Limekiln RVO dual use, 390-70B(3)(b), garage spacing, two-family alternative split by utilities). For a later check: Ord. No. 881 (2026-06-22, zoning amendment) is not yet in the online code and was not read; it is shown as a code caution."
     },
@@ -2111,7 +2111,7 @@
       "code_current_through": "2026-06-09",
       "code_note": "Zoning: Chapter 143 Zoning (Ord. No. 1504, 2010). No ADU text and no two-family listing in any district. Ord. No. 1651 (2025) and Ord. No. 1660 (2026) zoning amendments listed as new laws. Read in the browser on eCode360 (SP0159).",
       "why": [
-        "known ADU ordinance (batch 15 by population. Code Chapter 143 has no ADU text)"
+        "added as batch 15 by population. Code Chapter 143 has no ADU text"
       ],
       "status_note": "Verified 2026-11-14 after independent review; fixes applied (front-yard bar for accessory buildings, garage and shed rules, TND and PRD notes). For a later check: Ord. No. 1651 (2025-06-04) and Ord. No. 1660 (2026-06-09) zoning amendments were not read (PDF only); search snippets point to TND-5 office townhouses and the F district. Shown as a code caution."
     },
@@ -2135,7 +2135,7 @@
       "code_current_through": "2025-10-28",
       "code_note": "Zoning: Chapter 300 Zoning (Ord. No. 180, recodified 2024). ADU text: 'Temporary unit for relative (in-law suite)' (300-15B(4), Ord. No. 517, 2011): accessory use to a single-family dwelling, inside the house, owner-occupied, immediate family, recorded covenant. Ord. No. 619 and 623 (2026, zoning) not yet codified. Read in the browser on eCode360 (UP1236).",
       "why": [
-        "known ADU ordinance (Code 300-15B(4) temporary unit for relative (in-law suite))"
+        "named as a town with an ADU ordinance (Code 300-15B(4) temporary unit for relative (in-law suite))"
       ],
       "status_note": "Drafted 2026-11-14, review15 fixes applied: MH added to scope and kept in doubt with R-4; ARR age rule (300-345A, 300-350G); VCO existing-structure rule; 300-15E limit; rows for OSR-1, OSR-2, GCR, ARR, VCO. Open: Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21) not codified and not read; whether the unit applies in MH and R-4; whether the R-1 and R-2 lot area 'per dwelling unit' counts the in-law suite."
     },
@@ -2159,7 +2159,7 @@
       "code_current_through": "2025-12-17",
       "code_note": "Zoning: Chapter 245 Zoning (Ord. No. 771, 2017). ADU text: 'Accessory apartment' (245-2.1, 245-14.3, Ord. No. 844, 2025): by right in R-3, special exception in A, R-1, R-2, C-1, INS; detached or attached; 300 sq ft to 45% of the house; owner-occupied; 3 parking spaces. Read in the browser on eCode360 (UP1380).",
       "why": [
-        "known ADU ordinance (Code 245-14.3 accessory apartment)"
+        "named as a town with an ADU ordinance (Code 245-14.3 accessory apartment)"
       ],
       "status_note": "Drafted 2026-11-14, review15 fixes applied: conversion apartment standards (245-14.20), 245-14.61 density, 245-16.7 minimum floor area (400 sq ft against 300 in 245-14.3G), A and R-1 coverage. Open: the definition (245-2.1) allows a unit only in or added to an existing house while 245-14.3B allows a detached one; whether the 20 ft accessory height binds a detached apartment; whether R-2 and R-3 lot size per dwelling unit counts the apartment."
     },
@@ -2183,7 +2183,7 @@
       "code_current_through": null,
       "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 2024-01, 5-13-2024). ADU text: 'Accessory apartment' (27-202, 27-602) by right in R-1, R-3, R-4, CV, CRV, A, V, part of the principal structure; 'Accessory family dwelling unit' (27-603) for relatives with a medical hardship, detached portable unit up to 900 sq ft. Read in the browser on American Legal (2026 S-10).",
       "why": [
-        "known ADU ordinance (Code 27-602 accessory apartment and 27-603 accessory family dwelling unit)"
+        "named as a town with an ADU ordinance (Code 27-602 accessory apartment and 27-603 accessory family dwelling unit)"
       ],
       "status_note": "Drafted 2026-11-14, review15 fixes applied: family unit limited to lineal relatives (27-603.6), residential conversion from 27-667, R-1 Growth Boundary condition, 27-502.1.D versus 27-602.2 note, adaptive reuse note. Open: the use table row 'Accessory Dwelling Units' read as the 27-603 family unit; whether density limits count the apartment; whether a lot is inside the Growth Boundary Area; 27-504 floor area and Part 7 parking not read; adaptive reuse districts not matched to columns."
     },
@@ -2207,7 +2207,7 @@
       "code_current_through": "2026-09-01",
       "code_note": "Zoning: Chapter 84 Zoning (adopted 1972, as amended). ADU text: 'In-law suite' (84-8, 84-57.25, Ord. No. 5-2016): accessory use by right in R-2, R-3 and R-4 only, for a relative of the residents, at most two occupants, inside the house or an existing accessory structure, 35% of the house plus suite, recorded no-rent agreement. Read in the browser on eCode360 (WE0457).",
       "why": [
-        "known ADU ordinance (Code 84-57.25 in-law suites)"
+        "named as a town with an ADU ordinance (Code 84-57.25 in-law suites)"
       ],
       "status_note": "Verified 2026-11-14 after review16 fixes (84-8 floor area base for the 35% cap, 84-8 relatives list). For a later check: the 35% cap is of the house plus the suite, so a garage or addition suite is about 54% of the house (arithmetic); whether a new addition is allowed; R-3A overlay lots read as barred."
     },
@@ -2231,7 +2231,7 @@
       "code_current_through": "2026-09-28",
       "code_note": "Zoning: Chapter 300 Zoning (Ord. No. 82-7, 1982). No ADU text. Two-family dwellings by right in LDR and MDR (and DCN, DCH, Central Core, Professional Office); conversion apartments by special exception (300-135). Read in the browser on eCode360 (CH1151).",
       "why": [
-        "known ADU ordinance (batch 16 by population. Code Chapter 300 has no ADU text)"
+        "added as batch 16 by population. Code Chapter 300 has no ADU text"
       ],
       "status_note": "Verified 2026-11-14 after review16 fixes (300-133E(1) rear-yard projection rules, Health Care Service and Health Institution two-family route, 300-20, 300-136, 300-138.4, 300-76E). For a later check: two-family conversion read as a path for an existing house; whether a second unit could be a use 'of the same general character' is for the Zoning Officer."
     },
@@ -2255,7 +2255,7 @@
       "code_current_through": "2026-01-05",
       "code_note": "Zoning: Chapter 440 Zoning (Ord. No. 820, 2017). No ADU text. Duplexes count as single-family attached dwellings (440-301), permitted in MD, VR and mixed-use districts. Ord. No. 925, 928 and 929 (2026, zoning) not yet codified. Read in the browser on eCode360 (PE3557).",
       "why": [
-        "known ADU ordinance (batch 16 by population. Code Chapter 440 has no ADU text)"
+        "added as batch 16 by population. Code Chapter 440 has no ADU text"
       ],
       "status_note": "Verified 2026-11-14 after review16 fixes (MD duplex lot about 9,334 sq ft with 440-402G(3) rounding, CR and MR added, narrower caution). For a later check: Ord. No. 928 (2026) restates the single-family attached and duplex definitions and parking (PDF, seen as a search snippet); duplex route stays 'ask' because single-family attached means common vertical walls."
     },
@@ -2279,7 +2279,7 @@
       "code_current_through": "2026-06-03",
       "code_note": "Zoning: Chapter 255 Zoning (Ord. No. 1993, 2003). No ADU text; 'No dwelling units shall be permitted within a detached garage' (255-200D(12)(b)[7]). Two-family detached by right in R-3, R-4 and UM. Read in the browser on eCode360 (CA1126).",
       "why": [
-        "known ADU ordinance (batch 16 by population. Code Chapter 255 has no ADU text)"
+        "added as batch 16 by population. Code Chapter 255 has no ADU text"
       ],
       "status_note": "Verified 2026-11-14. UM area and bulk (255-123) added. For a later check: C-1 to C-4, I-1, I-2, I-C, INS and OS use lists not read; UM density table (255-126) seen only as a snippet."
     },
@@ -2303,7 +2303,7 @@
       "code_current_through": "2026-03-03",
       "code_note": "Zoning: Chapter 184 Zoning (Ord. No. 146, 1992, readopted 2006). ADU text: 'Temporary unit for relative' (184-10, 184-71B(6)): accessory to a single-family dwelling, inside the house, owner-occupied, immediate family, recorded covenant, annual permit, detached units prohibited. Ord. No. 438 (2026, zoning) not yet codified. Read in the browser on eCode360 (LI1176).",
       "why": [
-        "known ADU ordinance (Code 184-71B(6) temporary unit for relative)"
+        "named as a town with an ADU ordinance (Code 184-71B(6) temporary unit for relative)"
       ],
       "status_note": "Drafted 2026-11-14, review16 fixes applied: HC not permitted (184-139A(16)), VC left as ask (village house permitted, 184-71 not named), VC twin/duplex and multifamily conversion and R-4/R-5 two-family alternatives, 184-87 parking. Open: Ord. No. 438 (2026 zoning amendment) not read (PDF); R-4 and R-5 lot figures only in PDF attachments; MHP scope from snippets; whether the unit adds parking."
     },
@@ -2327,7 +2327,7 @@
       "code_current_through": "2025-01-27",
       "code_note": "Zoning: Chapter 220 Zoning (Ord. No. 2009-2). ADU text: 'Accessory dwelling' (220-149): permitted use in R-1, R-2 and MUN (and TND and NR overlays), in an owner-occupied single-family detached dwelling, at most 30% of the floor area, at least 360 sq ft, additions limited to 10%. Read in the browser on eCode360 (LO1571).",
       "why": [
-        "known ADU ordinance (Code 220-149 accessory dwellings)"
+        "named as a town with an ADU ordinance (Code 220-149 accessory dwellings)"
       ],
       "status_note": "Drafted 2026-11-14, review16 fixes applied: TND and NR need the overlay conditional use and master plan first, TND lot row (220-127), 220-239 parking (multifamily row excludes accessory apartments), both readings of the 220-149F 10% limit. Open: the 220-6C definition names a unit in an accessory structure while 220-149 speaks only of the house; whether the unit counts toward density; whether it adds 2 parking spaces; TND height (220-125) not read."
     },
@@ -2351,7 +2351,7 @@
       "code_current_through": "2026-05-13",
       "code_note": "Zoning: Chapter 114 Zoning (Ord. No. 487, 1962). No general ADU text. 'Accessory apartment' only for a historic resource in the Historic Resource Overlay District (114-12D4B(10), Ord. No. 962, 2019): special exception, in a contributing accessory structure, owner on the premises. Two-family dwellings by right in C and D; conversion by special exception in AA, A and B (114-133A). Read in the browser on eCode360 (SP0463).",
       "why": [
-        "known ADU ordinance (Code 114-12D4B(10) accessory apartment (historic resource overlay))"
+        "named as a town with an ADU ordinance (Code 114-12D4B(10) accessory apartment (historic resource overlay)). Its code as read has no ADU rule (not addressed)"
       ],
       "status_note": "Verified 2026-11-14 after review. Later check: the effective date of Article XIII for the 114-133A conversion; use lists of the multifamily, cluster, institutional, business and industrial districts."
     },
@@ -2375,7 +2375,7 @@
       "code_current_through": "2025-12-17",
       "code_note": "Zoning: Chapter 282 Zoning (Ord. No. 420, 1994, readopted 2008). No ADU section. The family definition (282-6, D) allows relatives as two housekeeping units in a detached single-family dwelling, connected internally, one unit with the owner, the other at most two members with one aged 60 or more, one unit at most 600 sq ft, recorded agreement. Read in the browser on eCode360 (HA2083).",
       "why": [
-        "known ADU ordinance (Code 282-6 family definition, two housekeeping units)"
+        "named as a town with an ADU ordinance (Code 282-6 family definition, two housekeeping units)"
       ],
       "status_note": "Verified 2026-11-14 after review. Later check: the LI use list (not read); the rule is the family definition (282-6, D), read as family only by right wherever a single-family detached dwelling is permitted."
     },
@@ -2399,7 +2399,7 @@
       "code_current_through": "2026-08-26",
       "code_note": "Zoning: Chapter 325 Zoning. No ADU text. Two-family (duplex, twin) by right in R-3 and R-4; conversion of a single-family dwelling by conditional use in R-3 (325-25). Ord. No. 492 (2026, zoning) not yet codified. Read in the browser on eCode360 (WE2141).",
       "why": [
-        "known ADU ordinance (batch 17 by population. Code Chapter 325 has no ADU text)"
+        "added as batch 17 by population. Code Chapter 325 has no ADU text"
       ],
       "status_note": "Open: Ord. No. 492 (2026-10-14, zoning) not read. Historic residential conversion path (325-86) added after review. Town Center, Institutional, UDA and Rail Transit Overlay articles not read."
     },
@@ -2423,7 +2423,7 @@
       "code_current_through": "2025-05-21",
       "code_note": "Zoning: Chapter 190 Zoning (Ord. No. 912-2016). ADU-like text: 'Conversion apartment' (a dwelling unit created within an existing single-family dwelling, 190-202) permitted in CC and IC only (190-405, 190-406); the multifamily definition also names conversion apartments. Duplex by right in MDR. Ord. No. 973-2025 (zoning) not yet codified. Read in the browser on eCode360 (PE1662).",
       "why": [
-        "known ADU ordinance (Code 190-202 and 190-405 conversion apartment)"
+        "named as a town with an ADU ordinance (Code 190-202 and 190-405 conversion apartment)"
       ],
       "status_note": "Open: conversion apartment vs multifamily definition (conflicting text, ask); Ord. No. 973-2025 (zoning) and Table 2 (Appendix A) not read."
     },
@@ -2447,7 +2447,7 @@
       "code_current_through": "2026-05-20",
       "code_note": "Zoning: Chapter 220 Zoning (Ord. No. 680-05, 2005). No ADU text. Two-family dwellings permitted in R-2, R-3 and MU (220-13, 220-16). Read in the browser on eCode360 (MU1309).",
       "why": [
-        "known ADU ordinance (batch 17 by population. Code Chapter 220 has no ADU text)"
+        "added as batch 17 by population. Code Chapter 220 has no ADU text"
       ],
       "status_note": "Verified 2026-11-14 after review. Later check: the parking requirements table (220-68B) and Article V use standards. The 220-15B front-yard bar on accessory structures is kept in checks only, because the tool hides the district front yard when front_yard_barred is set."
     },
@@ -2471,7 +2471,7 @@
       "code_current_through": "2026-07-08",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 558, 2012). ADU text: 'Accessory in-law dwelling' (Use 78, 27-1403H(11)): by right in R-1 to R-4, part of a single-family detached house with a connecting door, at most 600 sq ft, one per lot, permit and annual inspection, owner affidavit on the tenant's relationship. Read in the browser on eCode360 (LO0148).",
       "why": [
-        "known ADU ordinance (Code 27-1403H(11) accessory in-law dwelling)"
+        "named as a town with an ADU ordinance (Code 27-1403H(11) accessory in-law dwelling)"
       ],
       "status_note": "Open: 27-1403H(11)(d) and (g) conflict on an accessory building; family reading of the relationship affidavit. Heights 27-1718 added after review."
     },
@@ -2495,7 +2495,7 @@
       "code_current_through": "2025-04-10",
       "code_note": "Zoning: Chapter 116 Zoning (Ord. No. 409, 1981). ADU text: 'Accessory dwelling unit' (116-11, 116-272E, Ord. No. 812, 2006): only in Option One conservation design subdivisions in AAAA and AAA (Conservation Design Overlay), at most 900 sq ft, 25 ft, conservation easement. Conversion of a single-family dwelling by special exception anywhere (116-26). Ord. No. 1049 (2026, zoning) not yet codified. Read in the browser on eCode360 (WH0819).",
       "why": [
-        "known ADU ordinance (Code 116-272E accessory dwelling units (Conservation Design Overlay, Option One))"
+        "named as a town with an ADU ordinance (Code 116-272E accessory dwelling units (Conservation Design Overlay, Option One))"
       ],
       "status_note": "Open: Ord. No. 1049 (2026 zoning amendment, touches Article XXXVI) not read; 15 acre tract test (tract vs lot) and AAA accessory height 20 ft vs ADU 25 ft (116-268C vs 116-33.2) are conflicting text; 116-23A 30 ft accessory yards without sewer and water cannot be held in utility rows; use lists of LR/HR, MHP, CR, AR, industrial, EX, CCRC not read."
     },
@@ -2519,7 +2519,7 @@
       "code_current_through": null,
       "code_note": "Zoning: Joint Municipal Zoning Ordinance (Newtown, Upper Makefield, Wrightstown), readopted 2007. ADU text: 'residential accessory apartment' within use H-3 (803 H-3.4): by right in the residential districts, for family members, domestic servants, caretakers or occasional guests, County Health sewage permit, 2 parking spaces per unit. Residential conversion (B-16) by conditional use or special exception. Read in the browser on eCode360 (NE3758, Newtown Area Zoning Jointure).",
       "why": [
-        "known ADU ordinance (JMZO 803 H-3.4 residential accessory apartment)"
+        "named as a town with an ADU ordinance (JMZO 803 H-3.4 residential accessory apartment)"
       ],
       "status_note": "Open: four 2026 New Laws (Article VIII) not read; JMZO shared with Upper Makefield and Wrightstown, which districts are mapped in Newtown not checked; B-16 district lists conflict with B-16.8 (CM, VC-1, VC-2, QA-A, TC-2); CR-2 lot 30,000 vs 20,000 sq ft conflicting text; PC lists H-3 with no dwelling use; whether the between-buildings distance binds a detached apartment is not said."
     },
@@ -2543,7 +2543,7 @@
       "code_current_through": "2025-10-13",
       "code_note": "Zoning: Chapter 265 Zoning (Ord. No. 94-11, 1994). No ADU text for a household. 'Guesthouse, as an accessory dwelling' (612.7f) is short-term rental lodging in a second historic resource (301.4, 90-day stays), conditional use. Historic residential conversions by conditional use (612.7e). Ord. No. 2021-05 and 2026-08 (zoning) not yet codified. Read in the browser on eCode360 (UW2708).",
       "why": [
-        "known ADU ordinance (batch 18 by population. Code Chapter 265 has no ADU text for a household (612.7f short-term guesthouse))"
+        "added as batch 18 by population. Code Chapter 265 has no ADU text for a household (612.7f short-term guesthouse)"
       ],
       "status_note": "Code caution: Ord. No. 2021-05 (2021 zoning amendment) not read. For a later check: Ord. No. 2026-06 and 2026-08, the Historic Resources Map and Inventory (PDF), PC, PC-2, PIC, PCID, PI use lists and parking (607)."
     },
@@ -2567,7 +2567,7 @@
       "code_current_through": "2025-02-19",
       "code_note": "Zoning: Chapter 340 Zoning (Ord. No. 159, 1993). ADU text: 'ECHO housing' (340-67): special exception in the A Zone only, portable elder cottage up to 900 sq ft for a relative 50 or older or disabled, utilities shared, removed when no longer needed. Accessory building apartment in Village Overlay developments (340-23E(9)). Conversion apartments (340-65), two-family conversions (340-103), temporary farm employee housing (340-101). Ord. No. 306 and 307 (2026, zoning) not yet codified. Read in the browser on eCode360 (WA2488; WA1313 is Warwick, Bucks County).",
       "why": [
-        "known ADU ordinance (Code 340-67 ECHO housing)"
+        "named as a town with an ADU ordinance (Code 340-67 ECHO housing)"
       ],
       "status_note": "Open: Ord. No. 306 and 307 (2026 zoning) not read; VO accessory building apartment is conditional use (340-23E(9)) or special exception (J(1) note 4, 340-65), conflicting text, and its 340-64 cross-reference is stale; the tool cannot key status on the VO overlay, so R-2 is held as a district in doubt; other zone use lists, 340-14, 340-25, 340-35 and 340-121 not read."
     },
@@ -2591,7 +2591,7 @@
       "code_current_through": "2025-11-13",
       "code_note": "Zoning: Chapter 150 Zoning (Ord. No. 87-2, 1987). No ADU text. Two-family conversions by special exception in LC only (150-354), duplexes in R-4, R-6, MU and the PRD overlay. Unlisted uses by special exception where similar uses are permitted (150-9). Ord. No. 26-01, 26-02 and 26-03 (2026, subject not shown) not yet codified. Read in the browser on eCode360 (WE1311).",
       "why": [
-        "known ADU ordinance (batch 18 by population. Code Chapter 150 has no ADU text)"
+        "added as batch 18 by population. Code Chapter 150 has no ADU text"
       ],
       "status_note": "First reading. Open: Ord. No. 26-01, 26-02 and 26-03 (2026, subject not shown) not read; whether a second unit is an unlisted use (150-9 special exception) or a two-family dwelling; OSR, MU, PRD, commercial and industrial zones and parking not read."
     },
@@ -2615,7 +2615,7 @@
       "code_current_through": "2026-05-20",
       "code_note": "Zoning: Chapter 405 Zoning (Ord. No. 1393, 1988). ADU text: 'Accessory dwelling unit' (405-1913, Ord. No. 2018-1907): by right, attached to or inside a single-family detached home, parents or grandparents of the household only, at most two people, owner-occupied, no rent, deed restriction, annual license, one more parking space. 2026 zoning amendments (Residential B and C, TOD) not yet codified. Read in the browser on eCode360 (LA0393).",
       "why": [
-        "known ADU ordinance (Code 405-1913 accessory dwelling units, family only)"
+        "named as a town with an ADU ordinance (Code 405-1913 accessory dwelling units, family only)"
       ],
       "status_note": "First reading. Open: 2026 Residential B and C amendment (Ord. 2012) and TOD amendment not read; whether the ADU counts as a dwelling unit for lot area per unit; PO-A, PO-B, LPO, commercial, business, industrial and overlay use lists not read."
     }

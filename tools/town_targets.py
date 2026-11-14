@@ -16,7 +16,9 @@ order, then legal_status.csv towns, then the extras.
 
 Statuses (todo, in_progress, drafted, verified) already in the index are kept. A town
 whose rule file exists moves from todo or in_progress to drafted. checked_on is the
-file's provenance.verified_on.
+file's provenance.verified_on. plain_fetch for a file whose code_url is not in the host
+table keeps the value the index holds (a rebuild fetches nothing). On the same index and
+files a rebuild reproduces the committed index except generated_on.
 
 Run:
     /opt/anaconda3/envs/geospatial/bin/python tools/town_targets.py          # write the index
@@ -130,6 +132,17 @@ def provenance(file: str) -> dict[str, Any]:
         return {}
 
 
+def adu_status(file: str) -> str | None:
+    """The town file's adu.status value, or None when there is no file."""
+    path = RULES / f"{file}.json"
+    if not path.exists():
+        return None
+    try:
+        return ((json.loads(path.read_text()).get("adu") or {}).get("status") or {}).get("value")
+    except ValueError:
+        return None
+
+
 def checked_on(file: str) -> str | None:
     return provenance(file).get("verified_on")
 
@@ -157,7 +170,17 @@ def build(rows: list[dict[str, Any]]) -> dict[str, Any]:
     for g in legal:
         why.setdefault(g, []).append("in shared/legal_status.csv")
     for g, src in EXTRAS.items():  # noqa: F821 (defined below)
-        why.setdefault(g, []).append(f"known ADU ordinance ({src})")
+        # A town picked as a known ADU ordinance whose code, once read, has no ADU rule says so.
+        st = adu_status(files[g])
+        lead = f"added as {src}" if src.startswith("batch ") else f"named as a town with an ADU ordinance ({src})"
+        why.setdefault(g, []).append(
+            lead
+            + (
+                f". Its code as read has no ADU rule ({st.replace('_', ' ')})"
+                if st in ("not_addressed", "prohibited") and "no ADU text" not in src
+                else ""
+            )
+        )
     batch: dict[str, int] = {g: 0 for g in CITY_FILES}
     for b, gs in ASSIGNED.items():
         batch.update({g: b for g in gs})
@@ -199,9 +222,11 @@ def build(rows: list[dict[str, Any]]) -> dict[str, Any]:
                 "checked_on": prov.get("verified_on"),
                 "code_host": prov.get("code_host") or host.get("code_host", "unknown"),
                 "code_url": prov.get("code_url") or host.get("code_url"),
+                # Measured once per host. A file whose code_url is not in the host table keeps the value the
+                # index already holds, since a rebuild does not fetch anything.
                 "plain_fetch": host.get("plain_fetch")
                 if not prov.get("code_url") or prov.get("code_url") == host.get("code_url")
-                else None,
+                else prev.get("plain_fetch"),
                 "code_current_through": prov.get("code_current_through") or host.get("current_through"),
                 "code_note": host.get("note"),
                 "why": why.get(g, ["already has a rule file"]),
@@ -1050,7 +1075,9 @@ FIXED_BATCH.update(
 FIXED_BATCH.update(
     {g: 17 for g in ("4209173088", "4209133120", "4202984192", "4212958880", "4212952432", "4201745112")}
 )
-FIXED_BATCH.update({g: 18 for g in ("4209184624", "4201754192", "4202979480", "4207181168", "4213383432", "4209141432")})
+FIXED_BATCH.update(
+    {g: 18 for g in ("4209184624", "4201754192", "4202979480", "4207181168", "4213383432", "4209141432")}
+)
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",

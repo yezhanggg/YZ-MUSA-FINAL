@@ -93,6 +93,7 @@ LABEL = {
     "parking.spaces_required": "Parking spaces required",
     "utilities.new_connection_required": "New utility connection required",
     "utilities.connection_fee_allowed": "Connection fee allowed",
+    "site.steep_slopes": "Building on steep, landslide-prone or undermined ground",
 }
 MODE = {"set": "replaces", "at_least": "town may not go under", "at_most": "town may not go over"}
 
@@ -300,6 +301,9 @@ def _size_cell(d):
         base = f"{sqft:,.0f} or {share:.0%} of the house, whichever is greater"
     elif sqft is None and share is not None:
         base = f"{share:.0%} of the house"
+    hu = (size.get("max_share_of_house_and_unit") or {}).get("value")
+    if hu is not None and share is None:  # pass 9: a share of the house and the unit together
+        base = (f"{sqft:,.0f} sq ft and " if sqft is not None else "") + f"{hu:.0%} of the house and the unit together"
     extra = [
         f"{v:,.0f} for {f.replace('_', ' ')}"
         for f, v in ((size.get("max_sqft_by_form") or {}).get("value") or {}).items()
@@ -330,6 +334,9 @@ def _path_cell(d):
     nn = ((d.get("form") or {}).get("types_not_addressed") or {}).get("value")
     if nn:
         extra.append(f"not addressed for {', '.join(f.replace('_', ' ') for f in nn)}")
+    cf = ((d.get("form") or {}).get("types_in_conflict") or {}).get("value")
+    if cf:  # pass 9
+        extra.append(f"code text conflicts for {', '.join(f.replace('_', ' ') for f in cf)}")
     un = ((d.get("approval") or {}).get("unlisted_use_districts") or {}).get("value")
     if un and ((d.get("approval") or {}).get("unlisted_use_path") or {}).get("value"):
         extra.append(f"unlisted-use path only in {', '.join(un)}")

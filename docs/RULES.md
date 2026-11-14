@@ -74,7 +74,7 @@ Bills are not law. Bill 250042 is in committee. HB 2186 passed the House and is 
 | ADU may be sold apart from the house | not confirmed | 14-604(11) | not checked | unverified |
 | Parking spaces required | not confirmed | 14-802(2) | not checked | unverified |
 | New utility connection required | not confirmed | Title 13 | not checked | unverified |
-| site.steep_slopes | 4 entries (see below) | 14-704(2) | 2026-11-14 | verified |
+| Building on steep, landslide-prone or undermined ground | 4 entries (see below) | 14-704(2) | 2026-11-14 | verified |
 
 Notes from the file:
 
@@ -102,7 +102,7 @@ Notes from the file:
 - ADU may be sold apart from the house: Not addressed in the section.
 - Parking spaces required: Set per district. See districts table (Table 14-802-1).
 - New utility connection required: Not reviewed.
-- site.steep_slopes: Read on American Legal (2026 code, current) on 2026-11-14. Steep slope protection applies only inside the mapped Steep Slope Protection Area (14-704(2)(a)), with limits by the slope on the lot: 15 to 25 percent needs an engineer's earth moving plan, 25 percent or more allows no clearing or earth moving. Exempt: lots without 15 percent slopes and disturbance of 1,400 sq ft or less. The Commission reviews before the zoning permit. Said as a condition or a question, never as a bar.
+- Building on steep, landslide-prone or undermined ground: Read on American Legal (2026 code, current) on 2026-11-14. Steep slope protection applies only inside the mapped Steep Slope Protection Area (14-704(2)(a)), with limits by the slope on the lot: 15 to 25 percent needs an engineer's earth moving plan, 25 percent or more allows no clearing or earth moving. Exempt: lots without 15 percent slopes and disturbance of 1,400 sq ft or less. The Commission reviews before the zoning permit. Said as a condition or a question, never as a bar.
 
 ### Steep slopes
 
@@ -273,7 +273,7 @@ With this bill, an RSA-5 example lot keeps "by right" for a unit inside the hous
 | ADU may be sold apart from the house | not confirmed | 912.08 | not checked | unverified |
 | Parking spaces required | 0 | 914.02.A (Bill 2025-1545, Section 40) | 2026-11-10 | verified |
 | New utility connection required | not confirmed | Title 9 | not checked | unverified |
-| site.steep_slopes | 5 entries (see below) | 915.02 and 906.04, 906.05, 906.08 | 2026-11-14 | verified |
+| Building on steep, landslide-prone or undermined ground | 5 entries (see below) | 915.02 and 906.04, 906.05, 906.08 | 2026-11-14 | verified |
 
 Notes from the file:
 
@@ -300,7 +300,7 @@ Notes from the file:
 - ADU may be sold apart from the house: Not addressed.
 - Parking spaces required: Minimum parking schedule struck. New 914.02.A is a maximum parking schedule only.
 - New utility connection required: Not addressed.
-- site.steep_slopes: Read on eCode360 (code version 2026-09-16) on 2026-11-14. 915.02 grading applies on every slope, by the slope measured on the site. The LS-O and UM-O are mapped districts. The SS-O is defined as land with a natural slope of 25 percent or more, with no separate map in the text. No section exempts small accessory structures or existing lots. Every row is said as a condition or a question, never as a bar: the lot's slope class comes from a 1 m elevation model, not a survey.
+- Building on steep, landslide-prone or undermined ground: Read on eCode360 (code version 2026-09-16) on 2026-11-14. 915.02 grading applies on every slope, by the slope measured on the site. The LS-O and UM-O are mapped districts. The SS-O is defined as land with a natural slope of 25 percent or more, with no separate map in the text. No section exempts small accessory structures or existing lots. Every row is said as a condition or a question, never as a bar: the lot's slope class comes from a 1 m elevation model, not a survey.
 
 ### Steep slopes
 
