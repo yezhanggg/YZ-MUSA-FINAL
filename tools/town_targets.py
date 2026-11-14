@@ -876,12 +876,48 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": None,
         "note": "Zoning: Chapter 230 Zoning (readopted 2007 by Ord. No. 06-211Z). ADU text: 'Accessory family dwelling' (230-149C): one unit with a single-family detached house for family members or a family caregiver, part of the house with an internal connection, 25% of floor area, no rental, registration, +1 parking. Read in the browser on eCode360 (MO1293).",
     },
+    "4201124384": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/8337502",
+        "plain_fetch": False,
+        "current_through": "2026-04-13",
+        "note": "Zoning: Chapter 390 Zoning (Exeter Township Zoning Ordinance of 2010, Ord. No. 700). No ADU text: searches for accessory dwelling, accessory apartment, in-law and ECHO find nothing. Two-family detached by right in SR3 and UR. Ord. No. 881 (2026-06-22, zoning) not yet codified. Read in the browser on eCode360 (EX2329).",
+    },
+    "4204573032": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/30536824",
+        "plain_fetch": False,
+        "current_through": "2026-06-09",
+        "note": "Zoning: Chapter 143 Zoning (Ord. No. 1504, 2010). No ADU text and no two-family listing in any district. Ord. No. 1651 (2025) and Ord. No. 1660 (2026) zoning amendments listed as new laws. Read in the browser on eCode360 (SP0159).",
+    },
+    "4209179256": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/42975244",
+        "plain_fetch": False,
+        "current_through": "2025-10-28",
+        "note": "Zoning: Chapter 300 Zoning (Ord. No. 180, recodified 2024). ADU text: 'Temporary unit for relative (in-law suite)' (300-15B(4), Ord. No. 517, 2011): accessory use to a single-family dwelling, inside the house, owner-occupied, immediate family, recorded covenant. Ord. No. 619 and 623 (2026, zoning) not yet codified. Read in the browser on eCode360 (UP1236).",
+    },
+    "4204178736": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/8577949",
+        "plain_fetch": False,
+        "current_through": "2025-12-17",
+        "note": "Zoning: Chapter 245 Zoning (Ord. No. 771, 2017). ADU text: 'Accessory apartment' (245-2.1, 245-14.3, Ord. No. 844, 2025): by right in R-3, special exception in A, R-1, R-2, C-1, INS; detached or attached; 300 sq ft to 45% of the house; owner-occupied; 3 parking spaces. Read in the browser on eCode360 (UP1380).",
+    },
+    "4213319704": {
+        "code_host": "amlegal",
+        "code_url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 27 Zoning (Ord. No. 2024-01, 5-13-2024). ADU text: 'Accessory apartment' (27-202, 27-602) by right in R-1, R-3, R-4, CV, CRV, A, V, part of the principal structure; 'Accessory family dwelling unit' (27-603) for relatives with a medical hardship, detached portable unit up to 900 sq ft. Read in the browser on American Legal (2026 S-10).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
 # added later by population (batch 14). Up to 16.
 # Towns whose batch was set when they were assigned, not by position in the list.
 FIXED_BATCH = {g: 14 for g in ("4207779104", "4207121232", "4209506096", "4201781048", "4209145080", "4209150640")}
+FIXED_BATCH.update({g: 15 for g in ("4201124384", "4204573032", "4209179256", "4204178736", "4213319704")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -901,6 +937,13 @@ EXTRAS = {
     "4201781048": "Code 370-305H(1) multigenerational apartment by special exception",
     "4209145080": "Code 143-6.2 in-law suite by right in R-1 to R-5",
     "4209150640": "Code 230-149C accessory family dwelling",
+    # Batch 15 (2026-11-14): the next towns by population without a rule file. Upper Moreland and Derry were
+    # skipped (district table or whole ordinance only in a PDF).
+    "4201124384": "batch 15 by population. Code Chapter 390 has no ADU text",
+    "4204573032": "batch 15 by population. Code Chapter 143 has no ADU text",
+    "4209179256": "Code 300-15B(4) temporary unit for relative (in-law suite)",
+    "4204178736": "Code 245-14.3 accessory apartment",
+    "4213319704": "Code 27-602 accessory apartment and 27-603 accessory family dwelling unit",
 }
 
 if __name__ == "__main__":

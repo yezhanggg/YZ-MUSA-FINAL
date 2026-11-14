@@ -1,0 +1,450 @@
+{
+  "provenance": {
+    "jurisdiction": "Springfield township",
+    "instrument": "Springfield Township (Delaware County) Code Chapter 143 Zoning (Ord. No. 1504, 3-22-2010, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-06-09 (breadcrumb). New Laws on the chapter page on 2026-11-14: Ord. No. 1651 (2025-06-04) and Ord. No. 1660 (2026-06-09), both 'Zoning Amendment', Ch 143, PDF only, not opened.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/30536824",
+      "https://ecode360.com/print/SP0159?guid=9330665",
+      "https://ecode360.com/print/SP0159?guid=9330758",
+      "https://ecode360.com/print/SP0159?guid=9330813",
+      "https://ecode360.com/print/SP0159?guid=9330880",
+      "https://ecode360.com/print/SP0159?guid=9332475",
+      "https://ecode360.com/print/SP0159?guid=9332155",
+      "https://ecode360.com/print/SP0159?guid=9330363",
+      "https://ecode360.com/SP0159/search?query=%22accessory%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SP0159/search?query=%22accessory%20apartment%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SP0159/search?query=%22in-law%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SP0159/search?query=%22ECHO%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SP0159/search?query=apartment&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SP0159/search?query=%22two-family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SP0159/search?query=carriage%20OR%20caretaker%20OR%20granny%20OR%20cottage&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SP0159/search?query=%22not%20specifically%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204573032",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30536824",
+    "code_current_through": "2026-06-09",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-06-09'. Ord. No. 1651 and Ord. No. 1660 (zoning) are still listed under New Laws.",
+    "code_caution": "Two zoning amendments, Ord. No. 1651 (2025-06-04) and Ord. No. 1660 (2026-06-09), are listed as new laws and were not read (PDF only). They may change these rules. Ask the Township.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law or ECHO provision. A code search for those words found nothing",
+      "The A and B Residence Districts permit 'any one of the following uses and no other', and the only dwelling is a single-family detached house (143-14, 143-19). C adds the single-family semidetached house (143-23). D adds apartment houses on a tract of at least five acres (143-27, 143-29B)",
+      "No district lists a two-family dwelling or a conversion of a house to more units",
+      "A private garage is limited to one per lot, 12 ft high (up to 18 ft by special exception) and 24 by 24 ft (143-111I)",
+      "Detached accessory buildings must be 10 ft from the house and at least 3 ft from any lot line, in a side or rear yard (143-111C, D)",
+      "Parking: 2 spaces for every dwelling unit (143-92)"
+    ],
+    "notes": "Zoning office: Springfield Township, Delaware County (springfieldtwp-pa.org). Read on eCode360 (SP0159) in a browser, one print view at a time. Use lists read for A, B, C and D. Business, shopping center, special use, industrial and TND overlay lists were not read. Code searches on 2026-11-14 listed in source_urls."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "143-9",
+      "url": "https://ecode360.com/print/SP0159?guid=9330363",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Code searches for 'accessory dwelling', 'accessory apartment', 'in-law', 'ECHO', 'two-family', carriage, caretaker, granny and cottage found no zoning listing (2026-11-14)."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "143-14, 143-19, 143-23, 143-27",
+      "url": "https://ecode360.com/print/SP0159?guid=9330665",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code has no ADU text. District lists allow the listed uses 'and no other'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "143-14, 143-19, 143-23, 143-27",
+      "url": "https://ecode360.com/print/SP0159?guid=9330665",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a single-family lot is not a listed use. Each residential district allows 'any one of the following uses and no other'. It needs a use variance from the Zoning Hearing Board (MPC 910.2). No district lists a two-family dwelling, and no unlisted-use special exception was found."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "143-14, MPC 910.2",
+      "url": "https://ecode360.com/print/SP0159?guid=9330665",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Same as path."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "143-14, 143-19, 143-23, 143-27",
+      "url": "https://ecode360.com/print/SP0159?guid=9330665",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 143",
+      "url": "https://ecode360.com/30536824",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "143-14, 143-19, 143-23",
+      "url": "https://ecode360.com/print/SP0159?guid=9330665",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_garage_ft": {
+      "value": 12,
+      "section": "143-111I(1)",
+      "url": "https://ecode360.com/print/SP0159?guid=9332475",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Garage rule, not an ADU rule. Up to 18 ft by special exception."
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "143-111D",
+      "url": "https://ecode360.com/print/SP0159?guid=9332475",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory buildings in a side or rear yard, no closer than 3 ft to any lot line."
+    },
+    "setback_rear_ft": {
+      "value": 3,
+      "section": "143-111D",
+      "url": "https://ecode360.com/print/SP0159?guid=9332475",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Same rule as the side."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "143-111C",
+      "url": "https://ecode360.com/print/SP0159?guid=9332475",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Detached accessory buildings 10 ft from the principal building."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "143-14, 143-19, 143-23",
+      "url": "https://ecode360.com/print/SP0159?guid=9330665",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "143-92",
+      "url": "https://ecode360.com/print/SP0159?guid=9332155",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'All types of dwelling units: 2 for every dwelling unit'."
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 8500,
+        "section": "143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewer. 1/2 acre with on-site sewage."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 30 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "143-15",
+        "url": "https://ecode360.com/print/SP0159?guid=9330665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft and two stories."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "143-15",
+        "url": "https://ecode360.com/print/SP0159?guid=9330665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "30% of the lot in buildings. Impervious cover is limited separately."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 21780,
+            "section": "143-16A",
+            "note": "'whenever on-site sewage disposal is proposed and approved, shall be 1/2 acre'"
+          }
+        ],
+        "section": "143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "B": {
+      "min_lot_sqft": {
+        "value": 7200,
+        "section": "143-21A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewer. 1/2 acre with on-site sewage."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "143-21A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "143-21A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 20 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "143-21A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "143-20",
+        "url": "https://ecode360.com/print/SP0159?guid=9330758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft and two stories."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "143-20",
+        "url": "https://ecode360.com/print/SP0159?guid=9330758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "143-21A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "30% of the lot in buildings. Impervious cover is limited separately."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 21780,
+            "section": "143-21A",
+            "note": "'whenever on-site sewage disposal is proposed and approved, shall be 1/2 acre'"
+          }
+        ],
+        "section": "143-21A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 5100,
+        "section": "143-25A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330813",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached or each semidetached house, with public sewer. 1/2 acre with on-site sewage for a detached house."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "143-25A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330813",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "143-25A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330813",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 20 ft total. A semidetached house needs 10 ft on its open side (143-25B(8))."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "143-25A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330813",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "143-24",
+        "url": "https://ecode360.com/print/SP0159?guid=9330813",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft and two stories."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "143-24",
+        "url": "https://ecode360.com/print/SP0159?guid=9330813",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "143-25A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330813",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35% of the lot in buildings. Impervious cover is limited separately."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 21780,
+            "section": "143-25A",
+            "note": "'whenever on-site sewage disposal is proposed and approved, shall be 1/2 acre'"
+          }
+        ],
+        "section": "143-25A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330813",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "D": {
+      "min_lot_sqft": {
+        "value": 8500,
+        "section": "143-29A, 143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "A single-family detached house follows the A district rules (143-29A)."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "143-29A, 143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "143-29A, 143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 30 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "143-29A, 143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "143-28",
+        "url": "https://ecode360.com/print/SP0159?guid=9330880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft and two stories."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "143-28",
+        "url": "https://ecode360.com/print/SP0159?guid=9330880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "143-29A, 143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "30% of the lot in buildings. Impervious cover is limited separately."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 21780,
+            "section": "143-29A, 143-16A",
+            "note": "'whenever on-site sewage disposal is proposed and approved, shall be 1/2 acre'"
+          }
+        ],
+        "section": "143-29A, 143-16A",
+        "url": "https://ecode360.com/print/SP0159?guid=9330880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

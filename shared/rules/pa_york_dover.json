@@ -1,0 +1,777 @@
+{
+  "provenance": {
+    "jurisdiction": "Dover township",
+    "instrument": "Dover Township (York County) Code of Ordinances Chapter 27 Zoning (Ord. No. 2024-01, 5-13-2024), as published by American Legal Publishing",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "American Legal shows the code as '2026 S-10 (current)'. Every Chapter 27 section read carries Ord. 2024-01, 5/13/2024. No later zoning amendment was seen in the sections read.",
+    "effective_date": "2024-05-13",
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25446",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-23934",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+      "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25223"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213319704",
+    "code_host": "amlegal",
+    "code_url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+    "code_current_through": null,
+    "code_current_through_note": "American Legal version label '2026 S-10 (current)'. No currency date was shown.",
+    "checks": [
+      "An accessory apartment is permitted by right in R-1, R-3, R-4, CV, CRV, A and V (27-401). Blank cells in the table mean not permitted, and the listed uses are the only uses (27-303)",
+      "The apartment must be part of the principal structure: added onto or created within a single-family dwelling, with its own kitchen, bathroom and sleeping area. One per lot (27-202, 27-602)",
+      "'Apartments or other living quarters shall not be permitted in an accessory structure/building, except as provided for in Part 6' (27-502.1.G)",
+      "Parking: 'The required two parking spaces per dwelling must be provided' (27-602.1)",
+      "A separate 'accessory family dwelling unit' is also permitted by right in the same districts. It is for the owner's relatives with a medical hardship, at most two persons, never rented, renewed every year, and may be a detached portable unit up to 900 sq ft and 15 ft high in the side or rear yard (27-202, 27-603)",
+      "No owner-occupancy or size rule is set for the accessory apartment",
+      "District density limits (R-1 one unit per half acre in the growth area, R-3 five and R-4 eight units per acre) may count the apartment. Not settled",
+      "A two-family dwelling is permitted in R-3 and R-4, and a residential conversion by special exception in R-3"
+    ],
+    "notes": "Zoning office: Dover Township, York County (dovertownship.org). Read in a browser on American Legal (codelibrary.amlegal.com/codes/dovertwp), one page at a time. Use table 27-401 read from the screen to place each P in its column. District rules read for CV, A, V, R-1, R-3, R-4 and the Crossroads Village (CRV) overlay. Part 6 standards other than 27-602 and 27-603 and Part 7 parking were not read."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment",
+      "section": "27-202, 27-602",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'an independent dwelling unit that has either been added onto, or created within a single-family dwelling unit, containing a separate kitchen, bathroom, and sleeping area.' The code also lists an 'accessory family dwelling unit' (27-603), stored as an alternative."
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "27-401",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "P in R-1, R-3, R-4, CV, CRV, A and V."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-3",
+        "R-4",
+        "CV",
+        "CRV",
+        "A",
+        "V"
+      ],
+      "section": "27-401",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "27-401, 27-303",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Blank (not permitted) in C, BP and I. 'The uses shown as permitted in each district are the only uses permitted in that district' (27-303.1)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-401, 27-601",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Standards of 27-602 met to the Zoning Officer's satisfaction before a permit (27-601)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Part 10",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that fails 27-602 needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Accessory family dwelling unit",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-3",
+            "R-4",
+            "CV",
+            "CRV",
+            "A",
+            "V"
+          ],
+          "adu_listing": true,
+          "conditions": "Attached or detached. For an elderly, handicapped or disabled relative of the owners. The owner lives in the main house. A detached unit is of portable construction, at most 900 sq ft and 15 ft high, in the side or rear yard only. District setbacks and lot coverage met. At most two occupants. Never rented. One-year use permit, renewed while the family member's medical hardship continues. A detached unit is removed within six months when the owner or the family member leaves.",
+          "min_lot_sqft": null,
+          "section": "27-202, 27-401, 27-603",
+          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": null,
+              "condition": "A relative of the owners with a medical hardship (elderly, handicapped or disabled)",
+              "section": "27-202, 27-603.7"
+            }
+          ],
+          "note": "The use table row reads 'Accessory Dwelling Units'. It is read as this use."
+        },
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Both units on one lot, side by side or one over the other. Lot 9,000 sq ft in R-3, 7,500 in R-4, with public water and sewer.",
+          "min_lot_sqft": 7500,
+          "min_lot_by_district": {
+            "R-3": 9000,
+            "R-4": 7500
+          },
+          "section": "27-202, 27-401, 27-406.3.A, 27-407.3.A",
+          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+          "confidence": "verified"
+        },
+        {
+          "name": "Residential conversion",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Listed as a special exception in R-3. The Part 6 standards for it were not read.",
+          "min_lot_sqft": null,
+          "section": "27-401",
+          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Farm tenant dwelling unit",
+          "path": "by_right",
+          "districts": [
+            "A"
+          ],
+          "conditions": "Allowed as an accessory use to a farm operation, without a subdivision. On-lot water and sewage approvals. Placed next to the farm buildings. If abandoned, it must meet the single-family rules or be removed.",
+          "min_lot_sqft": null,
+          "section": "27-403.3.C",
+          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": null,
+              "condition": "An active agricultural operation on the parcel",
+              "section": "27-403.3.C"
+            }
+          ]
+        }
+      ],
+      "section": "27-401, 27-403, 27-603",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-3",
+        "R-4",
+        "CV",
+        "CRV",
+        "A",
+        "V"
+      ],
+      "section": "27-401",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "27-202",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-23934",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'within a single-family dwelling unit'. The code's single-family dwellings include detached, semi-detached and attached houses."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "27-202",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-23934",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'added onto, or created within'."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "Part of the principal structure, with a separate kitchen, bathroom and sleeping area.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-202, 27-602.2",
+          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441"
+        },
+        {
+          "kind": "other",
+          "condition": "Only one accessory apartment per parcel or lot of record.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-602.3",
+          "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441"
+        }
+      ],
+      "section": "27-602",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "27-202, 27-602.2, 27-502.1.G",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'shall be part of the principle structure'. Living quarters are barred from accessory buildings except under Part 6."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-602",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No size cap for the accessory apartment."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "27-602",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "27-602.2",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Part of the house, so the district height applies."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-405.3.E, 27-406.3.A(2)",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "27-602",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No owner-occupancy rule for the accessory apartment. The family unit (27-603.1) requires it."
+    },
+    "family_only": {
+      "value": false,
+      "section": "27-602",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-602.3",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not searched."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "27-602.1",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The required two parking spaces per dwelling must be provided for this use.'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "27-602.1",
+      "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25441",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Two for the house and two for the apartment. Part 7 was not read."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 21780,
+        "section": "27-405.3",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Half an acre in the Growth Boundary Area, one and a half acres outside it."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-405.3",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-405.3",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-405.3",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "27-405.3",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-405.3",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum lot coverage."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 21780,
+        "section": "27-405.3",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum density one unit per half acre in the Growth Boundary Area (one per 1.5 acres outside). Whether the apartment counts is not settled."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-406.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. Public water and sewer."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-406.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-406.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-406.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-406.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "27-406.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum lot coverage."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-406.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8712,
+        "section": "27-406.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum density five dwelling units per acre. Whether the apartment counts is not settled."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "27-407.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. Public water and sewer."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-407.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-407.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-407.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-407.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-407.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum lot coverage."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-407.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5445,
+        "section": "27-407.3.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24859",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum density eight dwelling units per acre. Whether the apartment counts is not settled."
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-404.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. 43,560 with one, 65,340 with neither."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-404.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-404.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-404.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-404.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-404.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum lot coverage."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-404.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "27-404.2.A(1)"
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "27-404.2.A(1)"
+          },
+          {
+            "when": "Without public water and sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 65340,
+            "section": "27-404.2.A(1)"
+          }
+        ],
+        "section": "27-404.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24784",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "CRV": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-415.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. 43,560 with one, 65,340 with neither. The overlay is not meant to be served by public water and sewer."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-415.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-415.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-415.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-415.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-415.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum lot coverage."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-415.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "27-415.2.A(1)"
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "27-415.2.A(1)"
+          },
+          {
+            "when": "Without public water and sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 65340,
+            "section": "27-415.2.A(1)"
+          }
+        ],
+        "section": "27-415.2.A",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-25180",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "CV": {
+      "min_lot_sqft": {
+        "value": 217800,
+        "section": "27-402.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Five acres for single-family dwellings."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-402.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "27-402.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-402.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "27-402.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-402.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Impervious coverage. 10% if more than half the site has slopes over 15%."
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 65340,
+        "section": "27-403.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, 1.5 acres, at most two acres. The number of house lots per 1988 parcel is limited (27-403.3)."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-403.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "27-403.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-403.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "27-403.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-403.2",
+        "url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum lot coverage."
+      }
+    }
+  }
+}

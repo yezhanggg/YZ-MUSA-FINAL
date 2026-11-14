@@ -1,0 +1,778 @@
+{
+  "provenance": {
+    "jurisdiction": "Exeter township",
+    "instrument": "Exeter Township Code Chapter 390 Zoning (Exeter Township Zoning Ordinance of 2010, Ord. No. 700, 7-26-2010, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-04-13 (breadcrumb). New Laws on the chapter page on 2026-11-14: Ord. No. 881, adopted 2026-06-22, 'Zoning Amendment', Ch 390, PDF only, not opened and not yet in the online text.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/8337502",
+      "https://ecode360.com/print/EX2329?guid=8337502",
+      "https://ecode360.com/print/EX2329?guid=8337755",
+      "https://ecode360.com/print/EX2329?guid=8338334",
+      "https://ecode360.com/print/EX2329?guid=8338344",
+      "https://ecode360.com/print/EX2329?guid=8338489",
+      "https://ecode360.com/print/EX2329?guid=8339085",
+      "https://ecode360.com/print/EX2329?guid=8339090",
+      "https://ecode360.com/EX2329/search?query=%22accessory%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EX2329/search?query=%22accessory%20apartment%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EX2329/search?query=%22in-law%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EX2329/search?query=%22ECHO%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EX2329/search?query=cottage&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EX2329/search?query=apartment&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EX2329/search?query=%22two-family%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Berks",
+    "municipality_type": "township",
+    "geoid": "4201124384",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/8337502",
+    "code_current_through": "2026-04-13",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-04-13'. Ord. No. 881 (2026-06-22, zoning) is listed under New Laws and not yet codified.",
+    "code_caution": "A zoning amendment, Ord. No. 881, was adopted on 2026-06-22 and is not yet in the online code. It was not read, so it may change these rules. Ask the Township.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law or ECHO provision. A code search for those words found nothing",
+      "Each district may be used 'for the following purposes and no others' (390-11B to 390-18B). The residential districts list the single-family detached house, and SR2, SR3 and UR also the semidetached house",
+      "A two-family detached dwelling (one unit wholly or partly over the other) is permitted by right only in SR3 and UR. It needs 12,000 sq ft per dwelling unit with public sewer and water, or one acre per unit without (390-17, 390-18)",
+      "A dwelling unit may have 'no more than one kitchen' (390-6, dwelling unit)",
+      "Not more than one building housing a principal use on a lot unless a development plan is approved by the Board of Supervisors (390-28)",
+      "Accessory buildings: 20 ft high at most, not in a required front or side yard, at least 10 ft from the rear lot line (390-29A)",
+      "Parking: 3 spaces per dwelling unit for residential uses, not counting garages (390-37Q(1))",
+      "In AP a farm may have up to two dwelling units per 40 acres, and an existing farm building may be converted to a residence by special exception (390-12B(4), C(2))",
+      "A building on the Historic Resources Map may be reused for a single-family house, or for homes above an office or shop, under the adaptive reuse rules (390-70)",
+      "Undefined uses are a conditional use only in the GI district, so there is no unlisted-use path for a second unit on a house lot (390-71.2B)"
+    ],
+    "notes": "Zoning office: Exeter Township (exetertownship.com). Read on eCode360 (EX2329) in a browser, one print view at a time. Code searches on 2026-11-14 for 'accessory dwelling', 'accessory apartment', 'in-law', 'ECHO', cottage, apartment and 'two-family'. Use lists read for RC, AP, R, SR0, SR1, SR2, SR3, UR and the Stonersville RVO. Commercial and industrial district lists were not read, and 'two-family' appears in no district list besides SR3 and UR."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "390-6",
+      "url": "https://ecode360.com/print/EX2329?guid=8337502",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Code searches for 'accessory dwelling', 'accessory apartment', 'in-law', 'ECHO' and cottage found no zoning text (2026-11-14)."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "390-11B to 390-18B",
+      "url": "https://ecode360.com/print/EX2329?guid=8337755",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code has no ADU text. District lists allow the listed uses 'and no others'."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "390-11B to 390-18B, 390-28",
+      "url": "https://ecode360.com/print/EX2329?guid=8337755",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A second dwelling unit with a single-family house is not a listed use, and each district allows the listed uses 'and no others'. It needs a use variance from the Zoning Hearing Board (MPC 910.2). In SR3 and UR a two-family detached dwelling is permitted by right, so a unit could be added as a conversion to a two-family dwelling if the lot meets the two-family lot area."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "390-96",
+      "url": "https://ecode360.com/print/EX2329?guid=12266426",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Same as path. 390-71.2 makes undefined uses a conditional use only in GI."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "SR3",
+            "UR"
+          ],
+          "conditions": "A building for two families, 'one family living wholly or partly over the other'. Lot area 12,000 sq ft per dwelling unit with public sewer and water (24,000 for two), one acre per unit without. Width 40 ft per unit at the street. Side yards 15 ft (30 total) with public utilities. 3 parking spaces per unit.",
+          "min_lot_sqft": 24000,
+          "section": "390-17B(4), 390-18B(4), 390-6 dwelling F, district area tables",
+          "url": "https://ecode360.com/print/EX2329?guid=8337755",
+          "confidence": "secondary",
+          "note": "Read as a conversion path for an existing house. The definition is a stacked two-unit building. Without public sewer and water the lot must be two acres."
+        },
+        {
+          "name": "Second farm dwelling",
+          "path": "by_right",
+          "districts": [
+            "AP"
+          ],
+          "conditions": "Farm dwellings are single-family detached houses. 'No more than two dwelling units shall be permitted per 40 acres of farm. The total number of dwellings shall not exceed two.' The farm must be at least 40 acres unless it existed in 2010. The dwelling stays in the same ownership as the farm.",
+          "min_lot_sqft": 1742400,
+          "section": "390-12B(4)",
+          "url": "https://ecode360.com/print/EX2329?guid=8337755",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Repurposed farm building",
+          "path": "special_exception",
+          "districts": [
+            "AP"
+          ],
+          "conditions": "'Repurposed buildings (existing agricultural structure converted to residence).' By special exception from the Zoning Hearing Board.",
+          "min_lot_sqft": null,
+          "section": "390-12C(2)",
+          "url": "https://ecode360.com/print/EX2329?guid=8337755",
+          "confidence": "secondary",
+          "note": "No standards are given. Whether it counts toward the two-dwelling limit of 390-12B(4)(a) is not settled.",
+          "requires": [
+            {
+              "test": "has_accessory_building",
+              "condition": "An existing agricultural building",
+              "section": "390-12C(2)"
+            }
+          ]
+        }
+      ],
+      "section": "390-12, 390-17, 390-18",
+      "url": "https://ecode360.com/print/EX2329?guid=8337755",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "390-11 to 390-18",
+      "url": "https://ecode360.com/print/EX2329?guid=8337755",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "390-70",
+      "url": "https://ecode360.com/print/EX2329?guid=8339085",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path. Adaptive reuse of a historic resource allows a single-family house or homes above a business (390-70B(1))."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "390-11B to 390-18B",
+      "url": "https://ecode360.com/print/EX2329?guid=8337755",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "390-29A(2)",
+      "url": "https://ecode360.com/print/EX2329?guid=8338344",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory building rule, not an ADU rule. 'The maximum height of any accessory building or structure shall be 20 feet.'"
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "390-29A(1)",
+      "url": "https://ecode360.com/print/EX2329?guid=8338344",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Accessory buildings may not be 'within 10 feet of the rear lot line'."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "390-29A(1)",
+      "url": "https://ecode360.com/print/EX2329?guid=8338344",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Not in a required side yard. In the rear yard the side distance is the district side yard or 10 ft, whichever is less."
+    },
+    "separation_ft": {
+      "value": 5,
+      "section": "390-29A(3)",
+      "url": "https://ecode360.com/print/EX2329?guid=8338344",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Between an accessory building and the principal building."
+    },
+    "front_yard_barred": {
+      "value": false,
+      "section": "390-29A(1)",
+      "url": "https://ecode360.com/print/EX2329?guid=8338344",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Barred from the required front yard only."
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 0,
+      "section": "390-11B to 390-18B",
+      "url": "https://ecode360.com/print/EX2329?guid=8337755",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "390-37Q(1)",
+      "url": "https://ecode360.com/print/EX2329?guid=8338489",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. 'Residential uses: 3 parking spaces per dwelling unit, not to include garages'."
+    }
+  },
+  "districts": {
+    "RC": {
+      "min_lot_sqft": {
+        "value": 130680,
+        "section": "390-11E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 acres."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "390-11E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building setback from the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "390-11E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 60 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "390-11E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "390-11E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential buildings."
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "390-11E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      }
+    },
+    "AP": {
+      "min_lot_sqft": {
+        "value": 1742400,
+        "section": "390-12E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 acres. A house on a lot existing in 2010 of less than 10 acres is also permitted (390-12B(5))."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "390-12E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building setback from the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "390-12E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 100 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "390-12E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "390-12E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential buildings."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "390-12E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      }
+    },
+    "R": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "390-13E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "1 acre."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "390-13E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building setback from the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "390-13E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 50 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "390-13E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "390-13E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "All buildings other than farm buildings."
+      },
+      "max_building_coverage": {
+        "value": 0.21,
+        "section": "390-13E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      }
+    },
+    "SR0": {
+      "min_lot_sqft": {
+        "value": 21780,
+        "section": "390-14E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public or community sewage disposal and public or community water supply. 1 acre otherwise."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "390-14E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building setback from the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "390-14E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 40 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "390-14E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "390-14E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "390-14E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "390-14E",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.2,
+            "principal_max_height_ft": 35
+          },
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "390-14E",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.2,
+            "principal_max_height_ft": 35
+          }
+        ],
+        "section": "390-14E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "SR1": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "390-15F",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public or community sewage disposal and public or community water supply. 1 acre otherwise."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "390-15F",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building setback from the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "390-15F",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 30 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "390-15F",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "390-15F",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "390-15F",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "390-15F",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.21,
+            "principal_max_height_ft": 35
+          },
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "390-15F",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.21,
+            "principal_max_height_ft": 35
+          }
+        ],
+        "section": "390-15F",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "SR2": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "390-16E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public or community sewage disposal and public or community water supply. Single-family detached. 1 acre otherwise. Semidetached: 12,000 per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "390-16E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building setback from the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "390-16E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 30 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "390-16E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "390-16E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "390-16E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "390-16E",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.21,
+            "principal_max_height_ft": 35
+          },
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "390-16E",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.21,
+            "principal_max_height_ft": 35
+          }
+        ],
+        "section": "390-16E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "SR3": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "390-17 table",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public or community sewage disposal and public or community water supply. Single-family detached. 1 acre otherwise. Semidetached and two-family: 12,000 per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "390-17 table",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building setback from the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "390-17 table",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 30 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "390-17 table",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "390-17 table",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "390-17 table",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "390-17 table",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.21,
+            "principal_max_height_ft": 35
+          },
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "390-17 table",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.21,
+            "principal_max_height_ft": 35
+          }
+        ],
+        "section": "390-17 table",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "UR": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "390-18E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public or community sewage disposal and public or community water supply. Single-family detached. 1 acre otherwise. Semidetached and two-family: 12,000 per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "390-18E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building setback from the street right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "390-18E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "One side. 30 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "390-18E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "390-18E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "390-18E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "390-18E",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.22,
+            "principal_max_height_ft": 35
+          },
+          {
+            "when": "On-site sewage disposal or on-site water supply",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "390-18E",
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.22,
+            "principal_max_height_ft": 35
+          }
+        ],
+        "section": "390-18E",
+        "url": "https://ecode360.com/print/EX2329?guid=8337755",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

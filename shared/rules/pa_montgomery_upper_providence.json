@@ -1,0 +1,756 @@
+{
+  "provenance": {
+    "jurisdiction": "Upper Providence township",
+    "instrument": "Upper Providence Township (Montgomery County) Code Chapter 300 Zoning (Ord. No. 180, 7-7-1976, recodified 2024, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-10-28 (breadcrumb). New Laws on the chapter page on 2026-11-14: Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21), both 'Zoning Amendment', Ch 300, PDF only, not opened.",
+    "effective_date": "2011-08-01",
+    "source_urls": [
+      "https://ecode360.com/42975244",
+      "https://ecode360.com/print/UP1236?guid=42975288",
+      "https://ecode360.com/print/UP1236?guid=42976358",
+      "https://ecode360.com/print/UP1236?guid=42976415",
+      "https://ecode360.com/print/UP1236?guid=42976413",
+      "https://ecode360.com/print/UP1236?guid=42976433",
+      "https://ecode360.com/print/UP1236?guid=42976579",
+      "https://ecode360.com/print/UP1236?guid=42976604",
+      "https://ecode360.com/print/UP1236?guid=42976806",
+      "https://ecode360.com/UP1236/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22family%20care%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/UP1236/search?query=%22single-family%20detached%22%20AND%20%22accessory%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/UP1236/search?query=%22300-15%22%20OR%20%22temporary%20unit%22%20OR%20%22relative%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209179256",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/42975244",
+    "code_current_through": "2025-10-28",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-10-28'. Ord. No. 619 and Ord. No. 623 (zoning, 2026) are listed under New Laws and not yet codified.",
+    "code_caution": "Two zoning amendments, Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21), are not yet in the online code. They were not read, so they may change these rules. Ask the Township.",
+    "checks": [
+      "A 'temporary unit for relative (in-law suite)' may be added as an accessory use to a single-family dwelling (300-15B(4), added by Ord. No. 517 in 2011)",
+      "The unit must be 'totally enclosed within the principal building', with an internal connection to the main home (300-15B(4)(a), (c))",
+      "The main home must be owner-occupied (300-15B(4)(b))",
+      "Only immediate family may live in it: parents, grandparents, children, grandchildren, siblings, aunts, uncles, stepparents and stepchildren (300-15B(4)(e))",
+      "The owners record a covenant, approved by the Township Solicitor, that bars use of the property as two or more dwelling units (300-15B(4)(d))",
+      "It reaches the districts whose use lists permit a single-family detached house with accessory uses: R-1, R-2, R-3, VP, YMU, CL, and the planned community districts OSR-1, OSR-2, GCR, ARR and VCO. The planned community district lists were seen only in search results",
+      "No size limit and no extra parking rule is set for the unit",
+      "R-1 and R-2 tables state lot area 'per dwelling unit'. Whether the in-law suite counts is not settled. The covenant suggests the Township treats the property as one dwelling unit",
+      "A zoning permit is needed for any accessory structure or building (300-15D)"
+    ],
+    "notes": "Zoning office: Upper Providence Township, Montgomery County (uprov-montco.org). Read on eCode360 (UP1236) in a browser, one print view at a time. Use lists and area rules read for R-1, R-2, R-3, VP, YMU and CL. OSR-1, OSR-2, GCR, ARR, MH, VCO and the Mixed Residential Community option were seen only in search results. Commercial and industrial district lists were not read."
+  },
+  "adu": {
+    "term": {
+      "value": "temporary unit for relative (in-law suite)",
+      "section": "300-15B(4)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Temporary unit for relative (in-law suite). A temporary dwelling unit may be established as an accessory use to a principal single-family dwelling unit if the following requirements are met'."
+    },
+    "status": {
+      "value": "family_only",
+      "section": "300-15B(4)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Immediate family of the owners only, inside the house. Accessory use, so by right where accessory uses are permitted."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "VP",
+        "YMU",
+        "CL",
+        "OSR-1",
+        "OSR-2",
+        "GCR",
+        "ARR",
+        "VCO"
+      ],
+      "section": "300-171D, 300-187A, 300-202H, 300-236D, 300-249H, 300-277D(4), 300-291, 300-309, 300-325, 300-344, 300-491",
+      "url": "https://ecode360.com/print/UP1236?guid=42976358",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "300-15B(4) names no district. These are the districts whose use lists permit a single-family detached house and accessory uses customarily incidental to it. OSR-1, OSR-2, GCR, ARR and VCO were seen in search results only."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "300-171, 300-202",
+      "url": "https://ecode360.com/print/UP1236?guid=42976358",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Elsewhere a single-family house is not a listed use, so the accessory unit has nothing to attach to. MH (mobile home parks) and the commercial and industrial districts were not read."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "300-15B(4), 300-171D",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "An accessory use authorized by 300-15. District lists permit 'Accessory uses on the same lot with and customarily incidental to any permitted use' (300-171D). A zoning permit and a recorded covenant."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/42975244",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit that fails 300-15B(4) needs a variance from the Zoning Hearing Board."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (twin or duplex)",
+          "path": "by_right",
+          "districts": [
+            "VP"
+          ],
+          "conditions": "Twins and duplexes are permitted by right. Lot area 3,000 sq ft per dwelling unit, so 6,000 for two. Public sewer and water required. Duplex: width 40 ft, side yards 15 ft, rear 40 ft, 30% coverage.",
+          "min_lot_sqft": 6000,
+          "section": "300-236B, 300-237A, B",
+          "url": "https://ecode360.com/print/UP1236?guid=42976579",
+          "confidence": "secondary",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "300-237B"
+            },
+            {
+              "test": "public_water",
+              "condition": "Centralized water",
+              "section": "300-237B"
+            }
+          ]
+        },
+        {
+          "name": "Conversion of a house to two or three units",
+          "path": "special_exception",
+          "districts": [
+            "VP"
+          ],
+          "conditions": "Each unit at least 600 sq ft plus 100 sq ft per bedroom over one. Lot area per family at least 33% of the district figure. At most three families. Parking met. 'Authorized only for a large dwelling with relatively little economic usefulness as a conforming use.'",
+          "min_lot_sqft": null,
+          "section": "300-236C(2)",
+          "url": "https://ecode360.com/print/UP1236?guid=42976579",
+          "confidence": "verified"
+        },
+        {
+          "name": "Two-family dwellings in a planned development",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Two-family dwellings are permitted, but every R-3 development needs a tract of at least five acres with public sewer and water, a development agreement and a community impact statement. Not a path for one house lot.",
+          "min_lot_sqft": 217800,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "300-202B, 300-203A, C(1)",
+          "url": "https://ecode360.com/print/UP1236?guid=42976433",
+          "confidence": "verified"
+        }
+      ],
+      "section": "300-202, 300-203, 300-236",
+      "url": "https://ecode360.com/print/UP1236?guid=42976579",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "VP",
+        "YMU",
+        "CL",
+        "OSR-1",
+        "OSR-2",
+        "GCR",
+        "ARR",
+        "VCO"
+      ],
+      "section": "300-171D, 300-187A, 300-202H, 300-236D, 300-249H, 300-277D(4), 300-291, 300-309, 300-325, 300-344, 300-491",
+      "url": "https://ecode360.com/print/UP1236?guid=42976358",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Districts that permit a single-family detached house and its accessory uses."
+    },
+    "districts_in_doubt": {
+      "value": [
+        "MH"
+      ],
+      "section": "300-362",
+      "url": "https://ecode360.com/42975244",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Mobile home development district. Its accessory uses on individual lots were seen only in a search result. Ask the zoning officer."
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "attached"
+      ],
+      "section": "300-15B(4)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'a principal single-family dwelling unit'. Not limited to detached houses. Twins and duplexes are 'two-family dwellings' in this code (300-236B), so they are not reached."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "300-15B(4)(a)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'totally enclosed within the principal building'. An addition that becomes part of the house is read as allowed. No rule says the space must exist already."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Only immediate family: Parents, grandparents, children, grandchildren, siblings, aunts, uncles, stepparents and stepchildren of the owners.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "300-15B(4)(e)",
+          "url": "https://ecode360.com/print/UP1236?guid=42975288"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The principal dwelling unit must be owner-occupied.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "300-15B(4)(b)",
+          "url": "https://ecode360.com/print/UP1236?guid=42975288"
+        },
+        {
+          "kind": "design",
+          "condition": "Totally enclosed within the principal building, with an internal connection between the two units.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "300-15B(4)(a), (c)",
+          "url": "https://ecode360.com/print/UP1236?guid=42975288"
+        },
+        {
+          "kind": "other",
+          "condition": "A covenant recorded with the Montgomery County Recorder of Deeds, approved by the Township Solicitor, that prohibits use of the property as two or more dwelling units.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "300-15B(4)(d)",
+          "url": "https://ecode360.com/print/UP1236?guid=42975288"
+        },
+        {
+          "kind": "age",
+          "condition": "In ARR the community is age-restricted (300-344).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "ARR"
+          ],
+          "building_types": null,
+          "section": "300-344",
+          "url": "https://ecode360.com/42975244"
+        }
+      ],
+      "section": "300-15B(4)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "300-15B(4)(a)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Inside the principal building. 'attached' here means an addition that becomes part of the house."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "300-15B(4)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No size cap is set."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "300-15B(4)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "300-15B(4)(a)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Inside the house, so the district height for dwellings applies."
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "300-173A, 300-189A, 300-203B(2)(a)",
+      "url": "https://ecode360.com/print/UP1236?guid=42976358",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "35 ft for any principal building or dwelling."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "300-15B(4)(b)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The principal dwelling unit."
+    },
+    "family_only": {
+      "value": true,
+      "section": "300-15B(4)(e)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Parents, grandparents, children, grandchildren, siblings, aunts, uncles, stepparents and stepchildren of the owners.",
+      "section": "300-15B(4)(e)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "300-15B(4)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "'A temporary dwelling unit'. The covenant bars use as two or more dwelling units."
+    },
+    "short_term_rental_banned": {
+      "value": null,
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/42975244",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Not searched."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "300-15B(4)",
+      "url": "https://ecode360.com/print/UP1236?guid=42975288",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No parking rule for the unit. R-3 requires two spaces per dwelling unit (300-203B(3)(a)). The general parking article was not read."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976358",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976358",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976358",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "60 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976358",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976358",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-173A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976358",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976358",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976358",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "300-188",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public sewer and water. 30,000 with one, 43,560 with neither. Per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "300-188",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-188",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft aggregate on a 15,000 sq ft lot."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "300-188",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "300-188",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-189A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "300-188",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "300-188",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 40,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.1,
+            "section": "300-188A, B"
+          },
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.15,
+            "section": "300-188A, B"
+          },
+          {
+            "when": "Public sewer or public water, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.15,
+            "section": "300-188A, B"
+          }
+        ],
+        "section": "300-188",
+        "url": "https://ecode360.com/print/UP1236?guid=42976413",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "300-203E",
+        "url": "https://ecode360.com/print/UP1236?guid=42976433",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, per dwelling unit. Public sewer and water required (300-203A(2))."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "300-203E",
+        "url": "https://ecode360.com/print/UP1236?guid=42976433",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-203E",
+        "url": "https://ecode360.com/print/UP1236?guid=42976433",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "300-203E",
+        "url": "https://ecode360.com/print/UP1236?guid=42976433",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "300-203E",
+        "url": "https://ecode360.com/print/UP1236?guid=42976433",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-203B(2)(a)",
+        "url": "https://ecode360.com/print/UP1236?guid=42976433",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "300-203E",
+        "url": "https://ecode360.com/print/UP1236?guid=42976433",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "VP": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "300-237A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached, per dwelling unit. Public sewer and water required."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "300-237A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-237A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "300-237A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "300-237A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-237C",
+        "url": "https://ecode360.com/print/UP1236?guid=42976579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "300-237A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "YMU": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "300-249A, 300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached on lots of at least one acre under the R-1 rules."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "300-249A, 300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "300-249A, 300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "300-249A, 300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "300-249A, 300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-249A, 300-173A",
+        "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "300-249A, 300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "300-249A, 300-172",
+        "url": "https://ecode360.com/print/UP1236?guid=42976604",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "CL": {
+      "min_lot_sqft": {
+        "value": 8750,
+        "section": "300-277B",
+        "url": "https://ecode360.com/print/UP1236?guid=42976806",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Cluster lot. Impervious cover 50%."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "300-277B",
+        "url": "https://ecode360.com/print/UP1236?guid=42976806",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "300-277B",
+        "url": "https://ecode360.com/print/UP1236?guid=42976806",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "300-277B",
+        "url": "https://ecode360.com/print/UP1236?guid=42976806",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "300-277B",
+        "url": "https://ecode360.com/print/UP1236?guid=42976806",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "300-277B",
+        "url": "https://ecode360.com/print/UP1236?guid=42976806",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "300-277B",
+        "url": "https://ecode360.com/print/UP1236?guid=42976806",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

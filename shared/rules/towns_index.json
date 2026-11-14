@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 82,
-      "population": 4724965,
-      "share_of_pa": 0.3634
+      "towns_beyond_the_two_cities": 87,
+      "population": 4845141,
+      "share_of_pa": 0.3726
     }
   ],
   "towns": [
@@ -2066,6 +2066,126 @@
         "known ADU ordinance (Code 230-149C accessory family dwelling)"
       ],
       "status_note": "Drafted 2026-11-14, review14 fixes applied: scope set to the districts whose use lists permit a single-family detached dwelling (R-1, R-2, R-3, R-3A, R-3B, R-5, R-6, all read); path note quotes fixed; R-1 height 35 ft and 2 1/2 stories. Open: C and the other nonresidential districts permit the uses in Appendix Table 230-A, an attachment not opened, so whether a house (and this unit) is allowed there is not confirmed; MHP not read."
+    },
+    {
+      "geoid": "4201124384",
+      "geoid_aliases": [],
+      "name": "Exeter township",
+      "county": "Berks",
+      "type": "township",
+      "population": 25466,
+      "population_with_aliases": 25466,
+      "housing_units": 9977,
+      "pop_rank": 68,
+      "file": "pa_berks_exeter",
+      "batch": 15,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8337502",
+      "plain_fetch": false,
+      "code_current_through": "2026-04-13",
+      "code_note": "Zoning: Chapter 390 Zoning (Exeter Township Zoning Ordinance of 2010, Ord. No. 700). No ADU text: searches for accessory dwelling, accessory apartment, in-law and ECHO find nothing. Two-family detached by right in SR3 and UR. Ord. No. 881 (2026-06-22, zoning) not yet codified. Read in the browser on eCode360 (EX2329).",
+      "why": [
+        "known ADU ordinance (batch 15 by population. Code Chapter 390 has no ADU text)"
+      ],
+      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). No ADU text found. Open: Ord. No. 881 (2026-06-22, zoning amendment) is not yet in the online code and its PDF was not read. Commercial and industrial district use lists and the Limekiln RVO were not read. Whether the AP repurposed farm building counts toward the two-dwelling farm limit."
+    },
+    {
+      "geoid": "4204573032",
+      "geoid_aliases": [],
+      "name": "Springfield township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 25070,
+      "population_with_aliases": 25070,
+      "housing_units": 8875,
+      "pop_rank": 69,
+      "file": "pa_delaware_springfield",
+      "batch": 15,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30536824",
+      "plain_fetch": false,
+      "code_current_through": "2026-06-09",
+      "code_note": "Zoning: Chapter 143 Zoning (Ord. No. 1504, 2010). No ADU text and no two-family listing in any district. Ord. No. 1651 (2025) and Ord. No. 1660 (2026) zoning amendments listed as new laws. Read in the browser on eCode360 (SP0159).",
+      "why": [
+        "known ADU ordinance (batch 15 by population. Code Chapter 143 has no ADU text)"
+      ],
+      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). No ADU text found. Open: Ord. No. 1651 (2025-06-04) and Ord. No. 1660 (2026-06-09) zoning amendments are listed as new laws and were not read (PDF only). Business, shopping center, special use, industrial and TND overlay use lists were not read."
+    },
+    {
+      "geoid": "4209179256",
+      "geoid_aliases": [],
+      "name": "Upper Providence township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 24091,
+      "population_with_aliases": 24091,
+      "housing_units": 8837,
+      "pop_rank": 72,
+      "file": "pa_montgomery_upper_providence",
+      "batch": 15,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/42975244",
+      "plain_fetch": false,
+      "code_current_through": "2025-10-28",
+      "code_note": "Zoning: Chapter 300 Zoning (Ord. No. 180, recodified 2024). ADU text: 'Temporary unit for relative (in-law suite)' (300-15B(4), Ord. No. 517, 2011): accessory use to a single-family dwelling, inside the house, owner-occupied, immediate family, recorded covenant. Ord. No. 619 and 623 (2026, zoning) not yet codified. Read in the browser on eCode360 (UP1236).",
+      "why": [
+        "known ADU ordinance (Code 300-15B(4) temporary unit for relative (in-law suite))"
+      ],
+      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21) zoning amendments not codified and not read. 300-15B(4) names no district; scope set from use lists read for R-1, R-2, R-3, VP, YMU, CL, while OSR-1, OSR-2, GCR, ARR and VCO were seen only in search results and have no district rows; MH left in doubt. Whether the R-1 and R-2 lot area 'per dwelling unit' counts the in-law suite. General parking article not read."
+    },
+    {
+      "geoid": "4204178736",
+      "geoid_aliases": [],
+      "name": "Upper Allen township",
+      "county": "Cumberland",
+      "type": "township",
+      "population": 23183,
+      "population_with_aliases": 23183,
+      "housing_units": 8578,
+      "pop_rank": 74,
+      "file": "pa_cumberland_upper_allen",
+      "batch": 15,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8577949",
+      "plain_fetch": false,
+      "code_current_through": "2025-12-17",
+      "code_note": "Zoning: Chapter 245 Zoning (Ord. No. 771, 2017). ADU text: 'Accessory apartment' (245-2.1, 245-14.3, Ord. No. 844, 2025): by right in R-3, special exception in A, R-1, R-2, C-1, INS; detached or attached; 300 sq ft to 45% of the house; owner-occupied; 3 parking spaces. Read in the browser on eCode360 (UP1380).",
+      "why": [
+        "known ADU ordinance (Code 245-14.3 accessory apartment)"
+      ],
+      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: the definition (245-2.1) speaks of a unit in or added to an existing house while 245-14.3B (2025) allows a detached apartment; whether the 20 ft accessory height (245-16.2E) binds a detached apartment; whether the R-2 and R-3 lot size 'per dwelling unit' counts the apartment; 245-14.20 conversion apartment and 245-14.61 density standards not read. In R-3 the tool shows the town status special exception next to the by-right path."
+    },
+    {
+      "geoid": "4213319704",
+      "geoid_aliases": [],
+      "name": "Dover township",
+      "county": "York",
+      "type": "township",
+      "population": 22366,
+      "population_with_aliases": 22366,
+      "housing_units": 9280,
+      "pop_rank": 77,
+      "file": "pa_york_dover",
+      "batch": 15,
+      "status": "drafted",
+      "checked_on": "2026-11-14",
+      "code_host": "amlegal",
+      "code_url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
+      "plain_fetch": false,
+      "code_current_through": null,
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 2024-01, 5-13-2024). ADU text: 'Accessory apartment' (27-202, 27-602) by right in R-1, R-3, R-4, CV, CRV, A, V, part of the principal structure; 'Accessory family dwelling unit' (27-603) for relatives with a medical hardship, detached portable unit up to 900 sq ft. Read in the browser on American Legal (2026 S-10).",
+      "why": [
+        "known ADU ordinance (Code 27-602 accessory apartment and 27-603 accessory family dwelling unit)"
+      ],
+      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: the use table row 'Accessory Dwelling Units' is read as the 27-603 accessory family dwelling unit; whether district density limits (R-1, R-3, R-4) count the apartment; Part 7 parking and the Part 6 residential conversion standards not read; American Legal shows version 2026 S-10 with no currency date."
     }
   ]
 }

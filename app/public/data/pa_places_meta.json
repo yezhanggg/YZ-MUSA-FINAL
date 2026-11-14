@@ -138,10 +138,10 @@
   "by_tier": [
    {
     "tier": "baseline",
-    "places": 1870,
-    "pop": 7317790,
-    "pop_share": 0.5603,
-    "housing_units": 3211223
+    "places": 1866,
+    "pop": 7217019,
+    "pop_share": 0.5526,
+    "housing_units": 3174956
    },
    {
     "tier": "verified",
@@ -151,18 +151,18 @@
     "housing_units": 1674445
    },
    {
-    "tier": "reported",
-    "places": 564,
-    "pop": 906874,
-    "pop_share": 0.0694,
-    "housing_units": 425234
+    "tier": "drafted",
+    "places": 32,
+    "pop": 1027565,
+    "pop_share": 0.0787,
+    "housing_units": 425017
    },
    {
-    "tier": "drafted",
-    "places": 27,
-    "pop": 902399,
-    "pop_share": 0.0691,
-    "housing_units": 379470
+    "tier": "reported",
+    "places": 563,
+    "pop": 882479,
+    "pop_share": 0.0676,
+    "housing_units": 415954
    },
    {
     "tier": "text_search",
@@ -175,31 +175,31 @@
   "by_status": [
    {
     "status": "unknown",
-    "places": 1923,
-    "pop": 7428573,
-    "pop_share": 0.5688,
-    "housing_units": 3263679
+    "places": 1919,
+    "pop": 7327802,
+    "pop_share": 0.5611,
+    "housing_units": 3227412
    },
    {
     "status": "limited",
-    "places": 74,
-    "pop": 3130479,
-    "pop_share": 0.2397,
-    "housing_units": 1360114
+    "places": 77,
+    "pop": 3204537,
+    "pop_share": 0.2454,
+    "housing_units": 1386809
    },
    {
     "status": "not_addressed",
-    "places": 29,
-    "pop": 1036881,
-    "pop_share": 0.0794,
-    "housing_units": 428172
+    "places": 31,
+    "pop": 1087989,
+    "pop_share": 0.0833,
+    "housing_units": 447024
    },
    {
     "status": "by_right",
-    "places": 16,
-    "pop": 711301,
-    "pop_share": 0.0545,
-    "housing_units": 327825
+    "places": 15,
+    "pop": 686906,
+    "pop_share": 0.0526,
+    "housing_units": 318545
    },
    {
     "status": "no_zoning",
@@ -250,8 +250,8 @@
    {
     "tier": "baseline",
     "status": "unknown",
-    "places": 1870,
-    "pop": 7317790
+    "places": 1866,
+    "pop": 7217019
    },
    {
     "tier": "drafted",
@@ -262,20 +262,20 @@
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 15,
-    "pop": 425264
+    "places": 18,
+    "pop": 499322
    },
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 7,
-    "pop": 247725
+    "places": 9,
+    "pop": 298833
    },
    {
     "tier": "reported",
     "status": "by_right",
-    "places": 7,
-    "pop": 63924
+    "places": 6,
+    "pop": 39529
    },
    {
     "tier": "reported",
@@ -367,6 +367,14 @@
    "kept": "verified limited (philadelphia)",
    "other": "by_right (berkeley_zrt_2026, 2026-02-28)",
    "note": "by right in single-family zoned areas; interior or existing detached structure only; max 800 sq ft (inventory dated 2026-02-28)"
+  },
+  {
+   "geoid": "4213319704",
+   "name": "Dover township",
+   "kind": "rule_file_vs_inventory",
+   "kept": "drafted limited (pa_york_dover)",
+   "other": "by_right (ycpc_senior_housing_2024, 2024-09)",
+   "note": "ADU by right (A, CV, R-1, R-3, R-4, V) (inventory dated 2024-09)"
   },
   {
    "geoid": "4213321296",
