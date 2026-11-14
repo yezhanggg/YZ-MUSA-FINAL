@@ -47,8 +47,8 @@
   "lots": {
     "philadelphia": {
       "lots": 459998,
-      "data_version": "philadelphia-20261112-d441ac616a",
-      "built_at": "2026-11-12T16:17:54",
+      "data_version": "philadelphia-20261114-2a67293eaa",
+      "built_at": "2026-11-14T10:11:58",
       "today": {
         "any_path": 0.012,
         "detached_by_right": 0.0,
@@ -67,8 +67,8 @@
     },
     "pittsburgh": {
       "lots": 92081,
-      "data_version": "pittsburgh-20261112-f2be01fba6",
-      "built_at": "2026-11-12T15:40:28",
+      "data_version": "pittsburgh-20261114-7ae3f25d22",
+      "built_at": "2026-11-14T09:43:37",
       "today": {
         "any_path": 1.0,
         "detached_by_right": 0.0,
