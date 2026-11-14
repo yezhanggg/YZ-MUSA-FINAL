@@ -2112,11 +2112,27 @@ def test_short_term_rental_listing_says_so():
     assert "short-term rental only, not a long-term home" in g["note"]
 
 
-def test_unlisted_path_reaches_a_town_with_no_form_listed():
-    d = rules.load_rules("pa_york_west_manchester")
-    lot = {"zoning_district": list(d["districts"])[0], "lot_sqft": 30000, "building_type": "detached"}
-    out = rules.resolve("pa_york_west_manchester", "today", lot, extra=True)
+def test_unlisted_path_reaches_a_town_with_no_form_listed(tmp_path, monkeypatch):
+    body = {
+        "adu": {"status": _leaf("not_addressed", "1", "secondary")},
+        "approval": {
+            "path": _leaf("variance", "1", "secondary"),
+            "fallback_path": _leaf("variance", "1", "secondary"),
+            "unlisted_use_path": _leaf("special_exception", "1", "secondary"),
+        },
+        "eligibility": {"zoning_districts": _leaf([], "1", "secondary")},
+        "form": {"types_allowed": _leaf([], "1", "secondary")},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_unlisted_no_form", body)
+    lot = {"zoning_district": "R-1", "lot_sqft": 30000, "building_type": "detached"}
+    out = rules.resolve(name, "today", lot, extra=True)
     assert out["path_to_ask"]["path"] == "special_exception"
+
+
+def test_west_manchester_second_unit_reads_as_duplex_variance():
+    lot = {"zoning_district": "R-3", "lot_sqft": 12000, "building_type": "detached"}
+    out = rules.resolve("pa_york_west_manchester", "today", lot, extra=True)
+    assert out["path_to_ask"]["path"] == "variance"
 
 
 def test_outside_scope_unlisted_path_only_where_listed(tmp_path, monkeypatch):

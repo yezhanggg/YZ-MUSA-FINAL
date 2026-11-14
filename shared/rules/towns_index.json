@@ -2583,7 +2583,7 @@
       "pop_rank": 106,
       "file": "pa_york_west_manchester",
       "batch": 18,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/15443121",
@@ -2593,7 +2593,7 @@
       "why": [
         "added as batch 18 by population. Code Chapter 150 has no ADU text"
       ],
-      "status_note": "First reading. Open: Ord. No. 26-01, 26-02 and 26-03 (2026, subject not shown) not read; whether a second unit is an unlisted use (150-9 special exception) or a two-family dwelling; OSR, MU, PRD, commercial and industrial zones and parking not read."
+      "status_note": "Reviewed and fixed 2026-11-14. For a later check: confirm with the Zoning Officer that a second unit in a single-family zone is treated as a duplex (use variance) everywhere except R-6, not as an unlisted use by 150-9 special exception. Not read: HC, PO, RC, I-1, I-2, I-3, OS, Q, DCO, PRD in full, 150-302 and 150-357.1."
     },
     {
       "geoid": "4209141432",
@@ -2617,7 +2617,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 405-1913 accessory dwelling units, family only)"
       ],
-      "status_note": "First reading. Open: 2026 Residential B and C amendment (Ord. 2012) and TOD amendment not read; whether the ADU counts as a dwelling unit for lot area per unit; PO-A, PO-B, LPO, commercial, business, industrial and overlay use lists not read."
+      "status_note": "Open: Ord. 2012 (Residential B and C amendments, PDF, not read; listed as adopted Nov 19, 2026 though titled 8.19.2026) rewrites the B and C tables and the conversion row; Ord. 2013 (TOD) not read; whether the ADU counts as a dwelling unit for lot area per unit; whether 405-901's 7,500 sq ft reaches a PO-B conversion; LPO yards come from the abutting residential district; commercial, business, industrial and other overlay use lists not read."
     }
   ]
 }

@@ -4,7 +4,7 @@
     "instrument": "West Manchester Township Code Chapter 150 Zoning (Ord. No. 79-1, 1-4-1979, amended in its entirety by Ord. No. 87-2, 3-31-1987, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2025-11-13 (breadcrumb). New Laws on 2026-11-14: Ord. No. 26-01 (2026-01-05), 26-02 (2026-01-22) and 26-03 (2026-05-28), with no subject or chapter shown, PDF only, not read.",
+    "status_detail": "eCode360 code date 2025-11-13 (breadcrumb). New Laws on 2026-11-14: Ord. No. 26-01 (2026-01-05, Non-Uniformed Employees Pension Plan, Chapter 29), 26-02 (2026-01-22, Vehicles and Traffic, 139-323) and 26-03 (2026-05-28, Subdivision and Land Development, Chapter 121). None amends Chapter 150.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/15443121",
@@ -23,7 +23,15 @@
       "https://ecode360.com/15445211",
       "https://ecode360.com/WE1311/laws",
       "https://ecode360.com/WE1311/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22&scope=all&sortOrder=relevance",
-      "https://ecode360.com/WE1311/search?query=conversion%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22accessory%20residential%22%20OR%20%22second%20dwelling%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/WE1311/search?query=conversion%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22accessory%20residential%22%20OR%20%22second%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/WE1311?guid=15443359",
+      "https://ecode360.com/print/WE1311?guid=15444268",
+      "https://ecode360.com/print/WE1311?guid=15444327",
+      "https://ecode360.com/print/WE1311?guid=15444408",
+      "https://ecode360.com/print/WE1311?guid=15444557",
+      "https://ecode360.com/print/WE1311?guid=15443839",
+      "https://ecode360.com/WE1311/search?query=township&scope=law&sortOrder=relevance",
+      "https://ecode360.com/WE1311/search?query=%22not%20more%20than%20three%22%20AND%20conversion&scope=all&sortOrder=relevance"
     ],
     "verified_on": "2026-11-14",
     "county": "York",
@@ -32,18 +40,22 @@
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/15443121",
     "code_current_through": "2025-11-13",
-    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-11-13'. The definitions show amendments through Ord. No. 25-06 (10-23-2025). Ord. No. 26-01, 26-02 and 26-03 are listed as New Laws, subject not shown.",
-    "code_caution": "Three 2026 ordinances (Ord. No. 26-01, 26-02 and 26-03) are listed as New Laws with no subject or chapter shown. They were not read (PDF only) and may amend the zoning chapter.",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-11-13'. The definitions show amendments through Ord. No. 25-06 (10-23-2025). The three 2026 New Laws amend Chapters 29, 139 and 121, not the zoning chapter (New Laws search).",
     "checks": [
-      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or similar rule. The single-family zones permit single-family detached dwellings and 'Accessory uses customarily incidental to the above permitted uses' (150-14, 150-24, 150-33, 150-42, 150-51, 150-69, 150-75)",
-      "'Unless otherwise specifically provided in other provisions of this chapter, only one specific principal use shall be allowed on a lot of land' (150-12.1). A dwelling unit is occupied by 'not more than one family and having separate cooking and sanitary facilities' (150-5)",
-      "A use not specifically allowed may be allowed by special exception where similar uses are permitted (150-9). A second dwelling may instead be read as a two-family dwelling, which the single-family zones do not list. Ask the Zoning Officer",
-      "Two-family conversion of a detached single-family dwelling is a special exception only in the Local Commercial (LC) Zone: lot 8,000 sq ft, public sewer and water, no outside change except fire escapes (150-85D, 150-354)",
-      "Duplex dwellings are permitted in R-4 (7,260 sq ft per unit) and R-6 (4,000 sq ft lot), and in the MU Zone and the Planned Residential Development Overlay (150-60, 150-63, 150-75, 150-78, 150-116.2, 150-228.21)",
-      "No accessory use (except permitted signs) in the front yard, the area between the street line and the house, in A, R, R-1, R-2, R-3 and R-6. Accessory buildings 15 ft high (20 ft in R-1 and R-2) (150-20D, 150-29B, 150-30B, 150-38B, 150-39B, 150-47B, 150-48B, 150-56B, 150-57B, 150-73, 150-80)",
+      "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or similar rule. 'The uses shown as permitted in each zone are the only uses permitted in that zone' (150-8). Only one principal use per lot (150-12.1)",
+      "A house with a second dwelling unit is a duplex: 'A freestanding building containing two dwelling units for two families arranged in a side-by-side or over-and-under configuration' (150-5). The single-family zones (A, R, R-1, R-2, R-3, R-5, OSR-1, OSR-2, OSR-3) do not list duplexes, so a second unit there needs a use variance from the Zoning Hearing Board",
+      "In R-6 duplex dwellings are permitted by right: lot 4,000 sq ft, width 40 ft, depth 100 ft, front 20 ft, side 8 ft, rear 15 ft, buildings at most 50% (150-75B, 150-78). That covers a unit in or attached to the house. A unit in a separate building is not a duplex and needs a use variance in every zone. Duplexes are also permitted in R-4 (7,260 sq ft per unit, 150-60, 150-63) and in the designated residential area of a planned MU development (150-116.2A, 150-116.4E)",
+      "Some read 150-9 ('Any use not specifically allowed elsewhere in this chapter shall be allowed by special exception ...') as a special exception path for a second unit. Since the code defines and allows duplexes elsewhere, that reading is doubtful. Confirm with the Zoning Officer that a second unit in a single-family zone is treated as a duplex (use variance) everywhere except R-6",
+      "Two-family conversion of a detached single-family dwelling is a special exception only in the Local Commercial (LC) Zone: lot 8,000 sq ft, public sewer and water, no outside change except fire escapes (150-85D, 150-354). LC also permits 'One dwelling unit, in conjunction with another permitted use' inside the same building (150-83F, 150-86). Single-family detached dwellings are not a listed LC use",
+      "Off-street parking: single-family dwellings on their own lots are exempt (150-244). Other residential dwellings need 2 spaces per dwelling unit (150-263), so a duplex or a two-family conversion needs 4",
+      "Converting a single-family detached dwelling into not more than three units is not land development under the subdivision ordinance (121-6)",
+      "'Lot coverage' in the A, R, R-1, R-2, R-3, OSR and LC zones (and R-5 without public sewer and water) is impervious cover: buildings, driveways, parking and sidewalks (150-5). R-5 and R-6 with both services cap the principal building (building coverage), with accessory uses together at most 20% (150-73C, 150-80C)",
+      "No accessory use (except permitted signs) in the front yard in A, R, R-1, R-2, R-3, R-6 and the OSR zones. Accessory buildings 15 ft high (20 ft in R-1 and R-2) (150-20D, 150-29B, 150-30B, 150-38B, 150-39B, 150-47B, 150-48B, 150-56B, 150-57B, 150-73, 150-80, 150-228.5D, 150-228.11D, 150-228.17D)",
+      "Front setback averaging: where at least two adjacent buildings within 100 ft are closer to the street, their average is the front setback, never less than 25 ft (150-238A). An existing lot below the zone's lot area or width may be used for a permitted use if it meets the setbacks (150-243)",
+      "The zone list names an (H) Historical Zone overlay (150-6), but Chapter 150 has no Historical Zone article. No historic path",
       "Every dwelling unit at least 700 sq ft of habitable floor area for a single-family, duplex or townhouse unit, 350 sq ft for a one-person efficiency (150-235)"
     ],
-    "notes": "Zoning office: West Manchester Township (York County) Zoning Officer. Read on eCode360 (WE1311) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house' and 'guest house' found no ADU text (only definitions that use 'single-family dwelling unit'). A second search for conversion, two-family, duplex, 'accessory residential' and 'second dwelling' found 150-354 (LC two-family conversions), duplex standards in R-4, R-6 and MU, and two-family dwellings in the Planned Residential Development Overlay. Read in full: Article II definitions, Article IV general use regulations, the A, R, R-1, R-2, R-3, R-4, R-5, R-6 and LC zones, and Article XXIII supplementary regulations. Not read: OSR-1, OSR-2, OSR-3, MU and PRD (search excerpts only), HC, PO, RC, I-1, I-2, I-3, OS, Q, DCO, parking (Article XXIV) and the special exception criteria (150-302)."
+    "notes": "Zoning office: West Manchester Township (York County) Zoning Officer. Read on eCode360 (WE1311) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house' and 'guest house' found no ADU text. A second search for conversion, two-family, duplex, 'accessory residential' and 'second dwelling' found 150-354 (LC two-family conversions), duplex standards in R-4, R-6 and MU, and two-family dwellings in the Planned Residential Development Overlay. Read in full: Article II definitions, Article III zones, Article IV general use regulations, the A, R, R-1, R-2, R-3, R-4, R-5, R-6, LC, MU, OSR-1, OSR-2 and OSR-3 zones, Article XXIII supplementary regulations and Article XXIV parking. Not read: HC, PO, RC, I-1, I-2, I-3, OS, Q, DCO, PRD (search excerpts only) and the special exception criteria (150-302, 150-357.1). Fix round 2026-11-14 after an independent review: headline path set to a use variance (second unit read as a duplex under 150-5 and 150-8), 150-9 kept as a disputed side note, 2026 caution removed (the New Laws amend Chapters 29, 139 and 121), R-5 utility rows completed, impervious lot coverage noted, OSR rows and parking added."
   },
   "adu": {
     "term": {
@@ -56,21 +68,21 @@
     },
     "status": {
       "value": "not_addressed",
-      "section": "150-14, 150-24, 150-33, 150-42, 150-51, 150-69, 150-75",
+      "section": "150-8, 150-14, 150-24, 150-33, 150-42, 150-51, 150-69, 150-75, 150-228.2, 150-228.8, 150-228.14",
       "url": "https://ecode360.com/print/WE1311?guid=15443519",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "The single-family zones list single-family detached dwellings and incidental accessory uses. Only one principal use per lot (150-12.1)."
+      "note": "The single-family zones list single-family detached dwellings and incidental accessory uses. 'The uses shown as permitted in each zone are the only uses permitted in that zone' (150-8). Only one principal use per lot (150-12.1)."
     }
   },
   "approval": {
     "path": {
       "value": "variance",
-      "section": "150-12.1, 150-301",
+      "section": "150-5, 150-8, 150-12.1, 150-301",
       "url": "https://ecode360.com/print/WE1311?guid=15443370",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "A second dwelling unit on a single-family lot is not a listed use and only one principal use is allowed per lot. A use variance from the Zoning Hearing Board (MPC 910.2)."
+      "note": "A house with a second dwelling unit is a duplex by definition ('two dwelling units for two families', 150-5). Duplexes are not a permitted use in the single-family zones, and 'The uses shown as permitted in each zone are the only uses permitted in that zone' (150-8). So a second unit needs a use variance from the Zoning Hearing Board (MPC 910.2). In R-6 a duplex is permitted by right on 4,000 sq ft (150-78). A unit in a separate building is not a duplex (one freestanding building), so it needs a use variance in every zone. Side note, disputed: 150-9 allows by special exception 'Any use not specifically allowed elsewhere in this chapter'. A duplex is allowed elsewhere, so that path likely does not reach a second unit. Confirm with the Zoning Officer."
     },
     "fallback_path": {
       "value": "variance",
@@ -80,14 +92,6 @@
       "confidence": "secondary",
       "note": "Relief from a zone rule is a variance from the Zoning Hearing Board."
     },
-    "unlisted_use_path": {
-      "value": "special_exception",
-      "section": "150-9",
-      "url": "https://ecode360.com/print/WE1311?guid=15443370",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "'Any use not specifically allowed elsewhere in this chapter shall be allowed by special exception in the zone or zones where, and to the extent that, similar uses are permitted.' A second unit may instead be read as a two-family dwelling, a listed use that the single-family zones do not permit (duplexes only in R-4, R-6, MU and the PRD overlay, conversions only in LC). Ask the Zoning Officer."
-    },
     "alternatives": {
       "value": [
         {
@@ -96,7 +100,7 @@
           "districts": [
             "LC"
           ],
-          "conditions": "Minimum lot area 8,000 sq ft. Public sewer and water. No change to the outside look except fire escapes. All floors above grade with direct escape to ground level.",
+          "conditions": "Minimum lot area 8,000 sq ft. Public sewer and water. No change to the outside look except fire escapes. All floors above grade with direct escape to ground level. 2 parking spaces per dwelling unit (150-263). For an existing single-family detached dwelling (not a listed LC use).",
           "min_lot_sqft": 8000,
           "section": "150-85D, 150-354",
           "url": "https://ecode360.com/15445211",
@@ -113,7 +117,7 @@
               "section": "150-354B"
             }
           ],
-          "note": "Zoning Hearing Board special exception. The former four-space parking rule was repealed (Ord. No. 01-03)."
+          "note": "Zoning Hearing Board special exception. The former four-space parking rule was repealed (Ord. No. 01-03). Converting a house into not more than three units is not land development (121-6)."
         },
         {
           "name": "Duplex dwelling in R-6",
@@ -121,12 +125,12 @@
           "districts": [
             "R-6"
           ],
-          "conditions": "Duplex dwellings are a permitted use. Lot 4,000 sq ft, width 40 ft, depth 100 ft, front 20 ft, side 8 ft, rear 15 ft, 35 ft, buildings at most 50% of the lot.",
+          "conditions": "Duplex dwellings are a permitted use. Lot 4,000 sq ft, width 40 ft, depth 100 ft, front 20 ft, side 8 ft, rear 15 ft, height 35 ft, the principal building at most 50% of the lot. 2 parking spaces per dwelling unit (150-263).",
           "min_lot_sqft": 4000,
-          "section": "150-75B, 150-78",
+          "section": "150-5, 150-75B, 150-78, 150-263",
           "url": "https://ecode360.com/print/WE1311?guid=15443687",
-          "confidence": "secondary",
-          "note": "A duplex is two units side by side or over and under. Whether an existing house may be converted to a duplex under these standards is not said. Ask the Zoning Officer."
+          "confidence": "verified",
+          "note": "A house with a second unit side by side or over and under is a duplex (150-5), so in R-6 this is the by-right way to add a unit, on a lot that meets the duplex standards. Converting a house into not more than three units is not land development (121-6). Only for a unit in or attached to the house. A unit in a separate building is not a duplex."
         },
         {
           "name": "Duplex dwelling in R-4",
@@ -134,9 +138,9 @@
           "districts": [
             "R-4"
           ],
-          "conditions": "Duplex dwellings are a permitted use. 7,260 sq ft per dwelling unit, width 55 ft, depth 120 ft, front 35 ft, side 25 ft, rear 35 ft, 35 ft, lot coverage 40%. Single-family detached dwellings are not listed in R-4.",
+          "conditions": "Duplex dwellings are a permitted use. 7,260 sq ft per dwelling unit, width 55 ft, depth 120 ft, front 35 ft, side 25 ft, rear 35 ft, 35 ft, lot coverage 40%. Single-family detached dwellings are not listed in R-4. 2 parking spaces per dwelling unit (150-263).",
           "min_lot_sqft": 14520,
-          "section": "150-60A, 150-63",
+          "section": "150-60A, 150-63, 150-263",
           "url": "https://ecode360.com/print/WE1311?guid=15443582",
           "confidence": "verified",
           "note": "Lot figure is two units at 7,260 sq ft each."
@@ -147,11 +151,31 @@
           "districts": [
             "MU"
           ],
-          "conditions": "Duplex dwellings are permitted within designated residential development areas, with their own lot standards.",
-          "section": "150-116.2, 150-116.4E",
-          "url": "https://ecode360.com/WE1311/search?query=conversion%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22accessory%20residential%22%20OR%20%22second%20dwelling%22&scope=all&sortOrder=relevance",
-          "confidence": "secondary",
-          "note": "Read from search excerpts only. The MU lot figures were not read."
+          "conditions": "Duplex dwellings in a designated residential development area of a planned mixed-use development on at least 100 contiguous acres under one owner, with public water and sewer. Lot 4,000 sq ft (2,000 per unit, at most 8 units an acre), width 40 ft, depth 100 ft, front 20 ft, side 8 ft (end units), rear 15 ft, 35 ft, lot coverage 60%.",
+          "section": "150-116.2A(1), 150-116.4A, B, C, E",
+          "url": "https://ecode360.com/print/WE1311?guid=15443839",
+          "confidence": "verified",
+          "note": "A planned development approved through land development plans (150-116.10), not a path for adding a unit to one existing house.",
+          "min_lot_sqft": 4000,
+          "land_development": true,
+          "requires": [
+            {
+              "test": "tract_sqft_at_least",
+              "value": 4356000,
+              "condition": "The development site is at least 100 contiguous acres under one owner",
+              "section": "150-116.4A"
+            },
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer serves the site",
+              "section": "150-116.4B"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water serves the site",
+              "section": "150-116.4B"
+            }
+          ]
         },
         {
           "name": "Two-family dwelling in a Planned Residential Development",
@@ -169,7 +193,7 @@
           "note": "Read from search excerpts only. A planned development, not a path for one existing lot."
         }
       ],
-      "section": "150-354, 150-63, 150-78, 150-116.2, 150-228.21",
+      "section": "150-5, 150-354, 150-63, 150-78, 150-116.2, 150-228.21",
       "url": "https://ecode360.com/15445211",
       "verified_on": "2026-11-14",
       "confidence": "verified"
@@ -183,6 +207,25 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "No zone lists an accessory dwelling unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "150-6",
+      "url": "https://ecode360.com/print/WE1311?guid=15443359",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "150-6 lists an (H) Historical Zone overlay, but Chapter 150 has no Historical Zone article. No historic path."
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-4",
+        "MU"
+      ],
+      "section": "150-60, 150-116.2",
+      "url": "https://ecode360.com/print/WE1311?guid=15443582",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Use lists read. R-4 lists duplexes, not single-family detached dwellings. MU allows single-family detached dwellings only when age restricted, within a planned development."
     }
   },
   "form": {
@@ -213,7 +256,7 @@
         "url": "https://ecode360.com/print/WE1311?guid=15443380",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Single-family detached: 20,000 sq ft minimum and one acre maximum, one lot per 25 acres of the parent tract (or one on a tract of 2 to 25 acres). Width 100 ft. Lot coverage 35%."
+        "note": "Single-family detached: 20,000 sq ft minimum and one acre maximum, one lot per 25 acres of the parent tract (or one on a tract of 2 to 25 acres). Width 100 ft. Impervious lot coverage 35%."
       },
       "setback_front_ft": {
         "value": 35,
@@ -250,7 +293,8 @@
         "section": "150-17B, 150-18, 150-20B, 150-21B",
         "url": "https://ecode360.com/print/WE1311?guid=15443380",
         "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 10,
@@ -311,7 +355,8 @@
         "section": "150-26, 150-27, 150-29, 150-30, 150-31",
         "url": "https://ecode360.com/print/WE1311?guid=15443451",
         "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 15,
@@ -336,7 +381,7 @@
         "url": "https://ecode360.com/print/WE1311?guid=15443490",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Width 120 ft at the setback line, depth 165 ft. Lot coverage 35%."
+        "note": "Width 120 ft at the setback line, depth 165 ft. Impervious lot coverage 35%."
       },
       "setback_front_ft": {
         "value": 60,
@@ -372,7 +417,8 @@
         "section": "150-35 to 150-40",
         "url": "https://ecode360.com/print/WE1311?guid=15443490",
         "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 10,
@@ -397,7 +443,7 @@
         "url": "https://ecode360.com/print/WE1311?guid=15443519",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Width 100 ft at the setback line, depth 150 ft. Lot coverage 35%."
+        "note": "Width 100 ft at the setback line, depth 150 ft. Impervious lot coverage 35%."
       },
       "setback_front_ft": {
         "value": 40,
@@ -433,7 +479,8 @@
         "section": "150-44 to 150-49",
         "url": "https://ecode360.com/print/WE1311?guid=15443519",
         "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 10,
@@ -458,7 +505,7 @@
         "url": "https://ecode360.com/print/WE1311?guid=15443548",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Single-family detached. Width 80 ft at the setback line, depth 115 ft. Lot coverage 35%."
+        "note": "Single-family detached. Width 80 ft at the setback line, depth 115 ft. Impervious lot coverage 35%."
       },
       "setback_front_ft": {
         "value": 25,
@@ -466,7 +513,7 @@
         "url": "https://ecode360.com/print/WE1311?guid=15443548",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "25 ft from local roads, 50 ft from collector and arterial roads."
+        "note": "25 ft from local roads, 50 ft from collector and arterial roads. Where two adjacent buildings within 100 ft are closer, their average, never less than 25 ft (150-238A)."
       },
       "setback_side_ft": {
         "value": 10,
@@ -495,7 +542,8 @@
         "section": "150-53 to 150-58",
         "url": "https://ecode360.com/print/WE1311?guid=15443548",
         "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 5,
@@ -586,7 +634,12 @@
             "setback_rear_ft": 40,
             "principal_max_height_ft": 35,
             "max_building_coverage": 0.35,
-            "section": "150-72"
+            "section": "150-72, 150-73",
+            "accessory_setback_front_ft": 35,
+            "accessory_setback_side_ft": 20,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 15,
+            "note": "150-72 applies to 'Principal buildings without public sewer and public water'. Lot coverage 35% is impervious cover (150-5), stored as the cap on buildings. Accessory front and side yards are the same as the house's (150-73A), rear 5 ft, 15 ft high."
           },
           {
             "when": "With public sewer only",
@@ -596,7 +649,14 @@
             "setback_front_ft": 35,
             "setback_side_ft": 20,
             "setback_rear_ft": 40,
-            "section": "150-72"
+            "section": "150-72, 150-73",
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.35,
+            "accessory_setback_front_ft": 35,
+            "accessory_setback_side_ft": 20,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 15,
+            "note": "150-72 applies to 'Principal buildings without public sewer and public water'. Lot coverage 35% is impervious cover (150-5), stored as the cap on buildings. Accessory front and side yards are the same as the house's (150-73A), rear 5 ft, 15 ft high."
           },
           {
             "when": "With public water only",
@@ -606,14 +666,29 @@
             "setback_front_ft": 35,
             "setback_side_ft": 20,
             "setback_rear_ft": 40,
-            "section": "150-72"
+            "section": "150-72, 150-73",
+            "principal_max_height_ft": 35,
+            "max_building_coverage": 0.35,
+            "accessory_setback_front_ft": 35,
+            "accessory_setback_side_ft": 20,
+            "accessory_setback_rear_ft": 5,
+            "accessory_max_height_ft": 15,
+            "note": "150-72 applies to 'Principal buildings without public sewer and public water'. Lot coverage 35% is impervious cover (150-5), stored as the cap on buildings. Accessory front and side yards are the same as the house's (150-73A), rear 5 ft, 15 ft high."
           }
         ],
         "section": "150-71, 150-72",
         "url": "https://ecode360.com/print/WE1311?guid=15443649",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "'Principal buildings without public sewer and public water': 20,000 sq ft, width 120 ft, lot coverage 35%. Read as applying unless both services are used."
+        "note": "'Principal buildings without public sewer and public water': 20,000 sq ft, width 120 ft, depth 165 ft, 35 ft, lot coverage (impervious) 35%. Read as applying unless both services are used. The same figures in each row."
+      },
+      "accessory_setback_front_ft": {
+        "value": 10,
+        "section": "150-73A(1)",
+        "url": "https://ecode360.com/print/WE1311?guid=15443649",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: front yard the same as the house. No front-yard bar in R-5."
       }
     },
     "R-6": {
@@ -685,7 +760,7 @@
         "url": "https://ecode360.com/print/WE1311?guid=15443741",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "All uses. Width 75 ft. 25 ft from residentially zoned land. Lot coverage 70%. A two-family conversion needs 8,000 sq ft (150-354A)."
+        "note": "All uses. Width 75 ft. 25 ft from residentially zoned land. Impervious lot coverage 70%. A two-family conversion needs 8,000 sq ft (150-354A). Single-family detached dwellings are not a listed LC use. One dwelling unit is allowed with another permitted use inside the same building (150-83F, 150-86)."
       },
       "setback_front_ft": {
         "value": 20,
@@ -720,8 +795,199 @@
         "section": "150-87 to 150-90, 150-95",
         "url": "https://ecode360.com/print/WE1311?guid=15443741",
         "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      }
+    },
+    "OSR-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "150-228.2B, 150-228.5",
+        "url": "https://ecode360.com/print/WE1311?guid=15444268",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings on lots of record under 15 acres are permitted (150-228.2B). Design requirements for development other than open space development: 20,000 sq ft, width 120 ft at the setback line, depth 160 ft. Impervious lot coverage 35%."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "150-228.2B, 150-228.5",
+        "url": "https://ecode360.com/print/WE1311?guid=15444268",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "60 ft from the street line."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "150-228.2B, 150-228.5",
+        "url": "https://ecode360.com/print/WE1311?guid=15444268",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft each, 40 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "150-228.2B, 150-228.5",
+        "url": "https://ecode360.com/print/WE1311?guid=15444268",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-228.2B, 150-228.5",
+        "url": "https://ecode360.com/print/WE1311?guid=15444268",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "150-228.2B, 150-228.5",
+        "url": "https://ecode360.com/print/WE1311?guid=15444268",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "150-228.2B, 150-228.5",
+        "url": "https://ecode360.com/print/WE1311?guid=15444268",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: none in the front yard, 10 ft side, 10 ft rear, 15 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "150-228.2B, 150-228.5",
+        "url": "https://ecode360.com/print/WE1311?guid=15444268",
+        "verified_on": "2026-11-14",
         "confidence": "verified"
       }
+    },
+    "OSR-2": {
+      "setback_front_ft": {
+        "value": 40,
+        "section": "150-228.8B, 150-228.11",
+        "url": "https://ecode360.com/print/WE1311?guid=15444327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft from local roads, 50 ft from collector and arterial roads. Single-family detached dwellings on lots of record under 15 acres are permitted (150-228.8B). 150-228.11 sets width 100 ft and depth 150 ft but no lot area for a single-family lot. Impervious lot coverage 35%."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "150-228.8B, 150-228.11",
+        "url": "https://ecode360.com/print/WE1311?guid=15444327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft each, 30 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "150-228.8B, 150-228.11",
+        "url": "https://ecode360.com/print/WE1311?guid=15444327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-228.8B, 150-228.11",
+        "url": "https://ecode360.com/print/WE1311?guid=15444327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "150-228.8B, 150-228.11",
+        "url": "https://ecode360.com/print/WE1311?guid=15444327",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "150-228.8B, 150-228.11",
+        "url": "https://ecode360.com/print/WE1311?guid=15444327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: none in the front yard, 10 ft side, 10 ft rear, 15 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "150-228.8B, 150-228.11",
+        "url": "https://ecode360.com/print/WE1311?guid=15444327",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "OSR-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "150-228.14B, 150-228.17",
+        "url": "https://ecode360.com/print/WE1311?guid=15444408",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings on lots of record under 15 acres are permitted (150-228.14B). Design requirements for development other than open space development: 10,000 sq ft, width 80 ft at the setback line, depth 125 ft. Impervious lot coverage 35%."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "150-228.14B, 150-228.17",
+        "url": "https://ecode360.com/print/WE1311?guid=15444408",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "25 ft from local roads, 50 ft from collector and arterial roads."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "150-228.14B, 150-228.17",
+        "url": "https://ecode360.com/print/WE1311?guid=15444408",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10 ft each, 20 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "150-228.14B, 150-228.17",
+        "url": "https://ecode360.com/print/WE1311?guid=15444408",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "150-228.14B, 150-228.17",
+        "url": "https://ecode360.com/print/WE1311?guid=15444408",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "150-228.14B, 150-228.17",
+        "url": "https://ecode360.com/print/WE1311?guid=15444408",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "150-228.14B, 150-228.17",
+        "url": "https://ecode360.com/print/WE1311?guid=15444408",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory buildings: none in the front yard, 5 ft side, 5 ft rear, 15 ft high."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "150-228.14B, 150-228.17",
+        "url": "https://ecode360.com/print/WE1311?guid=15444408",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  },
+  "parking": {
+    "reading": {
+      "value": "No ADU parking rule. A single-family dwelling on its own lot is exempt from the parking article (150-244). A duplex or two-family conversion needs 2 spaces per dwelling unit, 4 in all (150-263).",
+      "section": "150-244, 150-263",
+      "url": "https://ecode360.com/print/WE1311?guid=15444557",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
     }
   }
 }

@@ -4,7 +4,7 @@
     "instrument": "Borough of Lansdale Code Chapter 405 Zoning (Ord. No. 1393, 11-16-1988, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2026-05-20 (breadcrumb). New Laws for Chapter 405 on 2026-11-14: Ord. 2012 'Residential B&C amendments' and Ord. 2013 'TOD text amendment' (2026), PDF only, not read.",
+    "status_detail": "eCode360 code date 2026-05-20 (breadcrumb). New Laws for Chapter 405 on 2026-11-14: Ord. 2012 'Residential B&C amendments 8.19.2026(A)', listed as adopted 2026-11-19, and Ord. 2013 'TOD text amendment', adopted 2026-08-19. PDF only, not read.",
     "effective_date": "2018-02-21",
     "source_urls": [
       "https://ecode360.com/11763313",
@@ -14,7 +14,13 @@
       "https://ecode360.com/print/LA0393?guid=12266756",
       "https://ecode360.com/print/LA0393?guid=12266788",
       "https://ecode360.com/print/LA0393?guid=12266828",
-      "https://ecode360.com/LA0393/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/LA0393/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/LA0393?guid=12266852",
+      "https://ecode360.com/print/LA0393?guid=12266868",
+      "https://ecode360.com/print/LA0393?guid=12266892",
+      "https://ecode360.com/print/LA0393?guid=12268475",
+      "https://ecode360.com/LA0393/laws",
+      "https://ecode360.com/LA0393/search?query=%22conversion%20of%20single-family%22&scope=all&sortOrder=relevance"
     ],
     "verified_on": "2026-11-14",
     "county": "Montgomery",
@@ -24,17 +30,21 @@
     "code_url": "https://ecode360.com/11763313",
     "code_current_through": "2026-05-20",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2026-05-20'. Two 2026 zoning amendments (Residential B and C, TOD) are listed as New Laws, not yet in the code text.",
-    "code_caution": "Two 2026 zoning amendments are listed as New Laws for Chapter 405 and were not read (PDF only): 'Residential B&C amendments' (Ord. 2012) and a TOD text amendment (Ord. 2013). The first may change the Class B and Class C Residential rules below.",
+    "code_caution": "Ord. 2012 (Residential B and C amendments) is listed as a New Law for Chapter 405 and was not read (PDF only). It is listed as adopted on Nov 19, 2026, although its title says 8.19.2026. Search excerpts show it rewrites the Class B and C use and dimensional tables, adds a stacked townhome, and changes the row on conversion of single-family detached dwellings (to 'other non-residential' uses). The B and C figures and the duplex note below may change. Ord. 2013 amends the TOD overlay text.",
     "checks": [
       "'Accessory dwelling units shall be permitted by right attached to or contained within single-family detached homes only' (405-1913B). Not in a separate building, not joined by a corridor or breezeway (405-1913E)",
+      "Single-family detached dwellings are permitted in Class A, B and C Residential and in LPO (405-402, 405-502, 405-602, 405-1001A), not in Residential Apartment, Professional Office A or Professional Office B (405-700, 405-800, 405-900). Other districts were not read",
       "Occupants are limited to the parents, grandparents, step-parents or step-grandparents of the occupants of the house, or the spouse, sibling or partner of one of them. At most two people (405-1913G)",
       "The house is owner-occupied and the owner's primary residence. The unit may not be rented (405-1913F, I)",
       "A deed restriction is recorded with the Montgomery County Recorder of Deeds. A license to operate is renewed every year by January 1, with inspections twice a year. The second kitchen is removed within six months after the approved occupant leaves (405-1913A, H, J)",
       "One more off-street parking space, unless the house already has at least one space beyond its own requirement. Utilities are routed through the house. A separate entrance that does not face the street, no separate address or mailbox (405-1913B, D, K, L)",
-      "Lot area per dwelling unit: Class A 9,000 sq ft (standard option), Class B 5,600, Class C 4,500 for a single-family detached dwelling. Where the block has existing homes, the block median governs (405-404, 405-504, 405-506, 405-604, 405-606). Whether the ADU counts as a dwelling unit for this is not said. Ask the Code Enforcement Officer",
+      "Lot area per dwelling unit: Class A 9,000 sq ft (standard option), Class B 5,600, Class C 4,500 for a single-family detached dwelling. These standard figures apply to redevelopment 'at a density greater than existed prior' (405-504, 405-604). Alterations that do not increase density use the block-median figures (405-506A(2), 405-606A(2)). 405-1913 calls the ADU an accessory use that may not be rented 'as an apartment or separate dwelling unit', and the house reverts to 'a single-family dwelling unit' when the license ends (405-1913B, I, J(7)). Whether the ADU counts as a dwelling unit for lot area is not said. Ask the Code Enforcement Officer",
+      "An addition visible on the front facade of the house (such as a second-story addition) needs Article XXXVII infill design review (405-405A(2), 405-507A(2), 405-607A(2))",
+      "In LPO only 'A single accessory use' is allowed with the house (405-1001B). LPO lot and yard rules are those of the most restrictive abutting residential district (405-1002)",
+      "TOD overlay: single-family detached dwellings within an approved TOD development and 'Accessory residential uses or buildings' are listed (405-3202A, K). Ord. 2013 amends this text and was not read",
       "An accessory building is 'subordinate, uninhabitable' by definition, so a unit in a detached garage or outbuilding is not allowed (405-201)"
     ],
-    "notes": "Zoning office: Borough of Lansdale Department of Code Enforcement. Read on eCode360 (LA0393) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house' and 'guest house' found 405-1913 and the ADU definition (405-201), and a conversion of a single-family dwelling to apartment conversion units in Professional Office District B (405-900E, excerpt). Read in full: 405-1913, the definitions page (ADU, accessory building), Class A, B and C Residential (Articles IV to VI) and Residential Apartment (Article VII). Not read: Professional Office A and B, LPO, Commercial, Business, B-2, Industrial and the overlay districts, accessory structures (405-1904) and parking (405-1703)."
+    "notes": "Zoning office: Borough of Lansdale Department of Code Enforcement. Read on eCode360 (LA0393) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house' and 'guest house' found 405-1913 and the ADU definition (405-201). Neither 2026 New Law shows an 'accessory dwelling' hit. Read in full: 405-1913, the definitions page (ADU, accessory building), Class A, B and C Residential (Articles IV to VI), Residential Apartment (Article VII), Professional Office A and B (Articles VIII, IX) and LPO (Article X). TOD overlay (Article XXXII) read for its use list only. Not read: Commercial, Business, B-2, Industrial and the other overlays, accessory structures (405-1904) and parking (405-1703). Ord. 2012 and 2013 are PDF only and were not opened. Fix round 2026-11-14 after an independent review: scope now names PO-A, PO-B (not permitted) and LPO (permitted), PO-B conversion read in full, RA duplex added, Ord. 2012 caution rewritten, density reading quotes and design review added."
   },
   "adu": {
     "term": {
@@ -59,21 +69,24 @@
         "permitted_in": [
           "A",
           "B",
-          "C"
+          "C",
+          "LPO"
         ],
         "not_permitted_in": [
-          "RA"
+          "RA",
+          "PO-A",
+          "PO-B"
         ]
       },
-      "section": "405-1913B, 405-402, 405-502, 405-602, 405-700",
+      "section": "405-1913B, 405-402, 405-502, 405-602, 405-700, 405-800, 405-900, 405-1001",
       "url": "https://ecode360.com/print/LA0393?guid=33133854",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "The ADU is allowed with single-family detached homes only. Class A, B and C list single-family detached dwellings. The Residential Apartment District does not. Other districts' use lists were not read."
+      "note": "The ADU is allowed with single-family detached homes only. Class A, B and C and LPO list single-family detached dwellings. Residential Apartment, Professional Office A and Professional Office B do not (PO-B lists a conversion of a single-family dwelling, not the house itself). Other districts' use lists were not read."
     },
     "status_outside": {
       "value": "not_addressed",
-      "section": "405-700",
+      "section": "405-700, 405-800, 405-900",
       "url": "https://ecode360.com/print/LA0393?guid=12266828",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
@@ -115,7 +128,7 @@
           "section": "405-502, 405-504, 405-602, 405-604",
           "url": "https://ecode360.com/print/LA0393?guid=12266756",
           "confidence": "secondary",
-          "note": "Lot figures are two units at the per-unit area. Since conversion of a single-family detached dwelling to other uses is not permitted, this is a path for a new duplex, not for converting a house. Ask the Code Enforcement Officer."
+          "note": "Lot figures are two units at the per-unit area. 'Conversion of single-family detached dwelling to other uses' is listed as not permitted, so today this is a path for a new duplex, not for converting a house. Ord. 2012 (not read) changes that row to conversion 'to other non-residential' uses and rewrites the B and C tables, so this may change. Ask the Code Enforcement Officer."
         },
         {
           "name": "Conversion of a single-family dwelling to apartment conversion units in Professional Office District B",
@@ -123,17 +136,31 @@
           "districts": [
             "PO-B"
           ],
-          "conditions": "Listed as a permitted use with conditions that were not read.",
-          "section": "405-900E",
-          "url": "https://ecode360.com/LA0393/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22tenant%20house%22%20OR%20%22guest%20house%22&scope=all&sortOrder=relevance",
-          "confidence": "secondary",
-          "note": "Read from a search excerpt only. The conditions and lot rules were not read. Ask the Code Enforcement Officer."
+          "conditions": "An existing single-family dwelling converted to apartment conversion units. At least 1,500 sq ft of lot area for each unit (3,000 sq ft for two). The parking requirements of the chapter met for each unit. Yards: front 15 ft, two sides of 6 ft each, rear 50 ft. Units meet Chapter 146, Building Construction, Article I. Buildings, parking and other impervious cover at most 75% of the lot. Height 40 ft.",
+          "section": "405-900E, 405-901, 405-903, 405-905",
+          "url": "https://ecode360.com/print/LA0393?guid=12266868",
+          "confidence": "verified",
+          "note": "405-901 also asks 7,500 sq ft 'for all other permitted uses' within the district. Whether that reaches a conversion, which has its own 1,500 sq ft per unit figure in 405-900E, is not said. Ask the Code Enforcement Officer.",
+          "min_lot_sqft": 3000
+        },
+        {
+          "name": "Two-family duplex dwelling in the Residential Apartment District",
+          "path": "by_right",
+          "districts": [
+            "RA"
+          ],
+          "conditions": "Two-family duplex dwellings are a permitted use. Lot 6,000 sq ft, width 60 ft at the street line, front 30 ft, two sides of 10 ft, rear 50 ft, height 40 ft, impervious cover at most 75%.",
+          "min_lot_sqft": 6000,
+          "section": "405-700A(3), 405-701 to 405-707",
+          "url": "https://ecode360.com/print/LA0393?guid=12266828",
+          "confidence": "verified",
+          "note": "Single-family detached dwellings are not a listed RA use."
         }
       ],
-      "section": "405-502, 405-602, 405-900E",
+      "section": "405-502, 405-602, 405-700, 405-900E",
       "url": "https://ecode360.com/print/LA0393?guid=12266756",
       "verified_on": "2026-11-14",
-      "confidence": "secondary"
+      "confidence": "verified"
     }
   },
   "eligibility": {
@@ -141,9 +168,10 @@
       "value": [
         "A",
         "B",
-        "C"
+        "C",
+        "LPO"
       ],
-      "section": "405-402, 405-502, 405-602",
+      "section": "405-402, 405-502, 405-602, 405-1001A",
       "url": "https://ecode360.com/print/LA0393?guid=12266743",
       "verified_on": "2026-11-14",
       "confidence": "verified",
@@ -218,12 +246,52 @@
           "building_types": null,
           "section": "405-1913L",
           "url": "https://ecode360.com/print/LA0393?guid=33133854"
+        },
+        {
+          "kind": "design",
+          "condition": "An addition visible on the front facade of the house, such as a second-story addition, needs Article XXXVII infill design review.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "A",
+            "B",
+            "C"
+          ],
+          "building_types": null,
+          "section": "405-405A(2), 405-507A(2), 405-607A(2)",
+          "url": "https://ecode360.com/print/LA0393?guid=12266756"
+        },
+        {
+          "kind": "other",
+          "condition": "In LPO only a single accessory use is allowed with the house, so the ADU would be that one accessory use (no accessory professional office with it).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "LPO"
+          ],
+          "building_types": null,
+          "section": "405-1001B, 405-1913B",
+          "url": "https://ecode360.com/print/LA0393?guid=12266892"
         }
       ],
       "section": "405-1913",
       "url": "https://ecode360.com/print/LA0393?guid=33133854",
       "verified_on": "2026-11-14",
       "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "RA",
+        "PO-A",
+        "PO-B"
+      ],
+      "section": "405-700, 405-800, 405-900",
+      "url": "https://ecode360.com/print/LA0393?guid=12266828",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Use lists read. None lists single-family detached dwellings or an ADU."
     }
   },
   "form": {
@@ -244,8 +312,8 @@
       "value": null,
       "section": "405-1913",
       "url": "https://ecode360.com/print/LA0393?guid=33133854",
-      "verified_on": null,
-      "confidence": "unverified",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
       "note": "405-1913 sets no floor area limit."
     }
   },
@@ -360,7 +428,7 @@
         "url": "https://ecode360.com/print/LA0393?guid=12266743",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'The minimum lot area shall be 9,000 square feet per dwelling unit.' Applies to the ADU only if it counts as a dwelling unit. Ask."
+        "note": "'The minimum lot area shall be 9,000 square feet per dwelling unit.' Applies to the ADU only if it counts as a dwelling unit. 405-1913 calls it an accessory use not rented 'as an apartment or separate dwelling unit'. Ask."
       }
     },
     "B": {
@@ -421,7 +489,7 @@
         "url": "https://ecode360.com/print/LA0393?guid=12266756",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Applies to redevelopment 'at a density greater than existed prior'. Applies to the ADU only if it counts as a dwelling unit. Ask."
+        "note": "Applies to redevelopment 'at a density greater than existed prior'. Applies to the ADU only if it counts as a dwelling unit. 405-1913 calls it an accessory use not rented 'as an apartment or separate dwelling unit' and additions without a density increase use the block-median figures (405-506A(2)). Ask."
       }
     },
     "C": {
@@ -482,7 +550,7 @@
         "url": "https://ecode360.com/print/LA0393?guid=12266788",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Applies to redevelopment 'at a density greater than existed prior'. Applies to the ADU only if it counts as a dwelling unit. Ask."
+        "note": "Applies to redevelopment 'at a density greater than existed prior'. Applies to the ADU only if it counts as a dwelling unit. 405-1913 calls it an accessory use not rented 'as an apartment or separate dwelling unit' and additions without a density increase use the block-median figures (405-606A(2)). Ask."
       }
     }
   }
