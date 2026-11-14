@@ -13,6 +13,14 @@
       "https://ecode360.com/print/MO1293?guid=11516626",
       "https://ecode360.com/print/MO1293?guid=11516638",
       "https://ecode360.com/print/MO1293?guid=11516283",
+      "https://ecode360.com/print/MO1293?guid=11516623",
+      "https://ecode360.com/print/MO1293?guid=11516658",
+      "https://ecode360.com/print/MO1293?guid=11516679",
+      "https://ecode360.com/print/MO1293?guid=11516805",
+      "https://ecode360.com/print/MO1293?guid=11516820",
+      "https://ecode360.com/print/MO1293?guid=11516896",
+      "https://ecode360.com/print/MO1293?guid=11516961",
+      "https://ecode360.com/print/MO1293?guid=11517054",
       "https://ecode360.com/MO1293/laws"
     ],
     "verified_on": "2026-11-14",
@@ -30,9 +38,11 @@
       "No rental, and no income use. The owner records a deed restriction in favor of the Township (230-149C(9))",
       "Registered with the Zoning Officer for a fee. The registration ends when the property is sold. A new owner may register again (230-149C(8))",
       "One parking space more than the house needs (230-149C(7))",
-      "Any on-lot septic system must be recertified if sewage flows increase (230-149C(1))"
+      "Any on-lot septic system must be recertified if sewage flows increase (230-149C(1))",
+      "Allowed where a single-family detached house is a permitted use: R-1, R-2, R-3, R-3A, R-3B (age-qualified housing), R-5 and R-6. Nonresidential districts use Appendix Table 230-A, which was not read",
+      "230-149C(3) calls the unit 'the conversion'. A new addition built for the unit may be read differently. Ask the zoning officer"
     ],
-    "notes": "Zoning office: Montgomery Township (montgomerytwp.org). Read on eCode360 in a browser, one section print view at a time. District use lists read for R-1 and R-2 (an accessory use customarily incidental to the house is permitted, subject to 230-149). The accessory family dwelling rule in 230-149C is not tied to a district. Other district use lists (R-3, R-3A, R-3B, R-5, R-6 and nonresidential) were not opened. Dimensional rules read for R-1 only."
+    "notes": "Zoning office: Montgomery Township (montgomerytwp.org). Read on eCode360 in a browser, one section print view at a time. District use lists read for R-1, R-2, R-3, R-3A, R-3B, R-5, R-6 and C. C permits the uses in Appendix Table 230-A (an attachment, not opened). Dimensional rules read for R-1 and R-2."
   },
   "adu": {
     "term": {
@@ -50,6 +60,30 @@
       "verified_on": "2026-11-14",
       "confidence": "verified",
       "note": "Permitted with a single-family detached house, for family members or a family caregiver. No rental (230-149C(9)(c))."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-3A",
+        "R-3B",
+        "R-5",
+        "R-6"
+      ],
+      "section": "230-26A, 230-31A, 230-36A(1)(c), 230-49A(1), 230-53.2A(1), 230-64A(1), 230-70A(1)(b)",
+      "url": "https://ecode360.com/print/MO1293?guid=11516607",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Districts whose use lists permit a single-family detached dwelling by right, with accessory uses customarily incidental to it. 230-149C itself names no district."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "230-75A(1)",
+      "url": "https://ecode360.com/print/MO1293?guid=11517054",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The C district (and other nonresidential districts) permit uses listed in Appendix Table 230-A, an attachment that was not opened. Whether a house, and so this unit, is permitted there was not confirmed. Ask the zoning officer."
     }
   },
   "approval": {
@@ -59,7 +93,7 @@
       "url": "https://ecode360.com/print/MO1293?guid=11517634",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "'shall be permitted'. District lists allow accessory uses customarily incidental to the house, 'subject to the provisions of ... § 230-149'. Registration with the Zoning Officer (230-149C(8))."
+      "note": "'shall be permitted'. R-1 lists 'Accessory use on the same lot with and customarily incidental to any of the foregoing uses' (230-26G). R-2 adds 'subject to the provisions of Article XXI, § 230-149 herein' (230-31G). R-3, R-3A, R-3B, R-5 and R-6 list accessory uses customarily incidental to the permitted dwellings. Registration with the Zoning Officer (230-149C(8))."
     },
     "fallback_path": {
       "value": "variance",
@@ -91,12 +125,20 @@
   },
   "eligibility": {
     "zoning_districts": {
-      "value": null,
-      "section": "230-149C",
-      "url": "https://ecode360.com/print/MO1293?guid=11517634",
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-3A",
+        "R-3B",
+        "R-5",
+        "R-6"
+      ],
+      "section": "230-26A, 230-31A, 230-36A(1)(c), 230-49A(1), 230-53.2A(1), 230-64A(1), 230-70A(1)(b)",
+      "url": "https://ecode360.com/print/MO1293?guid=11516607",
       "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "Not tied to a district. Reaches any lot with a lawful single-family detached house. R-1 and R-2 checked."
+      "confidence": "verified",
+      "note": "230-149C names no district. These are the districts whose use lists permit a single-family detached dwelling. In R-3B the dwellings are age-qualified (230-53.2A(1), 230-53.9)."
     },
     "building_types": {
       "value": [
@@ -113,8 +155,8 @@
       "section": "230-149C(6)",
       "url": "https://ecode360.com/print/MO1293?guid=11517634",
       "verified_on": "2026-11-14",
-      "confidence": "verified",
-      "note": "Part of the house. The code does not require the space to exist already."
+      "confidence": "secondary",
+      "note": "'shall be part of the principal residence'. 230-149C(3) speaks of 'The conversion', which suggests space inside an existing house, but no rule requires the space to exist already. Ask the zoning officer."
     },
     "gates": {
       "value": [
@@ -311,6 +353,68 @@
         "url": "https://ecode360.com/print/MO1293?guid=11516626",
         "verified_on": "2026-11-14",
         "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "230-27A",
+        "url": "https://ecode360.com/print/MO1293?guid=11516623",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'For any dwelling: 35 feet, not exceeding 2 1/2 stories.'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "230-27A",
+        "url": "https://ecode360.com/print/MO1293?guid=11516623",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "230-28E",
+        "url": "https://ecode360.com/print/MO1293?guid=11516626",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10% buildings, 30% impervious."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "230-33A",
+        "url": "https://ecode360.com/print/MO1293?guid=11516658",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "230-33B",
+        "url": "https://ecode360.com/print/MO1293?guid=11516658",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "230-33C(1)",
+        "url": "https://ecode360.com/print/MO1293?guid=11516658",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "30 ft together, neither under 15 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "230-33D(1)",
+        "url": "https://ecode360.com/print/MO1293?guid=11516658",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "230-33F",
+        "url": "https://ecode360.com/print/MO1293?guid=11516658",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15% buildings, 30% impervious."
       }
     }
   }

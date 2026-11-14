@@ -17,6 +17,13 @@
       "https://ecode360.com/print/EA2319?guid=11088740",
       "https://ecode360.com/print/EA2319?guid=11088786",
       "https://ecode360.com/print/EA2319?guid=11088836",
+      "https://ecode360.com/print/EA2319?guid=11088611",
+      "https://ecode360.com/print/EA2319?guid=11088920",
+      "https://ecode360.com/print/EA2319?guid=11089490",
+      "https://ecode360.com/print/EA2319?guid=11088937",
+      "https://ecode360.com/print/EA2319?guid=11089326",
+      "https://ecode360.com/print/EA2319?guid=11088662",
+      "https://ecode360.com/print/EA2319?guid=11089408",
       "https://ecode360.com/print/EA2319?guid=11089109",
       "https://ecode360.com/print/EA2319?guid=11087957",
       "https://ecode360.com/print/EA2319?guid=11089910",
@@ -28,20 +35,23 @@
     "geoid": "4207121232",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/14043769",
-    "code_current_through": null,
-    "code_current_through_note": "No 'legislation through' date seen. Newest codified zoning ordinance seen: Ord. No. 2024-04 (9-18-2024) in 270-5.2. New Laws: Ord. No. 2026-02 (2026-11-04, Zoning Amendment), not codified.",
+    "code_current_through": "2025-03-19",
+    "code_current_through_note": "eCode360 breadcrumb shows 'Code 2025-03-19'. Newest codified zoning ordinance seen: Ord. No. 2024-04 (9-18-2024) in 270-5.2. New Laws: Ord. No. 2026-02 (2026-11-04, Zoning Amendment), not codified.",
     "code_caution": "A zoning amendment, Ord. No. 2026-02, was adopted on 2026-11-04 and is not yet in the online code. It was not read, so it may change these rules. Ask the Township.",
     "checks": [
-      "An ADU is a permitted accessory use (zoning permit) in the A, RB, RL, RM, VR, VC, CBC, AH and RCC zones, with a single-family detached house or a twin half (270-2.2, zone use lists B(5))",
+      "An ADU is a permitted accessory use (zoning permit) in the A, RB, RL, RM, VR, VC, CBC, AH, RCC and E zones, with a single-family detached house or a twin half (270-2.2, zone use lists B(5))",
       "Family only: the unit is 'for immediate family of the principal building occupants, including parents, grandparents, children, and grandchildren'. It may not be a dwelling for anyone outside the family, and the owners must record a notarized covenant saying so before the permit (270-2.2, 270-5.2A(11), (12))",
       "The landowner must live in the house or the ADU. All occupants of both units together may not exceed the definition of family (270-5.2A(6), (7))",
       "At most 40% of the total square footage of the house. One ADU per lot. Architecturally consistent with the house (270-5.2A(3), (4), (8))",
-      "The ADU meets the zone's setbacks, height, coverage, lot width and every other single-family detached dimensional rule (270-5.2A(1), (5)). Each zone table has its own 'Accessory Dwelling' setback column. In A, VR and VC it may not stand in the front yard",
+      "The ADU meets the zone's setbacks, height, coverage, lot width and every other single-family detached dimensional rule (270-5.2A(1), (5)). Each zone table has its own 'Accessory Dwelling' setback column. In A, VR, VC and E it may not stand in the front yard",
       "One parking space more than the house needs (270-5.2A(10))",
       "On-lot sewage rules apply where there is no public sewer (270-5.2A(2)). The A zone has no public sewer or water",
+      "Lot coverage and density rules apply to the ADU (270-5.2A(1)). Zone densities (RL three, RM four, AH one, RCC eight units per acre) may count the ADU as a dwelling unit. Not settled. Ask the zoning officer",
+      "In the E zone a house is allowed only with a horticultural operation (270-3.12B(1)(c)), so an ADU there needs that house",
+      "Historic conversions (270-5.2FF) are a separate use, special exception in A and by right in AH, for historic structures. Whether they can add a dwelling was not settled",
       "A two-family conversion of an existing single-family detached house is a separate use: by right in A, RB, VR, VC and CBC, special exception in RM. No change to the outside of the building except for safety (270-2.2, 270-5.2III)"
     ],
-    "notes": "Zoning office: East Hempfield Township (easthempfield.org). Read on eCode360 in a browser, one section print view at a time. The term is 'accessory dwelling' in 270-2.2 and 'accessory dwelling units' in the zone lists and 270-5.2A. ME, E and ROS zone pages were not opened. The Campus zone page did not show an ADU listing. Zone pages RB, CBC, AH and RCC list ADUs but their dimensional tables were not read."
+    "notes": "Zoning office: East Hempfield Township (easthempfield.org). Read on eCode360 in a browser, one section print view at a time. The term is 'accessory dwelling' in 270-2.2 and 'accessory dwelling units' in the zone lists and 270-5.2A. Use lists read for every zone except TR. The C, ME and ROS lists do not name ADUs."
   },
   "adu": {
     "term": {
@@ -70,9 +80,10 @@
         "VC",
         "CBC",
         "AH",
-        "RCC"
+        "RCC",
+        "E"
       ],
-      "section": "270-3.2B(5)(e), 3.3B, 3.5B(5)(c), 3.6B(5)(c), 3.7B(5)(c), 3.8B(5)(c), 3.9B, 3.10B, 3.14B",
+      "section": "270-3.2B(5)(e), 3.3B(5)(d), 3.5B(5)(c), 3.6B(5)(c), 3.7B(5)(c), 3.8B(5)(c), 3.9B(5)(b), 3.10B(5), 3.12B(5)(c), 3.14B(5)(d)",
       "url": "https://ecode360.com/print/EA2319?guid=11088712",
       "verified_on": "2026-11-14",
       "confidence": "verified",
@@ -84,7 +95,7 @@
       "url": "https://ecode360.com/print/EA2319?guid=11089109",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "The Campus zone does not list ADUs. ME, E and ROS were not opened."
+      "note": "The C (Campus), ME and ROS zone lists do not name accessory dwelling units. TR was not opened. ROS lists its accessory uses as 'including but not limited to' three items, none an ADU."
     }
   },
   "approval": {
@@ -167,7 +178,8 @@
         "VC",
         "CBC",
         "AH",
-        "RCC"
+        "RCC",
+        "E"
       ],
       "section": "zone use lists B(5)",
       "url": "https://ecode360.com/print/EA2319?guid=11088712",
@@ -265,10 +277,11 @@
           "districts": [
             "A",
             "VR",
-            "VC"
+            "VC",
+            "E"
           ],
           "building_types": null,
-          "section": "270-3.2E(2), 270-3.7E(3), 270-3.8E(3)",
+          "section": "270-3.2E(2), 270-3.7E(3), 270-3.8E(3), 270-3.12E(2)",
           "url": "https://ecode360.com/print/EA2319?guid=11088786"
         },
         {
@@ -477,6 +490,14 @@
         "confidence": "verified",
         "note": "The 'Accessory Dwelling' column of the setback table."
       },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "270-3.2E(4)(d)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088559",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. Residential 35%."
+      },
       "min_lot_sqft": {
         "value": null,
         "section": "270-3.2E(1)",
@@ -546,6 +567,14 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "270-3.5E(5)(c)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088712",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. Single-family detached 35%."
       }
     },
     "RM": {
@@ -608,6 +637,14 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "270-3.6E(5)(d)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088740",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. Residential 60%."
       }
     },
     "VR": {
@@ -671,6 +708,14 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "270-3.7E(6)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088786",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. 50%, up to 70% with approved pervious pavement and a landscaping plan."
       }
     },
     "VC": {
@@ -734,6 +779,356 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "270-3.8E(6)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088836",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. 50%, up to 70% with approved pervious pavement and a landscaping plan."
+      }
+    },
+    "RB": {
+      "min_lot_sqft": {
+        "value": 217800,
+        "section": "270-3.3E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses: five acres. On-lot sewer and water only."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "270-3.3E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "270-3.3E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "270-3.3E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "270-3.3E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 30,
+        "section": "270-3.3E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "270-3.3E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 30,
+        "section": "270-3.3E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "270-3.3E(4)(c)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088611",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. Residential 35%."
+      }
+    },
+    "CBC": {
+      "setback_front_ft": {
+        "value": 20,
+        "section": "270-3.9E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "270-3.9E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "270-3.9E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "270-3.9E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 20,
+        "section": "270-3.9E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "270-3.9E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.9E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "270-3.9E(5)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. 70%."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "270-3.9E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088920",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Minimum lot area: none. Residential table row read."
+      }
+    },
+    "AH": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "270-3.14E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached: one acre minimum (two acres maximum). Density one unit per acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "270-3.14E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "270-3.14E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "270-3.14E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "270-3.14E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 30,
+        "section": "270-3.14E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "270-3.14E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 30,
+        "section": "270-3.14E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "270-3.14E(5)(b)",
+        "url": "https://ecode360.com/print/EA2319?guid=11089490",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. Residential 25%."
+      }
+    },
+    "RCC": {
+      "setback_front_ft": {
+        "value": 35,
+        "section": "270-3.10E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "270-3.10E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "270-3.10E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "270-3.10E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 20,
+        "section": "270-3.10E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "270-3.10E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "270-3.10E",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The 'Accessory Dwelling' column of the setback table."
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "270-3.10E(5)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. 70%."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "270-3.10E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11088937",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Minimum lot area: none. Residential table row read. Eight dwelling units per acre."
+      }
+    },
+    "E": {
+      "setback_front_ft": {
+        "value": 50,
+        "section": "270-3.12E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089326",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "270-3.12E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089326",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "270-3.12E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089326",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 60,
+        "section": "270-3.12E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089326",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "270-3.12E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089326",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The E table has no Accessory Dwelling column. Accessory side yard 15 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "270-3.12E",
+        "url": "https://ecode360.com/print/EA2319?guid=11089326",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The E table has no Accessory Dwelling column. Accessory rear yard 20 ft."
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "270-3.12E(4)",
+        "url": "https://ecode360.com/print/EA2319?guid=11089326",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "The code states maximum lot coverage, stored here as building coverage. 70%."
+      },
+      "min_lot_sqft": {
+        "value": null,
+        "section": "270-3.12E(1)",
+        "url": "https://ecode360.com/print/EA2319?guid=11089326",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Minimum lot area: none."
       }
     }
   }

@@ -24,8 +24,8 @@
     "geoid": "4207779104",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/14515564",
-    "code_current_through": null,
-    "code_current_through_note": "eCode360 shows no 'legislation through' date on the chapter page. The newest codified zoning ordinance seen is Ord. No. 2025-04 (12-4-2025, in 27-306 and 27-402). New Laws: Ord. No. 2026-04 (2026-04-02, Zoning), not codified.",
+    "code_current_through": "2026-01-05",
+    "code_current_through_note": "eCode360 breadcrumb shows 'Code 2026-01-05'. The newest codified zoning ordinance seen is Ord. No. 2025-04 (12-4-2025, in 27-306 and 27-402). New Laws: Ord. No. 2026-04 (2026-04-02, Zoning), not codified.",
     "checks": [
       "One accessory apartment is allowed only inside an existing single-family detached house or one half of an existing twin. It is a special exception (Zoning Hearing Board) in R3, R4 and R5, and a use by right in NC, HC, LI, LI(L) and GI. It is not permitted in RU3, RU1.5, R1, R2, OSP or RT (27-306)",
       "The house as it stands before the conversion must have at least 1,500 sq ft of floor area, and the main unit must keep at least 800 sq ft (27-403.4A(7))",
@@ -34,6 +34,9 @@
       "Every dwelling unit needs at least 600 sq ft of habitable heated floor area (27-801.4)",
       "Any on-lot septic system must be recertified if sewage flows will increase (27-403.4A(1))",
       "An 'apartment for care of relative' is a separate listing, a special exception in every residential district: at most two occupants, a close relative of the household who needs care, no rental income, and the unit is removed or folded back into the house afterward (27-403.4C)",
+      "Outside R3, R4, R5 and the business districts only the apartment for care of relative is possible (special exception in RU3, RU1.5, R1, R2 and OSP). In RT neither listing appears (27-306)",
+      "A twin half needs less lot per unit than a house: R3 8,000, R4 6,000 and R5 5,000 sq ft per dwelling unit (27-307.2B). The per-unit figure the tool shows is the single-family one",
+      "Each dwelling unit needs its own toilet, bath or shower, sink, sleeping and cooking facilities, and its own access to the outside or a common hall (27-202, dwelling unit)",
       "A new detached unit, a unit in a garage and an addition are not listed. Accessory uses to a dwelling that the table does not list are not permitted (27-306)"
     ],
     "notes": "Zoning office: Upper Macungie Township (uppermac.org). Read on eCode360 in a browser, one section print view at a time. Searched the definitions (27-202) for accessory dwelling, accessory apartment, in-law, granny, ECHO, tiny house, short-term rental, two-family and duplex. The code has no 'accessory dwelling unit' term. It uses 'accessory apartment, one' (27-306, 27-403.4A) and 'apartment for care of relative' (27-202, 27-403.4C)."
@@ -73,12 +76,12 @@
       "note": "Districts where the accessory apartment is listed. The apartment for care of relative is listed in all residential districts (see alternatives)."
     },
     "status_outside": {
-      "value": "prohibited",
-      "section": "27-306",
+      "value": "family_only",
+      "section": "27-306, 27-403.4C",
       "url": "https://ecode360.com/print/UP2477?guid=14516362",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Marked N (not permitted) in RU3, RU1.5, R1, R2, OSP and RT. The table also says any accessory use to a dwelling that it does not list is not permitted."
+      "note": "The general accessory apartment is N (not permitted) in RU3, RU1.5, R1, R2, OSP and RT, so a general unit there needs a variance. In RU3, RU1.5, R1, R2 and OSP the 'apartment for care of relative' is a special exception, for a relative who needs care (see alternatives). In RT neither is listed, so there it is prohibited. One value cannot hold both."
     }
   },
   "approval": {
@@ -282,6 +285,25 @@
           "building_types": null,
           "section": "27-403.4A(8)",
           "url": "https://ecode360.com/print/UP2477?guid=14517058"
+        },
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "For a twin half the lot area per dwelling unit is R3 8,000, R4 6,000, R5 5,000 sq ft, not the single-family figure. If the apartment counts, a twin lot needs twice that.",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": [
+            "R3",
+            "R4",
+            "R5",
+            "NC"
+          ],
+          "building_types": [
+            "semi_detached"
+          ],
+          "section": "27-307.2B",
+          "url": "https://ecode360.com/print/UP2477?guid=14516436"
         }
       ],
       "section": "27-403.4A",
@@ -866,6 +888,45 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "Figures for a single-family detached dwelling without both public services."
+      }
+    },
+    "HC": {
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-307.2C",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Principal building 35 ft, 3 stories."
+      }
+    },
+    "LI": {
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "27-307.2C",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Offices 150 ft. All other buildings 50 ft."
+      }
+    },
+    "LI(L)": {
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "27-307.2C",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Offices 150 ft. All other buildings 50 ft."
+      }
+    },
+    "GI": {
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "27-307.2C",
+        "url": "https://ecode360.com/print/UP2477?guid=14516436",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
       }
     }
   }

@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 76,
-      "population": 4569290,
-      "share_of_pa": 0.3514
+      "towns_beyond_the_two_cities": 82,
+      "population": 4724965,
+      "share_of_pa": 0.3634
     }
   ],
   "towns": [
@@ -1935,17 +1935,17 @@
       "pop_rank": 61,
       "file": "pa_lehigh_upper_macungie",
       "batch": 14,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14515564",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2026-01-05",
       "code_note": "Zoning: Chapter 27 Zoning (Ord. 9-94). ADU text: 'Accessory apartment, one' within an existing single-family detached house or twin half (27-306, 27-403.4A), special exception in R3, R4, R5 and by right in NC, HC, LI, LI(L), GI. Separate 'apartment for care of relative' by special exception in all residential districts (27-403.4C). Read in the browser on eCode360 (UP2477).",
       "why": [
-        "next largest town without a rule file (pa_places.json population order, batch 14)"
+        "known ADU ordinance (Code 27-306 and 27-403.4A accessory apartment by special exception)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: Ord. No. 2026-04 (2026-04-02, zoning) is not codified and its PDF was not read; a news report says it covers automated storage systems in LI and LI(L). Whether the apartment needs a second share of the per-unit lot area in 27-307. Whether parking is 2 or 1 space (one-bedroom conversion apartment rate). The business-district single-family row prints five values for six columns. Whether the apartment for care of relative may be outside the house."
+      "status_note": "Verified 2026-11-14 after independent review (review14) and fixes: outside R3, R4, R5 and the business districts the status now reads family only (the apartment for care of relative is a special exception in RU3, RU1.5, R1, R2 and OSP; RT has neither, which one status_outside value cannot hold); twin-half lot area per unit (8,000/6,000/5,000) added as a condition; code current through 2026-01-05. For a later check: Ord. No. 2026-04 (2026-04-02, likely the ASRS interim ordinance) is PDF only and not read; whether the apartment needs a second share of per-unit lot area; parking 2 or 1 space."
     },
     {
       "geoid": "4207121232",
@@ -1964,12 +1964,12 @@
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14043769",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2025-03-19",
       "code_note": "Zoning: Chapter 270 Zoning (East Hempfield Township Zoning Ordinance of 2014). ADU text: 'accessory dwelling' (270-2.2) and 270-5.2A, permitted accessory use in A, RB, RL, RM, VR, VC, CBC, AH, RCC since Ord. No. 2022-02; immediate family only, 40% of the house, owner residency, +1 parking. Read in the browser on eCode360 (EA2319).",
       "why": [
-        "next largest town without a rule file (pa_places.json population order, batch 14)"
+        "known ADU ordinance (Code 270-5.2A accessory dwelling units by right, family only)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: Ord. No. 2026-02 'Zoning Amendment' adopted 2026-11-04 is not codified and was not read (PDF only), so a code caution is set. Whether a unit inside the house counts as 'attached'. Whether the VR and VC 8,700 sq ft per dwelling unit applies to the ADU. RB, CBC, AH and RCC dimensional tables and the ME, E and ROS use lists were not read."
+      "status_note": "Drafted 2026-11-14, review14 fixes applied: the E zone (270-3.12B(5)(c)) added with its row; RB, CBC, AH, RCC rows and zone lot coverage added; C, ME and ROS confirmed without an ADU listing; code date 2025-03-19. Open: Ord. No. 2026-02 'Zoning Amendment' (2026-11-04) is not codified and not read (PDF only), so the code caution stays. Also open: whether zone densities or the VR/VC 8,700 sq ft per unit count the ADU; whether historic conversions (270-5.2FF) can add a dwelling."
     },
     {
       "geoid": "4209506096",
@@ -1983,7 +1983,7 @@
       "pop_rank": 64,
       "file": "pa_northampton_bethlehem_township",
       "batch": 14,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/13370636",
@@ -1991,9 +1991,9 @@
       "code_current_through": "2026-06-15",
       "code_note": "Zoning: Chapter 275 Zoning (Ord. No. 8-97). ADU text: 'Accessory apartment within an existing single-family detached dwelling' (275-190D(1)), accessory use by right in MDR (275-46B(6)) and MHDR (275-54B(6)); conversion rules 275-189A(24). Read in the browser on eCode360 (BE2269), legislation through 06-15-2026.",
       "why": [
-        "next largest town without a rule file (pa_places.json population order, batch 14)"
+        "known ADU ordinance (Code 275-190D(1) accessory apartment by right in AG, MDR, MHDR)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: whether the apartment needs its own share of the district lot area (275-189A(24)(a), MHDR 7,000 sq ft per unit). AG, NC, GC, Town Center, Mixed-Use Village and other district use lists were not opened. MHDR height (275-57) not read. Whether the MHDR two-family lot of 6,000 sq ft is per building or per unit."
+      "status_note": "Verified 2026-11-14 after independent review (review14) and fixes: AG added (275-111D(2), lot rules 275-114); eCode360 search for 'accessory apartment' finds only AG, MDR and MHDR, so the status outside is prohibited; MHDR height 35 ft and three habitable stories (275-57). For a later check: whether the apartment needs its own share of the district lot area (275-189A(24)(a), MHDR 7,000 sq ft per unit)."
     },
     {
       "geoid": "4201781048",
@@ -2015,9 +2015,9 @@
       "code_current_through": "2026-08-11",
       "code_note": "Zoning: Chapter 370 Zoning (Ord. No. 2021-O-04). ADU text: 'H1, Multigenerational apartment' (370-305H(1)), special exception in RA, R1, R2, R2-I, R3, MR, EV (Table 300): relatives of the owner, no rent, inside the house, lesser of 25% or 800 sq ft, public water and sewer. 370-820 limits secondary kitchens (Ord. No. 2026-O-01). Read in the browser on eCode360 (WA0807), legislation through 08-11-2026.",
       "why": [
-        "next largest town without a rule file (pa_places.json population order, batch 14)"
+        "known ADU ordinance (Code 370-305H(1) multigenerational apartment by special exception)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: Ord. No. 2026-O-05 (2026-09-08, zoning) not codified and not read; it may be the Pickertown Road rezoning. 370-305H(1)(a)[1] requires public water and sewer while [8] mentions an adequate on-lot septic system. District area rules read only for R1. Parking (370-602) not opened."
+      "status_note": "Drafted 2026-11-14, review14 fixes applied: the public sewer rule is now a condition because 370-305H(1)(a)[8] mentions an adequate on-lot septic system; rows for RA, R2, R2-I, R3 and the MR lot area added. Open: whether 370-820 (secondary kitchens, 2026) reaches the apartment's kitchen; the septic conflict between [1] and [8]; Ord. No. 2026-O-05 (2026-09-08) not read (PDF only); EV not read; R2-I and R3 side and rear yards not read."
     },
     {
       "geoid": "4209145080",
@@ -2031,7 +2031,7 @@
       "pop_rank": 67,
       "file": "pa_montgomery_lower_providence",
       "batch": 14,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/6205724",
@@ -2039,9 +2039,9 @@
       "code_current_through": "2026-04-01",
       "code_note": "Zoning: Chapter 143 Zoning (Ord. No. 432). ADU text: 'In-law suite' (143-6.2, Ord. No. 662, 2020; amended Ord. No. 687, 2025), residential accessory use by right in R-1 to R-5: inside the house or a detached household garage, two family members, 800 sq ft cap. Read in the browser on eCode360 (LO0679).",
       "why": [
-        "next largest town without a rule file (pa_places.json population order, batch 14)"
+        "known ADU ordinance (Code 143-6.2 in-law suite by right in R-1 to R-5)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: the 50% cap is of the house's 'primary living area', which the schema cannot hold, so only the 800 sq ft cap is stored. Use lists outside R-1 to R-5 not checked. Height rules and parking (143-71) not opened. District area rules read for R-2 and R-3 only."
+      "status_note": "Verified 2026-11-14 after independent review (review14) and fixes: status outside R-1 to R-5 is prohibited (search for 'in-law suite'); duplex alternative now R-3, R-4, R-5; rows for R-1 to R-5 with heights (R-5 55 ft); the size line says 800 sq ft is only the outer limit. For a later check: the 50% cap of the 'primary living area' cannot be computed by the tool (schema gap); whether the suite counts toward the 3.0 units per gross acre density in R-3 to R-5; no household garage height or yard rule was found."
     },
     {
       "geoid": "4209150640",
@@ -2063,9 +2063,9 @@
       "code_current_through": null,
       "code_note": "Zoning: Chapter 230 Zoning (readopted 2007 by Ord. No. 06-211Z). ADU text: 'Accessory family dwelling' (230-149C): one unit with a single-family detached house for family members or a family caregiver, part of the house with an internal connection, 25% of floor area, no rental, registration, +1 parking. Read in the browser on eCode360 (MO1293).",
       "why": [
-        "next largest town without a rule file (pa_places.json population order, batch 14)"
+        "known ADU ordinance (Code 230-149C accessory family dwelling)"
       ],
-      "status_note": "Drafted 2026-11-14 (first reading, independent review pending). Open: 230-149C is not tied to a district, so the file reaches any lot with a lawful single-family house; only R-1 and R-2 use lists were read. Whether 'household caretaker' quarters (230-149A(2)(a)[3]) may be a separate unit. District area rules read for R-1 only."
+      "status_note": "Drafted 2026-11-14, review14 fixes applied: scope set to the districts whose use lists permit a single-family detached dwelling (R-1, R-2, R-3, R-3A, R-3B, R-5, R-6, all read); path note quotes fixed; R-1 height 35 ft and 2 1/2 stories. Open: C and the other nonresidential districts permit the uses in Appendix Table 230-A, an attachment not opened, so whether a house (and this unit) is allowed there is not confirmed; MHP not read."
     }
   ]
 }

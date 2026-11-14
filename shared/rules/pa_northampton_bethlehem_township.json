@@ -20,7 +20,11 @@
       "https://ecode360.com/print/BE2269?guid=13372656",
       "https://ecode360.com/print/BE2269?guid=13371008",
       "https://ecode360.com/print/BE2269?guid=13370656",
-      "https://ecode360.com/print/BE2269?guid=13374614"
+      "https://ecode360.com/print/BE2269?guid=13374614",
+      "https://ecode360.com/print/BE2269?guid=13372398",
+      "https://ecode360.com/print/BE2269?guid=13372452",
+      "https://ecode360.com/print/BE2269?guid=13371699",
+      "https://ecode360.com/BE2269/search?query=%22accessory%20apartment%22&scope=all&sortOrder=relevance"
     ],
     "verified_on": "2026-11-14",
     "county": "Northampton",
@@ -31,7 +35,7 @@
     "code_current_through": "2026-06-15",
     "code_current_through_note": "eCode360: 'Includes legislation through 06-15-2026.'",
     "checks": [
-      "An accessory apartment is allowed by right (zoning permit) only inside an existing single-family detached house in the MDR and MHDR districts. It is not listed in RR or LDR, whose use lists say 'Only the following uses are permitted' (275-38, 275-46B(6), 275-54B(6))",
+      "An accessory apartment is allowed by right (zoning permit) only inside an existing single-family detached house in the AG, MDR and MHDR districts. A code search for 'accessory apartment' finds it in no other district list, and the district lists say 'Only the following uses are permitted' (275-111D(2), 275-46B(6), 275-54B(6), 275-38)",
       "The house as it stands must have at least 1,500 sq ft, and the main unit must keep at least 900 sq ft (275-190D(1)(c))",
       "One of the units must be owner-occupied for at least 12 months after the conversion (275-190D(1)(b))",
       "The conversion rules of 275-189A(24) apply: the lot must meet the district lot area, yard, building area and parking rules, all work stays inside the existing shell, no second front entrance and no outside stair or fire escape on the front or a street-facing side wall. Extending the sides or raising the height is not a conversion",
@@ -39,7 +43,7 @@
       "A detached unit, a garage unit and an addition are not listed",
       "Lot area: whether the apartment needs a second share of the district lot area is not settled. MHDR states its single-family lot area per dwelling unit (275-58A)"
     ],
-    "notes": "Zoning office: Bethlehem Township (bethlehemtwp.com). Read on eCode360 in a browser, one section print view at a time. Use lists read for RR, LDR (by right and special exception), MDR and MHDR, and the Neighborhood Enhancement Overlay. AG, NC, GC, PC, OB, GI, LI, CR, Town Center, Mixed-Use Village and Hospital Health Care Village were not opened. The definitions page showed no 'accessory apartment' definition."
+    "notes": "Zoning office: Bethlehem Township (bethlehemtwp.com). Read on eCode360 in a browser, one section print view at a time. Use lists read for RR, LDR (by right and special exception), MDR, MHDR, AG and the Neighborhood Enhancement Overlay. An eCode360 search for accessory apartment on 2026-11-14 returned only 275-46, 275-54, 275-111, 275-189 and 275-190. The definitions page showed no 'accessory apartment' definition."
   },
   "adu": {
     "term": {
@@ -56,31 +60,32 @@
       "url": "https://ecode360.com/print/BE2269?guid=13373997",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Only inside an existing single-family detached house: 'any proposed alteration must be confined to the interior of an already existing structural shell'. By right in MDR and MHDR."
+      "note": "Only inside an existing single-family detached house: 'any proposed alteration must be confined to the interior of an already existing structural shell'. By right in AG, MDR and MHDR."
     },
     "scope_districts": {
       "value": [
+        "AG",
         "MDR",
         "MHDR"
       ],
-      "section": "275-46B(6), 275-54B(6)",
+      "section": "275-111D(2), 275-46B(6), 275-54B(6)",
       "url": "https://ecode360.com/print/BE2269?guid=13371566",
       "verified_on": "2026-11-14",
       "confidence": "verified"
     },
     "status_outside": {
       "value": "prohibited",
-      "section": "275-31, 275-38",
+      "section": "275-31, 275-38, 275-111",
       "url": "https://ecode360.com/print/BE2269?guid=13371486",
       "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "RR and LDR do not list it, and their lists say 'Only the following uses are permitted'. Other districts were not all opened."
+      "confidence": "verified",
+      "note": "A code search for 'accessory apartment' finds it only in the AG, MDR and MHDR lists (and 275-189, 275-190). District lists say 'Only the following uses are permitted', so it is barred elsewhere."
     }
   },
   "approval": {
     "path": {
       "value": "by_right",
-      "section": "275-46B(6), 275-54B(6)",
+      "section": "275-111D(2), 275-46B(6), 275-54B(6)",
       "url": "https://ecode360.com/print/BE2269?guid=13371566",
       "verified_on": "2026-11-14",
       "confidence": "verified",
@@ -131,10 +136,11 @@
   "eligibility": {
     "zoning_districts": {
       "value": [
+        "AG",
         "MDR",
         "MHDR"
       ],
-      "section": "275-46B(6), 275-54B(6)",
+      "section": "275-111D(2), 275-46B(6), 275-54B(6)",
       "url": "https://ecode360.com/print/BE2269?guid=13371566",
       "verified_on": "2026-11-14",
       "confidence": "verified"
@@ -394,6 +400,28 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "275-49D",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40% building, 60% total impervious."
+      },
+      "accessory_setback_side_ft": {
+        "value": 6,
+        "section": "275-49F(2)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 4,
+        "section": "275-49G(2)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
       "utility_rows": {
         "value": [
           {
@@ -462,6 +490,44 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "275-57C",
+        "url": "https://ecode360.com/print/BE2269?guid=13371699",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft and no more than three habitable stories."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "275-57C",
+        "url": "https://ecode360.com/print/BE2269?guid=13371699",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Three habitable stories."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "275-57A",
+        "url": "https://ecode360.com/print/BE2269?guid=13371699",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "50% for buildings, 65% total impervious."
+      },
+      "accessory_setback_side_ft": {
+        "value": 4,
+        "section": "275-58C(2)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 4,
+        "section": "275-58D(2)",
+        "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
       "utility_rows": {
         "value": [
           {
@@ -488,6 +554,97 @@
         ],
         "section": "275-58A",
         "url": "https://ecode360.com/print/BE2269?guid=13371706",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "AG": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "275-114A",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With both public water and public sewer. 1 1/2 acres with one service, two acres with neither."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "275-114E",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "275-114F",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20 ft for each of two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "275-114G",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "275-114G",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "275-114I",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 1/2 stories or 35 ft, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 3.5,
+        "section": "275-114I",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "275-114D",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40% for buildings, 50% total impervious."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "One public service only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 65340,
+            "section": "275-114A(2)"
+          },
+          {
+            "when": "One public service only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 65340,
+            "section": "275-114A(2)"
+          },
+          {
+            "when": "Neither public service",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "section": "275-114A(3)"
+          }
+        ],
+        "section": "275-114A",
+        "url": "https://ecode360.com/print/BE2269?guid=13372452",
         "verified_on": "2026-11-14",
         "confidence": "verified"
       }

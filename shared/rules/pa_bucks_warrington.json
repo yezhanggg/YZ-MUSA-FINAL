@@ -13,6 +13,11 @@
       "https://ecode360.com/print/WA0807?guid=41365486",
       "https://ecode360.com/print/WA0807?guid=50685522",
       "https://ecode360.com/print/WA0807?guid=41365258",
+      "https://ecode360.com/print/WA0807?guid=41365262",
+      "https://ecode360.com/print/WA0807?guid=41365579",
+      "https://ecode360.com/print/WA0807?guid=41365852",
+      "https://ecode360.com/print/WA0807?guid=41365903",
+      "https://ecode360.com/print/WA0807?guid=41365949",
       "https://ecode360.com/WA0807/laws",
       "https://cpo.soar.com/articles/8538986/Warrington/Bucks-County/Pennsylvania/Votes-at-a-glance-Warrington-board-actions-July-14-2026"
     ],
@@ -27,15 +32,15 @@
     "checks": [
       "The code's ADU is the 'multigenerational apartment' (Use H1): a special exception (Zoning Hearing Board) in RA, R1, R2, R2-I, R3, MR and EV. Not allowed in any other district (Table 300, 370-304A)",
       "Only for people related to the owner by birth, marriage or law (adoption, fostering, guardianship). No rent or fee. The owner certifies who lives there by affidavit each year (370-305H(1))",
-      "The house must be owner-occupied and served by public water and public sewer (370-305H(1)(a)[1])",
+      "The house must be owner-occupied and served by public water and public sewer (370-305H(1)(a)[1]). Item [8] also mentions an adequate on-lot septic system, so a septic lot is an open question",
       "Inside the main house only, with internal access and the same entrance and exits as the house. The house keeps one front entrance (370-305H(1)(a)[4], [5])",
       "At most 25% of the house or 800 sq ft, whichever is less. One per lot (370-305H(1)(a)[2], [6])",
       "The lot must meet the district's minimum lot area for a single-family detached house (370-305H(1)(a)[7])",
       "One parking space beyond what the house needs. A Bucks County Department of Health permit first (370-305H(1)(a)[8], [9])",
-      "Since 3-10-2026 a second kitchen may not sit in a separate suite with its own living and bathroom space, nor open directly to the outside (370-820)",
+      "Open point: since 3-10-2026 a 'secondary kitchen' may not sit in a separate suite with its own living and bathroom space, nor open directly to the outside (370-820). Whether this reaches the kitchen of an approved multigenerational apartment is not settled. If it does, the apartment could not have a kitchen. Ask the zoning officer",
       "A two-family detached dwelling (duplex) is a separate use, by right only in MR and EV (Table 300)"
     ],
-    "notes": "Zoning office: Warrington Township (warringtontownship.org). Read on eCode360 in a browser, one page at a time. Table 300 read from screenshots of the print view. District dimensional rules read only for R1 (370-409). RA, R2, R2-I, R3, MR and EV district pages were not opened. Off-street parking (370-602) not opened."
+    "notes": "Zoning office: Warrington Township (warringtontownship.org). Read on eCode360 in a browser, one page at a time. Table 300 read from screenshots of the print view. District dimensional rules read for RA, R1, R2, R2-I and R3 (side and rear yards for R2-I and R3 not read), and the MR single-family lot area. EV was not opened. Off-street parking (370-602) not opened."
   },
   "adu": {
     "term": {
@@ -184,8 +189,8 @@
         },
         {
           "kind": "utilities",
-          "condition": "The house must be served by public sewer.",
-          "effect": "bars",
+          "condition": "The house must be served by public sewer (370-305H(1)(a)[1]). But [8] asks for a county permit showing the property 'can be adequately served by public sewer and water or by an adequate on-lot septic system'. The code does not settle whether a septic lot qualifies. Ask the zoning officer.",
+          "effect": "condition",
           "applies_to": null,
           "districts": [
             "RA",
@@ -198,7 +203,7 @@
           ],
           "building_types": null,
           "test": "public_sewer",
-          "section": "370-305H(1)(a)[1]",
+          "section": "370-305H(1)(a)[1], [8]",
           "url": "https://ecode360.com/print/WA0807?guid=41359671"
         },
         {
@@ -242,7 +247,7 @@
         },
         {
           "kind": "other",
-          "condition": "A second kitchen outside an approved apartment may not be in a separate suite with living and bathroom space, may not open directly to the outside, and may sit only on the main living level or a lower level.",
+          "condition": "Open point: 370-820 bars a 'secondary kitchen' in a separate suite with living and bathroom space or with direct outside access. Whether it reaches the apartment's kitchen is not settled.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -373,6 +378,153 @@
     }
   },
   "districts": {
+    "RA": {
+      "min_lot_sqft": {
+        "value": 130680,
+        "section": "370-407E(1)(a)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365262",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Three acres."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "370-407E(1)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365262",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "50 ft or half the street line width, whichever is greater."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "370-407E(1)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365262",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "50 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "370-407E(1)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365262",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-407E(1)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365262",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "370-411E(1)(a)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "370-411E(1)(e)[1]",
+        "url": "https://ecode360.com/print/WA0807?guid=41365579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft or half the street line width, whichever is greater."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "370-411E(1)(e)[2]",
+        "url": "https://ecode360.com/print/WA0807?guid=41365579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft total."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "370-411E(1)(e)[3]",
+        "url": "https://ecode360.com/print/WA0807?guid=41365579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-411E(1)(d)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365579",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R2-I": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "370-413E(1)(a)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365852",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The district has exceptions for smaller existing lots, with yards reduced in proportion. Not read in full."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "370-413E(1)(e)[1]",
+        "url": "https://ecode360.com/print/WA0807?guid=41365852",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft or the average setback of adjoining properties."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "370-413E(1)(e)[2]",
+        "url": "https://ecode360.com/print/WA0807?guid=41365852",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft total."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-413E(1)(d)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365852",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R3": {
+      "min_lot_sqft": {
+        "value": 13500,
+        "section": "370-414E(1)(a)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family density 1.9 units per acre."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "370-414E(1)(f)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "35 ft or half the street line width, whichever is greater."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-414E(1)(e)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365903",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "MR": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "370-415E(1)",
+        "url": "https://ecode360.com/print/WA0807?guid=41365949",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Use B1, Single-family detached dwelling: 15,000 square feet.' Side yard 10 ft for B1. Other MR rules not read."
+      }
+    },
     "R1": {
       "min_lot_sqft": {
         "value": 40000,

@@ -164,7 +164,7 @@ def build(rows: list[dict[str, Any]]) -> dict[str, Any]:
     rest = [g for g in top + legal + list(EXTRAS) if g not in batch]
     rest = list(dict.fromkeys(rest))
     for i, g in enumerate(rest):
-        batch[g] = 3 + i // BATCH_SIZE
+        batch[g] = FIXED_BATCH.get(g, 3 + i // BATCH_SIZE)  # noqa: F821 (defined below)
     order = list(CITY_FILES) + [g for b in sorted(ASSIGNED) for g in ASSIGNED[b]] + rest
 
     old = {t["geoid"]: t for t in (json.loads(INDEX.read_text())["towns"] if INDEX.exists() else [])}
@@ -834,9 +834,55 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": None,
         "note": "Zoning: Chapter 220 Zoning (220-31 Additional requirements for accessory uses). not confirmed. Code appears to prohibit apartments/living quarters in accessory structures (snippet, Amended 4-14-2025 by Ord. No. 603 - but Ord. 603 attribution to Columbia is uncertain). April 2026 council approved DCED technical assistance to evaluate ADUs (cpo.soar.com summary) - proposal only. Zoneomics mirror chapters 1-30 grep found no ADU/accessory apartment text.",
     },
+    "4207779104": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/14515564",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 27 Zoning (Ord. 9-94). ADU text: 'Accessory apartment, one' within an existing single-family detached house or twin half (27-306, 27-403.4A), special exception in R3, R4, R5 and by right in NC, HC, LI, LI(L), GI. Separate 'apartment for care of relative' by special exception in all residential districts (27-403.4C). Read in the browser on eCode360 (UP2477).",
+    },
+    "4207121232": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/14043769",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 270 Zoning (East Hempfield Township Zoning Ordinance of 2014). ADU text: 'accessory dwelling' (270-2.2) and 270-5.2A, permitted accessory use in A, RB, RL, RM, VR, VC, CBC, AH, RCC since Ord. No. 2022-02; immediate family only, 40% of the house, owner residency, +1 parking. Read in the browser on eCode360 (EA2319).",
+    },
+    "4209506096": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/13370636",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 275 Zoning (Ord. No. 8-97). ADU text: 'Accessory apartment within an existing single-family detached dwelling' (275-190D(1)), accessory use by right in MDR (275-46B(6)) and MHDR (275-54B(6)); conversion rules 275-189A(24). Read in the browser on eCode360 (BE2269), legislation through 06-15-2026.",
+    },
+    "4201781048": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/32025905",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 370 Zoning (Ord. No. 2021-O-04). ADU text: 'H1, Multigenerational apartment' (370-305H(1)), special exception in RA, R1, R2, R2-I, R3, MR, EV (Table 300): relatives of the owner, no rent, inside the house, lesser of 25% or 800 sq ft, public water and sewer. 370-820 limits secondary kitchens (Ord. No. 2026-O-01). Read in the browser on eCode360 (WA0807), legislation through 08-11-2026.",
+    },
+    "4209145080": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/6205724",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 143 Zoning (Ord. No. 432). ADU text: 'In-law suite' (143-6.2, Ord. No. 662, 2020; amended Ord. No. 687, 2025), residential accessory use by right in R-1 to R-5: inside the house or a detached household garage, two family members, 800 sq ft cap. Read in the browser on eCode360 (LO0679).",
+    },
+    "4209150640": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11516266",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 230 Zoning (readopted 2007 by Ord. No. 06-211Z). ADU text: 'Accessory family dwelling' (230-149C): one unit with a single-family detached house for family members or a family caregiver, part of the house with an internal connection, 25% of floor area, no rental, registration, +1 parking. Read in the browser on eCode360 (MO1293).",
+    },
 }
 
-# Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11). Up to 15.
+# Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
+# added later by population (batch 14). Up to 16.
+# Towns whose batch was set when they were assigned, not by position in the list.
+FIXED_BATCH = {g: 14 for g in ("4207779104", "4207121232", "4209506096", "4201781048", "4209145080", "4209150640")}
+
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
     "4209152664": "Ord. 1043 (2022). Code 500-602 and 500-1201",
@@ -848,6 +894,13 @@ EXTRAS = {
     "4209102264": "Code 27-407.A(8) family occupied ADUs",
     "4200134424": "2025 zoning ordinance 1502.H.1 (final draft, adoption not confirmed)",
     "4201719792": "Code 175-16.H(12) accessory dwelling unit by special exception",
+    # Batch 14 (2026-11-14): the next six towns by population without a rule file.
+    "4207779104": "Code 27-306 and 27-403.4A accessory apartment by special exception",
+    "4207121232": "Code 270-5.2A accessory dwelling units by right, family only",
+    "4209506096": "Code 275-190D(1) accessory apartment by right in AG, MDR, MHDR",
+    "4201781048": "Code 370-305H(1) multigenerational apartment by special exception",
+    "4209145080": "Code 143-6.2 in-law suite by right in R-1 to R-5",
+    "4209150640": "Code 230-149C accessory family dwelling",
 }
 
 if __name__ == "__main__":

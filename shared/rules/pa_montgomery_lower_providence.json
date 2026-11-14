@@ -16,7 +16,12 @@
       "https://ecode360.com/print/LO0679?guid=6206566",
       "https://ecode360.com/print/LO0679?guid=6206603",
       "https://ecode360.com/print/LO0679?guid=6206254",
-      "https://ecode360.com/LO0679/laws"
+      "https://ecode360.com/print/LO0679?guid=6206418",
+      "https://ecode360.com/print/LO0679?guid=6206444",
+      "https://ecode360.com/print/LO0679?guid=6206539",
+      "https://ecode360.com/LO0679/laws",
+      "https://ecode360.com/LO0679/search?query=%22in-law%20suite%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LO0679/search?query=%22household%20garage%22&scope=all&sortOrder=relevance"
     ],
     "verified_on": "2026-11-14",
     "county": "Montgomery",
@@ -30,13 +35,14 @@
       "An in-law suite is a residential accessory use allowed by right (zoning permit) in R-1, R-2, R-3, R-4 and R-5, on a lot with a single-family detached house (143-32, 143-36, 143-48, 143-52, 143-56, 143-6.2)",
       "It must be inside the house or inside a detached household garage on the same lot (143-6.2, in-law suite)",
       "Family only: at most two members of the family living in the house. The owner files a statement by January 15 each year, and removes the separate kitchen when those people no longer live there (143-6.2, in-law suite (6) to (11))",
-      "Size: at most 50% of the house's 'primary living area' (living room, dining room, kitchen, one bathroom and the largest bedroom), and never over 800 sq ft (143-6.2, in-law suite (1))",
+      "Size: the suite may not exceed 50% of the house's 'primary living area' (living room, dining room, kitchen, one bathroom and the largest bedroom). 800 sq ft is only the outer limit. For most houses the 50% rule gives a smaller number, so measure those rooms (143-6.2, in-law suite (1))",
       "One per lot. No outside change that makes the house or garage look like anything other than a single-family house or a garage (143-6.2, in-law suite (3))",
       "The owner signs a written agreement with the Township, recorded with the Recorder of Deeds, naming the occupants and describing the suite. A separate zoning permit (143-6.2, in-law suite (4), (5))",
       "One more off-street parking space than the house needs (143-6.2, in-law suite (14))",
-      "No more than one detached household garage per lot (district use lists)"
+      "No more than one detached household garage per lot (district use lists). No separate height or yard rule for a household garage was found. The district yards and building height apply",
+      "R-3, R-4 and R-5 cap density at 3.0 dwelling units per gross acre for single-family, twin and duplex dwellings. Whether the in-law suite counts toward it is not settled. Ask the zoning officer"
     ],
-    "notes": "Zoning office: Lower Providence Township (lowerprovidence.org). Read on eCode360 in a browser, one page at a time, the in-law suite text from screenshots of the Article I page. Use lists checked for R-1 to R-5. Commercial, industrial, mixed-use, MHP and overlay districts were not checked. District area rules read for R-2 and R-3 only. Off-street parking (143-71) and height rules were not opened."
+    "notes": "Zoning office: Lower Providence Township (lowerprovidence.org). Read on eCode360 in a browser, one page at a time, the in-law suite text from screenshots of the Article I page. Use lists checked for R-1 to R-5, and code searches for 'in-law suite' and 'household garage'. District area and height rules read for R-1 to R-5. Off-street parking (143-71) was not opened."
   },
   "adu": {
     "term": {
@@ -69,12 +75,12 @@
       "confidence": "verified"
     },
     "status_outside": {
-      "value": "not_addressed",
-      "section": "143-32",
+      "value": "prohibited",
+      "section": "143-32, 143-6.2",
       "url": "https://ecode360.com/print/LO0679?guid=6206412",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "Other districts were not checked. Each district lists its uses 'and no other'."
+      "note": "A code search for 'in-law suite' finds it only in 143-6.2 and the R-1 to R-5 use lists. District lists allow listed uses 'and no other', so it is barred elsewhere."
     }
   },
   "approval": {
@@ -100,11 +106,13 @@
           "name": "Duplex or twin dwelling",
           "path": "by_right",
           "districts": [
-            "R-3"
+            "R-3",
+            "R-4",
+            "R-5"
           ],
-          "conditions": "Single-family detached, twin and duplex dwellings at most 3.0 units per gross acre. Lots 8,000 sq ft, public water and sewer.",
+          "conditions": "Single-family detached, twin and duplex dwellings at most 3.0 units per gross acre, on public water and sewer. Lots: R-3 8,000 sq ft. R-4 and R-5 twin or duplex 6,000 sq ft. R-4 allows only one dwelling type on a site or lot (143-52C).",
           "min_lot_sqft": null,
-          "section": "143-48A(1), 143-49A",
+          "section": "143-48A(1), 143-49A, 143-52A(2), 143-52C, 143-53A, 143-56A(3), 143-57A",
           "url": "https://ecode360.com/print/LO0679?guid=6206532",
           "confidence": "secondary",
           "requires": [
@@ -241,7 +249,7 @@
       "url": "https://ecode360.com/print/LO0679?guid=35882118",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "'In no event shall the in-law suite exceed a total floor area of 800 square feet.'"
+      "note": "'In no event shall the in-law suite exceed a total floor area of 800 square feet.' This is only the outer limit. The suite is also capped at 50% of the house's primary living area (living room, dining room, kitchen, one bathroom and largest bedroom), which is usually smaller. The file cannot compute that share."
     },
     "max_share_of_house": {
       "value": null,
@@ -263,11 +271,27 @@
   "envelope": {
     "max_height_ft": {
       "value": null,
+      "section": "143-33B, 143-37C, 143-49C, 143-53C, 143-57D",
+      "url": "https://ecode360.com/print/LO0679?guid=6206418",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No separate household garage height. District rules cap all buildings: 35 ft in R-1 to R-4, 55 ft in R-5. See districts."
+    },
+    "accessory_height_applies": {
+      "value": false,
       "section": "143-6.2",
       "url": "https://ecode360.com/print/LO0679?guid=35882118",
-      "verified_on": null,
-      "confidence": "unverified",
-      "note": "No height for a garage suite was found. Height rules (143-25 and district sections) were not opened."
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A code search for 'household garage' found no garage height or yard rule, so the district building height applies."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "143-33A, 143-6.2B(2)",
+      "url": "https://ecode360.com/print/LO0679?guid=6206418",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "District setback tables do not split principal and accessory buildings, and residential accessory buildings meet principal setbacks (143-6.2B(2)). A household garage is not named there, but no other yard rule was found."
     },
     "internal_uses_district_height": {
       "value": true,
@@ -368,6 +392,20 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "143-37C",
+        "url": "https://ecode360.com/print/LO0679?guid=6206444",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "143-37A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206444",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
       "utility_rows": {
         "value": [
           {
@@ -411,29 +449,202 @@
       "min_lot_sqft": {
         "value": 8000,
         "section": "143-49A(2)",
-        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "url": "https://ecode360.com/print/LO0679?guid=6206539",
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "Individual lots. All dwellings on public water and sewer (143-49A(3))."
       },
+      "lot_area_per_unit_sqft": {
+        "value": 14520,
+        "section": "143-48A(1)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Density cap 3.0 dwelling units per gross acre (43,560 / 3). Whether the in-law suite counts is not settled."
+      },
       "setback_front_ft": {
         "value": 25,
         "section": "143-49A(2)",
-        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "url": "https://ecode360.com/print/LO0679?guid=6206539",
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
       "setback_side_ft": {
         "value": 10,
         "section": "143-49A(2)",
-        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "url": "https://ecode360.com/print/LO0679?guid=6206539",
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
       "setback_rear_ft": {
         "value": 25,
         "section": "143-49A(2)",
-        "url": "https://ecode360.com/print/LO0679?guid=6206532",
+        "url": "https://ecode360.com/print/LO0679?guid=6206539",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "143-49C",
+        "url": "https://ecode360.com/print/LO0679?guid=6206539",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "143-49A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206539",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 65000,
+        "section": "143-33A",
+        "url": "https://ecode360.com/print/LO0679?guid=6206418",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses (not OSR developments)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "143-33A",
+        "url": "https://ecode360.com/print/LO0679?guid=6206418",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "143-33A",
+        "url": "https://ecode360.com/print/LO0679?guid=6206418",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 60,
+        "section": "143-33A",
+        "url": "https://ecode360.com/print/LO0679?guid=6206418",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "143-33B",
+        "url": "https://ecode360.com/print/LO0679?guid=6206418",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "143-33A",
+        "url": "https://ecode360.com/print/LO0679?guid=6206418",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "143-53A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206566",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. Twin or duplex 6,000 sq ft. Public water and sewer (143-53A(4))."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 14520,
+        "section": "143-52A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206566",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Density cap 3.0 dwelling units per gross acre (43,560 / 3). Whether the in-law suite counts is not settled."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "143-53A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206566",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "143-53A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206566",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "143-53A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206566",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "143-53C",
+        "url": "https://ecode360.com/print/LO0679?guid=6206566",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "143-53A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206566",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "143-57A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached. Twin or duplex 6,000 sq ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 14520,
+        "section": "143-56A(3)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206603",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Density cap 3.0 dwelling units per gross acre (43,560 / 3). Whether the in-law suite counts is not settled."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "143-57A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "143-57A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "143-57A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 55,
+        "section": "143-57D",
+        "url": "https://ecode360.com/print/LO0679?guid=6206603",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "143-57A(2)",
+        "url": "https://ecode360.com/print/LO0679?guid=6206603",
         "verified_on": "2026-11-14",
         "confidence": "verified"
       }
