@@ -60,6 +60,7 @@ class Config:
     classes: int = 4
     kind: str = "smp"
     encoder: str = "resnet34"
+    arch: str = "unet"  # smp decoder: unet, deeplabv3plus, unetplusplus
     pretrained: bool = True
     ndvi: bool = False
     crop: int = 384
@@ -421,6 +422,7 @@ def _run(
         n_classes=n,
         encoder=cfg.encoder,
         pretrained=cfg.pretrained and not cfg.init_from,
+        arch=cfg.arch,
     )
     if init is not None:
         model.load_state_dict(init["state"])
@@ -527,6 +529,7 @@ def _run(
                     "state": model.state_dict(),
                     "kind": cfg.kind,
                     "encoder": cfg.encoder,
+                    "arch": cfg.arch,
                     "ndvi": cfg.ndvi,
                     "n_classes": n,
                     "classes": classes_for(n),
@@ -573,6 +576,7 @@ def parse(argv: list[str] | None) -> argparse.Namespace:
     ap.add_argument("--classes", type=int, default=4, choices=[4, 5])
     ap.add_argument("--kind", default="smp", choices=["smp", "plain"])
     ap.add_argument("--encoder", default="resnet34")
+    ap.add_argument("--arch", default="unet", choices=["unet", "deeplabv3plus", "unetplusplus"], help="smp decoder")
     ap.add_argument("--no-pretrained", action="store_true")
     ap.add_argument("--ndvi", action="store_true")
     ap.add_argument("--crop", type=int, default=384)
@@ -601,6 +605,7 @@ def config_from_args(a: argparse.Namespace) -> Config:
         classes=a.classes,
         kind=a.kind,
         encoder=a.encoder,
+        arch=a.arch,
         pretrained=not a.no_pretrained,
         ndvi=a.ndvi,
         crop=a.crop,

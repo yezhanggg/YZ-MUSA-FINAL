@@ -179,3 +179,16 @@ def test_merged_ap_counts_one_building_once():
     assert by_class["garage"]["ap50"] < 1 and by_class["other_accessory"]["ap50"] == 0
     merged = ap_table(*merge(preds, labels, MERGES["accessory"]))
     assert merged["accessory"]["ap50"] > 0.99  # both found, the duplicate is suppressed
+
+
+def test_rule_classes_merge_buildings_keeps_one_box_per_object():
+    from rule_classes import merge_buildings
+
+    rows = [
+        ("garage", 0.9, 10, 10, 50, 50),
+        ("other_accessory", 0.6, 11, 11, 50, 50),  # same building, other class: suppressed
+        ("accessory", 0.5, 100, 100, 140, 140),  # one-class model output counts as a building
+        ("pool", 0.8, 200, 200, 240, 240),  # pools are not buildings
+    ]
+    kept = merge_buildings(rows)
+    assert [r[0] for r in kept] == ["garage", "accessory"]

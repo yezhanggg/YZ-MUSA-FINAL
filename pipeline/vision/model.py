@@ -83,6 +83,9 @@ def adapt_first_conv(conv: nn.Conv2d, in_ch: int) -> nn.Conv2d:
     return out
 
 
+ARCHS = {"unet": "Unet", "deeplabv3plus": "DeepLabV3Plus", "unetplusplus": "UnetPlusPlus"}
+
+
 def make_model(
     kind: str = "smp",
     in_ch: int = 4,
@@ -90,13 +93,19 @@ def make_model(
     encoder: str = "resnet34",
     pretrained: bool = True,
     base: int = 32,
+    arch: str = "unet",
 ) -> nn.Module:
+    """arch (smp models only): unet, deeplabv3plus or unetplusplus."""
     if kind == "plain":
         return UNet(in_ch, n_classes, base)
     import segmentation_models_pytorch as smp
 
-    m = smp.Unet(
-        encoder_name=encoder, encoder_weights="imagenet" if pretrained else None, in_channels=3, classes=n_classes
+    m = smp.create_model(
+        ARCHS[arch],
+        encoder_name=encoder,
+        encoder_weights="imagenet" if pretrained else None,
+        in_channels=3,
+        classes=n_classes,
     )
     # swap the first 3-band conv of the encoder for one that takes 4 or 5 bands
     name, conv = next((n, c) for n, c in m.encoder.named_modules() if isinstance(c, nn.Conv2d) and c.in_channels == 3)
@@ -148,6 +157,7 @@ def load_model(path: str | Path, device: str) -> tuple[nn.Module, dict[str, Any]
         encoder=ck.get("encoder", "resnet34"),
         pretrained=False,
         base=ck.get("base", 32),
+        arch=ck.get("arch", "unet"),
     )
     model.load_state_dict(ck["state"])
     model.to(device).eval()

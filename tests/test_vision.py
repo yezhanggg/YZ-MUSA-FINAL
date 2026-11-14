@@ -48,8 +48,8 @@ def run_tiny(cfg, path, **kw):
 
     # a 4-channel-wide U-Net keeps the test fast
     orig = t.make_model
-    t.make_model = lambda kind, in_ch, n_classes, encoder, pretrained: orig(
-        kind, in_ch, n_classes, encoder, pretrained, base=4
+    t.make_model = lambda kind, in_ch, n_classes, encoder, pretrained, arch="unet": orig(
+        kind, in_ch, n_classes, encoder, pretrained, base=4, arch=arch
     )
     try:
         return train(cfg, path, device="cpu", data_fn=tiny_data, log=lambda m: None, **kw)
@@ -272,3 +272,17 @@ def test_hybrid_mean_of_five_class_members_and_only(tmp_path):
     a = np.load(e.prob_path(tmp_path, "city:x", "m1", "tta", "test", "b1")).astype(np.float32)
     b = np.load(e.prob_path(tmp_path, "city:x", "m2", "tta", "test", "b1")).astype(np.float32)
     assert np.array_equal(cm, confusion(((a + b) / 2).argmax(0).astype(np.uint8), lab, 5))
+
+
+def test_arch_option_builds_and_loads(tmp_path):
+    from pipeline.vision.model import load_model, make_model
+
+    for arch in ("unet", "deeplabv3plus"):
+        m = make_model("smp", in_ch=4, n_classes=5, encoder="resnet34", pretrained=False, arch=arch).eval()
+        x = torch.zeros(1, 4, 64, 64)
+        assert m(x).shape == (1, 5, 64, 64)
+        ck = {"state": m.state_dict(), "kind": "smp", "encoder": "resnet34", "arch": arch, "n_classes": 5}
+        ck.update(mean=np.zeros(4, np.float32), std=np.ones(4, np.float32))
+        torch.save(ck, tmp_path / f"{arch}.pt")
+        m2, meta = load_model(tmp_path / f"{arch}.pt", "cpu")
+        assert torch.allclose(m2(x), m(x)) and meta["n_classes"] == 5
