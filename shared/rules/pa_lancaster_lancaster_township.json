@@ -18,8 +18,10 @@
       "https://ecode360.com/print/LA1280?guid=27057192",
       "https://ecode360.com/print/LA1280?guid=27055518",
       "https://ecode360.com/print/LA1280?guid=27055566",
-      "https://ecode360.com/27056438",
-      "https://ecode360.com/LA1280/laws"
+      "https://ecode360.com/print/LA1280?guid=27056438",
+      "https://ecode360.com/LA1280/laws",
+      "https://ecode360.com/27057058",
+      "https://ecode360.com/LA1280/search?query=campground&scope=all&sortOrder=relevance"
     ],
     "verified_on": "2026-11-14",
     "county": "Lancaster",
@@ -29,19 +31,21 @@
     "code_url": "https://ecode360.com/13005392",
     "code_current_through": "2022-11-14",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2022-11-14'. Ord. No. 2026-05 (zoning amendment) and Ord. No. 2024-01 (rezoning) are New Laws, not yet in the code text.",
-    "code_caution": "Ord. No. 2026-05, a zoning amendment adopted 2026-09-14, is listed as a New Law for Chapter 280 and was not read (PDF only). A code search for 'accessory dwelling', which also covers New Laws text, found only the codified sections. Ord. No. 2024-01 is a rezoning. The online code is current only to 2022-11-14.",
+    "code_caution": "The online code is current only to 2022-11-14. Two zoning New Laws are not yet in the code text (PDFs, not opened). Ord. No. 2026-05 (2026-09-14): its search excerpt permits non-vehicular campgrounds in the Industrial District by conditional use, with a new definition and a new Section 280-904. Ord. No. 2024-01 (2024-04-08) is a rezoning of the NCM site. A code search for 'accessory dwelling', which also covers New Laws text, found only the codified sections, so neither is read as touching the ADU rules.",
     "checks": [
       "'Accessory dwelling unit': 'An independent dwelling unit subordinate to and added to, created within, or detached from a principal single-family detached dwelling' (280-201). A permitted use in R-1 only (280-402A). R-2 and R-3 do not list it",
       "At most 40% of the total square footage of the single-family detached house. One per lot. The lot meets all other single-family detached dimensional requirements of the district (280-1502A, B, C)",
       "The owner lives in the house or in the accessory unit. Occupants of both units together may not exceed the family definition: any number of relatives, or not more than three unrelated people (280-1502D, E, 280-201)",
       "Architecturally consistent with the house. Building permit before construction (280-1502F, G)",
-      "Parking: one space per accessory dwelling unit, in addition to the house's parking (280-1303Q, read in the search excerpt)",
-      "R-1 lot area is written 'per dwelling unit': 15,000 sq ft with public sewer and water, 32,000 with public sewer only, 43,560 otherwise (Table 4-1). 280-1502C asks the lot to meet 'all other' single-family detached dimensional requirements. Whether the accessory unit needs its own share of lot area is not said. Ask the Zoning Officer",
+      "Parking: 'Accessory dwelling unit: one space per accessory dwelling unit, in addition to the parking required for the principal single-family detached dwelling use' (280-1303Q). The house needs two spaces per dwelling unit (280-1303B). Three in all",
+      "R-1 lot area is written 'per dwelling unit': 15,000 sq ft with public sewer and water, 32,000 with public sewer only, 43,560 otherwise (Table 4-1). The accessory unit is 'An independent dwelling unit' (280-201), and 280-1502C asks the lot to meet 'all other' single-family detached dimensional requirements. Whether the per dwelling unit lot area also applies to the accessory unit is not said. Ask the Zoning Officer",
       "Accessory structures: not in the front yard and at least 15 ft from all front yards, 6 ft side and rear yards, 25 ft high (280-406)",
       "'Lot coverage' is impervious cover (280-201): 35% in R-1 with public sewer and water",
-      "R-2 and R-3 permit two-family dwellings (with public sewer and water: 6,000 sq ft per unit in R-2, 5,000 in R-3). A building that existed before July 17, 1972 may be converted to a multifamily dwelling by special exception in any residential district (280-502M, 280-602N, 280-1605)"
+      "R-2 and R-3 permit two-family dwellings (with public sewer and water: 6,000 sq ft per unit in R-2, 5,000 in R-3). A building that existed before July 17, 1972 may be converted to a multifamily dwelling (three or more units, 280-201) by special exception in any residential district (280-502M, 280-602N, 280-1605)",
+      "Residential infill development is a conditional use in R-1, R-2 and R-3 on a tract of five acres or less that existed as a single tract when the section was adopted, with lot and yard standards set from the existing block (280-404C, 280-504C, 280-604C, 280-1530). An open space development may include 'Residential conversion units in accordance with the provisions of § 280-1605' (280-1523C(1)). Both are development plans, not a permit for one added unit",
+      "R-2 and R-3 yard tables give rows only for a single-family detached dwelling 'without public sewer' (side 12 ft, rear 35 ft) and 'with public water and public sewer' (Tables 5-2, 6-2). A lot with public sewer and no public water has no row of its own. The file uses the 'without public sewer' yards for it, which is an inference"
     ],
-    "notes": "Zoning office: Lancaster Township (Lancaster County) Zoning Officer. Read on eCode360 (LA1280) in a browser, one page at a time, on 2026-11-14. LA3847 on eCode360 is Lancaster Township, Butler County (Chapter 300), not this town. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, relative, 'housekeeping unit', caretaker, 'guest house', 'accessory living' and 'tenant house' found 280-201 (ADU), 280-1502 and 280-402A. A search for 'accessory dwelling' alone found the same and 280-1303Q. Read in full: 280-1502, Articles IV (R-1) and V (R-2), 280-1605, and the definitions of accessory dwelling unit, family and lot coverage. Article VI (R-3) read in part (use list, lot table rows for single-family detached, accessory yards, height). Not read: LC, GC, I and S use lists, parking (280-1303, excerpt only), height exceptions (280-1610), nonconforming lots (280-1703)."
+    "notes": "Zoning office: Lancaster Township (Lancaster County) Zoning Officer. Read on eCode360 (LA1280) in a browser, one page at a time, on 2026-11-14. LA3847 on eCode360 is Lancaster Township, Butler County (Chapter 300), not this town. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, relative, 'housekeeping unit', caretaker, 'guest house', 'accessory living' and 'tenant house' found 280-201 (ADU), 280-1502 and 280-402A. A search for 'accessory dwelling' alone found the same and 280-1303Q. Read in full: 280-1502, Articles IV (R-1) and V (R-2), 280-1605, and the definitions of accessory dwelling unit, family and lot coverage. Article VI (R-3) read in full. 280-1303 read in full. Not read: LC, GC, I and S use lists, height exceptions (280-1610), nonconforming lots (280-1703), the residential infill development definition (280-201), Ord. No. 2026-05 and 2024-01 (PDFs). Fix round 2026-11-14 after an independent review, read again in the code: parking verified (280-1303B, Q), the R-3 row completed (Tables 6-1, 6-2, 280-606), the R-2 public-sewer-only yards marked as an inference, residential infill development (280-1530) and open space conversion units (280-1523C) added, the multifamily definition read (three or more units)."
   },
   "adu": {
     "term": {
@@ -149,10 +153,32 @@
           "section": "280-403C, 280-503B, 280-1605",
           "url": "https://ecode360.com/print/LA1280?guid=27057192",
           "confidence": "secondary",
-          "note": "A multifamily dwelling is read as three or more units (definition not read)."
+          "note": "A multifamily dwelling is 'A building containing three or more' dwelling units (280-201). Not a path for one added unit. An open space development in R-1 may also include such residential conversion units (280-1523C(1)(a))."
+        },
+        {
+          "name": "Residential infill development",
+          "path": "conditional_use",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Board of Supervisors conditional use. A tract of five acres or less that existed as a single tract when the section was adopted. Lot area, yards, height and design set from a study of the existing block, deviating from the district rules where they do not fit the neighborhood.",
+          "land_development": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The tract is five acres or less and existed as a single tract when the section was adopted",
+              "section": "280-1530B"
+            }
+          ],
+          "section": "280-404C, 280-504C, 280-604C, 280-1530",
+          "url": "https://ecode360.com/27057058",
+          "confidence": "secondary",
+          "note": "A development of the tract with its own plan, not a permit for one added unit. The definition of residential infill development (280-201) was not read."
         }
       ],
-      "section": "280-502M, 280-1605",
+      "section": "280-502M, 280-1605, 280-1530",
       "url": "https://ecode360.com/print/LA1280?guid=27055769",
       "verified_on": "2026-11-14",
       "confidence": "verified"
@@ -203,7 +229,7 @@
       "url": "https://ecode360.com/print/LA1280?guid=27055769",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Use lists read. No accessory dwelling unit. R-3 read in part."
+      "note": "Use lists read. No accessory dwelling unit."
     }
   },
   "form": {
@@ -288,7 +314,8 @@
       "section": "280-1502E, 280-201 (family)",
       "url": "https://ecode360.com/print/LA1280?guid=27055518",
       "verified_on": "2026-11-14",
-      "confidence": "verified"
+      "confidence": "secondary",
+      "note": "How the combined cap treats a related household in one unit and an unrelated tenant in the other is not settled. Ask the Zoning Officer."
     },
     "max_adus": {
       "value": 1,
@@ -303,10 +330,18 @@
     "spaces_required": {
       "value": 1,
       "section": "280-1303Q",
-      "url": "https://ecode360.com/27056438",
+      "url": "https://ecode360.com/print/LA1280?guid=27056438",
       "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "'Accessory dwelling unit: one space per accessory dwelling unit, in addition to the parking' for the house. Read in the code search excerpt."
+      "confidence": "verified",
+      "note": "'Accessory dwelling unit: one space per accessory dwelling unit, in addition to the parking required for the principal single-family detached dwelling use.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "280-1303B, Q",
+      "url": "https://ecode360.com/print/LA1280?guid=27056438",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Two spaces for the house ('two spaces for each dwelling unit', 280-1303B) and one for the accessory dwelling unit."
     }
   },
   "districts": {
@@ -325,7 +360,7 @@
         "url": "https://ecode360.com/print/LA1280?guid=27055717",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Written 'per dwelling unit'. 280-1502C asks the lot to meet 'all other' single-family detached dimensional requirements. Applies to the ADU only if it counts as a dwelling unit for lot area. Ask."
+        "note": "Written 'per dwelling unit'. The ADU is 'An independent dwelling unit' (280-201), and 280-1502C asks the lot to meet 'all other' single-family detached dimensional requirements. Whether the per dwelling unit lot area also applies to the ADU is not said. Ask the Zoning Officer."
       },
       "setback_front_ft": {
         "value": 25,
@@ -413,7 +448,7 @@
         "url": "https://ecode360.com/print/LA1280?guid=27055717",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Per dwelling unit figures apply to the ADU only if it counts as a dwelling unit for lot area. Ask the Zoning Officer."
+        "note": "The ADU is an independent dwelling unit (280-201). Whether these per dwelling unit figures also apply to it is not said. Ask the Zoning Officer."
       }
     },
     "R-2": {
@@ -492,7 +527,7 @@
             "setback_rear_ft": 35,
             "principal_max_height_ft": 40,
             "section": "280-505, Tables 5-1, 5-2",
-            "note": "Single-family detached: '32,000 per dwelling unit', width 65/100 ft, lot coverage (impervious) 25%. Yards as without public sewer."
+            "note": "Single-family detached: '32,000 per dwelling unit', width 65/100 ft, lot coverage (impervious) 25%. Table 5-2 has no yard row for public sewer without public water. The 12 ft side and 35 ft rear are the 'without public sewer' yards, used here as an inference."
           },
           {
             "when": "No public sewer (public water only or none)",
@@ -510,8 +545,8 @@
         "section": "280-505A, B",
         "url": "https://ecode360.com/print/LA1280?guid=27055769",
         "verified_on": "2026-11-14",
-        "confidence": "verified",
-        "note": "verified"
+        "confidence": "secondary",
+        "note": "Lot area and coverage from Table 5-1. The yards in the public sewer only row are an inference (Table 5-2 has no such row)."
       }
     },
     "R-3": {
@@ -521,7 +556,15 @@
         "url": "https://ecode360.com/print/LA1280?guid=27055827",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Single-family detached dwelling with public sewer and public water: '10,000 per dwelling unit', depth 125 ft. Semidetached and two-family: 5,000 sq ft per dwelling unit. Read in part."
+        "note": "Single-family detached dwelling with public sewer and public water: '10,000 per dwelling unit'. Width 50 ft at the street, 75 ft at the setback line, depth 125 ft. Semidetached and two-family: 5,000 sq ft per dwelling unit."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "280-605B, Table 6-2",
+        "url": "https://ecode360.com/print/LA1280?guid=27055827",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Local road. 30 ft on a collector, 40 ft on a minor arterial, 50 ft on a principal arterial. Average of adjacent buildings within 100 ft where closer."
       },
       "setback_side_ft": {
         "value": 10,
@@ -529,7 +572,15 @@
         "url": "https://ecode360.com/print/LA1280?guid=27055827",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "With public water and public sewer."
+        "note": "With public water and public sewer. 12 ft without public sewer."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "280-605B, Table 6-2",
+        "url": "https://ecode360.com/print/LA1280?guid=27055827",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With public water and public sewer. 35 ft without public sewer."
       },
       "principal_max_height_ft": {
         "value": 40,
@@ -537,7 +588,7 @@
         "url": "https://ecode360.com/print/LA1280?guid=27055827",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Multifamily dwellings with more than 12 units per building may be taller."
+        "note": "Multifamily dwellings with more than 12 units per building may be 75 ft."
       },
       "max_building_coverage": {
         "value": 0.4,
@@ -549,11 +600,52 @@
       },
       "accessory_setback_side_ft": {
         "value": 6,
-        "section": "280-606C",
+        "section": "280-606C(1)",
         "url": "https://ecode360.com/print/LA1280?guid=27055827",
         "verified_on": "2026-11-14",
         "confidence": "verified",
-        "note": "Single-family detached lots. Accessory structures 25 ft high."
+        "note": "Single-family detached lots. Not in the front yard, 15 ft from all front yards, rear 6 ft, 25 ft high (280-606)."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "280-606D",
+        "url": "https://ecode360.com/print/LA1280?guid=27055827",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 32000,
+            "max_building_coverage": 0.25,
+            "setback_front_ft": 25,
+            "setback_side_ft": 12,
+            "setback_rear_ft": 35,
+            "principal_max_height_ft": 40,
+            "section": "280-605, Tables 6-1, 6-2",
+            "note": "Single-family detached: '32,000 per dwelling unit', width 65/100 ft, depth 150 ft, lot coverage (impervious) 25%. Table 6-2 has no yard row for public sewer without public water. The 12 ft side and 35 ft rear are the 'without public sewer' yards, used here as an inference."
+          },
+          {
+            "when": "No public sewer (public water only or none)",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "max_building_coverage": 0.2,
+            "setback_front_ft": 25,
+            "setback_side_ft": 12,
+            "setback_rear_ft": 35,
+            "principal_max_height_ft": 40,
+            "section": "280-605, Tables 6-1, 6-2",
+            "note": "Single-family detached: '43,560 per dwelling unit', width 65/100 ft, depth 150 ft, lot coverage (impervious) 20%. Yards from the 'without public sewer' row."
+          }
+        ],
+        "section": "280-605A, B",
+        "url": "https://ecode360.com/print/LA1280?guid=27055827",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Lot area and coverage from Table 6-1. The yards in the public sewer only row are an inference (Table 6-2 has no such row)."
       }
     }
   }

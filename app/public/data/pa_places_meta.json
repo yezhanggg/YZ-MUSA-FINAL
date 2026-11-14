@@ -145,17 +145,17 @@
    },
    {
     "tier": "verified",
-    "places": 69,
-    "pop": 4068384,
-    "pop_share": 0.3115,
-    "housing_units": 1769188
+    "places": 73,
+    "pop": 4143159,
+    "pop_share": 0.3172,
+    "housing_units": 1798797
    },
    {
     "tier": "drafted",
-    "places": 43,
-    "pop": 1234440,
-    "pop_share": 0.0945,
-    "housing_units": 508557
+    "places": 39,
+    "pop": 1159665,
+    "pop_share": 0.0888,
+    "housing_units": 478948
    },
    {
     "tier": "reported",
@@ -262,14 +262,14 @@
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 28,
-    "pop": 699110
+    "places": 26,
+    "pop": 661704
    },
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 10,
-    "pop": 305920
+    "places": 8,
+    "pop": 268551
    },
    {
     "tier": "reported",
@@ -310,14 +310,14 @@
    {
     "tier": "verified",
     "status": "limited",
-    "places": 33,
-    "pop": 2564344
+    "places": 35,
+    "pop": 2601750
    },
    {
     "tier": "verified",
     "status": "not_addressed",
-    "places": 31,
-    "pop": 990241
+    "places": 33,
+    "pop": 1027610
    },
    {
     "tier": "verified",
@@ -364,7 +364,7 @@
    "geoid": "4207121344",
    "name": "East Lampeter township",
    "kind": "rule_file_vs_inventory",
-   "kept": "drafted limited (pa_lancaster_east_lampeter)",
+   "kept": "verified limited (pa_lancaster_east_lampeter)",
    "other": "by_right (berkeley_zrt_2026, 2026-02-28)",
    "note": "by right in every district allowing residential; 1 off-street parking space (inventory dated 2026-02-28)"
   },

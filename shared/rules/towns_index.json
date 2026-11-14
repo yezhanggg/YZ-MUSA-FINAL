@@ -2589,7 +2589,7 @@
       "code_url": "https://ecode360.com/15443121",
       "plain_fetch": false,
       "code_current_through": "2025-11-13",
-      "code_note": "Zoning: Chapter 150 Zoning (Ord. No. 87-2, 1987). No ADU text. Two-family conversions by special exception in LC only (150-354), duplexes in R-4, R-6, MU and the PRD overlay. Unlisted uses by special exception where similar uses are permitted (150-9). Ord. No. 26-01, 26-02 and 26-03 (2026, subject not shown) not yet codified. Read in the browser on eCode360 (WE1311).",
+      "code_note": "Zoning: Chapter 150 Zoning (Ord. No. 87-2, 1987). No ADU text. Two-family conversions by special exception in LC only (150-354), duplexes in R-4, R-6, MU and the PRD overlay. A second unit in a single-family zone reads as a duplex (use variance), by right in R-6. Ord. No. 26-01, 26-02 and 26-03 (2026) amend Chapters 29, 139 and 121, not Chapter 150. Read in the browser on eCode360 (WE1311).",
       "why": [
         "added as batch 18 by population. Code Chapter 150 has no ADU text"
       ],
@@ -2631,17 +2631,17 @@
       "pop_rank": 125,
       "file": "pa_lancaster_east_lampeter",
       "batch": 19,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/48621783",
       "plain_fetch": false,
       "code_current_through": "2025-12-15",
-      "code_note": "Zoning: Chapter 375 Zoning (East Lampeter Zoning Ordinance of 2016, Ord. No. 323). ADU text: 'Apartment as an accessory use' (375-2020, 375-23070): by right with a single-family detached dwelling in R-1, R-2, R-3, MU, BH, VG, VC and VR, one per lot, for rent or lease, no size cap. ECHO housing for a relative (375-23240) by right also in AG, up to 2,000 sq ft. Read in the browser on eCode360 (EA2320).",
+      "code_note": "Zoning: Chapter 375 Zoning (East Lampeter Zoning Ordinance of 2016, Ord. No. 323). ADU text: 'Apartment as an accessory use' (375-2020, 375-23070): by right with a single-family detached dwelling in R-1, R-2, R-3, MU, BH, VG, VC and VR, one per lot, for rent or lease, no size cap. Inside, attached or in a separate building. ECHO housing for a relative (375-23240) by right also in AG, up to 2,000 sq ft, the only accessory unit there. Read in the browser on eCode360 (EA2320).",
       "why": [
         "named as a town with an ADU ordinance (Code 375-23070 apartment as an accessory use and 375-23240 ECHO housing)"
       ],
-      "status_note": "First reading, awaiting independent review. Open points: whether an apartment inside or attached to the house is allowed (the single-family detached definition says one dwelling unit, 375-2020), whether a semidetached house qualifies in R-2 and R-3, and whether the 'per dwelling unit' lot area in BH, VG, VC and VR counts the apartment."
+      "status_note": "Reviewed and fixed 2026-11-14. For a later check: whether a semidetached house qualifies in R-2 and R-3; whether the single-family 'per dwelling unit' lot area in BH, VG, VC and VR counts the apartment; whether an apartment in an accessory building in VG or VC is held to the 50% of footprint or 1,000 sq ft cap; whether an ECHO unit counts against the AG dwelling quota (375-3040C) and when the subdivision chapter's 900 sq ft ECHO definition (368-201) brings a land development plan. Not read: 375-25060, C-1, C-2, C-3, I-1, I-2 and BP use lists, overlays other than the Historic Resource Overlay, 375-24060, and a 2026 township 'Ordinance to Amend Zoning Code' (PDF on the township site, not on eCode360)."
     },
     {
       "geoid": "4205530944",
@@ -2655,17 +2655,17 @@
       "pop_rank": 116,
       "file": "pa_franklin_greene",
       "batch": 19,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11174931",
       "plain_fetch": false,
       "code_current_through": "2026-09-08",
-      "code_note": "Zoning: Chapter 105 Zoning (Ord. No. 3-1998). No ADU text. Conversion of an existing single-family detached dwelling to a two-family dwelling by right in AR, R-1 and R-2 (105-6A(7), 105-7A(10), 105-8A(7)). Read in the browser on eCode360 (GR1759).",
+      "code_note": "Zoning: Chapter 105 Zoning (Ord. No. 3-1998). No ADU text. Conversion of an existing single-family detached dwelling to a two-family dwelling by right in AR, R-1, R-2 and CC (105-6A(7), 105-7A(10), 105-8A(7), 105-9A(5)). Read in the browser on eCode360 (GR1759).",
       "why": [
         "added as batch 19 by population. Code Chapter 105 has no ADU text"
       ],
-      "status_note": "First reading, awaiting independent review. No ADU text. Open point: the conversion to a two-family dwelling (by right in AR, R-1, R-2) is the only way to add a unit, a separate building needs a use variance."
+      "status_note": "Reviewed and fixed 2026-11-14. For a later check: whether the conversion lot rule (single-family lot plus 3,000 sq ft per added unit) applies to a two-family conversion (it follows the sentence on three or more units); whether a single-family house in CC takes the CC table (105-21) or the R-2 figures (105-9A). Not read: 105-57, 105-57.1, 105-8A(3) and (4) in full, parking (105-29), TC, HC, LI, HI and overlay use lists, PRD (Article VI)."
     },
     {
       "geoid": "4200372160",
@@ -2679,17 +2679,17 @@
       "pop_rank": 119,
       "file": "pa_allegheny_south_fayette",
       "batch": 19,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11615243",
       "plain_fetch": false,
       "code_current_through": "2026-01-14",
-      "code_note": "Zoning: Chapter 240 Zoning. No ADU text. Two-family dwellings by right in R-4 (240-36). Ord. No. 4-2026 (zoning) not yet codified. Read in the browser on eCode360 (SO0208).",
+      "code_note": "Zoning: Chapter 240 Zoning. No ADU text. Unlisted uses barred in R-1 to R-4, one principal dwelling per lot (240-13). Two-family dwellings by right in R-4 (240-36) and in ND developments. Ord. No. 4-2026 (zoning, R-1 lot width) not yet codified. Read in the browser on eCode360 (SO0208).",
       "why": [
         "added as batch 19 by population. Code Chapter 240 has no ADU text"
       ],
-      "status_note": "First reading, awaiting independent review. No ADU text. Open point: Ord. No. 4-2026 (zoning amendment, 2026-09-09) not read (PDF). Parking article and the commercial and industrial use lists not read."
+      "status_note": "Reviewed and fixed 2026-11-14. For a later check: Ord. No. 4-2026 (zoning amendment, 2026-09-09, PDF, not read; its excerpt makes the R-1 single-family width 125 ft with public sewers and changes the zoning map). The tool shows the one-side side yard minimum, the totals are in the checks. Not read: C-1, C-2, PED, I-P, I-1, CD-1 and B-1 use lists, Article XV express standards (240-95, including (13) and (45)), Article XIV open space option, parking (Article XVII), the lot coverage definition."
     },
     {
       "geoid": "4207141224",
@@ -2703,17 +2703,17 @@
       "pop_rank": 112,
       "file": "pa_lancaster_lancaster_township",
       "batch": 19,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-14",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/13005392",
       "plain_fetch": false,
       "code_current_through": "2022-11-14",
-      "code_note": "Zoning: Chapter 280 Zoning (Ord. No. 2012-04). ADU text: 'Accessory dwelling unit' (280-201, 280-402A, 280-1502): by right in R-1 only, at most 40% of the house, one per lot, owner lives in either unit, lot meets the single-family requirements. Ord. No. 2026-05 (zoning) not yet codified. Read in the browser on eCode360 (LA1280; LA3847 is Lancaster Township, Butler County).",
+      "code_note": "Zoning: Chapter 280 Zoning (Ord. No. 2012-04). ADU text: 'Accessory dwelling unit' (280-201, 280-402A, 280-1502): by right in R-1 only, at most 40% of the house, one per lot, owner lives in either unit, lot meets the single-family requirements, one more parking space. Ord. No. 2026-05 (zoning, Industrial District campgrounds) not yet codified. Read in the browser on eCode360 (LA1280; LA3847 is Lancaster Township, Butler County).",
       "why": [
         "named as a town with an ADU ordinance (Code 280-1502 accessory dwelling unit (R-1))"
       ],
-      "status_note": "First reading, awaiting independent review. Open points: Ord. No. 2026-05 (zoning amendment, 2026-09-14) not read (PDF) and the online code is current only to 2022-11-14. Whether the ADU needs its own 'per dwelling unit' lot area in R-1 (280-1502C says 'all other' requirements)."
+      "status_note": "Reviewed and fixed 2026-11-14. For a later check: Ord. No. 2026-05 (zoning, Industrial District campgrounds) and 2024-01 (NCM rezoning) not read (PDFs), and the online code is current only to 2022-11-14; whether the per dwelling unit lot area applies to the ADU in R-1; how the combined family cap treats a related household plus an unrelated tenant; the R-2 and R-3 public-sewer-only yards are an inference. Not read: LC, GC, I and S use lists, 280-1610, 280-1703, the residential infill development definition."
     }
   ]
 }
