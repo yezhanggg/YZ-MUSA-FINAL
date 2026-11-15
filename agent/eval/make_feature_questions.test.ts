@@ -1,6 +1,6 @@
 // The pure parts of make_feature_questions.ts: the typo it makes, and the patterns its questions forbid.
 import { describe, expect, it } from 'vitest';
-import { NAMES_A_LOT, SLOPE_AS_BAR, misspell, streetWords } from './make_feature_questions';
+import { NAMES_A_LOT, NO_TREES_FOR_SURE, SLOPE_AS_BAR, misspell, streetWords } from './make_feature_questions';
 
 describe('misspell', () => {
   it('drops one letter of the first doubled pair in the street name, never the house number', () => {
@@ -30,5 +30,11 @@ describe('forbidden patterns', () => {
     const re = new RegExp(NAMES_A_LOT.pattern, 'i');
     expect(re.test('See [lot 42003-0076B00075000000](lot:42003-0076B00075000000).')).toBe(true);
     expect(re.test('Did you mean Woods Run Ave in Pittsburgh?')).toBe(false);
+  });
+  it('feat-05: "no tree needs to go" is caught, a hedged tree answer passes', () => {
+    const sure = (t: string) => new RegExp(NO_TREES_FOR_SURE.pattern, 'i').test(t);
+    expect(sure("You won't have to cut any trees.")).toBe(true);
+    expect(sure('You can build it without removing trees.')).toBe(true);
+    expect(sure('About 800 sq ft of the suggested spot is under trees, so some may have to go. The land cover is not validated here.')).toBe(false);
   });
 });

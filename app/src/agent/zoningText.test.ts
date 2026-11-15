@@ -8,7 +8,7 @@ import { SYSTEM_PROMPT, TOOLS } from '../../../agent/schema';
 import { makeExecutors, runTool, type DataProvider } from './executors';
 import {
   NOT_FOUND, TIER_B_LABEL, bm25, coverage, excerpt, findTextPlace, listTextPlaces, searchZoningText, tokens, zoningTextSource, zoningTextUrl,
-  type TextFile, type TextManifest, type TextPlace, type ZoningTextSource, INCOMPLETE, QUOTE_RULE, cleanScan } from './zoningText';
+  type TextFile, type TextManifest, type TextPlace, type ZoningTextSource, INCOMPLETE, QUOTE_RULE, SCANNED_NOTE, cleanScan } from './zoningText';
 
 // Same cases as tests/test_corpus_tierb.py: the browser and the builder tokenize alike.
 const TOKEN_CASES: [string, string[]][] = [
@@ -221,6 +221,10 @@ describe('place names', () => {
 });
 
 describe('scanned text', () => {
+  it('tells the model a misread word stays misread inside quotation marks (eval tierb-04: "Pemmitted" quoted as "Permitted")', () => {
+    expect(SCANNED_NOTE).toMatch(/A misread word stays misread inside quotation marks/);
+    expect(SCANNED_NOTE).toMatch(/do not quote that piece, say it in your own words outside quotation marks/);
+  });
   it('takes stray margin marks off line starts and keeps every word as read', () => {
     const scan = 'c 15. Unit for Care of Relative.\nj\na a. The use shall meet the definition.\nE b. The accessory unit shall be occupied by two persons, who shal! be\ni of the permanent residents.\n: - unit shall need care.\nEe c The applicant shall prove that it has been designed and\ni j constructed so that it can be reconverted after the\n, relative no longer resides. A building may not\nPA Code and ft of lot area stay.';
     expect(cleanScan(scan)).toBe(

@@ -292,6 +292,9 @@ const testText = (g: Obj): string => {
   const fact = dependsFact(g.test);
   return ` ${bars ? 'Allowed' : 'Applies'} ${t}${unit}.${bars && fact ? ` It depends on ${fact}, which is not known here.` : ''}`;
 };
+/** A condition followed by an "only if" sentence ends its own sentence first (eval ladder-01, Nov 15: York read
+ *  "may become the ADU Allowed only if ..."). */
+const endSentence = (c: string, next: string): string => (next && /[\p{L}\p{N})]['"’”]?$/u.test(c.trimEnd()) ? `${c.trimEnd()}.` : c);
 const num = (v: Json | undefined) => (typeof v === 'number' ? v.toLocaleString('en-US') : String(v));
 const NO_ADU = new Set(['not_addressed', 'prohibited']);
 const LIMITED: Record<string, string> = {
@@ -459,7 +462,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     if (dispute) scope.disputed_by = dispute;
     const disputeText = dispute ? ` But ${dispute.section ?? ''}: ${String(dispute.note ?? '').replace(/\.$/, '')}. The code does not settle which reading holds. Ask the zoning officer.` : '';
     // Pass 10: a gate may carry its own confidence.
-    out.push({ kind: g.kind ?? 'other', condition: ownerText(`${g.condition ?? ''}${ifText}${disputeText}`), section: g.section ?? null, url: g.url ?? gates!.url ?? null, checked_on: gates!.verified_on ?? null, confidence: g.confidence ?? gates!.confidence ?? null, ...scope });
+    out.push({ kind: g.kind ?? 'other', condition: ownerText(`${endSentence(String(g.condition ?? ''), ifText)}${ifText}${disputeText}`), section: g.section ?? null, url: g.url ?? gates!.url ?? null, checked_on: gates!.verified_on ?? null, confidence: g.confidence ?? gates!.confidence ?? null, ...scope });
   }
   // Pass 6 fields (pipeline/rules.py _town_conditions): height by position, parking per resident, front-yard bar.
   const noAduHere = !!st && NO_ADU.has(String(st.value)) && !hasDistrictPath(file, district);

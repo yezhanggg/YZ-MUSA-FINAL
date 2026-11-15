@@ -1,6 +1,6 @@
 {
- "about": "Questions on the Nov 14 features (steep slope lines, address search misses, county places). Made by agent/eval/make_feature_questions.ts: lots picked by rule, expected values read from tool results. Do not edit by hand.",
- "generated_at": "2026-11-15T00:56:44.468Z",
+ "about": "Questions on the Nov 14 and 15 features (steep slope lines, address search misses, county places, trees inside the suggested spot). Made by agent/eval/make_feature_questions.ts: lots picked by rule, expected values read from tool results. Do not edit by hand.",
+ "generated_at": "2026-11-15T08:26:28.328Z",
  "data_roots": {
   "pittsburgh": "/Users/ye/Library/Caches/yz-musa/lots-local/pittsburgh",
   "chester_county": "/Users/ye/Library/Caches/yz-musa/lots-local/chester_county",
@@ -8,8 +8,8 @@
  },
  "data_versions": {
   "pittsburgh": "pittsburgh-20261114-7ae3f25d22",
-  "chester_county": "chester_county-20261114-47fe1443e9",
-  "montgomery_county": "montgomery_county-20261114-459bcec166"
+  "chester_county": "chester_county-20261115-448c887ae9",
+  "montgomery_county": "montgomery_county-20261115-5b26a34d9b"
  },
  "questions": [
   {
@@ -371,6 +371,100 @@
    ],
    "scenario": "today",
    "rubric": "201 Barrie Rd, Narberth (Narberth borough, a lot in a county place): found by address, then the cottage tested on that lot with Narberth borough's own rules."
+  },
+  {
+   "id": "feat-05",
+   "category": "features",
+   "question": "Would I have to cut down trees to fit a backyard cottage at 735 N Walnut St, West Chester?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "find_lot"
+    ],
+    [
+     "get_lot_facts",
+     "test_unit_on_lot"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "find_lot",
+     "input": {
+      "address": "735 N Walnut St, West Chester"
+     }
+    },
+    {
+     "name": "get_lot_facts",
+     "input": {
+      "lot_id": "42029-1-1-11"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "trees inside the suggested spot",
+     "value": 802.1,
+     "tol_pct": 15,
+     "unit": "sqft"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says some of the spot is under trees",
+     "accept": [
+      "in the suggested spot",
+      "inside the suggested spot",
+      "in the spot",
+      "inside the spot",
+      "where the cottage would go",
+      "where the unit would go",
+      "under trees",
+      "tree cover in",
+      "canopy in",
+      "canopy inside",
+      "tree cover inside"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "says the land cover is not validated here",
+     "accept": [
+      "not validated",
+      "not been validated",
+      "hasn't been validated",
+      "unvalidated",
+      "not checked against",
+      "not tested against",
+      "has not been tested",
+      "not verified"
+     ],
+     "evidence": "not validated"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b(no|without) (cutting|removing|cutting down) (any )?trees\\b|\\bno trees (are|would be|need)|\\byou (won't|will not|don't|do not) (have|need) to (cut|remove)",
+     "why": "says for sure no tree is in the way, with tree cover measured inside the spot"
+    }
+   ],
+   "scenario": null,
+   "rubric": "735 N Walnut St, West Chester (West Chester borough, a lot in a county place): found by address; gives the tree area inside the suggested cottage spot from the aerial model, says the land cover is not validated here, and never says for sure no tree needs to go."
   }
  ]
 }

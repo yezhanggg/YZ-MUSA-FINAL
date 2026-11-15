@@ -192,6 +192,8 @@ describe('rule text from the resolver', () => {
     expect(String(o.how_to_answer)).toMatch(/depends on: each fact in depends_on/);
     // Eval ladder-02 and ladder-03 (Nov 14): an unknown depends_on fact came back as "I don't know whether ...", a dead end.
     expect(String(o.how_to_answer)).toMatch(/"not known here", in those words, never "I don't know"/);
+    // Eval ladder-01 (Nov 15): "my old carriage house" came back as "I don't know whether this lot has one".
+    expect(String(o.how_to_answer)).toMatch(/If the owner already said the fact .* take their word for it/);
     // A unit inside the house is not under the width bar.
     const inside = check(await ask7({ place: 'Media borough', unit_type: 'internal' }));
     expect((inside.depends_on as Out[] | undefined)?.map((x) => x.fact) ?? []).not.toContain('the lot width');

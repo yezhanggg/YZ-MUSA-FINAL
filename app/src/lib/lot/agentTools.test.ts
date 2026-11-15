@@ -204,6 +204,9 @@ describe('land cover', () => {
     // A town record built before its spot figures existed: this lot has none (the place does).
     expect(String(facts.inside_suggested_spot)).toMatch(/^Not available for this lot/);
     expect(String(facts.rule)).toMatch(/accuracy note/);
+    // The rule names the spot figures, never "not the spot for the unit" beside them (eval feat-05, Nov 15).
+    expect(String(facts.rule)).toMatch(/inside_suggested_spot/);
+    expect(String(facts.rule)).not.toMatch(/not the spot/);
     const spot = { building_sqft: 0, hard_surface_sqft: 41.5, open_sqft: 302.1, other_sqft: 0, source: 'model:r34_c5_s0', tree_sqft: 96.2 };
     const withSpot: LotRecord = { ...lot, fit: { ...lot.fit, today: { ...lot.fit.today, detached_new: { ...lot.fit.today!.detached_new!, spot_cover: spot } } } };
     const ps: LotAgentProvider = { ...provider(null), lotById: async () => withSpot, selectedLot: async () => withSpot };

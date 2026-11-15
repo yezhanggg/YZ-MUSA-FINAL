@@ -93,6 +93,8 @@ describe('api/agent', () => {
     const req = create.mock.calls[0][0];
     expect(req.model).toBe('claude-test-model');
     expect(req.max_tokens).toBe(MAX_OUTPUT_TOKENS);
+    // Thinking counts toward the limit: 2048 cut a text-search answer before its next step (eval ladder-14).
+    expect(MAX_OUTPUT_TOKENS).toBeGreaterThanOrEqual(4096);
     expect(req.system[0].cache_control).toEqual({ type: 'ephemeral' });
   });
 

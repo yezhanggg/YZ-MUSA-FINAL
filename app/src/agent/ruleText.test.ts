@@ -559,6 +559,13 @@ describe('get_rule_text pass 7', () => {
     expect(bv.adu.status_in_district).toMatchObject({ value: 'conditional_use', district: 'BV' });
   });
 
+  it('ends a condition sentence before its "only if" sentence (eval ladder-01: York "the ADU Allowed only if")', async () => {
+    const yk = await town6('pa_york_york', 'approval', 'RS1');
+    const bar = yk.conditions.find((c: Any6) => c.test === 'has_accessory_building' && c.effect === 'bars');
+    expect(bar.condition).toMatch(/may become the ADU\. Allowed only if an accessory building already exists on the lot\./);
+    for (const c of yk.conditions as Any6[]) expect(String(c.condition)).not.toMatch(/[a-z] (Allowed|Applies) only if/);
+  });
+
   it('names the lot fact a bar depends on, and a lot test on a condition is an "applies only if", not a bar', async () => {
     const md = await town6('pa_delaware_media', 'approval', 'R-3');
     expect(md.conditions.find((c: Any6) => c.test === 'lot_width_below').condition).toMatch(/Allowed only if the lot is narrower than 60 ft\. It depends on the lot width, which is not known here\.$/);

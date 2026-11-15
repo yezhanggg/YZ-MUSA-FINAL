@@ -27,6 +27,9 @@ export const QUOTE_RULE =
   'Cite a passage by its "section" value as written, with no subsection letter added.';
 /** text_kind of a passage read by OCR from a scanned copy. */
 export const SCANNED = 'scanned text, quoted as read (stray margin marks left out)';
+/** How to quote OCR text. Eval tierb-04 (Nov 15): the legend "Pemmitted by right ..." was quoted as "Permitted by
+ *  right ...", a fixed misreading inside quotation marks. A piece with a misread word is said in plain words instead. */
+export const SCANNED_NOTE = `Passages with text_kind "${SCANNED}" were read by OCR from a scan and may have reading errors. Say so in those words, and copy them as returned. A misread word stays misread inside quotation marks ("Pemmitted" stays "Pemmitted"): if you would want to fix a word, do not quote that piece, say it in your own words outside quotation marks.`;
 /** What a word search with no match never shows. */
 export const NOT_FOUND_RULE = 'A word search cannot show the ordinance is silent: never say the text does not mention, address, allow or cover it, or says nothing about it.';
 const HOW_TO_USE =
@@ -446,7 +449,7 @@ export async function searchZoningText(input: { place?: unknown; county?: unknow
   if (matches.length) {
     out.found = true;
     out.quote_rule = QUOTE_RULE;
-    if (matches.some((r) => r.ocr)) out.scanned_note = `Passages with text_kind "${SCANNED}" were read by OCR from a scan and may have reading errors. Say so in those words, and copy them as returned.`;
+    if (matches.some((r) => r.ocr)) out.scanned_note = SCANNED_NOTE;
     out.results = matches;
     out.how_to_use = HOW_TO_USE;
   } else {

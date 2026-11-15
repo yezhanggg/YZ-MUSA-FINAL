@@ -173,7 +173,8 @@ export const SPOT_COVER_PLACES: readonly string[] = ['pittsburgh', 'philadelphia
 /** No tree or paving figures inside the suggested spot: the place has none, or this lot has none. */
 export const SPOT_COVER_NO_PLACE = 'Not available for this place: tree and paving figures inside the suggested spot are only in the lot records of Pittsburgh, Philadelphia, Allentown and Centre, Chester and Montgomery counties. Only the shares of the whole lot are known here.';
 export const SPOT_COVER_NO_LOT = 'Not available for this lot: the record has no tree or paving figures inside the suggested spot. Only the shares of the whole lot are known here.';
-export const COVER_RULE = 'Tree and paving figures are for the whole lot, not the spot for the unit. The fit does not steer around trees, so a fit does not mean no tree is in the way. Give the accuracy note whenever you give these figures.';
+/** Eval feat-05 (Nov 15): the rule still said the figures were "not the spot for the unit" next to the spot figures. */
+export const COVER_RULE = 'whole_lot figures are for the whole lot. inside_suggested_spot, when it has numbers, gives the same model\'s figures inside the suggested spot for the unit (the spot area may differ a little from the unit footprint). The fit does not steer around trees, so a fit does not mean no tree is in the way. Give the accuracy note whenever you give these figures.';
 /** The record's own note on how far its land cover can be trusted (quality.assumptions, "land cover from ..."). */
 const coverAccuracy = (lot: LotRecord) => lot.quality.assumptions?.find((a) => /^land cover from\b/i.test(a)) ?? 'not on file';
 const share = (s: { sqft: number; pct: number } | undefined) => (s ? { sqft: s.sqft, pct_of_lot: s.pct } : 'not on file');

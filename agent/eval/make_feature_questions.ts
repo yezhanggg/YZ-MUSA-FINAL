@@ -1,9 +1,10 @@
-// Makes agent/eval/questions_features.json: 4 questions on the features of Nov 14, the same way as make_questions.ts
+// Makes agent/eval/questions_features.json: 5 questions on the features of Nov 14, the same way as make_questions.ts
 // (every expected value read from a tool result, nothing typed by hand):
 //   feat-01  a steep Pittsburgh lot: the grading, Steep Slope Overlay and landslide lines are questions for the city, not a bar
 //   feat-02  a misspelt street: find_lot gives streets spelled alike, the answer names no lot
 //   feat-03  a West Chester address (Chester County place): found by address, answered with West Chester's rules
 //   feat-04  a Narberth address (Montgomery County place): the same
+//   feat-05  a West Chester address with trees inside the suggested spot: the tree area there, with the "not validated" note
 // Only this file is written: the other question files stay as they are. Run again when the data changes:
 //   node agent/eval/cli.mjs make_feature_questions.ts
 // Lot folders: LOT_DATA_DIR_<PLACE>, else <LOT_DATA_DIR or ~/musa-drive/lots>/<place>.
@@ -14,7 +15,7 @@ import { lotDataVersion, tractOfLot } from '../nodeProvider';
 import { lotTownOf } from '../../app/src/lib/lot/towns';
 import type { LotRecord } from '../../app/src/lib/lot/types';
 import { FEATURES_FILE, callTool, useRoots } from './provider';
-import { APPROVAL, CHECK_WITH, ctx, how, make, onLot, pick, rows, status, approval, str, titleCase, tractLots, type Spec } from './make_questions';
+import { APPROVAL, CHECK_WITH, ctx, how, make, n, onLot, pick, rows, status, approval, str, titleCase, tractLots, type Spec } from './make_questions';
 import type { EvalQuestion, Forbidden } from './types';
 
 type Obj = Record<string, unknown>;
@@ -124,15 +125,53 @@ async function countyTown(id: string, place: string, town: string, short: string
   };
 }
 
+const NOT_VALIDATED = ['not validated', 'not been validated', "hasn't been validated", 'unvalidated', 'not checked against', 'not tested against', 'has not been tested', 'not verified'];
+const TREES_IN_SPOT = ['in the suggested spot', 'inside the suggested spot', 'in the spot', 'inside the spot', 'where the cottage would go', 'where the unit would go', 'under trees', 'tree cover in', 'canopy in', 'canopy inside', 'tree cover inside'];
+/** Says no tree is in the way, while the aerial model puts trees inside the spot. */
+export const NO_TREES_FOR_SURE: Forbidden = {
+  pattern: "\\b(no|without) (cutting|removing|cutting down) (any )?trees\\b|\\bno trees (are|would be|need)|\\byou (won't|will not|don't|do not) (have|need) to (cut|remove)",
+  why: 'says for sure no tree is in the way, with tree cover measured inside the spot',
+};
+
+/** A town lot in a county place, found by address, with trees inside the suggested cottage spot (Nov 15 spot cover). */
+async function countyTrees(id: string, place: string, town: string, short: string, avoid: Set<string>): Promise<Spec> {
+  const facts = async (l: LotRecord) => (await callTool(ctx(), 'get_lot_facts', { lot_id: l.lot.id })).result as Obj;
+  const spotOf = (f: Obj) => ((f.land_cover as Obj | undefined)?.inside_suggested_spot ?? null) as Obj | null;
+  const l = await pick(place, `${town} lot found by address, trees inside the suggested spot`, (x) => !!x.lot.address && !avoid.has(x.lot.id) && lotTownOf(x)?.name === town, async (x) => {
+    const spot = spotOf(await facts(x));
+    if (!spot || typeof spot.trees_sqft !== 'number' || spot.trees_sqft < 100 || !/not validated/.test(String(spot.accuracy))) return false;
+    const found = (await callTool(ctx(), 'find_lot', { address: `${titleCase(x.lot.address!)}, ${short}` })).result as Obj;
+    const c = rows(found, 'candidates');
+    return c.length === 1 && c[0].lot_id === x.lot.id;
+  });
+  const address = `${titleCase(l.lot.address!)}, ${short}`;
+  return {
+    id, category: 'features', question: `Would I have to cut down trees to fit a backyard cottage at ${address}?`, context: ctx(),
+    required: [['find_lot'], ['get_lot_facts', 'test_unit_on_lot']],
+    calls: [{ name: 'find_lot', input: { address } }, { name: 'get_lot_facts', input: { lot_id: l.lot.id } }],
+    facts: ([, f]) => {
+      const spot = spotOf(f as Obj)!;
+      return [
+        n('trees inside the suggested spot', spot.trees_sqft as number, 'sqft', 15),
+        how('says some of the spot is under trees', TREES_IN_SPOT),
+        how('says the land cover is not validated here', NOT_VALIDATED, 'not validated'),
+      ];
+    },
+    forbidden: [DEAD_END, NO_TREES_FOR_SURE],
+    rubric: `${address} (${town}, a lot in a county place): found by address; gives the tree area inside the suggested cottage spot from the aerial model, says the land cover is not validated here, and never says for sure no tree needs to go.`,
+  };
+}
+
 async function main() {
   const roots = Object.fromEntries(PLACES.map((p) => [p, resolve(process.env[`LOT_DATA_DIR_${p.toUpperCase()}`] ?? resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'), p))]));
   for (const [p, r] of Object.entries(roots)) if (!existsSync(resolve(r, 'manifest.json'))) throw new Error(`no ${p} lot folder at ${r}`);
   useRoots(roots);
   const specs = [...(await steep()), await countyTown('feat-03', 'chester_county', 'West Chester borough', 'West Chester'), await countyTown('feat-04', 'montgomery_county', 'Narberth borough', 'Narberth')];
+  specs.push(await countyTrees('feat-05', 'chester_county', 'West Chester borough', 'West Chester', new Set(specs.flatMap((x) => x.calls.map((c) => String((c.input as Obj).lot_id ?? ''))))));
   const questions: EvalQuestion[] = [];
   for (const s of specs) questions.push(await make(s));
   const versions = Object.fromEntries(Object.keys(roots).map((p) => [p, lotDataVersion(p) ?? 'unknown']));
-  const about = 'Questions on the Nov 14 features (steep slope lines, address search misses, county places). Made by agent/eval/make_feature_questions.ts: lots picked by rule, expected values read from tool results. Do not edit by hand.';
+  const about = 'Questions on the Nov 14 and 15 features (steep slope lines, address search misses, county places, trees inside the suggested spot). Made by agent/eval/make_feature_questions.ts: lots picked by rule, expected values read from tool results. Do not edit by hand.';
   writeFileSync(FEATURES_FILE, `${JSON.stringify({ about, generated_at: new Date().toISOString(), data_roots: roots, data_versions: versions, questions }, null, 1)}\n`);
   console.log(`wrote ${questions.length} questions to ${FEATURES_FILE}`);
 }
