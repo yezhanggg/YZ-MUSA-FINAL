@@ -3327,7 +3327,7 @@
       "pop_rank": 163,
       "file": "pa_bucks_warwick",
       "batch": 28,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11665361",
@@ -3337,7 +3337,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 195-16B(8) accessory family apartment by special exception)"
       ],
-      "status_note": "First reading, awaiting independent review. Open: O lists B8 among uses by right while 195-16B(8)(f) allows it only by special exception (read as a special exception); whether an addition for the unit is allowed (195-16B(8)(e) bars exterior changes); Ord. No. 2026-03 (7-23-2026, accessory structure placement) not codified and not read; whether B12 living quarters for household employees may be a full dwelling unit; Table of Use Regulations PDF not opened (district sections read instead); 195-16B(3) to B(6), B(9) to B(11) and Article XIX not read"
+      "status_note": "Family-only accessory family apartment by special exception. For a later check: the O District lists B8 among uses by right (195-53A) while 195-16B(8)(f) allows it only by special exception, read as a special exception. Ord. No. 2026-03 (7-23-2026, accessory structure placement) is not codified and its full text was not read. A search excerpt keeps the 7 ft rule. The Table of Use Regulations PDF was not opened."
     },
     {
       "geoid": "4202982544",
@@ -3361,7 +3361,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 450-64H accessory suite by conditional use)"
       ],
-      "status_note": "First reading, awaiting independent review. Open: whether a house with an accessory suite needs lot area for two dwelling units under the R-1 density of one dwelling per net acre 'for each dwelling unit' (450-8 calls the suite a dwelling unit, 450-64H(1) says it is not a second dwelling unit); no size cap; whether R-2 to R-4 and TND-1 customary accessory clauses could reach a suite (read as not addressed); Article V (UDA overlay) and TND-2 area rules not read"
+      "status_note": "Accessory suite by conditional use in R-1 and R-1C, family or employees only. Open: in R-1C the suite sits in a conditional use list that needs a 200 acre tract (450-12B(2)(b)) and approval with subdivision or land development plans (450-12N(1)), and whether that reaches a suite on one existing lot is not settled. Open: whether the suite counts as a dwelling unit toward R-1 density (450-8 against 450-64H(1) and (2)(e)). TND-2 area rules (450-47 to 450-53) not read."
     },
     {
       "geoid": "4209171016",
@@ -3375,7 +3375,7 @@
       "pop_rank": 170,
       "file": "pa_montgomery_skippack",
       "batch": 28,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9228557",
@@ -3385,7 +3385,7 @@
       "why": [
         "added as batch 28 by population. Code Chapter 200 has no ADU text"
       ],
-      "status_note": "First reading, awaiting independent review. Open: detached forms read as barred by the closed accessory list of 200-47 and 'any one ... and no other' use lists (secondary; a variance remains available); Table VR-1 and Table 200-21 PDF attachments not opened; 'carriage homes' in ITND undefined; 200-39 to 200-46, 200-48 to 200-62 (RC cluster option) not read; whether the LI conditional use for uses not permitted elsewhere could reach a dwelling unit"
+      "status_note": "No ADU rule. Detached forms read as barred by the closed accessory lists of 200-47 (secondary, a variance remains). For a later check: the VR two-family alternative is secondary, as the 200-18D(9) mix table allows only Type 1 dwellings in developments of up to 20 units and Table VR-1 (PDF) was not read. Table 200-21 (PDF) and 200-48 to 200-62 not read."
     }
   ]
 }

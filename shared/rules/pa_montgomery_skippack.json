@@ -47,7 +47,7 @@
       "No section read bars a use variance. Variances and special exceptions lapse after six months without permits and substantial construction (200-166D(2))",
       "Parking: 'Each dwelling of any type: three spaces' (200-95C(1))"
     ],
-    "notes": "Zoning office: Skippack Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, mostly in print view. Searched the code (scope all, which also covers New Laws) for accessory dwelling, in-law, accessory apartment, family apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, carriage house, servants, tenant house, living quarters, immediate family, watchman, separate living, cooking facilities, tiny house, second dwelling, caregiver, sleeping quarters, suite and accessory family, and New Laws (scope law). Read: 200-3, 200-11 in full, every district section of Articles III and IV (200-12 to 200-21, 200-26 to 200-32; AAR uses only), 200-47, 200-95C(1) (on screen) and Article XIV. Not read: 200-39 to 200-46, 200-48 to 200-62 (including the RC cluster option), Articles VI, IX to XIII, XV, Table VR-1 and Table 200-21 (PDF attachments). No definition of carriage home was found"
+    "notes": "Zoning office: Skippack Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, mostly in print view. Searched the code (scope all, which also covers New Laws) for accessory dwelling, in-law, accessory apartment, family apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, carriage house, servants, tenant house, living quarters, immediate family, watchman, separate living, cooking facilities, tiny house, second dwelling, caregiver, sleeping quarters, suite and accessory family, and New Laws (scope law). Read: 200-3, 200-11 in full, every district section of Articles III and IV (200-12 to 200-21, 200-26 to 200-32; AAR uses only), 200-47, 200-95C(1) (on screen) and Article XIV. Not read: 200-39 to 200-46, 200-48 to 200-62 (including the RC cluster option), Articles VI, IX to XIII, XV, Table VR-1 and Table 200-21 (PDF attachments). No definition of carriage home was found. Second pass 2026-11-15: 200-18D(7) read on screen (15 ft for accessory buildings in VR). The VR mix table (200-18D(9)) is held as an untested requirement, since the tool cannot test the size of the whole development. The 100 ft distance between a single-family dwelling and other housing types in R4 (200-16E(6)) is only in the alternative text. In VC and GC the conditional use reaches only uses similar to the listed ones, but the tool's sentence speaks of any unlisted use, so the note says the narrower reading."
   },
   "adu": {
     "term": {
@@ -64,7 +64,7 @@
       "url": "https://ecode360.com/SK1672/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20servants%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20%22second%20dwelling%22%20OR%20caregiver%20OR%20%22sleeping%20quarters%22%20OR%20suite%20OR%20%22accessory%20family%22&scope=all&sortOrder=relevance",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "No ADU use. Single-family districts permit one single-family detached dwelling 'and no other' use, with a closed list of accessory uses (200-47)"
+      "note": "No ADU use. No district use list names a second dwelling unit on a house lot, and in every district with houses accessory uses are a closed list (200-47). RA, R1, R2 and R3 permit 'any one of the following uses and no other'"
     },
     "status_by_form": {
       "value": {
@@ -72,11 +72,11 @@
         "garage_conversion": "prohibited",
         "over_garage": "prohibited"
       },
-      "section": "200-12C(1) to 200-15C(1), 200-47",
+      "section": "200-47B, C, D(2), 200-12C(1) to 200-16C(1), 200-18C(1), 200-19B",
       "url": "https://ecode360.com/print/SK1672?guid=6994047",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "Accessory uses and buildings 'shall only be permitted' for the classifications listed in 200-47, which name garages, sheds and the like for the residents' private use and no dwelling. A variance remains available, as the code bars none (200-168)"
+      "note": "In every district that permits houses, accessory uses and buildings 'shall only be permitted' as listed in 200-47: B for RA, R1, R2, R3 and NL, C for R4, R5, VR and AAR, and D(2) puts houses in VC and GC under B. The lists name garages, sheds and the like for the residents' private use and no dwelling. The district use lists (200-12C(1) to 200-16C(1), 200-18C(1), 200-19B) add no second dwelling on a lot. A variance remains available, as the code bars none (200-168)"
     }
   },
   "approval": {
@@ -101,7 +101,7 @@
       "url": "https://ecode360.com/print/SK1672?guid=6993767",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "In VC and GC 'Uses similar in nature to the above by right uses' are conditional uses before the Board of Supervisors, and one dwelling unit or one apartment in the same building with a by-right use is already listed there (see that alternative). In LI 'All uses not designated as being permitted in any other zoning district in the Township' are conditional uses, but LI permits no dwelling and keeps buildings 200 ft from residential districts. A two-family detached dwelling is a listed use in R4 and VR (see that alternative), not an unlisted one"
+      "note": "In VC and GC the conditional use reaches only 'Uses similar in nature to the above by right uses' (200-26C(2)(a), 200-27C(2)(a)), not any use the code leaves out. Whether a second dwelling unit is similar in nature to a listed use is not settled. VC and GC permit 'any of the following uses', and VC permits 'Multiple buildings with varying uses on a single lot' (200-26E(6)). One dwelling unit or one apartment in the same building with a by-right use is already listed there (see that alternative). In LI 'All uses not designated as being permitted in any other zoning district in the Township' are conditional uses, but LI permits no dwelling and keeps buildings 200 ft from residential districts. A two-family detached dwelling is a listed use in R4 and VR (see that alternative), not an unlisted one"
     },
     "unlisted_use_districts": {
       "value": [
@@ -127,7 +127,12 @@
           "requires": [
             {
               "test": "public_sewer",
-              "condition": "Public water and public sewer serve all development in R4",
+              "condition": "Public sewer serves all development in R4: 'Public water and public sewer shall serve all development'",
+              "section": "200-16E(7)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water serves all development in R4: 'Public water and public sewer shall serve all development'",
               "section": "200-16E(7)"
             }
           ],
@@ -147,7 +152,24 @@
           "section": "200-18C(1)(b), (c), D(1), (9), E(4)",
           "url": "https://ecode360.com/print/SK1672?guid=6993421",
           "confidence": "secondary",
-          "note": "The 21,780 sq ft is two units at the maximum density of four an acre, not a Table VR-1 figure. A building type"
+          "note": "The 21,780 sq ft is two units at the maximum density of four an acre, not a Table VR-1 figure (a PDF not read). A building type. The 200-18D(9) mix table limits a development of up to 20 units to Type 1 dwellings, so this path likely needs a larger development",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The development is large enough for the 200-18D(9) mix table to allow two-family dwellings. For a development of up to 20 units the table asks for 100% Type 1 dwellings and 0% Type 2, which includes the two-family detached dwelling, so on one lot it looks unavailable",
+              "section": "200-18D(9)"
+            },
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer serves the development",
+              "section": "200-18"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water serves the development",
+              "section": "200-18"
+            }
+          ]
         },
         {
           "name": "Dwelling unit or apartment in a building with a commercial use (VC, GC)",
@@ -210,6 +232,29 @@
       "verified_on": "2026-11-15",
       "confidence": "verified",
       "note": "R5 permits only a mobile home park, SC, LI, CF, PR and UT no dwelling. VR permits listed house types with no accessory building but a 100 sq ft shed. AAR permits single-family houses with a closed list of community accessory uses. ITND permits R1 uses by right and a planned development by conditional use"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "RA and R1 allow a cluster development option. If the lot is a cluster lot, its own figures replace the district row: lot 12,500 sq ft, front yard 20 ft, side yards 15 ft, rear yard 25 ft, building coverage 30%.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "RA",
+            "R1"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "200-12F, 200-13F",
+          "url": "https://ecode360.com/print/SK1672?guid=6993217"
+        }
+      ],
+      "section": "200-12F, 200-13F",
+      "url": "https://ecode360.com/print/SK1672?guid=6993217",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
     }
   },
   "form": {
@@ -242,18 +287,20 @@
     "accessory_rules_where": {
       "value": [
         {
-          "where": "Houses in RA, R1, R2, R3 and NL: garages, sheds and other listed accessory buildings for the residents' private use, at most 15 ft tall, in the rear yard 10 ft behind the house, 4 ft from side and rear lines under 200 sq ft and 10 ft at 200 sq ft or more",
+          "where": "Houses in RA, R1, R2, R3 and NL, and in VC and GC under 200-47D(2): garages, sheds and other listed accessory buildings for the residents' private use, at most 15 ft tall, in the rear yard 10 ft behind the house, 4 ft from side and rear lines under 200 sq ft and 10 ft at 200 sq ft or more",
           "districts": [
             "RA",
             "R1",
             "R2",
             "R3",
-            "NL"
+            "NL",
+            "VC",
+            "GC"
           ],
           "setback_side_ft": 10,
           "setback_rear_ft": 10,
           "max_height_ft": 15,
-          "section": "200-47B(1)",
+          "section": "200-47B(1), D(2)",
           "url": "https://ecode360.com/print/SK1672?guid=6994047"
         },
         {
@@ -268,10 +315,20 @@
           "setback_rear_ft": 4,
           "max_height_ft": 12,
           "section": "200-47C(1)",
+          "url": "https://ecode360.com/print/SK1672?guid=6994047",
+          "note": "VR's own height rule allows '15 feet for any accessory buildings' (200-18D(7)). The 12 ft cap of 200-47C is stricter and is the one shown"
+        },
+        {
+          "where": "ITND: 'No accessory buildings or structures of any kind' except swimming pools and, for an estate home, one shed of at most 8 by 12 ft and 12 ft tall",
+          "districts": [
+            "ITND"
+          ],
+          "max_height_ft": 12,
+          "section": "200-47E",
           "url": "https://ecode360.com/print/SK1672?guid=6994047"
         }
       ],
-      "section": "200-47",
+      "section": "200-47, 200-18D(7)",
       "url": "https://ecode360.com/print/SK1672?guid=6994047",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -630,7 +687,7 @@
         "url": "https://ecode360.com/print/SK1672?guid=6993343",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Width 80 ft. Table R4-1, D.T. No. 1 single-family detached. Public water and sewer serve all development (200-16E(7)). At most eight units an acre (200-16E(4))"
+        "note": "Width 80 ft. Table R4-1, D.T. No. 1 single-family detached. Public water and sewer serve all development (200-16E(7)). At most eight units an acre (200-16E(4)). Table R4-3, D.T. No. 6 keeps older figures for projects approved before 2002: 6,000 sq ft, side yards 8 ft, building coverage 30% and impervious 50%"
       },
       "setback_front_ft": {
         "value": 25,
@@ -706,7 +763,7 @@
         "url": "https://ecode360.com/print/SK1672?guid=6993486",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Width 80 ft. Net lot area, in a neighborhood lotting tract of 10 acres or more at 1.15 units per gross acre"
+        "note": "Width 80 ft. Net lot area, in a neighborhood lotting tract of 10 acres or more at 1.15 units per gross acre. Estate lots in NL have yards of 60 ft and building coverage of 5%"
       },
       "setback_front_ft": {
         "value": 25,

@@ -51,9 +51,12 @@
       "In R-1, extra dwelling units in an existing historic structure are a conditional use on top of the permitted density (450-11B(3)(d), 450-62O)",
       "No accessory building in any front yard or within 10 ft of a street line, and 5 ft between buildings (450-65A)",
       "Front yards depend on the road: the greater of a distance from the right-of-way line and a distance from the center line (for example R-1 local road 65 ft or 80 ft)",
-      "Lots developed under the deleted R-1 open space, conventional or TDR options keep the area and bulk rules in force when they were developed (450-72)"
+      "Lots developed under the deleted R-1 open space, conventional or TDR options keep the area and bulk rules in force when they were developed (450-72)",
+      "R-1C lists the suite among conditional uses that need a tract of at least 200 acres (450-12B(2)(b)) and approval with subdivision or land development plans (450-12N(1)). Whether that reaches a suite on one existing lot is not settled",
+      "Single-family semidetached dwellings (a twin or duplex, two dwelling units) are permitted by right in R-3, R-4 and TND-2 (450-16B(1)(a), 450-17B(1)(a), 450-46A(1)(b))",
+      "In a Unified Development Area tract with an approved master plan, the R-1 rules apply with the 450-23 changes, and the plan approval replaces a conditional use only for uses the plan names (450-22C)"
     ],
-    "notes": "Zoning office: West Bradford Township Building, Zoning and Codes. Read in a browser on eCode360, one page at a time, on 2026-11-15, mostly in print view. Searched the code (scope all, which also covers New Laws) for accessory dwelling, in-law, accessory apartment, family apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, carriage house, servants, tenant house, living quarters, immediate family, watchman, separate living, cooking facilities, tiny house, second dwelling, caregiver, sleeping quarters and accessory family, then two-family, duplex, double dwelling, conversion, converted, mobile home, manufactured, age-restricted, same general character, one principal, housekeeping, tenant, farm dwelling, accessory unit, second unit and previously repealed, and New Laws (scope law). The first searches missed the accessory suite, which was found by reading the R-1 use list and then searched by name. Read: 450-8 definitions (to SPECIAL EXCEPTION), Article IV (R-1 to R-4) in full, Articles VI (TND-1), VII (R-5), IX (C-1, C-2, C-2A) in full, 450-46 (TND-2 uses), 450-57 and 450-58 (I, IM), 450-61, 450-62O, 450-64, 450-65, 450-68B (on screen), 450-82D (on screen) and 450-5, 450-6 (on screen). Not read: Article V (UDA overlay) beyond its opening, 450-47 to 450-53 (TND-2 area and design), Article XI, 450-62A to N, 450-63, 450-66, 450-69 to 450-72 beyond the search excerpt, Articles XIII and XV. No section read bars a use variance or unlisted uses"
+    "notes": "Zoning office: West Bradford Township Building, Zoning and Codes. Read in a browser on eCode360, one page at a time, on 2026-11-15, mostly in print view. Searched the code (scope all, which also covers New Laws) for accessory dwelling, in-law, accessory apartment, family apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, carriage house, servants, tenant house, living quarters, immediate family, watchman, separate living, cooking facilities, tiny house, second dwelling, caregiver, sleeping quarters and accessory family, then two-family, duplex, double dwelling, conversion, converted, mobile home, manufactured, age-restricted, same general character, one principal, housekeeping, tenant, farm dwelling, accessory unit, second unit and previously repealed, and New Laws (scope law). The first searches missed the accessory suite, which was found by reading the R-1 use list and then searched by name. Read: 450-8 definitions (to SPECIAL EXCEPTION), Article IV (R-1 to R-4) in full, Articles VI (TND-1), VII (R-5), IX (C-1, C-2, C-2A) in full, 450-46 (TND-2 uses), 450-57 and 450-58 (I, IM), 450-61, 450-62O, 450-64, 450-65, 450-68B (on screen), 450-82D (on screen) and 450-5, 450-6 (on screen). Article V (UDA overlay, 450-18 to 450-24) read in full on 2026-11-15. Not read: 450-47 to 450-53 (TND-2 area and design), Article XI, 450-62A to N, 450-63, 450-66, 450-69 to 450-72 beyond the search excerpt, Articles XIII and XV. No section read bars a use variance or unlisted uses. Second pass 2026-11-15: added the R-1C 200 acre tract gate and the 450-12N(1) plan approval, the UDA planned development gate (Article V read in full), R-1 yards for R-4 lots without sewer and water (front included) and the R-1 accessory side yard in the R-2 to R-4 utility rows, and semidetached dwellings in R-3, R-4 and TND-2. The R-1C path is held as a tract gate with a disputed reading, since the tool has no field for a conditional use tied to tract size and plan approval. The density question cites both passages in the note only."
   },
   "adu": {
     "term": {
@@ -89,7 +92,7 @@
       "url": "https://ecode360.com/print/WE3104?guid=16247797",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "No other district lists the accessory suite. R-2 to R-4 permit 'accessory buildings and structures customarily incidental' to a single-family dwelling, and TND-2's accessory list is closed"
+      "note": "No other district lists the accessory suite. R-2, R-2A and R-2B permit 'Accessory buildings and structures customarily incidental to the above', R-3 and R-4 'Accessory buildings and uses customarily incidental to the above uses', and TND-2's accessory list is closed"
     },
     "status_by_form": {
       "value": {
@@ -166,9 +169,71 @@
           "section": "450-11B(3)(d), 450-62O",
           "url": "https://ecode360.com/print/WE3104?guid=16249549",
           "confidence": "verified"
+        },
+        {
+          "name": "Single-family semidetached dwelling (R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "'Single-family semidetached dwellings' are permitted by right (450-16B(1)(a)). 450-8: 'A building containing two dwelling units, including a twin or duplex'. With approved public sewer and water: at most four dwelling units per net acre, lot at least 8,500 sq ft, lot width 50 ft per dwelling unit, two side yards of 10 ft, rear yard 25 ft. Without them: one dwelling per net acre and the R-1 side and rear yards for each building. Impervious cover 30%",
+          "min_lot_by_utility": [
+            {
+              "when": "with public sewer and water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 21780
+            },
+            {
+              "when": "without public sewer or water",
+              "public_sewer": false,
+              "min_lot_sqft": 87120
+            }
+          ],
+          "section": "450-16B(1)(a), C(1)(a), (b), C(3)(c), D(2), D(3), D(4), 450-8",
+          "url": "https://ecode360.com/print/WE3104?guid=16247797",
+          "confidence": "secondary",
+          "note": "A building type. Whether an existing house may be altered into one is not stated. The lot figures are two units at the density per net acre, so land that is not net area adds to them"
+        },
+        {
+          "name": "Single-family semidetached dwelling (R-4)",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "'Single-family semidetached dwellings' are permitted by right (450-17B(1)(a)). 450-8: 'A building containing two dwelling units, including a twin or duplex'. With approved public sewer and water: at most five dwellings per net acre and an average lot area of 7,000 sq ft per dwelling unit, lot width 50 ft per dwelling unit. Without them: one acre per dwelling unit. Impervious cover 35%",
+          "min_lot_by_utility": [
+            {
+              "when": "with public sewer and water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 17424
+            },
+            {
+              "when": "without public sewer or water",
+              "public_sewer": false,
+              "min_lot_sqft": 87120
+            }
+          ],
+          "section": "450-17B(1)(a), C(1)(b), (c), C(3)(b), 450-8",
+          "url": "https://ecode360.com/print/WE3104?guid=16248215",
+          "confidence": "secondary",
+          "note": "A building type. Whether an existing house may be altered into one is not stated. 17,424 sq ft is two units at five per net acre, which is more than the 7,000 sq ft average a unit"
+        },
+        {
+          "name": "Single-family semidetached dwelling (TND-2)",
+          "path": "by_right",
+          "districts": [
+            "TND-2"
+          ],
+          "conditions": "'Single-family semidetached dwelling' is a permitted use (450-46A(1)(b)). 450-8: 'A building containing two dwelling units, including a twin or duplex'. The TND-2 area and design rules (450-47 to 450-53) were not read, so no lot size is given",
+          "section": "450-46A(1)(b), 450-8",
+          "url": "https://ecode360.com/print/WE3104?guid=16248666",
+          "confidence": "secondary",
+          "note": "A building type. Whether an existing house may be altered into one is not stated. Lot figures not read"
         }
       ],
-      "section": "450-61H, 450-62O",
+      "section": "450-61H, 450-62O, 450-16B, 450-17B, 450-46A",
       "url": "https://ecode360.com/print/WE3104?guid=16249399",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -279,9 +344,59 @@
           "section": "450-72",
           "url": "https://ecode360.com/WE3104/search?query=%22two-family%22%20OR%20duplex%20OR%20%22double%20dwelling%22%20OR%20conversion%20OR%20converted%20OR%20%22mobile%20home%22%20OR%20%22manufactured%22%20OR%20%22age-restricted%22%20OR%20%22same%20general%20character%22%20OR%20%22one%20principal%22%20OR%20%22housekeeping%22%20OR%20%22tenant%22%20OR%20%22farm%20dwelling%22%20OR%20%22accessory%20unit%22%20OR%20%22second%20unit%22%20OR%20%22previously%20repealed%22&scope=all&sortOrder=relevance",
           "confidence": "secondary"
+        },
+        {
+          "kind": "district",
+          "condition": "R-1C lists the suite among its conditional uses, and 'Consideration for conditional use requires a minimum tract size of 200 acres' (450-12B(2)(b)). So in R-1C the suite looks tied to a tract of 200 acres or more, not to one existing lot.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "R-1C"
+          ],
+          "building_types": null,
+          "test": "tract_sqft_at_least",
+          "value": 8712000,
+          "section": "450-12B(2)(b), (d)",
+          "url": "https://ecode360.com/print/WE3104?guid=16247797",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "450-12B(2)(a), (d), 450-64H",
+            "url": "https://ecode360.com/print/WE3104?guid=16247797",
+            "note": "The tract rule follows item (a), the smaller cluster lots. The suite was added later as item (d) and 450-64H sets no tract size, so whether the 200 acre tract and the plan approval reach a suite on one lot is not settled"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In R-1C conditional uses 'shall be approved only in conjunction with the approval of preliminary and/or final subdivision or land development plans', and development must follow the approved plans (450-12N(1)).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1C"
+          ],
+          "building_types": null,
+          "section": "450-12N(1)",
+          "url": "https://ecode360.com/print/WE3104?guid=16247797",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "If the lot is in a Unified Development Area tract with an approved master plan, the tract is zoned R-1 with the 450-23 changes the plan adopts, not the plain R-1 figures shown. These may include impervious cover of 'the lesser of 6,300 square feet or 1/2 of the lot area', a front yard on a local road of 30 ft from the right-of-way or 40 ft from the center line, side yards of 10 ft (accessory buildings 15 ft unless the house side yard is smaller) and a rear yard of 20 ft. The master plan approval stands in place of a conditional use only for uses the plan names (450-22C), so a suite not named in the plan still needs a conditional use.",
+          "effect": "condition",
+          "applies_to": null,
+          "overlays": [
+            "UDA"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "450-19B, 450-22C, 450-23E to H",
+          "url": "https://ecode360.com/print/WE3104?guid=16248279",
+          "districts": [
+            "R-1"
+          ]
         }
       ],
-      "section": "450-64H, 450-72",
+      "section": "450-64H, 450-72, 450-12B(2), 450-12N, Article V",
       "url": "https://ecode360.com/print/WE3104?guid=16249569",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -396,7 +511,7 @@
         "url": "https://ecode360.com/print/WE3104?guid=16247797",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "'Maximum density: one dwelling per net acre'. The area figures 'shall be provided for each dwelling unit'. 450-8 calls an accessory suite 'A self-contained dwelling unit', so a house and a suite may need two net acres. 450-64H(1) says the suite is not to become a second dwelling unit. Not settled"
+        "note": "'Maximum density: one dwelling per net acre'. The area figures 'shall be provided for each dwelling unit'. 450-8 calls an accessory suite 'A self-contained dwelling unit', and a DWELLING UNIT is a 'separate, independent housekeeping establishment' physically separated from other rooms. But 450-64H(2)(e) keeps interior access to all parts of the house, and 450-64H(1) says the suite is not to become a second dwelling unit. So whether a house and a suite need two net acres is not settled"
       },
       "setback_front_ft": {
         "value": 65,
@@ -551,7 +666,8 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-13C, D, E"
+            "section": "450-13C, D, E",
+            "accessory_setback_side_ft": 15
           },
           {
             "when": "Without public water",
@@ -560,14 +676,15 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-13C, D, E"
+            "section": "450-13C, D, E",
+            "accessory_setback_side_ft": 15
           }
         ],
         "section": "450-13C, D, E",
         "url": "https://ecode360.com/print/WE3104?guid=16247797",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For a single-family detached dwelling without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply'. The row holds the figures with both services. Each item is read on its own"
+        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For a single-family detached dwelling without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply'. The R-1 side yard of 15 ft covers 'Residential buildings and accessory buildings and structures'. The row holds the figures with both services. Each item is read on its own"
       }
     },
     "R-2A": {
@@ -650,7 +767,8 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-14C, D, E"
+            "section": "450-14C, D, E",
+            "accessory_setback_side_ft": 15
           },
           {
             "when": "Without public water",
@@ -659,14 +777,15 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-14C, D, E"
+            "section": "450-14C, D, E",
+            "accessory_setback_side_ft": 15
           }
         ],
         "section": "450-14C, D, E",
         "url": "https://ecode360.com/print/WE3104?guid=16247797",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For a single-family detached dwelling without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply'. The row holds the figures with both services. Each item is read on its own"
+        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For a single-family detached dwelling without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply'. The R-1 side yard of 15 ft covers 'Residential buildings and accessory buildings and structures'. The row holds the figures with both services. Each item is read on its own"
       }
     },
     "R-2B": {
@@ -766,7 +885,8 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-15C, D, E"
+            "section": "450-15C, D, E",
+            "accessory_setback_side_ft": 15
           },
           {
             "when": "Without public water",
@@ -775,14 +895,15 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-15C, D, E"
+            "section": "450-15C, D, E",
+            "accessory_setback_side_ft": 15
           }
         ],
         "section": "450-15C, D, E",
         "url": "https://ecode360.com/print/WE3104?guid=16247797",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For a single-family detached dwelling without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply'. The row holds the figures with both services. Each item is read on its own"
+        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For a single-family detached dwelling without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply'. The R-1 side yard of 15 ft covers 'Residential buildings and accessory buildings and structures'. The row holds the figures with both services. Each item is read on its own"
       }
     },
     "R-3": {
@@ -874,7 +995,8 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-16C, D, E"
+            "section": "450-16C, D, E",
+            "accessory_setback_side_ft": 15
           },
           {
             "when": "Without public water",
@@ -883,14 +1005,15 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-16C, D, E"
+            "section": "450-16C, D, E",
+            "accessory_setback_side_ft": 15
           }
         ],
         "section": "450-16C, D, E",
         "url": "https://ecode360.com/print/WE3104?guid=16247797",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For a single-family detached dwelling without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply'. The row holds the figures with both services. Each item is read on its own"
+        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For single-family detached and single-family semidetached dwellings without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply for each building' (450-16D(4)). The R-1 side yard of 15 ft covers 'Residential buildings and accessory buildings and structures'. The row holds the figures with both services. Each item is read on its own"
       }
     },
     "R-4": {
@@ -982,7 +1105,9 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-17C, D, E"
+            "section": "450-17C, D, E",
+            "accessory_setback_side_ft": 15,
+            "setback_front_ft": 65
           },
           {
             "when": "Without public water",
@@ -991,14 +1116,16 @@
             "setback_side_ft": 15,
             "setback_rear_ft": 50,
             "accessory_setback_rear_ft": 20,
-            "section": "450-17C, D, E"
+            "section": "450-17C, D, E",
+            "accessory_setback_side_ft": 15,
+            "setback_front_ft": 65
           }
         ],
         "section": "450-17C, D, E",
         "url": "https://ecode360.com/print/WE3104?guid=16248215",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Without approved public sewerage and public water systems: 43,560 sq ft, one dwelling per net acre, and the R-1 side and rear yards. 'For a single-family detached dwelling without approved public sewerage and public water systems, the side and rear yard setback requirements of the R-1 District shall apply'. The row holds the figures with both services. Each item is read on its own"
+        "note": "Without public sewer and public water: one acre per dwelling unit, and 'the setback requirements of the R-1 District shall apply' (450-17D(4)). That covers every yard: front 65 ft from the right-of-way or 80 ft from the center line on a local road (the greater), side 15 ft for residential and accessory buildings, rear 50 ft, accessory rear 20 ft. The row holds the figures with both services. Each item is read on its own"
       }
     },
     "R-1C": {
