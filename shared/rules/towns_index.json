@@ -3399,7 +3399,7 @@
       "pop_rank": 161,
       "file": "pa_westmoreland_greensburg",
       "batch": 29,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10954364",
@@ -3409,7 +3409,7 @@
       "why": [
         "added as batch 29 by population. Code Chapter 265 has no ADU text"
       ],
-      "status_note": "No ADU rule. First reading, not yet independently reviewed. Open points: (1) detached forms read as barred by 265-52 (one main structure or main use per lot), secondary, a variance remains. (2) 265-47 'land coverage' counts structures, parking and loading (not driveways) and is stored as building coverage, a ceiling. (3) a city zoning update was reported under way in 2025, none adopted per New Laws through 8-10-2026. (4) whether one added live/work unit on a house lot in the Gateway or Health Care overlay is a 'mixed-use development' (265-40.13A, 265-40.21A)."
+      "status_note": "No ADU rule. Independently reviewed and fixed. Points for a later check: (1) the M district use list (265-28, 265-29) was not read again. (2) whether a dwelling in a separate building is a second main structure under 265-52 (secondary, a use variance remains). (3) whether one added live/work unit on a house lot in the Gateway or Health Care overlay is allowed (secondary). (4) a city zoning update was reported under way in 2025, none adopted per New Laws through 8-10-2026."
     },
     {
       "geoid": "4204553104",
@@ -3423,7 +3423,7 @@
       "pop_rank": 168,
       "file": "pa_delaware_nether_providence",
       "batch": 29,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11544796",
@@ -3433,7 +3433,7 @@
       "why": [
         "added as batch 29 by population. Code Chapter 300 has no ADU text (300-130 bars living quarters in accessory buildings)"
       ],
-      "status_note": "No ADU rule. First reading, not yet independently reviewed. 300-130 bars living quarters, bathrooms and kitchens in accessory buildings (detached forms prohibited, verified). Open points: (1) whether an existing house may be altered into a two-family detached dwelling in R-4 or R-5 (the conversion sections were repealed, 300-1 needs one family wholly or partly over the other). (2) 300-39.4 sets two-family side yards in R-3b though R-3b does not list the use. (3) no definition of family was found in 300-1."
+      "status_note": "No ADU rule. Independently reviewed and fixed. 300-130 bars living quarters, bathrooms and kitchens in accessory buildings (detached forms prohibited, verified). Points for a later check: (1) whether a second detached principal dwelling on a lot with twice the per-family area is allowed. No section bars a second principal building outside RP (300-36.7C), and it would be a land development (300-1). Ask. (2) the R-5b and R-PRD use lists (300-61, 300-107) were not read again. (3) no definition of family was found in 300-1."
     },
     {
       "geoid": "4201761616",
@@ -3457,7 +3457,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-304.19 B11 accessory dwelling for relatives or caretakers)"
       ],
-      "status_note": "Use B11 accessory dwelling by right in RP, RO, R-1, VR, R-2, R-3, R-4/CA-1 and VC for relatives of the owner or caretakers and employees (27-304.19). First reading, not yet independently reviewed. Open points: (1) 1.5 times lot for a new detached unit read against the district B1 lot, not the larger 'all other permitted uses' lot, and in VR and VC the district tables supersede conflicting 27-304 figures (27-703, 27-1203). (2) whether the 1.5 times rule reaches a unit in an existing garage or barn. (3) size cap by lot size (1,500, 2,000, 2,500 sq ft) held as 1,500 plus a condition, and a lot of exactly 10 acres falls in no larger tier. (4) whether the 15 ft accessory height (27-304.28B(5)) and the overflow half space (27-2504) reach the unit. (5) VR and VC density of 5 units an acre if the unit counts."
+      "status_note": "Use B11 accessory dwelling by right in RP, RO, R-1, VR, R-2, R-3, R-4/CA-1 and VC for relatives of the owner or caretakers and employees (27-304.19). Independently reviewed and fixed. Open points: (1) which lot the 1.5 times rule in 27-304.19A uses, the district's B1 lot or its larger lot for all other permitted uses (RP 10 acres, R-1, R-2, R-3 two acres), and whether it reaches a unit over a new garage or in an existing building. Both are disputed gates. (2) Ord. No. 2026-02 (6-10-2026, data centers, Chapter 27) is a PDF only and its effect on B11 is unknown. (3) cluster lots in R-1, R-2 and R-3, and in VR and VC whether the district tables supersede the 1.5 times rule (27-703, 27-1203)."
     }
   ]
 }

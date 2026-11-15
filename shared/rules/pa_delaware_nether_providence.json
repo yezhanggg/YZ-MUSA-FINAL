@@ -46,9 +46,13 @@
       "Lot area is set 'per family' for every building 'used in whole or in part as a dwelling' (for example 300-9, 300-42)",
       "Only one accessory building is permitted on a property (300-129E). In residence districts it is at most 10 ft at the wall and 20 ft at the peak, and its footprint is at most 500 sq ft unless the Zoning Hearing Board grants a special exception (300-128.1)",
       "In the RP district a house may be combined with up to two professional office units, and any dwelling unit there must be owner-occupied (300-36.1B(3)). In R-5a an apartment house may hold living quarters for watchmen and caretakers employed on the premises (300-55B(3))",
+      "In RP 'Only one principal building per lot shall be permitted, and no accessory buildings shall be permitted' (300-36.7C)",
+      "In R-3b (Garden City Manor) uses and buildings as they existed on 1-1-1990 'are hereby declared to be permitted uses' (300-39B). A second unit that existed then may be lawful. Ask the zoning officer",
+      "In R-1 a place of worship may include 'an adjacent house as a residence for a presiding minister', by special exception (300-8C)",
+      "Height is measured to the highest ridge of the roof (300-1 'Height')",
       "No section read bars a use variance. Variances are heard under MPC 910.2 (300-122A(5)) and expire after 18 months without a building permit (300-124)"
     ],
-    "notes": "Zoning office: Nether Providence Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, family apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, carriage house, servants, tenant house, living quarters, second dwelling, conversion, accessory suite, farm dwelling, two-family, caregiver and cooking facilities. Hits were 300-130, the two-family definitions and district sections, and the family day care caregiver definition. Read: 300-1, Article III (300-4 to 300-6), the district articles for R-1, R-1a, R-2, R-3, R-3a, RP, R-3b, R-4, R-5, R-5a, R-5b, C and R-PRD, Article XX (Zoning Hearing Board), Article XXII (300-127 to 300-138.1, the wireless section only in part) and Article XXIII (conditional uses). Not read: Article II, XIII (OSP), XV (P-O), XVI (I), XVIII (signs), XIX, XXI, XXIV, XXV and the rest of 300-138.2. No definition of family was found in 300-1. The C district permits any R-3a use, but 'No building may be erected, altered or used partly as a residence and partly for commercial purposes' (300-89). 300-39.4 (R-3b) sets side yards for a two-family detached dwelling, though R-3b lists only R-3 uses and single-family semidetached dwellings."
+    "notes": "Zoning office: Nether Providence Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, family apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, carriage house, servants, tenant house, living quarters, second dwelling, conversion, accessory suite, farm dwelling, two-family, caregiver and cooking facilities. Hits were 300-130, the two-family definitions and district sections, and the family day care caregiver definition. Read: 300-1, Article III (300-4 to 300-6), the district articles for R-1, R-1a, R-2, R-3, R-3a, RP, R-3b, R-4, R-5, R-5a, R-5b, C and R-PRD, Article XX (Zoning Hearing Board), Article XXII (300-127 to 300-138.1, the wireless section only in part) and Article XXIII (conditional uses). Also read: 300-72 (OSP), 300-94 (P-O), 300-102 (I), 300-36.7, 300-39B and 300-8C. Not read: Article II, the rest of Articles XIII (OSP), XV (P-O) and XVI (I), XVIII (signs), XIX, XXI, XXIV, XXV and the rest of 300-138.2. No definition of family was found in 300-1. The C district permits any R-3a use, but 'No building may be erected, altered or used partly as a residence and partly for commercial purposes' (300-89). 300-39.4 (R-3b) sets side yards for a two-family detached dwelling, though R-3b lists only R-3 uses and single-family semidetached dwellings."
   },
   "adu": {
     "term": {
@@ -77,7 +81,7 @@
       "url": "https://ecode360.com/print/NE1093?guid=11545721",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "'An accessory building shall not be used as living quarters or sleeping quarters. No person shall construct within any accessory building any bathroom, laundry facilities, or kitchen.' A new separate dwelling would also be a second principal building, which no house district lists"
+      "note": "'An accessory building shall not be used as living quarters or sleeping quarters. No person shall construct within any accessory building any bathroom, laundry facilities, or kitchen.'"
     }
   },
   "approval": {
@@ -114,7 +118,7 @@
           "section": "300-41B, 300-42 to 300-46, 300-48, 300-49 to 300-53.1, 300-133",
           "url": "https://ecode360.com/print/NE1093?guid=11545076",
           "confidence": "verified",
-          "note": "A building type. Whether an existing house may be altered into one is not stated, but lot area applies to a building 'erected, altered or used in whole or in part as a dwelling'. A side-by-side two-family semidetached dwelling was repealed in R-5 in 2019 (Ord. No. 814)"
+          "note": "A building type. 300-41 and 300-48 say 'A building may be erected, altered or used' for the listed uses, so an existing house may be altered into one, with one unit over the other, not side by side. A side-by-side two-family semidetached dwelling was repealed in R-5 in 2019 (Ord. No. 814)"
         }
       ],
       "section": "300-41, 300-48",
@@ -137,13 +141,16 @@
         "R-5a",
         "R-5b",
         "C",
-        "R-PRD"
+        "R-PRD",
+        "I",
+        "P-O",
+        "OSP"
       ],
-      "section": "300-55, 300-61, 300-87, 300-89, 300-107",
+      "section": "300-55, 300-61, 300-72, 300-87, 300-89, 300-94, 300-102, 300-107",
       "url": "https://ecode360.com/print/NE1093?guid=11545100",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "R-5a permits single-family houses, apartment houses (three acres or more) and townhouses, with caretaker quarters only inside an apartment house. R-5b permits multiple dwellings and townhouses on 10 acres. C permits R-3a uses and commercial uses but bars a building used partly as a residence and partly for commercial purposes. R-PRD permits single-family detached, semidetached and attached dwellings on a 20 acre tract"
+      "note": "R-5a permits single-family houses, apartment houses (three acres or more) and townhouses, with caretaker quarters only inside an apartment house. R-5b permits multiple dwellings and townhouses on 10 acres. C permits R-3a uses and commercial uses but bars a building used partly as a residence and partly for commercial purposes. R-PRD permits single-family detached, semidetached and attached dwellings on a 20 acre tract. I permits 'Any use permitted in a C Commercial District' (300-102A(12)), but residential uses there follow Article VII (300-102C), and its only living quarters are an accessory use, 'Living quarters for a watchman, caretaker or similar security employee' (300-102B(3)). P-O (300-94) and OSP (300-72) permit no dwellings"
     }
   },
   "form": {
@@ -163,7 +170,7 @@
       "url": "https://ecode360.com/print/NE1093?guid=11545721",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "'no accessory building ... shall exceed 10 feet in wall height or 20 feet in height at the peak of the roof' in the residence districts and P-O"
+      "note": "'no accessory building ... shall exceed 10 feet in wall height or 20 feet in height at the peak of the roof' in the residence districts and P-O. Height is measured to the highest ridge (300-1)"
     },
     "accessory_structure_threshold_sqft": {
       "value": 500,
@@ -173,28 +180,21 @@
       "confidence": "verified",
       "note": "The Zoning Hearing Board grants it by special exception, and the building must then meet the district front, side and rear yards"
     },
-    "front_yard_barred": {
-      "value": true,
-      "section": "300-129A, B(1), C(1)",
-      "url": "https://ecode360.com/print/NE1093?guid=11545721",
-      "verified_on": "2026-11-15",
-      "confidence": "secondary",
-      "note": "Only in a side or rear yard, at least 10 ft behind the rearmost part of the house (in R-3b, R-4 and R-5 behind it)"
-    },
     "setback_side_ft": {
       "value": 5,
-      "section": "300-129B(1)",
+      "section": "300-129A, B(1)",
       "url": "https://ecode360.com/print/NE1093?guid=11545721",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "One accessory building in a side yard, 5 ft from any property line and 10 ft behind the rearmost part of the house"
+      "note": "Inside a required side or rear yard one accessory building stands 5 ft from the property lines and 10 ft behind the rearmost part of the house (in R-3b, R-4 and R-5, 2 ft from the lines and behind the house). No building may stand in or project into the required front yard (300-129A)"
     },
     "setback_rear_ft": {
       "value": 5,
       "section": "300-129C(1)",
       "url": "https://ecode360.com/print/NE1093?guid=11545721",
       "verified_on": "2026-11-15",
-      "confidence": "verified"
+      "confidence": "verified",
+      "note": "Inside a required rear yard, 5 ft from the property lines and 10 ft behind the rearmost part of the house"
     }
   },
   "parking": {
@@ -261,7 +261,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=11545721",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'No building in any of the following districts shall exceed 35 feet in height'"
+        "note": "'No building in any of the following districts shall exceed 35 feet in height'. Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.2,
@@ -332,7 +332,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=11545721",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'No building in any of the following districts shall exceed 35 feet in height'"
+        "note": "'No building in any of the following districts shall exceed 35 feet in height'. Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.2,
@@ -403,7 +403,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=11545721",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'No building in any of the following districts shall exceed 35 feet in height'"
+        "note": "'No building in any of the following districts shall exceed 35 feet in height'. Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.2,
@@ -474,7 +474,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=11545721",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'No building in any of the following districts shall exceed 35 feet in height'"
+        "note": "'No building in any of the following districts shall exceed 35 feet in height'. Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.3,
@@ -514,8 +514,7 @@
         "section": "300-34",
         "url": "https://ecode360.com/print/NE1093?guid=11545051",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "On a corner lot a front yard on each street"
+        "confidence": "verified"
       },
       "setback_side_ft": {
         "value": 15,
@@ -545,7 +544,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=11545721",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'No building in any of the following districts shall exceed 35 feet in height'"
+        "note": "'No building in any of the following districts shall exceed 35 feet in height'. Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.35,
@@ -585,8 +584,7 @@
         "section": "300-39.3",
         "url": "https://ecode360.com/print/NE1093?guid=11545061",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "On a corner lot a front yard on each street"
+        "confidence": "verified"
       },
       "setback_side_ft": {
         "value": 10,
@@ -617,7 +615,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=11545721",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'No building in any of the following districts shall exceed 35 feet in height'"
+        "note": "'No building in any of the following districts shall exceed 35 feet in height'. Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.4,
@@ -704,7 +702,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=11545721",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'No building in any of the following districts shall exceed 35 feet in height'"
+        "note": "'No building in any of the following districts shall exceed 35 feet in height'. Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.4,
@@ -791,7 +789,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=11545721",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'No building in any of the following districts shall exceed 35 feet in height'"
+        "note": "'No building in any of the following districts shall exceed 35 feet in height'. Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.5,
@@ -831,7 +829,7 @@
         "url": "https://ecode360.com/print/NE1093?guid=35527781",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'minimum lot area or tract size of not less than 25,000 square feet', frontage 150 ft"
+        "note": "'minimum lot area or tract size of not less than 25,000 square feet', frontage 150 ft. 'Only one principal building per lot shall be permitted, and no accessory buildings shall be permitted' (300-36.7C)"
       },
       "setback_front_ft": {
         "value": 40,
@@ -859,7 +857,8 @@
         "section": "300-36.5",
         "url": "https://ecode360.com/print/NE1093?guid=35527781",
         "verified_on": "2026-11-15",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "Measured to the highest ridge (300-1)"
       },
       "max_building_coverage": {
         "value": 0.2,

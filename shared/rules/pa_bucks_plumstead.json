@@ -45,12 +45,14 @@
       "B11 is a use permitted by right in RP, RO, R-1, VR, R-2, R-3, R-4/CA-1 and VC. R-5/CA-2 does not list it, and 'A use not listed ... in a particular zoning district is not permitted in that zoning district' (27-302.4)",
       "The record owner records a deed restriction in favor of the Township that names the unit's occupants and bars condominium or other split ownership. The owners must be individuals, not an entity (27-304.19E, F)",
       "The unit may not be used as a short-term transient rental (27-304.19G), meaning stays under 14 days with use of the kitchen (27-202)",
-      "The size cap grows with the lot: 1,500 sq ft on three acres or less, 2,000 sq ft over three and under 10 acres, 2,500 sq ft over 10 acres (27-304.19D). The code does not say which floor area is measured, and a lot of exactly 10 acres falls in neither of the two larger tiers",
       "Accessory buildings other than garages are at most 15 ft tall (27-304.28B(5)). Detached garages, sheds and barns may stand in a required side or rear yard 10 ft from the line (27-2305B). Whether these accessory rules reach a detached accessory dwelling, which must meet the district yards, is not stated",
       "VR and VC: the Township reviews the architecture of each building, addition and renovation, front yards follow the prevailing setback within 300 ft, and buildings may not be demolished unless they cannot be adapted (27-704, 27-1204, 27-2317E)",
+      "Family means 'a common household with single cooking facilities' (27-202)",
+      "A lot of record held in separate ownership before the chapter may hold a detached dwelling even if it is smaller than the district minimum (27-2304.1)",
+      "The Airport Area Overlay Zone (Part 21, referred to in 27-2307) was not read. Ask whether the lot is in it",
       "No section read bars a use variance. Variances are heard under MPC 910.2 (27-2903.1E) and expire after one year without a building permit (27-2911)"
     ],
-    "notes": "Zoning office: Plumstead Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, then for in-law, ECHO, elder cottage, granny, caretaker, guest house, carriage house, tenant house, accessory apartment, second dwelling, farm dwelling, accessory suite and two-family, and New Laws (scope law). The use lists of C-1, C-2, C-3, MHP, LI and Q were not read, so status_outside rests on 27-302.4 there. Read: Part 2 (27-202), 27-302, 27-304 subsections 1 to 19 (A1 to B11) and 28 (B14) and 78 (G27), Parts 4 to 12 (RP, RO, R-1, VR, R-2, R-3, R-4/CA-1, R-5/CA-2, VC), Part 23 (27-2301 to 27-2320, lighting in part), Part 25 and Part 29. Not read: Parts 13 to 18 (C-1, C-2, C-3, MHP, LI, Q), 21, 22, 24, 26 to 28, 30 to 32, B15 Mixed Residential Use and B16 Village Preservation Development in 27-304, and Appendix A (a PDF use table). The Appendix A search excerpt shows 'B11 Accessory Dwelling Y Y Y Y Y Y'. Open reading: the 1.5 times lot rule in 27-304.19A is read against the district's figure for Use B1. Each R district also sets a larger lot for 'All other permitted uses' (two acres in R-1, R-2 and R-3, 10 acres in RP), which would give 1.5 times that. In VR and VC the district tables 'supersede' directly conflicting 27-304 figures (27-703, 27-1203), so whether the 1.5 times rule or the 10,000 or 7,500 sq ft district lot governs there is not settled."
+    "notes": "Zoning office: Plumstead Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, then for in-law, ECHO, elder cottage, granny, caretaker, guest house, carriage house, tenant house, accessory apartment, second dwelling, farm dwelling, accessory suite and two-family, and New Laws (scope law). The use lists of C-1 (27-1302), C-2 (27-1402), C-3 (27-1502), MHP (27-1602), LI (27-1702) and Q (27-1802) do not list B11. Read: Part 2 (27-202), 27-302, 27-304 subsections 1 to 19 (A1 to B11) and 28 (B14) and 78 (G27), Parts 4 to 12 (RP, RO, R-1, VR, R-2, R-3, R-4/CA-1, R-5/CA-2, VC), Part 23 (27-2301 to 27-2320, lighting in part), Part 25 and Part 29. Not read: the rest of Parts 13 to 18 (C-1, C-2, C-3, MHP, LI, Q), 21 (Airport Area Overlay Zone), 22, 24, 26 to 28, 30 to 32, B15 Mixed Residential Use and B16 Village Preservation Development in 27-304, and Appendix A (a PDF use table). The Appendix A search excerpt shows 'B11 Accessory Dwelling Y Y Y Y Y Y'. Open reading: the 1.5 times lot rule in 27-304.19A bars on the district's figure for Use B1. Each R district also sets a larger lot for 'All other permitted uses' (two acres in R-1 (27-603E), R-2 (27-803E) and R-3 (27-903.1B), 10 acres in RP (27-403.1B)), which would give 1.5 times that. Lots between the two figures read 'depends'. A unit over a garage or in an existing building reads 'depends' below the larger figure. In VR and VC the district tables 'supersede' directly conflicting 27-304 figures (27-703, 27-1203), so whether the 1.5 times rule or the 10,000 or 7,500 sq ft district lot governs there is not settled."
   },
   "adu": {
     "term": {
@@ -88,11 +90,11 @@
     },
     "status_outside": {
       "value": "prohibited",
-      "section": "27-302.4, 27-1102",
+      "section": "27-302.4, 27-1102, 27-1302, 27-1402, 27-1502, 27-1602, 27-1702, 27-1802",
       "url": "https://ecode360.com/print/PL2424?guid=14149133",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "'A use not listed as being permitted by right, special exception, or conditional use in a particular zoning district is not permitted in that zoning district.' R-5/CA-2 does not list B11. Ask the zoning officer about the commercial, mobile home park, industrial and quarry districts"
+      "note": "'A use not listed as being permitted by right, special exception, or conditional use in a particular zoning district is not permitted in that zoning district.' R-5/CA-2, C-1, C-2, C-3, MHP, LI and Q do not list B11"
     }
   },
   "approval": {
@@ -122,18 +124,26 @@
             "R-4/CA-1",
             "R-5/CA-2"
           ],
-          "conditions": "A twin has two units sharing one wall, a duplex has one unit above the other. Duplex figures: VR 5,000 sq ft per building, VC 5,000 sq ft per dwelling unit, R-4/CA-1 and R-5/CA-2 2,500 sq ft per unit (27-304.12B). VR and VC: at most five units an acre, front yard 5 ft (or the prevailing setback), side 10 ft, rear 40 ft. Two parking spaces per dwelling unit and half a space of overflow parking (27-2504)",
+          "conditions": "A twin has two units sharing one wall, a duplex has one unit above the other. Duplex figures: VR 5,000 sq ft per building, VC 5,000 sq ft per dwelling unit, R-4/CA-1 and R-5/CA-2 2,500 sq ft per unit (27-304.12B). A twin needs 3,500 sq ft per unit in VR and VC, so 7,000 sq ft (27-703B(1), 27-1203B(1)). 'Maximum density 5 units per acre of base site area' in VR and VC (27-703B, 27-1203B) and '4 units per acre of base site area' in R-5/CA-2 (27-1103.2, 27-1103.3). So two units need about 17,424 sq ft of base site area in VR and VC and 21,780 sq ft in R-5/CA-2. VR and VC: front yard 5 ft (or the prevailing setback), side 10 ft, rear 40 ft. The parking table lists '2 spaces' for the use, and half a space of overflow parking per dwelling unit (27-2504)",
           "min_lot_sqft": 5000,
           "min_lot_by_district": {
-            "VR": 5000,
-            "VC": 10000,
+            "VR": 17424,
+            "VC": 17424,
             "R-4/CA-1": 5000,
-            "R-5/CA-2": 5000
+            "R-5/CA-2": 21780
           },
-          "section": "27-304.12, 27-702.1, 27-703B, 27-1002.1, 27-1102.1, 27-1103.3, 27-1202.1, 27-1203B",
+          "section": "27-304.12, 27-702.1, 27-703B, 27-1002.1, 27-1004, 27-1102.1, 27-1103.2, 27-1103.3, 27-1202.1, 27-1203B, 27-2504",
           "url": "https://ecode360.com/print/PL2424?guid=14149142",
           "confidence": "secondary",
-          "note": "A building type. Whether a house may be altered into a duplex rather than converted under B10 is not stated. R-4/CA-1 has no B4 row of its own, so the 27-304.12 figures are used. Density limits for the whole development may also apply (27-1004)"
+          "note": "A building type. Whether a house may be altered into a duplex rather than converted under B10 is not stated. R-4/CA-1 has no B4 row of its own, so the 27-304.12 figures are used there",
+          "disputed_districts": {
+            "districts": [
+              "R-4/CA-1"
+            ],
+            "section": "27-1002, 27-1004",
+            "url": "https://ecode360.com/print/PL2424?guid=14150223",
+            "note": "27-1002 lists Use B4, but the 27-1004 unit mix sets Use B6 at 14.25% to 41% and says 'Remainder shall be Use B1', which leaves no share for a two-family dwelling"
+          }
         },
         {
           "name": "Residential conversion of an existing building (VR, VC)",
@@ -185,7 +195,13 @@
             "R-3",
             "R-4/CA-1",
             "R-5/CA-2",
-            "VC"
+            "VC",
+            "C-1",
+            "C-2",
+            "C-3",
+            "MHP",
+            "LI",
+            "Q"
           ],
           "conditions": "With Use A1 General Farming (three acres or more), 'One farm dwelling meeting the requirements of Use B1 is permitted for properties of 25 acres or less. Properties of more than 25 acres may have one additional dwelling. Farm dwellings permitted shall be owned by the owner of the main farm'",
           "min_lot_sqft": 1089000,
@@ -196,7 +212,27 @@
               "section": "27-304.1"
             }
           ],
-          "section": "27-304.1E",
+          "section": "27-304.1E, 27-1302, 27-1402, 27-1502, 27-1602, 27-1702, 27-1802",
+          "url": "https://ecode360.com/print/PL2424?guid=14149142",
+          "confidence": "secondary",
+          "note": "The property must be more than 25 acres, not 25 acres exactly"
+        },
+        {
+          "name": "Additional dwelling on a winery property (RO, more than 25 acres)",
+          "path": "by_right",
+          "districts": [
+            "RO"
+          ],
+          "conditions": "With Use A9 Limited Winery, 'Properties of more than 25 acres may have one additional dwelling that meets the requirements of use B1. Any farm dwelling unit shall be occupied by either the owner or an employee of the winery'",
+          "min_lot_sqft": 1089000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "the property is a limited winery (Use A9)",
+              "section": "27-304.8"
+            }
+          ],
+          "section": "27-304.8A, 27-502.1",
           "url": "https://ecode360.com/print/PL2424?guid=14149142",
           "confidence": "secondary",
           "note": "The property must be more than 25 acres, not 25 acres exactly"
@@ -279,16 +315,6 @@
           "url": "https://ecode360.com/print/PL2424?guid=14149366"
         },
         {
-          "kind": "size",
-          "condition": "The unit may not exceed 1,500 sq ft on a lot of three acres or less, 2,000 sq ft on a lot of more than three but less than 10 acres, and 2,500 sq ft on a lot of more than 10 acres.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": null,
-          "building_types": null,
-          "section": "27-304.19D",
-          "url": "https://ecode360.com/print/PL2424?guid=14149366"
-        },
-        {
           "kind": "design",
           "condition": "An attached unit shares an exterior wall with the house. A unit joined only by a hallway, breezeway or similar link is not attached. A new attached unit meets the district setbacks for the house.",
           "effect": "condition",
@@ -329,7 +355,7 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: two acres in RP, so three acres.",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: two acres in RP for a single-family dwelling (Use B1), so three acres",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -345,7 +371,52 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: two acres in RO, so three acres.",
+          "condition": "Read against the RP lot for all other permitted uses (10 acres), the 1.5 times rule needs 15 acres",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "RP"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 653400,
+          "section": "27-304.19A, 27-403.1B",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A, 27-403.1A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "The rule says 'that required of the applicable zoning district'. RP sets two acres for a single-family dwelling (Use B1) and 10 acres for all other permitted uses. The accessory dwelling is its own use (B11), so which lot it means is not settled"
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A unit over a garage or in an existing garage or barn may need a lot of 15 acres in RP, as the 1.5 times rule reaches 'the construction of a new detached residential accessory dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "RP"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 653400,
+          "section": "27-304.19A, 27-403.1A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "A unit over a newly built garage is a new detached accessory dwelling. Whether the rule reaches a unit in or over an existing building is not stated. It may also be read against the RP lot for all other permitted uses (10 acres), which gives 15 acres."
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: two acres in RO for a single-family dwelling (Use B1), so three acres",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -361,7 +432,30 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 60,000 sq ft in R-1, so 90,000 sq ft.",
+          "condition": "A unit over a garage or in an existing garage or barn may need a lot of three acres in RO, as the 1.5 times rule reaches 'the construction of a new detached residential accessory dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "RO"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-503A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "A unit over a newly built garage is a new detached accessory dwelling. Whether the rule reaches a unit in or over an existing building is not stated."
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 60,000 sq ft in R-1 for a single-family dwelling (Use B1), so 90,000 sq ft",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -377,7 +471,52 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 40,000 sq ft in R-2, so 60,000 sq ft.",
+          "condition": "Read against the R-1 lot for all other permitted uses (two acres), the 1.5 times rule needs three acres",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-603E",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A, 27-603A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "The rule says 'that required of the applicable zoning district'. R-1 sets 60,000 sq ft for a single-family dwelling (Use B1) and two acres for all other permitted uses. The accessory dwelling is its own use (B11), so which lot it means is not settled"
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A unit over a garage or in an existing garage or barn may need a lot of three acres in R-1, as the 1.5 times rule reaches 'the construction of a new detached residential accessory dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-603A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "A unit over a newly built garage is a new detached accessory dwelling. Whether the rule reaches a unit in or over an existing building is not stated. It may also be read against the R-1 lot for all other permitted uses (two acres), which gives three acres."
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 40,000 sq ft in R-2 for a single-family dwelling (Use B1), so 60,000 sq ft",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -393,7 +532,52 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 60,000 sq ft in R-3, so 90,000 sq ft.",
+          "condition": "Read against the R-2 lot for all other permitted uses (two acres), the 1.5 times rule needs three acres",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-2"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-803E",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A, 27-803A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "The rule says 'that required of the applicable zoning district'. R-2 sets 40,000 sq ft for a single-family dwelling (Use B1) and two acres for all other permitted uses. The accessory dwelling is its own use (B11), so which lot it means is not settled"
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A unit over a garage or in an existing garage or barn may need a lot of three acres in R-2, as the 1.5 times rule reaches 'the construction of a new detached residential accessory dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "R-2"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-803A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "A unit over a newly built garage is a new detached accessory dwelling. Whether the rule reaches a unit in or over an existing building is not stated. It may also be read against the R-2 lot for all other permitted uses (two acres), which gives three acres."
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 60,000 sq ft in R-3 for a single-family dwelling (Use B1), so 90,000 sq ft",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -409,7 +593,52 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 10,000 sq ft in VR, so 15,000 sq ft.",
+          "condition": "Read against the R-3 lot for all other permitted uses (two acres), the 1.5 times rule needs three acres",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-3"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-903.1B",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A, 27-903.1A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "The rule says 'that required of the applicable zoning district'. R-3 sets 60,000 sq ft for a single-family dwelling (Use B1) and two acres for all other permitted uses. The accessory dwelling is its own use (B11), so which lot it means is not settled"
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A unit over a garage or in an existing garage or barn may need a lot of three acres in R-3, as the 1.5 times rule reaches 'the construction of a new detached residential accessory dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "R-3"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-903.1A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "A unit over a newly built garage is a new detached accessory dwelling. Whether the rule reaches a unit in or over an existing building is not stated. It may also be read against the R-3 lot for all other permitted uses (two acres), which gives three acres."
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 10,000 sq ft in VR for a single-family dwelling (Use B1), so 15,000 sq ft",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -425,7 +654,30 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 7,500 sq ft in R-4/CA-1, so 11,250 sq ft.",
+          "condition": "A unit over a garage or in an existing garage or barn may need a lot of 15,000 sq ft in VR, as the 1.5 times rule reaches 'the construction of a new detached residential accessory dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "VR"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 15000,
+          "section": "27-304.19A, 27-703A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "A unit over a newly built garage is a new detached accessory dwelling. Whether the rule reaches a unit in or over an existing building is not stated."
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 7,500 sq ft in R-4/CA-1 for a single-family dwelling (Use B1), so 11,250 sq ft",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -441,7 +693,30 @@
         },
         {
           "kind": "lot_size",
-          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 7,500 sq ft in VC, so 11,250 sq ft.",
+          "condition": "A unit over a garage or in an existing garage or barn may need a lot of 11,250 sq ft in R-4/CA-1, as the 1.5 times rule reaches 'the construction of a new detached residential accessory dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "R-4/CA-1"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 11250,
+          "section": "27-304.19A, 27-1003.1A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "A unit over a newly built garage is a new detached accessory dwelling. Whether the rule reaches a unit in or over an existing building is not stated."
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 7,500 sq ft in VC for a single-family dwelling (Use B1), so 11,250 sq ft",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -454,6 +729,47 @@
           "value": 11250,
           "section": "27-304.19A, 27-1203.1A",
           "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A unit over a garage or in an existing garage or barn may need a lot of 11,250 sq ft in VC, as the 1.5 times rule reaches 'the construction of a new detached residential accessory dwelling'",
+          "effect": "bars",
+          "applies_to": [
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "VC"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 11250,
+          "section": "27-304.19A, 27-1203.1A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-304.19A",
+            "url": "https://ecode360.com/print/PL2424?guid=14149366",
+            "note": "A unit over a newly built garage is a new detached accessory dwelling. Whether the rule reaches a unit in or over an existing building is not stated."
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Cluster lots in R-1, R-2 and R-3 (Uses B2, B3 and B8) are 10,000 to 25,000 sq ft. Read against the district figures, the 1.5 times rule bars a new detached unit on them. Whether it is read against the cluster lot figure instead is not stated. Ask the zoning officer",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "over_garage",
+            "garage_conversion"
+          ],
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "building_types": null,
+          "section": "27-304.19A, Uses B2, B3 and B8 (27-304)",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
         }
       ],
       "section": "27-304.19, 27-2305A, 27-704, 27-1204",
@@ -461,6 +777,21 @@
       "verified_on": "2026-11-15",
       "confidence": "secondary",
       "note": "The lot size gates read 27-304.19A against each district's lot for Use B1. See the open reading in the provenance notes"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1",
+        "C-2",
+        "C-3",
+        "MHP",
+        "LI",
+        "Q"
+      ],
+      "section": "27-1302, 27-1402, 27-1502, 27-1602, 27-1603D, 27-1702, 27-1802",
+      "url": "https://ecode360.com/11770606",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "None of these lists Use B11 Accessory Dwelling. MHP lists a single-family dwelling (Use B1) by right, on the lot for all other permitted uses: 40,000 sq ft, 100 ft wide, 20% impervious cover, yards 50 ft front, 40 ft side, 50 ft rear (27-1603D)"
     }
   },
   "form": {
@@ -495,7 +826,32 @@
       "url": "https://ecode360.com/print/PL2424?guid=14149366",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "1,500 sq ft on a lot of three acres or less. 2,000 sq ft over three and under 10 acres, 2,500 sq ft over 10 acres. The code does not say which floor area is measured"
+      "note": "On a lot of three acres or less. Larger lots take a larger cap (see the tiers). The code does not say which floor area is measured"
+    },
+    "max_sqft_by_lot_size": {
+      "value": [
+        {
+          "max_sqft": 1500,
+          "lot_sqft_at_most": 130680,
+          "note": "Three acres or less"
+        },
+        {
+          "max_sqft": 2000,
+          "lot_sqft_over": 130680,
+          "lot_sqft_below": 435600,
+          "note": "More than three but less than 10 acres"
+        },
+        {
+          "max_sqft": 2500,
+          "lot_sqft_over": 435600,
+          "note": "Greater than 10 acres"
+        }
+      ],
+      "section": "27-304.19D",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A lot of exactly 10 acres falls in none of the tiers. The code does not say which floor area is measured"
     }
   },
   "envelope": {
@@ -806,11 +1162,11 @@
       },
       "lot_area_per_unit_sqft": {
         "value": 8712,
-        "section": "27-703A",
+        "section": "27-703A, 27-202, 27-304.19",
         "url": "https://ecode360.com/print/PL2424?guid=14150164",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "'Maximum density 5 units per acre of base site area' applies to all uses but twins, duplexes and multifamily, and the district text supersedes conflicting 27-304 figures. Whether the accessory dwelling counts as a unit is not stated"
+        "note": "'Maximum density 5 units per acre of base site area', and the district text supersedes conflicting 27-304 figures. Density is 'The number of dwelling units per acre of net buildable site area or base site area' (27-202), and B11 calls the unit 'a second dwelling unit'. So the unit likely counts, and the house and unit need about 17,424 sq ft of base site area"
       }
     },
     "R-2": {
@@ -919,7 +1275,7 @@
         "url": "https://ecode360.com/print/PL2424?guid=14150223",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "75 ft wide. The Cabin Run development, at most 3.22 units an acre overall (27-1004)"
+        "note": "75 ft wide. The Cabin Run development, at most 3.22 units an acre overall (27-1004). An accessory dwelling is 'a second dwelling unit', so it may count toward that density"
       },
       "setback_front_ft": {
         "value": 35,
@@ -1065,11 +1421,11 @@
       },
       "lot_area_per_unit_sqft": {
         "value": 8712,
-        "section": "27-1203.1A",
+        "section": "27-1203.1A, 27-202, 27-304.19",
         "url": "https://ecode360.com/print/PL2424?guid=14150269",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "'Maximum density 5 units per acre of base site area' applies to all uses but twins, duplexes and multifamily, and the district text supersedes conflicting 27-304 figures. Whether the accessory dwelling counts as a unit is not stated"
+        "note": "'Maximum density 5 units per acre of base site area', and the district text supersedes conflicting 27-304 figures. Density is 'The number of dwelling units per acre of net buildable site area or base site area' (27-202), and B11 calls the unit 'a second dwelling unit'. So the unit likely counts, and the house and unit need about 17,424 sq ft of base site area"
       }
     }
   }
