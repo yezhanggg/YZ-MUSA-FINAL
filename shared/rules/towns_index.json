@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 143,
-      "population": 5824267,
-      "share_of_pa": 0.4479
+      "towns_beyond_the_two_cities": 146,
+      "population": 5864424,
+      "share_of_pa": 0.451
     }
   ],
   "towns": [
@@ -3530,6 +3530,78 @@
         "added as batch 30 by population. Code Chapter 310 has no ADU text (two-family conversion by special exception, 310-66)"
       ],
       "status_note": "Whether a detached second unit is a similar use under 310-5B is not settled (310-12B(2) treats a detached structure as part of the principal building)."
+    },
+    {
+      "geoid": "4201910464",
+      "geoid_aliases": [],
+      "name": "Butler city",
+      "county": "Butler",
+      "type": "city",
+      "population": 13502,
+      "population_with_aliases": 13502,
+      "housing_units": 7071,
+      "pop_rank": 185,
+      "file": "pa_butler_butler_city",
+      "batch": 31,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/12072159",
+      "plain_fetch": false,
+      "code_current_through": "2026-05-28",
+      "code_note": "Zoning: Chapter 260 Zoning (adopted 2-19-1987 as Part 13 of the 1987 Codified Ordinances, as amended). No ADU text. Each district permits its listed uses only. The Zoning Hearing Board may not grant a use variance (260-132C(4)). R-1 allows one dwelling unit per lot (260-16A). Conversion of a house that existed before the chapter to two units is a permitted use in R-2 and R-3 with no Board review (450 sq ft per unit, 3,000 sq ft lot with no addition, 260-20C, 260-29D, 260-132D(4)). Two-family dwellings by right in R-2, R-3 and R-O. Units in an accessory building count toward the district's unit cap (260-10L, N). The use table and the bulk and lot-area-per-unit tables are PDF attachments, but each district article sets its uses and figures in text. New Laws: none on zoning. Read in the browser on eCode360 (BU1538).",
+      "why": [
+        "added as batch 31 by population. Code Chapter 260 has no ADU text (use variance barred, 260-132C(4))"
+      ],
+      "status_note": "Open: whether a dwelling unit in an accessory building is allowed in R-2, R-3 and R-O under 260-10N, which no use list names, and which lot figure applies. The district lot-area-per-unit table (PDF attachment) was not opened."
+    },
+    {
+      "geoid": "4201102328",
+      "geoid_aliases": [],
+      "name": "Amity township",
+      "county": "Berks",
+      "type": "township",
+      "population": 13396,
+      "population_with_aliases": 13396,
+      "housing_units": 5045,
+      "pop_rank": 187,
+      "file": "pa_berks_amity",
+      "batch": 31,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/34014197",
+      "plain_fetch": false,
+      "code_current_through": "2026-03-18",
+      "code_note": "Zoning: Chapter 32 Zoning (Ord. No. 130, 12-9-1991, as amended). ADU text: 'Family member suites' (32-957, Ord. No. 311 of 2-6-2019), by right in RC, LDR, MDR and RV, by conditional use in PBOI only in a dwelling that existed in 2019. For a father, mother, parent-in-law, step-parent or grandparent of the resident, at most two people, inside or attached to a single-family dwelling, never in an accessory structure, at most 800 sq ft and one bedroom, shared utilities, one extra parking space, zoning permit renewed every two years. Conversion of a large house to two units by special exception in RC, LDR, MDR and RV (32-904). Unlisted dwelling types by conditional use (32-949). The only attachment is the zoning map. New Laws: none on zoning. Read in the browser on eCode360 (AM1620).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 32-957 family member suites)"
+      ],
+      "status_note": "Open: whether 32-949 (unlisted dwelling types by conditional use) reaches a family member suite in MHP, HC, SCC or LI/O, and the PBOI date (adoption of Ord. No. 311, 2-6-2019, read as the effective date)."
+    },
+    {
+      "geoid": "4209127280",
+      "geoid_aliases": [],
+      "name": "Franconia township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 13259,
+      "population_with_aliases": 13259,
+      "housing_units": 5157,
+      "pop_rank": 191,
+      "file": "pa_montgomery_franconia",
+      "batch": 31,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8789917",
+      "plain_fetch": false,
+      "code_current_through": "2026-07-20",
+      "code_note": "Zoning: Chapter 145 Zoning (Ord. No. 33, 5-2-1966, 'Zoning Ordinance of 1953, Revised', as amended through Ord. No. 434 of 7-20-2026). ADU text: 'In-law suite' (second housekeeping unit), a special exception in R-175, R-130, R-100 and RR under 145-157B: in an owner-occupied single-family detached dwelling, for relatives of the owners, at most two occupants under the Fair Housing Act older persons rules, at most 40% of the main unit and 1,000 sq ft, attached with an interior connection and no separate entrance, recorded removal agreement, one extra parking space. R-130 special exception uses need 40,000 sq ft (145-35.1). VC permits one two-family dwelling or apartments in an existing structure by right (145-192). No PDF use or dimension tables. New Laws: Ord. No. 435 (9-21-2026), zoning map only. Read in the browser on eCode360 (FR0973).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 145-157B in-law suite by special exception)"
+      ],
+      "status_note": "Open: whether the R-130 special exception figures (40,000 sq ft, no accessory structures, 145-35.1) and the R-175 pointer to 145-97 reach an in-law suite, whether the suite may have its own side or rear entrance (145-157B(3)(c) against (5)(b)), and how the 1,200 sq ft dwelling minimum (145-24) fits a suite capped at 1,000 sq ft."
     }
   ]
 }

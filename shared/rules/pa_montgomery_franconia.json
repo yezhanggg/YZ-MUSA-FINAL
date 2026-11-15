@@ -1,0 +1,906 @@
+{
+  "provenance": {
+    "jurisdiction": "Franconia township",
+    "instrument": "Franconia Township Zoning Ordinance of 1953, Revised (Chapter 145 Zoning, Ord. No. 33 of 5-2-1966, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 FR0973, Township of Franconia, Montgomery County. Chapter 145 was adopted 5-2-1966 by Ord. No. 33. The in-law suite rules were added by Ord. No. 128 (5-12-1986) and amended through Ord. No. 367 (4-12-2010). Ord. No. 430 (5-19-2025), Ord. No. 433 (2-17-2026) and Ord. No. 434 (7-20-2026) are folded into the text. New Laws lists only Ord. No. 435 (9-21-2026), a zoning map amendment (NCM). The chapter has no PDF use or dimension tables",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/FR0973",
+      "https://ecode360.com/8789917",
+      "https://ecode360.com/FR0973/laws",
+      "https://ecode360.com/FR0973/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20relative%20OR%20%22relative%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/FR0973?guid=8789933",
+      "https://ecode360.com/print/FR0973?guid=8790104",
+      "https://ecode360.com/print/FR0973?guid=8790114",
+      "https://ecode360.com/print/FR0973?guid=8790240",
+      "https://ecode360.com/print/FR0973?guid=8790281",
+      "https://ecode360.com/print/FR0973?guid=8790371",
+      "https://ecode360.com/print/FR0973?guid=8790407",
+      "https://ecode360.com/print/FR0973?guid=8790441",
+      "https://ecode360.com/print/FR0973?guid=8790498",
+      "https://ecode360.com/print/FR0973?guid=8790504",
+      "https://ecode360.com/print/FR0973?guid=49944026",
+      "https://ecode360.com/print/FR0973?guid=8790661",
+      "https://ecode360.com/print/FR0973?guid=8790707",
+      "https://ecode360.com/print/FR0973?guid=8790780",
+      "https://ecode360.com/print/FR0973?guid=8790839",
+      "https://ecode360.com/print/FR0973?guid=8790904",
+      "https://ecode360.com/print/FR0973?guid=8791139",
+      "https://ecode360.com/print/FR0973?guid=8791374",
+      "https://ecode360.com/print/FR0973?guid=8791426",
+      "https://ecode360.com/print/FR0973?guid=8791443",
+      "https://ecode360.com/print/FR0973?guid=8791576",
+      "https://ecode360.com/print/FR0973?guid=8791760",
+      "https://ecode360.com/print/FR0973?guid=8791975",
+      "https://ecode360.com/print/FR0973?guid=8792058"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209127280",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/8789917",
+    "code_current_through": "2026-07-20",
+    "code_current_through_note": "eCode360 code version 2026-07-20. New Laws: Ord. No. 435 (9-21-2026), zoning map amendment only",
+    "checks": [
+      "An in-law suite is a special exception in R-175, R-130, R-100 and RR (145-30.1A, 145-34.1A, 145-38.1A, 145-202.1A), heard by the Zoning Hearing Board under 145-157B",
+      "An in-law suite is 'A self-contained attached residential dwelling unit resulting from the conversion of an existing single-family detached dwelling into two dwelling units and inhabited by persons related by blood, marriage or adoption to the owners who live in the primary dwelling unit' (145-5)",
+      "'The second housekeeping unit shall be a maximum of 40% of the size of the primary housekeeping unit and no larger than 1,000 square feet' (145-157B(3)(a))",
+      "At most two occupants, and 'The age restrictions of the Fair Housing Act, Subpart E, Housing for Older Persons, shall apply' (145-157B(3)(b))",
+      "The owner lives in one of the units (145-157B(1)). Only in a single-family detached dwelling (145-157B(3)(e))",
+      "'It shall be attached and shall not have a separate entrance' (145-157B(3)(c)). The definition and 145-157B(5)(b) speak of outside access and entrances on the side or rear",
+      "A recorded agreement requires the suite's kitchen to be removed when the approved occupants no longer use it (145-157B(3)(d))",
+      "An addition may be built to create the suite if the yard and building coverage rules are kept (145-157B(4))",
+      "One extra all-weather off-street space for the suite, beyond the two for the house (145-157B(6), 145-123)",
+      "R-50, VC, C, LI, I, IN and RE do not list an in-law suite",
+      "In R-130 special exception uses need a 40,000 sq ft lot and no accessory structures (145-35.1). Whether that reaches an in-law suite is not settled",
+      "Every dwelling needs at least 1,200 sq ft of habitable floor area (145-24). The code does not say how this fits a suite capped at 1,000 sq ft",
+      "Accessory buildings: 600 sq ft in R-50, R-100 and VC, 800 sq ft in R-130, R-175 and RR, or 25% of the principal building if greater, 14 ft and one story, not in the front yard (145-18D)",
+      "A lot of record below the minimum needs a Zoning Hearing Board variance to be built on (145-13). A lawfully created nonconforming lot may be used for a permitted purpose if the other rules are met (145-139.1)"
+    ],
+    "notes": "Zoning office: Franconia Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were the in-law suite definition and listings, 145-157, the two-family duplex definition and 145-192. Read: Article III, Article IV, the district articles V, VI, VII, VIII, XII, XIV, XV, XVI, XVII, XXVIII, XXIX, the overlays in Articles X (PO), XI (MRD), XIA (older adults) and XXVII (OSR), 145-123, 145-156, 145-157 and Article XXI. Read in part: 145-5 definitions (through 'Variance'), Article IX (145-46) and Article XXVIIA NOD (145-189.2, 145-189.3). Not read: Article I, Article XX (signs), XXII (administration and permits), XXIV, XXV, XXVI (natural resource standards), XXXI (day care), 145-162 and the zoning map. The PFL overlay named in 145-6 has no article. No section lets the Board hear a use the chapter does not list: 'all land shall be used in strict conformity with the requirements of this chapter' (145-10). Height is measured to the mid-span of the roof. The code sets building coverage and impervious coverage separately."
+  },
+  "adu": {
+    "term": {
+      "value": "in-law suite",
+      "section": "145-5, 145-157B",
+      "url": "https://ecode360.com/print/FR0973?guid=8789933",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Also called a 'second housekeeping unit' (145-5, 145-157B)"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "145-5 'In-law suite', 145-157B(3)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Only for people related to the owners who live in the main unit, at most two. A special exception from the Zoning Hearing Board"
+    },
+    "scope_districts": {
+      "value": [
+        "R-175",
+        "R-130",
+        "R-100",
+        "RR"
+      ],
+      "section": "145-30.1A, 145-34.1A, 145-38.1A, 145-202.1A, 145-157B",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "145-42, 145-64, 145-76, 145-81, 145-97, 145-103, 145-192",
+      "url": "https://ecode360.com/print/FR0973?guid=8790407",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "R-50, VC, C, LI, I, IN and RE do not list an in-law suite"
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "145-5 'In-law suite', 145-157B(3)(c)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "An in-law suite is 'A self-contained attached residential dwelling unit'. 'The second housekeeping unit shall be an integral part of the structure ... It shall be attached'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "145-30.1A, 145-34.1A, 145-38.1A, 145-202.1A, 145-156F, 145-157",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board special exception under the general standards of 145-157A and the in-law suite standards of 145-157B"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "145-156E",
+      "url": "https://ecode360.com/print/FR0973?guid=8791426",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the five findings of 145-156E(1). No section read bars a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling, duplex or twin (VC)",
+          "path": "by_right",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "VC permits 'One two-family detached dwelling, being either a two-family duplex or a single-family semidetached dwelling' as one of its uses, 'for any one of the following purposes and no other' (145-192E). A two-family duplex has 'two separate living units, one over the other' (145-5). Lot 17,500 sq ft, 75 ft wide, front 10 to 25 ft, sides 10 ft (30 ft together), rear 20 ft, building coverage 30%, impervious 70%, public water and sewer. Two spaces per unit (145-123)",
+          "min_lot_sqft": 17500,
+          "section": "145-192E, 145-195, 145-197A, 145-123",
+          "url": "https://ecode360.com/print/FR0973?guid=8791975",
+          "confidence": "verified",
+          "note": "Whether adding a unit over or under an existing house is read as this use is not said"
+        },
+        {
+          "name": "Apartments within an existing structure (VC)",
+          "path": "by_right",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "'Apartments within an existing structure' are a by-right use in VC (145-192F), which 145-190C ties to the conversion of existing buildings that keeps their character. Lot 17,500 sq ft, public water and sewer. Multiple-family dwellings need two spaces per unit (145-123)",
+          "min_lot_sqft": 17500,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "The building already stands",
+              "section": "145-192F"
+            }
+          ],
+          "section": "145-190C, 145-192F, 145-195",
+          "url": "https://ecode360.com/print/FR0973?guid=8791975",
+          "confidence": "secondary",
+          "note": "The code does not say how many apartments, or whether one apartment beside the owner's home qualifies"
+        },
+        {
+          "name": "Two-family duplex in a Mixed Residential development (MRD overlay)",
+          "path": "by_right",
+          "districts": null,
+          "overlays": [
+            "MRD"
+          ],
+          "conditions": "A mixed dwelling residential development in the MRD overlay may include two-family duplexes (145-60A(1)(e)). The tract must be at least 20 acres in one ownership, with public sewer and water, at least three dwelling types, at most 20% two-family dwellings and four units per developable acre. A duplex lot is 9,100 sq ft (145-61A(7), 145-62)",
+          "min_lot_sqft": 871200,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "145-59, 145-60A, 145-61A(7), 145-62A, D, E",
+          "url": "https://ecode360.com/print/FR0973?guid=8790504",
+          "confidence": "secondary",
+          "note": "A development of a whole tract, not a second unit on one house lot. The code does not name the approval path for the development in 145-60"
+        }
+      ],
+      "section": "145-192E, F, 145-60A",
+      "url": "https://ecode360.com/print/FR0973?guid=8791975",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-175",
+        "R-130",
+        "R-100",
+        "RR"
+      ],
+      "section": "145-157B",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "145-157B(3)(e)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'This use shall be limited to single-family detached dwellings'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 145",
+      "url": "https://ecode360.com/FR0973/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20relative%20OR%20%22relative%20quarters%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-50",
+        "VC",
+        "C",
+        "LI",
+        "I",
+        "IN",
+        "RE"
+      ],
+      "section": "145-42, 145-192, 145-64, 145-76, 145-81, 145-97, 145-103",
+      "url": "https://ecode360.com/print/FR0973?guid=8790407",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "R-50 permits one single-family detached dwelling and mobile home developments by conditional use. VC permits one house, one two-family dwelling or apartments in an existing structure. C, LI, I, IN and RE list no dwelling"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The people in the suite must be related by blood, marriage or adoption to the owners who live in the main unit. At most two people may live in the suite.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "145-5 'In-law suite', 145-157B(3), (3)(b)",
+          "url": "https://ecode360.com/print/FR0973?guid=8791443"
+        },
+        {
+          "kind": "age",
+          "condition": "'The age restrictions of the Fair Housing Act, Subpart E, Housing for Older Persons, shall apply' to the suite's occupants. The code gives no age in its own words.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "145-157B(3)(b)",
+          "url": "https://ecode360.com/print/FR0973?guid=8791443"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The owner of the house must live in one of the two units.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "145-157B(1)",
+          "url": "https://ecode360.com/print/FR0973?guid=8791443"
+        },
+        {
+          "kind": "building_type",
+          "condition": "Only in a single-family detached dwelling.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "145-157B(3)(e)",
+          "url": "https://ecode360.com/print/FR0973?guid=8791443"
+        },
+        {
+          "kind": "design",
+          "condition": "The suite is an integral part of the house with an interior connection, so the rooms can return to the house later. 'It shall be attached and shall not have a separate entrance.' The Zoning Officer decides whether the design complies. The house keeps the look of a single-family detached dwelling: no more entrances on the front than before, no new front exterior stairs, few window changes.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "145-157B(3)(c), (5)",
+          "url": "https://ecode360.com/print/FR0973?guid=8791443",
+          "disputed_by": {
+            "section": "145-5 'In-law suite', 145-157B(5)(b)",
+            "url": "https://ecode360.com/print/FR0973?guid=8791443",
+            "note": "the definition asks for 'direct access to the outdoors or to a hall from which there is direct access to the outdoors', and (5)(b) speaks of 'All other entrances to either the principal or accessory dwelling units', which suggests the suite may have its own side or rear entrance"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "The owner signs an agreement with the township, recorded with the County Recorder of Deeds, to remove the suite's kitchen as soon as the person or people it was approved for no longer use it. Floor plans, elevations and a site sketch go to the Zoning Hearing Board.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "145-157B(3)(d), (8)",
+          "url": "https://ecode360.com/print/FR0973?guid=8791443"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Where the house uses on-site sewer or water, the applicant shows the Zoning Hearing Board that both units together will not exceed the system's design capacity, or submits approvals to expand it. The Sewage Enforcement Officer reviews any sewer connection.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "145-157B(7)(b)",
+          "url": "https://ecode360.com/print/FR0973?guid=8791443"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Special exception uses in R-130 need a lot of 40,000 sq ft for every principal building erected or used, side yards of 25 ft, and no accessory structures.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "R-130"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 40000,
+          "section": "145-35.1A, C, F",
+          "url": "https://ecode360.com/print/FR0973?guid=8790281",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "145-157B(4)",
+            "url": "https://ecode360.com/print/FR0973?guid=8791443",
+            "note": "the in-law suite rules ask only that the yard and building coverage requirements be maintained, and the suite sits in an existing house, so 145-35.1 may be meant for new special exception buildings"
+          }
+        },
+        {
+          "kind": "lot_size",
+          "condition": "For special exception uses in R-175 'The dimensional regulations shall be as per § 145-97' (145-31.1). 145-97 lists the IN district's special exception uses, not figures. The IN figures in 145-98 call for five acres, 50 ft side yards and a 100 ft front yard. Whether any of this reaches an in-law suite is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-175"
+          ],
+          "building_types": null,
+          "section": "145-31.1, 145-97, 145-98",
+          "url": "https://ecode360.com/print/FR0973?guid=8790240",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A lot inside a cluster or open space development (R-130 cluster option, RR conditional use lots, OSR or NOD overlay) follows that development's figures, for example 15,000 to 20,000 sq ft lots in the R-130 cluster and 35,000 sq ft lots in RR.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-130",
+            "RR",
+            "R-175",
+            "R-100"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "145-35.2, 145-204, 145-187, 145-189.3",
+          "url": "https://ecode360.com/print/FR0973?guid=8790281"
+        }
+      ],
+      "section": "145-157B, 145-35.1, 145-31.1",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "145-5 'In-law suite', 145-157B(3)(c), (4)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A conversion of the existing house. 'Additions to an existing dwelling designed to allow the creation of an in-law suite in that dwelling shall be permitted' when the yard and building coverage rules are kept"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1000,
+      "section": "145-157B(3)(a)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'No larger than 1,000 square feet'"
+    },
+    "max_share_of_house_and_unit": {
+      "value": 0.2857,
+      "section": "145-157B(3)(a)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'A maximum of 40% of the size of the primary housekeeping unit.' Held as 2/7 of the house and the suite together, which equals 40% of the main unit that remains"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "145-157B(3)(c), (4)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "The suite is part of the house, so the principal building height applies"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "145-5 'In-law suite', 145-157B(3)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "People related by blood, marriage or adoption to the owners who live in the main unit, at most two, under the Fair Housing Act rules for housing for older persons.",
+      "section": "145-5, 145-157B(3)(b)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": true,
+      "section": "145-157B(1)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The owner(s) of the residence in which the in-law suite is created shall occupy at least one of the dwelling units'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "145-157B(3)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Two housekeeping units' in the house"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "145-157B(6)",
+      "url": "https://ecode360.com/print/FR0973?guid=8791443",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'A minimum of one all-weather off-street parking space, with unrestricted ingress and egress to the street, shall be provided for the in-law suite, in addition to that required for the original dwelling unit'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "145-157B(6), 145-123",
+      "url": "https://ecode360.com/print/FR0973?guid=8791139",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Two spaces per single-family detached unit plus one for the suite"
+    }
+  },
+  "districts": {
+    "R-175": {
+      "min_lot_sqft": {
+        "value": 60000,
+        "section": "145-31A",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 175 ft at the building setback line. Public water and public sewerage (145-32A). An accessory structure stands within the building envelope (145-31G)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "145-31C",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the ultimate right-of-way. A corner lot has a front yard on every street, and the other yards are rear yards"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "145-31D",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side. 80 ft for both sides together"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "145-31E",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "145-31H",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "145-31I",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "145-31J",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the mean elevation of the finished grade around the building to the mid-span of the roof (145-5 'Height of building')"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "145-31J",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 80,
+        "section": "145-31D",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "145-31J(2)",
+        "url": "https://ecode360.com/print/FR0973?guid=8790240",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "One story at most"
+      }
+    },
+    "R-130": {
+      "min_lot_sqft": {
+        "value": 35000,
+        "section": "145-35A",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 130 ft at the building setback line. By-right figures. Special exception uses need 40,000 sq ft and 25 ft side yards (145-35.1). Public water and public sewerage (145-36A)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "145-35C",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the ultimate right-of-way. A corner lot has a front yard on every street, and the other yards are rear yards"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "145-35D",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side. 50 ft for both sides together"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "145-35E",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "145-35H",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "145-35I",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "145-35J",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the mean elevation of the finished grade around the building to the mid-span of the roof (145-5 'Height of building')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "145-35J",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 50,
+        "section": "145-35D",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "145-35J(2)",
+        "url": "https://ecode360.com/print/FR0973?guid=8790281",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "One story at most"
+      }
+    },
+    "R-100": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "145-39A",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 100 ft at the building setback line. These figures apply to all uses unless the special exception rules set greater ones (145-39). Public water and public sewerage (145-40A)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "145-39C",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the ultimate right-of-way. A corner lot has a front yard on every street, and the other yards are rear yards"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "145-39D",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side. 40 ft for both sides together"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "145-39E",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "145-39H",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "145-39I",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "145-39J",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the mean elevation of the finished grade around the building to the mid-span of the roof (145-5 'Height of building')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "145-39J",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 40,
+        "section": "145-39D",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "145-39J(2)",
+        "url": "https://ecode360.com/print/FR0973?guid=8790371",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "One story at most"
+      }
+    },
+    "R-50": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "145-43A",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 100 ft at the building setback line. Public water and public sewerage (145-44A)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "145-43C",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the ultimate right-of-way. A corner lot has a front yard on every street, and the other yards are rear yards"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "145-43D",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side. 40 ft for both sides together"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "145-43E",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "145-43H",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "145-43I",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "145-43J",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the mean elevation of the finished grade around the building to the mid-span of the roof (145-5 'Height of building')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "145-43J",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 40,
+        "section": "145-43D",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "145-43J(2)",
+        "url": "https://ecode360.com/print/FR0973?guid=8790407",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "One story at most"
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 174240,
+        "section": "145-203A",
+        "url": "https://ecode360.com/print/FR0973?guid=8792058",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 200 ft at the building setback line. Four acres. A lot made nonconforming in size when RR was created (1-16-2006) follows the R-175 figures (145-200.1). Lots in a conditional use subdivision follow 145-204 (35,000 sq ft)."
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "145-203C",
+        "url": "https://ecode360.com/print/FR0973?guid=8792058",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the ultimate right-of-way. A corner lot has a front yard on every street, and the other yards are rear yards"
+      },
+      "setback_side_ft": {
+        "value": 75,
+        "section": "145-203D",
+        "url": "https://ecode360.com/print/FR0973?guid=8792058",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 100,
+        "section": "145-203E",
+        "url": "https://ecode360.com/print/FR0973?guid=8792058",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.05,
+        "section": "145-203H",
+        "url": "https://ecode360.com/print/FR0973?guid=8792058",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.1,
+        "section": "145-203I",
+        "url": "https://ecode360.com/print/FR0973?guid=8792058",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 65,
+        "section": "145-203J",
+        "url": "https://ecode360.com/print/FR0973?guid=8792058",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the mean elevation of the finished grade around the building to the mid-span of the roof (145-5 'Height of building')"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "145-203J",
+        "url": "https://ecode360.com/print/FR0973?guid=8792058",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 17500,
+        "section": "145-195A",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 75 ft at the building setback line. Public water and public sewerage (145-197A)."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "145-195C",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "At least 10 ft and not more than 25 ft"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "145-195D",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side. 30 ft for both sides together"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "145-195E",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "145-195H",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.7,
+        "section": "145-195I",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "145-195J",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the mean elevation of the finished grade around the building to the mid-span of the roof (145-5 'Height of building')"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "145-195J",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "145-195D",
+        "url": "https://ecode360.com/print/FR0973?guid=8791975",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    }
+  }
+}

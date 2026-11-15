@@ -1307,6 +1307,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2025-12-10",
         "note": "Zoning: Chapter 310 Zoning (Ord. No. 2009-09, 11-11-2009, as amended). No ADU text. Multifamily or two-family conversion of an existing house by special exception in R-1 and R-2 (8,000 sq ft of lot per unit, public sewer and water, no change to the original style, 310-66) and by right in A-O, where 310-66 does not apply. Two-family dwelling by right in R-2. Single-family residence with another permitted use in A-O and C, caretaker or watchman dwelling in IP. Unlisted uses by special exception where similar uses are allowed (310-5B). Lot coverage is impervious cover (310-3C). New Laws: none. Read in the browser on eCode360 (SP2461).",
     },
+    "4201910464": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/12072159",
+        "plain_fetch": False,
+        "current_through": "2026-05-28",
+        "note": "Zoning: Chapter 260 Zoning (adopted 2-19-1987 as Part 13 of the 1987 Codified Ordinances, as amended). No ADU text. Each district permits its listed uses only. The Zoning Hearing Board may not grant a use variance (260-132C(4)). R-1 allows one dwelling unit per lot (260-16A). Conversion of a house that existed before the chapter to two units is a permitted use in R-2 and R-3 with no Board review (450 sq ft per unit, 3,000 sq ft lot with no addition, 260-20C, 260-29D, 260-132D(4)). Two-family dwellings by right in R-2, R-3 and R-O. Units in an accessory building count toward the district's unit cap (260-10L, N). The use table and the bulk and lot-area-per-unit tables are PDF attachments, but each district article sets its uses and figures in text. New Laws: none on zoning. Read in the browser on eCode360 (BU1538).",
+    },
+    "4201102328": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/34014197",
+        "plain_fetch": False,
+        "current_through": "2026-03-18",
+        "note": "Zoning: Chapter 32 Zoning (Ord. No. 130, 12-9-1991, as amended). ADU text: 'Family member suites' (32-957, Ord. No. 311 of 2-6-2019), by right in RC, LDR, MDR and RV, by conditional use in PBOI only in a dwelling that existed in 2019. For a father, mother, parent-in-law, step-parent or grandparent of the resident, at most two people, inside or attached to a single-family dwelling, never in an accessory structure, at most 800 sq ft and one bedroom, shared utilities, one extra parking space, zoning permit renewed every two years. Conversion of a large house to two units by special exception in RC, LDR, MDR and RV (32-904). Unlisted dwelling types by conditional use (32-949). The only attachment is the zoning map. New Laws: none on zoning. Read in the browser on eCode360 (AM1620).",
+    },
+    "4209127280": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/8789917",
+        "plain_fetch": False,
+        "current_through": "2026-07-20",
+        "note": "Zoning: Chapter 145 Zoning (Ord. No. 33, 5-2-1966, 'Zoning Ordinance of 1953, Revised', as amended through Ord. No. 434 of 7-20-2026). ADU text: 'In-law suite' (second housekeeping unit), a special exception in R-175, R-130, R-100 and RR under 145-157B: in an owner-occupied single-family detached dwelling, for relatives of the owners, at most two occupants under the Fair Housing Act older persons rules, at most 40% of the main unit and 1,000 sq ft, attached with an interior connection and no separate entrance, recorded removal agreement, one extra parking space. R-130 special exception uses need 40,000 sq ft (145-35.1). VC permits one two-family dwelling or apartments in an existing structure by right (145-192). No PDF use or dimension tables. New Laws: Ord. No. 435 (9-21-2026), zoning map only. Read in the browser on eCode360 (FR0973).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1335,6 +1356,7 @@ FIXED_BATCH.update({g: 27 for g in ("4200360272", "4204554224", "4212511800")})
 FIXED_BATCH.update({g: 28 for g in ("4201781144", "4202982544", "4209171016")})
 FIXED_BATCH.update({g: 29 for g in ("4212931200", "4204553104", "4201761616")})
 FIXED_BATCH.update({g: 30 for g in ("4209121600", "4200372400", "4213373168")})
+FIXED_BATCH.update({g: 31 for g in ("4201910464", "4201102328", "4209127280")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1460,6 +1482,17 @@ EXTRAS = {
     "4209121600": "Code 205-16B(4) relative quarters, family only",
     "4200372400": "batch 30 by population. Code Chapter 137 has no ADU text",
     "4213373168": "batch 30 by population. Code Chapter 310 has no ADU text (two-family conversion by special exception, 310-66)",
+    # Batch 31 (2026-11-15): the next towns by population without a rule file. Derry (Westmoreland) was skipped (no
+    # municipal zoning, only a 2024 solar ordinance), Salisbury (Lehigh) (tables of permitted uses and of lot and setback
+    # requirements only in PDF attachments, and Ord. No. 08-2026-686 amending zoning not yet codified), Hopewell (Beaver)
+    # (no zoning code found as web text; eCode360 HO3808 is Hopewell, Washington County, and HO3815 Hopewell, York
+    # County), Coatesville (residential use table and every district's lot, bulk and coverage table only in PDF
+    # attachments), Kingston (Luzerne) (Ord. No. 2023-4, a comprehensive zoning revision, and a later Chapter 181
+    # amendment not yet codified) and Pottsville (use and lot schedules only in PDF attachments, and Ord. No. 954 of
+    # 9-14-2026 amending zoning not yet codified).
+    "4201910464": "batch 31 by population. Code Chapter 260 has no ADU text (use variance barred, 260-132C(4))",
+    "4201102328": "Code 32-957 family member suites",
+    "4209127280": "Code 145-157B in-law suite by special exception",
 }
 
 if __name__ == "__main__":
