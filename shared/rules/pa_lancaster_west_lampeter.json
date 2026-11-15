@@ -1,0 +1,884 @@
+{
+  "provenance": {
+    "jurisdiction": "West Lampeter township",
+    "instrument": "West Lampeter Township Code Chapter 285 Zoning (Ord. No. 270, adopted 6-5-2024), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-11-10 (breadcrumb). Chapter 285 adopted 6-5-2024 by Ord. No. 270, which repealed the 2006 zoning chapter. New Laws on 2026-11-14: none.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/WE2002/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20%22accessory%20living%22%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20relative%20OR%20relatives%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20%22housekeeping%20unit%22%20OR%20%22family%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE2002/search?query=%22accessory%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE2002/search?query=%22conversion%20apartment%22%20OR%20%22duplex%20dwelling%22%20OR%20%22two-family%22%20OR%20%22not%20specifically%22%20OR%20%22unnecessary%20hardship%22%20OR%20%22two%20single-family%22%20OR%20%22immediate%20family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE2002/search?query=%22accessory%20apartment%22%20OR%20%22neighborhood%20development%22%20OR%20%22carriage%20house%22%20OR%20%22granny%20flat%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/WE2002?guid=45552787",
+      "https://ecode360.com/print/WE2002?guid=45551551",
+      "https://ecode360.com/print/WE2002?guid=45551665",
+      "https://ecode360.com/print/WE2002?guid=45551714",
+      "https://ecode360.com/print/WE2002?guid=45551758",
+      "https://ecode360.com/print/WE2002?guid=45551801",
+      "https://ecode360.com/print/WE2002?guid=45551880",
+      "https://ecode360.com/print/WE2002?guid=45552302",
+      "https://ecode360.com/print/WE2002?guid=45550843",
+      "https://ecode360.com/print/WE2002?guid=45553566",
+      "https://ecode360.com/print/WE2002?guid=45553417",
+      "https://ecode360.com/print/WE2002?guid=45551006",
+      "https://ecode360.com/print/WE2002?guid=45551177",
+      "https://ecode360.com/print/WE2002?guid=45551366",
+      "https://ecode360.com/print/WE2002?guid=45551280",
+      "https://ecode360.com/print/WE2002?guid=45551186",
+      "https://ecode360.com/11694778",
+      "https://ecode360.com/WE2002/laws"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Lancaster",
+    "municipality_type": "township",
+    "geoid": "4207183256",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11694778",
+    "code_current_through": "2025-11-10",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-11-10'. Chapter 285 history: adopted 6-5-2024 by Ord. No. 270.",
+    "checks": [
+      "'Accessory dwelling unit' is a special exception (Zoning Hearing Board) in the A, C, RR, R-1, R-2 and R-3 districts (285-35C to 285-39C, 285-41C)",
+      "One ADU per single-family detached dwelling, for use by a relative (spouse, sibling, parent, child, grandparent, great-grandparent, grandchild, great-grandchild, uncle, aunt, niece, nephew, sibling-in-law, parent-in-law or first cousin) (285-49D(1)(a), 285-33)",
+      "The owner lives in the house or the ADU. Annual written certification with a fee, a recorded agreement limiting occupancy, and the permit ends when the owner or relatives leave or the property is sold. Then the ADU is reconverted into the house or removed (285-49D(1)(b), (c), (i), (j), (l))",
+      "Contained in or attached to the house, which keeps the look of a single-family detached dwelling. Added entrances on the side or rear (285-49D(1)(e), (f))",
+      "At most 40% of the house's total floor area or 800 sq ft, whichever is less, and two bedrooms (285-49D(1)(g)). In the A district a larger ADU, up to 60% or 1,200 sq ft, whichever is less, is a conditional use from the Board of Supervisors (285-49D(1)(m))",
+      "The definition of dwelling unit asks for at least 800 sq ft of habitable floor area (285-33). Read together with the 800 sq ft cap, an ADU that counts as a dwelling unit would need exactly 800 sq ft and a house of at least 2,000 sq ft. Ask the zoning officer",
+      "One more off-street parking space for the ADU, beside the house's two (285-49D(1)(d), 285-27)",
+      "Any on-lot sewage system is certified by the Sewage Enforcement Officer with the ADU added (285-49D(1)(h))",
+      "R-1, R-2 and R-3 lot sizes and side yards depend on public water and sewer (285-37E to 285-39E)",
+      "Conversion of a house that existed on March 14, 1978 into a two-family dwelling is a separate special exception: listed in R-3, and named in 285-48A(16) for RR, TV and MS. Lot area doubles, 800 sq ft per unit, three parking spaces per unit (285-39C(1)(c), 285-48A(16))",
+      "Duplex dwellings are permitted in R-2 and R-3. In the A district a lot may hold two single-family detached dwellings if each could be subdivided onto its own conforming lot (285-19B(2)(b))",
+      "Elsewhere relief is a Zoning Hearing Board variance (285-60.1D(3)). The unlisted-use special exception (285-64B) reaches only uses listed in no district, so not an ADU"
+    ],
+    "notes": "Zoning office: West Lampeter Township Zoning Officer. eCode360 code WE2002 is West Lampeter Township (the only West Lampeter in Pennsylvania, in Lancaster County). Read on eCode360 in a browser, one page at a time, on 2026-11-14. Code search (all content) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'sleeping quarters', 'immediate family', 'accessory living', 'guest house', 'tenant house', caretaker, relative, relatives, 'family member', 'living quarters', 'housekeeping unit' and 'family dwelling' found the ADU listings and definitions. A search for 'accessory dwelling unit' found the six district sections and 285-49. A search for 'conversion apartment', 'duplex dwelling', 'two-family', 'not specifically', 'unnecessary hardship', 'two single-family' and 'immediate family' found 285-48A(16), 285-19, 285-64 and 285-60.1. A search for 'accessory apartment', 'neighborhood development', 'carriage house' and 'granny flat' found 'accessory apartment' only in the parking table (285-27: 'Single-family detached dwelling with an accessory apartment within a neighborhood development', 3 spaces for the two units), with no section that permits such an apartment. Read in full: 285-19, 285-35 to 285-39, 285-41, 285-48A(16), 285-49, 285-64, definitions of dwelling types, dwelling unit, related or relative, lot coverage. Read in part: 285-27, 285-60.1. Not read: TV (285-40), MS (285-43) and the commercial and industrial districts (search excerpts only: TV and I/M list single-family dwellings, no ADU), the special exception criteria in 285-6 and Article VIII, the district summary attachments and the zoning map (PDF)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit (ADU)",
+      "section": "285-49D(1)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One ADU may be permitted per principal single-family detached dwelling for use by a relative.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "285-49D(1)(a), 285-35C(2)(a), 285-36C(2)(a), 285-37C(2)(a), 285-38C(2)(a), 285-39C(2)(a), 285-41C(2)(a)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "For a relative, by special exception from the Zoning Hearing Board in six districts."
+    },
+    "scope_districts": {
+      "value": [
+        "A",
+        "C",
+        "RR",
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "285-35C(2)(a), 285-36C(2)(a), 285-37C(2)(a), 285-38C(2)(a), 285-39C(2)(a), 285-41C(2)(a)",
+      "url": "https://ecode360.com/WE2002/search?query=%22accessory%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code search finds the ADU listing only in these six district sections."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "285-40, 285-43 to 285-46",
+      "url": "https://ecode360.com/WE2002/search?query=%22accessory%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "The other districts do not list an ADU (search). TV and I/M list single-family dwellings."
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "285-49D(1)(e)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'An ADU must be contained in, or attached to, the principal dwelling.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "285-35C(2)(a), 285-36C(2)(a), 285-37C(2)(a), 285-38C(2)(a), 285-39C(2)(a), 285-41C(2)(a)",
+      "url": "https://ecode360.com/print/WE2002?guid=45551665",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Listed under 'Special exception uses ... (2) Accessory: (a) Accessory dwelling unit' in each of the six districts. The A district also allows a larger ADU by conditional use (285-49D(1)(m))."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "285-60.1D(3)",
+      "url": "https://ecode360.com/print/WE2002?guid=45553417",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The Board shall hear requests for variances filed with the Township staff in writing', with the hardship standards that follow."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion apartment: a house that existed on March 14, 1978, converted into a two-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Zoning Hearing Board special exception. The single-family detached dwelling existed on March 14, 1978. Lot area at least the district minimum times the number of families. Each unit at least 800 sq ft of habitable floor area. No external alteration except for safety. At least three parking spaces per dwelling unit. Drawings and agency certificates where a family lives above the ground floor. On-lot sewage capacity shown and reviewed by the Sewage Enforcement Officer. No family or owner rule.",
+          "min_lot_sqft": 14000,
+          "min_lot_by_utility": [
+            {
+              "when": "Public water and sewer",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 14000
+            },
+            {
+              "when": "Without public water or sewer ('On-lot' row)",
+              "public_sewer": false,
+              "min_lot_sqft": 87120
+            },
+            {
+              "when": "Without public water ('On-lot' row)",
+              "public_water": false,
+              "min_lot_sqft": 87120
+            }
+          ],
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1978-03-14",
+              "condition": "A single-family detached dwelling existing on March 14, 1978",
+              "section": "285-48A(16)(a)"
+            }
+          ],
+          "disputed_path": {
+            "path": "special_exception",
+            "section": "285-48A(16)(a)",
+            "url": "https://ecode360.com/print/WE2002?guid=45552302",
+            "note": "285-48A(16)(a) names the RR, TV and MS Districts, but the RR use list (285-36) does not list conversion apartments. Only the R-3 use list names it (285-39C(1)(c)). Ask the zoning officer which districts it reaches."
+          },
+          "section": "285-39C(1)(c), 285-48A(16), 285-33 'Dwelling types' A",
+          "url": "https://ecode360.com/print/WE2002?guid=45552302",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Lot figures are twice the R-3 minimum (7,000 sq ft with public water and sewer, 1 acre on-lot)"
+        },
+        {
+          "name": "Duplex dwelling in R-2 or R-3",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "A duplex is 'A building that includes two dwelling units and which is not a twin dwelling', typically one unit above the other. Permitted in R-2 and R-3 (in R-3 fewer than 10 units). Ten or more new dwellings need a conditional use. Each dwelling unit needs 800 sq ft of habitable floor area and two parking spaces.",
+          "min_lot_sqft": null,
+          "section": "285-38B(1)(c), 285-39B(1)(c), 285-33 'Dwelling types' B, 'Dwelling unit', 285-27",
+          "url": "https://ecode360.com/print/WE2002?guid=45551758",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. The district tables give no separate lot figure for a duplex. Whether adding a unit to an existing house is read as this use is not said"
+        },
+        {
+          "name": "Second single-family detached dwelling on an A district lot",
+          "path": "by_right",
+          "districts": [
+            "A"
+          ],
+          "conditions": "A lot in the A District may include two single-family detached dwellings if each could later be subdivided onto its own conforming lot (lot area, yards and width). Each dwelling lot needs 35,000 sq ft, 200 ft of width and yards of 50, 25 and 50 ft. The tract's quota of new principal uses (285-35L) also applies.",
+          "min_lot_sqft": 70000,
+          "section": "285-19B(2)(b), 285-35E, G, J(2), L",
+          "url": "https://ecode360.com/print/WE2002?guid=45550843",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A second house, not an accessory unit. The 70,000 sq ft figure is two 35,000 sq ft lots, a reading"
+        }
+      ],
+      "section": "285-19, 285-38, 285-39, 285-48A(16)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552302",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "A",
+        "C",
+        "RR",
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "285-35C(2)(a), 285-36C(2)(a), 285-37C(2)(a), 285-38C(2)(a), 285-39C(2)(a), 285-41C(2)(a)",
+      "url": "https://ecode360.com/WE2002/search?query=%22accessory%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "285-49D(1)(a), 285-33 'Dwelling types' E",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'per principal single-family detached dwelling'."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 285",
+      "url": "https://ecode360.com/WE2002/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20%22accessory%20living%22%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20relative%20OR%20relatives%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20%22housekeeping%20unit%22%20OR%20%22family%20dwelling%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No historic path found."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "For use by a relative: spouse, brother, sister, parent, child, grandparent, great-grandparent, grandchild, great-grandchild, uncle, aunt, niece, nephew, sister-in-law, brother-in-law, parent-in-law or first cousin (blood, marriage, adoption or formal foster relationship). Not second or more distant cousins.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "285-49D(1)(a), 285-33 'Related or relative'",
+          "url": "https://ecode360.com/print/WE2002?guid=45552787"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The owner lives in the house or the ADU as the owner's primary residence. Each year the owner certifies compliance in writing with a fee. A recorded agreement with the Township limits occupancy. The permit is revoked automatically when the owner or the relatives move out or the property is sold, and a new owner must apply again. If the rules are not met the ADU is reconverted into the house or removed.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "285-49D(1)(b), (c), (i), (j), (l)",
+          "url": "https://ecode360.com/print/WE2002?guid=45552787"
+        },
+        {
+          "kind": "design",
+          "condition": "Contained in, or attached to, the principal dwelling. The building keeps the appearance of a single-family detached dwelling, and any added entrances or exits are on the side or rear. At most two bedrooms.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "285-49D(1)(e), (f), (g)",
+          "url": "https://ecode360.com/print/WE2002?guid=45552787"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Any on-lot sewage system is certified by the Sewage Enforcement Officer to meet all requirements with the ADU added.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "285-49D(1)(h)",
+          "url": "https://ecode360.com/print/WE2002?guid=45552787"
+        }
+      ],
+      "section": "285-49D(1)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "285-49D(1)(e)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'contained in, or attached to, the principal dwelling'."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 800,
+      "section": "285-49D(1)(g)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'shall not exceed 40% of the principal dwelling total floor area or more than 800 square feet, whichever is less, nor have more than two bedrooms.' In A, up to 60% or 1,200 sq ft by conditional use (285-49D(1)(m))."
+    },
+    "max_share_of_house": {
+      "value": 0.4,
+      "section": "285-49D(1)(g)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Whichever is less of 40% and 800 sq ft."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "285-49D(1)(k)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The addition conforms to all other zoning requirements."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "285-49C, 285-49D(17)(a)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Accessory structures shall not be located within a front yard'. The ADU itself must be in or attached to the house."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "285-49D(1)(b)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The owner of the property must occupy either the principal dwelling or the ADU as the owner's primary residence.'"
+    },
+    "family_only": {
+      "value": true,
+      "section": "285-49D(1)(a)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "A relative: spouse, brother, sister, parent, child, grandparent, great-grandparent, grandchild, great-grandchild, uncle, aunt, niece, nephew, sister-in-law, brother-in-law, parent-in-law or first cousin. Not second or more distant cousins.",
+      "section": "285-49D(1)(a), 285-33",
+      "url": "https://ecode360.com/print/WE2002?guid=45551366",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "285-49D(1)(a)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "285-49D(1)(d)",
+      "url": "https://ecode360.com/print/WE2002?guid=45552787",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One additional off-street parking space shall be provided for the ADU.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "285-27, 285-49D(1)(d)",
+      "url": "https://ecode360.com/print/WE2002?guid=45551006",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "A dwelling unit needs 2 spaces (285-27 table), plus one."
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 35000,
+        "section": "285-35E, J(2), K",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling: 35,000 sq ft minimum, two acres maximum (with exceptions, 285-35E(2)). Width 200 ft at the setback line, 150 ft at the frontage, depth 200 ft. New lots are limited by the tract quota of 285-35L."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "285-35E, J(2), K",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "285-35E, J(2), K",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 50,
+        "section": "285-35E, J(2), K",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Total of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "285-35E, J(2), K",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "285-35E, J(2), K",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Maximum permitted height: 35 feet' for single-family dwellings (285-35J(2)(d)). The table prints 2.5/40."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "285-35E, J(2), K",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "285-35E, J(2), K",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'20/' for residential in the table. Impervious coverage for single-family dwellings 20% (285-35K(2)). Lot requirements table 'Maximum Lot Coverage (Building/Maximum)'. Lot coverage counts buildings, patios, paths, pools and decks (285-33). The building figure is stored here."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "285-35J(4)",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "285-35J(4)",
+        "url": "https://ecode360.com/print/WE2002?guid=45551551",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "285-36E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family dwelling: 2 acres, 200 ft wide at the building setback."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "285-36E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "285-36E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "285-36E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Total of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "285-36E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "285-36E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'2.5/40' (stories/feet)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "285-36E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "285-36E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551665",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15/20. Lot requirements table 'Maximum Lot Coverage (Building/Maximum)'. Lot coverage counts buildings, patios, paths, pools and decks (285-33). The building figure is stored here."
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 130680,
+        "section": "285-41E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 acres, 250 ft wide at the building setback."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "285-41E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "285-41E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "285-41E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Total of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "285-41E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "285-41E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'2.5/40' (stories/feet)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "285-41E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "285-41E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551880",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "10/20. Lot requirements table 'Maximum Lot Coverage (Building/Maximum)'. Lot coverage counts buildings, patios, paths, pools and decks (285-33). The building figure is stored here."
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Public water and sewer': 15,000 sq ft, 100 ft wide. 'One public utility': 39,000 sq ft. 'On-lot': 1 acre. Yards are printed once and read as covering all three rows."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Total of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'2.5/40' (stories/feet)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "30/40. Lot requirements table 'Maximum Lot Coverage (Building/Maximum)'. Lot coverage counts buildings, patios, paths, pools and decks (285-33). The building figure is stored here."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public water nor public sewer ('On-lot')",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 15,
+            "note": "1 acre, 150 ft wide. Both side yards together 30 ft.",
+            "section": "285-37E"
+          },
+          {
+            "when": "Public water only ('One public utility')",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_side_ft": 15,
+            "note": "39,000 sq ft, 150 ft wide. Both side yards together 30 ft.",
+            "section": "285-37E"
+          },
+          {
+            "when": "Public sewer only ('One public utility')",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 39000,
+            "setback_side_ft": 15,
+            "note": "39,000 sq ft, 150 ft wide. Both side yards together 30 ft.",
+            "section": "285-37E"
+          }
+        ],
+        "section": "285-37E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551714",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Rows of the lot requirements table for lots without public water and public sewer."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Public water and sewer': 9,000 sq ft, 70 ft wide. 'One public utility': 39,000 sq ft. 'On-lot': 1 acre."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Total of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'2.5/40' (stories/feet)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "50/60. Lot requirements table 'Maximum Lot Coverage (Building/Maximum)'. Lot coverage counts buildings, patios, paths, pools and decks (285-33). The building figure is stored here."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public water nor public sewer ('On-lot')",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 15,
+            "note": "1 acre, 150 ft wide, side 15 ft, total 30 ft. Both side yards together 30 ft.",
+            "section": "285-38E"
+          },
+          {
+            "when": "Public water only ('One public utility')",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 39000,
+            "setback_side_ft": 8,
+            "note": "39,000 sq ft, 150 ft wide. Both side yards together 20 ft.",
+            "section": "285-38E"
+          },
+          {
+            "when": "Public sewer only ('One public utility')",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 39000,
+            "setback_side_ft": 8,
+            "note": "39,000 sq ft, 150 ft wide. Both side yards together 20 ft.",
+            "section": "285-38E"
+          }
+        ],
+        "section": "285-38E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551758",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Rows of the lot requirements table for lots without public water and public sewer."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Public water and sewer': 7,000 sq ft, 55 ft wide. 'On-lot': 1 acre, 150 ft wide. The table has no row for one public utility."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 15,
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Total of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'2.5/40' (stories/feet)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "50/60. Lot requirements table 'Maximum Lot Coverage (Building/Maximum)'. Lot coverage counts buildings, patios, paths, pools and decks (285-33). The building figure is stored here."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public water nor public sewer ('On-lot')",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 15,
+            "note": "1 acre, 150 ft wide. Both side yards together 30 ft.",
+            "section": "285-39E"
+          },
+          {
+            "when": "Public water only (no row, read as 'On-lot')",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 15,
+            "note": "The table has only 'On-lot' and 'Public water and sewer' rows. Both side yards together 30 ft.",
+            "section": "285-39E"
+          },
+          {
+            "when": "Public sewer only (no row, read as 'On-lot')",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 15,
+            "note": "The table has only 'On-lot' and 'Public water and sewer' rows. Both side yards together 30 ft.",
+            "section": "285-39E"
+          }
+        ],
+        "section": "285-39E",
+        "url": "https://ecode360.com/print/WE2002?guid=45551801",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Rows of the lot requirements table for lots without public water and public sewer."
+      }
+    }
+  }
+}

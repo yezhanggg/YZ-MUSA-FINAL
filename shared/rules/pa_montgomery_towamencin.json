@@ -1,0 +1,775 @@
+{
+  "provenance": {
+    "jurisdiction": "Towamencin township",
+    "instrument": "Towamencin Township Code Chapter 153 Zoning (Towamencin Township Zoning Ordinance of 1956, as amended by Ord. No. 95-10 and later ordinances), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-07-23 (breadcrumb). New Laws on 2026-11-14 list two uncodified zoning ordinances: Ord. No. 25-08 (2025-11-12, Zoning Amendment; Zoning Map Amendment) and Ord. No. 26-04 (2026-04-29, data center uses in LI). Neither was opened (PDF).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/14342710",
+      "https://ecode360.com/TO0773/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20%22housekeeping%20unit%22%20OR%20%22accessory%20living%22%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20relative&scope=all&sortOrder=relevance",
+      "https://ecode360.com/TO0773/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20%22accessory%20living%22%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20relative%20OR%20relatives%20OR%20%22family%20member%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/TO0773/search?query=%22accessory%20apartment%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/TO0773/search?query=%22residential%20conversion%22%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22twin%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/TO0773/search?query=historic%20OR%20%22planned%20residential%22%20OR%20%22age-restricted%22%20OR%20%22R-14%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/TO0773/search?query=%22unnecessary%20hardship%22%20OR%20%22not%20specifically%20permitted%22%20OR%20%22uses%20not%20listed%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/TO0773/search?query=dwelling%20OR%20accessory%20OR%20residential%20OR%20district%20OR%20amending&scope=law&sortOrder=relevance",
+      "https://ecode360.com/print/TO0773?guid=14342876",
+      "https://ecode360.com/print/TO0773?guid=14342898",
+      "https://ecode360.com/print/TO0773?guid=14342910",
+      "https://ecode360.com/print/TO0773?guid=14342922",
+      "https://ecode360.com/print/TO0773?guid=14342934",
+      "https://ecode360.com/print/TO0773?guid=14343079",
+      "https://ecode360.com/print/TO0773?guid=31077295",
+      "https://ecode360.com/print/TO0773?guid=14343244",
+      "https://ecode360.com/print/TO0773?guid=14343801",
+      "https://ecode360.com/print/TO0773?guid=14343748",
+      "https://ecode360.com/14343303",
+      "https://ecode360.com/print/TO0773?guid=14344738",
+      "https://ecode360.com/print/TO0773?guid=14344827",
+      "https://ecode360.com/print/TO0773?guid=14344826",
+      "https://ecode360.com/print/TO0773?guid=14344863",
+      "https://ecode360.com/print/TO0773?guid=14344659",
+      "https://ecode360.com/14342874",
+      "https://ecode360.com/TO0773/laws"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209177152",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14342706",
+    "code_current_through": "2025-07-23",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-07-23'. District sections amended to Ord. No. 24-03 (2-28-2024), R-175 to Ord. No. 25-03 (5-14-2025).",
+    "code_caution": "Two zoning ordinances adopted after the code date are listed as New Laws and were not read (PDF only): Ord. No. 25-08 (2025-11-12, Zoning Amendment and Zoning Map Amendment, its map exhibit names the Towamencin Village Overlay District and a Main Street Overlay District) and Ord. No. 26-04 (2026-04-29, data center uses in the LI district). A search of New Laws text for 'accessory apartment' and the other ADU words found nothing in them. The Table of Permitted Land Uses (153-400) is a PDF attachment and was not opened. The district sections were read instead.",
+    "checks": [
+      "'Accessory Apartment' (A-1) is a special exception from the Zoning Hearing Board in R-200, R-180, R-175 and R-125 ('For family member only'), and in the RBP Residential Business and Professional Overlay on a lot of at least 80,000 sq ft (153-401 to 153-404, 153-418A(5))",
+      "Occupied only by related family members, such as elderly parents or dependent adult children. The section's intent is to let immediate family members (spouse, child, parent, sibling) live on the premises and to bar for-profit apartments (153-502H(1), H(1)(d), 153-1301)",
+      "At most 800 sq ft of floor area. It may have its own kitchen, bedroom, living room and bathroom. One per single-family detached dwelling (153-502H(1)(a), (b), (f))",
+      "Part of the principal residence. Not in a basement and not in an accessory building. No exterior change that makes the house look like other than a single-family detached dwelling (153-502H(1)(c), (e))",
+      "Registered with the Township Zoning Officer. One more off-street parking space beyond the house's two (153-502H(1)(g), (h), 153-502F(1)(a))",
+      "No owner-occupancy rule is written in 153-502H(1)",
+      "R-175 and R-125 lots and yards depend on whether both public water and public sewer serve the lot. RBP uses need public water and public sewer (153-403, 153-404, 153-418C(1))",
+      "Residential conversion of an existing single-family dwelling into more units is a separate special exception in R-200, R-180, R-175, R-125, R-50 and VC: petition of 60% of the notified owners, 500 sq ft per unit, 75% of the district lot area per family, little economic usefulness as a conforming use, two parking spaces per unit (153-502F(10))",
+      "Duplex dwellings (one unit over the other, single ownership) are by right in R-50 (7,500 sq ft per unit) and VC (10,000 sq ft lot) (153-405, 153-410, 153-502F(4))",
+      "Each district lists its uses 'and no other'. Elsewhere the relief is a Zoning Hearing Board variance (153-1110A)",
+      "Two zoning ordinances adopted after the online code date were not read: Ord. No. 25-08 and Ord. No. 26-04. Ask the township whether they change these rules"
+    ],
+    "notes": "Zoning office: Towamencin Township Zoning Officer. eCode360 code TO0773 is Towamencin Township, Montgomery County (153-1301 cites the Montgomery County Health Department and the Soil Survey of Montgomery County). Read on eCode360 in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', 'living quarters', 'sleeping quarters', 'immediate family', 'housekeeping unit', 'accessory living', 'guest house', 'tenant house', caretaker, relative, relatives and 'family member' found A-1 in 153-401 to 153-404 and 153-418, the A-1 text in 153-502H(1), and the definitions. A second search for 'residential conversion', 'two-family', duplex and twin found 153-502F(10), 153-405, 153-407 and 153-410. Searches for historic, 'planned residential', 'age-restricted', 'unnecessary hardship', 'not specifically permitted' and 'uses not listed' found no historic or unlisted-use path. Read in full: 153-401 to 153-405, 153-410, 153-416, 153-418, 153-502H(1), 153-502F(10), 153-1110, 153-1301 (most of the list). Read on screen: 153-502F(1) to F(5). Not read: 153-406 to 153-408, 153-411 to 153-415, 153-417, 153-419 use lists (the ADU search finds A-1 in none of them), 153-502F(14) cluster dwellings, 153-502H(8) residential accessory structures, Article VI general provisions, Article X conditional uses, the Table of Permitted Land Uses PDF, the New Laws PDFs."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment (A-1 Accessory Apartments for Family Members)",
+      "section": "153-502H(1)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One apartment accessory to a single-family detached dwelling shall be permitted provided the following conditions are met.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "153-502H(1), 153-401A(3) to 153-404A(3)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Family only, by special exception from the Zoning Hearing Board. 'The accessory apartment shall be occupied only by related family members such as elderly parents or dependent adult children.'"
+    },
+    "scope_districts": {
+      "value": [
+        "R-200",
+        "R-180",
+        "R-175",
+        "R-125",
+        "RBP"
+      ],
+      "section": "153-401A(3), 153-402A(3), 153-403A(3), 153-404A(3), 153-418A(5)",
+      "url": "https://ecode360.com/TO0773/search?query=%22accessory%20apartment%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code search finds A-1 only in these five district sections. RBP is an overlay."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "153-405A, 153-410A, 153-416A",
+      "url": "https://ecode360.com/print/TO0773?guid=14342934",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Other districts do not list A-1, and each district permits its listed uses 'and no other'. R-50 and VC list single-family dwellings, duplexes and residential conversion, not the accessory apartment."
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "153-502H(1)(c)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The accessory apartment shall be part of the principal residence and shall not be located in a basement or in an accessory building.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "153-401A(3), 153-402A(3), 153-403A(3), 153-404A(3), 153-418A(5), 153-1110B",
+      "url": "https://ecode360.com/print/TO0773?guid=14342876",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board special exception after public notice and hearing. The Board may attach conditions (153-1110B)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "153-1110A",
+      "url": "https://ecode360.com/print/TO0773?guid=14344659",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The Board shall hear requests for variances where it is alleged that the provisions of the Zoning Ordinance inflict unnecessary hardship on the applicant', with the findings of 153-1110A(1) to (5)."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion (R-10) of an existing single-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-200",
+            "R-180",
+            "R-175",
+            "R-125",
+            "R-50",
+            "VC"
+          ],
+          "conditions": "Special exception by the Zoning Hearing Board for converting an existing single-family dwelling 'into a dwelling for a greater number of families'. A petition in favor signed by the owners of 60% or more of the lots that must be notified. Each unit at least 500 sq ft of habitable floor area. Lot area per family at least 75% of the district minimum lot area, so two families need 1.5 times the district minimum. District setbacks and building area apply. No external alteration except for safety. Only for an existing dwelling that, due to size and arrangement, has little economic usefulness as a conforming use, or another arrangement the Board finds within the chapter's intent. Two off-street parking spaces per dwelling unit. The Board may add conditions.",
+          "min_lot_sqft": 37500,
+          "min_lot_by_district": {
+            "R-200": 130680,
+            "R-180": 90000,
+            "R-175": 45000,
+            "R-125": 37500,
+            "R-50": 18000,
+            "VC": 15000
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family dwelling",
+              "section": "153-502F(10)"
+            },
+            {
+              "test": null,
+              "condition": "A petition in favor signed by the owners of 60% or more of the lots that must be notified, and a finding that the dwelling has little economic usefulness as a conforming use (or another arrangement the Board finds appropriate)",
+              "section": "153-502F(10)(a), (g)"
+            }
+          ],
+          "section": "153-502F(10), 153-401A(3), 153-402A(3), 153-403A(3), 153-404A(3), 153-405A(3), 153-410A(3)",
+          "url": "https://ecode360.com/print/TO0773?guid=14343748",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. No family rule. Lot figures are 1.5 times the district minimum with public water and sewer: R-175 and R-125 need 90,000 and 45,000 sq ft without both services. R-50 and VC use the single-family dwelling minimum (12,000 and 10,000 sq ft), a reading."
+        },
+        {
+          "name": "Duplex dwelling (R-4) in R-50 or VC",
+          "path": "by_right",
+          "districts": [
+            "R-50",
+            "VC"
+          ],
+          "conditions": "A building for two families living independently, 'with one dwelling unit being wholly or partly over the other', under single ownership. R-50: 7,500 sq ft and 50 ft of width 'for each individual unit' (15,000 sq ft for the building). VC: on a lot of at least 10,000 sq ft. Two off-street parking spaces per dwelling unit.",
+          "min_lot_sqft": 15000,
+          "min_lot_by_district": {
+            "R-50": 15000,
+            "VC": 10000
+          },
+          "section": "153-502F(4), 153-405A(1), B, 153-410A(1)(b)",
+          "url": "https://ecode360.com/print/TO0773?guid=14342934",
+          "confidence": "secondary",
+          "note": "A building of two dwelling units, not an ADU listing. Whether adding a unit over or under an existing house is read as this use is not said. Duplex development in MR needs 1 acre (153-407, search excerpt only)."
+        }
+      ],
+      "section": "153-502F(4), F(10)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343748",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-200",
+        "R-180",
+        "R-175",
+        "R-125",
+        "RBP"
+      ],
+      "section": "153-401A(3), 153-402A(3), 153-403A(3), 153-404A(3), 153-418A(5)",
+      "url": "https://ecode360.com/TO0773/search?query=%22accessory%20apartment%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "153-502H(1), 153-502F(1)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One apartment accessory to a single-family detached dwelling'."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 153",
+      "url": "https://ecode360.com/TO0773/search?query=historic%20OR%20%22planned%20residential%22%20OR%20%22age-restricted%22%20OR%20%22R-14%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No historic path. 'Historic structure' is defined for floodplain purposes only."
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-50",
+        "VC"
+      ],
+      "section": "153-405A, 153-410A",
+      "url": "https://ecode360.com/print/TO0773?guid=14342934",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Use lists read. R-50 lists single-family, twin and duplex dwellings and residential conversion. VC lists single-family and duplex dwellings, dwelling in combination with business and residential conversion. Neither lists the accessory apartment. The Towamencin Village Overlay (153-416) lists only townhouses, multiplexes, elderly housing and apartments, by conditional use."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Occupied only by related family members, such as elderly parents or dependent adult children. The district tables add 'For family member only'. The section's intent is to let 'immediate family members' live on the premises (defined as spouse, child, parent and sibling), and to bar for-profit apartments.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "153-502H(1), H(1)(d), 153-401A(3) note 1, 153-1301",
+          "url": "https://ecode360.com/print/TO0773?guid=14343801"
+        },
+        {
+          "kind": "design",
+          "condition": "Part of the principal residence. Not in a basement and not in an accessory building. No exterior change that suggests the house is other than a single-family detached dwelling or detracts from the single-family character of the neighborhood.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "153-502H(1)(c), (e)",
+          "url": "https://ecode360.com/print/TO0773?guid=14343801"
+        },
+        {
+          "kind": "other",
+          "condition": "The apartment is registered with the Township Zoning Officer, who keeps a record of its use.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "153-502H(1)(g)",
+          "url": "https://ecode360.com/print/TO0773?guid=14343801"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "In the RBP Overlay the accessory apartment is a special exception only 'on a minimum lot size of 80,000 square feet'.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "RBP"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "lot_sqft_at_least",
+          "value": 80000,
+          "section": "153-418A(5)",
+          "url": "https://ecode360.com/print/TO0773?guid=31077295"
+        },
+        {
+          "kind": "utilities",
+          "condition": "RBP Overlay: 'All uses shall be served by public water and public sanitary sewer service.'",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "RBP"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "public_sewer",
+          "section": "153-418C(1)",
+          "url": "https://ecode360.com/print/TO0773?guid=31077295"
+        },
+        {
+          "kind": "utilities",
+          "condition": "RBP Overlay: 'All uses shall be served by public water and public sanitary sewer service.'",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "RBP"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": "public_water",
+          "section": "153-418C(1)",
+          "url": "https://ecode360.com/print/TO0773?guid=31077295"
+        }
+      ],
+      "section": "153-502H(1), 153-418",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "153-502H(1)(c)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Inside the house or in an addition that is part of the principal residence. Not in a basement."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 800,
+      "section": "153-502H(1)(a)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The accessory apartment shall occupy no more than 800 square feet in floor area.' Floor area counts basements and porches and is measured from the exterior faces of the walls (153-1301)."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "153-401E to 153-404E, 153-418B",
+      "url": "https://ecode360.com/print/TO0773?guid=14342876",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "153-502H(1)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No owner rule is written in the A-1 section."
+    },
+    "family_only": {
+      "value": true,
+      "section": "153-502H(1)(d)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Related family members only, such as elderly parents or dependent adult children. The intent names immediate family members (spouse, child, parent, sibling). No limit on the number of occupants is written.",
+      "section": "153-502H(1), H(1)(d), 153-1301",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "153-502H(1)(f)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No more than one accessory apartment shall be permitted per single-family detached dwelling.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "153-502H(1)(h)",
+      "url": "https://ecode360.com/print/TO0773?guid=14343801",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'One additional off-street parking space is required for the accessory apartment use.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "153-502F(1)(a), 153-502H(1)(h)",
+      "url": "https://ecode360.com/14343303",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Single-family detached dwelling: 'two off-street parking spaces per dwelling unit', plus one. A garage is not a parking space unless an ordinance says so (153-1301)."
+    }
+  },
+  "districts": {
+    "R-200": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "153-401B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342876",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Minimum lot area for all uses: 2 acres. Residential lot width 200 ft."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "153-401B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342876",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "153-401B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342876",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses: one side at least 40 ft."
+      },
+      "setback_rear_ft": {
+        "value": 60,
+        "section": "153-401B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342876",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "153-401B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342876",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Principal residential structure: '35 feet, not exceeding 2 1/2 stories'. Residential accessory structure 14 ft, one story (24 ft and 1 1/2 stories with a roof pitch of 18 degrees or more). The accessory apartment may not be in an accessory building (153-502H(1)(c))."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "153-401B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342876",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "max_building_coverage": {
+        "value": 0.07,
+        "section": "153-401B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342876",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential building coverage 7%, impervious coverage 12%. Building coverage is the footprint of all principal and accessory buildings divided by the lot area (153-1301). Impervious coverage is a separate cap."
+      },
+      "setback_sides_total_ft": {
+        "value": 100,
+        "section": "153-401B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342876",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses: aggregate of both side yards 100 ft."
+      }
+    },
+    "R-180": {
+      "min_lot_sqft": {
+        "value": 60000,
+        "section": "153-402B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342898",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'All other principal uses': 60,000 sq ft (agricultural uses 3 acres). Lot width 175 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "153-402B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342898",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "153-402B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342898",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses: one side at least 30 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "153-402B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342898",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses 40 ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "153-402B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342898",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Principal residential structure: '35 feet, not exceeding 2 1/2 stories'. Residential accessory structure 14 ft, one story (24 ft and 1 1/2 stories with a roof pitch of 18 degrees or more). The accessory apartment may not be in an accessory building (153-502H(1)(c))."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "153-402B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342898",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "max_building_coverage": {
+        "value": 0.12,
+        "section": "153-402B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342898",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage 12%, impervious coverage 20%. Building coverage is the footprint of all principal and accessory buildings divided by the lot area (153-1301). Impervious coverage is a separate cap."
+      },
+      "setback_sides_total_ft": {
+        "value": 60,
+        "section": "153-402B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342898",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses: aggregate 60 ft."
+      }
+    },
+    "R-175": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "153-403B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342910",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "30,000 sq ft and 125 ft wide 'For lots where both public water and public sewer are provided'. 60,000 sq ft and 175 ft otherwise. Cluster single-family detached dwellings (R-14) are also by right here and have their own figures (153-502F(14), not read)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "153-403B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342910",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "153-403B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342910",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses: 20 ft with public water and sewer, 30 ft otherwise. No aggregate figure."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "153-403B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342910",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Residential uses 40 ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "153-403B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342910",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Principal residential structure: '35 feet, not exceeding 2 1/2 stories'."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "153-403B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342910",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "max_building_coverage": {
+        "value": 0.18,
+        "section": "153-403B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342910",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "18% 'Provided that the permissible minimum lot area is 30,000 square feet', otherwise 12%. Impervious 30% or 20%. Building coverage is the footprint of all principal and accessory buildings divided by the lot area (153-1301). Impervious coverage is a separate cap."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer (or only one of public water and sewer)",
+            "public_sewer": false,
+            "min_lot_sqft": 60000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 30,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.12,
+            "section": "153-403B, C, D",
+            "note": "Width 175 ft. Impervious coverage 20%."
+          },
+          {
+            "when": "No public water (or only one of public water and sewer)",
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 30,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.12,
+            "section": "153-403B, C, D",
+            "note": "Width 175 ft. Impervious coverage 20%."
+          }
+        ],
+        "section": "153-403B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342910",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Figures where public water and public sewer are not both provided."
+      }
+    },
+    "R-125": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "153-404B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "25,000 sq ft and 115 ft wide 'For lots where both public water and public sewer are provided'. 30,000 sq ft and 125 ft otherwise."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "153-404B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "40 ft with public water and sewer, 50 ft otherwise."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "153-404B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "15 ft with public water and sewer, 20 ft otherwise. No aggregate figure."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "153-404B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "30 ft with public water and sewer, 40 ft otherwise."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "153-404B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Principal residential structure: '35 feet, not exceeding 2 1/2 stories'."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "153-404B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "153-404B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "20% 'Provided that the permissible minimum lot area is 25,000 square feet', otherwise 18%. Impervious 35% or 30%. Building coverage is the footprint of all principal and accessory buildings divided by the lot area (153-1301). Impervious coverage is a separate cap."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer (or only one of public water and sewer)",
+            "public_sewer": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.18,
+            "section": "153-404B, C, D",
+            "note": "Width 125 ft. Impervious coverage 30%."
+          },
+          {
+            "when": "No public water (or only one of public water and sewer)",
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.18,
+            "section": "153-404B, C, D",
+            "note": "Width 125 ft. Impervious coverage 30%."
+          }
+        ],
+        "section": "153-404B, C, D, E",
+        "url": "https://ecode360.com/print/TO0773?guid=14342922",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Figures where public water and public sewer are not both provided."
+      }
+    },
+    "RBP": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "153-418A(5), B",
+        "url": "https://ecode360.com/print/TO0773?guid=31077295",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "The accessory apartment is a special exception in the RBP Overlay only 'on a minimum lot size of 80,000 square feet'. The 80,000 sq ft column: width 200 ft, 45 ft from abutting residential zoning, impervious coverage 60%. A single-family detached dwelling alone is by right on smaller lots (25,000 sq ft column)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "153-418A(5), B",
+        "url": "https://ecode360.com/print/TO0773?guid=31077295",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "153-418A(5), B",
+        "url": "https://ecode360.com/print/TO0773?guid=31077295",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "80,000 sq ft column: minimum side yard 25 ft."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "153-418A(5), B",
+        "url": "https://ecode360.com/print/TO0773?guid=31077295",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "80,000 sq ft column: 40 ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "153-418A(5), B",
+        "url": "https://ecode360.com/print/TO0773?guid=31077295",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Maximum building height 35 ft (2 1/2 stories)."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "153-418A(5), B",
+        "url": "https://ecode360.com/print/TO0773?guid=31077295",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2 1/2 stories."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "153-418A(5), B",
+        "url": "https://ecode360.com/print/TO0773?guid=31077295",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "80,000 sq ft column: 20%, with 153-418C(2) (no building over 10,000 sq ft of ground floor area or 150 ft long). Building coverage is the footprint of all principal and accessory buildings divided by the lot area (153-1301). Impervious coverage is a separate cap."
+      },
+      "setback_sides_total_ft": {
+        "value": 60,
+        "section": "153-418A(5), B",
+        "url": "https://ecode360.com/print/TO0773?guid=31077295",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "80,000 sq ft column: aggregate side yards 60 ft."
+      }
+    }
+  }
+}

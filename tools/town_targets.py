@@ -1117,6 +1117,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2025-07-15",
         "note": "Zoning: Chapter 240 Zoning (Ord. No. 119, 6-9-1997, as amended). ADU text: 'Apartment for care of a relative' (240-6, 240-32C): accessory use by right in R-1 to R-5, for a relative of a resident who needs care, at most two persons, reconverted or removed when no longer needed, recorded agreement against renting to a nonrelative. Outside R-1 to R-5 a use variance (240-4D does not reach a listed use). Historic resource conversion to dwelling units by conditional use (240-38.5A(2)(c), 240-38.7). Read in the browser on eCode360 (EA1698).",
     },
+    "4209177152": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/14342706",
+        "plain_fetch": False,
+        "current_through": "2025-07-23",
+        "note": "Zoning: Chapter 153 Zoning (Zoning Ordinance of 1956, as amended by Ord. No. 95-10 and later). ADU text: 'A-1 Accessory Apartments for Family Members' (153-502H(1)): special exception in R-200, R-180, R-175 and R-125 ('For family member only') and in the RBP Overlay on 80,000 sq ft lots with public water and sewer (153-418). Part of the house, not in a basement or accessory building, at most 800 sq ft, related family members only, one more parking space, registered with the Zoning Officer. Residential conversion (153-502F(10)) by special exception. New Laws: Ord. No. 25-08 and 26-04 (zoning) not codified. Read in the browser on eCode360 (TO0773).",
+    },
+    "4202138288": {
+        "code_host": "amlegal",
+        "code_url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-49965",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 1260 Zoning Ordinance (Ord. 5139, 11-27-2013, as amended), code version 2026 S-20. No ADU text. Two-family dwellings permitted in R2, R3 and TND, and 'two-single family units on one lot' in TND and the HOD-CC overlay (1260.064, 1260.074). Elsewhere a use variance (1260.221). Read in the browser on American Legal (johnstownpa).",
+    },
+    "4207183256": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11694778",
+        "plain_fetch": False,
+        "current_through": "2025-11-10",
+        "note": "Zoning: Chapter 285 Zoning (Ord. No. 270, 6-5-2024). ADU text: 'Accessory dwelling unit' (285-49D(1)): special exception in A, C, RR, R-1, R-2 and R-3, one per single-family detached dwelling for use by a relative, owner-occupied, in or attached to the house, at most 40% of the house or 800 sq ft (whichever is less) and two bedrooms, one more parking space, annual certification and recorded agreement. In A a larger ADU (60% or 1,200 sq ft) by conditional use. Read in the browser on eCode360 (WE2002).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1135,6 +1156,7 @@ FIXED_BATCH.update(
 )
 FIXED_BATCH.update({g: 19 for g in ("4207121344", "4205530944", "4200372160", "4207141224")})
 FIXED_BATCH.update({g: 20 for g in ("4209161664", "4213358888", "4204515488", "4202921192")})
+FIXED_BATCH.update({g: 21 for g in ("4209177152", "4202138288", "4207183256")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1200,6 +1222,12 @@ EXTRAS = {
     # the online code is not the adopted ordinance).
     "4204515488": "Code 210-72A(1)(f) accessory apartment (R-PRD-1) and 210-183.7B historic added unit",
     "4202921192": "Code 240-32C apartment for care of a relative",
+    # Batch 21 (2026-11-14): the next towns by population without a rule file. Hampton (Allegheny) was skipped (lot
+    # area and setback table only in a PDF attachment), South Middleton (no code readable as web pages), North Strabane
+    # (eCode360 code search closed to the public) and Middletown (Delaware) (code not found; zoning rewrite under way).
+    "4209177152": "Code 153-502H(1) accessory apartments for family members",
+    "4202138288": "batch 21 by population. Code Chapter 1260 has no ADU text",
+    "4207183256": "Code 285-49D(1) accessory dwelling unit for a relative",
 }
 
 if __name__ == "__main__":
