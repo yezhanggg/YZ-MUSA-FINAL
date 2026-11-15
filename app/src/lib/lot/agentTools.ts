@@ -169,21 +169,22 @@ export const NOT_PUBLIC = 'not in the public data';
 export const NO_COVER = 'Not checked: no land cover for this lot, so trees, paving and sheds in the yard were not mapped. A fit result does not account for them.';
 const hasCover = (lot: LotRecord) => !!lot.cover && Object.keys(lot.cover).length > 0;
 /** Lot places whose records measure what lies inside the suggested spot (fit.<scenario>.<type>.spot_cover). */
-export const SPOT_COVER_PLACES: readonly string[] = ['pittsburgh', 'philadelphia'];
+export const SPOT_COVER_PLACES: readonly string[] = ['pittsburgh', 'philadelphia', 'allentown', 'centre_county', 'chester_county', 'montgomery_county'];
 /** No tree or paving figures inside the suggested spot: the place has none, or this lot has none. */
-export const SPOT_COVER_NO_PLACE = 'Not available for this place: tree and paving figures inside the suggested spot are only in the Pittsburgh and Philadelphia lot records. Only the shares of the whole lot are known here.';
+export const SPOT_COVER_NO_PLACE = 'Not available for this place: tree and paving figures inside the suggested spot are only in the lot records of Pittsburgh, Philadelphia, Allentown and Centre, Chester and Montgomery counties. Only the shares of the whole lot are known here.';
 export const SPOT_COVER_NO_LOT = 'Not available for this lot: the record has no tree or paving figures inside the suggested spot. Only the shares of the whole lot are known here.';
 export const COVER_RULE = 'Tree and paving figures are for the whole lot, not the spot for the unit. The fit does not steer around trees, so a fit does not mean no tree is in the way. Give the accuracy note whenever you give these figures.';
 /** The record's own note on how far its land cover can be trusted (quality.assumptions, "land cover from ..."). */
 const coverAccuracy = (lot: LotRecord) => lot.quality.assumptions?.find((a) => /^land cover from\b/i.test(a)) ?? 'not on file';
 const share = (s: { sqft: number; pct: number } | undefined) => (s ? { sqft: s.sqft, pct_of_lot: s.pct } : 'not on file');
 
-/** What lies inside the suggested spot for this unit type, else why it is not available. */
+/** What lies inside the suggested spot for this unit type (with the record's accuracy note), else why it is not available. */
 function spotCover(lot: LotRecord, scenario: Scenario, type: AduType) {
   const sc = lot.fit[scenario]?.[type]?.spot_cover;
   if (sc && Object.keys(sc).length > 0) {
     const num = (k: string) => (isNum(sc[k]) ? sc[k] : 'not on file');
-    return { trees_sqft: num('tree_sqft'), paved_sqft: num('hard_surface_sqft'), open_ground_sqft: num('open_sqft'), buildings_sqft: num('building_sqft'), other_sqft: num('other_sqft') };
+    // Read from the same cover map as the whole-lot shares, so the same accuracy note holds.
+    return { trees_sqft: num('tree_sqft'), paved_sqft: num('hard_surface_sqft'), open_ground_sqft: num('open_sqft'), buildings_sqft: num('building_sqft'), other_sqft: num('other_sqft'), accuracy: coverAccuracy(lot) };
   }
   return SPOT_COVER_PLACES.includes(lot.lot.place ?? '') ? SPOT_COVER_NO_LOT : SPOT_COVER_NO_PLACE;
 }

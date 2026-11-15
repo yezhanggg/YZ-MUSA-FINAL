@@ -1855,8 +1855,8 @@ def test_disputed_bar_reads_depends_and_cites_both():
 
 
 def test_allentown_lot_record_hold_lifted():
-    # pass 10 holds sentence fixes for the ten lot towns (test_pass10_lot_record_towns); the pass 7 parking hold stays lifted
-    assert "pa_lehigh_allentown" in rules.LOT_RECORD_TOWNS
+    # the pass 10 hold on the ten lot towns was lifted at their Nov 15 rebuild; the pass 7 parking hold stays lifted
+    assert "pa_lehigh_allentown" not in rules.LOT_RECORD_TOWNS
     out = rules.resolve(
         "pa_lehigh_allentown", "today", {"zoning_district": "N2", "building_type": "detached", "lot_sqft": 4000}
     )
@@ -2196,8 +2196,8 @@ DET = {"zoning_district": None, "building_type": "detached"}
 
 
 def test_pass10_lot_record_towns():
-    assert rules.LOT_RECORD_TOWNS == LOT_TOWNS
-    for name in LOT_TOWNS:  # no lot town uses a pass 10 field, so its lot records do not change
+    assert not rules.LOT_RECORD_TOWNS  # hold lifted at the Nov 15 rebuild; the mechanism stays
+    for name in LOT_TOWNS:  # no lot town uses a pass 10 field
         text = (RULES / f"{name}.json").read_text()
         for key in ("max_impervious_coverage", "owner_occupancy_by_form", "min_sqft_by_form", "disputed_districts"):
             assert key not in text, (name, key)
@@ -2228,10 +2228,11 @@ def test_doubled_full_stop_is_normalised():
     assert rules._owner_text("'a garage ... used'") == "'a garage ... used'"
     assert rules._owner_text("Ends here...") == "Ends here..."
     assert rules._owner_text("Holds.. Ask", stops=False) == "Holds.. Ask"
-    held = rules.resolve(
+    lifted = rules.resolve(
         "pa_chester_west_chester", "today", {**DET, "zoning_district": "TN1", "lot_sqft": 5000}, extra=True
     )
-    assert any(".." in c["condition"] for c in held["conditions"])  # a lot town: held until its next lot rebuild
+    # a lot town: was held until its Nov 15 lot rebuild, now normalised like every other town
+    assert lifted["conditions"] and not any(".." in c["condition"] for c in lifted["conditions"])
 
 
 def test_side_and_total_side_yards_both_said():

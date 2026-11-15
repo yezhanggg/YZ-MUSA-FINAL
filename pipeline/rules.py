@@ -858,19 +858,9 @@ NO_ADU_STATUSES = {"not_addressed", "prohibited"}
 # Pass 8 lifted the pass 7 hold on Allentown (no ADU parking count where no ADU is allowed).
 # Pass 10: the ten lot towns rebuilt on Nov 14. Pass 10 owner-sentence fixes that would change what the lot build
 # keeps for them (no separation where no detached form is allowed, a condition gate whose lot fact is unknown,
-# ".." in a sentence) wait for their next planned rebuild. Empty this set at that rebuild.
-LOT_RECORD_TOWNS: set[str] = {
-    "pa_lehigh_allentown",
-    "pa_centre_college",
-    "pa_chester_west_chester",
-    "pa_chester_phoenixville",
-    "pa_chester_west_vincent",
-    "pa_chester_malvern",
-    "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
-}
+# ".." in a sentence) waited for their next planned rebuild. Emptied at that rebuild (Nov 15, spot cover rebuild).
+# Keep the set: a later pass can hold a change back for lot towns again.
+LOT_RECORD_TOWNS: set[str] = set()
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",

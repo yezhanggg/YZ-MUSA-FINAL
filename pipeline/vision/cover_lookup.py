@@ -5,6 +5,8 @@ Reads the best cover map per city:
   reliable for tree and open there (see processed/vision/city/philadelphia/diagnosis).
 - Pittsburgh: the model class maps written by infer_lots.py (0.6 m, UTM 17N),
   one GeoTIFF per tile, read through a VRT built on first use.
+- Allentown, Centre, Chester and Montgomery counties: the same model's class maps
+  (0.6 m, UTM 18N), the same run as their lot-level cover (cover.parquet).
 
     from pipeline.vision.cover_lookup import cover_in_polygon
     cover_in_polygon("philadelphia", shapely_polygon_in_wgs84)
@@ -26,6 +28,14 @@ SQFT_PER_M2 = 10.7639
 RASTER_CLASSES = {1: "tree", 2: "open", 3: "open", 4: "other", 5: "building", 6: "hard_surface", 7: "hard_surface"}
 MODEL_CLASSES = {0: "other", 1: "building", 2: "tree", 3: "open", 4: "hard_surface"}
 PITTSBURGH_RUN = "r34_c5_s0"  # zero-shot run: the same model as the lot-level cover (cover_model_r34_c5_s0.parquet)
+# Places read from the model class maps, and the run (cover_work/<run>) that also gave their lot-level cover.
+MODEL_RUNS = {
+    "pittsburgh": PITTSBURGH_RUN,
+    "allentown": "r34_c5_s0",
+    "centre_county": "r34_c5_s0",
+    "chester_county": "r34_c5_s0",
+    "montgomery_county": "r34_c5_s0",
+}
 
 
 @lru_cache(maxsize=4)
@@ -34,12 +44,9 @@ def source_for(city: str) -> tuple[str, dict[int, str], str]:
     root = data.data_root()
     if city == "philadelphia":
         return str(root / "raw/landcover/philadelphia/landcover_2018.tif"), RASTER_CLASSES, "landcover_2018"
-    if city == "pittsburgh":
-        return (
-            str(model_vrt(root / "processed/pittsburgh/cover_work" / PITTSBURGH_RUN)),
-            MODEL_CLASSES,
-            f"model:{PITTSBURGH_RUN}",
-        )
+    if city in MODEL_RUNS:
+        run = MODEL_RUNS[city]
+        return str(model_vrt(root / "processed" / city / "cover_work" / run)), MODEL_CLASSES, f"model:{run}"
     raise ValueError(city)
 
 

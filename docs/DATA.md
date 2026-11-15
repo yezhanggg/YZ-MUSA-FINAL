@@ -174,18 +174,20 @@ ACS table B25031 (median rent by bedrooms, tract) is named as the rent fallback 
 
 The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARCHITECTURE.md](ARCHITECTURE.md) lists the files.
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json, read 2026-11-14 ("data_version", "built_at", "counts", "sizes") -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json, read 2026-11-15 ("data_version", "built_at", "counts", "sizes") -->
 
 | Place | Data version | Built | Lots | Tracts | Errors | Detail files |
 |---|---|---|---|---|---|---|
 | Pittsburgh | `pittsburgh-20261114-7ae3f25d22` | 2026-11-14 09:43 (steep slope lines, refresh of the Nov 12 build) | 92,081 | 128 | 0 | 146,360,899 bytes, 72 tracts split into chunks |
 | Philadelphia | `philadelphia-20261114-2a67293eaa` | 2026-11-14 10:11 (steep slope lines, refresh of the Nov 12 build) | 459,998 | 385 | 0 | 357,632,218 bytes, 50 tracts split into chunks |
-| Allentown | `allentown-20261114-2cb47a95d4` | 2026-11-14 17:54 (rules engine pass 9, land cover) | 29,158 | 31 | 0 | 90,411,668 bytes, 26 tracts split into chunks |
-| Chester County | `chester_county-20261114-47fe1443e9` | 2026-11-14 17:01 (rules engine pass 9, land cover) | 14,847 | 15 | 0 | 58,058,452 bytes, 11 tracts split into chunks |
-| Centre County | `centre_county-20261114-e4fb9168db` | 2026-11-14 16:46 (rules engine pass 9, land cover) | 3,484 | 3 | 0 | 12,332,112 bytes, 2 tracts split into chunks |
-| Montgomery County | `montgomery_county-20261114-459bcec166` | 2026-11-14 17:28 (rules engine pass 9, land cover) | 26,119 | 28 | 0 | 68,813,724 bytes, 22 tracts split into chunks |
+| Allentown | `allentown-20261115-3024ad0166` | 2026-11-15 01:42 (spot cover, rules engine pass 10 wording) | 29,158 | 31 | 0 | 94,371,212 bytes, 26 tracts split into chunks |
+| Chester County | `chester_county-20261115-448c887ae9` | 2026-11-15 00:57 (spot cover, rules engine pass 10 wording) | 14,847 | 15 | 0 | 59,384,175 bytes, 11 tracts split into chunks |
+| Centre County | `centre_county-20261115-43434a1b88` | 2026-11-15 00:37 (spot cover, rules engine pass 10 wording) | 3,484 | 3 | 0 | 12,551,500 bytes, 2 tracts split into chunks |
+| Montgomery County | `montgomery_county-20261115-5b26a34d9b` | 2026-11-15 01:20 (spot cover, rules engine pass 10 wording) | 26,119 | 28 | 0 | 71,810,869 bytes, 23 tracts split into chunks |
 
 625,687 lots in all.
+
+On 2026-11-15 the four town places were rebuilt (full run). Their records now carry `spot_cover`, the trees and paving inside the suggested spot. The rules engine pass 10 wording reached them too: where no detached form is allowed, the record has no separation figure from the rules (the fit uses 0 ft, cited as "no detached form is allowed here"). No yes or no, approval path or fit result changed. The files before it are in `~/musa-drive/backups/lots-<place>-pre-spotcover-<old version>/`.
 
 On the morning of 2026-11-14 Pittsburgh and Philadelphia were refreshed so that their records carry the steep slope rules (Pittsburgh 915.02 and 906.04, 906.05, 906.08, Philadelphia 14-704(2)). The slope rows add condition lines to about 44,153 Pittsburgh records and 31,349 Philadelphia records (HB 2186 scenario only). They do not change any yes or no.
 
@@ -304,7 +306,7 @@ In Pittsburgh, 34.8 percent of the test box area also sat inside train or valida
 - Philadelphia does not use the model. On NAIP 2022 (flown April 30 to May 17, early leaf, deep rowhouse shadow) the model misses most trees and open ground. The model's numbers stay beside the raster in `cover_model.parquet` for comparison.
 - 3,007 Philadelphia lots have a house built in 2018 or later. They carry `built_after_cover`, because the raster may still show the old use of the lot.
 - Pittsburgh keeps the fine-tuned model's numbers in `cover.parquet`, but the builder reads the model that was not fine-tuned. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
-- Allentown and the three county places: only Centre County lies in a Chesapeake test county (about 0.70 test mIoU there, with Cumberland). Allentown, Chester and Montgomery are not validated: no labeled land cover there. Each record says so in `quality.assumptions`. The hard surface counts toward an impervious cap where a town file sets one. These places have no cover map for spots, so `spot_cover` is not filled. 36 Centre County lots have no cover row. The assistant's lot tools give the accuracy note with the tree and paving shares, and say that the figures inside the suggested spot are not available in these places.
+- Allentown and the three county places: only Centre County lies in a Chesapeake test county (about 0.70 test mIoU there, with Cumberland). Allentown, Chester and Montgomery are not validated: no labeled land cover there. Each record says so in `quality.assumptions`. The hard surface counts toward an impervious cap where a town file sets one. Since the Nov 15 rebuild their `spot_cover` is filled from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`, read by `pipeline/vision/cover_lookup.py`). So the spot figures have the same accuracy as the lot shares. 36 Centre County lots have no cover row. The assistant's lot tools give the accuracy note with the tree and paving shares, and with the figures inside the suggested spot.
 
 Known limits:
 

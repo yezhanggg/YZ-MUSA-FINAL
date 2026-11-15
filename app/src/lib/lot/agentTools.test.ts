@@ -187,7 +187,7 @@ describe('what a record cannot check is "not checked"', () => {
 });
 
 describe('land cover', () => {
-  it('a town record with land cover gives the whole-lot shares, the accuracy note and says the spot figures are not available', async () => {
+  it('a town record with land cover gives the whole-lot shares, the accuracy note, and the spot figures with the same note', async () => {
     const base = fixture('abe_detached');
     const note = 'land cover from an aerial model (NAIP 2022): not validated here, no labeled land cover in this county';
     const lot: LotRecord = {
@@ -201,12 +201,19 @@ describe('land cover', () => {
     expect(facts.accuracy).toBe(note);
     expect(facts.source).toBe('aerial model');
     expect(facts.year).toBe('2022');
-    expect(String(facts.inside_suggested_spot)).toMatch(/^Not available for this place/);
+    // A town record built before its spot figures existed: this lot has none (the place does).
+    expect(String(facts.inside_suggested_spot)).toMatch(/^Not available for this lot/);
     expect(String(facts.rule)).toMatch(/accuracy note/);
-    const t = await run(p, 'test_unit_on_lot', { type: 'detached_new', width_ft: 12, depth_ft: 20 });
+    const spot = { building_sqft: 0, hard_surface_sqft: 41.5, open_sqft: 302.1, other_sqft: 0, source: 'model:r34_c5_s0', tree_sqft: 96.2 };
+    const withSpot: LotRecord = { ...lot, fit: { ...lot.fit, today: { ...lot.fit.today, detached_new: { ...lot.fit.today!.detached_new!, spot_cover: spot } } } };
+    const ps: LotAgentProvider = { ...provider(null), lotById: async () => withSpot, selectedLot: async () => withSpot };
+    const sf = (await run(ps, 'get_lot_facts')).land_cover as Json;
+    expect(sf.inside_suggested_spot).toEqual({ trees_sqft: 96.2, paved_sqft: 41.5, open_ground_sqft: 302.1, buildings_sqft: 0, other_sqft: 0, accuracy: note });
+    expect(sf.accuracy).toBe(note);
+    const t = await run(ps, 'test_unit_on_lot', { type: 'detached_new', width_ft: 12, depth_ft: 20 });
     const tc = t.land_cover as Json;
     expect(tc.accuracy).toBe(note);
-    expect(String(tc.inside_suggested_spot)).toMatch(/^Not available for this place/);
+    expect(tc.inside_suggested_spot).toMatchObject({ trees_sqft: 96.2, paved_sqft: 41.5, accuracy: note });
     expect(((t.not_checked as string[] | undefined) ?? []).some((x) => /no land cover/.test(x))).toBe(false);
     // A unit inside the house puts nothing on the ground: no land cover block.
     expect((await run(p, 'test_unit_on_lot', { type: 'internal', width_ft: 12, depth_ft: 20 })).land_cover).toBeUndefined();
@@ -218,6 +225,7 @@ describe('land cover', () => {
     const facts = (await run(provider('easy_fit'), 'get_lot_facts')).land_cover as Json;
     expect(facts.inside_suggested_spot).toMatchObject({ trees_sqft: sc.tree_sqft, paved_sqft: sc.hard_surface_sqft });
     expect(String(facts.accuracy)).toMatch(/^land cover from an aerial model/);
+    expect((facts.inside_suggested_spot as Json).accuracy).toBe(facts.accuracy);
     const garage = (await run(provider('garage'), 'get_lot_facts')).land_cover as Json;
     expect(String(garage.inside_suggested_spot)).toMatch(/^Not available for this lot/);
   });

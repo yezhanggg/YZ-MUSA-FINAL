@@ -802,6 +802,7 @@ def fill_rules(
     `not_checked` get 0 ft (no limit applied) and a "not checked" citation instead of a fallback."""
     r = {**raw, "citations": dict(raw.get("citations") or {}), "assumed": list(raw.get("assumed") or [])}
     notes = []
+    no_detached = "types_allowed" in raw and not set(raw.get("types_allowed") or []) & set(rulesmod.DETACHED_TYPES)
     for key in fit.REQUIRED_NUMBERS:
         if r.get(key) is not None:
             continue
@@ -814,6 +815,11 @@ def fill_rules(
             else:
                 section = "contextual front setback, taken from the existing house on this lot"
                 notes.append(f"front setback {val:.1f} ft: contextual, taken from the existing house")
+        elif key == "separation_ft" and key in not_checked and no_detached:
+            # rules pass 10: no separation where no detached form is allowed (the town file's figure does not apply)
+            val = 0.0
+            section = "not checked: no detached form is allowed here, so no separation applies"
+            notes.append(f"{key} not checked: no detached form is allowed in district {district or 'unknown'}")
         elif key in not_checked:
             val = 0.0
             section = "not checked: the rule file gives no number here (see its note), so no limit is applied"

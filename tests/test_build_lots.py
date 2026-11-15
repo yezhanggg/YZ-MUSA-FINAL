@@ -487,6 +487,16 @@ def test_abc_fronts() -> None:
         "behind_house",
     )
     assert r["setback_front_ft"] == 40.0 and "rear yard only" in r["citations"]["setback_front_ft"]["section"]
+    # rules pass 10: no separation where no detached form is allowed; the fit gets 0 ft and the citation says why
+    base = {"setback_front_ft": 10, "setback_side_ft": 3, "setback_rear_ft": 3, "setback_rear_alley_ft": 3}
+    nod, notes = bl.fill_rules(
+        {**base, "separation_ft": None, "types_allowed": ["internal"]}, "R-1", None, ("separation_ft",)
+    )
+    assert nod["separation_ft"] == 0.0 and "no detached form is allowed" in nod["citations"]["separation_ft"]["section"]
+    det, _ = bl.fill_rules(
+        {**base, "separation_ft": None, "types_allowed": ["detached_new"]}, "R-1", None, ("separation_ft",)
+    )
+    assert "gives no number" in det["citations"]["separation_ft"]["section"]
     # A street in front and a C street behind: a through lot with a street on the rear lot line.
     c_line = LineString([(-50, 120), (90, 120)])
     near_t = bl.Near(shapely.union(b_line, c_line), None, None, {"A": None, "B": b_line, "C": c_line})

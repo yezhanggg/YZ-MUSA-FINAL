@@ -20,7 +20,7 @@ A U-Net that labels each pixel of a 4-band aerial image (red, green, blue, near 
 ## What it is used for in the product
 
 - Lot records carry a `cover` block: building, tree, open ground and hard surface in sq ft and percent, plus impervious share, source and date. It also gives what lies inside the suggested spot (`spot_cover`), so the tool can say how much canopy a unit would remove.
-- In Pittsburgh, Allentown and the three county places the source is this model (`model:r34_c5_s0`, NAIP 2022). Of these, only the Pittsburgh lots have `spot_cover` (what lies inside the suggested spot). In the four town places it is empty.
+- In Pittsburgh, Allentown and the three county places the source is this model (`model:r34_c5_s0`, NAIP 2022). Their `spot_cover` comes from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`), so it has the same accuracy as the lot shares. The four town places have it since the Nov 15 rebuild.
 - In Philadelphia the source is **not** this model. It is the city's 2018 land cover raster (`landcover_2018`). See "Transfer to the two cities" below for why.
 - Land cover is context only. The fit test is a vector test on lot, building and street data. It does not steer around trees.
 

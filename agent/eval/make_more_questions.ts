@@ -1,7 +1,7 @@
 // Makes two more eval files, the same way as make_questions.ts (lots picked by rule, every expected value read from a
 // tool result, nothing typed by hand):
-//   questions_allentown.json   8 questions on Allentown lot records (land cover not validated, no tree figures inside
-//                              the suggested spot, no house size on file)
+//   questions_allentown.json   8 questions on Allentown lot records (land cover not validated, tree figures inside
+//                              the suggested spot from the same cover map, no house size on file)
 //   questions_rule_text.json   6 questions on the rule text the resolver now gives: status per form, the lesser-of size
 //                              cap, who hears a hearing, the code caution line, an ADU under another listing
 // Run again when the data or the rule files change:
@@ -21,14 +21,17 @@ type Obj = Record<string, unknown>;
 const DATA = resolve(import.meta.dirname, '../../app/public/data');
 const NOT_CHECKED = ['not checked', "wasn't checked", 'was not checked', "couldn't check", 'could not check', 'cannot check', "can't check", 'not able to check', 'no house size', 'no living area', 'not on file', "isn't on file"];
 const NOT_VALIDATED = ['not validated', 'not been validated', "hasn't been validated", 'unvalidated', 'not checked against', 'no labeled', 'not tested against', 'has not been tested', 'not verified'];
-const NO_SPOT_COVER = ['not available', 'no figures for the spot', 'not measured for the spot', 'only for the whole lot', 'only the whole lot', 'only for pittsburgh', 'only in pittsburgh', 'whole lot, not', 'not for the spot', 'not the spot', "can't tell where", 'cannot tell where', "don't know where", 'do not know where'];
+const TREES_IN_SPOT = ['trees in the spot', 'trees inside the spot', 'tree cover in the spot', 'tree cover inside', 'canopy in the spot', 'canopy inside', 'in the suggested spot', 'inside the suggested spot', 'where the cottage would go', 'where the unit would go', 'in the spot', 'inside the spot', 'under trees'];
 const DEAD_END: Forbidden = { pattern: "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b", why: 'a dead-end answer' };
 const NEXT_STEP = how('gives a next step', ['next step', 'ask the', 'call the', 'contact the', 'check with', 'confirm with']);
 
 const addr = (l: LotRecord) => titleCase(l.lot.address ?? l.lot.id);
 const hasAddr = (l: LotRecord) => !!l.lot.address;
 const hasCover = (l: LotRecord) => !!l.cover && Object.keys(l.cover).length > 0;
-const noSpotCover = (l: LotRecord) => !l.fit.today?.detached_new?.spot_cover || Object.keys(l.fit.today.detached_new.spot_cover).length === 0;
+const spotTrees = (l: LotRecord) => {
+  const v = l.fit.today?.detached_new?.spot_cover?.tree_sqft;
+  return typeof v === 'number' ? v : null;
+};
 const NOT_VALIDATED_NOTE = (l: LotRecord) => l.quality.assumptions?.some((a) => /^land cover from/.test(a) && /not validated/.test(a)) ?? false;
 const COTTAGE = detached(20, 24);
 
@@ -62,9 +65,9 @@ async function allentown(): Promise<Spec[]> {
     const found = (await callTool(ctx(), 'find_lot', { address: addr(l) })).result as Obj;
     return rows(found, 'candidates').some((c) => c.lot_id === l.lot.id) && ((await testOn(l, { type: 'internal', width_ft: 20, depth_ft: 24 })).approval as Obj).path === 'by_right';
   });
-  // Trees cover a real share of the lot (a fifth or more), the record says its land cover is not validated, and it has
-  // no tree figures inside the suggested spot.
-  const aTrees = await pickNew('allentown', 'cottage fits, a fifth or more of the lot under trees, cover not validated, no spot cover', (l) => hasAddr(l) && hasCover(l) && (l.cover?.tree?.pct ?? 0) >= 20 && NOT_VALIDATED_NOTE(l) && noSpotCover(l) && l.rules.today?.allowed === true && (fitOf(l, 'today', 'detached_new')?.largest_sqft ?? 0) >= 480, fitsCottage);
+  // Trees cover a real share of the lot (a fifth or more), the record says its land cover is not validated, and the
+  // suggested spot has trees in it (100 sq ft or more, from the same cover map).
+  const aTrees = await pickNew('allentown', 'cottage fits, a fifth or more of the lot under trees, cover not validated, trees inside the spot', (l) => hasAddr(l) && hasCover(l) && (l.cover?.tree?.pct ?? 0) >= 20 && NOT_VALIDATED_NOTE(l) && (spotTrees(l) ?? 0) >= 100 && l.rules.today?.allowed === true && (fitOf(l, 'today', 'detached_new')?.largest_sqft ?? 0) >= 480, fitsCottage);
 
   const Q: Spec[] = [];
   Q.push({
@@ -134,19 +137,22 @@ async function allentown(): Promise<Spec[]> {
     id: 'alt-08', category: 'allentown', question: 'Would I have to cut down trees to fit a backyard cottage here?', context: onLot(aTrees, { unit: COTTAGE }),
     required: [['get_lot_facts', 'test_unit_on_lot']], calls: [{ name: 'get_lot_facts', input: {} }, { name: 'test_unit_on_lot', input: {} }],
     facts: ([f]) => {
-      const lc = (f as { land_cover?: { whole_lot?: { trees?: { pct_of_lot?: number } }; accuracy?: string; inside_suggested_spot?: unknown } }).land_cover;
+      const lc = (f as { land_cover?: { whole_lot?: { trees?: { pct_of_lot?: number } }; accuracy?: string; inside_suggested_spot?: { trees_sqft?: unknown; accuracy?: string } | string } }).land_cover;
       const pct = lc?.whole_lot?.trees?.pct_of_lot;
+      const spot = lc?.inside_suggested_spot;
       if (typeof pct !== 'number') throw new Error('alt-08: no tree share in get_lot_facts');
       if (!/not validated/.test(String(lc?.accuracy))) throw new Error('alt-08: no accuracy note in get_lot_facts');
-      if (!/^Not available for this place/.test(String(lc?.inside_suggested_spot))) throw new Error('alt-08: spot cover is not reported as not available');
+      if (typeof spot !== 'object' || typeof spot.trees_sqft !== 'number') throw new Error('alt-08: no tree figure inside the suggested spot');
+      if (spot.accuracy !== lc?.accuracy) throw new Error('alt-08: the spot figures do not carry the accuracy note');
       return [
         n('tree share of the lot', pct, 'pct', 10),
+        n('trees inside the suggested spot', spot.trees_sqft, 'sqft', 15),
+        how('says some of the spot is under trees', TREES_IN_SPOT),
         how('says the land cover is not validated here', NOT_VALIDATED, 'not validated'),
-        how('says the tree figures inside the spot are not available', NO_SPOT_COVER, 'Not available for this place'),
       ];
     },
-    forbidden: [{ pattern: "\\b(no|without) (cutting|removing|cutting down) (any )?trees\\b|\\bno trees (are|would be|need)|\\byou (won't|will not|don't|do not) (have|need) to (cut|remove)", why: 'says for sure no tree is in the way, with no tree figures for the spot' }],
-    rubric: 'Allentown lot with land cover: gives the tree share of the whole lot, says the land cover is not validated in this county, and says the tree and paving figures inside the suggested spot are not available here, so it cannot say whether a tree stands where the cottage would go. No guess either way.',
+    forbidden: [{ pattern: "\\b(no|without) (cutting|removing|cutting down) (any )?trees\\b|\\bno trees (are|would be|need)|\\byou (won't|will not|don't|do not) (have|need) to (cut|remove)", why: 'says for sure no tree is in the way, with tree cover measured inside the spot' }],
+    rubric: 'Allentown lot with land cover: gives the tree share of the whole lot and the tree area inside the suggested spot (from the same aerial model), so some trees may stand where the cottage would go. Says the land cover is not validated in this county and the fit does not steer around trees, so it is an estimate to check on site. Never says no tree needs to go.',
   });
   return Q;
 }
