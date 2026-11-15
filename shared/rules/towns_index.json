@@ -3111,17 +3111,17 @@
       "pop_rank": 143,
       "file": "pa_montgomery_west_norriton",
       "batch": 25,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/15475025",
       "plain_fetch": false,
       "code_current_through": "2026-04-14",
-      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 524 of 1991 restating the 1952 ordinance, as amended). ADU text: 'One separate living area, including cooking facilities' in a single-family detached dwelling for no more than two persons related to the principal occupant, registered with the Zoning Officer, with a recorded agreement to remove the cooking facilities later (27-301 subsections 6B and 9). Written in R-A and carried by reference to R-1, R-2, R-3, B-P, C, L-C and I. Detached garages may not be used as a dwelling (27-301 subsection 6A). Conversion of dwellings by special exception was repealed (27-1404). Two-family buildings by right only in R-3 tract developments (10 acres), watchman and caretaker quarters in LC&I. Read in the browser on eCode360 (WE2500).",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 524 of 1991 restating the 1952 ordinance, as amended). ADU text: 'One separate living area, including cooking facilities' in a single-family detached dwelling for no more than two persons related to the principal occupant, registered with the Zoning Officer, with a recorded agreement to remove the cooking facilities later (27-301 subsections 6B and 9). Written in R-A and carried by reference to R-1, R-2, R-3, B-P, C, L-C and I. Detached garages may not be used as a dwelling (27-301 subsection 6A). Conversion of dwellings by special exception was repealed (27-1404). Two-family buildings by right only in R-3 tract developments (10 acres), watchman and caretaker quarters in LC&I, where a unified development by conditional use may take any Commercial District use (27-1001Q(2)). State Institution Overlay on part of R-A (27-304 to 27-308, Ord. No. 2024-769), a superseding district with no dwelling use. Read in the browser on eCode360 (WE2500).",
       "why": [
         "named as a town with an ADU ordinance (Code 27-301 subsections 6B and 9 separate living area for relatives)"
       ],
-      "status_note": "Batch 25 draft, pending an independent review. Open: the separate living area for relatives is written only in R-A (27-301) and reaches R-1, R-2, R-3, B-P, C, L-C and I by reference (I through C); whether it counts as a second family for the 'per family' lot areas or a dwelling unit for parking; whether a new detached building may hold it; the Main Street Commercial map code; Chapter 17 (PRD) not read."
+      "status_note": "Independently reviewed, findings fixed. For a later check: the State Institution Overlay map (Exhibit A to Ord. No. 2024-769, not seen) and whether its 'superseding' uses displace the R-A house and living area (27-307 against 27-305.1A); whether the living area counts as a second family for the 'per family' lot areas, a dwelling unit for parking or toward the R-3 density; whether a new detached building may hold it; the reach of the R-A rule into R-1 to I by reference; the Main Street Commercial map code; Chapter 17 (PRD) and the PDF attachment not read."
     },
     {
       "geoid": "4207755576",
@@ -3135,17 +3135,17 @@
       "pop_rank": 152,
       "file": "pa_lehigh_north_whitehall",
       "batch": 25,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/35645899",
       "plain_fetch": false,
       "code_current_through": "2026-08-10",
-      "code_note": "Zoning: Chapter 440 Zoning (Ord. No. 2025-3, adopted 12-1-2025, repealing the 2002 ordinance). ADU text: 'Accessory family dwelling unit' (440-37 use H5, 440-40H(5)): by right in CR, AR and V, not permitted elsewhere, for family members or a family caregiver, part of the house or in an existing accessory structure such as a garage, at most 25% of the house, one more parking space. Two-family detached dwellings by right in CR, AR, AR-I, AR-L, SR and V. No district height for houses found in the web text. Read in the browser on eCode360 (NO3503).",
+      "code_note": "Zoning: Chapter 440 Zoning (Ord. No. 2025-3, adopted 12-1-2025, repealing the 2002 ordinance). ADU text: 'Accessory family dwelling unit' (440-37 use H5, 440-40H(5)): by right in CR, AR and V, not permitted elsewhere, for family members or a family caregiver, part of the house or in an existing accessory structure such as a garage, at most 25% of the house, one more parking space. Two-family detached dwellings by right in CR, AR, AR-I, AR-L, SR and V. A second single-family detached dwelling for farm workers or the landowner's immediate family is part of an agricultural operation in every district (440-40A(1)(c)). No district height for houses found in the web text. Read in the browser on eCode360 (NO3503).",
       "why": [
         "named as a town with an ADU ordinance (Code 440-40H(5) accessory family dwelling unit)"
       ],
-      "status_note": "Batch 25 draft, pending an independent review. Open: no district height for houses found in the web text (440-76A refers to one); family member and family caregiver are not defined; the use table writes AR-I as A-I; which 440-38 row applies to two-family detached dwellings outside SR."
+      "status_note": "Independently reviewed, findings fixed. For a later check: no district height for houses found in the web text (440-76A refers to one); whether the accessory family dwelling unit counts as a dwelling unit for the V twin figure (5,000 sq ft per unit); family member and family caregiver are undefined (440-12D, dictionary meaning); the use table writes AR-I as A-I; which 440-38 row applies to two-family detached dwellings outside SR; 440-40C(1)(c) and C(13)(e) seen by search only."
     },
     {
       "geoid": "4200355016",
@@ -3165,11 +3165,11 @@
       "code_url": "https://ecode360.com/30832639",
       "plain_fetch": false,
       "code_current_through": "2024-10-08",
-      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 477, 5-11-2021, as amended). ADU text: 'Accessory dwelling unit' (27-305 Table 2, 27-604): conditional use in R-1, R-2 and MU, lot 20,000 sq ft, owner-occupied, one per lot, at most 25% of the house, 8 ft from the house, an apartment above a detached garage, a manufactured home or a tiny house. Conversion dwellings by conditional use (27-643(3)), duplexes by right in R-1 and MU. New Laws: Ord. No. 535 and 551 (zoning) not codified. Ord. No. 551 restates the accessory use table. Read in the browser on eCode360 (NO3691).",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 477, 5-11-2021, as amended). ADU text: 'Accessory dwelling unit' (27-305 Table 2, 27-604): conditional use in R-1, R-2 and MU, lot 20,000 sq ft, owner-occupied, one per lot, at most 25% of the house, 8 ft from the house, an apartment above a detached garage, a manufactured home or a tiny house. Table 2 also rates the unit P in B-2 and I-1, where no dwelling is listed. R-1 density 1.1 units per acre with public sewer, 0.5 without. Conversion dwellings by conditional use (27-643(3)), duplexes by right in R-1 and MU. New Laws: Ord. No. 535 and 551 (zoning) not codified. Ord. No. 551 restates the accessory use table. Read in the browser on eCode360 (NO3691).",
       "why": [
         "named as a town with an ADU ordinance (Code 27-604 accessory dwelling unit)"
       ],
-      "status_note": "Batch 25 draft, pending an independent review. Open: Ord. No. 551 (8-18-2026) restates the accessory use table including the ADU row and is not yet codified (PDF not opened), Ord. No. 535 content not seen; 27-202 allows attached units while 27-604(7) needs 8 ft from the house; ADU rated P in B-2 and I-1 where no dwelling is listed; accessory 20 ft cap against principal bulk for a unit over a garage."
+      "status_note": "Independently reviewed, findings fixed, stays drafted. Open: Ord. No. 551 (8-18-2026) restates the accessory use table including the ADU row ('C P C P O' in a garbled excerpt, the codified row is C in R-1, R-2 and MU, P in B-2 and I-1) and is a PDF only, not opened; Ord. No. 535 (6-17-2025) content not seen; the online code is current only through 10-08-2024. Also open: B-2 and I-1 (Table 2 P against 27-604 conditional use, no dwelling listed); whether the unit counts toward R-1 density; whether 27-305.1F bars a manufactured home or tiny house unit; 27-202 attached units against the 8 ft rule; the 20 ft accessory cap against principal bulk; 27-503 (Streetscape Enhancement Overlay) not read."
     }
   ]
 }

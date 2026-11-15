@@ -36,17 +36,20 @@
     "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 08-10-2026'. New Laws: Ord. No. 2026-10 to 2026-13 (open burning, emergency services, nuisances, property maintenance, tax, street lighting), none amending Chapter 440.",
     "code_caution": "Chapter 440 is a new ordinance (Ord. No. 2025-3, 12-1-2025). The use table (440-37) writes the Agricultural-Rural Residential-Institutional Option District as 'A-I', while 440-32 and 440-38 write 'AR-I': this file uses AR-I. No maximum building height for houses was found in the web text: 440-76A refers to 'The maximum structure height specified for each district', but the 440-38 table has no height column and a search found none, so district heights are left open. The definitions (440-31) were read on screen for the terms named in the notes, not in full.",
     "checks": [
-      "An accessory family dwelling unit is permitted by right in CR, AR and V and marked 'N' (not permitted) in every other district (440-37, use H5). It is 'a residence by family members or a family caregiver', with one unit to a single-family detached dwelling or within an existing half of a twin (440-40H(5)). The code does not define a family member or a family caregiver: ask",
-      "The unit must be part of the principal residence or in an existing accessory structure such as a garage (440-40H(5)(f)). A new separate building is not allowed",
+      "An accessory family dwelling unit is permitted by right in CR, AR and V and marked 'N' (not permitted) in every other district (440-37, use H5). It is 'a residence by family members or a family caregiver', with one unit to a single-family detached dwelling or within an existing half of a twin (440-40H(5)). The code does not define a family member or a family caregiver. 440-12D: 'Where a word or phrase is not defined in this chapter, the ordinary meaning ... as defined in Merriam-Webster's Collegiate Dictionary, Eleventh Edition, shall control.' 440-31 defines FAMILY as 'Any group of individuals, related or unrelated, living together as a household unit': ask",
+      "The unit must be part of the principal residence or in an existing accessory structure such as a garage (440-40H(5)(f)). A new separate building is not allowed as this unit. On an agricultural operation a second single-family detached dwelling for farm workers or the landowner's immediate family is permitted as part of the farm use (440-40A(1)(c))",
+      "Agricultural operations are permitted by right in all nine districts (440-37 use A1). An agricultural operation is at least 10 contiguous acres, or less with an anticipated yearly gross income of at least $10,000 (440-31), and then the 440-38 lot minimums do not apply (note 2). 'A single-family detached dwelling for the sole use of individuals, and their immediate families, engaged in agricultural employment on the same site, or for the immediate family of the landowner is permitted as part of this use' (440-40A(1)(c))",
       "It may take at most 25% of the total usable floor area of the principal residence, not counting any garage (440-40H(5)(e)). Separate cooking and sanitary facilities for each unit (440-40H(5)(d))",
       "The building keeps the look of a single-family detached or semidetached dwelling with a single front entrance. Other entrances go on the side or rear. No exterior stairway on the front and no parking in the required front yard beyond up to three spaces in a driveway (440-40H(5)(b), (c))",
       "An on-lot septic system must be recertified if sewage flows increase (440-40H(5)(a))",
       "Parking: the house's two spaces plus one more for the unit (440-40H(5)(g), 440-55C)",
       "Accessory structures such as detached garages are at most 20 ft tall, at least 10 ft from side and rear lines, meet the district front yard, and count toward the district's impervious surface limit (440-40H(3)(c))",
       "Two-family detached dwellings (one unit above the other) are permitted by right in CR, AR, AR-I, AR-L, SR and V (440-37 use B3). Only one principal use is permitted per lot (440-75B)",
-      "No maximum building height for houses was found in the code's web text. Ask the zoning officer"
+      "No maximum building height for houses was found in the code's web text. Ask the zoning officer",
+      "In V a twin lot is 5,000 sq ft per dwelling unit (440-38 note 4). Whether the accessory family dwelling unit counts as a second dwelling unit on a twin lot is not stated: ask",
+      "Other dwellings tied to a use, not ADUs: one dwelling unit accessory to a place of worship for its religious leaders (440-40C(1)(c)) and one single-family detached dwelling for a full-time cemetery caretaker (440-40C(13)(e))"
     ],
-    "notes": "Zoning office: North Whitehall Township Planning and Zoning Department. The eCode360 code NO3503 is North Whitehall Township, Lehigh County (440-40G names the Lehigh County Public Safety Radio Communications System). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all (code and New Laws) for accessory family dwelling, accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee and domestic servants, then for family caregiver, family members, conversion, converted, age-restricted, age-qualified, second dwelling, additional dwelling, care of relative and two-family, then for maximum height and for unnecessary hardship and use variance. Read in full: 440-12, 440-18, 440-32, 440-37, 440-38, 440-75 and 440-76. Read on screen: 440-40B(1) to (7) (residential uses and cluster development), 440-40H(1) to (6) (accessory uses), the 440-55C parking table rows for dwellings and use H5, and the 440-31 definitions of accessory structure, dwelling, dwelling unit, family, impervious coverage and impervious surface. Not read: the rest of 440-40, Articles V and VII, 440-77 to 440-89, the Disposition List and Chapter 375 (subdivision)"
+    "notes": "Zoning office: North Whitehall Township Planning and Zoning Department. The eCode360 code NO3503 is North Whitehall Township, Lehigh County (440-40G names the Lehigh County Public Safety Radio Communications System). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all (code and New Laws) for accessory family dwelling, accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee and domestic servants, then for family caregiver, family members, conversion, converted, age-restricted, age-qualified, second dwelling, additional dwelling, care of relative and two-family, then for maximum height and for unnecessary hardship and use variance. Rechecked on screen in the fix round: 440-12D, 440-37 (use A1), 440-38 (notes 2 and 4), 440-40A(1)(c) and the 440-31 definition of agricultural operation. Read in full: 440-12, 440-18, 440-32, 440-37, 440-38, 440-75 and 440-76. Read on screen: 440-40B(1) to (7) (residential uses and cluster development), 440-40H(1) to (6) (accessory uses), the 440-55C parking table rows for dwellings and use H5, and the 440-31 definitions of accessory structure, dwelling, dwelling unit, family, impervious coverage and impervious surface. Seen by search on the 440-40 page, not read in full: 440-40C(1)(c) and 440-40C(13)(e). Not read: the rest of 440-40, Articles V and VII, 440-77 to 440-89, the Disposition List and Chapter 375 (subdivision)"
   },
   "adu": {
     "term": {
@@ -152,9 +155,42 @@
           "url": "https://ecode360.com/print/NO3503?guid=50429605",
           "confidence": "secondary",
           "note": "Not an ADU listing. A building type with no conversion standards. Which 440-38 row applies to a two-family detached dwelling outside SR is a reading, and whether SR's 7,000 sq ft is for the building's lot is not stated"
+        },
+        {
+          "name": "Second single-family detached dwelling on an agricultural operation",
+          "path": "by_right",
+          "districts": [
+            "CR",
+            "AR",
+            "AR-L",
+            "SR",
+            "V",
+            "AR-I",
+            "C",
+            "LI/B",
+            "ME/I"
+          ],
+          "conditions": "Agricultural operations are permitted by right in every district (use A1). 'A single-family detached dwelling for the sole use of individuals, and their immediate families, engaged in agricultural employment on the same site, or for the immediate family of the landowner is permitted as part of this use.' An agricultural operation is at least 10 contiguous acres, or less with an anticipated yearly gross income of at least $10,000. In CR, AR, AR-I and AR-L the agricultural operations row is 10 acres, 250 ft wide, yards 50, 25 and 50 ft. With $10,000 in yearly gross income there is no lot area or width minimum (440-38 note 2)",
+          "min_lot_sqft": 435600,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is an agricultural operation in use, and the dwelling is for people engaged in agricultural employment on the site and their immediate families, or for the landowner's immediate family",
+              "section": "440-40A(1)(c), 440-31 (agricultural operation)"
+            },
+            {
+              "test": null,
+              "condition": "A farm under 10 acres qualifies only with an anticipated yearly gross income of at least $10,000, and then has no lot minimum",
+              "section": "440-31 (agricultural operation), 440-38 note 2"
+            }
+          ],
+          "section": "440-37 (use A1), 440-40A(1)(c), 440-31 (agricultural operation), 440-38",
+          "url": "https://ecode360.com/print/NO3503?guid=50429614",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A second house that is part of a farm use, not a unit added to any house. 10 acres is the lot test shown. A smaller farm with $10,000 in yearly gross income also qualifies"
         }
       ],
-      "section": "440-37, 440-38, 440-40B(3)",
+      "section": "440-37, 440-38, 440-40A(1)(c), 440-40B(3)",
       "url": "https://ecode360.com/print/NO3503?guid=50429605",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -195,12 +231,12 @@
       "value": [
         {
           "kind": "family",
-          "condition": "The unit is a residence for family members or a family caregiver. The code does not define either term.",
+          "condition": "The unit is a residence for family members or a family caregiver. Neither term is defined, so their ordinary dictionary meaning controls (440-12D).",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
-          "section": "440-40H(5)",
+          "section": "440-40H(5), 440-12D",
           "url": "https://ecode360.com/print/NO3503?guid=50429614"
         },
         {
@@ -302,7 +338,7 @@
       "url": "https://ecode360.com/print/NO3503?guid=50429614",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "'Accessory family dwelling unit shall be part of the principal residence or may be contained in the existing accessory structure such as a garage.' An addition that becomes part of the house is read as part of the principal residence. A new separate building is not allowed"
+      "note": "'Accessory family dwelling unit shall be part of the principal residence or may be contained in the existing accessory structure such as a garage.' An addition that becomes part of the house is read as part of the principal residence. A new separate building is not allowed as this unit, but on an agricultural operation a second single-family detached dwelling for farm workers or the landowner's immediate family is permitted as part of the farm use (440-40A(1)(c))"
     },
     "labels": {
       "value": {
@@ -390,11 +426,12 @@
       "confidence": "verified"
     },
     "occupancy": {
-      "value": "Family members or a family caregiver (neither term is defined).",
-      "section": "440-40H(5)",
+      "value": "Family members or a family caregiver. Neither term is defined, so their ordinary dictionary meaning controls (440-12D).",
+      "section": "440-40H(5), 440-12D, 440-31 (family)",
       "url": "https://ecode360.com/print/NO3503?guid=50429614",
       "verified_on": "2026-11-15",
-      "confidence": "verified"
+      "confidence": "verified",
+      "note": "The code does not define a family member or a family caregiver. 440-12D: 'Where a word or phrase is not defined in this chapter, the ordinary meaning ... as defined in Merriam-Webster's Collegiate Dictionary, Eleventh Edition, shall control.' 440-31 defines FAMILY as 'Any group of individuals, related or unrelated, living together as a household unit'"
     },
     "max_adus": {
       "value": 1,
@@ -571,7 +608,7 @@
         "url": "https://ecode360.com/print/NO3503?guid=50429606",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Single-family detached dwelling. Width 60 ft. V has no single-family row: these are the 'Other permitted uses' figures. A twin lot is 5,000 sq ft per dwelling unit, 40 ft wide, same yards and 75%"
+        "note": "Single-family detached dwelling. Width 60 ft. V has no single-family row: these are the 'Other permitted uses' figures. A twin is 'Semi-detached (twin) dwelling' 5,000 sq ft, note (4) 'Minimum lot area of 5,000 sf is per dwelling unit', 40 ft wide, same yards and 75%"
       },
       "setback_front_ft": {
         "value": 5,
@@ -633,6 +670,26 @@
         "url": "https://ecode360.com/print/NO3503?guid=50429614",
         "verified_on": "2026-11-15",
         "confidence": "verified"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 5000
+        },
+        "section": "440-38 (V, note 4)",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Semi-detached (twin) dwelling' row: '5,000 sf (4)'. Note (4): 'Minimum lot area of 5,000 sf is per dwelling unit.' 40 ft wide"
+      },
+      "lot_area_per_unit_by_type": {
+        "value": {
+          "semi_detached": 5000
+        },
+        "section": "440-38 (V, note 4)",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Minimum lot area of 5,000 sf is per dwelling unit.' Whether the accessory family dwelling unit counts as a dwelling unit for this figure is a reading. If it does, a twin lot with the unit needs 10,000 sq ft"
       }
     },
     "AR-I": {
@@ -777,6 +834,16 @@
         "verified_on": "2026-11-15",
         "confidence": "verified",
         "note": "'Max. Impervious Surface'. 440-31 IMPERVIOUS COVERAGE is 'The total area of all impervious surfaces on a lot (including building coverage) divided by the total lot area'. Accessory structures count toward it. The table sets no separate building coverage"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 7000
+        },
+        "section": "440-38 (SR)",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Twin/two-family detached' row: 7,000 sf, 50 ft wide, same yards and 50%. The table does not say per dwelling unit"
       }
     }
   }
