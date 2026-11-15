@@ -33,7 +33,9 @@
       "https://ecode360.com/print/LO0727?guid=9511151",
       "https://ecode360.com/print/LO0727?guid=9511395",
       "https://ecode360.com/print/LO0727?guid=9511699",
-      "https://ecode360.com/print/LO0727?guid=9511954"
+      "https://ecode360.com/print/LO0727?guid=9511954",
+      "https://ecode360.com/LO0727/search?query=%22dwelling%20units%20per%20gross%20acre%22%20OR%20%22area%20and%20width%20requirements%22%20OR%20%22all%20commercial%20uses%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/LO0727/laws"
     ],
     "verified_on": "2026-11-15",
     "county": "Montgomery",
@@ -45,15 +47,17 @@
     "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 05-06-2026'. The chapter page lists New Laws Ord. No. 2026-06 and 2026-07 (Zoning Amendment, adopted 2026-08-05).",
     "code_caution": "Two zoning ordinances adopted 8-5-2026 are not yet in the online code and were read only in the site's search excerpts (their PDFs were not opened). Ord. No. 2026-06 adds an Age-Qualified Residential (AQR) development for people 55 and older in the LPOD overlay by conditional use, on 35 acres, with single-family detached, two-family and triplex dwellings, and amends 164-28.1 to 164-28.4 and the zoning map. Ord. No. 2026-07 creates a Data Center Overlay District over I District land along Wambold Road. Neither excerpt touches a second unit on a house lot. The R-4 dimensional table (Attachment 3) and the neighborhood development option table (Attachment 4) are PDFs and were not opened, so R-4 lot figures are not on file.",
     "checks": [
-      "The zoning code has no accessory dwelling unit, in-law suite or similar term. Each district lists its uses 'and no other', so a second dwelling unit on a single-family lot needs a use variance from the Zoning Hearing Board (164-133C) unless one of the two-family paths below fits",
-      "A dwelling unit is for one family with 'one exclusive cooking facility', and every dwelling unit must be in a single-family detached building (one unit), a two-family building, a single-family attached building or an apartment building. A lot holds one principal building (164-5). So a house with a second unit is a two-family building",
+      "The zoning code has no accessory dwelling unit, in-law suite or similar term. No district lists a second dwelling unit on a single-family lot and the code has no special exception for unlisted uses: R-1A, R-1, R-3, C and MU list their uses 'and no other', and the other districts list theirs as the uses a lot may have. So a second unit needs a use variance from the Zoning Hearing Board (164-133C) unless one of the two-family paths below fits. The Board may also interpret whether a questionable use is permitted (164-133A)",
+      "A dwelling unit is for one family with 'one exclusive cooking facility', and every dwelling unit must be in a single-family detached building (one unit), a two-family building, a single-family attached building or an apartment building. A lot holds one principal building (164-5), though VC sets standards for two or more principal buildings on one lot (164-70.3B). So a house with a second unit is a two-family building",
       "In R-1, 'Alteration of a single-family dwelling into a two-family dwelling' is a conditional use before the Board of Supervisors (164-30B(3), 164-25). The code sets no further standards for it. R-2 permits 'any of the uses or purposes permitted in an R-1 Residence District' (164-38A) and C permits 'A use permitted in R-2 Residence Districts' (164-64A). Whether that carries the R-1 conditional use into R-2 and C is not settled: ask the township",
-      "In VC a two-family dwelling (twin or duplex) is permitted by right. VC allows six dwelling units per acre, so two units need about 14,520 sq ft of net lot, and conversions need public sewer (164-70.2A(2), 164-70.3, 164-70.4G)",
+      "In VC a two-family dwelling (twin or duplex) is permitted by right. VC allows six dwelling units per acre, and 164-5 measures density per gross acre, so two units need about 14,520 sq ft of gross lot. Conversions need public sewer (164-5, 164-70.2A(2), 164-70.3, 164-70.4G)",
       "In R-4 and R-5 a two-family building is permitted on a lot within a tract proposed for development, with 15% common open space and public sewer and water (R-5: a 5-acre tract, 4,500 sq ft per unit). In OLC two-family and triplex buildings are permitted only as a development on 10 acres. In RO an existing home may be converted into a professional office and one apartment as a conditional use (164-46, 164-54, 164-55, 164-62.9H, 164-62.16A(2))",
-      "An accessory building on a house lot must stand at least 10 ft behind the house, be no larger than 30% of the house's floor area (more by conditional use on a 60,000 sq ft lot) and meet setbacks that grow with its size: 5 ft (100 sq ft and 9 ft tall), 10 ft (500 sq ft and 15 ft), the house setbacks above that. In R-3 accessory buildings are at most 15 ft and one story (164-15B(1), 164-42H)",
-      "An owner who lives in the house may rent rooms to no more than two nontransient persons (164-15B(7)). That is not a separate dwelling unit"
+      "An accessory building on a house lot must stand at least 10 ft behind the house and 10 ft from all other buildings on the lot, be no larger than 30% of the house's floor area (more by conditional use on a 60,000 sq ft lot) and meet setbacks that grow with its size: 5 ft (100 sq ft and 9 ft tall), 10 ft (500 sq ft and 15 ft), the house setbacks above that. In R-3, and so on an OLC house lot, accessory buildings are at most 15 ft and one story (164-15B(1), 164-42H(2), 164-43C(7)(b), 164-44C(7)(b), 164-62.9A)",
+      "An owner who lives in the house may rent rooms to no more than two nontransient persons (164-15B(7)). That is not a separate dwelling unit",
+      "In OLC a house follows the R-3 standards (164-62.9A), while the OLC table's by-right column gives other figures (front 30, side 20, rear 40, 60 ft from abutting residential lot lines, building coverage 10%, green space 60%, 164-62.12). The stricter of each is shown: ask which set applies",
+      "In C a house lot takes only the R-2 area and width (32,500 sq ft, 125 ft, 164-66). The code states no yards, building coverage or height for an exclusive residential use there: ask"
     ],
-    "notes": "Zoning office: Lower Salford Township Zoning Officer. The eCode360 code LO0727 is Lower Salford Township, Montgomery County (164-5 'TOWNSHIP Lower Salford Township, Montgomery County, Pennsylvania'). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all (code and New Laws) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee, domestic servants, into a two-family, conversion, converted, accessory use, second dwelling, age-restricted, mobile home, guest and tenant, and a New Laws search for dwelling, accessory, district, lot and residential. The ADU terms found only the family and institutional group living definitions and 164-30B(3) (R-1 alteration into a two-family dwelling). Read in full: 164-5 definitions (to YARD), 164-6, Article V up to 164-23 (with 164-12, 164-15, 164-16), 164-25, Articles VI (R-1A), VII (R-1), VIII (PCRD), VIIIA (R-1 Cluster), IX (R-2), X (R-3), XI (R-4), XII (R-5), XIIA (AO), XIIB (OLC), XIIC (RO), XIII (C), XIIIA (VC), XIIIB (MU), 164-133 and the 164-99 parking table head. Read in part: LPOD 164-28.1 to 164-28.4, I 164-71 and 164-72 (use list on screen, no dwelling). Search excerpts only: MHP 164-52.2 and 164-24. Not read: 164-24 in full, 164-25.1 to 164-25.8, Article XIVA (institutional), Article XV (floodplain), Articles XVII to XIX, 164-134 to 164-160, the PDF attachments and the two New Laws PDFs."
+    "notes": "Zoning office: Lower Salford Township Zoning Officer. The eCode360 code LO0727 is Lower Salford Township, Montgomery County (164-5 'TOWNSHIP Lower Salford Township, Montgomery County, Pennsylvania'). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all (code and New Laws) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee, domestic servants, into a two-family, conversion, converted, accessory use, second dwelling, age-restricted, mobile home, guest and tenant, and a New Laws search for dwelling, accessory, district, lot and residential. The ADU terms found only the family and institutional group living definitions and 164-30B(3) (R-1 alteration into a two-family dwelling). Read in full: 164-5 definitions (to YARD), 164-6, Article V up to 164-23 (with 164-12, 164-15, 164-16), 164-25, Articles VI (R-1A), VII (R-1), VIII (PCRD), VIIIA (R-1 Cluster), IX (R-2), X (R-3), XI (R-4), XII (R-5), XIIA (AO), XIIB (OLC), XIIC (RO), XIII (C), XIIIA (VC), XIIIB (MU), 164-133 and the 164-99 parking table head. Read in part: LPOD 164-28.1 to 164-28.4, I 164-71 and 164-72 (use list on screen, no dwelling). Search excerpts only: MHP 164-52.2 and 164-24. Not read: 164-24 in full, 164-25.1 to 164-25.8, Article XIVA (institutional), Article XV (floodplain), Articles XVII to XIX, 164-134 to 164-160, the PDF attachments and the two New Laws PDFs. Fix round on 2026-11-15 after the independent review: read 164-70.1 to 164-70.5 (VC), 164-63 to 164-70 (C), 164-62.8 to 164-62.13.1 (OLC), 164-62.15 to 164-62.17 (RO), the R-3 accessory height lines, 164-15B(1), the 164-5 DENSITY definition (search excerpt) and the New Laws page (2026-05 taxation, 2026-06 and 2026-07 zoning). Not re-read: MU twins in a mixed-use development (20-acre tract, 5,000 sq ft per unit, from the review only)."
   },
   "adu": {
     "term": {
@@ -70,7 +74,7 @@
       "url": "https://ecode360.com/print/LO0727?guid=9510326",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "No ADU text. Each district lists its uses 'and no other'. A dwelling unit must sit in a single-family detached, two-family, single-family attached or apartment building, and a single-family detached building holds a single dwelling unit, so a house with a second unit becomes a two-family building. That is a conditional use in R-1 (alteration of a single-family dwelling into a two-family dwelling) and by right in VC (see the alternatives)."
+      "note": "No ADU text. No district lists a second unit on a house lot, and the code has no special exception for unlisted uses (R-1A, R-1, R-3, C and MU list their uses 'and no other', the others list the uses a lot may have). A dwelling unit must sit in a single-family detached, two-family, single-family attached or apartment building, and a single-family detached building holds a single dwelling unit, so a house with a second unit becomes a two-family building. That is a conditional use in R-1 (alteration of a single-family dwelling into a two-family dwelling) and by right in VC (see the alternatives)."
     }
   },
   "approval": {
@@ -134,12 +138,12 @@
           "districts": [
             "VC"
           ],
-          "conditions": "A two-family dwelling (twin or duplex) is permitted by right in VC. Net lot at least 10,000 sq ft and 60 ft wide, and residential density at most six dwelling units per acre (7.5 with bonuses), so two units need about 14,520 sq ft. Impervious cover at most 80%, 40 ft or 3.5 stories, side yards 10 ft, rear 20 ft, front 15 to 25 ft from the ultimate right-of-way. 'All new developments and conversions shall be served by public sewer facilities.' Two parking spaces per dwelling unit.",
+          "conditions": "A two-family dwelling (twin or duplex) is permitted by right in VC. Net lot at least 10,000 sq ft and 60 ft wide, and residential density at most six dwelling units per acre (7.5 with bonuses), measured per gross acre (164-5), so two units need about 14,520 sq ft of gross lot. Impervious cover (buildings and paving) at most 80% of the net lot, 40 ft or 3.5 stories, side yards 10 ft, rear 20 ft, front 15 to 25 ft from the ultimate right-of-way. 'All new developments and conversions shall be served by public sewer facilities.' Two parking spaces per dwelling unit.",
           "min_lot_sqft": 14520,
-          "section": "164-70.2A(2), 164-70.3A, C, 164-70.4G, 164-99",
+          "section": "164-5 (density), 164-70.2A(2), 164-70.3A, C, 164-70.4G, 164-99",
           "url": "https://ecode360.com/print/LO0727?guid=9510996",
           "confidence": "secondary",
-          "note": "Not an ADU listing. The 14,520 sq ft figure is the six units per acre density applied to two units, a reading. The VC intent names the conversion of existing buildings"
+          "note": "Not an ADU listing. The 14,520 sq ft figure is the six units per gross acre density applied to two units, a reading. The VC intent names the conversion of existing buildings. 164-70.3B also sets standards for two or more principal buildings on one lot"
         },
         {
           "name": "Two-family building in an R-4 tract development",
@@ -214,6 +218,19 @@
           "url": "https://ecode360.com/print/LO0727?guid=9510806",
           "confidence": "secondary",
           "note": "Not an ADU listing. The house becomes an office with one apartment, so it is not a second unit beside a house"
+        },
+        {
+          "name": "Offices and one apartment (RO Class Two)",
+          "path": "conditional_use",
+          "districts": [
+            "RO"
+          ],
+          "conditions": "Class Two conditional use 'Offices and one apartment'. Lot at least 80,000 sq ft and 150 ft wide, front 40 ft, side 30 ft, rear 40 ft, with the other RO Class Two standards.",
+          "min_lot_sqft": 80000,
+          "section": "164-62.16B(5), 164-62.17",
+          "url": "https://ecode360.com/print/LO0727?guid=9510806",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. An office use with one apartment, not a second unit beside a house"
         }
       ],
       "section": "164-30B(3), 164-46, 164-54, 164-62.9H, 164-62.16, 164-70.2",
@@ -321,6 +338,14 @@
       "confidence": "unverified",
       "note": "No ADU rule. Shown for an accessory building only."
     },
+    "separation_ft": {
+      "value": 10,
+      "section": "164-15B(1)(a)",
+      "url": "https://ecode360.com/print/LO0727?guid=9509805",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "An accessory building shall be 'separated from all other buildings and/or structures on the lot by at least 10 feet' and stand at least 10 ft behind the principal building."
+    },
     "accessory_rules_where": {
       "value": [
         {
@@ -344,9 +369,20 @@
           "districts": null,
           "section": "164-15B(1)(a)[3]",
           "url": "https://ecode360.com/print/LO0727?guid=9509805"
+        },
+        {
+          "where": "Any accessory building in R-3, and on an OLC house lot (R-3 standards): at most 15 ft and one story",
+          "districts": [
+            "R-3",
+            "OLC"
+          ],
+          "max_height_ft": 15,
+          "section": "164-42H(2), 164-43C(7)(b), 164-44C(7)(b), 164-62.9A",
+          "url": "https://ecode360.com/print/LO0727?guid=9510434",
+          "note": "'Accessory building: 15 feet and no more than one story.'"
         }
       ],
-      "section": "164-15B(1)(a)",
+      "section": "164-15B(1)(a), 164-42H(2)",
       "url": "https://ecode360.com/print/LO0727?guid=9509805",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -694,7 +730,7 @@
         "url": "https://ecode360.com/print/LO0727?guid=9510996",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Net lot area (gross lot area less the land between the legal and the ultimate right-of-way, access strips and utility rights-of-way, 164-5). Width 60 ft. Residential density at most six units per acre. Height '3 1/2 stories, or 40 feet, whichever is less'."
+        "note": "Net lot area (gross lot area less the land between the legal and the ultimate right-of-way, access strips and utility rights-of-way, 164-5). Width 60 ft. Residential density at most six units per gross acre. Height '3 1/2 stories, or 40 feet, whichever is less'. The code sets no building coverage figure in VC, only the 80% impervious cover."
       },
       "setback_front_ft": {
         "value": 15,
@@ -726,14 +762,6 @@
         "verified_on": "2026-11-15",
         "confidence": "verified"
       },
-      "max_building_coverage": {
-        "value": 0.8,
-        "section": "164-70.3",
-        "url": "https://ecode360.com/print/LO0727?guid=9510996",
-        "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
-      },
       "max_impervious_coverage": {
         "value": 0.8,
         "section": "164-70.3A",
@@ -744,11 +772,19 @@
       },
       "lot_area_per_unit_sqft": {
         "value": 7260,
-        "section": "164-70.3C(1)",
+        "section": "164-70.3C(1), 164-5 (density)",
         "url": "https://ecode360.com/print/LO0727?guid=9510996",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "'Residential density: six dwelling units per acre' (7.5 with bonuses)."
+        "note": "'Residential density: six dwelling units per acre' (7.5 with bonuses). 164-5 defines DENSITY as 'The number of dwelling units per gross acre', so 7,260 sq ft of gross lot per unit."
+      },
+      "principal_max_stories": {
+        "value": 3.5,
+        "section": "164-70.3A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'3 1/2 stories, or 40 feet, whichever is less'."
       }
     },
     "RO": {
@@ -809,56 +845,58 @@
     "OLC": {
       "min_lot_sqft": {
         "value": 20000,
-        "section": "164-62.9A, 164-42",
+        "section": "164-62.9A, 164-42, 164-62.12",
         "url": "https://ecode360.com/print/LO0727?guid=9510759",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "A single-family detached dwelling follows the R-3 standards (164-62.9A): net lot 20,000 sq ft, width 100 ft. The OLC table's by-right column also gives 20,000 sq ft, 100 ft, yards 30/20/40 and 10% building coverage."
+        "note": "Both sets give a net lot of 20,000 sq ft and width 100 ft. 164-62.9A sends a single-family detached house to the R-3 standards, while the 164-62.12 by-right column gives front 30, side 20, rear 40, 60 ft from abutting residential lot lines, building coverage 10% and green space 60%. The two conflict, so the stricter figure of the two is shown."
       },
       "setback_front_ft": {
         "value": 50,
-        "section": "164-62.9A, 164-42",
+        "section": "164-62.9A, 164-42, 164-62.12",
         "url": "https://ecode360.com/print/LO0727?guid=9510759",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "R-3 figure (50 ft front with 30 ft rear, or 30 ft with 50 ft)."
+        "note": "R-3 figure (50 ft front with 30 ft rear, or 30 ft with 50 ft). The OLC table gives 30 ft. 164-62.9A sends a single-family detached house to the R-3 standards, while the 164-62.12 by-right column gives front 30, side 20, rear 40, 60 ft from abutting residential lot lines, building coverage 10% and green space 60%. The two conflict, so the stricter figure of the two is shown."
       },
       "setback_side_ft": {
-        "value": 15,
-        "section": "164-62.9A, 164-42",
+        "value": 20,
+        "section": "164-62.12, 164-62.9A, 164-42",
         "url": "https://ecode360.com/print/LO0727?guid=9510759",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "Each of the two side yards."
+        "note": "OLC table figure. R-3 gives 15 ft each side. 164-62.9A sends a single-family detached house to the R-3 standards, while the 164-62.12 by-right column gives front 30, side 20, rear 40, 60 ft from abutting residential lot lines, building coverage 10% and green space 60%. The two conflict, so the stricter figure of the two is shown."
       },
       "setback_rear_ft": {
-        "value": 30,
-        "section": "164-62.9A, 164-42",
+        "value": 40,
+        "section": "164-62.12, 164-62.9A, 164-42",
         "url": "https://ecode360.com/print/LO0727?guid=9510759",
         "verified_on": "2026-11-15",
-        "confidence": "secondary"
+        "confidence": "secondary",
+        "note": "OLC table figure. R-3 gives 30 ft (with a 50 ft front) or 50 ft (with a 30 ft front). Also 60 ft from abutting residential lot lines. 164-62.9A sends a single-family detached house to the R-3 standards, while the 164-62.12 by-right column gives front 30, side 20, rear 40, 60 ft from abutting residential lot lines, building coverage 10% and green space 60%. The two conflict, so the stricter figure of the two is shown."
       },
       "principal_max_height_ft": {
         "value": 35,
-        "section": "164-62.9A, 164-42",
+        "section": "164-62.9A, 164-42, 164-62.12",
         "url": "https://ecode360.com/print/LO0727?guid=9510759",
         "verified_on": "2026-11-15",
         "confidence": "secondary"
       },
       "max_building_coverage": {
-        "value": 0.15,
-        "section": "164-62.9A, 164-42",
+        "value": 0.1,
+        "section": "164-62.12, 164-62.9A, 164-42",
         "url": "https://ecode360.com/print/LO0727?guid=9510759",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+        "note": "OLC table: 10% of net lot area (15% in the shared-driveway case of 164-62.13A(3)). R-3 gives 15%. 164-62.9A sends a single-family detached house to the R-3 standards, while the 164-62.12 by-right column gives front 30, side 20, rear 40, 60 ft from abutting residential lot lines, building coverage 10% and green space 60%. The two conflict, so the stricter figure of the two is shown."
       },
       "max_impervious_coverage": {
         "value": 0.25,
-        "section": "164-62.9A, 164-42",
+        "section": "164-62.9A, 164-42, 164-62.12",
         "url": "https://ecode360.com/print/LO0727?guid=9510759",
         "verified_on": "2026-11-15",
-        "confidence": "secondary"
+        "confidence": "secondary",
+        "note": "R-3 figure. The OLC table sets green space of at least 60% of the net lot instead. 164-62.9A sends a single-family detached house to the R-3 standards, while the 164-62.12 by-right column gives front 30, side 20, rear 40, 60 ft from abutting residential lot lines, building coverage 10% and green space 60%. The two conflict, so the stricter figure of the two is shown."
       },
       "utility_rows": {
         "value": [
@@ -886,8 +924,8 @@
         "section": "164-42A",
         "url": "https://ecode360.com/print/LO0727?guid=9510434",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "'Any development not served by either public or central sewer or public or central water facilities must meet the requirements of the R-1 Residence Districts' (164-42A): net lot 45,000 sq ft, width 150 ft, yards 75/30/50, building area 9%."
+        "confidence": "secondary",
+        "note": "Through the R-3 standards (164-62.9A): 'Any development not served by either public or central sewer or public or central water facilities must meet the requirements of the R-1 Residence Districts' (164-42A): net lot 45,000 sq ft, width 150 ft, yards 75/30/50, building area 9%."
       }
     },
     "C": {
@@ -897,44 +935,47 @@
         "url": "https://ecode360.com/print/LO0727?guid=9510862",
         "verified_on": "2026-11-15",
         "confidence": "secondary",
-        "note": "'An exclusive residential use of a parcel of ground in a commercial zone shall conform to the area and width requirements set forth hereinabove for the R-2 Residence District.' A combined commercial and single-family use needs 32,000 sq ft (164-67)."
+        "note": "'An exclusive residential use of a parcel of ground in a commercial zone shall conform to the area and width requirements set forth hereinabove for the R-2 Residence District' (164-66): net lot 32,500 sq ft, width 125 ft. A combined commercial and single-family use needs 32,000 sq ft, 125 ft, 15% building area, yards 60, 20 and 30 ft (164-67)."
       },
       "setback_front_ft": {
-        "value": 60,
-        "section": "164-66, 164-39",
+        "value": null,
+        "section": "164-66, 164-68A",
         "url": "https://ecode360.com/print/LO0727?guid=9510862",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary"
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Not stated for an exclusive residential use in C: 164-66 borrows only the R-2 area and width, and the 35 ft height in 164-68A(3) is for 'all commercial uses'."
       },
       "setback_side_ft": {
-        "value": 30,
-        "section": "164-66, 164-39",
+        "value": null,
+        "section": "164-66, 164-68A",
         "url": "https://ecode360.com/print/LO0727?guid=9510862",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Each of the two side yards."
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Not stated for an exclusive residential use in C: 164-66 borrows only the R-2 area and width, and the 35 ft height in 164-68A(3) is for 'all commercial uses'."
       },
       "setback_rear_ft": {
-        "value": 30,
-        "section": "164-66, 164-39",
+        "value": null,
+        "section": "164-66, 164-68A",
         "url": "https://ecode360.com/print/LO0727?guid=9510862",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary"
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Not stated for an exclusive residential use in C: 164-66 borrows only the R-2 area and width, and the 35 ft height in 164-68A(3) is for 'all commercial uses'."
       },
       "principal_max_height_ft": {
-        "value": 35,
-        "section": "164-66, 164-39",
+        "value": null,
+        "section": "164-66, 164-68A",
         "url": "https://ecode360.com/print/LO0727?guid=9510862",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary"
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Not stated for an exclusive residential use in C: 164-66 borrows only the R-2 area and width, and the 35 ft height in 164-68A(3) is for 'all commercial uses'."
       },
       "max_building_coverage": {
-        "value": 0.08,
-        "section": "164-66, 164-39",
+        "value": null,
+        "section": "164-66, 164-68A",
         "url": "https://ecode360.com/print/LO0727?guid=9510862",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Not stated for an exclusive residential use in C: 164-66 borrows only the R-2 area and width, and the 35 ft height in 164-68A(3) is for 'all commercial uses'."
       }
     },
     "MU": {

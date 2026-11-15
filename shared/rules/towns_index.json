@@ -3039,17 +3039,17 @@
       "pop_rank": 138,
       "file": "pa_erie_harborcreek",
       "batch": 24,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/38846017",
       "plain_fetch": false,
       "code_current_through": "2026-08-19",
-      "code_note": "Zoning: Chapter 490 Zoning (Ord. No. 2025-243, adopted 1-8-2025, as amended). No ADU text. A separate building used for living is barred (490-88A, 490-94A). Two-family dwellings by right in R-2 (not abutting another), R-3 and R-4 on duplex lots, a planned residential development with duplexes by conditional use in R-1, R-2 and LF (20 acres), a caretaker unit with an industrial establishment. Unlisted uses are a special exception only in I (490-14B). Read in the browser on eCode360 (HA4252).",
+      "code_note": "Zoning: Chapter 490 Zoning (Ord. No. 2025-243, adopted 1-8-2025, as amended). No ADU text. A separate building used for living is barred (490-88A, 490-94A), and an accessory building includes a portion of the main building (490-16), so the bar may reach an attached garage or an internal unit. Two-family dwellings by right in R-2 (not abutting another), R-3 and R-4 on duplex lots, a planned residential development with duplexes by conditional use in R-1, R-2 and LF (20 acres, R-2 also multi-story at one unit per 4,000 sq ft), a caretaker unit with an industrial establishment. Unlisted uses are a special exception only in I (490-14B). Read in the browser on eCode360 (HA4252).",
       "why": [
         "added as batch 24 by population. Code Chapter 490 has no ADU text"
       ],
-      "status_note": "Batch 24 draft, awaiting independent review. Open: the use table appendix (Attachment 2, PDF) was not opened and amendment ordinances 2025-243-2 and -3 were not seen; whether a unit inside a house in R-2, R-3 or R-4 is read as a two-family dwelling (by right on a duplex lot) or needs a use variance."
+      "status_note": "Independently reviewed, findings fixed. For a later check: whether the 490-88A bar on living in an accessory building, read with the 490-16 definition (a portion of the main building), reaches an attached garage or a unit inside the house; the use table appendix (Attachment 2, PDF) was not opened; the target of Ord. No. 2025-243-2 (6-4-2025, in the code since Supp. 4) is not shown in any section read."
     },
     {
       "geoid": "4209145096",
@@ -3069,11 +3069,11 @@
       "code_url": "https://ecode360.com/9509651",
       "plain_fetch": false,
       "code_current_through": "2026-05-06",
-      "code_note": "Zoning: Chapter 164 Zoning (Ord. No. 62-6 of 1962, as amended). No ADU text. Alteration of a single-family dwelling into a two-family dwelling by conditional use in R-1 (164-30B(3)), and by reference perhaps in R-2 and C. Two-family dwellings by right in VC, in R-4 and R-5 tract developments and in an OLC development on 10 acres. In RO an existing home may become an office and one apartment by conditional use. New Laws: Ord. No. 2026-06 (age-qualified residential in LPOD) and 2026-07 (data center overlay) not codified. Read in the browser on eCode360 (LO0727).",
+      "code_note": "Zoning: Chapter 164 Zoning (Ord. No. 62-6 of 1962, as amended). No ADU text. Alteration of a single-family dwelling into a two-family dwelling by conditional use in R-1 (164-30B(3)), and by reference perhaps in R-2 and C. Two-family dwellings by right in VC (six units per gross acre, 80% impervious cover), in R-4 and R-5 tract developments and in an OLC development on 10 acres. In RO an existing home may become an office and one apartment, and offices with one apartment are a Class Two use (80,000 sq ft), both by conditional use. OLC houses: the R-3 standards (164-62.9A) conflict with the OLC table (164-62.12). New Laws: Ord. No. 2026-06 (age-qualified residential in LPOD) and 2026-07 (data center overlay) not codified. Read in the browser on eCode360 (LO0727).",
       "why": [
         "added as batch 24 by population. Code Chapter 164 has no ADU text"
       ],
-      "status_note": "Batch 24 draft, awaiting independent review. Open: whether R-2 and C carry the R-1 conditional use for altering a house into a two-family dwelling (164-38A, 164-64A); R-4 lot figures are in Attachment 3 (PDF, not read); Ord. No. 2026-06 and 2026-07 not codified and read only in search excerpts."
+      "status_note": "Independently reviewed, findings fixed. Open: R-4 lot figures are only in Attachment 3 (PDF, not opened); whether R-2 and C carry the R-1 conditional use for altering a house into a two-family dwelling (164-38A, 164-64A); OLC houses have two conflicting standards (R-3 through 164-62.9A against the 164-62.12 by-right column), the stricter of each is stored."
     },
     {
       "geoid": "4213353224",
@@ -3087,17 +3087,17 @@
       "pop_rank": 151,
       "file": "pa_york_newberry",
       "batch": 24,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/36783754",
       "plain_fetch": false,
       "code_current_through": "2026-07-28",
-      "code_note": "Zoning: Chapter 380 Zoning (Ord. No. 329, adopted 7-25-2006, as amended). ADU text: ECHO housing (380-14, 380-59A(19)): a portable elder cottage by special exception in RH, A, RR and R, at most 900 sq ft and two people, for a related person 55 or older, handicapped or disabled, on the house's utilities, removed within three months after use ends. Two-family conversion of a large existing house (3,000 sq ft) by special exception in V (380-59A(61)), two-family dwellings by right in RG and V. New Laws: Ord. No. 442 (data centers) not codified. Read in the browser on eCode360 (NE2598).",
+      "code_note": "Zoning: Chapter 380 Zoning (Ord. No. 329, adopted 7-25-2006, as amended). ADU text: ECHO housing (380-14, 380-59A(19)): a portable elder cottage by special exception in RH, A, RR and R, at most 900 sq ft and two people, for a related person 55 or older, handicapped or disabled, on the house's utilities, removed within three months after use ends. Two-family conversion of a large existing house (3,000 sq ft) by special exception in V (380-59A(61)), two-family dwellings by right in RG and V, more than one principal use on a V lot with land development approval (380-43). Lot coverage is impervious cover (380-14). New Laws: Ord. No. 442 (data centers) not codified. Read in the browser on eCode360 (NE2598).",
       "why": [
         "named as a town with an ADU ordinance (Code 380-59A(19) ECHO housing)"
       ],
-      "status_note": "Batch 24 draft, awaiting independent review. Open: the chapter's effective date for the V two-family conversion (380-86 not read); the lot coverage definition (read as building cover); Ord. No. 442 (data centers, 10-14-2026) not codified and read only in a search excerpt."
+      "status_note": "Independently reviewed, findings fixed. For a later check: whether the 700 sq ft minimum (380-42A) applies to the elder cottage; whether 380-20C limits a second principal house on a V lot under 380-43; the two-family height in the RG and V tables; the conservation subdivision attachments (PDF); Ord. No. 442 (10-14-2026) not codified."
     }
   ]
 }
