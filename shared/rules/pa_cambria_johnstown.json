@@ -4,7 +4,7 @@
     "instrument": "City of Johnstown Codified Ordinances, Part Twelve Title Six, Chapter 1260 Zoning Ordinance (Ord. 5139, 11-27-2013, as amended), as published on American Legal Publishing (eCode ALP)",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "American Legal Publishing code version '2026 S-20 (current)'. Chapter 1260 adopted by Ord. 5139 (11-27-2013), district maps Ord. 5191 (12-9-2015), later amendments Ord. 5317 (2021) and Ord. 5330 (2022) are in the text.",
+    "status_detail": "American Legal Publishing code version '2026 S-20 (current)', local legislation current through January 14, 2026. Chapter 1260 adopted by Ord. 5139 (11-27-2013), district maps Ord. 5191 (12-9-2015), later amendments Ord. 5317 (2021) and Ord. 5330 (2022) are in the text.",
     "effective_date": null,
     "source_urls": [
       "https://codelibrary.amlegal.com/search",
@@ -17,7 +17,9 @@
       "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51429",
       "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51785",
       "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50858",
-      "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-49525"
+      "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-49525",
+      "https://codelibrary.amlegal.com/codes/johnstownpa/latest/overview",
+      "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50477"
     ],
     "verified_on": "2026-11-14",
     "county": "Cambria",
@@ -25,19 +27,21 @@
     "geoid": "4202138288",
     "code_host": "amlegal",
     "code_url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-49965",
-    "code_current_through": null,
-    "code_current_through_note": "Version selector reads '2026 S-20 (current)'. No currency date is shown.",
+    "code_current_through": "2026-01-14",
+    "code_current_through_note": "The code overview page reads 'Local legislation current through January 14, 2026'. Version selector '2026 S-20 (current)'.",
     "checks": [
       "The zoning code has no accessory dwelling unit rule. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, sleeping quarters, living quarters, immediate family, accessory living, guest house, tenant house, caretaker, relative, housekeeping unit, family member, temporary family and conversion",
       "Each district lists its uses 'for the following uses only'. No building may be altered 'to accommodate (or house) a greater number of families' than the district allows, and not more than one main structure may occupy a lot unless the code provides otherwise (1260.031, 1260.032)",
       "In R1 a single-family dwelling may house only one family (1260.119(d)(2)). A family is related persons, or two unrelated people with their children, or three unrelated people, or up to five disabled people, as one housekeeping unit with common living, sleeping, cooking and eating facilities. Up to two lodgers are allowed (1260.011(ll), 1260.036)",
-      "Two-family dwellings (one building divided vertically or horizontally into two units) are permitted in R2, R3 and TND: 2,000 sq ft of lot per family in R2 and R3, 4,000 sq ft per unit in TND (1260.062, 1260.064, Appendix A)",
+      "Two-family dwellings (one building divided vertically or horizontally into two units) are permitted in R2, R3 and TND: 2,000 sq ft of lot per family in R2 and R3, 4,000 sq ft per unit in TND (1260.062, 1260.064, Appendix A). 'Single-family and two-family residential dwelling units' are also permitted in C1, C2 and C3, where Appendix A gives no lot area per family (1260.066(a)(19), 1260.067(a)(5), 1260.068(a)(2))",
       "TND and the HOD-CC (Cambria City) historic overlay permit 'two-single family units on one lot': in TND 8,000 sq ft for two units (1260.064(a)(2), (d), 1260.074(b)(2))",
-      "Parking: one space per unit for one- and two-family dwellings (1260.115(b)(1))",
-      "Appendix A (heights and yards) is published as a web table with a note that it 'is best viewed as a PDF'. The rear yard figures for S, R1, R2 and R3 are not clear in the web table. Ask the zoning officer",
+      "The definitions list a 'conversion apartment' (two or more dwelling units installed into a structure originally built as a single-family detached dwelling) under 'multi-family building' (1260.011(hh)(5)B). Multi-family dwellings are permitted in R3 (1,000 sq ft of lot per unit, at least 4,000 sq ft in all), TND, H and C1 to C3. Whether converting a house into two units is read this way is not said. Ask the zoning officer",
+      "'Unit group residential development' is a conditional use in R3 and H (1260.063(a)(4)C, 1260.065(a)(15)F). It is the code's own exception to one main structure per lot (1260.032). Its definition was not read",
+      "Parking: one space per unit for one- and two-family dwellings (1260.115(b)(1)). In TND and the HOD-CC overlay, re-use of an existing building needs no added parking (1260.064(g), 1260.074(f))",
+      "Appendix A (heights and yards) is published as a web table with a note that it 'is best viewed as a PDF'. For S it prints three rear yards, 40 ft, 20 ft and 7 ft, beside three height lines (one-family dwelling, other main structure, accessory structure), and R1, R2 and R3 say 'Same as above'. The house's rear yard is likely 40 ft, but the layout does not settle it. Ask the zoning officer",
       "Relief is a Zoning Hearing Board variance (1260.221(a))"
     ],
-    "notes": "Zoning office: City of Johnstown Building Code Official (Department of Community and Economic Development), who is also the zoning officer. The code is the City of Johnstown, Cambria County ('County of Cambria' in 1260.011(y)). Read on American Legal Publishing in a browser, one page at a time, on 2026-11-14. Code search (whole code) for the ADU words above found no ADU text (32 hits in other chapters, definitions, lodgers and a nonconforming-use exception). A second search for 'two-family', duplex, 'accessory use', 'accessory building', 'unnecessary hardship' and 'not specifically' found 1260.062, 1260.064, 1260.074, 1260.036, 1260.119 and 1260.084. Read in full: 1260.010, 1260.011, 1260.020, 1260.030 to 1260.032, 1260.038 to 1260.052, 1260.060 to 1260.064, 1260.074, 1260.115, 1260.221, Appendix A (web table). Read in part: 1260.119, 1260.065 (search excerpt). The definitions also define 'Conversion apartment' (1260.011(hh)(5)B), but no district lists it. Not read: C1 to C3 and M districts in full, PRD provisions (1260.080 to 1260.085), special exception and conditional use sections in full, Appendix C and D graphics, the Appendix A PDF. District code: the table in 1260.020 gives the short name 'TN' and 'TND District' for the Traditional Neighborhood District."
+    "notes": "Zoning office: City of Johnstown Building Code Official (Department of Community and Economic Development), who is also the zoning officer. The code is the City of Johnstown, Cambria County ('County of Cambria' in 1260.011(y)). Read on American Legal Publishing in a browser, one page at a time, on 2026-11-14. Code search (whole code) for the ADU words above found no ADU text (32 hits in other chapters, definitions, lodgers and a nonconforming-use exception). A second search for 'two-family', duplex, 'accessory use', 'accessory building', 'unnecessary hardship' and 'not specifically' found 1260.062, 1260.064, 1260.074, 1260.036, 1260.119 and 1260.084. Read in full: 1260.010, 1260.011, 1260.020, 1260.030 to 1260.032, 1260.038 to 1260.052, 1260.060 to 1260.064, 1260.074, 1260.115, 1260.221, Appendix A (web table). Read in part: 1260.119. Fix round on 2026-11-14 after an independent review: read 1260.065 to 1260.068 (H, C1, C2, C3) in full, the code overview (current through January 14, 2026), 1260.011(hh), 1260.116 and Appendix A again. The front-yard words in 1260.116(a)(2)B ('No swimming pool and/or structure shall be allowed in a front yard') belong to the private swimming pool rule, so no general front-yard bar for accessory buildings is stored. 'Conversion apartment' (1260.011(hh)(5)B) is listed under 'Multi-family building' (three or more units), see alternatives. Not read: M districts in full, the definition of unit group residential development, PRD provisions (1260.080 to 1260.085), special exception and conditional use sections in full, Appendix C and D graphics, the Appendix A PDF. District code: the table in 1260.020 gives the short name 'TN' and 'TND District' for the Traditional Neighborhood District."
   },
   "adu": {
     "term": {
@@ -46,11 +50,11 @@
       "url": "https://codelibrary.amlegal.com/search",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, sleeping quarters, living quarters, immediate family, accessory living, guest house, tenant house, caretaker, relative, housekeeping unit, family member, temporary family and conversion. 'Conversion apartment' is defined (two or more units in a building built as a single-family detached dwelling) but no district lists it."
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, sleeping quarters, living quarters, immediate family, accessory living, guest house, tenant house, caretaker, relative, housekeeping unit, family member, temporary family and conversion. 'Conversion apartment' (two or more units in a building originally built as a single-family detached dwelling) is defined under 'Multi-family building' (1260.011(hh)(5)B). No district names it, but multi-family dwellings are permitted in R3, TND, H and C1 to C3 (see alternatives)."
     },
     "status": {
       "value": "not_addressed",
-      "section": "1260.060 to 1260.064, 1260.031, 1260.032",
+      "section": "1260.060 to 1260.068, 1260.031, 1260.032",
       "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50356",
       "verified_on": "2026-11-14",
       "confidence": "verified",
@@ -64,7 +68,7 @@
       "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50356",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "R1 allows land and structures 'for the following uses only', and no building may be altered 'to accommodate (or house) a greater number of families' than the district allows (1260.031). A second unit for a relative or tenant is not listed, so a use variance is the path. Where two-family dwellings are permitted (R2, R3, TND) the second unit may be built as a two-family dwelling instead, see alternatives."
+      "note": "R1 allows land and structures 'for the following uses only', and no building may be altered 'to accommodate (or house) a greater number of families' than the district allows (1260.031). A second unit for a relative or tenant is not listed, so a use variance is the path. Where two-family dwellings are permitted (R2, R3, TND, C1, C2, C3) the second unit may be built as a two-family dwelling instead, see alternatives."
     },
     "fallback_path": {
       "value": "variance",
@@ -94,7 +98,22 @@
           "section": "1260.062(a)(2), 1260.063(a)(1), 1260.064(a)(2), (d), (e), 1260.011(hh)(3), 1260.115(b)(1), Appendix A",
           "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50356",
           "confidence": "secondary",
-          "note": "Not an ADU listing. Converting a house into two units is read as this use. TND uses 1260.064(d) (4,000 sq ft per unit), stricter than Appendix A (2,000 sq ft per family)."
+          "note": "Not an ADU listing. Converting a house into two units is read as this use. TND uses 1260.064(d) (4,000 sq ft per unit), stricter than Appendix A (2,000 sq ft per family)"
+        },
+        {
+          "name": "Single-family and two-family dwelling units in C1, C2 or C3",
+          "path": "by_right",
+          "districts": [
+            "C1",
+            "C2",
+            "C3"
+          ],
+          "conditions": "'Single-family and two-family residential dwelling units' are a permitted use in C1, C2 and C3. Appendix A gives no lot area per family for these districts. C1: front yard 10 ft, no side or rear yard, 35 ft and 3 stories. C2: no yards, 45 ft and 3 stories. C3: no yards, no height limit. In C1 every use follows a site plan approved by the Planning Commission (1260.066(b)(2)). One parking space per unit.",
+          "min_lot_sqft": null,
+          "section": "1260.066(a)(19), 1260.067(a)(2), (5), 1260.068(a)(2), 1260.066(b)(2), Appendix A, 1260.115(b)(1)",
+          "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50477",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Converting a house into two units is read as this use. In C1, dwelling units on the second story of a building are a special exception (1260.066(a)(14)A). C1 to C3 also permit multi-family buildings"
         },
         {
           "name": "Two single-family units on one lot (TND)",
@@ -107,7 +126,7 @@
           "section": "1260.064(a)(2), (c), (d), (f), (g), 1260.032",
           "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50356",
           "confidence": "secondary",
-          "note": "Not an ADU listing: a second house on the lot, the exception that 1260.032 ('not more than one main structure shall occupy such zoning lot') allows 'where otherwise provided herein'. It may be the closest path to a detached second unit."
+          "note": "Not an ADU listing: a second house on the lot, the exception that 1260.032 ('not more than one main structure shall occupy such zoning lot') allows 'where otherwise provided herein'. It may be the closest path to a detached second unit"
         },
         {
           "name": "Two single-family units on one lot (HOD-CC overlay)",
@@ -121,10 +140,30 @@
           "section": "1260.074(b)(2), (d), (e), (f)",
           "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50858",
           "confidence": "secondary",
-          "note": "Not an ADU listing. No lot area figure is written in 1260.074. Only where the HOD-CC overlay is mapped."
+          "note": "Not an ADU listing. No lot area figure is written in 1260.074. Only where the HOD-CC overlay is mapped"
+        },
+        {
+          "name": "Conversion apartment as a multi-family building (R3)",
+          "path": "by_right",
+          "districts": [
+            "R3"
+          ],
+          "conditions": "A 'conversion apartment' is 'Two or more dwelling units installed into a structure which was originally built as a single family detached dwelling', listed under 'Multi-family building'. Multi-family dwellings are a permitted use in R3. Lot area 1,000 sq ft per dwelling unit and at least 4,000 sq ft in all (Appendix A). One parking space per unit is the one- and two-family figure (1260.115(b)(1)).",
+          "min_lot_sqft": 4000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The building was originally built as a single-family detached dwelling",
+              "section": "1260.011(hh)(5)B"
+            }
+          ],
+          "section": "1260.011(hh)(5), (5)B, 1260.063(a)(2), Appendix A",
+          "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-49965",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. 'Multi-family building' is defined as three or more dwelling units, while the conversion apartment listed under it has two or more, so a two-unit conversion may instead be read as a two-family dwelling (first alternative). Multi-family dwellings are also permitted in TND, H and C1 to C3"
         }
       ],
-      "section": "1260.062, 1260.064, 1260.074",
+      "section": "1260.011(hh)(5), 1260.062, 1260.064, 1260.066 to 1260.068, 1260.074",
       "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50356",
       "verified_on": "2026-11-14",
       "confidence": "verified"
@@ -153,13 +192,17 @@
         "R1",
         "R2",
         "R3",
-        "TND"
+        "TND",
+        "H",
+        "C1",
+        "C2",
+        "C3"
       ],
-      "section": "1260.060 to 1260.064",
+      "section": "1260.060 to 1260.068",
       "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-50356",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Use lists read. S and R1 list one-family dwellings and accessory uses. R2 adds two-family dwellings, R3 multi-family dwellings and PRDs. TND lists single-family, two-family or two single-family units on one lot, town houses and multi-family. None names an accessory dwelling unit."
+      "note": "Use lists read. S and R1 list one-family dwellings and accessory uses. R2 adds two-family dwellings, R3 multi-family dwellings and PRDs. TND lists single-family, two-family or two single-family units on one lot, town houses and multi-family. H lists multi-family dwellings. C1, C2 and C3 list single-family and two-family dwelling units and multi-family buildings. None names an accessory dwelling unit."
     }
   },
   "form": {
@@ -179,15 +222,7 @@
       "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Accessory structure: 15 ft and 1 story (S, R1, R2, R3, TND). Not an ADU rule."
-    },
-    "front_yard_barred": {
-      "value": true,
-      "section": "1260.116(a)(2)B",
-      "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51112",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "'No swimming pool and/or structure shall be allowed in a front yard' is written in the pool section. Sheds of 48 sq ft or less may stand in rear or side yards 4 ft from lot lines, larger accessory buildings 'must comply with all setbacks' (1260.011(a)(7))."
+      "note": "Accessory structure: 15 ft and 1 story (S, R1, R2, R3, TND, H, C1, C2). Not an ADU rule. No general rule bars accessory buildings from the front yard: the front-yard words in 1260.116(a)(2)B are in the private swimming pool rule."
     }
   },
   "use": {
@@ -226,8 +261,8 @@
       "note": "No ADU row."
     },
     "reading": {
-      "value": "No ADU row. One- and two-family dwellings need one space for each unit, so a house with a second unit would need two in total (1260.115(b)(1)). Parking may be on the lot or within 500 ft (1260.115(d)(2)).",
-      "section": "1260.115(a), (b)(1), (d)(2)",
+      "value": "No ADU row. One- and two-family dwellings need one space for each unit, so a house with a second unit would need two in total (1260.115(b)(1)). Parking may be on the lot or within 500 ft (1260.115(d)(2)). In TND and the HOD-CC overlay, re-use of an existing building is allowed with the parking as it exists, and no added parking is required (1260.064(g), 1260.074(f)).",
+      "section": "1260.115(a), (b)(1), (d)(2), 1260.064(g), 1260.074(f)",
       "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51112",
       "verified_on": "2026-11-14",
       "confidence": "secondary"
@@ -265,7 +300,7 @@
         "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
         "verified_on": null,
         "confidence": "unverified",
-        "note": "Appendix A gives the S Conservancy rear yard as three figures, 40 ft, 20 ft and 7 ft, beside the three height lines (one-family dwelling, other main structure, accessory structure), and the R1, R2 and R3 rows say 'Same as above'. Which figure is the house's rear yard is not clear on the web table. Ask the zoning officer."
+        "note": "Appendix A prints the S Conservancy rear yard as three figures, 40 ft, 20 ft and 7 ft, beside the three height lines (one-family dwelling, other main structure, accessory structure), and the R1, R2 and R3 rows say 'Same as above'. The house's rear yard is likely 40 ft, but the web table does not settle it. Ask the zoning officer."
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -315,7 +350,7 @@
         "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
         "verified_on": null,
         "confidence": "unverified",
-        "note": "Appendix A gives the S Conservancy rear yard as three figures, 40 ft, 20 ft and 7 ft, beside the three height lines (one-family dwelling, other main structure, accessory structure), and the R1, R2 and R3 rows say 'Same as above'. Which figure is the house's rear yard is not clear on the web table. Ask the zoning officer."
+        "note": "Appendix A prints the S Conservancy rear yard as three figures, 40 ft, 20 ft and 7 ft, beside the three height lines (one-family dwelling, other main structure, accessory structure), and the R1, R2 and R3 rows say 'Same as above'. The house's rear yard is likely 40 ft, but the web table does not settle it. Ask the zoning officer."
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -365,7 +400,7 @@
         "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
         "verified_on": null,
         "confidence": "unverified",
-        "note": "Appendix A gives the S Conservancy rear yard as three figures, 40 ft, 20 ft and 7 ft, beside the three height lines (one-family dwelling, other main structure, accessory structure), and the R1, R2 and R3 rows say 'Same as above'. Which figure is the house's rear yard is not clear on the web table. Ask the zoning officer."
+        "note": "Appendix A prints the S Conservancy rear yard as three figures, 40 ft, 20 ft and 7 ft, beside the three height lines (one-family dwelling, other main structure, accessory structure), and the R1, R2 and R3 rows say 'Same as above'. The house's rear yard is likely 40 ft, but the web table does not settle it. Ask the zoning officer."
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -465,7 +500,7 @@
         "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
         "verified_on": null,
         "confidence": "unverified",
-        "note": "Appendix A gives the S Conservancy rear yard as three figures, 40 ft, 20 ft and 7 ft, beside the three height lines (one-family dwelling, other main structure, accessory structure), and the R1, R2 and R3 rows say 'Same as above'. Which figure is the house's rear yard is not clear on the web table. Ask the zoning officer."
+        "note": "Appendix A prints the S Conservancy rear yard as three figures, 40 ft, 20 ft and 7 ft, beside the three height lines (one-family dwelling, other main structure, accessory structure), and the R1, R2 and R3 rows say 'Same as above'. The house's rear yard is likely 40 ft, but the web table does not settle it. Ask the zoning officer."
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -482,6 +517,140 @@
         "verified_on": "2026-11-14",
         "confidence": "verified",
         "note": "2 1/2 stories for a one-family dwelling."
+      }
+    },
+    "C1": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "1260.066(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Appendix A gives no lot area per family for C1."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "1260.066(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Front yard 10 ft."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "1260.066(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Side yard 'None'."
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "1260.066(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Rear yard 'None'."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1260.066(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Main structure 35 ft and 3 stories. Accessory structure 15 ft and 1 story."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1260.066(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 stories for a main structure."
+      }
+    },
+    "C2": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "1260.067(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Appendix A gives no lot area per family for C2."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "1260.067(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Front yard 'None'."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "1260.067(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Side yard 'None'."
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "1260.067(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Rear yard 'None'."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1260.067(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Main structure 45 ft and 3 stories, more with added setbacks (1260.067(b)). Accessory structure 15 ft and 1 story."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "1260.067(c), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 stories for a main structure."
+      }
+    },
+    "C3": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "1260.068(b), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "Appendix A gives no lot area per family for C3. Height 'Unlimited'."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "1260.068(b), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Front yard 'None'."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "1260.068(b), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Side yard 'None'."
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "1260.068(b), Appendix A",
+        "url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-51896",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Rear yard 'None'."
       }
     }
   }

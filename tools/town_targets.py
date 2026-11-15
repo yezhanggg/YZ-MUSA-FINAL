@@ -1123,21 +1123,21 @@ HOSTS: dict[str, dict[str, Any]] = {
         "code_url": "https://ecode360.com/14342706",
         "plain_fetch": False,
         "current_through": "2025-07-23",
-        "note": "Zoning: Chapter 153 Zoning (Zoning Ordinance of 1956, as amended by Ord. No. 95-10 and later). ADU text: 'A-1 Accessory Apartments for Family Members' (153-502H(1)): special exception in R-200, R-180, R-175 and R-125 ('For family member only') and in the RBP Overlay on 80,000 sq ft lots with public water and sewer (153-418). Part of the house, not in a basement or accessory building, at most 800 sq ft, related family members only, one more parking space, registered with the Zoning Officer. Residential conversion (153-502F(10)) by special exception. New Laws: Ord. No. 25-08 and 26-04 (zoning) not codified. Read in the browser on eCode360 (TO0773).",
+        "note": "Zoning: Chapter 153 Zoning (Zoning Ordinance of 1956, as amended by Ord. No. 95-10 and later). ADU text: 'A-1 Accessory Apartments for Family Members' (153-502H(1)): special exception in R-200, R-180, R-175 and R-125 ('For family member only') and in the RBP Overlay on 80,000 sq ft lots with public water and sewer (153-418, whether the base district's listing still holds in the overlay is not said). Part of the house, not in a basement or accessory building, at most 800 sq ft, related family members only, one more parking space, registered with the Zoning Officer. Residential conversion (153-502F(10)) by special exception. New Laws: Ord. No. 25-08 and 26-04 (zoning) not codified. Read in the browser on eCode360 (TO0773).",
     },
     "4202138288": {
         "code_host": "amlegal",
         "code_url": "https://codelibrary.amlegal.com/codes/johnstownpa/latest/johnstown_pa/0-0-0-49965",
         "plain_fetch": False,
-        "current_through": None,
-        "note": "Zoning: Chapter 1260 Zoning Ordinance (Ord. 5139, 11-27-2013, as amended), code version 2026 S-20. No ADU text. Two-family dwellings permitted in R2, R3 and TND, and 'two-single family units on one lot' in TND and the HOD-CC overlay (1260.064, 1260.074). Elsewhere a use variance (1260.221). Read in the browser on American Legal (johnstownpa).",
+        "current_through": "2026-01-14",
+        "note": "Zoning: Chapter 1260 Zoning Ordinance (Ord. 5139, 11-27-2013, as amended), code version 2026 S-20. No ADU text. Two-family dwellings permitted in R2, R3, TND, C1, C2 and C3, 'two-single family units on one lot' in TND and the HOD-CC overlay (1260.064, 1260.066 to 1260.068, 1260.074), and a conversion apartment is defined as a multi-family building (permitted in R3). Elsewhere a use variance (1260.221). Current through 2026-01-14. Read in the browser on American Legal (johnstownpa).",
     },
     "4207183256": {
         "code_host": "ecode360",
         "code_url": "https://ecode360.com/11694778",
         "plain_fetch": False,
         "current_through": "2025-11-10",
-        "note": "Zoning: Chapter 285 Zoning (Ord. No. 270, 6-5-2024). ADU text: 'Accessory dwelling unit' (285-49D(1)): special exception in A, C, RR, R-1, R-2 and R-3, one per single-family detached dwelling for use by a relative, owner-occupied, in or attached to the house, at most 40% of the house or 800 sq ft (whichever is less) and two bedrooms, one more parking space, annual certification and recorded agreement. In A a larger ADU (60% or 1,200 sq ft) by conditional use. Read in the browser on eCode360 (WE2002).",
+        "note": "Zoning: Chapter 285 Zoning (Ord. No. 270, 6-5-2024). ADU text: 'Accessory dwelling unit' (285-49D(1)): special exception in A, C, RR, R-1, R-2 and R-3, one per single-family detached dwelling for use by a relative, owner-occupied, in or attached to the house, at most 40% of the house or 800 sq ft (whichever is less) and two bedrooms, one more parking space, annual certification and recorded agreement. In A a larger ADU (60% or 1,200 sq ft) by conditional use. Conversion of an existing building into dwellings by right in MS (285-43B(1)(e)). Read in the browser on eCode360 (WE2002).",
     },
 }
 
