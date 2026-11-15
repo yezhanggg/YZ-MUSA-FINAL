@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-15, late morning
+
+Not legal advice. Not a zoning determination.
+
+### Lot places
+
+<!-- source: ~/musa-drive/lots/<place>/manifest.json (data_version, built_at, counts), backups under ~/musa-drive/backups/lotdata7/, pipeline/rules.py DOUBT_HOLD_TOWNS and PASS12_HOLD_TOWNS -->
+
+- The rule sentences of Allentown and Chester County were refreshed without a rebuild (`allentown-20261115-4318818527`, `chester_county-20261115-95284f3b37`). Only the stored rules of each lot changed; geometry, land cover, spot cover, terrain, fits and the index are the same.
+- The rules engine pass 12 wording reached them: the Allentown height line has no semicolon (all 29,158 lots), and 225 Phoenixville lots outside the ADU rule's districts no longer say "ADUs per lot: the code is silent, 1 assumed". No yes or no, path, fit or share changed. `PASS12_HOLD_TOWNS` is empty.
+- The pass 11 fix for districts in doubt is lifted for nine of the ten lot towns: their lot records do not change. Narberth stays held (`DOUBT_HOLD_TOWNS`): its 9 lots in 5A and 5B would turn from not allowed to by right (qualified by the doubt), with other yards, so they need a rebuild of the fit first.
+- Centre County, Montgomery County, Pittsburgh and Philadelphia were not rewritten.
+
 ## 2026-11-15, early morning (with the late evening of Nov 14)
 
 Not legal advice. Not a zoning determination. HB 2186, SB 1346 and Bill 250042 are bills, not law.

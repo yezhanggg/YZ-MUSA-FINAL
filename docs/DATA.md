@@ -180,14 +180,16 @@ The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARC
 |---|---|---|---|---|---|---|
 | Pittsburgh | `pittsburgh-20261114-7ae3f25d22` | 2026-11-14 09:43 (steep slope lines, refresh of the Nov 12 build) | 92,081 | 128 | 0 | 146,360,899 bytes, 72 tracts split into chunks |
 | Philadelphia | `philadelphia-20261114-2a67293eaa` | 2026-11-14 10:11 (steep slope lines, refresh of the Nov 12 build) | 459,998 | 385 | 0 | 357,632,218 bytes, 50 tracts split into chunks |
-| Allentown | `allentown-20261115-3024ad0166` | 2026-11-15 01:42 (spot cover, rules engine pass 10 wording) | 29,158 | 31 | 0 | 94,371,212 bytes, 26 tracts split into chunks |
-| Chester County | `chester_county-20261115-448c887ae9` | 2026-11-15 00:57 (spot cover, rules engine pass 10 wording) | 14,847 | 15 | 0 | 59,384,175 bytes, 11 tracts split into chunks |
+| Allentown | `allentown-20261115-4318818527` | 2026-11-15 11:55 (rule sentences only: pass 12 wording, refresh of the 01:42 build) | 29,158 | 31 | 0 | 94,434,611 bytes, 26 tracts split into chunks |
+| Chester County | `chester_county-20261115-95284f3b37` | 2026-11-15 11:55 (rule sentences only: pass 12 wording, refresh of the 00:57 build) | 14,847 | 15 | 0 | 59,381,914 bytes, 11 tracts split into chunks |
 | Centre County | `centre_county-20261115-43434a1b88` | 2026-11-15 00:37 (spot cover, rules engine pass 10 wording) | 3,484 | 3 | 0 | 12,551,500 bytes, 2 tracts split into chunks |
 | Montgomery County | `montgomery_county-20261115-5b26a34d9b` | 2026-11-15 01:20 (spot cover, rules engine pass 10 wording) | 26,119 | 28 | 0 | 71,810,869 bytes, 23 tracts split into chunks |
 
 625,687 lots in all.
 
 On 2026-11-15 the four town places were rebuilt (full run). Their records now carry `spot_cover`, the trees and paving inside the suggested spot. The rules engine pass 10 wording reached them too: where no detached form is allowed, the record has no separation figure from the rules (the fit uses 0 ft, cited as "no detached form is allowed here"). No yes or no, approval path or fit result changed. On lots where no detached form is allowed, the largest size shown for information changed, because the assumed 10 ft separation is gone (128 lots in Centre County, 630 in Chester County, 13,932 in Montgomery County). So the spot moved on those lots, and the slope class shares in `stats.json` moved a little (under one point for each place as a whole). The files before it are in `~/musa-drive/backups/lots-<place>-pre-spotcover-<old version>/`.
+
+Later on 2026-11-15 the rule sentences of Allentown and Chester County were refreshed without a rebuild: the stored `rules.<scenario>` of each lot was resolved again with the lot's own facts, and nothing else in the files changed (geometry, land cover, spot cover, terrain, fits and the index are the same). The rules engine pass 12 wording reached them: in Allentown the height line "Both are shown; the lower one is the safe reading" now reads "Both are shown, and the lower one is the safe reading" (all 29,158 lots), and on 225 Phoenixville lots outside the ADU rule's districts the line "ADUs per lot: the code is silent, 1 assumed" is gone. No yes or no, path, fit or share changed. Centre and Montgomery County records did not change and were not rewritten. The files before it are in `~/musa-drive/backups/lotdata7/<place>/`.
 
 On the morning of 2026-11-14 Pittsburgh and Philadelphia were refreshed so that their records carry the steep slope rules (Pittsburgh 915.02 and 906.04, 906.05, 906.08, Philadelphia 14-704(2)). The slope rows add condition lines to about 44,153 Pittsburgh records and 31,349 Philadelphia records (HB 2186 scenario only). They do not change any yes or no.
 

@@ -112,7 +112,7 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 ### 7. Lot results (1 min)
 
-<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-15. Data versions pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261115-3024ad0166, chester_county-20261115-448c887ae9, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b -->
+<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-15. Data versions pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261115-4318818527, chester_county-20261115-95284f3b37, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b -->
 
 | Lot place | Lots | Any legal ADU path today | Detached unit legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|

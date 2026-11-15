@@ -868,22 +868,14 @@ NO_ADU_STATUSES = {"not_addressed", "prohibited"}
 LOT_RECORD_TOWNS: set[str] = set()
 # Pass 11 holds only its districts_in_doubt fix (the path to ask, qualified, not a variance; named_by wording) for the
 # ten lot towns: State College area (GWC) and Narberth (5A, 5B) use districts_in_doubt. A set of its own, so the pass
-# 10 fixes lifted at the Nov 15 rebuild stay lifted. Empty it at their next lot rebuild.
-DOUBT_HOLD_TOWNS: set[str] = {
-    "pa_lehigh_allentown",
-    "pa_centre_college",
-    "pa_chester_west_chester",
-    "pa_chester_phoenixville",
-    "pa_chester_west_vincent",
-    "pa_chester_malvern",
-    "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
-}
-# Pass 12 holds its owner-sentence fixes that would change what the lot build keeps for the ten lot towns (the
-# "ADUs per lot" line on a lot with no ADU rule). Empty it at their next lot rebuild.
-PASS12_HOLD_TOWNS: set[str] = set(DOUBT_HOLD_TOWNS)
+# 10 fixes lifted at the Nov 15 rebuild stay lifted. Lifted on Nov 15 (rules-only lot refresh) for the nine towns
+# whose lot records it leaves as they are. Narberth stays: its 9 lots in 5A and 5B would turn from not allowed to by
+# right (qualified), with other yards, so the fit, spot cover and terrain of those lots must be rebuilt first.
+DOUBT_HOLD_TOWNS: set[str] = {"pa_montgomery_narberth"}
+# Pass 12 held its owner-sentence fixes for the ten lot towns (the "ADUs per lot" line on a lot with no ADU rule, the
+# height cap line without a semicolon). Emptied on Nov 15: the lot records of Allentown and Phoenixville were
+# refreshed to the new text (rules only); the other towns' records do not change. Keep the set for a later pass.
+PASS12_HOLD_TOWNS: set[str] = set()
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",

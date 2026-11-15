@@ -2,7 +2,7 @@
 
 This product answers one question for a home lot in Pennsylvania: can a backyard home (an ADU) go here, how big, under which rules, and does it pay. Six lot places are covered lot by lot: Philadelphia (459,998 lots), Pittsburgh (92,081), Allentown (29,158), and parts of Montgomery County (26,119), Chester County (14,847) and Centre County (3,484), 625,687 lots in all. 131 towns have a hand-checked rule file (10 of them are in the lot places). Every Pennsylvania place gets one answer from the answer ladder, down to a statewide baseline. Towns outside the lot places have rules but no lot files.
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts.lots (data versions of 2026-11-14 and 15: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261115-3024ad0166, chester_county-20261115-448c887ae9, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b), shared/rules/towns_index.json at commit ce8d21a -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts.lots (data versions of 2026-11-14 and 15: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261115-4318818527, chester_county-20261115-95284f3b37, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b), shared/rules/towns_index.json at commit ce8d21a -->
 
 Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 

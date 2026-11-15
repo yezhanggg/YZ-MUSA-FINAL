@@ -256,7 +256,7 @@ Rules engine passes 10 and 11 (Nov 14 and 15) added these readings. The fields a
 - A code can bar use variances. Then a lot outside the ADU districts reads not allowed, not "ask for a use variance" (Hanover).
 - A district whose reach is in doubt is read in the direction the code gives, with the path to ask, not a plain no.
 
-One pass 11 wording fix is held for the ten lot towns until their next lot rebuild (`DOUBT_HOLD_TOWNS` in `pipeline/rules.py`). It shows only in College Township and Narberth.
+One pass 11 fix (a district in doubt reads the path to ask) is still held for Narberth (`DOUBT_HOLD_TOWNS` in `pipeline/rules.py`): its 9 lots in 5A and 5B would change from not allowed to by right (qualified), so they wait for a rebuild of their fit. The hold was lifted for the other lot towns on Nov 15, where it changes no lot record.
 
 A machine-read pilot of ordinance text is described in [CORPUS.md](CORPUS.md). It is not in the product.
 
@@ -633,7 +633,7 @@ Today no Philadelphia lot can add a new detached unit by right: the code allows 
 
 ### Allentown and the county places
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-15. allentown-20261115-3024ad0166, chester_county-20261115-448c887ae9, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-15. allentown-20261115-4318818527, chester_county-20261115-95284f3b37, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b -->
 
 Each lot answers with its own town's rule file. Only towns with a verified rule file whose ADU districts the county zoning layer names were built. Since the evening of Nov 14 these places carry a land cover block from the model (section 3.5). Since the rebuild early on Nov 15 they also carry the trees and paving inside the suggested spot and the rules engine pass 10 wording. No share in the table moved.
 

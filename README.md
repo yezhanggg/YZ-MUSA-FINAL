@@ -28,7 +28,7 @@ Bills are not law. The state session ends Nov 30, 2026. A bill not enacted by th
 
 ## What works today
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-15. Data versions: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261115-3024ad0166, chester_county-20261115-448c887ae9, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-15. Data versions: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261115-4318818527, chester_county-20261115-95284f3b37, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b -->
 
 | Lot place | Towns | Lots with a record | Any legal ADU path today | A detached unit is legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|---|

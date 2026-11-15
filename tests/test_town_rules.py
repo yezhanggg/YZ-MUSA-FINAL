@@ -2404,7 +2404,8 @@ def test_cli_sets_pass10_fact():
 
 def test_pass11_hold_is_its_own_set():
     assert not rules.LOT_RECORD_TOWNS  # the pass 10 fixes stay lifted for the lot towns
-    assert rules.DOUBT_HOLD_TOWNS == LOT_TOWNS  # only the districts_in_doubt fix waits for their next rebuild
+    # lifted at the Nov 15 rules-only refresh, except Narberth: its 5A and 5B lots would change answer (refit first)
+    assert {"pa_montgomery_narberth"} == rules.DOUBT_HOLD_TOWNS
     for name in LOT_TOWNS:
         text = (RULES / f"{name}.json").read_text()
         assert "use_variance_barred" not in text and 'setback_sides_total_ft": 2' not in text, name
@@ -2459,10 +2460,12 @@ def test_district_in_doubt_reads_the_way_the_doubt_runs():
     assert any(r.startswith("Whether the ADU rule reaches N-C/H is in doubt") for r in sp["reasons"])
     yt = rules.resolve("pa_york_york_township", "today", {**lot, "zoning_district": "CI"})
     assert any(r.startswith("CI lists the ADU (") for r in yt["reasons"])  # the default direction
-    for name, d in (("pa_centre_college", "GWC"), ("pa_montgomery_narberth", "5A")):  # held lot towns
-        held = rules.resolve(name, "today", {**lot, "zoning_district": d})
-        assert not held["allowed"] and held["approval_qualifier"] is None
-        assert any(r.startswith(f"{d} lists the ADU (") for r in held["reasons"])
+    held = rules.resolve("pa_montgomery_narberth", "today", {**lot, "zoning_district": "5A"})  # still held
+    assert not held["allowed"] and held["approval_qualifier"] is None
+    assert any(r.startswith("5A lists the ADU (") for r in held["reasons"])
+    gwc = rules.resolve("pa_centre_college", "today", {**lot, "zoning_district": "GWC", "house_sqft": 1600})
+    assert gwc["allowed"] and gwc["approval_qualifier"] == "conditional_on_reading"  # hold lifted Nov 15
+    assert any(r.startswith("Whether the ADU rule reaches GWC is in doubt") for r in gwc["reasons"])
 
 
 def test_planned_development_side_yards():
@@ -2511,7 +2514,7 @@ def test_utility_row_both_sides_total():
 
 
 def test_pass12_hold_for_lot_towns():
-    assert rules.PASS12_HOLD_TOWNS == LOT_TOWNS  # the "ADUs per lot" line waits for their next lot rebuild
+    assert not rules.PASS12_HOLD_TOWNS  # lifted at the Nov 15 rules-only refresh; the mechanism stays
     for name in LOT_TOWNS:  # no lot town uses a pass 12 field
         data = raw(name)
         text = json.dumps(data)
@@ -2762,7 +2765,7 @@ def test_barred_forms_in_a_town_with_no_adu_rule():
 
 
 def test_no_semicolon_in_the_not_settled_height_line():
-    allentown = rules._height_cap_reasons  # the lot towns keep the old text until their rebuild (PASS12_HOLD_TOWNS)
+    allentown = rules._height_cap_reasons  # hold=True is the old text, kept for a later hold (PASS12_HOLD_TOWNS)
     picked = {
         ("envelope", "accessory_structure_max_height_ft"): (_leaf(15, "1"), "x"),
         ("envelope", "accessory_cap_binds_adu"): (_leaf(None, "2"), "x"),
