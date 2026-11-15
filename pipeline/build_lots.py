@@ -874,7 +874,7 @@ def town_extras_to_reasons(rules: dict[str, Any]) -> dict[str, Any]:
             if value in STATUS_AS_PATH:
                 by_type[form] = STATUS_AS_PATH[value]
                 line = (
-                    f"{form.replace('_', ' ').capitalize()}: the code {'does not address' if value == 'not_addressed' else 'bars'} "
+                    f"{form.replace('_', ' ').capitalize()}: the code {STATUS_WORDS[value]} "
                     f"this form, so it is shown as {STATUS_AS_PATH[value].replace('_', ' ')}"
                 )
                 if key == "approval_by_type" and line not in reasons:
@@ -883,7 +883,8 @@ def town_extras_to_reasons(rules: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
-STATUS_AS_PATH = {"not_addressed": "variance", "prohibited": "not_allowed"}
+STATUS_AS_PATH = {"not_addressed": "variance", "prohibited": "not_allowed", "in_conflict": "variance"}
+STATUS_WORDS = {"not_addressed": "does not address", "prohibited": "bars", "in_conflict": "conflicts on"}
 
 
 def cite_type_paths(rules: dict[str, Any]) -> None:

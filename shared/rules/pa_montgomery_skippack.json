@@ -204,6 +204,18 @@
       "url": "https://ecode360.com/print/SK1672?guid=6993343",
       "verified_on": "2026-11-15",
       "confidence": "verified"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "200-26C(2)(a), 200-27C(2)(a)",
+      "url": "https://ecode360.com/print/SK1672?guid=6993767",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "quote": "Uses similar in nature to the above by right uses",
+      "districts": [
+        "VC",
+        "GC"
+      ]
     }
   },
   "eligibility": {

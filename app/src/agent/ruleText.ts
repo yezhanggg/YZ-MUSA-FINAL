@@ -227,7 +227,7 @@ const NOT_OK = new Set(['variance', 'not_allowed']);
 /** ADU forms and approval paths, least to most demanding (pipeline/rules.py ALL_TYPES, PATH_ORDER, OK_PATHS). */
 export const ADU_FORMS = ['detached_new', 'garage_conversion', 'over_garage', 'internal', 'attached'] as const;
 // not_addressed (pass 7): a form the code does not name (form.types_not_addressed). Not a firm no.
-const PATH_ORDER = ['by_right', 'administrator_exception', 'special_exception', 'conditional_use', 'not_addressed', 'variance', 'not_allowed'];
+const PATH_ORDER = ['by_right', 'administrator_exception', 'special_exception', 'conditional_use', 'in_conflict', 'not_addressed', 'variance', 'not_allowed'];
 const OK_PATHS = new Set(['by_right', 'administrator_exception', 'special_exception', 'conditional_use']);
 const harder = (a: string, b: string) => (PATH_ORDER.indexOf(b) > PATH_ORDER.indexOf(a) ? b : a);
 /** Who hears a special exception or a conditional use (pipeline/rules.py BOARDS). */
@@ -631,7 +631,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
                       ? 'yes: the unit must meet this cap too'
                       : binds.value === false
                         ? 'no: the ADU text sets the height of a unit in an accessory building instead'
-                        : `not settled: whether this ${num(accH.value)} ft cap also binds an outbuilding with an ADU. Both it and the ADU's own outbuilding rule are shown; the lower one is the safe reading. Ask the zoning officer`,
+                        : `not settled: whether this ${num(accH.value)} ft cap also binds an outbuilding with an ADU. Both it and the ADU's own outbuilding rule are shown, and the lower one is the safe reading. Ask the zoning officer`,
                   binds_section: binds.section ?? null,
                 }
               : {}),
@@ -833,6 +833,13 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   const unDist = leafAt(file, 'approval', 'unlisted_use_districts');
   const unHere = !(unDist && Array.isArray(unDist.value)) || (!!district && unDist.value.some((d) => typeof d === 'string' && dkey(d) === dkey(district)));
   const unlisted = unHere ? leafAt(file, 'approval', 'unlisted_use_path') : null;
+  // Pass 12 (pipeline/rules.py _unlisted_similar): the unlisted-use path reaches only uses similar to the listed ones.
+  const simLeaf = leafAt(file, 'approval', 'unlisted_use_scope');
+  const similar = !!unlisted && simLeaf?.value === 'similar_only' && (!Array.isArray(simLeaf.districts) || (!!district && listedIn(simLeaf.districts, district))) ? simLeaf : null;
+  const unlistedText = (path: Json | undefined, section: unknown) =>
+    similar
+      ? `A use similar in nature to a use the district lists may be authorized by ${label(path)} (${section ?? ''})${typeof similar.quote === 'string' ? `: '${similar.quote}'` : ''}. Whether an ADU is similar is not settled, so ask the zoning officer`
+      : `A use that is not listed may be authorized by ${label(path)} (${section ?? ''})`;
   let status = st?.value as string | undefined;
   let effective = (dpath ?? path?.value) as string | undefined;
   // Pass 8: a district path less demanding than the town status leads (pipeline/rules.py adu_status).
@@ -910,6 +917,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   const fbPath = String(fallback?.value ?? 'variance');
   const formPaths = (Array.isArray(leafAt(file, 'approval', 'form_paths')?.value) ? (leafAt(file, 'approval', 'form_paths')!.value as Json[]) : []).filter(isObj);
   const byType: Record<string, string> = {};
+  const formBar = !!barLeaf && barLeaf.value === true && (!barWhere || (!!district && listedIn(barWhere, district)));
   const nnLeaf = leafAt(file, 'form', 'types_not_addressed');
   const notNamed = Array.isArray(nnLeaf?.value) ? (nnLeaf!.value as string[]) : [];
   // Pass 9: forms on which the code's passages conflict read like a form not named: ask, never a yes or a firm no.
@@ -922,15 +930,18 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     // Pass 10: outside the ADU rule's districts a form status is not the rule's (pipeline/rules.py _outside_scope_data).
     const fs = byForm && isObj(byForm.value) && inScope !== false ? byForm.value[t] : undefined;
     if (typeof fs === 'string' && NO_ADU.has(fs) && OK_PATHS.has(p)) p = OK_PATHS.has(fbPath) ? 'variance' : fbPath;
-    // Pass 7: a form the code bars is not allowed (not a variance). A form the code does not name is not addressed.
-    if (fs === 'prohibited' || (barred && p === 'variance')) p = 'not_allowed';
-    else if (base !== 'not_allowed' && (notNamed.includes(t) || inConflict.includes(t)) && !allowedForms.includes(t) && !OK_PATHS.has(p)) p = 'not_addressed';
+    // Pass 7: a form the code bars. Pass 12: a use variance is still the path unless the code bars use variances
+    // (pipeline/rules.py _form_variance_barred). A form the code does not name is not addressed, one it conflicts on in conflict.
+    if (fs === 'prohibited') p = formBar ? 'not_allowed' : 'variance';
+    else if (barred && p === 'variance') p = 'not_allowed';
+    else if (base !== 'not_allowed' && inConflict.includes(t) && !allowedForms.includes(t) && !OK_PATHS.has(p)) p = 'in_conflict';
+    else if (base !== 'not_allowed' && notNamed.includes(t) && !allowedForms.includes(t) && !OK_PATHS.has(p)) p = 'not_addressed';
     byType[t] = p;
   }
   const nn = leafAt(file, 'form', 'types_not_addressed');
   if (notNamed.length) parts.push(`Not addressed for ${notNamed.map(label).join(', ')}: the code does not name it, so ask the zoning officer (${nn?.section ?? ''})`);
   if (inConflict.length) parts.push(`The code's text conflicts on ${inConflict.map(label).join(', ')} (${conflictLeaf?.section ?? ''}). Not settled, so neither a yes nor a firm no. Ask the zoning officer${conflictLeaf?.note ? `. ${ownerText(conflictLeaf.note)}` : ''}`);
-  if (byForm && isObj(byForm.value) && inScope !== false) parts.push(`By form: ${Object.entries(byForm.value).map(([t, v]) => `${label(t)} ${label(v)}`).join('. ')} (${byForm.section ?? ''})`);
+  if (byForm && isObj(byForm.value) && inScope !== false) parts.push(`By form: ${Object.entries(byForm.value).map(([t, v]) => `${label(t)} ${label(v)}`).join(', ')} (${byForm.section ?? ''})`);
   const out: Obj = {
     ...(typeof prov.code_caution === 'string' ? { code_caution: prov.code_caution } : {}),
     summary: parts.filter(Boolean).join('. '),
@@ -980,7 +991,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
           a.min_lot_is_tract === true && typeof a.min_lot_sqft === 'number' ? `The ${num(a.min_lot_sqft)} sq ft minimum is for the development tract, not the lot` : null,
           // Pass 9 (pipeline/rules.py _alt_min_lot_utility): the lot minimum by public sewer and water.
           Array.isArray(a.min_lot_by_utility) && a.min_lot_by_utility.length
-            ? `Lot minimum by public sewer and water: ${a.min_lot_by_utility.filter(isObj).map((r) => `${r.when}: ${num(r.min_lot_sqft)} sq ft`).join('; ')}`
+            ? `Lot minimum by public sewer and water: ${a.min_lot_by_utility.filter(isObj).map((r) => `${r.when}: ${num(r.min_lot_sqft)} sq ft`).join(', ')}`
             : null,
           isObj(a.disputed_path) ? `${a.disputed_path.section ?? ''}: ${String(a.disputed_path.note ?? '').replace(/\.$/, '')}` : null,
           // Pass 10 (pipeline/rules.py _alternatives): which paths are disputed, and districts the code disagrees on.
@@ -1007,7 +1018,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   if (((status && NO_ADU.has(status) && !dpath) || inScope === false) && effective && !NOT_OK.has(effective)) {
     const ask = (inScope === false || askLeaf ? askLeaf : null) ?? path;
     const text = askLeaf
-      ? `${lead}. A use that is not listed may be authorized by ${label(effective)} (${ask?.section ?? ''}). That is a hearing with no set standards for an ADU`
+      ? `${lead}. ${unlistedText(effective, ask?.section)}. That is a hearing with no set standards for an ADU`
       : `${lead}. The rule file gives ${label(effective)} (${ask?.section ?? ''}) as the path to ask about. Ask the zoning officer`;
     out.path_to_ask = { path: effective, section: ask?.section ?? null, url: ask?.url ?? null, note: text };
     out.summary = `${text}.${scopeList && inScope === null ? ` ${parts[0]}.` : ''}`;
@@ -1035,13 +1046,16 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   if (!out.path_to_ask && hearings.length && !noAdu && inScope !== false) {
     const main = effective && hearings.includes(effective) ? effective : hearings[0];
     const mpc = BOARDS[main][1];
+    // Pass 12 (pipeline/rules.py _hearing_to_ask): approval.path.hearing_named false, the code names no hearing.
+    const silent = path?.hearing_named === false && (dpath ?? path.value) === path.value ? String(path.value) : null;
     const notes = hearings.map((h) => {
       const forms = okForms.filter((t) => byType[t] === h);
-      return `A ${label(h)}${forms.length === okForms.length ? '' : ` (${forms.map(label).join(', ')})`} is decided by ${BOARDS[h][0]} after a public hearing (${BOARDS[h][1]})`;
+      const who = `A ${label(h)}${forms.length === okForms.length ? '' : ` (${forms.map(label).join(', ')})`} is decided by ${BOARDS[h][0]}`;
+      return h === silent ? `${who}. The code names no hearing for this decision (${path?.section ?? ''})` : `${who} after a public hearing (${BOARDS[h][1]})`;
     });
     const formSec = main === effective ? null : formPaths.find((it) => it.path === main)?.section;
     const sec = String(formSec ?? (isObj(approval.district_path) ? approval.district_path.section : path?.section) ?? '');
-    out.path_to_ask = { path: main, section: sec.includes(mpc) ? sec : sec ? `${sec}, ${mpc}` : mpc, kind: 'hearing', note: notes.join('. ') };
+    out.path_to_ask = { path: main, section: sec.includes(mpc) || main === silent ? sec : sec ? `${sec}, ${mpc}` : mpc, kind: 'hearing', note: notes.join('. ') };
   }
   if ((status && NO_ADU.has(status) && !dpath) || (effective && NOT_OK.has(effective))) {
     const reasons = [st?.note, path?.note, fallback?.note].filter((x): x is string => typeof x === 'string' && !!x).map(ownerText);

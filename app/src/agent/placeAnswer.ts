@@ -212,11 +212,14 @@ const FORM_OF: Record<UnitType, string> = { detached: 'detached_new', attached: 
 const FORM_TEXT: Record<string, string> = { detached_new: 'a detached backyard cottage', garage_conversion: 'a garage conversion', over_garage: 'a unit over a garage', internal: 'a unit inside the house', attached: 'an addition attached to the house' };
 /** One form's plain verdict, from its approval path and its own status in the code. */
 function formVerdict(path: string, status: string | null, section: string | null): string {
+  // Pass 12 (pipeline/rules.py): a barred form keeps the use variance path unless the code bars use variances too.
+  if (status === 'prohibited' && path === 'not_allowed') return `Not allowed: the code bars this form${section ? ` (${section})` : ''}, and it bars a use variance too`;
   if (status === 'prohibited') return `Not allowed: the code bars this form${section ? ` (${section})` : ''}. Only a use variance (Zoning Hearing Board, hardship test)`;
   if (status === 'not_addressed') return 'Not allowed today: the code has no rule for this form, so it takes a use variance or a code change';
   // Pass 7 (pipeline/rules.py): a form the code does not name, and a form the code bars, by their own path.
-  if (path === 'not_addressed' && status === 'in_conflict') return `Not settled for this form: the code's text conflicts${section ? ` (${section})` : ''}. Neither a yes nor a firm no; ask the zoning officer`;
-  if (path === 'not_addressed') return 'Not addressed for this form: the code does not name it. Not a firm no; ask the zoning officer';
+  if ((path === 'not_addressed' || path === 'in_conflict') && status === 'in_conflict') return `Not settled for this form: the code's text conflicts${section ? ` (${section})` : ''}. Neither a yes nor a firm no. Ask the zoning officer`;
+  if (path === 'in_conflict') return formVerdict(path, 'in_conflict', section);
+  if (path === 'not_addressed') return 'Not addressed for this form: the code does not name it. Not a firm no. Ask the zoning officer';
   if (path === 'not_allowed') return 'Not allowed: the code bars this form';
   return path === 'by_right' ? 'Allowed by right (zoning permit, no hearing)' : path === 'variance' || path === 'not_allowed' ? 'Not allowed today except by variance' : `Allowed with ${APPROVAL_TEXT[path] ?? path}`;
 }
@@ -256,7 +259,7 @@ async function ruleDetails(r: PlaceRow) {
   // Pass 9 (pipeline/rules.py form.types_in_conflict): a form whose text conflicts reads "not settled", not "not named".
   const conflict = Array.isArray(approval.forms_in_conflict) ? (approval.forms_in_conflict as string[]) : [];
   const conflictSec = (approval.forms_in_conflict_section as string | undefined) ?? null;
-  const formRows = Object.keys(FORM_TEXT).filter((t) => t in byType).map((t) => ({ form: t, verdict: conflict.includes(t) && byType[t] === 'not_addressed' ? formVerdict('not_addressed', 'in_conflict', conflictSec) : formVerdict(byType[t], statusByForm[t] ?? noRule, statusByForm[t] ? ((sbf?.section as string) ?? null) : null) }));
+  const formRows = Object.keys(FORM_TEXT).filter((t) => t in byType).map((t) => ({ form: t, verdict: conflict.includes(t) && (byType[t] === 'not_addressed' || byType[t] === 'in_conflict') ? formVerdict('not_addressed', 'in_conflict', conflictSec) : formVerdict(byType[t], statusByForm[t] ?? noRule, statusByForm[t] ? ((sbf?.section as string) ?? null) : null) }));
   const differs = new Set(formRows.map((x) => x.verdict)).size > 1;
   const alts = ((out.other_ways_to_add_a_unit as Obj | undefined)?.options ?? []) as Obj[];
   const accCap = leafOut(acc.max_sqft);
@@ -315,14 +318,14 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   if (r.tier !== 'verified' && r.tier !== 'drafted') return { fits_zoning: 'not_checked', why: ["This town's rules are not checked here, so the proposal cannot be tested against them."] };
   // A form with its own status in the code (adu.status_by_form) is answered for that form.
   const formStatus = unit && rule ? rule.status_by_form[FORM_OF[unit]] : undefined;
-  if (formStatus === 'prohibited') return { fits_zoning: 'no', why: [`The proposal is ${UNIT_TEXT[unit!]}. ${formVerdict('variance', 'prohibited', rule!.status_by_form_section)}.`] };
+  if (formStatus === 'prohibited') return { fits_zoning: 'no', why: [`The proposal is ${UNIT_TEXT[unit!]}. ${formVerdict(rule!.path_by_form[FORM_OF[unit!]] === 'not_allowed' ? 'not_allowed' : 'variance', 'prohibited', rule!.status_by_form_section)}.`] };
   if (r.status === 'prohibited' || r.status === 'not_addressed') {
     why.push(r.status === 'prohibited' ? 'The code bars ADUs.' : 'The code has no ADU rule; a variance or a code change would be needed.');
     return { fits_zoning: 'no', why };
   }
   const formPath = unit && rule ? rule.path_by_form[FORM_OF[unit]] : undefined;
   // A form the code does not name is not a firm no (pass 7): say so, not "does not fit".
-  if (formPath === 'not_addressed') {
+  if (formPath === 'not_addressed' || formPath === 'in_conflict') {
     const inConflict = rule!.forms_in_conflict.includes(FORM_OF[unit!]);
     return { fits_zoning: 'not_addressed', why: [`The proposal is ${UNIT_TEXT[unit!]}. ${formVerdict('not_addressed', inConflict ? 'in_conflict' : null, inConflict ? rule!.forms_in_conflict_section : null)}.`] };
   }
@@ -531,7 +534,7 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
     out.code_caution ? 'Start with the code caution line, in its words.' : null,
     rule?.by_form ? 'The answer differs by form: give one line per form from zoning_allows.by_form.' : null,
     rule?.size_rule_accessory_building || rule?.size_rule_inside_or_attached ? 'Give the size cap as the size_rule sentence (it says which limit wins, or that it is a share of the house).' : null,
-    rule?.hearing ? 'Say who decides (who_decides) and that it is a public hearing.' : null,
+    rule?.hearing ? (/names no hearing/.test(String(rule.hearing.who_decides)) ? 'Say who decides (who_decides) and that the code names no hearing for it, in those words.' : 'Say who decides (who_decides) and that it is a public hearing.') : null,
     rule?.depends_on.length ? 'Say what the answer depends on: each fact in depends_on with its rule and section, and that the zoning officer or the lot records can settle it. Say an unknown fact is "not known here", in those words, never "I don\'t know". If the owner already said the fact (for example "my carriage house" or "my garage"), take their word for it: say the rule then applies and that the zoning officer confirms it.' : null,
     summary ? 'Also give earlier_town_summary (approval, owner on site, units per lot, size cap) with its label and source.' : null,
   ].filter(Boolean).join(' ');

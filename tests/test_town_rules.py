@@ -1578,10 +1578,11 @@ def test_status_and_path_agree():
         "pa_chester_west_vincent", "today", {"zoning_district": "BV", "building_type": "detached", "lot_sqft": 40000}
     )
     assert wv["approval_path"] == "conditional_use" and wv["adu_status"] == "conditional_use"
+    # pass 12: a form the code bars keeps the use variance path (no use variance bar in these codes)
     ea = rules.resolve("pa_northampton_easton", "today", {"zoning_district": "SS", "lot_sqft": 5000})
-    assert ea["approval_by_type"]["detached_new"] == "not_allowed"
+    assert ea["approval_by_type"]["detached_new"] == "variance"
     wh = rules.resolve("pa_lehigh_whitehall", "today", {"zoning_district": "R-4", "lot_sqft": 10000})
-    assert wh["approval_by_type"]["detached_new"] == "not_allowed"
+    assert wh["approval_by_type"]["detached_new"] == "variance"
 
 
 def test_form_not_named_is_not_addressed():
@@ -1984,7 +1985,7 @@ def test_conflicting_text_on_a_form_reads_ask():
     lot = {"zoning_district": "R-1", "building_type": "detached", "lot_sqft": 12000}
     out = rules.resolve("pa_cumberland_lower_allen", "today", lot, extra=True)
     if out["allowed"]:
-        assert out["approval_by_type"]["detached_new"] == "not_addressed"
+        assert out["approval_by_type"]["detached_new"] == "in_conflict"  # pass 12: its own state
         assert any(r.startswith("The code's text conflicts on detached new") for r in out["reasons"])
 
 
@@ -2217,7 +2218,7 @@ def test_form_status_outside_the_scope_reads_not_addressed():
     assert out["approval_by_type"]["detached_new"] == "variance"
     assert not any(r.startswith("By form") for r in out["reasons"])
     inside = rules.resolve("pa_lancaster_west_lampeter", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 30000})
-    assert inside["approval_by_type"]["detached_new"] == "not_allowed"  # in scope the code bars detached forms
+    assert inside["approval_by_type"]["detached_new"] == "variance"  # in scope the code bars detached forms (pass 12)
 
 
 def test_no_separation_where_no_detached_form_is_allowed():
@@ -2271,9 +2272,9 @@ def test_condition_gate_with_unknown_lot_fact_never_reads_as_a_bar():
 def test_planned_development_yards_depend():
     lot = {**DET, "zoning_district": "R-1", "lot_sqft": 40000}
     unknown = rules.resolve("pa_chester_east_goshen", "today", lot, extra=True)
-    assert [unknown[k] for k in rules.YARDS] == [None, None, None]
+    assert [unknown[k] for k in rules.YARDS] == [45, 20, 50]  # pass 12: shown, with a plain line
     assert any(
-        r.startswith("Yards for R-1: the district yards (front 45 ft, side 20 ft, rear 50 ft) apply only outside")
+        r.startswith("Yards for R-1: a lot inside an approved planned or cluster development follows that plan's")
         for r in unknown["reasons"]
     )
     out = rules.resolve("pa_chester_east_goshen", "today", {**lot, "in_planned_development": False}, extra=True)
@@ -2472,11 +2473,11 @@ def test_planned_development_side_yards():
         return [r for r in out["reasons"] if r.startswith("Side yards for R-1")]
 
     assert sides(False) == ["Side yards for R-1: at least 40 ft on one side, 100 ft for both sides together (195-11B)"]
-    (unknown,) = sides(None)
-    assert unknown.startswith(
-        "Side yards for R-1: at least 40 ft on one side, 100 ft for both sides together (195-11B)"
+    assert sides(None) == sides(False)  # pass 12: the district figures, and one plain line on the development
+    out = rules.resolve("pa_montgomery_upper_gwynedd", "today", {**lot, "in_planned_development": None})
+    assert any(
+        r.startswith("Yards for R-1: a lot inside an approved planned or cluster development") for r in out["reasons"]
     )
-    assert "apply only outside a planned or cluster development" in unknown and "was not given" in unknown
     (inside,) = sides(True)
     assert "40 ft" not in inside and "whose own figures replace the district's" in inside
 
@@ -2504,3 +2505,285 @@ def test_utility_row_both_sides_total():
         {**DET, "zoning_district": "R-2", "lot_sqft": 30000, "public_sewer": True, "public_water": True},
     )
     assert "Side yards for R-2: at least 10 ft on one side, 25 ft for both sides together (240-23)" in sewer["reasons"]
+
+
+# ------------------------------------------------------------------ pass 12
+
+
+def test_pass12_hold_for_lot_towns():
+    assert rules.PASS12_HOLD_TOWNS == LOT_TOWNS  # the "ADUs per lot" line waits for their next lot rebuild
+    for name in LOT_TOWNS:  # no lot town uses a pass 12 field
+        data = raw(name)
+        text = json.dumps(data)
+        for key in ("hearing_named", "unlisted_use_scope", "max_sqft_by_lot_size", "supersedes_district_figures"):
+            assert f'"{key}"' not in text, (name, key)
+        assert not any("accessory_structure_max_height_ft" in row for row in (data.get("districts") or {}).values())
+
+
+def test_decision_with_no_hearing_named():
+    out = rules.resolve("pa_butler_adams", "today", {**DET, "zoning_district": "RAL", "lot_sqft": 50000})
+    ask = out["path_to_ask"]
+    assert ask["kind"] == "hearing" and "public hearing" not in ask["note"]
+    assert ask["note"] == (
+        "A conditional use is decided by the governing body (council, commissioners or supervisors). The code names "
+        "no hearing for this decision (167-21.1E, F, 192-15B(10), 192-16B(9), 192-17B(12))"
+    )
+    assert "MPC 913.2" not in ask["section"]
+    other = rules.resolve("pa_york_hanover", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 20000})
+    assert "after a public hearing (MPC 912.1)" in other["path_to_ask"]["note"]
+
+
+def test_overlay_figures_replace_the_district_figures():
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 20000}
+    base = rules.resolve("pa_allegheny_pine", "today", {**lot, "overlays": []})
+    assert [base[k] for k in rules.YARDS] == [40, 10, 20]
+    assert not any(r.startswith("Yards for R-1") for r in base["reasons"])
+    unknown = rules.resolve("pa_allegheny_pine", "today", lot)
+    assert [unknown[k] for k in rules.YARDS] == [40, 10, 20]
+    assert any(
+        r.startswith("Yards for R-1: a lot in the TVO overlay follows the overlay's figures instead of the district's")
+        for r in unknown["reasons"]
+    )
+    tvo = rules.resolve("pa_allegheny_pine", "today", {**lot, "overlays": ["TVO"]}, extra=True)
+    assert [tvo[k] for k in rules.YARDS] == [None, None, None]
+    assert tvo["max_building_coverage"] is None and tvo["max_impervious"] is None
+    assert not any(r.startswith("Impervious cover for R-1") for r in tvo["reasons"])
+    line = next(r for r in tvo["reasons"] if r.startswith("Yards for R-1"))
+    assert line.startswith("Yards for R-1: this lot is in the TVO overlay, whose own figures replace the district's")
+    assert "(front 40 ft, side 10 ft, rear 20 ft, building coverage 20%, impervious cover 40%)" in line
+    mod = rules.resolve("pa_allegheny_robinson", "today", {**DET, "zoning_district": "R-2", "overlays": ["MOD-A"]})
+    assert any(r.startswith("Yards for R-2: this lot is in the MOD-A overlay,") for r in mod["reasons"])
+    assert mod["setback_side_ft"] is None
+
+
+def test_adus_per_lot_line_only_where_the_town_has_an_adu_rule():
+    line = "ADUs per lot: the code is silent"
+    outside = rules.resolve("pa_butler_adams", "today", {**DET, "zoning_district": "R-2", "lot_sqft": 50000})
+    assert not any(r.startswith(line) for r in outside["reasons"])
+    cecil = rules.resolve("pa_washington_cecil", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 20000})
+    assert not any(r.startswith(line) for r in cecil["reasons"])
+    bill = rules.resolve("pa_washington_cecil", "state_reform", {**DET, "zoning_district": "R-1", "lot_sqft": 20000})
+    assert bill["allowed"]
+
+
+def test_barred_form_keeps_the_use_variance(tmp_path, monkeypatch):
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 100000}
+    wb = rules.resolve("pa_chester_west_bradford", "today", lot)
+    assert wb["approval_by_type"]["detached_new"] == "variance" and wb["approval_by_type"]["internal"] != "variance"
+    assert (
+        "The code bars detached new (450-64H(2)(a)). A use variance from the Zoning Hearing Board is still a path to "
+        "ask for (MPC 910.2). The owner must show unnecessary hardship"
+    ) in wb["reasons"]
+    cecil = rules.resolve("pa_washington_cecil", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 20000})
+    assert set(cecil["approval_by_type"].values()) == {"variance"}
+    body = {
+        "adu": {
+            "status": _leaf("allowed_by_right", "1"),
+            "status_by_form": _leaf({"detached_new": "prohibited"}, "2"),
+        },
+        "approval": {
+            "path": _leaf("by_right", "1"),
+            "fallback_path": _leaf("variance", "3"),
+            "use_variance_barred": _leaf(True, "4", quote="No use variance"),
+        },
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_form_bar", body)
+    out = rules.resolve(name, "today", lot)
+    assert (
+        out["approval_by_type"]["detached_new"] == "not_allowed" and out["approval_by_type"]["internal"] == "by_right"
+    )
+    assert (
+        "The code bars detached new (2), and it bars a use variance too (4). Not allowed, not a variance to ask for"
+        in out["reasons"]
+    )
+
+
+def test_forms_in_conflict_have_their_own_path():
+    out = rules.resolve("pa_butler_adams", "today", {**DET, "zoning_district": "RAL", "lot_sqft": 50000}, extra=True)
+    assert out["approval_by_type"]["internal"] == "in_conflict" and out["approval_by_type"]["detached_new"] == (
+        "conditional_use"
+    )
+    assert "not_addressed" not in out["approval_by_type"].values()
+    assert out["rule_path_by_type"]["internal"] == "in_conflict"
+    from pipeline.build_lots import town_extras_to_reasons
+
+    rec = town_extras_to_reasons(out)
+    assert rec["approval_by_type"]["internal"] == "variance"
+    assert "Internal: the code conflicts on this form, so it is shown as variance" in rec["reasons"]
+
+
+def test_places_index_says_the_path_plainly():
+    from pipeline.places_index import ladder
+
+    cecil = raw("pa_washington_cecil")
+    detail = ladder.status_detail(cecil, ladder.adu_status(cecil), "pa_washington_cecil")
+    assert "at best" not in detail
+    assert detail.startswith(
+        "no ADU text in the code, so the path is a use variance, or a special exception for a use not listed in "
+        "C-1, C-2 and C-3"
+    )
+    sk = raw("pa_montgomery_skippack")
+    assert ladder.status_detail(sk, ladder.adu_status(sk), "pa_montgomery_skippack").startswith(
+        "no ADU text in the code, so the path is a use variance, or a conditional use for a use similar to a listed "
+        "one in VC and GC or for a use not listed in LI"
+    )
+
+
+def test_accessory_height_cap_by_district(tmp_path, monkeypatch):
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "envelope": {
+            "max_height_ft": _leaf(25, "2"),
+            "accessory_structure_max_height_ft": _leaf(20, "3"),
+            "accessory_cap_binds_adu": _leaf(True, "4"),
+        },
+        "districts": {"R-3": {"accessory_structure_max_height_ft": _leaf(15, "5")}, "R-1": {}},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_acc_height", body)
+    r3 = rules.resolve(name, "today", {**DET, "zoning_district": "R-3", "lot_sqft": 9000})
+    r1 = rules.resolve(name, "today", {**DET, "zoning_district": "R-1", "lot_sqft": 9000})
+    assert r3["max_height_by_type"]["detached_new"] == 15 and r1["max_height_by_type"]["detached_new"] == 20
+    assert any(r.startswith("Accessory structures are capped at 15 ft (5)") for r in r3["reasons"])
+
+
+def test_bar_only_inside_an_overlay(tmp_path, monkeypatch):
+    gate = {k: v for k, v in _gate(overlays=["X"]).items()}
+    gate["condition"] = "No detached unit in the X overlay"
+    gate["applies_to"] = ["detached_new"]
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "eligibility": {"gates": _leaf([gate], "9")},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_overlay_bar", body)
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 9000}
+    inside = rules.resolve(name, "today", {**lot, "overlays": ["X"]})
+    assert (
+        inside["approval_by_type"]["detached_new"] == "variance"
+        and inside["approval_by_type"]["internal"] == "by_right"
+    )
+    c = next(
+        c
+        for c in rules.resolve(name, "today", {**lot, "overlays": ["X"]}, extra=True)["conditions"]
+        if c["section"] == "9-1"
+    )
+    assert c["effect"] == "bars" and "warning" not in c
+    assert rules.resolve(name, "today", {**lot, "overlays": []})["approval_by_type"]["detached_new"] == "by_right"
+    unknown = rules.resolve(name, "today", lot, extra=True)
+    assert unknown["approval_by_type"]["detached_new"] == "by_right"
+    assert unknown["approval_qualifier"] == "depends_on_lot_facts"
+    assert unknown["depends_on"][0]["fact"] == "whether the lot is in the X overlay (overlays)"
+    assert (
+        unknown["reasons"][0]
+        == "By right for detached new only if the lot is not in the X overlay, where the code bars it (9-1)"
+    )
+
+
+def test_unlisted_use_path_reaching_only_similar_uses():
+    lot = {**DET, "lot_sqft": 20000}
+    vc = rules.resolve("pa_montgomery_skippack", "today", {**lot, "zoning_district": "VC"})
+    assert vc["path_to_ask"]["note"] == (
+        "The code has no ADU rule here. A use similar in nature to a use the district lists may be authorized by "
+        "conditional use (200-26C(2)(a), 200-27C(2)(a), 200-29C(2)(f)): 'Uses similar in nature to the above by right "
+        "uses'. Whether an ADU is similar is not settled, so ask the zoning officer. That is a hearing with no set "
+        "standards for an ADU"
+    )
+    li = rules.resolve("pa_montgomery_skippack", "today", {**lot, "zoning_district": "LI"})
+    assert li["path_to_ask"]["note"].startswith("The code has no ADU rule here. A use that is not listed may be")
+
+
+def test_planned_development_figures_shown_when_not_given():
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 100000}
+    out = rules.resolve("pa_chester_west_bradford", "today", lot)
+    assert [out[k] for k in rules.YARDS] == [65, 15, 50]
+    assert (
+        "Yards for R-1: a lot inside an approved planned or cluster development follows that plan's figures instead of "
+        "the district's (450-19B, 450-22C, 450-23E to H)"
+    ) in out["reasons"]
+    inside = rules.resolve("pa_chester_west_bradford", "today", {**lot, "in_planned_development": True})
+    assert [inside[k] for k in rules.YARDS] == [None, None, None] and inside["max_impervious"] is None
+
+
+def test_size_cap_by_lot_area(tmp_path, monkeypatch):
+    tiers = [
+        {"lot_sqft_at_most": 130680, "max_sqft": 1500},
+        {"lot_sqft_over": 130680, "lot_sqft_below": 435600, "max_sqft": 2000},
+        {"lot_sqft_over": 435600, "max_sqft": 2500},
+    ]
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "size": {"max_sqft": _leaf(1500, "27-304.19D"), "max_sqft_by_lot_size": _leaf(tiers, "27-304.19D")},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_size_tiers", body)
+
+    def size(area):
+        out = rules.resolve(name, "today", {**DET, "zoning_district": "R-1", "lot_sqft": area}, extra=True)
+        return out["max_size_sqft"], out["max_size_by_type"]["detached_new"], out
+
+    assert size(100000)[:2] == (1500, 1500)
+    assert size(200000)[:2] == (2000, 2000)
+    assert size(500000)[:2] == (2500, 2500)
+    gap, _, out = size(435600)  # exactly ten acres: the code gives no figure
+    assert gap is None and any("The code gives no figure for a lot of 435,600 sq ft" in r for r in out["reasons"])
+    line = next(r for r in size(200000)[2]["reasons"] if r.startswith("Size cap by lot area"))
+    assert line == (
+        "Size cap by lot area (27-304.19D): at most 1,500 sq ft on a lot of 130,680 sq ft (3 acres) or less, 2,000 sq ft "
+        "on a lot over 130,680 sq ft (3 acres) and under 435,600 sq ft (10 acres), 2,500 sq ft on a lot over 435,600 sq "
+        "ft (10 acres). This lot: at most 2,000 sq ft"
+    )
+    unknown = rules.resolve(name, "today", {**DET, "zoning_district": "R-1"})
+    assert unknown["max_size_sqft"] is None
+    assert any(r.endswith("This lot: depends on the lot area, which was not given") for r in unknown["reasons"])
+
+
+def test_plumstead_size_tiers():
+    def cap(d, area):
+        return rules.resolve("pa_bucks_plumstead", "today", {**DET, "zoning_district": d, "lot_sqft": area})[
+            "max_size_sqft"
+        ]
+
+    assert cap("RP", 200000) == 2000 and cap("R-2", 440000) == 2500 and cap("RP", 435600) is None
+
+
+def test_barred_forms_in_a_town_with_no_adu_rule():
+    out = rules.resolve(
+        "pa_delaware_nether_providence",
+        "today",
+        {**DET, "zoning_district": "R-3", "lot_sqft": 9000, "has_accessory_building": True},
+    )
+    assert (
+        "By form: detached new prohibited, garage conversion prohibited, over garage prohibited (300-130)"
+        in out["reasons"]
+    )
+    assert (
+        "The code bars detached new, garage conversion and over garage (300-130). A use variance is still a path for them"
+        in out["reasons"]
+    )
+    assert out["approval_by_type"]["garage_conversion"] == "variance"
+
+
+def test_no_semicolon_in_the_not_settled_height_line():
+    allentown = rules._height_cap_reasons  # the lot towns keep the old text until their rebuild (PASS12_HOLD_TOWNS)
+    picked = {
+        ("envelope", "accessory_structure_max_height_ft"): (_leaf(15, "1"), "x"),
+        ("envelope", "accessory_cap_binds_adu"): (_leaf(None, "2"), "x"),
+    }
+    by_type = dict.fromkeys(rules.ALL_TYPES, "by_right")
+    (line,) = allentown(picked, by_type)
+    assert ";" not in line and "Both are shown, and the lower one is the safe reading" in line
+    assert ";" in allentown(picked, by_type, hold=True)[0]
+
+
+def test_bar_that_skips_planned_development_lots(tmp_path, monkeypatch):
+    gate = _gate(test="lot_sqft_at_least", value=80000, except_planned_development=True)
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "eligibility": {"gates": _leaf([gate], "9")},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_pd_bar", body)
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 9000}
+    assert rules.resolve(name, "today", {**lot, "in_planned_development": False})["allowed"] is False
+    assert rules.resolve(name, "today", {**lot, "in_planned_development": True})["allowed"] is True
+    unknown = rules.resolve(name, "today", lot, extra=True)
+    assert unknown["allowed"] is False
+    c = next(c for c in unknown["conditions"] if c["section"] == "9-1")
+    assert "Not on a lot in a planned or cluster development" in c["condition"]

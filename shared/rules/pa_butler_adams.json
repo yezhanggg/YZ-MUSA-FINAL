@@ -103,7 +103,8 @@
       "url": "https://ecode360.com/print/AD1937?guid=14999381",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "The Board of Supervisors decides on a finding of family hardship, and its permission lasts 12 months at a time, renewable. The code names no hearing. The district sections list the use as permitted, but the governing body's discretionary finding makes it closer to a conditional use than a zoning permit"
+      "note": "The Board of Supervisors decides on a finding of family hardship, and its permission lasts 12 months at a time, renewable. The code names no hearing. The district sections list the use as permitted, but the governing body's discretionary finding makes it closer to a conditional use than a zoning permit",
+      "hearing_named": false
     },
     "fallback_path": {
       "value": "variance",

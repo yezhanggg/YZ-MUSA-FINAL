@@ -304,6 +304,23 @@ def _size_cell(d):
     hu = (size.get("max_share_of_house_and_unit") or {}).get("value")
     if hu is not None and share is None:  # pass 9: a share of the house and the unit together
         base = (f"{sqft:,.0f} sq ft and " if sqft is not None else "") + f"{hu:.0%} of the house and the unit together"
+    tiers = (size.get("max_sqft_by_lot_size") or {}).get("value")
+    if tiers:  # pass 12: a size cap by lot area replaces max_sqft
+
+        def bounds(t):
+            words = [
+                f"{w} {t[k]:,.0f}"
+                for k, w in (
+                    ("lot_sqft_over", "over"),
+                    ("lot_sqft_at_least", "at least"),
+                    ("lot_sqft_below", "under"),
+                    ("lot_sqft_at_most", "up to"),
+                )
+                if t.get(k) is not None
+            ]
+            return f"on a lot {' and '.join(words)} sq ft" if words else "on any lot"
+
+        base = "by lot area: " + ", ".join(f"{t['max_sqft']:,.0f} {bounds(t)}" for t in tiers)
     extra = [
         f"{v:,.0f} for {f.replace('_', ' ')}"
         for f, v in ((size.get("max_sqft_by_form") or {}).get("value") or {}).items()
@@ -370,9 +387,19 @@ def _conditions_cell(d):
     if (el.get("lot_area_per_unit_sqft") or {}).get("value"):
         per.insert(0, f"{el['lot_area_per_unit_sqft']['value']:,} sq ft per unit")
     out += per
+    bars: dict[str, list[str]] = {}
     for g in (el.get("gates") or {}).get("value") or []:
         if g["effect"] == "bars":
-            out.append(f"{g['kind'].replace('_', ' ')} gate ({clean(g['section'])})")
+            bars.setdefault(g["kind"], []).append(clean(g["section"]))
+    for kind, secs in bars.items():  # pass 12: one item per kind, so twenty district gates read as one
+        if len(secs) == 1:
+            out.append(f"{kind.replace('_', ' ')} gate ({secs[0]})")
+            continue
+        parts = [p.split(", ") for p in secs]
+        common = [p for p in parts[0] if all(p in q for q in parts[1:])]
+        flat = ", ".join(dict.fromkeys(p for q in parts for p in q))
+        where = f"{', '.join(common)} and district sections" if common else flat
+        out.append(f"{len(secs)} {kind.replace('_', ' ')} gates ({where})")
     scope = ((d.get("adu") or {}).get("scope_districts") or {}).get("value")
     if scope:
         out.insert(0, f"ADU rule only in {', '.join(scope)}")

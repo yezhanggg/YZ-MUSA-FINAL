@@ -212,6 +212,9 @@
         },
         "use_variance_barred": {
           "$ref": "#/$defs/leaf_use_variance_barred"
+        },
+        "unlisted_use_scope": {
+          "$ref": "#/$defs/leaf_unlisted_use_scope"
         }
       }
     },
@@ -349,6 +352,9 @@
         "min_sqft_by_form": {
           "$ref": "#/$defs/leaf_num_by_form",
           "description": "Pass 10: a minimum floor area for one form only (for example an elder cottage of at least 300 sq ft). Said as a line for the forms allowed on the lot."
+        },
+        "max_sqft_by_lot_size": {
+          "$ref": "#/$defs/leaf_size_by_lot"
         }
       }
     },
@@ -1086,6 +1092,10 @@
         },
         "assumption": {
           "type": "boolean"
+        },
+        "hearing_named": {
+          "type": "boolean",
+          "description": "Pass 12: false when the code names no hearing for this decision (for example the governing body decides on a finding, Adams 167-21.1). The answer then says who decides and that the code names no hearing, never 'after a public hearing'. Leave it out where the code or the MPC gives a hearing."
         }
       }
     },
@@ -1289,6 +1299,10 @@
         "max_impervious_coverage": {
           "$ref": "#/$defs/leaf_share",
           "description": "Pass 10: the district's impervious cover (buildings and paved surfaces together) as a share of the lot. Use it, not max_building_coverage, where the code's 'lot coverage' means impervious cover. Shown as its own line and as the lot's max_impervious."
+        },
+        "accessory_structure_max_height_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Pass 12: the general accessory building height cap in this district, when it differs from envelope.accessory_structure_max_height_ft (for example 20 ft in R-1 and R-2, 15 ft in R-3 and R-4). It replaces the town-wide figure for a lot in the district. Whether it binds a unit in an accessory building is still envelope.accessory_cap_binds_adu."
         }
       }
     },
@@ -1693,6 +1707,10 @@
               "supersedes_district_figures": {
                 "type": "boolean",
                 "description": "Pass 10: the gate describes a planned or cluster development whose own figures replace the district row (use test in_planned_development). On a lot that is in one, or may be (fact not given), the district yards are not shown: they depend."
+              },
+              "except_planned_development": {
+                "type": "boolean",
+                "description": "Pass 12: true when the gate does not reach a lot in a planned or cluster development (lot fact in_planned_development). Such a lot is out of the gate's scope; where the fact is not given the condition says 'Not on a lot in a planned or cluster development'."
               }
             }
           }
@@ -4473,6 +4491,181 @@
             ]
           },
           "description": "Pass 11: {district: district_list | adu_section | reach}. A district left out reads district_list."
+        }
+      }
+    },
+    "leaf_unlisted_use_scope": {
+      "type": "object",
+      "description": "Pass 12: how far approval.unlisted_use_path reaches. any_unlisted (the default when the leaf is absent): any use the code does not list. similar_only: only uses similar in nature to the uses the district lists (for example 'Uses similar in nature to the above by right uses', Skippack 200-26C(2)(a)). Then the answer says that a use similar to a permitted use may be authorized, and that whether an ADU is similar is not settled. districts (optional) limits the value to some of the unlisted-use districts; elsewhere any_unlisted. quote holds the code's words.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "enum": [
+            "any_unlisted",
+            "similar_only",
+            null
+          ]
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        },
+        "quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The code's own words, quoted in the answer."
+        },
+        "districts": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Where the value applies. Null: every district in approval.unlisted_use_districts."
+        }
+      }
+    },
+    "leaf_size_by_lot": {
+      "type": "object",
+      "description": "Pass 12: an ADU size cap that changes with lot area (for example 1,500 sq ft on a lot of three acres or less, 2,000 sq ft over three and under ten acres, 2,500 sq ft over ten acres). Each item: max_sqft and its lot area bounds, any of lot_sqft_over (more than), lot_sqft_at_least, lot_sqft_below (less than), lot_sqft_at_most. The first item whose bounds hold gives the cap and replaces size.max_sqft (a district's adu_max_sqft still wins). Without the lot area, or where no item reaches the lot (a gap the code leaves), no cap number is shown and the sentence lists the tiers.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "max_sqft"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "max_sqft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "lot_sqft_over": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_at_least": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_below": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_at_most": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     }

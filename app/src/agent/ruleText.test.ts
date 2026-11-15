@@ -574,9 +574,9 @@ describe('get_rule_text pass 7', () => {
     expect(ex).not.toMatch(/Allowed only if/);
   });
 
-  it('bars a prohibited form outright, limits the unlisted path, and opens a district in doubt under the bill', async () => {
+  it('keeps the use variance for a prohibited form, limits the unlisted path, and opens a district in doubt under the bill', async () => {
     const ea = await town6('pa_northampton_easton', 'approval', 'SS');
-    expect(ea.approval.by_form_today.detached_new).toBe('not_allowed');
+    expect(ea.approval.by_form_today.detached_new).toBe('variance'); // pass 12: the use variance stays
     expect(ea.path_to_ask.path).toBe('special_exception');
     const rc = await town6('pa_northampton_easton', 'approval', 'RC');
     expect(rc.path_to_ask.path).toBe('variance');
@@ -802,7 +802,7 @@ describe('get_rule_text pass 10', () => {
     expect(ms.summary).not.toMatch(/By form/);
     expect(ms.adu.status_by_form).toBeUndefined();
     const r1 = await town6('pa_lancaster_west_lampeter', 'approval', 'R-1');
-    expect(r1.approval.by_form_today.detached_new).toBe('not_allowed');
+    expect(r1.approval.by_form_today.detached_new).toBe('variance'); // pass 12: the use variance stays
   });
 
   it('says which paths are disputed and which districts are in dispute', async () => {
@@ -885,5 +885,34 @@ describe('get_rule_text pass 11', () => {
   it('gives a utility row its both-sides total', async () => {
     const r = await town6('pa_york_newberry', 'setbacks', 'R');
     expect(r.conditions.find((c: Any6) => c.kind === 'utilities').condition).toMatch(/setback side 25, .*setback sides total 225/);
+  });
+});
+
+// Pass 12: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 12 section).
+describe('get_rule_text pass 12', () => {
+  it('says who decides and that the code names no hearing', async () => {
+    const ral = await town6('pa_butler_adams', 'approval', 'RAL');
+    expect(ral.path_to_ask.kind).toBe('hearing');
+    expect(ral.path_to_ask.note).toBe('A conditional use is decided by the governing body (council, commissioners or supervisors). The code names no hearing for this decision (167-21.1E, F, 192-15B(10), 192-16B(9), 192-17B(12))');
+    expect(ral.path_to_ask.section).not.toContain('MPC 913.2');
+    const r1 = await town6('pa_york_hanover', 'approval', 'R-1');
+    expect(r1.path_to_ask.note).toMatch(/after a public hearing \(MPC 912\.1\)/);
+  });
+
+  it('keeps the use variance for a form the code bars, and gives forms in conflict their own path', async () => {
+    const cecil = await town6('pa_washington_cecil', 'approval', 'R-1');
+    expect(cecil.approval.by_form_today.detached_new).toBe('variance');
+    const ral = await town6('pa_butler_adams', 'approval', 'RAL');
+    expect(ral.approval.by_form_today.internal).toBe('in_conflict');
+    expect(ral.approval.by_form_today.detached_new).toBe('conditional_use');
+  });
+
+  it('says an unlisted-use path that reaches only similar uses', async () => {
+    const vc = await town6('pa_montgomery_skippack', 'approval', 'VC');
+    expect(vc.path_to_ask.note).toBe(
+      "The code has no ADU rule here. A use similar in nature to a use the district lists may be authorized by conditional use (200-26C(2)(a), 200-27C(2)(a), 200-29C(2)(f)): 'Uses similar in nature to the above by right uses'. Whether an ADU is similar is not settled, so ask the zoning officer. That is a hearing with no set standards for an ADU",
+    );
+    const li = await town6('pa_montgomery_skippack', 'approval', 'LI');
+    expect(li.path_to_ask.note).toMatch(/^The code has no ADU rule here\. A use that is not listed may be authorized by conditional use/);
   });
 });

@@ -218,7 +218,7 @@ describe('rule text from the resolver', () => {
     expect((sw.why as string[]).join(' ')).not.toMatch(/No size cap number on file/);
     const wv = check(await ask7({ place: 'West Vincent township', unit_type: 'attached' }));
     expect(wv.fits_zoning).toBe('not_addressed');
-    expect(String(wv.why)).toMatch(/Not addressed for this form: the code does not name it\. Not a firm no; ask the zoning officer/);
+    expect(String(wv.why)).toMatch(/Not addressed for this form: the code does not name it\. Not a firm no. Ask the zoning officer/);
   });
   // Pass 10: a minimum floor area for one form (size.min_sqft_by_form).
   it('Penn (York): an elder cottage under 300 sq ft does not fit; the minimum is for that form only', async () => {
@@ -232,7 +232,7 @@ describe('rule text from the resolver', () => {
   it('Lower Allen: a detached unit with conflicting text is not settled, not unnamed', async () => {
     const la = check(await ask7({ place: 'Lower Allen township', county: 'Cumberland', unit_type: 'detached' }));
     expect(la.fits_zoning).toBe('not_addressed');
-    expect(String(la.why)).toMatch(/Not settled for this form: the code's text conflicts \(220-6C, 220-149\)\. Neither a yes nor a firm no; ask the zoning officer/);
+    expect(String(la.why)).toMatch(/Not settled for this form: the code's text conflicts \(220-6C, 220-149\)\. Neither a yes nor a firm no. Ask the zoning officer/);
     expect(String(la.why)).not.toMatch(/does not name it/);
   });
   // Pass 8: a share of a named part of the house is never presented as the whole cap.

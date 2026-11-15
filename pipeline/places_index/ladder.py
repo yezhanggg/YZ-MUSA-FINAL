@@ -137,13 +137,42 @@ def status_detail(rule: dict[str, Any], raw: str | None, rule_name: str = "") ->
         outside = _v(adu.get("status_outside")) or "not_addressed"
         parts.append(f"only in {', '.join(scope)}, {outside.replace('_', ' ')} elsewhere")
     if raw == "not_addressed":
-        parts.append(
-            "no ADU text in the code"
-            + (f", {PATH_WORDS[path]} at best" if path in ("variance", "special_exception", "conditional_use") else "")
-        )
+        parts.append("no ADU text in the code" + _no_rule_path(ap, path))
     if raw == "prohibited":
         parts.append("the code bars ADUs")
     return ", ".join(parts) if parts else None
+
+
+def _no_rule_path(ap: dict[str, Any], path: Any) -> str:
+    """The path a town with no ADU text leaves, in plain words: a use variance (or the code bars one), a hearing for
+    a use the code does not list, and where that hearing reaches."""
+    barred = _v(ap.get("use_variance_barred")) is True and not (ap.get("use_variance_barred") or {}).get("districts")
+    if path == "variance":
+        out = ", and the code bars a use variance" if barred else ", so the path is a use variance"
+    elif path in ("special_exception", "conditional_use"):
+        out = f", so the path to ask about is a {PATH_WORDS[path]}"
+    else:
+        out = ""
+    un = _v(ap.get("unlisted_use_path"))
+    if un in ("special_exception", "conditional_use") and un != path:
+        where = list(_v(ap.get("unlisted_use_districts")) or [])
+        scope = ap.get("unlisted_use_scope") or {}
+        similar = _v(scope) == "similar_only"
+        sim_where = list(scope.get("districts") or where) if similar else []
+        any_where = [d for d in where if d not in sim_where]
+        bits = []
+        if similar:
+            bits.append("a use similar to a listed one" + _in(sim_where))
+        if any_where or not similar:
+            bits.append("a use not listed" + _in(any_where))
+        out += f", or a {PATH_WORDS[un]} for " + " or for ".join(bits)
+    return out
+
+
+def _in(where: list[str]) -> str:
+    if not where:
+        return ""
+    return f" in {where[0]}" if len(where) == 1 else f" in {', '.join(where[:-1])} and {where[-1]}"
 
 
 def rule_answer(rule: dict[str, Any], entry: dict[str, Any]) -> dict[str, Any]:
