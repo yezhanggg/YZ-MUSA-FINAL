@@ -2689,7 +2689,8 @@
    },
    "tools_required": [
     [
-     "get_site"
+     "get_site",
+     "get_area_stats"
     ]
    ],
    "calls": [
@@ -2798,7 +2799,8 @@
    },
    "tools_required": [
     [
-     "get_site"
+     "get_site",
+     "get_area_stats"
     ]
    ],
    "calls": [

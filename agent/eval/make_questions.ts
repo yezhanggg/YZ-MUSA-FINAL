@@ -528,7 +528,7 @@ async function build(): Promise<EvalQuestion[]> {
   const onSite = (lotId: string, over: Partial<QuestionContext> = {}) => ctx({ site_lot: lotId, ...over });
   Q.push({
     id: 'market-01', category: 'market', question: "What is the median rent in this lot's census tract?", context: onSite(cumberland),
-    required: [['get_site']], calls: [{ name: 'get_site', input: {} }],
+    required: [['get_site', 'get_area_stats']], calls: [{ name: 'get_site', input: {} }],
     facts: ([s]) => [n('tract median rent', num(s, 'tract.median_rent'), 'usd_month')],
     rubric: 'Gives the tract median rent from get_site.',
   });
@@ -540,7 +540,7 @@ async function build(): Promise<EvalQuestion[]> {
   });
   Q.push({
     id: 'market-03', category: 'market', question: 'How did jobs in this tract change from 2019 to 2024?', context: onSite(cumberland),
-    required: [['get_site']], calls: [{ name: 'get_site', input: {} }],
+    required: [['get_site', 'get_area_stats']], calls: [{ name: 'get_site', input: {} }],
     facts: ([s]) => [n('jobs 2019', num(s, 'tract.jobs_2019'), 'count', 1), n('jobs 2024', num(s, 'tract.jobs_2024'), 'count', 1)],
     rubric: 'Gives both job counts.',
   });
