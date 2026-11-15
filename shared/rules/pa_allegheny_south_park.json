@@ -46,15 +46,17 @@
       "The zoning chapter has no accessory dwelling unit, in-law suite or similar use",
       "'In the R-1, R-2, R-3, R-4, R-5, RP, BP and CR Districts, any use not specifically listed in the authorized uses for the zoning district shall not be permitted in that zoning district' (137-13A)",
       "'In all zoning districts, single-family dwellings and two-family dwellings shall be the only principal structure on a lot' (137-13C). A single-family detached dwelling contains 'one dwelling unit' (137-9)",
-      "No district lists a two-family dwelling as such. Two-family dwellings appear only inside an R-3 planned residential development of at least 10 acres (137-121B(2))",
+      "A dwelling in a separate building, such as over a garage, may count as a second principal structure, which 137-13C does not allow on a lot. The code does not say so in words. Ask the zoning officer",
+      "Two-family dwellings are a listed use only inside an R-3 planned residential development of at least 10 acres (137-121B(2)) and inside a transit-oriented overlay development, where they are permitted by right once the Board of Supervisors approves the TOOD master plan by conditional use (137-196, 137-200A(3))",
       "A private garage or storage building over 600 sq ft needs a special exception, and such a building may not be used 'for any dwelling purposes' (137-131A(3)(d))",
       "Accessory structures stay out of the required front and side yards, at least 10 ft from the rear line in R-1 and R-2 (5 ft in R-3 and R-4), and a detached one at least 10 ft from any principal building. Garages and carports stand in a side or rear yard, at least 10 ft from the side and rear lines (137-135C(8), (9))",
       "Off-street parking: two spaces per single-family dwelling unit, three per two-family dwelling unit (137-149C)",
-      "In C-1 to C-4, I-1 and I-2 the Zoning Hearing Board may approve a use comparable to the listed uses by special exception, but a use listed in a less restrictive district is not eligible (137-13A, 137-131A(12)). CR and BP list the same special exception although 137-13A says unlisted uses are not permitted there",
+      "In C-1 to C-4, I-1 and I-2 the Zoning Hearing Board may approve a use comparable to the listed uses by special exception, but a use listed in a less restrictive district is not eligible (137-13A, 137-131A(12)). 137-13A points to '§ 137-131A(39)', an old number. The provision is (12), 'Comparable uses not specifically listed'. CR and BP list the same special exception although 137-13A says unlisted uses are not permitted there",
       "Any lot of record when the chapter took effect may hold a single-family dwelling or its accessory structure without a lot area or width variance (137-161A)",
-      "No section read bars a use variance. Variances need the five findings of 137-166A"
+      "No section read bars a use variance. Variances need the five findings of 137-166A",
+      "'A dwelling (such as a manse or parsonage) may be located on the same lot with a church' if the single-family dwelling requirements are also met (137-131A(9)(c))"
     ],
-    "notes": "Zoning office: South Park Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and servants. Hits were the dwelling and two-family definitions, 137-13C, the motel definition (resident manager quarters), the family definition (domestic servants) and the subdivision chapter. Read: Article III, the district articles IV to XVII (R-1, R-2, R-3, R-4, R-5, RP, C-1, C-2, C-3, C-4, CR, BP, I-1, I-2), 137-121 (PRD uses), Article XX (137-132 to 137-146), 137-149 (parking), Article XXIII (nonconforming) and 137-166 (variances). Read in part: Article II definitions (A to N in full, the rest by search), Article XIX (137-128 to 137-131A(14). The rest, including 137-131A(22) townhouses and (35) watchman's facility, was not read) and Article XXVII TOOD overlay (137-195 to 137-197 only). Not read: Article I, Article XVIII beyond 137-121, Article XXII (signs), XXV (administration), XXVI (incinerators) and the PDF attachments (Tables A and B, the TOOD master plan, the zoning map). Height is measured to the highest point of the roof from the average finished grade at the front. The TOOD overlay is a master-planned development approved by conditional use (137-196)."
+    "notes": "Zoning office: South Park Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and servants. Hits were the dwelling and two-family definitions, 137-13C, the motel definition (resident manager quarters), the family definition (domestic servants) and the subdivision chapter. Read: Article III, the district articles IV to XVII (R-1, R-2, R-3, R-4, R-5, RP, C-1, C-2, C-3, C-4, CR, BP, I-1, I-2), 137-121 (PRD uses), Article XX (137-132 to 137-146), 137-149 (parking), Article XXIII (nonconforming) and 137-166 (variances). Read in part: Article II definitions (A to N in full, the rest by search), Article XIX (137-128 to 137-131A(14). The rest, including 137-131A(22) townhouses and (35) watchman's facility, was not read) and Article XXVII TOOD overlay (137-195 to 137-203 read in full on a second pass, but not the definition of a TOOD site or 137-131A(54)). Not read: Article I, Article XVIII beyond 137-127 (137-115 to 137-126 read), Article XXII (signs), XXV (administration), XXVI (incinerators) and the PDF attachments (Tables A and B, the TOOD master plan, the zoning map). Height is measured to the highest point of the roof from the average finished grade at the front. The TOOD overlay is a master-planned development approved by conditional use (137-196)."
   },
   "adu": {
     "term": {
@@ -71,7 +73,7 @@
       "url": "https://ecode360.com/print/SO0738?guid=33555204",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "No district lists a second dwelling unit on a house lot. In the residential districts, RP, BP and CR any use not listed is not permitted (137-13A). A house holds one dwelling unit (137-9)"
+      "note": "No district lists a second dwelling unit on a house lot. In the residential districts, RP, BP and CR any use not listed is not permitted (137-13A). A house holds one dwelling unit (137-9). A dwelling in a separate building may also count as a second principal structure, which 137-13C does not allow on a lot. The code does not say so in words, and a use variance is still a path to ask for"
     }
   },
   "approval": {
@@ -96,7 +98,7 @@
       "url": "https://ecode360.com/print/SO0738?guid=33556426",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "In C-1, C-2, C-3, C-4, I-1 and I-2 the Zoning Hearing Board may approve a use 'of the same general character' as the district's listed uses whose impact is no greater. 'If a use is specifically listed in a less restrictive zoning district, it shall not be eligible for consideration as a comparable use in a more restrictive zoning district.' None of these districts lists a house. C-1 and C-3 list an apartment above office or retail (see that alternative). A two-family dwelling is a listed use only inside an R-3 planned residential development (see that alternative), not an unlisted one"
+      "note": "In C-1, C-2, C-3, C-4, I-1 and I-2 the Zoning Hearing Board may approve a use 'of the same general character' as the district's listed uses whose impact is no greater. 'If a use is specifically listed in a less restrictive zoning district, it shall not be eligible for consideration as a comparable use in a more restrictive zoning district.' None of these districts lists a house. C-1 and C-3 list an apartment above office or retail (see that alternative). A two-family dwelling is a listed use only inside an R-3 planned residential development and a transit-oriented overlay development (see those alternatives), not an unlisted one. 137-13A points to '§ 137-131A(39)', an old number. The provision is 137-131A(12), 'Comparable uses not specifically listed'"
     },
     "unlisted_use_districts": {
       "value": [
@@ -135,7 +137,7 @@
           "section": "137-60C(1)(b), 137-74C(1)(b), 137-131A(2), 137-61, 137-75",
           "url": "https://ecode360.com/print/SO0738?guid=33556426",
           "confidence": "verified",
-          "note": "The host is an office or retail building, not a house. A special exception from the Zoning Hearing Board"
+          "note": "The host is an office or retail building, not a house. A single-family house is not a listed use in C-1 or C-3. A special exception from the Zoning Hearing Board"
         },
         {
           "name": "Two-family dwellings in an R-3 planned residential development",
@@ -143,17 +145,31 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "'In the R-3 District, a PRD may include one or more of the following uses: (a) Single-family detached dwellings and single-family attached dwellings. (b) Two-family dwellings. (c) Townhouses.' A site of at least 10 acres controlled by the developer, public water and sewer, at least 25% common open space, conditional use approval by the Board of Supervisors (137-31B(1)(h), 137-121). A two-family dwelling needs three off-street spaces per unit (137-149C)",
+          "conditions": "'In the R-3 District, a PRD may include one or more of the following uses: (a) Single-family detached dwellings and single-family attached dwellings. (b) Two-family dwellings. (c) Townhouses.' A site of at least 10 acres owned or controlled by the developer, 'served by a community water supply and sewage disposal system', at least 25% of the whole development as common open space, lots of at least 8,500 sq ft, and approval by the Board of Supervisors (137-31B(1)(h), 137-121). A two-family dwelling needs three off-street spaces per unit (137-149C)",
           "min_lot_sqft": 435600,
           "min_lot_is_tract": true,
           "land_development": true,
-          "section": "137-31B(1)(h), 137-121A, B(2), 137-149C",
+          "section": "137-31B(1)(h), 137-121A, B(2), C(2), D, 137-149C",
           "url": "https://ecode360.com/print/SO0738?guid=33556174",
           "confidence": "verified",
           "note": "A development of a whole tract, not a change to one house lot. In R-2 a PRD may hold only single-family detached dwellings (137-121B(1))"
+        },
+        {
+          "name": "Two-family dwellings in a transit-oriented overlay development (TOOD)",
+          "path": "conditional_use",
+          "districts": null,
+          "overlays": [
+            "TOOD"
+          ],
+          "conditions": "'The following residential uses shall be permitted by right within a TOOD: ... (3) Two-family dwelling' (137-200A). A TOOD may occur only in a transit overlay district or on a TOOD site, after the Board of Supervisors approves a TOOD master plan by the conditional use procedure (137-196). Subdivision and land development plans follow (137-199A). Residential uses take 50% to 65% of the tract and nonresidential uses 15% to 30% (137-200E), at most eight dwelling units per gross acre over the whole site (137-200N), at least 5% open space (137-202A). Parking is set by a parking analysis (137-203). Uses not listed are not authorized (137-200P)",
+          "land_development": true,
+          "section": "137-196, 137-199A, 137-200A(3), E, N, P, 137-202A, 137-203",
+          "url": "https://ecode360.com/print/SO0738?guid=33558427",
+          "confidence": "verified",
+          "note": "A master-planned development of a whole site near public transit, not a second unit on one house lot"
         }
       ],
-      "section": "137-60C(1)(b), 137-74C(1)(b), 137-121B(2)",
+      "section": "137-60C(1)(b), 137-74C(1)(b), 137-121B(2), 137-200A(3)",
       "url": "https://ecode360.com/print/SO0738?guid=33556426",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -189,7 +205,7 @@
       "url": "https://ecode360.com/print/SO0738?guid=33555204",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "R-1, R-2 and R-3 permit single-family detached dwellings and group homes, CR single-family dwellings. R-4 permits townhouses and garden apartments on five acres, R-5 mobile home parks by conditional use. C-1 and C-3 permit an apartment above office or retail by special exception, C-3 townhouses or garden apartments by conditional use. RP, C-2, C-4, BP, I-1 and I-2 permit no dwelling, I-1 and I-2 a watchman's facility by special exception"
+      "note": "R-1, R-2 and R-3 permit single-family detached dwellings and group homes, CR single-family dwellings. R-4 permits townhouses and garden apartments on five acres, R-5 mobile home parks by conditional use. C-1 and C-3 list no single-family house. They permit an apartment above office or retail by special exception, C-3 townhouses or garden apartments by conditional use. RP, C-2, C-4, BP, I-1 and I-2 permit no dwelling, I-1 and I-2 a watchman's facility by special exception"
     }
   },
   "form": {

@@ -3477,11 +3477,11 @@
       "code_url": "https://ecode360.com/8114101",
       "plain_fetch": false,
       "code_current_through": "2021-06-29",
-      "code_note": "Zoning: Chapter 205 Zoning (Ord. No. 96 of 1973, readopted 2005 and 2008, as amended). ADU text: 'Relative quarters' (205-16B(4)), a use accessory to a dwelling, in the existing house or attached to it with a connecting doorway, not in a separate freestanding building, occupied only by the property owner and immediate family, not leased, deed restriction, one-year renewable Zoning Officer permit. Listed through 205-16 in AR, BR, BR-1, MR, CR, RP and RO. Barred in the ECII residential section (205-63.12A). An accessory building may not be a dwelling unit (205-5). Two-family detached dwellings by right in RO. The eCode360 search did not find 205-16B(4). CR lot dimensions are in a PDF attachment (205a). New Laws: no zoning ordinance listed. Read in the browser on eCode360 (EA1154).",
+      "code_note": "Zoning: Chapter 205 Zoning (Ord. No. 96 of 1973, readopted 2005 and 2008, as amended). ADU text: 'Relative quarters' (205-16B(4)), a use accessory to a dwelling, in the existing house or attached to it with a connecting doorway, not in a separate freestanding building, occupied only by the property owner and immediate family, not leased, deed restriction, one-year renewable Zoning Officer permit. Listed through 205-16 in AR, BR, BR-1, MR, CR, RP and RO. Barred in the ECII residential section (205-63.12A). An accessory building may not be a dwelling unit (205-5). Two-family detached dwellings by right in RO. RP allows one dwelling unit at or above the second story as an accessory use (205-46I), which conflicts with the family rule. The eCode360 search did not find 205-16B(4). CR lot dimensions are in a PDF attachment (205a). New Laws: no zoning ordinance listed. Read in the browser on eCode360 (EA1154).",
       "why": [
         "named as a town with an ADU ordinance (Code 205-16B(4) relative quarters, family only)"
       ],
-      "status_note": "Open points: whether relative quarters (205-16B(4)) reach C-1 (house under BR figures, 205-66.2A(9)), RR (RP uses by special exception, 205-152C(2)), GA, HR and HR-1 (apartments only), and twins or townhouses in CR. Parking for the quarters (205-102A: 2 per dwelling unit) may be 2 or 4 in all. 'Immediate family' is not defined. CR lot dimensions (PDF attachment 205a) not read. eCode360 current only to 06-29-2021, but New Laws lists no zoning ordinance."
+      "status_note": "Open points: whether 205-46I allows a house in RP one more dwelling unit at or above the second story by right, with no family rule, against the family-only relative quarters of 205-16B(4) (the same reaches RR by special exception, 205-152C(2)). Whether relative quarters reach C-1, RR, GA, HR, HR-1 and IN, and duplexes or multiplexes in CR. CR lot dimensions are in a PDF attachment (205a), not checked. Ords. 599, 603 and 609 appear in neither New Laws nor the township list. Parking for the quarters may be 2 or 4 in all. 'Immediate family' is not defined. Historic chapter (Ch. 11) not read."
     },
     {
       "geoid": "4200372400",
@@ -3495,17 +3495,17 @@
       "pop_rank": 181,
       "file": "pa_allegheny_south_park",
       "batch": 30,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/33554885",
       "plain_fetch": false,
       "code_current_through": "2026-08-10",
-      "code_note": "Zoning: Chapter 137 Zoning (Ord. No. 556, 9-16-1996, as amended). No ADU text. Unlisted uses not permitted in R-1 to R-5, RP, BP and CR (137-13A), comparable uses by special exception in C-1 to C-4, I-1 and I-2 (137-131A(12)). Single-family and two-family dwellings are the only principal structure on a lot (137-13C). No district lists a two-family dwelling, except inside an R-3 planned residential development of 10 acres (137-121B(2)). Apartment above office or retail by special exception in C-1 and C-3 (137-131A(2)). Use Tables A and B are PDF attachments, but each district article lists its uses in text. New Laws: none. Read in the browser on eCode360 (SO0738).",
+      "code_note": "Zoning: Chapter 137 Zoning (Ord. No. 556, 9-16-1996, as amended). No ADU text. Unlisted uses not permitted in R-1 to R-5, RP, BP and CR (137-13A), comparable uses by special exception in C-1 to C-4, I-1 and I-2 (137-131A(12)). Single-family and two-family dwellings are the only principal structure on a lot (137-13C). Two-family dwellings are listed only inside an R-3 planned residential development of 10 acres (137-121B(2)) and a transit-oriented overlay development approved by conditional use (137-196, 137-200A(3)). Apartment above office or retail by special exception in C-1 and C-3 (137-131A(2)). Use Tables A and B are PDF attachments, but each district article lists its uses in text. New Laws: none. Read in the browser on eCode360 (SO0738).",
       "why": [
         "added as batch 30 by population. Code Chapter 137 has no ADU text"
       ],
-      "status_note": "Open points: whether a detached second dwelling is a second principal structure barred by 137-13C. CR and BP list comparable uses by special exception though 137-13A bars unlisted uses there. Use Tables A and B (PDF) not opened. 137-131A beyond (14), definitions after N, Article XXVII TOOD uses not read."
+      "status_note": "Use Tables A and B are PDFs and were not checked. The C-3 page (7,500 sq ft lot, 137-74C(1)(b)) was not checked again. 137-13C is read as a possible bar on a dwelling in a separate building (a second principal structure), kept as a secondary reading, not a bar."
     },
     {
       "geoid": "4213373168",
@@ -3519,17 +3519,17 @@
       "pop_rank": 182,
       "file": "pa_york_spring_garden",
       "batch": 30,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14755449",
       "plain_fetch": false,
       "code_current_through": "2025-12-10",
-      "code_note": "Zoning: Chapter 310 Zoning (Ord. No. 2009-09, 11-11-2009, as amended). No ADU text. Multifamily or two-family conversion of an existing house by special exception in R-1 and R-2 (8,000 sq ft of lot per unit, public sewer and water, no change to the original style, 310-66) and by right in A-O. Two-family dwelling by right in R-2. Single-family residence with another permitted use in A-O and C, caretaker or watchman dwelling in IP. Unlisted uses by special exception where similar uses are allowed (310-5B). Lot coverage is impervious cover (310-3C). New Laws: none. Read in the browser on eCode360 (SP2461).",
+      "code_note": "Zoning: Chapter 310 Zoning (Ord. No. 2009-09, 11-11-2009, as amended). No ADU text. Multifamily or two-family conversion of an existing house by special exception in R-1 and R-2 (8,000 sq ft of lot per unit, public sewer and water, no change to the original style, 310-66) and by right in A-O, where 310-66 does not apply. Two-family dwelling by right in R-2. Single-family residence with another permitted use in A-O and C, caretaker or watchman dwelling in IP. Unlisted uses by special exception where similar uses are allowed (310-5B). Lot coverage is impervious cover (310-3C). New Laws: none. Read in the browser on eCode360 (SP2461).",
       "why": [
         "added as batch 30 by population. Code Chapter 310 has no ADU text (two-family conversion by special exception, 310-66)"
       ],
-      "status_note": "Open points: whether 310-66 (8,000 sq ft per unit, public sewer and water) reaches the by-right two-family conversion in A-O. Whether a detached second dwelling counts as a second principal use (310-5E) or as an unlisted use similar to a two-family dwelling (310-5B). R-2 table gives no figures without public water or sewer. Article VI apart from 310-66, Articles VII and VIII not read."
+      "status_note": "Whether a detached second unit is a similar use under 310-5B is not settled (310-12B(2) treats a detached structure as part of the principal building)."
     }
   ]
 }

@@ -32,12 +32,14 @@
       "'No more than one principal use shall be permitted on a lot, unless the provisions of the relevant zoning district permit a combination of permitted uses or a multiple-use building' (310-5E)",
       "A second unit inside an existing house is a two-family conversion: by special exception in R-1 and R-2 with 8,000 sq ft of lot per unit, public sewer and water and no change to the house's original style (310-66), by right in A-O",
       "R-2 permits a two-family dwelling by right on 7,500 sq ft with public water and sewer (310-7B(3), D)",
-      "A detached accessory structure is 'considered a part of the principal building' for every requirement except its 5 ft setback from the property lines (310-12B)",
+      "'For all other requirements, a nonattached structure is considered a part of the principal building' (310-12B(2)). So a detached second unit might be read as part of a two-family building in R-2, as a second principal use that 310-5E bars, or as a use similar to a listed one under 310-5B. The code does not settle which. Ask the zoning officer",
       "Lot coverage means impervious cover, buildings and paving together (310-3C)",
-      "Each dwelling unit needs two off-street parking spaces (310-15B) and at least 600 sq ft of habitable floor area (310-22A)",
-      "No section read bars a use variance. Variances need the findings of 310-41C and lapse after six months without a building permit or use certificate"
+      "Each dwelling unit needs two off-street parking spaces (310-15B). Habitable floor area per dwelling unit: 600 sq ft for single-family, two-family and townhouse, 400 sq ft for a multifamily apartment or multifamily conversion, 300 sq ft for a bachelor apartment for one person (310-22A, B, C)",
+      "A detached roofed accessory structure may stand in the general buildable area, where it meets the district front and side yards, or inside the rear yard, where it stands at least 5 ft from every property line (310-12B(1))",
+      "No section read bars a use variance. Variances need the findings of 310-41C and lapse after six months without a building permit or use certificate",
+      "Not a second home: a rooming house (special exception in R-2, by right in A-O) is lodging, not a dwelling unit. Accessory uses of a house of worship 'may include rectories, convents' (310-3C). For a farm in OS, 310-26B speaks of 'the dwelling of the owner or lessee'"
     ],
-    "notes": "Zoning office: Spring Garden Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and servants. Hits were the conversion and two-family definitions, 310-66, 310-29, 310-22, the R-1 and R-2 use lists, the dormitory definition and other chapters. Read: Article I (310-1 to 310-3, definitions to 'Tavern', the rest not read), Article II (310-4 to 310-11, every zone), Article III (310-12 to 310-19 in full, 310-19N onward and 310-20 to 310-26 not read, 310-22 seen in the search excerpt), Article IV (310-27 to 310-35), Article V (310-36 to 310-42) and 310-66. Not read: the rest of Article VI, Articles VII and VIII and Chapter 151 (floodplain). The zones are R-1, R-2, A-O, C, IP and OS. No overlay zone is listed in 310-4. A lot of record not meeting the lot area or width may take any permitted use if the setbacks are met (310-34)."
+    "notes": "Zoning office: Spring Garden Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and servants. Hits were the conversion and two-family definitions, 310-66, 310-29, 310-22, the R-1 and R-2 use lists, the dormitory definition and other chapters. Read: Article I (310-1 to 310-3, definitions to 'Tavern', the rest not read), Article II (310-4 to 310-11, every zone), Article III (310-12 to 310-19 in full, 310-19N onward and 310-20 to 310-26 not read, 310-22 seen in the search excerpt), Article IV (310-27 to 310-35), Article V (310-36 to 310-42) and 310-66. Not read: the rest of Article VI and Chapter 151 (floodplain). Of Articles VII and VIII only the headings were seen. The zones are R-1, R-2, A-O, C, IP and OS. No overlay zone is listed in 310-4. A lot of record not meeting the lot area or width may take any permitted use if the setbacks are met (310-34)."
   },
   "adu": {
     "term": {
@@ -80,7 +82,7 @@
       "url": "https://ecode360.com/print/SP2461?guid=14755713",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "Any use not specifically allowed elsewhere in the chapter. A second unit inside a house is the listed two-family conversion, not an unlisted use, and R-2 lists a two-family dwelling. Whether a detached second unit is similar to a listed use is not settled"
+      "note": "The path covers any use not specifically allowed elsewhere in the chapter. A second unit inside a house is the listed two-family conversion, not an unlisted use, and R-2 lists a two-family dwelling. 310-12B(2) treats a detached structure as part of the principal building, so a detached second unit might instead be read as part of a two-family building in R-2 or as a second principal use, which 310-5E bars"
     },
     "unlisted_use_scope": {
       "value": "similar_only",
@@ -99,7 +101,7 @@
             "R-1",
             "R-2"
           ],
-          "conditions": "'A multifamily or two-family dwelling constructed by converting an existing building into apartments for more than one family without substantially altering the exterior of the building' (310-3C). In R-1 and R-2: at least 8,000 sq ft of lot area per dwelling unit, the character of the existing house kept, 'No exterior modifications shall be permitted which alter the original style of the dwelling, its doors, windows or other details', and public sewer and public water (310-66). Each unit at least 600 sq ft of habitable floor area (310-22A). Two off-street spaces per dwelling unit (310-15B). The district's lot, yard and coverage figures still apply",
+          "conditions": "'A multifamily or two-family dwelling constructed by converting an existing building into apartments for more than one family without substantially altering the exterior of the building' (310-3C). In R-1 and R-2: at least 8,000 sq ft of lot area per dwelling unit, the character of the existing house kept, 'No exterior modifications shall be permitted which alter the original style of the dwelling, its doors, windows or other details', and public sewer and public water (310-66). Each unit at least 600 sq ft of habitable floor area for a two-family dwelling (310-22A), or 400 sq ft for a multifamily conversion (310-22B). Two off-street spaces per dwelling unit (310-15B). The district's lot, yard and coverage figures still apply",
           "min_lot_sqft": 16000,
           "requires": [
             {
@@ -118,7 +120,7 @@
               "section": "310-3C, 310-66B"
             }
           ],
-          "section": "310-6C(5), 310-7C(3), 310-66, 310-3C, 310-22A, 310-15B",
+          "section": "310-6C(5), 310-7C(3), 310-66, 310-3C, 310-22A, B, 310-15B",
           "url": "https://ecode360.com/print/SP2461?guid=14756580",
           "confidence": "verified",
           "note": "8,000 sq ft per unit gives 16,000 sq ft for two units. The Zoning Hearing Board hears it on the general standards of 310-42F and refers it to the Planning Commission. A special exception lapses after six months without a building permit or use certificate (310-42H)"
@@ -129,7 +131,7 @@
           "districts": [
             "A-O"
           ],
-          "conditions": "'Multifamily or two-family conversion' is a use by right in A-O. The definition requires converting an existing building 'without substantially altering the exterior' (310-3C). Lot 10,000 sq ft with public water and sewer, 15,000 sq ft with one of them. At most 10 dwelling units per gross acre. Two off-street spaces per unit (310-15B). Each unit at least 600 sq ft of habitable floor area (310-22A)",
+          "conditions": "'Multifamily or two-family conversion' is a use by right in A-O. The definition requires converting an existing building 'without substantially altering the exterior' (310-3C). Lot 10,000 sq ft with public water and sewer, 15,000 sq ft with one of them. At most 10 dwelling units per gross acre. Two off-street spaces per unit (310-15B). Each unit at least 600 sq ft of habitable floor area for a two-family dwelling (310-22A), or 400 sq ft for a multifamily conversion (310-22B)",
           "min_lot_sqft": 10000,
           "requires": [
             {
@@ -138,10 +140,10 @@
               "section": "310-3C"
             }
           ],
-          "section": "310-8B(7), 310-8D, E, 310-3C",
+          "section": "310-8B(7), 310-8D, E, 310-3C, 310-22A, B, 310-66",
           "url": "https://ecode360.com/print/SP2461?guid=14755713",
-          "confidence": "secondary",
-          "note": "310-66 sets its standards 'In an R-1 or R-2 Zone', so whether its 8,000 sq ft per unit and the public sewer and water rule also reach A-O is not settled. Ask the zoning officer"
+          "confidence": "verified",
+          "note": "310-66 is in Article VI, the standards for special exceptions, and opens 'In an R-1 or R-2 Zone'. In A-O the conversion is by right, so the 8,000 sq ft per unit and the public sewer and water rule of 310-66 do not apply. The A-O lot and density figures do"
         },
         {
           "name": "Two-family dwelling (R-2)",
@@ -251,14 +253,15 @@
       "url": "https://ecode360.com/print/SP2461?guid=14755947",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "'New permanent roofed accessory structures ... standing apart from the principal structure, are permitted in the general buildable area and inside the rear yards as long as they are at least five feet from any property line'"
+      "note": "'New permanent roofed accessory structures ... standing apart from the principal structure, are permitted in the general buildable area and inside the rear yards as long as they are at least five feet from any property line.' The 5 ft holds only inside the rear yard. Elsewhere the structure stays in the buildable area, so it meets the district front and side yards. It may not stand in the required front yard or in the required side yard ahead of the rear yard"
     },
     "setback_rear_ft": {
       "value": 5,
       "section": "310-12B(1)",
       "url": "https://ecode360.com/print/SP2461?guid=14755947",
       "verified_on": "2026-11-15",
-      "confidence": "verified"
+      "confidence": "verified",
+      "note": "Inside the rear yard, at least 5 ft from the property lines (310-12B(1))"
     },
     "accessory_structure_max_height_ft": {
       "value": 25,

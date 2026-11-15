@@ -58,9 +58,13 @@
       "In the ECII residential section 'Uses permitted in § 205-16 are strictly prohibited with the exception of an attached garage' (205-63.12A)",
       "Family: related persons living as one nonprofit housekeeping unit 'doing their cooking on the premises on a single cooking facility', plus two gratuitous guests (205-5 'Family')",
       "A lot of record too small for the district may get a variance from the Zoning Hearing Board. Where all requirements but lot area are met, the Zoning Officer may permit a permitted use (205-12)",
-      "No section read bars a use variance. Variances need the five MPC hardship findings and lapse after one year without a building permit (205-142E, J)"
+      "No section read bars a use variance. Variances need the five MPC hardship findings and lapse after one year without a building permit (205-142E, J)",
+      "Twins and townhouses in CR may hold relative quarters, since the code defines them as single-family attached or semidetached dwellings. Whether duplexes and multiplexes in CR may is not settled (205-36A, 205-16B(4))",
+      "Near the airport: anyone who plans 'to add to an existing structure ... in the vicinity of the airport' must first file PennDOT Form AV-57 and include the response with the permit application (205-180A)",
+      "'Alterations, conversion' means 'A multifamily dwelling constructed by converting an existing dwelling into apartments for more than one family' (205-5). No district lists it as a use",
+      "The sewer charge is set per equivalent dwelling unit, so an added unit may owe a further charge (Chapter 18, 18-15C). Rental units need a license under Chapter 159"
     ],
-    "notes": "Zoning office: East Norriton Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and servants. The search did not return 205-16B(4), which says 'Relative quarters' and 'in-law quarters'. It was found by reading Article IV. Read: Article II (205-4, 205-5), Article III, Article IV (205-11 to 205-22.5), the district articles for AR, BR, BR-1, MR, GA, CR, HR, HR-1, RP, RO, IN, BP, EC, ECII, C, C-1, SC, I, LI, R-R, HI and ATR, Article XVIII (parking) and Article XXII (Zoning Hearing Board). Not read: Article I, XVII (floodplain), XIX (signs), XX (nonconforming uses), XXI (administration), XXIII (heliports), XXIV, XXVIII (airport overlay), XXIX (wireless) and the PDF attachment 205a Minimum Lot Dimensions (CR lots). 205-6 lists the district as RR, its article is titled R-R. No unlisted-use rule was found: each district permits its listed uses 'and no other', and C, C-1, SC, I, LI and HI allow uses of the same general character as listed ones by special exception. The Township has a historic preservation chapter (Ch. 11) that was not read. No general accessory building setback rule was found in the sections read, apart from MR (205-30.7G(4)) and the accessory heights in each district."
+    "notes": "Zoning office: East Norriton Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and servants. The search did not return 205-16B(4), which says 'Relative quarters' and 'in-law quarters'. It was found by reading Article IV. Read: Article II (205-4, 205-5), Article III, Article IV (205-11 to 205-22.5), the district articles for AR, BR, BR-1, MR, GA, CR, HR, HR-1, RP, RO, IN, BP, EC, ECII, C, C-1, SC, I, LI, R-R, HI and ATR, Article XVIII (parking) and Article XXII (Zoning Hearing Board). Not read: Article I, XVII (floodplain), XIX (signs), XX (nonconforming uses), XXI (administration), XXIII (heliports), XXIV, XXVIII (airport overlay, apart from the 205-180A permit step), XXIX (wireless) and the PDF attachment 205a Minimum Lot Dimensions (CR lots). 205-6 lists the district as RR, its article is titled R-R. Most districts permit their listed uses 'and no other'. R-R (205-152) does not use those words. RO permits by conditional use 'uses which are similar to those in § 205-54.2 above' (205-54.3A), and 205-54.2 lists the two-family detached dwelling. RP permits similar offices by conditional use (205-47A(1)), not dwellings. C, C-1, SC, I, LI and HI allow uses of the same general character as listed ones by special exception. BR-1 permits a townhouse or twin house development by conditional use on 60,000 sq ft (205-30.2B). AR permits smaller cluster lots in a subdivision of 80 acres or more (205-26). The Township has a historic preservation chapter (Ch. 11) that was not read. No general accessory building setback rule was found in the sections read, apart from MR (205-30.7G(4)) and the accessory heights in each district. Districts in doubt, and why: C-1 permits a single-family detached dwelling under the BR figures (205-66.2A(9)), but its accessory use listing (7) reaches only the uses listed above it and does not name 205-16. RR permits any RP use, so a house with 205-16B accessory uses, only by special exception (205-152C(2)). GA, HR and HR-1 list 'Accessory uses in accordance with § 205-16' but permit only apartment houses, and 205-16B(4)(b) has the property sold as a single-family dwelling. IN lists 'Accessory uses as defined in § 205-16' (205-56J), but its only homes are churches 'and their adjunct residential dwellings' (205-56A) and hospital temporary living quarters for patients' families."
   },
   "adu": {
     "term": {
@@ -97,11 +101,11 @@
     },
     "status_outside": {
       "value": "not_addressed",
-      "section": "205-56, 205-61, 205-63.3, 205-65, 205-68, 205-72, 205-87, 205-158, 205-171",
+      "section": "205-61, 205-63.3, 205-65, 205-68, 205-72, 205-87, 205-158, 205-171",
       "url": "https://ecode360.com/print/EA1154?guid=8114252",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "IN, BP, EC, C, SC, I, LI, HI and ATR list no house with 205-16 accessory uses. Each permits its listed uses 'and no other'"
+      "note": "BP, EC, C, SC, I, LI, HI and ATR list no house with 205-16 accessory uses. Most of them permit their listed uses 'and no other'"
     },
     "status_outside_by_district": {
       "value": [
@@ -171,10 +175,10 @@
           "districts": [
             "MR"
           ],
-          "conditions": "MR permits twin houses and duplexes. The district needs a tract of at least five developable acres, public sewer and water, at most five dwelling units per gross acre, 4,000 sq ft of lot per dwelling unit (5,500 on average), and two off-street spaces per unit (205-30.7)",
+          "conditions": "MR permits twin houses and duplexes. The district needs a tract of at least five developable acres, public sewer and water, at most five dwelling units per gross acre, 4,000 sq ft of lot per dwelling unit (5,500 on average), and two off-street spaces per unit. Twin and duplex figures: front yard 25 ft on average across the development (half of a front facade may stand 20 ft back), rear yard 30 ft, side yard 10 ft (one side only for a twin), building coverage 35%, height 35 ft and two stories (205-30.6, 205-30.7)",
           "min_lot_sqft": 217800,
           "min_lot_is_tract": true,
-          "section": "205-30.5B, C, 205-30.7",
+          "section": "205-30.5B, C, 205-30.6, 205-30.7",
           "url": "https://ecode360.com/print/EA1154?guid=8114448",
           "confidence": "verified",
           "note": "A development standard for the whole tract. Whether an existing house lot in an MR development may be changed into a duplex is not settled. Ask the zoning officer"
@@ -194,16 +198,45 @@
           "note": "The CR minimum lot dimensions are in a PDF attachment (205a) that was not read"
         },
         {
-          "name": "One dwelling unit at or above the second story with an office use (RP)",
+          "name": "One more dwelling unit at or above the second story (RP)",
           "path": "by_right",
           "districts": [
             "RP"
           ],
-          "conditions": "'Accessory uses on the same lot with and customarily incidental to any of the above permitted uses, including one dwelling unit, provided that such use shall be located at or above the second story.' The principal use is an office, studio, salon, day care or the like. Lot 10,000 sq ft with sanitary sewer. 'A use shall utilize an existing building for its purposes, or it will be of a similar architectural design and scale to nearby existing development' (205-49A)",
-          "section": "205-46I, 205-48, 205-49",
+          "conditions": "'Accessory uses on the same lot with and customarily incidental to any of the above permitted uses, including one dwelling unit, provided that such use shall be located at or above the second story' (205-46I). The first use listed above is 'Single-family detached dwellings and accessory uses in accordance with § 205-16B' (205-46A). Lot 10,000 sq ft with sanitary sewer. Two off-street spaces per dwelling unit (205-102A)",
+          "min_lot_sqft": 10000,
+          "section": "205-46A, 205-46I, 205-48, 205-102A",
           "url": "https://ecode360.com/print/EA1154?guid=8114650",
+          "confidence": "secondary",
+          "adu_listing": false,
+          "note": "Read literally, a house in RP may hold one more dwelling unit at or above the second story, by right and with no family rule. This conflicts with 205-16B(4), which lets a house hold only relative quarters for the owner's family. Ask the zoning officer which one governs"
+        },
+        {
+          "name": "One more dwelling unit at or above the second story (RR, by special exception)",
+          "path": "special_exception",
+          "districts": [
+            "RR"
+          ],
+          "conditions": "RR permits the RP uses by special exception (205-152C(2)). Among them is one dwelling unit at or above the second story, as an accessory use of a permitted use such as a single-family detached dwelling (205-46A, I)",
+          "section": "205-152C(2), 205-46A, 205-46I",
+          "url": "https://ecode360.com/print/EA1154?guid=8114650",
+          "confidence": "secondary",
+          "adu_listing": false,
+          "note": "Read literally, a house in RR may hold one more dwelling unit at or above the second story after a Zoning Hearing Board special exception, with no family rule. This conflicts with the family-only relative quarters of 205-16B(4). Ask the zoning officer which one governs"
+        },
+        {
+          "name": "Townhouse or twin house development (BR-1)",
+          "path": "conditional_use",
+          "districts": [
+            "BR-1"
+          ],
+          "conditions": "'When approved as a conditional use, a townhouse and/or twin house may be approved' on a tract with at least 60,000 sq ft of contiguous lot area, at most 5.5 dwelling units per net lot area, and otherwise under the CR rules of 205-37 to 205-41 (205-30.2B). The intent is a density no higher than one unit per 7,500 sq ft of net lot area (205-30.1)",
+          "min_lot_sqft": 60000,
+          "min_lot_is_tract": true,
+          "section": "205-30.1, 205-30.2B",
+          "url": "https://ecode360.com/print/EA1154?guid=8114424",
           "confidence": "verified",
-          "note": "The host is a nonresidential use, not a house. Whether a house used as a home with an office counts is not settled"
+          "note": "A development of a whole tract by the Board of Supervisors, not a second unit on one house lot"
         },
         {
           "name": "Dwellings at or above the second story with a commercial use (C, C-1)",
@@ -244,7 +277,7 @@
           "note": "The host is an office or other BP use, not a house"
         }
       ],
-      "section": "205-54.2B, 205-30.5, 205-36, 205-46I, 205-62B, 205-65A(9), 205-66.2A(7), 205-68O",
+      "section": "205-30.2B, 205-54.2B, 205-30.5, 205-36, 205-46I, 205-152C(2), 205-62B, 205-65A(9), 205-66.2A(7), 205-68O",
       "url": "https://ecode360.com/print/EA1154?guid=8114699",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -280,24 +313,25 @@
         "RR",
         "GA",
         "HR",
-        "HR-1"
+        "HR-1",
+        "IN"
       ],
-      "section": "205-66.2A(7), (9), 205-152C(2), 205-32D, 205-42A(4), 205-44.2A(5)",
+      "section": "205-66.2A(7), (9), 205-152C(2), 205-32D, 205-42A(4), 205-44.2A(5), 205-56A, J",
       "url": "https://ecode360.com/print/EA1154?guid=8115047",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "C-1 permits a single-family detached dwelling under the BR figures (205-66.2A(9)), but its accessory use listing (7) reaches only the uses listed above it and does not name 205-16. RR permits any RP use, so a house with 205-16B accessory uses, only by special exception (205-152C(2)). GA, HR and HR-1 list 'Accessory uses in accordance with § 205-16' but permit only apartment houses, and 205-16B(4)(b) has the property sold as a single-family dwelling",
+      "note": "This district's own use list does not plainly put relative quarters with a house",
       "named_by": {
         "C-1": "reach",
         "RR": "reach",
         "GA": "reach",
         "HR": "reach",
-        "HR-1": "reach"
+        "HR-1": "reach",
+        "IN": "reach"
       }
     },
     "districts_read_no_listing": {
       "value": [
-        "IN",
         "BP",
         "EC",
         "ECII",
@@ -308,11 +342,11 @@
         "HI",
         "ATR"
       ],
-      "section": "205-56, 205-61, 205-63.3, 205-63.8, 205-65, 205-68, 205-72, 205-87, 205-158, 205-171",
+      "section": "205-61, 205-63.3, 205-63.8, 205-65, 205-68, 205-72, 205-87, 205-158, 205-171",
       "url": "https://ecode360.com/print/EA1154?guid=8114252",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "No house with 205-16 accessory uses. IN permits churches 'and their adjunct residential dwellings' and hospital temporary living quarters for patients' families. BP permits dwellings accessory to its uses only by conditional use. C and C-1 permit dwellings at or above the second story with a commercial use, SC residential units above the first floor, EC and ECII apartment houses and ECII townhouses, twins, duplexes and triplexes with 205-16 uses barred (205-63.12A). I, LI and HI permit no dwelling. ATR permits age-targeted housing with only a no-impact home-based business as an accessory use"
+      "note": "No house with 205-16 accessory uses. BP permits dwellings accessory to its uses only by conditional use. C and C-1 permit dwellings at or above the second story with a commercial use, SC residential units above the first floor, EC and ECII apartment houses and ECII townhouses, twins, duplexes and triplexes with 205-16 uses barred (205-63.12A). I, LI and HI permit no dwelling. ATR permits age-targeted housing with only a no-impact home-based business as an accessory use"
     },
     "gates": {
       "value": [
@@ -345,9 +379,23 @@
           "building_types": null,
           "section": "205-16B(4)(b), (d), (f), (g)",
           "url": "https://ecode360.com/print/EA1154?guid=8114252"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AR subdivision of 80 acres or more developed under 205-26, with public water and sewer, lots may be up to 25% smaller than 20,000 sq ft but never under 15,000 sq ft, with width 75 ft, front yard 40 ft, side yards 15 ft each, rear yard 45 ft and building coverage 20%. These figures replace the AR figures on such a lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "AR"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "205-26B, C",
+          "url": "https://ecode360.com/print/EA1154?guid=8114352"
         }
       ],
-      "section": "205-16B(4)",
+      "section": "205-16B(4), 205-26",
       "url": "https://ecode360.com/print/EA1154?guid=8114252",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -648,57 +696,88 @@
     },
     "MR": {
       "min_lot_sqft": {
-        "value": 4000,
+        "value": 10000,
+        "section": "205-30.5A, 205-30A(2)",
+        "url": "https://ecode360.com/print/EA1154?guid=8114404",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in MR follows the BR figures: 'Single-family detached dwelling in accordance with the requirements of § 205-30 (the BR Residential District)' (205-30.5A). Width 80 ft. A twin or duplex in an MR development: 4,000 sq ft per dwelling unit, 5,500 on average (205-30.7D). The district needs a five acre tract, public sewer and water, and at most five dwelling units per gross acre"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 4000
+        },
         "section": "205-30.7D",
         "url": "https://ecode360.com/print/EA1154?guid=8114448",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'A minimum lot area of 4,000 square feet shall be provided for each dwelling unit, with an average lot area of 5,500 square feet for each dwelling unit.' A single-family detached dwelling follows the BR figures (205-30.5A). The district needs a five acre tract, public sewer and water, and at most five dwelling units per gross acre"
+        "note": "A twin: 'A minimum lot area of 4,000 square feet shall be provided for each dwelling unit, with an average lot area of 5,500 square feet for each dwelling unit'"
       },
       "setback_front_ft": {
-        "value": 25,
-        "section": "205-30.7G(1)",
-        "url": "https://ecode360.com/print/EA1154?guid=8114448",
+        "value": 30,
+        "section": "205-30.5A, 205-30C(1)",
+        "url": "https://ecode360.com/print/EA1154?guid=8114404",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "An average of 25 ft across the development. Half of a front facade may stand 20 ft back"
+        "note": "A twin or duplex in an MR development: 25 ft on average across the development, and half of a front facade may stand 20 ft back (205-30.7G(1))"
       },
       "setback_side_ft": {
+        "value": 15,
+        "section": "205-30.5A, 205-30C(2)",
+        "url": "https://ecode360.com/print/EA1154?guid=8114404",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side. A twin or duplex in an MR development: 10 ft, one side only for a twin (205-30.7G(3))"
+      },
+      "setback_side_semi_ft": {
         "value": 10,
         "section": "205-30.7G(3)",
         "url": "https://ecode360.com/print/EA1154?guid=8114448",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "One side only for a twin"
+        "note": "A twin: 10 ft on one side only"
       },
       "setback_rear_ft": {
-        "value": 30,
-        "section": "205-30.7G(2)",
-        "url": "https://ecode360.com/print/EA1154?guid=8114448",
-        "verified_on": "2026-11-15",
-        "confidence": "verified"
-      },
-      "principal_max_height_ft": {
-        "value": 35,
-        "section": "205-30.6",
-        "url": "https://ecode360.com/print/EA1154?guid=8114448",
+        "value": 25,
+        "section": "205-30.5A, 205-30C(3)",
+        "url": "https://ecode360.com/print/EA1154?guid=8114404",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "35 ft from the lowest outside finished grade, and at most two stories. An accessory building at most 14 ft"
+        "note": "A twin or duplex in an MR development: 30 ft (205-30.7G(2))"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "205-30.5A, 205-30D(1), 205-30.6",
+        "url": "https://ecode360.com/print/EA1154?guid=8114404",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "A detached house follows the BR height of 30 ft. 205-30.6 caps every MR building at 35 ft from the lowest outside finished grade and two stories, so a twin or duplex may reach 35 ft. An accessory building at most 14 ft"
       },
       "principal_max_stories": {
         "value": 2,
         "section": "205-30.6",
         "url": "https://ecode360.com/print/EA1154?guid=8114448",
         "verified_on": "2026-11-15",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "Every principal building in MR"
       },
       "max_building_coverage": {
-        "value": 0.35,
+        "value": 0.18,
+        "section": "205-30.5A, 205-30E",
+        "url": "https://ecode360.com/print/EA1154?guid=8114404",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "A detached house follows the BR figure. A twin or duplex in an MR development: 35% (205-30.7I)"
+      },
+      "max_building_coverage_by_type": {
+        "value": {
+          "semi_detached": 0.35
+        },
         "section": "205-30.7I",
         "url": "https://ecode360.com/print/EA1154?guid=8114448",
         "verified_on": "2026-11-15",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "A twin"
       }
     },
     "RP": {
