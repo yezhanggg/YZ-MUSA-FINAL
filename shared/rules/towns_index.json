@@ -3255,17 +3255,17 @@
       "pop_rank": 165,
       "file": "pa_allegheny_pine",
       "batch": 27,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9187197",
       "plain_fetch": false,
       "code_current_through": "2026-08-03",
-      "code_note": "Zoning: Chapter 84 Zoning (Ord. No. 404, adopted 2-5-2024, repealing the 2005 chapter). ADU text: 'Accessory dwelling unit' (84-9, 84-26 Table 4, 84-34B): by right in E-1, S-1, R-1, R-2 and R-3, not permitted in B-1, C-1 and C-2, for persons related by blood, marriage or adoption to those in the house, owner-occupied, not rented, at most 50% of the house or 1,000 sq ft, 10 ft from the house. The definition says the unit is detached, while 84-34B(1)(c) places it in a detached structure whose first floor is or was a garage or barn, or in the principal dwelling. No two-family dwelling use. Lot coverage is impervious cover (84-9). Read in the browser on eCode360 (PI1032).",
+      "code_note": "Zoning: Chapter 84 Zoning (Ord. No. 404, adopted 2-5-2024, repealing the 2005 chapter). ADU text: 'Accessory dwelling unit' (84-9, 84-26 Table 4, 84-34B): by right in E-1, S-1, R-1, R-2 and R-3, not permitted in B-1, C-1 and C-2, for persons related by blood, marriage or adoption to those in the house, owner-occupied, not rented, at most 50% of the house or 1,000 sq ft, 10 ft from the house. The definition says the unit is detached, while 84-34B(1)(c) places it in a detached structure whose first floor is or was a garage or barn, or in the principal dwelling. No two-family dwelling use. Lot coverage is impervious cover (84-9). Traditional Village Overlay front yard at least the greater of 15 ft and the smaller adjacent front yard, at most 25 ft (84-29F(5)(a)). Read in the browser on eCode360 (PI1032).",
       "why": [
         "named as a town with an ADU ordinance (Code 84-34B accessory dwelling unit, family only)"
       ],
-      "status_note": "Awaiting independent review. Open: where the unit may go (84-9 says detached, 84-34B(1)(c) allows the principal dwelling or a structure whose first floor is or was a garage or barn), whether the 20 ft accessory height or the 35 ft principal height governs, and ADU parking (Zoning Officer, 84-122E)"
+      "status_note": "Independently reviewed, findings fixed. For the zoning officer: where the unit may go, as the definition (84-9) says the ADU is detached while 84-34B(1)(c) also allows the principal dwelling, and a new freestanding cottage needs a structure whose first floor is or was a garage or barn (stored as forms in conflict). For a later check: whether the 20 ft accessory height or the 35 ft principal height governs a unit in an accessory structure; ADU parking is set by the Zoning Officer (84-122E); on a Traditional Village Overlay lot the overlay yards replace the district's but the headline yards still show the district figures (said in the overlay condition); 84-36, 84-40, 84-67 and Chapter 78 not read"
     },
     {
       "geoid": "4204554224",
@@ -3285,11 +3285,11 @@
       "code_url": "https://ecode360.com/15082328",
       "plain_fetch": false,
       "code_current_through": "2026-02-09",
-      "code_note": "Zoning: Chapter 172 Zoning (1974, amended 6-8-2009 by Ord. No. 2009-03, as amended). ADU text: on estates (R-1 property of 3 to 5 acres, any residential property of 5 acres or more) 'an in-law suite or servants quarters may be located above a garage or in a separate suite in the residence', no rental, a separate building by special exception (172-103G(3)(a)). The code's 'accessory dwelling unit' is a unit within a commercial use in C-1 by special exception for an owner or employee (172-2, 172-70O, Ord. No. 2024-03). Conversion of a house to a two-family dwelling: listed by special exception for R-1, R-2, R-3, SU-1 and SU-2 in 172-14, but 172-111 allows it only where two-family dwellings are permitted. New Laws: Ord. No. 2026-03 (historic resources map), 2026-04 (data centers in I) and 2026-05 (official map) not codified. Read in the browser on eCode360 (NE1450).",
+      "code_note": "Zoning: Chapter 172 Zoning (1974, amended 6-8-2009 by Ord. No. 2009-03, as amended). ADU text: on estates (R-1 property of 3 to 5 acres, any residential property of 5 acres or more) 'an in-law suite or servants quarters may be located above a garage or in a separate suite in the residence', no rental, a separate building by special exception (172-103G(3)(a)). The code's 'accessory dwelling unit' is a unit within a commercial use in C-1 by special exception for an owner or employee (172-2, 172-70O, Ord. No. 2024-03). Conversion of a house to a two-family dwelling: listed by special exception for R-1, R-2, R-3, SU-1 and SU-2 in 172-14, but 172-111 allows it only where two-family dwellings are permitted. Whether the estate rule reaches R-4 and R-4A (closed accessory list, 172-37C, 172-44A) and R-5 is in doubt. Garage heights by district: 17 ft R-1, 15 ft R-1A and R-2, 14 ft R-3 (172-103B). New Laws: Ord. No. 2026-03 (historic resources map), 2026-04 (data centers in I) and 2026-05 (official map) not codified. Read in the browser on eCode360 (NE1450).",
       "why": [
         "named as a town with an ADU ordinance (Code 172-103G(3)(a) in-law suite or servants quarters on estates)"
       ],
-      "status_note": "Awaiting independent review. Open: the in-law suite on estates (172-103G(3)(a)) is the only house-lot rule and is read as family only; whether it reaches R-5; 172-14 lists conversion to two-family by special exception in R-1 to R-3 while 172-111 allows it only where two-family dwellings are permitted; Oct 2026 New Laws read in excerpts only"
+      "status_note": "Independently reviewed, findings fixed. Three open points the code text does not settle: (1) whether the estate in-law suite rule (172-103G(2), (3)(a), 'Residential properties located in any district') reaches R-4 and R-4A, whose accessory uses are a closed list (172-37C, 172-44A), and R-5 (172-48), held as districts in doubt; (2) conversion of a house to a two-family dwelling, listed by special exception for R-1 to R-3 in 172-14 while 172-111 allows it only where two-family dwellings are permitted; (3) whether a suite in a separate building counts as a dwelling building, which would bring the per-building lot area (172-29B(1)(a), 31B(1), 33B(1), 34B(1)) and the 1,200 sq ft detached dwelling floor area (172-113A). Also: status family only overstates, as servants quarters are household employees, not relatives; Oct 2026 New Laws read in excerpts only"
     },
     {
       "geoid": "4212511800",
@@ -3303,17 +3303,17 @@
       "pop_rank": 167,
       "file": "pa_washington_cecil",
       "batch": 27,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30998148",
       "plain_fetch": false,
       "code_current_through": "2026-06-01",
-      "code_note": "Zoning: Chapter 240 Zoning (Ord. No. 5-00, adopted 5-17-2000, amended in its entirety at Code adoption, as amended to Ord. No. 3-2026). No ADU text. One principal residential building per property (240-46). Two-family dwellings by right in R-2, R-3 and C-3 (R-2 6,000 sq ft and R-3 5,000 sq ft per unit with public sewer), and in the SD residential category and the IHPD overlay. Accessory structure size and height by lot size (240-48A). Lot coverage is building coverage (240-8). Development standards and schedule of uses attachments are PDFs, but the district sections give uses and figures in text. Read in the browser on eCode360 (CE2516).",
+      "code_note": "Zoning: Chapter 240 Zoning (Ord. No. 5-00, adopted 5-17-2000, amended in its entirety at Code adoption, as amended to Ord. No. 3-2026). No ADU text. One principal residential building per property (240-46). Two-family dwellings by right in R-2, R-3 and C-3 (R-2 6,000 sq ft and R-3 5,000 sq ft per unit with public sewer), and in the SD residential category and the IHPD overlay. Accessory structure size and height by lot size (240-48A). Uses of the same general character as a listed use by special exception in C-1, C-2 and C-3 (240-28D, 240-29D, 240-30C(1)). Lot coverage is building coverage (240-8). Development standards and schedule of uses attachments are PDFs, but the district sections give uses and figures in text. Read in the browser on eCode360 (CE2516).",
       "why": [
         "added as batch 27 by population. Code Chapter 240 has no ADU text"
       ],
-      "status_note": "Awaiting independent review. Open: whether 240-46 (one principal residential building) bars a unit over a detached garage; the leftover 50%/14 ft sentence in 240-48E against the 240-48A table; I-1, I-2, BPD, P and PRD articles not read"
+      "status_note": "Independently reviewed, findings fixed. Still open: whether 240-46 (one principal residential building) bars a unit over a detached garage (read as barred, secondary; the code bars no variance, so a variance from 240-46 remains available); the leftover 50% and 14 ft sentence in 240-48E against the 240-48A table; whether the comparable-use special exception in C-1, C-2 and C-3 (240-28D, 240-29D, 240-30C(1)) reaches a second unit; I-1, I-2, BPD, P, PRD (Article VII) and nonconformities (Article XIII) not read"
     }
   ]
 }

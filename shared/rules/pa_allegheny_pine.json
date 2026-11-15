@@ -38,9 +38,10 @@
       "No separate street number for the unit, and no new separate utility connection for a unit in the house unless the lot already has more than one (84-34B(1)(g), (h))",
       "Parking: the table has no row for an ADU, so the Zoning Officer sets the number (84-122E). A single-family dwelling needs 2 spaces",
       "The zoning chapter has no two-family dwelling, duplex or conversion use (Table 3)",
-      "Overlays: in the Traditional Village Overlay (Old Wexford) lots may be 7,500 sq ft with 0 ft side and rear yards for principal or accessory structures and 45 ft height (84-29F). The Greenways Overlay keeps structures out of a 40 ft wooded strip and 100 ft from greenway roads in noncommercial districts (84-28C, E). A Town Center Planned Residential Development takes the accessory uses of the underlying district (84-32B(2))"
+      "'In any residential zoning district, only one principal building may be built on each lot' (84-13B(9)). The ADU is an accessory use (Table 4), so this rule does not bar it",
+      "Overlays: in the Traditional Village Overlay (Old Wexford) lots may be 7,500 sq ft with 0 ft side and rear yards for principal or accessory structures and 45 ft height, and the front yard is at least the greater of 15 ft and the smaller adjacent front yard, at most 25 ft (84-29F). The district's own yards shown for the lot do not apply there. The Greenways Overlay keeps structures out of a 40 ft wooded strip and 100 ft from greenway roads in noncommercial districts (84-28C, E). A Town Center Planned Residential Development takes the accessory uses of the underlying district (84-32B(2)), with building coverage at most 50% (84-32K(3))"
     ],
-    "notes": "Zoning office: Township of Pine Building, Planning, and Zoning Department. The eCode360 code PI1032 is the Township of Pine, Allegheny County (84-8A(11), 84-10D). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, which also covers New Laws) for accessory apartment, accessory dwelling, accessory family, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, carriage house and farm dwelling, then for two-family, duplex, double dwelling, conversion, converted, mobile home, manufactured home, age-restricted, family dwelling, one principal, use variance, not permissible, tenant, farm residence, accessory unit and ADU. Read in full: Article II (84-8, 84-9, on screen for the later definitions), Article III (84-10 to 84-26, Tables 1 to 4, use tables checked column by column on screen), Article IV (84-27 to 84-32 in part), 84-34, 84-49, 84-99, 84-122 (in part) and 84-144 (on screen). Not read: 84-36 agricultural operations, 84-40 care facilities, 84-67 mixed uses (seen by search: living quarters for caretakers of places of worship), 84-112, 84-135, 84-140 and Chapter 78. No bar on use variances was found"
+    "notes": "Zoning office: Township of Pine Building, Planning, and Zoning Department. The eCode360 code PI1032 is the Township of Pine, Allegheny County (84-8A(11), 84-10D). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, which also covers New Laws) for accessory apartment, accessory dwelling, accessory family, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, carriage house and farm dwelling, then for two-family, duplex, double dwelling, conversion, converted, mobile home, manufactured home, age-restricted, family dwelling, one principal, use variance, not permissible, tenant, farm residence, accessory unit and ADU. Read in full: Article II (84-8, 84-9, on screen for the later definitions), Article III (84-10 to 84-26, Tables 1 to 4, use tables checked column by column on screen), Article IV (84-27 to 84-32 in part), 84-34, 84-49, 84-99, 84-122 (in part) and 84-144 (on screen). Not read: 84-36 agricultural operations, 84-40 care facilities, 84-67 mixed uses (seen by search: living quarters for caretakers of places of worship), 84-112, 84-135, 84-140 and Chapter 78. No bar on use variances was found. Fix round on 2026-11-15 after an independent review, rechecked in the browser: Traditional Village Overlay front yard reworded to the code's 'whichever is greater' (84-29F(5)(a)[1], [2]), Town Center PRD building coverage added (84-32K(3)), and the one principal building rule (84-13B(9)) noted"
   },
   "adu": {
     "term": {
@@ -179,7 +180,7 @@
         },
         {
           "kind": "district",
-          "condition": "In the Traditional Village Overlay (Old Wexford) the overlay figures replace the district's: lot 7,500 sq ft, 50 ft wide, building coverage 50%, lot coverage 80%, front yard at least 15 ft (or the smaller of the two adjacent buildings) and at most 25 ft, side and rear yards 0 ft for principal or accessory structures, height 45 ft. The ADU listing comes from the underlying district.",
+          "condition": "In the Traditional Village Overlay (Old Wexford) the overlay figures replace the district's: lot 7,500 sq ft, 50 ft wide, building coverage 50%, lot coverage 80%, front yard at least the greater of 15 ft from the street right-of-way and the smaller of the front yards of the two adjacent buildings, and at most 25 ft (more where the setback area holds pedestrian spaces such as plazas or outdoor dining), side and rear yards 0 ft for principal or accessory structures, height 45 ft. The ADU listing comes from the underlying district.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -187,7 +188,7 @@
           "overlays": [
             "TVO"
           ],
-          "section": "84-27B, C, 84-29C, F",
+          "section": "84-27B, C, 84-29C, F(3), F(5)(a), F(6)",
           "url": "https://ecode360.com/print/PI1032?guid=45086155"
         },
         {
@@ -206,7 +207,7 @@
         },
         {
           "kind": "district",
-          "condition": "In a Town Center Planned Residential Development (175 acres in C-1 or R-2 within the TCDO) accessory uses are those of the underlying district (Table 4), single-family dwellings are at most 35 ft and residential density at most 10 units per gross acre.",
+          "condition": "In a Town Center Planned Residential Development (175 acres in C-1 or R-2 within the TCDO) accessory uses are those of the underlying district (Table 4), building coverage is at most 50%, structures are at most 300 ft long, single-family dwellings are at most 35 ft and residential density at most 10 units per gross acre. Other lot figures are the underlying district's unless the section sets them.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -214,7 +215,7 @@
           "overlays": [
             "TC-PRD"
           ],
-          "section": "84-32B(2), E, G(2), K(7)",
+          "section": "84-32B(2), E, G(2), K(1), K(3), K(4)(a), K(7)",
           "url": "https://ecode360.com/print/PI1032?guid=45086155"
         }
       ],

@@ -4,7 +4,7 @@
     "instrument": "Cecil Township Zoning Ordinance (Chapter 240 Zoning, adopted 5-17-2000 as part of Ord. No. 5-00, amended in its entirety at the adoption of the Code, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 CE2516, Township of Cecil, Washington County (240-14J: appeals to 'the Washington County Court of Common Pleas'). The code page shows 'Code 2026-06-01'. Amendments in the sections read run to Ord. No. 3-2026 (6-1-2026), which amended 240-23 (R-1), 240-28 (C-1) and 240-48 (accessory uses). New Laws: only Ord. No. 1-2021 (pensions).",
+    "status_detail": "eCode360 CE2516, Township of Cecil, Washington County (240-14J: appeals to 'the Washington County Court of Common Pleas'). The code page shows 'Code 2026-06-01'. Amendments in the sections read run to Ord. No. 3-2026 (6-1-2026), which amended 240-23 (R-1), 240-28 (C-1), 240-32 (I-1) and 240-48 (accessory uses). Ord. No. 3-2026 is codified, and the 240-48A table stored here is the current text. New Laws: only Ord. No. 1-2021 (pensions).",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/CE2516",
@@ -33,12 +33,13 @@
       "The zoning code has no accessory dwelling unit, in-law suite or similar listing. Each residence district permits its listed uses 'and no other' (240-23A, 240-26A)",
       "'In no case shall there be more than one principal building used for residential purposes located on one property, except as otherwise provided in this chapter for a mobile home park, planned development, or land development' (240-46). A single-family dwelling is 'the only principal structure on the lot' (240-8). A second home in a separate building is therefore barred",
       "Two-family dwellings (two independent units, each with a separate entrance, the only principal building on the lot) are permitted by right in R-2, R-3 and C-3, and in the residential category of the SD District and the Interstate Highway Planned Development Overlay. In R-2 the lot needs 6,000 sq ft per unit with public sewer (21,780 per unit without), in R-3 5,000 (17,000 without). The code has no rule on converting an existing house",
+      "R-2 also permits multifamily dwellings (three or more units, 5,000 sq ft per unit with public sewer, 21,780 without) and planned residential developments by right (240-24A(4), (5), D(1)(d)). Neither is one unit added to a house",
       "Accessory structures are capped by lot size, as a share of the house's livable space or a square footage, whichever is less, and a height: up to 1/2 acre 35% or 625 sq ft and 14 ft; 1/2 to 0.9 acre 50% or 1,025 sq ft and 18 ft; 1 to 2.9 acres 75% or 1,600 sq ft and 28 ft; 3 to 4.5 acres 100% or 2,000 sq ft and 30 ft; 5 acres and above 200% and 38 ft; at most two stories, all accessory structures together (240-48A, B). An older sentence left in 240-48E still says 50% of the principal building and 14 ft",
       "C-3 permits an apartment above a business by special exception, not on the street floor (240-30C(2)). In C-2 a veterinary clinic (conditional use) may have one attached dwelling unit for the veterinarian or an assistant (240-29C(3)(b)), and a C-1 self-storage facility a dwelling for a resident manager or watchman (240-28C(10)(p)). None of these is a unit added to a house",
       "On slopes over 25% a single-family house needs a one-acre lot, 150 ft wide, with 50 ft front, 40 ft side and 60 ft rear yards and 10% lot coverage (240-52F)",
       "Parking: 2 spaces for a single-family dwelling, 2 per unit for a two-family dwelling (240-64B)"
     ],
-    "notes": "Zoning office: Cecil Township Building and Zoning Department, 3599 Millers Run Road, Cecil. Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, which also covers New Laws) for accessory apartment, accessory dwelling, accessory family, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, carriage house and farm dwelling, then two-family, duplex, conversion, converted, mobile home, manufactured home, one principal, number of buildings, lot coverage and use not. Read in full: 240-14, 240-17, Article VI from 240-22 to 240-30 and 240-38 (print, first part), 240-30 (on screen), Article VIII 240-45 to 240-55, and on screen the 240-8 definitions named in the notes, 240-34G and 240-64. Attachments 1 (Development Standards by District) and 2 (Official Schedule of Uses) are PDFs and were not opened; the district sections give uses and area and bulk figures in text. No bar on use variances was found. Not read: 240-31 to 240-33 (I-1, I-2), 240-35 to 240-37 (BPD, P, TC), 240-39 and 240-39.1, Article VII (PRD) and Article XIII (nonconformities)"
+    "notes": "Zoning office: Cecil Township Building and Zoning Department, 3599 Millers Run Road, Cecil. Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, which also covers New Laws) for accessory apartment, accessory dwelling, accessory family, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, carriage house and farm dwelling, then two-family, duplex, conversion, converted, mobile home, manufactured home, one principal, number of buildings, lot coverage and use not. Read in full: 240-14, 240-17, Article VI from 240-22 to 240-30 and 240-38 (print, first part), 240-30 (on screen), Article VIII 240-45 to 240-55, and on screen the 240-8 definitions named in the notes, 240-34G and 240-64. Attachments 1 (Development Standards by District) and 2 (Official Schedule of Uses) are PDFs and were not opened; the district sections give uses and area and bulk figures in text. No bar on use variances was found. Not read: 240-31 to 240-33 (I-1, I-2), 240-35 to 240-37 (BPD, P, TC), 240-39 and 240-39.1, Article VII (PRD) and Article XIII (nonconformities). Fix round on 2026-11-15 after an independent review, rechecked in the browser: the comparable-use special exception in C-1, C-2 and C-3 added as the unlisted-use path (240-28D, 240-29D, 240-30C(1)), Ord. No. 3-2026 also amended 240-32, the R-2 multifamily and PRD listings and the 240-48A(1) livable space cap noted, the IHPD two-family listing split out with its overlay, and the note that a variance from 240-46 remains available"
   },
   "adu": {
     "term": {
@@ -67,7 +68,7 @@
       "url": "https://ecode360.com/print/CE2516?guid=31000319",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "'In no case shall there be more than one principal building used for residential purposes located on one property.' A building holding a second home would be a second residential building. A single-family dwelling is 'the only principal structure on the lot'"
+      "note": "'In no case shall there be more than one principal building used for residential purposes located on one property.' A building holding a second home would be a second residential building. A single-family dwelling is 'the only principal structure on the lot'. The code bars no variance, so a variance from 240-46 can still be asked of the Zoning Hearing Board (240-14A, MPC 910.2)"
     }
   },
   "approval": {
@@ -77,7 +78,26 @@
       "url": "https://ecode360.com/print/CE2516?guid=30998760",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "A second unit with a single-family house is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). No section read bars a use variance. In R-2, R-3 and C-3 the building may instead be a two-family dwelling by right"
+      "note": "A second unit with a single-family house is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). No section read bars a use variance. In C-1, C-2 and C-3 the board may instead allow it as a comparable use by special exception (see unlisted_use_path). In R-2, R-3 and C-3 the building may instead be a two-family dwelling by right"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "240-28D, 240-29D, 240-30C(1)",
+      "url": "https://ecode360.com/print/CE2516?guid=30998860",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "In C-1, C-2 and C-3 'Uses of the same general character as any use listed as permitted by right or listed as a conditional use' in the district 'shall be allowed after determination of the Zoning Hearing Board that the impact of the proposed use on the environment and adjacent properties and streets is equal to or less than any use specifically listed in the district' (special exceptions, comparable uses). Single-family and multifamily dwellings are listed in C-1, townhouses and garden apartments in C-2, single-family and two-family dwellings in C-3, where a two-family dwelling is already a use by right (see the two-family alternative). A second unit in a separate building still meets the one residential building rule (240-46). I-1 has the same paragraph (240-32D(1)) but the industrial districts are meant to keep out new residential development (240-31B), so it is not listed here"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "C-1",
+        "C-2",
+        "C-3"
+      ],
+      "section": "240-28D(1), 240-29D(1), 240-30C(1)(a)",
+      "url": "https://ecode360.com/print/CE2516?guid=30998860",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
     },
     "fallback_path": {
       "value": "variance",
@@ -162,24 +182,45 @@
           "note": "Not an ADU listing. A building type. Whether an existing house may be altered into a two-family dwelling is not stated"
         },
         {
-          "name": "Two-family dwelling in a planned district (SD residential category, IHPD)",
+          "name": "Two-family dwelling in the SD District (residential land use category)",
           "path": "by_right",
           "districts": [
             "SD"
           ],
-          "conditions": "Two-family dwellings are a use by right in the SD District's residential land use category, once an illustrative site plan assigning the category to the lot is approved by conditional use and a subdivision plat is recorded (240-34G(1)). The Interstate Highway Planned Development Overlay permits them in its single-family and combination residential categories, on land east of Morganza Road (240-38F)",
+          "conditions": "Two-family dwellings are a use by right in the SD District's residential land use category, once an illustrative site plan assigning the category to the lot is approved by conditional use and a subdivision plat is recorded (240-34G(1))",
           "land_development": true,
           "requires": [
             {
               "test": null,
               "condition": "The lot is assigned the residential land use category on an approved illustrative site plan",
-              "section": "240-34G, 240-38C"
+              "section": "240-34G"
             }
           ],
-          "section": "240-34G(1), 240-38F(1), (2)",
+          "section": "240-34G(1)",
           "url": "https://ecode360.com/print/CE2516?guid=30999565",
           "confidence": "secondary",
           "note": "Not an ADU listing. A building type inside a planned development"
+        },
+        {
+          "name": "Two-family dwelling in the Interstate Highway Planned Development Overlay",
+          "path": "by_right",
+          "districts": null,
+          "overlays": [
+            "IHPD"
+          ],
+          "conditions": "The overlay permits two-family dwellings in its single-family and combination residential land use categories, on land east of Morganza Road: lot width 70 ft, front 25 ft, side 8 ft, rear 30 ft (accessory 10 ft), three stories or 35 ft, lot coverage 35% (240-38F)",
+          "land_development": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is assigned a residential land use category on an approved illustrative site plan",
+              "section": "240-38C"
+            }
+          ],
+          "section": "240-38F(1), (2)",
+          "url": "https://ecode360.com/print/CE2516?guid=30998860",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type inside a planned development. The base districts the overlay covers were not read"
         }
       ],
       "section": "240-24, 240-25, 240-30, 240-34, 240-38",
@@ -257,7 +298,7 @@
       "url": "https://ecode360.com/print/CE2516?guid=31000319",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "Heights from the lowest grade to the roof peak, at most two stories, all accessory structures together (240-48A(2), B)"
+      "note": "The area of an accessory structure may not exceed 'the area of the total livable space of the primary structure as listed below' (the table). 'All other bulk and area restrictions of the specific district in which the structure is located will apply.' Heights from the lowest grade to the roof peak, at most two stories, all accessory structures together (240-48A(1), (2), B)"
     }
   },
   "parking": {
