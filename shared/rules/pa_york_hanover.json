@@ -86,7 +86,7 @@
       "url": "https://ecode360.com/print/HA0246?guid=50639423",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "CB, PD, M, HI and the SDO and HO overlays do not list an ADU. The code itself bars a use variance in a district that does not permit the use: 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved, or any use expressly or by implication prohibited by the terms of this chapter in said district' (370-907E, Uses not permitted). So in these districts the code allows no use variance for an ADU: only a zoning amendment could open them. The special exception for uses permitted nowhere (370-200F) does not reach a use permitted in other districts. 370-907E limits a power the board has under MPC 910.2, and whether that limit holds is a legal question."
+      "note": "CB, PD, M, HI and the SDO and HO overlays do not list an ADU. The code itself bars a use variance there (370-907E). The special exception for uses permitted nowhere (370-200F) does not reach a use permitted in other districts."
     }
   },
   "approval": {
@@ -189,6 +189,16 @@
       "url": "https://ecode360.com/print/HA0246?guid=50638958",
       "verified_on": "2026-11-15",
       "confidence": "verified"
+    },
+    "use_variance_barred": {
+      "value": true,
+      "section": "370-907E",
+      "url": "https://ecode360.com/print/HA0246?guid=50639423",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "quote": "Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved, or any use expressly or by implication prohibited by the terms of this chapter in said district",
+      "districts": null,
+      "note": "The special exception for uses permitted nowhere (370-200F) does not reach a use permitted in other districts."
     }
   },
   "eligibility": {

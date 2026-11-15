@@ -209,6 +209,9 @@
         "unlisted_use_districts": {
           "$ref": "#/$defs/leaf_list",
           "description": "Districts where approval.unlisted_use_path applies. Elsewhere the fallback path."
+        },
+        "use_variance_barred": {
+          "$ref": "#/$defs/leaf_use_variance_barred"
         }
       }
     },
@@ -254,8 +257,8 @@
           "description": "The town's own test for the historic path in plain words (for example on the Historic Resources Map). With it the resolver reads the lot fact historic_resource, not the Philadelphia inputs."
         },
         "districts_in_doubt": {
-          "$ref": "#/$defs/leaf_list",
-          "description": "Districts that list the ADU while the ADU section names other districts. The tool says: listed, ask. Not allowed as a plain answer."
+          "$ref": "#/$defs/leaf_districts_in_doubt",
+          "description": "Districts that list the ADU while the ADU section names other districts. The tool says: listed, ask. Not allowed as a plain answer. Pass 11: named_by says which way the doubt runs. The lot reads the path to ask, qualified (conditional on reading), never a variance unless another test fails."
         },
         "districts_read_no_listing": {
           "$ref": "#/$defs/leaf_list",
@@ -2927,6 +2930,14 @@
                 "minimum": 0,
                 "maximum": 1,
                 "description": "Pass 10: impervious cover on such a lot (see districts.<code>.max_impervious_coverage)."
+              },
+              "setback_sides_total_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Pass 11: side yards for both sides together on such a lot (with setback_side_ft the one-side minimum, so uneven sides such as 25 ft on one side and 200 ft on the other read 25 and 225)."
               }
             }
           }
@@ -4305,6 +4316,163 @@
             "string",
             "null"
           ]
+        }
+      }
+    },
+    "leaf_use_variance_barred": {
+      "type": "object",
+      "description": "Pass 11: the code itself bars a use variance for a use the district does not permit (for example 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible ... in the district involved', Hanover 370-907E). value true. Outside the ADU's districts the answer is not allowed, not a use variance: the code bars it, that is a local limit on a power the board has under MPC 910.2 (ask the zoning officer or a lawyer), and the route the code leaves is a zoning amendment. quote holds the code's words; districts (optional) limits it to some districts.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        },
+        "quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The code's own words, quoted in the answer."
+        },
+        "districts": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Where the bar reaches. Null: every district outside the ADU's districts."
+        }
+      }
+    },
+    "leaf_districts_in_doubt": {
+      "type": "object",
+      "description": "Pass 11: districts_in_doubt with named_by, which way the doubt runs per district: district_list (the default: the district's own use list names the ADU, the ADU section names other districts), adu_section (the ADU section names the district, the district's own use list does not), reach (whether the rule reaches the district is in doubt for another reason, said in the note).",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "integer"
+            ]
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "enum": [
+            "set",
+            "at_least",
+            "at_most"
+          ]
+        },
+        "assumption": {
+          "type": "boolean"
+        },
+        "named_by": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "enum": [
+              "district_list",
+              "adu_section",
+              "reach"
+            ]
+          },
+          "description": "Pass 11: {district: district_list | adu_section | reach}. A district left out reads district_list."
         }
       }
     }

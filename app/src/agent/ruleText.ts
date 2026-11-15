@@ -425,7 +425,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     if (rowKey && ur && Array.isArray(ur.value))
       for (const it of ur.value.filter(isObj)) {
         // Pass 9: density and accessory building figures on such a lot, and rows keyed on a mapped growth area.
-        const figs = ['min_lot_sqft', 'setback_front_ft', 'setback_side_ft', 'setback_rear_ft', 'principal_max_height_ft', 'max_building_coverage', 'lot_area_per_unit_sqft', 'accessory_setback_front_ft', 'accessory_setback_side_ft', 'accessory_setback_rear_ft', 'accessory_max_height_ft', 'accessory_max_stories', 'max_impervious_coverage']
+        const figs = ['min_lot_sqft', 'setback_front_ft', 'setback_side_ft', 'setback_rear_ft', 'principal_max_height_ft', 'max_building_coverage', 'lot_area_per_unit_sqft', 'accessory_setback_front_ft', 'accessory_setback_side_ft', 'accessory_setback_rear_ft', 'accessory_max_height_ft', 'accessory_max_stories', 'max_impervious_coverage', 'setback_sides_total_ft']
           .filter((f) => typeof it[f] === 'number')
           .map((f) => `${f.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')} ${f === 'max_building_coverage' || f === 'max_impervious_coverage' ? `${Math.round((it[f] as number) * 100)}%` : num(it[f])}`)
           .join(', ')
@@ -749,11 +749,21 @@ function approvalOf(file: Obj, district: string | null) {
     const zd = leafAt(file, 'eligibility', 'zoning_districts');
     const listed = Array.isArray(zd?.value) ? zd!.value.some((d) => typeof d === 'string' && dkey(d) === dkey(district)) : null;
     const doubt = leafAt(file, 'eligibility', 'districts_in_doubt');
-    const inDoubt = Array.isArray(doubt?.value) && doubt!.value.some((d) => typeof d === 'string' && dkey(d) === dkey(district));
+    const doubtKey = Array.isArray(doubt?.value) ? doubt!.value.find((d) => typeof d === 'string' && dkey(d) === dkey(district)) : undefined;
+    const inDoubt = doubtKey !== undefined;
+    // Pass 11 (pipeline/rules.py _in_doubt): named_by says which way the doubt runs.
+    const namedBy = inDoubt && isObj(doubt!.named_by) ? doubt!.named_by[String(doubtKey)] : undefined;
+    const ask = 'ask the zoning officer or the Zoning Hearing Board whether it is allowed here';
+    const doubtLead =
+      namedBy === 'adu_section'
+        ? `The ADU section names ${district}, but ${district}'s own use list does not name the ADU. Named, but ${ask}`
+        : namedBy === 'reach'
+          ? `Whether the ADU rule reaches ${district} is in doubt. Ask the zoning officer or the Zoning Hearing Board whether it is allowed here`
+          : `${district} lists the ADU, but the ADU section names ${Array.isArray(zd?.value) && zd!.value.length ? zd!.value.join(', ') : 'other districts'}. Listed, but ${ask}`;
     out.district_path = hit
       ? hit
       : inDoubt
-        ? { district, path: path?.value ?? null, section: doubt!.section ?? null, url: doubt!.url ?? null, listed_in_doubt: true, note: `${district} lists the ADU, but the ADU section names ${Array.isArray(zd?.value) && zd!.value.length ? zd!.value.join(', ') : 'other districts'}. Listed, but ask the zoning officer or the Zoning Hearing Board whether it is allowed here${doubt!.note ? `. ${doubt!.note}` : ''}` }
+        ? { district, path: path?.value ?? null, section: doubt!.section ?? null, url: doubt!.url ?? null, listed_in_doubt: true, named_by: namedBy ?? 'district_list', note: `${doubtLead}${doubt!.note ? `. ${doubt!.note}` : ''}` }
       : listed === false
         ? { district, path: fallback?.value ?? 'variance', section: fallback?.section ?? zd?.section ?? null, url: fallback?.url ?? zd?.url ?? null, note: 'District not listed for ADUs' }
         : { district, path: path?.value ?? null, section: path?.section ?? null, url: path?.url ?? null, note: listed ? null : 'No district-specific path in the file' };
@@ -836,6 +846,17 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
       note: outHit ? `Outside ${scopeList!.join(', ')}. In ${district} the code's status is ${label(outside)} (${outHit.section ?? byOut!.section ?? ''})` : `Outside ${scopeList!.join(', ')} the code has no ADU rule`,
     };
   } else if (status && NO_ADU.has(status) && !dpath && unlisted?.value) effective = unlisted.value as string;
+  // Pass 11 (pipeline/rules.py _use_variance_barred): the code itself bars a use variance outside the ADU's districts.
+  const barLeaf = leafAt(file, 'approval', 'use_variance_barred');
+  const barWhere = barLeaf && Array.isArray(barLeaf.districts) ? barLeaf.districts : null;
+  const barred =
+    !!barLeaf && barLeaf.value === true && !!effective && NOT_OK.has(effective) &&
+    (inScope === false || (!scopeList && !!status && NO_ADU.has(status) && !dpath)) &&
+    (!barWhere || (!!district && listedIn(barWhere, district)));
+  if (barred) {
+    effective = 'not_allowed';
+    if (isObj(approval.district_path)) approval.district_path = { ...approval.district_path, path: 'not_allowed', section: barLeaf!.section ?? null };
+  }
   const head = status === 'allowed_by_right' && effective && effective !== 'by_right' ? null : LIMITED[status ?? ''] ?? (status ? label(status) : null);
   const parts = [head, effective ? `path: ${label(effective)}${district ? ` in ${district}` : ''}` : null];
   const askLeaf = unlisted?.value ? unlisted : null;
@@ -847,7 +868,16 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     );
   else if (scopeList && inScope === null)
     parts.unshift(`ADU rule only in ${scopeList.join(', ')}, otherwise ${label(outside)}${askLeaf ? `. Outside: a use not listed may be authorized by ${label(askLeaf.value)} (${askLeaf.section ?? ''})` : ''}`);
-  if (isObj(approval.district_path) && approval.district_path.listed_in_doubt) parts.splice(1, 1, String(approval.district_path.note));
+  if (isObj(approval.district_path) && approval.district_path.listed_in_doubt) {
+    parts.splice(1, 1, String(approval.district_path.note));
+    // Pass 11 (pipeline/rules.py): the path to ask holds only if the rule reaches the district.
+    const dp = approval.district_path;
+    if (typeof dp.path === 'string' && !NOT_OK.has(dp.path)) {
+      approval.qualifier = 'conditional_on_reading';
+      const text = `${label(dp.path)} only if the ADU rule reaches ${district}, which is in doubt (${dp.section ?? ''})`;
+      approval.qualifier_text = text.charAt(0).toUpperCase() + text.slice(1);
+    }
+  }
   if (conditions.length) parts.push(`${conditions.length} condition${conditions.length > 1 ? 's' : ''} below`);
   const noAdu = !!status && NO_ADU.has(status) && !dpath;
   // A lot area per unit that holds only under one reading: the path is qualified, never a plain by right.
@@ -890,7 +920,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     const fs = byForm && isObj(byForm.value) && inScope !== false ? byForm.value[t] : undefined;
     if (typeof fs === 'string' && NO_ADU.has(fs) && OK_PATHS.has(p)) p = OK_PATHS.has(fbPath) ? 'variance' : fbPath;
     // Pass 7: a form the code bars is not allowed (not a variance). A form the code does not name is not addressed.
-    if (fs === 'prohibited') p = 'not_allowed';
+    if (fs === 'prohibited' || (barred && p === 'variance')) p = 'not_allowed';
     else if (base !== 'not_allowed' && (notNamed.includes(t) || inConflict.includes(t)) && !allowedForms.includes(t) && !OK_PATHS.has(p)) p = 'not_addressed';
     byType[t] = p;
   }
@@ -978,6 +1008,17 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
       : `${lead}. The rule file gives ${label(effective)} (${ask?.section ?? ''}) as the path to ask about. Ask the zoning officer`;
     out.path_to_ask = { path: effective, section: ask?.section ?? null, url: ask?.url ?? null, note: text };
     out.summary = `${text}.${scopeList && inScope === null ? ` ${parts[0]}.` : ''}`;
+  }
+  if (barred) {
+    const quote = typeof barLeaf!.quote === 'string' ? barLeaf!.quote : null;
+    const sec = String(barLeaf!.section ?? '');
+    out.path_to_ask = {
+      path: 'not_allowed',
+      section: sec,
+      url: barLeaf!.url ?? null,
+      kind: 'use_variance_barred',
+      note: `${lead}, and the code itself bars a use variance for it (${sec})${quote ? `: '${quote}'` : ''}. That is a local limit on a power the Zoning Hearing Board has under the state planning code (MPC 910.2), so whether it holds is a legal question: ask the zoning officer or a lawyer. The route the code leaves is a zoning amendment${barLeaf!.note ? `. ${ownerText(String(barLeaf!.note)).replace(/\.$/, '')}` : ''}`,
+    };
   }
   if (!out.path_to_ask && ((status && NO_ADU.has(status) && !dpath) || inScope === false) && effective && NOT_OK.has(effective)) {
     const fbl = fallback ?? path;

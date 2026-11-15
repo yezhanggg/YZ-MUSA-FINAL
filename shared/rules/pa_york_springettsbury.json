@@ -166,7 +166,10 @@
       "url": "https://ecode360.com/5177514",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "'All uses permitted in the N-C District are permitted in the N-C/H, except' a retail list. The unit is a special exception in N-C. Whether 'permitted' carries special exception uses is not clear. The YCPC table shows no ADU in N-C/H."
+      "note": "'All uses permitted in the N-C District are permitted in the N-C/H, except' a retail list. The unit is a special exception in N-C. Whether 'permitted' carries special exception uses is not clear. The YCPC table shows no ADU in N-C/H.",
+      "named_by": {
+        "N-C/H": "reach"
+      }
     },
     "building_types": {
       "value": [

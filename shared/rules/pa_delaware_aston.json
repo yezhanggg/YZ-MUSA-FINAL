@@ -191,7 +191,10 @@
       "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "In fact it is the other way round: the ADU section names R-3 and R-3's own use lists do not name the ADU. 1290.14 reads 'Accessory dwelling units (ADUs) shall be permitted as a special exception only in the R-1, R-2 and R-3 Districts', while the R-3 special exception list (1262.03) names only a municipal or public use, a professional home office, an active recreation area and adult day care, and R-3 takes only the R-2 by-right uses (1262.02). The path to ask is a Zoning Hearing Board special exception under 1290.14"
+      "note": "1290.14 reads 'Accessory dwelling units (ADUs) shall be permitted as a special exception only in the R-1, R-2 and R-3 Districts', while the R-3 special exception list (1262.03) names only a municipal or public use, a professional home office, an active recreation area and adult day care, and R-3 takes only the R-2 by-right uses (1262.02). The path to ask is a Zoning Hearing Board special exception under 1290.14",
+      "named_by": {
+        "R-3": "adu_section"
+      }
     },
     "building_types": {
       "value": [

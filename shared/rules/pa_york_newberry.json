@@ -496,6 +496,7 @@
             "min_lot_sqft": 65340,
             "setback_front_ft": 35,
             "setback_side_ft": 25,
+            "setback_sides_total_ft": 225,
             "setback_rear_ft": 35,
             "max_impervious_coverage": 0.15,
             "section": "380-16C"
@@ -654,6 +655,7 @@
             "min_lot_sqft": 65340,
             "setback_front_ft": 40,
             "setback_side_ft": 25,
+            "setback_sides_total_ft": 225,
             "setback_rear_ft": 35,
             "max_impervious_coverage": 0.15,
             "section": "380-28C"
@@ -720,6 +722,7 @@
             "min_lot_sqft": 65340,
             "setback_front_ft": 35,
             "setback_side_ft": 25,
+            "setback_sides_total_ft": 225,
             "setback_rear_ft": 35,
             "max_impervious_coverage": 0.15,
             "section": "380-17C"
@@ -877,6 +880,7 @@
             "min_lot_sqft": 43560,
             "setback_front_ft": 40,
             "setback_side_ft": 25,
+            "setback_sides_total_ft": 165,
             "setback_rear_ft": 50,
             "max_impervious_coverage": 0.2,
             "section": "380-19C"

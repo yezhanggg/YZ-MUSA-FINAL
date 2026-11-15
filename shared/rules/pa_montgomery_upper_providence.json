@@ -205,7 +205,11 @@
       "url": "https://ecode360.com/print/UP1236?guid=42977253",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "MH: a mobile home development may include conventionally built single-family detached homes, and accessory uses customarily incidental to dwellings are allowed on individual lots, but the unit was written for ordinary house lots. R-4: single-family attached units only in buildings with multifamily dwellings. Ask the zoning officer."
+      "note": "MH: a mobile home development may include conventionally built single-family detached homes, and accessory uses customarily incidental to dwellings are allowed on individual lots, but the unit was written for ordinary house lots. R-4: single-family attached units only in buildings with multifamily dwellings. Ask the zoning officer.",
+      "named_by": {
+        "MH": "reach",
+        "R-4": "reach"
+      }
     },
     "building_types": {
       "value": [

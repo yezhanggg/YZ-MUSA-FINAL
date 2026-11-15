@@ -1442,7 +1442,9 @@ def test_listed_in_doubt_says_ask():
     out = rules.resolve(
         "pa_york_york_township", "today", {"zoning_district": "CI", "lot_sqft": 12000, "building_type": "detached"}
     )
-    assert not out["allowed"]
+    # pass 11: the path to ask, qualified (conditional on reading), never a plain yes and never a variance
+    assert out["approval_path"] == "special_exception" and out["approval_qualifier"] == "conditional_on_reading"
+    assert out["reasons"][0].startswith("Special exception only if the ADU rule reaches CI, which is in doubt")
     assert out["path_to_ask"]["kind"] == "listed_in_doubt" and "ask" in out["path_to_ask"]["note"]
     assert not any(r.startswith("The ADU rule applies only in") for r in out["reasons"])
 
@@ -1598,8 +1600,10 @@ def test_form_not_named_is_not_addressed():
 
 def test_district_in_doubt_is_opened_by_the_bill():
     lot = {"zoning_district": "CI", "lot_sqft": 12000, "building_type": "detached"}
-    assert not rules.resolve("pa_york_york_township", "today", lot)["allowed"]
-    assert rules.resolve("pa_york_york_township", "state_reform", lot)["allowed"]
+    today = rules.resolve("pa_york_york_township", "today", lot)
+    assert today["approval_qualifier"] == "conditional_on_reading"  # pass 11: qualified today, not a plain yes
+    bill = rules.resolve("pa_york_york_township", "state_reform", lot)
+    assert bill["allowed"] and not any("in doubt" in r for r in bill["reasons"])
 
 
 def test_secondary_conforming_lot_is_a_condition():
@@ -2392,3 +2396,111 @@ def test_cli_sets_pass10_fact():
         in_planned_development="yes",
     )
     assert rules._lot_from_args(ns)["in_planned_development"] is True
+
+
+# ------------------------------------------------------------------ pass 11: untrue sentences (batches 22 to 24)
+
+
+def test_pass11_hold_is_its_own_set():
+    assert not rules.LOT_RECORD_TOWNS  # the pass 10 fixes stay lifted for the lot towns
+    assert rules.DOUBT_HOLD_TOWNS == LOT_TOWNS  # only the districts_in_doubt fix waits for their next rebuild
+    for name in LOT_TOWNS:
+        text = (RULES / f"{name}.json").read_text()
+        assert "use_variance_barred" not in text and 'setback_sides_total_ft": 2' not in text, name
+
+
+def test_use_variance_barred_reads_not_allowed():
+    cb = rules.resolve("pa_york_hanover", "today", {**DET, "zoning_district": "CB", "lot_sqft": 9000}, extra=True)
+    assert not cb["allowed"] and cb["approval_path"] == "not_allowed"
+    assert set(cb["approval_by_type"].values()) == {"not_allowed"}
+    assert set(cb["rule_path_by_type"].values()) == {"not_allowed"}
+    assert cb["citations"]["approval_path"]["section"] == "370-907E"
+    assert cb["citations_by_type"]["internal"]["section"] == "370-907E"
+    ask = cb["path_to_ask"]
+    assert ask["kind"] == "use_variance_barred" and ask["path"] == "not_allowed"
+    assert ask["note"].startswith(
+        "The code bars ADUs here, and the code itself bars a use variance for it (370-907E): 'Under no circumstances"
+    )
+    for words in (
+        "local limit on a power the Zoning Hearing Board has under the state planning code (MPC 910.2)",
+        "ask the zoning officer or a lawyer",
+        "The route the code leaves is a zoning amendment",
+    ):
+        assert words in ask["note"]
+    assert not any("The path is a use variance" in r for r in cb["reasons"])
+    assert ask["note"] in cb["reasons"]
+    r1 = rules.resolve("pa_york_hanover", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 20000})
+    assert r1["approval_path"] == "special_exception" and r1["path_to_ask"]["kind"] == "hearing"
+    small = rules.resolve("pa_york_hanover", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 1000})
+    assert "not_allowed" not in small["approval_by_type"].values()  # in the ADU's districts a variance is dimensional
+    unknown = rules.resolve("pa_york_hanover", "today", {**DET, "lot_sqft": 9000})
+    assert (unknown["path_to_ask"] or {}).get("kind") != "use_variance_barred"
+    bill = rules.resolve("pa_york_hanover", "state_reform", {**DET, "zoning_district": "CB", "lot_sqft": 9000})
+    assert (bill["path_to_ask"] or {}).get("kind") != "use_variance_barred"
+
+
+def test_district_in_doubt_reads_the_way_the_doubt_runs():
+    lot = {**DET, "lot_sqft": 12000}
+    aston = rules.resolve("pa_delaware_aston", "today", {**lot, "zoning_district": "R-3"})
+    line = next(r for r in aston["reasons"] if "Named, but ask" in r)
+    assert line.startswith(
+        "The ADU section names R-3 (1290.14, 1262.02, 1262.03), but R-3's own use list does not name"
+    )
+    assert not any(r.startswith("R-3 lists the ADU") for r in aston["reasons"])
+    assert aston["approval_path"] == "special_exception" == aston["path_to_ask"]["path"]
+    assert aston["approval_qualifier"] == "conditional_on_reading"
+    small = rules.resolve("pa_delaware_aston", "today", {**lot, "zoning_district": "R-3", "lot_sqft": 9000})
+    assert small["approval_path"] == "variance"  # a lot under 10,000 sq ft fails a real test
+    up = rules.resolve("pa_montgomery_upper_providence", "today", {**lot, "zoning_district": "MH"})
+    assert any(r.startswith("Whether the ADU rule reaches MH is in doubt (300-362A") for r in up["reasons"])
+    assert not any(r.startswith("MH lists the ADU") for r in up["reasons"])
+    sp = rules.resolve("pa_york_springettsbury", "today", {**lot, "zoning_district": "N-C/H"})
+    assert any(r.startswith("Whether the ADU rule reaches N-C/H is in doubt") for r in sp["reasons"])
+    yt = rules.resolve("pa_york_york_township", "today", {**lot, "zoning_district": "CI"})
+    assert any(r.startswith("CI lists the ADU (") for r in yt["reasons"])  # the default direction
+    for name, d in (("pa_centre_college", "GWC"), ("pa_montgomery_narberth", "5A")):  # held lot towns
+        held = rules.resolve(name, "today", {**lot, "zoning_district": d})
+        assert not held["allowed"] and held["approval_qualifier"] is None
+        assert any(r.startswith(f"{d} lists the ADU (") for r in held["reasons"])
+
+
+def test_planned_development_side_yards():
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 50000}
+
+    def sides(pd):
+        out = rules.resolve("pa_montgomery_upper_gwynedd", "today", {**lot, "in_planned_development": pd})
+        return [r for r in out["reasons"] if r.startswith("Side yards for R-1")]
+
+    assert sides(False) == ["Side yards for R-1: at least 40 ft on one side, 100 ft for both sides together (195-11B)"]
+    (unknown,) = sides(None)
+    assert unknown.startswith(
+        "Side yards for R-1: at least 40 ft on one side, 100 ft for both sides together (195-11B)"
+    )
+    assert "apply only outside a planned or cluster development" in unknown and "was not given" in unknown
+    (inside,) = sides(True)
+    assert "40 ft" not in inside and "whose own figures replace the district's" in inside
+
+
+def test_utility_row_both_sides_total():
+    def side_line(name, d):
+        out = rules.resolve(
+            name,
+            "today",
+            {**DET, "zoning_district": d, "lot_sqft": 70000, "public_sewer": False, "public_water": False},
+            extra=True,
+        )
+        return out, next(r for r in out["reasons"] if r.startswith(f"Side yards for {d}:"))
+
+    out, line = side_line("pa_york_newberry", "R")
+    assert line.startswith("Side yards for R: at least 25 ft on one side, 225 ft for both sides together (380-28C)")
+    assert any("setback sides total 225" in c["condition"] for c in out["conditions"] if c["kind"] == "utilities")
+    assert side_line("pa_york_newberry", "MHP")[1].startswith("Side yards for MHP: at least 25 ft on one side, 165 ft")
+    out, line = side_line("pa_allegheny_south_fayette", "R-2")
+    assert out["setback_side_ft"] == 15
+    assert line == "Side yards for R-2: at least 15 ft on one side, 35 ft for both sides together (240-23)"
+    sewer = rules.resolve(
+        "pa_allegheny_south_fayette",
+        "today",
+        {**DET, "zoning_district": "R-2", "lot_sqft": 30000, "public_sewer": True, "public_water": True},
+    )
+    assert "Side yards for R-2: at least 10 ft on one side, 25 ft for both sides together (240-23)" in sewer["reasons"]

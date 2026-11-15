@@ -185,7 +185,10 @@
       "url": "https://ecode360.com/attachment/CO1052/CO1052-200l%20Gateway%20Comm%20District.pdf",
       "verified_on": "2026-11-13",
       "confidence": "secondary",
-      "note": "The Gateway Commercial District (GWC) permits 'Residential dwellings of all types defined herein'. A single-family detached house there could carry the unit under 200-11A(1). Not confirmed."
+      "note": "The Gateway Commercial District (GWC) permits 'Residential dwellings of all types defined herein'. A single-family detached house there could carry the unit under 200-11A(1). Not confirmed.",
+      "named_by": {
+        "GWC": "reach"
+      }
     },
     "gates": {
       "value": [

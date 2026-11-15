@@ -694,6 +694,9 @@ def _path_citation(
             leaf = _leaf(layer, ("approval", key))
             if _usable(leaf) and leaf.get("value") == path:
                 return _citation(leaf, name)
+    barred = _leaf(data, ("approval", "use_variance_barred"))
+    if path == "not_allowed" and _usable(barred) and barred.get("value") is True:  # pass 11
+        return _citation(barred, place)
     return None
 
 
@@ -861,6 +864,21 @@ NO_ADU_STATUSES = {"not_addressed", "prohibited"}
 # ".." in a sentence) waited for their next planned rebuild. Emptied at that rebuild (Nov 15, spot cover rebuild).
 # Keep the set: a later pass can hold a change back for lot towns again.
 LOT_RECORD_TOWNS: set[str] = set()
+# Pass 11 holds only its districts_in_doubt fix (the path to ask, qualified, not a variance; named_by wording) for the
+# ten lot towns: State College area (GWC) and Narberth (5A, 5B) use districts_in_doubt. A set of its own, so the pass
+# 10 fixes lifted at the Nov 15 rebuild stay lifted. Empty it at their next lot rebuild.
+DOUBT_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",
@@ -916,6 +934,8 @@ UTILITY_FIELDS = (
     "accessory_max_stories",
     # Pass 10: impervious cover on such a lot (districts.<code>.max_impervious_coverage)
     "max_impervious_coverage",
+    # Pass 11: side yards for both sides together on such a lot (uneven sides: the one-side minimum and the total)
+    "setback_sides_total_ft",
 )
 # Pass 9: the lot facts a utility row can name. in_growth_area is a mapped area that is not a district.
 ROW_FACTS = {
@@ -2291,10 +2311,16 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             f"{need:,.0f} sq ft. This lot is {area:,.0f} sq ft"
         )
     # Under the bill a district in doubt is opened like any other district (pass 7)
-    doubt = _in_doubt(data, lot) if not state and not historic and how not in ("district", "historic") else None
+    hold = place in LOT_RECORD_TOWNS
+    doubt_hold = place in DOUBT_HOLD_TOWNS
+    doubt = (
+        _in_doubt(data, lot, doubt_hold) if not state and not historic and how not in ("district", "historic") else None
+    )
+    doubt_line: list[str] = []
     if doubt:  # listed in the district, while the ADU section names other districts: ask, never a plain no
         fails = [f for f in fails if not f.startswith("The ADU rule applies only in ")]
-        fails.append(doubt["reason"])
+        # pass 11: the doubt is not a failed test. The path to ask, qualified, never a variance for the doubt alone
+        (fails if doubt_hold else doubt_line).append(doubt["reason"])
     fallback = _value(picked, "approval", "fallback_path") or "variance"
     base = _value(picked, "approval", "path") or "not_allowed"
     eligible = not fails and base != "not_allowed"
@@ -2339,7 +2365,6 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             "Not addressed for this form, not a firm no. Ask the zoning officer"
             + (f". {nn['note']}" if nn.get("note") else "")
         )
-    hold = place in LOT_RECORD_TOWNS
     conditions = _town_conditions(data, today if state else picked, lot, historic, how, scope, hold)
     overridden: list[dict[str, Any]] = []
     if state:  # under the bill the town's gates show as conditions only, and some no longer apply
@@ -2378,10 +2403,15 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     types_allowed = [t for t in ALL_TYPES if by_type[t] in OK_PATHS]
     allowed = bool(types_allowed)
     depends = [] if state else _depends_on(conditions)
+    no_rule_here = not state and status in NO_ADU_STATUSES and how not in ("district", "historic")
+    barred = _use_variance_barred(file_data, lot, scope) if no_rule_here and not allowed else None
+    if barred:  # pass 11: the code bars a use variance here, so not allowed, never a variance to ask for
+        for t in ALL_TYPES:
+            if by_type[t] == "variance":
+                by_type[t] = "not_allowed"
     approval = min(by_type.values(), key=PATH_ORDER.index)
     # No ADU rule here. A hearing path for a use the code does not list is a path to ask for, not an ADU allowed.
     path_to_ask = None
-    no_rule_here = not state and status in NO_ADU_STATUSES and how not in ("district", "historic")
     lead = "The code bars ADUs here" if status == "prohibited" else "The code has no ADU rule here"
     if no_rule_here and allowed:
         ask = picked[("approval", "path")]
@@ -2397,6 +2427,19 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             )
         path_to_ask = {"path": ask[0]["value"], "section": ask[0]["section"], "url": ask[0].get("url"), "note": note}
         allowed, types_allowed = False, []
+    elif barred:
+        quote = barred.get("quote")
+        path_to_ask = {
+            "path": "not_allowed",
+            "section": barred["section"],
+            "url": barred.get("url"),
+            "note": f"{lead}, and the code itself bars a use variance for it ({barred['section']})"
+            + (f": '{quote}'" if quote else "")
+            + ". That is a local limit on a power the Zoning Hearing Board has under the state planning code "
+            "(MPC 910.2), so whether it holds is a legal question: ask the zoning officer or a lawyer. "
+            "The route the code leaves is a zoning amendment" + (f". {barred['note']}" if barred.get("note") else ""),
+            "kind": "use_variance_barred",
+        }
     elif no_rule_here and not allowed and approval in ("variance", "not_allowed"):
         hit = picked.get(("approval", "fallback_path")) or picked.get(("approval", "path"))
         sec = (hit[0]["section"] if hit else "") or ""
@@ -2517,6 +2560,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         "reasons": head
         + reasons
         + fails
+        + doubt_line
         + tail
         + _town_type_reasons(_cap_in_scope(data, picked, lot), by_type)
         + checks,
@@ -2601,6 +2645,13 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
                 for c in disputed
             ),
         )
+    if allowed and doubt and doubt_line:  # pass 11: in doubt, so the path holds only if the rule reaches the district
+        qualifier = qualifier or "conditional_on_reading"
+        out["reasons"].insert(
+            0,
+            f"{approval.replace('_', ' ').capitalize()} only if the ADU rule reaches {lot.get('zoning_district')}, "
+            f"which is in doubt ({doubt['section']}). See below",
+        )
     use_open = scope.get("use_open")
     if allowed and use_open and not state:  # pass 8: never a plain "allowed" where the use list is not on file
         qualifier = qualifier or "conditional_on_reading"
@@ -2619,6 +2670,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     for key, path in (("approval_path", path_key), ("types_allowed", ("form", "types_allowed"))):
         if picked.get(path):
             citations[key] = _citation(*picked[path])
+    if barred:  # pass 11: the passage that bars the use variance
+        citations["approval_path"] = _citation(barred, place)
 
     if state:
         _state_town_fixes(out, picked, lot, limits, citations, assumed, reasons)
@@ -2742,16 +2795,30 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     _, d_row = _district_row(data, lot)
     sides = d_row.get("setback_sides_total_ft")
     one_side = d_row.get("setback_side_ft")
-    if _usable(sides) and sides.get("value") is not None and not _usable(one_side):
+    # pass 11: a planned or cluster development whose own figures replace the district's (supersedes_district_figures)
+    pd = [] if state else [c for c in conditions if c.get("supersedes_district_figures") and c["met"] is not False]
+    pd_tail = (
+        f". These apply only outside a planned or cluster development, whose own figures replace them "
+        f"({pd[0]['section']}). Whether the lot is in one was not given"
+        if pd and pd[0]["met"] is None
+        else ""
+    )
+    if pd and pd[0]["met"] is True:
+        if _usable(sides) and sides.get("value") is not None:  # the district side yards do not apply
+            out["reasons"].append(
+                f"Side yards for {lot.get('zoning_district')}: this lot is in the development the code names, whose "
+                f"own figures replace the district's ({pd[0]['section']}). See the conditions"
+            )
+    elif _usable(sides) and sides.get("value") is not None and not _usable(one_side):
         out["reasons"].append(  # pass 9
             f"Side yards for {lot.get('zoning_district')}: {sides['value']:g} ft for both sides together "
-            f"({sides['section']}). The code gives no single side figure, so none is shown"
+            f"({sides['section']}). The code gives no single side figure, so none is shown" + pd_tail
         )
     elif _usable(sides) and sides.get("value") is not None and _usable(one_side) and one_side.get("value") is not None:
         secs = [one_side["section"]] + ([sides["section"]] if sides["section"] != one_side["section"] else [])
         out["reasons"].append(  # pass 10: both figures, never the single side alone
             f"Side yards for {lot.get('zoning_district')}: at least {one_side['value']:g} ft on one side, "
-            f"{sides['value']:g} ft for both sides together ({', '.join(secs)})"
+            f"{sides['value']:g} ft for both sides together ({', '.join(secs)})" + pd_tail
         )
     imp = d_row.get("max_impervious_coverage")
     if _usable(imp) and imp.get("value") is not None:  # pass 10: impervious cover is not building coverage
@@ -3018,20 +3085,48 @@ def _hearing_to_ask(
     }
 
 
-def _in_doubt(data: dict[str, Any], lot: dict[str, Any]) -> dict[str, Any] | None:
-    """eligibility.districts_in_doubt: the district lists the ADU, the ADU section names other districts."""
+def _use_variance_barred(data: dict[str, Any], lot: dict[str, Any], scope: dict[str, Any]) -> dict[str, Any] | None:
+    """approval.use_variance_barred (pass 11): the code itself bars a use variance for a use the district does not
+    permit. It reaches a lot outside the ADU's districts (or anywhere when the town has no ADU rule), in the
+    leaf's districts when it lists them."""
+    leaf = _leaf(data, ("approval", "use_variance_barred"))
+    if not (_usable(leaf) and leaf.get("value") is True) or scope.get("in_scope") is True:
+        return None
+    if scope.get("in_scope") is None and scope.get("districts"):
+        return None  # the district is unknown, in doubt or not on file: not settled, so not barred
+    where = leaf.get("districts")
+    if where and _match_code(lot.get("zoning_district"), where) is None:
+        return None
+    return leaf
+
+
+def _in_doubt(data: dict[str, Any], lot: dict[str, Any], hold: bool = False) -> dict[str, Any] | None:
+    """eligibility.districts_in_doubt: the district lists the ADU, the ADU section names other districts. Pass 11:
+    named_by says which way the doubt runs (adu_section: the ADU section names the district, its own list does not;
+    reach: whether the rule reaches it is in doubt for the reason in the note). hold: a lot town (DOUBT_HOLD_TOWNS)."""
     leaf = _leaf(data, ("eligibility", "districts_in_doubt"))
     d = lot.get("zoning_district")
-    if not (_usable(leaf) and leaf.get("value") and d) or _match_code(d, leaf["value"]) is None:
+    code = _match_code(d, (leaf or {}).get("value") or []) if d else None
+    if not (_usable(leaf) and leaf.get("value") and d) or code is None:
         return None
     named = (_leaf(data, ("eligibility", "zoning_districts")) or {}).get("value") or []
-    reason = (
-        f"{d} lists the ADU ({leaf['section']}), but the ADU section names "
-        + (", ".join(named) if named else "other districts")
-        + ". Listed, but ask the zoning officer or the Zoning Hearing Board whether it is allowed here"
-        + (f". {leaf['note']}" if leaf.get("note") else "")
-    )
-    return {"reason": reason, "section": leaf["section"], "url": leaf.get("url")}
+    kind = "district_list" if hold else ((leaf.get("named_by") or {}).get(code) or "district_list")
+    ask = "ask the zoning officer or the Zoning Hearing Board whether it is allowed here"
+    if kind == "adu_section":
+        lead = (
+            f"The ADU section names {d} ({leaf['section']}), but {d}'s own use list does not name the ADU. "
+            f"Named, but {ask}"
+        )
+    elif kind == "reach":
+        lead = f"Whether the ADU rule reaches {d} is in doubt ({leaf['section']}). Ask the zoning officer or the Zoning Hearing Board whether it is allowed here"
+    else:
+        lead = (
+            f"{d} lists the ADU ({leaf['section']}), but the ADU section names "
+            + (", ".join(named) if named else "other districts")
+            + f". Listed, but {ask}"
+        )
+    reason = lead + (f". {leaf['note']}" if leaf.get("note") else "")
+    return {"reason": reason, "section": leaf["section"], "url": leaf.get("url"), "kind": kind}
 
 
 def _bill_keeps(picked: Picked, data: dict[str, Any], lot: dict[str, Any]) -> list[str]:

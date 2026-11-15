@@ -848,3 +848,35 @@ describe('get_rule_text pass 10', () => {
     expect(g.overlays).toEqual(['RBP']);
   });
 });
+
+// Pass 11: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 11 section).
+describe('get_rule_text pass 11', () => {
+  it('reads not allowed where the code itself bars a use variance', async () => {
+    const cb = await town6('pa_york_hanover', 'approval', 'CB');
+    expect(cb.path_to_ask.kind).toBe('use_variance_barred');
+    expect(cb.path_to_ask.path).toBe('not_allowed');
+    expect(cb.path_to_ask.note).toMatch(/^The code bars ADUs here, and the code itself bars a use variance for it \(370-907E\): 'Under no circumstances/);
+    expect(cb.path_to_ask.note).toMatch(/MPC 910\.2\), so whether it holds is a legal question: ask the zoning officer or a lawyer\. The route the code leaves is a zoning amendment/);
+    expect(new Set(Object.values(cb.approval.by_form_today))).toEqual(new Set(['not_allowed']));
+    expect(cb.approval.district_path.path).toBe('not_allowed');
+    const r1 = await town6('pa_york_hanover', 'approval', 'R-1');
+    expect(r1.path_to_ask.kind).toBe('hearing');
+  });
+
+  it('says which way a district in doubt runs and qualifies its path', async () => {
+    const r3 = await town6('pa_delaware_aston', 'approval', 'R-3');
+    expect(r3.approval.district_path.named_by).toBe('adu_section');
+    expect(r3.approval.district_path.note).toMatch(/^The ADU section names R-3, but R-3's own use list does not name the ADU\. Named, but ask/);
+    expect(r3.approval.qualifier).toBe('conditional_on_reading');
+    expect(r3.approval.qualifier_text).toMatch(/^Special exception only if the ADU rule reaches R-3, which is in doubt/);
+    const mh = await town6('pa_montgomery_upper_providence', 'approval', 'MH');
+    expect(mh.approval.district_path.note).toMatch(/^Whether the ADU rule reaches MH is in doubt\./);
+    const ci = await town6('pa_york_york_township', 'approval', 'CI');
+    expect(ci.approval.district_path.note).toMatch(/^CI lists the ADU, but the ADU section names/);
+  });
+
+  it('gives a utility row its both-sides total', async () => {
+    const r = await town6('pa_york_newberry', 'setbacks', 'R');
+    expect(r.conditions.find((c: Any6) => c.kind === 'utilities').condition).toMatch(/setback side 25, .*setback sides total 225/);
+  });
+});

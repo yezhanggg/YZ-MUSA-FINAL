@@ -312,6 +312,7 @@
           {
             "min_lot_sqft": 43560,
             "setback_side_ft": 20,
+            "setback_sides_total_ft": 40,
             "setback_front_ft": 40,
             "setback_rear_ft": 50,
             "principal_max_height_ft": 35,
@@ -418,6 +419,7 @@
           {
             "min_lot_sqft": 43560,
             "setback_side_ft": 15,
+            "setback_sides_total_ft": 35,
             "setback_front_ft": 35,
             "setback_rear_ft": 30,
             "principal_max_height_ft": 35,
@@ -622,6 +624,7 @@
           {
             "min_lot_sqft": 43560,
             "setback_side_ft": 15,
+            "setback_sides_total_ft": 30,
             "setback_front_ft": 25,
             "setback_rear_ft": 30,
             "principal_max_height_ft": 45,
