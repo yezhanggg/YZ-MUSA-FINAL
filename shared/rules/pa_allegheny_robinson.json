@@ -4,7 +4,7 @@
     "instrument": "Robinson Township Zoning Ordinance (Chapter 300 Zoning, Ord. No. 3-1993, amended in its entirety 6-5-2017 by Res. No. 8-2017, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 RO0250 (Township of Robinson, Allegheny County: Board of Commissioners, appeals to the Allegheny County Court of Common Pleas, 300-27M(3)). 'Includes legislation through 04-01-2024'. The New Laws list on the chapter shows four uncodified zoning amendments: Ord. No. 2-2025 and 3-2025 (3-3-2025), 4-2025 (7-7-2025) and 2-2026 (5-4-2026), PDF only.",
+    "status_detail": "eCode360 RO0250 (Township of Robinson, Allegheny County: Board of Commissioners, appeals to the Allegheny County Court of Common Pleas, 300-27M(3)). 'Includes legislation through 04-01-2024'. The New Laws list on the chapter shows four uncodified zoning amendments: Ord. No. 2-2025 and 3-2025 (3-3-2025), 4-2025 (7-7-2025) and 2-2026 (5-4-2026), PDF only. Their content is known from search excerpts.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/RO0250",
@@ -12,6 +12,11 @@
       "https://ecode360.com/RO0250/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22non-family%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/RO0250/search?query=%22two-family%22%20OR%20duplex%20OR%20conversion%20OR%20converted%20OR%20%22manufactured%20home%22%20OR%20%22mobile%20home%22%20OR%20%22farm%20dwelling%22%20OR%20%22age-restricted%22%20OR%20%22agricultural%20employ%22%20OR%20%22family%20dwelling%22%20OR%20%22one%20principal%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/RO0250/search?query=%22not%20listed%22%20OR%20%22not%20specifically%22%20OR%20unlisted%20OR%20dictionary%20OR%20%22mobility%20overlay%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/RO0250/search?query=%22300-36%22%20%22lot%20width%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/RO0250/search?query=%2217%2C500%20square%20feet%22%20OR%20%22Front%20yard%3A%2035%20feet%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/RO0250/search?query=%22High-Density%20Multiple-Family%22%20OR%20%222%2C200%20square%20feet%22%20OR%20%22All%20other%20principal%20uses%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/RO0250/search?query=%22Low-Rise%22%20OR%20%2245%20feet%20from%22%20OR%20%22300-39%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/RO0250/search?query=%22Low-Rise%20Apartment%20Dwelling%20Overlay%22%20%22300-43%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/print/RO0250?guid=14125529",
       "https://ecode360.com/print/RO0250?guid=14125540",
       "https://ecode360.com/print/RO0250?guid=14126047",
@@ -38,18 +43,19 @@
     "code_url": "https://ecode360.com/14125507",
     "code_current_through": "2024-04-01",
     "code_current_through_note": "eCode360: 'Includes legislation through 04-01-2024'. New Laws: Ord. No. 2-2025, 3-2025, 4-2025 and 2-2026, each 'Zoning Amendment' to Chapter 300, not codified.",
-    "code_caution": "Four zoning amendments adopted 2025 and 2026 (Ord. No. 2-2025, 3-2025, 4-2025 and 2-2026) are not in the online code and were not read (PDF only). They may change residential district rules. Article VI (planned residential developments) was not read.",
+    "code_caution": "Four zoning amendments are not in the online code and were read only in search excerpts (PDF only). Ord. No. 2-2026 (5-4-2026) amends 300-36 R-1: single-family lots 17,500 sq ft (was 25,000), 100 ft wide (was 150), front yard 35 ft (was 75). The file uses these figures. Other R-1 figures may also have changed. Ord. No. 2-2025 (3-3-2025) amends 300-39 R-4: townhouses 2,200 sq ft of lot area per unit, front yards 45 ft from the curb on a public street and 30 ft on a private street, side 10 ft, townhouse rear 20 ft, building spacing. Ord. No. 3-2025 (3-3-2025) creates the High-Density Multiple-Family Low-Rise Apartment Dwelling Overlay District on land in C-3 (300-43), for low-rise apartments up to four stories. Ord. No. 4-2025 (7-7-2025) lowers the R-3 side yard for 'All other principal uses' from 20 to 10 ft. The single-family side yard of 7 ft is unchanged. Article VI (planned residential developments) was not read.",
     "checks": [
       "The zoning code has no accessory dwelling unit, in-law suite or similar listing. 'No accessory structure shall be used for dwelling purposes' (300-73D(2)), so a unit in a garage or other accessory building is barred",
       "A single-family dwelling is 'a detached residential building, other than a mobile home, designed for or occupied exclusively by one family, which is the only principal structure on the lot and is permanently attached to a foundation' (300-12). A second unit inside the house makes it a two-family or multiple-family dwelling",
       "Two-family dwellings are permitted by right in R-3 (10,000 sq ft) and R-5 (14,000 sq ft), and new ones in the Mobility Overlay Districts MOD-A, MOD-B and MOD-C. R-4, C-2, C-3, C-4 and MOD-D permit only existing two-family dwellings",
       "Conversion of an existing single-family dwelling into a multiple-family dwelling (three or more units) is a special exception in R-3 and a permitted use in R-4. Each unit at least 800 sq ft with a kitchen and bath, two parking spaces per unit (300-103A(4))",
       "A single-family dwelling may also take up to two unrelated boarders, one parking space each, or foster persons placed by court order (300-66)",
-      "Accessory structures are 20 ft in the residential districts, not in the required front yard, at the principal side yard and at least 10 ft from the rear line (300-73C), at most 30% of the required rear yard",
+      "Accessory structures are 20 ft in the residential districts, not in the required front yard, at the principal side yard (300-73C(2)), and at most 30% of the required rear yard. The rear yard for accessory uses is 10 ft in general (300-73C(3)) and by district: R-1 10 ft, R-2, R-3 and R-5 6 ft, R-4 50 ft, MOD-A to MOD-C 6 ft, MOD-D 50 ft. On corner lots accessory side yards are R-1 8 ft, R-2 6 ft, R-3 5 ft",
+      "In any residential district single- and two-family dwellings may be up to 10 ft taller than the district height, to at most 45 ft, with side and rear yards each 10 ft larger (300-35A)",
       "C-4 and C-5 allow temporary living quarters for a caretaker, watchman or security personnel (300-73A(16)), and in C-4 and I-1 a guard or custodian may reside on the premises. These are not homes on a house lot",
-      "Mobility Overlay Districts supersede the base district (300-50). Airport Hazard and Parkway Protection Overlays add rules"
+      "Mobility Overlay Districts supersede the base district (300-50). Airport Hazard and Parkway Protection Overlays add rules. Ord. No. 3-2025 adds a High-Density Multiple-Family Low-Rise Apartment Dwelling Overlay District on land in C-3"
     ],
-    "notes": "Zoning office: Robinson Township Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling and non-family, then for two-family, duplex, conversion, converted, manufactured home, mobile home, farm dwelling, age-restricted, agricultural employ, family dwelling and one principal, then for not listed, not specifically, unlisted, dictionary and mobility overlay. Read in full: 300-11, 300-27, Article IV (300-31 to 300-49), 300-50 to 300-52, 300-64, 300-73, 300-103A(4). Read on screen: the 300-12 definitions named in the notes and the 300-79E parking schedule. 300-11 has no rule for undefined words ('The particular shall control the general'). No unlisted-use clause and no bar on use variances was found. 300-64D speaks of 'the farm residence' only. Not read: Article VI, 300-98, 300-105, the rest of Articles VII to XIII, the New Laws PDFs and the attachments"
+    "notes": "Fix round after independent review, 2026-11-15: R-1 lot and front yard from Ord. No. 2-2026 (search excerpts), the four amendments described in code_caution, accessory rear and side yards by district, the 150 ft overlay lot width and 300-35A added. Zoning office: Robinson Township Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling and non-family, then for two-family, duplex, conversion, converted, manufactured home, mobile home, farm dwelling, age-restricted, agricultural employ, family dwelling and one principal, then for not listed, not specifically, unlisted, dictionary and mobility overlay. Read in full: 300-11, 300-27, Article IV (300-31 to 300-49), 300-50 to 300-52, 300-64, 300-73, 300-103A(4). Read on screen: the 300-12 definitions named in the notes and the 300-79E parking schedule. 300-11 has no rule for undefined words ('The particular shall control the general'). No unlisted-use clause and no bar on use variances was found. 300-64D speaks of 'the farm residence' only. Not read: Article VI, 300-98, 300-105, the rest of Articles VII to XIII, the New Laws PDFs and the attachments"
   },
   "adu": {
     "term": {
@@ -127,11 +133,19 @@
             "MOD-B",
             "MOD-C"
           ],
-          "conditions": "'Two-family dwelling, new' is a permitted use in MOD-A, MOD-B and MOD-C, which supersede the base district (300-50). Lot area per the R-3 District (10,000 sq ft for a two-family dwelling). Side yards 10 ft in MOD-A and MOD-C, 40 ft in MOD-B. Two parking spaces per dwelling unit",
+          "conditions": "'Two-family dwelling, new' is a permitted use in MOD-A, MOD-B and MOD-C, which supersede the base district (300-50). Lot area per the R-3 District (10,000 sq ft for a two-family dwelling). Lot width at least 150 ft: MOD-A 'Residential uses not including live-work units: 150 feet', MOD-B and MOD-C 'All other residential uses: 150 feet'. Side yards 10 ft in MOD-A and MOD-C, 40 ft in MOD-B. Two parking spaces per dwelling unit",
           "min_lot_sqft": 10000,
-          "section": "300-50, 300-52A(3)(a)[9], 300-52B(3)(a)[5], 300-52C(3)(a)[4], 300-38C(1)(b)",
+          "section": "300-50, 300-52A(3)(a)[9], 300-52B(3)(a)[5], 300-52C(3)(a)[4], 300-52A(4)(b), B(4)(b), C(4)(b), 300-38C(1)(b)",
           "url": "https://ecode360.com/print/RO0250?guid=14126348",
           "confidence": "secondary",
+          "requires": [
+            {
+              "test": "lot_width_at_least",
+              "value": 150,
+              "condition": "The lot is at least 150 ft wide (residential uses other than live-work units in MOD-A, all other residential uses in MOD-B and MOD-C)",
+              "section": "300-52A(4)(b), B(4)(b), C(4)(b)"
+            }
+          ],
           "note": "Not an ADU listing. A building type, only where an overlay is mapped"
         },
         {
@@ -167,7 +181,7 @@
       "value": [
         {
           "kind": "district",
-          "condition": "In the Mobility Overlay Districts the overlay's use list and figures supersede the base district (300-50). MOD-A, MOD-B and MOD-C permit new two-family dwellings, MOD-D only existing single-family and two-family dwellings. Single-family figures: MOD-A 5,000 sq ft, front 25 ft, side 10 ft, rear 25 ft, 45 ft. MOD-B the R-3 lot figures, 80 ft wide, front 40 ft, side 15 ft, rear 35 ft. MOD-C 5,000 sq ft, 80 ft wide, front 25 ft, side 10 ft, rear 35 ft. MOD-D 5,000 sq ft, front 75 ft, side 50 ft, rear 50 ft.",
+          "condition": "In the Mobility Overlay Districts the overlay's use list and figures supersede the base district (300-50). MOD-A, MOD-B and MOD-C permit new two-family dwellings, MOD-D only existing single-family and two-family dwellings. Single-family figures: MOD-A 5,000 sq ft, front 25 ft, side 10 ft, rear 25 ft, 45 ft. MOD-B the R-3 lot figures, 80 ft wide, front 40 ft, side 15 ft, rear 35 ft. MOD-C 5,000 sq ft, 80 ft wide, front 25 ft, side 10 ft, rear 35 ft. MOD-D 5,000 sq ft, front 75 ft, side 50 ft, rear 50 ft. Accessory uses stand 6 ft from the rear line in MOD-A, MOD-B and MOD-C and 50 ft in MOD-D.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -238,8 +252,7 @@
     "accessory_rules_where": {
       "value": [
         {
-          "where": "In a required rear yard: at least 10 ft from the rear property line, and accessory structures cover at most 30% of the required rear yard (300-73C(3), (4)). The district tables give 6 ft in R-2, R-3 and R-5",
-          "setback_rear_ft": 10,
+          "where": "In a required rear yard: accessory structures cover at most 30% of the required rear yard (300-73C(4)), and stand at least 10 ft from the rear property line where the district table sets no other figure (300-73C(3), 'unless otherwise specified in this chapter'). The district tables set R-1 10 ft, R-2, R-3 and R-5 6 ft, R-4 50 ft, MOD-A to MOD-C 6 ft, MOD-D 50 ft",
           "max_share_of_rear_yard": 0.3,
           "section": "300-73C(3), (4)",
           "url": "https://ecode360.com/print/RO0250?guid=14126641"
@@ -264,19 +277,20 @@
   "districts": {
     "R-1": {
       "min_lot_sqft": {
-        "value": 25000,
-        "section": "300-36C",
-        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "value": 17500,
+        "section": "300-36C(1)(a), (5)(a), as amended by Ord. No. 2-2026 (5-4-2026)",
+        "url": "https://ecode360.com/RO0250/search?query=%22300-36%22%20%22lot%20width%22&scope=all&sortOrder=relevance",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "Single-family dwellings 25,000 sq ft, 150 ft wide. Accessory structures 20 ft, accessory rear yard 10 ft"
+        "confidence": "secondary",
+        "note": "Ord. No. 2-2026 (New Laws, PDF only, read in search excerpts): 'Minimum lot area (a) - Single family dwellings: 17,500 square feet', reduced from 25,000. Lot width 100 ft, reduced from 150. The R-1 side and rear yards and coverage are the codified figures and may also have changed. Accessory structures 20 ft, accessory rear yard 10 ft, accessory side yards on corner lots 8 ft"
       },
       "setback_front_ft": {
-        "value": 75,
-        "section": "300-36C",
-        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "value": 35,
+        "section": "300-36C(1)(a), (5)(a), as amended by Ord. No. 2-2026 (5-4-2026)",
+        "url": "https://ecode360.com/RO0250/search?query=%2217%2C500%20square%20feet%22%20OR%20%22Front%20yard%3A%2035%20feet%22&scope=all&sortOrder=relevance",
         "verified_on": "2026-11-15",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "Ord. No. 2-2026 (New Laws, PDF only, read in search excerpts): 'Minimum Yard Requirements (a) Front yard: 35 feet'. The codified figure was 75 ft"
       },
       "setback_side_ft": {
         "value": 15,
@@ -323,6 +337,22 @@
         "verified_on": "2026-11-15",
         "confidence": "verified",
         "note": "'Maximum impervious surface coverage'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All accessory uses' rear yard in the district table, which wins over the 10 ft of 300-73C(3)"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "300-73C(2)",
+        "url": "https://ecode360.com/print/RO0250?guid=14126641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Accessory structures and uses in all zoning districts shall maintain the same side yard as is required for the principal structure'"
       }
     },
     "R-2": {
@@ -332,7 +362,7 @@
         "url": "https://ecode360.com/print/RO0250?guid=14126093",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Single-family dwellings 14,500 sq ft, 80 ft wide. Nonconforming lots of record under 80 ft wide: side yards at least 12.5 ft. Accessory structures 20 ft, accessory rear yard 6 ft"
+        "note": "Single-family dwellings 14,500 sq ft, 80 ft wide. Nonconforming lots of record under 80 ft wide: side yards at least 12.5 ft. Accessory structures 20 ft, accessory rear yard 6 ft, accessory yards on corner lots 6 ft each"
       },
       "setback_front_ft": {
         "value": 40,
@@ -386,6 +416,22 @@
         "verified_on": "2026-11-15",
         "confidence": "verified",
         "note": "'Maximum impervious surface coverage'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All accessory uses' rear yard in the district table, which wins over the 10 ft of 300-73C(3)"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "300-73C(2)",
+        "url": "https://ecode360.com/print/RO0250?guid=14126641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Accessory structures and uses in all zoning districts shall maintain the same side yard as is required for the principal structure'"
       }
     },
     "R-3": {
@@ -395,7 +441,7 @@
         "url": "https://ecode360.com/print/RO0250?guid=14126093",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Single-family dwelling 5,000 sq ft, 50 ft wide. Two-family dwellings 10,000 sq ft, 55 ft wide, side yards 10 ft each. Accessory structures 20 ft, accessory rear yard 6 ft"
+        "note": "Single-family dwelling 5,000 sq ft, 50 ft wide. Two-family dwellings 10,000 sq ft, 55 ft wide, side yards 10 ft each. Accessory structures 20 ft, accessory rear yard 6 ft, accessory yards on corner lots 5 ft each"
       },
       "setback_front_ft": {
         "value": 25,
@@ -410,7 +456,7 @@
         "url": "https://ecode360.com/print/RO0250?guid=14126093",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "'Single-family (detached): seven feet each yard; two-family dwellings: 10 feet each yard' (Ord. No. 3-2020)"
+        "note": "'Single-family (detached): seven feet each yard; two-family dwellings: 10 feet each yard' (Ord. No. 3-2020). Ord. No. 4-2025 (7-7-2025, not codified) lowers the side yard for 'All other principal uses' from 20 to 10 ft and leaves these figures"
       },
       "setback_rear_ft": {
         "value": 25,
@@ -449,6 +495,22 @@
         "verified_on": "2026-11-15",
         "confidence": "verified",
         "note": "'Maximum impervious surface coverage'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All accessory uses' rear yard in the district table, which wins over the 10 ft of 300-73C(3)"
+      },
+      "accessory_setback_side_ft": {
+        "value": 7,
+        "section": "300-73C(2)",
+        "url": "https://ecode360.com/print/RO0250?guid=14126641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Accessory structures and uses in all zoning districts shall maintain the same side yard as is required for the principal structure'"
       }
     },
     "R-4": {
@@ -458,7 +520,7 @@
         "url": "https://ecode360.com/print/RO0250?guid=14126093",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "R-4 permits only existing single-family dwellings, which 'shall conform to the standards of the R-2 District'. These are the R-2 figures"
+        "note": "R-4 permits only existing single-family dwellings, which 'shall conform to the standards of the R-2 District'. These are the R-2 figures. The R-4 table sets accessory uses 50 ft from the rear line and 50 ft on corner lots. Ord. No. 2-2025 (3-3-2025, not codified) amends the R-4 townhouse and multi-family figures"
       },
       "setback_front_ft": {
         "value": 40,
@@ -512,6 +574,22 @@
         "verified_on": "2026-11-15",
         "confidence": "verified",
         "note": "'Maximum impervious surface coverage'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 50,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All accessory uses' rear yard in the district table, which wins over the 10 ft of 300-73C(3)"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "300-73C(2)",
+        "url": "https://ecode360.com/print/RO0250?guid=14126641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Accessory structures and uses in all zoning districts shall maintain the same side yard as is required for the principal structure'"
       }
     },
     "R-5": {
@@ -575,6 +653,22 @@
         "verified_on": "2026-11-15",
         "confidence": "verified",
         "note": "'Maximum impervious surface coverage'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 6,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All accessory uses' rear yard in the district table, which wins over the 10 ft of 300-73C(3)"
+      },
+      "accessory_setback_side_ft": {
+        "value": 12.5,
+        "section": "300-73C(2)",
+        "url": "https://ecode360.com/print/RO0250?guid=14126641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Accessory structures and uses in all zoning districts shall maintain the same side yard as is required for the principal structure'"
       }
     },
     "C-2": {

@@ -4,12 +4,13 @@
     "instrument": "Adams Township Zoning Ordinance (Chapter 192 Zoning, Ord. No. 92, adopted 9-25-2000, as amended), with Chapter 167 Subdivision and Land Development 167-21.1, as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 AD1937 (Township of Adams, Butler County: 192-6 'Butler County Recorder of Deeds', 192-9). Code version 2026-02-23. Amendments shown in the sections read run to Ord. No. 186 (2-10-2025), 192 and 193 (2-23-2026). New Laws: Ord. No. 194 (6-22-2026) and 195 (10-12-2026), PDF only, subjects not shown.",
+    "status_detail": "eCode360 AD1937 (Township of Adams, Butler County: 192-6 'Butler County Recorder of Deeds', 192-9). Code version 2026-02-23. Amendments shown in the sections read run to Ord. No. 186 (2-10-2025), 192 and 193 (2-23-2026). New Laws: Ord. No. 194 (6-22-2026) adopts an intermunicipal agreement for the merger of the Township of Adams and the Borough of Mars, Ord. No. 195 (10-12-2026) sets hours of garbage collection. Neither amends zoning.",
     "effective_date": "2010-06-29",
     "source_urls": [
       "https://ecode360.com/AD1937",
       "https://ecode360.com/12752118",
       "https://ecode360.com/AD1937/laws",
+      "https://ecode360.com/AD1937/search?query=%22borough%20of%20mars%22%20merger&scope=all&sortOrder=relevance",
       "https://ecode360.com/AD1937/search?query=%22temporary%20second%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22conversion%20structure%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/AD1937/search?query=%22accessory%20dwelling%22%20OR%20%22variance%22%20OR%20%22undefined%22%20OR%20%22not%20defined%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/AD1937/search?query=%22conversion%20structure%22%20OR%20%22conversion%20structures%22%20OR%20%22principal%20use%22%20OR%20%22single-family%20detached%20dwelling%22%20OR%20%22per%20dwelling%20unit%22&scope=code&sortOrder=relevance",
@@ -40,21 +41,22 @@
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/12752118",
     "code_current_through": "2026-02-23",
-    "code_current_through_note": "eCode360: 'Includes legislation through 02-23-2026' (code version 2026-02-23). New Laws lists Ord. No. 194 (2026-06-22) and 195 (2026-10-12) as PDFs without subjects. Searches of the code and New Laws for the ADU terms returned no New Laws hit.",
-    "code_caution": "The use schedules (Attachments 1 and 2), the Schedule of Dimensional Standards (Attachment 3) and the Schedule of Development Densities (Attachment 4) are PDFs and were not opened. The file uses the district sections' own text. A search excerpt of Attachment 1 shows four marks on the temporary second dwelling row, while the district text lists it only in RC, RAL and RAM, so a fourth district may be marked there. No lot coverage figure for houses was found in the web text. Ord. No. 194 and 195 (2026) are not codified and their subjects were not seen.",
+    "code_current_through_note": "eCode360: 'Includes legislation through 02-23-2026' (code version 2026-02-23). New Laws lists Ord. No. 194 (2026-06-22, merger agreement with the Borough of Mars) and 195 (2026-10-12, garbage collection hours), neither a zoning amendment. Searches of the code and New Laws for the ADU terms returned no New Laws hit.",
+    "code_caution": "The use schedules (Attachments 1 and 2), the Schedule of Dimensional Standards (Attachment 3) and the Schedule of Development Densities (Attachment 4) are PDFs and were not opened. The file uses the district sections' own text. A search excerpt of Attachment 1 shows four marks on the temporary second dwelling row, while the district text lists it only in RC, RAL and RAM, so a fourth district may be marked there. No lot coverage figure for houses was found in the web text. A merger of Adams Township and Mars Borough is pending: Ord. No. 194 (6-22-2026) adopts the joint merger agreement. A merged municipality may later change who administers zoning and the zoning rules themselves.",
     "checks": [
-      "The code's ADU is the 'temporary second dwelling', a principal permitted use in RC, RAL and RAM (192-15B(10), 192-16B(9), 192-17B(12)), subject to 167-21.1 of the Subdivision and Land Development Ordinance. It is 'a dwelling that may be permitted to be placed on a lot that already contains one dwelling, based on a family hardship encountered by the residents of the existing dwelling that can be cured during the extent of the hardship by the presence of the second dwelling' (192-6)",
-      "Only immediate family of the family in the house may live there: brother, sister, child, parent, grandparent and their spouses, parents or children (167-21.1B). The Board of Supervisors must find a family hardship that housing elsewhere cannot resolve, and permission lasts at most 12 months, renewable. When the need ends the dwelling is removed within three months (167-21.1E to H)",
-      "167-21.1A says the dwelling 'shall be a mobile, modular or manufactured home' and D that it 'shall not be permanently affixed to the ground by means of a foundation or otherwise'. 192-54E(1) says accessory dwellings 'shall consist of apartments integrated within single-family dwellings, or those located in detached accessory dwellings, such as carriage houses or manufactured housing'. Whether a unit inside the house or in a garage qualifies is disputed: ask. 192-4B applies the more restrictive provision",
+      "The code's ADU is the 'temporary second dwelling', listed as a principal permitted use in RC, RAL and RAM (192-15B(10), 192-16B(9), 192-17B(12)) but subject to 167-21.1 of the Subdivision and Land Development Ordinance, so it is not a plain zoning permit: the Board of Supervisors decides. It is 'a dwelling that may be permitted to be placed on a lot that already contains one dwelling, based on a family hardship encountered by the residents of the existing dwelling that can be cured during the extent of the hardship by the presence of the second dwelling' (192-6)",
+      "Only immediate family of the family in the house may live there: brother, sister, child, parent, grandparent and their spouses, parents or children (167-21.1B). The Board of Supervisors must find a family hardship that housing elsewhere cannot resolve, and permission lasts at most 12 months, renewable by asking again before it runs out. The code names no hearing for this decision. When the need ends the dwelling is removed within three months (167-21.1E to H)",
+      "'Unless otherwise expressly permitted in the applicable zoning district, on any lot only one principal permitted or conditional use shall be allowed on a lot' (192-52B(1)). 192-54E(4) expressly allows one accessory dwelling on a lot with the single-family dwelling",
+      "167-21.1A says the dwelling 'shall be a mobile, modular or manufactured home' and D that it 'shall not be permanently affixed to the ground by means of a foundation or otherwise'. 192-54E(1) says accessory dwellings 'shall consist of apartments integrated within single-family dwellings, or those located in detached accessory dwellings, such as carriage houses or manufactured housing'. Whether a unit inside the house or in a garage qualifies is disputed: ask. 192-4B applies the more restrictive provision. 'Except as otherwise expressly permitted in the applicable district, no dwelling unit shall be located in any accessory building' (192-54C)",
       "Lot: two acres with an on-lot sewage system, one acre with public sanitary sewer (167-21.1A). The 167-9 definition says two acres. At least 500 sq ft of gross floor area, two rooms, private sanitary facilities with hot and cold running water, and cooking and food storage facilities (192-54E(2)). One per lot (192-54E(4))",
       "For density each accessory dwelling counts as one-half dwelling unit (192-54E(3)). It must meet the site, building design, height, access and other standards for principal dwellings in the district (192-54E(5)): 35 ft height (192-52D(1)) and the district yards",
       "Parking: '1 space per bedroom' for an 'Accessory dwelling (temporary second dwelling)', while a mobile, modular or manufactured home row says 3 spaces per home (192-56C, Table 9-B)",
       "Accessory buildings stand only in a rear or side yard, not forward of the front wall of the house (192-54B), and other accessory buildings are at most 15 ft and one story (192-54D). In RC, RAL, RAM, R-1 and R-2 accessory structures stand at least 10 ft from side and rear lines",
       "Outside RC, RAL and RAM the temporary second dwelling is not listed, and 'No use listed in one zoning district is allowed in a second ... unless listed' (192-14E). The Zoning Hearing Board may not grant a use variance (192-76C)",
-      "Double dwellings are permitted by right in RC, RAL, RAM and R-2, conversion structures (three units) in R-2. GT permits no single-family dwelling (multifamily with public utilities only). In C and B a single-family detached dwelling is a special exception, in I single-family and double dwellings. C also allows second-floor apartments over a permitted use, one per acre (192-23C(2))",
+      "Double dwellings are permitted by right in RC, RAL, RAM and R-2 where the lot holds two units at the district density, conversion structures (three units) in R-2. GT permits no single-family dwelling (multifamily with public utilities only). In C and B a single-family detached dwelling is a special exception, in I single-family and double dwellings. C also allows second-floor apartments over a permitted use, one per acre (192-23C(2))",
       "The Airport Hazard Overlay (Article VA) was not read"
     ],
-    "notes": "Zoning office: Adams Township Building and Zoning (724-625-1827). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, with New Laws and attachments) for temporary second dwelling, accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver and conversion structure, then for accessory dwelling, variance and not defined, then for conversion structure, principal use, single-family detached dwelling and per dwelling unit. Read in full: Article I (192-1 to 192-4), 192-5, Article III (192-8 to 192-14), Article IV (192-15 to 192-27), Article V (192-30 to 192-39.1), 192-50, 192-52, 192-54, 192-55, 192-56, 192-76, 167-21.1 and 167-9 (minor land development, temporary second dwelling). Read in 192-6: the definitions named in the notes, A to P in full on screen and the temporary second dwelling definition. 192-5: 'words used in this chapter and not otherwise defined in this article shall have the same meanings as in a standard dictionary'. 192-50C and D require a residence for a caretaker or property owner with a commercial kennel or stable in RC, which is the house itself, not a second unit. The parking table also has an accessory-use row 'Second single-family dwelling' (1 space per bedroom) that no district lists. Former temporary second dwelling by special exception (192-50A) was repealed by Ord. No. 136 (6-29-2010), which made it a permitted use with 167-21.1. Not read: Articles VA, VI, VII, X, XI, XIII, 192-46 to 192-49, 192-51, 192-53, 192-57 to 192-62.2, the attachments and the rest of Chapter 167"
+    "notes": "Fix round after independent review, 2026-11-15: approval path set to conditional use (Board hardship finding), double dwelling lots set from the district densities, merger caution in place of Ord. No. 194 and 195, 192-54C, 192-52B(1), net against gross acre and the 167-9 enactment order added. Zoning office: Adams Township Building and Zoning (724-625-1827). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, with New Laws and attachments) for temporary second dwelling, accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver and conversion structure, then for accessory dwelling, variance and not defined, then for conversion structure, principal use, single-family detached dwelling and per dwelling unit. Read in full: Article I (192-1 to 192-4), 192-5, Article III (192-8 to 192-14), Article IV (192-15 to 192-27), Article V (192-30 to 192-39.1), 192-50, 192-52, 192-54, 192-55, 192-56, 192-76, 167-21.1 and 167-9 (minor land development, temporary second dwelling). Read in 192-6: the definitions named in the notes, A to P in full on screen and the temporary second dwelling definition. 192-5: 'words used in this chapter and not otherwise defined in this article shall have the same meanings as in a standard dictionary'. 192-50C and D require a residence for a caretaker or property owner with a commercial kennel or stable in RC, which is the house itself, not a second unit. The parking table also has an accessory-use row 'Second single-family dwelling' (1 space per bedroom) that no district lists. Former temporary second dwelling by special exception (192-50A) was repealed by Ord. No. 136 (6-29-2010), which made it a permitted use with 167-21.1. Not read: Articles VA, VI, VII, X, XI, XIII, 192-46 to 192-49, 192-51, 192-53, 192-57 to 192-62.2, the attachments and the rest of Chapter 167"
   },
   "adu": {
     "term": {
@@ -71,7 +73,7 @@
       "url": "https://ecode360.com/print/AD1937?guid=14999381",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "A temporary home for immediate family facing a hardship, by Board of Supervisors permission for up to 12 months at a time, in RC, RAL and RAM"
+      "note": "A temporary home for immediate family facing a hardship, by Board of Supervisors permission on a hardship finding for up to 12 months at a time, renewable, in RC, RAL and RAM"
     },
     "scope_districts": {
       "value": [
@@ -96,12 +98,12 @@
   },
   "approval": {
     "path": {
-      "value": "by_right",
-      "section": "192-15B(10), 192-16B(9), 192-17B(12), 167-21.1E",
+      "value": "conditional_use",
+      "section": "167-21.1E, F, 192-15B(10), 192-16B(9), 192-17B(12)",
       "url": "https://ecode360.com/print/AD1937?guid=14999381",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "Listed as a principal permitted use. It also takes the Board of Supervisors' permission as a minor land development, given only on a finding of family hardship, for at most 12 months at a time. No Zoning Hearing Board hearing is named"
+      "note": "The Board of Supervisors decides on a finding of family hardship, and its permission lasts 12 months at a time, renewable. The code names no hearing. The district sections list the use as permitted, but the governing body's discretionary finding makes it closer to a conditional use than a zoning permit"
     },
     "fallback_path": {
       "value": "variance",
@@ -132,18 +134,18 @@
             "RAM",
             "R-2"
           ],
-          "conditions": "A double dwelling is a principal permitted use in RC, RAL, RAM and R-2, on the district lot (43,560 sq ft in RC, RAL and R-2, 32,670 sq ft in RAM). It is 'a building designed and built to contain two dwelling units, whether side by side or one above the other, but each an independent dwelling relative to utilities, facilities, and access'. Double dwellings also appear in planned residential developments (RC, RAL, RAM, R-3M, R-5B) and as a special exception in I. Parking: 2 spaces for the first bedroom plus 1/2 space for each more bedroom",
-          "min_lot_sqft": 32670,
+          "conditions": "A double dwelling is a principal permitted use in RC, RAL, RAM and R-2. It is 'a building designed and built to contain two dwelling units, whether side by side or one above the other, but each an independent dwelling relative to utilities, facilities, and access'. Both units count toward the district density, so the lot must hold two units: RC 0.8 dwelling unit per gross acre (108,900 sq ft for two), RAL 2 per gross acre (43,560 sq ft, the district lot), RAM 2.5 per gross acre (34,848 sq ft, above the 32,670 sq ft lot), R-2 one per gross acre (87,120 sq ft). Double dwellings also appear in planned residential developments (RC, RAL, RAM, R-3M, R-5B) and as a special exception in I. Parking: 2 spaces for the first bedroom plus 1/2 space for each more bedroom",
+          "min_lot_sqft": 34848,
           "min_lot_by_district": {
-            "RC": 43560,
+            "RC": 108900,
             "RAL": 43560,
-            "RAM": 32670,
-            "R-2": 43560
+            "RAM": 34848,
+            "R-2": 87120
           },
-          "section": "192-15B(2), 192-16B(2), 192-17B(2), 192-19B(2), 192-6 (dwelling, double), 192-56C",
+          "section": "192-15B(2), 192-15G(1), 192-16B(2), 192-16 (density), 192-17B(2), 192-17H(1), 192-19B(2), 192-19G(1), 192-6 (dwelling, double), 192-56C",
           "url": "https://ecode360.com/print/AD1937?guid=12752495",
           "confidence": "secondary",
-          "note": "Not an ADU listing. A building type. Whether an existing house may be altered into a double dwelling is not stated. The density figures (RC 0.8, RAL 2, RAM 2.5, R-2 one dwelling unit per gross acre) count both units"
+          "note": "Not an ADU listing. A building type. Whether an existing house may be altered into a double dwelling is not stated. The lot figures are the larger of the district lot and the density for two units. The district sections say per gross acre, the 192-6 definition of density says per net acre, which would need more land"
         },
         {
           "name": "Conversion structure",
@@ -240,7 +242,7 @@
         },
         {
           "kind": "lot_size",
-          "condition": "The Subdivision and Land Development definition of a temporary second dwelling names 'a residential development lot of two acres minimum area', while 167-21.1A(2) allows one acre with public sewer.",
+          "condition": "The Subdivision and Land Development definition of a temporary second dwelling names 'a residential development lot of two acres minimum area' (167-9, added 2-28-2011 by Ord. No. 140), while 167-21.1A(2) allows one acre with public sewer (added 6-29-2010 by Ord. No. 136). The two-acre definition is the newer text, so a one-acre lot with public sewer may not be enough.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -266,7 +268,7 @@
         },
         {
           "kind": "lot_area_per_unit",
-          "condition": "Each accessory dwelling counts as one-half dwelling unit for density (192-54E(3)). RC allows 0.8 dwelling unit per gross acre for permitted uses, so a house and the unit (1.5 units) need about 81,675 sq ft of gross area. The one-acre RC lot minimum is itself above that density, so whether the figure applies to one existing lot is not clear.",
+          "condition": "Each accessory dwelling counts as one-half dwelling unit for density (192-54E(3)). RC allows 0.8 dwelling unit per gross acre for permitted uses (192-15G(1)), so a house and the unit (1.5 units) need about 81,675 sq ft. The figure here uses the lot's whole area, as the district section says per gross acre, while the 192-6 definition of density says per net acre, which would need more land. The one-acre RC lot minimum is itself above that density, so whether the figure applies to one existing lot is not clear. In RAL (2 per gross acre) and RAM (2.5) the house and the unit fit on the district lot.",
           "effect": "condition",
           "applies_to": null,
           "districts": [
@@ -365,7 +367,7 @@
       "url": "https://ecode360.com/print/AD1937?guid=12753789",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "192-54E(1): 'Accessory dwellings shall consist of apartments integrated within single-family dwellings, or those located in detached accessory dwellings, such as carriage houses or manufactured housing'. 167-21.1A: 'Such dwelling shall be a mobile, modular or manufactured home'. 192-4B applies the more restrictive provision and 192-5 says 'the particular controls the general'"
+      "note": "192-54E(1): 'Accessory dwellings shall consist of apartments integrated within single-family dwellings, or those located in detached accessory dwellings, such as carriage houses or manufactured housing'. 167-21.1A: 'Such dwelling shall be a mobile, modular or manufactured home'. 192-4B applies the more restrictive provision and 192-5 says 'the particular controls the general'. 192-54C: 'Except as otherwise expressly permitted in the applicable district, no dwelling unit shall be located in any accessory building', which bears on a unit in or over a garage"
     },
     "labels": {
       "value": {

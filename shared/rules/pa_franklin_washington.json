@@ -40,10 +40,11 @@
       "New two-family detached dwellings (one unit over the other) are permitted by right in A, R-2 and R-3 on a lot 25% larger than the single-family lot. In R-1 a duplex is a conditional use, and 'Existing single-family detached dwellings may not be converted to single-family semidetached (duplex) dwellings' (360-66F(1))",
       "A single-family dwelling may take rooming or boarding of not more than two persons as a home occupation (360-21C(2))",
       "Accessory buildings are at most 25 ft in the residential zones (360-12B), not within any front yard, and in a rear yard at least 10 ft from any lot line (360-14D)",
-      "The H District permits 'A single-family residence housing a permanent, on-site caretaker for the property' as an accessory use (360-152M(1)). The I District lists dwellings for bona fide caretakers or watchmen as accessory uses (360-100, seen by search). These are not homes added to a house lot",
-      "When a use is neither permitted nor prohibited, the Board of Supervisors, on the Planning Committee's recommendation, decides whether it is similar to the permitted uses (360-11B)"
+      "The H District permits 'A single-family residence housing a permanent, on-site caretaker for the property' as an accessory use to any H permitted use (360-152M(1)), and those uses include single-family and two-family detached dwellings in historic residences (360-152A). So in H a caretaker's residence may be added to the lot of a historic home, for the caretaker only. That is in tension with one dwelling per lot (360-24): ask the zoning officer. H also permits a two-family detached dwelling in a historic residence (360-152A)",
+      "The I District lists dwellings for bona fide caretakers or watchmen as accessory uses (360-100, seen by search). These are not homes added to a house lot",
+      "When a use is neither permitted nor prohibited, the Board of Supervisors, on the Planning Committee's recommendation, decides whether it is similar to the permitted uses (360-11B). Since 360-11A deems every use the chapter does not permit to be prohibited, 360-11B rarely applies, and a second dwelling on a lot is barred by 360-24 in any case"
     ],
-    "notes": "Zoning office: Washington Township Zoning Officer (717-762-3128). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, accessory unit and farm dwelling, then for two-family, duplex, conversion, converted, manufactured home, age-restricted, family dwelling, dwelling/lot, one principal and Franklin County. Read in full: Article II, Article III (360-11 to 360-25), Articles VIII to XI, XIV, XV and XXIII, 360-134. Read on screen: 360-5A and the 360-5B definitions named in the notes, Article VII (360-57, 360-59) and the start of Article XIII (360-81). 360-5A(11): a term not defined in Chapter 360 takes its Chapter 310 (Subdivision and Land Development) definition. No bar on use variances was found. Not read: Articles IV to VI, XII, XVI (I District, seen by search), XVII (planned residential developments), XVIII, XIX, XXI and XXII, and Chapter 310"
+    "notes": "Fix round after independent review, 2026-11-15: caretaker residence widened to H permitted uses including historic residences, with 360-24 as the disputed path, two-family dwelling in a historic residence added, detached form bar marked disputed in H in its note, 360-11B note added. Zoning office: Washington Township Zoning Officer (717-762-3128). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, accessory unit and farm dwelling, then for two-family, duplex, conversion, converted, manufactured home, age-restricted, family dwelling, dwelling/lot, one principal and Franklin County. Read in full: Article II, Article III (360-11 to 360-25), Articles VIII to XI, XIV, XV and XXIII, 360-134. Read on screen: 360-5A and the 360-5B definitions named in the notes, Article VII (360-57, 360-59) and the start of Article XIII (360-81). 360-5A(11): a term not defined in Chapter 360 takes its Chapter 310 (Subdivision and Land Development) definition. No bar on use variances was found. Not read: Articles IV to VI, XII, XVI (I District, seen by search), XVII (planned residential developments), XVIII, XIX, XXI and XXII, and Chapter 310"
   },
   "adu": {
     "term": {
@@ -60,7 +61,7 @@
       "url": "https://ecode360.com/print/WA2765?guid=6216587",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "The code has no ADU text. Only one dwelling is allowed per lot (360-24). Conversion of an existing house to a two-family dwelling is permitted in R-2, R-3 and C-N"
+      "note": "The code has no ADU text. Only one dwelling is allowed per lot (360-24). Conversion of an existing house to a two-family dwelling is permitted in R-2, R-3 and C-N, and a historic residence in H may be a two-family dwelling"
     },
     "status_by_form": {
       "value": {
@@ -72,7 +73,7 @@
       "url": "https://ecode360.com/print/WA2765?guid=6216587",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "'Except for manufactured home parks, there may be only one dwelling, hotel, or rooming house per lot.' A dwelling is 'a building or structure designed for living quarters for one or more families' (360-5), so a unit in a separate building is a second dwelling"
+      "note": "'Except for manufactured home parks, there may be only one dwelling, hotel, or rooming house per lot.' A dwelling is 'a building or structure designed for living quarters for one or more families' (360-5), so a unit in a separate building is a second dwelling. In H the bar is disputed: 360-152M(1) lets a single-family residence for a permanent on-site caretaker stand as an accessory use, including on the lot of a historic home"
     }
   },
   "approval": {
@@ -82,7 +83,7 @@
       "url": "https://ecode360.com/print/WA2765?guid=6218186",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "A second dwelling unit with a single-family house is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). No section read bars a use variance. In R-2, R-3 and C-N the house may instead be converted to a two-family dwelling by right"
+      "note": "A second dwelling unit with a single-family house is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). No section read bars a use variance. In R-2, R-3 and C-N the house may instead be converted to a two-family dwelling by right, and in H a historic residence may be a two-family dwelling"
     },
     "fallback_path": {
       "value": "variance",
@@ -204,18 +205,44 @@
           "districts": [
             "H"
           ],
-          "conditions": "An accessory use in H: 'A single-family residence housing a permanent, on-site caretaker for the property', on a lot whose principal use is one of the H District's permitted historic, cultural or educational uses",
+          "conditions": "An accessory use in H: 'A single-family residence housing a permanent, on-site caretaker for the property' (360-152M(1)), on the same lot with and customarily incidental to any of the H District's permitted uses. Those uses include 'Single-family and two-family detached dwellings in historic residences' (360-152A), so the caretaker's residence may stand on the lot of a historic home as well as on a museum, farm or other historic or cultural use. It must house the property's permanent on-site caretaker. H lot: one acre, 150 ft wide, front 50 ft, side 30 ft, rear 50 ft, buildings at most 30% of the lot (360-155)",
           "requires": [
             {
               "test": null,
-              "condition": "The lot has a permitted H District principal use and the residence houses its permanent on-site caretaker",
-              "section": "360-152M(1)"
+              "condition": "The lot has an H District permitted principal use (a historic residence, a museum, historic agriculture or another use in 360-152A to L) and the residence houses the property's permanent on-site caretaker",
+              "section": "360-152A, M(1)"
             }
           ],
-          "section": "360-152M(1)",
+          "section": "360-152A, M(1), 360-155",
           "url": "https://ecode360.com/print/WA2765?guid=36626755",
           "confidence": "secondary",
-          "note": "Not an ADU listing. A caretaker's house that is accessory to a historic use, not a unit added to a home"
+          "disputed_path": {
+            "path": "not_allowed",
+            "section": "360-24",
+            "url": "https://ecode360.com/print/WA2765?guid=6216587",
+            "note": "'Except for manufactured home parks, there may be only one dwelling, hotel, or rooming house per lot. Each dwelling is to be on a separate, independent lot.' 360-152M(1) names a second residence as an accessory use in H without saying it is excepted from that rule"
+          },
+          "note": "Not an ADU listing. A caretaker's house accessory to a permitted H use, which may be a historic home. Occupancy is limited to the caretaker"
+        },
+        {
+          "name": "Two-family detached dwelling in a historic residence (H District)",
+          "path": "by_right",
+          "districts": [
+            "H"
+          ],
+          "conditions": "'Single-family and two-family detached dwellings in historic residences' are a permitted use in H (360-152A), so an existing historic residence may hold two dwelling units. H lot: one acre, 150 ft wide, front 50 ft, side 30 ft, rear 50 ft, buildings at most 30% of the lot, two off-street parking spaces (360-155B for uses not otherwise listed). The code does not define a historic residence. 360-151 puts weight on features and structures more than 50 years old",
+          "min_lot_sqft": 43560,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The house is a historic residence",
+              "section": "360-152A, 360-151"
+            }
+          ],
+          "section": "360-151, 360-152A, 360-155",
+          "url": "https://ecode360.com/print/WA2765?guid=36626755",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. It makes the historic house a two-family dwelling, one building on one lot, so 360-24 is met"
         }
       ],
       "section": "360-61, 360-70, 360-74, 360-88, 360-152",
