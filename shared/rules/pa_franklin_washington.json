@@ -1,0 +1,732 @@
+{
+  "provenance": {
+    "jurisdiction": "Washington township",
+    "instrument": "Washington Township Zoning Ordinance (Chapter 360 Zoning, Ord. No. 153, adopted 4-2-2001, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 WA2765 (360-5A(9): 'the Township of Washington, Franklin County, Pennsylvania'). Version information: 'Includes legislation through 12-15-2025', uploaded 05-19-2026. New Laws: none listed. Amendments in the sections read run to Ord. No. 299, 300 and 302 (10-20-2025).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/WA2765",
+      "https://ecode360.com/6216322",
+      "https://ecode360.com/WA2765/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22accessory%20unit%22%20OR%20%22farm%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WA2765/search?query=%22two-family%22%20OR%20duplex%20OR%20conversion%20OR%20converted%20OR%20%22manufactured%20home%22%20OR%20%22age-restricted%22%20OR%20%22family%20dwelling%22%20OR%20%22dwelling%2Flot%22%20OR%20%22one%20principal%22%20OR%20%22Franklin%20County%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/WA2765?guid=6216349",
+      "https://ecode360.com/print/WA2765?guid=6216575",
+      "https://ecode360.com/print/WA2765?guid=6216587",
+      "https://ecode360.com/print/WA2765?guid=6217063",
+      "https://ecode360.com/print/WA2765?guid=6217176",
+      "https://ecode360.com/print/WA2765?guid=6217312",
+      "https://ecode360.com/print/WA2765?guid=6217333",
+      "https://ecode360.com/print/WA2765?guid=6217418",
+      "https://ecode360.com/print/WA2765?guid=6217553",
+      "https://ecode360.com/print/WA2765?guid=6217617",
+      "https://ecode360.com/print/WA2765?guid=6217646",
+      "https://ecode360.com/print/WA2765?guid=36626755",
+      "https://ecode360.com/print/WA2765?guid=6218186"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Franklin",
+    "municipality_type": "township",
+    "geoid": "4205581240",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/6216322",
+    "code_current_through": "2025-12-15",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 12-15-2025', uploaded 05-19-2026. New Laws (0).",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law suite or similar listing. 'Any use not permitted by this chapter shall be deemed to be prohibited' (360-11A)",
+      "'Except for manufactured home parks, there may be only one dwelling, hotel, or rooming house per lot. Each dwelling is to be on a separate, independent lot' (360-24). A second dwelling in a garage or other building on the lot is therefore barred",
+      "In R-2 and R-3 an existing single-family detached dwelling may be converted by right to a two-family dwelling (conversion apartment), each unit with two points of entrance or exit and two parking spaces, on the single-family lot plus 3,000 sq ft for each added unit (360-70F, 360-74F). C-N permits conversion apartments too (360-88G, H)",
+      "New two-family detached dwellings (one unit over the other) are permitted by right in A, R-2 and R-3 on a lot 25% larger than the single-family lot. In R-1 a duplex is a conditional use, and 'Existing single-family detached dwellings may not be converted to single-family semidetached (duplex) dwellings' (360-66F(1))",
+      "A single-family dwelling may take rooming or boarding of not more than two persons as a home occupation (360-21C(2))",
+      "Accessory buildings are at most 25 ft in the residential zones (360-12B), not within any front yard, and in a rear yard at least 10 ft from any lot line (360-14D)",
+      "The H District permits 'A single-family residence housing a permanent, on-site caretaker for the property' as an accessory use (360-152M(1)). The I District lists dwellings for bona fide caretakers or watchmen as accessory uses (360-100, seen by search). These are not homes added to a house lot",
+      "When a use is neither permitted nor prohibited, the Board of Supervisors, on the Planning Committee's recommendation, decides whether it is similar to the permitted uses (360-11B)"
+    ],
+    "notes": "Zoning office: Washington Township Zoning Officer (717-762-3128). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, accessory unit and farm dwelling, then for two-family, duplex, conversion, converted, manufactured home, age-restricted, family dwelling, dwelling/lot, one principal and Franklin County. Read in full: Article II, Article III (360-11 to 360-25), Articles VIII to XI, XIV, XV and XXIII, 360-134. Read on screen: 360-5A and the 360-5B definitions named in the notes, Article VII (360-57, 360-59) and the start of Article XIII (360-81). 360-5A(11): a term not defined in Chapter 360 takes its Chapter 310 (Subdivision and Land Development) definition. No bar on use variances was found. Not read: Articles IV to VI, XII, XVI (I District, seen by search), XVII (planned residential developments), XVIII, XIX, XXI and XXII, and Chapter 310"
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 360",
+      "url": "https://ecode360.com/WA2765/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22accessory%20unit%22%20OR%20%22farm%20dwelling%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "No ADU term. Searches of the code for the terms listed in the notes found none"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "360-11A, 360-24, 360-57 to 360-155",
+      "url": "https://ecode360.com/print/WA2765?guid=6216587",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The code has no ADU text. Only one dwelling is allowed per lot (360-24). Conversion of an existing house to a two-family dwelling is permitted in R-2, R-3 and C-N"
+    },
+    "status_by_form": {
+      "value": {
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited",
+        "detached_new": "prohibited"
+      },
+      "section": "360-24",
+      "url": "https://ecode360.com/print/WA2765?guid=6216587",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'Except for manufactured home parks, there may be only one dwelling, hotel, or rooming house per lot.' A dwelling is 'a building or structure designed for living quarters for one or more families' (360-5), so a unit in a separate building is a second dwelling"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "360-11A, 360-134C",
+      "url": "https://ecode360.com/print/WA2765?guid=6218186",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A second dwelling unit with a single-family house is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). No section read bars a use variance. In R-2, R-3 and C-N the house may instead be converted to a two-family dwelling by right"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "360-134C",
+      "url": "https://ecode360.com/print/WA2765?guid=6218186",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Five findings of unnecessary hardship"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion apartment (existing single-family detached dwelling to a two-family dwelling)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "'Conversion apartments, conversions of existing single-family detached dwellings to two-family dwellings' are a permitted use in R-2 and R-3. Each unit has two points of entrance or exit and two off-street parking spaces. 'The minimum lot area shall be determined by the applicable single-family detached dwelling lot size required in this section for the first dwelling unit and additionally 3,000 square feet for each subsequent dwelling unit.' Single-family detached setbacks apply. Approval by the Department of Labor and Industry comes first where it applies",
+          "min_lot_by_utility": [
+            {
+              "when": "Public water and sewer",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 11000
+            },
+            {
+              "when": "On-lot water, public sewer",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 18000
+            },
+            {
+              "when": "On-lot sewer, public water",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 43000
+            },
+            {
+              "when": "On-lot water and sewer",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 43000
+            }
+          ],
+          "section": "360-70F, 360-74F, 360-72B, 360-76B",
+          "url": "https://ecode360.com/print/WA2765?guid=6217333",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. It turns the house into a two-family dwelling, which 360-5 defines with one unit over the other. The 3,000 sq ft per added unit is written in the sentence on conversions to three or more units: whether it also applies to a two-family conversion is a reading. The lot figures shown add 3,000 sq ft to the single-family lot"
+        },
+        {
+          "name": "Conversion apartment in C-N",
+          "path": "by_right",
+          "districts": [
+            "C-N"
+          ],
+          "conditions": "'Single-family dwellings, duplex units and conversion apartments' are permitted in C-N, and the 'conversion of existing single-family detached or multifamily dwellings to two-family or more dwellings', each unit with two points of entrance or exit and two parking spaces. 'The area required per unit shall be as per Subsection I': 10,000 sq ft for the first use and 5,000 sq ft for each additional use",
+          "min_lot_sqft": 15000,
+          "section": "360-88G, H, I, 360-92",
+          "url": "https://ecode360.com/print/WA2765?guid=6217617",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Reading Subsection I's figures as per unit gives 15,000 sq ft for two units"
+        },
+        {
+          "name": "Two-family detached dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Permitted 'provided the lot area is 25% larger than the minimum required for single-family detached dwellings and in compliance with the yard and setback requirements for single-family detached dwellings'. A two-family detached dwelling is 'a building used by two families, with one dwelling unit arranged over the other and having two side yards'. Two parking spaces per unit",
+          "min_lot_by_utility": [
+            {
+              "when": "Public water and sewer",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 10000
+            },
+            {
+              "when": "On-lot water, public sewer",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 18750
+            },
+            {
+              "when": "On-lot sewer, public water",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 50000
+            },
+            {
+              "when": "On-lot water and sewer",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 50000
+            }
+          ],
+          "section": "360-70B, 360-74B, 360-72B, 360-76B, 360-5 (dwelling, two-family detached)",
+          "url": "https://ecode360.com/print/WA2765?guid=6217333",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type. 360-24 allows one dwelling per lot"
+        },
+        {
+          "name": "Two-family detached dwelling in A",
+          "path": "by_right",
+          "districts": [
+            "A"
+          ],
+          "conditions": "Permitted 'provided the lot area is 25% larger than the minimum required for single-family dwellings', so 2.5 acres, with single-family yards. One dwelling unit over the other",
+          "min_lot_sqft": 108900,
+          "section": "360-61B, 360-63B",
+          "url": "https://ecode360.com/print/WA2765?guid=6217176",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type"
+        },
+        {
+          "name": "Caretaker residence in the Historic District",
+          "path": "by_right",
+          "districts": [
+            "H"
+          ],
+          "conditions": "An accessory use in H: 'A single-family residence housing a permanent, on-site caretaker for the property', on a lot whose principal use is one of the H District's permitted historic, cultural or educational uses",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot has a permitted H District principal use and the residence houses its permanent on-site caretaker",
+              "section": "360-152M(1)"
+            }
+          ],
+          "section": "360-152M(1)",
+          "url": "https://ecode360.com/print/WA2765?guid=36626755",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A caretaker's house that is accessory to a historic use, not a unit added to a home"
+        }
+      ],
+      "section": "360-61, 360-70, 360-74, 360-88, 360-152",
+      "url": "https://ecode360.com/print/WA2765?guid=6217333",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 360",
+      "url": "https://ecode360.com/WA2765/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22accessory%20unit%22%20OR%20%22farm%20dwelling%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C",
+        "CN-R",
+        "I"
+      ],
+      "section": "360-81, 360-95, 360-100",
+      "url": "https://ecode360.com/print/WA2765?guid=6217553",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "C and CN-R permit no house (C allows one apartment combined with a commercial use in a multiple-use building). I was seen by search only: dwellings for caretakers or watchmen"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "360-11A, 360-24",
+      "url": "https://ecode360.com/print/WA2765?guid=6216587",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A second dwelling on the lot is barred (360-24)"
+    }
+  },
+  "envelope": {
+    "accessory_structure_max_height_ft": {
+      "value": 25,
+      "section": "360-12B",
+      "url": "https://ecode360.com/print/WA2765?guid=6216587",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'In all residential zones, accessory buildings shall not exceed 25 feet in height.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "360-14D(1)(a)",
+      "url": "https://ecode360.com/print/WA2765?guid=6216587",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'An accessory building shall not be within any front yard.'"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "In a rear yard: 'An accessory building located in a rear yard shall not be erected closer than 10 feet to any lot line'",
+          "setback_side_ft": 10,
+          "setback_rear_ft": 10,
+          "section": "360-14D(1)(b)",
+          "url": "https://ecode360.com/print/WA2765?guid=6216587"
+        }
+      ],
+      "section": "360-14D",
+      "url": "https://ecode360.com/print/WA2765?guid=6216587",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "360-67B, 360-72B, 360-76B",
+      "url": "https://ecode360.com/print/WA2765?guid=6217333",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU. 'Off-street parking per dwelling unit: 2'"
+    }
+  },
+  "districts": {
+    "F-C": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "360-59",
+        "url": "https://ecode360.com/print/WA2765?guid=6217063",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lot size: two acres.' Width 200 ft, depth 180 ft. Where a parcel over 8 acres is subdivided, lots may be one acre if 50% stays open space (360-59C)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "360-59",
+        "url": "https://ecode360.com/print/WA2765?guid=6217063",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "360-59",
+        "url": "https://ecode360.com/print/WA2765?guid=6217063",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "360-59",
+        "url": "https://ecode360.com/print/WA2765?guid=6217063",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "360-59",
+        "url": "https://ecode360.com/print/WA2765?guid=6217063",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "360-59",
+        "url": "https://ecode360.com/print/WA2765?guid=6217063",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 10% of the area of the lot'"
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "360-63",
+        "url": "https://ecode360.com/print/WA2765?guid=6217176",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lot area: two acres.' Width 150 ft, depth 180 ft. 'All total structures shall not cover more than 50% of the lot' (360-63A). Where a parcel over 8 acres is subdivided, lots may be one acre if 50% stays open space (360-63C)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "360-63",
+        "url": "https://ecode360.com/print/WA2765?guid=6217176",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "360-63",
+        "url": "https://ecode360.com/print/WA2765?guid=6217176",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "360-63",
+        "url": "https://ecode360.com/print/WA2765?guid=6217176",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "360-63",
+        "url": "https://ecode360.com/print/WA2765?guid=6217176",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "360-63",
+        "url": "https://ecode360.com/print/WA2765?guid=6217176",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 30% of the area of the lot'"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "360-67",
+        "url": "https://ecode360.com/print/WA2765?guid=6217312",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Public water and sewer: 10,000 sq ft, 75 ft wide, 100 ft deep"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "360-67",
+        "url": "https://ecode360.com/print/WA2765?guid=6217312",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "360-67",
+        "url": "https://ecode360.com/print/WA2765?guid=6217312",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "360-67",
+        "url": "https://ecode360.com/print/WA2765?guid=6217312",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "360-67",
+        "url": "https://ecode360.com/print/WA2765?guid=6217312",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "360-67",
+        "url": "https://ecode360.com/print/WA2765?guid=6217312",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 30% of the area of the lot'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-lot water and sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 15,
+            "section": "360-67B"
+          },
+          {
+            "when": "On-lot sewer, public water",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 15,
+            "section": "360-67B"
+          },
+          {
+            "when": "On-lot water, public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "setback_side_ft": 12,
+            "section": "360-67B"
+          }
+        ],
+        "section": "360-67",
+        "url": "https://ecode360.com/print/WA2765?guid=6217312",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The table's columns: on-lot water and sewer, on-lot sewer (public water), on-lot water (public sewer), public water and sewer. The row holds the public water and sewer column. The Sewage Enforcement Officer or DEP may require a larger lot with on-lot sewage"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "360-72",
+        "url": "https://ecode360.com/print/WA2765?guid=6217333",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Public water and sewer: 8,000 sq ft, 80 ft wide, 100 ft deep (Ord. No. 302, 10-20-2025)"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "360-72",
+        "url": "https://ecode360.com/print/WA2765?guid=6217333",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "360-72",
+        "url": "https://ecode360.com/print/WA2765?guid=6217333",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "360-72",
+        "url": "https://ecode360.com/print/WA2765?guid=6217333",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "360-72",
+        "url": "https://ecode360.com/print/WA2765?guid=6217333",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "360-72",
+        "url": "https://ecode360.com/print/WA2765?guid=6217333",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 30% of the area of the lot'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-lot water and sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 15,
+            "section": "360-72B"
+          },
+          {
+            "when": "On-lot sewer, public water",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 15,
+            "section": "360-72B"
+          },
+          {
+            "when": "On-lot water, public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "setback_side_ft": 10,
+            "section": "360-72B"
+          }
+        ],
+        "section": "360-72",
+        "url": "https://ecode360.com/print/WA2765?guid=6217333",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The table's columns: on-lot water and sewer, on-lot sewer (public water), on-lot water (public sewer), public water and sewer. The row holds the public water and sewer column. The Sewage Enforcement Officer or DEP may require a larger lot with on-lot sewage"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "360-76",
+        "url": "https://ecode360.com/print/WA2765?guid=6217418",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Public water and sewer: 8,000 sq ft, 80 ft wide, 100 ft deep (Ord. No. 302, 10-20-2025)"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "360-76",
+        "url": "https://ecode360.com/print/WA2765?guid=6217418",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "360-76",
+        "url": "https://ecode360.com/print/WA2765?guid=6217418",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "360-76",
+        "url": "https://ecode360.com/print/WA2765?guid=6217418",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "360-76",
+        "url": "https://ecode360.com/print/WA2765?guid=6217418",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "360-76",
+        "url": "https://ecode360.com/print/WA2765?guid=6217418",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 30% of the area of the lot'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-lot water and sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 15,
+            "section": "360-76B"
+          },
+          {
+            "when": "On-lot sewer, public water",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 15,
+            "section": "360-76B"
+          },
+          {
+            "when": "On-lot water, public sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "setback_side_ft": 10,
+            "section": "360-76B"
+          }
+        ],
+        "section": "360-76",
+        "url": "https://ecode360.com/print/WA2765?guid=6217418",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The table's columns: on-lot water and sewer, on-lot sewer (public water), on-lot water (public sewer), public water and sewer. The row holds the public water and sewer column. The Sewage Enforcement Officer or DEP may require a larger lot with on-lot sewage"
+      }
+    },
+    "C-N": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "360-92B",
+        "url": "https://ecode360.com/print/WA2765?guid=6217617",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Minimum required for all uses not otherwise listed': 10,000 sq ft, 80 ft wide, 150 ft deep. At least 10% of the lot in lawns and landscaping. A duplex is 5,000 sq ft per unit (360-92C)"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "360-92B",
+        "url": "https://ecode360.com/print/WA2765?guid=6217617",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "360-92B",
+        "url": "https://ecode360.com/print/WA2765?guid=6217617",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "360-92B",
+        "url": "https://ecode360.com/print/WA2765?guid=6217617",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "360-92B",
+        "url": "https://ecode360.com/print/WA2765?guid=6217617",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "360-92B",
+        "url": "https://ecode360.com/print/WA2765?guid=6217617",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 25% of the area of the lot'"
+      }
+    },
+    "H": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "360-155",
+        "url": "https://ecode360.com/print/WA2765?guid=36626755",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lot area: one acre.' Width 150 ft, depth 180 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "360-155",
+        "url": "https://ecode360.com/print/WA2765?guid=36626755",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "360-155",
+        "url": "https://ecode360.com/print/WA2765?guid=36626755",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "360-155",
+        "url": "https://ecode360.com/print/WA2765?guid=36626755",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "360-155",
+        "url": "https://ecode360.com/print/WA2765?guid=36626755",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "360-155",
+        "url": "https://ecode360.com/print/WA2765?guid=36626755",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 30% of the area of the lot'"
+      }
+    }
+  }
+}

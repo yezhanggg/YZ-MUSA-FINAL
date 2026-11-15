@@ -1,0 +1,770 @@
+{
+  "provenance": {
+    "jurisdiction": "Robinson township",
+    "instrument": "Robinson Township Zoning Ordinance (Chapter 300 Zoning, Ord. No. 3-1993, amended in its entirety 6-5-2017 by Res. No. 8-2017, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 RO0250 (Township of Robinson, Allegheny County: Board of Commissioners, appeals to the Allegheny County Court of Common Pleas, 300-27M(3)). 'Includes legislation through 04-01-2024'. The New Laws list on the chapter shows four uncodified zoning amendments: Ord. No. 2-2025 and 3-2025 (3-3-2025), 4-2025 (7-7-2025) and 2-2026 (5-4-2026), PDF only.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/RO0250",
+      "https://ecode360.com/14125507",
+      "https://ecode360.com/RO0250/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22non-family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/RO0250/search?query=%22two-family%22%20OR%20duplex%20OR%20conversion%20OR%20converted%20OR%20%22manufactured%20home%22%20OR%20%22mobile%20home%22%20OR%20%22farm%20dwelling%22%20OR%20%22age-restricted%22%20OR%20%22agricultural%20employ%22%20OR%20%22family%20dwelling%22%20OR%20%22one%20principal%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/RO0250/search?query=%22not%20listed%22%20OR%20%22not%20specifically%22%20OR%20unlisted%20OR%20dictionary%20OR%20%22mobility%20overlay%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/print/RO0250?guid=14125529",
+      "https://ecode360.com/print/RO0250?guid=14125540",
+      "https://ecode360.com/print/RO0250?guid=14126047",
+      "https://ecode360.com/print/RO0250?guid=14126093",
+      "https://ecode360.com/print/RO0250?guid=14126217",
+      "https://ecode360.com/print/RO0250?guid=14126241",
+      "https://ecode360.com/print/RO0250?guid=14126277",
+      "https://ecode360.com/print/RO0250?guid=14126279",
+      "https://ecode360.com/print/RO0250?guid=14126280",
+      "https://ecode360.com/print/RO0250?guid=14126305",
+      "https://ecode360.com/print/RO0250?guid=14126346",
+      "https://ecode360.com/print/RO0250?guid=14126347",
+      "https://ecode360.com/print/RO0250?guid=14126348",
+      "https://ecode360.com/print/RO0250?guid=14126528",
+      "https://ecode360.com/print/RO0250?guid=14126641",
+      "https://ecode360.com/print/RO0250?guid=14126713",
+      "https://ecode360.com/print/RO0250?guid=14126897"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200365352",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14125507",
+    "code_current_through": "2024-04-01",
+    "code_current_through_note": "eCode360: 'Includes legislation through 04-01-2024'. New Laws: Ord. No. 2-2025, 3-2025, 4-2025 and 2-2026, each 'Zoning Amendment' to Chapter 300, not codified.",
+    "code_caution": "Four zoning amendments adopted 2025 and 2026 (Ord. No. 2-2025, 3-2025, 4-2025 and 2-2026) are not in the online code and were not read (PDF only). They may change residential district rules. Article VI (planned residential developments) was not read.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law suite or similar listing. 'No accessory structure shall be used for dwelling purposes' (300-73D(2)), so a unit in a garage or other accessory building is barred",
+      "A single-family dwelling is 'a detached residential building, other than a mobile home, designed for or occupied exclusively by one family, which is the only principal structure on the lot and is permanently attached to a foundation' (300-12). A second unit inside the house makes it a two-family or multiple-family dwelling",
+      "Two-family dwellings are permitted by right in R-3 (10,000 sq ft) and R-5 (14,000 sq ft), and new ones in the Mobility Overlay Districts MOD-A, MOD-B and MOD-C. R-4, C-2, C-3, C-4 and MOD-D permit only existing two-family dwellings",
+      "Conversion of an existing single-family dwelling into a multiple-family dwelling (three or more units) is a special exception in R-3 and a permitted use in R-4. Each unit at least 800 sq ft with a kitchen and bath, two parking spaces per unit (300-103A(4))",
+      "A single-family dwelling may also take up to two unrelated boarders, one parking space each, or foster persons placed by court order (300-66)",
+      "Accessory structures are 20 ft in the residential districts, not in the required front yard, at the principal side yard and at least 10 ft from the rear line (300-73C), at most 30% of the required rear yard",
+      "C-4 and C-5 allow temporary living quarters for a caretaker, watchman or security personnel (300-73A(16)), and in C-4 and I-1 a guard or custodian may reside on the premises. These are not homes on a house lot",
+      "Mobility Overlay Districts supersede the base district (300-50). Airport Hazard and Parkway Protection Overlays add rules"
+    ],
+    "notes": "Zoning office: Robinson Township Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling and non-family, then for two-family, duplex, conversion, converted, manufactured home, mobile home, farm dwelling, age-restricted, agricultural employ, family dwelling and one principal, then for not listed, not specifically, unlisted, dictionary and mobility overlay. Read in full: 300-11, 300-27, Article IV (300-31 to 300-49), 300-50 to 300-52, 300-64, 300-73, 300-103A(4). Read on screen: the 300-12 definitions named in the notes and the 300-79E parking schedule. 300-11 has no rule for undefined words ('The particular shall control the general'). No unlisted-use clause and no bar on use variances was found. 300-64D speaks of 'the farm residence' only. Not read: Article VI, 300-98, 300-105, the rest of Articles VII to XIII, the New Laws PDFs and the attachments"
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/RO0250/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22non-family%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "No ADU term. Searches of the code and New Laws for the terms listed in the notes found none"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "300-36 to 300-49, 300-52",
+      "url": "https://ecode360.com/print/RO0250?guid=14126093",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The code has no ADU text. No district lists a second unit with a single-family dwelling"
+    },
+    "status_by_form": {
+      "value": {
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited",
+        "detached_new": "prohibited"
+      },
+      "section": "300-73D(2)",
+      "url": "https://ecode360.com/print/RO0250?guid=14126641",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'No accessory structure shall be used for dwelling purposes.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "300-27I(2), 300-36 to 300-49",
+      "url": "https://ecode360.com/print/RO0250?guid=14126047",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A second dwelling unit with a single-family dwelling is not a listed use. It needs a use variance from the Zoning Hearing Board (MPC 910.2). No section read bars a use variance. In R-3 and R-5 a two-family dwelling is permitted by right, and in R-3 a conversion to three or more units is a special exception"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "300-27I(2)",
+      "url": "https://ecode360.com/print/RO0250?guid=14126047",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Five findings of unnecessary hardship"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "R-5"
+          ],
+          "conditions": "A new two-family dwelling is permitted by right in R-3 (10,000 sq ft, 55 ft wide, side yards 10 ft) and R-5 (14,000 sq ft, 75 ft wide). It is 'a detached residential building containing separate, independent dwelling units for two families, with the units attached either side by side or one over the other, which is the only principal structure on the lot'. Two parking spaces per dwelling unit (300-79E). Only existing two-family dwellings are permitted in R-4, C-2, C-3, C-4 and MOD-D",
+          "min_lot_sqft": 10000,
+          "min_lot_by_district": {
+            "R-3": 10000,
+            "R-5": 14000
+          },
+          "section": "300-38B(1)(b), 300-38C, 300-40B(1)(b), 300-40C, 300-12 (dwelling, two-family), 300-79E",
+          "url": "https://ecode360.com/print/RO0250?guid=14126093",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type. Whether a single-family house may be altered into a two-family dwelling is not stated"
+        },
+        {
+          "name": "Two-family dwelling in a Mobility Overlay District",
+          "path": "by_right",
+          "districts": null,
+          "overlays": [
+            "MOD-A",
+            "MOD-B",
+            "MOD-C"
+          ],
+          "conditions": "'Two-family dwelling, new' is a permitted use in MOD-A, MOD-B and MOD-C, which supersede the base district (300-50). Lot area per the R-3 District (10,000 sq ft for a two-family dwelling). Side yards 10 ft in MOD-A and MOD-C, 40 ft in MOD-B. Two parking spaces per dwelling unit",
+          "min_lot_sqft": 10000,
+          "section": "300-50, 300-52A(3)(a)[9], 300-52B(3)(a)[5], 300-52C(3)(a)[4], 300-38C(1)(b)",
+          "url": "https://ecode360.com/print/RO0250?guid=14126348",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type, only where an overlay is mapped"
+        },
+        {
+          "name": "Conversion of an existing single-family dwelling to a multiple-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "A special exception in R-3 (300-38B(3)(d)) and a permitted use in R-4 (300-39B(1)(e)). A multiple-family dwelling has 'three or more separate independent dwelling units'. Each unit at least 800 sq ft with a kitchen and bath, two parking spaces per unit in a paved rear-yard area, a buffer or six-foot opaque fence (300-103A(4)). R-3 lists 'Conversion (single-family to a multiple-family dwelling): 1,200 square feet' and 50 ft width",
+          "min_units": 3,
+          "section": "300-38B(3)(d), 300-38C, 300-39B(1)(e), 300-103A(4), 300-12 (dwelling, conversion, multiple-family)",
+          "url": "https://ecode360.com/print/RO0250?guid=14126897",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Three or more units in all. In R-4 it is a permitted use. Whether R-3's 1,200 sq ft is per unit or for the lot is not stated"
+        }
+      ],
+      "section": "300-38, 300-40, 300-52, 300-103A(4)",
+      "url": "https://ecode360.com/print/RO0250?guid=14126093",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 300",
+      "url": "https://ecode360.com/RO0250/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22non-family%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "district",
+          "condition": "In the Mobility Overlay Districts the overlay's use list and figures supersede the base district (300-50). MOD-A, MOD-B and MOD-C permit new two-family dwellings, MOD-D only existing single-family and two-family dwellings. Single-family figures: MOD-A 5,000 sq ft, front 25 ft, side 10 ft, rear 25 ft, 45 ft. MOD-B the R-3 lot figures, 80 ft wide, front 40 ft, side 15 ft, rear 35 ft. MOD-C 5,000 sq ft, 80 ft wide, front 25 ft, side 10 ft, rear 35 ft. MOD-D 5,000 sq ft, front 75 ft, side 50 ft, rear 50 ft.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "MOD-A",
+            "MOD-B",
+            "MOD-C",
+            "MOD-D"
+          ],
+          "section": "300-50, 300-52A to D",
+          "url": "https://ecode360.com/print/RO0250?guid=14126348"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Parkway Protection Overlay buildings stand at least twice their height and at least 100 ft from the parkway right-of-way (less on shallow lots, never under 25 ft).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Parkway Protection"
+          ],
+          "section": "300-52E(5)",
+          "url": "https://ecode360.com/print/RO0250?guid=14126348"
+        }
+      ],
+      "section": "300-50, 300-52",
+      "url": "https://ecode360.com/print/RO0250?guid=14126348",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1",
+        "C-4",
+        "C-5",
+        "P",
+        "I-1",
+        "I-2"
+      ],
+      "section": "300-41, 300-44, 300-45, 300-46, 300-48, 300-49",
+      "url": "https://ecode360.com/print/RO0250?guid=14126093",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "C-1, C-5, P, I-1 and I-2 permit no dwelling. C-4 permits existing single-family and two-family dwellings with a one-acre lot for other uses and no house figures"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "300-73D(2), 300-12 (dwelling, single-family)",
+      "url": "https://ecode360.com/print/RO0250?guid=14126641",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A dwelling in an accessory structure is barred (300-73D(2))"
+    }
+  },
+  "envelope": {
+    "accessory_structure_max_height_ft": {
+      "value": 20,
+      "section": "300-36C(3)(c), 300-37C(3)(c), 300-38C(3)(c), 300-40C(3)(c)",
+      "url": "https://ecode360.com/print/RO0250?guid=14126093",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Accessory structures in the residential districts"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "In a required rear yard: at least 10 ft from the rear property line, and accessory structures cover at most 30% of the required rear yard (300-73C(3), (4)). The district tables give 6 ft in R-2, R-3 and R-5",
+          "setback_rear_ft": 10,
+          "max_share_of_rear_yard": 0.3,
+          "section": "300-73C(3), (4)",
+          "url": "https://ecode360.com/print/RO0250?guid=14126641"
+        }
+      ],
+      "section": "300-73C",
+      "url": "https://ecode360.com/print/RO0250?guid=14126641",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "300-79E",
+      "url": "https://ecode360.com/print/RO0250?guid=14126713",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU. 'One- and two-family dwellings': '2 spaces per dwelling unit'"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings 25,000 sq ft, 150 ft wide. Accessory structures 20 ft, accessory rear yard 10 ft"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet and 2 1/2 stories'"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Building coverage: 'the horizontal area measured within the outside of the exterior wall of the ground floor of all principal and accessory buildings on the lot as a percent of lot area' (300-12)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "300-36C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious surface coverage'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 14500,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings 14,500 sq ft, 80 ft wide. Nonconforming lots of record under 80 ft wide: side yards at least 12.5 ft. Accessory structures 20 ft, accessory rear yard 6 ft"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet and 2 1/2 stories'"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Building coverage: 'the horizontal area measured within the outside of the exterior wall of the ground floor of all principal and accessory buildings on the lot as a percent of lot area' (300-12)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious surface coverage'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwelling 5,000 sq ft, 50 ft wide. Two-family dwellings 10,000 sq ft, 55 ft wide, side yards 10 ft each. Accessory structures 20 ft, accessory rear yard 6 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Single-family (detached): seven feet each yard; two-family dwellings: 10 feet each yard' (Ord. No. 3-2020)"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet and 2 1/2 stories'"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Building coverage: 'the horizontal area measured within the outside of the exterior wall of the ground floor of all principal and accessory buildings on the lot as a percent of lot area' (300-12)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.65,
+        "section": "300-38C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious surface coverage'"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 14500,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "R-4 permits only existing single-family dwellings, which 'shall conform to the standards of the R-2 District'. These are the R-2 figures"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet and 2 1/2 stories'"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Building coverage: 'the horizontal area measured within the outside of the exterior wall of the ground floor of all principal and accessory buildings on the lot as a percent of lot area' (300-12)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "300-39C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious surface coverage'"
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 11200,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwelling 11,200 sq ft, 70 ft wide. Two-family dwelling 14,000 sq ft, 75 ft wide. Accessory structures 20 ft, accessory rear yard 6 ft"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12.5,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Single-family and two-family dwellings: 12 1/2 feet, each yard'"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet and 2 1/2 stories'"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Building coverage: 'the horizontal area measured within the outside of the exterior wall of the ground floor of all principal and accessory buildings on the lot as a percent of lot area' (300-12)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "300-40C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious surface coverage'"
+      }
+    },
+    "C-2": {
+      "min_lot_sqft": {
+        "value": 14500,
+        "section": "300-42C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "C-2 permits only existing single-family and two-family dwellings. 'Existing single-family dwellings shall conform to all applicable standards of the R-2 District.' These are the R-2 figures"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "300-42C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-42C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "300-42C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-42C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "300-42C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet and 2 1/2 stories'"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "300-42C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Building coverage: 'the horizontal area measured within the outside of the exterior wall of the ground floor of all principal and accessory buildings on the lot as a percent of lot area' (300-12)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "300-42C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious surface coverage'"
+      }
+    },
+    "C-3": {
+      "min_lot_sqft": {
+        "value": 14500,
+        "section": "300-43C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "C-3 permits only existing single-family and two-family dwellings. 'Existing single-family dwellings shall conform to the applicable standards of the R-2 District.' These are the R-2 figures"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "300-43C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-43C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "300-43C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-43C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "300-43C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet and 2 1/2 stories'"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "300-43C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Building coverage: 'the horizontal area measured within the outside of the exterior wall of the ground floor of all principal and accessory buildings on the lot as a percent of lot area' (300-12)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "300-43C(1)(a), 300-37C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126093",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious surface coverage'"
+      }
+    },
+    "S-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "300-47C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126279",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "All uses 10,000 sq ft, 80 ft wide. 'No structure shall be located within 10 feet of any front lot line'. Accessory structures 20 ft"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "300-47C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126279",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "300-47C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126279",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No structure shall be located within 15 feet of any side property line or within 20 feet of any rear property line'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "300-47C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126279",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "300-47C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126279",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "300-47C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126279",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet and 2 1/2 stories'"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "300-47C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126279",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Building coverage: 'the horizontal area measured within the outside of the exterior wall of the ground floor of all principal and accessory buildings on the lot as a percent of lot area' (300-12)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.8,
+        "section": "300-47C",
+        "url": "https://ecode360.com/print/RO0250?guid=14126279",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious surface coverage'"
+      }
+    }
+  }
+}

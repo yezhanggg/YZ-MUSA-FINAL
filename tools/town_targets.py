@@ -1223,6 +1223,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2024-10-08",
         "note": "Zoning: Chapter 27 Zoning (Ord. No. 477, 5-11-2021, as amended). ADU text: 'Accessory dwelling unit' (27-305 Table 2, 27-604): conditional use in R-1, R-2 and MU, lot 20,000 sq ft, owner-occupied, one per lot, at most 25% of the house, 8 ft from the house, an apartment above a detached garage, a manufactured home or a tiny house. Table 2 also rates the unit P in B-2 and I-1, where no dwelling is listed. R-1 density 1.1 units per acre with public sewer, 0.5 without. Conversion dwellings by conditional use (27-643(3)), duplexes by right in R-1 and MU. New Laws: Ord. No. 535 and 551 (zoning) not codified. Ord. No. 551 restates the accessory use table. Read in the browser on eCode360 (NO3691).",
     },
+    "4201900300": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/12752118",
+        "plain_fetch": False,
+        "current_through": "2026-02-23",
+        "note": "Zoning: Chapter 192 Zoning (Ord. No. 92, adopted 9-25-2000, as amended). ADU text: 'Temporary second dwelling' (192-6, 192-15B(10), 192-16B(9), 192-17B(12), 192-54E, 167-21.1): a principal permitted use in RC, RAL and RAM for immediate family during a family hardship the Board of Supervisors finds, permission for 12 months at a time, a mobile, modular or manufactured home not on a permanent foundation (192-54E(1) also names an apartment in the house or a carriage house), lot of two acres with on-lot sewage or one acre with public sewer, at least 500 sq ft, counts as one-half dwelling unit for density, one per lot. No use variance for a use not permissible in a district (192-76C). Double dwellings by right in RC, RAL, RAM and R-2, conversion structures (three units) in R-2. Use, dimensional and density schedules only in PDF attachments. Read in the browser on eCode360 (AD1937).",
+    },
+    "4200365352": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/14125507",
+        "plain_fetch": False,
+        "current_through": "2024-04-01",
+        "note": "Zoning: Chapter 300 Zoning (Ord. No. 3-1993, amended in its entirety 6-5-2017 by Res. No. 8-2017). No ADU text. 'No accessory structure shall be used for dwelling purposes' (300-73D(2)). Two-family dwellings by right in R-3 and R-5 and in the Mobility Overlay Districts MOD-A, MOD-B and MOD-C, conversion of an existing single-family dwelling to three or more units by special exception in R-3 and by right in R-4 (300-103A(4)). New Laws: Ord. No. 2-2025, 3-2025, 4-2025 and 2-2026 (zoning) not codified. Read in the browser on eCode360 (RO0250).",
+    },
+    "4205581240": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/6216322",
+        "plain_fetch": False,
+        "current_through": "2025-12-15",
+        "note": "Zoning: Chapter 360 Zoning (Ord. No. 153, adopted 4-2-2001, as amended). No ADU text. One dwelling per lot (360-24). Conversion of an existing single-family detached dwelling to a two-family dwelling (conversion apartment) by right in R-2, R-3 and C-N (360-70F, 360-74F, 360-88G, H), two-family detached dwellings by right in A, R-2 and R-3 on a lot 25% larger than the single-family lot, a caretaker residence accessory to a historic use in H (360-152M(1)). Read in the browser on eCode360 (WA2765).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1246,6 +1267,7 @@ FIXED_BATCH.update({g: 22 for g in ("4209179056", "4207183152", "4204578776")})
 FIXED_BATCH.update({g: 23 for g in ("4209526728", "4204503336", "4213332448")})
 FIXED_BATCH.update({g: 24 for g in ("4204932520", "4209145096", "4213353224")})
 FIXED_BATCH.update({g: 25 for g in ("4209183696", "4207755576", "4200355016")})
+FIXED_BATCH.update({g: 26 for g in ("4201900300", "4200365352", "4205581240")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1338,6 +1360,12 @@ EXTRAS = {
     "4209183696": "Code 27-301 subsections 6B and 9 separate living area for relatives",
     "4207755576": "Code 440-40H(5) accessory family dwelling unit",
     "4200355016": "Code 27-604 accessory dwelling unit",
+    # Batch 26 (2026-11-15): the next towns by population without a rule file. Middle Smithfield was skipped (use and
+    # dimensional tables only in PDF attachments), Cumru (zoning ordinance only as PDFs on the township website) and
+    # Patton (new ADU ordinance Ord. No. 2026-658 of 10-28-2026 not yet codified).
+    "4201900300": "Code 192-54E and 167-21.1 temporary second dwelling, family hardship",
+    "4200365352": "batch 26 by population. Code Chapter 300 has no ADU text",
+    "4205581240": "batch 26 by population. Code Chapter 360 has no ADU text (conversion apartments in R-2, R-3, C-N)",
 }
 
 if __name__ == "__main__":

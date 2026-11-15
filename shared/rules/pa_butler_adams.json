@@ -1,0 +1,931 @@
+{
+  "provenance": {
+    "jurisdiction": "Adams township",
+    "instrument": "Adams Township Zoning Ordinance (Chapter 192 Zoning, Ord. No. 92, adopted 9-25-2000, as amended), with Chapter 167 Subdivision and Land Development 167-21.1, as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 AD1937 (Township of Adams, Butler County: 192-6 'Butler County Recorder of Deeds', 192-9). Code version 2026-02-23. Amendments shown in the sections read run to Ord. No. 186 (2-10-2025), 192 and 193 (2-23-2026). New Laws: Ord. No. 194 (6-22-2026) and 195 (10-12-2026), PDF only, subjects not shown.",
+    "effective_date": "2010-06-29",
+    "source_urls": [
+      "https://ecode360.com/AD1937",
+      "https://ecode360.com/12752118",
+      "https://ecode360.com/AD1937/laws",
+      "https://ecode360.com/AD1937/search?query=%22temporary%20second%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22conversion%20structure%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/AD1937/search?query=%22accessory%20dwelling%22%20OR%20%22variance%22%20OR%20%22undefined%22%20OR%20%22not%20defined%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/AD1937/search?query=%22conversion%20structure%22%20OR%20%22conversion%20structures%22%20OR%20%22principal%20use%22%20OR%20%22single-family%20detached%20dwelling%22%20OR%20%22per%20dwelling%20unit%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/print/AD1937?guid=12752119",
+      "https://ecode360.com/print/AD1937?guid=12752150",
+      "https://ecode360.com/print/AD1937?guid=12752152",
+      "https://ecode360.com/print/AD1937?guid=12752469",
+      "https://ecode360.com/print/AD1937?guid=12752495",
+      "https://ecode360.com/print/AD1937?guid=12752938",
+      "https://ecode360.com/print/AD1937?guid=12752982",
+      "https://ecode360.com/print/AD1937?guid=12753045",
+      "https://ecode360.com/print/AD1937?guid=15018672",
+      "https://ecode360.com/print/AD1937?guid=12753105",
+      "https://ecode360.com/print/AD1937?guid=12753109",
+      "https://ecode360.com/print/AD1937?guid=12753527",
+      "https://ecode360.com/print/AD1937?guid=12753667",
+      "https://ecode360.com/print/AD1937?guid=12753789",
+      "https://ecode360.com/print/AD1937?guid=12753814",
+      "https://ecode360.com/print/AD1937?guid=12753823",
+      "https://ecode360.com/print/AD1937?guid=12754248",
+      "https://ecode360.com/print/AD1937?guid=14999331",
+      "https://ecode360.com/print/AD1937?guid=14999381"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Butler",
+    "municipality_type": "township",
+    "geoid": "4201900300",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/12752118",
+    "code_current_through": "2026-02-23",
+    "code_current_through_note": "eCode360: 'Includes legislation through 02-23-2026' (code version 2026-02-23). New Laws lists Ord. No. 194 (2026-06-22) and 195 (2026-10-12) as PDFs without subjects. Searches of the code and New Laws for the ADU terms returned no New Laws hit.",
+    "code_caution": "The use schedules (Attachments 1 and 2), the Schedule of Dimensional Standards (Attachment 3) and the Schedule of Development Densities (Attachment 4) are PDFs and were not opened. The file uses the district sections' own text. A search excerpt of Attachment 1 shows four marks on the temporary second dwelling row, while the district text lists it only in RC, RAL and RAM, so a fourth district may be marked there. No lot coverage figure for houses was found in the web text. Ord. No. 194 and 195 (2026) are not codified and their subjects were not seen.",
+    "checks": [
+      "The code's ADU is the 'temporary second dwelling', a principal permitted use in RC, RAL and RAM (192-15B(10), 192-16B(9), 192-17B(12)), subject to 167-21.1 of the Subdivision and Land Development Ordinance. It is 'a dwelling that may be permitted to be placed on a lot that already contains one dwelling, based on a family hardship encountered by the residents of the existing dwelling that can be cured during the extent of the hardship by the presence of the second dwelling' (192-6)",
+      "Only immediate family of the family in the house may live there: brother, sister, child, parent, grandparent and their spouses, parents or children (167-21.1B). The Board of Supervisors must find a family hardship that housing elsewhere cannot resolve, and permission lasts at most 12 months, renewable. When the need ends the dwelling is removed within three months (167-21.1E to H)",
+      "167-21.1A says the dwelling 'shall be a mobile, modular or manufactured home' and D that it 'shall not be permanently affixed to the ground by means of a foundation or otherwise'. 192-54E(1) says accessory dwellings 'shall consist of apartments integrated within single-family dwellings, or those located in detached accessory dwellings, such as carriage houses or manufactured housing'. Whether a unit inside the house or in a garage qualifies is disputed: ask. 192-4B applies the more restrictive provision",
+      "Lot: two acres with an on-lot sewage system, one acre with public sanitary sewer (167-21.1A). The 167-9 definition says two acres. At least 500 sq ft of gross floor area, two rooms, private sanitary facilities with hot and cold running water, and cooking and food storage facilities (192-54E(2)). One per lot (192-54E(4))",
+      "For density each accessory dwelling counts as one-half dwelling unit (192-54E(3)). It must meet the site, building design, height, access and other standards for principal dwellings in the district (192-54E(5)): 35 ft height (192-52D(1)) and the district yards",
+      "Parking: '1 space per bedroom' for an 'Accessory dwelling (temporary second dwelling)', while a mobile, modular or manufactured home row says 3 spaces per home (192-56C, Table 9-B)",
+      "Accessory buildings stand only in a rear or side yard, not forward of the front wall of the house (192-54B), and other accessory buildings are at most 15 ft and one story (192-54D). In RC, RAL, RAM, R-1 and R-2 accessory structures stand at least 10 ft from side and rear lines",
+      "Outside RC, RAL and RAM the temporary second dwelling is not listed, and 'No use listed in one zoning district is allowed in a second ... unless listed' (192-14E). The Zoning Hearing Board may not grant a use variance (192-76C)",
+      "Double dwellings are permitted by right in RC, RAL, RAM and R-2, conversion structures (three units) in R-2. GT permits no single-family dwelling (multifamily with public utilities only). In C and B a single-family detached dwelling is a special exception, in I single-family and double dwellings. C also allows second-floor apartments over a permitted use, one per acre (192-23C(2))",
+      "The Airport Hazard Overlay (Article VA) was not read"
+    ],
+    "notes": "Zoning office: Adams Township Building and Zoning (724-625-1827). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, with New Laws and attachments) for temporary second dwelling, accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver and conversion structure, then for accessory dwelling, variance and not defined, then for conversion structure, principal use, single-family detached dwelling and per dwelling unit. Read in full: Article I (192-1 to 192-4), 192-5, Article III (192-8 to 192-14), Article IV (192-15 to 192-27), Article V (192-30 to 192-39.1), 192-50, 192-52, 192-54, 192-55, 192-56, 192-76, 167-21.1 and 167-9 (minor land development, temporary second dwelling). Read in 192-6: the definitions named in the notes, A to P in full on screen and the temporary second dwelling definition. 192-5: 'words used in this chapter and not otherwise defined in this article shall have the same meanings as in a standard dictionary'. 192-50C and D require a residence for a caretaker or property owner with a commercial kennel or stable in RC, which is the house itself, not a second unit. The parking table also has an accessory-use row 'Second single-family dwelling' (1 space per bedroom) that no district lists. Former temporary second dwelling by special exception (192-50A) was repealed by Ord. No. 136 (6-29-2010), which made it a permitted use with 167-21.1. Not read: Articles VA, VI, VII, X, XI, XIII, 192-46 to 192-49, 192-51, 192-53, 192-57 to 192-62.2, the attachments and the rest of Chapter 167"
+  },
+  "adu": {
+    "term": {
+      "value": "temporary second dwelling",
+      "section": "192-6 (temporary second dwelling), 192-15B(10), 192-16B(9), 192-17B(12), 192-54E, 167-21.1",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "192-54E calls it an 'accessory dwelling' and the parking table an 'Accessory dwelling (temporary second dwelling)'. 192-6 defines DWELLING, ACCESSORY as 'A second dwelling unit either in or added to an existing single-family detached dwelling, or in a separate accessory structure on the same lot as the main dwelling'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "167-21.1B, E, F",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A temporary home for immediate family facing a hardship, by Board of Supervisors permission for up to 12 months at a time, in RC, RAL and RAM"
+    },
+    "scope_districts": {
+      "value": [
+        "RC",
+        "RAL",
+        "RAM"
+      ],
+      "section": "192-15B(10), 192-16B(9), 192-17B(12)",
+      "url": "https://ecode360.com/print/AD1937?guid=12752495",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Listed as a principal permitted use in RC, RAL and RAM only in the district text"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "192-14E",
+      "url": "https://ecode360.com/print/AD1937?guid=12752469",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'No use listed in one zoning district is allowed in a second or subsequently established district unless listed as a permitted, accessory, or conditional use in that second or subsequent district.' The temporary second dwelling is listed only in RC, RAL and RAM"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "192-15B(10), 192-16B(9), 192-17B(12), 167-21.1E",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Listed as a principal permitted use. It also takes the Board of Supervisors' permission as a minor land development, given only on a finding of family hardship, for at most 12 months at a time. No Zoning Hearing Board hearing is named"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "192-76",
+      "url": "https://ecode360.com/print/AD1937?guid=12754248",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A dimensional variance on the five findings of unnecessary hardship. No use variance (192-76C)"
+    },
+    "use_variance_barred": {
+      "value": true,
+      "section": "192-76C",
+      "url": "https://ecode360.com/print/AD1937?guid=12754248",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The special exception for uses not listed anywhere (192-14H) does not reach the temporary second dwelling, which is listed in RC, RAL and RAM",
+      "quote": "Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved, or any use expressly, or by implication, prohibited by the terms of this chapter in said district.",
+      "districts": null
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Double dwelling (two units, side by side or one above the other)",
+          "path": "by_right",
+          "districts": [
+            "RC",
+            "RAL",
+            "RAM",
+            "R-2"
+          ],
+          "conditions": "A double dwelling is a principal permitted use in RC, RAL, RAM and R-2, on the district lot (43,560 sq ft in RC, RAL and R-2, 32,670 sq ft in RAM). It is 'a building designed and built to contain two dwelling units, whether side by side or one above the other, but each an independent dwelling relative to utilities, facilities, and access'. Double dwellings also appear in planned residential developments (RC, RAL, RAM, R-3M, R-5B) and as a special exception in I. Parking: 2 spaces for the first bedroom plus 1/2 space for each more bedroom",
+          "min_lot_sqft": 32670,
+          "min_lot_by_district": {
+            "RC": 43560,
+            "RAL": 43560,
+            "RAM": 32670,
+            "R-2": 43560
+          },
+          "section": "192-15B(2), 192-16B(2), 192-17B(2), 192-19B(2), 192-6 (dwelling, double), 192-56C",
+          "url": "https://ecode360.com/print/AD1937?guid=12752495",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type. Whether an existing house may be altered into a double dwelling is not stated. The density figures (RC 0.8, RAL 2, RAM 2.5, R-2 one dwelling unit per gross acre) count both units"
+        },
+        {
+          "name": "Conversion structure",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "A conversion structure is a principal permitted use in R-2 (192-19B(6)). It is 'a structure, whether residential or nonresidential, converted to a multifamily dwelling with a maximum of three single-family dwelling units'. A multifamily dwelling has three or more units. The R-2 lot figures are written for other uses (192-19F). The Personal Services Overlay use table (192-38) also lists it",
+          "min_units": 3,
+          "section": "192-19B(6), 192-6 (conversion structure, dwelling, multifamily), 192-38",
+          "url": "https://ecode360.com/print/AD1937?guid=12752495",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A conversion to three units, so it does not add one unit to a house"
+        }
+      ],
+      "section": "192-15 to 192-19, 192-6",
+      "url": "https://ecode360.com/print/AD1937?guid=12752495",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RC",
+        "RAL",
+        "RAM"
+      ],
+      "section": "192-15B(10), 192-16B(9), 192-17B(12)",
+      "url": "https://ecode360.com/print/AD1937?guid=12752495",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "192-54E(1), 192-6 (dwelling, accessory)",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'located on the same lot as single-family dwellings'. The accessory dwelling definition names 'an existing single-family detached dwelling'"
+    },
+    "min_lot_sqft": {
+      "value": 43560,
+      "section": "167-21.1A",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'A minimum of two acres where the property is serviced by an on-lot sewage system; or ... A minimum of one acre where the property is serviced by a public sanitary sewerage system.' The two-acre case is a gate"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 192",
+      "url": "https://ecode360.com/AD1937/search?query=%22temporary%20second%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22conversion%20structure%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The temporary second dwelling is occupied only by immediate family of the family living in the existing dwelling: brother, sister, child, parent, grandparent and their spouses, parents or children.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "167-21.1B",
+          "url": "https://ecode360.com/print/AD1937?guid=14999381"
+        },
+        {
+          "kind": "care",
+          "condition": "The Board of Supervisors must determine that a hardship exists involving the immediate family which cannot be resolved by housing provided elsewhere. Permission lasts at most 12 months and must be renewed before it expires. The Township is told within 48 hours when the family member no longer lives there, no longer needs care or has died, and the dwelling may not be used for anything else and is removed within three months. A plot plan shows the buildings, the sewage system and the dwelling's location.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "bill_overrides": true,
+          "section": "167-21.1C, E, F, G, H, 192-6 (temporary second dwelling)",
+          "url": "https://ecode360.com/print/AD1937?guid=14999381"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Without public sanitary sewer the lot must be at least two acres. With public sewer it must be at least one acre. The dwelling may share the on-lot sewage system with the house if the Township Sewage Enforcement Officer approves.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "public_sewer",
+          "only_below_lot_sqft": 87120,
+          "section": "167-21.1A, I",
+          "url": "https://ecode360.com/print/AD1937?guid=14999381"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "The Subdivision and Land Development definition of a temporary second dwelling names 'a residential development lot of two acres minimum area', while 167-21.1A(2) allows one acre with public sewer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 87120,
+          "confidence": "secondary",
+          "section": "167-9 (minor land development, temporary second dwelling), 167-21.1A",
+          "url": "https://ecode360.com/print/AD1937?guid=14999331"
+        },
+        {
+          "kind": "design",
+          "condition": "The dwelling shall not be permanently affixed to the ground by a foundation or otherwise (167-21.1D), while 192-55B sets mobile, modular or manufactured homes on masonry foundation piers or a foundation wall.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "confidence": "secondary",
+          "section": "167-21.1D, 192-55B",
+          "url": "https://ecode360.com/print/AD1937?guid=14999381"
+        },
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "Each accessory dwelling counts as one-half dwelling unit for density (192-54E(3)). RC allows 0.8 dwelling unit per gross acre for permitted uses, so a house and the unit (1.5 units) need about 81,675 sq ft of gross area. The one-acre RC lot minimum is itself above that density, so whether the figure applies to one existing lot is not clear.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "RC"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 81675,
+          "confidence": "secondary",
+          "section": "192-54E(3), 192-15G(1), 192-6 (density)",
+          "url": "https://ecode360.com/print/AD1937?guid=12753789"
+        },
+        {
+          "kind": "utilities",
+          "condition": "In RAM private wells and on-lot septic systems are permitted for single-family detached and duplex dwellings on lots recorded before the chapter was enacted. All other uses connect to public sanitary sewerage and water, which may include a temporary second dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "RAM"
+          ],
+          "building_types": null,
+          "test": "public_sewer",
+          "confidence": "secondary",
+          "section": "192-17F(2)(b)",
+          "url": "https://ecode360.com/print/AD1937?guid=12752495"
+        },
+        {
+          "kind": "other",
+          "condition": "Lots in a planned residential development (RC 25 acres, RAL 25 acres, RAM 20 acres, R-3M 20 acres, R-5B by conditional use on 40 acres) take the development's lot table, with public sewer and water, not the district figures.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "RC",
+            "RAL",
+            "RAM",
+            "R-3M",
+            "R-5B"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "192-15H, 192-16G, 192-17G, 192-20F, 192-22D(1)",
+          "url": "https://ecode360.com/print/AD1937?guid=12752495"
+        },
+        {
+          "kind": "district",
+          "condition": "On an undeveloped parcel in the Route 228 Overlay or the Personal Services Overlay the owner may choose the overlay use option, with the overlay's own use table (no temporary second dwelling or single-family dwelling is listed) and its dimensional chart. Land development review applies.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Route 228",
+            "Personal Services"
+          ],
+          "confidence": "secondary",
+          "section": "192-30, 192-37A, 192-38, 192-39",
+          "url": "https://ecode360.com/print/AD1937?guid=12753109"
+        }
+      ],
+      "section": "167-21.1, 192-54E",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "GT"
+      ],
+      "section": "192-26B",
+      "url": "https://ecode360.com/print/AD1937?guid=15018672",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "GT permits multifamily dwellings with all public utilities and no single-family dwelling"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new"
+      ],
+      "section": "167-21.1A, D, 192-54E(1)",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Such dwelling shall be a mobile, modular or manufactured home' (167-21.1A), not permanently affixed to the ground (167-21.1D). 192-54E(1) also names manufactured housing in a detached accessory dwelling"
+    },
+    "types_in_conflict": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "192-54E(1), 167-21.1A",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "192-54E(1): 'Accessory dwellings shall consist of apartments integrated within single-family dwellings, or those located in detached accessory dwellings, such as carriage houses or manufactured housing'. 167-21.1A: 'Such dwelling shall be a mobile, modular or manufactured home'. 192-4B applies the more restrictive provision and 192-5 says 'the particular controls the general'"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "A mobile, modular or manufactured home placed on the lot"
+      },
+      "section": "167-21.1A",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": 500,
+      "section": "192-54E(2)",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory dwellings shall be at least 500 square feet in total gross floor area, and shall contain at least two rooms and private sanitary facilities with hot and cold running water, and cooking and food storage facilities.' No maximum"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "192-52D(1), 192-54E(5)",
+      "url": "https://ecode360.com/print/AD1937?guid=12753667",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "192-54E(5)",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'A permitted accessory dwelling unit shall comply with all other applicable site and building design, height, access, and other standards for principal dwelling units in the zoning district in which the accessory dwelling will be located.'"
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "192-54D, 192-54E(5)",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'No accessory building, other than a permitted accessory dwelling unit, shall exceed 15 feet in height or one story'. The unit takes the 35 ft principal height"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "192-54D",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "One story. Agricultural buildings exempt"
+    },
+    "accessory_cap_binds_adu": {
+      "value": false,
+      "section": "192-54D",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "The 15 ft cap excludes 'a permitted accessory dwelling unit'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "192-54B",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'An accessory building shall be located only in a rear or side yard of a lot and not forward of the front wall of the structure accommodating the principal use'. Whether a temporary manufactured home is an accessory building is a reading"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "167-21.1",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No owner rule. 167-9 speaks of 'members of the immediate family of the lot owner', 167-21.1B of the family living in the existing dwelling"
+    },
+    "family_only": {
+      "value": true,
+      "section": "167-21.1B",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Immediate family of the family living in the house: brother, sister, child, parent, grandparent and their spouses, parents or children, during a family hardship the Board of Supervisors finds.",
+      "section": "167-21.1B, E",
+      "url": "https://ecode360.com/print/AD1937?guid=14999381",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The temporary second dwelling shall only be occupied by immediate family of the family living in the existing dwelling.'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "192-54E(4)",
+      "url": "https://ecode360.com/print/AD1937?guid=12753789",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'There shall not be more than one accessory dwelling on a lot in addition to the single-family dwelling.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "192-56C (Table 9-B)",
+      "url": "https://ecode360.com/print/AD1937?guid=12753823",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "'Accessory dwelling (temporary second dwelling)': '1 space per bedroom'"
+    },
+    "reading": {
+      "value": "One space per bedroom of the temporary second dwelling (Table 9-B). The table's row for a mobile, modular or manufactured home says 3 spaces per home, and 192-55A applies single-family parking to such homes. The house needs 3 spaces.",
+      "section": "192-56C (Table 9-B), 192-55A",
+      "url": "https://ecode360.com/print/AD1937?guid=12753823",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "RC": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "192-15F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Minimum lot area: 43,560 square feet (one acre) or minimum as determined for on-lot septic disposal above the one-acre minimum.' Width 150 ft. Lots in a planned residential development take the 192-15H table"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-15F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "192-15F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-15F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      }
+    },
+    "RAL": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "192-16F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Minimum lot area: 43,560 square feet (one acre).' Width 100 ft. Lots in a planned residential development take the 192-16G table"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-16F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "192-16F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-16F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      }
+    },
+    "RAM": {
+      "min_lot_sqft": {
+        "value": 32670,
+        "section": "192-17F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Minimum lot area: 32,670 square feet (3/4 acre) for up to a maximum of four dwellings per structure'. Width 90 ft. Lots in a planned residential development take the 192-17G table"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "192-17F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "192-17F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "192-17F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "192-18F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Minimum lot area: 43,560 square feet (one acre) or minimum as required for on-lot septic disposal.' Width 125 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-18F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "192-18F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-18F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "192-19F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lot area: 43,560 square feet.' Width 125 ft. The figures are written for the uses in 192-19B(1) to (5), which take in the single-family and double dwelling"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-19F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "192-19F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-19F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      }
+    },
+    "R-3M": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "192-20F(1)(c)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Single-family detached dwelling lots outside of a planned residential development: 43,560 square feet (one acre).' The yards are the one-acre column of the 192-20F(1)(c)[1] table (width 125 ft). Inside a planned residential development of 20 acres lots may be 6,000 to 15,000 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-20F(1)(c)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "192-20F(1)(c)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-20F(1)(c)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      }
+    },
+    "R-5B": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "192-22F(1)(c)[1]",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lot area: not more than 25% of the lots at least 15,000 square feet and remainder of lots at least 20,000 square feet.' R-5B is a planned development on a tract of at least 100 acres with public sewer and water. The street setback may be 30 ft when the 192-22F(1)(c)[1][d] standards are met. Accessory buildings on residential lots stand 50 ft from the street and 10 ft from side and rear lines"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-22F(1)(c)[1]",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "192-22F(1)(c)[1]",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-22F(1)(c)[1]",
+        "url": "https://ecode360.com/print/AD1937?guid=12752495",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 21780,
+        "section": "192-23F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752938",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lot area: 21,780 square feet where the lot is connected to public sewers, or 43,560 square feet where sewers are not available.' Width 100 ft. A single-family detached dwelling is a special exception here (192-23E(2))"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-23F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752938",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "192-23F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752938",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-23F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752938",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewers",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "section": "192-23F(1)(a)"
+          }
+        ],
+        "section": "192-23F(1)(a)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752938",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The lot figure depends on public sewers only. Water is not named"
+      }
+    },
+    "B": {
+      "min_lot_sqft": {
+        "value": 21780,
+        "section": "192-24F",
+        "url": "https://ecode360.com/print/AD1937?guid=12752982",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lot area: 21,780 square feet where the lot is connected to public sanitary sewers or 43,560 square feet where sewers are not available.' Width 100 ft. A single-family detached dwelling is a special exception here (192-24E(4))"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-24F",
+        "url": "https://ecode360.com/print/AD1937?guid=12752982",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "192-24F",
+        "url": "https://ecode360.com/print/AD1937?guid=12752982",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-24F",
+        "url": "https://ecode360.com/print/AD1937?guid=12752982",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewers",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "section": "192-24F(1)"
+          }
+        ],
+        "section": "192-24F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12752982",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The lot figure depends on public sewers only. Water is not named"
+      }
+    },
+    "I": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "192-25F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753045",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lot area: 43,560 square feet.' Width 100 ft. Single-family detached and double dwellings are special exceptions here (192-25E(4), (5))"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "192-25F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753045",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Also the yard depth next to a public road on every frontage"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "192-25F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753045",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'(two required)'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "192-25F(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753045",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "192-52D(1)",
+        "url": "https://ecode360.com/print/AD1937?guid=12753667",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building or structure containing a principal permitted use shall exceed 35 feet in height, unless expressly provided for otherwise.'"
+      }
+    }
+  }
+}
