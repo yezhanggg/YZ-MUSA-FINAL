@@ -1,0 +1,816 @@
+{
+  "provenance": {
+    "jurisdiction": "Newtown township",
+    "instrument": "Newtown Township Zoning Ordinance (Chapter 172 Zoning, adopted 10-14-1974 as Part Thirteen of the Codified Ordinances, amended 6-8-2009 by Ord. No. 2009-03, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 NE1450, Township of Newtown, Delaware County (172-2, official sign: 'County of Delaware'; New Laws headed 'NEWTOWN DELAWARE COUNTY, PENNSYLVANIA'). Amendments in the sections read run to Ord. No. 2025-06 (11-24-2025) and Ord. No. 2026-01 (2-9-2026). New Laws: Ord. No. 2026-03 (10-12-2026, zoning map: properties added as Class II historic resources), 2026-04 (10-26-2026, Chapter 172: data centers as a conditional use in the I Light Industrial District) and 2026-05 (10-26-2026, official map), read in search excerpts. None touches a dwelling rule.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/NE1450",
+      "https://ecode360.com/15082328",
+      "https://ecode360.com/NE1450/laws",
+      "https://ecode360.com/NE1450/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22accessory%20family%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20%22farm%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NE1450/search?query=%22two-family%22%20OR%20duplex%20OR%20conversion%20OR%20converted%20OR%20%22servants%22%20OR%20estate%20OR%20%22in-law%20suite%22%20OR%20%22mobile%20home%22%20OR%20%22single-family%22%20OR%20%22use%20not%22%20OR%20%22not%20permitted%22%20OR%20%22farm%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NE1450/search?query=%222026-04%22%20AND%20(dwelling%20OR%20district%20OR%20accessory)&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NE1450/search?query=%22zoning%20ordinance%22%20AND%20amend%20AND%202026&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/NE1450?guid=15082331",
+      "https://ecode360.com/print/NE1450?guid=15082436",
+      "https://ecode360.com/print/NE1450?guid=15082441",
+      "https://ecode360.com/print/NE1450?guid=15082619",
+      "https://ecode360.com/print/NE1450?guid=15082663",
+      "https://ecode360.com/print/NE1450?guid=15082686",
+      "https://ecode360.com/print/NE1450?guid=15082709",
+      "https://ecode360.com/print/NE1450?guid=15082757",
+      "https://ecode360.com/print/NE1450?guid=15082808",
+      "https://ecode360.com/print/NE1450?guid=15082815",
+      "https://ecode360.com/print/NE1450?guid=15082970",
+      "https://ecode360.com/print/NE1450?guid=15083253",
+      "https://ecode360.com/print/NE1450?guid=15083339",
+      "https://ecode360.com/print/NE1450?guid=15083356",
+      "https://ecode360.com/print/NE1450?guid=15083736",
+      "https://ecode360.com/print/NE1450?guid=15084131",
+      "https://ecode360.com/print/NE1450?guid=15084454"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204554224",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/15082328",
+    "code_current_through": "2026-02-09",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 02-09-2026' (search result summary). New Laws: Ord. No. 2026-02 to 2026-05, not codified.",
+    "code_caution": "Three ordinances of October 2026 are not yet in the online code (New Laws, PDF). Their search excerpts show a historic resource map change (Ord. No. 2026-03), data centers in the I District (Ord. No. 2026-04) and the official map (Ord. No. 2026-05), none on dwellings. Their full text was not read.",
+    "checks": [
+      "The code's only rule for a second unit on a house lot is in the accessory building section for estates: on a 'mini estate' (an R-1 property of 3 to under 5 acres) or a 'small estate' (a residential property of 5 acres or more in any district) 'an in-law suite or servants quarters may be located above a garage or in a separate suite in the residence. Rental of such space is prohibited, and the location of any such use in a separate building apart from the main structure is subject to the grant of a special exception' (172-103G(3)(a)). On a smaller lot no such unit is listed",
+      "The code's term 'accessory dwelling unit' means a unit 'added to or created within a commercial use' in C-1, by special exception, for an owner or employee of the business (172-2, 172-70O, Ord. No. 2024-03). It is not a unit added to a house",
+      "No garage, carport or shed may have a second story without a Zoning Hearing Board special exception (172-103F(8)). One-story garages are capped at 1,000 sq ft and 17 ft in R-1, 750 sq ft and 15 ft in R-1A and R-2, 500 sq ft and 14 ft in R-3 (172-103B)",
+      "Accessory buildings may not stand in a front yard, must stand 10 ft from any other structure, and stay inside the buildable area unless they are 10 ft behind the rear of the house and 5 ft from the side and rear lines (172-103F(2) to (4)). All accessory buildings together are capped: R-1 1,180 sq ft, R-1A and R-2 900 sq ft, R-3 600 sq ft, plus 135 sq ft per acre on an estate up to 1,350 sq ft beyond the garage (172-103F(6), G(4))",
+      "Converting a house to a two-family dwelling: the special exception table lists 'Building conversion into two-family or multifamily dwelling' (172-111) for R-1, R-2, R-3, SU-1 and SU-2 (172-14), but 172-111 says houses 'may not be converted into two-family or multifamily dwellings unless they are permitted uses in the subject district, and then only by special exception', and no district read permits a two-family dwelling: ask",
+      "Each residence district permits listed uses 'and no other' (172-29A, 172-31A, 172-33A, 172-34A). A use variance is possible: 'A variance is a deviation from the use permitted in a zoning district or the dimensional requirements' (172-15). A residential special exception or variance expires in six months without a building permit unless extended (172-16)",
+      "Dwellings need two off-street paved parking spaces 'per family unit' (172-132A(1))",
+      "In a cluster development community 'Any accessory structure not expressly set forth herein is prohibited' (172-100.29A(4)(e)); only garages, decks, patios, sheds and fences are listed"
+    ],
+    "notes": "Zoning office: Newtown Township Zoning Officer, 209 Bishop Hollow Road, Newtown Square (610-356-0200). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, which also covers New Laws) for accessory apartment, accessory dwelling, accessory family, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, carriage house and farm dwelling, then two-family, duplex, conversion, converted, servants, estate, in-law suite, mobile home, single-family, use not, not permitted and farm. The search did not return the in-law suite text in 172-103G(3)(a), found by reading Article XXI. New Laws searched with '2026-04' and 'zoning ordinance' terms (a laws-only search returned an eCode360 error page). Read in full: 172-2 (A to T, the rest truncated), Article II, Article III (172-7 to 172-17), Articles VI to XII (R-1 to R-5), Article XVI (C-1), 172-88, 172-99, Article XXA, 172-100.29, Article XXI (172-101 to 172-119) and 172-132 (on screen). Not read: Articles IV (conditional uses), XIII (A, seen by search: living accommodations for watchmen and caretakers employed on the premises), XIV (A-O), XV (O), XVII (C-2), XVIII (I), XXB, XXC, XXE (planned residential development), XXVI, XXXII (CCRC), XXXIII (CBRD) and Chapter 93 (historic preservation)"
+  },
+  "adu": {
+    "term": {
+      "value": "in-law suite or servants quarters",
+      "section": "172-103G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Allowed on estates only. The code uses 'accessory dwelling unit' for a unit within a commercial use in C-1 (172-2, 172-70O), kept here as an alternative"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "172-103G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "An in-law suite (read as relatives) or servants quarters, not rented, on an estate of 3 acres or more in R-1 or 5 acres or more elsewhere. Neither term is defined. Servants quarters house household staff, not a tenant"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-1A",
+        "R-2",
+        "R-3",
+        "R-4",
+        "R-4A"
+      ],
+      "section": "172-103G(2), 172-29A, 172-31A, 172-33A, 172-34A, 172-37",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Estates are 'Residential properties located in any district'. These are the districts read that permit a single-family detached dwelling. In R-1 the rule starts at 3 acres, elsewhere at 5 acres"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "172-70, 172-88, 172-99",
+      "url": "https://ecode360.com/print/NE1450?guid=15082970",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "C-1, SU-1 and SU-2 permit no house. Districts not read (A, A-O, O, C-2, I, CCRC, CBRD) are not known to permit one"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "172-103G(3)(a), 172-103F(1)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "On an estate the suite is a listed accessory use ('permitted in estates'), with a zoning permit (172-103F(1)). A suite in a separate building, including above a detached garage, needs a Zoning Hearing Board special exception"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "172-15",
+      "url": "https://ecode360.com/print/NE1450?guid=15082441",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'A variance is a deviation from the use permitted in a zoning district or the dimensional requirements in a zoning district.' Five findings of unnecessary hardship"
+    },
+    "form_paths": {
+      "value": [
+        {
+          "forms": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "path": "special_exception",
+          "section": "172-103G(3)(a), 172-103F(8), 172-13",
+          "url": "https://ecode360.com/print/NE1450?guid=15084131",
+          "note": "'the location of any such use in a separate building apart from the main structure is subject to the grant of a special exception', and a second story on a garage needs a special exception (172-103F(8))"
+        }
+      ],
+      "section": "172-103G(3)(a), 172-103F(8)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Accessory dwelling unit within a commercial use (C-1)",
+          "path": "special_exception",
+          "districts": [
+            "C-1"
+          ],
+          "conditions": "'One accessory dwelling unit as a customary accessory use to the permitted uses set forth in § 172-70A, B, H and I [retail store, personal service shop, confectionery or retail bakery, mortuary], may be permitted by special exception provided that such dwelling unit shall be occupied as a single-family dwelling unit by an owner or employee of the permitted use on that premises.' It is 'added to or created within a commercial use', a separate area with its own cooking, living, bathroom and sleeping facilities (172-2)",
+          "adu_listing": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot holds a retail store, personal service shop, confectionery or retail bakery, or mortuary, and the unit is lived in by its owner or an employee",
+              "section": "172-70O"
+            }
+          ],
+          "section": "172-2 (accessory dwelling unit), 172-70O",
+          "url": "https://ecode360.com/print/NE1450?guid=15082970",
+          "confidence": "verified",
+          "note": "Not a unit added to a house: C-1 permits no dwelling as a principal use (Ord. No. 2024-03, 2-12-2024)"
+        },
+        {
+          "name": "Conversion of a single-family dwelling into a two-family dwelling",
+          "path": "special_exception",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "The special exception table lists 'Building conversion into two-family or multifamily dwelling' under 172-111 for the R-1, R-2 and R-3 Residence Districts (and SU-1 and SU-2). A two-family dwelling is 'designed and occupied exclusively as a residence for two families, with one family living wholly or partly over the other' (172-2)",
+          "section": "172-14, 172-111, 172-2 (dwelling)",
+          "url": "https://ecode360.com/print/NE1450?guid=15082441",
+          "confidence": "secondary",
+          "disputed_path": {
+            "path": "not_allowed",
+            "section": "172-111",
+            "url": "https://ecode360.com/print/NE1450?guid=15084131",
+            "note": "'Because the ordinances of Newtown Township provide for adequate two-family and multifamily dwellings, single-family dwellings may not be converted into two-family or multifamily dwellings unless they are permitted uses in the subject district, and then only by special exception.' R-1, R-2 and R-3 permit single-family dwellings 'and no other' use, so 172-111 would not allow it there"
+          },
+          "note": "Not an ADU listing. 172-14 and 172-111 disagree, and the code has no rule for which governs"
+        }
+      ],
+      "section": "172-14, 172-70O, 172-111",
+      "url": "https://ecode360.com/print/NE1450?guid=15082441",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-1A",
+        "R-2",
+        "R-3",
+        "R-4",
+        "R-4A"
+      ],
+      "section": "172-103G(2)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Estates are residential properties 'in any district'. Listed: the districts read that permit a single-family dwelling"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "172-100.4",
+      "url": "https://ecode360.com/print/NE1450?guid=15083356",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The Historic Resource Overlay permits only the underlying district's uses"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_size",
+          "condition": "In R-1 the property must be a 'mini estate' or larger: three acres or more. 172-103G(2): 'MINI ESTATE Residential properties located in the R-1 District consisting of three or more acres but less than five acres.' 'SMALL ESTATE Residential properties located in any district consisting of five or more acres.' 'LARGE ESTATE Residential properties located in any district consisting of 10 or more acres.' Large estates take the mini and small estate uses 'In addition' (G(3)(b)).",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "172-103G(2), (3)(a)",
+          "url": "https://ecode360.com/print/NE1450?guid=15084131"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Outside R-1 the property must be a 'small estate': five acres or more. 172-103G(2): 'MINI ESTATE Residential properties located in the R-1 District consisting of three or more acres but less than five acres.' 'SMALL ESTATE Residential properties located in any district consisting of five or more acres.' 'LARGE ESTATE Residential properties located in any district consisting of 10 or more acres.' Large estates take the mini and small estate uses 'In addition' (G(3)(b)).",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "not_districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 217800,
+          "section": "172-103G(2), (3)(a)",
+          "url": "https://ecode360.com/print/NE1450?guid=15084131"
+        },
+        {
+          "kind": "occupancy",
+          "condition": "The space is an in-law suite or servants quarters. 'Rental of such space is prohibited.'",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "172-103G(3)(a)",
+          "url": "https://ecode360.com/print/NE1450?guid=15084131"
+        },
+        {
+          "kind": "design",
+          "condition": "Accessory buildings: not in a front yard, at least 10 ft from any other structure, inside the buildable area unless 10 ft behind the rear of the house and 5 ft from the side and rear lines, built of materials like the house. All accessory buildings on an estate total at most the district allotment plus 135 sq ft per acre (up to 1,350 sq ft beyond the garage on a large estate). A garage may get a second story only by special exception.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "172-103F(2) to (4), (6), (8), G(4), H(3)",
+          "url": "https://ecode360.com/print/NE1450?guid=15084131"
+        },
+        {
+          "kind": "district",
+          "condition": "In a cluster development community 'Any accessory structure not expressly set forth herein is prohibited': garages, decks, patios, sheds and fences only. The cluster's own yards replace the district's (front 20 ft, side 10 ft, rear 20 ft, accessory 5 ft from lines).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "172-100.29A(4), B(1)",
+          "url": "https://ecode360.com/print/NE1450?guid=15083736"
+        }
+      ],
+      "section": "172-103G, 172-100.29",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_in_doubt": {
+      "value": [
+        "R-5"
+      ],
+      "section": "172-48, 172-103G(2)",
+      "url": "https://ecode360.com/print/NE1450?guid=15082815",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "R-5 permits housing for the elderly only, on 10-acre lots, and lists 'Only the following accessory uses'. Whether the estate rule for 'Residential properties located in any district' reaches a house there is not settled",
+      "named_by": {
+        "R-5": "reach"
+      }
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "SU-1",
+        "SU-2"
+      ],
+      "section": "172-88, 172-99",
+      "url": "https://ecode360.com/print/NE1450?guid=15083253",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Existing uses and conditional uses (offices, laboratories, recreation, nursing homes, schools). No dwelling"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "over_garage",
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "172-103G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'above a garage or in a separate suite in the residence', and 'in a separate building apart from the main structure' by special exception. A suite above an attached garage is part of the residence (172-2, garage)"
+    },
+    "labels": {
+      "value": {
+        "internal": "A separate suite in the residence",
+        "over_garage": "Above a detached garage (special exception)",
+        "detached_new": "In a separate building (special exception)",
+        "garage_conversion": "In a separate building such as a garage (special exception)"
+      },
+      "section": "172-103G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": null,
+      "section": "172-103B, F(8)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No height for a building holding the suite. A garage is one story (R-1 17 ft, R-1A and R-2 15 ft, R-3 14 ft) unless a second story is approved by special exception"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "172-103F(3)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'All accessory structures shall be located within the buildable area of the lot', unless the exception in F(3)(a) to (c) applies"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "172-103F(4)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'All accessory buildings must be placed no closer than 10 feet to any other structure unless a special exception is granted'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "172-103F(2)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory buildings may not be located in the front yard of a residence.' Both front yards of a corner lot"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "Entirely separate from the house and at least 10 ft farther back from the front street line than the rearmost part of the house may stand within the setback lines, at least 5 ft from the rear and side lines",
+          "setback_side_ft": 5,
+          "setback_rear_ft": 5,
+          "section": "172-103F(3)",
+          "url": "https://ecode360.com/print/NE1450?guid=15084131"
+        }
+      ],
+      "section": "172-103F(3)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 17,
+      "section": "172-103B(1)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A one-story garage in R-1. R-1A and R-2 15 ft, R-3 14 ft (172-103B(2), (3)). Sheds 10 ft (8 ft in R-3)"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "172-103B, F(8), G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The estate rule sets no size or height for the suite. Whether the garage caps govern a suite above a garage approved by special exception is not stated"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "172-103G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No owner rule"
+    },
+    "family_only": {
+      "value": true,
+      "section": "172-103G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "An in-law suite or servants quarters. Neither term is defined"
+    },
+    "occupancy": {
+      "value": "Relatives (an in-law suite) or household servants (servants quarters). Rental is prohibited.",
+      "section": "172-103G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'an in-law suite or servants quarters may be located above a garage or in a separate suite in the residence. Rental of such space is prohibited'"
+    },
+    "max_adus": {
+      "value": null,
+      "section": "172-103G(3)(a)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084131",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "'an in-law suite or servants quarters': no number stated"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "172-132A(1)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084454",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "'two off-street paved parking spaces per family unit'"
+    },
+    "reading": {
+      "value": "Dwellings need two off-street paved spaces per family unit. If the suite counts as a family unit, two more spaces; if it is part of the household's dwelling, none.",
+      "section": "172-132A(1)",
+      "url": "https://ecode360.com/print/NE1450?guid=15084454",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 60000,
+        "section": "172-29B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082619",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Frontage 175 ft"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "172-29B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082619",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "172-29B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082619",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'neither of which shall be less than' this width"
+      },
+      "setback_sides_total_ft": {
+        "value": 85,
+        "section": "172-29B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082619",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Aggregate width of the two side yards"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "172-29B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082619",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "172-29B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082619",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "172-29B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082619",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed' this share 'of the lot area'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "172-29B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082619",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Impervious surface shall not exceed' this share of the lot"
+      }
+    },
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 45000,
+        "section": "172-31B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082663",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Frontage 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "172-31B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082663",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "172-31B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082663",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'neither of which shall be less than' this width"
+      },
+      "setback_sides_total_ft": {
+        "value": 60,
+        "section": "172-31B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082663",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Aggregate width of the two side yards"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "172-31B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082663",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "172-31B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082663",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "172-31B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082663",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed' this share 'of the lot area'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "172-31B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082663",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Impervious surface shall not exceed' this share of the lot"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "172-33B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082686",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Frontage 125 ft"
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "172-33B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082686",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "172-33B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082686",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'neither of which shall be less than' this width"
+      },
+      "setback_sides_total_ft": {
+        "value": 45,
+        "section": "172-33B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082686",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Aggregate width of the two side yards"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "172-33B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082686",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "172-33B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082686",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "172-33B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082686",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed' this share 'of the lot area'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "172-33B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082686",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Impervious surface shall not exceed' this share of the lot"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Frontage 80 ft"
+      },
+      "setback_front_ft": {
+        "value": 45,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'neither of which shall be less than' this width"
+      },
+      "setback_sides_total_ft": {
+        "value": 35,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Aggregate width of the two side yards"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'The building area shall not exceed' this share 'of the lot area'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Impervious surface shall not exceed' this share of the lot"
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "172-34B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082709",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'shall be constructed not to exceed 2 1/2 stories'. Stored as 2"
+      }
+    },
+    "R-4": {
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "172-39",
+        "url": "https://ecode360.com/print/NE1450?guid=15082757",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No building shall exceed three stories, including the basement, or, alternatively, 35 feet'. R-4 is a townhouse and single-family tract district: 10 acres, at most four units per acre of net tract area, buildings at most 15% of the net tract (172-38)"
+      }
+    },
+    "R-4A": {
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "172-45, 172-39",
+        "url": "https://ecode360.com/print/NE1450?guid=15082808",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "R-4 rules apply, except at most 2.25 units per acre of net tract area and 75 ft setbacks from the tract lines"
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 435600,
+        "section": "172-49A",
+        "url": "https://ecode360.com/print/NE1450?guid=15082815",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Housing for the elderly only: 10 acres, at most 10 units per acre, 50 ft frontage"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "172-49C",
+        "url": "https://ecode360.com/print/NE1450?guid=15082815",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "75 ft where abutting R-1, R-1A, R-2 or R-3, 50 ft elsewhere"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "172-49E",
+        "url": "https://ecode360.com/print/NE1450?guid=15082815",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "172-49E",
+        "url": "https://ecode360.com/print/NE1450?guid=15082815",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "172-49D",
+        "url": "https://ecode360.com/print/NE1450?guid=15082815",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Three floors or 45 ft"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "172-49B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082815",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "172-49B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082815",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'not more than 40% of the lot shall be covered by impervious surfaces and buildings'"
+      }
+    },
+    "C-1": {
+      "setback_front_ft": {
+        "value": 20,
+        "section": "172-71A",
+        "url": "https://ecode360.com/print/NE1450?guid=15082970",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "172-71C",
+        "url": "https://ecode360.com/print/NE1450?guid=15082970",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "172-71D",
+        "url": "https://ecode360.com/print/NE1450?guid=15082970",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Three stories, excluding basement, or 45 ft"
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "172-71B",
+        "url": "https://ecode360.com/print/NE1450?guid=15082970",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    }
+  }
+}

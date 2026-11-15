@@ -1,0 +1,968 @@
+{
+  "provenance": {
+    "jurisdiction": "Pine township",
+    "instrument": "Township of Pine Zoning Ordinance (Chapter 84 Zoning, Ord. No. 404, adopted 2-5-2024), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 PI1032 (84-8A(11): 'The word \"County\" means the County of Allegheny, Pennsylvania'). Version information: 'Includes legislation through 08-03-2026.' Chapter 84 was adopted 2-5-2024 by Ord. No. 404, which repealed the 2005 zoning chapter (Ord. No. 327). No amendment notes appear in the sections read. New Laws: 'There are currently no known new laws for this Code.'",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/PI1032",
+      "https://ecode360.com/9187197",
+      "https://ecode360.com/PI1032/laws",
+      "https://ecode360.com/PI1032/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22accessory%20family%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20%22farm%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PI1032/search?query=%22two-family%22%20OR%20duplex%20OR%20%22double%20dwelling%22%20OR%20conversion%20OR%20converted%20OR%20%22mobile%20home%22%20OR%20%22manufactured%20home%22%20OR%20%22age-restricted%22%20OR%20%22family%20dwelling%22%20OR%20%22one%20principal%22%20OR%20%22use%20variance%22%20OR%20%22not%20permissible%22%20OR%20%22tenant%22%20OR%20%22farm%20residence%22%20OR%20%22accessory%20unit%22%20OR%20%22ADU%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/PI1032?guid=45086153",
+      "https://ecode360.com/print/PI1032?guid=45086154",
+      "https://ecode360.com/print/PI1032?guid=45086155",
+      "https://ecode360.com/print/PI1032?guid=45081985",
+      "https://ecode360.com/print/PI1032?guid=45082352",
+      "https://ecode360.com/print/PI1032?guid=45083178",
+      "https://ecode360.com/print/PI1032?guid=45084484",
+      "https://ecode360.com/print/PI1032?guid=45138561"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200360272",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9187197",
+    "code_current_through": "2026-08-03",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 08-03-2026.' New Laws: none listed.",
+    "checks": [
+      "An accessory dwelling unit is permitted by right (P) in E-1, S-1, R-1, R-2 and R-3 and not permitted (blank) in B-1, C-1 and C-2 (84-26, Table 4). A use and occupancy permit is filed first (84-34B(1)(a))",
+      "The unit is for persons 'related by blood, marriage, or legal adoption (including persons receiving foster care) to those occupying the lot's principal dwelling unit' (84-9). The owner must live in one of the dwellings on the lot, and the unit 'not permitted to be used as rental units' (84-34B(1)(b))",
+      "Where the unit goes is unclear in the code's own text. The definition says the ADU 'shall be detached from the principal structure'. 84-34B(1)(c) puts it in a detached accessory structure whose first floor is or was a garage, barn or similar use, or in the principal dwelling. A unit above or inside a garage or barn fits both. A unit inside the house or a new freestanding cottage is in doubt: ask the zoning officer",
+      "At most 50% of the usable floor area of the house or 1,000 sq ft, whichever is less (84-34B(1)(f)). The unit stands at least 10 ft from the house (84-34B(1)(e)). A detached accessory structure may not exceed the footprint of the house (84-34A(2))",
+      "The unit meets the Table 1 setback, bulk and area figures (84-34B(1)(d)): accessory structures 10 ft from side lines, 20 ft from the rear line, not in the required front yard, at most 20 ft tall. Lot coverage (impervious cover) counts the accessory structure and is shown on a plot plan (84-34A(4), 84-34B(1)(i))",
+      "No separate street number for the unit, and no new separate utility connection for a unit in the house unless the lot already has more than one (84-34B(1)(g), (h))",
+      "Parking: the table has no row for an ADU, so the Zoning Officer sets the number (84-122E). A single-family dwelling needs 2 spaces",
+      "The zoning chapter has no two-family dwelling, duplex or conversion use (Table 3)",
+      "Overlays: in the Traditional Village Overlay (Old Wexford) lots may be 7,500 sq ft with 0 ft side and rear yards for principal or accessory structures and 45 ft height (84-29F). The Greenways Overlay keeps structures out of a 40 ft wooded strip and 100 ft from greenway roads in noncommercial districts (84-28C, E). A Town Center Planned Residential Development takes the accessory uses of the underlying district (84-32B(2))"
+    ],
+    "notes": "Zoning office: Township of Pine Building, Planning, and Zoning Department. The eCode360 code PI1032 is the Township of Pine, Allegheny County (84-8A(11), 84-10D). Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all, which also covers New Laws) for accessory apartment, accessory dwelling, accessory family, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling, carriage house and farm dwelling, then for two-family, duplex, double dwelling, conversion, converted, mobile home, manufactured home, age-restricted, family dwelling, one principal, use variance, not permissible, tenant, farm residence, accessory unit and ADU. Read in full: Article II (84-8, 84-9, on screen for the later definitions), Article III (84-10 to 84-26, Tables 1 to 4, use tables checked column by column on screen), Article IV (84-27 to 84-32 in part), 84-34, 84-49, 84-99, 84-122 (in part) and 84-144 (on screen). Not read: 84-36 agricultural operations, 84-40 care facilities, 84-67 mixed uses (seen by search: living quarters for caretakers of places of worship), 84-112, 84-135, 84-140 and Chapter 78. No bar on use variances was found"
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit (ADU)",
+      "section": "84-9 (accessory dwelling unit), 84-26 (Table 4), 84-34B",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "84-34B(1)(g) also calls it 'the accessory apartment'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "84-9 (accessory dwelling unit), 84-26, 84-34B",
+      "url": "https://ecode360.com/print/PI1032?guid=45086153",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A unit for persons related by blood, marriage or adoption (or in foster care) to those in the house, by right in E-1, S-1, R-1, R-2 and R-3, owner-occupied, not rented"
+    },
+    "scope_districts": {
+      "value": [
+        "E-1",
+        "S-1",
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "84-26 (Table 4)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086154",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Table 4 marks 'Accessory dwelling unit' P in E-1, S-1, R-1, R-2 and R-3 (checked on screen)"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "84-26 (Table 4)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086154",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "In B-1, C-1 and C-2 the Table 4 cell is blank, which the table's key reads 'Use not permitted.' 84-11 names only these eight districts"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "84-26 (Table 4), 84-34B(1)(a)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'P = Permitted use by right.' The owner files a use and occupancy permit with the Zoning Officer before the unit is recognized. No hearing"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "84-144H",
+      "url": "https://ecode360.com/print/PI1032?guid=45138561",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Five findings of unnecessary hardship. No section read bars a use variance"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "E-1",
+        "S-1",
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "84-26 (Table 4)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086154",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 84",
+      "url": "https://ecode360.com/PI1032/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22accessory%20family%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20caregiver%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20%22farm%20dwelling%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The unit is for one or more persons related by blood, marriage, or legal adoption (including persons receiving foster care) to those occupying the house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "84-9 (accessory dwelling unit)",
+          "url": "https://ecode360.com/print/PI1032?guid=45086153"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The owner lives in one of the dwellings on the lot, and neither dwelling may be used as a rental unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "84-34B(1)(b)",
+          "url": "https://ecode360.com/print/PI1032?guid=45081985"
+        },
+        {
+          "kind": "building_type",
+          "condition": "The lot holds one, and no more than one, residential structure occupied as a one-unit dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "84-34B(1)(a)",
+          "url": "https://ecode360.com/print/PI1032?guid=45081985"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A unit outside the house is in a detached accessory structure whose first floor is occupied, or was occupied, by a garage, barn or similar accessory use, with a separate entrance to the outside or to an unconditioned porch. It stands at least 10 ft from the house, and the structure may not exceed the footprint of the house.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "84-34A(2), 84-34B(1)(c), (e)",
+          "url": "https://ecode360.com/print/PI1032?guid=45081985"
+        },
+        {
+          "kind": "design",
+          "condition": "No separate street number for the unit. No new separate utility connection for a unit in the house unless the lot already has more than one. A plot plan shows the lot meets the district lot coverage.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "84-34B(1)(g), (h), (i)",
+          "url": "https://ecode360.com/print/PI1032?guid=45081985"
+        },
+        {
+          "kind": "district",
+          "condition": "In the Traditional Village Overlay (Old Wexford) the overlay figures replace the district's: lot 7,500 sq ft, 50 ft wide, building coverage 50%, lot coverage 80%, front yard at least 15 ft (or the smaller of the two adjacent buildings) and at most 25 ft, side and rear yards 0 ft for principal or accessory structures, height 45 ft. The ADU listing comes from the underlying district.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "TVO"
+          ],
+          "section": "84-27B, C, 84-29C, F",
+          "url": "https://ecode360.com/print/PI1032?guid=45086155"
+        },
+        {
+          "kind": "district",
+          "condition": "In the Greenways Overlay no structure may stand in the wooded strip along the road (40 ft wide outside nonresidential districts), and structures in noncommercial districts stand 100 ft from a greenway road's right-of-way unless the TVO or TCDO reduces it. In the Town Center Design Overlay the front setback is 35 ft from the right-of-way.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "GWO",
+            "TCDO"
+          ],
+          "section": "84-28C, E, 84-30D(2)",
+          "url": "https://ecode360.com/print/PI1032?guid=45086155"
+        },
+        {
+          "kind": "district",
+          "condition": "In a Town Center Planned Residential Development (175 acres in C-1 or R-2 within the TCDO) accessory uses are those of the underlying district (Table 4), single-family dwellings are at most 35 ft and residential density at most 10 units per gross acre.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "TC-PRD"
+          ],
+          "section": "84-32B(2), E, G(2), K(7)",
+          "url": "https://ecode360.com/print/PI1032?guid=45086155"
+        }
+      ],
+      "section": "84-9, 84-29, 84-32, 84-34",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1"
+      ],
+      "section": "84-24 (Table 3), 84-26 (Table 4)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086154",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "C-1 permits no single-family dwelling (Table 3) and no ADU (Table 4)"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "84-34B(1)(c), 84-9 (accessory dwelling unit)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Both passages allow a unit that is part of a detached accessory structure such as a garage: one in an existing garage or barn, or above the garage or barn on the first floor"
+    },
+    "types_in_conflict": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new"
+      ],
+      "section": "84-9 (accessory dwelling unit), 84-34B(1)(c), (e), (h)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "84-9 ACCESSORY DWELLING UNIT: 'The ADU shall be detached from the principal structure and may take various forms including a detached unit or a unit that is part of an accessory structure, such as a detached garage.' 84-34B(1)(c): 'The accessory dwelling unit shall be located in a detached accessory structure occupied, or formerly occupied, on the first floor by a garage, barn, or similar accessory use or structure or in a principal dwelling, provided that there is a separate entrance to the exterior or to an unconditioned porch type space.' So a unit inside or added to the house is allowed by 84-34B(1)(c) (and 84-34B(1)(h) speaks of 'the accessory dwelling unit in a principal structure') but the definition says the unit is detached, and 84-34B(1)(e) puts it 10 ft from the principal structure. A new freestanding cottage is a 'detached unit' in the definition, but 84-34B(1)(c) asks for a structure whose first floor is or was a garage, barn or similar use. Both passages were adopted together (Ord. No. 404, 2-5-2024). 84-8A(13) settles only a conflict between text and a table"
+    },
+    "labels": {
+      "value": {
+        "garage_conversion": "In a detached garage, barn or similar accessory structure",
+        "over_garage": "Above a garage or barn on the first floor of a detached accessory structure"
+      },
+      "section": "84-34B(1)(c)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1000,
+      "section": "84-34B(1)(f)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "84-34B(1)(f)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The usable floor area of the accessory dwelling unit shall not exceed 50% of the usable floor area of the principal dwelling unit or 1,000 square feet, whichever is less.'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "84-34A(7), 84-34B(1)(d), 84-19 (Table 1)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086154",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The unit meets 'all setback, bulk, and area requirements' of Table 1, whose accessory height is 20 ft in every residential district. The code does not say whether a unit in an accessory structure takes the accessory or the principal (35 ft) height"
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "84-19 (Table 1), 84-34A(2)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086154",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "84-34A(3)(b), 84-19 (Table 1)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'not located closer than 20 feet to the rear lot line or 10 feet to the side lot line'"
+    },
+    "setback_rear_ft": {
+      "value": 20,
+      "section": "84-34A(3)(b), 84-19 (Table 1)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "84-34A(2), 84-34B(1)(e)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory dwellings shall be located a minimum of 10 feet from the principal structure.'"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "84-34A(3), 84-19 (Table 1)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Accessory structures take the Table 1 accessory yards (side 10 ft, rear 20 ft) and the district front yard, which Table 1 writes 'Front yard (principal or accessory)'. An attached structure is part of the principal structure (84-34A(2))"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 20,
+      "section": "84-19 (Table 1), 84-23 (Table 2), 84-34A(7)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086154",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "84-34B(1)(d)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The ADU meets the Table 1 bulk figures, which include the 20 ft accessory height"
+    },
+    "accessory_share_of_house_part": {
+      "value": [
+        {
+          "what": "A detached accessory structure",
+          "share": 1.0,
+          "of": "the gross square footage footprint of the house",
+          "when": null,
+          "districts": null,
+          "section": "84-34A(2)",
+          "url": "https://ecode360.com/print/PI1032?guid=45081985",
+          "note": "'such detached accessory structures shall not exceed the gross square footage footprint of the principal structure'"
+        }
+      ],
+      "section": "84-34A(2)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "84-34B(1)(b)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units are only permitted in conjunction with owner-occupied properties when the owner occupies one of the dwellings on the lot and are not permitted to be used as rental units.'"
+    },
+    "family_only": {
+      "value": true,
+      "section": "84-9 (accessory dwelling unit)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086153",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "One or more persons related by blood, marriage, or legal adoption (including persons receiving foster care) to those living in the house. Not rented.",
+      "section": "84-9 (accessory dwelling unit), 84-34B(1)(b)",
+      "url": "https://ecode360.com/print/PI1032?guid=45086153",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The ADU provides complete independent living facilities for one or more persons of said individuals that are related by blood, marriage, or legal adoption (including persons receiving foster care) to those occupying the lot's principal dwelling unit.'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "84-34A(6), 84-34B(1)(a)",
+      "url": "https://ecode360.com/print/PI1032?guid=45081985",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The code sets no ADU count. 'no more than one accessory structure by type shall be permitted on an individual lot', and the lot holds one residential structure occupied as a one-unit dwelling"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "84-122E, Table 12",
+      "url": "https://ecode360.com/print/PI1032?guid=45084484",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Table 12 has no ADU row. A single-family dwelling needs '2 per dwelling unit'"
+    },
+    "reading": {
+      "value": "Table 12 has no row for an accessory dwelling unit, so the Zoning Officer determines the parking for it (84-122E). If the unit counts as a dwelling unit at the single-family rate, it adds 2 spaces to the house's 2.",
+      "section": "84-122E, Table 12",
+      "url": "https://ecode360.com/print/PI1032?guid=45084484",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "E-1": {
+      "min_lot_sqft": {
+        "value": 130680,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 300 ft. '3 acres'"
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Front yard (principal or accessory)'"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 84-9 defines LOT COVERAGE as 'The percentage of the lot area covered by all principal structures, accessory structures, and impervious surfaces', so it is impervious cover"
+      },
+      "accessory_setback_front_ft": {
+        "value": 60,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The front yard applies to principal and accessory"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "S-1": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 200 ft. '2 acres'"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Front yard (principal or accessory)'"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 84-9 defines LOT COVERAGE as 'The percentage of the lot area covered by all principal structures, accessory structures, and impervious surfaces', so it is impervious cover"
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The front yard applies to principal and accessory"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 125 ft. '1 acre'"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Front yard (principal or accessory)'"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 84-9 defines LOT COVERAGE as 'The percentage of the lot area covered by all principal structures, accessory structures, and impervious surfaces', so it is impervious cover"
+      },
+      "accessory_setback_front_ft": {
+        "value": 40,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The front yard applies to principal and accessory"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 32670,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 90 ft. '3/4 acre'"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Front yard (principal or accessory)'"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 84-9 defines LOT COVERAGE as 'The percentage of the lot area covered by all principal structures, accessory structures, and impervious surfaces', so it is impervious cover"
+      },
+      "accessory_setback_front_ft": {
+        "value": 30,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The front yard applies to principal and accessory"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 21780,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 70 ft. '1/2 acre'"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Front yard (principal or accessory)'"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 84-9 defines LOT COVERAGE as 'The percentage of the lot area covered by all principal structures, accessory structures, and impervious surfaces', so it is impervious cover"
+      },
+      "accessory_setback_front_ft": {
+        "value": 25,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The front yard applies to principal and accessory"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "84-19 (Table 1)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "B-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Single-family dwellings in the B-1 and C-2 Districts shall be subject to the minimum lot area, lot width, and yard requirements of the R-1 District': 1 acre, 125 ft wide. Height and coverage are the district's own (Table 2). The ADU is not permitted in this district (Table 4). A single-family dwelling is a conditional use in B-1 (Table 3), on an existing lot of record (84-49D(2)(b))"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "R-1 front yard, by 84-49D(2)(a)"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 84-9 defines LOT COVERAGE as 'The percentage of the lot area covered by all principal structures, accessory structures, and impervious surfaces', so it is impervious cover"
+      },
+      "accessory_setback_front_ft": {
+        "value": 40,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "R-1 front yard. Table 2 gives accessory side 10 ft and rear 20 ft"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "C-2": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Single-family dwellings in the B-1 and C-2 Districts shall be subject to the minimum lot area, lot width, and yard requirements of the R-1 District': 1 acre, 125 ft wide. Height and coverage are the district's own (Table 2). The ADU is not permitted in this district (Table 4)"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "R-1 front yard, by 84-49D(2)(a)"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.8,
+        "section": "84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45086154",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 84-9 defines LOT COVERAGE as 'The percentage of the lot area covered by all principal structures, accessory structures, and impervious surfaces', so it is impervious cover"
+      },
+      "accessory_setback_front_ft": {
+        "value": 40,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "R-1 front yard. Table 2 gives accessory side 10 ft and rear 20 ft"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "84-49D(2)(a), 84-23 (Table 2)",
+        "url": "https://ecode360.com/print/PI1032?guid=45082352",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    }
+  }
+}

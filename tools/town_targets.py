@@ -1244,6 +1244,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2025-12-15",
         "note": "Zoning: Chapter 360 Zoning (Ord. No. 153, adopted 4-2-2001, as amended). No ADU text. One dwelling per lot (360-24). Conversion of an existing single-family detached dwelling to a two-family dwelling (conversion apartment) by right in R-2, R-3 and C-N (360-70F, 360-74F, 360-88G, H), two-family detached dwellings by right in A, R-2 and R-3 on a lot 25% larger than the single-family lot, two-family dwellings in historic residences in H (360-152A), a caretaker residence accessory to any H permitted use, a historic home included, against one dwelling per lot (360-152M(1), 360-24). Read in the browser on eCode360 (WA2765).",
     },
+    "4200360272": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/9187197",
+        "plain_fetch": False,
+        "current_through": "2026-08-03",
+        "note": "Zoning: Chapter 84 Zoning (Ord. No. 404, adopted 2-5-2024, repealing the 2005 chapter). ADU text: 'Accessory dwelling unit' (84-9, 84-26 Table 4, 84-34B): by right in E-1, S-1, R-1, R-2 and R-3, not permitted in B-1, C-1 and C-2, for persons related by blood, marriage or adoption to those in the house, owner-occupied, not rented, at most 50% of the house or 1,000 sq ft, 10 ft from the house. The definition says the unit is detached, while 84-34B(1)(c) places it in a detached structure whose first floor is or was a garage or barn, or in the principal dwelling. No two-family dwelling use. Lot coverage is impervious cover (84-9). Read in the browser on eCode360 (PI1032).",
+    },
+    "4204554224": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/15082328",
+        "plain_fetch": False,
+        "current_through": "2026-02-09",
+        "note": "Zoning: Chapter 172 Zoning (1974, amended 6-8-2009 by Ord. No. 2009-03, as amended). ADU text: on estates (R-1 property of 3 to 5 acres, any residential property of 5 acres or more) 'an in-law suite or servants quarters may be located above a garage or in a separate suite in the residence', no rental, a separate building by special exception (172-103G(3)(a)). The code's 'accessory dwelling unit' is a unit within a commercial use in C-1 by special exception for an owner or employee (172-2, 172-70O, Ord. No. 2024-03). Conversion of a house to a two-family dwelling: listed by special exception for R-1, R-2, R-3, SU-1 and SU-2 in 172-14, but 172-111 allows it only where two-family dwellings are permitted. New Laws: Ord. No. 2026-03 (historic resources map), 2026-04 (data centers in I) and 2026-05 (official map) not codified. Read in the browser on eCode360 (NE1450).",
+    },
+    "4212511800": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/30998148",
+        "plain_fetch": False,
+        "current_through": "2026-06-01",
+        "note": "Zoning: Chapter 240 Zoning (Ord. No. 5-00, adopted 5-17-2000, amended in its entirety at Code adoption, as amended to Ord. No. 3-2026). No ADU text. One principal residential building per property (240-46). Two-family dwellings by right in R-2, R-3 and C-3 (R-2 6,000 sq ft and R-3 5,000 sq ft per unit with public sewer), and in the SD residential category and the IHPD overlay. Accessory structure size and height by lot size (240-48A). Lot coverage is building coverage (240-8). Development standards and schedule of uses attachments are PDFs, but the district sections give uses and figures in text. Read in the browser on eCode360 (CE2516).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1268,6 +1289,7 @@ FIXED_BATCH.update({g: 23 for g in ("4209526728", "4204503336", "4213332448")})
 FIXED_BATCH.update({g: 24 for g in ("4204932520", "4209145096", "4213353224")})
 FIXED_BATCH.update({g: 25 for g in ("4209183696", "4207755576", "4200355016")})
 FIXED_BATCH.update({g: 26 for g in ("4201900300", "4200365352", "4205581240")})
+FIXED_BATCH.update({g: 27 for g in ("4200360272", "4204554224", "4212511800")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1366,6 +1388,12 @@ EXTRAS = {
     "4201900300": "Code 192-54E and 167-21.1 temporary second dwelling, family hardship",
     "4200365352": "batch 26 by population. Code Chapter 300 has no ADU text",
     "4205581240": "batch 26 by population. Code Chapter 360 has no ADU text (conversion apartments in R-2, R-3, C-N)",
+    # Batch 27 (2026-11-15): the next towns by population without a rule file. Guilford (Franklin) was skipped (zoning
+    # ordinance only as PDFs on the township website) and Caln (new 2026 zoning chapter with use table and district
+    # dimension charts only in PDF attachments).
+    "4200360272": "Code 84-34B accessory dwelling unit, family only",
+    "4204554224": "Code 172-103G(3)(a) in-law suite or servants quarters on estates",
+    "4212511800": "batch 27 by population. Code Chapter 240 has no ADU text",
 }
 
 if __name__ == "__main__":
