@@ -1,6 +1,6 @@
 {
  "about": "Rule text questions (status by form, lesser-of cap, hearing body, code caution, ADU under another listing). Made by agent/eval/make_more_questions.ts from get_place_answer over the rule files. Do not edit by hand.",
- "generated_at": "2026-11-15T00:40:23.348Z",
+ "generated_at": "2026-11-15T01:26:32.276Z",
  "data_roots": {},
  "data_versions": {},
  "questions": [
@@ -291,6 +291,16 @@
     },
     {
      "kind": "behaviour",
+     "label": "some forms by right, no hearing",
+     "accept": [
+      "by right",
+      "no hearing",
+      "zoning permit"
+     ],
+     "evidence": "by right"
+    },
+    {
+     "kind": "behaviour",
      "label": "gives a next step",
      "accept": [
       "next step",
@@ -306,14 +316,10 @@
     {
      "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
      "why": "a dead-end answer"
-    },
-    {
-     "pattern": "\\bno hearing\\b|\\bby right\\b(?![^.]{0,30}(not|isn))",
-     "why": "says no hearing"
     }
    ],
    "scenario": null,
-   "rubric": "Highland township: A conditional use (detached new, over garage) is decided by the governing body (council, commissioners or supervisors) after a public hearing (MPC 913.2)."
+   "rubric": "Highland township: A conditional use (detached new, over garage) is decided by the governing body (council, commissioners or supervisors) after a public hearing (MPC 913.2). By right, with no hearing: garage conversion, internal, attached."
   },
   {
    "id": "rt-05",

@@ -443,7 +443,8 @@ async function build(): Promise<EvalQuestion[]> {
   });
   Q.push({
     id: 'zone-09', category: 'zoning', question: 'What is the largest ADU Pittsburgh allows, and which code section sets it?', context: ctx({ town: TOWNS.pittsburgh }),
-    required: [['get_rule_text', 'get_lot_rules']], calls: [{ name: 'get_rule_text', input: { place: 'pittsburgh', topic: 'size' } }],
+    // The system prompt sends a town question to get_place_answer first, so it counts too.
+    required: [['get_rule_text', 'get_lot_rules', 'get_place_answer']], calls: [{ name: 'get_rule_text', input: { place: 'pittsburgh', topic: 'size' } }],
     facts: ([r]) => {
       const cap = rows(r, 'rules').find((x) => x.key === 'size.max_sqft')!;
       return [n('size cap', Number(cap.value), 'sqft'), sec('section', String(cap.section))];

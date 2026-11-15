@@ -219,13 +219,22 @@ async function ruleText(): Promise<Spec[]> {
   // Who hears a hearing.
   const hearing = first(await townsWith((a) => a.tier === 'verified' && typeof za(a).who_decides === 'string' && /Zoning Hearing Board|governing body/.test(String(za(a).who_decides)) && a.status !== 'not_addressed'), 'hearing body');
   const body = /Zoning Hearing Board/.test(String(za(hearing.answer).who_decides)) ? ['zoning hearing board'] : ['governing body', 'council', 'commissioners', 'supervisors'];
+  // The town's own forms: a form by right needs no hearing, so "no hearing" is forbidden only where no form is by right.
+  const rt = (await callTool(ctx(), 'get_rule_text', { place: `${hearing.name}, ${hearing.county} County`, topic: 'approval' })).result as Obj;
+  const pathByForm = ((rt.approval as Obj | undefined)?.by_form_today ?? {}) as Record<string, string>;
+  const byRight = Object.keys(pathByForm).filter((t) => pathByForm[t] === 'by_right').map((t) => t.replace(/_/g, ' '));
   Q.push({
     id: 'rt-04', category: 'rule_text', question: `Who decides whether I can add an ADU in ${hearing.name}, ${hearing.county} County? Is there a hearing?`, context: ctx(),
     required: [['get_place_answer', 'get_rule_text']], calls: [placeCall(hearing)],
-    facts: () => [how('names the body', body, body[0] === 'zoning hearing board' ? 'Zoning Hearing Board' : 'governing body'), how('a public hearing', ['hearing'], 'public hearing'), NEXT_STEP],
-    forbidden: [DEAD_END, { pattern: '\\bno hearing\\b|\\bby right\\b(?![^.]{0,30}(not|isn))', why: 'says no hearing' }],
+    facts: () => [
+      how('names the body', body, body[0] === 'zoning hearing board' ? 'Zoning Hearing Board' : 'governing body'),
+      how('a public hearing', ['hearing'], 'public hearing'),
+      ...(byRight.length ? [how('some forms by right, no hearing', ['by right', 'no hearing', 'zoning permit'], 'by right')] : []),
+      NEXT_STEP,
+    ],
+    forbidden: [DEAD_END, ...(byRight.length ? [] : [{ pattern: '\\bno hearing\\b|\\bby right\\b(?![^.]{0,30}(not|isn))', why: 'says no hearing' }])],
     scenario: null,
-    rubric: `${hearing.name}: ${String(za(hearing.answer).who_decides)}.`,
+    rubric: `${hearing.name}: ${String(za(hearing.answer).who_decides)}.${byRight.length ? ` By right, with no hearing: ${byRight.join(', ')}.` : ''}`,
   });
   // The code caution line for a placeholder code.
   const caution = first(await townsWith((a) => typeof a.code_caution === 'string' && /placeholder/i.test(String(a.code_caution))), 'code caution');

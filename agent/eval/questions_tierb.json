@@ -654,7 +654,7 @@
   {
    "id": "tierb-10",
    "category": "tier_b",
-   "question": "Can you quote Easton city's zoning ordinance on ADUs?",
+   "question": "Can you quote New Castle city's zoning ordinance on ADUs?",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -679,7 +679,7 @@
     {
      "name": "search_zoning_text",
      "input": {
-      "place": "Easton city",
+      "place": "New Castle city",
       "query": "accessory dwelling unit"
      }
     }
@@ -722,7 +722,7 @@
     }
    ],
    "scenario": null,
-   "rubric": "No text and no rule file for Easton: says so, gives the statewide baseline or points to the zoning officer, quotes nothing.",
+   "rubric": "No text and no rule file for New Castle city (Lawrence County): says so, gives the statewide baseline or points to the zoning officer, quotes nothing.",
    "quotes": "verbatim"
   }
  ]

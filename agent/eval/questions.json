@@ -1,14 +1,14 @@
 {
  "about": "Eval set for the in-app assistant. Made by agent/eval/make_questions.ts from the lot records and app/public/data: lots are picked by rule and every expected value is read from a tool result. Do not edit by hand. Regenerate with `node agent/eval/cli.mjs make_questions.ts`.",
- "generated_at": "2026-11-12T05:08:10.591Z",
+ "generated_at": "2026-11-15T01:26:01.630Z",
  "data_roots": {
-  "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
-  "philadelphia": "/Users/ye/musa-drive/lots/philadelphia"
+  "pittsburgh": "/Users/ye/Library/Caches/yz-musa/lots-local/pittsburgh",
+  "philadelphia": "/Users/ye/Library/Caches/yz-musa/lots-local/philadelphia"
  },
  "data_versions": {
-  "pittsburgh": "pittsburgh-20261111-bdeb5697ae",
-  "philadelphia": "philadelphia-20261111-b7fa7bda07",
-  "public_data": "2026-11-12 00:01"
+  "pittsburgh": "pittsburgh-20261114-7ae3f25d22",
+  "philadelphia": "philadelphia-20261114-2a67293eaa",
+  "public_data": "2026-11-14 19:29"
  },
  "questions": [
   {
@@ -1943,7 +1943,8 @@
    "tools_required": [
     [
      "get_rule_text",
-     "get_lot_rules"
+     "get_lot_rules",
+     "get_place_answer"
     ]
    ],
    "calls": [
@@ -4078,11 +4079,6 @@
       "owner must",
       "required",
       "yes"
-     ],
-     "reject": [
-      "doesn't have to",
-      "does not have to",
-      "not required"
      ]
     },
     {
@@ -4097,6 +4093,56 @@
   },
   {
    "id": "town-04",
+   "category": "town_rules",
+   "question": "How many parking spaces does an ADU need in Ambler borough? Which section says so?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Ambler borough",
+      "topic": "parking"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "parking.spaces_required",
+     "value": 1,
+     "tol_pct": 0,
+     "unit": "count"
+    },
+    {
+     "kind": "section",
+     "label": "section",
+     "value": "407C"
+    }
+   ],
+   "forbidden": [],
+   "scenario": null,
+   "rubric": "Reads the Ambler borough rule file with get_rule_text and gives the parking rule with its section."
+  },
+  {
+   "id": "town-05",
    "category": "town_rules",
    "question": "How is an ADU approved in Bensalem township? Cite the section.",
    "context": {
@@ -4145,57 +4191,6 @@
    "forbidden": [],
    "scenario": null,
    "rubric": "Reads the Bensalem township rule file with get_rule_text and gives the approval rule with its section."
-  },
-  {
-   "id": "town-05",
-   "category": "town_rules",
-   "question": "How is an ADU approved in Bethel Park municipality? Cite the section.",
-   "context": {
-    "lot": null,
-    "site_lot": null,
-    "town": null,
-    "scenario": null,
-    "unit": null,
-    "adu": {
-     "bedrooms": 1,
-     "size_sqft": 600,
-     "stories": 1
-    },
-    "rule": "current"
-   },
-   "tools_required": [
-    [
-     "get_rule_text",
-     "get_place_answer"
-    ]
-   ],
-   "calls": [
-    {
-     "name": "get_rule_text",
-     "input": {
-      "place": "Bethel Park municipality",
-      "topic": "approval"
-     }
-    }
-   ],
-   "facts": [
-    {
-     "kind": "enum",
-     "label": "approval.path",
-     "value": "variance",
-     "accept": [
-      "variance"
-     ]
-    },
-    {
-     "kind": "section",
-     "label": "section",
-     "value": "910.2"
-    }
-   ],
-   "forbidden": [],
-   "scenario": null,
-   "rubric": "Reads the Bethel Park municipality rule file with get_rule_text and gives the approval rule with its section."
   }
  ]
 }
