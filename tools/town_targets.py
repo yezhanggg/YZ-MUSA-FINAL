@@ -1181,6 +1181,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-05-27",
         "note": "Zoning: Chapter 370 Zoning (Ord. No. 2385, adopted 1-28-2026). ADU text: 'Accessory dwelling units' (370-400): special exception in R-1, R-3, R-5, D and MU, accessory to an owner-occupied single-family dwelling, within or attached to the house or in an accessory building (two stories or 25 ft), 500 sq ft to 50% of the house, at most two people. No use variance for a use not permissible in a district (370-907E), so none in CB, PD, M and HI. Conversion of a large existing house (3,000 sq ft) by special exception (370-446). Read in the browser on eCode360 (HA0246).",
     },
+    "4204932520": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/38846017",
+        "plain_fetch": False,
+        "current_through": "2026-08-19",
+        "note": "Zoning: Chapter 490 Zoning (Ord. No. 2025-243, adopted 1-8-2025, as amended). No ADU text. A separate building used for living is barred (490-88A, 490-94A). Two-family dwellings by right in R-2 (not abutting another), R-3 and R-4 on duplex lots, a planned residential development with duplexes by conditional use in R-1, R-2 and LF (20 acres), a caretaker unit with an industrial establishment. Unlisted uses are a special exception only in I (490-14B). Read in the browser on eCode360 (HA4252).",
+    },
+    "4209145096": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/9509651",
+        "plain_fetch": False,
+        "current_through": "2026-05-06",
+        "note": "Zoning: Chapter 164 Zoning (Ord. No. 62-6 of 1962, as amended). No ADU text. Alteration of a single-family dwelling into a two-family dwelling by conditional use in R-1 (164-30B(3)), and by reference perhaps in R-2 and C. Two-family dwellings by right in VC, in R-4 and R-5 tract developments and in an OLC development on 10 acres. In RO an existing home may become an office and one apartment by conditional use. New Laws: Ord. No. 2026-06 (age-qualified residential in LPOD) and 2026-07 (data center overlay) not codified. Read in the browser on eCode360 (LO0727).",
+    },
+    "4213353224": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/36783754",
+        "plain_fetch": False,
+        "current_through": "2026-07-28",
+        "note": "Zoning: Chapter 380 Zoning (Ord. No. 329, adopted 7-25-2006, as amended). ADU text: ECHO housing (380-14, 380-59A(19)): a portable elder cottage by special exception in RH, A, RR and R, at most 900 sq ft and two people, for a related person 55 or older, handicapped or disabled, on the house's utilities, removed within three months after use ends. Two-family conversion of a large existing house (3,000 sq ft) by special exception in V (380-59A(61)), two-family dwellings by right in RG and V. New Laws: Ord. No. 442 (data centers) not codified. Read in the browser on eCode360 (NE2598).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1202,6 +1223,7 @@ FIXED_BATCH.update({g: 20 for g in ("4209161664", "4213358888", "4204515488", "4
 FIXED_BATCH.update({g: 21 for g in ("4209177152", "4202138288", "4207183256")})
 FIXED_BATCH.update({g: 22 for g in ("4209179056", "4207183152", "4204578776")})
 FIXED_BATCH.update({g: 23 for g in ("4209526728", "4204503336", "4213332448")})
+FIXED_BATCH.update({g: 24 for g in ("4204932520", "4209145096", "4213353224")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1284,6 +1306,11 @@ EXTRAS = {
     "4209526728": "batch 23 by population. Code 200-7 accessory apartment and unit for care of relative (defined, not listed)",
     "4204503336": "Code 1290.14 accessory dwelling units, immediate family",
     "4213332448": "Code 370-400 accessory dwelling units",
+    # Batch 24 (2026-11-15): the next towns by population without a rule file. Chestnuthill was skipped (use and
+    # dimensional tables only in PDF attachments) and Antrim (Franklin) (eCode360 AN1579 is behind a login).
+    "4204932520": "batch 24 by population. Code Chapter 490 has no ADU text",
+    "4209145096": "batch 24 by population. Code Chapter 164 has no ADU text",
+    "4213353224": "Code 380-59A(19) ECHO housing",
 }
 
 if __name__ == "__main__":

@@ -1,0 +1,801 @@
+{
+  "provenance": {
+    "jurisdiction": "Harborcreek township",
+    "instrument": "Harborcreek Township Zoning Ordinance (Chapter 490 Zoning, Ord. No. 2025-243, adopted 1-8-2025, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 HA4252: 'Includes legislation through 08-19-2026'. Chapter 490 was adopted 1-8-2025 by Ord. No. 2025-243 and repealed the 2010 zoning ordinance (Ord. No. 2010-200, as amended). Amendments shown in the sections read: Ord. No. 2025-243-1 (5-21-2025), 2025-243-4 (2-18-2026), 2025-243-5 (6-17-2026) and 2025-243-6 (8-5-2026). The New Laws page lists no uncodified ordinance.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/HA4252",
+      "https://ecode360.com/38846017",
+      "https://ecode360.com/HA4252/laws",
+      "https://ecode360.com/HA4252/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/HA4252/search?query=%22two-family%22%20OR%20duplex%20OR%20conversion%20OR%20converted%20OR%20%22senior%20citizen%22%20OR%20%22age-restricted%22%20OR%20%22mobile%20home%22%20OR%20%22short-term%20rental%22%20OR%20guest%20OR%20%22second%20dwelling%22%20OR%20%22additional%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/HA4252?guid=46276789",
+      "https://ecode360.com/print/HA4252?guid=46276805",
+      "https://ecode360.com/print/HA4252?guid=46277012",
+      "https://ecode360.com/print/HA4252?guid=46277064",
+      "https://ecode360.com/print/HA4252?guid=46277026",
+      "https://ecode360.com/print/HA4252?guid=46277191",
+      "https://ecode360.com/print/HA4252?guid=46277253",
+      "https://ecode360.com/46277253",
+      "https://ecode360.com/print/HA4252?guid=46277255",
+      "https://ecode360.com/print/HA4252?guid=46277259",
+      "https://ecode360.com/print/HA4252?guid=46278719",
+      "https://ecode360.com/print/HA4252?guid=46277264",
+      "https://ecode360.com/print/HA4252?guid=46277268",
+      "https://ecode360.com/print/HA4252?guid=46277272",
+      "https://ecode360.com/print/HA4252?guid=46277276",
+      "https://ecode360.com/print/HA4252?guid=46277280",
+      "https://ecode360.com/print/HA4252?guid=46277284",
+      "https://ecode360.com/print/HA4252?guid=46277395",
+      "https://ecode360.com/print/HA4252?guid=46278160",
+      "https://ecode360.com/print/HA4252?guid=46278265",
+      "https://ecode360.com/print/HA4252?guid=46278440",
+      "https://ecode360.com/print/HA4252?guid=46278647"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Erie",
+    "municipality_type": "township",
+    "geoid": "4204932520",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/38846017",
+    "code_current_through": "2026-08-19",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 08-19-2026'. New Laws: 'There are currently no known new laws for this Code'.",
+    "code_caution": "Chapter 490 is a new ordinance (Ord. No. 2025-243, 1-8-2025). The use table appendix (Attachment 2, Appendix A) is a PDF and was not opened. Each district article lists its uses in the web text (490-14A says the uses are in Articles IV to XIV and also in the appendix), and those lists were read. Amendment ordinances 2025-243-2 and 2025-243-3 were not seen in the sections read. Ask the township whether either changed the residential districts, 490-88 or 490-94.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law suite or similar term. A second dwelling unit on a single-family lot is not a listed use in any district, so it needs a use variance from the Zoning Hearing Board (490-104, 490-143A). A use not included in the chapter is permitted only as a special exception in the I Industrial/Mixed Use District (490-14B), which permits no house",
+      "A separate building for living is barred: 'Individual lots or parcels shall have no building or buildings in addition to the principal building on the same lot used for living purposes with the exception of a Planned Residential Development' (490-94A), and 'no accessory building shall be used for residential purposes' except one caretaker unit with an industrial establishment (490-88A)",
+      "A two-family dwelling (two units, side by side or one over the other, each with its own exterior entrance) is permitted by right in R-2 (provided it does not abut another two-family dwelling), R-3 and R-4 (490-25, 490-28, 490-31). A house made into two units there must meet the duplex lot: 15,000 sq ft with public sewer and water, 20,000 with public sewer and private water, 30,000 with private sewer, side yards 15 ft each. Each unit needs 650 sq ft of floor area and two parking spaces (490-26, 490-29, 490-32, 490-97C, 490-106)",
+      "A single-family dwelling must have at least 1,200 sq ft of livable space (490-16 dwelling, 490-97B). A dwelling unit is for one family and includes complete kitchen and bathroom facilities (490-16)",
+      "An owner-occupied house in AG, R-1, R-2, R-3, V and LF may have one boarder, and a house not occupied by its owner two (four in PU and R-4 for a house not occupied by its owner, two for one that is). A boarder is not a dwelling unit (490-90)",
+      "A planned residential development (conditional use, Board of Supervisors) on 20 contiguous acres in R-1, R-2 or LF may mix single-family, duplex, triplex, quadriplex and townhouse dwellings (490-68, 490-69, 490-72, 490-75, 490-78)"
+    ],
+    "notes": "Zoning office: Harborcreek Township Zoning Administrator. The eCode360 code HA4252 is Harborcreek Township, Erie County (490-13F names the County of Erie Assessment Office, 490-16 the governing body of Harborcreek Township, Erie County). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all (code and New Laws) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee, domestic servants, two-family, duplex, conversion, converted, senior citizen, age-restricted, mobile home, short-term rental, guest, second dwelling and additional dwelling. The ADU terms returned only the dwelling and family definitions, 490-90 boarders, 490-88A (caretaker unit with an industrial establishment), 490-97 and 490-73. Read in full: Article II (490-11 to 490-14), Article III definitions up to JUNKYARD plus the lot coverage, planned residential development and mixed residential/commercial definitions, Articles IV to XIV (every district: AG, R-1, R-2, R-3, R-4, PU, V, LF, B-1, B-2, I), Article XVI (PRD), Article XVIII (490-88 to 490-104), 490-106, 490-124 and Article XXIII (490-139 to 490-146). Not read: Article XV (planned research and business park), Article XVII (490-87, supplemental use rules: the searches found no dwelling rule there), Article XIX except 490-106, Articles XX to XXII except 490-124, and the PDF attachments."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "490-16, 490-18 to 490-49",
+      "url": "https://ecode360.com/HA4252/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee, domestic servants, two-family, duplex, conversion, converted, senior citizen, age-restricted, mobile home, short-term rental, guest, second dwelling and additional dwelling."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "490-14, 490-88A, 490-94A, 490-104",
+      "url": "https://ecode360.com/print/HA4252?guid=46278160",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU text. No district lists a second dwelling unit on a single-family lot. A separate building used for living is expressly barred (490-88A, 490-94A), which is kept for the detached forms in status_by_form. A unit inside the house is not named. A house made into two units is a two-family dwelling, by right only in R-2, R-3 and R-4 on a duplex lot (see the alternatives)."
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "490-88A, 490-94A",
+      "url": "https://ecode360.com/print/HA4252?guid=46278160",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Except as provided elsewhere in this Zoning Ordinance, no accessory building shall be used for residential purposes' (490-88A). 'Individual lots or parcels shall have no building or buildings in addition to the principal building on the same lot used for living purposes with the exception of a Planned Residential Development' (490-94A). A garage built as part of the house is part of the principal building, so this bar reaches a detached garage."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "490-104, 490-142D, 490-143A",
+      "url": "https://ecode360.com/print/HA4252?guid=46278647",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A second unit on a single-family lot is not a listed use in any district, so it needs a use variance from the Zoning Hearing Board on a showing of unnecessary hardship (490-143A, MPC 910.2). No section of the chapter bars use variances. Where two-family dwellings are permitted (R-2, R-3, R-4) a house may instead be made into a two-family dwelling by right on a duplex lot."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "490-143A",
+      "url": "https://ecode360.com/print/HA4252?guid=46278647",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'The ZHB shall hear requests for variances where it is alleged that the provisions of this chapter inflict unnecessary hardship upon the applicant.'"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "490-14B",
+      "url": "https://ecode360.com/print/HA4252?guid=46276789",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'If a use is not included in this chapter, it is permitted as a special exception in the Industrial/Mixed Use District and shall have a public hearing before the Zoning Hearing Board.' This reaches only the I district, which permits no house (only mobile home parks among dwellings). The code also lists the two-family dwelling, so a unit inside a house in R-2, R-3 or R-4 may be read as a two-family dwelling, a listed use, and then this path does not apply."
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "I"
+      ],
+      "section": "490-14B",
+      "url": "https://ecode360.com/print/HA4252?guid=46276789",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Only the Industrial/Mixed Use District."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R-2, R-3, R-4)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "A two-family dwelling is 'A building having two dwelling units each with its own exterior entrance and containing two families', side by side or one over the other. By right in R-2 'provided no such dwelling abuts another', and in R-3 and R-4. Duplex lot: 15,000 sq ft with public sewer and water, 20,000 sq ft with public sewer and private water, 30,000 sq ft with private sewer. Width 100 ft (with both services), front yard 35 ft (50 ft on Routes 5 and 20 and Iroquois Avenue in R-2 and R-3), side yards 15 ft each, rear 35 ft, 35 ft tall, coverage 35% (40% in R-4). Each unit at least 650 sq ft. Two parking spaces per dwelling unit.",
+          "min_lot_sqft": 15000,
+          "min_lot_by_utility": [
+            {
+              "when": "Public sewer and public water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 15000
+            },
+            {
+              "when": "Public sewer with private water",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 20000
+            },
+            {
+              "when": "Private sewer, with public or private water",
+              "public_sewer": false,
+              "min_lot_sqft": 30000
+            }
+          ],
+          "section": "490-16 (dwelling, two-family), 490-25, 490-26, 490-28, 490-29, 490-31, 490-32, 490-97C, 490-106",
+          "url": "https://ecode360.com/print/HA4252?guid=46277255",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. No family or owner rule. The code has no conversion section, so making an existing house into two units is read as a two-family dwelling, which must meet the duplex lot and yards. In R-2 it may not abut another two-family dwelling"
+        },
+        {
+          "name": "Duplex in a planned residential development (R-1, R-2, LF)",
+          "path": "conditional_use",
+          "districts": [
+            "R-1",
+            "R-2",
+            "LF"
+          ],
+          "conditions": "A planned residential development on at least 20 contiguous acres in single ownership, connected to public or community sewer or water, approved by the Board of Supervisors as a conditional use, then a tentative and a final plan. Single-family, duplex, triplex, quadriplex and townhouse designs. One unit per 40,000 sq ft of buildable area in R-1, one per 20,000 sq ft in R-2 and LF. At least 50% open space.",
+          "min_lot_sqft": 871200,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "490-68, 490-69A, 490-70A, 490-72A, 490-73, 490-75A, 490-78",
+          "url": "https://ecode360.com/print/HA4252?guid=46277395",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A development use on 20 acres, not a unit added to one house. The R-3 PRD (15 acres) allows only single-family condominiums. R-4 lists a PRD as a conditional use but 490-68 does not name R-4"
+        },
+        {
+          "name": "Caretaker unit with an industrial establishment",
+          "path": "by_right",
+          "districts": [
+            "I",
+            "B-2"
+          ],
+          "conditions": "'One residential unit for a caretaker may be permitted in conjunction with any industrial establishment' (an exception to the bar on living in accessory buildings).",
+          "min_lot_sqft": 40000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot holds an industrial establishment, and the occupant is its caretaker",
+              "section": "490-88A"
+            }
+          ],
+          "section": "490-88A, 490-46, 490-49, 490-50",
+          "url": "https://ecode360.com/print/HA4252?guid=46278160",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Quarters for the caretaker of an industrial use, not a second unit for a house. 'May be permitted' names no approval body. Industrial uses are listed in I and (light industry) B-2"
+        }
+      ],
+      "section": "490-25, 490-28, 490-31, 490-68 to 490-78, 490-88A",
+      "url": "https://ecode360.com/print/HA4252?guid=46277255",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "490-18 to 490-49",
+      "url": "https://ecode360.com/print/HA4252?guid=46277191",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No district lists an accessory dwelling unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 490",
+      "url": "https://ecode360.com/HA4252/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "Lots in an approved planned residential development (R-1, R-2 and LF, 20 acres) take the development plan's figures: no minimum lot size or width, 25 ft between structures, perimeter setbacks of 100 ft (R-1) or 50 ft (R-2, LF). The district dwelling type, bulk and density rules do not apply there (490-68, 490-73, 490-85G).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1",
+            "R-2",
+            "LF"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "490-68, 490-73, 490-85G",
+          "url": "https://ecode360.com/print/HA4252?guid=46277395"
+        }
+      ],
+      "section": "490-68, 490-73",
+      "url": "https://ecode360.com/print/HA4252?guid=46277395",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "B-1",
+        "B-2",
+        "I"
+      ],
+      "section": "490-43, 490-46, 490-49",
+      "url": "https://ecode360.com/print/HA4252?guid=46277276",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "B-1 and B-2 list no house, only mixed residential/commercial buildings (a unified development of several buildings and uses, 'excluding single-family dwellings'). I lists mobile home parks and no house. Unlisted uses are a special exception in I (490-14B)."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "490-16, 490-88A, 490-94A",
+      "url": "https://ecode360.com/print/HA4252?guid=46278160",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A single-family detached dwelling is 'A dwelling unit on a single lot/parcel for the exclusive use of a single-family household unit with a minimum of 1,200 sq. ft. of livable space'."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "490-97",
+      "url": "https://ecode360.com/print/HA4252?guid=46278160",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU size rule. A unit of a two-family dwelling needs at least 650 sq ft (490-97C)."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "490-19 to 490-41",
+      "url": "https://ecode360.com/print/HA4252?guid=46277255",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Height of structure 35 ft in AG, R-1, R-2, R-3 and R-4, 45 ft in PU, V and LF."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "490-88B",
+      "url": "https://ecode360.com/print/HA4252?guid=46278160",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Accessory structures of 224 sq ft or more, and any second accessory structure, 'must be the setback requirements within the district in which it is placed'. One structure under 224 sq ft may stand 5 ft from the side and rear lines. No accessory building may be used for living (490-88A)."
+    },
+    "front_yard_barred": {
+      "value": null,
+      "section": "490-88",
+      "url": "https://ecode360.com/print/HA4252?guid=46278160",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No rule found that bars an accessory building from the front yard. Accessory buildings meet the district front yard."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "490-90",
+      "url": "https://ecode360.com/print/HA4252?guid=46278160",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. Owner occupancy only changes the number of boarders (490-90)."
+    },
+    "occupancy": {
+      "value": "No ADU occupancy rule. A family is any number of people related by blood, marriage, legal guardianship, foster care or adoption who keep one common household in one dwelling unit, or people with a handicap under the Fair Housing Act living as a single housekeeping unit. A roomer, boarder or lodger is not a family member.",
+      "section": "490-16 (family), 490-90",
+      "url": "https://ecode360.com/print/HA4252?guid=46276805",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "490-106",
+      "url": "https://ecode360.com/print/HA4252?guid=46278265",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU parking rule."
+    },
+    "reading": {
+      "value": "'Single-family dwelling and two-family: 2 per dwelling unit, need not be paved.' If a second unit were approved (for example as a two-family dwelling) it would need two more spaces, four in all.",
+      "section": "490-106B",
+      "url": "https://ecode360.com/print/HA4252?guid=46278265",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "AG": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "490-19",
+        "url": "https://ecode360.com/print/HA4252?guid=46277191",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family farm and non-farm dwellings. Width 150 ft. New lots from a parent tract are limited in number (490-20A)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "490-19",
+        "url": "https://ecode360.com/print/HA4252?guid=46277191",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "490-19",
+        "url": "https://ecode360.com/print/HA4252?guid=46277191",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'30 feet each side' for principal structures and accessory structures over 224 sq ft. An accessory structure under 224 sq ft: 5 ft (20 ft on the street side of a corner lot)."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "490-19",
+        "url": "https://ecode360.com/print/HA4252?guid=46277191",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal structures and accessory structures over 224 sq ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "490-19",
+        "url": "https://ecode360.com/print/HA4252?guid=46277191",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum height of structure'."
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "490-19",
+        "url": "https://ecode360.com/print/HA4252?guid=46277191",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum coverage'. Lot coverage is 'The size of the footprint(s) of a building(s) and/or structure on a lot divided by the size of the lot' (490-16), so it is building cover, not impervious cover."
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "490-23",
+        "url": "https://ecode360.com/46277253",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings. Width 150 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "490-23",
+        "url": "https://ecode360.com/46277253",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "490-23",
+        "url": "https://ecode360.com/46277253",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal structures and accessory structures over 224 sq ft. An accessory structure under 224 sq ft: 5 ft (20 ft on the street side of a corner lot)."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "490-23",
+        "url": "https://ecode360.com/46277253",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal structures and accessory structures over 224 sq ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "490-23",
+        "url": "https://ecode360.com/46277253",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum height of structure'."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "490-23",
+        "url": "https://ecode360.com/46277253",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum coverage'. Lot coverage is 'The size of the footprint(s) of a building(s) and/or structure on a lot divided by the size of the lot' (490-16), so it is building cover, not impervious cover."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "490-26",
+        "url": "https://ecode360.com/print/HA4252?guid=46277255",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings with public sewer and water. Width 75 ft. The single-family lot minimum depends on sewer and water. With public sewer and water 10,000 sq ft (width 75 ft), public sewer and private water 15,000 sq ft (80 ft), private sewer 20,000 sq ft (100 ft)."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "490-26",
+        "url": "https://ecode360.com/print/HA4252?guid=46277255",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "50 ft for properties fronting on Routes 5 and 20 and Iroquois Avenue."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "490-26",
+        "url": "https://ecode360.com/print/HA4252?guid=46277255",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side, principal structures and accessory structures over 224 sq ft."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "490-26",
+        "url": "https://ecode360.com/print/HA4252?guid=46277255",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal structures and accessory structures over 224 sq ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "490-26",
+        "url": "https://ecode360.com/print/HA4252?guid=46277255",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum height of structure'."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "490-26",
+        "url": "https://ecode360.com/print/HA4252?guid=46277255",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum coverage'. Lot coverage is 'The size of the footprint(s) of a building(s) and/or structure on a lot divided by the size of the lot' (490-16), so it is building cover, not impervious cover."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer with private (on-site) water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "section": "490-26"
+          },
+          {
+            "when": "Private sewer, with public or private water",
+            "public_sewer": false,
+            "min_lot_sqft": 20000,
+            "section": "490-26"
+          }
+        ],
+        "section": "490-26",
+        "url": "https://ecode360.com/print/HA4252?guid=46277255",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The single-family lot minimum depends on sewer and water. With public sewer and water 10,000 sq ft (width 75 ft), public sewer and private water 15,000 sq ft (80 ft), private sewer 20,000 sq ft (100 ft)."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "490-29",
+        "url": "https://ecode360.com/print/HA4252?guid=46277259",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings with public sewer and water. Width 75 ft. The single-family lot minimum depends on sewer and water. With public sewer and water 10,000 sq ft (width 75 ft), public sewer and private water 15,000 sq ft (80 ft), private sewer 20,000 sq ft (100 ft)."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "490-29",
+        "url": "https://ecode360.com/print/HA4252?guid=46277259",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "50 ft for properties fronting on Routes 5 and 20 and Iroquois Avenue."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "490-29",
+        "url": "https://ecode360.com/print/HA4252?guid=46277259",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side, principal structures and accessory structures over 224 sq ft."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "490-29",
+        "url": "https://ecode360.com/print/HA4252?guid=46277259",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal structures and accessory structures over 224 sq ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "490-29",
+        "url": "https://ecode360.com/print/HA4252?guid=46277259",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum height of structure'."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "490-29",
+        "url": "https://ecode360.com/print/HA4252?guid=46277259",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum coverage'. Lot coverage is 'The size of the footprint(s) of a building(s) and/or structure on a lot divided by the size of the lot' (490-16), so it is building cover, not impervious cover."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer with private (on-site) water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "section": "490-29"
+          },
+          {
+            "when": "Private sewer, with public or private water",
+            "public_sewer": false,
+            "min_lot_sqft": 20000,
+            "section": "490-29"
+          }
+        ],
+        "section": "490-29",
+        "url": "https://ecode360.com/print/HA4252?guid=46277259",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The single-family lot minimum depends on sewer and water. With public sewer and water 10,000 sq ft (width 75 ft), public sewer and private water 15,000 sq ft (80 ft), private sewer 20,000 sq ft (100 ft)."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "490-32",
+        "url": "https://ecode360.com/print/HA4252?guid=46278719",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings with public sewer and water. Width 75 ft. The single-family lot minimum depends on sewer and water. With public sewer and water 10,000 sq ft (width 75 ft), public sewer and private water 15,000 sq ft (80 ft), private sewer 20,000 sq ft (100 ft)."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "490-32",
+        "url": "https://ecode360.com/print/HA4252?guid=46278719",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "490-32",
+        "url": "https://ecode360.com/print/HA4252?guid=46278719",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side, principal structures and accessory structures over 224 sq ft."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "490-32",
+        "url": "https://ecode360.com/print/HA4252?guid=46278719",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal structures and accessory structures over 224 sq ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "490-32",
+        "url": "https://ecode360.com/print/HA4252?guid=46278719",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum height of structure'."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "490-32",
+        "url": "https://ecode360.com/print/HA4252?guid=46278719",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum coverage'. Lot coverage is 'The size of the footprint(s) of a building(s) and/or structure on a lot divided by the size of the lot' (490-16), so it is building cover, not impervious cover."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer with private (on-site) water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "section": "490-32"
+          },
+          {
+            "when": "Private sewer, with public or private water",
+            "public_sewer": false,
+            "min_lot_sqft": 20000,
+            "section": "490-32"
+          }
+        ],
+        "section": "490-32",
+        "url": "https://ecode360.com/print/HA4252?guid=46278719",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The single-family lot minimum depends on sewer and water. With public sewer and water 10,000 sq ft (width 75 ft), public sewer and private water 15,000 sq ft (80 ft), private sewer 20,000 sq ft (100 ft)."
+      }
+    },
+    "PU": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "490-35",
+        "url": "https://ecode360.com/print/HA4252?guid=46277264",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings. Width 150 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "490-35",
+        "url": "https://ecode360.com/print/HA4252?guid=46277264",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "490-35",
+        "url": "https://ecode360.com/print/HA4252?guid=46277264",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "An accessory structure under 224 sq ft: 5 ft (20 ft on the street side of a corner lot)."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "490-35",
+        "url": "https://ecode360.com/print/HA4252?guid=46277264",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "490-35",
+        "url": "https://ecode360.com/print/HA4252?guid=46277264",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum height of structure'."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "490-35",
+        "url": "https://ecode360.com/print/HA4252?guid=46277264",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum coverage'. Lot coverage is 'The size of the footprint(s) of a building(s) and/or structure on a lot divided by the size of the lot' (490-16), so it is building cover, not impervious cover."
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "490-38",
+        "url": "https://ecode360.com/print/HA4252?guid=46277268",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings. Width 75 ft. 'New lots created shall be at least 40,000 sq. ft. unless served by public sewer' (an existing lot keeps the 10,000 sq ft figure)."
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "490-38",
+        "url": "https://ecode360.com/print/HA4252?guid=46277268",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "'Average of adjacent structures'. No fixed figure."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "490-38",
+        "url": "https://ecode360.com/print/HA4252?guid=46277268",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings. An accessory structure under 224 sq ft: 5 ft (20 ft on the street side of a corner lot)."
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "490-38",
+        "url": "https://ecode360.com/print/HA4252?guid=46277268",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwellings."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "490-38",
+        "url": "https://ecode360.com/print/HA4252?guid=46277268",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum height of structure'."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "490-38",
+        "url": "https://ecode360.com/print/HA4252?guid=46277268",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum coverage'. Lot coverage is 'The size of the footprint(s) of a building(s) and/or structure on a lot divided by the size of the lot' (490-16), so it is building cover, not impervious cover."
+      }
+    },
+    "LF": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "490-41",
+        "url": "https://ecode360.com/print/HA4252?guid=46277272",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family and seasonal dwellings. Width 75 ft. 'New lots created shall be at least 30,000 sq. ft. unless served by public sewer' (an existing lot keeps the 10,000 sq ft figure)."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "490-41",
+        "url": "https://ecode360.com/print/HA4252?guid=46277272",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet, or an average of nearest two adjacent structures, provided such structures are within 100 feet'."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "490-41",
+        "url": "https://ecode360.com/print/HA4252?guid=46277272",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "An accessory structure under 224 sq ft: 5 ft (20 ft on the street side of a corner lot)."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "490-41",
+        "url": "https://ecode360.com/print/HA4252?guid=46277272",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Lake Bluff: 50 feet'."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "490-41",
+        "url": "https://ecode360.com/print/HA4252?guid=46277272",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum height of structure'."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "490-41",
+        "url": "https://ecode360.com/print/HA4252?guid=46277272",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum coverage'. Lot coverage is 'The size of the footprint(s) of a building(s) and/or structure on a lot divided by the size of the lot' (490-16), so it is building cover, not impervious cover."
+      }
+    }
+  }
+}

@@ -1,0 +1,1050 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Salford township",
+    "instrument": "Lower Salford Township Zoning Ordinance (Chapter 164 Zoning, Ord. No. 8 of 1956, amended in its entirety by Ord. No. 62-6 of 1962, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 LO0727: 'Includes legislation through 05-06-2026'. New Laws not yet in the code: Ord. No. 2026-06 and Ord. No. 2026-07 (both 8-5-2026, zoning amendments).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/LO0727",
+      "https://ecode360.com/9509651",
+      "https://ecode360.com/LO0727/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LO0727/search?query=%22into%20a%20two-family%22%20OR%20%22conversion%22%20OR%20%22converted%22%20OR%20%22accessory%20use%22%20OR%20%22second%20dwelling%22%20OR%20%22age-restricted%22%20OR%20%22mobile%20home%22%20OR%20%22guest%22%20OR%20%22tenant%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LO0727/search?query=dwelling%20OR%20accessory%20OR%20district%20OR%20lot%20OR%20residential%20OR%20section&scope=law&sortOrder=relevance",
+      "https://ecode360.com/print/LO0727?guid=9509678",
+      "https://ecode360.com/print/LO0727?guid=9509797",
+      "https://ecode360.com/print/LO0727?guid=9509805",
+      "https://ecode360.com/print/LO0727?guid=9510032",
+      "https://ecode360.com/print/LO0727?guid=9510173",
+      "https://ecode360.com/print/LO0727?guid=9510241",
+      "https://ecode360.com/print/LO0727?guid=9510326",
+      "https://ecode360.com/print/LO0727?guid=9510348",
+      "https://ecode360.com/print/LO0727?guid=9510370",
+      "https://ecode360.com/print/LO0727?guid=9510424",
+      "https://ecode360.com/print/LO0727?guid=9510434",
+      "https://ecode360.com/print/LO0727?guid=9510502",
+      "https://ecode360.com/print/LO0727?guid=9510641",
+      "https://ecode360.com/print/LO0727?guid=9510712",
+      "https://ecode360.com/print/LO0727?guid=9510759",
+      "https://ecode360.com/print/LO0727?guid=9510806",
+      "https://ecode360.com/print/LO0727?guid=9510862",
+      "https://ecode360.com/print/LO0727?guid=9510996",
+      "https://ecode360.com/print/LO0727?guid=9511151",
+      "https://ecode360.com/print/LO0727?guid=9511395",
+      "https://ecode360.com/print/LO0727?guid=9511699",
+      "https://ecode360.com/print/LO0727?guid=9511954"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209145096",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9509651",
+    "code_current_through": "2026-05-06",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 05-06-2026'. The chapter page lists New Laws Ord. No. 2026-06 and 2026-07 (Zoning Amendment, adopted 2026-08-05).",
+    "code_caution": "Two zoning ordinances adopted 8-5-2026 are not yet in the online code and were read only in the site's search excerpts (their PDFs were not opened). Ord. No. 2026-06 adds an Age-Qualified Residential (AQR) development for people 55 and older in the LPOD overlay by conditional use, on 35 acres, with single-family detached, two-family and triplex dwellings, and amends 164-28.1 to 164-28.4 and the zoning map. Ord. No. 2026-07 creates a Data Center Overlay District over I District land along Wambold Road. Neither excerpt touches a second unit on a house lot. The R-4 dimensional table (Attachment 3) and the neighborhood development option table (Attachment 4) are PDFs and were not opened, so R-4 lot figures are not on file.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law suite or similar term. Each district lists its uses 'and no other', so a second dwelling unit on a single-family lot needs a use variance from the Zoning Hearing Board (164-133C) unless one of the two-family paths below fits",
+      "A dwelling unit is for one family with 'one exclusive cooking facility', and every dwelling unit must be in a single-family detached building (one unit), a two-family building, a single-family attached building or an apartment building. A lot holds one principal building (164-5). So a house with a second unit is a two-family building",
+      "In R-1, 'Alteration of a single-family dwelling into a two-family dwelling' is a conditional use before the Board of Supervisors (164-30B(3), 164-25). The code sets no further standards for it. R-2 permits 'any of the uses or purposes permitted in an R-1 Residence District' (164-38A) and C permits 'A use permitted in R-2 Residence Districts' (164-64A). Whether that carries the R-1 conditional use into R-2 and C is not settled: ask the township",
+      "In VC a two-family dwelling (twin or duplex) is permitted by right. VC allows six dwelling units per acre, so two units need about 14,520 sq ft of net lot, and conversions need public sewer (164-70.2A(2), 164-70.3, 164-70.4G)",
+      "In R-4 and R-5 a two-family building is permitted on a lot within a tract proposed for development, with 15% common open space and public sewer and water (R-5: a 5-acre tract, 4,500 sq ft per unit). In OLC two-family and triplex buildings are permitted only as a development on 10 acres. In RO an existing home may be converted into a professional office and one apartment as a conditional use (164-46, 164-54, 164-55, 164-62.9H, 164-62.16A(2))",
+      "An accessory building on a house lot must stand at least 10 ft behind the house, be no larger than 30% of the house's floor area (more by conditional use on a 60,000 sq ft lot) and meet setbacks that grow with its size: 5 ft (100 sq ft and 9 ft tall), 10 ft (500 sq ft and 15 ft), the house setbacks above that. In R-3 accessory buildings are at most 15 ft and one story (164-15B(1), 164-42H)",
+      "An owner who lives in the house may rent rooms to no more than two nontransient persons (164-15B(7)). That is not a separate dwelling unit"
+    ],
+    "notes": "Zoning office: Lower Salford Township Zoning Officer. The eCode360 code LO0727 is Lower Salford Township, Montgomery County (164-5 'TOWNSHIP Lower Salford Township, Montgomery County, Pennsylvania'). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all (code and New Laws) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee, domestic servants, into a two-family, conversion, converted, accessory use, second dwelling, age-restricted, mobile home, guest and tenant, and a New Laws search for dwelling, accessory, district, lot and residential. The ADU terms found only the family and institutional group living definitions and 164-30B(3) (R-1 alteration into a two-family dwelling). Read in full: 164-5 definitions (to YARD), 164-6, Article V up to 164-23 (with 164-12, 164-15, 164-16), 164-25, Articles VI (R-1A), VII (R-1), VIII (PCRD), VIIIA (R-1 Cluster), IX (R-2), X (R-3), XI (R-4), XII (R-5), XIIA (AO), XIIB (OLC), XIIC (RO), XIII (C), XIIIA (VC), XIIIB (MU), 164-133 and the 164-99 parking table head. Read in part: LPOD 164-28.1 to 164-28.4, I 164-71 and 164-72 (use list on screen, no dwelling). Search excerpts only: MHP 164-52.2 and 164-24. Not read: 164-24 in full, 164-25.1 to 164-25.8, Article XIVA (institutional), Article XV (floodplain), Articles XVII to XIX, 164-134 to 164-160, the PDF attachments and the two New Laws PDFs."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "164-5, 164-26 to 164-77",
+      "url": "https://ecode360.com/LO0727/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee, domestic servants, into a two-family, conversion, converted, accessory use, second dwelling, age-restricted, mobile home, guest and tenant."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "164-5 (dwelling unit, lot), 164-27, 164-30, 164-41",
+      "url": "https://ecode360.com/print/LO0727?guid=9510326",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU text. Each district lists its uses 'and no other'. A dwelling unit must sit in a single-family detached, two-family, single-family attached or apartment building, and a single-family detached building holds a single dwelling unit, so a house with a second unit becomes a two-family building. That is a conditional use in R-1 (alteration of a single-family dwelling into a two-family dwelling) and by right in VC (see the alternatives)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "164-133C",
+      "url": "https://ecode360.com/print/LO0727?guid=9511954",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A second unit on a single-family lot is not a listed use in any district, so it needs a use variance from the Zoning Hearing Board on a showing of unnecessary hardship (164-133C, MPC 910.2). No section bars use variances. Where the code lists a two-family dwelling, making the house into one is the listed path instead (R-1 conditional use, VC by right)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "164-133C",
+      "url": "https://ecode360.com/print/LO0727?guid=9511954",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The Zoning Hearing Board may authorize a variance 'where, owing to special conditions, a literal enforcement of the provisions of this chapter will result in unnecessary hardship'. No special exception for unlisted uses was found. The Board may interpret whether a questionable use is permitted as similar or customarily incidental to a permitted use (164-133A), and C permits by conditional use 'Any use of the same general character as any of the above permitted uses' (164-64J(1))."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Alteration of a single-family dwelling into a two-family dwelling (R-1, and R-2 and C by reference)",
+          "path": "conditional_use",
+          "districts": [
+            "R-1",
+            "R-2",
+            "C"
+          ],
+          "disputed_districts": {
+            "districts": [
+              "R-2",
+              "C"
+            ],
+            "section": "164-38A, 164-64A",
+            "url": "https://ecode360.com/print/LO0727?guid=9510424",
+            "note": "R-2 permits 'any of the uses or purposes permitted in an R-1 Residence District' and C 'A use permitted in R-2 Residence Districts'. Whether that includes the R-1 conditional use (164-30B) is not settled"
+          },
+          "conditions": "Conditional use before the Board of Supervisors after a public hearing, which may attach reasonable conditions (164-25). The code sets no specific standards for the alteration. The lot keeps the district figures: in R-1 a net lot of 45,000 sq ft, 150 ft wide, yards 75/30/50 ft, building area 9%, 35 ft (R-2 and C residential lots 32,500 sq ft). Two parking spaces per dwelling unit.",
+          "min_lot_sqft": 45000,
+          "min_lot_by_district": {
+            "R-1": 45000,
+            "R-2": 32500,
+            "C": 32500
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family dwelling is altered",
+              "section": "164-30B(3)"
+            }
+          ],
+          "section": "164-30B(3), 164-25, 164-31, 164-99",
+          "url": "https://ecode360.com/print/LO0727?guid=9510326",
+          "confidence": "verified",
+          "note": "Not an ADU listing. No family or owner rule. The result is a two-family building (two dwelling units in one building, 164-5)"
+        },
+        {
+          "name": "Two-family dwelling (VC)",
+          "path": "by_right",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "A two-family dwelling (twin or duplex) is permitted by right in VC. Net lot at least 10,000 sq ft and 60 ft wide, and residential density at most six dwelling units per acre (7.5 with bonuses), so two units need about 14,520 sq ft. Impervious cover at most 80%, 40 ft or 3.5 stories, side yards 10 ft, rear 20 ft, front 15 to 25 ft from the ultimate right-of-way. 'All new developments and conversions shall be served by public sewer facilities.' Two parking spaces per dwelling unit.",
+          "min_lot_sqft": 14520,
+          "section": "164-70.2A(2), 164-70.3A, C, 164-70.4G, 164-99",
+          "url": "https://ecode360.com/print/LO0727?guid=9510996",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. The 14,520 sq ft figure is the six units per acre density applied to two units, a reading. The VC intent names the conversion of existing buildings"
+        },
+        {
+          "name": "Two-family building in an R-4 tract development",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "On a lot within a tract proposed for development: one single-family detached dwelling or one two-family building, among other types. Base density three units per gross acre (four with bonuses, five in a fully mixed development), 15% of the tract as common open space when two-family units are built, public sewer and water, 2.5 off-street parking spaces per unit (garages not counted). Lot figures for fee-simple lots are in Attachment 3, which was not read.",
+          "min_lot_sqft": null,
+          "land_development": true,
+          "section": "164-46A(2), C, 164-47A, 164-48A, 164-50D, E",
+          "url": "https://ecode360.com/print/LO0727?guid=9510502",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A development use. Whether an existing house lot alone can be made into a two-family building under it is not settled"
+        },
+        {
+          "name": "Two-family building in an R-5 tract development",
+          "path": "by_right",
+          "districts": [
+            "R-5"
+          ],
+          "conditions": "Two-family buildings need a tract of at least 5 gross acres, three units per gross acre (four with bonuses), lots of 4,500 sq ft per unit, 35 ft wide per lot and 20 ft per unit, 30% building coverage, rear yard 25 ft, side 15 ft, 15% common open space, public sewer and water, two parking spaces per unit (2.2 when lotted).",
+          "min_lot_sqft": 217800,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "164-54A(2), 164-55A, 164-56, 164-58C, D",
+          "url": "https://ecode360.com/print/LO0727?guid=9510641",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A development use on 5 acres, not a unit added to one house"
+        },
+        {
+          "name": "Two-family and triplex development (OLC)",
+          "path": "by_right",
+          "districts": [
+            "OLC"
+          ],
+          "conditions": "A mixed residential development of unlotted two-family and triplex buildings on a tract of at least 10 gross acres with frontage on two roads, at most 5.5 units per acre, 15% common open space, public sewer and water, 2.5 parking spaces per unit.",
+          "min_lot_sqft": 435600,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "164-62.9H, 164-62.13.1",
+          "url": "https://ecode360.com/print/LO0727?guid=9510759",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A development use on 10 acres"
+        },
+        {
+          "name": "Existing home converted into a professional office and one apartment (RO)",
+          "path": "conditional_use",
+          "districts": [
+            "RO"
+          ],
+          "conditions": "Class One conditional use: 'Conversion of an existing home into a professional office and one apartment'. Lot at least 30,000 sq ft and 125 ft wide, public sewer and public water, the existing building built for residential use preserved, expansion at most 50% of its floor area, residential character, no parking in front yards.",
+          "min_lot_sqft": 30000,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing home",
+              "section": "164-62.16A(2), 164-62.18B"
+            },
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer serves the lot",
+              "section": "164-62.18A"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water serves the lot",
+              "section": "164-62.18A"
+            }
+          ],
+          "section": "164-62.16A(2), 164-62.17, 164-62.18",
+          "url": "https://ecode360.com/print/LO0727?guid=9510806",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. The house becomes an office with one apartment, so it is not a second unit beside a house"
+        }
+      ],
+      "section": "164-30B(3), 164-46, 164-54, 164-62.9H, 164-62.16, 164-70.2",
+      "url": "https://ecode360.com/print/LO0727?guid=9510326",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "164-26 to 164-77",
+      "url": "https://ecode360.com/print/LO0727?guid=9509797",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No district lists an accessory dwelling unit."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 164",
+      "url": "https://ecode360.com/LO0727/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "Lots in a cluster or planned development take that development's own figures: R-1 Cluster lots 8,000 sq ft (front 25, sides 10 and 25 together, rear 25, building 20%, impervious 35%), Planned Community Residential Development lots in R-1 34,000 sq ft (front 50, rear 65), LPOD cluster lots, golf course community lots in R-1A 15,000 sq ft, R-3 limited cluster 17,000 sq ft (front 50, sides 12, rear 25) and R-3 full cluster 10,000 sq ft (front 25, sides 10, rear 25).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1A",
+            "R-1",
+            "R-3"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "164-27.1C, 164-28.3, 164-33 to 164-36, 164-36.4, 164-43C, 164-44C",
+          "url": "https://ecode360.com/print/LO0727?guid=9510370"
+        }
+      ],
+      "section": "164-27.1, 164-28.3, 164-36, 164-36.4, 164-43, 164-44",
+      "url": "https://ecode360.com/print/LO0727?guid=9510370",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "AO",
+        "I",
+        "MHP"
+      ],
+      "section": "164-62.2, 164-72, 164-52.2",
+      "url": "https://ecode360.com/print/LO0727?guid=9510712",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "AO and I list no dwelling. MHP permits mobile home parks of 15 acres or more, which may include conventional single-family detached homes on park lots (164-52.2, read in a search excerpt)."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "164-5, 164-15B",
+      "url": "https://ecode360.com/print/LO0727?guid=9509678",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU form is listed. A single-family detached building 'contains a single dwelling unit'. Uses accessory to a dwelling include outbuildings 'for the occupant's noncommercial uses' (164-15B(1)), not a dwelling."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "164-15B(1)",
+      "url": "https://ecode360.com/print/LO0727?guid=9509805",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU size rule. An accessory building may not exceed 30% of the house's floor area without a conditional use (164-15B(1))."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "164-28 to 164-70.3",
+      "url": "https://ecode360.com/print/LO0727?guid=9510326",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "35 ft in the residence districts, 40 ft in VC."
+    },
+    "accessory_structure_max_share": {
+      "value": 0.3,
+      "section": "164-15B(1)(a), (b)",
+      "url": "https://ecode360.com/print/LO0727?guid=9509805",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'An accessory building shall not exceed 30% of the square footage of the principal building.' More by conditional use on a lot of at least 60,000 sq ft."
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "164-15B(1)",
+      "url": "https://ecode360.com/print/LO0727?guid=9509805",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. Shown for an accessory building only."
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building of at most 100 sq ft and 9 ft tall",
+          "districts": null,
+          "setback_side_ft": 5,
+          "setback_rear_ft": 5,
+          "section": "164-15B(1)(a)[1]",
+          "url": "https://ecode360.com/print/LO0727?guid=9509805"
+        },
+        {
+          "where": "An accessory building over 100 sq ft up to 500 sq ft, or over 9 ft up to 15 ft tall",
+          "districts": null,
+          "setback_side_ft": 10,
+          "setback_rear_ft": 10,
+          "section": "164-15B(1)(a)[2]",
+          "url": "https://ecode360.com/print/LO0727?guid=9509805"
+        },
+        {
+          "where": "An accessory building over 500 sq ft or over 15 ft tall meets the yard setbacks of the principal use, and every accessory building stands at least 10 ft behind the principal building",
+          "districts": null,
+          "section": "164-15B(1)(a)[3]",
+          "url": "https://ecode360.com/print/LO0727?guid=9509805"
+        }
+      ],
+      "section": "164-15B(1)(a)",
+      "url": "https://ecode360.com/print/LO0727?guid=9509805",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "164-15B(1)(a)",
+      "url": "https://ecode360.com/print/LO0727?guid=9509805",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "An accessory building 'shall be located a minimum of 10 feet behind the principal building'."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "164-15B(7)",
+      "url": "https://ecode360.com/print/LO0727?guid=9509805",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. Renting rooms to up to two persons is allowed only in the dwelling in which the owner resides (164-15B(7))."
+    },
+    "occupancy": {
+      "value": "No ADU occupancy rule. A family is 'Any number of individuals living together as a single nonprofit housekeeping unit and doing their cooking on the premises'.",
+      "section": "164-5 (family)",
+      "url": "https://ecode360.com/print/LO0727?guid=9509678",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "164-99A",
+      "url": "https://ecode360.com/print/LO0727?guid=9511699",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU parking rule."
+    },
+    "reading": {
+      "value": "'Dwelling: 2 spaces per dwelling unit; in the R-4 and R-5 Districts, 2.2 spaces per dwelling unit when individual lotting occurs.' A second unit approved as a two-family dwelling needs two more spaces, four in all (R-4 sets 2.5 per unit, garages not counted, 164-50D).",
+      "section": "164-99A, 164-50D",
+      "url": "https://ecode360.com/print/LO0727?guid=9511699",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "164-28",
+        "url": "https://ecode360.com/print/LO0727?guid=9510173",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Net lot area (gross lot area less the land between the legal and the ultimate right-of-way, access strips and utility rights-of-way, 164-5). Width 200 ft (150 ft by special exception)."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "164-28",
+        "url": "https://ecode360.com/print/LO0727?guid=9510173",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "164-28",
+        "url": "https://ecode360.com/print/LO0727?guid=9510173",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "164-28",
+        "url": "https://ecode360.com/print/LO0727?guid=9510173",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-28",
+        "url": "https://ecode360.com/print/LO0727?guid=9510173",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "164-28",
+        "url": "https://ecode360.com/print/LO0727?guid=9510173",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 45000,
+        "section": "164-31",
+        "url": "https://ecode360.com/print/LO0727?guid=9510326",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Net lot area (gross lot area less the land between the legal and the ultimate right-of-way, access strips and utility rights-of-way, 164-5). Width 150 ft."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "164-31",
+        "url": "https://ecode360.com/print/LO0727?guid=9510326",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "164-31",
+        "url": "https://ecode360.com/print/LO0727?guid=9510326",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "164-31",
+        "url": "https://ecode360.com/print/LO0727?guid=9510326",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-31",
+        "url": "https://ecode360.com/print/LO0727?guid=9510326",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.09,
+        "section": "164-31",
+        "url": "https://ecode360.com/print/LO0727?guid=9510326",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 32500,
+        "section": "164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510424",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Net lot area (gross lot area less the land between the legal and the ultimate right-of-way, access strips and utility rights-of-way, 164-5). Width 125 ft. 'Not more than 8% of the area of each lot may be occupied by buildings.'"
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510424",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510424",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510424",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510424",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.08,
+        "section": "164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510424",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Net lot area (gross lot area less the land between the legal and the ultimate right-of-way, access strips and utility rights-of-way, 164-5). Width 100 ft. Public or central sewer and water are required, else the R-1 figures apply (see utility_rows)."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "A lot on one street chooses a 50 ft front yard with a 30 ft rear yard, or a 30 ft front yard with a 50 ft rear yard (together at least 80 ft). The first pair is shown."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side. A corner lot needs only one side yard."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "30 ft with a 50 ft front yard, 50 ft with a 30 ft front yard."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public or central sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 45000,
+            "setback_front_ft": 75,
+            "setback_side_ft": 30,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.09,
+            "section": "164-42A"
+          },
+          {
+            "when": "Without public or central water",
+            "public_water": false,
+            "min_lot_sqft": 45000,
+            "setback_front_ft": 75,
+            "setback_side_ft": 30,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.09,
+            "section": "164-42A"
+          }
+        ],
+        "section": "164-42A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Any development not served by either public or central sewer or public or central water facilities must meet the requirements of the R-1 Residence Districts' (164-42A): net lot 45,000 sq ft, width 150 ft, yards 75/30/50, building area 9%."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "164-47B",
+        "url": "https://ecode360.com/print/LO0727?guid=9510502",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The lot figures for fee-simple lots are in Attachment 3 (PDF, not opened)."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 14520,
+        "section": "164-47A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510502",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "Base density three dwelling units per gross acre (four with bonuses, five in a fully mixed development), so 14,520 sq ft of gross tract area per unit. A tract figure, not a per-lot rule."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "164-55A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached lot, net square feet per dwelling unit, when lotted. Width 60 ft. Three units per gross acre."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "164-55A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "From the ultimate right-of-way of feeder and residential roads. 50 ft from collector or semi-controlled access roads."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "164-55A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 45,
+        "section": "164-55A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-55A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "164-55A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510641",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "164-70.3",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Net lot area (gross lot area less the land between the legal and the ultimate right-of-way, access strips and utility rights-of-way, 164-5). Width 60 ft. Residential density at most six units per acre. Height '3 1/2 stories, or 40 feet, whichever is less'."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "164-70.3",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The average front setback of existing buildings within 300 ft on the same side, but not closer than 15 ft or further than 25 ft from the ultimate right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "164-70.3",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "10 ft, or 0 ft where a party wall is shared."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "164-70.3",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "164-70.3",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.8,
+        "section": "164-70.3",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      },
+      "max_impervious_coverage": {
+        "value": 0.8,
+        "section": "164-70.3A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'No more than 80% of the net lot area may be covered by buildings and/or impervious paving materials, including walkways.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7260,
+        "section": "164-70.3C(1)",
+        "url": "https://ecode360.com/print/LO0727?guid=9510996",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Residential density: six dwelling units per acre' (7.5 with bonuses)."
+      }
+    },
+    "RO": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "164-62.17",
+        "url": "https://ecode360.com/print/LO0727?guid=9510806",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Uses permitted by right, including a single-family detached dwelling. Width 125 ft. Building footprint at most 2,000 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "164-62.17",
+        "url": "https://ecode360.com/print/LO0727?guid=9510806",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "164-62.17",
+        "url": "https://ecode360.com/print/LO0727?guid=9510806",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "164-62.17",
+        "url": "https://ecode360.com/print/LO0727?guid=9510806",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-62.17",
+        "url": "https://ecode360.com/print/LO0727?guid=9510806",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "35 ft when at least 200 ft from an abutting residential district. Within 200 ft: 25 ft and one story."
+      },
+      "max_building_coverage": {
+        "value": 0.08,
+        "section": "164-62.17",
+        "url": "https://ecode360.com/print/LO0727?guid=9510806",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "164-62.17",
+        "url": "https://ecode360.com/print/LO0727?guid=9510806",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "OLC": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "164-62.9A, 164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510759",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "A single-family detached dwelling follows the R-3 standards (164-62.9A): net lot 20,000 sq ft, width 100 ft. The OLC table's by-right column also gives 20,000 sq ft, 100 ft, yards 30/20/40 and 10% building coverage."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "164-62.9A, 164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510759",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "R-3 figure (50 ft front with 30 ft rear, or 30 ft with 50 ft)."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "164-62.9A, 164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510759",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "164-62.9A, 164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510759",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-62.9A, 164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510759",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "164-62.9A, 164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510759",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "164-62.9A, 164-42",
+        "url": "https://ecode360.com/print/LO0727?guid=9510759",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public or central sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 45000,
+            "setback_front_ft": 75,
+            "setback_side_ft": 30,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.09,
+            "section": "164-42A"
+          },
+          {
+            "when": "Without public or central water",
+            "public_water": false,
+            "min_lot_sqft": 45000,
+            "setback_front_ft": 75,
+            "setback_side_ft": 30,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.09,
+            "section": "164-42A"
+          }
+        ],
+        "section": "164-42A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510434",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Any development not served by either public or central sewer or public or central water facilities must meet the requirements of the R-1 Residence Districts' (164-42A): net lot 45,000 sq ft, width 150 ft, yards 75/30/50, building area 9%."
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 32500,
+        "section": "164-66, 164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510862",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'An exclusive residential use of a parcel of ground in a commercial zone shall conform to the area and width requirements set forth hereinabove for the R-2 Residence District.' A combined commercial and single-family use needs 32,000 sq ft (164-67)."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "164-66, 164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510862",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "164-66, 164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510862",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "164-66, 164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510862",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-66, 164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510862",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.08,
+        "section": "164-66, 164-39",
+        "url": "https://ecode360.com/print/LO0727?guid=9510862",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "164-70.26A",
+        "url": "https://ecode360.com/print/LO0727?guid=9511151",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "Single-family detached lot within a mixed-use development (20-acre tract, public water and sewer). Width 75 ft. Green space at least 60%. On a tract under 20 acres existing when the article was adopted, single-family development follows R-3 instead (net lot 20,000 sq ft, 164-70.22B)."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "164-70.26A",
+        "url": "https://ecode360.com/print/LO0727?guid=9511151",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "164-70.26A",
+        "url": "https://ecode360.com/print/LO0727?guid=9511151",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "164-70.26A",
+        "url": "https://ecode360.com/print/LO0727?guid=9511151",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-70.26A",
+        "url": "https://ecode360.com/print/LO0727?guid=9511151",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "164-70.26A",
+        "url": "https://ecode360.com/print/LO0727?guid=9511151",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      }
+    },
+    "R-1 Cluster": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "164-36.4A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510370",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Net lot area (gross lot area less the land between the legal and the ultimate right-of-way, access strips and utility rights-of-way, 164-5). Single-family detached homes within a cluster development on a tract of at least 10 acres in R-1, with public or central sewer and water. Width 65 ft. 1.1 units per gross acre."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "164-36.4A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510370",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "164-36.4A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510370",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each of the two side yards."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "164-36.4A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510370",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "164-36.4A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510370",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "164-36.4A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510370",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Building area': not more than this share of the net lot area may be occupied by buildings."
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "164-36.4A",
+        "url": "https://ecode360.com/print/LO0727?guid=9510370",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 25,
+        "section": "164-36.4A(5)",
+        "url": "https://ecode360.com/print/LO0727?guid=9510370",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'10 feet/25 feet aggregate'."
+      }
+    }
+  }
+}

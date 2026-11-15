@@ -1,0 +1,857 @@
+{
+  "provenance": {
+    "jurisdiction": "Newberry township",
+    "instrument": "Newberry Township Zoning Ordinance (Chapter 380 Zoning, Ord. No. 329, adopted 7-25-2006, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 NE2598: code version dated 2026-07-28 (breadcrumb). New Laws not yet in the code: Ord. No. 442 (zoning amendment, 10-14-2026) and Ord. No. 441 (solar energy, 10-14-2026).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/NE2598",
+      "https://ecode360.com/36783754",
+      "https://ecode360.com/NE2598/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22%20OR%20conversion&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NE2598/search?query=%22ECHO%20housing%22%20OR%20%22ECHO%20unit%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NE2598/search?query=dwelling%20OR%20ECHO%20OR%20district%20OR%20section%20OR%20lot&scope=law&sortOrder=relevance",
+      "https://ecode360.com/print/NE2598?guid=36783781",
+      "https://ecode360.com/print/NE2598?guid=36783993",
+      "https://ecode360.com/print/NE2598?guid=36784256",
+      "https://ecode360.com/print/NE2598?guid=36784283",
+      "https://ecode360.com/print/NE2598?guid=36784337",
+      "https://ecode360.com/print/NE2598?guid=36784389",
+      "https://ecode360.com/print/NE2598?guid=36784444",
+      "https://ecode360.com/print/NE2598?guid=36784490",
+      "https://ecode360.com/print/NE2598?guid=36784588",
+      "https://ecode360.com/print/NE2598?guid=36784678",
+      "https://ecode360.com/print/NE2598?guid=36784754",
+      "https://ecode360.com/print/NE2598?guid=36784837",
+      "https://ecode360.com/print/NE2598?guid=36784919",
+      "https://ecode360.com/print/NE2598?guid=36785022",
+      "https://ecode360.com/print/NE2598?guid=36785100",
+      "https://ecode360.com/print/NE2598?guid=36785178",
+      "https://ecode360.com/print/NE2598?guid=36785237",
+      "https://ecode360.com/print/NE2598?guid=36785762",
+      "https://ecode360.com/print/NE2598?guid=36785872",
+      "https://ecode360.com/print/NE2598?guid=36785875",
+      "https://ecode360.com/print/NE2598?guid=36785901",
+      "https://ecode360.com/36786420",
+      "https://ecode360.com/print/NE2598?guid=36787178"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213353224",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/36783754",
+    "code_current_through": "2026-07-28",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-07-28'. The chapter page lists New Law Ord. No. 442 (Zoning Amendment, adopted 2026-10-14).",
+    "code_caution": "Ord. No. 442 (adopted 10-14-2026) amends Chapter 380 and is not yet in the online code. It was read only in the site's search excerpt (the PDF was not opened): it adds data centers by conditional use in the I and RI districts and new definitions such as 'sensitive receptor'. Nothing in the excerpt touches ECHO housing or the residential districts. The conservation subdivision tables (Attachments 1 to 3) are PDFs and were not opened.",
+    "checks": [
+      "ECHO housing (an elder cottage) is a special exception before the Zoning Hearing Board in RH, A, RR and R only (380-16B(6)(b), 380-26B(5)(b), 380-27B(7)(b), 380-28B(6)(b)). No other district lists it",
+      "The elder cottage is portable, at most 900 sq ft, for at most two people, at least one of whom is 55 or older, handicapped or disabled and related by blood, marriage or adoption to the occupants of the house (380-14 ECHO housing, 380-59A(19)(a), (c), (d))",
+      "It must use the house's sewage, water and other utilities with no separate systems. On on-lot sewer or water, the owner must show the systems can serve everyone, or obtain approval to expand them (380-59A(19)(e))",
+      "It stands only in the side or rear yard and meets the side and rear setbacks for principal uses. The house, accessory structures and cottage together may not exceed the district's lot coverage (380-59A(19)(b), (g))",
+      "It is removed within three months after no qualifying person lives in it. The Zoning Officer issues a temporary permit that is reviewed every 12 months with a fee (380-59A(19)(h), (i))",
+      "Parking: one all-weather off-street space for the cottage plus two for the house (380-47F, 380-59A(19)(f))",
+      "In V an existing single-family detached dwelling with at least 3,000 sq ft of habitable floor area when the chapter took effect may be converted to two units by special exception (380-20B(2)(b), 380-59A(61)). Two-family dwellings are permitted by right in RG and V on 25,000 sq ft lots (380-18, 380-20)"
+    ],
+    "notes": "Zoning office: Newberry Township Zoning Officer. The eCode360 code NE2598 is Newberry Township, York County (380-14C county planning commission names York County). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all (code and New Laws) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee, domestic servants and conversion, then for ECHO housing. Read in full: 380-8, 380-14 (ECHO housing definition and the two-family and conversion definitions in search excerpts), 380-16 (RH), 380-17 (SR), 380-18 (RG), 380-19 (MHP), 380-20 (V), 380-26 (A), 380-27 (RR), 380-28 (R), 380-42, 380-43, 380-59A(19) and (61) (read on screen), and the 380-47F parking table rows for dwellings and ECHO housing (on screen). Use lists scanned in the browser for a residential group: OS, MU, CC, RCO, LI, I and RI list none. 380-37 and 380-75 scanned (no dwelling rule, standard variance findings). Not read: 380-14 in full (dwelling unit and lot coverage definitions), Article IV overlays (380-30 to 380-35), 380-36, 380-38 to 380-41, 380-44 to 380-46, 380-48 to 380-58, Article VI, 380-76 to 380-86, the attachments and the New Laws PDFs."
+  },
+  "adu": {
+    "term": {
+      "value": "ECHO housing (elder cottage)",
+      "section": "380-14 (ECHO housing), 380-59A(19)",
+      "url": "https://ecode360.com/print/NE2598?guid=36783993",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'An accessory residential use which involves an additional dwelling unit placed on a property for occupancy by either an elderly, handicapped, or disabled person related by blood, marriage, or adoption to the occupants of the principal dwelling.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "380-14, 380-59A(19)(c), (h)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A temporary elder cottage for a related person who is 55 or older, handicapped or disabled, by special exception in RH, A, RR and R."
+    },
+    "scope_districts": {
+      "value": [
+        "RH",
+        "A",
+        "RR",
+        "R"
+      ],
+      "section": "380-16B(6)(b), 380-26B(5)(b), 380-27B(7)(b), 380-28B(6)(b)",
+      "url": "https://ecode360.com/NE2598/search?query=%22ECHO%20housing%22%20OR%20%22ECHO%20unit%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "ECHO housing is listed as an accessory use by special exception in these four districts and in no other."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "380-15, 380-17 to 380-25, 380-29",
+      "url": "https://ecode360.com/print/NE2598?guid=36784337",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "SR, RG, V and MHP permit houses but do not list ECHO housing. OS, MU, CC, RCO, LI, I and RI list no dwelling."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "380-16B(6)(b)[3], 380-26B(5)(b)[3], 380-27B(7)(b)[3], 380-28B(6)(b)[3], 380-59A(19)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board special exception under the 380-59A(19) criteria, then a temporary zoning permit from the Zoning Officer, reviewed every 12 months."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "380-75D",
+      "url": "https://ecode360.com/print/NE2598?guid=36787178",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Zoning Hearing Board variance on a showing of unnecessary hardship. A use not provided for may be a special exception (380-8) only if it 'Is not permitted in any other zoning district by this chapter', so it does not reach ECHO housing or two-family dwellings, which are listed in other districts."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family conversion (V)",
+          "path": "special_exception",
+          "districts": [
+            "V"
+          ],
+          "conditions": "Special exception for converting a single-family detached dwelling that existed on the effective date of the chapter and then had at least 3,000 sq ft of habitable floor area. An approved water supply and sewage disposal system, no outside change that alters the residential character (fire escapes excepted), a direct escape to the ground from every floor above grade, any required land development approval. Each unit at least 700 sq ft. Two parking spaces per unit.",
+          "min_lot_sqft": null,
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "2006-07-26",
+              "condition": "The house existed when Chapter 380 took effect (adopted 7-25-2006)",
+              "section": "380-59A(61)(a)"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 3000,
+              "condition": "The house had at least 3,000 sq ft of habitable floor area at that time",
+              "section": "380-59A(61)(a)"
+            }
+          ],
+          "section": "380-20B(2)(b)[2], 380-59A(61), 380-42A, 380-47F",
+          "url": "https://ecode360.com/36786420",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. No family or owner rule. The effective date is read as the adoption date (380-86 was not read), and the house size today stands in for its size then"
+        },
+        {
+          "name": "Two-family dwelling (RG, V)",
+          "path": "by_right",
+          "districts": [
+            "RG",
+            "V"
+          ],
+          "conditions": "Two-family dwellings are permitted by right in RG and V: lot at least 25,000 sq ft, 100 ft wide, lot coverage 55%, yards 15 ft front, 5 ft side, 15 ft rear, 35 ft tall, public water and sewer. A two-family dwelling is 'A detached building containing not more than two dwelling units'. Each unit at least 700 sq ft, two parking spaces per unit.",
+          "min_lot_sqft": 25000,
+          "section": "380-14C (dwelling, two-family), 380-18B(2), C, 380-20B(2), D(3), 380-42A, 380-47F",
+          "url": "https://ecode360.com/print/NE2598?guid=36784389",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type. Whether an existing house may be made into one this way, rather than by the V two-family conversion, is not settled"
+        },
+        {
+          "name": "Conversion apartment in an existing building (V)",
+          "path": "by_right",
+          "districts": [
+            "V"
+          ],
+          "conditions": "In V an existing building may hold any number of the district's permitted uses, and 'Except in the case of new buildings, one conversion apartment shall be permitted in addition to the other uses provided on the site.'",
+          "min_lot_sqft": null,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing building (not a new building)",
+              "section": "380-20C"
+            }
+          ],
+          "section": "380-20C",
+          "url": "https://ecode360.com/print/NE2598?guid=36784490",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. The rule sits in the V mixed-use paragraph on the number of uses per building. Whether it reaches a lot whose only use is a house is not settled"
+        }
+      ],
+      "section": "380-18, 380-20, 380-59A(61)",
+      "url": "https://ecode360.com/print/NE2598?guid=36784490",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RH",
+        "A",
+        "RR",
+        "R"
+      ],
+      "section": "380-16, 380-26, 380-27, 380-28",
+      "url": "https://ecode360.com/NE2598/search?query=%22ECHO%20housing%22%20OR%20%22ECHO%20unit%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 380",
+      "url": "https://ecode360.com/NE2598/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22%20OR%20conversion&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The elder cottage is occupied only by at least one person who is at least 55 years old, handicapped or disabled, and related to the occupants of the principal dwelling by blood, marriage or adoption. At most two people.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "380-14 (ECHO housing), 380-59A(19)(c), (d)",
+          "url": "https://ecode360.com/36786420"
+        },
+        {
+          "kind": "other",
+          "condition": "The elder cottage is portable and is removed within three months after no qualifying person lives in it. A temporary zoning permit is reviewed every 12 months with an annual fee.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "380-59A(19)(a), (h), (i)",
+          "url": "https://ecode360.com/36786420"
+        },
+        {
+          "kind": "utilities",
+          "condition": "The cottage connects to the sewage, water and other utilities that serve the house, with no separate systems. On on-lot sewer or water, the owner shows the systems can serve everyone or gets approval to expand them, with review by the Township Sewage Enforcement Officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "380-59A(19)(e)",
+          "url": "https://ecode360.com/36786420"
+        },
+        {
+          "kind": "other",
+          "condition": "Lots in a conservation subdivision (Conservation Subdivision Design Overlay, residential development) take the figures of the conservation design options (Attachments 1 to 3, not read), not the district table.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "RH",
+            "SR",
+            "RG",
+            "A",
+            "RR",
+            "R"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "380-16G, 380-17G, 380-18G, 380-26J, 380-27G, 380-28G, 380-33",
+          "url": "https://ecode360.com/print/NE2598?guid=36784283"
+        }
+      ],
+      "section": "380-59A(19)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "OS",
+        "MU",
+        "CC",
+        "RCO",
+        "LI",
+        "I",
+        "RI"
+      ],
+      "section": "380-15, 380-21 to 380-25, 380-29",
+      "url": "https://ecode360.com/print/NE2598?guid=36784588",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Their use lists (scanned in the browser) have no residential group: no dwelling is listed."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new"
+      ],
+      "section": "380-14 (ECHO housing), 380-59A(19)(a), (g)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'An additional dwelling unit placed on a property'. 'The elder cottage shall be of portable construction' and stands only in the side or rear yard."
+    },
+    "types_not_addressed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "380-59A(19)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Only a portable elder cottage is named. A unit inside or added to the house, or in a garage, is not named (in V a large existing house may be converted to two units, see the alternatives)."
+    },
+    "labels": {
+      "value": {
+        "detached_new": "Portable elder cottage (ECHO housing)"
+      },
+      "section": "380-59A(19)(a)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 900,
+      "section": "380-59A(19)(a)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The elder cottage shall be of portable construction and may not exceed 900 square feet of floor area.'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "380-16C, 380-26C, 380-27C, 380-28C",
+      "url": "https://ecode360.com/print/NE2598?guid=36784283",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The district tables give accessory uses and structures 25 ft. Accessory structures over 15 ft must stand back from the side and rear lines a distance equal to their height. The ECHO section sets no height of its own."
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "380-59A(19)(g)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The elder cottage shall be installed and located only in the side or rear yards, and shall adhere to all side and rear yard setback requirements for principal uses.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "380-59A(19)(g)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Side or rear yards only."
+    },
+    "accessory_rear_yard_only": {
+      "value": false,
+      "section": "380-59A(19)(g)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A side yard is allowed too."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "380-59A(19)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No owner rule. The occupant must be related to the occupants of the principal dwelling."
+    },
+    "family_only": {
+      "value": true,
+      "section": "380-14, 380-59A(19)(c)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At most two people, at least one of them 55 or older, handicapped or disabled, related by blood, marriage or adoption to the occupants of the house.",
+      "section": "380-14 (ECHO housing), 380-59A(19)(c), (d)",
+      "url": "https://ecode360.com/36786420",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "380-14 (ECHO housing)",
+      "url": "https://ecode360.com/print/NE2598?guid=36783993",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'An additional dwelling unit'. No express count."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "380-47F, 380-59A(19)(f)",
+      "url": "https://ecode360.com/print/NE2598?guid=36785901",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'ECHO housing: Per dwelling unit, plus 1/2 dwelling unit (i.e., 2 spaces per dwelling unit) for principal dwelling.' The cottage's space is all-weather and off-street, in addition to the house's."
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "380-47F",
+      "url": "https://ecode360.com/print/NE2598?guid=36785901",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "One for the cottage plus two for the house."
+    }
+  },
+  "districts": {
+    "RH": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "380-16C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784283",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public water and sewer, or public sewer only. Width 70 ft. Without public sewer 65,340 sq ft (see utility_rows). Public water and sewer are required, else a conditional use (380-16D). Other accessory structures: 10 ft from a side line and 6 ft from the rear line (an elder cottage meets the principal side and rear setbacks, 380-59A(19)(g))."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "380-16C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784283",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "380-16C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784283",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Without public sewer: 25 ft on one side and 200 ft on the other (225 ft both sides), and 25 ft on each side for a single-family detached dwelling existing on December 20, 1992."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "380-16C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784283",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "380-16C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784283",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "380-16C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784283",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage'. 380-59A(19)(b) measures the house, accessory structures and the elder cottage as 'total building coverage' against it, so it is read as building cover. The lot coverage definition was not read."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With only public water or no public utilities (no public sewer)",
+            "public_sewer": false,
+            "min_lot_sqft": 65340,
+            "setback_front_ft": 35,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 35,
+            "max_building_coverage": 0.15,
+            "section": "380-16C"
+          }
+        ],
+        "section": "380-16C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784283",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 300 ft at the street line. Without public sewer: 25 ft on one side and 200 ft on the other (225 ft both sides), and 25 ft on each side for a single-family detached dwelling existing on December 20, 1992."
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "380-26C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785022",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Nonagricultural uses. At most 87,120 sq ft (larger if PA DEP needs room for on-lot sewage). Width 150 ft. One lot per five acres of the 1992 parent tract (380-26D). On-lot water and sewage allowed. Other accessory structures: 10 ft from a side line and 6 ft from the rear line (an elder cottage meets the principal side and rear setbacks, 380-59A(19)(g))."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "380-26C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785022",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "380-26C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785022",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "380-26C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785022",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "380-26C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785022",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "380-26C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785022",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage'. 380-59A(19)(b) measures the house, accessory structures and the elder cottage as 'total building coverage' against it, so it is read as building cover. The lot coverage definition was not read."
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "380-27C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785100",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 150 ft. On-lot water and sewage allowed. Other accessory structures: 10 ft from a side line and 6 ft from the rear line (an elder cottage meets the principal side and rear setbacks, 380-59A(19)(g))."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "380-27C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785100",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "380-27C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785100",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "380-27C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785100",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "380-27C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785100",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "380-27C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785100",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage'. 380-59A(19)(b) measures the house, accessory structures and the elder cottage as 'total building coverage' against it, so it is read as building cover. The lot coverage definition was not read."
+      }
+    },
+    "R": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "380-28C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785178",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public water and sewer, or public sewer only. Width 100 ft. Without public sewer 65,340 sq ft (see utility_rows). Other accessory structures: 10 ft from a side line and 6 ft from the rear line (an elder cottage meets the principal side and rear setbacks, 380-59A(19)(g))."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "380-28C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785178",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "380-28C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785178",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Without public sewer: 25 ft on one side and 200 ft on the other (225 ft both sides), and 25 ft on each side for a single-family detached dwelling existing on December 20, 1992."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "380-28C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785178",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "380-28C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785178",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "380-28C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785178",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage'. 380-59A(19)(b) measures the house, accessory structures and the elder cottage as 'total building coverage' against it, so it is read as building cover. The lot coverage definition was not read."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With only public water or no public utilities (no public sewer)",
+            "public_sewer": false,
+            "min_lot_sqft": 65340,
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 35,
+            "max_building_coverage": 0.15,
+            "section": "380-28C"
+          }
+        ],
+        "section": "380-28C",
+        "url": "https://ecode360.com/print/NE2598?guid=36785178",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 300 ft. Without public sewer: 25 ft on one side and 200 ft on the other (225 ft both sides), and 25 ft on each side for a single-family detached dwelling existing on December 20, 1992."
+      }
+    },
+    "SR": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "380-17C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784337",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public water and sewer, or public sewer only. Width 70 ft. Without public sewer 65,340 sq ft. Public water and sewer are required, else a conditional use (380-17D). Other accessory structures: 10 ft from a side line and 6 ft from the rear line (an elder cottage meets the principal side and rear setbacks, 380-59A(19)(g))."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "380-17C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784337",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "380-17C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784337",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Without public sewer: 25 ft on one side and 200 ft on the other (225 ft both sides), and 25 ft on each side for a single-family detached dwelling existing on December 20, 1992."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "380-17C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784337",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "380-17C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784337",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "380-17C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784337",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage'. 380-59A(19)(b) measures the house, accessory structures and the elder cottage as 'total building coverage' against it, so it is read as building cover. The lot coverage definition was not read."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With only public water or no public utilities (no public sewer)",
+            "public_sewer": false,
+            "min_lot_sqft": 65340,
+            "setback_front_ft": 35,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 35,
+            "max_building_coverage": 0.15,
+            "section": "380-17C"
+          }
+        ],
+        "section": "380-17C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784337",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 300 ft at the street line. Without public sewer: 25 ft on one side and 200 ft on the other (225 ft both sides), and 25 ft on each side for a single-family detached dwelling existing on December 20, 1992."
+      }
+    },
+    "RG": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "380-18C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784389",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 80 ft. Public water and sewer required (380-18D). Accessory uses are not permitted in the front yard. Other accessory structures: 10 ft from a side line and 6 ft from the rear line (an elder cottage meets the principal side and rear setbacks, 380-59A(19)(g))."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "380-18C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784389",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "380-18C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784389",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "380-18C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784389",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "380-18C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784389",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "380-18C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784389",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage'. 380-59A(19)(b) measures the house, accessory structures and the elder cottage as 'total building coverage' against it, so it is read as building cover. The lot coverage definition was not read."
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "380-20D(3)",
+        "url": "https://ecode360.com/print/NE2598?guid=36784490",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 80 ft. Public water and sewer required (380-20E). Accessory uses are not permitted in the front yard. Other accessory structures: 10 ft from a side line and 6 ft from the rear line (an elder cottage meets the principal side and rear setbacks, 380-59A(19)(g))."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "380-20D(3)",
+        "url": "https://ecode360.com/print/NE2598?guid=36784490",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "380-20D(3)",
+        "url": "https://ecode360.com/print/NE2598?guid=36784490",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "380-20D(3)",
+        "url": "https://ecode360.com/print/NE2598?guid=36784490",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "380-20D(3)",
+        "url": "https://ecode360.com/print/NE2598?guid=36784490",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "380-20D(3)",
+        "url": "https://ecode360.com/print/NE2598?guid=36784490",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage'. 380-59A(19)(b) measures the house, accessory structures and the elder cottage as 'total building coverage' against it, so it is read as building cover. The lot coverage definition was not read."
+      }
+    },
+    "MHP": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "380-19C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784444",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public water and sewer, or public sewer only. Width 70 ft. Without public sewer 43,560 sq ft. Accessory uses are not permitted in the front yard. Other accessory structures: 10 ft from a side line and 6 ft from the rear line (an elder cottage meets the principal side and rear setbacks, 380-59A(19)(g))."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "380-19C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784444",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "380-19C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784444",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "380-19C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784444",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "380-19C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784444",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "380-19C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784444",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage'. 380-59A(19)(b) measures the house, accessory structures and the elder cottage as 'total building coverage' against it, so it is read as building cover. The lot coverage definition was not read."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With only public water or no public utilities (no public sewer)",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.2,
+            "section": "380-19C"
+          }
+        ],
+        "section": "380-19C",
+        "url": "https://ecode360.com/print/NE2598?guid=36784444",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 280 ft. Without public sewer: 25 ft on one side and 140 ft on the other (165 ft both sides)."
+      }
+    }
+  }
+}
