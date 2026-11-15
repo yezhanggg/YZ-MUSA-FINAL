@@ -224,6 +224,8 @@ The four town places (Allentown, Chester, Centre and Montgomery) take land cover
 $M -m pipeline.vision.infer_lots allentown --checkpoint ~/musa-drive/models/r34_c5_s0/best.pt --tta --tree-offset 0.25 --out ~/musa-drive/processed/allentown/cover.parquet
 ```
 
+The same run leaves its class maps in `processed/<place>/cover_work/r34_c5_s0/tiles/`. A place listed in `MODEL_RUNS` in `pipeline/vision/cover_lookup.py` reads them for the trees and paving inside the suggested spot (`spot_cover`). The four town places were added there and rebuilt with a full `build_lots run --force` early on Nov 15.
+
 City test scores leave out pixels that also sit in a train or validation box. Output: `processed/vision/city/<city>/`, `models/<run>/city_<city>_scores*.json`, `processed/<city>/cover*.parquet`, `processed/<city>/cover_compare*.json` and `processed/vision/error_analysis/`. Which cover file each city's lot records read is set in `pipeline/build_lots.py` (`COVER_FILES_BY_PLACE`). See [DATA.md](DATA.md).
 
 ### 4.4 Hand-label check

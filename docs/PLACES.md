@@ -122,7 +122,7 @@ How rows are used:
 - Only a dated row with a status sets a status. The newest dated inventory wins. Its date is in `source.date` and at the
   end of `status_detail` ("inventory dated 2005").
 - A row with no status, or with no date (the Chester County eTools pages), is added to `status_detail` as an
-  "Inventory note, no status claimed" beside `unknown`. 42 places carry such a note (most are York County places where
+  "Inventory note, no status claimed" beside `unknown`. 35 places carry such a note (most are York County places where
   the table lists no ADU-type use; the table lists only permitted uses, so silence is not read as "not addressed").
 - The York table says "No Zoning" for Wellsville and York Haven boroughs, where the DCED records disagree (no own ordinance,
   county zoning claimed in a county with none). The two agree on no own ordinance, so these two are `no_zoning` with the
@@ -153,24 +153,24 @@ No rule file disagrees with the DCED zoning record.
 
 ## Coverage
 
-Build of 2026-11-14, as committed with town rules batch 21 (commit 929fed0). People: Census Vintage 2025 estimates (13.06 million). Live counts: `counts` in the meta file.
+Build of 2026-11-15, as committed with town rules batch 26 (commit ce8d21a). People: Census Vintage 2025 estimates (13.06 million). Live counts: `counts` in the meta file.
 
 | Tier | Places | Share of people |
 |---|---|---|
-| verified | 77 | 32.3% |
-| drafted | 42 | 9.3% |
-| reported | 562 (527 no zoning, 35 from inventories) | 6.6% |
+| verified | 88 | 33.7% |
+| drafted | 46 | 9.8% |
+| reported | 560 (527 no zoning, 33 from inventories) | 6.4% |
 | text_search | 53 | 0.9% |
-| baseline | 1,838 | 51.0% |
+| baseline | 1,825 | 49.3% |
 
 | Status | Places | Share of people |
 |---|---|---|
 | by_right | 14 | 5.1% |
 | no_zoning | 527 | 5.0% |
-| limited | 94 | 27.1% |
-| not_addressed | 43 | 10.2% |
+| limited | 101 | 28.0% |
+| not_addressed | 49 | 11.0% |
 | prohibited | 3 | 0.8% |
-| unknown | 1,891 | 51.8% |
+| unknown | 1,878 | 50.2% |
 
 | zoning_authority | Places | Share of people |
 |---|---|---|
@@ -179,7 +179,7 @@ Build of 2026-11-14, as committed with town rules batch 21 (commit 929fed0). Peo
 | unknown | 267 | 1.9% |
 | county | 138 | 1.7% |
 
-A status is known for 48% of residents. The tier B corpus holds text for 66 places (has_text_search). The tier B worker
+A status is known for 49.8% of residents. The tier B corpus holds text for 66 places (has_text_search). The tier B worker
 is still adding places, and the town rule authors are still writing files. Rerun the builder after either changes.
 
 ## File size

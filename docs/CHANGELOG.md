@@ -1,5 +1,42 @@
 # Changelog
 
+## 2026-11-15, early morning (with the late evening of Nov 14)
+
+Not legal advice. Not a zoning determination. HB 2186, SB 1346 and Bill 250042 are bills, not law.
+
+### Lot places
+
+<!-- source: ~/musa-drive/lots/<place>/manifest.json (data_version, built_at, counts) and stats.json, backups under ~/musa-drive/backups/lots-<place>-pre-spotcover-*, file sizes under ~/musa-drive/host/, pipeline/vision/cover_lookup.py MODEL_RUNS -->
+
+- Allentown, Chester County, Centre County and Montgomery County were rebuilt with the trees and paving inside the suggested spot (`spot_cover`), read from the same model's class maps as their lot shares (`allentown-20261115-3024ad0166`, `chester_county-20261115-448c887ae9`, `centre_county-20261115-43434a1b88`, `montgomery_county-20261115-5b26a34d9b`). Lots in all six places now have spot figures. In the four town places they carry the same accuracy note as the lot shares.
+- The pass 10 wording held back for the ten lot towns (`LOT_RECORD_TOWNS`) was lifted in the same rebuild. Where no detached form is allowed, the record has no separation figure from the rules. No yes or no, approval path or fit result changed, and no headline share moved. On those lots the largest size shown for information changed (Centre 128, Chester 630, Montgomery 13,932 lots), and the slope class shares moved by under one point per place.
+- Pittsburgh and Philadelphia were not rebuilt.
+- Lot data bundle: 985.2 MB, about 15 MB under the 1 GB Pages limit. Not published.
+
+### Rules
+
+<!-- source: shared/rules/TOWNS.md (pass 10 and pass 11), pipeline/rules.py DOUBT_HOLD_TOWNS, git log of shared/rules/ (commits 77f5db1 to ce8d21a), shared/rules/towns_index.json and app/public/data/pa_places_meta.json at commit ce8d21a -->
+
+- Rules engine pass 10 (Nov 14, late evening): forms outside a rule's districts read not addressed, both side-yard figures are said, disputed paths are named, a district's impervious cover is its own figure, and gates can reach a lot only through an overlay or a planned development.
+- Rules engine pass 11: a code that bars use variances is said so (Hanover), districts in doubt read in the direction the code gives with the path to ask (Aston R-3), and side-yard totals work in utility rows.
+- One pass 11 fix (a district in doubt reads the path to ask) is held for the ten lot towns until their next lot rebuild (`DOUBT_HOLD_TOWNS` in `pipeline/rules.py`). It shows only in College Township (GWC) and Narberth (5A, 5B).
+- Town rule batches 22 to 26, and the end of batch 21: 133 places now have a rule file (131 towns and the two cities). 88 are verified by an independent second reading, 45 stay first readings (drafted). New verified files: Johnstown, Upper Gwynedd, West Hempfield, Upper Chichester, Aston, Hanover (York), Harborcreek, Newberry, West Norriton, North Whitehall and Washington (Franklin). New first readings: Forks, Lower Salford, North Fayette, Adams (Butler) and Robinson (Allegheny).
+- Skipped: towns whose code is only a PDF (for example McKeesport, Butler Township, Hilltown, Chestnuthill, Hermitage, Middle Smithfield and Cumru) or behind a login (Antrim, Franklin County). Patton adopted a new ADU ordinance on Oct 28, 2026 that is not yet in its online code, like Whitpain before it.
+- Answer ladder (`pa_places.json`, built Nov 15): 88 places verified (33.7% of people), 46 drafted (9.8%), 560 reported, 53 text search, 1,825 baseline. A status is known for 49.8% of people.
+
+### Assistant
+
+<!-- source: ~/musa-drive/ops/agent-eval/2026-11-15T00-46-59 to 2026-11-15T08-31-22 (claude-haiku-5-5)/report.md, api/agent.ts, app/src/agent/zoningText.ts, app/src/agent/placeAnswer.ts -->
+
+- Nov 14 evening: the assistant tests the unit before it answers a fit question, names the rule behind a barred type, says slope lines as questions for the city, and finds a street that is misspelled. Four eval questions cover these. Runs: 109 of 114 as run, then 114 of 118 after the fixes.
+- Nov 15: the assistant takes a lot fact the owner states as given ("my old carriage house"), keeps scanned zoning text word for word in quotes, and its output limit is now 4,096 tokens (`MAX_OUTPUT_TOKENS` in `api/agent.ts`), so longer answers are not cut off.
+- Eval of Nov 15: 112 of 118 as run before the fixes, 116 of 119 after the fixes and one new question (feat-05, the trees inside the suggested spot on a West Chester lot). 0 made-up citations in both. A check run of 16 questions after the last fix had 0 quotes not in the text. The three runs cost $0.31.
+- The Allentown tree question (alt-08) now expects the trees inside the suggested spot. The strict scorer patterns (town-04, trap-05, tierb-05, tierb-08, and market-01 and market-03, which want `get_site`) were left unchanged.
+
+### Tests
+
+- `pytest -q tests`: 1,619 passed, 2 skipped. `npm test` (vitest, with the lot files in `LOT_DATA_DIR`): 730 passed.
+
 ## 2026-11-14, afternoon and evening
 
 Not legal advice. Not a zoning determination. HB 2186, SB 1346 and Bill 250042 are bills, not law.

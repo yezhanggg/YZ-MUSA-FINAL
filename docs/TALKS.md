@@ -101,7 +101,7 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 <!-- source: pipeline/build_lots.py COVER_FILES_BY_PLACE, ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, ~/musa-drive/processed/philadelphia/cover_compare.json -->
 
 - The fit test does not use the land cover. It is a vector geometry test on the lot outline, the buildings and the streets, with setbacks from the rule files. It finds the largest unit that fits and where.
-- Land cover adds context to each lot: tree canopy, open ground, hard surface and impervious share. In the two cities it also gives the trees inside the suggested spot.
+- Land cover adds context to each lot: tree canopy, open ground, hard surface and impervious share. In all six lot places it also gives the trees and paving inside the suggested spot (the four town places since Nov 15).
 - Sources: the Pittsburgh lots use the original 5-class model. The Philadelphia lots use the 2018 raster. Allentown and the three county places use the same 5-class model (added Nov 14). Only Centre County lies in a test county (about 0.70). Allentown, Chester and Montgomery are not validated, and each record says so.
 - Per-lot check against the city rasters (tree share):
   - Pittsburgh: off by 8.41 points on average, but only 128 lots could be checked.
@@ -112,7 +112,7 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 ### 7. Lot results (1 min)
 
-<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-14. Data versions pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261114-2cb47a95d4, chester_county-20261114-47fe1443e9, centre_county-20261114-e4fb9168db, montgomery_county-20261114-459bcec166 -->
+<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-15. Data versions pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261115-3024ad0166, chester_county-20261115-448c887ae9, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b -->
 
 | Lot place | Lots | Any legal ADU path today | Detached unit legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|
@@ -155,7 +155,7 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 - Census: ACS 5-year (rent, rent by bedrooms, units in structure), decennial housing units, population estimates, TIGER tracts.
 - LEHD LODES jobs, the Census building permits survey, IRS migration, Freddie Mac mortgage rates, Annual NLCD land cover, OpenStreetMap streets via OSMnx.
 - HUD Small Area Fair Market Rents by ZIP.
-- The town rule files and the lot records from the lot tool. The tract analysis read the 38 rule files of Nov 11. 118 exist now (see section 8).
+- The town rule files and the lot records from the lot tool. The tract analysis read the 38 rule files of Nov 11. 133 exist now (see section 8).
 - Figure: `musa5500/docs/figures/01_moe.png` (margins of error).
 
 ### 3. The payoff test (1.5 min)
@@ -210,11 +210,11 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 ### 8. Legal classes from the town files (1 min)
 
-<!-- source: ~/musa-drive/processed/5500/legal_class_coverage.csv (Nov 11 run), shared/rules/towns_index.json and the town files (Nov 14), app/public/data/pa_places_meta.json (built 2026-11-14) -->
+<!-- source: ~/musa-drive/processed/5500/legal_class_coverage.csv (Nov 11 run), shared/rules/towns_index.json and the town files (Nov 15, commit ce8d21a), app/public/data/pa_places_meta.json (built 2026-11-15) -->
 
-- Now (Nov 14): 116 towns beyond the two cities have rule files. With the two cities, 77 are verified by an independent second reading and 41 stay first readings. 43 of the 116 town codes have no ADU text at all. Reading bans ADUs.
-- 41.6 % of Pennsylvanians live in a place with a rule file (32.3 % verified, 9.3 % drafted).
-- The answer ladder gives every one of the 2,572 places one answer and says how good the evidence is: rule file, a dated agency report or no zoning on record, a search of public zoning text, or the statewide baseline. A status is known for 48 % of people.
+- Now (Nov 15): 131 towns beyond the two cities have rule files. With the two cities, 88 are verified by an independent second reading and 45 stay first readings. 49 of the 131 town codes have no ADU text at all. Reading bans ADUs.
+- 43.5 % of Pennsylvanians live in a place with a rule file (33.7 % verified, 9.8 % drafted).
+- The answer ladder gives every one of the 2,572 places one answer and says how good the evidence is: rule file, a dated agency report or no zoning on record, a search of public zoning text, or the statewide baseline. A status is known for 50 % of people.
 - The tract numbers below come from the Nov 11 run with 38 rule files. They were not rerun.
 - By people, in that run: 71.2 % live in towns with no rule file yet ("unknown"). 12.5 % live in a conversion-only town (Philadelphia, York), 6.3 % by right, 6.0 % none, 3.5 % family only, 0.4 % discretionary.
 - Why not today: in Philadelphia the law is the limit (1.2 % of lots have any path). In Pittsburgh every lot has a path, and the yard is the limit.
@@ -242,7 +242,7 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 - ACS tract data is noisy. Most single-tract changes are inside the margin of error.
 - The room model rests on two cities.
-- The "today" scenario rests on the 71 % of people in towns whose code had not been read on Nov 11. Rule files now cover 42 % of people. The tract run was not redone.
+- The "today" scenario rests on the 71 % of people in towns whose code had not been read on Nov 11. Rule files now cover 43 % of people. The tract run was not redone.
 
 ### 12. Likely questions
 

@@ -184,7 +184,7 @@ $G -m pipeline.build_lots cover --place pittsburgh --workers 4                  
 
 - All of these were checked with `--help`.
 - Pittsburgh lot files read `cover_model_r34_c5_s0.parquet` first (`COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`). The Nov 12 to 14 runs (DeepLabV3+, EfficientNet-B2, Lovasz loss, ensembles) did not pass the Pittsburgh bar for replacing it. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
-- Allentown and the three county places read `processed/<place>/cover.parquet` from `r34_c5_s0` (Nov 14). Only Centre County is a Chesapeake test county (about 0.70). Allentown, Chester and Montgomery are not validated. `COVER_NOTES` in `pipeline/build_lots.py` writes this note into each record. These places have no `spot_cover`: filling it needs another full run of each.
+- Allentown and the three county places read `processed/<place>/cover.parquet` from `r34_c5_s0` (Nov 14). Only Centre County is a Chesapeake test county (about 0.70). Allentown, Chester and Montgomery are not validated. `COVER_NOTES` in `pipeline/build_lots.py` writes this note into each record. Since the full run of Nov 15 their records also have `spot_cover`, read from the same model's class maps (`MODEL_RUNS` in `pipeline/vision/cover_lookup.py`).
 - Philadelphia reads `cover.parquet`, which holds the 2018 city raster.
 - City boxes that overlap training boxes are left out of city scores (`pipeline/vision/city.py`).
 - Training commands are in [RUNNING.md](RUNNING.md) section 4.
@@ -213,10 +213,10 @@ $G -m pipeline.build_lots stats --place pittsburgh                  # stats.json
 | Model id | `agent/schema.ts` `DEFAULT_MODEL` = `claude-haiku-5-5`. `AGENT_MODEL` on the server overrides it |
 | System prompt | `agent/schema.ts` `SYSTEM_PROMPT` |
 | Tools | Schemas in `agent/schema.ts`, `app/src/agent/areaTools.ts`, `app/src/agent/ruleText.ts` and `app/src/lib/lot/agentTools.ts`. Executors in `app/src/agent/executors.ts`. 19 tools: get_site, test_adu, compare_sizes, get_rules, find_lots, set_map (area and map), find_lot (any address in the six lot places, from the address index), get_area_stats (tracts, towns, counties), get_lot_facts, get_lot_rules, test_unit_on_lot, compare_scenarios, lot_money, explain_limit (lot records), get_rule_text, list_rule_places (city, town and bill rule files and the town index), get_place_answer (the answer ladder for any Pennsylvania place), search_zoning_text, list_text_places (public zoning text) |
-| Limits | `MAX_ROUNDS` 6 tool rounds (`agent/schema.ts`), `MAX_OUTPUT_TOKENS` 2048 and a daily cap of 2,000 model requests (`AGENT_DAILY_CAP`) in `api/agent.ts` |
-| Questions | 114 in all: `agent/eval/questions.json` (65 in 7 groups), `questions_ladder.json` (25), `questions_tierb.json` (10), `questions_allentown.json` (8), `questions_rule_text.json` (6) |
+| Limits | `MAX_ROUNDS` 6 tool rounds (`agent/schema.ts`), `MAX_OUTPUT_TOKENS` 4096 and a daily cap of 2,000 model requests (`AGENT_DAILY_CAP`) in `api/agent.ts` |
+| Questions | 119 in all: `agent/eval/questions.json` (65 in 7 groups), `questions_ladder.json` (25), `questions_tierb.json` (10), `questions_allentown.json` (8), `questions_rule_text.json` (6), `questions_features.json` (5) |
 
-<!-- source: ~/musa-drive/ops/agent-eval/2026-11-14T04-51-56-claude-haiku-5-5/report.md -->
+<!-- source: ~/musa-drive/ops/agent-eval/2026-11-15T08-20-18-claude-haiku-5-5/report.md, 2026-11-15T08-27-03-claude-haiku-5-5/report.md and 2026-11-15T08-31-22-claude-haiku-5-5/report.md -->
 
 ```bash
 EVAL_OUT_DIR=/tmp/evaldry npm run eval:agent -- --dry-run --limit 2   # no key, no network (ran 2026-11-12)
@@ -226,7 +226,8 @@ npm run eval:agent -- --category zoning                               # one grou
 
 - The full run needs `ANTHROPIC_API_KEY` in the environment. The script never reads it from a file.
 - Reports go to `~/musa-drive/ops/agent-eval/<run id>/report.md`.
-- The newest full run (2026-11-14 04:51, Haiku) scored 109 of 114 with 0 made-up citations and 0 quotes not in the text. It cost $0.14 at the prices in the report. Misses: fit-10, tierb-05, tierb-10, trap-02, trap-03. No question covers the county places yet. Three questions changed after that run (Nov 14 evening) and have not been run on the model since: alt-08 now asks for the tree share of an Allentown lot with the accuracy note and the missing spot figures, and rt-01 and rt-04 now name Carlisle and Highland (Adams), the first towns in file order to match since Carlisle's rule file was added and Highland's was verified.
+- The newest full runs are from early on Nov 15 (Haiku). As run before any fix, the set of 118 scored 112 with 0 made-up citations. After the fixes and one new question (feat-05, the trees inside the suggested spot on a West Chester lot) it scored 116 of 119, again with 0 made-up citations. That run quoted one scanned word in a corrected spelling. The fix keeps scanned text word for word in quotes, and a check run of 16 questions then had 0 quotes not in the text. The three runs cost $0.31 in all. Misses of the 119 run: tierb-04 (the scanned word, fixed), town-04 and trap-05 (both right answers that the scorer's fixed patterns did not match). The strict scorer patterns were left as they are (also tierb-05, tierb-08 and market-01 and market-03, which want `get_site` where `get_area_stats` gives the same numbers).
+- What the Nov 15 fixes changed: the assistant takes a lot fact the owner states ("my old carriage house") as given, keeps scanned zoning text word for word in quotes and says a piece it would fix in its own words outside the quotes, and longer answers are no longer cut off (`MAX_OUTPUT_TOKENS` 4096).
 - After a prompt or tool change, run the full set at least twice. Scores moved by a few questions between runs.
 
 ### 8. The class site
@@ -245,17 +246,17 @@ These commands rendered all 10 pages on 2026-11-11 with no warnings. Pages and n
 
 ## (c) Checks before every commit
 
-All were run on 2026-11-12 between 00:37 and 00:39. The results are in [RUNNING.md](RUNNING.md) section 5. The pytest and vitest counts below are from Nov 14. CI (`.github/workflows/ci.yml`) runs the same set on every push.
+All were run on 2026-11-12 between 00:37 and 00:39. The results are in [RUNNING.md](RUNNING.md) section 5. The pytest and vitest counts below are from Nov 15. CI (`.github/workflows/ci.yml`) runs the same set on every push.
 
 | Command | What it protects |
 |---|---|
-| `$G -m pytest -q tests` | Rules, fit, lot builder, money, tract analysis, validation kit, the 50-lot regression set (1,503 passed, 2 skipped on the evening of 2026-11-14) |
+| `$G -m pytest -q tests` | Rules, fit, lot builder, money, tract analysis, validation kit, the 50-lot regression set (1,619 passed, 2 skipped early on 2026-11-15) |
 | `$M -m pytest -q tests/test_vision.py` | Land cover code (needs torch) |
 | `ruff check .` and `ruff format --check .` | Python lint and format (clean) |
 | `mypy pipeline` | Python types. 0 errors (mypy 2.4.1, 2026-11-12). CI fails on any new one (`MYPY_STRICT`) |
 | `$G .github/scripts/check_schemas.py` | Rule files, assumptions and the lot schema against their schemas |
 | `npx tsc --noEmit -p tsconfig.json` | TypeScript types (0 errors) |
-| `npx vitest run` | Browser money, verdicts, citations, Ask tools, eval scoring (699 passed on the evening of 2026-11-14) |
+| `npx vitest run` | Browser money, verdicts, citations, Ask tools, eval scoring (730 passed early on 2026-11-15) |
 | `npm run build` | The production build, including the copy of `site/`. Fails if `site/` is missing |
 | `npm run e2e` | Playwright browser tests on the dev server: the lot flow, Philadelphia rowhouse, address search, room map, Projecting mode (9 passed on 2026-11-12, 2.5 min). Skips when the lot files are not on the drive |
 | `python .github/scripts/guard.py <base> <head>` | CI only: big files, keys and `no-push/` never committed |
@@ -275,7 +276,7 @@ The data root is `ADU_DATA_DIR` (default `~/musa-drive`). Other variables: `LOT_
 | `validation/` | 582 MB | 250-lot sample, label sheets, results. Labels go in `validation/labels/` | No |
 | `corpus/` | 364 MB | Zoning pilot texts and drafts | Only if the pilot is dropped |
 | `data/` | 5.2 GB | Course notebook tables. The repo's `data` link points here | No |
-| `host/` | 935 MB on disk, 976.3 MB of files (Nov 14 evening) | Publishing bundle from `tools/publish_lots.sh` | Yes. It is rebuilt each time |
+| `host/` | 943 MB on disk, 985.2 MB of files (Nov 15) | Publishing bundle from `tools/publish_lots.sh` | Yes. It is rebuilt each time |
 | `cache/` | 647 MB | pip, Hugging Face and Census caches | Yes. Refilled on use |
 | `smoke/` | 17 MB | Small test builds | Yes |
 | `data-work/` | 1.6 GB | An older copy of `data/`. No code refers to it | Yes, after a look |
@@ -314,10 +315,11 @@ Also backups: `processed/<place>/<name>.prev.parquet` (the table before the last
   - A front line that runs through the house: the contextual front setback is taken from the house (`house_front_setback` in `pipeline/build_lots.py`).
   - Building outlines wider than the lot: outlines and parcel lines come from different sources and years.
   - About one lot in ten has low lot line confidence (`stats.json` `edge_confidence`).
-- **Town files with open readings.** 41 of 116 town files stay `drafted` (first readings), each with its open point in `towns_index.json` `status_note`. 43 of the 116 have no ADU text, so their answer leans on the statewide baseline and the Municipalities Planning Code. Towns whose code is only a PDF were skipped (Marple, Palmer, Muhlenberg, Pottstown, East Pennsboro, South Whitehall, Manor, Silver Spring, Upper Moreland, Derry). Some 2026 ordinances could not be read.
+- **Town files with open readings.** 45 of 131 town files stay `drafted` (first readings), each with its open point in `towns_index.json` `status_note`. 49 of the 131 have no ADU text, so their answer leans on the statewide baseline and the Municipalities Planning Code. Towns whose code is only a PDF or sits behind a login were skipped, for example Marple, Palmer, Muhlenberg, Pottstown, Upper Moreland, Derry, McKeesport, Hermitage, Chestnuthill, Cumru and Antrim (Franklin), which is behind a login. Each batch comment in `tools/town_targets.py` names the towns it skipped and why. Some 2026 ordinances could not be read: Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes. Several verified files rest on codes with 2026 amendments that were not read, and each carries a caution (`provenance.code_caution`).
+- **Rules held for the lot towns.** One pass 11 wording fix (a district in doubt reads the path to ask, not a variance) is held for the ten lot towns until their next lot rebuild (`DOUBT_HOLD_TOWNS` in `pipeline/rules.py`). It shows only in College Township (GWC) and Narberth (5A, 5B). Empty the set when you rebuild those places.
 - **Undermined areas.** Pittsburgh's undermined-area overlay (UM-O) is not in the lot data. The steep slope rules of both cities are in the lot records since Nov 14.
 - **Heights.** Microsoft building heights read low in Upper Dublin, so the "no taller than the house" test reads "not checked" in Montgomery County.
-- **Lot data not published.** The bundle is 976.3 MB against the 1 GB Pages limit, about 24 MB of room. Until it is published, the live site has no lot data and Ask cannot search addresses there.
+- **Lot data not published.** The bundle is 985.2 MB against the 1 GB Pages limit, about 15 MB of room. Until it is published, the live site has no lot data and Ask cannot search addresses there.
 - **Statewide room is an extrapolation.**
   - The room model is trained on two cities.
   - 1,780 of the 2,932 modelled tracts are outside their range (`~/musa-drive/processed/5500/room_summary.json`).

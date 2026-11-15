@@ -18,7 +18,7 @@ Checked by running the production build and logging every request in Chromium (N
 | `<place>/tiles/overview.pmtiles` (each place) | Only after "Show testable lots" is turned on: bytes 0 to 15, the header, then one range per map tile at zoom 5 to 13 | 66 KB, 148 KB and 23 KB files, about 35 KB for the state map and under 10 KB for a city view |
 | `<place>/detail/<GEOID>.json.gz` | The first lot of a tract (click, search or link). Later lots in the same tract need no request | up to 1.5 MB |
 | `<place>/detail/<GEOID>.geom.json.gz` | With the head file, when the build split the tract (72 Pittsburgh, 50 Philadelphia, 26 Allentown, 11 Chester, 2 Centre and 23 Montgomery County tracts in the Nov 14 and Nov 15 builds) | up to 1.2 MB |
-| `<place>/detail/<GEOID>.pN.json.gz` | When a head file names extra chunks in `more`. 132 chunk files in the Nov 14 builds, most in the four town places | |
+| `<place>/detail/<GEOID>.pN.json.gz` | When a head file names extra chunks in `more`. 137 chunk files in the Nov 14 and Nov 15 builds, most in the four town places | |
 | `<place>/stats.json` | When a lot opens, for the city-wide story | 48 KB |
 | `<place>/lot_tract.json` | Only when the Ask assistant opens a lot by id that is not in memory | 3.4 MB and 14 MB (gzipped on the fly to 0.3 MB and 1.3 MB) |
 | `<place>/addresses/index.json.gz` (each place) | When the Ask assistant first searches an address (`find_lot`), then kept | 3 KB to 39 KB, 103 KB for all six places |
@@ -163,13 +163,13 @@ You need: GitHub Desktop signed in as `yezhanggg`, the external drive plugged in
    rsync -a --delete --exclude .git ~/musa-drive/host/ ~/musa-drive/backyard-homes-lots/
    ```
 5. **Commit and push.** In GitHub Desktop the Changes tab lists about 1,700 files. Summary:
-   `Lot data 2026-11-14`. Click "Commit to main", then "Push origin". The upload is about 985 MB.
+   `Lot data 2026-11-15`. Click "Commit to main", then "Push origin". The upload is about 985 MB.
 6. **Turn on Pages.** On github.com open the data repo > Settings > Pages. Source: "Deploy from a branch".
    Branch: `main`, folder `/ (root)`. Save. Wait until the page shows "Your site is live at
    https://yezhanggg.github.io/backyard-homes-lots/" (one to three minutes, see the Actions tab).
 7. **Check one file.** Open
    https://yezhanggg.github.io/backyard-homes-lots/lots/pittsburgh/manifest.json in the browser. It shows JSON with
-   the `data_version` of the Pittsburgh build you published (`pittsburgh-20261114-7ae3f25d22` for the Nov 14 bundle).
+   the `data_version` of the Pittsburgh build you published (`pittsburgh-20261114-7ae3f25d22` for the Nov 15 bundle).
 8. **Point the app at it.** On vercel.com open the app project > Settings > Environment Variables. Add:
    - Key `VITE_LOT_DATA_URL`, value `https://yezhanggg.github.io/backyard-homes-lots/lots/` (with the last
      slash). Environments: Production and Preview.

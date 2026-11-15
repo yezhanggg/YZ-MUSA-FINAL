@@ -1,8 +1,8 @@
 # Architecture
 
-This product answers one question for a home lot in Pennsylvania: can a backyard home (an ADU) go here, how big, under which rules, and does it pay. Six lot places are covered lot by lot: Philadelphia (459,998 lots), Pittsburgh (92,081), Allentown (29,158), and parts of Montgomery County (26,119), Chester County (14,847) and Centre County (3,484), 625,687 lots in all. 116 towns have a hand-checked rule file (10 of them are in the lot places). Every Pennsylvania place gets one answer from the answer ladder, down to a statewide baseline. Towns outside the lot places have rules but no lot files.
+This product answers one question for a home lot in Pennsylvania: can a backyard home (an ADU) go here, how big, under which rules, and does it pay. Six lot places are covered lot by lot: Philadelphia (459,998 lots), Pittsburgh (92,081), Allentown (29,158), and parts of Montgomery County (26,119), Chester County (14,847) and Centre County (3,484), 625,687 lots in all. 131 towns have a hand-checked rule file (10 of them are in the lot places). Every Pennsylvania place gets one answer from the answer ladder, down to a statewide baseline. Towns outside the lot places have rules but no lot files.
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts.lots (data versions of 2026-11-14: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261114-2cb47a95d4, chester_county-20261114-47fe1443e9, centre_county-20261114-e4fb9168db, montgomery_county-20261114-459bcec166), shared/rules/towns_index.json at commit 13700c5 -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts.lots (data versions of 2026-11-14 and 15: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261115-3024ad0166, chester_county-20261115-448c887ae9, centre_county-20261115-43434a1b88, montgomery_county-20261115-5b26a34d9b), shared/rules/towns_index.json at commit ce8d21a -->
 
 Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
@@ -57,7 +57,7 @@ In words:
 1. Each place module downloads its layers once into `raw/<place>/` and records each one in `raw/<place>/SOURCES.json`.
 2. The place `build` step joins parcels, assessor rows, zoning, overlays, flags and building outlines into one lots table and one buildings table per place, in `processed/<place>/`.
 3. The lot builder (`pipeline/build_lots.py`) reads those tables. For every lot and each of the three scenarios (today, local reform, state reform) it resolves the rules (`pipeline/rules.py`), finds the front, rear and side lot lines, cuts the buildable ground and fits each allowed ADU type (`pipeline/fit.py`). The fit is a vector geometry test on lot, building and street lines with rule-based setbacks.
-4. It joins land cover per lot and, in the two cities, reads what lies inside the suggested spot (trees a unit would remove, open ground, hard surface). Land cover is context. It does not move or block the unit.
+4. It joins land cover per lot and, in all six places, reads what lies inside the suggested spot (trees a unit would remove, open ground, hard surface). Land cover is context. It does not move or block the unit.
    A later refresh step (`build_lots terrain`) adds ground slope from the USGS 3DEP 1 m DEM: over the lot, the buildable ground and under the suggested spot, a steep flag and a second fit on ground under 25 percent. Slope is context too. It does not change the fit's yes or no.
 5. It writes one validated JSON record per lot, grouped by 2020 census tract, plus a compact index, the current app's per-tract lists and a manifest.
 6. The browser loads a tract file, shows the saved answer, and tests a unit the user draws against the saved buildable ground.
@@ -67,10 +67,10 @@ Land cover and the detector, by place:
 | | Philadelphia | Pittsburgh | Allentown and the three county places |
 |---|---|---|---|
 | Lot `cover` block | The city's 2018 land cover raster (`landcover_2018`), because the model is not reliable for tree and open ground on NAIP 2022 here | The land cover model `r34_c5_s0` on NAIP 2022 (`model:r34_c5_s0`), from `cover_model_r34_c5_s0.parquet` | The same model, from `cover.parquet` (Nov 14). Validated only in Centre County (a Chesapeake test county). 36 Centre County lots have none |
-| Cover inside the suggested spot (`spot_cover`) | From the same raster | From the same model maps | Not filled |
+| Cover inside the suggested spot (`spot_cover`) | From the same raster | From the same model maps | From the same model maps (since the Nov 15 rebuild) |
 | Detector objects | Not in the lot records (`objects` is empty) | Not in the lot records (`objects` is empty) | Not in the lot records |
 
-<!-- source: pipeline/build_lots.py COVER_FILES_BY_PLACE, COVER_NOTES, SPOT_COVER, line "objects": []. pipeline/vision/raster_cover.py finalize(). ~/musa-drive/processed/<city>/cover.parquet cover_source column -->
+<!-- source: pipeline/build_lots.py COVER_FILES_BY_PLACE, COVER_NOTES, SPOT_COVER, line "objects": []. pipeline/vision/cover_lookup.py MODEL_RUNS. pipeline/vision/raster_cover.py finalize(). ~/musa-drive/processed/<city>/cover.parquet cover_source column -->
 
 - The land cover model (`pipeline/vision/`) scores aerial images as building, tree, open ground, hard surface and other. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
 - The object detector (`musa6950/yolo/`) finds garages, sheds, other accessory buildings and pools in sample areas only. It writes `processed/yolo/detections_<city>.parquet`. Its labels are first pass and its scores are not a true accuracy, so it does not feed the lot records. Garages and sheds in the fit come from building outlines.
@@ -82,7 +82,7 @@ Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 | Tier | Where | What it holds | Used by |
 |---|---|---|---|
 | 1. Lot-level rules | The six lot places (`shared/rules/philadelphia.json`, `pittsburgh.json`, the town files of Allentown and the 9 county-place towns, plus the bill files) | Every rule resolved for every lot and scenario, with district setbacks and overlays, saved in the lot record | Lot files, Testing mode, the assistant's lot tools |
-| 2. Town rule files | 116 towns beyond the two cities, mostly the largest by 2020 population (`shared/rules/pa_<county>_<town>.json`). With the two cities, 77 verified and 41 drafted with a stated open point (2026-11-14) | ADU status, approval path, size, owner occupancy, conditions and other ways to add a unit, each cited. Lot files only for the towns in the lot places | The assistant (`get_rule_text`, `list_rule_places`), `pipeline/rules.py` town resolver, [RULES_TOWNS.md](RULES_TOWNS.md) |
+| 2. Town rule files | 116 towns beyond the two cities, mostly the largest by 2020 population (`shared/rules/pa_<county>_<town>.json`). With the two cities, 88 verified and 45 drafted with a stated open point (2026-11-15) | ADU status, approval path, size, owner occupancy, conditions and other ways to add a unit, each cited. Lot files only for the towns in the lot places | The assistant (`get_rule_text`, `list_rule_places`), `pipeline/rules.py` town resolver, [RULES_TOWNS.md](RULES_TOWNS.md) |
 | 2b. Public zoning text (unverified) | 66 towns with a public copy of the ordinance on the town or a county site (`<data root>/corpus/tierb/`, published as `zoning_text/` next to the lot data) | Passages copied word for word, with section, pages, link and fetch date. No verdict | The assistant (`search_zoning_text`, `list_text_places`), only for a town with no rule file or a detail the rule file lacks. Labelled "unverified text search" |
 | 3. Statewide baseline | Every other Pennsylvania town (`shared/rules/pa_statewide.json`) | MPC approval paths, building code, sewage rules, the pending bills. No town zoning numbers | The assistant, which says the answer is the statewide baseline and not the town's own code |
 
@@ -122,7 +122,9 @@ What the tool results carry so the model does not have to infer it (the prompt s
   seen) comes first; an ADU under another listing is named as such. A proposal check says the share-of-house cap is
   "Not checked" when the house size is not known.
 - Text search: every passage sits in a `quote` field, with a `quote_rule` line (copy character for character, cut with
-  "..." around stray marks, never fix a word) and `text_kind` ("scanned text, quoted as read" for OCR). A search with
+  "..." around stray marks, never fix a word) and `text_kind` ("scanned text, quoted as read" for OCR). In scanned
+  text a misread word stays misread inside the quotes (`SCANNED_NOTE`). To fix it, the answer says that piece in its own
+  words outside the quotes. A search with
   no match returns `say_exactly: "Not found in the text searched."` and a `not_found_rule`.
 - Lot records: a check the record cannot test (no house size, no land cover block) has `pass: "not checked"`, and
   `test_unit_on_lot` lists them under `not_checked`. A record with land cover gives a `land_cover` block in
@@ -135,7 +137,8 @@ What the tool results carry so the model does not have to infer it (the prompt s
   map or not. It works on the live site only once the bundle is published.
 
 Eval files: `questions.json` (generated, two cities), `questions_tierb.json`, `questions_ladder.json`,
-`questions_allentown.json` and `questions_rule_text.json` (both from `agent/eval/make_more_questions.ts`). The scorer
+`questions_allentown.json` and `questions_rule_text.json` (both from `agent/eval/make_more_questions.ts`), and
+`questions_features.json` (from `agent/eval/make_feature_questions.ts`). 119 questions in all. The scorer
 checks that quoted spans are in a tool result; words the user asked or the assistant searched for are matched word by
 word with plurals folded.
 
