@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 116,
-      "population": 5409702,
-      "share_of_pa": 0.416
+      "towns_beyond_the_two_cities": 119,
+      "population": 5460692,
+      "share_of_pa": 0.42
     }
   ],
   "towns": [
@@ -2882,6 +2882,78 @@
         "named as a town with an ADU ordinance (Code 285-49D(1) accessory dwelling unit for a relative)"
       ],
       "status_note": "Drafted 2026-11-14, independently reviewed and fixed the same day. Open: the dwelling unit definition (285-33) asks for 800 sq ft and bars two kitchens while the ADU cap is 40% or 800 sq ft (whichever less), stored as size.min_sqft 800 (secondary) with a condition; which districts the conversion apartment reaches: MS lists 'Conversion of existing building into dwellings' by right (285-43B(1)(e)) while 285-48A(16)(a) makes it a special exception in RR, TV and MS and only R-3 names it in its use list; the A district larger ADU (60% or 1,200 sq ft) by conditional use is stored as an ADU listing alternative; parking table row for an accessory apartment 'within a neighborhood development' has no matching section; district summary PDFs, TV in full, commercial districts and 285-6 special exception criteria not read."
+    },
+    {
+      "geoid": "4209179056",
+      "geoid_aliases": [],
+      "name": "Upper Gwynedd township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 17072,
+      "population_with_aliases": 17072,
+      "housing_units": 7311,
+      "pop_rank": 132,
+      "file": "pa_montgomery_upper_gwynedd",
+      "batch": 22,
+      "status": "verified",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/10790758",
+      "plain_fetch": false,
+      "code_current_through": "2025-12-08",
+      "code_note": "Zoning: Chapter 195 Zoning (Ord. No. 87-11, 11-23-1987, as amended). ADU text: an accessory use (195-9F(1)(g)): 'When accessory to a single-family detached dwelling only, one separate living area, including cooking facilities' for no more than two persons related to the principal occupant, with no enlargement of the building's footprint (an existing accessory building is not excluded, 195-3A, B), registered with the Zoning Officer and a recorded agreement to remove the cooking facilities. R-1 names 195-9F. Whether it reaches R-2, R-3, R-4, AP and BP (narrow or no accessory lists) is not settled. C and GA permit no single-family detached dwelling. IN only age-restricted houses by conditional use. VPR conversion by special exception (195-17B(6)(c)) and two-family dwellings in VPR and VC. New Laws: Ord. No. 2026-01 and 2026-03 (zoning) not codified. Read in the browser on eCode360 (UP0929).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 195-9F(1)(g) separate living area for relatives)"
+      ],
+      "status_note": "Drafted 2026-11-14, independently reviewed and fixed the same day. Open for a later check: Ord. No. 2026-01 and 2026-03 (zoning, 2026-05-11) not codified and unread (search excerpts show 2026-01 rewrites the dwelling unit and family definitions, adding unrelated individuals who maintain a common household, and short-term rental wording); TH, MH, OC, SC, LI and I use lists not read; reading points: whether the separate living area reaches R-2, R-3, R-4, AP and BP (no or narrow accessory lists), whether it may go in an existing garage or outbuilding (195-3A reads building 'or part thereof'), whether the 800 sq ft dwelling-unit minimum (R-3, VPR) reaches it, IN stored as a conditional-use district path because its houses are age-restricted conditional uses (195-26B(12)); BP building coverage is a formula (15% to 30%), stored as 15%; manager quarters (195-14F(3)(c), 195-26F(3)(c)) and institutional employee residences (195-26B(14)) noted only."
+    },
+    {
+      "geoid": "4207183152",
+      "geoid_aliases": [],
+      "name": "West Hempfield township",
+      "county": "Lancaster",
+      "type": "township",
+      "population": 17020,
+      "population_with_aliases": 17020,
+      "housing_units": 6510,
+      "pop_rank": 133,
+      "file": "pa_lancaster_west_hempfield",
+      "batch": 22,
+      "status": "verified",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/13152773",
+      "plain_fetch": false,
+      "code_current_through": "2025-11-06",
+      "code_note": "Zoning: Chapter 145 Zoning (Zoning Ordinance of 1988, as amended). ADU text: ECHO housing (elder cottage, 201.2, 702.9): special exception in R, RR, R-1 and R-2, an addition to or conversion of the house or a mobile home on the lot, at most 1,000 sq ft, for an elderly, handicapped or disabled relative, at most two people, removed within 120 days after use ends, one more parking space. Residential conversion of a house existing on March 14, 1978 by special exception (702.1), two-family dwellings by right in R-2, R-3 and TV, and a farm-employee mobile home by special exception in R (702.4). New Laws: Ord. No. 6-26 (zoning) not codified. Read in the browser on eCode360 (WE1403).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 702.9 ECHO housing)"
+      ],
+      "status_note": "Drafted 2026-11-14, independently reviewed and fixed the same day. Open for a later check: Ord. No. 6-26 (2026-09-01, zoning and subdivision, its New Laws note reportedly sits on Section 701) and Ord. No. 3-26 (Hotels) not codified and unread; Articles 1200 (open space option, residential conversion units 1203.1) and 1300 not read; reading points: whether an elder cottage counts as a dwelling unit for the per-unit lot area in R and R-2 and against the R parent-tract quota, whether a mobile home cottage takes the residential or the accessory residential yards (702.9B), whether TV counts as a commercial or residential district under 704.1; TV landscape area 30% in 403.3A3b against 35% in the summary table not resolved."
+    },
+    {
+      "geoid": "4204578776",
+      "geoid_aliases": [],
+      "name": "Upper Chichester township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 16898,
+      "population_with_aliases": 16898,
+      "housing_units": 7334,
+      "pop_rank": 135,
+      "file": "pa_delaware_upper_chichester",
+      "batch": 22,
+      "status": "verified",
+      "checked_on": "2026-11-14",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/15685575",
+      "plain_fetch": false,
+      "code_current_through": "2026-01-15",
+      "code_note": "Zoning: Chapter 600 Zoning (Ord. No. 678, 12-13-2012, as amended). No ADU text. R-1, R-2 and R-3 permit only single-family detached dwellings among dwellings. Two-family detached dwellings (duplexes) by right only in APT on a one-acre tract (600-40, 600-43C), watchman or caretaker quarters in I (600-81E). Elsewhere a use variance (600-209C). New Laws: Ord. No. 767 (zoning) not codified. Read in the browser on eCode360 (UP1263).",
+      "why": [
+        "added as batch 22 by population. Code Chapter 600 has no ADU text"
+      ],
+      "status_note": "Drafted 2026-11-14, independently reviewed and fixed the same day. Open for a later check: Ord. No. 767 (zoning, 2026-04-22) not codified and unread (the review reports its New Laws note on Article II, Terminology, so it may amend definitions); TH, MH, I-C and PRC use lists not read (a code search for single-family detached dwelling returns only R-1, R-2, R-3 and PRD); the corner-lot duplex figure (6,000 sq ft) cannot be tested by the tool; 600-159D accessory figures for APT and other districts not stored."
     }
   ]
 }

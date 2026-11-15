@@ -1,0 +1,567 @@
+{
+  "provenance": {
+    "jurisdiction": "Upper Chichester township",
+    "instrument": "Upper Chichester Township Code Chapter 600 Zoning (Ord. No. 678, 12-13-2012, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2026-01-15 (breadcrumb). New Laws on 2026-11-14 list Ord. No. 767 (2026-04-22), a zoning amendment to Chapter 600 not yet in the code.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/15685575",
+      "https://ecode360.com/UP1263/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/UP1263/search?query=conversion%20OR%20converted%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22second%20dwelling%22%20OR%20twin&scope=code&sortOrder=relevance",
+      "https://ecode360.com/UP1263/search?query=%22single-family%20detached%20dwelling%22%20OR%20%22dwelling%20units%22%20OR%20%22residential%20use%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/UP1263/search?query=%22not%20specifically%22%20OR%20%22uses%20not%22%20OR%20%22not%20listed%22%20OR%20%22not%20provided%20for%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/UP1263/search?query=%22Delaware%20County%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/UP1263/laws",
+      "https://ecode360.com/print/UP1263?guid=30870804",
+      "https://ecode360.com/print/UP1263?guid=30870827",
+      "https://ecode360.com/print/UP1263?guid=30871002",
+      "https://ecode360.com/print/UP1263?guid=30871042",
+      "https://ecode360.com/print/UP1263?guid=30871071",
+      "https://ecode360.com/print/UP1263?guid=30871142",
+      "https://ecode360.com/30871144",
+      "https://ecode360.com/print/UP1263?guid=30871469",
+      "https://ecode360.com/print/UP1263?guid=30871532",
+      "https://ecode360.com/print/UP1263?guid=30871262",
+      "https://ecode360.com/print/UP1263?guid=30871326",
+      "https://ecode360.com/print/UP1263?guid=38430001",
+      "https://ecode360.com/print/UP1263?guid=30870860",
+      "https://ecode360.com/print/UP1263?guid=30870880",
+      "https://ecode360.com/print/UP1263?guid=30870877",
+      "https://ecode360.com/print/UP1263?guid=30870876",
+      "https://ecode360.com/print/UP1263?guid=30872495",
+      "https://ecode360.com/print/UP1263?guid=30872966",
+      "https://ecode360.com/print/UP1263?guid=30872254",
+      "https://ecode360.com/print/UP1263?guid=30871019",
+      "https://ecode360.com/print/UP1263?guid=30870870",
+      "https://ecode360.com/UP1263/search?query=%22separate%20living%20quarters%22&scope=code&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204578776",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/15685575",
+    "code_current_through": "2026-01-15",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-01-15'. Chapter 600 adopted 12-13-2012 by Ord. No. 678.",
+    "code_caution": "Ord. No. 767 (adopted 2026-04-22), a zoning amendment, is listed under New Laws and is not yet in the online code. Its text was not read. It may change definitions. Ask the township whether it adds or changes any rule on a second dwelling unit or the definitions of dwelling unit and family.",
+    "checks": [
+      "The zoning code has no accessory dwelling unit rule. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, conversion, two-family, duplex and twin",
+      "R-1, R-2 and R-3 permit by right only a single-family detached dwelling, a family-based community residence and parks ('shall be used by right for only one or more of the following uses') (600-11, 600-18, 600-25). Accessory uses must be customarily incidental and 'not detrimental to the neighborhood'. R-2 and R-3 take the R-1 accessory uses (600-14, 600-21, 600-28)",
+      "A dwelling unit is 'One or more rooms designed, occupied or intended for occupancy as separate living quarters, with cooking, sleeping and sanitary facilities provided within the dwelling unit for the exclusive use of a single family maintaining a household' (600-9). A second kitchen and living quarters for another household would be a second dwelling unit",
+      "A family is any number of relatives living as one housekeeping unit, or up to five unrelated people 'with single kitchen facilities' (600-9). A conversion of a single-family dwelling to a multifamily dwelling is allowed only 'Where the use and dimensional regulations of this chapter permit' (600-9)",
+      "Two-family detached dwellings (duplexes, one unit over the other) and twin duplexes are permitted by right only in the APT Apartment District: a tract of at least one acre, and a duplex lot of 5,000 sq ft (6,000 sq ft on a corner lot) (600-40, 600-43C, D)",
+      "Living quarters for a watchman or caretaker are an accessory use in the I Industrial District, and in APT inside an apartment house (600-81E, 600-42C)",
+      "Accessory structures stand in side or rear yards only, at most one story and 15 ft. Their lot coverage is capped at 6% or 1,200 sq ft (whichever is less) in R-1, 8% or 900 sq ft in R-2 and 12% or 600 sq ft in R-3. They stand at least 10 ft (R-1) or 5 ft (R-2, R-3) from the principal building (600-159A to C)",
+      "In R-3 a single-family semidetached dwelling (twin) is a special exception (600-26A, 600-186). It is two houses joined by a party wall, not a second unit on one lot"
+    ],
+    "notes": "Zoning office: Upper Chichester Township Land Planning and Zoning Department. eCode360 code UP1263 is Upper Chichester Township, Delaware County (Southern Delaware County Authority, 455-36). Read on eCode360 in a browser, one page at a time, on 2026-11-14. The ADU word search (all content, New Laws included) found no ADU term, only the dwelling unit and family definitions and watchman or caretaker quarters (600-42C, 600-81E). A second search for conversion, two-family, duplex and twin found 600-40, 600-43, 600-26, 600-90, 600-186 and the definitions. A search for clauses on uses not listed found none. Read in full: 600-4, 600-7, Articles III, IV, V and VII, 600-52, 600-81, 600-90, 600-159, 600-209, 600-139 (residential rows), and the definitions of conversion, dwelling unit, family, two-family detached dwelling and semidetached dwelling. Read in part: 600-61 (C-2) and 600-116 (TLC), scanned for dwellings. Not read: TH 600-32, MH 600-46A, I-C 600-70, PRC 600-112 (a code search for single-family detached dwelling returns only the R-1, R-2, R-3 and PRD sections), C-1 special exceptions 600-53, Article XXVI (nonconforming), Ord. No. 767 (PDF). Fix round 2026-11-14 after an independent review: the APT duplex tract test and corner lot figure added, accessory use citations corrected to 600-21 and 600-28, the 600-159C separation figures added, the dwelling unit definition read in full."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "600-9, Chapter 600",
+      "url": "https://ecode360.com/UP1263/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU term. Searched for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living and cooking facilities. Watchman or caretaker quarters are an accessory use in I and APT only."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "600-11, 600-14, 600-18, 600-21, 600-25, 600-28",
+      "url": "https://ecode360.com/print/UP1263?guid=30871002",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "The code has no ADU text. Residential districts permit by right only the listed uses."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "600-11, 600-14, 600-209C",
+      "url": "https://ecode360.com/print/UP1263?guid=30871002",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "R-1, R-2 and R-3 permit by right 'only' a single-family detached dwelling, a family-based community residence and parks, and a family with unrelated members has 'single kitchen facilities'. A second dwelling unit is not listed, so a use variance is the path. In APT a two-family dwelling is permitted by right, see alternatives."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "600-209C",
+      "url": "https://ecode360.com/print/UP1263?guid=30872966",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The Board shall hear requests for variances where it is alleged that the provisions of this chapter inflict unnecessary hardship on the applicant.' No special exception for uses not listed was found."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (duplex) or twin duplex in APT",
+          "path": "by_right",
+          "districts": [
+            "APT"
+          ],
+          "conditions": "Two-family detached dwellings (one unit over the other) and two-family semidetached dwellings (twin duplexes) are permitted by right. Duplex: a tract of at least one acre, and a lot of 5,000 sq ft, or 6,000 sq ft on a corner lot, 50 ft wide at the building line, front yard 25 ft, side yards 12 ft each, rear yard 25 ft, two stories and 35 ft. Twin duplex: a one-acre tract, lot 4,000 sq ft (5,000 on a corner lot), 40 ft wide, front yard 30 ft, one side yard 12 ft, rear yard 25 ft. Parking: 1 per dwelling plus 1 for 2-bedroom units.",
+          "min_lot_sqft": 5000,
+          "requires": [
+            {
+              "test": "tract_sqft_at_least",
+              "value": 43560,
+              "condition": "The development tract is at least one acre",
+              "section": "600-43C(1)"
+            }
+          ],
+          "section": "600-40B, C, 600-43C, D, 600-139, 600-9",
+          "url": "https://ecode360.com/print/UP1263?guid=30871142",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Both a tract of one acre and the lot minimum apply. On a corner lot the duplex lot is 6,000 sq ft, which the tool cannot test, so a corner lot under 6,000 sq ft does not qualify. Whether adding a unit to an existing house is read as this use is not said"
+        },
+        {
+          "name": "Living quarters for a watchman or caretaker (I Industrial)",
+          "path": "by_right",
+          "districts": [
+            "I"
+          ],
+          "conditions": "An accessory use to a permitted industrial use: 'Living quarters for watchmen or caretakers'. In APT, living accommodation for a watchman or caretaker employed on the premises is allowed only inside an apartment house (600-42C).",
+          "min_lot_sqft": null,
+          "section": "600-81E, 600-42C",
+          "url": "https://ecode360.com/print/UP1263?guid=30871469",
+          "confidence": "secondary",
+          "note": "Not an ADU listing and not for a household's relative or tenant. It serves a principal industrial or apartment use"
+        }
+      ],
+      "section": "600-40, 600-81",
+      "url": "https://ecode360.com/print/UP1263?guid=30871142",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "600-11, 600-18, 600-25",
+      "url": "https://ecode360.com/print/UP1263?guid=30871002",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 600",
+      "url": "https://ecode360.com/UP1263/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No historic ADU path found."
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1",
+        "C-2",
+        "TLC",
+        "PRD"
+      ],
+      "section": "600-52, 600-61, 600-116, 600-90",
+      "url": "https://ecode360.com/print/UP1263?guid=30871262",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "C-1, C-2 and the Township Line Commercial District list no dwelling (C-2 and TLC scanned on screen). PRD permits single-family detached, twin, townhouse, garden apartment and mobile home dwellings in a planned development, no second unit."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "600-11, 600-14",
+      "url": "https://ecode360.com/print/UP1263?guid=30871002",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "envelope": {
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "600-159B",
+      "url": "https://ecode360.com/print/UP1263?guid=30872495",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No accessory structure shall be more than one story and a maximum of 15 feet in height as measured from the ridge beam'. Not an ADU rule."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "600-159A",
+      "url": "https://ecode360.com/print/UP1263?guid=30872495",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Accessory structures shall be located, erected and maintained in side or rear yard areas only.'"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "Chapter 600",
+      "url": "https://ecode360.com/print/UP1263?guid=30871002",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule."
+    },
+    "family_only": {
+      "value": null,
+      "section": "600-9",
+      "url": "https://ecode360.com/print/UP1263?guid=30870880",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "No ADU rule. A family is any number of relatives, or up to five unrelated people with single kitchen facilities."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "600-11, 600-14",
+      "url": "https://ecode360.com/print/UP1263?guid=30871002",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the code allows no ADU. Duplexes in APT are recorded under alternatives."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "600-139",
+      "url": "https://ecode360.com/print/UP1263?guid=30872254",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row."
+    },
+    "reading": {
+      "value": "No ADU row. A single-family dwelling needs 2 spaces per dwelling unit. Multifamily and two-family dwellings need 1 per dwelling plus 1 for 2-bedroom units (600-139).",
+      "section": "600-139",
+      "url": "https://ecode360.com/print/UP1263?guid=30872254",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 100 ft."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Interior lot."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Minimum for one side."
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'two stories, maximum, and 35 feet, maximum'."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage 15%, impervious surface 35%."
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious surface maximum."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory structures from side and rear lot lines."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "separation_ft": {
+        "value": 10,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory structures stand at least this far from the principal building."
+      },
+      "setback_sides_total_ft": {
+        "value": 45,
+        "section": "600-15",
+        "url": "https://ecode360.com/print/UP1263?guid=30871002",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Aggregate of both side yards."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 11250,
+        "section": "600-22",
+        "url": "https://ecode360.com/print/UP1263?guid=30871042",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 75 ft."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "600-22",
+        "url": "https://ecode360.com/print/UP1263?guid=30871042",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Interior lot."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "600-22",
+        "url": "https://ecode360.com/print/UP1263?guid=30871042",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Minimum for one side."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "600-22",
+        "url": "https://ecode360.com/print/UP1263?guid=30871042",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "600-22",
+        "url": "https://ecode360.com/print/UP1263?guid=30871042",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'two stories, maximum, and 35 feet, maximum'."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "600-22",
+        "url": "https://ecode360.com/print/UP1263?guid=30871042",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "600-22",
+        "url": "https://ecode360.com/print/UP1263?guid=30871042",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage 25%, impervious surface 50%."
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "600-22",
+        "url": "https://ecode360.com/print/UP1263?guid=30871042",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious surface maximum."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory structures from side and rear lot lines."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "separation_ft": {
+        "value": 5,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory structures stand at least this far from the principal building."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 50 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Interior lot."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Minimum for one side."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'two stories, maximum, and 35 feet, maximum'."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Building coverage 35%, impervious surface 55%."
+      },
+      "max_impervious_coverage": {
+        "value": 0.55,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Impervious surface maximum."
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory structures from side and rear lot lines."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "separation_ft": {
+        "value": 5,
+        "section": "600-159C",
+        "url": "https://ecode360.com/print/UP1263?guid=30872495",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory structures stand at least this far from the principal building."
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "600-29",
+        "url": "https://ecode360.com/print/UP1263?guid=30871071",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Aggregate of both side yards."
+      }
+    },
+    "APT": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "600-43C",
+        "url": "https://ecode360.com/30871144",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two-family detached dwelling: 5,000 sq ft, or 6,000 sq ft on a corner lot, on a tract of at least one acre. Garden apartments need a two-acre tract."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "600-43C",
+        "url": "https://ecode360.com/30871144",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "600-43C",
+        "url": "https://ecode360.com/30871144",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Each side."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "600-43C",
+        "url": "https://ecode360.com/30871144",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "600-43C",
+        "url": "https://ecode360.com/30871144",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two stories and 35 ft."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "600-43C",
+        "url": "https://ecode360.com/30871144",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    }
+  }
+}

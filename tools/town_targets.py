@@ -1139,6 +1139,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2025-11-10",
         "note": "Zoning: Chapter 285 Zoning (Ord. No. 270, 6-5-2024). ADU text: 'Accessory dwelling unit' (285-49D(1)): special exception in A, C, RR, R-1, R-2 and R-3, one per single-family detached dwelling for use by a relative, owner-occupied, in or attached to the house, at most 40% of the house or 800 sq ft (whichever is less) and two bedrooms, one more parking space, annual certification and recorded agreement. In A a larger ADU (60% or 1,200 sq ft) by conditional use. Conversion of an existing building into dwellings by right in MS (285-43B(1)(e)). Read in the browser on eCode360 (WE2002).",
     },
+    "4209179056": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/10790758",
+        "plain_fetch": False,
+        "current_through": "2025-12-08",
+        "note": "Zoning: Chapter 195 Zoning (Ord. No. 87-11, 11-23-1987, as amended). ADU text: an accessory use (195-9F(1)(g)): 'When accessory to a single-family detached dwelling only, one separate living area, including cooking facilities' for no more than two persons related to the principal occupant, with no enlargement of the building's footprint (an existing accessory building is not excluded, 195-3A, B), registered with the Zoning Officer and a recorded agreement to remove the cooking facilities. R-1 names 195-9F. Whether it reaches R-2, R-3, R-4, AP and BP (narrow or no accessory lists) is not settled. C and GA permit no single-family detached dwelling. IN only age-restricted houses by conditional use. VPR conversion by special exception (195-17B(6)(c)) and two-family dwellings in VPR and VC. New Laws: Ord. No. 2026-01 and 2026-03 (zoning) not codified. Read in the browser on eCode360 (UP0929).",
+    },
+    "4207183152": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/13152773",
+        "plain_fetch": False,
+        "current_through": "2025-11-06",
+        "note": "Zoning: Chapter 145 Zoning (Zoning Ordinance of 1988, as amended). ADU text: ECHO housing (elder cottage, 201.2, 702.9): special exception in R, RR, R-1 and R-2, an addition to or conversion of the house or a mobile home on the lot, at most 1,000 sq ft, for an elderly, handicapped or disabled relative, at most two people, removed within 120 days after use ends, one more parking space. Residential conversion of a house existing on March 14, 1978 by special exception (702.1), two-family dwellings by right in R-2, R-3 and TV, and a farm-employee mobile home by special exception in R (702.4). New Laws: Ord. No. 6-26 (zoning) not codified. Read in the browser on eCode360 (WE1403).",
+    },
+    "4204578776": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/15685575",
+        "plain_fetch": False,
+        "current_through": "2026-01-15",
+        "note": "Zoning: Chapter 600 Zoning (Ord. No. 678, 12-13-2012, as amended). No ADU text. R-1, R-2 and R-3 permit only single-family detached dwellings among dwellings. Two-family detached dwellings (duplexes) by right only in APT on a one-acre tract (600-40, 600-43C), watchman or caretaker quarters in I (600-81E). Elsewhere a use variance (600-209C). New Laws: Ord. No. 767 (zoning) not codified. Read in the browser on eCode360 (UP1263).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1158,6 +1179,7 @@ FIXED_BATCH.update(
 FIXED_BATCH.update({g: 19 for g in ("4207121344", "4205530944", "4200372160", "4207141224")})
 FIXED_BATCH.update({g: 20 for g in ("4209161664", "4213358888", "4204515488", "4202921192")})
 FIXED_BATCH.update({g: 21 for g in ("4209177152", "4202138288", "4207183256")})
+FIXED_BATCH.update({g: 22 for g in ("4209179056", "4207183152", "4204578776")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1229,6 +1251,11 @@ EXTRAS = {
     "4209177152": "Code 153-502H(1) accessory apartments for family members",
     "4202138288": "batch 21 by population. Code Chapter 1260 has no ADU text",
     "4207183256": "Code 285-49D(1) accessory dwelling unit for a relative",
+    # Batch 22 (2026-11-14): the next towns by population without a rule file. McKeesport was skipped (zoning
+    # ordinance only as a PDF on the city website) and Butler (Butler) (bulk table and use table only in PDF attachments).
+    "4209179056": "Code 195-9F(1)(g) separate living area for relatives",
+    "4207183152": "Code 702.9 ECHO housing",
+    "4204578776": "batch 22 by population. Code Chapter 600 has no ADU text",
 }
 
 if __name__ == "__main__":

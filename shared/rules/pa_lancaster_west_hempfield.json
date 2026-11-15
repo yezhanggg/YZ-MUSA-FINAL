@@ -1,0 +1,928 @@
+{
+  "provenance": {
+    "jurisdiction": "West Hempfield township",
+    "instrument": "West Hempfield Township Code Chapter 145 Zoning (West Hempfield Township Zoning Ordinance of 1988, adopted 12-28-1988, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code date 2025-11-06 (breadcrumb). New Laws on 2026-11-14 list Ord. No. 6-26 (2026-09-01), a subdivision and land development amendment and zoning amendment affecting Chapters 130 and 145, not yet in the code.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/13152773",
+      "https://ecode360.com/WE1403/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE1403/search?query=%22accessory%20building%22%20OR%20%22accessory%20structure%22%20OR%20%22accessory%20structures%22%20OR%20%22front%20yard%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/WE1403/search?query=accessory%20AND%20height&scope=code&sortOrder=relevance",
+      "https://ecode360.com/WE1403/laws",
+      "https://ecode360.com/print/WE1403?guid=32128512",
+      "https://ecode360.com/print/WE1403?guid=32127102",
+      "https://ecode360.com/print/WE1403?guid=32128434",
+      "https://ecode360.com/print/WE1403?guid=32126999",
+      "https://ecode360.com/print/WE1403?guid=32127260",
+      "https://ecode360.com/print/WE1403?guid=32127567",
+      "https://ecode360.com/print/WE1403?guid=32127765",
+      "https://ecode360.com/print/WE1403?guid=32128823",
+      "https://ecode360.com/print/WE1403?guid=32128866",
+      "https://ecode360.com/print/WE1403?guid=32129303",
+      "https://ecode360.com/print/WE1403?guid=32127091",
+      "https://ecode360.com/print/WE1403?guid=32127092",
+      "https://ecode360.com/print/WE1403?guid=32127144",
+      "https://ecode360.com/print/WE1403?guid=32127106",
+      "https://ecode360.com/WE1403/search?query=%22Parking%20for%20single-family%20dwellings%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/print/WE1403?guid=32128272"
+    ],
+    "verified_on": "2026-11-14",
+    "county": "Lancaster",
+    "municipality_type": "township",
+    "geoid": "4207183152",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/13152773",
+    "code_current_through": "2025-11-06",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-11-06'. Chapter 145 is the West Hempfield Township Zoning Ordinance of 1988 (101.1).",
+    "code_caution": "Ord. No. 6-26 (adopted 2026-09-01), a zoning and subdivision amendment, is listed under New Laws and is not yet in the online code. Its text was not read. Ask the township whether it changes ECHO housing, residential conversions or the common regulations of Section 701.",
+    "checks": [
+      "ECHO housing (an elder cottage) is a special exception in R, RR, R-1 and R-2 (301.2B, 305.2B, 302.2B, 303.2B, 702.9). It is 'An additional dwelling unit created by the addition to or conversion of an existing principal dwelling or by the placement of a mobile home on a property containing an existing dwelling' (201.2)",
+      "The elder cottage is at most 1,000 sq ft, one per lot, for an elderly, handicapped or disabled person related by blood, marriage or adoption to the occupants of the house, at most two people (702.9A to D)",
+      "It meets all zoning setbacks and lot coverage limits. The applicant shows how it will be dismantled, or if attached converted or removed, and it is removed within 120 days after the use ends (702.9B, E)",
+      "It connects to the house's sewer, water and other utilities unless that is not practical. With on-site systems, evidence that they can serve both, reviewed by the Township Sewage Enforcement Officer (702.9F)",
+      "One more all-weather off-street parking space, beyond the house's two (702.9G, 707.1B)",
+      "No accessory use in a commercial or residential district may stand within the front yard or nearer than 35 ft to any street line (on a corner lot, both streets). A separate accessory building stays 10 ft from other buildings (704.1)",
+      "The cottage 'shall observe all required zoning setbacks' (702.9B). The district yards are larger for residential buildings (rear 25 ft, 35 ft in RR) than for accessory residential buildings (rear 10 ft, 12 ft in RR). A mobile home cottage is a dwelling unit, so which yards bind it is a reading. Ask the zoning officer",
+      "More than one principal building on a lot needs a recorded land development plan, with each building meeting the lot rules as if on its own lot (701.8). The code calls the cottage an accessory to the principal dwelling (702.9B), so this is read as not reaching it",
+      "Lot area in R, R-2 and R-3 is set 'for each dwelling unit' (301.3, 303.3, 304.3), and the code defines ECHO housing as an additional dwelling unit. Whether a lot needs the district area twice for an elder cottage is not said. Ask the zoning officer",
+      "In R the number of dwellings on a parent tract is capped by the 1978 quota (301.4). Whether a temporary elder cottage counts against it is not said",
+      "Residential conversion of a single-family detached dwelling that existed on March 14, 1978 into a two-family dwelling is a special exception in R, RR, R-1 and TV: lot area the district minimum times the number of families, each unit at least 800 sq ft, three parking spaces per unit, no exterior change except for safety (702.1)",
+      "Two-family detached dwellings (one unit over the other) are permitted by right in R-2, R-3 and TV (303.2A, 304.2A, 403.2A)",
+      "The special exception expires without a zoning permit within one year. The Board applies general standards and may add conditions (1005.3)"
+    ],
+    "notes": "Zoning office: West Hempfield Township Department of Zoning, Permits and Land Use. eCode360 code WE1403 is West Hempfield Township, Lancaster County ('West Hempfield Township and Lancaster County Comprehensive Plans' in 403.1E). Read on eCode360 in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living and cooking facilities found 702.9 (ECHO), the ECHO definition, 702.1 (residential conversion) and 303.2. Read in full: Article 100, Article 300, Article 400, Section 701, 702.1 to 702.9, 704, 707.1, 707.4 (schedule), Article 1000, and the definitions of dwelling, dwelling unit (with the dwelling types), family, lot coverage and ECHO housing. Read in part: Article 500 (I-1, I-2, Business Campus Overlay, Quarry, scanned for dwellings). Not read: Article 1200 (open space design option. The review reports residential conversion units at 1203.1), Article 1300 (mixed-use development design option), 705 (nonconforming), Ord. No. 6-26 and Ord. No. 3-26 (PDF). Fix round 2026-11-14 after an independent review: accessory rule reworded for commercial districts and any street line, two-family parking cited to 707.4D and the 750 sq ft floor area added, farm-employee mobile home added, cottage yards noted. No accessory building height was found apart from the district building heights (search for accessory and height)."
+  },
+  "adu": {
+    "term": {
+      "value": "ECHO housing (elder cottage)",
+      "section": "201.2, 702.9",
+      "url": "https://ecode360.com/print/WE1403?guid=32127102",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'An additional dwelling unit created by the addition to or conversion of an existing principal dwelling or by the placement of a mobile home on a property containing an existing dwelling, for occupancy by persons related by blood, marriage, or adoption to the occupants of the principal dwelling, also called an elder cottage.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "702.9C, 201.2",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "For an elderly, handicapped or disabled relative, by special exception in R, RR, R-1 and R-2."
+    },
+    "scope_districts": {
+      "value": [
+        "R",
+        "RR",
+        "R-1",
+        "R-2"
+      ],
+      "section": "301.2B10, 305.2B10, 302.2B7, 303.2B6, 702.9",
+      "url": "https://ecode360.com/print/WE1403?guid=32127260",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "304.2, 403.2, 401.2, 402.2, Article 500",
+      "url": "https://ecode360.com/print/WE1403?guid=32127260",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "R-3, TV, C-1, C-2, I-1, I-2, the Business Campus Overlay and Quarry do not list ECHO housing. ECHO housing is permitted only 'Where authorized by Article 300' (702.9)."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "702.9, 1005.3",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board special exception under the ECHO criteria and the general special exception standards (site plan, services, design, neighborhood)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1005.4",
+      "url": "https://ecode360.com/print/WE1403?guid=32129303",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The Board shall hear requests for variances where it is alleged that the provisions of the ordinance inflict unnecessary hardship upon the applicant', with findings A to E. The special exception for uses not provided for (101.7) covers only a use permitted in no district, so it does not reach ECHO housing."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion to a two-family dwelling (house existing on March 14, 1978)",
+          "path": "special_exception",
+          "districts": [
+            "R",
+            "RR",
+            "R-1",
+            "TV"
+          ],
+          "conditions": "Zoning Hearing Board special exception to convert a single-family detached dwelling that existed on March 14, 1978 into a two-family dwelling. Lot area at least the district minimum times the number of families. District height, width and yards. No exterior change except for safety, outside stairs in the rear where practicable. Each dwelling unit at least 800 sq ft of floor area. Three parking spaces per dwelling unit. Each unit at least 800 sq ft of habitable floor area (701.17D). With an on-lot sewage system, evidence it can serve the added unit, reviewed by the Sewage Enforcement Officer. A residential conversion unit is confined to the interior of the existing structural shell.",
+          "min_lot_sqft": 60000,
+          "min_lot_by_district": {
+            "R": 87120,
+            "RR": 261360,
+            "R-1": 60000,
+            "TV": 15000
+          },
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1978-03-14",
+              "condition": "The single-family detached dwelling existed on March 14, 1978",
+              "section": "702.1"
+            }
+          ],
+          "section": "702.1, 301.2B4, 302.2B5, 305.2B8, 403.2B2, 701.17D, 201.2 (residential conversion unit)",
+          "url": "https://ecode360.com/print/WE1403?guid=32128434",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. No family rule. R-1 needs 60,000 sq ft with public sewer and water and 87,120 sq ft without (twice the district minimum). The house must have existed on March 14, 1978, so the test reads before that day"
+        },
+        {
+          "name": "Two-family detached dwelling (one unit over the other) in R-2, R-3 or TV",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "TV"
+          ],
+          "conditions": "Single-family detached, semidetached or two-family detached dwellings are permitted. A two-family detached dwelling is two dwelling units one over the other. Lot area is set for each dwelling unit: R-2 25,000 sq ft per unit with public sewer and water (one acre without), R-3 20,000 sq ft per unit with both. TV needs public water and sewer, a 7,500 sq ft lot and at most 10 dwelling units per gross acre. Each unit of a two-family detached dwelling at least 750 sq ft of habitable floor area. Two parking spaces per dwelling unit.",
+          "min_lot_sqft": 8712,
+          "min_lot_by_district": {
+            "R-2": 50000,
+            "R-3": 40000,
+            "TV": 8712
+          },
+          "section": "303.2A1, 303.3, 304.2A1, 304.3, 403.2A11, 403.3A, 701.17G, 707.4D, 201.2 (two-family detached)",
+          "url": "https://ecode360.com/print/WE1403?guid=32127260",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Figures with public sewer and water. R-2 without them needs one acre per unit. TV 10 units per acre is read as 8,712 sq ft for two. Whether adding a unit to an existing house is read as this use is not said"
+        },
+        {
+          "name": "Mobile home for a farm employee (R)",
+          "path": "special_exception",
+          "districts": [
+            "R"
+          ],
+          "conditions": "Zoning Hearing Board special exception to place one mobile home per farm as an accessory use to an agricultural operation. At least one resident is employed full-time on the same farm. At least 100 ft from any road right-of-way. Approved water supply and sewage disposal. The certificate of use and occupancy is renewed every year, and the mobile home is removed when the occupancy rule is not met. Land development approval before placement.",
+          "min_lot_sqft": null,
+          "land_development": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is a farm with an agricultural operation, and a resident of the mobile home works full-time on it",
+              "section": "702.4A1, A3"
+            }
+          ],
+          "section": "301.2B3, 702.4",
+          "url": "https://ecode360.com/print/WE1403?guid=32128272",
+          "confidence": "verified",
+          "note": "Not an ADU listing. Housing for a farm worker, not for a relative or a tenant"
+        }
+      ],
+      "section": "702.1, 702.4, 303.2, 304.2, 403.2",
+      "url": "https://ecode360.com/print/WE1403?guid=32127260",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R",
+        "RR",
+        "R-1",
+        "R-2"
+      ],
+      "section": "301.2B10, 305.2B10, 302.2B7, 303.2B6",
+      "url": "https://ecode360.com/print/WE1403?guid=32127260",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 145",
+      "url": "https://ecode360.com/WE1403/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No historic ADU path. TV asks that historic structures be preserved (403.4B)."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "Occupied by an elderly, handicapped or disabled person related to the occupants of the principal dwelling by blood, marriage or adoption. At most two people.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "702.9C, D",
+          "url": "https://ecode360.com/print/WE1403?guid=32128512"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "Only on a property with an existing principal dwelling: an addition to it, a conversion of it, or a mobile home placed on the lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "201.2 (ECHO housing)",
+          "url": "https://ecode360.com/print/WE1403?guid=32127102"
+        },
+        {
+          "kind": "other",
+          "condition": "The applicant shows how the cottage will be dismantled, or if attached converted or removed, when no longer needed. Removed within 120 days after the use ends.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "702.9E",
+          "url": "https://ecode360.com/print/WE1403?guid=32128512"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Connected to the house's sewer, water and other systems unless not practical. With on-site systems, evidence that they can serve the house and the cottage, reviewed by the Sewage Enforcement Officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "702.9F",
+          "url": "https://ecode360.com/print/WE1403?guid=32128512"
+        },
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "Lot area in R and R-2 is set 'for each dwelling unit', and ECHO housing is defined as an additional dwelling unit. If it counts, the lot needs the district area twice. Not settled. Ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R",
+            "R-2"
+          ],
+          "building_types": null,
+          "section": "301.3, 303.3, 201.2",
+          "url": "https://ecode360.com/print/WE1403?guid=32127260"
+        },
+        {
+          "kind": "other",
+          "condition": "The cottage must observe all required zoning setbacks. A mobile home cottage is a dwelling unit, so it may be held to the district yards for residential buildings (rear 25 ft, 35 ft in RR) rather than the accessory residential yards (rear 10 ft, 12 ft in RR). Not settled. Ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "702.9B, 301.5, 302.4, 303.4, 305.4",
+          "url": "https://ecode360.com/print/WE1403?guid=32128512"
+        },
+        {
+          "kind": "other",
+          "condition": "In R the number of dwellings a parent tract may hold is capped by the March 14, 1978 quota. Whether a temporary elder cottage counts against it is not said.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R"
+          ],
+          "building_types": null,
+          "section": "301.4A",
+          "url": "https://ecode360.com/print/WE1403?guid=32127260"
+        }
+      ],
+      "section": "702.9, 201.2",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1",
+        "C-2",
+        "I-1",
+        "I-2",
+        "BC",
+        "Q"
+      ],
+      "section": "401.2, 402.2, 501.2, 502.2, 503, 504.2",
+      "url": "https://ecode360.com/print/WE1403?guid=32127567",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "C-1 and C-2 permit dwellings in combination with commercial buildings (one dwelling per 10,000 sq ft of commercial lot area, 401.3A6), not a second unit for a house. Quarry permits one single-family detached dwelling as part of an agricultural use. I-1, I-2 and the Business Campus Overlay list no dwelling (scanned on screen)."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new"
+      ],
+      "section": "201.2 (ECHO housing), 702.9E",
+      "url": "https://ecode360.com/print/WE1403?guid=32127102",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Created by the addition to or conversion of an existing principal dwelling or by the placement of a mobile home on a property containing an existing dwelling'."
+    },
+    "types_not_addressed": {
+      "value": [
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "201.2 (ECHO housing)",
+      "url": "https://ecode360.com/print/WE1403?guid=32127102",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "A unit in a garage or other accessory building is not named."
+    },
+    "labels": {
+      "value": {
+        "detached_new": "Mobile home elder cottage (ECHO)",
+        "attached": "Elder cottage added to the house",
+        "internal": "Elder cottage converted within the house"
+      },
+      "section": "201.2",
+      "url": "https://ecode360.com/print/WE1403?guid=32127102",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1000,
+      "section": "702.9A",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'The elder cottage may not exceed 1,000 square feet.'"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "301.6, 302.5, 303.5, 305.5",
+      "url": "https://ecode360.com/print/WE1403?guid=32127260",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "301.6, 302.5, 303.5, 305.5",
+      "url": "https://ecode360.com/print/WE1403?guid=32127260",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No separate height for accessory buildings was found (code search for accessory and height). The district building height (35 ft) is read as the limit for an elder cottage."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "704.1",
+      "url": "https://ecode360.com/print/WE1403?guid=32128823",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No accessory use within a commercial or residential district shall be located nearer than 35 feet to any street line or within the front yard of any property.'"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "704.1",
+      "url": "https://ecode360.com/print/WE1403?guid=32128823",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'No separate accessory building or structure shall be nearer than 10 feet to another building or structure.'"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "in a commercial or residential district",
+          "districts": [
+            "R",
+            "RR",
+            "R-1",
+            "R-2",
+            "R-3",
+            "TV",
+            "C-1",
+            "C-2"
+          ],
+          "min_from_front_line_ft": 35,
+          "section": "704.1",
+          "url": "https://ecode360.com/print/WE1403?guid=32128823",
+          "note": "No accessory use may be nearer than 35 ft to any street line, so on a corner lot from both streets, or stand within the front yard. TV is read as a residential and commercial district."
+        }
+      ],
+      "section": "704.1",
+      "url": "https://ecode360.com/print/WE1403?guid=32128823",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "702.9",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "No owner rule. The occupant is related to the occupants of the house."
+    },
+    "family_only": {
+      "value": true,
+      "section": "702.9C",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "One elderly, handicapped or disabled person related to the occupants of the house by blood, marriage or adoption. At most two people in the cottage.",
+      "section": "702.9C, D",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "702.9B",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'Only one cottage is permitted per lot as an accessory to each principal dwelling.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "702.9G",
+      "url": "https://ecode360.com/print/WE1403?guid=32128512",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "'A minimum of one all-weather off-street parking space, with ingress and egress to the street, shall be provided for the elder cottage, in addition to that required for the principal dwelling.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "707.1B, 702.9G",
+      "url": "https://ecode360.com/print/WE1403?guid=32128866",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "A single-family dwelling needs at least two off-street spaces, plus one."
+    }
+  },
+  "districts": {
+    "R": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "301.3, 301.5, 301.6",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling: one acre minimum, two acres maximum. Width 100 ft at the setback line. Landscape area at least 50%."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "301.3, 301.5, 301.6",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Local road: from the street right-of-way line, or the centerline figure if greater. Collector 50 ft, arterial 60 ft from the right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "301.3, 301.5, 301.6",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, each at least this."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "301.3, 301.5, 301.6",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "301.3, 301.5, 301.6",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory residential buildings and structures."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "301.3, 301.5, 301.6",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "301.3, 301.5, 301.6",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "2.5 stories or 35 ft, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "301.3, 301.5, 301.6",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "301.3",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Area 'shall be provided for each dwelling unit'. Whether the elder cottage counts as a dwelling unit here is not said."
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 130680,
+        "section": "305.3, 305.4, 305.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings: three acres. Width 150 ft at the setback line. Landscape area at least 40%."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "305.3, 305.4, 305.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Local road: from the street right-of-way line, or the centerline figure if greater. Collector 50 ft, arterial 60 ft from the right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "305.3, 305.4, 305.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, each at least this."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "305.3, 305.4, 305.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 20,
+        "section": "305.3, 305.4, 305.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory residential buildings and structures."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 12,
+        "section": "305.3, 305.4, 305.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "305.3, 305.4, 305.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 stories or 35 ft, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "305.3, 305.4, 305.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With approved public sewer and water. One acre without them. Width 100 ft at the setback line. Landscape area at least 40%."
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Local road: from the street right-of-way line, or the centerline figure if greater. Collector 50 ft, arterial 60 ft from the right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, each at least this."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 12,
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory residential buildings and structures."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 stories or 35 ft, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without approved public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "section": "302.3A1",
+            "note": "One acre without approved public sewerage and public water."
+          },
+          {
+            "when": "Without approved public water",
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "302.3A1",
+            "note": "One acre without approved public sewerage and public water."
+          }
+        ],
+        "section": "302.3, 302.4, 302.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Without approved public sewerage and public water systems."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With approved public sewer and water, for each dwelling unit. One acre without them. Width 75 ft for a single-family detached dwelling. Landscape area at least 30%."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Local road: from the street right-of-way line, or the centerline figure if greater. Collector 50 ft, arterial 60 ft from the right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, each at least this."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory residential buildings and structures."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 stories or 35 ft, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 25000,
+        "section": "303.3A",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "secondary",
+        "note": "Area 'shall be provided for each dwelling unit'. Whether the elder cottage counts as a dwelling unit here is not said."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without approved public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "section": "303.3A1",
+            "note": "One acre without approved public sewerage and public water."
+          },
+          {
+            "when": "Without approved public water",
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "303.3A1",
+            "note": "One acre without approved public sewerage and public water."
+          }
+        ],
+        "section": "303.3, 303.4, 303.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Without approved public sewerage and public water systems."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "With approved public sewer and water, for each dwelling unit. One acre for a single-family detached dwelling without them. Width 75 ft. Landscape area at least 30%."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Local road: from the street right-of-way line, or the centerline figure if greater. Collector 50 ft, arterial 60 ft from the right-of-way."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Two side yards, each at least this."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Accessory residential buildings and structures."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "3 stories or 35 ft, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without approved public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "section": "304.3A1",
+            "note": "Single-family detached dwelling without approved public sewerage and public water: one acre."
+          },
+          {
+            "when": "Without approved public water",
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "304.3A1",
+            "note": "Single-family detached dwelling without approved public sewerage and public water: one acre."
+          }
+        ],
+        "section": "304.3, 304.4, 304.5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127260",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Without approved public sewerage and public water systems."
+      }
+    },
+    "TV": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "403.3A",
+        "url": "https://ecode360.com/print/WE1403?guid=32127567",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Uses outside a planned village development. Public water and sewer required (403.2A, 403.4A). Width 60 ft. At most 10 and at least 6 dwelling units per gross acre."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "403.3A4",
+        "url": "https://ecode360.com/print/WE1403?guid=32127567",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "From the street right-of-way line, reducible to the average of neighbours (not under 5 ft). At most 30 ft on arterial and collector roads."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "403.3A4",
+        "url": "https://ecode360.com/print/WE1403?guid=32127567",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "403.3A4",
+        "url": "https://ecode360.com/print/WE1403?guid=32127567",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "403.3A5",
+        "url": "https://ecode360.com/print/WE1403?guid=32127567",
+        "verified_on": "2026-11-14",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.7,
+        "section": "403.3A3, 201.2",
+        "url": "https://ecode360.com/print/WE1403?guid=32127567",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "Maximum lot coverage 70%. Lot coverage is 'The area of land within a lot occupied by buildings and structures'."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4356,
+        "section": "403.3A7",
+        "url": "https://ecode360.com/print/WE1403?guid=32127567",
+        "verified_on": "2026-11-14",
+        "confidence": "verified",
+        "note": "'Maximum density: 10 dwelling units per gross acre', read as 4,356 sq ft per unit."
+      }
+    }
+  }
+}
