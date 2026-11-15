@@ -3553,7 +3553,7 @@
       "why": [
         "added as batch 31 by population. Code Chapter 260 has no ADU text (use variance barred, 260-132C(4))"
       ],
-      "status_note": "Open: whether a dwelling unit in an accessory building is allowed in R-2, R-3 and R-O under 260-10N, which no use list names, and which lot figure applies. The district lot-area-per-unit table (PDF attachment) was not opened."
+      "status_note": "Open: the conversion cutoff date (read as the chapter's adoption on 2-19-1987, which may re-enact an older ordinance), whether a dwelling unit in an accessory building is allowed at all (260-10N counts such units, but no use list names one), and the four PDF attachments (bulk table, lot area table, use table, zoning map), which were not checked."
     },
     {
       "geoid": "4201102328",
@@ -3577,7 +3577,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 32-957 family member suites)"
       ],
-      "status_note": "Open: whether 32-949 (unlisted dwelling types by conditional use) reaches a family member suite in MHP, HC, SCC or LI/O, and the PBOI date (adoption of Ord. No. 311, 2-6-2019, read as the effective date)."
+      "status_note": "Open: how far 32-949 reaches (read as not reaching a family member suite, so outside the suite districts the path is a use variance), whether a twin qualifies as a single-family dwelling, and what 'minimum lot area per family' (32-904) means for a conversion (read as twice the district lot)."
     },
     {
       "geoid": "4209127280",
@@ -3601,7 +3601,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 145-157B in-law suite by special exception)"
       ],
-      "status_note": "Open: whether the R-130 special exception figures (40,000 sq ft, no accessory structures, 145-35.1) and the R-175 pointer to 145-97 reach an in-law suite, whether the suite may have its own side or rear entrance (145-157B(3)(c) against (5)(b)), and how the 1,200 sq ft dwelling minimum (145-24) fits a suite capped at 1,000 sq ft."
+      "status_note": "Open: whether the R-130 (145-35.1) and R-175 (145-31.1, 145-98) special exception figures reach an in-law suite in an existing house, whether the suite may have its own entrance (145-157B(3)(c) against (5)(b)), and the parts not read: NOD from 145-189.4 on and Articles XX, XXII, XXIV to XXVI and XXXI."
     }
   ]
 }

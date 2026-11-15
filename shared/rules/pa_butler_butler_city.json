@@ -48,7 +48,11 @@
       "Sheds stand only in a side or rear yard, at most one per 3,000 sq ft of lot and two per lot, and may stand within the setbacks (260-14B, 260-16D(2))",
       "A mobile home may be placed only as the principal structure on a lot (260-89)",
       "Off-street parking: two spaces per unit for a single-family or two-family dwelling, one per conversion apartment (260-118A)",
-      "In the Ritts Historical and Architectural District, parcels zoned R-2, R-3 or C-2 were rezoned R-1, and the R-1 rules apply to every parcel there (260-145, 260-146)"
+      "In the Ritts Historical and Architectural District, parcels zoned R-2, R-3 or C-2 were rezoned R-1, and the R-1 rules apply to every parcel there (260-145, 260-146)",
+      "A dwelling unit has all its rooms joined, with 'access through an interior door' to all other parts of the unit (260-7 'Dwelling unit')",
+      "A shed is at most 144 sq ft and 12.5 ft tall, and a shed 'may not be used as a dwelling' (260-7 'Shed')",
+      "Townhouses are a conditional use in R-1, R-2, R-3, R-O and C-1: a lot of at least 6,000 sq ft and at most one unit per 3,000 sq ft (260-15H, 260-22H, 260-31M, 260-40D, 260-48H). R-3 also lists row dwellings by conditional use (260-31F)",
+      "A traditional neighborhood development is a conditional use in R-1, R-2 and R-3 on at least 5 acres (260-15A, 260-97, 260-98D). It is the planned residential development that 260-16A refers to"
     ],
     "notes": "Zoning office: City of Butler, Zoning and Code Management Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were the two-family and conversion apartment definitions, the conversion listings in R-2 and R-3, the caretaker and watchman quarters in C-1, C-2 and M-1, 260-125 and the rental occupancy chapter. Read: Articles I, III, V to XIII, XV, XVI, XVIII to XX and XXIII. Read in part: Article II definitions (A to 'Lot width' in full, the rest by search and term list). Not read: Article IV (district list), XIV (floodplain), XVII (signs), XXI (amendments), XXII (administration), XXIV (Rotary Arts and Cultural District) and the PDF attachments. Height is measured from the average finished grade to the highest point of a flat roof or the average height of the highest gable of a pitched roof. Coverage counts buildings only. No unlisted-use rule for houses: the R-2 and R-3 'similar' conditional uses reach only neighborhood commercial activities, and the C-1, C-2, M-1 and M-2 ones only commercial or industrial uses."
   },
@@ -123,7 +127,7 @@
           "section": "260-20C, 260-29D, 260-132D(4)(a), 260-118A",
           "url": "https://ecode360.com/print/BU1538?guid=12073287",
           "confidence": "secondary",
-          "note": "The chapter history gives 2-19-1987 as its adoption, so a house built before then is read as qualifying. In the Ritts Historical and Architectural District the R-1 rules apply, and R-1 allows one dwelling unit per lot (260-146, 260-16A)"
+          "note": "The chapter history gives 2-19-1987 as its adoption, so a house built before then is read as qualifying. That chapter may re-enact an older ordinance, so the cutoff date is a reading. 260-132D(4) sits under the heading 'The following special exceptions are subject to special conditions', but (4)(a) says no Zoning Hearing Board review is needed, so it is read as by right. In the Ritts Historical and Architectural District the R-1 rules apply, and R-1 allows one dwelling unit per lot (260-146, 260-16A)"
         },
         {
           "name": "Two-family dwelling (R-2, R-3, R-O)",
@@ -163,7 +167,13 @@
           "section": "260-10L, 260-10N, 260-24A",
           "url": "https://ecode360.com/print/BU1538?guid=12072353",
           "confidence": "secondary",
-          "note": "The district use lists name single-family, two-family and multiple-family dwellings and conversions, not a house with a unit in an accessory building. 260-10N plainly expects such units where a district allows more than one unit. The lot figure shown is the two-family figure, which is a reading. Ask the zoning officer"
+          "note": "The lot figure shown is the two-family figure, which is a reading",
+          "disputed_path": {
+            "path": "not_allowed",
+            "section": "260-7 'Two-family dwelling', 'Dwelling group', 260-20, 260-29, 260-38",
+            "url": null,
+            "note": "No district use list names a house with a unit in an accessory building. A two-family dwelling is one detached building with two units, and a dwelling group (two or more buildings each with one or more units) is listed in no district. 260-10N may only count such units against the cap where they already exist. The code bars a use variance for a use the district does not permit (260-132C(4))"
+          }
         },
         {
           "name": "Dwelling units on the upper floors of a commercial building (C-1)",
@@ -178,6 +188,39 @@
           "note": "The host is a commercial building, not a house. C-1 lists no house"
         },
         {
+          "name": "Townhouses (R-1, R-2, R-3, R-O, C-1)",
+          "path": "conditional_use",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3",
+            "R-O",
+            "C-1"
+          ],
+          "conditions": "Townhouses are a conditional use 'provided that the following conditions are met in addition to those that normally apply in the zone district': a lot of at least 6,000 sq ft on a street with a paved width of at least 22 ft, and 'not more than one dwelling unit per 3,000 square feet of lot area'. Units may be sold only if each unit has its own lot on the principal street, at least 20 ft wide (260-15H, 260-22H, 260-31M, 260-40D, 260-48H). City Council decides after a Planning Commission recommendation and a public hearing (260-106)",
+          "min_lot_sqft": 6000,
+          "section": "260-15H, 260-22H, 260-31M, 260-40D, 260-48H",
+          "url": "https://ecode360.com/print/BU1538?guid=12072388",
+          "confidence": "secondary",
+          "note": "Whether a house with one added unit can count as a townhouse building is not said. In R-1 the one-unit limit of 260-16A also stands. R-3 lists row dwellings by conditional use too (260-31F)"
+        },
+        {
+          "name": "Traditional neighborhood development (R-1, R-2, R-3)",
+          "path": "conditional_use",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "A traditional neighborhood development under Article XV is a conditional use in R-1, R-2 and R-3 (260-15A, 260-97). The tract must be at least 5 acres (260-98D)",
+          "min_lot_sqft": 217800,
+          "min_lot_is_tract": true,
+          "section": "260-15A, 260-97, 260-98D",
+          "url": "https://ecode360.com/print/BU1538?guid=12072388",
+          "confidence": "verified",
+          "note": "A development of a whole tract, not a second unit on one house lot"
+        },
+        {
           "name": "Apartments and duplexes in C-2",
           "path": "by_right",
           "districts": [
@@ -189,9 +232,21 @@
           "url": "https://ecode360.com/print/BU1538?guid=12072607",
           "confidence": "verified",
           "note": "C-2 lists no single-family house. A house there is a nonconforming use, which may be altered and may add sheds, garages and similar accessory structures under the R-3 standards (260-57D, 260-125B)"
+        },
+        {
+          "name": "Residential upper floors in a mixed-use building (M-1)",
+          "path": "conditional_use",
+          "districts": [
+            "M-1"
+          ],
+          "conditions": "'Mixed-use buildings, residential upper floors' are a conditional use in M-1 (260-68O). So are one-person-occupancy rooms on the second or higher floor of a building that existed when the subsection was adopted, with a separate entrance, 350 sq ft of lot area per room and one parking space for each two rooms (260-68B). City Council decides after a Planning Commission recommendation and a public hearing (260-106)",
+          "section": "260-68B, 260-68O, 260-106",
+          "url": "https://ecode360.com/print/BU1538?guid=12072656",
+          "confidence": "verified",
+          "note": "The host is a mixed-use building, not a house. M-1 lists no house. An existing one- or two-family dwelling there is a nonconforming use (260-67D)"
         }
       ],
-      "section": "260-10N, 260-20, 260-29, 260-38, 260-48D, 260-56",
+      "section": "260-10N, 260-15, 260-20, 260-29, 260-38, 260-48D, 260-56, 260-68",
       "url": "https://ecode360.com/print/BU1538?guid=12072353",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -217,11 +272,11 @@
         "M-1",
         "M-2"
       ],
-      "section": "260-13, 260-20, 260-29, 260-38, 260-46, 260-56, 260-66, 260-76",
+      "section": "260-13, 260-15, 260-20, 260-29, 260-38, 260-46, 260-48, 260-56, 260-66, 260-68, 260-76",
       "url": "https://ecode360.com/print/BU1538?guid=12072388",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "R-1 permits single-family detached dwellings only. R-2 adds two-family dwellings and older-house conversions, R-3 multiple dwellings too, R-O single-family, two-family and multiple-family dwellings with offices. C-1, M-1 and M-2 list no dwelling, only quarters for an owner, caretaker or watchman as an accessory use (C-1 and M-1), and C-1 upper-floor units by conditional use. C-2 lists apartments, multiple-family dwellings and duplexes off Main Street"
+      "note": "No district lists a second unit on a single-family lot. R-1 permits single-family detached dwellings, with townhouses and a traditional neighborhood development by conditional use. R-2 adds two-family dwellings and older-house conversions, R-3 multiple dwellings too, R-O single-family, two-family and multiple-family dwellings with offices. Townhouses are a conditional use in R-1, R-2, R-3, R-O and C-1, and R-3 row dwellings too. C-1 lists upper-floor units by conditional use and quarters for an owner, caretaker or watchman. M-1 lists residential upper floors in mixed-use buildings and one-person rooms on upper floors by conditional use, and quarters for an owner, caretaker or watchman. C-2 lists apartments, multiple-family dwellings and duplexes off Main Street. M-2 lists no dwelling"
     }
   },
   "form": {
@@ -389,7 +444,7 @@
         "url": "https://ecode360.com/print/BU1538?guid=12072479",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Single-family dwelling. Two-family dwelling also 4,000 sq ft, multiple dwelling building 6,000 sq ft plus 500 sq ft for each unit over three, other uses 5,000 sq ft. Width 40 ft for one- or two-family dwellings. The R-3 section sets no cap on units per lot in words. Any single lot of record in separate ownership may hold a single-family dwelling and customary accessory buildings even if it is under the area or width minimum. The Zoning and Code Management Officer may approve up to 20% less than the area or yard minimums (260-121A)"
+        "note": "Single-family dwelling. Two-family dwelling also 4,000 sq ft, multiple dwelling building 6,000 sq ft plus 500 sq ft for each unit over three (only efficiency and one-bedroom apartments: 350 sq ft more per unit, 260-33A(6)), other uses 5,000 sq ft. Width 40 ft for one- or two-family dwellings. The R-3 section sets no cap on units per lot in words. Any single lot of record in separate ownership may hold a single-family dwelling and customary accessory buildings even if it is under the area or width minimum. The Zoning and Code Management Officer may approve up to 20% less than the area or yard minimums (260-121A)"
       },
       "setback_front_ft": {
         "value": 20,

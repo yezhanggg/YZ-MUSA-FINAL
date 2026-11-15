@@ -55,10 +55,12 @@
       "An addition may be built to create the suite if the yard and building coverage rules are kept (145-157B(4))",
       "One extra all-weather off-street space for the suite, beyond the two for the house (145-157B(6), 145-123)",
       "R-50, VC, C, LI, I, IN and RE do not list an in-law suite",
-      "In R-130 special exception uses need a 40,000 sq ft lot and no accessory structures (145-35.1). Whether that reaches an in-law suite is not settled",
-      "Every dwelling needs at least 1,200 sq ft of habitable floor area (145-24). The code does not say how this fits a suite capped at 1,000 sq ft",
+      "Every dwelling needs at least 1,200 sq ft of habitable floor area (145-24). The code does not say whether the main unit left after a suite is carved out must still meet it",
       "Accessory buildings: 600 sq ft in R-50, R-100 and VC, 800 sq ft in R-130, R-175 and RR, or 25% of the principal building if greater, 14 ft and one story, not in the front yard (145-18D)",
-      "A lot of record below the minimum needs a Zoning Hearing Board variance to be built on (145-13). A lawfully created nonconforming lot may be used for a permitted purpose if the other rules are met (145-139.1)"
+      "A lot of record below the minimum needs a Zoning Hearing Board variance to be built on (145-13). A lawfully created nonconforming lot may be used for a permitted purpose if the other rules are met (145-139.1)",
+      "In R-130 special exception uses need a 40,000 sq ft lot, 25 ft side yards and no accessory structures (145-35.1). In R-175 they follow 145-97, read as the five acre figures of 145-98 (145-31.1). Whether either reaches an in-law suite in an existing house is not settled",
+      "An owner may rent rooms in the owner's own dwelling to at most two non-transient persons (145-18B(5)). That is not a separate unit",
+      "RR does not require public water and sewer, unlike the other districts (145-205)"
     ],
     "notes": "Zoning office: Franconia Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were the in-law suite definition and listings, 145-157, the two-family duplex definition and 145-192. Read: Article III, Article IV, the district articles V, VI, VII, VIII, XII, XIV, XV, XVI, XVII, XXVIII, XXIX, the overlays in Articles X (PO), XI (MRD), XIA (older adults) and XXVII (OSR), 145-123, 145-156, 145-157 and Article XXI. Read in part: 145-5 definitions (through 'Variance'), Article IX (145-46) and Article XXVIIA NOD (145-189.2, 145-189.3). Not read: Article I, Article XX (signs), XXII (administration and permits), XXIV, XXV, XXVI (natural resource standards), XXXI (day care), 145-162 and the zoning map. The PFL overlay named in 145-6 has no article. No section lets the Board hear a use the chapter does not list: 'all land shall be used in strict conformity with the requirements of this chapter' (145-10). Height is measured to the mid-span of the roof. The code sets building coverage and impervious coverage separately."
   },
@@ -69,7 +71,7 @@
       "url": "https://ecode360.com/print/FR0973?guid=8789933",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "Also called a 'second housekeeping unit' (145-5, 145-157B)"
+      "note": "Also called a 'second housekeeping unit' (145-5, 145-157B). The floor plans for the hearing must show 'the accessory apartment' (145-157B(8)(a)[1])"
     },
     "status": {
       "value": "family_only",
@@ -165,6 +167,18 @@
           "note": "The code does not say how many apartments, or whether one apartment beside the owner's home qualifies"
         },
         {
+          "name": "Commercial and residential mixed use development (VC)",
+          "path": "conditional_use",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "A commercial/residential mixed use development is a conditional use in VC (145-194A). 'All floors may contain dwelling units' (145-198B(2)). The Board of Supervisors decides",
+          "section": "145-194A, 145-198B(2)",
+          "url": "https://ecode360.com/print/FR0973?guid=8791975",
+          "confidence": "secondary",
+          "note": "The host is a mixed use development, not a house alone. Its other standards in 145-198 are not on file"
+        },
+        {
           "name": "Two-family duplex in a Mixed Residential development (MRD overlay)",
           "path": "by_right",
           "districts": null,
@@ -178,10 +192,10 @@
           "section": "145-59, 145-60A, 145-61A(7), 145-62A, D, E",
           "url": "https://ecode360.com/print/FR0973?guid=8790504",
           "confidence": "secondary",
-          "note": "A development of a whole tract, not a second unit on one house lot. The code does not name the approval path for the development in 145-60"
+          "note": "A development of a whole tract, not a second unit on one house lot. 145-60A names no approval path for the mixed development. Only the multifamily types are a conditional use (145-60B(2))"
         }
       ],
-      "section": "145-192E, F, 145-60A",
+      "section": "145-192E, F, 145-194A, 145-60A",
       "url": "https://ecode360.com/print/FR0973?guid=8791975",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -316,7 +330,7 @@
         },
         {
           "kind": "lot_size",
-          "condition": "Special exception uses in R-130 need a lot of 40,000 sq ft for every principal building erected or used, side yards of 25 ft, and no accessory structures.",
+          "condition": "Special exception uses in R-130 need a lot of 40,000 sq ft for every principal building erected or used and side yards of 25 ft. The 25 ft side yards are not stored as figures here.",
           "effect": "bars",
           "applies_to": null,
           "districts": [
@@ -325,7 +339,25 @@
           "building_types": null,
           "test": "lot_sqft_at_least",
           "value": 40000,
-          "section": "145-35.1A, C, F",
+          "section": "145-35.1A, C",
+          "url": "https://ecode360.com/print/FR0973?guid=8790281",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "145-157B(4)",
+            "url": "https://ecode360.com/print/FR0973?guid=8791443",
+            "note": "the in-law suite rules ask only that the yard and building coverage requirements be maintained, and the suite sits in an existing house, so 145-35.1 may be meant for new special exception buildings"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "'Accessory structures shall not be permitted' on a lot with a special exception use in R-130. A lot that already has a garage or other accessory structure may not qualify.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-130"
+          ],
+          "building_types": null,
+          "section": "145-35.1F",
           "url": "https://ecode360.com/print/FR0973?guid=8790281",
           "confidence": "secondary",
           "disputed_by": {
@@ -336,8 +368,8 @@
         },
         {
           "kind": "lot_size",
-          "condition": "For special exception uses in R-175 'The dimensional regulations shall be as per § 145-97' (145-31.1). 145-97 lists the IN district's special exception uses, not figures. The IN figures in 145-98 call for five acres, 50 ft side yards and a 100 ft front yard. Whether any of this reaches an in-law suite is not settled.",
-          "effect": "condition",
+          "condition": "For special exception uses in R-175 'The dimensional regulations shall be as per § 145-97' (145-31.1). 145-97 lists the IN district's special exception uses, not figures. Read as the special exception figures in 145-98, they call for five acres, 200 ft of width, a 100 ft front yard and 50 ft side yards.",
+          "effect": "bars",
           "applies_to": null,
           "districts": [
             "R-175"
@@ -345,7 +377,14 @@
           "building_types": null,
           "section": "145-31.1, 145-97, 145-98",
           "url": "https://ecode360.com/print/FR0973?guid=8790240",
-          "confidence": "secondary"
+          "confidence": "secondary",
+          "test": "lot_sqft_at_least",
+          "value": 217800,
+          "disputed_by": {
+            "section": "145-31.1, 145-157B(4)",
+            "url": "https://ecode360.com/print/FR0973?guid=8791443",
+            "note": "145-31.1 points to 145-97, which holds no figures, so the cross-reference may be wrong. The in-law suite rules ask only that the yard and building coverage requirements be maintained, and the suite sits in an existing house"
+          }
         },
         {
           "kind": "lot_size",
@@ -365,7 +404,7 @@
           "url": "https://ecode360.com/print/FR0973?guid=8790281"
         }
       ],
-      "section": "145-157B, 145-35.1, 145-31.1",
+      "section": "145-157B, 145-35.1, 145-31.1, 145-98",
       "url": "https://ecode360.com/print/FR0973?guid=8791443",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -778,7 +817,7 @@
         "url": "https://ecode360.com/print/FR0973?guid=8792058",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Width 200 ft at the building setback line. Four acres. A lot made nonconforming in size when RR was created (1-16-2006) follows the R-175 figures (145-200.1). Lots in a conditional use subdivision follow 145-204 (35,000 sq ft)."
+        "note": "Width 200 ft at the building setback line. Four acres. A lot made nonconforming in size when RR was created (1-16-2006) follows the R-175 figures (145-200.1). Lots in a conditional use subdivision follow 145-204 (35,000 sq ft). RR does not require public water and sewer (145-205)."
       },
       "setback_front_ft": {
         "value": 100,

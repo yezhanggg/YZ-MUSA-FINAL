@@ -53,10 +53,13 @@
       "In PBOI a suite needs a conditional use from the Board of Supervisors and is allowed only in a nonconforming dwelling that existed on 2-6-2019 (32-408(c)(4), 32-957(d))",
       "MHP permits a single-family house but does not list family member suites (32-404)",
       "Conversion of a large single-family house to two units is a special exception in RC, LDR, MDR and RV (32-904)",
-      "Dwelling types and uses not accounted for in the chapter are heard by the Board of Supervisors as a conditional use (32-949)",
-      "Residential accessory buildings: at most 20 ft tall, not in a required front or side yard or within 10 ft of the rear line, and at most 500 to 1,728 sq ft by lot size (32-902(a)(1), (b)(7), (b)(9)). These do not reach a suite, which may not be in an accessory structure"
+      "Residential accessory buildings: at most 20 ft tall, not in a required front or side yard or within 10 ft of the rear line, and at most 500 to 1,728 sq ft by lot size (32-902(a)(1), (b)(7), (b)(9)). These do not reach a suite, which may not be in an accessory structure",
+      "32-949 hears 'Other dwelling types or uses, not specifically or adequately identified within this chapter' as a conditional use. Family member suites are identified (32-957), so outside the suite districts the path is a use variance",
+      "'No more than one dwelling unit shall be permitted on lands on which agricultural activity is considered dominate' (32-905(b)(8)). Intensive agriculture is a conditional use in RC and a special exception in LDR",
+      "Detached garages and outbuildings must stand within the building setback lines (32-902(b)(2))",
+      "Multifamily developments: by right in RV at two units per acre (32-409(b)(3)), special exception in MDR (32-403(d)(4))"
     ],
-    "notes": "Zoning office: Amity Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were 32-957 (family member suites), 32-904 (conversions), 32-933 (two-family developments), 32-902 (caretaker quarters) and the definitions. Read: Part 3, every district section in Part 4 (32-401 to 32-409), 32-507 (Route 422 Overlay), Part 6 (cluster), 32-902, 32-904, 32-911, 32-924 in part, 32-933, 32-949, 32-957, Part 10 and 32-1105. Read in part: 32-202 definitions (through 'Transitional-age development', not 'Use' onward). Not read: Part 1, 32-502 to 32-506 (environmental overlays), Part 7 (PRD), Part 8 (mobile home parks), the other Part 9 sections, the rest of Part 11 and the Zoning Map. Lot coverage counts buildings only. The Route 422 Overlay is a development option for tracts of 50 acres with 300 ft on Route 422 and allows only townhouses, twins and apartments as homes (32-507). The district sections allow 'a single principal use' and list family member suites among those uses."
+    "notes": "Zoning office: Amity Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were 32-957 (family member suites), 32-904 (conversions), 32-933 (two-family developments), 32-902 (caretaker quarters) and the definitions. Read: Part 3, every district section in Part 4 (32-401 to 32-409), 32-507 (Route 422 Overlay), Part 6 (cluster), 32-902, 32-904, 32-911, 32-924 in part, 32-933, 32-949, 32-957, Part 10 and 32-1105. Read in part: 32-202 definitions (through 'Transitional-age development', not 'Use' onward). Not read: Part 1, 32-502 to 32-506 (environmental overlays), Part 7 (PRD), Part 8 (mobile home parks), the other Part 9 sections, the rest of Part 11 and the Zoning Map. Lot coverage counts buildings only. The Route 422 Overlay is a development option for tracts of 50 acres with 300 ft on Route 422 and allows only townhouses, twins and apartments as homes (32-507). The district sections allow 'a single principal use' and list family member suites among those uses. The building height definition names RC, LDR, MDR and MHP but not RV."
   },
   "adu": {
     "term": {
@@ -124,7 +127,7 @@
       "url": "https://ecode360.com/print/AM1620?guid=34016386",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "Zoning Hearing Board on the five findings of 32-1105(a). No section read bars a use variance. A variance lapses after one year if the work does not start"
+      "note": "Zoning Hearing Board on the five findings of 32-1105(a). No section read bars a use variance, so outside the suite districts the path is a use variance. A variance lapses after one year if the work does not start. 32-949 sends 'Other dwelling types or uses, not specifically or adequately identified within this chapter' to the Board of Supervisors as a conditional use, and the applicant must show how the use substantially differs from the permitted uses. Family member suites are identified in 32-957, so 32-949 is not read to reach one"
     },
     "district_paths": {
       "value": [
@@ -143,41 +146,17 @@
       "verified_on": "2026-11-15",
       "confidence": "verified"
     },
-    "unlisted_use_path": {
-      "value": "conditional_use",
-      "section": "32-949(c)",
-      "url": "https://ecode360.com/print/AM1620?guid=34015993",
-      "verified_on": "2026-11-15",
-      "confidence": "secondary",
-      "note": "'All proposed dwelling types and uses which are not accounted for in this chapter shall be considered by the Board of Supervisors and the Township Planning Commission as an application for a conditional use.' The Planning Commission first decides whether the use is a variation of a permitted use or an exotic use. Family member suites are accounted for in other districts, so whether 32-949 reaches one in MHP, HC, SCC or LI/O is not settled"
-    },
-    "unlisted_use_scope": {
-      "value": "any_unlisted",
-      "section": "32-949",
-      "url": "https://ecode360.com/print/AM1620?guid=34015993",
-      "verified_on": "2026-11-15",
-      "confidence": "secondary",
-      "quote": "Other dwelling types or uses, not specifically or adequately identified within this chapter"
-    },
     "alternatives": {
       "value": [
         {
-          "name": "Conversion of a single-family detached house into a dwelling for two families (RC, LDR, MDR, RV)",
+          "name": "Conversion of a single-family detached house into a dwelling for two families (RC, LDR)",
           "path": "special_exception",
           "districts": [
             "RC",
-            "LDR",
-            "MDR",
-            "RV"
+            "LDR"
           ],
           "conditions": "'The Zoning Hearing Board may authorize as a special exception the conversion of any single-family detached dwelling into a dwelling for not more than two families' in RC, LDR, MDR or RV (32-904(a)). 'The lot area per family shall not be reduced to less than the minimum lot area per family', and the district yard and other rules are not reduced. Water and sewage must meet DEP rules. 'Such conversion shall be authorized only for a large building which has relatively little economic value or usefulness as a single-family detached dwelling or other conforming use.' The Board may add conditions. Two off-street spaces per dwelling unit (32-924(c)(1))",
-          "min_lot_sqft": 24000,
-          "min_lot_by_district": {
-            "RC": 160000,
-            "LDR": 160000,
-            "MDR": 24000,
-            "RV": 24000
-          },
+          "min_lot_sqft": 160000,
           "requires": [
             {
               "test": null,
@@ -188,7 +167,58 @@
           "section": "32-904, 32-924(c)(1)",
           "url": "https://ecode360.com/print/AM1620?guid=34015385",
           "confidence": "secondary",
-          "note": "The code does not define the minimum lot area per family. The lot figure is read as twice the district minimum lot: in MDR and RV with public sewer and water, 60,000 sq ft with public sewage only, 160,000 sq ft with on-lot sewage and water"
+          "note": "The code does not define the minimum lot area per family. The lot figure is read as twice the district minimum lot (80,000 sq ft in RC and LDR, whatever the services). This doubling is a reading"
+        },
+        {
+          "name": "Conversion of a single-family detached house into a dwelling for two families (MDR, RV)",
+          "path": "special_exception",
+          "districts": [
+            "MDR",
+            "RV"
+          ],
+          "conditions": "'The Zoning Hearing Board may authorize as a special exception the conversion of any single-family detached dwelling into a dwelling for not more than two families' in RC, LDR, MDR or RV (32-904(a)). 'The lot area per family shall not be reduced to less than the minimum lot area per family', and the district yard and other rules are not reduced. Water and sewage must meet DEP rules. 'Such conversion shall be authorized only for a large building which has relatively little economic value or usefulness as a single-family detached dwelling or other conforming use.' The Board may add conditions. Two off-street spaces per dwelling unit (32-924(c)(1))",
+          "min_lot_sqft": 24000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "A large building with relatively little economic value or usefulness as a single-family detached dwelling or other conforming use",
+              "section": "32-904(e)"
+            }
+          ],
+          "section": "32-904, 32-924(c)(1)",
+          "url": "https://ecode360.com/print/AM1620?guid=34015385",
+          "confidence": "secondary",
+          "note": "The code does not define the minimum lot area per family. The lot figure is read as twice the district minimum lot, which depends on the services. The district tables give no column for public water with on-lot sewage, so that lot is read with the on-lot figure. This doubling is a reading",
+          "min_lot_by_utility": [
+            {
+              "when": "Public sewage and water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 24000,
+              "section": "32-904, 32-403(e), 32-409(d)(1)"
+            },
+            {
+              "when": "Public sewage only",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 60000,
+              "section": "32-904, 32-403(e), 32-409(d)(1)"
+            },
+            {
+              "when": "Public water with on-lot sewage (no district column, read as on-lot)",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 160000,
+              "section": "32-904, 32-403(e), 32-409(d)(1)"
+            },
+            {
+              "when": "On-lot sewage and water",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 160000,
+              "section": "32-904, 32-403(e), 32-409(d)(1)"
+            }
+          ]
         },
         {
           "name": "Two-family detached dwelling development (MDR, MHP)",
@@ -240,28 +270,89 @@
           "districts": [
             "RV"
           ],
-          "conditions": "'Single family residential dual-use, when arranged to form an integral part of a building in which the ground floor, or where a minimum of 50% of the ground floor thereof, is constructed and maintained for any use permitted under Subsections (b)(5) through (b)(20) herein. With such a dual-use, there shall be one residential unit permitted, regardless of lot size' (32-409(b)(4)). Parking is met for each use separately. Nonresidential lot figures apply: 20,000 sq ft with public sewer and water, 40,000 sq ft with public sewage only, 80,000 sq ft on-lot (32-409(d)(2))",
+          "conditions": "'Single family residential dual-use, when arranged to form an integral part of a building in which the ground floor, or where a minimum of 50% of the ground floor thereof, is constructed and maintained for any use permitted under Subsections (b)(5) through (b)(20) herein. With such a dual-use, there shall be one residential unit permitted, regardless of lot size' (32-409(b)(4)). Parking is met for each use separately. Nonresidential lot figures apply: 20,000 sq ft with public sewage and water, 40,000 sq ft with public sewage only, 80,000 sq ft with on-lot sewage and water (32-409(d)(2))",
           "min_lot_sqft": 20000,
           "section": "32-409(b)(4), (d)(2)",
           "url": "https://ecode360.com/print/AM1620?guid=34014807",
           "confidence": "verified",
-          "note": "The host is a business building, not a house"
+          "note": "The host is a business building, not a house",
+          "min_lot_by_utility": [
+            {
+              "when": "Public sewage and water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 20000,
+              "section": "32-409(d)(2)"
+            },
+            {
+              "when": "Public sewage only",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 40000,
+              "section": "32-409(d)(2)"
+            },
+            {
+              "when": "On-lot sewage and water",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 80000,
+              "section": "32-409(d)(2)"
+            }
+          ]
         },
         {
-          "name": "Caretaker or owner residence with a commercial use (HC, SCC)",
+          "name": "Caretaker or owner residence with a commercial or industrial use (HC, SCC, LI/O, PBOI)",
           "path": "by_right",
           "districts": [
             "HC",
-            "SCC"
+            "SCC",
+            "LI/O",
+            "PBOI"
           ],
-          "conditions": "Accessory uses in HC include 'residential use occupied by the caretaker or owner of a commercial use located on the same lot' (32-405(b)(13)). SCC permits every by-right HC use (32-406(b)(1)). In commercial and industrial districts 'Living quarters are permitted only for proprietors, watchmen, caretakers or similar employees' (32-902(c)(3))",
+          "conditions": "Accessory uses in HC include 'residential use occupied by the caretaker or owner of a commercial use located on the same lot' (32-405(b)(13)). SCC permits every by-right HC use (32-406(b)(1)). In commercial and industrial districts 'Living quarters are permitted only for proprietors, watchmen, caretakers or similar employees' (32-902(c)(3)). This reaches every commercial and industrial district",
           "section": "32-405(b)(13), 32-406(b)(1), 32-902(c)(3)",
           "url": "https://ecode360.com/print/AM1620?guid=34014634",
           "confidence": "verified",
-          "note": "The host is a commercial use, not a house. HC and SCC list no house"
+          "note": "The host is a commercial or industrial use, not a house. HC, SCC and LI/O list no house"
+        },
+        {
+          "name": "Single-family semi-detached dwellings (twins) in RV",
+          "path": "by_right",
+          "districts": [
+            "RV"
+          ],
+          "conditions": "'Single-family semi-detached dwellings, subject to § 32-932 of this chapter, except that the maximum density shall be three dwelling units per acre' are a by-right use in RV (32-409(b)(2)). A twin has two units side by side with a common wall",
+          "section": "32-409(b)(2), 32-932",
+          "url": "https://ecode360.com/print/AM1620?guid=34014807",
+          "confidence": "secondary",
+          "note": "32-932 was not read, so the lot figures for a twin are not on file. Whether an existing detached house can become a twin is not said"
+        },
+        {
+          "name": "Semi-detached dwelling development (MDR)",
+          "path": "conditional_use",
+          "districts": [
+            "MDR"
+          ],
+          "conditions": "Semi-detached developments are a conditional use in MDR (32-403(c)(6)). The Board of Supervisors decides",
+          "section": "32-403(c)(6)",
+          "url": "https://ecode360.com/print/AM1620?guid=34014585",
+          "confidence": "secondary",
+          "note": "A development, not a second unit on one house lot. Its standards were not read"
+        },
+        {
+          "name": "Semi-detached dwelling development (MHP)",
+          "path": "special_exception",
+          "districts": [
+            "MHP"
+          ],
+          "conditions": "Semi-detached developments are a special exception in MHP (32-404(c)(2)). The Zoning Hearing Board decides",
+          "section": "32-404(c)(2)",
+          "url": "https://ecode360.com/print/AM1620?guid=34014618",
+          "confidence": "secondary",
+          "note": "A development, not a second unit on one house lot. Its standards were not read"
         }
       ],
-      "section": "32-904, 32-933, 32-409(b)(4), 32-405(b)(13)",
+      "section": "32-904, 32-933, 32-409(b), 32-403(c), 32-404(c), 32-405(b)(13), 32-902(c)(3)",
       "url": "https://ecode360.com/print/AM1620?guid=34015385",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -300,7 +391,7 @@
       "url": "https://ecode360.com/print/AM1620?guid=34014618",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "MHP permits single-family houses (MDR figures) and two-family and twin developments by special exception. HC and SCC allow a caretaker or owner residence with a commercial use. LI/O lists no dwelling"
+      "note": "MHP permits single-family houses (MDR figures), two-family developments and semi-detached developments by special exception. HC and SCC allow a caretaker or owner residence with a commercial use, and every commercial and industrial district allows living quarters for proprietors, watchmen or caretakers (32-902(c)(3)). LI/O lists no house"
     },
     "gates": {
       "value": [
@@ -316,13 +407,44 @@
         },
         {
           "kind": "building_type",
-          "condition": "Only in a single-family dwelling. Not in an accessory structure. The code names the twin a 'single-family semi-detached dwelling' but defines it as a building for two families, so whether a twin qualifies is not settled.",
+          "condition": "Only in a single-family dwelling. Not in an accessory structure.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
           "section": "32-957(e)(1)",
           "url": "https://ecode360.com/print/AM1620?guid=34054283"
+        },
+        {
+          "kind": "building_type",
+          "condition": "A twin may not qualify. The code lists the twin as a 'single-family semi-detached dwelling', but defines a twin as 'a residence for two families, one family living on each side of a common wall'.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached"
+          ],
+          "section": "32-957(e)(1), 32-202 'Dwelling'",
+          "url": "https://ecode360.com/print/AM1620?guid=34054283",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "32-409(b)(2)",
+            "url": "https://ecode360.com/print/AM1620?guid=34014807",
+            "note": "the district use lists name the twin a single-family semi-detached dwelling, so it may count as a single-family dwelling for 32-957(e)(1)"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "'No more than one dwelling unit shall be permitted on lands on which agricultural activity is considered dominate.' A suite is a dwelling unit (32-202), so a suite is not allowed on a farm where intensive agriculture is the main use.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "RC",
+            "LDR"
+          ],
+          "building_types": null,
+          "section": "32-905(b)(8), 32-202 'Dwelling unit'",
+          "url": "https://ecode360.com/34014197"
         },
         {
           "kind": "design",
@@ -375,7 +497,7 @@
           "url": "https://ecode360.com/print/AM1620?guid=34015045"
         }
       ],
-      "section": "32-957, 32-602",
+      "section": "32-957, 32-202, 32-905(b)(8), 32-602",
       "url": "https://ecode360.com/print/AM1620?guid=34054283",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -566,7 +688,7 @@
         "url": "https://ecode360.com/print/AM1620?guid=34014554",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Principal buildings. Measured from the average finished grade at the two front corners of the building to the highest point of the roof (32-202 'Building height')"
+        "note": "The LDR table says 'Building Height 35 feet'. Measured from the average finished grade at the two front corners of the building to the highest point of the roof (32-202 'Building height')"
       },
       "max_building_coverage": {
         "value": 0.2,
