@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 137,
-      "population": 5739314,
-      "share_of_pa": 0.4414
+      "towns_beyond_the_two_cities": 140,
+      "population": 5782836,
+      "share_of_pa": 0.4447
     }
   ],
   "towns": [
@@ -3386,6 +3386,78 @@
         "added as batch 28 by population. Code Chapter 200 has no ADU text"
       ],
       "status_note": "No ADU rule. Detached forms read as barred by the closed accessory lists of 200-47 (secondary, a variance remains). For a later check: the VR two-family alternative is secondary, as the 200-18D(9) mix table allows only Type 1 dwellings in developments of up to 20 units and Table VR-1 (PDF) was not read. Table 200-21 (PDF) and 200-48 to 200-62 not read."
+    },
+    {
+      "geoid": "4212931200",
+      "geoid_aliases": [],
+      "name": "Greensburg city",
+      "county": "Westmoreland",
+      "type": "city",
+      "population": 14976,
+      "population_with_aliases": 14976,
+      "housing_units": 7607,
+      "pop_rank": 161,
+      "file": "pa_westmoreland_greensburg",
+      "batch": 29,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/10954364",
+      "plain_fetch": false,
+      "code_current_through": "2026-03-09",
+      "code_note": null,
+      "why": [
+        "added as batch 29 by population. Code Chapter 265 has no ADU text"
+      ],
+      "status_note": "No ADU rule. First reading, not yet independently reviewed. Open points: (1) detached forms read as barred by 265-52 (one main structure or main use per lot), secondary, a variance remains. (2) 265-47 'land coverage' counts structures, parking and loading (not driveways) and is stored as building coverage, a ceiling. (3) a city zoning update was reported under way in 2025, none adopted per New Laws through 8-10-2026. (4) whether one added live/work unit on a house lot in the Gateway or Health Care overlay is a 'mixed-use development' (265-40.13A, 265-40.21A)."
+    },
+    {
+      "geoid": "4204553104",
+      "geoid_aliases": [],
+      "name": "Nether Providence township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 14525,
+      "population_with_aliases": 14525,
+      "housing_units": 5343,
+      "pop_rank": 168,
+      "file": "pa_delaware_nether_providence",
+      "batch": 29,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11544796",
+      "plain_fetch": false,
+      "code_current_through": "2025-08-28",
+      "code_note": null,
+      "why": [
+        "added as batch 29 by population. Code Chapter 300 has no ADU text (300-130 bars living quarters in accessory buildings)"
+      ],
+      "status_note": "No ADU rule. First reading, not yet independently reviewed. 300-130 bars living quarters, bathrooms and kitchens in accessory buildings (detached forms prohibited, verified). Open points: (1) whether an existing house may be altered into a two-family detached dwelling in R-4 or R-5 (the conversion sections were repealed, 300-1 needs one family wholly or partly over the other). (2) 300-39.4 sets two-family side yards in R-3b though R-3b does not list the use. (3) no definition of family was found in 300-1."
+    },
+    {
+      "geoid": "4201761616",
+      "geoid_aliases": [],
+      "name": "Plumstead township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 14021,
+      "population_with_aliases": 14021,
+      "housing_units": 5109,
+      "pop_rank": 175,
+      "file": "pa_bucks_plumstead",
+      "batch": 29,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11770606",
+      "plain_fetch": false,
+      "code_current_through": "2026-01-14",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-304.19 B11 accessory dwelling for relatives or caretakers)"
+      ],
+      "status_note": "Use B11 accessory dwelling by right in RP, RO, R-1, VR, R-2, R-3, R-4/CA-1 and VC for relatives of the owner or caretakers and employees (27-304.19). First reading, not yet independently reviewed. Open points: (1) 1.5 times lot for a new detached unit read against the district B1 lot, not the larger 'all other permitted uses' lot, and in VR and VC the district tables supersede conflicting 27-304 figures (27-703, 27-1203). (2) whether the 1.5 times rule reaches a unit in an existing garage or barn. (3) size cap by lot size (1,500, 2,000, 2,500 sq ft) held as 1,500 plus a condition, and a lot of exactly 10 acres falls in no larger tier. (4) whether the 15 ft accessory height (27-304.28B(5)) and the overflow half space (27-2504) reach the unit. (5) VR and VC density of 5 units an acre if the unit counts."
     }
   ]
 }

@@ -1,0 +1,1076 @@
+{
+  "provenance": {
+    "jurisdiction": "Plumstead township",
+    "instrument": "Plumstead Township Zoning Ordinance of 1991, as amended in 2001 (Chapter 27 Zoning, Ord. No. 01-09-18-1 of 9-18-2001, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 PL2424, Township of Plumstead, Bucks County (27-304.19C: 'Bucks County Department of Health'). Chapter 27 was adopted 9-18-2001 by Ord. No. 01-09-18-1. 27-304 was last amended 10-9-2024 by Ord. No. 2024-02 and 2024-03, and most district use lists by Ord. No. 2024-02. New Laws lists Ord. No. 2026-02 (6-10-2026, Zoning, Ch 27), whose text in the search excerpt adds data center definitions and use regulations, and Ord. No. 2026-04 (7-8-2026, Ch 10 Health and Safety). The PDFs were not opened",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/PL2424",
+      "https://ecode360.com/11770606",
+      "https://ecode360.com/PL2424/laws",
+      "https://ecode360.com/PL2424/search?query=%22accessory%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PL2424/search?query=%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22accessory%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20%22farm%20dwelling%22%20OR%20%22accessory%20suite%22%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PL2424/search?query=dwelling%20OR%20zoning%20OR%20accessory%20OR%20district&scope=law&sortOrder=relevance",
+      "https://ecode360.com/print/PL2424?guid=14149133",
+      "https://ecode360.com/print/PL2424?guid=14149142",
+      "https://ecode360.com/print/PL2424?guid=14149366",
+      "https://ecode360.com/print/PL2424?guid=14149436",
+      "https://ecode360.com/print/PL2424?guid=14149792",
+      "https://ecode360.com/print/PL2424?guid=14149008",
+      "https://ecode360.com/print/PL2424?guid=14150107",
+      "https://ecode360.com/print/PL2424?guid=14150125",
+      "https://ecode360.com/print/PL2424?guid=14150144",
+      "https://ecode360.com/print/PL2424?guid=14150164",
+      "https://ecode360.com/print/PL2424?guid=14150190",
+      "https://ecode360.com/print/PL2424?guid=14150210",
+      "https://ecode360.com/print/PL2424?guid=14150223",
+      "https://ecode360.com/print/PL2424?guid=14150236",
+      "https://ecode360.com/print/PL2424?guid=14150269",
+      "https://ecode360.com/print/PL2424?guid=14150522",
+      "https://ecode360.com/print/PL2424?guid=14150875",
+      "https://ecode360.com/print/PL2424?guid=14151214"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201761616",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11770606",
+    "code_current_through": "2026-01-14",
+    "code_current_through_note": "eCode360: 'Includes legislation through 01-14-2026.' New Laws: Ord. No. 2026-02 (data centers) and 2026-04 (Ch 10)",
+    "checks": [
+      "Use B11 Accessory Dwelling is 'a second dwelling unit (either detached or part of the principal dwelling) used as a residence by relatives of the owner of the principal residence or caretaker(s)/employee(s) of the principal residence' (27-304.19)",
+      "B11 is a use permitted by right in RP, RO, R-1, VR, R-2, R-3, R-4/CA-1 and VC. R-5/CA-2 does not list it, and 'A use not listed ... in a particular zoning district is not permitted in that zoning district' (27-302.4)",
+      "The record owner records a deed restriction in favor of the Township that names the unit's occupants and bars condominium or other split ownership. The owners must be individuals, not an entity (27-304.19E, F)",
+      "The unit may not be used as a short-term transient rental (27-304.19G), meaning stays under 14 days with use of the kitchen (27-202)",
+      "The size cap grows with the lot: 1,500 sq ft on three acres or less, 2,000 sq ft over three and under 10 acres, 2,500 sq ft over 10 acres (27-304.19D). The code does not say which floor area is measured, and a lot of exactly 10 acres falls in neither of the two larger tiers",
+      "Accessory buildings other than garages are at most 15 ft tall (27-304.28B(5)). Detached garages, sheds and barns may stand in a required side or rear yard 10 ft from the line (27-2305B). Whether these accessory rules reach a detached accessory dwelling, which must meet the district yards, is not stated",
+      "VR and VC: the Township reviews the architecture of each building, addition and renovation, front yards follow the prevailing setback within 300 ft, and buildings may not be demolished unless they cannot be adapted (27-704, 27-1204, 27-2317E)",
+      "No section read bars a use variance. Variances are heard under MPC 910.2 (27-2903.1E) and expire after one year without a building permit (27-2911)"
+    ],
+    "notes": "Zoning office: Plumstead Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, then for in-law, ECHO, elder cottage, granny, caretaker, guest house, carriage house, tenant house, accessory apartment, second dwelling, farm dwelling, accessory suite and two-family, and New Laws (scope law). The use lists of C-1, C-2, C-3, MHP, LI and Q were not read, so status_outside rests on 27-302.4 there. Read: Part 2 (27-202), 27-302, 27-304 subsections 1 to 19 (A1 to B11) and 28 (B14) and 78 (G27), Parts 4 to 12 (RP, RO, R-1, VR, R-2, R-3, R-4/CA-1, R-5/CA-2, VC), Part 23 (27-2301 to 27-2320, lighting in part), Part 25 and Part 29. Not read: Parts 13 to 18 (C-1, C-2, C-3, MHP, LI, Q), 21, 22, 24, 26 to 28, 30 to 32, B15 Mixed Residential Use and B16 Village Preservation Development in 27-304, and Appendix A (a PDF use table). The Appendix A search excerpt shows 'B11 Accessory Dwelling Y Y Y Y Y Y'. Open reading: the 1.5 times lot rule in 27-304.19A is read against the district's figure for Use B1. Each R district also sets a larger lot for 'All other permitted uses' (two acres in R-1, R-2 and R-3, 10 acres in RP), which would give 1.5 times that. In VR and VC the district tables 'supersede' directly conflicting 27-304 figures (27-703, 27-1203), so whether the 1.5 times rule or the 10,000 or 7,500 sq ft district lot governs there is not settled."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling",
+      "section": "27-304.19 (Use B11)",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'B11 Accessory Dwelling. An accessory dwelling is a second dwelling unit (either detached or part of the principal dwelling)'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-304.19, 27-402.1, 27-502.1, 27-602.1, 27-702.1, 27-802.1, 27-902.1, 27-1002.1, 27-1202.1",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Permitted by right in eight districts, for relatives of the owner of the house or its caretakers, farm workers or employees only"
+    },
+    "scope_districts": {
+      "value": [
+        "RP",
+        "RO",
+        "R-1",
+        "VR",
+        "R-2",
+        "R-3",
+        "R-4/CA-1",
+        "VC"
+      ],
+      "section": "27-402.1, 27-502.1, 27-602.1, 27-702.1, 27-802.1, 27-902.1, 27-1002.1, 27-1202.1",
+      "url": "https://ecode360.com/print/PL2424?guid=14150190",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Each of these districts lists 'B11 Accessory Dwelling' among the 'Uses Permitted by Right'"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "27-302.4, 27-1102",
+      "url": "https://ecode360.com/print/PL2424?guid=14149133",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'A use not listed as being permitted by right, special exception, or conditional use in a particular zoning district is not permitted in that zoning district.' R-5/CA-2 does not list B11. Ask the zoning officer about the commercial, mobile home park, industrial and quarry districts"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-302.1, 27-304.19",
+      "url": "https://ecode360.com/print/PL2424?guid=14149133",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'A use listed as a use permitted by right is permitted subject to all requirements as may be specified in § 27-304 ... and after a zoning permit has been issued'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-2903.1E, 27-2908",
+      "url": "https://ecode360.com/print/PL2424?guid=14151214",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling, twin or duplex (VR, VC, R-4/CA-1, R-5/CA-2)",
+          "path": "by_right",
+          "districts": [
+            "VR",
+            "VC",
+            "R-4/CA-1",
+            "R-5/CA-2"
+          ],
+          "conditions": "A twin has two units sharing one wall, a duplex has one unit above the other. Duplex figures: VR 5,000 sq ft per building, VC 5,000 sq ft per dwelling unit, R-4/CA-1 and R-5/CA-2 2,500 sq ft per unit (27-304.12B). VR and VC: at most five units an acre, front yard 5 ft (or the prevailing setback), side 10 ft, rear 40 ft. Two parking spaces per dwelling unit and half a space of overflow parking (27-2504)",
+          "min_lot_sqft": 5000,
+          "min_lot_by_district": {
+            "VR": 5000,
+            "VC": 10000,
+            "R-4/CA-1": 5000,
+            "R-5/CA-2": 5000
+          },
+          "section": "27-304.12, 27-702.1, 27-703B, 27-1002.1, 27-1102.1, 27-1103.3, 27-1202.1, 27-1203B",
+          "url": "https://ecode360.com/print/PL2424?guid=14149142",
+          "confidence": "secondary",
+          "note": "A building type. Whether a house may be altered into a duplex rather than converted under B10 is not stated. R-4/CA-1 has no B4 row of its own, so the 27-304.12 figures are used. Density limits for the whole development may also apply (27-1004)"
+        },
+        {
+          "name": "Residential conversion of an existing building (VR, VC)",
+          "path": "special_exception",
+          "districts": [
+            "VR",
+            "VC"
+          ],
+          "conditions": "'The conversion of an existing building into two or more dwelling units', including a barn, garage, carriage house or other traditional building. The building existed on the effective date of the chapter. A converted house keeps the look of a detached dwelling with one front entrance, no major exterior change, separate kitchen and bath for each unit, parking to the side or rear, the B1 lot width and yards, and 4,000 sq ft of lot per dwelling unit",
+          "min_lot_sqft": 8000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The building to be converted existed on the effective date of Chapter 27 (adopted 9-18-2001)",
+              "section": "27-304.18A(10)"
+            },
+            {
+              "test": null,
+              "condition": "The Bucks County Department of Health (or the sewer authority) approves the sewage disposal before the zoning permit",
+              "section": "27-304.18A(3)"
+            }
+          ],
+          "section": "27-304.18A, 27-702.3, 27-1202.3",
+          "url": "https://ecode360.com/print/PL2424?guid=14149142",
+          "confidence": "verified",
+          "note": "A Zoning Hearing Board special exception (27-2909)"
+        },
+        {
+          "name": "Dwelling in combination with a business",
+          "path": "by_right",
+          "districts": [
+            "VC"
+          ],
+          "conditions": "'A dwelling in combination may be used as an accessory use with an institutional, commercial, consumer service or office use that is permitted within the applicable district.' Sewage approval first. In R-1 and R-2 it is a conditional use only on a lot with access to and frontage on Route 611 (Easton Road)",
+          "section": "27-304.78, 27-1202.1, 27-602.2B, 27-802.2B",
+          "url": "https://ecode360.com/print/PL2424?guid=14149792",
+          "confidence": "verified",
+          "note": "The host is a business use, not a house"
+        },
+        {
+          "name": "Additional farm dwelling (General Farming, more than 25 acres)",
+          "path": "by_right",
+          "districts": [
+            "RP",
+            "RO",
+            "R-1",
+            "VR",
+            "R-2",
+            "R-3",
+            "R-4/CA-1",
+            "R-5/CA-2",
+            "VC"
+          ],
+          "conditions": "With Use A1 General Farming (three acres or more), 'One farm dwelling meeting the requirements of Use B1 is permitted for properties of 25 acres or less. Properties of more than 25 acres may have one additional dwelling. Farm dwellings permitted shall be owned by the owner of the main farm'",
+          "min_lot_sqft": 1089000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The property is a working farm (Use A1 General Farming)",
+              "section": "27-304.1"
+            }
+          ],
+          "section": "27-304.1E",
+          "url": "https://ecode360.com/print/PL2424?guid=14149142",
+          "confidence": "secondary",
+          "note": "The property must be more than 25 acres, not 25 acres exactly"
+        }
+      ],
+      "section": "27-304.1, 27-304.12, 27-304.18, 27-304.78",
+      "url": "https://ecode360.com/print/PL2424?guid=14149142",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RP",
+        "RO",
+        "R-1",
+        "VR",
+        "R-2",
+        "R-3",
+        "R-4/CA-1",
+        "VC"
+      ],
+      "section": "27-402.1, 27-502.1, 27-602.1, 27-702.1, 27-802.1, 27-902.1, 27-1002.1, 27-1202.1",
+      "url": "https://ecode360.com/print/PL2424?guid=14150190",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-304.19D",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Only one accessory dwelling shall be allowed for each single-family detached dwelling'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "27-304.19, 27-2317",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path. 27-2317 protects buildings on the Township and Heritage Conservancy inventories"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The record owners must be one or more individuals, not a partnership, limited-liability company, corporation or other entity. The owner records a deed restriction in favor of the Township naming the unit's size, place and occupants, barring condominium or other split ownership and limiting occupancy to relatives, caretakers and employees.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-304.19E, F",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "building_type",
+          "condition": "Only one accessory dwelling for each single-family detached dwelling.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "27-304.19D",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "utilities",
+          "condition": "An on-site sewage system for the unit needs a Bucks County Department of Health permit. With public sewer the Township approves, with proof of treatment capacity.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-304.19C",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "size",
+          "condition": "The unit may not exceed 1,500 sq ft on a lot of three acres or less, 2,000 sq ft on a lot of more than three but less than 10 acres, and 2,500 sq ft on a lot of more than 10 acres.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-304.19D",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "design",
+          "condition": "An attached unit shares an exterior wall with the house. A unit joined only by a hallway, breezeway or similar link is not attached. A new attached unit meets the district setbacks for the house.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-304.19B",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "design",
+          "condition": "No accessory building may stand in a front yard, except on a single-family lot of three acres or more, and then not in the required front yard.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-2305A",
+          "url": "https://ecode360.com/print/PL2424?guid=14150522"
+        },
+        {
+          "kind": "design",
+          "condition": "In VR and VC the Township reviews and approves the architecture of each new building, addition or renovation, and garages and parking stand at least 10 ft behind the front facade of the house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "VR",
+            "VC"
+          ],
+          "building_types": null,
+          "section": "27-704.3, 7, 27-1204.3, 8",
+          "url": "https://ecode360.com/print/PL2424?guid=14150164"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: two acres in RP, so three acres.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "RP"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-403.1A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: two acres in RO, so three acres.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "RO"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 130680,
+          "section": "27-304.19A, 27-503A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 60,000 sq ft in R-1, so 90,000 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 90000,
+          "section": "27-304.19A, 27-603A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 40,000 sq ft in R-2, so 60,000 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-2"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 60000,
+          "section": "27-304.19A, 27-803A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 60,000 sq ft in R-3, so 90,000 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-3"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 90000,
+          "section": "27-304.19A, 27-903.1A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 10,000 sq ft in VR, so 15,000 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "VR"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 15000,
+          "section": "27-304.19A, 27-703A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 7,500 sq ft in R-4/CA-1, so 11,250 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-4/CA-1"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 11250,
+          "section": "27-304.19A, 27-1003.1A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A new detached accessory dwelling needs a lot of 1.5 times the district minimum: 7,500 sq ft in VC, so 11,250 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "VC"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 11250,
+          "section": "27-304.19A, 27-1203.1A",
+          "url": "https://ecode360.com/print/PL2424?guid=14149366"
+        }
+      ],
+      "section": "27-304.19, 27-2305A, 27-704, 27-1204",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The lot size gates read 27-304.19A against each district's lot for Use B1. See the open reading in the provenance notes"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-304.19, 27-304.19A, B",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'either detached or part of the principal dwelling'. A detached unit meets the district yards. Whether the 1.5 times lot rule for 'the construction of a new detached residential accessory dwelling' reaches a unit made in an existing garage or barn is not stated"
+    },
+    "labels": {
+      "value": {
+        "attached": "Sharing an exterior wall with the house (a breezeway or hallway link does not count)"
+      },
+      "section": "27-304.19B",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1500,
+      "section": "27-304.19D",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "1,500 sq ft on a lot of three acres or less. 2,000 sq ft over three and under 10 acres, 2,500 sq ft over 10 acres. The code does not say which floor area is measured"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 35,
+      "section": "27-2307, 27-304.19A",
+      "url": "https://ecode360.com/print/PL2424?guid=14150522",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A separate unit meets 'the other dimensional requirements of the district', and 'No building or structure shall exceed a height of 35 feet'. Accessory buildings other than garages are at most 15 ft (27-304.28B(5)), and whether that reaches a detached accessory dwelling is not stated"
+    },
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "27-2307",
+      "url": "https://ecode360.com/print/PL2424?guid=14150522",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "27-304.19A",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'If a separate attached or not attached dwelling is proposed, it must also meet the yard and setback requirements for the zoning district'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "27-304.28B(5)",
+      "url": "https://ecode360.com/print/PL2424?guid=14149436",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory buildings other than garages which are not portable home storage units or structures shall not exceed 15 feet in height'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "27-304.19A, 27-304.28B(5)",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "B11 sends a separate unit to the district yards and dimensional rules. B14 lists garages, sheds and similar buildings. Not settled"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "27-304.19, 27-304.19D",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Relatives of the owner of the house (parents, grandparents, children, grandchildren and in-laws), or caretakers, farm workers or other on-site employees of the house. No for-profit apartments.",
+      "section": "27-304.19, 27-304.19D, E(4)",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The intent of this use is to allow for related family members (that is, parents, grandparents, children, grandchildren and in-laws), caretakers, farm workers or other on-site employees to reside on the premises, but to prohibit the creation of for-profit apartments'"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "27-304.19, 27-304.19F",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The code does not require the owner to live on the lot. The record owners must be individuals, not an entity"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-304.19D",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Only one accessory dwelling shall be allowed for each single-family detached dwelling'"
+    },
+    "short_term_rental_banned": {
+      "value": true,
+      "section": "27-304.19G",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'It shall be prohibited to utilize an accessory dwelling as a short-term transient rental'"
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "27-304.19D, E(3)",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "The deed restriction bars condominium, planned community or other multi-ownership division"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "27-304.19A",
+      "url": "https://ecode360.com/print/PL2424?guid=14149366",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Two additional parking spaces shall be required for the accessory dwelling use'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "27-304.19A, 27-2504.1",
+      "url": "https://ecode360.com/print/PL2424?guid=14150875",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Two for the house and two for the unit. Attached garages do not count"
+    },
+    "reading": {
+      "value": "Two spaces for the house and two more for the unit, four in all, and an attached garage does not count (27-2503.5). 27-2504 also asks an extra half space of overflow parking per dwelling unit for residential uses other than B1 and B8. If that reaches the accessory dwelling, the half rounds up to one and the lot needs five.",
+      "section": "27-304.19A, 27-2501.3, 27-2503.5, 27-2504.1",
+      "url": "https://ecode360.com/print/PL2424?guid=14150875",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "RP": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "27-403.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150107",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Two acres, 200 ft wide. A developer of new houses on a site has 2 points less impervious cover. No building coverage figure"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-403.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150107",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-403.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150107",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-403.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150107",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.1,
+        "section": "27-403.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150107",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "RO": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "27-503A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150125",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Two acres, 200 ft wide. One acre on a preservation lot (27-503B)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-503A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150125",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "27-503A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150125",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-503A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150125",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-503A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150125",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "27-503A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150125",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 60000,
+        "section": "27-603A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150144",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "150 ft wide. No building coverage figure for a house"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-603A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150144",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-603A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150144",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-603A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150144",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-603A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150144",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "VR": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "27-703A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150164",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "100 ft wide, at most two acres. The front yard keeps the prevailing setback within 300 ft (27-704.1)"
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "27-703A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150164",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-703A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150164",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-703A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150164",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-703A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150164",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8712,
+        "section": "27-703A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150164",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum density 5 units per acre of base site area' applies to all uses but twins, duplexes and multifamily, and the district text supersedes conflicting 27-304 figures. Whether the accessory dwelling counts as a unit is not stated"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "27-803A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150190",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "150 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-803A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150190",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-803A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150190",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-803A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150190",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "27-803A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150190",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "27-803A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150190",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 60000,
+        "section": "27-903.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150210",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "150 ft wide. No building coverage figure for a house"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-903.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150210",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-903.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150210",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-903.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150210",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-903.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150210",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-4/CA-1": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "27-1003.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150223",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "75 ft wide. The Cabin Run development, at most 3.22 units an acre overall (27-1004)"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-1003.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150223",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12.5,
+        "section": "27-1003.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150223",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-1003.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150223",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "27-1003.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150223",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "27-1003.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150223",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-5/CA-2": {
+      "min_lot_sqft": {
+        "value": 14000,
+        "section": "27-1103.1",
+        "url": "https://ecode360.com/print/PL2424?guid=14150236",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "85 ft wide, three parking spaces. The Patriot's Ridge development. B11 is not listed here"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-1103.1",
+        "url": "https://ecode360.com/print/PL2424?guid=14150236",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-1103.1",
+        "url": "https://ecode360.com/print/PL2424?guid=14150236",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-1103.1",
+        "url": "https://ecode360.com/print/PL2424?guid=14150236",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-1103.1",
+        "url": "https://ecode360.com/print/PL2424?guid=14150236",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-1103.1",
+        "url": "https://ecode360.com/print/PL2424?guid=14150236",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "27-1203.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150269",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "75 ft wide, at most two acres. Rear yard 40 ft for a residential use (25 ft commercial). The front yard keeps the prevailing setback within 300 ft (27-1204.1)"
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "27-1203.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150269",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-1203.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150269",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-1203.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150269",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-2307",
+        "url": "https://ecode360.com/print/PL2424?guid=14150522",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "No building or structure shall exceed a height of 35 feet (27-2307)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-1203.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150269",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8712,
+        "section": "27-1203.1A",
+        "url": "https://ecode360.com/print/PL2424?guid=14150269",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'Maximum density 5 units per acre of base site area' applies to all uses but twins, duplexes and multifamily, and the district text supersedes conflicting 27-304 figures. Whether the accessory dwelling counts as a unit is not stated"
+      }
+    }
+  }
+}

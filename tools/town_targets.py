@@ -1312,6 +1312,7 @@ FIXED_BATCH.update({g: 25 for g in ("4209183696", "4207755576", "4200355016")})
 FIXED_BATCH.update({g: 26 for g in ("4201900300", "4200365352", "4205581240")})
 FIXED_BATCH.update({g: 27 for g in ("4200360272", "4204554224", "4212511800")})
 FIXED_BATCH.update({g: 28 for g in ("4201781144", "4202982544", "4209171016")})
+FIXED_BATCH.update({g: 29 for g in ("4212931200", "4204553104", "4201761616")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1424,6 +1425,12 @@ EXTRAS = {
     "4201781144": "Code 195-16B(8) accessory family apartment by special exception",
     "4202982544": "Code 450-64H accessory suite by conditional use",
     "4209171016": "batch 28 by population. Code Chapter 200 has no ADU text",
+    # Batch 29 (2026-11-15): the next towns by population without a rule file. Wilkinsburg was skipped (Table of
+    # Authorized Principal Uses and Table of Authorized Accessory Uses only in PDF attachments) and Dunmore (zoning
+    # ordinance of 12-20-2023 only as a PDF on the borough website).
+    "4212931200": "batch 29 by population. Code Chapter 265 has no ADU text",
+    "4204553104": "batch 29 by population. Code Chapter 300 has no ADU text (300-130 bars living quarters in accessory buildings)",
+    "4201761616": "Code 27-304.19 B11 accessory dwelling for relatives or caretakers",
 }
 
 if __name__ == "__main__":
