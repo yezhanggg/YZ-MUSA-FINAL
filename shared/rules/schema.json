@@ -473,6 +473,10 @@
         },
         "max_height_garage_where": {
           "$ref": "#/$defs/leaf_garage_height_where"
+        },
+        "accessory_yards_inside_rear_yard": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Pass 13: true when the accessory side and rear yards (envelope setback_side_ft, setback_rear_ft) hold only for a building inside the rear yard, and elsewhere the building stays in the buildable area and meets the district yards (for example 'permitted in the general buildable area and inside the rear yards as long as they are at least five feet from any property line'). A detached unit then shows the district yards, none where the file has no district row, and a condition says the rear yard figures."
         }
       }
     },
@@ -1303,6 +1307,18 @@
         "accessory_structure_max_height_ft": {
           "$ref": "#/$defs/leaf_num",
           "description": "Pass 12: the general accessory building height cap in this district, when it differs from envelope.accessory_structure_max_height_ft (for example 20 ft in R-1 and R-2, 15 ft in R-3 and R-4). It replaces the town-wide figure for a lot in the district. Whether it binds a unit in an accessory building is still envelope.accessory_cap_binds_adu."
+        },
+        "setback_front_ft_by_type": {
+          "$ref": "#/$defs/leaf_num_by_type",
+          "description": "Pass 13: the front yard (ft) by the house type of the lot, keyed by building type, when one district row sets it apart for a house type (for example a twin's own yards). For a lot of a listed type it replaces setback_front_ft for the house and an attached unit. Otherwise setback_front_ft applies."
+        },
+        "setback_side_ft_by_type": {
+          "$ref": "#/$defs/leaf_num_by_type",
+          "description": "Pass 13: the side yard (ft) by the house type of the lot, keyed by building type, when one district row sets it apart for a house type (for example a twin's own yards). For a lot of a listed type it replaces setback_side_ft for the house and an attached unit. Otherwise setback_side_ft applies."
+        },
+        "setback_rear_ft_by_type": {
+          "$ref": "#/$defs/leaf_num_by_type",
+          "description": "Pass 13: the rear yard (ft) by the house type of the lot, keyed by building type, when one district row sets it apart for a house type (for example a twin's own yards). For a lot of a listed type it replaces setback_rear_ft for the house and an attached unit. Otherwise setback_rear_ft applies."
         }
       }
     },
@@ -1485,7 +1501,7 @@
     },
     "leaf_gates": {
       "type": "object",
-      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan). Pass 10: in_planned_development (lot fact in_planned_development, a planned or cluster development the code names); overlays, confidence and supersedes_district_figures per gate.",
+      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan). Pass 10: in_planned_development (lot fact in_planned_development, a planned or cluster development the code names); overlays, confidence and supersedes_district_figures per gate. Pass 13: no_accessory_building, the inverse of has_accessory_building, is met on a lot with no accessory building (for 'Accessory structures shall not be permitted'). A bar with disputed_by and no test, scoped by districts, building_types or overlays, reaches a lot in its scope as a failed bar, so the answer depends on the reading and never reads a plain variance.",
       "required": [
         "value",
         "section",
@@ -1591,6 +1607,7 @@
                 "enum": [
                   "has_alley",
                   "has_accessory_building",
+                  "no_accessory_building",
                   "lot_sqft_at_least",
                   "lot_sqft_below",
                   "house_sqft_at_least",
@@ -4491,6 +4508,28 @@
             ]
           },
           "description": "Pass 11: {district: district_list | adu_section | reach}. A district left out reads district_list."
+        },
+        "notes_by_district": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Pass 13: {district: note}. Why this district is in doubt, said in place of note for a lot in it, so a lot never reads why other districts are in doubt. A district left out reads note."
+        },
+        "sections_by_district": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Pass 13: {district: sections}. The sections for this district, said in place of section for a lot in it. A district left out reads section."
         }
       }
     },

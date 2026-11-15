@@ -876,6 +876,21 @@ DOUBT_HOLD_TOWNS: set[str] = {"pa_montgomery_narberth"}
 # height cap line without a semicolon). Emptied on Nov 15: the lot records of Allentown and Phoenixville were
 # refreshed to the new text (rules only); the other towns' records do not change. Keep the set for a later pass.
 PASS12_HOLD_TOWNS: set[str] = set()
+# Pass 13 holds one owner-sentence fix for the ten lot towns: the ADU status condition as a sentence ("The code's ADU
+# status is family only. ...") in place of "family only. ...". The lot build keeps that condition as a reason line, so
+# the stored records of lot towns with a status other than by right would change. Lift it at their next lot rebuild.
+PASS13_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",
@@ -896,6 +911,9 @@ HOUSE_TESTS: dict[str, str] = {
 LOT_TESTS: dict[str, str] = {
     "has_alley": "whether the lot has an alley (has_alley)",
     "has_accessory_building": "whether the lot has an accessory building (has_accessory_building)",
+    # Pass 13: the inverse, a rule that holds only on a lot with no accessory building ("Accessory structures shall
+    # not be permitted"). Met when the lot has none
+    "no_accessory_building": "whether the lot has an accessory building (has_accessory_building)",
     "lot_sqft_at_least": "the lot area (lot_sqft)",
     "lot_sqft_below": "the lot area (lot_sqft)",
     # Pass 9: a test on the parent tract, not the lot. A lot at least as large settles it; a smaller one does not
@@ -1179,9 +1197,8 @@ def _apply_district_town(
     where = f"{source}#districts.{code}"
     bind = (_leaf(place, ("envelope", "district_yards_bind_accessory")) or {}).get("value") is True
     semi = entry.get("setback_side_semi_ft")
-    use_semi = (
-        _building_type(lot.get("building_type")) == "semi_detached" and _usable(semi) and semi.get("value") is not None
-    )
+    btype = _building_type(lot.get("building_type"))
+    use_semi = btype == "semi_detached" and _usable(semi) and semi.get("value") is not None
     for k in YARDS:  # accessory yards set for this district win for a detached unit
         acc = entry.get(f"accessory_{k}")
         if _usable(acc) and acc.get("value") is not None:
@@ -1194,18 +1211,23 @@ def _apply_district_town(
         "max_impervious_coverage": ("coverage", "max_impervious"),
     }.items():
         leaf = semi if (field == "setback_side_ft" and use_semi) else entry.get(field)
+        yard_where = where
+        by_t = entry.get(f"{field}_by_type") if field in YARDS else None
+        if _usable(by_t) and isinstance(by_t.get("value"), dict) and by_t["value"].get(btype) is not None:
+            # pass 13: a yard set by building type in the district row (a twin's own front and rear yards)
+            leaf = {**by_t, "value": by_t["value"][btype]}
+            yard_where = f"{where}.{field}_by_type.{btype}"
         if not _usable(leaf):
             continue
         if field in YARDS and leaf.get("value") is not None:
-            principal[field] = (leaf, where)
+            principal[field] = (leaf, yard_where)
             own = picked.get(path)
             if own and own[0].get("value") is not None and (not bind or "accessory_" in own[1]):
                 continue  # an accessory yard in the file wins for a detached unit
         if leaf.get("value") is None and (picked.get(path) or ({}, ""))[0].get("value") is not None:
             continue
-        picked[path] = (leaf, where)
+        picked[path] = (leaf, yard_where)
     by_type = entry.get("max_building_coverage_by_type")
-    btype = _building_type(lot.get("building_type"))
     if _usable(by_type) and isinstance(by_type.get("value"), dict) and by_type["value"].get(btype) is not None:
         # Coverage set by building type: the lot's house type picks the share
         picked[("coverage", "max_building_coverage")] = (
@@ -1241,6 +1263,23 @@ def _apply_district_town(
             picked[path] = ({**lift, "value": None}, f"{where}.adu_size_cap_lifted")
 
 
+def _rear_yard_only_yards(
+    picked: Picked, data: dict[str, Any], place: str, principal: dict[str, tuple[dict[str, Any], str]]
+) -> None:
+    """Pass 13: envelope.accessory_yards_inside_rear_yard. The file's accessory side and rear yards hold only for a
+    building inside the rear yard. Elsewhere it stays in the buildable area and meets the district yards, so those
+    are the figures shown (none where the file has no district row). The rear yard figures are said in a condition."""
+    flag = _leaf(data, ("envelope", "accessory_yards_inside_rear_yard"))
+    if not (_usable(flag) and flag.get("value") is True):
+        return
+    for k in ("setback_side_ft", "setback_rear_ft"):
+        own = picked.get(("envelope", k))
+        if not own or own[1] != place:  # only the town-wide accessory yard, never a district one
+            continue
+        none_leaf = ({**flag, "value": None}, f"{place}#envelope.accessory_yards_inside_rear_yard")
+        picked[("envelope", k)] = principal.get(k, none_leaf)
+
+
 def _pick_town(
     data: dict[str, Any],
     place: str,
@@ -1256,6 +1295,7 @@ def _pick_town(
     principal: dict[str, tuple[dict[str, Any], str]] = {}
     _apply_local(picked, data, place)
     _apply_district_town(picked, data, place, lot, principal)
+    _rear_yard_only_yards(picked, data, place, principal)
     how = None
     hist = _leaf(data, ("approval", "historic_path"))
     dpath = _district_path(data, lot)
@@ -1405,6 +1445,9 @@ def _gate_met(g: dict[str, Any], lot: dict[str, Any]) -> bool | None:
         return None if lot.get("has_alley") is None else bool(lot["has_alley"] or lot.get("corner_lot"))
     if test == "has_accessory_building":
         return lot.get("has_accessory_building")
+    if test == "no_accessory_building":  # pass 13: met on a lot with no accessory building
+        acc = lot.get("has_accessory_building")
+        return None if acc is None else not acc
     if test in ("lot_sqft_at_least", "lot_sqft_below") and g.get("value") is not None:
         if area is None:
             return None
@@ -1498,6 +1541,7 @@ def _town_conditions(
     how: str | None,
     scope: dict[str, Any],
     hold: bool = False,
+    hold13: bool = False,
 ) -> list[dict[str, Any]]:
     """Who may live there, owner rule, existing-building-only, type, district and lot gates, each cited.
     hold: a lot town whose pass 10 sentence fixes wait for its next lot rebuild (LOT_RECORD_TOWNS)."""
@@ -1513,9 +1557,19 @@ def _town_conditions(
             )
         )
     if status and status.get("value") and status["value"] != "allowed_by_right":
-        text = f"{status['value'].replace('_', ' ')}. {status.get('note') or ''}".strip()
-        if how == "historic" and status["value"] in NO_ADU_STATUSES:  # pass 9
-            text = f"Town-wide: {text} On this lot the historic path applies"
+        words = status["value"].replace("_", " ")
+        note = status.get("note") or ""
+        if hold13:  # a lot town: the pass 12 wording until its next lot rebuild (PASS13_HOLD_TOWNS)
+            text = f"{words}. {note}".strip()
+            if how == "historic" and status["value"] in NO_ADU_STATUSES:  # pass 9
+                text = f"Town-wide: {text} On this lot the historic path applies"
+        elif (
+            how == "historic" and status["value"] in NO_ADU_STATUSES
+        ):  # pass 9. Pass 13: a sentence, never "not addressed."
+            text = f"Town-wide, the code's ADU status is {words}. {note}".strip().rstrip(".")
+            text += ". On this lot the historic path applies"
+        else:
+            text = f"The code's ADU status is {words}. {note}".strip()
         out.append(_cond("adu_status", text, status))
     if how == "historic":
         hist = _must_leaf(data, ("approval", "historic_path"))
@@ -1755,6 +1809,25 @@ def _town_conditions(
                 applies_to=DETACHED_TYPES,
             )
         )
+    inside_rear = _leaf(data, ("envelope", "accessory_yards_inside_rear_yard"))
+    if _usable(inside_rear) and inside_rear.get("value") is True and not no_adu:  # pass 13
+        figs = [
+            f"{v:g} ft from the {label} line"
+            for k, label in (("setback_side_ft", "side"), ("setback_rear_ft", "rear"))
+            for v in [(_leaf(data, ("envelope", k)) or {}).get("value")]
+            if v is not None
+        ]
+        out.append(
+            _cond(
+                "other",
+                "An accessory building inside the rear yard may stand "
+                + (" and ".join(figs) if figs else "closer to the lot lines")
+                + ". Elsewhere it stays in the buildable area and meets the district yards, which are the figures shown"
+                + (f". {inside_rear['note']}" if inside_rear.get("note") else ""),
+                inside_rear,
+                applies_to=DETACHED_TYPES,
+            )
+        )
     part = _leaf(data, ("envelope", "accessory_share_of_house_part"))
     for item in (part or {}).get("value") or [] if not no_adu else []:  # pass 10: a share of a named part
         if item.get("districts") and _match_code(lot.get("zoning_district"), item["districts"]) is None:
@@ -1867,6 +1940,10 @@ def _town_conditions(
                         o for o in g["overlays"] if not c["in_overlay"] or _match_code(o, lot_ovs) is not None
                     ]
             dispute = g.get("disputed_by")
+            if dispute and effect == "bars" and scoped and not g.get("test") and not c.get("overlay_open"):
+                # pass 13: a bar scoped only by district, house type or overlay reaches this lot, so the lot fails it
+                # as written. The dispute then makes it depend on the reading, never a plain variance
+                c["met"] = False
             if dispute and c["met"] is not True:  # pass 8: a bar another passage may undo. Depends, never a plain no
                 c["disputed_by"] = dispute
                 c["condition"] = (
@@ -1900,6 +1977,20 @@ def _utility_conditions(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[
     if not (_usable(leaf) and leaf.get("value")):
         return []
     out = []
+    if (
+        all(_utility_match(item, lot) is False for item in leaf["value"])
+        and not any(item.get("in_growth_area") is not None for item in leaf["value"])
+        and not _base_services(leaf["value"], lot)
+    ):  # pass 13: the services were given, and the code has no figures for them. Say so, never "not given"
+        out.append(
+            _cond(
+                "utilities",
+                f"The code gives no {code} figures for a lot with {_services_words(lot)}. "
+                "The district figures shown are for a lot with public sewer and water",
+                leaf,
+                None,
+            )
+        )
     for item in leaf["value"]:
         met = _utility_match(item, lot)
         if met is False:
@@ -2077,7 +2168,11 @@ def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, A
                 f"{path} ({a['section']}) or {dispute['path'].replace('_', ' ')} ({dispute['section']}): "
                 "the code does not settle which. Ask the zoning officer"
             )
-            flags.append(f"{dispute['section']}: {dispute['note'].rstrip('.')}")
+            # pass 13: the display path names both paths with their sections, so the note gives the other reading
+            # in words only. Each section list is said once
+            other = dispute["note"].rstrip(".")
+            other = other[:1].lower() + other[1:] if other[1:2].islower() else other
+            flags.append(f"The other reading: {other}")
             settled = True  # the display path says the doubt itself
             conf = "secondary"
         out.append(
@@ -2090,13 +2185,9 @@ def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, A
                 "note": lead
                 + "".join(f". {f}" for f in flags)
                 + (f". {a['note']}" if a.get("note") else "")
-                + (
-                    # pass 10: a dispute about the path alone says which paths, never a vague "not settled"
-                    f". Disputed: {a['path'].replace('_', ' ')} under {a['section']}, "
-                    f"{dispute['path'].replace('_', ' ')} under {dispute['section']}"
-                    if dispute
-                    else ("" if settled else ". The reading is not settled")
-                ),
+                # pass 10: a dispute about the path alone says which paths, never a vague "not settled". Pass 13: the
+                # display path says them, with their sections, so the note does not repeat them
+                + ("" if settled else ". The reading is not settled"),
             }
         )
     return out
@@ -2340,6 +2431,14 @@ def _alt_min_lot_utility(a: dict[str, Any], d: Any, lot: dict[str, Any]) -> tupl
         if _utility_match(r, lot) is True:
             return r["min_lot_sqft"], f"Lot minimum {r['when']}: {r['min_lot_sqft']:,.0f} sq ft"
     known = [r for r in rows if _utility_match(r, lot) is not False]
+    if not known:  # pass 13: the services were given and no row fits them. Never "not given"
+        if _base_services(rows, lot):
+            return _alt_min_lot(a, d), None  # the listing's own figure is the one with the public services
+        figs = ", ".join(f"{r['when']}: {r['min_lot_sqft']:,.0f} sq ft" for r in rows)
+        return (
+            None,
+            f"The code gives no lot minimum for a lot with {_services_words(lot)}, only for other services ({figs})",
+        )
     figs = ", ".join(f"{r['when']}: {r['min_lot_sqft']:,.0f} sq ft" for r in known or rows)  # pass 12: no semicolons
     area = lot.get("lot_sqft")
     top = max(r["min_lot_sqft"] for r in known or rows)
@@ -2348,6 +2447,20 @@ def _alt_min_lot_utility(a: dict[str, Any], d: Any, lot: dict[str, Any]) -> tupl
     if area is not None and low <= area < top:
         return None, text  # the services decide it: never a yes or a no
     return (top if area is None or area >= top else low), text
+
+
+def _base_services(rows: list[dict[str, Any]], lot: dict[str, Any]) -> bool:
+    """Pass 13: the figures outside the rows are for a lot with the public services the rows name. True unless the
+    lot lacks one of them (public sewer, public water) by a fact given."""
+    named = [f for f in ("public_sewer", "public_water") if any(r.get(f) is not None for r in rows)]
+    return not any(lot.get(f) is False for f in named)
+
+
+def _services_words(lot: dict[str, Any]) -> str:
+    """Pass 13: the lot's given services in plain words ("no public sewer and public water")."""
+    have = [ROW_FACTS[f] for f in ("public_sewer", "public_water") if lot.get(f) is True]
+    lack = ["no " + ROW_FACTS[f] for f in ("public_sewer", "public_water") if lot.get(f) is False]
+    return " and ".join(have + lack) or "these services"
 
 
 def _alt_tests(a: dict[str, Any], lot: dict[str, Any]) -> list[tuple[bool | None, str]]:
@@ -2499,7 +2612,9 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             "Not addressed for this form, not a firm no. Ask the zoning officer"
             + (f". {nn['note']}" if nn.get("note") else "")
         )
-    conditions = _town_conditions(data, today if state else picked, lot, historic, how, scope, hold)
+    conditions = _town_conditions(
+        data, today if state else picked, lot, historic, how, scope, hold, place in PASS13_HOLD_TOWNS
+    )
     overridden: list[dict[str, Any]] = []
     if state:  # under the bill the town's gates show as conditions only, and some no longer apply
         live: list[dict[str, Any]] = []
@@ -2995,6 +3110,12 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             )
         )
     if not allowed and not state:
+        # pass 13: a yard the file does not hold (a general default) is never a figure for a form here
+        for k in [k for k in YARDS if (picked.get(("envelope", k)) or ({}, ""))[1] == DEFAULT]:
+            for t in ALL_TYPES:
+                if not (t == "attached" and k in principal):
+                    setbacks[t][k] = None
+    if not allowed and not state:
         # pass 9: no ADU form allowed here, so no accessory (ADU) yards. The top-level yards are the district's own
         # (the house's), or none where the file has no district row. A front-yard bar never blanks them.
         for k in YARDS:
@@ -3336,22 +3457,24 @@ def _in_doubt(data: dict[str, Any], lot: dict[str, Any], hold: bool = False) -> 
         return None
     named = (_leaf(data, ("eligibility", "zoning_districts")) or {}).get("value") or []
     kind = "district_list" if hold else ((leaf.get("named_by") or {}).get(code) or "district_list")
+    # pass 13: a note and sections for this district alone (notes_by_district, sections_by_district), so a lot never
+    # reads why other districts are in doubt
+    own_note = (leaf.get("notes_by_district") or {}).get(code)
+    section = (leaf.get("sections_by_district") or {}).get(code) or leaf["section"]
+    note = own_note or leaf.get("note")
     ask = "ask the zoning officer or the Zoning Hearing Board whether it is allowed here"
     if kind == "adu_section":
-        lead = (
-            f"The ADU section names {d} ({leaf['section']}), but {d}'s own use list does not name the ADU. "
-            f"Named, but {ask}"
-        )
+        lead = f"The ADU section names {d} ({section}), but {d}'s own use list does not name the ADU. Named, but {ask}"
     elif kind == "reach":
-        lead = f"Whether the ADU rule reaches {d} is in doubt ({leaf['section']}). Ask the zoning officer or the Zoning Hearing Board whether it is allowed here"
+        lead = f"Whether the ADU rule reaches {d} is in doubt ({section}). Ask the zoning officer or the Zoning Hearing Board whether it is allowed here"
     else:
         lead = (
-            f"{d} lists the ADU ({leaf['section']}), but the ADU section names "
+            f"{d} lists the ADU ({section}), but the ADU section names "
             + (", ".join(named) if named else "other districts")
             + f". Listed, but {ask}"
         )
-    reason = lead + (f". {leaf['note']}" if leaf.get("note") else "")
-    return {"reason": reason, "section": leaf["section"], "url": leaf.get("url"), "kind": kind}
+    reason = lead + (f". {note}" if note else "")
+    return {"reason": reason, "section": section, "url": leaf.get("url"), "kind": kind}
 
 
 def _bill_keeps(picked: Picked, data: dict[str, Any], lot: dict[str, Any]) -> list[str]:
@@ -3680,13 +3803,13 @@ def _town_sizes(
             text += hu_note
             text += f": {n:,.0f} sq ft for this house" if n is not None else ". Give the house size to get the number"
         if part:  # pass 8: a share of a named part of the house, which the tool cannot measure
-            p_text = f"at most {part['share']:.0%} of the house's {part['part']}"
+            p_text = f"{part['share']:.0%} of the house's {part['part']}"  # pass 13: "at most" is said once
             if text is not None:
-                text += f". Also {p_text}, which may be less"
+                text += f". Also at most {p_text}, which may be less"
             elif town is not None:
                 text = (
-                    f"At most {town:,.0f} sq ft and {p_text}, whichever is less. The tool cannot measure that part "
-                    f"of the house, so {town:,.0f} sq ft is only the outer limit"
+                    f"At most {town:,.0f} sq ft and at most {p_text}, whichever is less. The tool cannot measure that "
+                    f"part of the house, so {town:,.0f} sq ft is only the outer limit"
                 )
             else:
                 text = f"At most {p_text}. The tool cannot measure that part of the house, so no number is given"

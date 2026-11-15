@@ -2252,9 +2252,12 @@ def test_disputed_path_says_which_paths():
         "pa_lancaster_west_lampeter", "today", {**DET, "zoning_district": "MS", "lot_sqft": 9000}, extra=True
     )
     ms = next(a for a in out["alternatives"] if a.get("disputed_path"))
-    assert ms["note"].endswith(
-        "Disputed: by right under 285-43B(1)(e), 285-43E, 285-33, special exception under 285-48A(16)(a)"
+    # pass 13: the display path names both paths with their sections. The note does not repeat them
+    assert ms["display_path"].startswith(
+        "by right (285-43B(1)(e), 285-43E, 285-33) or special exception (285-48A(16)(a))"
     )
+    assert "Disputed:" not in ms["note"] and "285-48A(16)(a):" not in ms["note"]
+    assert "The other reading: " in ms["note"]
     assert "The reading is not settled" not in ms["note"]
 
 
@@ -2790,3 +2793,241 @@ def test_bar_that_skips_planned_development_lots(tmp_path, monkeypatch):
     assert unknown["allowed"] is False
     c = next(c for c in unknown["conditions"] if c["section"] == "9-1")
     assert "Not on a lot in a planned or cluster development" in c["condition"]
+
+
+# ------------------------------------------------------------------ pass 13
+
+
+def test_gate_met_only_without_an_accessory_building():
+    """Franconia 145-35.1F: 'Accessory structures shall not be permitted' (no_accessory_building), disputed."""
+    lot = {**DET, "zoning_district": "R-130", "lot_sqft": 45000}
+    garage = rules.resolve("pa_montgomery_franconia", "today", {**lot, "has_accessory_building": True}, extra=True)
+    assert garage["approval_qualifier"] == "conditional_on_reading"
+    assert garage["reasons"][0].startswith(
+        "Special exception only if the reading that lets this lot in holds: 'Accessory structures shall not be permitted'"
+    )
+    assert garage["reasons"][0].endswith("Ask the zoning officer")
+    plain = rules.resolve("pa_montgomery_franconia", "today", {**lot, "has_accessory_building": False}, extra=True)
+    assert plain["approval_qualifier"] is None and plain["allowed"] is True
+    c = next(c for c in plain["conditions"] if c["section"] == "145-35.1F")
+    assert c["met"] is True and "But 145-157B(4)" not in c["condition"]
+    unknown = rules.resolve("pa_montgomery_franconia", "today", lot, extra=True)
+    c = next(c for c in unknown["conditions"] if c["section"] == "145-35.1F")
+    assert c["met"] is None and c["condition"].endswith(
+        "Depends on whether the lot has an accessory building (has_accessory_building), which was not given"
+    )
+
+
+def test_disputed_bar_scoped_by_house_type_depends_on_the_reading():
+    """Amity: a twin may not qualify (bars, building_types only, disputed). Never a plain variance."""
+    lot = {"zoning_district": "RV", "lot_sqft": 9000, "building_type": "semi_detached"}
+    out = rules.resolve("pa_berks_amity", "today", lot, extra=True)
+    assert out["allowed"] is True and out["approval_path"] == "by_right"
+    assert out["approval_qualifier"] == "conditional_on_reading"
+    assert out["reasons"][0].startswith(
+        "By right only if the reading that lets this lot in holds: A twin may not qualify"
+    )
+    assert not any("Not allowed here" in r for r in out["reasons"])
+    det = rules.resolve("pa_berks_amity", "today", {**lot, "building_type": "detached"}, extra=True)
+    assert det["approval_qualifier"] is None
+
+
+def test_disputed_path_sections_said_once():
+    """Butler: the unit in an accessory building, by right or not allowed. Each section list once."""
+    lot = {**DET, "zoning_district": "R-2", "lot_sqft": 9000, "has_accessory_building": True}
+    out = rules.resolve("pa_butler_butler_city", "today", lot, extra=True)
+    a = next(a for a in out["alternatives"] if a.get("disputed_path"))
+    text = a["display_path"] + " " + a["note"]
+    assert text.count("260-7 'Two-family dwelling', 'Dwelling group', 260-20, 260-29, 260-38") == 1
+    assert text.count("260-10L, 260-10N, 260-24A") == 1
+    assert "The other reading: no district use list names a house with a unit in an accessory building" in a["note"]
+
+
+def test_services_that_match_no_row(tmp_path, monkeypatch):
+    """Services given and no row fits them: the code gives no figure for that mix, never 'not given'."""
+    rows = [
+        {"when": "Public sewer and water", "public_sewer": True, "public_water": True, "min_lot_sqft": 20000},
+        {"when": "Public sewer only", "public_sewer": True, "public_water": False, "min_lot_sqft": 60000},
+    ]
+    alt = {"name": "Duplex", "path": "by_right", "districts": ["R-1"], "conditions": "A duplex", "section": "5-1"}
+    body = {
+        "approval": {
+            "path": _leaf("by_right", "1"),
+            "fallback_path": _leaf("variance", "1"),
+            "alternatives": _leaf([{**alt, "min_lot_sqft": 20000, "min_lot_by_utility": rows}], "5"),
+        },
+        "districts": {
+            "R-1": {
+                "min_lot_sqft": _leaf(10000, "6"),
+                "utility_rows": _leaf(
+                    [
+                        {
+                            "when": "Public sewer only",
+                            "public_sewer": True,
+                            "public_water": False,
+                            "min_lot_sqft": 30000,
+                            "section": "6",
+                        }
+                    ],
+                    "6",
+                ),
+            }
+        },
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_services", body)
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 70000, "public_sewer": False, "public_water": True}
+    out = rules.resolve(name, "today", lot, extra=True)
+    a = out["alternatives"][0]
+    assert "were not given" not in a["note"] and a["applies"] is None
+    assert "The code gives no lot minimum for a lot with public water and no public sewer" in a["note"]
+    c = next(c for c in out["conditions"] if c["kind"] == "utilities")
+    assert c["condition"] == (
+        "The code gives no R-1 figures for a lot with public water and no public sewer. "
+        "The district figures shown are for a lot with public sewer and water"
+    )
+    both = rules.resolve(name, "today", {**lot, "public_sewer": True}, extra=True)
+    assert not any(c["kind"] == "utilities" for c in both["conditions"])
+    assert both["alternatives"][0]["applies"] is True
+
+
+def test_yards_by_house_type_in_one_district_row():
+    """East Norriton MR: a twin has its own front (25 on average) and rear (30) yards, 205-30.7G."""
+    lot = {"zoning_district": "MR", "lot_sqft": 5000, "building_type": "semi_detached"}
+    twin = rules.resolve("pa_montgomery_east_norriton", "today", lot, extra=True)
+    assert twin["setbacks_by_type"]["attached"] == {
+        "setback_front_ft": 25,
+        "setback_side_ft": 10,
+        "setback_rear_ft": 30,
+    }
+    assert twin["max_building_coverage"] == 0.35
+    house = rules.resolve("pa_montgomery_east_norriton", "today", {**lot, "building_type": "detached"}, extra=True)
+    assert house["setbacks_by_type"]["attached"] == {
+        "setback_front_ft": 30,
+        "setback_side_ft": 15,
+        "setback_rear_ft": 25,
+    }
+
+
+def test_district_in_doubt_note_per_district():
+    """East Norriton: a C-1 lot reads why C-1 is in doubt, not RR or GA."""
+    out = rules.resolve(
+        "pa_montgomery_east_norriton", "today", {**DET, "zoning_district": "C-1", "lot_sqft": 12000}, extra=True
+    )
+    text = " ".join(out["reasons"]) + out["path_to_ask"]["note"]
+    assert "Whether the ADU rule reaches C-1 is in doubt (205-66.2A(7), (9))." in text
+    assert "its accessory use listing (7) reaches only the uses listed above it" in text
+    assert "RR permits" not in text and "GA, HR" not in text and "205-152C(2)" not in text
+    rr = rules.resolve("pa_montgomery_east_norriton", "today", {**DET, "zoning_district": "RR", "lot_sqft": 12000})
+    assert any("RR permits any RP use" in r for r in rr["reasons"])
+
+
+def test_accessory_yards_only_inside_the_rear_yard(tmp_path, monkeypatch):
+    """Spring Garden 310-12B(1): 5 ft only inside the rear yard. Elsewhere the district yards, which are shown."""
+    sg = rules.resolve(
+        "pa_york_spring_garden", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 12000}, extra=True
+    )
+    assert sg["setbacks_by_type"]["detached_new"] == {
+        "setback_front_ft": 25,
+        "setback_side_ft": 10,
+        "setback_rear_ft": 25,
+    }
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "envelope": {
+            "setback_side_ft": _leaf(5, "7"),
+            "setback_rear_ft": _leaf(5, "7"),
+            "accessory_yards_inside_rear_yard": _leaf(True, "7"),
+        },
+        "districts": {
+            "R-1": {
+                "setback_front_ft": _leaf(25, "8"),
+                "setback_side_ft": _leaf(10, "8"),
+                "setback_rear_ft": _leaf(30, "8"),
+            }
+        },
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_rear_yard", body)
+    out = rules.resolve(name, "today", {**DET, "zoning_district": "R-1", "lot_sqft": 12000}, extra=True)
+    assert [out[k] for k in rules.YARDS] == [25, 10, 30]
+    assert out["setbacks_by_type"]["detached_new"] == {
+        "setback_front_ft": 25,
+        "setback_side_ft": 10,
+        "setback_rear_ft": 30,
+    }
+    c = next(c for c in out["conditions"] if c["section"] == "7" and c["kind"] == "other")
+    assert c["condition"] == (
+        "An accessory building inside the rear yard may stand 5 ft from the side line and 5 ft from the rear line. "
+        "Elsewhere it stays in the buildable area and meets the district yards, which are the figures shown"
+    )
+    other = rules.resolve(name, "today", {**DET, "zoning_district": "R-9", "lot_sqft": 12000}, extra=True)
+    assert other["setbacks_by_type"]["detached_new"]["setback_side_ft"] is None
+
+
+def test_no_default_yards_where_the_file_has_none():
+    """South Park C-1 has no district row and no town-wide yards: no 5 ft default for any form."""
+    out = rules.resolve(
+        "pa_allegheny_south_park", "today", {**DET, "zoning_district": "C-1", "lot_sqft": 9000}, extra=True
+    )
+    assert out["allowed"] is False
+    assert all(v is None for yards in out["setbacks_by_type"].values() for v in yards.values())
+
+
+def test_pass13_fields_not_in_lot_towns():
+    for name in LOT_TOWNS:  # stored lot records do not change: no lot town uses a pass 13 field
+        text = (RULES / f"{name}.json").read_text()
+        for key in (
+            "no_accessory_building",
+            "_ft_by_type",
+            "notes_by_district",
+            "sections_by_district",
+            "accessory_yards_inside_rear_yard",
+            "disputed_path",
+        ):
+            assert key not in text, (name, key)
+
+
+def test_share_of_a_part_says_at_most_once(tmp_path, monkeypatch):
+    """Meadville style: the only size cap is a share of a part of the house. Never 'At most at most'."""
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "size": {"max_share_of_part": _leaf({"share": 1.0, "part": "habitable floor area"}, "4")},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_part", body)
+    out = rules.resolve(name, "today", {**DET, "zoning_district": "R", "lot_sqft": 9000}, extra=True)
+    text = out["size_rule_by_type"]["detached_new"]
+    assert text.startswith("At most 100% of the house's habitable floor area. The tool cannot measure")
+    assert "at most at most" not in text.lower()
+
+
+def test_status_condition_is_a_sentence():
+    """The ADU status condition reads as a sentence. Held for the lot towns (PASS13_HOLD_TOWNS)."""
+    lot = {**DET, "zoning_district": "R-130", "lot_sqft": 45000}
+    c = next(c for c in rules.resolve("pa_montgomery_franconia", "today", lot, extra=True)["conditions"])
+    assert c["kind"] == "adu_status" and c["condition"].startswith("The code's ADU status is family only. ")
+    assert rules.PASS13_HOLD_TOWNS == LOT_TOWNS and "pa_montgomery_narberth" in rules.DOUBT_HOLD_TOWNS
+    held = rules.resolve("pa_montgomery_lower_merion", "today", {**DET, "zoning_district": "R1"}, extra=True)
+    c = next(c for c in held["conditions"] if c["kind"] == "adu_status")
+    assert c["condition"].startswith("family only")
+
+
+def test_services_only_partly_given(tmp_path, monkeypatch):
+    """Elizabeth style: rows say only 'without public sewers'. A lot with public sewer takes the district figures."""
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "districts": {
+            "R-2": {
+                "min_lot_sqft": _leaf(7500, "6"),
+                "utility_rows": _leaf(
+                    [{"when": "Without public sewers", "public_sewer": False, "min_lot_sqft": 43560, "section": "6"}],
+                    "6",
+                ),
+            }
+        },
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_sewer_only", body)
+    lot = {**DET, "zoning_district": "R-2", "lot_sqft": 9000, "public_sewer": True}
+    out = rules.resolve(name, "today", lot, extra=True)
+    assert not any("gives no" in c["condition"] for c in out["conditions"])
+    assert out["min_lot_sqft"] is None or out["min_lot_sqft"] != 43560
+    off = rules.resolve(name, "today", {**lot, "public_sewer": False}, extra=True)
+    assert any(c["kind"] == "utilities" and c["met"] is True for c in off["conditions"])

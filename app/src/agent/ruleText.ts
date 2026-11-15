@@ -243,6 +243,8 @@ const BILL_OVERRIDES = new Set(['adu_status', 'family', 'age', 'care', 'owner_oc
 const FACT_TEXT: Record<string, string> = {
   has_alley: 'only if the lot abuts an alley or a street on its rear or side',
   has_accessory_building: 'only if an accessory building already exists on the lot',
+  // Pass 13: the inverse (pipeline/rules.py no_accessory_building), met on a lot with no accessory building.
+  no_accessory_building: 'only if the lot has no accessory building',
   lot_sqft_at_least: 'only if the lot is at least',
   lot_sqft_below: 'only if the lot is under',
   // Pass 7: tests on the house and the services (pipeline/rules.py HOUSE_TESTS). The answer depends on them.
@@ -263,6 +265,7 @@ const FACT_TEXT: Record<string, string> = {
 const DEPENDS_FACT: Record<string, string> = {
   has_alley: 'whether the lot has an alley',
   has_accessory_building: 'whether the lot has an accessory building',
+  no_accessory_building: 'whether the lot has an accessory building',
   lot_sqft_at_least: 'the lot area',
   lot_sqft_below: 'the lot area',
   house_sqft_at_least: "the house's floor area",
@@ -276,6 +279,11 @@ const DEPENDS_FACT: Record<string, string> = {
   lot_width_below: 'the lot width',
   designated_on_plan: 'whether the lot is designated on the plan the code names',
   in_planned_development: 'whether the lot is in a planned or cluster development the code names',
+};
+/** Pass 13: a disputed path's note after "The other reading: ", its first letter lower case unless an acronym. */
+const otherReading = (note: string): string => {
+  const t = note.replace(/\.$/, '');
+  return /^.[a-z]/.test(t) ? t.charAt(0).toLowerCase() + t.slice(1) : t;
 };
 /** The fact a gate test reads ("the lot width"), or null for no test. */
 export const dependsFact = (test: unknown): string | null => (typeof test === 'string' ? DEPENDS_FACT[test] ?? null : null);
@@ -460,6 +468,9 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     // Pass 8: a bar another passage may undo (pipeline/rules.py disputed_by). Depends, never a plain no; cites both.
     const dispute = isObj(g.disputed_by) ? g.disputed_by : null;
     if (dispute) scope.disputed_by = dispute;
+    // Pass 13 (pipeline/rules.py): a disputed bar with no lot test, scoped by district or house type, depends on
+    // the reading. Never a plain bar.
+    if (dispute && g.effect === 'bars' && !g.test && scoped) scope.effect = 'condition';
     const disputeText = dispute ? ` But ${dispute.section ?? ''}: ${String(dispute.note ?? '').replace(/\.$/, '')}. The code does not settle which reading holds. Ask the zoning officer.` : '';
     // Pass 10: a gate may carry its own confidence.
     out.push({ kind: g.kind ?? 'other', condition: ownerText(`${endSentence(String(g.condition ?? ''), ifText)}${ifText}${disputeText}`), section: g.section ?? null, url: g.url ?? gates!.url ?? null, checked_on: gates!.verified_on ?? null, confidence: g.confidence ?? gates!.confidence ?? null, ...scope });
@@ -588,9 +599,29 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
     if (k === 'setback_side_ft' && sidesOnly && (attached || !fromRow('accessory_setback_side_ft'))) return sidesOnly;
     if (k === 'setback_side_ft' && sidesBoth && (attached || !fromRow('accessory_setback_side_ft')) && (attached || !pick('envelope', k))) return sidesBoth;
     if (tierNote && tiers!.some((x) => isObj(x) && k in x && (x.applies_to ?? 'accessory') === (attached ? 'principal' : 'accessory'))) return tierNote;
-    if (attached) return fromRow(k) ?? pick('envelope', k);
-    return fromRow(`accessory_${k}`) ?? pick('envelope', k) ?? fromRow(k);
+    if (attached) return byTypeYard(k, fromRow(k) ?? pick('envelope', k));
+    // Pass 13 (pipeline/rules.py _rear_yard_only_yards): the town's accessory side and rear yards hold only inside the
+    // rear yard. Elsewhere the district yards, which are the figures shown (none without a district row).
+    const town = pick('envelope', k);
+    if (insideRear && (k === 'setback_side_ft' || k === 'setback_rear_ft') && isObj(town) && typeof town.value === 'number' && !fromRow(`accessory_${k}`)) {
+      const d = fromRow(k);
+      const tail = `Inside the rear yard: ${num(town.value)} ft (${insideRear.section ?? ''}). Elsewhere the district yard`;
+      return d && isObj(d) ? { ...d, note: ownerText(`${tail}, shown here`) } : { ...ruleOut('envelope.accessory_yards_inside_rear_yard', insideRear), value: null, note: ownerText(`${tail}, not on file for this district`) };
+    }
+    return fromRow(`accessory_${k}`) ?? town ?? fromRow(k);
   };
+  // Pass 13: a yard set by building type in the district row (districts.<code>.<yard>_by_type). No lot facts here,
+  // so the house types' own figures are named beside the district figure.
+  const byTypeYard = (k: string, base: Json): Json => {
+    const bt = fromRow(`${k}_by_type`);
+    if (!bt || !isObj(bt) || !isObj(bt.value) || !isObj(base)) return base;
+    const figs = Object.entries(bt.value).filter(([, v]) => typeof v === 'number').map(([t, v]) => `For a ${label(t)} house: ${num(v)} ft`).join('. ');
+    return figs ? { ...base, by_type: bt.value, by_type_section: bt.section ?? null, note: ownerText(`${base.note ? `${String(base.note).replace(/\.$/, '')}. ` : ''}${figs} (${bt.section ?? ''})`) } : base;
+  };
+  const insideRear = (() => {
+    const l = leafAt(file, 'envelope', 'accessory_yards_inside_rear_yard');
+    return l && l.value === true ? l : null;
+  })();
   const types = leafAt(file, 'form', 'types_allowed');
   const list = Array.isArray(types?.value) ? (types!.value as string[]) : null;
   const notAllowed = { allowed: false, note: 'This form is not allowed here (form.types_allowed)', ...cite(types) };
@@ -650,9 +681,10 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const part = partLeaf && isObj(partLeaf.value) && typeof partLeaf.value.share === 'number' ? (partLeaf.value as Obj) : null;
   const withPart = (text: string | null, sqft: Obj | null): string | null => {
     if (!part || lifted) return text;
-    const p = `at most ${Math.round((part.share as number) * 100)}% of the house's ${String(part.part)}`;
-    if (text) return `${text}. Also ${p}, which may be less`;
-    if (sqft && typeof sqft.value === 'number') return `At most ${num(sqft.value)} sq ft and ${p}, whichever is less. The tool cannot measure that part of the house, so ${num(sqft.value)} sq ft is only the outer limit`;
+    // Pass 13: "at most" is said once (never "At most at most").
+    const p = `${Math.round((part.share as number) * 100)}% of the house's ${String(part.part)}`;
+    if (text) return `${text}. Also at most ${p}, which may be less`;
+    if (sqft && typeof sqft.value === 'number') return `At most ${num(sqft.value)} sq ft and at most ${p}, whichever is less. The tool cannot measure that part of the house, so ${num(sqft.value)} sq ft is only the outer limit`;
     return `At most ${p}. The tool cannot measure that part of the house, so no number is given`;
   };
   const ruleIn = withPart(rule('max_sqft_internal', 'max_sqft', 'max_share_internal', 'max_share_of_house'), firstNum('max_sqft_internal', 'max_sqft'));
@@ -756,6 +788,11 @@ function approvalOf(file: Obj, district: string | null) {
     const inDoubt = doubtKey !== undefined;
     // Pass 11 (pipeline/rules.py _in_doubt): named_by says which way the doubt runs.
     const namedBy = inDoubt && isObj(doubt!.named_by) ? doubt!.named_by[String(doubtKey)] : undefined;
+    // Pass 13 (pipeline/rules.py _in_doubt): a note and sections for this district alone, never another district's why.
+    const byNote = inDoubt && isObj(doubt!.notes_by_district) ? doubt!.notes_by_district[String(doubtKey)] : undefined;
+    const bySection = inDoubt && isObj(doubt!.sections_by_district) ? doubt!.sections_by_district[String(doubtKey)] : undefined;
+    const doubtNote = typeof byNote === 'string' ? byNote : doubt?.note;
+    const doubtSection = typeof bySection === 'string' ? bySection : doubt?.section;
     const ask = 'ask the zoning officer or the Zoning Hearing Board whether it is allowed here';
     const doubtLead =
       namedBy === 'adu_section'
@@ -766,7 +803,7 @@ function approvalOf(file: Obj, district: string | null) {
     out.district_path = hit
       ? hit
       : inDoubt
-        ? { district, path: path?.value ?? null, section: doubt!.section ?? null, url: doubt!.url ?? null, listed_in_doubt: true, named_by: namedBy ?? 'district_list', note: `${doubtLead}${doubt!.note ? `. ${doubt!.note}` : ''}` }
+        ? { district, path: path?.value ?? null, section: doubtSection ?? null, url: doubt!.url ?? null, listed_in_doubt: true, named_by: namedBy ?? 'district_list', note: `${doubtLead}${doubtNote ? `. ${doubtNote}` : ''}` }
       : listed === false
         ? { district, path: fallback?.value ?? 'variance', section: fallback?.section ?? zd?.section ?? null, url: fallback?.url ?? zd?.url ?? null, note: 'District not listed for ADUs' }
         : { district, path: path?.value ?? null, section: path?.section ?? null, url: path?.url ?? null, note: listed ? null : 'No district-specific path in the file' };
@@ -993,9 +1030,10 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
           Array.isArray(a.min_lot_by_utility) && a.min_lot_by_utility.length
             ? `Lot minimum by public sewer and water: ${a.min_lot_by_utility.filter(isObj).map((r) => `${r.when}: ${num(r.min_lot_sqft)} sq ft`).join(', ')}`
             : null,
-          isObj(a.disputed_path) ? `${a.disputed_path.section ?? ''}: ${String(a.disputed_path.note ?? '').replace(/\.$/, '')}` : null,
-          // Pass 10 (pipeline/rules.py _alternatives): which paths are disputed, and districts the code disagrees on.
-          isObj(a.disputed_path) ? `Disputed: ${label(a.path)} under ${a.section ?? ''}, ${label(a.disputed_path.path)} under ${a.disputed_path.section ?? ''}` : null,
+          // Pass 13 (pipeline/rules.py _alternatives): display_path names both paths with their sections, so the other
+          // reading is said in words only and each section list once.
+          isObj(a.disputed_path) ? `The other reading: ${otherReading(String(a.disputed_path.note ?? ''))}` : null,
+          // Pass 10: districts the code disagrees on.
           isObj(a.disputed_districts) && Array.isArray(a.disputed_districts.districts)
             ? `Whether it reaches ${(a.disputed_districts.districts as string[]).join(', ')} is disputed: ${a.disputed_districts.section ?? ''}: ${String(a.disputed_districts.note ?? '').replace(/\.$/, '')}. Ask the zoning officer`
             : null,

@@ -328,6 +328,22 @@
         "HR": "reach",
         "HR-1": "reach",
         "IN": "reach"
+      },
+      "notes_by_district": {
+        "C-1": "C-1 permits a single-family detached dwelling under the BR figures (205-66.2A(9)), but its accessory use listing (7) reaches only the uses listed above it and does not name 205-16",
+        "RR": "RR permits any RP use, so a house with 205-16B accessory uses, only by special exception (205-152C(2))",
+        "GA": "GA, HR and HR-1 list 'Accessory uses in accordance with § 205-16' but permit only apartment houses, and 205-16B(4)(b) has the property sold as a single-family dwelling",
+        "HR": "GA, HR and HR-1 list 'Accessory uses in accordance with § 205-16' but permit only apartment houses, and 205-16B(4)(b) has the property sold as a single-family dwelling",
+        "HR-1": "GA, HR and HR-1 list 'Accessory uses in accordance with § 205-16' but permit only apartment houses, and 205-16B(4)(b) has the property sold as a single-family dwelling",
+        "IN": "IN lists 'Accessory uses as defined in § 205-16' (205-56J), but its only homes are churches 'and their adjunct residential dwellings' (205-56A) and hospital temporary living quarters for patients' families"
+      },
+      "sections_by_district": {
+        "C-1": "205-66.2A(7), (9)",
+        "RR": "205-152C(2)",
+        "GA": "205-32D, 205-42A(4), 205-44.2A(5)",
+        "HR": "205-32D, 205-42A(4), 205-44.2A(5)",
+        "HR-1": "205-32D, 205-42A(4), 205-44.2A(5)",
+        "IN": "205-56A, J"
       }
     },
     "districts_read_no_listing": {
@@ -736,6 +752,26 @@
         "verified_on": "2026-11-15",
         "confidence": "verified",
         "note": "A twin: 10 ft on one side only"
+      },
+      "setback_front_ft_by_type": {
+        "value": {
+          "semi_detached": 25
+        },
+        "section": "205-30.7G(1)",
+        "url": "https://ecode360.com/print/EA1154?guid=8114448",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "A twin or duplex in an MR development: 25 ft on average across the development, and half of a front facade may stand 20 ft back"
+      },
+      "setback_rear_ft_by_type": {
+        "value": {
+          "semi_detached": 30
+        },
+        "section": "205-30.7G(2)",
+        "url": "https://ecode360.com/print/EA1154?guid=8114448",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "A twin or duplex in an MR development: 30 ft"
       },
       "setback_rear_ft": {
         "value": 25,

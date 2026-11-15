@@ -808,7 +808,10 @@ describe('get_rule_text pass 10', () => {
   it('says which paths are disputed and which districts are in dispute', async () => {
     const wl = await town6('pa_lancaster_west_lampeter', 'approval', 'R-3');
     const ms = wl.other_ways_to_add_a_unit.options.find((o: Any6) => o.disputed_path);
-    expect(ms.reads_as).toMatch(/Disputed: by right under 285-43B\(1\)\(e\), 285-43E, 285-33, special exception under 285-48A\(16\)\(a\)/);
+    // Pass 13: the display path names both paths with their sections. reads_as gives the other reading in words only.
+    expect(ms.display_path).toMatch(/^by right \(285-43B\(1\)\(e\), 285-43E, 285-33\) or special exception \(285-48A\(16\)\(a\)\)/);
+    expect(ms.reads_as).not.toMatch(/Disputed:/);
+    expect(ms.reads_as).toMatch(/The other reading: /);
     const r3 = wl.other_ways_to_add_a_unit.options.find((o: Any6) => String(o.name).startsWith('Conversion apartment: a house'));
     expect(r3.reads_as).toMatch(/Whether it reaches R-3 is disputed: 285-48A\(16\)\(a\): It names the RR, TV and MS Districts and not R-3/);
   });
@@ -914,5 +917,70 @@ describe('get_rule_text pass 12', () => {
     );
     const li = await town6('pa_montgomery_skippack', 'approval', 'LI');
     expect(li.path_to_ask.note).toMatch(/^The code has no ADU rule here\. A use that is not listed may be authorized by conditional use/);
+  });
+});
+
+// Pass 13: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 13 section).
+describe('get_rule_text pass 13', () => {
+  it('reads a gate met only without an accessory building', async () => {
+    const r130 = await town6('pa_montgomery_franconia', 'eligibility', 'R-130');
+    const c = r130.conditions.find((x: Any6) => x.section === '145-35.1F');
+    expect(c.test).toBe('no_accessory_building');
+    expect(c.condition).toMatch(/Applies only if the lot has no accessory building\./);
+  });
+
+  it('never reads a disputed bar scoped by house type as a plain bar', async () => {
+    const rv = await town6('pa_berks_amity', 'eligibility', 'RV');
+    const c = rv.conditions.find((x: Any6) => /A twin may not qualify/.test(String(x.condition)));
+    expect(c.effect).toBe('condition');
+    expect(c.condition).toMatch(/The code does not settle which reading holds\. Ask the zoning officer\.$/);
+  });
+
+  it('says each section list of a disputed path once', async () => {
+    const b = await town6('pa_butler_butler_city', 'approval', 'R-2');
+    const o = b.other_ways_to_add_a_unit.options.find((x: Any6) => x.disputed_path);
+    const text = `${o.display_path} ${o.reads_as}`;
+    expect(text.split("260-7 'Two-family dwelling', 'Dwelling group', 260-20, 260-29, 260-38").length).toBe(2);
+    expect(o.reads_as).toMatch(/The other reading: no district use list names a house with a unit in an accessory building/);
+  });
+
+  it('names a twin\'s own yards, and the district yards where the accessory yards hold only inside the rear yard', async () => {
+    const mr = await town6('pa_montgomery_east_norriton', 'size', 'MR');
+    const front = mr.forms.inside_or_attached.attached_yards.front;
+    expect(front.value).toBe(30);
+    expect(front.by_type).toEqual({ semi_detached: 25 });
+    expect(front.note).toMatch(/For a semi detached house: 25 ft \(205-30\.7G\(1\)\)$/);
+    const rear: TownSource = {
+      index: async () => TOWNS,
+      town: async () =>
+        ({
+          ...(FAKE_FILES.pa_testing_testville as object),
+          approval: { path: leaf('by_right', '1') },
+          envelope: { setback_side_ft: leaf(5, '7'), setback_rear_ft: leaf(5, '7'), accessory_yards_inside_rear_yard: leaf(true, '7') },
+          districts: { 'R-1': { setback_side_ft: leaf(10, '8'), setback_rear_ft: leaf(30, '8') } },
+        }) as never,
+    };
+    const sg = (await getRuleText({ place: 'Testville', topic: 'size', district: 'R-1' }, rear)) as Any6;
+    expect(sg.forms.accessory_building.yards.side.value).toBe(10);
+    expect(sg.forms.accessory_building.yards.side.note).toBe('Inside the rear yard: 5 ft (7). Elsewhere the district yard, shown here');
+    const other = (await getRuleText({ place: 'Testville', topic: 'size', district: 'R-9' }, rear)) as Any6;
+    expect(other.forms.accessory_building.yards.rear.value).toBeNull();
+  });
+
+  it('says at most once for a share of a part of the house', async () => {
+    const src: TownSource = {
+      index: async () => TOWNS,
+      town: async () => ({ ...(FAKE_FILES.pa_testing_testville as object), size: { max_share_of_part: leaf({ share: 1, part: 'habitable floor area' }, '4') } }) as never,
+    };
+    const out = JSON.stringify(await getRuleText({ place: 'Testville', topic: 'size' }, src));
+    expect(out).toMatch(/At most 100% of the house's habitable floor area\. The tool cannot measure/);
+    expect(out.toLowerCase()).not.toMatch(/at most at most/);
+  });
+
+  it('gives a district in doubt its own note and sections', async () => {
+    const c1 = await town6('pa_montgomery_east_norriton', 'approval', 'C-1');
+    expect(c1.approval.district_path.section).toBe('205-66.2A(7), (9)');
+    expect(c1.approval.district_path.note).toMatch(/C-1 permits a single-family detached dwelling under the BR figures/);
+    expect(c1.approval.district_path.note).not.toMatch(/RR permits|GA, HR/);
   });
 });

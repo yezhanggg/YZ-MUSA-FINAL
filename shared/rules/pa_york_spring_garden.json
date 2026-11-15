@@ -263,6 +263,14 @@
       "confidence": "verified",
       "note": "Inside the rear yard, at least 5 ft from the property lines (310-12B(1))"
     },
+    "accessory_yards_inside_rear_yard": {
+      "value": true,
+      "section": "310-12B(1)",
+      "url": "https://ecode360.com/print/SP2461?guid=14755947",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'New permanent roofed accessory structures ... standing apart from the principal structure, are permitted in the general buildable area and inside the rear yards as long as they are at least five feet from any property line'"
+    },
     "accessory_structure_max_height_ft": {
       "value": 25,
       "section": "310-6E, 310-7E, 310-8F, 310-9E",
