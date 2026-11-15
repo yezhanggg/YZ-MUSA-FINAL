@@ -155,7 +155,7 @@ House type: units from the land use code (or living units), then twin and row fr
 
 Heights: Microsoft model heights read low in Upper Dublin (median house 15.7 ft where most houses have two stories). They are not used for Montgomery County, so the "no taller than the house" test reads "not checked" there. Allentown has the same problem on 15 to 19 lots.
 
-Ground: USGS 3DEP 1 m DEM. Chester and Montgomery: PA_17County_D24 (Montgomery's five tiles are the Philadelphia files, hard-linked). Centre: PA_Northcentral_2019_B19 (zone 18 tiles, flown 2019-03-20 to 2019-11-23). No land cover model run for these places: the `cover` block is empty.
+Ground: USGS 3DEP 1 m DEM. Chester and Montgomery: PA_17County_D24 (Montgomery's five tiles are the Philadelphia files, hard-linked). Centre: PA_Northcentral_2019_B19 (zone 18 tiles, flown 2019-03-20 to 2019-11-23). Land cover: the model `r34_c5_s0` on NAIP 2022 (see Land cover per lot below).
 
 ## Statewide
 
@@ -212,7 +212,7 @@ Allentown was rebuilt on 2026-11-13 with the A, B and C street designation (fron
 
 3,565,111 bytes in all. The lots left out have no address (8 in Allentown, 9 in Chester County, 10 in Centre County) or no house number (1 in Montgomery County, `CHURCH ST`).
 
-Rule files used by the Pittsburgh and Philadelphia builds were checked on 2026-11-10. The Allentown build reads `pa_lehigh_allentown.json` as of 2026-11-11. The county builds read their town files as of 2026-11-11 to 2026-11-13 (`rule_files_verified_on` in each manifest). Lots without a cover row (42 in Pittsburgh) keep an empty `cover` block. Allentown and the three county places have no land cover block.
+Rule files used by the Pittsburgh and Philadelphia builds were checked on 2026-11-10. The Allentown build reads `pa_lehigh_allentown.json` as of 2026-11-11. The county builds read their town files as of 2026-11-11 to 2026-11-13 (`rule_files_verified_on` in each manifest). Lots without a cover row (42 in Pittsburgh, 36 in Centre County) keep an empty `cover` block.
 
 ## Elevation (ground slope)
 
@@ -294,10 +294,15 @@ In Pittsburgh, 34.8 percent of the test box area also sat inside train or valida
 |---|---|---|---|---|
 | Philadelphia | `processed/philadelphia/cover.parquet` | The 2018 city raster | 2017 photos, 2018 lidar | 459,998 |
 | Pittsburgh | `processed/pittsburgh/cover_model_r34_c5_s0.parquet` | The 5-class U-Net `r34_c5_s0` on NAIP 2022, not fine-tuned | 2022 | 92,039 |
+| Allentown | `processed/allentown/cover.parquet` | The 5-class U-Net `r34_c5_s0` on NAIP 2022 | 2022 | 29,158 |
+| Chester County | `processed/chester_county/cover.parquet` | The same model | 2022 | 14,847 |
+| Centre County | `processed/centre_county/cover.parquet` | The same model | 2022 | 3,448 |
+| Montgomery County | `processed/montgomery_county/cover.parquet` | The same model | 2022 | 26,119 |
 
 - Philadelphia does not use the model. On NAIP 2022 (flown April 30 to May 17, early leaf, deep rowhouse shadow) the model misses most trees and open ground. The model's numbers stay beside the raster in `cover_model.parquet` for comparison.
 - 3,007 Philadelphia lots have a house built in 2018 or later. They carry `built_after_cover`, because the raster may still show the old use of the lot.
 - Pittsburgh keeps the fine-tuned model's numbers in `cover.parquet`, but the builder reads the model that was not fine-tuned. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
+- Allentown and the three county places: only Centre County lies in a Chesapeake test county (about 0.70 test mIoU there, with Cumberland). Allentown, Chester and Montgomery are not validated: no labeled land cover there. Each record says so in `quality.assumptions`. The hard surface counts toward an impervious cap where a town file sets one. These places have no cover map for spots, so `spot_cover` is not filled.
 
 Known limits:
 

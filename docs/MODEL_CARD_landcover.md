@@ -181,7 +181,7 @@ Decision: Philadelphia lot cover uses the city's 2018 raster. The model output i
 ## Limits
 
 - Single models cluster near 0.70 test mIoU on the Chesapeake labels. The best ensemble reaches 0.709. The labels set the ceiling.
-- Allentown and the three county lot places have no land cover block. The model was not run there.
+- Allentown and the three county lot places use `r34_c5_s0` per lot. Only Centre County is a Chesapeake test county (about 0.70 test mIoU). Allentown, Chester and Montgomery are not validated.
 - Urban areas score lowest. Urban tree IoU is about 0.59.
 - 0.6 m pixels: a small shed is a few pixels and a narrow side yard is a handful.
 - Tree canopy over paving is labeled tree. The model cannot see a patio under a tree.

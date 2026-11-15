@@ -139,6 +139,12 @@ COVER_NOTES = {
     "pittsburgh": "land cover from an aerial model: per-lot tree share is off by about 8 points on average "
     "against the 2019 raster (n=128), building share is off by about 7 points (7.32) and reads high",
     "philadelphia": "land cover from the city's 2018 raster: changes since 2018 are not seen",
+    "centre_county": "land cover from an aerial model (NAIP 2022): Centre County is a Chesapeake test county, "
+    "about 0.70 mean IoU on its held-out test pixels; per-lot shares are not checked against a raster",
+    **{
+        p: "land cover from an aerial model (NAIP 2022): not validated here, no labeled land cover in this county"
+        for p in ("allentown", "chester_county", "montgomery_county")
+    },
 }
 # Cover inside the best spot is read from the cover map (pipeline.vision.cover_lookup), about 7 ms a spot.
 SPOT_COVER = True
