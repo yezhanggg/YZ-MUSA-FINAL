@@ -1265,6 +1265,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-06-01",
         "note": "Zoning: Chapter 240 Zoning (Ord. No. 5-00, adopted 5-17-2000, amended in its entirety at Code adoption, as amended to Ord. No. 3-2026). No ADU text. One principal residential building per property (240-46). Two-family dwellings by right in R-2, R-3 and C-3 (R-2 6,000 sq ft and R-3 5,000 sq ft per unit with public sewer), and in the SD residential category and the IHPD overlay. Accessory structure size and height by lot size (240-48A). Uses of the same general character as a listed use by special exception in C-1, C-2 and C-3 (240-28D, 240-29D, 240-30C(1)). Lot coverage is building coverage (240-8). Development standards and schedule of uses attachments are PDFs, but the district sections give uses and figures in text. Read in the browser on eCode360 (CE2516).",
     },
+    "4201781144": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11665361",
+        "plain_fetch": False,
+        "current_through": "2025-11-17",
+        "note": "Zoning: Chapter 195 Zoning (Ord. No. 2010-8, 12-20-2010, as amended to Ord. No. 2025-01). ADU text: 'Accessory family apartment or dwelling unit' (Use B8, 195-16B(8)) by special exception in RA, R1, R1A, R2, RR and RG for relatives of the family in the house, at most 50% of the primary living area or 800 sq ft, in the house or in an accessory building that existed on April 1, 2011, no new building, two parking spaces, deed restriction. The O District lists B8 among uses by right against the special exception in 195-16B(8)(f). Also living quarters for household employees (B12), a farm unit for family and farm workers (A2), an accessory dwelling unit with a nonresidential use (G29 dwelling in combination) in VC, VC 2, C1, C2, C3, residential conversion (B7) in the commercial districts and duplexes in MF-1, MF-2, C3 and O. New Laws: Ord. No. 2026-03 (accessory structure placement, data centers) not codified. Not Warwick Township, Lancaster County. Read in the browser on eCode360 (WA1313).",
+    },
+    "4202982544": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/16247593",
+        "plain_fetch": False,
+        "current_through": "2026-02-10",
+        "note": "Zoning: Chapter 450 Zoning (Ord. No. 1977-1, as amended). ADU text: 'Accessory suite' (450-8, 450-64H, Ord. No. 19-07 of 12-10-2019) by conditional use in R-1 and R-1C, attached to or inside the single-family detached house, for employees of the owner or relatives, one extra parking space, no size cap. R-1 density is one dwelling per net acre 'for each dwelling unit', and the definition calls the suite a dwelling unit. More than one principal building on a lot if each meets the lot and yard rules (450-61H), and added units in historic structures by conditional use (450-62O). Lot coverage is impervious cover (450-8). New Laws: Ord. No. 2026-04 (data centers) not codified. Read in the browser on eCode360 (WE3104).",
+    },
+    "4209171016": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/9228557",
+        "plain_fetch": False,
+        "current_through": "2024-04-10",
+        "note": "Zoning: Chapter 200 Zoning (Ord. No. 314, 5-14-2008, as amended). No ADU text. Residential districts permit 'any one' listed use 'and no other', among them one single-family detached dwelling, and accessory uses only as listed in 200-47. Two-family detached dwellings by right in R4 (8,000 sq ft per unit) and VR, one dwelling unit or apartment in a building with a commercial use in VC and GC, similar uses by conditional use in VC and GC, and uses not permitted elsewhere by conditional use in LI. Table VR-1 and Table 200-21 are PDF attachments. New Laws: Ord. No. 366, 374 and 375 of 2026 (smoke shops, data centers) not codified. Read in the browser on eCode360 (SK1672).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1290,6 +1311,7 @@ FIXED_BATCH.update({g: 24 for g in ("4204932520", "4209145096", "4213353224")})
 FIXED_BATCH.update({g: 25 for g in ("4209183696", "4207755576", "4200355016")})
 FIXED_BATCH.update({g: 26 for g in ("4201900300", "4200365352", "4205581240")})
 FIXED_BATCH.update({g: 27 for g in ("4200360272", "4204554224", "4212511800")})
+FIXED_BATCH.update({g: 28 for g in ("4201781144", "4202982544", "4209171016")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1394,6 +1416,14 @@ EXTRAS = {
     "4200360272": "Code 84-34B accessory dwelling unit, family only",
     "4204554224": "Code 172-103G(3)(a) in-law suite or servants quarters on estates",
     "4212511800": "batch 27 by population. Code Chapter 240 has no ADU text",
+    # Batch 28 (2026-11-15): the next towns by population without a rule file. Upper Southampton (Bucks) was skipped
+    # (dimensional and performance tables only in PDF attachments), East Whiteland (use and development standards tables
+    # only in PDF attachments), Franklin Park (use and area and bulk tables only in PDF attachments), White (Indiana) (no
+    # municipal zoning), Indiana borough (zoning ordinance rewrite adopted in 2026, online code from 2023) and Whitehall
+    # (Allegheny) (zoning only as PDFs on the borough website).
+    "4201781144": "Code 195-16B(8) accessory family apartment by special exception",
+    "4202982544": "Code 450-64H accessory suite by conditional use",
+    "4209171016": "batch 28 by population. Code Chapter 200 has no ADU text",
 }
 
 if __name__ == "__main__":

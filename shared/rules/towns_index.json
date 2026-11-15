@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 134,
-      "population": 5695758,
-      "share_of_pa": 0.438
+      "towns_beyond_the_two_cities": 137,
+      "population": 5739314,
+      "share_of_pa": 0.4414
     }
   ],
   "towns": [
@@ -3314,6 +3314,78 @@
         "added as batch 27 by population. Code Chapter 240 has no ADU text"
       ],
       "status_note": "Independently reviewed, findings fixed. Still open: whether 240-46 (one principal residential building) bars a unit over a detached garage (read as barred, secondary; the code bars no variance, so a variance from 240-46 remains available); the leftover 50% and 14 ft sentence in 240-48E against the 240-48A table; whether the comparable-use special exception in C-1, C-2 and C-3 (240-28D, 240-29D, 240-30C(1)) reaches a second unit; I-1, I-2, BPD, P, PRD (Article VII) and nonconformities (Article XIII) not read"
+    },
+    {
+      "geoid": "4201781144",
+      "geoid_aliases": [],
+      "name": "Warwick township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 14851,
+      "population_with_aliases": 14851,
+      "housing_units": 5451,
+      "pop_rank": 163,
+      "file": "pa_bucks_warwick",
+      "batch": 28,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11665361",
+      "plain_fetch": false,
+      "code_current_through": "2025-11-17",
+      "code_note": "Zoning: Chapter 195 Zoning (Ord. No. 2010-8, 12-20-2010, as amended to Ord. No. 2025-01). ADU text: 'Accessory family apartment or dwelling unit' (Use B8, 195-16B(8)) by special exception in RA, R1, R1A, R2, RR and RG for relatives of the family in the house, at most 50% of the primary living area or 800 sq ft, in the house or in an accessory building that existed on April 1, 2011, no new building, two parking spaces, deed restriction. The O District lists B8 among uses by right against the special exception in 195-16B(8)(f). Also living quarters for household employees (B12), a farm unit for family and farm workers (A2), an accessory dwelling unit with a nonresidential use (G29 dwelling in combination) in VC, VC 2, C1, C2, C3, residential conversion (B7) in the commercial districts and duplexes in MF-1, MF-2, C3 and O. New Laws: Ord. No. 2026-03 (accessory structure placement, data centers) not codified. Not Warwick Township, Lancaster County. Read in the browser on eCode360 (WA1313).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 195-16B(8) accessory family apartment by special exception)"
+      ],
+      "status_note": "First reading, awaiting independent review. Open: O lists B8 among uses by right while 195-16B(8)(f) allows it only by special exception (read as a special exception); whether an addition for the unit is allowed (195-16B(8)(e) bars exterior changes); Ord. No. 2026-03 (7-23-2026, accessory structure placement) not codified and not read; whether B12 living quarters for household employees may be a full dwelling unit; Table of Use Regulations PDF not opened (district sections read instead); 195-16B(3) to B(6), B(9) to B(11) and Article XIX not read"
+    },
+    {
+      "geoid": "4202982544",
+      "geoid_aliases": [],
+      "name": "West Bradford township",
+      "county": "Chester",
+      "type": "township",
+      "population": 14316,
+      "population_with_aliases": 14316,
+      "housing_units": 4890,
+      "pop_rank": 172,
+      "file": "pa_chester_west_bradford",
+      "batch": 28,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/16247593",
+      "plain_fetch": false,
+      "code_current_through": "2026-02-10",
+      "code_note": "Zoning: Chapter 450 Zoning (Ord. No. 1977-1, as amended). ADU text: 'Accessory suite' (450-8, 450-64H, Ord. No. 19-07 of 12-10-2019) by conditional use in R-1 and R-1C, attached to or inside the single-family detached house, for employees of the owner or relatives, one extra parking space, no size cap. R-1 density is one dwelling per net acre 'for each dwelling unit', and the definition calls the suite a dwelling unit. More than one principal building on a lot if each meets the lot and yard rules (450-61H), and added units in historic structures by conditional use (450-62O). Lot coverage is impervious cover (450-8). New Laws: Ord. No. 2026-04 (data centers) not codified. Read in the browser on eCode360 (WE3104).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 450-64H accessory suite by conditional use)"
+      ],
+      "status_note": "First reading, awaiting independent review. Open: whether a house with an accessory suite needs lot area for two dwelling units under the R-1 density of one dwelling per net acre 'for each dwelling unit' (450-8 calls the suite a dwelling unit, 450-64H(1) says it is not a second dwelling unit); no size cap; whether R-2 to R-4 and TND-1 customary accessory clauses could reach a suite (read as not addressed); Article V (UDA overlay) and TND-2 area rules not read"
+    },
+    {
+      "geoid": "4209171016",
+      "geoid_aliases": [],
+      "name": "Skippack township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 14389,
+      "population_with_aliases": 14389,
+      "housing_units": 4247,
+      "pop_rank": 170,
+      "file": "pa_montgomery_skippack",
+      "batch": 28,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/9228557",
+      "plain_fetch": false,
+      "code_current_through": "2024-04-10",
+      "code_note": "Zoning: Chapter 200 Zoning (Ord. No. 314, 5-14-2008, as amended). No ADU text. Residential districts permit 'any one' listed use 'and no other', among them one single-family detached dwelling, and accessory uses only as listed in 200-47. Two-family detached dwellings by right in R4 (8,000 sq ft per unit) and VR, one dwelling unit or apartment in a building with a commercial use in VC and GC, similar uses by conditional use in VC and GC, and uses not permitted elsewhere by conditional use in LI. Table VR-1 and Table 200-21 are PDF attachments. New Laws: Ord. No. 366, 374 and 375 of 2026 (smoke shops, data centers) not codified. Read in the browser on eCode360 (SK1672).",
+      "why": [
+        "added as batch 28 by population. Code Chapter 200 has no ADU text"
+      ],
+      "status_note": "First reading, awaiting independent review. Open: detached forms read as barred by the closed accessory list of 200-47 and 'any one ... and no other' use lists (secondary; a variance remains available); Table VR-1 and Table 200-21 PDF attachments not opened; 'carriage homes' in ITND undefined; 200-39 to 200-46, 200-48 to 200-62 (RC cluster option) not read; whether the LI conditional use for uses not permitted elsewhere could reach a dwelling unit"
     }
   ]
 }

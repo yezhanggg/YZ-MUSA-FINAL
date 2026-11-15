@@ -1,0 +1,894 @@
+{
+  "provenance": {
+    "jurisdiction": "Skippack township",
+    "instrument": "Skippack Township Zoning Ordinance (Chapter 200 Zoning, Ord. No. 314 of 5-14-2008, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 SK1672, Township of Skippack, Montgomery County (200-11 AGRICULTURE: 'typical to farm activity in the County of Montgomery'). Chapter 200 was adopted 5-14-2008 by Ord. No. 314 and repealed the 1982 chapter as amended in 2002. The cluster development option in RA and R1 was added 9-12-2018 by Ord. No. 356. New Laws lists three zoning amendments not yet in the text: Ord. No. 366 (2-11-2026, definitions and smoke and pipe shops in GC), 374 (9-9-2026, data center requirements) and 375 (10-14-2026, data centers in LI), read from search excerpts. None touches the residential rules read here. Ord. No. 370 (7-8-2026, a rental registration program outside the zoning chapter) exempts 'in- law suites ... previously approved' and units occupied by an immediate family member from registration",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/SK1672",
+      "https://ecode360.com/9228557",
+      "https://ecode360.com/SK1672/search?query=dwelling%20OR%20zoning%20OR%20accessory%20OR%20district&scope=law&sortOrder=relevance",
+      "https://ecode360.com/SK1672/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20servants%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20%22second%20dwelling%22%20OR%20caregiver%20OR%20%22sleeping%20quarters%22%20OR%20suite%20OR%20%22accessory%20family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/SK1672?guid=6993011",
+      "https://ecode360.com/print/SK1672?guid=6993036",
+      "https://ecode360.com/print/SK1672?guid=6993217",
+      "https://ecode360.com/print/SK1672?guid=6993241",
+      "https://ecode360.com/print/SK1672?guid=6993284",
+      "https://ecode360.com/print/SK1672?guid=6993317",
+      "https://ecode360.com/print/SK1672?guid=6993343",
+      "https://ecode360.com/print/SK1672?guid=6993378",
+      "https://ecode360.com/print/SK1672?guid=6993421",
+      "https://ecode360.com/print/SK1672?guid=6993486",
+      "https://ecode360.com/print/SK1672?guid=6993651",
+      "https://ecode360.com/print/SK1672?guid=6993702",
+      "https://ecode360.com/print/SK1672?guid=6993767",
+      "https://ecode360.com/print/SK1672?guid=6994047",
+      "https://ecode360.com/print/SK1672?guid=6994408",
+      "https://ecode360.com/print/SK1672?guid=6994820"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209171016",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9228557",
+    "code_current_through": "2024-04-10",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 04-10-2024' (search snippet). New Laws: Ord. No. 366, 374 and 375 of 2026 (zoning amendments on smoke shops and data centers) not yet in the text",
+    "checks": [
+      "The zoning chapter has no accessory dwelling unit, in-law suite or similar use",
+      "In RA, R1, R2 and R3 a lot may be used for 'any one of the following uses and no other', among them 'One single-family detached dwelling' (200-12C to 200-15C). A single-family detached dwelling is 'attached to no other building or dwelling in any way' (200-11)",
+      "Accessory uses, structures and buildings 'shall only be permitted' as listed in 200-47. For houses in RA, R1, R2, R3 and NL the list is garages, pet shelters, greenhouses, pools, courts, sheds, play structures and cabanas for the residents' private use, at most 15 ft tall, in the rear yard, 10 ft behind the house and 4 ft (under 200 sq ft) or 10 ft from the side and rear lines. In R4, R5, VR and AAR only a shed, greenhouse or pet shelter of 100 sq ft and 12 ft. In ITND no accessory buildings but pools and an estate shed",
+      "Accessory buildings may total at most 25% of the gross usable floor area of the principal building (200-11)",
+      "A two-family detached dwelling ('exactly two dwelling units') is permitted by right in R4 on 8,000 sq ft per unit with public sewer and water (200-16C(1)(c), D(1)), and in VR, where Table VR-1 (a PDF attachment, not read) sets the lot and yard figures, at most four units an acre (200-18)",
+      "In VC and GC 'One single-family dwelling unit or one apartment located in the same building with a by-right use' is permitted, and uses 'similar in nature' to the by-right uses are conditional uses (200-26C, 200-27C)",
+      "In LI 'All uses not designated as being permitted in any other zoning district in the Township' are conditional uses (200-29C(2)(f))",
+      "No section read bars a use variance. Variances and special exceptions lapse after six months without permits and substantial construction (200-166D(2))",
+      "Parking: 'Each dwelling of any type: three spaces' (200-95C(1))"
+    ],
+    "notes": "Zoning office: Skippack Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, mostly in print view. Searched the code (scope all, which also covers New Laws) for accessory dwelling, in-law, accessory apartment, family apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, carriage house, servants, tenant house, living quarters, immediate family, watchman, separate living, cooking facilities, tiny house, second dwelling, caregiver, sleeping quarters, suite and accessory family, and New Laws (scope law). Read: 200-3, 200-11 in full, every district section of Articles III and IV (200-12 to 200-21, 200-26 to 200-32; AAR uses only), 200-47, 200-95C(1) (on screen) and Article XIV. Not read: 200-39 to 200-46, 200-48 to 200-62 (including the RC cluster option), Articles VI, IX to XIII, XV, Table VR-1 and Table 200-21 (PDF attachments). No definition of carriage home was found"
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 200",
+      "url": "https://ecode360.com/SK1672/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20servants%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20%22second%20dwelling%22%20OR%20caregiver%20OR%20%22sleeping%20quarters%22%20OR%20suite%20OR%20%22accessory%20family%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Searched the code for accessory dwelling, in-law, accessory apartment, family apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, carriage house, servants, tenant house, living quarters, immediate family, watchman, separate living, cooking facilities, tiny house, second dwelling, caregiver, sleeping quarters and suite. No zoning hit"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "Chapter 200",
+      "url": "https://ecode360.com/SK1672/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20servants%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20%22second%20dwelling%22%20OR%20caregiver%20OR%20%22sleeping%20quarters%22%20OR%20suite%20OR%20%22accessory%20family%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU use. Single-family districts permit one single-family detached dwelling 'and no other' use, with a closed list of accessory uses (200-47)"
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "200-12C(1) to 200-15C(1), 200-47",
+      "url": "https://ecode360.com/print/SK1672?guid=6994047",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Accessory uses and buildings 'shall only be permitted' for the classifications listed in 200-47, which name garages, sheds and the like for the residents' private use and no dwelling. A variance remains available, as the code bars none (200-168)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "200-165C, 200-168",
+      "url": "https://ecode360.com/print/SK1672?guid=6994820",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A second unit is not a listed use. The Zoning Hearing Board hears variances under the state planning code and 200-168. No section read bars a use variance"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "200-168",
+      "url": "https://ecode360.com/print/SK1672?guid=6994820",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    },
+    "unlisted_use_path": {
+      "value": "conditional_use",
+      "section": "200-26C(2)(a), 200-27C(2)(a), 200-29C(2)(f)",
+      "url": "https://ecode360.com/print/SK1672?guid=6993767",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "In VC and GC 'Uses similar in nature to the above by right uses' are conditional uses before the Board of Supervisors, and one dwelling unit or one apartment in the same building with a by-right use is already listed there (see that alternative). In LI 'All uses not designated as being permitted in any other zoning district in the Township' are conditional uses, but LI permits no dwelling and keeps buildings 200 ft from residential districts. A two-family detached dwelling is a listed use in R4 and VR (see that alternative), not an unlisted one"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "VC",
+        "GC",
+        "LI"
+      ],
+      "section": "200-26C(2)(a), 200-27C(2)(a), 200-29C(2)(e), (f)",
+      "url": "https://ecode360.com/print/SK1672?guid=6993767",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (R4)",
+          "path": "by_right",
+          "districts": [
+            "R4"
+          ],
+          "conditions": "'A building/unit designed and occupied as a residence containing exactly two dwelling units, that is attached to no other building or dwelling in any way' (200-11). Table R4-1, D.T. No. 2: 8,000 sq ft per unit (16,000 for the two), 70 ft wide, front 25 ft, side 15 ft, rear 30 ft, building coverage 20%, impervious 35%. Public water and sewer. At most eight units an acre. A single-family dwelling and a dwelling of another type stay 100 ft apart (200-16E(6)). Three parking spaces a dwelling",
+          "min_lot_sqft": 16000,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public water and public sewer serve all development in R4",
+              "section": "200-16E(7)"
+            }
+          ],
+          "section": "200-16C(1)(c), D(1), E(4), (6), (7), 200-11",
+          "url": "https://ecode360.com/print/SK1672?guid=6993343",
+          "confidence": "verified",
+          "note": "A building type. Whether an existing house may be altered into one is not stated"
+        },
+        {
+          "name": "Two-family detached or semidetached dwelling (VR)",
+          "path": "by_right",
+          "districts": [
+            "VR"
+          ],
+          "conditions": "VR permits two-family detached dwellings (Dwelling Type Category 2) and two-family semidetached dwellings (Category 3) 'and no other' house types beyond its list, at most four units an acre, with public water and sewer and a mix of dwelling types in larger developments. Lot area and yards are in Table VR-1, a PDF attachment not read",
+          "min_lot_sqft": 21780,
+          "section": "200-18C(1)(b), (c), D(1), (9), E(4)",
+          "url": "https://ecode360.com/print/SK1672?guid=6993421",
+          "confidence": "secondary",
+          "note": "The 21,780 sq ft is two units at the maximum density of four an acre, not a Table VR-1 figure. A building type"
+        },
+        {
+          "name": "Dwelling unit or apartment in a building with a commercial use (VC, GC)",
+          "path": "by_right",
+          "districts": [
+            "VC",
+            "GC"
+          ],
+          "conditions": "'One single-family dwelling unit or one apartment located in the same building with a by-right use' (retail, office, personal service and the like). Public sewer and water. A combination of by-right uses on one lot is a conditional use (200-26C(3), 200-27C(3))",
+          "section": "200-26C(1)(a), 200-27C(1)(a)",
+          "url": "https://ecode360.com/print/SK1672?guid=6993767",
+          "confidence": "verified",
+          "note": "The host is a commercial building, not a house"
+        },
+        {
+          "name": "Carriage homes in an ITND development",
+          "path": "conditional_use",
+          "districts": [
+            "ITND"
+          ],
+          "conditions": "Carriage homes are a conditional use in an integrated traditional neighborhood development of at least 50 contiguous acres with public water and sewer, under one plan with a mix of uses. Dimensions are in Table 200-21, a PDF attachment not read",
+          "min_lot_sqft": 2178000,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "200-21C(2)(c), D(1)",
+          "url": "https://ecode360.com/print/SK1672?guid=6993702",
+          "confidence": "secondary",
+          "note": "The code does not define a carriage home"
+        }
+      ],
+      "section": "200-16, 200-18, 200-21, 200-26, 200-27",
+      "url": "https://ecode360.com/print/SK1672?guid=6993343",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 200",
+      "url": "https://ecode360.com/SK1672/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20servants%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22tiny%20house%22%20OR%20%22second%20dwelling%22%20OR%20caregiver%20OR%20%22sleeping%20quarters%22%20OR%20suite%20OR%20%22accessory%20family%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R5",
+        "SC",
+        "LI",
+        "CF",
+        "PR",
+        "UT",
+        "VR",
+        "AAR",
+        "ITND"
+      ],
+      "section": "200-17, 200-18, 200-20, 200-21, 200-28 to 200-32",
+      "url": "https://ecode360.com/print/SK1672?guid=6993767",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "R5 permits only a mobile home park, SC, LI, CF, PR and UT no dwelling. VR permits listed house types with no accessory building but a 100 sq ft shed. AAR permits single-family houses with a closed list of community accessory uses. ITND permits R1 uses by right and a planned development by conditional use"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "200-12C(1) to 200-15C(1), 200-47",
+      "url": "https://ecode360.com/print/SK1672?guid=6994047",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "One single-family detached dwelling 'and no other' use, and a closed accessory list. A unit inside the house would make it a two-family dwelling, which is permitted only in R4 and VR"
+    }
+  },
+  "envelope": {
+    "accessory_rear_yard_only": {
+      "value": true,
+      "section": "200-47B(1)(b), C(1)(b)",
+      "url": "https://ecode360.com/print/SK1672?guid=6994047",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'located in the rear yard, a minimum of 10 feet behind the principle building'"
+    },
+    "accessory_structure_max_share": {
+      "value": 0.25,
+      "section": "200-11 (accessory building)",
+      "url": "https://ecode360.com/print/SK1672?guid=6993036",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The gross usable floor area of accessory buildings shall not exceed 25% of the gross usable floor area of the principle building'"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "Houses in RA, R1, R2, R3 and NL: garages, sheds and other listed accessory buildings for the residents' private use, at most 15 ft tall, in the rear yard 10 ft behind the house, 4 ft from side and rear lines under 200 sq ft and 10 ft at 200 sq ft or more",
+          "districts": [
+            "RA",
+            "R1",
+            "R2",
+            "R3",
+            "NL"
+          ],
+          "setback_side_ft": 10,
+          "setback_rear_ft": 10,
+          "max_height_ft": 15,
+          "section": "200-47B(1)",
+          "url": "https://ecode360.com/print/SK1672?guid=6994047"
+        },
+        {
+          "where": "Houses in R4, R5, VR and AAR: only a garden shed, private greenhouse or pet shelter of at most 100 sq ft and 12 ft, in the rear yard 10 ft behind the house and 4 ft from side and rear lines",
+          "districts": [
+            "R4",
+            "R5",
+            "VR",
+            "AAR"
+          ],
+          "setback_side_ft": 4,
+          "setback_rear_ft": 4,
+          "max_height_ft": 12,
+          "section": "200-47C(1)",
+          "url": "https://ecode360.com/print/SK1672?guid=6994047"
+        }
+      ],
+      "section": "200-47",
+      "url": "https://ecode360.com/print/SK1672?guid=6994047",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "200-95C(1)",
+      "url": "https://ecode360.com/print/SK1672?guid=6994408",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU use. 'Each dwelling of any type: three spaces'"
+    }
+  },
+  "districts": {
+    "RA": {
+      "min_lot_sqft": {
+        "value": 75000,
+        "section": "200-12D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993217",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 200 ft"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "200-12D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993217",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "200-12D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993217",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 60,
+        "section": "200-12D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993217",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-12D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993217",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-12D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993217",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "200-12D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993217",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "200-12D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993217",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious coverage'. 200-11: 'Any surface which does not consist of grass, mulch, soil or body of water'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'at least four feet from the side and rear property line for structures less than 200 square feet in area and at least 10 feet ... for structures greater than 199 square feet'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "200-13D(2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 150 ft. Table R1-2, with both public sewer and public water"
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "200-13D(2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "200-13D(2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "200-13D(2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-13D(2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-13D(2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.12,
+        "section": "200-13D(2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.24,
+        "section": "200-13D(2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious coverage'. 200-11: 'Any surface which does not consist of grass, mulch, soil or body of water'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 60000,
+            "setback_front_ft": 60,
+            "setback_side_ft": 35,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.11,
+            "max_impervious_coverage": 0.22,
+            "section": "200-13D(1)"
+          },
+          {
+            "when": "Without public water",
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "setback_front_ft": 60,
+            "setback_side_ft": 35,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.11,
+            "max_impervious_coverage": 0.22,
+            "section": "200-13D(1)"
+          }
+        ],
+        "section": "200-13D(1), (2)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993241",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Table R1-1 is for single-family detached dwellings 'without public sewer and public water': 60,000 sq ft, 175 ft wide, side 35 ft, building 11%, impervious 22%. The row holds Table R1-2, 'with both public sewer and public water'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'at least four feet from the side and rear property line for structures less than 200 square feet in area and at least 10 feet ... for structures greater than 199 square feet'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R2": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "200-14D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993284",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 125 ft. Single-family detached dwellings in R2 need public sewer and water (200-14C(1)(b))"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "200-14D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993284",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "200-14D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993284",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "200-14D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993284",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-14D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993284",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-14D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993284",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.13,
+        "section": "200-14D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993284",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.26,
+        "section": "200-14D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993284",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious coverage'. 200-11: 'Any surface which does not consist of grass, mulch, soil or body of water'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'at least four feet from the side and rear property line for structures less than 200 square feet in area and at least 10 feet ... for structures greater than 199 square feet'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R3": {
+      "min_lot_sqft": {
+        "value": 23100,
+        "section": "200-15D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993317",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 100 ft. Single-family detached dwellings in R3 need public sewer and water (200-15C(1)(b))"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "200-15D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993317",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "200-15D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993317",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "200-15D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993317",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-15D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993317",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-15D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993317",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.13,
+        "section": "200-15D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993317",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.26,
+        "section": "200-15D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993317",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious coverage'. 200-11: 'Any surface which does not consist of grass, mulch, soil or body of water'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'at least four feet from the side and rear property line for structures less than 200 square feet in area and at least 10 feet ... for structures greater than 199 square feet'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R4": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "200-16D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993343",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 80 ft. Table R4-1, D.T. No. 1 single-family detached. Public water and sewer serve all development (200-16E(7)). At most eight units an acre (200-16E(4))"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "200-16D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993343",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "200-16D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993343",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "200-16D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993343",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-16D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993343",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-16D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993343",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "200-16D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993343",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "200-16D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993343",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious coverage'. 200-11: 'Any surface which does not consist of grass, mulch, soil or body of water'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 4,
+        "section": "200-47C(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Garden sheds and the like, at most 100 sq ft and 12 ft"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 4,
+        "section": "200-47C(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "NL": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "200-19C(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 80 ft. Net lot area, in a neighborhood lotting tract of 10 acres or more at 1.15 units per gross acre"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "200-19C(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "200-19C(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "200-19C(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-19C(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-19C(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.18,
+        "section": "200-19C(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'at least four feet from the side and rear property line for structures less than 200 square feet in area and at least 10 feet ... for structures greater than 199 square feet'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "200-47B(1)(b)",
+        "url": "https://ecode360.com/print/SK1672?guid=6994047",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "200-26D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 80 ft. Public sewer and water serve all development (200-26E(4))"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "200-26D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "200-26D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "200-26D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-26D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "200-26D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "2.5 stories, stored as 2"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "200-26D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.65,
+        "section": "200-26D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious coverage'. 200-11: 'Any surface which does not consist of grass, mulch, soil or body of water'"
+      }
+    },
+    "GC": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "200-27D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 100 ft. Public sewer and water serve all development (200-27E(4))"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "200-27D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "200-27D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "200-27D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-27D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-27D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "200-27D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum building coverage'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "200-27D(1)",
+        "url": "https://ecode360.com/print/SK1672?guid=6993767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum impervious coverage'. 200-11: 'Any surface which does not consist of grass, mulch, soil or body of water'"
+      }
+    }
+  }
+}
