@@ -370,7 +370,7 @@
       "url": "https://ecode360.com/print/EA2320?guid=27478172",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "VG and VC: a residential accessory building 'may not cover an area that is larger than 50% of the principal building footprint, or 1,000 square feet of floor area, whichever is less'. The other limit is 50% of the house's footprint, not of its floor area. The file cannot hold a share of the footprint, so only the 1,000 sq ft is stored. Check the footprint share with the Zoning Officer."
+      "note": "VG and VC: a residential accessory building 'may not cover an area that is larger than 50% of the principal building footprint, or 1,000 square feet of floor area, whichever is less'. The other limit is 50% of the house's footprint, not of its floor area. The 50% of the footprint is said as its own condition."
     },
     "accessory_cap_districts": {
       "value": [
@@ -389,6 +389,26 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "375-23070 does not say whether an apartment in an accessory building is held to this cap. Not settled."
+    },
+    "accessory_share_of_house_part": {
+      "value": [
+        {
+          "what": "a residential accessory building",
+          "share": 0.5,
+          "of": "the principal building footprint",
+          "districts": [
+            "VG",
+            "VC"
+          ],
+          "section": "375-18030C(1), 375-19030C(1)",
+          "url": "https://ecode360.com/print/EA2320?guid=27478172",
+          "note": "'may not cover an area that is larger than 50% of the principal building footprint, or 1,000 square feet of floor area, whichever is less'"
+        }
+      ],
+      "section": "375-18030C(1), 375-19030C(1)",
+      "url": "https://ecode360.com/print/EA2320?guid=27478172",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
     }
   },
   "use": {

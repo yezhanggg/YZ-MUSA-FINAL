@@ -229,6 +229,14 @@ const partOut = (x: unknown): { share: number; part: string; section: unknown } 
 const capText = (rule: unknown, cap: { value: unknown; section: unknown } | null) =>
   typeof rule === 'string' ? `${rule}${cap?.section ? ` (${cap.section})` : ''}` : null;
 
+const minByForm = (o: unknown): { value: Record<string, number>; section: string | null } | null => {
+  const leaf = o && typeof o === 'object' ? (o as Obj) : null;
+  const v = leaf && leaf.value && typeof leaf.value === 'object' ? (leaf.value as Record<string, unknown>) : null;
+  if (!v) return null;
+  const value = Object.fromEntries(Object.entries(v).filter(([, n]) => typeof n === 'number')) as Record<string, number>;
+  return Object.keys(value).length ? { value, section: (leaf!.section as string | null) ?? null } : null;
+};
+
 async function ruleDetails(r: PlaceRow) {
   const place = r.rule_file ?? r.name;
   const out = (await getRuleText({ place, topic: 'size' })) as Obj;
@@ -296,6 +304,8 @@ async function ruleDetails(r: PlaceRow) {
     share_of_house_and_unit: (forms.share_of_house_and_unit as Obj | undefined) ? { inside: (forms.share_of_house_and_unit as Obj).inside ?? null, added: (forms.share_of_house_and_unit as Obj).added ?? null } : null,
     adus_by_lot_size: leafOut(forms.adus_by_lot_size),
     exempt_building: ((forms.exempt_building as Obj | undefined)?.note as string | undefined) ?? null,
+    // Pass 10: a minimum floor area for one form (size.min_sqft_by_form, pipeline/rules.py).
+    min_sqft_by_form: minByForm(forms.min_sqft_by_form),
   };
 }
 
@@ -358,6 +368,12 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   if (size && part) {
     why.push(`It must also be at most ${Math.round(part.share * 100)}% of the house's ${part.part} (${part.section ?? 'rule file'}). Not checked: that part of the house cannot be measured here.`);
     if (fits === 'yes') depends.push({ fact: `the floor area of the house's ${part.part}`, rule: `At most ${Math.round(part.share * 100)}% of the house's ${part.part}`, section: part.section });
+  }
+  // Pass 10: a minimum floor area for this form (Penn, York: an elder cottage of at least 300 sq ft).
+  const minForm = unit && rule?.min_sqft_by_form ? rule.min_sqft_by_form.value[FORM_OF[unit]] : undefined;
+  if (size && typeof minForm === 'number' && size < minForm) {
+    fits = 'no';
+    why.push(`${UNIT_TEXT[unit!].charAt(0).toUpperCase()}${UNIT_TEXT[unit!].slice(1)} must have at least ${minForm} sq ft (${rule!.min_sqft_by_form!.section ?? 'rule file'}); the proposal is ${size} sq ft.`);
   }
   if (unit && rule)
     for (const d of rule.depends_on)

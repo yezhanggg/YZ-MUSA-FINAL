@@ -176,6 +176,7 @@ describe('rule text from the resolver', () => {
     town('4202984160', 'West Vincent township', 'Chester', 'pa_chester_west_vincent', { status: 'by_right' }),
     town('4209144744', 'Lower Providence township', 'Montgomery', 'pa_montgomery_lower_providence', { status: 'limited' }),
     town('4204144832', 'Lower Allen township', 'Cumberland', 'pa_cumberland_lower_allen', { status: 'limited' }),
+    town('4213358888', 'Penn township', 'York', 'pa_york_penn', { status: 'limited', unit_types: ['detached', 'attached', 'internal'] }),
   ];
   const ask7 = (input: Record<string, unknown>) => ask(input, { places: memoryPlaces(P7) });
   const check = (o: Out) => (o.proposal as Out).check as Out;
@@ -216,6 +217,14 @@ describe('rule text from the resolver', () => {
     const wv = check(await ask7({ place: 'West Vincent township', unit_type: 'attached' }));
     expect(wv.fits_zoning).toBe('not_addressed');
     expect(String(wv.why)).toMatch(/Not addressed for this form: the code does not name it\. Not a firm no; ask the zoning officer/);
+  });
+  // Pass 10: a minimum floor area for one form (size.min_sqft_by_form).
+  it('Penn (York): an elder cottage under 300 sq ft does not fit; the minimum is for that form only', async () => {
+    const small = check(await ask7({ place: 'Penn township', county: 'York', unit_type: 'detached', size_sqft: 250 }));
+    expect(small.fits_zoning).toBe('no');
+    expect((small.why as string[]).join(' ')).toMatch(/A detached backyard cottage must have at least 300 sq ft \(325-637A\); the proposal is 250 sq ft\./);
+    const inside = check(await ask7({ place: 'Penn township', county: 'York', unit_type: 'internal', size_sqft: 250 }));
+    expect((inside.why as string[]).join(' ')).not.toMatch(/must have at least/);
   });
   // Pass 9: a form whose text conflicts reads "not settled", never "the code does not name it".
   it('Lower Allen: a detached unit with conflicting text is not settled, not unnamed', async () => {

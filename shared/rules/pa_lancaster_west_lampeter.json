@@ -164,10 +164,18 @@
               "section": "285-48A(16)(a)"
             }
           ],
+          "disputed_districts": {
+            "districts": [
+              "R-3"
+            ],
+            "section": "285-48A(16)(a)",
+            "url": "https://ecode360.com/print/WE2002?guid=45552302",
+            "note": "It names the RR, TV and MS Districts and not R-3, while the R-3 use list names the conversion apartment (285-39C(1)(c))"
+          },
           "section": "285-39C(1)(c), 285-48A(16), 285-33 'Dwelling types' A",
           "url": "https://ecode360.com/print/WE2002?guid=45552302",
           "confidence": "secondary",
-          "note": "Not an ADU listing. Lot figures are twice the R-3 minimum (7,000 sq ft with public water and sewer, 1 acre on-lot). 285-48A(16)(a) names the RR, TV and MS Districts and not R-3, while the R-3 use list names the conversion apartment (285-39C(1)(c)). For MS and for RR and TV see the next alternatives"
+          "note": "Not an ADU listing. Lot figures are twice the R-3 minimum (7,000 sq ft with public water and sewer, 1 acre on-lot). For MS and for RR and TV see the next alternatives"
         },
         {
           "name": "Conversion of an existing building into dwellings (MS)",
@@ -205,10 +213,19 @@
               "section": "285-48A(16)(a)"
             }
           ],
+          "disputed_districts": {
+            "districts": [
+              "RR",
+              "TV"
+            ],
+            "section": "285-36, 285-40",
+            "url": null,
+            "note": "The RR (285-36) and TV (285-40) use lists do not list a conversion apartment, and the code search finds it listed only in R-3 and MS"
+          },
           "section": "285-48A(16)(a)",
           "url": "https://ecode360.com/print/WE2002?guid=45552302",
           "confidence": "unverified",
-          "note": "Not an ADU listing. Named in 285-48A(16)(a), but the RR (285-36) and TV (285-40) use lists do not list a conversion apartment, and the code search finds it listed only in R-3 and MS. The lot needs twice the district minimum (RR 2 acres, so 4 acres)"
+          "note": "Not an ADU listing. Named in 285-48A(16)(a). The lot needs twice the district minimum (RR 2 acres, so 4 acres)"
         },
         {
           "name": "Duplex dwelling in R-2 or R-3",

@@ -391,13 +391,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "280-405A, Table 4-1",
         "url": "https://ecode360.com/print/LA1280?guid=27055717",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Maximum lot coverage (impervious surfaces)': impervious cover, not buildings alone (280-201). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Maximum lot coverage (impervious surfaces)': impervious cover, not buildings alone (280-201). No separate building coverage."
       },
       "accessory_setback_side_ft": {
         "value": 6,
@@ -422,7 +422,7 @@
             "public_water": false,
             "min_lot_sqft": 32000,
             "lot_area_per_unit_sqft": 32000,
-            "max_building_coverage": 0.25,
+            "max_impervious_coverage": 0.25,
             "setback_front_ft": 25,
             "setback_side_ft": 12,
             "setback_rear_ft": 35,
@@ -435,7 +435,7 @@
             "public_sewer": false,
             "min_lot_sqft": 43560,
             "lot_area_per_unit_sqft": 43560,
-            "max_building_coverage": 0.2,
+            "max_impervious_coverage": 0.2,
             "setback_front_ft": 25,
             "setback_side_ft": 12,
             "setback_rear_ft": 35,
@@ -491,13 +491,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.4,
         "section": "280-505A, Table 5-1",
         "url": "https://ecode360.com/print/LA1280?guid=27055769",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Maximum lot coverage (impervious surfaces)': impervious cover, not buildings alone (280-201). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Maximum lot coverage (impervious surfaces)': impervious cover, not buildings alone (280-201). No separate building coverage."
       },
       "accessory_setback_side_ft": {
         "value": 6,
@@ -521,7 +521,7 @@
             "public_sewer": true,
             "public_water": false,
             "min_lot_sqft": 32000,
-            "max_building_coverage": 0.25,
+            "max_impervious_coverage": 0.25,
             "setback_front_ft": 25,
             "setback_side_ft": 12,
             "setback_rear_ft": 35,
@@ -533,7 +533,7 @@
             "when": "No public sewer (public water only or none)",
             "public_sewer": false,
             "min_lot_sqft": 43560,
-            "max_building_coverage": 0.2,
+            "max_impervious_coverage": 0.2,
             "setback_front_ft": 25,
             "setback_side_ft": 12,
             "setback_rear_ft": 35,
@@ -590,13 +590,13 @@
         "confidence": "verified",
         "note": "Multifamily dwellings with more than 12 units per building may be 75 ft."
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.4,
         "section": "280-605A, Table 6-1",
         "url": "https://ecode360.com/print/LA1280?guid=27055827",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Maximum lot coverage (impervious surfaces)': impervious cover, not buildings alone (280-201). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Maximum lot coverage (impervious surfaces)': impervious cover, not buildings alone (280-201). No separate building coverage."
       },
       "accessory_setback_side_ft": {
         "value": 6,
@@ -620,7 +620,7 @@
             "public_sewer": true,
             "public_water": false,
             "min_lot_sqft": 32000,
-            "max_building_coverage": 0.25,
+            "max_impervious_coverage": 0.25,
             "setback_front_ft": 25,
             "setback_side_ft": 12,
             "setback_rear_ft": 35,
@@ -632,7 +632,7 @@
             "when": "No public sewer (public water only or none)",
             "public_sewer": false,
             "min_lot_sqft": 43560,
-            "max_building_coverage": 0.2,
+            "max_impervious_coverage": 0.2,
             "setback_front_ft": 25,
             "setback_side_ft": 12,
             "setback_rear_ft": 35,

@@ -455,7 +455,7 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.5,
         "section": "220-12 to 220-15",
         "url": "https://ecode360.com/print/LO1571?guid=11213499",
@@ -502,7 +502,7 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.3,
         "section": "220-20 to 220-24",
         "url": "https://ecode360.com/print/LO1571?guid=11213535",
@@ -557,7 +557,7 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.7,
         "section": "220-29 to 220-33",
         "url": "https://ecode360.com/print/LO1571?guid=11213765",

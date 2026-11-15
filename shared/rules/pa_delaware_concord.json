@@ -406,7 +406,31 @@
       "url": "https://ecode360.com/print/CO1622?guid=27620943",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "'No accessory building or structure of any kind, other than as permitted in § 210-293, shall exceed one story or the height of the existing residence, and in no event be greater than 15 feet high.' Garages differ: a private garage wider than 18 ft may be up to 18 ft with a loft (210-293D(2)), and 18 ft on a property over three acres (210-293G). A detached garage may not hold sleeping quarters (210-293J), so the garage figures do not reach a dwelling unit."
+      "note": "'No accessory building or structure of any kind, other than as permitted in § 210-293, shall exceed one story or the height of the existing residence, and in no event be greater than 15 feet high.' Garages differ (210-293D(2), G): said as their own conditions."
+    },
+    "max_height_garage_where": {
+      "value": [
+        {
+          "where": "wider than 18 ft",
+          "max_height_ft": 18,
+          "garage_wider_than_ft": 18,
+          "section": "210-293D(2)",
+          "url": "https://ecode360.com/print/CO1622?guid=27620943",
+          "note": "One story with a loft"
+        },
+        {
+          "where": "on a property over three acres",
+          "max_height_ft": 18,
+          "lot_over_sqft": 130680,
+          "section": "210-293G",
+          "url": "https://ecode360.com/print/CO1622?guid=27620943"
+        }
+      ],
+      "section": "210-293D(2), G",
+      "url": "https://ecode360.com/print/CO1622?guid=27620943",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "A detached garage may not hold sleeping quarters (210-293J), so the garage figures do not reach a dwelling unit."
     },
     "accessory_structure_max_sqft": {
       "value": 750,
@@ -415,6 +439,21 @@
       "verified_on": "2026-11-14",
       "confidence": "verified",
       "note": "'No accessory building on a property of less than three acres shall exceed 750 square feet in area.' All accessory buildings together at most 75% of the house's first floor area (210-292G)."
+    },
+    "accessory_share_of_house_part": {
+      "value": [
+        {
+          "what": "all accessory buildings together",
+          "share": 0.75,
+          "of": "the house's first floor area",
+          "section": "210-292G",
+          "url": "https://ecode360.com/print/CO1622?guid=27620943"
+        }
+      ],
+      "section": "210-292G",
+      "url": "https://ecode360.com/print/CO1622?guid=27620943",
+      "verified_on": "2026-11-14",
+      "confidence": "verified"
     },
     "accessory_cap_binds_adu": {
       "value": null,

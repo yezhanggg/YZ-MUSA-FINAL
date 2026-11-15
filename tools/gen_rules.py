@@ -351,7 +351,12 @@ def _conditions_cell(d):
         out.append(f"occupancy ({clean(use['occupancy']['section'])})")
     if (use.get("family_only") or {}).get("value") is True:
         out.append(f"family only ({clean(use['family_only']['section'])})")
-    if (use.get("owner_occupancy") or {}).get("value") is True:
+    by_form = (use.get("owner_occupancy_by_form") or {}).get("value")
+    if by_form:  # pass 10: the owner rule differs by form
+        forms = [f.replace("_", " ") for f, v in by_form.items() if v is True]
+        if forms:
+            out.append(f"owner on site for {', '.join(forms)} ({clean(use['owner_occupancy_by_form']['section'])})")
+    elif (use.get("owner_occupancy") or {}).get("value") is True:
         out.append(f"owner on site ({clean(use['owner_occupancy']['section'])})")
     if (el.get("existing_structure_only") or {}).get("value") is True:
         out.append(f"existing building only ({clean(el['existing_structure_only']['section'])})")

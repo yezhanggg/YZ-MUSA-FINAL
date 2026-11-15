@@ -288,13 +288,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "150-17B, 150-18, 150-20B, 150-21B",
         "url": "https://ecode360.com/print/WE1311?guid=15443380",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 10,
@@ -350,13 +350,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.2,
         "section": "150-26, 150-27, 150-29, 150-30, 150-31",
         "url": "https://ecode360.com/print/WE1311?guid=15443451",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 15,
@@ -412,13 +412,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "150-35 to 150-40",
         "url": "https://ecode360.com/print/WE1311?guid=15443490",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 10,
@@ -474,13 +474,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "150-44 to 150-49",
         "url": "https://ecode360.com/print/WE1311?guid=15443519",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 10,
@@ -537,13 +537,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "150-53 to 150-58",
         "url": "https://ecode360.com/print/WE1311?guid=15443548",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 5,
@@ -790,13 +790,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.7,
         "section": "150-87 to 150-90, 150-95",
         "url": "https://ecode360.com/print/WE1311?guid=15443741",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       }
     },
     "OSR-1": {
@@ -838,13 +838,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "150-228.2B, 150-228.5",
         "url": "https://ecode360.com/print/WE1311?guid=15444268",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 10,
@@ -893,13 +893,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "150-228.8B, 150-228.11",
         "url": "https://ecode360.com/print/WE1311?guid=15444327",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 10,
@@ -956,13 +956,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "150-228.14B, 150-228.17",
         "url": "https://ecode360.com/print/WE1311?guid=15444408",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "'Lot coverage' is impervious cover (buildings, driveways, parking, sidewalks, 150-5). The zone sets no separate building coverage (buildings count as impervious)."
       },
       "accessory_setback_side_ft": {
         "value": 5,

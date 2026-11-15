@@ -779,3 +779,72 @@ describe('get_rule_text pass 9', () => {
     expect(nt.forms.inside_or_attached.attached_yards?.side?.sides_total_ft ?? nt.forms.inside_or_attached.attached_yards?.side).toBeTruthy();
   });
 });
+
+// Pass 10: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 10 section).
+describe('get_rule_text pass 10', () => {
+  it('drops a doubled full stop and keeps an ellipsis', async () => {
+    const { ownerText } = await import('./ruleText');
+    expect(ownerText('Holds.. Ask')).toBe('Holds. Ask');
+    expect(ownerText("'a garage ... used'")).toBe("'a garage ... used'");
+    expect(ownerText('Ends here...')).toBe('Ends here...');
+  });
+
+  it('reads every form as the status outside the ADU rule districts, never the in-scope bar', async () => {
+    const ms = await town6('pa_lancaster_west_lampeter', 'approval', 'MS');
+    expect(Object.values(ms.approval.by_form_today)).not.toContain('not_allowed');
+    expect(ms.summary).not.toMatch(/By form/);
+    expect(ms.adu.status_by_form).toBeUndefined();
+    const r1 = await town6('pa_lancaster_west_lampeter', 'approval', 'R-1');
+    expect(r1.approval.by_form_today.detached_new).toBe('not_allowed');
+  });
+
+  it('says which paths are disputed and which districts are in dispute', async () => {
+    const wl = await town6('pa_lancaster_west_lampeter', 'approval', 'R-3');
+    const ms = wl.other_ways_to_add_a_unit.options.find((o: Any6) => o.disputed_path);
+    expect(ms.reads_as).toMatch(/Disputed: by right under 285-43B\(1\)\(e\), 285-43E, 285-33, special exception under 285-48A\(16\)\(a\)/);
+    const r3 = wl.other_ways_to_add_a_unit.options.find((o: Any6) => String(o.name).startsWith('Conversion apartment: a house'));
+    expect(r3.reads_as).toMatch(/Whether it reaches R-3 is disputed: 285-48A\(16\)\(a\): It names the RR, TV and MS Districts and not R-3/);
+  });
+
+  it('says a single side yard and the total for both sides together', async () => {
+    const wl = await town6('pa_lancaster_west_lampeter', 'setbacks', 'A');
+    const side = wl.forms.inside_or_attached.attached_yards.side;
+    expect(side.value).toBe(25);
+    expect(side.note).toBe('At least 25 ft on one side, 50 ft for both sides together');
+  });
+
+  it('reads district yards as depending on a planned development whose figures replace them', async () => {
+    const eg = await town6('pa_chester_east_goshen', 'setbacks', 'R-1');
+    const front = eg.forms.inside_or_attached.attached_yards.front;
+    expect(front.value).toBeNull();
+    expect(front.district_figure).toBe(45);
+    expect(front.note).toMatch(/applies only outside a planned or cluster development/);
+    const g = eg.conditions.find((c: Any6) => c.supersedes_district_figures);
+    expect(g.condition).toMatch(/Applies only if the lot is in a planned or cluster development the code names\.$/);
+  });
+
+  it('gives impervious cover, owner rule and minimum size by form, footprint shares and garage heights', async () => {
+    const pn = await town6('pa_york_penn', 'size', 'R-10');
+    expect(pn.district_rules.find((r: Any6) => r.key === 'max_impervious_coverage').value).toBe(0.65);
+    expect(pn.district_rules.some((r: Any6) => r.key === 'max_building_coverage')).toBe(false);
+    const own = pn.conditions.find((c: Any6) => c.kind === 'owner_occupancy');
+    expect(own.applies_to).toEqual(['internal', 'attached']);
+    expect(own.condition).toMatch(/^The owner must live on the lot for internal, attached\. No owner rule for detached new/);
+    expect(pn.forms.min_sqft_by_form.value).toEqual({ detached_new: 300 });
+    expect(pn.conditions.some((c: Any6) => /at most 1\.5 times the house footprint, for a house of more than one story/.test(c.condition))).toBe(true);
+    const el = await town6('pa_lancaster_east_lampeter', 'size', 'VG');
+    expect(el.conditions.some((c: Any6) => /^A residential accessory building: at most 50% of the principal building footprint/.test(c.condition))).toBe(true);
+    const elR = await town6('pa_lancaster_east_lampeter', 'size', 'R-1');
+    expect(elR.conditions.some((c: Any6) => /principal building footprint/.test(c.condition) && c.kind === 'size')).toBe(false);
+    const co = await town6('pa_delaware_concord', 'height', 'R-PRD-1');
+    expect(co.conditions.filter((c: Any6) => /^A garage /.test(c.condition)).map((c: Any6) => c.condition)).toEqual(['A garage wider than 18 ft may be up to 18 ft. One story with a loft', 'A garage on a property over three acres may be up to 18 ft']);
+    const wm = await town6('pa_york_west_manchester', 'status', 'R');
+    expect(wm.under_hb2186.still_applies).toMatch(/impervious cover 20%/);
+  });
+
+  it('carries a gate overlay and its own confidence', async () => {
+    const tw = await town6('pa_montgomery_towamencin', 'eligibility', 'RBP');
+    const g = tw.conditions.find((c: Any6) => /80,000/.test(c.condition));
+    expect(g.overlays).toEqual(['RBP']);
+  });
+});

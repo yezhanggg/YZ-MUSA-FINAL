@@ -342,6 +342,10 @@
         "max_share_of_house_and_unit": {
           "$ref": "#/$defs/leaf_share",
           "description": "Pass 9: a size cap that is a share of the house and the unit together (for example 'no more than 35% of the total floor area of the dwelling, including the unit'). For a unit inside the house it is that share of the house. For an added unit (attached or detached) it is share / (1 - share) of the existing house. Use it in place of a hand-worked max_share_of_house."
+        },
+        "min_sqft_by_form": {
+          "$ref": "#/$defs/leaf_num_by_form",
+          "description": "Pass 10: a minimum floor area for one form only (for example an elder cottage of at least 300 sq ft). Said as a line for the forms allowed on the lot."
         }
       }
     },
@@ -454,6 +458,12 @@
         },
         "accessory_rules_where": {
           "$ref": "#/$defs/leaf_accessory_where"
+        },
+        "accessory_share_of_house_part": {
+          "$ref": "#/$defs/leaf_share_of_house_part"
+        },
+        "max_height_garage_where": {
+          "$ref": "#/$defs/leaf_garage_height_where"
         }
       }
     },
@@ -504,6 +514,10 @@
         },
         "max_adus_by_lot_size": {
           "$ref": "#/$defs/leaf_adus_by_lot"
+        },
+        "owner_occupancy_by_form": {
+          "$ref": "#/$defs/leaf_bool_by_form",
+          "description": "Pass 10: whether the owner must live on the lot, per form. Said as a condition on the forms it reaches. use.owner_occupancy stays the town-wide value."
         }
       }
     },
@@ -1268,6 +1282,10 @@
         "setback_sides_total_ft": {
           "$ref": "#/$defs/leaf_num",
           "description": "Pass 9: side yards given only as a total for both sides (for example 'side yards 30 ft together'). With no setback_side_ft in the row, no single side figure is shown (never the default) and the sentence gives the total."
+        },
+        "max_impervious_coverage": {
+          "$ref": "#/$defs/leaf_share",
+          "description": "Pass 10: the district's impervious cover (buildings and paved surfaces together) as a share of the lot. Use it, not max_building_coverage, where the code's 'lot coverage' means impervious cover. Shown as its own line and as the lot's max_impervious."
         }
       }
     },
@@ -1450,7 +1468,7 @@
     },
     "leaf_gates": {
       "type": "object",
-      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan).",
+      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan). Pass 10: in_planned_development (lot fact in_planned_development, a planned or cluster development the code names); overlays, confidence and supersedes_district_figures per gate.",
       "required": [
         "value",
         "section",
@@ -1571,6 +1589,7 @@
                   "tract_sqft_at_least",
                   "tract_sqft_below",
                   "in_growth_area",
+                  "in_planned_development",
                   null
                 ]
               },
@@ -1649,6 +1668,28 @@
                     "minLength": 1
                   }
                 }
+              },
+              "overlays": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Pass 10: the gate applies on a lot in one of these overlays (lot fact overlays). With districts too, a lot in a listed district or a listed overlay is in scope. Without districts, a lot whose overlays are not given reads 'applies only if the lot is in the overlay' and is never barred."
+              },
+              "confidence": {
+                "enum": [
+                  "verified",
+                  "secondary",
+                  "unverified"
+                ],
+                "description": "Pass 10: this gate's own confidence, when it differs from the gates leaf. Cited with the gate."
+              },
+              "supersedes_district_figures": {
+                "type": "boolean",
+                "description": "Pass 10: the gate describes a planned or cluster development whose own figures replace the district row (use test in_planned_development). On a lot that is in one, or may be (fact not given), the district yards are not shown: they depend."
               }
             }
           }
@@ -1963,6 +2004,42 @@
                         "null"
                       ]
                     }
+                  }
+                }
+              },
+              "disputed_districts": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "required": [
+                  "districts",
+                  "section",
+                  "note"
+                ],
+                "additionalProperties": false,
+                "description": "Pass 10: passages of the code disagree on whether the listing reaches these districts (for example a use list names R-3, the section that sets the standards names RR, TV and MS). A lot in one reads 'depends, ask the zoning officer', never a plain yes.",
+                "properties": {
+                  "districts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 1
+                  },
+                  "section": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "url": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
                   }
                 }
               }
@@ -2841,6 +2918,15 @@
                   "null"
                 ],
                 "minimum": 0
+              },
+              "max_impervious_coverage": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Pass 10: impervious cover on such a lot (see districts.<code>.max_impervious_coverage)."
               }
             }
           }
@@ -3875,6 +3961,296 @@
                 "maximum": 1
               },
               "min_from_front_line_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_bool_by_form": {
+      "type": "object",
+      "description": "Pass 10: a yes or no per ADU form, for a rule that differs by form (for example an owner rule for the unit in the house and none for an elder cottage).",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "detached_new": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "garage_conversion": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "over_garage": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "internal": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "attached": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_share_of_house_part": {
+      "type": "object",
+      "description": "Pass 10: an accessory building cap as a share of a named part of the house (its footprint, its first floor), which the tool cannot measure. Use it, not accessory_structure_max_share (a share of the house floor area). share may be over 1 (1.5 times the footprint). Each item is a condition for a detached unit; no number is computed.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "what",
+              "share",
+              "of",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "what": {
+                "type": "string",
+                "minLength": 1,
+                "description": "what the cap reaches, e.g. 'all accessory buildings together'"
+              },
+              "share": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "of": {
+                "type": "string",
+                "minLength": 1,
+                "description": "the base, named: 'the house footprint', 'the house's first floor area'"
+              },
+              "when": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "a case, e.g. 'for a single-story house'"
+              },
+              "districts": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                }
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_garage_height_where": {
+      "type": "object",
+      "description": "Pass 10: a garage height exception by garage width or lot size (for example 'wider than 18 ft: 18 ft with a loft', 'on a property over three acres: 18 ft'). Each item is a condition for a detached unit; lot_over_sqft drops an item on a lot that is not over it.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "where",
+              "max_height_ft",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "where": {
+                "type": "string",
+                "minLength": 1
+              },
+              "max_height_ft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "garage_wider_than_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_over_sqft": {
                 "type": [
                   "number",
                   "null"

@@ -288,7 +288,10 @@
             "section": "153-401A(3) to 153-404A(3)",
             "url": "https://ecode360.com/print/TO0773?guid=14342876",
             "note": "RBP is an overlay. 153-418 does not say whether a lot in it keeps its base district's uses. Where the lot's base district is R-200, R-180, R-175 or R-125, that district lists A-1 by special exception with no 80,000 sq ft rule and no RBP service rule, so the base-district path may still apply"
-          }
+          },
+          "overlays": [
+            "RBP"
+          ]
         },
         {
           "kind": "utilities",
@@ -307,7 +310,10 @@
             "section": "153-401A(3) to 153-404A(3)",
             "url": "https://ecode360.com/print/TO0773?guid=14342876",
             "note": "RBP is an overlay. 153-418 does not say whether a lot in it keeps its base district's uses. Where the lot's base district is R-200, R-180, R-175 or R-125, that district lists A-1 by special exception with no 80,000 sq ft rule and no RBP service rule, so the base-district path may still apply"
-          }
+          },
+          "overlays": [
+            "RBP"
+          ]
         },
         {
           "kind": "utilities",
@@ -326,7 +332,10 @@
             "section": "153-401A(3) to 153-404A(3)",
             "url": "https://ecode360.com/print/TO0773?guid=14342876",
             "note": "RBP is an overlay. 153-418 does not say whether a lot in it keeps its base district's uses. Where the lot's base district is R-200, R-180, R-175 or R-125, that district lists A-1 by special exception with no 80,000 sq ft rule and no RBP service rule, so the base-district path may still apply"
-          }
+          },
+          "overlays": [
+            "RBP"
+          ]
         },
         {
           "kind": "lot_size",
@@ -338,9 +347,10 @@
           ],
           "building_types": null,
           "when": "always",
-          "test": null,
+          "test": "in_planned_development",
           "section": "153-502F(14), 153-403A(1)",
-          "url": "https://ecode360.com/14343303"
+          "url": "https://ecode360.com/14343303",
+          "supersedes_district_figures": true
         }
       ],
       "section": "153-502H(1), 153-418, 153-502F(14)",

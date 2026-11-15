@@ -244,7 +244,9 @@
           ],
           "building_types": null,
           "section": "240-8D(1)(a), (b), 240-8E(4)(k)",
-          "url": "https://ecode360.com/print/EA1698?guid=7253032"
+          "url": "https://ecode360.com/print/EA1698?guid=7253032",
+          "test": "in_planned_development",
+          "supersedes_district_figures": true
         }
       ],
       "section": "240-32C",

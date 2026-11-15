@@ -460,13 +460,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.35,
         "section": "245-4.3E(1)",
         "url": "https://ecode360.com/print/UP1380?guid=32898868",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage 35%. No separate building coverage, so it is stored as the cap on buildings."
+        "note": "Maximum impervious coverage 35%. No separate building coverage."
       }
     },
     "R-1": {
@@ -506,13 +506,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.3,
         "section": "245-5.3D(1)",
         "url": "https://ecode360.com/print/UP1380?guid=32898925",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage 30% on conventional and estate lots. No separate building coverage, so it is stored as the cap on buildings."
+        "note": "Maximum impervious coverage 30% on conventional and estate lots. No separate building coverage."
       }
     },
     "R-2": {

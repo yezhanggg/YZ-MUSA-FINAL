@@ -315,7 +315,17 @@
       "url": "https://ecode360.com/print/PE0541?guid=51424818",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Elder cottage: 'a minimum of 300 square feet of floor area and may not exceed 900 square feet'. The 300 sq ft minimum has no field."
+      "note": "Elder cottage: 'a minimum of 300 square feet of floor area and may not exceed 900 square feet'."
+    },
+    "min_sqft_by_form": {
+      "value": {
+        "detached_new": 300
+      },
+      "section": "325-637A",
+      "url": "https://ecode360.com/print/PE0541?guid=51424818",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "Elder cottage: 'a minimum of 300 square feet of floor area and may not exceed 900 square feet'."
     }
   },
   "envelope": {
@@ -349,6 +359,33 @@
       "verified_on": "2026-11-14",
       "confidence": "secondary",
       "note": "No separate accessory building height. A detached structure is 'considered a part of the principal building' for other requirements, read as taking the district height."
+    },
+    "accessory_share_of_house_part": {
+      "value": [
+        {
+          "what": "all accessory buildings together",
+          "share": 1,
+          "of": "the house footprint",
+          "when": "for a single-story house",
+          "section": "325-300B, C",
+          "url": "https://ecode360.com/print/PE0541?guid=51423945",
+          "note": "This likely reaches an elder cottage"
+        },
+        {
+          "what": "all accessory buildings together",
+          "share": 1.5,
+          "of": "the house footprint",
+          "when": "for a house of more than one story",
+          "section": "325-300B, C",
+          "url": "https://ecode360.com/print/PE0541?guid=51423945",
+          "note": "This likely reaches an elder cottage"
+        }
+      ],
+      "section": "325-300B, C",
+      "url": "https://ecode360.com/print/PE0541?guid=51423945",
+      "verified_on": "2026-11-14",
+      "confidence": "secondary",
+      "note": "All accessory building footprints together at most the house footprint (single-story house) or 1.5 times it (multi-story) (provenance check, 325-300B, C)."
     }
   },
   "use": {
@@ -358,7 +395,19 @@
       "url": "https://ecode360.com/print/PE0541?guid=51424712",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "For the unit in or added to the house: 'The dwelling in question shall be owner occupied during the duration of the special permit.' The elder cottage section (325-637) has no owner rule. The file holds one value for all forms."
+      "note": "For the unit in or added to the house: 'The dwelling in question shall be owner occupied during the duration of the special permit.' The elder cottage section (325-637) has no owner rule."
+    },
+    "owner_occupancy_by_form": {
+      "value": {
+        "internal": true,
+        "attached": true,
+        "detached_new": false
+      },
+      "section": "325-630B, 325-637",
+      "url": "https://ecode360.com/print/PE0541?guid=51424712",
+      "verified_on": "2026-11-14",
+      "confidence": "verified",
+      "note": "For the unit in or added to the house: 'The dwelling in question shall be owner occupied during the duration of the special permit.' The elder cottage section (325-637) has no owner rule."
     },
     "family_only": {
       "value": true,
@@ -440,13 +489,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.65,
         "section": "325-202C",
         "url": "https://ecode360.com/print/PE0541?guid=51423832",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage."
       }
     },
     "R-15": {
@@ -487,13 +536,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.65,
         "section": "325-203C",
         "url": "https://ecode360.com/print/PE0541?guid=51423832",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage."
       },
       "utility_rows": {
         "value": [
@@ -504,7 +553,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "principal_max_height_ft": 35,
-            "max_building_coverage": 0.3,
+            "max_impervious_coverage": 0.3,
             "section": "325-203C",
             "note": "Width 175 ft, side 25 ft each, lot coverage 30%, green space 65%. The same row applies when public water is missing."
           },
@@ -515,7 +564,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "principal_max_height_ft": 35,
-            "max_building_coverage": 0.3,
+            "max_impervious_coverage": 0.3,
             "section": "325-203C",
             "note": "'No Public Water and/or Public Sewer' column."
           }
@@ -565,13 +614,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.65,
         "section": "325-204C",
         "url": "https://ecode360.com/print/PE0541?guid=51423832",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage."
       },
       "utility_rows": {
         "value": [
@@ -582,7 +631,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "principal_max_height_ft": 35,
-            "max_building_coverage": 0.3,
+            "max_impervious_coverage": 0.3,
             "section": "325-204C",
             "note": "Width 175 ft, side 25 ft each, lot coverage 30%, green space 65%. The same row applies when public water is missing."
           },
@@ -593,7 +642,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "principal_max_height_ft": 35,
-            "max_building_coverage": 0.3,
+            "max_impervious_coverage": 0.3,
             "section": "325-204C",
             "note": "'No Public Water and/or Public Sewer' column."
           }
@@ -643,13 +692,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.3,
         "section": "325-205C",
         "url": "https://ecode360.com/print/PE0541?guid=51423832",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage."
       }
     },
     "RC": {
@@ -690,13 +739,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.3,
         "section": "325-206C",
         "url": "https://ecode360.com/print/PE0541?guid=51423832",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage."
       }
     },
     "MU": {
@@ -737,13 +786,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.65,
         "section": "325-207C",
         "url": "https://ecode360.com/print/PE0541?guid=51423832",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage, so it is stored as the cap on buildings."
+        "note": "'Lot coverage': 'The total of impervious areas' (142-2, search excerpt). No separate building coverage."
       },
       "lot_area_per_unit_sqft": {
         "value": 10890,

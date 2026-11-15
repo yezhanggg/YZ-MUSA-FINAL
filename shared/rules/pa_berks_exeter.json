@@ -294,13 +294,13 @@
         "confidence": "verified",
         "note": "Residential buildings."
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.1,
         "section": "390-11E",
         "url": "https://ecode360.com/print/EX2329?guid=8337755",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "Maximum impervious coverage. The table sets no separate building coverage (buildings count as impervious)."
       }
     },
     "AP": {
@@ -343,13 +343,13 @@
         "confidence": "verified",
         "note": "Residential buildings."
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.2,
         "section": "390-12E",
         "url": "https://ecode360.com/print/EX2329?guid=8337755",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "Maximum impervious coverage. The table sets no separate building coverage (buildings count as impervious)."
       }
     },
     "R": {
@@ -392,13 +392,13 @@
         "confidence": "verified",
         "note": "All buildings other than farm buildings."
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.21,
         "section": "390-13E",
         "url": "https://ecode360.com/print/EX2329?guid=8337755",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "Maximum impervious coverage. The table sets no separate building coverage (buildings count as impervious)."
       }
     },
     "SR0": {
@@ -440,13 +440,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.3,
         "section": "390-14E",
         "url": "https://ecode360.com/print/EX2329?guid=8337755",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "Maximum impervious coverage. The table sets no separate building coverage (buildings count as impervious)."
       },
       "utility_rows": {
         "value": [
@@ -459,7 +459,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.2,
+            "max_impervious_coverage": 0.2,
             "principal_max_height_ft": 35
           },
           {
@@ -471,7 +471,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.2,
+            "max_impervious_coverage": 0.2,
             "principal_max_height_ft": 35
           }
         ],
@@ -520,13 +520,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.4,
         "section": "390-15F",
         "url": "https://ecode360.com/print/EX2329?guid=8337755",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "Maximum impervious coverage. The table sets no separate building coverage (buildings count as impervious)."
       },
       "utility_rows": {
         "value": [
@@ -539,7 +539,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.21,
+            "max_impervious_coverage": 0.21,
             "principal_max_height_ft": 35
           },
           {
@@ -551,7 +551,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.21,
+            "max_impervious_coverage": 0.21,
             "principal_max_height_ft": 35
           }
         ],
@@ -600,13 +600,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.4,
         "section": "390-16E",
         "url": "https://ecode360.com/print/EX2329?guid=8337755",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "Maximum impervious coverage. The table sets no separate building coverage (buildings count as impervious)."
       },
       "utility_rows": {
         "value": [
@@ -619,7 +619,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.21,
+            "max_impervious_coverage": 0.21,
             "principal_max_height_ft": 35
           },
           {
@@ -631,7 +631,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.21,
+            "max_impervious_coverage": 0.21,
             "principal_max_height_ft": 35
           }
         ],
@@ -680,13 +680,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.4,
         "section": "390-17 table",
         "url": "https://ecode360.com/print/EX2329?guid=8337755",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "Maximum impervious coverage. The table sets no separate building coverage (buildings count as impervious)."
       },
       "utility_rows": {
         "value": [
@@ -699,7 +699,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.21,
+            "max_impervious_coverage": 0.21,
             "principal_max_height_ft": 35
           },
           {
@@ -711,7 +711,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.21,
+            "max_impervious_coverage": 0.21,
             "principal_max_height_ft": 35
           }
         ],
@@ -760,13 +760,13 @@
         "verified_on": "2026-11-14",
         "confidence": "verified"
       },
-      "max_building_coverage": {
+      "max_impervious_coverage": {
         "value": 0.4,
         "section": "390-18E",
         "url": "https://ecode360.com/print/EX2329?guid=8337755",
         "verified_on": "2026-11-14",
         "confidence": "secondary",
-        "note": "Maximum impervious coverage. The table sets no separate building coverage, so this is stored as the cap on buildings (buildings count as impervious)."
+        "note": "Maximum impervious coverage. The table sets no separate building coverage (buildings count as impervious)."
       },
       "utility_rows": {
         "value": [
@@ -779,7 +779,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.22,
+            "max_impervious_coverage": 0.22,
             "principal_max_height_ft": 35
           },
           {
@@ -791,7 +791,7 @@
             "setback_front_ft": 50,
             "setback_side_ft": 25,
             "setback_rear_ft": 30,
-            "max_building_coverage": 0.22,
+            "max_impervious_coverage": 0.22,
             "principal_max_height_ft": 35
           }
         ],
