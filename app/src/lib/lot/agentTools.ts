@@ -35,7 +35,7 @@ const UNIT_PROPS = {
 export const LOT_TOOLS: ToolDef[] = [
   {
     name: 'get_lot_facts',
-    description: 'Facts about one lot from the lot record: size, zoning district, house, garage, alley, flags (flood, slope, historic), confidence, and the data dates.',
+    description: 'Facts about one lot from the lot record: size, zoning district, house, garage, alley, flags (flood, slope, historic), land cover (trees and paving on the lot, with its accuracy note), confidence, and the data dates.',
     input_schema: { type: 'object', properties: { lot_id: LOT_ID } },
   },
   {
@@ -45,7 +45,7 @@ export const LOT_TOOLS: ToolDef[] = [
   },
   {
     name: 'test_unit_on_lot',
-    description: 'Test one unit on the lot: fits, fits with changes, does not fit, not allowed or check needed, with the one limiting reason, the checks, warnings and the approval path.',
+    description: 'Test one unit on the lot: fits, fits with changes, does not fit, not allowed or check needed, with the one limiting reason, the checks, warnings and the approval path. For a backyard cottage, the land cover of the lot and of the suggested spot.',
     input_schema: { type: 'object', properties: { lot_id: LOT_ID, scenario: SCENARIO, ...UNIT_PROPS, units: { type: 'integer', minimum: 1, maximum: 3 } } },
   },
   {
@@ -165,9 +165,41 @@ const isLaw = (lot: LotRecord, s: Scenario) => s === 'today' || JSON.stringify(l
 const CONFIDENCE = { high: 'high', medium: 'medium', low: 'low' } as const;
 /** Assessed value and the last sale (date and price): kept on the drive, not in the public data. */
 export const NOT_PUBLIC = 'not in the public data';
-/** A lot record with no land cover block (Allentown so far): trees, paving and sheds in the yard were not mapped. */
+/** A lot record with no land cover block (a few Centre County lots, older builds): trees, paving and sheds in the yard were not mapped. */
 export const NO_COVER = 'Not checked: no land cover for this lot, so trees, paving and sheds in the yard were not mapped. A fit result does not account for them.';
 const hasCover = (lot: LotRecord) => !!lot.cover && Object.keys(lot.cover).length > 0;
+/** Lot places whose records measure what lies inside the suggested spot (fit.<scenario>.<type>.spot_cover). */
+export const SPOT_COVER_PLACES: readonly string[] = ['pittsburgh', 'philadelphia'];
+/** No tree or paving figures inside the suggested spot: the place has none, or this lot has none. */
+export const SPOT_COVER_NO_PLACE = 'Not available for this place: tree and paving figures inside the suggested spot are only in the Pittsburgh and Philadelphia lot records. Only the shares of the whole lot are known here.';
+export const SPOT_COVER_NO_LOT = 'Not available for this lot: the record has no tree or paving figures inside the suggested spot. Only the shares of the whole lot are known here.';
+export const COVER_RULE = 'Tree and paving figures are for the whole lot, not the spot for the unit. The fit does not steer around trees, so a fit does not mean no tree is in the way. Give the accuracy note whenever you give these figures.';
+/** The record's own note on how far its land cover can be trusted (quality.assumptions, "land cover from ..."). */
+const coverAccuracy = (lot: LotRecord) => lot.quality.assumptions?.find((a) => /^land cover from\b/i.test(a)) ?? 'not on file';
+const share = (s: { sqft: number; pct: number } | undefined) => (s ? { sqft: s.sqft, pct_of_lot: s.pct } : 'not on file');
+
+/** What lies inside the suggested spot for this unit type, else why it is not available. */
+function spotCover(lot: LotRecord, scenario: Scenario, type: AduType) {
+  const sc = lot.fit[scenario]?.[type]?.spot_cover;
+  if (sc && Object.keys(sc).length > 0) {
+    const num = (k: string) => (isNum(sc[k]) ? sc[k] : 'not on file');
+    return { trees_sqft: num('tree_sqft'), paved_sqft: num('hard_surface_sqft'), open_ground_sqft: num('open_sqft'), buildings_sqft: num('building_sqft'), other_sqft: num('other_sqft') };
+  }
+  return SPOT_COVER_PLACES.includes(lot.lot.place ?? '') ? SPOT_COVER_NO_LOT : SPOT_COVER_NO_PLACE;
+}
+
+/** The land cover block of a lot record: whole-lot shares, the accuracy note, and the suggested spot. */
+function landCover(lot: LotRecord, scenario: Scenario, type: AduType) {
+  const c = lot.cover!;
+  return {
+    whole_lot: { trees: share(c.tree), paved: share(c.hard), open_ground: share(c.open), buildings: share(c.building), impervious_pct_of_lot: c.impervious_pct ?? 'not on file' },
+    source: c.source?.startsWith('model:') ? 'aerial model' : c.source ? 'city land cover map' : 'not on file',
+    year: c.date ?? 'not on file',
+    accuracy: coverAccuracy(lot),
+    inside_suggested_spot: spotCover(lot, scenario, type),
+    rule: COVER_RULE,
+  };
+}
 /** What a check could not test, said as "not checked" (never a pass or a fail). */
 export const NOT_CHECKED = 'not checked';
 
@@ -196,7 +228,8 @@ export function getLotFacts(lot: LotRecord) {
     corner: lot.lot.corner ?? false,
     flags,
     public_sewer: lot.zoning.flags?.sewer ?? 'not on file',
-    ...(hasCover(lot) ? {} : { land_cover: NO_COVER }),
+    // The suggested spot is the backyard cottage spot under today's rules.
+    land_cover: hasCover(lot) ? landCover(lot, 'today', 'detached_new') : NO_COVER,
     // Left out of the published lot files (tools/publish_lots.sh), so never read here, even from a local build.
     assessed_value: NOT_PUBLIC,
     last_sale: NOT_PUBLIC,
@@ -274,6 +307,8 @@ function verdictOut(lot: LotRecord, v: UnitVerdict) {
     ...(v.checks.some((c) => c.pass == null) || !hasCover(lot)
       ? { not_checked: [...v.checks.filter((c) => c.pass == null).map((c) => `${c.label}: ${c.text}`), ...(hasCover(lot) ? [] : [NO_COVER])], not_checked_rule: 'Say these are not checked. Do not guess a result for them.' }
       : {}),
+    // A new building on the ground: trees and paving where it would go.
+    ...(hasCover(lot) && v.type === 'detached_new' ? { land_cover: landCover(lot, v.scenario, v.type) } : {}),
     warnings: v.warnings.map((w) => w.text),
     approval: { path: v.approval.path ?? 'not known', label: v.approval.label, text: v.approval.text },
     assumed: v.assumed,

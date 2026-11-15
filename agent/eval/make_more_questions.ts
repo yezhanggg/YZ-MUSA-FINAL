@@ -1,6 +1,7 @@
 // Makes two more eval files, the same way as make_questions.ts (lots picked by rule, every expected value read from a
 // tool result, nothing typed by hand):
-//   questions_allentown.json   8 questions on Allentown lot records (no land cover block, no house size on file)
+//   questions_allentown.json   8 questions on Allentown lot records (land cover not validated, no tree figures inside
+//                              the suggested spot, no house size on file)
 //   questions_rule_text.json   6 questions on the rule text the resolver now gives: status per form, the lesser-of size
 //                              cap, who hears a hearing, the code caution line, an ADU under another listing
 // Run again when the data or the rule files change:
@@ -19,13 +20,16 @@ import type { EvalQuestion, Forbidden } from './types';
 type Obj = Record<string, unknown>;
 const DATA = resolve(import.meta.dirname, '../../app/public/data');
 const NOT_CHECKED = ['not checked', "wasn't checked", 'was not checked', "couldn't check", 'could not check', 'cannot check', "can't check", 'not able to check', 'no house size', 'no living area', 'not on file', "isn't on file"];
-const NO_COVER = ['not checked', 'not mapped', 'no land cover', 'no tree data', 'no data on trees', "don't have tree", 'do not have tree', "can't tell", 'cannot tell', 'not in my data', 'no information on trees', "doesn't show trees", 'does not show trees'];
+const NOT_VALIDATED = ['not validated', 'not been validated', "hasn't been validated", 'unvalidated', 'not checked against', 'no labeled', 'not tested against', 'has not been tested', 'not verified'];
+const NO_SPOT_COVER = ['not available', 'no figures for the spot', 'not measured for the spot', 'only for the whole lot', 'only the whole lot', 'only for pittsburgh', 'only in pittsburgh', 'whole lot, not', 'not for the spot', 'not the spot', "can't tell where", 'cannot tell where', "don't know where", 'do not know where'];
 const DEAD_END: Forbidden = { pattern: "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b", why: 'a dead-end answer' };
 const NEXT_STEP = how('gives a next step', ['next step', 'ask the', 'call the', 'contact the', 'check with', 'confirm with']);
 
 const addr = (l: LotRecord) => titleCase(l.lot.address ?? l.lot.id);
 const hasAddr = (l: LotRecord) => !!l.lot.address;
-const noCover = (l: LotRecord) => !l.cover || Object.keys(l.cover).length === 0;
+const hasCover = (l: LotRecord) => !!l.cover && Object.keys(l.cover).length > 0;
+const noSpotCover = (l: LotRecord) => !l.fit.today?.detached_new?.spot_cover || Object.keys(l.fit.today.detached_new.spot_cover).length === 0;
+const NOT_VALIDATED_NOTE = (l: LotRecord) => l.quality.assumptions?.some((a) => /^land cover from/.test(a) && /not validated/.test(a)) ?? false;
 const COTTAGE = detached(20, 24);
 
 // ------------------------------------------------------------------ Allentown lot questions
@@ -42,7 +46,7 @@ async function allentown(): Promise<Spec[]> {
   const ROW = 'Rowhouses (Town, Urban, Suburban)';
   const ALLEY = 'needs a lot that abuts an alley';
 
-  const aFits = await pickNew('allentown', 'detached house, cottage fits today', (l) => hasAddr(l) && noCover(l) && !reasonHas(l, 'today', ROW) && l.rules.today?.allowed === true && (fitOf(l, 'today', 'detached_new')?.largest_sqft ?? 0) >= 480, fitsCottage);
+  const aFits = await pickNew('allentown', 'detached house, cottage fits today', (l) => hasAddr(l) && !reasonHas(l, 'today', ROW) && l.rules.today?.allowed === true && (fitOf(l, 'today', 'detached_new')?.largest_sqft ?? 0) >= 480, fitsCottage);
   const aRow = await pickNew('allentown', 'rowhouse: no cottage, fits under the state bill', (l) => hasAddr(l) && reasonHas(l, 'today', ROW) && fitOf(l, 'state_reform', 'detached_new')?.fits === true && (fitOf(l, 'state_reform', 'detached_new')?.largest_sqft ?? 0) >= 480, async (l) => (await barred(l)) && ((await callTool(onLot(l), 'test_unit_on_lot', { ...cottage, scenario: 'state_reform' })).result as Obj).status === 'fits');
   const aAlley = await pickNew('allentown', 'no alley, not a corner: the alley rule bars a cottage', (l) => hasAddr(l) && !l.lot.alley && !l.lot.corner && reasonHas(l, 'today', ALLEY), barred);
   const aCap = await pickNew('allentown', 'cottage allowed, room for a 1,000 sq ft one, the size cap is the limit', (l) => hasAddr(l) && l.rules.today?.allowed === true && !reasonHas(l, 'today', ROW) && fitOf(l, 'today', 'detached_new')?.limiting === 'size_cap' && (fitOf(l, 'today', 'detached_new')?.largest_if_cleared_sqft ?? 0) >= 3000, async (l) => {
@@ -58,7 +62,9 @@ async function allentown(): Promise<Spec[]> {
     const found = (await callTool(ctx(), 'find_lot', { address: addr(l) })).result as Obj;
     return rows(found, 'candidates').some((c) => c.lot_id === l.lot.id) && ((await testOn(l, { type: 'internal', width_ft: 20, depth_ft: 24 })).approval as Obj).path === 'by_right';
   });
-  const aTrees = await pickNew('allentown', 'cottage fits, no land cover', (l) => hasAddr(l) && noCover(l) && l.rules.today?.allowed === true && (fitOf(l, 'today', 'detached_new')?.largest_sqft ?? 0) >= 480, fitsCottage);
+  // Trees cover a real share of the lot (a fifth or more), the record says its land cover is not validated, and it has
+  // no tree figures inside the suggested spot.
+  const aTrees = await pickNew('allentown', 'cottage fits, a fifth or more of the lot under trees, cover not validated, no spot cover', (l) => hasAddr(l) && hasCover(l) && (l.cover?.tree?.pct ?? 0) >= 20 && NOT_VALIDATED_NOTE(l) && noSpotCover(l) && l.rules.today?.allowed === true && (fitOf(l, 'today', 'detached_new')?.largest_sqft ?? 0) >= 480, fitsCottage);
 
   const Q: Spec[] = [];
   Q.push({
@@ -126,10 +132,21 @@ async function allentown(): Promise<Spec[]> {
   });
   Q.push({
     id: 'alt-08', category: 'allentown', question: 'Would I have to cut down trees to fit a backyard cottage here?', context: onLot(aTrees, { unit: COTTAGE }),
-    required: [['test_unit_on_lot', 'get_lot_facts', 'explain_limit']], calls: [{ name: 'get_lot_facts', input: {} }, { name: 'test_unit_on_lot', input: {} }],
-    facts: () => [how('says trees are not checked here', NO_COVER, 'no land cover')],
-    forbidden: [{ pattern: "\\b(no|without) (cutting|removing|cutting down) (any )?trees\\b|\\bno trees (are|would be|need)|\\byou (won't|will not|don't|do not) (have|need) to (cut|remove)", why: 'guesses about trees with no land cover' }],
-    rubric: 'Allentown records have no land cover: trees are not checked. Says so, no guess either way.',
+    required: [['get_lot_facts', 'test_unit_on_lot']], calls: [{ name: 'get_lot_facts', input: {} }, { name: 'test_unit_on_lot', input: {} }],
+    facts: ([f]) => {
+      const lc = (f as { land_cover?: { whole_lot?: { trees?: { pct_of_lot?: number } }; accuracy?: string; inside_suggested_spot?: unknown } }).land_cover;
+      const pct = lc?.whole_lot?.trees?.pct_of_lot;
+      if (typeof pct !== 'number') throw new Error('alt-08: no tree share in get_lot_facts');
+      if (!/not validated/.test(String(lc?.accuracy))) throw new Error('alt-08: no accuracy note in get_lot_facts');
+      if (!/^Not available for this place/.test(String(lc?.inside_suggested_spot))) throw new Error('alt-08: spot cover is not reported as not available');
+      return [
+        n('tree share of the lot', pct, 'pct', 10),
+        how('says the land cover is not validated here', NOT_VALIDATED, 'not validated'),
+        how('says the tree figures inside the spot are not available', NO_SPOT_COVER, 'Not available for this place'),
+      ];
+    },
+    forbidden: [{ pattern: "\\b(no|without) (cutting|removing|cutting down) (any )?trees\\b|\\bno trees (are|would be|need)|\\byou (won't|will not|don't|do not) (have|need) to (cut|remove)", why: 'says for sure no tree is in the way, with no tree figures for the spot' }],
+    rubric: 'Allentown lot with land cover: gives the tree share of the whole lot, says the land cover is not validated in this county, and says the tree and paving figures inside the suggested spot are not available here, so it cannot say whether a tree stands where the cottage would go. No guess either way.',
   });
   return Q;
 }

@@ -1,11 +1,11 @@
 {
  "about": "Allentown lot questions. Made by agent/eval/make_more_questions.ts from the Allentown lot records: lots picked by rule, expected values read from tool results. Do not edit by hand.",
- "generated_at": "2026-11-13T14:22:08.396Z",
+ "generated_at": "2026-11-15T00:40:21.921Z",
  "data_roots": {
-  "allentown": "/Users/ye/musa-drive/lots/allentown"
+  "allentown": "/Users/ye/Library/Caches/yz-musa/lots-local/allentown"
  },
  "data_versions": {
-  "allentown": "allentown-20261113-c3f7b21cb2"
+  "allentown": "allentown-20261114-2cb47a95d4"
  },
  "questions": [
   {
@@ -544,9 +544,9 @@
    "question": "Would I have to cut down trees to fit a backyard cottage here?",
    "context": {
     "lot": {
-     "id": "42077-640799389142",
+     "id": "42077-640799503780",
      "tract": "42077000101",
-     "label": "1028 E CONGRESS ST"
+     "label": "1001 1007 N JEROME ST"
     },
     "site_lot": null,
     "town": {
@@ -571,9 +571,8 @@
    },
    "tools_required": [
     [
-     "test_unit_on_lot",
      "get_lot_facts",
-     "explain_limit"
+     "test_unit_on_lot"
     ]
    ],
    "calls": [
@@ -588,34 +587,58 @@
    ],
    "facts": [
     {
+     "kind": "number",
+     "label": "tree share of the lot",
+     "value": 44.5,
+     "tol_pct": 10,
+     "unit": "pct"
+    },
+    {
      "kind": "behaviour",
-     "label": "says trees are not checked here",
+     "label": "says the land cover is not validated here",
      "accept": [
-      "not checked",
-      "not mapped",
-      "no land cover",
-      "no tree data",
-      "no data on trees",
-      "don't have tree",
-      "do not have tree",
-      "can't tell",
-      "cannot tell",
-      "not in my data",
-      "no information on trees",
-      "doesn't show trees",
-      "does not show trees"
+      "not validated",
+      "not been validated",
+      "hasn't been validated",
+      "unvalidated",
+      "not checked against",
+      "no labeled",
+      "not tested against",
+      "has not been tested",
+      "not verified"
      ],
-     "evidence": "no land cover"
+     "evidence": "not validated"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says the tree figures inside the spot are not available",
+     "accept": [
+      "not available",
+      "no figures for the spot",
+      "not measured for the spot",
+      "only for the whole lot",
+      "only the whole lot",
+      "only for pittsburgh",
+      "only in pittsburgh",
+      "whole lot, not",
+      "not for the spot",
+      "not the spot",
+      "can't tell where",
+      "cannot tell where",
+      "don't know where",
+      "do not know where"
+     ],
+     "evidence": "Not available for this place"
     }
    ],
    "forbidden": [
     {
      "pattern": "\\b(no|without) (cutting|removing|cutting down) (any )?trees\\b|\\bno trees (are|would be|need)|\\byou (won't|will not|don't|do not) (have|need) to (cut|remove)",
-     "why": "guesses about trees with no land cover"
+     "why": "says for sure no tree is in the way, with no tree figures for the spot"
     }
    ],
    "scenario": "today",
-   "rubric": "Allentown records have no land cover: trees are not checked. Says so, no guess either way."
+   "rubric": "Allentown lot with land cover: gives the tree share of the whole lot, says the land cover is not validated in this county, and says the tree and paving figures inside the suggested spot are not available here, so it cannot say whether a tree stands where the cottage would go. No guess either way."
   }
  ]
 }
