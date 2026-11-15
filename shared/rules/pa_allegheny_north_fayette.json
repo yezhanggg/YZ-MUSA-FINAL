@@ -1,0 +1,557 @@
+{
+  "provenance": {
+    "jurisdiction": "North Fayette township",
+    "instrument": "North Fayette Township Zoning Ordinance (Chapter 27 Zoning, Ord. No. 477, 5-11-2021, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 NO3691: 'Includes legislation through 10-08-2024' (breadcrumb 'Code 2024-10-08'). Amendments shown in the sections read: Ord. No. 481 and 483 (7-13-2021), 498 (6-28-2022), 499 (8-9-2022), 513 (11-14-2023) and 525 (4-23-2024). New Laws not in the code: Ord. No. 535 (zoning, 6-17-2025), Ord. No. 546 (zoning map, 12-16-2025) and Ord. No. 551 (zoning, 8-18-2026).",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/NO3691",
+      "https://ecode360.com/30832639",
+      "https://ecode360.com/NO3691/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22tiny%20house%22%20OR%20%22conversion%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NO3691/search?query=zoning%20OR%20dwelling%20OR%20district%20OR%20accessory&scope=law&sortOrder=relevance",
+      "https://ecode360.com/NO3691/search?query=%22accessory%20dwelling%22%20OR%20%22tiny%20house%22%20OR%20%22conversion%20dwelling%22%20OR%20duplex&scope=law&sortOrder=relevance",
+      "https://ecode360.com/NO3691/search?query=carport%20OR%20%22home-based%22%20OR%20%22accessory%20agricultural%22%20OR%20%22community%20food%20bank%22&scope=law&sortOrder=relevance",
+      "https://ecode360.com/print/NO3691?guid=31181435",
+      "https://ecode360.com/31181454",
+      "https://ecode360.com/print/NO3691?guid=38222292",
+      "https://ecode360.com/print/NO3691?guid=31181711",
+      "https://ecode360.com/print/NO3691?guid=38226230",
+      "https://ecode360.com/print/NO3691?guid=31182767",
+      "https://ecode360.com/print/NO3691?guid=38228517"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200355016",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30832639",
+    "code_current_through": "2024-10-08",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 10-08-2024'. The chapter page lists New Laws Ord. No. 535 (Zoning, 2025-06-17) and Ord. No. 551 (Zoning, 2026-08-18).",
+    "code_caution": "Ord. No. 551 (adopted 8-18-2026, 'miscellaneous changes' to the zoning ordinance) is not yet in the online code. Its search excerpt restates Table 2 (accessory uses), including the accessory dwelling unit row ('Accessory dwelling unit C P C P O'), but the excerpt is garbled and the PDF was not opened, so the district ratings in force may differ from the codified Table 2. Ord. No. 535 (6-17-2025) also makes miscellaneous zoning changes not yet in the code, and its content was not seen. Ord. No. 546 (12-16-2025) rezones one parcel from R-2 to MU. Appendices A to F (Attachments 1 to 6) are PDFs and were not opened.",
+    "checks": [
+      "An accessory dwelling unit is a conditional use (Board of Supervisors hearing) in R-1, R-2 and MU (27-305 Table 2, 27-604). Table 2 also rates it P in B-2 and I-1, where no dwelling is a listed principal use, so it can reach only a lawful existing house there: ask. Ord. No. 551 (8-18-2026) restates Table 2 and is not yet in the online code",
+      "The lot must be at least 20,000 sq ft and the owner must live in one of the dwellings on the lot. One unit per lot. Its living area may not exceed 25% of the house's total floor area (27-604(1), (2), (4), (5))",
+      "The unit must stand at least 8 ft from the house and meet the setback, bulk and area rules for the principal use (27-604(6), (7)). It may be an apartment above a detached garage, a manufactured home on a foundation or crawl space, or a tiny house (at most 749 sq ft) screened to look permanent (27-604(9), 27-643(7), 27-202)",
+      "27-202 defines an accessory dwelling unit as living space 'attached or detached to the primary dwelling', while 27-604(7) requires 8 ft from the principal structure. Whether a unit inside or attached to the house is possible is not settled: ask",
+      "Accessory structures in R-1, R-2 and MU are capped at 20 ft (27-305 Table 3). The ADU must meet the principal use's bulk rules (27-604(6)). Which height governs a unit over a garage is not settled",
+      "Parking: the ADU's minimum spaces are added to the house's (27-604(8)), but Table 12 has no ADU row. A single-family dwelling needs 2 spaces (27-903)",
+      "A conversion of an existing house into more dwelling units is a separate conditional use in R-1, R-2 and MU: each unit at least 800 sq ft, the lot of a similar dwelling type, and 'Conversion of detached garages or other accessory structures to dwelling units shall not be considered conversion dwellings and shall not be permitted' (27-643(3))",
+      "Accessory structures may not stand between the principal building and the street (27-305.4F)"
+    ],
+    "notes": "Zoning office: North Fayette Township Department of Community Development. The eCode360 code NO3691 is North Fayette Township, Allegheny County (27-305.5B and 8C name the Allegheny County Airport Authority and Allegheny County airport zoning). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all for accessory dwelling, in-law, accessory apartment, ECHO, elder cottage, granny, relative, caretaker, guest house, tenant house, living quarters, immediate family, watchman, separate living, cooking facilities, farm employee, tiny house and conversion dwelling: Chapter 27 hits were only 27-202, 27-604 and 27-643. New Laws searched (scope law) for zoning, dwelling, accessory dwelling, tiny house, conversion dwelling, duplex and Table 2 row names. Read in full: 27-302, 27-305 (Tables 1 to 4 checked on screen for the column of each rating), 27-604 and 27-643. Read on screen: the 27-202 definitions of accessory dwelling unit, accessory structure, dwelling types, dwelling unit, family, lot coverage and tiny house, the 27-903 Table 12 dwelling rows and 27-1516.5 (variances). Not read: 27-316, 27-504 (TND-Mixed Use Overlay), 27-601, 27-602, 27-699.34, Part 12 (PRD), 27-1404, the appendices and the New Laws PDFs"
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "27-202, 27-604",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "27-202: 'A separate and accessory living space that is attached or detached to the primary dwelling.'"
+    },
+    "status": {
+      "value": "conditional_use",
+      "section": "27-305 Table 2, 27-604",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'An accessory dwelling unit shall be a permitted conditional use' (27-604). Table 2 marks it C in R-1, R-2 and MU. Ord. No. 551 (adopted 8-18-2026, 'miscellaneous changes' to the zoning ordinance) is not yet in the online code. Its search excerpt restates Table 2 (accessory uses), including the accessory dwelling unit row ('Accessory dwelling unit C P C P O'), but the excerpt is garbled and the PDF was not opened, so the district ratings in force may differ from the codified Table 2"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "MU"
+      ],
+      "section": "27-305 Table 2",
+      "url": "https://ecode360.com/31181454",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Table 2 marks the accessory dwelling unit C in R-1, R-2 and MU and P in B-2 and I-1. B-2 and I-1 list no dwelling as a principal use (Table 1), and the unit needs a principal dwelling (27-604(1)), so they are left out of the scope"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "27-305 Tables 1 and 2",
+      "url": "https://ecode360.com/31181454",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "CE, B-1 and I-2 leave the unit blank in Table 2. B-1 lists single-family dwellings as a conditional use (27-643(6)) but not the unit. B-2 and I-1 rate it P but list no dwelling, so only a lawful existing house there could raise it: ask"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "conditional_use",
+      "section": "27-604, 27-305.2B(2), 27-601",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Board of Supervisors conditional use under the 27-604 standards and the general conditional use criteria of Part 6"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-1516.5A",
+      "url": "https://ecode360.com/print/NO3691?guid=38228517",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Zoning Hearing Board variance with the MPC findings (unnecessary hardship). No section read bars a use variance. 'Uses not listed' are a conditional use only in I-1 and I-2 (Table 1, 27-699.34), and the unit is a listed use"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion dwelling (R-1, R-2, MU)",
+          "path": "conditional_use",
+          "districts": [
+            "R-1",
+            "R-2",
+            "MU"
+          ],
+          "conditions": "Conversion dwelling units are a conditional use in R-1, R-2 and MU: units created from a larger existing residential dwelling, from the existing structure or by additions. Each unit at least 800 sq ft of gross floor area with separate living, sleeping, kitchen and sanitary facilities and a separate entrance. The lot meets the minimum lot and area requirements for similar dwelling types in the district. Detached garages and other accessory structures may not be converted. Two parking spaces per dwelling unit",
+          "min_lot_sqft": 40000,
+          "min_lot_by_district": {
+            "R-1": 40000,
+            "R-2": 10000,
+            "MU": 4000
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "A larger existing residential dwelling",
+              "section": "27-202 (conversion dwelling)"
+            }
+          ],
+          "section": "27-202 (dwelling types, conversion dwelling), 27-305 Tables 1 and 3, 27-643(3), 27-903",
+          "url": "https://ecode360.com/print/NO3691?guid=38226230",
+          "confidence": "secondary",
+          "note": "Not an ADU listing: 27-202 says conversion dwellings 'are defined separately from accessory dwellings units or in-law suites'. The lot figures are the Table 3 'All other lots' figures with public sewer (R-1 has one figure for every lot), which is a reading of 'similar dwelling types'. Without public sewer R-1 and R-2 lots need 80,000 sq ft"
+        },
+        {
+          "name": "Duplex (R-1, MU)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "MU"
+          ],
+          "conditions": "A duplex is 'A detached house designed for and occupied exclusively as not more than two units, each living as an independent housekeeping unit and with no internal connectivity between units.' Permitted by right in R-1 and MU. R-1 lot 40,000 sq ft with public sewer (80,000 without), MU 4,000 sq ft ('All other lots'). Two parking spaces per dwelling unit",
+          "min_lot_sqft": 40000,
+          "min_lot_by_district": {
+            "R-1": 40000,
+            "MU": 4000
+          },
+          "section": "27-202 (dwelling types, duplex), 27-305 Tables 1 and 3, 27-903",
+          "url": "https://ecode360.com/31181454",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type. Making an existing house into one is the conversion dwelling path"
+        }
+      ],
+      "section": "27-305 Table 1, 27-643",
+      "url": "https://ecode360.com/31181454",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "MU"
+      ],
+      "section": "27-305 Table 2",
+      "url": "https://ecode360.com/31181454",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Conditional use in R-1, R-2 and MU"
+    },
+    "min_lot_sqft": {
+      "value": 20000,
+      "section": "27-604(1)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The minimum lot size required for a principal dwelling to have an accessory dwelling unit shall be 20,000 square feet.'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/NO3691/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22tiny%20house%22%20OR%20%22conversion%20dwelling%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "owner_occupancy",
+          "condition": "The owner lives in one of the dwellings on the lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-604(4)",
+          "url": "https://ecode360.com/print/NO3691?guid=31181711"
+        },
+        {
+          "kind": "other",
+          "condition": "A plot plan or survey shows that the house, the accessory structures and the unit meet the district's maximum lot coverage.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-604(3)",
+          "url": "https://ecode360.com/print/NO3691?guid=31181711"
+        },
+        {
+          "kind": "other",
+          "condition": "Lots in a planned residential development (permitted in R-1, R-2 and MU) take the PRD's approved figures, not the district table (Part 12, not read).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1",
+            "R-2",
+            "MU"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "27-305 Table 1, Part 12",
+          "url": "https://ecode360.com/31181454"
+        }
+      ],
+      "section": "27-604",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "CE",
+        "B-1",
+        "B-2",
+        "I-1",
+        "I-2"
+      ],
+      "section": "27-305 Tables 1 and 2",
+      "url": "https://ecode360.com/31181454",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "CE, B-1 and I-2 leave the unit blank in Table 2. B-2 and I-1 rate it P but list no dwelling as a principal use. B-1 lists single-family dwellings by conditional use on 21,780 sq ft (27-643(6))"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "over_garage",
+        "detached_new"
+      ],
+      "section": "27-604(7), (9)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The accessory dwelling unit may be an apartment above a detached garage, a manufactured home with a foundation or crawl space, or a tiny house with screening so as to look permanent in nature.' It stands at least 8 ft from the principal structure"
+    },
+    "types_in_conflict": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "27-202 (accessory dwelling unit), 27-604(7)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "27-202 calls the unit living space 'attached or detached to the primary dwelling' and describes attached units. 27-604(7): 'Accessory dwellings shall be located a minimum of eight feet from the principal structure.'"
+    },
+    "types_not_addressed": {
+      "value": [
+        "garage_conversion"
+      ],
+      "section": "27-604(9), 27-643(3)(E)",
+      "url": "https://ecode360.com/print/NO3691?guid=38226230",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "27-604 names an apartment above a detached garage, not the garage itself. 27-643(3)(E), in the conversion dwelling standards: 'Conversion of detached garages or other accessory structures to dwelling units shall not be considered conversion dwellings and shall not be permitted.'"
+    },
+    "labels": {
+      "value": {
+        "over_garage": "An apartment above a detached garage",
+        "detached_new": "A manufactured home on a foundation or crawl space, or a tiny house (749 sq ft or less) screened to look permanent"
+      },
+      "section": "27-604(9), 27-202 (tiny house)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_share_of_house": {
+      "value": 0.25,
+      "section": "27-604(2)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The living area of the accessory dwelling unit shall not exceed 25% of the principal dwelling's total floor area.' A tiny house is at most 749 sq ft of habitable floor area (27-202)"
+    }
+  },
+  "envelope": {
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "27-604(6)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units shall meet all setback, bulk, and area requirements of the principal use of the lot.'"
+    },
+    "separation_ft": {
+      "value": 8,
+      "section": "27-604(7)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory dwellings shall be located a minimum of eight feet from the principal structure.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-305.4F",
+      "url": "https://ecode360.com/31181454",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory structures are prohibited from being located between the principal building and the street, except for a designated rear yard on dual frontage lots.'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 20,
+      "section": "27-305 Table 3",
+      "url": "https://ecode360.com/31181454",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Maximum principal structure height - accessory (feet)' 20 in R-1, R-2 and MU"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "27-604(6), 27-305 Table 3",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The unit meets the bulk requirements of the principal use (principal height 40 ft), while accessory structures are capped at 20 ft. Which governs a unit over a garage is not stated"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "27-604(4)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units are only permitted in conjunction with owner-occupied properties when the owner occupies one of the dwellings on the lot.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "27-604",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "No family rule. 27-202 says in-law suites are 'primarily intended to house family members' but 27-604 sets no family test"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-604(5)",
+      "url": "https://ecode360.com/print/NO3691?guid=31181711",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Only one accessory dwelling unit is permitted on a lot.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-604(8), 27-903 Table 12",
+      "url": "https://ecode360.com/print/NO3691?guid=31182767",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Table 12 has no accessory dwelling unit row"
+    },
+    "reading": {
+      "value": "'The minimum number of required parking spaces for an accessory dwelling unit shall be added to the minimum number of required parking spaces for the principal use (see Table 12).' Table 12 has no ADU row. A single-family dwelling needs 2 spaces per dwelling unit, so two more for the unit (four in all) is one reading.",
+      "section": "27-604(8), 27-903 Table 12",
+      "url": "https://ecode360.com/print/NO3691?guid=31182767",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public sewer. Width 80 ft (150 ft without sewer). Density 1.1 units per acre with public sewer, 0.5 without. Without public sewer 80,000 sq ft. Other accessory structures: 5 ft from side and rear lines (MU rear 50 ft adjoining residential, 10 ft otherwise), 20 ft tall. The ADU itself meets the principal setbacks (27-604(6))"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Adjoining residential districts: 15. Adjoining all other districts: N/A'"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Adjoining residential districts: 30. Adjoining all other districts: N/A'"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 27-202 defines LOT COVERAGE as 'The percentage of the area of a lot covered by all principal and accessory structures', so this is building cover. The plot plan must show the unit within it (27-604(3))"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 80000,
+            "section": "27-305 Table 3"
+          }
+        ],
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Without public sewer 80,000 sq ft and 150 ft wide"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached with public sewer (all other lots 10,000). Width 60 ft. Density 6 single-family units per acre. Without public sewer 80,000 sq ft. Other accessory structures: 5 ft from side and rear lines (MU rear 50 ft adjoining residential, 10 ft otherwise), 20 ft tall. The ADU itself meets the principal setbacks (27-604(6))"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Adjoining residential districts: 10. Adjoining all other districts: N/A'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Adjoining residential districts: 20. Adjoining all other districts: N/A'"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 27-202 defines LOT COVERAGE as 'The percentage of the area of a lot covered by all principal and accessory structures', so this is building cover. The plot plan must show the unit within it (27-604(3))"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 80000,
+            "section": "27-305 Table 3"
+          }
+        ],
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Without public sewer 80,000 sq ft"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached, with or without public sewer. Width 60 ft. Density 6 single-family units per acre. The ADU itself needs a 20,000 sq ft lot (27-604(1)). Table 4 gives MU other figures for nonresidential uses. Other accessory structures: 5 ft from side and rear lines (MU rear 50 ft adjoining residential, 10 ft otherwise), 20 ft tall. The ADU itself meets the principal setbacks (27-604(6))"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "15 ft adjoining residential districts, 10 ft adjoining all other districts"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "30 ft. Accessory structures 50 ft from the rear line adjoining residential, 10 ft otherwise"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "27-305 Table 3",
+        "url": "https://ecode360.com/31181454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. 27-202 defines LOT COVERAGE as 'The percentage of the area of a lot covered by all principal and accessory structures', so this is building cover. The plot plan must show the unit within it (27-604(3))"
+      }
+    }
+  }
+}

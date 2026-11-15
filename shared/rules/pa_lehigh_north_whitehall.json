@@ -1,0 +1,783 @@
+{
+  "provenance": {
+    "jurisdiction": "North Whitehall township",
+    "instrument": "North Whitehall Township Zoning Ordinance (Chapter 440 Zoning, Ord. No. 2025-3, adopted 12-1-2025, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 NO3503: 'Includes legislation through 08-10-2026'. Chapter 440 was adopted 12-1-2025 by Ord. No. 2025-3, which repealed the 2002 zoning ordinance (Ord. No. 2002-3, as amended). Amendments shown in the sections read: Ord. No. 2026-2 (3-9-2026), 2026-7 (5-11-2026) and 2026-9 (8-10-2026). The New Laws page lists four ordinances, none on zoning.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/NO3503",
+      "https://ecode360.com/35645899",
+      "https://ecode360.com/NO3503/laws",
+      "https://ecode360.com/NO3503/search?query=%22accessory%20family%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NO3503/search?query=%22family%20caregiver%22%20OR%20%22family%20members%22%20OR%20conversion%20OR%20converted%20OR%20%22age-restricted%22%20OR%20%22age-qualified%22%20OR%20%22second%20dwelling%22%20OR%20%22additional%20dwelling%22%20OR%20%22care%20of%20relative%22%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NO3503/search?query=%22maximum%20height%22%20OR%20%2235%20feet%22%20OR%20%22height%20of%20principal%22%20OR%20%22maximum%20building%20height%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NO3503/search?query=%22unnecessary%20hardship%22%20OR%20%22use%20variance%22%20OR%20%22not%20permitted%20in%20the%20district%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/NO3503?guid=50428887",
+      "https://ecode360.com/print/NO3503?guid=50428943",
+      "https://ecode360.com/print/NO3503?guid=50428971",
+      "https://ecode360.com/print/NO3503?guid=50429102",
+      "https://ecode360.com/print/NO3503?guid=50429553",
+      "https://ecode360.com/print/NO3503?guid=50429605",
+      "https://ecode360.com/print/NO3503?guid=50429606",
+      "https://ecode360.com/print/NO3503?guid=50429614",
+      "https://ecode360.com/print/NO3503?guid=50430697",
+      "https://ecode360.com/print/NO3503?guid=50430962",
+      "https://ecode360.com/print/NO3503?guid=50430973"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Lehigh",
+    "municipality_type": "township",
+    "geoid": "4207755576",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/35645899",
+    "code_current_through": "2026-08-10",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 08-10-2026'. New Laws: Ord. No. 2026-10 to 2026-13 (open burning, emergency services, nuisances, property maintenance, tax, street lighting), none amending Chapter 440.",
+    "code_caution": "Chapter 440 is a new ordinance (Ord. No. 2025-3, 12-1-2025). The use table (440-37) writes the Agricultural-Rural Residential-Institutional Option District as 'A-I', while 440-32 and 440-38 write 'AR-I': this file uses AR-I. No maximum building height for houses was found in the web text: 440-76A refers to 'The maximum structure height specified for each district', but the 440-38 table has no height column and a search found none, so district heights are left open. The definitions (440-31) were read on screen for the terms named in the notes, not in full.",
+    "checks": [
+      "An accessory family dwelling unit is permitted by right in CR, AR and V and marked 'N' (not permitted) in every other district (440-37, use H5). It is 'a residence by family members or a family caregiver', with one unit to a single-family detached dwelling or within an existing half of a twin (440-40H(5)). The code does not define a family member or a family caregiver: ask",
+      "The unit must be part of the principal residence or in an existing accessory structure such as a garage (440-40H(5)(f)). A new separate building is not allowed",
+      "It may take at most 25% of the total usable floor area of the principal residence, not counting any garage (440-40H(5)(e)). Separate cooking and sanitary facilities for each unit (440-40H(5)(d))",
+      "The building keeps the look of a single-family detached or semidetached dwelling with a single front entrance. Other entrances go on the side or rear. No exterior stairway on the front and no parking in the required front yard beyond up to three spaces in a driveway (440-40H(5)(b), (c))",
+      "An on-lot septic system must be recertified if sewage flows increase (440-40H(5)(a))",
+      "Parking: the house's two spaces plus one more for the unit (440-40H(5)(g), 440-55C)",
+      "Accessory structures such as detached garages are at most 20 ft tall, at least 10 ft from side and rear lines, meet the district front yard, and count toward the district's impervious surface limit (440-40H(3)(c))",
+      "Two-family detached dwellings (one unit above the other) are permitted by right in CR, AR, AR-I, AR-L, SR and V (440-37 use B3). Only one principal use is permitted per lot (440-75B)",
+      "No maximum building height for houses was found in the code's web text. Ask the zoning officer"
+    ],
+    "notes": "Zoning office: North Whitehall Township Planning and Zoning Department. The eCode360 code NO3503 is North Whitehall Township, Lehigh County (440-40G names the Lehigh County Public Safety Radio Communications System). Read in a browser on eCode360, one page at a time, on 2026-11-15. Search with scope all (code and New Laws) for accessory family dwelling, accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, farm employee and domestic servants, then for family caregiver, family members, conversion, converted, age-restricted, age-qualified, second dwelling, additional dwelling, care of relative and two-family, then for maximum height and for unnecessary hardship and use variance. Read in full: 440-12, 440-18, 440-32, 440-37, 440-38, 440-75 and 440-76. Read on screen: 440-40B(1) to (7) (residential uses and cluster development), 440-40H(1) to (6) (accessory uses), the 440-55C parking table rows for dwellings and use H5, and the 440-31 definitions of accessory structure, dwelling, dwelling unit, family, impervious coverage and impervious surface. Not read: the rest of 440-40, Articles V and VII, 440-77 to 440-89, the Disposition List and Chapter 375 (subdivision)"
+  },
+  "adu": {
+    "term": {
+      "value": "accessory family dwelling unit",
+      "section": "440-37 (use H5), 440-40H(5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory family dwelling unit. One accessory dwelling unit to a single-family detached dwelling or within an existing dwelling (half of a twin dwelling) shall be permitted as a residence by family members or a family caregiver.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "440-40H(5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A unit for family members or a family caregiver, by right in CR, AR and V, inside the house or in an existing accessory structure, at most 25% of the house"
+    },
+    "scope_districts": {
+      "value": [
+        "CR",
+        "AR",
+        "V"
+      ],
+      "section": "440-37 (use H5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429605",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "The use table marks the accessory family dwelling unit P in CR, AR and V"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "440-32",
+      "url": "https://ecode360.com/print/NO3503?guid=50429553",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "440-32 names nine districts and the use table rates the unit in each, so a lot outside them is outside this chapter's districts"
+    },
+    "status_outside_by_district": {
+      "value": [
+        {
+          "districts": [
+            "AR-L",
+            "SR",
+            "AR-I",
+            "C",
+            "LI/B",
+            "ME/I"
+          ],
+          "status": "prohibited",
+          "section": "440-37 (use H5)",
+          "url": "https://ecode360.com/print/NO3503?guid=50429605",
+          "note": "The use table marks the accessory family dwelling unit N ('Not permitted') in AR-L, SR, AR-I (written A-I in the table), C, LI/B and ME/I"
+        }
+      ],
+      "section": "440-37 (use H5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429605",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "440-37 (use H5), 440-40H(5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429605",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Permitted by right (P) in CR, AR and V under the 440-40H(5) standards. Zoning permit from the Zoning Officer"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "440-18E(3)",
+      "url": "https://ecode360.com/print/NO3503?guid=50428943",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'The Board may grant a variance provided that it is consistent with the criteria set forth in the MPC and decisional law.' No section read bars a use variance. Where the table marks the unit N the file reads the unit as not permitted. 'Lawful uses not otherwise permitted' are a special exception only in LI/B and ME/I (use G15), which permit no house. The accessory family dwelling unit and the two-family detached dwelling are listed uses, so that path does not reach a second unit"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (duplex)",
+          "path": "by_right",
+          "districts": [
+            "CR",
+            "AR",
+            "AR-I",
+            "AR-L",
+            "SR",
+            "V"
+          ],
+          "conditions": "Permitted by right in CR, AR, AR-I, AR-L, SR and V (use B3). A duplex is 'a detached dwelling within a two-dwelling unit building, with one dwelling above the other'. Lot figures from 440-38: SR 'Twin/two-family detached' 7,000 sq ft, 50 ft wide, front 30, side 10, rear 40, impervious 50%. Elsewhere the 'All other permitted uses' or 'Other permitted uses' row: CR 3 acres, 200 ft wide, 30% impervious. AR 40,000 sq ft, 150 ft, 40%. AR-I and AR-L 40,000 sq ft, 120 ft, 40%. V 20,000 sq ft, 60 ft, 75%. Two parking spaces per dwelling unit",
+          "min_lot_sqft": 7000,
+          "min_lot_by_district": {
+            "CR": 130680,
+            "AR": 40000,
+            "AR-I": 40000,
+            "AR-L": 40000,
+            "SR": 7000,
+            "V": 20000
+          },
+          "section": "440-31 (dwelling, E), 440-37 (use B3), 440-38, 440-40B(3), 440-55C",
+          "url": "https://ecode360.com/print/NO3503?guid=50429605",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A building type with no conversion standards. Which 440-38 row applies to a two-family detached dwelling outside SR is a reading, and whether SR's 7,000 sq ft is for the building's lot is not stated"
+        }
+      ],
+      "section": "440-37, 440-38, 440-40B(3)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429605",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "CR",
+        "AR",
+        "V"
+      ],
+      "section": "440-37 (use H5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429605",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached"
+      ],
+      "section": "440-40H(5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'One accessory dwelling unit to a single-family detached dwelling or within an existing dwelling (half of a twin dwelling)'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 440",
+      "url": "https://ecode360.com/NO3503/search?query=%22accessory%20family%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22%20OR%20%22domestic%20servants%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The unit is a residence for family members or a family caregiver. The code does not define either term.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "440-40H(5)",
+          "url": "https://ecode360.com/print/NO3503?guid=50429614"
+        },
+        {
+          "kind": "building_type",
+          "condition": "In half of a twin the unit must be within the existing dwelling.",
+          "effect": "bars",
+          "applies_to": [
+            "attached",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": [
+            "semi_detached"
+          ],
+          "section": "440-40H(5)",
+          "url": "https://ecode360.com/print/NO3503?guid=50429614"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A unit outside the house must be contained in an existing accessory structure such as a garage.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "has_accessory_building",
+          "section": "440-40H(5)(f)",
+          "url": "https://ecode360.com/print/NO3503?guid=50429614"
+        },
+        {
+          "kind": "design",
+          "condition": "The building keeps the appearance of a single-family detached or semidetached dwelling with a single front entrance (other entrances on the side or rear). No exterior stairway on the front and no parking in the required front yard beyond up to three spaces in a driveway.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "440-40H(5)(b), (c)",
+          "url": "https://ecode360.com/print/NO3503?guid=50429614"
+        },
+        {
+          "kind": "utilities",
+          "condition": "An on-lot septic system is recertified if sewage flows will increase.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "440-40H(5)(a)",
+          "url": "https://ecode360.com/print/NO3503?guid=50429614"
+        },
+        {
+          "kind": "other",
+          "condition": "Lots in a cluster development (conditional use, tract of at least 4 acres) take the cluster lot table, which depends on public water and central sewage (for example 15,000 or 20,000 sq ft in AR and AR-I with both, 8,000 sq ft in SR and 6,000 sq ft in V with both), not the 440-38 figures.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "CR",
+            "AR",
+            "AR-I",
+            "SR",
+            "V"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "440-37 (use B7), 440-40B(7)",
+          "url": "https://ecode360.com/print/NO3503?guid=50429614"
+        }
+      ],
+      "section": "440-40H(5), 440-40B(7)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C",
+        "LI/B",
+        "ME/I"
+      ],
+      "section": "440-37",
+      "url": "https://ecode360.com/print/NO3503?guid=50429605",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "C, LI/B and ME/I permit no single-family, twin or two-family dwelling (uses B1 to B3 marked N)"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "440-40H(5)(f)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'Accessory family dwelling unit shall be part of the principal residence or may be contained in the existing accessory structure such as a garage.' An addition that becomes part of the house is read as part of the principal residence. A new separate building is not allowed"
+    },
+    "labels": {
+      "value": {
+        "garage_conversion": "In an existing accessory structure such as a garage",
+        "over_garage": "In the upper part of an existing garage"
+      },
+      "section": "440-40H(5)(f)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "size": {
+    "max_share_of_house": {
+      "value": 0.25,
+      "section": "440-40H(5)(e)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The accessory family dwelling unit shall occupy no more than 25% of the total usable floor area of the principal residence, not including any garage.'"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "440-76A",
+      "url": "https://ecode360.com/print/NO3503?guid=50430973",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No district height for houses was found in the web text, so the height of a unit in the house is not known here"
+    },
+    "setback_side_ft": {
+      "value": 10,
+      "section": "440-40H(3)(c)[1]",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Accessory structures 'no closer than 10 feet to any side or rear property line, and shall comply with the front yard setback of the district'"
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "440-40H(3)(c)[1]",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "440-40H(3)(c)[1]",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Accessory structures take 10 ft side and rear yards and the district front yard"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 20,
+      "section": "440-40H(3)(c)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "440-40H(3)(c), 440-40H(5)(f)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The ADU section names an existing accessory structure and sets no height of its own. Whether the 20 ft cap governs it is not stated"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": null,
+      "section": "440-40H(5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No owner rule"
+    },
+    "family_only": {
+      "value": true,
+      "section": "440-40H(5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Family members or a family caregiver (neither term is defined).",
+      "section": "440-40H(5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "440-40H(5)",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'One accessory dwelling unit'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "440-40H(5)(g), 440-55C",
+      "url": "https://ecode360.com/print/NO3503?guid=50429614",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The required off-street parking for the principal dwelling plus one additional off-street parking space for the accessory family dwelling unit shall be provided.' The 440-55C table gives '1 space per boarder/tenant'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "440-40H(5)(g), 440-55C",
+      "url": "https://ecode360.com/print/NO3503?guid=50430697",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Two for a single-family detached dwelling plus one. A twin's own figure depends on its bedrooms (1 to 2 spaces)"
+    }
+  },
+  "districts": {
+    "CR": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 150 ft. 2 acres. Other permitted uses 3 acres"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Side (each)'"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "440-38, 440-76A",
+        "url": "https://ecode360.com/print/NO3503?guid=50430973",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The 440-38 table has no height column and no district height for houses was found"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "440-38, 440-31 (impervious coverage), 440-40H(3)(c)[2]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Max. Impervious Surface'. 440-31 IMPERVIOUS COVERAGE is 'The total area of all impervious surfaces on a lot (including building coverage) divided by the total lot area'. Accessory structures count toward it. The table sets no separate building coverage"
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The district front yard"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "AR": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 140 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Side (each)'"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "440-38, 440-76A",
+        "url": "https://ecode360.com/print/NO3503?guid=50430973",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The 440-38 table has no height column and no district height for houses was found"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "440-38, 440-31 (impervious coverage), 440-40H(3)(c)[2]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Max. Impervious Surface'. 440-31 IMPERVIOUS COVERAGE is 'The total area of all impervious surfaces on a lot (including building coverage) divided by the total lot area'. Accessory structures count toward it. The table sets no separate building coverage"
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The district front yard"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 60 ft. V has no single-family row: these are the 'Other permitted uses' figures. A twin lot is 5,000 sq ft per dwelling unit, 40 ft wide, same yards and 75%"
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "5 ft minimum, 20 ft maximum"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Side (each)'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "440-38, 440-76A",
+        "url": "https://ecode360.com/print/NO3503?guid=50430973",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The 440-38 table has no height column and no district height for houses was found"
+      },
+      "max_impervious_coverage": {
+        "value": 0.75,
+        "section": "440-38, 440-31 (impervious coverage), 440-40H(3)(c)[2]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Max. Impervious Surface'. 440-31 IMPERVIOUS COVERAGE is 'The total area of all impervious surfaces on a lot (including building coverage) divided by the total lot area'. Accessory structures count toward it. The table sets no separate building coverage"
+      },
+      "accessory_setback_front_ft": {
+        "value": 5,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The district front yard"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "440-40H(3)(c)[1]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429614",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "AR-I": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 140 ft. 440-37 writes the district A-I"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Side (each)'"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "440-38, 440-76A",
+        "url": "https://ecode360.com/print/NO3503?guid=50430973",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The 440-38 table has no height column and no district height for houses was found"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "440-38, 440-31 (impervious coverage), 440-40H(3)(c)[2]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Max. Impervious Surface'. 440-31 IMPERVIOUS COVERAGE is 'The total area of all impervious surfaces on a lot (including building coverage) divided by the total lot area'. Accessory structures count toward it. The table sets no separate building coverage"
+      }
+    },
+    "AR-L": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 140 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Side (each)'"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "440-38, 440-76A",
+        "url": "https://ecode360.com/print/NO3503?guid=50430973",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The 440-38 table has no height column and no district height for houses was found"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "440-38, 440-31 (impervious coverage), 440-40H(3)(c)[2]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Max. Impervious Surface'. 440-31 IMPERVIOUS COVERAGE is 'The total area of all impervious surfaces on a lot (including building coverage) divided by the total lot area'. Accessory structures count toward it. The table sets no separate building coverage"
+      }
+    },
+    "SR": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 80 ft. A twin or two-family detached lot is 7,000 sq ft, 50 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Side (each)'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "440-38",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": null,
+        "section": "440-38, 440-76A",
+        "url": "https://ecode360.com/print/NO3503?guid=50430973",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The 440-38 table has no height column and no district height for houses was found"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "440-38, 440-31 (impervious coverage), 440-40H(3)(c)[2]",
+        "url": "https://ecode360.com/print/NO3503?guid=50429606",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Max. Impervious Surface'. 440-31 IMPERVIOUS COVERAGE is 'The total area of all impervious surfaces on a lot (including building coverage) divided by the total lot area'. Accessory structures count toward it. The table sets no separate building coverage"
+      }
+    }
+  }
+}

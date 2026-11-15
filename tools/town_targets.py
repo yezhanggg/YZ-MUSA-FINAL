@@ -1202,6 +1202,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-07-28",
         "note": "Zoning: Chapter 380 Zoning (Ord. No. 329, adopted 7-25-2006, as amended). ADU text: ECHO housing (380-14, 380-59A(19)): a portable elder cottage by special exception in RH, A, RR and R, at most 900 sq ft and two people, for a related person 55 or older, handicapped or disabled, on the house's utilities, removed within three months after use ends. Two-family conversion of a large existing house (3,000 sq ft) by special exception in V (380-59A(61)), two-family dwellings by right in RG and V, more than one principal use on a V lot with land development approval (380-43). Lot coverage is impervious cover (380-14). New Laws: Ord. No. 442 (data centers) not codified. Read in the browser on eCode360 (NE2598).",
     },
+    "4209183696": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/15475025",
+        "plain_fetch": False,
+        "current_through": "2026-04-14",
+        "note": "Zoning: Chapter 27 Zoning (Ord. No. 524 of 1991 restating the 1952 ordinance, as amended). ADU text: 'One separate living area, including cooking facilities' in a single-family detached dwelling for no more than two persons related to the principal occupant, registered with the Zoning Officer, with a recorded agreement to remove the cooking facilities later (27-301 subsections 6B and 9). Written in R-A and carried by reference to R-1, R-2, R-3, B-P, C, L-C and I. Detached garages may not be used as a dwelling (27-301 subsection 6A). Conversion of dwellings by special exception was repealed (27-1404). Two-family buildings by right only in R-3 tract developments (10 acres), watchman and caretaker quarters in LC&I. Read in the browser on eCode360 (WE2500).",
+    },
+    "4207755576": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/35645899",
+        "plain_fetch": False,
+        "current_through": "2026-08-10",
+        "note": "Zoning: Chapter 440 Zoning (Ord. No. 2025-3, adopted 12-1-2025, repealing the 2002 ordinance). ADU text: 'Accessory family dwelling unit' (440-37 use H5, 440-40H(5)): by right in CR, AR and V, not permitted elsewhere, for family members or a family caregiver, part of the house or in an existing accessory structure such as a garage, at most 25% of the house, one more parking space. Two-family detached dwellings by right in CR, AR, AR-I, AR-L, SR and V. No district height for houses found in the web text. Read in the browser on eCode360 (NO3503).",
+    },
+    "4200355016": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/30832639",
+        "plain_fetch": False,
+        "current_through": "2024-10-08",
+        "note": "Zoning: Chapter 27 Zoning (Ord. No. 477, 5-11-2021, as amended). ADU text: 'Accessory dwelling unit' (27-305 Table 2, 27-604): conditional use in R-1, R-2 and MU, lot 20,000 sq ft, owner-occupied, one per lot, at most 25% of the house, 8 ft from the house, an apartment above a detached garage, a manufactured home or a tiny house. Conversion dwellings by conditional use (27-643(3)), duplexes by right in R-1 and MU. New Laws: Ord. No. 535 and 551 (zoning) not codified. Ord. No. 551 restates the accessory use table. Read in the browser on eCode360 (NO3691).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1224,6 +1245,7 @@ FIXED_BATCH.update({g: 21 for g in ("4209177152", "4202138288", "4207183256")})
 FIXED_BATCH.update({g: 22 for g in ("4209179056", "4207183152", "4204578776")})
 FIXED_BATCH.update({g: 23 for g in ("4209526728", "4204503336", "4213332448")})
 FIXED_BATCH.update({g: 24 for g in ("4204932520", "4209145096", "4213353224")})
+FIXED_BATCH.update({g: 25 for g in ("4209183696", "4207755576", "4200355016")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1311,6 +1333,11 @@ EXTRAS = {
     "4204932520": "batch 24 by population. Code Chapter 490 has no ADU text",
     "4209145096": "batch 24 by population. Code Chapter 164 has no ADU text",
     "4213353224": "Code 380-59A(19) ECHO housing",
+    # Batch 25 (2026-11-15): the next towns by population without a rule file. Hermitage (Mercer) was skipped (zoning
+    # ordinance only as PDFs on the city website).
+    "4209183696": "Code 27-301 subsections 6B and 9 separate living area for relatives",
+    "4207755576": "Code 440-40H(5) accessory family dwelling unit",
+    "4200355016": "Code 27-604 accessory dwelling unit",
 }
 
 if __name__ == "__main__":

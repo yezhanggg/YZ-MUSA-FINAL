@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 125,
-      "population": 5558189,
-      "share_of_pa": 0.4275
+      "towns_beyond_the_two_cities": 128,
+      "population": 5606212,
+      "share_of_pa": 0.4312
     }
   ],
   "towns": [
@@ -3001,7 +3001,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 1290.14 accessory dwelling units, immediate family)"
       ],
-      "status_note": "Reviewed and fixed. R-3 reads 'listed, but ask' with a special exception under 1290.14 as the path to ask (1262.03 omits the ADU). Engine wording: the districts_in_doubt sentence says 'R-3 lists the ADU', the note corrects it (the ADU section names R-3, R-3's lists do not). Later check: ordinances after Ord. 1035 (2-21-2024) were not looked for on the township site. PBC, LI and ID watchman quarters read from search excerpts. 1284.03 parking read from a search excerpt."
+      "status_note": "Reviewed and fixed. R-3 reads 'named, but ask' with a special exception under 1290.14 as the path to ask (1262.03 omits the ADU). R-3's sentence says the ADU section names R-3 and R-3's own lists do not (districts_in_doubt named_by, pass 11). Later check: ordinances after Ord. 1035 (2-21-2024) were not looked for on the township site. PBC, LI and ID watchman quarters read from search excerpts. 1284.03 parking read from a search excerpt."
     },
     {
       "geoid": "4213332448",
@@ -3015,7 +3015,7 @@
       "pop_rank": 139,
       "file": "pa_york_hanover",
       "batch": 23,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-15",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/15699677",
@@ -3025,7 +3025,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 370-400 accessory dwelling units)"
       ],
-      "status_note": "Reviewed and fixed. Every value confirmed. Stays drafted until the engine stops offering a use variance where 370-907E bars it: in CB, PD, M and HI the tool still says 'The path is a use variance from the Zoning Hearing Board', while 370-907E says the board may not grant a variance for a use the district does not permit. The file states the 370-907E facts. Also open: whether an ADU counts toward the R-5 and MU density of 14 units per acre."
+      "status_note": "Reviewed and fixed. Every value confirmed. In CB, PD, M and HI the tool reads not allowed, not a use variance: approval.use_variance_barred quotes 370-907E (the board may not grant a variance for a use the district does not permit), says it is a local limit on a power the board has under MPC 910.2, and gives a zoning amendment as the route the code leaves (pass 11). Also open: whether an ADU counts toward the R-5 and MU density of 14 units per acre."
     },
     {
       "geoid": "4204932520",
@@ -3098,6 +3098,78 @@
         "named as a town with an ADU ordinance (Code 380-59A(19) ECHO housing)"
       ],
       "status_note": "Independently reviewed, findings fixed. For a later check: whether the 700 sq ft minimum (380-42A) applies to the elder cottage; whether 380-20C limits a second principal house on a V lot under 380-43; the two-family height in the RG and V tables; the conservation subdivision attachments (PDF); Ord. No. 442 (10-14-2026) not codified."
+    },
+    {
+      "geoid": "4209183696",
+      "geoid_aliases": [],
+      "name": "West Norriton township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 16201,
+      "population_with_aliases": 16201,
+      "housing_units": 8013,
+      "pop_rank": 143,
+      "file": "pa_montgomery_west_norriton",
+      "batch": 25,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/15475025",
+      "plain_fetch": false,
+      "code_current_through": "2026-04-14",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 524 of 1991 restating the 1952 ordinance, as amended). ADU text: 'One separate living area, including cooking facilities' in a single-family detached dwelling for no more than two persons related to the principal occupant, registered with the Zoning Officer, with a recorded agreement to remove the cooking facilities later (27-301 subsections 6B and 9). Written in R-A and carried by reference to R-1, R-2, R-3, B-P, C, L-C and I. Detached garages may not be used as a dwelling (27-301 subsection 6A). Conversion of dwellings by special exception was repealed (27-1404). Two-family buildings by right only in R-3 tract developments (10 acres), watchman and caretaker quarters in LC&I. Read in the browser on eCode360 (WE2500).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-301 subsections 6B and 9 separate living area for relatives)"
+      ],
+      "status_note": "Batch 25 draft, pending an independent review. Open: the separate living area for relatives is written only in R-A (27-301) and reaches R-1, R-2, R-3, B-P, C, L-C and I by reference (I through C); whether it counts as a second family for the 'per family' lot areas or a dwelling unit for parking; whether a new detached building may hold it; the Main Street Commercial map code; Chapter 17 (PRD) not read."
+    },
+    {
+      "geoid": "4207755576",
+      "geoid_aliases": [],
+      "name": "North Whitehall township",
+      "county": "Lehigh",
+      "type": "township",
+      "population": 15655,
+      "population_with_aliases": 15655,
+      "housing_units": 6137,
+      "pop_rank": 152,
+      "file": "pa_lehigh_north_whitehall",
+      "batch": 25,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/35645899",
+      "plain_fetch": false,
+      "code_current_through": "2026-08-10",
+      "code_note": "Zoning: Chapter 440 Zoning (Ord. No. 2025-3, adopted 12-1-2025, repealing the 2002 ordinance). ADU text: 'Accessory family dwelling unit' (440-37 use H5, 440-40H(5)): by right in CR, AR and V, not permitted elsewhere, for family members or a family caregiver, part of the house or in an existing accessory structure such as a garage, at most 25% of the house, one more parking space. Two-family detached dwellings by right in CR, AR, AR-I, AR-L, SR and V. No district height for houses found in the web text. Read in the browser on eCode360 (NO3503).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 440-40H(5) accessory family dwelling unit)"
+      ],
+      "status_note": "Batch 25 draft, pending an independent review. Open: no district height for houses found in the web text (440-76A refers to one); family member and family caregiver are not defined; the use table writes AR-I as A-I; which 440-38 row applies to two-family detached dwellings outside SR."
+    },
+    {
+      "geoid": "4200355016",
+      "geoid_aliases": [],
+      "name": "North Fayette township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 16167,
+      "population_with_aliases": 16167,
+      "housing_units": 7044,
+      "pop_rank": 144,
+      "file": "pa_allegheny_north_fayette",
+      "batch": 25,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30832639",
+      "plain_fetch": false,
+      "code_current_through": "2024-10-08",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 477, 5-11-2021, as amended). ADU text: 'Accessory dwelling unit' (27-305 Table 2, 27-604): conditional use in R-1, R-2 and MU, lot 20,000 sq ft, owner-occupied, one per lot, at most 25% of the house, 8 ft from the house, an apartment above a detached garage, a manufactured home or a tiny house. Conversion dwellings by conditional use (27-643(3)), duplexes by right in R-1 and MU. New Laws: Ord. No. 535 and 551 (zoning) not codified. Ord. No. 551 restates the accessory use table. Read in the browser on eCode360 (NO3691).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-604 accessory dwelling unit)"
+      ],
+      "status_note": "Batch 25 draft, pending an independent review. Open: Ord. No. 551 (8-18-2026) restates the accessory use table including the ADU row and is not yet codified (PDF not opened), Ord. No. 535 content not seen; 27-202 allows attached units while 27-604(7) needs 8 ft from the house; ADU rated P in B-2 and I-1 where no dwelling is listed; accessory 20 ft cap against principal bulk for a unit over a garage."
     }
   ]
 }
