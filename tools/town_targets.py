@@ -1286,6 +1286,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2024-04-10",
         "note": "Zoning: Chapter 200 Zoning (Ord. No. 314, 5-14-2008, as amended). No ADU text. Residential districts permit 'any one' listed use 'and no other', among them one single-family detached dwelling, and accessory uses only as listed in 200-47. Two-family detached dwellings by right in R4 (8,000 sq ft per unit) and VR, one dwelling unit or apartment in a building with a commercial use in VC and GC, similar uses by conditional use in VC and GC, and uses not permitted elsewhere by conditional use in LI. Table VR-1 and Table 200-21 are PDF attachments. New Laws: Ord. No. 366, 374 and 375 of 2026 (smoke shops, data centers) not codified. Read in the browser on eCode360 (SK1672).",
     },
+    "4209121600": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/8114101",
+        "plain_fetch": False,
+        "current_through": "2021-06-29",
+        "note": "Zoning: Chapter 205 Zoning (Ord. No. 96 of 1973, readopted 2005 and 2008, as amended). ADU text: 'Relative quarters' (205-16B(4)), a use accessory to a dwelling, in the existing house or attached to it with a connecting doorway, not in a separate freestanding building, occupied only by the property owner and immediate family, not leased, deed restriction, one-year renewable Zoning Officer permit. Listed through 205-16 in AR, BR, BR-1, MR, CR, RP and RO. Barred in the ECII residential section (205-63.12A). An accessory building may not be a dwelling unit (205-5). Two-family detached dwellings by right in RO. The eCode360 search did not find 205-16B(4). CR lot dimensions are in a PDF attachment (205a). New Laws: no zoning ordinance listed. Read in the browser on eCode360 (EA1154).",
+    },
+    "4200372400": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/33554885",
+        "plain_fetch": False,
+        "current_through": "2026-08-10",
+        "note": "Zoning: Chapter 137 Zoning (Ord. No. 556, 9-16-1996, as amended). No ADU text. Unlisted uses not permitted in R-1 to R-5, RP, BP and CR (137-13A), comparable uses by special exception in C-1 to C-4, I-1 and I-2 (137-131A(12)). Single-family and two-family dwellings are the only principal structure on a lot (137-13C). No district lists a two-family dwelling, except inside an R-3 planned residential development of 10 acres (137-121B(2)). Apartment above office or retail by special exception in C-1 and C-3 (137-131A(2)). Use Tables A and B are PDF attachments, but each district article lists its uses in text. New Laws: none. Read in the browser on eCode360 (SO0738).",
+    },
+    "4213373168": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/14755449",
+        "plain_fetch": False,
+        "current_through": "2025-12-10",
+        "note": "Zoning: Chapter 310 Zoning (Ord. No. 2009-09, 11-11-2009, as amended). No ADU text. Multifamily or two-family conversion of an existing house by special exception in R-1 and R-2 (8,000 sq ft of lot per unit, public sewer and water, no change to the original style, 310-66) and by right in A-O. Two-family dwelling by right in R-2. Single-family residence with another permitted use in A-O and C, caretaker or watchman dwelling in IP. Unlisted uses by special exception where similar uses are allowed (310-5B). Lot coverage is impervious cover (310-3C). New Laws: none. Read in the browser on eCode360 (SP2461).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1313,6 +1334,7 @@ FIXED_BATCH.update({g: 26 for g in ("4201900300", "4200365352", "4205581240")})
 FIXED_BATCH.update({g: 27 for g in ("4200360272", "4204554224", "4212511800")})
 FIXED_BATCH.update({g: 28 for g in ("4201781144", "4202982544", "4209171016")})
 FIXED_BATCH.update({g: 29 for g in ("4212931200", "4204553104", "4201761616")})
+FIXED_BATCH.update({g: 30 for g in ("4209121600", "4200372400", "4213373168")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1431,6 +1453,13 @@ EXTRAS = {
     "4212931200": "batch 29 by population. Code Chapter 265 has no ADU text",
     "4204553104": "batch 29 by population. Code Chapter 300 has no ADU text (300-130 bars living quarters in accessory buildings)",
     "4201761616": "Code 27-304.19 B11 accessory dwelling for relatives or caretakers",
+    # Batch 30 (2026-11-15): the next towns by population without a rule file. Lower Moreland (Montgomery) was skipped
+    # (eCode360 holds only Article I of the zoning chapter, the full ordinance is a set of files on the township
+    # website), Richland (Bucks) (area and bulk tables only in PDF attachments) and Ephrata borough (Lancaster) (use and
+    # dimensional tables only in PDF attachments, and Ord. No. 1603 of 7-13-2026 amending zoning not yet codified).
+    "4209121600": "Code 205-16B(4) relative quarters, family only",
+    "4200372400": "batch 30 by population. Code Chapter 137 has no ADU text",
+    "4213373168": "batch 30 by population. Code Chapter 310 has no ADU text (two-family conversion by special exception, 310-66)",
 }
 
 if __name__ == "__main__":

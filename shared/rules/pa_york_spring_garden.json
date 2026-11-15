@@ -1,0 +1,683 @@
+{
+  "provenance": {
+    "jurisdiction": "Spring Garden township",
+    "instrument": "Spring Garden Township Zoning Ordinance (Chapter 310 Zoning, Ord. No. 2009-09 of 11-11-2009, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 SP2461, Township of Spring Garden, York County. Chapter 310 was adopted 11-11-2009 by Ord. No. 2009-09. The district dimension tables were last amended by Ord. No. 2019-5 (11-13-2019), the IP zone by Ord. No. 2023-01 and 2023-04, accessory rules by Ord. No. 2016-02 and 2023-07. New Laws: 'There are currently no known new laws for this Code.' The Zoning Map was readopted 11-9-2011 (Ord. No. 2011-17)",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/SP2461",
+      "https://ecode360.com/14755449",
+      "https://ecode360.com/SP2461/laws",
+      "https://ecode360.com/SP2461/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20relative%20OR%20servants&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/SP2461?guid=14755450",
+      "https://ecode360.com/print/SP2461?guid=14755713",
+      "https://ecode360.com/print/SP2461?guid=14755947",
+      "https://ecode360.com/print/SP2461?guid=14756282",
+      "https://ecode360.com/print/SP2461?guid=14756341",
+      "https://ecode360.com/print/SP2461?guid=14756580"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213373168",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14755449",
+    "code_current_through": "2025-12-10",
+    "code_current_through_note": "eCode360: 'Includes legislation through 12-10-2025.' New Laws: none",
+    "checks": [
+      "The zoning chapter has no accessory dwelling unit, in-law suite or similar use",
+      "'The uses shown as permitted in each zone are the only uses permitted in that zone, and all other uses are subject to § 310-5B' (310-5A)",
+      "'No more than one principal use shall be permitted on a lot, unless the provisions of the relevant zoning district permit a combination of permitted uses or a multiple-use building' (310-5E)",
+      "A second unit inside an existing house is a two-family conversion: by special exception in R-1 and R-2 with 8,000 sq ft of lot per unit, public sewer and water and no change to the house's original style (310-66), by right in A-O",
+      "R-2 permits a two-family dwelling by right on 7,500 sq ft with public water and sewer (310-7B(3), D)",
+      "A detached accessory structure is 'considered a part of the principal building' for every requirement except its 5 ft setback from the property lines (310-12B)",
+      "Lot coverage means impervious cover, buildings and paving together (310-3C)",
+      "Each dwelling unit needs two off-street parking spaces (310-15B) and at least 600 sq ft of habitable floor area (310-22A)",
+      "No section read bars a use variance. Variances need the findings of 310-41C and lapse after six months without a building permit or use certificate"
+    ],
+    "notes": "Zoning office: Spring Garden Township. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and servants. Hits were the conversion and two-family definitions, 310-66, 310-29, 310-22, the R-1 and R-2 use lists, the dormitory definition and other chapters. Read: Article I (310-1 to 310-3, definitions to 'Tavern', the rest not read), Article II (310-4 to 310-11, every zone), Article III (310-12 to 310-19 in full, 310-19N onward and 310-20 to 310-26 not read, 310-22 seen in the search excerpt), Article IV (310-27 to 310-35), Article V (310-36 to 310-42) and 310-66. Not read: the rest of Article VI, Articles VII and VIII and Chapter 151 (floodplain). The zones are R-1, R-2, A-O, C, IP and OS. No overlay zone is listed in 310-4. A lot of record not meeting the lot area or width may take any permitted use if the setbacks are met (310-34)."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 310",
+      "url": "https://ecode360.com/SP2461/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20relative%20OR%20servants&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Searched the code for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and servants, and read every zone's use list. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "310-5A, 310-6, 310-7",
+      "url": "https://ecode360.com/print/SP2461?guid=14755713",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No zone lists a second dwelling unit on a house lot. A unit inside an existing house is a two-family conversion, a listed use in R-1 and R-2 (special exception) and A-O (by right)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "310-5A, 310-41",
+      "url": "https://ecode360.com/print/SP2461?guid=14756341",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use. A unit inside an existing house is a two-family conversion instead (see the alternatives). The Zoning Hearing Board hears variances on the findings of 310-41C. No section read bars a use variance"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "310-41",
+      "url": "https://ecode360.com/print/SP2461?guid=14756341",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A variance lapses after six months without a building permit or use certificate (310-41C(5))"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "310-5B",
+      "url": "https://ecode360.com/print/SP2461?guid=14755713",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "Any use not specifically allowed elsewhere in the chapter. A second unit inside a house is the listed two-family conversion, not an unlisted use, and R-2 lists a two-family dwelling. Whether a detached second unit is similar to a listed use is not settled"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "310-5B",
+      "url": "https://ecode360.com/print/SP2461?guid=14755713",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "quote": "in the zone or zones where, and to the extent that, similar uses are permitted or allowed by special exception"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family conversion of an existing house (R-1, R-2)",
+          "path": "special_exception",
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "conditions": "'A multifamily or two-family dwelling constructed by converting an existing building into apartments for more than one family without substantially altering the exterior of the building' (310-3C). In R-1 and R-2: at least 8,000 sq ft of lot area per dwelling unit, the character of the existing house kept, 'No exterior modifications shall be permitted which alter the original style of the dwelling, its doors, windows or other details', and public sewer and public water (310-66). Each unit at least 600 sq ft of habitable floor area (310-22A). Two off-street spaces per dwelling unit (310-15B). The district's lot, yard and coverage figures still apply",
+          "min_lot_sqft": 16000,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer must be used",
+              "section": "310-66C"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water must be used",
+              "section": "310-66C"
+            },
+            {
+              "test": "house_exists",
+              "condition": "An existing building is converted",
+              "section": "310-3C, 310-66B"
+            }
+          ],
+          "section": "310-6C(5), 310-7C(3), 310-66, 310-3C, 310-22A, 310-15B",
+          "url": "https://ecode360.com/print/SP2461?guid=14756580",
+          "confidence": "verified",
+          "note": "8,000 sq ft per unit gives 16,000 sq ft for two units. The Zoning Hearing Board hears it on the general standards of 310-42F and refers it to the Planning Commission. A special exception lapses after six months without a building permit or use certificate (310-42H)"
+        },
+        {
+          "name": "Two-family conversion of an existing building (A-O)",
+          "path": "by_right",
+          "districts": [
+            "A-O"
+          ],
+          "conditions": "'Multifamily or two-family conversion' is a use by right in A-O. The definition requires converting an existing building 'without substantially altering the exterior' (310-3C). Lot 10,000 sq ft with public water and sewer, 15,000 sq ft with one of them. At most 10 dwelling units per gross acre. Two off-street spaces per unit (310-15B). Each unit at least 600 sq ft of habitable floor area (310-22A)",
+          "min_lot_sqft": 10000,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing building is converted",
+              "section": "310-3C"
+            }
+          ],
+          "section": "310-8B(7), 310-8D, E, 310-3C",
+          "url": "https://ecode360.com/print/SP2461?guid=14755713",
+          "confidence": "secondary",
+          "note": "310-66 sets its standards 'In an R-1 or R-2 Zone', so whether its 8,000 sq ft per unit and the public sewer and water rule also reach A-O is not settled. Ask the zoning officer"
+        },
+        {
+          "name": "Two-family dwelling (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "'Two-family dwelling' is a use by right in R-2: 'A building designed and occupied exclusively as a residence for two families' (310-3C). Lot 7,500 sq ft and 60 ft wide with public water and sewer, 10,000 sq ft and 80 ft with one of them. Front 20 ft, side 5 ft each, rear 20 ft, lot coverage (impervious) 60% or 45%. Two off-street spaces per dwelling unit (310-15B). Each unit at least 600 sq ft of habitable floor area (310-22A)",
+          "min_lot_sqft": 7500,
+          "min_lot_by_utility": [
+            {
+              "when": "with public water and public sewer",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 7500
+            },
+            {
+              "when": "with public sewer only",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 10000
+            },
+            {
+              "when": "with public water only",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 10000
+            }
+          ],
+          "section": "310-7B(3), 310-7D, 310-3C, 310-15B, 310-22A",
+          "url": "https://ecode360.com/print/SP2461?guid=14755713",
+          "confidence": "verified",
+          "note": "A building type, not an ADU. The R-2 table sets no lot area per unit and gives no figures for a lot with neither public service. Each unit of a two-family dwelling may sit on its own lot of half the district lot area and width, with one side yard of 10 ft (310-29)"
+        },
+        {
+          "name": "Single-family residence with another permitted use (A-O, C)",
+          "path": "by_right",
+          "districts": [
+            "A-O",
+            "C"
+          ],
+          "conditions": "'Single-family residence in conjunction with another permitted use', such as an office, personal service business or shop. Lot 10,000 sq ft with public water and sewer. Two off-street spaces per dwelling unit plus the parking for the other use (310-15B)",
+          "min_lot_sqft": 10000,
+          "section": "310-8B(14), 310-9B(16), 310-8D, 310-9D, 310-15B",
+          "url": "https://ecode360.com/print/SP2461?guid=14755713",
+          "confidence": "verified",
+          "note": "The second use is a business, not a second home. No more than one principal use on a lot unless the district permits a combination of uses (310-5E)"
+        },
+        {
+          "name": "Caretaker or watchman dwelling (IP)",
+          "path": "by_right",
+          "districts": [
+            "IP"
+          ],
+          "conditions": "'Caretaker or watchman dwelling' is a use by right in the Industrial Park zone. One off-street space per unit (310-15B). Lot 20,000 sq ft with public water and sewer, 30,000 with one of them. 100 ft setbacks next to a residential district or use",
+          "section": "310-10B(1), 310-10D, 310-15B",
+          "url": "https://ecode360.com/print/SP2461?guid=14755713",
+          "confidence": "verified",
+          "note": "For a caretaker or watchman of an industrial use, not a home's second unit"
+        }
+      ],
+      "section": "310-6C(5), 310-7B(3), C(3), 310-8B(7), (14), 310-9B(16), 310-10B(1), 310-66",
+      "url": "https://ecode360.com/print/SP2461?guid=14755713",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 310",
+      "url": "https://ecode360.com/SP2461/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20relative%20OR%20servants&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "R-2",
+        "A-O",
+        "C",
+        "IP",
+        "OS"
+      ],
+      "section": "310-6 to 310-11",
+      "url": "https://ecode360.com/print/SP2461?guid=14755713",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "R-1 permits single-family dwellings and group homes, with a two-family conversion by special exception. R-2 adds two-family dwellings by right. A-O permits multifamily and townhouse dwellings, conversions and a single-family residence with another use. C permits a single-family residence with another use. IP permits a caretaker or watchman dwelling. OS permits agriculture, farm buildings and a wildlife preserve"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "310-5A",
+      "url": "https://ecode360.com/print/SP2461?guid=14755713",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU use. A unit inside an existing house is possible only as a two-family conversion"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 5,
+      "section": "310-12B(1)",
+      "url": "https://ecode360.com/print/SP2461?guid=14755947",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'New permanent roofed accessory structures ... standing apart from the principal structure, are permitted in the general buildable area and inside the rear yards as long as they are at least five feet from any property line'"
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "310-12B(1)",
+      "url": "https://ecode360.com/print/SP2461?guid=14755947",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 25,
+      "section": "310-6E, 310-7E, 310-8F, 310-9E",
+      "url": "https://ecode360.com/print/SP2461?guid=14755713",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Two stories, but not over 25 ft"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "310-15B",
+      "url": "https://ecode360.com/print/SP2461?guid=14755947",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU use. 'Dwelling unit: 2 per dwelling unit'"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "310-6D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public water and public sewer. Width 80 ft"
+      },
+      "max_impervious_coverage": {
+        "value": 0.45,
+        "section": "310-6D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot coverage is 'That portion of a lot covered by impervious surfaces, such as, but not limited to, buildings, parking areas, driveways, etc.' (310-3C)"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "310-6D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "50 ft along an arterial or collector street (310-27A). A corner lot has two front yards (310-27C)"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "310-6D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "310-6D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "310-6E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "2 1/2 stories, but not over 30 ft. Up to 3 1/2 stories and 40 ft if each yard grows 1 ft for each foot over 30 ft. Measured from the average finished grade at the front to the highest point of a flat roof, or the average height between plate and ridge of a gable, hip or gambrel roof (310-3C 'Building height')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "310-6E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "310-6E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'The height limit for accessory buildings shall be two stories, but not over 25 feet'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer but no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "max_impervious_coverage": 0.35,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 25,
+            "section": "310-6D"
+          },
+          {
+            "when": "Public water but no public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 15000,
+            "max_impervious_coverage": 0.35,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 25,
+            "section": "310-6D"
+          },
+          {
+            "when": "No public water and no public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "max_impervious_coverage": 0.25,
+            "setback_front_ft": 25,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 25,
+            "section": "310-6D"
+          }
+        ],
+        "section": "310-6D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Figures with only one of public water and public sewer, or with neither. The row above holds the figures with both"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "310-7D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public water and public sewer. Width 60 ft. The table gives no figures for a lot with neither service"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "310-7D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot coverage is 'That portion of a lot covered by impervious surfaces, such as, but not limited to, buildings, parking areas, driveways, etc.' (310-3C)"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "310-7D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "50 ft along an arterial or collector street (310-27A). A corner lot has two front yards (310-27C)"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "310-7D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "310-7D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "310-7E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "2 1/2 stories, but not over 30 ft. Up to 3 1/2 stories and 40 ft if each yard grows 1 ft for each foot over 30 ft. Measured from the average finished grade at the front to the highest point of a flat roof, or the average height between plate and ridge of a gable, hip or gambrel roof (310-3C 'Building height')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "310-7E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "310-7E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'The height limit for accessory buildings shall be two stories, but not over 25 feet'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer but no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 10000,
+            "max_impervious_coverage": 0.45,
+            "setback_front_ft": 20,
+            "setback_side_ft": 5,
+            "setback_rear_ft": 20,
+            "section": "310-7D"
+          },
+          {
+            "when": "Public water but no public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 10000,
+            "max_impervious_coverage": 0.45,
+            "setback_front_ft": 20,
+            "setback_side_ft": 5,
+            "setback_rear_ft": 20,
+            "section": "310-7D"
+          }
+        ],
+        "section": "310-7D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Figures with only one of public water and public sewer, or with neither. The row above holds the figures with both"
+      }
+    },
+    "A-O": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "310-8D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public water and public sewer. Width 80 ft. At most 10 dwelling units per gross acre (310-8E)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.7,
+        "section": "310-8D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot coverage is 'That portion of a lot covered by impervious surfaces, such as, but not limited to, buildings, parking areas, driveways, etc.' (310-3C)"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "310-8D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "50 ft along an arterial or collector street (310-27A). A corner lot has two front yards (310-27C)"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "310-8D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "310-8D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "310-8F",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "2 1/2 stories, but not over 30 ft. Up to 3 1/2 stories and 40 ft if each yard grows 1 ft for each foot over 30 ft. Measured from the average finished grade at the front to the highest point of a flat roof, or the average height between plate and ridge of a gable, hip or gambrel roof (310-3C 'Building height')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "310-8F",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "310-8F",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'The height limit for accessory buildings shall be two stories, but not over 25 feet'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer but no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "max_impervious_coverage": 0.55,
+            "setback_front_ft": 30,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 30,
+            "section": "310-8D"
+          },
+          {
+            "when": "Public water but no public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 15000,
+            "max_impervious_coverage": 0.55,
+            "setback_front_ft": 30,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 30,
+            "section": "310-8D"
+          }
+        ],
+        "section": "310-8D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Figures with only one of public water and public sewer, or with neither. The row above holds the figures with both"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4356,
+        "section": "310-8E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "'The maximum density (number of dwelling units per gross acre of land) permitted in this zone is 10 dwelling units per acre', so 4,356 sq ft of gross land per unit"
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "310-9D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "With public water and public sewer. Width 80 ft"
+      },
+      "max_impervious_coverage": {
+        "value": 0.75,
+        "section": "310-9D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot coverage is 'That portion of a lot covered by impervious surfaces, such as, but not limited to, buildings, parking areas, driveways, etc.' (310-3C)"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "310-9D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "50 ft along an arterial or collector street (310-27A). A corner lot has two front yards (310-27C)"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "310-9D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "310-9D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "310-9E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "2 1/2 stories, but not over 30 ft. Up to 3 1/2 stories and 40 ft if each yard grows 1 ft for each foot over 30 ft. Measured from the average finished grade at the front to the highest point of a flat roof, or the average height between plate and ridge of a gable, hip or gambrel roof (310-3C 'Building height')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "310-9E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "310-9E",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'The height limit for accessory buildings shall be two stories, but not over 25 feet'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer but no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "max_impervious_coverage": 0.65,
+            "setback_front_ft": 30,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 30,
+            "section": "310-9D"
+          },
+          {
+            "when": "Public water but no public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 15000,
+            "max_impervious_coverage": 0.65,
+            "setback_front_ft": 30,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 30,
+            "section": "310-9D"
+          }
+        ],
+        "section": "310-9D",
+        "url": "https://ecode360.com/print/SP2461?guid=14755713",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Figures with only one of public water and public sewer, or with neither. The row above holds the figures with both"
+      }
+    }
+  }
+}

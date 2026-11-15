@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 140,
-      "population": 5782836,
-      "share_of_pa": 0.4447
+      "towns_beyond_the_two_cities": 143,
+      "population": 5824267,
+      "share_of_pa": 0.4479
     }
   ],
   "towns": [
@@ -3458,6 +3458,78 @@
         "named as a town with an ADU ordinance (Code 27-304.19 B11 accessory dwelling for relatives or caretakers)"
       ],
       "status_note": "Use B11 accessory dwelling by right in RP, RO, R-1, VR, R-2, R-3, R-4/CA-1 and VC for relatives of the owner or caretakers and employees (27-304.19). Independently reviewed and fixed. Open points: (1) which lot the 1.5 times rule in 27-304.19A uses, the district's B1 lot or its larger lot for all other permitted uses (RP 10 acres, R-1, R-2, R-3 two acres), and whether it reaches a unit over a new garage or in an existing building. Both are disputed gates. (2) Ord. No. 2026-02 (6-10-2026, data centers, Chapter 27) is a PDF only and its effect on B11 is unknown. (3) cluster lots in R-1, R-2 and R-3, and in VR and VC whether the district tables supersede the 1.5 times rule (27-703, 27-1203)."
+    },
+    {
+      "geoid": "4209121600",
+      "geoid_aliases": [],
+      "name": "East Norriton township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 14021,
+      "population_with_aliases": 14021,
+      "housing_units": 6219,
+      "pop_rank": 176,
+      "file": "pa_montgomery_east_norriton",
+      "batch": 30,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8114101",
+      "plain_fetch": false,
+      "code_current_through": "2021-06-29",
+      "code_note": "Zoning: Chapter 205 Zoning (Ord. No. 96 of 1973, readopted 2005 and 2008, as amended). ADU text: 'Relative quarters' (205-16B(4)), a use accessory to a dwelling, in the existing house or attached to it with a connecting doorway, not in a separate freestanding building, occupied only by the property owner and immediate family, not leased, deed restriction, one-year renewable Zoning Officer permit. Listed through 205-16 in AR, BR, BR-1, MR, CR, RP and RO. Barred in the ECII residential section (205-63.12A). An accessory building may not be a dwelling unit (205-5). Two-family detached dwellings by right in RO. The eCode360 search did not find 205-16B(4). CR lot dimensions are in a PDF attachment (205a). New Laws: no zoning ordinance listed. Read in the browser on eCode360 (EA1154).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 205-16B(4) relative quarters, family only)"
+      ],
+      "status_note": "Open points: whether relative quarters (205-16B(4)) reach C-1 (house under BR figures, 205-66.2A(9)), RR (RP uses by special exception, 205-152C(2)), GA, HR and HR-1 (apartments only), and twins or townhouses in CR. Parking for the quarters (205-102A: 2 per dwelling unit) may be 2 or 4 in all. 'Immediate family' is not defined. CR lot dimensions (PDF attachment 205a) not read. eCode360 current only to 06-29-2021, but New Laws lists no zoning ordinance."
+    },
+    {
+      "geoid": "4200372400",
+      "geoid_aliases": [],
+      "name": "South Park township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 13727,
+      "population_with_aliases": 13727,
+      "housing_units": 6014,
+      "pop_rank": 181,
+      "file": "pa_allegheny_south_park",
+      "batch": 30,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/33554885",
+      "plain_fetch": false,
+      "code_current_through": "2026-08-10",
+      "code_note": "Zoning: Chapter 137 Zoning (Ord. No. 556, 9-16-1996, as amended). No ADU text. Unlisted uses not permitted in R-1 to R-5, RP, BP and CR (137-13A), comparable uses by special exception in C-1 to C-4, I-1 and I-2 (137-131A(12)). Single-family and two-family dwellings are the only principal structure on a lot (137-13C). No district lists a two-family dwelling, except inside an R-3 planned residential development of 10 acres (137-121B(2)). Apartment above office or retail by special exception in C-1 and C-3 (137-131A(2)). Use Tables A and B are PDF attachments, but each district article lists its uses in text. New Laws: none. Read in the browser on eCode360 (SO0738).",
+      "why": [
+        "added as batch 30 by population. Code Chapter 137 has no ADU text"
+      ],
+      "status_note": "Open points: whether a detached second dwelling is a second principal structure barred by 137-13C. CR and BP list comparable uses by special exception though 137-13A bars unlisted uses there. Use Tables A and B (PDF) not opened. 137-131A beyond (14), definitions after N, Article XXVII TOOD uses not read."
+    },
+    {
+      "geoid": "4213373168",
+      "geoid_aliases": [],
+      "name": "Spring Garden township",
+      "county": "York",
+      "type": "township",
+      "population": 13683,
+      "population_with_aliases": 13683,
+      "housing_units": 4853,
+      "pop_rank": 182,
+      "file": "pa_york_spring_garden",
+      "batch": 30,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/14755449",
+      "plain_fetch": false,
+      "code_current_through": "2025-12-10",
+      "code_note": "Zoning: Chapter 310 Zoning (Ord. No. 2009-09, 11-11-2009, as amended). No ADU text. Multifamily or two-family conversion of an existing house by special exception in R-1 and R-2 (8,000 sq ft of lot per unit, public sewer and water, no change to the original style, 310-66) and by right in A-O. Two-family dwelling by right in R-2. Single-family residence with another permitted use in A-O and C, caretaker or watchman dwelling in IP. Unlisted uses by special exception where similar uses are allowed (310-5B). Lot coverage is impervious cover (310-3C). New Laws: none. Read in the browser on eCode360 (SP2461).",
+      "why": [
+        "added as batch 30 by population. Code Chapter 310 has no ADU text (two-family conversion by special exception, 310-66)"
+      ],
+      "status_note": "Open points: whether 310-66 (8,000 sq ft per unit, public sewer and water) reaches the by-right two-family conversion in A-O. Whether a detached second dwelling counts as a second principal use (310-5E) or as an unlisted use similar to a two-family dwelling (310-5B). R-2 table gives no figures without public water or sewer. Article VI apart from 310-66, Articles VII and VIII not read."
     }
   ]
 }
