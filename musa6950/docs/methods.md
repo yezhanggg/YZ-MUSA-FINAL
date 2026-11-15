@@ -67,7 +67,8 @@ Scores reported: IoU per class, mean IoU (mIoU), pixel accuracy, mIoU by urban, 
 - Source per city, set in `pipeline/build_lots.py`:
   - Pittsburgh: the zero-shot model `r34_c5_s0` (`cover_model_r34_c5_s0.parquet`).
   - Philadelphia: the 2018 city raster. Lots built in 2018 or later get a flag, since the raster may show the old use.
-- `pipeline/vision/cover_lookup.py` returns the cover inside any polygon. The lot builder uses it to report the tree, open ground and paving inside the suggested spot.
+  - Allentown and the three county places (Nov 14): the same model `r34_c5_s0` (`processed/<place>/cover.parquet`). Only Centre County lies in a test county of the model. Each record carries a note on how far its cover can be trusted.
+- `pipeline/vision/cover_lookup.py` returns the cover inside any polygon. The lot builder uses it to report the tree, open ground and paving inside the suggested spot, so far in the two cities only.
 
 ## 7. Structure detector
 
@@ -87,7 +88,7 @@ The fit test is a vector geometry test. It no longer uses a raster box on the U-
 4. **Largest rectangle.** The largest rectangle inside the buildable ground, at the lot's own angle and offsets of 8 and 45 degrees. Short side at least 12 ft, long side at most 3 times the short side. The tool looks behind the house first and uses the front yard only when nothing fits behind.
 5. **Checks.** Room in the yard, size cap, minimum size, share of the house, coverage and height. The first failed check is the limiting reason (no room, yard space, size cap and others). A second detached unit is tested where the rules allow two.
 6. **Other types.** Internal units, attached units and garage conversions are tested from the house and garage outlines. Attached units use the internal test as a stand-in.
-7. **Context.** Land cover adds tree canopy, open ground, hard surface, impervious share and the trees inside the suggested spot. Slope, landslide, flood and historic flags come from city layers. None of these change the fit answer.
+7. **Context.** Land cover adds tree canopy, open ground, hard surface, impervious share and, in the two cities, the trees inside the suggested spot. Slope, landslide, flood and historic flags come from city layers. None of these change the fit answer.
 
 The same test runs in the browser for a unit the user draws (`app/src/lib/lot/verdict.ts`), on the saved buildable polygon.
 

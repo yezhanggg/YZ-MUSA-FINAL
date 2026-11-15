@@ -127,6 +127,7 @@ The lot record has a `cover` block: building, tree, open ground and hard surface
 - To read another file first, add the place to `COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`. Write its known accuracy in `COVER_NOTES`.
 - Check the model against a raster with `raster_cover compare` before you trust it. In Philadelphia the model failed that check (see [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md)).
 - `build_lots cover --place <town>` refreshes the cover in built tracts without running the fit again.
+- The tree and hard surface inside the suggested spot need a cover map that `pipeline/vision/cover_lookup.py` can read for the place. Allentown and the three county places have none yet, so their `spot_cover` is empty and the assistant says so.
 
 Without a cover file the records keep an empty `cover` block.
 

@@ -153,24 +153,24 @@ No rule file disagrees with the DCED zoning record.
 
 ## Coverage
 
-Build of 2026-11-14. People: Census Vintage 2025 estimates (13.06 million). Live counts: `counts` in the meta file.
+Build of 2026-11-14, as committed with town rules batch 21 (commit 929fed0). People: Census Vintage 2025 estimates (13.06 million). Live counts: `counts` in the meta file.
 
 | Tier | Places | Share of people |
 |---|---|---|
-| verified | 64 | 30.4% |
-| drafted | 32 | 7.8% |
-| reported | 563 (527 no zoning, 36 from inventories) | 6.8% |
+| verified | 77 | 32.3% |
+| drafted | 42 | 9.3% |
+| reported | 562 (527 no zoning, 35 from inventories) | 6.6% |
 | text_search | 53 | 0.9% |
-| baseline | 1,860 | 54.2% |
+| baseline | 1,838 | 51.0% |
 
 | Status | Places | Share of people |
 |---|---|---|
-| by_right | 15 | 5.3% |
+| by_right | 14 | 5.1% |
 | no_zoning | 527 | 5.0% |
-| limited | 80 | 25.1% |
-| not_addressed | 34 | 8.9% |
+| limited | 94 | 27.1% |
+| not_addressed | 43 | 10.2% |
 | prohibited | 3 | 0.8% |
-| unknown | 1,913 | 55.1% |
+| unknown | 1,891 | 51.8% |
 
 | zoning_authority | Places | Share of people |
 |---|---|---|
@@ -179,7 +179,7 @@ Build of 2026-11-14. People: Census Vintage 2025 estimates (13.06 million). Live
 | unknown | 267 | 1.9% |
 | county | 138 | 1.7% |
 
-A status is known for 45% of residents. The tier B corpus holds text for 66 places (has_text_search). The tier B worker
+A status is known for 48% of residents. The tier B corpus holds text for 66 places (has_text_search). The tier B worker
 is still adding places, and the town rule authors are still writing files. Rerun the builder after either changes.
 
 ## File size

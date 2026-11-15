@@ -47,9 +47,9 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 - Say plainly: every pretrained single U-Net lands near 0.70.
 - The pretrained encoder is the one change that matters (0.683 to about 0.70).
 
-**Nov 12 to 14 runs (as of Nov 14 morning. One more training round ends that night.)**
+**Nov 12 to 14 runs (final. Training ended Nov 14 at 17:55.)**
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "06:15 Nov 14 interim" and "09:25 Nov 14" -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "06:15 Nov 14 interim", "09:25 Nov 14", "14:30 Nov 14" and "18:00 Nov 14" -->
 
 | Run | What changes | Test mIoU | Building IoU |
 |---|---|---|---|
@@ -60,7 +60,8 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 - Different model types helped where more seeds did not: +0.0054 test over the ResNet-only ensemble.
 - Building IoU target 0.65 met (0.6546). mIoU target 0.72 missed (0.7089).
-- Pittsburgh: the ensemble scored 0.7133 against the 0.7136 needed to replace the lot model. Missed by 0.0003, so the lots keep `r34_c5_s0`.
+- Pittsburgh: the ensemble scored 0.7133 against the 0.7136 needed to replace the lot model. The closest pick scored 0.7135, a miss of 0.0001, so the lots keep `r34_c5_s0`.
+- The last runs used 512 px crops. They helped a little (best single model on validation) but did not change the best pick.
 - Figures: `03_training_curve.png`, `03_unet_confusion.png`, `03_example_prediction.png`.
 
 ### 4. What the error analysis showed (1.5 min)
@@ -100,18 +101,18 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 <!-- source: pipeline/build_lots.py COVER_FILES_BY_PLACE, ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, ~/musa-drive/processed/philadelphia/cover_compare.json -->
 
 - The fit test does not use the land cover. It is a vector geometry test on the lot outline, the buildings and the streets, with setbacks from the rule files. It finds the largest unit that fits and where.
-- Land cover adds context to each lot: tree canopy, open ground, hard surface, impervious share, and the trees inside the suggested spot.
-- Sources: the Pittsburgh lots use the original 5-class model. The Philadelphia lots use the 2018 raster. Allentown and the three county places have no land cover block.
+- Land cover adds context to each lot: tree canopy, open ground, hard surface and impervious share. In the two cities it also gives the trees inside the suggested spot.
+- Sources: the Pittsburgh lots use the original 5-class model. The Philadelphia lots use the 2018 raster. Allentown and the three county places use the same 5-class model (added Nov 14). Only Centre County lies in a test county (about 0.70). Allentown, Chester and Montgomery are not validated, and each record says so.
 - Per-lot check against the city rasters (tree share):
   - Pittsburgh: off by 8.41 points on average, but only 128 lots could be checked.
   - Philadelphia: the model is off by 6.71 points on 430,161 lots, which is why it is not used.
-- The detector (YOLO, outbuildings), as of Nov 14 morning: garage AP50 0.469 (target 0.50). The first run scored 0.2584. Two changes did it: 80 epochs at 640 px (0.4062), then setting garage, shed or other by the same size and distance rule that made the labels (0.469, with Pittsburgh 0.504 and Philadelphia 0.409). That score is against first-pass labels from footprints, not hand-checked labels, so it is not a true accuracy. Detections are not in the lot records. Garages come from building footprints.
+- The detector (YOLO, outbuildings), final: garage AP50 0.469 (target 0.50). The first run scored 0.2584. Two changes did it: 80 epochs at 640 px (0.4062), then setting garage, shed or other by the same size and distance rule that made the labels (0.469, with Pittsburgh 0.504 and Philadelphia 0.409). That score is against first-pass labels from footprints, not hand-checked labels, so it is not a true accuracy. Detections are not in the lot records. Garages come from building footprints.
   <!-- source: ~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json, ~/musa-drive/ops/logs/yolo.md FINAL table -->
 - Figures: `10_detector_pr_curve.png`, `10_detector_confusion.png`, `09_pittsburgh_lot_sheet.png`.
 
 ### 7. Lot results (1 min)
 
-<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-14. Data versions pittsburgh-20261112-f2be01fba6, philadelphia-20261112-d441ac616a, allentown-20261114-33d9df7faf, chester_county-20261114-18e81019a3, centre_county-20261114-2f26bac9ff, montgomery_county-20261114-c5ec79eaaa -->
+<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-14. Data versions pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261114-2cb47a95d4, chester_county-20261114-47fe1443e9, centre_county-20261114-e4fb9168db, montgomery_county-20261114-459bcec166 -->
 
 | Lot place | Lots | Any legal ADU path today | Detached unit legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|
@@ -130,7 +131,7 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 - Fit accuracy against a person. 250 lots are sampled, and 0 are labeled.
 - Detector accuracy against checked labels. The labels are still unchecked.
-- Land cover for Pittsburgh lots is checked on only 128 lots.
+- Land cover for Pittsburgh lots is checked on only 128 lots. In Allentown, Chester and Montgomery it is not checked at all.
 
 ### 9. Likely questions
 
@@ -154,7 +155,7 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 - Census: ACS 5-year (rent, rent by bedrooms, units in structure), decennial housing units, population estimates, TIGER tracts.
 - LEHD LODES jobs, the Census building permits survey, IRS migration, Freddie Mac mortgage rates, Annual NLCD land cover, OpenStreetMap streets via OSMnx.
 - HUD Small Area Fair Market Rents by ZIP.
-- The town rule files and the lot records from the lot tool. The tract analysis read the 38 rule files of Nov 11. 95 exist now (see section 8).
+- The town rule files and the lot records from the lot tool. The tract analysis read the 38 rule files of Nov 11. 118 exist now (see section 8).
 - Figure: `musa5500/docs/figures/01_moe.png` (margins of error).
 
 ### 3. The payoff test (1.5 min)
@@ -211,9 +212,9 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 <!-- source: ~/musa-drive/processed/5500/legal_class_coverage.csv (Nov 11 run), shared/rules/towns_index.json and the town files (Nov 14), app/public/data/pa_places_meta.json (built 2026-11-14) -->
 
-- Now (Nov 14): 93 towns beyond the two cities have rule files. With the two cities, 64 are verified by an independent second reading and 31 stay first readings. 34 of the 93 have no ADU text at all. Reading bans ADUs.
-- 38.2 % of Pennsylvanians live in a place with a rule file (30.4 % verified, 7.8 % drafted).
-- The answer ladder gives every one of the 2,572 places one answer and says how good the evidence is: rule file, a dated agency report or no zoning on record, a search of public zoning text, or the statewide baseline. A status is known for 45 % of people.
+- Now (Nov 14): 116 towns beyond the two cities have rule files. With the two cities, 77 are verified by an independent second reading and 41 stay first readings. 43 of the 116 town codes have no ADU text at all. Reading bans ADUs.
+- 41.6 % of Pennsylvanians live in a place with a rule file (32.3 % verified, 9.3 % drafted).
+- The answer ladder gives every one of the 2,572 places one answer and says how good the evidence is: rule file, a dated agency report or no zoning on record, a search of public zoning text, or the statewide baseline. A status is known for 48 % of people.
 - The tract numbers below come from the Nov 11 run with 38 rule files. They were not rerun.
 - By people, in that run: 71.2 % live in towns with no rule file yet ("unknown"). 12.5 % live in a conversion-only town (Philadelphia, York), 6.3 % by right, 6.0 % none, 3.5 % family only, 0.4 % discretionary.
 - Why not today: in Philadelphia the law is the limit (1.2 % of lots have any path). In Pittsburgh every lot has a path, and the yard is the limit.
@@ -241,7 +242,7 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 - ACS tract data is noisy. Most single-tract changes are inside the margin of error.
 - The room model rests on two cities.
-- The "today" scenario rests on the 71 % of people in towns whose code had not been read on Nov 11. Rule files now cover 38 % of people. The tract run was not redone.
+- The "today" scenario rests on the 71 % of people in towns whose code had not been read on Nov 11. Rule files now cover 42 % of people. The tract run was not redone.
 
 ### 12. Likely questions
 

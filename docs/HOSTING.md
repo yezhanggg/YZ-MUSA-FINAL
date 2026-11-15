@@ -17,8 +17,8 @@ Checked by running the production build and logging every request in Chromium (N
 | `<place>/tiles/parcels.pmtiles` (Pittsburgh, Philadelphia) | Only when `lots.pmtiles` is missing (an older bundle): then the app draws plain outlines and the switch has no colours. Allentown has none | 5.0 MB and 20.1 MB files |
 | `<place>/tiles/overview.pmtiles` (each place) | Only after "Show testable lots" is turned on: bytes 0 to 15, the header, then one range per map tile at zoom 5 to 13 | 66 KB, 148 KB and 23 KB files, about 35 KB for the state map and under 10 KB for a city view |
 | `<place>/detail/<GEOID>.json.gz` | The first lot of a tract (click, search or link). Later lots in the same tract need no request | up to 1.5 MB |
-| `<place>/detail/<GEOID>.geom.json.gz` | With the head file, when the build split the tract (61 Pittsburgh, 48 Philadelphia and 23 Allentown tracts) | up to 1.2 MB |
-| `<place>/detail/<GEOID>.pN.json.gz` | When a head file names extra chunks in `more`. None in the Nov 11 build, kept for later builds | |
+| `<place>/detail/<GEOID>.geom.json.gz` | With the head file, when the build split the tract (72 Pittsburgh, 50 Philadelphia, 26 Allentown, 11 Chester, 2 Centre and 22 Montgomery County tracts in the Nov 14 builds) | up to 1.2 MB |
+| `<place>/detail/<GEOID>.pN.json.gz` | When a head file names extra chunks in `more`. 132 chunk files in the Nov 14 builds, most in the four town places | |
 | `<place>/stats.json` | When a lot opens, for the city-wide story | 48 KB |
 | `<place>/lot_tract.json` | Only when the Ask assistant opens a lot by id that is not in memory | 3.4 MB and 14 MB (gzipped on the fly to 0.3 MB and 1.3 MB) |
 | `<place>/addresses/index.json.gz` (each place) | When the Ask assistant first searches an address (`find_lot`), then kept | 3 KB to 39 KB, 103 KB for all six places |
@@ -35,12 +35,14 @@ The app does not read `app/`, `index.parquet`, `lot_tract.parquet`, `parts/`, `q
 
 <!-- source: file sizes under ~/musa-drive/host/, summed 2026-11-14 -->
 
-The bundle is 181.8 MB for Pittsburgh (302 files), 445.1 MB for Philadelphia (967 files), 97.7 MB for Allentown
-(134 files), 100.1 MB for Chester County (96 files), 28.5 MB for Centre County (43 files) and 94.3 MB for Montgomery
-County (106 files): 951.9 MB in all with `zoning_text/` (4.4 MB). That includes 172.6 MB of terrain tiles (below).
-Rebuilt Nov 14 with `tools/publish_lots.sh` (all six places), without the sale and assessment facts. It is close to
-the 1 GB Pages limit. It is not published yet.
-The Nov 13 bundle (three places) was 718.3 MB. The Nov 12 bundle (two places, no terrain blocks) was 456.5 MB.
+The bundle is 187.1 MB for Pittsburgh (320 files), 447.6 MB for Philadelphia (969 files), 107.1 MB for Allentown
+(145 files), 102.4 MB for Chester County (97 files), 29.5 MB for Centre County (44 files) and 98.2 MB for Montgomery
+County (108 files): 976.3 MB in all with `zoning_text/` (4.4 MB). That includes 172.6 MB of terrain tiles (below).
+Rebuilt on the evening of Nov 14 with `tools/publish_lots.sh` (all six places, after the steep slope refresh of the two
+cities and the land cover rebuild of the four town places), without the sale and assessment facts. It is close to the
+1 GB Pages limit: about 24 MB of room. It is not published yet.
+The Nov 14 morning bundle was 951.9 MB, and 959.7 MB after the steep slope refresh. The Nov 13 bundle (three places)
+was 718.3 MB. The Nov 12 bundle (two places, no terrain blocks) was 456.5 MB.
 
 `<place>/tiles/terrain.pmtiles` holds ground heights for a 3D map: Terrarium PNG tiles (256 px, heights rounded to
 0.1 m) from the USGS 3DEP 1 m DEM, made by `python tools/terrain_tiles.py --place <place>`. Pittsburgh 29.8 MB and
@@ -62,7 +64,7 @@ GitHub Pages from a separate public repository. Fallback: jsDelivr in front of t
 | Option | Limits (checked Nov 11, 2026) | PMTiles by range | CORS | `.json.gz` | Owner work | What can go wrong |
 |---|---|---|---|---|---|---|
 | **GitHub Pages, second repo** | Site up to 1 GB. Repo ideally under 1 GB. Soft 100 GB a month bandwidth. Soft 10 builds an hour. 10 minute deploy timeout. Files over 100 MiB blocked | Yes, 206 on GET | `Access-Control-Allow-Origin: *` on files. Not on 404 pages. OPTIONS gets 405, so only simple requests work (the app sends only those) | Sent as `application/gzip`, no `Content-Encoding`. The loader unzips it | Create repo, push, turn on Pages, set one env var | Over 100 GB a month GitHub may ask to move. Repo grows by the changed files on each update. 10 minute cache after an update |
-| jsDelivr from the same repo | 150 MB per repo and 20 MB per file by default. Tags cached for a year, branches 12 h. Purge by request | Yes | `*` | Raw bytes | Same repo, plus a tag | 952 MB is over the 150 MB cap, so it needs one repo per city plus a split of Philadelphia, or a request to jsDelivr. Their rules say not a general file host |
+| jsDelivr from the same repo | 150 MB per repo and 20 MB per file by default. Tags cached for a year, branches 12 h. Purge by request | Yes | `*` | Raw bytes | Same repo, plus a tag | 976 MB is over the 150 MB cap, so it needs one repo per city plus a split of Philadelphia, or a request to jsDelivr. Their rules say not a general file host |
 | GitHub Releases assets | 2 GiB per file, 1000 files per release | Yes | None. The download redirects to `release-assets.githubusercontent.com` with no CORS header | | | The browser cannot fetch them from the app. Ruled out |
 | Inside the Vercel deployment | Hobby: 100 GB a month transfer, 45 min build, no stated cap on build output. CLI upload 100 MB on Hobby (a June 2026 changelog says CLI limits were removed, unclear for Hobby) | Yes | Same origin | Can set headers in `vercel.json` | Files must be in the git repo or fetched at build time | 952 MB in the app's git history forever. iCloud syncs the repo folder. Every deploy uploads it again |
 | Vercel Blob | Hobby: 1 GB storage, 10 GB a month transfer, 2,000 advanced operations | Yes | Configurable | Raw | Enable Blob in the Vercel project | 10 GB a month is about 7,000 first lot views. Access stops for the rest of the month when a limit is passed |
@@ -73,7 +75,7 @@ Why Pages:
 - It is the only option with no new account, no size split and CORS on by default.
 - Range requests work, so the parcel tiles load piece by piece (about 20 to 120 KB per map view).
 - The first lot of a tract costs about 1 MB. At 100 GB a month that is about 100,000 first lot views.
-- The data lives apart from the app. An app deploy does not upload 952 MB, and the app repo stays small.
+- The data lives apart from the app. An app deploy does not upload 976 MB, and the app repo stays small.
 
 Fallback if Pages stops serving (bandwidth or policy): push the same bundle as two repos (one per city, Philadelphia
 split in two) and use jsDelivr URLs pinned to a tag. Or enable Vercel Blob in the project. Only `VITE_LOT_DATA_URL`
@@ -154,19 +156,19 @@ You need: GitHub Desktop signed in as `yezhanggg`, the external drive plugged in
    - Click "Create repository".
 3. **Clone it with GitHub Desktop.** File > Clone repository > GitHub.com tab > `yezhanggg/backyard-homes-lots`.
    Local path: `/Users/<you>/musa-drive/backyard-homes-lots` (on the external drive). Do not clone into Documents:
-   iCloud would sync 952 MB. Click "Clone".
+   iCloud would sync 976 MB. Click "Clone".
 4. **Copy the bundle in.** In Terminal (the copy includes the hidden `.nojekyll` and `.gitignore`):
    ```bash
    rsync -a --delete --exclude .git ~/musa-drive/host/ ~/musa-drive/backyard-homes-lots/
    ```
 5. **Commit and push.** In GitHub Desktop the Changes tab lists about 1,700 files. Summary:
-   `Lot data 2026-11-14`. Click "Commit to main", then "Push origin". The upload is about 950 MB.
+   `Lot data 2026-11-14`. Click "Commit to main", then "Push origin". The upload is about 980 MB.
 6. **Turn on Pages.** On github.com open the data repo > Settings > Pages. Source: "Deploy from a branch".
    Branch: `main`, folder `/ (root)`. Save. Wait until the page shows "Your site is live at
    https://yezhanggg.github.io/backyard-homes-lots/" (one to three minutes, see the Actions tab).
 7. **Check one file.** Open
    https://yezhanggg.github.io/backyard-homes-lots/lots/pittsburgh/manifest.json in the browser. It shows JSON with
-   the `data_version` of the Pittsburgh build you published (`pittsburgh-20261112-f2be01fba6` on Nov 14, newer after the slope rebuild).
+   the `data_version` of the Pittsburgh build you published (`pittsburgh-20261114-7ae3f25d22` for the Nov 14 bundle).
 8. **Point the app at it.** On vercel.com open the app project > Settings > Environment Variables. Add:
    - Key `VITE_LOT_DATA_URL`, value `https://yezhanggg.github.io/backyard-homes-lots/lots/` (with the last
      slash). Environments: Production and Preview.
@@ -193,7 +195,7 @@ a tract part from another build shows "The lot data is being updated. Reload the
 than the manifest still loads (it is marked stale).
 
 Size: each push adds only the files that changed, but a full rebuild changes most of them. The first push is
-already about 952 MB, so the first full update after it passes the 1 GB that GitHub recommends. Then start fresh: delete the data repo (Settings > Danger
+already about 976 MB, so the first full update after it passes the 1 GB that GitHub recommends. Then start fresh: delete the data repo (Settings > Danger
 Zone), create it again with the same name, and publish once more. The URL stays the same.
 
 ## Roll back

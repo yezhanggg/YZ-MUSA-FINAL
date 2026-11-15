@@ -178,20 +178,22 @@ The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARC
 
 | Place | Data version | Built | Lots | Tracts | Errors | Detail files |
 |---|---|---|---|---|---|---|
-| Pittsburgh | `pittsburgh-20261112-f2be01fba6` | 2026-11-12 15:40 (terrain refresh of the Nov 11 build) | 92,081 | 128 | 0 | 140,740,251 bytes, 61 tracts split into chunks |
-| Philadelphia | `philadelphia-20261112-d441ac616a` | 2026-11-12 16:17 (terrain refresh of the Nov 11 build) | 459,998 | 385 | 0 | 355,098,084 bytes, 48 tracts split into chunks |
-| Allentown | `allentown-20261114-33d9df7faf` | 2026-11-14 05:23 (rules engine pass 8) | 29,158 | 31 | 0 | 81,431,194 bytes, 24 tracts split into chunks |
-| Chester County | `chester_county-20261114-18e81019a3` | 2026-11-14 05:49 (rules engine pass 8) | 14,847 | 15 | 0 | 55,699,322 bytes, 11 tracts split into chunks |
-| Centre County | `centre_county-20261114-2f26bac9ff` | 2026-11-14 01:50 | 3,484 | 3 | 0 | 11,310,352 bytes, 2 tracts split into chunks |
-| Montgomery County | `montgomery_county-20261114-c5ec79eaaa` | 2026-11-14 06:09 (rules engine pass 8) | 26,119 | 28 | 0 | 64,504,885 bytes, 22 tracts split into chunks |
+| Pittsburgh | `pittsburgh-20261114-7ae3f25d22` | 2026-11-14 09:43 (steep slope lines, refresh of the Nov 12 build) | 92,081 | 128 | 0 | 146,360,899 bytes, 72 tracts split into chunks |
+| Philadelphia | `philadelphia-20261114-2a67293eaa` | 2026-11-14 10:11 (steep slope lines, refresh of the Nov 12 build) | 459,998 | 385 | 0 | 357,632,218 bytes, 50 tracts split into chunks |
+| Allentown | `allentown-20261114-2cb47a95d4` | 2026-11-14 17:54 (rules engine pass 9, land cover) | 29,158 | 31 | 0 | 90,411,668 bytes, 26 tracts split into chunks |
+| Chester County | `chester_county-20261114-47fe1443e9` | 2026-11-14 17:01 (rules engine pass 9, land cover) | 14,847 | 15 | 0 | 58,058,452 bytes, 11 tracts split into chunks |
+| Centre County | `centre_county-20261114-e4fb9168db` | 2026-11-14 16:46 (rules engine pass 9, land cover) | 3,484 | 3 | 0 | 12,332,112 bytes, 2 tracts split into chunks |
+| Montgomery County | `montgomery_county-20261114-459bcec166` | 2026-11-14 17:28 (rules engine pass 9, land cover) | 26,119 | 28 | 0 | 68,813,724 bytes, 22 tracts split into chunks |
 
 625,687 lots in all.
 
-Pittsburgh and Philadelphia are being rebuilt so that their records carry the steep slope rules (Pittsburgh 915.02 and 906.04, 906.05, 906.08, Philadelphia 14-704(2)). That rebuild was running on Nov 14. When it is done the two rows above get new data versions. The slope rows add condition lines to about 44,153 Pittsburgh records and 31,349 Philadelphia records (HB 2186 scenario only). They do not change any yes or no.
+On the morning of 2026-11-14 Pittsburgh and Philadelphia were refreshed so that their records carry the steep slope rules (Pittsburgh 915.02 and 906.04, 906.05, 906.08, Philadelphia 14-704(2)). The slope rows add condition lines to about 44,153 Pittsburgh records and 31,349 Philadelphia records (HB 2186 scenario only). They do not change any yes or no.
 
 On 2026-11-12 the terrain refresh (`build_lots terrain`) added a `terrain` block to every record without a fit rerun (Pittsburgh from `pittsburgh-20261111-bdeb5697ae`, Philadelphia from `philadelphia-20261111-b7fa7bda07`). The files before it are kept in `~/musa-drive/backups/lots-<city>-pre-terrain-<old version>/`. On 2026-11-13 every record of the three places was checked (all files open, record counts match the manifests and the index, `lot_schema.json` valid, terrain present): 0 problems.
 
-On 2026-11-14 Allentown, Chester County and Montgomery County were rebuilt on rules engine pass 8. No headline share moved. Only sentences, citations and the yards of lots where only an inside unit is allowed changed. The Allentown build before it is kept in `~/musa-drive/backups/lots-allentown-pre-pass8-allentown-20261113-c3f7b21cb2`.
+Early on 2026-11-14 Allentown, Chester County and Montgomery County were rebuilt on rules engine pass 8. No headline share moved. Only sentences, citations and the yards of lots where only an inside unit is allowed changed. The Allentown build before it is kept in `~/musa-drive/backups/lots-allentown-pre-pass8-allentown-20261113-c3f7b21cb2`.
+
+On the evening of 2026-11-14 Allentown, Chester County, Centre County and Montgomery County were rebuilt on rules engine pass 9, with a land cover block in each record (see Land cover per lot below). No answer moved in any place. The changes are the cover block, the accuracy note in `quality.assumptions`, and the yards, citations and spots of lots where no unit is allowed. The builds before it are kept in `~/musa-drive/backups/lots-<place>-pre-pass9-<old version>/`.
 
 Allentown was rebuilt on 2026-11-13 with the A, B and C street designation (front lot lines), side street and rear yard placement, coverage by house type and through lots (see [ADDING_A_CITY.md](ADDING_A_CITY.md) section 4). The build before it (`allentown-20261112-5825ca3817`) is kept in `~/musa-drive/backups/lots-allentown-pre-lotdata2-allentown-20261112-5825ca3817/`.
 
@@ -239,7 +241,7 @@ An older 1 m project also covers each city (Pittsburgh PA_WesternPA_2019_D20, fl
 | PEMA imagery service `PEMAImagery2021_2023` on PASDA, and its tile cache `PEMAImagery2021_2023cache` | about 0.5 ft | 2021 to 2023 | Garage check chips (`python -m pipeline.places.philadelphia garage-qa`), hand-label sheets (`pipeline.validation.sheets`), and the aerial layer in the app. When PASDA does not answer, the app falls back to Esri World Imagery under Esri's terms | PEMA terms, as above |
 | Philadelphia City Imagery 2025, 3 inch | about 0.037 m at level 22 | 2025 | Recorded only. Not downloaded. Its year is written to `quality.imagery_date` in Philadelphia lot records | No license text in the service. City keeps all rights, as is. No statement about machine learning use |
 | Allegheny County Imagery 2017, 3 inch | 3 inch | 2017 | Recorded only. Not used | Access: call for details. Informational purposes only, as is. No open license stated |
-| NAIP 2022 (red, green, blue, near infrared) | 0.6 m | 2022. Philadelphia flown 2022-04-30 to 05-17, Pittsburgh 2022-05-09 | Land cover model training and test (173 boxes of 1 km), the city boxes, and Pittsburgh lot cover | Public domain (USDA), as listed in the course data notes |
+| NAIP 2022 (red, green, blue, near infrared) | 0.6 m | 2022. Philadelphia flown 2022-04-30 to 05-17, Pittsburgh 2022-05-09 | Land cover model training and test (173 boxes of 1 km), the city boxes, and the lot cover of Pittsburgh, Allentown and the three county places | Public domain (USDA), as listed in the course data notes |
 
 Detector support data:
 
@@ -288,7 +290,7 @@ In Pittsburgh, 34.8 percent of the test box area also sat inside train or valida
 
 ### Land cover per lot
 
-<!-- source: pipeline/build_lots.py COVER_FILES and COVER_FILES_BY_PLACE, row counts of ~/musa-drive/processed/<city>/cover*.parquet read on 2026-11-11 -->
+<!-- source: pipeline/build_lots.py COVER_FILES and COVER_FILES_BY_PLACE, row counts of ~/musa-drive/processed/<place>/cover*.parquet read on 2026-11-11 (the two cities) and 2026-11-14 (the four town places) -->
 
 | City | File the lot builder reads | Source | Date of the picture | Lots with a row |
 |---|---|---|---|---|
@@ -302,7 +304,7 @@ In Pittsburgh, 34.8 percent of the test box area also sat inside train or valida
 - Philadelphia does not use the model. On NAIP 2022 (flown April 30 to May 17, early leaf, deep rowhouse shadow) the model misses most trees and open ground. The model's numbers stay beside the raster in `cover_model.parquet` for comparison.
 - 3,007 Philadelphia lots have a house built in 2018 or later. They carry `built_after_cover`, because the raster may still show the old use of the lot.
 - Pittsburgh keeps the fine-tuned model's numbers in `cover.parquet`, but the builder reads the model that was not fine-tuned. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
-- Allentown and the three county places: only Centre County lies in a Chesapeake test county (about 0.70 test mIoU there, with Cumberland). Allentown, Chester and Montgomery are not validated: no labeled land cover there. Each record says so in `quality.assumptions`. The hard surface counts toward an impervious cap where a town file sets one. These places have no cover map for spots, so `spot_cover` is not filled.
+- Allentown and the three county places: only Centre County lies in a Chesapeake test county (about 0.70 test mIoU there, with Cumberland). Allentown, Chester and Montgomery are not validated: no labeled land cover there. Each record says so in `quality.assumptions`. The hard surface counts toward an impervious cap where a town file sets one. These places have no cover map for spots, so `spot_cover` is not filled. 36 Centre County lots have no cover row. The assistant's lot tools give the accuracy note with the tree and paving shares, and say that the figures inside the suggested spot are not available in these places.
 
 Known limits:
 

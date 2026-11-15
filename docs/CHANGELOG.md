@@ -1,5 +1,40 @@
 # Changelog
 
+## 2026-11-14, afternoon and evening
+
+Not legal advice. Not a zoning determination. HB 2186, SB 1346 and Bill 250042 are bills, not law.
+
+### Lot places
+
+<!-- source: ~/musa-drive/lots/<place>/manifest.json (data_version, built_at, counts), ~/Library/Caches/yz-musa/lotdata4/ and lotdata5/notes.md, file sizes under ~/musa-drive/host/ -->
+
+- Pittsburgh and Philadelphia records carry the steep slope rules (`pittsburgh-20261114-7ae3f25d22`, `philadelphia-20261114-2a67293eaa`). About 44,153 Pittsburgh records and 31,349 Philadelphia records gain condition lines under HB 2186. No yes or no changed.
+- Allentown, Chester County, Centre County and Montgomery County rebuilt on rules engine pass 9, with land cover in every record (`allentown-20261114-2cb47a95d4`, `chester_county-20261114-47fe1443e9`, `centre_county-20261114-e4fb9168db`, `montgomery_county-20261114-459bcec166`). No answer moved in any place.
+- Land cover for the four town places comes from the model `r34_c5_s0` on NAIP 2022. Only Centre County lies in a Chesapeake test county (about 0.70 test mIoU). Allentown, Chester and Montgomery are not validated. Each record says so in `quality.assumptions`. 36 Centre County lots have no cover. The trees and paving inside the suggested spot (`spot_cover`) are filled only in Pittsburgh and Philadelphia.
+- Lot data bundle: 976.3 MB, about 24 MB under the 1 GB Pages limit. Not published.
+
+### Rules
+
+<!-- source: git log of shared/rules/ (commits efce987 to 929fed0), shared/rules/towns_index.json at commit 13700c5 -->
+
+- Rules engine pass 9: district yards on lots with no unit, the front-yard bar only for detached units, historic-only and overlay paths said plainly, conflicting text as its own state, units by lot size, tract tests, side yards as a total.
+- Town rule batches 17 to 21: 118 places now have a rule file (116 towns and the two cities). 77 verified by an independent second reading, 41 stay first readings (drafted). Batch 21 (Towamencin, Johnstown, West Lampeter) is a first reading.
+
+### Assistant
+
+- The lot tools give a `land_cover` block when the record has one: tree, paving, open ground and building shares of the whole lot, the record's accuracy note, and the trees and paving inside the suggested spot, or a line saying those are not available for the place. `get_lot_facts` always has it. `test_unit_on_lot` has it for a backyard cottage.
+- Eval: the Allentown tree question (alt-08) now expects the lot's tree share, the note that Allentown's land cover is not validated, and that the spot figures are not available. The rule text questions were made again from the current rule files: rt-01 now names Carlisle and rt-04 Highland (Adams). None of the three has been run on the model yet.
+
+### Models (final)
+
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "14:30 Nov 14", "14:35 Nov 14", "16:40 Nov 14" and "18:00 Nov 14" -->
+
+- Training is finished. The best land cover result stays the DeepLabV3+ and EfficientNet-B2 ensemble: test mIoU 0.7089, building IoU 0.6546. The 5-class ensemble scored 0.7009.
+- Pittsburgh adoption bar (mIoU 0.7136 on the clean city pixels): no pick passed. The closest scored 0.7135, a miss of 0.0001. The lots keep `r34_c5_s0`.
+- The last runs used 512 px crops. `r34c512lov_c4_s1` is the best single model on validation (0.7464, test 0.705). It was not in the ensemble search, so the best pick did not change.
+- `infer_lots.py` works for any place: it takes the map zone that most of the place's NAIP images use. It made the land cover of the four town places (845 tiles, 0 failed).
+- Detector: garage AP50 0.469 on unchecked labels (target 0.50), final.
+
 ## 2026-11-14
 
 Not legal advice. Not a zoning determination. HB 2186, SB 1346 and Bill 250042 are bills, not law.

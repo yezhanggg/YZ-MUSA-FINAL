@@ -2,7 +2,7 @@
 title: "MUSA 6950 Data"
 ---
 
-Two kinds of data feed this half of the project. Aerial images with land cover labels train and test the models. Lot, building and street layers from the two cities feed the lot tool. The tool now also has lot records for Allentown and parts of Chester, Centre and Montgomery counties, built from city and county layers. The models were not run on those four places. Large files live on an external data drive (`ADU_DATA_DIR`, default `~/musa-drive`). Nothing large is in the repository. The full source list with record counts and licenses is in `docs/DATA.md` in the repository.
+Two kinds of data feed this half of the project. Aerial images with land cover labels train and test the models. Lot, building and street layers from the two cities feed the lot tool. The tool now also has lot records for Allentown and parts of Chester, Centre and Montgomery counties, built from city and county layers. The original 5-class land cover model was run on those four places on Nov 14 to give each lot a land cover block. Only Centre County has labels to check it against. Large files live on an external data drive (`ADU_DATA_DIR`, default `~/musa-drive`). Nothing large is in the repository. The full source list with record counts and licenses is in `docs/DATA.md` in the repository.
 
 ## Images and labels for the land cover model
 

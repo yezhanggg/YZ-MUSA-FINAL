@@ -69,9 +69,9 @@ What it shows:
 
 ### Later runs (Nov 12 to 14)
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14" and "14:30 Nov 14"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14", "14:30 Nov 14" and "18:00 Nov 14"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json -->
 
-Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end that evening and are added only if they change the best). Same test pixels and 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
+Final for the Nov 12 to 14 rounds. Training is finished (the last runs ended 17:55 Nov 14). Same test pixels and 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
 
 | Run or pick | What changes | Val mIoU | Test mIoU | Building IoU |
 |---|---|---|---|---|
@@ -81,10 +81,12 @@ Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end 
 | ResNet-34 Lovasz ensemble | 3 models, seeds only | | 0.7035 | 0.6493 |
 | `dlv3lov` + `effb2lov` | ensemble of two model types, 8 views each | 0.7512 | **0.7089** | **0.6546** |
 | 5-class ensemble | `effb2lov_c5_s0` + `r34lov_c5_s0`, 8 views each | 0.7422 | 0.7009 | 0.6478 |
+| `r34c512lov_c4_s1` | ResNet-34, 512 px crops, Lovasz loss | 0.7464 | 0.705 | 0.6515 |
 
 - Mixing model types helped where more seeds did not: +0.0054 test mIoU over the ResNet-only ensemble.
+- Larger crops (512 px) helped a little (+0.0025 test with Lovasz loss), but that run was not in the ensemble search, so the best pick did not change.
 - Building IoU goal (0.65) met. mIoU goal (0.72) missed.
-- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571, so it was not adopted. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models). The 5-class ensemble scored 0.7085 and 0.7524.
+- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571, so it was not adopted. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models, a miss of 0.0001). The 5-class ensemble scored 0.7085 and 0.7524.
 
 ## 2. Where and why the model fails
 
@@ -200,7 +202,7 @@ The first Pittsburgh split placed some test boxes on top of training boxes: 34.8
 
 ## 5. How the models feed the lot tool
 
-- **Land cover:** each Pittsburgh and Philadelphia lot record has a `cover` block (building, tree, open ground, hard surface, impervious share, source, date) and the cover inside the suggested spot. Pittsburgh: `model:r34_c5_s0`, 2022. Philadelphia: `landcover_2018`. Allentown and the three county places have no cover block. The fit test does not use it. It tells the user how much canopy a unit might remove.
+- **Land cover:** each lot record has a `cover` block (building, tree, open ground, hard surface, impervious share, source, date). Pittsburgh and Philadelphia records also give the cover inside the suggested spot. Pittsburgh: `model:r34_c5_s0`, 2022. Philadelphia: `landcover_2018`. Allentown and the three county places: `model:r34_c5_s0`, 2022, added Nov 14, with no spot cover. Only Centre County is a test county of the model (about 0.70). Allentown, Chester and Montgomery are not validated, and each record says so. 36 Centre County lots have no cover. The fit test does not use it. It tells the user how much canopy a unit might remove.
 - **Detector:** not used. Lot records carry an empty `objects` list. Garages and sheds come from building footprints by size (180 sq ft or more is a garage).
 - **Fit:** a vector test on the lot outline, edges labeled front, side and rear, building outlines, setbacks from the rule files, and the largest rectangle that fits. See the methods page.
 
@@ -208,7 +210,7 @@ The first Pittsburgh split placed some test boxes on top of training boxes: 34.8
 
 Three scenarios on every lot: today's law, local reform (Philadelphia Bill 250042, in Pittsburgh equal to today) and state reform (HB 2186). The bills are not law. The state session ends Nov 30, 2026.
 
-<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261112-f2be01fba6, the terrain refresh of pittsburgh-20261111-bdeb5697ae, fit numbers unchanged) and ~/musa-drive/lots/philadelphia/stats.json and manifest.json (data version philadelphia-20261112-d441ac616a, the terrain refresh of philadelphia-20261111-b7fa7bda07), read 2026-11-14 -->
+<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261114-7ae3f25d22, the steep slope refresh, fit numbers unchanged since pittsburgh-20261111-bdeb5697ae) and ~/musa-drive/lots/philadelphia/stats.json and manifest.json (data version philadelphia-20261114-2a67293eaa, fit numbers unchanged since philadelphia-20261111-b7fa7bda07), read 2026-11-14 -->
 
 | Share of lots | Pittsburgh | Philadelphia |
 |---|---|---|
@@ -283,7 +285,7 @@ Philadelphia by housing type:
 - Philadelphia tree and open ground from NAIP 2022 are not reliable. The 2018 raster misses changes since 2018.
 - The Pittsburgh per-lot land cover check covers 128 lots.
 - The detector is not checked against hand labels and is not used in the lot records.
-- Allentown and the three county places have no land cover block.
+- Land cover in Allentown, Chester and Montgomery is not validated: there are no labels there.
 - The fit answers are not checked against hand labels.
 - Lot lines come from county and city parcel maps. They are not a survey. Building outlines can be old or merged.
 - Rules come from rule files read from the codes. This is not legal advice and not a zoning determination. The bills behind the reform scenarios are not law.

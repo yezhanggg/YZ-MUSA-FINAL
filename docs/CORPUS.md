@@ -12,7 +12,7 @@ Keep the hand-checked rule files as they are. Add a second, clearly weaker layer
 
 | Tier | What it is | How the assistant may use it | Label shown |
 |---|---|---|---|
-| A. Hand-checked rule file | `shared/rules/pa_*.json` (93 towns: 62 verified, 31 drafted, as of 2026-11-14) and the two city files, read and checked against the code | State values, cite section, link and check date | "Checked rule file, verified on <date>" |
+| A. Hand-checked rule file | `shared/rules/pa_*.json` (116 towns: 75 verified, 41 drafted, as of 2026-11-14) and the two city files, read and checked against the code | State values, cite section, link and check date | "Checked rule file, verified on <date>" |
 | B. Public zoning text | Ordinance text fetched from the town or county site, split into sections | Quote passages word for word with section, pages, link and fetch date. No verdict | "Unverified text search" |
 | C. Statewide baseline | `shared/rules/pa_statewide.json` | MPC paths, building code, sewage, bills | "Statewide baseline, not this town's code" |
 
@@ -114,8 +114,8 @@ For towns in tier B only, and for the tier A towns that also have own-site text 
 
 ## Training a custom model: what it would and would not add
 
-- There are 95 hand-checked rule files (93 towns and the two cities, 2026-11-14). That is the test set, not a training set. Training on them would leave nothing honest to measure with.
-- A fine-tuned extractor would learn the format of 95 answers, not the law of 2,500 towns. The hard parts are retrieval (finding the use table row and the conditions), reading flattened tables, and keeping conditions and scope. None of these get better from 95 examples.
+- There are 118 hand-checked rule files (116 towns and the two cities, 2026-11-14). That is the test set, not a training set. Training on them would leave nothing honest to measure with.
+- A fine-tuned extractor would learn the format of 118 answers, not the law of 2,500 towns. The hard parts are retrieval (finding the use table row and the conditions), reading flattened tables, and keeping conditions and scope. None of these get better from 118 examples.
 - Retrieval plus a small general model plus a quote check is cheaper to run, easy to audit (every claim has a span), and does not need labels. The verified towns stay a clean test set.
 - What could help later: a small reranker or embedding fine-tune trained on (question, cited section) pairs from the rule files, if the pilot grows to a few hundred checked pairs. Gain would be in retrieval only, and only a few points.
 

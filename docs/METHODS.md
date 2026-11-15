@@ -226,34 +226,34 @@ The product knows zoning at three levels:
 | Tier | Coverage | How it is used |
 |---|---|---|
 | 1. Lot-level rules | The six lot places: Philadelphia, Pittsburgh, Allentown, and 9 towns in Chester, Centre and Montgomery counties | Resolved for every lot and scenario and saved in the lot record |
-| 2. Town rule files | 93 towns, mostly the largest by 2020 population (towns whose code is only a PDF were skipped). With the two cities: 64 verified, 31 drafted | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a lot. The 10 towns in the lot places also have lot files |
+| 2. Town rule files | 116 towns, mostly the largest by 2020 population (towns whose code is only a PDF were skipped). With the two cities: 77 verified, 41 drafted | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a lot. The 10 towns in the lot places also have lot files |
 | 3. Statewide baseline | Every other town (`pa_statewide.json`) | The assistant answers with MPC paths, building code, sewage rules and the bills, and says it is not the town's own code |
 
 <!-- source: shared/rules/towns_index.json status field, shared/rules/pa_*.json adu.status.value, read 2026-11-14 -->
 
-Each town file has the same cited leaves as a city file, plus the code's own term for an ADU, a town-wide ADU status, conditions, district scope and "other ways" to add a unit (duplex, conversion). Each of the 93 files was written from the code text in batches of about six towns. Then a separate reader checked it a second time, value by value, against the code link. 62 passed and are "verified". 31 stay "drafted" (first readings) because the review left at least one point open, such as a table that could not be read, a parking count that depends on a reading, a code copy that may be out of date, or a 2026 ordinance that could not be read. The open point is kept in `status_note` in `towns_index.json`.
+Each town file has the same cited leaves as a city file, plus the code's own term for an ADU, a town-wide ADU status, conditions, district scope and "other ways" to add a unit (duplex, conversion). Each of the 116 files was written from the code text in batches of two to six towns. Then a separate reader checked it a second time, value by value, against the code link. 75 passed and are "verified". 41 stay "drafted" (first readings) because the review left at least one point open, such as a table that could not be read, a parking count that depends on a reading, a code copy that may be out of date, or a 2026 ordinance that could not be read. The open point is kept in `status_note` in `towns_index.json`.
 
-ADU status in the 93 town files:
+ADU status in the 116 town files:
 
 | ADU status | Towns |
 |---|---|
-| Not addressed (no ADU text in the code) | 34 |
-| Family only | 28 |
-| Allowed by right | 20 |
+| Not addressed (no ADU text in the code) | 43 |
+| Family only | 38 |
+| Allowed by right | 23 |
 | Special exception | 6 |
-| Conversion of an existing building only | 3 |
+| Conversion of an existing building only | 4 |
 | Conditional use | 1 |
 | Prohibited | 1 |
 
-<!-- source: shared/rules/pa_*.json adu.status.value for the 93 town files listed in towns_index.json -->
+<!-- source: shared/rules/pa_*.json adu.status.value for the 116 town files listed in towns_index.json, at commit 13700c5 -->
 
-So 34 of the 93 towns have no ADU rule at all. A further 28 allow a unit only for family members. The table by town is in [RULES_TOWNS.md](RULES_TOWNS.md). Towns whose code is only a PDF were skipped for now. A machine-read pilot of ordinance text is described in [CORPUS.md](CORPUS.md). It is not in the product.
+So 43 of the 116 towns have no ADU rule at all. A further 38 allow a unit only for family members. The table by town is in [RULES_TOWNS.md](RULES_TOWNS.md). Towns whose code is only a PDF were skipped for now. A machine-read pilot of ordinance text is described in [CORPUS.md](CORPUS.md). It is not in the product.
 
 ## 3. Land cover model
 
 Code: `pipeline/vision/`. Runs: `<data root>/models/<run>/`.
 
-The model labels each pixel of an aerial image as other, building, tree or open ground (a 5-class version adds hard surface). In the lot records land cover is context only. It gives the share of the lot in building, tree, open ground and hard surface, the impervious share, and the tree, open, building and hard surface area inside the suggested spot. The fit does not steer around trees. Section 3.5 says which source each city uses.
+The model labels each pixel of an aerial image as other, building, tree or open ground (a 5-class version adds hard surface). In the lot records land cover is context only. It gives the share of the lot in building, tree, open ground and hard surface, the impervious share, and, in Pittsburgh and Philadelphia only, the tree, open, building and hard surface area inside the suggested spot. The fit does not steer around trees. Section 3.5 says which source each city uses. Allentown and the three county places use the model `r34_c5_s0` (section 3.5).
 
 ### 3.1 Data
 
@@ -338,6 +338,7 @@ By area type (test mIoU):
 | Philadelphia, `ft_c5_philadelphia` fine-tuned | 12,000,000 | 0.5097 | 0.7386 | 0.2606 | 0.3226 | 0.717 | no water labeled |
 
 - **Pittsburgh.** The original model transfers well (about 0.70). The fine-tune did not help on clean pixels, and it lost the water class (IoU 0). The lot files use the zero-shot model `r34_c5_s0` (`COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`).
+- **Allentown and the three county places.** Lot cover comes from `r34_c5_s0` on NAIP 2022 (added Nov 14), with no `spot_cover`. Only Centre County is a Chesapeake test county (about 0.70 test mIoU). Allentown, Chester and Montgomery have no labels, so their cover is not validated. Each record says so in `quality.assumptions`. 36 Centre County lots have no cover.
 - **Philadelphia.** Tree and open ground are not reliable from NAIP 2022. The photos were flown 2022-04-30 to 2022-05-17, in early leaf, and rowhouse yards sit in deep shadow. No label bug was found. The fine-tune did not fix tree (0.2606). Philadelphia lot cover therefore uses the city's 2018 land cover raster (`landcover_2018`). A lot built in 2018 or later gets a flag that the raster may show the lot before the house.
 
 Per-lot agreement with a city raster:
@@ -371,9 +372,9 @@ Other tools:
 
 ### 3.7 Later runs (Nov 12 to 14)
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md (sections "09:25 Nov 14" and "14:30 Nov 14"), unet.md -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md (sections "09:25 Nov 14", "14:30 Nov 14" and "18:00 Nov 14"), unet.md -->
 
-Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end that evening and are added only if they change the best). Same test pixels and 8 flips and turns as section 3.3. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
+Final for the Nov 12 to 14 rounds. Training is finished (the last runs ended 17:55 Nov 14). Same test pixels and 8 flips and turns as section 3.3. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
 
 | Run or pick | What changes | Val mIoU | Test mIoU | Building IoU |
 |---|---|---|---|---|
@@ -383,10 +384,12 @@ Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end 
 | ResNet-34 Lovasz ensemble | 3 models, seeds only | | 0.7035 | 0.6493 |
 | DeepLabV3+ and EfficientNet-B2 ensemble | `dlv3lov` + `effb2lov`, 8 views each | 0.7512 | **0.7089** | **0.6546** |
 | 5-class ensemble | `effb2lov_c5_s0` + `r34lov_c5_s0`, 8 views each | 0.7422 | 0.7009 | 0.6478 |
+| `r34c512lov_c4_s1` | ResNet-34, 512 px crops, Lovasz loss | 0.7464 | 0.705 | 0.6515 |
 
 - Two model types in one ensemble helped where more seeds did not: +0.0054 test mIoU over the ResNet-only ensemble.
+- 512 px crops help a little (+0.0025 test with Lovasz loss). `r34c512lov_c4_s1` is the best single model on validation, but it was not in the ensemble search, so the best pick does not change.
 - Building IoU 0.6546 meets the 0.65 target. mIoU 0.7089 misses 0.72.
-- Pittsburgh adoption bar: a new model replaces `r34_c5_s0` in the lot files only if it reaches set scores on the clean Pittsburgh pixels: mIoU 0.7136 and building IoU 0.7435. The ensemble scored 0.7133 and 0.7571. Building passed, mIoU missed by 0.0003. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models). The 5-class ensemble scored 0.7085 and 0.7524. So the lots keep `r34_c5_s0`.
+- Pittsburgh adoption bar: a new model replaces `r34_c5_s0` in the lot files only if it reaches set scores on the clean Pittsburgh pixels: mIoU 0.7136 and building IoU 0.7435. The ensemble scored 0.7133 and 0.7571. Building passed, mIoU missed by 0.0003. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models, a miss of 0.0001). The 5-class ensemble scored 0.7085 and 0.7524. So the lots keep `r34_c5_s0`.
 
 ## 4. Object detector
 
@@ -527,11 +530,11 @@ Build costs are vendor numbers. Pennsylvania has no official ADU cost data. Area
 
 Code: `agent/schema.ts` (tools and system prompt), `app/src/agent/` and `app/src/lib/lot/agentTools.ts` (tools that run in the browser), `api/agent.ts` (the server function), `agent/eval/` (the eval).
 
-The assistant runs on Claude Haiku 5.5 (`claude-haiku-5-5`, `DEFAULT_MODEL`, overridable with `AGENT_MODEL`). It answers only from tool results: lot facts, lot rules, a unit test on the lot, scenario comparison, lot money, the limiting reason, rule text from the rule files (`get_rule_text`, `list_rule_places`), the answer ladder for any Pennsylvania place (`get_place_answer`), quotes from public zoning text (`search_zoning_text`), area statistics and lot search. `find_lot` finds any address in the six lot places from a static address index in the lot data bundle, so it works live only once the bundle is published. The system prompt forbids numbers or citations that no tool returned in the conversation, says that bills are not law, and falls back to the statewide baseline for a town with no rule file. At most 6 tool rounds per question.
+The assistant runs on Claude Haiku 5.5 (`claude-haiku-5-5`, `DEFAULT_MODEL`, overridable with `AGENT_MODEL`). It answers only from tool results: lot facts, lot rules, a unit test on the lot, scenario comparison, lot money, the limiting reason, rule text from the rule files (`get_rule_text`, `list_rule_places`), the answer ladder for any Pennsylvania place (`get_place_answer`), quotes from public zoning text (`search_zoning_text`), area statistics and lot search. `find_lot` finds any address in the six lot places from a static address index in the lot data bundle, so it works live only once the bundle is published. The system prompt forbids numbers or citations that no tool returned in the conversation, says that bills are not law, and falls back to the statewide baseline for a town with no rule file. `get_lot_facts` and, for a backyard cottage, `test_unit_on_lot` give the lot's land cover: tree, paving, open ground and building shares of the whole lot, the record's own accuracy note, and the trees and paving inside the suggested spot, or a line saying those are not available for the place. At most 6 tool rounds per question.
 
 ### 6.1 Eval
 
-114 fixed questions. `agent/eval/questions.json` has 65 in 7 groups: lot facts, fit, zoning, money and market (10 each), traps (10, for example a wrong premise or a request for an owner's name) and town rules (5). Added since: the answer ladder (25), public zoning text (10), Allentown (8) and rule text (6). A question is correct only when every expected fact is in the answer, the required tools were called, every cited section or link is in a rule file or a tool result, no forbidden pattern appears, and the right scenario was used. Targets: 90 percent correct and 0 made-up citations.
+114 fixed questions. `agent/eval/questions.json` has 65 in 7 groups: lot facts, fit, zoning, money and market (10 each), traps (10, for example a wrong premise or a request for an owner's name) and town rules (5). Added since: the answer ladder (25), public zoning text (10), Allentown (8) and rule text (6). The Allentown tree question (alt-08) was rewritten on Nov 14 when Allentown records got land cover: it now expects the lot's tree share, the note that Allentown's land cover is not validated, and that the tree figures inside the spot are not available. It has not been run on the model since. A question is correct only when every expected fact is in the answer, the required tools were called, every cited section or link is in a rule file or a tool result, no forbidden pattern appears, and the right scenario was used. Targets: 90 percent correct and 0 made-up citations.
 
 <!-- source: ~/musa-drive/ops/agent-eval/2026-11-14T04-51-56-claude-haiku-5-5/report.md -->
 
@@ -572,9 +575,9 @@ These numbers come from the lot files on the data drive. Refresh this section fr
 
 ### Pittsburgh
 
-<!-- source: ~/musa-drive/lots/pittsburgh/manifest.json (built_at 2026-11-12T15:40:28, data_version pittsburgh-20261112-f2be01fba6, crs_local 2272, rule files verified 2026-11-10) and ~/musa-drive/lots/pittsburgh/stats.json, read 2026-11-14 -->
+<!-- source: ~/musa-drive/lots/pittsburgh/manifest.json (built_at 2026-11-14T09:43:37, data_version pittsburgh-20261114-7ae3f25d22, crs_local 2272, rule files verified 2026-11-10) and ~/musa-drive/lots/pittsburgh/stats.json, read 2026-11-14 -->
 
-Data version `pittsburgh-20261112-f2be01fba6`, built 2026-11-12T15:40:28 (the terrain refresh of the Nov 11 build `pittsburgh-20261111-bdeb5697ae`. The fit numbers did not change.)
+Data version `pittsburgh-20261114-7ae3f25d22`, built 2026-11-14T09:43:37 (the steep slope refresh of the Nov 12 build, itself a terrain refresh of the Nov 11 build `pittsburgh-20261111-bdeb5697ae`. The fit numbers did not change.)
 
 The build covered 92,081 lots in 128 tracts with 0 errors. Every lot has a legal ADU path today: inside the house, attached or a garage conversion by right, and a new detached unit through an Administrator's Exception. No lot has a new detached unit by right today. Under state reform (HB 2186, not law) every lot would. A detached unit of some size fits on 60,559 lots today (0.658) and on 64,432 lots under state reform (0.7). Local reform equals today in Pittsburgh.
 
@@ -594,9 +597,9 @@ What limits the detached unit today, all lots: yard space 0.414, no room 0.342, 
 
 ### Philadelphia
 
-<!-- source: ~/musa-drive/lots/philadelphia/manifest.json and ~/musa-drive/lots/philadelphia/stats.json, read 2026-11-14. data_version philadelphia-20261112-d441ac616a -->
+<!-- source: ~/musa-drive/lots/philadelphia/manifest.json and ~/musa-drive/lots/philadelphia/stats.json, read 2026-11-14. data_version philadelphia-20261114-2a67293eaa -->
 
-Data version philadelphia-20261112-d441ac616a<!-- manifest.json data_version -->, built 2026-11-12T16:17:54<!-- manifest.json built_at --> (the terrain refresh of the Nov 11 build. The fit numbers did not change.)
+Data version philadelphia-20261114-2a67293eaa<!-- manifest.json data_version -->, built 2026-11-14T10:11:58<!-- manifest.json built_at --> (the steep slope refresh of the Nov 12 build, itself a terrain refresh of the Nov 11 build. The fit numbers did not change.)
 
 The build covered 459,998 lots in 385<!-- manifest.json counts.tracts --> tracts with 0<!-- manifest.json counts.errors --> errors.
 
@@ -618,9 +621,9 @@ Today no Philadelphia lot can add a new detached unit by right: the code allows 
 
 ### Allentown and the county places
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-14. allentown-20261114-33d9df7faf, chester_county-20261114-18e81019a3, centre_county-20261114-2f26bac9ff, montgomery_county-20261114-c5ec79eaaa -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-14. allentown-20261114-2cb47a95d4, chester_county-20261114-47fe1443e9, centre_county-20261114-e4fb9168db, montgomery_county-20261114-459bcec166 -->
 
-Each lot answers with its own town's rule file. Only towns with a verified rule file whose ADU districts the county zoning layer names were built. These places have no land cover block.
+Each lot answers with its own town's rule file. Only towns with a verified rule file whose ADU districts the county zoning layer names were built. Since the evening of Nov 14 these places carry a land cover block from the model (section 3.5) and are built on rules engine pass 9. No share in the table moved.
 
 | Place and town | Lots | Any legal ADU path today | Detached unit legal today | Detached unit legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|---|
@@ -639,9 +642,9 @@ Each lot answers with its own town's rule file. Only towns with a verified rule 
 
 In Lower Merion, Malvern and East Brandywine the code allows no new detached unit, so the law is the limit. In Phoenixville many lots fail the "no taller than the house" test or the share-of-house cap. In Upper Dublin, Microsoft heights read low, so the height test reads "not checked".
 
-### Steep slope rules (pending in the lot records)
+### Steep slope rules
 
-The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Steep slopes" parts of [RULES.md](RULES.md)). The resolver says them as conditions or questions, never as a bar. The city lot records above were built before them. A rebuild of the two cities was running on Nov 14. It adds condition lines to about 44,153 Pittsburgh records and 31,349 Philadelphia records (HB 2186 only). No share in the tables above changes.
+The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Steep slopes" parts of [RULES.md](RULES.md)). The resolver says them as conditions or questions, never as a bar. The city lot records above carry them since the Nov 14 refresh. It added condition lines to about 44,153 Pittsburgh records and 31,349 Philadelphia records (HB 2186 only). No share in the tables above changed.
 
 ## 8. Limits and honest caveats
 
@@ -649,7 +652,7 @@ The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Ste
 - **Rule files lag the code.** Each value carries its "checked on" date. A rule changed after that date is not in the tool. Pittsburgh's online code did not yet show Ord. No. 31-2026 folded in when it was read.
 - **Many setbacks are not confirmed.** Where a district has no confirmed value, the builder fills a planning number and marks it assumed. See the unverified list in [RULES.md](RULES.md).
 - **Separation from the house is a planning default.** Neither city's zoning sets one. The 10 ft comes from the building code reading in `default.json`.
-- **Land cover is context, not part of the fit.** The record gives tree, open and hard surface shares and the trees inside the suggested spot. The unit is not moved to save trees. Philadelphia cover is the 2018 raster, so changes since 2018 are not seen. Pittsburgh cover is a model, off by about 8 points of tree share per lot against the 2019 raster on a small check of 128 lots.
+- **Land cover is context, not part of the fit.** The record gives tree, open and hard surface shares. Only Pittsburgh and Philadelphia records also give the trees inside the suggested spot. The unit is not moved to save trees. Philadelphia cover is the 2018 raster, so changes since 2018 are not seen. Pittsburgh cover is a model, off by about 8 points of tree share per lot against the 2019 raster on a small check of 128 lots.
 - **No detections in the fit yet.** Garages and sheds come from building outlines, which miss most small sheds (Pittsburgh county outlines skip structures under about 400 sq ft).
 - **Garage guesses are guesses.** Size and position decide what counts as a garage. The OPA garage type helps only in Philadelphia.
 - **Attached additions are not modeled.** The internal fit stands in for them.
@@ -662,8 +665,8 @@ The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Ste
 - **The detector scores are not true accuracy yet.** Test labels are unchecked.
 - **The fit has no measured accuracy.** The hand-label check has 250 lots drawn and 0 labeled.
 - **The assistant can be wrong.** It scored 109 of 114 on the newest eval run, and scores move by a few questions between runs.
-- **Most towns have no rule file.** 93 towns beyond the two cities have one. 31 of the 95 files stay first readings (drafted). Towns whose code is only a PDF were skipped. Some 2026 ordinances could not be read. Every other town gets the answer ladder: an agency report, a text search or the statewide baseline.
+- **Most towns have no rule file.** 116 towns beyond the two cities have one. 41 of the 118 files stay first readings (drafted). Towns whose code is only a PDF were skipped. Some 2026 ordinances could not be read. Every other town gets the answer ladder: an agency report, a text search or the statewide baseline.
 - **Heights from Microsoft outlines read low** in Upper Dublin, so the height test reads "not checked" in Montgomery County.
 - **Pittsburgh's undermined-area overlay (UM-O)** is not in the lot data. The rule is in the file but no lot carries the flag.
-- **New lot places have no land cover.** Allentown and the three county places carry no cover block.
+- **Land cover in the new lot places is not validated.** Allentown, Chester and Montgomery have no labels to check the model against. Centre County lies in a test county (about 0.70 test mIoU). 36 Centre County lots have no cover. These places have no tree figures inside the suggested spot.
 - **The detector is still on unchecked labels.** Garage AP50 0.469 against a target of 0.50 (final for the Nov 12 to 14 rounds).

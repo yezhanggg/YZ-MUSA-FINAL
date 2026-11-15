@@ -20,7 +20,7 @@ A U-Net that labels each pixel of a 4-band aerial image (red, green, blue, near 
 ## What it is used for in the product
 
 - Lot records carry a `cover` block: building, tree, open ground and hard surface in sq ft and percent, plus impervious share, source and date. It also gives what lies inside the suggested spot (`spot_cover`), so the tool can say how much canopy a unit would remove.
-- In Pittsburgh the source is this model (`model:r34_c5_s0`, NAIP 2022).
+- In Pittsburgh, Allentown and the three county places the source is this model (`model:r34_c5_s0`, NAIP 2022). Of these, only the Pittsburgh lots have `spot_cover` (what lies inside the suggested spot). In the four town places it is empty.
 - In Philadelphia the source is **not** this model. It is the city's 2018 land cover raster (`landcover_2018`). See "Transfer to the two cities" below for why.
 - Land cover is context only. The fit test is a vector test on lot, building and street data. It does not steer around trees.
 
@@ -100,9 +100,9 @@ What the table says:
 
 ### Later runs (Nov 12 to 14)
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14" and "14:30 Nov 14"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14", "14:30 Nov 14" and "18:00 Nov 14"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json -->
 
-Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end that evening and are added only if they change the best). Same test pixels, 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
+Final for the Nov 12 to 14 rounds. Training is finished (the last runs ended 17:55 Nov 14). Same test pixels, 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
 
 | Run or pick | Val mIoU | Test mIoU | Building IoU | Tree IoU |
 |---|---|---|---|---|
@@ -112,8 +112,10 @@ Final for the Nov 12 to 14 rounds (14:30 Nov 14; two runs with 512 px crops end 
 | 3 ResNet-34 Lovasz models, ensemble | | 0.7035 | 0.6493 | |
 | `dlv3lov` + `effb2lov`, 8 views each | 0.7512 | **0.7089** | **0.6546** | 0.7185 |
 | 5-class ensemble `effb2lov_c5_s0` + `r34lov_c5_s0`, 8 views | 0.7422 | 0.7009 | 0.6478 | 0.7097 |
+| `r34c512lov_c4_s1` (512 px crops, Lovasz loss), 8 views | 0.7464 | 0.705 | 0.6515 | |
 
 - Two model types in one ensemble beat more seeds of one type: +0.0054 test mIoU over the ResNet-only ensemble.
+- Larger crops (512 px instead of 384) help a little: +0.0023 val and +0.0025 test with Lovasz loss. `r34c512lov_c4_s1` is the best single model on val. It was not in the ensemble search, so the best pick does not change.
 - Building IoU target 0.65: met (0.6546). mIoU target 0.72: missed (0.7089).
 - Adoption for the Pittsburgh lots needs mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571 (5 classes, "other" split by a 5-class model, water left out). mIoU missed by 0.0003. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models). The 5-class ensemble scored 0.7085 and 0.7524. The lots keep `r34_c5_s0`.
 

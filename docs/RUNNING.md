@@ -218,6 +218,12 @@ $M -m pipeline.vision.raster_cover compare pittsburgh --model ~/musa-drive/proce
 $M -m pipeline.vision.error_analysis ~/Documents/YZ-MUSA-FINAL/data/models/unet_v2_r34.pt
 ```
 
+The four town places (Allentown, Chester, Centre and Montgomery) take land cover from the same model, with no city raster to check it against. This is how their `cover.parquet` was made on Nov 14 (a stopped run resumes its finished tiles), followed by a full `build_lots run --force` of each place, because pass 9 rules and the impervious check read the cover:
+
+```bash
+$M -m pipeline.vision.infer_lots allentown --checkpoint ~/musa-drive/models/r34_c5_s0/best.pt --tta --tree-offset 0.25 --out ~/musa-drive/processed/allentown/cover.parquet
+```
+
 City test scores leave out pixels that also sit in a train or validation box. Output: `processed/vision/city/<city>/`, `models/<run>/city_<city>_scores*.json`, `processed/<city>/cover*.parquet`, `processed/<city>/cover_compare*.json` and `processed/vision/error_analysis/`. Which cover file each city's lot records read is set in `pipeline/build_lots.py` (`COVER_FILES_BY_PLACE`). See [DATA.md](DATA.md).
 
 ### 4.4 Hand-label check

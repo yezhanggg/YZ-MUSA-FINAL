@@ -23,7 +23,7 @@ Every number below comes from the modules in `pipeline/tract/` as run by the exe
 - **ACS windows.** "Before" and "after" now say which 5-year windows they compare. Tract changes smaller than their margin of error are flagged
 - **IRS migration** was downloaded but unused. It is now tested as a model feature (no gain, so not kept) and shown as a context map
 - **Lots with room.** The forecast used the retired raster pilot: one fit rate per area type times ACS single-family homes. It now uses the lot tool's vector results in Philadelphia and Pittsburgh (measured, every 1 to 4 unit lot) and a model trained on them everywhere else, with a range (section 9)
-- **Town rules.** The 12-town list is replaced by the town rule files: 38 municipalities with a rule file at the time of the run (Nov 11. 95 on Nov 14, not yet rerun), each mapped to a legal class. Every other town is "unknown" (section 9)
+- **Town rules.** The 12-town list is replaced by the town rule files: 38 municipalities with a rule file at the time of the run (Nov 11. 118 on Nov 14, not yet rerun), each mapped to a legal class. Every other town is "unknown" (section 9)
 
 ## Methods (short)
 
@@ -423,7 +423,7 @@ The tract results say where demand and payoff are. They do not say why so few AD
 
 The table and the tract forecast read the rule files as of Nov 11: the 36 largest municipalities after the two cities (population ranks 3 to 38, 2020 Census). 21 files were verified. 15 were drafted, each with a stated open point. A statewide baseline file covers what applies in every town.
 
-Since then the rule files grew. On Nov 14, 93 towns beyond the two cities have one. With the two cities, 64 are verified by an independent second reading and 31 stay first readings. 34 of the 93 have no ADU text, 28 allow family only and 20 allow a unit by right. The tract forecast was not rerun on them, so the numbers below and in section 6 are from the 38-file run.
+Since then the rule files grew. On Nov 14, 116 towns beyond the two cities have one. With the two cities, 77 are verified by an independent second reading and 41 stay first readings. 43 of the 116 have no ADU text, 38 allow family only and 23 allow a unit by right. The tract forecast was not rerun on them, so the numbers below and in section 6 are from the 38-file run.
 
 | ADU status in the town code | Towns | Verified | Drafted | People (2020) |
 |---|---|---|---|---|
