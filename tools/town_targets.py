@@ -1089,7 +1089,8 @@ HOSTS: dict[str, dict[str, Any]] = {
         "plain_fetch": False,
         "current_through": "2022-11-14",
         "note": "Zoning: Chapter 280 Zoning (Ord. No. 2012-04). ADU text: 'Accessory dwelling unit' (280-201, 280-402A, 280-1502): by right in R-1 only, at most 40% of the house, one per lot, owner lives in either unit, lot meets the single-family requirements, one more parking space. Ord. No. 2026-05 (zoning, Industrial District campgrounds) not yet codified. Read in the browser on eCode360 (LA1280; LA3847 is Lancaster Township, Butler County).",
-    },    "4209161664": {
+    },
+    "4209161664": {
         "code_host": "ecode360",
         "code_url": "https://ecode360.com/26906730",
         "plain_fetch": False,
