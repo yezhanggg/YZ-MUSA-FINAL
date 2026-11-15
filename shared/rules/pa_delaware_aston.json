@@ -1,0 +1,673 @@
+{
+  "provenance": {
+    "jurisdiction": "Aston township",
+    "instrument": "Aston Township Codified Ordinances Part Twelve, Title Six Zoning (Chapters 1250 to 1298, Ord. 896, passed 12-21-2011, as amended), as published by American Legal Publishing",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "American Legal Publishing 2024 S-3 (current): 'Local legislation current through Ord. 1035, passed 2-21-2024'. The ADU section 1290.14 is from Ord. 896 (12-21-2011).",
+    "effective_date": null,
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/overview",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-7000",
+      "https://codelibrary.amlegal.com/search (keyword search scoped to Aston Township, PA)",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8370",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6251",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6634",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6648",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6697",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6758",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6813",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6858",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6918",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-7000",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-7308",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-7386",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-7482",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-12390",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6528",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8559",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8610",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8767",
+      "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-9114"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204503336",
+    "code_host": "amlegal",
+    "code_url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6217",
+    "code_current_through": "2024-02-21",
+    "code_current_through_note": "American Legal Publishing overview: 'Supplement contains: Local legislation current through Ord. 1035, passed 2-21-2024'. Version 2024 S-3 (current).",
+    "code_caution": "The online code is current through Ord. 1035 (passed 2-21-2024). Zoning ordinances adopted after that date, if any, are not in it and were not looked for on the township website. Ask the township whether any later amendment changed Chapter 1290 or the residential district chapters.",
+    "checks": [
+      "An accessory dwelling unit is a special exception only in R-1, R-2 and R-3 (1290.14). R-1 lists it (1258.03(g)) and R-2 takes every R-1 special exception (1260.03). The R-3 special exception list (1262.03) does not name it, so whether it reaches R-3 is not settled",
+      "The ADU is part of the principal dwelling or an addition to it, never in a detached building, with a connecting doorway to the house (1290.14(a), (d))",
+      "The owner lives in the principal dwelling and the ADU occupant is a member of the owner's immediate family: father, mother, stepfather, stepmother, wife, husband, mother-in-law, father-in-law, child, brother, sister, grandparent, grandchild, sister-in-law or brother-in-law (1290.14(b), (c), 1250.07)",
+      "Gross floor area at most 25% of the principal dwelling, at most two bedrooms and four occupants, one ADU per lot, lot at least 10,000 sq ft, two extra off-street parking spaces (1290.14(e) to (k))",
+      "An addition for the ADU may not push the lot past the district's building coverage or impervious limits. The property may hold only one professional home office (1290.14(h), (j))",
+      "Two-family dwellings are permitted by right only in APT, within a development tract of at least 3 acres (1266.02, 1266.04(c), (d)), and in a planned residential development of at least 25 acres in R-1 (1270.03, 1270.04)"
+    ],
+    "notes": "Zoning office: Aston Township Code Enforcement Office. The American Legal Publishing code astontwppa is Aston Township, Delaware County (overview page). Read on codelibrary.amlegal.com in a browser, one page at a time, on 2026-11-15. Keyword search (scoped to Aston Township) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities and farm employee returned 54 results (50 read): 1290.14, the ADU definition, 1258.03(g), and watchman or caretaker quarters in APT, PBC, LI and ID. A second search for single-family detached, two-family, conversion, duplex and dwelling unit returned APT and PRD sections. Read in full: 1250.07 definitions (to YARD, REAR), 1256, 1258, 1260, 1262, 1266, 1270.01 to 1270.12, 1274.01 to 1274.04, 1275.01 to 1275.03, 1290.01 to 1290.03, 1290.11 to 1290.16, 1254.01 to 1254.03, 1292.01 to 1292.14, 1292.22, 1294.01 to 1294.04. Read on screen: TH 1264.01 to 1264.03, MH 1268.01 to 1268.02, C 1276.01 to 1276.04, FSB 1277.01 to 1277.03. Search excerpts only: PBC 1272.05, LI 1278.05, ID 1279.04, MU 1297.03, parking 1284.03. Not read: 1254.04 to 1254.10, 1290.04, 1292.15 to 1292.30 (except 1292.22, 1292.24, 1292.25 opening), 1294.05 to 1294.16, Chapters 1280 to 1288, 1293, 1296, 1298."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit (ADU)",
+      "section": "1250.07, 1290.14",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6251",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'A small, self-contained living unit that typically has its own kitchen, bedroom(s), and bathroom space. Often called in-law quarters or secondary dwelling units, an ADU is an apartment which is located within the walls of an existing or newly-constructed single-family detached home or as an addition to an existing single-family detached home.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "1290.14(b), (c)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "A special exception in R-1, R-2 and R-3 for a member of the owner's immediate family, with the owner living in the house."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "1290.14, 1258.03(g), 1260.03",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units (ADUs) shall be permitted as a special exception only in the R-1, R-2 and R-3 Districts.' R-3 is in doubt (see districts_in_doubt)."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "1290.14, 1264.02, 1266.02, 1268.02, 1270.04, 1274.02, 1276.02, 1277.02",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Only R-1, R-2 and R-3. TH, APT, MH, the PRD overlay, SC, C and FSB do not list an ADU."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "1290.14, 1258.03(g), 1260.03, 1254.03(d)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board special exception under the 1290.14 standards. The Board may attach reasonable conditions (1254.03(d)). R-2 permits by special exception 'all uses permitted by special exception in the R-1 District' (1260.03)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1254.03(c)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6528",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The Board shall hear requests for variances where it is alleged that the provisions of this Code inflict unnecessary hardship on the applicant.' No special exception for uses not listed was found."
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached or semi-detached dwelling in an APT development",
+          "path": "by_right",
+          "districts": [
+            "APT"
+          ],
+          "conditions": "Two-family detached dwellings (one unit over the other) and two-family semi-detached dwellings are permitted by right in APT, within a development tract of at least 3 acres. Two-family detached: lot 6,000 sq ft on a corner lot and 5,000 sq ft on other lots, 50 ft wide, front yard 25 ft, side yards 12 ft each, rear yard 25 ft, 35 ft or two stories. Semi-detached: lot 5,000 sq ft (corner) or 4,000 sq ft, 40 ft wide, front 30 ft. Parking one space per one-bedroom unit and two per two-bedroom unit.",
+          "min_lot_sqft": 130680,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "1266.02(b), (c), 1266.04(c), (d), 1284.03",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6813",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. The 3-acre figure is the tract. Each lot also needs 5,000 sq ft (6,000 on a corner) for a two-family detached dwelling. A development use, not a unit added to one house"
+        },
+        {
+          "name": "Two-family dwelling in a planned residential development (R-1)",
+          "path": "conditional_use",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "A PRD on a tract of at least 25 contiguous acres in R-1, served by public sewer and water, approved by the Board of Commissioners (tentative and final plan with hearings). It must mix at least three dwelling types, at least 15% two-family dwellings, five units per acre on average and 40% common open space. Two-family dwellings follow the APT dimensions.",
+          "min_lot_sqft": 1089000,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "1270.02, 1270.03, 1270.04(d), 1270.07, 1270.08, 1270.09, 1270.10(d)",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6918",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. The approval is a PRD plan approval by the Board of Commissioners, read here as a conditional use. A development use on 25 acres, not a unit added to one house"
+        },
+        {
+          "name": "Living quarters for a watchman or caretaker (APT, PBC, LI, ID)",
+          "path": "by_right",
+          "districts": [
+            "APT",
+            "PBC",
+            "LI",
+            "ID"
+          ],
+          "conditions": "An accessory use: in APT, living accommodations for a watchman or caretaker employed upon the premises, located within an apartment house. In PBC living quarters for watchmen, in LI for watchmen or caretakers, in ID for watchmen, caretakers or the staff or employees of a permitted institution.",
+          "min_lot_sqft": null,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The occupant is a watchman, caretaker or (in ID) staff of the principal use on the premises",
+              "section": "1266.03(c), 1272.05(6), 1278.05(e), 1279.04(b)"
+            }
+          ],
+          "section": "1266.03(c), 1272.05(6), 1278.05(e), 1279.04(b)",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6813",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Quarters for staff of an apartment, business or institution, not a second unit for a house. PBC, LI and ID were read only in search excerpts"
+        }
+      ],
+      "section": "1266, 1270, 1272.05, 1278.05, 1279.04",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6813",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "1290.14",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "1250.07 (accessory dwelling unit), 1258.03(g)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6251",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "An ADU is 'located within the walls of an existing or newly-constructed single-family detached home or as an addition to an existing single-family detached home'."
+    },
+    "min_lot_sqft": {
+      "value": 10000,
+      "section": "1290.14(f)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'In order to be eligible for construction of an ADU, the lot shall have a minimum area of 10,000 square feet.'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Title Six",
+      "url": "https://codelibrary.amlegal.com/search (keyword search scoped to Aston Township, PA)",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path. The code defines a historic structure (township list) but ties no ADU rule to it."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "district",
+          "condition": "1290.14 permits an ADU by special exception in R-1, R-2 and R-3, but the R-3 special exception list (1262.03: municipal or public use, professional home office, active recreation area, adult day care) does not name an accessory dwelling unit.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "R-3"
+          ],
+          "building_types": null,
+          "section": "1262.03",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "1290.14",
+            "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+            "note": "'Accessory dwelling units (ADUs) shall be permitted as a special exception only in the R-1, R-2 and R-3 Districts.' The two passages conflict. Ask the zoning officer."
+          }
+        },
+        {
+          "kind": "family",
+          "condition": "The occupant of the ADU must be a member of the immediate family of the owner of the principal dwelling or property: father, mother, stepfather, stepmother, wife, husband, mother-in-law, father-in-law, child, brother, sister, grandparent, grandchild, sister-in-law or brother-in-law.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1290.14(c), 1250.07 (family, immediate)",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The owner of the principal dwelling resides in the principal dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1290.14(b)",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529"
+        },
+        {
+          "kind": "design",
+          "condition": "There shall be a connecting doorway between the principal dwelling and the ADU.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1290.14(d)",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529"
+        },
+        {
+          "kind": "other",
+          "condition": "If the ADU is an addition, it may not cause the combined buildings on the lot to exceed the district's maximum building coverage or impervious surface limits. The property may contain only one professional home office.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1290.14(h), (j)",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529"
+        },
+        {
+          "kind": "other",
+          "condition": "Lots in a planned residential development (PRD overlay in R-1, tract of 25 acres) take the PRD figures: single-family detached lot 10,000 sq ft, 80 ft wide, front 30 ft, rear 40 ft, side yards 10 ft (25 ft together). The PRD use list (single-family detached, twin, townhouse, two-family, mobile home) does not name an ADU, so whether one is allowed on a PRD lot is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "1270.03, 1270.04, 1270.10(a)",
+          "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6918"
+        }
+      ],
+      "section": "1290.14",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "TH",
+        "APT",
+        "MH",
+        "SC",
+        "C",
+        "FSB"
+      ],
+      "section": "1264.02, 1264.03, 1266.02, 1268.02, 1274.02, 1274.03, 1276.02, 1276.03, 1277.02, 1277.03",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6813",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "TH permits townhouses, MH mobile homes and parks, APT garden apartments and two-family dwellings. SC, C and FSB list no dwelling. PBC, LI and ID were read only in search excerpts (watchman or caretaker quarters). The MU and Rockdale Arts overlays add business and multi-family uses, not a second unit for a house."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "1290.14(a), 1258.03(g)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The accessory dwelling unit (ADU) ... shall be a part of the principal dwelling or an addition to the principal dwelling. The ADU shall not be located in a building detached from the principal dwelling.'"
+    },
+    "types_not_addressed": {
+      "value": [
+        "garage_conversion"
+      ],
+      "section": "1290.14(a)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "An attached garage is part of the principal dwelling, but a garage is not named. A unit in or over a detached garage is barred ('shall not be located in a building detached from the principal dwelling')."
+    },
+    "labels": {
+      "value": {
+        "internal": "ADU within the walls of the house",
+        "attached": "ADU as an addition to the house"
+      },
+      "section": "1250.07, 1290.14(a)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_share_of_house": {
+      "value": 0.25,
+      "section": "1290.14(e)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The gross floor area of the ADU shall not be greater than 25% of the principal dwelling.' Gross floor area counts basement space that is a story and any floor space used for dwelling (1250.07)."
+    },
+    "max_sqft": {
+      "value": null,
+      "section": "1290.14",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No fixed square-foot cap. The cap is 25% of the principal dwelling."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "1258.06, 1260.06, 1262.06",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "The ADU is part of or an addition to the house, so the district height applies (35 ft or two stories)."
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "1290.14(b)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The owner of the principal dwelling shall reside in the principal dwelling.'"
+    },
+    "family_only": {
+      "value": true,
+      "section": "1290.14(c)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "A member of the immediate family of the owner (father, mother, stepfather, stepmother, wife, husband, mother-in-law, father-in-law, child, brother, sister, grandparent, grandchild, sister-in-law or brother-in-law). At most four occupants and two bedrooms.",
+      "section": "1290.14(c), (i), 1250.07",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "1290.14(g)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Not more than one ADU shall be created on a lot.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "1290.14(k)",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'There shall be two off-street parking spaces serving the ADU, in addition to the requirement for the principal dwelling.'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "1290.14(k), 1284.03",
+      "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8529",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A single-family dwelling needs two spaces (1284.03, search excerpt) plus two for the ADU."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 100 ft, street frontage 50 ft. Without public sewer and public water, 30,000 sq ft (1292.22)."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Corner lot: 35 ft at each street the lot abuts."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum on one side."
+      },
+      "setback_sides_total_ft": {
+        "value": 45,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Aggregate of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet or 2 stories, maximum'."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Ground floor area of all principal and accessory buildings over the lot area (1250.07)."
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "1258.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6693",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'25% maximum total accumulated coverage (including, but not limited to, building coverage, accessory structure coverage and accessory use coverage)'."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public sewer and public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "1292.22(b)"
+          }
+        ],
+        "section": "1292.22",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'Thirty thousand square feet for lots without both public sewer and public water.' The 15,000 sq ft figure for lots without public sewer is below the R-1 minimum of 20,000."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The table reads 'Lot size 10,000 square feet maximum' under 'the following shall be minimum requirements'. Read as a 10,000 sq ft minimum. Width 70 ft, street frontage 35 ft. Without public sewer 15,000 sq ft, without both public sewer and water 30,000 sq ft (1292.22)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Corner lot: 30 ft at each street the lot abuts."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum on one side."
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Aggregate of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet or 2 stories, maximum'."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Ground floor area of all principal and accessory buildings over the lot area (1250.07)."
+      },
+      "max_impervious_coverage": {
+        "value": null,
+        "section": "1260.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6723",
+        "verified_on": null,
+        "confidence": "unverified",
+        "note": "The impervious surface coverage cell of the R-2 table is blank in the published code."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without both public sewer and public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "1292.22(b)"
+          },
+          {
+            "when": "Without public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 15000,
+            "section": "1292.22(a)"
+          }
+        ],
+        "section": "1292.22",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-8767",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Width 50 ft, street frontage 25 ft. An ADU needs a lot of at least 10,000 sq ft (1290.14(f))."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Corner lot: 20 ft from the front street and 15 ft from the side street."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum on one side."
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Aggregate of both side yards."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'35 feet or 2 stories, maximum'."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Ground floor area of all principal and accessory buildings over the lot area (1250.07)."
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "1262.06",
+        "url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6727",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "'40% maximum total accumulated coverage (including, but not limited to, building coverage, accessory structure coverage and accessory use coverage)'."
+      }
+    }
+  }
+}

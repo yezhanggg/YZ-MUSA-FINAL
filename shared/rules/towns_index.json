@@ -1,6 +1,6 @@
 {
   "about": "Pennsylvania towns targeted for ADU rule files, ranked. Made by tools/town_targets.py. Town workers update only 'status' and 'status_note'. See TOWNS.md.",
-  "generated_on": "2026-11-14",
+  "generated_on": "2026-11-15",
   "population_source": {
     "title": "2020 Census Redistricting Data (PL 94-171), Pennsylvania, county subdivisions",
     "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Pennsylvania/pa2020.pl.zip",
@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 119,
-      "population": 5460692,
-      "share_of_pa": 0.42
+      "towns_beyond_the_two_cities": 122,
+      "population": 5509986,
+      "share_of_pa": 0.4238
     }
   ],
   "towns": [
@@ -2954,6 +2954,78 @@
         "added as batch 22 by population. Code Chapter 600 has no ADU text"
       ],
       "status_note": "Drafted 2026-11-14, independently reviewed and fixed the same day. Open for a later check: Ord. No. 767 (zoning, 2026-04-22) not codified and unread (the review reports its New Laws note on Article II, Terminology, so it may amend definitions); TH, MH, I-C and PRC use lists not read (a code search for single-family detached dwelling returns only R-1, R-2, R-3 and PRD); the corner-lot duplex figure (6,000 sq ft) cannot be tested by the tool; 600-159D accessory figures for APT and other districts not stored."
+    },
+    {
+      "geoid": "4209526728",
+      "geoid_aliases": [],
+      "name": "Forks township",
+      "county": "Northampton",
+      "type": "township",
+      "population": 16074,
+      "population_with_aliases": 16074,
+      "housing_units": 6204,
+      "pop_rank": 146,
+      "file": "pa_northampton_forks",
+      "batch": 23,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8571248",
+      "plain_fetch": false,
+      "code_current_through": "2025-09-04",
+      "code_note": "Zoning: Chapter 200 Zoning (Ord. No. 331, 8-21-2014, as amended). The code defines an accessory apartment and a unit for care of relative (200-7) but no district lists either use (H-9, H-11, H-12 reserved). A use permitted in no district may be a conditional use (200-79F). Residential conversion by special exception in TC and TC-1 (200-28B(14)), a facility for domestic servants, caretakers or guests on lots over one acre (200-28H(3)(c)[3]), a second dwelling under a county agricultural easement in FP (200-13D). New Laws: Ord. 414, 415, 416 (zoning) not codified. Read in the browser on eCode360 (FO1696).",
+      "why": [
+        "added as batch 23 by population. Code 200-7 accessory apartment and unit for care of relative (defined, not listed). Its code as read has no ADU rule (not addressed)"
+      ],
+      "status_note": "Awaiting independent review. Open points: whether the 200-79F conditional use for uses permitted in no district reaches an accessory apartment or unit for care of relative (defined in 200-7, listed nowhere); the three uncodified zoning ordinances (Ord. 414, 415, 416) were not read."
+    },
+    {
+      "geoid": "4204503336",
+      "geoid_aliases": [],
+      "name": "Aston township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 16791,
+      "population_with_aliases": 16791,
+      "housing_units": 6317,
+      "pop_rank": 136,
+      "file": "pa_delaware_aston",
+      "batch": 23,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "amlegal",
+      "code_url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6217",
+      "plain_fetch": false,
+      "code_current_through": "2024-02-21",
+      "code_note": "Zoning: Part Twelve, Title Six Zoning (Chapters 1250 to 1298, Ord. 896, 12-21-2011, as amended). ADU text: 'Accessory dwelling units' (1290.14): special exception in R-1, R-2 and R-3 (R-3's own list 1262.03 omits it), part of or an addition to the house, owner-occupied, for a member of the owner's immediate family, at most 25% of the house, two bedrooms and four occupants, lot 10,000 sq ft, two more parking spaces. Two-family dwellings by right in APT (3-acre tract). Current through Ord. 1035 (2-21-2024). Read in the browser on American Legal Publishing (astontwppa).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 1290.14 accessory dwelling units, immediate family)"
+      ],
+      "status_note": "Awaiting independent review. Open points: R-3 is named in 1290.14 but its own special exception list (1262.03) omits the ADU; the R-2 table's impervious cell is blank and its lot size reads '10,000 square feet maximum'; zoning ordinances after Ord. 1035 (2-21-2024) were not looked for."
+    },
+    {
+      "geoid": "4213332448",
+      "geoid_aliases": [],
+      "name": "Hanover borough",
+      "county": "York",
+      "type": "borough",
+      "population": 16429,
+      "population_with_aliases": 16429,
+      "housing_units": 7941,
+      "pop_rank": 139,
+      "file": "pa_york_hanover",
+      "batch": 23,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/15699677",
+      "plain_fetch": false,
+      "code_current_through": "2026-05-27",
+      "code_note": "Zoning: Chapter 370 Zoning (Ord. No. 2385, adopted 1-28-2026). ADU text: 'Accessory dwelling units' (370-400): special exception in R-1, R-3, R-5, D and MU, accessory to an owner-occupied single-family dwelling, within or attached to the house or in an accessory building (two stories or 25 ft), 500 sq ft to 50% of the house, at most two people. No use variance for a use not permissible in a district (370-907E). Conversion of a large existing house (3,000 sq ft) by special exception (370-446). Read in the browser on eCode360 (HA0246).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 370-400 accessory dwelling units)"
+      ],
+      "status_note": "Awaiting independent review. Open points: whether an ADU counts toward the R-5 and MU density of 14 units per acre; outside R-1, R-3, R-5, D and MU the tool still offers a use variance although 370-907E bars one."
     }
   ]
 }

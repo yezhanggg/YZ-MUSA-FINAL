@@ -1,0 +1,800 @@
+{
+  "provenance": {
+    "jurisdiction": "Hanover borough",
+    "instrument": "Borough of Hanover Code Chapter 370 Zoning (Ord. No. 2385, adopted 1-28-2026), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 code through 05-27-2026. Chapter 370 is a new zoning ordinance adopted 1-28-2026 by Ord. No. 2385 (adopted as Chapter 140 and renumbered). New Laws on 2026-11-15: 'There are currently no known new laws for this Code.'",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/15699677",
+      "https://ecode360.com/HA0246",
+      "https://ecode360.com/HA0246/laws",
+      "https://ecode360.com/HA0246/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/HA0246/search?query=%22not%20listed%22%20OR%20%22not%20specifically%22%20OR%20%22not%20provided%20for%22%20OR%20%22uses%20not%22%20OR%20%22similar%20use%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/print/HA0246?guid=50638482",
+      "https://ecode360.com/print/HA0246?guid=50638436",
+      "https://ecode360.com/print/HA0246?guid=50638446",
+      "https://ecode360.com/print/HA0246?guid=50638454",
+      "https://ecode360.com/print/HA0246?guid=50638472",
+      "https://ecode360.com/print/HA0246?guid=50638173",
+      "https://ecode360.com/print/HA0246?guid=50638184",
+      "https://ecode360.com/print/HA0246?guid=50638958",
+      "https://ecode360.com/print/HA0246?guid=50638965",
+      "https://ecode360.com/print/HA0246?guid=50638966",
+      "https://ecode360.com/print/HA0246?guid=50639038",
+      "https://ecode360.com/print/HA0246?guid=50639423",
+      "https://ecode360.com/print/HA0246?guid=50639268",
+      "https://ecode360.com/print/HA0246?guid=50638024"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "York",
+    "municipality_type": "borough",
+    "geoid": "4213332448",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/15699677",
+    "code_current_through": "2026-05-27",
+    "code_current_through_note": "eCode360 'Includes legislation through 05-27-2026.' Chapter 370 adopted 1-28-2026 by Ord. No. 2385.",
+    "checks": [
+      "An accessory dwelling unit is a special exception in R-1, R-3, R-5, D and MU (370-302C, 370-303C) under 370-400",
+      "Only as an accessory use to an owner-occupied single-family dwelling. One per principal dwelling. At most two people live in it (370-400A, B, F)",
+      "It meets the definition of a dwelling, with at least 500 sq ft of floor area, and is no more than 50% of the principal dwelling's gross floor area. It needs its own kitchen, bath and an exterior entrance separate from the house's (370-400C, E, 370-202 dwelling)",
+      "It may be within or attached to the house or within an accessory building. In an accessory building it may be up to two stories or 25 ft tall (370-400E, G)",
+      "Accessory structures may not stand closer to the front lot line than the front wall of the house (370-501C)",
+      "The Zoning Hearing Board may not grant a variance to allow a use not permissible in the district (370-907E). CB, PD, M and HI do not list an ADU",
+      "A house that existed on 1-28-2026 with at least 3,000 sq ft of gross floor area may be converted to a duplex or multi-family use by special exception where that use is permitted (R-5, D, MU), at most 12 units per acre and three units (370-446)",
+      "An ADU is a residential rental unit under the rental registration rules (370-202, Chapter 278)"
+    ],
+    "notes": "Zoning office: Borough of Hanover Zoning Officer. eCode360 code HA0246 is the Borough of Hanover. GEOID 4213332448 is in York County (42133). No other borough named Hanover is in Pennsylvania. Read on eCode360 in a browser, one page at a time, on 2026-11-15. Code search (all content) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities and farm employee found 370-400, the accessory dwelling unit and dwelling definitions, 370-446 and the family definition. A search for uses not listed found 370-200F. Every district section was opened (370-302, 370-303, 370-304, use and bulk tables checked on screen for column alignment). Read in full: 370-200, 370-300, 370-302, 370-303, 370-304, 370-400, 370-446, 370-500, 370-501, 370-801, 370-907, the definitions of dwelling and family. Read in part: 370-511 (parking table). Not read: the rest of 370-202, 370-441 (TND), 370-445 (short-term rental), 370-905, 370-906, Article VI."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "370-400, 370-202 (dwelling)",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units are sometimes known as \"mother-in-law suites,\" \"granny flats,\" \"garage apartments,\" or \"basement apartments.\"' Defined as 'a dwelling ..., subordinate and smaller in size to a principal single-family dwelling, within or attached to a principal or accessory building on the same lot' (370-202)."
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "370-302C, 370-303C, 370-400",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "An accessory use by special exception in R-1, R-3, R-5, D and MU. The stated purpose names elderly parents, mature children or other relations to the owner, but the rules (A to G) set no family test."
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-3",
+        "R-5",
+        "D",
+        "MU"
+      ],
+      "section": "370-302C, 370-303C",
+      "url": "https://ecode360.com/print/HA0246?guid=50638446",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Accessory use tables: 'Accessory dwelling unit' SE in R-1, R-3, R-5, D and MU. Blank in CB and PD. Not listed in M, HI, SDO and HO."
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "370-303C, 370-304C, 370-907E",
+      "url": "https://ecode360.com/print/HA0246?guid=50639423",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "CB, PD, M, HI and the SDO and HO overlays do not list an ADU, and 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved' (370-907E). The special exception for uses permitted nowhere (370-200F) does not reach a use permitted in other districts."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "370-302C, 370-303C, 370-400, 370-905",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board special exception under the 370-400 standards."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "370-907",
+      "url": "https://ecode360.com/print/HA0246?guid=50639423",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Dimensional relief from the Zoning Hearing Board under the findings in 370-907C. A variance to allow a use not permissible in the district may not be granted (370-907E)."
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "CB",
+            "PD",
+            "M",
+            "HI"
+          ],
+          "path": "not_allowed",
+          "section": "370-303C, 370-304C, 370-907E",
+          "url": "https://ecode360.com/print/HA0246?guid=50639423",
+          "note": "These districts do not list an ADU, and the Zoning Hearing Board may not grant a variance to allow a use not permissible in the district. Only a zoning amendment could open them."
+        }
+      ],
+      "section": "370-907E",
+      "url": "https://ecode360.com/print/HA0246?guid=50639423",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of an existing house into a duplex or multi-family use (R-5, D, MU)",
+          "path": "special_exception",
+          "districts": [
+            "R-5",
+            "D",
+            "MU"
+          ],
+          "conditions": "Zoning Hearing Board special exception to convert a single-family dwelling, attached or detached, that existed when the ordinance was adopted (1-28-2026) and had at least 3,000 sq ft of gross floor area then. The duplex or multi-family use must be permitted in the district (duplex: by right in D, special exception in R-5 and MU). District area and bulk, at most 12 dwelling units per acre and three units. Parking on site.",
+          "min_lot_sqft": 7260,
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "2026-01-28",
+              "condition": "The house existed when the zoning ordinance was adopted (1-28-2026)",
+              "section": "370-446A"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 3000,
+              "condition": "The house had at least 3,000 sq ft of gross floor area at adoption",
+              "section": "370-446A(2)"
+            }
+          ],
+          "section": "370-446, 370-302B, 370-303B(3)",
+          "url": "https://ecode360.com/print/HA0246?guid=50638958",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. 12 units per acre is read as 7,260 sq ft for two units. The house must have existed on the adoption date, so the test reads before 1-28-2026"
+        },
+        {
+          "name": "Two-family detached dwelling (duplex) in D",
+          "path": "by_right",
+          "districts": [
+            "D"
+          ],
+          "conditions": "A duplex (two dwelling units in one detached building, side by side or one over the other) is permitted by right in D. Lot 3,200 sq ft, 20 ft wide, building coverage 80%, front yard 0 to 10 ft, no side or rear yard. Only one principal residential use per lot.",
+          "min_lot_sqft": 3200,
+          "section": "370-303B(1), (3), 370-303D, 370-202 (dwelling)",
+          "url": "https://ecode360.com/print/HA0246?guid=50638454",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. Whether adding a unit to an existing house is read as this use is not said"
+        },
+        {
+          "name": "Two-family detached dwelling (duplex) in R-5 or MU",
+          "path": "special_exception",
+          "districts": [
+            "R-5",
+            "MU"
+          ],
+          "conditions": "A duplex is a special exception in R-5 and MU. Lot 3,200 sq ft. Maximum density for other uses 14 dwelling units per acre (about 6,223 sq ft for two units). R-5: 40 ft wide, building coverage 45%, impervious 80%, side yards 5 ft, rear 20 ft. MU: 30 ft wide, building coverage 50%, impervious 80%.",
+          "min_lot_sqft": 6223,
+          "section": "370-302B, D, 370-303B(3), D",
+          "url": "https://ecode360.com/print/HA0246?guid=50638446",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. 14 units per acre is read as 6,223 sq ft for two units. Whether adding a unit to an existing house is read as this use is not said"
+        }
+      ],
+      "section": "370-446, 370-302B, 370-303B",
+      "url": "https://ecode360.com/print/HA0246?guid=50638958",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-3",
+        "R-5",
+        "D",
+        "MU"
+      ],
+      "section": "370-302C, 370-303C",
+      "url": "https://ecode360.com/print/HA0246?guid=50638446",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": null,
+      "section": "370-400A, 370-202 (dwelling)",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "'Only as an accessory use to an owner-occupied single-family dwelling.' The code's single-family dwellings include detached, semi-detached (twin) and attached (rowhouse) dwellings (370-202), so no house type is excluded. Not a duplex or multi-family building."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 370",
+      "url": "https://ecode360.com/HA0246/search?query=%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20%22housekeeping%20unit%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22accessory%20living%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22sleeping%20quarters%22%20OR%20%22immediate%20family%22%20OR%20watchman%20OR%20%22separate%20living%22%20OR%20%22cooking%20facilities%22%20OR%20%22farm%20employee%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "owner_occupancy",
+          "condition": "Permitted only as an accessory use to an owner-occupied single-family dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "370-400A",
+          "url": "https://ecode360.com/print/HA0246?guid=50638482"
+        },
+        {
+          "kind": "design",
+          "condition": "The ADU has an exterior entrance separate from the entrance to the principal dwelling, and its own kitchen, bath and toilet (definition of dwelling).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "370-400E, 370-202 (dwelling)",
+          "url": "https://ecode360.com/print/HA0246?guid=50638482"
+        },
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "R-5 and MU cap density for other uses at 14 dwelling units per acre (about 3,111 sq ft per unit). An ADU must meet the definition of a dwelling, so it may count: then a house and an ADU need about 6,223 sq ft. Not settled. Ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-5",
+            "MU"
+          ],
+          "building_types": null,
+          "section": "370-302D, 370-303D, 370-400C",
+          "url": "https://ecode360.com/print/HA0246?guid=50638446"
+        }
+      ],
+      "section": "370-400",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "CB",
+        "PD",
+        "M",
+        "HI"
+      ],
+      "section": "370-303B, C, 370-304B, C",
+      "url": "https://ecode360.com/print/HA0246?guid=50638454",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "CB lists no dwelling. PD permits dwellings only as part of a traditional neighborhood development and lists no ADU. M and HI list no dwelling. The SDO and HO overlays list no dwelling."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "370-400E, G",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit may be located within or attached to the principal dwelling, or within an accessory building.' The text names garage apartments."
+    }
+  },
+  "size": {
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "370-400C",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'No more than 50% of the principal dwelling's gross floor area.'"
+    },
+    "min_sqft": {
+      "value": 500,
+      "section": "370-400C, 370-202 (dwelling)",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Shall meet the definition of dwelling, including a floor area of at least 500 square feet'."
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "370-501A, 370-302D, 370-303D",
+      "url": "https://ecode360.com/print/HA0246?guid=50638966",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "An accessory use attached to a principal building takes the principal building's area and bulk requirements."
+    },
+    "max_height_ft": {
+      "value": 25,
+      "section": "370-400G",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'An Accessory dwelling unit within an accessory building may extend up to two stories or 25 ft in height.'"
+    },
+    "max_height_stories": {
+      "value": 2,
+      "section": "370-400G",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "370-302D",
+      "url": "https://ecode360.com/print/HA0246?guid=50638446",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Accessory buildings 15 ft in R-1, R-3 and R-5, 20 ft in D and MU."
+    },
+    "accessory_cap_binds_adu": {
+      "value": false,
+      "section": "370-400G",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "370-400G sets the ADU's own height in an accessory building (two stories or 25 ft), read as replacing the 15 or 20 ft accessory building height."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "370-501C",
+      "url": "https://ecode360.com/print/HA0246?guid=50638966",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Accessory structures and uses shall not be located closer to the front lot line than the front wall of the principal building.'"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "370-400A",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit shall be permitted only as an accessory use to an owner-occupied single-family dwelling.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "370-400",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "The purpose names elderly parents, mature children or other relations to the owner, but no rule limits who may live in the ADU."
+    },
+    "occupancy": {
+      "value": "Not more than two individuals.",
+      "section": "370-400F",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "370-400B",
+      "url": "https://ecode360.com/print/HA0246?guid=50638482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'Only one accessory dwelling unit shall be allowed per principal dwelling.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "370-511C(1)",
+      "url": "https://ecode360.com/print/HA0246?guid=50639038",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. See reading."
+    },
+    "reading": {
+      "value": "No parking rule names the ADU. Read as a dwelling unit: 1.4 spaces for a studio or one-bedroom unit below 800 sq ft, or 2 spaces for the first two bedrooms. The house needs 2 spaces for its first two bedrooms plus 0.4 per added bedroom. D and MU allow park-once reductions.",
+      "section": "370-511C(1)",
+      "url": "https://ecode360.com/print/HA0246?guid=50639038",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot width 60 ft."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum. Maximum 45 ft. Where adjacent lots have buildings, the front setback matches the average of the four closest adjacent buildings (note 1)."
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum side yard."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Stories or feet as the table gives them."
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 2,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Accessory building."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Accessory building."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot width 50 ft (twin 40 ft)."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum. Maximum 35 ft. Where adjacent lots have buildings, the front setback matches the average of the four closest adjacent buildings (note 1)."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum side yard."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Stories or feet as the table gives them."
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.75,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 2,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Accessory building."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Accessory building."
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 3200,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot width 40 ft. Rowhouse 1,600 sq ft, multi-family 6,400 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum. Maximum 25 ft. Where adjacent lots have buildings, the front setback matches the average of the four closest adjacent buildings (note 1)."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum side yard."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Stories or feet as the table gives them."
+      },
+      "max_building_coverage": {
+        "value": 0.45,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.8,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 2,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Accessory building."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Accessory building."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 3111,
+        "section": "370-302D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638446",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "Maximum density 'Other uses: 14 d.u./ac' (43,560 / 14 = about 3,111 sq ft per dwelling unit). An ADU must meet the definition of a dwelling (370-400C), so it may count. Not settled."
+      }
+    },
+    "D": {
+      "min_lot_sqft": {
+        "value": 3200,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot width 20 ft. Rowhouse 1,600 sq ft, multi-family 6,400 sq ft. No impervious or density figure. Height 45 ft within 20 ft of a residential district (note 2). Only one principal residential use per lot (370-303B(1))."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum. Maximum 10 ft. Where adjacent lots have buildings, the front setback matches the average of the four closest adjacent buildings (note 1)."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum side yard."
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "principal_max_height_ft": {
+        "value": 75,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 6,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Stories or feet as the table gives them."
+      },
+      "max_building_coverage": {
+        "value": 0.8,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 3200,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Lot width 30 ft. Rowhouse 1,600 sq ft, multi-family 6,400 sq ft. Landscaped open space 15%. Only one principal residential use per lot (370-303B(1))."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum. Maximum 20 ft. Where adjacent lots have buildings, the front setback matches the average of the four closest adjacent buildings (note 1)."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Minimum side yard."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal building."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Stories or feet as the table gives them."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.8,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 2,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Accessory building."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Accessory building."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 3111,
+        "section": "370-303D",
+        "url": "https://ecode360.com/print/HA0246?guid=50638454",
+        "verified_on": "2026-11-15",
+        "confidence": "secondary",
+        "note": "Maximum density 'Other uses: 14 d.u./ac' (43,560 / 14 = about 3,111 sq ft per dwelling unit). An ADU must meet the definition of a dwelling (370-400C), so it may count. Not settled."
+      }
+    }
+  }
+}

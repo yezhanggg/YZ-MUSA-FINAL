@@ -1160,6 +1160,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-01-15",
         "note": "Zoning: Chapter 600 Zoning (Ord. No. 678, 12-13-2012, as amended). No ADU text. R-1, R-2 and R-3 permit only single-family detached dwellings among dwellings. Two-family detached dwellings (duplexes) by right only in APT on a one-acre tract (600-40, 600-43C), watchman or caretaker quarters in I (600-81E). Elsewhere a use variance (600-209C). New Laws: Ord. No. 767 (zoning) not codified. Read in the browser on eCode360 (UP1263).",
     },
+    "4209526728": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/8571248",
+        "plain_fetch": False,
+        "current_through": "2025-09-04",
+        "note": "Zoning: Chapter 200 Zoning (Ord. No. 331, 8-21-2014, as amended). The code defines an accessory apartment and a unit for care of relative (200-7) but no district lists either use (H-9, H-11, H-12 reserved). A use permitted in no district may be a conditional use (200-79F). Residential conversion by special exception in TC and TC-1 (200-28B(14)), a facility for domestic servants, caretakers or guests on lots over one acre (200-28H(3)(c)[3]), a second dwelling under a county agricultural easement in FP (200-13D). New Laws: Ord. 414, 415, 416 (zoning) not codified. Read in the browser on eCode360 (FO1696).",
+    },
+    "4204503336": {
+        "code_host": "amlegal",
+        "code_url": "https://codelibrary.amlegal.com/codes/astontwppa/latest/astontownship_pa/0-0-0-6217",
+        "plain_fetch": False,
+        "current_through": "2024-02-21",
+        "note": "Zoning: Part Twelve, Title Six Zoning (Chapters 1250 to 1298, Ord. 896, 12-21-2011, as amended). ADU text: 'Accessory dwelling units' (1290.14): special exception in R-1, R-2 and R-3 (R-3's own list 1262.03 omits it), part of or an addition to the house, owner-occupied, for a member of the owner's immediate family, at most 25% of the house, two bedrooms and four occupants, lot 10,000 sq ft, two more parking spaces. Two-family dwellings by right in APT (3-acre tract). Current through Ord. 1035 (2-21-2024). Read in the browser on American Legal Publishing (astontwppa).",
+    },
+    "4213332448": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/15699677",
+        "plain_fetch": False,
+        "current_through": "2026-05-27",
+        "note": "Zoning: Chapter 370 Zoning (Ord. No. 2385, adopted 1-28-2026). ADU text: 'Accessory dwelling units' (370-400): special exception in R-1, R-3, R-5, D and MU, accessory to an owner-occupied single-family dwelling, within or attached to the house or in an accessory building (two stories or 25 ft), 500 sq ft to 50% of the house, at most two people. No use variance for a use not permissible in a district (370-907E). Conversion of a large existing house (3,000 sq ft) by special exception (370-446). Read in the browser on eCode360 (HA0246).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1180,6 +1201,7 @@ FIXED_BATCH.update({g: 19 for g in ("4207121344", "4205530944", "4200372160", "4
 FIXED_BATCH.update({g: 20 for g in ("4209161664", "4213358888", "4204515488", "4202921192")})
 FIXED_BATCH.update({g: 21 for g in ("4209177152", "4202138288", "4207183256")})
 FIXED_BATCH.update({g: 22 for g in ("4209179056", "4207183152", "4204578776")})
+FIXED_BATCH.update({g: 23 for g in ("4209526728", "4204503336", "4213332448")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1256,6 +1278,12 @@ EXTRAS = {
     "4209179056": "Code 195-9F(1)(g) separate living area for relatives",
     "4207183152": "Code 702.9 ECHO housing",
     "4204578776": "batch 22 by population. Code Chapter 600 has no ADU text",
+    # Batch 23 (2026-11-15): the next towns by population without a rule file. Hilltown was skipped (use and bulk tables
+    # only in PDF attachments) and Scott (Allegheny) (zoning ordinance only on the township website; eCode360 SC1463 is
+    # Scott Township, Columbia County).
+    "4209526728": "batch 23 by population. Code 200-7 accessory apartment and unit for care of relative (defined, not listed)",
+    "4204503336": "Code 1290.14 accessory dwelling units, immediate family",
+    "4213332448": "Code 370-400 accessory dwelling units",
 }
 
 if __name__ == "__main__":
