@@ -27,7 +27,11 @@
       "https://ecode360.com/print/FO1696?guid=8573307",
       "https://ecode360.com/print/FO1696?guid=8573357",
       "https://ecode360.com/print/FO1696?guid=8573836",
-      "https://ecode360.com/print/FO1696?guid=8573858"
+      "https://ecode360.com/print/FO1696?guid=8573858",
+      "https://ecode360.com/FO1696/search?query=%22Except%20as%20provided%20by%20law%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/FO1696/search?query=%22Agricultural%20Conservation%20Ratio%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/FO1696/search?query=%22second%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/FO1696/search?query=%22accessory%20apartment%22%20OR%20%22unit%20for%20care%22&scope=all&sortOrder=relevance"
     ],
     "verified_on": "2026-11-15",
     "county": "Northampton",
@@ -37,17 +41,19 @@
     "code_url": "https://ecode360.com/8571248",
     "code_current_through": "2025-09-04",
     "code_current_through_note": "eCode360 'Includes legislation through 09-04-2025.' Chapter 200 adopted 8-21-2014 by Ord. No. 331.",
-    "code_caution": "Three zoning amendments are listed under New Laws and are not yet in the online code: Ord. 414 Solar Farms (2026-04-02), Ord. 416 Data Center amendment (2026-06-18) and Ord. 415 Zoning Text Amendment (growth management) (2026-07-02). Their text (PDF) was not read. Only their titles were seen. Ord. 415 is a general zoning text amendment and may change residential rules. Ask the township whether it touches accessory apartments, units for care of a relative or the residential district rules.",
+    "code_caution": "Ord. 415 Zoning Text Amendment (growth management), adopted 2026-07-02, is not yet in the online code. Its text (PDF) was not opened, but the site's search over it shows that it rewrites the FP Farmland Protection district: it restates the 200-13D easement text, adds an 'Agricultural Conservation Ratio' and new rows to the FP table (for example a single-family dwelling row), and changes how lot area is measured for the minimum lot area. So the FP lot size, width and yards shown here (from the code before Ord. 415) are probably superseded. Ask the township for the FP figures in force. The search found no Ord. 415 text on accessory apartments or units for care of a relative. Two other zoning amendments are also not yet in the code: Ord. 414 Solar Farms (2026-04-02) and Ord. 416 Data Center amendment (2026-06-18).",
     "checks": [
       "The code defines an 'accessory apartment' ('One dwelling unit that is created within part of a single-family detached dwelling or above a vehicle garage on a residential lot') and a 'unit for care of relative' (a dwelling unit 'limited to occupancy by a close relative of the permanent residents of the principal dwelling unit'), but no district lists either use and 200-28 has no rules for them. Use numbers H-9, H-11 and H-12 are reserved (200-7, 200-28H)",
-      "Only listed uses are allowed (200-25). A use permitted in no district may be allowed by the Board of Supervisors as a conditional use if it is no more intensive than and closely similar to permitted uses (200-79F). Ask the township whether an accessory apartment or a unit for care of a relative may be approved this way",
+      "200-7 also defines a 'conversion apartment' as a dwelling type ('A new dwelling unit created within an existing building'). No district lists it as its own use. The listed use that converts an existing dwelling is the residential conversion (B-14), a special exception only in TC and TC-1",
+      "Only listed uses are allowed (200-25). A use permitted in no district may be allowed by the Board of Supervisors as a conditional use in any district if it is no more intensive than and closely similar to the uses permitted in that district (200-79F). Ask the township whether an accessory apartment or a unit for care of a relative may be approved this way, or whether it is read as a residential conversion (then a special exception in TC and TC-1 and a use variance elsewhere)",
       "A dwelling unit may not include two separate and distinct sets of kitchen facilities or two living areas separated with no interior access (200-7 dwelling unit B). Boarding allows up to two roomers in an owner-occupied house but no second set of cooking facilities or separate dwelling unit (200-28H(4))",
       "Residential conversion (the conversion of an existing dwelling into more than one dwelling, or of an accessory building into one dwelling) is a special exception only in TC and TC-1 (200-18A(3), 200-18.1A, 200-28B(14))",
+      "Age-restricted housing (B-15, a head of household 55 or older in every unit) may include duplexes. It is by right in CR on a 5-acre site and a conditional use in SR and SR-1 on a 10-acre site (200-15, 200-16A(2), 200-28B(15))",
       "On a lot greater than one acre, one facility for domestic servants or caretakers employed on the premises and for occasional gratuitous guests is allowed as a residential accessory use (200-28H(3)(c)[3])",
-      "In FP, where a Northampton County agricultural conservation easement expressly allows a second dwelling unit on the lot, the chapter allows it (200-13D)",
-      "Buildings accessory to a dwelling are at most 16 ft tall. A shed under 200 sq ft may stand 5 ft from a side or rear line. Other accessory buildings meet the principal building setbacks. No accessory building in the minimum front yard (200-28H(3)(c), 200-35E(4))"
+      "In FP, where a Northampton County agricultural conservation easement expressly allows a second dwelling unit on the lot, the chapter allows it (200-13D). Ord. 415 (2026-07-02) restates this text. Its final wording was not read",
+      "Buildings accessory to a dwelling are at most 16 ft tall. A shed under 200 sq ft may stand 5 ft from a side or rear line. Other accessory buildings meet the principal building setbacks. All sheds on a residential lot together may not exceed 400 sq ft. No accessory building in the minimum front yard (200-28H(3)(c), 200-35E(4))"
     ],
-    "notes": "Zoning office: Forks Township Zoning Officer. eCode360 code FO1696 is the Township of Forks, Northampton County (200-13D names a Northampton County agricultural conservation easement). Read on eCode360 in a browser, one page at a time, on 2026-11-15. Code search (all content) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities and farm employee found the definitions of accessory apartment, unit for care of relative, related, dwelling and dwelling unit. Searches for unit for care, residential conversion, care of, second dwelling, apartment and kitchen found only definitions and district sections. Every district section was read (Article IV in full) and 200-28B and H were read in full. Read in full: 200-7 definitions up to lot width and the definitions of related and unit for care of relative, 200-12, Article IV (200-13 to 200-24.1), 200-25, 200-26, 200-27, 200-28B, 200-28H, 200-35, 200-78, 200-79. Read in part: 200-36 (searched on screen for dwelling and apartment parking). Not read: 200-28A, C to G, 200-31, 200-40, Article X (nonconformities), the three New Laws (PDF)."
+    "notes": "Zoning office: Forks Township Zoning Officer. eCode360 code FO1696 is the Township of Forks, Northampton County (200-13D names a Northampton County agricultural conservation easement). Read on eCode360 in a browser, one page at a time, on 2026-11-15. Code search (all content) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities and farm employee found the definitions of accessory apartment, unit for care of relative, related, dwelling and dwelling unit. Searches for unit for care, residential conversion, care of, second dwelling, apartment and kitchen found only definitions and district sections. Every district section was read (Article IV in full) and 200-28B and H were read in full. Read in full: 200-7 definitions up to lot width and the definitions of related and unit for care of relative, 200-12, Article IV (200-13 to 200-24.1), 200-25, 200-26, 200-27, 200-28B, 200-28H, 200-35, 200-78, 200-79. Read in part: 200-36 (searched on screen for dwelling and apartment parking). Not read: 200-28A, C to G, 200-31, 200-40, Article X (nonconformities), the three New Laws (PDF). Fix round on 2026-11-15 after an independent review: re-read in a browser 200-22B and C (RC yards by lot size), 200-79F, 200-25 (search excerpt), 200-28B(15), 200-28H(3)(c), the 200-7 dwelling types (conversion apartment), 200-13 to 200-16, and site searches that reach the Ord. 415 text (Agricultural Conservation Ratio, second dwelling unit, accessory apartment, unit for care). The Ord. 415 PDF itself was not opened."
   },
   "adu": {
     "term": {
@@ -64,7 +70,7 @@
       "url": "https://ecode360.com/print/FO1696?guid=8571635",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "Both terms are defined but no district lists them as a use and 200-28 sets no rules for them (H-9, H-11 and H-12 are reserved). 'A building, structure, or land shall only be used or occupied for the purposes allowed in the applicable zoning district' (200-25)."
+      "note": "Both terms are defined but no district lists them as a use and 200-28 sets no rules for them (H-9, H-11 and H-12 are reserved). 'Except as provided by law or this chapter, a building, structure, or land shall only be used or occupied for the purposes allowed in the applicable zoning district' (200-25). A conversion apartment ('A new dwelling unit created within an existing building') is defined as a dwelling type but is not listed as a use either."
     }
   },
   "approval": {
@@ -74,7 +80,7 @@
       "url": "https://ecode360.com/print/FO1696?guid=8573836",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "Only listed uses are allowed (200-25) and in a residential district 'no more than one principal type of use shall be permitted on a lot' (200-26C). No district lists an accessory apartment. Outside the conditional use for uses not regulated (see unlisted_use_path), a second unit needs a use variance from the Zoning Hearing Board."
+      "note": "Only listed uses are allowed (200-25) and in a residential district 'no more than one principal type of use shall be permitted on a lot' (200-26C). No district lists an accessory apartment. Outside the conditional use for uses not regulated (see unlisted_use_path, 200-79F), a second unit needs a use variance from the Zoning Hearing Board."
     },
     "fallback_path": {
       "value": "variance",
@@ -90,23 +96,7 @@
       "url": "https://ecode360.com/print/FO1696?guid=8573858",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "'If a use clearly is not permitted by right, as a conditional use, or as a special exception use by this chapter within any Zoning District, the use is prohibited, except that the Board of Supervisors may permit such use as a conditional use' if it is no more intensive than permitted uses, closely similar to them, meets the conditional use standards and is not specifically prohibited in that district. An accessory apartment or unit for care of relative is permitted in no district, so this path may reach it. A two-family dwelling is not a listed use either: the duplex (B-6) is listed only within a performance subdivision in SR and SR-1, and a residential conversion (B-14) is listed in TC. Where a second unit is read as a residential conversion or a duplex (listed uses), this path does not reach it. A hearing with no ADU standards."
-    },
-    "unlisted_use_districts": {
-      "value": [
-        "FP",
-        "OR",
-        "CR",
-        "SR",
-        "SR-1",
-        "RC",
-        "HC"
-      ],
-      "section": "200-79F, 200-13A, 200-14A, 200-15A, 200-16A, 200-17A, 200-22A, 200-23A",
-      "url": "https://ecode360.com/print/FO1696?guid=8573858",
-      "verified_on": "2026-11-15",
-      "confidence": "secondary",
-      "note": "Districts that permit a single-family detached dwelling, where an accessory apartment could be accessory to a house. TC, TC-1, EC, EC-1, EC-2, EC-3, REM and ID permit no single-family detached dwelling."
+      "note": "'If a use clearly is not permitted by right, as a conditional use, or as a special exception use by this chapter within any Zoning District, the use is prohibited, except that the Board of Supervisors may permit such use as a conditional use' if it is no more intensive than the uses permitted in the district, closely similar to them, meets the conditional use standards and is not specifically prohibited in that district. The section names no district, so it reaches every district. An accessory apartment or unit for care of relative is defined but permitted in no district, so this path may reach it. Other reading: a unit made inside an existing house may be read as a residential conversion (B-14), a listed use (special exception in TC and TC-1). On that reading this path does not reach it and outside TC and TC-1 a use variance is needed. A two-family dwelling is not listed on its own either: a duplex (B-6) is listed only within a performance subdivision in SR and SR-1 or within age-restricted housing (B-15) in CR, SR and SR-1. A hearing before the Board of Supervisors with no ADU standards."
     },
     "alternatives": {
       "value": [
@@ -180,8 +170,8 @@
           ],
           "section": "200-13D",
           "url": "https://ecode360.com/print/FO1696?guid=8571635",
-          "confidence": "verified",
-          "note": "Not an ADU listing. The FP lot area of 3 acres per dwelling unit (200-13B) is not said to apply to it"
+          "confidence": "secondary",
+          "note": "Not an ADU listing. The FP lot area of 3 acres per dwelling unit (200-13B) is not said to apply to it. Ord. 415 (2026-07-02) restates 200-13D: its search excerpt shows the same easement wording, but the final text was not read"
         },
         {
           "name": "Duplex or twin in a performance subdivision (SR, SR-1; twin also OR, CR, EC-1)",
@@ -193,7 +183,7 @@
             "CR",
             "EC-1"
           ],
-          "conditions": "A performance subdivision mixes dwelling types on a development tract with open space. SR: minimum gross site area 10 acres, 5 dwelling units per acre of net buildable site area, open space 25%. A duplex (two dwelling units in one building, usually one above the other) is permitted only in SR and SR-1. A twin is permitted in OR, CR, SR, SR-1 and EC-1 (twin lot 4,000 sq ft in SR, 4,500 in OR and CR). Subdivision and land development approval. Two parking spaces per dwelling unit. EC-1 is a conditional use.",
+          "conditions": "A performance subdivision mixes dwelling types on a development tract with open space. SR: minimum gross site area 10 acres, 5 dwelling units per acre of net buildable site area, open space 25%. In a performance subdivision a duplex (two dwelling units in one building, usually one above the other) is permitted only in SR and SR-1. A twin is permitted in OR, CR, SR, SR-1 and EC-1 (twin lot 4,000 sq ft in SR, 4,500 in OR and CR). Subdivision and land development approval. Two parking spaces per dwelling unit. EC-1 is a conditional use. Age-restricted housing may also include duplexes (separate listing).",
           "min_lot_sqft": 435600,
           "min_lot_is_tract": true,
           "land_development": true,
@@ -201,6 +191,51 @@
           "url": "https://ecode360.com/print/FO1696?guid=29852910",
           "confidence": "secondary",
           "note": "Not an ADU listing. A development use on a tract of 10 acres or more (15 acres in OR), not a unit added to one house"
+        },
+        {
+          "name": "Duplex in age-restricted housing (CR, by right)",
+          "path": "by_right",
+          "districts": [
+            "CR"
+          ],
+          "conditions": "Age-restricted housing (B-15) is by right in CR on a minimum gross site of 5 acres, at most 4.5 dwelling units per acre of net buildable site area, open space 35%. 'The development may include the following housing types: single-family detached, Use B-1; twin house, Use B-5; townhouse, Use B-8; apartments, Use B-10; or duplex, Use B-6.' Every unit (except one for a manager) is deed-restricted: at least one head of household 55 or older or physically disabled, no one under 18 living there more than 30 days a year. Planned as a single unit. Two parking spaces per unit. Subdivision and land development approval.",
+          "min_lot_sqft": 217800,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "Every unit is deed-restricted to a household with a head of household 55 or older (or physically disabled)",
+              "section": "200-28B(15)(a)"
+            }
+          ],
+          "section": "200-15A(1), B, C, 200-28B(15)",
+          "url": "https://ecode360.com/print/FO1696?guid=29852910",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A development use on a 5-acre site, not a unit added to one house"
+        },
+        {
+          "name": "Duplex in age-restricted housing (SR, SR-1, conditional use)",
+          "path": "conditional_use",
+          "districts": [
+            "SR",
+            "SR-1"
+          ],
+          "conditions": "Age-restricted housing (B-15) is a conditional use in SR and SR-1 (Board of Supervisors) on a minimum gross site of 10 acres, 5 dwelling units per acre of net buildable site area with open space 25% (a second row of the SR table, with no label, reads 5.5 units per acre with open space 20%). It may include duplexes (Use B-6). Every unit (except one for a manager) is deed-restricted to a head of household 55 or older or physically disabled. Two parking spaces per unit. Subdivision and land development approval.",
+          "min_lot_sqft": 435600,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "Every unit is deed-restricted to a household with a head of household 55 or older (or physically disabled)",
+              "section": "200-28B(15)(a)"
+            }
+          ],
+          "section": "200-16A(2), B, C, 200-17A, 200-28B(15)",
+          "url": "https://ecode360.com/print/FO1696?guid=29852910",
+          "confidence": "secondary",
+          "note": "Not an ADU listing. A development use on a 10-acre site, not a unit added to one house"
         },
         {
           "name": "Dwelling in combination with a business (TC, RC, HC)",
@@ -223,7 +258,7 @@
           "note": "Not an ADU listing. A building that pairs a business use with one apartment, not a second unit for a house. RC needs 40,000 sq ft without public water and sewer"
         }
       ],
-      "section": "200-28B(13), (14), 200-28H(3), (10), 200-13D",
+      "section": "200-28B(13), (14), (15), 200-28H(3), (10), 200-13D",
       "url": "https://ecode360.com/print/FO1696?guid=29852910",
       "verified_on": "2026-11-15",
       "confidence": "verified"
@@ -250,7 +285,7 @@
       "value": [
         {
           "kind": "other",
-          "condition": "Lots in a single-family detached cluster or a performance subdivision take that plan's smaller lots and yards: OR cluster 12,500 or 10,000 sq ft, CR cluster 10,000 sq ft (front 25, sides 10, rear 35), SR cluster 6,500 sq ft (front 20, sides 8, rear 35), performance subdivision single-family lots 6,000 sq ft in OR and CR (front 15, sides 10, rear 25) and 5,500 sq ft in SR, SR-1 and EC-1 (front 15, sides 6, rear 25).",
+          "condition": "Lots in a single-family detached cluster or a performance subdivision take that plan's smaller lots and yards: FP cluster 1-acre lots on a 2-acre site, 130 ft wide (front 30, sides 20, rear 40), OR cluster 12,500 or 10,000 sq ft, CR cluster 10,000 sq ft (front 25, sides 10, rear 35), SR cluster 6,500 sq ft (front 20, sides 8, rear 35), performance subdivision single-family lots 6,000 sq ft in OR and CR (front 15, sides 10, rear 25) and 5,500 sq ft in SR, SR-1 and EC-1 (front 15, sides 6, rear 25).",
           "effect": "condition",
           "applies_to": null,
           "districts": [
@@ -279,6 +314,19 @@
           "test": "public_sewer",
           "section": "200-14B, 200-35C(2)(b)",
           "url": "https://ecode360.com/print/FO1696?guid=8571635"
+        },
+        {
+          "kind": "other",
+          "condition": "The FP lot size, width and yards shown come from the code before Ord. 415 (adopted 2026-07-02). Ord. 415 rewrites the FP district table (an Agricultural Conservation Ratio and new rows) and the lot area definition, so these FP figures are probably superseded. Ask the township for the FP figures in force.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "FP"
+          ],
+          "building_types": null,
+          "section": "200-13B, C, Ord. 415 (search excerpt)",
+          "url": "https://ecode360.com/FO1696/search?query=%22Agricultural%20Conservation%20Ratio%22&scope=all&sortOrder=relevance",
+          "confidence": "secondary"
         }
       ],
       "section": "200-13 to 200-24.1",
@@ -422,53 +470,56 @@
         "section": "200-13B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "3 acres per dwelling unit for other allowed uses, including a single-family detached dwelling. Width 200 ft. Cluster lots 1 acre on a 2-acre site."
+        "confidence": "secondary",
+        "note": "3 acres per dwelling unit for other allowed uses, including a single-family detached dwelling. Width 200 ft. Cluster lots 1 acre on a 2-acre site. Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
       },
       "setback_front_ft": {
         "value": 35,
         "section": "200-13B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
       },
       "setback_side_ft": {
         "value": 25,
         "section": "200-13B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "Each side."
+        "confidence": "secondary",
+        "note": "Each side. Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
       },
       "setback_rear_ft": {
         "value": 40,
         "section": "200-13B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
       },
       "principal_max_height_ft": {
         "value": 35,
         "section": "200-13B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified"
+        "confidence": "secondary",
+        "note": "Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
       },
       "max_impervious_coverage": {
         "value": 0.2,
         "section": "200-13B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "Maximum impervious surface ratio per lot for a single-family detached dwelling."
+        "confidence": "secondary",
+        "note": "Maximum impervious surface ratio per lot for a single-family detached dwelling. Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
       },
       "principal_max_stories": {
         "value": 3,
         "section": "200-13B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "Stories or feet, whichever is more restrictive."
+        "confidence": "secondary",
+        "note": "Stories or feet, whichever is more restrictive. Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
       }
     },
     "OR": {
@@ -742,8 +793,8 @@
         "section": "200-22B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "Single-family detached dwelling with both public water and sewer: 20,000 sq ft per dwelling unit, width 120 ft. Without both: 40,000 sq ft, impervious 20%, width 160 ft, side 25 ft, rear 45 ft."
+        "confidence": "secondary",
+        "note": "Single-family detached dwelling with both public water and sewer: 20,000 sq ft per dwelling unit. Without both: 40,000 sq ft and impervious 20%. The table header reads 'Maximum Lot Area (per Dwelling Unit for Residential Uses)'. Read as a minimum (the yard table says 'For lots with a minimum lot area of 20,000 square feet')."
       },
       "setback_front_ft": {
         "value": 35,
@@ -758,14 +809,15 @@
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Each side."
+        "note": "Each side. Lots of 40,000 sq ft or more: 25 ft (see yard_tiers)."
       },
       "setback_rear_ft": {
         "value": 35,
         "section": "200-22B, C",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "Lots of 40,000 sq ft or more: 45 ft (see yard_tiers)."
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -782,32 +834,57 @@
         "confidence": "verified",
         "note": "Maximum impervious surface ratio per lot for a single-family detached dwelling."
       },
+      "yard_tiers": {
+        "value": [
+          {
+            "min_lot_sqft": 20000,
+            "max_lot_sqft": 39999,
+            "applies_to": "principal",
+            "setback_front_ft": 35,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 35,
+            "section": "200-22C",
+            "note": "'For lots with a minimum lot area of 20,000 square feet': width 120 ft, yards 35/15/35"
+          },
+          {
+            "min_lot_sqft": 40000,
+            "max_lot_sqft": null,
+            "applies_to": "principal",
+            "setback_front_ft": 35,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 45,
+            "section": "200-22C",
+            "note": "'For lots with a minimum lot area of 40,000 square feet or greater': width 160 ft, yards 35/25/45"
+          }
+        ],
+        "section": "200-22C",
+        "url": "https://ecode360.com/print/FO1696?guid=8571635",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "The yards follow the lot size, whatever the services. Side and rear yards are 50 ft along the line of a principal nonresidential use that abuts an existing residential use."
+      },
       "utility_rows": {
         "value": [
           {
             "when": "Without public sewer",
             "public_sewer": false,
             "min_lot_sqft": 40000,
-            "setback_side_ft": 25,
-            "setback_rear_ft": 45,
             "max_impervious_coverage": 0.2,
-            "section": "200-22B, C"
+            "section": "200-22B"
           },
           {
             "when": "Without public water",
             "public_water": false,
             "min_lot_sqft": 40000,
-            "setback_side_ft": 25,
-            "setback_rear_ft": 45,
             "max_impervious_coverage": 0.2,
-            "section": "200-22B, C"
+            "section": "200-22B"
           }
         ],
-        "section": "200-22B, C",
+        "section": "200-22B",
         "url": "https://ecode360.com/print/FO1696?guid=8571635",
         "verified_on": "2026-11-15",
-        "confidence": "verified",
-        "note": "Without both public water and sewer services. Lots of 40,000 sq ft or more take side 25 ft and rear 45 ft."
+        "confidence": "secondary",
+        "note": "Without both public water and sewer services: 40,000 sq ft per dwelling unit and impervious 20% (header 'Maximum Lot Area', read as a minimum). The larger yards follow the lot size, not the services (yard_tiers)."
       }
     },
     "HC": {

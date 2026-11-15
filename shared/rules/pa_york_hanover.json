@@ -36,16 +36,18 @@
     "code_current_through": "2026-05-27",
     "code_current_through_note": "eCode360 'Includes legislation through 05-27-2026.' Chapter 370 adopted 1-28-2026 by Ord. No. 2385.",
     "checks": [
-      "An accessory dwelling unit is a special exception in R-1, R-3, R-5, D and MU (370-302C, 370-303C) under 370-400",
+      "An accessory dwelling unit is a special exception in R-1, R-3, R-5, D and MU (370-302C, 370-303C) under 370-400. The purpose line of 370-400 calls it a 'permitted use', but the use tables list it as a special exception",
       "Only as an accessory use to an owner-occupied single-family dwelling. One per principal dwelling. At most two people live in it (370-400A, B, F)",
       "It meets the definition of a dwelling, with at least 500 sq ft of floor area, and is no more than 50% of the principal dwelling's gross floor area. It needs its own kitchen, bath and an exterior entrance separate from the house's (370-400C, E, 370-202 dwelling)",
       "It may be within or attached to the house or within an accessory building. In an accessory building it may be up to two stories or 25 ft tall (370-400E, G)",
-      "Accessory structures may not stand closer to the front lot line than the front wall of the house (370-501C)",
-      "The Zoning Hearing Board may not grant a variance to allow a use not permissible in the district (370-907E). CB, PD, M and HI do not list an ADU",
+      "Unless specifically exempted, accessory structures may not stand in the required front, side or rear setbacks, nor closer to the front lot line than the front wall of the house (370-501B, C). The district tables' accessory building yards (2 ft side, 3 ft rear) are that exemption",
+      "CB, PD, M and HI do not list an ADU. The code itself bars a use variance in a district that does not permit the use: 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved, or any use expressly or by implication prohibited by the terms of this chapter in said district' (370-907E, Uses not permitted). So the code leaves no use variance in those districts: only a zoning amendment could open them. 370-907E limits a power the board has under MPC 910.2, and whether that limit holds is a legal question",
+      "Parking: except in R-1, CB and PD, all parking spaces must be behind the front wall of the house (370-511B(2)(b)). The Zoning Hearing Board may reduce the required spaces by special exception with supporting data (370-511C(2)(a))",
+      "R-3's purpose speaks of 'one- and two-family dwellings', but the R-3 use table lists no two-family dwelling (duplex). Only one principal use per lot is permitted in the residential districts (370-302A(2), B)",
       "A house that existed on 1-28-2026 with at least 3,000 sq ft of gross floor area may be converted to a duplex or multi-family use by special exception where that use is permitted (R-5, D, MU), at most 12 units per acre and three units (370-446)",
       "An ADU is a residential rental unit under the rental registration rules (370-202, Chapter 278)"
     ],
-    "notes": "Zoning office: Borough of Hanover Zoning Officer. eCode360 code HA0246 is the Borough of Hanover. GEOID 4213332448 is in York County (42133). No other borough named Hanover is in Pennsylvania. Read on eCode360 in a browser, one page at a time, on 2026-11-15. Code search (all content) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities and farm employee found 370-400, the accessory dwelling unit and dwelling definitions, 370-446 and the family definition. A search for uses not listed found 370-200F. Every district section was opened (370-302, 370-303, 370-304, use and bulk tables checked on screen for column alignment). Read in full: 370-200, 370-300, 370-302, 370-303, 370-304, 370-400, 370-446, 370-500, 370-501, 370-801, 370-907, the definitions of dwelling and family. Read in part: 370-511 (parking table). Not read: the rest of 370-202, 370-441 (TND), 370-445 (short-term rental), 370-905, 370-906, Article VI."
+    "notes": "Zoning office: Borough of Hanover Zoning Officer. eCode360 code HA0246 is the Borough of Hanover. GEOID 4213332448 is in York County (42133). No other borough named Hanover is in Pennsylvania. Read on eCode360 in a browser, one page at a time, on 2026-11-15. Code search (all content) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities and farm employee found 370-400, the accessory dwelling unit and dwelling definitions, 370-446 and the family definition. A search for uses not listed found 370-200F. Every district section was opened (370-302, 370-303, 370-304, use and bulk tables checked on screen for column alignment). Read in full: 370-200, 370-300, 370-302, 370-303, 370-304, 370-400, 370-446, 370-500, 370-501, 370-801, 370-907, the definitions of dwelling and family. Read in part: 370-511 (parking table). Not read: the rest of 370-202, 370-441 (TND), 370-445 (short-term rental), 370-905, 370-906, Article VI. Fix round on 2026-11-15 after an independent review: re-read in a browser 370-302 (purposes and use table), 370-400, 370-501, 370-511 in full and 370-907E. Engine gap: outside the five ADU districts the resolver still offers a use variance, which 370-907E bars."
   },
   "adu": {
     "term": {
@@ -62,7 +64,7 @@
       "url": "https://ecode360.com/print/HA0246?guid=50638482",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "An accessory use by special exception in R-1, R-3, R-5, D and MU. The stated purpose names elderly parents, mature children or other relations to the owner, but the rules (A to G) set no family test."
+      "note": "An accessory use by special exception in R-1, R-3, R-5, D and MU. The purpose line of 370-400 calls it a 'permitted use' ('The purpose for their inclusion as a permitted use in the Zoning Ordinance ...'), but the use tables list it as a special exception. The stated purpose names elderly parents, mature children or other relations to the owner, but the rules (A to G) set no family test."
     },
     "scope_districts": {
       "value": [
@@ -84,7 +86,7 @@
       "url": "https://ecode360.com/print/HA0246?guid=50639423",
       "verified_on": "2026-11-15",
       "confidence": "secondary",
-      "note": "CB, PD, M, HI and the SDO and HO overlays do not list an ADU, and 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved' (370-907E). The special exception for uses permitted nowhere (370-200F) does not reach a use permitted in other districts."
+      "note": "CB, PD, M, HI and the SDO and HO overlays do not list an ADU. The code itself bars a use variance in a district that does not permit the use: 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved, or any use expressly or by implication prohibited by the terms of this chapter in said district' (370-907E, Uses not permitted). So in these districts the code allows no use variance for an ADU: only a zoning amendment could open them. The special exception for uses permitted nowhere (370-200F) does not reach a use permitted in other districts. 370-907E limits a power the board has under MPC 910.2, and whether that limit holds is a legal question."
     }
   },
   "approval": {
@@ -102,7 +104,7 @@
       "url": "https://ecode360.com/print/HA0246?guid=50639423",
       "verified_on": "2026-11-15",
       "confidence": "verified",
-      "note": "Dimensional relief from the Zoning Hearing Board under the findings in 370-907C. A variance to allow a use not permissible in the district may not be granted (370-907E)."
+      "note": "Dimensional relief (for example lot size or yards) from the Zoning Hearing Board under the findings in 370-907C. Not a use variance. The code itself bars a use variance in a district that does not permit the use: 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved, or any use expressly or by implication prohibited by the terms of this chapter in said district' (370-907E, Uses not permitted)."
     },
     "district_paths": {
       "value": [
@@ -116,7 +118,7 @@
           "path": "not_allowed",
           "section": "370-303C, 370-304C, 370-907E",
           "url": "https://ecode360.com/print/HA0246?guid=50639423",
-          "note": "These districts do not list an ADU, and the Zoning Hearing Board may not grant a variance to allow a use not permissible in the district. Only a zoning amendment could open them."
+          "note": "These districts do not list an ADU. The code itself bars a use variance in a district that does not permit the use: 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved, or any use expressly or by implication prohibited by the terms of this chapter in said district' (370-907E, Uses not permitted). Only a zoning amendment could open them"
         }
       ],
       "section": "370-907E",
@@ -400,8 +402,8 @@
       "note": "No ADU row. See reading."
     },
     "reading": {
-      "value": "No parking rule names the ADU. Read as a dwelling unit: 1.4 spaces for a studio or one-bedroom unit below 800 sq ft, or 2 spaces for the first two bedrooms. The house needs 2 spaces for its first two bedrooms plus 0.4 per added bedroom. D and MU allow park-once reductions.",
-      "section": "370-511C(1)",
+      "value": "No parking rule names the ADU. Read as a dwelling unit: 1.4 spaces for a studio or one-bedroom unit below 800 sq ft, or 2 spaces for the first two bedrooms. The house needs 2 spaces for its first two bedrooms plus 0.4 per added bedroom. Except in R-1, CB and PD, every parking space must be behind the front wall of the house (370-511B(2)(b)). The Zoning Hearing Board may reduce the spaces by special exception (370-511C(2)(a)). D and MU allow park-once reductions of 40% (370-511C(2)(c)). Reductions may not be combined.",
+      "section": "370-511B(2)(b), C(1), C(2)",
       "url": "https://ecode360.com/print/HA0246?guid=50639038",
       "verified_on": "2026-11-15",
       "confidence": "secondary"
@@ -472,19 +474,19 @@
       },
       "accessory_setback_side_ft": {
         "value": 2,
-        "section": "370-302D",
+        "section": "370-302D, 370-501B",
         "url": "https://ecode360.com/print/HA0246?guid=50638446",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Accessory building."
+        "note": "Accessory building. 370-501B keeps accessory structures out of the required setbacks 'unless specifically exempted'. This table figure is that exemption."
       },
       "accessory_setback_rear_ft": {
         "value": 3,
-        "section": "370-302D",
+        "section": "370-302D, 370-501B",
         "url": "https://ecode360.com/print/HA0246?guid=50638446",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Accessory building."
+        "note": "Accessory building. 370-501B keeps accessory structures out of the required setbacks 'unless specifically exempted'. This table figure is that exemption."
       }
     },
     "R-3": {
@@ -494,7 +496,7 @@
         "url": "https://ecode360.com/print/HA0246?guid=50638446",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Lot width 50 ft (twin 40 ft)."
+        "note": "Lot width 50 ft (twin 40 ft). The R-3 purpose names one- and two-family dwellings, but the use table lists no two-family dwelling (duplex) in R-3 (370-302A(2), B)."
       },
       "setback_front_ft": {
         "value": 15,
@@ -551,19 +553,19 @@
       },
       "accessory_setback_side_ft": {
         "value": 2,
-        "section": "370-302D",
+        "section": "370-302D, 370-501B",
         "url": "https://ecode360.com/print/HA0246?guid=50638446",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Accessory building."
+        "note": "Accessory building. 370-501B keeps accessory structures out of the required setbacks 'unless specifically exempted'. This table figure is that exemption."
       },
       "accessory_setback_rear_ft": {
         "value": 3,
-        "section": "370-302D",
+        "section": "370-302D, 370-501B",
         "url": "https://ecode360.com/print/HA0246?guid=50638446",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Accessory building."
+        "note": "Accessory building. 370-501B keeps accessory structures out of the required setbacks 'unless specifically exempted'. This table figure is that exemption."
       }
     },
     "R-5": {
@@ -630,19 +632,19 @@
       },
       "accessory_setback_side_ft": {
         "value": 2,
-        "section": "370-302D",
+        "section": "370-302D, 370-501B",
         "url": "https://ecode360.com/print/HA0246?guid=50638446",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Accessory building."
+        "note": "Accessory building. 370-501B keeps accessory structures out of the required setbacks 'unless specifically exempted'. This table figure is that exemption."
       },
       "accessory_setback_rear_ft": {
         "value": 3,
-        "section": "370-302D",
+        "section": "370-302D, 370-501B",
         "url": "https://ecode360.com/print/HA0246?guid=50638446",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Accessory building."
+        "note": "Accessory building. 370-501B keeps accessory structures out of the required setbacks 'unless specifically exempted'. This table figure is that exemption."
       },
       "lot_area_per_unit_sqft": {
         "value": 3111,
@@ -773,19 +775,19 @@
       },
       "accessory_setback_side_ft": {
         "value": 2,
-        "section": "370-303D",
+        "section": "370-303D, 370-501B",
         "url": "https://ecode360.com/print/HA0246?guid=50638454",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Accessory building."
+        "note": "Accessory building. 370-501B keeps accessory structures out of the required setbacks 'unless specifically exempted'. This table figure is that exemption."
       },
       "accessory_setback_rear_ft": {
         "value": 3,
-        "section": "370-303D",
+        "section": "370-303D, 370-501B",
         "url": "https://ecode360.com/print/HA0246?guid=50638454",
         "verified_on": "2026-11-15",
         "confidence": "verified",
-        "note": "Accessory building."
+        "note": "Accessory building. 370-501B keeps accessory structures out of the required setbacks 'unless specifically exempted'. This table figure is that exemption."
       },
       "lot_area_per_unit_sqft": {
         "value": 3111,
