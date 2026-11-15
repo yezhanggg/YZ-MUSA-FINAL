@@ -1,0 +1,553 @@
+{
+  "provenance": {
+    "jurisdiction": "Elizabeth township",
+    "instrument": "Elizabeth Township Zoning Ordinance (Chapter 27 Zoning, Ord. No. 820, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 EL2327, Township of Elizabeth, Allegheny County (Twin Rivers COG). 300B names 'Ordinance Number 820, as amended, of Elizabeth Township, Allegheny County, Pennsylvania'. The latest amendments seen in the text are Ord. No. 935 (2-5-2018, poultry), 940 (12-20-2018) and 942 (3-4-2019). The code is shown as current through 11-01-2021 and New Laws lists none. Each district article lists its uses and its area and bulk figures in the text. Appendices A to D and the zoning map are PDF attachments that were not opened",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/EL2327",
+      "https://ecode360.com/26858479",
+      "https://ecode360.com/EL2327/laws",
+      "https://ecode360.com/EL2327/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20relative%20OR%20servants%20OR%20%22family%20member%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EL2327/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20servants%20OR%20%22family%20member%22%20OR%20%22quarters%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/print/EL2327?guid=34143473",
+      "https://ecode360.com/print/EL2327?guid=34143482",
+      "https://ecode360.com/print/EL2327?guid=34143483",
+      "https://ecode360.com/print/EL2327?guid=34143484",
+      "https://ecode360.com/print/EL2327?guid=34143485",
+      "https://ecode360.com/print/EL2327?guid=34143486",
+      "https://ecode360.com/print/EL2327?guid=34143487",
+      "https://ecode360.com/print/EL2327?guid=34143488",
+      "https://ecode360.com/print/EL2327?guid=34143489",
+      "https://ecode360.com/print/EL2327?guid=34143490",
+      "https://ecode360.com/print/EL2327?guid=34143491",
+      "https://ecode360.com/print/EL2327?guid=34143492",
+      "https://ecode360.com/print/EL2327?guid=34143512",
+      "https://ecode360.com/print/EL2327?guid=34143513",
+      "https://ecode360.com/print/EL2327?guid=34143514",
+      "https://ecode360.com/print/EL2327?guid=34143516",
+      "https://ecode360.com/print/EL2327?guid=34143517"
+    ],
+    "verified_on": "2026-11-15",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200323000",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/26858479",
+    "code_current_through": "2021-11-01",
+    "code_current_through_note": "eCode360: 'Includes legislation through 11-01-2021.' New Laws: none",
+    "checks": [
+      "The zoning chapter has no accessory dwelling unit, in-law suite or similar use",
+      "'In the S-C, R-C, R-1, R-2, R-3 and R-4 Districts, any use not specifically listed as an authorized use in the zoning district shall not be permitted in that zoning district' (303A)",
+      "'In all zoning districts where single-family dwellings or two-family dwellings are an authorized use or are a legally nonconforming use, the single-family dwelling or two-family dwelling shall be the only principal structure on the lot' (303C). A single-family dwelling contains 'one dwelling unit' (201)",
+      "A two-family dwelling is a conditional use only in R-3, on a site of at least three contiguous acres with frontage on an arterial or collector street (801B(1)(l), 1403.48). It is also allowed inside a planned residential development of at least 30 contiguous acres in R-2, R-3 and R-4 (1302.1, 1302.3)",
+      "A detached garage or storage structure accessory to a dwelling may have at most 750 sq ft of gross floor area and may not stand in the required front yard (1503.3H(1)). It stands at least 10 ft from the house (1503.3J)",
+      "Off-street parking: two spaces per dwelling unit for single-family and two-family dwellings (1602.3)",
+      "In B-1, B-2 and M-1 the Zoning Hearing Board may approve a use 'of the same general character' as the district's listed uses by special exception (303B, 1403.12). None of these districts lists a single-family house. B-1 lists a transitional dwelling, a group care facility and a personal care boarding home by special exception",
+      "Any lot of record when the chapter took effect may hold a single-family dwelling without a lot area or width variance, if it meets the yard, height and coverage rules (1803.1)",
+      "No section read bars a use variance. Variances need the five findings of 1905",
+      "The online code is shown as current only through 11-01-2021. A Board of Commissioners workshop on 6-16-2025 discussed writing a new zoning ordinance. Ask the township whether zoning amendments were adopted after 11-01-2021",
+      "A farm 'shall include the residence or residences of owners, occupants or employees' (201 'Farm'). Agriculture is by right in R-1 and S-C on at least 10 acres (602A(1), 402A(1)), and 1508 sets no limit on the number of farm dwellings. This sits uneasily with the one principal structure rule of 303C",
+      "A dwelling 'such as a manse or parsonage' may stand on the same lot as a church, if it meets the single-family dwelling rules of the district in addition to the church's lot area, width and yards (1403.8C). It is a home for the church, not a second unit on a house lot",
+      "A golf course development is a conditional use in S-C: at least 15 acres apart from the golf course, beside an existing or former golf course, with single-family and two-family dwellings, triplexes, fourplexes and small townhouse buildings at up to four units per acre (1403.20)"
+    ],
+    "notes": "Zoning office: Elizabeth Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative, servants, family member and quarters. Hits were the dwelling, two-family, family and motel definitions, 802, the enforcement sections 2000 and 2001 and chapters outside zoning. Read: Article III, the district articles IV to XII (S-C, R-C, R-1, R-2, R-3, R-4, B-1, B-2, M-1), Article XVIII and 1905. Read in part: Article II definitions (A to 'Marina'), Article XIII (1300 to 1302.4), Article XIV (1403.12, 1403.44, 1403.48 and nearby sections), Article XV (1503 to 1505), Article XVI (1601.8 to 1602.3) and Article XIX (1904 to 1906). Not read: Article I, Article XIIIA, the rest of XIV and XV, Article XVII (signs), XX (administration), XXI (airport overlay), XXII (solar), the PDF appendices and the zoning map. Lot coverage for buildings is defined (201) but the districts set only impervious surface coverage. Height is measured at the front of the building to the mean height between eaves and ridge of a pitched roof. Read later on 2026-11-15: 1403.8 and 1403.20. A township meeting record of 6-16-2025 (seen only as a search result) mentions writing a new zoning ordinance.",
+    "code_caution": "The online code is shown as current only through 11-01-2021. On 6-16-2025 the Board of Commissioners discussed writing a new zoning ordinance instead of amending this one. No later zoning ordinance was found. Ask the township whether the zoning text changed after 11-01-2021"
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/EL2327/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20relative%20OR%20servants%20OR%20%22family%20member%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "Searched the code for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative, servants and family member, and read every district's use list. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "303A, 401, 501, 601, 701, 801, 901",
+      "url": "https://ecode360.com/print/EL2327?guid=34143482",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No district lists a second dwelling unit on a house lot. In S-C, R-C and R-1 to R-4 any use not listed is not permitted (303A). A single-family dwelling holds one dwelling unit and is the only principal structure on its lot (201, 303C). A use variance is still a path to ask for"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "303A, 1905",
+      "url": "https://ecode360.com/print/EL2327?guid=34143517",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "A second unit is not a listed use, and in the residential and conservation districts unlisted uses are not permitted. The Zoning Hearing Board hears variances on the five findings of 1905. No section read bars a use variance"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1905",
+      "url": "https://ecode360.com/print/EL2327?guid=34143517",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "303B, 1403.12",
+      "url": "https://ecode360.com/print/EL2327?guid=34143512",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "In B-1, B-2 and M-1 the Zoning Hearing Board may approve a use 'of the same general character' as a use the district authorizes, if its impact is equal to or less than a listed use. None of these districts lists a single-family house. B-1 lists mid-rise or high-rise apartments as a conditional use. A two-family dwelling is a listed use in R-3 and in planned residential developments, not an unlisted one"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "B-1",
+        "B-2",
+        "M-1"
+      ],
+      "section": "303B",
+      "url": "https://ecode360.com/print/EL2327?guid=34143482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "1403.12A",
+      "url": "https://ecode360.com/print/EL2327?guid=34143512",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "quote": "Uses of the same general character as any of the uses authorized as permitted uses by right, conditional uses or uses by special exception in the zoning district in which the property is located"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R-3)",
+          "path": "conditional_use",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "A two-family dwelling is a conditional use in R-3 (801B(1)(l)). 'The minimum site required to develop two-family dwellings shall be three contiguous acres', with frontage on and direct access to an arterial or collector street. Each unit needs a lot of 6,000 sq ft and 60 ft of width if the units are split for fee simple ownership. The design must look like a large single-family dwelling, and each unit needs one integral parking space (1403.48). A two-family lot needs 12,000 sq ft (802A(1)) and two spaces per unit (1602.3). The Board of Commissioners decides after a public hearing (201 'Conditional use')",
+          "min_lot_sqft": 130680,
+          "min_lot_is_tract": true,
+          "section": "801B(1)(l), 802A(1), 1403.48, 1602.3",
+          "url": "https://ecode360.com/print/EL2327?guid=34143512",
+          "confidence": "verified",
+          "note": "A two-family dwelling is a building of two units, each with its own outside entrance (201). The three acre site rule reads as a development of two-family dwellings, not one converted house"
+        },
+        {
+          "name": "Two-family dwellings in a planned residential development (R-2, R-3, R-4)",
+          "path": "conditional_use",
+          "districts": [
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "A planned residential development is a conditional use in R-2, R-3 and R-4 (701B(1)(e), 801B(1)(h), 901B(1)(g)). The site must be at least 30 contiguous acres in single ownership (1302.1, 1302.2). Two-family dwellings may be included (1302.3A(1)). Density is at most four units per acre in R-2, six in R-3 and 10 in R-4 (1302.4). In R-2 at least 30% of the units are detached single-family dwellings (1302.3A(2)). The site needs frontage on an arterial or collector street (1303.1) and public water and sewer (1303.2)",
+          "min_lot_sqft": 1306800,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "1302.1, 1302.2, 1302.3, 1302.4, 1303.1, 1303.2",
+          "url": "https://ecode360.com/print/EL2327?guid=34143492",
+          "confidence": "verified",
+          "note": "A development of a whole tract, not a second unit on one house lot",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "1303.2"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "1303.2"
+            },
+            {
+              "test": null,
+              "condition": "The site has frontage on an arterial or collector street",
+              "section": "1303.1"
+            }
+          ]
+        },
+        {
+          "name": "Farm residences for owners, occupants or employees (R-1, S-C)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "S-C"
+          ],
+          "conditions": "A farm 'shall include the residence or residences of owners, occupants or employees' (201 'Farm'). Agriculture is a use by right in R-1 and S-C on a lot of at least 10 acres (602A(1), 402A(1)). The farm standards of 1508 set no limit on the number of dwellings",
+          "min_lot_sqft": 435600,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is a farm, with agriculture as its principal use",
+              "section": "201 'Farm', 602A(1), 402A(1)"
+            }
+          ],
+          "section": "201 'Farm', 402A(1), 602A(1), 1508",
+          "url": "https://ecode360.com/print/EL2327?guid=34143485",
+          "confidence": "secondary",
+          "note": "303C says a single-family dwelling is the only principal structure on its lot. Whether a farm may hold more than one residence under that rule is not settled. Ask the zoning officer"
+        },
+        {
+          "name": "Two-family dwellings in a golf course development (S-C)",
+          "path": "conditional_use",
+          "districts": [
+            "S-C"
+          ],
+          "conditions": "A golf course development needs at least 15 acres, not counting the golf course. The site is part of or next to an existing or former golf course, fronts an arterial or collector street and is designed around a regulation golf course of at least nine holes. It may hold single-family and two-family dwellings, triplexes, fourplexes and townhouses of up to four units, at most four units per acre. A two-family lot sold in fee simple needs 20,000 sq ft, or 10,000 sq ft per unit. The S-C front and rear yards apply, and side yards are at least 15 ft (1403.20). The Board of Commissioners decides after a public hearing (1401.1)",
+          "min_lot_sqft": 653400,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "1403.20, 1401.1",
+          "url": "https://ecode360.com/print/EL2327?guid=34143512",
+          "confidence": "secondary",
+          "note": "A development of a whole tract beside a golf course, not a second unit on one house lot"
+        }
+      ],
+      "section": "801B(1)(l), 1403.48, 1302.3, 1403.20, 201 'Farm'",
+      "url": "https://ecode360.com/print/EL2327?guid=34143512",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/EL2327/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20suite%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20granny%20OR%20%22guest%20house%22%20OR%20%22carriage%20house%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20caretaker%20OR%20%22farm%20dwelling%22%20OR%20relative%20OR%20servants%20OR%20%22family%20member%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "S-C",
+        "R-C",
+        "R-4",
+        "B-1",
+        "B-2",
+        "M-1"
+      ],
+      "section": "401, 501, 901, 1001, 1101, 1201",
+      "url": "https://ecode360.com/print/EL2327?guid=34143482",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "S-C and R-C permit a single-family dwelling only as a conditional use (1403.44). R-4 permits garden apartments, townhouses, triplexes and fourplexes, not a single-family house. B-1, B-2 and M-1 list no single-family house. B-1 lists mid-rise or high-rise apartments as a conditional use, and a transitional dwelling, a group care facility and a personal care boarding home by special exception"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "303A, 303C",
+      "url": "https://ecode360.com/print/EL2327?guid=34143482",
+      "verified_on": "2026-11-15",
+      "confidence": "secondary",
+      "note": "No ADU use. A garage or storage structure accessory to a dwelling may be at most 750 sq ft (1503.3H(1))"
+    }
+  },
+  "envelope": {
+    "accessory_structure_max_sqft": {
+      "value": 750,
+      "section": "1503.3H(1)",
+      "url": "https://ecode360.com/print/EL2327?guid=34143513",
+      "verified_on": "2026-11-15",
+      "confidence": "verified",
+      "note": "'The maximum gross floor area of a detached garage or storage structure shall be 750 square feet.' It may not stand in the minimum required front yard"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "accessory storage structures and garages: at least 10 ft from any principal building. A detached garage may be joined to the house by walls or a breezeway",
+          "section": "1503.3J",
+          "url": "https://ecode360.com/print/EL2327?guid=34143513"
+        }
+      ],
+      "section": "1503.3J",
+      "url": "https://ecode360.com/print/EL2327?guid=34143513",
+      "verified_on": "2026-11-15",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1602.3",
+      "url": "https://ecode360.com/print/EL2327?guid=34143514",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU use. Single-family and two-family dwellings: 2 spaces per dwelling unit"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "602A",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwelling with public sewers. Width 100 ft. Without public sewers one acre. A lot of record when the chapter took effect may hold a house without a lot area or width variance (1803.1)"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "602D",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal and accessory structures"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "602F",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Principal structures, each side"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "602E",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "602C",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Impervious surface coverage: buildings, roofs, parking, driveways, walks and paving (201)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "602I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the average finished grade at the front of the building to the highest point of a flat roof, the deck line of a mansard roof, or the mean height between eaves and ridge of a gable, hip or gambrel roof (201 'Building height')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "602I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "602F(2), 1503.3H(2)",
+        "url": "https://ecode360.com/print/EL2327?guid=34143513",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Storage structures accessory to a dwelling stand at least 5 ft from the rear line and 10 ft from the side lines in the R, S-C and R-C districts (1503.3H(2))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "602E(2), 1503.3H(2)",
+        "url": "https://ecode360.com/print/EL2327?guid=34143513",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Storage structures accessory to a dwelling stand at least 5 ft from the rear line and 10 ft from the side lines in the R, S-C and R-C districts (1503.3H(2))"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "602I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "One story at most"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewers",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "602A(4)(a)",
+            "note": "One acre"
+          }
+        ],
+        "section": "602A(4)",
+        "url": "https://ecode360.com/print/EL2327?guid=34143485",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10500,
+        "section": "702A",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwelling with public sewers. Width 70 ft. Without public sewers one acre and 100 ft. A lot of record when the chapter took effect may hold a house without a lot area or width variance (1803.1)"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "702D",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "702F",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwelling, each side"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "702E",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "702C",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Impervious surface coverage: buildings, roofs, parking, driveways, walks and paving (201)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "702I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the average finished grade at the front of the building to the highest point of a flat roof, the deck line of a mansard roof, or the mean height between eaves and ridge of a gable, hip or gambrel roof (201 'Building height')"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "702I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "702F(3), 1503.3H(2)",
+        "url": "https://ecode360.com/print/EL2327?guid=34143513",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Storage structures accessory to a dwelling stand at least 5 ft from the rear line and 10 ft from the side lines in the R, S-C and R-C districts (1503.3H(2))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "702E(2), 1503.3H(2)",
+        "url": "https://ecode360.com/print/EL2327?guid=34143513",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Storage structures accessory to a dwelling stand at least 5 ft from the rear line and 10 ft from the side lines in the R, S-C and R-C districts (1503.3H(2))"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "702I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "One story at most"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewers",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "702A(2)(a), B(1)(a)",
+            "note": "One acre, 100 ft wide"
+          }
+        ],
+        "section": "702A(2)",
+        "url": "https://ecode360.com/print/EL2327?guid=34143486",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 7800,
+        "section": "802A",
+        "url": "https://ecode360.com/print/EL2327?guid=34143487",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwelling. Width 60 ft. A two-family dwelling needs 12,000 sq ft. A lot of record when the chapter took effect may hold a house without a lot area or width variance (1803.1)"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "802D",
+        "url": "https://ecode360.com/print/EL2327?guid=34143487",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "802F",
+        "url": "https://ecode360.com/print/EL2327?guid=34143487",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Single-family dwelling, each side"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "802E",
+        "url": "https://ecode360.com/print/EL2327?guid=34143487",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "802C",
+        "url": "https://ecode360.com/print/EL2327?guid=34143487",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Impervious surface coverage: buildings, roofs, parking, driveways, walks and paving (201)"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "802I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143487",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Measured from the average finished grade at the front of the building to the highest point of a flat roof, the deck line of a mansard roof, or the mean height between eaves and ridge of a gable, hip or gambrel roof (201 'Building height')"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "802I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143487",
+        "verified_on": "2026-11-15",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "802F(3), 1503.3H(2)",
+        "url": "https://ecode360.com/print/EL2327?guid=34143513",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Storage structures accessory to a dwelling stand at least 5 ft from the rear line and 10 ft from the side lines in the R, S-C and R-C districts (1503.3H(2))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "802E(2), 1503.3H(2)",
+        "url": "https://ecode360.com/print/EL2327?guid=34143513",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "Storage structures accessory to a dwelling stand at least 5 ft from the rear line and 10 ft from the side lines in the R, S-C and R-C districts (1503.3H(2))"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "802I",
+        "url": "https://ecode360.com/print/EL2327?guid=34143487",
+        "verified_on": "2026-11-15",
+        "confidence": "verified",
+        "note": "One story at most"
+      }
+    }
+  }
+}

@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 146,
-      "population": 5864424,
-      "share_of_pa": 0.451
+      "towns_beyond_the_two_cities": 149,
+      "population": 5903429,
+      "share_of_pa": 0.454
     }
   ],
   "towns": [
@@ -3602,6 +3602,78 @@
         "named as a town with an ADU ordinance (Code 145-157B in-law suite by special exception)"
       ],
       "status_note": "Open: whether the R-130 (145-35.1) and R-175 (145-31.1, 145-98) special exception figures reach an in-law suite in an existing house, whether the suite may have its own entrance (145-157B(3)(c) against (5)(b)), and the parts not read: NOD from 145-189.4 on and Articles XX, XXII, XXIV to XXVI and XXXI."
+    },
+    {
+      "geoid": "4203948360",
+      "geoid_aliases": [],
+      "name": "Meadville city",
+      "county": "Crawford",
+      "type": "city",
+      "population": 13050,
+      "population_with_aliases": 13050,
+      "housing_units": 6009,
+      "pop_rank": 194,
+      "file": "pa_crawford_meadville",
+      "batch": 32,
+      "status": "verified",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/42391661",
+      "plain_fetch": false,
+      "code_current_through": "2026-09-01",
+      "code_note": "Zoning: Part 13 Zoning Code, Title 1 Zoning (Ord. No. 3821, 2-6-2024, as amended through Ord. No. 3842 of 7-7-2026). ADU text: 'Accessory dwelling unit' by right in R, MU-1 and MU-2 (Table 1303.05, 1306.10(A)): structurally separated from the house and counted as a principal use, only with a single-family detached house, one per lot, at least 401 sq ft habitable, no more gross floor area than the house's habitable floor area, not taller, wider or larger in footprint than the house, principal yards and clear distance, not in the front yard, own outside access. No owner or family rule. A unit inside or joined to the house is an 'accessory apartment' that makes it a two-family dwelling (1302.02), by right in DPH, MU-1, MU-2, MU-3, I-S, I-C and GB-M but not R. No parking minimum (1308.02(B)). Use and bulk tables are web text. New Laws: Ord. No. 3846 (10-6-2026), rental registration only. Read in the browser on eCode360 (ME4534).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 1306.10(A) accessory dwelling units by right in R, MU-1 and MU-2)"
+      ],
+      "status_note": "For a later check: the zoning map (an image) and Articles 1309, 1312 and 1315 were not read."
+    },
+    {
+      "geoid": "4200323000",
+      "geoid_aliases": [],
+      "name": "Elizabeth township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 12982,
+      "population_with_aliases": 12982,
+      "housing_units": 5925,
+      "pop_rank": 195,
+      "file": "pa_allegheny_elizabeth",
+      "batch": 32,
+      "status": "verified",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/26858479",
+      "plain_fetch": false,
+      "code_current_through": "2021-11-01",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 820, as amended). No ADU text. In S-C, R-C and R-1 to R-4 a use not listed is not permitted (303A), and a single-family or two-family dwelling is the only principal structure on its lot (303C). Two-family dwellings are a conditional use in R-3 on a three acre site with arterial or collector frontage (1403.48) and in planned residential developments of 30 acres in R-2 to R-4 (1302). Comparable unlisted uses by special exception in B-1, B-2 and M-1 (303B, 1403.12). District uses and figures are web text. The code is shown as current through 11-01-2021. New Laws: none. Read in the browser on eCode360 (EL2327).",
+      "why": [
+        "added as batch 32 by population. Code Chapter 27 has no ADU text"
+      ],
+      "status_note": "Code currency: the online code is current only through 11-01-2021, and a Board of Commissioners workshop on 6-16-2025 discussed writing a new zoning ordinance. No later zoning ordinance was found. Ask the township. For a later check: Appendices A to D, the zoning map, Articles XIIIA, XVII and XX to XXII, and the definitions after 'Public'."
+    },
+    {
+      "geoid": "4209153664",
+      "geoid_aliases": [],
+      "name": "New Hanover township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 12973,
+      "population_with_aliases": 12973,
+      "housing_units": 4516,
+      "pop_rank": 196,
+      "file": "pa_montgomery_new_hanover",
+      "batch": 32,
+      "status": "drafted",
+      "checked_on": "2026-11-15",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/31479517",
+      "plain_fetch": false,
+      "code_current_through": "2026-01-15",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. of 3-29-1990, as amended through Ord. No. 25-08 of 12-4-2025). No ADU use for a house lot. A use not listed is not permitted (27-302.4) and a lot holds one principal use (27-301). Residential conversion of an existing house into two or more units is a special exception in R-2, R-2M, R-25, R-15, R-5 and RV and by right in VMU: the detached dwelling lot area for each unit, seven years of residential use first, one front entrance (27-305.2H). 'Dwelling in combination', an accessory dwelling unit subordinate to a business or institution, by right in CC and VMU and by special exception in R-25, R-15, R-5 and LI (27-305 GG). Farm units for family or farm workers at 20 acres per unit (27-305.1H). The Table of Use Regulations is a PDF attachment, but each district part lists its uses and figures in text. New Laws: none on zoning. Read in the browser on eCode360 (NE2408).",
+      "why": [
+        "added as batch 32 by population. Code Chapter 27 has no ADU text for a house lot (27-305.2H residential conversion by special exception)"
+      ],
+      "status_note": "Open points: (1) TN and CB-2 are named districts (27-104, Ord. 21-12) with no use text, as Part 12 is reserved and Part 16 was repealed, and the PDF zoning map was not checked. (2) R-2 building coverage is 10% in 27-403.2 but 15% in the 27-305.2A(2) table. The lower figure is stored. (3) Which lot area the VMU residential conversion needs is not said. 20,000 sq ft is read from the detached dwelling figure of 27-1704. (4) The Table of Use Regulations (a PDF) was not checked."
     }
   ]
 }

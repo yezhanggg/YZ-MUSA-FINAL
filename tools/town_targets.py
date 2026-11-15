@@ -1328,6 +1328,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-07-20",
         "note": "Zoning: Chapter 145 Zoning (Ord. No. 33, 5-2-1966, 'Zoning Ordinance of 1953, Revised', as amended through Ord. No. 434 of 7-20-2026). ADU text: 'In-law suite' (second housekeeping unit), a special exception in R-175, R-130, R-100 and RR under 145-157B: in an owner-occupied single-family detached dwelling, for relatives of the owners, at most two occupants under the Fair Housing Act older persons rules, at most 40% of the main unit and 1,000 sq ft, attached with an interior connection and no separate entrance, recorded removal agreement, one extra parking space. R-130 special exception uses need 40,000 sq ft (145-35.1). VC permits one two-family dwelling or apartments in an existing structure by right (145-192). No PDF use or dimension tables. New Laws: Ord. No. 435 (9-21-2026), zoning map only. Read in the browser on eCode360 (FR0973).",
     },
+    "4203948360": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/42391661",
+        "plain_fetch": False,
+        "current_through": "2026-09-01",
+        "note": "Zoning: Part 13 Zoning Code, Title 1 Zoning (Ord. No. 3821, 2-6-2024, as amended through Ord. No. 3842 of 7-7-2026). ADU text: 'Accessory dwelling unit' by right in R, MU-1 and MU-2 (Table 1303.05, 1306.10(A)): structurally separated from the house and counted as a principal use, only with a single-family detached house, one per lot, at least 401 sq ft habitable, no more gross floor area than the house's habitable floor area, not taller, wider or larger in footprint than the house, principal yards and clear distance, not in the front yard, own outside access. No owner or family rule. A unit inside or joined to the house is an 'accessory apartment' that makes it a two-family dwelling (1302.02), by right in DPH, MU-1, MU-2, MU-3, I-S, I-C and GB-M but not R. No parking minimum (1308.02(B)). Use and bulk tables are web text. New Laws: Ord. No. 3846 (10-6-2026), rental registration only. Read in the browser on eCode360 (ME4534).",
+    },
+    "4200323000": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/26858479",
+        "plain_fetch": False,
+        "current_through": "2021-11-01",
+        "note": "Zoning: Chapter 27 Zoning (Ord. No. 820, as amended). No ADU text. In S-C, R-C and R-1 to R-4 a use not listed is not permitted (303A), and a single-family or two-family dwelling is the only principal structure on its lot (303C). Two-family dwellings are a conditional use in R-3 on a three acre site with arterial or collector frontage (1403.48) and in planned residential developments of 30 acres in R-2 to R-4 (1302). Comparable unlisted uses by special exception in B-1, B-2 and M-1 (303B, 1403.12). District uses and figures are web text. The code is shown as current through 11-01-2021. New Laws: none. Read in the browser on eCode360 (EL2327).",
+    },
+    "4209153664": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/31479517",
+        "plain_fetch": False,
+        "current_through": "2026-01-15",
+        "note": "Zoning: Chapter 27 Zoning (Ord. of 3-29-1990, as amended through Ord. No. 25-08 of 12-4-2025). No ADU use for a house lot. A use not listed is not permitted (27-302.4) and a lot holds one principal use (27-301). Residential conversion of an existing house into two or more units is a special exception in R-2, R-2M, R-25, R-15, R-5 and RV and by right in VMU: the detached dwelling lot area for each unit, seven years of residential use first, one front entrance (27-305.2H). 'Dwelling in combination', an accessory dwelling unit subordinate to a business or institution, by right in CC and VMU and by special exception in R-25, R-15, R-5 and LI (27-305 GG). Farm units for family or farm workers at 20 acres per unit (27-305.1H). The Table of Use Regulations is a PDF attachment, but each district part lists its uses and figures in text. New Laws: none on zoning. Read in the browser on eCode360 (NE2408).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1357,6 +1378,7 @@ FIXED_BATCH.update({g: 28 for g in ("4201781144", "4202982544", "4209171016")})
 FIXED_BATCH.update({g: 29 for g in ("4212931200", "4204553104", "4201761616")})
 FIXED_BATCH.update({g: 30 for g in ("4209121600", "4200372400", "4213373168")})
 FIXED_BATCH.update({g: 31 for g in ("4201910464", "4201102328", "4209127280")})
+FIXED_BATCH.update({g: 32 for g in ("4203948360", "4200323000", "4209153664")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1493,6 +1515,13 @@ EXTRAS = {
     "4201910464": "batch 31 by population. Code Chapter 260 has no ADU text (use variance barred, 260-132C(4))",
     "4201102328": "Code 32-957 family member suites",
     "4209127280": "Code 145-157B in-law suite by special exception",
+    # Batch 32 (2026-11-15): the next towns by population without a rule file. Washington (Washington) was skipped
+    # (Table 301 principal uses, Table 302 accessory uses and Table 303 dimensional requirements only in PDF
+    # attachments) and Sharon (Mercer) (the codified Title Four only adopts the zoning ordinance by reference, its full
+    # text is on the city website, and a 2026 draft replacement ordinance is posted).
+    "4203948360": "Code 1306.10(A) accessory dwelling units by right in R, MU-1 and MU-2",
+    "4200323000": "batch 32 by population. Code Chapter 27 has no ADU text",
+    "4209153664": "batch 32 by population. Code Chapter 27 has no ADU text for a house lot (27-305.2H residential conversion by special exception)",
 }
 
 if __name__ == "__main__":

@@ -138,24 +138,24 @@
   "by_tier": [
    {
     "tier": "baseline",
-    "places": 1811,
-    "pop": 6241489,
-    "pop_share": 0.4779,
-    "housing_units": 2780165
+    "places": 1808,
+    "pop": 6203332,
+    "pop_share": 0.475,
+    "housing_units": 2763715
    },
    {
     "tier": "verified",
-    "places": 96,
-    "pop": 4516486,
-    "pop_share": 0.3458,
-    "housing_units": 1954537
+    "places": 98,
+    "pop": 4541115,
+    "pop_share": 0.3477,
+    "housing_units": 1966471
    },
    {
     "tier": "drafted",
-    "places": 53,
-    "pop": 1375012,
-    "pop_share": 0.1053,
-    "housing_units": 566270
+    "places": 54,
+    "pop": 1388540,
+    "pop_share": 0.1063,
+    "housing_units": 570786
    },
    {
     "tier": "reported",
@@ -175,24 +175,24 @@
   "by_status": [
    {
     "status": "unknown",
-    "places": 1864,
-    "pop": 6352272,
-    "pop_share": 0.4864,
-    "housing_units": 2832621
+    "places": 1861,
+    "pop": 6314115,
+    "pop_share": 0.4835,
+    "housing_units": 2816171
    },
    {
     "status": "limited",
-    "places": 108,
-    "pop": 3757767,
-    "pop_share": 0.2877,
-    "housing_units": 1605901
+    "places": 109,
+    "pop": 3769997,
+    "pop_share": 0.2887,
+    "housing_units": 1611910
    },
    {
     "status": "not_addressed",
-    "places": 56,
-    "pop": 1529103,
-    "pop_share": 0.1171,
-    "housing_units": 629881
+    "places": 58,
+    "pop": 1555030,
+    "pop_share": 0.1191,
+    "housing_units": 640322
    },
    {
     "status": "by_right",
@@ -250,8 +250,8 @@
    {
     "tier": "baseline",
     "status": "unknown",
-    "places": 1811,
-    "pop": 6241489
+    "places": 1808,
+    "pop": 6203332
    },
    {
     "tier": "drafted",
@@ -268,8 +268,8 @@
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 12,
-    "pop": 330488
+    "places": 13,
+    "pop": 344016
    },
    {
     "tier": "reported",
@@ -310,14 +310,14 @@
    {
     "tier": "verified",
     "status": "limited",
-    "places": 47,
-    "pop": 2804072
+    "places": 48,
+    "pop": 2816302
    },
    {
     "tier": "verified",
     "status": "not_addressed",
-    "places": 44,
-    "pop": 1198615
+    "places": 45,
+    "pop": 1211014
    },
    {
     "tier": "verified",
