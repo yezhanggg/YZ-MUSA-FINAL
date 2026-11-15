@@ -1,0 +1,376 @@
+{
+ "about": "Questions on the Nov 14 features (steep slope lines, address search misses, county places). Made by agent/eval/make_feature_questions.ts: lots picked by rule, expected values read from tool results. Do not edit by hand.",
+ "generated_at": "2026-11-15T00:56:44.468Z",
+ "data_roots": {
+  "pittsburgh": "/Users/ye/Library/Caches/yz-musa/lots-local/pittsburgh",
+  "chester_county": "/Users/ye/Library/Caches/yz-musa/lots-local/chester_county",
+  "montgomery_county": "/Users/ye/Library/Caches/yz-musa/lots-local/montgomery_county"
+ },
+ "data_versions": {
+  "pittsburgh": "pittsburgh-20261114-7ae3f25d22",
+  "chester_county": "chester_county-20261114-47fe1443e9",
+  "montgomery_county": "montgomery_county-20261114-459bcec166"
+ },
+ "questions": [
+  {
+   "id": "feat-01",
+   "category": "features",
+   "question": "Can I build a backyard cottage on this lot? What should I check with the city first?",
+   "context": {
+    "lot": {
+     "id": "42003-0076B00075000000",
+     "tract": "42003271600",
+     "label": "903 WOODS RUN AVE"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "test_unit_on_lot",
+     "get_lot_rules",
+     "explain_limit"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "test_unit_on_lot",
+     "input": {
+      "type": "detached_new"
+     }
+    },
+    {
+     "name": "get_lot_rules",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "cottage status",
+     "value": "fits",
+     "accept": [
+      "fits",
+      "would fit",
+      "will fit",
+      "could fit",
+      "can fit",
+      "does fit"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "the grading rules",
+     "accept": [
+      "grading",
+      "915.02"
+     ],
+     "evidence": "915.02"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the Steep Slope Overlay",
+     "accept": [
+      "steep slope overlay",
+      "906.08"
+     ],
+     "evidence": "Steep Slope Overlay"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the landslide overlay",
+     "accept": [
+      "landslide"
+     ],
+     "evidence": "Landslide-Prone Overlay"
+    },
+    {
+     "kind": "behaviour",
+     "label": "who to ask",
+     "accept": [
+      "check with",
+      "confirm with",
+      "zoning office",
+      "zoning administrator",
+      "with the city",
+      "with the township",
+      "town's zoning",
+      "zoning code",
+      "ask the",
+      "planning commission"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b(slopes?|landslide|grading)\\b[^.]{0,80}(?<!\\b(not|n't|never|no) )\\b(rules? (it |this |the unit |a cottage )?out|bars|barred|prevents|prohibits|prohibited|stops)\\b|\\b(cannot|can't|could not|couldn't) build\\b[^.]{0,60}\\b(slope|landslide)",
+     "why": "says the slope or landslide lines bar the unit"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "903 Woods Run Ave, Pittsburgh, a steep lot: the cottage status from the tool, with the grading (915.02), Steep Slope Overlay (906.08) and landslide (906.04) lines given as questions for the city, never as a bar."
+  },
+  {
+   "id": "feat-02",
+   "category": "features",
+   "question": "Can I build a backyard cottage at 903 Wods Run Ave, Pittsburgh?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "find_lot"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "find_lot",
+     "input": {
+      "address": "903 Wods Run Ave, Pittsburgh"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "offers the street spelled alike",
+     "accept": [
+      "woods run"
+     ],
+     "evidence": "woods run ave"
+    },
+    {
+     "kind": "behaviour",
+     "label": "asks which address was meant",
+     "accept": [
+      "did you mean",
+      "do you mean",
+      "you meant",
+      "meant",
+      "confirm",
+      "spelling",
+      "spelled",
+      "correct address",
+      "right address",
+      "which address",
+      "is that"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\]\\(lot:",
+     "why": "names a lot for an address that was not found"
+    }
+   ],
+   "scenario": null,
+   "rubric": "\"903 Wods Run Ave\" is not in the address index: the answer offers the street spelled alike (woods run) and asks the user, never names a lot."
+  },
+  {
+   "id": "feat-03",
+   "category": "features",
+   "question": "Can I build a backyard cottage at 100 Goshen Rd, West Chester?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "find_lot"
+    ],
+    [
+     "test_unit_on_lot",
+     "get_lot_rules",
+     "explain_limit"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "find_lot",
+     "input": {
+      "address": "100 Goshen Rd, West Chester"
+     }
+    },
+    {
+     "name": "test_unit_on_lot",
+     "input": {
+      "lot_id": "42029-1-1-1",
+      "type": "detached_new"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "cites the town's own code",
+     "accept": [
+      "112-",
+      "west chester zoning code",
+      "chapter 112",
+      "ch. 112"
+     ],
+     "evidence": "West Chester Zoning Code (Ch. 112)"
+    },
+    {
+     "kind": "enum",
+     "label": "cottage status",
+     "value": "fits",
+     "accept": [
+      "fits",
+      "would fit",
+      "will fit",
+      "could fit",
+      "can fit",
+      "does fit"
+     ]
+    },
+    {
+     "kind": "enum",
+     "label": "approval path",
+     "value": "by_right",
+     "accept": [
+      "by right",
+      "by-right"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b(pittsburgh|philadelphia) (zoning )?code\\b",
+     "why": "cites a city's code for a county town"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "100 Goshen Rd, West Chester (West Chester borough, a lot in a county place): found by address, then the cottage tested on that lot with West Chester borough's own rules."
+  },
+  {
+   "id": "feat-04",
+   "category": "features",
+   "question": "Can I build a backyard cottage at 201 Barrie Rd, Narberth?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "find_lot"
+    ],
+    [
+     "test_unit_on_lot",
+     "get_lot_rules",
+     "explain_limit"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "find_lot",
+     "input": {
+      "address": "201 Barrie Rd, Narberth"
+     }
+    },
+    {
+     "name": "test_unit_on_lot",
+     "input": {
+      "lot_id": "42091-120000001005",
+      "type": "detached_new"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "cites the town's own code",
+     "accept": [
+      "500-",
+      "narberth zoning code",
+      "chapter 500",
+      "ch. 500"
+     ],
+     "evidence": "Narberth Zoning Code (Ch. 500)"
+    },
+    {
+     "kind": "enum",
+     "label": "cottage status",
+     "value": "fits",
+     "accept": [
+      "fits",
+      "would fit",
+      "will fit",
+      "could fit",
+      "can fit",
+      "does fit"
+     ]
+    },
+    {
+     "kind": "enum",
+     "label": "approval path",
+     "value": "by_right",
+     "accept": [
+      "by right",
+      "by-right"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b(pittsburgh|philadelphia) (zoning )?code\\b",
+     "why": "cites a city's code for a county town"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "201 Barrie Rd, Narberth (Narberth borough, a lot in a county place): found by address, then the cottage tested on that lot with Narberth borough's own rules."
+  }
+ ]
+}

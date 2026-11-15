@@ -3,7 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { parseAddress, shardKeyOf, splitPlace, streetBare, streetCore } from './addressIndex';
+import { addressIndexSource, edits, parseAddress, shardKeyOf, splitPlace, streetBare, streetCore } from './addressIndex';
 import { FIXTURE_BASE as BASE, fixtureAddressIndex as source } from './__fixtures__/addressFixture';
 
 const ROOT = resolve(import.meta.dirname, '../../../..');
@@ -64,6 +64,22 @@ describe('address index lookup', () => {
     const r = await source().search('5704 Pocuset St');
     expect(r.candidates).toEqual([]);
     expect(r.nearest_streets?.[0]).toMatchObject({ street: 'pocusset st', place: 'pittsburgh', towns: ['Pittsburgh city'], lots: 3, numbers: '5704 to 5708' });
+  });
+  it('a swapped pair of letters is one typo', async () => {
+    expect(edits('sprcue', 'spruce')).toBe(1);
+    expect(edits('beacno', 'beacon')).toBe(1);
+    expect(edits('wods run', 'woods run')).toBe(1);
+    const r = await source().search('5459 Beacno St');
+    expect(r.candidates).toEqual([]);
+    expect(r.nearest_streets?.[0]).toMatchObject({ street: 'beacon st', place: 'pittsburgh' });
+  });
+  it('a misspelt street with a street type word inside its name still lists the street', async () => {
+    // "903 Wods Run Ave": cutting the text after "run" ("wods run") finds no street, so the full name is matched.
+    const index = { kind: 'address_index', format: 1, place: 'pittsburgh', prefix: '42003', towns: [], shards: { w: 1 }, streets: [['woods run ave', 103, 618, 1436, [0]]] };
+    const fetch = async (url: string) => (url.endsWith('pittsburgh/addresses/index.json.gz') ? new Response(JSON.stringify(index)) : new Response('missing', { status: 404 }));
+    const r = await addressIndexSource({ baseUrl: BASE, fetch, places: ['pittsburgh'] }).search('903 Wods Run Ave');
+    expect(r.candidates).toEqual([]);
+    expect(r.nearest_streets?.[0]).toMatchObject({ street: 'woods run ave', place: 'pittsburgh', numbers: '618 to 1436' });
   });
   it('an unknown street lists nothing', async () => {
     const r = await source().search('100 Market St, Harrisburg, PA');

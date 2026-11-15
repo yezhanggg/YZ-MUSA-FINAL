@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FIXTURE_NAMES, fixture, type FixtureName } from './__fixtures__';
-import { LOT_TOOLS, compact, makeLotExecutors, scenarioFrom, type LotAgentProvider, type LotToolName, type ToolInput } from './agentTools';
+import { FIT_NOT_TESTED, LOT_TOOLS, SITE_QUESTIONS_RULE, compact, whyNotAllowed, makeLotExecutors, scenarioFrom, type LotAgentProvider, type LotToolName, type ToolInput } from './agentTools';
 import type { LotRecord, Scenario } from './types';
 
 const RENTS = { b0: 1050, b1: 1250, b2: 1500, b3: 1800 };
@@ -89,6 +89,15 @@ describe('results', () => {
     expect((r.approval_by_type as Json).detached_new).toBe("Administrator's Exception");
     expect((r.approval_by_type as Json).internal).toBe('By right');
     expect((r.sources as Json[]).map((s) => s.section)).toContain('912.08.B.1');
+  });
+
+  it('get_lot_rules never answers the fit: it sends a "could it go here" question to test_unit_on_lot', async () => {
+    // Eval fit-10 (Nov 14): the model read the state bill rules, never tested the cottage, and missed "does not fit".
+    const r = await run(provider('no_fit'), 'get_lot_rules', { scenario: 'state_reform' });
+    expect(r.fit).toBe(FIT_NOT_TESTED);
+    expect(FIT_NOT_TESTED).toMatch(/Before saying whether a unit could go on this lot, call test_unit_on_lot/);
+    expect(FIT_NOT_TESTED).toMatch(/leave the size out/);
+    expect(JSON.stringify(r)).not.toMatch(/does not fit|"fits"/);
   });
 
   it('test_unit_on_lot takes the unit from the call, then the screen', async () => {
@@ -211,6 +220,62 @@ describe('land cover', () => {
     expect(String(facts.accuracy)).toMatch(/^land cover from an aerial model/);
     const garage = (await run(provider('garage'), 'get_lot_facts')).land_cover as Json;
     expect(String(garage.inside_suggested_spot)).toMatch(/^Not available for this lot/);
+  });
+});
+
+describe('slope, grading and landslide lines', () => {
+  // The Pittsburgh records carry these as rule notes (rules pass 8): test_unit_on_lot gives them as questions for the city.
+  const GRADING = 'The city grading rules apply on any slope: cut or filled slopes may not be steeper than 25% unless a geotechnical report certifies them (915.02.A.1.c, 915.02.B)';
+  const OVERLAY = 'City maps show slopes of 25% or more on a quarter or more of this lot. Land with a natural slope of 25% or more is in the Steep Slope Overlay, where new structures need Planning Commission approval after a public hearing (906.08.A.1, 906.08.C). Ask the Zoning Administrator whether the spot for the ADU is in it';
+  const SLIDE = 'City maps put a quarter or more of this lot in the Landslide-Prone Overlay. Before zoning approval for work that digs, fills or clears plants, the owner gives a site plan and a field investigation (906.04.B)';
+  const steep = (): LotRecord => {
+    const l = fixture('easy_fit');
+    l.rules.today!.reasons = [...l.rules.today!.reasons, GRADING, OVERLAY, SLIDE];
+    return l;
+  };
+  const on = (lot: LotRecord) => ({ ...provider('easy_fit'), selectedLot: async () => lot });
+
+  it('test_unit_on_lot gives them as questions for the city, and the status does not change', async () => {
+    const plain = await run(provider('easy_fit'), 'test_unit_on_lot');
+    const r = await run(on(steep()), 'test_unit_on_lot');
+    expect(r.site_questions_for_the_city).toEqual([GRADING, OVERLAY, SLIDE]);
+    expect(r.site_questions_rule).toBe(SITE_QUESTIONS_RULE);
+    expect(SITE_QUESTIONS_RULE).toMatch(/not a bar/);
+    expect(r.status).toBe(plain.status);
+  });
+
+  it('a unit inside the house and a lot with no such lines carry none', async () => {
+    expect(await run(on(steep()), 'test_unit_on_lot', { type: 'internal' })).not.toHaveProperty('site_questions_for_the_city');
+    expect(await run(provider('easy_fit'), 'test_unit_on_lot')).not.toHaveProperty('site_questions_for_the_city');
+  });
+});
+
+describe('why a unit type is not allowed', () => {
+  // Eval alt-03 (Nov 14): "why can't I build a detached ADU here" got only "this kind of unit is not allowed here",
+  // while the record names the alley rule. The tools now give the rule line that bars the type.
+  const ALLEY = 'A detached ADU (in an outbuilding) needs a lot that abuts an alley, or a street on its rear or street side lot line. (660-42C(1)(c)). Not allowed here: detached new';
+  const barred = (): LotRecord => {
+    const l = fixture('easy_fit');
+    const r = l.rules.today!;
+    r.reasons = [...r.reasons, ALLEY];
+    r.types_allowed = ['internal', 'attached'];
+    r.approval_by_type = { ...r.approval_by_type, detached_new: 'variance' };
+    return l;
+  };
+  const on = (lot: LotRecord) => ({ ...provider('easy_fit'), selectedLot: async () => lot });
+
+  it('test_unit_on_lot and explain_limit give the rule line that bars the type', async () => {
+    const t = await run(on(barred()), 'test_unit_on_lot', { type: 'detached_new' });
+    expect(t.status).toBe('not_allowed');
+    expect(t.why_not_allowed).toEqual([ALLEY]);
+    const e = await run(on(barred()), 'explain_limit', { type: 'detached_new' });
+    expect(e.why_not_allowed).toEqual([ALLEY]);
+  });
+
+  it('names only the types in the line ("attached" is not "detached new"), and nothing for an allowed unit', async () => {
+    expect(whyNotAllowed(barred(), 'today', 'attached' as never)).toEqual([]);
+    expect(whyNotAllowed(barred(), 'today', 'detached_new')).toEqual([ALLEY]);
+    expect(await run(on(barred()), 'test_unit_on_lot', { type: 'internal' })).not.toHaveProperty('why_not_allowed');
   });
 });
 

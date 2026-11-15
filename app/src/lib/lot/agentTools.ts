@@ -239,6 +239,10 @@ export function getLotFacts(lot: LotRecord) {
   });
 }
 
+/** get_lot_rules says what the rules allow, never whether a unit fits: that answer needs test_unit_on_lot. */
+export const FIT_NOT_TESTED =
+  "Not tested here. Rules only. Before saying whether a unit could go on this lot, call test_unit_on_lot with the type and scenario (leave the size out to test the unit on screen or the lot's suggested unit) and give its status.";
+
 export function getLotRules(lot: LotRecord, scenario: Scenario) {
   const r = lot.rules[scenario];
   if (!r) return compact({ lot_id: lot.lot.id, scenario, error: 'No rules on file for this scenario.' });
@@ -266,7 +270,7 @@ export function getLotRules(lot: LotRecord, scenario: Scenario) {
     defaults_not_town_rules: r.assumed,
     state_limits: r.state_limits ?? {},
     ...(scenario !== 'today' ? { changes_from_today: changesFromToday(lot, scenario) } : {}),
-    fit: 'Not tested here. Rules only. Call test_unit_on_lot to say whether a unit fits.',
+    fit: FIT_NOT_TESTED,
     notice: NOTICE,
     sources: sourcesOf(Object.values(r.citations)).map(src),
   });
@@ -291,7 +295,33 @@ export function changesFromToday(lot: LotRecord, scenario: Scenario): Record<str
   return out;
 }
 
+/** Slope, grading and landslide lines of the lot's rules (Pittsburgh and Philadelphia records): they ask for a review,
+ *  a report or a hearing, they never refuse the unit. */
+const SITE_LINE = /\b(slopes?|grading|landslide)/i;
+export const SITE_QUESTIONS_RULE =
+  'Questions for the city, not a bar: the status already counts them. Give each one in plain words with its section and who to ask (the Zoning Administrator or the city). Never say they rule the unit out.';
+export function siteQuestions(lot: LotRecord, scenario: Scenario, type: AduType): string[] {
+  if (type === 'internal') return [];
+  return (lot.rules[scenario]?.reasons ?? []).filter((r) => SITE_LINE.test(r));
+}
+
+/** Why a unit type is not allowed on this lot: the rule lines that name it ("... (660-42C(1)(c)). Not allowed here:
+ *  detached new"), else the lot fact that changes its path. Empty when the type is allowed. */
+export function whyNotAllowed(lot: LotRecord, scenario: Scenario, type: AduType): string[] {
+  const r = lot.rules[scenario];
+  if (!r) return [];
+  const words = type.replace(/_/g, ' ');
+  const lines = r.reasons.filter((x) => {
+    const m = /Not allowed here:\s*(.*)$/i.exec(x);
+    return !!m && m[1].toLowerCase().split(',').some((t) => t.trim() === words);
+  });
+  const cond = r.lot_conditions_by_type?.[type as keyof NonNullable<typeof r.lot_conditions_by_type>];
+  return lines.length ? lines : cond ? [cond] : [];
+}
+
 function verdictOut(lot: LotRecord, v: UnitVerdict) {
+  const site = siteQuestions(lot, v.scenario, v.type);
+  const why = v.status === 'not_allowed' ? whyNotAllowed(lot, v.scenario, v.type) : [];
   return {
     lot_id: lot.lot.id,
     town: townName(lot),
@@ -302,6 +332,7 @@ function verdictOut(lot: LotRecord, v: UnitVerdict) {
     status_text: statusText(lot, v),
     headline: v.headline,
     limit: v.limit?.text ?? null,
+    ...(why.length ? { why_not_allowed: why } : {}),
     changes: v.changes,
     checks: v.checks.map((c) => ({ check: c.label, pass: c.pass ?? NOT_CHECKED, text: c.text })),
     ...(v.checks.some((c) => c.pass == null) || !hasCover(lot)
@@ -310,6 +341,7 @@ function verdictOut(lot: LotRecord, v: UnitVerdict) {
     // A new building on the ground: trees and paving where it would go.
     ...(hasCover(lot) && v.type === 'detached_new' ? { land_cover: landCover(lot, v.scenario, v.type) } : {}),
     warnings: v.warnings.map((w) => w.text),
+    ...(site.length ? { site_questions_for_the_city: site, site_questions_rule: SITE_QUESTIONS_RULE } : {}),
     approval: { path: v.approval.path ?? 'not known', label: v.approval.label, text: v.approval.text },
     assumed: v.assumed,
     notice: NOTICE,
@@ -369,6 +401,7 @@ export function explainLimit(lot: LotRecord, unit: UnitInput) {
     status: v.status,
     status_text: statusText(lot, v),
     limit: v.limit?.text ?? 'The data does not say what limits the unit here.',
+    ...(v.status === 'not_allowed' && whyNotAllowed(lot, v.scenario, v.type).length ? { why_not_allowed: whyNotAllowed(lot, v.scenario, v.type) } : {}),
     what_would_help: v.changes,
     largest_footprint_sqft: v.largest_sqft ?? 'not on file',
     approval: v.approval.label,

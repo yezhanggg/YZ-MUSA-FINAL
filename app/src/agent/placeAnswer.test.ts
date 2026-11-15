@@ -105,6 +105,9 @@ describe('wiring', () => {
     expect(TOOLS.map((t) => t.name)).toContain('get_place_answer');
     expect(SYSTEM_PROMPT).toMatch(/call get_place_answer first/);
     expect(SYSTEM_PROMPT).toMatch(/Never dead-end/);
+    // Eval fit-10 (Nov 14): "could I put a cottage here" is answered from test_unit_on_lot, never from the rules alone.
+    expect(SYSTEM_PROMPT).toMatch(/whether a unit could go on a lot .*call test_unit_on_lot \(or explain_limit\).*before you answer/);
+    expect(SYSTEM_PROMPT).toMatch(/Do not ask for a size first/);
     expect(SYSTEM_PROMPT).toMatch(/Next step:/);
   });
 });
@@ -186,6 +189,8 @@ describe('rule text from the resolver', () => {
     expect(check(o).fits_zoning).toBe('depends_on_lot_facts');
     expect((check(o).depends_on as Out[]).map((x) => x.fact)).toEqual(expect.arrayContaining(['the lot width', "the house's floor area"]));
     expect(String(o.how_to_answer)).toMatch(/depends on: each fact in depends_on/);
+    // Eval ladder-02 and ladder-03 (Nov 14): an unknown depends_on fact came back as "I don't know whether ...", a dead end.
+    expect(String(o.how_to_answer)).toMatch(/"not known here", in those words, never "I don't know"/);
     // A unit inside the house is not under the width bar.
     const inside = check(await ask7({ place: 'Media borough', unit_type: 'internal' }));
     expect((inside.depends_on as Out[] | undefined)?.map((x) => x.fact) ?? []).not.toContain('the lot width');

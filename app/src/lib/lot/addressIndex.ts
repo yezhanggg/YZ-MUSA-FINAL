@@ -222,12 +222,18 @@ export interface AddressIndexSource {
   search(address: string, max?: number): Promise<AddressLookup>;
 }
 
-function edits(a: string, b: string): number {
+/** Edit distance where two swapped neighbouring letters count as one typo ("sprcue" -> "spruce" is 1). */
+export function edits(a: string, b: string): number {
   if (a === b) return 0;
+  let prev2: number[] = [];
   let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
   for (let i = 1; i <= a.length; i++) {
     const cur = [i];
-    for (let j = 1; j <= b.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    for (let j = 1; j <= b.length; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) cur[j] = Math.min(cur[j], prev2[j - 2] + 1);
+    }
+    prev2 = prev;
     prev = cur;
   }
   return prev[b.length];
@@ -343,8 +349,10 @@ export function addressIndexSource(opts: LoadOptions & { places?: readonly strin
       let j = -1;
       words.slice(0, -1).forEach((w, k) => TYPES.has(w) && (j = k));
       if (j > 0) {
-        q = { ...q, street: words.slice(0, j + 1).join(' ') };
-        levels = streetsFor(q.street);
+        const cut = { ...q, street: words.slice(0, j + 1).join(' ') };
+        levels = streetsFor(cut.street);
+        // Keep the cut only when it finds a street: "903 wods run ave" must look for names like "wods run ave", not "wods run".
+        if (levels.some((x) => x.length)) q = cut;
       }
     }
     // Lots in the hinted place first.

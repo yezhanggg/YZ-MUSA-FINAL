@@ -182,6 +182,8 @@ describe('wiring', () => {
     expect(SYSTEM_PROMPT).toMatch(/unverified text search/);
     expect(SYSTEM_PROMPT).toMatch(/Never turn quotes into a verdict/);
     expect(SYSTEM_PROMPT).toMatch(/Not found in the text searched/);
+    // Eval tierb-05 (Nov 14): a second, broader search found a passage and the first search's miss was said in other words.
+    expect(SYSTEM_PROMPT).toMatch(/It still holds when a later search with other words finds passages/);
   });
 
   it('get_rule_text with no rule file says when text search is on file; the executors run the search', async () => {

@@ -516,7 +516,7 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
     rule?.by_form ? 'The answer differs by form: give one line per form from zoning_allows.by_form.' : null,
     rule?.size_rule_accessory_building || rule?.size_rule_inside_or_attached ? 'Give the size cap as the size_rule sentence (it says which limit wins, or that it is a share of the house).' : null,
     rule?.hearing ? 'Say who decides (who_decides) and that it is a public hearing.' : null,
-    rule?.depends_on.length ? 'Say what the answer depends on: each fact in depends_on with its rule and section, and that the zoning officer or the lot records can settle it.' : null,
+    rule?.depends_on.length ? 'Say what the answer depends on: each fact in depends_on with its rule and section, and that the zoning officer or the lot records can settle it. Say an unknown fact is "not known here", in those words, never "I don\'t know".' : null,
     summary ? 'Also give earlier_town_summary (approval, owner on site, units per lot, size cap) with its label and source.' : null,
   ].filter(Boolean).join(' ');
   out.how_to_answer =
