@@ -33,14 +33,16 @@
     "code_current_through_note": "eCode360: 'Includes legislation through 06-27-2024.' New Laws holds no zoning ordinance",
     "checks": [
       "The zoning code has no accessory dwelling unit, in-law suite, accessory apartment or similar listing. Each residential district permits 'only the following' uses (401A, 401B, 501, 601, 701)",
-      "In R-1 a lot may hold 'One single-family dwelling or one two-family dwelling'. In a land development there may be one two-family dwelling for every two single-family dwellings (501.1). R-1A allows the R-1 uses except two-family dwellings and mobile homes (601)",
-      "R-2 permits two-family dwellings and multiple family dwellings of not more than 12 families (701.2). A single-family dwelling that existed when the chapter was enacted may be altered in R-2 into a multiple family dwelling, with 1,000 sq ft of lot for each unit, at least 600 sq ft for each unit, no living quarters in a basement and no exterior change except for safety and access (1003)",
+      "In R-1 a lot may hold 'One single-family dwelling or one two-family dwelling'. In a land development there may be one two-family dwelling for every two single-family dwellings (501.1). R-1A allows the R-1 uses except two-family dwellings and mobile homes (601). A lot plotted before the chapter was enacted may still be used for residential purposes though it is smaller than the district asks (402.4, 502.4)",
+      "R-2 permits two-family dwellings and multiple family dwellings of not more than 12 families (701.2). A single-family dwelling that existed when the chapter was enacted may be altered in R-2 into a multiple family dwelling, with 1,000 sq ft of lot for each unit, at least 600 sq ft for each unit, no living quarters in a basement and no exterior change except for safety and access (1003). R-2 sets no one-building-per-lot rule for two-family and multiple family dwellings (701.2), so whether a second residential building may stand on an R-2 lot is not settled",
       "Business districts permit all R-2 uses and 'all other buildings, structures and uses' except those the code prohibits (801). Industrial districts permit the uses of every other district and all other uses except those prohibited (901). Whether an accessory unit on a house lot is such a use is not settled",
       "In the Agricultural and A-1 districts a lot not used for farming takes the R-1 uses, and lots under 1.5 acres are classed as residential (401A(3), 401B(3)). 'Agricultural dwellings, barns and their accessory uses and buildings' are permitted on farms, and any permanent living quarters must meet 501 to 503 (401A(1), (6))",
-      "Garages and other outbuildings stand at least 10 ft from side and rear lines (403, 503, 703). An accessory use in an accessory building may not take more floor area than half the first floor of the main building (301 'Accessory use')",
+      "Garages and other outbuildings stand at least 10 ft from side and rear lines (403, 503, 703). Garages and open porches together may occupy at most 35% of the rear yard (301 'Rear Yard'). An accessory use in an accessory building may not take more floor area than half the first floor of the main building (301 'Accessory use')",
       "The definitions say 'Basement living' 'Will not be permitted beyond one year from the date of permit' (301)",
       "Planned residential developments need a tract of more than 75 acres with public water and sewer in R-1, R-1A or R-2 (1304)",
-      "No section read bars a use variance. Variances need the five findings of 1108"
+      "No section read bars a use variance. Variances need the five findings of 1108",
+      "A single-family dwelling may shelter or feed for profit 'not more than three other people' (301 'Single-family dwelling'). A two-family dwelling is for two households, 'each including two or more persons living as a family' (301)",
+      "Boarding houses and student homes are special exceptions in the Agricultural and R-2 districts (1001A(6), (7)), at least 500 ft from another such use (1001D). Senior housing developments are a conditional use in R-1 on at least 5 acres (1001B)"
     ],
     "notes": "Zoning office: Township of Logan, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, in print view. Read: Part 2, Part 3 (all definitions), Part 4, Part 5, Part 6, Part 7, Part 8, Part 9, Part 9.5, Part 10 (1001 to 1017, the parking table read through the residential rows), Part 11 and Part 13 (1301 to 1304). Not read: Part 1, Parts 12 and 14 to 17 (map amendments, wind, signs, solar), 1018 to 1021 and the zoning map. The code search was not used. The ADU-like words (accessory apartment, accessory dwelling, in-law, family member suite, relative, accessory suite, guest house, carriage house, granny, ECHO, elder cottage, second dwelling, living quarters, conversion, two-family, caretaker, tenant house, farm dwelling) were checked by reading every definition and every district's use list. The code names districts in words, without short codes. This file uses Agricultural, A-1, R-1, R-1A, R-2, Business, Industrial and Institutional. Height of a building is measured from the average ground level at the sides of the building, not counting chimneys (301). The code sets no lot coverage figure for the residential districts."
   },
@@ -91,7 +93,7 @@
             "Agricultural",
             "A-1"
           ],
-          "conditions": "'A dwelling with or without party walls, designed or arranged for occupancy of two households', built with firewall partitions or firewall party walls (301). R-1 permits one single-family dwelling or one two-family dwelling on a lot, and in a land development one two-family dwelling for every two single-family dwellings (501.1). R-2 permits two-family dwellings (701.2). Business districts permit all R-2 uses (801.1) and Industrial districts the uses of every other district (901). An agricultural lot not used for farming takes the R-1 uses (401A(3), 401B(3)). Two parking spaces per dwelling with two bedrooms or fewer (1017.3D)",
+          "conditions": "'A dwelling with or without party walls, designed or arranged for occupancy of two households', each 'including two or more persons living as a family', built with firewall partitions or firewall party walls (301). R-1 permits one single-family dwelling or one two-family dwelling on a lot, and in a land development one two-family dwelling for every two single-family dwellings (501.1). R-2 permits two-family dwellings (701.2). Business districts permit all R-2 uses (801.1) and Industrial districts the uses of every other district (901). An agricultural lot not used for farming takes the R-1 uses (401A(3), 401B(3)). Two parking spaces per dwelling with two bedrooms or fewer (1017.3D)",
           "min_lot_by_utility": [
             {
               "when": "With public sewerage",
@@ -109,7 +111,7 @@
           "section": "301 'Two-family dwelling', 401A(3), 501.1, 502.4, 701.2, 801, 901",
           "url": "https://ecode360.com/print/LO3531?guid=28662611",
           "confidence": "verified",
-          "note": "A building for two households, so the house itself becomes the two-family dwelling. Not in R-1A (601) or the Institutional district (902.5). The lot figures are the R-1 figures, which R-2 and the agricultural districts share (402.4, 702.1)"
+          "note": "A building for two households, so the house itself becomes the two-family dwelling. Not in R-1A (601) or the Institutional district (902.5). The lot figures are the R-1 figures, which R-2 and the agricultural districts share (402.4, 702.1). The code 'shall not prevent the use for residential purposes of a lot plotted prior to the time of enactment' (402.4, 502.4), so an older lot below these figures may still hold a two-family dwelling. Ask the zoning officer. R-2 sets no one-building-per-lot rule (701.2), so whether a second residential building may stand on an R-2 lot is not settled"
         },
         {
           "name": "Conversion of an older house into a multiple family dwelling (R-2)",
@@ -139,19 +141,24 @@
             "Agricultural",
             "A-1"
           ],
-          "conditions": "'Agricultural dwellings, barns and their accessory uses and buildings' are permitted (401A(1), 401B(1)). 'Any permanent building, to be used as a living quarters in an Agricultural District must comply with §§ 501, 502 and 503' (401A(6), 401B(6)). Parcels under five acres with more than 70% not farmed, and all lots under 1.5 acres, are classed as residential under the R-1 rules (401A(3))",
+          "conditions": "'Agricultural dwellings, barns and their accessory uses and buildings' are permitted (401A(1), 401B(1)). 'Any permanent building, to be used as a living quarters in an Agricultural District must comply with \u00a7\u00a7 501, 502 and 503' (401A(6), 401B(6)). Parcels under five acres with more than 70% not farmed, and all lots under 1.5 acres, are classed as residential under the R-1 rules (401A(3))",
           "min_lot_sqft": 65340,
           "requires": [
             {
               "test": null,
               "condition": "The lot is an active farm",
               "section": "401A(1), (3)"
+            },
+            {
+              "test": null,
+              "condition": "A parcel under five acres counts as a farm only if at least 30% of it is farmed. Otherwise it is classed as residential under the R-1 rules",
+              "section": "401A(3)"
             }
           ],
           "section": "401A(1), (3), (6), 401B(1), (3), (6)",
           "url": "https://ecode360.com/print/LO3531?guid=28662575",
           "confidence": "secondary",
-          "note": "The plural 'dwellings' suggests more than one farm dwelling, but 401A(6) sends living quarters to 501, which allows one dwelling on a lot. Not settled. Ask the zoning officer"
+          "note": "The code sets no lot minimum for a farm dwelling. Lots under 1.5 acres are always classed as residential (401A(3)), so 65,340 sq ft is only a floor, not a farm lot size. The plural 'dwellings' suggests more than one farm dwelling, but 401A(6) sends living quarters to 501, which allows one dwelling on a lot. Not settled. Ask the zoning officer"
         },
         {
           "name": "Any use not prohibited (Business, Industrial)",
@@ -219,6 +226,21 @@
         }
       ],
       "section": "301 'Accessory use'",
+      "url": "https://ecode360.com/print/LO3531?guid=28662397",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "in the rear yard (garages and open porches together)",
+          "max_share_of_rear_yard": 0.35,
+          "section": "301 'Rear Yard'",
+          "url": "https://ecode360.com/print/LO3531?guid=28662397",
+          "note": "'attached or detached garages and open porches, which in the aggregate shall occupy not more than 35% of the area'"
+        }
+      ],
+      "section": "301 'Rear Yard'",
       "url": "https://ecode360.com/print/LO3531?guid=28662397",
       "verified_on": "2026-11-16",
       "confidence": "verified"

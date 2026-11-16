@@ -3697,7 +3697,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 402 accessory dwelling units by special exception (RU))"
       ],
-      "status_note": "First reading, batch 33. Open: 402 names no form (internal, attached, garage or new building) since Ord. No. 314 repealed the existing-accessory-building rule, so every form is shown for the Board to hear. Also open: whether a twin or row house can host one (402.4 speaks of 'the principal detached dwelling unit'), the 306 minimum floor area (600 sq ft) against 402.4 (400 sq ft), whether the unit counts as a dwelling unit for 312 parking, and whether 507 lot-of-record relief reaches an ADU."
+      "status_note": "Open points: 402 names no form, so which forms the Board will hear is not settled (104.2 reads doubt in the owner's favor, so all five are shown). A twin may not qualify: 402.4 measures against the 'principal detached dwelling unit' and the code defines a twin as a duplex. Parking is two, three or four spaces in all (312.2 against the 312.19 schedule). Whether a lot only partly in the Floodplain Overlay may take a unit outside it (230.6G). Not read: Chapter 17 Planned Residential Development."
     },
     {
       "geoid": "4203707128",
@@ -3721,7 +3721,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-605.1 accessory dwelling for family members by special exception)"
       ],
-      "status_note": "First reading, batch 33. Open: whether the 27-605.1 limits reach the by-right 'Apartment, Accessory' (Schedule A gives it no standards), whether the accessory dwelling counts toward the R-U 3,000 sq ft per dwelling unit figure (27-306.2), whether a new detached unit counts as the one accessory building of 27-503.2B, and whether detached units take the 3 ft and 5 ft accessory yards of 27-509.1 or the district yards (27-605.1C(3)). R-U allows two accessory dwellings, which the file cannot hold (it shows one)."
+      "status_note": "Open points: whether a new structure for the unit counts as the one accessory building of 27-503.2B (27-605.1C(3)). Whether 27-605.1 reaches the by-right accessory apartment. Whether the unit counts toward the lot area per dwelling unit (27-306.2 R-U, 27-307.2 C-R). R-U allows two accessory dwellings, but the file shows one. Not read: Part 4 airport overlay."
     },
     {
       "geoid": "4201344328",
@@ -3735,7 +3735,7 @@
       "pop_rank": 201,
       "file": "pa_blair_logan",
       "batch": 33,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/28662373",
@@ -3745,7 +3745,7 @@
       "why": [
         "added as batch 33 by population. Code Chapter 27 has no ADU text"
       ],
-      "status_note": "First reading, batch 33. Open: whether the open use lists of Business (801.2) and Industrial (901) reach an accessory unit on a house lot, whether farms may hold more than one agricultural dwelling (401A(1) against 401A(6) and 501), and the enactment date used for 1003 conversions (read as 11-15-1979 from the ordinance number). District names are written out in the code with no short codes."
+      "status_note": "For a later check: whether R-2 allows a second residential building on a lot (701.2). Farm dwelling count on a farm (401A(1) against 501)."
     }
   ]
 }
