@@ -1,0 +1,979 @@
+{
+  "provenance": {
+    "jurisdiction": "Mount Joy township",
+    "instrument": "Mount Joy Township Zoning Ordinance of 2012 (Chapter 135 Zoning, adopted by the Board of Supervisors 5-21-2012 by Ord. No. 279-2012, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 MO1487, Township of Mount Joy, Lancaster County (the chapter links the zoning map of Ord. No. 346-2024 on mtjoytwp.org, 135-32 'Authority' names the Elizabethtown Regional Sewer Authority, and 135-387 sends appeals to the Court of Common Pleas of Lancaster County). Not eCode360 MO1443 or mtjoytwp.us, which are Mount Joy Township, Adams County. District uses and figures are text in each district article. The only attachments are the zoning map and the table of map amendments. Floodplain rules are in Chapter 70 (Ord. No. 300-2016). New Laws: only Ord. No. 354-2026 (noise, Chapter 88)",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11526470",
+      "https://ecode360.com/MO1487",
+      "https://ecode360.com/MO1487/laws",
+      "https://ecode360.com/MO1487/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20granny%20OR%20relative%20OR%20relatives%20OR%20servant%20OR%20quarters%20OR%20watchman%20OR%20%22housekeeping%20unit%22%20OR%20cottage%20OR%20%22elder%22%20OR%20%22farm%20dwelling%22%20OR%20%22farm%20employee%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/MO1487?guid=16137759",
+      "https://ecode360.com/print/MO1487?guid=11526505",
+      "https://ecode360.com/print/MO1487?guid=16137953",
+      "https://ecode360.com/print/MO1487?guid=11526702",
+      "https://ecode360.com/print/MO1487?guid=16137954",
+      "https://ecode360.com/print/MO1487?guid=16137984",
+      "https://ecode360.com/print/MO1487?guid=16138021",
+      "https://ecode360.com/print/MO1487?guid=16138062",
+      "https://ecode360.com/print/MO1487?guid=16138090",
+      "https://ecode360.com/print/MO1487?guid=16138130",
+      "https://ecode360.com/print/MO1487?guid=16138190",
+      "https://ecode360.com/print/MO1487?guid=16138232",
+      "https://ecode360.com/print/MO1487?guid=16138269",
+      "https://ecode360.com/print/MO1487?guid=16138423",
+      "https://ecode360.com/print/MO1487?guid=16138493",
+      "https://ecode360.com/print/MO1487?guid=16138590",
+      "https://ecode360.com/print/MO1487?guid=16138615",
+      "https://ecode360.com/print/MO1487?guid=11528321",
+      "https://ecode360.com/print/MO1487?guid=11528306",
+      "https://ecode360.com/print/MO1487?guid=11527641",
+      "https://ecode360.com/print/MO1487?guid=16140158",
+      "https://ecode360.com/print/MO1487?guid=11528659",
+      "https://ecode360.com/11523992",
+      "https://ecode360.com/print/MO1487?guid=31852565",
+      "https://ecode360.com/print/MO1487?guid=31852660"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Lancaster",
+    "municipality_type": "township",
+    "geoid": "4207151664",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11526470",
+    "code_current_through": "2026-03-16",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 03-16-2026.' New Laws: Ord. No. 354-2026 (8-17-2026, Nuisances: Noise, Ch 88) only",
+    "checks": [
+      "Echo housing is a special exception in A, R, OS, R-1, R-2 and R-3 (135-83F, 135-63G, 135-73I, 135-93B, 135-103A, 135-113A). C-1, C-2, MU, LI, GI and IN do not list it",
+      "Echo housing is 'An additional dwelling unit created by the addition to or conversion of an existing principal dwelling or by the placement of a manufactured home on a property containing an existing dwelling, for occupancy by persons related by blood, marriage or adoption to the occupants of the principal dwelling' (135-32)",
+      "On a lot under two acres the unit must be an addition to the existing dwelling, at most 75% of the total livable floor area of the existing dwelling (first and second floors and basement, not attics), and designed to become part of the house when the use ends (135-225C)",
+      "On a lot of two acres or more the unit may be such an addition or a manufactured home installed on the lot. The manufactured home must meet the yard and setback requirements for a principal structure, but need not meet any separation from the house (135-225D)",
+      "Public water and sewer are used if available. Otherwise the unit shares the house's well and septic system unless the Sewage Enforcement Officer prohibits it, and an on-lot system must be shown to handle everyone or be expanded (135-225A)",
+      "The Zoning Hearing Board's decision is recorded at the applicant's cost. Only persons related by blood, marriage, adoption or foster relationship to the occupants of the house may live there, it may not be rented to others or subdivided, and a manufactured home must be removed when no longer so used (135-225F)",
+      "The echo unit is not counted as a dwelling unit or lot under the Agricultural District's limit on dwellings per parent tract (135-225E, 135-85B)",
+      "Parking: one more space for the echo unit on top of the house's own. A dwelling unit with three bedrooms or fewer needs two (135-343A(1), (3))",
+      "Special exception standards: 135-383B. A special exception expires if no zoning permit is obtained within one year (135-383B(7))",
+      "A use 'not clearly permitted' in a district may be allowed by the Zoning Hearing Board as a special exception if it is less intensive than the uses permitted there and 'closely similar in impacts and characters to the uses permitted in that district' (135-7)",
+      "Conversion of a principal single-family detached dwelling into up to three dwelling units is a special exception in R-2 and R-3: 10,000 sq ft of lot per unit, interior changes only, public water and public sewer (135-103D, 135-113D, 135-224)",
+      "More than one principal use may be on a lot if the lot area equals the district minimums added together, each building meets the district rules and is placed so the lot can later be subdivided, with land development approval before the zoning permit (135-295)",
+      "Unattached accessory buildings may be at most 20 ft tall in A, R, OS, R-1, R-2, R-3 and MU (135-86A, 135-66A, 135-76A, 135-96A, 135-106A, 135-116A, 135-146C). Their yards in A are 50 ft in front and 10 ft at the sides and rear. In R and OS they are 50 ft in front and 6 ft at the sides and rear. In R-1, R-2 and R-3 the front is the principal setback plus 15 ft, and 6 ft at the sides and rear. The echo manufactured home instead meets the principal yards (135-225D)",
+      "Principal buildings have no fixed height cap in A, R, OS, R-1, R-2 and R-3: above 35 ft each two feet of added height needs one more foot of side yard (135-65A, 135-75A, 135-85A, 135-95A, 135-105A, 135-115A)",
+      "Floodplain (Chapter 70): within an identified floodplain area, new construction must strictly follow Chapter 70, and no new construction or development may be within 50 ft landward of the top of bank of any watercourse (70-41C, D). 70-51 prohibits only hospitals, nursing homes, jails and new manufactured home parks there",
+      "A nonconforming lot in single and separate ownership may be developed for any use permitted in its district if it meets the setback, coverage, bulk and height rules (135-45)",
+      "Variances: 135-383C sets the usual findings and does not bar a use variance. The Board must require adequate water and sewage facilities"
+    ],
+    "notes": "Zoning office: Mount Joy Township (Lancaster County). Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Articles I, V, VI, VII to XV, XVII, XVIII and XX in full, 135-224 and 135-225, 135-291 to 135-297 and 135-300, 135-342 to 135-343A, Article XXVIII, the 135-32 definitions of building, accessory building, building coverage, building height, dwelling, dwelling unit, echo housing and family, Chapter 70 (contents, 70-41 and 70-51), the New Laws page and the code search for ADU terms. Not read: Article II, the other 135-32 definitions, 135-211 to 135-223, 135-226 to 135-275 (so 135-216 apartment houses, 135-262 townhouses and 135-248 were not read), 135-298, 135-299, 135-301 to 135-327 (so the riparian, steep slope and historic sections were not read), Articles XXIV, XXVI (135-351 cluster, 135-353 Village Design Option) and XXVII, the rest of 135-343 and 135-344 onward, and Chapter 70 except 70-41 and 70-51 (so 70-42 elevation and the floodplain variance were not read)."
+  },
+  "adu": {
+    "term": {
+      "value": "echo housing",
+      "section": "135-32 'Echo housing', 135-225",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'An additional dwelling unit created by the addition to or conversion of an existing principal dwelling or by the placement of a manufactured home on a property containing an existing dwelling, for occupancy by persons related by blood, marriage or adoption to the occupants of the principal dwelling.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "135-225, 135-83F, 135-63G, 135-73I, 135-93B, 135-103A, 135-113A",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A special exception from the Zoning Hearing Board. Only relatives of the occupants of the house (135-225F)"
+    },
+    "scope_districts": {
+      "value": [
+        "A",
+        "R",
+        "OS",
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "135-83F, 135-63G, 135-73I, 135-93B, 135-103A, 135-113A",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Echo housing is a listed special exception in these six districts"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "135-122, 135-123, 135-132, 135-133, 135-142, 135-143, 135-162, 135-163, 135-172, 135-173, 135-192, 135-193",
+      "url": "https://ecode360.com/print/MO1487?guid=16138269",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "C-1, C-2, MU, LI, GI and IN do not list echo housing"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "135-225, 135-383B",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Echo housing in accordance with § 135-225' is listed among the special exception uses of each district. The Zoning Hearing Board decides under 135-383B"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "135-383C",
+      "url": "https://ecode360.com/print/MO1487?guid=11528659",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board. The usual findings. No bar on a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "135-7",
+      "url": "https://ecode360.com/print/MO1487?guid=16137759",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'If a use is not clearly permitted by right or as a special exception or by conditional use approval by this chapter within any zoning district, the Zoning Hearing Board may permit such use as a special exception' when its tests are met. MU and LI permit some dwellings but do not list echo housing"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "MU",
+        "LI"
+      ],
+      "section": "135-7, 135-142A, 135-162K",
+      "url": "https://ecode360.com/print/MO1487?guid=16137759",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "MU permits single-family detached and semidetached dwellings on lots of five acres or less that existed on 6-24-2006. LI permits dwellings that existed on 6-19-2006. C-1, C-2, GI and IN permit no house, so the path is not given there"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "135-7B",
+      "url": "https://ecode360.com/print/MO1487?guid=16137759",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The use must also be less intensive in external impacts than the district's by-right uses (135-7A)",
+      "quote": "closely similar in impacts and characters to the uses permitted in that district"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a house into up to three units (R-2, R-3)",
+          "path": "special_exception",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Conversion of a principal single-family detached dwelling into a multifamily dwelling of not more than three units (135-103D, 135-113D, 135-224). 'The lot area per dwelling unit, after the conversion, shall be a minimum of 10,000 square feet.' 'Only interior modifications shall be made to the existing principal building. No additions or extensions of such buildings shall be permitted.' The converted dwelling must use public water and public sewer. Parking per 135-343A(1), never on grass or another unpaved surface",
+          "min_lot_sqft": 20000,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing principal single-family detached dwelling is converted",
+              "section": "135-224"
+            },
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "135-224F"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "135-224F"
+            }
+          ],
+          "section": "135-103D, 135-113D, 135-224",
+          "url": "https://ecode360.com/print/MO1487?guid=11528306",
+          "confidence": "verified",
+          "note": "20,000 sq ft is 10,000 sq ft for each of two units. Not limited to relatives"
+        },
+        {
+          "name": "Two-family dwelling (R-2, R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "'Single-family semidetached dwellings or two-family dwellings' are permitted by right in R-2 and R-3 (135-102B, 135-112B). A two-family dwelling is 'A freestanding dwelling building containing two dwelling units for two families, arranged in a side-by-side or over-and-under configuration' (135-32). Lot 10,000 sq ft, width 50 ft for each dwelling unit, side yards 10 ft each over-and-under or 12 ft per unit side-by-side (135-105, 135-115)",
+          "min_lot_sqft": 10000,
+          "section": "135-102B, 135-112B, 135-105, 135-115, 135-32",
+          "url": "https://ecode360.com/print/MO1487?guid=16138090",
+          "confidence": "secondary",
+          "note": "A building of two units, not a unit added to a house. The code does not say how an existing house becomes a two-family dwelling"
+        },
+        {
+          "name": "Second principal dwelling on the lot (135-295)",
+          "path": "by_right",
+          "districts": [
+            "A",
+            "R",
+            "OS",
+            "R-1",
+            "R-2",
+            "R-3",
+            "MU"
+          ],
+          "conditions": "'More than one principal use may be established on a single lot'. The lot area must equal the minimum lot areas of each use added together, each building must meet the district rules, and a second principal building must be placed so the lot can later be subdivided. 'The applicant shall obtain land development approval prior to obtaining a zoning permit' (135-295A to C). In A the parent tract dwelling quota still applies (135-85B)",
+          "min_lot_by_district": {
+            "A": 87120,
+            "R": 87120,
+            "OS": 174240,
+            "R-1": 40000,
+            "R-2": 30000,
+            "R-3": 20000,
+            "MU": 30000
+          },
+          "land_development": true,
+          "section": "135-295, 135-85B",
+          "url": "https://ecode360.com/print/MO1487?guid=11527641",
+          "confidence": "secondary",
+          "note": "Each figure is the district minimum for a single-family detached dwelling doubled (R-1 with public sewer, 80,000 sq ft without). Whether a second house is a second 'principal use' when the first is also a house is not settled"
+        },
+        {
+          "name": "Manufactured home for farm laborers (any district, with a farm)",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "The Zoning Hearing Board may grant a special exception for a manufactured home used as temporary living quarters for farm laborers in any district, as an accessory to an approved principal agricultural use. At least one resident must work on that farm, the home is set back at least 60 ft from any street right-of-way and close to the farm buildings, and a farm worker must occupy it at least 30 days a year (135-300B)",
+          "requires": [
+            {
+              "test": null,
+              "condition": "An approved principal agricultural use on the lot, and a resident who works on the farm",
+              "section": "135-300B"
+            }
+          ],
+          "section": "135-300B",
+          "url": "https://ecode360.com/print/MO1487?guid=11527641",
+          "confidence": "secondary",
+          "note": "Housing for farm workers, not a family unit. The rest of 135-300B was not read"
+        }
+      ],
+      "section": "135-224, 135-295, 135-300B",
+      "url": "https://ecode360.com/print/MO1487?guid=11527641",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 135",
+      "url": "https://ecode360.com/11526470",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found. 135-309 (historic preservation) was not read"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "Echo housing is added to an existing principal dwelling, or placed on a property containing an existing dwelling.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "house_exists",
+          "section": "135-32 'Echo housing', 135-225C, D",
+          "url": "https://ecode360.com/print/MO1487?guid=11528321"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A manufactured home as the echo unit is allowed only on a property of two acres or more. On a smaller lot the unit must be an addition to the existing dwelling.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 87120,
+          "section": "135-225C, D",
+          "url": "https://ecode360.com/print/MO1487?guid=11528321"
+        },
+        {
+          "kind": "design",
+          "condition": "A detached echo unit must be a manufactured home installed on the lot. It meets the yard and setback requirements for a principal structure but need not meet a separation from the house, and it must be removed when relatives no longer live in it.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "135-225D, F",
+          "url": "https://ecode360.com/print/MO1487?guid=11528321"
+        },
+        {
+          "kind": "design",
+          "condition": "An addition must be designed so it can be used as part of the house when the echo housing use ends.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "135-225C",
+          "url": "https://ecode360.com/print/MO1487?guid=11528321"
+        },
+        {
+          "kind": "utilities",
+          "condition": "Public water and sewer must be used if available. Otherwise the unit shares the house's sewage and water systems unless the Sewage Enforcement Officer prohibits it, and an on-lot system must be shown to serve everyone or be expanded with the officer's review.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "135-225A",
+          "url": "https://ecode360.com/print/MO1487?guid=11528321"
+        },
+        {
+          "kind": "family",
+          "condition": "The Zoning Hearing Board's decision is recorded. It limits occupancy to persons related by blood, marriage, adoption or foster relationship to the occupants of the house, and bars renting to others or subdividing.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "135-225F",
+          "url": "https://ecode360.com/print/MO1487?guid=11528321"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area (Chapter 70), new construction must strictly follow Chapter 70, and no new construction or development may be within 50 ft landward of the top of bank of any watercourse.",
+          "effect": "condition",
+          "applies_to": [
+            "attached",
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "70-41C, D",
+          "url": "https://ecode360.com/print/MO1487?guid=31852565",
+          "outside_zoning_chapter": "Chapter 70"
+        }
+      ],
+      "section": "135-225, 70-41",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "attached",
+        "detached_new"
+      ],
+      "section": "135-225C, D",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'the echo housing shall be an addition to the existing dwelling' (any lot) and, on two acres or more, 'the echo housing may be a manufactured home installed upon the lot'"
+    },
+    "types_in_conflict": {
+      "value": [
+        "internal"
+      ],
+      "section": "135-32 'Echo housing', 135-225C, D",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The definition covers a unit created by 'conversion of an existing principal dwelling', but 135-225C and D allow only 'an addition to the existing dwelling' or a manufactured home"
+    },
+    "types_not_addressed": {
+      "value": [
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "135-225",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "135-225 names an addition or a manufactured home only. A unit in a garage or other accessory building is not named"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "135-225C",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No square foot cap. An addition is capped as a share of the house"
+    },
+    "max_share_by_form": {
+      "value": {
+        "attached": 0.75
+      },
+      "section": "135-225C",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Such addition shall not exceed 75% of the total livable floor area, to include first and second floors and basement but not attics, of the existing dwelling.' No cap for a manufactured home"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "135-225C",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "An addition is part of the house, so the district rules apply"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "135-225D",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The manufactured home shall meet all yard and setback requirements from the property line required of a principal structure, but shall not be required to meet such separation requirements from the principal dwelling.'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 20,
+      "section": "135-86A, 135-66A, 135-76A, 135-96A, 135-106A, 135-116A",
+      "url": "https://ecode360.com/print/MO1487?guid=16138062",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The height cap for unattached accessory buildings in each district that lists echo housing"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "135-225D, 135-86A, 135-66A, 135-76A, 135-96A, 135-106A, 135-116A",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "135-225D treats the echo manufactured home like a principal structure for yards, and says nothing of height. Whether the 20 ft accessory building height binds it is not settled"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "135-32 'Echo housing', 135-225F",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "Only persons related by blood, marriage, adoption or foster relationship to the occupants of the house. It may not be rented to anyone else.",
+      "section": "135-32 'Echo housing', 135-225F",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "135-225",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No owner rule. The occupants must be related to the occupants of the principal dwelling"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "135-225",
+      "url": "https://ecode360.com/print/MO1487?guid=11528321",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "135-225 speaks of 'the echo housing' on a property. No number is stated"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "135-343A(3)",
+      "url": "https://ecode360.com/print/MO1487?guid=16140158",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Echo housing shall be provided a minimum of one off-street parking space for the echo housing in addition to the off-street parking required for the principal dwelling.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "135-343A(1), (3)",
+      "url": "https://ecode360.com/print/MO1487?guid=16140158",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Two spaces for a dwelling unit with three bedrooms or fewer, three with four or more, plus one for the echo unit. So three for a house of up to three bedrooms"
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "135-85C(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138021",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One acre for each single-family detached dwelling. At most 2.5 acres (135-85C(2)), and the parent tract dwelling quota applies (135-85B). Width 100 ft, depth 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "135-85F(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138021",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate street right-of-way, for single-family detached dwellings"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "135-85G",
+        "url": "https://ecode360.com/print/MO1487?guid=16138021",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "135-85H",
+        "url": "https://ecode360.com/print/MO1487?guid=16138021",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "135-85I(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138021",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "135-85I(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138021",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "135-86A",
+        "url": "https://ecode360.com/print/MO1487?guid=16138021",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The maximum height shall be 20 feet, except that this restriction shall not be applicable to farm buildings and silos.' For unattached buildings for accessory use"
+      }
+    },
+    "R": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "135-65B",
+        "url": "https://ecode360.com/print/MO1487?guid=16137954",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One acre. Width 100 ft, depth 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "135-65E(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16137954",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate right-of-way, for single-family detached dwellings"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "135-65F",
+        "url": "https://ecode360.com/print/MO1487?guid=16137954",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "135-65G",
+        "url": "https://ecode360.com/print/MO1487?guid=16137954",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "135-65H(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16137954",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "135-65H(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16137954",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "135-66A",
+        "url": "https://ecode360.com/print/MO1487?guid=16137954",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The maximum height shall be 20 feet, except that this restriction shall not be applicable to farm buildings and silos.' For unattached buildings for accessory use"
+      }
+    },
+    "OS": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "135-75B",
+        "url": "https://ecode360.com/print/MO1487?guid=16137984",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two acres, three acres if a principal building will be on natural slopes over 20%. Width 150 ft, depth 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "135-75E(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16137984",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate right-of-way, for single-family detached buildings"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "135-75F",
+        "url": "https://ecode360.com/print/MO1487?guid=16137984",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "135-75G",
+        "url": "https://ecode360.com/print/MO1487?guid=16137984",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "135-75H(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16137984",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "135-75H(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16137984",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "135-76A",
+        "url": "https://ecode360.com/print/MO1487?guid=16137984",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The maximum height shall be 20 feet, except that this restriction shall not be applicable to farm buildings and silos.' For unattached buildings for accessory use"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "135-95B(3)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The minimum lot area per dwelling unit which is served by public sanitary sewer shall be 20,000 square feet.' Width 90 ft, depth 135 ft"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 20000,
+        "section": "135-95B(2), (3)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "Lot area 'per dwelling unit'. Echo housing is 'An additional dwelling unit' (135-32). 135-225E exempts it only from the Agricultural District quota, so whether it needs its own lot area here is not settled"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Not served by public sanitary sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "lot_area_per_unit_sqft": 40000,
+            "section": "135-95B(2)",
+            "url": "https://ecode360.com/print/MO1487?guid=16138062",
+            "note": "'The minimum lot area per dwelling unit which is not served by public sanitary sewer shall be 40,000 square feet.'"
+          }
+        ],
+        "section": "135-95B",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "135-95E(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate street right-of-way"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "135-95F",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "135-95G",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "135-95H(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "135-95H(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "135-96A",
+        "url": "https://ecode360.com/print/MO1487?guid=16138062",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The maximum height shall be 20 feet, except that this restriction shall not be applicable to farm buildings and silos.' For unattached buildings for accessory use"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "135-105B(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings. 10,000 sq ft for semidetached or two-family dwellings. Width 75 ft, depth 125 ft. On development tracts of 10 acres or more the alternative figures of 135-105J may be used (8,500 sq ft lots)"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 10000
+        },
+        "section": "135-105B(3)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "135-105E(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate street right-of-way"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "135-105F(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side for single-family detached dwellings. A side-by-side semidetached or two-family dwelling has one side yard per unit of at least 12 ft (135-105F(2))"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "135-105G",
+        "url": "https://ecode360.com/print/MO1487?guid=16138090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "135-105H(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "135-105H(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "135-106A",
+        "url": "https://ecode360.com/print/MO1487?guid=16138090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The maximum height shall be 20 feet, except that this restriction shall not be applicable to farm buildings and silos.' For unattached buildings for accessory use"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "135-115B(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138130",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings, and 10,000 sq ft for semidetached or two-family dwellings. Width 75 ft, depth 125 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "135-115E(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138130",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate street right-of-way"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "135-115F(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138130",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side for single-family detached dwellings. A side-by-side semidetached or two-family dwelling has one side yard per unit of at least 12 ft (135-115F(2))"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "135-115G",
+        "url": "https://ecode360.com/print/MO1487?guid=16138130",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "135-115H(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138130",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "135-115H(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138130",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "135-116A",
+        "url": "https://ecode360.com/print/MO1487?guid=16138130",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The maximum height shall be 20 feet, except that this restriction shall not be applicable to farm buildings and silos.' For unattached buildings for accessory use"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "135-145B(1)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138269",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings. 10,000 sq ft for semidetached dwellings. Width 75 ft, depth 125 ft"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 10000
+        },
+        "section": "135-145B(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138269",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "135-145E(1)(a)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138269",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate street right-of-way. Accessory buildings 15 ft more"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "135-145E(2)(b)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138269",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings. Accessory buildings 6 ft"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "135-145E(3)(a)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138269",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Accessory buildings 6 ft"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "135-145F(1)(b)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138269",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Residential uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "135-145F(2)(b)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138269",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Residential uses, 50% within a planned mixed-use development"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "135-146C",
+        "url": "https://ecode360.com/print/MO1487?guid=16138269",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "LI": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "135-165B(2)(b)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138423",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwellings served by public sewer and water. Otherwise 40,000 sq ft per dwelling unit, or 20,000 sq ft with public sewer and no public water (135-165B(2)(a)). Width 75 ft (90 ft without public sewer and water), depth 125 ft"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "135-165E(1)(a)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138423",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "135-165E(2)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138423",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "135-165E(3)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138423",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "135-165F(1)(b)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138423",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Residential uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "135-165F(2)(b)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138423",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Residential uses"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "135-165A(4)",
+        "url": "https://ecode360.com/print/MO1487?guid=16138423",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    }
+  }
+}

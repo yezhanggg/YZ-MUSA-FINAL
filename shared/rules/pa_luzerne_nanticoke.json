@@ -1,0 +1,764 @@
+{
+  "provenance": {
+    "jurisdiction": "Nanticoke city",
+    "instrument": "City of Nanticoke Zoning Ordinance (Chapter 500 Zoning, adopted by City Council 6-3-1993 by Ord. No. 12-1993 and amended in its entirety 12-19-2012 by Ord. No. 15-2012, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 NA2405, City of Nanticoke (500-403.2A and the 'Lot of record' definition refer to the Recorder of Deeds of Luzerne County). The accessory dwelling unit rules (500-302, 500-305, the 'Dwelling, accessory unit (ADU)' definition and the ADU parking line in 500-1118) were added by Ord. No. 9-2025 of 6-4-2025, which is in the code. District uses and figures are text in Article V. The only attachment is the zoning map. Floodplain rules are in Chapter 267. New Laws: only Ord. No. 1-2026 (refuse fees)",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/14394494",
+      "https://ecode360.com/NA2405",
+      "https://ecode360.com/NA2405/laws",
+      "https://ecode360.com/NA2405/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20granny%20OR%20relative%20OR%20relatives%20OR%20servant%20OR%20quarters%20OR%20watchman%20OR%20%22housekeeping%20unit%22%20OR%20cottage%20OR%20%22elder%22%20OR%20%22farm%20dwelling%22%20OR%20%22rear%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NA2405/search?query=%22identified%20floodplain%20area%22%20prohibited%20residential&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/NA2405?guid=38323471",
+      "https://ecode360.com/print/NA2405?guid=38323756",
+      "https://ecode360.com/print/NA2405?guid=38323829",
+      "https://ecode360.com/print/NA2405?guid=38323848",
+      "https://ecode360.com/print/NA2405?guid=38324560",
+      "https://ecode360.com/print/NA2405?guid=38324919",
+      "https://ecode360.com/print/NA2405?guid=38325052",
+      "https://ecode360.com/print/NA2405?guid=38325218"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Luzerne",
+    "municipality_type": "city",
+    "geoid": "4207952584",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14394494",
+    "code_current_through": "2025-12-15",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 12-15-2025.' New Laws: Ord. No. 1-2026 (2-4-2026, refuse, recycling and bulk item fees) only",
+    "checks": [
+      "Accessory dwelling units are among the permitted accessory structures on residential lots. 'Any lot with a principal single-family detached dwelling unit may have one accessory dwelling unit' (500-305A, B(1))",
+      "An ADU is 'A smaller, independent dwelling unit on the same parcel as a single-family dwelling. The ADU may take various forms: a detached unit, a unit that is part of an accessory structure, such as a detached garage ... or a unit that is part of an expanded or remodeled dwelling' (500-203)",
+      "'No accessory dwelling unit shall be located in front of the front building line of the principal structure' (500-305B(2))",
+      "'No setback shall be required for an existing garage living area or accessory structure or a structure constructed in the same location and with the same dimensions as an existing structure and converted to an accessory dwelling unit' (500-305B(3))",
+      "'The square footage of an accessory dwelling unit shall be less than 70% that of the primary dwelling and no less than a minimum of 400 square feet of gross floor area' (500-305B(4))",
+      "Parking: two spaces for the single-family structure and one for the ADU (500-305B(5), 500-1118A)",
+      "Accessory structures attached to the house meet the house's area and bulk rules. Unattached ones in an R zone stand only in the rear or side yard, at most 'two stories or 18 feet, whichever is the lesser', at least 5 ft from the side lines and 5 ft from the rear line (10 ft where the rear abuts an alley). In other zones they meet the house's front and side yards and a 10 ft rear yard (500-302)",
+      "In R-1: 'No existing single-family dwelling unit shall be converted into two or more dwelling units or into any nonresidential use in an R-1 Single-Family Residential District' (500-802.12). This conflicts with a unit that is part of an expanded or remodeled dwelling in R-1",
+      "Single-family detached dwellings are permitted in R-1, R-2, R-3, C-1 and C-OP (500-501.1, 500-502.1, 500-503.1, 500-505.1D, 500-510.1). C-2, C-3, I-1 and S-1 list no single-family detached dwelling",
+      "Two-family dwellings are permitted by right in R-2, R-3 and C-1 (500-502.1B, 500-503.1B, 500-505.1D(2))",
+      "R-1, R-2 and R-3 set a maximum residential density in sq ft per dwelling unit 'for detached single-family residential developments' (500-501.6H, 500-502.6H, 500-503.6H). Whether it counts an ADU is not settled",
+      "A use 'neither specifically permitted nor denied' goes to the Zoning Hearing Board and Planning Commission as a special exception, if 'similar to and compatible with permitted uses in the district' (500-324)",
+      "A nonconforming residential building may not be enlarged or altered to add dwelling units unless it fully complies with the chapter (500-906E, 500-907)",
+      "Floodplain (Chapter 267): a new or substantially improved residential structure in an identified floodplain area must meet Chapter 267's elevation rules, and some development is prohibited within 50 ft of a watercourse (267-26). Chapter 267 was found by search and not read in full",
+      "Variances: 500-1409.2 sets the usual findings and does not bar a use variance"
+    ],
+    "notes": "Zoning office: City of Nanticoke Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article III (500-301 to 500-324), Article IV, Article V (500-501 to 500-510.7), 500-802.11 to 500-802.14, Article IX, 500-1118, 500-1408 to 500-1409.2A(3), the 500-203 definitions of accessory structure, dwelling, dwelling accessory unit (ADU), dwelling unit, single-family attached and detached dwelling, multifamily dwelling, lot coverage and lot of record, the New Laws page and two code searches (ADU terms, floodplain). Not read: Article I, the other definitions (including any two-family dwelling definition, height and story), Article VI (special exception standards), Article VII, the rest of Article VIII (including 500-802.36 riparian buffer and 500-802.48 mobile or manufactured homes), Articles X, XII, XIII and XV, the rest of Article XI and Article XIV, and Chapter 267 beyond the search results."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "500-203 'Dwelling, accessory unit (ADU)', 500-305",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A smaller, independent dwelling unit on the same parcel as a single-family dwelling.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "500-305, 500-302",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A permitted accessory structure on residential lots. 'Where a principal use and/or structure is permitted, there shall also be permitted upon the same lot an accessory structure' (500-302). A zoning permit"
+    },
+    "scope_by_use": {
+      "value": {
+        "use": "single-family detached dwelling",
+        "permitted_in": [
+          "R-1",
+          "R-2",
+          "R-3",
+          "C-1",
+          "C-OP"
+        ],
+        "not_permitted_in": [
+          "C-2",
+          "C-3",
+          "I-1",
+          "S-1"
+        ]
+      },
+      "section": "500-305B(1), 500-501.1, 500-502.1, 500-503.1, 500-505.1D, 500-510.1",
+      "url": "https://ecode360.com/print/NA2405?guid=38323848",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Any lot with a principal single-family detached dwelling unit may have one accessory dwelling unit.' C-2 and C-3 permit only dwellings over or attached to a business, and I-1 and S-1 no dwellings"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "500-506.1D, 500-507.1D, 500-508.1, 500-509.1, 500-906E, 500-907",
+      "url": "https://ecode360.com/print/NA2405?guid=38323848",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "These districts do not permit a single-family detached dwelling. A house there is a nonconforming use, which may not be enlarged or altered to add dwelling units unless in full compliance (500-906E, 500-907)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "500-302, 500-305",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A permitted accessory structure. A zoning permit from the Zoning Officer"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "500-1409.2",
+      "url": "https://ecode360.com/print/NA2405?guid=38325218",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board. The usual findings. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R-2, R-3, C-1)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "C-1"
+          ],
+          "conditions": "'Two-family dwellings' are a permitted use in R-2, R-3 and C-1 (500-502.1B, 500-503.1B, 500-505.1D(2)). Lot 7,000 sq ft 'for a structure designed as two-family residential dwelling' in R-2 (width 70 ft) and 6,000 sq ft in R-3 (width 60 ft). C-1 sets no lot minimum. Two parking spaces for each dwelling unit (500-1118B)",
+          "min_lot_by_district": {
+            "R-2": 7000,
+            "R-3": 6000
+          },
+          "section": "500-502.1B, 500-502.6A(2), 500-503.1B, 500-503.6A(2), 500-505.1D(2)",
+          "url": "https://ecode360.com/print/NA2405?guid=38323848",
+          "confidence": "secondary",
+          "note": "A building of two units, not a unit added to a house. The code does not say how an existing house becomes a two-family dwelling"
+        }
+      ],
+      "section": "500-502.1B, 500-503.1B, 500-505.1D(2)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323848",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 500",
+      "url": "https://ecode360.com/14394494",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "500-305B(1)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Any lot with a principal single-family detached dwelling unit'"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "Only a lot with a principal single-family detached dwelling may have an ADU. A twin or townhouse ('single-family attached', one of two or more buildings with a party wall) does not qualify.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "500-305B(1), 500-203",
+          "url": "https://ecode360.com/print/NA2405?guid=38323756"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "In R-1 'No existing single-family dwelling unit shall be converted into two or more dwelling units'. A unit made inside or added onto the house may be such a conversion.",
+          "effect": "bars",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "section": "500-802.12",
+          "url": "https://ecode360.com/print/NA2405?guid=38324560",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "500-203 'Dwelling, accessory unit (ADU)', 500-305B(1)",
+            "url": "https://ecode360.com/print/NA2405?guid=38323756",
+            "note": "Ord. No. 9-2025 lets 'Any lot with a principal single-family detached dwelling unit' have an ADU, including 'a unit that is part of an expanded or remodeled dwelling'. The later and more specific ADU rule may control over 500-802.12"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "An ADU may not stand in front of the front building line of the house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "500-305B(2)",
+          "url": "https://ecode360.com/print/NA2405?guid=38323756"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area (Chapter 267), a new or substantially improved residential structure must meet Chapter 267, including elevation, and some development is prohibited within 50 ft of a watercourse.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "267-26, 267-32",
+          "url": "https://ecode360.com/NA2405/search?query=%22identified%20floodplain%20area%22%20prohibited%20residential&scope=all&sortOrder=relevance",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 267"
+        }
+      ],
+      "section": "500-305, 500-802.12, 267-26",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "500-203 'Dwelling, accessory unit (ADU)', 500-305",
+      "url": "https://ecode360.com/print/NA2405?guid=38323471",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'a detached unit, a unit that is part of an accessory structure, such as a detached garage ... or a unit that is part of an expanded or remodeled dwelling'. 500-305B(3) also names 'an existing garage living area'"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "500-305B(4)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No square foot cap. The cap is a share of the house"
+    },
+    "max_share_of_house": {
+      "value": 0.7,
+      "section": "500-305B(4)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The square footage of an accessory dwelling unit shall be less than 70% that of the primary dwelling'. Strictly less than 70%"
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "500-305B(4)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'no less than a minimum of 400 square feet of gross floor area'"
+    },
+    "exempt_building": {
+      "value": {
+        "forms": [
+          "garage_conversion",
+          "over_garage"
+        ],
+        "caps": [
+          "setbacks"
+        ],
+        "what": "an existing garage living area or accessory structure, or a structure rebuilt in the same place with the same dimensions, converted to an ADU"
+      },
+      "section": "500-305B(3)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'No setback shall be required for an existing garage living area or accessory structure or a structure constructed in the same location and with the same dimensions as an existing structure and converted to an accessory dwelling unit or to a portion of an accessory dwelling unit.'"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "500-302A",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory structures which are attached to a principal structure shall comply with the same area and bulk requirements which are applicable to the principal structure.'"
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "500-302C(2)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Unattached accessory structures in R zones. On a corner lot the street side takes the front yard (500-304)"
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "500-302C(3)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Unattached accessory structures in R zones"
+    },
+    "setback_rear_alley_ft": {
+      "value": 10,
+      "section": "500-302C(3)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'when the accessory structure abuts an alley, 10 feet shall be required'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "500-302C, 500-305B(2)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Unattached accessory structures in an R zone 'shall be erected only within the rear or side yard', and no ADU may be 'in front of the front building line of the principal structure'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "500-305A, 500-302C(1)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "500-305A lists the ADU among residential accessory structures, so the accessory structure height rule reaches a detached ADU"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": false,
+      "section": "500-305",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No family or occupant rule"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "500-305",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No owner rule"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "500-305B(1)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'may have one accessory dwelling unit'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "500-1118A(1)",
+      "url": "https://ecode360.com/print/NA2405?guid=38325052",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory dwelling unit: one space for each accessory dwelling unit.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "500-1118A, 500-305B(5)",
+      "url": "https://ecode360.com/print/NA2405?guid=38325052",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Single-family structure: two spaces for each dwelling unit', plus one for the ADU"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 8500,
+        "section": "500-501.6A",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 75 ft"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8500,
+        "section": "500-501.6H",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'Maximum residential density: 8,500 square feet per dwelling unit for detached single-family residential developments.' Whether it counts an ADU on a house lot is not settled"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "500-501.6C",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "500-501.6E",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'12 feet on each side'"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "500-501.6D",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "500-501.6F",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Not more than 35% of the lot area shall be covered with buildings or structures'. 'Lot coverage' counts all buildings, including covered porches and accessory buildings (500-203)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "500-501.6G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "500-501.6G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 18,
+        "section": "500-302C(1)",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'two stories or 18 feet, whichever is the lesser' for unattached accessory structures in R zones"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "500-502.6A(1)",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 60 ft. 7,000 sq ft and 70 ft for a two-family structure"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 6000,
+        "section": "500-502.6H(1)",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'Six thousand square feet per dwelling unit for detached single-family residential developments.' Whether it counts an ADU on a house lot is not settled"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "500-502.6C",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "500-502.6E",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Eight feet, on each side'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "500-502.6D",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "500-502.6F",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Not more than 50% of the lot area shall be covered with buildings or structures'. 'Lot coverage' counts all buildings, including covered porches and accessory buildings (500-203)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "500-502.6G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2.5 stories or 35 feet'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "500-502.6G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 18,
+        "section": "500-302C(1)",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'two stories or 18 feet, whichever is the lesser' for unattached accessory structures in R zones"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "500-503.6A(1)",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 50 ft. 6,000 sq ft and 60 ft for a two-family structure"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "500-503.6H(1)",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'Five thousand square feet per dwelling unit for detached single-family residential developments.' Whether it counts an ADU on a house lot is not settled"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "500-503.6C",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "500-503.6E",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Six feet, on each side'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "500-503.6D",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "500-503.6F",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Not more than 60% of the lot area shall be covered with buildings or structures'. 'Lot coverage' counts all buildings, including covered porches and accessory buildings (500-203)"
+      },
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "500-503.6G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'five stories or 50 feet'"
+      },
+      "principal_max_stories": {
+        "value": 5,
+        "section": "500-503.6G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 18,
+        "section": "500-302C(1)",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'two stories or 18 feet, whichever is the lesser' for unattached accessory structures in R zones"
+      }
+    },
+    "C-1": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "500-505.5A",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum lot area: None.'"
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "500-505.5C",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum front yard: None.' 5 ft more where the district abuts a residential district (500-505.5H)"
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "500-505.5E",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum side yard: None.'"
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "500-505.5D",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum rear yard: None.'"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "500-505.5F",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage: None.'"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "500-505.5G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'three stories or 40 feet'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "500-505.5G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 0,
+        "section": "500-302B, 500-505.5C",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Unattached accessory structures outside R zones meet the principal front and side yards, which C-1 sets at none"
+      },
+      "accessory_setback_side_ft": {
+        "value": 0,
+        "section": "500-302B, 500-505.5E",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "500-302B",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'shall have a rear yard of at least 10 feet'"
+      }
+    },
+    "C-OP": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "500-510.5A",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "500-510.5C",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "500-510.5E",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "500-510.5D",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "500-510.5F",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Not more than 25% of a lot shall be covered by buildings.'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "500-510.5F",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Total impervious cover shall not exceed 30%.'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "500-510.5G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2.5 stories or 35 feet'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "500-510.5G",
+        "url": "https://ecode360.com/print/NA2405?guid=38323848",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 25,
+        "section": "500-302B, 500-510.5C",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Unattached accessory structures outside R zones meet the principal front and side yards"
+      },
+      "accessory_setback_side_ft": {
+        "value": 20,
+        "section": "500-302B, 500-510.5E",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "500-302B",
+        "url": "https://ecode360.com/print/NA2405?guid=38323756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'shall have a rear yard of at least 10 feet'"
+      }
+    }
+  }
+}

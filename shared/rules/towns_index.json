@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 164,
-      "population": 6083851,
-      "share_of_pa": 0.4679
+      "towns_beyond_the_two_cities": 167,
+      "population": 6116294,
+      "share_of_pa": 0.4704
     }
   ],
   "towns": [
@@ -4034,6 +4034,78 @@
         "added as batch 37 by population. Code Chapter 330 has no ADU text (330-27G and 330-22N(2) bar residential conversions)"
       ],
       "status_note": "Open: the PDF appendices A1, A3 and A4 (Districts), A6 (General Regulations) and the district sheets were not read. Article VI points to them ('For complete details, see Appendix A6'), and 330-93 governs conflicts with the text. Also open: whether the GB special exception for uses not provided for elsewhere (330-17C(1)(c)[4]) can reach a second unit while 330-27G bars residential conversions and 330-23B a second principal building. Chapter 203 (historic districts) was not read."
+    },
+    {
+      "geoid": "4209545104",
+      "geoid_aliases": [],
+      "name": "Lower Saucon township",
+      "county": "Northampton",
+      "type": "township",
+      "population": 11094,
+      "population_with_aliases": 11094,
+      "housing_units": 4482,
+      "pop_rank": 233,
+      "file": "pa_northampton_lower_saucon",
+      "batch": 38,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/6775923",
+      "plain_fetch": null,
+      "code_current_through": "2026-05-20",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 180-137 accessory relative apartments by right in RA, R80, R40, R20, R12, UR and VC)"
+      ],
+      "status_note": "Open: Appendix B (Accessory Land Uses) and Appendix D (Lot Area and Bulk Chart) are PDF attachments and were not opened, so whether they list accessory relative apartments or set other figures is not checked. Also open: whether 180-94A's per equivalent dwelling unit lot areas count the apartment on a lot without public sewer, the pre-2011 impervious percentages that 180-127.3C keeps for existing lots, and the floodplain variance in Chapter 90 Article VIII (not read)."
+    },
+    {
+      "geoid": "4207151664",
+      "geoid_aliases": [],
+      "name": "Mount Joy township",
+      "county": "Lancaster",
+      "type": "township",
+      "population": 10721,
+      "population_with_aliases": 10721,
+      "housing_units": 4252,
+      "pop_rank": 244,
+      "file": "pa_lancaster_mount_joy",
+      "batch": 38,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11526470",
+      "plain_fetch": null,
+      "code_current_through": "2026-03-16",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 135-225 echo housing by special exception, family only)"
+      ],
+      "status_note": "Open: 135-32 defines echo housing to include conversion of an existing dwelling while 135-225C and D allow only an addition or a manufactured home (internal form shown as in conflict). Also open: whether R-1 lot area per dwelling unit (135-95B) counts the echo unit, whether the 20 ft accessory height binds an echo manufactured home, and whether 135-295 lets a second house stand as a second principal use. 135-216, 135-262, 135-351, 135-353, 135-301 to 135-327 and Chapter 70 beyond 70-41 and 70-51 were not read."
+    },
+    {
+      "geoid": "4207952584",
+      "geoid_aliases": [],
+      "name": "Nanticoke city",
+      "county": "Luzerne",
+      "type": "city",
+      "population": 10628,
+      "population_with_aliases": 10628,
+      "housing_units": 5370,
+      "pop_rank": 247,
+      "file": "pa_luzerne_nanticoke",
+      "batch": 38,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/14394494",
+      "plain_fetch": null,
+      "code_current_through": "2025-12-15",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 500-305 accessory dwelling units by right on a single-family detached lot (Ord. No. 9-2025))"
+      ],
+      "status_note": "Open: 500-802.12 bars converting an existing single-family dwelling into two or more units in R-1, against the 2025 ADU rule that names a unit in an expanded or remodeled dwelling (shown as disputed for internal and attached units in R-1). Also open: whether the R-1, R-2 and R-3 density per dwelling unit counts the ADU, the height of a detached ADU outside R zones (500-302B sets none), and Chapter 267 floodplain text, found by search and not read in full."
     }
   ]
 }

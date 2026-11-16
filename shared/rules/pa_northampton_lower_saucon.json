@@ -1,0 +1,1186 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Saucon township",
+    "instrument": "Lower Saucon Township Zoning Ordinance (Chapter 180 Zoning, adopted by the Township Council 2-20-2002 by Ord. No. 2002-03, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 LO1675, Township of Lower Saucon (180-15 adopts the 'Zoning Map for the Township of Lower Saucon, Northampton County, PA', and the code cites the Soil Survey of Northampton County). The township website (lowersaucontownship.org, Council, Recently Adopted Ordinances) lists Ord. No. 2026-02 (data centers) and 2026-03 (striking Appendix A from Chapter 180) of 5-20-2026, both in the code, and later ordinances on solid waste (2026-04), stormwater (2026-05) and the official map (2026-06), none of them zoning. The eCode360 New Laws page lists the same three later ordinances. District uses, lot and yard figures are text in each district article. Two attachments are PDFs and were not opened: Appendix B (Accessory Land Uses) and Appendix D (Lot Area and Bulk Chart)",
+    "effective_date": null,
+    "source_urls": [
+      "https://lowersaucontownship.org/government/council/recently_adopted_ordinances.php",
+      "https://ecode360.com/6775923",
+      "https://ecode360.com/LO1675/laws",
+      "https://ecode360.com/LO1675/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20conversion%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20granny%20OR%20relative%20OR%20relatives%20OR%20servant%20OR%20quarters%20OR%20watchman%20OR%20%22housekeeping%20unit%22%20OR%20cottage%20OR%20%22two-family%22%20OR%20%22elder%22%20OR%20%22farm%20dwelling%22%20OR%20duplex&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/LO1675?guid=6775924",
+      "https://ecode360.com/print/LO1675?guid=6776244",
+      "https://ecode360.com/print/LO1675?guid=6776362",
+      "https://ecode360.com/print/LO1675?guid=6776386",
+      "https://ecode360.com/print/LO1675?guid=6776445",
+      "https://ecode360.com/print/LO1675?guid=6776482",
+      "https://ecode360.com/print/LO1675?guid=6776522",
+      "https://ecode360.com/print/LO1675?guid=6776561",
+      "https://ecode360.com/print/LO1675?guid=6776618",
+      "https://ecode360.com/print/LO1675?guid=6776650",
+      "https://ecode360.com/print/LO1675?guid=6776714",
+      "https://ecode360.com/print/LO1675?guid=6776795",
+      "https://ecode360.com/print/LO1675?guid=6776940",
+      "https://ecode360.com/print/LO1675?guid=6777016",
+      "https://ecode360.com/print/LO1675?guid=6777086",
+      "https://ecode360.com/print/LO1675?guid=6777153",
+      "https://ecode360.com/print/LO1675?guid=6777688",
+      "https://ecode360.com/print/LO1675?guid=6777606",
+      "https://ecode360.com/print/LO1675?guid=6778499",
+      "https://ecode360.com/print/LO1675?guid=6778089",
+      "https://ecode360.com/print/LO1675?guid=6778525",
+      "https://ecode360.com/print/LO1675?guid=6773122",
+      "https://ecode360.com/6772919"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Northampton",
+    "municipality_type": "township",
+    "geoid": "4209545104",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/6775923",
+    "code_current_through": "2026-05-20",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 05-20-2026.' New Laws: Ord. No. 2026-04 (Ch 135), 2026-05 (Ch 137) and 2026-06 (official map), none amending Chapter 180",
+    "checks": [
+      "Accessory relative apartments are 'permitted by right within the RA, R80, R40, R20, R12, UR, and VC Zoning Districts' (180-137A). The district accessory use lists (for example 180-45 in R12) do not name them, but 180-137A permits them in those districts",
+      "An accessory relative apartment is 'An additional dwelling unit added onto, or created within, a single-family detached dwelling for occupancy by a person or persons related by blood, marriage or adoption to the occupants of the principal dwelling' (180-5B)",
+      "Habitable floor area at least 200 sq ft and at most 900 sq ft. No more than two relatives may live in it (180-137A(1))",
+      "One apartment per single-family detached dwelling or lot. 'Accessory apartments may not be permitted as a separate structure' (180-137A(2))",
+      "The lot area and dimensions of the house and the apartment together must meet the district minimums, and the applicant submits a plan showing it (180-137A(3), (4))",
+      "The apartment uses the house's sewer, water and other utilities. No separate systems or connections. On an on-lot septic system or well, the applicant shows the systems can serve everyone, and the Sewage Enforcement Officer reviews any connection or expansion (180-137A(5)). A sewer permit from the Sewage Enforcement Officer is needed for any conversion or expansion of use (180-94A(4))",
+      "One more all-weather off-street space for the apartment, on top of the house's own parking (180-137A(6)). A single-family dwelling needs '1 per 0.33 dwelling unit' (180-98C(1)(b)), read as three spaces",
+      "Except for an exterior stairway, the house may not be altered so that it no longer looks like a single-family detached dwelling (180-137A(7))",
+      "Only relatives of the occupants of the house may live in the apartment. Its use ends within three months after no qualified person lives there (180-137A(8))",
+      "Outside RA, R80, R40, R20, R12, UR and VC the apartment is not listed. 'No other use shall be permitted unless the Township's elected officials approve an amendment to this chapter' (180-13C). 180-12D lets the Zoning Hearing Board permit a use the chapter does not mention, but the accessory relative apartment is mentioned, so that route is not read as reaching it",
+      "Single-family detached dwellings are permitted in RA, R80, R40, R20, R12, MH, UR and VC. GB, LI, LM and O&L list no single-family dwelling (180-67, 180-79, 180-83.2, 180-85). In O&L an existing lot under 50 acres may be used for a single-family residential use (180-89.2)",
+      "Conversion: 'The conversion of a single-family detached dwelling to a two-family detached, single-family attached or multifamily dwelling, limited to three dwelling units, provided that the owner resides on the premises' (180-5B). It is a conditional use in R12, UR and VC and permitted by right with site plan approval in GB and LM (180-44A, 180-56B, 180-62B, 180-67A(10), 180-83.2A(8))",
+      "Floodplain: 'No structures, filling, piping or regrading shall be permitted within any floodplain' (180-95B(3)(b)), and Chapter 90 says 'Within any identified floodplain area any new construction or substantial improvements except permitted uses listed above shall be prohibited' (90-26, 90-27). A variance under Chapter 90 Article VIII (not read) is the only route",
+      "Carbonate Geology Areas: no habitable dwelling within 100 ft of the rim of a sinkhole or closed depression, or of ghost lakes, lineaments, fracture traces or disappearing streams, unless a licensed geologist's study and mitigation satisfy the township (180-95B(17)(c)[4])",
+      "Natural resources: floodplain soils, wetlands, lakes and ponds may not be built on, and buffers, steep slopes and woodlands have protection rates of 60% to 85% (180-95B). A site plan reviewed by the Zoning Officer is needed for a single-family detached dwelling and its accessory uses (180-95A(4))",
+      "Only one building housing a principal use per lot (180-91D)",
+      "A nonconforming lot lawful when created and held in separate ownership may be built on if the yards are met (180-99B(2)). 180-137A(3) still asks that the lot meet the district minimum lot area",
+      "On-lot sewage: 40,000 sq ft per equivalent dwelling unit with a standard on-lot system, two acres per dwelling unit where the soils need another system, and 30,000 sq ft per equivalent dwelling unit with public sewer and an on-lot well (180-94A)",
+      "Impervious cover for single-family detached lots follows the chart in 180-127.3A. A lot of record with a house on it on 3-31-2011 keeps the percentages in effect on that date (180-127.3C), which the online code does not show",
+      "Variances: 180-11C sets the usual findings and does not bar a use variance"
+    ],
+    "notes": "Zoning office: Lower Saucon Township Zoning Department. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I (180-1 to 180-5, definitions A to N in full and 'Principal building structure or use'), Article II (180-6 to 180-12.2), Article III, every district article (IV to XV, 180-18 to 180-89.2), 180-91 to 180-95 (to 180-95B(18)(e)), 180-98C, 180-99, 180-115, 180-127.3, Article XVIII (180-128 to 180-137), Chapter 90 Article VI (90-24 to 90-31), the New Laws page and the township's recently adopted ordinances page. The code search for ADU terms found 180-137 and the 'Conversion' and 'Accessory relative apartment' definitions. Not read: definitions after 'Nontower commercial communications facility' except 'Principal building', 180-95B(18)(f) onward, 180-96, 180-97, 180-98A, B and D onward, 180-100.1 to 180-100.13 (signs), 180-101 to 180-114, 180-116 to 180-127.2, 180-127.4, Chapter 90 Articles I to V, VII and VIII, Chapter 145, and the PDF attachments (Appendix B Accessory Land Uses, Appendix D Lot Area and Bulk Chart)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory relative apartment",
+      "section": "180-5B 'Apartment unit' (2), 180-137",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory relative apartment: An additional dwelling unit added onto, or created within, a single-family detached dwelling for occupancy by a person or persons related by blood, marriage or adoption to the occupants of the principal dwelling.'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "180-137A",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory relative apartments are permitted by right within the RA, R80, R40, R20, R12, UR, and VC Zoning Districts'. Only relatives of the occupants of the house may live there (180-137A(8))"
+    },
+    "scope_districts": {
+      "value": [
+        "RA",
+        "R80",
+        "R40",
+        "R20",
+        "R12",
+        "UR",
+        "VC"
+      ],
+      "section": "180-137A",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Named in 180-137A. MH, GB, LI, LM and O&L are not named"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "180-13C, 180-137A",
+      "url": "https://ecode360.com/print/LO1675?guid=6776362",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Every building or other structure may be erected or used and each parcel of land may be used or occupied only for the uses permitted by right and the uses permitted by conditional use and special exception in the zoning district in which the building or lot is located unless otherwise allowed by this chapter. No other use shall be permitted unless the Township's elected officials approve an amendment to this chapter.' 180-137A names seven districts only"
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "180-137A(2)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory apartments may not be permitted as a separate structure.' A unit in a detached garage or other accessory building is a separate structure"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "180-137A, 180-6",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Permitted by right with a zoning permit. The applicant submits a plan showing the district's dimensional requirements are met (180-137A(4))"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "180-11C",
+      "url": "https://ecode360.com/print/LO1675?guid=6776244",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board. The usual findings. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion to up to three units, owner on the premises (R12, UR, VC)",
+          "path": "conditional_use",
+          "districts": [
+            "R12",
+            "UR",
+            "VC"
+          ],
+          "conditions": "'Conversion' of a single-family detached dwelling to a two-family detached, single-family attached or multifamily dwelling, 'limited to three dwelling units, provided that the owner resides on the premises' (180-5B). A conditional use before the Township Council with site plan approval (180-44A, 180-56B, 180-62B). 'The lot area per dwelling unit shall not be reduced to less than the amount stated for the district', each unit meets the district yard, impervious and parking rules, no exterior structural change except for health and safety, and at least 450 sq ft of floor area per unit (180-115). Parking 'Conversion: 1 per 0.5 dwelling unit' (180-98C)",
+          "min_lot_by_district": {
+            "R12": 24000,
+            "UR": 16000,
+            "VC": 16000
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling is converted",
+              "section": "180-5B 'Conversion'"
+            },
+            {
+              "test": null,
+              "condition": "The owner lives on the premises",
+              "section": "180-5B 'Conversion'"
+            }
+          ],
+          "section": "180-5B, 180-44A, 180-56B, 180-62B, 180-115",
+          "url": "https://ecode360.com/print/LO1675?guid=6778089",
+          "confidence": "secondary",
+          "note": "The lot figures read the district minimum lot area (R12 12,000, UR 8,000, VC 8,000 sq ft) as the lot area per dwelling unit, for two units. VC also allows 'Only one principal use' per lot and a building of at most 6,000 sq ft of floor area (180-64)"
+        },
+        {
+          "name": "Conversion to up to three units, owner on the premises (GB, LM)",
+          "path": "by_right",
+          "districts": [
+            "GB",
+            "LM"
+          ],
+          "conditions": "Conversion is a permitted use with site plan approval in GB and LM (180-67A(10)(b), 180-83.2A(8)(b)). Same standards as above (180-115). Neither district lists a single-family detached dwelling, so this reaches an existing house",
+          "min_lot_by_district": {
+            "GB": 80000,
+            "LM": 80000
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling is converted",
+              "section": "180-5B 'Conversion'"
+            },
+            {
+              "test": null,
+              "condition": "The owner lives on the premises",
+              "section": "180-5B 'Conversion'"
+            }
+          ],
+          "section": "180-67A(10)(b), 180-83.2A(8)(b), 180-115",
+          "url": "https://ecode360.com/print/LO1675?guid=6778089",
+          "confidence": "secondary",
+          "note": "The lot figure reads the 40,000 sq ft district minimum (180-70A, 180-83.5A) as the lot area per dwelling unit, for two units"
+        }
+      ],
+      "section": "180-5B, 180-115",
+      "url": "https://ecode360.com/print/LO1675?guid=6778089",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 180",
+      "url": "https://ecode360.com/6775923",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "180-5B, 180-137A(2)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'added onto, or created within, a single-family detached dwelling' and 'within a single-family detached dwelling or on a single-family detached lot'"
+    },
+    "requires_conforming_lot": {
+      "value": true,
+      "section": "180-137A(3)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'The lot area and dimensions of the principal dwelling and the accessory apartment combined must meet the minimum lot area and dimensional requirements for the applicable zoning district.' Read as the district minimum for the lot, not twice it. A nonconforming lot of record may otherwise be built on if the yards are met (180-99B(2))"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "Only a single-family detached dwelling qualifies. A twin ('single-family semidetached', each unit on its own lot) or a townhouse ('single-family attached') does not.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "180-5B, 180-137A(2)",
+          "url": "https://ecode360.com/print/LO1675?guid=45119732"
+        },
+        {
+          "kind": "utilities",
+          "condition": "The apartment must connect to the house's sewer, water and other utilities, with no separate systems or connections. On an on-lot septic system or well, the applicant shows the systems can serve everyone in both units, or gets approval to expand them, and the Sewage Enforcement Officer reviews the connection.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "180-137A(5), 180-94A(4)",
+          "url": "https://ecode360.com/print/LO1675?guid=45119732"
+        },
+        {
+          "kind": "design",
+          "condition": "Except for an exterior stairway, the house may not be altered in a way that departs from its look as a single-family detached dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "180-137A(7)",
+          "url": "https://ecode360.com/print/LO1675?guid=45119732"
+        },
+        {
+          "kind": "family",
+          "condition": "The apartment may be used only while a relative of the occupants of the house lives there, and must stop being used within three months after no qualified person lives there.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "180-137A(8)",
+          "url": "https://ecode360.com/print/LO1675?guid=45119732"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain district, no structure may be built and Chapter 90 prohibits new construction or substantial improvement in any identified floodplain area. An addition needs a floodplain variance under Chapter 90 Article VIII.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP"
+          ],
+          "section": "180-95B(3)(b), 90-26, 90-27",
+          "url": "https://ecode360.com/print/LO1675?guid=6773122"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain district, work inside the house that is a substantial improvement is prohibited by Chapter 90, and a habitable building's adjacent ground must be at least 1.5 ft above the 100-year flood level.",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP"
+          ],
+          "section": "180-95B(3)(c), 90-26, 90-27",
+          "url": "https://ecode360.com/print/LO1675?guid=6773122"
+        },
+        {
+          "kind": "other",
+          "condition": "In a Carbonate Geology Area (and within 500 ft of one), no habitable dwelling may be within 100 ft of the rim of a sinkhole or closed depression, or of ghost lakes, lineaments, fracture traces or disappearing streams, unless a licensed geologist's investigation and mitigation satisfy the township.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "CG"
+          ],
+          "section": "180-95B(17)",
+          "url": "https://ecode360.com/print/LO1675?guid=6777153"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Without public sewer, 180-94A sets 40,000 sq ft per equivalent dwelling unit for a standard on-lot system and two acres per dwelling unit where the soils need another system, and 30,000 sq ft with public sewer and an on-lot well. Whether the apartment counts as a second unit is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "180-94A",
+          "url": "https://ecode360.com/print/LO1675?guid=6777153"
+        },
+        {
+          "kind": "other",
+          "condition": "Impervious cover on a single-family detached lot follows the chart in 180-127.3A. A lot that was lawful, of record and held a principal structure on 3-31-2011 is not held to the on-lot chart and keeps the percentages in effect on that date, which the online code does not show.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "180-127.3C",
+          "url": "https://ecode360.com/print/LO1675?guid=6778499"
+        }
+      ],
+      "section": "180-137A, 180-95B, 180-94A, 180-127.3C",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "180-5B, 180-137A(2)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'added onto, or created within, a single-family detached dwelling'. 'Accessory apartments may not be permitted as a separate structure'"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 900,
+      "section": "180-137A(1)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The habitable floor area of the accessory apartment shall be no less than 200 square feet and no greater than 900 square feet.'"
+    },
+    "min_sqft": {
+      "value": 200,
+      "section": "180-137A(1)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "180-137A, 180-93",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The apartment is part of the house, so the district height applies"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "180-5B, 180-137A(8)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At most two people, who must be related by blood, marriage or adoption to the people living in the house. Its use ends within three months after no relative lives there.",
+      "section": "180-5B, 180-137A(1), (8)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "180-137",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No owner rule. The occupants must be related to the occupants of the principal dwelling"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "180-137A(2)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Only one accessory apartment may be permitted within a single-family detached dwelling or on a single-family detached lot.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "180-137A(6)",
+      "url": "https://ecode360.com/print/LO1675?guid=45119732",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A minimum of one all-weather off-street parking space, with unrestricted ingress and egress to the street, shall be provided for the accessory apartment, in addition to that required for the principal dwelling.'"
+    },
+    "reading": {
+      "value": "One more space for the apartment, on top of the house's own. The parking table asks '1 per 0.33 dwelling unit' for a single-family dwelling, read as three spaces, so four in total. If the fraction rule (a fraction counts as one) is applied to 3.03, the house needs four and the total is five.",
+      "section": "180-137A(6), 180-98C(1)(b), 180-98C(2)(h)",
+      "url": "https://ecode360.com/print/LO1675?guid=6777606",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "RA": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "180-22",
+        "url": "https://ecode360.com/print/LO1675?guid=6776386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two acres. Width 200 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "180-23",
+        "url": "https://ecode360.com/print/LO1675?guid=6776386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "180-23",
+        "url": "https://ecode360.com/print/LO1675?guid=6776386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "180-23",
+        "url": "https://ecode360.com/print/LO1675?guid=6776386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "180-127.3A, 180-22",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "The chart lists RA with 'Maximum Site Impervious Coverage' 20% and says individual on-lot values 'are a function of the design/layout of the site'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "180-22",
+        "url": "https://ecode360.com/print/LO1675?guid=6776386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R80": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "180-28",
+        "url": "https://ecode360.com/print/LO1675?guid=6776445",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 200 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "180-29",
+        "url": "https://ecode360.com/print/LO1675?guid=6776445",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "180-29",
+        "url": "https://ecode360.com/print/LO1675?guid=6776445",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "180-29",
+        "url": "https://ecode360.com/print/LO1675?guid=6776445",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "180-127.3A, 180-28",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "The chart lists R80 with 'Maximum Site Impervious Coverage' 20% and says individual on-lot values 'are a function of the design/layout of the site'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "180-28",
+        "url": "https://ecode360.com/print/LO1675?guid=6776445",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R40": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "180-34",
+        "url": "https://ecode360.com/print/LO1675?guid=6776482",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "180-35",
+        "url": "https://ecode360.com/print/LO1675?guid=6776482",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "180-35",
+        "url": "https://ecode360.com/print/LO1675?guid=6776482",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "180-35",
+        "url": "https://ecode360.com/print/LO1675?guid=6776482",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.08,
+        "section": "180-127.3A",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Coverage (percentage)' for single-family detached uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "180-127.3A, 180-34",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached chart: 'Maximum On-Lot Impervious Coverage (maximum allowed)'. A lot that was lawful, of record and held a principal structure on 3-31-2011 is not held to the on-lot chart and keeps the percentages in effect on that date, which the online code does not show (180-127.3C)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "180-34",
+        "url": "https://ecode360.com/print/LO1675?guid=6776482",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R20": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "180-40",
+        "url": "https://ecode360.com/print/LO1675?guid=6776522",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "180-41",
+        "url": "https://ecode360.com/print/LO1675?guid=6776522",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "180-41",
+        "url": "https://ecode360.com/print/LO1675?guid=6776522",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "180-41",
+        "url": "https://ecode360.com/print/LO1675?guid=6776522",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.12,
+        "section": "180-127.3A",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Coverage (percentage)' for single-family detached uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "180-127.3A, 180-40",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached chart: 'Maximum On-Lot Impervious Coverage (maximum allowed)'. A lot that was lawful, of record and held a principal structure on 3-31-2011 is not held to the on-lot chart and keeps the percentages in effect on that date, which the online code does not show (180-127.3C)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "180-40",
+        "url": "https://ecode360.com/print/LO1675?guid=6776522",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Standard on-lot sewage disposal (trench, seepage bed or sand filter)",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "section": "180-94A(1)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+          },
+          {
+            "when": "Public sewer with an on-lot well",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "180-94A(3)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+          }
+        ],
+        "section": "180-94A, 180-40",
+        "url": "https://ecode360.com/print/LO1675?guid=6777153",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+      }
+    },
+    "R12": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "180-46",
+        "url": "https://ecode360.com/print/LO1675?guid=6776561",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 90 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "180-47",
+        "url": "https://ecode360.com/print/LO1675?guid=6776561",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "180-47",
+        "url": "https://ecode360.com/print/LO1675?guid=6776561",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'minimum 10 feet or 10% of lot width, whichever is greater'. So 10 ft on a lot up to 100 ft wide and more on a wider lot"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "180-47",
+        "url": "https://ecode360.com/print/LO1675?guid=6776561",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.14,
+        "section": "180-127.3A",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Coverage (percentage)' for single-family detached uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "180-127.3A, 180-46",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached chart: 'Maximum On-Lot Impervious Coverage (maximum allowed)'. A lot that was lawful, of record and held a principal structure on 3-31-2011 is not held to the on-lot chart and keeps the percentages in effect on that date, which the online code does not show (180-127.3C)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "180-46",
+        "url": "https://ecode360.com/print/LO1675?guid=6776561",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Standard on-lot sewage disposal (trench, seepage bed or sand filter)",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "section": "180-94A(1)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+          },
+          {
+            "when": "Public sewer with an on-lot well",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "180-94A(3)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+          }
+        ],
+        "section": "180-94A, 180-46",
+        "url": "https://ecode360.com/print/LO1675?guid=6777153",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+      }
+    },
+    "MH": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "180-52",
+        "url": "https://ecode360.com/print/LO1675?guid=6776618",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 90 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "180-53",
+        "url": "https://ecode360.com/print/LO1675?guid=6776618",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "180-53",
+        "url": "https://ecode360.com/print/LO1675?guid=6776618",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "180-53",
+        "url": "https://ecode360.com/print/LO1675?guid=6776618",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.12,
+        "section": "180-127.3A",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Coverage (percentage)' for single-family detached uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "180-127.3A, 180-52",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached chart: 'Maximum On-Lot Impervious Coverage (maximum allowed)'. A lot that was lawful, of record and held a principal structure on 3-31-2011 is not held to the on-lot chart and keeps the percentages in effect on that date, which the online code does not show (180-127.3C)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "180-52",
+        "url": "https://ecode360.com/print/LO1675?guid=6776618",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Standard on-lot sewage disposal (trench, seepage bed or sand filter)",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "section": "180-94A(1)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+          },
+          {
+            "when": "Public sewer with an on-lot well",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "180-94A(3)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+          }
+        ],
+        "section": "180-94A, 180-52",
+        "url": "https://ecode360.com/print/LO1675?guid=6777153",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+      }
+    },
+    "UR": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "180-58",
+        "url": "https://ecode360.com/print/LO1675?guid=6776650",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 60 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "180-59",
+        "url": "https://ecode360.com/print/LO1675?guid=6776650",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "180-59",
+        "url": "https://ecode360.com/print/LO1675?guid=6776650",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "180-59",
+        "url": "https://ecode360.com/print/LO1675?guid=6776650",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.18,
+        "section": "180-127.3A",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Coverage (percentage)' for single-family detached uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "180-127.3A, 180-58",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached chart: 'Maximum On-Lot Impervious Coverage (maximum allowed)'. A lot that was lawful, of record and held a principal structure on 3-31-2011 is not held to the on-lot chart and keeps the percentages in effect on that date, which the online code does not show (180-127.3C)"
+      },
+      "principal_max_height_ft": {
+        "value": 37,
+        "section": "180-58",
+        "url": "https://ecode360.com/print/LO1675?guid=6776650",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'maximum 37 feet (no more than three floors)'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "180-58",
+        "url": "https://ecode360.com/print/LO1675?guid=6776650",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'maximum 37 feet (no more than three floors)'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Standard on-lot sewage disposal (trench, seepage bed or sand filter)",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "section": "180-94A(1)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+          },
+          {
+            "when": "Public sewer with an on-lot well",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "180-94A(3)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+          }
+        ],
+        "section": "180-94A, 180-58",
+        "url": "https://ecode360.com/print/LO1675?guid=6777153",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+      }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "180-64",
+        "url": "https://ecode360.com/print/LO1675?guid=6776714",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 60 ft. 'Only one principal use is permitted per lot in this district', and the building may have at most 6,000 sq ft of floor area on all floors"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "180-65",
+        "url": "https://ecode360.com/print/LO1675?guid=6776714",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "180-65",
+        "url": "https://ecode360.com/print/LO1675?guid=6776714",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "180-65",
+        "url": "https://ecode360.com/print/LO1675?guid=6776714",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "180-127.3A",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Coverage (percentage)' for single-family detached uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "180-127.3A, 180-64",
+        "url": "https://ecode360.com/print/LO1675?guid=6778499",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached chart: 'Maximum On-Lot Impervious Coverage (maximum allowed)'. A lot that was lawful, of record and held a principal structure on 3-31-2011 is not held to the on-lot chart and keeps the percentages in effect on that date, which the online code does not show (180-127.3C)"
+      },
+      "principal_max_height_ft": {
+        "value": 37,
+        "section": "180-64",
+        "url": "https://ecode360.com/print/LO1675?guid=6776714",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'maximum 37 feet (no more than three floors)'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "180-64",
+        "url": "https://ecode360.com/print/LO1675?guid=6776714",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'maximum 37 feet (no more than three floors)'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Standard on-lot sewage disposal (trench, seepage bed or sand filter)",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "section": "180-94A(1)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+          },
+          {
+            "when": "Public sewer with an on-lot well",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "180-94A(3)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+          }
+        ],
+        "section": "180-94A, 180-64",
+        "url": "https://ecode360.com/print/LO1675?guid=6777153",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+      }
+    },
+    "GB": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "180-70",
+        "url": "https://ecode360.com/print/LO1675?guid=6776795",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "180-71",
+        "url": "https://ecode360.com/print/LO1675?guid=6776795",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "180-71",
+        "url": "https://ecode360.com/print/LO1675?guid=6776795",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "180-71",
+        "url": "https://ecode360.com/print/LO1675?guid=6776795",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "180-70",
+        "url": "https://ecode360.com/print/LO1675?guid=6776795",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.75,
+        "section": "180-70",
+        "url": "https://ecode360.com/print/LO1675?guid=6776795",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "180-70",
+        "url": "https://ecode360.com/print/LO1675?guid=6776795",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "LM": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "180-83.5",
+        "url": "https://ecode360.com/print/LO1675?guid=6777016",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 100 ft. Side or rear yards abutting residentially zoned land are 75 ft (180-83.6B)"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "180-83.6",
+        "url": "https://ecode360.com/print/LO1675?guid=6777016",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "180-83.6",
+        "url": "https://ecode360.com/print/LO1675?guid=6777016",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "180-83.6",
+        "url": "https://ecode360.com/print/LO1675?guid=6777016",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "180-83.5",
+        "url": "https://ecode360.com/print/LO1675?guid=6777016",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.75,
+        "section": "180-83.5",
+        "url": "https://ecode360.com/print/LO1675?guid=6777016",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "180-83.5",
+        "url": "https://ecode360.com/print/LO1675?guid=6777016",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "180-83.5",
+        "url": "https://ecode360.com/print/LO1675?guid=6777016",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "LI": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "180-82",
+        "url": "https://ecode360.com/print/LO1675?guid=6776940",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 100 ft. Side or rear yards abutting residentially zoned land are 75 ft (180-83B)"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "180-83",
+        "url": "https://ecode360.com/print/LO1675?guid=6776940",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "180-83",
+        "url": "https://ecode360.com/print/LO1675?guid=6776940",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "180-83",
+        "url": "https://ecode360.com/print/LO1675?guid=6776940",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "180-82",
+        "url": "https://ecode360.com/print/LO1675?guid=6776940",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "180-82",
+        "url": "https://ecode360.com/print/LO1675?guid=6776940",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'Coverage: maximum 60%'. 180-5B: 'Coverage: See impervious surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "180-82",
+        "url": "https://ecode360.com/print/LO1675?guid=6776940",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "180-82",
+        "url": "https://ecode360.com/print/LO1675?guid=6776940",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    }
+  }
+}

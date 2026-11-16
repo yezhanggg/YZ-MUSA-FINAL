@@ -1468,6 +1468,7 @@ FIXED_BATCH.update({g: 34 for g in ("4201753304", "4202979352", "4202164544")})
 FIXED_BATCH.update({g: 35 for g in ("4209145072", "4209144920", "4204586968")})
 FIXED_BATCH.update({g: 36 for g in ("4207555160", "4209532432", "4207123016")})
 FIXED_BATCH.update({g: 37 for g in ("4207932416", "4202953608", "4204541440")})
+FIXED_BATCH.update({g: 38 for g in ("4209545104", "4207151664", "4207952584")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1652,6 +1653,21 @@ EXTRAS = {
     "4207932416": "Code 580-14 residential units for care of relatives",
     "4202953608": "Code 200-413E accessory dwelling unit by right in RL, RM, RF, VC, VG and MUL",
     "4204541440": "batch 37 by population. Code Chapter 330 has no ADU text (330-27G and 330-22N(2) bar residential conversions)",
+    # Batch 38 (2026-11-16): the next towns by population without a rule file. Easttown (Chester) was skipped (Figure 3-1
+    # Land Use Table and Figure 3-2 Dimensional Requirements Table only in PDF attachments, and Ord. No. 465-24 of 10-7-2024
+    # amending zoning not yet codified), Waynesboro (Franklin) (Appendix B Schedule of Area, Yard and Height only in a PDF
+    # attachment, and Ord. No. 1213 of 7-16-2025 and No. 1218 of 4-15-2026 amending zoning not yet codified), South Union
+    # (Fayette) (zoning only as ordinance downloads on the township website, which was refused to the browser), Pocono
+    # (Monroe) (Use Schedule and R-1 and R-2 lot, yard and height tables only in PDF attachments), Upper Providence
+    # (Delaware) (Table A, Permitted Uses only in a PDF attachment), Lehman (Pike) (zoning ordinance No. 149 of 2023 only as
+    # a PDF on the township website), Munhall (Allegheny) (eCode360 code through 12-16-2020, and a 2025 zoning amendment
+    # allowing churches and schools to become apartments not in it), Lehigh (Northampton) (Ord. No. 2024-2, 2024-3, 2026-2
+    # and 2026-3 amending zoning not yet codified), East Cocalico (Lancaster) (zone area and design requirements tables only
+    # in PDF attachments), Darby borough (Delaware) (eCode360 code through 8-19-2015, and a 2024 Chapter 153 amendment not in
+    # it) and West Hanover (Dauphin) (Ord. No. 2026-01 of 7-23-2026 amending zoning not yet codified).
+    "4209545104": "Code 180-137 accessory relative apartments by right in RA, R80, R40, R20, R12, UR and VC",
+    "4207151664": "Code 135-225 echo housing by special exception, family only",
+    "4207952584": "Code 500-305 accessory dwelling units by right on a single-family detached lot (Ord. No. 9-2025)",
 }
 
 if __name__ == "__main__":

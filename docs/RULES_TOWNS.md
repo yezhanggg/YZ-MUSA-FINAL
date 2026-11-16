@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-166 towns in the index, 166 with a rule file (Philadelphia and Pittsburgh included). Verified 106, drafted 60, in progress 0, todo 0.
+169 towns in the index, 169 with a rule file (Philadelphia and Pittsburgh included). Verified 106, drafted 63, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -179,6 +179,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Hanover township | Luzerne | verified | residential units for care of relatives | family only | by right | occupancy (580-14A, B). family only (580-14A, B). house type detached, attached. building type gate (580-14, 580-7 'Dwelling, single-family'). other ways (not ADUs): Two-family dwelling (R-2, R-3, R-MHP, MU, C-1) (by right, 580-43, 580-44, 580-55A(4), 580-7). 3 parking spaces in total | none set | no | 1 | 2026-11-16 |
 | New Garden township | Chester | verified | accessory dwelling unit | by right | by right | ADU rule only in RL, RM, RF, VC, VG, MUL. RM 8,712 sq ft per unit. building type gate (200-413E(1)). other ways (not ADUs): Two-unit dwelling (RM, RF, VC, VG, MUL, MU) (by right, Figure 200-4-1, 200-202, 200-308, 200-310, 200-311) | 50% of the house | no | not confirmed | 2026-11-16 |
 | Lansdowne borough | Delaware | drafted | none | not in the code (internal prohibited, attached prohibited) | variance (unlisted-use path only in GB) | other gate (330-19B(2)(a), C(2)(a)). other ways (not ADUs): Two-family detached dwelling (duplex) in TN (special exception, 330-15D(2), 330-22N, 330-4) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| Lower Saucon township | Northampton | drafted | accessory relative apartment | family only (detached new prohibited, garage conversion prohibited, over garage prohibited) | by right | ADU rule only in RA, R80, R40, R20, R12, UR, VC. occupancy (180-5B, 180-137A(1), (8)). family only (180-5B, 180-137A(8)). house type detached. building type gate (180-5B, 180-137A(2)). other gate (180-95B(3)(b), 90-26, 90-27). other ways (not ADUs): Conversion to up to three units, owner on the premises (R12, UR, VC) (conditional use, 180-5B, 180-44A, 180-56B, 180-62B, 180-115). Conversion to up to three units, owner on the premises (GB, LM) (by right, 180-67A(10)(b), 180-83.2A(8)(b), 180-115) | 900 | no | 1 | 2026-11-16 |
+| Mount Joy township | Lancaster | drafted | echo housing | family only | special exception (not addressed for garage conversion, over garage. code text conflicts for internal. unlisted-use path only in MU, LI) | ADU rule only in A, R, OS, R-1, R-2, R-3. occupancy (135-32 'Echo housing', 135-225F). family only (135-32 'Echo housing', 135-225F). R-1 20,000 sq ft per unit. existing structure gate (135-32 'Echo housing', 135-225C, D). lot size gate (135-225C, D). other ways (not ADUs): Conversion of a house into up to three units (R-2, R-3) (special exception, 135-103D, 135-113D, 135-224). Two-family dwelling (R-2, R-3) (by right, 135-102B, 135-112B, 135-105, 135-115, 135-32). Second principal dwelling on the lot (135-295) (by right with land development, 135-295, 135-85B). Manufactured home for farm laborers (any district, with a farm) (special exception, 135-300B). 3 parking spaces in total | none set | no | 1 | 2026-11-16 |
+| Nanticoke city | Luzerne | drafted | accessory dwelling unit | by right | by right | house type detached. R-1 8,500 sq ft per unit. R-2 6,000 sq ft per unit. R-3 5,000 sq ft per unit. building type gate (500-305B(1), 500-203). existing structure gate (500-802.12). other ways (not ADUs): Two-family dwelling (R-2, R-3, C-1) (by right, 500-502.1B, 500-502.6A(2), 500-503.1B, 500-503.6A(2), 500-505.1D(2)). 3 parking spaces in total | 70% of the house | no | 1 | 2026-11-16 |
 
 ## Towns still to write
 
@@ -195,4 +198,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 164 | 46.8% |
+| 167 | 47.0% |
