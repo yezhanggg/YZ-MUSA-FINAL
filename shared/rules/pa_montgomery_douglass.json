@@ -488,6 +488,22 @@
       "confidence": "verified",
       "note": "'Use A-16: Accessory Dwelling Unit: 1.5 spaces.' 'Fractions of spaces shall be rounded up to the nearest whole number'"
     },
+    "spaces_rate": {
+      "value": 1.5,
+      "section": "265-230C(7)",
+      "url": "https://ecode360.com/print/DO2583?guid=47597626",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Use A-16: Accessory Dwelling Unit: 1.5 spaces.'"
+    },
+    "fraction_rounding": {
+      "value": "any_fraction_counts",
+      "section": "265-229C",
+      "url": "https://ecode360.com/print/DO2583?guid=47597626",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Fractions of spaces shall be rounded up to the nearest whole number'"
+    },
     "total_on_site": {
       "value": 4,
       "section": "265-230C(1)(a), (7), 265-229C",

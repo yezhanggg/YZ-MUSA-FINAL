@@ -339,6 +339,10 @@
           "$ref": "#/$defs/leaf_bool",
           "description": "true when the code says max_sqft or max_share_of_house, whichever is GREATER. Otherwise the two are the lesser of."
         },
+        "max_share_is_less_than": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Pass 19: true when the code caps the unit at LESS THAN max_share_of_house ('shall be less than 70% that of the primary dwelling'), so a unit of exactly that share does not qualify. The sentence says 'Less than 70% of the house', and the number for a known house is the largest whole sq ft under the share. Only the general share is strict, not a share for one form or the bill's floor."
+        },
         "max_share_by_form": {
           "$ref": "#/$defs/leaf_num_by_form",
           "description": "A share-of-house cap for one form only, e.g. {\"detached_new\": 1.0}. Wins over the other share caps for that form."
@@ -573,6 +577,30 @@
         "spaces_per_resident": {
           "$ref": "#/$defs/leaf_num",
           "description": "Spaces per resident of the unit, when the code counts residents. spaces_required stays null."
+        },
+        "spaces_rate": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Pass 19: the spaces the code asks for the unit as written, before any rounding (Douglass 265-230C(7): 1.5). With fraction_rounding the answer says the rate, the rule and the whole count. spaces_required keeps the whole count."
+        },
+        "fraction_rounding": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/leaf_str"
+            },
+            {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "any_fraction_counts",
+                    "quarter_or_more_counts",
+                    "half_or_more_counts",
+                    null
+                  ]
+                }
+              }
+            }
+          ],
+          "description": "Pass 19: the rule the code states for a fraction of a parking space. any_fraction_counts: any fraction counts as one space ('Fractions of spaces shall be rounded up'). quarter_or_more_counts: a fraction of one quarter or more counts as one. half_or_more_counts: one half or more. Set it only from the code's own words, never assumed. Said with spaces_rate."
         }
       }
     },
@@ -1677,6 +1705,7 @@
                   "tract_sqft_below",
                   "in_growth_area",
                   "in_planned_development",
+                  "top_of_bank_ft_over",
                   null
                 ]
               },
@@ -1696,7 +1725,7 @@
                   "null"
                 ],
                 "minimum": 0,
-                "description": "Threshold for test lot_sqft_at_least (met when the lot is at least this), lot_sqft_below (met when the lot is under this), house_sqft_at_least or house_sqft_over (the house floor area)."
+                "description": "Threshold for test lot_sqft_at_least (met when the lot is at least this), lot_sqft_below (met when the lot is under this), house_sqft_at_least or house_sqft_over (the house floor area). Pass 19: top_of_bank_ft_over, met when the new building stands more than this many feet landward of the top of bank of a watercourse (lot fact top_of_bank_ft)."
               },
               "not_districts": {
                 "type": [
@@ -1796,6 +1825,18 @@
                 "type": "string",
                 "minLength": 1,
                 "description": "Pass 17: the chapter of the code the gate comes from when it is not the zoning chapter (for example 'Chapter 8' for a floodplain chapter). A lot that fails only such bars reads that relief follows that chapter's own appeal rules, and the zoning chapter's variance section (approval.fallback_path) is not cited as the path."
+              },
+              "waives_figures": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "min_lot",
+                    "parking"
+                  ]
+                },
+                "description": "Pass 19: with overlays, the figures the code lets a governing body modify or waive in the overlay (Canonsburg Downtown Overlay 170-401G(1), (2): lot dimensional requirements and parking). The line for a lot below the district minimum (min_lot) and the parking rate line (parking) then say so, for a lot in the overlay, or with 'If the lot is in' when the lot's overlays were not given. It never lifts a bar."
               },
               "supersedes_figures": {
                 "type": "array",

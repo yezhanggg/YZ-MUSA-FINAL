@@ -3813,3 +3813,109 @@ def test_listing_own_height_and_parking():
         "cover garage conversion, over garage on this lot. See the other paths"
     )
     assert maybe["max_height_by_type"]["garage_conversion"] is None
+
+
+# ------------------------------------------------------------------ pass 19
+
+
+def test_cluster_lot_drops_services_minimum():
+    """Marshall SR (districts.<code>.min_lot_replaced_in_planned_development): a cluster lot takes its own Table 1
+    figures, so the conventional lot's services minimum (40,000 sq ft without sewer and water) is never said."""
+    lot = {**DET, "zoning_district": "SR", "lot_sqft": 12000, "in_planned_development": True}
+    out = rules.resolve("pa_allegheny_marshall", "today", lot)
+    assert not any("40,000" in c["condition"] for c in out["conditions"])
+    assert not any(d.get("test") == "public_sewer_water" for d in out["depends_on"])
+    big = {**lot, "lot_sqft": 50000, "public_sewer": False, "public_water": False}
+    out = rules.resolve("pa_allegheny_marshall", "today", big)
+    assert not any("40,000" in c["condition"] or "minimum lot" in c["condition"] for c in out["conditions"])
+    plain = rules.resolve("pa_allegheny_marshall", "today", {**lot, "in_planned_development": False})
+    assert any(
+        c["condition"].startswith("Without public sewer and public water: min lot 40,000 sq ft")
+        for c in plain["conditions"]
+    )
+    # Amity MDR: the cluster gate replaces every district figure, so the on-lot services row (yards too) goes
+    amity = {**DET, "zoning_district": "MDR", "lot_sqft": 90000, "public_sewer": False, "public_water": False}
+    pd = rules.resolve("pa_berks_amity", "today", {**amity, "in_planned_development": True})
+    assert not any(c["condition"].startswith("On-lot sewage and water facilities") for c in pd["conditions"])
+    conv = rules.resolve("pa_berks_amity", "today", {**amity, "in_planned_development": False})
+    assert any(
+        c["condition"].startswith("On-lot sewage and water facilities: min lot 80,000") for c in conv["conditions"]
+    )
+
+
+def test_strict_share_cap():
+    """Nanticoke 500-305B(4) (size.max_share_is_less_than): 'less than 70%' of the house, so a 2,000 sq ft house
+    allows at most 1,399 sq ft, never 1,400."""
+    lot = {**DET, "zoning_district": "R-2", "house_sqft": 2000, "house_exists": True, "overlays": []}
+    out = rules.resolve("pa_luzerne_nanticoke", "today", lot)
+    assert out["size_rule_by_type"]["internal"] == "Less than 70% of the house, so at most 1,399 sq ft for this house"
+    assert out["max_size_by_type"]["internal"] == 1399 and out["max_share_by_type"]["internal"] == 0.7
+    assert rules._share_sqft(0.7, 1999, True) == 1399 and rules._share_sqft(0.7, 2000) == 1400
+
+
+def test_parking_rate_with_fraction_rule():
+    """Douglass 265-230C(7), 265-229C (parking.spaces_rate, parking.fraction_rounding): 1.5 spaces, and fractions
+    round up, so 2. The bill drops it."""
+    lot = {**DET, "zoning_district": "R-1", "house_exists": True, "overlays": []}
+    out = rules.resolve("pa_montgomery_douglass", "today", lot)
+    c = next(c for c in out["conditions"] if c["kind"] == "parking")
+    assert c["condition"] == (
+        "The code asks 1.5 off-street spaces for the unit, and any fraction of a space counts as one, so 2 spaces "
+        "(265-230C(7), 265-229C)"
+    )
+    assert c["bill_overrides"] is True
+    assert (
+        rules._round_spaces(1.2, "quarter_or_more_counts") == 1
+        and rules._round_spaces(1.25, "quarter_or_more_counts") == 2
+    )
+    assert rules._round_spaces(1.49, "half_or_more_counts") == 1 and rules._round_spaces(2, "any_fraction_counts") == 2
+
+
+def test_overlay_waives_lot_minimum():
+    """Canonsburg Downtown Overlay 170-401G (gates[].waives_figures): Borough Council may modify or waive the lot
+    dimensional requirements, so the below-minimum line says so in the overlay, and 'If the lot is in' when the
+    overlays were not given."""
+    lot = {**DET, "zoning_district": "MU", "lot_sqft": 1500}
+
+    def line(**kw):
+        out = rules.resolve("pa_washington_canonsburg", "today", {**lot, **kw})
+        return next(c["condition"] for c in out["conditions"] if c["kind"] == "district_lot_rule")
+
+    assert line(overlays=["Downtown Overlay"]).endswith(
+        ". In the Downtown Overlay the code lets the lot minimum be modified or waived (170-401C, G(1), (2))"
+    )
+    assert line().endswith(
+        ". If the lot is in the Downtown Overlay, the code lets the lot minimum be modified or waived (170-401C, G(1), (2))"
+    )
+    assert "waived" not in line(overlays=[])
+
+
+def test_top_of_bank_distance():
+    """Canonsburg 99-23D (lot fact top_of_bank_ft, gate test top_of_bank_ft_over): no new building within 50 ft
+    landward of the top of bank in a floodplain area."""
+    lot = {**DET, "zoning_district": "R-1", "overlays": ["Identified floodplain area"]}
+
+    def gate(**kw):
+        out = rules.resolve("pa_washington_canonsburg", "today", {**lot, **kw})
+        return next(c for c in out["conditions"] if c.get("section") == "99-23D")
+
+    assert gate()["met"] is None
+    assert gate()["condition"].endswith(
+        "Depends on how far the new building stands from the top of bank of the watercourse (top_of_bank_ft), "
+        "which was not given"
+    )
+    near, far = gate(top_of_bank_ft=40), gate(top_of_bank_ft=80)
+    assert near["met"] is False and near["condition"].endswith(
+        "At 40 ft from the top of bank the new building is inside that line"
+    )
+    assert far["met"] is True and far["condition"].endswith(
+        "At 80 ft from the top of bank the new building is clear of that line"
+    )
+
+
+def test_bill_caps_town_minimum_size():
+    """HB 2186 6305(1) (hb2186.json size.min_sqft, mode at_most): a town minimum may not be more than 200 sq ft.
+    Douglass 600 sq ft (265-15) reads 200 under the bill, the lesser of the two, never a floor raised."""
+    lot = {**DET, "zoning_district": "R-1", "house_exists": True, "overlays": []}
+    assert rules.resolve("pa_montgomery_douglass", "today", lot)["min_size_sqft"] == 600
+    assert rules.resolve("pa_montgomery_douglass", "state_reform", lot)["min_size_sqft"] == 200

@@ -279,6 +279,8 @@ const DEPENDS_FACT: Record<string, string> = {
   lot_width_below: 'the lot width',
   designated_on_plan: 'whether the lot is designated on the plan the code names',
   in_planned_development: 'whether the lot is in a planned or cluster development the code names',
+  // Pass 19 (pipeline/rules.py LOT_TESTS): feet from the new building to the top of bank (Canonsburg 99-23D).
+  top_of_bank_ft_over: 'how far the new building stands from the top of bank of the watercourse',
 };
 /** Pass 18 (pipeline/rules.py _alt_own_figures): an alternative's own accessory height and parking, in words. */
 const altOwnFigures = (a: Obj): string => {
@@ -395,13 +397,21 @@ function hasDistrictPath(file: Obj, district: string | null): boolean {
   return !!(row && isObj(row.adu_path) && row.adu_path.value);
 }
 
+/** Pass 19: parking.fraction_rounding (pipeline/rules.py FRACTION_RULES): the words, and the smallest fraction that counts. */
+const FRACTION_RULES: Record<string, [string, number]> = {
+  any_fraction_counts: ['any fraction of a space counts as one', 0],
+  quarter_or_more_counts: ['a fraction of one quarter or more counts as one', 0.25],
+  half_or_more_counts: ['a fraction of one half or more counts as one', 0.5],
+};
+
 /** "X sq ft or Y% of the house, whichever is less" (pipeline/rules.py size_rule_by_type). "Greater" with
- * size.cap_is_greater_of, and "At most Y% of the house" for a share-only cap (pass 7). */
-const lesserOf = (sqft: Obj | null, share: Obj | null, greater = false): string | null =>
+ * size.cap_is_greater_of, and "At most Y% of the house" for a share-only cap (pass 7). Pass 19: strict is
+ * size.max_share_is_less_than, "less than Y% of the house" (Nanticoke 500-305B(4)). */
+const lesserOf = (sqft: Obj | null, share: Obj | null, greater = false, strict = false): string | null =>
   share && typeof share.value === 'number'
     ? sqft && typeof sqft.value === 'number'
-      ? `At most ${num(sqft.value)} sq ft or ${Math.round(share.value * 100)}% of the house, whichever is ${greater ? 'greater' : 'less'}`
-      : `At most ${Math.round(share.value * 100)}% of the house. Give the house size to get the number`
+      ? `At most ${num(sqft.value)} sq ft or ${strict ? 'less than ' : ''}${Math.round(share.value * 100)}% of the house, whichever is ${greater ? 'greater' : 'less'}`
+      : `${strict ? 'Less than' : 'At most'} ${Math.round(share.value * 100)}% of the house. Give the house size to get the number`
     : null;
 
 function conditionsOf(file: Obj, district: string | null): Obj[] {
@@ -594,6 +604,19 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
   const perRes = leafAt(file, 'parking', 'spaces_per_resident');
   if (perRes && typeof perRes.value === 'number' && !noAduHere)
     out.push(cond('parking', `${perRes.value} off-street space per resident of the unit. The count depends on how many people live there${perRes.note ? `. ${perRes.note}` : ''}`, perRes, { bill_overrides: true }));
+  // Pass 19 (pipeline/rules.py FRACTION_RULES): the code's rate for the unit and its own rule for a fraction of a space.
+  const rate = leafAt(file, 'parking', 'spaces_rate');
+  const rounding = leafAt(file, 'parking', 'fraction_rounding');
+  const fr = rounding ? FRACTION_RULES[String(rounding.value)] : undefined;
+  if (rate && typeof rate.value === 'number' && fr && !noAduHere) {
+    const whole = Math.floor(rate.value + 1e-9);
+    const frac = rate.value - whole;
+    const n = frac <= 1e-9 ? whole : frac + 1e-9 >= fr[1] ? whole + 1 : whole;
+    const req = leafAt(file, 'parking', 'spaces_required');
+    const said = req && typeof req.value === 'number' ? req.value : null;
+    const secs = [...new Set([rate.section, rounding!.section].filter((x): x is string => typeof x === 'string' && !!x))].join(', ');
+    out.push(cond('parking', `The code asks ${rate.value} off-street spaces for the unit, and ${fr[0]}${said === null || said === n ? `, so ${n} ${n === 1 ? 'space' : 'spaces'}` : ''} (${secs})`, rate, { bill_overrides: true }));
+  }
   const bar = leafAt(file, 'envelope', 'front_yard_barred');
   // Pass 8: rear yard only rules out the side yards too (pipeline/rules.py accessory_rear_yard_only).
   // Pass 17: envelope.accessory_rear_yard_only_districts limits it by district.
@@ -798,7 +821,12 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const sizeLeaf = (k: string) => (lifted ? null : k === 'max_sqft' && row && isObj(row.adu_max_sqft) && typeof row.adu_max_sqft.value === 'number' ? (row.adu_max_sqft as Obj) : leafAt(file, 'size', k));
   const firstNum = (...keys: string[]) => keys.map(sizeLeaf).find((l) => l && typeof l.value === 'number') ?? null;
   const greater = leafAt(file, 'size', 'cap_is_greater_of')?.value === true;
-  const rule = (k1: string, k2: string, s1: string, s2: string) => lesserOf(firstNum(k1, k2), firstNum(s1, s2), greater);
+  // Pass 19: only the general share is strict (size.max_share_is_less_than), not a share for one form.
+  const strictLeaf = leafAt(file, 'size', 'max_share_is_less_than')?.value === true ? leafAt(file, 'size', 'max_share_of_house') : null;
+  const rule = (k1: string, k2: string, s1: string, s2: string) => {
+    const share = firstNum(s1, s2);
+    return lesserOf(firstNum(k1, k2), share, greater, !!strictLeaf && share === strictLeaf);
+  };
   // Pass 8: a share of a named part of the house (size.max_share_of_part) the tool cannot measure (pipeline/rules.py _town_sizes).
   const partLeaf = leafAt(file, 'size', 'max_share_of_part');
   const part = partLeaf && isObj(partLeaf.value) && typeof partLeaf.value.share === 'number' ? (partLeaf.value as Obj) : null;

@@ -329,6 +329,14 @@
       "confidence": "verified",
       "note": "'The square footage of an accessory dwelling unit shall be less than 70% that of the primary dwelling'. The code says less than 70%, so a unit of exactly 70% of the house does not qualify"
     },
+    "max_share_is_less_than": {
+      "value": true,
+      "section": "500-305B(4)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The square footage of an accessory dwelling unit shall be less than 70% that of the primary dwelling'"
+    },
     "min_sqft": {
       "value": 400,
       "section": "500-305B(4)",

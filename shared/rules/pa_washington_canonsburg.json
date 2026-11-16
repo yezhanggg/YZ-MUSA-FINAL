@@ -222,6 +222,8 @@
           "applies_to": null,
           "districts": null,
           "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
           "overlays": [
             "Identified floodplain area"
           ],
@@ -239,6 +241,10 @@
           "building_types": null,
           "overlays": [
             "Downtown Overlay"
+          ],
+          "waives_figures": [
+            "min_lot",
+            "parking"
           ],
           "section": "170-401C, G(1), (2)",
           "url": "https://ecode360.com/print/CA1664?guid=13839140"

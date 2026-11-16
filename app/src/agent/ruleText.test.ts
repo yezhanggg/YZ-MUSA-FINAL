@@ -1191,3 +1191,18 @@ describe('get_rule_text pass 18', () => {
     expect(two.reads_as).not.toContain('floodplain');
   });
 });
+
+describe('get_rule_text pass 19', () => {
+  it('says a strict share cap as less than the share (Nanticoke 500-305B(4))', async () => {
+    const r2 = await town6('pa_luzerne_nanticoke', 'size', 'R-2');
+    expect(r2.forms.inside_or_attached.size_rule).toBe('Less than 70% of the house. Give the house size to get the number');
+    expect(r2.forms.accessory_building.size_rule).toBe('Less than 70% of the house. Give the house size to get the number');
+  });
+
+  it('says the parking rate with the fraction rule the code states (Douglass 265-230C(7), 265-229C)', async () => {
+    const r1 = await town6('pa_montgomery_douglass', 'parking', 'R-1');
+    const c = (r1.conditions as Any6[]).find((x) => x.kind === 'parking')!;
+    expect(c.condition).toBe('The code asks 1.5 off-street spaces for the unit, and any fraction of a space counts as one, so 2 spaces (265-230C(7), 265-229C)');
+    expect(c.bill_overrides).toBe(true);
+  });
+});

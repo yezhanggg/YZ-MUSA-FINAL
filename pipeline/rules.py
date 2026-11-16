@@ -26,6 +26,7 @@ import argparse
 import datetime
 import functools
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -862,6 +863,13 @@ TOWN_KEYS = [
     "depends_on",
 ]
 NO_ADU_STATUSES = {"not_addressed", "prohibited"}
+# Pass 19: parking.fraction_rounding, the rule the code states for a fraction of a space: the words, and the smallest
+# fraction that counts as one more space (0: any fraction).
+FRACTION_RULES: dict[str, tuple[str, float]] = {
+    "any_fraction_counts": ("any fraction of a space counts as one", 0.0),
+    "quarter_or_more_counts": ("a fraction of one quarter or more counts as one", 0.25),
+    "half_or_more_counts": ("a fraction of one half or more counts as one", 0.5),
+}
 # Towns whose resolver output feeds published lot records (pipeline/build_lots.py), when a change to an
 # output key that would change those records is held back for them until the lot data is rebuilt.
 # Pass 8 lifted the pass 7 hold on Allentown (no ADU parking count where no ADU is allowed).
@@ -925,6 +933,12 @@ PASS18_HOLD_TOWNS: set[str] = {
     "pa_montgomery_narberth",
     "pa_montgomery_upper_dublin",
 }
+# Pass 19 holds nothing: no pass 19 change reaches a stored lot record of the ten lot towns. Its new fields
+# (size.max_share_is_less_than, parking.spaces_rate, parking.fraction_rounding, gates[].waives_figures, the gate test
+# top_of_bank_ft_over) are in no lot town file, and the planned-development changes need in_planned_development,
+# which the lot build never gives. The proof (every stored record rebuilt by the code now, byte for byte) found no
+# change. Keep the set for a later pass.
+PASS19_HOLD_TOWNS: set[str] = set()
 NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
@@ -954,6 +968,8 @@ LOT_TESTS: dict[str, str] = {
     # Pass 9: a test on the parent tract, not the lot. A lot at least as large settles it; a smaller one does not
     "tract_sqft_at_least": "the parent tract area (tract_sqft)",
     "tract_sqft_below": "the parent tract area (tract_sqft)",
+    # Pass 19: how far the new building stands landward of the top of bank of a watercourse (Canonsburg 99-23D)
+    "top_of_bank_ft_over": "how far the new building stands from the top of bank of the watercourse (top_of_bank_ft)",
 }
 SIZE_PATHS = [
     ("size", k)
@@ -1699,6 +1715,9 @@ def _gate_met(g: dict[str, Any], lot: dict[str, Any]) -> bool | None:
         return area >= g["value"] if test == "lot_sqft_at_least" else area < g["value"]
     if test in ("tract_sqft_at_least", "tract_sqft_below") and g.get("value") is not None:
         return _tract_met(test, g["value"], lot)
+    if test == "top_of_bank_ft_over" and g.get("value") is not None:  # pass 19: met when farther than the value
+        bank = lot.get("top_of_bank_ft")
+        return None if bank is None else bank > g["value"]
     return None
 
 
@@ -1962,8 +1981,9 @@ def _town_conditions(
                     met,
                 )
             )
-        elif met is False and _pd_replaces_min(data, lot, historic):
+        elif _pd_replaces_min(data, lot, historic):
             pass  # pass 15: a lot in a planned development whose own lot figures replace the district minimum
+            # (pass 19: whether or not the lot meets it. Marshall 208-207 Table 1, a cluster lot's figures)
         elif met is False:
             out.append(
                 _cond(
@@ -1974,7 +1994,8 @@ def _town_conditions(
                         if by_services
                         else f"This lot is below the district minimum of {leaf['value']:,.0f} sq ft. "
                     )
-                    + "It may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it",
+                    + "It may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it"
+                    + _waiver_note(data, lot, historic, "min_lot"),
                     leaf,
                     False,
                 )
@@ -2177,6 +2198,31 @@ def _town_conditions(
         )
         c["bill_overrides"] = True  # HB 2186: no parking for the ADU
         out.append(c)
+    rate = picked.get(("parking", "spaces_rate"))
+    rounding = picked.get(("parking", "fraction_rounding"))
+    if (
+        rate
+        and rate[0].get("value") is not None
+        and rounding
+        and rounding[0].get("value") in FRACTION_RULES
+        and not no_adu
+    ):
+        # pass 19: the code's own rate for the unit and the rounding rule the code states (Douglass 265-230C(7), 265-229C)
+        n = _round_spaces(rate[0]["value"], rounding[0]["value"])
+        req = picked.get(("parking", "spaces_required"))
+        req_n = req[0].get("value") if req else None
+        secs = ", ".join(dict.fromkeys(x for x in (rate[0].get("section"), rounding[0].get("section")) if x))
+        c = _cond(
+            "parking",
+            f"The code asks {rate[0]['value']:g} off-street spaces for the unit, and "
+            f"{FRACTION_RULES[rounding[0]['value']][0]}"
+            + (f", so {n:,.0f} {'space' if n == 1 else 'spaces'}" if req_n is None or req_n == n else "")
+            + f" ({secs})"
+            + _waiver_note(data, lot, historic, "parking"),
+            rate[0],
+        )
+        c["bill_overrides"] = True  # HB 2186: no parking for the ADU
+        out.append(c)
     bar = picked.get(("envelope", "front_yard_barred"))
     rear = picked.get(("envelope", "accessory_rear_yard_only")) if _rear_only_here(data, lot) else None  # pass 17
     if rear and rear[0].get("value") is True:  # pass 8: rear yard only rules out the side yards too
@@ -2280,6 +2326,11 @@ def _town_conditions(
                 c["condition"] = (
                     c["condition"].rstrip(".") + f". Depends on {HOUSE_TESTS[c['test']]}, which was not given"
                 )
+            elif c["test"] == "top_of_bank_ft_over" and c["met"] is not None:  # pass 19: the distance was given
+                c["condition"] = c["condition"].rstrip(".") + (
+                    f". At {lot['top_of_bank_ft']:,.0f} ft from the top of bank the new building is "
+                    + ("clear of that line" if c["met"] else "inside that line")
+                )
             elif c["test"] in LOT_TESTS and c["met"] is None and c["effect"] != "bars" and not hold:
                 # pass 10: a condition never reads as a bar. It depends on the fact, it is not "allowed only if"
                 c["condition"] = (
@@ -2288,7 +2339,14 @@ def _town_conditions(
             elif c["test"] and c["met"] is None:
                 c["condition"] += ". Allowed only if this holds. The lot fact is not known"
             out.append(c)
-    out += _utility_conditions(data, lot, hold14, once=not hold15)
+    out += _utility_conditions(
+        data,
+        lot,
+        hold14,
+        once=not hold15,
+        pd=_pd_replaces_min(data, lot, historic),
+        pd_all=_pd_gate(data, lot, historic),
+    )
     return out
 
 
@@ -2335,15 +2393,31 @@ def _utility_open(item: dict[str, Any], lot: dict[str, Any], hold: bool = False)
 
 
 def _utility_conditions(
-    data: dict[str, Any], lot: dict[str, Any], hold: bool = False, once: bool = True
+    data: dict[str, Any],
+    lot: dict[str, Any],
+    hold: bool = False,
+    once: bool = True,
+    pd: bool = False,
+    pd_all: bool = False,
 ) -> list[dict[str, Any]]:
     """districts.<code>.utility_rows: the row shown assumes public sewer and water. Say the others, and that
     the figures depend on the services when they are not given. hold: a lot town (PASS14_HOLD_TOWNS).
-    once: pass 15, a row whose sentence was already said is not said again (False for PASS15_HOLD_TOWNS)."""
+    once: pass 15, a row whose sentence was already said is not said again (False for PASS15_HOLD_TOWNS).
+    pd: pass 19, the lot is in a planned or cluster development whose own lot figures replace the district minimum
+    (_pd_replaces_min). A row's lot minimum is dropped then, and a row with no other figure is not said. pd_all: a
+    planned-development gate replaces every district figure (_pd_gate), so no services row is said."""
     code = _match_code(lot.get("zoning_district"), list((data.get("districts") or {}).keys()))
     leaf = (((data.get("districts") or {}).get(code) or {}) if code else {}).get("utility_rows")
     if not (_usable(leaf) and leaf.get("value")):
         return []
+    if pd_all:  # pass 19: the development's own figures replace every district figure, the services rows too
+        return []
+    if pd:  # pass 19: Marshall SR cluster lot, the services minimum is the conventional lot's (208-207 Table 1)
+        rows = [{k: v for k, v in item.items() if k != "min_lot_sqft"} for item in leaf["value"]]
+        rows = [r for r in rows if any(r.get(f) is not None for f in UTILITY_FIELDS)]
+        if not rows:
+            return []
+        leaf = {**leaf, "value": rows}
     out = []
     if (
         all(_utility_match(item, lot) is False for item in leaf["value"])
@@ -2403,6 +2477,27 @@ def _min_lot_by_services(data: dict[str, Any], lot: dict[str, Any]) -> bool:
     return bool(hit and hit[0].get("min_lot_sqft") is not None)
 
 
+def _waiver_note(data: dict[str, Any], lot: dict[str, Any], historic: bool, what: str) -> str:
+    """Pass 19: eligibility.gates[].waives_figures. In the gate's overlay the code lets the governing body modify or
+    waive these figures (Canonsburg Downtown Overlay 170-401G: lot dimensional and parking requirements). Said after
+    the figure's line: on a lot in the overlay, or with "If the lot is in" when the lot's overlays were not given."""
+    out = ""
+    for g in (_leaf(data, ("eligibility", "gates")) or {}).get("value") or []:
+        if what not in (g.get("waives_figures") or []) or not g.get("overlays") or not _gate_scope(g, lot, historic):
+            continue
+        inside = _gate_overlay(g, lot)
+        if inside is False:
+            continue
+        name = " or ".join(g["overlays"])
+        it = "the lot minimum" if what == "min_lot" else "the parking requirement"
+        out += (
+            f". In the {name} the code lets {it} be modified or waived ({g['section']})"
+            if inside
+            else f". If the lot is in the {name}, the code lets {it} be modified or waived ({g['section']})"
+        )
+    return out
+
+
 def _pd_replaces_min(data: dict[str, Any], lot: dict[str, Any], historic: bool) -> bool:
     """Pass 15: the lot is in a planned or cluster development whose own lot figures replace the district minimum:
     districts.<code>.min_lot_replaced_in_planned_development, or a planned-development gate with
@@ -2413,9 +2508,19 @@ def _pd_replaces_min(data: dict[str, Any], lot: dict[str, Any], historic: bool) 
     flag = row.get("min_lot_replaced_in_planned_development")
     if _usable(flag) and flag.get("value") is True:
         return True
+    return _pd_gate(data, lot, historic)
+
+
+def _pd_gate(data: dict[str, Any], lot: dict[str, Any], historic: bool) -> bool:
+    """The lot is in a planned or cluster development whose gate (supersedes_district_figures, test
+    in_planned_development) replaces every district figure. Pass 19: a gate with supersedes_figures replaces only the
+    figures it lists, never the lot minimum, so it does not count."""
+    if lot.get("in_planned_development") is not True:
+        return False
     gates = (_leaf(data, ("eligibility", "gates")) or {}).get("value") or []
     return any(
         g.get("supersedes_district_figures")
+        and not g.get("supersedes_figures")
         and g.get("test") == "in_planned_development"
         and not g.get("overlays")
         and _gate_scope(g, lot, historic)
@@ -4552,6 +4657,23 @@ def _state_town_fixes(
         citations["max_adus"] = _citation(_must_leaf(bill, ("use", "max_adus")), STATE_REFORM)
 
 
+def _round_spaces(rate: float, rule: str) -> int:
+    """Pass 19: a parking count from a rate with the code's fraction rule (parking.fraction_rounding)."""
+    whole = math.floor(rate + 1e-9)
+    frac = rate - whole
+    if frac <= 1e-9:
+        return whole
+    return whole + 1 if frac + 1e-9 >= FRACTION_RULES[rule][1] and (FRACTION_RULES[rule][1] > 0 or frac > 0) else whole
+
+
+def _share_sqft(share: float, house: float, strict: bool = False) -> int:
+    """A share of the house in sq ft. strict (pass 19, size.max_share_is_less_than): "less than" the share, so the
+    largest whole sq ft under it (less than 70% of 2,000 sq ft is at most 1,399 sq ft)."""
+    if strict:
+        return math.ceil(round(share * house, 6)) - 1
+    return round(share * house)
+
+
 def _town_sizes(
     today: Picked,
     out: dict[str, Any],
@@ -4574,6 +4696,7 @@ def _town_sizes(
     share_by_form = _value(today, "size", "max_share_by_form") or {}
     part = _value(today, "size", "max_share_of_part")
     house_and_unit = _value(today, "size", "max_share_of_house_and_unit")  # pass 9
+    strict_share = _value(today, "size", "max_share_is_less_than") is True  # pass 19: "less than 70%" (Nanticoke)
     caps = {
         "internal": (
             _value(today, "size", "max_sqft_internal"),
@@ -4621,20 +4744,30 @@ def _town_sizes(
                 )
             )
             continue
+        # pass 19: the general share cap is "less than" the share (size.max_share_is_less_than). The number is the
+        # largest whole sq ft under it. A share for one form or part, or the bill's floor, is not strict
+        strict = strict_share and share is not None and share == gen_share and t not in share_by_form
         if state and share_floor is not None and share is not None:
+            strict = strict and share >= share_floor
             share = max(share, share_floor)
         town = sqft
+        shr = f"{'less than ' if strict else ''}{share:.0%} of the house" if share is not None else ""
         if sqft is not None and share is not None:  # whichever is less, or greater
-            n = (max if greater else min)(sqft, round(share * house)) if house else None
-            text = f"At most {sqft:,.0f} sq ft or {share:.0%} of the house, whichever is {'greater' if greater else 'less'}"
+            n = (max if greater else min)(sqft, _share_sqft(share, house, strict)) if house else None
+            text = f"At most {sqft:,.0f} sq ft or {shr}, whichever is {'greater' if greater else 'less'}"
             town = n if n is not None else (None if greater else sqft)
         elif share is not None:  # share only (pass 7)
-            n = round(share * house) if house else None
-            text = f"At most {share:.0%} of the house"
+            n = _share_sqft(share, house, strict) if house else None
+            text = f"Less than {share:.0%} of the house" if strict else f"At most {share:.0%} of the house"
             town = n
         if text is not None:
             text += hu_note
-            text += f": {n:,.0f} sq ft for this house" if n is not None else ". Give the house size to get the number"
+            if n is not None and strict:
+                text += f", so at most {n:,.0f} sq ft for this house"
+            else:
+                text += (
+                    f": {n:,.0f} sq ft for this house" if n is not None else ". Give the house size to get the number"
+                )
         if part:  # pass 8: a share of a named part of the house, which the tool cannot measure
             p_text = f"{part['share']:.0%} of the house's {part['part']}"  # pass 13: "at most" is said once
             if text is not None:
@@ -4973,6 +5106,8 @@ def _lot_from_args(a: argparse.Namespace) -> dict[str, Any]:
         # Pass 18: the kind of planned or cluster development, as the code names it ("Option 3")
         "planned_development_kind": getattr(a, "planned_development_kind", None),
         "abuts_residential_district": _yes_no(getattr(a, "abuts_residential_district", None)),
+        # Pass 19: feet from the new building to the top of bank of a watercourse
+        "top_of_bank_ft": getattr(a, "top_of_bank_ft", None),
     }
 
 
@@ -5015,6 +5150,9 @@ def main(argv: list[str] | None = None) -> int:
     )
     r.add_argument("--planned-development-kind", help="the kind of planned development, as the code names it")
     r.add_argument("--abuts-residential-district", help="yes or no: the lot abuts a residential district")
+    r.add_argument(
+        "--top-of-bank-ft", type=float, help="feet from the new building to the top of bank of a watercourse"
+    )
     a = p.parse_args(argv)
     if a.cmd == "validate":
         return _cmd_validate()
