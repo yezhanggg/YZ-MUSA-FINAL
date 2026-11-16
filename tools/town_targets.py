@@ -1668,6 +1668,18 @@ EXTRAS = {
     "4209545104": "Code 180-137 accessory relative apartments by right in RA, R80, R40, R20, R12, UR and VC",
     "4207151664": "Code 135-225 echo housing by special exception, family only",
     "4207952584": "Code 500-305 accessory dwelling units by right on a single-family detached lot (Ord. No. 9-2025)",
+    # Batch 39 (2026-11-16): the next towns by population without a rule file. South Lebanon (Lebanon) was skipped (no
+    # codified zoning found as web pages, and the township website, which names its zoning ordinance, was refused to the
+    # browser), Northampton borough (Northampton) (Ord. No. 1244 of 10-14-2026, a Chapter 250 zoning amendment, not yet
+    # codified), Ephrata township (Lancaster) (zoning ordinance found only as a PDF copy, and the township website did not
+    # load), East Bradford (Chester) (Ord. No. 01-2026, 04-2026 and 06-2026 amending Chapter 115 zoning not yet codified),
+    # Berwick (Columbia) (zoning ordinance only as a PDF on the borough website, which was refused to the browser), Milford
+    # (Bucks) (Quakertown Area joint zoning not codified as web pages, and the township website was refused to the
+    # browser), Columbia borough (Lancaster) (Ord. No. 948-2023 and No. 957-2025 amending Chapter 220 zoning not yet
+    # codified) and Hazle (Luzerne) (no zoning text found as web pages).
+    "4209119672": "Code 265-41A(16) accessory dwelling unit by special exception, family only (R-A, R-1, R-2)",
+    "4209186496": "Code 150-110.3C accessory dwelling units in Option 3 country properties (AGR conservation subdivisions)",
+    "4200332832": "Code 27-303.1 living quarters in an accessory garage for domestic employees by special exception",
 }
 
 if __name__ == "__main__":

@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 167,
-      "population": 6116294,
-      "share_of_pa": 0.4704
+      "towns_beyond_the_two_cities": 170,
+      "population": 6147353,
+      "share_of_pa": 0.4728
     }
   ],
   "towns": [
@@ -4106,6 +4106,78 @@
         "named as a town with an ADU ordinance (Code 500-305 accessory dwelling units by right on a single-family detached lot (Ord. No. 9-2025))"
       ],
       "status_note": "Open: 500-802.12 bars converting an existing single-family dwelling into two or more units in R-1, against the 2025 ADU rule that names a unit in an expanded or remodeled dwelling (shown as disputed for internal and attached units in R-1). Also open: whether 500-308 lets a detached ADU stand on an existing house lot in C-2, C-3, I-1 and S-1, where the house is a nonconforming use (shown as in doubt, with internal and attached barred by 500-906E). Whether the R-1, R-2 and R-3 density per dwelling unit counts the ADU. The tension between the 500-203 single-family detached definition (one dwelling unit) and a unit inside or added onto the house. The 70% size cap is strictly less than 70%. Chapter 267 beyond 267-19 was not read in full."
+    },
+    {
+      "geoid": "4209119672",
+      "geoid_aliases": [],
+      "name": "Douglass township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 10585,
+      "population_with_aliases": 10585,
+      "housing_units": 4004,
+      "pop_rank": 248,
+      "file": "pa_montgomery_douglass",
+      "batch": 28,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/39409917",
+      "plain_fetch": null,
+      "code_current_through": "2026-03-16",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 265-41A(16) accessory dwelling unit by special exception, family only (R-A, R-1, R-2))"
+      ],
+      "status_note": "Batch 39 first reading. Open: the district lists call Use A-16 an accessory use by right (265-43D(11), 265-46C(11), 265-49C(11)). 265-41A(16) makes it a special exception. The file takes the special exception under 265-38C. Whether the 600 sq ft habitable floor minimum (265-15) reaches an ADU, and whether the R-A '2 acres for Use C-3' line means Use C-2, need a check. M-1, M-2, MU and the AAC, NMU, LOR and Route 100 overlays were not read."
+    },
+    {
+      "geoid": "4209186496",
+      "geoid_aliases": [],
+      "name": "Worcester township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 10317,
+      "population_with_aliases": 10317,
+      "housing_units": 3958,
+      "pop_rank": 254,
+      "file": "pa_montgomery_worcester",
+      "batch": 29,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11721946",
+      "plain_fetch": null,
+      "code_current_through": "2025-08-20",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 150-110.3C accessory dwelling units in Option 3 country properties (AGR conservation subdivisions))"
+      ],
+      "status_note": "Batch 39 first reading. Open: ADUs only in AGR Option 3 country properties (150-110.3C). 150-110.3C(1) allows outbuildings, but 150-177A(10) bars dwelling units in accessory structures (forms in conflict). 150-110.4C(2)(a) cites the reserved 150-110.20C. Also open: whether R-AG-200 (150-19B(1)) reaches the AGR route, and the 150-183 900 sq ft minimum. LPD, C, SC, LI, IR, MHD, R-50 and the overlays were not read."
+    },
+    {
+      "geoid": "4200332832",
+      "geoid_aliases": [],
+      "name": "Harrison township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 10157,
+      "population_with_aliases": 10157,
+      "housing_units": 5160,
+      "pop_rank": 259,
+      "file": "pa_allegheny_harrison",
+      "batch": 29,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/15101642",
+      "plain_fetch": null,
+      "code_current_through": "2025-12-22",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-303.1 living quarters in an accessory garage for domestic employees by special exception)"
+      ],
+      "status_note": "Batch 39 first reading. Open: the only ADU-like listing is 27-303.1 garage living quarters for domestic employees (special exception), read as family only. 27-315 bars converting a house to more units, so internal and attached forms read prohibited. Table 205 columns print interleaved and were split by section references. Part 4 and Part 6 definitions were not read."
     }
   ]
 }

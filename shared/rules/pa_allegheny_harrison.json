@@ -1,0 +1,556 @@
+{
+  "provenance": {
+    "jurisdiction": "Harrison township",
+    "instrument": "Harrison Township Zoning Ordinance (Chapter 27 Zoning, Ord. No. 1944 of 11-23-2009, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 HA2349, Township of Harrison, Allegheny County (27-510.11B sends appeals to the Allegheny County Court of Common Pleas, 27-309.11 records plans with the Allegheny County Department of Real Estate). District uses are the Table of Permitted and Conditional Uses in 27-205 and lot and yard figures the table in 27-206, both as text. The only attachments are a plant list and the zoning map. Floodplain rules are in Chapter 8 (Ord. 1968 of 2014). New Laws: Ord. No. 2027 (emergency medical services authority) and No. 2028 (sidewalks, Chapter 21), none on zoning",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/15101642",
+      "https://ecode360.com/HA2349",
+      "https://ecode360.com/HA2349/laws",
+      "https://ecode360.com/HA2349/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20quarters%20OR%20relative%20OR%20relatives%20OR%20ECHO%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22second%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/HA2349/search?query=floodway%20prohibited%20OR%20%22new%20construction%22%20floodplain&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/HA2349?guid=15101654",
+      "https://ecode360.com/print/HA2349?guid=15101674",
+      "https://ecode360.com/print/HA2349?guid=15102053",
+      "https://ecode360.com/print/HA2349?guid=15102781",
+      "https://ecode360.com/print/HA2349?guid=14985678",
+      "https://ecode360.com/print/HA2349?guid=14985740"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200332832",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/15101642",
+    "code_current_through": "2025-12-22",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 12-22-2025.' New Laws: Ord. No. 2027 (3-25-2026, emergency medical services authority) and Ord. No. 2028 (8-24-2026, Chapter 21 sidewalks and curbs)",
+    "checks": [
+      "The code has no accessory dwelling unit. The nearest listing is a special exception in R-1, R-2, R-3, S-1 and V for 'living quarters in an accessory garage as an accessory use to a single-family house to accommodate domestic employees of the residents of the principal building' (27-303.1). The Zoning Hearing Board decides under the Part 4 standards (27-510.5)",
+      "'In all zoning districts, no single-family house, two-family house or multifamily house may be converted to contain a greater number of dwelling units.' Converting means remodeling, altering or adding to an existing structure so it has more units. Tearing down a building and replacing it with a new one with more units is not a conversion (27-315)",
+      "Up to two nontransient roomers may live in a single-family house by special exception in R-1, R-2, R-3, S-1 and V (27-303.2)",
+      "Two-family houses are permitted in R-2, R-3 and V, multifamily houses in R-3 and V, and three- or four-family houses are a conditional use in R-2 (27-205). Lot area per family: 2,500 sq ft in R-2, 2,000 sq ft in R-3 and V (27-206)",
+      "A use not named in Table 205 but 'substantially similar to a use listed' may be allowed by conditional use in the district where the listed use is. Other unlisted uses are conditional uses only in M-2 (27-204)",
+      "Lot and yards (27-206): R-1 8,000 sq ft, 60 ft wide, front 25, side 10, rear 20. R-2 5,000 sq ft, front 20, side 8, rear 20. R-3 and V houses 4,000 sq ft, front 15, side 3, rear 20. No structure, attached or not, may project into a minimum yard (27-206.1B). Height 45 ft unless the Zoning Hearing Board approves more (27-207)",
+      "A lot of record held in separate ownership when the chapter took effect may be built on for a permitted use even if smaller or narrower than the minimum (27-206.1C)",
+      "Parking: two spaces per dwelling unit for a single-family or two-family house (27-305)",
+      "Floodplain (Chapter 8): in a floodway, no new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels and a DEP permit is obtained. In an AE area without a floodway, no more than one foot of rise, and no new construction within 50 ft of the top of bank without a DEP permit (8-402A, B)",
+      "Variances: 27-510.4. No bar on a use variance"
+    ],
+    "notes": "Zoning office: Harrison Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Part 2 (27-201 to 27-209, Table 205 and Table 206), 27-301 to 27-309 in Part 3, 27-315, 27-510, Chapter 8 sections 402 and 601, the New Laws page and code searches (ADU terms, floodplain). Table 205 prints its permitted and conditional columns interleaved, so each use was placed by its section reference: the conditional uses cite Part 4. Not read: Part 1, Part 4 (conditional use and special exception standards, including 27-408.43 single-family houses in C-1), Part 6 definitions (seen only in search results), 27-310 to 27-317 except 27-315, the rest of Part 5, Part 7 and the rest of Chapter 8."
+  },
+  "adu": {
+    "term": {
+      "value": "living quarters in an accessory garage for domestic employees",
+      "section": "27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'living quarters in an accessory garage as an accessory use to a single-family house to accommodate domestic employees of the residents of the principal building.' Not called an accessory dwelling unit. Searched the code for accessory dwelling, in-law, accessory apartment, quarters, relative, ECHO, caretaker, guest house and second dwelling"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-303.1, 27-510.5",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Only for domestic employees of the residents of the house, by special exception from the Zoning Hearing Board"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "S-1",
+        "V"
+      ],
+      "section": "27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "27-205",
+      "url": "https://ecode360.com/print/HA2349?guid=15101654",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "C-1, B-1, M-1 and M-2 do not list the quarters. C-1 allows a single-family house only by conditional use"
+    },
+    "status_by_form": {
+      "value": {
+        "internal": "prohibited",
+        "attached": "prohibited"
+      },
+      "section": "27-315",
+      "url": "https://ecode360.com/print/HA2349?guid=15102053",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'In all zoning districts, no single-family house, two-family house or multifamily house may be converted to contain a greater number of dwelling units', and converting includes 'an addition to' an existing structure"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "27-303.1, 27-510.5",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The following uses may be authorized with such conditions as are deemed appropriate by the Zoning Hearing Board.' The Board applies the Part 4 standards"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-510.4",
+      "url": "https://ecode360.com/print/HA2349?guid=15102781",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board, on the usual findings. No bar on a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "conditional_use",
+      "section": "27-204",
+      "url": "https://ecode360.com/print/HA2349?guid=15101654",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Board of Township Commissioners. 'Any use unnamed in Table 205 of this Chapter but substantially similar to a use listed in Table 205 shall be available in the same district as such listed use by way of a conditional use.' Other unlisted uses are conditional uses only in M-2"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "27-204",
+      "url": "https://ecode360.com/print/HA2349?guid=15101654",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "quote": "Any use unnamed in Table 205 of this Chapter but substantially similar to a use listed in Table 205 shall be available in the same district as such listed use by way of a conditional use"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family house (R-2, R-3, V)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "V"
+          ],
+          "conditions": "Two-family houses are permitted in R-2, R-3 and V (27-205). Lot area 5,000 sq ft and 2,500 sq ft per family in R-2, 4,000 sq ft and 2,000 sq ft per family in R-3 and for houses in V (27-206). An existing house may not be converted to more units (27-315), so this is a new two-family building. Two parking spaces per unit (27-305)",
+          "min_lot_by_district": {
+            "R-2": 5000,
+            "R-3": 4000,
+            "V": 4000
+          },
+          "section": "27-205, 27-206, 27-315",
+          "url": "https://ecode360.com/print/HA2349?guid=15101654",
+          "confidence": "secondary",
+          "note": "A new building of two units, not a unit added to a house. Replacing a house with a new two-family building is not a conversion under 27-315"
+        }
+      ],
+      "section": "27-205",
+      "url": "https://ecode360.com/print/HA2349?guid=15101654",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/15101642",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic path found"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "An accessory use 'to a single-family house'"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The quarters may house only domestic employees of the residents of the house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-303.1",
+          "url": "https://ecode360.com/print/HA2349?guid=15101674"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "The quarters are in an accessory garage on a lot with a single-family house.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-303.1",
+          "url": "https://ecode360.com/print/HA2349?guid=15101674"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area (Chapter 8), a floodway allows no new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels and a DEP permit is obtained. In an AE area without a floodway, no more than one foot of rise is allowed, and no new construction or development within 50 ft landward of the top of bank without a DEP permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-402A, B",
+          "url": "https://ecode360.com/print/HA2349?guid=14985678",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 8"
+        }
+      ],
+      "section": "27-303.1, 8-402",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1",
+        "B-1",
+        "M-1",
+        "M-2"
+      ],
+      "section": "27-205",
+      "url": "https://ecode360.com/print/HA2349?guid=15101654",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Table 205 lists no living quarters or ADU for these districts"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'living quarters in an accessory garage'"
+    },
+    "types_not_addressed": {
+      "value": [
+        "detached_new"
+      ],
+      "section": "27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The listing names only quarters in an accessory garage"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 45,
+      "section": "27-207.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101654",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'No structure shall exceed 45 in height above average ground level unless approved by the Zoning Hearing Board.' It reaches every structure, an accessory garage too"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "27-206.1B",
+      "url": "https://ecode360.com/print/HA2349?guid=15101654",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'All structures, whether attached to the principal structure or not, and whether open or enclosed ... shall not project into any minimum front, side or rear yard.'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Domestic employees of the residents only"
+    },
+    "occupancy": {
+      "value": "Domestic employees of the residents of the house",
+      "section": "27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No owner rule"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-305",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Single-family house, two-family house, townhouse: 2 per dwelling unit'"
+    },
+    "reading": {
+      "value": "The table asks two spaces per dwelling unit. If the quarters count as a dwelling unit, they need two more, four in all with the house. If not, the house's two are enough",
+      "section": "27-305",
+      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot width 60 ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'minimum width of each side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No structure shall exceed 45 in height above average ground level unless approved by the Zoning Hearing Board'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot width 50 ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 2500,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'minimum width of each side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No structure shall exceed 45 in height above average ground level unless approved by the Zoning Hearing Board'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot width 40 ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 2000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'minimum width of each side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No structure shall exceed 45 in height above average ground level unless approved by the Zoning Hearing Board'"
+      }
+    },
+    "S-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot width 100 ft."
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 3000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'minimum width of each side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No structure shall exceed 45 in height above average ground level unless approved by the Zoning Hearing Board'"
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot width 40 ft. Residential uses in V have the R-3 lot and yard requirements"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 2000,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'minimum width of each side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-206.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "27-207.1",
+        "url": "https://ecode360.com/print/HA2349?guid=15101654",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No structure shall exceed 45 in height above average ground level unless approved by the Zoning Hearing Board'"
+      }
+    }
+  }
+}

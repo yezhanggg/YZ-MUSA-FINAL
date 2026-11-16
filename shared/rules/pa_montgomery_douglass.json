@@ -1,0 +1,719 @@
+{
+  "provenance": {
+    "jurisdiction": "Douglass township",
+    "instrument": "Douglass Township Zoning Ordinance of 2025 (Chapter 265 Zoning, adopted by the Board of Supervisors 6-7-1982 by Ord. No. 82-4 and amended in its entirety 9-15-2025 by Ord. No. 2025-01), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 DO2583, Township of Douglass, Montgomery County (265-25 names the Montgomery County Health Department, 265-28C(1) the Recorder of Deeds of Montgomery County, 265-258 the Montgomery County Planning Commission). Not eCode360 DO3939, which is Douglass Township, Berks County (Chapter 27 Zoning). The accessory dwelling unit rule (Use A-16, 265-41A(16)) came in with the 2025 ordinance. District uses and figures are text in each district article. The only attachments are illumination standards and the zoning maps. Floodplain rules are in Chapter 122 (Ord. No. 2016-02), to which 265-128 refers. New Laws: none",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/39409917",
+      "https://ecode360.com/DO2583",
+      "https://ecode360.com/DO2583/laws",
+      "https://ecode360.com/DO2583/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20%22second%20dwelling%22%20OR%20relative%20OR%20relatives%20OR%20servant%20OR%20quarters%20OR%20%22housekeeping%20unit%22%20OR%20cottage%20OR%20%22farm%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/DO2583/search?query=%22A-16%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/DO2583/search?query=%22C-2%3A%20Single-Family%20Detached%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/DO2583?guid=47594184",
+      "https://ecode360.com/print/DO2583?guid=47594391",
+      "https://ecode360.com/print/DO2583?guid=47594677",
+      "https://ecode360.com/print/DO2583?guid=47594911",
+      "https://ecode360.com/print/DO2583?guid=47595323",
+      "https://ecode360.com/print/DO2583?guid=47595361",
+      "https://ecode360.com/print/DO2583?guid=47595386",
+      "https://ecode360.com/print/DO2583?guid=47595412",
+      "https://ecode360.com/print/DO2583?guid=47595468",
+      "https://ecode360.com/print/DO2583?guid=47595511",
+      "https://ecode360.com/print/DO2583?guid=47595610",
+      "https://ecode360.com/print/DO2583?guid=47595669",
+      "https://ecode360.com/print/DO2583?guid=47595761",
+      "https://ecode360.com/print/DO2583?guid=47596255",
+      "https://ecode360.com/print/DO2583?guid=47596816",
+      "https://ecode360.com/print/DO2583?guid=47597626",
+      "https://ecode360.com/print/DO2583?guid=47597755",
+      "https://ecode360.com/print/DO2583?guid=47597813",
+      "https://ecode360.com/print/DO2583?guid=39409586"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209119672",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/39409917",
+    "code_current_through": "2026-03-16",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 03-16-2026.' New Laws: 'There are currently no known new laws for this Code.'",
+    "checks": [
+      "Use A-16 Accessory Dwelling Unit 'is only permitted upon special exception approval by the Zoning Hearing Board in the R-A, R-1, and R-2 Districts' (265-41A(16)). The district lists put it among accessory uses 'permitted by right ... upon the issuance of a zoning permit' (265-43D(11), 265-46C(11), 265-49C(11)). Where use regulations and other rules conflict 'the more restrictive regulation shall apply' (265-38C), so the special exception is the path",
+      "One ADU per lot where a single-family detached dwelling (Use C-2) is the principal use (265-41A(16)(a))",
+      "The use permit lasts only while the owner of record lives in the house or the ADU. The ADU may be occupied only by the owner of record or an immediate family member related to the owner by blood, marriage or adoption. No more than three people may live in it. A separate EDU (sewer equivalent dwelling unit) is required (265-41A(16)(b))",
+      "'All ADUs shall be attached to the principal building or within the principal building.' The ADU needs its own entrance, which may not be part of the house's front facade (265-41A(16)(c)[2])",
+      "Size: 'the lesser of 40% of the living area of the primary residence or 1,200 square feet' (265-41A(16)(c)[3]). Every dwelling unit must have at least 600 sq ft of habitable floor area (265-15)",
+      "An attached ADU may not be taller than the existing house. ADUs meet the setback and coverage rules for principal structures (265-41A(16)(c)[1], [4])",
+      "Parking: 1.5 spaces for the ADU (265-230C(7)), and fractions are rounded up (265-229C), so 2. The house needs two spaces, and the first garage space does not count (265-230C(1)(a)). ADU parking shares the house's driveway (265-41A(16)(c)[5])",
+      "The ADU must match the house's exterior materials, windows, trim, roofing and roof pitch, its windows offset from neighbors, and it may not be a mobile home, motor home or trailer (265-41A(16)(c)[6], [7])",
+      "Building coverage counts only the principal building. Impervious cover counts all buildings and paving (265-44, 265-47, 265-50 notes)",
+      "Floodplain (Chapter 122, by 265-128): 'No new construction, alteration, or improvement of buildings and any other type of permanent structure ... shall be permitted in the floodway or the 100-year floodplain' (122-15A). An existing structure may be enlarged if it causes no rise in the base flood elevation in a floodway, no more than one foot in an AE area, and not toward the stream bank. Work of 50% or more of market value is a substantial improvement (122-16, 122-17)",
+      "Riparian Corridor Conservation District: it applies to a building permit for an expansion of an existing structure within 100 ft of the bank of a mapped stream. The corridor (two zones, at least 25 ft each, or the 100-year floodplain) bars permanent structures except those its uses need (265-187, 265-189G)",
+      "A lot in a Residential Cluster Development (tracts of 20 acres or more near sewer, 265-68) lists the ADU too and has its own lot figures (265-69B(9), 265-72B)",
+      "A building may be built on a lot nonconforming only in area when the Zoning Officer authorizes it. A special exception is needed where yards cannot be met (265-238A(2), (3))",
+      "'Any use not listed in the district in question is not permitted' (265-39E). A use not permitted may be allowed only by a variance from the Zoning Hearing Board (265-39F)",
+      "Twins and duplexes are by right in R-3 and R-4 and in LC. R-3 and R-4 development needs a tract of 5 and 10 acres (265-53, 265-54, 265-61, 265-62, 265-89)",
+      "Special exceptions expire after 12 months unless begun (265-254A). Standards: 265-254B"
+    ],
+    "notes": "Zoning office: Douglass Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I, 265-35 definitions from Access strip to Public utility, Article III through 265-41C (265-41D to H not read), Articles IV to XII, XV, XXII, XXV, XXVI and XXVII, Chapter 122 Article IV, the New Laws page and code searches (ADU terms, 'A-16', 'C-2: Single-Family Detached', floodplain, variance). Not read: Articles XIII (M-1), XIV (M-2), XVI (MU), XVII, XVIII (Active Adult Community Overlay), XIX (LOR), XX (Route 100 Corridor), XXI (Neighborhood Mixed-Use Overlay), XXIII (Airport Hazard Area), XXIV (signs), the rest of 265-35 and Chapter 122 outside Article IV. The searches show Use A-16 only in 265-41, 265-43, 265-46, 265-49, 265-69 and 265-230, and Use C-2 only in R-A, R-1, R-2, R-3, R-4 and the RCD, AAC and NMU overlays."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "265-35 'Accessory dwelling unit', 265-41A(16)",
+      "url": "https://ecode360.com/print/DO2583?guid=47594391",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A dwelling unit that is accessory to a single-family dwelling that is located on the same lot.' Use A-16"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "265-41A(16), 265-38C",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A special exception from the Zoning Hearing Board in R-A, R-1 and R-2. Only the owner of record or an immediate family member related by blood, marriage or adoption may live in it, and the owner must live on the lot"
+    },
+    "scope_districts": {
+      "value": [
+        "R-A",
+        "R-1",
+        "R-2"
+      ],
+      "section": "265-41A(16), 265-43D(11), 265-46C(11), 265-49C(11)",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Also listed in the Residential Cluster Development Overlay, which lies over these three districts (265-69B(9))"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "265-53, 265-61, 265-81, 265-89, 265-100 to 265-104, 265-39E",
+      "url": "https://ecode360.com/print/DO2583?guid=47595412",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "R-3, R-4, IN, LC and GC do not list Use A-16. 'Any use not listed in the district in question is not permitted' (265-39E)"
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "265-41A(16)(c)[2]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'All ADUs shall be attached to the principal building or within the principal building.'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "265-41A(16), 265-254B",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Use A-16: Accessory Dwelling Unit is only permitted upon special exception approval by the Zoning Hearing Board in the R-A, R-1, and R-2 Districts.' The district lists call it an accessory use permitted by right with a zoning permit. 265-38C applies the more restrictive rule"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "265-39F",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Any use not permitted in the district regulations or conforming to the use regulations ... may be permitted if a variance for relief of those requirements is granted by the Zoning Hearing Board.' The chapter has no section of its own on variance findings, so the MPC 910.2 findings apply. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Twin or duplex (R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Use C-4 twin and Use C-5 duplex are by right in R-3 (265-53A). Lot 4,500 sq ft per dwelling unit, width 30 ft (twin, per unit) or 70 ft (duplex). The minimum tract for R-3 development proposals is five acres, with a mix of housing types and 15% open space (265-54, 265-55, 265-58). Central sewer and water (265-57). Two spaces per unit (265-230C(1))",
+          "min_lot_sqft": 9000,
+          "section": "265-53A, 265-54, 265-56A, 265-57",
+          "url": "https://ecode360.com/print/DO2583?guid=47595412",
+          "confidence": "secondary",
+          "note": "A building of two units, not a unit added to a house. 9,000 sq ft is 4,500 sq ft for each of two units. Whether a single existing lot can use it without a five acre development is not settled"
+        },
+        {
+          "name": "Twin, duplex or multifamily (R-4)",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Twins, duplexes and multifamily buildings are by right in R-4 (265-61A). Minimum tract 10 acres, 11 units an acre, 50 ft from property lines, central sewer and water (265-62, 265-63)",
+          "min_lot_sqft": 435600,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "265-61A, 265-62, 265-63",
+          "url": "https://ecode360.com/print/DO2583?guid=47595468",
+          "confidence": "secondary",
+          "note": "A development of a 10 acre tract, not a unit added to a house"
+        },
+        {
+          "name": "Twin or duplex (LC)",
+          "path": "by_right",
+          "districts": [
+            "LC"
+          ],
+          "conditions": "Twins and duplexes are by right in LC (265-89A). Lot 7,500 sq ft, width 60 ft, at most 6 dwelling units an acre (265-91). Public sewer (265-94)",
+          "min_lot_sqft": 14520,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "265-94"
+            }
+          ],
+          "section": "265-89A, 265-91, 265-94",
+          "url": "https://ecode360.com/print/DO2583?guid=47595669",
+          "confidence": "secondary",
+          "note": "14,520 sq ft is the area that 6 units an acre gives two units. LC does not list a single-family detached dwelling"
+        },
+        {
+          "name": "Conversion of a house to multifamily (LC)",
+          "path": "special_exception",
+          "districts": [
+            "LC"
+          ],
+          "conditions": "'Conversion of single-family houses to multifamily is permitted by special exception in the L-C District, provided there are no more than five dwelling units in any one building' (265-41C(8)). A conversion meets every rule as if it were new development, unless the Supervisors make an exception for existing conditions (265-93). Public sewer (265-94)",
+          "min_units": 3,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family house is converted",
+              "section": "265-41C(8)"
+            },
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "265-94"
+            }
+          ],
+          "section": "265-41C(8), 265-89B(1), 265-93, 265-94",
+          "url": "https://ecode360.com/print/DO2583?guid=47594911",
+          "confidence": "secondary",
+          "note": "Multifamily means three or more dwelling units (265-41C(7)), so it is not a path for one added unit"
+        }
+      ],
+      "section": "265-53A, 265-61A, 265-89",
+      "url": "https://ecode360.com/print/DO2583?guid=47595412",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 265",
+      "url": "https://ecode360.com/39409917",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "265-41A(16)(a)",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'where use C-2: Single-Family Detached Dwelling is established as the principal use of the lot'"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "An ADU is allowed only where a single-family detached dwelling is the principal use of the lot. A twin or townhouse does not qualify.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "265-41A(16)(a)",
+          "url": "https://ecode360.com/print/DO2583?guid=47594677"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "The ADU is attached to or within the house, which must be the lot's principal use.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "house_exists",
+          "section": "265-41A(16)(a), (c)[2]",
+          "url": "https://ecode360.com/print/DO2583?guid=47594677"
+        },
+        {
+          "kind": "owner_occupancy",
+          "condition": "The use permit lasts only while the owner of record lives in the house or the ADU.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "265-41A(16)(b)[1]",
+          "url": "https://ecode360.com/print/DO2583?guid=47594677"
+        },
+        {
+          "kind": "family",
+          "condition": "Only the owner of record or an immediate family member related to the owner by blood, marriage or adoption may live in the ADU, and no more than three people.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "265-41A(16)(b)[2], [3]",
+          "url": "https://ecode360.com/print/DO2583?guid=47594677"
+        },
+        {
+          "kind": "utilities",
+          "condition": "A separate EDU (sewer equivalent dwelling unit) is required for the ADU.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "265-41A(16)(b)[4]",
+          "url": "https://ecode360.com/print/DO2583?guid=47594677"
+        },
+        {
+          "kind": "design",
+          "condition": "The ADU needs its own entrance, which may not be part of the front facade of the house. Its design must match the house (wall materials, windows, trim, roofing, roof pitch), its windows must be offset from neighboring homes, and it may not be a mobile home, motor home or trailer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "265-41A(16)(c)[2], [6], [7]",
+          "url": "https://ecode360.com/print/DO2583?guid=47594677"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District (the floodway and the 100-year floodplain), Chapter 122 bars new construction, alteration or improvement of buildings. An existing structure may be enlarged only if it raises the base flood elevation not at all in a floodway and by no more than one foot in an AE area, and not toward the stream bank.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain Conservation District"
+          ],
+          "section": "122-15A, 265-128",
+          "url": "https://ecode360.com/print/DO2583?guid=39409586",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 122",
+          "disputed_by": {
+            "section": "122-16, 122-17",
+            "url": "https://ecode360.com/print/DO2583?guid=39409586",
+            "note": "Improvements to existing structures follow 122-17, which lets an existing structure be enlarged within the flood elevation limits, so an addition may be allowed"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District, Chapter 122 bars 'alteration, or improvement of buildings'. Work of 50% or more of the house's market value is a substantial improvement that must fully comply with Chapter 122.",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain Conservation District"
+          ],
+          "section": "122-15A, 122-17D",
+          "url": "https://ecode360.com/print/DO2583?guid=39409586",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 122"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Riparian Corridor Conservation District (at least 25 ft plus 25 ft from a stream bank, or the 100-year floodplain, 35 ft in all on lots under one acre), no permanent structure is permitted except those its permitted uses need. The district applies to a building permit for an expansion within 100 ft of the bank of a mapped stream.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Riparian Corridor Conservation District"
+          ],
+          "section": "265-187A(2)(b), D, 265-189G",
+          "url": "https://ecode360.com/print/DO2583?guid=47596816",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "A lot in a Residential Cluster Development under the RCD Overlay takes the overlay's lot figures: in R-A an average of 22,000 sq ft (at least 15,000), in R-1 15,000 (at least 12,000), in R-2 12,000 (at least 10,000), front and rear yards 30 ft, side 20 ft in R-A and 15 ft (35 ft both) in R-1 and R-2, building coverage 20% (18% in R-2), impervious 30% (25% in R-2).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-A",
+            "R-1",
+            "R-2"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "265-68, 265-69B(9), 265-72B",
+          "url": "https://ecode360.com/print/DO2583?guid=47595511"
+        }
+      ],
+      "section": "265-41A(16), 122-15, 265-189, 265-72",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-3",
+        "R-4",
+        "IN",
+        "LC",
+        "GC"
+      ],
+      "section": "265-53, 265-61, 265-78 to 265-81, 265-89, 265-100 to 265-104",
+      "url": "https://ecode360.com/print/DO2583?guid=47595412",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "These use lists do not name Use A-16. The M-1, M-2 and MU lists were not read in full. A code search for 'A-16' finds no other district"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "265-41A(16)(c)[2]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'All ADUs shall be attached to the principal building or within the principal building.'"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1200,
+      "section": "265-41A(16)(c)[3]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'the lesser of 40% of the living area of the primary residence or 1,200 square feet'"
+    },
+    "max_share_of_part": {
+      "value": {
+        "share": 0.4,
+        "part": "living area"
+      },
+      "section": "265-41A(16)(c)[3]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The maximum permitted floor area of an ADU shall be the lesser of 40% of the living area of the primary residence or 1,200 square feet.'"
+    },
+    "min_sqft": {
+      "value": 600,
+      "section": "265-15",
+      "url": "https://ecode360.com/print/DO2583?guid=47594184",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'No dwelling, dwelling unit, or other structure designed for residential occupancy shall be constructed or occupied for residential purposes unless the same shall contain a habitable floor area of not less than 600 square feet.' It names every dwelling unit, so it reaches an ADU"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "265-41A(16)(c)[1], [4]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "ADUs 'shall meet the setback and coverage requirements for principal structures in the underlying zoning district'"
+    },
+    "attached_height_capped_at_house": {
+      "value": true,
+      "section": "265-41A(16)(c)[4][a]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'ADUs attached to the primary residence shall not increase or exceed the height of the existing primary residence.'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "265-41A(16)(b)[2]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'An ADU shall only be occupied by the owner of record or an immediate family member of the owner of record of the property that is related to the owner of record by blood, marriage, or adoption.'"
+    },
+    "occupancy": {
+      "value": "The owner of record, or an immediate family member of the owner related by blood, marriage or adoption. No more than three people",
+      "section": "265-41A(16)(b)[2], [3]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": true,
+      "section": "265-41A(16)(b)[1]",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The use permit for the ADU shall be in effect only so long as either the principal dwelling or the ADU is occupied by the owner of record of the property.'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "265-41A(16)(a)",
+      "url": "https://ecode360.com/print/DO2583?guid=47594677",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'One ADU may be permitted per lot'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "265-230C(7), 265-229C",
+      "url": "https://ecode360.com/print/DO2583?guid=47597626",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Use A-16: Accessory Dwelling Unit: 1.5 spaces.' 'Fractions of spaces shall be rounded up to the nearest whole number'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "265-230C(1)(a), (7), 265-229C",
+      "url": "https://ecode360.com/print/DO2583?guid=47597626",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Two spaces for the house ('The first space in a garage shall not be counted') and two for the ADU. The Supervisors may also ask for 0.2 visitor spaces per unit (265-230C(1)(b))"
+    }
+  },
+  "districts": {
+    "R-A": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "265-44",
+        "url": "https://ecode360.com/print/DO2583?guid=47595323",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'2 acres for Use C-3: Single-Family Detached Dwelling, 5 acres for all other uses.' The table calls the single-family detached dwelling Use C-3 (C-3 is the townhouse), read as Use C-2. Width 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "265-44",
+        "url": "https://ecode360.com/print/DO2583?guid=47595323",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Measured from the ultimate right-of-way line"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "265-44",
+        "url": "https://ecode360.com/print/DO2583?guid=47595323",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "265-44",
+        "url": "https://ecode360.com/print/DO2583?guid=47595323",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "265-44",
+        "url": "https://ecode360.com/print/DO2583?guid=47595323",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Building coverage is the percentage of the total lot area covered by the principal building.'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "265-44",
+        "url": "https://ecode360.com/print/DO2583?guid=47595323",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Buildings (principal and accessory), parking, driveways, walks, courts, pools and patios"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "265-44",
+        "url": "https://ecode360.com/print/DO2583?guid=47595323",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "265-47",
+        "url": "https://ecode360.com/print/DO2583?guid=47595361",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'1 acre (43,560 sq. ft.)'. Width 150 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "265-47",
+        "url": "https://ecode360.com/print/DO2583?guid=47595361",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Measured from the ultimate right-of-way line"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "265-47",
+        "url": "https://ecode360.com/print/DO2583?guid=47595361",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "265-47",
+        "url": "https://ecode360.com/print/DO2583?guid=47595361",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "265-47",
+        "url": "https://ecode360.com/print/DO2583?guid=47595361",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Building coverage is the percentage of the total lot area covered by the principal building.'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "265-47",
+        "url": "https://ecode360.com/print/DO2583?guid=47595361",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Buildings (principal and accessory), parking, driveways, walks, courts, pools and patios"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "265-47",
+        "url": "https://ecode360.com/print/DO2583?guid=47595361",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "265-50",
+        "url": "https://ecode360.com/print/DO2583?guid=47595386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With central sewer and central water. Width 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "265-50",
+        "url": "https://ecode360.com/print/DO2583?guid=47595386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Measured from the ultimate right-of-way line"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "265-50",
+        "url": "https://ecode360.com/print/DO2583?guid=47595386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "265-50",
+        "url": "https://ecode360.com/print/DO2583?guid=47595386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "265-50",
+        "url": "https://ecode360.com/print/DO2583?guid=47595386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Building coverage is the percentage of the total lot area covered by the principal building.'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "265-50",
+        "url": "https://ecode360.com/print/DO2583?guid=47595386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Buildings (principal and accessory), parking, driveways, walks, courts, pools and patios"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "265-50",
+        "url": "https://ecode360.com/print/DO2583?guid=47595386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No sewer, no water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.15,
+            "max_impervious_coverage": 0.3,
+            "principal_max_height_ft": 35,
+            "section": "265-50",
+            "note": "Width 150 ft"
+          },
+          {
+            "when": "Central water, no sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 45,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.15,
+            "max_impervious_coverage": 0.3,
+            "principal_max_height_ft": 35,
+            "section": "265-50",
+            "note": "Width 125 ft"
+          },
+          {
+            "when": "Central sewer, no central water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.15,
+            "max_impervious_coverage": 0.3,
+            "principal_max_height_ft": 35,
+            "section": "265-50",
+            "note": "Width 100 ft"
+          }
+        ],
+        "section": "265-50",
+        "url": "https://ecode360.com/print/DO2583?guid=47595386",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The table gives figures by 'Facilities Required'. The code says central sewer and water, which may be public or private (265-35 'Centralized sewer or water')"
+      }
+    }
+  }
+}
