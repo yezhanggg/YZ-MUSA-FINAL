@@ -131,6 +131,8 @@ test.describe('right panel', () => {
     const long = Array.from({ length: 30 }, (_, i) => `Line ${i + 1} of a long answer about this lot.`).join('\n');
     await page.route('**/api/agent', (r) => r.fulfill({ json: { type: 'final', text: long } }));
     await open(page, PGH);
+    // The chat starts minimised on every visit: the "Chat" button opens it.
+    await page.getByRole('button', { name: 'Chat', exact: true }).click();
     const chat = page.locator('section[aria-label="Ask"]');
     const column = panel(page).locator('..'); // the right column: results box, chat box, map controls row
     const input = chat.locator('input[aria-label="Ask about this site"]');
@@ -154,7 +156,7 @@ test.describe('right panel', () => {
     await expect.poll(async () => (await panel(page).boundingBox())!.height).toBeGreaterThan(res!.height + 100);
     await page.reload();
     await expect(verdict(page)).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Chat', exact: true })).toBeVisible(); // remembered
+    await expect(page.getByRole('button', { name: 'Chat', exact: true })).toBeVisible(); // minimised again on a new visit
     await page.getByRole('button', { name: 'Chat', exact: true }).click();
     await expect(page.locator('section[aria-label="Ask"]')).toBeVisible();
   });

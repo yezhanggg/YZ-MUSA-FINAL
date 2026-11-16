@@ -99,14 +99,11 @@ export default function ToolPage() {
   }, [drawer]);
   const spotN = useTool((s) => s.spot?.n);
   useEffect(() => setDrawer(false), [spotN]);
-  // A new lot opens the results drawer (laptop) or the hidden right column (desktop).
-  // The first spot of a visit (a link or a reload) keeps a right column the user hid; later picks bring it back.
-  const firstSpot = useRef(true);
+  // A picked lot opens the results drawer (laptop) or the right column (desktop), which start hidden.
   useEffect(() => {
     if (!spotN) return;
     useTool.getState().set({ resultsOpen: true });
-    if (!firstSpot.current) useSides.getState().setSide('right', true);
-    firstSpot.current = false;
+    useSides.getState().setSide('right', true);
   }, [spotN]);
   // Hiding or showing a side: the map re-centres on the free space.
   const firstSides = useRef(true);

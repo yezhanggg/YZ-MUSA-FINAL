@@ -79,17 +79,10 @@ export const clampRight = (w: number, vw: number) => Math.round(Math.min(rightMa
 export const useLegendSlot = create<{ el: HTMLElement | null; setEl: (el: HTMLElement | null) => void }>((set) => ({ el: null, setEl: (el) => set({ el }) }));
 
 /** Desktop and laptop: the chat box under the results is open, or minimised into the "Chat" button of the map controls
- *  row. Kept in localStorage like the panel width. */
+ *  row. It starts minimised on every visit; the "Chat" button opens it. */
 const CHAT_KEY = 'bh.chatOpen';
-const savedChat = () => {
-  try {
-    return window.localStorage.getItem(CHAT_KEY) !== '0';
-  } catch {
-    return true;
-  }
-};
 export const useChatOpen = create<{ open: boolean; setOpen: (o: boolean) => void }>((set) => ({
-  open: typeof window === 'undefined' ? true : savedChat(),
+  open: false,
   setOpen: (open) => {
     try {
       window.localStorage.setItem(CHAT_KEY, open ? '1' : '0');
@@ -101,15 +94,16 @@ export const useChatOpen = create<{ open: boolean; setOpen: (o: boolean) => void
 }));
 
 /** Desktop and laptop: the left panel, and on desktop the right column, can be hidden (a hide button in each header,
- *  a show button at that edge). Remembered in localStorage. The laptop results drawer keeps its own open state
- *  (store resultsOpen), shown and hidden the same way. */
+ *  a show button at that edge). The left panel is remembered in localStorage. The right column starts hidden on every
+ *  visit and opens when a lot is picked. The laptop results drawer keeps its own open state (store resultsOpen),
+ *  shown and hidden the same way. */
 const SIDES_KEY = 'bh.sides';
 const savedSides = (): { left: boolean; right: boolean } => {
   try {
-    const v = JSON.parse(window.localStorage.getItem(SIDES_KEY) ?? '{}') as { left?: boolean; right?: boolean };
-    return { left: v.left !== false, right: v.right !== false };
+    const v = JSON.parse(window.localStorage.getItem(SIDES_KEY) ?? '{}') as { left?: boolean };
+    return { left: v.left !== false, right: false };
   } catch {
-    return { left: true, right: true };
+    return { left: true, right: false };
   }
 };
 export const useSides = create<{ left: boolean; right: boolean; setSide: (side: 'left' | 'right', open: boolean) => void }>((set, get) => ({

@@ -224,6 +224,8 @@ test.describe('Explore', () => {
     await page.getByRole('radio', { name: '$300' }).click();
     await expect(share).toContainText('4%');
     await page.getByRole('radio', { name: 'Counties' }).click();
+    // The right panel starts hidden on every visit: "Details" shows it.
+    await page.getByRole('button', { name: 'Show the details' }).click();
     await expect(page.getByRole('heading', { name: /Counties/ })).toBeVisible();
     await page.getByRole('button', { name: /^ADUs by 2031/ }).click();
     await page.getByRole('radio', { name: 'SB 1346' }).click();
