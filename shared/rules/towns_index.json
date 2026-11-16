@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 152,
-      "population": 5941291,
-      "share_of_pa": 0.4569
+      "towns_beyond_the_two_cities": 155,
+      "population": 5978126,
+      "share_of_pa": 0.4598
     }
   ],
   "towns": [
@@ -3746,6 +3746,78 @@
         "added as batch 33 by population. Code Chapter 27 has no ADU text"
       ],
       "status_note": "For a later check: whether R-2 allows a second residential building on a lot (701.2). Farm dwelling count on a farm (401A(1) against 501)."
+    },
+    {
+      "geoid": "4201753304",
+      "geoid_aliases": [],
+      "name": "New Britain township",
+      "county": "Bucks",
+      "type": "township",
+      "population": 12327,
+      "population_with_aliases": 12327,
+      "housing_units": 4745,
+      "pop_rank": 202,
+      "file": "pa_bucks_new_britain",
+      "batch": 34,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30859978",
+      "plain_fetch": false,
+      "code_current_through": "2025-12-15",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. 8-14-1995, reenacted with the Code by Ord. 2007-04-01, as amended through Ord. No. 2025-01 of 7-21-2025). ADU text: 'Accessory dwelling' (Use H14), a single-family detached dwelling for relatives, tenant farmers or employees of a farm or estate, a by-right residential accessory use in C/R and WS only (27-401a, 27-501a): one per lot, only with a single-family detached dwelling, on a lot twice the district minimum, principal building yards and coverage (27-305 H14). A variance may not bring in a use the district does not permit (27-3104a(2)). Two-family detached dwellings by special exception in RR and by right in VR (15,000 sq ft per unit). The Table of Use Regulations is a PDF attachment, but each district part lists its uses in text and the dimensional tables are web text. New Laws: none. Read in the browser on eCode360 (NE0937).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-305 H14 accessory dwelling for relatives, tenant farmers or farm or estate employees (C/R, WS))"
+      ],
+      "status_note": "Open points: which minimum 27-305 H14b.5 doubles on a WS lot in a watershed conservation subdivision (27-502c, d against 27-502b). Whether a converted detached garage counts as the 'single-family detached dwelling' of H14a, and whether a unit above a detached garage does. The parking table row reads 'H14 Accessory Building', 2 spaces (27-2901). Status outside C/R and WS read as prohibited from 27-301d and the use lists, the PDF use table not opened. Not read: Part 11 (MHP), Parts 12 to 18 use lists beyond the search, the rest of 27-305."
+    },
+    {
+      "geoid": "4202979352",
+      "geoid_aliases": [],
+      "name": "Upper Uwchlan township",
+      "county": "Chester",
+      "type": "township",
+      "population": 12275,
+      "population_with_aliases": 12275,
+      "housing_units": 3980,
+      "pop_rank": 203,
+      "file": "pa_chester_upper_uwchlan",
+      "batch": 34,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8342086",
+      "plain_fetch": false,
+      "code_current_through": "2026-08-17",
+      "code_note": "Zoning: Chapter 200 Zoning (Ord. No. 89-06, 6-7-1989, as amended through Ord. No. 2026-03 of 8-17-2026). No ADU listing. A use accessory to a single-family dwelling: 'quarters for guests and for servants or tenants, employed on the premises', not to be rented or leased, and in a detached building only on a lot of the district minimum times the number of housekeeping units (200-62B(1)). R-1 permits customary residential accessory uses and R-2 to R-4 take the R-1 accessory uses. Conversion of dwellings (200-63) was repealed by Ord. No. 2024-01. Two-family detached dwellings (duplex) by right in R-3 and R-4 with central sewer and public water. Each district article sets its uses and figures in text. New Laws: none. Read in the browser on eCode360 (UP2148).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 200-62B(1) quarters for guests and for servants or tenants employed on the premises)"
+      ],
+      "status_note": "Open points: whether the 200-62B(1) quarters for guests and for servants or tenants employed on the premises may be a full dwelling unit with a kitchen, and so whether quarters inside the house would make it a duplex. Parking for the quarters (200-73G(2) still lists 'Accessory apartments for family members' after 200-63 was repealed). The R-3 and R-4 detached-quarters lot figure without central sewer and public water (2 acres from the R-2 figures). Not read: C-3, LI, PI, 200-71, 200-72.1 adaptive reuse, Chapter 82 floodplain."
+    },
+    {
+      "geoid": "4202164544",
+      "geoid_aliases": [],
+      "name": "Richland township",
+      "county": "Cambria",
+      "type": "township",
+      "population": 12233,
+      "population_with_aliases": 12233,
+      "housing_units": 5318,
+      "pop_rank": 205,
+      "file": "pa_cambria_richland",
+      "batch": 34,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/6638408",
+      "plain_fetch": false,
+      "code_current_through": "2023-01-30",
+      "code_note": "Zoning: Chapter 240 Zoning (Ord. No. 276, 4-20-2001, as amended). No ADU text. 'No accessory structure shall be used for dwelling purposes unless expressly authorized by this chapter' (240-32A(9)(l)). Similar type uses not listed by Zoning Hearing Board approval in R-1 and R-2 (240-32A(10), 240-38A(3), 240-100A(9)). Two-family dwellings by right in R-2 (15,000 sq ft), R-3 (11,000 sq ft) and R-4 (4,350 sq ft per unit). Each district article sets its uses and figures in text. New Laws: Ord. No. 348 (intergovernmental) and Ord. No. 349 (zoning map), not code material. Read in the browser on eCode360 (RI1755).",
+      "why": [
+        "added as batch 34 by population. Code Chapter 240 has no ADU text"
+      ],
+      "status_note": "Open points: whether the 'similar type uses' hearing (240-32A(10), 240-38A(3), 240-100A(9)) reaches R-3 and R-4 by reference, and whether a second unit is a similar use. Accessory building height is 15 ft in 240-32A(9)(j) and 25 ft in 240-34C. Code current only through 01-30-2023. Not read: Article IV (except 240-21), U, C-2, C-3, L-1, M, A districts, Article XVII, Chapter 138 floodplain."
     }
   ]
 }

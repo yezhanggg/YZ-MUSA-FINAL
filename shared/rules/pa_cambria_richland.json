@@ -1,0 +1,454 @@
+{
+  "provenance": {
+    "jurisdiction": "Richland township",
+    "instrument": "Township of Richland Zoning Ordinance (Chapter 240 Zoning, Ord. No. 276 of 4-20-2001, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 RI1755, Township of Richland, Cambria County (the code names the Johnstown Cambria County Airport and a University district). Chapter 240 Zoning was adopted 4-20-2001 by Ord. No. 276 and amended since. New Laws lists Ord. No. 348 (2023, intergovernmental agreement) and Ord. No. 349 (9-9-2024, zoning map amendment), both marked as not code material. Each district article sets its uses and figures in text. The chapter page lists no attachments",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/RI1755",
+      "https://ecode360.com/6638408",
+      "https://ecode360.com/RI1755/laws",
+      "https://ecode360.com/RI1755/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20conversion%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20granny%20OR%20%22accessory%20suite%22%20OR%20relative%20OR%20%22servant%22%20OR%20%22quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/RI1755/search?query=%22similar%20type%20uses%22%20OR%20%22variance%22%20OR%20%22nonconforming%20lots%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/6639606",
+      "https://ecode360.com/print/RI1755?guid=6638431",
+      "https://ecode360.com/print/RI1755?guid=6638610",
+      "https://ecode360.com/print/RI1755?guid=6638671",
+      "https://ecode360.com/print/RI1755?guid=6638709",
+      "https://ecode360.com/print/RI1755?guid=6638745",
+      "https://ecode360.com/print/RI1755?guid=6639277",
+      "https://ecode360.com/print/RI1755?guid=6639627"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Cambria",
+    "municipality_type": "township",
+    "geoid": "4202164544",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/6638408",
+    "code_current_through": "2023-01-30",
+    "code_current_through_note": "eCode360: 'Includes legislation through 01-30-2023.' New Laws: Ord. No. 348 and Ord. No. 349 (zoning map), not code material",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law suite, accessory apartment or similar listing",
+      "Accessory buildings in R-1, and in the districts that take the R-1 accessory uses, may not be used as a dwelling: 'No accessory structure shall be used for dwelling purposes unless expressly authorized by this chapter' (240-32A(9)(l))",
+      "R-1, R-2 and the districts that take their uses list 'Similar type uses not specifically listed herein when authorized by the Zoning Hearing Board' (240-32A(10), 240-38A(3)). At the hearing the applicant shows the use is compatible with the district's purposes (240-100A(9), B). Whether a second unit on a house lot is such a use is not settled",
+      "A two-family dwelling, 'A building designed for or occupied exclusively by two families living independently of each other, with separate dwelling unit entrances' (240-9), is by right in R-2 (15,000 sq ft), R-3 (11,000 sq ft) and R-4 (4,350 sq ft per unit) (240-38A(2), 240-39A(2), 240-45A(2), 240-50A(6), 240-51A(2)). R-1 is for one-family detached dwellings",
+      "Accessory buildings may not stand in the front yard, must be at least 10 ft from the rear line and meet the district side yard, and together may not exceed 650 sq ft, one story and 15 ft (240-32A(9)(i), (j)). 240-34C gives accessory buildings 25 ft",
+      "Using a lot for more than one principal building counts as a subdivision (240-9 'Lot')",
+      "A lot of record below the district minimum may be built on if the use, yards, setbacks and density are met (240-21)",
+      "No section read bars a use variance. Variances need the findings of 240-100B(2). The Zoning Hearing Board may also rule on 'all land use items not specifically detailed in this chapter' (240-100C)",
+      "One- and two-family dwellings need 'off street parking spaces for all vehicles' (240-107A). No count is given"
+    ],
+    "notes": "Zoning office: Richland Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 240-9 (all definitions), Articles V to VIII (R-1, R-2, R-3, R-4), 240-100, 240-107A, 240-21 (search text) and the New Laws page. Not read: Article IV (other than 240-21), Articles IX to XIV (U, C-2, C-3, L-1, M, A), Article XVII (special exceptions), the rest of Article XVIII, Articles XIX to XXIII and Chapter 138 (floodplain). The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant and quarters. A family may include domestic servants and gratuitous guests (240-9). Coverage is the share of the lot covered by the building area of all buildings (240-9). Accessory buildings may take at most 30% of the rear yard (240-9 'Yard, rear')."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "240-9, 240-32, 240-38, 240-44, 240-50",
+      "url": "https://ecode360.com/print/RI1755?guid=6638431",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant and quarters, and read every definition and the R-1 to R-4 use lists. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "240-32, 240-38, 240-44, 240-50",
+      "url": "https://ecode360.com/print/RI1755?guid=6638610",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No district lists a second dwelling unit on a house lot. A use variance, or a hearing for a similar use not listed, are the paths to ask about"
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "240-32A(9)(l)",
+      "url": "https://ecode360.com/print/RI1755?guid=6638610",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'No accessory structure shall be used for dwelling purposes unless expressly authorized by this chapter.' R-2, R-3 and R-4 take the R-1 accessory uses (240-38A(1), 240-44A(1), 240-50A(1))"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "240-100A(5), B(2)",
+      "url": "https://ecode360.com/print/RI1755?guid=6639277",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "A second unit is not a listed use. The Zoning Hearing Board hears variances on the findings of 240-100B(2). No section read bars a use variance"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "240-100B(2)",
+      "url": "https://ecode360.com/print/RI1755?guid=6639277",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "240-32A(10), 240-38A(3), 240-100A(9)",
+      "url": "https://ecode360.com/print/RI1755?guid=6639277",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The Zoning Hearing Board hears 'Similar type uses not specifically listed herein' after a hearing on whether the use is compatible with the district's purposes. In R-2, R-3 and R-4 a unit inside the house may instead be a two-family dwelling, which is by right there (see the alternatives)"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "240-32A(10), 240-38A(3), 240-44A(1), 240-50A(1)",
+      "url": "https://ecode360.com/print/RI1755?guid=6638610",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "R-1 and R-2 list the path. R-3 takes the R-2 permitted uses and R-4 the R-1 uses, so the path reaches them by reference"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "240-32A(10), 240-38A(3)",
+      "url": "https://ecode360.com/print/RI1755?guid=6638610",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "quote": "Similar type uses not specifically listed herein when authorized by the Zoning Hearing Board",
+      "districts": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ]
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "'A building designed for or occupied exclusively by two families living independently of each other, with separate dwelling unit entrances' (240-9). By right in R-2 (240-38A(2)), R-3 (240-44A(1)) and R-4 (240-50A(6)). Lot 15,000 sq ft and 75 ft wide in R-2, 11,000 sq ft and 60 ft in R-3, 4,350 sq ft per unit and 60 ft in R-4. A two-family structure needs a building area of at least 1,700 sq ft in R-2 and 1,400 sq ft in R-3 and R-4 (240-41, 240-47, 240-53). Parking for all vehicles off the street (240-107A)",
+          "min_lot_by_district": {
+            "R-2": 15000,
+            "R-3": 11000,
+            "R-4": 8700
+          },
+          "section": "240-9, 240-38A(2), 240-39A(2), 240-45A(2), 240-50A(6), 240-51A(2)",
+          "url": "https://ecode360.com/print/RI1755?guid=6638671",
+          "confidence": "verified",
+          "note": "The house itself becomes the two-family dwelling. A second building would be a second principal building, which the code treats as a subdivision (240-9 'Lot'). The R-4 figure is 4,350 sq ft for each of the two units"
+        }
+      ],
+      "section": "240-38A(2), 240-44A(1), 240-50A(6)",
+      "url": "https://ecode360.com/print/RI1755?guid=6638671",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 240",
+      "url": "https://ecode360.com/6638408",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "240-32, 240-38",
+      "url": "https://ecode360.com/print/RI1755?guid=6638610",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No ADU use. A unit inside the house can only be a two-family dwelling where the district permits one"
+    }
+  },
+  "envelope": {
+    "front_yard_barred": {
+      "value": true,
+      "section": "240-32A(9)(i)",
+      "url": "https://ecode360.com/print/RI1755?guid=6638610",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'No accessory buildings shall be located within the front yard'"
+    },
+    "accessory_floor_area_total_sqft": {
+      "value": 650,
+      "section": "240-32A(9)(j)",
+      "url": "https://ecode360.com/print/RI1755?guid=6638610",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'No accessory building or buildings shall have an accumulative area greater than 650 square feet, one story in height and a height no greater than 15 feet'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "240-32A(9)(j), 240-34C",
+      "url": "https://ecode360.com/print/RI1755?guid=6638610",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "240-32A(9)(j) caps accessory buildings at one story and 15 ft. 240-34C gives accessory buildings 25 ft. The lower figure is shown"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "240-33A(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One-family detached dwelling, width 100 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "240-33C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "May be reduced to the average setback where more than 50% of the lots in the block are built on"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "240-33C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "240-33C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "240-33B",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All buildings, including accessory uses"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "240-34A",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "240-32A(9)(i)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The district side yard"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "240-32A(9)(i)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No less than 10 feet from the rear property line"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "240-39A(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638671",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One-family detached dwelling, width 75 ft. A two-family dwelling needs 15,000 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "240-39C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638671",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "May be reduced to the average setback where more than 50% of the lots in the block are built on"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "240-39C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638671",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "240-39C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638671",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "240-39B",
+        "url": "https://ecode360.com/print/RI1755?guid=6638671",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All buildings, including accessory uses"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "240-40, 240-34A",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "240-32A(9)(i)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The district side yard"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "240-32A(9)(i)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No less than 10 feet from the rear property line"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 8700,
+        "section": "240-45A(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638709",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One-family detached dwelling, width 60 ft. A two-family detached dwelling needs 11,000 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "240-45C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638709",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "May be reduced to the average setback where more than 50% of the lots in the block are built on"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "240-45C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638709",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "240-45C(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638709",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "240-45B",
+        "url": "https://ecode360.com/print/RI1755?guid=6638709",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All buildings, including accessory uses"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "240-46, 240-34A",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "240-32A(9)(i)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The district side yard"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "240-32A(9)(i)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No less than 10 feet from the rear property line"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 8700,
+        "section": "240-51A(1)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638745",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One-family detached dwelling, width 60 ft. A two-family dwelling needs 4,350 sq ft per unit"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "240-51C(1)(a)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638745",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "May be reduced to the average setback where more than 50% of the lots in the block are built on"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "240-51C(1)(a)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638745",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "240-51C(1)(a)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638745",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "240-51B",
+        "url": "https://ecode360.com/print/RI1755?guid=6638745",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All buildings, including accessory uses"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "240-52, 240-34A",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "240-32A(9)(i)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The district side yard"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "240-32A(9)(i)",
+        "url": "https://ecode360.com/print/RI1755?guid=6638610",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No less than 10 feet from the rear property line"
+      }
+    }
+  }
+}

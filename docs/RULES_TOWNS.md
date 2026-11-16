@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-154 towns in the index, 154 with a rule file (Philadelphia and Pittsburgh included). Verified 99, drafted 55, in progress 0, todo 0.
+157 towns in the index, 157 with a rule file (Philadelphia and Pittsburgh included). Verified 99, drafted 58, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -167,6 +167,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | St. Marys city | Elk | drafted | accessory dwelling unit | special exception | special exception | ADU rule only in RU. building type gate (402.4). other gate (230.6, 230.7, 230.11A). other ways: ECHO housing (elder cottage) in RC (ADU under another listing, by right, 200.2P(5), 112 'ECHO housing'). ECHO housing (elder cottage) in RS (ADU under another listing, special exception, 201.3B, 425). Two-family conversion of a house (RU, RF) (by right, 202.2J, 203.2K, 112 'Two-family conversion', 312). Two-family conversion of a large older house (RC) (by right, 200.2M). Temporary farm employee housing (RC) (by right, 200.2P(10), 200.5). Duplex (two-family building) in RU or RF (by right, 202.2B, 202.4, 203.2B, 203.5, 112 'Dwelling'). Second principal dwelling on one lot (by right with land development, 308, 112 'Land development'). Upper-floor residential units (CB) (by right, 210.2S) | not confirmed | no | not confirmed | 2026-11-16 |
 | Bloomsburg town | Columbia | drafted | accessory dwelling | family only | special exception | ADU rule only in R-C, R-S, R-U. occupancy (27-1102 'Dwelling, accessory', 27-605.1H). family only (27-1102 'Dwelling, accessory'). house type detached. R-U 3,000 sq ft per unit. other gate (27-503.2B, 27-605.1C(3)). other ways: Accessory apartment inside an existing house or above the ground floor of a mixed-use building (ADU under another listing, by right, 27-1102 'Apartment, accessory', 27-303 Schedule A). Duplex (two units in one principal building) (by right, 27-1102 'Duplex', 27-303 Schedule A, 27-304 to 27-313) | not confirmed | no | 1 | 2026-11-16 |
 | Logan township | Blair | verified | none | not in the code | variance | other ways (not ADUs): Two-family dwelling (by right, 301 'Two-family dwelling', 401A(3), 501.1, 502.4, 701.2, 801, 901). Conversion of an older house into a multiple family dwelling (R-2) (by right, 1003, 301 'Multiple-family dwelling'). Agricultural dwellings on a farm (by right, 401A(1), (3), (6), 401B(1), (3), (6)). Any use not prohibited (Business, Industrial) (by right, 801, 802, 901, 904.3) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| New Britain township | Bucks | drafted | accessory dwelling | family only | by right (not addressed for internal, attached, over garage) | ADU rule only in C/R, WS. occupancy (27-305 H14a). family only (27-305 H14a). house type detached. building type gate (27-305 H14b.4). 2 lot size gates (27-305 H14b.5 and district sections). other ways (not ADUs): Two-family detached dwelling (RR) (special exception, 27-305 B4, 27-901b, 27-903a). Two-family detached dwelling (VR) (by right, 27-305 B4, 27-1001a, 27-1003a). Planned residential development (RR, VR) (by right with land development, 27-305 B11, 27-901c, 27-1001d). 4 parking spaces in total | not confirmed | no | 1 | 2026-11-16 |
+| Upper Uwchlan township | Chester | drafted | quarters for guests and for servants or tenants, employed on the premises | family only | by right | ADU rule only in R-1, R-2, R-3, R-4. occupancy (200-62B(1)). family only (200-62B(1)). 4 lot size gates (200-62B(1) and district sections). other ways (not ADUs): Two-family detached dwelling (duplex) (by right, 200-7, 200-21A(2), 200-22A(2), 200-27A, 200-28A(2), 200-23A) | not confirmed | no | not confirmed | 2026-11-16 |
+| Richland township | Cambria | drafted | none | not in the code | variance (unlisted-use path only in R-1, R-2, R-3, R-4) | other ways (not ADUs): Two-family dwelling (by right, 240-9, 240-38A(2), 240-39A(2), 240-45A(2), 240-50A(6), 240-51A(2)) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
 
 ## Towns still to write
 
@@ -183,4 +186,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 152 | 45.7% |
+| 155 | 46.0% |

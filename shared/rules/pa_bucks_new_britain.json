@@ -1,0 +1,753 @@
+{
+  "provenance": {
+    "jurisdiction": "New Britain township",
+    "instrument": "Township of New Britain Zoning Ordinance (Chapter 27 Zoning, Ord. 8-14-1995, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 NE0937, Township of New Britain, Bucks County. Chapter 27 Zoning (Ord. 8-14-1995) was codified and reenacted with the Code by Ord. 2007-04-01 and amended many times, most recently by Ord. No. 2025-01 (7-21-2025), which is folded into the text. New Laws: none. The Table of Use Regulations is a PDF attachment, but each district part lists its uses in text and 27-301 makes those lists the rule. The district area and dimensional tables are web text",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/NE0937",
+      "https://ecode360.com/30859978",
+      "https://ecode360.com/NE0937/laws",
+      "https://ecode360.com/NE0937/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22dwelling%20in%20combination%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22caretaker%22%20OR%20conversion&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NE0937/search?query=H14&scope=all&sortOrder=relevance",
+      "https://ecode360.com/NE0937/search?query=%22B4%22%20OR%20%22Two-Family%20Detached%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/NE0937?guid=31573852",
+      "https://ecode360.com/print/NE0937?guid=31574130",
+      "https://ecode360.com/print/NE0937?guid=31575049",
+      "https://ecode360.com/print/NE0937?guid=31574919",
+      "https://ecode360.com/print/NE0937?guid=31575243",
+      "https://ecode360.com/print/NE0937?guid=31575354",
+      "https://ecode360.com/print/NE0937?guid=31575886",
+      "https://ecode360.com/print/NE0937?guid=31575905",
+      "https://ecode360.com/print/NE0937?guid=31575996",
+      "https://ecode360.com/print/NE0937?guid=31576012",
+      "https://ecode360.com/print/NE0937?guid=31576027",
+      "https://ecode360.com/print/NE0937?guid=31576052",
+      "https://ecode360.com/print/NE0937?guid=31576429",
+      "https://ecode360.com/print/NE0937?guid=31576924",
+      "https://ecode360.com/print/NE0937?guid=31577114",
+      "https://ecode360.com/print/NE0937?guid=32451042"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Bucks",
+    "municipality_type": "township",
+    "geoid": "4201753304",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30859978",
+    "code_current_through": "2025-12-15",
+    "code_current_through_note": "eCode360: 'Includes legislation through 12-15-2025.' New Laws: none",
+    "checks": [
+      "An 'accessory dwelling' (Use H14) is 'A single-family detached dwelling used as a residence by relatives, tenant farmers or employees of a farm or estate' (27-305 H14). It is a by-right residential accessory use only in the C/R and WS districts (27-401a, 27-501a)",
+      "The lot must be at least twice the district's minimum lot area: 4 acres in C/R (2 acres in 27-402) and 160,000 sq ft in WS (80,000 sq ft for a single-family detached dwelling in 27-502b). One accessory dwelling per lot, and only where the principal use is a single-family detached dwelling (27-305 H14b)",
+      "The accessory dwelling meets the yards, height and building coverage that apply to principal buildings in the district (27-305 H14b.1). A Bucks County Department of Health permit is needed for an on-lot sewage system (H14b.2)",
+      "Other districts (SR-1, SR-2, RR, VR and the nonresidential districts) do not list Use H14. A use not listed is not permitted (27-301d), and the variance standards say a variance may not 'permit the establishment within a district of any use which is not permitted in that district' (27-3104a(2))",
+      "A two-family detached dwelling (two units in one building on one lot, B4) is a special exception in RR and by right in VR, with 15,000 sq ft of lot per unit (27-901b, 27-903a, 27-1001a, 27-1003a)",
+      "In WS the minimum lot for a single-family detached dwelling is 80,000 sq ft. Lots in a watershed conservation subdivision may be 43,560 or 25,000 sq ft (27-502c, d). Which figure 'the minimum lot area requirement of the zoning district' means for such a lot is not settled. Ask the zoning officer",
+      "Uses not specifically or adequately defined may be added as conditional uses, residential ones only in RR (27-304c(1), d). The code defines the accessory dwelling (H14), so this path is not shown as an ADU route",
+      "A guest house (J16) by special exception in C/R and WS is transient lodging, stays of at most 14 days, with no kitchens in guest rooms. A dwelling in combination (J26) is a unit accessory to an institutional, commercial, consumer service or office use. Neither is a unit on a house lot",
+      "On a lot of record older than 11-21-2020 a single-family detached dwelling may be built on 1 acre in C/R and WS and on 80% of the minimum elsewhere (27-2102a). This relief names only the house, not an accessory dwelling",
+      "In the Floodplain Overlay District any development or new construction is prohibited unless it causes no rise in the base flood elevation, and floodway encroachment is prohibited unless shown to cause no rise (27-1904a)",
+      "New residential construction on a lot of one acre or less meets tighter developer figures (27-2108). They do not bind the buyer who lives there afterward",
+      "No building or structure may exceed 35 feet (27-2110a, 27-402a, 27-502a)"
+    ],
+    "notes": "Zoning office: Township of New Britain, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 27-201 (definitions up to 'Street line'), Part 3 (27-300 to 27-304 and parts of 27-305: A1, A2, B1 to B11, H heading, H2, H14, J16, J26), Parts 4, 5, 7, 8, 9 and 10, Part 21, 27-2900 and 27-2901, 27-3104, 27-1904a and the New Laws page. Not read in full: the rest of 27-305, the definitions after 'Street line', Part 11 (MHP), Parts 12 to 18 (C-1, C-2, C-3, OP, IN, I, IO) beyond the code search lines, Parts 19 and 20 beyond 27-1904a, Parts 22 to 28, 30, 32 to 34, and the PDF attachments. The code search was run for accessory dwelling, in-law, accessory apartment, dwelling in combination, living quarters, ECHO, guest house, tenant house, caretaker, conversion, H14, B4 and two-family detached. Use H14 shows only in 27-401 and 27-501, and in the PDF use table, whose search line reads 'H14 Accessory Dwelling Y Y N N'. Floor area for zoning counts no floor space in an accessory building (27-201 'Area'). Building coverage counts accessory buildings (27-201). Impervious and building coverage ratios use the ratio base site area (27-201)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling",
+      "section": "27-305 H14a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory Dwelling. Definition. A single-family detached dwelling used as a residence by relatives, tenant farmers or employees of a farm or estate.' Listed as Use H14, a residential accessory use"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-305 H14a, 27-401a, 27-501a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "By right as a residential accessory use in C/R and WS, but only as a residence for relatives, tenant farmers or employees of a farm or estate"
+    },
+    "scope_districts": {
+      "value": [
+        "C/R",
+        "WS"
+      ],
+      "section": "27-401a, 27-501a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575886",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "27-301d, 27-701, 27-801, 27-901, 27-1001",
+      "url": "https://ecode360.com/print/NE0937?guid=31574130",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Use H14 is defined and listed only in C/R and WS. 'A use not listed in Parts 4 through 20 ... is not permitted except as stated in § 27-304' (27-301d). The PDF use table's search line shows H14 as 'N' in the other districts"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-401a, 27-501a, 27-301a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575886",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A zoning permit when the standards of 27-305 H14 are met. No hearing"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-3104",
+      "url": "https://ecode360.com/print/NE0937?guid=31577114",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the standards of 27-3104a, for a dimensional variance. The code does not let a variance bring in a use the district does not permit (27-3104a(2))"
+    },
+    "use_variance_barred": {
+      "value": true,
+      "section": "27-3104a(2)",
+      "url": "https://ecode360.com/print/NE0937?guid=31577114",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "A standard the applicant must meet for every variance",
+      "quote": "That the granting of the variance will not permit the establishment within a district of any use which is not permitted in that district",
+      "districts": null
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (RR)",
+          "path": "special_exception",
+          "districts": [
+            "RR"
+          ],
+          "conditions": "'Two dwelling units within in one building, and both dwelling units within one lot' (27-305 B4). A special exception in RR (27-901b). 15,000 sq ft of lot per unit, 75 ft wide at the setback line, front 50 ft, sides 15 ft, rear 50 ft, building coverage 15%, lot impervious 30% (27-903a, 27-2108f.3). Two spaces per unit with three bedrooms or fewer (27-2901)",
+          "min_lot_sqft": 30000,
+          "section": "27-305 B4, 27-901b, 27-903a",
+          "url": "https://ecode360.com/print/NE0937?guid=31576027",
+          "confidence": "verified",
+          "note": "The 30,000 sq ft figure is 15,000 sq ft for each of the two units. A house becomes the two-family dwelling, so both units are in one building"
+        },
+        {
+          "name": "Two-family detached dwelling (VR)",
+          "path": "by_right",
+          "districts": [
+            "VR"
+          ],
+          "conditions": "'Two dwelling units within in one building, and both dwelling units within one lot' (27-305 B4), by right in VR (27-1001a). 15,000 sq ft of lot per unit with public water and sewer, 80 ft wide, front 40 ft, sides 15 ft, rear 40 ft, building coverage 35%, lot impervious 45% (27-1003a, 27-2108f.4). Two spaces per unit with three bedrooms or fewer (27-2901)",
+          "min_lot_sqft": 30000,
+          "section": "27-305 B4, 27-1001a, 27-1003a",
+          "url": "https://ecode360.com/print/NE0937?guid=31576052",
+          "confidence": "verified",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "The lot has public sewer (the 15,000 sq ft per unit figure is for public water and sewer)",
+              "section": "27-1003a note (1)"
+            },
+            {
+              "test": "public_water",
+              "condition": "The lot has public water",
+              "section": "27-1003a note (1)"
+            }
+          ],
+          "note": "The 30,000 sq ft figure is 15,000 sq ft for each of the two units. The code gives no figure without public water and sewer"
+        },
+        {
+          "name": "Planned residential development (RR, VR)",
+          "path": "by_right",
+          "districts": [
+            "RR",
+            "VR"
+          ],
+          "conditions": "A planned residential development (B11) is permitted in RR and VR under the PRD rules and the Municipalities Planning Code. It may include single-family, twin, two-family, attached and multifamily dwellings (27-305 B11, 27-901c, 27-1001d)",
+          "min_units": 3,
+          "land_development": true,
+          "section": "27-305 B11, 27-901c, 27-1001d",
+          "url": "https://ecode360.com/print/NE0937?guid=31574130",
+          "confidence": "secondary",
+          "note": "A development of many units under its own plan, not one added unit. Its tract figures were not read"
+        }
+      ],
+      "section": "27-901b, 27-901c, 27-1001a, 27-1001d",
+      "url": "https://ecode360.com/print/NE0937?guid=31576027",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "C/R",
+        "WS"
+      ],
+      "section": "27-401a, 27-501a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575886",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-305 H14b.4",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'An accessory dwelling shall be allowed only a lot or a parcel of land on which the principal use is B1 Single-Family Detached Dwelling.'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30859978",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "The accessory dwelling is a residence for relatives, tenant farmers or employees of a farm or estate.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-305 H14a",
+          "url": "https://ecode360.com/print/NE0937?guid=31575049"
+        },
+        {
+          "kind": "building_type",
+          "condition": "Only on a lot whose principal use is a single-family detached dwelling (Use B1).",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "27-305 H14b.4",
+          "url": "https://ecode360.com/print/NE0937?guid=31575049"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "In C/R the lot must be at least twice the district's 2 acre minimum, so 4 acres, 174,240 sq ft",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "C/R"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 174240,
+          "section": "27-305 H14b.5, 27-402b",
+          "url": "https://ecode360.com/print/NE0937?guid=31575049"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "In WS the lot must be at least twice the 80,000 sq ft minimum for a single-family detached dwelling, so 160,000 sq ft.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "WS"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 160000,
+          "except_planned_development": true,
+          "section": "27-305 H14b.5, 27-502b",
+          "url": "https://ecode360.com/print/NE0937?guid=31575049"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A lot in a WS watershed conservation subdivision (B1a or B1b) has a 43,560 or 25,000 sq ft minimum (27-502c, d). Whether the accessory dwelling then needs twice that (87,120 or 50,000 sq ft) or twice the 80,000 sq ft house lot minimum is not settled. Ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "WS"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "section": "27-305 H14b.5, 27-502c, d",
+          "url": "https://ecode360.com/print/NE0937?guid=31575905",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "utilities",
+          "condition": "A Bucks County Department of Health permit is needed for the sewage system if an on-lot system is proposed for the accessory dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-305 H14b.2",
+          "url": "https://ecode360.com/print/NE0937?guid=31575049"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Overlay District any development or new construction is prohibited unless it is shown not to raise the base flood elevation. Floodway encroachment is prohibited unless shown to cause no rise.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain Overlay"
+          ],
+          "section": "27-1904a",
+          "url": "https://ecode360.com/print/NE0937?guid=32451042"
+        }
+      ],
+      "section": "27-305 H14, 27-402b, 27-502b, 27-1904a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "27-305 H14a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The accessory dwelling is 'A single-family detached dwelling', a building of its own. A detached garage converted into such a dwelling is read the same way"
+    },
+    "types_not_addressed": {
+      "value": [
+        "internal",
+        "attached",
+        "over_garage"
+      ],
+      "section": "27-305 H14a, 27-305 B4",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "H14 names only a detached dwelling. A second unit inside or joined to the house would make it a two-family detached dwelling (B4), which C/R and WS do not list. A unit above a detached garage is not named"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-305 H14",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified",
+      "note": "H14 sets no floor area cap. The unit meets the building coverage for principal buildings (H14b.1)"
+    }
+  },
+  "envelope": {
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "27-305 H14b.1",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'All dimensional requirements of the zoning district applicable to principal buildings shall be observed, including, but not limited to, setback requirements and maximum building coverage.'"
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "27-305 H14b.1, 27-2110a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The accessory dwelling takes the principal building rules of the district, 35 feet. The 12 ft limit for a residential structure (H2) is for uninhabitable sheds"
+    },
+    "unit_within_building_envelope": {
+      "value": true,
+      "section": "27-305 H14b.1",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Principal building yards apply, so no smaller accessory yard"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "27-305 H14a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Relatives, tenant farmers or employees of a farm or estate"
+    },
+    "occupancy": {
+      "value": "Relatives, tenant farmers or employees of a farm or estate.",
+      "section": "27-305 H14a",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "27-305 H14",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "H14 sets no owner occupancy rule"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-305 H14b.3",
+      "url": "https://ecode360.com/print/NE0937?guid=31575049",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Only one accessory dwelling shall be allowed for each lot or parcel of land.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "27-2901",
+      "url": "https://ecode360.com/print/NE0937?guid=31576924",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The parking table lists 'H14 Accessory Building' at '2 spaces'. H14 is the accessory dwelling use"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "27-2901",
+      "url": "https://ecode360.com/print/NE0937?guid=31576924",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Two spaces for a house with three bedrooms or fewer, three with four or more, plus two for the accessory dwelling. So 4, or 5 with a larger house"
+    }
+  },
+  "districts": {
+    "C/R": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "27-402",
+        "url": "https://ecode360.com/print/NE0937?guid=31575886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "2 acres, width 150 ft, depth 200 ft. Each lot needs one contiguous acre free of watercourses, floodplains, wetlands and similar resources (27-402c). An accessory dwelling needs twice this, 4 acres"
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "27-402",
+        "url": "https://ecode360.com/print/NE0937?guid=31575886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "27-402",
+        "url": "https://ecode360.com/print/NE0937?guid=31575886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "27-402",
+        "url": "https://ecode360.com/print/NE0937?guid=31575886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "27-402",
+        "url": "https://ecode360.com/print/NE0937?guid=31575886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building coverage ratio, measured on the ratio base site area (27-201). Accessory buildings count"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "27-402",
+        "url": "https://ecode360.com/print/NE0937?guid=31575886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Impervious surface ratio for the lot, measured on the ratio base site area (27-201)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-402a, 27-2110a",
+        "url": "https://ecode360.com/print/NE0937?guid=31575886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No use may exceed 35 feet (27-2110a)"
+      }
+    },
+    "WS": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "27-502b",
+        "url": "https://ecode360.com/print/NE0937?guid=31575905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "For a single-family detached dwelling, width 175 ft, building envelope 10,000 sq ft. An accessory dwelling needs twice this, 160,000 sq ft. Watershed conservation subdivision lots: 43,560 sq ft (B1a) or 25,000 sq ft (B1b)"
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "27-502b",
+        "url": "https://ecode360.com/print/NE0937?guid=31575905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "27-502b",
+        "url": "https://ecode360.com/print/NE0937?guid=31575905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 60,
+        "section": "27-502b",
+        "url": "https://ecode360.com/print/NE0937?guid=31575905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.08,
+        "section": "27-502b",
+        "url": "https://ecode360.com/print/NE0937?guid=31575905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building coverage ratio, measured on the ratio base site area (27-201). Accessory buildings count"
+      },
+      "max_impervious_coverage": {
+        "value": 0.12,
+        "section": "27-502b",
+        "url": "https://ecode360.com/print/NE0937?guid=31575905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Impervious surface ratio for the lot, measured on the ratio base site area (27-201)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-502a, 27-2110a",
+        "url": "https://ecode360.com/print/NE0937?guid=31575905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No use may exceed 35 feet (27-2110a)"
+      }
+    },
+    "SR-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-702",
+        "url": "https://ecode360.com/print/NE0937?guid=31575996",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 150 ft, depth 180 ft. Cluster lots (B2) are smaller (27-703)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-702",
+        "url": "https://ecode360.com/print/NE0937?guid=31575996",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-702",
+        "url": "https://ecode360.com/print/NE0937?guid=31575996",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "27-702",
+        "url": "https://ecode360.com/print/NE0937?guid=31575996",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-702",
+        "url": "https://ecode360.com/print/NE0937?guid=31575996",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building coverage ratio, measured on the ratio base site area (27-201). Accessory buildings count"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-702",
+        "url": "https://ecode360.com/print/NE0937?guid=31575996",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Impervious surface ratio for the lot, measured on the ratio base site area (27-201)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-702a, 27-2110a",
+        "url": "https://ecode360.com/print/NE0937?guid=31575996",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No use may exceed 35 feet (27-2110a)"
+      }
+    },
+    "SR-2": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "27-802",
+        "url": "https://ecode360.com/print/NE0937?guid=31576012",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "2 acres, width 200 ft, depth 200 ft. Cluster lots (B2) 43,560 sq ft (27-803)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-802",
+        "url": "https://ecode360.com/print/NE0937?guid=31576012",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-802",
+        "url": "https://ecode360.com/print/NE0937?guid=31576012",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "27-802",
+        "url": "https://ecode360.com/print/NE0937?guid=31576012",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-802",
+        "url": "https://ecode360.com/print/NE0937?guid=31576012",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building coverage ratio, measured on the ratio base site area (27-201). Accessory buildings count"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-802",
+        "url": "https://ecode360.com/print/NE0937?guid=31576012",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Impervious surface ratio for the lot, measured on the ratio base site area (27-201)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-802a, 27-2110a",
+        "url": "https://ecode360.com/print/NE0937?guid=31576012",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No use may exceed 35 feet (27-2110a)"
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-902b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576027",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "1 acre, width 150 ft, depth 180 ft, for uses other than cluster, twin and two-family dwellings (27-902b). A two-family detached dwelling needs 15,000 sq ft per unit (27-903a)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-902b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576027",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-902b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576027",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "27-902b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576027",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-902b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576027",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building coverage ratio, measured on the ratio base site area (27-201). Accessory buildings count"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-902b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576027",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Impervious surface ratio for the lot, measured on the ratio base site area (27-201)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-902a, 27-2110a",
+        "url": "https://ecode360.com/print/NE0937?guid=31576027",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No use may exceed 35 feet (27-2110a)"
+      }
+    },
+    "VR": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-1002b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576052",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 75 ft, depth 125 ft, for uses other than cluster, twin, two-family, attached and multifamily dwellings (27-1002b). A twin or two-family detached dwelling needs 15,000 sq ft per unit with public water and sewer (27-1003a)"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-1002b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576052",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-1002b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576052",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-1002b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576052",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-1002b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576052",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building coverage ratio, measured on the ratio base site area (27-201). Accessory buildings count"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "27-1002b",
+        "url": "https://ecode360.com/print/NE0937?guid=31576052",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Impervious surface ratio for the lot, measured on the ratio base site area (27-201)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1002a, 27-2110a",
+        "url": "https://ecode360.com/print/NE0937?guid=31576052",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No use may exceed 35 feet (27-2110a)"
+      }
+    }
+  }
+}

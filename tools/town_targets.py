@@ -1370,6 +1370,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2024-06-27",
         "note": "Zoning: Chapter 27 Zoning (Ord. 11-15-79, as amended through Ord. No. 06-27-24). No ADU text. Residential districts permit only the listed uses. R-1 allows one single-family dwelling or one two-family dwelling on a lot (501.1), R-1A no two-family dwellings (601), R-2 two-family and multiple family dwellings (701.2) and the alteration of a pre-1979 house into a multiple family dwelling at 1,000 sq ft of lot per unit (1003). Business and Industrial districts permit any use not prohibited (801, 901). Each district part lists its uses and figures in text. The only attachment is the zoning map. New Laws: none on zoning. Read in the browser on eCode360 (LO3531).",
     },
+    "4201753304": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/30859978",
+        "plain_fetch": False,
+        "current_through": "2025-12-15",
+        "note": "Zoning: Chapter 27 Zoning (Ord. 8-14-1995, reenacted with the Code by Ord. 2007-04-01, as amended through Ord. No. 2025-01 of 7-21-2025). ADU text: 'Accessory dwelling' (Use H14), a single-family detached dwelling for relatives, tenant farmers or employees of a farm or estate, a by-right residential accessory use in C/R and WS only (27-401a, 27-501a): one per lot, only with a single-family detached dwelling, on a lot twice the district minimum, principal building yards and coverage (27-305 H14). A variance may not bring in a use the district does not permit (27-3104a(2)). Two-family detached dwellings by special exception in RR and by right in VR (15,000 sq ft per unit). The Table of Use Regulations is a PDF attachment, but each district part lists its uses in text and the dimensional tables are web text. New Laws: none. Read in the browser on eCode360 (NE0937).",
+    },
+    "4202979352": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/8342086",
+        "plain_fetch": False,
+        "current_through": "2026-08-17",
+        "note": "Zoning: Chapter 200 Zoning (Ord. No. 89-06, 6-7-1989, as amended through Ord. No. 2026-03 of 8-17-2026). No ADU listing. A use accessory to a single-family dwelling: 'quarters for guests and for servants or tenants, employed on the premises', not to be rented or leased, and in a detached building only on a lot of the district minimum times the number of housekeeping units (200-62B(1)). R-1 permits customary residential accessory uses and R-2 to R-4 take the R-1 accessory uses. Conversion of dwellings (200-63) was repealed by Ord. No. 2024-01. Two-family detached dwellings (duplex) by right in R-3 and R-4 with central sewer and public water. Each district article sets its uses and figures in text. New Laws: none. Read in the browser on eCode360 (UP2148).",
+    },
+    "4202164544": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/6638408",
+        "plain_fetch": False,
+        "current_through": "2023-01-30",
+        "note": "Zoning: Chapter 240 Zoning (Ord. No. 276, 4-20-2001, as amended). No ADU text. 'No accessory structure shall be used for dwelling purposes unless expressly authorized by this chapter' (240-32A(9)(l)). Similar type uses not listed by Zoning Hearing Board approval in R-1 and R-2 (240-32A(10), 240-38A(3), 240-100A(9)). Two-family dwellings by right in R-2 (15,000 sq ft), R-3 (11,000 sq ft) and R-4 (4,350 sq ft per unit). Each district article sets its uses and figures in text. New Laws: Ord. No. 348 (intergovernmental) and Ord. No. 349 (zoning map), not code material. Read in the browser on eCode360 (RI1755).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1401,6 +1422,7 @@ FIXED_BATCH.update({g: 30 for g in ("4209121600", "4200372400", "4213373168")})
 FIXED_BATCH.update({g: 31 for g in ("4201910464", "4201102328", "4209127280")})
 FIXED_BATCH.update({g: 32 for g in ("4203948360", "4200323000", "4209153664")})
 FIXED_BATCH.update({g: 33 for g in ("4204767344", "4203707128", "4201344328")})
+FIXED_BATCH.update({g: 34 for g in ("4201753304", "4202979352", "4202164544")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1550,6 +1572,12 @@ EXTRAS = {
     "4204767344": "Code 402 accessory dwelling units by special exception (RU)",
     "4203707128": "Code 27-605.1 accessory dwelling for family members by special exception",
     "4201344328": "batch 33 by population. Code Chapter 27 has no ADU text",
+    # Batch 34 (2026-11-16): the next towns by population without a rule file. West Deer (Allegheny) was skipped (the
+    # township website, which holds the zoning ordinance only as PDFs, was refused to the browser, no eCode360 code was
+    # found, and the unofficial elaws copy did not load).
+    "4201753304": "Code 27-305 H14 accessory dwelling for relatives, tenant farmers or farm or estate employees (C/R, WS)",
+    "4202979352": "Code 200-62B(1) quarters for guests and for servants or tenants employed on the premises",
+    "4202164544": "batch 34 by population. Code Chapter 240 has no ADU text",
 }
 
 if __name__ == "__main__":
