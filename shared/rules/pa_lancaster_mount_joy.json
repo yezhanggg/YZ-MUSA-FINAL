@@ -202,7 +202,10 @@
           "section": "135-295, 135-85B",
           "url": "https://ecode360.com/print/MO1487?guid=11527641",
           "confidence": "secondary",
-          "note": "Each figure is the district minimum for a single-family detached dwelling doubled (R-1 with public sewer, 80,000 sq ft without). Whether a second house is a second 'principal use' when the first is also a house is not settled. A second principal use in an existing building is a special exception instead (135-295D)"
+          "note": "Each figure is the district minimum for a single-family detached dwelling doubled (R-1 with public sewer, 80,000 sq ft without). Whether a second house is a second 'principal use' when the first is also a house is not settled. A second principal use in an existing building is a special exception instead (135-295D)",
+          "builds": [
+            "detached_new"
+          ]
         },
         {
           "name": "Manufactured home for farm laborers (any district, with a farm)",
@@ -219,7 +222,10 @@
           "section": "135-300B",
           "url": "https://ecode360.com/print/MO1487?guid=11527641",
           "confidence": "secondary",
-          "note": "Housing for farm workers, not a family unit. The rest of 135-300B was not read"
+          "note": "Housing for farm workers, not a family unit. The rest of 135-300B was not read",
+          "builds": [
+            "detached_new"
+          ]
         },
         {
           "name": "Accessory apartment in a Village Design Option development (R-2, R-3)",
@@ -257,7 +263,9 @@
           "section": "135-353E(2)(e), 135-353J(7)(b)",
           "url": "https://ecode360.com/11526470",
           "confidence": "secondary",
-          "note": "Read from quoted text of 135-353. The 10 acres is the development tract. Not limited to relatives. Whether a lot outside a Village Design Option plan can use it is not settled, and the rest of 135-353 was not read"
+          "note": "Read from quoted text of 135-353. The 10 acres is the development tract. Not limited to relatives. Whether a lot outside a Village Design Option plan can use it is not settled, and the rest of 135-353 was not read",
+          "accessory_max_height_ft": 25,
+          "parking_spaces": 2
         }
       ],
       "section": "135-224, 135-295, 135-300B, 135-353E(2)(e)",

@@ -1154,3 +1154,40 @@ describe('get_rule_text pass 17', () => {
     expect(wa.conditions.some((c: Any6) => /^An accessory building on a lot under 3 acres: only in a side or rear yard, .* on the lot\. Figures: side 7 ft, rear 7 ft/.test(c.condition))).toBe(true);
   });
 });
+
+// Pass 18: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 18 section).
+describe('get_rule_text pass 18', () => {
+  it('gives an attached unit the larger of the district yard and an ADU yard that binds every form (New Garden RM)', async () => {
+    const rm = await town6('pa_chester_new_garden', 'setbacks', 'RM');
+    const att = rm.forms.inside_or_attached.attached_yards;
+    expect(att.side).toMatchObject({ value: 15, section: '200-413E(11)(a)' });
+    expect(att.side.note).toMatch(/^The ADU's own yard binds a unit attached to the house too \(200-413E\(11\)\(a\), \(b\)\)\. It is larger than the district's 10 ft/);
+    expect(att.rear.value).toBe(25);
+  });
+
+  it('limits the town accessory yards by district (Nanticoke R-2 vs C-2)', async () => {
+    const r2 = await town6('pa_luzerne_nanticoke', 'setbacks', 'R-2');
+    expect(r2.forms.accessory_building.yards.side.value).toBe(5);
+    const c2 = await town6('pa_luzerne_nanticoke', 'setbacks', 'C-2');
+    expect(c2.forms.accessory_building.yards.side ?? null).toBeNull();
+    expect(c2.forms.accessory_building.yards.rear.value).toBe(10);
+  });
+
+  it('says a listing with reserved standards has its own path only, and a listing its own figures', async () => {
+    const wo = await town6('pa_montgomery_worcester', 'use', 'AGR');
+    const ten = wo.other_ways_to_add_a_unit.options.find((o: Any6) => /^Ten-acre tract/.test(o.name));
+    expect(ten.reads_as).toMatch(/^An ADU under another listing in the code, with its own path\. /);
+    const mj = await town6('pa_lancaster_mount_joy', 'use', 'R-2');
+    const vdo = mj.other_ways_to_add_a_unit.options.find((o: Any6) => /Village Design Option/.test(o.name));
+    expect(vdo.reads_as).toContain("Its own figures: an accessory building up to 25 ft tall and 2 parking spaces for the unit beyond the house's");
+  });
+
+  it('lets an overlay bar reach a path that builds the form it bars (Mount Joy 135-295)', async () => {
+    const mj = await town6('pa_lancaster_mount_joy', 'use', 'R-2');
+    const second = mj.other_ways_to_add_a_unit.options.find((o: Any6) => /^Second principal dwelling/.test(o.name));
+    expect(second.reads_as).toContain('Not if the lot is in the Identified floodplain area overlay: In an identified floodplain area, Chapter 70 prohibits any new construction');
+    expect(second.reads_as).toContain('(70-42, 70-46). The riparian corridor takes in at least the whole 100-year floodplain');
+    const two = mj.other_ways_to_add_a_unit.options.find((o: Any6) => /^Two-family dwelling/.test(o.name));
+    expect(two.reads_as).not.toContain('floodplain');
+  });
+});

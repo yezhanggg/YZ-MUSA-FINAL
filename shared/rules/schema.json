@@ -489,6 +489,14 @@
         "accessory_rear_yard_only_districts": {
           "$ref": "#/$defs/leaf_list",
           "description": "Pass 17: districts where accessory_rear_yard_only applies, when the code limits it. Elsewhere front_yard_barred, if set, is the bar said."
+        },
+        "adu_yards_bind_all_forms": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Pass 18: true when the ADU side and rear yards in this envelope (setback_side_ft, setback_rear_ft) bind every form, a unit in or attached to the house as well as one in a separate building (New Garden 200-413E(11)(a), (b)). An attached unit then takes the larger of the district yard and this one, and a unit in the house takes this one."
+        },
+        "accessory_yards_districts": {
+          "$ref": "#/$defs/leaf_list",
+          "description": "Pass 18: districts where the accessory side and rear yards in this envelope (setback_side_ft, setback_rear_ft, setback_rear_alley_ft) apply, when the code limits them (Nanticoke 500-302C: unattached accessory structures in R zones). Elsewhere they are not used: a district row's accessory yards win, then its principal yards, and with neither no figure is given."
         }
       }
     },
@@ -1360,6 +1368,10 @@
         "min_height_ft": {
           "$ref": "#/$defs/leaf_num",
           "description": "Pass 17: the minimum height of every building in the district (Elizabethtown MU 27-12A12, 35 ft). Where a detached unit's height cap is lower, its path holds only if the minimum does not reach an ADU, and a line says so."
+        },
+        "yards_abutting_residential_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Pass 18: the side and rear yard a principal building needs only where the yard abuts a residential district, with none otherwise (Lansdowne GB 330-17D(2), (3): 10 ft). The lot fact abuts_residential_district picks it. Not given, the yards are not shown and a condition says both cases. A side or rear figure of the row's own wins."
         }
       }
     },
@@ -1797,6 +1809,16 @@
                   ]
                 },
                 "description": "Pass 17: with supersedes_district_figures, the district figures the gate replaces. Others stay those of the district. Without it every district figure is replaced (Lower Pottsgrove Sanatoga Village overlay 250-125B: yards only, impervious cover stays the base district's)."
+              },
+              "planned_development_kinds": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "description": "Pass 18: with test in_planned_development, the kinds of planned or cluster development the test accepts, as the code names them (Worcester 150-110.2A(1)(c): 'Option 3', not Options 1 and 2). The lot fact planned_development_kind must match one. A lot in a planned development of unknown kind depends on it."
               }
             }
           }
@@ -2165,6 +2187,36 @@
                   ]
                 },
                 "description": "Pass 15: with adu_listing true, the ADU forms this listing covers (for example internal for a unit inside an existing house). Where the listing reaches the lot and its path is less demanding than the ADU rule's path for a form, the form takes the listing's path, and the ADU rule's conditions on who may live in the unit (family, occupancy, owner) do not reach that form. Set it only where the code gives the listing its own path and standards."
+              },
+              "builds": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "enum": [
+                    "detached_new",
+                    "garage_conversion",
+                    "over_garage",
+                    "internal",
+                    "attached"
+                  ]
+                },
+                "description": "Pass 18: the ADU forms whose building work this path takes (detached_new for a second principal building or a manufactured home placed on the lot). A bar on the land (a gate with overlays or outside_zoning_chapter) that bars every one of these forms reaches the alternative too. An ADU under another listing uses its forms when this is not set."
+              },
+              "no_standards": {
+                "type": "boolean",
+                "description": "Pass 18: true when the listing's own standards are reserved or missing, so the code gives it a path but no standards. It then reads 'with its own path', never 'with its own path and standards'."
+              },
+              "accessory_max_height_ft": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Pass 18: the height an accessory building may reach under this listing, when the listing sets its own (Mount Joy Village Design Option 135-353J(7)(b): 25 ft). It is said with the listing. Where the listing reaches the lot and covers a detached form (forms), that form takes this height."
+              },
+              "parking_spaces": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Pass 18: off-street parking spaces for the unit under this listing, beyond the house's own, when the listing sets its own (Mount Joy Village Design Option 135-353E(2)(e): two). It is said with the listing."
               }
             }
           }

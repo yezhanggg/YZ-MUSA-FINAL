@@ -191,9 +191,26 @@
           "building_types": null,
           "section": "330-15B, C(5)",
           "url": "https://ecode360.com/print/LA1627?guid=15032625"
+        },
+        {
+          "kind": "other",
+          "condition": "'No lot shall have erected upon it two or more principal buildings unless permitted otherwise by this chapter'. A unit in a second building is read as a second principal building, so the GB special exception for a use not provided for does not reach it. The bar holds in every district.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "GB"
+          ],
+          "building_types": null,
+          "section": "330-23B, 330-17C(1)(c)[4]",
+          "url": null,
+          "confidence": "secondary"
         }
       ],
-      "section": "330-15B, 330-19",
+      "section": "330-15B, 330-19, 330-23B",
       "url": "https://ecode360.com/print/LA1627?guid=15032625",
       "verified_on": "2026-11-16",
       "confidence": "verified"
@@ -332,6 +349,14 @@
         "verified_on": "2026-11-16",
         "confidence": "verified",
         "note": "'Building coverage: 75% maximum.'"
+      },
+      "yards_abutting_residential_ft": {
+        "value": 10,
+        "section": "330-17D(2), (3)",
+        "url": "https://ecode360.com/print/LA1627?guid=15033026",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No side or rear yard unless the yard abuts a residential district, then 10 ft"
       },
       "principal_max_height_ft": {
         "value": 35,

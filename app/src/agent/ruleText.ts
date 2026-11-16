@@ -280,6 +280,13 @@ const DEPENDS_FACT: Record<string, string> = {
   designated_on_plan: 'whether the lot is designated on the plan the code names',
   in_planned_development: 'whether the lot is in a planned or cluster development the code names',
 };
+/** Pass 18 (pipeline/rules.py _alt_own_figures): an alternative's own accessory height and parking, in words. */
+const altOwnFigures = (a: Obj): string => {
+  const figs: string[] = [];
+  if (typeof a.accessory_max_height_ft === 'number') figs.push(`an accessory building up to ${num(a.accessory_max_height_ft)} ft tall`);
+  if (typeof a.parking_spaces === 'number') figs.push(`${num(a.parking_spaces)} parking space${a.parking_spaces === 1 ? '' : 's'} for the unit beyond the house's`);
+  return figs.length ? `Its own figures: ${figs.join(' and ')}` : '';
+};
 /** Pass 13: a disputed path's note after "The other reading: ", its first letter lower case unless an acronym. */
 const otherReading = (note: string): string => {
   const t = note.replace(/\.$/, '');
@@ -704,16 +711,27 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
     if (k === 'setback_side_ft' && sidesOnly && (attached || !fromRow('accessory_setback_side_ft'))) return sidesOnly;
     if (k === 'setback_side_ft' && sidesBoth && (attached || !fromRow('accessory_setback_side_ft')) && (attached || !pick('envelope', k))) return sidesBoth;
     if (tierNote && tiers!.some((x) => isObj(x) && k in x && (x.applies_to ?? 'accessory') === (attached ? 'principal' : 'accessory'))) return tierNote;
-    if (attached) return byTypeYard(k, fromRow(k) ?? pick('envelope', k));
+    if (attached) return byTypeYard(k, bindAllYard(k, fromRow(k)) ?? pick('envelope', k));
     // Pass 13 (pipeline/rules.py _rear_yard_only_yards): the town's accessory side and rear yards hold only inside the
     // rear yard. Elsewhere the district yards, which are the figures shown (none without a district row).
-    const town = pick('envelope', k);
+    // Pass 18 (pipeline/rules.py _accessory_yards_scope): envelope.accessory_yards_districts limits the town's
+    // accessory side and rear yards by district. Elsewhere the district's accessory yard, then its principal yard.
+    const town = k === 'setback_front_ft' || inDistricts(file, 'accessory_yards_districts', district) ? pick('envelope', k) : null;
     if (insideRear && (k === 'setback_side_ft' || k === 'setback_rear_ft') && isObj(town) && typeof town.value === 'number' && !fromRow(`accessory_${k}`)) {
       const d = fromRow(k);
       const tail = `Inside the rear yard: ${num(town.value)} ft (${insideRear.section ?? ''}). Elsewhere the district yard`;
       return d && isObj(d) ? { ...d, note: ownerText(`${tail}, shown here`) } : { ...ruleOut('envelope.accessory_yards_inside_rear_yard', insideRear), value: null, note: ownerText(`${tail}, not on file for this district`) };
     }
     return fromRow(`accessory_${k}`) ?? town ?? fromRow(k);
+  };
+  // Pass 18 (pipeline/rules.py _town_setbacks): envelope.adu_yards_bind_all_forms. The ADU side and rear yards bind a
+  // unit attached to the house too, so the larger of the district yard and the ADU yard is the figure.
+  const bindAllYard = (k: string, rowYard: Obj | null): Obj | null => {
+    const all = leafAt(file, 'envelope', 'adu_yards_bind_all_forms');
+    const own = pick('envelope', k);
+    if (!all || all.value !== true || (k !== 'setback_side_ft' && k !== 'setback_rear_ft') || !isObj(own) || typeof own.value !== 'number') return rowYard;
+    if (rowYard && typeof rowYard.value === 'number' && rowYard.value >= own.value) return rowYard;
+    return { ...own, note: ownerText(`The ADU's own yard binds a unit attached to the house too (${all.section ?? ''})${rowYard && typeof rowYard.value === 'number' ? `. It is larger than the district's ${num(rowYard.value)} ft` : ''}`) };
   };
   // Pass 13: a yard set by building type in the district row (districts.<code>.<yard>_by_type). No lot facts here,
   // so the house types' own figures are named beside the district figure.
@@ -1111,7 +1129,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     for (const t of forms) byType[t] = a.path;
     const conf = a.confidence ?? listingAlts!.confidence ?? null;
     const names = forms.map(label).join(', ');
-    const text = `${names.charAt(0).toUpperCase()}${names.slice(1)}: ${label(a.path)} under another listing in the code, ${String(a.name)} (${a.section ?? ''}). That listing has its own path and standards. The ADU rule's family, occupancy and house type conditions do not reach it${conf === 'verified' ? '' : '. The reading is not settled. Ask the zoning officer'}. See the other paths`;
+    const text = `${names.charAt(0).toUpperCase()}${names.slice(1)}: ${label(a.path)} under another listing in the code, ${String(a.name)} (${a.section ?? ''}). That listing has its own path${a.no_standards === true ? '' : ' and standards'}${altOwnFigures(a) ? `. ${altOwnFigures(a)}` : ''}. The ADU rule's family, occupancy and house type conditions do not reach it${conf === 'verified' ? '' : '. The reading is not settled. Ask the zoning officer'}. See the other paths`;
     listingForms.push({ forms, path: a.path, name: a.name, section: a.section ?? null, note: text });
     parts.push(text);
     for (const c of conditions)
@@ -1152,6 +1170,19 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
       ...(kept.length ? { still_applies: `Town lot rules the bill does not address still apply: ${kept.map((k, i) => (i ? k.charAt(0).toUpperCase() + k.slice(1) : k)).join('. ')}` } : {}),
     };
   const alts = leafAt(file, 'approval', 'alternatives');
+  const altGates = Array.isArray(leafAt(file, 'eligibility', 'gates')?.value) ? (leafAt(file, 'eligibility', 'gates')!.value as Json[]).filter(isObj) : [];
+  const landBars = (a: Obj): string[] => {
+    const forms = Array.isArray(a.builds) && a.builds.length ? (a.builds as string[]) : a.adu_listing === true && Array.isArray(a.forms) ? (a.forms as string[]) : [];
+    if (!forms.length) return [];
+    const by = new Map<string, string[]>();
+    for (const g of altGates) {
+      if (g.effect !== 'bars' || !Array.isArray(g.overlays) || !g.overlays.length) continue;
+      if (!forms.every((t) => !Array.isArray(g.applies_to) || (g.applies_to as string[]).includes(t))) continue;
+      const lead = `Not if the lot is in the ${overlayWords(g.overlays as string[])}`;
+      by.set(lead, [...(by.get(lead) ?? []), `${String(g.condition).replace(/\.$/, '')} (${g.section ?? ''})`]);
+    }
+    return [...by.entries()].map(([lead, xs]) => `${lead}: ${xs.join('. ')}`);
+  };
   if (Array.isArray(alts?.value) && alts!.value.length) {
     const options = alts!.value.filter(isObj);
     const anyAdu = options.some((a) => a.adu_listing === true);
@@ -1163,7 +1194,8 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
         const conf = a.confidence ?? alts!.confidence ?? null;
         const p = `${label(a.path)}${a.land_development === true ? ' with land development plan approval' : ''}`;
         const extra = [
-          a.adu_listing === true ? 'An ADU under another listing in the code, with its own path and standards' : 'Not an ADU. A second unit by another path',
+          a.adu_listing === true ? `An ADU under another listing in the code, with its own path${a.no_standards === true ? '' : ' and standards'}` : 'Not an ADU. A second unit by another path',
+          altOwnFigures(a) || null,
           a.land_development === true ? 'Needs land development plan approval as well as zoning, so it is not a plain zoning permit' : null,
           typeof a.min_units === 'number' && a.min_units > 2 ? `Needs ${a.min_units} or more units in all, so it is not a path for one added unit` : null,
           a.short_term_rental_only === true ? 'It is for short-term rental only, not a long-term home' : null,
@@ -1182,6 +1214,8 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
           // Pass 7 (pipeline/rules.py _alternatives): per-district lots, overlays and other tests. Never "applies" unchecked.
           isObj(a.min_lot_by_district) ? `Lot minimum by district: ${Object.entries(a.min_lot_by_district).map(([d, v]) => `${d} ${num(v)} sq ft`).join(', ')}` : null,
           Array.isArray(a.overlays) && a.overlays.length ? `Applies only if the lot is in the ${overlayWords(a.overlays as string[])}` : null,
+          // Pass 18 (pipeline/rules.py _alt_land_bars): an overlay bar reaches the path when it bars every form the path builds.
+          ...landBars(a),
           Array.isArray(a.requires) && a.requires.length
             ? `Applies only if: ${a.requires.filter(isObj).map((r) => `${r.condition}${r.section ? ` (${r.section})` : ''}`).join('. ')}`
             : null,

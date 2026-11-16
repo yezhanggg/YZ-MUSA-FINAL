@@ -149,7 +149,8 @@
           "section": "150-110.4C(2)(a)",
           "url": "https://ecode360.com/print/WO1349?guid=11722691",
           "confidence": "secondary",
-          "note": "It sits under Option 3 in 150-110.4C, so whether it is a route apart from an Option 3 subdivision is not settled. The standards it points to (150-110.20C) are reserved, so the code gives none"
+          "note": "It sits under Option 3 in 150-110.4C, so whether it is a route apart from an Option 3 subdivision is not settled. The standards it points to (150-110.20C) are reserved, so the code gives none",
+          "no_standards": true
         }
       ],
       "section": "150-83B, 150-110.4C(2)(a)",
@@ -189,7 +190,10 @@
           "test": "in_planned_development",
           "section": "150-110.2A(1)(c), (2), 150-110.3C, E, 150-110.4C",
           "url": "https://ecode360.com/print/WO1349?guid=11722691",
-          "confidence": "secondary"
+          "confidence": "secondary",
+          "planned_development_kinds": [
+            "Option 3"
+          ]
         },
         {
           "kind": "lot_size",
@@ -216,7 +220,10 @@
           "test": "in_planned_development",
           "supersedes_district_figures": true,
           "section": "150-110.6, 150-110.7, 150-110.9B(2)",
-          "url": "https://ecode360.com/print/WO1349?guid=11722691"
+          "url": "https://ecode360.com/print/WO1349?guid=11722691",
+          "planned_development_kinds": [
+            "Option 3"
+          ]
         },
         {
           "kind": "design",

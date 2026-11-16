@@ -3613,3 +3613,203 @@ def test_no_district_asks_qualified(monkeypatch):
         "variance",
         "not_allowed",
     )
+
+
+# ------------------------------------------------------------------ pass 18
+
+
+def _mj(**kw):
+    lot = {**DET, "zoning_district": "R-2", "lot_sqft": 50000, "house_exists": True, **kw}
+    return rules.resolve("pa_lancaster_mount_joy", "today", lot, extra=True)
+
+
+def _alt(out, start):
+    return next(a for a in out["alternatives"] if a["name"].startswith(start))
+
+
+def test_land_bar_reaches_other_paths():
+    """Mount Joy (alternatives[].builds): Chapter 70 and 135-306 bar new construction in the identified floodplain
+    area, so a second principal dwelling (135-295) does not apply on a floodplain lot. Its overlays not given: applies
+    only if the lot is clear of it. A lot known to be outside: unchanged."""
+    fp = _alt(_mj(overlays=["Identified floodplain area"]), "Second principal dwelling")
+    assert fp["applies"] is False
+    assert (
+        ". Not on this lot: In an identified floodplain area, Chapter 70 prohibits any new construction" in fp["note"]
+    )
+    assert "(70-42, 70-46). The riparian corridor takes in" in fp["note"]
+    open_ = _alt(_mj(), "Second principal dwelling")
+    assert open_["applies"] is None
+    assert ". Not if the lot is in the Identified floodplain area overlay: In an identified" in open_["note"]
+    clear = _alt(_mj(overlays=[]), "Second principal dwelling")
+    assert clear["applies"] is True and "floodplain" not in clear["note"]
+    # a path with no builds field is not reached; no marker leaks into the conditions
+    assert _alt(_mj(overlays=["Identified floodplain area"]), "Two-family dwelling")["applies"] is True
+    assert not any("_land_bar" in c for c in _mj()["conditions"])
+
+
+def _wo(**kw):
+    lot = {**DET, "zoning_district": "AGR", "lot_sqft": 300000, **kw}
+    return rules.resolve("pa_montgomery_worcester", "today", lot, extra=True)
+
+
+def test_status_never_by_right_on_a_variance_lot():
+    """Worcester AGR: a lot outside an Option 3 subdivision fails the by-right rule, so adu_status reads its path."""
+    out = _wo(in_planned_development=False)
+    assert out["approval_path"] == "variance" and out["adu_status"] == "variance"
+    assert _wo(in_planned_development=True, planned_development_kind="Option 3")["adu_status"] == "allowed_by_right"
+
+
+def test_planned_development_kind_option_3():
+    """Worcester 150-110.2A(1)(c) (gates[].planned_development_kinds): only an Option 3 lot qualifies. A lot in an
+    Option 1 subdivision is barred. A lot in a planned development of unknown kind depends on the kind."""
+    o3 = _wo(in_planned_development=True, planned_development_kind="option 3")
+    assert o3["allowed"] and o3["approval_qualifier"] is None
+    o1 = _wo(in_planned_development=True, planned_development_kind="Option 1")
+    assert not o1["allowed"] and o1["approval_path"] == "variance"
+    unk = _wo(in_planned_development=True)
+    assert unk["allowed"] and unk["approval_qualifier"] == "depends_on_lot_facts"
+    gate = next(c for c in unk["conditions"] if c["condition"].startswith("An ADU is allowed only on a lot"))
+    assert gate["condition"].endswith(
+        "Depends on which kind of planned or cluster development the lot is in (planned_development_kind), which was "
+        "not given. It must be Option 3"
+    )
+    assert any(d["fact"].startswith("which kind of planned") for d in unk["depends_on"])
+    none = _wo()
+    gate = next(c for c in none["conditions"] if c["condition"].startswith("An ADU is allowed only on a lot"))
+    assert (
+        "(in_planned_development) and which kind it is (planned_development_kind), which were not given"
+        in (gate["condition"])
+    )
+
+
+def test_listing_with_reserved_standards():
+    """Worcester 150-110.4C(2)(a) (alternatives[].no_standards): the standards it points to are reserved."""
+    a = _alt(_wo(), "Ten-acre tract")
+    assert a["note"].startswith("An ADU under another listing in the code, with its own path. ")
+    assert "path and standards" not in a["note"]
+
+
+def test_adu_yards_bind_every_form():
+    """New Garden 200-413E(11)(a), (b) (envelope.adu_yards_bind_all_forms): an attached unit takes the larger of the
+    district yard and the 15 ft ADU yard, and a unit in the house takes 15 ft."""
+    out = rules.resolve(
+        "pa_chester_new_garden", "today", {**DET, "zoning_district": "RM", "lot_sqft": 9000}, extra=True
+    )
+    assert out["setbacks_by_type"]["attached"] == {"setback_front_ft": 15, "setback_side_ft": 15, "setback_rear_ft": 25}
+    assert out["setbacks_by_type"]["internal"] == {
+        "setback_front_ft": None,
+        "setback_side_ft": 15,
+        "setback_rear_ft": 15,
+    }
+
+
+def test_second_principal_building_bars_the_unlisted_path():
+    """Lansdowne GB: the special exception for a use not provided for (330-17C(1)(c)[4]) does not reach a unit in a
+    second building, which 330-23B bars. Every form is then a use variance."""
+    out = rules.resolve("pa_delaware_lansdowne", "today", {**DET, "zoning_district": "GB", "lot_sqft": 6000})
+    assert set(out["approval_by_type"].values()) == {"variance"}
+    assert out["path_to_ask"]["path"] == "variance"
+    assert any(
+        r.startswith("'No lot shall have erected upon it two or more principal buildings")
+        and r.endswith(
+            "The bar holds in every district (330-23B, 330-17C(1)(c)[4]). Not allowed here: detached new, "
+            "garage conversion, over garage"
+        )
+        for r in out["reasons"]
+    )
+
+
+def test_gate_bar_line_drops_its_own_full_stop_held_for_lot_towns(monkeypatch):
+    """A gate's bar line never reads ". (" before its sections. Held for the ten lot towns (PASS18_HOLD_TOWNS)."""
+    lot = {**DET, "zoning_district": "R-2", "lot_sqft": 12000}
+    mj = rules.resolve("pa_lancaster_mount_joy", "today", lot)
+    assert any(r.endswith("existing dwelling (135-225C, D). Not allowed here: detached new") for r in mj["reasons"])
+    assert not any(". (" in r for r in mj["reasons"])
+    assert len(rules.PASS18_HOLD_TOWNS) == 10 and "pa_lehigh_allentown" in rules.PASS18_HOLD_TOWNS
+    al = {"zoning_district": "N3", "building_type": "detached", "lot_sqft": 6000, "has_alley": False}
+    line = "A corner lot with a side street also qualifies"
+    held = rules.resolve("pa_lehigh_allentown", "today", al)
+    assert any(f"{line}. (660-42C(1)(c)). Not allowed here" in r for r in held["reasons"])
+    monkeypatch.setattr(rules, "PASS18_HOLD_TOWNS", set())
+    now = rules.resolve("pa_lehigh_allentown", "today", al)
+    assert any(f"{line} (660-42C(1)(c)). Not allowed here" in r for r in now["reasons"])
+
+
+def test_accessory_yards_by_district():
+    """Nanticoke 500-302C (envelope.accessory_yards_districts): the 5 ft accessory yards are for R zones. In C-2 the
+    principal side yards apply and are not on file, so no side figure. C-OP takes its own row."""
+    c2 = rules.resolve("pa_luzerne_nanticoke", "today", {**DET, "zoning_district": "C-2", "lot_sqft": 6000}, extra=True)
+    assert c2["setbacks_by_type"]["detached_new"]["setback_side_ft"] is None
+    assert c2["setbacks_by_type"]["detached_new"]["setback_rear_ft"] == 10 and c2["setback_rear_alley_ft"] is None
+    r2 = rules.resolve("pa_luzerne_nanticoke", "today", {**DET, "zoning_district": "R-2", "lot_sqft": 6000}, extra=True)
+    assert r2["setbacks_by_type"]["detached_new"]["setback_side_ft"] == 5
+    cop = rules.resolve("pa_luzerne_nanticoke", "today", {**DET, "zoning_district": "C-OP", "lot_sqft": 60000})
+    assert cop["setback_side_ft"] == 20
+
+
+def test_doubt_said_once():
+    """Nanticoke C-2: the scope line names where the rule reaches and the doubt line says the doubt, once."""
+    out = rules.resolve("pa_luzerne_nanticoke", "today", {**DET, "zoning_district": "C-2", "lot_sqft": 6000})
+    assert (
+        sum(
+            "Whether it reaches C-2 is in doubt" in r or "Whether the ADU rule reaches C-2 is in doubt" in r
+            for r in out["reasons"]
+        )
+        == 1
+    )
+    assert any(r.startswith("The ADU rule reaches R-1, R-2, R-3, C-1, C-OP (") for r in out["reasons"])
+
+
+def test_services_row_minimum_is_not_the_district_minimum():
+    """Lower Saucon R20 without public sewer: the 40,000 sq ft figure is 180-94A's, never "the district minimum"."""
+    lot = {**DET, "zoning_district": "R20", "lot_sqft": 25000, "public_sewer": False}
+    out = rules.resolve("pa_northampton_lower_saucon", "today", lot, extra=True)
+    c = next(c for c in out["conditions"] if c["kind"] == "lot_size" and c["met"] is False)
+    assert c["condition"].startswith(
+        "If the ADU needs a lot that meets the lot minimum for the lot's sewer and water, 40,000 sq ft (180-94A(1), (2), "
+        "180-137A(3), a reading that needs care)"
+    )
+    assert not any("district minimum of 40,000" in c["condition"] for c in out["conditions"])
+    sewer = rules.resolve("pa_northampton_lower_saucon", "today", {**lot, "public_sewer": True, "public_water": True})
+    assert any("district minimum of 20,000 sq ft" in c["condition"] for c in sewer["conditions"])
+
+
+def test_yards_only_where_abutting_residential():
+    """Lansdowne GB 330-17D(2), (3) (districts.<code>.yards_abutting_residential_ft): 10 ft side and rear yards only
+    where the yard abuts a residential district. Not given: a condition says both cases."""
+    lot = {**DET, "zoning_district": "GB", "lot_sqft": 6000}
+    out = rules.resolve("pa_delaware_lansdowne", "today", lot)
+    assert any(
+        c["condition"].startswith("Side and rear yards in GB: 10 ft where the yard abuts a residential district")
+        for c in out["conditions"]
+    )
+    data = rules.load_rules("pa_delaware_lansdowne")
+    for fact, want in ((True, 10), (False, 0)):
+        picked, principal = {}, {}
+        rules._apply_district_town(picked, data, "x", {**lot, "abuts_residential_district": fact}, principal)
+        assert principal["setback_side_ft"][0]["value"] == want and principal["setback_rear_ft"][0]["value"] == want
+    yes = rules.resolve("pa_delaware_lansdowne", "today", {**lot, "abuts_residential_district": True})
+    assert not any("abuts a residential district" in c["condition"] for c in yes["conditions"])
+
+
+def test_listing_own_height_and_parking():
+    """Mount Joy Village Design Option (alternatives[].accessory_max_height_ft, parking_spaces): 25 ft and two
+    spaces. On a lot it reaches, the garage forms take 25 ft and the "does not name" line leaves them. Where it may
+    reach, the line names it."""
+    vdo = {"designated_on_plan": True, "public_sewer": True, "public_water": True, "tract_sqft": 500000}
+    on = _mj(lot_sqft=12000, **vdo)
+    assert on["approval_by_type"]["garage_conversion"] == "by_right"
+    assert on["max_height_by_type"]["garage_conversion"] == 25 and on["max_height_by_type"]["over_garage"] == 25
+    assert not any(r.startswith("The code does not name") for r in on["reasons"])
+    assert any(
+        "Its own figures: an accessory building up to 25 ft tall and 2 parking spaces for the unit beyond the house's"
+        in r
+        for r in on["reasons"]
+    )
+    maybe = _mj(lot_sqft=12000)
+    line = next(r for r in maybe["reasons"] if r.startswith("The code does not name garage conversion, over garage"))
+    assert line.endswith(
+        "Accessory apartment in a Village Design Option development (R-2, R-3) (135-353E(2)(e), 135-353J(7)(b)) may "
+        "cover garage conversion, over garage on this lot. See the other paths"
+    )
+    assert maybe["max_height_by_type"]["garage_conversion"] is None

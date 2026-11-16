@@ -908,6 +908,23 @@ PASS16_HOLD_TOWNS: set[str] = set()
 # qualified), and the tracts of the 13 lots with no district were rebuilt (variance to the qualified path). Keep the
 # set for a later pass.
 PASS17_HOLD_TOWNS: set[str] = set()
+# Pass 18 holds its change that can reach stored lot records, for the ten lot towns until their next lot rebuild: a
+# gate's bar line drops the condition's own closing full stop before its sections ("... no other use (330-23B). Not
+# allowed here: ..." in place of "... no other use. (330-23B). Not allowed here: ..."). The lot build keeps that
+# line as a reason. Every other pass 18 change is to keys the lot record does not keep (alternatives, adu_status,
+# conditions) or to fields no lot town file uses.
+PASS18_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
 NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
@@ -1398,6 +1415,15 @@ def _apply_district_town(
         if leaf.get("value") is None and (picked.get(path) or ({}, ""))[0].get("value") is not None:
             continue
         picked[path] = (leaf, yard_where)
+    abut = entry.get("yards_abutting_residential_ft")  # pass 18: side and rear yards only where the lot abuts R
+    fact = lot.get("abuts_residential_district")
+    if _usable(abut) and abut.get("value") is not None and fact is not None:
+        for k in ("setback_side_ft", "setback_rear_ft"):
+            if k not in principal:  # a figure of the row's own wins
+                principal[k] = (
+                    {**abut, "value": abut["value"] if fact else 0},
+                    f"{where}.yards_abutting_residential_ft",
+                )
     by_type = entry.get("max_building_coverage_by_type")
     if _usable(by_type) and isinstance(by_type.get("value"), dict) and by_type["value"].get(btype) is not None:
         # Coverage set by building type: the lot's house type picks the share
@@ -1476,6 +1502,7 @@ def _pick_town(
     picked: Picked = {}
     principal: dict[str, tuple[dict[str, Any], str]] = {}
     _apply_local(picked, data, place)
+    _accessory_yards_scope(picked, data, place, lot)  # pass 18: the town's accessory yards by district
     _apply_district_town(picked, data, place, lot, principal)
     _rear_yard_only_yards(picked, data, place, principal)
     how = None
@@ -1636,8 +1663,27 @@ def _gate_paths(data: dict[str, Any], lot: dict[str, Any], historic: bool) -> li
     return out
 
 
+def _pd_kind_met(g: dict[str, Any], lot: dict[str, Any]) -> bool | None:
+    """Pass 18: gates[].planned_development_kinds. The lot must be in a planned or cluster development of one of these
+    kinds (Worcester's Option 3, not Options 1 and 2). None when either fact was not given."""
+    inside = lot.get("in_planned_development")
+    if inside is not True:
+        return None if inside is None else False
+    kind = lot.get("planned_development_kind")
+    return None if kind is None else _match_code(kind, g["planned_development_kinds"]) is not None
+
+
+def _pd_kind_words(g: dict[str, Any], lot: dict[str, Any]) -> str:
+    """Pass 18: the facts a planned_development_kinds gate depends on, in plain words."""
+    if lot.get("in_planned_development") is True:
+        return "which kind of planned or cluster development the lot is in (planned_development_kind)"
+    return f"{HOUSE_TESTS['in_planned_development']} and which kind it is (planned_development_kind)"
+
+
 def _gate_met(g: dict[str, Any], lot: dict[str, Any]) -> bool | None:
     test, area = g.get("test"), lot.get("lot_sqft")
+    if test == "in_planned_development" and g.get("planned_development_kinds"):
+        return _pd_kind_met(g, lot)
     if test in HOUSE_TESTS:
         return _house_met(test, g.get("value"), g.get("value_date"), lot)
     if test == "has_alley":
@@ -1743,11 +1789,13 @@ def _town_conditions(
     hold13: bool = False,
     hold14: bool = False,
     hold15: bool = False,
+    hold18: bool = False,
 ) -> list[dict[str, Any]]:
     """Who may live there, owner rule, existing-building-only, type, district and lot gates, each cited.
     hold: a lot town whose pass 10 sentence fixes wait for its next lot rebuild (LOT_RECORD_TOWNS).
     hold14: a lot town whose pass 14 sentence fixes wait for its next lot rebuild (PASS14_HOLD_TOWNS).
-    hold15: a lot town whose pass 15 sentence fix waits for its next lot rebuild (PASS15_HOLD_TOWNS)."""
+    hold15: a lot town whose pass 15 sentence fix waits for its next lot rebuild (PASS15_HOLD_TOWNS).
+    hold18: a lot town whose pass 18 sentence fix waits for its next lot rebuild (PASS18_HOLD_TOWNS)."""
     out = []
     status = _leaf(data, ("adu", "status"))
     if scope["districts"] and scope["in_scope"] is not True:
@@ -1881,6 +1929,7 @@ def _town_conditions(
             )
         )
     dm = _district_min(data, lot)
+    by_services = not hold18 and _min_lot_by_services(data, lot)  # pass 18: never "the district minimum" then
     if dm and not historic:
         leaf, need, share = dm
         area = lot.get("lot_sqft")
@@ -1889,14 +1938,11 @@ def _town_conditions(
             rule = _leaf(data, ("eligibility", "requires_conforming_lot")) or _must_leaf(
                 data, ("eligibility", "min_lot_share_of_district")
             )
+            which = "lot minimum for the lot's sewer and water" if by_services else "district minimum"
             text = (
                 f"The ADU needs a lot of at least {need:,.0f} sq ft"
-                + (
-                    f", {share:.0%} of the district minimum of {leaf['value']:,.0f}"
-                    if share != 1
-                    else ", the district minimum"
-                )
-                + f" ({rule['section']})"
+                + (f", {share:.0%} of the {which} of {leaf['value']:,.0f}" if share != 1 else f", the {which}")
+                + (f" ({leaf['section']}, {rule['section']})" if by_services else f" ({rule['section']})")
             )
             out.append(_cond("lot_size", text, leaf, met, effect="bars"))
         elif _rcl_reading(data):  # a secondary reading: a condition with "if", never a bar
@@ -1904,8 +1950,13 @@ def _town_conditions(
             out.append(
                 _cond(
                     "lot_size",
-                    f"If the ADU needs a lot that meets the district minimum of {leaf['value']:,.0f} sq ft "
-                    f"({rcl['section']}, a reading that needs care)"
+                    (
+                        "If the ADU needs a lot that meets the lot minimum for the lot's sewer and water, "
+                        f"{leaf['value']:,.0f} sq ft ({leaf['section']}, {rcl['section']}, a reading that needs care)"
+                        if by_services
+                        else f"If the ADU needs a lot that meets the district minimum of {leaf['value']:,.0f} sq ft "
+                        f"({rcl['section']}, a reading that needs care)"
+                    )
                     + (". This lot is below it. Ask the zoning officer" if met is False else ""),
                     leaf,
                     met,
@@ -1917,8 +1968,13 @@ def _town_conditions(
             out.append(
                 _cond(
                     "district_lot_rule",
-                    f"This lot is below the district minimum of {leaf['value']:,.0f} sq ft. It may be a nonconforming lot. "
-                    f"Ask the zoning officer whether an ADU is allowed on it",
+                    (
+                        f"This lot is below the lot minimum for its sewer and water, {leaf['value']:,.0f} sq ft "
+                        f"({leaf['section']}). "
+                        if by_services
+                        else f"This lot is below the district minimum of {leaf['value']:,.0f} sq ft. "
+                    )
+                    + "It may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it",
                     leaf,
                     False,
                 )
@@ -1927,11 +1983,28 @@ def _town_conditions(
             out.append(
                 _cond(
                     "district_lot_rule",
-                    f"The district's minimum lot is {leaf['value']:,.0f} sq ft. A rule for creating lots, not an ADU rule",
+                    (
+                        f"The lot minimum for the lot's sewer and water is {leaf['value']:,.0f} sq ft ({leaf['section']})"
+                        if by_services
+                        else f"The district's minimum lot is {leaf['value']:,.0f} sq ft"
+                    )
+                    + ". A rule for creating lots, not an ADU rule",
                     leaf,
                     met,
                 )
             )
+    code, row = _district_row(data, lot)
+    abut = row.get("yards_abutting_residential_ft")
+    if _usable(abut) and abut.get("value") is not None and lot.get("abuts_residential_district") is None:
+        out.append(  # pass 18: the yards hold only where the lot abuts a residential district, which is not known
+            _cond(
+                "other",
+                f"Side and rear yards in {code}: {abut['value']:,.0f} ft where the yard abuts a residential district, "
+                "none otherwise. Depends on whether the lot abuts a residential district (abuts_residential_district), "
+                "which was not given",
+                abut,
+            )
+        )
     dens = _density(data, lot)
     if dens:
         per, need, binding = dens
@@ -2192,7 +2265,18 @@ def _town_conditions(
                 )
                 if c["met"] is False:
                     c["effect"] = "condition"
-            if c["test"] in HOUSE_TESTS and c["met"] is None:
+            if effect == "bars" and (g.get("overlays") or g.get("outside_zoning_chapter")):
+                # pass 18: a bar on the land (an overlay, another chapter) reaches the other paths too. Popped later
+                c["_land_bar"] = g["condition"]
+            if c["test"] == "in_planned_development" and g.get("planned_development_kinds") and c["met"] is None:
+                c["fact"] = _pd_kind_words(g, lot)  # pass 18: the kind of planned development decides it
+                c["condition"] = (
+                    c["condition"].rstrip(".")
+                    + f". Depends on {c['fact']}, which {'was' if lot.get('in_planned_development') else 'were'} not given. "
+                    + "It must be "
+                    + " or ".join(g["planned_development_kinds"])
+                )
+            elif c["test"] in HOUSE_TESTS and c["met"] is None:
                 c["condition"] = (
                     c["condition"].rstrip(".") + f". Depends on {HOUSE_TESTS[c['test']]}, which was not given"
                 )
@@ -2311,6 +2395,14 @@ def _district_min(data: dict[str, Any], lot: dict[str, Any]) -> tuple[dict[str, 
     return leaf, leaf["value"] * share, share
 
 
+def _min_lot_by_services(data: dict[str, Any], lot: dict[str, Any]) -> bool:
+    """Pass 18: the lot minimum comes from the services row that fits the lot (Lower Saucon 180-94A), not the district
+    table. Its sentence then says so, never "the district minimum"."""
+    code = _match_code(lot.get("zoning_district"), list((data.get("districts") or {}).keys()))
+    hit = _utility_row((data.get("districts") or {}).get(code) or {}, lot) if code else None
+    return bool(hit and hit[0].get("min_lot_sqft") is not None)
+
+
 def _pd_replaces_min(data: dict[str, Any], lot: dict[str, Any], historic: bool) -> bool:
     """Pass 15: the lot is in a planned or cluster development whose own lot figures replace the district minimum:
     districts.<code>.min_lot_replaced_in_planned_development, or a planned-development gate with
@@ -2327,6 +2419,7 @@ def _pd_replaces_min(data: dict[str, Any], lot: dict[str, Any], historic: bool) 
         and g.get("test") == "in_planned_development"
         and not g.get("overlays")
         and _gate_scope(g, lot, historic)
+        and _gate_met(g, lot) is not False  # pass 18: a development of another kind (planned_development_kinds)
         for g in gates
     )
 
@@ -2347,9 +2440,10 @@ def _rcl_reading(data: dict[str, Any]) -> bool:
 
 
 def _apply_gates(
-    by_type: dict[str, str], conditions: list[dict[str, Any]], fallback: str, reasons: list[str]
+    by_type: dict[str, str], conditions: list[dict[str, Any]], fallback: str, reasons: list[str], hold: bool = False
 ) -> list[dict[str, Any]]:
-    """Apply the bars the lot fails. Returns the conditions that barred a form here."""
+    """Apply the bars the lot fails. Returns the conditions that barred a form here.
+    hold: a lot town whose pass 18 sentence fix waits for its next lot rebuild (PASS18_HOLD_TOWNS)."""
     barred: list[dict[str, Any]] = []
     for c in conditions:
         if c["effect"] != "bars" or c["met"] is True or c["kind"] == "lot_area_per_unit":
@@ -2368,8 +2462,9 @@ def _apply_gates(
             by_type[t] = fallback
         if hit:
             ch = c.get("outside_zoning_chapter")
+            text = c["condition"] if hold else c["condition"].rstrip(".")  # pass 18: never ". (" before the sections
             reasons.append(
-                f"{c['condition']} ({c['section']}). Not allowed here: {', '.join(t.replace('_', ' ') for t in hit)}"
+                f"{text} ({c['section']}). Not allowed here: {', '.join(t.replace('_', ' ') for t in hit)}"
                 + (  # pass 17: relief from a bar in another chapter follows that chapter's own appeal rules
                     f". This bar is in {ch} of the code, not the zoning chapter. Relief from it follows {ch}'s own "
                     "appeal rules"
@@ -2394,6 +2489,18 @@ def _by_district(data: dict[str, Any]) -> dict[str, dict[str, Any]]:
         if _usable(row.get("adu_path")) and row["adu_path"].get("value"):
             out[code] = {"path": row["adu_path"]["value"], "section": row["adu_path"]["section"]}
     return out
+
+
+def _alt_own_figures(a: dict[str, Any]) -> str:
+    """Pass 18: an alternative's own accessory height and parking (alternatives[].accessory_max_height_ft,
+    parking_spaces), in words. Empty when it has neither."""
+    figs = []
+    if a.get("accessory_max_height_ft") is not None:
+        figs.append(f"an accessory building up to {a['accessory_max_height_ft']:,.0f} ft tall")
+    n = a.get("parking_spaces")
+    if n is not None:
+        figs.append(f"{n:,.0f} parking space{'' if n == 1 else 's'} for the unit beyond the house's")
+    return ("Its own figures: " + " and ".join(figs)) if figs else ""
 
 
 def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, Any]]:
@@ -2464,12 +2571,16 @@ def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, A
         if failed:
             flags.append("Not on this lot: " + ". ".join(failed))
         lead = (
-            "An ADU under another listing in the code, with its own path and standards"
+            # pass 18: a listing whose standards are reserved has its own path only (no_standards)
+            f"An ADU under another listing in the code, with its own path{'' if a.get('no_standards') else ' and standards'}"
             if a.get("adu_listing")
             else "Not an ADU. A second unit by another path"
         )
         if a.get("short_term_rental_only"):  # pass 9: a unit for transient guests only, not a home
             lead += ". It is for short-term rental only, not a long-term home"
+        own = _alt_own_figures(a)
+        if own:  # pass 18: the listing's own accessory height and parking
+            flags.append(own)
         dispute = a.get("disputed_path")
         if dispute:  # pass 9: another passage gives the listing a different path
             path = (
@@ -2499,6 +2610,87 @@ def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, A
             }
         )
     return out
+
+
+def _named_with_listing(
+    reasons: list[str],
+    at: int,
+    named: list[str],
+    listed: set[str],
+    alts: list[dict[str, Any]],
+    nn: dict[str, Any],
+) -> None:
+    """Pass 18: the "does not name" line, said again once an ADU under another listing is known. Forms the listing
+    covers on this lot leave the line (the line goes when none is left). A listing that may cover a form on this lot
+    is named in the line (Mount Joy: the Village Design Option apartment in a garage, 135-353E(2)(e))."""
+    left = [t for t in named if t not in listed]
+    maybe = [
+        a
+        for a in alts
+        if a.get("adu_listing") and a.get("forms") and a["applies"] is None and set(a["forms"]) & set(left)
+    ]
+    if left == named and not maybe:
+        return
+    if not left:
+        reasons.pop(at)
+        return
+    reasons[at] = (
+        f"The code does not name {', '.join(t.replace('_', ' ') for t in left)} ({nn['section']}). "
+        "Not addressed for this form, not a firm no. Ask the zoning officer"
+        + (f". {nn['note']}" if nn.get("note") else "")
+        + "".join(
+            f". {a['name']} ({a['section']}) may cover "
+            + ", ".join(t.replace("_", " ") for t in left if t in a["forms"])
+            + " on this lot. See the other paths"
+            for a in maybe
+        )
+    )
+
+
+def _alt_land_bars(
+    alts: list[dict[str, Any]], conditions: list[dict[str, Any]], overridden: list[dict[str, Any]]
+) -> None:
+    """Pass 18: a bar on the land (a gate with overlays, or from another chapter of the code) reaches an alternative
+    that builds a form the bar names (alternatives[].builds, or forms for an ADU under another listing). Mount Joy: a
+    second principal dwelling (135-295) in the identified floodplain area is new construction that Chapter 70 bars.
+    The lot fails it: the alternative does not apply. The lot's overlays not given or the bar disputed: it applies
+    only if the lot is clear of it. Every condition loses its _land_bar marker here."""
+    bars = [(c, c.pop("_land_bar")) for c in conditions if c.get("_land_bar")]
+    for c in overridden:
+        c.pop("_land_bar", None)
+    for a in alts:
+        forms = a.get("builds") or (a.get("forms") if a.get("adu_listing") else None)
+        if not forms or a["applies"] is False:
+            continue
+        lines: dict[str, list[str]] = {}  # lead -> the bars it names, so each lead is said once
+        for c, raw in bars:
+            if not all(t in (c["applies_to"] or ALL_TYPES) for t in forms):
+                continue
+            text = f"{raw.rstrip('.')} ({c['section']})"
+            if c.get("overlay_open"):
+                ov = (
+                    c["overlay_names"]
+                    if c["overlay_names"].lower().endswith("overlay")
+                    else f"{c['overlay_names']} overlay"
+                )
+                lines.setdefault(f"Not if the lot is in the {ov}", []).append(text)
+                a["applies"] = None if a["applies"] is not False else False
+            elif c.get("disputed_by"):  # the lot fails it as written, and another passage may undo it
+                d = c["disputed_by"]
+                lines.setdefault("In doubt on this lot", []).append(
+                    f"{text}. But {d['section']}: {d['note'].rstrip('.')}"
+                )
+                a["applies"] = None if a["applies"] is not False else False
+            elif c["met"] is False or (
+                c["met"] is None and not c.get("test")
+            ):  # a bar with no test holds where it reaches
+                lines.setdefault("Not on this lot", []).append(text)
+                a["applies"] = False
+            elif c["met"] is None:
+                lines.setdefault("Not if the lot fails this", []).append(text)
+                a["applies"] = None if a["applies"] is not False else False
+        if lines:
+            a["note"] = a["note"] + "".join(f". {lead}: {'. '.join(texts)}" for lead, texts in lines.items())
 
 
 # Pass 15: conditions of the ADU rule on who may live in the unit, the house type and the districts it reaches. A form
@@ -2538,7 +2730,10 @@ def _listing_forms(
         names = ", ".join(t.replace("_", " ") for t in forms)
         lines.append(
             f"{names[:1].upper()}{names[1:]}: {a['path'].replace('_', ' ')} under another "
-            f"listing in the code, {a['name']} ({a['section']}). That listing has its own path and standards. The ADU "
+            f"listing in the code, {a['name']} ({a['section']}). That listing has its own path"
+            + ("" if a.get("no_standards") else " and standards")
+            + (f". {_alt_own_figures(a)}" if _alt_own_figures(a) else "")
+            + ". The ADU "
             "rule's family, occupancy and house type conditions do not reach it"
             + ("" if a.get("confidence") == "verified" else ". The reading is not settled. Ask the zoning officer")
             + ". See the other paths"
@@ -2767,7 +2962,8 @@ def _depends_on(conditions: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not test or c["met"] is not None or (c["effect"] != "bars" and c["kind"] != "utilities"):
             continue
         fact = (
-            HOUSE_TESTS.get(test)
+            (c.get("fact") if test == "in_planned_development" else None)  # pass 18: the kind decides it
+            or HOUSE_TESTS.get(test)
             or LOT_TESTS.get(test)
             or c.get("fact")
             or "whether the lot has public sewer and water"
@@ -2894,7 +3090,12 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     if dm and dm_binds and not historic and not state and area is not None and area < dm[1]:
         leaf, need, share = dm
         fails.append(
-            f"The district's minimum lot is {leaf['value']:,.0f} sq ft ({leaf['section']})"
+            (
+                "The lot minimum for the lot's sewer and water is"
+                if place not in PASS18_HOLD_TOWNS and _min_lot_by_services(data, lot)
+                else "The district's minimum lot is"
+            )
+            + f" {leaf['value']:,.0f} sq ft ({leaf['section']})"
             + (f". The ADU rule accepts {share:.0%} of it, {need:,.0f} sq ft" if share != 1 else "")
             + f". This lot is {area:,.0f} sq ft, so any new use needs relief"
         )
@@ -2983,6 +3184,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             + (f". {conflict_leaf['note']}" if conflict_leaf.get("note") else "")
         )
     named_out = [t for t in ALL_TYPES if by_type[t] == "not_addressed" and t not in conflict_out]
+    named_at = len(reasons)  # pass 18: the line is said again below when another listing covers its forms
     if named_out:
         nn = _must_leaf(data, ("form", "types_not_addressed"))
         reasons.append(
@@ -3001,6 +3203,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         place in PASS13_HOLD_TOWNS,
         place in PASS14_HOLD_TOWNS,
         place in PASS15_HOLD_TOWNS,
+        place in PASS18_HOLD_TOWNS,
     )
     overridden: list[dict[str, Any]] = []
     chapter_bars: list[dict[str, Any]] = []
@@ -3039,13 +3242,18 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         conditions = live
     else:
         n_fails = len(fails)
-        gate_bars = _apply_gates(by_type, conditions, fallback, fails)
+        gate_bars = _apply_gates(by_type, conditions, fallback, fails, place in PASS18_HOLD_TOWNS)
         # pass 17: the lot fails only bars from another chapter of the code. Relief follows that chapter's own appeal
         # rules, never the zoning chapter's variance section
         if gate_bars and not n_fails and all(c.get("outside_zoning_chapter") for c in gate_bars):
             chapter_bars = gate_bars
     alts = _alternatives(file_data, lot)
+    _alt_land_bars(alts, conditions, overridden)  # pass 18: a bar on the land reaches the other paths too
     listing_line, listed = ([], set()) if state else _listing_forms(alts, by_type, conditions)
+    if named_out and not state:
+        _named_with_listing(
+            reasons, named_at, named_out, listed, alts, _must_leaf(data, ("form", "types_not_addressed"))
+        )
     types_allowed = [t for t in ALL_TYPES if by_type[t] in OK_PATHS]
     allowed = bool(types_allowed)
     depends = [] if state else _depends_on(conditions)
@@ -3207,7 +3415,10 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             + f" ({by_form_leaf['section']})"
         )
     if scope["districts"] and scope["in_scope"] is not True:
-        head.append(_scope_line(scope, lot, with_section=True))
+        line = _scope_line(scope, lot, with_section=True)
+        if scope.get("in_doubt") and doubt:  # pass 18: the doubt line below says it, so the scope line says it never
+            line = f"The ADU rule reaches {', '.join(scope['districts'])} ({scope['section']})"
+        head.append(line)
     if not state and not allowed and (status in NO_ADU_STATUSES or scope["in_scope"] is False):
         # pass 9: an overlay-keyed ADU listing reaches this lot (or may): said beside "no ADU rule", never hidden
         for a in alts:
@@ -3448,6 +3659,11 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         lot,
         by_type,
     )
+    for a in [] if state else alts:  # pass 18: a listing's own accessory height for the forms it covers here
+        h = a.get("accessory_max_height_ft")
+        if h is not None and a.get("adu_listing") and a["applies"] is True:
+            for t in set(a.get("forms") or []) & listed & set(DETACHED_TYPES):
+                heights[t] = h
     if acc_cap["binds"] is True and not state and acc_cap["height"] is not None:
         for t in DETACHED_TYPES:
             if heights[t] is not None or by_type[t] in OK_PATHS:
@@ -3478,7 +3694,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     out["max_height_ft"] = heights["detached_new"]
     if heights["detached_new"] is None:
         citations.pop("max_height_ft", None)
-    setbacks = _town_setbacks(picked, principal, limits, state, by_type)
+    bind_all = (_leaf(data, ("envelope", "adu_yards_bind_all_forms")) or {}).get("value") is True and not state
+    setbacks = _town_setbacks(picked, principal, limits, state, by_type, bind_all)
     if not state:  # pass 9: a unit in a qualifying existing building is exempt from some caps
         out["reasons"] += _exempt_building(data, lot, by_type, sizes, shares, size_rules, heights, setbacks)
         for t in ALL_TYPES:  # a form freed of the height limit is freed of the story limit too
@@ -3707,6 +3924,10 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     if not state and status == "allowed_by_right" and dp_path in BOARDS:
         # pass 7: a district whose path is a hearing never reads "allowed by right"
         out["adu_status"] = dp_path
+    if not state and out["adu_status"] == "allowed_by_right" and approval in ("variance", "not_allowed"):
+        # pass 18: the lot fails a test of the by-right rule (Worcester: a lot outside an Option 3 subdivision), so
+        # its path is a variance. The status never reads "allowed by right" there
+        out["adu_status"] = approval
     if state and allowed and status and status != "allowed_by_right":
         # The bill overrides the town's status (conditions_overridden says so). Today's status is in the reasons.
         out["adu_status"] = "allowed_by_right"
@@ -4275,6 +4496,19 @@ def _cap_in_scope(data: dict[str, Any], picked: Picked, lot: dict[str, Any]) -> 
     return picked
 
 
+def _accessory_yards_scope(picked: Picked, data: dict[str, Any], place: str, lot: dict[str, Any]) -> None:
+    """Pass 18: envelope.accessory_yards_districts. The town's accessory side and rear yards hold only in these
+    districts (Nanticoke 500-302C: unattached accessory structures in R zones). Elsewhere they are not used: the
+    district row's accessory yards win, then its principal yards, and with neither no figure is given."""
+    leaf = _leaf(data, ("envelope", "accessory_yards_districts"))
+    d = lot.get("zoning_district")
+    if not (_usable(leaf) and leaf.get("value") and d) or _match_code(d, leaf["value"]) is not None:
+        return
+    for k in ("setback_side_ft", "setback_rear_ft", "setback_rear_alley_ft"):
+        if (picked.get(("envelope", k)) or ({}, ""))[0].get("value") is not None:
+            picked[("envelope", k)] = ({**leaf, "value": None}, f"{place}#envelope.accessory_yards_districts")
+
+
 def _rear_only_here(data: dict[str, Any], lot: dict[str, Any]) -> bool:
     """Pass 17: envelope.accessory_rear_yard_only_districts. False when it leaves out the lot's district."""
     scope = (_leaf(data, ("envelope", "accessory_rear_yard_only_districts")) or {}).get("value")
@@ -4517,11 +4751,18 @@ def _town_setbacks(
     limits: dict[str, Any],
     state: bool,
     by_type: dict[str, str],
+    bind_all: bool = False,
 ) -> dict[str, dict[str, float | None]]:
     """Yards per ADU type. A unit inside the house adds no structure. An attached unit takes the
-    district (principal) yards. A detached unit takes the accessory yards (the headline values)."""
+    district (principal) yards. A detached unit takes the accessory yards (the headline values).
+    bind_all: pass 18, envelope.adu_yards_bind_all_forms. The ADU side and rear yards bind every form, so an attached
+    unit takes the larger of the district yard and the ADU yard, and a unit in the house takes the ADU yard."""
     out: dict[str, dict[str, float | None]] = {}
+    own_yards = ("setback_side_ft", "setback_rear_ft")
     for t in ALL_TYPES:
+        if t == "internal" and bind_all and by_type[t] in OK_PATHS:
+            out[t] = {k: (_value(picked, "envelope", k) if k in own_yards else None) for k in YARDS}
+            continue
         if t == "internal" or by_type[t] not in OK_PATHS:  # no yards for a form not allowed here (pass 7)
             out[t] = {k: None for k in YARDS}
             continue
@@ -4532,6 +4773,8 @@ def _town_setbacks(
                 own = picked.get(("envelope", k))
                 district_acc = bool(own and ".accessory_" in own[1])
                 v = principal[k][0]["value"] if k in principal else (None if district_acc else acc)
+                if bind_all and k in own_yards and acc is not None and not district_acc:
+                    v = acc if v is None else max(v, acc)
             else:
                 v = acc
             cap = state and k in limits and limits[k]["mode"] == "at_most" and v is not None
@@ -4727,6 +4970,9 @@ def _lot_from_args(a: argparse.Namespace) -> dict[str, Any]:
         "tract_sqft": a.tract_sqft,
         "in_growth_area": _yes_no(a.in_growth_area),
         "in_planned_development": _yes_no(getattr(a, "in_planned_development", None)),
+        # Pass 18: the kind of planned or cluster development, as the code names it ("Option 3")
+        "planned_development_kind": getattr(a, "planned_development_kind", None),
+        "abuts_residential_district": _yes_no(getattr(a, "abuts_residential_district", None)),
     }
 
 
@@ -4767,6 +5013,8 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument(
         "--in-planned-development", help="yes or no: the lot is in a planned or cluster development the code names"
     )
+    r.add_argument("--planned-development-kind", help="the kind of planned development, as the code names it")
+    r.add_argument("--abuts-residential-district", help="yes or no: the lot abuts a residential district")
     a = p.parse_args(argv)
     if a.cmd == "validate":
         return _cmd_validate()

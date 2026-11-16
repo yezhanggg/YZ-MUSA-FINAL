@@ -337,6 +337,14 @@
       "confidence": "secondary",
       "note": "'Must be 15 from rear most portion of principal Structure, if located in separate Structure.'"
     },
+    "adu_yards_bind_all_forms": {
+      "value": true,
+      "section": "200-413E(11)(a), (b)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Every ADU, in the house, attached or in a separate structure, must be 15 ft from all side and rear lot lines. 'Must be 15 from all side property lines' and 'Must be 15 feet from all rear property lines'"
+    },
     "district_yards_bind_accessory": {
       "value": false,
       "section": "200-413A(2)(c), Figures 200-3-1 to 200-3-16",

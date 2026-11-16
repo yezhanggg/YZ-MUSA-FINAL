@@ -388,6 +388,18 @@
       "confidence": "verified",
       "note": "'when the accessory structure abuts an alley, 10 feet shall be required'"
     },
+    "accessory_yards_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "500-302C(2), (3)",
+      "url": "https://ecode360.com/print/NA2405?guid=38323756",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The 5 ft side and rear yards (10 ft where the rear abuts an alley) are for unattached accessory structures in R zones. In other zones they meet the house's front and side yards and a 10 ft rear yard (500-302)"
+    },
     "front_yard_barred": {
       "value": true,
       "section": "500-302C, 500-305B(2)",
