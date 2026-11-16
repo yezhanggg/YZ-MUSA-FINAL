@@ -3759,7 +3759,7 @@
       "pop_rank": 202,
       "file": "pa_bucks_new_britain",
       "batch": 34,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30859978",
@@ -3769,7 +3769,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-305 H14 accessory dwelling for relatives, tenant farmers or farm or estate employees (C/R, WS))"
       ],
-      "status_note": "Open points: which minimum 27-305 H14b.5 doubles on a WS lot in a watershed conservation subdivision (27-502c, d against 27-502b). Whether a converted detached garage counts as the 'single-family detached dwelling' of H14a, and whether a unit above a detached garage does. The parking table row reads 'H14 Accessory Building', 2 spaces (27-2901). Status outside C/R and WS read as prohibited from 27-301d and the use lists, the PDF use table not opened. Not read: Part 11 (MHP), Parts 12 to 18 use lists beyond the search, the rest of 27-305."
+      "status_note": "Later checks: which minimum 27-305 H14b.5 doubles on a WS lot in a watershed conservation subdivision, and whether a B1a or B1b lot counts as the B1 use H14b.4 asks for (27-502c, d). Shown as a disputed bar below 160,000 sq ft, with a firm bar below 50,000 sq ft. Whether 27-502f accessory placement still applies to an accessory dwelling under H14b.1. Lane lots (27-2104a). The Floodplain Overlay special exception for any new building (27-1904j(1)) is a condition only. Not read: the PDF use table, J16 and J26 details, definitions after 'Street line', Part 11 (MHP), Parts 12 to 18 use lists beyond the search, the rest of 27-305."
     },
     {
       "geoid": "4202979352",
@@ -3793,7 +3793,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 200-62B(1) quarters for guests and for servants or tenants employed on the premises)"
       ],
-      "status_note": "Open points: whether the 200-62B(1) quarters for guests and for servants or tenants employed on the premises may be a full dwelling unit with a kitchen, and so whether quarters inside the house would make it a duplex. Parking for the quarters (200-73G(2) still lists 'Accessory apartments for family members' after 200-63 was repealed). The R-3 and R-4 detached-quarters lot figure without central sewer and public water (2 acres from the R-2 figures). Not read: C-3, LI, PI, 200-71, 200-72.1 adaptive reuse, Chapter 82 floodplain."
+      "status_note": "Open points: whether the 200-62B(1) quarters for non-paying guests or people employed on the premises may be a full dwelling unit with a kitchen. Parking for the quarters (200-73G(2) still lists 'Accessory apartments for family members' after 200-63 was repealed). Whether a dwelling unit can be the additional principal use of 200-72.1B(2) on a historic tract (rest of 200-72.1 not read). Not read: C-1 in full, C-3, LI and PI use lists (200-33 and Articles X to XII), 200-71 planned residential development, 200-72.3 short-term rentals (a conditional use in R-1 and R-2), Chapter 82 floodplain."
     },
     {
       "geoid": "4202164544",
@@ -3807,7 +3807,7 @@
       "pop_rank": 205,
       "file": "pa_cambria_richland",
       "batch": 34,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/6638408",
@@ -3817,7 +3817,7 @@
       "why": [
         "added as batch 34 by population. Code Chapter 240 has no ADU text"
       ],
-      "status_note": "Open points: whether the 'similar type uses' hearing (240-32A(10), 240-38A(3), 240-100A(9)) reaches R-3 and R-4 by reference, and whether a second unit is a similar use. Accessory building height is 15 ft in 240-32A(9)(j) and 25 ft in 240-34C. Code current only through 01-30-2023. Not read: Article IV (except 240-21), U, C-2, C-3, L-1, M, A districts, Article XVII, Chapter 138 floodplain."
+      "status_note": "Later checks: Chapter 138 floodplain, Article XVII special exceptions, the U district, and the code current-through date (eCode360 shows 01-30-2023). The similar-use decision (240-100A(9), B) is called a use grant in the code and is shown as a special exception hearing."
     }
   ]
 }

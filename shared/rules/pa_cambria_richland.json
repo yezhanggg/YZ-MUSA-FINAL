@@ -32,15 +32,21 @@
     "checks": [
       "The zoning code has no accessory dwelling unit, in-law suite, accessory apartment or similar listing",
       "Accessory buildings in R-1, and in the districts that take the R-1 accessory uses, may not be used as a dwelling: 'No accessory structure shall be used for dwelling purposes unless expressly authorized by this chapter' (240-32A(9)(l))",
-      "R-1, R-2 and the districts that take their uses list 'Similar type uses not specifically listed herein when authorized by the Zoning Hearing Board' (240-32A(10), 240-38A(3)). At the hearing the applicant shows the use is compatible with the district's purposes (240-100A(9), B). Whether a second unit on a house lot is such a use is not settled",
+      "R-1, R-2 and the districts that take their uses list 'Similar type uses not specifically listed herein when authorized by the Zoning Hearing Board' (240-32A(10), 240-38A(3)). At the hearing the applicant shows the use is compatible with the district's purposes (240-100A(9), B). The code calls this decision a use grant, not a variance or special exception. Whether a second unit on a house lot is such a use is not settled",
       "A two-family dwelling, 'A building designed for or occupied exclusively by two families living independently of each other, with separate dwelling unit entrances' (240-9), is by right in R-2 (15,000 sq ft), R-3 (11,000 sq ft) and R-4 (4,350 sq ft per unit) (240-38A(2), 240-39A(2), 240-45A(2), 240-50A(6), 240-51A(2)). R-1 is for one-family detached dwellings",
       "Accessory buildings may not stand in the front yard, must be at least 10 ft from the rear line and meet the district side yard, and together may not exceed 650 sq ft, one story and 15 ft (240-32A(9)(i), (j)). 240-34C gives accessory buildings 25 ft",
       "Using a lot for more than one principal building counts as a subdivision (240-9 'Lot')",
       "A lot of record below the district minimum may be built on if the use, yards, setbacks and density are met (240-21)",
       "No section read bars a use variance. Variances need the findings of 240-100B(2). The Zoning Hearing Board may also rule on 'all land use items not specifically detailed in this chapter' (240-100C)",
-      "One- and two-family dwellings need 'off street parking spaces for all vehicles' (240-107A). No count is given"
+      "One- and two-family dwellings need 'off street parking spaces for all vehicles' (240-107A). No count is given",
+      "'Mobile homes shall be permitted only in mobile home parks' (240-28)",
+      "'In a dwelling, a cellar may not contain living quarters' (240-9 'Cellar')",
+      "No building may be used to 'accommodate or house a greater number of families' than the code specifies for the district (240-16)",
+      "Every dwelling needs a public sewer connection or approved sewage facilities (240-18A) and a permanent foundation (240-18B)",
+      "In R-4 a zoning approval needs site plan approval by the Planning Commission, except for one single-family or one two-family residence (240-19A)",
+      "A one-family dwelling in R-1 needs at least 1,400 sq ft of habitable floor area (240-35)"
     ],
-    "notes": "Zoning office: Richland Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 240-9 (all definitions), Articles V to VIII (R-1, R-2, R-3, R-4), 240-100, 240-107A, 240-21 (search text) and the New Laws page. Not read: Article IV (other than 240-21), Articles IX to XIV (U, C-2, C-3, L-1, M, A), Article XVII (special exceptions), the rest of Article XVIII, Articles XIX to XXIII and Chapter 138 (floodplain). The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant and quarters. A family may include domestic servants and gratuitous guests (240-9). Coverage is the share of the lot covered by the building area of all buildings (240-9). Accessory buildings may take at most 30% of the rear yard (240-9 'Yard, rear')."
+    "notes": "Zoning office: Richland Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 240-9 (all definitions), Articles V to VIII (R-1, R-2, R-3, R-4), 240-100, 240-107A, 240-21 (search text), and the cited lines of 240-16, 240-18, 240-19A, 240-28 and 240-35 and the New Laws page. Not read: Article IV (other than 240-21), Articles IX to XIV (U, C-2, C-3, L-1, M, A), Article XVII (special exceptions), the rest of Article XVIII, Articles XIX to XXIII and Chapter 138 (floodplain). The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant and quarters. A family may include domestic servants and gratuitous guests (240-9). Coverage is the share of the lot covered by the building area of all buildings (240-9). Accessory buildings may take at most 30% of the rear yard (240-9 'Yard, rear')."
   },
   "adu": {
     "term": {
@@ -94,7 +100,7 @@
       "url": "https://ecode360.com/print/RI1755?guid=6639277",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "The Zoning Hearing Board hears 'Similar type uses not specifically listed herein' after a hearing on whether the use is compatible with the district's purposes. In R-2, R-3 and R-4 a unit inside the house may instead be a two-family dwelling, which is by right there (see the alternatives)"
+      "note": "The Zoning Hearing Board hears 'Similar type uses not specifically listed herein' after a hearing on whether the use is compatible with the district's purposes (the code calls it a use grant). In R-2, R-3 and R-4 a unit inside the house may instead be a two-family dwelling, which is by right there (see the alternatives)"
     },
     "unlisted_use_districts": {
       "value": [
