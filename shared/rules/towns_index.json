@@ -3975,7 +3975,7 @@
       "pop_rank": 224,
       "file": "pa_luzerne_hanover",
       "batch": 37,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/37662217",
@@ -3985,7 +3985,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 580-14 residential units for care of relatives)"
       ],
-      "status_note": "First reading, not yet independently reviewed. Open point: 580-14 reaches a unit within or attached to a single-family dwelling, which 580-7 defines as a detached building, so the file bars twins. 580-55A(29) onward and Articles VI, VII were not read."
+      "status_note": "Points for a later check: whether 580-14 reaches a townhouse unit (580-7 'Dwelling, single-family' against 580-7 'Townhouse' and 580-55A(4)), shown as disputed. The R-3 row holds the single-family figures, and the townhouse figures in 580-55A were not stored. 580-55A(29) onward and Articles VI and VII were not read."
     },
     {
       "geoid": "4202953608",
@@ -3999,7 +3999,7 @@
       "pop_rank": 227,
       "file": "pa_chester_new_garden",
       "batch": 37,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "municode",
       "code_url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
@@ -4009,7 +4009,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 200-413E accessory dwelling unit by right in RL, RM, RF, VC, VG and MUL)"
       ],
-      "status_note": "First reading, not yet independently reviewed. Open points: whether VG lots (no single-unit detached dwelling permitted) can hold an ADU (200-413E(1)), the 'Usable Floor Area' definition behind the 50% cap, and Chapter 96 floodplain rules, which were not read."
+      "status_note": "Points for a later check: whether VG lots can hold an ADU (a manufactured home is permitted there, an existing detached house is nonconforming), the undefined 'Usable Floor Area' behind the 50% cap, and whether the RM density of 5 units per acre counts an ADU. The 15 ft side and rear yards bind an ADU in or attached to the house too (200-413E(11)(a), (b)). They are said as a condition, while the yard line for an attached unit shows the district figure. Not read: Article V (historic preservation), 200-408 to 200-412 and the full text of 200-1103."
     },
     {
       "geoid": "4204541440",
@@ -4033,7 +4033,7 @@
       "why": [
         "added as batch 37 by population. Code Chapter 330 has no ADU text (330-27G and 330-22N(2) bar residential conversions)"
       ],
-      "status_note": "First reading, not yet independently reviewed. Open points: the PDF appendices (A4 Districts, A6 General Regulations) and 330-16, 330-17 (CBD, BAM, GB use lists) were not read, and the internal and attached forms are read as barred conversions (330-27G, 330-22N(2))."
+      "status_note": "Open: the PDF appendices A1, A3 and A4 (Districts), A6 (General Regulations) and the district sheets were not read. Article VI points to them ('For complete details, see Appendix A6'), and 330-93 governs conflicts with the text. Also open: whether the GB special exception for uses not provided for elsewhere (330-17C(1)(c)[4]) can reach a second unit while 330-27G bars residential conversions and 330-23B a second principal building. Chapter 203 (historic districts) was not read."
     }
   ]
 }

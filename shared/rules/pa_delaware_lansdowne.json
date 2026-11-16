@@ -20,7 +20,10 @@
       "https://ecode360.com/print/LA1627?guid=15033360",
       "https://ecode360.com/print/LA1627?guid=15033464",
       "https://ecode360.com/print/LA1627?guid=15033635",
-      "https://ecode360.com/print/LA1627?guid=15033816"
+      "https://ecode360.com/print/LA1627?guid=15033816",
+      "https://ecode360.com/15033816",
+      "https://ecode360.com/15032625",
+      "https://ecode360.com/print/LA1627?guid=15033026"
     ],
     "verified_on": "2026-11-16",
     "county": "Delaware",
@@ -44,10 +47,18 @@
       "In the Neighborhood Conservation District Overlay (NR, TN, NB) new buildings and additions follow the block: setbacks, size and height within set shares of the buildings within 250 ft (330-15B)",
       "Floodway: only uses that need no structures are permitted by right. Any construction that would raise flood heights is prohibited, and a DEP permit is needed (330-19C(2)(a))",
       "Parking: a single-family dwelling with one bedroom needs 1 space, with two or more bedrooms 2 spaces (330-48A)",
-      "Floodplain management is also in Chapter 187 and historic districts in Chapter 203. Neither was read",
-      "330-81 lists the Zoning Hearing Board's standards. No bar on a use variance was found in it"
+      "Floodplain management is also in Chapter 187. It says 'No variance shall be granted' for some listed activities (187-25, 187-27, 187-29). These are not ADU rules. Historic districts are in Chapter 203, which was not read",
+      "The Zoning Hearing Board may 'Hear and decide requests for variances from the provisions of this chapter' (330-80A(2)). 330-81 sets the standards for special exceptions. No bar on a use variance was found",
+      "'Two or more permitted uses shall not be permitted on one lot unless subdivision or land development approval is secured, unless these uses are unified and form one overall use' (330-23A)",
+      "Apartments need at least 600 sq ft of living area for an efficiency, 750 sq ft for one bedroom and 900 sq ft for two bedrooms, and at least half of the units must not be efficiencies (330-24)",
+      "A nonconforming lot held in single and separate ownership may be built on if it meets the use, yard and setback rules (330-73A)",
+      "Upper-floor multifamily dwellings of three or more units are permitted by right in CBD, BAM and NB (330-16). GB permits every BAM use (330-17C(1)(b)[1]). The TOD overlay takes the uses of the district under it (330-18B)",
+      "GB: building coverage at most 75%, height at most 35 ft, no side or rear yard unless it abuts a residential district, then 10 ft (330-17D). TOD: build-to line 0 to 5 ft, side yard 5 ft, at least two stories, 40 ft by right and 65 ft by special exception (330-18C). CBD and BAM: build-to line 0 to 5 ft, at least two stories (330-16B)",
+      "In GB, 'Any other legally permitted use not expressly provided for in any other zoning district' is a special exception (330-17C(1)(c)[4]). Residential conversions (330-27G) and a second principal building (330-23B) are still barred there",
+      "In NR or TN a new building or addition may be up to 100% larger than others on the block by special exception (330-22J)",
+      "Each parking space needs its own access, with no tandem spaces (330-48C). 330-48 has no row for a two-family dwelling"
     ],
-    "notes": "Zoning office: Borough of Lansdowne, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 330-4 in full, 330-9, 330-15 in full (with the NR, TN and NB use lists), 330-19 (floodway rules), 330-22 J to O, 330-23, 330-24A, B, 330-25C, 330-26A to D, 330-27, 330-48A, B, 330-81 and the New Laws page. Not read: 330-1 to 330-3, 330-5 to 330-8, 330-10 to 330-14, 330-16 (Downtown District, so the CBD and BAM use lists), 330-17 (GB), 330-18 (TOD), 330-20, 330-20.1, 330-21, the rest of 330-22, 330-26E onward, 330-28 to 330-31.1, Article VII, the rest of Article VIII, Articles IX and X (330-73 nonconforming lots included), 330-79, 330-80, 330-82 to 330-93, Chapters 187 and 203, and the PDF attachments. The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, servant, quarters, watchman, housekeeping unit, cottage and two-family. Its zoning hits were the duplex, dwelling unit, family and conversion definitions and 330-27G."
+    "notes": "Zoning office: Borough of Lansdowne, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 330-4 in full, 330-9, 330-15 in full (with the NR, TN and NB use lists), 330-19 (floodway rules), 330-22 J to O, 330-23, 330-24A, B, 330-25C, 330-26A to D, 330-27, 330-48A, B, 330-81 and the New Laws page. Not read: 330-1 to 330-3, 330-5 to 330-8, 330-10 to 330-14, 330-16 (Downtown District, so the CBD and BAM use lists), 330-17 (GB), 330-18 (TOD), 330-20, 330-20.1, 330-21, the rest of 330-22, 330-26E onward, 330-28 to 330-31.1, Article VII, the rest of Article VIII, Articles IX and X (330-73 nonconforming lots included), 330-79, 330-80, 330-82 to 330-93, Chapters 187 and 203, and the PDF attachments. The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, servant, quarters, watchman, housekeeping unit, cottage and two-family. Its zoning hits were the duplex, dwelling unit, family and conversion definitions and 330-27G. Read later: 330-4 'Variance', 330-16, 330-17 (GB, read on 2026-11-16 in print view), 330-18B, C, 330-22J, 330-23A, 330-24, 330-48C, 330-73A, 330-80 and Chapter 187 (187-25, 187-27, 187-29). Still not read: the PDF appendices and district sheets, 330-93 in full and Chapter 203."
   },
   "adu": {
     "term": {
@@ -81,18 +92,19 @@
   "approval": {
     "path": {
       "value": "variance",
-      "section": "330-27, 330-81",
-      "url": "https://ecode360.com/print/LA1627?guid=15033464",
+      "section": "330-27, 330-80A(2), 330-4 'Variance'",
+      "url": "https://ecode360.com/15033816",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "A second unit is not a permitted use, and conversions of houses into more units are prohibited. The route left is a use variance from the Zoning Hearing Board"
+      "note": "A second unit is not a permitted use, and conversions of houses into more units are prohibited. The route left is a use variance from the Zoning Hearing Board, which may 'Hear and decide requests for variances from the provisions of this chapter' (330-80A(2))"
     },
     "fallback_path": {
       "value": "variance",
-      "section": "330-81",
-      "url": "https://ecode360.com/print/LA1627?guid=15033816",
+      "section": "330-80A(2), 330-4 'Variance'",
+      "url": "https://ecode360.com/15033816",
       "verified_on": "2026-11-16",
-      "confidence": "secondary"
+      "confidence": "secondary",
+      "note": "Zoning Hearing Board (330-80A(2)). 330-81 sets standards only for special exceptions"
     },
     "alternatives": {
       "value": [
@@ -121,6 +133,23 @@
       "url": "https://ecode360.com/print/LA1627?guid=15033233",
       "verified_on": "2026-11-16",
       "confidence": "verified"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "330-17C(1)(c)[4]",
+      "url": "https://ecode360.com/print/LA1627?guid=15033026",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "GB lists as a special exception 'Any other legally permitted use not expressly provided for in any other zoning district'. No district lists an ADU. Residential conversions are still barred in every district (330-27G), and so is a second principal building on a lot (330-23B). Those bars still reach a unit in or attached to the house and a unit in a second building. A two-family detached dwelling is provided for in TN (330-15D(2)). If a second unit is read as a two-family dwelling, it is not a use 'not expressly provided for in any other zoning district', and this path does not reach it"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "GB"
+      ],
+      "section": "330-17C(1)(c)[4]",
+      "url": "https://ecode360.com/print/LA1627?guid=15033026",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
     }
   },
   "eligibility": {
@@ -168,6 +197,17 @@
       "url": "https://ecode360.com/print/LA1627?guid=15032625",
       "verified_on": "2026-11-16",
       "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "CBD",
+        "BAM"
+      ],
+      "section": "330-16D",
+      "url": "https://ecode360.com/15032625",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No ADU listing. A single-family detached or semidetached dwelling is permitted only to replace a dwelling of similar type. Multifamily dwellings are permitted above the first floor"
     }
   },
   "form": {
@@ -263,6 +303,43 @@
         "url": "https://ecode360.com/print/LA1627?guid=15032625",
         "verified_on": "2026-11-16",
         "confidence": "verified"
+      }
+    },
+    "GB": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "330-17C(1)(e)",
+        "url": "https://ecode360.com/print/LA1627?guid=15033026",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Single-family detached dwellings: 6,000 square feet minimum per dwelling unit.' General Business District. No side or rear yard unless the yard abuts a residential district, then 10 ft (330-17D(2), (3))"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 3000,
+          "attached": 2000
+        },
+        "section": "330-17C(1)(e)",
+        "url": "https://ecode360.com/print/LA1627?guid=15033026",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Semidetached 3,000 sq ft per dwelling unit, attached 2,000 sq ft per dwelling unit"
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "330-17D(1)",
+        "url": "https://ecode360.com/print/LA1627?guid=15033026",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Building coverage: 75% maximum.'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "330-17D(4)",
+        "url": "https://ecode360.com/print/LA1627?guid=15033026",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Height: 35 feet maximum.'"
       }
     }
   }

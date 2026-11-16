@@ -4,7 +4,7 @@
     "instrument": "New Garden Township Zoning Ordinance (Chapter 200 Zoning, adopted by Ord. 2026-002 on 7-20-2026), as published on Municode",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Municode Library, New Garden Township, Chester County (the township page newgarden.org/443 links 'Municode link to Township Code', and 200-301 to 200-317 name Toughkenamon Village, Baltimore Pike, Newark Road and the New Garden Airport). The township adopted a new zoning ordinance and map by Ord. 2026-002 at its 7-20-2026 meeting, after a 26-month rewrite. Municode shows Chapter 200 in the new form (sections 200-101 to 200-1105), version 'NOV 2, 2026 (CURRENT)'. The use table (Figure 200-4-1) and the district figures (Figures 200-3-1 to 200-3-17) are text tables on Municode. The Municode page shows no list of uncodified laws, so later amendments were not checked",
+    "status_detail": "Municode Library, New Garden Township, Chester County (the township page newgarden.org/443 links 'Municode link to Township Code', and 200-301 to 200-317 name Toughkenamon Village, Baltimore Pike, Newark Road and the New Garden Airport). The township adopted a new zoning ordinance and map by Ord. 2026-002 at its 7-20-2026 meeting, after a 26-month rewrite. Municode shows Chapter 200 in the new form (sections 200-101 to 200-1105), version 'NOV 2, 2026 (CURRENT)'. The use table (Figure 200-4-1) and the district figures (Figures 200-3-1 to 200-3-17) are text tables on Municode. The Municode page shows no list of uncodified laws, so later amendments were not checked. The township also adopted a new subdivision and land development ordinance by Ord. 26-003 on 9-21-2026, updating Chapter 170 (200-703D still names it Chapter 150)",
     "effective_date": null,
     "source_urls": [
       "https://www.newgarden.org/443/Zoning-Ordinance-Map",
@@ -36,20 +36,24 @@
       "No separate street number for the ADU. No new separate utility connection for an ADU in the house unless the lot already has more than one (200-413E(7), (8))",
       "The ADU must show it can connect to the existing sewer line or septic system. If the septic tank cannot take more, a separate on-lot system must be approved. Where the house is on public sewer, the ADU ties into the house's sewer line (200-413E(9))",
       "The ADU may not be sold or its title transferred apart from the rest of the property (200-413E(10))",
-      "An ADU in a separate structure must be 15 ft from all side and rear lot lines and 15 ft from the rearmost part of the house (200-413E(11)). The code omits 'feet' in two of these lines",
+      "Every ADU, in the house, attached or in a separate structure, must be 15 ft from all side and rear lot lines (200-413E(11)(a), (b)). An ADU in a separate structure must also be 15 ft from the rearmost part of the house (200-413E(11)(c)). The code omits 'feet' in (a) and (c)",
       "Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d), (4)(b)). Each district table gives accessory structure setbacks",
       "The orientation of the ADU should keep the privacy of neighbors through screening, fencing and window and door placement (200-413E(6))",
       "Parking: single-unit dwellings need 2 spaces per unit. The ADU is not listed in Figure 200-7-2, so its count follows the township's recommendation or a parking demand analysis (200-705B(1)). Driveways and garages may count as spaces (200-704C)",
-      "RM sets a 'Maximum Development Density 5 Dwelling Units per Acre' (Figure 200-3-3). Whether it applies to an ADU on one lot is not settled",
-      "In VG the use table permits the ADU but not a single-unit detached dwelling. Semi-attached, two-unit, townhouse and multi-unit dwellings are permitted there",
+      "RM sets a 'Maximum Development Density 5 Dwelling Units per Acre' (Figure 200-3-3). If it counts the ADU, a lot needs 8,712 sq ft for each unit, so 17,424 sq ft for a house and an ADU. Whether it applies to an ADU on one lot is not settled",
+      "In VG the use table permits the ADU but not a single-unit detached dwelling. Semi-attached, two-unit, townhouse and multi-unit dwellings are permitted there, and so is a manufactured home. An existing detached house in VG is a nonconforming use (Article XI)",
       "In the Innovation district a single-unit detached dwelling is a conditional use limited to one lot per 10 acres (200-405F). The ADU is not permitted in IO",
       "A use not provided for is a conditional use before the Board of Supervisors, if similar to the district's permitted uses (200-403)",
       "200-113D(1) sets the usual variance findings and does not bar a use variance",
-      "Floodplain: land in the Flood Hazard Overlay District follows Chapter 96 (not read). Applications that add 1,000 sq ft or more of impervious cover or disturb 5,000 sq ft or more must meet the natural resource limits: no disturbance of floodplain, wetlands, zone one riparian buffers or rare species sites, at most 10% of steep slopes and 25% of precautionary slopes (200-602, 200-603, Figure 200-6-1)",
+      "Floodplain: land in the Flood Hazard Overlay District follows Chapter 96, and a floodplain variance follows Chapter 96's own standards (96-36, 96-37). Applications that add 1,000 sq ft or more of impervious cover or disturb 5,000 sq ft or more must meet the natural resource limits: no disturbance of floodplain, wetlands, zone one riparian buffers or rare species sites, at most 10% of steep slopes and 25% of precautionary slopes (200-602, 200-603, Figure 200-6-1)",
       "A lot below the district area or width may be built on if every other rule is met and it has approved on-lot water and sewage or public water and sewer (200-1103)",
-      "Porches and balconies may reach 6 ft into the front or rear setback, and front setbacks may be reduced to the block's prevailing yard pattern, but not below half the district figure (200-304)"
+      "Porches and balconies may reach 6 ft into the front or rear setback, and front setbacks may be reduced to the block's prevailing yard pattern, but not below half the district figure (200-304)",
+      "VG sets a 'Maximum Lot Coverage 70%'. 200-202 does not define 'Lot Coverage', only 'Building Coverage' and 'Impervious Lot Coverage', so what the 70% counts is not settled",
+      "A 'Dwelling' does not include 'any space less than 400 square feet' (200-202). Read as a 400 sq ft minimum for the ADU",
+      "A 'Land Development' includes two or more residential buildings on a lot, but not 'the addition of an Accessory Building' subordinate to an existing principal building (200-202). A detached ADU is read as that exclusion, so no land development plan. Ask the township",
+      "Driveways for single-unit detached, semi-attached and two-unit dwellings 'shall have a common access Driveway to serve each Dwelling Units' (200-704D(1)). Read as one shared driveway for the house and the ADU"
     ],
-    "notes": "Zoning office: New Garden Township, Codes Department. Read in a browser on Municode, one page at a time, on 2026-11-16. Read: the township zoning page, Article II definitions A to F in full and the impervious lot coverage entry, Article III (200-301 to 200-317) in full, Article IV through 200-407 and 200-413A to E (the use table checked by screenshot, the text of 200-413 read by screenshot), Article VI in full, 200-704 and 200-705 with Figure 200-7-2, 200-113 and 200-1103. Not read: Article I except 200-113, definitions G to Z (so 'Usable Floor Area', 'Lot Coverage', 'Height' and 'Story' were not read), Article V (historic preservation), 200-408 to 200-412, 200-413F onward, 200-414, Articles VIII to X, the rest of Article XI, Chapter 96 (floodplain) and Chapter 170 (subdivision and land development). Municode text loads slowly. The code search was not run. Instead the use table and the ADU definition and standards were read in full."
+    "notes": "Zoning office: New Garden Township, Codes Department. Read in a browser on Municode, one page at a time, on 2026-11-16. Read: the township zoning page, Article II definitions A to F in full and the impervious lot coverage entry, Article III (200-301 to 200-317) in full, Article IV through 200-407 and 200-413A to E (the use table checked by screenshot, the text of 200-413 read by screenshot), Article VI in full, 200-704 and 200-705 with Figure 200-7-2, 200-113 and 200-1103. Not read: Article I except 200-113, definitions G to Z (so 'Usable Floor Area', 'Lot Coverage', 'Height' and 'Story' were not read), Article V (historic preservation), 200-408 to 200-412, 200-413F onward, 200-414, Articles VIII to X, the rest of Article XI, Chapter 96 (floodplain) and Chapter 170 (subdivision and land development). Municode text loads slowly. The code search was not run. Instead the use table and the ADU definition and standards were read in full. Read later: 200-202 'Dwelling', 'Accessory Building', 'Land Development', 'Building Coverage' and the lack of a 'Usable Floor Area' or 'Lot Coverage' definition, the Manufactured Home row of Figure 200-4-1, Article XI on nonconforming uses, 200-704D, Chapter 96 (96-36, 96-37) and the township page on Ord. 26-003. Still not read: Article V (historic preservation), 200-408 to 200-412 and the full text of 200-1103."
   },
   "adu": {
     "term": {
@@ -174,6 +178,12 @@
       "note": "VG permits the ADU, but not a single-unit detached dwelling. The ADU needs a lot with 'one, but no more than one, residential Structure occupied as a one-unit Dwelling' (200-413E(1)). Ask which VG lots can hold one",
       "named_by": {
         "VG": "reach"
+      },
+      "notes_by_district": {
+        "VG": "VG permits the ADU but not a single-unit detached dwelling. The ADU needs a lot with 'one, but no more than one, residential Structure occupied as a one-unit Dwelling' (200-413E(1)). A manufactured home is permitted in VG, so a VG lot can lawfully hold a one-unit dwelling. An existing detached house in VG is a nonconforming use (Article XI). Ask which VG lots can hold an ADU"
+      },
+      "sections_by_district": {
+        "VG": "Figure 200-4-1, 200-413E(1), Article XI"
       }
     },
     "gates": {
@@ -219,7 +229,7 @@
         },
         {
           "kind": "other",
-          "condition": "Land in the Flood Hazard Overlay District must meet Chapter 96, Floodplain Management. Where Article VI applies (1,000 sq ft or more of new impervious cover, 5,000 sq ft or more of earthmoving), floodplain, wetlands and zone one riparian buffers may not be disturbed at all.",
+          "condition": "Land in the Flood Hazard Overlay District must meet Chapter 96, Floodplain Management. Where Article VI applies (1,000 sq ft or more of new impervious cover, 5,000 sq ft or more of earthmoving), floodplain, wetlands and zone one riparian buffers may not be disturbed at all. A floodplain variance follows Chapter 96's own standards (96-36, 96-37).",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -227,11 +237,34 @@
           "overlays": [
             "Flood Hazard Overlay District"
           ],
-          "section": "200-602, 200-603B, Figure 200-6-1",
+          "section": "200-602, 200-603B, Figure 200-6-1, 96-36, 96-37",
           "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i34472095656c4e6"
+        },
+        {
+          "kind": "other",
+          "condition": "The unit must be 15 ft from all side and rear lot lines. This holds for a unit in the house or attached to it too, not only for one in a separate structure. Where the house yards shown are smaller, 15 ft is the figure for the unit.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "200-413E(11)(a), (b)",
+          "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813"
+        },
+        {
+          "kind": "parking",
+          "condition": "Driveways for single-unit detached, semi-attached and two-unit dwellings 'shall have a common access Driveway to serve each Dwelling Units'. Read as one shared driveway for the house and the ADU.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-704D(1)",
+          "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ie60968710d03a55"
         }
       ],
-      "section": "200-413E, 200-603",
+      "section": "200-413E, 200-603, 200-704D",
       "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
       "verified_on": "2026-11-16",
       "confidence": "verified"
@@ -250,7 +283,7 @@
       "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "'a) In a newly constructed Accessory Dwelling Unit Structure; b) In an existing detached accessory Structure occupied, or formerly occupied, on the first floor by a Garage, barn, or similar Accessory Use; or c) In a Principal Structure provided that there is a separate entrance to the exterior or to an unconditioned Porch type space.' An addition to the house is read as part of the principal structure"
+      "note": "'a) In a newly constructed Accessory Dwelling Unit Structure; b) In an existing detached accessory Structure occupied, or formerly occupied, on the first floor by a Garage, barn, or similar Accessory Use; or c) In a Principal Structure provided that there is a separate entrance to the exterior or to an unconditioned Porch type space.' An addition to the house is read as part of the principal structure. 200-202 says an 'Accessory Building' is 'not used as a residence, or for human occupancy'. The specific ADU rules in 200-413E(4)(a), (b) control for an ADU in a new or existing accessory structure"
     }
   },
   "size": {
@@ -268,7 +301,15 @@
       "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "'The Usable Floor Area of the Accessory Dwelling Unit shall not exceed 50% percent of the Usable Floor Area of the principal Dwelling Unit.' The definition of usable floor area was not read"
+      "note": "'The Usable Floor Area of the Accessory Dwelling Unit shall not exceed 50% percent of the Usable Floor Area of the principal Dwelling Unit.' 200-202 does not define 'Usable Floor Area', so how it is measured is not settled"
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "200-202 'Dwelling'",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i7e9aefc195ccdbd",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Dwellings shall not include ... any space less than 400 square feet'. Read as a minimum for the ADU, which is a dwelling unit. 200-413E sets no minimum of its own"
     }
   },
   "envelope": {
@@ -278,7 +319,7 @@
       "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "'Must be 15 from all side property lines.' The line omits 'feet'"
+      "note": "'Must be 15 from all side property lines.' The line omits 'feet'. It binds every ADU, not only one in a separate structure"
     },
     "setback_rear_ft": {
       "value": 15,
@@ -286,7 +327,7 @@
       "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "'Must be 15 feet from all rear property lines.'"
+      "note": "'Must be 15 feet from all rear property lines.' It binds every ADU, not only one in a separate structure"
     },
     "separation_ft": {
       "value": 15,
@@ -490,6 +531,14 @@
         "verified_on": "2026-11-16",
         "confidence": "verified",
         "note": "'Minimum Accessory Structure Setbacks', front. Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d))"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8712,
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'Maximum Development Density 5 Dwelling Units per Acre', so 43,560 / 5 = 8,712 sq ft per unit. Whether the density counts an ADU on one lot is not settled"
       }
     },
     "RF": {
@@ -644,7 +693,7 @@
         "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
         "verified_on": "2026-11-16",
         "confidence": "verified",
-        "note": "Width 50 ft. The table also sets 'Maximum Lot Coverage 70%', a term not read in 200-202, so it is not stored"
+        "note": "Width 50 ft. The table also sets 'Maximum Lot Coverage 70%'. 200-202 does not define 'Lot Coverage', only 'Building Coverage' and 'Impervious Lot Coverage', so the 70% is not stored"
       },
       "setback_front_ft": {
         "value": 15,
