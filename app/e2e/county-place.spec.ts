@@ -107,7 +107,9 @@ test.describe('answers that depend on something the record does not hold', () =>
     await expect(verdict(page)).toHaveAttribute('data-answer', 'unknown');
     await expect(verdict(page)).toContainText('Depends on the zoning district, not on file');
     const checklist = page.locator('section[aria-label="Rule checklist"]').first();
-    await expect(checklist.locator('[data-rule-row="yard"] [role="img"]').first()).toHaveAttribute('aria-label', 'Not checked');
+    // The yard row is never a green pass on a lot whose district is not on file. Since the Nov 16 rebuild the record
+    // carries the town's ADU setbacks, so the row may also say the unit does not fit the room left.
+    await expect(checklist.locator('[data-rule-row="yard"] [role="img"]').first()).not.toHaveAttribute('aria-label', 'Passes');
   });
 
   test('Phoenixville 510 South St: a 40 x 60 ft cottage depends on the house size', async ({ page }) => {

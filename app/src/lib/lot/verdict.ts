@@ -802,9 +802,14 @@ const ZONED_UNKNOWN = /\bzoned (?:unknown|none|null|nan)\b/i;
 /** "The ADU rule reaches only RI, MI, NC, CD, MG (27-301.2B(1)). Elsewhere: not addressed" */
 const REACH = /\b(?:reaches|applies) only\b/i;
 
+/** Records built since the Nov 16 rebuild say it in words and mark the path as depending on lot facts. */
+const DISTRICT_NOT_KNOWN = /\bzoning district is not known\b/i;
+
 /** The district is not on file and the rules turn on it: the answer depends on the district. */
 export function districtUnknown(lot: LotRecord, rules: Rules | undefined): boolean {
-  return !!rules && !rules.allowed && !lot.zoning.district && rules.reasons.some((r) => ZONED_UNKNOWN.test(r));
+  if (!rules || lot.zoning.district) return false;
+  if (!rules.allowed && rules.reasons.some((r) => ZONED_UNKNOWN.test(r))) return true;
+  return rules.approval_qualifier === 'depends_on_lot_facts' && rules.reasons.some((r) => DISTRICT_NOT_KNOWN.test(r));
 }
 
 /** A reason that says why units are barred, before one that only describes the code: the first reason that names a

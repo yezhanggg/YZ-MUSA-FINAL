@@ -96,6 +96,8 @@ describe('item 5: a by-right path in doubt carries its condition', () => {
   });
 });
 
+const ZONED_UNKNOWN_TEXT = /\bzoned (?:unknown|none|null|nan)\b/i;
+
 describe('item 6: a lot whose zoning district is not on file', () => {
   const lot = fixture('phx_nodistrict'); // 192 Pennsylvania Av, Phoenixville
 
@@ -109,6 +111,23 @@ describe('item 6: a lot whose zoning district is not on file', () => {
     expect(v.approval.path).toBeNull();
     expect(row(lot, v, 'yard').state).toBe('unknown');
     expect(answerFor(lot, v).sub).not.toMatch(/here.*here/);
+  });
+
+  it('the rebuilt record (path qualified on lot facts, "zoning district is not known") also depends, never "No"', () => {
+    const l = structuredClone(lot);
+    for (const sc of Object.keys(l.rules) as (keyof typeof l.rules)[]) {
+      const r = l.rules[sc];
+      if (!r) continue;
+      r.allowed = true;
+      r.approval_qualifier = 'depends_on_lot_facts';
+      r.reasons = [
+        "Special exception only if the lot is in RI, MI, NC, CD or MG, where the ADU rule reaches (27-301.2B(1)). The lot's zoning district is not known. Ask the zoning officer",
+        ...r.reasons.filter((x) => !ZONED_UNKNOWN_TEXT.test(x)),
+      ];
+    }
+    const v = unitVerdict(l, cottage());
+    expect(v.status).toBe('check_needed');
+    expect(v.limit?.code).toBe('district_unknown');
   });
 
   it('a district that is not on file and a bar: "The zoning here allows no extra unit", one "here"', () => {
