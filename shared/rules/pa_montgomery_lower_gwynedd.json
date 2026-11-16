@@ -1371,6 +1371,20 @@
         "verified_on": "2026-11-16",
         "confidence": "verified",
         "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "figures_in_dispute": {
+        "value": {
+          "setback_front_ft": 50,
+          "setback_rear_ft": 50,
+          "max_impervious_coverage": 0.45,
+          "principal_max_height_ft": 45,
+          "principal_max_stories": 2.5
+        },
+        "section": "1269.02(a), 1269.04, 1269.05(b), 1269.06(a), 1257.04, 1257.05(b), 1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. E-1's own chapter asks 50 ft yards (1269.04) and allows 45% impervious cover (1269.05(b)), and the A chapter allows 45 ft and 2 1/2 stories (1257.06(a)) where 1269.06(a) caps buildings in E-1 at 30 ft and two stories. The file shows the larger yard, the lower cover and the lower height"
       }
     },
     "E-2": {
@@ -1470,6 +1484,20 @@
         "verified_on": "2026-11-16",
         "confidence": "verified",
         "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "figures_in_dispute": {
+        "value": {
+          "setback_front_ft": 50,
+          "setback_rear_ft": 50,
+          "max_impervious_coverage": 0.4,
+          "principal_max_height_ft": 45,
+          "principal_max_stories": 2.5
+        },
+        "section": "1269A.02(a), 1269A.04, 1269A.05(b), 1269A.06(a), 1257.04, 1257.05(b), 1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. E-2's own chapter asks 50 ft yards (1269A.04) and allows 40% impervious cover (1269A.05(b)), and the A chapter allows 45 ft and 2 1/2 stories (1257.06(a)) where 1269A.06(a) caps buildings in E-2 at 35 ft and two stories. The file shows the larger yard, the lower cover and the lower height"
       }
     }
   }

@@ -1086,3 +1086,47 @@ describe('get_rule_text pass 15', () => {
     expect(out.path_to_ask.note).toContain('may be authorized by a use grant, which the tool reads as a special exception (240-32A(10)');
   });
 });
+
+// Pass 16: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 16 section).
+describe('get_rule_text pass 16', () => {
+  it('lists impervious cover by lot size in the bill line (Lower Pottsgrove R-2)', async () => {
+    const out = await town6('pa_montgomery_lower_pottsgrove', 'status', 'R-2');
+    expect(out.under_hb2186.still_applies).toMatch(/Impervious cover by lot size: 35% on a lot under 10,000 sq ft, 30% on a lot over 10,000 sq ft and under 30,000 sq ft, 25% on a lot of at least 30,000 sq ft \(250-59E\)/);
+    expect(out.conditions.some((c: Any6) => /^Impervious cover depends on lot size/.test(c.condition))).toBe(false);
+  });
+
+  it('gives the bound accessory building cap as the detached height (Lower Pottsgrove R-1, R-3)', async () => {
+    const r1 = await town6('pa_montgomery_lower_pottsgrove', 'height', 'R-1');
+    expect(r1.forms.accessory_building.max_height_ft).toMatchObject({ value: 15, section: '250-51B' });
+    const r3 = await town6('pa_montgomery_lower_pottsgrove', 'height', 'R-3');
+    expect(r3.forms.accessory_building.max_height_ft).toMatchObject({ value: 35, section: '250-63G' });
+    const r4 = await town6('pa_montgomery_lower_pottsgrove', 'height', 'R-4');
+    expect(r4.forms.accessory_building.max_height_ft).toBe('No height number on file. Ask the zoning officer');
+  });
+
+  it('names every gate whose figures replace the district yards (Lower Pottsgrove R-1)', async () => {
+    const out = await town6('pa_montgomery_lower_pottsgrove', 'setbacks', 'R-1');
+    const rear = out.forms.inside_or_attached.attached_yards.rear;
+    expect(rear.value).toBeNull();
+    expect(rear.district_figure).toBe(75);
+    expect(rear.note).toMatch(/applies only outside the SV or Sanatoga Village District Overlay or a planned or cluster development, whose own figures replace it \(250-125B, 250-127, 250-130, 250-131, 250-132A, 250-52D, 250-52\.1C\(10\), 250-69A\)/);
+    expect(rear.depends_on).toBe('whether the lot is in the SV or Sanatoga Village District Overlay and whether the lot is in a planned or cluster development the code names');
+  });
+
+  it('qualifies district figures another reading puts elsewhere (Lower Gwynedd E-1)', async () => {
+    const out = await town6('pa_montgomery_lower_gwynedd', 'height', 'E-1');
+    const h = out.forms.inside_or_attached.max_height_ft;
+    expect(h.value).toBe(30);
+    expect(h.disputed_figure).toBe(45);
+    expect(h.note).toMatch(/Not settled\. The other reading gives 45 ft \(1269\.02\(a\)/);
+  });
+
+  it('gives a gate path only where the gate reaches (New Britain floodplain)', async () => {
+    const out = await town6('pa_bucks_new_britain', 'approval', 'WS');
+    const fp = out.approval.by_form.find((x: Any6) => x.section === '27-1904j(1)');
+    expect(fp).toMatchObject({ forms: ['detached_new'], path: 'special_exception' });
+    expect(fp.note).toBe('Only if the lot is in the Floodplain Overlay');
+    const el = await town6('pa_bucks_new_britain', 'eligibility', 'WS');
+    expect(el.conditions.find((c: Any6) => c.path === 'special_exception').applies_to).toEqual(['detached_new']);
+  });
+});

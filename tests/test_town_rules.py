@@ -3334,3 +3334,153 @@ def test_docs_row_shows_status_by_form_and_district_counts():
     assert "| family only (internal prohibited, attached prohibited) |" in nb
     bl = next(line for line in text.splitlines() if line.startswith("| Bloomsburg town | Columbia |"))
     assert "| 1 (2 in R-U) |" in bl and "ADU under another listing, for internal, by right" in bl
+
+
+# ------------------------------------------------------------------ pass 16
+
+
+NO_H = "No height number on file for a detached unit. Ask the zoning officer"
+
+
+def _lp(district, scenario="today", **kw):
+    lot = {**DET, "zoning_district": district, **kw}
+    return rules.resolve("pa_montgomery_lower_pottsgrove", scenario, lot, extra=True)
+
+
+def test_impervious_cover_by_lot_size():
+    """Lower Pottsgrove 250-59E, 250-63C(2), 250-67C(2)(b): 35% under 10,000 sq ft, 30% over 10,000 and under
+    30,000, 25% at 30,000 or more (districts.<code>.max_impervious_by_lot_size). The lot fit reads the tier."""
+    from pipeline import build_lots as bl
+
+    for d in ("R-2", "R-3", "R-4"):
+        for area, share in ((8000, 0.35), (12000, 0.3), (40000, 0.25)):
+            out = _lp(d, lot_sqft=area)
+            assert out["max_impervious"] == share, (d, area)
+            assert bl.town_extras_to_reasons(out)["max_impervious"] == share
+            assert any(
+                r.startswith(f"Impervious cover for {d}: at most {share:.0%} of the lot") for r in out["reasons"]
+            )
+    small = _lp("R-2", lot_sqft=8000)
+    assert small["citations"]["max_impervious"]["section"] == "250-59E, for a lot under 10,000 sq ft"
+    # exactly 10,000 sq ft: the code gives no tier, so the base figure is shown and said
+    gap = _lp("R-2", lot_sqft=10000)
+    assert gap["max_impervious"] == 0.3
+    assert any(
+        "The code gives no figure for a lot of 10,000 sq ft, so the district's base figure of 30% is shown" in r
+        for r in gap["reasons"]
+    )
+    # no lot size: the tiers are listed
+    unknown = _lp("R-3")
+    assert unknown["max_impervious"] == 0.3
+    assert any(
+        r.startswith("Impervious cover for R-3 depends on lot size: 35% on a lot under 10,000 sq ft, 30% on a lot over")
+        and r.endswith("The lot size was not given, so the district's base figure of 30% is shown")
+        for r in unknown["reasons"]
+    )
+    # a services row that states its own figure keeps it
+    assert _lp("R-2", lot_sqft=8000, public_sewer=False, public_water=False)["max_impervious"] == 0.25
+    # R-1 has no tiers
+    assert _lp("R-1", lot_sqft=8000)["max_impervious"] == 0.25
+    # the bill line keeps the tier for the lot
+    bill = _lp("R-2", "state_reform", lot_sqft=8000)
+    assert any("Impervious cover 35% (250-59E, for a lot under 10,000 sq ft)" in r for r in bill["reasons"])
+    gates = raw("pa_montgomery_lower_pottsgrove")["eligibility"]["gates"]["value"]
+    assert not any(g["condition"].startswith("Impervious cover depends on lot size") for g in gates)
+
+
+def test_bound_accessory_cap_is_the_detached_height():
+    """Lower Pottsgrove R-1, R-2 (250-51B, 15 ft) and R-3 (250-63G, 35 ft): the accessory building cap binds the unit,
+    so the detached height is on file. Never 'No height number on file for a detached unit'. R-4 has none."""
+    for d, h, sec in (("R-1", 15, "250-51B"), ("R-2", 15, "250-60, 250-51B"), ("R-3", 35, "250-63G")):
+        out = _lp(d, lot_sqft=12000)
+        assert out["max_height_ft"] == h and out["max_height_by_type"]["detached_new"] == h
+        assert NO_H not in out["reasons"], d
+        assert out["citations"]["max_height_ft"]["section"] == sec
+    assert NO_H in _lp("R-4", lot_sqft=12000)["reasons"]
+
+
+def test_yards_line_names_every_superseding_gate():
+    """Lower Pottsgrove R-1: the Sanatoga Village overlay and the cluster or village development both replace the
+    district figures. Each is named. A gate the lot is known to be inside leads."""
+    out = _lp("R-1", lot_sqft=12000)
+    line = next(r for r in out["reasons"] if r.startswith("Yards for R-1"))
+    assert "Sanatoga Village District Overlay follows the overlay's figures instead of the district's" in line
+    assert line.endswith(
+        "A lot inside an approved planned or cluster development follows that plan's own figures instead "
+        "(250-52D, 250-52.1C(10), 250-69A)"
+    )
+    pd = _lp("R-1", lot_sqft=12000, in_planned_development=True)
+    line = next(r for r in pd["reasons"] if r.startswith("Yards for R-1"))
+    assert line.startswith("Yards for R-1: this lot is in the development the code names")
+    assert pd["setback_side_ft"] is None and pd["max_impervious"] is None
+    both = _lp("R-1", lot_sqft=12000, in_planned_development=True, overlays=["SV"])
+    line = next(r for r in both["reasons"] if r.startswith("Yards for R-1"))
+    assert "It is also in the development the code names, whose own figures replace the district's" in line
+
+
+def test_pass16_hold_keeps_old_text(monkeypatch):
+    """With the place in PASS16_HOLD_TOWNS the pass 15 sentences stay (no height line kept, first gate only). The set
+    holds the ten lot towns."""
+    assert {"pa_montgomery_upper_dublin", "pa_lehigh_allentown"} <= rules.PASS16_HOLD_TOWNS
+    assert len(rules.PASS16_HOLD_TOWNS) == 10
+    monkeypatch.setattr(rules, "PASS16_HOLD_TOWNS", {"pa_montgomery_lower_pottsgrove"})
+    out = _lp("R-1", lot_sqft=12000)
+    assert NO_H in out["reasons"] and "max_height_ft" not in out["citations"]
+    line = next(r for r in out["reasons"] if r.startswith("Yards for R-1"))
+    assert "planned or cluster" not in line
+
+
+def test_district_figures_in_dispute():
+    """Lower Gwynedd E-1 and E-2 permit the A uses 'as regulated therein' while their own chapters set other figures.
+    Both sets are said and the row is called not settled. The figures shown stay those of the file."""
+    out = rules.resolve(
+        "pa_montgomery_lower_gwynedd", "today", {**DET, "zoning_district": "E-1", "lot_sqft": 50000}, extra=True
+    )
+    line = next(r for r in out["reasons"] if r.startswith("Figures for E-1 are not settled"))
+    assert "Shown: front yard 75 ft, rear yard 75 ft, impervious cover 25%, height 30 ft, 2 stories" in line
+    assert (
+        "The other reading: front yard 50 ft, rear yard 50 ft, impervious cover 45%, height 45 ft, 2.5 stories" in line
+    )
+    assert line.endswith("Ask the zoning officer which governs") and "side yard" not in line
+    assert out["max_impervious"] == 0.25
+    e2 = rules.resolve("pa_montgomery_lower_gwynedd", "today", {**DET, "zoning_district": "E-2"}, extra=True)
+    assert any("impervious cover 40%, height 45 ft" in r for r in e2["reasons"])
+    a = rules.resolve("pa_montgomery_lower_gwynedd", "today", {**DET, "zoning_district": "A"}, extra=True)
+    assert not any(r.startswith("Figures for") for r in a["reasons"])
+
+
+def test_gate_path_reaches_new_building_only():
+    """New Britain 27-1904j(1): in the Floodplain Overlay any new building is a special exception. Only a new detached
+    unit takes it, and only on a lot known to be in the overlay. A garage conversion keeps the other floodplain rules
+    and its own path."""
+    lot = {**DET, "zoning_district": "WS", "lot_sqft": 200000}
+    base = rules.resolve("pa_bucks_new_britain", "today", lot, extra=True)
+    assert base["approval_by_type"]["detached_new"] == "by_right"
+    j1 = next(c for c in base["conditions"] if "27-1904j(1)" in c["section"])
+    assert j1["applies_to"] == ["detached_new"] and "The lot's overlays were not given" in j1["condition"]
+    fp = rules.resolve("pa_bucks_new_britain", "today", {**lot, "overlays": ["Floodplain Overlay"]}, extra=True)
+    assert fp["approval_by_type"]["detached_new"] == "special_exception"
+    assert fp["approval_by_type"]["garage_conversion"] == "by_right"
+    assert fp["citations_by_type"]["detached_new"]["section"] == "27-1904j(1)"
+    rest = next(c for c in fp["conditions"] if c["section"] == "27-1904a, f.5(a), j(3), l, p")
+    assert rest["applies_to"] is None and "j(1)" not in rest["condition"]
+    out = rules.resolve("pa_bucks_new_britain", "today", {**lot, "overlays": ["Other"]}, extra=True)
+    assert out["approval_by_type"]["detached_new"] == "by_right"
+    bill = rules.resolve(
+        "pa_bucks_new_britain", "state_reform", {**lot, "overlays": ["Floodplain Overlay"]}, extra=True
+    )
+    assert bill["approval_by_type"]["detached_new"] == "by_right"
+    assert rules.lint(raw("pa_bucks_new_britain")) == []
+
+
+def test_docs_row_shows_gate_path_and_disputed_figures():
+    import subprocess
+
+    root = Path(__file__).resolve().parents[1]
+    text = subprocess.run(
+        [sys.executable, str(root / "tools" / "gen_rules.py"), "towns"], capture_output=True, text=True, check=True
+    ).stdout
+    nb = next(line for line in text.splitlines() if line.startswith("| New Britain township | Bucks |"))
+    assert "| by right (special exception for detached new in Floodplain Overlay) |" in nb
+    lg = next(line for line in text.splitlines() if line.startswith("| Lower Gwynedd township | Montgomery |"))
+    assert "district figures not settled in E-1, E-2 (1269.02(a)" in lg

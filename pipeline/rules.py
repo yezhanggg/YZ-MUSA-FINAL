@@ -690,6 +690,10 @@ def _path_citation(
     for item in ((paths or {}).get("value") or []) if form and not state else []:
         if form in item["forms"] and item["path"] == path:
             return _citation(_leaf_from(item, paths or {}, path), place)
+    for item in (_gate_paths(data, lot, False) + _gate_paths(data, lot, True)) if form and not state else []:
+        if form in item["forms"] and item["path"] == path:  # pass 16: the gate whose path the form takes
+            gates = _leaf(data, ("eligibility", "gates")) or {}
+            return _citation(_leaf_from(item["gate"], gates, path), place)
     for name in reversed(local + state):
         layer = load_rules(name) if name != place else data
         for key in ("path", "detached_in_yard_path", "historic_path", "fallback_path", "unlisted_use_path"):
@@ -902,6 +906,23 @@ PASS15_HOLD_TOWNS: set[str] = {
     "pa_montgomery_narberth",
     "pa_montgomery_upper_dublin",
 }
+# Pass 16 holds its fixes that can reach stored lot records, for the ten lot towns: the "No height number on file for
+# a detached unit" line dropped (and the cap cited) where the accessory building cap that binds the unit gives the
+# height, and the yards line naming every gate whose own figures replace the district's (not only the first). Lift it
+# at the next lot rebuild.
+PASS16_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
+NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",
@@ -1043,13 +1064,137 @@ def _district_row(place: dict[str, Any], lot: dict[str, Any]) -> tuple[str | Non
         for field, leaf in by_type.items():
             row[field] = {**leaf, "value": leaf["value"][btype]}
     if hit is None:
-        return code, row
+        return code, _impervious_by_lot(row, lot)
     item, parent = hit  # the row for the lot's services replaces the public sewer and water figures
     merged = dict(row)
     for f in UTILITY_FIELDS:
         if f in item:
             merged[f] = _leaf_from(item, parent, item[f])
-    return code, merged
+    # pass 16: a services row's own impervious figure stays (it is the figure the file states for those services)
+    return code, merged if "max_impervious_coverage" in item else _impervious_by_lot(merged, lot)
+
+
+def _lot_bounds(it: dict[str, Any]) -> str:
+    """Pass 16: a lot size tier's bounds in words (lot_sqft_over, lot_sqft_at_least, lot_sqft_below,
+    lot_sqft_at_most), as size.max_sqft_by_lot_size has them."""
+    bounds = []
+    if it.get("lot_sqft_over") is not None:
+        bounds.append(f"over {_acres(it['lot_sqft_over'])}")
+    if it.get("lot_sqft_at_least") is not None:
+        bounds.append(f"of at least {_acres(it['lot_sqft_at_least'])}")
+    if it.get("lot_sqft_below") is not None:
+        bounds.append(f"under {_acres(it['lot_sqft_below'])}")
+    if it.get("lot_sqft_at_most") is not None:
+        bounds.append(f"of {_acres(it['lot_sqft_at_most'])} or less")
+    return f"a lot {' and '.join(bounds) if bounds else 'of any size'}"
+
+
+def _lot_tier(items: list[dict[str, Any]], area: float | None) -> dict[str, Any] | None:
+    """Pass 16: the first tier whose lot size bounds hold for the lot (None without the area or in a gap)."""
+    if area is None:
+        return None
+    for it in items:
+        if (
+            (it.get("lot_sqft_over") is None or area > it["lot_sqft_over"])
+            and (it.get("lot_sqft_at_least") is None or area >= it["lot_sqft_at_least"])
+            and (it.get("lot_sqft_below") is None or area < it["lot_sqft_below"])
+            and (it.get("lot_sqft_at_most") is None or area <= it["lot_sqft_at_most"])
+        ):
+            return it
+    return None
+
+
+def _impervious_by_lot(row: dict[str, Any], lot: dict[str, Any]) -> dict[str, Any]:
+    """Pass 16: districts.<code>.max_impervious_by_lot_size, impervious cover that changes with lot size. The tier for
+    the lot replaces the row's max_impervious_coverage. A services row that states its own figure keeps it (the
+    caller). Without the lot area, or in a gap the code leaves, the row's own figure stays."""
+    leaf = row.get("max_impervious_by_lot_size")
+    if not (_usable(leaf) and leaf.get("value")):
+        return row
+    it = _lot_tier(leaf["value"], lot.get("lot_sqft"))
+    if it is None:
+        return row
+    return {
+        **row,
+        "max_impervious_coverage": {
+            **{k: v for k, v in leaf.items() if k != "value"},
+            "value": it["max_impervious"],
+            "section": f"{leaf['section']}, for {_lot_bounds(it)}",
+        },
+    }
+
+
+DISPUTE_WORDS: dict[str, tuple[str, str]] = {
+    "min_lot_sqft": ("minimum lot", "sqft"),
+    "setback_front_ft": ("front yard", "ft"),
+    "setback_side_ft": ("side yard", "ft"),
+    "setback_rear_ft": ("rear yard", "ft"),
+    "max_building_coverage": ("building coverage", "share"),
+    "max_impervious_coverage": ("impervious cover", "share"),
+    "principal_max_height_ft": ("height", "ft"),
+    "principal_max_stories": ("stories", "stories"),
+}
+
+
+def _dispute_fig(field: str, v: float) -> str:
+    word, unit = DISPUTE_WORDS[field]
+    if unit == "share":
+        return f"{word} {v:.0%}"
+    if unit == "sqft":
+        return f"{word} {v:,.0f} sq ft"
+    if unit == "stories":
+        return f"{v:g} stories"
+    return f"{word} {v:g} ft"
+
+
+def _figures_in_dispute(row: dict[str, Any], lot: dict[str, Any]) -> str | None:
+    """Pass 16: districts.<code>.figures_in_dispute, the row's figures another reading of the code puts at other values
+    (a district that permits another district's uses 'as regulated therein' while its own chapter sets other figures).
+    The sentence gives both sets of figures, only for fields the row shows a figure for, and says the row is not
+    settled."""
+    leaf = row.get("figures_in_dispute")
+    if not (_usable(leaf) and isinstance(leaf.get("value"), dict)):
+        return None
+    pairs = []
+    for field, other in leaf["value"].items():
+        shown = row.get(field)
+        if field not in DISPUTE_WORDS or other is None or not (_usable(shown) and shown.get("value") is not None):
+            continue
+        if shown["value"] != other:
+            pairs.append((field, shown["value"], other))
+    if not pairs:
+        return None
+    d = lot.get("zoning_district")
+    line = (
+        f"Figures for {d} are not settled ({leaf['section']}). {leaf['note'].rstrip('.')}. Shown: "
+        + ", ".join(_dispute_fig(f, a) for f, a, _ in pairs)
+        + ". The other reading: "
+        + ", ".join(_dispute_fig(f, b) for f, _, b in pairs)
+        + ". Ask the zoning officer which governs"
+    )
+    return line
+
+
+def _impervious_tier_line(row: dict[str, Any], lot: dict[str, Any]) -> str | None:
+    """Pass 16: when the tier for the lot is not known (no lot area, or a gap the code leaves), the tiers in words
+    and which figure is shown."""
+    leaf = row.get("max_impervious_by_lot_size")
+    if not (_usable(leaf) and leaf.get("value")):
+        return None
+    area = lot.get("lot_sqft")
+    if _lot_tier(leaf["value"], area) is not None:
+        return None
+    tiers = ", ".join(f"{it['max_impervious']:.0%} on {_lot_bounds(it)}" for it in leaf["value"])
+    line = f"Impervious cover for {lot.get('zoning_district')} depends on lot size: {tiers} ({leaf['section']})"
+    base = row.get("max_impervious_coverage")
+    shown = (
+        f", so the district's base figure of {base['value']:.0%} is shown"
+        if _usable(base) and base.get("value") is not None
+        else ", so no figure is shown"
+    )
+    if area is None:
+        return line + ". The lot size was not given" + shown
+    return line + f". The code gives no figure for a lot of {area:,.0f} sq ft" + shown + ". Ask the zoning officer"
 
 
 def _utility_match(item: dict[str, Any], lot: dict[str, Any]) -> bool | None:
@@ -1465,6 +1610,23 @@ def _built_before(year: Any, date: Any) -> bool | None:
     if int(year) > y or (m, d) == (1, 1):
         return False
     return None
+
+
+def _gate_paths(data: dict[str, Any], lot: dict[str, Any], historic: bool) -> list[dict[str, Any]]:
+    """Pass 16: eligibility.gates[].path, the approval the gate's forms need on a lot it reaches (a special exception
+    for any new building in a floodplain overlay). As form_paths items ({forms, path}), only where the lot is known to
+    be in the gate's overlay or district and its test is met. Otherwise the gate stays a condition."""
+    out = []
+    for g in (_leaf(data, ("eligibility", "gates")) or {}).get("value") or []:
+        if not g.get("path") or not _gate_scope(g, lot, historic):
+            continue
+        in_district = bool(g.get("districts")) and _match_code(lot.get("zoning_district"), g["districts"]) is not None
+        if g.get("overlays") and _gate_overlay(g, lot) is not True and not in_district:
+            continue
+        if g.get("test") and _gate_met(g, lot) is not True:
+            continue
+        out.append({"forms": list(g.get("applies_to") or ALL_TYPES), "path": g["path"], "gate": g})
+    return out
 
 
 def _gate_met(g: dict[str, Any], lot: dict[str, Any]) -> bool | None:
@@ -2736,6 +2898,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     allowed_forms = _form_types_town(picked, lot)
     yard = _value(picked, "approval", "detached_in_yard_path")
     form_paths = [] if state else ((_leaf(data, ("approval", "form_paths")) or {}).get("value") or [])
+    form_paths = form_paths + ([] if state else _gate_paths(data, lot, historic))  # pass 16: a gate's own path
     by_form_leaf = _leaf(data, ("adu", "status_by_form"))
     by_form = (by_form_leaf or {}).get("value") or None
     not_named = [] if state else ((_leaf(data, ("form", "types_not_addressed")) or {}).get("value") or [])
@@ -3222,6 +3385,12 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         for t in DETACHED_TYPES:
             if heights[t] is not None or by_type[t] in OK_PATHS:
                 heights[t] = acc_cap["height"] if heights[t] is None else min(heights[t], acc_cap["height"])
+        if place not in PASS16_HOLD_TOWNS and heights["detached_new"] is not None:
+            # pass 16: the accessory building cap that binds the unit is the height on file. Never "no height number"
+            notes = [n for n in notes if n != NO_DETACHED_HEIGHT]
+            hit = _cap_in_scope(data, picked, lot).get(("envelope", "accessory_structure_max_height_ft"))
+            if hit and heights["detached_new"] == acc_cap["height"] and "max_height_ft" not in citations:
+                citations["max_height_ft"] = _citation(*hit)
     stories, notes = _town_stories(data, today, lot, by_type, heights, notes, status, how, state)
     town_h = _value(today, "envelope", "max_height_ft")
     lifted = [
@@ -3303,6 +3472,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     # pass 11: a planned or cluster development whose own figures replace the district's (supersedes_district_figures).
     # Pass 12: or an overlay whose figures replace them. Not given: the district figures are shown with a plain line
     pd = [] if state else [c for c in conditions if c.get("supersedes_district_figures") and _sup_met(c) is not False]
+    if place not in PASS16_HOLD_TOWNS:  # pass 16: the gate the lot is inside leads, whatever its order in the file
+        pd = sorted(pd, key=lambda c: _sup_met(c) is not True)
     if pd and _sup_met(pd[0]) is True:
         if _usable(sides) and sides.get("value") is not None:  # the district side yards do not apply
             out["reasons"].append(
@@ -3322,6 +3493,12 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         )
     imp = d_row.get("max_impervious_coverage")
     pd_in = bool(pd) and _sup_met(pd[0]) is True  # pass 12: the district cover is replaced too
+    tier_line = None if (state or pd_in) else _impervious_tier_line(d_row, lot)
+    if tier_line:  # pass 16: cover by lot size, the lot's tier not known
+        out["reasons"].append(tier_line)
+    in_dispute = None if (state or pd_in) else _figures_in_dispute(d_row, lot)
+    if in_dispute:  # pass 16: the row's figures differ under another reading of the code. Both said, row qualified
+        out["reasons"].append(in_dispute)
     if (
         _usable(imp) and imp.get("value") is not None and not pd_in
     ):  # pass 10: impervious cover is not building coverage
@@ -3365,7 +3542,9 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
                 + ", ".join(f"{t.replace('_', ' ')} {v:,.0f} sq ft" for t, v in mins)
                 + f" ({min_by['section']})"
             )
-    out["reasons"] += _planned_development_yards(conditions, principal, out, citations, setbacks, lot, state)
+    out["reasons"] += _planned_development_yards(
+        conditions, principal, out, citations, setbacks, lot, state, place in PASS16_HOLD_TOWNS
+    )
     fire = {}
     for key, path in FIRE_KEYS.items():
         hit = picked.get(path)
@@ -3481,6 +3660,7 @@ def _planned_development_yards(
     setbacks: dict[str, dict[str, Any]],
     lot: dict[str, Any],
     state: bool,
+    hold16: bool = False,
 ) -> list[str]:
     """Pass 10: a gate with supersedes_district_figures (a planned or cluster development whose own figures replace
     the district's). On a lot that is in one the district yards are not shown. Pass 12: when that is not given, the
@@ -3489,6 +3669,8 @@ def _planned_development_yards(
     hits = [c for c in conditions if c.get("supersedes_district_figures") and _sup_met(c) is not False]
     if state or not hits:
         return []
+    if not hold16:  # pass 16: the gate the lot is inside leads. hold16: the first gate only (PASS16_HOLD_TOWNS)
+        hits = sorted(hits, key=lambda h: _sup_met(h) is not True)
     c = hits[0]
     d = lot.get("zoning_district")
     inside = _sup_met(c) is True
@@ -3531,18 +3713,35 @@ def _planned_development_yards(
     if inside:
         if not shown:
             return []
+        also = [
+            f"It is also in {_sup_where(o, True)}, whose own figures replace the district's ({o['section']})"
+            for o in ([] if hold16 else hits[1:])
+            if _sup_met(o) is True and _sup_where(o, True) != _sup_where(c, True)
+        ]  # pass 16: every gate the lot is inside is named
         return [
             f"Yards for {d}: this lot is in {_sup_where(c, True)}, whose own figures replace the district's "
             f"({c['section']}). The {'base' if overlay else 'district'} figures ({', '.join(shown)}) do not apply, "
-            "so none is shown. See the conditions"
+            "so none is shown" + "".join(f". {a}" for a in also) + ". See the conditions"
         ]
     if not shown and not any(principal[k][0].get("value") is not None for k in YARDS if k in principal):
         return []  # no district figure on file, so nothing for the development's figures to replace
     follows = "the overlay's figures" if overlay else "that plan's figures"
-    return [
+    line = (
         f"Yards for {d}: a lot {'in' if overlay else 'inside'} {_sup_where(c, False)} follows {follows} instead of "
         f"the district's ({c['section']})"
-    ]
+    )
+    said = {_sup_where(c, False)}
+    for o in [] if hold16 else hits[1:]:  # pass 16: every other gate whose own figures replace the district's
+        where = _sup_where(o, False)
+        if where in said:
+            continue
+        said.add(where)
+        ov = bool(o.get("supersedes_overlays"))
+        line += (
+            f". A lot {'in' if ov else 'inside'} {where} follows "
+            f"{'the overlay' if ov else 'that plan'}'s own figures instead ({o['section']})"
+        )
+    return [line]
 
 
 def _owner_text(text: Any, stops: bool = True, once: bool = True) -> Any:
@@ -3875,7 +4074,7 @@ def _town_stories(
         new = f"District height for {d}: at most {principal:g} stories ({p_leaf['section']}). The code gives no feet figure"
         notes = [new if n == old else n for n in notes]
     if accessory is not None and a_leaf is not None:
-        old = "No height number on file for a detached unit. Ask the zoning officer"
+        old = NO_DETACHED_HEIGHT
         new = f"Accessory buildings: at most {accessory:g} stories ({a_leaf['section']}). The code gives no feet figure"
         notes = [new if n == old else n for n in notes]
     return out, notes
@@ -4156,7 +4355,7 @@ def _town_heights(
     elif not any(by_type[t] in OK_PATHS for t in DETACHED_TYPES):
         pass  # no detached form allowed: no detached height line
     elif det["detached_new"] is None and not at_house:
-        notes.append("No height number on file for a detached unit. Ask the zoning officer")
+        notes.append(NO_DETACHED_HEIGHT)
     out = {t: (inner if t in PRINCIPAL_TYPES else det[t]) for t in ALL_TYPES}
     if _value(today, "envelope", "attached_height_capped_at_house") is True:  # pass 7: an addition
         if house:

@@ -345,6 +345,11 @@ def _path_cell(d):
     for item in ((d.get("approval") or {}).get("form_paths") or {}).get("value") or []:
         forms = ", ".join(f.replace("_", " ") for f in item["forms"])
         extra.append(f"{NAMES.get(item['path'], item['path'])} for {forms}")
+    for g in ((d.get("eligibility") or {}).get("gates") or {}).get("value") or []:
+        if g.get("path"):  # pass 16: a gate's own path for its forms, where the gate reaches
+            forms = ", ".join(f.replace("_", " ") for f in (g.get("applies_to") or [])) or "every form"
+            where = " or ".join((g.get("overlays") or [])[:1] + (g.get("districts") or []))
+            extra.append(f"{NAMES.get(g['path'], g['path'])} for {forms}" + (f" in {where}" if where else ""))
     hist = ((d.get("approval") or {}).get("historic_path") or {}).get("value")
     if hist:
         extra.append(f"historic building: {NAMES.get(hist, hist)}")
@@ -387,6 +392,13 @@ def _conditions_cell(d):
     if (el.get("lot_area_per_unit_sqft") or {}).get("value"):
         per.insert(0, f"{el['lot_area_per_unit_sqft']['value']:,} sq ft per unit")
     out += per
+    disputed = [  # pass 16: district figures another reading of the code puts at other values
+        (c, clean(r["figures_in_dispute"]["section"]))
+        for c, r in (d.get("districts") or {}).items()
+        if (r.get("figures_in_dispute") or {}).get("value")
+    ]
+    if disputed:
+        out.append(f"district figures not settled in {', '.join(c for c, _ in disputed)} ({disputed[0][1]})")
     bars: dict[str, list[str]] = {}
     for g in (el.get("gates") or {}).get("value") or []:
         if g["effect"] == "bars":

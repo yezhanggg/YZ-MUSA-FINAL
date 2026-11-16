@@ -344,7 +344,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the Floodplain Overlay District no new building or structure may be built unless the Zoning Hearing Board permits it as a special exception (27-1904j(1)). Any development is prohibited unless it causes no rise in the base flood elevation, and floodway encroachment is prohibited unless shown to cause no rise (27-1904a). The lowest floor of a residence must be at least 1.5 ft above the base flood elevation (27-1904j(3)). An accessory structure that is not elevated may not be used for human habitation (27-1904f.5(a)). Manufactured homes are prohibited (27-1904l), and no private sewage or private water system may be built in the overlay (27-1904p).",
+          "condition": "In the Floodplain Overlay District any development is prohibited unless it causes no rise in the base flood elevation, and floodway encroachment is prohibited unless shown to cause no rise (27-1904a). The lowest floor of a residence must be at least 1.5 ft above the base flood elevation (27-1904j(3)). An accessory structure that is not elevated may not be used for human habitation (27-1904f.5(a)). Manufactured homes are prohibited (27-1904l), and no private sewage or private water system may be built in the overlay (27-1904p).",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -352,7 +352,23 @@
           "overlays": [
             "Floodplain Overlay"
           ],
-          "section": "27-1904a, f.5(a), j(1), j(3), l, p",
+          "section": "27-1904a, f.5(a), j(3), l, p",
+          "url": "https://ecode360.com/print/NE0937?guid=32451042"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Overlay District no new building or structure may be built unless the Zoning Hearing Board permits it as a special exception (27-1904j(1)). A new detached unit, or a unit over a garage built new, is a new building.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain Overlay"
+          ],
+          "path": "special_exception",
+          "section": "27-1904j(1)",
           "url": "https://ecode360.com/print/NE0937?guid=32451042"
         },
         {
