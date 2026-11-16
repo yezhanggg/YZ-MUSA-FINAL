@@ -13,6 +13,20 @@ Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
 - Geometry, land cover, spot cover, terrain, fits and the index of every other lot are the same (checked by hash). Pittsburgh and Philadelphia were not rewritten.
 - Every hold set in `pipeline/rules.py` is now empty (`DOUBT_HOLD_TOWNS`, `PASS13_HOLD_TOWNS`, `PASS14_HOLD_TOWNS` emptied). The sets stay for a later pass.
 
+### Rules
+
+<!-- source: git log of shared/rules/ and pipeline/rules.py (commits aa7e0d0 to d8eea31), shared/rules/towns_index.json and the town files adu.status at commit 751cfaf, app/public/data/pa_places_meta.json (built 2026-11-16) -->
+
+- Rules engine passes 12, 13 and 14 (Nov 15 and 16). 14 passes are committed in all.
+- Town rule batches 27 to 34: 157 places now have a rule file (155 towns and the two cities). 101 are verified by an independent second reading, 56 stay first readings (drafted). 60 of the 155 town codes have no ADU text.
+- Answer ladder (`pa_places.json`, built Nov 16): 101 places verified (35.1% of people), 57 drafted (10.9%), 559 reported, 53 text search, 1,802 baseline. A status is known for 52.2% of people.
+
+### Assistant
+
+<!-- source: ~/musa-drive/ops/agent-eval/2026-11-16T07-45-46-claude-haiku-5-5/report.md and transcripts/ -->
+
+- Eval of Nov 16: 114 of 119 with 0 made-up citations ($0.15). All five misses give the right content. Three are strict scorer patterns (feat-05, tierb-01, tierb-05). Two are wording slips where the answer says "I don't know", which the prompt forbids (ladder-19, ladder-23). The three misses of the Nov 15 run pass.
+
 ## 2026-11-15, late morning
 
 Not legal advice. Not a zoning determination.
