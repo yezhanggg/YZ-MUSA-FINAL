@@ -3,6 +3,9 @@
 import { MAX_ROUNDS, type AgentContext, type AgentResponse } from '../../../agent/schema';
 import { makeExecutors, runTool, type DataProvider } from './executors';
 
+/** What the user sees when the server has no API key (same line as the tool's Ask box). */
+export const ASK_UNAVAILABLE = 'Ask is not available on this site right now. The answer, the checklist and their sources are in the panel.';
+
 export type Turn = { role: 'user' | 'assistant'; content: unknown };
 
 export interface AskResult {
@@ -29,7 +32,12 @@ export async function ask(question: string, history: Turn[], context: AgentConte
       return { ok: false, text: 'The agent could not be reached. Try again in a moment.', tools, history };
     }
     if (res.type === 'error') {
-      return { ok: false, text: res.error === 'not_configured' ? 'Agent not set up yet (needs ANTHROPIC_API_KEY on Vercel)' : res.message, tools, history, notConfigured: res.error === 'not_configured' };
+      if (res.error === 'not_configured') {
+        // Developer detail stays in the console; the user sees the plain line.
+        console.warn('Ask: /api/agent is not configured (ANTHROPIC_API_KEY is not set on the server).');
+        return { ok: false, text: ASK_UNAVAILABLE, tools, history, notConfigured: true };
+      }
+      return { ok: false, text: res.message, tools, history };
     }
     messages.push({ role: 'assistant', content: res.content });
     if (res.type === 'final') return { ok: true, text: res.text, tools, history: messages };

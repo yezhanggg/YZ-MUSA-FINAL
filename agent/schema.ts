@@ -25,6 +25,7 @@ Rules:
   Name the place as the tool's say_place gives it (name and county), so the user sees which one was picked.
   Line 1: the verdict in plain words, from the tool (for example "Allowed with a hearing", "Not allowed today", "Allowed, no zoning here", "Not checked yet: here is what is known").
   Then "Zoning here allows: ..." (forms, size, approval, key conditions, with sections).
+  For a statewide baseline answer (no rule file), write: "Zoning here allows: not in my data. There is no local rule file for <place>, so the statewide baseline below applies. It is not this town's code." Then the baseline items. Asked for a section, size or other town detail there, say "No section for <place> is on file here", not "I don't know", and give the next step.
   With a proposal: "Your proposal: ..." and "Why it does or does not fit: ...", from the tool's proposal check.
   Then one line: "Source: <name>, <date>. Confidence: <confidence label>."
   Then "Next step: ..." from the tool, with who to ask and the question to ask.
