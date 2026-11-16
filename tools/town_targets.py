@@ -1467,6 +1467,7 @@ FIXED_BATCH.update({g: 33 for g in ("4204767344", "4203707128", "4201344328")})
 FIXED_BATCH.update({g: 34 for g in ("4201753304", "4202979352", "4202164544")})
 FIXED_BATCH.update({g: 35 for g in ("4209145072", "4209144920", "4204586968")})
 FIXED_BATCH.update({g: 36 for g in ("4207555160", "4209532432", "4207123016")})
+FIXED_BATCH.update({g: 37 for g in ("4207932416", "4202953608", "4204541440")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1640,6 +1641,17 @@ EXTRAS = {
     "4207555160": "batch 36 by population. Code Chapter 27 has no ADU text (27-602 two-family and conversion in R-2, 27-1208 second principal structure)",
     "4209532432": "batch 36 by population. Code Chapter 185 has no ADU text (use variance barred, 185-52D(2))",
     "4207123016": "Code 27-1333 accessory dwelling units by right in R-1, R-2, R-3 and MU",
+    # Batch 37 (2026-11-16): the next towns by population without a rule file. Loyalsock (Lycoming) was skipped (eCode360
+    # code of 2017-06-27 with 20 uncodified laws, Ord. No. 2021-395 amending the zoning ordinance among them, and the Table
+    # of Uses and Schedule A only in PDF attachments), Salisbury (Lancaster) (district design standards tables only in PDF
+    # attachments), Rostraver (Westmoreland) (Ord. No. 791 of 9-21-2026, a Chapter 195 zoning amendment, not yet
+    # codified), Hamilton (Franklin) (no municipal zoning: the township lists no zoning ordinance and issues only a land
+    # use permit), Willistown (Chester) (Ord. No. 5-2026 and No. 6-2026 of October 2026, Chapter 139 zoning amendments, not
+    # yet codified), Fairview (Erie) (the township says its online code does not hold the current zoning ordinance, and the
+    # 2025 zoning ordinance is not yet codified) and Wyomissing (Berks) (codified ordinances only as chapter PDFs).
+    "4207932416": "Code 580-14 residential units for care of relatives",
+    "4202953608": "Code 200-413E accessory dwelling unit by right in RL, RM, RF, VC, VG and MUL",
+    "4204541440": "batch 37 by population. Code Chapter 330 has no ADU text (330-27G and 330-22N(2) bar residential conversions)",
 }
 
 if __name__ == "__main__":

@@ -1,0 +1,751 @@
+{
+  "provenance": {
+    "jurisdiction": "New Garden township",
+    "instrument": "New Garden Township Zoning Ordinance (Chapter 200 Zoning, adopted by Ord. 2026-002 on 7-20-2026), as published on Municode",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Municode Library, New Garden Township, Chester County (the township page newgarden.org/443 links 'Municode link to Township Code', and 200-301 to 200-317 name Toughkenamon Village, Baltimore Pike, Newark Road and the New Garden Airport). The township adopted a new zoning ordinance and map by Ord. 2026-002 at its 7-20-2026 meeting, after a 26-month rewrite. Municode shows Chapter 200 in the new form (sections 200-101 to 200-1105), version 'NOV 2, 2026 (CURRENT)'. The use table (Figure 200-4-1) and the district figures (Figures 200-3-1 to 200-3-17) are text tables on Municode. The Municode page shows no list of uncodified laws, so later amendments were not checked",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.newgarden.org/443/Zoning-Ordinance-Map",
+      "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iab6181d1d93c53b",
+      "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i7e9aefc195ccdbd",
+      "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+      "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i34472095656c4e6",
+      "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ie60968710d03a55",
+      "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i6a4dcc26ef83f85"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202953608",
+    "code_host": "municode",
+    "code_url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+    "code_current_through": "2026-11-02",
+    "code_current_through_note": "Municode version selector: 'NOV 2, 2026 (CURRENT)'. Chapter 200 is the zoning ordinance adopted by Ord. 2026-002 (7-20-2026)",
+    "code_caution": "New Garden adopted a new zoning ordinance and map on 7-20-2026 (Ord. 2026-002). This file reads the new Chapter 200 as published on Municode (version of 11-2-2026). Ask the township whether any later amendment applies.",
+    "checks": [
+      "'Dwelling Unit, Accessory' is permitted by right in RL, RM, RF, VC, VG and MUL (Figure 200-4-1). In PO, MU, IO, EP and AP its cell is blank, and a blank means 'Non-Permitted Use' (200-402)",
+      "An accessory dwelling unit is 'A Dwelling Unit that is associated with and is incidental to another Dwelling Unit on the same Lot which serves as the Lot's Principal Use' (200-202)",
+      "The landowner needs a permit before the unit is recognized. 'The property proposed for an Accessory Dwelling Unit must contain one, but no more than one, residential Structure occupied as a one-unit Dwelling' (200-413E(1))",
+      "If the ADU is not owner-occupied, the landowner needs a Residential Rental Occupancy Permit. If either unit is not owner-occupied, the landowner names a local property representative available at all hours who answers complaints within one hour (200-413E(2), (3))",
+      "The unit may be in a newly built ADU structure, in an existing detached accessory structure used now or before as a garage, barn or similar use on its first floor, or in the house if it has a separate entrance to the outside or to an unconditioned porch (200-413E(4))",
+      "The ADU's usable floor area may be at most 50% of the house's usable floor area. Patios, decks, porches and stairs that give inside access are not counted (200-413E(5))",
+      "No separate street number for the ADU. No new separate utility connection for an ADU in the house unless the lot already has more than one (200-413E(7), (8))",
+      "The ADU must show it can connect to the existing sewer line or septic system. If the septic tank cannot take more, a separate on-lot system must be approved. Where the house is on public sewer, the ADU ties into the house's sewer line (200-413E(9))",
+      "The ADU may not be sold or its title transferred apart from the rest of the property (200-413E(10))",
+      "An ADU in a separate structure must be 15 ft from all side and rear lot lines and 15 ft from the rearmost part of the house (200-413E(11)). The code omits 'feet' in two of these lines",
+      "Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d), (4)(b)). Each district table gives accessory structure setbacks",
+      "The orientation of the ADU should keep the privacy of neighbors through screening, fencing and window and door placement (200-413E(6))",
+      "Parking: single-unit dwellings need 2 spaces per unit. The ADU is not listed in Figure 200-7-2, so its count follows the township's recommendation or a parking demand analysis (200-705B(1)). Driveways and garages may count as spaces (200-704C)",
+      "RM sets a 'Maximum Development Density 5 Dwelling Units per Acre' (Figure 200-3-3). Whether it applies to an ADU on one lot is not settled",
+      "In VG the use table permits the ADU but not a single-unit detached dwelling. Semi-attached, two-unit, townhouse and multi-unit dwellings are permitted there",
+      "In the Innovation district a single-unit detached dwelling is a conditional use limited to one lot per 10 acres (200-405F). The ADU is not permitted in IO",
+      "A use not provided for is a conditional use before the Board of Supervisors, if similar to the district's permitted uses (200-403)",
+      "200-113D(1) sets the usual variance findings and does not bar a use variance",
+      "Floodplain: land in the Flood Hazard Overlay District follows Chapter 96 (not read). Applications that add 1,000 sq ft or more of impervious cover or disturb 5,000 sq ft or more must meet the natural resource limits: no disturbance of floodplain, wetlands, zone one riparian buffers or rare species sites, at most 10% of steep slopes and 25% of precautionary slopes (200-602, 200-603, Figure 200-6-1)",
+      "A lot below the district area or width may be built on if every other rule is met and it has approved on-lot water and sewage or public water and sewer (200-1103)",
+      "Porches and balconies may reach 6 ft into the front or rear setback, and front setbacks may be reduced to the block's prevailing yard pattern, but not below half the district figure (200-304)"
+    ],
+    "notes": "Zoning office: New Garden Township, Codes Department. Read in a browser on Municode, one page at a time, on 2026-11-16. Read: the township zoning page, Article II definitions A to F in full and the impervious lot coverage entry, Article III (200-301 to 200-317) in full, Article IV through 200-407 and 200-413A to E (the use table checked by screenshot, the text of 200-413 read by screenshot), Article VI in full, 200-704 and 200-705 with Figure 200-7-2, 200-113 and 200-1103. Not read: Article I except 200-113, definitions G to Z (so 'Usable Floor Area', 'Lot Coverage', 'Height' and 'Story' were not read), Article V (historic preservation), 200-408 to 200-412, 200-413F onward, 200-414, Articles VIII to X, the rest of Article XI, Chapter 96 (floodplain) and Chapter 170 (subdivision and land development). Municode text loads slowly. The code search was not run. Instead the use table and the ADU definition and standards were read in full."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "200-202, 200-413E, Figure 200-4-1",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i7e9aefc195ccdbd",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Dwelling Unit, Accessory – A Dwelling Unit that is associated with and is incidental to another Dwelling Unit on the same Lot which serves as the Lot's Principal Use.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "Figure 200-4-1, 200-402, 200-413E",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'P' (permitted by right) in RL, RM, RF, VC, VG and MUL, under 200-413E. A permit first (200-413E(1))"
+    },
+    "scope_districts": {
+      "value": [
+        "RL",
+        "RM",
+        "RF",
+        "VC",
+        "VG",
+        "MUL"
+      ],
+      "section": "Figure 200-4-1",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Checked on the table itself: P under RL, RM, RF, VC, VG and MUL, blank under PO, MU, IO, EP and AP"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "Figure 200-4-1, 200-402",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The table's key reads 'Blank = Non-Permitted Use', and uses not permitted in a district 'shall be deemed excluded' (200-402). The ADU row is blank in PO, MU, IO, EP and AP"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "200-402, 200-413E(1)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Permitted by right (“P”). These Uses are permitted automatically by right in the Zoning districts in which they are listed'. A permit for the ADU first"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "200-113D(1)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iab6181d1d93c53b",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board. The usual findings. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-unit dwelling (RM, RF, VC, VG, MUL, MU)",
+          "path": "by_right",
+          "districts": [
+            "RM",
+            "RF",
+            "VC",
+            "VG",
+            "MUL",
+            "MU"
+          ],
+          "conditions": "'Dwelling, Two-Unit' is permitted by right in RM, RF, VC, VG, MUL and MU and is a conditional use in IO (Figure 200-4-1). A two-unit dwelling is 'A Building located on one Lot containing not more than two Dwelling Units, arranged one above the other, side by side, or back to back' (200-202). Lot 4,000 sq ft in RM and VC, 10,000 sq ft in VG, 'Flexible' in RF, MUL and MU. Impervious cover 80% in RM, 70% in RF, MUL and MU. Two parking spaces per unit (Figure 200-7-2)",
+          "min_lot_by_district": {
+            "RM": 4000,
+            "VC": 4000,
+            "VG": 10000
+          },
+          "section": "Figure 200-4-1, 200-202, 200-308, 200-310, 200-311",
+          "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+          "confidence": "verified",
+          "note": "A building of two units, not a unit added to a house. RF, MUL and MU set no residential lot minimum"
+        }
+      ],
+      "section": "Figure 200-4-1",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 200",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found. Article V (historic preservation) was not read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "PO",
+        "MU",
+        "IO",
+        "EP",
+        "AP"
+      ],
+      "section": "Figure 200-4-1",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The ADU row is blank, which the key reads as 'Non-Permitted Use'"
+    },
+    "districts_in_doubt": {
+      "value": [
+        "VG"
+      ],
+      "section": "Figure 200-4-1, 200-413E(1)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "VG permits the ADU, but not a single-unit detached dwelling. The ADU needs a lot with 'one, but no more than one, residential Structure occupied as a one-unit Dwelling' (200-413E(1)). Ask which VG lots can hold one",
+      "named_by": {
+        "VG": "reach"
+      }
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "The property must contain 'one, but no more than one, residential Structure occupied as a one-unit Dwelling'. A twin or townhouse building holds more than one dwelling unit.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "200-413E(1)",
+          "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "200-202 'Dwelling'",
+            "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i7e9aefc195ccdbd",
+            "note": "The code calls a twin a 'Single-Unit Semi-Attached Dwelling', two dwelling units on abutting lots. Read lot by lot, a twin lot may hold one one-unit dwelling"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "Wastewater: the ADU must be certified to connect to the existing sewer line or septic system. If the septic tank cannot take the added flow, a separate on-lot system must be approved. Where the house is on public sewer, the ADU ties into the house's sewer line.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-413E(9)",
+          "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813"
+        },
+        {
+          "kind": "other",
+          "condition": "If the ADU is not owner-occupied, a Residential Rental Occupancy Permit is needed, and if either unit is not owner-occupied a local property representative must be on call at all hours.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-413E(2), (3)",
+          "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813"
+        },
+        {
+          "kind": "other",
+          "condition": "Land in the Flood Hazard Overlay District must meet Chapter 96, Floodplain Management. Where Article VI applies (1,000 sq ft or more of new impervious cover, 5,000 sq ft or more of earthmoving), floodplain, wetlands and zone one riparian buffers may not be disturbed at all.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Flood Hazard Overlay District"
+          ],
+          "section": "200-602, 200-603B, Figure 200-6-1",
+          "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i34472095656c4e6"
+        }
+      ],
+      "section": "200-413E, 200-603",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "200-413E(4)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'a) In a newly constructed Accessory Dwelling Unit Structure; b) In an existing detached accessory Structure occupied, or formerly occupied, on the first floor by a Garage, barn, or similar Accessory Use; or c) In a Principal Structure provided that there is a separate entrance to the exterior or to an unconditioned Porch type space.' An addition to the house is read as part of the principal structure"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "200-413E(5)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No square foot cap. The cap is a share of the house"
+    },
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "200-413E(5)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'The Usable Floor Area of the Accessory Dwelling Unit shall not exceed 50% percent of the Usable Floor Area of the principal Dwelling Unit.' The definition of usable floor area was not read"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 15,
+      "section": "200-413E(11)(a)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Must be 15 from all side property lines.' The line omits 'feet'"
+    },
+    "setback_rear_ft": {
+      "value": 15,
+      "section": "200-413E(11)(b)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Must be 15 feet from all rear property lines.'"
+    },
+    "separation_ft": {
+      "value": 15,
+      "section": "200-413E(11)(c)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Must be 15 from rear most portion of principal Structure, if located in separate Structure.'"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "200-413A(2)(c), Figures 200-3-1 to 200-3-16",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'All accessory structures shall comply with the front, side, and rear Yard Setback requirements for the district'. Each district table sets 'Minimum Accessory Structure Setbacks' apart from the principal ones, so the accessory figures are read as the district's yards for an accessory structure"
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "Figures 200-3-1 to 200-3-16, 200-413",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The district tables set a 'Maximum Building Height' and no separate height for accessory structures, and 200-413E sets no ADU height. So a detached ADU takes the district building height"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "200-413A(2)(d), (4)(b)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory structures are only permitted in side or rear yards.'"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "200-413E(2), (3)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'If the accessory Dwelling Unit is not Owner-occupied, the Landowner must file a Residential Rental Occupancy Permit.' No owner rule"
+    },
+    "family_only": {
+      "value": false,
+      "section": "200-413E",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No family or occupant rule"
+    },
+    "max_adus": {
+      "value": null,
+      "section": "200-413E(1)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified",
+      "note": "The lot must hold one residential structure occupied as a one-unit dwelling. No number of ADUs per lot is stated"
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "200-413E(10)",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ia7da9a328b02813",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The Accessory Dwelling Unit may not be conveyed, or the title to the Accessory Dwelling Unit be transferred separate and apart from the rest of the property.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "200-705B(1), Figure 200-7-2",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ie60968710d03a55",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified"
+    },
+    "reading": {
+      "value": "Figure 200-7-2 asks 2 spaces per unit for a single-unit detached dwelling and does not list the ADU. 'Any uses not found within Figure 200-7-2 can either defer to the recommendation of the Township or develop a Parking Demand Analysis'. Read as a dwelling unit, the ADU would need 2 more, 4 in total.",
+      "section": "200-705B(1), Figure 200-7-2",
+      "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=ie60968710d03a55",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "RL": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "200-307, Figure 200-3-2",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One acre. Width 100 ft (50 ft at the right-of-way on a cul-de-sac)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "200-307, Figure 200-3-2",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "200-307, Figure 200-3-2",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "200-307, Figure 200-3-2",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "200-307, Figure 200-3-2",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Impervious Lot Coverage' is the share of the lot in impervious cover (200-202)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-307, Figure 200-3-2",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Height'"
+      },
+      "accessory_setback_front_ft": {
+        "value": 50,
+        "section": "200-307, Figure 200-3-2",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum Accessory Structure Setbacks', front. Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d))"
+      }
+    },
+    "RM": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-unit detached dwelling. Width 50 ft. 'Maximum Development Density 5 Dwelling Units per Acre'"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 2000,
+          "attached": 1000
+        },
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Semi-attached 2,000 sq ft, townhouse 1,000 sq ft, two-unit 4,000 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-unit detached dwelling. Semi-attached 60%, townhouse and two-unit 80%. 'Impervious Lot Coverage' is the share of the lot in impervious cover (200-202)"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 15,
+        "section": "200-308, Figure 200-3-3",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum Accessory Structure Setbacks', front. Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d))"
+      }
+    },
+    "RF": {
+      "setback_front_ft": {
+        "value": 10,
+        "section": "200-309, Figure 200-3-5",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Option 1 development: '10 feet minimum, 30 feet maximum'. Residential lot sizes are 'Flexible', at most half an acre, at 12 dwelling units per acre of gross tract"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "200-309, Figure 200-3-5",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "200-309, Figure 200-3-5",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "200-309, Figure 200-3-5",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-unit detached. Semi-attached and two-unit 70%, townhouse 80%. 'Impervious Lot Coverage' is the share of the lot in impervious cover (200-202)"
+      },
+      "principal_max_height_ft": {
+        "value": 48,
+        "section": "200-309, Figure 200-3-5",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 20,
+        "section": "200-309, Figure 200-3-5",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum Accessory Structure Setbacks', front. Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d))"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Option 2 development, when public sewer is not available",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 25,
+            "principal_max_height_ft": 35,
+            "max_impervious_coverage": 0.4,
+            "section": "200-309, Figures 200-3-4, 200-3-7",
+            "note": "One acre, width 150 ft"
+          },
+          {
+            "when": "Option 2 development, when public water is not available",
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 25,
+            "principal_max_height_ft": 35,
+            "max_impervious_coverage": 0.4,
+            "section": "200-309, Figures 200-3-4, 200-3-7",
+            "note": "One acre, width 150 ft"
+          }
+        ],
+        "section": "200-309, Figures 200-3-4, 200-3-7",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Development Option 2 is only available when it is determined by the appropriate public Utility service provider that either sewer or water services is not available'"
+      }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "200-310, Figure 200-3-8",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-unit detached dwelling. Width 30 ft"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 2000,
+          "attached": 1000
+        },
+        "section": "200-310, Figure 200-3-8",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "200-310, Figure 200-3-8",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'5 feet minimum, 25 feet maximum', or 10 ft minimum and 40 ft maximum on Baltimore Pike or Newark Road"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "200-310, Figure 200-3-8",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "200-310, Figure 200-3-8",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.8,
+        "section": "200-310, Figure 200-3-8",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Impervious Lot Coverage' is the share of the lot in impervious cover (200-202)"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "200-310, Figure 200-3-8",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 25,
+        "section": "200-310, Figure 200-3-8",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum Accessory Structure Setbacks', front. Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d))"
+      }
+    },
+    "VG": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "200-311, Figure 200-3-10",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 50 ft. The table also sets 'Maximum Lot Coverage 70%', a term not read in 200-202, so it is not stored"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "200-311, Figure 200-3-10",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'15 feet minimum, 40 feet maximum'"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "200-311, Figure 200-3-10",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "200-311, Figure 200-3-10",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 60,
+        "section": "200-311, Figure 200-3-10",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 40,
+        "section": "200-311, Figure 200-3-10",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum Accessory Structure Setbacks', front. Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "200-311, Figure 200-3-10",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Accessory structure setback from the district table. The ADU's own 15 ft side and rear setbacks (200-413E(11)) are stricter where this table is lower"
+      }
+    },
+    "MUL": {
+      "setback_front_ft": {
+        "value": 25,
+        "section": "200-312, Figure 200-3-12",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Residential lot sizes are 'Flexible'. Width 40 ft for a single-unit detached dwelling. The figure is titled 'LL Zoning District'"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "200-312, Figure 200-3-12",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "200-312, Figure 200-3-12",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "200-312, Figure 200-3-12",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-unit detached. Semi-attached and two-unit 70%, townhouse 80%. 'Impervious Lot Coverage' is the share of the lot in impervious cover (200-202)"
+      },
+      "principal_max_height_ft": {
+        "value": 60,
+        "section": "200-312, Figure 200-3-12",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 40,
+        "section": "200-312, Figure 200-3-12",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum Accessory Structure Setbacks', front. Accessory structures must meet the district's yard setbacks and stand only in side or rear yards (200-413A(2)(c), (d))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "200-312, Figure 200-3-12",
+        "url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=i0185f3aca4f4e48",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Accessory structure setback from the district table. The ADU's own 15 ft side and rear setbacks (200-413E(11)) are stricter where this table is lower"
+      }
+    }
+  }
+}

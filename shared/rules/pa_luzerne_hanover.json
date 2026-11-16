@@ -1,0 +1,784 @@
+{
+  "provenance": {
+    "jurisdiction": "Hanover township",
+    "instrument": "Hanover Township Zoning Ordinance (Chapter 580 Zoning, adopted by the Board of Commissioners 6-13-2016, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 HA0550, Township of Hanover, Luzerne County (the township website hanovertownship.org, 'A progressive growing community in Luzerne County', links 'Hanover Township Code' to ecode360.com/HA0550, and 580-7 names the 'Board of Commissioners of Hanover Township, Luzerne County' and the Court of Common Pleas of Luzerne County). Chapter 580 was adopted 6-13-2016 and amended since, most recently by Ord. No. 02-2025 (5-14-2025). The use tables (580-43, 580-44) and the area, bulk and density table (580-45) are text tables in the code. The only attachment is the table of zoning map amendments. Floodplain rules are in Chapter 300 (Ord. No. 001-2024). New Laws: none",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.hanovertownship.org/",
+      "https://ecode360.com/HA0550",
+      "https://ecode360.com/HA0550/laws",
+      "https://ecode360.com/37662217",
+      "https://ecode360.com/HA0550/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20conversion%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20granny%20OR%20relative%20OR%20relatives%20OR%20servant%20OR%20quarters%20OR%20watchman%20OR%20%22housekeeping%20unit%22%20OR%20cottage%20OR%20%22tiny%20house%22%20OR%20%22elder%22%20OR%20%22farm%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/HA0550?guid=37662291",
+      "https://ecode360.com/print/HA0550?guid=37662614",
+      "https://ecode360.com/print/HA0550?guid=37662639",
+      "https://ecode360.com/print/HA0550?guid=37662622",
+      "https://ecode360.com/print/HA0550?guid=37662697",
+      "https://ecode360.com/print/HA0550?guid=37662700",
+      "https://ecode360.com/print/HA0550?guid=37662711",
+      "https://ecode360.com/print/HA0550?guid=37662712",
+      "https://ecode360.com/print/HA0550?guid=37662863",
+      "https://ecode360.com/print/HA0550?guid=37663388",
+      "https://ecode360.com/print/HA0550?guid=37663418",
+      "https://ecode360.com/print/HA0550?guid=37663783",
+      "https://ecode360.com/37659296",
+      "https://ecode360.com/50219742",
+      "https://ecode360.com/50219906"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Luzerne",
+    "municipality_type": "township",
+    "geoid": "4207932416",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/37662217",
+    "code_current_through": "2026-03-11",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 03-11-2026.' New Laws: 'There are currently no known new laws for this Code.'",
+    "checks": [
+      "A 'separate residential dwelling unit within or attached to a single-family dwelling unit' is a permitted accessory use, not a second principal use, when all the 580-14 criteria are met",
+      "At most two persons may live in the unit. They must be relatives of the people living in the house, and at least one of them 'must need accommodations because of illness, infirmity, age or disability' (580-14A, B)",
+      "The unit must be designed and built so it can be turned back into part of the house within six months after the relatives leave. This is a condition of the zoning permit (580-14C)",
+      "The unit must be attached to the house 'in such a way as not to detract from the residential characteristics of the neighborhood' (580-14D)",
+      "One more off-street parking space is needed for the unit, unless the Zoning Officer accepts that its residents do not drive (580-14E). A single-family detached dwelling needs two spaces (580-83A(1))",
+      "580-14 sets no floor area cap and no owner-occupancy rule",
+      "Single-family dwellings are permitted in R-1, R-2, R-3, R-MHP, C-OP and MU (580-43) and in C-1 (580-44). C-2, I-1 and I-2 permit no dwellings",
+      "A single-family dwelling is 'A detached building arranged or used for occupancy by one family' (580-7). A twin is a two-family dwelling, so 580-14 does not reach it",
+      "Two-family dwellings are a permitted use in R-2, R-3, R-MHP, MU and C-1. Two-family dwellings need 3,000 sq ft of lot area for each dwelling unit and at most 30% building coverage per dwelling unit (580-43, 580-44, 580-55A(4))",
+      "A use 'neither specifically permitted nor denied' goes to the Board of Commissioners as a conditional use and may be allowed only if 'similar to and compatible with permitted uses in the district' (580-36)",
+      "580-123 sets the usual variance findings and does not bar a use variance",
+      "An unattached accessory structure on a residential lot may stand only in the rear or side yard, at most 20 ft tall, at least 5 ft from the side and rear lot lines (10 ft where the yard abuts a street or alley), at least 10 ft from the house, and at most 750 sq ft on a lot under 10,000 sq ft, never larger than the house footprint (580-13B(1))",
+      "Two or more residential buildings on a lot need land development approval under Chapter 500 (580-22)",
+      "In the floodway no new construction is allowed without a DEP permit and a showing of no rise in flood levels. In an AE zone without a floodway no new construction within 50 ft of the top of bank without a DEP permit (Chapter 300, 300-18A, B(2))",
+      "Any development needs a 50 ft setback from any watercourse (580-34)",
+      "Land with a slope of 25% or more needs a soil erosion and sedimentation control plan approved by the Luzerne County Conservation District before a zoning permit (580-28)",
+      "A lot of record that was smaller or narrower than the district requires may be built on if it meets the yards (580-58)"
+    ],
+    "notes": "Zoning office: Hanover Township (Luzerne County), Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 580-7 (definitions A to M in full, and the dwelling, family, lot coverage and lot of record entries), Article III (580-8 to 580-37) in full, Article V (580-42 to 580-45) in full, 580-41, 580-55A(1) to (28), 580-58, 580-83A(1) and a few lines of Article X, 580-123, Chapter 300 (300-18 and 300-29) and the New Laws page. Not read: 580-1 to 580-6, definitions after 'Motel', Article VI (580-46 to 580-49), Article VII (580-50 to 580-54), 580-55A(29) onward, 580-56, 580-57, 580-59 to 580-65, the rest of Article X, Articles XI to XIII, 580-115 to 580-122, 580-124 to 580-127, the rest of Chapter 300 and Chapter 500. The code search for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, relative, servant, quarters, watchman, housekeeping unit, cottage, tiny house, elder and farm dwelling returned 56 hits. The first 20 were read: 580-14 and definitions (tiny house, dwelling, rooming unit, family, short-term home rental). A tiny house is 'A single-family residential structure', a special exception only in C-OP. 580-42B says a conditional use needs 'Borough Council approval', a slip for the Board of Commissioners (580-36)."
+  },
+  "adu": {
+    "term": {
+      "value": "residential units for care of relatives",
+      "section": "580-14",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Title of 580-14: 'Residential units for care of relatives.' The section calls the unit a 'separate accessory residential dwelling unit'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "580-14",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The use of a separate residential dwelling unit within or attached to a single-family dwelling unit may not be considered a second principal use, but shall constitute a permitted accessory use provided that all of the following criteria are met'. Only relatives, one needing care. A zoning permit from the Zoning Officer"
+    },
+    "scope_by_use": {
+      "value": {
+        "use": "single-family dwelling",
+        "permitted_in": [
+          "R-1",
+          "R-2",
+          "R-3",
+          "R-MHP",
+          "C-OP",
+          "MU",
+          "C-1"
+        ],
+        "not_permitted_in": [
+          "C-2",
+          "I-1",
+          "I-2"
+        ]
+      },
+      "section": "580-14, 580-43, 580-44",
+      "url": "https://ecode360.com/print/HA0550?guid=37662712",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "580-14 reaches a unit within or attached to a single-family dwelling unit. 580-43 permits single-family dwelling units in R-1, R-2, R-3, R-MHP, C-OP and MU, and 580-44 in C-1. C-2, I-1 and I-2 permit no dwellings"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "580-44",
+      "url": "https://ecode360.com/print/HA0550?guid=37662712",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "C-2, I-1 and I-2 list no dwelling, so there is no house for the unit to serve"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "580-14, 580-42A",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A permitted accessory use. 580-14C makes the reconversion design 'a condition of any permit issued by the Zoning Officer'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "580-123",
+      "url": "https://ecode360.com/print/HA0550?guid=37663783",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board. 580-123 sets the usual findings and does not bar a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "conditional_use",
+      "section": "580-36",
+      "url": "https://ecode360.com/print/HA0550?guid=37662700",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Whenever, in any district established under this chapter, a use is neither specifically permitted nor denied', the Zoning Officer refers it to the Board of Commissioners as a conditional use"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "580-36",
+      "url": "https://ecode360.com/print/HA0550?guid=37662700",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "quote": "The proposed use may be permitted if only if it is determined to be similar to and compatible with permitted uses in the district"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R-2, R-3, R-MHP, MU, C-1)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "R-MHP",
+            "MU",
+            "C-1"
+          ],
+          "conditions": "'Two-family dwelling units' are a permitted use in R-2, R-3, R-MHP and MU (580-43) and in C-1 (580-44). A two-family dwelling is 'A detached or semidetached building where not more than two individual family or dwelling units are entirely separated by vertical walls or horizontal floors' (580-7). 'A lot area of 3,000 square feet shall be required for each dwelling unit', building coverage at most 30% per dwelling unit, height at most three stories or 35 ft (580-55A(4)). Two parking spaces per dwelling unit (580-83A)",
+          "min_lot_sqft": 6000,
+          "min_lot_by_district": {
+            "R-2": 6000,
+            "R-3": 6000,
+            "C-1": 6000,
+            "MU": 43560,
+            "R-MHP": 435600
+          },
+          "section": "580-43, 580-44, 580-55A(4), 580-7",
+          "url": "https://ecode360.com/print/HA0550?guid=37662712",
+          "confidence": "secondary",
+          "note": "6,000 sq ft is 3,000 sq ft for each of two units. Where the district minimum is larger (MU one acre, R-MHP 10 acres) the district figure is shown. The code does not say how an existing house becomes a two-family dwelling"
+        }
+      ],
+      "section": "580-43, 580-44, 580-55A(4)",
+      "url": "https://ecode360.com/print/HA0550?guid=37662712",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 580",
+      "url": "https://ecode360.com/print/HA0550?guid=37662614",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "580-14, 580-7",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "580-14 reaches a unit 'within or attached to a single-family dwelling unit', and a single-family dwelling is 'A detached building arranged or used for occupancy by one family' (580-7). A twin or townhouse unit is not a single-family dwelling in this code"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-2",
+        "I-1",
+        "I-2"
+      ],
+      "section": "580-44",
+      "url": "https://ecode360.com/print/HA0550?guid=37662712",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Commercial and industrial districts with no dwelling listing"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The unit must be designed and built so that it can be turned back into part of the house within six months after the relatives no longer live there. This is a condition of the zoning permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "580-14C",
+          "url": "https://ecode360.com/print/HA0550?guid=37662639"
+        },
+        {
+          "kind": "other",
+          "condition": "Floodplain (Chapter 300): in the floodway no new construction or development is allowed unless a DEP permit is obtained and an engineering study shows no rise in flood levels. In an AE zone without a floodway no new construction within 50 ft of the top of bank without a DEP permit. Improvements in the 100-year floodplain must meet Chapter 300.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodway",
+            "100-year floodplain"
+          ],
+          "section": "580-33, 300-18A, 300-18B(2)",
+          "url": "https://ecode360.com/50219742"
+        },
+        {
+          "kind": "other",
+          "condition": "A setback of at least 50 ft from any watercourse applies to any development or improvement.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "580-34",
+          "url": "https://ecode360.com/print/HA0550?guid=37662614"
+        }
+      ],
+      "section": "580-14, 580-33, 580-34, Chapter 300",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "580-14, 580-14D",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'within or attached to a single-family dwelling unit', and 'The separate accessory residential dwelling unit shall be attached to the principal residential dwelling unit'. A unit in a detached building is not this use"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "580-14",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No floor area cap in 580-14"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "580-13",
+      "url": "https://ecode360.com/print/HA0550?guid=37662622",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Accessory structures which are attached to a principal structure shall be considered a part of the principal structure and shall comply with the same yard and lot requirements applicable to the principal structure'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "580-13B(1)",
+      "url": "https://ecode360.com/print/HA0550?guid=37662622",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'unattached accessory structures shall only be erected within the rear yard or side yard areas of the lot'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "580-14A, B",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At most two persons, who must be relatives of the people living in the house. At least one of them must need the unit because of illness, infirmity, age or disability.",
+      "section": "580-14A, B",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "580-14",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No owner rule. The residents must be relatives of 'the persons occupying the principal residential dwelling unit'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "580-14",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "580-14 speaks of 'a separate residential dwelling unit'. No number is stated"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "580-14E",
+      "url": "https://ecode360.com/print/HA0550?guid=37662639",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'One additional off-street parking space shall be required' unless the Zoning Officer accepts that the residents of the unit do not drive"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "580-14E, 580-83A(1)",
+      "url": "https://ecode360.com/print/HA0550?guid=37663418",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Two spaces for the single-family detached dwelling and one more for the unit"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-Family Residential District. Frontage 80 ft, depth 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: One Side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: Both Sides'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Lot coverage' is the area covered by 'all buildings, including covered porches and accessory buildings and structures', divided by the gross lot area (580-7). So it is building coverage"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two-Family Residential District. Frontage 60 ft, depth 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: One Side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 15,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: Both Sides'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Lot coverage' is the area covered by 'all buildings, including covered porches and accessory buildings and structures', divided by the gross lot area (580-7). So it is building coverage"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Multifamily Residential District. Frontage 50 ft, depth 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: One Side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 15,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: Both Sides'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Lot coverage' is the area covered by 'all buildings, including covered porches and accessory buildings and structures', divided by the gross lot area (580-7). So it is building coverage"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'"
+      }
+    },
+    "R-MHP": {
+      "min_lot_sqft": {
+        "value": 435600,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "10 acres. Residential Mobile Home Park District. Frontage 200 ft, depth 400 ft"
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 75,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: One Side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 75,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: Both Sides'"
+      },
+      "setback_rear_ft": {
+        "value": 100,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Lot coverage' is the area covered by 'all buildings, including covered porches and accessory buildings and structures', divided by the gross lot area (580-7). So it is building coverage"
+      },
+      "principal_max_height_ft": {
+        "value": 25,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 stories or 25 feet'"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One acre. Mixed-Use District. Frontage 150 ft, depth 200 ft"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: One Side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 25,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: Both Sides'"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Lot coverage' is the area covered by 'all buildings, including covered porches and accessory buildings and structures', divided by the gross lot area (580-7). So it is building coverage"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'"
+      }
+    },
+    "C-OP": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two acres. Conservation/Open Space District. Frontage 200 ft, depth 200 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: One Side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: Both Sides'"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Lot coverage' is the area covered by 'all buildings, including covered porches and accessory buildings and structures', divided by the gross lot area (580-7). So it is building coverage"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 1/2 stories or 35 feet'"
+      }
+    },
+    "C-1": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Neighborhood Commercial District. Frontage 40 ft, depth 100 ft. Single-family dwellings are permitted in C-1 under 580-44 'Residential uses in the C-1 District'"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: One Side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 10,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Side Yard Setback: Both Sides'"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Lot coverage' is the area covered by 'all buildings, including covered porches and accessory buildings and structures', divided by the gross lot area (580-7). So it is building coverage"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "580-45",
+        "url": "https://ecode360.com/print/HA0550?guid=37662712",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 stories or 30 feet'"
+      }
+    }
+  }
+}

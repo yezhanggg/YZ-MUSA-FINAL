@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 161,
-      "population": 6049936,
-      "share_of_pa": 0.4653
+      "towns_beyond_the_two_cities": 164,
+      "population": 6083851,
+      "share_of_pa": 0.4679
     }
   ],
   "towns": [
@@ -3962,6 +3962,78 @@
         "named as a town with an ADU ordinance (Code 27-1333 accessory dwelling units by right in R-1, R-2, R-3 and MU)"
       ],
       "status_note": "Open: whether the R-2 and R-3 lot area 'established for each dwelling unit' (27-707.1, 27-807.1) reaches the ADU, since R-1 has no such sentence and Ord. 983 put ADUs in all three. Whether a new detached ADU in MU is 'new construction of residential buildings' needing a conditional use (27-12A04.H, 27-12A06.1). The MU and CBD minimum building height of 35 ft (27-12A12, 27-908) read literally would keep out a detached ADU. Whether the MU accessory setbacks (27-1302.2(4)) or the ADU's 6 ft (27-1333.9) govern. Not read: Parts 4, 5, 10, 11, 12, 14, 15, 17 to 21 (27-2008 aside), 27-1318, and Chapter 22 (land development)."
+    },
+    {
+      "geoid": "4207932416",
+      "geoid_aliases": [],
+      "name": "Hanover township",
+      "county": "Luzerne",
+      "type": "township",
+      "population": 11445,
+      "population_with_aliases": 11445,
+      "housing_units": 5462,
+      "pop_rank": 224,
+      "file": "pa_luzerne_hanover",
+      "batch": 37,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/37662217",
+      "plain_fetch": null,
+      "code_current_through": "2026-03-11",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 580-14 residential units for care of relatives)"
+      ],
+      "status_note": "First reading, not yet independently reviewed. Open point: 580-14 reaches a unit within or attached to a single-family dwelling, which 580-7 defines as a detached building, so the file bars twins. 580-55A(29) onward and Articles VI, VII were not read."
+    },
+    {
+      "geoid": "4202953608",
+      "geoid_aliases": [],
+      "name": "New Garden township",
+      "county": "Chester",
+      "type": "township",
+      "population": 11363,
+      "population_with_aliases": 11363,
+      "housing_units": 3934,
+      "pop_rank": 227,
+      "file": "pa_chester_new_garden",
+      "batch": 37,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "municode",
+      "code_url": "https://library.municode.com/pa/new_garden_township/codes/code?nodeId=iae025d65756b6dd",
+      "plain_fetch": null,
+      "code_current_through": "2026-11-02",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 200-413E accessory dwelling unit by right in RL, RM, RF, VC, VG and MUL)"
+      ],
+      "status_note": "First reading, not yet independently reviewed. Open points: whether VG lots (no single-unit detached dwelling permitted) can hold an ADU (200-413E(1)), the 'Usable Floor Area' definition behind the 50% cap, and Chapter 96 floodplain rules, which were not read."
+    },
+    {
+      "geoid": "4204541440",
+      "geoid_aliases": [],
+      "name": "Lansdowne borough",
+      "county": "Delaware",
+      "type": "borough",
+      "population": 11107,
+      "population_with_aliases": 11107,
+      "housing_units": 5030,
+      "pop_rank": 232,
+      "file": "pa_delaware_lansdowne",
+      "batch": 37,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8416464",
+      "plain_fetch": null,
+      "code_current_through": "2026-09-02",
+      "code_note": null,
+      "why": [
+        "added as batch 37 by population. Code Chapter 330 has no ADU text (330-27G and 330-22N(2) bar residential conversions)"
+      ],
+      "status_note": "First reading, not yet independently reviewed. Open points: the PDF appendices (A4 Districts, A6 General Regulations) and 330-16, 330-17 (CBD, BAM, GB use lists) were not read, and the internal and attached forms are read as barred conversions (330-27G, 330-22N(2))."
     }
   ]
 }
