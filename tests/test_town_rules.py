@@ -3266,25 +3266,20 @@ def test_land_development_for_a_second_building():
 
 def test_services_row_said_once():
     """Upper Uwchlan R-3 with neither centralized sewer nor public water: the two rows read alike, said once. Upper
-    Dublin A (a lot town) keeps both until its lot records are rebuilt (PASS15_HOLD_TOWNS)."""
+    Dublin A (a lot town) is said once too since lot data 9 emptied PASS15_HOLD_TOWNS; a town in the set keeps both."""
     lot = {**DET, "zoning_district": "R-3", "lot_sqft": 30000, "public_sewer": False, "public_water": False}
     out = rules.resolve("pa_chester_upper_uwchlan", "today", lot, extra=True)
     rows = [c["condition"] for c in out["conditions"] if c["kind"] == "utilities" and c["met"] is True]
     assert len(rows) == 1 and rows[0].startswith("Without both centralized sewer and public water")
-    assert {
-        "pa_lehigh_allentown",
-        "pa_centre_college",
-        "pa_chester_west_chester",
-        "pa_chester_phoenixville",
-        "pa_chester_west_vincent",
-        "pa_chester_malvern",
-        "pa_chester_east_brandywine",
-        "pa_montgomery_lower_merion",
-        "pa_montgomery_narberth",
-        "pa_montgomery_upper_dublin",
-    } == rules.PASS15_HOLD_TOWNS
-    ud = rules.resolve("pa_montgomery_upper_dublin", "today", {**DET, "zoning_district": "A", "lot_sqft": 30000})
+    assert not rules.PASS15_HOLD_TOWNS
+    ud_lot = {**DET, "zoning_district": "A", "lot_sqft": 30000}
+    ud = rules.resolve("pa_montgomery_upper_dublin", "today", ud_lot)
     rows = [c["condition"] for c in ud["conditions"] if c["kind"] == "utilities"]
+    assert len(rows) == 2 and rows[0] != rows[1]
+    with pytest.MonkeyPatch.context() as mp:  # the hold mechanism stays for a later pass
+        mp.setattr(rules, "PASS15_HOLD_TOWNS", {"pa_montgomery_upper_dublin"})
+        held = rules.resolve("pa_montgomery_upper_dublin", "today", ud_lot)
+    rows = [c["condition"] for c in held["conditions"] if c["kind"] == "utilities"]
     assert len(rows) == 3 and rows[1] == rows[2]
     assert (
         len(rules._utility_conditions(rules.load_rules("pa_montgomery_upper_dublin"), {**DET, "zoning_district": "A"}))
@@ -3420,9 +3415,8 @@ def test_yards_line_names_every_superseding_gate():
 
 def test_pass16_hold_keeps_old_text(monkeypatch):
     """With the place in PASS16_HOLD_TOWNS the pass 15 sentences stay (no height line kept, first gate only). The set
-    holds the ten lot towns."""
-    assert {"pa_montgomery_upper_dublin", "pa_lehigh_allentown"} <= rules.PASS16_HOLD_TOWNS
-    assert len(rules.PASS16_HOLD_TOWNS) == 10
+    is empty since lot data 9 (Nov 16); the mechanism stays for a later pass."""
+    assert not rules.PASS16_HOLD_TOWNS
     monkeypatch.setattr(rules, "PASS16_HOLD_TOWNS", {"pa_montgomery_lower_pottsgrove"})
     out = _lp("R-1", lot_sqft=12000)
     assert NO_H in out["reasons"] and "max_height_ft" not in out["citations"]
@@ -3594,7 +3588,8 @@ def test_superseding_gate_replaces_only_its_figures():
 
 def test_no_district_asks_qualified(monkeypatch):
     """A lot with no zoning district where the ADU rule reaches only some districts: the path to ask, qualified
-    (depends_on_lot_facts), never a variance with "zoned unknown". Held for the ten lot towns (PASS17_HOLD_TOWNS)."""
+    (depends_on_lot_facts), never a variance with "zoned unknown". The ten lot towns were held (PASS17_HOLD_TOWNS) until
+    lot data 9 (Nov 16) rebuilt their no-district lots; a town in the set keeps the variance."""
     lot = {**DET, "zoning_district": None, "lot_sqft": 6000}
     out = rules.resolve("pa_lancaster_elizabethtown", "today", lot)
     assert out["allowed"] and out["approval_path"] == "by_right"
@@ -3605,13 +3600,14 @@ def test_no_district_asks_qualified(monkeypatch):
     assert out["reasons"][0].endswith("The lot's zoning district is not known. Ask the zoning officer")
     assert not any("zoned unknown" in r for r in out["reasons"])
     assert out["path_to_ask"]["kind"] == "district_unknown"
-    held = rules.resolve("pa_chester_phoenixville", "today", lot)
-    assert held["approval_path"] == "variance" and "pa_chester_phoenixville" in rules.PASS17_HOLD_TOWNS
-    assert len(rules.PASS17_HOLD_TOWNS) == 10
-    monkeypatch.setattr(rules, "PASS17_HOLD_TOWNS", set())
+    assert not rules.PASS17_HOLD_TOWNS
     phx = rules.resolve("pa_chester_phoenixville", "today", lot)
     assert phx["approval_path"] == "special_exception" and phx["approval_qualifier"] == "depends_on_lot_facts"
     assert phx["reasons"][0].startswith("Special exception only if the lot is in RI, MI, NC, CD or MG")
+    monkeypatch.setattr(rules, "PASS17_HOLD_TOWNS", {"pa_chester_phoenixville"})
+    held = rules.resolve("pa_chester_phoenixville", "today", lot)
+    assert held["approval_path"] == "variance"
+    monkeypatch.setattr(rules, "PASS17_HOLD_TOWNS", set())
     # a district is given: unchanged
     assert rules.resolve("pa_chester_phoenixville", "today", {**lot, "zoning_district": "TC"})["approval_path"] in (
         "variance",

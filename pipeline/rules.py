@@ -893,51 +893,21 @@ PASS13_HOLD_TOWNS: set[str] = set()
 PASS14_HOLD_TOWNS: set[str] = set()
 # Pass 15 holds its owner-sentence fix that can reach stored lot records, for the ten lot towns: a services row whose
 # sentence is the same as one already said is said once (Upper Dublin A, whose two "public sewer or public water, not
-# both" rows read alike when the services are not given). Lift it at the next lot rebuild.
-PASS15_HOLD_TOWNS: set[str] = {
-    "pa_lehigh_allentown",
-    "pa_centre_college",
-    "pa_chester_west_chester",
-    "pa_chester_phoenixville",
-    "pa_chester_west_vincent",
-    "pa_chester_malvern",
-    "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
-}
+# both" rows read alike when the services are not given). Emptied on Nov 16 (lot data 9): the lot records of the lot
+# towns were refreshed (no stored record changed by it). Keep the set for a later pass.
+PASS15_HOLD_TOWNS: set[str] = set()
 # Pass 16 holds its fixes that can reach stored lot records, for the ten lot towns: the "No height number on file for
 # a detached unit" line dropped (and the cap cited) where the accessory building cap that binds the unit gives the
-# height, and the yards line naming every gate whose own figures replace the district's (not only the first). Lift it
-# at the next lot rebuild.
-PASS16_HOLD_TOWNS: set[str] = {
-    "pa_lehigh_allentown",
-    "pa_centre_college",
-    "pa_chester_west_chester",
-    "pa_chester_phoenixville",
-    "pa_chester_west_vincent",
-    "pa_chester_malvern",
-    "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
-}
+# height, and the yards line naming every gate whose own figures replace the district's (not only the first). Emptied
+# on Nov 16 (lot data 9) with PASS15_HOLD_TOWNS (no stored record changed by it). Keep the set for a later pass.
+PASS16_HOLD_TOWNS: set[str] = set()
 # Pass 17 holds its changes that can reach stored lot records, for the ten lot towns: a lot with no zoning district
 # resolving as the path to ask, qualified (not a variance with "zoned unknown"), and the lot build keeping the
-# resolver's approval_qualifier and max_share_by_type in each scenario's rules (pipeline/build_lots.py). Lift it at the
-# next lot rebuild.
-PASS17_HOLD_TOWNS: set[str] = {
-    "pa_lehigh_allentown",
-    "pa_centre_college",
-    "pa_chester_west_chester",
-    "pa_chester_phoenixville",
-    "pa_chester_west_vincent",
-    "pa_chester_malvern",
-    "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
-}
+# resolver's approval_qualifier and max_share_by_type in each scenario's rules (pipeline/build_lots.py). Emptied on
+# Nov 16 (lot data 9): every lot town record gained max_share_by_type (and approval_qualifier where the path is
+# qualified), and the tracts of the 13 lots with no district were rebuilt (variance to the qualified path). Keep the
+# set for a later pass.
+PASS17_HOLD_TOWNS: set[str] = set()
 NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {

@@ -28,19 +28,19 @@ Bills are not law. The state session ends Nov 30, 2026. A bill not enacted by th
 
 ## What works today
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-16. Data versions: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261116-aab78bf200, chester_county-20261116-1ba3563ec0, centre_county-20261116-c76726885b, montgomery_county-20261116-af7c525d4b -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-16. Data versions: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261116-b1e77f74ac, chester_county-20261116-aa5d870e34, centre_county-20261116-3f43ace3b4, montgomery_county-20261116-08642b411f -->
 
 | Lot place | Towns | Lots with a record | Any legal ADU path today | A detached unit is legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|---|
 | Philadelphia | Philadelphia | 459,998 | 1.2% | 0% | 26.0% |
 | Pittsburgh | Pittsburgh | 92,081 | 100% | 65.8% (needs an Administrator's Exception) | 70.0% |
 | Allentown | Allentown | 29,158 | 88.3% | 21.5% | 71.3% |
-| Montgomery County | Lower Merion, Narberth, Upper Dublin | 26,119 | 78.2% | 25.6% | 86.0% |
-| Chester County | West Chester, Phoenixville, West Vincent, Malvern, East Brandywine | 14,847 | 68.8% | 23.1% | 58.8% |
-| Centre County | College Township | 3,484 | 53.7% | 48.7% | 80.5% |
+| Montgomery County | Lower Merion, Narberth, Upper Dublin | 26,119 | 78.3% | 25.6% | 86.0% |
+| Chester County | West Chester, Phoenixville, West Vincent, Malvern, East Brandywine | 14,847 | 68.9% | 23.1% | 58.8% |
+| Centre County | College Township | 3,484 | 53.8% | 48.7% | 80.5% |
 | All six | 12 towns | 625,687 | | | |
 
-By town, a detached unit is legal and fits today on 76.9% of Narberth lots, 66.5% in Upper Dublin, 42.8% in West Chester, 34.6% in Phoenixville and 12.8% in West Vincent. Lower Merion, Malvern and East Brandywine allow no new detached unit, so 0%.
+By town, a detached unit is legal and fits today on 76.9% of Narberth lots, 66.6% in Upper Dublin, 42.8% in West Chester, 34.6% in Phoenixville and 12.8% in West Vincent. Lower Merion, Malvern and East Brandywine allow no new detached unit, so 0%.
 
 - **Fit test.** A vector geometry test on the lot outline, the buildings and the streets, with the setbacks from the rule file. It finds the largest unit that fits and where.
 - **Land cover as context.** Lots in all six places carry tree canopy, open ground, hard surface and impervious share. Philadelphia uses the city's 2018 land cover raster. The other five places use the project's U-Net on 2022 aerial images. They also give the trees and paving inside the suggested spot (the four town places since Nov 15). Accuracy differs by place: Pittsburgh is checked on 128 lots, Centre County lies in a test county of the model (about 0.70 test mIoU), and Allentown, Chester and Montgomery are not validated. Each record says which. 36 Centre County lots have no cover. Land cover does not decide the fit.

@@ -256,7 +256,7 @@ Rules engine passes 10 and 11 (Nov 14 and 15) added these readings. The fields a
 - A code can bar use variances. Then a lot outside the ADU districts reads not allowed, not "ask for a use variance" (Hanover).
 - A district whose reach is in doubt is read in the direction the code gives, with the path to ask, not a plain no.
 
-The pass 11 fix (a district in doubt reads the path to ask) reaches every lot town. It was lifted for nine of them on Nov 15, where it changes no lot record, and for Narberth on Nov 16, when its tract was rebuilt: its 9 lots in 5A and 5B changed from not allowed to by right (qualified). No hold set in `pipeline/rules.py` holds anything back now.
+The pass 11 fix (a district in doubt reads the path to ask) reaches every lot town. It was lifted for nine of them on Nov 15, where it changes no lot record, and for Narberth on Nov 16, when its tract was rebuilt: its 9 lots in 5A and 5B changed from not allowed to by right (qualified). The pass 17 reading of a lot with no zoning district (the path to ask, qualified, never "zoned unknown" and a variance) reached the lot towns on Nov 16 (lot data 9): 13 such lots in Allentown (4), Centre County (1), Chester County (6) and Montgomery County (2) changed from not allowed to allowed, qualified. No hold set in `pipeline/rules.py` holds anything back now.
 
 A machine-read pilot of ordinance text is described in [CORPUS.md](CORPUS.md). It is not in the product.
 
@@ -635,23 +635,23 @@ Today no Philadelphia lot can add a new detached unit by right: the code allows 
 
 ### Allentown and the county places
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-16. allentown-20261116-aab78bf200, chester_county-20261116-1ba3563ec0, centre_county-20261116-c76726885b, montgomery_county-20261116-af7c525d4b -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-16. allentown-20261116-b1e77f74ac, chester_county-20261116-aa5d870e34, centre_county-20261116-3f43ace3b4, montgomery_county-20261116-08642b411f -->
 
-Each lot answers with its own town's rule file. Only towns with a verified rule file whose ADU districts the county zoning layer names were built. Since the evening of Nov 14 these places carry a land cover block from the model (section 3.5). Since the rebuild early on Nov 15 they also carry the trees and paving inside the suggested spot and the rules engine pass 10 wording. No share in the table moved. On Nov 16 the pass 13 and 14 wording reached their lot records, and the Narberth tract was rebuilt for the district-in-doubt reading: 9 Narberth lots in 5A and 5B turned from not allowed to by right (qualified), which moved the Narberth row and the Montgomery County detached-legal share.
+Each lot answers with its own town's rule file. Only towns with a verified rule file whose ADU districts the county zoning layer names were built. Since the evening of Nov 14 these places carry a land cover block from the model (section 3.5). Since the rebuild early on Nov 15 they also carry the trees and paving inside the suggested spot and the rules engine pass 10 wording. No share in the table moved. On Nov 16 the pass 13 and 14 wording reached their lot records, and the Narberth tract was rebuilt for the district-in-doubt reading: 9 Narberth lots in 5A and 5B turned from not allowed to by right (qualified), which moved the Narberth row and the Montgomery County detached-legal share. Later on Nov 16 the tracts of the 13 lots with no zoning district were rebuilt (4 in Allentown, 1 in Centre County, 6 in Chester County, 2 in Montgomery County): they turned from a variance to the path to ask, qualified, which moved the any-path share of Centre County, Chester County (Phoenixville, West Vincent) and Montgomery County by 0.001, and Upper Dublin detached legal and fits from 0.665 to 0.666.
 
 | Place and town | Lots | Any legal ADU path today | Detached unit legal today | Detached unit legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|---|
 | Allentown | 29,158 | 0.883 | 0.285 | 0.215 | 0.713 |
-| Chester County, all | 14,847 | 0.688 | 0.544 | 0.231 | 0.588 |
+| Chester County, all | 14,847 | 0.689 | 0.544 | 0.231 | 0.588 |
 | West Chester | 3,070 | 0.898 | 0.898 | 0.428 | 0.449 |
-| Phoenixville | 5,375 | 0.94 | 0.94 | 0.346 | 0.413 |
-| West Vincent | 2,014 | 0.846 | 0.128 | 0.128 | 0.876 |
+| Phoenixville | 5,375 | 0.941 | 0.941 | 0.346 | 0.413 |
+| West Vincent | 2,014 | 0.847 | 0.128 | 0.128 | 0.876 |
 | Malvern | 766 | 0.486 | 0.0 | 0.0 | 0.606 |
 | East Brandywine | 3,622 | 0.092 | 0.0 | 0.0 | 0.8 |
-| Centre County, College Township | 3,484 | 0.537 | 0.537 | 0.487 | 0.805 |
-| Montgomery County, all | 26,119 | 0.782 | 0.304 | 0.256 | 0.86 |
+| Centre County, College Township | 3,484 | 0.538 | 0.538 | 0.487 | 0.805 |
+| Montgomery County, all | 26,119 | 0.783 | 0.304 | 0.256 | 0.86 |
 | Narberth | 1,296 | 0.861 | 0.861 | 0.769 | 0.868 |
-| Upper Dublin | 8,562 | 0.796 | 0.796 | 0.665 | 0.784 |
+| Upper Dublin | 8,562 | 0.796 | 0.796 | 0.666 | 0.784 |
 | Lower Merion | 16,261 | 0.769 | 0.0 | 0.0 | 0.899 |
 
 In Lower Merion, Malvern and East Brandywine the code allows no new detached unit, so the law is the limit. In Phoenixville many lots fail the "no taller than the house" test or the share-of-house cap. In Upper Dublin, Microsoft heights read low, so the height test reads "not checked".

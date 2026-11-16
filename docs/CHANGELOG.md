@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-11-16, morning
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+### Lot places
+
+<!-- source: ~/musa-drive/lots/<place>/manifest.json (data_version, built_at, counts, sizes) and stats.json, backups under ~/musa-drive/backups/lotdata9/, pipeline/rules.py hold sets, tools/publish_lots.sh output -->
+
+- The rule blocks of all four town places were refreshed for rules engine passes 15 to 17 (`allentown-20261116-b1e77f74ac`, `chester_county-20261116-aa5d870e34`, `centre_county-20261116-3f43ace3b4`, `montgomery_county-20261116-08642b411f`). Every lot record's rules now keep `max_share_by_type`, the share-of-house cap per ADU form (Phoenixville: 0.25 inside the house or added on, 0.667 in an accessory building), and `approval_qualifier` where the path is qualified (today: 4 lots in Allentown, 3 in Centre County, 800 in Chester County, 11 in Montgomery County). The app reads these keys in place of the "only if" text.
+- A lot with no zoning district now reads the path to ask, qualified ("Special exception only if the lot is in RI, MI, NC, CD or MG, where the ADU rule reaches (27-301.2B(1)). The lot's zoning district is not known. Ask the zoning officer"), not a variance with "This lot is zoned unknown". The 12 tracts that hold the 13 such lots whose answer changed were rebuilt (4 in Allentown, 1 in Centre County, 6 in Chester County, 2 in Montgomery County). Any legal path today moved by 0.1 point in Centre County (53.7% to 53.8%), Chester County (68.8% to 68.9%) and Montgomery County (78.2% to 78.3%); Upper Dublin detached legal and fits today 66.5% to 66.6%. One more Allentown lot with no district stays not allowed (a two-family building) and only loses the "zoned unknown" line.
+- Geometry, land cover, spot cover, terrain, fits and the index of every other lot are the same (checked by hash). In the rebuilt Montgomery tracts the not-allowed note of 371 detached fits now quotes the status sentence its rule reasons already had. Pittsburgh and Philadelphia were not rewritten.
+- The lot bundle grew from 985.5 MB to 995.6 MB (`tools/publish_lots.sh`, local only).
+- Every hold set in `pipeline/rules.py` is now empty (`PASS15_HOLD_TOWNS`, `PASS16_HOLD_TOWNS`, `PASS17_HOLD_TOWNS` emptied). The sets stay for a later pass.
+- Not changed, listed for a later pass: a form that is not allowed on a lot has no height in the record (`max_height_ft`, `max_height_by_type`) even where the code sets the ADU height (Narberth 16 ft, 500-802C(2)), by the resolver's rule that a form not allowed gets no height, yards or size. Phoenixville's 25% floor area caps for a unit inside the house or added on are in the record but not checked by the fit, since Chester County has no living area on file and a footprint is not floor area. Allentown heights stay null where the rule is "no taller than the house", since its building heights are null.
+
 ## 2026-11-16, early morning
 
 Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.

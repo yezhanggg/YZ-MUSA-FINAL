@@ -640,8 +640,8 @@ def test_site_facts_reach_the_resolver() -> None:
 
 def test_record_keeps_the_qualifier_and_share_caps() -> None:
     """Rules pass 17: a town lot's record keeps the resolver's approval_qualifier and max_share_by_type, so the app
-    needs no "only if" parsing. A lot town held until its next rebuild (PASS17_HOLD_TOWNS) keeps the old record.
-    Both keys are optional in lot_schema.json, so records built before stay valid."""
+    needs no "only if" parsing. keep=False (a lot town held until its next rebuild, PASS17_HOLD_TOWNS) drops them.
+    Both keys are optional in lot_schema.json, so records built before stay valid. Lot data 9 emptied the hold."""
     import jsonschema
 
     from pipeline import rules as rulesmod
@@ -662,4 +662,31 @@ def test_record_keeps_the_qualifier_and_share_caps() -> None:
     jsonschema.validate(bl.fill_rules(held, "MU")[0], rule_schema)
     with pytest.raises(jsonschema.ValidationError):
         jsonschema.validate({**filled, "approval_qualifier": "maybe"}, rule_schema)
-    assert "pa_chester_phoenixville" in rulesmod.PASS17_HOLD_TOWNS
+    assert not rulesmod.PASS17_HOLD_TOWNS  # lot data 9: every lot record carries the keys
+
+
+def test_phoenixville_share_caps_reach_the_record() -> None:
+    """Phoenixville caps a unit inside the house or added on at 25% of the house's habitable floor area
+    (27-301.2B(2)(d)6)a), b)) and a detached unit at two thirds of the house's footprint (27-404.2B(1)). The caps are
+    per form, so the headline max_share_of_house stays null and the record carries them in max_share_by_type (lot
+    data 9). With no living area on file the fit checks only the footprint caps: a footprint is not floor area."""
+    from pipeline import rules as rulesmod
+
+    lot = {"zoning_district": "RI", "building_type": "detached", "lot_sqft": 6000, "overlays": None}
+    raw = rulesmod.resolve("pa_chester_phoenixville", "today", lot, extra=True)
+    kept = bl.town_extras_to_reasons(raw, keep="pa_chester_phoenixville" not in rulesmod.PASS17_HOLD_TOWNS)
+    assert kept["max_share_of_house"] is None
+    assert kept["max_share_by_type"]["internal"] == 0.25 and kept["max_share_by_type"]["attached"] == 0.25
+    assert kept["max_share_by_type"]["detached_new"] == 0.667
+    fp_forms = dict(bl.PLACES["chester_county"].footprint_share)["pa_chester_phoenixville"]
+    rules = {
+        "max_size_sqft": None,
+        "max_share_of_house": None,
+        bl.SIZE_BY_TYPE: {
+            "max_size_by_type": {},
+            "max_share_by_type": raw["max_share_by_type"],
+            "share_forms": fp_forms,
+        },
+    }
+    assert bl.rules_for_type(rules, "detached_new")["max_share_of_house"] == 0.667
+    assert bl.rules_for_type(rules, "internal")["max_share_of_house"] is None
