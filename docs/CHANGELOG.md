@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-16, early morning
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+### Lot places
+
+<!-- source: ~/musa-drive/lots/<place>/manifest.json (data_version, built_at, counts) and stats.json, backups under ~/musa-drive/backups/lotdata8/, pipeline/rules.py hold sets -->
+
+- The rule sentences of all four town places were refreshed (`allentown-20261116-aab78bf200`, `chester_county-20261116-1ba3563ec0`, `centre_county-20261116-c76726885b`, `montgomery_county-20261116-af7c525d4b`). The rules engine pass 13 and 14 wording now reaches the lot records: the ADU status condition is a sentence ("The code's ADU status is family only. ..."), the HB 2186 line on the town rules the bill leaves in place gives each rule as its own sentence, and the Upper Dublin services rows give their figures in units. 225 Phoenixville lots in TC and I no longer say their status twice. Records changed: Allentown 23,520, Chester County 9,934, Centre County 2,750, Montgomery County 24,940, in their sentences only.
+- The Narberth tract was rebuilt for the pass 11 reading of a district in doubt. Its 9 lots in 5A and 5B turn from not allowed (a variance) to by right, qualified: "By right only if the ADU rule reaches 5B, which is in doubt". 8 of the 9 now fit a detached unit. Narberth any legal path today 85.4% to 86.1%, detached unit legal and fits today 76.2% to 76.9%. No other share moved.
+- Geometry, land cover, spot cover, terrain, fits and the index of every other lot are the same (checked by hash). Pittsburgh and Philadelphia were not rewritten.
+- Every hold set in `pipeline/rules.py` is now empty (`DOUBT_HOLD_TOWNS`, `PASS13_HOLD_TOWNS`, `PASS14_HOLD_TOWNS` emptied). The sets stay for a later pass.
+
 ## 2026-11-15, late morning
 
 Not legal advice. Not a zoning determination.

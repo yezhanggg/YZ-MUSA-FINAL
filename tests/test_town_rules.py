@@ -2408,8 +2408,8 @@ def test_cli_sets_pass10_fact():
 
 def test_pass11_hold_is_its_own_set():
     assert not rules.LOT_RECORD_TOWNS  # the pass 10 fixes stay lifted for the lot towns
-    # lifted at the Nov 15 rules-only refresh, except Narberth: its 5A and 5B lots would change answer (refit first)
-    assert {"pa_montgomery_narberth"} == rules.DOUBT_HOLD_TOWNS
+    # lifted at the Nov 15 rules-only refresh, and for Narberth on Nov 16 (its 5A and 5B tracts rebuilt)
+    assert not rules.DOUBT_HOLD_TOWNS
     for name in LOT_TOWNS:
         text = (RULES / f"{name}.json").read_text()
         assert "use_variance_barred" not in text and 'setback_sides_total_ft": 2' not in text, name
@@ -2464,9 +2464,10 @@ def test_district_in_doubt_reads_the_way_the_doubt_runs():
     assert any(r.startswith("Whether the ADU rule reaches N-C/H is in doubt") for r in sp["reasons"])
     yt = rules.resolve("pa_york_york_township", "today", {**lot, "zoning_district": "CI"})
     assert any(r.startswith("CI lists the ADU (") for r in yt["reasons"])  # the default direction
-    held = rules.resolve("pa_montgomery_narberth", "today", {**lot, "zoning_district": "5A"})  # still held
-    assert not held["allowed"] and held["approval_qualifier"] is None
-    assert any(r.startswith("5A lists the ADU (") for r in held["reasons"])
+    nb = rules.resolve("pa_montgomery_narberth", "today", {**lot, "zoning_district": "5A"})  # hold lifted Nov 16
+    assert nb["allowed"] and nb["approval_path"] == "by_right" and nb["approval_qualifier"] == "conditional_on_reading"
+    assert nb["reasons"][0].startswith("By right only if the ADU rule reaches 5A, which is in doubt")
+    assert any(r.startswith("5A lists the ADU (") for r in nb["reasons"])
     gwc = rules.resolve("pa_centre_college", "today", {**lot, "zoning_district": "GWC", "house_sqft": 1600})
     assert gwc["allowed"] and gwc["approval_qualifier"] == "conditional_on_reading"  # hold lifted Nov 15
     assert any(r.startswith("Whether the ADU rule reaches GWC is in doubt") for r in gwc["reasons"])
@@ -3001,14 +3002,14 @@ def test_share_of_a_part_says_at_most_once(tmp_path, monkeypatch):
 
 
 def test_status_condition_is_a_sentence():
-    """The ADU status condition reads as a sentence. Held for the lot towns (PASS13_HOLD_TOWNS)."""
+    """The ADU status condition reads as a sentence. The lot towns' hold (PASS13_HOLD_TOWNS) was lifted on Nov 16."""
     lot = {**DET, "zoning_district": "R-130", "lot_sqft": 45000}
     c = next(c for c in rules.resolve("pa_montgomery_franconia", "today", lot, extra=True)["conditions"])
     assert c["kind"] == "adu_status" and c["condition"].startswith("The code's ADU status is family only. ")
-    assert rules.PASS13_HOLD_TOWNS == LOT_TOWNS and "pa_montgomery_narberth" in rules.DOUBT_HOLD_TOWNS
-    held = rules.resolve("pa_montgomery_lower_merion", "today", {**DET, "zoning_district": "R1"}, extra=True)
-    c = next(c for c in held["conditions"] if c["kind"] == "adu_status")
-    assert c["condition"].startswith("family only")
+    assert not rules.PASS13_HOLD_TOWNS and not rules.DOUBT_HOLD_TOWNS
+    lot_town = rules.resolve("pa_montgomery_lower_merion", "today", {**DET, "zoning_district": "R1"}, extra=True)
+    c = next(c for c in lot_town["conditions"] if c["kind"] == "adu_status")
+    assert c["condition"].startswith("The code's ADU status is family only. ")
 
 
 def test_services_only_partly_given(tmp_path, monkeypatch):
@@ -3143,14 +3144,13 @@ def test_bill_line_kept_rules_are_sentences():
     assert re.search(r"\)\. Building coverage \d+%", line) and not re.search(r"\. [a-z]", line)
 
 
-def test_pass14_holds_for_lot_towns():
-    """The pass 14 sentence fixes that reach stored lot records wait for the lot towns' next rebuild."""
-    assert rules.PASS14_HOLD_TOWNS == LOT_TOWNS
+def test_pass14_hold_lifted_for_lot_towns():
+    """The pass 14 sentence fixes reach the lot towns too: their lot records were refreshed on Nov 16."""
+    assert not rules.PASS14_HOLD_TOWNS and not rules.PASS13_HOLD_TOWNS
     lot = {**DET, "zoning_district": "A", "lot_sqft": 30000}
-    held = rules.resolve("pa_montgomery_upper_dublin", "today", lot, extra=True)
-    rows = [c["condition"] for c in held["conditions"] if c["kind"] == "utilities"]
-    assert rows and all("public sewer and water (public_sewer, public_water)" in r for r in rows)
-    assert any("min lot 45,000, setback front 60," in r for r in rows)  # no units while held
+    out = rules.resolve("pa_montgomery_upper_dublin", "today", lot, extra=True)
+    rows = [c["condition"] for c in out["conditions"] if c["kind"] == "utilities"]
+    assert rows and any("min lot 45,000 sq ft, setback front 60 ft," in r for r in rows)
     bill = rules.resolve("pa_lehigh_allentown", "state_reform", {**DET, "zoning_district": "N3", "lot_sqft": 3000})
     line = next(r for r in bill["reasons"] if r.startswith("Town lot rules the bill"))
-    assert ". building coverage" in line  # the pass 13 wording while held
+    assert ". Building coverage" in line and ". building coverage" not in line

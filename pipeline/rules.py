@@ -869,35 +869,24 @@ LOT_RECORD_TOWNS: set[str] = set()
 # Pass 11 holds only its districts_in_doubt fix (the path to ask, qualified, not a variance; named_by wording) for the
 # ten lot towns: State College area (GWC) and Narberth (5A, 5B) use districts_in_doubt. A set of its own, so the pass
 # 10 fixes lifted at the Nov 15 rebuild stay lifted. Lifted on Nov 15 (rules-only lot refresh) for the nine towns
-# whose lot records it leaves as they are. Narberth stays: its 9 lots in 5A and 5B would turn from not allowed to by
-# right (qualified), with other yards, so the fit, spot cover and terrain of those lots must be rebuilt first.
-DOUBT_HOLD_TOWNS: set[str] = {"pa_montgomery_narberth"}
+# whose lot records it leaves as they are, and on Nov 16 for Narberth, whose tracts were rebuilt: its 9 lots in 5A and
+# 5B turned from not allowed to by right (qualified). Keep the set for a later pass.
+DOUBT_HOLD_TOWNS: set[str] = set()
 # Pass 12 held its owner-sentence fixes for the ten lot towns (the "ADUs per lot" line on a lot with no ADU rule, the
 # height cap line without a semicolon). Emptied on Nov 15: the lot records of Allentown and Phoenixville were
 # refreshed to the new text (rules only); the other towns' records do not change. Keep the set for a later pass.
 PASS12_HOLD_TOWNS: set[str] = set()
-# Pass 13 holds one owner-sentence fix for the ten lot towns: the ADU status condition as a sentence ("The code's ADU
-# status is family only. ...") in place of "family only. ...". The lot build keeps that condition as a reason line, so
-# the stored records of lot towns with a status other than by right would change. Lift it at their next lot rebuild.
-PASS13_HOLD_TOWNS: set[str] = {
-    "pa_lehigh_allentown",
-    "pa_centre_college",
-    "pa_chester_west_chester",
-    "pa_chester_phoenixville",
-    "pa_chester_west_vincent",
-    "pa_chester_malvern",
-    "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
-}
-# Pass 14 holds its owner-sentence fixes that reach stored lot records, for the same ten lot towns: a services row
+# Pass 13 held one owner-sentence fix for the ten lot towns: the ADU status condition as a sentence ("The code's ADU
+# status is family only. ...") in place of "family only. ...". The lot build keeps that condition as a reason line.
+# Emptied on Nov 16: the lot records of the lot towns were refreshed to the new text. Keep the set for a later pass.
+PASS13_HOLD_TOWNS: set[str] = set()
+# Pass 14 held its owner-sentence fixes that reach stored lot records, for the same ten lot towns: a services row
 # with its figures in units and the missing service named ("min lot 43,560 sq ft ... Depends on whether the lot has
 # public sewer (public_sewer)" in place of "min lot 43,560 ... public sewer and water (public_sewer, public_water)"),
 # an overlay name said once ("the Historic Resource Overlay", not "... Overlay overlay"), and the bill line's kept
-# town rules as sentences ("... (660-28D). Building coverage 50%" in place of ". building coverage 50%"). Lift it at
-# their next lot rebuild, with PASS13_HOLD_TOWNS.
-PASS14_HOLD_TOWNS: set[str] = set(PASS13_HOLD_TOWNS)
+# town rules as sentences ("... (660-28D). Building coverage 50%" in place of ". building coverage 50%"). Emptied on
+# Nov 16 with PASS13_HOLD_TOWNS (lot records refreshed). Keep the set for a later pass.
+PASS14_HOLD_TOWNS: set[str] = set()
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",
