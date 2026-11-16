@@ -1,0 +1,625 @@
+{
+  "provenance": {
+    "jurisdiction": "Bristol borough",
+    "instrument": "Bristol Borough Zoning Ordinance (Chapter 27 Zoning, Ord. 1263 of 8-10-2009, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 BR2288, Borough of Bristol, Bucks County (27-308.6B names the Recorder of Deeds of Bucks County, 27-410 the Bucks County Waterfront Revitalization Plan). Not Bristol Township (pa_bucks_bristol.json). Each district section lists its uses and lot and yard figures as text. The attachments are Appendix A (street trees), a Table of Uses by District and the zoning map, all PDFs, and were not opened. The district sections were read instead. Floodplain rules are in Chapter 8. New Laws: resolutions, Chapter 1 Part 4 authority ordinances and a Chapter 26 stormwater ordinance (Ord. No. 1389 of 11-2-2026), none on zoning",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/30841462",
+      "https://ecode360.com/BR2288/laws",
+      "https://ecode360.com/print/BR2288?guid=31426553",
+      "https://ecode360.com/print/BR2288?guid=31426528",
+      "https://ecode360.com/print/BR2288?guid=31428005",
+      "https://ecode360.com/print/BR2288?guid=31427950",
+      "https://ecode360.com/print/BR2288?guid=31427260",
+      "https://ecode360.com/print/BR2288?guid=31426292",
+      "https://ecode360.com/print/BR2288?guid=31428687",
+      "https://ecode360.com/print/BR2288?guid=31428875",
+      "https://ecode360.com/print/BR2288?guid=31615186",
+      "https://ecode360.com/BR2288/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20quarters%20OR%20relative%20OR%20relatives%20OR%20ECHO%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20servant&scope=all&sortOrder=relevance",
+      "https://ecode360.com/BR2288/search?query=%22not%20specifically%22%20OR%20%22not%20listed%22%20OR%20%22not%20provided%22%20OR%20%22similar%20to%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/BR2288/search?query=floodway%20prohibited%20OR%20%22new%20construction%22%20OR%20%22residential%20structure%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Bucks",
+    "municipality_type": "borough",
+    "geoid": "4201708760",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30841462",
+    "code_current_through": "2026-08-10",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 08-10-2026.' New Laws list no zoning ordinance",
+    "checks": [
+      "The zoning chapter has no accessory dwelling unit, in-law unit, accessory apartment or similar listing. No district lists a second dwelling unit on a single-family lot. 'No land, building or structure shall be used or occupied unless it is for a use permitted in the zoning district' (27-302.1)",
+      "A single-family detached dwelling is permitted by right in R-1, R-1A, R-2 and R-3 and by special exception in NC (27-305 to 27-308, 27-310.3A). No other district lists it",
+      "'No more than one principal use shall be permitted on a lot, except in the MX Mixed Use District, or unless specifically permitted by this chapter' (27-401). Two or more principal buildings on a lot must be at least twice the required side yard apart and meet the land development standards (27-402.2)",
+      "A two-family dwelling (duplex), two units one over the other, is a special exception only in NC (27-310.3C, 27-320.1E). Rowhouses are by right in R-1A and R-2 and twins in R-1, R-1A, R-2 and R-3. R-2 also allows a residential conversion of an existing commercial or industrial building (27-307.2D), not of a house",
+      "Residential accessory buildings (garages, sheds, greenhouses) are at most 15 ft tall and 'a total of 500 square feet in area', at least 2 ft from the side and rear lines, and only behind the house, at least 10 ft from its rear (27-320.7P(3)(a))",
+      "Lots: R-1, R-1A and R-2 need 4,500 sq ft per dwelling unit for a single-family detached dwelling, width 45 ft, front 10 ft, side 20 ft total with at least 5 ft on one side, rear 25 ft, building coverage 40%, impervious 50%, height 35 ft (27-305 to 27-307). R-3 is an active adult district: a 10 acre site, one occupant of each dwelling 55 or older, and garages may not be turned into living space (27-308.4, 27-308.6E, I)",
+      "A single-family dwelling may be built on a lot that was lawful when made and held apart before the chapter took effect, if the yards are met (27-404.2B). A building may go on a nonconforming lot if the yards are met (27-407.2B)",
+      "Parking: one space for each 0.5 dwelling unit (two per unit) for a single-family detached dwelling and a duplex (Table 27-7-A, 27-701)",
+      "No section lets the Zoning Hearing Board allow a use the chapter does not list, so the path is a use variance under 27-804.6A. No bar on a use variance was found",
+      "A family is 'A group of individuals not necessarily related by blood, marriage, adoption, or guardianship living together in a dwelling unit as a single housekeeping unit' (27-202)",
+      "Floodplain (Chapter 8): floodway work needs an engineering showing of no rise and DEP consent for new construction. AE without floodway, no more than one foot of rise and no new construction within 50 ft of the top of bank without DEP consent (8-402)"
+    ],
+    "notes": "Zoning office: Bristol Borough Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: 27-301 to 27-311 in full, the rest of Part 3 by a search of the loaded page for dwelling uses (27-312 to 27-319 were not read line by line), 27-320.1E and 27-320.7P, Part 4 (27-401 to 27-410), the parking table in 27-701, the variance and special exception parts of 27-804 by heading, the 27-202 definitions of dwelling, dwelling unit and family, 8-402, the New Laws page and code searches (ADU terms, unlisted uses, floodplain). Not read: Part 1, the rest of 27-320, Part 5, Part 6, 27-702 to 27-704, the text of 27-804, 27-805 to 27-812, the rest of Chapter 8, and the PDF attachments."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30841462",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Searched the code for accessory dwelling, in-law, accessory apartment, quarters, relative, ECHO, caretaker, guest house, second dwelling, conversion and servant. No ADU term"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-302.1, 27-305 to 27-319",
+      "url": "https://ecode360.com/print/BR2288?guid=31426528",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No district lists an accessory dwelling unit or a second unit on a single-family lot"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-302.1, 27-804.6A",
+      "url": "https://ecode360.com/print/BR2288?guid=31428875",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "A use the district does not permit needs a use variance from the Zoning Hearing Board. No bar on a use variance found"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-804.6A",
+      "url": "https://ecode360.com/print/BR2288?guid=31428875",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (duplex) in NC",
+          "path": "special_exception",
+          "districts": [
+            "NC"
+          ],
+          "conditions": "(1E) Two-Family Dwelling (Duplex) is a special exception in NC (27-310.3C). 'A detached building containing two dwelling units with one dwelling unit wholly or partly over the other' (27-320.1E). Lot 2,500 sq ft per dwelling unit, width 60 ft, front 20 ft, side 10 ft, rear 25 ft, building coverage 40%, impervious 50%, height 35 ft (27-310.5, 27-310.6). Two parking spaces per unit (Table 27-7-A)",
+          "min_lot_sqft": 5000,
+          "section": "27-310.3C, 27-310.5, 27-310.6, 27-320.1E",
+          "url": "https://ecode360.com/print/BR2288?guid=31426528",
+          "confidence": "secondary",
+          "note": "A stacked two-unit building, new or made from a house, not a unit added beside a house. 5,000 sq ft is 2,500 sq ft for each of two units. 27-320.1E also asks that each dwelling have site area 'as an individual lot that satisfies minimum lot requirements'"
+        },
+        {
+          "name": "Second single-family dwelling on the lot (R-1, R-1A, R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-1A",
+            "R-2"
+          ],
+          "conditions": "27-402.2 allows two or more principal buildings on a lot when they are separated by at least twice the required side yard and meet the land development standards of the subdivision ordinance. Lot area is 4,500 sq ft per dwelling unit (27-305.5, 27-306.5, 27-307.5). But 'No more than one principal use shall be permitted on a lot, except in the MX Mixed Use District, or unless specifically permitted by this chapter' (27-401)",
+          "min_lot_sqft": 9000,
+          "land_development": true,
+          "builds": [
+            "detached_new"
+          ],
+          "section": "27-401, 27-402.2, 27-305.5",
+          "url": "https://ecode360.com/print/BR2288?guid=31428005",
+          "confidence": "secondary",
+          "note": "9,000 sq ft is 4,500 sq ft for each of two dwelling units. Whether a second house on one lot is a second principal use that 27-401 bars is not settled. Ask the zoning officer"
+        }
+      ],
+      "section": "27-310.3C, 27-402.2",
+      "url": "https://ecode360.com/print/BR2288?guid=31426528",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30841462",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The H Historical District (27-319) was not read line by line. No historic path for a second unit found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area (Chapter 8) a floodway allows no encroachment, new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels, and no new construction without the DEP's written consent. In an AE area without a floodway the work may not raise the base flood elevation more than one foot, and no new construction within 50 ft landward of the top of bank without DEP consent. Manufactured homes are barred in a floodway.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-402.1A, B, 8-506",
+          "url": "https://ecode360.com/print/BR2288?guid=31615186",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "district",
+          "condition": "In the Delaware Canal Enhancement Area overlay buildings stand at least 50 ft from the center of the canal north of Washington Street and 25 ft south of it. On the part of the lot in the area, building coverage is at most 30% and impervious cover 65%. The more restrictive rule applies.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Delaware Canal Enhancement Area"
+          ],
+          "section": "27-409.4, 27-409.6",
+          "url": "https://ecode360.com/print/BR2288?guid=31428005"
+        }
+      ],
+      "section": "8-402, 27-409",
+      "url": "https://ecode360.com/print/BR2288?guid=31615186",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "TC",
+        "HC-1",
+        "HC-2",
+        "GC",
+        "LI",
+        "II",
+        "HI",
+        "MX",
+        "C",
+        "H"
+      ],
+      "section": "27-309, 27-311 to 27-319",
+      "url": "https://ecode360.com/print/BR2288?guid=31426528",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "These districts do not list a single-family detached dwelling. TC lists a dwelling in combination with a business. HC-2 to H were checked by a search of the Part 3 text, not read line by line"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-302.1",
+      "url": "https://ecode360.com/print/BR2288?guid=31426528",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No ADU form is listed"
+    }
+  },
+  "envelope": {
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "27-320.7P(3)(a)",
+      "url": "https://ecode360.com/print/BR2288?guid=31427950",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'shall not exceed 15 feet in height and a total of 500 square feet in area'"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "Freestanding residential accessory structures such as garages, greenhouses, carports and sheds: at most 15 ft tall and 'a total of 500 square feet in area'. Whether the 500 sq ft is for each structure or for all of them together is not settled",
+          "section": "27-320.7P(3)(a)",
+          "url": "https://ecode360.com/print/BR2288?guid=31427950"
+        }
+      ],
+      "section": "27-320.7P(3)(a)",
+      "url": "https://ecode360.com/print/BR2288?guid=31427950",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "setback_side_ft": {
+      "value": 2,
+      "section": "27-320.7P(3)(a)",
+      "url": "https://ecode360.com/print/BR2288?guid=31427950",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'not be located within two feet from a side lot line nor within two feet of a rear lot line'"
+    },
+    "setback_rear_ft": {
+      "value": 2,
+      "section": "27-320.7P(3)(a)",
+      "url": "https://ecode360.com/print/BR2288?guid=31427950",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "accessory_rear_yard_only": {
+      "value": true,
+      "section": "27-320.7P(3)(a)",
+      "url": "https://ecode360.com/print/BR2288?guid=31427950",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Structures may only be located to the rear of the principal building'"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "27-320.7P(3)(a)",
+      "url": "https://ecode360.com/print/BR2288?guid=31427950",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'the closest edge of which must be at least 10 feet from the rear of the principal building'"
+    }
+  },
+  "use": {},
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-701, Table 27-7-A",
+      "url": "https://ecode360.com/print/BR2288?guid=31428687",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU listing. Two spaces per dwelling unit for a single-family detached dwelling"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "27-305.5, 27-305.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'4,500/d.u.' per dwelling unit. Width 45 ft"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "27-305.5, 27-305.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-305.5, 27-305.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-305.5, 27-305.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-305.5, 27-305.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-305.5, 27-305.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-305.5, 27-305.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface Ratio'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-305.5, 27-305.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4500,
+        "section": "27-305.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426553",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'4,500/d.u.' with note 'Per dwelling unit for residential uses'"
+      }
+    },
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "27-306.5, 27-306.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'4,500/d.u.' per dwelling unit. Width 45 ft"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "27-306.5, 27-306.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-306.5, 27-306.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-306.5, 27-306.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-306.5, 27-306.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-306.5, 27-306.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-306.5, 27-306.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface Ratio'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-306.5, 27-306.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4500,
+        "section": "27-306.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'4,500/d.u.' with note 'Per dwelling unit for residential uses'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "27-307.5, 27-307.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'4,500/d.u.' per dwelling unit. Width 45 ft"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "27-307.5, 27-307.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-307.5, 27-307.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-307.5, 27-307.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-307.5, 27-307.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-307.5, 27-307.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-307.5, 27-307.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface Ratio'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-307.5, 27-307.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4500,
+        "section": "27-307.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'4,500/d.u.' with note 'Per dwelling unit for residential uses'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached lot 6,000 sq ft, width 60 ft, in an active adult development of at least 10 acres"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'30 feet with sidewalks or 25 feet without sidewalks', measured from the edge of the cartway. The figure with sidewalks is stored. Without sidewalks it is 25 ft"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.45,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface Ratio'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "27-308.4, 27-308.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Three stories or 35 feet, whichever is less'"
+      }
+    },
+    "NC": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "27-310.5, 27-310.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling, a special exception use in NC. '4,500/d.u.' per dwelling unit. Width 45 ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "27-310.5, 27-310.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-310.5, 27-310.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-310.5, 27-310.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 feet total with no less than 5 feet on one side'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-310.5, 27-310.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-310.5, 27-310.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-310.5, 27-310.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface Ratio'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-310.5, 27-310.6",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4500,
+        "section": "27-310.5",
+        "url": "https://ecode360.com/print/BR2288?guid=31426528",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'4,500/d.u.' with note 'Per dwelling unit for residential uses'"
+      }
+    }
+  }
+}

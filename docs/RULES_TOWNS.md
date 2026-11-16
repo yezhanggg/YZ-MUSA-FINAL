@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-172 towns in the index, 172 with a rule file (Philadelphia and Pittsburgh included). Verified 108, drafted 64, in progress 0, todo 0.
+175 towns in the index, 175 with a rule file (Philadelphia and Pittsburgh included). Verified 108, drafted 67, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -185,6 +185,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Douglass township | Montgomery | verified | accessory dwelling unit | family only (detached new prohibited, garage conversion prohibited, over garage prohibited) | special exception | ADU rule only in R-A, R-1, R-2. occupancy (265-41A(16)(b)[2], [3]). family only (265-41A(16)(b)[2]). owner on site (265-41A(16)(b)[1]). house type detached. building type gate (265-41A(16)(a)). existing structure gate (265-41A(16)(a), (c)[2]). other gate (122-14A, 122-15A, F, H, I, 265-128). other ways (not ADUs): Twin or duplex in an R-3 development (by right with land development, 265-33, 265-53A, 265-54, 265-55, 265-56A, 265-57, 265-58). Twin, duplex or multifamily (R-4) (by right with land development, 265-61A, 265-62, 265-63). Twin or duplex (LC) (by right, 265-89A, 265-91, 265-94). Conversion of a house to multifamily (LC) (special exception, 265-41C(8), 265-89B(1), 265-93, 265-94). 4 parking spaces in total | 1,200 | yes | 1 | 2026-11-16 |
 | Worcester township | Montgomery | drafted | accessory dwelling unit | by right | by right (not addressed for attached. code text conflicts for detached new, garage conversion, over garage) | ADU rule only in AGR. house type detached. 3 other gates (150-110.2A(1)(c), (2), 150-110.3C, E, 150-110.4C, 150-138B(1), 150-146.6A(2), 150-146.8A, 150-146.9A). lot size gate (150-110.3C(2)). other ways: Multifamily dwelling in a development (MR) (by right with land development, 150-83B, 150-84, 150-89E, 150-9 'Dwelling types and dwelling unit types'). Ten-acre tract existing on 1-1-2006 (AGR) (ADU under another listing, by right, 150-110.4C(2)(a)) | 1,200 | no | 1 | 2026-11-16 |
 | Harrison township | Allegheny | verified | dwelling unit in accessory garage | special exception (internal prohibited, attached prohibited) | special exception | ADU rule only in R-1, R-2, R-3, S-1, V. occupancy (27-303.1, 27-408.20D). house type detached. R-1 8,000 sq ft per unit. R-2 2,500 sq ft per unit. R-3 2,000 sq ft per unit. S-1 3,000 sq ft per unit. V 2,000 sq ft per unit. other ways (not ADUs): Two-family house (R-2, R-3, V) (by right, 27-205, 27-206, 27-315). 4 parking spaces in total | not confirmed | no | not confirmed | 2026-11-16 |
+| Marshall township | Allegheny | drafted | accessory dwelling unit | by right | by right | ADU rule only in CR, SR. owner on site (208-401B(1)(b)). house type detached. other ways (not ADUs): Conversion of a single-family dwelling to multi-family (MDR, TC, RB) (conditional use, 208-216 (Table 3), 208-901, 208-501 (Table 11)). Second dwelling on a farm for farm workers or family (CR, SR) (by right, 208-401C(1), (2), 208-216 (Table 3)) | 500 | yes | 1 | 2026-11-16 |
+| Bristol borough | Bucks | drafted | none | not in the code | variance | R-1 4,500 sq ft per unit. R-1A 4,500 sq ft per unit. R-2 4,500 sq ft per unit. NC 4,500 sq ft per unit. other ways (not ADUs): Two-family dwelling (duplex) in NC (special exception, 27-310.3C, 27-310.5, 27-310.6, 27-320.1E). Second single-family dwelling on the lot (R-1, R-1A, R-2) (by right with land development, 27-401, 27-402.2, 27-305.5) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| Canonsburg borough | Washington | drafted | none | not in the code | variance | other ways (not ADUs): Two-family dwelling (R-2, R-3, MU) (by right, 170-305 (Table 301), 170-308 (Table 303), 170-202). Two-family dwelling (R-1) (conditional use, 170-305 (Table 301), 170-308 (Table 303), Article 7). Conversion of a large house to apartments (R-2, R-3) (by right, 170-305 (Table 301), 170-603D). Conversion of a large house to apartments (MU) (conditional use, 170-305 (Table 301), 170-603D) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
 
 ## Towns still to write
 
@@ -201,4 +204,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 170 | 47.3% |
+| 173 | 47.5% |

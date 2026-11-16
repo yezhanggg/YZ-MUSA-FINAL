@@ -1,0 +1,645 @@
+{
+  "provenance": {
+    "jurisdiction": "Marshall township",
+    "instrument": "Marshall Township Zoning Ordinance (Chapter 208 Zoning, adopted by the Board of Supervisors 7-28-2025 by Ord. No. 493), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 MA1429, Township of Marshall, Allegheny County (208-801N names the Allegheny County Court of Common Pleas, 208-210A names Warrendale). Not eCode360 MO2183 or other Marshall codes. Chapter 208 was adopted whole on 7-28-2025 and replaced the former Chapter 208, except 208-91.7 to 208-91.23 for the RRTP district (Appendix D). District uses are Table 3 (208-216) and Table 4 (208-219), and lot figures Tables 1 and 2 (208-207, 208-215), all as text. The only attachments are a plant list, the conservation subdivision process and design guidelines and Appendix D. Floodplain rules are in Chapter 83, to which 208-302 refers. New Laws: none",
+    "effective_date": "2025-07-28",
+    "source_urls": [
+      "https://ecode360.com/48699933",
+      "https://ecode360.com/MA1429/home",
+      "https://ecode360.com/MA1429/laws",
+      "https://ecode360.com/print/MA1429?guid=48699953",
+      "https://ecode360.com/print/MA1429?guid=48700291",
+      "https://ecode360.com/48702116",
+      "https://ecode360.com/print/MA1429?guid=48700204",
+      "https://ecode360.com/print/MA1429?guid=48700283",
+      "https://ecode360.com/print/MA1429?guid=48701378",
+      "https://ecode360.com/print/MA1429?guid=48701687",
+      "https://ecode360.com/print/MA1429?guid=48701920",
+      "https://ecode360.com/print/MA1429?guid=48696069",
+      "https://ecode360.com/print/MA1429?guid=48696084",
+      "https://ecode360.com/print/MA1429?guid=48696178",
+      "https://ecode360.com/MA1429/search?query=%22accessory%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/MA1429/search?query=%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20quarters%20OR%20relative%20OR%20relatives%20OR%20ECHO%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22second%20dwelling%22%20OR%20%22granny%22%20OR%20%22servant%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/MA1429/search?query=floodway%20prohibited%20OR%20%22new%20construction%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/MA1429/search?query=%22conversion%20of%22%20dwelling&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200347696",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/48699933",
+    "code_current_through": "2025-07-28",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 07-28-2025.' New Laws: 'There are currently no known new laws for this Code.'",
+    "checks": [
+      "Table 4 (208-219) lists 'Accessory dwelling unit' as A, 'Permitted accessory use by right', in CR and SR, and N, 'Use not permitted', in MDR, HC, PORBP, TC, RB, PIP, RRTP, OSPC and RTO. The standards are in 208-401B",
+      "208-401B(1): a building or zoning permit first. The property may contain only one dwelling unit. The owner lives in the house or the unit. Only on lots with a single-family dwelling. The unit is in a newly built accessory dwelling unit structure, in an existing detached accessory structure used or formerly used on the first floor by a garage, barn or similar use, or in the house with a separate entrance to the outside or to an unconditioned porch type space",
+      "Size: 'The usable floor area of the accessory dwelling unit shall not exceed 50% of the usable floor area of the principal use or 500 square feet, whichever is less.' Patios, decks, porches and inside stairs from the house do not count (208-401B(1)(e))",
+      "A detached accessory structure stands at least 10 ft from the house and may not exceed 50% of the house's footprint or 1,000 sq ft, whichever is less, 'Unless otherwise specified' (208-401A(4)). It may not be taller than the house (208-401A(9)). It is not allowed in the required front yard (208-401A(5)(a)). In residential districts it is at least 5 ft from the side and rear lines, and a building over 400 sq ft at least 15 ft. Above 15 ft tall it moves back 5 ft more for each foot, up to the principal side or rear yard (208-401A(5)(c), (d)). An attached accessory structure is part of the house and meets the house's rules (208-401A(3))",
+      "Only one accessory structure of each type on a lot (208-401A(8)). Accessory structures count toward lot coverage (208-401A(6))",
+      "Parking: Table 11 has no ADU row, and 208-401B(1)(f) sends ADU parking to 208-501. A single-family detached dwelling needs 2 spaces per dwelling unit. Uses not in Table 11 get a figure from the Planning Director (208-501D). Fractions round up (208-501C(1)). Single-family parking may be stacked (208-501E(1)(a)(i))",
+      "Lots (Table 1, 208-207): CR conventional lot 50,000 sq ft, or 60,000 without public sewer and water, width 150 ft, front 40, side 20 (50 both), rear 40. SR conventional lot 20,000 sq ft, or 40,000 without public sewer and water, width 80 ft (150 without), front 40, side 15, rear 35. Impervious 18%, height 40 ft. Cluster and country lots in a conservation subdivision have smaller or larger figures",
+      "In a residential district no more than one principal use, building or structure on a lot unless the chapter allows more (208-203A(8)). Only one single-family detached dwelling for each lot (208-901 'Dwelling' A)",
+      "A lot of record held apart from the adjoining lots when the chapter took effect may be built on under its district's rules. Adjoining substandard lots in one ownership are treated as one lot (208-602A)",
+      "A use 'clearly not provided for' is a conditional use in PIP only (208-400). The ADU is provided for, so outside CR and SR the path is a variance. Variances: 208-801K. No bar on a use variance was found",
+      "Floodplain (Chapter 83, by 208-302): floodway work needs an engineering showing of no rise and a DEP permit for new construction. AE without floodway, no more than one foot of rise. No new construction within 50 ft of the top of bank without a DEP permit (83-402, 83-501D). Only hospitals, nursing homes, jails and manufactured home parks are barred outright (83-601)",
+      "A family is one or more persons living as a single nonprofit housekeeping unit, and four or more persons not within the second degree of kinship are not a family (208-901 'Family')"
+    ],
+    "notes": "Zoning office: Marshall Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article 200 (208-200 to 208-219 with Tables 1 to 4), 208-302, 208-400, 208-401, 208-501, Article 600, 208-801, the first half of 208-901 (to 'Office'), Chapter 83 sections 402, 501 and 601, the New Laws page and code searches (ADU terms, floodplain, conversion). Not read: Article 100, 208-300, 208-301, 208-303, 208-402 (principal use standards, including the conservation subdivision rules in 208-402Q), 208-500, 208-502 to 208-504, Article 700, 208-800, 208-802 to 208-808, the rest of 208-901 and the rest of Chapter 83."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "208-901 'Accessory dwelling unit', 208-219 (Table 4)",
+      "url": "https://ecode360.com/48702116",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A residential dwelling unit, located on the same lot as a single-family dwelling unit, either within the same building as the single-family dwelling unit or in a detached building.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "208-219 (Table 4), 208-218B(1), 208-401B",
+      "url": "https://ecode360.com/print/MA1429?guid=48699953",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A = Permitted accessory use by right' in CR and SR, with a building or zoning permit and the 208-401B standards. The owner must live on the lot"
+    },
+    "scope_districts": {
+      "value": [
+        "CR",
+        "SR"
+      ],
+      "section": "208-219 (Table 4)",
+      "url": "https://ecode360.com/print/MA1429?guid=48699953",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "208-219 (Table 4), 208-218B(3)",
+      "url": "https://ecode360.com/print/MA1429?guid=48699953",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Table 4 marks the ADU 'N', 'Use not permitted', in MDR, HC, PORBP, TC, RB, PIP, RRTP, OSPC and RTO"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "208-219 (Table 4), 208-401B(1)(a)",
+      "url": "https://ecode360.com/print/MA1429?guid=48699953",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A = Permitted accessory use by right.' 'A property owner must file a building/zoning permit or zoning occupancy permit for an accessory dwelling unit prior to its recognition as an accessory dwelling unit.'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "208-801K",
+      "url": "https://ecode360.com/print/MA1429?guid=48701920",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the 208-801K(2) findings. No bar on a use variance found"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family dwelling to multi-family (MDR, TC, RB)",
+          "path": "conditional_use",
+          "districts": [
+            "MDR",
+            "TC",
+            "RB"
+          ],
+          "conditions": "'Conversion of sq. ft. to multi-family' is a conditional use in MDR, TC and RB (Table 3, 208-216). It converts an existing single-family detached dwelling to dwellings for more than one family without substantially altering the outside (208-901). Parking 1.5 spaces per dwelling unit plus 1 guest space for every 2 units (Table 11, 208-501). The Board of Supervisors decides after a Planning Commission recommendation and a public hearing (208-804, 208-901 'Conditional use')",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling is converted",
+              "section": "208-901 'Conversion of single-family dwelling to multi-family dwelling'"
+            }
+          ],
+          "section": "208-216 (Table 3), 208-901, 208-501 (Table 11)",
+          "url": "https://ecode360.com/print/MA1429?guid=48699953",
+          "confidence": "secondary",
+          "note": "No use standards for the conversion were found outside Table 3 and the definition. A single-family detached dwelling is not a permitted use in MDR or TC, so a house there is likely a nonconforming use"
+        },
+        {
+          "name": "Second dwelling on a farm for farm workers or family (CR, SR)",
+          "path": "by_right",
+          "districts": [
+            "CR",
+            "SR"
+          ],
+          "conditions": "Where the principal use is an agriculture operation (by right in CR and SR, Table 3), 'The number of dwellings permitted on a farm shall not be limited, if density does not exceed one single-family dwelling per 10 acres and that dwellings shall be separated by a minimum of 200 feet for use by resident farm workers or family members.' Each dwelling meets the district setbacks. An agricultural use needs at least five acres unless it is a normal agricultural operation (208-401C(1), (2))",
+          "min_lot_sqft": 871200,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is a farm whose principal use is an agriculture operation",
+              "section": "208-401C"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "208-401C(1), (2), 208-216 (Table 3)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700291",
+          "confidence": "secondary",
+          "note": "871,200 sq ft is 20 acres, two dwellings at one per 10 acres"
+        }
+      ],
+      "section": "208-216 (Table 3), 208-401C",
+      "url": "https://ecode360.com/print/MA1429?guid=48699953",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 208",
+      "url": "https://ecode360.com/48699933",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic path found"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "208-401B(1)(c), 208-216 (Table 3)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units are only permitted as accessory to lots with single-family.' In CR and SR the only dwelling Table 3 permits is a single-family detached dwelling"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "The unit is accessory to a lot with a single-family dwelling. The property may contain only one dwelling unit before the accessory unit is added, and a permit is needed before the unit is recognized.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "208-401B(1)(a), (c)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700291"
+        },
+        {
+          "kind": "other",
+          "condition": "An accessory building or use may not be set up on a vacant lot or before the principal structure is built.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "208-217B, 208-401A(1)",
+          "url": "https://ecode360.com/print/MA1429?guid=48699953"
+        },
+        {
+          "kind": "design",
+          "condition": "A unit in the house needs a separate entrance to the outside or to an unconditioned porch type space.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "208-401B(1)(d)(iii)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700291"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A unit in an existing outbuilding must be in a detached accessory structure used, or formerly used, on the first floor by a garage, barn or similar accessory use. Otherwise the unit is in a newly built accessory dwelling unit structure.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "208-401B(1)(d)(i), (ii)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700291"
+        },
+        {
+          "kind": "design",
+          "condition": "An all-weather path from the street to the unit. The unit is placed to keep neighbors' privacy as far as practical. No separate street number. No new separate utility connection for a unit in the house unless the lot already has more than one. Mechanical equipment on the ground or inside the unit, not on the roof.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "208-401B(1)(g) to (k)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700291"
+        },
+        {
+          "kind": "district",
+          "condition": "A lot in a conservation subdivision (cluster or country lot) follows its own Table 1 figures. CR cluster lot: 15,000 sq ft, front 30 ft, side 10 ft (30 ft both), rear 30 ft, impervious 45%. CR country lot: 3 acres with a building envelope of at most one acre, yards 50 ft, impervious 18% of the envelope. SR cluster lot: 5,500 sq ft, front 30 ft, side 8 ft (20 ft both), rear 25 ft, impervious 35%. Height 40 ft.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "CR",
+            "SR"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "208-207 (Table 1)",
+          "url": "https://ecode360.com/print/MA1429?guid=48699953"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area (Chapter 83) a floodway allows no encroachment, new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels, and no new construction without a DEP permit. In an AE area without a floodway the work may not raise the base flood elevation more than one foot. No new construction within 50 ft landward of the top of bank of a watercourse without a DEP permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "208-302, 83-402A, B, 83-501D",
+          "url": "https://ecode360.com/print/MA1429?guid=48696069",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 83"
+        }
+      ],
+      "section": "208-401B, 208-217B, 208-207, 83-402",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "MDR",
+        "HC",
+        "PORBP",
+        "TC",
+        "RB",
+        "PIP",
+        "RRTP",
+        "OSPC",
+        "RTO"
+      ],
+      "section": "208-219 (Table 4)",
+      "url": "https://ecode360.com/print/MA1429?guid=48699953",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Table 4 lists the ADU as 'N' (use not permitted) in these districts"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "208-401B(1)(d), 208-901 'Accessory dwelling unit', 208-401A(3)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "208-401B(1)(d) names a newly built ADU structure, an existing detached structure whose first floor is or was a garage, barn or similar use, and the principal structure. An addition joined to the house is part of the principal structure (208-401A(3)) and 'within the same building' (208-901), so an attached unit is read as a unit in the principal structure"
+    },
+    "labels": {
+      "value": {
+        "internal": "In the house, with a separate entrance",
+        "attached": "In an addition that becomes part of the house",
+        "detached_new": "In a newly built accessory dwelling unit structure",
+        "garage_conversion": "In an existing detached garage, barn or similar structure",
+        "over_garage": "Above the garage or barn floor of a detached accessory structure"
+      },
+      "section": "208-401B(1)(d)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 500,
+      "section": "208-401B(1)(e)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The usable floor area of the accessory dwelling unit shall not exceed 50% of the usable floor area of the principal use or 500 square feet, whichever is less.'"
+    },
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "208-401B(1)(e)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "50% of the usable floor area of the principal use, or 500 sq ft, whichever is less. Patios, decks, porches and inside stairs from the house do not count"
+    }
+  },
+  "envelope": {
+    "internal_uses_district_height": {
+      "value": true,
+      "section": "208-207 (Table 1), 208-401A(3)",
+      "url": "https://ecode360.com/print/MA1429?guid=48699953",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "208-401A(9)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory structures shall not exceed the height of the principal structure unless the accessory structure is directly related to an agricultural use/operation.'"
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "208-401A(5)(c)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory structures/uses within residential districts shall be set back a minimum of five feet from any side or rear property line'. 15 ft for a building over 400 sq ft"
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "208-401A(5)(c)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "15 ft for a building over 400 sq ft"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building over 400 sq ft",
+          "over_sqft": 400,
+          "setback_side_ft": 15,
+          "setback_rear_ft": 15,
+          "section": "208-401A(5)(c)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700291",
+          "note": "'any building over 400 square feet shall be set back a minimum of 15 feet from side or rear property lines'"
+        },
+        {
+          "where": "An accessory building over 15 ft tall moves back an added 5 ft from the side and rear lines for each foot above 15 ft, up to the principal side or rear yard",
+          "section": "208-401A(5)(d)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700291"
+        }
+      ],
+      "section": "208-401A(5)(c), (d)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "208-401A(4)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'detached accessory structures shall maintain a separation of at least 10 feet from the principal structure'"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "208-401A(5)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A detached accessory structure takes the 5 ft (or 15 ft) side and rear yards and stays out of the required front yard. An attached one meets the house's yards (208-401A(3))"
+    },
+    "accessory_structure_max_sqft": {
+      "value": 1000,
+      "section": "208-401A(4)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'such detached accessory structures shall not exceed 50% of the gross square footage footprint of the principal structure or 1,000 square feet, whichever is less'"
+    },
+    "accessory_share_of_house_part": {
+      "value": [
+        {
+          "what": "A detached accessory structure",
+          "share": 0.5,
+          "of": "the gross square footage footprint of the house",
+          "when": null,
+          "districts": null,
+          "section": "208-401A(4)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700291",
+          "note": "Or 1,000 sq ft, whichever is less"
+        }
+      ],
+      "section": "208-401A(4)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "208-401A(4), 208-401B(1)(e)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "208-401A(4) holds 'Unless otherwise specified'. The ADU section caps the unit's usable floor area but says nothing of the structure, so the structure cap is read to apply"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": false,
+      "section": "208-401B",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No family rule"
+    },
+    "owner_occupancy": {
+      "value": true,
+      "section": "208-401B(1)(b)",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The property must be occupied by the owner, either in the principal structure or principal dwelling unit, or in the accessory Dwelling.'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "208-401B(1)(a), 208-901 'Accessory dwelling unit'",
+      "url": "https://ecode360.com/print/MA1429?guid=48700291",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'The property proposed for an accessory dwelling unit is permitted to contain only one dwelling unit.' The definition speaks of one unit"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "208-401B(1)(f), 208-501 (Table 11)",
+      "url": "https://ecode360.com/print/MA1429?guid=48701378",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Table 11 has no ADU row"
+    },
+    "reading": {
+      "value": "Table 11 has no row for an accessory dwelling unit, so the Planning Director sets the figure (208-501D). If the unit counts as a dwelling unit at the single-family rate ('2 per dwelling unit'), it adds 2 spaces to the house's 2. Spaces may be stacked.",
+      "section": "208-401B(1)(f), 208-501C, D, E",
+      "url": "https://ecode360.com/print/MA1429?guid=48701378",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "CR": {
+      "min_lot_sqft": {
+        "value": 50000,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Conventional single-family detached lot with public sewer and water. Width 150 ft, frontage 75 ft. Gross density 0.75 units an acre"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Conventional single-family detached lot"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Conventional single-family detached lot, one side"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'P' (principal structure). Conventional single-family detached lot"
+      },
+      "max_impervious_coverage": {
+        "value": 0.18,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface Ratio'. Impervious surface includes roofs, driveways and walks (208-901)"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Height'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer and public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "section": "208-207 (Table 1) note 1"
+          }
+        ],
+        "section": "208-207 (Table 1) note 1",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'For lots that do not have public sewer and public water facilities.' Stored for a lot with neither service. Whether a lot with only one of them takes this figure is not settled"
+      },
+      "min_lot_replaced_in_planned_development": {
+        "value": true,
+        "section": "208-207 (Table 1), 208-402Q",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "Cluster and country lots in a conservation subdivision have their own lot figures in Table 1"
+      },
+      "setback_sides_total_ft": {
+        "value": 50,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'20 ft. one side 50 ft. total'"
+      }
+    },
+    "SR": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Conventional single-family detached lot with public sewer and water. Width 80 ft, frontage 60 ft. Gross density 2.0 units an acre"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Conventional single-family detached lot"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Conventional single-family detached lot, each side"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'P' (principal structure). Conventional single-family detached lot"
+      },
+      "max_impervious_coverage": {
+        "value": 0.18,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface Ratio'. Impervious surface includes roofs, driveways and walks (208-901)"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "208-207 (Table 1)",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Building Height'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer and public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "section": "208-207 (Table 1) note 1"
+          }
+        ],
+        "section": "208-207 (Table 1) note 1",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'For lots that do not have public sewer and public water facilities.' Stored for a lot with neither service. Whether a lot with only one of them takes this figure is not settled"
+      },
+      "min_lot_replaced_in_planned_development": {
+        "value": true,
+        "section": "208-207 (Table 1), 208-402Q",
+        "url": "https://ecode360.com/print/MA1429?guid=48699953",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "Cluster and country lots in a conservation subdivision have their own lot figures in Table 1"
+      }
+    }
+  }
+}

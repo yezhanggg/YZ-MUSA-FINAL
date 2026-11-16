@@ -1,0 +1,503 @@
+{
+  "provenance": {
+    "jurisdiction": "Canonsburg borough",
+    "instrument": "Canonsburg Borough Zoning Ordinance (Chapter 170 Zoning, adopted 7-18-2016 by Ord. No. 1327 and amended in its entirety 10-11-2021 by Ord. No. 1356), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 CA1664, Borough of Canonsburg, Washington County (170-202 'Lot of record' names the Recorder of Deeds of Washington County, 170-1005 the Washington County Assessor). Table 301 (principal uses), Table 302 (accessory uses) and Table 303 (dimensional requirements) are text in Article 3. The only attachments are Appendices A to D (sight triangle, lighting, buffer areas, plants). Floodplain rules are in Chapter 99. New Laws: Ord. No. 1366 to 1390 (2022 to 2025), none on Chapter 170",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/13838546",
+      "https://ecode360.com/CA1664/laws",
+      "https://ecode360.com/print/CA1664?guid=13838784",
+      "https://ecode360.com/print/CA1664?guid=13839035",
+      "https://ecode360.com/print/CA1664?guid=13839401",
+      "https://ecode360.com/print/CA1664?guid=13839402",
+      "https://ecode360.com/print/CA1664?guid=13839477",
+      "https://ecode360.com/print/CA1664?guid=13839558",
+      "https://ecode360.com/print/CA1664?guid=39106128",
+      "https://ecode360.com/print/CA1664?guid=34797362",
+      "https://ecode360.com/CA1664/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20quarters%20OR%20relative%20OR%20relatives%20OR%20ECHO%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22second%20dwelling%22%20OR%20conversion%20OR%20servant&scope=all&sortOrder=relevance",
+      "https://ecode360.com/CA1664/search?query=floodway%20%22new%20construction%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Washington",
+    "municipality_type": "borough",
+    "geoid": "4212511152",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/13838546",
+    "code_current_through": "2022-05-09",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 05-09-2022.' New Laws list Ord. No. 1366 to 1390, none amending Chapter 170. Ord. No. 1376 (9-11-2023, political signs) names no chapter",
+    "checks": [
+      "The zoning chapter has no accessory dwelling unit, in-law unit or similar listing. Table 302 lists no living quarters as an accessory use. 'Only one principal use may exist on each lot' (170-301D(2)), and a single-family dwelling is 'the only principal structure on the lot' (170-202)",
+      "'Uses not specifically listed in any district as permitted, special exception or conditional shall be prohibited in that district' (170-306). But 170-307 sends a use not specifically permitted to the Zoning Hearing Board, which may allow it by special exception under 170-602: a use 'of the same general character' as a listed use, with equal or less impact. Whether an accessory unit is of the same character as a listed use is not settled",
+      "A two-family dwelling (two units, each with its own outside entrance, the only principal structure on the lot) is by right in R-2, R-3 and MU and a conditional use in R-1 (Table 301, 170-202). Lot 7,500 sq ft in R-2, 6,000 in R-3 and MU, 10,000 in R-1 (Table 303)",
+      "Apartments are by right in R-2 and R-3 and a conditional use in MU, under 170-603D. A one-family house may be made into two or more units only if it had more than 3,000 sq ft of habitable floor area before the chapter took effect (170-603D(5)). Each unit needs 700 sq ft or more and two parking spaces",
+      "Accessory structures: not in a front yard, side and rear yards of at least 5 ft, at most one story or 15 ft (170-309E(1) to (3)). Residential accessory buildings other than garages are at most 150 sq ft and one story, and storage buildings and garages stand at least 10 ft from the house (170-309E(6))",
+      "Lots (Table 303): single-family detached 7,500 sq ft in R-1 (side 10 ft), 6,000 in R-2 (side 8 ft), 5,000 in R-3 and MU (side 5 ft), front 20 ft, rear 25 ft, height 35 ft, impervious 60% in R-1 and R-2 and 50% in R-3 and MU",
+      "A lot of record when the chapter took effect may be built on for a permitted use without a lot area or width variance if it meets the yards, height and coverage (170-1004A). Nonconforming lots of record may use smaller yards for single-family dwellings and duplexes (170-308C(2))",
+      "Parking: 2 spaces for a single-family dwelling, 4 for a duplex, 2 per unit for multifamily. A one-car garage with a long enough driveway counts as two (170-803G, Table 8.3)",
+      "Variances: 170-1206. No bar on a use variance was found",
+      "A family includes 'domestic servants or gratuitous guests thereof', or up to three unrelated persons (170-202 'Family')",
+      "Floodplain (Chapter 99): floodway work needs an engineering showing of no rise and a DEP permit for new construction (99-19A)"
+    ],
+    "notes": "Zoning office: Canonsburg Borough Code Enforcement and Zoning. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article 2 (to 'Nursing home'), Article 3 in full with Tables 301 to 303, 170-602, 170-603D, 170-803 (Table 8.3), Article 10, 170-1206, 99-19, the New Laws page and code searches (ADU terms, floodplain). Not read: Article 1, the rest of Article 2, Article 4 (Downtown Overlay), Article 5, 170-601 and the rest of 170-603, Article 7, 170-801, 170-802, 170-804 to 170-807, Article 9, Article 11, the rest of Article 12 and the rest of Chapter 99."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 170",
+      "url": "https://ecode360.com/13838546",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Searched the code for accessory dwelling, in-law, accessory apartment, quarters, relative, ECHO, caretaker, guest house, second dwelling, conversion and servant. No ADU term"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "170-305 (Tables 301, 302), 170-306",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No district lists an accessory dwelling unit"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "170-306, 170-1206",
+      "url": "https://ecode360.com/print/CA1664?guid=39106128",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Unlisted uses are prohibited (170-306), so the usual path is a use variance. 170-307 and 170-602 may also let the Zoning Hearing Board allow a use of the same general character as a listed use by special exception"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "170-1206",
+      "url": "https://ecode360.com/print/CA1664?guid=39106128",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "170-307, 170-602",
+      "url": "https://ecode360.com/print/CA1664?guid=13839401",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'the Zoning Hearing Board ... may authorize the use by special exception' under 170-602. 170-306 says unlisted uses are prohibited, so the two sections pull apart. A unit added as a second dwelling unit is close to a two-family dwelling, which Table 301 lists by right in R-2, R-3 and MU and as a conditional use in R-1, so those listings are the clearer route there"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "170-602A",
+      "url": "https://ecode360.com/print/CA1664?guid=13839401",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "quote": "Uses of the same general character as any of the uses authorized as permitted uses by right, conditional uses or uses by special exception in the zoning district in which the property is located shall be allowed"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R-2, R-3, MU)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "MU"
+          ],
+          "conditions": "'Duplex/two-family dwelling' is P in R-2, R-3 and MU (Table 301). It is the only principal structure on the lot and has two dwelling units, each with a separate entrance directly to the outside (170-202 'Dwelling types' B). Lot 7,500 sq ft (width 50 ft, side yards 10 ft) in R-2, 6,000 sq ft (side yards 5 ft) in R-3 and MU, front 20 ft, rear 25 ft, height 35 ft (Table 303). Four parking spaces (Table 8.3)",
+          "min_lot_by_district": {
+            "R-2": 7500,
+            "R-3": 6000,
+            "MU": 6000
+          },
+          "section": "170-305 (Table 301), 170-308 (Table 303), 170-202",
+          "url": "https://ecode360.com/print/CA1664?guid=13839035",
+          "confidence": "secondary",
+          "note": "A new two-family building, or a house made into two units. Turning an existing one-family house into two or more units may also fall under 170-603D(5), which allows it only where the house had more than 3,000 sq ft of habitable floor area before the chapter took effect"
+        },
+        {
+          "name": "Two-family dwelling (R-1)",
+          "path": "conditional_use",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "'Duplex/two-family dwelling' is a conditional use in R-1 (Table 301), decided by Borough Council (170-305B). Table 303 has no R-1 duplex row, so the 'All others' row applies: lot 10,000 sq ft, width 50 ft, front 25 ft, side 25 ft, rear 25 ft, impervious 60%, height 35 ft. Four parking spaces (Table 8.3)",
+          "min_lot_sqft": 10000,
+          "section": "170-305 (Table 301), 170-308 (Table 303), Article 7",
+          "url": "https://ecode360.com/print/CA1664?guid=13839035",
+          "confidence": "secondary",
+          "note": "Article 7 conditional use standards were not read. The same 170-603D(5) limit may reach a converted house"
+        },
+        {
+          "name": "Conversion of a large house to apartments (R-2, R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "'Apartment, subject to 170-603(D)' is P in R-2 and R-3 (Table 301). 'If the building is currently a one family dwelling, it shall not be converted to two or more dwelling units unless the building included more than 3,000 square feet of habitable floor area prior to the enactment of this chapter.' The lot area per unit and the yards are met as if the building were new. Each unit has at least 700 sq ft (one bedroom), 900 (two) or 1,200 (three), a full kitchen and bath, and two parking spaces (170-603D(1) to (7))",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing one-family house is converted",
+              "section": "170-603D(5)"
+            },
+            {
+              "test": "house_sqft_over",
+              "value": 3000,
+              "condition": "The house had more than 3,000 sq ft of habitable floor area before the chapter took effect",
+              "section": "170-603D(5)"
+            }
+          ],
+          "section": "170-305 (Table 301), 170-603D",
+          "url": "https://ecode360.com/print/CA1664?guid=13839402",
+          "confidence": "secondary",
+          "note": "The test is habitable floor area before the 2016 chapter (Ord. No. 1327), which the tool reads from the house size. The lot area per unit for two apartments in R-2 is not settled: Table 303 has no R-2 apartment row"
+        },
+        {
+          "name": "Conversion of a large house to apartments (MU)",
+          "path": "conditional_use",
+          "districts": [
+            "MU"
+          ],
+          "conditions": "'Apartment, subject to 170-603(D)' is a conditional use in MU (Table 301), with the same 170-603D limits: only a house with more than 3,000 sq ft of habitable floor area before the chapter, lot area per unit as if new, unit sizes of 700, 900 or 1,200 sq ft, and two parking spaces per unit",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing one-family house is converted",
+              "section": "170-603D(5)"
+            },
+            {
+              "test": "house_sqft_over",
+              "value": 3000,
+              "condition": "The house had more than 3,000 sq ft of habitable floor area before the chapter took effect",
+              "section": "170-603D(5)"
+            }
+          ],
+          "section": "170-305 (Table 301), 170-603D",
+          "url": "https://ecode360.com/print/CA1664?guid=13839402",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "170-305 (Table 301), 170-603D",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 170",
+      "url": "https://ecode360.com/13838546",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic path found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area (Chapter 99) a floodway allows no encroachment, new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels, and no new construction or development without a DEP permit. Manufactured homes have their own floodway rules.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "99-19A, 99-28",
+          "url": "https://ecode360.com/print/CA1664?guid=34797362",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 99"
+        }
+      ],
+      "section": "99-19",
+      "url": "https://ecode360.com/print/CA1664?guid=34797362",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C",
+        "CBD",
+        "C-1",
+        "OI",
+        "I-1"
+      ],
+      "section": "170-305 (Table 301)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "These districts do not permit a single-family detached dwelling (N in Table 301)"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "170-305C, 170-306",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No ADU form is listed"
+    }
+  },
+  "envelope": {
+    "front_yard_barred": {
+      "value": true,
+      "section": "170-309E(1)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'No accessory structure shall be located in a front yard, unless specifically permitted in this chapter.'"
+    },
+    "setback_side_ft": {
+      "value": 5,
+      "section": "170-309E(2)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'All accessory structures shall maintain a side and rear yard of at least five feet, unless otherwise specified'"
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "170-309E(2)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "170-309E(3)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'limited to one story or 15 feet in height'"
+    },
+    "max_height_stories": {
+      "value": 1,
+      "section": "170-309E(3)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'one story or 15 feet in height'"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "170-309E(6)(d)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'All accessory storage structures and garages shall be located at least 10 feet from any principal building'. A detached garage may be joined to the house by walls or a breezeway"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "A residential accessory building that is not a garage: at most 150 sq ft and one story, and it may not be used as a garage",
+          "section": "170-309E(6)(a)",
+          "url": "https://ecode360.com/print/CA1664?guid=13839035"
+        }
+      ],
+      "section": "170-309E(6)(a)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839035",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "use": {},
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "170-803 (Table 8.3)",
+      "url": "https://ecode360.com/print/CA1664?guid=13839477",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU listing. Single-family 2 spaces, duplex 4"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Dwelling, single-family detached. Width 50 ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Dwelling, single-family detached. Width 40 ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Dwelling, single-family detached. Width 40 ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Dwelling, single-family detached. Width 40 ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Impervious Surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "170-308 (Table 303)",
+        "url": "https://ecode360.com/print/CA1664?guid=13839035",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    }
+  }
+}

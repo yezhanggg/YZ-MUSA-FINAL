@@ -1469,6 +1469,7 @@ FIXED_BATCH.update({g: 35 for g in ("4209145072", "4209144920", "4204586968")})
 FIXED_BATCH.update({g: 36 for g in ("4207555160", "4209532432", "4207123016")})
 FIXED_BATCH.update({g: 37 for g in ("4207932416", "4202953608", "4204541440")})
 FIXED_BATCH.update({g: 38 for g in ("4209545104", "4207151664", "4207952584")})
+FIXED_BATCH.update({g: 40 for g in ("4200347696", "4201708760", "4212511152")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1680,6 +1681,19 @@ EXTRAS = {
     "4209119672": "Code 265-41A(16) accessory dwelling unit by special exception, family only (R-A, R-1, R-2)",
     "4209186496": "Code 150-110.3C accessory dwelling units in Option 3 country properties (AGR conservation subdivisions)",
     "4200332832": "Code 27-303.1 living quarters in an accessory garage for domestic employees by special exception",
+    # Batch 40 (2026-11-16): the next towns by population without a rule file. Coal (Northumberland) was skipped (no
+    # zoning text found as web pages, and the township website has no code or zoning page), Mount Pleasant (Westmoreland)
+    # (no zoning text found as web pages; eCode360 MO2183 is Mount Pleasant, Washington County, and the township website
+    # did not load), Brentwood (Allegheny) (Ord. No. 2023-1314, 2024-1320, 2025-1321, 2025-1326 and 2026-1331, Chapter 210
+    # zoning amendments, not yet codified), North Versailles (Allegheny) (Use Authorization Table and Commercial Zoning
+    # District Standards Table only in PDF attachments), Uniontown (Fayette) (no zoning text found as web pages), Penn
+    # Forest (Carbon) (Table 306-B-1 uses and the dimensional requirements only in PDF attachments), Neshannock (Lawrence)
+    # (zoning ordinance of April 2024 only as a file on the township website), Morrisville (Bucks) (Table 465-17 land uses
+    # and Table 465-18 dimensional requirements only in PDF attachments) and Plains (Luzerne) (American Legal code at the
+    # 2024 S-3 supplement, and a zoning curative amendment effective 4-27-2026 not yet codified).
+    "4200347696": "Code 208-219 Table 4 and 208-401B accessory dwelling unit by right in CR and SR",
+    "4201708760": "batch 40 by population. Code Chapter 27 has no ADU text",
+    "4212511152": "batch 40 by population. Code Chapter 170 has no ADU text (two-family dwelling by right in R-2, R-3, MU, 170-603D(5) large-house apartment conversion)",
 }
 
 if __name__ == "__main__":

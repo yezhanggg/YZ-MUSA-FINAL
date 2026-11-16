@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 170,
-      "population": 6147353,
-      "share_of_pa": 0.4728
+      "towns_beyond_the_two_cities": 173,
+      "population": 6177038,
+      "share_of_pa": 0.4751
     }
   ],
   "towns": [
@@ -4178,6 +4178,78 @@
         "named as a town with an ADU ordinance (Code 27-303.1 living quarters in an accessory garage for domestic employees by special exception)"
       ],
       "status_note": "Batch 39, checked against the code text. The ADU is the 'Dwelling Unit in Accessory Garage' (27-303.1, 27-408.20), a special exception for domestic employees of the residents. Points for a later check: whether it reaches S-1 and V, since 27-408.20D says only the residential districts (shown as in doubt). A new garage built with the unit is read as allowed. Whether the unit counts toward the area per family in 27-206. The code sets no number of units per lot. 27-315 bars internal and attached units."
+    },
+    {
+      "geoid": "4200347696",
+      "geoid_aliases": [],
+      "name": "Marshall township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 10080,
+      "population_with_aliases": 10080,
+      "housing_units": 3801,
+      "pop_rank": 263,
+      "file": "pa_allegheny_marshall",
+      "batch": 40,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/48699933",
+      "plain_fetch": null,
+      "code_current_through": "2025-07-28",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 208-219 Table 4 and 208-401B accessory dwelling unit by right in CR and SR)"
+      ],
+      "status_note": "Batch 40, first reading. Open: Whether an addition joined to the house counts as a unit 'in the principal structure' (208-401B(1)(d)(iii), 208-401A(3)). Whether the 208-401A(4) cap on detached accessory structures (50% of the house footprint or 1,000 sq ft) binds an ADU building. ADU parking (Table 11 has no row, 208-501D). 208-402 (conservation subdivisions) not read."
+    },
+    {
+      "geoid": "4201708760",
+      "geoid_aliases": [],
+      "name": "Bristol borough",
+      "county": "Bucks",
+      "type": "borough",
+      "population": 9861,
+      "population_with_aliases": 9861,
+      "housing_units": 4244,
+      "pop_rank": 267,
+      "file": "pa_bucks_bristol_borough",
+      "batch": 40,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30841462",
+      "plain_fetch": null,
+      "code_current_through": "2026-08-10",
+      "code_note": null,
+      "why": [
+        "added as batch 40 by population. Code Chapter 27 has no ADU text"
+      ],
+      "status_note": "Batch 40, first reading. Open: Whether a second house on one R-1, R-1A or R-2 lot under 27-402.2 is a second principal use that 27-401 bars. Whether the 500 sq ft in 27-320.7P(3)(a) is for each accessory structure or for all of them. 27-312 to 27-319 checked only by a search of the Part 3 text."
+    },
+    {
+      "geoid": "4212511152",
+      "geoid_aliases": [],
+      "name": "Canonsburg borough",
+      "county": "Washington",
+      "type": "borough",
+      "population": 9744,
+      "population_with_aliases": 9744,
+      "housing_units": 4680,
+      "pop_rank": 271,
+      "file": "pa_washington_canonsburg",
+      "batch": 40,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/13838546",
+      "plain_fetch": null,
+      "code_current_through": "2022-05-09",
+      "code_note": null,
+      "why": [
+        "added as batch 40 by population. Code Chapter 170 has no ADU text (two-family dwelling by right in R-2, R-3, MU, 170-603D(5) large-house apartment conversion)"
+      ],
+      "status_note": "Batch 40, first reading. Open: 170-306 (unlisted uses prohibited) against 170-307 and 170-602 (special exception for a use of the same general character). Whether 170-603D(5) (house over 3,000 sq ft before the chapter) limits a house made into a two-family dwelling. Code current only through 05-09-2022 (New Laws show no zoning ordinance since)."
     }
   ]
 }
