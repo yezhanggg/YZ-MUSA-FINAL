@@ -115,14 +115,34 @@ function noLine(v: UnitVerdict): string {
   return 'It does not fit this lot';
 }
 
-/** The answer in one word and one short line. */
+/** "Yes, if confirmed": a by-right path that holds only under one reading of the code. */
+export const IF_CONFIRMED = 'Yes, if confirmed';
+const ASK_FIRST = 'Ask the zoning officer first';
+
+/** The fit line with the limits the record could not check: "A 20 x 30 ft cottage fits here. Not checked: height." */
+function fitWithFacts(v: UnitVerdict): string {
+  const fact = (v.qualifiers ?? []).find((q) => q.kind === 'fact');
+  return fact ? `Fits; ${fact.short}` : fitLine(v);
+}
+
+const CHECK_SUB: Record<string, string> = {
+  no_rules: 'No rules on file for this',
+  district_unknown: 'Depends on the zoning district, not on file',
+  house_size_unknown: 'Depends on the house size, not checked',
+};
+
+/** The answer in one word and one short line. A path in doubt shows its qualifier in the line, never a plain yes. */
 export function answerOf(v: UnitVerdict): AnswerView {
   const make = (answer: Answer, sub: string): AnswerView => ({ answer, title: ANSWER_TITLE[answer], sub });
   switch (v.status) {
     case 'fits': {
       const path = v.approval.path;
-      if (path && NO_HEARING.has(path)) return make('yes', fitLine(v));
-      if (path && WITH_APPROVAL.has(path)) return make('approval', fitLine(v));
+      const reading = (v.qualifiers ?? []).find((q) => q.kind === 'reading');
+      // The full condition is in the panel's line (answerFor), the approval row and the Why fold.
+      if (reading && path && NO_HEARING.has(path)) return { answer: 'approval', title: IF_CONFIRMED, sub: ASK_FIRST };
+      if (reading && path && WITH_APPROVAL.has(path)) return make('approval', `${ASK_FIRST}, then get approval`);
+      if (path && NO_HEARING.has(path)) return make('yes', fitWithFacts(v));
+      if (path && WITH_APPROVAL.has(path)) return make('approval', fitWithFacts(v));
       if (path === 'variance') return make('no', 'Only with a variance (board hearing)');
       if (path === 'not_allowed') return make('no', 'This kind of unit is not allowed here');
       return make('unknown', 'The approval path is not on file');
@@ -133,7 +153,7 @@ export function answerOf(v: UnitVerdict): AnswerView {
     case 'not_allowed':
       return make('no', noLine(v));
     case 'check_needed':
-      return make('unknown', v.limit?.code === 'no_rules' ? 'No rules on file for this' : 'The data cannot answer this');
+      return make('unknown', CHECK_SUB[v.limit?.code ?? ''] ?? 'The data cannot answer this');
   }
 }
 
@@ -200,34 +220,39 @@ function numbersOf(v: UnitVerdict, c: VerdictCheck, district: string | null): st
     case 'type_allowed':
       return district;
     case 'units':
-      return isNum(value) ? (isNum(limit) ? `${value} / max ${limit}` : `${value} · no limit`) : null;
+      return isNum(value) ? (isNum(limit) ? `${value} / max ${limit}` : `${value} · none on file`) : null;
     case 'min_lot_size':
     case 'min_size':
       if (!isNum(value) || value <= 0) return null;
-      return isNum(limit) ? `${num(value)} / min ${num(limit)} sq ft` : `${num(value)} sq ft · no minimum`;
+      return isNum(limit) ? `${num(value)} / min ${num(limit)} sq ft` : `${num(value)} sq ft · none on file`;
     case 'size_cap':
     case 'share_of_house':
       // A garage unit with no garage has no floor area to compare.
       if (!isNum(value) || value <= 0) return null;
       if (isNum(limit)) return `${num(value)} / max ${num(limit)} sq ft`;
       // A share cap with no living area to apply it to: not checked, not "no cap".
-      return c.pass === null ? `${num(value)} sq ft · not checked` : `${num(value)} sq ft · no cap`;
+      return c.pass === null ? `${num(value)} sq ft · not checked` : `${num(value)} sq ft · none on file`;
     case 'room':
       if (v.type === 'garage_conversion' || v.type === 'over_garage') return isNum(value) && value > 0 ? `${num(value)} sq ft garage` : null;
       if (!isNum(value)) return null;
+      // Not checked (no unit allowed here): the row says only that.
+      if (c.pass === null) return null;
       if (limit === 0) return 'No open space';
       return isNum(limit) ? `${num(value)} / max ${num(limit)} sq ft` : `${num(value)} sq ft`;
     case 'setbacks':
     case 'separation':
       if (!isNum(value)) return null;
-      return isNum(limit) ? `${ftText(value).replace(/ ft$/, '')} / min ${ftText(limit)}` : `${ftText(value)} · no minimum`;
+      if (c.pass === null) return `${ftText(value)} · not checked`;
+      return isNum(limit) ? `${ftText(value).replace(/ ft$/, '')} / min ${ftText(limit)}` : `${ftText(value)} · none on file`;
     case 'height':
       if (!isNum(value)) return 'No new building';
-      return isNum(limit) ? `${ftText(value).replace(/ ft$/, '')} / max ${ftText(limit)}` : `${ftText(value)} · no limit`;
+      // A height with no limit on file is not checked, never "no limit".
+      if (c.pass === null) return `${ftText(value)} · not checked`;
+      return isNum(limit) ? `${ftText(value).replace(/ ft$/, '')} / max ${ftText(limit)}` : `${ftText(value)} · none on file`;
     case 'building_coverage':
     case 'impervious':
       if (!isNum(value)) return null;
-      return isNum(limit) ? `${pctText(value)} / max ${pctText(limit)}` : `${pctText(value)} · no limit`;
+      return isNum(limit) ? `${pctText(value)} / max ${pctText(limit)}` : `${pctText(value)} · none on file`;
   }
   return null;
 }
@@ -269,8 +294,10 @@ function decidingCheck(id: RuleRow['id'], list: VerdictCheck[]): VerdictCheck {
   return list[0];
 }
 
-function approvalState(path: string | null): RowState {
+function approvalState(path: string | null, qualifier: string | null = null): RowState {
   if (path === null) return 'unknown';
+  // A path in doubt needs the zoning officer's word first.
+  if (qualifier && NO_HEARING.has(path)) return 'approval';
   if (NO_HEARING.has(path)) return 'pass';
   if (WITH_APPROVAL.has(path)) return 'approval';
   return 'fail';
@@ -308,7 +335,7 @@ export function ruleRows(lot: LotRecord, v: UnitVerdict): RuleRow[] {
   rows.push({
     id: 'approval',
     name: 'Approval path',
-    state: approvalState(a.path),
+    state: approvalState(a.path, a.qualifier),
     numbers: a.label,
     text: a.text,
     parts: [],

@@ -15,6 +15,7 @@ describe('formatCitation', () => {
       confidence_label: 'Read in the code',
       source: 'Pittsburgh Zoning Code',
       text: '912.08.B.1. Pittsburgh Zoning Code. Checked on Nov 10, 2026.',
+      prose: false,
     });
   });
 

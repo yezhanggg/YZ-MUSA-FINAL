@@ -40,3 +40,21 @@ describe('areaAnswer', () => {
     expect(rulePhrase(limited, null)).toBe('Limited');
   });
 });
+
+describe('the town rule from the statewide places table (smoke test of Nov 16)', () => {
+  it('Phoenixville has a verified rule file: its answer, never "Town rules not on file"', async () => {
+    const { readFileSync } = await import('node:fs');
+    const { resolve } = await import('node:path');
+    const { parsePlaces } = await import('./places');
+    const { placeRule } = await import('./areaAnswer');
+    const P = parsePlaces(JSON.parse(readFileSync(resolve(import.meta.dirname, '../../public/data/pa_places.json'), 'utf8')));
+    const phx = P.rows.find((r) => r.name === 'Phoenixville borough');
+    const rule = placeRule(phx)!;
+    expect(rule).toMatchObject({ label: 'Allowed with a hearing', tone: 'warn', blocked: false });
+    expect(rulePhrase(rule, 'Phoenixville borough')).toBe('Allowed with a hearing in Phoenixville borough');
+    expect(areaAnswer(null, rule, 'Phoenixville borough').sub).not.toMatch(/not on file/);
+    // A place the table has not checked keeps the town layer's rule.
+    expect(placeRule(P.rows.find((r) => r.tier === 'baseline'))).toBeNull();
+    expect(placeRule(undefined)).toBeNull();
+  });
+});

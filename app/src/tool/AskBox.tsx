@@ -8,7 +8,7 @@ import { SCENARIO_NAME, TYPE_TITLE } from '../lib/lot/words';
 import { ask, splitLinks, type Turn } from '../agent/client';
 import { browserProvider, selectLotById } from '../agent/browserProvider';
 import { mapRef, useTool } from './store';
-import { askTags, type AskTags } from './askTags';
+import { askReply, askTags, askWhere, type AskTags } from './askTags';
 
 const SUGGESTED = ["Could I build a 2 BR here?", "What's the biggest ADU that fits?", 'Is it legal here today?', 'Which lots near here fit a 1 BR without cutting trees?'];
 const TOOL_TEXT: Record<string, string> = {
@@ -48,7 +48,8 @@ function useContext() {
   const map = mapRef.current;
   const test = view === 'test';
   const lotId = spot?.record?.lot.id ?? spot?.parcel?.id ?? null;
-  const where = spot ? (lotId ? `Lot ${lotId}` : (spot.tract.NAMELSAD ?? 'Tract')) : 'No lot selected';
+  // The lot by its address, as the panel names it, not by its raw id.
+  const where = askWhere(spot);
   return {
     test,
     chips: test
@@ -74,6 +75,14 @@ export default function AskBox({ expanded: forceOpen, flat }: { expanded?: boole
   const [open, setOpen] = useState(false);
   const { chips, context, test } = useContext();
   const input = useRef<HTMLInputElement>(null);
+  // A new mode is a new context: a conversation about a lot in Testing does not carry into Projecting, or back.
+  const [mode, setMode] = useState(test);
+  if (mode !== test) {
+    setMode(test);
+    setMsgs([]);
+    setHistory([]);
+    setOpen(false);
+  }
   const showConvo = forceOpen || open || msgs.length > 0;
 
   const send = async (text: string) => {
@@ -88,7 +97,7 @@ export default function AskBox({ expanded: forceOpen, flat }: { expanded?: boole
     if (out.ok) setHistory(out.history);
     // The turns this answer added (its tool calls and results), for the tags under it.
     const tags = out.ok ? askTags(out.history.slice(history.length) as { role: string; content: unknown }[]) : undefined;
-    setMsgs((m) => [...m, { role: 'assistant', text: out.text, tools: out.tools, error: !out.ok, tags }]);
+    setMsgs((m) => [...m, { role: 'assistant', text: askReply(out), tools: out.tools, error: !out.ok, tags }]);
   };
 
   return (

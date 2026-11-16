@@ -134,3 +134,26 @@ describe('zoning code link', () => {
     }
   });
 });
+
+// The Nov 16 smoke test: the place card cut Phoenixville's district list ("only in RI, MI") and the state bill's card
+// named today's answer in other words than today's card. Rows as they are in app/public/data/pa_places.json.
+describe('place card wording (smoke test of Nov 16)', () => {
+  const full = parsePlaces(JSON.parse(readFileSync(resolve(import.meta.dirname, '../../public/data/pa_places.json'), 'utf8')));
+  const town = (name: string) => full.rows.find((r) => r.name === name)!;
+
+  it('Phoenixville: the district list stays whole', () => {
+    const a = placeAnswer(town('Phoenixville borough'), 'current');
+    expect(a.title).toBe('Allowed with a hearing');
+    expect(a.sub).toBe('Special exception, owner must live on the lot, only in RI, MI, NC, CD, MG.');
+  });
+
+  it("the state bill's line names today's answer as today's card does", () => {
+    for (const name of ['Phoenixville borough', 'Monroeville municipality']) {
+      const r = town(name);
+      expect(placeAnswer(r, 'current').title, name).toBe('Allowed with a hearing');
+      expect(placeAnswer(r, 'hb2186').sub, name).toBe('Under the state bill. Today: allowed with a hearing.');
+      expect(placeRows(r, 'hb2186').find((x) => x.id === 'sure')!.lines.join(' '), name).toMatch(/Today: allowed with a hearing \(/);
+    }
+    expect(placeAnswer(row('Reading city'), 'hb2186').sub).toBe('Under the state bill. Today: not allowed.');
+  });
+});

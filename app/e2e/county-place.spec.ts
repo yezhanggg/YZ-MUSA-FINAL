@@ -91,3 +91,73 @@ test.describe('Montgomery County, a second county place', () => {
     await expect(row).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
   });
 });
+
+// The smoke test of Nov 16: answers that must carry their condition, and an address the lot index finds.
+const PHX_SOUTH = { lot: '42029-15-2-1.1', tract: '42029300600' }; // 510 South St, Phoenixville, RI: no living area on file
+const NAR_5B = { lot: '42091-120002536017', tract: '42091205600' }; // 603 Haverford Rd, Narberth 5b: by right, in doubt
+const NAR_5A = { lot: '42091-120001072005', tract: '42091205600' }; // 119 N Essex Ave, Narberth 5a: not allowed
+const hasSmoke = has && hasMont && existsSync(resolve(LOTS, 'chester_county/detail', `${PHX_SOUTH.tract}.json.gz`));
+
+test.describe('answers that depend on something the record does not hold', () => {
+  test.skip(!hasSmoke, `no Chester and Montgomery lot records at ${LOTS}`);
+
+  test('Phoenixville, no district on file: depends on the district, not "No"', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/#/?view=test&lot=${PHX.lot}&tract=${PHX.tract}`);
+    await expect(verdict(page)).toHaveAttribute('data-answer', 'unknown');
+    await expect(verdict(page)).toContainText('Depends on the zoning district, not on file');
+    const checklist = page.locator('section[aria-label="Rule checklist"]').first();
+    await expect(checklist.locator('[data-rule-row="yard"] [role="img"]').first()).toHaveAttribute('aria-label', 'Not checked');
+  });
+
+  test('Phoenixville 510 South St: a 40 x 60 ft cottage depends on the house size', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/#/?view=test&lot=${PHX_SOUTH.lot}&tract=${PHX_SOUTH.tract}`);
+    await expect(verdict(page)).toBeVisible();
+    await page.locator('#u-width').fill('40');
+    await page.locator('#u-depth').fill('60');
+    await expect(verdict(page)).toHaveAttribute('data-status', 'check_needed');
+    await expect(verdict(page)).toContainText('Depends on the house size, not checked');
+  });
+
+  test('Narberth 5b: "Yes, if confirmed" with the condition, never a plain yes', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/#/?view=test&lot=${NAR_5B.lot}&tract=${NAR_5B.tract}`);
+    await expect(verdict(page)).toHaveAttribute('data-answer', 'approval');
+    await expect(verdict(page)).toContainText('Yes, if confirmed');
+    await expect(verdict(page)).toContainText('Only if the ADU rule reaches 5b, which is in doubt. Ask the zoning officer.');
+    const checklist = page.locator('section[aria-label="Rule checklist"]').first();
+    await expect(checklist.locator('[data-rule-row="approval"]')).toContainText('By right, if confirmed');
+    // The local bill is the same as today here: the chip says so, not "not law".
+    const scenarios = page.getByRole('group', { name: 'Scenarios' }).first();
+    await expect(scenarios.getByRole('button', { name: /Local Bill/ })).toContainText('same as today');
+  });
+
+  test('Narberth 5a, not allowed: the height reads "not checked", never "no limit"', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/#/?view=test&lot=${NAR_5A.lot}&tract=${NAR_5A.tract}`);
+    await expect(verdict(page)).toHaveAttribute('data-answer', 'no');
+    const checklist = page.locator('section[aria-label="Rule checklist"]').first();
+    await expect(checklist.locator('[data-rule-row="height"]')).toContainText('15 ft · not checked');
+    await expect(checklist).not.toContainText('no limit');
+  });
+
+  test('a lot address opens its lot from the lot index, not the geocoder\'s nearest house', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    // The geocoder answers with the wrong house, as Photon did in the smoke test.
+    await page.route('https://photon.komoot.io/**', (route) =>
+      route.fulfill({ json: { features: [{ geometry: { coordinates: [-75.5149, 40.1322] }, properties: { state: 'Pennsylvania', housenumber: '145', street: 'South Main Street', city: 'Phoenixville', county: 'Chester' } }] } }),
+    );
+    await page.goto('/#/?view=test');
+    const box = page.getByRole('combobox', { name: 'Search an address in Pennsylvania' });
+    await expect(box).toBeEnabled();
+    await box.fill('510 South St, Phoenixville');
+    await expect(page.getByRole('option').first()).toContainText('510 South St');
+    await page.getByRole('option').first().click();
+    await expect(right(page).locator('h2')).toHaveText('510 South St');
+    await expect(verdict(page)).toBeVisible();
+    // The list stays closed after the pick.
+    await page.waitForTimeout(1000);
+    await expect(page.getByRole('listbox')).toHaveCount(0);
+  });
+});

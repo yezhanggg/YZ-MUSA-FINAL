@@ -1,6 +1,7 @@
 // Explore areas, right panel with a tract picked: the answer in one line (does a backyard home pay off here, and is
 // it allowed in this town), four short rows with numbers that open to their detail, then folds that start closed.
 // Same pieces as Test Project (test/Answer.tsx). The answer is read off tractPayoff and ruleFor (tool/areaAnswer.ts).
+import { useEffect } from 'react';
 import { Minus } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { tractPayoff, tractRoom, rentNote } from '../lib/adu';
@@ -10,7 +11,8 @@ import { ruleFor, ruleWarnings } from '../lib/rules';
 import type { RowState } from '../lib/lot/answer';
 import AduSamples from './AduSamples';
 import CountyTable from './CountyTable';
-import { areaAnswer } from './areaAnswer';
+import { areaAnswer, placeRule } from './areaAnswer';
+import { loadPlaces, usePlaces } from './places';
 import { FORECAST_LABEL } from './metrics';
 import { DemandCard, RoomCard, RulesCard, TownCard } from './Report';
 import { useTool, type Spot } from './store';
@@ -23,9 +25,15 @@ function useArea(spot: Spot) {
   const costLevel = useTool((s) => s.costLevel);
   const payRate = useTool((s) => s.payRate);
   const pay = tractPayoff(spot.tract, adu, costLevel, payRate);
-  const rule = ruleFor(mode, spot.town, null);
+  // Today's rule from the statewide places table when it has a checked answer for the town (a rule file or a dated
+  // record); the older town layer often has none ("Town rules not on file" for Phoenixville, which has a verified file).
+  const places = usePlaces((s) => s.places);
+  useEffect(() => void loadPlaces(), []);
+  const geoid = spot.town.GEOID as string | undefined;
+  const own = mode === 'current' && geoid ? placeRule(places?.byGeoid.get(geoid)) : null;
+  const rule = own ?? ruleFor(mode, spot.town, null);
   const town = (spot.town.NAMELSAD as string | undefined) ?? null;
-  return { adu, mode, costLevel, payRate, pay, rule, town, a: areaAnswer(pay?.pays ?? null, rule, town) };
+  return { adu, mode, costLevel, payRate, pay, rule, town, fromPlaces: !!own, a: areaAnswer(pay?.pays ?? null, rule, town) };
 }
 
 /** Explore areas' answer: Yes, Maybe, No or Not sure, and "Pays off · Allowed in Pittsburgh city". */
@@ -56,14 +64,14 @@ const RULE_STATE: Record<'good' | 'warn' | 'bad' | 'none', RowState> = { good: '
 /** Four rows: pays off, allowed, room on lots, ADUs by 2031 in the town. Each opens to its detail. `skipRule`: Where to
  * Build answers the rule from the statewide table, so the older town rule row is left out. */
 export function AreaRows({ spot, skipRule }: { spot: Spot; skipRule?: boolean }) {
-  const { adu, mode, costLevel, payRate, pay, rule } = useArea(spot);
+  const { adu, mode, costLevel, payRate, pay, rule, fromPlaces } = useArea(spot);
   const forecast = useTool((s) => s.forecast);
   const room = tractRoom(spot.tract);
   const warnings = ruleWarnings(mode, spot.town, null, adu.size);
   const w = spot.town;
   const n = (k: string) => (isNum(w[k]) ? (w[k] as number) : null);
   const mid = n(`adus_mid_${forecast}`);
-  const ruleValue = mode === 'hb2186' ? 'By right' : rule.tone === 'none' ? 'Not on file' : rule.tone === 'good' && rule.sub !== "Today's rules" ? rule.sub : rule.label;
+  const ruleValue = mode === 'hb2186' ? 'By right' : fromPlaces ? rule.label : rule.tone === 'none' ? 'Not on file' : rule.tone === 'good' && rule.sub !== "Today's rules" ? rule.sub : rule.label;
   return (
     <Rows label="Area checklist">
       <Row state={pay ? PAY_STATE[pay.pays] : 'unknown'} stateLabel={pay ? PAY_LABEL[pay.pays] : 'No estimate'} name="Pays off" value={pay ? `${pay.gap >= 0 ? '+' : '-'}${money(Math.abs(pay.gap))} / mo` : 'No estimate'} data={{ 'data-area-row': 'pays' }}>

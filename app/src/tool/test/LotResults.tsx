@@ -55,8 +55,8 @@ export function TestTabBody({ tab }: { tab: TestTab }) {
   const busy = useTool((s) => s.busy);
   if (tab === 'ask') return <AskBox expanded />;
   if (busy && !spot) return <ReportSkeleton />;
-  // Nothing picked: the box stays empty under its title (Details).
-  if (!spot) return null;
+  // Nothing picked: one line on how to start (the box was empty under its title).
+  if (!spot) return <p className="text-small text-slate-600" data-empty-prompt>Search an address or click a lot on the map to test a backyard home there.</p>;
   if (!spot.record) return <NoRecord spot={spot} tab={tab} />;
   return <WithRecord record={spot.record} builtAt={spot.builtAt} tab={tab} />;
 }

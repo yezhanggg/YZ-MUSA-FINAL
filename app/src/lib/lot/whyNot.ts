@@ -6,7 +6,7 @@
 import { answerOf, type AnswerView } from './answer';
 import { RULE_TYPES, type LotRecord, type RuleType, type Rules } from './types';
 import type { UnitVerdict, VerdictCheck } from './verdict';
-import { NO_GARAGE } from './verdict';
+import { NO_GARAGE, barReason, sameAsToday } from './verdict';
 import { slopeOf } from './slope';
 import { TYPE_LABEL, ftText, isNum, pctText, sqftText } from './words';
 
@@ -45,12 +45,18 @@ function list(types: RuleType[]): string {
   return l.length <= 1 ? (l[0] ?? '') : `${l.slice(0, -1).join(', ')} or ${l[l.length - 1]}`;
 }
 
+/** The district as the code writes it: "5a" -> "5A" (Narberth's code says 5A), "RSA5" stays. */
+const districtWord = (d: string) => (/^\d/.test(d) ? d.toUpperCase() : d);
+
 function allowsLine(lot: LotRecord, rules: Rules, v: UnitVerdict): string {
-  const where = lot.zoning.district ? `${lot.zoning.district} zoning` : 'The zoning here';
+  const d = lot.zoning.district;
+  const where = d ? `${districtWord(d)} zoning` : 'The zoning here';
   const mine = pathOf(rules, v.type);
   if (mine && ALLOWED_PATHS.has(mine)) {
     const how = mine === 'by_right' ? 'by right' : `with ${HEARING[mine]}`;
-    return end(`${where} allows ${a(TYPE_LABEL[v.type])} ${how}`);
+    // A path in doubt: "may allow", never a plain "allows".
+    const verb = v.approval.qualifier ? 'may allow' : 'allows';
+    return end(`${where} ${verb} ${a(TYPE_LABEL[v.type])} ${how}`);
   }
   const open = RULE_TYPES.filter((t) => t !== v.type && ALLOWED_PATHS.has(pathOf(rules, t) ?? ''));
   if (open.length) {
@@ -58,7 +64,7 @@ function allowsLine(lot: LotRecord, rules: Rules, v: UnitVerdict): string {
     if (words(s) <= 16) return end(s);
     return end(`${where} allows ${open.length} other kinds of unit, not this one`);
   }
-  return end(`${where} allows no extra unit here`);
+  return end(d ? `${where} allows no extra unit here` : `${where} allows no extra unit`);
 }
 
 /** Row houses and twins from the lot's party walls, when the record has them. */
@@ -85,6 +91,9 @@ const own = (s: string | undefined | null, fallback: string) => (s && words(s) <
 
 function whyLine(lot: LotRecord, rules: Rules, v: UnitVerdict, answer: string): string {
   const path = v.approval.path;
+  // A path in doubt: the condition it rests on, never a plain "it fits".
+  const reading = (v.qualifiers ?? []).find((q) => q.kind === 'reading');
+  if (answer === 'approval' && reading) return HEARING[path ?? ''] ? end(`It fits, but it needs ${HEARING[path ?? '']}. ${reading.short}`) : reading.short;
   if (answer === 'approval') return end(`It fits, but it needs ${HEARING[path ?? ''] ?? 'an approval step'}`);
   if (v.status === 'fits') {
     if (path === 'variance') return 'It fits, but this kind needs a variance.';
@@ -94,7 +103,7 @@ function whyLine(lot: LotRecord, rules: Rules, v: UnitVerdict, answer: string): 
   const c = failing(v, code);
   switch (code) {
     case 'not_allowed':
-      return own(rules.reasons[0], 'Zoning bars any extra unit on this lot');
+      return own(barReason(rules), 'Zoning bars any extra unit on this lot');
     case 'type_not_allowed': {
       const p = pathOf(rules, v.type);
       const s = p === 'variance' ? `${a(TYPE_LABEL[v.type])} needs a variance` : `${a(TYPE_LABEL[v.type])} is not an allowed kind here`;
@@ -160,7 +169,8 @@ export function answerFor(lot: LotRecord, v: UnitVerdict): AnswerView {
     sub = zoning && words(`${w.allows} ${w.why}`) <= 22 ? `${w.allows} ${w.why}` : w.why;
   }
   // A bill picked and the answer is yes: lead with the largest unit that fits (the record's own largest_sqft).
-  if (base.answer === 'yes' && v.scenario !== 'today' && isNum(v.largest_sqft) && v.largest_sqft > 0) sub = `Up to ${sqftText(Math.floor(v.largest_sqft))} fits here`;
+  // A bill with the same rules as today (the local bill outside Philadelphia) reads like today.
+  if (base.answer === 'yes' && v.scenario !== 'today' && !sameAsToday(lot, v.scenario) && !v.qualifiers?.length && isNum(v.largest_sqft) && v.largest_sqft > 0) sub = `Up to ${sqftText(Math.floor(v.largest_sqft))} fits here`;
   if ((base.answer === 'yes' || base.answer === 'approval') && slopeOf(lot, v)?.cls === 'steep') sub = `${end(sub)} Steep site.`;
   return { ...base, sub };
 }

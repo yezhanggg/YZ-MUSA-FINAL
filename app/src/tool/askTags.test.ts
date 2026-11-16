@@ -29,3 +29,24 @@ describe('chat tags', () => {
     expect(t).toEqual({ unverified: false, confidence: [] });
   });
 });
+
+describe('what Ask shows around the answers (smoke test of Nov 16)', () => {
+  it('a site with no assistant set up says so in plain words, never about keys or hosting', async () => {
+    const { ASK_OFF, askReply } = await import('./askTags');
+    const off = askReply({ ok: false, text: 'Agent not set up yet (needs ANTHROPIC_API_KEY on Vercel)', notConfigured: true });
+    expect(off).toBe(ASK_OFF);
+    expect(off).not.toMatch(/API|Vercel|Agent/);
+    expect(askReply({ ok: false, text: 'The agent could not be reached. Try again in a moment.' })).toMatch(/could not be reached/);
+    expect(askReply({ ok: true, text: 'Yes.' })).toBe('Yes.');
+  });
+
+  it('the context chip names the lot by its address, not its raw id', async () => {
+    const { askWhere } = await import('./askTags');
+    const tract = { NAMELSAD: 'Census Tract 2056' };
+    expect(askWhere({ label: 'Linked lot', record: { lot: { id: '42091-120001072005', address: '119 N ESSEX AVE' } }, tract })).toBe('119 N Essex Ave');
+    expect(askWhere({ label: 'Linked lot', record: { lot: { id: '42091-1', address: null } }, tract })).toBe('Lot 42091-1');
+    expect(askWhere({ label: '12 Main St', record: { lot: { id: '42091-1', address: null } }, tract })).toBe('12 Main St');
+    expect(askWhere({ tract })).toBe('Census Tract 2056');
+    expect(askWhere(null)).toBe('No lot selected');
+  });
+});

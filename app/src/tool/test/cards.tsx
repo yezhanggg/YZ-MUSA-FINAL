@@ -6,7 +6,7 @@ import { cx } from '../../lib/cx';
 import { NOTICE, formatCitation } from '../../lib/lot/citations';
 import { dataDates, flagsOf, lotFacts, type MoneySummary } from '../../lib/lot/summary';
 import type { Citation, LotRecord, Rules, Scenario } from '../../lib/lot/types';
-import type { Status, UnitVerdict } from '../../lib/lot/verdict';
+import { tidyReason, type Status, type UnitVerdict } from '../../lib/lot/verdict';
 import { SCENARIO_NAME, ftText, isNum, pctText, sqftText, usdText } from '../../lib/lot/words';
 import { ASSUMPTIONS } from '../../lib/money';
 import type { NextPlan, NextStep } from '../../lib/lot/nextSteps';
@@ -48,7 +48,8 @@ export function Cite({ c }: { c: Citation | null | undefined }) {
       ) : (
         <span className="font-semibold text-slate-600">{v.section}</span>
       )}
-      {v.source ? `, ${v.source}` : ''}. {v.checked_text}. {v.confidence_label}.
+      {v.source ? `${v.prose ? '.' : ','} ${v.source}` : ''}. {v.checked_text ? `${v.checked_text}. ` : ''}
+      {v.confidence_label}.
     </span>
   );
 }
@@ -108,20 +109,20 @@ interface RuleRow {
   value: (r: Rules) => string;
 }
 const RULE_ROWS: RuleRow[] = [
-  { key: 'max_adus', label: 'ADUs per lot', value: (r) => (isNum(r.max_adus) ? String(r.max_adus) : 'None set') },
-  { key: 'max_size_sqft', label: 'Size cap', value: (r) => (isNum(r.max_size_sqft) ? sqftText(r.max_size_sqft) : 'None set') },
-  { key: 'min_size_sqft', label: 'Smallest size', value: (r) => (isNum(r.min_size_sqft) ? sqftText(r.min_size_sqft) : 'None set') },
-  { key: 'max_share_of_house', label: 'Share of the house', value: (r) => (isNum(r.max_share_of_house) ? pctText(r.max_share_of_house) : 'None set') },
-  { key: 'min_lot_sqft', label: 'Smallest lot', value: (r) => (isNum(r.min_lot_sqft) ? sqftText(r.min_lot_sqft) : 'None set') },
-  { key: 'max_height_ft', label: 'Height limit', value: (r) => (isNum(r.max_height_ft) ? ftText(r.max_height_ft) : 'None set') },
-  { key: 'setback_front_ft', label: 'Front setback', value: (r) => (isNum(r.setback_front_ft) ? ftText(r.setback_front_ft) : 'None set') },
-  { key: 'setback_side_ft', label: 'Side setback', value: (r) => (isNum(r.setback_side_ft) ? ftText(r.setback_side_ft) : 'None set') },
-  { key: 'setback_rear_ft', label: 'Rear setback', value: (r) => (isNum(r.setback_rear_effective_ft ?? r.setback_rear_ft) ? ftText(r.setback_rear_effective_ft ?? r.setback_rear_ft) : 'None set') },
-  { key: 'separation_ft', label: 'Space from the house', value: (r) => (isNum(r.separation_ft) ? ftText(r.separation_ft) : 'None set') },
-  { key: 'max_building_coverage', label: 'Lot coverage cap', value: (r) => (isNum(r.max_building_coverage) ? pctText(r.max_building_coverage) : 'None set') },
-  { key: 'max_impervious', label: 'Paved area cap', value: (r) => (isNum(r.max_impervious) ? pctText(r.max_impervious) : 'None set') },
+  { key: 'max_adus', label: 'ADUs per lot', value: (r) => (isNum(r.max_adus) ? String(r.max_adus) : 'Not on file') },
+  { key: 'max_size_sqft', label: 'Size cap', value: (r) => (isNum(r.max_size_sqft) ? sqftText(r.max_size_sqft) : 'Not on file') },
+  { key: 'min_size_sqft', label: 'Smallest size', value: (r) => (isNum(r.min_size_sqft) ? sqftText(r.min_size_sqft) : 'Not on file') },
+  { key: 'max_share_of_house', label: 'Share of the house', value: (r) => (isNum(r.max_share_of_house) ? pctText(r.max_share_of_house) : 'Not on file') },
+  { key: 'min_lot_sqft', label: 'Smallest lot', value: (r) => (isNum(r.min_lot_sqft) ? sqftText(r.min_lot_sqft) : 'Not on file') },
+  { key: 'max_height_ft', label: 'Height limit', value: (r) => (isNum(r.max_height_ft) ? ftText(r.max_height_ft) : 'Not on file') },
+  { key: 'setback_front_ft', label: 'Front setback', value: (r) => (isNum(r.setback_front_ft) ? ftText(r.setback_front_ft) : 'Not on file') },
+  { key: 'setback_side_ft', label: 'Side setback', value: (r) => (isNum(r.setback_side_ft) ? ftText(r.setback_side_ft) : 'Not on file') },
+  { key: 'setback_rear_ft', label: 'Rear setback', value: (r) => (isNum(r.setback_rear_effective_ft ?? r.setback_rear_ft) ? ftText(r.setback_rear_effective_ft ?? r.setback_rear_ft) : 'Not on file') },
+  { key: 'separation_ft', label: 'Space from the house', value: (r) => (isNum(r.separation_ft) ? ftText(r.separation_ft) : 'Not on file') },
+  { key: 'max_building_coverage', label: 'Lot coverage cap', value: (r) => (isNum(r.max_building_coverage) ? pctText(r.max_building_coverage) : 'Not on file') },
+  { key: 'max_impervious', label: 'Paved area cap', value: (r) => (isNum(r.max_impervious) ? pctText(r.max_impervious) : 'Not on file') },
   { key: 'owner_occupancy', label: 'Owner must live on site', value: (r) => YES_NO(r.owner_occupancy) },
-  { key: 'parking_spaces', label: 'Parking spaces', value: (r) => (isNum(r.parking_spaces) ? String(r.parking_spaces) : 'None set') },
+  { key: 'parking_spaces', label: 'Parking spaces', value: (r) => (isNum(r.parking_spaces) ? String(r.parking_spaces) : 'Not on file') },
 ];
 
 /** Zoning for the scenario: district, overlays and every rule value with its source. */
@@ -159,7 +160,7 @@ export function ZoningRules({ lot, scenario }: { lot: LotRecord; scenario: Scena
           <summary className="tap cursor-pointer font-semibold text-violet-700">Rule notes ({rules.reasons.length})</summary>
           <ul className="mt-1 list-disc space-y-1 pl-5">
             {rules.reasons.map((r) => (
-              <li key={r}>{r.replace(/\.?$/, '.')}</li>
+              <li key={r}>{tidyReason(r)}</li>
             ))}
           </ul>
         </details>

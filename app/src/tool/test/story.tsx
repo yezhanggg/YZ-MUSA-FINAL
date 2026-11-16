@@ -1,7 +1,7 @@
 // Plain-language pieces for the Results folds: why a lot has no path under a scenario and what each bill would change,
 // the city-wide picture from stats.json, what is on the lot (land cover), and what the chosen spot covers.
 import { SCENARIOS, type LotRecord, type Scenario, type SpotCover } from '../../lib/lot/types';
-import type { UnitVerdict } from '../../lib/lot/verdict';
+import { tidyReason, type UnitVerdict } from '../../lib/lot/verdict';
 import { SCENARIO_NAME, SCENARIO_PHRASE, TYPE_LABEL, sqftText } from '../../lib/lot/words';
 import { KV } from '../Report';
 import { typeOptions, type UnitDraft } from '../testState';
@@ -33,7 +33,7 @@ export function WhyNot({ lot, v }: { lot: LotRecord; v: UnitVerdict }) {
       <h4 className="text-small font-semibold text-slate-900">Why not {SCENARIO_PHRASE[v.scenario]}</h4>
       <ul className="mt-1 list-disc space-y-1 pl-5 text-small text-slate-700">
         {reasons.map((r) => (
-          <li key={r}>{r.replace(/\.?$/, '.')}</li>
+          <li key={r}>{tidyReason(r)}</li>
         ))}
       </ul>
       <h4 className="mt-3 text-small font-semibold text-slate-900">What would change</h4>

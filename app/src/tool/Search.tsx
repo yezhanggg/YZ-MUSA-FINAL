@@ -1,20 +1,31 @@
-// Address search with Photon (komoot): free, no key, limited to the Pennsylvania bounding box. Photon gets 6 s; when it
-// fails or is that slow, Enter asks OpenStreetMap's Nominatim once (one request per Enter, never per keystroke, as
-// its usage policy asks).
+// Address search. A typed address is looked up first in the lot address index of the six lot places
+// (lib/lot/addressIndex, the same files the assistant's find_lot reads): a lot found there opens by its id, so the
+// search never lands on the street or on the wrong house. Photon (komoot) runs alongside for everything else: free, no
+// key, limited to the Pennsylvania bounding box. Photon gets 6 s; when it fails or is that slow, Enter asks
+// OpenStreetMap's Nominatim once (one request per Enter, never per keystroke, as its usage policy asks).
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Loader2, MapPin, Search as SearchIcon, X } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { PA_BBOX, type LngLat } from './geo';
-import { clearSpot, testSpot } from './actions';
-import { houseFirst, looksLikeAddress, type PhotonFeature } from './searchRank';
+import { clearSpot, openLot, testSpot } from './actions';
+import { houseFirst, looksLikeAddress, lotHits, mergeHits, type PhotonFeature, type SearchHit } from './searchRank';
 import { useTool } from './store';
+import { addressIndexSource, type AddressIndexSource } from '../lib/lot/addressIndex';
 
-interface Hit {
-  coords: LngLat;
-  main: string;
-  sub: string;
+type Hit = SearchHit;
+
+/** The lot address index, read once and kept (5 to 40 KB per place, one small shard per street). */
+let lotIndex: AddressIndexSource | null = null;
+
+/** Lots in the lot places with the typed address. Only for a typed house number; never fails (no index: no rows). */
+async function lotSearch(text: string): Promise<Hit[]> {
+  if (!looksLikeAddress(text)) return [];
+  lotIndex ??= addressIndexSource();
+  return lotHits(await lotIndex.search(text, 3));
 }
+
+const within = <T,>(p: Promise<T>, ms: number, fallback: T) => Promise.race([p, new Promise<T>((res) => window.setTimeout(() => res(fallback), ms))]);
 
 /** Nominatim, for Enter only when Photon is down: one request, Pennsylvania box, house-level details. */
 async function nominatim(text: string, signal: AbortSignal): Promise<Hit[]> {
@@ -60,21 +71,52 @@ export default function Search() {
   const ctl = useRef<AbortController | null>(null);
   // Photon failed or timed out on the last try: Enter then asks Nominatim.
   const down = useRef(false);
+  // The text of the row just picked: the box shows it, and it must not search again and reopen the list.
+  const picked = useRef<string | null>(null);
+  // The text a search is running for: the typing debounce does not start a second one that would cancel it (Enter).
+  const inflight = useRef<string | null>(null);
 
   const run = async (text: string, fallback = false) => {
     ctl.current?.abort();
     const c = new AbortController();
     ctl.current = c;
+    inflight.current = text;
     setLoading(true);
     let slow = false;
     const timer = window.setTimeout(() => ((slow = true), c.abort()), PHOTON_MS);
-    try {
-      const r = fallback && down.current ? await nominatim(text, c.signal) : await photon(text, c.signal);
-      if (!fallback) down.current = false;
-      if (c.signal.aborted) return r;
+    const lots = within(lotSearch(text).catch(() => [] as Hit[]), PHOTON_MS, [] as Hit[]);
+    const show = (r: Hit[]) => {
       setHits(r);
       setActive(0);
-      setOpen(true);
+      setOpen(picked.current === null);
+    };
+    // The geocoder's rows show as soon as they come; the lot index's rows join them when the index has answered.
+    let geoShown: Hit[] | null = null;
+    let ownNow: Hit[] = [];
+    void lots.then((own) => {
+      ownNow = own;
+      if (own.length && geoShown && ctl.current === c) show(mergeHits(own, geoShown));
+    });
+    try {
+      let geo: Hit[] = [];
+      let failed: unknown = null;
+      try {
+        geo = fallback && down.current ? await nominatim(text, c.signal) : await photon(text, c.signal);
+      } catch (e) {
+        failed = e;
+      }
+      // A newer search started: this one says nothing.
+      if (ctl.current !== c) return [];
+      // Enter (fallback) and a failed geocoder wait for the lot index, so a lot it finds is never missed.
+      const own = fallback || failed ? await lots : ownNow;
+      if (ctl.current !== c) return [];
+      // The geocoder failed and the lot index found nothing: the usual message.
+      if (failed && !own.length) throw failed;
+      if (failed) down.current = true;
+      else if (!fallback) down.current = false;
+      const r = mergeHits(own, geo);
+      geoShown = geo;
+      show(r);
       return r;
     } catch (e) {
       if (slow || (e as Error).name !== 'AbortError') {
@@ -84,28 +126,40 @@ export default function Search() {
       return [];
     } finally {
       window.clearTimeout(timer);
-      if (ctl.current === c) setLoading(false);
+      if (ctl.current === c) {
+        setLoading(false);
+        inflight.current = null;
+      }
     }
   };
 
   useEffect(() => {
     const text = q.trim();
+    // The box now shows the row just picked: no new search, no list.
+    if (picked.current !== null && text === picked.current) return;
     if (text.length < 3) {
       ctl.current?.abort();
       setHits([]);
       setLoading(false);
       return;
     }
-    const t = setTimeout(() => void run(text), 350);
+    const t = setTimeout(() => inflight.current !== text && void run(text), 350);
     return () => clearTimeout(t);
   }, [q]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const pick = (h: Hit) => {
+    picked.current = h.main;
+    // A search still running would bring the list back: it is stopped and forgotten.
+    ctl.current?.abort();
+    ctl.current = null;
     setQ(h.main);
     setOpen(false);
     setHits([]);
+    setLoading(false);
     set({ msg: null });
-    void testSpot(h.coords, h.main);
+    // A lot from the address index opens by its id (its own tract), never by a geocoded point on the street.
+    if (h.lot) void openLot(h.lot.id, h.lot.tract);
+    else if (h.coords) void testSpot(h.coords, h.main);
   };
 
   const onKey = async (e: React.KeyboardEvent) => {
@@ -131,11 +185,12 @@ export default function Search() {
         <input
           value={q}
           onChange={(e) => {
+            picked.current = null;
             setQ(e.target.value);
             setOpen(true);
             if (msg) set({ msg: null });
           }}
-          onFocus={() => setOpen(true)}
+          onFocus={() => picked.current === null && setOpen(true)}
           onBlur={() => setTimeout(() => setOpen(false), 150)}
           onKeyDown={onKey}
           disabled={!ready}
@@ -152,6 +207,7 @@ export default function Search() {
           <button
             onMouseDown={(e) => e.preventDefault()}
             onClick={() => {
+              picked.current = null;
               setQ('');
               setHits([]);
               set({ msg: null });

@@ -10,7 +10,7 @@ import { slopeOf, type SlopeView } from '../../lib/lot/slope';
 import { answerFor, whyNot } from '../../lib/lot/whyNot';
 import { SCENARIO_NAME } from '../../lib/lot/words';
 import type { LotRecord, Scenario } from '../../lib/lot/types';
-import type { ScenarioVerdict, UnitVerdict } from '../../lib/lot/verdict';
+import { ownerWord, sameAsToday, type ScenarioVerdict, type UnitVerdict } from '../../lib/lot/verdict';
 import { useTool } from '../store';
 import { Cite } from './cards';
 
@@ -28,9 +28,10 @@ const ANSWER_ICON: Record<Answer, ReactNode> = {
   unknown: <CircleHelp className="h-5 w-5" strokeWidth={2.5} />,
 };
 
-/** "Bill, not law" next to anything that shows a bill's result. */
-export const NotLaw = ({ className }: { className?: string }) => (
-  <span className={cx('inline-flex items-center whitespace-nowrap rounded-full bg-white px-1.5 py-px text-[11px] font-semibold text-slate-600 ring-1 ring-slate-300', className)}>not law</span>
+/** "Bill, not law" next to anything that shows a bill's result. `same`: the bill's rules here are today's (the local
+ * bill outside Philadelphia), so it says "same as today" instead. */
+export const NotLaw = ({ className, same }: { className?: string; same?: boolean }) => (
+  <span className={cx('inline-flex items-center whitespace-nowrap rounded-full bg-white px-1.5 py-px text-[11px] font-semibold text-slate-600 ring-1 ring-slate-300', className)}>{same ? 'same as today' : 'not law'}</span>
 );
 
 /** The answer box: a coloured icon, one or two words, one short line. Test Project and Explore areas share it. */
@@ -55,7 +56,9 @@ export function AnswerBox({ answer, title, sub, notLaw, icon, label, data }: { a
 /** The answer: Yes, Yes with approval, or No, and one short line (in everyday words when it is a No or needs approval). */
 export function AnswerCard({ v, lot }: { v: UnitVerdict; lot?: LotRecord }) {
   const a = lot ? answerFor(lot, v) : answerOf(v);
-  return <AnswerBox label="Verdict" answer={a.answer} title={a.title} sub={a.sub} notLaw={v.scenario !== 'today'} data={{ 'data-status': v.status }} />;
+  // A bill whose rules here are today's is not a proposal on this lot: no "not law".
+  const bill = v.scenario !== 'today' && !(lot && sameAsToday(lot, v.scenario));
+  return <AnswerBox label="Verdict" answer={a.answer} title={a.title} sub={a.sub} notLaw={bill} data={{ 'data-status': v.status }} />;
 }
 
 // ------------------------------------------------------------------ checklist
@@ -115,7 +118,7 @@ export const Rows = ({ label, title, children }: { label: string; title?: string
   </section>
 );
 
-function RowItem({ r, lead }: { r: RuleRow; lead?: string[] }) {
+function RowItem({ r, lead, owner }: { r: RuleRow; lead?: string[]; owner: string }) {
   return (
     <Row state={r.state} name={r.name} value={r.numbers ?? (r.state === 'unknown' ? 'Not checked' : '')} data={{ 'data-rule-row': r.id }}>
       {/* A No or an approval: what the zoning allows, what yours is, why (lib/lot/whyNot). */}
@@ -138,7 +141,7 @@ function RowItem({ r, lead }: { r: RuleRow; lead?: string[] }) {
           ))}
         </ul>
       )}
-      {r.assumed.length > 0 && <p className="text-caption text-amber-800">Assumed, not the city's own rule: {r.assumed.join(', ').toLowerCase()}.</p>}
+      {r.assumed.length > 0 && <p className="text-caption text-amber-800">Assumed, not the {owner} own rule: {r.assumed.join(', ').toLowerCase()}.</p>}
       {r.citations.length ? r.citations.map((c) => <Cite key={`${c.section}|${c.url ?? ''}`} c={c} />) : <p className="text-caption text-slate-500">No code section on file. Measured from the lot record.</p>}
     </Row>
   );
@@ -153,7 +156,7 @@ export function RuleChecklist({ lot, v }: { lot: LotRecord; v: UnitVerdict }) {
   return (
     <Rows label="Rule checklist" title="Does it follow the rules?">
       {rows.map((r) => (
-        <RowItem key={`${r.id}-${v.scenario}`} r={r} lead={r.id === 'zoning' && w ? [w.allows, w.yours, w.why] : undefined} />
+        <RowItem key={`${r.id}-${v.scenario}`} r={r} owner={ownerWord(lot)} lead={r.id === 'zoning' && w ? [w.allows, w.yours, w.why] : undefined} />
       ))}
       {slope && <SlopeRow s={slope} />}
     </Rows>
@@ -195,12 +198,12 @@ export function ScenarioChips({ rows, scenario }: { rows: ScenarioVerdict[]; sce
             type="button"
             aria-pressed={on}
             onClick={() => setTest({ scenario: r.scenario })}
-            title={`${r.title}: ${a.title}`}
+            title={`${r.title}: ${r.same_as_today ? 'same as today. ' : ''}${a.title}`}
             className={cx('tap flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-0.5 rounded-xl px-2.5 py-2 text-left ring-1 transition-colors', on ? 'bg-violet-50 ring-2 ring-violet-500' : 'bg-white ring-stone-200 hover:bg-stone-50')}
           >
             <StateIcon state={ANSWER_STATE[a.answer]} small />
             <span className={cx('whitespace-nowrap text-small font-semibold', on ? 'text-violet-900' : 'text-slate-800')}>{SCENARIO_CHIP[r.scenario]}</span>
-            {r.scenario !== 'today' && <NotLaw />}
+            {r.scenario !== 'today' && <NotLaw same={r.same_as_today} />}
           </button>
         );
       })}

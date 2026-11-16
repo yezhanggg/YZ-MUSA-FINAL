@@ -39,8 +39,12 @@ describe('why not, in plain words', () => {
           expect(w!.yours, at).toMatch(/^Yours is /);
           // Never against the status: a No never says it is allowed as drawn; an approval names the approval.
           if (a.answer === 'no') expect(w!.why, at).not.toMatch(/^It fits\.?$|needs the zoning administrator|needs a zoning board hearing/);
-          if (a.answer === 'approval') expect(w!.why, at).toMatch(/^It fits, but it needs (the zoning administrator's sign-off|a zoning board hearing|a conditional use hearing|an approval step)\.$/);
-          if (a.answer === 'approval') expect(w!.allows, at).toMatch(/allows .* with /);
+          // A path in doubt (the rule file's "only if" note) says what it rests on and says "may allow".
+          const doubt = v.qualifiers.some((q) => q.kind === 'reading');
+          if (a.answer === 'approval' && doubt) expect(w!.why, at).toMatch(/Only (if|under) .*Ask the zoning officer\.$/);
+          if (a.answer === 'approval' && doubt) expect(w!.allows, at).toMatch(/ may allow /);
+          if (a.answer === 'approval' && !doubt) expect(w!.why, at).toMatch(/^It fits, but it needs (the zoning administrator's sign-off|a zoning board hearing|a conditional use hearing|an approval step)\.$/);
+          if (a.answer === 'approval' && !doubt) expect(w!.allows, at).toMatch(/allows .* with /);
           const sub = answerFor(lot, v).sub;
           expect(sub.length, at).toBeGreaterThan(0);
           expect(words(sub), `${at}: ${sub}`).toBeLessThanOrEqual(24);

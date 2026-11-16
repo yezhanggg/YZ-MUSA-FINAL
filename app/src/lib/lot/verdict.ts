@@ -87,6 +87,21 @@ export interface ApprovalInfo {
   citation: Citation | null;
   /** Where the path came from: the per-type rule, the rule notes, or the lot-wide rule. */
   from: 'by_type' | 'rule_notes' | 'rule' | 'none';
+  /**
+   * The path holds only under one reading of the code or one lot fact the record does not have (the rule file's
+   * "... only if ..." note, such as "By right only if the ADU rule reaches 5b, which is in doubt"). null when plain.
+   */
+  qualifier: string | null;
+}
+
+/** A condition an answer leans on. It is shown wherever the answer is shown. */
+export interface Qualifier {
+  /** reading: the path holds only under one reading of the code. fact: a limit the record cannot check. */
+  kind: 'reading' | 'fact';
+  /** One or two sentences. */
+  text: string;
+  /** A few words for the one-line answer. */
+  short: string;
 }
 
 export interface PlacedUnit {
@@ -130,6 +145,8 @@ export interface UnitVerdict {
   largest_sqft: number | null;
   /** Assumptions this answer leans on, in plain words. */
   assumed: string[];
+  /** What a "fits" answer depends on: a path in doubt, or a limit the record cannot check. Empty when plain. */
+  qualifiers: Qualifier[];
 }
 
 // ------------------------------------------------------------------ approval
@@ -162,7 +179,55 @@ function approvalInfo(path: string | null, from: ApprovalInfo['from'], citation:
     text: (known ? APPROVAL_TEXT[known] : UNKNOWN_APPROVAL) + (extra ? ` ${extra}` : ''),
     citation,
     from: known ? from : 'none',
+    qualifier: null,
   };
+}
+
+// ------------------------------------------------------------------ a path in doubt
+/** Paths that let a unit in. A qualifier on any other path says nothing new. */
+const OPEN_PATHS: ReadonlySet<string> = new Set(['by_right', 'administrator_exception', 'special_exception', 'conditional_use']);
+/**
+ * The resolver's lead notes for a path that holds only under one reading or one lot fact (pipeline/rules.py, passes
+ * 4 to 15): "By right only if the ADU rule reaches 5b, which is in doubt", "By right for garage conversion, over
+ * garage only if: ...", "For detached new: by right only if the reading that lets this lot in holds: ...".
+ */
+const QUALIFIED = /^(?:for ([a-z ,]+): )?(?:by right|administrator(?:'s)? exception|special exception|conditional use)(?: for ([a-z ,]+?))? only if\b:?\s*/i;
+/** "(500-308D(2), 500-309D(2))": one level of nested brackets. */
+const SECTIONS = /\s*\((?:[^()]|\([^()]*\))*\)/g;
+const ASK = 'Ask the zoning officer.';
+
+const formsOf = (list: string | undefined) => (list ? list.split(/,\s*/).map((f) => f.trim().replace(/ /g, '_')) : null);
+
+/** A short form of a qualifier for the one-line answer: "Only if the ADU rule reaches 5b, which is in doubt." */
+function qualifierShort(note: string): string {
+  const body = note.replace(QUALIFIED, '').replace(SECTIONS, '').replace(/\.?\s*See below\.?$/i, '').trim();
+  const first = body.split(/\.\s/)[0].replace(/[.;,:]$/, '').trim();
+  const words = first.split(/\s+/).length;
+  return words && words <= 12 ? `Only if ${first.charAt(0).toLowerCase()}${first.slice(1)}.` : 'Only under one reading of the code.';
+}
+
+/**
+ * The rule file's own "only if" notes that qualify this unit's path, joined. null when the path is plain. The notes
+ * lead the reasons (the resolver puts them first), and a note scoped to some forms counts only for those forms.
+ */
+export function pathQualifier(rules: Rules | undefined, type: AduType): { text: string; short: string } | null {
+  if (!rules?.allowed) return null;
+  const notes: string[] = [];
+  for (const r of rules.reasons) {
+    const m = QUALIFIED.exec(r);
+    if (!m) break;
+    const forms = formsOf(m[1] ?? m[2]);
+    if (!forms || forms.includes(type)) notes.push(r);
+  }
+  if (!notes.length) return null;
+  const text = notes.map((n) => n.replace(/\.?\s*See below\.?$/i, '').replace(/\.?$/, '.')).join(' ');
+  return { text: /ask the zoning officer/i.test(text) ? text : `${text} ${ASK}`, short: `${qualifierShort(notes[0])} ${ASK}` };
+}
+
+/** The same path, marked as holding only if the qualifier does. */
+function qualified(a: ApprovalInfo, q: { text: string } | null): ApprovalInfo {
+  if (!q || !a.path || !OPEN_PATHS.has(a.path)) return a;
+  return { ...a, label: `${a.label}, if confirmed`, text: `${q.text} ${a.text}`, qualifier: q.text };
 }
 
 /** Pittsburgh's rule notes name the Administrator's Exception for a detached unit in a side or rear yard. */
@@ -186,6 +251,10 @@ const ON_THE_ALLEY = "This holds when the garage backs onto the alley. Otherwise
  * Older ones carry one path for the lot plus a note on the exception, so the note is read for them.
  */
 export function approvalFor(lot: LotRecord, scenario: Scenario, type: AduType): ApprovalInfo {
+  return qualified(plainApproval(lot, scenario, type), pathQualifier(lot.rules[scenario], type));
+}
+
+function plainApproval(lot: LotRecord, scenario: Scenario, type: AduType): ApprovalInfo {
   const rules = lot.rules[scenario];
   if (!rules) return approvalInfo(null, 'none', null);
   const base = rules.citations.approval_path ?? null;
@@ -226,6 +295,18 @@ const cite = (rules: Rules, key: string | null): Citation | null => (key ? rules
 function check(rules: Rules, c: Omit<VerdictCheck, 'citation' | 'assumed'>): VerdictCheck {
   return { ...c, citation: cite(rules, c.rule_key), assumed: c.rule_key !== null && rules.assumed.includes(c.rule_key) };
 }
+
+/**
+ * Checks that could not be decided because the record holds no number for them (a share cap with no living area while
+ * the unit is under the outline estimate, a height with no limit on file, a setback the rule file gives no number
+ * for). They read "not checked" in their row and travel with a "fits" answer as a qualifier, but do not turn the
+ * answer into "not sure" on their own: the stored fit makes the same reading.
+ */
+const SOFT = new WeakSet<VerdictCheck>();
+const soft = (c: VerdictCheck) => (SOFT.add(c), c);
+
+/** A rule value the build filled with 0 ft because the rule file gives no number ("not checked: ..." citation). */
+const unchecked = (rules: Rules, key: string) => /^not checked/i.test(rules.citations[key]?.section ?? '');
 
 const mainBuildings = (lot: LotRecord) => lot.buildings.filter((b) => b.role === 'main');
 const garages = (lot: LotRecord) => lot.buildings.filter((b) => b.role === 'garage').sort((a, b) => b.area_sqft - a.area_sqft);
@@ -385,6 +466,8 @@ function askedBox(unit: UnitInput, g: Ground, angle: number): BoxSpec | null {
 interface Distances {
   /** Worst margin per lot line role: distance, required. */
   roles: { role: 'front' | 'rear' | 'side'; dist: number; need: number; key: string }[];
+  /** Lot line roles whose setback the rule file gives no number for (not checked). */
+  unchecked: ('front' | 'rear' | 'side')[];
   house: number | null;
   /** Overlaps a garage or other hard building. */
   hardOverlap: boolean;
@@ -408,7 +491,7 @@ function distances(lot: LotRecord, rules: Rules, box: BoxSpec, f: Frame): Distan
     const d = boxToLine(box, lineFeet(e.line, f));
     lotLine = lotLine === null ? d : Math.min(lotLine, d);
     const { key, need } = setbackFor(e.role, lot, rules);
-    if (!isNum(need)) continue;
+    if (!isNum(need) || unchecked(rules, key)) continue;
     const prev = roles.find((r) => r.role === e.role);
     if (!prev) roles.push({ role: e.role, dist: d, need, key });
     else if (d - need < prev.dist - prev.need) Object.assign(prev, { dist: d, need });
@@ -422,6 +505,7 @@ function distances(lot: LotRecord, rules: Rules, box: BoxSpec, f: Frame): Distan
   const hard = lot.buildings.filter((b) => b.role === 'garage' || b.role === 'other');
   return {
     roles,
+    unchecked: uncheckedRoles(lot, rules),
     house,
     hardOverlap: hard.some((b) => boxToArea(slack(box), areaFeet(b.polygon, f)) === 0),
     lotLine,
@@ -430,20 +514,41 @@ function distances(lot: LotRecord, rules: Rules, box: BoxSpec, f: Frame): Distan
 
 const ROLE_WORD = { front: 'front', rear: 'rear', side: 'side' } as const;
 
-function setbackCheck(rules: Rules, d: Distances | null, inside: boolean): VerdictCheck {
+/** Lot line roles on this lot whose setback the rule file gives no number for. */
+function uncheckedRoles(lot: LotRecord, rules: Rules): ('front' | 'rear' | 'side')[] {
+  const roles = [...new Set((lot.lot.edges ?? []).map((e) => e.role))];
+  return (['front', 'rear', 'side'] as const).filter((r) => roles.includes(r) && unchecked(rules, setbackFor(r, lot, rules).key));
+}
+
+const andList = (xs: string[]) => (xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`);
+
+function setbackCheck(lot: LotRecord, rules: Rules, d: Distances | null, inside: boolean): VerdictCheck {
   const worst = d?.roles.slice().sort((a, b) => a.dist - a.need - (b.dist - b.need))[0];
   const failed = worst && worst.dist < worst.need - TOL_FT ? worst : undefined;
-  const pass = inside ? true : d ? !failed : null;
+  const open = d?.unchecked ?? uncheckedRoles(lot, rules);
+  let pass: boolean | null = inside ? true : d ? !failed : null;
   let text: string;
   if (failed) text = `It is ${ftText(failed.dist)} from the ${ROLE_WORD[failed.role]} lot line. The rule asks for ${ftText(failed.need)}.`;
   else if (worst) text = `Closest lot line: ${ftText(worst.dist)} from the ${ROLE_WORD[worst.role]} line, ${ftText(worst.need)} needed.`;
   else if (inside) text = 'It stays out of the setbacks.';
   else text = d ? 'The lot lines are not classified here, so setbacks could not be measured.' : 'There is no spot to measure from.';
   const shown = failed ?? worst;
-  return check(rules, { key: 'setbacks', label: 'Setbacks', pass, value: shown?.dist ?? null, limit: shown?.need ?? null, unit: 'ft', text, rule_key: shown?.key ?? 'setback_side_ft' });
+  const out = check(rules, { key: 'setbacks', label: 'Setbacks', pass, value: shown?.dist ?? null, limit: shown?.need ?? null, unit: 'ft', text, rule_key: shown?.key ?? (open.length ? setbackFor(open[0], lot, rules).key : 'setback_side_ft') });
+  if (failed || !open.length) return out;
+  // The rule file gives no number for these lines: the build used 0 ft, so they are not checked.
+  pass = null;
+  const lines = `${andList(open.map((r) => ROLE_WORD[r]))} lot line${open.length > 1 ? 's' : ''}`;
+  text = `Not checked for the ${lines}: the rule file gives no setback number there.${worst ? ` ${text}` : ''}`;
+  return soft({ ...out, pass, text });
 }
 
 function separationCheck(rules: Rules, d: Distances | null, inside: boolean): VerdictCheck {
+  if (unchecked(rules, 'separation_ft') && !d?.hardOverlap) {
+    // The rule file gives no distance from the house: the build used 0 ft, so this is not checked.
+    const dist = d?.house ?? null;
+    const text = `${isNum(dist) ? `It is ${ftText(dist)} from the house. ` : ''}Not checked: the rule file gives no distance from the house here.`;
+    return soft(check(rules, { key: 'separation', label: 'Distance from the house', pass: null, value: dist, limit: null, unit: 'ft', text, rule_key: 'separation_ft' }));
+  }
   const need = rules.separation_ft;
   const dist = d?.house ?? null;
   const needText = isNum(need) ? ` The rule asks for ${ftText(need)}.` : '';
@@ -521,39 +626,54 @@ function garageRoomCheck(rules: Rules, stored: FitResult | undefined): VerdictCh
   });
 }
 
-function sizeChecks(lot: LotRecord, rules: Rules, s: Sizes, height: { limit: number | null; key: string }): VerdictCheck[] {
+/**
+ * A cap tied to the size of the house. The rule's share (max_share_of_house), or, when the rule record has no share
+ * but the stored fit applied one (a town's per-type cap, such as Phoenixville's footprint at most two thirds of the
+ * house's), the stored fit's own limit. The share is of the house's living area: without one on file the cap is not
+ * checked. The building outline gives an estimate (the pipeline's): a unit under it stays a "fits" with the cap
+ * marked not checked; a unit over it depends on the house size and is never a "fits".
+ */
+function shareCheck(lot: LotRecord, rules: Rules, s: Sizes, stored: FitResult | undefined): VerdictCheck {
+  const share = rules.max_share_of_house;
+  const storedLimit = stored?.checks.share_of_house?.limit;
+  const base = { key: 'share_of_house' as const, label: 'Share of the house', unit: 'sqft' as const, rule_key: 'max_share_of_house', value: s.floor };
+  if (!isNum(share) && !isNum(storedLimit)) return check(rules, { ...base, limit: null, pass: true, text: 'No cap tied to the size of the house on file.' });
+  const what = isNum(share) ? `Up to ${pctText(share)} of the house` : 'A cap tied to the size of the house';
+  const house = houseSqft(lot);
+  if (!house.estimated && isNum(house.sqft)) {
+    const limit = isNum(share) ? share * house.sqft : (storedLimit as number);
+    return check(rules, { ...base, limit, pass: s.floor <= limit + 0.5, text: `${what}, which is ${sqftText(limit)}.` });
+  }
+  const estimate = isNum(share) && isNum(house.sqft) ? share * house.sqft : isNum(storedLimit) ? storedLimit : null;
+  if (isNum(estimate) && s.floor <= estimate + 0.5) {
+    return soft(check(rules, { ...base, limit: null, pass: null, text: `${what}. Not checked: no living area on file. From the building outline the cap is about ${sqftText(estimate)}, and this unit is under that.` }));
+  }
+  const outline = isNum(estimate) ? ` From the building outline the cap would be about ${sqftText(estimate)}, and this unit is ${sqftText(s.floor)}.` : '';
+  return check(rules, { ...base, limit: null, pass: null, text: `${what}. Depends on the house size, not checked: no living area on file.${outline}` });
+}
+
+function sizeChecks(lot: LotRecord, rules: Rules, s: Sizes, height: { limit: number | null; key: string }, stored: FitResult | undefined): VerdictCheck[] {
   const out: VerdictCheck[] = [];
   const cap = rules.max_size_sqft;
   out.push(check(rules, {
     key: 'size_cap', label: 'Size cap', pass: !isNum(cap) || s.floor <= cap + 0.5, value: s.floor, limit: cap, unit: 'sqft', rule_key: 'max_size_sqft',
-    text: isNum(cap) ? `${sqftText(s.floor)} of floor area. The cap is ${sqftText(cap)}.` : `${sqftText(s.floor)} of floor area. No size cap.`,
+    text: isNum(cap) ? `${sqftText(s.floor)} of floor area. The cap is ${sqftText(cap)}.` : `${sqftText(s.floor)} of floor area. No size cap on file.`,
   }));
   const min = rules.min_size_sqft;
   if (isNum(min)) {
     out.push(check(rules, { key: 'min_size', label: 'Smallest size', pass: s.floor >= min - 0.5, value: s.floor, limit: min, unit: 'sqft', rule_key: 'min_size_sqft', text: `The smallest unit allowed is ${sqftText(min)}.` }));
   }
-  const share = rules.max_share_of_house;
-  // The share is of the house's living area. Without one on file (Allentown has none) it is not checked: the
-  // building outline is a footprint, and a two-story house would get half the cap it has.
-  const house = houseSqft(lot);
-  const living = house.estimated ? null : house.sqft;
-  const shareLimit = isNum(share) && isNum(living) ? share * living : null;
-  out.push(check(rules, {
-    key: 'share_of_house', label: 'Share of the house', unit: 'sqft', rule_key: 'max_share_of_house', value: s.floor, limit: shareLimit,
-    pass: !isNum(share) ? true : isNum(shareLimit) ? s.floor <= shareLimit + 0.5 : null,
-    text: !isNum(share)
-      ? 'No limit tied to the size of the house.'
-      : isNum(shareLimit)
-        ? `Up to ${pctText(share)} of the house, which is ${sqftText(shareLimit)}.`
-        : `Up to ${pctText(share)} of the house. Not checked: no living area on file.`,
-  }));
+  out.push(shareCheck(lot, rules, s, stored));
   const maxH = height.limit;
   if (s.height === null) {
     out.push(check(rules, { key: 'height', label: 'Height', pass: true, value: null, limit: maxH, unit: 'ft', rule_key: height.key, text: 'No new building, so the height does not change.' }));
+  } else if (!isNum(maxH)) {
+    // No height limit on file is not "no limit": the rule may tie it to the house or the district (not on file).
+    out.push(soft(check(rules, { key: 'height', label: 'Height', pass: null, value: s.height, limit: null, unit: 'ft', rule_key: height.key, text: `${ftText(s.height)} tall. Not checked: no height limit on file for this unit.` })));
   } else {
     out.push(check(rules, {
-      key: 'height', label: 'Height', pass: !isNum(maxH) || s.height <= maxH + 0.01, value: s.height, limit: maxH, unit: 'ft', rule_key: height.key,
-      text: isNum(maxH) ? `${ftText(s.height)} tall. The limit is ${ftText(maxH)}.` : `${ftText(s.height)} tall. No height limit on file.`,
+      key: 'height', label: 'Height', pass: s.height <= maxH + 0.01, value: s.height, limit: maxH, unit: 'ft', rule_key: height.key,
+      text: `${ftText(s.height)} tall. The limit is ${ftText(maxH)}.`,
     }));
   }
   const area = lot.lot.area_sqft;
@@ -566,7 +686,7 @@ function sizeChecks(lot: LotRecord, rules: Rules, s: Sizes, height: { limit: num
     key: 'building_coverage', label: 'Lot coverage', pass: !isNum(cov) || noNewFootprint || covered / area <= cov + 1e-6, value: covered / area, limit: cov, unit: 'share', rule_key: 'max_building_coverage',
     text: noNewFootprint
       ? `No new building, so lot coverage does not change (${pctText(covered / area)} now${isNum(cov) ? `, limit ${pctText(cov)}` : ''}).`
-      : isNum(cov) ? `Buildings would cover ${pctText(covered / area)} of the lot. The limit is ${pctText(cov)}.` : `Buildings would cover ${pctText(covered / area)} of the lot. No coverage limit.`,
+      : isNum(cov) ? `Buildings would cover ${pctText(covered / area)} of the lot. The limit is ${pctText(cov)}.` : `Buildings would cover ${pctText(covered / area)} of the lot. No coverage limit on file.`,
   }));
   const imp = rules.max_impervious;
   if (isNum(imp)) {
@@ -592,7 +712,7 @@ function ruleChecks(lot: LotRecord, rules: Rules, unit: UnitInput): VerdictCheck
     }),
     check(rules, {
       key: 'min_lot_size', label: 'Lot size', pass: !isNum(minLot) || lot.lot.area_sqft >= minLot, value: lot.lot.area_sqft, limit: minLot, unit: 'sqft', rule_key: 'min_lot_sqft',
-      text: isNum(minLot) ? `The lot is ${sqftText(lot.lot.area_sqft)}. The rule asks for ${sqftText(minLot)}.` : `The lot is ${sqftText(lot.lot.area_sqft)}. No smallest lot size.`,
+      text: isNum(minLot) ? `The lot is ${sqftText(lot.lot.area_sqft)}. The rule asks for ${sqftText(minLot)}.` : `The lot is ${sqftText(lot.lot.area_sqft)}. No smallest lot size on file.`,
     }),
     check(rules, {
       key: 'units', label: 'Number of units', pass: !isNum(maxAdus) || units <= maxAdus, value: units, limit: maxAdus, unit: 'count', rule_key: 'max_adus',
@@ -609,6 +729,9 @@ function codeCitation(rules: Rules): Citation | null {
   if (own) return own;
   return Object.values(rules.citations).find((c) => /IRC/.test(c.section)) ?? null;
 }
+
+/** A bill scenario whose rules on this lot are the same as today's (outside Philadelphia the local bill is). */
+export const sameAsToday = (lot: LotRecord, scenario: Scenario) => scenario !== 'today' && !scenarioIsProposal(lot, scenario);
 
 function scenarioIsProposal(lot: LotRecord, scenario: Scenario): boolean {
   if (scenario === 'today') return false;
@@ -645,9 +768,59 @@ function warningsFor(lot: LotRecord, rules: Rules, unit: UnitInput, stored: FitR
   if (rules.historic_path && (rules.types_allowed ?? []).includes(unit.type)) add('historic', 'The rule for historic buildings opens this unit. The historic review board must approve the design.');
   else if (rules.historic_path) add('historic', 'The rule for historic buildings opens other kinds of unit on this lot, not this one. The historic review board must approve any design.');
   else if (flags.historic) add('historic', 'The lot is in a historic district. A design review is likely needed.');
-  if (rules.assumed.length) add('assumed_rules', `Some limits here are building code defaults or planning assumptions, not the town's own rule: ${rules.assumed.map((k) => k.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')).join(', ')}.`);
+  if (rules.assumed.length) add('assumed_rules', `Some limits here are building code defaults or planning assumptions, not the ${ownerWord(lot)} own rule: ${andList([...new Set(rules.assumed.map(ruleKeyName))])}.`);
   if (scenarioIsProposal(lot, unit.scenario)) add('not_law', `${SCENARIO_TITLE[unit.scenario]} is a proposal. It is not law.`);
   return out;
+}
+
+/** Rule keys in words, for the "assumed" lines. */
+export const RULE_KEY_NAME: Record<string, string> = {
+  max_adus: 'the number of units',
+  max_size_sqft: 'the size cap',
+  min_size_sqft: 'the smallest size',
+  max_share_of_house: 'the cap tied to the house size',
+  min_lot_sqft: 'the smallest lot',
+  max_height_ft: 'the height limit',
+  setback_front_ft: 'the front setback',
+  setback_side_ft: 'the side setback',
+  setback_rear_ft: 'the rear setback',
+  setback_rear_alley_ft: 'the rear setback on an alley',
+  separation_ft: 'the space from the house',
+  max_building_coverage: 'the lot coverage cap',
+  max_impervious: 'the paved area cap',
+  owner_occupancy: 'owner occupancy',
+  parking_spaces: 'parking',
+};
+export const ruleKeyName = (k: string) => RULE_KEY_NAME[k] ?? k.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ');
+
+/** The three city places say "city", the county places' towns "town". */
+const CITY_PLACES: ReadonlySet<string> = new Set(['pittsburgh', 'philadelphia', 'allentown']);
+export const ownerWord = (lot: LotRecord) => (CITY_PLACES.has(lot.lot.place ?? '') ? "city's" : "town's");
+
+/** A district-wide bar on an unknown district: the record says "zoned unknown". */
+const ZONED_UNKNOWN = /\bzoned (?:unknown|none|null|nan)\b/i;
+/** "The ADU rule reaches only RI, MI, NC, CD, MG (27-301.2B(1)). Elsewhere: not addressed" */
+const REACH = /\b(?:reaches|applies) only\b/i;
+
+/** The district is not on file and the rules turn on it: the answer depends on the district. */
+export function districtUnknown(lot: LotRecord, rules: Rules | undefined): boolean {
+  return !!rules && !rules.allowed && !lot.zoning.district && rules.reasons.some((r) => ZONED_UNKNOWN.test(r));
+}
+
+/** A reason that says why units are barred, before one that only describes the code: the first reason that names a
+ * bar, else the first reason. */
+const BAR = /\b(not allowed|not listed|no adu|only in|reaches only|applies only|needs? an? |prohibit|bars?\b|must be)\b/i;
+export function barReason(rules: Rules): string | null {
+  const r = rules.reasons.find((x) => BAR.test(x) && !/^condition:/i.test(x)) ?? rules.reasons[0];
+  return r ? tidyReason(r) : null;
+}
+
+/** A rule note as a clean sentence: "a detached or semi-detached or attached house" -> "a detached, semi-detached or
+ * attached house", a capital first letter, one full stop. */
+export function tidyReason(r: string): string {
+  let t = r.trim();
+  for (let i = 0; i < 4 && /\b([\w-]+) or ([\w-]+) or /.test(t); i++) t = t.replace(/\b([\w-]+) or ([\w-]+) or /, '$1, $2 or ');
+  return `${t.charAt(0).toUpperCase()}${t.slice(1)}`.replace(/\.?$/, '.');
 }
 
 // ------------------------------------------------------------------ plain words for limits
@@ -655,12 +828,20 @@ const LIMIT_TEXT: Record<string, (r: Rules, f: FitResult | undefined) => string>
   yard_space: (_r, f) => `The open yard is the limit. The largest spot is about ${sqftText(f?.largest_sqft)}.`,
   no_room: () => 'There is no open space left in the yard after setbacks and the distance from the house.',
   size_cap: (r) => `The size cap of ${sqftText(r.max_size_sqft)} is the limit.`,
-  share_of_house: (r) => `The cap of ${pctText(r.max_share_of_house)} of the house size is the limit.`,
+  share_of_house: (r, f) => {
+    if (isNum(r.max_share_of_house)) return `The cap of ${pctText(r.max_share_of_house)} of the house size is the limit.`;
+    const lim = f?.checks.share_of_house?.limit;
+    const outline = f?.assumed?.some((a) => /no living area/.test(a)) ? ', from the building outline: no living area on file' : '';
+    return isNum(lim) ? `The cap tied to the house size (about ${sqftText(lim)}${outline}) is the limit.` : 'The cap tied to the house size is the limit.';
+  },
   building_coverage: (r) => `The lot coverage limit of ${pctText(r.max_building_coverage)} is the limit.`,
   impervious: (r) => `The limit of ${pctText(r.max_impervious)} paved and built area is the limit.`,
   house_size: () => 'The size of the house is the limit.',
   garage_size: () => 'The size of the garage sets the size of the unit.',
-  height: (r, f) => `The height limit of ${ftText(f && 'max_height_ft' in f ? f.max_height_ft : r.max_height_ft)} is the limit.`,
+  height: (r, f) => {
+    const h = f && 'max_height_ft' in f ? f.max_height_ft : r.max_height_ft;
+    return isNum(h) ? `The height limit of ${ftText(h)} is the limit.` : 'The height limit is the limit.';
+  },
   not_allowed: () => 'Units are not allowed on this lot.',
   type_not_allowed: () => 'This kind of unit is not allowed here.',
   min_lot_size: (r) => `The lot is under the ${sqftText(r.min_lot_sqft)} smallest lot size.`,
@@ -775,11 +956,31 @@ function groundChecks(lot: LotRecord, rules: Rules, unit: UnitInput, stored: Fit
   if (p && p.where === 'best' && unit.position !== 'best') parts.push('Move it to the marked spot.');
   if (p?.needsClearing) parts.push('Remove the shed or trees there.');
   return {
-    checks: [room, setbackCheck(rules, d, inside), separationCheck(rules, d, inside)],
+    checks: [room, setbackCheck(lot, rules, d, inside), separationCheck(rules, d, inside)],
     placed: p ? placedOf(p, g.frame) : null,
     lotLine,
     change: parts.length ? parts.join(' ') : null,
   };
+}
+
+/** Checks that mean nothing where the rules allow no unit: the yard is cut with placeholder setbacks. */
+const YARD_KEYS: ReadonlySet<CheckKey> = new Set(['room', 'setbacks', 'separation']);
+const NO_UNIT_HERE = 'Not checked: no unit is allowed on this lot under these rules.';
+
+/** A "fits" answer's qualifiers: the path in doubt first, then the limits the record cannot check. */
+const SOFT_NAME: Partial<Record<CheckKey, [string, string]>> = {
+  share_of_house: ['the cap tied to the house size (no living area on file)', 'house-size cap'],
+  height: ['the height (no height limit on file)', 'height'],
+  setbacks: ['some setbacks (no number in the rule file)', 'setbacks'],
+  separation: ['the space from the house (no number in the rule file)', 'space from the house'],
+};
+
+function qualifiersOf(approval: ApprovalInfo, checks: VerdictCheck[], q: { text: string; short: string } | null): Qualifier[] {
+  const out: Qualifier[] = [];
+  if (approval.qualifier && q) out.push({ kind: 'reading', text: q.text, short: q.short });
+  const open = checks.filter((c) => c.pass === null && SOFT.has(c) && SOFT_NAME[c.key]).map((c) => SOFT_NAME[c.key]!);
+  if (open.length) out.push({ kind: 'fact', text: `Not checked: ${andList(open.map((n) => n[0]))}.`, short: `${open.length === 1 ? open[0][1] : 'some limits'} not checked` });
+  return out;
 }
 
 /** Test one unit on one lot under one scenario. */
@@ -789,7 +990,7 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
   const s = sizesOf(lot, unit, stored);
   const shell = {
     scenario: unit.scenario, type: unit.type, footprint_sqft: s.footprint, floor_sqft: s.floor, height_ft: s.height,
-    largest_sqft: stored ? stored.largest_sqft : null,
+    largest_sqft: stored ? stored.largest_sqft : null, qualifiers: [] as Qualifier[],
   };
   if (!rules) {
     return {
@@ -805,11 +1006,21 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
 
   const ground = unit.type === 'detached_new' ? groundChecks(lot, rules, unit, stored, s) : null;
   const room = ground ? ground.checks : [unit.type === 'internal' ? houseRoomCheck(lot, rules, stored, s) : garageRoomCheck(rules, stored)];
-  const checks = [...ruleChecks(lot, rules, unit), ...room, ...sizeChecks(lot, rules, s, heightRule(rules, unit.type, stored))].sort((a, b) => CHECK_ORDER.indexOf(a.key) - CHECK_ORDER.indexOf(b.key));
+  let checks = [...ruleChecks(lot, rules, unit), ...room, ...sizeChecks(lot, rules, s, heightRule(rules, unit.type, stored), stored)].sort((a, b) => CHECK_ORDER.indexOf(a.key) - CHECK_ORDER.indexOf(b.key));
+  // No unit allowed: the yard was cut with placeholder setbacks (often 0 ft, "not checked"), so it is not a pass.
+  if (!rules.allowed) checks = checks.map((c) => (YARD_KEYS.has(c.key) ? { ...c, pass: null, text: NO_UNIT_HERE } : c));
   const warnings = warningsFor(lot, rules, unit, stored, ground?.lotLine ?? null);
   const placed = ground?.placed ?? null;
   const base = { ...shell, checks, warnings, approval, placed, assumed };
 
+  // The district is not on file and the rule turns on it: the record's "not allowed" is a reading of an unknown
+  // district, not a bar. Depends on the district (pipeline/rules.py should resolve this as "ask", see docs).
+  if (districtUnknown(lot, rules)) {
+    const reach = rules.reasons.find((r) => REACH.test(r) && !ZONED_UNKNOWN.test(r));
+    const text = `It depends on the zoning district, which is not on file for this lot.${reach ? ` ${tidyReason(reach)}` : ''} Ask the zoning officer which district the lot is in.`;
+    const ask = approvalInfo(null, 'none', approval.citation, 'It depends on the zoning district, which is not on file.');
+    return { ...base, approval: ask, status: 'check_needed', headline: 'It depends on the zoning district, which is not on file. Ask the town.', limit: { code: 'district_unknown', text }, changes: [] };
+  }
   const condition = lotCondition(lot, unit.scenario, unit.type);
   if (condition) {
     const room: VerdictCheck = { key: 'room', label: 'This lot', pass: false, value: null, limit: null, unit: null, text: condition.text, rule_key: null, citation: null, assumed: false };
@@ -827,7 +1038,7 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
   if (blocker) {
     const code = blocker.key === 'allowed' ? 'not_allowed' : blocker.key === 'type_allowed' ? 'type_not_allowed' : blocker.key;
     const note = blocker.key === 'type_allowed' ? PLACE_NOTES[lot.lot.place ?? '']?.[unit.type] : undefined;
-    const why = blocker.key === 'allowed' && rules.reasons.length ? rules.reasons[0].replace(/\.?$/, '.') : blocker.key === 'units' ? blocker.text : limitText(code, rules, stored);
+    const why = blocker.key === 'allowed' && rules.reasons.length ? (barReason(rules) as string) : blocker.key === 'units' ? blocker.text : limitText(code, rules, stored);
     return { ...base, status: 'not_allowed', headline: headlineFor('not_allowed', unit, s, [], placed), limit: { code, text: note ?? why }, changes: [] };
   }
   if (!stored || approval.path === null) {
@@ -835,7 +1046,7 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
     return { ...base, status: 'check_needed', headline: headlineFor('check_needed', unit, s, [], placed), limit: { code: 'unknown', text }, changes: [] };
   }
 
-  const changes: string[] = [];
+  let changes: string[] = [];
   if (ground?.change) changes.push(ground.change);
   const roomFailed = failed.some((c) => c.key === 'room');
   if (roomFailed && unit.type === 'detached_new' && !placed && stored.fits && stored.largest_sqft > 0) {
@@ -847,10 +1058,15 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
     const ch = changeFor(c, lot, s);
     if (ch && !changes.includes(ch)) changes.push(ch);
   }
-  // A share-of-house cap that could not be checked only because no living area is on file (the house is there) stays
-  // "not checked" in its row but does not turn the answer into "not sure": the stored fit skips that cap too.
-  const noLiving = houseSqft(lot).estimated && houseSqft(lot).sqft !== null;
-  const unknown = checks.filter((c) => c.pass === null && !(noLiving && c.key === 'share_of_house'));
+  // Two footprint limits (coverage and paved area) give two "Make the footprint N or less": only the smaller holds both.
+  const footprints = changes.map((c) => /^Make the footprint ([\d,]+) sq ft or less\.$/.exec(c)).filter((m): m is RegExpExecArray => !!m);
+  if (footprints.length > 1) {
+    const keep = footprints.reduce((a, b) => (Number(b[1].replace(/,/g, '')) < Number(a[1].replace(/,/g, '')) ? b : a))[0];
+    changes = changes.filter((c) => !footprints.some((m) => m[0] === c) || c === keep);
+  }
+  // A check the record cannot decide only because it holds no number (SOFT) stays "not checked" in its row and rides
+  // with the answer as a qualifier. Any other undecided check (a house-size cap the unit may break) makes it "not sure".
+  const unknown = checks.filter((c) => c.pass === null && !SOFT.has(c));
   // A change can only help when some unit of this type passes on this lot.
   const fixable = changes.length > 0 && (stored.fits || placed !== null);
 
@@ -863,11 +1079,15 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
   let limit: Limit;
   if (status === 'does_not_fit' && roomFailed && unit.type === 'detached_new') limit = { code: stored.limiting, text: limitText(stored.limiting, rules, stored) };
   else if (first) limit = { code: first.key, text: first.text };
-  else if (status === 'check_needed') limit = { code: 'unknown', text: unknown[0].text };
+  else if (status === 'check_needed') limit = { code: unknown[0].key === 'share_of_house' ? 'house_size_unknown' : 'unknown', text: unknown[0].text };
   else limit = { code: stored.limiting, text: limitText(stored.limiting, rules, stored) };
   // When no change can make it work (no room at all), listing size changes would mislead.
   const shown = status === 'does_not_fit' ? [] : changes;
-  return { ...base, status, headline: headlineFor(status, unit, s, shown, placed), limit, changes: shown };
+  const qualifiers = status === 'fits' || status === 'fits_with_changes' ? qualifiersOf(approval, checks, pathQualifier(rules, unit.type)) : [];
+  let headline = headlineFor(status, unit, s, shown, placed);
+  if (status === 'check_needed' && limit.code === 'house_size_unknown') headline = 'It depends on the house size, which is not on file. Ask the city.';
+  if (status === 'fits' && qualifiers.length) headline = `${headline} ${qualifiers.map((q) => q.text).join(' ')}`;
+  return { ...base, status, headline, limit, changes: shown, qualifiers };
 }
 
 export interface ScenarioVerdict {

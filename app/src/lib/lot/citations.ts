@@ -50,6 +50,8 @@ export interface CitationView {
   source: string | null;
   /** One line: section, source and date. */
   text: string;
+  /** The section is a sentence (a planning default of the build), not a code section: it takes a full stop. */
+  prose: boolean;
 }
 
 /** "pittsburgh#districts.R2-L" -> "Pittsburgh Zoning Code, district table" */
@@ -63,20 +65,34 @@ export function sourceLabel(file: string | undefined): string | null {
 
 const webUrl = (u: string | null | undefined) => (u && /^https?:\/\//.test(u) ? u : null);
 
+/**
+ * A build step's own note as a sentence: a capital first letter, and "so no limit is applied" (the build used 0 ft
+ * where the rule file gives no number) said as what it is, never as "no limit".
+ */
+function buildNote(section: string): string {
+  const t = section.trim().replace(/,? so no limit is applied$/i, ', so the fit used 0 ft and it is not checked').replace(/\.$/, '');
+  return `${t.charAt(0).toUpperCase()}${t.slice(1)}`;
+}
+
 export function formatCitation(c: Citation): CitationView {
   const checked = dateText(c.verified_on);
-  // A planning default the build could not check against the rule file ("not checked: ...") says so.
-  const source = c.source_file === 'build_lots' && /^not checked/i.test(c.section) ? 'Not checked' : sourceLabel(c.source_file);
-  const checkedText = checked ? `Checked on ${checked}` : 'Date not recorded';
+  const build = c.source_file === 'build_lots';
+  // A planning default the build could not check against the rule file ("not checked: ...") says so once, in its
+  // own words, with no date: it is a step of the build, not a reading of the code.
+  const notChecked = build && /^not checked/i.test(c.section);
+  const section = build ? buildNote(c.section) : c.section;
+  const source = notChecked ? null : sourceLabel(c.source_file);
+  const checkedText = notChecked ? '' : checked ? `Checked on ${checked}` : 'Date not recorded';
   return {
-    section: c.section,
+    section,
     url: webUrl(c.url),
     checked_on: c.verified_on ?? null,
     checked_text: checkedText,
     confidence: c.confidence,
     confidence_label: CONFIDENCE_LABEL[c.confidence],
     source,
-    text: [c.section, source, checkedText].filter(Boolean).join('. ') + '.',
+    text: [section, source, checkedText].filter(Boolean).join('. ') + '.',
+    prose: build,
   };
 }
 

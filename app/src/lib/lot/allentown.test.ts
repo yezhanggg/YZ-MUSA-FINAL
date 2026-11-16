@@ -22,8 +22,17 @@ describe('Allentown lots', () => {
     expect(sourceLabel('pa_lehigh_allentown')).toBe('Allentown Zoning Code (Ch. 660)');
     expect(sourceLabel('pa_lehigh_allentown#districts.N5')).toBe('Allentown Zoning Code (Ch. 660), district table');
     const c = formatCitation({ section: 'not checked: the rule file gives no number here', url: null, verified_on: null, confidence: 'unverified', source_file: 'build_lots' });
-    expect(c.source).toBe('Not checked');
+    // Said once, as a sentence, with no source or date to repeat it (item 9 of the Nov 16 smoke test).
+    expect(c.source).toBeNull();
+    expect(c.section).toBe('Not checked: the rule file gives no number here');
+    expect(c.text).toBe('Not checked: the rule file gives no number here.');
+    const zero = formatCitation({ section: 'not checked: the rule file gives no number here (see its note), so no limit is applied', url: null, verified_on: null, confidence: 'unverified', source_file: 'build_lots' });
+    expect(zero.text).not.toMatch(/no limit|Not checked\. |Date not recorded/);
+    expect(zero.section).toMatch(/so the fit used 0 ft and it is not checked$/);
     expect(formatCitation({ section: 'contextual front setback', url: null, verified_on: null, confidence: 'unverified', source_file: 'build_lots' }).source).toBe('Planning default');
+    expect(formatCitation({ section: 'contextual front setback, taken from the existing house on this lot', url: null, verified_on: null, confidence: 'unverified', source_file: 'build_lots' }).text).toBe(
+      'Contextual front setback, taken from the existing house on this lot. Planning default. Date not recorded.',
+    );
   });
 
   it('no living area on file: the 40% share is not checked, and the answer still follows the stored fit', () => {

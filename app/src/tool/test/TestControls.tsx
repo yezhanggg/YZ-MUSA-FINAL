@@ -13,13 +13,14 @@ import { useTool } from '../store';
 import { AREA_MAX, AREA_MIN, DEFAULT_MONEY, FINISHES, HEIGHT_MAX, HEIGHT_MIN, PRESETS, SIDE_MAX, SIDE_MIN, sidesFromArea, startUnit, typeOptions, type Finish } from '../testState';
 import TestableLots from './TestableLots';
 import { NotLaw } from './Answer';
+import { sameAsToday } from '../../lib/lot/verdict';
 
 /** Short labels that fit the 300 px panel. The full title is in the hover text. */
 const SCENARIO_SHORT: Record<Scenario, string> = SCENARIO_NAME;
 
 const SCENARIO_HINT: Record<Scenario, string> = {
   today: 'The rules in force today.',
-  local_reform: 'A city bill that is not law yet. Where there is none, it matches today.',
+  local_reform: 'A city bill that is not law yet. Only Philadelphia has one (Bill 250042). Everywhere else it is the same as today.',
   state_reform: 'State bill HB 2186. It passed the House. It is not law.',
 };
 
@@ -95,11 +96,14 @@ function Slider({ id, label, value, text, min, max, step, onChange }: { id: stri
 function ScenarioPick() {
   const scenario = useTool((s) => s.scenario);
   const setTest = useTool((s) => s.setTest);
+  const record = useTool((s) => s.spot?.record ?? null);
+  // Outside Philadelphia the local bill's rules are today's: say so instead of "not law".
+  const same = !!record && sameAsToday(record, scenario);
   return (
     <div>
       <div className="flex items-start justify-between gap-2">
         <Label>Zoning Regulation</Label>
-        {scenario !== 'today' && <NotLaw className="-mt-0.5" />}
+        {scenario !== 'today' && <NotLaw className="-mt-0.5" same={same} />}
       </div>
       <Segmented<Scenario> full label="Zoning Regulation" value={scenario} onChange={(v) => setTest({ scenario: v })} options={SCENARIOS.map((s) => ({ value: s, label: SCENARIO_SHORT[s], hint: SCENARIO_HINT[s] }))} className="[&_button]:px-1 [&_button]:whitespace-nowrap [&_button]:text-caption" />
     </div>

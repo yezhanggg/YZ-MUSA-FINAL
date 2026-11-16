@@ -57,3 +57,20 @@ export function askTags(turns: { role: string; content: unknown }[]): AskTags {
   }
   return out;
 }
+
+// ------------------------------------------------------------------ what Ask shows around the answers
+/** Shown when the site has no assistant set up: for the people using the site, not for the developer. */
+export const ASK_OFF = 'Ask is not available on this site right now. The answer, the checklist and their sources are in the panel.';
+
+/** The reply text to show: a missing setup reads as ASK_OFF, never as a note about keys or hosting. */
+export const askReply = (out: { ok: boolean; text: string; notConfigured?: boolean }) => (!out.ok && (out.notConfigured || /API_KEY|Vercel|not set up/i.test(out.text)) ? ASK_OFF : out.text);
+
+/** "510 South St" for a lot, else the spot's label or tract name: the place Ask reads, as the panel names it. */
+export function askWhere(spot: { label?: string | null; record?: { lot: { id: string; address?: string | null } } | null; parcel?: { id?: string | null } | null; tract: { NAMELSAD?: string | null } } | null): string {
+  if (!spot) return 'No lot selected';
+  const address = spot.record?.lot.address;
+  if (address) return address.toLowerCase().replace(/\b([a-z])/g, (m) => m.toUpperCase());
+  const id = spot.record?.lot.id ?? spot.parcel?.id;
+  if (id) return spot.label && spot.label !== 'Linked lot' ? spot.label : `Lot ${id}`;
+  return spot.tract.NAMELSAD ?? 'Tract';
+}

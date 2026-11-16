@@ -448,14 +448,14 @@
     {
      "kind": "enum",
      "label": "state bill status",
-     "value": "fits",
+     "value": "check_needed",
      "accept": [
-      "fits",
-      "would fit",
-      "will fit",
-      "could fit",
-      "can fit",
-      "does fit"
+      "check",
+      "confirm",
+      "cannot tell",
+      "can't tell",
+      "unknown",
+      "not sure"
      ]
     },
     {

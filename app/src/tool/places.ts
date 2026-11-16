@@ -253,7 +253,7 @@ const HEARING = new Set<PlaceApproval>(['special_exception', 'conditional_use'])
 export function placeAnswer(r: PlaceRow | undefined, mode: PlaceMode): PlaceAnswerView {
   const s = shownStatus(r, mode);
   if (mode === 'hb2186' && r && billChanges(r)) {
-    return { answer: 'yes', title: 'Allowed by right', sub: `Under the state bill. Today: ${STATUS_NAME[shownStatus(r, 'current')].toLowerCase()}.`, notLaw: true };
+    return { answer: 'yes', title: 'Allowed by right', sub: `Under the state bill. Today: ${todayTitle(r)}.`, notLaw: true };
   }
   const bill = mode === 'hb2186';
   const tail = bill && s === 'no_zoning' ? ' The state bill would not change this.' : '';
@@ -284,6 +284,18 @@ export function placeAnswer(r: PlaceRow | undefined, mode: PlaceMode): PlaceAnsw
   }
 }
 
+/** Today's answer in the words of today's card ("allowed with a hearing", "not allowed"), for a bill's line. */
+export function todayTitle(r: PlaceRow): string {
+  const t = placeAnswer(r, 'current').title.replace(/ today$/, '');
+  return `${t.charAt(0).toLowerCase()}${t.slice(1)}`;
+}
+
+/** A part of a list that is only a district code or two ("MI", "NC", "CD and MG"): it belongs to the part before it. */
+const CODE_PART = /^(?:and )?[A-Z0-9][A-Za-z0-9-]{0,4}(?: and [A-Z0-9][A-Za-z0-9-]{0,4})?$/;
+/** A detail longer than this is cut to its first parts; a cut keeps at most MAX_WORDS. */
+const CUT_WORDS = 14;
+const MAX_WORDS = 16;
+
 /** The first clause of a status detail, so the line stays short ("family only, special exception" -> "Family only, special exception."). */
 function firstClause(detail: string | null): string | null {
   if (!detail) return null;
@@ -292,15 +304,20 @@ function firstClause(detail: string | null): string | null {
   // An abbreviation can end the split early ("min. lot"): drop an unclosed parenthesis.
   if (first.split('(').length > first.split(')').length) first = first.slice(0, first.lastIndexOf('(')).trim();
   if (!first) return null;
-  // A long list of conditions keeps its first parts: "conversion of an existing building only, zoning permit".
-  if (first.split(/\s+/).length > 14) {
-    const parts = first.split(/,\s*/);
+  // A long list of conditions keeps its first parts: "conversion of an existing building only, zoning permit". A list
+  // of districts stays whole ("only in RI, MI, NC, CD, MG"): cut inside it, it would name only some of them.
+  if (first.split(/\s+/).length > CUT_WORDS) {
+    const parts: string[] = [];
+    for (const p of first.split(/,\s*/)) {
+      if (parts.length && CODE_PART.test(p.trim())) parts[parts.length - 1] += `, ${p.trim()}`;
+      else parts.push(p.trim());
+    }
     first = parts[0];
     for (const p of parts.slice(1)) {
-      if (`${first}, ${p}`.split(/\s+/).length > 12) break;
+      if (`${first}, ${p}`.split(/\s+/).length > MAX_WORDS) break;
       first = `${first}, ${p}`;
     }
-    if (first.split(/\s+/).length > 14) return null;
+    if (first.split(/\s+/).length > MAX_WORDS) return null;
   }
   return `${first.charAt(0).toUpperCase()}${first.slice(1)}.`;
 }
@@ -376,7 +393,7 @@ export function placeRows(r: PlaceRow | undefined, mode: PlaceMode): PlaceRowVie
   if (r.tier === 'reported') sureLines.push('From a public list. Not checked against the code here.');
   if (r.tier === 'text_search') sureLines.push('Its public zoning text can be searched in the chat. The quotes are unverified.');
   if (r.tier === 'baseline') sureLines.push("Not read yet. Statewide law still applies.");
-  if (billNew) sureLines.push(`Today: ${STATUS_NAME[shownStatus(r, 'current')].toLowerCase()} (${sureValue(r).toLowerCase()}).`);
+  if (billNew) sureLines.push(`Today: ${todayTitle(r)} (${sureValue(r).toLowerCase()}).`);
   const src = r.source;
   const srcLink = src?.url && /^https?:\/\//.test(src.url) ? { href: src.url, label: src.name ?? 'Source' } : null;
   if (src?.name && !srcLink && r.tier !== 'baseline') sureLines.push(src.name);

@@ -76,7 +76,9 @@ export function nextSteps(b: BuildChecklist, v: UnitVerdict, rows: ScenarioVerdi
   const zoning = one('zoning');
   if (zoning) {
     const hist = one('historic');
-    steps.push({ kind: 'zoning', title: zoning.title, text: `Your unit is ${PATH_PHRASE[path ?? ''] ?? 'allowed, but ask which approval it needs'}.${path === 'administrator_exception' ? ' Talk to your next-door neighbors early.' : ''}${hist ? ' Your lot is in a historic district, so the design needs historic review too.' : ''}`, who: zoning.who, time: time([zoning]), cost: costOf([zoning]), link: linkFor(place, 'zoning') });
+    // A path in doubt: ask the zoning officer first, and say what it rests on.
+    const doubt = v.approval.qualifier ? ` ${v.approval.qualifier}` : '';
+    steps.push({ kind: 'zoning', title: zoning.title, text: `Your unit is ${PATH_PHRASE[path ?? ''] ?? 'allowed, but ask which approval it needs'}${doubt ? ', if the zoning officer confirms it' : ''}.${doubt}${path === 'administrator_exception' ? ' Talk to your next-door neighbors early.' : ''}${hist ? ' Your lot is in a historic district, so the design needs historic review too.' : ''}`, who: zoning.who, time: time([zoning]), cost: costOf([zoning]), link: linkFor(place, 'zoning') });
   }
   const permit = by(['water_sewer', 'electric', 'building_permit', 'owner_occupancy']);
   const bp = one('building_permit');
@@ -91,5 +93,6 @@ export function nextSteps(b: BuildChecklist, v: UnitVerdict, rows: ScenarioVerdi
     steps.push({ kind: 'rent', title: 'Before you rent it out', text: `Get a rental license.${tax ? ` ${tax.title.replace(/^Apply for the tax abatement$/, 'Apply for the tax break on new homes in time').replace(/^Expect a new tax value$/, 'Expect a new property tax value')}.` : ''}`, who: one('rental_license')?.who ?? rent[0].who, time: time(rent), cost: costOf(by(['rental_license'])), link: linkFor(place, 'rent') });
   }
   const how = PATH_PHRASE[path ?? ''] ?? 'with an approval to confirm';
-  return { summary: `${steps.length} steps, ${how.replace(/ \(.*\)$/, '')}. How long: ask the city.`, steps, change: null };
+  const confirm2 = v.approval.qualifier ? ', if the zoning officer confirms it' : '';
+  return { summary: `${steps.length} steps, ${how.replace(/ \(.*\)$/, '')}${confirm2}. How long: ask the city.`, steps, change: null };
 }

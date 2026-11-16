@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FIXTURE_NAMES, fixture } from './__fixtures__';
-import { ANSWER_TITLE, answerOf, ruleRows } from './answer';
+import { ANSWER_TITLE, IF_CONFIRMED, answerOf, ruleRows } from './answer';
 import { ADU_TYPES, SCENARIOS } from './types';
 import { suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from './verdict';
 
@@ -47,9 +47,12 @@ describe('answerOf', () => {
       const lot = fixture(name);
       for (const s of SCENARIOS) {
         for (const t of ADU_TYPES) {
-          const a = answerOf(unitVerdict(lot, t === 'detached_new' ? cottage({ scenario: s }) : suggestedUnit(lot, t, s)));
+          const v = unitVerdict(lot, t === 'detached_new' ? cottage({ scenario: s }) : suggestedUnit(lot, t, s));
+          const a = answerOf(v);
           expect(words(a.sub), `${name} ${s} ${t}: ${a.sub}`).toBeLessThanOrEqual(8);
-          expect(a.title).toBe(ANSWER_TITLE[a.answer]);
+          // A by-right path in doubt reads "Yes, if confirmed", never a plain "Yes".
+          const doubt = v.status === 'fits' && v.qualifiers.some((q) => q.kind === 'reading') && v.approval.path === 'by_right';
+          expect(a.title).toBe(doubt ? IF_CONFIRMED : ANSWER_TITLE[a.answer]);
         }
       }
     }
