@@ -26,23 +26,24 @@
     "geoid": "4204586968",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/11892117",
-    "code_current_through": null,
-    "code_current_through_note": "No currency date read. New Laws: 41 uncodified items since 2018, one of them a 2024 Chapter 300 amendment (smoke shops and tobacco stores)",
-    "code_caution": "The online code has a backlog of uncodified laws back to 2018, among them a 2024 zoning amendment (smoke shops and tobacco stores) that was not read. Ask the Borough whether other zoning changes are pending.",
+    "code_current_through": "2019-04-18",
+    "code_current_through_note": "eCode360 Version Information: 'Includes legislation through 04-18-2019.' New Laws lists 41 uncodified items, the oldest from 2018. The only Chapter 300 item is 'Smoke Shops and Tobacco Stores' (11-21-2024), a PDF that was not opened",
+    "code_caution": "The online code includes legislation only through 04-18-2019, and 41 later laws back to 2018 are not yet codified. Among them is a 2024 zoning amendment (smoke shops and tobacco stores) that was not read. Ask the Borough whether other zoning changes are pending.",
     "checks": [
       "The zoning code has no accessory dwelling unit, in-law suite, accessory apartment or similar listing",
       "In the A district land and buildings 'shall be used by right only' for single-family detached dwellings and municipal uses, and the accessory uses named are private garages and off-street parking (300-33A, B). B adds semidetached dwellings built together and takes the A accessory uses (300-38). C permits only townhouse and garden apartment developments (300-43)",
       "A single-family detached dwelling is 'designed and occupied exclusively as a residence for one family' (300-5B)",
       "In A only, the Zoning Hearing Board may allow by special exception the 'Conversion of a single-family structure into a multifamily use', only in an existing single-family detached structure with more than 3,600 sq ft of net floor area (gross floor area minus 15%), at most four units, each a complete separate housekeeping unit of at least 600 sq ft (one bedroom or less) to 1,200 sq ft (four bedrooms), separate entrances, parking in the rear or side yard, no external alterations inconsistent with residential use (300-33C(2), 300-5B)",
       "The code defines a multifamily dwelling as a residence 'for three or more families' that 'includes duplexes'. Whether a conversion to two units qualifies is not settled (300-5B)",
-      "In NC, residences are permitted above the first floor of a commercial building (300-52A(2))",
+      "In NC, residences are permitted above the first floor of a commercial building (300-52A(2)). RC permits 'All uses permitted in the NC District' by right (300-59A(1))",
+      "In INS, 'Living accommodations for staff or employees of permitted institutions' are an accessory use (300-47B(3)), and multifamily housing for persons 62 and older is a conditional use (300-47D)",
       "A lot in A needs 5,000 sq ft for a residence unless a special exception is granted, width 40 ft, building coverage 33 1/3%, front 25 ft, sides 10 ft each and 20 ft together, rear 10 ft, height 35 ft or three stories (300-34). B allows 55% coverage (300-39C)",
       "A lot held in single and separate ownership on 7-12-1984 that is below the minimum area or width may be built on if the use, yard, setback and density rules are met (300-112)",
       "Single-family dwellings need 2 parking spaces per dwelling unit (300-85)",
-      "Floodplain areas follow Chapter 164 (300-4), which was not read",
+      "Floodplain areas follow Chapter 164 (300-4). In an identified floodplain an accessory structure 'shall not be designed or used for human habitation' and may be at most 200 sq ft (164-24E(1), (2)), no new structure may stand within 50 ft of the top of bank (164-23D), and basements are prohibited (164-24C(1))",
       "No section read bars a use variance"
     ],
-    "notes": "Zoning office: Borough of Yeadon, Code Enforcement Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: Article I (300-1 to 300-5), Articles V, VI and VII (A, B, C), Article XVI, the NC use list, and the parking table, Zoning Hearing Board and New Laws lines through the page search. Not read: Article II, Articles VIII and X to XII (INS, RC, IND, ROS), Articles XIII, XV and XVII to XX, and Chapter 164 (floodplain). The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant and quarters. A family may include domestic servants employed full-time on the premises, and no more than three unrelated persons (300-5B). Building coverage counts all principal and accessory buildings (300-5B)."
+    "notes": "Zoning office: Borough of Yeadon, Code Enforcement Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: Article I (300-1 to 300-5), Articles V, VI and VII (A, B, C), Article XVI, the NC use list, and the parking table, Zoning Hearing Board and New Laws lines through the page search. The INS, RC, IND and ROS use lists and Chapter 164 (164-23D, 164-24C and E) were read later the same day. Not read: Article II, Articles XIII, XV and XVII to XX, the rest of Chapter 164 and the 2024 smoke shop amendment (a PDF). The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant and quarters. A family may include domestic servants employed full-time on the premises, and no more than three unrelated persons (300-5B). Building coverage counts all principal and accessory buildings (300-5B)."
   },
   "adu": {
     "term": {
@@ -90,8 +91,9 @@
           "min_lot_sqft": 5000,
           "requires": [
             {
-              "test": null,
-              "condition": "The house is an existing single-family detached structure with more than 3,600 sq ft of net floor area. Net floor area is gross floor area minus 15%, so about 4,236 sq ft of gross floor area or more",
+              "test": "house_sqft_over",
+              "value": 4235,
+              "condition": "The house is an existing single-family detached structure with more than 3,600 sq ft of net floor area. Net floor area is gross floor area minus 15%, so more than about 4,235 sq ft of gross floor area",
               "section": "300-33C(2)(a), 300-5B"
             }
           ],
@@ -101,12 +103,13 @@
           "note": "The code defines a multifamily dwelling as one for three or more families that includes duplexes (300-5B), so whether a two-unit conversion qualifies is not settled. The 5,000 sq ft figure is the A lot minimum. The code gives no added lot area for the units"
         },
         {
-          "name": "Residence above the first floor (NC)",
+          "name": "Residence above the first floor (NC, RC)",
           "path": "by_right",
           "districts": [
-            "NC"
+            "NC",
+            "RC"
           ],
-          "conditions": "'Residences, not located on the first floor of the structure', with the unit floor sizes of 300-33C(2)(e) (300-52A(2))",
+          "conditions": "'Residences, not located on the first floor of the structure', with the unit floor sizes of 300-33C(2)(e) (300-52A(2)). RC permits 'All uses permitted in the NC District' by right (300-59A(1))",
           "requires": [
             {
               "test": null,
@@ -114,13 +117,13 @@
               "section": "300-52A(2)"
             }
           ],
-          "section": "300-52A(2)",
+          "section": "300-52A(2), 300-59A(1)",
           "url": "https://ecode360.com/print/YE2061?guid=11892473",
           "confidence": "verified",
           "note": "A unit in a commercial district building, not an added unit on a house lot"
         }
       ],
-      "section": "300-33C(2), 300-52A(2)",
+      "section": "300-33C(2), 300-52A(2), 300-59A(1)",
       "url": "https://ecode360.com/print/YE2061?guid=11892325",
       "verified_on": "2026-11-16",
       "confidence": "verified"
@@ -137,13 +140,43 @@
     },
     "districts_read_no_listing": {
       "value": [
-        "C"
+        "C",
+        "INS",
+        "RC",
+        "IND",
+        "ROS"
       ],
-      "section": "300-43",
+      "section": "300-43, 300-47, 300-59, Articles XI and XII",
       "url": "https://ecode360.com/print/YE2061?guid=11892403",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "Townhouse and garden apartment developments only"
+      "note": "C: townhouse and garden apartment developments only. INS: staff living accommodations for an institution and housing for persons 62 and older, not a unit on a house lot (300-47B(3), D). RC: the NC uses, among them residences above the first floor (300-59A(1)). IND and ROS: no dwelling use"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain an accessory structure 'shall not be designed or used for human habitation' and may be at most 200 sq ft. No new structure may stand within 50 ft of the top of bank, and basements are prohibited.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain",
+            "Identified floodplain area"
+          ],
+          "section": "164-23D, 164-24C(1), 164-24E(1), (2)",
+          "url": "https://ecode360.com/YE2061"
+        }
+      ],
+      "section": "164-23D, 164-24",
+      "url": "https://ecode360.com/YE2061",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
     }
   },
   "form": {

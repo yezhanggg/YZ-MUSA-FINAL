@@ -3831,7 +3831,7 @@
       "pop_rank": 206,
       "file": "pa_montgomery_lower_pottsgrove",
       "batch": 35,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/13282057",
@@ -3841,7 +3841,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 250-21B(4) temporary living quarters for relatives or household employees)"
       ],
-      "status_note": "Open: whether the quarters count as a dwelling unit for the R-2 lot area per unit and density (250-59A, 250-21B(4)(d)) and for parking (Table 250-202). Whether a twin qualifies (250-21B(4)(i)). Whether R-4 keeps twins (250-66A). Impervious tiers by lot size stored as 25%. Q, airport overlay and parts of Art IV not read."
+      "status_note": "Disputes the code does not settle: whether a twin qualifies, since 250-21B(4)(i) names a single-family detached dwelling. Whether R-4 keeps twins (250-66A bars 'duplexes permitted under 250-62B', while 250-67A(1), B(1), C(1) regulate two-family dwellings in R-4). Whether the quarters count as a dwelling unit for lot area per unit and parking (250-8, 250-21B(4)(d), 250-59A, Table 250-202). Impervious cover by lot size (35%, 30%, 25%) is stored as 30% with a condition, as no lot-size tier field exists. Later check: the SC shopping center use selection (250-137) and Article XXIV (Q)."
     },
     {
       "geoid": "4209144920",
@@ -3865,7 +3865,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 1250.04(a)(27)B family definition, two housekeeping units for a relative 60 or older or handicapped)"
       ],
-      "status_note": "Open: the main path is the family definition (1250.04(a)(27)B), not an ADU listing. Also whether it reaches a separate building, and whether the second unit counts as a dwelling unit for parking and density. Caretaker's quarters may use the house itself (1298.03(b)(5)B). MF-1, MF-3s, D-1 to D-4, F, F-1, PO, PO-2, overlays and Ch 1294 not read."
+      "status_note": "Open: E-1 and E-2 permit the A uses 'as regulated therein', but their own chapters set other yards, cover and height for every lot (1269.04 to 1269.06, 1269A.04 to 1269A.07). The file keeps the stricter figure of each. Which chapter governs is not settled. A-2 and CD-1 rows confirmed against their chapters. Also open: whether the family rule reaches a separate building, whether the second unit counts as a dwelling unit for parking, and whether caretaker's quarters may use part of the house (1298.03(b)(5)B). MF-1, MF-3s, D-1 to D-4, F, F-1, PO, PO-2, overlays and Ch 1294 not read."
     },
     {
       "geoid": "4204586968",
@@ -3879,17 +3879,17 @@
       "pop_rank": 210,
       "file": "pa_delaware_yeadon",
       "batch": 35,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11892117",
       "plain_fetch": false,
-      "code_current_through": null,
+      "code_current_through": "2019-04-18",
       "code_note": "Zoning: Chapter 300 Zoning (Borough of Yeadon Zoning Ordinance of 1984, Ord. No. 1115, codified by Ord. No. 1245 of 12-7-1995, as amended). No ADU text. A permits single-family detached dwellings and municipal uses only, with private garages and parking as accessory uses (300-33A, B). Conversion of an existing single-family structure with more than 3,600 sq ft of net floor area into a multifamily use (up to four units) by special exception in A only (300-33C(2)). B adds semidetached dwellings, C townhouse and garden apartment developments, NC residences above the first floor. No attachments. New Laws: 41 uncodified items since 2018, one a 2024 zoning amendment (smoke shops). Read in the browser on eCode360 (YE2061).",
       "why": [
         "added as batch 35 by population. Code Chapter 300 has no ADU text (300-33C(2) conversion of a large house in A)"
       ],
-      "status_note": "Open: whether a two-unit conversion is a 'multifamily use' when the code defines multifamily as three or more families but includes duplexes (300-5B, 300-33C(2)). 41 uncodified New Laws incl. a 2024 zoning amendment not read. INS, RC, IND, ROS, Art XVII and Ch 164 floodplain not read."
+      "status_note": "Disputes the code does not settle: whether a two-unit conversion is a 'multifamily use', since 300-5B defines multifamily as three or more families but includes duplexes (300-33C(2)). The online code runs only through 04-18-2019. The 2024 Chapter 300 amendment (smoke shops and tobacco stores, 11-21-2024) is a PDF that was not read. Later check: Articles XIII, XV and XVII to XX."
     }
   ]
 }
