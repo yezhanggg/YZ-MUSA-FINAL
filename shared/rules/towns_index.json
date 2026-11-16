@@ -4191,7 +4191,7 @@
       "pop_rank": 263,
       "file": "pa_allegheny_marshall",
       "batch": 40,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/48699933",
@@ -4201,7 +4201,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 208-219 Table 4 and 208-401B accessory dwelling unit by right in CR and SR)"
       ],
-      "status_note": "Batch 40, first reading. Open: Whether an addition joined to the house counts as a unit 'in the principal structure' (208-401B(1)(d)(iii), 208-401A(3)). Whether the 208-401A(4) cap on detached accessory structures (50% of the house footprint or 1,000 sq ft) binds an ADU building. ADU parking (Table 11 has no row, 208-501D). 208-402 (conservation subdivisions) not read."
+      "status_note": "Batch 40, checked against the code text. Points for a later check: whether Table 1 gross density (CR 0.75, SR 2.0 units an acre) counts an ADU on an existing lot (shown as a condition, never a bar). Whether a twin or townhouse lot qualifies under 208-401B(1)(c) (shown as by right only if that reading holds). ADU parking (Table 11 has no row, 208-501D). Whether the 208-401A(4) cap on detached accessory structures binds an ADU building. RTO is an optional overlay (208-303B(1))."
     },
     {
       "geoid": "4201708760",
@@ -4215,7 +4215,7 @@
       "pop_rank": 267,
       "file": "pa_bucks_bristol_borough",
       "batch": 40,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30841462",
@@ -4225,7 +4225,7 @@
       "why": [
         "added as batch 40 by population. Code Chapter 27 has no ADU text"
       ],
-      "status_note": "Batch 40, first reading. Open: Whether a second house on one R-1, R-1A or R-2 lot under 27-402.2 is a second principal use that 27-401 bars. Whether the 500 sq ft in 27-320.7P(3)(a) is for each accessory structure or for all of them. 27-312 to 27-319 checked only by a search of the Part 3 text."
+      "status_note": "Batch 40, checked against the code text. Points for a later check: whether a second house on one R-1, R-1A or R-2 lot under 27-402.2 is a second principal use that 27-401 bars, and whether 'twice the required side yard' means 10 ft or 40 ft. Whether the 500 sq ft in 27-320.7P(3)(a) is for each accessory structure or for all of them. H is an overlay with HARB review (27-319.2). 27-312 to 27-318 checked by a search of the Part 3 text."
     },
     {
       "geoid": "4212511152",
@@ -4239,7 +4239,7 @@
       "pop_rank": 271,
       "file": "pa_washington_canonsburg",
       "batch": 40,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/13838546",
@@ -4249,7 +4249,7 @@
       "why": [
         "added as batch 40 by population. Code Chapter 170 has no ADU text (two-family dwelling by right in R-2, R-3, MU, 170-603D(5) large-house apartment conversion)"
       ],
-      "status_note": "Batch 40, first reading. Open: 170-306 (unlisted uses prohibited) against 170-307 and 170-602 (special exception for a use of the same general character). Whether 170-603D(5) (house over 3,000 sq ft before the chapter) limits a house made into a two-family dwelling. Code current only through 05-09-2022 (New Laws show no zoning ordinance since)."
+      "status_note": "Batch 40, checked against the code text. Points for a later check: 170-306 (unlisted uses prohibited) against 170-307 and 170-602 (special exception for a use of the same general character). Whether 170-603D(5) (house over 3,000 sq ft before the chapter) limits a house made into a two-family dwelling. 99-23D bars new construction within 50 ft of the top of bank in a floodplain area, with no lot fact for the distance. Code current only through 05-09-2022 (New Laws show no zoning ordinance since)."
     }
   ]
 }

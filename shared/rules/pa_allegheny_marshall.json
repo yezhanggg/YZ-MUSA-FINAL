@@ -24,7 +24,9 @@
       "https://ecode360.com/MA1429/search?query=%22accessory%20dwelling%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/MA1429/search?query=%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20quarters%20OR%20relative%20OR%20relatives%20OR%20ECHO%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22second%20dwelling%22%20OR%20%22granny%22%20OR%20%22servant%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/MA1429/search?query=floodway%20prohibited%20OR%20%22new%20construction%22&scope=all&sortOrder=relevance",
-      "https://ecode360.com/MA1429/search?query=%22conversion%20of%22%20dwelling&scope=all&sortOrder=relevance"
+      "https://ecode360.com/MA1429/search?query=%22conversion%20of%22%20dwelling&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/MA1429?guid=48700454",
+      "https://ecode360.com/print/MA1429?guid=48700208"
     ],
     "verified_on": "2026-11-16",
     "county": "Allegheny",
@@ -35,20 +37,23 @@
     "code_current_through": "2025-07-28",
     "code_current_through_note": "eCode360 version information: 'Includes legislation through 07-28-2025.' New Laws: 'There are currently no known new laws for this Code.'",
     "checks": [
-      "Table 4 (208-219) lists 'Accessory dwelling unit' as A, 'Permitted accessory use by right', in CR and SR, and N, 'Use not permitted', in MDR, HC, PORBP, TC, RB, PIP, RRTP, OSPC and RTO. The standards are in 208-401B",
-      "208-401B(1): a building or zoning permit first. The property may contain only one dwelling unit. The owner lives in the house or the unit. Only on lots with a single-family dwelling. The unit is in a newly built accessory dwelling unit structure, in an existing detached accessory structure used or formerly used on the first floor by a garage, barn or similar use, or in the house with a separate entrance to the outside or to an unconditioned porch type space",
+      "Table 4 (208-219) lists 'Accessory dwelling unit' as A, 'Permitted accessory use by right', in CR and SR, and N, 'Use not permitted', in MDR, HC, PORBP, TC, RB, PIP, RRTP, OSPC and RTO. The standards are in 208-401B. RTO is an optional overlay: its rules reach only a development the applicant elects under it, and otherwise the base district rules apply (208-303B(1))",
+      "208-401B(1): a building or zoning permit first. The property may contain only one dwelling unit. The owner lives in the house or the unit. Only on lots with a single-family dwelling. In CR and SR the only dwelling Table 3 permits is a single-family detached dwelling. The unit is in a newly built accessory dwelling unit structure, in an existing detached accessory structure used or formerly used on the first floor by a garage, barn or similar use, or in the house with a separate entrance to the outside or to an unconditioned porch type space",
       "Size: 'The usable floor area of the accessory dwelling unit shall not exceed 50% of the usable floor area of the principal use or 500 square feet, whichever is less.' Patios, decks, porches and inside stairs from the house do not count (208-401B(1)(e))",
       "A detached accessory structure stands at least 10 ft from the house and may not exceed 50% of the house's footprint or 1,000 sq ft, whichever is less, 'Unless otherwise specified' (208-401A(4)). It may not be taller than the house (208-401A(9)). It is not allowed in the required front yard (208-401A(5)(a)). In residential districts it is at least 5 ft from the side and rear lines, and a building over 400 sq ft at least 15 ft. Above 15 ft tall it moves back 5 ft more for each foot, up to the principal side or rear yard (208-401A(5)(c), (d)). An attached accessory structure is part of the house and meets the house's rules (208-401A(3))",
-      "Only one accessory structure of each type on a lot (208-401A(8)). Accessory structures count toward lot coverage (208-401A(6))",
+      "Only one accessory structure of each type on a lot (208-401A(8)). Accessory structures count toward lot coverage (208-401A(6)). No parking in a required front yard of a residential lot except in a legal driveway or garage (208-501H(2)(b))",
       "Parking: Table 11 has no ADU row, and 208-401B(1)(f) sends ADU parking to 208-501. A single-family detached dwelling needs 2 spaces per dwelling unit. Uses not in Table 11 get a figure from the Planning Director (208-501D). Fractions round up (208-501C(1)). Single-family parking may be stacked (208-501E(1)(a)(i))",
       "Lots (Table 1, 208-207): CR conventional lot 50,000 sq ft, or 60,000 without public sewer and water, width 150 ft, front 40, side 20 (50 both), rear 40. SR conventional lot 20,000 sq ft, or 40,000 without public sewer and water, width 80 ft (150 without), front 40, side 15, rear 35. Impervious 18%, height 40 ft. Cluster and country lots in a conservation subdivision have smaller or larger figures",
+      "Table 1 also sets a maximum gross density: CR 0.75 units an acre (0.25 for a country lot), SR 2.0 units an acre (1.0 without public sewer and water). Gross density is the number of dwelling units divided by the base site area (208-901), and no building may be altered to house more families than the chapter allows (208-203A(3)). A house and an ADU on a 20,000 sq ft SR lot is about 4.4 units an acre. Whether an ADU on an existing lot counts toward gross density is not settled. The density figures are framed for subdivisions. Ask the zoning officer",
+      "A conservation subdivision is required for a major subdivision of at least 10 acres in CR and SR. Minor subdivisions with no new streets are exempt. Its lots allow single-family detached dwellings and accessory uses under 208-218 (208-402Q(1)(n), (o), (3)). Site capacity (208-500) and the Corridor Enhancement overlay (208-301) reach subdivisions and land developments, not one accessory building",
       "In a residential district no more than one principal use, building or structure on a lot unless the chapter allows more (208-203A(8)). Only one single-family detached dwelling for each lot (208-901 'Dwelling' A)",
       "A lot of record held apart from the adjoining lots when the chapter took effect may be built on under its district's rules. Adjoining substandard lots in one ownership are treated as one lot (208-602A)",
       "A use 'clearly not provided for' is a conditional use in PIP only (208-400). The ADU is provided for, so outside CR and SR the path is a variance. Variances: 208-801K. No bar on a use variance was found",
       "Floodplain (Chapter 83, by 208-302): floodway work needs an engineering showing of no rise and a DEP permit for new construction. AE without floodway, no more than one foot of rise. No new construction within 50 ft of the top of bank without a DEP permit (83-402, 83-501D). Only hospitals, nursing homes, jails and manufactured home parks are barred outright (83-601)",
-      "A family is one or more persons living as a single nonprofit housekeeping unit, and four or more persons not within the second degree of kinship are not a family (208-901 'Family')"
+      "A family is one or more persons living as a single nonprofit housekeeping unit, and four or more persons not within the second degree of kinship are not a family (208-901 'Family')",
+      "A house on an undeveloped nonconforming lot (block averaging case) keeps garages and sheds in the rear yard, at least 10 ft from the rear line (208-602B). A nonconforming use may grow by conditional use, attached and by up to 25% more floor area (208-600A(2))"
     ],
-    "notes": "Zoning office: Marshall Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article 200 (208-200 to 208-219 with Tables 1 to 4), 208-302, 208-400, 208-401, 208-501, Article 600, 208-801, the first half of 208-901 (to 'Office'), Chapter 83 sections 402, 501 and 601, the New Laws page and code searches (ADU terms, floodplain, conversion). Not read: Article 100, 208-300, 208-301, 208-303, 208-402 (principal use standards, including the conservation subdivision rules in 208-402Q), 208-500, 208-502 to 208-504, Article 700, 208-800, 208-802 to 208-808, the rest of 208-901 and the rest of Chapter 83."
+    "notes": "Zoning office: Marshall Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article 200 (208-200 to 208-219 with Tables 1 to 4), Article 300 (208-300 to 208-303), 208-400, 208-401, 208-402 A to EE, 208-500, 208-501, Article 600, 208-801, 208-804, the first half of 208-901 (to 'Office'), Chapter 83 sections 402, 501 and 601, the New Laws page and code searches (ADU terms, floodplain, conversion). Not read: Article 100, the rest of 208-402, 208-502 to 208-504, Article 700, 208-800, 208-802, 208-803, 208-805 to 208-808, the rest of 208-901 and the rest of Chapter 83."
   },
   "adu": {
     "term": {
@@ -83,7 +88,7 @@
       "url": "https://ecode360.com/print/MA1429?guid=48699953",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "Table 4 marks the ADU 'N', 'Use not permitted', in MDR, HC, PORBP, TC, RB, PIP, RRTP, OSPC and RTO"
+      "note": "Table 4 marks the ADU 'N', 'Use not permitted', in MDR, HC, PORBP, TC, RB, PIP, RRTP, OSPC and RTO. RTO is an optional overlay, so its 'N' reaches only a development elected under it (208-303B(1))"
     }
   },
   "approval": {
@@ -113,18 +118,18 @@
             "TC",
             "RB"
           ],
-          "conditions": "'Conversion of sq. ft. to multi-family' is a conditional use in MDR, TC and RB (Table 3, 208-216). It converts an existing single-family detached dwelling to dwellings for more than one family without substantially altering the outside (208-901). Parking 1.5 spaces per dwelling unit plus 1 guest space for every 2 units (Table 11, 208-501). The Board of Supervisors decides after a Planning Commission recommendation and a public hearing (208-804, 208-901 'Conditional use')",
+          "conditions": "'Conversion of sq. ft. to multi-family' is a conditional use in MDR, TC and RB (Table 3, 208-216). Only an existing single-family detached dwelling may be converted, into at most four units. The building keeps the look of a single-family detached dwelling with a single front entrance. Added entrances go on the side or rear, or the units share the front entrance. No outside stairway on the front. Each unit has its own cooking and sanitary facilities and at least 500 sq ft of usable living area with one bedroom, 650 with two and 850 with three or four (208-402R). Parking 1.5 spaces per dwelling unit plus 1 guest space for every 2 units, fractions rounded up (Table 11, 208-501C(1)). The Board of Supervisors decides after a Planning Commission recommendation and a public hearing, and a traffic impact study is needed unless waived (208-804)",
           "requires": [
             {
               "test": "house_exists",
               "condition": "An existing single-family detached dwelling is converted",
-              "section": "208-901 'Conversion of single-family dwelling to multi-family dwelling'"
+              "section": "208-402R(2), 208-901 'Conversion of single-family dwelling to multi-family dwelling'"
             }
           ],
-          "section": "208-216 (Table 3), 208-901, 208-501 (Table 11)",
+          "section": "208-216 (Table 3), 208-402R, 208-901, 208-501 (Table 11), 208-804",
           "url": "https://ecode360.com/print/MA1429?guid=48699953",
           "confidence": "secondary",
-          "note": "No use standards for the conversion were found outside Table 3 and the definition. A single-family detached dwelling is not a permitted use in MDR or TC, so a house there is likely a nonconforming use"
+          "note": "A single-family detached dwelling is not a permitted use in MDR or TC, so a house there is likely a nonconforming use. A nonconforming use may also grow by conditional use, attached and by up to 25% more floor area (208-600A(2))"
         },
         {
           "name": "Second dwelling on a farm for farm workers or family (CR, SR)",
@@ -133,25 +138,25 @@
             "CR",
             "SR"
           ],
-          "conditions": "Where the principal use is an agriculture operation (by right in CR and SR, Table 3), 'The number of dwellings permitted on a farm shall not be limited, if density does not exceed one single-family dwelling per 10 acres and that dwellings shall be separated by a minimum of 200 feet for use by resident farm workers or family members.' Each dwelling meets the district setbacks. An agricultural use needs at least five acres unless it is a normal agricultural operation (208-401C(1), (2))",
+          "conditions": "An agriculture operation (by right in CR and SR, Table 3) needs a lot of at least five acres (208-402C(2)). 'The number of dwellings permitted on a farm shall not be limited, provided that density does not exceed one single-family dwelling per 10 acres and that dwellings shall be separated by a minimum of 200 feet for use by resident farm workers or family members' (208-402C(3), 208-401C(1)). 'No dwelling shall be constructed closer than 75 feet to such lines', the property lines (208-402C(6)). Farm buildings stand at least 100 ft from any property line (208-402C(5))",
           "min_lot_sqft": 871200,
           "requires": [
             {
               "test": null,
               "condition": "The lot is a farm whose principal use is an agriculture operation",
-              "section": "208-401C"
+              "section": "208-402C"
             }
           ],
           "builds": [
             "detached_new"
           ],
-          "section": "208-401C(1), (2), 208-216 (Table 3)",
-          "url": "https://ecode360.com/print/MA1429?guid=48700291",
+          "section": "208-402C(2), (3), (5), (6), 208-401C(1), 208-216 (Table 3)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700454",
           "confidence": "secondary",
           "note": "871,200 sq ft is 20 acres, two dwellings at one per 10 acres"
         }
       ],
-      "section": "208-216 (Table 3), 208-401C",
+      "section": "208-216 (Table 3), 208-402C, 208-402R",
       "url": "https://ecode360.com/print/MA1429?guid=48699953",
       "verified_on": "2026-11-16",
       "confidence": "secondary"
@@ -166,18 +171,27 @@
       "confidence": "secondary",
       "note": "No historic path found"
     },
-    "building_types": {
-      "value": [
-        "detached"
-      ],
-      "section": "208-401B(1)(c), 208-216 (Table 3)",
-      "url": "https://ecode360.com/print/MA1429?guid=48700291",
-      "verified_on": "2026-11-16",
-      "confidence": "verified",
-      "note": "'Accessory dwelling units are only permitted as accessory to lots with single-family.' In CR and SR the only dwelling Table 3 permits is a single-family detached dwelling"
-    },
     "gates": {
       "value": [
+        {
+          "kind": "building_type",
+          "condition": "A twin or townhouse may not qualify. CR and SR permit only a single-family detached dwelling (Table 3), so the ADU rule is read for a detached house.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "208-216 (Table 3), 208-401B(1)(c)",
+          "url": "https://ecode360.com/print/MA1429?guid=48699953",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "208-401B(1)(c), 208-216 (Table 3)",
+            "url": "https://ecode360.com/print/MA1429?guid=48700291",
+            "note": "'Accessory dwelling units are only permitted as accessory to lots with single-family.' The words do not say detached, and Table 3 names single-family semi-attached and townhouse dwellings, so a twin or townhouse lot may count"
+          }
+        },
         {
           "kind": "building_type",
           "condition": "The unit is accessory to a lot with a single-family dwelling. The property may contain only one dwelling unit before the accessory unit is added, and a permit is needed before the unit is recognized.",
@@ -263,9 +277,36 @@
           "url": "https://ecode360.com/print/MA1429?guid=48696069",
           "confidence": "secondary",
           "outside_zoning_chapter": "Chapter 83"
+        },
+        {
+          "kind": "district",
+          "condition": "Route 910 Overlay (RTO): 'Development in conformance with the RTO district regulations is optional at the election of the applicant.' If an RTO development is not elected, the base district rules apply, and an ADU follows the base district. Table 4 does not permit an ADU in an elected RTO development, which is a conditional use on a tract of at least five acres.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "RTO"
+          ],
+          "section": "208-303B(1), 208-219 (Table 4)",
+          "url": "https://ecode360.com/print/MA1429?guid=48700208"
+        },
+        {
+          "kind": "other",
+          "condition": "Table 1 sets a maximum gross density: CR 0.75 units an acre (0.25 for a country lot), SR 2.0 units an acre (1.0 without public sewer and water). Whether an ADU on an existing lot counts toward it is not settled, since the density figures are framed for subdivisions. If it counts, a house and an ADU need about one acre in SR (two acres without public sewer and water) and 2.7 acres in CR. Ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "CR",
+            "SR"
+          ],
+          "building_types": null,
+          "section": "208-207 (Table 1), 208-901 'Density, gross', 208-203A(3)",
+          "url": "https://ecode360.com/print/MA1429?guid=48699953",
+          "confidence": "secondary"
         }
       ],
-      "section": "208-401B, 208-217B, 208-207, 83-402",
+      "section": "208-401B, 208-217B, 208-207, 208-303, 83-402",
       "url": "https://ecode360.com/print/MA1429?guid=48700291",
       "verified_on": "2026-11-16",
       "confidence": "verified"
@@ -286,7 +327,7 @@
       "url": "https://ecode360.com/print/MA1429?guid=48699953",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "Table 4 lists the ADU as 'N' (use not permitted) in these districts"
+      "note": "Table 4 lists the ADU as 'N' (use not permitted) in these districts. RTO is an optional overlay: a lot in it that does not elect an RTO development follows its base district (208-303B(1))"
     }
   },
   "form": {
@@ -630,7 +671,7 @@
         "url": "https://ecode360.com/print/MA1429?guid=48699953",
         "verified_on": "2026-11-16",
         "confidence": "verified",
-        "note": "'For lots that do not have public sewer and public water facilities.' Stored for a lot with neither service. Whether a lot with only one of them takes this figure is not settled"
+        "note": "'For lots that do not have public sewer and public water facilities.' Stored for a lot with neither service. Width 150 ft without them. Whether a lot with only one of them takes this figure is not settled"
       },
       "min_lot_replaced_in_planned_development": {
         "value": true,
