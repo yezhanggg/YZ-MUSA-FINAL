@@ -1,0 +1,640 @@
+{
+  "provenance": {
+    "jurisdiction": "Bloomsburg town",
+    "instrument": "Town of Bloomsburg Zoning Ordinance (Chapter 27 Zoning, Ord. No. 1055 of 6-3-2024), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 BL2204, Town of Bloomsburg, Columbia County. Ord. No. 1055 (6-3-2024) repealed the former Chapter 27 (Ord. 687 of 1986, as amended) and replaced it with the current text. The land use table (Schedule A, 27-303) is an eCode360 web table and the dimensional tables of 27-304 to 27-314 are web text. New Laws lists only Ord. No. 1073 (8-5-2026), on bicycles",
+    "effective_date": "2024-06-03",
+    "source_urls": [
+      "https://ecode360.com/11770028",
+      "https://ecode360.com/BL2204/laws",
+      "https://ecode360.com/45548396",
+      "https://ecode360.com/print/BL2204?guid=45548319",
+      "https://ecode360.com/print/BL2204?guid=45548389",
+      "https://ecode360.com/print/BL2204?guid=45548500",
+      "https://ecode360.com/print/BL2204?guid=45548897",
+      "https://ecode360.com/print/BL2204?guid=45549477",
+      "https://ecode360.com/print/BL2204?guid=45549505",
+      "https://ecode360.com/print/BL2204?guid=45549744"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Columbia",
+    "municipality_type": "town",
+    "geoid": "4203707128",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11770028",
+    "code_current_through": "2026-04-27",
+    "code_current_through_note": "eCode360 shows the code version 2026-04-27. New Laws: Ord. No. 1073 (8-5-2026), bicycles only",
+    "checks": [
+      "A 'Dwelling, Accessory' (also known as a granny flat) is a special exception in R-C, R-S and R-U (Schedule A, 27-303), under the standards of 27-605.1. The Zoning Hearing Board decides after a hearing",
+      "It is a separate unit 'for one or two family members of the occupant(s) of the primary dwelling', attached to or detached from the house (27-1102). At most two persons live in it (27-605.1H)",
+      "Only as an accessory use to a single-family detached dwelling. One per lot in R-C and R-S, up to two in R-U (27-605.1A, B)",
+      "Built attached to the house with a separate entrance and no shared interior access, inside an existing lawful accessory structure, or as a new structure that meets every zoning rule (27-605.1C)",
+      "No single unit may hold more than 50% of the habitable floor space of the house (27-605.1D)",
+      "One parking space with separate access for each bedroom or sleeping area in the unit (27-605.1G). The house needs one space (27-511.2B(3)). MX-1 needs none (27-511.2A)",
+      "An 'Apartment, Accessory', 'An accessory dwelling unit contained within an existing residential use or located above the ground floor of a mixed-use building', is a by-right accessory use in R-S, R-U, C-R, MX-1, MX-3, C-W and BC, with no family rule in its definition (27-1102, Schedule A). Whether the standards of 27-605.1 reach it is not said",
+      "Accessory structures may not stand in the front yard, and a house may have one accessory building, no larger in building area than the house (27-503.2). A detached accessory structure may stand 3 ft from a side line and 5 ft from the rear line (27-509.1C, D)",
+      "Lot coverage counts all buildings with decks, balconies, stairs and stoops (27-1102)",
+      "In R-U the lot area for a single-family detached dwelling is 3,000 sq ft per dwelling unit (27-306.2). Whether the accessory dwelling counts as a unit for that figure is not said",
+      "A duplex (two units in one principal building) is by right in R-C, R-S, R-U, C-R, MX-2 and BC. R-C, R-S and R-U allow one principal use per lot (27-501)",
+      "A lot of record present when the chapter took effect may hold a single-family dwelling 'and customarily accessory buildings' without meeting lot area or width (27-803). Whether that reaches an accessory dwelling is not said",
+      "No section read bars a use variance. Variances need the five findings of 27-905.4",
+      "In R-U a structure over 35 ft (up to 50 ft) needs section, elevation and sun-shadow studies for Planning Commission review (27-522)"
+    ],
+    "notes": "Zoning office: Town of Bloomsburg, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, in print view. Read: Part 2, Part 3 with Schedule A (the residential rows checked column by column in the full table view), Part 5, Part 6 (27-601 to 27-605.22), Part 8, Part 9 (27-905) and Part 11 definitions (accessory building, apartment accessory, building height, dwelling, dwelling arrangements, dwelling unit, family, floor area, lot coverage, lot of record). Not read: Part 1, Part 4 (airport overlay), Part 7 (signs), Part 10, Part 13 (historical districts and certificates of appropriateness), the rest of 27-605 after 27-605.22 and 27-511.5 after (4). The code search was not used. The ADU-like words were checked by reading every row of Schedule A and the definitions of the dwelling types. Height is measured from the main level of the ground around the building to the highest point of the roof (27-1102). The Zoning District Quick View worksheets of 27-302 are on file at Town Hall and are not part of the online code."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling",
+      "section": "27-1102 'Dwelling, accessory', 27-303 Schedule A, 27-605.1",
+      "url": "https://ecode360.com/print/BL2204?guid=45549744",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A single dwelling unit, also known as a granny flat, on the same lot with and either attached to or detached from the primary dwelling on the lot, which serves as a separate dwelling unit for one or two family members of the occupant(s) of the primary dwelling.' A second listing, 'Apartment, Accessory', is a unit inside an existing residential use (see the other ways to add a unit)"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-1102 'Dwelling, accessory', 27-303 Schedule A, 27-605.1",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A special exception in R-C, R-S and R-U, only for one or two family members of the people in the house"
+    },
+    "scope_districts": {
+      "value": [
+        "R-C",
+        "R-S",
+        "R-U"
+      ],
+      "section": "27-303 Schedule A",
+      "url": "https://ecode360.com/45548396",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "27-303 Schedule A, 27-605.4",
+      "url": "https://ecode360.com/45548396",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Schedule A lists the accessory dwelling and marks it SE only in R-C, R-S and R-U. Blank cells are 'Not Permissible'. A residential use 'not assigned otherwise' is a special exception only in MX-3 (27-605.4), and the accessory dwelling is an assigned use. No section read bars a use variance, so a use variance from the Zoning Hearing Board is still a path to ask for"
+    },
+    "status_outside_by_district": {
+      "value": [
+        {
+          "districts": [
+            "C-R",
+            "MX-1",
+            "MX-3",
+            "C-W",
+            "BC"
+          ],
+          "status": "conversion_only",
+          "section": "27-303 Schedule A, 27-1102 'Apartment, accessory'",
+          "url": "https://ecode360.com/45548396",
+          "note": "The accessory dwelling is not permitted here, but an 'Apartment, Accessory', a unit inside an existing residential use or above the ground floor of a mixed-use building, is a by-right accessory use (see the other ways to add a unit)"
+        }
+      ],
+      "section": "27-303 Schedule A",
+      "url": "https://ecode360.com/45548396",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "27-303 Schedule A, 27-602, 27-604, 27-905.3",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The Zoning Hearing Board decides special exceptions on the general standards of 27-604 and 27-905.3 and the specific standards of 27-605.1, and may attach conditions"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-905.4",
+      "url": "https://ecode360.com/print/BL2204?guid=45549505",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The Zoning Hearing Board grants a variance on unique physical conditions, no other way to develop in conformity, hardship not self-made, no harm to the neighborhood and the least relief (27-905.4). No section read bars a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Accessory apartment inside an existing house or above the ground floor of a mixed-use building",
+          "path": "by_right",
+          "districts": [
+            "R-S",
+            "R-U",
+            "C-R",
+            "MX-1",
+            "MX-3",
+            "C-W",
+            "BC"
+          ],
+          "conditions": "'Apartment, Accessory: An accessory dwelling unit contained within an existing residential use or located above the ground floor of a mixed-use building' (27-1102). A by-right accessory use in these districts (Schedule A). The definition sets no family rule. One parking space per dwelling unit (27-511.2B(3)), none in MX-1 (27-511.2A)",
+          "min_lot_sqft": null,
+          "section": "27-1102 'Apartment, accessory', 27-303 Schedule A",
+          "url": "https://ecode360.com/45548396",
+          "adu_listing": true,
+          "confidence": "secondary",
+          "note": "Schedule A gives no specific standards for it. 27-605.1 speaks of 'accessory dwelling' units, and whether its limits (two persons, 50% of the house, parking per bedroom) reach the accessory apartment is not said. In R-U the single-family lot area is 3,000 sq ft per dwelling unit (27-306.2). Ask the zoning officer"
+        },
+        {
+          "name": "Duplex (two units in one principal building)",
+          "path": "by_right",
+          "districts": [
+            "R-C",
+            "R-S",
+            "R-U",
+            "C-R",
+            "MX-2",
+            "BC"
+          ],
+          "conditions": "'Two dwelling units in one principal building and on one lot, where the dwelling units are either oriented as an \"over-under\" or a \"side-by-side.\"' (27-1102). Permitted by right (Schedule A). R-C, R-S and R-U allow one principal use per lot (27-501), so the house becomes the duplex. One parking space per dwelling unit (27-511.2B(3))",
+          "min_lot_by_district": {
+            "R-C": 20000,
+            "R-S": 7500,
+            "R-U": 5000,
+            "C-R": 5000,
+            "MX-2": 12000,
+            "BC": 4000
+          },
+          "section": "27-1102 'Duplex', 27-303 Schedule A, 27-304 to 27-313",
+          "url": "https://ecode360.com/print/BL2204?guid=45548389",
+          "confidence": "verified",
+          "note": "R-U and C-R set 5,000 sq ft for a duplex (27-306.2, 27-307.2). BC sets 2,000 sq ft per unit for a two-unit dwelling (27-311.1A). R-C, R-S and MX-2 give only the district lot area"
+        }
+      ],
+      "section": "27-303 Schedule A, 27-1102",
+      "url": "https://ecode360.com/45548396",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-C",
+        "R-S",
+        "R-U"
+      ],
+      "section": "27-303 Schedule A",
+      "url": "https://ecode360.com/45548396",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-605.1A, B",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'as an accessory use to a principal single-family detached dwelling'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/11770028",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found. Part 13 (historical districts) was not read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "MX-2",
+        "IN",
+        "I-P"
+      ],
+      "section": "27-303 Schedule A",
+      "url": "https://ecode360.com/45548396",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "MX-2 permits single-family detached dwellings and duplexes but no accessory dwelling or accessory apartment. IN permits single-family detached dwellings. I-P lists no dwelling"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "A unit attached to the house has a separate entrance that does not share an interior access with the main residence.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-605.1C(1)",
+          "url": "https://ecode360.com/print/BL2204?guid=45548897"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A unit in an existing accessory structure needs a structure that is legally permitted and meets all zoning requirements.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-605.1C(2)",
+          "url": "https://ecode360.com/print/BL2204?guid=45548897"
+        },
+        {
+          "kind": "other",
+          "condition": "One accessory building is permitted for a principal residential dwelling. A new building for the unit on a lot that already has an accessory building may exceed that.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "no_accessory_building",
+          "section": "27-503.2B, 27-605.1C(3)",
+          "url": "https://ecode360.com/print/BL2204?guid=45548500",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-605.1C(3)",
+            "url": "https://ecode360.com/print/BL2204?guid=45548897",
+            "note": "27-605.1C allows the unit 'As a new structure', and the code does not say whether the new structure counts as the one accessory building of 27-503.2B"
+          }
+        },
+        {
+          "kind": "utilities",
+          "condition": "An approved means of sewage disposal and a reliable water supply.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-605.1E",
+          "url": "https://ecode360.com/print/BL2204?guid=45548897"
+        },
+        {
+          "kind": "design",
+          "condition": "A unit on floors above or below grade has a direct means of escape to ground level.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-605.1F",
+          "url": "https://ecode360.com/print/BL2204?guid=45548897"
+        }
+      ],
+      "section": "27-503.2, 27-605.1",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "attached",
+        "garage_conversion",
+        "over_garage",
+        "detached_new"
+      ],
+      "section": "27-605.1C, 27-1102 'Dwelling, accessory'",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'(1) Attached to the principal building, with a separate entrance that does not share an interior access with the main residence. (2) Within an existing accessory structure on the property that is legally permitted and meets all zoning requirements. (3) As a new structure'. A unit inside the house is the accessory apartment, a separate listing (see the other ways to add a unit)"
+    }
+  },
+  "size": {
+    "max_share_of_part": {
+      "value": {
+        "share": 0.5,
+        "part": "habitable floor space"
+      },
+      "section": "27-605.1D",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Regardless of the location of the accessory dwelling, no single accessory dwelling shall comprise more than 50% of the habitable floor space contained within the principal single-family detached dwelling.'"
+    }
+  },
+  "coverage": {
+    "max_building_coverage": {
+      "value": null,
+      "section": "27-1102 'Lot coverage'",
+      "url": "https://ecode360.com/print/BL2204?guid=45549744",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "Set by district. Lot coverage is 'The percentage of the lot area covered by the area of all buildings thereon as viewed from the site plan and/or roof line and shall include all appurtenances, such as decks, balconies, stairs, stoops, etc.'"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 3,
+      "section": "27-509.1C",
+      "url": "https://ecode360.com/print/BL2204?guid=45548500",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Accessory structures detached from a principal building may encroach into side yards but shall not be closer than three feet to the side property line.' 27-605.1C(3) asks a new structure to meet 'all zoning requirements for setbacks', which may be read as the district yards"
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "27-509.1D",
+      "url": "https://ecode360.com/print/BL2204?guid=45548500",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Accessory structures detached from a principal building may encroach into rear yards but shall not be closer than five feet to the rear property line.'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-503.2A",
+      "url": "https://ecode360.com/print/BL2204?guid=45548500",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory structures shall not be permitted in the front yard areas.'"
+    },
+    "accessory_height_applies": {
+      "value": false,
+      "section": "27-304, 27-305, 27-306",
+      "url": "https://ecode360.com/print/BL2204?guid=45548389",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The district tables set one building height for 'All Structures'. The code sets no separate height for accessory buildings"
+    },
+    "accessory_share_of_house_part": {
+      "value": [
+        {
+          "what": "an accessory building for a residential use",
+          "share": 1.0,
+          "of": "the building area of the house",
+          "section": "27-503.2D",
+          "url": "https://ecode360.com/print/BL2204?guid=45548500",
+          "note": "'For residential uses, the total building area of an accessory building shall be equal to or less than the building area of the principal building.'"
+        }
+      ],
+      "section": "27-503.2D",
+      "url": "https://ecode360.com/print/BL2204?guid=45548500",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "27-605.1",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "27-605.1 sets no owner occupancy rule. The occupant must be a family member of the occupants of the house"
+    },
+    "family_only": {
+      "value": true,
+      "section": "27-1102 'Dwelling, accessory'",
+      "url": "https://ecode360.com/print/BL2204?guid=45549744",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'serves as a separate dwelling unit for one or two family members of the occupant(s) of the primary dwelling'"
+    },
+    "occupancy": {
+      "value": "One or two family members of the people living in the house. 'An accessory dwelling shall be occupied by not more than two persons.'",
+      "section": "27-1102 'Dwelling, accessory', 27-605.1H",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-605.1A, B",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "One in R-C and R-S. In R-U 'no more than two accessory dwellings' (27-605.1B). The lower figure is shown"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-605.1G",
+      "url": "https://ecode360.com/print/BL2204?guid=45548897",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "'Parking on the lot shall consist of one parking spot, with separate access, for each bedroom or sleeping area in the accessory dwelling unit.'"
+    },
+    "reading": {
+      "value": "One space with its own access for each bedroom or sleeping area in the unit (27-605.1G), so one for a one-bedroom unit. The house needs at least one space (27-511.2B(3)). A building that existed when the chapter took effect keeps its parking unless it is changed or expanded (27-511.1D).",
+      "section": "27-605.1G, 27-511.1D, 27-511.2B(3)",
+      "url": "https://ecode360.com/print/BL2204?guid=45548500",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-C": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-304.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "100 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-304.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-304.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-304.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-304.1, 27-1102 'Lot coverage'",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All buildings, with decks, balconies, stairs and stoops"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-304.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All structures, or no more than three stories"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "27-304.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-S": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "27-305.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "75 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-305.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-305.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-305.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-305.1, 27-1102 'Lot coverage'",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All buildings, with decks, balconies, stairs and stoops"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-305.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All structures, or no more than three stories"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "27-305.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-U": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "27-306.1, 27-306.2",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "District 30 ft wide. A single-family detached dwelling needs 3,000 sq ft per dwelling unit and 40 ft of width (27-306.2)"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 3000,
+        "section": "27-306.2",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'Single-Family Detached 3,000 square feet/D.U.' The code does not say whether an accessory dwelling counts as a unit for this figure. Ask the zoning officer"
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "27-306.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-306.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "27-306.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "27-306.1, 27-1102 'Lot coverage'",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All buildings, with decks, balconies, stairs and stoops"
+      },
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "27-306.1, 27-522",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "All structures. Over 35 ft needs section, elevation and sun-shadow studies for Planning Commission review and a recommendation to Town Council (27-522)"
+      }
+    },
+    "C-R": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "27-307.1, 27-307.2",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "50 ft wide. A single-family detached dwelling needs 4,000 sq ft per dwelling unit and 40 ft of width"
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "27-307.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "No minimum"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-307.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "27-307.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 1.0,
+        "section": "27-307.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-307.1",
+        "url": "https://ecode360.com/print/BL2204?guid=45548389",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    }
+  }
+}

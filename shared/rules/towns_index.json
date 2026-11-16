@@ -1,6 +1,6 @@
 {
   "about": "Pennsylvania towns targeted for ADU rule files, ranked. Made by tools/town_targets.py. Town workers update only 'status' and 'status_note'. See TOWNS.md.",
-  "generated_on": "2026-11-15",
+  "generated_on": "2026-11-16",
   "population_source": {
     "title": "2020 Census Redistricting Data (PL 94-171), Pennsylvania, county subdivisions",
     "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Pennsylvania/pa2020.pl.zip",
@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 149,
-      "population": 5903429,
-      "share_of_pa": 0.454
+      "towns_beyond_the_two_cities": 152,
+      "population": 5941291,
+      "share_of_pa": 0.4569
     }
   ],
   "towns": [
@@ -3674,6 +3674,78 @@
         "added as batch 32 by population. Code Chapter 27 has no ADU text for a house lot (27-305.2H residential conversion by special exception)"
       ],
       "status_note": "Open points: (1) TN and CB-2 are named districts (27-104, Ord. 21-12) with no use text, as Part 12 is reserved and Part 16 was repealed, and the PDF zoning map was not checked. (2) R-2 building coverage is 10% in 27-403.2 but 15% in the 27-305.2A(2) table. The lower figure is stored. (3) Which lot area the VMU residential conversion needs is not said. 20,000 sq ft is read from the detached dwelling figure of 27-1704. (4) The Table of Use Regulations (a PDF) was not checked."
+    },
+    {
+      "geoid": "4204767344",
+      "geoid_aliases": [],
+      "name": "St. Marys city",
+      "county": "Elk",
+      "type": "city",
+      "population": 12738,
+      "population_with_aliases": 12738,
+      "housing_units": 6048,
+      "pop_rank": 197,
+      "file": "pa_elk_st_marys",
+      "batch": 33,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/15734800",
+      "plain_fetch": false,
+      "code_current_through": "2025-12-15",
+      "code_note": "Zoning: Chapter 27 Zoning (Official Zoning Ordinance of 2005, Ord. 227 of 12-18-2006, as amended through Ord. No. 334 of 1-16-2023). ADU text: 'Accessory dwelling units' by special exception in RU only (202.3B, 402): at least 400 sq ft, at most 50% of the house's habitable floor area, one parking space, no owner rule since Ord. No. 314 (11-18-2019) repealed it. ECHO housing by right as an accessory use in RC (200.2P(5)) and by special exception in RS (425). Two-family conversions by right in RU and RF, and in RC for a house of 3,000 sq ft that existed in 2006 (200.2M). Use lists and design tables are web text. The only attachments are sign tables. New Laws: none on zoning. Read in the browser on eCode360 (SA2440).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 402 accessory dwelling units by special exception (RU))"
+      ],
+      "status_note": "First reading, batch 33. Open: 402 names no form (internal, attached, garage or new building) since Ord. No. 314 repealed the existing-accessory-building rule, so every form is shown for the Board to hear. Also open: whether a twin or row house can host one (402.4 speaks of 'the principal detached dwelling unit'), the 306 minimum floor area (600 sq ft) against 402.4 (400 sq ft), whether the unit counts as a dwelling unit for 312 parking, and whether 507 lot-of-record relief reaches an ADU."
+    },
+    {
+      "geoid": "4203707128",
+      "geoid_aliases": [],
+      "name": "Bloomsburg town",
+      "county": "Columbia",
+      "type": "town",
+      "population": 12711,
+      "population_with_aliases": 12711,
+      "housing_units": 5140,
+      "pop_rank": 198,
+      "file": "pa_columbia_bloomsburg",
+      "batch": 33,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11770028",
+      "plain_fetch": false,
+      "code_current_through": "2026-04-27",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. No. 1055 of 6-3-2024, which replaced the 1986 ordinance). ADU text: 'Dwelling, Accessory' (granny flat) for one or two family members of the occupants, a special exception in R-C, R-S and R-U (27-303, 27-605.1): one per lot in R-C and R-S, two in R-U, at most 50% of the house's habitable floor space, at most two persons, one parking space per bedroom. 'Apartment, Accessory', a unit inside an existing residential use or above the ground floor of a mixed-use building, a by-right accessory use in R-S, R-U, C-R, MX-1, MX-3, C-W and BC. Schedule A is an eCode360 web table. New Laws: Ord. No. 1073 (bicycles) only. Read in the browser on eCode360 (BL2204).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-605.1 accessory dwelling for family members by special exception)"
+      ],
+      "status_note": "First reading, batch 33. Open: whether the 27-605.1 limits reach the by-right 'Apartment, Accessory' (Schedule A gives it no standards), whether the accessory dwelling counts toward the R-U 3,000 sq ft per dwelling unit figure (27-306.2), whether a new detached unit counts as the one accessory building of 27-503.2B, and whether detached units take the 3 ft and 5 ft accessory yards of 27-509.1 or the district yards (27-605.1C(3)). R-U allows two accessory dwellings, which the file cannot hold (it shows one)."
+    },
+    {
+      "geoid": "4201344328",
+      "geoid_aliases": [],
+      "name": "Logan township",
+      "county": "Blair",
+      "type": "township",
+      "population": 12413,
+      "population_with_aliases": 12413,
+      "housing_units": 5449,
+      "pop_rank": 201,
+      "file": "pa_blair_logan",
+      "batch": 33,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/28662373",
+      "plain_fetch": false,
+      "code_current_through": "2024-06-27",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. 11-15-79, as amended through Ord. No. 06-27-24). No ADU text. Residential districts permit only the listed uses. R-1 allows one single-family dwelling or one two-family dwelling on a lot (501.1), R-1A no two-family dwellings (601), R-2 two-family and multiple family dwellings (701.2) and the alteration of a pre-1979 house into a multiple family dwelling at 1,000 sq ft of lot per unit (1003). Business and Industrial districts permit any use not prohibited (801, 901). Each district part lists its uses and figures in text. The only attachment is the zoning map. New Laws: none on zoning. Read in the browser on eCode360 (LO3531).",
+      "why": [
+        "added as batch 33 by population. Code Chapter 27 has no ADU text"
+      ],
+      "status_note": "First reading, batch 33. Open: whether the open use lists of Business (801.2) and Industrial (901) reach an accessory unit on a house lot, whether farms may hold more than one agricultural dwelling (401A(1) against 401A(6) and 501), and the enactment date used for 1003 conversions (read as 11-15-1979 from the ordinance number). District names are written out in the code with no short codes."
     }
   ]
 }

@@ -1,0 +1,889 @@
+{
+  "provenance": {
+    "jurisdiction": "St. Marys city",
+    "instrument": "City of Saint Marys Official Zoning Ordinance of 2005 (Chapter 27 Zoning, Ord. 227 of 12-18-2006, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 SA2440, City of St Marys, Elk County. Chapter 27 Zoning was adopted by Ord. 227 (12-18-2006) and amended by Ord. 261, 268, 269, 275, 279, 296, 306, 314 (11-18-2019) and 334 (1-16-2023), all folded into the text. Ord. No. 314 repealed the owner occupancy rule and the existing accessory building rule of the ADU section (402.2, 402.3) and added two-family conversions by right in RU and RF. New Laws lists only resolutions and Ord. No. 347, 348 (Appendix D) and 349 (property maintenance code), none on zoning. The district use lists and the design tables are web text. The only attachments are sign tables",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/15734800",
+      "https://ecode360.com/SA2440/laws",
+      "https://ecode360.com/print/SA2440?guid=15734801",
+      "https://ecode360.com/print/SA2440?guid=15735278",
+      "https://ecode360.com/15735278",
+      "https://ecode360.com/15736041",
+      "https://ecode360.com/15736561",
+      "https://ecode360.com/print/SA2440?guid=15736561",
+      "https://ecode360.com/15737410",
+      "https://ecode360.com/15737432"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Elk",
+    "municipality_type": "city",
+    "geoid": "4204767344",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/15734800",
+    "code_current_through": "2025-12-15",
+    "code_current_through_note": "eCode360 shows the code version 2025-12-15. New Laws holds no zoning ordinance",
+    "checks": [
+      "An accessory dwelling unit is a special exception only in the RU Residential Urban Zone (202.3B, 402.1). The Zoning Hearing Board decides after a hearing on the general criteria of 604.3",
+      "No owner occupancy rule. The rule that the house be owner occupied and the rule that the unit sit only in an accessory building that existed in 2006 were both repealed by Ord. No. 314 of 11-18-2019",
+      "At least 400 sq ft of habitable floor area, and the unit may not occupy more than 50% of the habitable floor area of the principal detached dwelling (402.4). The general minimum floor area of 306 is 600 sq ft for single-family, duplex and townhouse units and does not name an ADU",
+      "The applicant gives expert testimony that exterior changes fit the residential character. Floors above or below grade need a direct way out to ground level and a hard-wired fire detector. Approved sewage disposal and water supply. No permanent sign (402.5 to 402.9)",
+      "At least one off-street parking space for the unit (402.8), on top of the two spaces a house needs (312)",
+      "The code does not say whether the unit may be in a new detached building, over a garage or inside the house. The size rule speaks of the share of 'the principal detached dwelling unit' it may occupy. Ask the zoning officer which forms the Board will hear",
+      "Accessory residential structures in RU stand at least 3 ft from a side line, 5 ft from the rear line and 20 ft from the street, and are at most 15 ft tall (202.4, 202.5B). A detached accessory structure over 900 sq ft is its own special exception in RU (202.3A)",
+      "Lot coverage means impervious cover: buildings, driveways, parking and sidewalks (112). RU allows 40%",
+      "ECHO housing (an 'elder cottage') is a by-right accessory use in RC (200.2P(5)) and a special exception in RS (201.3B, 425), only for a related person 50 or older (55 in RS) or with a disability, or a related caregiver, at most two people, removed when no longer needed",
+      "A two-family conversion of a house is by right in RU and RF (202.2J, 203.2K), and in RC for a house that existed on 12-18-2006 with at least 3,000 sq ft (200.2M)",
+      "More than one principal use may be on one lot if each structure meets every lot and yard rule as though it were on its own lot, with land development approval and its own approved sewage disposal (308)",
+      "A use the code neither permits nor denies may be a special exception only if it is not permitted in any other zone (107). The ADU is permitted in RU, so 107 does not open it elsewhere. No section read bars a use variance",
+      "In the Floodplain Overlay Zone only the uses listed in 230.6 and 230.7 'and no others' are permitted, and no dwelling is listed",
+      "A lot of record may hold a single-family detached dwelling 'and accessory uses' though it is smaller than the zone asks (507). Whether that relief reaches an ADU is not said"
+    ],
+    "notes": "Zoning office: City of St. Marys Code Enforcement Department. Read in a browser on eCode360, one page at a time, on 2026-11-16. Read: Part 1 (107 and the 112 definitions: accessory building, accessory use, building, building height, conversion apartments, density, duplex, dwelling, dwelling unit, ECHO housing, family, floor area, impervious surface, land development, lot coverage, lot of record), Part 2 every zone's use list and design table (RC, RS, RU, RF, CB, HC, MI, LI, I) and the Floodplain Overlay (230), Part 3 (301, 303, 304, 305, 306, 307, 308, 309, 312 residential parking rows), Part 4 (400, 402, 416 in part, 425), Part 5 (500 to 507), Part 6 (604) and New Laws. Not read: 231 Airport Safety Overlay, 302, 310, 311, 313 to 327 except as named, Part 4 sections other than those named, Part 7 (704 conditional uses) and the zoning map. The code search did not load, so the ADU-like words were checked by reading every use list. The code does not define 'accessory dwelling unit'. The ECHO definition calls an elder cottage 'an accessory dwelling unit'. Height is measured from the mean level of the ground at the building corners to the highest point of the roof (112). MI permits as an accessory use 'Housing for students, employees and their families in accordance with the standards of the RU Zone' (212.2O(4)), housing for a medical campus, not a house lot."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "402, 202.3B",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Within the RU Zone, accessory dwelling units are permitted by special exception, subject to the following criteria.' The term is not defined in 112. ECHO housing is defined as 'An accessory dwelling unit placed on a property' for a related elderly or disabled person or caregiver"
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "202.3B, 402.1",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Special exception in RU, decided by the Zoning Hearing Board (604.3). No family, owner or age rule since Ord. No. 314 (11-18-2019)"
+    },
+    "scope_districts": {
+      "value": [
+        "RU"
+      ],
+      "section": "202.3B, 402.1",
+      "url": "https://ecode360.com/print/SA2440?guid=15735483",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "107, 200 to 221",
+      "url": "https://ecode360.com/print/SA2440?guid=15734817",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Only the RU use list names accessory dwelling units. A use not provided for may be a special exception only if it 'is not permitted in any other zone under the terms of this chapter' (107). The ADU is permitted in RU, so that path does not open it in other zones. No section read bars a use variance, so a use variance from the Zoning Hearing Board is still a path to ask for"
+    },
+    "status_outside_by_district": {
+      "value": [
+        {
+          "districts": [
+            "RC"
+          ],
+          "status": "family_only",
+          "section": "200.2P(5)",
+          "url": "https://ecode360.com/print/SA2440?guid=15735278",
+          "note": "ECHO housing is a by-right accessory use in RC, only for a related person 50 or older or with a disability, or a related caregiver (see the other ways to add a unit)"
+        },
+        {
+          "districts": [
+            "RS"
+          ],
+          "status": "family_only",
+          "section": "201.3B, 425",
+          "url": "https://ecode360.com/print/SA2440?guid=15735462",
+          "note": "ECHO housing is a special exception in RS, only for a related person 55 or older or with a disability (see the other ways to add a unit)"
+        }
+      ],
+      "section": "200.2P(5), 201.3B, 425",
+      "url": "https://ecode360.com/print/SA2440?guid=15735278",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "202.3B, 402.1, 604.3",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The Zoning Hearing Board hears special exceptions. The applicant shows by credible evidence that the use fits the purpose of the chapter, does not detract from nearby properties or change the neighborhood's character, has adequate public facilities and meets its own criteria (604.3). The Board may attach conditions"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "604.4",
+      "url": "https://ecode360.com/15737432",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The Zoning Hearing Board grants a variance on unique physical conditions, no other way to use the property, hardship not self-made, no harm to the neighborhood and the least relief (604.4). No section read bars a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "ECHO housing (elder cottage) in RC",
+          "path": "by_right",
+          "districts": [
+            "RC"
+          ],
+          "conditions": "An accessory use in RC. The elder cottage is of portable construction and at most 900 sq ft, or a separate unit inside a dwelling or accessory building that existed on 12-18-2006. Lived in by one person at least 50 years old or with a disability who is related by blood, marriage or adoption to the people in the house, or by a related caregiver, at most two people. Connected to the house's sewer, water and other utilities. One extra all-weather parking space. A new cottage stands only in the side or rear yard and meets the side and rear yards for principal uses. Building coverage of the house, accessory structures and cottage stays within the zone's lot coverage. Removed within three months after no qualifying person lives there. A temporary zoning permit, reviewed every 12 months",
+          "min_lot_sqft": null,
+          "section": "200.2P(5), 112 'ECHO housing'",
+          "url": "https://ecode360.com/print/SA2440?guid=15735278",
+          "adu_listing": true,
+          "confidence": "verified",
+          "note": "The code calls ECHO housing 'An accessory dwelling unit placed on a property'. 306 sets a 250 sq ft minimum floor area for ECHO housing"
+        },
+        {
+          "name": "ECHO housing (elder cottage) in RS",
+          "path": "special_exception",
+          "districts": [
+            "RS"
+          ],
+          "conditions": "At most 900 sq ft, except that an existing accessory structure may be converted for this use during its qualified occupancy. Lived in by an elderly person (55 or older) or a mentally, physically or emotionally challenged person related to the people in the house by blood, marriage or adoption, at most two people. Connected to the house's utilities, and on-site sewer or water shown to have the capacity. One extra all-weather parking space. A new cottage stands only in the side or rear yard and meets the side and rear yards for principal uses. Building coverage of the house, existing accessory structures and cottage stays within the RS figure. Removed within 90 days after no qualifying person lives there. A temporary use and occupancy permit, reviewed every 12 months",
+          "min_lot_sqft": null,
+          "section": "201.3B, 425",
+          "url": "https://ecode360.com/15736561",
+          "adu_listing": true,
+          "confidence": "verified",
+          "note": "425.4 says 55 or older while the 112 definition says at least 50. The stricter figure is shown"
+        },
+        {
+          "name": "Two-family conversion of a house (RU, RF)",
+          "path": "by_right",
+          "districts": [
+            "RU",
+            "RF"
+          ],
+          "conditions": "Two-family conversions are a permitted use. 'All units on floors above the first story and/or below grade shall have a permanently affixed direct means of escape to ground level and a hard-wired smoke alarm.' A conversion apartment is 'The adaptation of one single-family detached dwelling to two or more dwelling units' (112). Two parking spaces per unit (312). An apartment of a two-family conversion needs at least 250 sq ft (306)",
+          "min_lot_sqft": null,
+          "section": "202.2J, 203.2K, 112 'Conversion apartments', 312",
+          "url": "https://ecode360.com/print/SA2440?guid=15735483",
+          "confidence": "verified",
+          "note": "Added by Ord. No. 314 (11-18-2019). The design tables give no lot figure for a conversion. A new duplex in RU needs 6,250 sq ft per unit"
+        },
+        {
+          "name": "Two-family conversion of a large older house (RC)",
+          "path": "by_right",
+          "districts": [
+            "RC"
+          ],
+          "conditions": "'A detached single-family dwelling that existed on the effective date of this chapter and contained (at that time) at least 3,000 square feet may be converted into two dwelling units.' Approved water supply and sewage disposal. No exterior change that alters the residential character, except fire escapes. Every floor above grade has a direct way out to ground level. 'Four off-street parking spaces shall be provided.' Any required land development approvals",
+          "min_lot_sqft": null,
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "2006-12-19",
+              "condition": "The house existed on 12-18-2006, when the chapter took effect",
+              "section": "200.2M"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 3000,
+              "condition": "The house had at least 3,000 sq ft on that date",
+              "section": "200.2M"
+            }
+          ],
+          "section": "200.2M",
+          "url": "https://ecode360.com/print/SA2440?guid=15735278",
+          "confidence": "verified",
+          "note": "The size is what the house held on the effective date, not after later additions"
+        },
+        {
+          "name": "Duplex (two-family building) in RU or RF",
+          "path": "by_right",
+          "districts": [
+            "RU",
+            "RF"
+          ],
+          "conditions": "Duplexes are a permitted use in RU and RF. A duplex is 'A freestanding building containing two dwelling units for two families, arranged in a side-by-side or over-and-under configuration' (112). In RU a duplex lot needs 6,250 sq ft per unit and 40 ft of width. In RF the table sets no lot area and 40 ft of width. Two parking spaces per unit (312)",
+          "min_lot_by_district": {
+            "RU": 12500
+          },
+          "section": "202.2B, 202.4, 203.2B, 203.5, 112 'Dwelling'",
+          "url": "https://ecode360.com/print/SA2440?guid=15735483",
+          "confidence": "verified",
+          "note": "A building of two units, not a house with a separate accessory unit"
+        },
+        {
+          "name": "Second principal dwelling on one lot",
+          "path": "by_right",
+          "districts": [
+            "RC",
+            "RS",
+            "RU",
+            "RF"
+          ],
+          "conditions": "'More than one principal use may be established on a single lot, provided that all lot and yard requirements, standards, and other requirements of this chapter shall be met for each structure, as though it were on an individual lot'. Each house needs its own approved sewage disposal, and two residential buildings on one lot are a land development (112 'Land development'). In RU that means 6,250 sq ft for each house. In RS and RC the lot area for each house depends on public sewer and water (201.4, 200.5)",
+          "min_lot_by_district": {
+            "RU": 12500
+          },
+          "land_development": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "Each house meets the zone's lot area, width and yards as though it stood on its own lot",
+              "section": "308"
+            }
+          ],
+          "section": "308, 112 'Land development'",
+          "url": "https://ecode360.com/15736041",
+          "confidence": "secondary",
+          "note": "308 speaks of principal uses in general. Whether the city reads it to allow two single-family houses on one lot is not settled. Ask the zoning officer"
+        },
+        {
+          "name": "Upper-floor residential units (CB)",
+          "path": "by_right",
+          "districts": [
+            "CB"
+          ],
+          "conditions": "'Upper floor (non-first floor or ground floor) residential unit(s)' are a permitted use in the Central Business Zone (210.2S). CB lists no single-family house",
+          "min_lot_sqft": null,
+          "section": "210.2S",
+          "url": "https://ecode360.com/print/SA2440?guid=15735277",
+          "confidence": "verified",
+          "note": "Added by Ord. No. 314 (11-18-2019). The host is a building in the business zone, not a house lot"
+        }
+      ],
+      "section": "200.2M, 200.2P(5), 202.2J, 203.2K, 210.2S, 308, 425",
+      "url": "https://ecode360.com/print/SA2440?guid=15735277",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RU"
+      ],
+      "section": "202.3B",
+      "url": "https://ecode360.com/print/SA2440?guid=15735483",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/15734800",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "CB",
+        "HC",
+        "MI",
+        "LI",
+        "I"
+      ],
+      "section": "210, 211, 212, 220, 221",
+      "url": "https://ecode360.com/print/SA2440?guid=15735277",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "CB permits upper-floor residential units but no house. HC, LI and I list no dwelling. MI lists housing for students, employees and their families as an accessory use to the medical campus"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "The size rule measures the unit against 'the principal detached dwelling unit', which reads as a detached house. A twin or row house may not qualify.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "402.4",
+          "url": "https://ecode360.com/print/SA2440?guid=15736561",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "202.3B",
+            "url": "https://ecode360.com/print/SA2440?guid=15735483",
+            "note": "The RU list makes accessory dwelling units a special exception without naming the house type, and RU also permits duplexes"
+          }
+        },
+        {
+          "kind": "design",
+          "condition": "The applicant gives expert testimony that any exterior change to the building, except required fire escapes, fits the property's residential character. Units on floors above or below grade need a direct way out to ground level and at least one hard-wired fire detector.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "402.5, 402.6",
+          "url": "https://ecode360.com/print/SA2440?guid=15736561"
+        },
+        {
+          "kind": "utilities",
+          "condition": "An approved means of sewage disposal and water supply.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "402.7",
+          "url": "https://ecode360.com/print/SA2440?guid=15736561"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Overlay Zone only the uses listed in 230.6 and 230.7 'and no others' are permitted. No dwelling is listed, and enclosed accessory structures are excluded. A lot in the overlay likely cannot take a unit. Ask the zoning officer.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP"
+          ],
+          "section": "230.6, 230.7",
+          "url": "https://ecode360.com/15735278",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "402, 230",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage",
+        "detached_new"
+      ],
+      "section": "402, 112 'ECHO housing'",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "402 names no form. Ord. No. 314 repealed the rule that the unit sit only in an accessory building that existed in 2006. 402.4 speaks of the share of the house the unit may 'occupy', and 402.5 of exterior changes to 'the building'. The code calls a portable elder cottage an accessory dwelling unit. All forms are shown for the Board to hear. Ask the zoning officer"
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": 400,
+      "section": "402.4",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The accessory dwelling unit shall contain no less than 400 square feet of habitable floor area'. The general table of 306 asks 600 sq ft for single-family, duplex and townhouse units and does not name an ADU"
+    },
+    "max_share_of_part": {
+      "value": {
+        "share": 0.5,
+        "part": "habitable floor area (rooms used for living, with closets, halls and stairs, not cellars, attics, utility rooms or unheated areas)"
+      },
+      "section": "402.4, 112 'Floor area, habitable'",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'the accessory dwelling unit shall not occupy more than 50% of the habitable floor area of the principal detached dwelling unit.'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "202.5B",
+      "url": "https://ecode360.com/print/SA2440?guid=15735483",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Accessory buildings and structures: 15 feet' in RU. The code does not say whether a unit in its own building is an accessory structure for height. Principal buildings may be 35 ft"
+    },
+    "accessory_structure_threshold_sqft": {
+      "value": 900,
+      "section": "202.3A",
+      "url": "https://ecode360.com/print/SA2440?guid=15735483",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "In RU 'Accessory detached structures exceeding 900 square feet of total floor area' are a special exception. The cross reference to 401 points to a reserved section"
+    },
+    "district_yards_bind_accessory": {
+      "value": false,
+      "section": "202.4",
+      "url": "https://ecode360.com/print/SA2440?guid=15735483",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The RU table gives accessory residential structures their own yards (front the same as the house or 20 ft, whichever is less, side 3 ft, both sides 6 ft, rear 5 ft)"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "402.2",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Former 402.2, which allowed one ADU as an accessory use to an owner-occupied single-family detached dwelling, was repealed by Ord. No. 314 (11-18-2019)"
+    },
+    "family_only": {
+      "value": false,
+      "section": "402",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "402 sets no family or age rule. ECHO housing in RC and RS is family only"
+    },
+    "max_adus": {
+      "value": null,
+      "section": "402",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "402 does not set a number. The repealed 402.2 spoke of one ADU"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "402.8",
+      "url": "https://ecode360.com/print/SA2440?guid=15736561",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'At least one off-street parking space shall be provided for the accessory dwelling unit.'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "402.8, 312",
+      "url": "https://ecode360.com/15736041",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Two spaces for the single-family detached house (312) and one for the unit (402.8)"
+    },
+    "reading": {
+      "value": "The unit needs at least one space (402.8) and the house two (312), so three in all. If the city counts the unit as a dwelling unit under the 312 schedule (2 per unit), four. Ask the zoning officer.",
+      "section": "402.8, 312",
+      "url": "https://ecode360.com/15736041",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "RU": {
+      "min_lot_sqft": {
+        "value": 6250,
+        "section": "202.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family dwellings, 50 ft wide. Duplexes 6,250 sq ft per unit and 40 ft wide. Other permitted uses 7,000 sq ft. The code does not say the ADU needs its own lot area"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "202.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Where two adjacent buildings sit closer, the average of the lesser setbacks becomes the minimum (303.1)"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "202.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 12,
+        "section": "202.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "202.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family dwellings and duplexes. Other permitted uses 25 ft"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "202.4, 112 'Lot coverage'",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot coverage is 'The area of a lot which is covered with an impervious surface (e.g., buildings, driveways, parking area, and sidewalks)'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "202.5A",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Measured from the mean level of the ground at the building corners to the highest point of the roof (112)"
+      },
+      "accessory_setback_front_ft": {
+        "value": 20,
+        "section": "202.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Accessory residential structures: 'Same as principal structure or 20, whichever is less'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "202.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both sides together 6 ft. The table's footnote marks have no notes"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "202.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "202.5B",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "RF": {
+      "setback_front_ft": {
+        "value": 20,
+        "section": "203.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family dwellings. The table sets no lot area for single-family dwellings or duplexes, 50 ft of width for a house and 40 ft for a duplex"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "203.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 12,
+        "section": "203.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "203.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "203.5, 112 'Lot coverage'",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "203.6A",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 20,
+        "section": "203.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Same as principal structure or 20, whichever is less'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "203.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "203.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "203.6B",
+        "url": "https://ecode360.com/print/SA2440?guid=15735277",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "RS": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewer and water, 100 ft wide at the building line. Other services in the utility rows"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewer and water"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "201.4, 112 'Lot coverage'",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewer and water"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "201.5A",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 35,
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Same as principal structure or 35, whichever is less'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both sides together 20 ft"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "201.5B",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer or water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 35,
+            "setback_side_ft": 315,
+            "setback_sides_total_ft": 330,
+            "setback_rear_ft": 35,
+            "max_impervious_coverage": 0.2,
+            "section": "201.4",
+            "note": "43,560 sq ft, 400 ft wide at the building line (360 ft frontage). The large side yard keeps room for later infill lots (Development Infill Protection Design)"
+          },
+          {
+            "when": "Public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 32000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 215,
+            "setback_sides_total_ft": 230,
+            "setback_rear_ft": 35,
+            "max_impervious_coverage": 0.25,
+            "section": "201.4",
+            "note": "300 ft wide at the building line (270 ft frontage)"
+          },
+          {
+            "when": "Public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 115,
+            "setback_sides_total_ft": 130,
+            "setback_rear_ft": 35,
+            "max_impervious_coverage": 0.3,
+            "section": "201.4",
+            "note": "200 ft wide at the building line (180 ft frontage)"
+          }
+        ],
+        "section": "201.4",
+        "url": "https://ecode360.com/print/SA2440?guid=15735462",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "RC": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family dwellings with public sewage and public water, 70 ft wide. Two acres where more than half the site has slopes over 15%"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "200.5, 112 'Lot coverage'",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewage and water. 7% where more than half the site has slopes over 15%"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200.6A",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_setback_front_ft": {
+        "value": 30,
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Accessory residential uses: 'Same as principal structure or 30, whichever is less'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both sides together 30 ft"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 30,
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "200.6B",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-lot sewage and on-lot water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 30,
+            "setback_side_ft": 20,
+            "setback_sides_total_ft": 40,
+            "setback_rear_ft": 25,
+            "max_impervious_coverage": 0.2,
+            "section": "200.5",
+            "note": "One acre, 125 ft wide. On-lot sewage follows 317"
+          },
+          {
+            "when": "Public sewage only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 15,
+            "setback_sides_total_ft": 30,
+            "setback_rear_ft": 25,
+            "max_impervious_coverage": 0.25,
+            "section": "200.5",
+            "note": "Public sewage or public water: 20,000 sq ft, 100 ft wide"
+          },
+          {
+            "when": "Public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 15,
+            "setback_sides_total_ft": 30,
+            "setback_rear_ft": 25,
+            "max_impervious_coverage": 0.25,
+            "section": "200.5",
+            "note": "Public sewage or public water: 20,000 sq ft, 100 ft wide"
+          }
+        ],
+        "section": "200.5",
+        "url": "https://ecode360.com/print/SA2440?guid=15735278",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    }
+  }
+}

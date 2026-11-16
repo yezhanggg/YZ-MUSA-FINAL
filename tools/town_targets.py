@@ -1349,6 +1349,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2026-01-15",
         "note": "Zoning: Chapter 27 Zoning (Ord. of 3-29-1990, as amended through Ord. No. 25-08 of 12-4-2025). No ADU use for a house lot. A use not listed is not permitted (27-302.4) and a lot holds one principal use (27-301). Residential conversion of an existing house into two or more units is a special exception in R-2, R-2M, R-25, R-15, R-5 and RV and by right in VMU: the detached dwelling lot area for each unit, seven years of residential use first, one front entrance (27-305.2H). 'Dwelling in combination', an accessory dwelling unit subordinate to a business or institution, by right in CC and VMU and by special exception in R-25, R-15, R-5 and LI (27-305 GG). Farm units for family or farm workers at 20 acres per unit (27-305.1H). The Table of Use Regulations is a PDF attachment, but each district part lists its uses and figures in text. New Laws: none on zoning. Read in the browser on eCode360 (NE2408).",
     },
+    "4204767344": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/15734800",
+        "plain_fetch": False,
+        "current_through": "2025-12-15",
+        "note": "Zoning: Chapter 27 Zoning (Official Zoning Ordinance of 2005, Ord. 227 of 12-18-2006, as amended through Ord. No. 334 of 1-16-2023). ADU text: 'Accessory dwelling units' by special exception in RU only (202.3B, 402): at least 400 sq ft, at most 50% of the house's habitable floor area, one parking space, no owner rule since Ord. No. 314 (11-18-2019) repealed it. ECHO housing by right as an accessory use in RC (200.2P(5)) and by special exception in RS (425). Two-family conversions by right in RU and RF, and in RC for a house of 3,000 sq ft that existed in 2006 (200.2M). Use lists and design tables are web text. The only attachments are sign tables. New Laws: none on zoning. Read in the browser on eCode360 (SA2440).",
+    },
+    "4203707128": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11770028",
+        "plain_fetch": False,
+        "current_through": "2026-04-27",
+        "note": "Zoning: Chapter 27 Zoning (Ord. No. 1055 of 6-3-2024, which replaced the 1986 ordinance). ADU text: 'Dwelling, Accessory' (granny flat) for one or two family members of the occupants, a special exception in R-C, R-S and R-U (27-303, 27-605.1): one per lot in R-C and R-S, two in R-U, at most 50% of the house's habitable floor space, at most two persons, one parking space per bedroom. 'Apartment, Accessory', a unit inside an existing residential use or above the ground floor of a mixed-use building, a by-right accessory use in R-S, R-U, C-R, MX-1, MX-3, C-W and BC. Schedule A is an eCode360 web table. New Laws: Ord. No. 1073 (bicycles) only. Read in the browser on eCode360 (BL2204).",
+    },
+    "4201344328": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/28662373",
+        "plain_fetch": False,
+        "current_through": "2024-06-27",
+        "note": "Zoning: Chapter 27 Zoning (Ord. 11-15-79, as amended through Ord. No. 06-27-24). No ADU text. Residential districts permit only the listed uses. R-1 allows one single-family dwelling or one two-family dwelling on a lot (501.1), R-1A no two-family dwellings (601), R-2 two-family and multiple family dwellings (701.2) and the alteration of a pre-1979 house into a multiple family dwelling at 1,000 sq ft of lot per unit (1003). Business and Industrial districts permit any use not prohibited (801, 901). Each district part lists its uses and figures in text. The only attachment is the zoning map. New Laws: none on zoning. Read in the browser on eCode360 (LO3531).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1379,6 +1400,7 @@ FIXED_BATCH.update({g: 29 for g in ("4212931200", "4204553104", "4201761616")})
 FIXED_BATCH.update({g: 30 for g in ("4209121600", "4200372400", "4213373168")})
 FIXED_BATCH.update({g: 31 for g in ("4201910464", "4201102328", "4209127280")})
 FIXED_BATCH.update({g: 32 for g in ("4203948360", "4200323000", "4209153664")})
+FIXED_BATCH.update({g: 33 for g in ("4204767344", "4203707128", "4201344328")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1522,6 +1544,12 @@ EXTRAS = {
     "4203948360": "Code 1306.10(A) accessory dwelling units by right in R, MU-1 and MU-2",
     "4200323000": "batch 32 by population. Code Chapter 27 has no ADU text",
     "4209153664": "batch 32 by population. Code Chapter 27 has no ADU text for a house lot (27-305.2H residential conversion by special exception)",
+    # Batch 33 (2026-11-16): the next towns by population without a rule file. Dingman (Pike) was skipped (zoning only
+    # as an unofficial copy on the township website, which the browser was not allowed to read) and Jefferson Hills
+    # (Allegheny) (eCode360 JE2362 leaves the zoning ordinance out of the codification; no zoning text found as web pages).
+    "4204767344": "Code 402 accessory dwelling units by special exception (RU)",
+    "4203707128": "Code 27-605.1 accessory dwelling for family members by special exception",
+    "4201344328": "batch 33 by population. Code Chapter 27 has no ADU text",
 }
 
 if __name__ == "__main__":

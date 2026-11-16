@@ -1,0 +1,596 @@
+{
+  "provenance": {
+    "jurisdiction": "Logan township",
+    "instrument": "Township of Logan Zoning Ordinance (Chapter 27 Zoning, Ord. 11-15-79, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 LO3531, Township of Logan, Blair County. Chapter 27 Zoning was adopted by Ord. 11-15-79 and amended many times, most recently by Ord. No. 06-27-24 (solar energy systems, Part 17), which is folded into the text. New Laws lists resolutions and ordinances on sewers, motor vehicles, fees and property addressing, none on zoning. Each district part lists its uses and figures in text. The only attachment is the zoning map",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/LO3531",
+      "https://ecode360.com/28662373",
+      "https://ecode360.com/LO3531/laws",
+      "https://ecode360.com/print/LO3531?guid=28662385",
+      "https://ecode360.com/print/LO3531?guid=28662397",
+      "https://ecode360.com/print/LO3531?guid=28662575",
+      "https://ecode360.com/print/LO3531?guid=28662611",
+      "https://ecode360.com/print/LO3531?guid=28662631",
+      "https://ecode360.com/print/LO3531?guid=28662640",
+      "https://ecode360.com/print/LO3531?guid=28662658",
+      "https://ecode360.com/print/LO3531?guid=28662696",
+      "https://ecode360.com/print/LO3531?guid=28662715",
+      "https://ecode360.com/print/LO3531?guid=28662749",
+      "https://ecode360.com/print/LO3531?guid=28662958",
+      "https://ecode360.com/print/LO3531?guid=28663005"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Blair",
+    "municipality_type": "township",
+    "geoid": "4201344328",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/28662373",
+    "code_current_through": "2024-06-27",
+    "code_current_through_note": "eCode360: 'Includes legislation through 06-27-2024.' New Laws holds no zoning ordinance",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law suite, accessory apartment or similar listing. Each residential district permits 'only the following' uses (401A, 401B, 501, 601, 701)",
+      "In R-1 a lot may hold 'One single-family dwelling or one two-family dwelling'. In a land development there may be one two-family dwelling for every two single-family dwellings (501.1). R-1A allows the R-1 uses except two-family dwellings and mobile homes (601)",
+      "R-2 permits two-family dwellings and multiple family dwellings of not more than 12 families (701.2). A single-family dwelling that existed when the chapter was enacted may be altered in R-2 into a multiple family dwelling, with 1,000 sq ft of lot for each unit, at least 600 sq ft for each unit, no living quarters in a basement and no exterior change except for safety and access (1003)",
+      "Business districts permit all R-2 uses and 'all other buildings, structures and uses' except those the code prohibits (801). Industrial districts permit the uses of every other district and all other uses except those prohibited (901). Whether an accessory unit on a house lot is such a use is not settled",
+      "In the Agricultural and A-1 districts a lot not used for farming takes the R-1 uses, and lots under 1.5 acres are classed as residential (401A(3), 401B(3)). 'Agricultural dwellings, barns and their accessory uses and buildings' are permitted on farms, and any permanent living quarters must meet 501 to 503 (401A(1), (6))",
+      "Garages and other outbuildings stand at least 10 ft from side and rear lines (403, 503, 703). An accessory use in an accessory building may not take more floor area than half the first floor of the main building (301 'Accessory use')",
+      "The definitions say 'Basement living' 'Will not be permitted beyond one year from the date of permit' (301)",
+      "Planned residential developments need a tract of more than 75 acres with public water and sewer in R-1, R-1A or R-2 (1304)",
+      "No section read bars a use variance. Variances need the five findings of 1108"
+    ],
+    "notes": "Zoning office: Township of Logan, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, in print view. Read: Part 2, Part 3 (all definitions), Part 4, Part 5, Part 6, Part 7, Part 8, Part 9, Part 9.5, Part 10 (1001 to 1017, the parking table read through the residential rows), Part 11 and Part 13 (1301 to 1304). Not read: Part 1, Parts 12 and 14 to 17 (map amendments, wind, signs, solar), 1018 to 1021 and the zoning map. The code search was not used. The ADU-like words (accessory apartment, accessory dwelling, in-law, family member suite, relative, accessory suite, guest house, carriage house, granny, ECHO, elder cottage, second dwelling, living quarters, conversion, two-family, caretaker, tenant house, farm dwelling) were checked by reading every definition and every district's use list. The code names districts in words, without short codes. This file uses Agricultural, A-1, R-1, R-1A, R-2, Business, Industrial and Institutional. Height of a building is measured from the average ground level at the sides of the building, not counting chimneys (301). The code sets no lot coverage figure for the residential districts."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "301, 401A, 401B, 501, 601, 701, 801, 901, 902.5",
+      "url": "https://ecode360.com/print/LO3531?guid=28662397",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Read every definition and every district's use list for accessory dwelling, accessory apartment, in-law, family member suite, relative, guest house, carriage house, granny, ECHO, elder cottage, second dwelling, living quarters, conversion, two-family, caretaker, tenant house and farm dwelling. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "401A, 401B, 501, 601, 701, 902.5",
+      "url": "https://ecode360.com/print/LO3531?guid=28662611",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No district lists a second dwelling unit on a house lot. The residential districts permit 'only the following' uses. In R-1 a lot holds one single-family dwelling or one two-family dwelling (501.1). A use variance is still a path to ask for"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "501, 1108",
+      "url": "https://ecode360.com/print/LO3531?guid=28662958",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "A second unit is not a listed use in the residential and agricultural districts, which permit only the listed uses. The Zoning Hearing Board hears variances on the five findings of 1108. No section read bars a use variance"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1108",
+      "url": "https://ecode360.com/print/LO3531?guid=28662958",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2",
+            "Business",
+            "Industrial",
+            "Agricultural",
+            "A-1"
+          ],
+          "conditions": "'A dwelling with or without party walls, designed or arranged for occupancy of two households', built with firewall partitions or firewall party walls (301). R-1 permits one single-family dwelling or one two-family dwelling on a lot, and in a land development one two-family dwelling for every two single-family dwellings (501.1). R-2 permits two-family dwellings (701.2). Business districts permit all R-2 uses (801.1) and Industrial districts the uses of every other district (901). An agricultural lot not used for farming takes the R-1 uses (401A(3), 401B(3)). Two parking spaces per dwelling with two bedrooms or fewer (1017.3D)",
+          "min_lot_by_utility": [
+            {
+              "when": "With public sewerage",
+              "public_sewer": true,
+              "public_water": null,
+              "min_lot_sqft": 9000
+            },
+            {
+              "when": "Without public sewerage",
+              "public_sewer": false,
+              "public_water": null,
+              "min_lot_sqft": 20000
+            }
+          ],
+          "section": "301 'Two-family dwelling', 401A(3), 501.1, 502.4, 701.2, 801, 901",
+          "url": "https://ecode360.com/print/LO3531?guid=28662611",
+          "confidence": "verified",
+          "note": "A building for two households, so the house itself becomes the two-family dwelling. Not in R-1A (601) or the Institutional district (902.5). The lot figures are the R-1 figures, which R-2 and the agricultural districts share (402.4, 702.1)"
+        },
+        {
+          "name": "Conversion of an older house into a multiple family dwelling (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "'Nothing herein shall prevent alteration of a single-family dwelling, existing at the time of enactment of this chapter, in a Residence \"R-2\" District for multiple family dwelling'. At least 1,000 sq ft of lot for each dwelling unit, at least 600 sq ft of floor area for each unit, no living quarters in a basement or a space with less than six feet of ceiling above the outside ground, and no exterior change except for safety and access (1003). A multiple family dwelling houses three or more households (301)",
+          "min_units": 3,
+          "requires": [
+            {
+              "test": "house_built_before",
+              "value_date": "1979-11-15",
+              "condition": "The house existed when the chapter was enacted (Ord. 11-15-79)",
+              "section": "1003"
+            }
+          ],
+          "section": "1003, 301 'Multiple-family dwelling'",
+          "url": "https://ecode360.com/print/LO3531?guid=28662749",
+          "confidence": "secondary",
+          "note": "The enactment date is read from the ordinance number 11-15-79. Ask the zoning officer for the date the township uses. A two-family dwelling is also by right in R-2 (701.2)"
+        },
+        {
+          "name": "Agricultural dwellings on a farm",
+          "path": "by_right",
+          "districts": [
+            "Agricultural",
+            "A-1"
+          ],
+          "conditions": "'Agricultural dwellings, barns and their accessory uses and buildings' are permitted (401A(1), 401B(1)). 'Any permanent building, to be used as a living quarters in an Agricultural District must comply with §§ 501, 502 and 503' (401A(6), 401B(6)). Parcels under five acres with more than 70% not farmed, and all lots under 1.5 acres, are classed as residential under the R-1 rules (401A(3))",
+          "min_lot_sqft": 65340,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is an active farm",
+              "section": "401A(1), (3)"
+            }
+          ],
+          "section": "401A(1), (3), (6), 401B(1), (3), (6)",
+          "url": "https://ecode360.com/print/LO3531?guid=28662575",
+          "confidence": "secondary",
+          "note": "The plural 'dwellings' suggests more than one farm dwelling, but 401A(6) sends living quarters to 501, which allows one dwelling on a lot. Not settled. Ask the zoning officer"
+        },
+        {
+          "name": "Any use not prohibited (Business, Industrial)",
+          "path": "by_right",
+          "districts": [
+            "Business",
+            "Industrial"
+          ],
+          "conditions": "Business districts permit 'all other buildings, structures and uses' except the prohibited list (801.2). Industrial districts permit 'all buildings, structures and uses permitted in any of the other districts, and all other buildings, structures and uses' except the prohibited list (901). A building used only for residence meets the R-2 yards (802, 904.3)",
+          "min_lot_sqft": null,
+          "section": "801, 802, 901, 904.3",
+          "url": "https://ecode360.com/print/LO3531?guid=28662658",
+          "confidence": "secondary",
+          "note": "Whether a second unit on a house lot counts as such a use is not settled. Ask the zoning officer"
+        }
+      ],
+      "section": "501.1, 701.2, 801, 901, 1003, 401A",
+      "url": "https://ecode360.com/print/LO3531?guid=28662611",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/28662373",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "Business",
+        "Industrial",
+        "Institutional"
+      ],
+      "section": "801, 901, 902.5",
+      "url": "https://ecode360.com/print/LO3531?guid=28662658",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Business and Industrial permit all residential uses of R-2 and any use not prohibited, with no ADU listing. Institutional permits schools, hospitals, homes for children or the aged and similar uses, and 'any use not complying with the specifications of this Part is prohibited' (903.5)"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "501.1, 701.2",
+      "url": "https://ecode360.com/print/LO3531?guid=28662611",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No ADU use. A unit inside the house can only be a two-family dwelling where the district permits one"
+    }
+  },
+  "envelope": {
+    "accessory_share_of_house_part": {
+      "value": [
+        {
+          "what": "an accessory use in an accessory building",
+          "share": 0.5,
+          "of": "the first floor area of the main building",
+          "section": "301 'Accessory use'",
+          "url": "https://ecode360.com/print/LO3531?guid=28662397",
+          "note": "'An accessory use may be conducted in the main building or in an accessory building, but in the latter case shall not occupy a floor area greater than 1/2 the area of the first floor of the main building.'"
+        }
+      ],
+      "section": "301 'Accessory use'",
+      "url": "https://ecode360.com/print/LO3531?guid=28662397",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662611",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewerage, 75 ft of frontage. Without public sewerage 20,000 sq ft and 100 ft. A lot plotted before the chapter took effect may be used for a home if the yards are met"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662611",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Where no buildings stand within 150 ft on each side. Otherwise the mean setback of the nearest buildings on the same side of the street"
+      },
+      "setback_sides_total_ft": {
+        "value": 24,
+        "section": "502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662611",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two side yards totaling 24 ft. On a lot plotted before the chapter and under 60 ft wide the total drops by nine inches for each foot under 60, to no less than 16 ft, with the narrower side at least 7 ft"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662611",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "502.6",
+        "url": "https://ecode360.com/print/LO3531?guid=28662611",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Dwellings may not exceed 35 ft. Measured from the average ground level at the sides of the building (301)"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "503, 403",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No garage or other outbuildings shall be placed nearer to a side or rear property line than 10 feet'. A garage built as part of the house may extend up to 4 ft into an interior side yard but no nearer than 8 ft to the line"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "503, 403",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewerage",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 20000,
+            "section": "502",
+            "note": "100 ft of frontage"
+          }
+        ],
+        "section": "502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662611",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "601, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662631",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewerage, 75 ft of frontage. Without public sewerage 20,000 sq ft and 100 ft. A lot plotted before the chapter took effect may be used for a home if the yards are met"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "601, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662631",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Where no buildings stand within 150 ft on each side. Otherwise the mean setback of the nearest buildings on the same side of the street"
+      },
+      "setback_sides_total_ft": {
+        "value": 24,
+        "section": "601, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662631",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two side yards totaling 24 ft. On a lot plotted before the chapter and under 60 ft wide the total drops by nine inches for each foot under 60, to no less than 16 ft, with the narrower side at least 7 ft"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "601, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662631",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "601, 502.6",
+        "url": "https://ecode360.com/print/LO3531?guid=28662631",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The R-1 requirements apply (601). Larger minimum floor areas for new dwellings (601.1)"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "601, 503, 403",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No garage or other outbuildings shall be placed nearer to a side or rear property line than 10 feet'. A garage built as part of the house may extend up to 4 ft into an interior side yard but no nearer than 8 ft to the line"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "601, 503, 403",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewerage",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 20000,
+            "section": "601, 502",
+            "note": "100 ft of frontage"
+          }
+        ],
+        "section": "601, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662631",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "702.1, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewerage, 75 ft of frontage. Without public sewerage 20,000 sq ft and 100 ft. A lot plotted before the chapter took effect may be used for a home if the yards are met"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "702.1, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Where no buildings stand within 150 ft on each side. Otherwise the mean setback of the nearest buildings on the same side of the street"
+      },
+      "setback_sides_total_ft": {
+        "value": 24,
+        "section": "702.1, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two side yards totaling 24 ft. On a lot plotted before the chapter and under 60 ft wide the total drops by nine inches for each foot under 60, to no less than 16 ft, with the narrower side at least 7 ft"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "702.1, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 70,
+        "section": "702.1",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Dwellings may not exceed 70 ft"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "703",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No garage or other outbuildings shall be placed nearer to a side or rear property line than 10 feet'. A garage built as part of the house may extend up to 4 ft into an interior side yard but no nearer than 8 ft to the line"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "703",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewerage",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 20000,
+            "section": "702.1, 502",
+            "note": "100 ft of frontage"
+          }
+        ],
+        "section": "702.1, 502",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 35,
+        "section": "702.1",
+        "url": "https://ecode360.com/print/LO3531?guid=28662640",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "Agricultural": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewerage, 75 ft of frontage. Without public sewerage 20,000 sq ft and 100 ft. A lot plotted before the chapter took effect may be used for a home if the yards are met"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Where no buildings stand within 150 ft on each side. Otherwise the mean setback of the nearest buildings on the same side of the street"
+      },
+      "setback_sides_total_ft": {
+        "value": 24,
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two side yards totaling 24 ft. On a lot plotted before the chapter and under 60 ft wide the total drops by nine inches for each foot under 60, to no less than 16 ft, with the narrower side at least 7 ft"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "402.6",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Dwellings may not exceed 35 ft"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "403",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No garage or other outbuildings shall be placed nearer to a side or rear property line than 10 feet'. A garage built as part of the house may extend up to 4 ft into an interior side yard but no nearer than 8 ft to the line"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "403",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewerage",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 20000,
+            "section": "402",
+            "note": "100 ft of frontage"
+          }
+        ],
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "A-1": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewerage, 75 ft of frontage. Without public sewerage 20,000 sq ft and 100 ft. A lot plotted before the chapter took effect may be used for a home if the yards are met"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Where no buildings stand within 150 ft on each side. Otherwise the mean setback of the nearest buildings on the same side of the street"
+      },
+      "setback_sides_total_ft": {
+        "value": 24,
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Two side yards totaling 24 ft. On a lot plotted before the chapter and under 60 ft wide the total drops by nine inches for each foot under 60, to no less than 16 ft, with the narrower side at least 7 ft"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "402.6",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Dwellings may not exceed 35 ft"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "403",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No garage or other outbuildings shall be placed nearer to a side or rear property line than 10 feet'. A garage built as part of the house may extend up to 4 ft into an interior side yard but no nearer than 8 ft to the line"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "403",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewerage",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 20000,
+            "section": "402",
+            "note": "100 ft of frontage"
+          }
+        ],
+        "section": "402",
+        "url": "https://ecode360.com/print/LO3531?guid=28662575",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    }
+  }
+}
