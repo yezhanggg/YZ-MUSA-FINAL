@@ -1,0 +1,931 @@
+{
+  "provenance": {
+    "jurisdiction": "North Lebanon township",
+    "instrument": "North Lebanon Township Zoning Ordinance (Chapter 27 Zoning, Ord. 6-4-84 of 6-4-1984, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 NO1608, Township of North Lebanon, Lebanon County (the code names the Lebanon County Planning Department, Recorder of Deeds and Conservation District). Chapter 27 Zoning was adopted 6-4-1984 and amended since, most recently in the zoning text by Ord. No. 5-2023 (5-15-2023, unlisted uses and variances). Every district part sets its uses and figures in text. The attachments are two figures, the dam breach inundation map and the pocket neighborhood design guidelines. New Laws lists nine items, none for Chapter 27",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/NO1608",
+      "https://ecode360.com/30841097",
+      "https://ecode360.com/NO1608/laws",
+      "https://ecode360.com/NO1608/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20conversion%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20granny%20OR%20%22accessory%20suite%22%20OR%20relative%20OR%20servant%20OR%20quarters%20OR%20watchman%20OR%20%22housekeeping%20unit%22%20OR%20cottage&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/NO1608?guid=31190717",
+      "https://ecode360.com/print/NO1608?guid=31190881",
+      "https://ecode360.com/print/NO1608?guid=31190905",
+      "https://ecode360.com/print/NO1608?guid=31190974",
+      "https://ecode360.com/print/NO1608?guid=31191001",
+      "https://ecode360.com/print/NO1608?guid=31191040",
+      "https://ecode360.com/print/NO1608?guid=31191090",
+      "https://ecode360.com/print/NO1608?guid=31191243",
+      "https://ecode360.com/print/NO1608?guid=31191269",
+      "https://ecode360.com/print/NO1608?guid=31191425",
+      "https://ecode360.com/print/NO1608?guid=31191439",
+      "https://ecode360.com/print/NO1608?guid=31191533",
+      "https://ecode360.com/print/NO1608?guid=31191756",
+      "https://ecode360.com/print/NO1608?guid=31191976",
+      "https://ecode360.com/print/NO1608?guid=31192101",
+      "https://ecode360.com/print/NO1608?guid=31192152",
+      "https://ecode360.com/print/NO1608?guid=31192276",
+      "https://ecode360.com/print/NO1608?guid=31192382"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Lebanon",
+    "municipality_type": "township",
+    "geoid": "4207555160",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30841097",
+    "code_current_through": "2026-01-05",
+    "code_current_through_note": "eCode360 Version Information: 'Includes legislation through 01-05-2026.' Uploaded 03-31-2026. New Laws lists nine 2026 items (Ord. No. 1-2026, Ord. No. 2-2026 and Res. No. 10-2026 to 16-2026), all for Appendices B, C and D, none for Chapter 27",
+    "checks": [
+      "The zoning code has no accessory dwelling unit, in-law suite, accessory apartment or similar listing",
+      "A single-family detached dwelling is 'A detached (separate) building designed for or occupied exclusively by one family on an individual lot' (27-102). A dwelling unit has 'independent cooking and sleeping facilities for one family' (27-102)",
+      "An accessory building 'may not house a principal use nor may it stand alone on a lot as a principal building' (27-102)",
+      "No building may be erected or altered 'To accommodate or house a greater number of families' than the chapter allows (27-204.1B(2))",
+      "A use neither permitted nor prohibited goes to the Zoning Hearing Board as a special exception, but only if it is similar to the district's permitted uses and 'Is not permitted in any other zoning district' (27-204.1E(1)(a), (b)). Two-family dwellings and conversions to apartments are permitted in R-2, so this route is not shown for a second unit",
+      "In R-2 two-family detached (one unit over the other) and semidetached dwellings are permitted by right, at 4,500 sq ft of lot per unit with public water and sewer, and an existing building may be converted to apartments at 3,500 sq ft per unit with public sewer and water (27-602.2, 27-602.5, 27-603)",
+      "In any district more than one principal structure may stand on a lot if each meets the yard and other rules 'as though it were on an individual lot' and the subdivision regulations (27-1208). The single-family definition says 'on an individual lot', so whether a second house may share a lot is not settled",
+      "Every dwelling unit needs at least 700 sq ft of habitable floor area or 175 sq ft per person, whichever is greater (27-1211)",
+      "The lot and yard tables 'shall be provided for every dwelling unit' (27-304, 27-403, 27-503, 27-603)",
+      "Detached accessory buildings may not stand closer to the front than the house, except in A, IA and R-R when more than 75 ft from the road. They stand at least 5 ft from side and rear lines in R-2 and 10 ft in the other residential and commercial districts. An attached building meets the principal yards (27-1202)",
+      "One- and two-family dwellings need 2 parking spaces per dwelling unit, and a multi-family residence 3 per unit (27-1405E, F)",
+      "A nonconforming lot of record held in separate ownership may take 'a permitted principal structure and accessory structure(s)' (27-1602.1)",
+      "Where 25% or more of a lot is steeper than 15%, the residential lot minimum is 150% of the district figure (27-1224B)",
+      "In the floodway no new construction is allowed unless studies show no rise in flood levels and a DEP permit is obtained. In an AE zone without a floodway no new construction may stand within 100 ft of the top of bank without a DEP permit. Any use not specifically permitted by Part 11 is prohibited in an identified floodplain area (27-1117.1A, B(2), 27-1128)",
+      "The Zoning Hearing Board hears variances under MPC 910.2 (27-2001.1E, 27-2003). No section read bars a use variance. A special exception or variance lapses if not used within one year (27-2007)"
+    ],
+    "notes": "Zoning office: North Lebanon Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: Parts 1 to 10, Part 12 through 27-1230, Parts 14, 16, 17 (site standards), 20, the floodplain areas and prohibited activities of Part 11 (27-1117, 27-1128), the opening and definitions of Part 24 (airport overlay, heights only) and the New Laws page. Not read: Parts 13, 15, 18, 19, 21 to 23, the rest of Parts 11 and 24, and 27-1231 and 27-1232 (CAO and apiaries). The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant, quarters, watchman, housekeeping unit and cottage. Its hits were the floodplain recreational vehicle definition, the habitable floor area, group care facility, family and family day-care definitions, the R-1 church-related homes for the elderly (27-502.8E) and non-zoning chapters. A family is at most five unrelated persons, and 'domestic servants employed on the premises may be housed on the premises without being counted' (27-102). Pocket neighborhood developments (R-2, conditional use, two acres) and age restricted developments (R-2, conditional use, 50 acres) are whole-tract developments. The unlisted-use route of 27-204.1E (Ord. No. 5-2023) is left out of the path because its test (b) fails for a use R-2 permits."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "27-102, 27-302, 27-402, 27-502, 27-602",
+      "url": "https://ecode360.com/print/NO1608?guid=31190717",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant, quarters, watchman, housekeeping unit and cottage, and read the definitions and every district's use list. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-302, 27-402, 27-502, 27-602",
+      "url": "https://ecode360.com/print/NO1608?guid=31191090",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No district lists a second dwelling unit on a house lot. A use variance is the path to ask about. In R-2 a two-family dwelling or a conversion to apartments is permitted by right (see the alternatives)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-2001.1E, 27-2003",
+      "url": "https://ecode360.com/print/NO1608?guid=31192276",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "A second unit is not a listed use. The Zoning Hearing Board hears variances under MPC 910.2. No section read bars a use variance"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-2003",
+      "url": "https://ecode360.com/print/NO1608?guid=31192276",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "'Two-family detached and semidetached dwellings' are a permitted use in R-2 (27-602.2). A two-family detached dwelling is 'A separate building on an individual lot with two dwelling units from ground to roof (one unit over the other)' (27-102). Two-family detached: 4,500 sq ft per unit, width 80 ft, front 30 ft, side 10 ft (20 ft together), rear 30 ft, building coverage 40% (27-603). Two parking spaces per dwelling unit (27-1405E). Every dwelling unit at least 700 sq ft of habitable floor area (27-1211)",
+          "min_lot_sqft": 9000,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "The lot has public sewer. The table lists two-family rows only under 'Residential (public water and sewer)'",
+              "section": "27-603.1"
+            },
+            {
+              "test": "public_water",
+              "condition": "The lot has public water",
+              "section": "27-603.1"
+            }
+          ],
+          "section": "27-602.2, 27-603, 27-102, 27-1405E",
+          "url": "https://ecode360.com/print/NO1608?guid=31191090",
+          "confidence": "verified",
+          "note": "9,000 sq ft is 4,500 sq ft for each of the two units. A stacked two-unit house, not a separate accessory unit. Whether an existing house may become a two-family detached dwelling by adding a unit above or below is for the zoning officer"
+        },
+        {
+          "name": "Conversion of an existing building to apartments (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "'Conversions of existing buildings to apartments provided that the lot contains 3,500 square feet for each dwelling unit, public sewer and water and complies with parking regulations as found in Part 14' (27-602.5). Every dwelling unit at least 700 sq ft of habitable floor area (27-1211). Parking is 2 spaces per unit for one- and two-family dwellings and 3 per unit for a multi-family residence (27-1405E, F)",
+          "min_lot_sqft": 7000,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "27-602.5"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "27-602.5"
+            },
+            {
+              "test": "house_exists",
+              "condition": "The building already exists",
+              "section": "27-602.5"
+            }
+          ],
+          "section": "27-602.5, 27-1211, 27-1405",
+          "url": "https://ecode360.com/print/NO1608?guid=31191090",
+          "confidence": "secondary",
+          "note": "7,000 sq ft is 3,500 sq ft for each of two units. The code does not say whether two units count as 'apartments' or which parking row applies"
+        },
+        {
+          "name": "Second principal dwelling on the same lot (R-1)",
+          "path": "by_right",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "'In any district, more than one structure housing a permitted or permissible principal use may be erected on a single lot, provided that yard and other requirements of this chapter and the North Lebanon Township Land Subdivision Regulations shall be met for each structure as though it were on an individual lot' (27-1208). Each house then needs the R-1 lot area, width and yards of its own: 15,000 sq ft with public water and sewer, 20,000 with one, one acre with neither (27-503)",
+          "min_lot_sqft": 30000,
+          "min_lot_by_utility": [
+            {
+              "when": "With public sewer and public water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 30000,
+              "section": "27-1208, 27-503"
+            },
+            {
+              "when": "With public sewer only",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 40000,
+              "section": "27-1208, 27-503"
+            },
+            {
+              "when": "With public water only",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 40000,
+              "section": "27-1208, 27-503"
+            },
+            {
+              "when": "With neither public sewer nor public water",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 87120,
+              "section": "27-1208, 27-503"
+            }
+          ],
+          "land_development": true,
+          "section": "27-1208, 27-503",
+          "url": "https://ecode360.com/print/NO1608?guid=31191756",
+          "confidence": "secondary",
+          "note": "A second house, not an accessory unit. The code defines a single-family detached dwelling as one 'on an individual lot' (27-102), so whether a second house may share a lot is not settled. 27-703 and 27-802.20 show a second principal use under 27-1208 on a land development plan. Each figure is twice the R-1 lot for the lot's services"
+        },
+        {
+          "name": "Second principal dwelling on the same lot (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "27-1208 lets more than one principal structure stand on a lot when each meets the yard and other requirements 'as though it were on an individual lot' and the subdivision regulations are met. Each house then needs the R-2 figures of its own: 9,000 sq ft with public water and sewer, 15,000 with one, one acre with neither (27-603)",
+          "min_lot_sqft": 18000,
+          "min_lot_by_utility": [
+            {
+              "when": "With public sewer and public water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 18000,
+              "section": "27-1208, 27-603"
+            },
+            {
+              "when": "With public sewer only",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 30000,
+              "section": "27-1208, 27-603"
+            },
+            {
+              "when": "With public water only",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 30000,
+              "section": "27-1208, 27-603"
+            },
+            {
+              "when": "With neither public sewer nor public water",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 87120,
+              "section": "27-1208, 27-603"
+            }
+          ],
+          "land_development": true,
+          "section": "27-1208, 27-603",
+          "url": "https://ecode360.com/print/NO1608?guid=31191756",
+          "confidence": "secondary",
+          "note": "A second house, not an accessory unit. The single-family definition says 'on an individual lot' (27-102), so this reading is not settled. Each figure is twice the R-2 single-family lot"
+        },
+        {
+          "name": "Second principal dwelling on the same lot (R-R)",
+          "path": "by_right",
+          "districts": [
+            "R-R"
+          ],
+          "conditions": "27-1208 lets more than one principal structure stand on a lot when each meets the requirements 'as though it were on an individual lot' and the subdivision regulations are met. Each house then needs 20,000 sq ft with public sewer and/or water, one acre without (27-403)",
+          "min_lot_sqft": 40000,
+          "min_lot_by_utility": [
+            {
+              "when": "With public sewer and public water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 40000,
+              "section": "27-1208, 27-403"
+            },
+            {
+              "when": "With public sewer only",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 40000,
+              "section": "27-1208, 27-403"
+            },
+            {
+              "when": "With public water only",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 40000,
+              "section": "27-1208, 27-403"
+            },
+            {
+              "when": "With neither public sewer nor public water",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 87120,
+              "section": "27-1208, 27-403"
+            }
+          ],
+          "land_development": true,
+          "section": "27-1208, 27-403",
+          "url": "https://ecode360.com/print/NO1608?guid=31191756",
+          "confidence": "secondary",
+          "note": "A second house, not an accessory unit. The single-family definition says 'on an individual lot' (27-102), so this reading is not settled"
+        },
+        {
+          "name": "Second principal dwelling on the same lot (A, IA)",
+          "path": "by_right",
+          "districts": [
+            "A",
+            "IA"
+          ],
+          "conditions": "27-1208 lets more than one principal structure stand on a lot when each meets the requirements 'as though it were on an individual lot'. Each house then needs one acre (27-304). A farm or property may hold only a set number of lots or principal uses by its size on the adoption date: any number under 10 acres, 3 from 10 to under 50 acres, more on larger farms, and the last one needs a recorded deed restriction (27-303.1A, C(5)). The use must sit on the least productive farmland (27-303.1C)",
+          "min_lot_sqft": 87120,
+          "land_development": true,
+          "section": "27-1208, 27-303, 27-304, 27-3A03.1G",
+          "url": "https://ecode360.com/print/NO1608?guid=31190905",
+          "confidence": "secondary",
+          "note": "A second house, not an accessory unit. The single-family definition says 'on an individual lot' (27-102), so this reading is not settled. 87,120 sq ft is one acre for each house"
+        }
+      ],
+      "section": "27-602.2, 27-602.5, 27-603, 27-1208",
+      "url": "https://ecode360.com/print/NO1608?guid=31191090",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/print/NO1608?guid=31190717",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1",
+        "C-2A",
+        "C-2B",
+        "MR-1",
+        "I-1"
+      ],
+      "section": "27-702, 27-802, 27-812.1, 27-902, 27-1002",
+      "url": "https://ecode360.com/print/NO1608?guid=31191269",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "C-1, C-2A and C-2B: commercial uses, hotels, motels and boarding houses, no dwelling. MR-1: public recreation, schools and churches. I-1: industry and warehousing"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In the floodway no new construction is allowed unless studies show it causes no rise in flood levels and a DEP permit is obtained. In an AE zone without a floodway no new construction may stand within 100 ft of the top of bank without a DEP permit. Any use not specifically permitted by Part 11 is prohibited in an identified floodplain area.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain",
+            "Identified floodplain area"
+          ],
+          "section": "27-1117.1A, B(2), 27-1128",
+          "url": "https://ecode360.com/print/NO1608?guid=31191533"
+        },
+        {
+          "kind": "other",
+          "condition": "A lot in an approved planned residential development (20 acres, public water and sewer) follows that plan's lot figures, at least half the district lot and never under 5,000 sq ft.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "A",
+            "IA",
+            "R-R",
+            "R-1",
+            "R-2"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "27-1702",
+          "url": "https://ecode360.com/print/NO1608?guid=31192152"
+        }
+      ],
+      "section": "27-1117, 27-1128, 27-1702",
+      "url": "https://ecode360.com/print/NO1608?guid=31191533",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-302, 27-402, 27-502, 27-602",
+      "url": "https://ecode360.com/print/NO1608?guid=31191090",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No ADU use. In R-2 a two-family dwelling or a conversion of an existing building is by right"
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": 700,
+      "section": "27-1211",
+      "url": "https://ecode360.com/print/NO1608?guid=31191756",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'every dwelling unit hereafter designated, established or erected shall contain a minimum habitable floor area of 700 square feet or a total of 175 square feet per person residing in the dwelling, whichever is greater'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-1405",
+      "url": "https://ecode360.com/print/NO1608?guid=31191976",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified"
+    },
+    "reading": {
+      "value": "27-1405E asks 2 spaces per dwelling unit for one- and two-family dwellings, so a house with a second unit needs 4 in total. A multi-family residence needs 3 per unit.",
+      "section": "27-1405E, F",
+      "url": "https://ecode360.com/print/NO1608?guid=31191976",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One acre minimum and two acres maximum for a single-family lot. Width 125 ft. The table 'shall be provided for every dwelling unit'"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_sides_total_ft": {
+        "value": 40,
+        "section": "27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot coverage is the share of the lot covered by buildings or structures, not driveways or walks (27-102)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No building shall exceed 2 1/2 stories or 35 feet in height unless authorized as a Special Exception.'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "2 1/2 stories"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'accessory buildings shall not be less than 10 feet from a side or rear lot line'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "IA": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-3A03.1G, 27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190974",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "IA single-family dwellings follow the A figures of 27-303 and 27-304, 'including maximum lot area requirements, and the signing of the waiver' (27-3A03.1G). One acre minimum, two acres maximum"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-3A03.1G, 27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190974",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-3A03.1G, 27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190974",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_sides_total_ft": {
+        "value": 40,
+        "section": "27-3A03.1G, 27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190974",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-3A03.1G, 27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190974",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-3A03.1G, 27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190974",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot coverage is the share of the lot covered by buildings or structures, not driveways or walks (27-102)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-3A03.1G, 27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190974",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No building shall exceed 2 1/2 stories or 35 feet in height unless authorized as a Special Exception.'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-3A03.1G, 27-304",
+        "url": "https://ecode360.com/print/NO1608?guid=31190974",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "2 1/2 stories"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'accessory buildings shall not be less than 10 feet from a side or rear lot line'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-R": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With 'Public sewer and/or water'. One acre with on-site water and sewer. Width 125 ft (150 ft without public utilities). The table 'shall be provided for every dwelling unit'"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Yard Requirements (Each)'"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot coverage is the share of the lot covered by buildings or structures, not driveways or walks (27-102)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No building shall exceed 2 1/2 stories or 35 feet in height unless authorized as a Special Exception.'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "2 1/2 stories"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'accessory buildings shall not be less than 10 feet from a side or rear lot line'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer or public water (on-site water and sewer)",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 40,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.25,
+            "section": "27-403",
+            "setback_sides_total_ft": 30,
+            "note": "One acre, width 150 ft"
+          }
+        ],
+        "section": "27-403",
+        "url": "https://ecode360.com/print/NO1608?guid=31191001",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The table's two single-family rows: 'No public utilities (On site water & sewer)' and 'Public sewer and/or water'. A lot with either service takes the row figures"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public water and sewer. Width 110 ft. 20,000 sq ft with public water or sewer, one acre with neither. The table 'shall be provided for every dwelling unit'"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Lot coverage is the share of the lot covered by buildings or structures, not driveways or walks (27-102)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No building or other structure shall exceed the smaller of 2 1/2 stories or 35 in height unless specifically exempted in Part 12 or approved as a Special Exception'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "2 1/2 stories"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'accessory buildings shall not be less than 10 feet from a side or rear lot line'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.3,
+            "section": "27-503",
+            "setback_sides_total_ft": 30,
+            "note": "'Public water or sewer': width 125 ft"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 20000,
+            "setback_front_ft": 40,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.3,
+            "section": "27-503",
+            "setback_sides_total_ft": 30,
+            "note": "'Public water or sewer': width 125 ft"
+          },
+          {
+            "when": "Without public sewer or public water (on-site water and sewer)",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 40,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.25,
+            "section": "27-503",
+            "setback_sides_total_ft": 30,
+            "note": "One acre, width 150 ft"
+          }
+        ],
+        "section": "27-503",
+        "url": "https://ecode360.com/print/NO1608?guid=31191040",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and sewer. Width 85 ft. 15,000 sq ft with public water or sewer, one acre with neither. Semidetached 8,000 sq ft. The table 'shall be provided for every dwelling unit'"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-603.3",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Residential building: 40%'. Lot coverage is buildings or structures, not driveways or walks (27-102)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'No building shall exceed 2 1/2 stories or 35 feet in height unless authorized as a Special Exception.'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "27-603",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "2 1/2 stories"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Accessory buildings located in the R-2 District shall not be permitted within five feet of any side or rear lot line'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "27-1202",
+        "url": "https://ecode360.com/print/NO1608?guid=31191756",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 8000
+        },
+        "section": "27-603.1",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Single-family semidetached: 8,000 square feet', width 80 ft, with public water and sewer"
+      },
+      "setback_side_semi_ft": {
+        "value": 10,
+        "section": "27-603.1",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Side yards apply to the unattached side of a semidetached building"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.4,
+            "section": "27-603.1, 27-603.3",
+            "setback_sides_total_ft": 30,
+            "note": "'Residential (public water or sewer)': width 110 ft"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 15000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 30,
+            "max_building_coverage": 0.4,
+            "section": "27-603.1, 27-603.3",
+            "setback_sides_total_ft": 30,
+            "note": "'Residential (public water or sewer)': width 110 ft"
+          },
+          {
+            "when": "Without public sewer or public water (on-lot water and sewer)",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 40,
+            "setback_side_ft": 15,
+            "setback_rear_ft": 35,
+            "max_building_coverage": 0.4,
+            "section": "27-603.1, 27-603.3",
+            "setback_sides_total_ft": 30,
+            "note": "One acre, width 150 ft"
+          }
+        ],
+        "section": "27-603",
+        "url": "https://ecode360.com/print/NO1608?guid=31191090",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    }
+  }
+}

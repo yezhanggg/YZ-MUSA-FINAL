@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 158,
-      "population": 6014473,
-      "share_of_pa": 0.4626
+      "towns_beyond_the_two_cities": 161,
+      "population": 6049936,
+      "share_of_pa": 0.4653
     }
   ],
   "towns": [
@@ -3890,6 +3890,78 @@
         "added as batch 35 by population. Code Chapter 300 has no ADU text (300-33C(2) conversion of a large house in A)"
       ],
       "status_note": "Disputes the code does not settle: whether a two-unit conversion is a 'multifamily use', since 300-5B defines multifamily as three or more families but includes duplexes (300-33C(2)). The online code runs only through 04-18-2019. The 2024 Chapter 300 amendment (smoke shops and tobacco stores, 11-21-2024) is a PDF that was not read. Later check: Articles XIII, XV and XVII to XX."
+    },
+    {
+      "geoid": "4207555160",
+      "geoid_aliases": [],
+      "name": "North Lebanon township",
+      "county": "Lebanon",
+      "type": "township",
+      "population": 12041,
+      "population_with_aliases": 12041,
+      "housing_units": 4913,
+      "pop_rank": 211,
+      "file": "pa_lebanon_north_lebanon",
+      "batch": 36,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30841097",
+      "plain_fetch": false,
+      "code_current_through": "2026-01-05",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. 6-4-84 of 6-4-1984, as amended through Ord. No. 5-2023). No ADU text. Two-family detached (one unit over the other) and semidetached dwellings by right in R-2 at 4,500 sq ft of lot per unit, and conversion of existing buildings to apartments in R-2 at 3,500 sq ft per unit with public sewer and water (27-602.2, 27-602.5, 27-603). More than one principal structure may stand on a lot if each meets the rules as though on its own lot (27-1208). A use not listed is a special exception only if it is permitted in no other district (27-204.1E). Each district part sets its uses and figures in text. New Laws: nine items, none for Chapter 27. Read in the browser on eCode360 (NO1608).",
+      "why": [
+        "added as batch 36 by population. Code Chapter 27 has no ADU text (27-602 two-family and conversion in R-2, 27-1208 second principal structure)"
+      ],
+      "status_note": "Open: whether 27-1208 (more than one principal structure on a lot) lets a second single-family house share a lot, since 27-102 defines a single-family dwelling as one 'on an individual lot'. The unlisted-use special exception (27-204.1E) is left out because its test (b) fails where R-2 permits two-family dwellings. Whether two units count as 'apartments' under 27-602.5 and which parking row applies. Not read: Parts 13, 15, 18, 19, 21 to 23, most of Parts 11 and 24, 27-1231 and 27-1232."
+    },
+    {
+      "geoid": "4209532432",
+      "geoid_aliases": [],
+      "name": "Hanover township",
+      "county": "Northampton",
+      "type": "township",
+      "population": 11783,
+      "population_with_aliases": 11783,
+      "housing_units": 4944,
+      "pop_rank": 217,
+      "file": "pa_northampton_hanover",
+      "batch": 36,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/6766315",
+      "plain_fetch": false,
+      "code_current_through": "2026-07-21",
+      "code_note": "Zoning: Chapter 185 Zoning (Ord. No. 78-5 of 9-26-1978, as amended through Ord. No. 26-02 of 6-23-2026). No ADU text. Each district permits 'Only the following' uses. The Zoning Hearing Board may not grant a variance for a use the district does not permit (185-52D(2), (8)). An accessory building counts as part of the house for yards (185-25C(2)). R-2 permits townhouses, garden apartments and semidetached houses only as 8 acre developments (185-27), PHR semidetached houses on 6,000 sq ft lots (185-28). The only attachment is the table of zoning map amendments. New Laws: none. Read in the browser on eCode360 (HA1762).",
+      "why": [
+        "added as batch 36 by population. Code Chapter 185 has no ADU text (use variance barred, 185-52D(2))"
+      ],
+      "status_note": "Open: whether a farm tenant house is a customary farm use in A (185-12 'Farm', 'Farmhouse', 185-23D(3)). R1 side yards are 10% of lot width, so no fixed side figure is stored. Use variance read as barred by 185-52D(2), (8). Not read: 185-1 to 185-6, 185-8 to 185-11, 185-13, 185-15, 185-16, 185-18 to 185-21, 185-22.1, the Article VIII area tables, 185-40 (AFD), Article XI (nonconforming uses), Articles XII, XIII and XV, 185-54B to E."
+    },
+    {
+      "geoid": "4207123016",
+      "geoid_aliases": [],
+      "name": "Elizabethtown borough",
+      "county": "Lancaster",
+      "type": "borough",
+      "population": 11639,
+      "population_with_aliases": 11639,
+      "housing_units": 4665,
+      "pop_rank": 221,
+      "file": "pa_lancaster_elizabethtown",
+      "batch": 36,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/27498291",
+      "plain_fetch": false,
+      "code_current_through": "2025-07-17",
+      "code_note": "Zoning: Chapter 27 Zoning (Ord. 766 of 5-16-1996, as amended through Ord. No. 1009 of 4-6-2023). ADU text: 'Accessory dwelling unit' (27-201, 27-1333, Ord. 983 of 11-16-2017), a permitted use in R-1, R-2, R-3 and MU, not in the CBD: one per lot, at most two bedrooms, the lot owner lives in the house or the ADU, not sold separately, a detached unit smaller in footprint and height than the house and 6 ft from side and rear lines, rental license, 1 parking space per bedroom plus 2. Two-family detached dwellings and conversion apartments by right in R-3. The only attachment is the sign table. New Laws: none. Read in the browser on eCode360 (EL0331).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-1333 accessory dwelling units by right in R-1, R-2, R-3 and MU)"
+      ],
+      "status_note": "Open: whether the R-2 and R-3 lot area 'for each dwelling unit' (27-707.1, 27-807.1) reaches the ADU, how 27-1602A(4) '1 per bedroom plus 2 for the dwelling unit' is counted, and whether the 15 ft accessory height (27-1302.2(6)) binds a detached ADU. Not read: 27-1304 (conversion apartments), 27-2008 (variances), Parts 4, 5, 10, 11, 12, the rest of 12A, 14, 15, 17 to 21, and Chapter 8 floodplains."
     }
   ]
 }

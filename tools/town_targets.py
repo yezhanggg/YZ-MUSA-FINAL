@@ -1412,6 +1412,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": None,
         "note": "Zoning: Chapter 300 Zoning (Borough of Yeadon Zoning Ordinance of 1984, Ord. No. 1115, codified by Ord. No. 1245 of 12-7-1995, as amended). No ADU text. A permits single-family detached dwellings and municipal uses only, with private garages and parking as accessory uses (300-33A, B). Conversion of an existing single-family structure with more than 3,600 sq ft of net floor area into a multifamily use (up to four units) by special exception in A only (300-33C(2)). B adds semidetached dwellings, C townhouse and garden apartment developments, NC residences above the first floor. No attachments. New Laws: 41 uncodified items since 2018, one a 2024 zoning amendment (smoke shops). Read in the browser on eCode360 (YE2061).",
     },
+    "4207555160": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/30841097",
+        "plain_fetch": False,
+        "current_through": "2026-01-05",
+        "note": "Zoning: Chapter 27 Zoning (Ord. 6-4-84 of 6-4-1984, as amended through Ord. No. 5-2023). No ADU text. Two-family detached (one unit over the other) and semidetached dwellings by right in R-2 at 4,500 sq ft of lot per unit, and conversion of existing buildings to apartments in R-2 at 3,500 sq ft per unit with public sewer and water (27-602.2, 27-602.5, 27-603). More than one principal structure may stand on a lot if each meets the rules as though on its own lot (27-1208). A use not listed is a special exception only if it is permitted in no other district (27-204.1E). Each district part sets its uses and figures in text. New Laws: nine items, none for Chapter 27. Read in the browser on eCode360 (NO1608).",
+    },
+    "4209532432": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/6766315",
+        "plain_fetch": False,
+        "current_through": "2026-07-21",
+        "note": "Zoning: Chapter 185 Zoning (Ord. No. 78-5 of 9-26-1978, as amended through Ord. No. 26-02 of 6-23-2026). No ADU text. Each district permits 'Only the following' uses. The Zoning Hearing Board may not grant a variance for a use the district does not permit (185-52D(2), (8)). An accessory building counts as part of the house for yards (185-25C(2)). R-2 permits townhouses, garden apartments and semidetached houses only as 8 acre developments (185-27), PHR semidetached houses on 6,000 sq ft lots (185-28). The only attachment is the table of zoning map amendments. New Laws: none. Read in the browser on eCode360 (HA1762).",
+    },
+    "4207123016": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/27498291",
+        "plain_fetch": False,
+        "current_through": "2025-07-17",
+        "note": "Zoning: Chapter 27 Zoning (Ord. 766 of 5-16-1996, as amended through Ord. No. 1009 of 4-6-2023). ADU text: 'Accessory dwelling unit' (27-201, 27-1333, Ord. 983 of 11-16-2017), a permitted use in R-1, R-2, R-3 and MU, not in the CBD: one per lot, at most two bedrooms, the lot owner lives in the house or the ADU, not sold separately, a detached unit smaller in footprint and height than the house and 6 ft from side and rear lines, rental license, 1 parking space per bedroom plus 2. Two-family detached dwellings and conversion apartments by right in R-3. The only attachment is the sign table. New Laws: none. Read in the browser on eCode360 (EL0331).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1445,6 +1466,7 @@ FIXED_BATCH.update({g: 32 for g in ("4203948360", "4200323000", "4209153664")})
 FIXED_BATCH.update({g: 33 for g in ("4204767344", "4203707128", "4201344328")})
 FIXED_BATCH.update({g: 34 for g in ("4201753304", "4202979352", "4202164544")})
 FIXED_BATCH.update({g: 35 for g in ("4209145072", "4209144920", "4204586968")})
+FIXED_BATCH.update({g: 36 for g in ("4207555160", "4209532432", "4207123016")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1606,6 +1628,18 @@ EXTRAS = {
     "4209145072": "Code 250-21B(4) temporary living quarters for relatives or household employees",
     "4209144920": "Code 1250.04(a)(27)B family definition, two housekeeping units for a relative 60 or older or handicapped",
     "4204586968": "batch 35 by population. Code Chapter 300 has no ADU text (300-33C(2) conversion of a large house in A)",
+    # Batch 36 (2026-11-16): the next towns by population without a rule file. North Middleton (Cumberland) was skipped
+    # (eCode360 code from 2024-08-15, and Ord. No. 2025-06, a Chapter 204 zoning amendment of 10-16-2025, not yet
+    # codified), Rapho (Lancaster) (zone use and dimensional tables only in PDF attachments), Richland (Allegheny) (Ord.
+    # No. 535, a Chapter 27 zoning ordinance of 10-21-2026, not yet codified), Sandy (Clearfield) (consolidated into the
+    # City of DuBois on 1-5-2026, no zoning text found as web pages), North Union (Fayette) (no township code found; the
+    # Fayette County planning site, which administers zoning for most of the county, was refused to the browser), Lower
+    # Burrell (Westmoreland) (lot requirements and height standards only in a PDF attachment), Emmaus (Lehigh) (tables of
+    # permitted uses and of area, yard and building requirements only in PDF attachments) and Center (Beaver) (zoning
+    # only as PDF articles on the township website).
+    "4207555160": "batch 36 by population. Code Chapter 27 has no ADU text (27-602 two-family and conversion in R-2, 27-1208 second principal structure)",
+    "4209532432": "batch 36 by population. Code Chapter 185 has no ADU text (use variance barred, 185-52D(2))",
+    "4207123016": "Code 27-1333 accessory dwelling units by right in R-1, R-2, R-3 and MU",
 }
 
 if __name__ == "__main__":

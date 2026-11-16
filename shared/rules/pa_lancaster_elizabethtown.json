@@ -1,0 +1,567 @@
+{
+  "provenance": {
+    "jurisdiction": "Elizabethtown borough",
+    "instrument": "Borough of Elizabethtown Zoning Ordinance (Chapter 27 Zoning, Ord. 766 of 5-16-1996, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 EL0331, Borough of Elizabethtown (Lancaster County, the only Elizabethtown borough in Pennsylvania). Chapter 27 was adopted 5-16-1996 by Ord. 766 and amended since. The ADU rules were added by Ord. 983 (11-16-2017). The latest zoning amendments seen are Ord. No. 999 (6-18-2020) and Ord. No. 1009 (4-6-2023). eCode360 shows sections without the chapter number (for example '§ 1333'). This file cites them as 27-1333, the form eCode360 uses in its links. Each district part lists its uses and figures in text. The only attachment is the table of sign requirements. New Laws: none",
+    "effective_date": "2017-11-16",
+    "source_urls": [
+      "https://ecode360.com/EL0331",
+      "https://ecode360.com/27498291",
+      "https://ecode360.com/EL0331/laws",
+      "https://ecode360.com/EL0331/search?query=%22accessory%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EL0331/search?query=%22single-family%20detached%20dwellings%22%20OR%20%22dwelling%20units%22%20OR%20caretaker%20OR%20watchman%20OR%20%22in-law%22%20OR%20%22family%20member%22%20OR%20ECHO%20OR%20%22temporary%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/EL0331?guid=32991890",
+      "https://ecode360.com/print/EL0331?guid=27498300",
+      "https://ecode360.com/print/EL0331?guid=27498614",
+      "https://ecode360.com/print/EL0331?guid=27498663",
+      "https://ecode360.com/print/EL0331?guid=27498694",
+      "https://ecode360.com/print/EL0331?guid=27498720",
+      "https://ecode360.com/print/EL0331?guid=27498756",
+      "https://ecode360.com/print/EL0331?guid=27498967",
+      "https://ecode360.com/print/EL0331?guid=27499095",
+      "https://ecode360.com/print/EL0331?guid=27499773"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Lancaster",
+    "municipality_type": "borough",
+    "geoid": "4207123016",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/27498291",
+    "code_current_through": "2025-07-17",
+    "code_current_through_note": "eCode360 Version Information: 'Includes legislation through 07-17-2025.' Uploaded 06-23-2026. New Laws: 'There are currently no known new laws for this Code.'",
+    "checks": [
+      "An accessory dwelling unit is a permitted use in R-1, R-2, R-3 and MU 'in accordance with § 1333' (27-602.7, 27-702.8, 27-802.12, 27-12A02.V). 'Accessory dwelling units are not permitted within the Central Business District' (27-1333.8)",
+      "The code's ADU is 'A small dwelling unit with no more than two bedrooms that is built on the same lot as a primary dwelling unit', a one- or two-bedroom unit in the basement or attic, or 'a separate dwelling unit converted from an existing or newly constructed accessory structure or portion thereof' (27-201)",
+      "One ADU per lot. The lot owner keeps his or her principal residence in the house or the ADU. The ADU may not be sold separately (27-1333.1, 4, 5)",
+      "A detached ADU must be smaller in footprint and height than the principal building and at least 6 ft from the side and rear lot lines. An attached ADU meets the district setbacks (27-1333.2, 9)",
+      "A residential accessory building stands in the rear yard of the house, not in a required front yard, and an accessory structure in a residential zone may be at most 15 ft tall (27-1302.2(2), (5), (6))",
+      "The ADU must meet the residential rental license program and the property maintenance code, and a zoning permit and a construction code permit are needed before work starts (27-1333.3, 7, 10)",
+      "Parking for accessory dwelling units is '1 per bedroom plus 2 for the dwelling unit'. Other dwellings need 2 per dwelling unit (27-1602A(4), (17))",
+      "In R-2 and R-3 the lot area and width 'are established for each dwelling unit' (27-707.1, 27-807.1). Whether an ADU needs its own lot share is not settled",
+      "In R-2 a single-family detached dwelling may not be converted into a semidetached dwelling (27-702.2)",
+      "A use neither permitted nor prohibited may be allowed by the Zoning Hearing Board as a special exception if it is of the same general character as the district's permitted uses (27-306)",
+      "No section read bars a use variance. 27-2008 (Variances) was not read"
+    ],
+    "notes": "Zoning office: Borough of Elizabethtown, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 27-201 (the ADU, accessory building, apartment, conversion apartment, dwelling, dwelling unit, single-family, two-family and impervious coverage definitions), 27-306, Parts 6, 7, 8 and 9, 27-1302, 27-1333, 27-1602A, the MU permitted uses through H, 27-12A12 to 27-12A14 and the New Laws page. Not read: Parts 1, 4 (OS&C), 5 (INS), 10 (G-C), 11 (LI), 12 (G-I), the rest of Part 12A, 27-1301 and 27-1303 to 27-1332, 27-1334, Parts 14, 15 and 17 to 21, and Chapter 8 (Floodplains). A code search for single-family detached dwellings, dwelling units, caretaker, watchman, in-law, family member, ECHO and temporary dwelling found dwelling listings only in R-1, R-2, R-3, MU and CBD. The ADU text sets no floor area cap, only two bedrooms at most for a unit in the house or the basement or attic. Floodplain rules are in Chapter 8, not read."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "27-201, 27-1333",
+      "url": "https://ecode360.com/print/EL0331?guid=27498300",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A small dwelling unit with no more than two bedrooms that is built on the same lot as a primary dwelling unit, a separate one- or two-bedroom dwelling unit in the basement, a separate one- or two-bedroom dwelling unit in the attic, or a separate dwelling unit converted from an existing or newly constructed accessory structure or portion thereof.'"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "27-602.7, 27-702.8, 27-802.12, 27-12A02.V, 27-1333",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A permitted use in R-1, R-2, R-3 and MU, under 27-1333. A zoning permit and a construction code permit (27-1333.10)"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "MU"
+      ],
+      "section": "27-602.7, 27-702.8, 27-802.12, 27-12A02.V",
+      "url": "https://ecode360.com/print/EL0331?guid=27498663",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "27-306",
+      "url": "https://ecode360.com/print/EL0331?guid=27498614",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "OS&C, INS, G-C, LI and G-I do not list the ADU, and no dwelling listing was found in them"
+    },
+    "status_outside_by_district": {
+      "value": [
+        {
+          "districts": [
+            "CBD"
+          ],
+          "status": "prohibited",
+          "section": "27-1333.8",
+          "url": "https://ecode360.com/print/EL0331?guid=32991890",
+          "note": "'Accessory dwelling units are not permitted within the Central Business District.' Accessory buildings there 'may not be converted into residential units' (27-907)"
+        }
+      ],
+      "section": "27-1333.8",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "27-602.7, 27-702.8, 27-802.12, 27-1333.10",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Permitted use. Zoning permit and construction code permit"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-2008",
+      "url": "https://ecode360.com/27498291",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Zoning Hearing Board. 27-2008 was not read"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "'Two-family detached dwellings' are a permitted use in R-3 (27-802.3). A duplex is 'A building used by two families, with one dwelling unit arranged over the other, and having two side yards' (27-201). 3,000 sq ft of lot per unit, width 55 ft at the street and 60 ft at the setback line per unit, depth 100 ft, impervious cover 50%, front 20 ft, side 8 ft, rear 25 ft (27-807, 27-808). Two parking spaces per dwelling unit (27-1602A(17))",
+          "min_lot_sqft": 6000,
+          "section": "27-802.3, 27-807, 27-808, 27-201",
+          "url": "https://ecode360.com/print/EL0331?guid=27498720",
+          "confidence": "verified",
+          "note": "6,000 sq ft is 3,000 sq ft for each of the two units. A stacked two-unit house, not an accessory unit"
+        },
+        {
+          "name": "Conversion apartments (R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "'Conversion apartments' are a permitted use in R-3 (27-802.5): 'An existing dwelling unit that is or was converted to a dwelling for more than one family' (27-201). Lot 4,000 sq ft, width 45 ft at the street, 50 ft at the setback line, depth 100 ft (27-807.1). Supplementary rules in 27-1304 apply",
+          "min_lot_sqft": 4000,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "The dwelling already exists",
+              "section": "27-201 'Apartment, conversion'"
+            }
+          ],
+          "section": "27-802.5, 27-807.1, 27-1304, 27-201",
+          "url": "https://ecode360.com/print/EL0331?guid=27498720",
+          "confidence": "secondary",
+          "note": "27-1304 (Apartments, Conversion) was not read, so its added standards are not shown. Ask the zoning officer"
+        },
+        {
+          "name": "Dwelling units above a nonresidential use (CBD)",
+          "path": "by_right",
+          "districts": [
+            "CBD"
+          ],
+          "conditions": "'Dwelling units, provided they are located on or above the second-floor level of a nonresidential use' (27-902.1). Ground-floor dwelling units are a conditional use (27-905A). Accessory buildings 'may not be converted into residential units' (27-907). Two off-street spaces for each unit, which Borough Council may reduce by conditional use (27-911)",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The building holds a nonresidential use and the unit is on or above the second floor",
+              "section": "27-902.1"
+            }
+          ],
+          "section": "27-902.1, 27-905A, 27-907, 27-911",
+          "url": "https://ecode360.com/print/EL0331?guid=27498756",
+          "confidence": "verified",
+          "note": "Not a unit added to a house lot. ADUs are not permitted in the CBD (27-1333.8)"
+        }
+      ],
+      "section": "27-802.3, 27-802.5, 27-902.1",
+      "url": "https://ecode360.com/print/EL0331?guid=27498720",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/print/EL0331?guid=27498300",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path found"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "A detached ADU must be smaller in both building footprint and height than the principal building on the lot.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-1333.2",
+          "url": "https://ecode360.com/print/EL0331?guid=32991890"
+        },
+        {
+          "kind": "other",
+          "condition": "The ADU must meet the residential rental license program (Chapter 5, Part 3) and the existing structures and property maintenance code (Chapter 5, Part 1). The lot owner secures electric, water and sewer service and pays the connection and service fees.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1333.3, 6, 7",
+          "url": "https://ecode360.com/print/EL0331?guid=32991890"
+        },
+        {
+          "kind": "other",
+          "condition": "The ADU may not be sold separately from the principal building.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1333.5",
+          "url": "https://ecode360.com/print/EL0331?guid=32991890"
+        },
+        {
+          "kind": "district",
+          "condition": "In MU a single-family detached dwelling is itself a conditional use, so the house the ADU serves needs that approval first.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "MU"
+          ],
+          "building_types": null,
+          "section": "27-12A06",
+          "url": "https://ecode360.com/print/EL0331?guid=27498967"
+        }
+      ],
+      "section": "27-1333, 27-12A06",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-201, 27-1333.2, 9, 10",
+      "url": "https://ecode360.com/print/EL0331?guid=27498300",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The definition names a unit in the basement or attic and a unit converted from 'an existing or newly constructed accessory structure or portion thereof'. 27-1333.9 names units detached from and attached to the principal building"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "27-201, 27-1333",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified",
+      "note": "No floor area cap. The unit has 'no more than two bedrooms', and a detached unit is smaller in footprint than the principal building (27-1333.2)"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 6,
+      "section": "27-1333.9",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory dwelling units that are detached from the principal building on the lot shall have a minimum setback of six feet from the rear and side lot line.'"
+    },
+    "setback_rear_ft": {
+      "value": 6,
+      "section": "27-1333.9",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-1302.2(2), (5)",
+      "url": "https://ecode360.com/print/EL0331?guid=27499095",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A building accessory to a residential use 'shall be located within the rear yard of the principal building'"
+    },
+    "accessory_rear_yard_only": {
+      "value": true,
+      "section": "27-1302.2(2)",
+      "url": "https://ecode360.com/print/EL0331?guid=27499095",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'any building or structure accessory to a residential use shall be located within the rear yard of the principal building'"
+    },
+    "height_capped_at_house": {
+      "value": true,
+      "section": "27-1333.2",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A detached ADU is smaller in height than the principal building"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "27-1302.2(6)",
+      "url": "https://ecode360.com/print/EL0331?guid=27499095",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The maximum height of any accessory structure within a residential zone is 15 feet.'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "27-1302.2(6), 27-1333.11",
+      "url": "https://ecode360.com/print/EL0331?guid=27499095",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "27-1333 sets only 'smaller in ... height than the principal building'. 27-1333.11 makes the ADU comply with all other provisions, so the 15 ft accessory height may also bind. Not settled"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "27-1333.4",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'The owner of the lot shall maintain his or her principal primary residence in either the principal dwelling unit on the lot or in the accessory dwelling unit.'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "27-1333",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "No family or occupant rule"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-1333.1",
+      "url": "https://ecode360.com/print/EL0331?guid=32991890",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'No lot shall contain more than one accessory dwelling unit.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-1602A(4)",
+      "url": "https://ecode360.com/print/EL0331?guid=27499773",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified"
+    },
+    "reading": {
+      "value": "27-1602A(4) asks '1 per bedroom plus 2 for the dwelling unit' for accessory dwelling units, and the house needs 2. Read as the ADU's own count, a one-bedroom ADU needs 3 more spaces, 5 in total. Read as the bedrooms added to the house's 2, it needs 1 more, 3 in total.",
+      "section": "27-1602A(4), (17)",
+      "url": "https://ecode360.com/print/EL0331?guid=27499773",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "27-606, 27-607, 27-608",
+        "url": "https://ecode360.com/print/EL0331?guid=27498663",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 60 ft at the street, 75 ft at the setback line, depth 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-606, 27-607, 27-608",
+        "url": "https://ecode360.com/print/EL0331?guid=27498663",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-606, 27-607, 27-608",
+        "url": "https://ecode360.com/print/EL0331?guid=27498663",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Side yards, residential uses"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-606, 27-607, 27-608",
+        "url": "https://ecode360.com/print/EL0331?guid=27498663",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Residential uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "27-606, 27-607, 27-608",
+        "url": "https://ecode360.com/print/EL0331?guid=27498663",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The section is titled 'Lot Area, Lot Width and Impervious Coverage Regulations', and impervious coverage is the share of the lot 'covered by impervious materials' (27-201). At least 25% of the front yard stays grass"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-606, 27-607, 27-608",
+        "url": "https://ecode360.com/print/EL0331?guid=27498663",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The height of a building shall not exceed 35 feet.'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "27-706, 27-707, 27-708",
+        "url": "https://ecode360.com/print/EL0331?guid=27498694",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 55 ft at the street, 60 ft at the setback line, depth 100 ft. Semidetached 4,000 sq ft per unit"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-706, 27-707, 27-708",
+        "url": "https://ecode360.com/print/EL0331?guid=27498694",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-706, 27-707, 27-708",
+        "url": "https://ecode360.com/print/EL0331?guid=27498694",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Side yards, residential uses"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-706, 27-707, 27-708",
+        "url": "https://ecode360.com/print/EL0331?guid=27498694",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Residential uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.45,
+        "section": "27-706, 27-707, 27-708",
+        "url": "https://ecode360.com/print/EL0331?guid=27498694",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The section is titled 'Lot Area, Lot Width and Impervious Coverage Regulations', and impervious coverage is the share of the lot 'covered by impervious materials' (27-201). At least 25% of the front yard stays grass"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-706, 27-707, 27-708",
+        "url": "https://ecode360.com/print/EL0331?guid=27498694",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The height of a building shall not exceed 35 feet.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8000,
+        "section": "27-706, 27-707, 27-708",
+        "url": "https://ecode360.com/print/EL0331?guid=27498694",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'The minimum lot area, lot width and lot depth requirements are established for each dwelling unit' (27-707.1). An ADU is a dwelling unit (27-201), so the lot may need 8,000 sq ft for each unit. The ADU section sets no lot area of its own"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 4000
+        },
+        "section": "27-707.1",
+        "url": "https://ecode360.com/print/EL0331?guid=27498694",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Single-family semidetached: 4,000/unit'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-806, 27-807, 27-808",
+        "url": "https://ecode360.com/print/EL0331?guid=27498720",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 55 ft at the street, 60 ft at the setback line, depth 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "27-806, 27-807, 27-808",
+        "url": "https://ecode360.com/print/EL0331?guid=27498720",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-806, 27-807, 27-808",
+        "url": "https://ecode360.com/print/EL0331?guid=27498720",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Side yards, residential uses"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-806, 27-807, 27-808",
+        "url": "https://ecode360.com/print/EL0331?guid=27498720",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Residential uses"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-806, 27-807, 27-808",
+        "url": "https://ecode360.com/print/EL0331?guid=27498720",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The section is titled 'Lot Area, Lot Width and Impervious Coverage Regulations', and impervious coverage is the share of the lot 'covered by impervious materials' (27-201). At least 25% of the front yard stays grass"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-806, 27-807, 27-808",
+        "url": "https://ecode360.com/print/EL0331?guid=27498720",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The height of a building shall not exceed 35 feet.'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 6000,
+        "section": "27-806, 27-807, 27-808",
+        "url": "https://ecode360.com/print/EL0331?guid=27498720",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'The minimum lot area, lot width and lot depth requirements are established for each dwelling unit' (27-807.1). An ADU is a dwelling unit (27-201), so the lot may need 6,000 sq ft for each unit. The ADU section sets no lot area of its own"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 3000,
+          "attached": 2500
+        },
+        "section": "27-807.1",
+        "url": "https://ecode360.com/print/EL0331?guid=27498720",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Semidetached 3,000 sq ft per unit, attached 2,500 sq ft per unit"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-12A13.1A, 27-807",
+        "url": "https://ecode360.com/print/EL0331?guid=27498967",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "Residential uses in MU take the R-3 lot area, width and depth of 27-807. A single-family detached dwelling in MU is a conditional use (27-12A06)"
+      }
+    }
+  }
+}
