@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-175 towns in the index, 175 with a rule file (Philadelphia and Pittsburgh included). Verified 111, drafted 64, in progress 0, todo 0.
+178 towns in the index, 178 with a rule file (Philadelphia and Pittsburgh included). Verified 111, drafted 67, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -188,6 +188,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Marshall township | Allegheny | verified | accessory dwelling unit | by right | by right | ADU rule only in CR, SR. owner on site (208-401B(1)(b)). building type gate (208-216 (Table 3), 208-401B(1)(c)). other ways (not ADUs): Conversion of a single-family dwelling to multi-family (MDR, TC, RB) (conditional use, 208-216 (Table 3), 208-402R, 208-901, 208-501 (Table 11), 208-804). Second dwelling on a farm for farm workers or family (CR, SR) (by right, 208-402C(2), (3), (5), (6), 208-401C(1), 208-216 (Table 3)) | 500 | yes | 1 | 2026-11-16 |
 | Bristol borough | Bucks | verified | none | not in the code | variance | R-1 4,500 sq ft per unit. R-1A 4,500 sq ft per unit. R-2 4,500 sq ft per unit. NC 4,500 sq ft per unit. other ways (not ADUs): Two-family dwelling (duplex) in NC (special exception, 27-310.3C, 27-310.5, 27-310.6, 27-320.1E). Second single-family dwelling on the lot (R-1, R-1A, R-2) (by right with land development, 27-401, 27-402.2, 27-305.5) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
 | Canonsburg borough | Washington | verified | none | not in the code | variance | other ways (not ADUs): Two-family dwelling (R-2, R-3, MU) (by right, 170-305 (Table 301), 170-308 (Table 303), 170-202). Two-family dwelling (R-1) (conditional use, 170-305 (Table 301), 170-308 (Table 303), 170-703A). Conversion of a large house to apartments (R-2, R-3) (by right, 170-305 (Table 301), 170-603D). Conversion of a large house to apartments (MU) (conditional use, 170-305 (Table 301), 170-603D) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| Bethel township | Delaware | drafted | living quarters for household employees, caretakers, or watchmen | family only | by right | ADU rule only in R-1, R-3, R-4. occupancy (480-41H(5), 480-136B(5)). family only (480-136B(5)). other ways (not ADUs): Conversion of a single-family detached house into a dwelling for more families (special exception, 480-138). Two-family detached dwelling (R-4) (by right, 480-52D, 480-53B, 480-54H) | not confirmed | no | not confirmed | 2026-11-16 |
+| Warren city | Warren | drafted | accessory dwelling unit | by right | by right | ADU rule only in R-1, R-2, R-3, MU. building type gate (470-90 'Dwelling, multifamily', 'Dwelling, single-family detached', 470-16). lot size gate (470-90 'Dwelling, multifamily', 470-34A). other ways (not ADUs): Multifamily dwelling (two or more units) (by right, 470-16, 470-34, 470-90). Apartment, second story and above (by right, 470-16, 470-90). 2 parking spaces in total | not confirmed | no | not confirmed | 2026-11-16 |
+| Quakertown borough | Bucks | drafted | none | not in the code | variance | other ways (not ADUs): Duplex (HR, TC) (by right, 308.2B, 308.6, 309.2D, 309.6, 315.3D). Building conversion into two or more dwelling units (TC) (special exception, 309.3F, 315.3C). Up to two apartments above a nonresidential use (TC) (by right, 309.2FF, 315.6JJ) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
 
 ## Towns still to write
 
@@ -204,4 +207,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 173 | 47.5% |
+| 176 | 47.7% |

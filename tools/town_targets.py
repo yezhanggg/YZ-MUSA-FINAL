@@ -1470,6 +1470,7 @@ FIXED_BATCH.update({g: 36 for g in ("4207555160", "4209532432", "4207123016")})
 FIXED_BATCH.update({g: 37 for g in ("4207932416", "4202953608", "4204541440")})
 FIXED_BATCH.update({g: 38 for g in ("4209545104", "4207151664", "4207952584")})
 FIXED_BATCH.update({g: 40 for g in ("4200347696", "4201708760", "4212511152")})
+FIXED_BATCH.update({g: 41 for g in ("4204506024", "4212381000", "4201763048")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1694,6 +1695,19 @@ EXTRAS = {
     "4200347696": "Code 208-219 Table 4 and 208-401B accessory dwelling unit by right in CR and SR",
     "4201708760": "batch 40 by population. Code Chapter 27 has no ADU text",
     "4212511152": "batch 40 by population. Code Chapter 170 has no ADU text (two-family dwelling by right in R-2, R-3, MU, 170-603D(5) large-house apartment conversion)",
+    # Batch 41 (2026-11-16): the next towns by population without a rule file. Sunbury (Northumberland) was skipped (Ord.
+    # No. 1334 of 2-24-2025 and No. 1340 of 2-11-2026, Chapter 175 zoning amendments, not yet codified), East Stroudsburg
+    # (Monroe) (Table of Use Regulations and Table of Bulk Regulations only in PDF attachments, and six Chapter 157 zoning
+    # amendments of 2023 to 2026 not yet codified), Oil City (Venango) (Lot, Yard and Height Area and Bulk Requirement Table
+    # only in a PDF attachment), South Strabane (Washington) (Ord. No. 1-2026 and No. 3-2026, Chapter 245 zoning amendments,
+    # not yet codified), Middletown borough (Dauphin) (Ord. No. 1428 of 8-5-2026, a Chapter 260 zoning amendment, not yet
+    # codified), South Abington (Lackawanna) (zoning ordinance only as a PDF on the township website), Lower Swatara
+    # (Dauphin) (Ord. No. 628 of 6-17-2026 and No. 630 of 11-4-2026, Chapter 27 zoning, not yet codified), Butler (Luzerne)
+    # (no zoning text found as web pages; eCode360 "Township of Butler" Chapter 300 is Butler Township, Butler County, and the
+    # township website is down) and Lititz (Lancaster) (a Chapter 122 zoning amendment of 7-30-2024 not yet codified).
+    "4204506024": "Code 480-136B(5) living quarters for household employees, caretakers, or watchmen (R-1, R-3, R-4)",
+    "4212381000": "Code 470-16 accessory dwelling unit by right in R-1, R-2, R-3 and MU",
+    "4201763048": "batch 41 by population. Code Chapter 27 has no ADU text (duplex by right in HR and TC, 309.3F building conversion by special exception in TC, use variance barred 704.6C(2)(d))",
 }
 
 if __name__ == "__main__":

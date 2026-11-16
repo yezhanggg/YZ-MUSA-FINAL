@@ -1,0 +1,521 @@
+{
+  "provenance": {
+    "jurisdiction": "Warren city",
+    "instrument": "City of Warren Zoning Ordinance (Chapter 470 Zoning, Ord. No. 1978 of 5-20-2024), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 WA2487, City of Warren (Warren County named in 470-90 'Board' and 'Lot of record'). The district use table (470-16) and area regulations (470-15) are text. The only attachment is the table of zoning map amendments. Floodplain rules are in Chapter 260. Chapter page shows New Laws (0)",
+    "effective_date": "2024-05-20",
+    "source_urls": [
+      "https://ecode360.com/16083925",
+      "https://ecode360.com/WA2487",
+      "https://ecode360.com/WA2487/laws",
+      "https://ecode360.com/WA2487/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22domestic%20employee%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20servant%20OR%20%22living%20quarters%22%20OR%20%22carriage%20house%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WA2487/search?query=floodway&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/WA2487?guid=45785821",
+      "https://ecode360.com/print/WA2487?guid=45785865",
+      "https://ecode360.com/print/WA2487?guid=45786016",
+      "https://ecode360.com/print/WA2487?guid=45786390",
+      "https://ecode360.com/print/WA2487?guid=45786466",
+      "https://ecode360.com/print/WA2487?guid=45786526",
+      "https://ecode360.com/print/WA2487?guid=45786564",
+      "https://ecode360.com/print/WA2487?guid=16101367"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Warren",
+    "municipality_type": "city",
+    "geoid": "4212381000",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/16083925",
+    "code_current_through": "2025-10-20",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 10-20-2025' (as shown in the search listing). The zoning chapter shows no new laws",
+    "checks": [
+      "'Accessory dwelling unit' is a permitted (P) accessory use in R-1, R-2, R-3 and MU in the 470-16 use table. The chapter does not define it and gives it no standards: no size cap, no owner or family rule and no count per lot",
+      "A unit inside or attached to the house may instead be read as turning it into a multifamily dwelling ('a building having two or more dwelling units'), which R-1 does not permit and which needs a one acre lot in R-2, R-3 and MU (470-90, 470-34). Ask the zoning officer which reading applies",
+      "Only one principal structure is allowed on a lot, except in planned residential developments and for multifamily dwellings (470-20A). A unit in a separate building is an accessory structure",
+      "Residential districts: new lots 5,000 sq ft and 40 ft wide. Existing lots of 4,000 sq ft may be used. Front yard is the average of the block. Side and rear yards at least 5 ft. No building less than 10 ft from an adjoining building. Building cover 50%, 45% or 35% by lot size (470-15A)",
+      "On a lot less than 60 ft wide an accessory building needs 3 ft side and rear yards and may be one story, up to 20 ft (470-15A). No accessory height is given for wider lots, and no principal building height was found in 470-15",
+      "Minimum dwelling size: 500 sq ft for a single-family dwelling and 400 sq ft for a one-bedroom apartment in 470-15A, but 800 sq ft per single-family unit and 550 sq ft per multifamily unit in the 470-90 'Floor area' definition",
+      "Parking: one space for each dwelling unit (470-69A(1)). No parking in the front yard in residential districts except on lots with two frontages or narrow side and rear yards (470-70A(2))",
+      "A family is related persons or up to four unrelated persons living as one housekeeping unit (470-90)",
+      "Nonconforming lot of record in separate ownership: a single-family house and customary accessory buildings may be built if the yards are met (470-77A)",
+      "Variances: the Zoning Hearing Board under MPC 910.2 (470-83C(4)). No bar on a use variance. Uses called 'customary' or 'similar' are decided by the Zoning Officer (470-18A)",
+      "Floodplain rules are in Chapter 260 (260-21)"
+    ],
+    "notes": "Zoning office: City of Warren Department of Codes and Planning. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: the chapter page, Article IV (470-14 to 470-17, the use table by screen view), Article V, 470-34, Article VIII, Article IX, Article XI, Article XIII through the letter V, Chapter 260 section 21 and code searches. Searches on this code returned to the prior page more than once, so the ADU search was read from its result list once. Not read: Articles I to III, the rest of Article VI (adaptive reuse, PRD), Article VII, Article X, Article XII, definitions from W on (yards), historic district rules and the rest of Chapter 260."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Listed in the 470-16 use table under 'Accessory'. Not defined in 470-90"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'P is permitted by right' (470-16A). P in R-1, R-2, R-3 and MU"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "MU"
+      ],
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "C-1, C-2, I-1 and Pres do not list it. I-1 is meant 'to prohibit residential development' (470-14G)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A zoning permit from the Zoning Officer"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "470-83C(4)",
+      "url": "https://ecode360.com/print/WA2487?guid=45786526",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board, under MPC 910.2. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Multifamily dwelling (two or more units)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "MU"
+          ],
+          "conditions": "A building with two or more dwelling units. Lot of one acre, at most 12 units per acre, 50 ft from a property line next to a single-family dwelling, buffers and screening (470-34). Special exception in C-1 and Pres",
+          "min_lot_sqft": 43560,
+          "section": "470-16, 470-34, 470-90",
+          "url": "https://ecode360.com/print/WA2487?guid=45786016",
+          "confidence": "secondary",
+          "note": "A house turned into two units would be this use if the unit is not read as an accessory dwelling unit"
+        },
+        {
+          "name": "Apartment, second story and above",
+          "path": "by_right",
+          "districts": [
+            "R-3",
+            "MU"
+          ],
+          "conditions": "A dwelling above a nonresidential use in a mixed building (470-90). Also permitted in C-1 and C-2",
+          "section": "470-16, 470-90",
+          "url": "https://ecode360.com/print/WA2487?guid=45785821",
+          "confidence": "secondary",
+          "note": "Only above a nonresidential use, not over a house"
+        }
+      ],
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "MU"
+      ],
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 470",
+      "url": "https://ecode360.com/16083925",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic path in the zoning chapter. The Historic District is defined in 470-90, its rules were not read"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "A unit inside or attached to the house may make it 'a building having two or more dwelling units', a multifamily dwelling, which R-1 does not permit. A single-family detached dwelling contains one dwelling unit.",
+          "effect": "bars",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": [
+            "R-1"
+          ],
+          "building_types": null,
+          "disputed_by": {
+            "section": "470-16",
+            "url": "https://ecode360.com/print/WA2487?guid=45785821",
+            "note": "The use table lists 'Accessory dwelling unit' as a permitted accessory use in R-1, R-2, R-3 and MU, so a unit inside or attached to the house may be read as that accessory use and not as a multifamily dwelling."
+          },
+          "section": "470-90 'Dwelling, multifamily', 'Dwelling, single-family detached', 470-16",
+          "url": "https://ecode360.com/print/WA2487?guid=45786564",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "A unit inside or attached to the house may make it a multifamily dwelling, which needs a lot of one acre and at most 12 units per acre.",
+          "effect": "bars",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": [
+            "R-2",
+            "R-3",
+            "MU"
+          ],
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 43560,
+          "disputed_by": {
+            "section": "470-16",
+            "url": "https://ecode360.com/print/WA2487?guid=45785821",
+            "note": "The use table lists 'Accessory dwelling unit' as a permitted accessory use in R-1, R-2, R-3 and MU, so a unit inside or attached to the house may be read as that accessory use and not as a multifamily dwelling."
+          },
+          "section": "470-90 'Dwelling, multifamily', 470-34A",
+          "url": "https://ecode360.com/print/WA2487?guid=45786016",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A unit in a separate building must be an accessory structure. 'Only one principal structure may be permitted on a lot, except in planned residential developments and for multifamily dwellings.'",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "470-20A",
+          "url": "https://ecode360.com/print/WA2487?guid=45785865"
+        },
+        {
+          "kind": "other",
+          "condition": "In a floodway no new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels, and no new construction without a City or DEP permit. In an AE area without a floodway, no more than one foot of rise, and no new construction within 50 ft landward of the top of bank without a permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "260-21A, B",
+          "url": "https://ecode360.com/print/WA2487?guid=16101367",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 260"
+        }
+      ],
+      "section": "470-90, 470-34, 470-20A, 260-21",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1",
+        "C-2",
+        "I-1",
+        "Pres"
+      ],
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "470-16, 470-90 'Structure, accessory'",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The unit is not defined, so no form is named or barred. An accessory structure may be 'attached, semidetached or detached'"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 5,
+      "section": "470-15A",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Side and rear yard: Minimum of 5 feet'. 3 ft for an accessory building on a lot less than 60 ft wide"
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "470-15A",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "3 ft for an accessory building on a lot less than 60 ft wide"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building on a lot less than 60 ft wide",
+          "setback_side_ft": 3,
+          "setback_rear_ft": 3,
+          "max_height_ft": 20,
+          "section": "470-15A",
+          "url": "https://ecode360.com/print/WA2487?guid=45785821",
+          "note": "One story, not over 20 ft"
+        }
+      ],
+      "section": "470-15A",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "470-15A",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The 5 ft side and rear yards are given for all buildings in residential districts"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No owner rule"
+    },
+    "family_only": {
+      "value": false,
+      "section": "470-16",
+      "url": "https://ecode360.com/print/WA2487?guid=45785821",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No family rule"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "470-69A(1)",
+      "url": "https://ecode360.com/print/WA2487?guid=45786390",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'All residential uses: one for each dwelling unit.' The unit is read as a dwelling unit"
+    },
+    "total_on_site": {
+      "value": 2,
+      "section": "470-69A(1)",
+      "url": "https://ecode360.com/print/WA2487?guid=45786390",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "One for the house and one for the unit"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "For a new lot by boundary adjustment or subdivision. An existing lot of at least 4,000 sq ft may be used for residential development (470-15A, 470-20B). New lots are 40 ft wide"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Average of setbacks of adjoining lots on the block', set by the Zoning Officer"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum of 5 feet'. 'No building shall be less than 10 feet from an adjoining building.'"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum of 5 feet'"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). The tool holds no tiered building cover, so no single figure is stored"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "For a new lot by boundary adjustment or subdivision. An existing lot of at least 4,000 sq ft may be used for residential development (470-15A, 470-20B). New lots are 40 ft wide"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Average of setbacks of adjoining lots on the block', set by the Zoning Officer"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum of 5 feet'. 'No building shall be less than 10 feet from an adjoining building.'"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum of 5 feet'"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). The tool holds no tiered building cover, so no single figure is stored"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "For a new lot by boundary adjustment or subdivision. An existing lot of at least 4,000 sq ft may be used for residential development (470-15A, 470-20B). New lots are 40 ft wide"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Average of setbacks of adjoining lots on the block', set by the Zoning Officer"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum of 5 feet'. 'No building shall be less than 10 feet from an adjoining building.'"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum of 5 feet'"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). The tool holds no tiered building cover, so no single figure is stored"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "470-15A, B",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "For a new lot by boundary adjustment or subdivision. An existing lot of at least 4,000 sq ft may be used for residential development (470-15A, 470-20B). New lots are 40 ft wide. Residential uses in commercial districts take the R-3 area regulations (470-15B)"
+      },
+      "setback_front_ft": {
+        "value": null,
+        "section": "470-15A, B",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Average of setbacks of adjoining lots on the block', set by the Zoning Officer"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "470-15A, B",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum of 5 feet'. 'No building shall be less than 10 feet from an adjoining building.'"
+      },
+      "setback_rear_ft": {
+        "value": 5,
+        "section": "470-15A, B",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum of 5 feet'"
+      },
+      "max_building_coverage": {
+        "value": null,
+        "section": "470-15A, B",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). The tool holds no tiered building cover, so no single figure is stored"
+      }
+    }
+  }
+}

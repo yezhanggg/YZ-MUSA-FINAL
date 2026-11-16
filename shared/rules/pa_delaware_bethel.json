@@ -1,0 +1,802 @@
+{
+  "provenance": {
+    "jurisdiction": "Bethel township",
+    "instrument": "Bethel Township Zoning Ordinance of 2008 (Chapter 480 Zoning, Ord. No. 182 of 6-10-2008, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 BE2833, Township of Bethel, Delaware County (480-132D(3) and 480-41.3J record plans and deeds in Delaware County, 480-43 refers PRD plans to the Delaware County Planning Commission). District uses and figures are text in each district article. The only attachments are Appendix A and the zoning map. New Laws page: no new laws.",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/11463872",
+      "https://ecode360.com/BE2833",
+      "https://ecode360.com/BE2833/laws",
+      "https://ecode360.com/BE2833/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22domestic%20employee%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22granny%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20servant&scope=all&sortOrder=relevance",
+      "https://ecode360.com/BE2833/search?query=%22living%20quarters%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/BE2833/search?query=riparian%20OR%20%22steep%20slope%22%20OR%20conversion%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/BE2833/search?query=floodway%20prohibited&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/BE2833?guid=14417669",
+      "https://ecode360.com/print/BE2833?guid=14417753",
+      "https://ecode360.com/print/BE2833?guid=14417850",
+      "https://ecode360.com/print/BE2833?guid=14417856",
+      "https://ecode360.com/print/BE2833?guid=14417886",
+      "https://ecode360.com/print/BE2833?guid=14417887",
+      "https://ecode360.com/print/BE2833?guid=14418004",
+      "https://ecode360.com/print/BE2833?guid=14418054",
+      "https://ecode360.com/print/BE2833?guid=14418271",
+      "https://ecode360.com/print/BE2833?guid=14418302",
+      "https://ecode360.com/print/BE2833?guid=14418353",
+      "https://ecode360.com/print/BE2833?guid=14418422",
+      "https://ecode360.com/print/BE2833?guid=14418523",
+      "https://ecode360.com/print/BE2833?guid=14418844",
+      "https://ecode360.com/print/BE2833?guid=14418896",
+      "https://ecode360.com/print/BE2833?guid=14415809",
+      "https://ecode360.com/print/BE2833?guid=14415896",
+      "https://ecode360.com/print/BE2833?guid=45257646"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204506024",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11463872",
+    "code_current_through": "2025-12-09",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 12-09-2025.' New Laws: 'There are currently no known new laws for this Code.'",
+    "checks": [
+      "The code has no accessory dwelling unit. Among the uses accessory to dwellings in R-1, R-3 and R-4 it lists 'Living quarters for household employees, caretakers, or watchmen' (480-41H(5), 480-47E(5), 480-52I(5), 480-136B(5)). No special exception is named for it, so it reads as a permitted accessory use. The code does not define living quarters or say whether they may have their own kitchen",
+      "R-2 (added 2016) lists only a garage, pool, greenhouse and sheds, and offices by special exception, as uses accessory to dwellings. It allows one accessory building of at most 80 sq ft per lot, set 2 ft from the side and rear lines (480-41.4A(7), (8))",
+      "The code has no definition of family. A single-family dwelling is 'designed and occupied exclusively as a residence for one family' (480-35)",
+      "'In residential districts, only one principal building may be erected on each lot' (480-35 'Principal building')",
+      "Accessory buildings must be 'behind the dwelling or main building' and count toward building coverage. One may stand in one side yard if the side and rear yards are at least 7 ft (480-136, 480-137, 480-41G)",
+      "A detached private garage or barn must be 20 ft from the rear of the house, 30 ft from the rear line and 10 ft from a side line. Its height is 16 ft to the peak with a roof pitch of 3 in 12 or more, else 12 ft. Its area limit reads 'eight 860 square feet' in the online text, so the figure is not settled (480-136D)",
+      "Minor accessory buildings such as sheds are capped at 200 sq ft and 12 ft (480-136F)",
+      "Number of accessory buildings by lot size: 1 under 30,000 sq ft, 2 up to 65,340 sq ft, 3 up to 5 acres, 5 over 5 acres (480-136G)",
+      "Conversion of a single-family detached dwelling into a dwelling for more families is a special exception anywhere the general regulations reach. It needs a petition signed by owners of 60% of the frontage within 500 ft, 750 sq ft per unit, lot area per family of at least 75% of the district requirement, no outside change, public water and sewer, and a house 'with relatively little economic usefulness as a conforming use' (480-138)",
+      "Two-family detached dwellings are permitted in R-4 only on a tract of at least 10 acres, with 3,000 sq ft of lot per dwelling, public water and sewer (480-52D, 480-53B, 480-54H)",
+      "Up to four nontransient roomers may rent rooms in the house or an accessory building by special exception in R-1, R-3 and R-4 (480-41H(7))",
+      "Parking: 3 spaces for every single-family dwelling unit. A fraction rounds up. At least one space must be behind the front building line in residential districts. Living quarters are not listed, so the Zoning Officer applies the most similar use (480-123A, 480-124, 480-125A, B)",
+      "Lot of record and nonconforming lots: a building may go on an undersized lot held in separate ownership if it meets the yards, unless the Zoning Hearing Board allows less by special exception (480-131, 480-132D)",
+      "Variances: 480-23. No bar on a use variance. Unlisted uses: the district use lists say 'and for no other'. Only LI-1 lets uses 'of the same general natures' as its listed uses in by special exception (480-85D)",
+      "Floodplain rules are in Chapter 222 and stream buffers in Chapter 384 (384-24). Trailers may not be used as living quarters (Chapter 419)"
+    ],
+    "notes": "Zoning office: Bethel Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article II (480-5 to 480-24), Article IV (480-31 to 480-35), Article V, Articles VI to XIII, XV and XVI (district use and area rules, M-H read in full), Article XVIII (parking, by screen view), Article XIX 480-130 to 480-149 (text cut off within 480-149), Chapter 222 sections 16 and 27, Chapter 384 section 24, the New Laws page and code searches. Not read: Article I, Article III, Article XVII signs, Article XX, 480-149.1 and 480-149.2, Chapter 239 historic preservation, the rest of Chapters 222 and 384, and Chapter 395."
+  },
+  "adu": {
+    "term": {
+      "value": "living quarters for household employees, caretakers, or watchmen",
+      "section": "480-41H(5), 480-136B(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Not called an accessory dwelling. Listed among the uses accessory to dwellings. Searched for accessory dwelling, in-law, accessory apartment, garage apartment, domestic employee, second dwelling, ECHO, granny, caretaker, guest house, servant, living quarters and conversion"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "480-41H(5), 480-47E(5), 480-52I(5), 480-136B(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Quarters only for household employees, caretakers or watchmen, not relatives and never a tenant. A permitted accessory use with no hearing named"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-3",
+        "R-4"
+      ],
+      "section": "480-41H(5), 480-47E(5), 480-52I(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "480-41.2, 480-76, 480-80, 480-83, 480-90",
+      "url": "https://ecode360.com/print/BE2833?guid=14417886",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "R-2, C-1, C-2, LI-1, T and M-H do not list living quarters. Of these only R-2 permits single-family houses"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "480-41H(5), 480-136B(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Listed as a use accessory to dwellings without the words 'by special exception' that items (7) and (8) carry. A zoning permit"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "480-23",
+      "url": "https://ecode360.com/print/BE2833?guid=14417669",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board, on the usual findings. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family detached house into a dwelling for more families",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "Petition signed by owners of 60% or more of the frontage on the street within 500 ft. Each unit at least 750 sq ft. Lot area per family at least 75% of the district requirement. District yards and building area met. No outside change except for safety. Parking met. Only for a house 'with relatively little economic usefulness as a conforming use'. Public water and public sewer. The Board sets the number of families",
+          "min_lot_by_district": {
+            "R-1": 45000,
+            "R-3": 45000,
+            "R-4": 45000,
+            "R-2": 15000
+          },
+          "requires": [
+            {
+              "test": "public_water",
+              "condition": "Public water serves the lot",
+              "section": "480-138I"
+            },
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer serves the lot",
+              "section": "480-138I"
+            },
+            {
+              "test": null,
+              "condition": "Petition of owners of 60% of the frontage within 500 ft, and a finding that the house has little economic usefulness as a single-family home",
+              "section": "480-138A, H"
+            }
+          ],
+          "section": "480-138",
+          "url": "https://ecode360.com/print/BE2833?guid=14418896",
+          "confidence": "secondary",
+          "note": "Lot minimums for two families read as twice 75% of the district lot with public services: 2 x 22,500 sq ft in R-1, R-3 and R-4, 2 x 7,500 sq ft in R-2"
+        },
+        {
+          "name": "Two-family detached dwelling (R-4)",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "Permitted in R-4 on a tract of at least 10 acres, at most six dwelling units per acre. Lot area 3,000 sq ft per dwelling and width 60 ft. Front yard 25 ft, two side yards of 25 ft together and 10 ft each, rear yard 25 ft, coverage 30%, height 35 ft. Public water and public sewer",
+          "min_lot_sqft": 435600,
+          "min_lot_is_tract": true,
+          "requires": [
+            {
+              "test": "public_water",
+              "condition": "Public water serves the tract",
+              "section": "480-54H"
+            },
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer serves the tract",
+              "section": "480-54H"
+            }
+          ],
+          "section": "480-52D, 480-53B, 480-54H",
+          "url": "https://ecode360.com/print/BE2833?guid=14418004",
+          "confidence": "secondary",
+          "note": "A new two-family building on a tract of 10 acres or more, not a unit added to a house"
+        }
+      ],
+      "section": "480-138, 480-52",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-3",
+        "R-4"
+      ],
+      "section": "480-41H(5), 480-47E(5), 480-52I(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 480",
+      "url": "https://ecode360.com/11463872",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic path found in the zoning chapter. Chapter 239 was not read"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "occupancy",
+          "condition": "The quarters are only for household employees, caretakers or watchmen of the household. The code does not let them be rented to others.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "bill_overrides": true,
+          "section": "480-41H(5), 480-136B(5)",
+          "url": "https://ecode360.com/print/BE2833?guid=14418896",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "Quarters in a separate building must be an accessory building, not a second house. 'In residential districts, only one principal building may be erected on each lot.'",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "480-35 'Principal building', 480-136",
+          "url": "https://ecode360.com/print/BE2833?guid=14417753"
+        },
+        {
+          "kind": "other",
+          "condition": "The number of accessory buildings is capped by lot size: one on a lot under 30,000 sq ft, two from 30,000 to 65,340 sq ft, three up to 5 acres and five over 5 acres. The third and later ones need 50 ft from other buildings. A lot that already has its allowed accessory buildings has no room for a new one.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "480-136G",
+          "url": "https://ecode360.com/print/BE2833?guid=14418896"
+        },
+        {
+          "kind": "other",
+          "condition": "In a floodway no new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels, and no new construction or development without a DEP permit. The floodplain chapter bars hospitals, nursing homes, jails and new manufactured home parks, not houses.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "222-16A(1), (2), 222-27",
+          "url": "https://ecode360.com/print/BE2833?guid=14415809",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 222"
+        },
+        {
+          "kind": "other",
+          "condition": "Where a stream or a lake, pond or wetland is on the site, the stormwater chapter asks for a planted riparian buffer of 50 ft from the top of bank. On a lot that existed when the chapter was adopted it may be 25% of the side or rear setback or 25 ft, whichever is greater. Only trails, utility lines, bridges and other uses the Township approves may be in it.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "384-24A, B",
+          "url": "https://ecode360.com/print/BE2833?guid=45257646",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 384"
+        }
+      ],
+      "section": "480-41H, 480-35, 480-136G, 222-16, 384-24",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-2",
+        "C-1",
+        "C-2",
+        "LI-1",
+        "T",
+        "M-H"
+      ],
+      "section": "480-41.2, 480-76, 480-80, 480-83, 480-90, 480-55 to 480-73",
+      "url": "https://ecode360.com/print/BE2833?guid=14417886",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "None of these lists living quarters. R-2 lists its own uses accessory to dwellings without them"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "480-136B(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The listing names no form. Quarters may be in the house or in an accessory building, which must be behind the house"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 7,
+      "section": "480-137",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'An accessory building may be erected within one side yard, provided that the side and rear yards are not less than seven feet each.' A detached garage or barn needs 10 ft (480-136D)"
+    },
+    "setback_rear_ft": {
+      "value": 7,
+      "section": "480-137",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A detached garage or barn needs 30 ft from the rear line (480-136D)"
+    },
+    "max_height_garage_ft": {
+      "value": 16,
+      "section": "480-136D",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'shall not exceed 16 feet in total height (top of peak), with a roof having a pitch of three inches or more to the foot, or 12 feet total height with a pitch of less than three inches'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "480-41G, 480-136F, 480-137",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'All accessory buildings must be behind the dwelling or main building.'"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "A detached private garage or barn: at least 20 ft from the rear of the house. The area limit reads 'eight 860 square feet' in the online text, so it is not settled",
+          "setback_side_ft": 10,
+          "setback_rear_ft": 30,
+          "max_height_ft": 16,
+          "section": "480-136D",
+          "url": "https://ecode360.com/print/BE2833?guid=14418896",
+          "note": "12 ft with a roof pitch under 3 in 12"
+        },
+        {
+          "where": "In R-4, an accessory structure in the rear yard of a lot under 480-53B",
+          "districts": [
+            "R-4"
+          ],
+          "setback_rear_ft": 7,
+          "section": "480-53B(3)",
+          "url": "https://ecode360.com/print/BE2833?guid=14418004"
+        }
+      ],
+      "section": "480-136D, 480-53B(3)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "480-136B(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Household employees, caretakers or watchmen, not relatives"
+    },
+    "occupancy": {
+      "value": "Household employees, caretakers or watchmen",
+      "section": "480-41H(5), 480-136B(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "480-136B(5)",
+      "url": "https://ecode360.com/print/BE2833?guid=14418896",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No owner rule"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "480-124, 480-125A",
+      "url": "https://ecode360.com/print/BE2833?guid=14418844",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    },
+    "reading": {
+      "value": "A single-family home needs 3 spaces for every dwelling unit. Living quarters are not listed, so the Zoning Officer applies the most similar use. If the quarters count as a dwelling unit they need 3 more, 6 in all. A fraction rounds up, and one space must be behind the front building line",
+      "section": "480-123A, 480-124, 480-125A, B",
+      "url": "https://ecode360.com/print/BE2833?guid=14418844",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewer and public water. Lot width 125 ft, frontage 25 ft (480-41A(2))."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'at least 60 feet measured from the street or road line'"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side yard, with public water and sewer."
+      },
+      "setback_sides_total_ft": {
+        "value": 60,
+        "section": "480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together, with public water and sewer."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Building area'. Accessory buildings count toward it (480-136)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 75,
+            "section": "480-41A(1), D(1)",
+            "note": "Lot width 140 ft."
+          },
+          {
+            "when": "No public water",
+            "public_sewer": null,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 75,
+            "section": "480-41A(1), D(1)",
+            "note": "Lot width 140 ft."
+          }
+        ],
+        "section": "480-41A, D",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'a lot without either an approved public sanitary sewage system and/or an approved public water supply shall have an area of not less than 40,000 square feet'. The row above holds the figures with both services: 30,000 sq ft, width 125 ft, side yards 60 ft together and 25 ft each."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "480-45D, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417887",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A lot not in a planned residential development takes the R-1 standards (480-45D). In an approved PRD a detached house lot is 10,000 sq ft with a 40 ft front yard, side yards of 25 ft together and 10 ft each, and 20% building area (480-47A)."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "480-45D, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417887",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "R-1 figure (480-45D, 480-41C)"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "480-45D, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417887",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side yard, with public water and sewer."
+      },
+      "setback_sides_total_ft": {
+        "value": 60,
+        "section": "480-45D, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417887",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together, with public water and sewer."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "480-45D, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417887",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "480-45D, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417887",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Building area'. Accessory buildings count toward it (480-136)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "480-45D, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14417887",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 75,
+            "section": "480-41A(1), D(1)",
+            "note": "Lot width 140 ft."
+          },
+          {
+            "when": "No public water",
+            "public_sewer": null,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 75,
+            "section": "480-41A(1), D(1)",
+            "note": "Lot width 140 ft."
+          }
+        ],
+        "section": "480-41A, D",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'a lot without either an approved public sanitary sewage system and/or an approved public water supply shall have an area of not less than 40,000 square feet'. The row above holds the figures with both services: 30,000 sq ft, width 125 ft, side yards 60 ft together and 25 ft each."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "480-52A, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached house in R-4 is 'subject to all regulations contained in Article VI' (480-52A), so it takes the R-1 figures."
+      },
+      "setback_front_ft": {
+        "value": 60,
+        "section": "480-52A, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "R-1 figure (480-52A, 480-41C)"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "480-52A, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side yard, with public water and sewer."
+      },
+      "setback_sides_total_ft": {
+        "value": 60,
+        "section": "480-52A, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together, with public water and sewer."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "480-52A, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "480-52A, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Building area'. Accessory buildings count toward it (480-136)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "480-52A, 480-41",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 75,
+            "section": "480-41A(1), D(1)",
+            "note": "Lot width 140 ft."
+          },
+          {
+            "when": "No public water",
+            "public_sewer": null,
+            "public_water": false,
+            "min_lot_sqft": 40000,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 75,
+            "section": "480-41A(1), D(1)",
+            "note": "Lot width 140 ft."
+          }
+        ],
+        "section": "480-41A, D",
+        "url": "https://ecode360.com/print/BE2833?guid=14417856",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'a lot without either an approved public sanitary sewage system and/or an approved public water supply shall have an area of not less than 40,000 square feet'. The row above holds the figures with both services: 30,000 sq ft, width 125 ft, side yards 60 ft together and 25 ft each."
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 4000,
+          "attached": 2000
+        },
+        "section": "480-53B",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Minimum lot area per dwelling for a single-family semidetached house (40 ft wide) and a townhouse (20 ft wide), on a tract of at least 10 acres at no more than six units an acre"
+      },
+      "setback_front_ft_by_type": {
+        "value": {
+          "semi_detached": 25,
+          "attached": 25
+        },
+        "section": "480-53B(1)",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft_by_type": {
+        "value": {
+          "semi_detached": 15,
+          "attached": 15
+        },
+        "section": "480-53B(2)",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One side yard of 15 ft for a semidetached house and a townhouse end unit"
+      },
+      "setback_rear_ft_by_type": {
+        "value": {
+          "semi_detached": 25,
+          "attached": 25
+        },
+        "section": "480-53B(3)",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage_by_type": {
+        "value": {
+          "semi_detached": 0.25,
+          "attached": 0.4
+        },
+        "section": "480-53B(4)",
+        "url": "https://ecode360.com/print/BE2833?guid=14418004",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Townhouse figure is for an end unit"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "480-41.4A",
+        "url": "https://ecode360.com/print/BE2833?guid=14417886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "With public sewer and public water. Lot width 70 ft. A subdivision of two or more lots may have no more than one house per 20,000 sq ft of the tract (480-41.4A(1))."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "480-41.4A",
+        "url": "https://ecode360.com/print/BE2833?guid=14417886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "30 ft on a road classified higher than a local road, and 60 ft from its cartway (480-41.4A(3))."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "480-41.4A",
+        "url": "https://ecode360.com/print/BE2833?guid=14417886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side yard, with public water and sewer."
+      },
+      "setback_sides_total_ft": {
+        "value": 25,
+        "section": "480-41.4A",
+        "url": "https://ecode360.com/print/BE2833?guid=14417886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together, with public water and sewer."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "480-41.4A",
+        "url": "https://ecode360.com/print/BE2833?guid=14417886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "480-41.4A",
+        "url": "https://ecode360.com/print/BE2833?guid=14417886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Building area'. Accessory buildings count toward it (480-136)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "480-41.4A",
+        "url": "https://ecode360.com/print/BE2833?guid=14417886",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-site water or on-site sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 75,
+            "section": "480-41.4A(4)(b)"
+          },
+          {
+            "when": "On-site water or on-site sewer",
+            "public_sewer": null,
+            "public_water": false,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 75,
+            "section": "480-41.4A(4)(b)"
+          }
+        ],
+        "section": "480-41.4A(4)",
+        "url": "https://ecode360.com/print/BE2833?guid=14417886",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "The code gives no R-2 lot minimum without public sewer and water. The 10,000 sq ft lot assumes both."
+      }
+    }
+  }
+}

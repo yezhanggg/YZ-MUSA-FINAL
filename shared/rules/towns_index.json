@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 173,
-      "population": 6177038,
-      "share_of_pa": 0.4751
+      "towns_beyond_the_two_cities": 176,
+      "population": 6205375,
+      "share_of_pa": 0.4772
     }
   ],
   "towns": [
@@ -4250,6 +4250,78 @@
         "added as batch 40 by population. Code Chapter 170 has no ADU text (two-family dwelling by right in R-2, R-3, MU, 170-603D(5) large-house apartment conversion)"
       ],
       "status_note": "Batch 40, checked against the code text. Points for a later check: 170-306 (unlisted uses prohibited) against 170-307 and 170-602 (special exception for a use of the same general character). Whether 170-603D(5) (house over 3,000 sq ft before the chapter) limits a house made into a two-family dwelling. 99-23D bars new construction within 50 ft of the top of bank in a floodplain area, with no lot fact for the distance. Code current only through 05-09-2022 (New Laws show no zoning ordinance since)."
+    },
+    {
+      "geoid": "4204506024",
+      "geoid_aliases": [],
+      "name": "Bethel township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 9574,
+      "population_with_aliases": 9574,
+      "housing_units": 3367,
+      "pop_rank": 277,
+      "file": "pa_delaware_bethel",
+      "batch": 41,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11463872",
+      "plain_fetch": null,
+      "code_current_through": "2025-12-09",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 480-136B(5) living quarters for household employees, caretakers, or watchmen (R-1, R-3, R-4))"
+      ],
+      "status_note": "Batch 41, first reading. Open points: whether 'living quarters for household employees, caretakers, or watchmen' (480-136B(5)) may hold a separate kitchen, and whether internal quarters make the house a two-family dwelling. The detached garage area cap reads 'eight 860 square feet' (480-136D). Parking for the quarters is not listed (480-125A). Chapter 239 historic preservation and Article XX not read."
+    },
+    {
+      "geoid": "4212381000",
+      "geoid_aliases": [],
+      "name": "Warren city",
+      "county": "Warren",
+      "type": "city",
+      "population": 9404,
+      "population_with_aliases": 9404,
+      "housing_units": 4794,
+      "pop_rank": 282,
+      "file": "pa_warren_warren",
+      "batch": 41,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/16083925",
+      "plain_fetch": null,
+      "code_current_through": "2025-10-20",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 470-16 accessory dwelling unit by right in R-1, R-2, R-3 and MU)"
+      ],
+      "status_note": "Batch 41, first reading. Open points: 'Accessory dwelling unit' is P in R-1, R-2, R-3 and MU (470-16) with no definition or standards. Whether a unit inside or attached to the house makes it a multifamily dwelling (470-90, 470-34 one acre, not permitted in R-1) is shown as a disputed bar. No principal height was found in 470-15. Minimum dwelling size differs between 470-15A and 470-90 'Floor area'. Article VI except 470-34, and definitions from W on, not read."
+    },
+    {
+      "geoid": "4201763048",
+      "geoid_aliases": [],
+      "name": "Quakertown borough",
+      "county": "Bucks",
+      "type": "borough",
+      "population": 9359,
+      "population_with_aliases": 9359,
+      "housing_units": 3992,
+      "pop_rank": 284,
+      "file": "pa_bucks_quakertown",
+      "batch": 41,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/14361599",
+      "plain_fetch": null,
+      "code_current_through": "2026-01-05",
+      "code_note": null,
+      "why": [
+        "added as batch 41 by population. Code Chapter 27 has no ADU text (duplex by right in HR and TC, 309.3F building conversion by special exception in TC, use variance barred 704.6C(2)(d))"
+      ],
+      "status_note": "Batch 41, first reading. Open points: parking counts are only in Table 6.1 (PDF, not read). 704.6C(2)(d) bars use variances. NC, HC, OB, H, LI and the POMU overlay (314.1) use lists and 319 historic preservation not read in full. Whether a duplex in TC needs 4,500 sq ft per unit (read as 9,000 sq ft for the lot)."
     }
   ]
 }
